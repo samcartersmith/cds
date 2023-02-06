@@ -8,6 +8,9 @@
   "exclude": ["dist", "jest.config.js"],
   "references": [
     {
+      "path": "../illustrations"
+    },
+    {
       "path": "../utils"
     }
   ]

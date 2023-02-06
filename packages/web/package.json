@@ -20,6 +20,7 @@
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-fonts": "workspace:*",
+    "@cbhq/cds-illustrations": "workspace:*",
     "@cbhq/cds-lottie-files": "workspace:*",
     "@cbhq/cds-utils": "workspace:*",
     "@cbhq/d3": "workspace:*",

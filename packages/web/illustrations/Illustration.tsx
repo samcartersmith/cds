@@ -1,9 +1,18 @@
 import React, { memo, useMemo } from 'react';
-import type { IllustrationBaseProps, IllustrationVariant } from '@cbhq/cds-common';
+import { IllustrationBaseProps, IllustrationVariant } from '@cbhq/cds-common/types';
+import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
+import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
+import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
+import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
 import { createIllustration } from './createIllustration';
 
-export type { IllustrationBaseProps } from '@cbhq/cds-common/types/IllustrationProps';
+export const versionMaps: Record<IllustrationVariant, Record<string, number>> = {
+  heroSquare: heroSquareVersionMap,
+  spotSquare: spotSquareVersionMap,
+  spotRectangle: spotRectangleVersionMap,
+  pictogram: pictogramVersionMap,
+};
 
 /**
  * @deprecated Do not use this component directly as this is not optimized for tree-shaking and will cause all
@@ -14,7 +23,7 @@ export const Illustration = memo(function Illustration<Type extends Illustration
   type,
   ...props
 }: { type: Type } & IllustrationBaseProps<Type>) {
-  const Component = useMemo(() => createIllustration(type), [type]);
+  const Component = useMemo(() => createIllustration<Type>(type, versionMaps[type]), [type]);
 
   return <Component {...props} />;
 });

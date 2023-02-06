@@ -27,8 +27,8 @@ const names: HeroSquareName[] = [
   'backedByUsDollar',
   'basedInUsa',
   'bigBtc',
-  'bigError',
-  'bigWarning',
+  'bigError', // not mentioned in migration doc
+  'bigWarning', // deleted, no replacement
   'bitcoinAndOtherCrypto',
   'bitcoinGlobe',
   'blockchain',
@@ -38,7 +38,7 @@ const names: HeroSquareName[] = [
   'browseDecentralizedApps',
   'browserExtension',
   'buyFirstCrypto',
-  'calendarStartDay',
+  'calendarStartDay', // not mentioned in migration doc
   'camera',
   'cardAndPhone',
   'cardBoosted',
@@ -47,8 +47,12 @@ const names: HeroSquareName[] = [
   'cashExcitement',
   'catHoldingWalletEmptyState',
   'catLostSystemError',
+  'coinbaseOnePercentOff', // original name cbOnePercentOff
+  'coinbaseOneRewards', // original name cbOneRewardsHeroSquare
+  'coinbaseOneTokenRewards', // original name cbOneTokenRewardsHeroSquare
+  'coinbaseOneUSDCIncentives',
+  'coinbaseOneWelcome', // original name cbOneWelcome
   'chickenFishSystemError',
-  'coinCheckmark',
   'coinbaseCard',
   'coinbaseCardIssue',
   'coinbaseCardLock',
@@ -62,19 +66,15 @@ const names: HeroSquareName[] = [
   'coinbaseOneDiscountedAmount',
   'coinbaseOneDocWarning',
   'coinbaseOneInsufficientWallet',
-  'coinbaseOneLogo',
-  'coinbaseOnePercentOff',
+  'coinbaseOneLogo', // original name coinbaseOneLogoHeroSquare
   'coinbaseOnePhoneLightning',
   'coinbaseOneProtectedCrypto',
-  'coinbaseOneRewards',
   'coinbaseOneSavingFunds',
-  'coinbaseOneTokenRewards',
-  'coinbaseOneUSDCIncentives',
   'coinbaseOneWaitlist',
   'coinbaseOneWalletWarning',
-  'coinbaseOneWelcome',
   'coinbaseRedesigned',
   'coinbaseWalletToTrade',
+  'coinCheckmark',
   'coinsInWallet',
   'collectableNfts',
   'collectingNfts',
@@ -125,13 +125,16 @@ const names: HeroSquareName[] = [
   'earnInterest',
   'earnMore',
   'earnNuxHome',
-  'earnSuccess',
+  'earnProgress' as HeroSquareName, // deleted, no replacement
+  'earnSuccess', // deleted, no replacement
   'earnToLearn',
   'emailNotification',
   'emptyCollection',
+  'cryptoAndMore', // deleted, original name emptyCrypto
   'emptyStateCheckBackLater',
   'emptyStateNft404Page',
   'emptyStateNftSoldOut',
+  'tradeImmediately',
   'encryptedEverything',
   'error400',
   'errorApp500',
@@ -140,9 +143,9 @@ const names: HeroSquareName[] = [
   'errorWeb404',
   'errorWeb500',
   'estimatedAmount',
-  'ethStakingRewards',
+  'ethereumToWallet', // not mentioned in migration doc
+  'ethStakingRewards', // original name ethStakingRewardsHero
   'ethStakingUpsell',
-  'ethereumToWallet',
   'exchangeEmptyState',
   'exploreDecentralizedApps',
   'faceMatchReal',
@@ -151,10 +154,12 @@ const names: HeroSquareName[] = [
   'fileYourCryptoTaxesCheck',
   'focusLimitOrders',
   'freeBtc',
-  'futures',
+  'futures', // original name futuresHeroSquare
   'gainsAndLosses',
   'gasFeesNetworkFees',
   'getStartedInMinutes',
+  'powerOfCrypto', // original name givingTogether
+  'powerOfCrypto', // original name givingToOthers
   'globalTransactions',
   'governance',
   'hardwareWallets',
@@ -176,22 +181,23 @@ const names: HeroSquareName[] = [
   'layeredNetworks',
   'ledgerAccess',
   'ledgerPlugin',
-  'leverage',
+  'leverage', // original name leverageHeroSquare
   'limitOrders',
   'linkingYourWalletToYourCoinbaseAccount',
-  'margin',
-  'marginWarning',
+  'margin', // original name marginHeroSquare
+  'marginWarning', // original name marginWarningHeroSquare
   'mic',
   'mining',
   'moneyDecentralized',
-  'multiPlatformMobileAppBrowserExtension',
   'multicoinSupport',
+  'multiPlatformMobileAppBrowserExtension',
   'multipleAccountsWalletsForOneUser',
   'myNameIsSatoshi',
   'networkWarning',
   'noFees',
   'notificationsAlt',
   'notificationsAndUpdates',
+  'iceCreamMeltingSystemError', // original name octopusFloatSystemError
   'onTheList',
   'openEmail',
   'optInPushNotificationsEmail',
@@ -206,18 +212,18 @@ const names: HeroSquareName[] = [
   'phoneUnknown',
   'polling',
   'portfolioPerformance',
-  'powerOfCrypto',
   'poweredByEthereum',
-  'primeDeFi',
-  'primeEarn',
-  'primeStaking',
+  'powerOfCrypto',
+  'primeDeFi', // original name primeDeFiHero
+  'primeEarn', // original name primeEarnHero
+  'primeStaking', // original name primeStakingHero
   'processing',
   'quickAndSimple',
   'quickBuy',
   'ratingsAndReviews',
   'readyToTrade',
-  'receiveGift',
   'receivedCard',
+  'receiveGift',
   'recommendInvest',
   'recurringReward',
   'referralsAvatars',
@@ -225,7 +231,7 @@ const names: HeroSquareName[] = [
   'referralsWalletPhones',
   'remittances',
   'restrictedCountry',
-  'retailUSDCRewards',
+  'retailUSDCRewards', // original name retailUSDCRewardsHeroSquare
   'reviewInfo',
   'rocket',
   'rotatingRewards',
@@ -249,7 +255,6 @@ const names: HeroSquareName[] = [
   'squidEmptyState',
   'stableValue',
   'staking',
-  'startToday',
   'stayInControlSelfHostedWalletsStorage',
   'stopLimitOrder',
   'stopLimitOrderDown',
@@ -276,11 +281,13 @@ const names: HeroSquareName[] = [
   'walletLoading',
   'walletNotifications',
   'walletSecurity',
+  'borrowWallet', // original name walletSolana
   'walletUi',
   'watchVideos',
   'webRAT',
   'whyNotBoth',
   'yourContacts',
+  // 'startToday', // new illustration and will throw off ordering
 ];
 
 export default names;

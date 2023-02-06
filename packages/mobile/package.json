@@ -13,6 +13,7 @@
   "dependencies": {
     "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-fonts": "workspace:*",
+    "@cbhq/cds-illustrations": "workspace:*",
     "@cbhq/cds-lottie-files": "workspace:*",
     "@cbhq/cds-utils": "workspace:*",
     "d3-interpolate-path": "^2.2.2",

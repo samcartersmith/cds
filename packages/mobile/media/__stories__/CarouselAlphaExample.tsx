@@ -60,7 +60,7 @@ export function ProgressBarsExample() {
         onDismissItem={onDismissItem}
         onDismissLastItem={onDismissLastItem}
         items={[
-          <CarouselItem key="item1" spotSquare="adaStaking" />,
+          <CarouselItem key="item1" spotSquare="sparkleToken" />,
           <CarouselItem key="item2" pictogram="addressBook" />,
           <CarouselItem key="item3" spotSquare="announcementAdvancedTrading" />,
           <CarouselItem key="item4" pictogram="worldwide" />,

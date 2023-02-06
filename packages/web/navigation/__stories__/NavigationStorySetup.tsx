@@ -249,7 +249,7 @@ const renderCB1 = (isCollapsed: boolean) => {
       backgroundColor="primaryWash"
     >
       <HStack gap={1} alignItems="center" justifyContent="center" spacing={spacing}>
-        <Pictogram name="coinbaseOneLogoPictogram" dimension="48x48" scaleMultiplier={0.8} />
+        <Pictogram name="coinbaseOneLogo" dimension="48x48" scaleMultiplier={0.8} />
         {!isCollapsed && (
           <VStack>
             <TextHeadline as="span">Coinbase One</TextHeadline>

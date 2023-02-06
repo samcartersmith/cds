@@ -107,7 +107,7 @@ const navigationOptions: NavigationOptions[] = [
     name: 'Coinbase',
     value: 'coinbase',
     description: 'Buy, sell, use crypto',
-    mediaName: 'coinbaseOneLogoPictogram',
+    mediaName: 'coinbaseOneLogo',
   },
   {
     name: 'Wallet',

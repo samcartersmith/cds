@@ -3,36 +3,35 @@ import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
 import {
-  heroSquareNames,
-  pictogramNames,
-  spotRectangleNames,
-  spotSquareNames,
-} from '@cbhq/cds-common/internal/data/illustrationData';
-import { illustrationDescriptionGraph } from '@cbhq/cds-common/internal/data/illustrationDescriptionGraph';
-import {
   illustrationDimensionDefaults,
   illustrationDimensions,
+  illustrationSizes,
 } from '@cbhq/cds-common/tokens/illustrations';
-import type {
-  HeroSquareName,
-  IllustrationVariant,
-  PictogramName,
-  SpotRectangleName,
-  SpotSquareName,
-} from '@cbhq/cds-common/types';
+import { IllustrationVariant } from '@cbhq/cds-common/types/IllustrationNames';
+import heroSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/descriptionMap';
+import heroSquareNames from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
+import pictogramDescriptionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/descriptionMap';
+import pictogramNames from '@cbhq/cds-illustrations/__generated__/pictogram/data/names';
+import spotRectangleDescriptionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/descriptionMap';
+import spotRectangleNames from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/names';
+import spotSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/descriptionMap';
+import spotSquareNames from '@cbhq/cds-illustrations/__generated__/spotSquare/data/names';
 import { SearchInput, Select, SelectOption } from '@cbhq/cds-web/controls';
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
-import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
-import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
 
-const variantToNamesMap: Record<
-  IllustrationVariant,
-  readonly (HeroSquareName | SpotRectangleName | PictogramName | SpotSquareName)[]
-> = {
-  heroSquare: heroSquareNames,
-  spotRectangle: spotRectangleNames,
-  spotSquare: spotSquareNames,
-  pictogram: pictogramNames,
+const variantToNamesMap = {
+  heroSquare: [...new Set(heroSquareNames)], // TODO: remove - temproary until we remove duplicate names required for percy during illustration migration
+  spotRectangle: [...new Set(spotRectangleNames)], // TODO: remove - temproary until we remove duplicate names required for percy during illustration migration
+  spotSquare: [...new Set(spotSquareNames)], // TODO: remove - temproary until we remove duplicate names required for percy during illustration migration
+  pictogram: [...new Set(pictogramNames)], // TODO: remove - temproary until we remove duplicate names required for percy during illustration migration
+};
+
+const descriptionMap = {
+  heroSquare: heroSquareDescriptionMap,
+  spotRectangle: spotRectangleDescriptionMap,
+  spotSquare: spotSquareDescriptionMap,
+  pictogram: pictogramDescriptionMap,
 };
 
 /**
@@ -42,14 +41,15 @@ const variantToNamesMap: Record<
  * @param selectedCategory - the category chosen by the user
  * @returns true if this illustration is a subset of the selectedCategory
  */
-const nameInCategory = (name: string, selectedCategory: string) => {
+const nameInCategory = (type: IllustrationVariant, name: string, selectedCategory: string) => {
+  const descriptionMapForType = descriptionMap[type];
   if (selectedCategory === 'all') return true;
 
   // i.e if category = 'contract'
   // then the categoryNames would be the values of contract in
   // illustrationDescriptionGraphy
-  if (selectedCategory in illustrationDescriptionGraph) {
-    return illustrationDescriptionGraph[selectedCategory].includes(name);
+  if (selectedCategory in descriptionMapForType) {
+    return descriptionMapForType[selectedCategory].includes(name);
   }
 
   return false;
@@ -79,11 +79,12 @@ const queryIsSubsetOfName = (query: string, name: string) => {
  * @param name - the name of the illustration that is being matched with
  * @returns returns true if query is a description of this illustration
  */
-const queryHasMatchingDescription = (query: string, name: string) => {
+const queryHasMatchingDescription = (type: IllustrationVariant, query: string, name: string) => {
+  const descriptionMapForType = descriptionMap[type];
   if (query === '') return true;
 
-  if (query in illustrationDescriptionGraph) {
-    return illustrationDescriptionGraph[query].includes(name);
+  if (query in descriptionMapForType) {
+    return descriptionMapForType[query].includes(name);
   }
 
   return false;
@@ -142,26 +143,37 @@ export const IllustrationSheet = function IllustrationSheet({
         values={dimensions.map((dim) => ({ label: dim, value: dim }))}
       >
         {dimensions.map((dim) => {
+          const [originalWidth] = illustrationSizes[dim];
+          const width = originalWidth <= 96 ? originalWidth + 60 : originalWidth;
+          const illustrationLabelStyles = {
+            fontSize: 12,
+            width,
+            textAlign: 'center',
+            whiteSpace: 'normal',
+            overflowWrap: 'break-word',
+          } as const;
+
+          const filteredNames = names
+            .map((item) => item)
+            .filter((name) => {
+              return (
+                (queryHasMatchingDescription(variant, query, name) &&
+                  nameInCategory(variant, name, selectedCategory)) ||
+                (queryIsSubsetOfName(query, name) &&
+                  nameInCategory(variant, name, selectedCategory))
+              );
+            });
+
           return (
             <TabItem key={dim} value={dim}>
-              <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
-                {names
-                  .filter((name) => {
-                    return (
-                      (queryHasMatchingDescription(query, name) &&
-                        nameInCategory(name, selectedCategory)) ||
-                      (queryIsSubsetOfName(query, name) && nameInCategory(name, selectedCategory))
-                    );
-                  })
-                  .map((filteredName) => (
-                    <VStack spacing={3} alignItems="center" key={filteredName}>
-                      <Illustration type={variant} name={filteredName} dimension={dim} />
-                      <TextLabel1 align="center" as="p" spacing={2}>
-                        {filteredName}
-                      </TextLabel1>
-                    </VStack>
-                  ))}
-              </Box>
+              <HStack flexWrap="wrap" gap={2}>
+                {filteredNames.map((filteredName) => (
+                  <VStack alignItems="center" key={filteredName} width={width} overflow="auto">
+                    <Illustration type={variant} name={filteredName} dimension={dim} />
+                    <p style={illustrationLabelStyles}>{filteredName}</p>
+                  </VStack>
+                ))}
+              </HStack>
             </TabItem>
           );
         })}

@@ -1,27 +1,30 @@
 import { render, screen } from '@testing-library/react';
-import type { IllustrationNames, IllustrationVariant } from '@cbhq/cds-common';
-import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
+import { IllustrationNames, IllustrationVariant } from '@cbhq/cds-common';
 import { Spectrum } from '@cbhq/cds-common/types/Spectrum';
 
 import { ThemeProvider } from '../../system';
-import { Illustration } from '../Illustration';
-import { versionNumManifest } from '../versionNumManifest';
+import { Illustration, versionMaps } from '../Illustration';
 
-const getURL = (name: string, versionNum: number, spectrum: Spectrum) => {
-  return `https://static-assets.coinbase.com/design-system/illustrations/${spectrum}/${name}-${versionNum}.svg`;
+const getURL = (
+  type: IllustrationVariant,
+  name: string,
+  versionNum: number,
+  spectrum: Spectrum,
+) => {
+  return `https://static-assets.coinbase.com/ui-infra/illustration/v1/${type}/svg/${spectrum}/${name}-${versionNum}.svg`;
 };
 
 type ImageData = [type: IllustrationVariant, name: string, spectrum: Spectrum, url: string];
 
 const images: ImageData[] = [];
 
-Object.entries(sortedImg).forEach(([type, names]) => {
-  names.forEach((nameAndSpectrum) => {
-    const [name, spectrum] = nameAndSpectrum.split('-') as [string, Spectrum];
-    const versionNum = versionNumManifest[nameAndSpectrum];
-    const url = getURL(name, versionNum, spectrum);
+Object.entries(versionMaps).forEach(([type, items]) => {
+  Object.entries(items).forEach(([name, version]) => {
+    const lightUrl = getURL(type as IllustrationVariant, name, version, 'light');
+    const darkUrl = getURL(type as IllustrationVariant, name, version, 'dark');
 
-    images.push([type as IllustrationVariant, name, spectrum, url]);
+    images.push([type as IllustrationVariant, name, 'light', lightUrl]);
+    images.push([type as IllustrationVariant, name, 'dark', darkUrl]);
   });
 });
 

@@ -6,7 +6,10 @@
   "tags": [],
   "targets": {
     "start": {
-      "executor": "@cbhq/mono-tasks:start-storybook"
+      "executor": "@cbhq/mono-tasks:start-storybook",
+      "dependsOn": [
+        "^build"
+      ]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -24,7 +27,10 @@
       "executor": "@cbhq/mono-tasks:build-storybook"
     },
     "build-for-tests": {
-      "executor": "@cbhq/mono-tasks:build-storybook"
+      "executor": "@cbhq/mono-tasks:build-storybook",
+      "dependsOn": [
+        "^build"
+      ]
     },
     "a11y-web": {
       "executor": "@cbhq/mono-tasks:run-script",

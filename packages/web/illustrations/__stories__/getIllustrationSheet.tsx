@@ -1,6 +1,9 @@
 import React, { memo } from 'react';
-import type { IllustrationNames, IllustrationVariant, Spectrum } from '@cbhq/cds-common';
-import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
+import type { IllustrationVariant, Spectrum } from '@cbhq/cds-common';
+import heroSquareImages from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
+import pictogramImages from '@cbhq/cds-illustrations/__generated__/pictogram/data/names';
+import spotRectangleImages from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/names';
+import spotSquareImages from '@cbhq/cds-illustrations/__generated__/spotSquare/data/names';
 
 import { HStack } from '../../alpha/HStack';
 import { VStack } from '../../layout';
@@ -12,26 +15,22 @@ import { Illustration } from '../Illustration';
 const ITEM_SIZE = 48;
 const ITEM_DIMENSION = `${ITEM_SIZE}x${ITEM_SIZE}` as const;
 
-export function getIllustrationSheet(type: IllustrationVariant) {
-  const items = sortedImg[type];
-  // TODO: remove this set logic - this will not be necessary when we switch to new illustration pipeline
-  const names = [
-    ...new Set(
-      Object.values(items)
-        .map((nameAndSpectrum) => {
-          const token = nameAndSpectrum.split('-');
-          const [name] = token as [name: IllustrationNames, spectrum: Spectrum];
-          return name;
-        })
-        .values(),
-    ),
-  ];
+const images = {
+  heroSquare: heroSquareImages,
+  pictogram: pictogramImages,
+  spotRectangle: spotRectangleImages,
+  spotSquare: spotSquareImages,
+};
+
+export function getIllustrationSheet<Type extends IllustrationVariant>(type: Type) {
+  type Names = (typeof images)[Type];
+  const names = images[type];
 
   const IllustrationSpectrumSheet = memo(function IllustrationSpectrumSheet({
     names: namesProp,
     spectrum,
   }: {
-    names: IllustrationNames[];
+    names: Names;
     spectrum: Spectrum;
   }) {
     return (

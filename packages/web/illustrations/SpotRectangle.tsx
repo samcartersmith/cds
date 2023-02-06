@@ -1,8 +1,11 @@
+import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
+
 import { createIllustration } from './createIllustration';
 
 export type { SpotRectangleProps } from '@cbhq/cds-common/types/IllustrationProps';
+export type { SpotRectangleName } from '@cbhq/cds-illustrations/__generated__/spotRectangle/types/SpotRectangleName';
 
 /**
- * @changelog ./versionNumManifest.ts, ./createIllustration.tsx, ./Illustration.tsx
+ * @changelog ./createIllustration.tsx, ./Illustration.tsx
  */
-export const SpotRectangle = createIllustration('spotRectangle');
+export const SpotRectangle = createIllustration('spotRectangle', spotRectangleVersionMap);

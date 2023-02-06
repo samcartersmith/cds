@@ -2,18 +2,28 @@ import React, { memo, useCallback } from 'react';
 import { Dimensions, FlatList } from 'react-native';
 import {
   IllustrationDimensionsMap,
-  IllustrationNames,
+  IllustrationNamesMap,
   IllustrationVariant,
   Spectrum,
 } from '@cbhq/cds-common';
-import { sortedImg } from '@cbhq/cds-common/internal/data/sortedIllustrationData';
 import { convertDimensionToSize } from '@cbhq/cds-common/utils/convertDimensionToSize';
 import { convertSizeWithMultiplier } from '@cbhq/cds-common/utils/convertSizeWithMultiplier';
+import heroSquareImages from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
+import pictogramImages from '@cbhq/cds-illustrations/__generated__/pictogram/data/names';
+import spotRectangleImages from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/names';
+import spotSquareImages from '@cbhq/cds-illustrations/__generated__/spotSquare/data/names';
 
 import { Divider, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextLegal } from '../../typography';
 import { Illustration } from '../Illustration';
+
+const images = {
+  heroSquare: heroSquareImages,
+  pictogram: pictogramImages,
+  spotRectangle: spotRectangleImages,
+  spotSquare: spotSquareImages,
+};
 
 export function getIllustrationSheet<Type extends IllustrationVariant>(
   type: Type,
@@ -35,22 +45,15 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(
   const ITEM_HEIGHT = ITEM_SIZE.height + 10; // account for text underneath
   const ITEM_COLUMNS = Math.floor(SCREEN_WIDTH / ITEM_WIDTH);
 
-  const items = sortedImg[type];
-  type DataItem = { name: IllustrationNames; spectrum: Spectrum };
+  type IllustrationName = IllustrationNamesMap[Type];
+
+  const names = images[type] as IllustrationName[];
+  type DataItem = { name: IllustrationName; spectrum: Spectrum };
 
   const light: DataItem[] = [];
   const dark: DataItem[] = [];
 
-  // TODO: remove this set logic - this will not be necessary when we switch to new illustration pipeline
-  new Set(
-    items
-      .map((nameAndSpectrum) => {
-        const token = nameAndSpectrum.split('-');
-        const [name] = token as [name: IllustrationNames, spectrum: Spectrum];
-        return name;
-      })
-      .values(),
-  ).forEach((name) => {
+  names.forEach((name) => {
     light.push({
       name,
       spectrum: 'light' as const,

@@ -28,7 +28,7 @@ export const TileButtonPictogram = () => {
       </HStack>
       <HStack zIndex={getZIndexFromRow(3, 3)}>
         <TileButton onPress={handleNoop} pictogram="cardDeclined" title="Wallet" />
-        <TileButton onPress={handleNoop} pictogram="coinbaseOneLogoPictogram" title="Commerce" />
+        <TileButton onPress={handleNoop} pictogram="coinbaseOneLogo" title="Commerce" />
         <TileButton onPress={handleNoop} pictogram="chart" title="Analytics" />
       </HStack>
     </VStack>

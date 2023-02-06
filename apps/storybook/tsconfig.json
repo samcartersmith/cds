@@ -10,6 +10,9 @@
     },
     {
       "path": "../../packages/fonts"
+    },
+    {
+      "path": "../../packages/illustrations"
     }
   ],
   "exclude": ["babel.config.js"]

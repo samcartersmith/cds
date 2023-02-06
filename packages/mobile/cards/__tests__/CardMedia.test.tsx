@@ -10,7 +10,7 @@ describe('CardMedia.test', () => {
   });
 
   it('renders spot square', () => {
-    render(<CardSpotSquare name="adaStaking" />);
+    render(<CardSpotSquare name="sparkleToken" />);
     expect(screen.UNSAFE_getByType(SvgXml)).toBeTruthy();
   });
 
