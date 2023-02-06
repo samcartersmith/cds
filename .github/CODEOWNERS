@@ -2,6 +2,6 @@
 ### Run `yarn codeowners` to update
 
 # FROM ./OWNERS
-.* @frontend/design-system
-*.config.js @frontend/design-system
-*.json @frontend/design-system
+.* @frontend/dx-ui-systems-guild
+*.config.js @frontend/dx-ui-systems-guild
+*.json @frontend/dx-ui-systems-guild
