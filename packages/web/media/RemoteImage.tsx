@@ -34,6 +34,11 @@ const image = css`
     display: block;
   }
 `;
+const hexagonOverflowClass = css`
+  && {
+    overflow: visible;
+  }
+`;
 
 const imageRatio = css`
   && {
@@ -114,6 +119,7 @@ export const RemoteImage = memo(function RemoteImage({
       } as const),
     [aspectRatio, borderColor, borderRadius],
   );
+  const imageOverflow = useMemo(() => shape === 'hexagon' && hexagonOverflowClass, [shape]);
 
   return (
     <img
@@ -125,6 +131,7 @@ export const RemoteImage = memo(function RemoteImage({
       height={finalHeight}
       className={cx(
         image,
+        imageOverflow,
         aspectRatio && imageRatio,
         resizeModes[resizeMode],
         dangerouslySetClassName,

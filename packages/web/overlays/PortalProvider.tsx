@@ -5,6 +5,7 @@ import { ToastProvider, ToastProviderProps } from '@cbhq/cds-common/overlays/Toa
 import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalState';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
+import { IsoHexagonClipPath } from '../media/Hexagon';
 import { ThemeProvider } from '../system';
 import { BrowserOnly } from '../system/BrowserOnly';
 import { getBrowserGlobals } from '../utils/browser';
@@ -91,6 +92,7 @@ export const PortalProvider: React.FC<React.PropsWithChildren<PortalProviderProp
           </BrowserOnly>
           {portalState.nodes.map((node: PortalNode) => node.element)}
           {children}
+          <IsoHexagonClipPath />
         </ToastProvider>
       </PortalContext.Provider>
     );

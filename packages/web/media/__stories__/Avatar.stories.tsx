@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { ThemeProviderBaseProps } from '@cbhq/cds-common';
 import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 import { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
@@ -23,17 +24,71 @@ export const Normal = () => {
   return (
     <ThemeProvider>
       <VStack gap={2}>
+        <TextHeadline as="h3">Default</TextHeadline>
         <HStack gap={2} alignItems="center">
-          <Avatar alt="Sneezy" src={avatarImageUrl} />
-          <Avatar alt="Happy" src={avatarImageUrl} shape="square" />
-          <Avatar alt="Happy" src={avatarImageUrl} shape="hexagon" />
-          <Avatar alt="Sleepy" src={avatarImageUrl} borderColor="positive" />
-          <Avatar alt="Bashful" src={avatarImageUrl} size="m" />
-          <Avatar alt="Grumpy" src={avatarImageUrl} size="l" />
-          <Avatar alt="Grumpy" src={avatarImageUrl} size="xl" />
-          <Avatar alt="Grumpy" src={avatarImageUrl} size="xxl" />
-          <Avatar alt="Grumpy" src={avatarImageUrl} size="xxxl" />
-          <Avatar selected alt="Grumpy" src={avatarImageUrl} size="xxxl" />
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} src={avatarImageUrl} size={size} />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} src={avatarImageUrl} size={size} shape="square" />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} src={avatarImageUrl} size={size} shape="hexagon" />
+          ))}
+        </HStack>
+      </VStack>
+      <VStack gap={2} spacingTop={2}>
+        <TextHeadline as="h3">With borderColor prop</TextHeadline>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} src={avatarImageUrl} size={size} borderColor="positive" />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar
+              alt=""
+              key={i}
+              src={avatarImageUrl}
+              size={size}
+              borderColor="positive"
+              shape="square"
+            />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar
+              alt=""
+              key={i}
+              src={avatarImageUrl}
+              size={size}
+              borderColor="positive"
+              shape="hexagon"
+            />
+          ))}
+        </HStack>
+      </VStack>
+      <VStack gap={2} spacingTop={2}>
+        <TextHeadline as="h3">With Selected prop</TextHeadline>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} src={avatarImageUrl} size={size} selected />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} src={avatarImageUrl} size={size} selected shape="square" />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} src={avatarImageUrl} size={size} selected shape="hexagon" />
+          ))}
         </HStack>
       </VStack>
     </ThemeProvider>
@@ -75,8 +130,8 @@ export const FallbackColored = ({ scale }: Pick<ThemeProviderBaseProps, 'scale'>
       </VStack>
       <VStack gap={2} spacingTop={4}>
         <TextHeadline as="h3">Sizes</TextHeadline>
-        {sizes.map((size) => {
-          return <FallbackColoredBase size={size} dense />;
+        {sizes.map((size, i) => {
+          return <FallbackColoredBase key={i} size={size} dense />;
         })}
       </VStack>
       <VStack gap={2} spacingTop={4}>
@@ -93,7 +148,11 @@ export const FallbackColored = ({ scale }: Pick<ThemeProviderBaseProps, 'scale'>
       </VStack>
       <VStack gap={2} spacingTop={4}>
         <TextHeadline as="h3">Hexagon</TextHeadline>
-        <Avatar alt="" name="Happy" colorScheme="blue" shape="hexagon" />
+        <FallbackColoredBase shape="hexagon" />
+      </VStack>
+      <VStack gap={2} spacingTop={4}>
+        <TextHeadline as="h3">Hexagon Selected</TextHeadline>
+        <FallbackColoredBase shape="hexagon" selected />
       </VStack>
     </ThemeProvider>
   );
@@ -105,17 +164,57 @@ export const FallbackImage = () => {
   return (
     <ThemeProvider>
       <VStack gap={2}>
+        <TextHeadline as="h3">Default</TextHeadline>
         <HStack gap={2} alignItems="center">
-          <Avatar alt="Sneezy" />
-          <Avatar alt="Happy" shape="square" />
-          <Avatar alt="Happy" shape="hexagon" />
-          <Avatar alt="Sleepy" borderColor="positive" />
-          <Avatar alt="Bashful" size="m" />
-          <Avatar alt="Grumpy" size="l" />
-          <Avatar alt="Grumpy" size="xl" />
-          <Avatar alt="Grumpy" size="xxl" />
-          <Avatar alt="Grumpy" size="xxxl" />
-          <Avatar alt="Grumpy" size="xxxl" selected />
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} shape="square" />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} shape="hexagon" />
+          ))}
+        </HStack>
+      </VStack>
+      <VStack gap={2} spacingTop={2}>
+        <TextHeadline as="h3">With borderColor prop</TextHeadline>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} borderColor="positive" />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} borderColor="positive" shape="square" />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} borderColor="positive" shape="hexagon" />
+          ))}
+        </HStack>
+      </VStack>
+      <VStack gap={2} spacingTop={2}>
+        <TextHeadline as="h3">With Selected prop</TextHeadline>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} selected />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} selected shape="square" />
+          ))}
+        </HStack>
+        <HStack gap={2} alignItems="center">
+          {sizes.map((size, i) => (
+            <Avatar alt="" key={i} size={size} selected shape="hexagon" />
+          ))}
         </HStack>
       </VStack>
     </ThemeProvider>

@@ -1,0 +1,142 @@
+import React, { memo, useEffect, useMemo } from 'react';
+import { createPortal } from 'react-dom';
+import { css } from 'linaria';
+import { AvatarBaseProps, SharedProps } from '@cbhq/cds-common';
+
+import { useIsBrowser } from '../hooks/useIsBrowser';
+import { Box } from '../layout';
+import { getBrowserGlobals } from '../utils/browser';
+
+export const hexagonClipPathContainerId = 'cds-hexagon-clipPath-container';
+export const hexagonAvatarClipId = 'cds-hexagon-avatar-clipper';
+export const staticHexagonClassName = 'cds-hexagon';
+export const hexagonStyles = css`
+  &.${staticHexagonClassName} {
+    clip-path: url(#${hexagonAvatarClipId});
+  }
+`;
+
+/**
+ * We need to mount this to the DOM one time
+ * This is currently done in the PortalProvider
+ */
+export const HexagonAvatarClipPath = () => {
+  // to get scale values use equation 1/x, where x is height or width
+  const xScale = 1 / 66;
+  const yScale = 1 / 62;
+
+  return (
+    <svg height="0" viewBox="0 0 66 62" width="0">
+      <defs>
+        <clipPath
+          id={hexagonAvatarClipId}
+          clipPathUnits="objectBoundingBox"
+          transform={`scale(${xScale} ${yScale})`}
+        >
+          <path d="M63.4372 22.8624C66.2475 27.781 66.2475 33.819 63.4372 38.7376L54.981 53.5376C52.1324 58.5231 46.8307 61.6 41.0887 61.6H24.4562C18.7142 61.6 13.4125 58.5231 10.564 53.5376L2.10774 38.7376C-0.702577 33.819 -0.702582 27.781 2.10774 22.8624L10.564 8.06243C13.4125 3.07687 18.7142 0 24.4562 0H41.0887C46.8307 0 52.1324 3.07686 54.981 8.06242L63.4372 22.8624Z" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+HexagonAvatarClipPath.displayName = 'HexagonAvatarClipPath';
+
+/**
+ * Because the hexagon is not symmetrical, we have to get all mathy to scale the border appropriately
+ * Note: These values were manually set with my eyeballs
+ */
+export const hexagonSvgTransformStyles = {
+  standard: {
+    m: { transform: `scale(1.075) translateX(-0.25px)` },
+    l: { transform: `scaleY(1.075) translateX(-0.25px)` },
+    xl: { transform: `scaleY(1.075) translateX(-0.25px)` },
+    xxl: { transform: `scaleX(1.05) scaleY(1.075) translateX(-0.55px)` },
+    xxxl: { transform: `scaleX(1.05) scaleY(1.075) translateX(-0.55px)` },
+  },
+  offset: {
+    m: { transform: `scaleX(1.25) scaleY(1.275)` },
+    l: { transform: `scaleX(1.2) scaleY(1.25)` },
+    xl: { transform: `scaleX(1.175) scaleY(1.215)` },
+    xxl: { transform: `scaleX(1.15) scaleY(1.2125) translateX(-0.25px)` },
+    xxxl: { transform: `scaleX(1.125) scaleY(1.2) translateX(-0.25px)` },
+  },
+} as const;
+
+type HexagonBorderProps = {
+  strokeColor: string;
+  offset?: boolean;
+  size?: AvatarBaseProps['size'];
+} & SharedProps;
+export const HexagonBorder = memo(
+  ({ strokeColor, offset, size = 'l', testID = staticHexagonClassName }: HexagonBorderProps) => {
+    const svgTransformStyles = hexagonSvgTransformStyles[offset ? 'offset' : 'standard'][size];
+
+    return (
+      <Box position="absolute" width="100%" height="100%" aria-hidden testID={testID}>
+        <svg data-testid={`${testID}-svg`} viewBox="-2.25 0 70 62" style={svgTransformStyles}>
+          <path
+            data-testid={`${testID}-path`}
+            d="M63.4372 22.8624C66.2475 27.781 66.2475 33.819 63.4372 38.7376L54.981 53.5376C52.1324 58.5231 46.8307 61.6 41.0887 61.6H24.4562C18.7142 61.6 13.4125 58.5231 10.564 53.5376L2.10774 38.7376C-0.702577 33.819 -0.702582 27.781 2.10774 22.8624L10.564 8.06243C13.4125 3.07687 18.7142 0 24.4562 0H41.0887C46.8307 0 52.1324 3.07686 54.981 8.06242L63.4372 22.8624Z"
+            stroke={strokeColor}
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            fill="none"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </Box>
+    );
+  },
+);
+
+HexagonBorder.displayName = 'HexagonBorder';
+
+/**
+ * To prevent a flash when the DOM rehydrates and ensure we don't
+ * mount the clip path multiple times, we use a Portal for the
+ * browser, but mount directly to the dom for our first paint
+ * */
+const safeDocument = getBrowserGlobals()?.document;
+export const HexagonClipPathPortal = memo(() => {
+  const hexagonClipPathContainer = useMemo(
+    // prevent duplicate portal root
+    () => safeDocument?.createElement('div'),
+    [],
+  );
+
+  useEffect(() => {
+    const target = safeDocument?.body;
+
+    // prevent duplicate host
+    if (safeDocument?.getElementById(hexagonClipPathContainerId) || !hexagonClipPathContainer)
+      return undefined;
+
+    hexagonClipPathContainer.id = hexagonClipPathContainerId;
+    hexagonClipPathContainer.style.height = '0px';
+    hexagonClipPathContainer.style.width = '0px';
+    hexagonClipPathContainer.ariaHidden = 'true';
+
+    // Append element to dom
+    target?.appendChild(hexagonClipPathContainer);
+
+    // Avoid removing child from other provider
+    // This happens when multiple PortalProvider are defined
+    return () => {
+      // Remove element from dom
+      target?.removeChild(hexagonClipPathContainer);
+    };
+  }, [hexagonClipPathContainer]);
+
+  if (!hexagonClipPathContainer) return null;
+
+  return createPortal(<HexagonAvatarClipPath />, hexagonClipPathContainer);
+});
+HexagonClipPathPortal.displayName = 'HexagonClipPathPortal';
+
+export const IsoHexagonClipPath = () => {
+  const isBrowser = useIsBrowser();
+  if (!isBrowser) return <HexagonAvatarClipPath />;
+
+  return <HexagonClipPathPortal />;
+};
+IsoHexagonClipPath.displayName = 'IsoHexagonClipPath';
