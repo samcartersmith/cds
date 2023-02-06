@@ -448,6 +448,9 @@ const sidebars = {
           type: 'doc',
           id: 'components/controls/SegmentedControl/segmented-control',
           label: 'Segmented Control',
+          customProps: {
+            tag: 'new',
+          },
         },
         {
           type: 'category',
