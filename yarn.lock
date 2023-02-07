@@ -2639,7 +2639,7 @@ __metadata:
   dependencies:
     "@cbhq/d3": "workspace:*"
     "@cbhq/figma-api": "workspace:^"
-    "@cbhq/mono-tasks": ^0.6.6
+    "@cbhq/mono-tasks": ^0.6.8
     "@cbhq/script-utils": "workspace:^"
     "@types/sharp": ^0.31.0
     "@types/svgo": ^2.6.4
@@ -2767,9 +2767,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mono-tasks@npm:^0.6.6":
-  version: 0.6.6
-  resolution: "@cbhq/mono-tasks@npm:0.6.6::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-tasks%2F-%2F%40cbhq%2Fmono-tasks-0.6.6.tgz"
+"@cbhq/mono-tasks@npm:^0.6.8":
+  version: 0.6.8
+  resolution: "@cbhq/mono-tasks@npm:0.6.8::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-tasks%2F-%2F%40cbhq%2Fmono-tasks-0.6.8.tgz"
   dependencies:
     "@babel/cli": ^7.19.3
     "@babel/core": ^7.20.2
@@ -2829,7 +2829,7 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: f1ae47d18ec8abf7f28ad310c5d8826b9808370454ce67e1f497aa9641c1df7937345d8708fa4cf42f5f0b0614a6320c2869c650660d20cd5bee87e405c5770a
+  checksum: 6976796a4442148503edcb5f7e80045285d1eab86837e8a14e54868912c74a6078f12249126572195a71e0bdab5e02930aed3fa1adb6e08b12f335ffe6d985ee
   languageName: node
   linkType: hard
 
@@ -15347,7 +15347,7 @@ __metadata:
     "@cbhq/jest-preset-mobile": ^0.2.0
     "@cbhq/mono-env": ^0.2.16
     "@cbhq/mono-pipeline": ^0.11.4
-    "@cbhq/mono-tasks": ^0.6.6
+    "@cbhq/mono-tasks": ^0.6.8
     "@cbhq/mono-tasks-mobile": ^0.3.16
     "@cbhq/mono-templates": ^0.3.9
     "@joshcena/docusaurus-plugin-utils": ^0.1.3
