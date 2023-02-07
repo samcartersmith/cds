@@ -1,0 +1,43 @@
+{
+  "name": "@cbhq/cds-migrator",
+  "version": "0.0.1",
+  "description": "Codemod transformations to help upgrade your CDS codebase",
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/cds-migrator"
+  },
+  "keywords": [
+    "cds",
+    "cli",
+    "codemod"
+  ],
+  "packemon": {
+    "format": "lib",
+    "platform": "node"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.11",
+    "ts-morph": "^17.0.1",
+    "update-notifier": "^5.1.0"
+  },
+  "peerDependencies": {
+    "@nrwl/devkit": ">=15.0.0"
+  },
+  "generators": "./generators.json",
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js",
+      "default": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  }
+}

@@ -39,6 +39,9 @@ build:
         name: package-cds-lottie-files
         path: ./packages/lottie-files/publish.Dockerfile
     - BaldurNode:
+        name: package-cds-migrator
+        path: ./packages/cds-migrator/publish.Dockerfile
+    - BaldurNode:
         name: package-cds-mobile
         path: ./packages/mobile/publish.Dockerfile
     - BaldurNode:

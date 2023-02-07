@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "migrate",
+  "type": "object",
+  "title": "Migrate",
+  "description": "Codemod transformations to help upgrade your CDS codebase",
+  "properties": {
+    "version": {
+      "type": "string",
+      "enum": [
+        "4.0.0"
+      ],
+      "description": "Version to migrate to",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    }
+  },
+  "required": [
+    "version"
+  ]
+}

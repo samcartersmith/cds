@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "migrate": {
+      "factory": "./lib/generators/migrate/migrate",
+      "schema": "./src/generators/migrate/schema.json",
+      "description": "Initiate a CDS migration for a breaking version"
+    }
+  }
+}

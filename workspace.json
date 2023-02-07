@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "cds-migrator": "packages/cds-migrator",
     "codegen": "packages/codegen",
     "common": "packages/common",
     "d3": "packages/d3",
