@@ -68,11 +68,18 @@ export function createFeedCard<OnPressFn>({
                     transparent
                     name="annotation"
                     testID={`${testID}-comment`}
+                    accessibilityLabel="Comment"
                     {...comment}
                   />
                 )}
                 {share && (
-                  <IconButton transparent name="share" testID={`${testID}-share`} {...share} />
+                  <IconButton
+                    transparent
+                    name="share"
+                    testID={`${testID}-share`}
+                    accessibilityLabel="Share"
+                    {...share}
+                  />
                 )}
               </HStack>
             )}
@@ -90,7 +97,11 @@ export function createFeedCard<OnPressFn>({
           avatar={avatar}
           metadata={metadata}
           author={author}
-          action={headerAction && <IconButton transparent flush="end" {...headerAction} />}
+          action={
+            headerAction && (
+              <IconButton transparent flush="end" accessibilityLabel="More" {...headerAction} />
+            )
+          }
         />
         <CardBody
           title={title}

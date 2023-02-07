@@ -61,7 +61,14 @@ export function createAnnouncementCardDeprecated<T>({
             avatarUrl={headerAvatarUrl}
             description={headerDescription}
             metaData={headerMetaData}
-            action={<IconButton name={headerAction} onPress={onHeaderActionPress} transparent />}
+            action={
+              <IconButton
+                name={headerAction}
+                onPress={onHeaderActionPress}
+                accessibilityLabel="More"
+                transparent
+              />
+            }
           />
           <CardBody
             title={title}

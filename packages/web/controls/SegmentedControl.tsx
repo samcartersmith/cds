@@ -9,7 +9,7 @@ import React, {
   useState,
 } from 'react';
 import { css } from 'linaria';
-import { IconName, IconSize, SharedProps } from '@cbhq/cds-common';
+import { IconName, IconSize, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
 
 import { useIconButtonStyles } from '../buttons/useIconButtonStyles';
 import { useA11yId } from '../hooks/useA11yId';
@@ -45,7 +45,7 @@ function SegmentedControlInternal(
 
   return (
     <div className={containerStyle} style={vars} ref={ref}>
-      {Object.entries(options).map(([value, option]) => (
+      {options.map(({ label, value, accessibilityLabel }) => (
         <Fragment key={value}>
           <input
             type="radio"
@@ -57,6 +57,7 @@ function SegmentedControlInternal(
             disabled={disabled}
             onChange={handleChange}
             data-testid={testID ? `${testID}-${value}` : undefined}
+            aria-label={accessibilityLabel}
           />
           <Interactable
             as="label"
@@ -66,8 +67,8 @@ function SegmentedControlInternal(
             backgroundColor="backgroundAlternate"
           >
             {/* Hidden label is used to mitigate resizing */}
-            <Label type={type} option={option} iconSize={size} hidden />
-            <Label type={type} option={option} iconSize={size} />
+            <Label type={type} option={label} iconSize={size} hidden />
+            <Label type={type} option={label} iconSize={size} />
           </Interactable>
         </Fragment>
       ))}
@@ -76,7 +77,7 @@ function SegmentedControlInternal(
 }
 
 type LabelProps = Pick<SegmentedControlProps, 'type'> & {
-  option: SegmentedControlProps['options'][number];
+  option: SegmentedControlProps['options'][number]['label'];
   iconSize: IconSize;
   hidden?: boolean;
 };
@@ -89,7 +90,7 @@ function Label({ type, option, iconSize, hidden }: LabelProps) {
       ) : (
         option
       )}
-      <Icon name="checkmark" size="xs" aria-hidden />
+      <Icon name="checkmark" size="xs" />
     </span>
   );
 }
@@ -101,22 +102,39 @@ export type SegmentedControlProps = {
   block?: boolean;
   /** Callback fired when an option is selected */
   onChange?: (value: string) => void;
-
   disabled?: boolean;
-} & (TextOptions | IconOptions) &
+} & (TextOptionProps | IconOptionProps) &
   SharedProps;
 
-type TextOptions = {
+export type TextOptions = readonly TextOption[];
+export type IconOptions = readonly IconOption[];
+
+type BaseOption = {
+  /** The option value */
+  value: string;
+} & Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
+
+type TextOption = {
+  /** The option label to display in the control */
+  label: string;
+} & BaseOption;
+
+type TextOptionProps = {
   type?: 'text';
-  /** The options to render as an object of values and labels */
-  options: Record<string, string>;
+  /** The options to render as an array of values and labels */
+  options: TextOptions;
 };
 
-type IconOptions = {
+type IconOption = {
+  /** The option icon to display in the control */
+  label: IconName;
+} & BaseOption;
+
+type IconOptionProps = {
   type: 'icon';
   iconSize: IconSize;
-  /** The options to render as an object of values and IconNames  */
-  options: Record<string, IconName>;
+  /** The options to render as an array of values and IconNames  */
+  options: IconOptions;
 };
 
 // This is a bit risky, but more ideal than a fixed px value

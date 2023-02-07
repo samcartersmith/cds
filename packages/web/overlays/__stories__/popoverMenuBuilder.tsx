@@ -9,15 +9,14 @@ import {
   DividerBaseProps,
   DotBaseProps,
   FeedCardBaseProps,
-  IconButtonBaseProps,
   IllustrationPictogramNames,
   PictogramProps,
   PopoverMenuBaseProps,
   SelectOptionBaseProps,
-  SharedProps,
   StackBaseProps,
 } from '@cbhq/cds-common/types';
 
+import { IconButtonProps } from '../../buttons';
 import { NavigationIconProps } from '../../icons';
 import { PressableInternalProps, PressableProps } from '../../system/Pressable';
 
@@ -59,7 +58,7 @@ export type CreatePopoverMenuStoriesProps = {
     React.PropsWithChildren<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>
   >;
   SelectOption: ComponentType<React.PropsWithChildren<SelectOptionBaseProps & LinkableProps>>;
-  IconButton: ComponentType<React.PropsWithChildren<IconButtonBaseProps & SharedProps>>;
+  IconButton: ComponentType<React.PropsWithChildren<IconButtonProps>>;
   NavigationBar: ComponentType<React.PropsWithChildren<NavigationBarProps>>;
   NavigationTitle: ComponentType<React.PropsWithChildren<NavigationTitleProps>>;
   Pictogram: ComponentType<React.PropsWithChildren<PictogramProps>>;
@@ -167,7 +166,13 @@ export const popoverMenuBuilder = ({
           visible={visible}
         >
           <PopoverTrigger>
-            <IconButton testID={triggerTestID} transparent name="more" variant="secondary" />
+            <IconButton
+              testID={triggerTestID}
+              transparent
+              name="more"
+              variant="secondary"
+              accessibilityLabel="More"
+            />
           </PopoverTrigger>
           <SectionTitle text="Section Heading" />
           {priceOptions.slice(0, 4).map((option) => (
@@ -222,7 +227,11 @@ export const popoverMenuBuilder = ({
                 disablePortal
               >
                 <PopoverTrigger>
-                  <Pressable as="button" backgroundColor="transparent">
+                  <Pressable
+                    as="button"
+                    backgroundColor="transparent"
+                    accessibilityLabel="App switcher"
+                  >
                     <NavigationIcon name="appSwitcher" />
                   </Pressable>
                 </PopoverTrigger>
@@ -236,7 +245,12 @@ export const popoverMenuBuilder = ({
                   />
                 ))}
               </PopoverMenu>
-              <IconButton transparent name="bell" variant="secondary" />
+              <IconButton
+                transparent
+                name="bell"
+                variant="secondary"
+                accessibilityLabel="Notifications"
+              />
             </HStack>
           }
         >
@@ -365,7 +379,13 @@ export const popoverMenuBuilder = ({
             visible={visible}
           >
             <PopoverTrigger>
-              <IconButton testID={triggerTestID} transparent name="more" variant="secondary" />
+              <IconButton
+                testID={triggerTestID}
+                transparent
+                name="more"
+                variant="secondary"
+                accessibilityLabel="More"
+              />
             </PopoverTrigger>
             <SectionTitle text="Section Heading" />
             {priceOptions.slice(0, 4).map((option) => (

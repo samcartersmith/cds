@@ -11,18 +11,18 @@ describe('CellAccessory', () => {
   it('renders a more', () => {
     render(<CellAccessory type="more" />);
 
-    expect(screen.getByRole('presentation')).toHaveAttribute('data-icon-name', 'more');
+    expect(screen.getByTestId('icon-base-glyph')).toHaveAttribute('data-icon-name', 'more');
   });
 
   it('renders an arrow', () => {
     render(<CellAccessory type="arrow" />);
 
-    expect(screen.getByRole('presentation')).toHaveAttribute('data-icon-name', 'caretRight');
+    expect(screen.getByTestId('icon-base-glyph')).toHaveAttribute('data-icon-name', 'caretRight');
   });
 
   it('renders a selected', () => {
     render(<CellAccessory type="selected" />);
 
-    expect(screen.getByRole('presentation')).toHaveAttribute('data-icon-name', 'checkmark');
+    expect(screen.getByTestId('icon-base-glyph')).toHaveAttribute('data-icon-name', 'checkmark');
   });
 });

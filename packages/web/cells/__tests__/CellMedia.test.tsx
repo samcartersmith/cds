@@ -13,7 +13,7 @@ describe('CellMedia', () => {
   it('renders an icon', () => {
     render(<CellMedia type="icon" name="arrowUp" />);
 
-    expect(screen.getByRole('presentation')).toHaveAttribute('data-icon-name', 'arrowUp');
+    expect(screen.getByTestId('icon-base-glyph')).toHaveAttribute('data-icon-name', 'arrowUp');
   });
 
   it('renders an asset', () => {

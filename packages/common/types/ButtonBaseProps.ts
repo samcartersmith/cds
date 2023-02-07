@@ -1,11 +1,10 @@
 import { IconName } from './IconName';
 import { ElementChildren } from './React';
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative' | 'foregroundMuted';
 
 export type ButtonBaseProps = {
-  /** Full length accessibility label when the child text is not descriptive enough. */
-  accessibilityLabel?: string;
   /** Change to block and expand to 100% of parent width. */
   block?: boolean;
   /** Children to render within the button. */
@@ -40,15 +39,13 @@ export type ButtonBaseProps = {
    * Truncates text after wrapping to a defined number of lines.
    */
   numberOfLines?: number;
-};
+} & Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
 
 export type ButtonGroupBaseProps = {
-  /** Accessibility label describing the group of buttons. */
-  accessibilityLabel: string;
   /** Expand buttons to fill available space within the group. */
   block?: boolean;
   /** Buttons to render as a group. */
   children: ElementChildren<ButtonBaseProps>;
   /** Stack buttons vertically instead of horizontally. */
   vertical?: boolean;
-};
+} & Pick<SharedAccessibilityProps, 'accessibilityLabel'>;

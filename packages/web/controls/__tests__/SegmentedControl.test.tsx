@@ -1,57 +1,70 @@
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import { fireEvent, render, screen } from '@testing-library/react';
-import { IconName } from '@cbhq/cds-common';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { SegmentedControl } from '../SegmentedControl';
+import { IconOptions, SegmentedControl, TextOptions } from '../SegmentedControl';
 
-const options = {
-  eth: 'Ethereum',
-  usd: 'USD',
-};
+const TEXT_OPTIONS: TextOptions = [
+  {
+    label: 'Ethereum',
+    value: 'eth',
+  },
+  {
+    label: 'Bitcoin',
+    value: 'btc',
+  },
+];
+
+const ICON_OPTIONS: IconOptions = [
+  {
+    label: 'ethereum',
+    value: 'eth',
+    accessibilityLabel: 'Ethereum',
+  },
+  {
+    label: 'cashUSD',
+    value: 'usd',
+    accessibilityLabel: 'CashUSD',
+  },
+];
 
 describe('SegmentedControl', () => {
-  it('passes accessibility', async () => {
-    expect(await renderA11y(<SegmentedControl options={options} />)).toHaveNoViolations();
+  it('passes accessibility with text options', async () => {
+    expect(await renderA11y(<SegmentedControl options={TEXT_OPTIONS} />)).toHaveNoViolations();
+  });
+
+  it('passes accessibility with icon options', async () => {
+    expect(
+      await renderA11y(<SegmentedControl options={ICON_OPTIONS} type="icon" iconSize="s" />),
+    ).toHaveNoViolations();
   });
 
   it('renders options', () => {
-    render(<SegmentedControl options={options} />);
+    render(<SegmentedControl options={TEXT_OPTIONS} />);
 
     expect(screen.getAllByRole('radio')).toHaveLength(2);
   });
 
   it('renders text', () => {
-    const items = {
-      eth: 'Ethereum',
-      btc: 'Bitcoin',
-    };
-
-    render(<SegmentedControl options={items} />);
+    render(<SegmentedControl options={TEXT_OPTIONS} />);
 
     expect(screen.getAllByText('Ethereum')[0]).toBeVisible();
     expect(screen.getAllByText('Bitcoin')[0]).toBeVisible();
   });
 
   it('renders icons', () => {
-    const iconNames: Record<string, IconName> = {
-      eth: 'ethereum',
-      usd: 'cashUSD',
-    };
+    render(<SegmentedControl options={ICON_OPTIONS} type="icon" iconSize="s" />);
 
-    render(<SegmentedControl options={iconNames} type="icon" iconSize="s" />);
-
-    expect(screen.getAllByRole('presentation')).toHaveLength(2);
+    expect(screen.getAllByTestId('icon-base-glyph')).toHaveLength(8);
   });
 
   it('triggers onChange', () => {
     const onChange = jest.fn();
 
-    render(<SegmentedControl options={options} onChange={onChange} />);
+    render(<SegmentedControl options={TEXT_OPTIONS} onChange={onChange} />);
 
-    fireEvent.click(screen.getAllByText('USD')[0]);
+    fireEvent.click(screen.getAllByText('Bitcoin')[0]);
 
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenCalledWith('usd');
+    expect(onChange).toHaveBeenCalledWith('btc');
   });
 });

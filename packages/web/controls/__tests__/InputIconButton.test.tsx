@@ -27,7 +27,7 @@ describe('Test InputIconButton inheritFocusedVariant interaction', () => {
 
       fireEvent.click(screen.getByRole('textbox'));
 
-      expect(screen.getByRole('presentation')).toHaveStyle(`color: var(--${focusedColor}`);
+      expect(screen.getByTestId('icon-base-glyph')).toHaveStyle(`color: var(--${focusedColor}`);
     });
   });
 });
@@ -48,6 +48,6 @@ describe('InputIconButton', () => {
 
     fireEvent.click(screen.getByRole('textbox'));
 
-    expect(screen.getByRole('presentation')).toHaveStyle(`color: var(--${variant}`);
+    expect(screen.getByTestId('icon-base-glyph')).toHaveStyle(`color: var(--${variant}`);
   });
 });

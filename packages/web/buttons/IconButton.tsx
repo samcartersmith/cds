@@ -27,7 +27,6 @@ const flexStyles = getFlexStyles({
 export const IconButton = forwardRef(
   (
     {
-      accessibilityLabel,
       as,
       compact = true,
       disabled = false,
@@ -47,7 +46,6 @@ export const IconButton = forwardRef(
 
     return (
       <Pressable
-        aria-label={accessibilityLabel}
         {...props}
         as={as}
         transparentWhileInactive={transparent}

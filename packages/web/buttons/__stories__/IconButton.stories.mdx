@@ -11,7 +11,7 @@ import { IconButton } from '../IconButton';
   <Story
     name="Default"
     decorators={[withStoryLabel('Default')]}
-    args={{ name: 'arrowsHorizontal' }}
+    args={{ name: 'arrowsHorizontal', accessibilityLabel: 'Horizontal arrows' }}
   >
     {(args) => (
       <>
@@ -28,7 +28,7 @@ import { IconButton } from '../IconButton';
   <Story
     name="Without Compact Styles"
     decorators={[withStoryLabel('Compact')]}
-    args={{ name: 'arrowsHorizontal', compact: false }}
+    args={{ name: 'arrowsHorizontal', compact: false, accessibilityLabel: 'Horizontal arrows' }}
   >
     {(args) => (
       <>
@@ -49,7 +49,7 @@ import { IconButton } from '../IconButton';
       disabled: true,
       name: 'arrowsHorizontal',
       variant: 'primary',
-      accessibilityLabel: 'arrowsHorizontal',
+      accessibilityLabel: 'Horizontal arrows',
     }}
   >
     {(args) => <IconButton {...args} />}
@@ -60,7 +60,7 @@ import { IconButton } from '../IconButton';
     args={{
       disabled: true,
       name: 'arrowsHorizontal',
-      accessibilityLabel: 'arrowsHorizontal',
+      accessibilityLabel: 'Horizontal arrows',
     }}
   >
     {(args) => (
@@ -80,7 +80,7 @@ import { IconButton } from '../IconButton';
     args={{
       variant: 'primary',
       name: 'arrowsHorizontal',
-      accessibilityLabel: 'arrowsHorizontal',
+      accessibilityLabel: 'Horizontal arrows',
     }}
   >
     {(args) => (
@@ -97,7 +97,7 @@ import { IconButton } from '../IconButton';
     args={{
       variant: 'secondary',
       name: 'arrowsHorizontal',
-      accessibilityLabel: 'arrowsHorizontal',
+      accessibilityLabel: 'Horizontal arrows',
     }}
   >
     {(args) => (

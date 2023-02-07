@@ -60,7 +60,7 @@ export const NoTabsNoTitle = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton name="arrowLeft" />
+            <IconButton name="arrowLeft" accessibilityLabel="Left arrow" />
           </NavigationBarControls>
         }
         ctas={
@@ -164,7 +164,7 @@ export const TabsNoTitle = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton name="arrowLeft" />
+            <IconButton name="arrowLeft" accessibilityLabel="Left arrow" />
           </NavigationBarControls>
         }
         ctas={
@@ -267,7 +267,7 @@ export const TitleNoTabs = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton name="arrowLeft" />
+            <IconButton name="arrowLeft" accessibilityLabel="Left arrow" />
           </NavigationBarControls>
         }
         titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
@@ -382,7 +382,7 @@ export const TabsAndDisplayTitle = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton name="arrowLeft" />
+            <IconButton name="arrowLeft" accessibilityLabel="Left arrow" />
           </NavigationBarControls>
         }
         titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
@@ -503,7 +503,7 @@ export const SidebarCollapsed = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton name="arrowLeft" />
+            <IconButton name="arrowLeft" accessibilityLabel="Left arrow" />
           </NavigationBarControls>
         }
         titles={<NavigationBarTitles title={title} subtitle={subtitle} />}
@@ -590,7 +590,7 @@ export const SidebarWithSections = () => {
       <NavigationBar
         controls={
           <NavigationBarControls>
-            <IconButton name="arrowLeft" />
+            <IconButton name="arrowLeft" accessibilityLabel="Left arrow" />
           </NavigationBarControls>
         }
         titles={<NavigationBarTitles title={title} subtitle={subtitle} />}

@@ -1,0 +1,13 @@
+:::tip Accessibility tip
+
+By default, navigation icons are considered decorative and are hidden from assistive technology. When an icon is presented together with a visible label, there's no need to set an accessible label as the visible text already provides the necessary context.
+
+<br />
+
+However, if the icon is used as a stand-alone image without a visible label, then an accessible label should be provided via `accessibilityLabel`.
+
+<br />
+
+For a navigation icon without a visible label that is part of a composed interactable (e.g. a [NavigationIconButton](/components/navigation-icon-button)), the interactable parent is responsible for handling the accessible label; the icon itself should remain purely decorative.
+
+:::

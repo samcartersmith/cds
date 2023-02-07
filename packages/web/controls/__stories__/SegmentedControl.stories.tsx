@@ -1,10 +1,9 @@
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
+/* eslint-disable react-perf/jsx-no-new-array-as-prop */
 import { useState } from 'react';
-import { IconName } from '@cbhq/cds-common';
 
 import { VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { SegmentedControl } from '../SegmentedControl';
+import { IconOptions, SegmentedControl, TextOptions } from '../SegmentedControl';
 
 export default {
   title: 'Core Components/Segmented Control',
@@ -12,20 +11,38 @@ export default {
 };
 
 export const Normal = () => {
-  const options1 = {
-    eth: 'ETH',
-    usd: 'USD',
-  };
+  const options1: TextOptions = [
+    {
+      label: 'ETH',
+      value: 'eth',
+    },
+    {
+      label: 'USD',
+      value: 'usd',
+    },
+  ];
 
-  const options2 = {
-    chicken: '🐔',
-    egg: '🥚',
-  };
+  const options2: TextOptions = [
+    {
+      label: '🐔',
+      value: 'chicken',
+    },
+    {
+      label: '🥚',
+      value: 'egg',
+    },
+  ];
 
-  const options3 = {
-    black: 'black',
-    white: 'white',
-  };
+  const options3: TextOptions = [
+    {
+      label: 'black',
+      value: 'black',
+    },
+    {
+      label: 'white',
+      value: 'white',
+    },
+  ];
 
   return (
     <VStack gap={2}>
@@ -39,11 +56,20 @@ export const Normal = () => {
 };
 
 export const Dense = () => {
-  const options = {
-    eth: 'ETH',
-    btc: 'BTC',
-    usd: 'USD',
-  };
+  const options: TextOptions = [
+    {
+      label: 'ETH',
+      value: 'eth',
+    },
+    {
+      label: 'BTC',
+      value: 'btc',
+    },
+    {
+      label: 'USD',
+      value: 'usd',
+    },
+  ];
 
   const [value, setValue] = useState('btc');
 
@@ -57,10 +83,18 @@ export const Dense = () => {
 };
 
 export const Icons = () => {
-  const options1: Record<string, IconName> = {
-    eth: 'ethereum',
-    usd: 'cashUSD',
-  };
+  const options1: IconOptions = [
+    {
+      label: 'ethereum',
+      value: 'eth',
+      accessibilityLabel: 'Ethereum',
+    },
+    {
+      label: 'cashUSD',
+      value: 'usd',
+      accessibilityLabel: 'CashUSD',
+    },
+  ];
 
   const [value, setValue] = useState('eth');
 

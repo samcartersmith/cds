@@ -27,7 +27,6 @@ export const NavigationIconButton = memo(
   forwardRef(function NavigationIconButton(
     {
       active,
-      accessibilityLabel,
       as,
       compact = true,
       disabled = false,
@@ -70,7 +69,6 @@ export const NavigationIconButton = memo(
         borderWidth="button"
         onPress={handlePress}
         noScaleOnPress
-        aria-label={accessibilityLabel}
         {...props}
         as={as}
         backgroundColor={backgroundColor}

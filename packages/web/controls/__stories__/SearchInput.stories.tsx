@@ -64,7 +64,7 @@ export const HideStartIconSearchExample = function HideStartIconSearchExample() 
 
   return (
     <HStack spacing={2} gap={1}>
-      <IconButton name="backArrow" transparent />
+      <IconButton name="backArrow" transparent accessibilityLabel="Back arrow" />
       <SearchInput
         accessibilityLabel="Search"
         hideStartIcon

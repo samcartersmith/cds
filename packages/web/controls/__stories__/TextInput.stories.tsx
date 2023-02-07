@@ -172,7 +172,11 @@ export const Disabled = function Disabled() {
   return (
     <>
       <TextInput label="Disabled label" disabled />
-      <TextInput label="Label" start={<InputIconButton name="add" transparent />} disabled />
+      <TextInput
+        label="Label"
+        start={<InputIconButton name="add" transparent accessibilityLabel="Add" />}
+        disabled
+      />
     </>
   );
 };
@@ -195,7 +199,12 @@ export const NoLabel = function NoLabel() {
 };
 
 export const StartContent = function StartContent() {
-  return <TextInput label="Label" start={<InputIconButton name="add" transparent />} />;
+  return (
+    <TextInput
+      label="Label"
+      start={<InputIconButton name="add" transparent accessibilityLabel="Add" />}
+    />
+  );
 };
 
 export const EndContent = function EndContent() {
@@ -219,7 +228,13 @@ export const Suffix = function Suffix() {
 };
 
 export const SuffixAndEndContent = function SuffixAndEndContent() {
-  return <TextInput label="Label" suffix="USD" end={<InputIconButton name="add" transparent />} />;
+  return (
+    <TextInput
+      label="Label"
+      suffix="USD"
+      end={<InputIconButton name="add" transparent accessibilityLabel="Add" />}
+    />
+  );
 };
 
 /**

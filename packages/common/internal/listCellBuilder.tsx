@@ -460,7 +460,7 @@ export function listCellBuilder(
         title="Title"
         description="Description"
         detail="Detail"
-        action={<IconButton name="externalLink" />}
+        action={<IconButton name="externalLink" accessibilityLabel="External link" />}
       />
     </>
   );

@@ -56,7 +56,6 @@ const IconSheetForSize = ({ size = 'm' }: { size: Exclude<IconSize, 'xs'> }) => 
           .map((filteredName) => (
             <VStack spacing={3} alignItems="center" key={filteredName}>
               <NavigationIcon
-                title={filteredName}
                 key={filteredName}
                 name={filteredName}
                 size={size}

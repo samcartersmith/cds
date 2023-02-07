@@ -3,7 +3,7 @@ import { buttonBuilder } from '@cbhq/cds-common/internal/buttonBuilder';
 import { NavigationIconButton } from '../NavigationIconButton';
 
 const { build, buildSheet } = buttonBuilder(NavigationIconButton, {
-  args: { frontier: true, name: 'appSwitcher' },
+  args: { frontier: true, name: 'appSwitcher', accessibilityLabel: 'App switcher' },
 });
 
 export const Default = build();

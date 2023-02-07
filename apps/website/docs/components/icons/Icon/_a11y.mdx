@@ -1,19 +1,13 @@
-By default, icons are considered decorative, and are hidden from assistive technology. When used within a component that has no label (like an icon button), a label should be provided to the parent component using `accessibilityLabel`.
+:::tip Accessibility tip
 
-```jsx
-<IconButton name="calendar" accessibilityLabel="Recurring calendar" />
-```
+By default, icons are considered decorative and are hidden from assistive technology. When an icon is presented together with a visible label, there's no need to set an accessible label as the visible text already provides the necessary context.
 
-However, if the icon is used stand-alone, the icon can be labeled through another element's content by mapping to their ID.
+<br />
 
-```jsx
-<Icon name="calendar" labeledBy="recurring-calendar" />
+However, if the icon is used as a stand-alone image without a visible label, then an accessible label should be provided via `accessibilityLabel`.
 
-<div id="recurring-calendar">The recurring calendar for your BTC transactions.</div>
-```
+<br />
 
-Or by providing its own `title` alongside a custom label ID.
+For an icon without a visible label that is part of a composed interactable (e.g. an [IconButton](/components/icon-button)), the interactable parent is responsible for handling the accessible label; the icon itself should remain purely decorative.
 
-```jsx
-<Icon name="calendar" title="Recurring calendar" labeledBy="recurring-calendar" />
-```
+:::

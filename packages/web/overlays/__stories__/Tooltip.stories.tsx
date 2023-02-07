@@ -60,25 +60,25 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
           >
             <VStack spacing={2}>
               <DotSymbol size="m" pin="bottom-start" source={assets.eth.imageUrl}>
-                <IconButton name="bell" variant="secondary" />
+                <IconButton name="bell" variant="secondary" accessibilityLabel="Notifications" />
               </DotSymbol>
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="left">
             <DotSymbol size="s" pin="top-end" source={assets.ada.imageUrl}>
               <VStack spacing={2}>
-                <IconButton name="bell" variant="secondary" />
+                <IconButton name="bell" variant="secondary" accessibilityLabel="Notifications" />
               </VStack>
             </DotSymbol>
           </Tooltip>
           <Tooltip content={content} placement="right">
             <VStack spacing={2}>
-              <IconButton name="bell" variant="secondary" />
+              <IconButton name="bell" variant="secondary" accessibilityLabel="Notifications" />
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="bottom">
             <VStack spacing={2}>
-              <IconButton name="bell" variant="secondary" />
+              <IconButton name="bell" variant="secondary" accessibilityLabel="Notifications" />
             </VStack>
           </Tooltip>
         </VStack>

@@ -23,7 +23,9 @@ export function inputIconButtonBuilder(
             label={variant}
             key={`${variant}-input-iconbutton`}
             variant={variant}
-            start={<InputIconButton variant="foregroundMuted" name="add" />}
+            start={
+              <InputIconButton variant="foregroundMuted" name="add" accessibilityLabel="Add" />
+            }
           />
         ))}
       </>
@@ -35,7 +37,7 @@ export function inputIconButtonBuilder(
       <TextInput
         label="Label"
         variant="foregroundMuted"
-        start={<InputIconButton name="search" />}
+        start={<InputIconButton name="search" accessibilityLabel="Search" />}
       />
     );
   };
@@ -45,20 +47,29 @@ export function inputIconButtonBuilder(
       <TextInput
         label="Search"
         variant="foregroundMuted"
-        start={<InputIconButton variant="secondary" name="search" />}
+        start={<InputIconButton variant="secondary" name="search" accessibilityLabel="Search" />}
       />
     );
   };
 
   const BasicEnd = () => {
-    return <TextInput label="Label" end={<InputIconButton name="add" />} />;
+    return (
+      <TextInput label="Label" end={<InputIconButton name="add" accessibilityLabel="Add" />} />
+    );
   };
 
   const AddCustomColor = () => {
     return (
       <TextInput
         label="Label"
-        start={<InputIconButton disableInheritFocusStyle variant="foregroundMuted" name="add" />}
+        start={
+          <InputIconButton
+            disableInheritFocusStyle
+            variant="foregroundMuted"
+            name="add"
+            accessibilityLabel="Add"
+          />
+        }
       />
     );
   };
@@ -73,6 +84,7 @@ export function inputIconButtonBuilder(
             disableInheritFocusStyle
             variant="foregroundMuted"
             name="add"
+            accessibilityLabel="Add"
           />
         }
       />
@@ -83,7 +95,7 @@ export function inputIconButtonBuilder(
   const InvalidPlacement = () => {
     return (
       <Box>
-        <InputIconButton name="add" variant="foregroundMuted" />
+        <InputIconButton name="add" variant="foregroundMuted" accessibilityLabel="Add" />
       </Box>
     );
   };

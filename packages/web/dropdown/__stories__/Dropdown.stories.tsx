@@ -65,7 +65,13 @@ export const Default = ({
   return (
     <HStack gap={3} spacing={4} height={containerHeight}>
       <Dropdown ref={dropdownRef} onChange={setValue} content={content} value={value} {...props}>
-        <IconButton name="more" variant="secondary" transparent testID={props.subjectTestID} />
+        <IconButton
+          name="more"
+          variant="secondary"
+          accessibilityLabel="More"
+          transparent
+          testID={props.subjectTestID}
+        />
       </Dropdown>
       <Button onPress={handleButtonPress}>Open Menu</Button>
     </HStack>
@@ -93,7 +99,7 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
         enableMobileModal={enableMobileModal}
       >
         <DotCount count={4} pin="top-end">
-          <IconButton name="more" variant="secondary" transparent />
+          <IconButton name="more" variant="secondary" transparent accessibilityLabel="More" />
         </DotCount>
       </Dropdown>
     </HStack>
@@ -179,7 +185,7 @@ export const SubMenu = () => {
           onChange={handleMenuValueChange}
           value={menuValue}
         >
-          <IconButton name="more" />
+          <IconButton name="more" accessibilityLabel="More" />
         </Dropdown>
       </HStack>
       <HStack
