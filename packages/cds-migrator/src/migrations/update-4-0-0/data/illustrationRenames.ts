@@ -1,4 +1,4 @@
-export const renames = {
+export const illustrationRenames = {
   HeroSquare: {
     cbOnePercentOff: 'coinbaseOnePercentOff',
     cbOneRewardsHeroSquare: 'coinbaseOneRewards',

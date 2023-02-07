@@ -11,7 +11,9 @@ export type MigrateOptions = {
 async function migrate(tree: Tree, { version }: MigrateOptions) {
   if (version in migrations) {
     const fns = migrations[version];
-    await Promise.all(fns.map(async (fn) => fn(tree)));
+    for await (const fn of fns) {
+      await fn(tree);
+    }
   }
 }
 
