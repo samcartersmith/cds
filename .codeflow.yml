@@ -32,15 +32,30 @@ build:
     - BaldurNode:
         name: package-cds-icons
         path: ./packages/icons/publish.Dockerfile
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
+        expire_keep_tags_after_days: 1 # the number of days to keep a master build after it has been successfully deployed. There's no reason to republish a package, so this value is 1.
+        expire_tmp_tags_after_days: 1 # the number of days to keep a master build. Since builds are manual for packages, publishing should happen quickly after a build, so this value is 1.
+        expire_all_after_days: 2 # the number of days to keep any other build tags. This should be unused, but it's set to 2 so if it breaks something it's easier to identify that this is what caused it.
     - BaldurNode:
         name: package-cds-illustrations
         path: ./packages/illustrations/publish.Dockerfile
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
+        expire_keep_tags_after_days: 1
+        expire_tmp_tags_after_days: 1
+        expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-lottie-files
         path: ./packages/lottie-files/publish.Dockerfile
     - BaldurNode:
         name: package-cds-migrator
         path: ./packages/cds-migrator/publish.Dockerfile
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
+        expire_keep_tags_after_days: 1
+        expire_tmp_tags_after_days: 1
+        expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-mobile
         path: ./packages/mobile/publish.Dockerfile
