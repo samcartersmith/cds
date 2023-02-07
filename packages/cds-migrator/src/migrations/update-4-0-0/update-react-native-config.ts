@@ -21,7 +21,7 @@ export default async function updateReactNativeConfig(tree: Tree) {
         files.forEach((file) => {
           const contents = fs.readFileSync(file, 'utf-8');
           const newContent = contents.replaceAll(
-            '@cbhq/cds-fonts/native',
+            '@cbhq/cds-mobile/icons/font',
             '@cbhq/cds-icons/fonts/native',
           );
           fs.writeFileSync(file, newContent, 'utf-8');
