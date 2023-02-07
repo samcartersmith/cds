@@ -1,5 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import { m as motion } from 'framer-motion';
+import { css } from 'linaria';
 import { ForwardedRef } from '@cbhq/cds-common';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
@@ -12,6 +13,10 @@ import { useMotionProps } from '../motion/useMotionProps';
 import { isRtl } from '../utils/isRtl';
 
 const MotionBox = motion(Box);
+
+const boxClassName = css`
+  contain: content;
+`;
 
 export const ProgressBar = memo(
   forwardRef(
@@ -59,7 +64,8 @@ export const ProgressBar = memo(
               flexShrink={1}
               height={height}
               dangerouslySetBackground={palette.line}
-              borderRadius="standard"
+              borderRadius="rounded"
+              dangerouslySetClassName={boxClassName}
               overflow="hidden"
             >
               <MotionBox
@@ -71,7 +77,7 @@ export const ProgressBar = memo(
                 flexGrow={0}
                 width="100%"
                 opacity={disableAnimateOnMount ? 1 : 0}
-                borderRadius="standard"
+                borderRadius="rounded"
                 dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
                 animate={motionProps.animate}
                 transition={motionProps.transition}
