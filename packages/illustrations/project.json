@@ -4,24 +4,13 @@
   "sourceRoot": "packages/illustrations",
   "projectType": "library",
   "targets": {
-    "prebuild": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "echo 'Building dts for .nx directory for non pakemon packages which require generated types for project references'",
-          "tsc --project packages/illustrations/tsconfig.json"
-        ],
-        "parallel": false
-      }
-    },
     "build": {
       "outputs": [
         "{projectRoot}/dts",
         "{projectRoot}/lib"
       ],
       "dependsOn": [
-        "^build",
-        "prebuild"
+        "^build"
       ],
       "executor": "@cbhq/mono-tasks:build-package"
     },
