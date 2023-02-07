@@ -186,6 +186,8 @@ const names: UiIconName[] = [
   'percentage',
   'phone',
   'pin',
+  'planetActive',
+  'planetInactive',
   'play',
   'profile',
   'protection',

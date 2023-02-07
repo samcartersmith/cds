@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-02-02T18:45:10.417Z",
-  "metadata": { "lastUnicode": 62121 },
+  "lastUpdated": "2023-02-07T15:16:17.756Z",
+  "metadata": { "lastUnicode": 61642 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -15,7 +15,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60986 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60991 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.236Z",
+      "lastUpdated": "2023-02-07T14:44:36.588Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-trophyCup-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-trophyCup-12-inactive.svg",
@@ -37,7 +37,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60511 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60521 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:21.644Z",
+      "lastUpdated": "2023-02-07T14:44:10.407Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-trading-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-trading-12-inactive.svg",
@@ -59,7 +59,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60956 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60961 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:21.613Z",
+      "lastUpdated": "2023-02-07T14:44:10.289Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-taxes-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-taxes-12-inactive.svg",
@@ -81,7 +81,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60576 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60581 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:04.599Z",
+      "lastUpdated": "2023-02-07T14:44:10.610Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-tag-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-tag-12-inactive.svg",
@@ -103,7 +103,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60806 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60811 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:04.561Z",
+      "lastUpdated": "2023-02-07T14:43:56.291Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-support-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-support-12-inactive.svg",
@@ -125,7 +125,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61086 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61096 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:28.506Z",
+      "lastUpdated": "2023-02-07T14:44:49.817Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-sun-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-sun-12-inactive.svg",
@@ -147,7 +147,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60916 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60921 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:21.667Z",
+      "lastUpdated": "2023-02-07T14:44:36.508Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-shoppingCart-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-shoppingCart-12-inactive.svg",
@@ -169,7 +169,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60686 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60691 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:28.528Z",
+      "lastUpdated": "2023-02-07T14:44:36.367Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-settings-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-settings-12-inactive.svg",
@@ -191,7 +191,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60946 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60936 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.207Z",
+      "lastUpdated": "2023-02-07T14:44:10.495Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-securityShield-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-securityShield-12-inactive.svg",
@@ -213,7 +213,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60701 } },
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60706 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:54.864Z",
+      "lastUpdated": "2023-02-07T14:44:36.605Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-scanQrCode-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-scanQrCode-12-inactive.svg",
@@ -235,7 +235,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61391 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61396 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.919Z",
+      "lastUpdated": "2023-02-07T14:43:56.127Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-royalty-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-royalty-12-inactive.svg",
@@ -257,7 +257,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61306 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61311 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:21.685Z",
+      "lastUpdated": "2023-02-07T14:44:36.533Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-queryTransact-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-queryTransact-12-inactive.svg",
@@ -279,7 +279,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60816 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60821 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:21.649Z",
+      "lastUpdated": "2023-02-07T14:44:36.454Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-planet-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-planet-12-inactive.svg",
@@ -301,7 +301,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61116 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61121 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.261Z",
+      "lastUpdated": "2023-02-07T14:44:23.804Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-peopleGroup-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-peopleGroup-12-inactive.svg",
@@ -323,7 +323,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61226 } },
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61231 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:38.614Z",
+      "lastUpdated": "2023-02-07T14:44:23.841Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-pencil-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-pencil-12-inactive.svg",
@@ -345,7 +345,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60976 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60981 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:54.846Z",
+      "lastUpdated": "2023-02-07T14:44:36.568Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-paymentCard-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-paymentCard-12-inactive.svg",
@@ -367,7 +367,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60531 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60551 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:28.653Z",
+      "lastUpdated": "2023-02-07T14:44:36.613Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-pay-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-pay-12-inactive.svg",
@@ -389,7 +389,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61296 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61301 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.111Z",
+      "lastUpdated": "2023-02-07T14:44:36.324Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-participate-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-participate-12-inactive.svg",
@@ -411,7 +411,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60556 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60561 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:28.498Z",
+      "lastUpdated": "2023-02-07T14:44:23.514Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-newsfeed-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-newsfeed-12-inactive.svg",
@@ -433,7 +433,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60996 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61001 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.243Z",
+      "lastUpdated": "2023-02-07T14:44:10.562Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-moreVertical-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-moreVertical-12-inactive.svg",
@@ -455,7 +455,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61076 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61081 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.284Z",
+      "lastUpdated": "2023-02-07T14:44:23.824Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-moon-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-moon-12-inactive.svg",
@@ -477,7 +477,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61091 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61101 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.192Z",
+      "lastUpdated": "2023-02-07T14:44:36.525Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-light-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-light-12-inactive.svg",
@@ -499,7 +499,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60586 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60591 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.291Z",
+      "lastUpdated": "2023-02-07T14:44:36.674Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-invoice-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-invoice-12-inactive.svg",
@@ -521,7 +521,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61021 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61026 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:18.109Z",
+      "lastUpdated": "2023-02-07T14:44:49.885Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-interest-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-interest-12-inactive.svg",
@@ -543,7 +543,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60641 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60651 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.134Z",
+      "lastUpdated": "2023-02-07T14:44:49.828Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-home-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-home-12-inactive.svg",
@@ -565,7 +565,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61201 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61206 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.276Z",
+      "lastUpdated": "2023-02-07T14:44:10.618Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-hiddenEye-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-hiddenEye-12-inactive.svg",
@@ -587,7 +587,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61141 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61146 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.150Z",
+      "lastUpdated": "2023-02-07T14:43:56.368Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-heart-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-heart-12-inactive.svg",
@@ -609,7 +609,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61316 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61321 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.141Z",
+      "lastUpdated": "2023-02-07T14:43:56.275Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-hammer-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-hammer-12-inactive.svg",
@@ -631,7 +631,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60596 } },
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60611 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:04.583Z",
+      "lastUpdated": "2023-02-07T14:44:50.067Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-giftBox-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-giftBox-12-inactive.svg",
@@ -653,7 +653,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61381 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61386 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:08.031Z",
+      "lastUpdated": "2023-02-07T14:44:49.864Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-ghost-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-ghost-12-inactive.svg",
@@ -675,7 +675,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60636 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60646 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:14.200Z",
+      "lastUpdated": "2023-02-07T14:44:50.049Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gab-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gab-12-inactive.svg",
@@ -697,7 +697,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61066 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61071 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:18.157Z",
+      "lastUpdated": "2023-02-07T14:44:58.937Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-faces-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-faces-12-inactive.svg",
@@ -719,7 +719,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60951 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60941 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:04.505Z",
+      "lastUpdated": "2023-02-07T14:44:49.873Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-eye-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-eye-12-inactive.svg",
@@ -741,7 +741,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60761 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60766 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:04.609Z",
+      "lastUpdated": "2023-02-07T14:44:36.649Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-earn-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-earn-12-inactive.svg",
@@ -756,14 +756,14 @@
       "name": "drops",
       "description": "navigation, specialty, sparkles, drops, special, rare, ✨",
       "components": [
-        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62119 } },
-        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62118 } },
-        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62117 } },
-        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62116 } },
-        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62115 } },
-        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62114 } }
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61636 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61635 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61634 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61633 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61632 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61631 } }
       ],
-      "lastUpdated": "2023-01-12T19:39:59.948Z",
+      "lastUpdated": "2023-02-07T14:44:49.941Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-drops-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-drops-12-inactive.svg",
@@ -785,7 +785,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60966 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60971 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:28.514Z",
+      "lastUpdated": "2023-02-07T14:44:36.334Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-documentation-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-documentation-12-inactive.svg",
@@ -807,7 +807,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60796 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60801 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:54.745Z",
+      "lastUpdated": "2023-02-07T14:44:49.906Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-directDeposit-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-directDeposit-12-inactive.svg",
@@ -822,14 +822,14 @@
       "name": "diamond",
       "description": "navigation, specialty, diamond, rare, crystal, gem, hold, 💎",
       "components": [
-        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62111 } },
-        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62110 } },
-        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62109 } },
-        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62108 } },
-        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62107 } },
-        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62106 } }
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61630 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61629 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61628 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61627 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61626 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61625 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:54.753Z",
+      "lastUpdated": "2023-02-07T14:44:49.928Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-diamond-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-diamond-12-inactive.svg",
@@ -851,7 +851,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60626 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60631 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:54.906Z",
+      "lastUpdated": "2023-02-07T14:44:50.130Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-defi-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-defi-12-inactive.svg",
@@ -873,7 +873,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60566 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60571 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:08.936Z",
+      "lastUpdated": "2023-02-07T14:44:49.855Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-dashboard-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-dashboard-12-inactive.svg",
@@ -895,7 +895,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61046 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61051 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:54.873Z",
+      "lastUpdated": "2023-02-07T14:43:33.683Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-crystalBall-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-crystalBall-12-inactive.svg",
@@ -917,7 +917,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61191 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61196 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:08.021Z",
+      "lastUpdated": "2023-02-07T14:44:49.808Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-comment-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-comment-12-inactive.svg",
@@ -939,7 +939,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61161 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61166 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:21.696Z",
+      "lastUpdated": "2023-02-07T14:44:23.750Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-collection-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-collection-12-inactive.svg",
@@ -961,7 +961,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61286 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61291 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:38.497Z",
+      "lastUpdated": "2023-02-07T14:44:23.599Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-cloud-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-cloud-12-inactive.svg",
@@ -983,7 +983,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60541 } },
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60536 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:38.473Z",
+      "lastUpdated": "2023-02-07T14:44:23.584Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-chartPie-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-chartPie-12-inactive.svg",
@@ -1005,7 +1005,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60506 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60546 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:38.561Z",
+      "lastUpdated": "2023-02-07T14:44:50.075Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-chartCandles-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-chartCandles-12-inactive.svg",
@@ -1027,7 +1027,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60731 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60736 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:38.621Z",
+      "lastUpdated": "2023-02-07T14:44:36.708Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-chartBar-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-chartBar-12-inactive.svg",
@@ -1049,7 +1049,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60616 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60661 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:38.481Z",
+      "lastUpdated": "2023-02-07T14:44:58.929Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-cash-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-cash-12-inactive.svg",
@@ -1071,7 +1071,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60601 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60606 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.911Z",
+      "lastUpdated": "2023-02-07T14:44:10.306Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-caret-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-caret-12-inactive.svg",
@@ -1093,7 +1093,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61011 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61016 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:38.447Z",
+      "lastUpdated": "2023-02-07T14:44:36.345Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-browser-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-browser-12-inactive.svg",
@@ -1115,7 +1115,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60516 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60526 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:28.578Z",
+      "lastUpdated": "2023-02-07T14:44:10.400Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-bell-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-bell-12-inactive.svg",
@@ -1137,7 +1137,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61106 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61111 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:28.682Z",
+      "lastUpdated": "2023-02-07T14:44:23.863Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-astronautHelmet-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-astronautHelmet-12-inactive.svg",
@@ -1159,7 +1159,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60871 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60876 } }
       ],
-      "lastUpdated": "2023-01-12T19:39:59.983Z",
+      "lastUpdated": "2023-02-07T14:43:56.283Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-application-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-application-12-inactive.svg",
@@ -1181,7 +1181,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60881 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60886 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:21.714Z",
+      "lastUpdated": "2023-02-07T14:43:33.705Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-appSwitcher-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-appSwitcher-12-inactive.svg",
@@ -1203,7 +1203,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60621 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60656 } }
       ],
-      "lastUpdated": "2023-01-12T19:40:00.028Z",
+      "lastUpdated": "2023-02-07T14:43:56.339Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-addPeople-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-addPeople-12-inactive.svg",
@@ -1225,7 +1225,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61416 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61421 } }
       ],
-      "lastUpdated": "2023-02-02T01:33:08.074Z",
+      "lastUpdated": "2023-02-07T14:44:50.022Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-activity-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-activity-12-inactive.svg",
@@ -1247,7 +1247,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60926 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60931 } }
       ],
-      "lastUpdated": "2023-01-12T19:41:04.604Z",
+      "lastUpdated": "2023-02-07T14:44:50.113Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-account-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-account-12-inactive.svg",
@@ -1262,14 +1262,14 @@
       "name": "magnifyingGlass",
       "description": "",
       "components": [
-        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61436 } },
-        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61431 } },
-        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61437 } },
-        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61432 } },
-        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61438 } },
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61433 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61438 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61432 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61437 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61431 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61436 } }
       ],
-      "lastUpdated": "2023-01-11T18:26:08.717Z",
+      "lastUpdated": "2023-02-07T14:44:36.445Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-magnifyingGlass-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-magnifyingGlass-12-inactive.svg",
@@ -1284,14 +1284,14 @@
       "name": "copy",
       "description": "navigation, specialty, copy, mimic, duplicate, identical, another",
       "components": [
-        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61502 } },
-        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61507 } },
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61503 } },
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61508 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61502 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61507 } },
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61501 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61506 } }
       ],
-      "lastUpdated": "2023-02-02T01:33:08.063Z",
+      "lastUpdated": "2023-02-07T14:44:36.405Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-copy-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-copy-12-inactive.svg",
@@ -1306,14 +1306,14 @@
       "name": "menu",
       "description": "hamburger, menu, navigation, 🍔, 🥪",
       "components": [
-        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61551 } },
-        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61556 } },
-        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61552 } },
-        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61557 } },
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61553 } },
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61558 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61552 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61557 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61551 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61556 } }
       ],
-      "lastUpdated": "2023-01-11T18:27:27.357Z",
+      "lastUpdated": "2023-02-07T14:44:10.324Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-menu-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-menu-12-inactive.svg",
@@ -1335,7 +1335,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61611 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61606 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.862Z",
+      "lastUpdated": "2023-02-07T14:44:23.730Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-rocketShip-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-rocketShip-12-inactive.svg",
@@ -1357,7 +1357,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60681 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60696 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.423Z",
+      "lastUpdated": "2023-02-07T14:44:50.040Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-wallet-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-wallet-12-inactive.svg",
@@ -1376,7 +1376,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60082 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60081 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.773Z",
+      "lastUpdated": "2023-02-07T14:44:36.516Z",
       "outputs": {
         "svg12": "./ui/svg/ui-add-12.svg",
         "svg16": "./ui/svg/ui-add-16.svg",
@@ -1392,7 +1392,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60772 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60771 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.680Z",
+      "lastUpdated": "2023-02-07T14:44:23.771Z",
       "outputs": {
         "svg12": "./ui/svg/ui-airdrop-12.svg",
         "svg16": "./ui/svg/ui-airdrop-16.svg",
@@ -1408,7 +1408,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60052 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60051 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.571Z",
+      "lastUpdated": "2023-02-07T14:44:36.396Z",
       "outputs": {
         "svg12": "./ui/svg/ui-allTimeHigh-12.svg",
         "svg16": "./ui/svg/ui-allTimeHigh-16.svg",
@@ -1424,7 +1424,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60292 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60291 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.918Z",
+      "lastUpdated": "2023-02-07T14:44:36.596Z",
       "outputs": {
         "svg12": "./ui/svg/ui-annotation-12.svg",
         "svg16": "./ui/svg/ui-annotation-16.svg",
@@ -1440,7 +1440,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60157 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60156 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.666Z",
+      "lastUpdated": "2023-02-07T14:44:23.553Z",
       "outputs": {
         "svg12": "./ui/svg/ui-api-12.svg",
         "svg16": "./ui/svg/ui-api-16.svg",
@@ -1456,7 +1456,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60092 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60091 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.061Z",
+      "lastUpdated": "2023-02-07T14:44:23.832Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowDown-12.svg",
         "svg16": "./ui/svg/ui-arrowDown-16.svg",
@@ -1472,7 +1472,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59792 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59791 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.758Z",
+      "lastUpdated": "2023-02-07T14:44:23.852Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowLeft-12.svg",
         "svg16": "./ui/svg/ui-arrowLeft-16.svg",
@@ -1488,7 +1488,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59797 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59796 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.673Z",
+      "lastUpdated": "2023-02-07T14:44:23.538Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowRight-12.svg",
         "svg16": "./ui/svg/ui-arrowRight-16.svg",
@@ -1504,7 +1504,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60097 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60096 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.834Z",
+      "lastUpdated": "2023-02-07T14:44:36.639Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowUp-12.svg",
         "svg16": "./ui/svg/ui-arrowUp-16.svg",
@@ -1520,7 +1520,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60032 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60031 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.645Z",
+      "lastUpdated": "2023-02-07T14:44:50.058Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowsHorizontal-12.svg",
         "svg16": "./ui/svg/ui-arrowsHorizontal-16.svg",
@@ -1536,7 +1536,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60112 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60111 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.628Z",
+      "lastUpdated": "2023-02-07T14:44:23.531Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowsVertical-12.svg",
         "svg16": "./ui/svg/ui-arrowsVertical-16.svg",
@@ -1552,7 +1552,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61452 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61451 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.644Z",
+      "lastUpdated": "2023-02-07T14:44:23.709Z",
       "outputs": {
         "svg12": "./ui/svg/ui-artwork-12.svg",
         "svg16": "./ui/svg/ui-artwork-16.svg",
@@ -1568,7 +1568,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60422 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60421 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.729Z",
+      "lastUpdated": "2023-02-07T14:44:23.815Z",
       "outputs": {
         "svg12": "./ui/svg/ui-avatar-12.svg",
         "svg16": "./ui/svg/ui-avatar-16.svg",
@@ -1584,7 +1584,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60322 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60321 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.899Z",
+      "lastUpdated": "2023-02-07T14:44:23.606Z",
       "outputs": {
         "svg12": "./ui/svg/ui-average-12.svg",
         "svg16": "./ui/svg/ui-average-16.svg",
@@ -1600,7 +1600,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60447 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60446 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.892Z",
+      "lastUpdated": "2023-02-07T14:44:23.561Z",
       "outputs": {
         "svg12": "./ui/svg/ui-backArrow-12.svg",
         "svg16": "./ui/svg/ui-backArrow-16.svg",
@@ -1616,7 +1616,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59932 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59931 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.700Z",
+      "lastUpdated": "2023-02-07T14:44:23.760Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bank-12.svg",
         "svg16": "./ui/svg/ui-bank-16.svg",
@@ -1632,7 +1632,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59942 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59941 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.829Z",
+      "lastUpdated": "2023-02-07T14:44:23.523Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bell-12.svg",
         "svg16": "./ui/svg/ui-bell-16.svg",
@@ -1648,7 +1648,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60197 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60196 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.782Z",
+      "lastUpdated": "2023-02-07T14:44:36.664Z",
       "outputs": {
         "svg12": "./ui/svg/ui-blockchain-12.svg",
         "svg16": "./ui/svg/ui-blockchain-16.svg",
@@ -1664,7 +1664,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60752 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60751 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.113Z",
+      "lastUpdated": "2023-02-07T14:44:10.347Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bookmarkActive-12.svg",
         "svg16": "./ui/svg/ui-bookmarkActive-16.svg",
@@ -1680,7 +1680,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60747 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60746 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.675Z",
+      "lastUpdated": "2023-02-07T14:44:23.621Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bookmarkInactive-12.svg",
         "svg16": "./ui/svg/ui-bookmarkInactive-16.svg",
@@ -1696,7 +1696,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61482 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61481 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.601Z",
+      "lastUpdated": "2023-02-07T14:44:49.976Z",
       "outputs": {
         "svg12": "./ui/svg/ui-briefcase-12.svg",
         "svg16": "./ui/svg/ui-briefcase-16.svg",
@@ -1712,7 +1712,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61212 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61211 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.728Z",
+      "lastUpdated": "2023-02-07T14:44:58.921Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bridging-12.svg",
         "svg16": "./ui/svg/ui-bridging-16.svg",
@@ -1728,7 +1728,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60122 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60121 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.023Z",
+      "lastUpdated": "2023-02-07T14:44:23.546Z",
       "outputs": {
         "svg12": "./ui/svg/ui-calendar-12.svg",
         "svg16": "./ui/svg/ui-calendar-16.svg",
@@ -1744,7 +1744,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60437 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60436 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.697Z",
+      "lastUpdated": "2023-02-07T14:44:58.975Z",
       "outputs": {
         "svg12": "./ui/svg/ui-camera-12.svg",
         "svg16": "./ui/svg/ui-camera-16.svg",
@@ -1760,7 +1760,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59937 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59936 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.687Z",
+      "lastUpdated": "2023-02-07T14:44:23.504Z",
       "outputs": {
         "svg12": "./ui/svg/ui-card-12.svg",
         "svg16": "./ui/svg/ui-card-16.svg",
@@ -1776,7 +1776,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60492 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60491 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.871Z",
+      "lastUpdated": "2023-02-07T14:44:23.741Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretDown-12.svg",
         "svg16": "./ui/svg/ui-caretDown-16.svg",
@@ -1792,7 +1792,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60482 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60481 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.587Z",
+      "lastUpdated": "2023-02-07T14:44:36.622Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretLeft-12.svg",
         "svg16": "./ui/svg/ui-caretLeft-16.svg",
@@ -1808,7 +1808,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60477 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60476 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.638Z",
+      "lastUpdated": "2023-02-07T14:44:50.032Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretRight-12.svg",
         "svg16": "./ui/svg/ui-caretRight-16.svg",
@@ -1824,7 +1824,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60487 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60486 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.819Z",
+      "lastUpdated": "2023-02-07T14:44:49.897Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretUp-12.svg",
         "svg16": "./ui/svg/ui-caretUp-16.svg",
@@ -1840,7 +1840,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60007 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60006 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.706Z",
+      "lastUpdated": "2023-02-07T14:44:10.480Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cash-12.svg",
         "svg16": "./ui/svg/ui-cash-16.svg",
@@ -1856,7 +1856,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61282 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61281 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.681Z",
+      "lastUpdated": "2023-02-07T14:44:50.012Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashAustralianDollar-12.svg",
         "svg16": "./ui/svg/ui-cashAustralianDollar-16.svg",
@@ -1872,7 +1872,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61222 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61221 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.850Z",
+      "lastUpdated": "2023-02-07T14:44:23.636Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashBrazilianReal-12.svg",
         "svg16": "./ui/svg/ui-cashBrazilianReal-16.svg",
@@ -1888,7 +1888,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59762 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59761 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.815Z",
+      "lastUpdated": "2023-02-07T14:44:36.578Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashEUR-12.svg",
         "svg16": "./ui/svg/ui-cashEUR-16.svg",
@@ -1904,7 +1904,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59757 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59756 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.836Z",
+      "lastUpdated": "2023-02-07T14:44:23.657Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashGBP-12.svg",
         "svg16": "./ui/svg/ui-cashGBP-16.svg",
@@ -1920,7 +1920,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61252 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61251 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.630Z",
+      "lastUpdated": "2023-02-07T14:44:49.990Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashIndonesianRupiah-12.svg",
         "svg16": "./ui/svg/ui-cashIndonesianRupiah-16.svg",
@@ -1936,7 +1936,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59767 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59766 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.736Z",
+      "lastUpdated": "2023-02-07T14:44:58.985Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashJPY-12.svg",
         "svg16": "./ui/svg/ui-cashJPY-16.svg",
@@ -1952,7 +1952,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61247 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61246 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.829Z",
+      "lastUpdated": "2023-02-07T14:44:10.365Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashPhilippinePeso-12.svg",
         "svg16": "./ui/svg/ui-cashPhilippinePeso-16.svg",
@@ -1968,7 +1968,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61272 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61271 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.998Z",
+      "lastUpdated": "2023-02-07T14:44:10.580Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashPolishZłoty-12.svg",
         "svg16": "./ui/svg/ui-cashPolishZłoty-16.svg",
@@ -1984,7 +1984,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60862 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60861 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.075Z",
+      "lastUpdated": "2023-02-07T14:44:10.297Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashRupee-12.svg",
         "svg16": "./ui/svg/ui-cashRupee-16.svg",
@@ -2000,7 +2000,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61267 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61266 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.807Z",
+      "lastUpdated": "2023-02-07T14:44:10.451Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashSwissFranc-12.svg",
         "svg16": "./ui/svg/ui-cashSwissFranc-16.svg",
@@ -2016,7 +2016,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61242 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61241 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.983Z",
+      "lastUpdated": "2023-02-07T14:44:49.790Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashThaiBaht-12.svg",
         "svg16": "./ui/svg/ui-cashThaiBaht-16.svg",
@@ -2032,7 +2032,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61262 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61261 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.800Z",
+      "lastUpdated": "2023-02-07T14:44:10.331Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashTurkishLira-12.svg",
         "svg16": "./ui/svg/ui-cashTurkishLira-16.svg",
@@ -2048,7 +2048,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59752 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59751 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.760Z",
+      "lastUpdated": "2023-02-07T14:43:56.418Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashUSD-12.svg",
         "svg16": "./ui/svg/ui-cashUSD-16.svg",
@@ -2064,7 +2064,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61277 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61276 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.793Z",
+      "lastUpdated": "2023-02-07T14:44:10.375Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashUaeDirham-12.svg",
         "svg16": "./ui/svg/ui-cashUaeDirham-16.svg",
@@ -2080,7 +2080,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61257 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61256 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.779Z",
+      "lastUpdated": "2023-02-07T14:44:10.441Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashVietnameseDong-12.svg",
         "svg16": "./ui/svg/ui-cashVietnameseDong-16.svg",
@@ -2096,7 +2096,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60867 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60866 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.843Z",
+      "lastUpdated": "2023-02-07T14:44:23.645Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chainLink-12.svg",
         "svg16": "./ui/svg/ui-chainLink-16.svg",
@@ -2112,7 +2112,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59977 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59976 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.766Z",
+      "lastUpdated": "2023-02-07T14:44:10.599Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartBar-12.svg",
         "svg16": "./ui/svg/ui-chartBar-16.svg",
@@ -2128,7 +2128,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60272 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60271 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.752Z",
+      "lastUpdated": "2023-02-07T14:44:10.281Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartCandles-12.svg",
         "svg16": "./ui/svg/ui-chartCandles-16.svg",
@@ -2144,7 +2144,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60267 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60266 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.705Z",
+      "lastUpdated": "2023-02-07T14:44:58.954Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartLine-12.svg",
         "svg16": "./ui/svg/ui-chartLine-16.svg",
@@ -2160,7 +2160,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60067 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60066 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.745Z",
+      "lastUpdated": "2023-02-07T14:44:10.522Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartPie-12.svg",
         "svg16": "./ui/svg/ui-chartPie-16.svg",
@@ -2176,7 +2176,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60207 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60206 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.048Z",
+      "lastUpdated": "2023-02-07T14:44:10.503Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartPieCircle-12.svg",
         "svg16": "./ui/svg/ui-chartPieCircle-16.svg",
@@ -2192,7 +2192,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60027 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60026 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.951Z",
+      "lastUpdated": "2023-02-07T14:43:33.412Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartVolume-12.svg",
         "svg16": "./ui/svg/ui-chartVolume-16.svg",
@@ -2208,7 +2208,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61137 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61136 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.738Z",
+      "lastUpdated": "2023-02-07T14:44:10.392Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chatBotAgent-12.svg",
         "svg16": "./ui/svg/ui-chatBotAgent-16.svg",
@@ -2224,7 +2224,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60472 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60471 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.730Z",
+      "lastUpdated": "2023-02-07T14:44:10.460Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chatBubble-12.svg",
         "svg16": "./ui/svg/ui-chatBubble-16.svg",
@@ -2240,7 +2240,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60232 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60231 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.715Z",
+      "lastUpdated": "2023-02-07T14:44:10.514Z",
       "outputs": {
         "svg12": "./ui/svg/ui-checkboxChecked-12.svg",
         "svg16": "./ui/svg/ui-checkboxChecked-16.svg",
@@ -2256,7 +2256,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60237 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60236 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.692Z",
+      "lastUpdated": "2023-02-07T14:44:10.355Z",
       "outputs": {
         "svg12": "./ui/svg/ui-checkboxEmpty-12.svg",
         "svg16": "./ui/svg/ui-checkboxEmpty-16.svg",
@@ -2272,7 +2272,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59777 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59776 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.686Z",
+      "lastUpdated": "2023-02-07T14:44:10.263Z",
       "outputs": {
         "svg12": "./ui/svg/ui-checkmark-12.svg",
         "svg16": "./ui/svg/ui-checkmark-16.svg",
@@ -2288,7 +2288,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60347 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60346 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.679Z",
+      "lastUpdated": "2023-02-07T14:44:10.531Z",
       "outputs": {
         "svg12": "./ui/svg/ui-circleCheckmark-12.svg",
         "svg16": "./ui/svg/ui-circleCheckmark-16.svg",
@@ -2304,7 +2304,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60257 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60256 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.672Z",
+      "lastUpdated": "2023-02-07T14:44:10.571Z",
       "outputs": {
         "svg12": "./ui/svg/ui-circleCross-12.svg",
         "svg16": "./ui/svg/ui-circleCross-16.svg",
@@ -2320,7 +2320,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60047 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60046 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.671Z",
+      "lastUpdated": "2023-02-07T14:44:49.838Z",
       "outputs": {
         "svg12": "./ui/svg/ui-circulatingSupply-12.svg",
         "svg16": "./ui/svg/ui-circulatingSupply-16.svg",
@@ -2336,7 +2336,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60722 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60721 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.890Z",
+      "lastUpdated": "2023-02-07T14:44:10.339Z",
       "outputs": {
         "svg12": "./ui/svg/ui-clipboard-12.svg",
         "svg16": "./ui/svg/ui-clipboard-16.svg",
@@ -2352,7 +2352,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60282 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60281 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.766Z",
+      "lastUpdated": "2023-02-07T14:44:36.631Z",
       "outputs": {
         "svg12": "./ui/svg/ui-clock-12.svg",
         "svg16": "./ui/svg/ui-clock-16.svg",
@@ -2368,7 +2368,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60857 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60856 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.876Z",
+      "lastUpdated": "2023-02-07T14:44:10.314Z",
       "outputs": {
         "svg12": "./ui/svg/ui-clockOutline-12.svg",
         "svg16": "./ui/svg/ui-clockOutline-16.svg",
@@ -2384,7 +2384,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60497 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60496 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.579Z",
+      "lastUpdated": "2023-02-07T14:44:36.427Z",
       "outputs": {
         "svg12": "./ui/svg/ui-close-12.svg",
         "svg16": "./ui/svg/ui-close-16.svg",
@@ -2400,7 +2400,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60372 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60371 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.861Z",
+      "lastUpdated": "2023-02-07T14:44:10.273Z",
       "outputs": {
         "svg12": "./ui/svg/ui-closeCaption-12.svg",
         "svg16": "./ui/svg/ui-closeCaption-16.svg",
@@ -2416,7 +2416,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60387 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60386 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:01.989Z",
+      "lastUpdated": "2023-02-07T14:44:10.635Z",
       "outputs": {
         "svg12": "./ui/svg/ui-collapse-12.svg",
         "svg16": "./ui/svg/ui-collapse-16.svg",
@@ -2432,7 +2432,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61442 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61441 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.953Z",
+      "lastUpdated": "2023-02-07T14:43:33.334Z",
       "outputs": {
         "svg12": "./ui/svg/ui-collectibles-12.svg",
         "svg16": "./ui/svg/ui-collectibles-16.svg",
@@ -2448,7 +2448,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61032 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61031 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.744Z",
+      "lastUpdated": "2023-02-07T14:44:58.964Z",
       "outputs": {
         "svg12": "./ui/svg/ui-comment-12.svg",
         "svg16": "./ui/svg/ui-comment-16.svg",
@@ -2464,7 +2464,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61237 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61236 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.854Z",
+      "lastUpdated": "2023-02-07T14:44:10.424Z",
       "outputs": {
         "svg12": "./ui/svg/ui-commentActive-12.svg",
         "svg16": "./ui/svg/ui-commentActive-16.svg",
@@ -2480,7 +2480,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60307 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60306 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.849Z",
+      "lastUpdated": "2023-02-07T14:44:36.356Z",
       "outputs": {
         "svg12": "./ui/svg/ui-continuous-12.svg",
         "svg16": "./ui/svg/ui-continuous-16.svg",
@@ -2496,7 +2496,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60077 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60076 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.847Z",
+      "lastUpdated": "2023-02-07T14:44:10.384Z",
       "outputs": {
         "svg12": "./ui/svg/ui-convert-12.svg",
         "svg16": "./ui/svg/ui-convert-16.svg",
@@ -2512,7 +2512,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60242 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60241 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.833Z",
+      "lastUpdated": "2023-02-07T14:43:56.322Z",
       "outputs": {
         "svg12": "./ui/svg/ui-copy-12.svg",
         "svg16": "./ui/svg/ui-copy-16.svg",
@@ -2528,7 +2528,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60312 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60311 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.810Z",
+      "lastUpdated": "2023-02-07T14:43:56.117Z",
       "outputs": {
         "svg12": "./ui/svg/ui-crossTrade-12.svg",
         "svg16": "./ui/svg/ui-crossTrade-16.svg",
@@ -2544,7 +2544,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59997 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59996 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.803Z",
+      "lastUpdated": "2023-02-07T14:43:56.331Z",
       "outputs": {
         "svg12": "./ui/svg/ui-currencies-12.svg",
         "svg16": "./ui/svg/ui-currencies-16.svg",
@@ -2560,7 +2560,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59992 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59991 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.796Z",
+      "lastUpdated": "2023-02-07T14:43:56.267Z",
       "outputs": {
         "svg12": "./ui/svg/ui-defi-12.svg",
         "svg16": "./ui/svg/ui-defi-16.svg",
@@ -2576,7 +2576,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59787 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59786 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.036Z",
+      "lastUpdated": "2023-02-07T14:43:56.252Z",
       "outputs": {
         "svg12": "./ui/svg/ui-deposit-12.svg",
         "svg16": "./ui/svg/ui-deposit-16.svg",
@@ -2592,7 +2592,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60727 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60726 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.594Z",
+      "lastUpdated": "2023-02-07T14:44:36.416Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dex-12.svg",
         "svg16": "./ui/svg/ui-dex-16.svg",
@@ -2608,7 +2608,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60912 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60911 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.804Z",
+      "lastUpdated": "2023-02-07T14:44:36.549Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diagonalDownArrow-12.svg",
         "svg16": "./ui/svg/ui-diagonalDownArrow-16.svg",
@@ -2624,7 +2624,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60317 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60316 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.746Z",
+      "lastUpdated": "2023-02-07T14:43:56.377Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diagonalRightArrow-12.svg",
         "svg16": "./ui/svg/ui-diagonalRightArrow-16.svg",
@@ -2640,7 +2640,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60907 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60906 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.767Z",
+      "lastUpdated": "2023-02-07T14:43:56.428Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diagonalUpArrow-12.svg",
         "svg16": "./ui/svg/ui-diagonalUpArrow-16.svg",
@@ -2656,7 +2656,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61187 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61186 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.082Z",
+      "lastUpdated": "2023-02-07T14:43:56.087Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diamondActive-12.svg",
         "svg16": "./ui/svg/ui-diamondActive-16.svg",
@@ -2672,7 +2672,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61182 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61181 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.739Z",
+      "lastUpdated": "2023-02-07T14:43:56.358Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diamondInactive-12.svg",
         "svg16": "./ui/svg/ui-diamondInactive-16.svg",
@@ -2688,7 +2688,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61407 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61406 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.653Z",
+      "lastUpdated": "2023-02-07T14:44:23.592Z",
       "outputs": {
         "svg12": "./ui/svg/ui-directDepositIconActive-12.svg",
         "svg16": "./ui/svg/ui-directDepositIconActive-16.svg",
@@ -2704,7 +2704,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61412 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61411 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.699Z",
+      "lastUpdated": "2023-02-07T14:44:10.469Z",
       "outputs": {
         "svg12": "./ui/svg/ui-directDepositIconInactive-12.svg",
         "svg16": "./ui/svg/ui-directDepositIconInactive-16.svg",
@@ -2720,7 +2720,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61582 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61581 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.636Z",
+      "lastUpdated": "2023-02-07T14:44:23.677Z",
       "outputs": {
         "svg12": "./ui/svg/ui-discordLogo-12.svg",
         "svg16": "./ui/svg/ui-discordLogo-16.svg",
@@ -2736,7 +2736,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60127 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60126 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.732Z",
+      "lastUpdated": "2023-02-07T14:43:56.174Z",
       "outputs": {
         "svg12": "./ui/svg/ui-document-12.svg",
         "svg16": "./ui/svg/ui-document-16.svg",
@@ -2752,7 +2752,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60107 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60106 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.725Z",
+      "lastUpdated": "2023-02-07T14:43:56.189Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dot-12.svg",
         "svg16": "./ui/svg/ui-dot-16.svg",
@@ -2768,7 +2768,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59897 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59896 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.958Z",
+      "lastUpdated": "2023-02-07T14:44:10.432Z",
       "outputs": {
         "svg12": "./ui/svg/ui-doubleChevronRight-12.svg",
         "svg16": "./ui/svg/ui-doubleChevronRight-16.svg",
@@ -2784,7 +2784,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60462 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60461 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.718Z",
+      "lastUpdated": "2023-02-07T14:43:56.144Z",
       "outputs": {
         "svg12": "./ui/svg/ui-downArrow-12.svg",
         "svg16": "./ui/svg/ui-downArrow-16.svg",
@@ -2800,7 +2800,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60897 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60896 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.826Z",
+      "lastUpdated": "2023-02-07T14:44:36.473Z",
       "outputs": {
         "svg12": "./ui/svg/ui-download-12.svg",
         "svg16": "./ui/svg/ui-download-16.svg",
@@ -2816,7 +2816,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60402 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60401 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.722Z",
+      "lastUpdated": "2023-02-07T14:44:23.720Z",
       "outputs": {
         "svg12": "./ui/svg/ui-drag-12.svg",
         "svg16": "./ui/svg/ui-drag-16.svg",
@@ -2832,7 +2832,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61177 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61176 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.616Z",
+      "lastUpdated": "2023-02-07T14:44:49.846Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dropsActive-12.svg",
         "svg16": "./ui/svg/ui-dropsActive-16.svg",
@@ -2848,7 +2848,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61172 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61171 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.682Z",
+      "lastUpdated": "2023-02-07T14:43:56.079Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dropsInactive-12.svg",
         "svg16": "./ui/svg/ui-dropsInactive-16.svg",
@@ -2864,7 +2864,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59882 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59881 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.097Z",
+      "lastUpdated": "2023-02-07T14:43:56.314Z",
       "outputs": {
         "svg12": "./ui/svg/ui-email-12.svg",
         "svg16": "./ui/svg/ui-email-16.svg",
@@ -2880,7 +2880,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60357 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60356 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.972Z",
+      "lastUpdated": "2023-02-07T14:43:33.607Z",
       "outputs": {
         "svg12": "./ui/svg/ui-error-12.svg",
         "svg16": "./ui/svg/ui-error-16.svg",
@@ -2896,7 +2896,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59987 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59986 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.074Z",
+      "lastUpdated": "2023-02-07T14:43:56.307Z",
       "outputs": {
         "svg12": "./ui/svg/ui-ethereum-12.svg",
         "svg16": "./ui/svg/ui-ethereum-16.svg",
@@ -2912,7 +2912,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59857 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59856 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.066Z",
+      "lastUpdated": "2023-02-07T14:43:56.212Z",
       "outputs": {
         "svg12": "./ui/svg/ui-exclamationMark-12.svg",
         "svg16": "./ui/svg/ui-exclamationMark-16.svg",
@@ -2928,7 +2928,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60382 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60381 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.059Z",
+      "lastUpdated": "2023-02-07T14:43:56.401Z",
       "outputs": {
         "svg12": "./ui/svg/ui-expand-12.svg",
         "svg16": "./ui/svg/ui-expand-16.svg",
@@ -2944,7 +2944,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60342 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60341 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.044Z",
+      "lastUpdated": "2023-02-07T14:43:56.136Z",
       "outputs": {
         "svg12": "./ui/svg/ui-expandAddress-12.svg",
         "svg16": "./ui/svg/ui-expandAddress-16.svg",
@@ -2960,7 +2960,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60337 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60336 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.698Z",
+      "lastUpdated": "2023-02-07T14:44:10.415Z",
       "outputs": {
         "svg12": "./ui/svg/ui-expandAll-12.svg",
         "svg16": "./ui/svg/ui-expandAll-16.svg",
@@ -2976,7 +2976,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60277 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60276 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.873Z",
+      "lastUpdated": "2023-02-07T14:43:56.260Z",
       "outputs": {
         "svg12": "./ui/svg/ui-externalLink-12.svg",
         "svg16": "./ui/svg/ui-externalLink-16.svg",
@@ -2992,7 +2992,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61567 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61566 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.991Z",
+      "lastUpdated": "2023-02-07T14:43:56.151Z",
       "outputs": {
         "svg12": "./ui/svg/ui-faceScan-12.svg",
         "svg16": "./ui/svg/ui-faceScan-16.svg",
@@ -3008,7 +3008,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61622 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61621 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.936Z",
+      "lastUpdated": "2023-02-07T14:43:56.300Z",
       "outputs": {
         "svg12": "./ui/svg/ui-faucetActive-12.svg",
         "svg16": "./ui/svg/ui-faucetActive-16.svg",
@@ -3024,7 +3024,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61617 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61616 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.960Z",
+      "lastUpdated": "2023-02-07T14:43:33.353Z",
       "outputs": {
         "svg12": "./ui/svg/ui-faucetInactive-12.svg",
         "svg16": "./ui/svg/ui-faucetInactive-16.svg",
@@ -3040,7 +3040,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60297 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60296 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.911Z",
+      "lastUpdated": "2023-02-07T14:44:58.913Z",
       "outputs": {
         "svg12": "./ui/svg/ui-fib-12.svg",
         "svg16": "./ui/svg/ui-fib-16.svg",
@@ -3056,7 +3056,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60412 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60411 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.564Z",
+      "lastUpdated": "2023-02-07T14:44:49.917Z",
       "outputs": {
         "svg12": "./ui/svg/ui-filter-12.svg",
         "svg16": "./ui/svg/ui-filter-16.svg",
@@ -3072,7 +3072,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61562 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61561 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.927Z",
+      "lastUpdated": "2023-02-07T15:05:11.793Z",
       "outputs": {
         "svg12": "./ui/svg/ui-fingerprint-12.svg",
         "svg16": "./ui/svg/ui-fingerprint-16.svg",
@@ -3088,7 +3088,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60012 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60011 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.789Z",
+      "lastUpdated": "2023-02-07T14:43:56.204Z",
       "outputs": {
         "svg12": "./ui/svg/ui-flame-12.svg",
         "svg16": "./ui/svg/ui-flame-16.svg",
@@ -3104,7 +3104,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60677 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60676 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.901Z",
+      "lastUpdated": "2023-02-07T14:43:33.303Z",
       "outputs": {
         "svg12": "./ui/svg/ui-followActive-12.svg",
         "svg16": "./ui/svg/ui-followActive-16.svg",
@@ -3120,7 +3120,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60672 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60671 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.986Z",
+      "lastUpdated": "2023-02-07T14:43:33.507Z",
       "outputs": {
         "svg12": "./ui/svg/ui-followInactive-12.svg",
         "svg16": "./ui/svg/ui-followInactive-16.svg",
@@ -3136,7 +3136,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60777 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60776 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.006Z",
+      "lastUpdated": "2023-02-07T14:43:56.228Z",
       "outputs": {
         "svg12": "./ui/svg/ui-fork-12.svg",
         "svg16": "./ui/svg/ui-fork-16.svg",
@@ -3152,7 +3152,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60452 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60451 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.021Z",
+      "lastUpdated": "2023-02-07T14:43:56.245Z",
       "outputs": {
         "svg12": "./ui/svg/ui-forwardArrow-12.svg",
         "svg16": "./ui/svg/ui-forwardArrow-16.svg",
@@ -3168,7 +3168,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61462 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61461 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.979Z",
+      "lastUpdated": "2023-02-07T14:43:33.294Z",
       "outputs": {
         "svg12": "./ui/svg/ui-games-12.svg",
         "svg16": "./ui/svg/ui-games-16.svg",
@@ -3184,7 +3184,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60377 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60376 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.968Z",
+      "lastUpdated": "2023-02-07T14:43:33.654Z",
       "outputs": {
         "svg12": "./ui/svg/ui-gauge-12.svg",
         "svg16": "./ui/svg/ui-gauge-16.svg",
@@ -3200,7 +3200,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60202 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60201 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.883Z",
+      "lastUpdated": "2023-02-07T14:44:58.945Z",
       "outputs": {
         "svg12": "./ui/svg/ui-gavel-12.svg",
         "svg16": "./ui/svg/ui-gavel-16.svg",
@@ -3216,7 +3216,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60017 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60016 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.052Z",
+      "lastUpdated": "2023-02-07T14:43:56.408Z",
       "outputs": {
         "svg12": "./ui/svg/ui-gear-12.svg",
         "svg16": "./ui/svg/ui-gear-16.svg",
@@ -3232,7 +3232,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61352 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61351 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.857Z",
+      "lastUpdated": "2023-02-07T14:44:36.686Z",
       "outputs": {
         "svg12": "./ui/svg/ui-ghostActive-12.svg",
         "svg16": "./ui/svg/ui-ghostActive-16.svg",
@@ -3248,7 +3248,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61347 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61346 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.918Z",
+      "lastUpdated": "2023-02-07T14:43:33.387Z",
       "outputs": {
         "svg12": "./ui/svg/ui-ghostInactive-12.svg",
         "svg16": "./ui/svg/ui-ghostInactive-16.svg",
@@ -3264,7 +3264,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60217 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60216 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.965Z",
+      "lastUpdated": "2023-02-07T14:43:33.326Z",
       "outputs": {
         "svg12": "./ui/svg/ui-giftBox-12.svg",
         "svg16": "./ui/svg/ui-giftBox-16.svg",
@@ -3280,7 +3280,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60417 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60416 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.892Z",
+      "lastUpdated": "2023-02-07T14:43:33.616Z",
       "outputs": {
         "svg12": "./ui/svg/ui-giftCard-12.svg",
         "svg16": "./ui/svg/ui-giftCard-16.svg",
@@ -3296,7 +3296,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60042 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60041 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.901Z",
+      "lastUpdated": "2023-02-07T14:43:33.464Z",
       "outputs": {
         "svg12": "./ui/svg/ui-globe-12.svg",
         "svg16": "./ui/svg/ui-globe-16.svg",
@@ -3312,7 +3312,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61127 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61126 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.753Z",
+      "lastUpdated": "2023-02-07T14:43:56.197Z",
       "outputs": {
         "svg12": "./ui/svg/ui-group-12.svg",
         "svg16": "./ui/svg/ui-group-16.svg",
@@ -3328,7 +3328,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60367 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60366 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.089Z",
+      "lastUpdated": "2023-02-07T14:43:56.107Z",
       "outputs": {
         "svg12": "./ui/svg/ui-hamburger-12.svg",
         "svg16": "./ui/svg/ui-hamburger-16.svg",
@@ -3344,7 +3344,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61157 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61156 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.653Z",
+      "lastUpdated": "2023-02-07T14:44:50.122Z",
       "outputs": {
         "svg12": "./ui/svg/ui-hammerActive-12.svg",
         "svg16": "./ui/svg/ui-hammerActive-16.svg",
@@ -3360,7 +3360,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61152 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61151 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.945Z",
+      "lastUpdated": "2023-02-07T14:43:33.569Z",
       "outputs": {
         "svg12": "./ui/svg/ui-hammerInactive-12.svg",
         "svg16": "./ui/svg/ui-hammerInactive-16.svg",
@@ -3376,7 +3376,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60137 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60136 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.826Z",
+      "lastUpdated": "2023-02-07T14:44:49.782Z",
       "outputs": {
         "svg12": "./ui/svg/ui-heartActive-12.svg",
         "svg16": "./ui/svg/ui-heartActive-16.svg",
@@ -3392,7 +3392,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60142 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60141 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.786Z",
+      "lastUpdated": "2023-02-07T14:44:10.589Z",
       "outputs": {
         "svg12": "./ui/svg/ui-heartInactive-12.svg",
         "svg16": "./ui/svg/ui-heartInactive-16.svg",
@@ -3408,7 +3408,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59972 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59971 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.939Z",
+      "lastUpdated": "2023-02-07T14:43:33.499Z",
       "outputs": {
         "svg12": "./ui/svg/ui-home-12.svg",
         "svg16": "./ui/svg/ui-home-16.svg",
@@ -3424,7 +3424,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60302 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60301 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.014Z",
+      "lastUpdated": "2023-02-07T14:43:56.393Z",
       "outputs": {
         "svg12": "./ui/svg/ui-horizontalLine-12.svg",
         "svg16": "./ui/svg/ui-horizontalLine-16.svg",
@@ -3440,7 +3440,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59927 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59926 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.623Z",
+      "lastUpdated": "2023-02-07T14:44:50.001Z",
       "outputs": {
         "svg12": "./ui/svg/ui-ideal-12.svg",
         "svg16": "./ui/svg/ui-ideal-16.svg",
@@ -3456,7 +3456,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59902 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59901 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.705Z",
+      "lastUpdated": "2023-02-07T14:43:56.166Z",
       "outputs": {
         "svg12": "./ui/svg/ui-identityCard-12.svg",
         "svg16": "./ui/svg/ui-identityCard-16.svg",
@@ -3472,7 +3472,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60102 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60101 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.711Z",
+      "lastUpdated": "2023-02-07T14:44:23.576Z",
       "outputs": {
         "svg12": "./ui/svg/ui-info-12.svg",
         "svg16": "./ui/svg/ui-info-16.svg",
@@ -3488,7 +3488,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60037 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60036 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.758Z",
+      "lastUpdated": "2023-02-07T14:44:49.774Z",
       "outputs": {
         "svg12": "./ui/svg/ui-initiator-12.svg",
         "svg16": "./ui/svg/ui-initiator-16.svg",
@@ -3504,7 +3504,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61577 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61576 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.715Z",
+      "lastUpdated": "2023-02-07T14:44:50.104Z",
       "outputs": {
         "svg12": "./ui/svg/ui-instagramLogo-12.svg",
         "svg16": "./ui/svg/ui-instagramLogo-16.svg",
@@ -3520,7 +3520,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60717 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60716 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.120Z",
+      "lastUpdated": "2023-02-07T14:43:56.220Z",
       "outputs": {
         "svg12": "./ui/svg/ui-keyboard-12.svg",
         "svg16": "./ui/svg/ui-keyboard-16.svg",
@@ -3536,7 +3536,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60852 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60851 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.932Z",
+      "lastUpdated": "2023-02-07T14:43:33.268Z",
       "outputs": {
         "svg12": "./ui/svg/ui-laptop-12.svg",
         "svg16": "./ui/svg/ui-laptop-16.svg",
@@ -3552,7 +3552,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60502 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60501 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.660Z",
+      "lastUpdated": "2023-02-07T14:44:23.688Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lightningBolt-12.svg",
         "svg16": "./ui/svg/ui-lightningBolt-16.svg",
@@ -3568,7 +3568,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60022 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60021 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.925Z",
+      "lastUpdated": "2023-02-07T14:43:33.420Z",
       "outputs": {
         "svg12": "./ui/svg/ui-list-12.svg",
         "svg16": "./ui/svg/ui-list-16.svg",
@@ -3584,7 +3584,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59782 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59781 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.751Z",
+      "lastUpdated": "2023-02-07T14:44:23.485Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lock-12.svg",
         "svg16": "./ui/svg/ui-lock-16.svg",
@@ -3600,7 +3600,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60227 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60226 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.903Z",
+      "lastUpdated": "2023-02-07T14:43:33.437Z",
       "outputs": {
         "svg12": "./ui/svg/ui-marketCap-12.svg",
         "svg16": "./ui/svg/ui-marketCap-16.svg",
@@ -3616,7 +3616,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61467 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61466 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.896Z",
+      "lastUpdated": "2023-02-07T14:43:33.259Z",
       "outputs": {
         "svg12": "./ui/svg/ui-metaverse-12.svg",
         "svg16": "./ui/svg/ui-metaverse-16.svg",
@@ -3632,7 +3632,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60087 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60086 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.104Z",
+      "lastUpdated": "2023-02-07T14:43:33.429Z",
       "outputs": {
         "svg12": "./ui/svg/ui-minus-12.svg",
         "svg16": "./ui/svg/ui-minus-16.svg",
@@ -3648,7 +3648,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59867 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59866 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.029Z",
+      "lastUpdated": "2023-02-07T14:43:56.159Z",
       "outputs": {
         "svg12": "./ui/svg/ui-more-12.svg",
         "svg16": "./ui/svg/ui-more-16.svg",
@@ -3664,7 +3664,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61472 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61471 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.882Z",
+      "lastUpdated": "2023-02-07T14:43:33.446Z",
       "outputs": {
         "svg12": "./ui/svg/ui-music-12.svg",
         "svg16": "./ui/svg/ui-music-16.svg",
@@ -3680,7 +3680,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60222 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60221 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.857Z",
+      "lastUpdated": "2023-02-07T14:43:33.596Z",
       "outputs": {
         "svg12": "./ui/svg/ui-newsFeed-12.svg",
         "svg16": "./ui/svg/ui-newsFeed-16.svg",
@@ -3696,7 +3696,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60002 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60001 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.945Z",
+      "lastUpdated": "2023-02-07T14:43:33.240Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nft-12.svg",
         "svg16": "./ui/svg/ui-nft-16.svg",
@@ -3712,7 +3712,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61342 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61341 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.885Z",
+      "lastUpdated": "2023-02-07T14:44:23.699Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftBuyActive-12.svg",
         "svg16": "./ui/svg/ui-nftBuyActive-16.svg",
@@ -3728,7 +3728,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61337 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61336 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.694Z",
+      "lastUpdated": "2023-02-07T14:44:23.668Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftBuyInactive-12.svg",
         "svg16": "./ui/svg/ui-nftBuyInactive-16.svg",
@@ -3744,7 +3744,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61372 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61371 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.850Z",
+      "lastUpdated": "2023-02-07T14:43:33.644Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftOfferActive-12.svg",
         "svg16": "./ui/svg/ui-nftOfferActive-16.svg",
@@ -3760,7 +3760,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61367 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61366 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.773Z",
+      "lastUpdated": "2023-02-07T14:44:36.378Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftOfferInactive-12.svg",
         "svg16": "./ui/svg/ui-nftOfferInactive-16.svg",
@@ -3776,7 +3776,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61332 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61331 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.836Z",
+      "lastUpdated": "2023-02-07T14:43:33.405Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftSaleActive-12.svg",
         "svg16": "./ui/svg/ui-nftSaleActive-16.svg",
@@ -3792,7 +3792,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61327 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61326 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.720Z",
+      "lastUpdated": "2023-02-07T14:44:58.904Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftSaleInactive-12.svg",
         "svg16": "./ui/svg/ui-nftSaleInactive-16.svg",
@@ -3808,7 +3808,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60837 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60836 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.821Z",
+      "lastUpdated": "2023-02-07T14:43:33.578Z",
       "outputs": {
         "svg12": "./ui/svg/ui-noWifi-12.svg",
         "svg16": "./ui/svg/ui-noWifi-16.svg",
@@ -3824,7 +3824,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60442 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60441 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:01.974Z",
+      "lastUpdated": "2023-02-07T14:43:33.472Z",
       "outputs": {
         "svg12": "./ui/svg/ui-orderHistory-12.svg",
         "svg16": "./ui/svg/ui-orderHistory-16.svg",
@@ -3840,7 +3840,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60362 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60361 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.806Z",
+      "lastUpdated": "2023-02-07T14:43:33.627Z",
       "outputs": {
         "svg12": "./ui/svg/ui-outline-12.svg",
         "svg16": "./ui/svg/ui-outline-16.svg",
@@ -3856,7 +3856,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61447 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61446 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.196Z",
+      "lastUpdated": "2023-02-07T14:43:33.313Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pFPS-12.svg",
         "svg16": "./ui/svg/ui-pFPS-16.svg",
@@ -3872,7 +3872,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59957 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59956 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.791Z",
+      "lastUpdated": "2023-02-07T14:43:33.526Z",
       "outputs": {
         "svg12": "./ui/svg/ui-paperAirplane-12.svg",
         "svg16": "./ui/svg/ui-paperAirplane-16.svg",
@@ -3888,7 +3888,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60827 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60826 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.783Z",
+      "lastUpdated": "2023-02-07T14:43:33.396Z",
       "outputs": {
         "svg12": "./ui/svg/ui-paperclip-12.svg",
         "svg16": "./ui/svg/ui-paperclip-16.svg",
@@ -3904,7 +3904,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60152 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60151 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.609Z",
+      "lastUpdated": "2023-02-07T14:44:50.139Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pause-12.svg",
         "svg16": "./ui/svg/ui-pause-16.svg",
@@ -3920,7 +3920,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60392 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60391 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.774Z",
+      "lastUpdated": "2023-02-07T14:43:33.277Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pay-12.svg",
         "svg16": "./ui/svg/ui-pay-16.svg",
@@ -3936,7 +3936,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59917 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59916 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.766Z",
+      "lastUpdated": "2023-02-07T14:43:33.537Z",
       "outputs": {
         "svg12": "./ui/svg/ui-paypal-12.svg",
         "svg16": "./ui/svg/ui-paypal-16.svg",
@@ -3952,7 +3952,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60192 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60191 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.759Z",
+      "lastUpdated": "2023-02-07T14:43:33.362Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pencil-12.svg",
         "svg16": "./ui/svg/ui-pencil-16.svg",
@@ -3968,7 +3968,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60247 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60246 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.751Z",
+      "lastUpdated": "2023-02-07T14:43:33.379Z",
       "outputs": {
         "svg12": "./ui/svg/ui-percentage-12.svg",
         "svg16": "./ui/svg/ui-percentage-16.svg",
@@ -3984,7 +3984,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59772 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59771 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.986Z",
+      "lastUpdated": "2023-02-07T14:43:33.489Z",
       "outputs": {
         "svg12": "./ui/svg/ui-phone-12.svg",
         "svg16": "./ui/svg/ui-phone-16.svg",
@@ -4000,7 +4000,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60712 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60711 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.980Z",
+      "lastUpdated": "2023-02-07T14:43:33.343Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pin-12.svg",
         "svg16": "./ui/svg/ui-pin-16.svg",
@@ -4016,7 +4016,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60147 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60146 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.974Z",
+      "lastUpdated": "2023-02-07T14:43:33.695Z",
       "outputs": {
         "svg12": "./ui/svg/ui-play-12.svg",
         "svg16": "./ui/svg/ui-play-16.svg",
@@ -4032,7 +4032,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59982 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59981 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.840Z",
+      "lastUpdated": "2023-02-07T14:44:10.552Z",
       "outputs": {
         "svg12": "./ui/svg/ui-profile-12.svg",
         "svg16": "./ui/svg/ui-profile-16.svg",
@@ -4048,7 +4048,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60432 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60431 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.690Z",
+      "lastUpdated": "2023-02-07T14:43:56.182Z",
       "outputs": {
         "svg12": "./ui/svg/ui-protection-12.svg",
         "svg16": "./ui/svg/ui-protection-16.svg",
@@ -4064,7 +4064,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60057 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60056 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.967Z",
+      "lastUpdated": "2023-02-07T14:43:33.481Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pulse-12.svg",
         "svg16": "./ui/svg/ui-pulse-16.svg",
@@ -4080,7 +4080,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60742 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60741 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.722Z",
+      "lastUpdated": "2023-02-07T14:44:23.568Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pyramid-12.svg",
         "svg16": "./ui/svg/ui-pyramid-16.svg",
@@ -4096,7 +4096,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59947 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59946 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.960Z",
+      "lastUpdated": "2023-02-07T14:43:33.558Z",
       "outputs": {
         "svg12": "./ui/svg/ui-qrCode-12.svg",
         "svg16": "./ui/svg/ui-qrCode-16.svg",
@@ -4112,7 +4112,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60212 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60211 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.556Z",
+      "lastUpdated": "2023-02-07T14:44:36.483Z",
       "outputs": {
         "svg12": "./ui/svg/ui-questionMark-12.svg",
         "svg16": "./ui/svg/ui-questionMark-16.svg",
@@ -4128,7 +4128,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60332 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60331 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.954Z",
+      "lastUpdated": "2023-02-07T14:43:33.635Z",
       "outputs": {
         "svg12": "./ui/svg/ui-reCenter-12.svg",
         "svg16": "./ui/svg/ui-reCenter-16.svg",
@@ -4144,7 +4144,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60327 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60326 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.946Z",
+      "lastUpdated": "2023-02-07T14:43:19.263Z",
       "outputs": {
         "svg12": "./ui/svg/ui-rectangle-12.svg",
         "svg16": "./ui/svg/ui-rectangle-16.svg",
@@ -4160,7 +4160,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60072 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60071 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.300Z",
+      "lastUpdated": "2023-02-07T14:43:18.979Z",
       "outputs": {
         "svg12": "./ui/svg/ui-recurring-12.svg",
         "svg16": "./ui/svg/ui-recurring-16.svg",
@@ -4176,7 +4176,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60427 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60426 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.744Z",
+      "lastUpdated": "2023-02-07T14:44:23.781Z",
       "outputs": {
         "svg12": "./ui/svg/ui-regulated-12.svg",
         "svg16": "./ui/svg/ui-regulated-16.svg",
@@ -4192,7 +4192,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60757 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60756 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.940Z",
+      "lastUpdated": "2023-02-07T14:43:19.251Z",
       "outputs": {
         "svg12": "./ui/svg/ui-reportActive-12.svg",
         "svg16": "./ui/svg/ui-reportActive-16.svg",
@@ -4208,7 +4208,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60892 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60891 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.690Z",
+      "lastUpdated": "2023-02-07T14:44:50.093Z",
       "outputs": {
         "svg12": "./ui/svg/ui-reportInactive-12.svg",
         "svg16": "./ui/svg/ui-reportInactive-16.svg",
@@ -4224,7 +4224,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61362 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61361 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.934Z",
+      "lastUpdated": "2023-02-07T14:43:19.080Z",
       "outputs": {
         "svg12": "./ui/svg/ui-royaltyActive-12.svg",
         "svg16": "./ui/svg/ui-royaltyActive-16.svg",
@@ -4240,7 +4240,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61357 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61356 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.927Z",
+      "lastUpdated": "2023-02-07T14:43:19.102Z",
       "outputs": {
         "svg12": "./ui/svg/ui-royaltyInactive-12.svg",
         "svg16": "./ui/svg/ui-royaltyInactive-16.svg",
@@ -4256,7 +4256,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60177 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60176 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.921Z",
+      "lastUpdated": "2023-02-07T14:43:19.068Z",
       "outputs": {
         "svg12": "./ui/svg/ui-safe-12.svg",
         "svg16": "./ui/svg/ui-safe-16.svg",
@@ -4272,7 +4272,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61477 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61476 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.907Z",
+      "lastUpdated": "2023-02-07T14:43:19.350Z",
       "outputs": {
         "svg12": "./ui/svg/ui-save-12.svg",
         "svg16": "./ui/svg/ui-save-16.svg",
@@ -4288,7 +4288,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59952 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59951 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.229Z",
+      "lastUpdated": "2023-02-07T14:43:33.286Z",
       "outputs": {
         "svg12": "./ui/svg/ui-search-12.svg",
         "svg16": "./ui/svg/ui-search-16.svg",
@@ -4304,7 +4304,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61007 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61006 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.878Z",
+      "lastUpdated": "2023-02-07T14:44:23.873Z",
       "outputs": {
         "svg12": "./ui/svg/ui-seenActive-12.svg",
         "svg16": "./ui/svg/ui-seenActive-16.svg",
@@ -4320,7 +4320,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60902 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60901 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:01.963Z",
+      "lastUpdated": "2023-02-07T14:43:19.241Z",
       "outputs": {
         "svg12": "./ui/svg/ui-setPinCode-12.svg",
         "svg16": "./ui/svg/ui-setPinCode-16.svg",
@@ -4336,7 +4336,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60397 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60396 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.894Z",
+      "lastUpdated": "2023-02-07T14:43:18.928Z",
       "outputs": {
         "svg12": "./ui/svg/ui-share-12.svg",
         "svg16": "./ui/svg/ui-share-16.svg",
@@ -4352,7 +4352,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60132 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60131 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.882Z",
+      "lastUpdated": "2023-02-07T14:43:19.384Z",
       "outputs": {
         "svg12": "./ui/svg/ui-shield-12.svg",
         "svg16": "./ui/svg/ui-shield-16.svg",
@@ -4368,7 +4368,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59877 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59876 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.874Z",
+      "lastUpdated": "2023-02-07T14:43:19.298Z",
       "outputs": {
         "svg12": "./ui/svg/ui-smartContract-12.svg",
         "svg16": "./ui/svg/ui-smartContract-16.svg",
@@ -4384,7 +4384,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59922 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59921 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.867Z",
+      "lastUpdated": "2023-02-07T14:43:19.007Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sofort-12.svg",
         "svg16": "./ui/svg/ui-sofort-16.svg",
@@ -4400,7 +4400,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59892 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59891 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.861Z",
+      "lastUpdated": "2023-02-07T14:43:19.316Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sortDown-12.svg",
         "svg16": "./ui/svg/ui-sortDown-16.svg",
@@ -4416,7 +4416,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60667 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60666 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.854Z",
+      "lastUpdated": "2023-02-07T14:43:19.029Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sortDownCenter-12.svg",
         "svg16": "./ui/svg/ui-sortDownCenter-16.svg",
@@ -4432,7 +4432,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59872 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59871 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.848Z",
+      "lastUpdated": "2023-02-07T14:43:19.133Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sortUp-12.svg",
         "svg16": "./ui/svg/ui-sortUp-16.svg",
@@ -4448,7 +4448,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59887 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59886 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.842Z",
+      "lastUpdated": "2023-02-07T14:43:19.180Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sortUpCenter-12.svg",
         "svg16": "./ui/svg/ui-sortUpCenter-16.svg",
@@ -4464,7 +4464,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60172 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60171 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.831Z",
+      "lastUpdated": "2023-02-07T14:43:19.360Z",
       "outputs": {
         "svg12": "./ui/svg/ui-soundOff-12.svg",
         "svg16": "./ui/svg/ui-soundOff-16.svg",
@@ -4480,7 +4480,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60162 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60161 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.819Z",
+      "lastUpdated": "2023-02-07T14:43:18.987Z",
       "outputs": {
         "svg12": "./ui/svg/ui-soundOn-12.svg",
         "svg16": "./ui/svg/ui-soundOn-16.svg",
@@ -4496,7 +4496,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60062 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60061 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.813Z",
+      "lastUpdated": "2023-02-07T14:43:19.290Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sparkle-12.svg",
         "svg16": "./ui/svg/ui-sparkle-16.svg",
@@ -4512,7 +4512,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60182 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60181 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.662Z",
+      "lastUpdated": "2023-02-07T14:44:49.799Z",
       "outputs": {
         "svg12": "./ui/svg/ui-speaker-12.svg",
         "svg16": "./ui/svg/ui-speaker-16.svg",
@@ -4528,7 +4528,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60167 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60166 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.817Z",
+      "lastUpdated": "2023-02-07T14:43:56.237Z",
       "outputs": {
         "svg12": "./ui/svg/ui-stake-12.svg",
         "svg16": "./ui/svg/ui-stake-16.svg",
@@ -4544,7 +4544,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59962 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59961 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.807Z",
+      "lastUpdated": "2023-02-07T14:43:19.091Z",
       "outputs": {
         "svg12": "./ui/svg/ui-starActive-12.svg",
         "svg16": "./ui/svg/ui-starActive-16.svg",
@@ -4560,7 +4560,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59967 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59966 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.812Z",
+      "lastUpdated": "2023-02-07T14:44:36.697Z",
       "outputs": {
         "svg12": "./ui/svg/ui-starInactive-12.svg",
         "svg16": "./ui/svg/ui-starInactive-16.svg",
@@ -4576,7 +4576,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59862 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59861 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.869Z",
+      "lastUpdated": "2023-02-07T14:44:10.541Z",
       "outputs": {
         "svg12": "./ui/svg/ui-statusDot-12.svg",
         "svg16": "./ui/svg/ui-statusDot-16.svg",
@@ -4592,7 +4592,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59847 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59846 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.801Z",
+      "lastUpdated": "2023-02-07T14:43:19.403Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step0-12.svg",
         "svg16": "./ui/svg/ui-step0-16.svg",
@@ -4608,7 +4608,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59802 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59801 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.795Z",
+      "lastUpdated": "2023-02-07T14:43:18.948Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step1-12.svg",
         "svg16": "./ui/svg/ui-step1-16.svg",
@@ -4624,7 +4624,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59807 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59806 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.784Z",
+      "lastUpdated": "2023-02-07T14:43:19.199Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step2-12.svg",
         "svg16": "./ui/svg/ui-step2-16.svg",
@@ -4640,7 +4640,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59812 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59811 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.777Z",
+      "lastUpdated": "2023-02-07T14:43:19.170Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step3-12.svg",
         "svg16": "./ui/svg/ui-step3-16.svg",
@@ -4656,7 +4656,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59817 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59816 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.399Z",
+      "lastUpdated": "2023-02-07T14:43:19.395Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step4-12.svg",
         "svg16": "./ui/svg/ui-step4-16.svg",
@@ -4672,7 +4672,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59822 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59821 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.386Z",
+      "lastUpdated": "2023-02-07T14:43:18.972Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step5-12.svg",
         "svg16": "./ui/svg/ui-step5-16.svg",
@@ -4688,7 +4688,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59827 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59826 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.889Z",
+      "lastUpdated": "2023-02-07T14:43:33.587Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step6-12.svg",
         "svg16": "./ui/svg/ui-step6-16.svg",
@@ -4704,7 +4704,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59832 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59831 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.375Z",
+      "lastUpdated": "2023-02-07T14:43:19.281Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step7-12.svg",
         "svg16": "./ui/svg/ui-step7-16.svg",
@@ -4720,7 +4720,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59837 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59836 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.866Z",
+      "lastUpdated": "2023-02-07T14:43:33.516Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step8-12.svg",
         "svg16": "./ui/svg/ui-step8-16.svg",
@@ -4736,7 +4736,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59842 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59841 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.707Z",
+      "lastUpdated": "2023-02-07T14:44:23.792Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step9-12.svg",
         "svg16": "./ui/svg/ui-step9-16.svg",
@@ -4752,7 +4752,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61042 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61041 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.364Z",
+      "lastUpdated": "2023-02-07T14:43:19.220Z",
       "outputs": {
         "svg12": "./ui/svg/ui-taxesReceipt-12.svg",
         "svg16": "./ui/svg/ui-taxesReceipt-16.svg",
@@ -4768,7 +4768,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61402 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61401 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:31.105Z",
+      "lastUpdated": "2023-02-07T14:43:56.384Z",
       "outputs": {
         "svg12": "./ui/svg/ui-taxesReceiptInactive-12.svg",
         "svg16": "./ui/svg/ui-taxesReceiptInactive-16.svg",
@@ -4784,7 +4784,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60847 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60846 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.789Z",
+      "lastUpdated": "2023-02-07T14:44:36.541Z",
       "outputs": {
         "svg12": "./ui/svg/ui-telephone-12.svg",
         "svg16": "./ui/svg/ui-telephone-16.svg",
@@ -4800,7 +4800,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60787 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60786 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.354Z",
+      "lastUpdated": "2023-02-07T14:43:18.956Z",
       "outputs": {
         "svg12": "./ui/svg/ui-thumbsDown-12.svg",
         "svg16": "./ui/svg/ui-thumbsDown-16.svg",
@@ -4816,7 +4816,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61132 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61131 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.782Z",
+      "lastUpdated": "2023-02-07T14:43:56.349Z",
       "outputs": {
         "svg12": "./ui/svg/ui-thumbsDownOutline-12.svg",
         "svg16": "./ui/svg/ui-thumbsDownOutline-16.svg",
@@ -4832,7 +4832,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60792 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60791 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.736Z",
+      "lastUpdated": "2023-02-07T14:44:23.629Z",
       "outputs": {
         "svg12": "./ui/svg/ui-thumbsUp-12.svg",
         "svg16": "./ui/svg/ui-thumbsUp-16.svg",
@@ -4848,7 +4848,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61062 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61061 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.343Z",
+      "lastUpdated": "2023-02-07T14:43:18.939Z",
       "outputs": {
         "svg12": "./ui/svg/ui-thumbsUpOutline-12.svg",
         "svg16": "./ui/svg/ui-thumbsUpOutline-16.svg",
@@ -4864,7 +4864,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60352 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60351 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.332Z",
+      "lastUpdated": "2023-02-07T14:43:19.123Z",
       "outputs": {
         "svg12": "./ui/svg/ui-trashCan-12.svg",
         "svg16": "./ui/svg/ui-trashCan-16.svg",
@@ -4880,7 +4880,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60407 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60406 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.813Z",
+      "lastUpdated": "2023-02-07T14:43:33.250Z",
       "outputs": {
         "svg12": "./ui/svg/ui-trophy-12.svg",
         "svg16": "./ui/svg/ui-trophy-16.svg",
@@ -4896,7 +4896,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61572 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61571 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.909Z",
+      "lastUpdated": "2023-02-07T14:43:33.371Z",
       "outputs": {
         "svg12": "./ui/svg/ui-twitterLogo-12.svg",
         "svg16": "./ui/svg/ui-twitterLogo-16.svg",
@@ -4912,7 +4912,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61457 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61456 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.799Z",
+      "lastUpdated": "2023-02-07T14:43:33.548Z",
       "outputs": {
         "svg12": "./ui/svg/ui-ultility-12.svg",
         "svg16": "./ui/svg/ui-ultility-16.svg",
@@ -4928,7 +4928,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60262 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60261 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:30.975Z",
+      "lastUpdated": "2023-02-07T14:43:56.071Z",
       "outputs": {
         "svg12": "./ui/svg/ui-undo-12.svg",
         "svg16": "./ui/svg/ui-undo-16.svg",
@@ -4944,7 +4944,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60782 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60781 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.322Z",
+      "lastUpdated": "2023-02-07T14:43:19.019Z",
       "outputs": {
         "svg12": "./ui/svg/ui-unknown-12.svg",
         "svg16": "./ui/svg/ui-unknown-16.svg",
@@ -4960,7 +4960,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61037 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61036 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.713Z",
+      "lastUpdated": "2023-02-07T14:44:58.996Z",
       "outputs": {
         "svg12": "./ui/svg/ui-unlock-12.svg",
         "svg16": "./ui/svg/ui-unlock-16.svg",
@@ -4976,7 +4976,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60457 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60456 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:07.548Z",
+      "lastUpdated": "2023-02-07T14:44:36.558Z",
       "outputs": {
         "svg12": "./ui/svg/ui-upArrow-12.svg",
         "svg16": "./ui/svg/ui-upArrow-16.svg",
@@ -4992,7 +4992,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60832 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60831 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.311Z",
+      "lastUpdated": "2023-02-07T14:43:19.272Z",
       "outputs": {
         "svg12": "./ui/svg/ui-upload-12.svg",
         "svg16": "./ui/svg/ui-upload-16.svg",
@@ -5008,7 +5008,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60287 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60286 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.005Z",
+      "lastUpdated": "2023-02-07T14:43:19.049Z",
       "outputs": {
         "svg12": "./ui/svg/ui-verticalLine-12.svg",
         "svg16": "./ui/svg/ui-verticalLine-16.svg",
@@ -5024,7 +5024,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60187 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60186 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.290Z",
+      "lastUpdated": "2023-02-07T14:43:19.039Z",
       "outputs": {
         "svg12": "./ui/svg/ui-visibleActive-12.svg",
         "svg16": "./ui/svg/ui-visibleActive-16.svg",
@@ -5040,7 +5040,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61057 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61056 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:49.864Z",
+      "lastUpdated": "2023-02-07T14:44:23.614Z",
       "outputs": {
         "svg12": "./ui/svg/ui-visibleFilled-12.svg",
         "svg16": "./ui/svg/ui-visibleFilled-16.svg",
@@ -5056,7 +5056,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59912 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59911 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.279Z",
+      "lastUpdated": "2023-02-07T14:43:19.232Z",
       "outputs": {
         "svg12": "./ui/svg/ui-visibleInactive-12.svg",
         "svg16": "./ui/svg/ui-visibleInactive-16.svg",
@@ -5072,7 +5072,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59907 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59906 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.268Z",
+      "lastUpdated": "2023-02-07T14:43:19.114Z",
       "outputs": {
         "svg12": "./ui/svg/ui-wallet-12.svg",
         "svg16": "./ui/svg/ui-wallet-16.svg",
@@ -5088,7 +5088,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60467 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60466 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.841Z",
+      "lastUpdated": "2023-02-07T14:44:36.462Z",
       "outputs": {
         "svg12": "./ui/svg/ui-warning-12.svg",
         "svg16": "./ui/svg/ui-warning-16.svg",
@@ -5104,7 +5104,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60842 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60841 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.621Z",
+      "lastUpdated": "2023-02-07T14:44:23.495Z",
       "outputs": {
         "svg12": "./ui/svg/ui-wifi-12.svg",
         "svg16": "./ui/svg/ui-wifi-16.svg",
@@ -5120,7 +5120,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 60117 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 60116 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.258Z",
+      "lastUpdated": "2023-02-07T14:43:18.998Z",
       "outputs": {
         "svg12": "./ui/svg/ui-wireTransfer-12.svg",
         "svg16": "./ui/svg/ui-wireTransfer-16.svg",
@@ -5136,7 +5136,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 59852 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 59851 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.036Z",
+      "lastUpdated": "2023-02-07T14:43:19.190Z",
       "outputs": {
         "svg12": "./ui/svg/ui-withdraw-12.svg",
         "svg16": "./ui/svg/ui-withdraw-16.svg",
@@ -5152,7 +5152,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61597 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61596 } }
       ],
-      "lastUpdated": "2023-02-01T23:26:08.041Z",
+      "lastUpdated": "2023-02-07T14:44:50.084Z",
       "outputs": {
         "svg12": "./ui/svg/ui-wrapToken-12.svg",
         "svg16": "./ui/svg/ui-wrapToken-16.svg",
@@ -5168,7 +5168,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61602 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61601 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:58.797Z",
+      "lastUpdated": "2023-02-07T14:44:36.436Z",
       "outputs": {
         "svg12": "./ui/svg/ui-transactions-12.svg",
         "svg16": "./ui/svg/ui-transactions-16.svg",
@@ -5184,7 +5184,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61592 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61591 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.888Z",
+      "lastUpdated": "2023-02-07T14:43:19.209Z",
       "outputs": {
         "svg12": "./ui/svg/ui-payouts-12.svg",
         "svg16": "./ui/svg/ui-payouts-16.svg",
@@ -5200,7 +5200,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61532 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61531 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.789Z",
+      "lastUpdated": "2023-02-07T14:43:19.161Z",
       "outputs": {
         "svg12": "./ui/svg/ui-newsletter-12.svg",
         "svg16": "./ui/svg/ui-newsletter-16.svg",
@@ -5216,7 +5216,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61587 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61586 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.213Z",
+      "lastUpdated": "2023-02-07T14:43:19.324Z",
       "outputs": {
         "svg12": "./ui/svg/ui-refresh-12.svg",
         "svg16": "./ui/svg/ui-refresh-16.svg",
@@ -5232,7 +5232,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61492 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61491 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:40.775Z",
+      "lastUpdated": "2023-02-07T14:43:56.097Z",
       "outputs": {
         "svg12": "./ui/svg/ui-rocket-12.svg",
         "svg16": "./ui/svg/ui-rocket-16.svg",
@@ -5248,7 +5248,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61497 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61496 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.915Z",
+      "lastUpdated": "2023-02-07T14:43:19.332Z",
       "outputs": {
         "svg12": "./ui/svg/ui-qrCodeAlt-12.svg",
         "svg16": "./ui/svg/ui-qrCodeAlt-16.svg",
@@ -5264,7 +5264,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61427 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61426 } }
       ],
-      "lastUpdated": "2023-02-02T01:19:56.423Z",
+      "lastUpdated": "2023-02-07T14:44:10.626Z",
       "outputs": {
         "svg12": "./ui/svg/ui-generalCharacter-12.svg",
         "svg16": "./ui/svg/ui-generalCharacter-16.svg",
@@ -5280,7 +5280,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61542 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61541 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.836Z",
+      "lastUpdated": "2023-02-07T14:43:19.307Z",
       "outputs": {
         "svg12": "./ui/svg/ui-institute-12.svg",
         "svg16": "./ui/svg/ui-institute-16.svg",
@@ -5296,7 +5296,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61517 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61516 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.178Z",
+      "lastUpdated": "2023-02-07T14:43:19.151Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lightbulb-12.svg",
         "svg16": "./ui/svg/ui-lightbulb-16.svg",
@@ -5312,7 +5312,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61522 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61521 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.160Z",
+      "lastUpdated": "2023-02-07T14:43:18.964Z",
       "outputs": {
         "svg12": "./ui/svg/ui-megaphone-12.svg",
         "svg16": "./ui/svg/ui-megaphone-16.svg",
@@ -5328,7 +5328,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61547 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61546 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.140Z",
+      "lastUpdated": "2023-02-07T14:43:19.057Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cryptobasics-12.svg",
         "svg16": "./ui/svg/ui-cryptobasics-16.svg",
@@ -5344,7 +5344,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61512 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61511 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:21.843Z",
+      "lastUpdated": "2023-02-07T14:44:10.487Z",
       "outputs": {
         "svg12": "./ui/svg/ui-affiliates-12.svg",
         "svg16": "./ui/svg/ui-affiliates-16.svg",
@@ -5360,7 +5360,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61537 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61536 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.121Z",
+      "lastUpdated": "2023-02-07T14:43:19.142Z",
       "outputs": {
         "svg12": "./ui/svg/ui-blog-12.svg",
         "svg16": "./ui/svg/ui-blog-16.svg",
@@ -5376,7 +5376,7 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61527 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61526 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:02.090Z",
+      "lastUpdated": "2023-02-07T14:43:19.371Z",
       "outputs": {
         "svg12": "./ui/svg/ui-book-12.svg",
         "svg16": "./ui/svg/ui-book-16.svg",
@@ -5392,11 +5392,43 @@
         { "props": { "size": 16 }, "metadata": { "unicode": 61217 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61216 } }
       ],
-      "lastUpdated": "2023-02-01T23:25:12.825Z",
+      "lastUpdated": "2023-02-07T14:43:19.341Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashBrazillianReal-12.svg",
         "svg16": "./ui/svg/ui-cashBrazillianReal-16.svg",
         "svg24": "./ui/svg/ui-cashBrazillianReal-24.svg"
+      }
+    },
+    "569:58": {
+      "type": "ui",
+      "name": "planetInactive",
+      "description": "navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61642 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61641 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61640 } }
+      ],
+      "lastUpdated": "2023-02-07T14:43:55.826Z",
+      "outputs": {
+        "svg12Inactive": "./ui/svg/ui-planetInactive-12-inactive.svg",
+        "svg16Inactive": "./ui/svg/ui-planetInactive-16-inactive.svg",
+        "svg24Inactive": "./ui/svg/ui-planetInactive-24-inactive.svg"
+      }
+    },
+    "569:71": {
+      "type": "ui",
+      "name": "planetActive",
+      "description": "navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏",
+      "components": [
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61639 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61638 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61637 } }
+      ],
+      "lastUpdated": "2023-02-07T14:44:09.948Z",
+      "outputs": {
+        "svg12Active": "./ui/svg/ui-planetActive-12-active.svg",
+        "svg16Active": "./ui/svg/ui-planetActive-16-active.svg",
+        "svg24Active": "./ui/svg/ui-planetActive-24-active.svg"
       }
     }
   }

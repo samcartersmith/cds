@@ -375,4 +375,4 @@ export type NavIconNameInternal =
   | 'nav-wallet-16-active'
   | 'nav-wallet-16-inactive'
   | 'nav-wallet-24-active'
-  | 'nav-wallet-24-inactive'
+  | 'nav-wallet-24-inactive';

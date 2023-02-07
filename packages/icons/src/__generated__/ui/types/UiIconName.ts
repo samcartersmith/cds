@@ -180,6 +180,8 @@ export type UiIconName =
   | 'pFPS'
   | 'phone'
   | 'pin'
+  | 'planetActive'
+  | 'planetInactive'
   | 'play'
   | 'profile'
   | 'protection'
