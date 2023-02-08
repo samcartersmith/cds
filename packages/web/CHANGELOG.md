@@ -8,6 +8,38 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.0.0 (2/8/2023, 01:59 PM PST)
+
+#### 💥 Breaking
+
+- **[ListCell, ContentCell, Card, Pressable, PressableOpacity, Interactable]** Add some missing and remove some unnecessary a11y props. [#1529](https://github.cbhq.net/frontend/cds/pull/1529), [CDS-3019](https://jira.coinbase-corp.com/browse/CDS-3019)
+- Cds-icons integration. [#1648](https://github.cbhq.net/frontend/cds/pull/1648), [CDS-3051](https://jira.coinbase-corp.com/browse/CDS-3051)
+- **[Icon, NavigationIcon]** Fully hide decorative icons and fix A11Y handling. [#1429](https://github.cbhq.net/frontend/cds/pull/1429), [A11Y-213](https://jira.coinbase-corp.com/browse/A11Y-213)
+- **[Avatar]** Create selected and borderColor variants for the hexagon avatar. [#1496](https://github.cbhq.net/frontend/cds/pull/1496), [CDS-3024](https://jira.coinbase-corp.com/browse/CDS-3024)
+- @cbhq/cds-illustrations integration. [#1651](https://github.cbhq.net/frontend/cds/pull/1651), [CDS-3050](https://jira.coinbase-corp.com/browse/CDS-3050)
+- Make illustration type required. [#1561](https://github.cbhq.net/frontend/cds/pull/1561)
+
+#### 🚀 Updates
+
+- Add optional fallback prop to illustration component. [#1669](https://github.cbhq.net/frontend/cds/pull/1669)
+- **[Segmented Control]** Segmented control for web. [#1457](https://github.cbhq.net/frontend/cds/pull/1457)
+
+#### 🐞 Fixes
+
+- **[Progress Bar]** Add styles to contain the clipping., [DX-156](https://jira.coinbase-corp.com/browse/DX-156)
+- **[Alert]** Center Alert title on mobile. [#1645](https://github.cbhq.net/frontend/cds/pull/1645), [CDS-3046](https://jira.coinbase-corp.com/browse/CDS-3046)
+- Migrate usage of React.FC implicit children. [#1633](https://github.cbhq.net/frontend/cds/pull/1633), [CDS-2668](https://jira.coinbase-corp.com/browse/CDS-2668)
+- Upgrade ESLint and disable new rules to enable parallel eslint updates. [#1557](https://github.cbhq.net/frontend/cds/pull/1557)
+- Nx upgrade. [#1597](https://github.cbhq.net/frontend/cds/pull/1597)
+
+#### 📘 Misc
+
+- Top level type exports for icons and illustration packages. [#1672](https://github.cbhq.net/frontend/cds/pull/1672)
+- Make illustrations a peer dep of mobile and web. [#1668](https://github.cbhq.net/frontend/cds/pull/1668)
+- **[Illustration]** Update sorting to use last updated. [#1653](https://github.cbhq.net/frontend/cds/pull/1653)
+- Run yarn nx repair on master. [#1564](https://github.cbhq.net/frontend/cds/pull/1564)
+- **[deps]** Upgrade NX to later version of 15, mono-\*, babel,. [#1542](https://github.cbhq.net/frontend/cds/pull/1542)
+
 ## 3.6.1 (1/19/2023, 10:33 AM PST)
 
 #### 🐞 Fixes

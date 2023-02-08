@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.1 (2/8/2023, 01:59 PM PST)
+
+#### 🐞 Fixes
+
+- Upgrade ESLint and disable new rules to enable parallel eslint updates. [#1557](https://github.cbhq.net/frontend/cds/pull/1557)
+
+#### 📘 Misc
+
+- Run yarn nx repair on master. [#1564](https://github.cbhq.net/frontend/cds/pull/1564)
+- **[deps]** Upgrade NX to later version of 15, mono-\*, babel,. [#1542](https://github.cbhq.net/frontend/cds/pull/1542)
+- **[upgrade deps]** Upgrade NX from v14 to v15. [#1334](https://github.cbhq.net/frontend/cds/pull/1334)
+- Unify babel configurations across all packages. [#1304](https://github.cbhq.net/frontend/cds/pull/1304), [CDS-2577](https://jira.coinbase-corp.com/browse/CDS-2577)
+- Remove root level jest config and preset. [#1133](https://github.cbhq.net/frontend/cds/pull/1133)
+- Remove yarn scripts in favor of nx commands. [#1125](https://github.cbhq.net/frontend/cds/pull/1125)
+- Use mono-tasks when possible. [#1075](https://github.cbhq.net/frontend/cds/pull/1075)
+
 ## 1.1.0 (6/30/2022, 01:09 PM PST)
 
 #### 🐞 Fixes
