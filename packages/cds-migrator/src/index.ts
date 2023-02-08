@@ -1,2 +1,6 @@
-// This just exists for the package to build!
-export {};
+import updateNotifier, { Package } from 'update-notifier';
+
+updateNotifier({
+  pkg: require('../package.json') as Package,
+  shouldNotifyInNpmScript: true,
+}).notify();
