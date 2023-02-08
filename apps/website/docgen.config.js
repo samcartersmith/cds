@@ -25,6 +25,7 @@ module.exports = {
     path.join(__dirname, '../../packages/web/tsconfig.json'),
     path.join(__dirname, '../../packages/mobile/tsconfig.json'),
     path.join(__dirname, '../../packages/common/tsconfig.json'),
+    path.join(__dirname, '../../packages/icons/tsconfig.json'),
     path.join(__dirname, '../../packages/illustrations/tsconfig.json'),
   ],
   formatPackageName: (name) => {

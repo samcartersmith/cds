@@ -1,6 +1,8 @@
 import Npmrc from './_npmrc.mdx';
 import Providers, { toc as providersToc } from './_providers-web.mdx';
-import metadata from ':docgen/web/metadata';
+import webPackage from ':docgen/web/metadata';
+import illustrationPackage from ':docgen/illustrations/metadata';
+import iconPackage from ':docgen/icons/metadata';
 import CodeBlock from '@theme/CodeBlock';
 
 export const tocOverride = [...toc, ...providersToc];
@@ -15,7 +17,7 @@ If your web environment does not have a css loader for node_modules (nextjs, Rem
 
 ### Install
 
-<CodeBlock language="bash">{`yarn add @cbhq/cds-web-esm@^${metadata.version}`}</CodeBlock>
+<CodeBlock language="bash">{`yarn add @cbhq/cds-web-esm@^${webPackage.version} @cbhq/cds-icons@^${iconPackage.version} @cbhq/cds-illustrations@^${illustrationPackage.version}`}</CodeBlock>
 
 ### Add root imports
 

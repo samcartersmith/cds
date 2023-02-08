@@ -1,7 +1,9 @@
 import Npmrc from './_npmrc.mdx';
 import Providers, { toc as providersToc } from './_providers-web.mdx';
 import Eslint, { toc as eslintToc } from './_eslint-web.mdx';
-import metadata from ':docgen/web/metadata';
+import webPackage from ':docgen/web/metadata';
+import illustrationPackage from ':docgen/illustrations/metadata';
+import iconPackage from ':docgen/icons/metadata';
 import CodeBlock from '@theme/CodeBlock';
 
 export const tocOverride = [...toc, ...providersToc, ...eslintToc];
@@ -16,7 +18,7 @@ If your web environment has a css-loader for node_modules.
 
 ### Install
 
-<CodeBlock language="bash">{`yarn add @cbhq/cds-web@^${metadata.version}`}</CodeBlock>
+<CodeBlock language="bash">{`yarn add @cbhq/cds-web@^${webPackage.version} @cbhq/cds-icons@^${iconPackage.version} @cbhq/cds-illustrations@^${illustrationPackage.version}`}</CodeBlock>
 
 ### Add root imports
 

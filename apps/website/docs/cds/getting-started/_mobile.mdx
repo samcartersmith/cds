@@ -1,7 +1,9 @@
 import Npmrc from './_npmrc.mdx';
 import Providers, { toc as providersToc } from './_providers-mobile.mdx';
 import Eslint, { toc as eslintToc } from './_eslint-mobile.mdx';
-import metadata from ':docgen/mobile/metadata';
+import mobilePackage from ':docgen/mobile/metadata';
+import illustrationPackage from ':docgen/illustrations/metadata';
+import iconPackage from ':docgen/icons/metadata';
 import CodeBlock from '@theme/CodeBlock';
 
 export const tocOverride = [...toc, ...providersToc, ...eslintToc];
@@ -14,7 +16,7 @@ export const tocOverride = [...toc, ...providersToc, ...eslintToc];
 
 ### Install
 
-<CodeBlock language="bash">{`yarn add @cbhq/cds-mobile@^${metadata.version}`}</CodeBlock>
+<CodeBlock language="bash">{`yarn add @cbhq/cds-mobile@^${mobilePackage.version} @cbhq/cds-icons@^${iconPackage.version} @cbhq/cds-illustrations@^${illustrationPackage.version}`}</CodeBlock>
 
 ### Add providers
 

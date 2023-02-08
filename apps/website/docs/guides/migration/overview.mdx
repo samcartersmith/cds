@@ -3,28 +3,14 @@ title: Migration Guides
 slug: /guides/migration
 ---
 
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Web from './_web.mdx';
-import Mobile from './_mobile.mdx';
+import ZeroFourOne, { toc as zeroFourOneToc } from './_update-0-41-0.mdx';
+import ThreeZeroZero, { toc as threeZeroZeroToc } from './_update-3-0-0.mdx';
+import FourZeroZero, { toc as fourZeroZeroToc } from './_update-4-0-0.mdx';
 
-<Tabs
-  groupId="platform"
-  defaultValue="web"
-  values={[
-    { label: 'Web', value: 'web' },
-    { label: 'Mobile', value: 'mobile' },
-  ]}
->
-  <TabItem value="web">
-    <VStack gap={2}>
-      <Web />
-    </VStack>
-  </TabItem>
-  <TabItem value="mobile">
-    <VStack gap={2}>
-      <Mobile />
-    </VStack>
-  </TabItem>
-</Tabs>
+<TOCUpdater toc={[...fourZeroZeroToc, ...threeZeroZeroToc, ...zeroFourOneToc]} />
+
+<FourZeroZero />
+
+<ThreeZeroZero />
+
+<ZeroFourOne />

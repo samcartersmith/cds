@@ -14,8 +14,6 @@ import { Box } from '../layout/Box';
 import type { BadgeProps } from './Badge';
 import { iconStyles } from './iconStyles';
 
-export type { IconName, IconSize } from '@cbhq/cds-common/types';
-
 export type IconProps = IconBaseProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
     /** Color of the icon when used as a foreground. */
@@ -110,3 +108,5 @@ export const Icon = memo(
     },
   ),
 );
+
+export type { IconName, IconSize } from '@cbhq/cds-common/types';
