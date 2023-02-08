@@ -67,6 +67,11 @@ export type IllustrationBaseProps<T extends keyof IllustrationNamesMap> = {
    * @default "" will identify the image as decorative
    */
   alt?: string;
+  /**
+   * Fallback element to render if unable to find an illustration with the matching name
+   * @default null
+   * */
+  fallback?: null | React.ReactElement;
 } & SharedProps;
 
 export type HeroSquareProps = IllustrationBaseProps<'heroSquare'> & {

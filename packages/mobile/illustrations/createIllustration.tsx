@@ -18,6 +18,7 @@ export function createIllustration<
   type IllustrationProps = IllustrationBaseProps<Variant>;
 
   const Illustration = memo(function Illustration({
+    fallback = null,
     name,
     dimension,
     scaleMultiplier,
@@ -44,7 +45,7 @@ export function createIllustration<
         // eslint-disable-next-line no-console
         console.error(`Unable to find illustration with name: ${name}`);
       }
-      return null;
+      return fallback;
     }
 
     return <SvgXml style={style} xml={xml} testID={testID} />;

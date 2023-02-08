@@ -28,6 +28,7 @@ export function createIllustration<Variant extends IllustrationVariant>(
     scaleMultiplier,
     testID,
     alt = '',
+    fallback = null,
   }: IllustrationProps) {
     const spectrum = useSpectrum();
     const version = config[name];
@@ -50,7 +51,7 @@ export function createIllustration<Variant extends IllustrationVariant>(
         // eslint-disable-next-line no-console
         console.error(`Unable to find illustration with name: ${name}`);
       }
-      return null;
+      return fallback;
     }
 
     return <img src={src} alt={alt} width={width} height={height} data-testid={testID} />;
