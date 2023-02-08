@@ -3,7 +3,7 @@ import heroSquareIllustrations from '@cbhq/cds-illustrations/__generated__/heroS
 import { createIllustration } from './createIllustration';
 
 export type { HeroSquareProps } from '@cbhq/cds-common/types/IllustrationProps';
-export type { HeroSquareName } from '@cbhq/cds-illustrations/__generated__/heroSquare/types/HeroSquareName';
+export type { HeroSquareName } from '@cbhq/cds-illustrations';
 
 /**
  * @changelog ./createIllustration.tsx, ./Illustration.tsx

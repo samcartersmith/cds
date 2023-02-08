@@ -1,7 +1,9 @@
-import type { HeroSquareName } from '@cbhq/cds-illustrations/__generated__/heroSquare/types/HeroSquareName';
-import type { PictogramName } from '@cbhq/cds-illustrations/__generated__/pictogram/types/PictogramName';
-import type { SpotRectangleName } from '@cbhq/cds-illustrations/__generated__/spotRectangle/types/SpotRectangleName';
-import type { SpotSquareName } from '@cbhq/cds-illustrations/__generated__/spotSquare/types/SpotSquareName';
+import type {
+  HeroSquareName,
+  PictogramName,
+  SpotRectangleName,
+  SpotSquareName,
+} from '@cbhq/cds-illustrations';
 
 export type IllustrationVariant = 'spotSquare' | 'spotRectangle' | 'heroSquare' | 'pictogram';
 

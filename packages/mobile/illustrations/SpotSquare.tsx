@@ -3,7 +3,7 @@ import spotSquareIllustrations from '@cbhq/cds-illustrations/__generated__/spotS
 import { createIllustration } from './createIllustration';
 
 export type { SpotSquareProps } from '@cbhq/cds-common/types/IllustrationProps';
-export type { SpotSquareName } from '@cbhq/cds-illustrations/__generated__/spotSquare/types/SpotSquareName';
+export type { SpotSquareName } from '@cbhq/cds-illustrations';
 
 /**
  * @changelog ./createIllustration.tsx, ./Illustration.tsx
