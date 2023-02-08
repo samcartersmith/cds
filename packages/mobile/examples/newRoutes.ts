@@ -147,6 +147,10 @@ export const routes = [
     getComponent: () => require('../overlays/__stories__/Modal.stories').default,
   },
   {
+    key: 'NavigationIcon',
+    getComponent: () => require('../icons/__stories__/NavigationIcon.stories').default,
+  },
+  {
     key: 'Overlay',
     getComponent: () => require('../overlays/__stories__/Overlay.stories').default,
   },

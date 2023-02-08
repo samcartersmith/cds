@@ -2218,6 +2218,7 @@ __metadata:
     react-is: ^17.0.2
     type-fest: ^1.2.0
   peerDependencies:
+    "@cbhq/cds-icons": "workspace:*"
     "@cbhq/cds-illustrations": "workspace:*"
     react: ">=17.0.0"
     react-dom: ">=17.0.0"
@@ -2276,7 +2277,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-icons@workspace:packages/icons":
+"@cbhq/cds-icons@workspace:*, @cbhq/cds-icons@workspace:^, @cbhq/cds-icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-icons@workspace:packages/icons"
   dependencies:
@@ -2340,6 +2341,7 @@ __metadata:
     react-test-renderer: ^17.0.2
     type-fest: ^1.2.0
   peerDependencies:
+    "@cbhq/cds-icons": "workspace:*"
     "@cbhq/cds-illustrations": "workspace:*"
     "@react-navigation/native": ^6.0.11
     "@react-navigation/stack": ^6.2.2
@@ -2426,6 +2428,7 @@ __metadata:
     react-popper: ^2.2.4
     reakit: ^1.3.11
   peerDependencies:
+    "@cbhq/cds-icons": "workspace:*"
     "@cbhq/cds-illustrations": "workspace:*"
     react: ">=17.0.0"
     react-dom: ">=17.0.0"
@@ -2924,6 +2927,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cds/mobile-playground@workspace:apps/mobile-playground"
   dependencies:
+    "@cbhq/cds-icons": "workspace:*"
     "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/detox-utils": ^0.2.3
     "@cbhq/metro-config": ^0.0.1
@@ -2956,6 +2960,7 @@ __metadata:
   resolution: "@cds/storybook@workspace:apps/storybook"
   dependencies:
     "@cbhq/cds-fonts": "workspace:^"
+    "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
     "@cbhq/cds-web-utils": "workspace:^"
@@ -2989,6 +2994,7 @@ __metadata:
   dependencies:
     "@cb/cms": ^0.1.4
     "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
     "@cbhq/docusaurus-preset": "workspace:^"

@@ -17,7 +17,7 @@ export default async function theme(): Promise<Plugin<void>> {
         require.resolve('focus-visible'),
         require.resolve('schedulely/dist/index.css'),
         require.resolve('@cbhq/cds-fonts/fonts.css'),
-        require.resolve('@cbhq/cds-web/styles/icon-font.css'),
+        require.resolve('@cbhq/cds-icons/fonts/web/icon-font.css'),
         require.resolve('./css/styles.css'),
         require.resolve('./js/init.js'),
       ];

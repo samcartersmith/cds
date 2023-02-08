@@ -2,7 +2,7 @@
 import './polyfills';
 import 'focus-visible';
 import '@cbhq/cds-fonts/fonts.css';
-import '@cbhq/cds-web/styles/icon-font.css';
+import '@cbhq/cds-icons/fonts/web/icon-font.css';
 import { globalStyles } from '@cbhq/cds-web/styles/global';
 import { withPerformance } from 'storybook-addon-performance';
 import { StoryContainer } from '@cbhq/cds-web/storybook-decorators/StoryContainer';

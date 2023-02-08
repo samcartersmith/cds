@@ -1,24 +1,22 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { IconBase } from '../IconBase';
+import { Icon } from '../Icon';
 
-type IconBaseExampleProps = {
+type IconExampleProps = {
   accessibilityLabel?: string;
   title?: string;
 };
 
-const IconBaseExample = (props: IconBaseExampleProps) => (
-  <IconBase name="copy" size="m" {...props} />
-);
+const IconExample = (props: IconExampleProps) => <Icon name="copy" size="m" {...props} />;
 
-describe('IconBase', () => {
+describe('Icon', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<IconBaseExample />)).toHaveNoViolations();
+    expect(await renderA11y(<IconExample />)).toHaveNoViolations();
   });
 
   it('is aria hidden by default', () => {
-    render(<IconBaseExample />);
+    render(<IconExample />);
 
     expect(screen.queryByRole('img')).toBeNull();
   });
@@ -26,7 +24,7 @@ describe('IconBase', () => {
   it('is not aria hidden and has an accessible label when `accessibilityLabel` is defined', () => {
     const label = 'some label';
 
-    render(<IconBaseExample accessibilityLabel={label} />);
+    render(<IconExample accessibilityLabel={label} />);
 
     const icon = screen.getByRole('img');
 

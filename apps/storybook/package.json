@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "@cbhq/cds-fonts": "workspace:^",
+    "@cbhq/cds-icons": "workspace:^",
     "@cbhq/cds-illustrations": "workspace:^",
     "@cbhq/cds-web": "workspace:^",
     "@juggle/resize-observer": "^3.4.0"

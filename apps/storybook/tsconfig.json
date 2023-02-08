@@ -6,6 +6,9 @@
   },
   "references": [
     {
+      "path": "../../packages/icons"
+    },
+    {
       "path": "../../packages/web"
     },
     {

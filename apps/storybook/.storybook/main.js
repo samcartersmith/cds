@@ -1,6 +1,5 @@
 // @ts-check
 const path = require('path');
-
 const BABEL_OPTIONS = { configFile: true, rootMode: 'upward' };
 
 /**
@@ -17,6 +16,20 @@ const config = {
     'storybook-addon-performance/register',
     // 'storybook-addon-pseudo-states', enable when addon/docs is removed
     'storybook-dark-mode',
+  ],
+  staticDirs: [
+    {
+      from: '../../../packages/icons/fonts/web',
+      to: '@cbhq/cds-icons/fonts/web',
+    },
+    {
+      from: '../../../packages/icons/src/__generated__/ui/svg',
+      to: '@cbhq/cds-icons/__generated__/ui/svg',
+    },
+    {
+      from: '../../../packages/icons/src/__generated__/nav/svg',
+      to: '@cbhq/cds-icons/__generated__/nav/svg',
+    },
   ],
   core: {
     builder: 'webpack5',
@@ -70,6 +83,7 @@ const config = {
         }
       }
     });
+
     return config;
   },
 };

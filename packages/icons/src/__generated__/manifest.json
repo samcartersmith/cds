@@ -5404,15 +5404,15 @@
       "name": "planetInactive",
       "description": "navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏",
       "components": [
-        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61642 } },
-        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61641 } },
-        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61640 } }
+        { "props": { "size": 24 }, "metadata": { "unicode": 61642 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61641 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61640 } }
       ],
       "lastUpdated": "2023-02-07T14:43:55.826Z",
       "outputs": {
-        "svg12Inactive": "./ui/svg/ui-planetInactive-12-inactive.svg",
-        "svg16Inactive": "./ui/svg/ui-planetInactive-16-inactive.svg",
-        "svg24Inactive": "./ui/svg/ui-planetInactive-24-inactive.svg"
+        "svg12Inactive": "./ui/svg/ui-planetInactive-12.svg",
+        "svg16Inactive": "./ui/svg/ui-planetInactive-16.svg",
+        "svg24Inactive": "./ui/svg/ui-planetInactive-24.svg"
       }
     },
     "569:71": {
@@ -5420,15 +5420,15 @@
       "name": "planetActive",
       "description": "navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏",
       "components": [
-        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61639 } },
-        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61638 } },
-        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61637 } }
+        { "props": { "size": 24 }, "metadata": { "unicode": 61639 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61638 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61637 } }
       ],
       "lastUpdated": "2023-02-07T14:44:09.948Z",
       "outputs": {
-        "svg12Active": "./ui/svg/ui-planetActive-12-active.svg",
-        "svg16Active": "./ui/svg/ui-planetActive-16-active.svg",
-        "svg24Active": "./ui/svg/ui-planetActive-24-active.svg"
+        "svg12Active": "./ui/svg/ui-planetActive-12.svg",
+        "svg16Active": "./ui/svg/ui-planetActive-16.svg",
+        "svg24Active": "./ui/svg/ui-planetActive-24.svg"
       }
     }
   }

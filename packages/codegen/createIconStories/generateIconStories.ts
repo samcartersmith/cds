@@ -1,11 +1,13 @@
 import { createWriteStream } from 'fs';
-import { iconNames, navigationIconInternalNames } from '@cbhq/cds-common/internal/data/iconData';
 
+/**
+ * THIS FILE SHOULD BE DELETED AFTER ICON MIGRATION TO @cbhq/cds-icons package
+ */
 import { baseTemplate } from './template';
 
 const iconMap = {
-  ui: iconNames,
-  nav: navigationIconInternalNames,
+  ui: [],
+  nav: [],
 };
 
 export const generateIconStories = (outputFile: string) => {

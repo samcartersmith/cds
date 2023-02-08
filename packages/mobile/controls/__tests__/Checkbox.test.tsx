@@ -1,7 +1,7 @@
 import { Pressable } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
+import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
-import { iconGlyphMap } from '../../icons/iconGlyphMap';
 import { Checkbox } from '../Checkbox';
 
 describe('Checkbox', () => {
@@ -19,7 +19,7 @@ describe('Checkbox', () => {
   it('renders a check icon when checked', () => {
     render(<Checkbox checked>Checked</Checkbox>);
 
-    const icon = screen.getByText(iconGlyphMap.checkmark['16']);
+    const icon = screen.getByText(glyphMap['ui-checkmark-16']);
     expect(icon).toBeTruthy();
   });
   it('checked Checkbox passes a11y', () => {

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@cbhq/cds-icons": "workspace:*",
     "@cbhq/cds-mobile": "workspace:^",
     "@cbhq/metro-config": "^0.0.1",
     "@cbhq/ui-mobile-playground": "workspace:^",

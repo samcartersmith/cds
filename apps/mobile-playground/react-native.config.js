@@ -1,5 +1,5 @@
 module.exports = {
-  assets: ['../../packages/fonts/native', '../../packages/mobile/icons/font'],
+  assets: ['../../packages/fonts/native', '../../packages/icons/fonts/native'],
   mobileCli: {
     prebuildPrefix: 'cds_playground',
     metricsAppName: 'cds_playground',

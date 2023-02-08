@@ -11,7 +11,7 @@ import buildPackage from '../build-package/impl';
 import { deleteDir, deleteFile, getFileSizeInKb } from '../utils';
 
 type BuildPackageEsmOptions = BuildPackageOptions &
-  Pick<BuildCssOptions, 'fontsOutputDir'> & {
+  Pick<BuildCssOptions, 'fontsOutputDir' | 'iconsOutputDir'> & {
     maxFileSizeInKb: number;
   };
 
@@ -42,7 +42,7 @@ export default async function buildPackageEsm(
     },
   };
 
-  const { destinationDir, fontsOutputDir, maxFileSizeInKb } = esmOpts;
+  const { destinationDir, fontsOutputDir, iconsOutputDir, maxFileSizeInKb } = esmOpts;
   const tempBuildDestinationDir = path.join(destinationDir, 'temp-css');
 
   // build package with environment variable (no css files)
@@ -58,6 +58,7 @@ export default async function buildPackageEsm(
 
   const distDir = path.join(destinationDir, 'assets');
   const cssOpts: BuildCssOptions = {
+    iconsOutputDir,
     fontsOutputDir,
     webOutputDir: tempBuildDestinationDir,
     outputDir: distDir,

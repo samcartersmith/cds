@@ -1,7 +1,7 @@
 import { Pressable } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
+import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
-import { iconGlyphMap } from '../../icons/iconGlyphMap';
 import { Radio } from '../RadioGroup';
 
 describe('Radio', () => {
@@ -19,7 +19,7 @@ describe('Radio', () => {
   it('renders a dot icon when checked', () => {
     render(<Radio checked>Checked</Radio>);
 
-    const icon = screen.getByText(iconGlyphMap.dot['16']);
+    const icon = screen.getByText(glyphMap['ui-dot-16']);
     expect(icon).toBeTruthy();
   });
 

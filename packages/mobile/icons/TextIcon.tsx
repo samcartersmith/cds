@@ -2,11 +2,11 @@ import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, Text, TextStyle } from 'react-native';
 import { PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
+import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
 import { usePalette } from '../hooks/usePalette';
 
 import { IconProps } from './Icon';
-import { iconGlyphMap } from './iconGlyphMap';
 
 export type TextIconProps = Pick<IconProps, 'color' | 'size' | 'name' | 'testID'> &
   (
@@ -35,7 +35,7 @@ export const TextIcon = memo(function TextIcon({
   dangerouslySetStyle,
 }: TextIconProps) {
   const Component = animated ? Animated.Text : Text;
-  const { iconSize } = useIconSize(size, false);
+  const { iconSize, sourceSize } = useIconSize(size, false);
   const iconColor = usePalette()[color];
 
   const styles = useMemo(
@@ -51,10 +51,13 @@ export const TextIcon = memo(function TextIcon({
     [dangerouslySetStyle, iconColor, iconSize],
   );
 
-  if (iconGlyphMap[name][iconSize]) {
+  const glyphKey = `ui-${name}-${sourceSize}` as const;
+  const glyph = glyphMap[glyphKey];
+
+  if (glyph) {
     return (
       <Component testID={testID} allowFontScaling={false} accessibilityRole="image" style={styles}>
-        {iconGlyphMap[name][iconSize]}
+        {glyph}
       </Component>
     );
   }

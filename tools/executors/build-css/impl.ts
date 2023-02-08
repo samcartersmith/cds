@@ -80,7 +80,7 @@ async function writeCssToOut(
 }
 
 export default async function buildCss(options: BuildCssOptions, context: ExecutorContext) {
-  const { fontsOutputDir, webOutputDir, outputDir, name } = options;
+  const { fontsOutputDir, iconsOutputDir, webOutputDir, outputDir, name } = options;
 
   let success = true;
 
@@ -97,14 +97,11 @@ export default async function buildCss(options: BuildCssOptions, context: Execut
     mapCssPaths(['global.css', 'scale.css', 'spectrum.css'], cssFiles),
   );
 
-  // Extract icon font CSS
-  let fontsCss = await readCss(mapCssPaths(['icon-font.css'], cssFiles));
-
-  // Update font file path to be relative to this combined file
-  fontsCss = fontsCss.replace('../icons/font/', './');
-
   // Include font families
-  fontsCss += await readCss([path.join(fontsOutputDir, 'fonts.css')]);
+  let fontsCss = await readCss([path.join(fontsOutputDir, 'fonts.css')]);
+
+  // Extract icon font CSS
+  fontsCss += await readCss([path.join(iconsOutputDir, 'icon-font.css')]);
 
   // Extract remaining CSS Files
   const otherCss = await readCss(Array.from(cssFiles));
@@ -123,6 +120,7 @@ export default async function buildCss(options: BuildCssOptions, context: Execut
         context,
         name,
       ),
+      copyFontsToOut(iconsOutputDir, outputDir),
       copyFontsToOut(fontsOutputDir, outputDir),
       copyFontsToOut(webOutputDir, outputDir),
     ]);

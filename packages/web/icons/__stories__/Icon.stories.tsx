@@ -1,29 +1,20 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-/**
- * DO NOT MODIFY
- * Generated from packages/codegen/createIconStories/main.ts
- */
-
-import {
-  CreateIconSheetParams,
-  iconSheetBuilderWeb,
-} from '@cbhq/cds-common/internal/iconSheetBuilderWeb';
-
-import { HStack, VStack } from '../../layout';
 import { Icon } from '../Icon';
+
+import { IconSheet } from './deprecatedIconSheetBuilder';
+import { IconSheet as NewIconSheet } from './IconSheet';
 
 export default {
   title: 'Icon',
   component: Icon,
 };
 
-const { IconSheet } = iconSheetBuilderWeb({
-  platform: 'web',
-  VStack,
-  HStack,
-  Icon,
-} as CreateIconSheetParams);
+export const All = () => <NewIconSheet />;
+
+/* -------------------------------------------------------------------------- */
+/*           Everything below should be deleted after icon migration          */
+/* -------------------------------------------------------------------------- */
 
 export const ui_0 = () => IconSheet('ui', 0, 50);
 export const ui_1 = () => IconSheet('ui', 50, 100);

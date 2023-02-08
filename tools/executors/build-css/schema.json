@@ -3,6 +3,10 @@
   "type": "object",
   "cli": "nx",
   "properties": {
+    "iconsOutputDir": {
+      "type": "string",
+      "description": "directory with the built icons"
+    },
     "fontsOutputDir": {
       "type": "string",
       "description": "directory with the built fonts"

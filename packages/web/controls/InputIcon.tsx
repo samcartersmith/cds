@@ -1,8 +1,7 @@
 import React, { ForwardedRef, forwardRef, memo, useContext } from 'react';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 
-import { Icon } from '../icons';
-import { IconProps } from '../icons/IconProps';
+import { Icon, IconProps } from '../icons/Icon';
 import { Box } from '../layout/Box';
 
 import { TextInputFocusVariantContext } from './context';

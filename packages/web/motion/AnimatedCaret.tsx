@@ -3,8 +3,7 @@ import { m as motion, MotionConfig } from 'framer-motion';
 import { animateRotateConfig } from '@cbhq/cds-common/motion/animatedCaret';
 import type { AnimatedCaretBaseProps } from '@cbhq/cds-common/types/AnimatedCaretBaseProp';
 
-import { Icon } from '../icons';
-import { IconProps } from '../icons/IconProps';
+import { Icon, IconProps } from '../icons';
 import { HStack } from '../layout';
 
 import { useMotionProps } from './useMotionProps';

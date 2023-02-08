@@ -84,6 +84,7 @@
           "storybook-decorators"
         ],
         "typescriptConfig": "packages/web/tsconfig.build-esm.json",
+        "iconsOutputDir": "packages/icons/fonts/web",
         "fontsOutputDir": "packages/fonts",
         "maxFileSizeInKb": 115
       },
@@ -97,6 +98,7 @@
         "{workspaceRoot}/.nx/dist/cloud/css"
       ],
       "options": {
+        "iconsOutputDir": "packages/icons/fonts/web",
         "fontsOutputDir": ".nx/dist/packages/fonts",
         "webOutputDir": ".nx/dist/packages/web",
         "outputDir": ".nx/dist/cloud/css"

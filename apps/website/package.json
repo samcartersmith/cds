@@ -5,6 +5,7 @@
   "dependencies": {
     "@cb/cms": "^0.1.4",
     "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-icons": "workspace:^",
     "@cbhq/cds-illustrations": "workspace:^",
     "@cbhq/cds-web": "workspace:^",
     "@cbhq/docusaurus-preset": "workspace:^",

@@ -1,10 +1,6 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import {
-  CreateIconSheetParams,
-  iconSheetBuilderMobile,
-} from '@cbhq/cds-common/internal/iconSheetBuilderMobile';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -16,6 +12,8 @@ import { TextBody } from '../../typography';
 import { FiatIcon } from '../FiatIcon';
 import { Icon } from '../Icon';
 import { TextIcon } from '../TextIcon';
+
+import { IconSheet } from './IconSheet';
 
 const animateInConfig = convertMotionConfig({
   easing: 'enterFunctional',
@@ -42,12 +40,6 @@ export const useAnimation = (): [
     return [animationRef.current, animateIn, animateOut];
   }, []);
 };
-
-export const { IconSheet } = iconSheetBuilderMobile({
-  VStack,
-  HStack,
-  Icon,
-} as CreateIconSheetParams);
 
 const IconScreen = () => {
   const palette = usePalette();

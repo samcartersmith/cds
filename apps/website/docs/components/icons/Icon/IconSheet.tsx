@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import throttle from 'lodash/throttle';
-import descriptionMap from '@cbhq/cds-icons/__generated__/nav/data/descriptionMap';
-import names from '@cbhq/cds-icons/__generated__/nav/data/names';
+import descriptionMap from '@cbhq/cds-icons/__generated__/ui/data/descriptionMap';
+import names from '@cbhq/cds-icons/__generated__/ui/data/names';
 import { TextInput } from '@cbhq/cds-web/controls/TextInput';
-import { NavigationIcon } from '@cbhq/cds-web/icons';
+import { Icon } from '@cbhq/cds-web/icons';
 import { HStack } from '@cbhq/cds-web/layout';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
@@ -22,7 +22,7 @@ const queryMatchesName = (query: string, name: string) => {
   return name.match(queryRe) !== null || matchedIconNames.join(' ').match(nameRe) !== null;
 };
 
-export const NavigationIconSheet = () => {
+export const IconSheet = () => {
   const [query, setQuery] = useState('');
 
   const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +37,7 @@ export const NavigationIconSheet = () => {
       .map((name) => {
         return (
           <VStack spacing={3} alignItems="center" key={name} width={120}>
-            <NavigationIcon name={name} size="m" />
+            <Icon name={name} size="m" color="foreground" />
             <TextLabel1 align="center" as="p" spacing={2}>
               {name}
             </TextLabel1>
@@ -52,7 +52,7 @@ export const NavigationIconSheet = () => {
         <TextInput
           onChange={searchOnChange}
           type="text"
-          placeholder="Navigation icon name"
+          placeholder="Icon name"
           label="Filter Icons"
         />
       </Box>
