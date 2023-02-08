@@ -97,7 +97,10 @@ export type InteractableProps = {
 } & InteractableBaseProps &
   InteractableInheritedProps &
   SharedProps &
-  SharedAccessibilityProps;
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  >;
 
 export const InteractableContent = forwardRef(function InteractableContent(
   {

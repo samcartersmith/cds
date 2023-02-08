@@ -1,8 +1,6 @@
 :::tip Accessibility tip
 
-**Mobile only**
-
-When a `ListCell` is a pressable (i.e. when a callback is set on `onPress`), by default all of the visible text content in the cell will be read by assistive technology when it's focused. If you want to override this behavior, you can pass a custom label and hint to `accessibilityLabel` and `accessibilityHint` respectively, but be mindful of any important content you may be hiding from the user.
+When a `ListCell` is a pressable (i.e. when `onPress`, `onKeyPress`, `onKeyDown`, `to`, or `href` are defined), by default all of the visible text content in the cell will be read by assistive technology when it's focused. If you want to override this behavior on mobile, you can pass a custom label and hint to `accessibilityLabel` and `accessibilityHint`, respectively. On web, you can set a custom label using `accessibilityLabelledBy` or `accessibilityLabel`. However, be mindful of any important content you may be hiding from the user.
 
 <br />
 

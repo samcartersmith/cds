@@ -50,7 +50,11 @@ export type LinkableProps = {
   onKeyPress?: React.KeyboardEventHandler;
   /** URL that this links to when pressed. */
   to?: string;
-} & Pick<React.AllHTMLAttributes<HTMLAnchorElement>, 'target' | 'href'>;
+} & Pick<React.AllHTMLAttributes<HTMLAnchorElement>, 'target' | 'href'> &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  >;
 
 export type PressableProps = {
   /**
@@ -62,7 +66,6 @@ export type PressableProps = {
   SharedProps &
   LinkableProps &
   ComponentEventHandlerProps &
-  Omit<SharedAccessibilityProps, 'id'> &
   Pick<InteractableProps, 'loading'>;
 
 export type PressableInternalProps = {

@@ -150,8 +150,6 @@ export const Pressable = memo(
     return (
       <BasePressable
         accessibilityRole="button"
-        // This rule is semi-problematic, as it encourages direct inline object usages
-
         accessibilityState={accessibilityState}
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         disabled={disabled || loading}

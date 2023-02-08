@@ -26,34 +26,42 @@ labeledBy?: string;
 <TextTitle4 as="h4">Removed Props (NavigationIcon)</TextTitle4>
 
 ```ts
-/** Accessibility hint for assisted devices when focused.
- * Message should indicate the purpose of the control.
- * If not supplied, will default to label */
-accessibilityHint?: string;
-/**
- * Accessibility prop that describes the component that labels it by its `id`
- * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute
- */
-accessibilityLabelledBy?: string;
-/** Used for a11y to indicate the relationship between a controlled element and its controller
- * eg: a Button that controls the visibility of a Modal
- */
-id?: string;
-/** Used to associate a label with an input for accessibility */
-accessibilityLabelId?: string;
-/** Used to associate descriptive text to an input for accessibility */
-accessibilityDescriptionId?: string;
+  /**
+   * On web, maps to `aria-describedby` and lists the id(s) of the element(s) that describe the element on which the attribute is set.
+   * On mobile, a string that helps users understand what will happen when they perform an action on the accessibility element
+   * when that result is not clear from the accessibility label.
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby
+   * @link https://reactnative.dev/docs/accessibility#accessibilityhint
+   */
+  accessibilityHint?: string;
+  /**
+   * On web, maps to `aria-labelledby` and lists the id(s) of the element(s) that label the element on which the attribute is set.
+   * On mobile (Android only), a reference to another element `nativeID` used to build complex forms.
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby
+   * @link https://reactnative.dev/docs/accessibility#accessibilitylabelledby-android
+   */
+  accessibilityLabelledBy?: string;
+  /**
+   * Used for a11y to indicate the relationship between a controlled element and its controller
+   * eg: a Button that controls the visibility of a Modal
+   */
+  id?: string;
+  /** Used to associate a label with an input for accessibility */
+  accessibilityLabelId?: string;
+  /** Used to associate descriptive text to an input for accessibility */
+  accessibilityDescriptionId?: string;
 ```
 
 <TextTitle4 as="h4">New Props (Icon)</TextTitle4>
 
 ```ts
-/**
- * Accessibility label describing the control.
- * If no accessibilityLabel, it will set it to label
- * Maps to `aria-label`
- */
-accessibilityLabel?: string;
+  /**
+   * On web, maps to `aria-label` and defines a string value that labels an interactive element.
+   * On mobile, VoiceOver will read this string when a user selects the associated element.
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
+   * @link https://reactnative.dev/docs/accessibility#accessibilitylabel
+   */
+  accessibilityLabel?: string;
 ```
 
 <TextTitle4 as="h4">Migration Guidance</TextTitle4>
@@ -102,4 +110,17 @@ This occurs because icons are now `aria-hidden` by default and no longer count a
     onPress={handlePress}
 +   accessibilityLabel="Add an item"
   />
+```
+
+### Pressable and Interactable
+
+[Pressable](/components/pressable) and [Interactable](/components/interactable) (and any components derived from them) no longer support the following accessibility props:
+
+<TextTitle4 as="h4">Removed Props</TextTitle4>
+
+```ts
+  /** Used to associate a label with an input for accessibility */
+  accessibilityLabelId?: string;
+  /** Used to associate descriptive text to an input for accessibility */
+  accessibilityDescriptionId?: string;
 ```

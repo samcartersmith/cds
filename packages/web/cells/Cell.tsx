@@ -109,6 +109,9 @@ export const Cell = memo(
        * */
       shouldOverflow,
       responsiveConfig,
+      accessibilityLabel,
+      accessibilityLabelledBy,
+      accessibilityHint,
       /** Props for useCellSpacing */
       ...spacingProps
     }: CellProps,
@@ -195,6 +198,9 @@ export const Cell = memo(
     if (linkable) {
       content = (
         <Pressable
+          accessibilityLabel={accessibilityLabel}
+          accessibilityLabelledBy={accessibilityLabelledBy}
+          accessibilityHint={accessibilityHint}
           noScaleOnPress
           transparentWhileInactive
           backgroundColor="background"

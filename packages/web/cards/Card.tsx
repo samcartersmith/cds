@@ -38,6 +38,9 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
     pin,
     width: widthProps,
     height: heightProps,
+    accessibilityLabel,
+    accessibilityLabelledBy,
+    accessibilityHint,
     testID,
     ...props
   }) => {
@@ -88,6 +91,9 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
 
     return linkable ? (
       <Pressable
+        accessibilityLabel={accessibilityLabel}
+        accessibilityLabelledBy={accessibilityLabelledBy}
+        accessibilityHint={accessibilityHint}
         backgroundColor={bg}
         borderRadius={borderRadius}
         borderColor={borderColor}

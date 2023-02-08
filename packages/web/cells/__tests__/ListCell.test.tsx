@@ -7,6 +7,7 @@ import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
 const URL = 'https://www.google.com';
+const A11Y_TEXT = 'Some accessible text';
 
 describe('ListCell', () => {
   it('passes accessibility', async () => {
@@ -43,6 +44,38 @@ describe('ListCell', () => {
         />,
       ),
     ).toHaveNoViolations();
+  });
+
+  it('sets an accessibile label with accessibilityLabel when pressable', () => {
+    render(<ListCell onPress={noop} accessibilityLabel={A11Y_TEXT} />);
+
+    expect(screen.getByRole('button')).toHaveAccessibleName(A11Y_TEXT);
+  });
+
+  it('sets an accessibile label with accessibilityLabelledBy when pressable', () => {
+    const labelId = 'label-id';
+
+    render(
+      <>
+        <span id={labelId}>{A11Y_TEXT}</span>
+        <ListCell onPress={noop} accessibilityLabelledBy={labelId} />
+      </>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAccessibleName(A11Y_TEXT);
+  });
+
+  it('sets an accessibile description with accessibilityHint when pressable', () => {
+    const descriptionId = 'description-id';
+
+    render(
+      <>
+        <span id={descriptionId}>{A11Y_TEXT}</span>
+        <ListCell onPress={noop} accessibilityHint={descriptionId} />
+      </>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAccessibleDescription(A11Y_TEXT);
   });
 
   it('renders a title', () => {

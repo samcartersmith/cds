@@ -104,7 +104,6 @@ export const Cell = memo(function Cell({
   if (onPress) {
     content = (
       <Pressable
-        accessibilityRole="button"
         accessibilityLabel={accessibilityLabel}
         accessibilityHint={accessibilityHint}
         noScaleOnPress

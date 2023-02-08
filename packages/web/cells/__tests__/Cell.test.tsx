@@ -7,6 +7,7 @@ import { Cell } from '../Cell';
 const CELL_TEXT = 'Some cell text';
 const EXPECTED_TEXT = 'Some expected text';
 const URL = 'https://www.google.com';
+const A11Y_TEXT = 'Some accessible text';
 
 describe('Cell', () => {
   it('passes accessibility', async () => {
@@ -19,6 +20,46 @@ describe('Cell', () => {
 
   it('passes accessibility when a link', async () => {
     expect(await renderA11y(<Cell to={URL}>{CELL_TEXT}</Cell>)).toHaveNoViolations();
+  });
+
+  it('sets an accessible label with accessibilityLabel when pressable', () => {
+    render(
+      <Cell onPress={noop} accessibilityLabel={A11Y_TEXT}>
+        {CELL_TEXT}
+      </Cell>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAccessibleName(A11Y_TEXT);
+  });
+
+  it('sets an accessible label with accessibilityLabelledBy when pressable', () => {
+    const labelId = 'label-id';
+
+    render(
+      <>
+        <span id={labelId}>{A11Y_TEXT}</span>
+        <Cell onPress={noop} accessibilityLabelledBy={labelId}>
+          {CELL_TEXT}
+        </Cell>
+      </>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAccessibleName(A11Y_TEXT);
+  });
+
+  it('sets an accessible description with accessibilityHint when pressable', () => {
+    const descriptionId = 'description-id';
+
+    render(
+      <>
+        <span id={descriptionId}>{A11Y_TEXT}</span>
+        <Cell onPress={noop} accessibilityHint={descriptionId}>
+          {CELL_TEXT}
+        </Cell>
+      </>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAccessibleDescription(A11Y_TEXT);
   });
 
   it('renders children', () => {

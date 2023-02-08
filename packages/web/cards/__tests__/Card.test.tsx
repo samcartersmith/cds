@@ -7,6 +7,7 @@ import { Card } from '../Card';
 
 const CARD_TEXT = 'Some cell text';
 const URL = 'https://www.google.com';
+const A11Y_TEXT = 'Some accessible text';
 
 describe('Card', () => {
   it('passes accessibility', async () => {
@@ -19,6 +20,46 @@ describe('Card', () => {
 
   it('passes accessibility when a link', async () => {
     expect(await renderA11y(<Card to={URL}>{CARD_TEXT}</Card>)).toHaveNoViolations();
+  });
+
+  it('sets an accessible label with accessibilityLabel when pressable', () => {
+    render(
+      <Card onPress={noop} accessibilityLabel={A11Y_TEXT}>
+        {CARD_TEXT}
+      </Card>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAccessibleName(A11Y_TEXT);
+  });
+
+  it('sets an accessible label with accessibilityLabelledBy when pressable', () => {
+    const labelId = 'label-id';
+
+    render(
+      <>
+        <span id={labelId}>{A11Y_TEXT}</span>
+        <Card onPress={noop} accessibilityLabelledBy={labelId}>
+          {CARD_TEXT}
+        </Card>
+      </>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAccessibleName(A11Y_TEXT);
+  });
+
+  it('sets an accessible description with accessibilityHint when pressable', () => {
+    const descriptionId = 'description-id';
+
+    render(
+      <>
+        <span id={descriptionId}>{A11Y_TEXT}</span>
+        <Card onPress={noop} accessibilityHint={descriptionId}>
+          {CARD_TEXT}
+        </Card>
+      </>,
+    );
+
+    expect(screen.getByRole('button')).toHaveAccessibleDescription(A11Y_TEXT);
   });
 
   it('renders children', () => {
