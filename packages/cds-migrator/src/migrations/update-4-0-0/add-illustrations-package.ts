@@ -3,7 +3,7 @@ import { addDependenciesToPackageJson, getProjects, output, Tree } from '@nrwl/d
 import { checkHasCdsDependency } from '../../helpers/checkHasCdsDependency';
 import { logStartTask } from '../../helpers/logStartTask';
 
-const depToAdd = { '@cbhq/cds-illustrations': '0.0.1' };
+const depToAdd = { '@cbhq/cds-illustrations': '1.0.0' };
 
 export default async function addIllustrationPackage(tree: Tree) {
   logStartTask('Adding illustration package to apps or packages with an existing CDS dependency');
