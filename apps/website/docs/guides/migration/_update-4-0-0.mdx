@@ -8,10 +8,10 @@ Today we’re releasing cds-web and cds-mobile version 4.0.0! This is a feature-
 
 ### Happy path upgrade steps
 
-1. Install the new cds-migrator tool
+1. From your root NX workspace install the new cds-migrator tool
 
 ```shell
-npm install @cbhq/cds-migrator -g
+yarn add @cbhq/cds-migrator --dev
 ```
 
 2. From your root NX workspace run the following command:
@@ -29,6 +29,8 @@ yarn install
 4. If you are a mobile app, you will need to re-link native assets. This looks different depending on your setup, but after linking assets you will need to run a fresh native build.
 
 5. Run typecheck to identify any issues not caught with migrator
+
+6. Remove @cbhq/cds-migrator from dev dependencies if you want to avoid having to install unused dependencies. If you removed you will need to re-run install to capture changes in yarn.lock.
 
 ## In-depth overview of breaking changes
 
