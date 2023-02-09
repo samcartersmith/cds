@@ -534,6 +534,9 @@ const sidebars = {
               type: 'doc',
               id: 'components/tables/TableCaption/table-caption',
               label: 'Table Caption',
+              customProps: {
+                tag: 'new',
+              },
             },
             { type: 'doc', id: 'components/tables/TableCell/table-cell', label: 'Table Cell' },
             {

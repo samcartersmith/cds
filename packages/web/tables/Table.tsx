@@ -8,7 +8,6 @@ import { useTableStyles } from './hooks/useTableStyles';
 import { table, tableFixed } from './styles/tableStyles';
 import { TableProps } from './types/tableTypes';
 
-export type { TableLayout, TableProps, TableVariant } from './types/tableTypes';
 export const Table = memo(
   ({
     children,
@@ -59,3 +58,5 @@ export const Table = memo(
 );
 
 Table.displayName = 'Table';
+
+export type { TableLayout, TableProps, TableVariant } from './types/tableTypes';
