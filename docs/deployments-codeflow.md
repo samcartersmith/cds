@@ -2,12 +2,12 @@
 
 ## Cheatsheet
 
-| URL                        | Codeflow Build Name          | Codeflow Deploy            |
-| -------------------------- | ---------------------------- | -------------------------- |
-| cds-dev.cbhq.net           | cds-website-docs-development | development::cds-docs      |
-| cds.cbhq.net               | cds-website-docs             | production::cds-docs       |
-| cds-storybook-dev.cbhq.net | cds-storybook                | development::cds-storybook |
-| cds-storybook.cbhq.net     | cds-storybook                | production::cds-storybook  |
+| URL                        | Codeflow Build Name | Codeflow Deploy                  |
+| -------------------------- | ------------------- | -------------------------------- |
+| cds-dev.cbhq.net           | cds-docs            | development::cds-docs            |
+| cds.cbhq.net               | cds-docs            | production::cds-docs             |
+| cds-storybook-dev.cbhq.net | cds-storybook       | development::cds-storybook       |
+| cds-storybook.cbhq.net     | cds-storybook       | infra-shared-prod::cds-storybook |
 
 ## Deployment Flow in AWS for Web Apps
 
