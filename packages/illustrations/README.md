@@ -16,6 +16,12 @@ yarn add @cbhq/cds-illustrations
 - [CDS Illustration Figma light styles](https://www.figma.com/file/skPXKFmI64GqqEkOaBSHcL/%F0%9F%8C%9E--Illustration-Light-Styles?t=NAycPBCIl5jp15ou-6)
 - [CDS Illustration Figma dark styles](https://www.figma.com/file/etJaiHq7aFlJFICLKIrcK7/%F0%9F%8C%9A--Illustration-Dark-Styles?t=NAycPBCIl5jp15ou-6)
 
+### Summary
+
+The [CDS Illustrations Figma components](https://www.figma.com/file/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations) are composed of vectors which leverage the [CDS Figma Illustration light color styles](https://www.figma.com/file/skPXKFmI64GqqEkOaBSHcL/%F0%9F%8C%9E--Illustration-Light-Styles?t=NAycPBCIl5jp15ou-6) to power their color fills. This allows design to create a single light mode version and engineering handles creating the dark mode version through the CDS Figma plugin or through code generation.
+
+In order for engineering to be able to generate a dark mode versions of an illustration asset, we need to pull information about the light and dark mode color styles from Figma (`yarn nx run figma-styles:sync`). The CDS Illustration color styles should not change often and can be run on an as-needed basis.
+
 ### Commands
 
 1. Add a .env.local file at root of repo
@@ -24,7 +30,7 @@ yarn add @cbhq/cds-illustrations
 FIGMA_ACCESS_TOKEN=[access or request access to the UI Infra shared vault on 1Password for the token]
 ```
 
-2. (optional) Sync latest Illustration Figma color styles if new color style was added
+2. (**optional**) Sync latest Illustration Figma color styles if new color style was added
 
 ```shell
 yarn nx run figma-styles:sync
@@ -36,13 +42,29 @@ yarn nx run figma-styles:sync
 yarn nx run illustrations:sync
 ```
 
-### Summary
+4. Open PR in static-assets. If you have never done this before, follow steps [here](#upload-to-static-assets-setup)
 
-The [CDS Illustrations Figma components](https://www.figma.com/file/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations) are composed of vectors which leverage the [CDS Figma Illustration light color styles](https://www.figma.com/file/skPXKFmI64GqqEkOaBSHcL/%F0%9F%8C%9E--Illustration-Light-Styles?t=NAycPBCIl5jp15ou-6) to power their color fills. This allows design to create a single light mode version and engineering handles creating the dark mode version through the CDS Figma plugin or through code generation.
+```shell
+yarn nx run illustrations:uploadToStaticAssets
+```
 
-In order for engineering to be able to generate a dark mode versions of an illustration asset, we need to pull information about the light and dark mode color styles from Figma (`yarn nx run figma-styles:sync`). The CDS Illustration color styles should not change often and can be run on an as-needed basis.
+5. Merge PR in static-assets and confirm deploy in [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits)
 
-### Gotchas
+6. Open PR in CDS repo
+
+## Setup
+
+### Upload to static assets setup
+
+1. install hub using homebrew (a CLI tool for managing github repo)
+
+```shell
+brew install hub
+```
+
+2. Follow [these instruction](https://confluence.coinbase-corp.com/display/INFRA/How+to+Fork+a+Repository) to make sure that you have all the configs to make a programmatic fork from a Coinbase Repo. Note: This is different than just forking through the Github UI.
+
+## Gotchas
 
 It is important to note that if an illustration asset is referencing a color style which was _not_ present the last time the color styles sync was run, then it will need to be run again before running the `yarn nx run illustrations:sync`.
 
