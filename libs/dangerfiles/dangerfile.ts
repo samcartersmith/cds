@@ -1,8 +1,17 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-restricted-globals */
 import { danger, fail, message, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
 
-import { findFileDifferences } from './utils';
+import { findFileDifferences, findPatternInFile } from './utils';
+
+// Useful for running locally with yarn danger local --dangerfile libs/dangerfiles/dangerfile.ts
+const MOCK_PR = {
+  body: 'body to test @deprecations',
+  title: '[trivial]: chore: mock pr',
+  additions: 10,
+  deletions: 5,
+};
 
 danger.git.fileMatch = chainsmoker({
   created: danger.git.created_files,
@@ -51,13 +60,14 @@ const storyFiles = danger.git.fileMatch(
 
 const frozenComponentFiles = danger.git.fileMatch(...frozenComponentPatterns);
 
-const { pr } = danger.github;
+const pr = danger.github?.pr || MOCK_PR;
 const bodyAndTitle = (pr.body + pr.title).toLowerCase();
 
 // Custom modifiers for people submitting PRs to be able to say "skip this"
 const acceptedNoTests = bodyAndTitle.includes('#skip_tests');
 const acceptedNoStories = bodyAndTitle.includes('#skip_stories');
 const acceptedOverrideFrozenComponent = bodyAndTitle.includes('#skip_frozen_component');
+const acceptedOverrideDeprecation = bodyAndTitle.includes('#skip_deprecations');
 
 // Encourage stories
 if (nonTestTsxFiles.created && !storyFiles.edited && !acceptedNoStories) {
@@ -89,7 +99,7 @@ if (nonTestTsFiles.edited && !testTsFiles.edited && !acceptedNoTests) {
 if (frozenComponentFiles.edited && !acceptedOverrideFrozenComponent) {
   fail(
     [
-      '#### Do no modify frozen components!',
+      "#### Don't modify frozen components!",
       `You have edited file(s) belonging to a **frozen component**. You must qualify for an exception and add \`#skip_frozen_component\` in the PR description to skip this check.\n`,
       frozenComponentFiles
         .getKeyedPaths()
@@ -115,3 +125,45 @@ if (pr.additions + pr.deletions > bigPRThreshold) {
     'Pull Request size seems relatively large. If Pull Request contains multiple changes, split each into separate PR will helps faster, easier review.',
   );
 }
+
+// Look for deprecated in each file that has been touched
+void (async () => {
+  const deprecations = await findPatternInFile({
+    pattern: /@deprecated/g,
+    files: danger.git.modified_files,
+    diffFn: danger.git.diffForFile,
+  });
+
+  // Ensure we're not increasing our deprecated footprint
+  if (deprecations.modified.length && !acceptedOverrideDeprecation) {
+    fail(
+      [
+        '#### Do not modify Deprecations!',
+        `You have edited file(s) that contain a deprecation. Make sure the modification you made is not to a deprecated component, token, hook, parameter, prop, or function. Please refer to [go/cds-deprecations](https://cds.cbhq.net/resources/deprecations) for the full list of deprecations.`,
+        deprecations.modified.map((file) => `- ${file}`).join('\n'),
+      ].join('\n'),
+    );
+  }
+
+  // Warn when adding deprecations to follow best practices
+  if (deprecations.added.length && !acceptedOverrideDeprecation) {
+    warn(
+      [
+        '#### Looks like you marked something as Deprecated!',
+        `You have added file(s) that contain a deprecation. Nice! Make sure there is a plan in place to announce this change and delete deprecated code in the next major release. Please refer to [go/cds-deprecations](https://cds.cbhq.net/resources/deprecations) for the full list of deprecations.`,
+        deprecations.added.map((file) => `- ${file}`).join('\n'),
+      ].join('\n'),
+    );
+  }
+
+  // Celebrate removing deprecated components
+  if (deprecations.removed.length) {
+    message(
+      [
+        '#### 🎉 Thanks for removing deprecated code!',
+        `You removed file(s) that contain a deprecation. This calls for a celebration!`,
+        deprecations.removed.map((file) => `- ${file}`).join('\n'),
+      ].join('\n'),
+    );
+  }
+})();
