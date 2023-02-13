@@ -6,12 +6,14 @@ import { TextDisplay1, TextTitle1 } from '../../typography';
 
 import { displayTitleSpacing, subtitleColor } from './navigationTokens';
 
+/** @deprecated */
 export type NavigationDisplayTitleProps = {
   title: string;
   subtitle?: string;
   spacingBottom?: SpacingScale;
 };
 
+/** @deprecated */
 export const NavigationDisplayTitle = memo(
   ({ title, subtitle, spacingBottom }: NavigationDisplayTitleProps) => {
     return (

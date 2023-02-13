@@ -15,6 +15,7 @@ type CreateFeatureEntryCardParams<T> = {
   SpotSquare: React.ComponentType<React.PropsWithChildren<SpotSquareProps>>;
 };
 
+/** @deprecated */
 export type FeatureEntryCardProps<T> = {
   title: CardBodyBaseProps['title'];
   description: CardBodyBaseProps['description'];

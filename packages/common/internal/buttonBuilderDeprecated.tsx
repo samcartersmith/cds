@@ -5,6 +5,7 @@ import type { BoxBaseProps, ButtonBaseProps, Scale, Spectrum, StackBaseProps } f
 
 const onPressConsole = () => console.log('pressed');
 
+/** @deprecated */
 export type CreateButtonStoriesParams = {
   Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: () => void }>>;
   VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
@@ -13,6 +14,7 @@ export type CreateButtonStoriesParams = {
   scale?: Scale;
 };
 
+/** @deprecated */
 export function buttonBuilderDeprecated({ Button, VStack, frontier }: CreateButtonStoriesParams) {
   const Defaults = () => (
     <FeatureFlagProvider frontier={frontier}>

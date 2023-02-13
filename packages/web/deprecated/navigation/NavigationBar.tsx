@@ -12,6 +12,7 @@ import { NavigationBarCtasProps } from './NavigationBarCtas';
 import { NavigationBarTitlesProps } from './NavigationBarTitles';
 import { showForMobile } from './navigationStyles';
 
+/** @deprecated */
 export type NavigationBarProps = {
   controls?: React.ReactElement<NavigationBarControlsProps>;
   titles?: React.ReactElement<NavigationBarTitlesProps>;

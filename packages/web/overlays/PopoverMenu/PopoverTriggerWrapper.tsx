@@ -1,5 +1,6 @@
 import React, { memo, ReactNode } from 'react';
 
+/** @deprecated */
 export type PopoverTriggerWrapperProps = {
   children: ReactNode;
 };

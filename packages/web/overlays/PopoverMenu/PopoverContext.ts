@@ -52,9 +52,12 @@ const defaultContext: PopoverContextType = {
 const errorMessage =
   'PopoverContext is undefined. PopoverProvider was not found higher up the tree. ';
 
+/** @deprecated */
 export const PopoverContext = React.createContext<PopoverContextType>(defaultContext);
+/** @deprecated */
 export const PopoverProvider = PopoverContext.Provider;
 
+/** @deprecated */
 export const usePopoverContext = () => {
   const context = React.useContext(PopoverContext);
   const hasContext = context.openMenu !== NoopFn;

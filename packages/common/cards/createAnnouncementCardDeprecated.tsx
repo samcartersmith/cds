@@ -20,6 +20,7 @@ type CreateAnnouncementCardParams<T> = {
   Pictogram: React.ComponentType<React.PropsWithChildren<PictogramProps>>;
 };
 
+/** @deprecated */
 export type AnnouncementCardProps<T> = {
   title: CardBodyBaseProps['title'];
   description: CardBodyBaseProps['description'];

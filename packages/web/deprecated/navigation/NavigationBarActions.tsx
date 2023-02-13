@@ -7,6 +7,7 @@ import { Spacer } from '../../layout/Spacer';
 import { hideForCondensed } from './navigationStyles';
 import { navbarSpacing } from './navigationTokens';
 
+/** @deprecated */
 export const NavigationBarActions: React.FC<React.PropsWithChildren<unknown>> = memo(
   ({ children }) => {
     return children ? (

@@ -9,16 +9,19 @@ const tabStyles = css`
   padding: 0;
 `;
 
+/** @deprecated */
 export type TabItemBaseProps = {
   label: string;
   value?: string | number;
 };
 
+/** @deprecated */
 export type TabItemProps = {
   active?: boolean;
 } & TabItemBaseProps &
   PressableProps;
 
+/** @deprecated */
 export const TabItem = memo(function TabItem({ label, active, value: _, ...props }: TabItemProps) {
   const colorAlias = active ? 'primaryWash' : 'secondary';
 

@@ -9,11 +9,13 @@ import { VStack } from '../../layout/VStack';
 
 import { hideForMobile, sidebarListReset } from './navigationStyles';
 
+/** @deprecated */
 export type SidebarProps = {
   logo: React.ReactElement<LogoMarkProps>;
   children: React.ReactNode;
 };
 
+/** @deprecated */
 export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
   ({ logo, children }) => {
     return (

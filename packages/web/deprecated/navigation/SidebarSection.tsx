@@ -8,11 +8,13 @@ import { TextCaption } from '../../typography/TextCaption';
 import { hideForCondensed, showForCondensed } from './navigationStyles';
 import { navbarSpacing } from './navigationTokens';
 
+/** @deprecated */
 export type SidebarSectionProps = {
   title: string;
   children: React.ReactNode;
 };
 
+/** @deprecated */
 export const SidebarSection: React.FC<React.PropsWithChildren<SidebarSectionProps>> = memo(
   ({ title, children }) => {
     const { isFirst, isLast } = useIndexTracker();

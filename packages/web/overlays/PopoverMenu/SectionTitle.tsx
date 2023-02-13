@@ -3,11 +3,13 @@ import React, { memo } from 'react';
 import { HStack } from '../../layout/HStack';
 import { TextCaption } from '../../typography/TextCaption';
 
+/** @deprecated */
 export type SectionTitleProps = {
   text: string;
 };
 
 /**
+ * @deprecated
  * SectionTitle should only be used inside of a PopoverMenu
  */
 export const SectionTitle = memo(function SectionTitle({ text }: SectionTitleProps) {

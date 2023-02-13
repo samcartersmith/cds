@@ -6,6 +6,7 @@ import { HStack } from '../../layout';
 
 import { TabItemBaseProps, TabItemProps } from './TabItem';
 
+/** @deprecated */
 export type TabsProps = {
   activeIndex?: number;
   setActiveIndex?: SetState<number>;
@@ -13,6 +14,7 @@ export type TabsProps = {
   children: React.ReactElement<TabItemProps>[];
 };
 
+/** @deprecated */
 export const Tabs = memo(({ activeIndex = 0, setActiveIndex, onChange, children }: TabsProps) => {
   const { activeIndex: currentIndex, setActiveIndex: setCurrentIndex } = useIndexCounter({
     length: Children.count(children),

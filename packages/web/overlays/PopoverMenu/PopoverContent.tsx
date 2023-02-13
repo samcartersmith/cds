@@ -18,6 +18,7 @@ const popoverMenuStaticClassName = 'cds-popover-menu';
 
 type PopoverContentProps = { children: ReactNode };
 
+/** @deprecated */
 export const PopoverContent = memo(({ children }: PopoverContentProps) => {
   const {
     setPopper,

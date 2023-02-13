@@ -4,7 +4,10 @@ import flattenNodes from '@cbhq/cds-common/utils/flattenNodes';
 import { PopoverTrigger } from './PopoverTrigger';
 import { PopoverTriggerWrapper } from './PopoverTriggerWrapper';
 
-/** Parses out the trigger from the rest of the children */
+/**
+ * @deprecated
+ * Parses out the trigger from the rest of the children
+ */
 export const usePopoverChildren = (children: ReactNode) => {
   const trigger = useRef<ReactElement | null>(null);
 

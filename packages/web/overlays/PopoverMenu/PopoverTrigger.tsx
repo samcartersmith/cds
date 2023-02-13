@@ -16,6 +16,7 @@ import { HStack } from '../../layout/HStack';
 
 import { usePopoverContext } from './PopoverContext';
 
+/** @deprecated */
 export type PopoverTriggerHOCProps = {
   children: ReactElement;
   /**
@@ -24,6 +25,7 @@ export type PopoverTriggerHOCProps = {
   onPress?: NoopFn;
 };
 
+/** @deprecated */
 export type ClonedPopoverTriggerRef = {
   /**
    * Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() when rendering the PopoverTrigger
@@ -31,6 +33,7 @@ export type ClonedPopoverTriggerRef = {
   ref: MutableRefObject<HTMLButtonElement | null>;
 };
 
+/** @deprecated */
 export type PopoverTriggerProps = {
   /**
    * Note: the value passed will be ignored on Web because PopoverMenu overrides it with React.cloneElement() when rendering the PopoverTrigger
@@ -66,6 +69,7 @@ export type PopoverTriggerProps = {
 /**
  * @deprecated PopoverMenu has been deprecated. Please use Dropdown instead.
  */
+/** @deprecated */
 export const PopoverTrigger = memo(function PopoverTrigger({
   children,
   onPress,

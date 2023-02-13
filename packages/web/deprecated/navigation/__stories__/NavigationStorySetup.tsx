@@ -25,6 +25,7 @@ import {
 
 const defaultRoute = '/navigation';
 
+/** @deprecated */
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
   TabsAndTitle: 'With Tabs and displayTitle',
@@ -43,6 +44,7 @@ const MockLink = forwardRef<HTMLAnchorElement, NavigationListItemLinkProps>(func
   );
 });
 
+/** @deprecated */
 export const DefaultTabs = () => (
   <Tabs>
     <TabItem label="Overview" />
@@ -51,6 +53,7 @@ export const DefaultTabs = () => (
   </Tabs>
 );
 
+/** @deprecated */
 export const NoTabsNoTitle = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showSidebarSections, { toggle: toggleSidebarSections }] = useToggler(false);
@@ -143,6 +146,7 @@ export const NoTabsNoTitle = () => {
   );
 };
 
+/** @deprecated */
 export const TabsNoTitle = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(true);
@@ -253,6 +257,7 @@ export const TabsNoTitle = () => {
   );
 };
 
+/** @deprecated */
 export const TitleNoTabs = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showDisplayTitle, setShowDisplayTitle] = useState(true);
@@ -357,6 +362,7 @@ export const TitleNoTabs = () => {
   );
 };
 
+/** @deprecated */
 export const TabsAndDisplayTitle = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(true);
@@ -478,6 +484,7 @@ export const TabsAndDisplayTitle = () => {
   );
 };
 
+/** @deprecated */
 export const SidebarCollapsed = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(false);
@@ -565,6 +572,7 @@ export const SidebarCollapsed = () => {
   );
 };
 
+/** @deprecated */
 export const SidebarWithSections = () => {
   const [showDarkMode, { toggle: toggleDarkMode }] = useToggler(false);
   const [showTabs, { toggle: toggleTabs }] = useToggler(false);

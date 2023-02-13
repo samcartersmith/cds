@@ -70,8 +70,9 @@ type TableCellBaseProps = {
    */
   direction?: 'vertical' | 'horizontal';
   /**
-   * @danger HTML width attribute to help with column layout.This attr
-   * is deprecated, and should _only_ be used to unblock migration efforts
+   * @deprecated
+   * HTML width attribute to help with column layout.
+   * This prop should _only_ be used to unblock migration efforts
    * @default undefined
    */
   dangerouslySetHtmlWidth?: TableCellSharedProps['width'];

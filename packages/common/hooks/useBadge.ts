@@ -32,6 +32,7 @@ const badgeVariants = {
   },
 } as const;
 
+/** @deprecated */
 export const useBadge = (value: BadgeValue = 0, variantOverride?: BadgeVariant) => {
   const valueLength = `${value}`.split('').length;
   const { variant, ...badgeStyles } = useMemo(() => {

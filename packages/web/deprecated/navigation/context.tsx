@@ -3,12 +3,16 @@ import { NoopFn, SetState } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { noop } from '@cbhq/cds-utils';
 
+/** @deprecated */
 export type SidebarLayout = 'expanded' | 'condensed' | 'hidden';
+/** @deprecated */
 export type NavigationProviderProps = {
   variant: SidebarLayout;
 };
 
+/** @deprecated */
 export const defaultLayout = 'expanded';
+/** @deprecated */
 export const NavigationContext = createContext<{
   isMobileMenuVisible: boolean;
   toggleMobileMenuHidden: NoopFn;
@@ -23,6 +27,7 @@ export const NavigationContext = createContext<{
   setSidebarLayout: noop,
 });
 
+/** @deprecated */
 export const NavigationProvider: React.FC<React.PropsWithChildren<NavigationProviderProps>> = memo(
   ({ variant, children }) => {
     const [sidebarLayout, setSidebarLayout] = useState<SidebarLayout>(variant);
@@ -45,6 +50,7 @@ export const NavigationProvider: React.FC<React.PropsWithChildren<NavigationProv
   },
 );
 
+/** @deprecated */
 export const useNavigation = () => {
   return useContext(NavigationContext);
 };

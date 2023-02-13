@@ -20,6 +20,7 @@ import { appContentSpacing, sidebarWidth } from './navigationTokens';
 import { SidebarProps } from './Sidebar';
 import { TabsProps } from './Tabs';
 
+/** @deprecated */
 export type NavigationProps = {
   displayTitle?: React.ReactElement<NavigationDisplayTitleProps> | false | null;
   tabs?: React.ReactElement<TabsProps> | false | null;
@@ -172,6 +173,7 @@ const NavigationContent: React.FC<React.PropsWithChildren<NavigationProps>> = me
   },
 );
 
+/** @deprecated */
 export const Navigation: React.FC<React.PropsWithChildren<NavigationProps>> = memo(
   ({ sidebarLayout = defaultLayout, ...props }) => {
     return (

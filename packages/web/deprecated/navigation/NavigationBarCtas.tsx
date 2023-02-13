@@ -10,10 +10,12 @@ import { navbarSpacing } from './navigationTokens';
 
 type ButtonChild = React.ReactElement<ButtonProps>;
 
+/** @deprecated */
 export type NavigationBarCtasProps = {
   children: ButtonChild | ButtonChild[];
 };
 
+/** @deprecated */
 export const NavigationBarCtas = memo(({ children }: NavigationBarCtasProps) => {
   return children ? (
     <Box

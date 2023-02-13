@@ -15,11 +15,13 @@ import { NavigationIconButton } from './NavigationIconButton';
 import { NavigationListItem } from './NavigationListItem';
 import { SidebarProps } from './Sidebar';
 
+/** @deprecated */
 export type MobileMenuProps = {
   sidebar?: SidebarProps['children'];
   navbar: React.ReactElement<NavigationBarProps>;
 };
 
+/** @deprecated */
 export const MobileMenu = memo(({ sidebar, navbar }: MobileMenuProps) => {
   const navbarCtas = useMemo(() => {
     return flattenNodes(navbar?.props.ctas?.props.children)

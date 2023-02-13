@@ -9,6 +9,7 @@ import {
 
 import { Animated } from '../../animation/Animated';
 
+/** @deprecated */
 export const usePopoverMenuAnimation = (
   triggerAnimation: boolean,
   ref: MutableRefObject<HTMLElement | null>,

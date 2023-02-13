@@ -4,6 +4,7 @@ import { devices } from '../../layout/responsive';
 
 import { sidebarWidth } from './navigationTokens';
 
+/** @deprecated */
 export const rootStyles = css`
   height: 100vh;
   overflow: hidden;
@@ -13,6 +14,7 @@ export const rootStyles = css`
   }
 `;
 
+/** @deprecated */
 export const gridForSidebar = css`
   display: grid;
   grid-template-columns: ${sidebarWidth.expanded}px auto;
@@ -25,6 +27,7 @@ export const gridForSidebar = css`
   }
 `;
 
+/** @deprecated */
 export const scrollContent = css`
   overflow: scroll;
   position: relative;
@@ -35,10 +38,12 @@ export const scrollContent = css`
   }
 `;
 
+/** @deprecated */
 export const disableScroll = css`
   overflow-y: hidden;
 `;
 
+/** @deprecated */
 export const sidebarItemStyles = css`
   white-space: nowrap;
   /* To ensure focus style is not cut off when tabbing */
@@ -46,6 +51,7 @@ export const sidebarItemStyles = css`
 `;
 
 // ul padding reset and handle nested ul, will break if nested > 2 levels
+/** @deprecated */
 export const sidebarListReset = css`
   padding-left: 0;
   ul {
@@ -75,12 +81,14 @@ const unsetVisuallyHidden = `
   width: unset;
 `;
 
+/** @deprecated */
 export const hideForCondensed = css`
   @media (${devices.tablet}) {
     ${visuallyHidden};
   }
 `;
 
+/** @deprecated */
 export const showForCondensed = css`
   ${visuallyHidden};
   @media (${devices.tablet}) {
@@ -88,12 +96,14 @@ export const showForCondensed = css`
   }
 `;
 
+/** @deprecated */
 export const hideForMobile = css`
   @media (${devices.phone}) {
     ${visuallyHidden};
   }
 `;
 
+/** @deprecated */
 export const showForMobile = css`
   ${visuallyHidden};
   @media (${devices.phone}) {

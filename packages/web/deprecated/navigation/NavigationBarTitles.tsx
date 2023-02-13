@@ -5,11 +5,13 @@ import { TextLabel2, TextTitle3 } from '../../typography';
 
 import { navbarSpacing, subtitleColor } from './navigationTokens';
 
+/** @deprecated */
 export type NavigationBarTitlesProps = {
   title: string;
   subtitle?: string;
 };
 
+/** @deprecated */
 export const NavigationBarTitles = memo(({ title, subtitle }: NavigationBarTitlesProps) => {
   return (
     <HStack alignItems="baseline" spacingEnd={navbarSpacing.betweenGroups}>

@@ -18,6 +18,7 @@ import { useMobileMenuChildrenContext } from './MobileMenuChildrenContext';
 import { hideForCondensed, showForCondensed, sidebarItemStyles } from './navigationStyles';
 import { iconContainerSize } from './navigationTokens';
 
+/** @deprecated */
 export type NavigationListItemLinkProps = {
   onPress?: React.MouseEventHandler;
   to: string | { pathname?: string }; // Required for router Link's
@@ -28,6 +29,7 @@ export type NavigationListItemLinkProps = {
     'children' | 'className' | 'onBlur' | 'onFocus' | 'onMouseEnter' | 'onMouseLeave' | 'tabIndex'
   >;
 
+/** @deprecated */
 export type NavigationListItemProps = {
   active?: boolean;
   icon?: NavigationIconName;
@@ -37,6 +39,7 @@ export type NavigationListItemProps = {
   to?: string;
 } & PressableProps;
 
+/** @deprecated */
 export const NavigationListItem = memo(
   ({ as, active, icon, label, badge, to = '/', onPress }: NavigationListItemProps) => {
     const { isMobileMenuVisible, sidebarLayout } = useNavigation();
