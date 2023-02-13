@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { ThemeProvider } from '../../system';
 import { NativeInput } from '../NativeInput';
 
 const TEST_ID = 'native-input';
@@ -30,6 +31,41 @@ describe('NativeInput', () => {
     render(<NativeInput disabled testID={TEST_ID} />);
 
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('disabled');
+  });
+
+  it('changes scheme style for input icons for dark spectrum', () => {
+    render(
+      <ThemeProvider spectrum="dark">
+        <NativeInput testID={TEST_ID} />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute(
+      'style',
+      'text-align: start; color-scheme: dark;',
+    );
+  });
+
+  it('changes scheme style for input icons for light spectrum', () => {
+    render(
+      <ThemeProvider spectrum="light">
+        <NativeInput testID={TEST_ID} />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute(
+      'style',
+      'text-align: start; color-scheme: light;',
+    );
+  });
+
+  it('changes align style if override passed as align prop', () => {
+    render(<NativeInput align="center" testID={TEST_ID} />);
+
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute(
+      'style',
+      'text-align: center; color-scheme: light;',
+    );
   });
 });
 

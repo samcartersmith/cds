@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from 'linaria';
+import { useSpectrum } from '@cbhq/cds-common';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
@@ -111,15 +112,18 @@ export const NativeInput = memo(
       spacing: compact ? 1 : 2,
     });
 
-    const alignStyle = useMemo(() => {
+    const spectrum = useSpectrum();
+
+    const dynamicStyles = useMemo(() => {
       return {
         textAlign: align,
+        colorScheme: spectrum,
       };
-    }, [align]);
+    }, [align, spectrum]);
 
     return (
       <input
-        style={alignStyle}
+        style={dynamicStyles}
         aria-label={accessibilityLabel}
         aria-describedby={accessibilityHint}
         className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
