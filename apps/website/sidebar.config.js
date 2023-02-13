@@ -786,6 +786,7 @@ const sidebars = {
         'resources/release',
         { type: 'doc', id: 'guides/migration/overview', label: 'Migration Guides' },
         'cds/support',
+        { type: 'doc', id: 'resources/deprecations', label: 'Deprecations' },
       ],
     },
   ],
