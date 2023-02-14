@@ -6,7 +6,6 @@ import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalS
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { IsoHexagonClipPath } from '../media/Hexagon';
-import { ThemeProvider } from '../system';
 import { BrowserOnly } from '../system/BrowserOnly';
 import { getBrowserGlobals } from '../utils/browser';
 
@@ -54,7 +53,7 @@ export const PortalHost = memo(() => {
   if (!portalRoot) return null;
 
   return createPortal(
-    <ThemeProvider>
+    <>
       <div
         id={modalContainerId}
         style={{ zIndex: zIndex.overlays.modal }}
@@ -75,7 +74,7 @@ export const PortalHost = memo(() => {
         style={{ zIndex: zIndex.overlays.tooltip }}
         data-testid="portal-tooltip-container"
       />
-    </ThemeProvider>,
+    </>,
     portalRoot,
   );
 });

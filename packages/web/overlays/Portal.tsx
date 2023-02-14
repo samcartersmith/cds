@@ -1,6 +1,7 @@
 import React, { memo, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
+import { ThemeProvider } from '../system/ThemeProvider';
 import { isSSR } from '../utils/browser';
 /* eslint-disable no-restricted-globals */
 
@@ -26,5 +27,8 @@ export const Portal = memo(function Portal({
     return <>{children}</>;
   }
 
-  return createPortal(children, document.getElementById(containerId) as HTMLElement);
+  return createPortal(
+    <ThemeProvider>{children}</ThemeProvider>,
+    document.getElementById(containerId) as HTMLElement,
+  );
 });
