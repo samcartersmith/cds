@@ -8,6 +8,8 @@ import { Button } from '../Button';
 jest.mock('@cbhq/cds-common/system/useEventHandler');
 jest.mock('../../utils/debounce');
 
+// NOTE: this component's test coverage is now included in mobile/button/__tests__/Button.test.tsx
+
 describe('Button', () => {
   it('passes a11y', () => {
     render(<Button testID="mock-btn">Child</Button>);

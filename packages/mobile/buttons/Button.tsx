@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { isValidElement, memo, useMemo } from 'react';
 import { ActivityIndicator, StyleSheet, View, ViewStyle } from 'react-native';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
@@ -61,6 +61,23 @@ export const DeprecatedButton = memo(function DeprecatedButton({
   const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
   const endIconStyles = useSpacingStyles({ spacingStart: 1 });
 
+  const childrenNode = useMemo(
+    () =>
+      isValidElement(children) && Boolean(children.props.children) ? (
+        children
+      ) : (
+        <TextHeadline
+          testID="text-headline"
+          color={color}
+          selectable="none"
+          numberOfLines={numberOfLines}
+        >
+          {children}
+        </TextHeadline>
+      ),
+    [children, color, numberOfLines],
+  );
+
   return (
     <Pressable
       transparentWhileInactive={transparent}
@@ -87,9 +104,7 @@ export const DeprecatedButton = memo(function DeprecatedButton({
                 <Icon name={startIcon} size={iconSize} color={color} />
               </View>
             )}
-            <TextHeadline color={color} selectable="none" numberOfLines={numberOfLines}>
-              {children}
-            </TextHeadline>
+            {childrenNode}
             {!!endIcon && (
               <View style={endIconStyles}>
                 <Icon name={endIcon} size={iconSize} color={color} />

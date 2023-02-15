@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { isValidElement, memo, useMemo } from 'react';
 import { ActivityIndicator, StyleSheet } from 'react-native';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
@@ -63,6 +63,25 @@ export const Button = memo(function Button({
     return 'center';
   }, [endIcon, startIcon]);
 
+  const childrenNode = useMemo(
+    () =>
+      isValidElement(children) && Boolean(children.props.children) ? (
+        children
+      ) : (
+        <TextHeadline
+          testID="text-headline"
+          color={color}
+          selectable="none"
+          numberOfLines={numberOfLines}
+          align="center"
+          dangerouslySetStyle={styles.text}
+        >
+          {children}
+        </TextHeadline>
+      ),
+    [children, color, numberOfLines],
+  );
+
   return (
     <Pressable
       transparentWhileInactive={transparent}
@@ -101,15 +120,7 @@ export const Button = memo(function Button({
                 dangerouslySetStyle={styles.icon}
               />
             )}
-            <TextHeadline
-              color={color}
-              selectable="none"
-              numberOfLines={numberOfLines}
-              align="center"
-              dangerouslySetStyle={styles.text}
-            >
-              {children}
-            </TextHeadline>
+            {childrenNode}
             {!!endIcon && (
               <Icon
                 name={endIcon}
