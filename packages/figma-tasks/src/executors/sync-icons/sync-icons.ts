@@ -4,7 +4,6 @@ import { createTask } from '@cbhq/mono-tasks';
 import {
   getAbsolutePath,
   pascalCase,
-  tokensSortedTemplate,
   tokensTemplate,
   typescriptTypesTemplate,
   writePrettyFile,
@@ -17,6 +16,7 @@ import { FontConfig } from '../../helpers/font/types';
 import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { createSvgContent } from '../../helpers/image/createSvgContent';
+import { sortByCreatedAt } from '../../helpers/sortByCreatedAt';
 import { CodegenItemConfig } from '../../helpers/types';
 import { ComponentSet } from '../../tools/ComponentSet';
 import { ComponentSetChild } from '../../tools/ComponentSetChild';
@@ -162,18 +162,18 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
           const destDir = path.dirname(this.dest);
           const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
 
-          return tokensSortedTemplate`
+          return tokensTemplate`
             ${codegenHeader}
           
             import type { ${typescriptData.exportName} } from '${relativeTypes}';
 
             /** 
              * An array of all ${groupTypeInPascalCase} icons.
-             * This is being used to display a sheet of all ${groupTypeInPascalCase} illustration on the CDS website.
+             * this file is used to populate ${groupTypeInPascalCase} stories in percy, so the sort order based on createdAt is important.
              */
-            const names: ${typescriptData.exportName}[] = ${iconComponentSets.map(
-            (item) => item.name,
-          )};
+            const names: ${typescriptData.exportName}[] = ${iconComponentSets
+            .sort(sortByCreatedAt)
+            .map((item) => item.name)};
 
             export default names;
           `;

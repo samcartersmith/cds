@@ -9,6 +9,10 @@ import { Box } from '@cbhq/cds-web/layout/Box';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
 
+import { sortByAlphabet } from '../../../../utils/sortByAlphabet';
+
+const alhpabeticallySortedNames = names.sort(sortByAlphabet);
+
 const queryMatchesName = (query: string, name: string) => {
   const queryRe = new RegExp(query.trim().toLowerCase(), 'gi');
   const nameRe = new RegExp(name.toLowerCase(), 'gi');
@@ -30,7 +34,7 @@ export const NavigationIconSheet = () => {
   }, 1000);
 
   const icons = useMemo(() => {
-    return names
+    return alhpabeticallySortedNames
       .filter((name) => {
         return queryMatchesName(query, name);
       })
