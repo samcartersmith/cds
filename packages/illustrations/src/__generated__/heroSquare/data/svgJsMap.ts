@@ -121,10 +121,6 @@ const svgJsMap = {
     light: () => require('../svgJs/light/buyFirstCrypto-0').content,
     dark: () => require('../svgJs/dark/buyFirstCrypto-0').content,
   },
-  calendarStartDay: {
-    light: () => require('../svgJs/light/calendarStartDay-0').content,
-    dark: () => require('../svgJs/dark/calendarStartDay-0').content,
-  },
   camera: {
     light: () => require('../svgJs/light/camera-1').content,
     dark: () => require('../svgJs/dark/camera-1').content,

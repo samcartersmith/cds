@@ -12,7 +12,7 @@ export type FontGlyphData = {
     name: string;
     unicode: string[];
     renamed: boolean;
-    lastUpdated: string;
+    createdAt: string;
   };
 };
 

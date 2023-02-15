@@ -18,6 +18,7 @@ export type ComponentParams<Metadata extends MetadataShape = MetadataShape> = {
   name: string;
   type: string;
   width: number;
+  createdAt: string;
   lastUpdated: string;
   node?: NodeResponseWithMetadata;
   metadata?: Metadata;
@@ -43,6 +44,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
 
   public readonly width: number;
 
+  public readonly createdAt: string;
+
   public readonly lastUpdated: string;
 
   public outputs: Record<string, string> = {};
@@ -61,6 +64,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     name,
     node,
     type,
+    createdAt,
     lastUpdated,
     version,
     outputs,
@@ -73,6 +77,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     this.type = type;
     this.height = height;
     this.width = width;
+    this.createdAt = createdAt;
     this.lastUpdated = lastUpdated;
     this.task = task;
 
@@ -115,6 +120,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
       width: this.width,
       height: this.height,
       description: this.description,
+      createdAt: this.createdAt,
       lastUpdated: this.lastUpdated,
       ...(Object.values(this.outputs).length
         ? { outputs: mapValues(this.outputs, normalizeOutputPath) }
@@ -132,11 +138,12 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
           const { type, name } = parseName(node);
           const oldVersion =
             manifest.previousItems.get(id) ??
+            // The ids might be different, but the intent is that they are treated as the same asset.
             manifest.previousItemsArray.find(
               (prev) => `${prev.type}-${prev.name}` === `${type}-${name}`,
             );
           const { width, height } = getSize(node.document);
-          const { description, updated_at: lastUpdated } = node.metadata;
+          const { description, updated_at: lastUpdated, created_at: createdAt } = node.metadata;
 
           const params = {
             ...oldVersion,
@@ -147,6 +154,11 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
             width,
             height,
             description,
+            /**
+             * If design re-creates the node in Figma, but the intent is that the asset is the same as before,
+             * then we should keep the old createdAt value so that we maintain sorting in Percy.
+             */
+            createdAt: oldVersion?.createdAt ?? createdAt,
             lastUpdated,
             recentlyUpdated: manifest.syncedLibrary.recentlyUpdatedIds.includes(id),
             task: manifest.task,

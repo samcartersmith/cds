@@ -67,11 +67,11 @@ export function getFontProcessor<
           unicode: [unicodeCodePoint],
           renamed: false,
           /**
-           * `lastUpdated` is custom metadata property we have added onto the default webfont
-           * ones so we can sort the generated glyphMap by lastUpdated when displaying
+           * `createdAt` is custom metadata property we have added onto the default webfont
+           * ones so we can sort the generated glyphMap by createdAt when displaying
            * in visreg environments
            */
-          lastUpdated: item.componentSet.lastUpdated,
+          createdAt: item.componentSet.createdAt,
         });
       }
     }

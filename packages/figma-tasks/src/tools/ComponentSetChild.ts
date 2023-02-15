@@ -78,6 +78,10 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
     }
   }
 
+  public get createdAt() {
+    return this.componentSet.createdAt;
+  }
+
   public get lastUpdated() {
     return this.componentSet.lastUpdated;
   }

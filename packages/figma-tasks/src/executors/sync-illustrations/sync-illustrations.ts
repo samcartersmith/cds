@@ -15,7 +15,7 @@ import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { createPngContent } from '../../helpers/image/createPngContent';
 import { createSvgContent } from '../../helpers/image/createSvgContent';
-import { sortByLastUpdated } from '../../helpers/sortByLastUpdated';
+import { sortByCreatedAt } from '../../helpers/sortByCreatedAt';
 import { Component } from '../../tools/Component';
 import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manifest';
 
@@ -205,7 +205,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
             const relativeTypes = getRelativePathForImport(destDir, typescriptData.dest);
 
             const sortedItemsForVersion = Object.fromEntries(
-              illustrations.sort(sortByLastUpdated).map((item) => [item.name, item.version]),
+              illustrations.sort(sortByCreatedAt).map((item) => [item.name, item.version]),
             );
 
             return tokensTemplate`

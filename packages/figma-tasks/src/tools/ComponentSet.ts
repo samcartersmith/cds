@@ -21,6 +21,7 @@ export type ComponentSetParams<Metadata extends MetadataShape = MetadataShape> =
   name: string;
   type: string;
   node?: NodeResponseWithMetadata;
+  createdAt: string;
   lastUpdated: string;
   metadata?: Metadata;
   outputs?: Record<string, string>;
@@ -46,6 +47,8 @@ export class ComponentSet<
 
   public readonly type: string;
 
+  public readonly createdAt: string;
+
   public readonly lastUpdated: string;
 
   private _metadata: Metadata | undefined = undefined;
@@ -64,6 +67,7 @@ export class ComponentSet<
     type,
     version,
     outputs,
+    createdAt,
     lastUpdated,
     metadata,
     task,
@@ -72,6 +76,7 @@ export class ComponentSet<
     this.description = description;
     this.name = name;
     this.type = type;
+    this.createdAt = createdAt;
     this.lastUpdated = lastUpdated;
     this.task = task;
 
@@ -140,6 +145,7 @@ export class ComponentSet<
       name: this.name,
       description: this.description,
       components: this.components,
+      createdAt: this.createdAt,
       lastUpdated: this.lastUpdated,
       ...(Object.values(this.outputs).length
         ? { outputs: mapValues(this.outputs, normalizeOutputPath) }
@@ -157,8 +163,13 @@ export class ComponentSet<
         if (node) {
           const { id } = node.document;
           const { type, name } = parseName(node);
-          const { description, updated_at: lastUpdated } = node.metadata;
-          const oldVersion = manifest.previousItems.get(node.document.id);
+          const { description, updated_at: lastUpdated, created_at: createdAt } = node.metadata;
+          const oldVersion =
+            manifest.previousItems.get(id) ??
+            // The ids might be different, but the intent is that they are treated as the same asset.
+            manifest.previousItemsArray.find(
+              (prev) => `${prev.type}-${prev.name}` === `${type}-${name}`,
+            );
 
           const params = {
             ...oldVersion,
@@ -167,6 +178,11 @@ export class ComponentSet<
             type,
             name,
             description,
+            /**
+             * If design re-creates the node in Figma, but the intent is that the asset is the same as before,
+             * then we should keep the old createdAt value so that we maintain sorting in Percy.
+             */
+            createdAt: oldVersion?.createdAt ?? createdAt,
             lastUpdated,
             task: manifest.task,
             recentlyUpdated: manifest.syncedLibrary.recentlyUpdatedIds.includes(id),

@@ -312,7 +312,6 @@ const descriptionMap: Record<string, string[]> = {
   received: ['processing'],
   reviewing: ['processing', 'japanVerifyId', 'verifyIdDetails'],
   circles: [
-    'calendarStartDay',
     'shareOnSocialMedia',
     'ratingsAndReviews',
     'stableValue',
@@ -339,9 +338,8 @@ const descriptionMap: Record<string, string[]> = {
     'staking',
     'startToday',
   ],
-  play: ['calendarStartDay', 'digitalCollectibles', 'collectingNfts', 'watchVideos', 'startToday'],
+  play: ['digitalCollectibles', 'collectingNfts', 'watchVideos', 'startToday'],
   blue: [
-    'calendarStartDay',
     'multiPlatformMobileAppBrowserExtension',
     'shareOnSocialMedia',
     'insuranceProtection',
@@ -407,8 +405,8 @@ const descriptionMap: Record<string, string[]> = {
     'watchVideos',
     'startToday',
   ],
-  start: ['calendarStartDay', 'readyToTrade', 'tradeImmediately', 'startToday'],
-  today: ['calendarStartDay', 'tradeImmediately', 'startToday'],
+  start: ['readyToTrade', 'tradeImmediately', 'startToday'],
+  today: ['tradeImmediately', 'startToday'],
   yellow: [
     'multiPlatformMobileAppBrowserExtension',
     'shareOnSocialMedia',

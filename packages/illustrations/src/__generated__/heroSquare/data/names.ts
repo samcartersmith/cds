@@ -38,7 +38,6 @@ const names: HeroSquareName[] = [
   'browseDecentralizedApps',
   'browserExtension',
   'buyFirstCrypto',
-  'calendarStartDay',
   'camera',
   'cardAndPhone',
   'cardBoosted',

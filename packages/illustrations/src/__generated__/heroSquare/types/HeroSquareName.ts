@@ -32,7 +32,6 @@ export type HeroSquareName =
   | 'browseDecentralizedApps'
   | 'browserExtension'
   | 'buyFirstCrypto'
-  | 'calendarStartDay'
   | 'camera'
   | 'cardAndPhone'
   | 'cardBoosted'

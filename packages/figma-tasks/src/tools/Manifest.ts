@@ -270,7 +270,6 @@ export class Manifest<
     const syncedLibrary = await syncLibrary({
       fileId: task.options.figmaApiFileId,
       requestType,
-      /** TODO: uncomment once migration from old library is complete */
       lastUpdated: previousManifest.lastUpdated,
       imageFormats,
       batchSize: 500,

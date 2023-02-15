@@ -2,7 +2,7 @@ import path from 'node:path';
 import { sortByAlphabet, tokensTemplate, writePrettyFile } from '@cbhq/script-utils';
 
 import { getRelativePathForImport } from '../getRelativePathForImport';
-import { sortByLastUpdated } from '../sortByLastUpdated';
+import { sortByCreatedAt } from '../sortByCreatedAt';
 import { CodegenItemConfig } from '../types';
 
 import { convertCodepoint } from './convertCodepoint';
@@ -35,7 +35,7 @@ export async function generateGlyphMap({
        *
        * The second use case requires lastUpdated to ensure backward compatible layouts when pulling updates from Figma.
        */
-      .sort(sortByLastUpdated)
+      .sort(sortByCreatedAt)
       .map((item) => {
         /**
          * The webfont package returns multiple values since a character can be assigned to multiple code points.
