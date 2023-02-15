@@ -45,7 +45,7 @@ export type Deprecation = {
 
 export const deprecations: Deprecation[] = [
   {
-    endOfLife: 'Q22023',
+    endOfLife: 'Q12023',
     components: [
       {
         name: 'Badge',
