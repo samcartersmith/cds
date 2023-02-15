@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { writeJsonFile } from '@nrwl/devkit';
+import { output as devkitOutput, writeJsonFile } from '@nrwl/devkit';
 import { uniqBy } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';
@@ -18,6 +18,8 @@ import { ColorStyles } from './ColorStyles';
 
 export type ItemShape = {
   id: string;
+  /** Base64 representation of vector data from Figma node response */
+  hash?: string;
   name: string;
   type: string;
   version: number;
@@ -170,15 +172,28 @@ export class Manifest<
             item.setVersion(0);
           }
         } else {
-          this.updates.add(item);
-          if (this.versioned) {
-            const oldVersion = item.version;
-            const newVersion = oldVersion + 1;
-            item.setVersion(newVersion);
+          const hashingEnabled = Boolean(item.hash && prevNode?.hash);
+          const hasVisualChange = hashingEnabled ? item.hash !== prevNode.hash : true;
+          if (hasVisualChange) {
+            this.updates.add(item);
+            if (this.versioned) {
+              const oldVersion = item.version;
+              const newVersion = oldVersion + 1;
+              item.setVersion(newVersion);
 
-            const renameFn = (output: string) => output.replace(`-${oldVersion}`, `-${newVersion}`);
-            // If it already existed we need to rename outputs before writting new content
-            await this.renameOutputs(item, renameFn);
+              const renameFn = (output: string) =>
+                output.replace(`-${oldVersion}`, `-${newVersion}`);
+              // If it already existed we need to rename outputs before writting new content
+              await this.renameOutputs(item, renameFn);
+            }
+          } else {
+            devkitOutput.warn({
+              title: `Skipping SVG updates for ${item.type}/${item.name}`,
+              bodyLines: [
+                `Figma indicates that ${item.type}/${item.name} was recently updated, but the vector data has not changed.`,
+                `Verify with design that this item has not had any visual changes`,
+              ],
+            });
           }
         }
 

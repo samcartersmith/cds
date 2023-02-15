@@ -3,6 +3,7 @@ import { mapValues } from 'lodash';
 import type { NodeResponseWithMetadata } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
 
+import { createHashFromNodeChildren } from '../helpers/createHashFromNodeChildren';
 import { getSize } from '../helpers/getSize';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { parseName } from '../helpers/parseName';
@@ -14,13 +15,15 @@ type MetadataShape = Record<string, string | number>;
 export type ComponentParams<Metadata extends MetadataShape = MetadataShape> = {
   id: string;
   description: string;
+  /** Base64 representation of vector data from Figma node response */
+  hash: string;
   height: number;
   name: string;
   type: string;
   width: number;
   createdAt: string;
   lastUpdated: string;
-  node?: NodeResponseWithMetadata;
+  node: NodeResponseWithMetadata;
   metadata?: Metadata;
   version?: number;
   outputs?: Record<string, string>;
@@ -33,6 +36,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
   public readonly description: string;
 
   public readonly id: string;
+
+  public readonly hash: string;
 
   public readonly height: number;
 
@@ -59,6 +64,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
   constructor({
     description,
     id,
+    hash,
     height,
     width,
     name,
@@ -81,9 +87,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     this.lastUpdated = lastUpdated;
     this.task = task;
 
-    if (node) {
-      this.node = node;
-    }
+    this.node = node;
+    this.hash = hash;
 
     if (metadata) {
       this._metadata = metadata;
@@ -117,6 +122,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     return {
       type: this.type,
       name: this.name,
+      hash: this.hash,
       width: this.width,
       height: this.height,
       description: this.description,
@@ -144,6 +150,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
             );
           const { width, height } = getSize(node.document);
           const { description, updated_at: lastUpdated, created_at: createdAt } = node.metadata;
+          const hash = createHashFromNodeChildren(node.document.children);
 
           const params = {
             ...oldVersion,
@@ -152,6 +159,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
             type,
             name,
             width,
+            hash,
             height,
             description,
             /**
