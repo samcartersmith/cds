@@ -47,7 +47,7 @@ export type GeneratedFont = {
 };
 
 type ComponentSetChildShape = {
-  metadata: { unicode: string };
+  metadata: { unicode: number };
   props?: Record<string, Primitive>;
 };
 

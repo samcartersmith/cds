@@ -2,12 +2,18 @@
 import { mapValues } from 'lodash';
 import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
+import { sortByAlphabet } from '@cbhq/script-utils';
 
+import { createHashFromNodeChildren } from '../helpers/createHashFromNodeChildren';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { parseName } from '../helpers/parseName';
 
 // import { validators } from '../validators';
-import { ComponentSetChild, ComponentSetChildShape } from './ComponentSetChild';
+import {
+  ComponentSetChild,
+  ComponentSetChildMetadata,
+  ComponentSetChildShape,
+} from './ComponentSetChild';
 import { Manifest, ManifestShape } from './Manifest';
 
 export type ComponentSetManifestShape = ManifestShape<ComponentSet>;
@@ -17,16 +23,18 @@ type MetadataShape = Record<string, string | number>;
 
 export type ComponentSetParams<Metadata extends MetadataShape = MetadataShape> = {
   id: string;
+  /** Base64 representation of vector data from Figma node response */
+  hash: string;
   description: string;
   name: string;
   type: string;
-  node?: NodeResponseWithMetadata;
+  node: NodeResponseWithMetadata;
   createdAt: string;
   lastUpdated: string;
   metadata?: Metadata;
   outputs?: Record<string, string>;
   version?: number;
-  task: Task;
+  manifest: ComponentSetManifest;
 };
 
 export class ComponentSet<
@@ -40,6 +48,8 @@ export class ComponentSet<
   public readonly description: string;
 
   public readonly id: string;
+
+  public readonly hash: string;
 
   public readonly name: string;
 
@@ -57,11 +67,14 @@ export class ComponentSet<
 
   public version = 0;
 
+  private versioned: boolean;
+
   private task: Task;
 
   constructor({
     description,
     id,
+    hash,
     name,
     node,
     type,
@@ -70,31 +83,56 @@ export class ComponentSet<
     createdAt,
     lastUpdated,
     metadata,
-    task,
+    manifest,
   }: ComponentSetParams<Metadata>) {
     this.id = id;
+    this.hash = hash;
     this.description = description;
     this.name = name;
     this.type = type;
     this.createdAt = createdAt;
     this.lastUpdated = lastUpdated;
-    this.task = task;
+    this.task = manifest.task;
+    this.versioned = manifest.versioned;
 
-    if (node) {
-      this.node = node;
+    this.node = node;
 
-      if (node.document.type === 'COMPONENT_SET') {
-        node.document.children.forEach((child) => {
-          if (child.type === 'COMPONENT') {
-            this.components.push(
-              new ComponentSetChild<ChildShape>({
-                componentSet: this,
-                node: { ...node, document: child },
-              }),
-            );
+    if (node.document.type === 'COMPONENT_SET') {
+      const prevNode = manifest.getPreviousItem({ id, type, name });
+
+      node.document.children.forEach((child) => {
+        if (child.type === 'COMPONENT') {
+          const props = ComponentSetChild.stringToPropsObject(child.name);
+          let childMetadata: ComponentSetChildMetadata | undefined;
+
+          /**
+           * We don't include detailed information about component_set *components* in our manifest.json.
+           * However, there is component metadata we want to persist across syncs, for example
+           * a unicode value for an icon font which is unique per component not component_set.
+           *
+           * In our manifest.json, we save component props and custom metadata in object format.
+           * In Figma, the props are stringified within the component name.
+           * We can convert our object format to string format to find a match to the original name.
+           */
+          if (prevNode) {
+            childMetadata = prevNode.components.find((item) => {
+              if (item.props) {
+                return child.name === ComponentSetChild.propsObjectToString(item.props ?? {});
+              }
+              return undefined;
+            })?.metadata;
           }
-        });
-      }
+
+          this.components.push(
+            new ComponentSetChild<ChildShape>({
+              componentSet: this,
+              node: { ...node, document: child },
+              props,
+              metadata: childMetadata,
+            }),
+          );
+        }
+      });
     }
 
     if (metadata) {
@@ -113,7 +151,9 @@ export class ComponentSet<
   }
 
   public addToOutputs(newOutputs: Record<string, string>) {
-    this.outputs = { ...this.outputs, ...newOutputs };
+    const mergedOutputs = { ...this.outputs, ...newOutputs };
+    const sortedOuputEntries = Object.entries(mergedOutputs).sort(sortByAlphabet);
+    this.outputs = Object.fromEntries(sortedOuputEntries);
   }
 
   public get metadata() {
@@ -143,6 +183,7 @@ export class ComponentSet<
     return {
       type: this.type,
       name: this.name,
+      hash: this.hash,
       description: this.description,
       components: this.components,
       createdAt: this.createdAt,
@@ -150,7 +191,7 @@ export class ComponentSet<
       ...(Object.values(this.outputs).length
         ? { outputs: mapValues(this.outputs, normalizeOutputPath) }
         : {}),
-      ...(this.version !== undefined ? { version: this.version } : {}),
+      ...(this.versioned ? { version: this.version } : {}),
       ...(this.metadata ? { metadata: this.metadata } : {}),
     };
   }
@@ -160,21 +201,18 @@ export class ComponentSet<
   ) {
     await Promise.all(
       Object.values(manifest.syncedLibrary.nodes).map(async (node) => {
-        if (node) {
+        if (node?.document?.type === 'COMPONENT_SET') {
           const { id } = node.document;
           const { type, name } = parseName(node);
           const { description, updated_at: lastUpdated, created_at: createdAt } = node.metadata;
-          const oldVersion =
-            manifest.previousItems.get(id) ??
-            // The ids might be different, but the intent is that they are treated as the same asset.
-            manifest.previousItemsArray.find(
-              (prev) => `${prev.type}-${prev.name}` === `${type}-${name}`,
-            );
+          const oldVersion = manifest.getPreviousItem({ id, type, name });
+          const hash = createHashFromNodeChildren(node.document.children);
 
           const params = {
             ...oldVersion,
             node,
             id,
+            hash,
             type,
             name,
             description,
@@ -184,8 +222,7 @@ export class ComponentSet<
              */
             createdAt: oldVersion?.createdAt ?? createdAt,
             lastUpdated,
-            task: manifest.task,
-            recentlyUpdated: manifest.syncedLibrary.recentlyUpdatedIds.includes(id),
+            manifest,
           };
           const newComponentSet = new ComponentSet<ChildShape>(params);
           await manifest.syncItem(newComponentSet);

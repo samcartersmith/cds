@@ -69,7 +69,7 @@ export function fontOutputGenerator({
           font-style: normal;
           font-weight: 400;
           font-display: block;
-          src: url('${fontFileRelativeToCssFile}') format('${generatedFontFormat}');
+          src: url('./${fontFileRelativeToCssFile}') format('${generatedFontFormat}');
         }`;
         promises.push(writePrettyFile(cssFilePath, cssContent));
       }

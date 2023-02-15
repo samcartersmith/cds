@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { output as devkitOutput, writeJsonFile } from '@nrwl/devkit';
+import { output as devkitOutput } from '@nrwl/devkit';
 import { uniqBy } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';
@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ImageFormats, RequestType, SyncedLibrary, syncLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
-import { getAbsolutePath, sortByAlphabet } from '@cbhq/script-utils';
+import { getAbsolutePath, sortByAlphabet, writePrettyFile } from '@cbhq/script-utils';
 
 import { getManifestFromDisk } from '../helpers/getManifestFromDisk';
 import { logSummary } from '../helpers/logSummary';
@@ -101,7 +101,7 @@ export class Manifest<
 
   public readonly syncedLibrary: SyncedLibrary;
 
-  private readonly versioned: boolean;
+  public readonly versioned: boolean;
 
   private outputs: Record<string, string> = {};
 
@@ -146,12 +146,17 @@ export class Manifest<
     }
   }
 
-  public async checkIfUpdated(item: GetManifestItem<T>) {
-    const prevNode =
+  public getPreviousItem(item: Pick<ItemShape, 'id' | 'type' | 'name'>) {
+    return (
       this.previousItems.get(item.id) ??
       this.previousItemsArray.find(
         (prev) => `${prev.type}-${prev.name}` === `${item.type}-${item.name}`,
-      );
+      )
+    );
+  }
+
+  public async checkIfUpdated(item: GetManifestItem<T>) {
+    const prevNode = this.getPreviousItem(item);
     const updatedRemotely = this.syncedLibrary.recentlyUpdatedIds.includes(item.id);
 
     if (updatedRemotely) {
@@ -270,7 +275,7 @@ export class Manifest<
   }
 
   public async generateFile() {
-    writeJsonFile(this.filePath, this.toJSON());
+    await writePrettyFile(this.filePath, JSON.stringify(this.toJSON()));
     logSummary(this);
   }
 

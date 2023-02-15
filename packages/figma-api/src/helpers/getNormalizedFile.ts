@@ -7,6 +7,7 @@ export type RequestType = 'components' | 'component_sets' | 'styles';
 
 export type NormalizedFile = {
   /** Figma file id that response is for */
+  requestType: RequestType;
   id: string;
   items: Record<string, SharedElement | FullStyleMetadata>;
   styles: Record<string, Style>;
@@ -24,6 +25,7 @@ export async function getNormalizedFile(
   if (requestType === 'component_sets') {
     const resp = await getFileComponentSets(fileId);
     return {
+      requestType,
       id: fileId,
       styles: {},
       items: arrayToIdMap(resp.meta.component_sets),
@@ -33,6 +35,7 @@ export async function getNormalizedFile(
   if (requestType === 'components') {
     const resp = await getFileComponents(fileId);
     return {
+      requestType,
       id: fileId,
       styles: {},
       items: arrayToIdMap(resp.meta.components),
@@ -47,6 +50,7 @@ export async function getNormalizedFile(
     });
 
     return {
+      requestType,
       id: fileId,
       items: arrayToIdMap(resp.meta.styles),
       styles,

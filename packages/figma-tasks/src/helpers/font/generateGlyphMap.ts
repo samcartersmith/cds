@@ -5,7 +5,6 @@ import { getRelativePathForImport } from '../getRelativePathForImport';
 import { sortByCreatedAt } from '../sortByCreatedAt';
 import { CodegenItemConfig } from '../types';
 
-import { convertCodepoint } from './convertCodepoint';
 import { FontGlyphData } from './types';
 
 export type GenerateGlyphMapParams = {
@@ -39,17 +38,11 @@ export async function generateGlyphMap({
       .map((item) => {
         /**
          * The webfont package returns multiple values since a character can be assigned to multiple code points.
-         * The first one should be the unicodeHexadeimal format
+         * The first one should be the default one to use in our glyphMap
          */
-        const unicodeHexadecimal = item.unicode[0];
+        const fontUnicode = item.unicode[0];
 
-        if (unicodeHexadecimal.startsWith('u')) {
-          const unicode = convertCodepoint.unicodeHexadecimalToStringCharacter(unicodeHexadecimal);
-          return [item.name, unicode] as const;
-        }
-        throw new Error(
-          `Expected to receive unicode hexadecimal format (i.e. uE100), but received ${unicodeHexadecimal} instead`,
-        );
+        return [item.name, fontUnicode] as const;
       }),
   );
 
@@ -59,7 +52,7 @@ export async function generateGlyphMap({
     .sort((prev, next) => sortByAlphabet(prev.exportName, next.exportName))
     .map((item) => {
       const relativePath = getRelativePathForImport(destDir, item.dest);
-      return `import type { ${item.exportName} } from '${relativePath}';`;
+      return `import type { ${item.exportName} } from './${relativePath}';`;
     })
     .join('\n');
 

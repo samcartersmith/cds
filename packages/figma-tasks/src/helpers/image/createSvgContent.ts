@@ -102,8 +102,8 @@ export async function createSvgContent({
     ]);
     return {
       outputs: {
-        ...(svgLight ? { svgLight } : {}),
-        ...(svgDark ? { svgDark } : {}),
+        svgLight,
+        svgDark,
         ...(svgThemed ? { svgThemed } : {}),
         ...(svgJsLight ? { svgJsLight } : {}),
         ...(svgJsDark ? { svgJsDark } : {}),
