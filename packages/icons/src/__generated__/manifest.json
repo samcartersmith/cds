@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-02-07T15:16:17.756Z",
-  "metadata": { "lastUnicode": 61642 },
+  "lastUpdated": "2023-02-16T00:13:32.637Z",
+  "metadata": { "lastUnicode": 61645 },
   "items": {
     "2:27": {
       "hash": "ZhHC6oUswQWbMhmWLoI8hSnujxxSOwC1cNsjfP5az4s=",
@@ -6061,6 +6061,24 @@
         "svg12": "./ui/svg/ui-planetActive-12.svg",
         "svg16": "./ui/svg/ui-planetActive-16.svg",
         "svg24": "./ui/svg/ui-planetActive-24.svg"
+      }
+    },
+    "626:71": {
+      "type": "ui",
+      "name": "coinbaseOne",
+      "hash": "CeiJdm0mqwOwGsxsnjabUdJuL4kFinAsHmnoA56Ic2c=",
+      "description": "cb1, logo, one, first, coinbase, speciality",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61645 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61644 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61643 } }
+      ],
+      "createdAt": "2023-02-14T17:51:53.021Z",
+      "lastUpdated": "2023-02-14T17:51:53.021Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-coinbaseOne-12.svg",
+        "svg16": "./ui/svg/ui-coinbaseOne-16.svg",
+        "svg24": "./ui/svg/ui-coinbaseOne-24.svg"
       }
     }
   }

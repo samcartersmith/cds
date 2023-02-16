@@ -73,6 +73,7 @@ export type UiIconName =
   | 'clockOutline'
   | 'close'
   | 'closeCaption'
+  | 'coinbaseOne'
   | 'collapse'
   | 'collectibles'
   | 'comment'

@@ -264,6 +264,7 @@ const names: UiIconName[] = [
   'comment',
   'planetInactive',
   'planetActive',
+  'coinbaseOne',
 ];
 
 export default names;

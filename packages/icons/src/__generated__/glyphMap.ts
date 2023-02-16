@@ -1147,6 +1147,9 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-planetActive-12': '',
   'ui-planetActive-16': '',
   'ui-planetActive-24': '',
+  'ui-coinbaseOne-12': '',
+  'ui-coinbaseOne-16': '',
+  'ui-coinbaseOne-24': '',
 };
 
 export default glyphMap;
