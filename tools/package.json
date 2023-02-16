@@ -1,8 +1,9 @@
 {
   "name": "@cbhq/cds-tools",
   "scripts": {
+    "clean": "rm -rf ./dist",
     "babel": "../node_modules/.bin/babel",
-    "build": "yarn babel . --config-file ../babel.config.js --extensions .ts,.tsx --copy-files --out-dir dist",
+    "build": "yarn clean && yarn babel . --config-file ../babel.config.js --extensions .ts,.tsx --copy-files --out-dir dist",
     "watch": "yarn build --watch"
   },
   "executors": "./executor.json"
