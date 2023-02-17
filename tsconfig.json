@@ -10,6 +10,9 @@
       "path": "packages/cds-migrator"
     },
     {
+      "path": "packages/cds-tasks"
+    },
+    {
       "path": "packages/codegen"
     },
     {
@@ -49,25 +52,22 @@
       "path": "packages/mobile"
     },
     {
-      "path": "packages/ui-scorecard"
+      "path": "packages/script-utils"
     },
     {
       "path": "packages/ui-mobile-playground"
     },
     {
-      "path": "packages/utils"
+      "path": "packages/ui-scorecard"
     },
     {
-      "path": "packages/script-utils"
+      "path": "packages/utils"
     },
     {
       "path": "packages/web"
     },
     {
       "path": "packages/web-utils"
-    },
-    {
-      "path": "tools"
     }
   ]
 }

@@ -15,7 +15,7 @@
       "executor": "@cbhq/mono-tasks:typecheck"
     },
     "build": {
-      "executor": "@cbhq/cds-tools:build-package",
+      "executor": "@cbhq/cds-tasks:build-package",
       "outputs": [
         "{workspaceRoot}/.nx/dist/packages/lottie-files"
       ],

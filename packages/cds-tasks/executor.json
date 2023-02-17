@@ -1,0 +1,24 @@
+{
+  "executors": {
+    "build-css": {
+      "implementation": "./dist/src/executors/build-css/impl",
+      "schema": "./dist/src/executors/build-css/schema.json",
+      "description": "Aggregates all of the cds css"
+    },
+    "build-docusaurus-plugin": {
+      "implementation": "./dist/src/executors/build-docusaurus-plugin/impl",
+      "schema": "./dist/src/executors/build-docusaurus-plugin/schema.json",
+      "description": "Builds a docusaurus plugin"
+    },
+    "build-package": {
+      "implementation": "./dist/src/executors/build-package/impl",
+      "schema": "./dist/src/executors/build-package/schema.json",
+      "description": "Builds a CDS npm package"
+    },
+    "build-package-esm": {
+      "implementation": "./dist/src/executors/build-package-esm/impl",
+      "schema": "./dist/src/executors/build-package-esm/schema.json",
+      "description": "Builds an esm compliant CDS npm package"
+    }
+  }
+}

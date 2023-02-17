@@ -4,7 +4,7 @@
   "description": "Jest utils and developer tools.",
   "dependencies": {
     "@babel/types": "^7.20.7",
-    "@cbhq/cds-tools": "workspace:*",
+    "@cbhq/cds-tasks": "workspace:*",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "chalk": "^4.1.0",
     "css-loader": "^6.2.0",

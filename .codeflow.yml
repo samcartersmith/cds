@@ -78,3 +78,11 @@ build:
     - BaldurNode:
         name: package-cds-web-esm
         path: ./packages/web/publish-esm.Dockerfile
+    - BaldurNode:
+        name: package-cds-tasks
+        path: ./packages/cds-tasks/publish.Dockerfile
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
+        expire_keep_tags_after_days: 1
+        expire_tmp_tags_after_days: 1
+        expire_all_after_days: 2

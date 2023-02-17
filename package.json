@@ -8,13 +8,16 @@
     "url": "git@github.cbhq.net:frontend/cds.git"
   },
   "scripts": {
-    "clean": "rm -rf packages/*/{dts,lib,esm,cjs} || true && nx reset",
+    "clean-nx-dir": "rm -rf .nx || true",
+    "clean-packemon-outs": "rm -rf packages/*/{dts,lib,esm,cjs} || true",
+    "clean-dist-outs": "rm -rf packages/*/dist || true",
+    "reset-nx-daemon": "nx reset",
+    "clean": "yarn clean-nx-dir && yarn clean-packemon-outs && yarn clean-dist-outs && yarn reset-nx-daemon",
+    "build-required-packages": "yarn nx run cds-tasks:build",
     "codeowners": "mono-pipeline sync-codeowners",
     "diagnose": "mono-env diagnose --group common web mobile",
-    "postinstall": "yarn workspace @cbhq/cds-tools build",
-    "setup": "yarn postinstall && mono-env setup --group common web mobile",
-    "release": "yarn nx run codegen:release",
-    "validate": "nx workspace-lint"
+    "setup": "yarn build-required-packages && mono-env setup --group common web mobile",
+    "release": "yarn nx run codegen:release"
   },
   "resolutions": {
     "colors": "1.4.0",
@@ -32,8 +35,7 @@
   "workspaces": [
     "apps/*",
     "libs/*",
-    "packages/*",
-    "tools"
+    "packages/*"
   ],
   "devDependencies": {
     "@babel/cli": "^7.20.7",

@@ -1,0 +1,37 @@
+{
+  "name": "@cbhq/cds-tasks",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "babel": "../../node_modules/.bin/babel",
+    "build": "yarn clean && yarn babel . --config-file ../../babel.config.js --extensions .ts,.tsx --copy-files --out-dir dist",
+    "watch": "yarn build --watch"
+  },
+  "executors": "./executor.json",
+  "packemon": {
+    "format": "lib",
+    "platform": "node"
+  },
+  "type": "commonjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js",
+      "default": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  },
+  "dependencies": {
+    "execa": "^5.1.1",
+    "fast-glob": "^3.2.11"
+  }
+}

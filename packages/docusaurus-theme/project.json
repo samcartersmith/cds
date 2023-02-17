@@ -5,12 +5,15 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@cbhq/cds-tools:build-docusaurus-plugin",
+      "executor": "@cbhq/cds-tasks:build-docusaurus-plugin",
       "options": {
         "postbuild": "./scripts/postbuild.ts"
       },
       "outputs": [
         "{projectRoot}/lib"
+      ],
+      "dependsOn": [
+        "^build"
       ]
     },
     "watch": {

@@ -30,7 +30,7 @@
   "main": "index",
   "typings": "index.d.ts",
   "devDependencies": {
-    "@cbhq/cds-tools": "workspace:*",
+    "@cbhq/cds-tasks": "workspace:*",
     "jest-date-mock": "^1.0.8"
   }
 }

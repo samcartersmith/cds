@@ -11,6 +11,6 @@
   "authors": "Coinbase",
   "main": "./index",
   "devDependencies": {
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
   }
 }

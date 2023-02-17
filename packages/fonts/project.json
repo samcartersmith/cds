@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@cbhq/cds-tools:build-package",
+      "executor": "@cbhq/cds-tasks:build-package",
       "outputs": ["{workspaceRoot}/.nx/dist/packages/fonts"],
       "options": {
         "destinationDir": ".nx/dist/packages/fonts",

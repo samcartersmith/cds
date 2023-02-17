@@ -2208,7 +2208,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
   dependencies:
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
     "@cbhq/d3": "workspace:*"
     d3-array: 2.12.1
@@ -2273,7 +2273,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-fonts@workspace:packages/fonts"
   dependencies:
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -2298,7 +2298,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-lottie-files@workspace:packages/lottie-files"
   dependencies:
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -2321,7 +2321,7 @@ __metadata:
     "@cbhq/cds-common": "workspace:*"
     "@cbhq/cds-fonts": "workspace:*"
     "@cbhq/cds-lottie-files": "workspace:*"
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
     "@react-native-community/netinfo": ^7.1.7
     "@testing-library/react-native": ^11.3.0
@@ -2360,9 +2360,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-tools@workspace:*, @cbhq/cds-tools@workspace:tools":
+"@cbhq/cds-tasks@workspace:*, @cbhq/cds-tasks@workspace:packages/cds-tasks":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-tools@workspace:tools"
+  resolution: "@cbhq/cds-tasks@workspace:packages/cds-tasks"
+  dependencies:
+    execa: ^5.1.1
+    fast-glob: ^3.2.11
   languageName: unknown
   linkType: soft
 
@@ -2370,7 +2373,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-utils@workspace:packages/utils"
   dependencies:
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
     humps: ^2.0.1
     type-fest: ^1.2.0
   languageName: unknown
@@ -2381,7 +2384,7 @@ __metadata:
   resolution: "@cbhq/cds-web-utils@workspace:packages/web-utils"
   dependencies:
     "@babel/types": ^7.20.7
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
     "@pmmmwh/react-refresh-webpack-plugin": ^0.4.3
     chalk: ^4.1.0
     css-loader: ^6.2.0
@@ -2412,7 +2415,7 @@ __metadata:
     "@cbhq/cds-common": "workspace:*"
     "@cbhq/cds-fonts": "workspace:*"
     "@cbhq/cds-lottie-files": "workspace:*"
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
     "@cbhq/cds-utils": "workspace:*"
     "@cbhq/cds-web-utils": "workspace:*"
     "@cbhq/d3": "workspace:*"
@@ -2560,7 +2563,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/docusaurus-theme@workspace:packages/docusaurus-theme"
   dependencies:
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
     "@docusaurus/theme-classic": 2.0.0-beta.18

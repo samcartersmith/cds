@@ -5,8 +5,12 @@
     "packages/**/*",
     "apps/**/*",
     "examples/**/*",
-    "tools/**/*",
     "dangerfile.ts"
   ],
-  "exclude": ["**/dist/**/*", "**/lib/**/*", "**/node_modules/**/*", "**/out/**/*"]
+  "exclude": [
+    "**/dist/**/*",
+    "**/lib/**/*",
+    "**/node_modules/**/*",
+    "**/out/**/*"
+  ]
 }

@@ -14,7 +14,7 @@
     "type-fest": "^1.2.0"
   },
   "devDependencies": {
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
   },
   "main": "index",
   "react-native": "index.ts",

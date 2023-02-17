@@ -28,7 +28,8 @@
     "utils": "packages/utils",
     "web": "packages/web",
     "web-utils": "packages/web-utils",
-    "website": "apps/website"
+    "website": "apps/website",
+    "cds-tasks": "packages/cds-tasks"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

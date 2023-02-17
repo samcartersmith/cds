@@ -13,6 +13,6 @@
   "typings": "index.d.ts",
   "react-native": "./index.ts",
   "devDependencies": {
-    "@cbhq/cds-tools": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:*"
   }
 }

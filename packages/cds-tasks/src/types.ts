@@ -14,6 +14,7 @@ export type BuildPackageOptions = {
 
 export type BuildCssOptions = {
   fontsOutputDir: string;
+  iconsOutputDir: string;
   webOutputDir: string;
   outputDir: string;
   name?: string;

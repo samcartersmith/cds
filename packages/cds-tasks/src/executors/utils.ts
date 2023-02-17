@@ -6,7 +6,13 @@ import { reduce } from 'lodash';
 import path from 'path';
 
 export function getProjectPath(context: ExecutorContext): string {
-  return context.workspace.projects[context.projectName as string].root;
+  const projectPath = context.workspace?.projects[context.projectName as string].root;
+
+  if (projectPath === undefined) {
+    throw new Error('Unexpected: project path is undefined.');
+  }
+
+  return projectPath;
 }
 
 /**
@@ -111,12 +117,7 @@ export async function compressCssFile(context: ExecutorContext, filePath: string
   await runLocalCommand(
     context,
     'parcel-css',
-    [
-      '--minify',
-      filePath,
-      '-o',
-      filePath,
-    ],
+    ['--minify', filePath, '-o', filePath],
     {},
     context.root,
   );

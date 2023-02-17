@@ -21,7 +21,7 @@
       "executor": "@cbhq/mono-tasks:typecheck"
     },
     "build": {
-      "executor": "@cbhq/cds-tools:build-package",
+      "executor": "@cbhq/cds-tasks:build-package",
       "outputs": [
         "{workspaceRoot}/.nx/dist/packages/web"
       ],
@@ -56,7 +56,7 @@
       ]
     },
     "build-esm": {
-      "executor": "@cbhq/cds-tools:build-package-esm",
+      "executor": "@cbhq/cds-tasks:build-package-esm",
       "outputs": [
         "{workspaceRoot}/.nx/dist/packages/web-esm"
       ],
@@ -93,7 +93,7 @@
       ]
     },
     "build-css": {
-      "executor": "@cbhq/cds-tools:build-css",
+      "executor": "@cbhq/cds-tasks:build-css",
       "outputs": [
         "{workspaceRoot}/.nx/dist/cloud/css"
       ],
