@@ -1,6 +1,6 @@
-import { VStack } from '../../layout';
+import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
-import { TextLabel2, TextTitle3 } from '../../typography';
+import { TextLabel1, TextLabel2, TextTitle3 } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
 import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
@@ -110,25 +110,47 @@ LabelBelow.parameters = { percy: enableJavascript };
 
 export const LabelAtBoundsBelow = () => {
   return (
-    <ProgressContainerWithButtons>
-      {({ calculateProgress }) => (
-        <VStack gap={2}>
-          <ProgressBarWithFixedLabels
-            startLabel={0}
-            endLabel={Math.round(calculateProgress(0.2) * 100)}
-            labelPlacement="below"
-          >
-            <ProgressBar progress={calculateProgress(0.2)} />
-          </ProgressBarWithFixedLabels>
-          <ProgressBarWithFixedLabels
-            endLabel={Math.round(calculateProgress(0.2) * 100)}
-            labelPlacement="below"
-          >
-            <ProgressBar progress={calculateProgress(0.2)} />
-          </ProgressBarWithFixedLabels>
-        </VStack>
-      )}
-    </ProgressContainerWithButtons>
+    <VStack gap={4}>
+      <ProgressContainerWithButtons>
+        {({ calculateProgress }) => (
+          <VStack gap={2}>
+            <ProgressBarWithFixedLabels
+              startLabel={0}
+              endLabel={Math.round(calculateProgress(0.2) * 100)}
+              labelPlacement="below"
+            >
+              <ProgressBar progress={calculateProgress(0.2)} />
+            </ProgressBarWithFixedLabels>
+            <ProgressBarWithFixedLabels
+              endLabel={Math.round(calculateProgress(0.2) * 100)}
+              labelPlacement="below"
+            >
+              <ProgressBar progress={calculateProgress(0.2)} />
+            </ProgressBarWithFixedLabels>
+          </VStack>
+        )}
+      </ProgressContainerWithButtons>
+      <TextLabel1 as="p">Wrapped in HStack</TextLabel1>
+      <ProgressContainerWithButtons>
+        {({ calculateProgress }) => (
+          <HStack gap={2}>
+            <ProgressBarWithFixedLabels
+              startLabel={0}
+              endLabel={Math.round(calculateProgress(0.2) * 100)}
+              labelPlacement="below"
+            >
+              <ProgressBar progress={calculateProgress(0.2)} />
+            </ProgressBarWithFixedLabels>
+            <ProgressBarWithFixedLabels
+              endLabel={Math.round(calculateProgress(0.2) * 100)}
+              labelPlacement="below"
+            >
+              <ProgressBar progress={calculateProgress(0.2)} />
+            </ProgressBarWithFixedLabels>
+          </HStack>
+        )}
+      </ProgressContainerWithButtons>
+    </VStack>
   );
 };
 LabelAtBoundsBelow.parameters = { percy: enableJavascript };

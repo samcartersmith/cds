@@ -113,7 +113,7 @@ export const ProgressBarWithFixedLabels: React.FC<
     const rightEl = isRtl() ? startLabelEl : endLabelEl;
 
     return (
-      <VStack testID={testID}>
+      <VStack testID={testID} width="100%">
         {labelPlacement === 'above' && (
           <ProgressBarFixedLabelContainer
             visuallyDisabled={disabled}
