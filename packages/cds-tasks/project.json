@@ -1,4 +1,6 @@
 {
+  "name": "cds-tasks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/cds-tasks",
   "projectType": "library",
   "targets": {
