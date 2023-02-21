@@ -101,7 +101,6 @@ module.exports = {
     'import/no-duplicates': 'off',
     'import/no-cycle': 'off',
     'import/no-relative-packages': 'off',
-    'import/no-useless-path-segments': 'off',
     '@cbhq/ts-singular-type-name': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
   },
