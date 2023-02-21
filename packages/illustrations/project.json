@@ -52,6 +52,17 @@
         ]
       }
     },
+    "main": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "cd packages/illustrations && nx run illustrations:sync",
+          "cd packages/illustrations && nx run illustrations:uploadToStaticAssets",
+          "yarn mono-pipeline version illustrations"
+        ],
+        "parallel": false
+      }
+    },
     "test": {
       "executor": "@cbhq/mono-tasks:test"
     },
