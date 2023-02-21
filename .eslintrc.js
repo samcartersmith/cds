@@ -99,7 +99,6 @@ module.exports = {
     '@cbhq/react-native-no-fabric-incompatible-apis': 'off',
     '@cbhq/react-native-no-fabric-incompatible-apis': 0,
     'import/no-duplicates': 'off',
-    'import/no-cycle': 'off',
     'import/no-relative-packages': 'off',
     '@cbhq/ts-singular-type-name': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
