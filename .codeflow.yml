@@ -4,6 +4,7 @@ secure:
     - master
     - alpha-fabric-arch
     - release-4.0.0
+    - deprecations-q12023
 build:
   engines:
     # Apps
