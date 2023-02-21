@@ -13,7 +13,7 @@ export const useScrollBlocker = () => {
     const html = document.documentElement;
     const { body } = document;
 
-    if (!body || !body.style) return;
+    if (!body?.style) return;
 
     // block scroll
     if (shouldBlock && !scroll.current) {

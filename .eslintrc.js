@@ -105,6 +105,5 @@ module.exports = {
     'import/no-useless-path-segments': 'off',
     '@cbhq/ts-singular-type-name': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
-    '@typescript-eslint/prefer-optional-chain': 'off',
   },
 };
