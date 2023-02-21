@@ -1,8 +1,9 @@
+import type { Config } from 'svgo';
 import { optimize } from 'svgo';
 
-import svgoConfig from './svgoConfig';
+import defaultSvgoConfig from './svgoConfig';
 
-export function optimizeSvg(content: string): string {
-  const optimizedSvg = optimize(content, svgoConfig);
+export function optimizeSvg(content: string, svgConfig: Config = defaultSvgoConfig): string {
+  const optimizedSvg = optimize(content, svgConfig);
   return optimizedSvg.data;
 }

@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import type { Config } from 'svgo';
 import { downloadSvgImage } from '@cbhq/figma-api';
 import { writePrettyFile } from '@cbhq/script-utils';
 
@@ -13,6 +14,7 @@ type CreateSvgContentParams = {
   svgJsDir?: string;
   colorStyles?: ColorStyles;
   imageName: string;
+  svgoConfig?: Config;
 };
 
 export type SvgContent = {
@@ -39,6 +41,7 @@ export async function createSvgContent({
   svgDir,
   svgJsDir,
   imageName,
+  svgoConfig,
 }: CreateSvgContentParams) {
   const svgContent: SvgContent = {
     light: undefined,
@@ -53,7 +56,7 @@ export async function createSvgContent({
   } as const;
 
   svgContent.light = await downloadSvgImage(figmaUrl);
-  svgContent.light = optimizeSvg(svgContent.light);
+  svgContent.light = optimizeSvg(svgContent.light, svgoConfig);
 
   if (colorStyles) {
     svgContent.dark = colorStyles.replaceLightWithDarkFills(svgContent.light);

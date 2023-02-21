@@ -19,6 +19,8 @@ import { sortByCreatedAt } from '../../helpers/sortByCreatedAt';
 import { Component } from '../../tools/Component';
 import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manifest';
 
+import svgoConfig from './svgoConfig';
+
 export type SyncIllustrationsTaskOptions = {
   /** The directory to output generated files. */
   generatedDirectory: string;
@@ -84,6 +86,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
           svgJsDir,
           figmaUrl,
           colorStyles,
+          svgoConfig,
         });
 
         imageOutputs = { ...imageOutputs, ...svgOutputs };

@@ -22,6 +22,8 @@ import { ComponentSet } from '../../tools/ComponentSet';
 import { ComponentSetChild } from '../../tools/ComponentSetChild';
 import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manifest';
 
+import svgoConfig from './svgoConfig';
+
 type IconComponentSetChildShape = {
   metadata: { unicode: number };
   props: { active?: boolean; size: number };
@@ -98,6 +100,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
           imageName,
           svgDir,
           figmaUrl,
+          svgoConfig,
         });
 
         componentSet.addToOutputs({ [outputKey]: svgFilePath });
