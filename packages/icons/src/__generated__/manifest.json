@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-02-16T00:13:32.637Z",
-  "metadata": { "lastUnicode": 61645 },
+  "lastUpdated": "2023-02-22T17:16:23.857Z",
+  "metadata": { "lastUnicode": 61651 },
   "items": {
     "2:27": {
       "hash": "ZhHC6oUswQWbMhmWLoI8hSnujxxSOwC1cNsjfP5az4s=",
@@ -6079,6 +6079,42 @@
         "svg12": "./ui/svg/ui-coinbaseOne-12.svg",
         "svg16": "./ui/svg/ui-coinbaseOne-16.svg",
         "svg24": "./ui/svg/ui-coinbaseOne-24.svg"
+      }
+    },
+    "643:67": {
+      "type": "ui",
+      "name": "cashSingaporeDollar",
+      "hash": "GmwvWLo0Ua5NWz2g67htvkgRIcskNHUHwrO8IQoKLCo=",
+      "description": "currency, international, money,  🇸🇬, 💵, 💸, 🪙",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61651 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61650 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61649 } }
+      ],
+      "createdAt": "2023-02-21T20:22:30.288Z",
+      "lastUpdated": "2023-02-21T22:19:37.399Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-cashSingaporeDollar-12.svg",
+        "svg16": "./ui/svg/ui-cashSingaporeDollar-16.svg",
+        "svg24": "./ui/svg/ui-cashSingaporeDollar-24.svg"
+      }
+    },
+    "643:83": {
+      "type": "ui",
+      "name": "cashCanadianDollar",
+      "hash": "5TM7LxcEfJ8WeJmLqGRhUvO+h5bhUT+zhEepeta7yq0=",
+      "description": "currency, international, money,  🇨🇦, 💵, 💸, 🪙",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61648 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61647 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61646 } }
+      ],
+      "createdAt": "2023-02-21T20:22:30.296Z",
+      "lastUpdated": "2023-02-21T22:19:37.390Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-cashCanadianDollar-12.svg",
+        "svg16": "./ui/svg/ui-cashCanadianDollar-16.svg",
+        "svg24": "./ui/svg/ui-cashCanadianDollar-24.svg"
       }
     }
   }

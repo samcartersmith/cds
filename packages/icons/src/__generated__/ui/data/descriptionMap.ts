@@ -177,6 +177,8 @@ const descriptionMap: Record<string, string[]> = {
     'bank',
     'cashIndonesianRupiah',
     'cashAustralianDollar',
+    'cashSingaporeDollar',
+    'cashCanadianDollar',
   ],
   '₹': ['cashRupee'],
   currency: [
@@ -192,6 +194,8 @@ const descriptionMap: Record<string, string[]> = {
     'bank',
     'cashIndonesianRupiah',
     'cashAustralianDollar',
+    'cashSingaporeDollar',
+    'cashCanadianDollar',
   ],
   international: [
     'cashRupee',
@@ -205,6 +209,8 @@ const descriptionMap: Record<string, string[]> = {
     'cashPhilippinePeso',
     'cashIndonesianRupiah',
     'cashAustralianDollar',
+    'cashSingaporeDollar',
+    'cashCanadianDollar',
   ],
   india: ['cashRupee'],
   indonesia: ['cashRupee'],
@@ -238,6 +244,8 @@ const descriptionMap: Record<string, string[]> = {
     'bank',
     'cashIndonesianRupiah',
     'cashAustralianDollar',
+    'cashSingaporeDollar',
+    'cashCanadianDollar',
   ],
   '💸': [
     'cashRupee',
@@ -254,6 +262,8 @@ const descriptionMap: Record<string, string[]> = {
     'bank',
     'cashIndonesianRupiah',
     'cashAustralianDollar',
+    'cashSingaporeDollar',
+    'cashCanadianDollar',
   ],
   minus: ['minus'],
   subtract: ['minus'],
@@ -861,6 +871,8 @@ const descriptionMap: Record<string, string[]> = {
     'cashPhilippinePeso',
     'cashIndonesianRupiah',
     'cashAustralianDollar',
+    'cashSingaporeDollar',
+    'cashCanadianDollar',
   ],
   face: ['faceScan'],
   fork: ['fork'],
@@ -1275,6 +1287,8 @@ const descriptionMap: Record<string, string[]> = {
   cb1: ['coinbaseOne'],
   one: ['coinbaseOne'],
   coinbase: ['coinbaseOne'],
+  '🇸🇬': ['cashSingaporeDollar'],
+  '🇨🇦': ['cashCanadianDollar'],
 };
 
 export default descriptionMap;

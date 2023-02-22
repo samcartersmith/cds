@@ -1150,6 +1150,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-coinbaseOne-12': '',
   'ui-coinbaseOne-16': '',
   'ui-coinbaseOne-24': '',
+  'ui-cashSingaporeDollar-12': '',
+  'ui-cashSingaporeDollar-16': '',
+  'ui-cashSingaporeDollar-24': '',
+  'ui-cashCanadianDollar-12': '',
+  'ui-cashCanadianDollar-16': '',
+  'ui-cashCanadianDollar-24': '',
 };
 
 export default glyphMap;

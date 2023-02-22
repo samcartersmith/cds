@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.0 (2/22/2023 PST)
+
+#### 🚀 Updates
+
+- Publish icons 02/22/2023. [[#1728](https://github.cbhq.net/frontend/cds/pull/1728)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- cashCanadianDollar
+- cashSingaporeDollar
+
 ## 1.1.0 (2/15/2023 PST)
 
 #### 🚀 Updates
