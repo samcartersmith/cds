@@ -26,8 +26,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/addBankAccount-1').content,
   },
   addCreditCard: {
-    light: () => require('../svgJs/light/addCreditCard-0').content,
-    dark: () => require('../svgJs/dark/addCreditCard-0').content,
+    light: () => require('../svgJs/light/addCreditCard-1').content,
+    dark: () => require('../svgJs/dark/addCreditCard-1').content,
   },
   addMoreCrypto: {
     light: () => require('../svgJs/light/addMoreCrypto-0').content,
@@ -78,12 +78,12 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/bigBtc-1').content,
   },
   bigError: {
-    light: () => require('../svgJs/light/bigError-0').content,
-    dark: () => require('../svgJs/dark/bigError-0').content,
+    light: () => require('../svgJs/light/bigError-1').content,
+    dark: () => require('../svgJs/dark/bigError-1').content,
   },
   bigWarning: {
-    light: () => require('../svgJs/light/bigWarning-0').content,
-    dark: () => require('../svgJs/dark/bigWarning-0').content,
+    light: () => require('../svgJs/light/bigWarning-1').content,
+    dark: () => require('../svgJs/dark/bigWarning-1').content,
   },
   bitcoinAndOtherCrypto: {
     light: () => require('../svgJs/light/bitcoinAndOtherCrypto-0').content,
@@ -466,8 +466,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/earnNuxHome-1').content,
   },
   earnSuccess: {
-    light: () => require('../svgJs/light/earnSuccess-0').content,
-    dark: () => require('../svgJs/dark/earnSuccess-0').content,
+    light: () => require('../svgJs/light/earnSuccess-1').content,
+    dark: () => require('../svgJs/dark/earnSuccess-1').content,
   },
   earnToLearn: {
     light: () => require('../svgJs/light/earnToLearn-1').content,
@@ -878,8 +878,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/rocket-0').content,
   },
   rotatingRewards: {
-    light: () => require('../svgJs/light/rotatingRewards-1').content,
-    dark: () => require('../svgJs/dark/rotatingRewards-1').content,
+    light: () => require('../svgJs/light/rotatingRewards-2').content,
+    dark: () => require('../svgJs/dark/rotatingRewards-2').content,
   },
   routingAccount: {
     light: () => require('../svgJs/light/routingAccount-1').content,
@@ -982,8 +982,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/stressTestedColdStorage-1').content,
   },
   success: {
-    light: () => require('../svgJs/light/success-0').content,
-    dark: () => require('../svgJs/dark/success-0').content,
+    light: () => require('../svgJs/light/success-1').content,
+    dark: () => require('../svgJs/dark/success-1').content,
   },
   supportAndMore: {
     light: () => require('../svgJs/light/supportAndMore-1').content,

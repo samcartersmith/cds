@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-01-26T14:04:34.776Z",
+  "lastUpdated": "2023-02-15T15:05:42.617Z",
   "items": {
     "2:33979": {
       "hash": "Ou6k2vGsPmgvn3sOo1rz7iRXkKFEnDN2bRM6S7AASSQ=",
@@ -1250,17 +1250,17 @@
       "height": 240,
       "description": "card, coin, switch, rotate, rewards, coinbase, arrows",
       "createdAt": "2022-08-05T05:36:48.487Z",
-      "lastUpdated": "2023-01-23T22:07:05.026Z",
+      "lastUpdated": "2023-02-06T14:59:11.961Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/rotatingRewards-1.svg",
-        "svgDark": "./heroSquare/svg/dark/rotatingRewards-1.svg",
-        "svgThemed": "./heroSquare/svg/themeable/rotatingRewards-1.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/rotatingRewards-1.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/rotatingRewards-1.js",
-        "pngLight": "./heroSquare/png/light/rotatingRewards-1.png",
-        "pngDark": "./heroSquare/png/dark/rotatingRewards-1.png"
+        "svgLight": "./heroSquare/svg/light/rotatingRewards-2.svg",
+        "svgDark": "./heroSquare/svg/dark/rotatingRewards-2.svg",
+        "svgThemed": "./heroSquare/svg/themeable/rotatingRewards-2.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/rotatingRewards-2.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/rotatingRewards-2.js",
+        "pngLight": "./heroSquare/png/light/rotatingRewards-2.png",
+        "pngDark": "./heroSquare/png/dark/rotatingRewards-2.png"
       },
-      "version": 1
+      "version": 2
     },
     "2:34049": {
       "hash": "vEUyGLHZk3oJFQovjD/N+SRTQUsCCChPQX0AwqD8Yfk=",
@@ -1950,17 +1950,17 @@
       "height": 240,
       "description": "add, credit, card, plastic, money, plus, payment, method, confirm, details, account",
       "createdAt": "2022-08-05T05:37:08.682Z",
-      "lastUpdated": "2023-01-11T18:36:28.431Z",
+      "lastUpdated": "2023-02-06T14:59:11.951Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/addCreditCard-0.svg",
-        "svgDark": "./heroSquare/svg/dark/addCreditCard-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/addCreditCard-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/addCreditCard-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/addCreditCard-0.js",
-        "pngLight": "./heroSquare/png/light/addCreditCard-0.png",
-        "pngDark": "./heroSquare/png/dark/addCreditCard-0.png"
+        "svgLight": "./heroSquare/svg/light/addCreditCard-1.svg",
+        "svgDark": "./heroSquare/svg/dark/addCreditCard-1.svg",
+        "svgThemed": "./heroSquare/svg/themeable/addCreditCard-1.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/addCreditCard-1.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/addCreditCard-1.js",
+        "pngLight": "./heroSquare/png/light/addCreditCard-1.png",
+        "pngDark": "./heroSquare/png/dark/addCreditCard-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "2:34092": {
       "hash": "rGZZIXBUPDuiyr0hMU27V4L9QQYFfgxdbB+N3V8cafU=",
@@ -4690,17 +4690,17 @@
       "height": 120,
       "description": "login, signIn, computer, screen, useraccount, mouse, cursor, password, enter, light",
       "createdAt": "2022-08-05T05:37:09.106Z",
-      "lastUpdated": "2023-01-11T18:36:28.513Z",
+      "lastUpdated": "2023-02-06T14:59:11.969Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/login-0.svg",
-        "svgDark": "./spotRectangle/svg/dark/login-0.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/login-0.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/login-0.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/login-0.js",
-        "pngLight": "./spotRectangle/png/light/login-0.png",
-        "pngDark": "./spotRectangle/png/dark/login-0.png"
+        "svgLight": "./spotRectangle/svg/light/login-1.svg",
+        "svgDark": "./spotRectangle/svg/dark/login-1.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/login-1.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/login-1.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/login-1.js",
+        "pngLight": "./spotRectangle/png/light/login-1.png",
+        "pngDark": "./spotRectangle/png/dark/login-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "2:41260": {
       "hash": "d8n8XMs2KCH3B+hDe46Cf5fvdcrcsYJImtp7EaueZfU=",
@@ -5350,17 +5350,17 @@
       "height": 120,
       "description": "money, cash, currency, arrow, up, 💰, 💵, 💸,  💲, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺, 💶, 💷, 💴, 💰",
       "createdAt": "2022-08-05T05:37:09.242Z",
-      "lastUpdated": "2023-01-20T21:49:21.745Z",
+      "lastUpdated": "2023-02-06T14:59:11.987Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/highFees-1.svg",
-        "svgDark": "./spotRectangle/svg/dark/highFees-1.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/highFees-1.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/highFees-1.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/highFees-1.js",
-        "pngLight": "./spotRectangle/png/light/highFees-1.png",
-        "pngDark": "./spotRectangle/png/dark/highFees-1.png"
+        "svgLight": "./spotRectangle/svg/light/highFees-2.svg",
+        "svgDark": "./spotRectangle/svg/dark/highFees-2.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/highFees-2.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/highFees-2.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/highFees-2.js",
+        "pngLight": "./spotRectangle/png/light/highFees-2.png",
+        "pngDark": "./spotRectangle/png/dark/highFees-2.png"
       },
-      "version": 1
+      "version": 2
     },
     "2:41299": {
       "hash": "C+czepsB3qBFjhf0GIBVrdpLQ+2PCKG+9smSXKkKKkA=",
@@ -9530,17 +9530,17 @@
       "height": 48,
       "description": "shield, protection, guard, defense, cover, safety, security",
       "createdAt": "2022-08-05T05:37:13.782Z",
-      "lastUpdated": "2023-01-11T18:36:04.493Z",
+      "lastUpdated": "2023-02-06T14:59:11.939Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/shield-0.svg",
-        "svgDark": "./pictogram/svg/dark/shield-0.svg",
-        "svgThemed": "./pictogram/svg/themeable/shield-0.svg",
-        "svgJsLight": "./pictogram/svgJs/light/shield-0.js",
-        "svgJsDark": "./pictogram/svgJs/dark/shield-0.js",
-        "pngLight": "./pictogram/png/light/shield-0.png",
-        "pngDark": "./pictogram/png/dark/shield-0.png"
+        "svgLight": "./pictogram/svg/light/shield-1.svg",
+        "svgDark": "./pictogram/svg/dark/shield-1.svg",
+        "svgThemed": "./pictogram/svg/themeable/shield-1.svg",
+        "svgJsLight": "./pictogram/svgJs/light/shield-1.js",
+        "svgJsDark": "./pictogram/svgJs/dark/shield-1.js",
+        "pngLight": "./pictogram/png/light/shield-1.png",
+        "pngDark": "./pictogram/png/dark/shield-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "2:41593": {
       "hash": "V7T+C2oFhhFgfsW2zoJ27Iuw3urUJkNd0LCBEJSlfqs=",
@@ -9850,17 +9850,17 @@
       "height": 48,
       "description": "stake, wrap, ethereum, rush, movement, forward, exciting",
       "createdAt": "2022-08-05T05:37:13.848Z",
-      "lastUpdated": "2023-01-11T18:36:05.167Z",
+      "lastUpdated": "2023-02-06T14:59:11.979Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/wrapEth-0.svg",
-        "svgDark": "./pictogram/svg/dark/wrapEth-0.svg",
-        "svgThemed": "./pictogram/svg/themeable/wrapEth-0.svg",
-        "svgJsLight": "./pictogram/svgJs/light/wrapEth-0.js",
-        "svgJsDark": "./pictogram/svgJs/dark/wrapEth-0.js",
-        "pngLight": "./pictogram/png/light/wrapEth-0.png",
-        "pngDark": "./pictogram/png/dark/wrapEth-0.png"
+        "svgLight": "./pictogram/svg/light/wrapEth-1.svg",
+        "svgDark": "./pictogram/svg/dark/wrapEth-1.svg",
+        "svgThemed": "./pictogram/svg/themeable/wrapEth-1.svg",
+        "svgJsLight": "./pictogram/svgJs/light/wrapEth-1.js",
+        "svgJsDark": "./pictogram/svgJs/dark/wrapEth-1.js",
+        "pngLight": "./pictogram/png/light/wrapEth-1.png",
+        "pngDark": "./pictogram/png/dark/wrapEth-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "2:41613": {
       "hash": "YmBZfEe1T9CsS2gOCTa7W3SAGhgzM4Y3w5wcKC7rDmg=",
@@ -14450,17 +14450,17 @@
       "height": 240,
       "description": "general, generic, confirm, confirmation, success, positive, agree, correct, yes, check, checkmark, mark, animation",
       "createdAt": "2023-01-18T02:30:49.632Z",
-      "lastUpdated": "2023-01-18T02:30:49.632Z",
+      "lastUpdated": "2023-02-14T18:08:28.678Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/success-0.svg",
-        "svgDark": "./heroSquare/svg/dark/success-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/success-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/success-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/success-0.js",
-        "pngLight": "./heroSquare/png/light/success-0.png",
-        "pngDark": "./heroSquare/png/dark/success-0.png"
+        "svgLight": "./heroSquare/svg/light/success-1.svg",
+        "svgDark": "./heroSquare/svg/dark/success-1.svg",
+        "svgThemed": "./heroSquare/svg/themeable/success-1.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/success-1.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/success-1.js",
+        "pngLight": "./heroSquare/png/light/success-1.png",
+        "pngDark": "./heroSquare/png/dark/success-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "1067:131": {
       "hash": "xnnT3NgGdEekWVOLjtKwCAYVYJVPFLeoXbaJr6uponU=",
@@ -14470,17 +14470,17 @@
       "height": 240,
       "description": "failure, error, mistake, wrong, red, circle",
       "createdAt": "2023-01-18T02:30:49.627Z",
-      "lastUpdated": "2023-01-18T02:30:49.627Z",
+      "lastUpdated": "2023-02-14T18:08:28.658Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/bigError-0.svg",
-        "svgDark": "./heroSquare/svg/dark/bigError-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/bigError-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/bigError-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/bigError-0.js",
-        "pngLight": "./heroSquare/png/light/bigError-0.png",
-        "pngDark": "./heroSquare/png/dark/bigError-0.png"
+        "svgLight": "./heroSquare/svg/light/bigError-1.svg",
+        "svgDark": "./heroSquare/svg/dark/bigError-1.svg",
+        "svgThemed": "./heroSquare/svg/themeable/bigError-1.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/bigError-1.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/bigError-1.js",
+        "pngLight": "./heroSquare/png/light/bigError-1.png",
+        "pngDark": "./heroSquare/png/dark/bigError-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "1067:165": {
       "hash": "fJ4Yb9XLQxCXmLkquHDBgq98OaMbLgV/S76ZW+SmSq4=",
@@ -14490,17 +14490,17 @@
       "height": 240,
       "description": "general, generic, error, warning, confirmation, negative, animation",
       "createdAt": "2023-01-18T02:30:49.620Z",
-      "lastUpdated": "2023-01-18T02:30:49.620Z",
+      "lastUpdated": "2023-02-14T18:08:28.671Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/bigWarning-0.svg",
-        "svgDark": "./heroSquare/svg/dark/bigWarning-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/bigWarning-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/bigWarning-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/bigWarning-0.js",
-        "pngLight": "./heroSquare/png/light/bigWarning-0.png",
-        "pngDark": "./heroSquare/png/dark/bigWarning-0.png"
+        "svgLight": "./heroSquare/svg/light/bigWarning-1.svg",
+        "svgDark": "./heroSquare/svg/dark/bigWarning-1.svg",
+        "svgThemed": "./heroSquare/svg/themeable/bigWarning-1.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/bigWarning-1.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/bigWarning-1.js",
+        "pngLight": "./heroSquare/png/light/bigWarning-1.png",
+        "pngDark": "./heroSquare/png/dark/bigWarning-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "1067:569": {
       "hash": "vQNrH89UiX3M3shNSsPTTlZhQPW3IiQ2AMYjVS2BXGM=",
@@ -14510,17 +14510,17 @@
       "height": 240,
       "description": "DO, NOT, USE, except, for, Earn",
       "createdAt": "2023-01-18T02:30:49.615Z",
-      "lastUpdated": "2023-01-20T14:26:16.482Z",
+      "lastUpdated": "2023-02-14T18:08:28.665Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/earnSuccess-0.svg",
-        "svgDark": "./heroSquare/svg/dark/earnSuccess-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/earnSuccess-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/earnSuccess-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/earnSuccess-0.js",
-        "pngLight": "./heroSquare/png/light/earnSuccess-0.png",
-        "pngDark": "./heroSquare/png/dark/earnSuccess-0.png"
+        "svgLight": "./heroSquare/svg/light/earnSuccess-1.svg",
+        "svgDark": "./heroSquare/svg/dark/earnSuccess-1.svg",
+        "svgThemed": "./heroSquare/svg/themeable/earnSuccess-1.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/earnSuccess-1.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/earnSuccess-1.js",
+        "pngLight": "./heroSquare/png/light/earnSuccess-1.png",
+        "pngDark": "./heroSquare/png/dark/earnSuccess-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "1067:762": {
       "hash": "mo05r1mGP++v/hdGKuovz/YF+II/DS2K8sk57UwOMCY=",
@@ -16161,6 +16161,101 @@
         "pngDark": "./heroSquare/png/dark/primeDeFi-1.png"
       },
       "version": 1
+    },
+    "1418:1584": {
+      "type": "spotRectangle",
+      "name": "eth2SendSell",
+      "width": 240,
+      "height": 120,
+      "description": "stake, wrap, ethereum, rush, movement, forward, exciting",
+      "createdAt": "2023-02-14T18:08:28.630Z",
+      "lastUpdated": "2023-02-14T18:08:28.630Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/eth2SendSell-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/eth2SendSell-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/eth2SendSell-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/eth2SendSell-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/eth2SendSell-0.js",
+        "pngLight": "./spotRectangle/png/light/eth2SendSell-0.png",
+        "pngDark": "./spotRectangle/png/dark/eth2SendSell-0.png"
+      },
+      "version": 0
+    },
+    "1418:1585": {
+      "type": "spotRectangle",
+      "name": "wrapEth",
+      "width": 240,
+      "height": 120,
+      "description": "ethereum, sell, send, transfer, eth2, ➡️",
+      "createdAt": "2023-02-14T18:08:28.620Z",
+      "lastUpdated": "2023-02-14T18:08:28.620Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/wrapEth-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/wrapEth-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/wrapEth-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/wrapEth-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/wrapEth-0.js",
+        "pngLight": "./spotRectangle/png/light/wrapEth-0.png",
+        "pngDark": "./spotRectangle/png/dark/wrapEth-0.png"
+      },
+      "version": 0
+    },
+    "1418:1586": {
+      "type": "spotRectangle",
+      "name": "ethTrading",
+      "width": 240,
+      "height": 120,
+      "description": "empty state, trading, exchange",
+      "createdAt": "2023-02-14T18:08:28.636Z",
+      "lastUpdated": "2023-02-14T18:08:28.636Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/ethTrading-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/ethTrading-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/ethTrading-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/ethTrading-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/ethTrading-0.js",
+        "pngLight": "./spotRectangle/png/light/ethTrading-0.png",
+        "pngDark": "./spotRectangle/png/dark/ethTrading-0.png"
+      },
+      "version": 0
+    },
+    "1418:1634": {
+      "type": "pictogram",
+      "name": "faucetNavigation",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2023-02-14T18:08:28.625Z",
+      "lastUpdated": "2023-02-14T18:08:28.625Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/faucetNavigation-0.svg",
+        "svgDark": "./pictogram/svg/dark/faucetNavigation-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/faucetNavigation-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/faucetNavigation-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/faucetNavigation-0.js",
+        "pngLight": "./pictogram/png/light/faucetNavigation-0.png",
+        "pngDark": "./pictogram/png/dark/faucetNavigation-0.png"
+      },
+      "version": 0
+    },
+    "1418:1824": {
+      "type": "spotRectangle",
+      "name": "connectWalletTutorial",
+      "width": 240,
+      "height": 120,
+      "description": "connect, wallet, phone, education, tutorial, attach, link, 👛, 👝, 👜, 📱, ❇️, 🔗, 🖇️",
+      "createdAt": "2023-02-14T18:08:28.612Z",
+      "lastUpdated": "2023-02-14T18:08:28.612Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/connectWalletTutorial-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/connectWalletTutorial-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/connectWalletTutorial-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/connectWalletTutorial-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/connectWalletTutorial-0.js",
+        "pngLight": "./spotRectangle/png/light/connectWalletTutorial-0.png",
+        "pngDark": "./spotRectangle/png/dark/connectWalletTutorial-0.png"
+      },
+      "version": 0
     }
   }
 }

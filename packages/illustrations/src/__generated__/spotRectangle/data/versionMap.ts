@@ -38,7 +38,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   cardBoosted: 0,
   noTransactions: 0,
   browserHistory: 0,
-  login: 0,
+  login: 1,
   primeEarn: 1,
   primeDeFi: 1,
   yieldHolding: 0,
@@ -56,7 +56,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   portfolioOverview: 0,
   sendCryptoFaster: 0,
   uob: 0,
-  highFees: 1,
+  highFees: 2,
   governance: 1,
   referralsBonus: 0,
   fileYourCryptoTaxesCheck: 0,
@@ -142,7 +142,11 @@ const versionMap: Record<SpotRectangleName, number> = {
   secureGlobalTransactions: 1,
   referralsBitcoin: 1,
   walletReconnect: 1,
-  p2pPayments: 1
+  p2pPayments: 1,
+  connectWalletTutorial: 0,
+  wrapEth: 0,
+  eth2SendSell: 0,
+  ethTrading: 0,
 };
 
 export default versionMap;

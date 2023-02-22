@@ -248,7 +248,7 @@ const versionMap: Record<PictogramName, number> = {
   settings: 0,
   commerceInvoice: 0,
   selectAddNft: 0,
-  shield: 0,
+  shield: 1,
   commerceCheckout: 1,
   dataMarketplaceNavigation: 1,
   security: 0,
@@ -257,7 +257,7 @@ const versionMap: Record<PictogramName, number> = {
   moreThanBitcoin: 0,
   contactInfo: 0,
   pizza: 0,
-  wrapEth: 0,
+  wrapEth: 1,
   walletWarning: 1,
   creditCard: 0,
   coinbaseOneAuthenticator: 0,
@@ -280,6 +280,7 @@ const versionMap: Record<PictogramName, number> = {
   driversLicense: 0,
   ssnCard: 1,
   ethStaking: 0,
+  faucetNavigation: 0,
 };
 
 export default versionMap;

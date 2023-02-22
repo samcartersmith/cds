@@ -111,6 +111,7 @@ export type PictogramName =
   | 'exchangeNavigation'
   | 'explore'
   | 'fast'
+  | 'faucetNavigation'
   | 'feesRestriction'
   | 'fiat'
   | 'finance'

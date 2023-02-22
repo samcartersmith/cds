@@ -437,6 +437,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/fast-0').content,
     dark: () => require('../svgJs/dark/fast-0').content,
   },
+  faucetNavigation: {
+    light: () => require('../svgJs/light/faucetNavigation-0').content,
+    dark: () => require('../svgJs/dark/faucetNavigation-0').content,
+  },
   feesRestriction: {
     light: () => require('../svgJs/light/feesRestriction-1').content,
     dark: () => require('../svgJs/dark/feesRestriction-1').content,
@@ -866,8 +870,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/settled-0').content,
   },
   shield: {
-    light: () => require('../svgJs/light/shield-0').content,
-    dark: () => require('../svgJs/dark/shield-0').content,
+    light: () => require('../svgJs/light/shield-1').content,
+    dark: () => require('../svgJs/dark/shield-1').content,
   },
   sideChainSide: {
     light: () => require('../svgJs/light/sideChainSide-0').content,
@@ -1062,8 +1066,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/worldwide-0').content,
   },
   wrapEth: {
-    light: () => require('../svgJs/light/wrapEth-0').content,
-    dark: () => require('../svgJs/dark/wrapEth-0').content,
+    light: () => require('../svgJs/light/wrapEth-1').content,
+    dark: () => require('../svgJs/dark/wrapEth-1').content,
   },
 } as Record<PictogramName, { light: () => string; dark: () => string }>;
 

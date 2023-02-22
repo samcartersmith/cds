@@ -31,6 +31,7 @@ const names: SpotRectangleName[] = [
   'collectingNfts',
   'completeAQuiz',
   'congratulationsOnEarningCrypto',
+  'connectWalletTutorial',
   'creditCardExcitement',
   'crossBorderPayments',
   'cryptoAssets',
@@ -54,10 +55,12 @@ const names: SpotRectangleName[] = [
   'emptyTrading',
   'encryptedEverything',
   'eth2SellSend',
+  'eth2SendSell',
   'ethAddress',
   'ethStakeOrWrap',
   'ethStakingMovement',
   'ethStakingRewards',
+  'ethTrading',
   'ethWrappedStakingRewards',
   'fileYourCryptoTaxes',
   'fileYourCryptoTaxesCheck',
@@ -136,6 +139,7 @@ const names: SpotRectangleName[] = [
   'walletReconnectSuccess',
   'walletSecurity',
   'watchVideos',
+  'wrapEth',
   'yieldHolding',
 ];
 

@@ -8,6 +8,50 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.0 (2/15/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustration Feb 15th, 2022. [[#1701](https://github.cbhq.net/frontend/cds/pull/1701)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- connectWalletTutorial
+- eth2SendSell
+- ethTrading
+- wrapEth
+
+#### Pictogram
+
+- faucetNavigation
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- addCreditCard
+- bigError
+- bigWarning
+- earnSuccess
+- rotatingRewards
+- success
+
+#### Pictogram
+
+- shield
+- wrapEth
+
+#### Spot Rectangle
+
+- highFees
+- login
+
 ### 🐞 Updated
 
 Generated with `yarn nx run illustrations:sync`
