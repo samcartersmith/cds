@@ -8,6 +8,23 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.0.1 (2/22/2023, 01:40 PM PST)
+
+#### 🐞 Fixes
+
+- Fixed ProgressBarWithFixedLabel when wrapped with an HStack. [#1716](https://github.cbhq.net/frontend/cds/pull/1716)
+- **[PortalProvider]** Fix ThemeProvider context values are not propagating to children of PortalProvider on Web. [#1695](https://github.cbhq.net/frontend/cds/pull/1695), [DX-368](https://jira.coinbase-corp.com/browse/DX-368)
+- Add dynamic styles for web input component + test. [#1689](https://github.cbhq.net/frontend/cds/pull/1689)
+- All deprecated components have a JSDoc comment @deprecated. [#1682](https://github.cbhq.net/frontend/cds/pull/1682)
+
+#### 📘 Misc
+
+- **[lint rules]** Enable prefer-optional-chain. [#1712](https://github.cbhq.net/frontend/cds/pull/1712)
+- Migrate cds-tools to true nx package called cds-tasks. [#1709](https://github.cbhq.net/frontend/cds/pull/1709)
+- **[Deprecations]** Added docgen script for Deprecations page. [#1649](https://github.cbhq.net/frontend/cds/pull/1649)
+- Cleanup old icons codegen. [#1670](https://github.cbhq.net/frontend/cds/pull/1670)
+- **[Table, TableCaption]** Fix props missing on Table page and add "New" tag for TableCaption. [#1681](https://github.cbhq.net/frontend/cds/pull/1681)
+
 ## 4.0.0 (2/8/2023, 01:59 PM PST)
 
 #### 💥 Breaking

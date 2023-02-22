@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.0.1 (2/22/2023, 01:40 PM PST)
+
+#### 🐞 Fixes
+
+- **[Button]** Ensure child nodes are aligned correctly. [#1688](https://github.cbhq.net/frontend/cds/pull/1688), [DX-153](https://jira.coinbase-corp.com/browse/DX-153)
+
+#### 📘 Misc
+
+- Migrate cds-tools to true nx package called cds-tasks. [#1709](https://github.cbhq.net/frontend/cds/pull/1709)
+- **[Deprecations]** Added docgen script for Deprecations page. [#1649](https://github.cbhq.net/frontend/cds/pull/1649)
+- Cleanup old icons codegen. [#1670](https://github.cbhq.net/frontend/cds/pull/1670)
+
 ## 4.0.0 (2/8/2023, 01:59 PM PST)
 
 #### 💥 Breaking
