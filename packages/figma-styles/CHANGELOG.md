@@ -4,6 +4,18 @@
 
 Generated with `yarn nx run figma-styles:sync-illustration-light-styles`
 
+- gray-3
+
+### 🚀 Added
+
+Generated with `yarn nx run figma-styles:sync-illustration-dark-styles`
+
+- gray-3
+
+### 🚀 Added
+
+Generated with `yarn nx run figma-styles:sync-illustration-light-styles`
+
 - gray-2
 
 ### 🚀 Added

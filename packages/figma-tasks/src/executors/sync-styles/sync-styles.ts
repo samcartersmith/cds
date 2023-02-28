@@ -29,7 +29,7 @@ export const syncStyles = createTask<SyncStylesTaskOptions>('sync-styles', async
 
   const generatedDirectory = getAbsolutePath(task, task.options.generatedDirectory);
 
-  const styles = [...manifest.items.values()];
+  const styles = [...manifest.previousItems.values(), ...manifest.items.values()];
 
   const colorStyleMap = {
     dest: `${generatedDirectory}/colorStyleMap.ts`,
