@@ -4,6 +4,18 @@ We release our packages to consumers through Coinbase's internal NPM registry (A
 
 The following sections describe how to push new package releases to our consumers through Verdaccio.
 
+- [Release CDS Packages (@cbhq/cds-web, @cbhq/cds-mobile, etc.)](#release-cds-packages-cbhqcds-web-cbhqcds-mobile-etc)
+  - [Cutting a Release](#cutting-a-release)
+  - [Deploying a Release](#deploying-a-release)
+  - [Verifying a Release](#verifying-a-release)
+  - [Deploying Old Releases](#deploying-old-releases)
+  - [Updating Our Consumers](#updating-our-consumers)
+  - [Manually Testing Local Builds in Consumer Apps](#manually-testing-local-builds-in-consumer-apps)
+  - [Create a Tarball](#create-a-tarball)
+    - [Testing cds-mobile in CB Alpha](#testing-cds-mobile-in-cb-alpha)
+  - [Create an Alpha release](#create-an-alpha-release)
+  - [More Release Information](#more-release-information)
+
 ## Cutting a Release
 
 When you're ready to cut a new release, do the following:
@@ -83,9 +95,21 @@ Sometimes we forget to deploy after merging the release PR, and currently there'
 
 In certain special cases we may decide to update CDS for our consumers. [This](https://github.cbhq.net/consumer/react-native/pull/8067) is an example of how we would update the retail app to use an updated version of the CDS package. Please see directions below on how to manually deploy a CDS bump to the CB Alpha app.
 
-## Manually Releasing @cbhq/cds-mobile to CB Alpha
+## Manually Testing Local Builds in Consumer Apps
 
-Sometimes we want to test updates to the `@cbhq/cds-mobile` package in the `react-native` retail app. You can deploy a branch to CB Alpha without merging to `master` via [firebase](https://buildkite.com/coinbase/retail-rn-ios-firebase-delivery). Follow the directions [here](https://confluence.coinbase-corp.com/pages/viewpage.action?pageId=1243176705#:~:text=scheduled%20release%20train.-,Alpha%20Builds%20from%20custom%20branches,-Sometimes%2C%20it%20is).
+## Create a Tarball
+
+You can create a local build by creating a tar ball [go/how-to-tarball](https://docs.google.com/document/d/1yF8IkgLI53l7t9z0lq7wktbYIhxrf8ohAY3J0PCkZRY/edit) and then install the tar bundle in a consuming repo and update the `package.json` to reference the local file.
+
+### Testing cds-mobile in CB Alpha
+
+Sometimes we want to test updates to the `@cbhq/cds-mobile` package in the `react-native` retail app. You can deploy a branch to CB Alpha without merging to `master` via [firebase](https://buildkite.com/coinbase/retail-rn-ios-firebase-delivery). Follow the directions at [go/how-to-tarball](https://docs.google.com/document/d/1yF8IkgLI53l7t9z0lq7wktbYIhxrf8ohAY3J0PCkZRY/edit).
+
+## Create an Alpha release
+
+If you want to cut an alpha release you'll need to create a protected branch. This will allow you to deploy releases via Codeflow. Add the branch to `secure.branches` to `codeflow.yml`. This is required to make a branch deployable.
+
+The branch name must be prefixed with `alpha-`, otherwise Github won't protect it with a Duo 2FA push.
 
 ## More Release Information
 
