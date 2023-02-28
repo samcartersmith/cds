@@ -1,20 +1,22 @@
-## Adoption Tracker
+# Adoption Tracker
 
-### Overview
+The Adoption Tracker allows us to view component level insight into CDS adoption.
+
+## Overview
 
 config - `apps/website/scripts/adoption/config.ts`
 
 script - `apps/website/scripts/adoption/main.ts`
 
-parser - `apps/website/scripts/adoption/parsers/Parser.ts`
+parsers - `apps/website/scripts/adoption/parsers/`
 
-### Adding a project
+## Updating the Adoption Tracker
 
-Add to `apps/website/scripts/adoption/config.ts` and run `yarn nx run website:adoption` and it will automatically be added to website
+1. Run `yarn nx run website:adoption`. The result will output JSON files within the website directory
+2. Commit the files using the following commit message convention: `[trivial] internal(AdoptionTracker): Update Adoption Tracker mm/dd/yyyy`
+3. After you merge, [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) should automatically deploy to `production::cds-docs` when the build finishes. If it doesn't, then manually deploy to that target
+4. Verify that the "Last Updated" date at the top of the [Adoption Tracker](https://cds.cbhq.net/adoption-tracker/retail-mobile/) pages is current
 
-### Running the script
+## Adding a Project
 
-1. Run `yarn nx run website:adoption`
-2. The result will output JSON files within the website directory
-3. Commit the files using the following commit message convention: `[trivial] internal(AdoptionTracker): Update Adoption Tracker <DATE>`
-4. After you merge, manually deploy `corporate::cds-docs` via Codeflow
+Add the project config to `apps/website/scripts/adoption/config.ts` and follow the above [update steps](#updating-the-adoption-tracker)

@@ -52,13 +52,13 @@
         ]
       }
     },
-    "main": {
+    "release": {
       "executor": "nx:run-commands",
       "options": {
+        "cwd": "packages/illustrations",
         "commands": [
-          "cd packages/illustrations && nx run illustrations:sync",
-          "cd packages/illustrations && nx run illustrations:uploadToStaticAssets",
-          "yarn mono-pipeline version illustrations"
+          "nx run illustrations:sync",
+          "nx run illustrations:uploadToStaticAssets"
         ],
         "parallel": false
       }
