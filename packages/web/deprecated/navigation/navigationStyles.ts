@@ -59,6 +59,7 @@ export const sidebarListReset = css`
   }
 `;
 
+/** @deprecated */
 const visuallyHidden = `
   visibility: hidden;
   clip: rect(0 0 0 0);
@@ -70,6 +71,7 @@ const visuallyHidden = `
   width: 1px;
 `;
 
+/** @deprecated */
 const unsetVisuallyHidden = `
   visibility: visible;
   clip: unset;

@@ -5,7 +5,7 @@ import { objectKeys } from '@cbhq/script-utils';
 import { Deprecation, deprecations } from './deprecations';
 
 const templateStart = '<!-- template-start -->';
-const githubBaseUrl = 'https://github.cbhq.net/frontend/cds';
+const githubBaseUrl = 'https://github.cbhq.net/frontend/cds/blob/master';
 const deprecationsPagePath = 'apps/website/docs/resources/deprecations.mdx';
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 const fullPath = `${MONOREPO_ROOT}/${deprecationsPagePath}`;
