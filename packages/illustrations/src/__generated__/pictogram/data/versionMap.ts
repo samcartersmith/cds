@@ -281,6 +281,10 @@ const versionMap: Record<PictogramName, number> = {
   ssnCard: 1,
   ethStaking: 0,
   faucetNavigation: 0,
+  assetManagement: 0,
+  primeMobileApp: 0,
+  securityKey: 0,
+  ManageWeb3Signers: 0,
 };
 
 export default versionMap;

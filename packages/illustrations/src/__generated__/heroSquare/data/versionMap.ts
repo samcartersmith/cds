@@ -286,6 +286,13 @@ const versionMap: Record<HeroSquareName, number> = {
   mining: 1,
   defiHow: 1,
   primeDeFi: 1,
+  enableBiometrics: 0,
+  keyGeneration: 0,
+  web3ActivityError: 0,
+  web3ActivitySigned: 0,
+  web3MobileSetupSuccess: 0,
+  requestSent: 0,
+  web3MobileSetupStart: 0,
 };
 
 export default versionMap;

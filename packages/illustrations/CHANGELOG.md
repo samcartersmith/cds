@@ -8,6 +8,33 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.0 (2/28/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat(Illustrations): Publish illustrations 02/28/2023. [[#1746](https://github.cbhq.net/frontend/cds/pull/1746)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- assetManagement
+- ManageWeb3Signers
+- primeMobileApp
+- securityKey
+
+#### Hero Square
+
+- enableBiometrics
+- keyGeneration
+- requestSent
+- web3ActivityError
+- web3ActivitySigned
+- web3MobileSetupStart
+- web3MobileSetupSuccess
+
 ## 1.1.0 (2/15/2023 PST)
 
 #### 🚀 Updates

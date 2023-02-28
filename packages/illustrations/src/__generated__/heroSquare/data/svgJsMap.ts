@@ -493,6 +493,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/emptyStateNftSoldOut-1').content,
     dark: () => require('../svgJs/dark/emptyStateNftSoldOut-1').content,
   },
+  enableBiometrics: {
+    light: () => require('../svgJs/light/enableBiometrics-0').content,
+    dark: () => require('../svgJs/dark/enableBiometrics-0').content,
+  },
   encryptedEverything: {
     light: () => require('../svgJs/light/encryptedEverything-1').content,
     dark: () => require('../svgJs/dark/encryptedEverything-1').content,
@@ -656,6 +660,10 @@ const svgJsMap = {
   japanVerifyId: {
     light: () => require('../svgJs/light/japanVerifyId-0').content,
     dark: () => require('../svgJs/dark/japanVerifyId-0').content,
+  },
+  keyGeneration: {
+    light: () => require('../svgJs/light/keyGeneration-0').content,
+    dark: () => require('../svgJs/dark/keyGeneration-0').content,
   },
   layeredNetworks: {
     light: () => require('../svgJs/light/layeredNetworks-1').content,
@@ -860,6 +868,10 @@ const svgJsMap = {
   remittances: {
     light: () => require('../svgJs/light/remittances-1').content,
     dark: () => require('../svgJs/dark/remittances-1').content,
+  },
+  requestSent: {
+    light: () => require('../svgJs/light/requestSent-0').content,
+    dark: () => require('../svgJs/dark/requestSent-0').content,
   },
   restrictedCountry: {
     light: () => require('../svgJs/light/restrictedCountry-1').content,
@@ -1076,6 +1088,22 @@ const svgJsMap = {
   watchVideos: {
     light: () => require('../svgJs/light/watchVideos-0').content,
     dark: () => require('../svgJs/dark/watchVideos-0').content,
+  },
+  web3ActivityError: {
+    light: () => require('../svgJs/light/web3ActivityError-0').content,
+    dark: () => require('../svgJs/dark/web3ActivityError-0').content,
+  },
+  web3ActivitySigned: {
+    light: () => require('../svgJs/light/web3ActivitySigned-0').content,
+    dark: () => require('../svgJs/dark/web3ActivitySigned-0').content,
+  },
+  web3MobileSetupStart: {
+    light: () => require('../svgJs/light/web3MobileSetupStart-0').content,
+    dark: () => require('../svgJs/dark/web3MobileSetupStart-0').content,
+  },
+  web3MobileSetupSuccess: {
+    light: () => require('../svgJs/light/web3MobileSetupSuccess-0').content,
+    dark: () => require('../svgJs/dark/web3MobileSetupSuccess-0').content,
   },
   webRAT: {
     light: () => require('../svgJs/light/webRAT-0').content,

@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-02-15T15:05:42.617Z",
+  "lastUpdated": "2023-02-28T21:35:09.866Z",
   "items": {
     "2:33979": {
       "hash": "Ou6k2vGsPmgvn3sOo1rz7iRXkKFEnDN2bRM6S7AASSQ=",
@@ -16254,6 +16254,226 @@
         "svgJsDark": "./spotRectangle/svgJs/dark/connectWalletTutorial-0.js",
         "pngLight": "./spotRectangle/png/light/connectWalletTutorial-0.png",
         "pngDark": "./spotRectangle/png/dark/connectWalletTutorial-0.png"
+      },
+      "version": 0
+    },
+    "1549:1715": {
+      "type": "heroSquare",
+      "name": "requestSent",
+      "hash": "hTBJf5zl3HD+GJ/v5xVPcUXOq5OoER9ilgnWMQREZ+Q=",
+      "width": 240,
+      "height": 240,
+      "description": "pending, waiting, time, soon, 🔜, ⏰, ⏱️, ⏲️, ⌚️, ⏳, ⌛️, 🕰️",
+      "createdAt": "2023-02-28T17:49:43.969Z",
+      "lastUpdated": "2023-02-28T17:49:43.969Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/requestSent-0.svg",
+        "svgDark": "./heroSquare/svg/dark/requestSent-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/requestSent-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/requestSent-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/requestSent-0.js",
+        "pngLight": "./heroSquare/png/light/requestSent-0.png",
+        "pngDark": "./heroSquare/png/dark/requestSent-0.png"
+      },
+      "version": 0
+    },
+    "1549:1716": {
+      "type": "heroSquare",
+      "name": "web3MobileSetupSuccess",
+      "hash": "b4n/Zt50D+ugQVNJLNFI401mYxoRUvTZv3RckVGSYAc=",
+      "width": 240,
+      "height": 240,
+      "description": "wallet, check, setup, settings, dapps, data, 💳, 👝, 👛, 👜, 🖼️",
+      "createdAt": "2023-02-28T17:49:43.961Z",
+      "lastUpdated": "2023-02-28T17:49:43.961Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/web3MobileSetupSuccess-0.svg",
+        "svgDark": "./heroSquare/svg/dark/web3MobileSetupSuccess-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/web3MobileSetupSuccess-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/web3MobileSetupSuccess-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/web3MobileSetupSuccess-0.js",
+        "pngLight": "./heroSquare/png/light/web3MobileSetupSuccess-0.png",
+        "pngDark": "./heroSquare/png/dark/web3MobileSetupSuccess-0.png"
+      },
+      "version": 0
+    },
+    "1549:1717": {
+      "type": "heroSquare",
+      "name": "web3ActivitySigned",
+      "hash": "xo7ea7B+gePTwWQrHbi0pHdZoEmbPLAxot11Cr+zRBY=",
+      "width": 240,
+      "height": 240,
+      "description": "phone, id, person, human, check, security, protection, 📱, ✅, 🆔, 🪪",
+      "createdAt": "2023-02-28T17:49:43.955Z",
+      "lastUpdated": "2023-02-28T17:49:43.955Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/web3ActivitySigned-0.svg",
+        "svgDark": "./heroSquare/svg/dark/web3ActivitySigned-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/web3ActivitySigned-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/web3ActivitySigned-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/web3ActivitySigned-0.js",
+        "pngLight": "./heroSquare/png/light/web3ActivitySigned-0.png",
+        "pngDark": "./heroSquare/png/dark/web3ActivitySigned-0.png"
+      },
+      "version": 0
+    },
+    "1549:1718": {
+      "type": "heroSquare",
+      "name": "web3ActivityError",
+      "hash": "e8jQJZdX8293vazYJHPo3rG5RbdLipT8f4t298IpmPw=",
+      "width": 240,
+      "height": 240,
+      "description": "wallet, red, error state",
+      "createdAt": "2023-02-28T17:49:43.948Z",
+      "lastUpdated": "2023-02-28T17:49:43.948Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/web3ActivityError-0.svg",
+        "svgDark": "./heroSquare/svg/dark/web3ActivityError-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/web3ActivityError-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/web3ActivityError-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/web3ActivityError-0.js",
+        "pngLight": "./heroSquare/png/light/web3ActivityError-0.png",
+        "pngDark": "./heroSquare/png/dark/web3ActivityError-0.png"
+      },
+      "version": 0
+    },
+    "1549:1719": {
+      "type": "heroSquare",
+      "name": "keyGeneration",
+      "hash": "bSWavR8k/486UGR829ffvqNHESRajz95T2GZ01c7DL4=",
+      "width": 240,
+      "height": 240,
+      "description": "ID, scan, person, biometrics, identification, human, protection, security, finger, time, lock , 🔒, 🗝️, 🔑, 🛡️",
+      "createdAt": "2023-02-28T17:49:43.942Z",
+      "lastUpdated": "2023-02-28T17:49:43.942Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/keyGeneration-0.svg",
+        "svgDark": "./heroSquare/svg/dark/keyGeneration-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/keyGeneration-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/keyGeneration-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/keyGeneration-0.js",
+        "pngLight": "./heroSquare/png/light/keyGeneration-0.png",
+        "pngDark": "./heroSquare/png/dark/keyGeneration-0.png"
+      },
+      "version": 0
+    },
+    "1549:1720": {
+      "type": "heroSquare",
+      "name": "enableBiometrics",
+      "hash": "Roz7wgIz8BJbfV9Y4BhRNhQtWDdSOQ4Z68RXTD7M2mc=",
+      "width": 240,
+      "height": 240,
+      "description": "ID, scan, person, biometrics, identification, human, protection, security, finger, time, lock , 🔒, 🗝️, 🔑, 🛡️",
+      "createdAt": "2023-02-28T17:49:43.936Z",
+      "lastUpdated": "2023-02-28T17:49:43.936Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/enableBiometrics-0.svg",
+        "svgDark": "./heroSquare/svg/dark/enableBiometrics-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/enableBiometrics-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/enableBiometrics-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/enableBiometrics-0.js",
+        "pngLight": "./heroSquare/png/light/enableBiometrics-0.png",
+        "pngDark": "./heroSquare/png/dark/enableBiometrics-0.png"
+      },
+      "version": 0
+    },
+    "1549:1794": {
+      "type": "pictogram",
+      "name": "ManageWeb3Signers",
+      "hash": "lpjQjR4MTS049oeUOjseGJsU4W1auN5PDUQdqE1pJr4=",
+      "width": 48,
+      "height": 48,
+      "description": "phone, id, person, human, check, security, protection, 📱, ✅, 🆔, 🪪",
+      "createdAt": "2023-02-28T17:49:43.930Z",
+      "lastUpdated": "2023-02-28T17:49:43.930Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/ManageWeb3Signers-0.svg",
+        "svgDark": "./pictogram/svg/dark/ManageWeb3Signers-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/ManageWeb3Signers-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/ManageWeb3Signers-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/ManageWeb3Signers-0.js",
+        "pngLight": "./pictogram/png/light/ManageWeb3Signers-0.png",
+        "pngDark": "./pictogram/png/dark/ManageWeb3Signers-0.png"
+      },
+      "version": 0
+    },
+    "1549:1795": {
+      "type": "pictogram",
+      "name": "securityKey",
+      "hash": "WtJAbYu64RKrnxTgEDTseRdAExrdtyiYWg6enZxkzbI=",
+      "width": 48,
+      "height": 48,
+      "description": "2fa, security, trust, true, genuine, actual, verification, protect, key, 🔑, 🗝, 🔐, 🚨",
+      "createdAt": "2023-02-28T17:49:43.925Z",
+      "lastUpdated": "2023-02-28T17:49:43.925Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/securityKey-0.svg",
+        "svgDark": "./pictogram/svg/dark/securityKey-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/securityKey-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/securityKey-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/securityKey-0.js",
+        "pngLight": "./pictogram/png/light/securityKey-0.png",
+        "pngDark": "./pictogram/png/dark/securityKey-0.png"
+      },
+      "version": 0
+    },
+    "1549:1796": {
+      "type": "pictogram",
+      "name": "primeMobileApp",
+      "hash": "ogtVjNXsF6KEjFxdU8OsfTk7P0lyE4Qg7lPnhDsHkh8=",
+      "width": 48,
+      "height": 48,
+      "description": "prime, mobile, app, 📱, 📲",
+      "createdAt": "2023-02-28T17:49:43.918Z",
+      "lastUpdated": "2023-02-28T17:49:43.918Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/primeMobileApp-0.svg",
+        "svgDark": "./pictogram/svg/dark/primeMobileApp-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/primeMobileApp-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/primeMobileApp-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/primeMobileApp-0.js",
+        "pngLight": "./pictogram/png/light/primeMobileApp-0.png",
+        "pngDark": "./pictogram/png/dark/primeMobileApp-0.png"
+      },
+      "version": 0
+    },
+    "1549:1797": {
+      "type": "heroSquare",
+      "name": "web3MobileSetupStart",
+      "hash": "/x76AKfK8K6AGZt0ks5sYsVtjnFxB7q+nTHntg4nmZA=",
+      "width": 240,
+      "height": 240,
+      "description": "setup, settings, security, id, scan, wallet, 🆔, 🪪, 🔒, 🔐, 🔑",
+      "createdAt": "2023-02-28T17:57:49.698Z",
+      "lastUpdated": "2023-02-28T17:57:49.698Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/web3MobileSetupStart-0.svg",
+        "svgDark": "./heroSquare/svg/dark/web3MobileSetupStart-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/web3MobileSetupStart-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/web3MobileSetupStart-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/web3MobileSetupStart-0.js",
+        "pngLight": "./heroSquare/png/light/web3MobileSetupStart-0.png",
+        "pngDark": "./heroSquare/png/dark/web3MobileSetupStart-0.png"
+      },
+      "version": 0
+    },
+    "1550:1341": {
+      "type": "pictogram",
+      "name": "assetManagement",
+      "hash": "yFa+ifltIbZ+oZX7mZu+y396WWndRgQLLPxI6zLOsY8=",
+      "width": 48,
+      "height": 48,
+      "description": "Asset, management, money, graph, currency, 💰, 💸, 💵, 💶, 💷, 💴",
+      "createdAt": "2023-02-28T17:49:43.910Z",
+      "lastUpdated": "2023-02-28T17:49:43.910Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/assetManagement-0.svg",
+        "svgDark": "./pictogram/svg/dark/assetManagement-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/assetManagement-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/assetManagement-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/assetManagement-0.js",
+        "pngLight": "./pictogram/png/light/assetManagement-0.png",
+        "pngDark": "./pictogram/png/dark/assetManagement-0.png"
       },
       "version": 0
     }

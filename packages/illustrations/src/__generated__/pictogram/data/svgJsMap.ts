@@ -89,6 +89,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/assetHubNavigation-1').content,
     dark: () => require('../svgJs/dark/assetHubNavigation-1').content,
   },
+  assetManagement: {
+    light: () => require('../svgJs/light/assetManagement-0').content,
+    dark: () => require('../svgJs/dark/assetManagement-0').content,
+  },
   assetMeasurements: {
     light: () => require('../svgJs/light/assetMeasurements-1').content,
     dark: () => require('../svgJs/dark/assetMeasurements-1').content,
@@ -597,6 +601,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/lowFees-0').content,
     dark: () => require('../svgJs/dark/lowFees-0').content,
   },
+  ManageWeb3Signers: {
+    light: () => require('../svgJs/light/ManageWeb3Signers-0').content,
+    dark: () => require('../svgJs/dark/ManageWeb3Signers-0').content,
+  },
   miningCoins: {
     light: () => require('../svgJs/light/miningCoins-0').content,
     dark: () => require('../svgJs/dark/miningCoins-0').content,
@@ -773,6 +781,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/priceTracking-0').content,
     dark: () => require('../svgJs/dark/priceTracking-0').content,
   },
+  primeMobileApp: {
+    light: () => require('../svgJs/light/primeMobileApp-0').content,
+    dark: () => require('../svgJs/dark/primeMobileApp-0').content,
+  },
   primeNavigation: {
     light: () => require('../svgJs/light/primeNavigation-1').content,
     dark: () => require('../svgJs/dark/primeNavigation-1').content,
@@ -836,6 +848,10 @@ const svgJsMap = {
   securityCoinShield: {
     light: () => require('../svgJs/light/securityCoinShield-1').content,
     dark: () => require('../svgJs/dark/securityCoinShield-1').content,
+  },
+  securityKey: {
+    light: () => require('../svgJs/light/securityKey-0').content,
+    dark: () => require('../svgJs/dark/securityKey-0').content,
   },
   seedPhrase: {
     light: () => require('../svgJs/light/seedPhrase-0').content,

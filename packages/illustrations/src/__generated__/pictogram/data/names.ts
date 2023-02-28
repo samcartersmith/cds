@@ -11,6 +11,7 @@ import type { PictogramName } from '../types/PictogramName';
  */
 const names: PictogramName[] = [
   '2fa',
+  'ManageWeb3Signers',
   'accountsNavigation',
   'add',
   'addCard',
@@ -30,6 +31,7 @@ const names: PictogramName[] = [
   'apyInterest',
   'assetEncryption',
   'assetHubNavigation',
+  'assetManagement',
   'assetMeasurements',
   'assetMovement',
   'authenticationApp',
@@ -201,6 +203,7 @@ const names: PictogramName[] = [
   'positiveReviews',
   'predictionMarkets',
   'priceTracking',
+  'primeMobileApp',
   'primeNavigation',
   'privateClientNavigation',
   'proNavigation',
@@ -217,6 +220,7 @@ const names: PictogramName[] = [
   'securedAssets',
   'security',
   'securityCoinShield',
+  'securityKey',
   'seedPhrase',
   'selectAddNft',
   'selfCustodyWallet',
