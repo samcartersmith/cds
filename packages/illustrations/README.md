@@ -30,7 +30,7 @@ In order for engineering to generate a dark mode version of an illustration asse
 FIGMA_ACCESS_TOKEN=[access or request access to the UI Infra shared vault on 1Password for the token]
 ```
 
-2. (**optional**) Sync the latest illustration Figma color styles if a new color style was added
+2. (**optional**) Sync the latest illustration Figma color styles if a new color style was added. **You do not need to do a version bump for any changes**.
 
 ```shell
 yarn nx run figma-styles:sync
@@ -42,7 +42,7 @@ yarn nx run figma-styles:sync
 yarn nx run illustrations:release
 ```
 
-4. Merge the PR in static-assets and confirm the deploy in [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits)
+4. Merge the PR in static-assets and confirm the deploy in [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits). It should autodeploy after all build checks are complete.
 
 5. Commit the changes in the CDS repo with a message in the following format: `[trivial] feat(Illustrations): Publish illustrations mm/dd/yyyy`
 
@@ -78,6 +78,10 @@ brew install hub
 
 ### Gotchas
 
-It is important to note that if an illustration asset is referencing a color style which was _not_ present the last time the color styles sync was run, then it will need to be run again before running `yarn nx run illustrations:release`.
+- It is important to note that if an illustration asset is referencing a color style which was _not_ present the last time the color styles sync was run, then it will need to be run again before running `yarn nx run illustrations:release`.
 
-The `illustrations:release` command calls `illustrations:sync` which requires a `lightModeManifestFile` and `darkModeManifestFile` as inputs in `project.json` when generating the svg assets on the fly. If those files are stale, the executor will fallback to the hex value of the color style used (which will always be a light mode fill since that is the only asset design provides), thus making the light and dark mode images the same.
+- The `illustrations:release` command calls `illustrations:sync` which requires a `lightModeManifestFile` and `darkModeManifestFile` as inputs in `project.json` when generating the svg assets on the fly. If those files are stale, the executor will fallback to the hex value of the color style used (which will always be a light mode fill since that is the only asset design provides), thus making the light and dark mode images the same.
+
+- If seeing this error: Cannot read properties of undefined ('styles'), you need to update your FIGMA token to the new value.
+
+- If seeing a failed task, check that it's expected. You may see "There are no new updates since last release XXXX-XX-XX". Verify this is expected with design.
