@@ -35,6 +35,12 @@ export type ModalProps = {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   dangerouslySetPosition?: Position;
+  /**
+   * Set disableFocusTrap to disable keyboard listeners responsible for focus trap behavior
+   * This can be useful for scenarios like Yubikey 2fa
+   * @default false
+   */
+  disableFocusTrap?: boolean;
 } & ModalBaseProps &
   Omit<ModalWrapperProps, 'onOverlayPress'>;
 
@@ -47,6 +53,7 @@ export const Modal = memo(
       onDidClose,
       disableOverlayPress = false,
       disablePortal = false,
+      disableFocusTrap,
       accessibilityLabelledBy,
       accessibilityLabel,
       zIndex: customZIndex,
@@ -132,7 +139,10 @@ export const Modal = memo(
           style={dialogStyles}
           data-testid="modal-dialog-motion"
         >
-          <FocusTrap onEscPress={shouldCloseOnEscPress ? handleClose : undefined}>
+          <FocusTrap
+            disableFocusTrap={disableFocusTrap}
+            onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
+          >
             <VStack
               elevation={2}
               background="background"

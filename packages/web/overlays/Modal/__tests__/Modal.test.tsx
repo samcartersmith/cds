@@ -1,11 +1,14 @@
+import { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { animateOutOpacityConfig } from '@cbhq/cds-common/animation/modal';
 import {
   CreateLoremIpsumProps,
   loremIpsum,
   loremIpsumBuilder,
 } from '@cbhq/cds-common/internal/loremIpsumBuilder';
 import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
+import { durations } from '@cbhq/cds-common/motion/tokens';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../../buttons';
@@ -19,6 +22,38 @@ import { ModalHeader } from '../ModalHeader';
 const TITLE = 'Basic Modal';
 const LABELLED_BY = 'some-id';
 const LABEL = 'A label';
+
+/** YUBIKEY EDGE CASE CONFIG */
+// Using the motion duration so make sure we wait the appropriate amount of time before our assertion
+const DURATION: number = Number(durations[animateOutOpacityConfig.duration ?? 'fast1']) + 10;
+const YUBIKEY_STRING = 'cccccbeurlitbgvnvidvttluefrcnnggvhnhcuuddjkn';
+const YUBIKEY_TITLE = 'Yubikey Test Title';
+const YUBIKEY_BUTTON = 'Open Yubikey Modal';
+const ExampleModalScreen = ({ disableFocusTrap }: { disableFocusTrap?: boolean }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleModalOpen = useCallback(() => {
+    setIsVisible(true);
+  }, []);
+
+  const handleOnRequestClose = useCallback(() => {
+    console.log("We'll spy on this");
+  }, []);
+
+  return (
+    <>
+      <Modal
+        disableFocusTrap={disableFocusTrap}
+        visible={isVisible}
+        onRequestClose={handleOnRequestClose}
+      >
+        <ModalHeader title={YUBIKEY_TITLE} />
+      </Modal>
+      <Button onPress={handleModalOpen}>{YUBIKEY_BUTTON}</Button>
+    </>
+  );
+};
+/** END YUBIKEY EDGE CASE CONFIG */
 
 const LoremIpsum = loremIpsumBuilder({
   TextBody,
@@ -36,6 +71,10 @@ const { MockModal } = modalBuilder({
 } as CreateModalProps);
 
 describe('Modal', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('passes a11y', async () => {
     expect(await renderA11y(<MockModal visible />)).toHaveNoViolations();
   });
@@ -153,20 +192,20 @@ describe('Modal', () => {
     render(<MockModal visible onRequestClose={jest.fn()} />);
     expect(screen.getByText(TITLE)).not.toBeVisible();
 
-    expect(await screen.findByText(TITLE)).toBeVisible();
+    await waitFor(() => expect(screen.getByText(TITLE)).toBeVisible());
   });
 
   it('renders modal body', async () => {
     render(<MockModal visible onRequestClose={jest.fn()} />);
     expect(screen.getByText(loremIpsum)).not.toBeVisible();
 
-    expect(await screen.findByText(loremIpsum)).toBeVisible();
+    await waitFor(() => expect(screen.getByText(loremIpsum)).toBeVisible());
   });
 
   it('renders modal footer', async () => {
     render(<MockModal visible onRequestClose={jest.fn()} />);
 
-    expect(await screen.findByTestId('modal-footer')).toBeVisible();
+    await waitFor(() => expect(screen.getByTestId('modal-footer')).toBeVisible());
   });
 
   it('should have correct styles at the end of animation', async () => {
@@ -192,5 +231,57 @@ describe('Modal', () => {
         transform: 'none',
       });
     });
+  });
+
+  it('Yubikey entry automatically disables the focus trap', async () => {
+    const user = userEvent.setup();
+    const spy = jest.spyOn(console, 'log').mockImplementation();
+    render(<ExampleModalScreen />);
+
+    const modalButton = screen.getByText(YUBIKEY_BUTTON);
+
+    // Sanity check
+    await waitFor(() => expect(screen.queryByText(YUBIKEY_TITLE)).not.toBeInTheDocument());
+
+    // Open the modal
+    fireEvent.click(modalButton);
+
+    // Make sure the modal is open before simulating a yubikey tap
+    await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
+
+    // Simulate yubikey tap
+    await user.keyboard(`${YUBIKEY_STRING}{Enter}`);
+
+    // Make sure the modal is still visible after the expected animation duration
+    // eslint-disable-next-line no-promise-executor-return
+    await new Promise((r) => setTimeout(r, DURATION));
+    await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('disableFocusTrap allows tabbing away from the modal', async () => {
+    const user = userEvent.setup();
+    const spy = jest.spyOn(console, 'log').mockImplementation();
+    render(<ExampleModalScreen disableFocusTrap />);
+
+    const modalButton = screen.getByText(YUBIKEY_BUTTON);
+
+    // Sanity check
+    await waitFor(() => expect(screen.queryByText(YUBIKEY_TITLE)).not.toBeInTheDocument());
+
+    // Open the modal
+    fireEvent.click(modalButton);
+
+    // Make sure the modal is open before simulating a yubikey tap
+    await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
+
+    // Simulate yubikey tap
+    await user.keyboard(`{Tab}{Tab}{Tab}{Tab}{Tab}{Enter}`);
+
+    // Make sure the modal is still visible after the expected animation duration
+    // eslint-disable-next-line no-promise-executor-return
+    await new Promise((r) => setTimeout(r, DURATION));
+    await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
+    expect(spy).not.toHaveBeenCalled();
   });
 });
