@@ -10,6 +10,10 @@ import { TestRunner } from './TestRunner';
 import { Task, TestTask } from './TestTask';
 import { A11yLogType } from './types';
 
+/**
+ * Use these option to enable verbose console logging
+ * to help you debug the program
+ */
 type DebugOptions = {
   printComponentTestFiles?: boolean;
   printTestFilesWithToBeAccessible?: boolean;
@@ -18,6 +22,11 @@ type DebugOptions = {
   printComponents?: boolean;
   logToConsole?: boolean;
 };
+
+/**
+ * This file is responsible for calling the right operation from A11yAuditor
+ * and writing that result to the log.
+ */
 
 export class A11yLogger extends TestTask {
   private log: A11yLogType;

@@ -6,6 +6,11 @@ import { FileWriter } from './FileWriter';
 import { Task } from './TestTask';
 import { TestOptions } from './types';
 
+/**
+ * This is main file. This is what the executor will run
+ * when you run ```yarn nx run <project-name>:audit-a11y```
+ */
+
 async function getTestFilePathsForAudit(task: Task) {
   const filesParser = new FilesParser(task);
 

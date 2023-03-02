@@ -5,6 +5,21 @@ import { TestRunner } from './TestRunner';
 import { Task, TestTask } from './TestTask';
 import { TestDetail } from './types';
 
+/**
+ * Functions that does some operations to get information to be
+ * logged to report should live in this file.
+ *
+ * To give you an example, getTotalNumberOfPassingToBeAccessibleTests,
+ * falls in this file and not A11yLogger because it is a function to
+ * get the total number of passing toBeAccessibleTests. This function does
+ * not write the result to the report. It merely does the necessary work to
+ * obtain the result and return the result.
+ *
+ * That is the ultimate difference between A11yAuditor and A11yLogger.
+ * A11yLogger calls one of these functions to obtain the result and log it to
+ * the report.
+ */
+
 export class A11yAuditor extends TestTask {
   private testRunner: TestRunner;
 

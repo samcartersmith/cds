@@ -5,6 +5,10 @@ import { FilesParser } from './FilesParser';
 import { Task, TestTask } from './TestTask';
 import { CoverageOutput } from './types';
 
+/**
+ * As the name suggests, this generates a jest coverage
+ * for the project, and logs the result to the report
+ */
 export class JestCoverageLogger extends TestTask {
   private coverageOutPath: string;
 
