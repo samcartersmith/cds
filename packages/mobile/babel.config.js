@@ -3,13 +3,12 @@ const baseConfig = require('../../babel.config');
 const isTestEnv = process.env.NODE_ENV === 'test';
 
 const sharedMobileConfig = {
-  plugins: ['react-native-reanimated/plugin'],
   presets: ['module:metro-react-native-babel-preset', '@babel/preset-typescript'],
 };
 
-const plugins = isTestEnv
-  ? sharedMobileConfig.plugins
-  : [...baseConfig.plugins, ...sharedMobileConfig.plugins];
+// We need the rn reanimated plugin to correctly test animated components, however we do NOT want it in our compiled package for consumers.
+// This enables our consumer to transpile the worklets based on their Reanimated version.
+const plugins = isTestEnv ? ['react-native-reanimated/plugin'] : [...baseConfig.plugins];
 
 module.exports = {
   presets: [
