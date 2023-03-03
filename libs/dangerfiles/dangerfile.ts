@@ -25,6 +25,8 @@ const bigPRThreshold = 600;
 // Add ignorable files to the bottom of this list
 // Example: "!**/*.native.(ts|tsx)" would ignore *.native.ts or *.native.tsx files
 const fileIgnorePatterns = [
+  '!**/*.md',
+  '!**/*.ejs.t',
   '!**/*.test.(ts|tsx)',
   '!**/*.stories.(ts|tsx)',
   '!**/*.d.(ts|tsx)',
@@ -130,7 +132,7 @@ if (pr.additions + pr.deletions > bigPRThreshold) {
 void (async () => {
   const deprecations = await findPatternInFile({
     pattern: /@deprecated/g,
-    files: danger.git.modified_files,
+    files: nonTestTsFiles,
     diffFn: danger.git.diffForFile,
   });
 
@@ -146,23 +148,23 @@ void (async () => {
   }
 
   // Warn when adding deprecations to follow best practices
-  if (deprecations.added.length && !acceptedOverrideDeprecation) {
+  if (deprecations.created.length && !acceptedOverrideDeprecation) {
     warn(
       [
         '#### Looks like you marked something as Deprecated!',
         `You have added file(s) that contain a deprecation. Nice! Make sure there is a plan in place to announce this change and delete deprecated code in the next major release. Please refer to [go/cds-deprecations](https://cds.cbhq.net/resources/deprecations) for the full list of deprecations.`,
-        deprecations.added.map((file) => `- ${file}`).join('\n'),
+        deprecations.created.map((file) => `- ${file}`).join('\n'),
       ].join('\n'),
     );
   }
 
   // Celebrate removing deprecated components
-  if (deprecations.removed.length) {
+  if (deprecations.deleted.length) {
     message(
       [
         '#### 🎉 Thanks for removing deprecated code!',
         `You removed file(s) that contain a deprecation. This calls for a celebration!`,
-        deprecations.removed.map((file) => `- ${file}`).join('\n'),
+        deprecations.deleted.map((file) => `- ${file}`).join('\n'),
       ].join('\n'),
     );
   }

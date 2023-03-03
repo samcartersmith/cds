@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { TextDiff } from 'danger';
+import { GitMatchResult, MatchResult, TextDiff } from 'danger';
 
 /**
  * Find the differences in two array of file paths.
@@ -19,30 +19,33 @@ export const findFileDifferences = (paths: string[], target: string[]) =>
   }, [] as string[]);
 
 type FindPatternInFileParams = {
-  files: string[];
+  files: MatchResult<GitMatchResult>;
   diffFn: (filename: string) => Promise<TextDiff | null>;
   pattern: RegExp;
 };
 
-type Deprecations = { modified: string[]; added: string[]; removed: string[] };
+type Deprecations = { modified: string[]; created: string[]; deleted: string[] };
 export const findPatternInFile = async ({ files, pattern, diffFn }: FindPatternInFileParams) => {
+  // `modified`, `created`, `edited` (created + modified) and `deleted`.
+  const diffs = Object.entries(files.getKeyedPaths()).filter(([type]) => type !== 'edited');
+
   const deprecations: Deprecations = {
     modified: [],
-    added: [],
-    removed: [],
+    created: [],
+    deleted: [],
   };
 
   // Iterate over each file, collect a diff and check for the pattern
   await Promise.all(
-    files.map(async (file) => {
+    diffs.map(async ([, [file]]) => {
       const diff = await diffFn(file);
 
-      if (diff?.removed.match(pattern)) {
-        deprecations.removed.push(file);
+      if (diff?.added.match(pattern)) {
+        deprecations.created.push(file);
       }
 
-      if (diff?.added.match(pattern)) {
-        deprecations.added.push(file);
+      if (diff?.removed.match(pattern)) {
+        deprecations.deleted.push(file);
       }
 
       if (diff?.before.match(pattern)) {
