@@ -51,8 +51,7 @@
         "typescriptConfig": "packages/web/tsconfig.build.json"
       },
       "dependsOn": [
-        "^build",
-        "build-esm"
+        "^build"
       ]
     },
     "build-esm": {
