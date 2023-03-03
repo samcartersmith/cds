@@ -120,15 +120,33 @@ export const Collapsible = memo(
         [collapsed, contentHeight],
       );
 
+      /*
+       * The following code is to avoid doing computed property names inside the
+       * useAnimatedStyle because it crashes:
+       *
+       * [animateInMaxSize.property]: heightAnimatedValue.value  // this crashes
+       *
+       * We created an issue in Reanimated about this.
+       * https://github.com/software-mansion/react-native-reanimated/issues/4162
+       * */
+      const animatedInMaxSizeHeight = useAnimatedStyle(() => ({
+        height: heightAnimatedValue.value,
+      }));
+      const animatedInMaxSizeWidth = useAnimatedStyle(() => ({ width: heightAnimatedValue.value }));
+      const animatedInMaxSize =
+        animateInMaxSize.property === 'height' ? animatedInMaxSizeHeight : animatedInMaxSizeWidth;
       const animatedStyles = useAnimatedStyle(() => ({
-        [animateInMaxSize.property]: heightAnimatedValue.value,
         opacity: Number(opacityAnimatedValue.value),
       }));
 
+      const containerStyles = useMemo(
+        () => [styles.container, animatedStyles, animatedInMaxSize],
+        [animatedStyles, animatedInMaxSize],
+      );
       return (
         <ReanimatedView
           testID={testID}
-          style={[styles.container, animatedStyles]}
+          style={containerStyles}
           ref={forwardedRef}
           aria-expanded={!collapsed}
         >

@@ -100,13 +100,40 @@ export const DotCount = memo(
       },
     );
 
-    const animatedStyles = useAnimatedStyle(() => ({
-      [opacityEnter.property]: opacityAnimatedValue.value,
-      transform: [
-        { scale: Number(scaleAnimatedValue.value) },
-        ...(pinStyles.transform ? pinStyles.transform : []),
-      ],
-    }));
+    const animatedStyles = useAnimatedStyle(() => {
+      /*
+       * Avoiding computed property names to not get a crash with Reanimated v3.
+       *
+       * Bracket notation crashes:
+       *
+       * [opacityEnter.property]: opacityAnimatedValue.value,
+       *
+       * We created an issue in Reanimated about this.
+       * https://github.com/software-mansion/react-native-reanimated/issues/4162
+       * */
+      if (pinStyles.transform) {
+        return {
+          opacity: Number(opacityAnimatedValue.value),
+          transform: [
+            { scale: Number(scaleAnimatedValue.value) },
+            // Spreading an array causes this known issue in Reanimated:
+            // https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/troubleshooting#undefined-is-not-an-object-evaluating-_toconsumablearrayarraylengthmap
+            pinStyles.transform[0], // translateX
+            pinStyles.transform[1], // translateY
+          ],
+        };
+      }
+
+      return {
+        opacity: Number(opacityAnimatedValue.value),
+        transform: [{ scale: Number(scaleAnimatedValue.value) }],
+      };
+    });
+
+    const dotCountInnerContainerStyle = useMemo(
+      () => [innerContainerStyles, animatedStyles],
+      [innerContainerStyles, animatedStyles],
+    );
 
     return (
       <View {...props}>
@@ -117,7 +144,7 @@ export const DotCount = memo(
           <Animated.View
             testID="dotcount-inner-container"
             onLayout={onDotLayout}
-            style={[innerContainerStyles, animatedStyles]}
+            style={dotCountInnerContainerStyle}
           >
             <TextCaption color="primaryForeground">
               {parseDotCountMaxOverflow(countInternal)}
