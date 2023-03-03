@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.1.1 (3/3/2023, 08:14 AM PST)
+
+#### 🐞 Fixes
+
+- **[DotCounts, Collapsible]** Fix Reanimated crashes found while using V3. [#1757](https://github.cbhq.net/frontend/cds/pull/1757)
+
 ## 4.1.0 (3/2/2023, 03:01 PM PST)
 
 #### 🚀 Updates
