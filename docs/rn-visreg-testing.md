@@ -31,7 +31,7 @@ The best way to understand how visreg works in CI is by reading the [tools/ci/vi
 
 ## FAQ
 
-What should I do when my feature branch is hanging because of a "Waiting for base build" Status?
+_What should I do when my feature branch is hanging because of a "Waiting for base build" status?_
 
 - This status indicates that the feature branch is waiting for the visreg build on master to complete so that the feature branch can compare to the latest visual content
 - As a result your first step should be to confirm there is in fact something wrong with the build on master
@@ -42,4 +42,29 @@ What should I do when my feature branch is hanging because of a "Waiting for bas
   4. Rebuild your feature branch
 - Once the next build lands on master please remember to toggle back on the "Wait for base build" setting to ensure latest builds are used for visreg diffing.
 
-![[visreg-wait-for-base-build.png]]
+![visreg-wait-for-base-build.png](/docs/visreg-wait-for-base-build.png)
+
+_One of my iOS Visreg jobs keeps hanging and timing out on CI, how do I fix this?_
+
+This is likely occurring because the iPhone simulator that we use for Visreg testing on the `macos-metal` agent has entered some corrupted state, and Detox is unable to properly connect to it. Look for the following errors in the CI logs near the top of the `mobile-playground:ios-e2e` step:
+
+```sh
+16:10:56.468 detox[95197] ERROR: Exceeded timeout of 300000ms while handling jest-circus "setup" event
+16:10:57.681 detox[95197] INFO:  All Playground Routes is assigned to undefined
+```
+
+We haven't been able to identify a root cause for this issue, or even that it's our Visreg testing that's responsible as multiple teams use these agents. But when this occurs, the only resolution we have at the moment is to temporarily take the problematic `macos-metal` agent offline and retry the job, then request a reboot of the agent. Restarting an agent restores it to a fresh state and temporarily resolves this issue. To do this, follow these steps:
+
+1. To stop the agent, first get its id by hovering over the agent info in the job label on CI:
+
+![visreg-macos-metal-id](/docs/visreg-macos-metal-id.png)
+
+2. Navigate to the buildkite `macos-metal` [agent search](https://buildkite.com/organizations/coinbase/agents?q=queue%3Dmacos-metal+hostname%3Dbuildkite-10-246) and append the remaining digits of your agent id (but omitting the last digit) to the search query, like so:
+
+![visreg-macos-metal-search](/docs/visreg-macos-metal-search.png)
+
+- If you can't locate the agent via the search, then it was already stopped or taken offline. In this case, proceed to step 4.
+
+3. Click into the agent and scroll down to the "Stop Agent" button and click it. This will send a signal to the agent to disconnect once it's no longer running any active jobs.
+4. Retry the job in CI (just the failed/hanging iOS Visreg job, not the entire build) and check that it's using a different agent now. If your job is still running on the problematic agent, cancel the job first, then manually retry if it doesn't automatically do it for you.
+5. **Important:** Post a request in the [#proj-mac-agents](https://coinbase.slack.com/archives/C02GL8LNV1R) Slack channel to request a restart of the agent that you stopped. Failing to do this will result in a decrease of our pool of available `macos-metal` agents, resulting in longer wait times across all teams that use them.
