@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.1.0 (3/2/2023, 03:01 PM PST)
+
+#### 🚀 Updates
+
+- **[Modal, FocusTrap]** Proved a way to disable the focus trap for edge cases. [#1741](https://github.cbhq.net/frontend/cds/pull/1741), [DX-541](https://jira.coinbase-corp.com/browse/DX-541)
+
+#### 📘 Misc
+
+- Added missed deprecated exports and jsdoc comments, updated links for deprecations script. [#1745](https://github.cbhq.net/frontend/cds/pull/1745)
+- **[AdoptionTracker]** Update Adoption Tracker 02/23/2023. [#1734](https://github.cbhq.net/frontend/cds/pull/1734)
+
 ## 4.0.1 (2/22/2023, 01:40 PM PST)
 
 #### 🐞 Fixes

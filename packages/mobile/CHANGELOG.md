@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.1.0 (3/2/2023, 03:01 PM PST)
+
+#### 🚀 Updates
+
+- **[Mobile]** Updated babel configs for cds-mobile & mobile-playground. [#1735](https://github.cbhq.net/frontend/cds/pull/1735), [DX-632](https://jira.coinbase-corp.com/browse/DX-632)
+
+#### 📘 Misc
+
+- **[AdoptionTracker]** Update Adoption Tracker 02/23/2023. [#1734](https://github.cbhq.net/frontend/cds/pull/1734)
+
 ## 4.0.1 (2/22/2023, 01:40 PM PST)
 
 #### 🐞 Fixes
