@@ -54,21 +54,18 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(
   const names = images[type] as IllustrationName[];
   type DataItem = { name: IllustrationName; spectrum: Spectrum };
 
-  const light: DataItem[] = [];
-  const dark: DataItem[] = [];
+  const data: DataItem[] = [];
 
   names.forEach((name) => {
-    light.push({
+    data.push({
       name,
       spectrum: 'light' as const,
     });
-    dark.push({
+    data.push({
       name,
       spectrum: 'dark' as const,
     });
   });
-
-  const data = [...light, ...dark];
 
   const ListFooterComponent = memo(function ListFooterComponent() {
     // TODO: pull from ui-mobile-playground/helpers/constants via scrollViewEnd constant

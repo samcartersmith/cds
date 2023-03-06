@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { IllustrationVariant, Spectrum } from '@cbhq/cds-common';
+import type { IllustrationNamesMap, IllustrationVariant, Spectrum } from '@cbhq/cds-common';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
@@ -27,18 +27,48 @@ const images = {
 };
 
 export function getIllustrationSheet<Type extends IllustrationVariant>(type: Type) {
-  type Names = (typeof images)[Type];
-  const names = images[type];
+  type IllustrationName = IllustrationNamesMap[Type];
 
-  const IllustrationSpectrumSheet = memo(function IllustrationSpectrumSheet({
-    names: namesProp,
-    spectrum,
-  }: {
-    names: Names;
-    spectrum: Spectrum;
-  }) {
+  const names = images[type] as IllustrationName[];
+  type DataItem = { name: IllustrationName; spectrum: Spectrum };
+
+  const data: DataItem[] = [];
+
+  names.forEach((name) => {
+    data.push({
+      name,
+      spectrum: 'light' as const,
+    });
+    data.push({
+      name,
+      spectrum: 'dark' as const,
+    });
+  });
+
+  const renderItem = ({ name, spectrum }: DataItem) => {
     return (
-      <ThemeProvider spectrum={spectrum} scale="xSmall">
+      <ThemeProvider scale="xSmall" spectrum={spectrum}>
+        <VStack
+          key={`${name}-${spectrum}`}
+          background
+          gap={1}
+          alignItems="flex-start"
+          width={ITEM_SIZE}
+          height={ITEM_SIZE + 20}
+          overflow="hidden"
+        >
+          <Illustration type={type} name={name} dimension={ITEM_DIMENSION} />
+          <TextLegal as="p" noWrap>
+            {name}
+          </TextLegal>
+        </VStack>
+      </ThemeProvider>
+    );
+  };
+
+  const IllustrationSheet = memo(function IllustrationSheet() {
+    return (
+      <FeatureFlagProvider flexGap>
         <HStack
           flexWrap="wrap"
           gap={2}
@@ -46,34 +76,8 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
           justifyContent="flex-start"
           alignItems="flex-start"
         >
-          {namesProp.map((name) => {
-            return (
-              <VStack
-                key={`${name}-${spectrum}`}
-                background
-                gap={1}
-                alignItems="flex-start"
-                width={ITEM_SIZE}
-                height={ITEM_SIZE + 20}
-                overflow="hidden"
-              >
-                <Illustration type={type} name={name} dimension={ITEM_DIMENSION} />
-                <TextLegal as="p" noWrap>
-                  {name}
-                </TextLegal>
-              </VStack>
-            );
-          })}
+          {data.map(renderItem)}
         </HStack>
-      </ThemeProvider>
-    );
-  });
-
-  const IllustrationSheet = memo(function IllustrationSheet() {
-    return (
-      <FeatureFlagProvider flexGap>
-        <IllustrationSpectrumSheet names={names} spectrum="light" />
-        <IllustrationSpectrumSheet names={names} spectrum="dark" />
       </FeatureFlagProvider>
     );
   });
