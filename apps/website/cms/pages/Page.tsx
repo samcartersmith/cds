@@ -1,6 +1,7 @@
 import React, { memo, ReactElement } from 'react';
 import { TOCItems } from '@theme/createTOCManager';
 import { CMSProvider, ComponentMapValue } from '@cb/cms';
+import { Banner } from '@cbhq/cds-web/banner/Banner';
 import { Box } from '@cbhq/cds-web/layout';
 import { Spinner } from '@cbhq/cds-web/loaders';
 import { TextTitle2 } from '@cbhq/cds-web/typography';
@@ -56,6 +57,7 @@ const componentsMap = {
   moduleTabItem: TabItem,
   moduleCardList: CardList,
   moduleCard: Card,
+  moduleBanner: Banner,
 } as unknown as Record<string, ComponentMapValue>;
 
 export const Page = memo(function CMS({ fallback, ...props }: CMSProps) {
