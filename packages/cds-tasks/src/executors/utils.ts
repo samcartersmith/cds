@@ -1,9 +1,9 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import chalk from 'chalk';
 import execa from 'execa';
-import fs from 'fs';
 import { reduce } from 'lodash';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export function getProjectPath(context: ExecutorContext): string {
   const projectPath = context.workspace?.projects[context.projectName as string].root;

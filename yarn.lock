@@ -2364,8 +2364,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-tasks@workspace:packages/cds-tasks"
   dependencies:
+    chalk: ^4.1.2
     execa: ^5.1.1
     fast-glob: ^3.2.11
+    lodash: ^4.17.21
   languageName: unknown
   linkType: soft
 

@@ -1,7 +1,7 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import glob from 'fast-glob';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { BuildCssOptions } from '../../types';
 import { compressCssFile, createDir, deleteDir, getProjectPath } from '../utils';

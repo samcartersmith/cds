@@ -5,14 +5,11 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "packages/cds-tasks",
-        "commands": [
-          "yarn build"
-        ],
-        "parallel": false
-      }
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": [
+        "{projectRoot}/dts",
+        "{projectRoot}/lib"
+      ]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -28,6 +25,13 @@
     },
     "report-disabled-eslint-rules": {
       "executor": "@cbhq/prevent-eslint-disable:report"
+    },
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/figma-tasks",
+        "command": "packemon watch --quiet --loadConfigs"
+      }
     }
   }
 }

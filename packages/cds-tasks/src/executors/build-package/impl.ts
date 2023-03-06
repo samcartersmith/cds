@@ -1,8 +1,8 @@
 import { ExecutorContext } from '@nrwl/devkit';
 import chalk from 'chalk';
 import glob from 'fast-glob';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { BuildPackageOptions } from '../../types';
 import { compressCssFiles, createDir, deleteDir, runLocalCommand } from '../utils';

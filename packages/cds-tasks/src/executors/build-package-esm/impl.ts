@@ -2,8 +2,8 @@
 // remove useless global styles
 
 import { ExecutorContext } from '@nrwl/devkit';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { BuildCssOptions, BuildPackageOptions } from '../../types';
 import buildCss from '../build-css/impl';
