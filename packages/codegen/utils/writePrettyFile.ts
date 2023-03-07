@@ -1,6 +1,5 @@
 import chalk from 'chalk';
-import fs from 'fs';
-// eslint-disable-next-line import/no-extraneous-dependencies
+import fs from 'node:fs';
 import prettier from 'prettier';
 
 export async function writePrettyFile({
@@ -23,7 +22,6 @@ export async function writePrettyFile({
   await fs.promises.writeFile(outFile, prettiered, { encoding: 'utf8', flag: 'w' });
 
   if (logInfo !== false) {
-    // eslint-disable-next-line no-console
     console.info(
       `${chalk.greenBright('success')} Wrote ${logInfo ? ` ${logInfo} to` : ''} ${outFile}`,
     );

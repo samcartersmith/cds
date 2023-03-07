@@ -3,7 +3,7 @@ import linariaBabelPreset from 'linaria/babel';
 import path from 'path';
 import { argv } from 'yargs';
 
-import linariaCssExtractPlugin from './linariaCssExtractPlugin';
+import { linariaCssExtractPlugin } from './linariaCssExtractPlugin';
 
 export default function linariaPreset(
   babel: ConfigAPI,

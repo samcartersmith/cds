@@ -15,28 +15,17 @@
       "executor": "@cbhq/mono-tasks:typecheck"
     },
     "build": {
-      "executor": "@cbhq/cds-tasks:build-package",
+      "executor": "@cbhq/mono-tasks:build-package",
       "outputs": [
-        "{projectRoot}/dist"
-      ],
+        "{projectRoot}/dts",
+        "{projectRoot}/lib"
+      ]
+    },
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "destinationDir": "packages/web-utils/dist",
-        "staticFilesToIgnore": [
-          "tsconfig.json",
-          "tsconfig.build.json",
-          "project.json"
-        ],
-        "babelConfig": "./babel.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx"
-        ],
-        "typescriptConfig": "packages/web-utils/tsconfig.build.json"
+        "cwd": "packages/web-utils",
+        "command": "packemon watch --quiet --loadConfigs"
       }
     }
   }

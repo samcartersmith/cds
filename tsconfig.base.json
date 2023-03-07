@@ -69,10 +69,10 @@
         "packages/web"
       ],
       "@cbhq/cds-web-utils": [
-        "packages/web-utils"
+        "packages/web-utils/src"
       ],
       "@cbhq/cds-web-utils/*": [
-        "packages/web-utils/*"
+        "packages/web-utils/src/*"
       ],
       "@cbhq/cds-web/*": [
         "packages/web/*"

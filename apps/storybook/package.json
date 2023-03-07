@@ -16,7 +16,6 @@
     "test-storybook": "test-storybook"
   },
   "devDependencies": {
-    "@cbhq/cds-web-utils": "workspace:^",
     "@percy/cli": "^1.13.0",
     "@percy/storybook": "^4.3.4",
     "@shopify/storybook-a11y-test": "^1.1.0",

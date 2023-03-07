@@ -1,9 +1,15 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./"
+    "outDir": "../../.nx/dts/packages/web-utils"
   },
-  "include": ["**/*"],
-  "exclude": ["dist"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    ".eslintrc.js",
+    "dts",
+    "lib"
+  ],
+  "references": []
 }

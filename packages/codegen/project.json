@@ -6,8 +6,7 @@
   "implicitDependencies": [
     "!web",
     "!common",
-    "!utils",
-    "!web-utils"
+    "!utils"
   ],
   "targets": {
     "format": {

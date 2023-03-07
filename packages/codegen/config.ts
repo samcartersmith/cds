@@ -6,12 +6,12 @@ import { RunnerConfig } from 'hygen/dist/types';
 import { camelCase } from 'lodash';
 import path from 'path';
 import { kebabCase, pascalCase, toCssVar, toCssVarFn } from '@cbhq/cds-utils';
-import { writePrettyFile } from '@cbhq/cds-web-utils';
 
 import { formatTemplateType } from './utils/formatTemplateType';
 import { getHeaderCommentForFileType } from './utils/getHeaderCommentForFileType';
 import { getPrettierParser } from './utils/getPrettierParser';
 import { getSourcePath } from './utils/getSourcePath';
+import { writePrettyFile } from './utils/writePrettyFile';
 
 const root = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 const templates = getSourcePath('packages/codegen/templates');

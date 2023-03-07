@@ -1,8 +1,8 @@
 import type { NodePath, PluginObj } from '@babel/core';
 import * as t from '@babel/types';
 import chalk from 'chalk';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { Mapping, Position, SourceMapGenerator } from 'source-map';
 import stylis from 'stylis';
 
@@ -95,12 +95,11 @@ async function writeCssFiles(cssMap: Map<string, CssResult>) {
   try {
     await Promise.all(promises);
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error(chalk.redBright('error'), error);
   }
 }
 
-export default function linariaCssExtractPlugin(): PluginObj {
+export function linariaCssExtractPlugin(): PluginObj {
   const cssMap = new Map<string, CssResult>();
 
   return {

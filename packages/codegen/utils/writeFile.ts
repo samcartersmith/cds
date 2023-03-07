@@ -1,12 +1,12 @@
 import * as ejs from 'ejs';
 import * as fs from 'fs';
 import * as path from 'path';
-import { writePrettyFile } from '@cbhq/cds-web-utils';
 
 import { formatTemplateType } from './formatTemplateType';
 import { getHeaderCommentForFileType } from './getHeaderCommentForFileType';
 import { getPrettierParser } from './getPrettierParser';
 import { getSourcePath } from './getSourcePath';
+import { writePrettyFile } from './writePrettyFile';
 
 export type TemplateConfig<T = unknown> = {
   dest: string;
