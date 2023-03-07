@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import reactRefresh from '@vitejs/plugin-react-refresh';
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import { argv } from 'yargs';
@@ -22,14 +22,14 @@ async function reloadFigma() {
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
-    plugins: [reactRefresh(), viteSingleFile(), watch ? reloadFigma() : noop],
+    plugins: [react(), viteSingleFile(), watch ? reloadFigma() : noop],
     build: {
       target: 'esnext',
       emptyOutDir: false,
       assetsInlineLimit: 100000000,
       chunkSizeWarningLimit: 100000000,
       cssCodeSplit: false,
-      outDir: './dist',
+      outDir: './lib',
       rollupOptions: {
         inlineDynamicImports: true,
       },

@@ -10,7 +10,7 @@
       "options": {
         "cwd": "apps/figma-icons-plugin",
         "commands": [
-          "esbuild ./src/plugin.ts --bundle --outfile=dist/plugin.js --watch",
+          "esbuild ./src/plugin.ts --bundle --outfile=lib/plugin.js --watch",
           "vite build --watch"
         ],
         "parallel": true
@@ -18,11 +18,29 @@
     },
     "build": {
       "executor": "nx:run-commands",
+      "outputs": [
+        "{projectRoot}/lib"
+      ],
       "options": {
         "cwd": "apps/figma-icons-plugin",
-        "commands": ["esbuild ./src/plugin.ts --bundle --outfile=dist/plugin.js", "vite build"],
+        "commands": [
+          "esbuild ./src/plugin.ts --bundle --outfile=lib/plugin.js",
+          "vite build"
+        ],
         "parallel": true
       }
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
     }
   }
 }

@@ -2,7 +2,9 @@
   "name": "CDS Icons (Internal)",
   "id": "1165272227512958530",
   "api": "1.0.0",
-  "main": "dist/plugin.js",
-  "editorType": ["figma"],
-  "ui": "dist/index.html"
+  "main": "lib/plugin.js",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "lib/index.html"
 }

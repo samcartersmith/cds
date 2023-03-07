@@ -126,12 +126,12 @@ function createAliasedIconComponents({
 
 const fillStyles = {
   normal: {
-    nav: lightStyleMap['color-blue-5'], // blue5
-    ui: lightStyleMap['color-yellow-10'], // yellow10
+    nav: lightStyleMap['color-green-10'].key,
+    ui: lightStyleMap['color-blue-10'].key,
   },
   dense: {
-    nav: lightStyleMap['color-purple-15'], // purple15
-    ui: lightStyleMap['color-orange-15'], // orange15
+    nav: lightStyleMap['color-purple-10'].key,
+    ui: lightStyleMap['color-orange-10'].key,
   },
 };
 

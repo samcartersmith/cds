@@ -1,11 +1,7 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-restricted-globals */
 import 'react-figma-plugin-ds/figma-plugin-ds.css';
 import './styles.css';
 
-import React, { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { Button, Text, Title } from 'react-figma-plugin-ds';
 
 import type { Density, FigmaMessage } from './types';
@@ -40,12 +36,14 @@ function App() {
   }, []);
 
   const handleClickOutside = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    // @ts-expect-error typing for event propagation is not possible
     if (![denseSelector.current, normalSelector.current].includes(e.target)) {
       setDensitySelection(undefined);
     }
   }, []);
 
   return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div className="App" tabIndex={-1} onClick={handleClickOutside}>
       <Title size="large" weight="bold">
         Library
@@ -53,14 +51,18 @@ function App() {
 
       <div className="button-wrapper">
         <button
+          key="normal-selector"
           ref={normalSelector}
+          type="button"
           className={cx(`button-reset`, densitySelection === 'normal' && 'active-selection')}
           onClick={handleDensitySelection('normal')}
         >
           <Text>Normal components</Text>
         </button>
         <button
+          key="dense-selector"
           ref={denseSelector}
+          type="button"
           className={cx(`button-reset`, densitySelection === 'dense' && 'active-selection')}
           onClick={handleDensitySelection('dense')}
         >
