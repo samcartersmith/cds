@@ -13,8 +13,6 @@ import { Interactable } from '../system/Interactable';
 
 import { Control, ControlIconProps, ControlProps } from './Control';
 
-export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
-
 const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
   pressed,
   disabled,
@@ -78,15 +76,8 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
 }) as <T extends string>(props: RadioProps<T> & React.RefAttributes<View>) => React.ReactElement;
 
 // Make memoized function stay generic function type
-export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
+const Radio = memo(RadioWithRef) as typeof RadioWithRef &
   React.MemoExoticComponent<typeof RadioWithRef>;
-
-export type RadioGroupProps<T extends string> = {
-  /** Handle change event when pressing on a radio option. */
-  onChange?: RadioProps<T>['onChange'];
-} & AccessibilityProps &
-  RadioGroupBaseProps<T> &
-  SharedProps;
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   {
@@ -139,6 +130,16 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
 // Make memoized function stay generic function type
 export const RadioGroup = memo(RadioGroupWithRef) as typeof RadioGroupWithRef &
   React.MemoExoticComponent<typeof RadioGroupWithRef>;
+
+export { Radio };
+
+export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
+export type RadioGroupProps<T extends string> = {
+  /** Handle change event when pressing on a radio option. */
+  onChange?: RadioProps<T>['onChange'];
+} & AccessibilityProps &
+  RadioGroupBaseProps<T> &
+  SharedProps;
 
 const styles = StyleSheet.create({
   circle: {

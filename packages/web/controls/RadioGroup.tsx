@@ -16,8 +16,6 @@ import { cx } from '../utils/linaria';
 import { Control, ControlProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
-export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps;
-
 const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
   { children, ...props }: RadioProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>,
@@ -53,10 +51,10 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
   props: RadioProps<T> & React.RefAttributes<HTMLInputElement>,
 ) => React.ReactElement;
 
-export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
+const Radio = memo(RadioWithRef) as typeof RadioWithRef &
   React.MemoExoticComponent<typeof RadioWithRef>;
 
-export function useHandleRadioSelect<T extends string>(onChange?: (value: T) => void) {
+function useHandleRadioSelect<T extends string>(onChange?: (value: T) => void) {
   return useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     (event) => {
       onChange?.(event.target.value as T);
@@ -64,17 +62,6 @@ export function useHandleRadioSelect<T extends string>(onChange?: (value: T) => 
     [onChange],
   );
 }
-
-export type RadioGroupProps<T extends string> = {
-  /** * Field name of the multiple choice radio group. */
-  name: string;
-  /** id of the element that labels the radio group */
-  'aria-labelledby'?: string;
-  /** Handle change event when pressing on a radio option. */
-  onChange?: (value: T) => void;
-} & FilteredHTMLAttributes<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &
-  RadioGroupBaseProps<T> &
-  SharedProps;
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   { label, selectedValue, onChange, options, name, testID, ...restProps }: RadioGroupProps<T>,
@@ -106,6 +93,20 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
 
 export const RadioGroup = memo(RadioGroupWithRef) as typeof RadioGroupWithRef &
   React.MemoExoticComponent<typeof RadioGroupWithRef>;
+
+export { Radio, useHandleRadioSelect };
+
+export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps;
+export type RadioGroupProps<T extends string> = {
+  /** Field name of the multiple choice radio group. */
+  name: string;
+  /** id of the element that labels the radio group */
+  'aria-labelledby'?: string;
+  /** Handle change event when pressing on a radio option. */
+  onChange?: (value: T) => void;
+} & FilteredHTMLAttributes<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &
+  RadioGroupBaseProps<T> &
+  SharedProps;
 
 const FOCUS_PADDING = `calc(-1 * (4px + ${borderWidth.checkbox}))`;
 

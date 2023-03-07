@@ -12,7 +12,7 @@ type IllustrationConfigShape = Record<string, { light: () => string; dark: () =>
 export function createIllustration<
   Variant extends IllustrationVariant,
   Config extends IllustrationConfigShape,
->(variant: Variant, config: Config): React.ComponentType<IllustrationBaseProps<Variant>> {
+>(variant: Variant, config: Config) {
   const defaultSize = getDefaultSizeObjectForIllustration(variant);
 
   type IllustrationProps = IllustrationBaseProps<Variant>;

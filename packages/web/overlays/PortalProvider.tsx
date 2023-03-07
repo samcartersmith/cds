@@ -19,7 +19,7 @@ export const tooltipContainerId = 'tooltipContainer';
 
 const safeDocument = getBrowserGlobals()?.document;
 
-export const PortalHost = memo(() => {
+const PortalHost = memo(() => {
   const portalRoot = useMemo(
     // prevent duplicate portal root
     () => safeDocument?.createElement('div'),
@@ -97,3 +97,5 @@ export const PortalProvider: React.FC<React.PropsWithChildren<PortalProviderProp
     );
   },
 );
+
+export { PortalHost };

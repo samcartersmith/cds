@@ -17,7 +17,7 @@ type IllustrationConfigShape<Variant extends IllustrationVariant> = Record<
 export function createIllustration<Variant extends IllustrationVariant>(
   variant: Variant,
   config: IllustrationConfigShape<Variant>,
-): React.ComponentType<IllustrationBaseProps<Variant>> {
+) {
   const defaultSize = getDefaultSizeObjectForIllustration(variant);
 
   type IllustrationProps = IllustrationBaseProps<Variant>;

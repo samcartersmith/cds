@@ -35,7 +35,7 @@ type DropdownVisibilityProps = {
   onCloseMenu: NoopFn;
 };
 
-export const ModalDropdown = memo(
+const ModalDropdown = memo(
   forwardRef(
     (
       {
@@ -115,6 +115,7 @@ type UseResponsiveHeightParams = {
   maxHeight: number | `${number}%` | undefined;
   visible: boolean;
 };
+
 const useResponsiveHeight = ({
   gap,
   dropdownRef,
@@ -132,6 +133,7 @@ const useResponsiveHeight = ({
   const handleWindowSizeChange = useCallback(() => {
     setWindowHeight(getBrowserGlobals()?.window.innerHeight);
   }, [setWindowHeight]);
+
   useEffect(() => {
     // useEffect will only run client side
     getBrowserGlobals()?.window.addEventListener('resize', handleWindowSizeChange);
@@ -139,6 +141,7 @@ const useResponsiveHeight = ({
       getBrowserGlobals()?.window.removeEventListener('resize', handleWindowSizeChange);
     };
   }, [handleWindowSizeChange]);
+
   const verticalBreakpoint = useMemo(
     () =>
       dropdownRect

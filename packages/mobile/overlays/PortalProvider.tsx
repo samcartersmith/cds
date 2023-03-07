@@ -8,7 +8,7 @@ export type PortalProviderProps = ToastProviderProps;
 
 type PortalHostProps = { nodes: PortalNode[] };
 
-export const PortalHost = memo(({ nodes }: PortalHostProps) => {
+const PortalHost = memo(({ nodes }: PortalHostProps) => {
   if (!nodes.length) return null;
 
   const isAndroid = Platform.OS === 'android';
@@ -53,3 +53,5 @@ export const PortalProvider: React.FC<React.PropsWithChildren<PortalProviderProp
     </PortalContext.Provider>
   );
 };
+
+export { PortalHost };

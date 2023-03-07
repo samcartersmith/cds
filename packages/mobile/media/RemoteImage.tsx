@@ -55,7 +55,7 @@ export type RemoteImageProps =
   | RemoteImagePropsWidthAndHeight
   | RemoteImagePropsWithSource;
 
-export function getSource(
+function getSource(
   source: string | number | ImageURISource,
   cachePolicy?: ImageURISource['cache'],
 ): ImageSourcePropType {
@@ -77,7 +77,7 @@ type HexagonClipPathProps = {
   image: React.ReactElement;
 };
 
-export const HexagonClipPath = ({ image }: HexagonClipPathProps) => {
+const HexagonClipPath = ({ image }: HexagonClipPathProps) => {
   return (
     <Svg viewBox="0 0 66 62">
       <Defs>
@@ -221,3 +221,5 @@ export const RemoteImage = memo(function RemoteImage({
     />
   );
 });
+
+export { getSource, HexagonClipPath };

@@ -2509,7 +2509,7 @@ __metadata:
     "@types/ejs": ^3.1.0
     "@types/lodash": ^4.14.178
     ejs: ^3.1.7
-    react-docgen-typescript: ^2.0.0
+    react-docgen-typescript: ^2.2.2
   peerDependencies:
     "@cbhq/eslint-plugin": ">=1.5.0"
     fast-glob: ">=3.2.11"
@@ -30249,7 +30249,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:^2.0.0, react-docgen-typescript@npm:^2.1.1":
+"react-docgen-typescript@npm:^2.0.0, react-docgen-typescript@npm:^2.1.1, react-docgen-typescript@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
   peerDependencies:

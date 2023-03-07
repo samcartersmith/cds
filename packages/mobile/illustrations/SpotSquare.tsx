@@ -2,10 +2,10 @@ import spotSquareIllustrations from '@cbhq/cds-illustrations/__generated__/spotS
 
 import { createIllustration } from './createIllustration';
 
-export type { SpotSquareProps } from '@cbhq/cds-common/types/IllustrationProps';
-export type { SpotSquareName } from '@cbhq/cds-illustrations';
-
 /**
  * @changelog ./createIllustration.tsx, ./Illustration.tsx
  */
 export const SpotSquare = createIllustration('spotSquare', spotSquareIllustrations);
+
+export type { SpotSquareProps } from '@cbhq/cds-common/types/IllustrationProps';
+export type { SpotSquareName } from '@cbhq/cds-illustrations';
