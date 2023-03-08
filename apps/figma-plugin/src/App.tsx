@@ -5,7 +5,7 @@
 import 'react-figma-plugin-ds/figma-plugin-ds.css';
 import './styles.css';
 
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { Button, Select, SelectOption, Text, Title } from 'react-figma-plugin-ds';
 
 import type { FigmaContext, FigmaMessage, Spectrum } from './types';
@@ -40,13 +40,14 @@ function App() {
   }, []);
 
   const handleClickOutside = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    // @ts-expect-error typing for event propagation is not possible
     if (![darkColorSelector.current, lightColorSelector.current].includes(e.target)) {
       setColorSelection(undefined);
     }
   }, []);
 
   const handleContextChange = useCallback((option: SelectOption) => {
-    setContextOption(option.value as ApplyOption);
+    setContextOption(option.value as FigmaContext);
   }, []);
 
   const selectionOptions = useMemo(() => {
@@ -70,6 +71,7 @@ function App() {
 
       <div className="button-wrapper">
         <button
+          key="light-color-selector"
           ref={lightColorSelector}
           className={cx(`button-reset`, colorSelection === 'light' && 'active-selection')}
           onClick={handleColorSelection('light')}
@@ -77,6 +79,7 @@ function App() {
           <Text>🌞 light</Text>
         </button>
         <button
+          key="dark-color-selector"
           ref={darkColorSelector}
           className={cx(`button-reset`, colorSelection === 'dark' && 'active-selection')}
           onClick={handleColorSelection('dark')}
