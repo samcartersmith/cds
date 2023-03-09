@@ -40,12 +40,14 @@ yarn mono-pipeline version icons
 
 - When prompted, do the following:
   - Type of change?: "Update"
-  - Changelog message?: Copy/paste your PR title
+  - Changelog message?: Copy/paste your PR title (just the part after `feat(Icons):`)
   - PR number?: Copy/paste your PR number
   - Skip the rest (press enter to use defaults)
 
 6. Commit and push the changes to your existing PR
 
-7. Once the PR is merged, locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits), manually rebuild `package-cds-icons`, and deploy to `corporate::cds-icons` when the build is complete
+7. When the Percy diffs are ready, share them with the Icons DRI for approval. Merge your PR once the DRI has signed off.
 
-8. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-icons/-/@cbhq/cds-icons-1.0.0.tgz).
+8. Locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits), manually rebuild `package-cds-icons`, and deploy to `corporate::cds-icons` when the build is complete
+
+9. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-icons/-/@cbhq/cds-icons-1.0.0.tgz).

@@ -42,9 +42,13 @@ yarn nx run figma-styles:sync
 yarn nx run illustrations:release
 ```
 
-4. Merge the PR in static-assets and confirm the deploy in [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits). It should autodeploy after all build checks are complete.
+4. Merge the PR in static-assets and confirm the deploy in [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits). Heimdall should automatically deploy the production shards after all build checks are complete, but if it fails to do this for some reason, then manually deploy:
 
-5. Commit the changes in the CDS repo with a message in the following format: `[trivial] feat(Illustrations): Publish illustrations mm/dd/yyyy`
+- `production::production-shard-0`
+- `production::production-shard-1`
+- `production::production-shard-2`
+
+5. Once the static-assets deployments are finished (the new assets need to be available before Percy can diff properly), commit the changes in the CDS repo with a message in the following format: `[trivial] feat(Illustrations): Publish illustrations mm/dd/yyyy`
 
 6. Open a PR in the CDS repo with the changes
 
@@ -56,15 +60,17 @@ yarn mono-pipeline version illustrations
 
 - When prompted, do the following:
   - Type of change?: "Update"
-  - Changelog message?: Copy/paste your PR title
+  - Changelog message?: Copy/paste your PR title (just the part after `feat(Illustrations):`)
   - PR number?: Copy/paste your PR number
   - Skip the rest (press enter to use defaults)
 
 8. Commit and push the changes to your existing PR
 
-9. Once the PR is merged, locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits), manually rebuild `package-cds-illustrations`, and deploy to `corporate::cds-illustrations` when the build is complete
+9. When the Percy diffs are ready, share them with the Illustrations DRI for approval. Merge your PR once the DRI has signed off.
 
-10. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-illustrations/-/@cbhq/cds-illustrations-0.0.1.tgz).
+10. Locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits), manually rebuild `package-cds-illustrations`, and deploy to `corporate::cds-illustrations` when the build is complete
+
+11. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-illustrations/-/@cbhq/cds-illustrations-0.0.1.tgz).
 
 ### Release Setup
 
