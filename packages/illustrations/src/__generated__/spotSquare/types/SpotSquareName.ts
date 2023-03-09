@@ -139,6 +139,7 @@ export type SpotSquareName =
   | 'startToday'
   | 'stayInControlSelfHostedWalletsStorage'
   | 'stressTestedColdStorage'
+  | 'swapEth'
   | 'switchReward'
   | 'taxDocuments'
   | 'taxesDetails'

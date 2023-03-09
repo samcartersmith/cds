@@ -8,6 +8,30 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.3.0 (3/8/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 03/08/2023. [[#1778](https://github.cbhq.net/frontend/cds/pull/1778)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Square
+
+- swapEth
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- eth2SendSell
+- ethTrading
+- wrapEth
+
 ## 1.2.0 (2/28/2023 PST)
 
 #### 🚀 Updates

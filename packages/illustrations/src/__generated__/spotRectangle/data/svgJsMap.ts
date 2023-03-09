@@ -190,8 +190,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/eth2SellSend-0').content,
   },
   eth2SendSell: {
-    light: () => require('../svgJs/light/eth2SendSell-0').content,
-    dark: () => require('../svgJs/dark/eth2SendSell-0').content,
+    light: () => require('../svgJs/light/eth2SendSell-1').content,
+    dark: () => require('../svgJs/dark/eth2SendSell-1').content,
   },
   ethAddress: {
     light: () => require('../svgJs/light/ethAddress-0').content,
@@ -210,8 +210,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/ethStakingRewards-1').content,
   },
   ethTrading: {
-    light: () => require('../svgJs/light/ethTrading-0').content,
-    dark: () => require('../svgJs/dark/ethTrading-0').content,
+    light: () => require('../svgJs/light/ethTrading-1').content,
+    dark: () => require('../svgJs/dark/ethTrading-1').content,
   },
   ethWrappedStakingRewards: {
     light: () => require('../svgJs/light/ethWrappedStakingRewards-0').content,
@@ -526,8 +526,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/watchVideos-1').content,
   },
   wrapEth: {
-    light: () => require('../svgJs/light/wrapEth-0').content,
-    dark: () => require('../svgJs/dark/wrapEth-0').content,
+    light: () => require('../svgJs/light/wrapEth-1').content,
+    dark: () => require('../svgJs/dark/wrapEth-1').content,
   },
   yieldHolding: {
     light: () => require('../svgJs/light/yieldHolding-0').content,

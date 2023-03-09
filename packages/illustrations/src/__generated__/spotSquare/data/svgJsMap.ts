@@ -549,6 +549,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/stressTestedColdStorage-0').content,
     dark: () => require('../svgJs/dark/stressTestedColdStorage-0').content,
   },
+  swapEth: {
+    light: () => require('../svgJs/light/swapEth-0').content,
+    dark: () => require('../svgJs/dark/swapEth-0').content,
+  },
   switchReward: {
     light: () => require('../svgJs/light/switchReward-1').content,
     dark: () => require('../svgJs/dark/switchReward-1').content,

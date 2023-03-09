@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-02-28T21:35:09.866Z",
+  "lastUpdated": "2023-03-09T00:16:13.932Z",
   "items": {
     "2:33979": {
       "hash": "Ou6k2vGsPmgvn3sOo1rz7iRXkKFEnDN2bRM6S7AASSQ=",
@@ -1383,14 +1383,14 @@
       "version": 0
     },
     "2:34057": {
-      "hash": "gNu6ZxJYfuwI4TiP3rSkK0BX1auwF8XjQgSE2m0QXIA=",
       "type": "heroSquare",
       "name": "coinbaseOneLogo",
+      "hash": "gNu6ZxJYfuwI4TiP3rSkK0BX1auwF8XjQgSE2m0QXIA=",
       "width": 240,
       "height": 240,
       "description": "coinbase, one, cb1, logo, logomark, brand",
       "createdAt": "2022-08-05T05:36:58.985Z",
-      "lastUpdated": "2023-01-20T14:26:27.923Z",
+      "lastUpdated": "2023-03-08T18:18:00.243Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/coinbaseOneLogo-0.svg",
         "svgDark": "./heroSquare/svg/dark/coinbaseOneLogo-0.svg",
@@ -4903,14 +4903,14 @@
       "version": 0
     },
     "2:41271": {
-      "hash": "hjyyAHCb2hsvVmrztaNwXo9s5VbKZjaycSpz4xUI+C0=",
       "type": "spotRectangle",
       "name": "coinbaseOneLogo",
+      "hash": "hjyyAHCb2hsvVmrztaNwXo9s5VbKZjaycSpz4xUI+C0=",
       "width": 240,
       "height": 120,
       "description": "coinbase, one, cb1, logo, logomark, brand",
       "createdAt": "2022-08-05T05:37:09.146Z",
-      "lastUpdated": "2023-01-20T14:26:16.441Z",
+      "lastUpdated": "2023-03-08T18:18:00.248Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/coinbaseOneLogo-1.svg",
         "svgDark": "./spotRectangle/svg/dark/coinbaseOneLogo-1.svg",
@@ -5763,14 +5763,14 @@
       "version": 1
     },
     "2:41353": {
-      "hash": "XBbM2dcP2RRY66z8LLbCRxeNnLRdjDKD3pyejs9pgQs=",
       "type": "spotSquare",
       "name": "coinbaseOneLogo",
+      "hash": "XBbM2dcP2RRY66z8LLbCRxeNnLRdjDKD3pyejs9pgQs=",
       "width": 96,
       "height": 96,
       "description": "coinbase, one, cb1, logo, logomark, brand",
       "createdAt": "2022-08-05T05:36:47.549Z",
-      "lastUpdated": "2023-01-20T14:26:16.361Z",
+      "lastUpdated": "2023-03-08T18:18:00.238Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/coinbaseOneLogo-0.svg",
         "svgDark": "./spotSquare/svg/dark/coinbaseOneLogo-0.svg",
@@ -7183,14 +7183,14 @@
       "version": 0
     },
     "2:41472": {
-      "hash": "CGdFdrqoknrTP54mgZHQCeKfN7p+p0mKHit8CAcZQNQ=",
       "type": "pictogram",
       "name": "coinbaseOneLogo",
+      "hash": "CGdFdrqoknrTP54mgZHQCeKfN7p+p0mKHit8CAcZQNQ=",
       "width": 48,
       "height": 48,
       "description": "coinbase, one, cb1, logo, logomark, brand",
       "createdAt": "2022-08-05T05:36:47.776Z",
-      "lastUpdated": "2023-01-20T14:26:28.366Z",
+      "lastUpdated": "2023-03-08T18:18:00.271Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/coinbaseOneLogo-0.svg",
         "svgDark": "./pictogram/svg/dark/coinbaseOneLogo-0.svg",
@@ -14283,14 +14283,14 @@
       "version": 0
     },
     "1011:419": {
-      "hash": "42yvJExkFk/7K32KlUhD1wfpgiXhkKpVj7CXpLEn7po=",
       "type": "spotRectangle",
       "name": "ethStakeOrWrap",
+      "hash": "42yvJExkFk/7K32KlUhD1wfpgiXhkKpVj7CXpLEn7po=",
       "width": 240,
       "height": 120,
       "description": "eth, movement, wrapped, stake, lfg",
       "createdAt": "2023-01-13T21:03:23.702Z",
-      "lastUpdated": "2023-01-13T21:03:23.702Z",
+      "lastUpdated": "2023-03-08T18:18:00.255Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/ethStakeOrWrap-0.svg",
         "svgDark": "./spotRectangle/svg/dark/ethStakeOrWrap-0.svg",
@@ -16165,59 +16165,62 @@
     "1418:1584": {
       "type": "spotRectangle",
       "name": "eth2SendSell",
+      "hash": "w4zIH79KMndrYHMOMiBOh1erDi5AhpHIyJSY5iHFiB8=",
       "width": 240,
       "height": 120,
       "description": "stake, wrap, ethereum, rush, movement, forward, exciting",
       "createdAt": "2023-02-14T18:08:28.630Z",
-      "lastUpdated": "2023-02-14T18:08:28.630Z",
+      "lastUpdated": "2023-03-08T18:18:00.262Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/eth2SendSell-0.svg",
-        "svgDark": "./spotRectangle/svg/dark/eth2SendSell-0.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/eth2SendSell-0.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/eth2SendSell-0.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/eth2SendSell-0.js",
-        "pngLight": "./spotRectangle/png/light/eth2SendSell-0.png",
-        "pngDark": "./spotRectangle/png/dark/eth2SendSell-0.png"
+        "svgLight": "./spotRectangle/svg/light/eth2SendSell-1.svg",
+        "svgDark": "./spotRectangle/svg/dark/eth2SendSell-1.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/eth2SendSell-1.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/eth2SendSell-1.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/eth2SendSell-1.js",
+        "pngLight": "./spotRectangle/png/light/eth2SendSell-1.png",
+        "pngDark": "./spotRectangle/png/dark/eth2SendSell-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "1418:1585": {
       "type": "spotRectangle",
       "name": "wrapEth",
+      "hash": "b3CwPQ6Ke8JIi5NttVNXPBxNeb5LbocH3wVXz6rme0Q=",
       "width": 240,
       "height": 120,
       "description": "ethereum, sell, send, transfer, eth2, ➡️",
       "createdAt": "2023-02-14T18:08:28.620Z",
-      "lastUpdated": "2023-02-14T18:08:28.620Z",
+      "lastUpdated": "2023-03-08T18:18:00.276Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/wrapEth-0.svg",
-        "svgDark": "./spotRectangle/svg/dark/wrapEth-0.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/wrapEth-0.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/wrapEth-0.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/wrapEth-0.js",
-        "pngLight": "./spotRectangle/png/light/wrapEth-0.png",
-        "pngDark": "./spotRectangle/png/dark/wrapEth-0.png"
+        "svgLight": "./spotRectangle/svg/light/wrapEth-1.svg",
+        "svgDark": "./spotRectangle/svg/dark/wrapEth-1.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/wrapEth-1.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/wrapEth-1.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/wrapEth-1.js",
+        "pngLight": "./spotRectangle/png/light/wrapEth-1.png",
+        "pngDark": "./spotRectangle/png/dark/wrapEth-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "1418:1586": {
       "type": "spotRectangle",
       "name": "ethTrading",
+      "hash": "PG4ogcygFD9180FOAFpW/d9aQ82n5OAb9E4ZxOEqpYc=",
       "width": 240,
       "height": 120,
       "description": "empty state, trading, exchange",
       "createdAt": "2023-02-14T18:08:28.636Z",
-      "lastUpdated": "2023-02-14T18:08:28.636Z",
+      "lastUpdated": "2023-03-08T18:18:00.266Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/ethTrading-0.svg",
-        "svgDark": "./spotRectangle/svg/dark/ethTrading-0.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/ethTrading-0.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/ethTrading-0.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/ethTrading-0.js",
-        "pngLight": "./spotRectangle/png/light/ethTrading-0.png",
-        "pngDark": "./spotRectangle/png/dark/ethTrading-0.png"
+        "svgLight": "./spotRectangle/svg/light/ethTrading-1.svg",
+        "svgDark": "./spotRectangle/svg/dark/ethTrading-1.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/ethTrading-1.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/ethTrading-1.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/ethTrading-1.js",
+        "pngLight": "./spotRectangle/png/light/ethTrading-1.png",
+        "pngDark": "./spotRectangle/png/dark/ethTrading-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "1418:1634": {
       "type": "pictogram",
@@ -16474,6 +16477,26 @@
         "svgJsDark": "./pictogram/svgJs/dark/assetManagement-0.js",
         "pngLight": "./pictogram/png/light/assetManagement-0.png",
         "pngDark": "./pictogram/png/dark/assetManagement-0.png"
+      },
+      "version": 0
+    },
+    "1683:1415": {
+      "type": "spotSquare",
+      "name": "swapEth",
+      "hash": "RBInyJqOPTzQuqoRrg/ZRu9bM83X8EU8iB5mJeJowq0=",
+      "width": 96,
+      "height": 96,
+      "description": "ethereum, sell, send, transfer, eth2, ➡️",
+      "createdAt": "2023-03-08T18:18:00.189Z",
+      "lastUpdated": "2023-03-08T18:18:00.189Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/swapEth-0.svg",
+        "svgDark": "./spotSquare/svg/dark/swapEth-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/swapEth-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/swapEth-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/swapEth-0.js",
+        "pngLight": "./spotSquare/png/light/swapEth-0.png",
+        "pngDark": "./spotSquare/png/dark/swapEth-0.png"
       },
       "version": 0
     }

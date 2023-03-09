@@ -144,9 +144,9 @@ const versionMap: Record<SpotRectangleName, number> = {
   walletReconnect: 1,
   p2pPayments: 1,
   connectWalletTutorial: 0,
-  wrapEth: 0,
-  eth2SendSell: 0,
-  ethTrading: 0,
+  wrapEth: 1,
+  eth2SendSell: 1,
+  ethTrading: 1,
 };
 
 export default versionMap;
