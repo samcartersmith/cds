@@ -72,6 +72,16 @@ const sidebars = {
           customProps: { kbar: { description: 'Deliver clear, functional layouts.' } },
         },
         {
+          type: 'doc',
+          id: 'foundation/international',
+          customProps: {
+            kbar: {
+              description:
+                'Guidelines for creating equally usable, relevant, and meaningful experiences globally.',
+            },
+          },
+        },
+        {
           type: 'category',
           label: 'Motion',
           customProps: {
