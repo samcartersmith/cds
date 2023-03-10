@@ -61,22 +61,26 @@ export const Drawer = memo(
     const isMounted = useRef(false);
 
     const handleClose = useCallback(() => {
-      Animated.parallel([animateDrawerOut, animateOverlayOut]).start(({ finished }) => {
-        if (finished) {
-          isMounted.current = false;
-          onCloseComplete?.();
-        }
-      });
-    }, [animateDrawerOut, animateOverlayOut, onCloseComplete]);
+      if (!preventDismissGestures) {
+        Animated.parallel([animateDrawerOut, animateOverlayOut]).start(({ finished }) => {
+          if (finished) {
+            isMounted.current = false;
+            onCloseComplete?.();
+          }
+        });
+      }
+    }, [animateDrawerOut, animateOverlayOut, onCloseComplete, preventDismissGestures]);
 
     const handleSwipeToClose = useCallback(() => {
-      Animated.parallel([animateSwipeToClose, animateOverlayOut]).start(({ finished }) => {
-        if (finished) {
-          isMounted.current = false;
-          onCloseComplete?.();
-        }
-      });
-    }, [animateOverlayOut, onCloseComplete, animateSwipeToClose]);
+      if (!preventDismissGestures) {
+        Animated.parallel([animateSwipeToClose, animateOverlayOut]).start(({ finished }) => {
+          if (finished) {
+            isMounted.current = false;
+            onCloseComplete?.();
+          }
+        });
+      }
+    }, [preventDismissGestures, animateSwipeToClose, animateOverlayOut, onCloseComplete]);
 
     useEffect(() => {
       if (!isMounted.current) {
