@@ -4,9 +4,10 @@ Welcome to the Coinbase Design System. If you are looking to contribute to CDS y
 
 If you are looking for something else here are some other important links:
 
-- [View our feature request backlog](https://coda.io/d/CDS-Team_dFaC-pktuzN/Backlog_suIz1#_lufbp)
-- [Submit a request for new features/tooling](https://coda.io/d/CDS-Team_dFaC-pktuzN/Submit-a-Request-to-CDS_suHBY#_luhU2)
-- Visit the #ask-cds slack channel to ask the team a question
+To make feature requests, report bugs, or request assistance when working with CDS you can find us on slack:
+
+- For design inquiries: #ask-design-foundations
+- For engineering inquiries: #ask-dx-ui-systems
 
 ## Getting Started
 
@@ -27,7 +28,7 @@ You need this token for the Figma plugin and to release icons or illustrations. 
 
 ## Organization of our Docs
 
-To ensure doc discoverability we try to keep all docs in the same location; the [docs folder](/docs/). The README in each package simply points to its most relevant documentation which lives in the [docs folder](/docs/).
+To ensure doc discoverability we keep all docs in the same location: the [docs folder](/docs/). The README in each package simply points to its most relevant documentation which lives in the [docs folder](/docs/).
 
 ## Contributing
 
@@ -44,8 +45,9 @@ Once you have run commands above you are ready to start contributing.
 
 - [Component Development Best Practices](./docs/component-development.md)
 - [Release Workflows](./docs/release.md)
-- [Bug Priorization Framework](https://coda.io/d/CDS-Team_dFaC-pktuzN/Prioritization-framework_su6Sj#_lu3rn)
-- On call guide: [http://go/cds-on-call](https://docs.google.com/document/d/1UQpvgfo7AhA6NKQ9baglmQC7NKu5rJIuzUnvoSvdFyQ/edit#heading=h.g4i6psiisqyg)
+- Bug Priorization Framework[go/dx-ui-systems-prioritization](http://go/dx-ui-systems-prioritization)
+- On call guide: [http://go/dx-ui-systems-on-call](https://docs.google.com/document/d/1UQpvgfo7AhA6NKQ9baglmQC7NKu5rJIuzUnvoSvdFyQ/edit#heading=h.g4i6psiisqyg)
+- [Engineer's Guide to Contentful](./docs/contentful.md)
 - Version Management (coming soon)
 - Best practice usage of our build tool - [NX](https://nx.dev/) (coming soon)
 - Upgrading React Native in the Mobile Playground (coming soon)
