@@ -1,7 +1,6 @@
 import React, {
   forwardRef,
   memo,
-  PropsWithChildren,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -30,7 +29,7 @@ import { useDrawerSpacing } from './useDrawerSpacing';
 export type DrawerProps = DrawerBaseProps & Omit<ModalProps, 'onRequestClose' | 'children'>;
 
 export const Drawer = memo(
-  forwardRef<DrawerRefBaseProps, PropsWithChildren<DrawerProps>>(function Drawer(
+  forwardRef<DrawerRefBaseProps, DrawerProps>(function Drawer(
     {
       children,
       pin = 'bottom',
