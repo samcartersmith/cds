@@ -1,6 +1,5 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { GestureResponderEvent } from 'react-native';
-import { useChildrenAsAccessibilityProps } from '@cbhq/cds-common/accessibility/useChildrenAsAccessibilityProps';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { selectCellMobileSpacingConfig } from '@cbhq/cds-common/tokens/select';
 import {
@@ -38,6 +37,8 @@ export const SelectOption = memo(function SelectOption({
   multiline,
   onPress,
   value,
+  accessibilityLabel,
+  accessibilityHint,
   ...props
 }: SelectOptionProps) {
   const minHeight = useScaleConditional(selectOptionMinHeight);
@@ -54,15 +55,17 @@ export const SelectOption = memo(function SelectOption({
     [onPress, onChange, value],
   );
 
-  const { accessibilityLabel } = useChildrenAsAccessibilityProps({
-    children: title,
-    accessibilityLabel: props.accessibilityLabel,
-  });
-
-  const { accessibilityHint } = useChildrenAsAccessibilityProps({
-    children: description,
-    accessibilityHint: props.accessibilityHint,
-  });
+  const accessibilityProps = useMemo(
+    () => ({
+      accessibilityLabel:
+        typeof title === 'string' && accessibilityLabel === undefined ? title : accessibilityLabel,
+      accessibilityHint:
+        typeof description === 'string' && accessibilityHint === undefined
+          ? description
+          : accessibilityHint,
+    }),
+    [title, description, accessibilityLabel, accessibilityHint],
+  );
 
   return (
     <Cell
@@ -72,8 +75,8 @@ export const SelectOption = memo(function SelectOption({
       maxHeight={multiline ? undefined : maxHeight}
       accessory={selected ? <CellAccessory type="selected" /> : undefined}
       selected={selected}
-      accessibilityLabel={accessibilityLabel}
-      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityProps.accessibilityLabel}
+      accessibilityHint={accessibilityProps.accessibilityHint}
       onPress={handlePress}
       {...props}
     >

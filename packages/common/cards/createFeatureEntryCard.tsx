@@ -1,6 +1,5 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
-import { useAccessibilityProps } from '../accessibility/useAccessibilityProps';
 import { CardBaseProps, CardBodyBaseProps, FeatureEntryCardBaseProps } from '../types/alpha';
 
 type CreateFeatureEntryCardParams<OnPressFn> = {
@@ -17,10 +16,13 @@ export function createFeatureEntryCard<OnPressFn>({
     testID = 'feature-entry-card',
     ...props
   }: FeatureEntryCardBaseProps<OnPressFn>) {
-    const accessibilityProps = useAccessibilityProps(props, {
-      accessibilityLabel: props.title,
-      accessibilityHint: props.description,
-    });
+    const accessibilityProps = useMemo(
+      () => ({
+        accessibilityLabel: props.accessibilityLabel ?? props.title,
+        accessibilityHint: props.accessibilityHint ?? props.description,
+      }),
+      [props.accessibilityHint, props.accessibilityLabel, props.title, props.description],
+    );
 
     return (
       <Card {...accessibilityProps} testID={testID} onPress={onPress} flexShrink={0}>

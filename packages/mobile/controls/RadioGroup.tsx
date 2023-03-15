@@ -1,7 +1,6 @@
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 import { SharedProps, useScale } from '@cbhq/cds-common';
-import { useChildrenAsAccessibilityProps } from '@cbhq/cds-common/accessibility/useChildrenAsAccessibilityProps';
 import type { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
@@ -54,11 +53,19 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
   { children, accessibilityHint, accessibilityLabel, ...props }: RadioProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
-  const accessibilityProps = useChildrenAsAccessibilityProps({
-    children,
-    accessibilityLabel,
-    accessibilityHint,
-  });
+  const accessibilityProps = useMemo(
+    () => ({
+      accessibilityLabel:
+        typeof children === 'string' && accessibilityLabel === undefined
+          ? children
+          : accessibilityLabel,
+      accessibilityHint:
+        typeof children === 'string' && accessibilityHint === undefined
+          ? children
+          : accessibilityHint,
+    }),
+    [children, accessibilityLabel, accessibilityHint],
+  );
 
   return (
     <Control<T>
@@ -92,11 +99,15 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   }: RadioGroupProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
-  const accessibilityProps = useChildrenAsAccessibilityProps({
-    children: label,
-    accessibilityLabel,
-    accessibilityHint,
-  });
+  const accessibilityProps = useMemo(
+    () => ({
+      accessibilityLabel:
+        typeof label === 'string' && accessibilityLabel === undefined ? label : accessibilityLabel,
+      accessibilityHint:
+        typeof label === 'string' && accessibilityHint === undefined ? label : accessibilityHint,
+    }),
+    [label, accessibilityLabel, accessibilityHint],
+  );
 
   return (
     <Group

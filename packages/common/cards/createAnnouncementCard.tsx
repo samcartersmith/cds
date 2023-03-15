@@ -1,6 +1,5 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
-import { useAccessibilityProps } from '../accessibility/useAccessibilityProps';
 import type { AnnouncementCardBaseProps, CardBaseProps, CardBodyBaseProps } from '../types/alpha';
 
 type CreateAnnouncementCardParams<T> = {
@@ -17,10 +16,13 @@ export function createAnnouncementCard<OnPressFn>({
     width,
     ...props
   }: AnnouncementCardBaseProps<OnPressFn>) {
-    const accessibilityProps = useAccessibilityProps(props, {
-      accessibilityLabel: props.title,
-      accessibilityHint: props.description,
-    });
+    const accessibilityProps = useMemo(
+      () => ({
+        accessibilityLabel: props.accessibilityLabel ?? props.title,
+        accessibilityHint: props.accessibilityHint ?? props.description,
+      }),
+      [props.accessibilityHint, props.accessibilityLabel, props.title, props.description],
+    );
 
     return (
       <Card

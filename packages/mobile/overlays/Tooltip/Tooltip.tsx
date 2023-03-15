@@ -1,6 +1,5 @@
-import React, { memo, useCallback, useRef, useState } from 'react';
+import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
 import { Modal as RNModal, TouchableOpacity, View } from 'react-native';
-import { useChildrenAsAccessibilityProps } from '@cbhq/cds-common/accessibility/useChildrenAsAccessibilityProps';
 
 import { InternalTooltip } from './InternalTooltip';
 import { SubjectLayout, TooltipProps } from './TooltipProps';
@@ -49,17 +48,33 @@ export const Tooltip = memo(
 
     // The accessibility props for the trigger component. Trigger component
     // equals the component where when you click on it, it will show the tooltip
-    const accessibilityPropsForTrigger = useChildrenAsAccessibilityProps({
-      children,
-      accessibilityLabel,
-      accessibilityHint,
-    });
+    const accessibilityPropsForTrigger = useMemo(
+      () => ({
+        accessibilityLabel:
+          typeof children === 'string' && accessibilityLabel === undefined
+            ? children
+            : accessibilityLabel,
+        accessibilityHint:
+          typeof children === 'string' && accessibilityHint === undefined
+            ? children
+            : accessibilityHint,
+      }),
+      [children, accessibilityLabel, accessibilityHint],
+    );
 
-    const accessibilityPropsForContent = useChildrenAsAccessibilityProps({
-      children: content,
-      accessibilityLabel: accessibilityLabelForContent,
-      accessibilityHint: accessibilityHintForContent,
-    });
+    const accessibilityPropsForContent = useMemo(
+      () => ({
+        accessibilityLabel:
+          typeof content === 'string' && accessibilityLabelForContent === undefined
+            ? content
+            : accessibilityLabelForContent,
+        accessibilityHint:
+          typeof content === 'string' && accessibilityHintForContent === undefined
+            ? content
+            : accessibilityHintForContent,
+      }),
+      [content, accessibilityLabelForContent, accessibilityHintForContent],
+    );
 
     return (
       <View collapsable={false} ref={subjectRef}>
