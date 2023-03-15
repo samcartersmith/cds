@@ -179,7 +179,7 @@ const versionMap: Record<HeroSquareName, number> = {
   mic: 0,
   pending: 1,
   coinbaseCardLock: 0,
-  coinbaseOneLogo: 0,
+  coinbaseOneLogo: 1,
   earnMore: 0,
   switchAdvancedToSimpleTrading: 0,
   decentralization: 1,

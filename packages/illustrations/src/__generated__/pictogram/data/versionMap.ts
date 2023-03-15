@@ -41,7 +41,7 @@ const versionMap: Record<PictogramName, number> = {
   calendar: 0,
   rewardsNavigation: 1,
   laptop: 0,
-  coinbaseOneLogo: 0,
+  coinbaseOneLogo: 1,
   listingFees: 1,
   payNavigation: 1,
   browserTransaction: 0,

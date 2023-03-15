@@ -42,7 +42,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   primeEarn: 1,
   primeDeFi: 1,
   yieldHolding: 0,
-  coinbaseOneLogo: 1,
+  coinbaseOneLogo: 2,
   transferCoins: 0,
   bridging: 0,
   coinbaseOnePhoneLightning: 1,

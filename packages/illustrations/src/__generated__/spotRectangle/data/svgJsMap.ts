@@ -70,8 +70,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/clawMachinePig-1').content,
   },
   coinbaseOneLogo: {
-    light: () => require('../svgJs/light/coinbaseOneLogo-1').content,
-    dark: () => require('../svgJs/dark/coinbaseOneLogo-1').content,
+    light: () => require('../svgJs/light/coinbaseOneLogo-2').content,
+    dark: () => require('../svgJs/dark/coinbaseOneLogo-2').content,
   },
   coinbaseOnePhoneLightning: {
     light: () => require('../svgJs/light/coinbaseOnePhoneLightning-1').content,

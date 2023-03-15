@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.4.0 (3/15/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 03/15/2023. [[#1800](https://github.cbhq.net/frontend/cds/pull/1800)]
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- coinbaseOneLogo
+
+#### Pictogram
+
+- coinbaseOneLogo
+
+#### Spot Square
+
+- coinbaseOneLogo
+
+#### Hero Square
+
+- coinbaseOneLogo
+
 ## 1.3.0 (3/8/2023 PST)
 
 #### 🚀 Updates

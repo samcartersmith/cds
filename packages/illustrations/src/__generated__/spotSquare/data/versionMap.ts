@@ -16,7 +16,7 @@ import type { SpotSquareName } from '../types/SpotSquareName';
  * In addition, this file is used to populate SpotSquare stories in percy, so the sort order based on last updated is important.
  */
 const versionMap: Record<SpotSquareName, number> = {
-  coinbaseOneLogo: 0,
+  coinbaseOneLogo: 1,
   referralsPeople: 0,
   frameEmpty: 1,
   boostedCard: 1,
