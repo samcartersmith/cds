@@ -25,9 +25,6 @@ echo "--- Updating local '$BASE_BRANCH' base branch"
 # Required for correct Nx affected project resolution
 git fetch -f --no-tags origin $BASE_BRANCH:$BASE_BRANCH
 
-echo "--- Running setup for next-example"
-./tools/ci/nextjs-example-setup.sh
-
 echo "--- Building required packages"
 yarn build-required-packages
 

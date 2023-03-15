@@ -23,7 +23,6 @@
   "eslint.useESLintClass": true,
   "eslint.workingDirectories": [
     { "pattern": "apps/*" },
-    { "pattern": "examples/*" },
     { "pattern": "packages/*" }
   ],
 

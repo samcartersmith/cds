@@ -58,7 +58,6 @@ esm/
 
 # Yarn
 .yarn/*
-examples/nextjs/.yarn
 !.yarn/patches
 !.yarn/releases
 !.yarn/plugins
@@ -131,6 +130,3 @@ apps/mobile-playground/artifacts
 ## Nested node_modules
 
 node_modules/
-
-#nextjs
-.next

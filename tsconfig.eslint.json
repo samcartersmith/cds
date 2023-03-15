@@ -4,7 +4,6 @@
     "libs/**/*",
     "packages/**/*",
     "apps/**/*",
-    "examples/**/*",
     "dangerfile.ts"
   ],
   "exclude": [
