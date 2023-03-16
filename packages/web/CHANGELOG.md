@@ -8,6 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.1.2 (3/16/2023, 01:20 PM PST)
+
+#### 🐞 Fixes
+
+- Update (TabNavigation, TabLabel): allow overriding max dot count. [#1796](https://github.cbhq.net/frontend/cds/pull/1796)
+
+#### 📘 Misc
+
+- Fix missing or incorrect props in docs. [#1772](https://github.cbhq.net/frontend/cds/pull/1772), [DX-145](https://jira.coinbase-corp.com/browse/DX-145)
+- Render light+dark illustrations side by side. [#1764](https://github.cbhq.net/frontend/cds/pull/1764)
+- **[fix]** Decouple esm build from normal web build. [#1751](https://github.cbhq.net/frontend/cds/pull/1751), [DX-715](https://jira.coinbase-corp.com/browse/DX-715)
+- **[deps]** Upgrade node to 18. [#1756](https://github.cbhq.net/frontend/cds/pull/1756), [DX-714](https://jira.coinbase-corp.com/browse/DX-714)
+
 ## 4.1.1 (3/3/2023, 08:14 AM PST)
 
 This is an artificial version bump with no new change.

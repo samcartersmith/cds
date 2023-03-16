@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.1.2 (3/16/2023, 01:20 PM PST)
+
+#### 🐞 Fixes
+
+- Update (TabNavigation, TabLabel): allow overriding max dot count. [#1796](https://github.cbhq.net/frontend/cds/pull/1796)
+- **[common]** Remove useAccessibilityProps hook. [#1798](https://github.cbhq.net/frontend/cds/pull/1798)
+- **[Drawer]** Fix a Drawer children prop union type. [#1790](https://github.cbhq.net/frontend/cds/pull/1790)
+- **[Drawer]** Component should obey the preventDismissGestures prop. [#1787](https://github.cbhq.net/frontend/cds/pull/1787), [DX-763](https://jira.coinbase-corp.com/browse/DX-763)
+
+#### 📘 Misc
+
+- Fix missing or incorrect props in docs. [#1772](https://github.cbhq.net/frontend/cds/pull/1772), [DX-145](https://jira.coinbase-corp.com/browse/DX-145)
+- Convert cds-tasks to packemon. [#1768](https://github.cbhq.net/frontend/cds/pull/1768), [DX-724](https://jira.coinbase-corp.com/browse/DX-724)
+- Render light+dark illustrations side by side. [#1764](https://github.cbhq.net/frontend/cds/pull/1764)
+- **[deps]** Upgrade node to 18. [#1756](https://github.cbhq.net/frontend/cds/pull/1756), [DX-714](https://jira.coinbase-corp.com/browse/DX-714)
+
 ## 4.1.1 (3/3/2023, 08:14 AM PST)
 
 #### 🐞 Fixes
