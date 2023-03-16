@@ -37,7 +37,7 @@ const [opacityEnter, opacityExit, scaleEnter, scaleExit] = convertMotionConfigs(
 ]);
 
 export const DotCount = memo(
-  ({ children, pin, variant = 'negative', count, overlap, ...props }: DotCountBaseProps) => {
+  ({ children, pin, variant = 'negative', count, max, overlap, ...props }: DotCountBaseProps) => {
     const palette = usePalette();
     const [childrenSize, onChildrenLayout] = useLayout();
     const [dotSize, onDotLayout] = useLayout();
@@ -147,7 +147,7 @@ export const DotCount = memo(
             style={dotCountInnerContainerStyle}
           >
             <TextCaption color="primaryForeground">
-              {parseDotCountMaxOverflow(countInternal)}
+              {parseDotCountMaxOverflow(countInternal, max)}
             </TextCaption>
           </Animated.View>
         )}

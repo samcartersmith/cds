@@ -23,7 +23,7 @@ const COLORS = {
 
 export type TabLabelProps = CommonTabLabelProps & TextProps;
 export const TabLabel = memo(
-  ({ active, variant = 'primary', count = 0, ...props }: TabLabelProps) => {
+  ({ active, variant = 'primary', count = 0, max, ...props }: TabLabelProps) => {
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
     const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
     const TextElement = useMemo(() => {
@@ -75,7 +75,7 @@ export const TabLabel = memo(
         )}
         <Animated.View style={dotStyles.container}>
           <Animated.View style={dotStyles.inner}>
-            <DotCount count={count} />
+            <DotCount count={count} max={max} />
           </Animated.View>
         </Animated.View>
       </HStack>

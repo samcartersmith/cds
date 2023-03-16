@@ -226,13 +226,14 @@ export const TabNavigation = memo(
       );
 
       const getChildren = useCallback(
-        ({ id, count, label }: TabProps) => (
+        ({ id, count, max, label }: TabProps) => (
           <TabLabel
             id={id}
             onLayout={handleLayout}
             active={id === value}
             variant={variant}
             count={count}
+            max={max}
           >
             {label}
           </TabLabel>

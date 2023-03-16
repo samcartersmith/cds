@@ -47,7 +47,7 @@ export type TabLabelProps = CommonTabLabelProps &
   TextProps & { onLayout?: (key: string, props: TabIndicatorProps) => void };
 
 export const TabLabel = memo(
-  ({ id = '', active, variant = 'primary', count = 0, onLayout, ...props }: TabLabelProps) => {
+  ({ id = '', active, variant = 'primary', count = 0, max, onLayout, ...props }: TabLabelProps) => {
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
     const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
     const prevCount = usePreviousValue<number>(count);
@@ -102,6 +102,7 @@ export const TabLabel = memo(
           <DotCount
             accessibilityLabel={`${props.accessibilityLabel ?? props.children} count: ${count}`}
             count={(count || prevCount) ?? 0}
+            max={max}
           />
         </Collapsible>
       </HStack>

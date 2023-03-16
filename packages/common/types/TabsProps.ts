@@ -32,7 +32,7 @@ export type TabProps<T extends string | undefined = string> = PropsWithChildren<
   /** Callback to fire when pressed */
   onPress?: (id: T) => void;
 }> &
-  Partial<Pick<DotCountBaseProps, 'count'>> &
+  Partial<Pick<DotCountBaseProps, 'count' | 'max'>> &
   SharedProps;
 
 export type TabLabelProps = {
@@ -42,7 +42,7 @@ export type TabLabelProps = {
   children: string;
   /** Callback to fire when pressed */
   onPress?: () => void;
-} & Pick<TabProps, 'variant' | 'count' | 'accessibilityLabel'> &
+} & Pick<TabProps, 'variant' | 'count' | 'accessibilityLabel' | 'max'> &
   SharedProps;
 
 export type TabIndicatorProps = {

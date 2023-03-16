@@ -116,6 +116,7 @@ export const TabNavigation = memo(
                 label,
                 accessibilityLabel = label,
                 count,
+                max,
                 testID: tabLabelTestID = `${testID}-tabLabel--${id}`,
               }) => {
                 return (
@@ -127,7 +128,7 @@ export const TabNavigation = memo(
                       transparentWhilePressed
                       testID={tabLabelTestID}
                     >
-                      <TabLabel active={id === value} variant={variant} count={count}>
+                      <TabLabel active={id === value} variant={variant} count={count} max={max}>
                         {label}
                       </TabLabel>
                     </PressableOpacity>
