@@ -3,7 +3,7 @@ secure:
   branches:
     - master
     - alpha-fabric-arch
-    - release-4.0.0
+    - release-5.0.0.rc1
     - deprecations-q12023
 build:
   engines:
