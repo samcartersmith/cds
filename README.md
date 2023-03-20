@@ -48,6 +48,7 @@ Once you have run commands above you are ready to start contributing.
 - Bug Priorization Framework[go/dx-ui-systems-prioritization](http://go/dx-ui-systems-prioritization)
 - On call guide: [http://go/dx-ui-systems-on-call](https://docs.google.com/document/d/1UQpvgfo7AhA6NKQ9baglmQC7NKu5rJIuzUnvoSvdFyQ/edit#heading=h.g4i6psiisqyg)
 - [Engineer's Guide to Contentful](./docs/contentful.md)
+- [Deprecations Process](./docs/deprecations.md)
 - Version Management (coming soon)
 - Best practice usage of our build tool - [NX](https://nx.dev/) (coming soon)
 - Upgrading React Native in the Mobile Playground (coming soon)
