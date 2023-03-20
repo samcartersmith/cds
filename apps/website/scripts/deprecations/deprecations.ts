@@ -509,6 +509,54 @@ export const deprecations: Deprecation[] = [
           },
         },
       },
+      {
+        name: 'offsetHorizontal',
+        components: ['Cell', 'ContentCell', 'ListCell'],
+        package: 'web',
+        type: 'api',
+        migrationMap: {
+          api: {
+            offsetHorizontal:
+              'Use the outerSpacing property with a key of offsetHorizontal instead',
+          },
+        },
+      },
+      {
+        name: 'offsetHorizontal',
+        components: ['Cell', 'ContentCell', 'ListCell'],
+        package: 'mobile',
+        type: 'api',
+        migrationMap: {
+          api: {
+            offsetHorizontal:
+              'Use the outerSpacing property with a key of offsetHorizontal instead',
+          },
+        },
+      },
+      {
+        name: 'reduceHorizontalSpacing',
+        components: ['Cell', 'ContentCell', 'ListCell'],
+        package: 'web',
+        type: 'api',
+        migrationMap: {
+          api: {
+            reduceHorizontalSpacing:
+              'Use the innerSpacing property with a key of spacingHorizontal instead',
+          },
+        },
+      },
+      {
+        name: 'reduceHorizontalSpacing',
+        components: ['Cell', 'ContentCell', 'ListCell'],
+        package: 'mobile',
+        type: 'api',
+        migrationMap: {
+          api: {
+            reduceHorizontalSpacing:
+              'Use the innerSpacing property with a key of spacingHorizontal instead',
+          },
+        },
+      },
     ],
     hooks: [
       {
