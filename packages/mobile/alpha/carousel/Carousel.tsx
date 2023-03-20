@@ -52,6 +52,8 @@ export type CarouselProps = {
   onDismissLastItem?: CarouselOnDismissLastItem;
   /** The width of each Carousel item. */
   itemWidth?: number;
+  /** Optional boolean to have the Carousel calculate the Carousel Item height */
+  autoHeight?: boolean;
 } & Omit<ScrollViewProps, 'style'> &
   SharedProps;
 
@@ -68,6 +70,7 @@ export const Carousel = memo(
         showProgress = false,
         showDismiss = false,
         itemWidth: itemWidthProp,
+        autoHeight = false,
         ...otherProps
       },
       forwardedRef,
@@ -158,6 +161,10 @@ export const Carousel = memo(
         };
       },
       []);
+
+      const memoizedStyles = useMemo(() => {
+        return [styles.carousel, autoHeight && styles.autoHeight];
+      }, [autoHeight]);
 
       /** Imperatively handling scrolling Carousel to an item. LayoutMap has the index to x coordinate mapping. */
       const scrollToId = useCallback(
@@ -276,7 +283,7 @@ export const Carousel = memo(
             scrollEventThrottle={1}
             showsHorizontalScrollIndicator={false}
             snapToInterval={itemWidth}
-            style={styles.carousel}
+            style={memoizedStyles}
             testID={testID}
             onScroll={onScroll}
             overScrollMode="always"
@@ -293,6 +300,10 @@ export const Carousel = memo(
 const styles = StyleSheet.create({
   carousel: {
     overflow: 'visible',
+  },
+  autoHeight: {
+    flex: 1,
+    flexShrink: 0,
   },
 });
 
