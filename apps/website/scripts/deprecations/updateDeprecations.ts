@@ -1,14 +1,118 @@
 import chalk from 'chalk';
 import fs from 'fs';
-import { objectKeys } from '@cbhq/script-utils';
+import { ColorScheme } from '@cbhq/cds-common';
+import { objectKeys, writePrettyFile } from '@cbhq/script-utils';
 
-import { Deprecation, deprecations } from './deprecations';
+import { Deprecation, deprecations, MigrationMap, MigrationType } from './deprecations';
 
 const templateStart = '<!-- template-start -->';
 const githubBaseUrl = 'https://github.cbhq.net/frontend/cds/blob/master';
 const deprecationsPagePath = 'apps/website/docs/resources/deprecations.mdx';
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 const fullPath = `${MONOREPO_ROOT}/${deprecationsPagePath}`;
+
+const typeColorMap: Record<MigrationType, ColorScheme> = {
+  api: 'blue',
+  renamed: 'green',
+  replaced: 'yellow',
+  path: 'gray',
+  removed: 'red',
+  propValue: 'purple',
+};
+
+const getTypes = (types: MigrationType | MigrationType[]) => {
+  const typeTags = [];
+  if (Array.isArray(types) && types.length > 1) {
+    typeTags.push('<>');
+    types.forEach((type: MigrationType) =>
+      typeTags.push(`  <Tag colorScheme="${typeColorMap[type]}">${type}</Tag>`),
+    );
+    typeTags.push('</>');
+  } else {
+    typeTags.push(
+      `<Tag colorScheme="${typeColorMap[Array.isArray(types) ? types[0] : types]}">${types}</Tag>`,
+    );
+  }
+  return typeTags.join('');
+};
+
+const migrationRecMap: Record<Exclude<MigrationType, 'removed'>, string> = {
+  api: 'The API has changed: ',
+  renamed: 'has been renamed to',
+  replaced: 'has been replaced with',
+  path: 'can now be imported from',
+  propValue: 'the value of this prop has been changed: ',
+};
+
+const getMigrationValue = (migrationMap: Partial<MigrationMap>, key: keyof MigrationMap) => {
+  if (key === 'api' || key === 'propValue') {
+    const formattedMap: string[] = ['<ul>'];
+    const migrationRecord = migrationMap[key];
+    if (migrationRecord) {
+      objectKeys(migrationRecord).forEach((prevValue) => {
+        const newValue = migrationRecord[prevValue];
+        if (newValue) {
+          formattedMap.push(
+            `  <li><code>${prevValue}</code> has been replaced with <code>${newValue}</code></li>`,
+          );
+        } else {
+          formattedMap.push(`  <li><code>${prevValue}</code> has been removed</li>`);
+        }
+      });
+    }
+    formattedMap.push('</ul>');
+    return formattedMap.join('\n');
+  }
+  return migrationMap[key];
+};
+
+const getMigrationRecommendation = (
+  migrationMap: Partial<MigrationMap> | undefined,
+  deprecation: string,
+) => {
+  const migrationRec: string[] = [];
+
+  if (migrationMap) {
+    objectKeys(migrationMap).forEach((key) => {
+      if (key === 'path') {
+        migrationRec.push(
+          `<p>${deprecation} ${migrationRecMap[key]} <a href="${githubBaseUrl}/${migrationMap[key]}" target="_blank">${migrationMap[key]}</a></p>`,
+        );
+      } else {
+        migrationRec.push(
+          `<p>${key === 'replaced' ? deprecation : ''} ${migrationRecMap[key]} ${getMigrationValue(
+            migrationMap,
+            key,
+          )}</p>`,
+        );
+      }
+    });
+  } else {
+    migrationRec.push(`<code>${deprecation}</code> has been removed from the CDS library.`);
+  }
+
+  return migrationRec.join('\n');
+};
+
+const formatDeprecationGuide = ({
+  name,
+  pkgName,
+  type,
+  guidance,
+}: {
+  name: string;
+  pkgName: string;
+  type: MigrationType | MigrationType[];
+  guidance: string;
+}) => {
+  return `<AccordionItem
+    itemKey="${name}.${pkgName}"
+    title={<HStack gap={1}>${name} ${getTypes(type)}</HStack>}
+    subtitle="@cbhq/cds-${pkgName}"
+  >
+    <VStack>${guidance}</VStack>
+  </AccordionItem>`;
+};
 
 function formatDeprecations(deprecationObj: Deprecation): string {
   const groups: Record<keyof Deprecation, string[]> = {
@@ -24,23 +128,46 @@ function formatDeprecations(deprecationObj: Deprecation): string {
 
   objectKeys(deprecationObj).forEach((key) => {
     if (key === 'props') {
-      deprecationObj.props?.forEach(({ name, components, package: pkgName }) => {
-        if (components.length > 1) {
+      groups.props.push('<Accordion>');
+      deprecationObj.props?.forEach(
+        ({ name, components, package: pkgName, type, migrationMap }) => {
           components.forEach((component) => {
-            groups.props.push(`- **[@cbhq/cds-${pkgName}]**: ${component}.${name}`);
+            groups.props.push(
+              formatDeprecationGuide({
+                name: `${component}.${name}`,
+                pkgName,
+                type,
+                // @ts-expect-error Not sure why this thinks it's a partial
+                migrationMap,
+                guidance: `${getMigrationRecommendation(migrationMap, name)}`,
+              }),
+            );
           });
-        } else {
-          groups.props.push(`- **[@cbhq/cds-${pkgName}]**: ${components[0]}.${name}`);
-        }
-      });
+        },
+      );
+      groups.props.push('</Accordion>');
       return;
     }
     if (key === 'params') {
-      deprecationObj.params?.forEach(({ function: func, params, package: pkgName, path }) => {
-        groups.params.push(
-          `- **[@cbhq/cds-${pkgName}]**: [${func}](${githubBaseUrl}/${path}): ${params.join(', ')}`,
-        );
-      });
+      groups.params.push('<Accordion>');
+      deprecationObj.params?.forEach(
+        ({ function: func, params, package: pkgName, path, type, migrationMap }) => {
+          params.forEach((param) => {
+            groups.params.push(
+              formatDeprecationGuide({
+                name: `${func}: ${param}`,
+                pkgName,
+                type,
+                // @ts-expect-error Not sure why this thinks it's a partial
+                migrationMap,
+                guidance: `<p>Original Path: <a href="${githubBaseUrl}/${path}" target="_blank">${path}</a></p>
+      <p>${getMigrationRecommendation(migrationMap, param)}</p>`,
+              }),
+            );
+          });
+        },
+      );
+      groups.params.push('</Accordion>');
       return;
     }
     if (key === 'endOfLife') {
@@ -48,9 +175,21 @@ function formatDeprecations(deprecationObj: Deprecation): string {
       return;
     }
     if (deprecationObj[key]?.length) {
-      deprecationObj[key]?.forEach(({ package: pkgName, name, path }) => {
-        groups[key].push(`- **[@cbhq/cds-${pkgName}]**: [${name}](${githubBaseUrl}/${path})`);
+      groups[key].push('<Accordion>');
+      deprecationObj[key]?.forEach(({ package: pkgName, name, path, type, migrationMap }) => {
+        groups[key].push(
+          formatDeprecationGuide({
+            name,
+            pkgName,
+            type,
+            // @ts-expect-error Not sure why this thinks it's a partial
+            migrationMap,
+            guidance: `<p>Original Path: <a href="${githubBaseUrl}/${path}" target="_blank">${path}</a></p>
+              <p>${getMigrationRecommendation(migrationMap, name)}</p>`,
+          }),
+        );
       });
+      groups[key].push('</Accordion>');
     }
   });
 
@@ -77,8 +216,8 @@ async function updateDeprecations() {
   contents = contents.replace(`${templateStart}`, `${templateStart}\n\n${formattedDeprecations}`);
 
   try {
-    await fs.promises.writeFile(fullPath, contents);
-    console.log('Success! The Deprecations page has been updated.');
+    await writePrettyFile(fullPath, contents);
+    console.log(chalk.green('Success! The Deprecations page has been updated.'));
   } catch (error) {
     console.error(chalk.red(`FAILED: ${error}`));
   }

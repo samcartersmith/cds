@@ -3,11 +3,16 @@ title: Deprecations
 slug: /resources/deprecations
 ---
 
+import { Tag } from '@cbhq/cds-web/tag/Tag';
+import { AccordionItem } from '@cbhq/cds-web/accordion/AccordionItem';
+import { Accordion } from '@cbhq/cds-web/accordion/Accordion';
+import { VStack, HStack } from '@cbhq/cds-web/layout';
+
 # Deprecations
 
 Deprecations will be deleted at the end of each quarter in a breaking release. The previous two major releases will enter maintenance mode and will be patched as needed.
 
-Resources for how to migrate deprecations, workarounds, and documentation is forthcoming in Q12023.
+Resources for how to migrate deprecations, workarounds, and documentation are forthcoming in Q12023.
 
 <!-- DO NOT MODIFY below this line, this is codegen -->
 <!-- You can update this page by deleting everything below the `template-start` comment and run `yarn nx run website:deprecations` -->
@@ -19,97 +24,1890 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
 
 ### 🧱 Components
 
-- **[@cbhq/cds-web]**: [Badge](https://github.cbhq.net/frontend/cds/blob/master/packages/web/icons/Badge.tsx)
-- **[@cbhq/cds-mobile]**: [Badge](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/icons/Badge.tsx)
-- **[@cbhq/cds-web]**: [Tooltip V1](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/Deprecated/Tooltip.tsx)
-- **[@cbhq/cds-web]**: [Card (changed directory)](https://github.cbhq.net/frontend/cds/blob/master/packages/web/layout/Card.tsx)
-- **[@cbhq/cds-mobile]**: [Card (changed directory)](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/layout/Card.tsx)
-- **[@cbhq/cds-web]**: [CollapseArrow](https://github.cbhq.net/frontend/cds/blob/master/packages/web/collapsible/CollapseArrow.tsx)
-- **[@cbhq/cds-common]**: [BetaProvider](https://github.cbhq.net/frontend/cds/blob/master/packages/common/beta/BetaProvider.tsx)
-- **[@cbhq/cds-common]**: [BetaContext](https://github.cbhq.net/frontend/cds/blob/master/packages/common/beta/BetaContext.tsx)
-- **[@cbhq/cds-web]**: [MobileMenu](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/MobileMenu.tsx)
-- **[@cbhq/cds-web]**: [MobileMenuChildrenContext](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/MobileMenuChildrenContext.tsx)
-- **[@cbhq/cds-web]**: [Navigation](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/Navigation.tsx)
-- **[@cbhq/cds-web]**: [NavigationBar](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBar.tsx)
-- **[@cbhq/cds-web]**: [NavigationBarActions](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBarActions.tsx)
-- **[@cbhq/cds-web]**: [NavigationBarControls](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBarControls.tsx)
-- **[@cbhq/cds-web]**: [NavigationBarCtas](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBarCtas.tsx)
-- **[@cbhq/cds-web]**: [NavigationBarTitles](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBarTitles.tsx)
-- **[@cbhq/cds-web]**: [NavigationDisplayTitle](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationDisplayTitle.tsx)
-- **[@cbhq/cds-web]**: [NavigationIconButton](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationIconButton.tsx)
-- **[@cbhq/cds-web]**: [NavigationListItem](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationListItem.tsx)
-- **[@cbhq/cds-web]**: [Sidebar](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/Sidebar.tsx)
-- **[@cbhq/cds-web]**: [SidebarSection](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/SidebarSection.tsx)
-- **[@cbhq/cds-web]**: [TabItem](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/TabItem.tsx)
-- **[@cbhq/cds-web]**: [Tabs](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/Tabs.tsx)
-- **[@cbhq/cds-web]**: [MenuItem](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/MenuItem.tsx)
-- **[@cbhq/cds-web]**: [PopoverContent](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverContent.tsx)
-- **[@cbhq/cds-web]**: [PopoverContext](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverContext.ts)
-- **[@cbhq/cds-web]**: [PopoverMenu](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverMenu.tsx)
-- **[@cbhq/cds-web]**: [PopoverTrigger](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverTrigger.tsx)
-- **[@cbhq/cds-web]**: [PopoverTriggerWrapper](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverTriggerWrapper.tsx)
-- **[@cbhq/cds-web]**: [SectionTitle](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/SectionTitle.tsx)
-- **[@cbhq/cds-web]**: [usePopoverChildren](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/usePopoverChildren.ts)
-- **[@cbhq/cds-web]**: [usePopoverMenu](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/usePopoverMenu.tsx)
-- **[@cbhq/cds-web]**: [usePopoverMenuAnimation](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/usePopoverMenuAnimation.ts)
-- **[@cbhq/cds-web]**: [usePopoverPosition](https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/usePopoverPosition.ts)
-- **[@cbhq/cds-web]**: [Illustration](https://github.cbhq.net/frontend/cds/blob/master/packages/web/illustrations/Illustration.tsx)
-- **[@cbhq/cds-web]**: [Illustration](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/illustrations/Illustration.tsx)
+<Accordion>
+  <AccordionItem
+    itemKey="Badge.web"
+    title={
+      <HStack gap={1}>
+        Badge <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/icons/Badge.tsx"
+          target="_blank"
+        >
+          packages/web/icons/Badge.tsx
+        </a>
+      </p>
+      <p>
+        <p>Badge has been replaced with DotCount, DotColor, DotSymbol</p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Badge.mobile"
+    title={
+      <HStack gap={1}>
+        Badge <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/icons/Badge.tsx"
+          target="_blank"
+        >
+          packages/mobile/icons/Badge.tsx
+        </a>
+      </p>
+      <p>
+        <p>Badge has been replaced with DotCount, DotColor, DotSymbol</p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Tooltip V1.web"
+    title={
+      <HStack gap={1}>
+        Tooltip V1 <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/Deprecated/Tooltip.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/Deprecated/Tooltip.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          Tooltip V1 can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/Tooltip.tsx"
+            target="_blank"
+          >
+            packages/web/overlays/Tooltip.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Card.web"
+    title={
+      <HStack gap={1}>
+        Card <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/layout/Card.tsx"
+          target="_blank"
+        >
+          packages/web/layout/Card.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          Card can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/cards/Card.tsx"
+            target="_blank"
+          >
+            packages/web/cards/Card.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Card.mobile"
+    title={
+      <HStack gap={1}>
+        Card <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/layout/Card.tsx"
+          target="_blank"
+        >
+          packages/mobile/layout/Card.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          Card can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/cards/Card.tsx"
+            target="_blank"
+          >
+            packages/web/cards/Card.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="CollapseArrow.web"
+    title={
+      <HStack gap={1}>
+        CollapseArrow{' '}
+        <>
+          {' '}
+          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="blue">api</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/collapsible/CollapseArrow.tsx"
+          target="_blank"
+        >
+          packages/web/collapsible/CollapseArrow.tsx
+        </a>
+      </p>
+      <p>
+        <p>CollapseArrow has been replaced with AnimatedCaret</p>
+        <p>
+          {' '}
+          The API has changed: <ul>
+            <li>
+              <code>degrees</code> has been replaced with <code>rotate</code>
+            </li>
+            <li>
+              <code>collapsed</code> has been removed
+            </li>
+          </ul>
+        </p>
+        <p>
+          CollapseArrow can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/motion/AnimatedCaret.tsx"
+            target="_blank"
+          >
+            packages/web/motion/AnimatedCaret.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="BetaProvider.common"
+    title={
+      <HStack gap={1}>
+        BetaProvider <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/beta/BetaProvider.tsx"
+          target="_blank"
+        >
+          packages/common/beta/BetaProvider.tsx
+        </a>
+      </p>
+      <p>
+        <p>BetaProvider has been replaced with FeatureFlagProvider</p>
+        <p>
+          BetaProvider can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/system/FeatureFlagProvider.tsx"
+            target="_blank"
+          >
+            packages/web/system/FeatureFlagProvider.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="BetaContext.common"
+    title={
+      <HStack gap={1}>
+        BetaContext <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/beta/BetaContext.tsx"
+          target="_blank"
+        >
+          packages/common/beta/BetaContext.tsx
+        </a>
+      </p>
+      <p>
+        <p>BetaContext has been replaced with FeatureFlagContext</p>
+        <p>
+          BetaContext can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/system/FeatureFlagContext.tsx"
+            target="_blank"
+          >
+            packages/web/system/FeatureFlagContext.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="MobileMenu.web"
+    title={
+      <HStack gap={1}>
+        MobileMenu <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/MobileMenu.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/MobileMenu.tsx
+        </a>
+      </p>
+      <p>
+        <code>MobileMenu</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="MobileMenuChildrenContext.web"
+    title={
+      <HStack gap={1}>
+        MobileMenuChildrenContext <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/MobileMenuChildrenContext.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/MobileMenuChildrenContext.tsx
+        </a>
+      </p>
+      <p>
+        <code>MobileMenuChildrenContext</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Navigation.web"
+    title={
+      <HStack gap={1}>
+        Navigation <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/Navigation.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/Navigation.tsx
+        </a>
+      </p>
+      <p>
+        <code>Navigation</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="NavigationBar.web"
+    title={
+      <HStack gap={1}>
+        NavigationBar{' '}
+        <>
+          {' '}
+          <Tag colorScheme="gray">path</Tag> <Tag colorScheme="blue">api</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBar.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/NavigationBar.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          NavigationBar can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/navigation/NavigationBar.tsx"
+            target="_blank"
+          >
+            packages/web/navigation/NavigationBar.tsx
+          </a>
+        </p>
+        <p>
+          {' '}
+          The API has changed: <ul>
+            <li>
+              <code>controls</code> has been removed
+            </li>
+            <li>
+              <code>titles</code> has been removed
+            </li>
+            <li>
+              <code>ctas</code> has been removed
+            </li>
+            <li>
+              <code>actions</code> has been removed
+            </li>
+            <li>
+              <code>animatedOpacity</code> has been removed
+            </li>
+          </ul>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="NavigationBarActions.web"
+    title={
+      <HStack gap={1}>
+        NavigationBarActions <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBarActions.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/NavigationBarActions.tsx
+        </a>
+      </p>
+      <p>
+        <code>NavigationBarActions</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="NavigationBarControls.web"
+    title={
+      <HStack gap={1}>
+        NavigationBarControls <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBarControls.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/NavigationBarControls.tsx
+        </a>
+      </p>
+      <p>
+        <code>NavigationBarControls</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="NavigationBarCtas.web"
+    title={
+      <HStack gap={1}>
+        NavigationBarCtas <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBarCtas.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/NavigationBarCtas.tsx
+        </a>
+      </p>
+      <p>
+        <code>NavigationBarCtas</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="NavigationBarTitles.web"
+    title={
+      <HStack gap={1}>
+        NavigationBarTitles <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationBarTitles.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/NavigationBarTitles.tsx
+        </a>
+      </p>
+      <p>
+        <code>NavigationBarTitles</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="NavigationDisplayTitle.web"
+    title={
+      <HStack gap={1}>
+        NavigationDisplayTitle <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationDisplayTitle.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/NavigationDisplayTitle.tsx
+        </a>
+      </p>
+      <p>
+        <code>NavigationDisplayTitle</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="NavigationIconButton.web"
+    title={
+      <HStack gap={1}>
+        NavigationIconButton{' '}
+        <>
+          {' '}
+          <Tag colorScheme="gray">path</Tag> <Tag colorScheme="blue">api</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationIconButton.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/NavigationIconButton.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          NavigationIconButton can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/buttons/NavigationIconButton.tsx"
+            target="_blank"
+          >
+            packages/web/buttons/NavigationIconButton.tsx
+          </a>
+        </p>
+        <p>
+          {' '}
+          The API has changed: <ul>
+            <li>
+              <code>label</code> has been removed
+            </li>
+          </ul>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="NavigationListItem.web"
+    title={
+      <HStack gap={1}>
+        NavigationListItem <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/NavigationListItem.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/NavigationListItem.tsx
+        </a>
+      </p>
+      <p>
+        <code>NavigationListItem</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Sidebar.web"
+    title={
+      <HStack gap={1}>
+        Sidebar <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/Sidebar.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/Sidebar.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          Sidebar can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/navigation/Sidebar.tsx"
+            target="_blank"
+          >
+            packages/web/navigation/Sidebar.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SidebarSection.web"
+    title={
+      <HStack gap={1}>
+        SidebarSection <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/SidebarSection.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/SidebarSection.tsx
+        </a>
+      </p>
+      <p>
+        <code>SidebarSection</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="TabItem.web"
+    title={
+      <HStack gap={1}>
+        TabItem <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/TabItem.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/TabItem.tsx
+        </a>
+      </p>
+      <p>
+        <code>TabItem</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Tabs.web"
+    title={
+      <HStack gap={1}>
+        Tabs <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/Tabs.tsx"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/Tabs.tsx
+        </a>
+      </p>
+      <p>
+        <p>Tabs has been replaced with TabNavigation</p>
+        <p>
+          Tabs can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/tabs/TabNavigation.tsx"
+            target="_blank"
+          >
+            packages/web/tabs/TabNavigation.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="MenuItem.web"
+    title={
+      <HStack gap={1}>
+        MenuItem <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/MenuItem.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/MenuItem.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          MenuItem can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/dropdown/MenuItem.tsx"
+            target="_blank"
+          >
+            packages/web/dropdown/MenuItem.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="PopoverContent.web"
+    title={
+      <HStack gap={1}>
+        PopoverContent <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverContent.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/PopoverContent.tsx
+        </a>
+      </p>
+      <p>
+        <code>PopoverContent</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="PopoverContext.web"
+    title={
+      <HStack gap={1}>
+        PopoverContext <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverContext.ts"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/PopoverContext.ts
+        </a>
+      </p>
+      <p>
+        <code>PopoverContext</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="PopoverMenu.web"
+    title={
+      <HStack gap={1}>
+        PopoverMenu <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverMenu.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/PopoverMenu.tsx
+        </a>
+      </p>
+      <p>
+        <p>PopoverMenu has been replaced with Dropdown</p>
+        <p>
+          PopoverMenu can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/dropdown/Dropdown.tsx"
+            target="_blank"
+          >
+            packages/web/dropdown/Dropdown.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="PopoverTrigger.web"
+    title={
+      <HStack gap={1}>
+        PopoverTrigger <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverTrigger.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/PopoverTrigger.tsx
+        </a>
+      </p>
+      <p>
+        <code>PopoverTrigger</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="PopoverTriggerWrapper.web"
+    title={
+      <HStack gap={1}>
+        PopoverTriggerWrapper <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/PopoverTriggerWrapper.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/PopoverTriggerWrapper.tsx
+        </a>
+      </p>
+      <p>
+        <code>PopoverTriggerWrapper</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SectionTitle.web"
+    title={
+      <HStack gap={1}>
+        SectionTitle <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/SectionTitle.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/SectionTitle.tsx
+        </a>
+      </p>
+      <p>
+        <code>SectionTitle</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="usePopoverChildren.web"
+    title={
+      <HStack gap={1}>
+        usePopoverChildren <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/usePopoverChildren.ts"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/usePopoverChildren.ts
+        </a>
+      </p>
+      <p>
+        <code>usePopoverChildren</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="usePopoverMenu.web"
+    title={
+      <HStack gap={1}>
+        usePopoverMenu <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/usePopoverMenu.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/usePopoverMenu.tsx
+        </a>
+      </p>
+      <p>
+        <code>usePopoverMenu</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="usePopoverMenuAnimation.web"
+    title={
+      <HStack gap={1}>
+        usePopoverMenuAnimation <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/usePopoverMenuAnimation.ts"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/usePopoverMenuAnimation.ts
+        </a>
+      </p>
+      <p>
+        <code>usePopoverMenuAnimation</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="usePopoverPosition.web"
+    title={
+      <HStack gap={1}>
+        usePopoverPosition <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/overlays/PopoverMenu/usePopoverPosition.ts"
+          target="_blank"
+        >
+          packages/web/overlays/PopoverMenu/usePopoverPosition.ts
+        </a>
+      </p>
+      <p>
+        <code>usePopoverPosition</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
 
 ### 🔐 Types
 
-- **[@cbhq/cds-common]**: [BadgeBaseProps](https://github.cbhq.net/frontend/cds/blob/master/packages/common/types/BadgeBaseProps.ts)
-- **[@cbhq/cds-common]**: [BadgeDotBaseProps](https://github.cbhq.net/frontend/cds/blob/master/packages/common/types/BadgeDotBaseProps.ts)
+<Accordion>
+  <AccordionItem
+    itemKey="BadgeBaseProps.common"
+    title={
+      <HStack gap={1}>
+        BadgeBaseProps <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/types/BadgeBaseProps.ts"
+          target="_blank"
+        >
+          packages/common/types/BadgeBaseProps.ts
+        </a>
+      </p>
+      <p>
+        <code>BadgeBaseProps</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="BadgeDotBaseProps.common"
+    title={
+      <HStack gap={1}>
+        BadgeDotBaseProps <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/types/BadgeDotBaseProps.ts"
+          target="_blank"
+        >
+          packages/common/types/BadgeDotBaseProps.ts
+        </a>
+      </p>
+      <p>
+        <code>BadgeDotBaseProps</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
 
 ### 🎭 Props
 
-- **[@cbhq/cds-mobile]**: IconBase.badge
-- **[@cbhq/cds-web]**: IconBase.badge
-- **[@cbhq/cds-mobile]**: createText.deprecatedLineHeight
-- **[@cbhq/cds-web]**: TableCell.dangerouslySetHtmlWidth
-- **[@cbhq/cds-web]**: Group.horizontal
-- **[@cbhq/cds-mobile]**: Group.horizontal
-- **[@cbhq/cds-common]**: announcementCardBuilder.horizontal
-- **[@cbhq/cds-common]**: featureEntryCardBuilder.horizontal
-- **[@cbhq/cds-common]**: feedCardBuilder.horizontal
-- **[@cbhq/cds-common]**: cardGroupBuilder.horizontal
-- **[@cbhq/cds-web]**: Illustration.dimension
-- **[@cbhq/cds-web]**: HeroSquare.dimension
-- **[@cbhq/cds-web]**: SpotSquare.dimension
-- **[@cbhq/cds-web]**: Pictogram.dimension
-- **[@cbhq/cds-web]**: SpotRectangle.dimension
-- **[@cbhq/cds-mobile]**: Illustration.dimension
-- **[@cbhq/cds-mobile]**: HeroSquare.dimension
-- **[@cbhq/cds-mobile]**: SpotSquare.dimension
-- **[@cbhq/cds-mobile]**: Pictogram.dimension
-- **[@cbhq/cds-mobile]**: SpotRectangle.dimension
+<Accordion>
+  <AccordionItem
+    itemKey="IconBase.badge.mobile"
+    title={
+      <HStack gap={1}>
+        IconBase.badge <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <code>badge</code> has been removed from the CDS library.
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="IconBase.badge.web"
+    title={
+      <HStack gap={1}>
+        IconBase.badge <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <code>badge</code> has been removed from the CDS library.
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="createText.deprecatedLineHeight.mobile"
+    title={
+      <HStack gap={1}>
+        createText.deprecatedLineHeight <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <code>deprecatedLineHeight</code> has been removed from the CDS library.
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="TableCell.dangerouslySetHtmlWidth.web"
+    title={
+      <HStack gap={1}>
+        TableCell.dangerouslySetHtmlWidth <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <code>dangerouslySetHtmlWidth</code> has been removed from the CDS library.
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Group.horizontal.web"
+    title={
+      <HStack gap={1}>
+        Group.horizontal <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>horizontal</code> has been replaced with <code>direction</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Group.horizontal.mobile"
+    title={
+      <HStack gap={1}>
+        Group.horizontal <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>horizontal</code> has been replaced with <code>direction</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="announcementCardBuilder.horizontal.common"
+    title={
+      <HStack gap={1}>
+        announcementCardBuilder.horizontal <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>horizontal</code> has been replaced with <code>direction</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="featureEntryCardBuilder.horizontal.common"
+    title={
+      <HStack gap={1}>
+        featureEntryCardBuilder.horizontal <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>horizontal</code> has been replaced with <code>direction</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="feedCardBuilder.horizontal.common"
+    title={
+      <HStack gap={1}>
+        feedCardBuilder.horizontal <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>horizontal</code> has been replaced with <code>direction</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="cardGroupBuilder.horizontal.common"
+    title={
+      <HStack gap={1}>
+        cardGroupBuilder.horizontal <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>horizontal</code> has been replaced with <code>direction</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SpotSquare.dimension.web"
+    title={
+      <HStack gap={1}>
+        SpotSquare.dimension <Tag colorScheme="purple">propValue</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        {' '}
+        the value of this prop has been changed: <ul>
+          <li>
+            <code>120x120</code> has been replaced with <code>96x96</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Pictogram.dimension.web"
+    title={
+      <HStack gap={1}>
+        Pictogram.dimension <Tag colorScheme="purple">propValue</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        {' '}
+        the value of this prop has been changed: <ul>
+          <li>
+            <code>96x96</code> has been replaced with <code>64x64</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SpotSquare.dimension.mobile"
+    title={
+      <HStack gap={1}>
+        SpotSquare.dimension <Tag colorScheme="purple">propValue</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        {' '}
+        the value of this prop has been changed: <ul>
+          <li>
+            <code>120x120</code> has been replaced with <code>96x96</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Pictogram.dimension.mobile"
+    title={
+      <HStack gap={1}>
+        Pictogram.dimension <Tag colorScheme="purple">propValue</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        {' '}
+        the value of this prop has been changed: <ul>
+          <li>
+            <code>96x96</code> has been replaced with <code>64x64</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
 
 ### 🪝 Hooks
 
-- **[@cbhq/cds-common]**: [useBadge](https://github.cbhq.net/frontend/cds/blob/master/packages/common/hooks/useBadge.ts)
-- **[@cbhq/cds-common]**: [useBeta](https://github.cbhq.net/frontend/cds/blob/master/packages/common/beta/useBeta.tsx)
-- **[@cbhq/cds-common]**: [useIsMobile](https://github.cbhq.net/frontend/cds/blob/master/packages/web/hooks/useIsMobile.ts)
+<Accordion>
+  <AccordionItem
+    itemKey="useBadge.common"
+    title={
+      <HStack gap={1}>
+        useBadge <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/hooks/useBadge.ts"
+          target="_blank"
+        >
+          packages/common/hooks/useBadge.ts
+        </a>
+      </p>
+      <p>
+        <code>useBadge</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useBeta.common"
+    title={
+      <HStack gap={1}>
+        useBeta <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/beta/useBeta.tsx"
+          target="_blank"
+        >
+          packages/common/beta/useBeta.tsx
+        </a>
+      </p>
+      <p>
+        <code>useBeta</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useIsMobile.common"
+    title={
+      <HStack gap={1}>
+        useIsMobile <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/hooks/useIsMobile.ts"
+          target="_blank"
+        >
+          packages/web/hooks/useIsMobile.ts
+        </a>
+      </p>
+      <p>
+        <p>useIsMobile has been replaced with useBreakpoints</p>
+        <p>
+          useIsMobile can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/hooks/useBreakpoints.ts"
+            target="_blank"
+          >
+            packages/web/hooks/useBreakpoints.ts
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
 
 ### 🪙 Tokens
 
-- **[@cbhq/cds-common]**: [motion](https://github.cbhq.net/frontend/cds/blob/master/packages/common/tokens/motion.ts)
-- **[@cbhq/cds-web]**: [navigationStyles](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/navigationStyles.ts)
-- **[@cbhq/cds-web]**: [navigationTokens](https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/navigationTokens.ts)
-- **[@cbhq/cds-web]**: [borderRadius](https://github.cbhq.net/frontend/cds/blob/master/packages/web/styles/borderRadius.ts)
-- **[@cbhq/cds-web]**: [responsive](https://github.cbhq.net/frontend/cds/blob/master/packages/web/layout/responsive.ts)
-- **[@cbhq/cds-web]**: [elevation](https://github.cbhq.net/frontend/cds/blob/master/packages/web/styles/elevation.ts)
-- **[@cbhq/cds-common]**: [border](https://github.cbhq.net/frontend/cds/blob/master/packages/common/tokens/border.ts)
-- **[@cbhq/cds-common]**: [interactable](https://github.cbhq.net/frontend/cds/blob/master/packages/common/tokens/interactable.ts)
+<Accordion>
+  <AccordionItem
+    itemKey="motion.common"
+    title={
+      <HStack gap={1}>
+        motion <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/tokens/motion.ts"
+          target="_blank"
+        >
+          packages/common/tokens/motion.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          motion can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/motion/tokens.ts"
+            target="_blank"
+          >
+            packages/common/motion/tokens.ts
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="navigationStyles.web"
+    title={
+      <HStack gap={1}>
+        navigationStyles <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/navigationStyles.ts"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/navigationStyles.ts
+        </a>
+      </p>
+      <p>
+        <code>navigationStyles</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="navigationTokens.web"
+    title={
+      <HStack gap={1}>
+        navigationTokens <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/deprecated/navigation/navigationTokens.ts"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/navigationTokens.ts
+        </a>
+      </p>
+      <p>
+        <code>navigationTokens</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="borderRadius.web"
+    title={
+      <HStack gap={1}>
+        borderRadius <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/styles/borderRadius.ts"
+          target="_blank"
+        >
+          packages/web/styles/borderRadius.ts
+        </a>
+      </p>
+      <p>
+        <p>borderRadius has been replaced with Use rounded border radius variables instead</p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="responsive.web"
+    title={
+      <HStack gap={1}>
+        responsive{' '}
+        <>
+          {' '}
+          <Tag colorScheme="gray">path</Tag> <Tag colorScheme="yellow">replaced</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/layout/responsive.ts"
+          target="_blank"
+        >
+          packages/web/layout/responsive.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          responsive can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/layout/breakpoints.ts"
+            target="_blank"
+          >
+            packages/web/layout/breakpoints.ts
+          </a>
+        </p>
+        <p>
+          responsive has been replaced with Use deviceBreakpoints, deviceMqs, and deviceMqRanges
+          instead
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="elevation.web"
+    title={
+      <HStack gap={1}>
+        elevation <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/styles/elevation.ts"
+          target="_blank"
+        >
+          packages/web/styles/elevation.ts
+        </a>
+      </p>
+      <p>
+        <code>elevation</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="border.common"
+    title={
+      <HStack gap={1}>
+        border <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/tokens/border.ts"
+          target="_blank"
+        >
+          packages/common/tokens/border.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          border can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/Use tokens/borderWidth and tokens/borderRadius respectively"
+            target="_blank"
+          >
+            Use tokens/borderWidth and tokens/borderRadius respectively
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="interactable.common"
+    title={
+      <HStack gap={1}>
+        interactable <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/tokens/interactable.ts"
+          target="_blank"
+        >
+          packages/common/tokens/interactable.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          interactable has been replaced with Use tokens/interatableHeight variables instead, and
+          opacityDisabled -> accessibleOpacityDisabled
+        </p>
+        <p>
+          interactable can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/tokens/interactableHeight.ts"
+            target="_blank"
+          >
+            packages/common/tokens/interactableHeight.ts
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
 
 ### 👨‍💻 Functions
 
-- **[@cbhq/cds-common]**: [buttonBuilderDeprecated](https://github.cbhq.net/frontend/cds/blob/master/packages/common/internal/buttonBuilderDeprecated.tsx)
-- **[@cbhq/cds-web]**: [Animated](https://github.cbhq.net/frontend/cds/blob/master/packages/web/animation/Animated.ts)
-- **[@cbhq/cds-common]**: [getButtonSpacing](https://github.cbhq.net/frontend/cds/blob/master/packages/common/utils/getButtonSpacing.ts)
-- **[@cbhq/cds-common]**: [getIllustrationScaledDimension](https://github.cbhq.net/frontend/cds/blob/master/packages/common/utils/getIllustrationScaledDimension.ts)
-- **[@cbhq/cds-common]**: [createAnnouncementCardDeprecated](https://github.cbhq.net/frontend/cds/blob/master/packages/common/cards/createAnnouncementCardDeprecated.tsx)
-- **[@cbhq/cds-common]**: [createFeatureEntryCardDeprecated](https://github.cbhq.net/frontend/cds/blob/master/packages/common/cards/createFeatureEntryCardDeprecated.tsx)
+<Accordion>
+  <AccordionItem
+    itemKey="buttonBuilderDeprecated.common"
+    title={
+      <HStack gap={1}>
+        buttonBuilderDeprecated{' '}
+        <>
+          {' '}
+          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">path</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/internal/buttonBuilderDeprecated.tsx"
+          target="_blank"
+        >
+          packages/common/internal/buttonBuilderDeprecated.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          buttonBuilderDeprecated can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/internal/buttonBuilder.ts"
+            target="_blank"
+          >
+            packages/common/internal/buttonBuilder.ts
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Animated.web"
+    title={
+      <HStack gap={1}>
+        Animated <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/animation/Animated.ts"
+          target="_blank"
+        >
+          packages/web/animation/Animated.ts
+        </a>
+      </p>
+      <p>
+        <p>Animated has been replaced with use useMotionProps and Framer Motion instead</p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="getButtonSpacing.common"
+    title={
+      <HStack gap={1}>
+        getButtonSpacing{' '}
+        <>
+          {' '}
+          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">path</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/utils/getButtonSpacing.ts"
+          target="_blank"
+        >
+          packages/common/utils/getButtonSpacing.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          getButtonSpacing can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/utils/getButtonSpacingProps.ts"
+            target="_blank"
+          >
+            packages/common/utils/getButtonSpacingProps.ts
+          </a>
+        </p>
+        <p>getButtonSpacing has been replaced with getButtonSpacingProps</p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="getIllustrationScaledDimension.common"
+    title={
+      <HStack gap={1}>
+        getIllustrationScaledDimension <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/utils/getIllustrationScaledDimension.ts"
+          target="_blank"
+        >
+          packages/common/utils/getIllustrationScaledDimension.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          getIllustrationScaledDimension has been replaced with Please use convertDimensionToSize
+          and convertSizeWithMultiplier instead
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="createAnnouncementCardDeprecated.common"
+    title={
+      <HStack gap={1}>
+        createAnnouncementCardDeprecated{' '}
+        <>
+          {' '}
+          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">path</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/cards/createAnnouncementCardDeprecated.tsx"
+          target="_blank"
+        >
+          packages/common/cards/createAnnouncementCardDeprecated.tsx
+        </a>
+      </p>
+      <p>
+        <p>createAnnouncementCardDeprecated has been replaced with createAnnouncementCard</p>
+        <p>
+          createAnnouncementCardDeprecated can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/cards/createAnnouncementCard.tsx"
+            target="_blank"
+          >
+            packages/common/cards/createAnnouncementCard.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="createFeatureEntryCardDeprecated.common"
+    title={
+      <HStack gap={1}>
+        createFeatureEntryCardDeprecated{' '}
+        <>
+          {' '}
+          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">path</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/cards/createFeatureEntryCardDeprecated.tsx"
+          target="_blank"
+        >
+          packages/common/cards/createFeatureEntryCardDeprecated.tsx
+        </a>
+      </p>
+      <p>
+        <p>createFeatureEntryCardDeprecated has been replaced with createFeatureEntryCard</p>
+        <p>
+          createFeatureEntryCardDeprecated can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/cards/createFeatureEntryCard.tsx"
+            target="_blank"
+          >
+            packages/common/cards/createFeatureEntryCard.tsx
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
 
 ### 🏗️ Params
 
-- **[@cbhq/cds-common]**: [useCellSpacing](https://github.cbhq.net/frontend/cds/blob/master/packages/common/hooks/useCellSpacing.ts): reduceHorizontalSpacing, offsetHorizontal
+<Accordion>
+  <AccordionItem
+    itemKey="useCellSpacing: reduceHorizontalSpacing.common"
+    title={
+      <HStack gap={1}>
+        useCellSpacing: reduceHorizontalSpacing <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/hooks/useCellSpacing.ts"
+          target="_blank"
+        >
+          packages/common/hooks/useCellSpacing.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          {' '}
+          The API has changed: <ul>
+            <li>
+              <code>reduceHorizontalSpacing</code> has been replaced with{' '}
+              <code>Use the innerSpacing property with a key of spacingHorizontal instead</code>
+            </li>
+            <li>
+              <code>offsetHorizontal</code> has been replaced with{' '}
+              <code>Use the outerSpacing property with a key of offsetHorizontal instead</code>
+            </li>
+          </ul>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useCellSpacing: offsetHorizontal.common"
+    title={
+      <HStack gap={1}>
+        useCellSpacing: offsetHorizontal <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/common/hooks/useCellSpacing.ts"
+          target="_blank"
+        >
+          packages/common/hooks/useCellSpacing.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          {' '}
+          The API has changed: <ul>
+            <li>
+              <code>reduceHorizontalSpacing</code> has been replaced with{' '}
+              <code>Use the innerSpacing property with a key of spacingHorizontal instead</code>
+            </li>
+            <li>
+              <code>offsetHorizontal</code> has been replaced with{' '}
+              <code>Use the outerSpacing property with a key of offsetHorizontal instead</code>
+            </li>
+          </ul>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
