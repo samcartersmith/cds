@@ -8,9 +8,11 @@ module.exports = {
     '<rootDir>/storybook-decorators',
     '.stories.tsx',
     '__stories__',
+    '.perf-test',
     /* deprecated */
     '<rootDir>/icons/Badge.tsx',
     '<rootDir>/animation/Animated.ts',
     '<rootDir>/collapsible/CollapseArrow.tsx',
   ],
+  testMatch: ['**//**/*.test.(ts|tsx)'],
 };

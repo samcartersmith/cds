@@ -118,6 +118,34 @@
         "dangerfile": "libs/dangerfiles/dangerfile-coverage.ts",
         "timeoutSeconds": 30
       }
+    },
+    "perf-test-clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "jest --clearCache"
+        ]
+      }
+    },
+    "perf-test": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "outputs": [
+        ".reassure"
+      ],
+      "options": {
+        "script": "../../node_modules/.bin/reassure",
+        "root": "/packages/web"
+      },
+      "env": {
+        "NX_BAN_LOGS": false,
+        "TEST_RUNNER_PATH": "../../node_modules/.bin/jest",
+        "TEST_RUNNER_ARGS": "--detectOpenHandles --runInBand --forceExit --testMatch \"<rootDir>/**/(*.)perf-test.[jt]s?(x)\"",
+        "TARGET_ENV": "perf_test_js"
+      },
+      "dependsOn": [
+        "^build",
+        "perf-test-clean"
+      ]
     }
   }
 }

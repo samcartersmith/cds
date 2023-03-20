@@ -57,6 +57,20 @@ module.exports = {
         'jest/globals': true,
       },
     },
+    // Performance tests w/Reassure
+    {
+      files: ['**/*.perf-test.tsx'],
+      rules: {
+        '@cbhq/no-misnamed-test-file': 'off',
+        'jest/expect-expect': [
+          'error',
+          {
+            assertFunctionNames: ['expect', 'measurePerformance'],
+            additionalTestBlockFunctions: [],
+          },
+        ],
+      },
+    },
   ],
   rules: {
     // All following rules were disabled as a result of the @cbhq/eslint plugin upgrade: https://github.cbhq.net/frontend/cds/pull/1557

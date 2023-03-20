@@ -140,5 +140,22 @@
       ""
     ],
     "description": "Boilerplate for a storybook story"
+  },
+  "perfTest": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": "perf-test",
+    "body": [
+      "import { measurePerformance } from 'reassure';",
+      "",
+      "import { ${1:component} } from '../${TM_FILENAME_BASE/(.perf-test)//}';",
+      "",
+      "describe('${1:component} performance test', () => {",
+      "  it('renders', async () => {",
+      "    await measurePerformance(<${1:component} />);",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Boilerplate for component performance test"
   }
 }

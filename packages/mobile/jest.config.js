@@ -1,5 +1,10 @@
 module.exports = {
-  coveragePathIgnorePatterns: ['<rootDir>/illustrations/images', '.stories.tsx', '__stories__'],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/illustrations/images',
+    '.stories.tsx',
+    '__stories__',
+    '.perf-test',
+  ],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
   displayName: 'mobile',
   preset: '@cbhq/jest-preset-mobile',
