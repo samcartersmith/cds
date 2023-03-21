@@ -4,6 +4,7 @@ secure:
     - master
     - alpha-fabric-arch
     - release-5.0.0.rc1
+    - release-5.0.0-rc.x
     - deprecations-q12023
 build:
   engines:
