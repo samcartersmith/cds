@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.0-rc.1 (3/17/2023 PST)
+
+#### 💥 Breaking
+
+- Removed visreg into ui-mobile-visreg package. [[#1810](https://github.cbhq.net/frontend/cds/pull/1810)]
+
 ## 0.3.5 (11/7/2022 PST)
 
 #### 🐞 Fixes

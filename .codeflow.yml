@@ -4,6 +4,7 @@ secure:
     - master
     - alpha-fabric-arch
     - release-5.0.0.rc1
+    - release-5.0.0-rc.x
     - deprecations-q12023
 build:
   engines:
@@ -63,6 +64,9 @@ build:
     - BaldurNode:
         name: package-d3
         path: ./packages/d3/publish.Dockerfile
+    - BaldurNode:
+        name: package-ui-mobile-visreg
+        path: ./packages/ui-mobile-visreg/publish.Dockerfile
     - BaldurNode:
         name: package-ui-mobile-playground
         path: ./packages/ui-mobile-playground/publish.Dockerfile

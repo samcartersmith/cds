@@ -3,6 +3,7 @@
 import React, { memo, useMemo } from 'react';
 import { Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
 import { routes as codegenRoutes } from '@cbhq/cds-mobile/examples/newRoutes';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
@@ -10,7 +11,7 @@ import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePrefere
 import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
 import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
-import { PlaygroundWithNavContainer } from '@cbhq/ui-mobile-playground';
+import { Playground } from '@cbhq/ui-mobile-playground';
 
 // this code allows the use of toLocaleString() on Android
 if (Platform.OS === 'android') {
@@ -32,7 +33,9 @@ const App = memo(() => {
           <CdsSafeAreaProvider>
             <PortalProvider>
               <StatusBar />
-              <PlaygroundWithNavContainer routes={codegenRoutes} />
+              <NavigationContainer>
+                <Playground routes={codegenRoutes} />
+              </NavigationContainer>
             </PortalProvider>
           </CdsSafeAreaProvider>
         </ThemeProvider>

@@ -104,6 +104,9 @@
       "@cbhq/ui-mobile-playground": [
         "packages/ui-mobile-playground"
       ],
+      "@cbhq/ui-mobile-visreg": [
+        "packages/ui-mobile-visreg"
+      ],
       "@cbhq/ui-scorecard": [
         "packages/ui-scorecard"
       ]

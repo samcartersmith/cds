@@ -61,6 +61,7 @@ Locate your release commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cd
 heimdall should automatically deploy to the following when the build finishes:
 
 - corporate::ui-mobile-playground
+- corporate::ui-mobile-visreg
 - production::cds-docs
 - development::cds-storybook
 

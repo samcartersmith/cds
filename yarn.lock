@@ -2902,6 +2902,23 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
   dependencies:
+    detox: ^19.9.1
+    lodash: ^4.17.21
+  peerDependencies:
+    "@cbhq/cds-common": "workspace:*"
+    "@cbhq/cds-mobile": "workspace:*"
+    "@react-navigation/native": ^6.0.11
+    "@react-navigation/stack": ^6.2.2
+    react: ^17.0.2
+    react-native: ^0.68.2
+    react-native-safe-area-context: ^3.2.0
+  languageName: unknown
+  linkType: soft
+
+"@cbhq/ui-mobile-visreg@workspace:^, @cbhq/ui-mobile-visreg@workspace:packages/ui-mobile-visreg":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/ui-mobile-visreg@workspace:packages/ui-mobile-visreg"
+  dependencies:
     "@cbhq/detox-utils": ^0.2.3
     "@percy/cli": ^1.13.0
     "@percy/client": ^1.13.0
@@ -2910,14 +2927,8 @@ __metadata:
     detox: ^19.9.1
     lodash: ^4.17.21
   peerDependencies:
-    "@cbhq/cds-common": "*"
-    "@cbhq/cds-mobile": "*"
-    "@react-navigation/native": ^6.0.11
-    "@react-navigation/stack": ^6.2.2
+    "@cbhq/cds-mobile": "workspace:*"
     detox: ">=19.0.0"
-    react: ^17.0.2
-    react-native: ^0.68.2
-    react-native-safe-area-context: ^3.2.0
   languageName: unknown
   linkType: soft
 
@@ -2969,6 +2980,7 @@ __metadata:
     "@cbhq/detox-utils": ^0.2.3
     "@cbhq/metro-config": ^0.0.1
     "@cbhq/ui-mobile-playground": "workspace:^"
+    "@cbhq/ui-mobile-visreg": "workspace:^"
     "@cds/codegen": "workspace:^"
     "@percy/cli": ^1.13.0
     "@react-native-community/masked-view": ^0.1.10

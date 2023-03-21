@@ -6,7 +6,7 @@ import {
   getPlaygroundRoutes,
   initializeVisregTests,
   reloadApp,
-} from '@cbhq/ui-mobile-playground/visreg';
+} from '@cbhq/ui-mobile-visreg';
 
 import config from '../detox.config';
 

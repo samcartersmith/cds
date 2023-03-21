@@ -1,5 +1,5 @@
 {
-  "name": "@cbhq/ui-mobile-playground",
+  "name": "@cbhq/ui-mobile-visreg",
   "version": "1.0.0-rc.1",
   "description": "",
   "keywords": [],
@@ -8,15 +8,15 @@
     "platform": "node"
   },
   "peerDependencies": {
-    "@cbhq/cds-common": "workspace:*",
     "@cbhq/cds-mobile": "workspace:*",
-    "@react-navigation/native": "^6.0.11",
-    "@react-navigation/stack": "^6.2.2",
-    "react": "^17.0.2",
-    "react-native": "^0.68.2",
-    "react-native-safe-area-context": "^3.2.0"
+    "detox": ">=19.0.0"
   },
   "dependencies": {
+    "@cbhq/detox-utils": "^0.2.3",
+    "@percy/cli": "^1.13.0",
+    "@percy/client": "^1.13.0",
+    "@percy/sdk-utils": "^1.13.0",
+    "@percy/storybook": "^4.3.4",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

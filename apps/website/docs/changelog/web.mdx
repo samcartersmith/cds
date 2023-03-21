@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.0.0-rc.1 (3/20/2023, 10:29 AM PST)
+
+#### 💥 Breaking
+
+- **[ui-mobile-playground]** Separate UI code from visreg code for playgrounds. [#1810](https://github.cbhq.net/frontend/cds/pull/1810)
+
 ## 4.1.2 (3/16/2023, 01:20 PM PST)
 
 #### 🐞 Fixes
