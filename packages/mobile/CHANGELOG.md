@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.1.3 (3/22/2023, 10:33 AM PST)
+
+#### 🐞 Fixes
+
+- Fix(Tray) Fix a Tray children prop union type. [#1832](https://github.cbhq.net/frontend/cds/pull/1832), [RA-1077](https://jira.coinbase-corp.com/browse/RA-1077)
+- Fix(Carousel) Updated alpha carousel with flex, to allow cells to grow to max height. [#1808](https://github.cbhq.net/frontend/cds/pull/1808), [INCNT-1041](https://jira.coinbase-corp.com/browse/INCNT-1041)
+
+#### 📘 Misc
+
+- **[Reassure]** Setup Reassure for Performance Regression Testing in web and mobile. [#1696](https://github.cbhq.net/frontend/cds/pull/1696)
+
 ## 4.1.2 (3/16/2023, 01:20 PM PST)
 
 #### 🐞 Fixes
