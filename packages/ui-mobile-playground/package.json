@@ -1,8 +1,10 @@
 {
   "name": "@cbhq/ui-mobile-playground",
-  "version": "1.0.0-rc.1",
-  "description": "",
-  "keywords": [],
+  "version": "1.0.0-rc.2",
+  "description": "Mobile UI Components in a Playground",
+  "keywords": [
+    "playground"
+  ],
   "packemon": {
     "format": "lib",
     "platform": "node"
@@ -36,5 +38,12 @@
       "node": "./lib/index.js",
       "default": "./lib/index.js"
     }
-  }
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx}",
+    "CHANGELOG.md",
+    "README.md"
+  ]
 }

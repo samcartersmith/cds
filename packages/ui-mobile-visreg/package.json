@@ -1,8 +1,14 @@
 {
   "name": "@cbhq/ui-mobile-visreg",
-  "version": "1.0.0-rc.1",
-  "description": "",
-  "keywords": [],
+  "version": "1.0.0-rc.2",
+  "description": "Visreg Helpers",
+  "keywords": [
+    "visreg",
+    "playground",
+    "ci",
+    "percy",
+    "detox"
+  ],
   "packemon": {
     "format": "lib",
     "platform": "node"
@@ -36,5 +42,12 @@
       "node": "./lib/index.js",
       "default": "./lib/index.js"
     }
-  }
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts}",
+    "CHANGELOG.md",
+    "README.md"
+  ]
 }

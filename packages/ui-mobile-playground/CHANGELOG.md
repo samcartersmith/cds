@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.0-rc.2 (3/22/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix exports of src/index. [[#1841](https://github.cbhq.net/frontend/cds/pull/1833)]
+
 ## 1.0.0-rc.1 (3/17/2023 PST)
 
 #### 💥 Breaking
