@@ -351,7 +351,11 @@ export const deprecations: Deprecation[] = [
         name: 'SectionTitle',
         package: 'web',
         scope: { exportNames: ['SectionTitle', 'SectionTitleProps'] },
-        type: 'removed',
+        type: 'replaced',
+        migrationMap: {
+          replaced:
+            'Compose by wrapping a <code>TextCaption color="foregroundMuted"</code> with an <code>HStack spacingHorizontal="2" spacingVertical="2"</code>',
+        },
       },
       {
         path: 'packages/web/overlays/PopoverMenu/usePopoverChildren.ts',
@@ -509,54 +513,6 @@ export const deprecations: Deprecation[] = [
           },
         },
       },
-      {
-        name: 'offsetHorizontal',
-        components: ['Cell', 'ContentCell', 'ListCell'],
-        package: 'web',
-        type: 'api',
-        migrationMap: {
-          api: {
-            offsetHorizontal:
-              'Use the outerSpacing property with a key of offsetHorizontal instead',
-          },
-        },
-      },
-      {
-        name: 'offsetHorizontal',
-        components: ['Cell', 'ContentCell', 'ListCell'],
-        package: 'mobile',
-        type: 'api',
-        migrationMap: {
-          api: {
-            offsetHorizontal:
-              'Use the outerSpacing property with a key of offsetHorizontal instead',
-          },
-        },
-      },
-      {
-        name: 'reduceHorizontalSpacing',
-        components: ['Cell', 'ContentCell', 'ListCell'],
-        package: 'web',
-        type: 'api',
-        migrationMap: {
-          api: {
-            reduceHorizontalSpacing:
-              'Use the innerSpacing property with a key of spacingHorizontal instead',
-          },
-        },
-      },
-      {
-        name: 'reduceHorizontalSpacing',
-        components: ['Cell', 'ContentCell', 'ListCell'],
-        package: 'mobile',
-        type: 'api',
-        migrationMap: {
-          api: {
-            reduceHorizontalSpacing:
-              'Use the innerSpacing property with a key of spacingHorizontal instead',
-          },
-        },
-      },
     ],
     hooks: [
       {
@@ -573,12 +529,22 @@ export const deprecations: Deprecation[] = [
       },
       {
         name: 'useIsMobile',
-        package: 'common',
+        package: 'web',
         path: 'packages/web/hooks/useIsMobile.ts',
         type: 'replaced',
         migrationMap: {
           replaced: 'useBreakpoints',
           path: 'packages/web/hooks/useBreakpoints.ts',
+        },
+      },
+      {
+        name: 'useRotateAnimation',
+        package: 'web',
+        path: 'packages/web/hooks/useRotateAnimation.ts',
+        type: 'replaced',
+        migrationMap: {
+          replaced: 'AnimatedCaret',
+          path: 'packages/web/motion/AnimationCaret.tsx',
         },
       },
     ],

@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, PropsWithChildren, useCallback } from 'react';
+import React, { forwardRef, memo, useCallback } from 'react';
 import { DrawerRefBaseProps, NoopFn, TrayBaseProps } from '@cbhq/cds-common/types';
 
 import { HStack, VStack } from '../../layout';
@@ -10,10 +10,7 @@ type RenderTrayProps = {
 };
 
 export const Tray = memo(
-  forwardRef<DrawerRefBaseProps, PropsWithChildren<TrayBaseProps>>(function Tray(
-    { children, title, ...props },
-    ref,
-  ) {
+  forwardRef<DrawerRefBaseProps, TrayBaseProps>(function Tray({ children, title, ...props }, ref) {
     const renderChildren = useCallback(
       ({ handleClose }: RenderTrayProps) => (
         <VStack spacingTop={title ? 0 : 2}>

@@ -877,7 +877,7 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
     itemKey="SectionTitle.web"
     title={
       <HStack gap={1}>
-        SectionTitle <Tag colorScheme="red">removed</Tag>
+        SectionTitle <Tag colorScheme="yellow">replaced</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-web"
@@ -893,7 +893,11 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
         </a>
       </p>
       <p>
-        <code>SectionTitle</code> has been removed from the CDS library.
+        <p>
+          SectionTitle has been replaced with Compose by wrapping a{' '}
+          <code>TextCaption color="foregroundMuted"</code> with an{' '}
+          <code>HStack spacingHorizontal="2" spacingVertical="2"</code>
+        </p>
       </p>
     </VStack>
   </AccordionItem>
@@ -1303,258 +1307,6 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
       </p>
     </VStack>
   </AccordionItem>
-  <AccordionItem
-    itemKey="Cell.offsetHorizontal.web"
-    title={
-      <HStack gap={1}>
-        Cell.offsetHorizontal <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-web"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>offsetHorizontal</code> has been replaced with{' '}
-            <code>Use the outerSpacing property with a key of offsetHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="ContentCell.offsetHorizontal.web"
-    title={
-      <HStack gap={1}>
-        ContentCell.offsetHorizontal <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-web"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>offsetHorizontal</code> has been replaced with{' '}
-            <code>Use the outerSpacing property with a key of offsetHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="ListCell.offsetHorizontal.web"
-    title={
-      <HStack gap={1}>
-        ListCell.offsetHorizontal <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-web"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>offsetHorizontal</code> has been replaced with{' '}
-            <code>Use the outerSpacing property with a key of offsetHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="Cell.offsetHorizontal.mobile"
-    title={
-      <HStack gap={1}>
-        Cell.offsetHorizontal <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-mobile"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>offsetHorizontal</code> has been replaced with{' '}
-            <code>Use the outerSpacing property with a key of offsetHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="ContentCell.offsetHorizontal.mobile"
-    title={
-      <HStack gap={1}>
-        ContentCell.offsetHorizontal <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-mobile"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>offsetHorizontal</code> has been replaced with{' '}
-            <code>Use the outerSpacing property with a key of offsetHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="ListCell.offsetHorizontal.mobile"
-    title={
-      <HStack gap={1}>
-        ListCell.offsetHorizontal <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-mobile"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>offsetHorizontal</code> has been replaced with{' '}
-            <code>Use the outerSpacing property with a key of offsetHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="Cell.reduceHorizontalSpacing.web"
-    title={
-      <HStack gap={1}>
-        Cell.reduceHorizontalSpacing <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-web"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>reduceHorizontalSpacing</code> has been replaced with{' '}
-            <code>Use the innerSpacing property with a key of spacingHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="ContentCell.reduceHorizontalSpacing.web"
-    title={
-      <HStack gap={1}>
-        ContentCell.reduceHorizontalSpacing <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-web"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>reduceHorizontalSpacing</code> has been replaced with{' '}
-            <code>Use the innerSpacing property with a key of spacingHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="ListCell.reduceHorizontalSpacing.web"
-    title={
-      <HStack gap={1}>
-        ListCell.reduceHorizontalSpacing <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-web"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>reduceHorizontalSpacing</code> has been replaced with{' '}
-            <code>Use the innerSpacing property with a key of spacingHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="Cell.reduceHorizontalSpacing.mobile"
-    title={
-      <HStack gap={1}>
-        Cell.reduceHorizontalSpacing <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-mobile"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>reduceHorizontalSpacing</code> has been replaced with{' '}
-            <code>Use the innerSpacing property with a key of spacingHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="ContentCell.reduceHorizontalSpacing.mobile"
-    title={
-      <HStack gap={1}>
-        ContentCell.reduceHorizontalSpacing <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-mobile"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>reduceHorizontalSpacing</code> has been replaced with{' '}
-            <code>Use the innerSpacing property with a key of spacingHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
-  <AccordionItem
-    itemKey="ListCell.reduceHorizontalSpacing.mobile"
-    title={
-      <HStack gap={1}>
-        ListCell.reduceHorizontalSpacing <Tag colorScheme="blue">api</Tag>
-      </HStack>
-    }
-    subtitle="@cbhq/cds-mobile"
-  >
-    <VStack>
-      <p>
-        {' '}
-        The API has changed: <ul>
-          <li>
-            <code>reduceHorizontalSpacing</code> has been replaced with{' '}
-            <code>Use the innerSpacing property with a key of spacingHorizontal instead</code>
-          </li>
-        </ul>
-      </p>
-    </VStack>
-  </AccordionItem>
 </Accordion>
 
 ### 🪝 Hooks
@@ -1609,13 +1361,13 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="useIsMobile.common"
+    itemKey="useIsMobile.web"
     title={
       <HStack gap={1}>
         useIsMobile <Tag colorScheme="yellow">replaced</Tag>
       </HStack>
     }
-    subtitle="@cbhq/cds-common"
+    subtitle="@cbhq/cds-web"
   >
     <VStack>
       <p>
@@ -1636,6 +1388,39 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
             target="_blank"
           >
             packages/web/hooks/useBreakpoints.ts
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useRotateAnimation.web"
+    title={
+      <HStack gap={1}>
+        useRotateAnimation <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/hooks/useRotateAnimation.ts"
+          target="_blank"
+        >
+          packages/web/hooks/useRotateAnimation.ts
+        </a>
+      </p>
+      <p>
+        <p>useRotateAnimation has been replaced with AnimatedCaret</p>
+        <p>
+          useRotateAnimation can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/master/packages/web/motion/AnimationCaret.tsx"
+            target="_blank"
+          >
+            packages/web/motion/AnimationCaret.tsx
           </a>
         </p>
       </p>
