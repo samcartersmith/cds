@@ -14,23 +14,23 @@ const config = {
     },
   },
   apps: {
-    'ios-local': {
+    'ios-debug': {
       type: 'ios.app',
-      binaryPath: 'prebuilds/ios-local-hermes.app',
+      binaryPath: 'prebuilds/ios-debug-hermes.app',
     },
-    'android-local': {
+    'android-debug': {
       type: 'android.apk',
-      binaryPath: 'prebuilds/android-local-hermes/binary.apk',
-      testBinaryPath: 'prebuilds/android-local-hermes/testBinary.apk',
+      binaryPath: 'prebuilds/android-debug-hermes/binary.apk',
+      testBinaryPath: 'prebuilds/android-debug-hermes/testBinary.apk',
     },
-    'ios-production': {
+    'ios-release': {
       type: 'ios.app',
-      binaryPath: 'prebuilds/ios-production-hermes.app',
+      binaryPath: 'prebuilds/ios-release-hermes.app',
     },
-    'android-production': {
+    'android-release': {
       type: 'android.apk',
-      binaryPath: 'prebuilds/android-production-hermes/binary.apk',
-      testBinaryPath: 'prebuilds/android-production-hermes/testBinary.apk',
+      binaryPath: 'prebuilds/android-release-hermes/binary.apk',
+      testBinaryPath: 'prebuilds/android-release-hermes/testBinary.apk',
     },
   },
   devices: {
@@ -48,21 +48,21 @@ const config = {
     },
   },
   configurations: {
-    'ios-local': {
+    'ios-debug': {
       device: 'simulator',
-      app: 'ios-local',
+      app: 'ios-debug',
     },
-    'android-local': {
+    'android-debug': {
       device: 'emulator',
-      app: 'android-local',
+      app: 'android-debug',
     },
-    'ios-production': {
+    'ios-release': {
       device: 'simulator',
-      app: 'ios-production',
+      app: 'ios-release',
     },
-    'android-production': {
+    'android-release': {
       device: 'emulator',
-      app: 'android-production',
+      app: 'android-release',
     },
   },
 };

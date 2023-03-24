@@ -33,26 +33,53 @@ EXPO_TOKEN=<get token from UI Infra 1Password>
 
 See more info about mobile builds [here](./docs/building-mobile.md).
 
-| Platform | Profile - engine type | Command                                      |
-| -------- | --------------------- | -------------------------------------------- |
-| ios      | local - jsc           | `yarn nx run mobile-app:build:ios-local`     |
-| android  | local -hermes         | `yarn nx run mobile-app:build:android-local` |
+| Platform | Profile - engine type | Command                                                                            |
+| -------- | --------------------- | ---------------------------------------------------------------------------------- |
+| ios      | debug - hermes        | `yarn nx run mobile-app:build:ios-debug`                                           |
+| ios      | release - hermes      | `yarn nx run mobile-app:build:ios-release`                                         |
+| android  | debug - hermes        | `yarn nx run mobile-app:build:android-debug`                                       |
+| android  | release - hermes      | `yarn nx run mobile-app:build:android-release`                                     |
+| ios      | debug - jsc           | `yarn nx run mobile-app:build --platform ios --jsEngine jsc --profile debug`       |
+| ios      | release - jsc         | `yarn nx run mobile-app:build --platform ios --jsEngine jsc --profile release`     |
+| android  | debug - jsc           | `yarn nx run mobile-app:build --platform android --jsEngine jsc --profile debug`   |
+| android  | release - jsc         | `yarn nx run mobile-app:build --platform android --jsEngine jsc --profile release` |
 
 2. Install app in your simulator with `launch` configuration.
 
 **Note: You can skip this if you've already launched the build in your [prebuilds](./prebuilds/) in your simulator.**
 
-| Platform | Profile - engine type | Command                                       |
-| -------- | --------------------- | --------------------------------------------- |
-| ios      | local - jsc           | `yarn nx run mobile-app:launch:ios-local`     |
-| android  | local -hermes         | `yarn nx run mobile-app:launch:android-local` |
+| Platform | Profile - engine type | Command                                                                             |
+| -------- | --------------------- | ----------------------------------------------------------------------------------- |
+| ios      | debug - hermes        | `yarn nx run mobile-app:launch:ios-debug`                                           |
+| ios      | release - hermes      | `yarn nx run mobile-app:launch:ios-release`                                         |
+| android  | debug - hermes        | `yarn nx run mobile-app:launch:android-debug`                                       |
+| android  | release - hermes      | `yarn nx run mobile-app:launch:android-release`                                     |
+| ios      | debug - jsc           | `yarn nx run mobile-app:launch --platform ios --jsEngine jsc --profile debug`       |
+| ios      | release - jsc         | `yarn nx run mobile-app:launch --platform ios --jsEngine jsc --profile release`     |
+| android  | debug - jsc           | `yarn nx run mobile-app:launch --platform android --jsEngine jsc --profile debug`   |
+| android  | release - jsc         | `yarn nx run mobile-app:launch --platform android --jsEngine jsc --profile release` |
 
-1. Start the metro server for installed application
+3. Start the metro server for installed application. Only relevant for debug builds.
 
-| Platform | Profile - engine type | Command                                      |
-| -------- | --------------------- | -------------------------------------------- |
-| ios      | local - jsc           | `yarn nx run mobile-app:start:ios-local`     |
-| android  | local -hermes         | `yarn nx run mobile-app:start:android-local` |
+| Platform | Profile - engine type | Command                                                     |
+| -------- | --------------------- | ----------------------------------------------------------- |
+| ios      | debug - hermes        | `yarn nx run mobile-app:start:ios-debug`                    |
+| android  | debug - hermes        | `yarn nx run mobile-app:start:android-debug`                |
+| ios      | debug - jsc           | `yarn nx run mobile-app:start:ios-debug --jsEngine jsc`     |
+| android  | debug - jsc           | `yarn nx run mobile-app:start:android-debug --jsEngine jsc` |
+
+4. Run detox tests locally
+
+| Platform | Profile - engine type | Command                                                                            |
+| -------- | --------------------- | ---------------------------------------------------------------------------------- |
+| ios      | debug - hermes        | `yarn nx run mobile-app:detox:ios-debug`                                           |
+| ios      | release - hermes      | `yarn nx run mobile-app:detox:ios-release`                                         |
+| android  | debug -hermes         | `yarn nx run mobile-app:detox:android-debug`                                       |
+| android  | debug -hermes         | `yarn nx run mobile-app:detox:android-debug`                                       |
+| ios      | debug - jsc           | `yarn nx run mobile-app:detox --platform ios --jsEngine jsc --profile debug`       |
+| ios      | release - jsc         | `yarn nx run mobile-app:detox --platform ios --jsEngine jsc --profile release`     |
+| android  | debug - jsc           | `yarn nx run mobile-app:detox --platform android --jsEngine jsc --profile debug`   |
+| android  | release - jsc         | `yarn nx run mobile-app:detox --platform android --jsEngine jsc --profile release` |
 
 ## Advanced
 
@@ -115,16 +142,16 @@ touch .env.local
 - Open new file, and add:
   EXPO_TOKEN=<Get from UI Infra 1Password File>
 
-3. `yarn nx run mobile-app:build:ios-local` is throwing a `spawn ENOENT` error.
+3. `yarn nx run mobile-app:build:ios-debug` is throwing a `spawn ENOENT` error.
 
 - Run `yarn workspace mobile-app run expo prebuild -p ios --clean`
 - Delete the `mobile-app/ios` direcotry
-- `yarn nx run mobile-app:build:ios-local` should work as expected
+- `yarn nx run mobile-app:build:ios-debug` should work as expected
 
-4. `yarn nx run mobile-app:build:android-local` is throwing this error `mobile-app/android directory not found`
+4. `yarn nx run mobile-app:build:android-debug` is throwing this error `mobile-app/android directory not found`
 
 - Run `mkdir apps/mobile-app/android`
-- `yarn nx run mobile-app:build:android-local` should work as expected
+- `yarn nx run mobile-app:build:android-debug` should work as expected
 - Delete the `mobile-app/android` direcotry
 
 5. An error like "You are on eas-cli@3.7.2 which does not satisfy the CLI version constraint in eas.json (3.8.1)"

@@ -56,7 +56,7 @@ steps:
       - echo "--- Ensuring emulator is ready"
       - yarn nx run mobile-app:android-e2e-emulator
       - echo "--- Running Android visreg tests"
-      - yarn nx run mobile-app:detox:android-production
+      - yarn nx run mobile-app:detox:android-release
 
   - label: 'Finish Visreg Tests (Android)'
     allow_dependency_failure: true

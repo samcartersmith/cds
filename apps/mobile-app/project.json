@@ -36,17 +36,17 @@
         "command": "node ./scripts/launch.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
       },
       "configurations": {
-        "ios-local": {
-          "args": "--profile local --jsEngine hermes --platform ios"
+        "ios-debug": {
+          "args": "--profile debug --jsEngine hermes --platform ios"
         },
-        "android-local": {
-          "args": "--profile local --jsEngine hermes --platform android"
+        "android-debug": {
+          "args": "--profile debug --jsEngine hermes --platform android"
         },
-        "ios-production": {
-          "args": "--profile production --jsEngine hermes --platform ios"
+        "ios-release": {
+          "args": "--profile release --jsEngine hermes --platform ios"
         },
-        "android-production": {
-          "args": "--profile production --jsEngine hermes --platform android"
+        "android-release": {
+          "args": "--profile release --jsEngine hermes --platform android"
         }
       }
     },
@@ -60,11 +60,11 @@
         "command": "node ./scripts/start.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
       },
       "configurations": {
-        "ios-local": {
-          "args": "--profile local --jsEngine hermes --platform ios"
+        "ios-debug": {
+          "args": "--profile debug --jsEngine hermes --platform ios"
         },
-        "android-local": {
-          "args": "--profile local --jsEngine hermes --platform android"
+        "android-debug": {
+          "args": "--profile debug --jsEngine hermes --platform android"
         }
       }
     },
@@ -78,17 +78,17 @@
         "command": "node ./scripts/build.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
       },
       "configurations": {
-        "ios-local": {
-          "args": "--profile local --jsEngine hermes --platform ios"
+        "ios-debug": {
+          "args": "--profile debug --jsEngine hermes --platform ios"
         },
-        "android-local": {
-          "args": "--profile local --jsEngine hermes --platform android"
+        "android-debug": {
+          "args": "--profile debug --jsEngine hermes --platform android"
         },
-        "ios-production": {
-          "args": "--profile production --jsEngine hermes --platform ios"
+        "ios-release": {
+          "args": "--profile release --jsEngine hermes --platform ios"
         },
-        "android-production": {
-          "args": "--profile production --jsEngine hermes --platform android"
+        "android-release": {
+          "args": "--profile release --jsEngine hermes --platform android"
         }
       }
     },
@@ -102,17 +102,17 @@
         "command": "node ./scripts/detox.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
       },
       "configurations": {
-        "ios-local": {
-          "args": "--profile local --jsEngine hermes --platform ios"
+        "ios-debug": {
+          "args": "--profile debug --jsEngine hermes --platform ios"
         },
-        "android-local": {
-          "args": "--profile local --jsEngine hermes --platform android"
+        "android-debug": {
+          "args": "--profile debug --jsEngine hermes --platform android"
         },
-        "ios-production": {
-          "args": "--profile production --jsEngine hermes --platform ios"
+        "ios-release": {
+          "args": "--profile release --jsEngine hermes --platform ios"
         },
-        "android-production": {
-          "args": "--profile production --jsEngine hermes --platform android"
+        "android-release": {
+          "args": "--profile release --jsEngine hermes --platform android"
         }
       }
     },

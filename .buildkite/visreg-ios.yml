@@ -14,7 +14,7 @@ steps:
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - tools/ci/setup.sh
-      - yarn nx run mobile-app:detox:ios-production
+      - yarn nx run mobile-app:detox:ios-release
     retry:
       automatic:
         limit: 1

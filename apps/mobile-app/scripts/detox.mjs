@@ -36,7 +36,7 @@ if (platform === 'android') {
   }
 }
 
-if (profile === 'local') {
+if (profile === 'debug') {
   within(async () => {
     await $`cd ../../ && yarn nx run mobile-app:launch --profile ${profile} --jsEngine ${jsEngine} --platform ${platform}`;
     await $`cd ../../ && yarn nx run mobile-app:start --profile ${profile} --jsEngine ${jsEngine} --platform ${platform}`;

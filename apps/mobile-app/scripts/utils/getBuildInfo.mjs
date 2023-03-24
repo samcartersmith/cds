@@ -13,7 +13,7 @@ export function getBuildInfo() {
   const ios = {
     tarball,
     bundleIdentifier: `com.ui-systems.${kebabCaseId}`,
-    unzip: async () => {
+    unzip: async function unzip() {
       await $`tar -zxvf ${tarball}`;
       await $`mv CDS.app ${outputName}.app`;
     },
@@ -26,13 +26,13 @@ export function getBuildInfo() {
     testApk: `${outputName}/testBinary.apk`,
     unzip: async function unzip() {
       await $`mkdir -p ${outputName}`;
-      const buildType = profile === 'local' ? 'debug' : 'release';
-      const testFolder = `${outputName}/androidTest/${buildType}`;
-      const buildFolder = `${outputName}/${buildType}`;
+
+      const testFolder = `${outputName}/androidTest/${profile}`;
+      const buildFolder = `${outputName}/${profile}`;
 
       await $`tar -xf ${this.zipFile} -C ${outputName}`;
-      await $`mv ${testFolder}/app-${buildType}-androidTest.apk ${this.testApk}`;
-      await $`mv ${buildFolder}/app-${buildType}.apk ${this.apk}`;
+      await $`mv ${testFolder}/app-${profile}-androidTest.apk ${this.testApk}`;
+      await $`mv ${buildFolder}/app-${profile}.apk ${this.apk}`;
       await $`rm -rf ${path.dirname(testFolder)} && rm -rf ${buildFolder}`;
     },
   };

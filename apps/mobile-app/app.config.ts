@@ -1,21 +1,21 @@
 import { getExpoSDKVersion } from '@expo/config';
 import type { ExpoConfig } from '@expo/config-types';
 
-const profile = process.env.APP_PROFILE ?? ('local' as const);
+const profile = process.env.APP_PROFILE ?? ('debug' as const);
 const jsEngine = process.env.APP_JS_ENGINE ?? ('hermes' as const);
 const newArchEnabled = process.env.APP_NEW_ARCH_ENABLED === '1';
-const bundleIdentifier = process.env.APP_IOS_BUNDLE_IDENTIFIER ?? 'com.ui-systems.local-ios-hermes';
+const bundleIdentifier = process.env.APP_IOS_BUNDLE_IDENTIFIER ?? 'com.ui-systems.debug-ios-hermes';
 const packageIdentifier =
-  process.env.APP_ANDROID_PACKAGE_IDENTIFIER ?? 'com.ui_systems.local_hermes';
+  process.env.APP_ANDROID_PACKAGE_IDENTIFIER ?? 'com.ui_systems.debug_hermes';
 
 const lookupKey = `${profile}-${jsEngine}` as const;
 const iconName = `icon-${lookupKey}` as const;
 const splashName = `splash-${lookupKey}` as const;
 const splashColor = {
-  'local-jsc': '#44C28D',
-  'local-hermes': '#D058C1',
-  'production-jsc': '#E7C95B',
-  'production-hermes': '#06BEEC',
+  'debug-jsc': '#44C28D',
+  'debug-hermes': '#D058C1',
+  'release-jsc': '#E7C95B',
+  'release-hermes': '#06BEEC',
 }[lookupKey];
 
 const expo: ExpoConfig = {

@@ -1,6 +1,6 @@
 {
   "build": {
-    "local": {
+    "debug": {
       "node": "18.14.2",
       "distribution": "internal",
       "android": {
@@ -13,7 +13,7 @@
         "buildConfiguration": "Debug"
       }
     },
-    "production": {
+    "release": {
       "node": "18.14.2",
       "distribution": "internal",
       "android": {

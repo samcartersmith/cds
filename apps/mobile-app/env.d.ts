@@ -12,7 +12,7 @@ declare module 'process' {
         readonly APP_PLATFORM: 'ios' | 'android';
         readonly APP_NAME?: string;
         readonly APP_NEW_ARCH_ENABLED?: `${0 | 1}`;
-        readonly APP_PROFILE?: 'local' | 'production';
+        readonly APP_PROFILE?: 'debug' | 'release';
         readonly CI?: `${0 | 1}`;
       }
     }
