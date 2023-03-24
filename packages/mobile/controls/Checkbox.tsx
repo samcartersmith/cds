@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo, PropsWithChildren, useMemo } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import { ControlBaseProps, useScale } from '@cbhq/cds-common';
 
@@ -18,7 +18,7 @@ const CheckboxIcon = memo(
     animatedScaleValue,
     animatedOpacityValue,
     testID,
-  }: ControlIconProps) => {
+  }: PropsWithChildren<ControlIconProps>) => {
     const cdsScale = useScale();
     const { checkboxSize } = scaleStyles[cdsScale].control;
     const backgroundColor = useMemo(() => {

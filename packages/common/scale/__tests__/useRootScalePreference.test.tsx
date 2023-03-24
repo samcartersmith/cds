@@ -1,7 +1,15 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { RootScalePreference } from '../../types';
 import { RootScalePreferenceProvider } from '../RootScalePreferenceProvider';
 import { useRootScalePreference } from '../useRootScalePreference';
+
+function createWrapper({ scale }: { scale: RootScalePreference }) {
+  const Wrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
+    <RootScalePreferenceProvider value={scale}>{children}</RootScalePreferenceProvider>
+  );
+  return Wrapper;
+}
 
 describe('useRootScalePreference', () => {
   it('returns correct value', () => {
@@ -15,9 +23,7 @@ describe('useRootScalePreference', () => {
       'xxxLarge',
     ] as const) {
       const { result } = renderHook(() => useRootScalePreference(), {
-        wrapper: ({ children }) => (
-          <RootScalePreferenceProvider value={scale}>{children}</RootScalePreferenceProvider>
-        ),
+        wrapper: createWrapper({ scale }),
       });
       expect(result.current).toBe(scale);
     }

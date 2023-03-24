@@ -67,6 +67,20 @@ async function takeRouteScreenshots(dirPath: string, routeName: string) {
 }
 
 /**
+ * Takes all screenshots for a given playground route. Once it has taken all screenshots
+ *  for the route, this method uploads the screenshots to percy.
+ *
+ * @param {string} routeName Name of the route that will be included in the screenshot file name (e.g. 0_<routeName>-ios.png).
+ *    The sdk will generate a set of route names leveraging the routes in the Mobile Playground.
+ */
+export async function uploadScreenshotsToPercyForRoute(routeName: string) {
+  const parentDir = `${baseDir}/${playgroundDir}`;
+  const screenshotsDir = await takeRouteScreenshots(parentDir, routeName);
+
+  processScreenshots(screenshotsDir, { parallelPercy: true });
+}
+
+/**
  * Navigates to the provided route in the Mobile Playground and asserts all visual diffs
  *    on the set of associated screenshots. This is what CDS uses and is a convenience method for those who choose
  *    to leverage the Mobile Playground format.
@@ -76,11 +90,7 @@ async function takeRouteScreenshots(dirPath: string, routeName: string) {
  */
 export async function assertVisualDiffsForPlayground(routeName: string) {
   await navigateToRoute(routeName);
-
-  const parentDir = `${baseDir}/${playgroundDir}`;
-  const screenshotsDir = await takeRouteScreenshots(parentDir, routeName);
-
-  processScreenshots(screenshotsDir, { parallelPercy: true });
+  await uploadScreenshotsToPercyForRoute(routeName);
 }
 
 /**

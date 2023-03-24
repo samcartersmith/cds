@@ -1,17 +1,21 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { RootSpectrumPreference } from '../../types';
 import { RootSpectrumPreferenceProvider } from '../RootSpectrumPreferenceProvider';
 import { useRootSpectrumPreference } from '../useRootSpectrumPreference';
+
+function createWrapper({ spectrum }: { spectrum: RootSpectrumPreference }) {
+  const Wrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
+    <RootSpectrumPreferenceProvider value={spectrum}>{children}</RootSpectrumPreferenceProvider>
+  );
+  return Wrapper;
+}
 
 describe('useRootSpectrumPreference', () => {
   it('returns correct value', () => {
     for (const spectrum of ['light', 'dark', 'system'] as const) {
       const { result } = renderHook(() => useRootSpectrumPreference(), {
-        wrapper: ({ children }) => (
-          <RootSpectrumPreferenceProvider value={spectrum}>
-            {children}
-          </RootSpectrumPreferenceProvider>
-        ),
+        wrapper: createWrapper({ spectrum }),
       });
       expect(result.current).toBe(spectrum);
     }

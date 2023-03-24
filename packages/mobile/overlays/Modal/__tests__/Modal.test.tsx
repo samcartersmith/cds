@@ -1,9 +1,5 @@
 import React from 'react';
 import { Animated, Modal as RNModal } from 'react-native';
-import {
-  advanceAnimationByTime,
-  withReanimatedTimer,
-} from 'react-native-reanimated/lib/reanimated2/jestUtils';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import {
   CreateLoremIpsumProps,
@@ -35,7 +31,15 @@ const { MockModal } = modalBuilder({
 } as CreateModalProps);
 
 describe('Modal', () => {
-  afterEach(cleanup);
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
+    cleanup();
+  });
 
   it('passes a11y', () => {
     render(<MockModal testID="mock-modal" />);
@@ -71,18 +75,16 @@ describe('Modal', () => {
   });
 
   it('triggers onDidClose after animation finished', () => {
-    withReanimatedTimer(() => {
-      const onDidClose = jest.fn();
+    const onDidClose = jest.fn();
 
-      render(<MockModal onDidClose={onDidClose} />);
+    render(<MockModal onDidClose={onDidClose} />);
 
-      fireEvent.press(screen.getByText('Open Modal'));
-      fireEvent.press(screen.getByTestId('modal-close-button'));
+    fireEvent.press(screen.getByText('Open Modal'));
+    fireEvent.press(screen.getByTestId('modal-close-button'));
 
-      act(() => {
-        advanceAnimationByTime(100);
-        expect(onDidClose).toHaveBeenCalledTimes(1);
-      });
+    act(() => {
+      jest.advanceTimersByTime(100);
+      expect(onDidClose).toHaveBeenCalledTimes(1);
     });
   });
 

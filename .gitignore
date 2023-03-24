@@ -31,6 +31,7 @@ xcuserdata
 DerivedData
 *.hmap
 *.ipa
+*.app
 *.xcuserstate
 *.xcworkspace
 *.xcodeproj/
@@ -125,11 +126,28 @@ apps/mobile-playground/artifacts
 
 ## CocoaPods
 **/ios/Pods/
-/
 
 ## Nested node_modules
 
 node_modules/
+
+# Expo
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+ios
+android
+apps/mobile-app/prebuilds/android-*.zip
+apps/mobile-app/prebuilds/android-local-hermes
+apps/mobile-app/artifacts
 
 #reassure
 .reassure/

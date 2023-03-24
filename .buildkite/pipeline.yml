@@ -56,7 +56,7 @@ steps:
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci build
+      - yarn mono-pipeline run-ci build --exclude=mobile-app
 
   - label: Build ESM
     <<: *shared_step

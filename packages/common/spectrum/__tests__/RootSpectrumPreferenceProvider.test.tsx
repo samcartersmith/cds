@@ -13,17 +13,31 @@ describe('RootSpectrumPreferenceProvider', () => {
   });
 
   it('is not impacted by a parent SpectrumProvider', () => {
-    const { result } = renderHook(() => useRootSpectrumPreference(), {
-      wrapper: ({ children }) => (
+    function createWrapper() {
+      const Wrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
         <SpectrumProvider value="light">
           <RootSpectrumPreferenceProvider value="dark">{children}</RootSpectrumPreferenceProvider>
         </SpectrumProvider>
-      ),
+      );
+      return Wrapper;
+    }
+
+    const { result } = renderHook(() => useRootSpectrumPreference(), {
+      wrapper: createWrapper(),
     });
     expect(result.current).toBe('dark');
   });
 
   it('can have a different value from SpectrumProvider', () => {
+    function createWrapper() {
+      const Wrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
+        <RootSpectrumPreferenceProvider value="dark">
+          <SpectrumProvider value="light">{children}</SpectrumProvider>
+        </RootSpectrumPreferenceProvider>
+      );
+      return Wrapper;
+    }
+
     const { result } = renderHook(
       () => {
         return {
@@ -31,24 +45,24 @@ describe('RootSpectrumPreferenceProvider', () => {
         };
       },
       {
-        wrapper: ({ children }) => (
-          <RootSpectrumPreferenceProvider value="dark">
-            <SpectrumProvider value="light">{children}</SpectrumProvider>
-          </RootSpectrumPreferenceProvider>
-        ),
+        wrapper: createWrapper(),
       },
     );
     expect(result.current.rootSpectrum).toBe('dark');
   });
 
   it('logs an error if trying to render multiple RootSpectrumPreferenceProviders', () => {
-    const spy = jest.spyOn(console, 'error').mockImplementation();
-    renderHook(() => useRootSpectrumPreference(), {
-      wrapper: ({ children }) => (
+    function Wrapper(children: React.ReactNode) {
+      return (
         <RootSpectrumPreferenceProvider value="dark">
           <RootSpectrumPreferenceProvider value="light">{children}</RootSpectrumPreferenceProvider>
         </RootSpectrumPreferenceProvider>
-      ),
+      );
+    }
+
+    const spy = jest.spyOn(console, 'error').mockImplementation();
+    renderHook(() => useRootSpectrumPreference(), {
+      wrapper: Wrapper,
     });
     expect(spy).toHaveBeenCalledWith(
       'Multiple RootSpectrumPreferenceProviders were rendered and there should only be one. Ensure there is a single RootSpectrumPreferenceProvider to resolve.',

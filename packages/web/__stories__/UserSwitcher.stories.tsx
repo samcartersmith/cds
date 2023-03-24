@@ -51,7 +51,7 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
   gap: 1,
 };
 
-const UserSwitcherRecipe = memo(({ children }) => {
+const UserSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
   return (
     <FeatureFlagProvider frontierColor frontierButton>
       <HStack>

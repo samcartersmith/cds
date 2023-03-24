@@ -22,6 +22,9 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/stack": "^6.3.16",
+    "@types/react": "18.0.28",
     "detox": "^19.9.1"
   },
   "types": "./dts/index.d.ts",

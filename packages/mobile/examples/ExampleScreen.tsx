@@ -17,12 +17,13 @@ import { VStack } from '../layout/VStack';
 import { useFeatureFlags } from '../system/useFeatureFlags';
 import { TextTitle3 } from '../typography/TextTitle3';
 
+type ExampleRenderChildren = () => NonNullable<JSX.Element>;
 export type ExampleProps = {
-  children: React.ReactNode;
+  children: ExampleRenderChildren | React.ReactNode[] | React.ReactNode;
   inline?: boolean;
   title?: string;
   titleSpacing?: SpacingProps;
-} & BoxProps;
+} & Omit<BoxProps, 'children'>;
 
 export const Example = ({ children, inline, title, titleSpacing, ...props }: ExampleProps) => {
   const childStyles = useMemo(() => {

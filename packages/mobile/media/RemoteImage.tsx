@@ -100,6 +100,8 @@ export const RemoteImage = memo(function RemoteImage({
   size = 'm',
   dangerouslySetStyle,
   borderColor,
+  onError,
+  onLoad,
   ...props
 }: RemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
@@ -216,6 +218,8 @@ export const RemoteImage = memo(function RemoteImage({
       accessibilityIgnoresInvertColors
       source={transformedSource as ImageSourcePropType}
       accessibilityRole="image"
+      onError={onError}
+      onLoad={onLoad}
       {...props}
       style={stylesWithDimensions}
     />

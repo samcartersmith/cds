@@ -10,7 +10,7 @@ type SelectAnimation = {
   animateRotateOut: Animated.CompositeAnimation;
   rotateAnimationStyles: {
     transform: {
-      rotate: Animated.AnimatedInterpolation;
+      rotate: Animated.AnimatedInterpolation<string>;
     }[];
   };
 };

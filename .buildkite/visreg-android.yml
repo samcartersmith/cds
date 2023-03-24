@@ -1,29 +1,3 @@
-_prebuild_shared_step: &prebuild_shared_step
-  plugins:
-    - file:///buildkite/plugins/cache: &cache_plugin
-        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
-        paths:
-          - ./.yarn/cache
-          - ./.yarn/install-state.gz
-    - file:///buildkite/plugins/docker: &docker_plugin
-        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:android
-        always-pull: true
-        propagate-environment: true
-        propagate-uid-gid: true
-        volumes:
-          # Allow git operations to work
-          - ${HOME}/.ssh:/root/.ssh
-          - ${HOME}/.git:/root/.git
-        environment:
-          - BUILDKITE_API_TOKEN
-  timeout_in_minutes: 45
-  retry:
-    automatic: true
-  artifact_paths:
-    - 'apps/mobile-playground/artifacts/**/*'
-  agents:
-    queue: metal
-
 _visreg_android_shared: &visreg_android_shared
   plugins: &android_plugins
     - file:///buildkite/plugins/cache: &cache_plugin
@@ -69,19 +43,20 @@ env:
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
 
 steps:
-  - label: Android - Prebuild - visreg
-    key: 'visreg_android_prebuild'
-    <<: *prebuild_shared_step
-    commands:
-      - tools/ci/visreg.sh android build
-
   - label: 'Visreg Test (Android) %N'
     <<: *visreg_android_shared
-    depends_on: 'visreg_android_prebuild'
     key: 'visreg_android'
-    parallelism: 8
+    parallelism: 5
     commands:
-      - tools/ci/visreg.sh android test
+      - tools/ci/setup.sh
+      - echo "--- Creating repositories.cfg"
+      - mkdir -p /root/.android && touch /root/.android/repositories.cfg
+      - echo "--- Starting adb server"
+      - adb start-server
+      - echo "--- Ensuring emulator is ready"
+      - yarn nx run mobile-app:android-e2e-emulator
+      - echo "--- Running Android visreg tests"
+      - yarn nx run mobile-app:detox:android-production
 
   - label: 'Finish Visreg Tests (Android)'
     allow_dependency_failure: true

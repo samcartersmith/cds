@@ -40,7 +40,7 @@ describe('ThemeProvider', () => {
 
   it('has activeConfig = config.dark if spectrum=dark', () => {
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="example" spectrum="dark">
           {children}
         </ThemeProvider>
@@ -51,7 +51,7 @@ describe('ThemeProvider', () => {
 
   it('merges + prefixes all custom palettes with default', () => {
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="brand" palette={{ primary: 'orange50' }}>
           {children}
         </ThemeProvider>
@@ -72,7 +72,7 @@ describe('ThemeProvider', () => {
 
   it('adds elevation1Children and elevation2Children configs if spectrum=dark', () => {
     renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="example" spectrum="dark">
           {children}
         </ThemeProvider>
@@ -89,7 +89,7 @@ describe('ThemeProvider', () => {
 
   it('does not add elevation1Children and elevation2Children configs if spectrum=light', () => {
     renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="example" spectrum="light">
           {children}
         </ThemeProvider>
@@ -104,7 +104,7 @@ describe('ThemeProvider', () => {
 
   it('merges frontier overrides in children where frontierColor=true', () => {
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="example1">
           <ThemeProvider name="example2" spectrum="light">
             <ThemeProvider name="example3" spectrum="dark">
@@ -148,7 +148,7 @@ describe('ThemeProvider', () => {
 
   it('merges frontier overrides in children where frontierColor=true + custom palette', () => {
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="example1">
           <ThemeProvider name="example2" spectrum="light">
             <ThemeProvider name="example3" spectrum="dark">
@@ -188,7 +188,7 @@ describe('ThemeProvider', () => {
 
   it('works with nested spectrums', () => {
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="example1" spectrum="dark">
           <ThemeProvider name="example2" spectrum="light">
             <ThemeProvider name="example3" spectrum="dark">
@@ -209,7 +209,7 @@ describe('ThemeProvider', () => {
 
   it('works with nested spectrums and elevation=1', () => {
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="example1" spectrum="dark">
           <ThemeProvider name="example2" spectrum="light">
             <ThemeProvider name="example3" spectrum="dark">
@@ -230,7 +230,7 @@ describe('ThemeProvider', () => {
 
   it('works with nested spectrums and elevation=2', () => {
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="example1" spectrum="dark">
           <ThemeProvider name="example2" spectrum="light">
             <ThemeProvider name="example3" spectrum="dark">
@@ -251,7 +251,7 @@ describe('ThemeProvider', () => {
 
   it('merges custom palette with default palette', () => {
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="custom-green" spectrum="dark" palette={{ background: 'green50' }}>
           {children}
         </ThemeProvider>
@@ -280,7 +280,7 @@ describe('ThemeProvider', () => {
     const palette4 = { positive: 'gray50' } as const;
 
     const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }) => (
+      wrapper: ({ children }: { children: React.ReactNode }) => (
         <ThemeProvider name="palette1" spectrum="dark" palette={palette1}>
           <ThemeProvider name="palette2" spectrum="light" palette={palette2}>
             <ThemeProvider name="palette3" spectrum="dark" palette={palette3}>

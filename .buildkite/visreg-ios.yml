@@ -6,24 +6,15 @@ env:
   IOS_PERCY_SECRET: 'infra/buildkite/cds-percy-token-ios'
 
 steps:
-  - label: iOS - Prebuild - visreg
-    key: 'visreg_ios_prebuild'
-    agents:
-      queue: macos-metal
-    commands:
-      - tools/ci/visreg.sh ios build
-    artifact_paths:
-      - 'apps/mobile-playground/artifacts/**/*'
-
   - label: 'Visreg Test (iOS) %N'
     key: 'visreg_ios'
-    depends_on: 'visreg_ios_prebuild'
-    parallelism: 8
+    parallelism: 5
     agents:
       queue: macos-metal
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
-      - tools/ci/visreg.sh ios test
+      - tools/ci/setup.sh
+      - yarn nx run mobile-app:detox:ios-production
     retry:
       automatic:
         limit: 1

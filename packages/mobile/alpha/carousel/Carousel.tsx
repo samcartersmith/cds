@@ -101,7 +101,7 @@ export const Carousel = memo(
                     id,
                     index,
                     snapPoint,
-                    progress: xOffset.interpolate({
+                    progress: xOffset.interpolate<number>({
                       inputRange: [snapPoint - itemWidth, snapPoint, snapPoint + itemWidth],
                       outputRange: [0, 1, 1],
                       extrapolate: 'clamp',
@@ -113,7 +113,7 @@ export const Carousel = memo(
               [] as {
                 id: CarouselId;
                 snapPoint: number;
-                progress: Animated.AnimatedInterpolation;
+                progress: Animated.AnimatedInterpolation<number>;
                 index: number;
                 children: React.ReactElement;
               }[],

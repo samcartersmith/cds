@@ -22,7 +22,7 @@ export type IconProps = IconBaseProps & {
   /** Color of the icon when used as a foreground. */
   color?: PaletteForeground;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-  dangerouslySetColor?: string | Animated.AnimatedInterpolation;
+  dangerouslySetColor?: string | Animated.AnimatedInterpolation<string>;
 } & DangerouslySetStyle<TextStyle>;
 
 export const Icon = memo(function Icon({

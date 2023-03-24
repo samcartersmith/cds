@@ -1,22 +1,9 @@
 import { Animated } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
-import { AnyObject } from '@cbhq/cds-utils';
 
 import { useOverlayAnimation } from '../useOverlayAnimation';
 
 jest.useFakeTimers();
-
-jest.mock('react-native/Libraries/Animated/AnimatedImplementation', () => ({
-  ...jest.requireActual<AnyObject>('react-native/Libraries/Animated/AnimatedImplementation'),
-  timing: jest.fn((animatedValue: Animated.Value, config: { toValue: number }) => ({
-    start: jest.fn(() => {
-      return setTimeout(() => {
-        animatedValue.setValue(config.toValue);
-      }, 1000);
-    }),
-    stop: jest.fn(),
-  })),
-}));
 
 function getAnimatedValue(val: Animated.Value) {
   // @ts-expect-error: I know what I'm doing.

@@ -33,6 +33,7 @@ export const ContentCell = memo(function ContentCell({
   }
 
   const accessoryType = selected ? 'selected' : accessory;
+  const hasTitles = Boolean(title ?? subtitle);
 
   return (
     <Cell
@@ -43,7 +44,7 @@ export const ContentCell = memo(function ContentCell({
       disabled={disabled}
       selected={selected}
     >
-      {(title || subtitle) && (
+      {hasTitles && (
         <HStack alignItems="flex-start" justifyContent="space-between">
           <VStack flexGrow={1} flexShrink={1} dangerouslySetClassName={truncateClassName}>
             {!!title && (

@@ -1,4 +1,4 @@
-import { PlatformOSType, View } from 'react-native';
+import { PlatformOSType } from 'react-native';
 import { act, renderHook } from '@testing-library/react-hooks';
 import { Spectrum, useScale, useSpectrum } from '@cbhq/cds-common';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
@@ -54,6 +54,14 @@ describe('DevicePreferencesProvider', () => {
   });
 
   it('returns correct scale based on device font scale', () => {
+    function WrapperTwo(props: React.PropsWithChildren<unknown>) {
+      return (
+        <DevicePreferencesProvider>
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
+
     for (const [cdsScale, deviceFontScale] of entries(deviceScaleMap).filter(([scale]) =>
       ['large', 'xLarge', 'xxLarge', 'xxxLarge'].includes(scale),
     )) {
@@ -73,11 +81,7 @@ describe('DevicePreferencesProvider', () => {
           };
         },
         {
-          wrapper: (props) => (
-            <DevicePreferencesProvider>
-              <View {...props} />
-            </DevicePreferencesProvider>
-          ),
+          wrapper: WrapperTwo,
         },
       );
       expect(result.current.rootSpectrumPreference).toBe('system');
@@ -90,6 +94,14 @@ describe('DevicePreferencesProvider', () => {
   });
 
   test('passed in props take priority over device', () => {
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
+        <DevicePreferencesProvider spectrum="dark" scale="xSmall">
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
+
     const { result } = renderHook(
       () => {
         return {
@@ -104,11 +116,7 @@ describe('DevicePreferencesProvider', () => {
         };
       },
       {
-        wrapper: (props) => (
-          <DevicePreferencesProvider spectrum="dark" scale="xSmall">
-            <div {...props} />
-          </DevicePreferencesProvider>
-        ),
+        wrapper: Wrapper,
       },
     );
 
@@ -121,6 +129,14 @@ describe('DevicePreferencesProvider', () => {
   });
 
   test('returns the correct spectrum based on device', () => {
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
+        <DevicePreferencesProvider>
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
+
     const spectrums: Spectrum[] = ['light', 'dark'];
     const oss: PlatformOSType[] = ['android', 'ios'];
     for (const spectrum of spectrums) {
@@ -145,11 +161,7 @@ describe('DevicePreferencesProvider', () => {
             };
           },
           {
-            wrapper: (props) => (
-              <DevicePreferencesProvider>
-                <div {...props} />
-              </DevicePreferencesProvider>
-            ),
+            wrapper: Wrapper,
           },
         );
 
@@ -164,6 +176,14 @@ describe('DevicePreferencesProvider', () => {
   });
 
   test('system to scale and spectrum updates', () => {
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
+        <DevicePreferencesProvider>
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
+
     mockPlatform('ios');
     mockUseColorSchema('dark');
     mockDeviceScale(deviceScaleMap.xxxLarge);
@@ -182,11 +202,7 @@ describe('DevicePreferencesProvider', () => {
         };
       },
       {
-        wrapper: (props) => (
-          <DevicePreferencesProvider>
-            <div {...props} />
-          </DevicePreferencesProvider>
-        ),
+        wrapper: Wrapper,
       },
     );
 
@@ -212,6 +228,14 @@ describe('DevicePreferencesProvider', () => {
   });
 
   test('scale and spectrum to system updates', () => {
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
+        <DevicePreferencesProvider scale="medium" spectrum="light">
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
+
     mockPlatform('ios');
     mockUseColorSchema('dark');
     mockDeviceScale(deviceScaleMap.xxxLarge);
@@ -230,11 +254,7 @@ describe('DevicePreferencesProvider', () => {
         };
       },
       {
-        wrapper: (props) => (
-          <DevicePreferencesProvider scale="medium" spectrum="light">
-            <div {...props} />
-          </DevicePreferencesProvider>
-        ),
+        wrapper: Wrapper,
       },
     );
 

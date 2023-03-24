@@ -1,5 +1,4 @@
 import React, { forwardRef, memo, useMemo, useRef } from 'react';
-import { TextInput } from 'react-native';
 import Svg, { Defs, G, LinearGradient, Path, Stop } from 'react-native-svg';
 import { borderWidth } from '@cbhq/cds-common/tokens/border';
 import { SparklineBaseProps } from '@cbhq/cds-common/types/SparklineBaseProps';
@@ -13,7 +12,7 @@ import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroun
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 
 export const SparklineGradient = memo(
-  forwardRef<TextInput | null, SparklineBaseProps>(
+  forwardRef<Path | null, SparklineBaseProps>(
     ({ background, color, path, height, width, yAxisScalingFactor, children }, ref) => {
       const patternId = useRef<string>(generateRandomId());
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
@@ -36,7 +35,7 @@ export const SparklineGradient = memo(
       }, [areaColor, hasChildren, gradient]);
 
       return (
-        <Svg width={width} height={height}>
+        <Svg width={width} height={height} fill="none">
           {linearGradient}
           <G {...translateProps}>
             <Path

@@ -1,0 +1,33 @@
+{
+  "build": {
+    "local": {
+      "node": "18.14.2",
+      "distribution": "internal",
+      "android": {
+        "withoutCredentials": true,
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug :app:assembleAndroidTest -DtestBuildType=debug"
+      },
+      "ios": {
+        "simulator": true,
+        "buildConfiguration": "Debug"
+      }
+    },
+    "production": {
+      "node": "18.14.2",
+      "distribution": "internal",
+      "android": {
+        "withoutCredentials": true,
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease :app:assembleAndroidTest -DtestBuildType=release"
+      },
+      "ios": {
+        "simulator": true,
+        "buildConfiguration": "Release"
+      }
+    }
+  },
+  "cli": {
+    "version": "3.8.1"
+  }
+}

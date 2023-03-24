@@ -9,7 +9,7 @@ export const PROGRESS_INDICATOR_WIDTH = 24;
 
 export type ProgressIndicatorProps = {
   /** An Animated.Value or interpolated Animated.Value between 0 and 1 */
-  progress?: Animated.Value | Animated.AnimatedInterpolation;
+  progress?: Animated.Value | Animated.AnimatedInterpolation<number>;
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */

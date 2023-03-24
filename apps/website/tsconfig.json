@@ -1,11 +1,18 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/app/website",
+    "outDir": "../../.nx/dts/apps/website",
     "rootDir": "./"
   },
-  "include": ["**/*"],
-  "exclude": ["dist", "jest.config.js", "babel.config.js", "babel.build.config.js"],
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    "jest.config.js",
+    "babel.config.js",
+    "babel.build.config.js"
+  ],
   "references": [
     {
       "path": "../../packages/common"
@@ -36,7 +43,9 @@
     }
   ],
   "ts-node": {
-    "require": ["tsconfig-paths/register"],
+    "require": [
+      "tsconfig-paths/register"
+    ],
     "transpileOnly": true,
     "transpiler": "ts-node/transpilers/swc"
   }

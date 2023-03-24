@@ -22,18 +22,24 @@
   "types": "./dts/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
-    ".": {
-      "types": "./dts/index.d.ts",
-      "node": "./lib/index.js",
-      "default": "./lib/index.js"
+    "./fonts/web/icon-font.css": {
+      "default": "./fonts/web/icon-font.css"
     },
-    "./fonts/web/icon-font.css": "./fonts/web/icon-font.css",
-    "./fonts/web/*.woff2": "./fonts/web/*.woff2",
-    "./fonts/native/*.ttf": "./fonts/native/*.ttf",
+    "./fonts/web/*.woff2": {
+      "default": "./fonts/web/*.woff2"
+    },
+    "./fonts/native/CoinbaseIcons.ttf": {
+      "default": "./fonts/native/CoinbaseIcons.ttf"
+    },
     "./*": {
       "types": "./dts/*.d.ts",
       "node": "./lib/*.js",
       "default": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
     }
   },
   "devDependencies": {

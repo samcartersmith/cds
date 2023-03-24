@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import { TextInput } from 'react-native';
+import { Path } from 'react-native-svg';
 import * as interpolate from 'd3-interpolate-path';
 import { useValueChanges } from '@cbhq/cds-common/hooks/useValueChanges';
 import { SparklineInteractiveAnimatedPathProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
@@ -23,8 +23,8 @@ export const SparklineInteractiveAnimatedPath = memo(
   }: SparklineInteractiveAnimatedPathProps) => {
     const { isFallbackVisible, hideFallback, animateMinMaxIn, compact } =
       useSparklineInteractiveContext();
-    const pathRef = useRef<TextInput | null>(null);
-    const areaRef = useRef<TextInput | null>(null);
+    const pathRef = useRef<Path | null>(null);
+    const areaRef = useRef<Path | null>(null);
 
     // Only tween animation on period changes
     const { hasNotChanged: skipAnimation, addPreviousValue: addPreviousPeriod } =

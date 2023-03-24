@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { RootScalePreferenceProvider } from '../RootScalePreferenceProvider';
@@ -14,17 +15,29 @@ describe('RootScalePreferenceProvider', () => {
   });
 
   it('is not impacted by a parent ScaleProvider', () => {
-    const { result } = renderHook(() => useRootScalePreference(), {
-      wrapper: ({ children }) => (
+    function createWrapper() {
+      const Wrapper: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
         <ScaleProvider value="xSmall">
           <RootScalePreferenceProvider value="xxLarge">{children}</RootScalePreferenceProvider>
         </ScaleProvider>
-      ),
+      );
+      return Wrapper;
+    }
+
+    const { result } = renderHook(() => useRootScalePreference(), {
+      wrapper: createWrapper(),
     });
     expect(result.current).toBe('xxLarge');
   });
 
   it('can have a different value from ScaleProvider', () => {
+    function Wrapper({ children }: { children: ReactNode }) {
+      return (
+        <RootScalePreferenceProvider value="xxLarge">
+          <ScaleProvider value="xSmall">{children}</ScaleProvider>
+        </RootScalePreferenceProvider>
+      );
+    }
     const { result } = renderHook(
       () => {
         return {
@@ -33,11 +46,7 @@ describe('RootScalePreferenceProvider', () => {
         };
       },
       {
-        wrapper: ({ children }) => (
-          <RootScalePreferenceProvider value="xxLarge">
-            <ScaleProvider value="xSmall">{children}</ScaleProvider>
-          </RootScalePreferenceProvider>
-        ),
+        wrapper: Wrapper,
       },
     );
     expect(result.current.rootScale).toBe('xxLarge');
@@ -46,12 +55,17 @@ describe('RootScalePreferenceProvider', () => {
 
   it('logs an error if trying to render multiple RootScalePreferenceProviders', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation();
-    renderHook(() => useRootScalePreference(), {
-      wrapper: ({ children }) => (
+
+    function Wrapper({ children }: { children: ReactNode }) {
+      return (
         <RootScalePreferenceProvider value="xxLarge">
           <RootScalePreferenceProvider value="xSmall">{children}</RootScalePreferenceProvider>
         </RootScalePreferenceProvider>
-      ),
+      );
+    }
+
+    renderHook(() => useRootScalePreference(), {
+      wrapper: Wrapper,
     });
     expect(spy).toHaveBeenCalledWith(
       'Multiple RootScalePreferenceProviders were rendered and there should only be one. Ensure there is a single RootScalePreferenceProvider to resolve.',

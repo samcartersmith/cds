@@ -57,36 +57,32 @@ yarn nx run web:test --file packages/web/layout/__tests__/Box.test.tsx --watch
 
 Mobile animation test is powered by Reanimated jest utils. Check the [official doc](https://docs.swmansion.com/react-native-reanimated/docs/guide/testing) for more info. Follow the guide below for testing Reanimated animation styles and advancing timers.
 
-1. Import test utils from reanimated `lib` directory. **Note:** You need to import from `libs` instead of `src`, otherwise tests will be flaky.
-
-```js
-import {
-  advanceAnimationByTime,
-  withReanimatedTimer,
-} from 'react-native-reanimated/lib/reanimated2/jestUtils';
-```
-
-2. Advancing timer and match animated styles. **Note:** The timer will also work with RN Animated powered animations.
-
 ```jsx
+beforeEach(() => {
+  jest.useFakeTimers();
+});
+
+afterEach(() => {
+  jest.runOnlyPendingTimers();
+  jest.useRealTimers();
+});
+
 it('has correct animated styles', () => {
-  withReanimatedTimer(() => {
-    render(<Component />);
+  render(<Component />);
 
-    const view = screen.getByTestId('view');
-    const style = { opacity: 0 };
+  const view = screen.getByTestId('view');
+  const style = { opacity: 0 };
 
-    // default style
+  // default style
+  expect(view).toHaveAnimatedStyle(style);
+
+  act(() => {
+    // duration of the animation
+    jest.advanceTimersByTime(200);
+
+    style.opacity = 1;
+    // style after animation
     expect(view).toHaveAnimatedStyle(style);
-
-    act(() => {
-      // duration of the animation
-      advanceAnimationByTime(200);
-
-      style.opacity = 1;
-      // style after animation
-      expect(view).toHaveAnimatedStyle(style);
-    });
   });
 });
 ```

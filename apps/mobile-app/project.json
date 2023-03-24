@@ -1,0 +1,156 @@
+{
+  "name": "mobile-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mobile-app/src",
+  "projectType": "application",
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "setup": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/mobile-app",
+        "commands": [
+          "mkdir -p ios",
+          "mkdir -p android"
+        ]
+      }
+    },
+    "launch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/mobile-app",
+        "command": "node ./scripts/launch.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
+      },
+      "configurations": {
+        "ios-local": {
+          "args": "--profile local --jsEngine hermes --platform ios"
+        },
+        "android-local": {
+          "args": "--profile local --jsEngine hermes --platform android"
+        },
+        "ios-production": {
+          "args": "--profile production --jsEngine hermes --platform ios"
+        },
+        "android-production": {
+          "args": "--profile production --jsEngine hermes --platform android"
+        }
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/mobile-app",
+        "command": "node ./scripts/start.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
+      },
+      "configurations": {
+        "ios-local": {
+          "args": "--profile local --jsEngine hermes --platform ios"
+        },
+        "android-local": {
+          "args": "--profile local --jsEngine hermes --platform android"
+        }
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/mobile-app",
+        "command": "node ./scripts/build.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
+      },
+      "configurations": {
+        "ios-local": {
+          "args": "--profile local --jsEngine hermes --platform ios"
+        },
+        "android-local": {
+          "args": "--profile local --jsEngine hermes --platform android"
+        },
+        "ios-production": {
+          "args": "--profile production --jsEngine hermes --platform ios"
+        },
+        "android-production": {
+          "args": "--profile production --jsEngine hermes --platform android"
+        }
+      }
+    },
+    "detox": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/mobile-app",
+        "command": "node ./scripts/detox.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
+      },
+      "configurations": {
+        "ios-local": {
+          "args": "--profile local --jsEngine hermes --platform ios"
+        },
+        "android-local": {
+          "args": "--profile local --jsEngine hermes --platform android"
+        },
+        "ios-production": {
+          "args": "--profile production --jsEngine hermes --platform ios"
+        },
+        "android-production": {
+          "args": "--profile production --jsEngine hermes --platform android"
+        }
+      }
+    },
+    "validate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/mobile-app",
+        "command": "node ./scripts/validate.mjs"
+      }
+    },
+    "android-e2e-emulator": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;default;x86_64'",
+          "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;default;x86_64'"
+        ],
+        "parallel": false
+      },
+      "configurations": {
+        "m1": {
+          "commands": [
+            "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;default;arm64-v8a'",
+            "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;default;arm64-v8a'"
+          ]
+        }
+      }
+    },
+    "visreg": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "buildkite-agent pipeline upload .buildkite/visreg-ios.yml",
+          "buildkite-agent pipeline upload .buildkite/visreg-android.yml"
+        ],
+        "parallel": true
+      }
+    }
+  },
+  "tags": []
+}

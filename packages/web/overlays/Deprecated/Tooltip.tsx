@@ -34,6 +34,8 @@ export const Tooltip = ({ children, content, disabled, placement = 'top' }: Tool
 
   return (
     <>
+      {/* 
+      // @ts-expect-error  - this error is due to no-implicit-children with TooltipReference. I'm unable to bump to V2 of this package or override props since they're heavily nested in generics */}
       <TooltipReference {...tooltip}>{children}</TooltipReference>
 
       <TooltipPopover

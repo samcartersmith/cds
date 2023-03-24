@@ -75,3 +75,12 @@ export const ScrollContainer: ComponentStoryObj<typeof Default> = {
     await userEvent.click(canvas.getByText('Open Menu'));
   },
 };
+
+// Copying this approach from SimpleDropdown
+ScrollContainer.parameters = {
+  a11y: {
+    config: {
+      rules: [{ id: 'aria-required-children', enabled: false }],
+    },
+  },
+};

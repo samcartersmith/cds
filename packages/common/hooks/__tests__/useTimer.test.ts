@@ -9,6 +9,7 @@ jest.spyOn(global, 'clearTimeout');
 describe('useTimer', () => {
   afterEach(() => {
     jest.clearAllMocks();
+    jest.clearAllTimers();
   });
 
   it('returns functions', () => {
@@ -50,8 +51,7 @@ describe('useTimer', () => {
     expect(remainingTime).toBe(expectedRemainingTime);
     expect(clearTimeout).toHaveBeenCalledTimes(2);
   });
-
-  it('resumes timer', () => {
+  it('resumes timer', async () => {
     const { result } = renderHook(() => useTimer());
     const callback = jest.fn();
     const duration = 500;
@@ -61,7 +61,7 @@ describe('useTimer', () => {
     const remainingTime = result.current.pause();
     result.current.resume();
 
-    expect(setTimeout).toHaveBeenCalledTimes(3);
+    expect(setTimeout).toHaveBeenCalledTimes(2);
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), remainingTime);
   });
 

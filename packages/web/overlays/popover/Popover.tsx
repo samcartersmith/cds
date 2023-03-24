@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { memo, MouseEvent, useCallback, useMemo } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { css } from 'linaria';
 import { useScale } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
+import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { usePopoverA11y } from '../../hooks/usePopoverA11y';
 import { Box } from '../../layout/Box';
 import { ThemeProvider } from '../../system';
@@ -157,7 +157,7 @@ export const Popover = memo(
         >
           {children}
         </div>
-        <AnimatePresence>
+        <NewAnimatePresence>
           {visible ? (
             <Portal disablePortal={disablePortal} containerId={tooltipContainerId}>
               <ThemeProvider
@@ -179,7 +179,7 @@ export const Popover = memo(
               </ThemeProvider>
             </Portal>
           ) : undefined}
-        </AnimatePresence>
+        </NewAnimatePresence>
       </div>
     );
   },
