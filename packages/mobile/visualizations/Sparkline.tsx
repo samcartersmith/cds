@@ -31,7 +31,7 @@ export const Sparkline = memo(
     ) : null;
 
     return (
-      <Svg width={width} height={height}>
+      <Svg width={width} height={height} fill="none">
         {defs}
         <G {...translateProps}>
           <Path

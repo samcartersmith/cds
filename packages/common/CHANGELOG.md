@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.0.0-rc.2 (3/23/2023, 06:36 PM PST)
+
+#### 💥 Breaking
+
+- **[all]** Base PR for Expo Migration, React Native 71.4, Reanimated V3 & React 18. [#1775](https://github.cbhq.net/frontend/cds/pull/1775), [DX-709](https://jira.coinbase-corp.com/browse/DX-709)
+- **[ui-mobile-playground, ui-mobile-visreg]** Release Candidate 1. [#1822](https://github.cbhq.net/frontend/cds/pull/1822)
+
+#### 🐞 Fixes
+
+- **[ui-mobile-playground, ui-mobile-visreg]** Fix Npm Pack. [#1841](https://github.cbhq.net/frontend/cds/pull/1841)
+
 ## 5.0.0-rc.1 (3/20/2023, 10:29 AM PST)
 
 #### 💥 Breaking
