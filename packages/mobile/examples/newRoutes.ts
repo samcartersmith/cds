@@ -155,6 +155,10 @@ export const routes = [
     getComponent: () => require('../overlays/__stories__/Overlay.stories').default,
   },
   {
+    key: 'PatternTagError',
+    getComponent: () => require('../system/__stories__/PatternTagError.stories').default,
+  },
+  {
     key: 'Pictogram',
     getComponent: () => require('../illustrations/__stories__/Pictogram.stories').default,
   },

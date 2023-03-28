@@ -44,6 +44,7 @@ export const routes = {
   Modal: () => require('../overlays/__stories__/Modal.stories').default,
   NavigationIcon: () => require('../icons/__stories__/NavigationIcon.stories').default,
   Overlay: () => require('../overlays/__stories__/Overlay.stories').default,
+  PatternTagError: () => require('../system/__stories__/PatternTagError.stories').default,
   Pictogram: () => require('../illustrations/__stories__/Pictogram.stories').default,
   Pressable: () => require('../system/__stories__/Pressable.stories').default,
   PressableOpacity: () => require('../system/__stories__/PressableOpacity.stories').default,

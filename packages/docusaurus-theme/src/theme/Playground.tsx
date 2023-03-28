@@ -17,6 +17,7 @@ type PlaygroundProps = LiveProviderProps & {
   borderless?: boolean;
   hideControls?: boolean;
   hidePreview?: boolean;
+  editorStartsExpanded?: boolean;
 };
 
 const transformCodeFallback = (code: unknown) => `${code};`;
@@ -27,12 +28,13 @@ const Playground = memo(function Playground({
   borderless,
   hideControls,
   hidePreview,
+  editorStartsExpanded,
   ...props
 }: PlaygroundProps): JSX.Element {
   const prismTheme = usePrismTheme();
   const code = children.replace(/\n$/, '');
   const codeRef = useRef<string>(code);
-  const [collapsed, { toggle }] = useToggler(true);
+  const [collapsed, { toggle }] = useToggler(!editorStartsExpanded);
   const toast = useToast();
 
   const transformCode = useCallback(

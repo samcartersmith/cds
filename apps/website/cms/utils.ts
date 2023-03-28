@@ -4,8 +4,20 @@ import slugify from '@cbhq/docusaurus-theme/src/utils/slugify';
 import type { ComponentPageFields, ComponentPageProps } from './pages/ComponentPage';
 
 export function populateGuidelinesToc(fields: ComponentPageFields) {
-  const toc = ['Principles', 'Usage', 'Anatomy', 'Spacing'];
+  const toc = [];
 
+  if (fields.principles) {
+    toc.push('Principles');
+  }
+  if (fields.usage) {
+    toc.push('Usage');
+  }
+  if (fields.anatomy) {
+    toc.push('Anatomy');
+  }
+  if (fields.spacing) {
+    toc.push('Spacing');
+  }
   if (fields.sizing) {
     toc.push('Sizing');
   }

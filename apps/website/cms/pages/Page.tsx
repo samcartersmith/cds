@@ -7,6 +7,7 @@ import { Spinner } from '@cbhq/cds-web/loaders';
 import { TextTitle2 } from '@cbhq/cds-web/typography';
 
 import { Accordion } from '../misc/Accordion';
+import { CodePlayground } from '../misc/CodePlayground';
 import { Embedded } from '../misc/Embedded';
 import { Link } from '../misc/Link';
 import { MediaAsset } from '../misc/MediaAsset';
@@ -52,6 +53,7 @@ const componentsMap = {
   miscRichText: RichText,
   miscAccordion: Accordion,
   miscEmbedded: Embedded,
+  miscCodePlayground: CodePlayground,
   moduleStaticReadme: StaticReadme,
   moduleTabs: Tabs,
   moduleTabItem: TabItem,
