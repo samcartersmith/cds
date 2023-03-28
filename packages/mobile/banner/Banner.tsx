@@ -208,6 +208,7 @@ export const Banner = memo(
                 backgroundColor="transparent"
                 borderRadius="round"
                 testID={`${testID}-dimiss-btn`}
+                hitSlop={{ top: 15, left: 15, bottom: 15, right: 15 }}
               >
                 <Icon size="s" name="close" color={iconButtonColor} />
               </Pressable>
