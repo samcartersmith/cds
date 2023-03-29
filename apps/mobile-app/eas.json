@@ -17,7 +17,7 @@
       "node": "18.14.2",
       "distribution": "internal",
       "android": {
-        "withoutCredentials": true,
+        "credentialsSource": "local",
         "buildType": "apk",
         "gradleCommand": ":app:assembleRelease :app:assembleAndroidTest -DtestBuildType=release"
       },

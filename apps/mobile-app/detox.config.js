@@ -43,8 +43,9 @@ const config = {
     emulator: {
       type: 'android.emulator',
       device: {
-        avdName: isCI() ? 'Pixel_3a_API_30' : 'pixel_4',
+        avdName: 'cds_detox',
       },
+      bootArgs: '-skin 600x5000',
     },
   },
   configurations: {

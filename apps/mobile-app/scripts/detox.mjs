@@ -1,9 +1,8 @@
-import fs from 'node:fs';
 import { $, argv, within } from 'zx'; // https://github.com/google/zx
-import { isCI } from '@cbhq/mono-tasks';
 
 import detoxConfig from '../detox.config.js';
 
+import { isCI } from './utils/env.mjs';
 import { getBuildInfo } from './utils/getBuildInfo.mjs';
 import { setEnvVars } from './utils/setEnvVars.mjs';
 
@@ -13,26 +12,18 @@ const { ios, android } = getBuildInfo();
 
 setEnvVars();
 
-if (platform === 'ios') {
-  await ios.unzip();
-}
-
 if (platform === 'android') {
-  if (!fs.existsSync(android.apk) || !fs.existsSync(android.testApk)) {
-    await android.unzip();
-  }
+  const targetAvd = detoxConfig.devices.emulator.device.avdName;
+  const { stdout: emulatorsAsString } = await $`avdmanager list avd --compact`;
+  const emulators = emulatorsAsString.split('\n');
+  const doesNotHaveEmulator = emulators.findIndex((item) => item === targetAvd) === -1;
 
-  if (!isCI()) {
-    const targetAvd = detoxConfig.devices.emulator.device.avdName;
-    const { stdout: emulatorsAsString } = await $`avdmanager list avd --compact`;
-    const emulators = emulatorsAsString.split('\n');
-    const doesNotHaveEmulator = emulators.findIndex((item) => item === targetAvd) === -1;
+  if (doesNotHaveEmulator) {
+    const architecture = isCI ? android.architectures.ubuntu : android.architectures.m1;
+    const androidSdk = `system-images;android-30;default;${architecture}`;
 
-    if (doesNotHaveEmulator) {
-      const androidSdk = 'system-images;android-33;google_apis;arm64-v8a';
-      await $`sdkmanager ${androidSdk}`;
-      await $`avdmanager create avd --force --name ${targetAvd} --device ${targetAvd} --package ${androidSdk}`;
-    }
+    await $`sdkmanager ${androidSdk}`;
+    await $`echo no | avdmanager create avd --force --name ${targetAvd} --package ${androidSdk}`;
   }
 }
 
@@ -43,8 +34,13 @@ if (profile === 'debug') {
   });
 }
 
-if (isCI() && platform === 'android') {
-  await $`yarn workspace mobile-app detox test --configuration ${platform}-${profile} --device-boot-args='-skin 600x5000' --headless`;
+if (profile === 'release') {
+  if (platform === 'android') await android.patchBundle();
+  if (platform === 'ios') await ios.patchBundle();
+}
+
+if (platform === 'android' && isCI) {
+  await $`yarn workspace mobile-app detox test --configuration ${platform}-${profile} --headless --cleanup --force-adb-install`;
 } else {
-  await $`yarn workspace mobile-app detox test --configuration ${platform}-${profile}`;
+  await $`yarn workspace mobile-app detox test --loglevel verbose --configuration ${platform}-${profile} --cleanup --force-adb-install`;
 }

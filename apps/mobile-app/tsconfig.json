@@ -17,7 +17,9 @@
     "*.config.ts",
     "scripts",
     ".eslintrc.js",
-    "*.d.ts"
+    "*.d.ts",
+    "*.json",
+    "e2e"
   ],
   "exclude": [
     "node_modules",

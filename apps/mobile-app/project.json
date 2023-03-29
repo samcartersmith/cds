@@ -31,6 +31,9 @@
     },
     "launch": {
       "executor": "nx:run-commands",
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "cwd": "apps/mobile-app",
         "command": "node ./scripts/launch.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
@@ -70,9 +73,7 @@
     },
     "build": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": [],
       "options": {
         "cwd": "apps/mobile-app",
         "command": "node ./scripts/build.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
@@ -121,24 +122,6 @@
       "options": {
         "cwd": "apps/mobile-app",
         "command": "node ./scripts/validate.mjs"
-      }
-    },
-    "android-e2e-emulator": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;default;x86_64'",
-          "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;default;x86_64'"
-        ],
-        "parallel": false
-      },
-      "configurations": {
-        "m1": {
-          "commands": [
-            "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose 'system-images;android-30;default;arm64-v8a'",
-            "echo no | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name Pixel_3a_API_30 --package 'system-images;android-30;default;arm64-v8a'"
-          ]
-        }
       }
     },
     "visreg": {

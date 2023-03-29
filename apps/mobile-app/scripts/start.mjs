@@ -3,10 +3,15 @@ import { $, argv } from 'zx'; // https://github.com/google/zx
 import { getBuildInfo } from './utils/getBuildInfo.mjs';
 import { setEnvVars } from './utils/setEnvVars.mjs';
 
-const { ios, android } = getBuildInfo();
+const { platform } = argv;
+const { ios } = getBuildInfo();
 
 setEnvVars();
 
-const scheme = argv.platform === 'ios' ? ios.bundleIdentifier : android.packageIdentifier;
+if (platform === 'ios') {
+  await $`expo start --${argv.platform} --dev-client --localhost --scheme ${ios.bundleIdentifier}`;
+}
 
-await $`expo start --${argv.platform} --dev-client --localhost --clear --scheme ${scheme}`;
+if (platform === 'android') {
+  await $`expo start --${argv.platform} --dev-client --localhost`;
+}

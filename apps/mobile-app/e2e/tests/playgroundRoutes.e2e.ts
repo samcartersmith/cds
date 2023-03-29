@@ -3,7 +3,8 @@ import { getPlaygroundRoutes, uploadScreenshotsToPercyForRoute } from '@cbhq/ui-
 
 const disabledRoutes = {
   disabledRoutes: [
-    'Alerts', // pointless
+    'Alert', // pointless
+    'AnimatedCaret', // pointless
     'ContentCellFallback' /** Animation */,
     'ListCellFallback' /** Animation */,
     'TooltipV2', // pointless
