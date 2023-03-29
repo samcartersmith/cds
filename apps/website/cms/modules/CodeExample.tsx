@@ -1,51 +1,49 @@
 import React, { memo } from 'react';
-import { LiveProviderProps } from 'react-live';
-import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 import { Document } from '@contentful/rich-text-types';
 import { Entry } from 'contentful';
 import { CMSContent } from '@cb/cms';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextBody } from '@cbhq/cds-web/typography';
 import Heading from '@cbhq/docusaurus-theme/src/theme/Heading';
-import Playground from '@cbhq/docusaurus-theme/src/theme/Playground';
 
-import ReactLiveScope from '../../src/theme/ReactLiveScope';
+import { CodePlayground } from '../misc/CodePlayground';
 import type { MediaAssetFields } from '../misc/MediaAsset';
+import type { RichTextProps } from '../misc/RichText';
 
 export type CodeExampleFields = {
   title: string;
+  richTextDescription?: Entry<RichTextProps>[];
   description?: string;
   code?: Document;
   image?: Entry<MediaAssetFields>[];
   readOnly?: boolean;
+  editorStartsExpanded?: boolean;
 };
 
 export const CodeExample = memo(function CodeExample({
   title,
+  richTextDescription,
   description,
   code,
   image,
   readOnly = false,
+  editorStartsExpanded = false,
 }: CodeExampleFields) {
   return (
     <VStack gap={2}>
       <Heading as="h3">{title}</Heading>
+      {richTextDescription && <CMSContent content={richTextDescription} />}
       {description && (
         <TextBody as="p" color="foregroundMuted">
           {description}
         </TextBody>
       )}
       {code && (
-        // <Playground /> has spacing bottom 3 + gap 1, offset it to have consistent spacing
-        <VStack offsetBottom={4}>
-          <Playground
-            scope={ReactLiveScope as LiveProviderProps['scope']}
-            disabled={readOnly}
-            hidePreview={readOnly}
-          >
-            {documentToPlainTextString(code, '\n')}
-          </Playground>
-        </VStack>
+        <CodePlayground
+          code={code}
+          readOnly={readOnly}
+          editorStartsExpanded={editorStartsExpanded}
+        />
       )}
       {image && <CMSContent content={image} />}
     </VStack>

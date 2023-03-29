@@ -11,6 +11,7 @@ const disabledRoutes = {
     'Tray', // pointless
     'LottieStatusAnimation' /** Animation */,
     'Modal' /** Modal is displayed over expected screen */,
+    'PatternTagError' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
   ],
   iosDisabledRoutes: [],
   androidDisabledRoutes: [

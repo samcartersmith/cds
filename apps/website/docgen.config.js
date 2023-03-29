@@ -163,6 +163,7 @@ module.exports = {
     'system/EventHandlerProvider',
     'system/FeatureFlagProvider',
     'system/Interactable',
+    'system/PatternTag',
     'system/Pressable',
     'system/PressableOpacity',
     'system/ThemeProvider',

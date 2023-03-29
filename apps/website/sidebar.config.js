@@ -537,6 +537,9 @@ const sidebars = {
         {
           type: 'category',
           label: 'Table',
+          customProps: {
+            tag: 'new',
+          },
           items: [
             'components/tables/Table/table',
             { type: 'doc', id: 'components/tables/TableBody/table-body', label: 'Table Body' },
@@ -616,11 +619,29 @@ const sidebars = {
       label: 'Patterns',
       items: [
         {
+          type: 'doc',
+          id: 'patterns/overview',
+          label: 'Overview',
+          customProps: {
+            tag: 'new',
+          },
+        },
+        {
           type: 'category',
           label: 'Messaging',
+          customProps: {
+            tag: 'new',
+          },
           items: [
             'patterns/messaging/overview',
-            'patterns/messaging/error',
+            {
+              type: 'doc',
+              id: 'patterns/messaging/error',
+              label: 'Error',
+              customProps: {
+                tag: 'new',
+              },
+            },
             'patterns/messaging/informational',
             'patterns/messaging/success',
             'patterns/messaging/warning',
@@ -728,6 +749,14 @@ const sidebars = {
           label: 'FeatureFlagProvider',
         },
         { type: 'doc', id: 'components/system/Interactable/interactable', label: 'Interactable' },
+        {
+          type: 'doc',
+          id: 'components/system/PatternTag/pattern-tag',
+          label: 'PatternTag',
+          customProps: {
+            tag: 'new',
+          },
+        },
         {
           type: 'category',
           label: 'PortalProvider',
