@@ -19,9 +19,9 @@ import {
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { DimensionValue } from '@cbhq/cds-common/types/DimensionStyles';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 
+import { fontScaleProps } from '../hooks/useDeviceScaleToCdsScale';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Box } from '../layout/Box';
@@ -45,10 +45,6 @@ export type TextInputProps = {
    */
   minHeight?: DimensionValue;
 } & TextInputBaseProps &
-  Pick<
-    SharedAccessibilityProps,
-    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
-  > &
   Omit<RNTextInputProps, 'value' | 'onChange' | 'onChangeText'>;
 
 export const TextInput = memo(
@@ -156,6 +152,7 @@ export const TextInput = memo(
               compact={compact}
               testID={testID}
               {...editableInputAddonProps}
+              {...fontScaleProps}
             />
           }
           helperTextNode={
