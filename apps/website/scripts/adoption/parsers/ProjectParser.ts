@@ -4,8 +4,13 @@ import { countBy, flattenDeep, fromPairs, map, mapValues, partition, pickBy, uni
 import ora from 'ora';
 import path from 'path';
 
-import { tempDir } from '../config';
-import type { AdopterConfig, AdoptionStats, PreviousAdoptionStats } from '../types';
+import { featuredComponentsConfig, tempDir } from '../config';
+import type {
+  AdopterConfig,
+  AdoptionStats,
+  FeaturedComponentsConfig,
+  PreviousAdoptionStats,
+} from '../types';
 import { getPackageJson } from '../utils/getPackageJson';
 import { getProjectFiles } from '../utils/getProjectFiles';
 import { getStats } from '../utils/getStats';
@@ -282,20 +287,32 @@ export class ProjectParser {
         ),
     );
 
-    function finalFormat(components: { presentationalProps?: PresentationalProp }[]) {
+    function finalFormat(
+      components: {
+        name?: string;
+        presentationalProps?: PresentationalProp[];
+        isFeatured?: true;
+      }[],
+      category: keyof FeaturedComponentsConfig,
+    ) {
       return map(components, (item) => {
+        let newItem = { ...item };
         // We just want to highlight which props were presentational so let's filter duplicates.
         if (Array.isArray(item?.presentationalProps)) {
           const presProps = uniq(item.presentationalProps);
-          return { ...item, presentationalProps: presProps };
+          newItem = { ...newItem, presentationalProps: presProps };
         }
-        return item;
+        if (item.name && featuredComponentsConfig[category].includes(item.name)) {
+          newItem = { ...newItem, isFeatured: true };
+        }
+        return newItem;
       });
     }
+
     return {
-      cds: finalFormat(cds),
-      presentational: finalFormat(presentational),
-      other: finalFormat(other),
+      cds: finalFormat(cds, 'cds'),
+      presentational: finalFormat(presentational, 'presentational'),
+      other: finalFormat(other, 'other'),
     };
   }
 

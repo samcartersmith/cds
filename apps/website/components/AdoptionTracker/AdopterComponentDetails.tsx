@@ -95,3 +95,5 @@ export const AdopterComponentDetails = memo(
     );
   },
 );
+
+AdopterComponentDetails.displayName = 'AdopterComponentDetails';

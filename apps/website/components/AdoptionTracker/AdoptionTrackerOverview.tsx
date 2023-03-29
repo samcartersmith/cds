@@ -71,6 +71,7 @@ function useStatForLastPeriod() {
       .find((prev) => Boolean(prev.period)) ?? fallback
   );
 }
+
 const getProjects = (pillar?: string) => {
   return adopters.filter((adopter) => adopter.pillar === pillar || !pillar);
 };
@@ -80,6 +81,7 @@ const getStats = (project: ProjectProps) => {
 };
 
 type PercentageGetterProps = { pillar?: string; average?: boolean };
+
 const getPercentage = ({ pillar, average }: PercentageGetterProps) => {
   const projects = getProjects(pillar);
   const change =
@@ -205,6 +207,8 @@ const PercentChange = memo(
   },
 );
 
+PercentChange.displayName = 'PercentChange';
+
 export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
   const { label, id } = useAdopterProjectInfo();
   const { latest } = useAdopterStats();
@@ -242,6 +246,8 @@ export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps)
   );
 });
 
+ProjectCell.displayName = 'ProjectCell';
+
 export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = memo(({ id, children }) => {
   const { projectInfo, stats } = useProject(id);
   return (
@@ -250,6 +256,8 @@ export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = memo(({ 
     </AdopterProjectInfoProvider>
   );
 });
+
+Project.displayName = 'Project';
 
 const DetailStatCell = memo(
   ({
@@ -323,6 +331,8 @@ const DetailStatCell = memo(
   },
 );
 
+DetailStatCell.displayName = 'DetailStatCell';
+
 export const ActiveProject = memo(() => {
   const { label, id } = useAdopterProjectInfo();
   const { latest, previous } = useAdopterStats();
@@ -365,6 +375,8 @@ export const ActiveProject = memo(() => {
     </VStack>
   );
 });
+
+ActiveProject.displayName = 'ActiveProject';
 
 const ProjectTitle = ({ pillar }: { pillar: string }) => {
   const { percentage } = getPercentage({ pillar, average: true });
@@ -472,6 +484,8 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
     </ThemeProvider>
   );
 });
+
+AdoptionTrackerOverview.displayName = 'AdoptionTrackerOverview';
 
 export const tableOfContents = [
   ...toPairs(groupBy(adopters, 'pillar')).map(([pillar]) => {

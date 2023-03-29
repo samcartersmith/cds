@@ -20,6 +20,8 @@ export const AdopterStatsBreakdownCell = memo(
   },
 );
 
+AdopterStatsBreakdownCell.displayName = 'AdopterStatsBreakdownCell';
+
 export const AdopterStatsBreakdown = memo(() => {
   const groups = useAdopterComponents();
   return (
@@ -36,3 +38,5 @@ export const AdopterStatsBreakdown = memo(() => {
     </VStack>
   );
 });
+
+AdopterStatsBreakdown.displayName = 'AdopterStatsBreakdown';

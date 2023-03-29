@@ -488,7 +488,7 @@ export class FileParser {
       const sourceFile = this.imports.get(jsxName) ?? this.path;
       // Generate a unique name for this component using JSX name + source file.
       const jsxId = this.getJsxId(jsxName, sourceFile);
-      // If component has already been added than let's update the callSites to include this file, otherwise add a new entry.
+      // If component has already been added then let's update the callSites to include this file, otherwise add a new entry.
       this.project.addJsxComponent(jsxId, this.path, props);
     }
 
