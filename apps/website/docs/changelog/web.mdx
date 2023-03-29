@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.0 (3/29/2023, 01:33 PM PST)
+
+#### 🚀 Updates
+
+- **[PatternTag]** Add PatternTag component to facilitate patterns tracking. [#1855](https://github.cbhq.net/frontend/cds/pull/1855), [CDS-3066](https://jira.coinbase-corp.com/browse/CDS-3066)
+
 ## 4.1.3 (3/22/2023, 10:33 AM PST)
 
 This is an artificial version bump with no new change.

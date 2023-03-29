@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.0 (3/29/2023, 01:33 PM PST)
+
+#### 🚀 Updates
+
+- **[PatternTag]** Add PatternTag component to facilitate patterns tracking. [#1855](https://github.cbhq.net/frontend/cds/pull/1855), [CDS-3066](https://jira.coinbase-corp.com/browse/CDS-3066)
+
+#### 🐞 Fixes
+
+- **[useDeviceScaleToCdsScale]** Add proper handling for device font sizes between xxLarge and xxxLarge. [#1864](https://github.cbhq.net/frontend/cds/pull/1864), [DX-902](https://jira.coinbase-corp.com/browse/DX-902)
+- **[TextInput]** Apply CDS font size scaling for UI consistency. [#1863](https://github.cbhq.net/frontend/cds/pull/1863), [DX-699](https://jira.coinbase-corp.com/browse/DX-699)
+- **[Banner]** Added hitslop to Banner close icon button. [#1859](https://github.cbhq.net/frontend/cds/pull/1859)
+
 ## 4.1.3 (3/22/2023, 10:33 AM PST)
 
 #### 🐞 Fixes
