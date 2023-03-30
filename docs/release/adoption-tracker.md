@@ -14,7 +14,7 @@ parsers - `apps/website/scripts/adoption/parsers/`
 
 1. Run `yarn nx run website:adoption`. The result will output JSON files within the website directory
 2. Commit the files using the following commit message convention: `[trivial] internal(AdoptionTracker): Update Adoption Tracker mm/dd/yyyy`
-3. After you merge, [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) should automatically deploy to `production::cds-docs` when the build finishes. If it doesn't, then manually deploy to that target
+3. After you merge, manually deploy to `production::cds-docs` in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) when the build finishes
 4. Verify that the "Last Updated" date at the top of the [Adoption Tracker](https://cds.cbhq.net/adoption-tracker/retail-mobile/) pages is current
 
 ## Adding a Project
