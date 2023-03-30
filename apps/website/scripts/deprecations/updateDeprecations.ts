@@ -6,7 +6,7 @@ import { objectKeys, writePrettyFile } from '@cbhq/script-utils';
 import { Deprecation, deprecations, MigrationMap, MigrationType } from './deprecations';
 
 const templateStart = '<!-- template-start -->';
-const githubBaseUrl = 'https://github.cbhq.net/frontend/cds/blob/master';
+const githubBaseUrl = 'https://github.cbhq.net/frontend/cds/blob/';
 const deprecationsPagePath = 'apps/website/docs/resources/deprecations.mdx';
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 const fullPath = `${MONOREPO_ROOT}/${deprecationsPagePath}`;
@@ -69,6 +69,7 @@ const getMigrationValue = (migrationMap: Partial<MigrationMap>, key: keyof Migra
 const getMigrationRecommendation = (
   migrationMap: Partial<MigrationMap> | undefined,
   deprecation: string,
+  version: string,
 ) => {
   const migrationRec: string[] = [];
 
@@ -76,7 +77,7 @@ const getMigrationRecommendation = (
     objectKeys(migrationMap).forEach((key) => {
       if (key === 'path') {
         migrationRec.push(
-          `<p>${deprecation} ${migrationRecMap[key]} <a href="${githubBaseUrl}/${migrationMap[key]}" target="_blank">${migrationMap[key]}</a></p>`,
+          `<p>${deprecation} ${migrationRecMap[key]} <a href="${githubBaseUrl}${version}/${migrationMap[key]}" target="_blank">${migrationMap[key]}</a></p>`,
         );
       } else {
         migrationRec.push(
@@ -114,9 +115,11 @@ const formatDeprecationGuide = ({
   </AccordionItem>`;
 };
 
+type DeprecationGroups = keyof Omit<Deprecation, 'endOfLife' | 'prevMajorVersion'>;
+type RemainingDeprecationGroups = Exclude<DeprecationGroups, 'props' | 'params'>;
+
 function formatDeprecations(deprecationObj: Deprecation): string {
-  const groups: Record<keyof Deprecation, string[]> = {
-    endOfLife: [],
+  const groups: Record<DeprecationGroups, string[]> = {
     components: ['### 🧱 Components', ''],
     types: ['### 🔐 Types', ''],
     props: ['### 🎭 Props', ''],
@@ -125,6 +128,8 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     functions: ['### 👨‍💻 Functions', ''],
     params: ['### 🏗️ Params', ''],
   };
+
+  const { prevMajorVersion, endOfLife } = deprecationObj;
 
   objectKeys(deprecationObj).forEach((key) => {
     if (key === 'props') {
@@ -139,7 +144,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
                 type,
                 // @ts-expect-error Not sure why this thinks it's a partial
                 migrationMap,
-                guidance: `${getMigrationRecommendation(migrationMap, name)}`,
+                guidance: `${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}`,
               }),
             );
           });
@@ -160,8 +165,8 @@ function formatDeprecations(deprecationObj: Deprecation): string {
                 type,
                 // @ts-expect-error Not sure why this thinks it's a partial
                 migrationMap,
-                guidance: `<p>Original Path: <a href="${githubBaseUrl}/${path}" target="_blank">${path}</a></p>
-      <p>${getMigrationRecommendation(migrationMap, param)}</p>`,
+                guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
+      <p>${getMigrationRecommendation(migrationMap, param, prevMajorVersion)}</p>`,
               }),
             );
           });
@@ -170,33 +175,34 @@ function formatDeprecations(deprecationObj: Deprecation): string {
       groups.params.push('</Accordion>');
       return;
     }
-    if (key === 'endOfLife') {
-      groups.endOfLife.push(`${deprecationObj.endOfLife}`);
-      return;
-    }
     if (deprecationObj[key]?.length) {
-      groups[key].push('<Accordion>');
-      deprecationObj[key]?.forEach(({ package: pkgName, name, path, type, migrationMap }) => {
-        groups[key].push(
-          formatDeprecationGuide({
-            name,
-            pkgName,
-            type,
-            // @ts-expect-error Not sure why this thinks it's a partial
-            migrationMap,
-            guidance: `<p>Original Path: <a href="${githubBaseUrl}/${path}" target="_blank">${path}</a></p>
-              <p>${getMigrationRecommendation(migrationMap, name)}</p>`,
-          }),
+      const groupForKey = groups[key as RemainingDeprecationGroups];
+      if (groupForKey) {
+        groupForKey.push('<Accordion>');
+        deprecationObj[key as RemainingDeprecationGroups]?.forEach(
+          ({ package: pkgName, name, path, type, migrationMap }) => {
+            groups[key as RemainingDeprecationGroups].push(
+              formatDeprecationGuide({
+                name,
+                pkgName,
+                type,
+                // @ts-expect-error Not sure why this thinks it's a partial
+                migrationMap,
+                guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
+                <p>${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}</p>`,
+              }),
+            );
+          },
         );
-      });
-      groups[key].push('</Accordion>');
+        groupForKey.push('</Accordion>');
+      }
     }
   });
 
   const block: string[] = [
-    `## ${groups.endOfLife} Deprecations`,
+    `## ${endOfLife} Deprecations`,
     '',
-    `The following items will be deleted at the end of ${groups.endOfLife} in a breaking release. Release version is TBD.`,
+    `The following items will be deleted at the end of ${endOfLife} in a breaking release. Release version is TBD.`,
   ];
 
   Object.values(groups).forEach((group) => {
