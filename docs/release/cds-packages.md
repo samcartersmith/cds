@@ -22,7 +22,7 @@ When you're ready to cut a new release, do the following:
 
 1. Check with the team for any last minute additions/merges to the release.
 
-2. Announce a **CODE MERGE FREEZE** in #cds-engineering. This prevents PRs from being merged after generating the CHANGELOG, and keeps our semver aligned with what packages are released.
+2. Announce a **CODE MERGE FREEZE** in #guild-dx-ui-systems. This prevents PRs from being merged after generating the CHANGELOG, and keeps our semver aligned with what packages are released.
 
 3. Ensure you have the latest from master, then checkout a new branch with a branch name following the format `last-name/release-mm-dd-yyyy`.
 
@@ -43,9 +43,9 @@ Your PR should like [this](https://github.cbhq.net/frontend/cds/pull/1112).
 
 7. If your release has a major bump, you must include a migration guide to bump to your version. [Example](https://github.cbhq.net/frontend/cds/pull/1256)
 
-8. After your release PR is merged, announce that the Code Freeze is over and merges can resume in #cds-engineering.
+8. After your release PR is merged, announce that the Code Freeze is over and merges can resume in #guild-dx-ui-systems.
 
-9. Tag your release in Github by going to the [release page](https://github.cbhq.net/frontend/cds/releases) and clicking 'Draft a new release'. Create a new tag to match the current CDS version (e.g. v3.1.0). **Make sure you tag the release commit (select the correct commit in Recent Commits in the Target dropdown)**. In the textarea field, provide a summary of the changes and wrap a copy of the full changelog in a dropdown (refer to previous release examples and click 'Edit' to see proper formatting).
+9. Tag your release in Github by going to the [release page](https://github.cbhq.net/frontend/cds/releases) and clicking 'Draft a new release'. Create a new tag to match the current CDS version (e.g. v3.1.0). **Make sure you tag the release commit (select the correct commit in Recent Commits in the Target dropdown)**. Click the 'Generate release notes' button above the textarea field. Inside the textarea, provide a brief summary of the changes above the release notes that were just generated for you (you can refer to previous release examples for inspiration). Click 'Publish release' when you're finished.
 
 ## Deploying a Release
 
@@ -57,11 +57,10 @@ Locate your release commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cd
 - corporate::cds-mobile
 - production::upload-css
 - production::upload-css-sw-cache
+- production::cds-docs
 
 heimdall should automatically deploy to the following when the build finishes:
 
-- corporate::ui-mobile-playground
-- production::cds-docs
 - development::cds-storybook
 
 If heimdall fails to do this for some reason, then manually deploy to those targets as well.
