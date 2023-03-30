@@ -79,6 +79,7 @@ const sidebars = {
               description:
                 'Guidelines for creating equally usable, relevant, and meaningful experiences globally.',
             },
+            tag: 'new',
           },
         },
         {
@@ -650,7 +651,14 @@ const sidebars = {
         'patterns/empty-states',
         'patterns/forms',
         'patterns/loading-states',
-        'patterns/disclosures',
+        {
+          type: 'doc',
+          id: 'patterns/disclosures',
+          label: 'Disclosures',
+          customProps: {
+            tag: 'new',
+          },
+        },
       ],
       customProps: {
         kbar: {
