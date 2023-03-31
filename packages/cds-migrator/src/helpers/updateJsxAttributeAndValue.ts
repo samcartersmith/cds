@@ -2,7 +2,7 @@ import { SyntaxKind } from 'ts-morph';
 
 import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from './findReplaceInComponent';
 
-export function updateJsxAttributeValue({
+export function updateJsxAttributeAndValue({
   updateMap,
   attribute,
   jsx,
@@ -15,12 +15,25 @@ export function updateJsxAttributeValue({
   /** The `cbOnePercentOff` in <HeroSquare name="cbOnePercentOff" */
   const stringLiteral = attributeToUpdate?.getFirstDescendantByKind(SyntaxKind.StringLiteral);
 
+  const jsxExpressionIdentifier = attributeToUpdate
+    ?.getFirstDescendantByKind(SyntaxKind.JsxExpression)
+    ?.getFirstDescendantByKind(SyntaxKind.Identifier);
+
   if (stringLiteral) {
     const stringLiteralText = stringLiteral?.getLiteralText();
     oldValue = stringLiteralText;
     newValue = updateMap[oldValue];
     if (newValue !== undefined) {
       stringLiteral.setLiteralValue(newValue);
+    }
+  }
+  if (jsxExpressionIdentifier) {
+    const literalValue = jsxExpressionIdentifier.getType().getLiteralValue();
+
+    oldValue = literalValue && typeof literalValue === 'string' ? literalValue : undefined;
+    newValue = oldValue ? updateMap[oldValue] : undefined;
+    if (newValue !== undefined) {
+      jsxExpressionIdentifier.rename(newValue);
     }
   }
 
@@ -31,7 +44,7 @@ export function updateJsxAttributeValue({
     details: {
       attributeToUpdate: attributeToUpdate?.print(),
       stringLiteral: stringLiteral?.print(),
-      // jsxExpressionIdentifier: jsxExpressionIdentifier?.print(),
+      jsxExpressionIdentifier: jsxExpressionIdentifier?.print(),
     },
   };
 }
