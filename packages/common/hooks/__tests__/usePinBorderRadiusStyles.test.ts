@@ -4,7 +4,7 @@ import { usePinBorderRadiusStyles } from '../usePinBorderRadiusStyles';
 
 describe('usePinBorderRadiusStyles', () => {
   it('overrides top border radius if pinned to top', () => {
-    const { result } = renderHook(() => usePinBorderRadiusStyles('top', 'standard'));
+    const { result } = renderHook(() => usePinBorderRadiusStyles('top', 'rounded'));
     expect(result.current).toEqual({
       borderBottomRightRadius: 8,
       borderBottomLeftRadius: 8,
@@ -14,7 +14,7 @@ describe('usePinBorderRadiusStyles', () => {
     });
   });
   it('overrides right border radius if pinned to right', () => {
-    const { result } = renderHook(() => usePinBorderRadiusStyles('right', 'standard'));
+    const { result } = renderHook(() => usePinBorderRadiusStyles('right', 'rounded'));
     expect(result.current).toEqual({
       borderTopLeftRadius: 8,
       borderBottomLeftRadius: 8,
@@ -24,7 +24,7 @@ describe('usePinBorderRadiusStyles', () => {
     });
   });
   it('overrides bottom border radius if pinned to bottom', () => {
-    const { result } = renderHook(() => usePinBorderRadiusStyles('bottom', 'standard'));
+    const { result } = renderHook(() => usePinBorderRadiusStyles('bottom', 'rounded'));
     expect(result.current).toEqual({
       borderTopRightRadius: 8,
       borderTopLeftRadius: 8,
@@ -34,7 +34,7 @@ describe('usePinBorderRadiusStyles', () => {
     });
   });
   it('overrides left border radius if pinned to left', () => {
-    const { result } = renderHook(() => usePinBorderRadiusStyles('left', 'standard'));
+    const { result } = renderHook(() => usePinBorderRadiusStyles('left', 'rounded'));
     expect(result.current).toEqual({
       borderTopRightRadius: 8,
       borderBottomRightRadius: 8,
@@ -50,7 +50,7 @@ describe('usePinBorderRadiusStyles', () => {
   });
 
   it('returns empty object if pin is not passed in', () => {
-    const { result } = renderHook(() => usePinBorderRadiusStyles(undefined, 'standard'));
+    const { result } = renderHook(() => usePinBorderRadiusStyles(undefined, 'rounded'));
     expect(result.current).toEqual({});
   });
 });

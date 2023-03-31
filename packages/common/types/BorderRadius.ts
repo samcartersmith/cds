@@ -1,9 +1,5 @@
-import { borderRadius } from '../tokens/border';
+import { borderRadius } from '../tokens/borderRadius';
 
-/** @deprecated Please use BorderRadiusAlpha */
-export type BorderRadius = keyof typeof borderRadius;
+type BorderRadiusType = typeof borderRadius;
 
-export type BorderRadiusAlpha = Exclude<
-  keyof typeof borderRadius,
-  'none' | 'compact' | 'tooltipV2' | 'standard' | 'pill' | 'round' | 'input' | 'search' | 'popover'
->;
+export type BorderRadius = keyof BorderRadiusType;

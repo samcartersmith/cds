@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { emptyObject } from '@cbhq/cds-utils';
 
-import { borderRadius } from '../tokens/border';
+import { borderRadius } from '../tokens/borderRadius';
 import type { BorderRadius, PinningDirection } from '../types';
 
 export const usePinBorderRadiusStyles = (pin?: PinningDirection, radius?: BorderRadius) => {

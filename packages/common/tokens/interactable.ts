@@ -1,17 +1,4 @@
 import { SpectrumHueStep } from '../types';
-import { ScaleDensity } from '../types/Scale';
-
-/** @deprecated Please leverage common/tokens/interactableHeight moving forward */
-export const defaultHeight: Record<ScaleDensity, number> = {
-  dense: 44,
-  normal: 56,
-};
-
-/** @deprecated Please leverage common/tokens/interactableHeight moving forward */
-export const compactHeight: Record<ScaleDensity, number> = {
-  dense: 36,
-  normal: 40,
-};
 
 export const opacityHovered: Record<SpectrumHueStep, number> = {
   0: 0.98,
@@ -44,8 +31,5 @@ export const opacityPressed: Record<SpectrumHueStep, number> = {
   90: 0.83,
   100: 0.82,
 } as const;
-
-/** @deprecated Please leverage common/tokens/interactable/accessibleOpacityDisabled moving forward */
-export const opacityDisabled = 0.38;
 
 export const accessibleOpacityDisabled = 0.5;

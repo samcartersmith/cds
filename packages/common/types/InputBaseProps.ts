@@ -10,7 +10,7 @@ export type InputVariant = Extract<
   'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted'
 >;
 
-export type InputStackBorderRadius = Extract<BorderRadius, 'input' | 'search'>;
+export type InputStackBorderRadius = Extract<BorderRadius, 'rounded' | 'roundedFull'>;
 
 export type InputStackBaseProps = {
   /**
@@ -54,7 +54,7 @@ export type InputStackBaseProps = {
   focused?: boolean;
   /**
    * Leverage one of the borderRadius styles we offer to round the corners of the input.
-   * @default input
+   * @default rounded
    */
   borderRadius?: InputStackBorderRadius;
   /**

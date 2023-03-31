@@ -26,7 +26,11 @@ function EmojiPicker() {
   const content = useMemo(
     () => (
       <>
-        <SectionTitle text="Most Popular" />
+        <HStack spacingHorizontal={2} spacingVertical={2}>
+          <TextCaption as="h2" color="foregroundMuted">
+            Most Popular
+          </TextCaption>
+        </HStack>
         <HStack gap={1} flexWrap="wrap" spacingHorizontal={2} spacingBottom={2}>
           {emojiMap.map(({ label, glyph }) => (
             <MenuItem value={label}>

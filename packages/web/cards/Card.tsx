@@ -51,7 +51,7 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
     const pinStyles = usePinStyles(pin);
     const linkable = Boolean(onPress ?? onKeyPress ?? to ?? href);
     const borderColor = isFrontier ? undefined : 'line';
-    const borderRadius = isFrontier ? undefined : 'standard';
+    const borderRadius = isFrontier ? undefined : 'rounded';
 
     const getBorderWidth = useCallback(
       (borderWidth?: BorderWidth) => {

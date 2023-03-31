@@ -6,5 +6,5 @@ export function useButtonBorderRadius(compact?: boolean) {
   const height = useInteractableHeight(compact);
   const hasFrontier = useFeatureFlag('frontierButton');
   if (hasFrontier) return height;
-  return compact ? 'compact' : 'standard';
+  return compact ? 'roundedSmall' : 'rounded';
 }

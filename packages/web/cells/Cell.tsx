@@ -81,7 +81,7 @@ export const Cell = memo(
       accessory,
       as = 'div',
       alignItems = 'center',
-      borderRadius = 'standard',
+      borderRadius = 'rounded',
       children,
       detail,
       detailWidth,

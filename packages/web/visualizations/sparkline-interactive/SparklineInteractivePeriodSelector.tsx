@@ -30,7 +30,7 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   return (
     <Box alignItems="center" justifyContent="center" height="fit-content">
       <Pressable
-        borderRadius="round"
+        borderRadius="roundedFull"
         backgroundColor={background}
         onPress={handleOnPress}
         accessibilityLabel={periodLabel}

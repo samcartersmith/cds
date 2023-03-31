@@ -46,7 +46,7 @@ export const TooltipContent = memo(
             spacingHorizontal={spacingHorizontal}
             spacingVertical={spacingVertical}
             background="background"
-            borderRadius="tooltipV2"
+            borderRadius="rounded"
             maxWidth={maxWidth}
             testID={testID}
           >

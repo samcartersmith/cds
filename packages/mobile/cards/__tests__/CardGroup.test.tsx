@@ -31,7 +31,7 @@ describe('CardGroup.test', () => {
 
   it('renders horizontal group', () => {
     render(
-      <CardGroup horizontal>
+      <CardGroup direction="horizontal">
         <AnnouncementCard title="Item1 title" description="Item1 description" />
         <AnnouncementCard title="Item2 title" description="Item2 description" />
       </CardGroup>,

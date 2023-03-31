@@ -61,7 +61,7 @@ const persistedFocusStyles = css`
 
 export type InputStackProps = {
   /** Width of the border.
-   * @default input
+   * @default rounded
    */
   borderWidth?: BorderWidth;
 } & InputStackBaseProps;
@@ -83,7 +83,7 @@ export const InputStack = memo(
       labelNode,
       testID = '',
       focused = false,
-      borderRadius = 'input',
+      borderRadius = 'rounded',
       height,
       disableFocusedStyle = false,
       enableColorSurge,

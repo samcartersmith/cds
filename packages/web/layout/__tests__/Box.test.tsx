@@ -95,9 +95,9 @@ describe('Box', () => {
 
       expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
-      rerender(<Box borderRadius="standard">Child</Box>);
+      rerender(<Box borderRadius="rounded">Child</Box>);
 
-      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} standard`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} rounded`);
     });
 
     it(`will set border radius class name for \`borderRadius\` prop`, () => {
@@ -105,9 +105,9 @@ describe('Box', () => {
 
       expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
-      rerender(<Box borderRadius="badge">Child</Box>);
+      rerender(<Box borderRadius="rounded">Child</Box>);
 
-      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} badge`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} rounded`);
     });
   });
 

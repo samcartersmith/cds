@@ -1,7 +1,7 @@
 import { mapValues } from '@cbhq/cds-utils/object';
 
 import { avatarSizes } from './configs/avatarConfig';
-import { borderRadius, borderRadiusDeprecated } from './configs/borderRadius';
+import { borderRadius } from './configs/borderRadius';
 import { borderWidth } from './configs/borderWidth';
 import { responsiveClassName } from './configs/constants';
 import { displayConfig } from './configs/displayConfig';
@@ -24,7 +24,6 @@ import { TypeScript } from './Typescript';
 /** Add any configs that do not have platform specific transformations here */
 const configs = {
   borderRadius,
-  borderRadiusDeprecated,
   borderWidth,
   defaultPalette,
 };

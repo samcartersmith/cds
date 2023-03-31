@@ -14,7 +14,7 @@ module.exports = {
           {
             paths: [
               {
-                name: '@cbhq/cds-common/tokens/border',
+                name: '@cbhq/cds-common/tokens/borderWidth',
                 message:
                   'This has been deprecated. Use borderWidth & borderRadius css variables from web/tokens.ts instead',
               },

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 
 import { Icon } from '../../icons/Icon';
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';

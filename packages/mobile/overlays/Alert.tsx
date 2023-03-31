@@ -103,7 +103,7 @@ export const Alert = memo(
             <Overlay opacity={overlayOpacity} />
             <Box
               animated
-              borderRadius="standard"
+              borderRadius="rounded"
               width={318}
               dangerouslySetStyle={{
                 transform: [{ scale: modalScale }],

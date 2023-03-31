@@ -96,7 +96,7 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
         noScaleOnPress
         transparentWhileInactive
         backgroundColor="background"
-        borderRadius="standard"
+        borderRadius="rounded"
         disabled={disabled}
         onPress={onPress}
         to={to}
@@ -105,7 +105,7 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
         <HStack
           flexGrow={1}
           background={selected ? 'backgroundAlternate' : undefined}
-          borderRadius="standard"
+          borderRadius="rounded"
           alignItems="center"
           gap={2}
           spacingHorizontal={1}

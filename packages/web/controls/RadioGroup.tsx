@@ -32,7 +32,7 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
       label={children}
       ref={ref}
       backgroundColor="background"
-      borderRadius="round"
+      borderRadius="roundedFull"
       {...props}
     >
       <motion.div
@@ -122,7 +122,7 @@ const radio = css`
 
   background-color: ${palette.background};
   border: ${borderWidth.checkbox} solid;
-  border-radius: ${borderRadius.round};
+  border-radius: ${borderRadius.roundedFull};
 `;
 
 const focusRing = css`
@@ -130,7 +130,7 @@ const focusRing = css`
   &::after {
     content: '';
     border: ${borderWidth.focusRing} solid ${palette.primary};
-    border-radius: ${borderRadius.round};
+    border-radius: ${borderRadius.roundedFull};
     position: absolute;
     left: ${FOCUS_PADDING};
     top: ${FOCUS_PADDING};

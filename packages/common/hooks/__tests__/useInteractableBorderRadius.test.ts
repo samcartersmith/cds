@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { borderRadius as borderRadii } from '../../tokens/border';
+import { borderRadius as borderRadii } from '../../tokens/borderRadius';
 import { useInteractableBorderRadius } from '../useInteractableBorderRadius';
 
 describe('useInteractableBorderRadius', () => {
@@ -15,7 +15,7 @@ describe('useInteractableBorderRadius', () => {
   });
 
   it('returns the correct value for alias if an alias is passed in', () => {
-    const { result } = renderHook(() => useInteractableBorderRadius('standard'));
-    expect(result.current).toEqual(borderRadii.standard);
+    const { result } = renderHook(() => useInteractableBorderRadius('rounded'));
+    expect(result.current).toEqual(borderRadii.rounded);
   });
 });

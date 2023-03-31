@@ -16,7 +16,7 @@ import {
   frontierSpectrumPalette,
 } from '@cbhq/cds-common/palette/constants';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 
 import { createThemeConfig } from './createThemeConfig';
 

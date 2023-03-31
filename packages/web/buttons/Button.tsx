@@ -72,7 +72,7 @@ const BaseButton = forwardRef(function Button(
 
   return (
     <Pressable
-      aria-label={accessibilityLabel}
+      aria-label={accessibilityLabel ?? (loading ? 'Loading' : undefined)}
       {...props}
       transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}

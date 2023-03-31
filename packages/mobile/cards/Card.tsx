@@ -35,13 +35,13 @@ const OldCard: React.FC<React.PropsWithChildren<CardProps>> = memo(function OldC
   const height = heightProps ?? cardSizes[size].height;
   const bg = background === true ? 'background' : background;
   const pinStyles = usePinStyles(pin);
-  const borderRadiusOverrides = usePinBorderRadiusStyles(pin, 'standard');
+  const borderRadiusOverrides = usePinBorderRadiusStyles(pin, 'rounded');
   const contentStyles = useMemo(
     () => [borderRadiusOverrides, dangerouslySetStyle],
     [borderRadiusOverrides, dangerouslySetStyle],
   );
 
-  const borderRadius = 'standard';
+  const borderRadius = 'rounded';
 
   const content = (
     <VStack

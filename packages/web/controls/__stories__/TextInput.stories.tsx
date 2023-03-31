@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { css } from 'linaria';
-import { InputVariant } from '@cbhq/cds-common';
+import { InputStackBorderRadius, InputVariant } from '@cbhq/cds-common';
 
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Box, HStack } from '../../layout';
@@ -140,7 +140,7 @@ export const Height = function Height() {
 };
 
 export const BorderRadius = function BorderRadius() {
-  const borderRadiuses = ['input', 'search'] as const;
+  const borderRadiuses: InputStackBorderRadius[] = ['rounded', 'roundedFull'];
 
   return (
     <>
@@ -313,7 +313,7 @@ export const RenderInputDefault = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: borderRadius.input }}
+      style={{ width: '100%', borderRadius: borderRadius.rounded }}
       onChange={onChange}
     />
   );
@@ -336,7 +336,7 @@ export const RenderInputDisabled = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: borderRadius.input }}
+      style={{ width: '100%', borderRadius: borderRadius.rounded }}
       onChange={onChange}
       value="Custom Input"
     />
@@ -373,7 +373,7 @@ export const RenderInputCompact = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: borderRadius.input }}
+      style={{ width: '100%', borderRadius: borderRadius.rounded }}
       onChange={onChange}
     />
   );

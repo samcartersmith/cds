@@ -26,14 +26,14 @@ const pressableStyles = css`
   border: none;
   &:first-child {
     &:before {
-      border-top-right-radius: ${borderRadius.popover};
-      border-top-left-radius: ${borderRadius.popover};
+      border-top-right-radius: ${borderRadius.roundedLarge};
+      border-top-left-radius: ${borderRadius.roundedLarge};
     }
   }
   &:last-child {
     &:before {
-      border-bottom-right-radius: ${borderRadius.popover};
-      border-bottom-left-radius: ${borderRadius.popover};
+      border-bottom-right-radius: ${borderRadius.roundedLarge};
+      border-bottom-left-radius: ${borderRadius.roundedLarge};
     }
   }
 `;
@@ -142,7 +142,7 @@ export const SelectOption = memo(
       >
         <Cell
           {...selectCellSpacingConfig}
-          borderRadius="none"
+          borderRadius="roundedNone"
           minHeight={minHeight}
           maxHeight={multiline ? undefined : maxHeight}
           accessory={

@@ -80,7 +80,7 @@ export const SidebarItem = memo(
         () => (
           <Pressable
             backgroundColor="primaryWash"
-            borderRadius="round"
+            borderRadius="roundedFull"
             transparentWhileInactive={!active}
             onPress={onPress}
             to={to}

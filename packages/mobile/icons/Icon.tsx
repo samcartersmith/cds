@@ -1,4 +1,4 @@
-import React, { cloneElement, memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Animated, Text, TextStyle } from 'react-native';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import type { IconBaseProps, PaletteForeground } from '@cbhq/cds-common/types';
@@ -10,15 +10,9 @@ import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Box } from '../layout/Box';
 import type { DangerouslySetStyle } from '../types';
 
-import type { BadgeProps } from './Badge';
 import { IconOutline } from './IconOutline';
 
 export type IconProps = IconBaseProps & {
-  /**
-   * @deprecated - use Icon paired with DotCount/DotSymbol/DotStatusColor instead
-   * Add a badge to the top right of an icon
-   */
-  badge?: React.ReactElement<BadgeProps>;
   /** Color of the icon when used as a foreground. */
   color?: PaletteForeground;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
@@ -27,7 +21,6 @@ export type IconProps = IconBaseProps & {
 
 export const Icon = memo(function Icon({
   animated = false,
-  badge,
   bordered = false,
   color = 'primary',
   dangerouslySetColor,
@@ -108,12 +101,6 @@ export const Icon = memo(function Icon({
             color={iconColor}
           />
         )}
-        {!!badge &&
-          cloneElement(badge, {
-            position: 'absolute',
-            top: '-45%',
-            right: '-50%',
-          })}
       </Box>
     </Box>
   );

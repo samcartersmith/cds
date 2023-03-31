@@ -68,12 +68,12 @@ import * as CDSIllustrations from '@cbhq/cds-web/illustrations';
 import * as CDSLayout from '@cbhq/cds-web/layout';
 import * as CDSLoaders from '@cbhq/cds-web/loaders';
 import * as CDSMedia from '@cbhq/cds-web/media';
+import { AnimatedCaret } from '@cbhq/cds-web/motion/AnimatedCaret';
 import { ColorSurge } from '@cbhq/cds-web/motion/ColorSurge';
 import { Pulse } from '@cbhq/cds-web/motion/Pulse';
 import { Shake } from '@cbhq/cds-web/motion/Shake';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
-import { Tooltip as DeprecatedTooltip } from '@cbhq/cds-web/overlays/Deprecated/Tooltip';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
 import { useModal } from '@cbhq/cds-web/overlays/useModal';
@@ -196,7 +196,6 @@ const ReactLiveScope: unknown = {
   ...CDSNavigation,
   ...CDSOverlays,
   ...CDSSystem,
-  DeprecatedTooltip,
   ...CDSTables,
   ...CDSTabs,
   ...CDSTypography,
@@ -209,6 +208,7 @@ const ReactLiveScope: unknown = {
   Dropdown,
   MenuItem,
   Tag,
+  AnimatedCaret,
   // context
   PortalProvider,
   // Utils

@@ -22,7 +22,7 @@ const userSwitcherHeight = 674;
 const Subject = ({ title, description }: SwitcherSubjectProps) => {
   const avatarColorScheme = getAvatarFallbackColor(title);
   return (
-    <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="standard">
+    <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="rounded">
       <HStack gap={1} alignItems="center">
         <Avatar size="xl" alt={title} name={title} colorScheme={avatarColorScheme} />
         <VStack maxWidth={172} minWidth={0}>

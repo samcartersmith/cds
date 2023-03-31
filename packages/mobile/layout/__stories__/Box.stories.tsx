@@ -42,11 +42,11 @@ const BoxScreen = () => {
           <TextBody>With borders</TextBody>
         </Box>
 
-        <Box spacing={1} bordered borderRadius="standard">
+        <Box spacing={1} bordered borderRadius="rounded">
           <TextBody>With rounded borders</TextBody>
         </Box>
 
-        <Box spacing={1} borderRadius="standard" background="backgroundAlternate">
+        <Box spacing={1} borderRadius="rounded" background="backgroundAlternate">
           <TextBody>With rounded corners</TextBody>
         </Box>
       </Example>
@@ -56,7 +56,7 @@ const BoxScreen = () => {
           <TextBody>Level 1</TextBody>
         </Box>
 
-        <Box spacing={1} elevation={2} borderRadius="standard">
+        <Box spacing={1} elevation={2} borderRadius="rounded">
           <TextBody>Level 2</TextBody>
         </Box>
       </Example>

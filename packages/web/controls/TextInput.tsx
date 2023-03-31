@@ -66,7 +66,7 @@ export const TextInput = memo(
       suffix = '',
       onFocus,
       onBlur,
-      borderRadius = 'input',
+      borderRadius = 'rounded',
       height,
       inputNode,
       bordered = true,

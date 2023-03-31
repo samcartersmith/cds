@@ -79,7 +79,7 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
-  it('Banner bordered={false} borderRadius="none" has correct visuals', () => {
+  it('Banner bordered={false} borderRadius="roundedNone" has correct visuals', () => {
     render(<MockBanner bordered={false} borderRadius="roundedNone" />);
 
     const rootContainer = screen.getByTestId(TEST_ID);

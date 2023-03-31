@@ -81,7 +81,7 @@ export const DotSymbol = memo(
               onLayout={onIconWrapperLayout}
               spacing={0.5}
               dangerouslySetStyle={iconBorderStyle}
-              borderRadius="round"
+              borderRadius="roundedFull"
               background="primary"
               borderColor="secondary"
             >

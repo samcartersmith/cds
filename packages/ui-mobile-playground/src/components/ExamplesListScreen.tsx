@@ -2,12 +2,15 @@ import React, { useCallback, useContext } from 'react';
 import { FlatList, ListRenderItem } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import includes from 'lodash/includes';
+import { CellSpacing } from '@cbhq/cds-common';
 import { ListCell } from '@cbhq/cds-mobile/cells/ListCell';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
 
 import { SearchFilterContext, SetSearchFilterContext } from './ExamplesSearchProvider';
 import { keyToRouteName } from './keyToRouteName';
 import { initialRouteKey, searchRouteKey } from './staticRoutes';
+
+const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
 
 export function ExamplesListScreen() {
   const searchFilter = useContext(SearchFilterContext);
@@ -31,7 +34,7 @@ export function ExamplesListScreen() {
           title={item}
           accessory="arrow"
           onPress={handlePress}
-          reduceHorizontalSpacing
+          innerSpacing={innerSpacingConfig}
           compact
         />
       );

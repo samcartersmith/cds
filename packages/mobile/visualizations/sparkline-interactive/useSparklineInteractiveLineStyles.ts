@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import { lineDashArray, lineOpacity } from '@cbhq/cds-common/tokens/sparkline';
 
 import { usePalette } from '../../hooks/usePalette';

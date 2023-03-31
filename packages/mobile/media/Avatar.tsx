@@ -5,7 +5,7 @@ import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';
 import { useAvatarSrc } from '@cbhq/cds-common/media/useAvatarSrc';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { avatarDefaultFontColor, colorSchemeMap } from '@cbhq/cds-common/tokens/avatar';
-import { compactHeight } from '@cbhq/cds-common/tokens/interactable';
+import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
 import { AvatarBaseProps } from '@cbhq/cds-common/types/AvatarBaseProps';
 
 import { useAccessibleForeground } from '../color/useAccessibleForeground';
@@ -35,8 +35,10 @@ export const Avatar = memo(
     const spectrum = useSpectrum();
     const placeholderLetter = name?.charAt(0);
     const isLargestSize = size.includes('xx');
-    const isCompactAvatarButton = dangerouslySetSize && dangerouslySetSize <= compactHeight.normal;
-    const isNormalAvatarButton = dangerouslySetSize && dangerouslySetSize > compactHeight.normal;
+    const isCompactAvatarButton =
+      dangerouslySetSize && dangerouslySetSize <= interactableHeight.xSmall.regular;
+    const isNormalAvatarButton =
+      dangerouslySetSize && dangerouslySetSize > interactableHeight.xSmall.regular;
 
     const colorScheme = useMemo(
       () => colorSchemeMap[spectrum][colorSchemeProp ?? 'blue'],

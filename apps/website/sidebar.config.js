@@ -394,6 +394,7 @@ const sidebars = {
             'components/motion/ColorSurge/color-surge',
             'components/motion/Pulse/pulse',
             'components/motion/Shake/shake',
+            'components/motion/AnimatedCaret/animated-caret',
           ],
         },
         {
@@ -449,11 +450,6 @@ const sidebars = {
           ],
         },
         { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search  Input' },
-        {
-          type: 'doc',
-          id: 'components/overlays/SectionTitle/section-title',
-          label: 'Section Title',
-        },
         {
           type: 'doc',
           id: 'components/controls/SegmentedControl/segmented-control',

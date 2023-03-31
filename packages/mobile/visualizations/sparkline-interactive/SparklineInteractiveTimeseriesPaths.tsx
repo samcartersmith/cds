@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import Svg, { G, Path } from 'react-native-svg';
 import * as interpolate from 'd3-interpolate-path';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import {
   SparklineInteractiveTimeseriesPathsProps,
   TimeseriesPathProps,

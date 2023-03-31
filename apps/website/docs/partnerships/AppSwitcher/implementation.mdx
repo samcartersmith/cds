@@ -11,7 +11,6 @@ The App Switcher recipe is composed of the following CDS components:
 - [Dropdown](/components/dropdown)
 - [NavigationIconButton](/components/navigation-icon-button)
 - [TileButton](/components/tile-button)
-- [SectionTitle](/components/section-title)
 
 Some key details about the abstractions in this recipe:
 
@@ -162,7 +161,11 @@ function AppSwitcherContentRecipeExample() {
     return (
       <>
         <VStack spacingHorizontal={2}>
-          <SectionTitle text={data.sectionTitle} />
+          <HStack spacingHorizontal={2} spacingVertical={2}>
+            <TextCaption as="h2" color="foregroundMuted">
+              {data.sectionTitle}
+            </TextCaption>
+          </HStack>
           {Array.from(Array(rows)).map((item, row) => {
             return (
               <HStack gap={0.5}>

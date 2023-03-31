@@ -1,4 +1,3 @@
-export * from './beta';
 export * from './hooks/useIconSize';
 export * from './hooks/useToggler';
 export * from './lottie/lottieUtils';

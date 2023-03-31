@@ -44,7 +44,11 @@ function NavigationMenu() {
               <PopoverTrigger>
                 <NavigationIconButton name="appSwitcher" />
               </PopoverTrigger>
-              <SectionTitle text="For Individuals" />
+              <HStack spacingHorizontal={2} spacingVertical={2}>
+                <TextCaption as="h2" color="foregroundMuted">
+                  For Individuals
+                </TextCaption>
+              </HStack>
               {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
                 <SelectOption
                   key={name}

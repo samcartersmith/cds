@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, RefObject } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { css } from 'linaria';
 import { ForwardedRef, InputVariant, SelectBaseProps } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
@@ -11,17 +11,18 @@ import {
 
 import { useA11yId } from '../hooks/useA11yId';
 import { HStack } from '../layout/HStack';
+import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { PressableOpacity } from '../system';
 import { TextBody } from '../typography/TextBody';
 
 import { TextInputFocusVariantContext } from './context';
-import { InputIcon } from './InputIcon';
 import { InputLabel } from './InputLabel';
 import { SelectStack } from './SelectStack';
 
 export type SelectTriggerProps = {
-  rotateAnimationRef: RefObject<HTMLDivElement>;
   triggerHasFocus: boolean;
+  /** Select Dropdown menu is opened */
+  visible?: boolean;
 } & Omit<SelectBaseProps, 'children' | 'focused' | 'width' | 'onChange'>;
 
 const pressableOverrides = css`
@@ -42,13 +43,13 @@ export const SelectTrigger = memo(
       placeholder,
       disabled,
       label,
-      rotateAnimationRef,
       value,
       variant,
       triggerHasFocus,
       helperText,
       onPress,
       startNode,
+      visible,
       ...props
     }: SelectTriggerProps,
     ref: ForwardedRef<HTMLElement>,
@@ -98,7 +99,7 @@ export const SelectTrigger = memo(
             ) : null}
             <HStack
               alignItems="center"
-              borderRadius="standard"
+              borderRadius="rounded"
               justifyContent="space-between"
               spacingVertical={compact ? 1 : 2}
               width="100%"
@@ -121,7 +122,7 @@ export const SelectTrigger = memo(
               </HStack>
               <HStack alignItems="center">
                 <TextInputFocusVariantContext.Provider value={focusedVariant ?? undefined}>
-                  <InputIcon ref={rotateAnimationRef} name="caretDown" />
+                  <AnimatedCaret rotate={visible ? 0 : 180} spacingHorizontal={2} />
                 </TextInputFocusVariantContext.Provider>
               </HStack>
             </HStack>

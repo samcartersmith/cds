@@ -3,9 +3,41 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../Button';
 
+const testA11yLabel = 'test-a11y-label';
+
 describe('Button', () => {
   it('passes accessibility', async () => {
     expect(await renderA11y(<Button>Child</Button>)).toHaveNoViolations();
+  });
+  it('passes accessibility when loading', async () => {
+    expect(await renderA11y(<Button loading>Child</Button>)).toHaveNoViolations();
+  });
+
+  it('renders a button with an accessibility label if provided', () => {
+    render(<Button accessibilityLabel={testA11yLabel}>Child</Button>);
+    const button = screen.getByRole('button');
+
+    expect(button).toHaveAttribute('aria-label', testA11yLabel);
+  });
+
+  it('renders a button with a custom accessibility label if provided and loading is true', () => {
+    render(
+      <Button loading accessibilityLabel={testA11yLabel}>
+        Child
+      </Button>,
+    );
+    const button = screen.getByRole('button');
+
+    expect(button).toHaveAttribute('aria-label', testA11yLabel);
+  });
+
+  it('renders a button with a loading spinner and children are visually hidden when loading is true', () => {
+    render(<Button loading>Child</Button>);
+    const button = screen.getByRole('button');
+    const buttonChild = screen.getByText('Child');
+
+    expect(button).toHaveAttribute('aria-label', 'Loading');
+    expect(buttonChild).toHaveClass('visibilityHidden');
   });
 
   it('renders a button with a type', () => {

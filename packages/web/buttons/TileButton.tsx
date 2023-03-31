@@ -18,7 +18,7 @@ const pressableStyles = css`
   padding: 0;
   &.${focusVisibleClassName} {
     &::before {
-      border-radius: ${borderRadius.standard};
+      border-radius: ${borderRadius.rounded};
     }
   }
 `;
@@ -61,7 +61,7 @@ export const TileButton = memo(
         <Pressable
           {...props}
           backgroundColor="background"
-          borderRadius="standard"
+          borderRadius="rounded"
           ref={ref}
           width={tileSize}
           noScaleOnPress

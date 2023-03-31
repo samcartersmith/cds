@@ -12,7 +12,7 @@ The User Switcher recipe is composed of the following CDS components:
 - [ListCell](/components/list-cell)
 - [Cell](https://github.cbhq.net/frontend/cds/blob/master/packages/web/cells/Cell.tsx)
 - [Collapsible](/components/collapsible)
-- [CollapseArrow](/components/collapse-arrow)
+- [AnimatedCaret](/components/animated-caret)
 - [Avatar](/components/avatar)
 
 Some key details about the abstractions in this recipe:
@@ -47,7 +47,7 @@ function UserSwitcherRecipe({
             contentPosition={switcherPositionConfig}
             showMobileModal
           >
-            <Pressable backgroundColor="transparent" as="button" borderRadius="standard">
+            <Pressable backgroundColor="transparent" as="button" borderRadius="rounded">
               <HStack gap={1} alignItems="center">
                 <Avatar size="xl" alt={title} name={title} colorScheme={avatarColorScheme} />
                 <VStack maxWidth={172} minWidth={0}>
@@ -137,12 +137,12 @@ function UserSwitcherContentExample() {
     const avatarColorScheme = getAvatarFallbackColor(name);
 
     return (
-      <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="standard">
+      <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="rounded">
         <PressableOpacity noScaleOnPress className={insetFocusRing} onPress={toggle}>
           <ListCell
             title={name}
             description={email}
-            action={<CollapseArrow degrees={90} collapsed={collapsed} />}
+            action={<AnimatedCaret rotate={collapsed ? 90 : 180} />}
             outerSpacing={userCellOuterSpacingConfig}
             intermediary={!authenticated && <TextLegal as="p">Signed out</TextLegal>}
             priority="middle"
@@ -189,7 +189,11 @@ function UserSwitcherContentExample() {
         </Button>
       </VStack>
       <VStack spacingHorizontal={2}>
-        <SectionTitle text="Your other accounts" />
+        <HStack spacingHorizontal={2} spacingVertical={2}>
+          <TextCaption as="h2" color="foregroundMuted">
+            Your other accounts
+          </TextCaption>
+        </HStack>
       </VStack>
       <VStack maxHeight={userAccountsListMaxHeight} overflow="auto" gap={0.5} spacingHorizontal={1}>
         {otherAccountsData.map((userProps) => (

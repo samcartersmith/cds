@@ -6,9 +6,8 @@ import { DotCount } from '../../dots';
 import { Icon } from '../../icons';
 import { HStack } from '../../layout';
 import { PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
-import { SectionTitle } from '../../overlays/PopoverMenu/SectionTitle';
 import { Pressable, PressableOpacity } from '../../system';
-import { TextBody, TextHeadline, TextTitle2 } from '../../typography';
+import { TextBody, TextCaption, TextHeadline, TextTitle2 } from '../../typography';
 import { Dropdown } from '../Dropdown';
 import { DropdownProps, DropdownRefProps } from '../DropdownProps';
 import { MenuItem } from '../MenuItem';
@@ -51,7 +50,11 @@ export const Default = ({
 
   const content = (
     <>
-      <SectionTitle text="Section Heading" />
+      <HStack spacingHorizontal={2} spacingVertical={2}>
+        <TextCaption as="h2" color="foregroundMuted">
+          Section Heading
+        </TextCaption>
+      </HStack>
       {options.map((option) => (
         <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
       ))}
@@ -83,7 +86,11 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
 
   const content = (
     <>
-      <SectionTitle text="Section Heading" />
+      <HStack spacingHorizontal={2} spacingVertical={2}>
+        <TextCaption as="h2" color="foregroundMuted">
+          Section Heading
+        </TextCaption>
+      </HStack>
       {defaultOptions.map((option) => (
         <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
       ))}
@@ -144,7 +151,11 @@ export const SubMenu = () => {
   const content = useMemo(
     () => (
       <>
-        <SectionTitle text="Section 1" />
+        <HStack spacingHorizontal={2} spacingVertical={2}>
+          <TextCaption as="h2" color="foregroundMuted">
+            Section Heading
+          </TextCaption>
+        </HStack>
         {defaultOptions.slice(0, 2).map((option) => (
           <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
         ))}
@@ -190,7 +201,7 @@ export const SubMenu = () => {
       </HStack>
       <HStack
         background="backgroundAlternate"
-        borderRadius="standard"
+        borderRadius="rounded"
         justifyContent="center"
         alignItems="center"
         spacing={3}
@@ -232,7 +243,11 @@ export const CustomOptions = () => {
   const content = useMemo(
     () => (
       <>
-        <SectionTitle text="Most Popular" />
+        <HStack spacingHorizontal={2} spacingVertical={2}>
+          <TextCaption as="h2" color="foregroundMuted">
+            Section Heading
+          </TextCaption>
+        </HStack>
         <HStack gap={1} flexWrap="wrap" spacingHorizontal={2} spacingBottom={2}>
           {emojiMap.map(({ label, glyph }) => (
             <MenuItem value={label}>

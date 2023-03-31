@@ -67,7 +67,7 @@ function SidebarItemLink({
         key={item.label}
         transparentWhileInactive
         backgroundColor="background"
-        borderRadius="popover"
+        borderRadius="roundedLarge"
         to={item.href}
         noScaleOnPress
       >
@@ -97,7 +97,7 @@ function CollapsibleCategory({
     <VStack spacingHorizontal={0}>
       <Pressable
         backgroundColor="background"
-        borderRadius="popover"
+        borderRadius="roundedLarge"
         onPress={toggle}
         noScaleOnPress
         transparentWhileInactive

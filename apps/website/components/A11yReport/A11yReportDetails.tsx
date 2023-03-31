@@ -78,7 +78,7 @@ const Passes = ({ id, report }: { id: A11yComponent['id']; report: Report }) => 
   const total = item.passes;
 
   return (
-    <VStack borderRadius="standard" borderColor="line" spacing={2}>
+    <VStack borderRadius="rounded" borderColor="line" spacing={2}>
       <TextLabel1 as="p" color="positive">
         {total} Passes
       </TextLabel1>
@@ -92,7 +92,7 @@ const Violations = ({ id, report }: { id: A11yComponent['id']; report: Report })
   const getDetailsHtml = useCallback((details: string) => ({ __html: details }), []);
 
   return (
-    <VStack borderRadius="standard" borderColor="line" spacing={1}>
+    <VStack borderRadius="rounded" borderColor="line" spacing={1}>
       <BetaCell
         onPress={total ? toggle : undefined}
         offsetHorizontal={0}

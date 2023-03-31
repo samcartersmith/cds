@@ -167,7 +167,7 @@ export const Example = () => {
   );
 
   const secondaryContent = (
-    <Box borderRadius="standard" elevation={1} overflow="hidden">
+    <Box borderRadius="rounded" elevation={1} overflow="hidden">
       <Accordion defaultActiveKey="2">
         <AccordionItem itemKey="1" title="Accordion #1" subtitle="subtitle1">
           <TextBody as="p">{loremIpsum}</TextBody>

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import {
   chartCompactHeight,
   chartHeight as chartHeightToken,

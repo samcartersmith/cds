@@ -12,7 +12,7 @@ type BannerProps = {
 
 export const Banner = ({ icon, title, description }: BannerProps) => {
   return (
-    <HStack background="secondary" spacing={3} gap={3} borderRadius="standard">
+    <HStack background="secondary" spacing={3} gap={3} borderRadius="rounded">
       <Icon name={icon} color="foreground" size="m" />
       <VStack gap={1}>
         <TextHeadline as="p">{title}</TextHeadline>

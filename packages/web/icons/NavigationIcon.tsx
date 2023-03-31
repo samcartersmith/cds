@@ -1,4 +1,4 @@
-import React, { cloneElement, forwardRef, memo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common/types';
 import { NavigationBaseIconProps } from '@cbhq/cds-common/types/NavigationBaseIconProps';
@@ -8,19 +8,12 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
 
-import { BadgeProps } from './Badge';
 import { iconStyles } from './iconStyles';
 
 export type { NavigationIconName, NavigationIconSize } from '@cbhq/cds-common/types';
 
 export type NavigationIconProps = NavigationBaseIconProps &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
-    /**
-     * @deprecated - use Icon paired with DotCount/DotSymbol/DotStatusColor instead
-     * Add a badge to the top right of an icon
-     */
-    badge?: React.ReactElement<BadgeProps>;
-  };
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
 
 export const NavigationIcon = memo(
   forwardRef<HTMLDivElement, NavigationIconProps>(
@@ -28,7 +21,6 @@ export const NavigationIcon = memo(
       {
         accessibilityLabel,
         active = false,
-        badge,
         fallback = null,
         name,
         size = 'm',
@@ -87,12 +79,6 @@ export const NavigationIcon = memo(
             >
               {glyph}
             </span>
-            {badge &&
-              cloneElement(badge, {
-                position: 'absolute',
-                top: '-45%',
-                right: '-50%',
-              })}
           </div>
         </Box>
       );

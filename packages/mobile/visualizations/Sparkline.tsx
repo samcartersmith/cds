@@ -1,6 +1,6 @@
 import React, { memo, useRef } from 'react';
 import Svg, { Defs, G, Path } from 'react-native-svg';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import { SparklineBaseProps } from '@cbhq/cds-common/types';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';

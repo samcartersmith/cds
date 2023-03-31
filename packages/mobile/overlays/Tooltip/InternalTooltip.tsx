@@ -58,7 +58,7 @@ export const InternalTooltip = memo(function InternalTooltip({
     <View style={outerTooltipStyles} onLayout={onTooltipLayout}>
       <Box
         animated
-        borderRadius="tooltipV2"
+        borderRadius="rounded"
         spacingHorizontal={spacingHorizontal}
         spacingVertical={spacingVertical}
         dangerouslySetBackground={backgroundColor}

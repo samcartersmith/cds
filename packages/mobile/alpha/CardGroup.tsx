@@ -5,12 +5,10 @@ import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { Divider } from '../layout/Divider';
 import { Group, GroupProps, RenderGroupItem } from '../layout/Group';
 
-/** TODO: Remove horizontal prop once this moves out of alpha */
-export type CardGroupProps = Omit<GroupProps, 'horizontal'>;
 export type CardGroupRenderItem = RenderGroupItem;
 
 export const CardGroup = memo(
-  forwardRef<View, CardGroupProps>(function CardGroup(
+  forwardRef<View, GroupProps>(function CardGroup(
     {
       accessibilityLabel,
       accessibilityHint = accessibilityLabel,

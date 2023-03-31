@@ -206,7 +206,7 @@ export const Banner = memo(
                 accessibilityHint="close banner"
                 onPress={handleOnDismiss}
                 backgroundColor="transparent"
-                borderRadius="round"
+                borderRadius="roundedFull"
                 testID={`${testID}-dimiss-btn`}
                 hitSlop={{ top: 15, left: 15, bottom: 15, right: 15 }}
               >

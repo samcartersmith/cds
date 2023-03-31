@@ -10,9 +10,6 @@ export const baseVariables = {
   <% Object.entries(configs.borderWidth).map(([key, value]) => { _%>
     '<%- h.toCssVarSetter(`borderWidth`, key) %>': '<%- value %>px',
   <% }) _%>
-  <% Object.entries(configs.borderRadiusDeprecated).map(([alias, value]) => { _%>
-    '<%- h.toCssVarSetter(`borderRadius`, alias) %>': '<%- value %>px',
-  <% }) _%>
   <% Object.entries(configs.borderRadius).map(([key, value]) => { _%>
     '<%- h.toCssVarSetter(`borderRadius`, key) %>': '<%- value %>px',
   <% }) _%>
