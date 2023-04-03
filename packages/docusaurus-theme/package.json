@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/docusaurus-theme",
   "version": "0.0.1",
+  "private": true,
   "description": "CDS Docusaurus theme",
   "keywords": [
     "docusaurus",

@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/figma-tasks",
   "version": "0.0.0",
+  "private": true,
   "description": "Figma nx tasks",
   "keywords": [
     "figma",

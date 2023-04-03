@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/docusaurus-plugin-kbar",
   "version": "0.0.1",
+  "private": true,
   "description": "Docusaurus plugin for command bar",
   "keywords": [
     "docusaurus",

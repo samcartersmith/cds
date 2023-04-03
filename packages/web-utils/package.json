@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/cds-web-utils",
   "version": "0.0.0",
+  "private": true,
   "description": "Jest utils and developer tools.",
   "dependencies": {
     "@babel/types": "^7.20.7",

@@ -32,6 +32,18 @@
         "cwd": "packages/figma-tasks",
         "command": "packemon watch --quiet --loadConfigs"
       }
+    },
+    "validate-cds-versions": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./src/ci/validateCDSVersions.ts"
+      }
+    },
+    "validate-website-changelog-updates": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./src/ci/validateWebsiteChangelogUpdates.ts"
+      }
     }
   }
 }

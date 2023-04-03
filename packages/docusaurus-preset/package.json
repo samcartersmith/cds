@@ -2,6 +2,7 @@
   "name": "@cbhq/docusaurus-preset",
   "version": "0.0.1",
   "description": "CDS Docusaurus preset",
+  "private": true,
   "keywords": [
     "docusaurus",
     "preset"

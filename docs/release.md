@@ -10,9 +10,6 @@ For more information on release visit [go/cds](https://cds.cbhq.net/resources/re
 This sections guides you through releasing the following:
 
 1. [CDS packages (@cbhq/cds-web, @cbhq/cds-mobile, etc.)](./release/cds-packages.md)
-
-Note: if you are releasing our packages you should land the Illustration and Icons release first!
-
 2. [Illustrations](./release/illustrations.md)
 3. [Icons](./release/icons.md)
 4. [Adoption Tracker](./release/adoption-tracker.md)

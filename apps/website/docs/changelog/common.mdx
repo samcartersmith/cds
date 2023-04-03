@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Update buildkite validate step to version packages.
+
 ## 4.2.0 (3/29/2023, 01:33 PM PST)
 
 #### 🚀 Updates

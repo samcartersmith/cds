@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/figma-api",
   "version": "0.0.1",
+  "private": true,
   "description": "Client for interacting with the Figma API",
   "keywords": [
     "figma",

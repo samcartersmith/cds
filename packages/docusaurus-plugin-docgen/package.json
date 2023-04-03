@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/docusaurus-plugin-docgen",
   "version": "0.0.1",
+  "private": true,
   "description": "Docusaurus plugin for generating api documentation from Typescript files",
   "keywords": [
     "docusaurus",
