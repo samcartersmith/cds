@@ -13,6 +13,7 @@ This sections guides you through releasing the following:
 2. [Illustrations](./release/illustrations.md)
 3. [Icons](./release/icons.md)
 4. [Adoption Tracker](./release/adoption-tracker.md)
+5. [Creating & using a release candidate branch](./release/release-candidate.md)
 
 ## Other Helpful links
 
