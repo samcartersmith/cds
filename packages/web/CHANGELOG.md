@@ -8,7 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## ## Unreleased
+##
+
+## 4.2.1 (4/5/2023 PST)
+
+#### 🐞 Fixes
+
+- Polyfill legacy browser media query event listener. [[#1886](https://github.cbhq.net/frontend/cds/pull/1886)] [[RA-1145](https://jira.coinbase-corp.com/browse/RA-1145)]
 
 #### 📘 Misc
 
