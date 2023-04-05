@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-mobile-playground",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "",
   "keywords": [],
   "packemon": {
@@ -30,7 +30,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "detox": "^19.9.1"
+    "detox": "^19.12.6"
   },
   "types": "./dts/index.d.ts",
   "main": "./lib/index.js",

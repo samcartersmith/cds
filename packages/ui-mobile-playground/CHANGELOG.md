@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.3.6 (4/3/2023 PST)
+
+#### 🐞 Fixes
+
+- Upgrade to Jest 29 and Detox 19.12.6. [[#1883](https://github.cbhq.net/frontend/cds/pull/1883)] [[DX-729](https://jira.coinbase-corp.com/browse/DX-729)]
+
 ## 0.3.5 (11/7/2022 PST)
 
 #### 🐞 Fixes
