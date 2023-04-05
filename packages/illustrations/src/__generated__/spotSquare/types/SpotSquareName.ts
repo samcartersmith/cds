@@ -65,6 +65,7 @@ export type SpotSquareName =
   | 'encryptedEverything'
   | 'eth2SendSell'
   | 'ethStakeOrWrap'
+  | 'ethStakeOrWrapTwo'
   | 'ethStaking'
   | 'ethStakingRewards'
   | 'fileYourCryptoTaxesCheckOther'

@@ -8,6 +8,40 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.5.0 (4/5/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat(Illustrations): Publish illustrations 04/05/2023. [[#1893](https://github.cbhq.net/frontend/cds/pull/1893)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- planet
+- walletAsServiceNavigation
+
+#### Spot Square
+
+- ethStakeOrWrapTwo
+
+#### Spot Rectangle
+
+- eth2SendSellTwo
+- ethStakeOrWrapTwo
+- ethTradingTwo
+- wrapEthTwo
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- keyGeneration
+
 ## 1.4.0 (3/15/2023 PST)
 
 #### 🚀 Updates

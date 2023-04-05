@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-03-15T19:28:10.486Z",
+  "lastUpdated": "2023-04-05T17:11:00.576Z",
   "items": {
     "2:33979": {
       "hash": "Ou6k2vGsPmgvn3sOo1rz7iRXkKFEnDN2bRM6S7AASSQ=",
@@ -6483,14 +6483,14 @@
       "version": 1
     },
     "2:41436": {
-      "hash": "yzYJijMSk30lqXZIra8brtnfyHkRhBFxqQuWJWVl2n8=",
       "type": "pictogram",
       "name": "support",
+      "hash": "yzYJijMSk30lqXZIra8brtnfyHkRhBFxqQuWJWVl2n8=",
       "width": 48,
       "height": 48,
       "description": "help, aid, assist, buoy, life saver",
       "createdAt": "2022-08-05T05:37:09.716Z",
-      "lastUpdated": "2023-01-20T14:26:16.560Z",
+      "lastUpdated": "2023-03-28T18:41:17.541Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/support-1.svg",
         "svgDark": "./pictogram/svg/dark/support-1.svg",
@@ -16343,22 +16343,22 @@
     "1549:1719": {
       "type": "heroSquare",
       "name": "keyGeneration",
-      "hash": "bSWavR8k/486UGR829ffvqNHESRajz95T2GZ01c7DL4=",
+      "hash": "D7GaS2p2Pm/EGvF4YqHcQ3BuOd2jLF7KG1Jma1qxYF8=",
       "width": 240,
       "height": 240,
       "description": "ID, scan, person, biometrics, identification, human, protection, security, finger, time, lock , 🔒, 🗝️, 🔑, 🛡️",
       "createdAt": "2023-02-28T17:49:43.942Z",
-      "lastUpdated": "2023-02-28T17:49:43.942Z",
+      "lastUpdated": "2023-03-28T18:41:17.547Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/keyGeneration-0.svg",
-        "svgDark": "./heroSquare/svg/dark/keyGeneration-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/keyGeneration-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/keyGeneration-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/keyGeneration-0.js",
-        "pngLight": "./heroSquare/png/light/keyGeneration-0.png",
-        "pngDark": "./heroSquare/png/dark/keyGeneration-0.png"
+        "svgLight": "./heroSquare/svg/light/keyGeneration-1.svg",
+        "svgDark": "./heroSquare/svg/dark/keyGeneration-1.svg",
+        "svgThemed": "./heroSquare/svg/themeable/keyGeneration-1.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/keyGeneration-1.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/keyGeneration-1.js",
+        "pngLight": "./heroSquare/png/light/keyGeneration-1.png",
+        "pngDark": "./heroSquare/png/dark/keyGeneration-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "1549:1720": {
       "type": "heroSquare",
@@ -16497,6 +16497,146 @@
         "svgJsDark": "./spotSquare/svgJs/dark/swapEth-0.js",
         "pngLight": "./spotSquare/png/light/swapEth-0.png",
         "pngDark": "./spotSquare/png/dark/swapEth-0.png"
+      },
+      "version": 0
+    },
+    "1877:1580": {
+      "type": "spotRectangle",
+      "name": "ethStakeOrWrapTwo",
+      "hash": "JmussYNiuPxNdgv92/9ZvagXf+M9ngnNELrxTfJRGMI=",
+      "width": 240,
+      "height": 120,
+      "description": "eth, movement, wrapped, stake, lfg",
+      "createdAt": "2023-03-28T18:41:17.503Z",
+      "lastUpdated": "2023-03-28T18:41:17.503Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/ethStakeOrWrapTwo-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/ethStakeOrWrapTwo-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/ethStakeOrWrapTwo-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/ethStakeOrWrapTwo-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/ethStakeOrWrapTwo-0.js",
+        "pngLight": "./spotRectangle/png/light/ethStakeOrWrapTwo-0.png",
+        "pngDark": "./spotRectangle/png/dark/ethStakeOrWrapTwo-0.png"
+      },
+      "version": 0
+    },
+    "1877:1581": {
+      "type": "spotRectangle",
+      "name": "eth2SendSellTwo",
+      "hash": "Jil73OakAwEj/r6CFPk9yd5O/aSCL1javYZpK9hpJG4=",
+      "width": 240,
+      "height": 120,
+      "description": "stake, wrap, ethereum, rush, movement, forward, exciting",
+      "createdAt": "2023-03-28T18:41:17.495Z",
+      "lastUpdated": "2023-03-28T18:41:17.495Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/eth2SendSellTwo-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/eth2SendSellTwo-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/eth2SendSellTwo-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/eth2SendSellTwo-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/eth2SendSellTwo-0.js",
+        "pngLight": "./spotRectangle/png/light/eth2SendSellTwo-0.png",
+        "pngDark": "./spotRectangle/png/dark/eth2SendSellTwo-0.png"
+      },
+      "version": 0
+    },
+    "1877:1582": {
+      "type": "spotRectangle",
+      "name": "wrapEthTwo",
+      "hash": "lLH3yfJJ23aCAiSYOiLVdmEjux37F1Jt+5UeGGRlORc=",
+      "width": 240,
+      "height": 120,
+      "description": "ethereum, sell, send, transfer, eth2, ➡️",
+      "createdAt": "2023-03-28T18:41:17.508Z",
+      "lastUpdated": "2023-03-28T18:41:17.508Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/wrapEthTwo-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/wrapEthTwo-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/wrapEthTwo-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/wrapEthTwo-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/wrapEthTwo-0.js",
+        "pngLight": "./spotRectangle/png/light/wrapEthTwo-0.png",
+        "pngDark": "./spotRectangle/png/dark/wrapEthTwo-0.png"
+      },
+      "version": 0
+    },
+    "1877:1583": {
+      "type": "spotRectangle",
+      "name": "ethTradingTwo",
+      "hash": "teq63gIzuNL2c7DG7w/k8tA5oWed/K3djJ0lPjYHvvs=",
+      "width": 240,
+      "height": 120,
+      "description": "empty state, trading, exchange",
+      "createdAt": "2023-03-28T18:41:17.489Z",
+      "lastUpdated": "2023-03-28T18:41:17.489Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/ethTradingTwo-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/ethTradingTwo-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/ethTradingTwo-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/ethTradingTwo-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/ethTradingTwo-0.js",
+        "pngLight": "./spotRectangle/png/light/ethTradingTwo-0.png",
+        "pngDark": "./spotRectangle/png/dark/ethTradingTwo-0.png"
+      },
+      "version": 0
+    },
+    "1877:1616": {
+      "type": "spotSquare",
+      "name": "ethStakeOrWrapTwo",
+      "hash": "WytHI5EUVBMoU0zTYYG/S5ibD0XI65eWl+PkOrbG/5w=",
+      "width": 96,
+      "height": 96,
+      "description": "stake, wrap, ethereum, rush, movement, forward, exciting",
+      "createdAt": "2023-03-28T18:41:17.481Z",
+      "lastUpdated": "2023-03-28T18:41:17.481Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/ethStakeOrWrapTwo-0.svg",
+        "svgDark": "./spotSquare/svg/dark/ethStakeOrWrapTwo-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/ethStakeOrWrapTwo-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/ethStakeOrWrapTwo-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/ethStakeOrWrapTwo-0.js",
+        "pngLight": "./spotSquare/png/light/ethStakeOrWrapTwo-0.png",
+        "pngDark": "./spotSquare/png/dark/ethStakeOrWrapTwo-0.png"
+      },
+      "version": 0
+    },
+    "1942:1342": {
+      "type": "pictogram",
+      "name": "planet",
+      "hash": "a/KMB6oEHlyBU1QUSkMHknhCItuCwcXE1A/ubenSUTQ=",
+      "width": 48,
+      "height": 48,
+      "description": "planet, 🪐, space, time, life itself, journey, hope, dreams, beyond, infinity",
+      "createdAt": "2023-04-04T16:02:30.784Z",
+      "lastUpdated": "2023-04-04T16:02:30.784Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/planet-0.svg",
+        "svgDark": "./pictogram/svg/dark/planet-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/planet-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/planet-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/planet-0.js",
+        "pngLight": "./pictogram/png/light/planet-0.png",
+        "pngDark": "./pictogram/png/dark/planet-0.png"
+      },
+      "version": 0
+    },
+    "1951:1369": {
+      "type": "pictogram",
+      "name": "walletAsServiceNavigation",
+      "hash": "XNBokIUsISErlng+HqD/FE5JWF6jkB8QAC+JFK3jk08=",
+      "width": 40,
+      "height": 40,
+      "description": "",
+      "createdAt": "2023-04-04T16:02:30.776Z",
+      "lastUpdated": "2023-04-04T16:02:30.776Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/walletAsServiceNavigation-0.svg",
+        "svgDark": "./pictogram/svg/dark/walletAsServiceNavigation-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/walletAsServiceNavigation-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/walletAsServiceNavigation-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/walletAsServiceNavigation-0.js",
+        "pngLight": "./pictogram/png/light/walletAsServiceNavigation-0.png",
+        "pngDark": "./pictogram/png/dark/walletAsServiceNavigation-0.png"
       },
       "version": 0
     }

@@ -253,6 +253,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/ethStakeOrWrap-0').content,
     dark: () => require('../svgJs/dark/ethStakeOrWrap-0').content,
   },
+  ethStakeOrWrapTwo: {
+    light: () => require('../svgJs/light/ethStakeOrWrapTwo-0').content,
+    dark: () => require('../svgJs/dark/ethStakeOrWrapTwo-0').content,
+  },
   ethStaking: {
     light: () => require('../svgJs/light/ethStaking-0').content,
     dark: () => require('../svgJs/dark/ethStaking-0').content,

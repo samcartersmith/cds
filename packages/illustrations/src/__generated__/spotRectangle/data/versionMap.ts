@@ -147,6 +147,10 @@ const versionMap: Record<SpotRectangleName, number> = {
   wrapEth: 1,
   eth2SendSell: 1,
   ethTrading: 1,
+  ethTradingTwo: 0,
+  eth2SendSellTwo: 0,
+  ethStakeOrWrapTwo: 0,
+  wrapEthTwo: 0,
 };
 
 export default versionMap;

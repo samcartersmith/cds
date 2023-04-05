@@ -164,6 +164,7 @@ const versionMap: Record<SpotSquareName, number> = {
   primeDeFi: 1,
   primeStaking: 1,
   swapEth: 0,
+  ethStakeOrWrapTwo: 0,
 };
 
 export default versionMap;

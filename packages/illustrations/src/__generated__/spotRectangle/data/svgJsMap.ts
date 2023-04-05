@@ -193,6 +193,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/eth2SendSell-1').content,
     dark: () => require('../svgJs/dark/eth2SendSell-1').content,
   },
+  eth2SendSellTwo: {
+    light: () => require('../svgJs/light/eth2SendSellTwo-0').content,
+    dark: () => require('../svgJs/dark/eth2SendSellTwo-0').content,
+  },
   ethAddress: {
     light: () => require('../svgJs/light/ethAddress-0').content,
     dark: () => require('../svgJs/dark/ethAddress-0').content,
@@ -200,6 +204,10 @@ const svgJsMap = {
   ethStakeOrWrap: {
     light: () => require('../svgJs/light/ethStakeOrWrap-0').content,
     dark: () => require('../svgJs/dark/ethStakeOrWrap-0').content,
+  },
+  ethStakeOrWrapTwo: {
+    light: () => require('../svgJs/light/ethStakeOrWrapTwo-0').content,
+    dark: () => require('../svgJs/dark/ethStakeOrWrapTwo-0').content,
   },
   ethStakingMovement: {
     light: () => require('../svgJs/light/ethStakingMovement-0').content,
@@ -212,6 +220,10 @@ const svgJsMap = {
   ethTrading: {
     light: () => require('../svgJs/light/ethTrading-1').content,
     dark: () => require('../svgJs/dark/ethTrading-1').content,
+  },
+  ethTradingTwo: {
+    light: () => require('../svgJs/light/ethTradingTwo-0').content,
+    dark: () => require('../svgJs/dark/ethTradingTwo-0').content,
   },
   ethWrappedStakingRewards: {
     light: () => require('../svgJs/light/ethWrappedStakingRewards-0').content,
@@ -528,6 +540,10 @@ const svgJsMap = {
   wrapEth: {
     light: () => require('../svgJs/light/wrapEth-1').content,
     dark: () => require('../svgJs/dark/wrapEth-1').content,
+  },
+  wrapEthTwo: {
+    light: () => require('../svgJs/light/wrapEthTwo-0').content,
+    dark: () => require('../svgJs/dark/wrapEthTwo-0').content,
   },
   yieldHolding: {
     light: () => require('../svgJs/light/yieldHolding-0').content,

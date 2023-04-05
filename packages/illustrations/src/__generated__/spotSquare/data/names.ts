@@ -71,6 +71,7 @@ const names: SpotSquareName[] = [
   'encryptedEverything',
   'eth2SendSell',
   'ethStakeOrWrap',
+  'ethStakeOrWrapTwo',
   'ethStaking',
   'ethStakingRewards',
   'fileYourCryptoTaxesCheckOther',

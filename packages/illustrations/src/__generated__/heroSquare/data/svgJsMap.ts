@@ -662,8 +662,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/japanVerifyId-0').content,
   },
   keyGeneration: {
-    light: () => require('../svgJs/light/keyGeneration-0').content,
-    dark: () => require('../svgJs/dark/keyGeneration-0').content,
+    light: () => require('../svgJs/light/keyGeneration-1').content,
+    dark: () => require('../svgJs/dark/keyGeneration-1').content,
   },
   layeredNetworks: {
     light: () => require('../svgJs/light/layeredNetworks-1').content,
