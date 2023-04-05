@@ -6,8 +6,10 @@ The following sections describe how to push new package releases to our consumer
 
 - [Release CDS Packages (@cbhq/cds-web, @cbhq/cds-mobile, etc.)](#release-cds-packages-cbhqcds-web-cbhqcds-mobile-etc)
   - [Monthly package maintenance](#monthly-package-maintenance)
+  - [Cutting a release](#cutting-a-release)
   - [Deploying a Release](#deploying-a-release)
   - [Verifying a Release](#verifying-a-release)
+  - [Tagging a Release](#tagging-a-release)
   - [Deploying Old Releases](#deploying-old-releases)
   - [Updating Our Consumers](#updating-our-consumers)
   - [Manually Testing Local Builds in Consumer Apps](#manually-testing-local-builds-in-consumer-apps)
@@ -19,8 +21,16 @@ The following sections describe how to push new package releases to our consumer
 ## Monthly package maintenance
 
 1. Ensure cds-mobile|web|common has been recently deployed on Codeflow.
-2. Create a tag with the latest version deployed. **Make sure you tag the correct commit (select the correct commit in Recent Commits in the Target dropdown)**. Click the 'Generate release notes' button above the textarea field. Inside the textarea, provide a brief summary of the changes above the release notes that were just generated for you (you can refer to previous release examples for inspiration). Click 'Publish release' when you're finished.
+2. [Tag your Release](#tagging-a-release)
 3. Update in #announcements-cds of our latest version available.
+
+## Cutting a release
+
+1. Verify that your PR has a version bump and passes `yarn release` prior to merge.
+2. Merge your PR and wait for codeflow to build.
+3. [Deploy a Release](#deploying-a-release)
+4. [Verify a Release](#verifying-a-release)
+5. [Tag a Release](#tagging-a-release)
 
 ## Deploying a Release
 
@@ -55,6 +65,16 @@ You will also need to verify that the CSS was deployed to AWS. If web was bumped
 Verify that the [changelogs](https://cds.cbhq.net/changelog/mobile/) on the CDS website were properly updated.
 
 Once verifications are complete, announce the new release in the [#announcements-cds](https://coinbase.slack.com/archives/C018PD8E6JG) Slack channel. You can reuse the same summary that you prepared for the Github release tag above.
+
+## Tagging a Release
+
+Create a github tag in frontend/cds [releases](https://github.cbhq.net/frontend/cds/releases). Click "draft a new release".
+
+- Tag: create a tag that matches your bump (v4.2.1)
+- Target: target your commit, **Make sure you tag the correct commit (select the correct commit in Recent Commits**.
+- Title: same as your tag version (v4.2.1)
+- Describe this release: click "Generate release notes"
+- Publish release
 
 ## Deploying Old Releases
 

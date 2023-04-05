@@ -53,8 +53,8 @@ steps:
       - yarn mono-pipeline validate-lockfile
       - yarn mono-pipeline validate-versioned
       - yarn mono-pipeline validate-patches
-      - yarn mono-pipeline run-ci other --targets=validate-cds-versions
-      - yarn mono-pipeline run-ci other --targets=validate-website-changelog-updates
+      - yarn nx run cds-tasks:validate-cds-versions
+      - yarn nx run cds-tasks:validate-website-changelog-updates
 
   - label: Build
     <<: *shared_step
