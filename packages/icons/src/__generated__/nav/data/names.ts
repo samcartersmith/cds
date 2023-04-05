@@ -72,6 +72,7 @@ const names: NavIconName[] = [
   'menu',
   'wallet',
   'rocketShip',
+  'faucet',
 ];
 
 export default names;

@@ -2981,7 +2981,7 @@ __metadata:
     metro-react-native-babel-preset: ^0.73.3
     react: ^17.0.2
     react-native: ^0.68.2
-    react-native-asset: ^2.0.1
+    react-native-asset: ^2.1.0
     react-native-gesture-handler: 2.6.2
     react-native-inappbrowser-reborn: ^3.6.3
     react-native-navigation-bar-color: ^2.0.1
@@ -24050,7 +24050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.5":
+"lodash@npm:4.17.21, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.5":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -30617,20 +30617,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-asset@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "react-native-asset@npm:2.0.1"
+"react-native-asset@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "react-native-asset@npm:2.1.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-asset%2F-%2Freact-native-asset-2.1.0.tgz"
   dependencies:
     fs-extra: ^7.0.1
+    lodash: 4.17.21
     npmlog: ^4.1.2
     plist: ^3.0.1
     sha1-file: ^1.0.4
     xcode: ^2.0.0
   peerDependencies:
-    react-native: ^0.60.0
+    react-native: ">=0.60.0"
   bin:
     react-native-asset: lib/cli.js
-  checksum: e59b970d116065d9e274f5df8b112a928b1302d0cea42338eab73520a3960cf9386bb225a96ce5d82b9b20bf93c64b2f8fb486339bdb6a4d7f7e8f22b99bb988
+  checksum: 6115a9430f17598bba48c7a501fe2f83dfd0ac2638938639cc980d4007e1baec7599f917620afbd92eb012b9490b546f18753c647baea3dd305d636e4d3bc060
   languageName: node
   linkType: hard
 

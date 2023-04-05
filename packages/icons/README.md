@@ -51,3 +51,9 @@ yarn mono-pipeline version icons
 8. Locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits), manually rebuild `package-cds-icons`, and deploy to `corporate::cds-icons` when the build is complete
 
 9. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-icons/-/@cbhq/cds-icons-1.0.0.tgz).
+
+### FAQ
+
+`yarn nx run icons:update-playground` fails with " [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string."
+
+This occurs because you have not built our mobile-playground. Run `yarn nx run mobile-playground:build-ios` and `yarn nx run mobile-playground:build-android`, then retry `yarn nx run icons:update-playground`. **This is required to pass prior to merging the new icon release**

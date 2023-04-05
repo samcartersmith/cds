@@ -15,7 +15,7 @@
     "lottie-react-native": "^5.1.4",
     "react": "^17.0.2",
     "react-native": "^0.68.2",
-    "react-native-asset": "^2.0.1",
+    "react-native-asset": "^2.1.0",
     "react-native-gesture-handler": "2.6.2",
     "react-native-inappbrowser-reborn": "^3.6.3",
     "react-native-navigation-bar-color": "^2.0.1",
@@ -30,6 +30,6 @@
     "@percy/cli": "^1.13.0",
     "jest": "^28.1.0",
     "metro-react-native-babel-preset": "^0.73.3",
-    "react-native-asset": "^2.0.1"
+    "react-native-asset": "^2.1.0"
   }
 }

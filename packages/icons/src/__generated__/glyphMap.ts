@@ -1156,6 +1156,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-cashCanadianDollar-12': '',
   'ui-cashCanadianDollar-16': '',
   'ui-cashCanadianDollar-24': '',
+  'nav-faucet-12-active': '',
+  'nav-faucet-12-inactive': '',
+  'nav-faucet-16-active': '',
+  'nav-faucet-16-inactive': '',
+  'nav-faucet-24-active': '',
+  'nav-faucet-24-inactive': '',
 };
 
 export default glyphMap;

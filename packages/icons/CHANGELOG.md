@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.3.0 (4/5/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat(Icons): Publish icons 04/05/2023. [[#1891](https://github.cbhq.net/frontend/cds/pull/1891)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- faucet
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- cashUSD
+
 ## 1.2.0 (2/22/2023 PST)
 
 #### 🚀 Updates
