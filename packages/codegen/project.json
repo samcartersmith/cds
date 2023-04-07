@@ -87,7 +87,7 @@
       "options": {
         "script": "./website/updateWebsiteChangelogs.ts",
         "args": [
-          "--packages=common|icons|illustrations|lottie-files|mobile|ui-mobile-playground|web"
+          "--packages=common|icons|illustrations|lottie-files|mobile|ui-mobile-playground|web|utils|fonts"
         ]
       }
     },

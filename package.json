@@ -17,7 +17,8 @@
     "codeowners": "mono-pipeline sync-codeowners",
     "diagnose": "mono-env diagnose --group common web mobile",
     "setup": "yarn build-required-packages && mono-env setup --group common web mobile",
-    "release": "yarn mono-pipeline validate-versioned && yarn nx run cds-tasks:validate-cds-versions && yarn nx run codegen:updateWebsiteChangelogs"
+    "release": "yarn mono-pipeline validate-versioned && yarn nx run cds-tasks:validate-cds-versions && yarn nx run codegen:updateWebsiteChangelogs",
+    "one-version:check": "one-version check"
   },
   "resolutions": {
     "colors": "1.4.0",
@@ -90,6 +91,7 @@
     "@types/semver": "7.3.4",
     "@types/url-parse": "^1.4.3",
     "@types/yargs": "^15.0.5",
+    "@wayfair/one-version": "^0.4.0",
     "autoprefixer": "^10.4.7",
     "axios": "^0.18.0",
     "babel-loader": "^9.1.0",
@@ -104,7 +106,7 @@
     "eslint-plugin-codegen": "^0.16.1",
     "eslint-plugin-testing-library": "^5.10.0",
     "execa": "^5.1.1",
-    "fast-glob": "^3.2.5",
+    "fast-glob": "^3.2.11",
     "jest": "^29.5.0",
     "jest-axe": "^4.1.0",
     "jest-environment-jsdom": "^29.5.0",
@@ -122,7 +124,7 @@
     "stylelint-high-performance-animation": "^1.5.2",
     "stylelint-no-unsupported-browser-features": "^4.0.0",
     "stylelint-prettier": "^1.2.0",
-    "ts-node": "^10.0.0",
+    "ts-node": "^10.7.0",
     "tsconfig-paths": "^4.0.0",
     "type-fest": "^2.19.0",
     "typescript": "~4.9.4",

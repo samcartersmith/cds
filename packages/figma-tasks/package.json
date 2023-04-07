@@ -29,7 +29,7 @@
     }
   },
   "dependencies": {
-    "@cbhq/d3": "workspace:*",
+    "@cbhq/d3": "workspace:^",
     "@cbhq/figma-api": "workspace:^",
     "@cbhq/mono-tasks": "^0.6.8",
     "@cbhq/script-utils": "workspace:^",
@@ -41,7 +41,7 @@
     "webfont": "9.0.0"
   },
   "peerDependencies": {
-    "@nrwl/devkit": "^15.0.0"
+    "@nrwl/devkit": ">=15.0.0"
   },
   "devDependencies": {
     "@types/sharp": "^0.31.0"

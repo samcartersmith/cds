@@ -1,0 +1,15 @@
+{
+  "overrides": {
+    "@types/yargs": {
+      "^15.0.5": [
+        "design-system"
+      ]
+    },
+    "yargs": {
+      "^15.3.1": [
+        "@cbhq/cds-web-utils",
+        "design-system"
+      ]
+    }
+  }
+}

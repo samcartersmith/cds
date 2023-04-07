@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.2 (4/5/2023 PST)
+
+#### 🐞 Fixes
+
+- Update dependencies for repo alignment. [[#1894](https://github.cbhq.net/frontend/cds/pull/1894)] [[DX-179](https://jira.coinbase-corp.com/browse/DX-179)]
+
 ## 1.0.1 (2/8/2023, 01:59 PM PST)
 
 #### 🐞 Fixes

@@ -357,7 +357,7 @@ PODS:
     - React
   - RNGestureHandler (2.6.2):
     - React-Core
-  - RNInAppBrowser (3.7.0):
+  - RNInAppBrowser (3.6.3):
     - React-Core
   - RNReanimated (2.10.0):
     - DoubleConversion
@@ -389,8 +389,8 @@ PODS:
   - RNScreens (3.12.0):
     - React-Core
     - React-RCTImage
-  - RNSVG (12.4.4):
-    - React-Core
+  - RNSVG (12.1.0):
+    - React
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -611,10 +611,10 @@ SPEC CHECKSUMS:
   ReactCommon: 5b1b43a7d81a1ac4eec85f7c4db3283a14a3b13d
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNGestureHandler: 4defbd70b2faf3d6761b82fa7880285241762cb0
-  RNInAppBrowser: e36d6935517101ccba0e875bac8ad7b0cb655364
+  RNInAppBrowser: 3ff3a3b8f458aaf25aaee879d057352862edf357
   RNReanimated: 5bdcbcc3a72aedeee7bb099604262403aa75a1e5
   RNScreens: 2559f98b0835103cbef3b26ba77fa61d4bb37ae7
-  RNSVG: ecd661f380a07ba690c9c5929c475a44f432d674
+  RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 2f6a78c58dcc2963bd8e34d96a4246d9dff2e3a7
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "dependencies": {
-    "@cbhq/figma-styles": "workspace:*",
+    "@cbhq/figma-styles": "workspace:^",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-figma-plugin-ds": "^2.3.0"
@@ -15,7 +15,7 @@
     "@vitejs/plugin-react": "^2.2.0",
     "vite": "^3.0.0",
     "vite-plugin-singlefile": "^0.11.0",
-    "yargs": "^17.3.1",
+    "yargs": "^17.5.1",
     "zx": "^7.0.7"
   }
 }
