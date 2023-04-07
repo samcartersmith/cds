@@ -1,0 +1,42 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { withStoryLabel } from '@cbhq/cds-web/storybook-decorators/withStoryLabel';
+
+import { NavigationBarFullExample, NavigationBarTitle } from './NavigationStorySetup';
+import { NavigationBar } from '@cbhq/cds-web/navigation/NavigationBar';
+
+<Meta title="Overlays/Navigation/NavigationBar" component={NavigationBar} />
+
+# NavigationBar
+
+<Canvas isColumn withToolbar>
+  <Story
+    name="NavigationBar full example"
+    decorators={[withStoryLabel('NavigationBar full example (click the avatar)')]}
+    parameters={{
+      a11y: {
+        config: {
+          <!-- TODO: Use tsx CSF3 stories -->
+          rules: [
+            { id: 'aria-valid-attr-value', enabled: false },
+            { id: 'aria-required-children', enabled: false }
+          ],
+        },
+      },
+    }}
+  >
+    <NavigationBarFullExample />
+  </Story>
+</Canvas>
+
+<Canvas isColumn withToolbar>
+  <Story
+    name="NavigationBar title example"
+    decorators={[withStoryLabel('NavigationBar title example')]}
+  >
+    <NavigationBarTitle />
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable />

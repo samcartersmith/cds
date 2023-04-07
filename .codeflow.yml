@@ -91,3 +91,11 @@ build:
         expire_keep_tags_after_days: 1
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
+    - BaldurNode:
+        name: package-cds-web-overlays
+        path: ./packages/cds-web-overlays/publish.Dockerfile
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
+        expire_keep_tags_after_days: 1
+        expire_tmp_tags_after_days: 1
+        expire_all_after_days: 2

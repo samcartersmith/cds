@@ -3,7 +3,8 @@ import fs from 'fs';
 import { ColorScheme } from '@cbhq/cds-common';
 import { objectKeys, writePrettyFile } from '@cbhq/script-utils';
 
-import { Deprecation, deprecations, MigrationMap, MigrationType } from './deprecations';
+import { deprecations } from './deprecations';
+import { Deprecation, MigrationMap, MigrationType } from './types';
 
 const templateStart = '<!-- template-start -->';
 const githubBaseUrl = 'https://github.cbhq.net/frontend/cds/blob/master';
@@ -177,17 +178,17 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     if (deprecationObj[key]?.length) {
       groups[key].push('<Accordion>');
       deprecationObj[key]?.forEach(({ package: pkgName, name, path, type, migrationMap }) => {
-        groups[key].push(
-          formatDeprecationGuide({
+        if (name && pkgName && type) {
+          const formattedDeprecationGuide = formatDeprecationGuide({
             name,
             pkgName,
             type,
-            // @ts-expect-error Not sure why this thinks it's a partial
-            migrationMap,
             guidance: `<p>Original Path: <a href="${githubBaseUrl}/${path}" target="_blank">${path}</a></p>
               <p>${getMigrationRecommendation(migrationMap, name)}</p>`,
-          }),
-        );
+          });
+
+          groups[key].push(formattedDeprecationGuide);
+        }
       });
       groups[key].push('</Accordion>');
     }
@@ -210,13 +211,28 @@ function formatDeprecations(deprecationObj: Deprecation): string {
 
 // Updates the Deprecations page on the go/cds website
 async function updateDeprecations() {
-  let contents = await fs.promises.readFile(fullPath, 'utf8');
+  const contents = await fs.promises.readFile(fullPath, 'utf8');
   const formattedDeprecations = deprecations.map((obj) => formatDeprecations(obj));
+  let updatedContents: string | null = null;
 
-  contents = contents.replace(`${templateStart}`, `${templateStart}\n\n${formattedDeprecations}`);
+  const startIndex = contents.indexOf(templateStart);
+
+  // So that we don't need to manually delete contents every time.
+  if (startIndex !== -1) {
+    updatedContents = `${contents.substring(
+      0,
+      startIndex,
+    )}${templateStart}\n\n${formattedDeprecations.join('\n\n')}`;
+  } else {
+    throw new Error('Unexpected: TemplateStart not found.');
+  }
+
+  if (updatedContents === null) {
+    throw new Error('Unexpected: Updated contents is null.');
+  }
 
   try {
-    await writePrettyFile(fullPath, contents);
+    await writePrettyFile(fullPath, updatedContents);
     console.log(chalk.green('Success! The Deprecations page has been updated.'));
   } catch (error) {
     console.error(chalk.red(`FAILED: ${error}`));

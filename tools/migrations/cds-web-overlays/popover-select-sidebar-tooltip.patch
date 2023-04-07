@@ -1,0 +1,360 @@
+diff --git a/packages/cds-web-overlays/src/popover/Popover.tsx b/packages/cds-web-overlays/src/popover/Popover.tsx
+index 6faec12dc..7a44167b1 100644
+--- a/packages/cds-web-overlays/src/popover/Popover.tsx
++++ b/packages/cds-web-overlays/src/popover/Popover.tsx
+@@ -5,16 +5,15 @@ import { css } from 'linaria';
+ import { useScale } from '@cbhq/cds-common';
+ import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
+ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
+-
+-import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
+-import { usePopoverA11y } from '../../hooks/usePopoverA11y';
+-import { Box } from '../../layout/Box';
+-import { ThemeProvider } from '../../system';
+-import { cx } from '../../utils/linaria';
+-import { FocusTrap } from '../FocusTrap';
+-import { Overlay } from '../Overlay/Overlay';
+-import { Portal } from '../Portal';
+-import { tooltipContainerId } from '../PortalProvider';
++import { NewAnimatePresence } from '@cbhq/cds-web/animation/NewAnimatePresence';
++import { usePopoverA11y } from '@cbhq/cds-web/hooks/usePopoverA11y';
++import { Box } from '@cbhq/cds-web/layout/Box';
++import { FocusTrap } from '@cbhq/cds-web/overlays/FocusTrap';
++import { Overlay } from '@cbhq/cds-web/overlays/Overlay/Overlay';
++import { Portal } from '@cbhq/cds-web/overlays/Portal';
++import { tooltipContainerId } from '@cbhq/cds-web/overlays/PortalProvider';
++import { ThemeProvider } from '@cbhq/cds-web/system';
++import { cx } from '@cbhq/cds-web/utils/linaria';
+ 
+ import { PopoverContentPositionConfig, PopoverProps } from './PopoverProps';
+ import { usePopper } from './usePopper';
+diff --git a/packages/cds-web-overlays/src/popover/__tests__/Popover.test.tsx b/packages/cds-web-overlays/src/popover/__tests__/Popover.test.tsx
+index 4686beb99..79261e9f5 100644
+--- a/packages/cds-web-overlays/src/popover/__tests__/Popover.test.tsx
++++ b/packages/cds-web-overlays/src/popover/__tests__/Popover.test.tsx
+@@ -1,9 +1,9 @@
+ import { render, screen } from '@testing-library/react';
++import { Box } from '@cbhq/cds-web/layout';
++import { Pressable } from '@cbhq/cds-web/system';
+ import { renderA11y } from '@cbhq/cds-web-utils/jest';
+ 
+-import { Box } from '../../layout';
+-import { Pressable } from '../../system';
+-import { Popover } from '../popover/Popover';
++import { Popover } from '../Popover';
+ 
+ const SUBJECT_TEST_ID = 'subject';
+ const CONTENT_TEST_ID = 'content';
+diff --git a/packages/cds-web-overlays/src/popover/usePopper.ts b/packages/cds-web-overlays/src/popover/usePopper.ts
+index 9e246cf03..bff56c87a 100644
+--- a/packages/cds-web-overlays/src/popover/usePopper.ts
++++ b/packages/cds-web-overlays/src/popover/usePopper.ts
+@@ -1,8 +1,7 @@
+ import { useMemo, useState } from 'react';
+ import { usePopper as useExternalPopper } from 'react-popper';
+ import { Options as PopperOptions } from '@popperjs/core';
+-
+-import { useSpacingValue } from '../../hooks/useSpacingValue';
++import { useSpacingValue } from '@cbhq/cds-web/hooks/useSpacingValue';
+ 
+ import { PopoverContentPositionConfig } from './PopoverProps';
+ 
+diff --git a/packages/cds-web-overlays/src/select/Select.tsx b/packages/cds-web-overlays/src/select/Select.tsx
+index 45f74c5cf..9f88bae67 100644
+--- a/packages/cds-web-overlays/src/select/Select.tsx
++++ b/packages/cds-web-overlays/src/select/Select.tsx
+@@ -14,16 +14,15 @@ import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+ import { helperTextHeight, inputStackGap } from '@cbhq/cds-common/tokens/input';
+ import { FOCUSABLE_ELEMENTS } from '@cbhq/cds-common/tokens/overlays';
+ import { SelectBaseProps } from '@cbhq/cds-common/types';
++import { TextInputFocusVariantContext } from '@cbhq/cds-web/controls/context';
++import { SelectTrigger } from '@cbhq/cds-web/controls/SelectTrigger';
++import { useSpacingValue } from '@cbhq/cds-web/hooks/useSpacingValue';
++import { HStack } from '@cbhq/cds-web/layout/HStack';
++import { isBrowser } from '@cbhq/cds-web/utils/browser';
+ 
+ import { Dropdown } from '../dropdown/Dropdown';
+ import { DropdownProps } from '../dropdown/DropdownProps';
+-import { useSpacingValue } from '../hooks/useSpacingValue';
+-import { HStack } from '../layout/HStack';
+-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+-import { isBrowser } from '../utils/browser';
+-
+-import { TextInputFocusVariantContext } from './context';
+-import { SelectTrigger } from './SelectTrigger';
++import { PopoverContentPositionConfig } from '../popover/PopoverProps';
+ 
+ export type SelectProps = {
+   children: ReactNode;
+diff --git a/packages/cds-web-overlays/src/select/SelectOption.tsx b/packages/cds-web-overlays/src/select/SelectOption.tsx
+index 1686f8a12..eac63b62e 100644
+--- a/packages/cds-web-overlays/src/select/SelectOption.tsx
++++ b/packages/cds-web-overlays/src/select/SelectOption.tsx
+@@ -3,18 +3,16 @@ import { css } from 'linaria';
+ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+ import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/select';
+ import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
+-
+-import { Cell, overflowClassName } from '../cells/Cell';
+-import { CellAccessory } from '../cells/CellAccessory';
+-import { VStack } from '../layout/VStack';
+-import { insetFocusRing } from '../styles/focus';
+-import { visibility } from '../styles/visibility';
+-import { Pressable, PressableProps } from '../system';
+-import { borderRadius } from '../tokens';
+-import { TextBody, TextHeadline } from '../typography';
+-import { cx } from '../utils/linaria';
+-
+-import { useSelectContext } from './selectContext';
++import { Cell, overflowClassName } from '@cbhq/cds-web/cells/Cell';
++import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
++import { useSelectContext } from '@cbhq/cds-web/controls/selectContext';
++import { VStack } from '@cbhq/cds-web/layout/VStack';
++import { insetFocusRing } from '@cbhq/cds-web/styles/focus';
++import { visibility } from '@cbhq/cds-web/styles/visibility';
++import { Pressable, PressableProps } from '@cbhq/cds-web/system';
++import { borderRadius } from '@cbhq/cds-web/tokens';
++import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
++import { cx } from '@cbhq/cds-web/utils/linaria';
+ 
+ export const selectOptionStaticClassName = 'cds-select-option';
+ 
+diff --git a/packages/cds-web-overlays/src/select/__stories__/Select.stories.tsx b/packages/cds-web-overlays/src/select/__stories__/Select.stories.tsx
+index d4f6d9deb..8c3032eea 100644
+--- a/packages/cds-web-overlays/src/select/__stories__/Select.stories.tsx
++++ b/packages/cds-web-overlays/src/select/__stories__/Select.stories.tsx
+@@ -1,14 +1,15 @@
++import React from 'react';
+ import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
+ import { CreateSelectStoriesProps, selectBuilder } from '@cbhq/cds-common/internal/selectBuilder';
++import { InputIcon } from '@cbhq/cds-web/controls/InputIcon';
++import { VStack } from '@cbhq/cds-web/layout/VStack';
++import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+ 
+-import { VStack } from '../../layout/VStack';
+-import { ThemeProvider } from '../../system/ThemeProvider';
+-import { InputIcon } from '../InputIcon';
+ import { Select } from '../Select';
+ import { SelectOption } from '../SelectOption';
+ 
+ export default {
+-  title: 'Core Components/Inputs/Select',
++  title: 'Overlays/Select',
+   component: Select,
+   excludeStories: [
+     'HundredCDSSelectComponents',
+diff --git a/packages/cds-web-overlays/src/select/__stories__/SelectInteraction.stories.tsx b/packages/cds-web-overlays/src/select/__stories__/SelectInteraction.stories.tsx
+index 015eac974..c601133dd 100644
+--- a/packages/cds-web-overlays/src/select/__stories__/SelectInteraction.stories.tsx
++++ b/packages/cds-web-overlays/src/select/__stories__/SelectInteraction.stories.tsx
+@@ -1,10 +1,10 @@
+ /* eslint-disable @typescript-eslint/await-thenable */
+-import { useState } from 'react';
++import React, { useState } from 'react';
+ import { expect } from '@storybook/jest';
+ import { ComponentStoryObj } from '@storybook/react';
+ import { userEvent, waitFor, within } from '@storybook/testing-library';
++import { pauseStory } from '@cbhq/cds-web/utils/storybook';
+ 
+-import { pauseStory } from '../../utils/storybook';
+ import { Select, SelectProps } from '../Select';
+ import { SelectOption } from '../SelectOption';
+ 
+@@ -23,7 +23,7 @@ const SelectForm = (props: SelectProps) => {
+ };
+ 
+ export default {
+-  title: 'Interactive/Select',
++  title: 'Overlays/Select Interactive',
+   component: SelectForm,
+ };
+ 
+diff --git a/packages/cds-web-overlays/src/select/__stories__/SelectOption.stories.tsx b/packages/cds-web-overlays/src/select/__stories__/SelectOption.stories.tsx
+index 2e67be155..ea8dabcb3 100644
+--- a/packages/cds-web-overlays/src/select/__stories__/SelectOption.stories.tsx
++++ b/packages/cds-web-overlays/src/select/__stories__/SelectOption.stories.tsx
+@@ -1,10 +1,12 @@
+-import { VStack } from '../../layout';
+-import { TextLabel1 } from '../../typography';
+-import { defaultContext, SelectProvider } from '../selectContext';
++import React from 'react';
++import { defaultContext, SelectProvider } from '@cbhq/cds-web/controls/selectContext';
++import { VStack } from '@cbhq/cds-web/layout';
++import { TextLabel1 } from '@cbhq/cds-web/typography';
++
+ import { SelectOption } from '../SelectOption';
+ 
+ export default {
+-  title: 'Core Components/Inputs/SelectOption',
++  title: 'Overlays/Select/SelectOption',
+   component: SelectOption,
+ };
+ 
+diff --git a/packages/cds-web-overlays/src/select/__tests__/Select.test.tsx b/packages/cds-web-overlays/src/select/__tests__/Select.test.tsx
+index 066fe7bc7..fca46d763 100644
+--- a/packages/cds-web-overlays/src/select/__tests__/Select.test.tsx
++++ b/packages/cds-web-overlays/src/select/__tests__/Select.test.tsx
+@@ -4,12 +4,12 @@ import {
+   exampleOptions,
+   selectBuilder,
+ } from '@cbhq/cds-common/internal/selectBuilder';
++import { InputIcon } from '@cbhq/cds-web/controls/InputIcon';
++import { Icon } from '@cbhq/cds-web/icons/Icon';
++import { VStack } from '@cbhq/cds-web/layout/VStack';
++import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+ import { renderA11y } from '@cbhq/cds-web-utils/jest';
+ 
+-import { Icon } from '../../icons/Icon';
+-import { VStack } from '../../layout/VStack';
+-import { ThemeProvider } from '../../system/ThemeProvider';
+-import { InputIcon } from '../InputIcon';
+ import { Select } from '../Select';
+ import { SelectOption } from '../SelectOption';
+ 
+diff --git a/packages/cds-web-overlays/src/sidebarMoreMenu/SidebarItem.tsx b/packages/cds-web-overlays/src/sidebarMoreMenu/SidebarItem.tsx
+index f4a763fce..501896f69 100644
+--- a/packages/cds-web-overlays/src/sidebarMoreMenu/SidebarItem.tsx
++++ b/packages/cds-web-overlays/src/sidebarMoreMenu/SidebarItem.tsx
+@@ -1,14 +1,13 @@
+ import React, { forwardRef, memo, ReactNode, useMemo } from 'react';
+ import { ForwardedRef, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
++import { NavigationIcon, NavigationIconProps } from '@cbhq/cds-web/icons';
++import { HStack } from '@cbhq/cds-web/layout';
++import { useSidebarContext } from '@cbhq/cds-web/navigation/SidebarContext';
++import { Pressable } from '@cbhq/cds-web/system';
++import { LinkProps, TextHeadline } from '@cbhq/cds-web/typography';
+ 
+-import { NavigationIcon, NavigationIconProps } from '../icons';
+-import { HStack } from '../layout';
+-import { Tooltip } from '../overlays/Tooltip/Tooltip';
+-import { TooltipProps } from '../overlays/Tooltip/TooltipProps';
+-import { Pressable } from '../system';
+-import { LinkProps, TextHeadline } from '../typography';
+-
+-import { useSidebarContext } from './SidebarContext';
++import { Tooltip } from '../tooltip/Tooltip';
++import { TooltipProps } from '../tooltip/TooltipProps';
+ 
+ export type SidebarItemProps = {
+   /**
+diff --git a/packages/cds-web-overlays/src/sidebarMoreMenu/SidebarMoreMenu.tsx b/packages/cds-web-overlays/src/sidebarMoreMenu/SidebarMoreMenu.tsx
+index e82600d45..bb2e8c638 100644
+--- a/packages/cds-web-overlays/src/sidebarMoreMenu/SidebarMoreMenu.tsx
++++ b/packages/cds-web-overlays/src/sidebarMoreMenu/SidebarMoreMenu.tsx
+@@ -2,12 +2,12 @@ import React, { memo, ReactNode, useCallback, useMemo, useRef } from 'react';
+ import { SharedProps, SpacingScale } from '@cbhq/cds-common';
+ import { sidebarMenuMaxWidth, sidebarMenuMinWidth } from '@cbhq/cds-common/tokens/menu';
+ import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
++import { useSidebarContext } from '@cbhq/cds-web/navigation/SidebarContext';
+ 
+ import { Dropdown, DropdownProps } from '../dropdown';
+-import { Tooltip } from '../overlays';
+-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
++import { PopoverContentPositionConfig } from '../popover/PopoverProps';
++import { Tooltip } from '../tooltip/Tooltip';
+ 
+-import { useSidebarContext } from './SidebarContext';
+ import { SidebarItem, SidebarItemProps } from './SidebarItem';
+ 
+ export type SidebarMoreMenuProps = {
+diff --git a/packages/cds-web-overlays/src/tooltip/TooltipContent.tsx b/packages/cds-web-overlays/src/tooltip/TooltipContent.tsx
+index 74691bb44..a6d91cc96 100644
+--- a/packages/cds-web-overlays/src/tooltip/TooltipContent.tsx
++++ b/packages/cds-web-overlays/src/tooltip/TooltipContent.tsx
+@@ -7,11 +7,10 @@ import {
+ } from '@cbhq/cds-common/animation/tooltip';
+ import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/tokens/tooltip';
+ import { zIndex as cdsZIndex } from '@cbhq/cds-common/tokens/zIndex';
+-
+-import { Box } from '../../layout/Box';
+-import { useMotionProps } from '../../motion/useMotionProps';
+-import { spacing } from '../../tokens';
+-import { TextLabel2 } from '../../typography';
++import { Box } from '@cbhq/cds-web/layout/Box';
++import { useMotionProps } from '@cbhq/cds-web/motion/useMotionProps';
++import { spacing } from '@cbhq/cds-web/tokens';
++import { TextLabel2 } from '@cbhq/cds-web/typography';
+ 
+ import { PopperTooltipProps } from './TooltipProps';
+ 
+diff --git a/packages/cds-web-overlays/src/tooltip/__stories__/Tooltip.stories.tsx b/packages/cds-web-overlays/src/tooltip/__stories__/Tooltip.stories.tsx
+index 5728eab09..af40016ed 100644
+--- a/packages/cds-web-overlays/src/tooltip/__stories__/Tooltip.stories.tsx
++++ b/packages/cds-web-overlays/src/tooltip/__stories__/Tooltip.stories.tsx
+@@ -1,21 +1,22 @@
++import React from 'react';
+ import {
+   ComponentMeta,
+   ComponentStory,
+ } from '@storybook/react/dist/ts3.9/client/preview/types-6-3';
+ import { assets } from '@cbhq/cds-common/internal/data/assets';
++import { Button } from '@cbhq/cds-web/buttons/Button';
++import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
++import { DotSymbol } from '@cbhq/cds-web/dots/DotSymbol';
++import { HStack } from '@cbhq/cds-web/layout/HStack';
++import { VStack } from '@cbhq/cds-web/layout/VStack';
++import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
++import { TextLabel1 } from '@cbhq/cds-web/typography';
+ 
+-import { Button } from '../../buttons/Button';
+-import { IconButton } from '../../buttons/IconButton';
+-import { DotSymbol } from '../../dots/DotSymbol';
+-import { HStack } from '../../layout/HStack';
+-import { VStack } from '../../layout/VStack';
+-import { TextLabel1 } from '../../typography';
+-import { PortalProvider } from '../PortalProvider';
+-import { Tooltip } from '../Tooltip/Tooltip';
+-import { TooltipProps } from '../Tooltip/TooltipProps';
++import { Tooltip } from '../Tooltip';
++import { TooltipProps } from '../TooltipProps';
+ 
+ export default {
+-  title: 'Core Components/Tooltip',
++  title: 'Overlays/Tooltip/Tooltip',
+   component: Tooltip,
+   parameters: {
+     layout: 'padded',
+diff --git a/packages/cds-web-overlays/src/tooltip/__stories__/TooltipContent.stories.tsx b/packages/cds-web-overlays/src/tooltip/__stories__/TooltipContent.stories.tsx
+index 4b889585e..199b4bf48 100644
+--- a/packages/cds-web-overlays/src/tooltip/__stories__/TooltipContent.stories.tsx
++++ b/packages/cds-web-overlays/src/tooltip/__stories__/TooltipContent.stories.tsx
+@@ -1,18 +1,19 @@
++import React from 'react';
+ import { useEffect, useRef } from 'react';
+ import {
+   ComponentMeta,
+   ComponentStory,
+ } from '@storybook/react/dist/ts3.9/client/preview/types-6-3';
++import { Button } from '@cbhq/cds-web/buttons/Button';
++import { HStack } from '@cbhq/cds-web/layout/HStack';
++import { VStack } from '@cbhq/cds-web/layout/VStack';
++import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
+ 
+-import { Button } from '../../buttons/Button';
+-import { HStack } from '../../layout/HStack';
+-import { VStack } from '../../layout/VStack';
+-import { PortalProvider } from '../PortalProvider';
+-import { TooltipContent } from '../Tooltip/TooltipContent';
+-import { PopperTooltipProps } from '../Tooltip/TooltipProps';
++import { TooltipContent } from '../TooltipContent';
++import { PopperTooltipProps } from '../TooltipProps';
+ 
+ export default {
+-  title: 'Core Components/TooltipContent',
++  title: 'Overlays/Tooltip/TooltipContent',
+   component: TooltipContent,
+   parameters: {
+     layout: 'padded',
+diff --git a/packages/cds-web-overlays/tests/index.test.ts b/packages/cds-web-overlays/tests/index.test.ts
+deleted file mode 100644
+index 4e015d2fe..000000000
+--- a/packages/cds-web-overlays/tests/index.test.ts
++++ /dev/null
+@@ -1,7 +0,0 @@
+-import { add } from '../src';
+-
+-describe('add()', () => {
+-  it('adds numbers', () => {
+-    expect(add(1, 1)).toBe(2);
+-  });
+-});

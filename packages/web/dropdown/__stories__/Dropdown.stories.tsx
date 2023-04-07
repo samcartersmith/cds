@@ -12,8 +12,11 @@ import { Dropdown } from '../Dropdown';
 import { DropdownProps, DropdownRefProps } from '../DropdownProps';
 import { MenuItem } from '../MenuItem';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export default {
-  title: 'Core Components/Dropdown',
+  title: 'Core Components/Dropdown (deprecated - moved to cds-web-overlays)',
   component: Dropdown,
 };
 
@@ -40,6 +43,9 @@ type MockDropdownProps = {
   'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur' | 'onCloseMenu' | 'disablePortal'
 >;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Default = ({
   options = defaultOptions,
   containerHeight,
@@ -113,8 +119,14 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
   );
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Wrapped = () => <BaseWrapped />;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const WrappedMobileModal = () => <BaseWrapped enableMobileModal />;
 
 const subMenuPosition: PopoverContentPositionConfig = {
@@ -122,6 +134,9 @@ const subMenuPosition: PopoverContentPositionConfig = {
   placement: 'right-start',
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const SubMenu = () => {
   const [menuValue, setMenuValue] = useState<string>();
   const [subMenuValue, setSubMenuValue] = useState<string>();
@@ -230,9 +245,18 @@ const emojiMap = [
   { label: 'coder', glyph: '👩🏼‍💻' },
 ];
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const ShowOverlay = () => <Default showOverlay />;
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const MobileModal = () => <Default enableMobileModal />;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const CustomOptions = () => {
   const [value, onChange] = useState<string | undefined>();
   const currentGlyph = useMemo(

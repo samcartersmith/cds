@@ -21,10 +21,9 @@ Any time we move or delete an export, we need to deprecate it first, and indicat
 3. Add the deprecation to the [Deprecations Config](https://github.cbhq.net/frontend/cds/blob/master/apps/website/scripts/deprecations/deprecations.ts). If there isn't a config for the current quarter, add on using the convention: `endOfLife: 'Q<QUARTER><YEAR>'`.
 4. In the deprecation config, indicate the "type" of deprecation --see section below on [Deprecation Types](#types-of-deprecations).
 5. Provide migration guidance for every deprecation using the `migrationMap` property. Each key will map to a value you provided for `type`. If a deprecation is being removed completely with not replacement, a `migrationMap` is not required.
-6. Delete everything on the [website/docs/resources/deprecations.mdx](apps/website/docs/resources/deprecations.mdx) page below the `<!-- template-start -->` line.
-7. Run `yarn nx run website:deprecations` to update the page.
-8. Cut a PR, once it merges, make sure it deploys to `cds-docs-production`
-9. Close your Jira ticket.
+6. Run `yarn nx run website:deprecations` to update the page.
+7. Cut a PR, once it merges, make sure it deploys to `cds-docs-production`
+8. Close your Jira ticket.
 
 ### <a name="#types-of-deprecations"></a> Types of Deprecations
 

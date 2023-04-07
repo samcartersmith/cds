@@ -16,6 +16,9 @@ import { cx } from '../utils/linaria';
 
 import { useSelectContext } from './selectContext';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const selectOptionStaticClassName = 'cds-select-option';
 
 const pressableStyles = css`
@@ -38,6 +41,9 @@ const pressableStyles = css`
   }
 `;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export type SelectOptionProps = {
   /** Prevent menu from closing when an option is selected */
   disableCloseOnOptionChange?: boolean;
@@ -67,6 +73,9 @@ const selectOptionCompactMaxHeight: Record<ScaleDensity, number> = {
   dense: 48,
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const SelectOption = memo(
   ({
     title,

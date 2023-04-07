@@ -2,6 +2,9 @@ import { useCallback, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 import { generateRandomId } from '@cbhq/cds-utils';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const useTooltipState = (id?: string) => {
   const [isHovered, { toggleOn: handleOnMouseEnter, toggleOff: toggleOffIsHovered }] =
     useToggler(false);

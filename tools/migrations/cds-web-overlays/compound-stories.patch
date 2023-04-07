@@ -1,0 +1,203 @@
+diff --git a/packages/cds-web-overlays/src/__stories__/AppSwitcher.stories.tsx b/packages/cds-web-overlays/src/__stories__/AppSwitcher.stories.tsx
+index 96958e292..8ba61f220 100644
+--- a/packages/cds-web-overlays/src/__stories__/AppSwitcher.stories.tsx
++++ b/packages/cds-web-overlays/src/__stories__/AppSwitcher.stories.tsx
+@@ -1,10 +1,10 @@
+-import { memo } from 'react';
++import React, { memo } from 'react';
++import { NavigationIconButton } from '@cbhq/cds-web/buttons/NavigationIconButton';
++import { DotCount } from '@cbhq/cds-web/dots/DotCount';
++import { HStack } from '@cbhq/cds-web/layout';
+ 
+-import { NavigationIconButton } from '../buttons/NavigationIconButton';
+-import { DotCount } from '../dots/DotCount';
+ import { Dropdown } from '../dropdown';
+-import { HStack } from '../layout';
+-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
++import { PopoverContentPositionConfig } from '../popover/PopoverProps';
+ 
+ import { AppSwitcherContent } from './AppSwitcherContent';
+ 
+@@ -52,6 +52,6 @@ export const AppSwitcherWithDot = () => {
+ };
+ 
+ export default {
+-  title: 'Core Components/Switchers/AppSwitcher',
++  title: 'Overlays/Switchers/AppSwitcher',
+   component: AppSwitcher,
+ };
+diff --git a/packages/cds-web-overlays/src/__stories__/AppSwitcherContent.tsx b/packages/cds-web-overlays/src/__stories__/AppSwitcherContent.tsx
+index a44cc1ef0..4d33ef292 100644
+--- a/packages/cds-web-overlays/src/__stories__/AppSwitcherContent.tsx
++++ b/packages/cds-web-overlays/src/__stories__/AppSwitcherContent.tsx
+@@ -1,11 +1,10 @@
+-import { memo } from 'react';
++import React, { memo } from 'react';
+ import { IllustrationPictogramNames, NoopFn as NoopFnType } from '@cbhq/cds-common';
+ import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
+-
+-import { TileButton } from '../buttons/TileButton';
+-import { Divider, HStack, VStack } from '../layout';
+-import { TextCaption } from '../typography/TextCaption';
+-import { getZIndexFromRow } from '../utils/overflow';
++import { TileButton } from '@cbhq/cds-web/buttons/TileButton';
++import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
++import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
++import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
+ 
+ const appSwitcherData: AppSwitcherData = {
+   sections: [
+diff --git a/packages/cds-web-overlays/src/__stories__/Navigation.stories.tsx b/packages/cds-web-overlays/src/__stories__/Navigation.stories.tsx
+index 7f2495b12..dd30cd497 100644
+--- a/packages/cds-web-overlays/src/__stories__/Navigation.stories.tsx
++++ b/packages/cds-web-overlays/src/__stories__/Navigation.stories.tsx
+@@ -1,20 +1,16 @@
+-import { useCallback, useState } from 'react';
++import React, { useCallback, useState } from 'react';
++import { useToggler } from '@cbhq/cds-web';
++import { Button } from '@cbhq/cds-web/buttons';
++import { LogoMark, NavigationIcon } from '@cbhq/cds-web/icons';
++import { HStack, VStack } from '@cbhq/cds-web/layout';
++import { NavigationBar, NavigationTitle, Sidebar } from '@cbhq/cds-web/navigation';
++import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
++import { FeatureFlagProvider } from '@cbhq/cds-web/system';
+ 
+-import { Button } from '../buttons';
+-import { SelectOption } from '../controls/SelectOption';
+-import { LogoMark, NavigationIcon } from '../icons';
+-import { HStack, VStack } from '../layout';
+-import {
+-  NavigationBar,
+-  NavigationTitle,
+-  Sidebar,
+-  SidebarItem,
+-  SidebarMoreMenu,
+-} from '../navigation';
+ import { items } from '../navigation/__stories__/NavigationStorySetup';
+-import { PortalProvider } from '../overlays/PortalProvider';
+-import { FeatureFlagProvider } from '../system';
+-import { useToggler } from '..';
++import { SelectOption } from '../select/SelectOption';
++import { SidebarItem } from '../sidebarMoreMenu/SidebarItem';
++import { SidebarMoreMenu } from '../sidebarMoreMenu/SidebarMoreMenu';
+ 
+ import { AppSwitcher } from './AppSwitcher.stories';
+ import { UserSwitcher } from './UserSwitcher.stories';
+@@ -113,6 +109,6 @@ export const NavigationRecipe = () => {
+ };
+ 
+ export default {
+-  title: 'Core Components/Recipes/Navigation',
++  title: 'Overlays/Recipes/Navigation',
+   component: NavigationRecipe,
+ };
+diff --git a/packages/cds-web-overlays/src/__stories__/TabNavigation.stories.tsx b/packages/cds-web-overlays/src/__stories__/TabNavigation.stories.tsx
+index 6a571f11f..2d09f56ea 100644
+--- a/packages/cds-web-overlays/src/__stories__/TabNavigation.stories.tsx
++++ b/packages/cds-web-overlays/src/__stories__/TabNavigation.stories.tsx
+@@ -3,16 +3,16 @@ import { Meta, Story } from '@storybook/react';
+ import sample from 'lodash/sample';
+ import { loremIpsum } from '@cbhq/cds-common/internal/loremIpsumBuilder';
+ import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
++import { VStack } from '@cbhq/cds-web/alpha/VStack';
++import { Button } from '@cbhq/cds-web/buttons/Button';
++import { ThemeProvider } from '@cbhq/cds-web/system';
++import { MockTabPanel } from '@cbhq/cds-web/tabs/__stories__/MockTabPanel';
++import { TabNavigation } from '@cbhq/cds-web/tabs/TabNavigation';
++import { Link, TextBody, TextHeadline, TextTitle1 } from '@cbhq/cds-web/typography';
++import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
+ 
+-import { VStack } from '../../alpha/VStack';
+-import { Button } from '../../buttons/Button';
+-import { Select, SelectOption } from '../../controls';
+-import { ThemeProvider } from '../../system';
+-import { Link, TextBody, TextHeadline, TextTitle1 } from '../../typography';
+-import { enableJavascript } from '../../utils/storybookParams/percy';
+-import { TabNavigation } from '../TabNavigation';
+-
+-import { MockTabPanel } from './MockTabPanel';
++import { Select } from '../select/Select';
++import { SelectOption } from '../select/SelectOption';
+ 
+ const skipRequiredChildren = { id: 'aria-required-children', enabled: false };
+ 
+@@ -74,7 +74,7 @@ const longTabs: TabProps[] = [
+ const tabs = longTabs.slice(0, 5);
+ 
+ export default {
+-  title: 'Core Components/Tabs/TabNavigation',
++  title: 'Overlays/Recipes/TabNavigation',
+   component: TabNavigation,
+ } as Meta;
+ 
+diff --git a/packages/cds-web-overlays/src/__stories__/UserSwitcher.stories.tsx b/packages/cds-web-overlays/src/__stories__/UserSwitcher.stories.tsx
+index 714efdbdc..bd4ab8618 100644
+--- a/packages/cds-web-overlays/src/__stories__/UserSwitcher.stories.tsx
++++ b/packages/cds-web-overlays/src/__stories__/UserSwitcher.stories.tsx
+@@ -1,13 +1,13 @@
+-import { memo } from 'react';
++import React, { memo } from 'react';
+ import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
++import { HStack, VStack } from '@cbhq/cds-web/layout';
++import { Avatar } from '@cbhq/cds-web/media/Avatar';
++import { FeatureFlagProvider } from '@cbhq/cds-web/system';
++import { Pressable } from '@cbhq/cds-web/system/Pressable';
++import { TextHeadline, TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
+ 
+-import { Dropdown } from '../dropdown';
+-import { HStack, VStack } from '../layout';
+-import { Avatar } from '../media/Avatar';
+-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+-import { FeatureFlagProvider } from '../system';
+-import { Pressable } from '../system/Pressable';
+-import { TextHeadline, TextLabel1, TextLabel2 } from '../typography';
++import { Dropdown } from '../dropdown/Dropdown';
++import { PopoverContentPositionConfig } from '../popover/PopoverProps';
+ 
+ import { UserSwitcherContent } from './UserSwitcherContent';
+ 
+@@ -81,6 +81,6 @@ export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectPr
+ };
+ 
+ export default {
+-  title: 'Core Components/Switchers/UserSwitcher',
++  title: 'Overlays/Switchers/UserSwitcher',
+   component: UserSwitcher,
+ };
+diff --git a/packages/cds-web-overlays/src/__stories__/UserSwitcherContent.tsx b/packages/cds-web-overlays/src/__stories__/UserSwitcherContent.tsx
+index eab07a3c1..8fd55a988 100644
+--- a/packages/cds-web-overlays/src/__stories__/UserSwitcherContent.tsx
++++ b/packages/cds-web-overlays/src/__stories__/UserSwitcherContent.tsx
+@@ -1,21 +1,20 @@
+-import { memo, useMemo } from 'react';
++import React, { memo, useMemo } from 'react';
+ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+ import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
+ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+ import { listHeight } from '@cbhq/cds-common/tokens/cell';
+ import { CellPriority, CellSpacing } from '@cbhq/cds-common/types';
+ import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
+-
+-import { Button } from '../buttons/Button';
+-import { ListCell } from '../cells/ListCell';
+-import { Collapsible } from '../collapsible/Collapsible';
+-import { useSpacingValue } from '../hooks/useSpacingValue';
+-import { Divider, HStack, VStack } from '../layout';
+-import { Avatar } from '../media/Avatar';
+-import { AnimatedCaret } from '../motion/AnimatedCaret';
+-import { insetFocusRing } from '../styles/focus';
+-import { PressableOpacity } from '../system/PressableOpacity';
+-import { TextBody, TextCaption, TextLegal, TextTitle3 } from '../typography';
++import { Button } from '@cbhq/cds-web/buttons/Button';
++import { ListCell } from '@cbhq/cds-web/cells/ListCell';
++import { Collapsible } from '@cbhq/cds-web/collapsible/Collapsible';
++import { useSpacingValue } from '@cbhq/cds-web/hooks/useSpacingValue';
++import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
++import { Avatar } from '@cbhq/cds-web/media/Avatar';
++import { AnimatedCaret } from '@cbhq/cds-web/motion/AnimatedCaret';
++import { insetFocusRing } from '@cbhq/cds-web/styles/focus';
++import { PressableOpacity } from '@cbhq/cds-web/system/PressableOpacity';
++import { TextBody, TextCaption, TextLegal, TextTitle3 } from '@cbhq/cds-web/typography';
+ 
+ type UserSwitcherData = {
+   name: string;

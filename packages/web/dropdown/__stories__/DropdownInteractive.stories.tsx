@@ -8,7 +8,7 @@ import { pauseStory } from '../../utils/storybook';
 import { Default } from './Dropdown.stories';
 
 export default {
-  title: 'Interactive/Dropdown',
+  title: 'Interactive/Dropdown (deprecated - moved to cds-web-overlays)',
   component: Default,
 };
 

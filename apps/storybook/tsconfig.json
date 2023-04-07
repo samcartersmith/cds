@@ -16,6 +16,9 @@
     },
     {
       "path": "../../packages/illustrations"
+    },
+    {
+      "path": "../../packages/cds-web-overlays"
     }
   ],
   "exclude": ["babel.config.js"]

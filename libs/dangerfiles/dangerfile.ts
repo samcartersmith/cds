@@ -35,6 +35,53 @@ const fileIgnorePatterns = [
   '!**/types/*.ts',
 ];
 
+const cdsWebOverlayMovedComponents = [
+  'packages/web/__stories__/AppSwitcher.stories.tsx',
+  'packages/web/__stories__/AppSwitcherContent.tsx',
+  'packages/web/__stories__/Navigation.stories.tsx',
+  'packages/web/tabs/__stories__/TabNavigation.stories.tsx',
+  'packages/web/__stories__/UserSwitcher.stories.tsx',
+  'packages/web/__stories__/UserSwitcherContent.tsx',
+  'packages/web/dropdown/Dropdown.tsx',
+  'packages/web/dropdown/DropdownContent.tsx',
+  'packages/web/dropdown/DropdownProps.ts',
+  'packages/web/dropdown/MenuItem.tsx',
+  'packages/web/dropdown/__stories__/Dropdown.stories.tsx',
+  'packages/web/dropdown/__stories__/DropdownContent.stories.tsx',
+  'packages/web/dropdown/__stories__/DropdownInteractive.stories.tsx',
+  'packages/web/dropdown/__tests__/Dropdown.test.tsx',
+  'packages/web/dropdown/__tests__/MenuItem.test.tsx',
+  'packages/web/dropdown/index.ts',
+  'packages/web/index.ts',
+  'packages/web/navigation/__stories__/ComposedSystem.stories.mdx',
+  'packages/web/navigation/__stories__/NavLink.stories.mdx',
+  'packages/web/navigation/__stories__/NavigationBar.stories.mdx',
+  'packages/web/navigation/__stories__/NavigationStorySetup.tsx',
+  'packages/web/navigation/__stories__/Sidebar.stories.mdx',
+  'packages/web/navigation/__tests__/SidebarMoreMenu.test.tsx',
+  'packages/web/overlays/__stories__/AllOverlays.stories.tsx',
+  'packages/web/overlays/__stories__/SearchInputMenu.stories.tsx',
+  'packages/web/overlays/__tests__/FocusTrap.test.tsx',
+  'packages/web/overlays/popover/Popover.tsx',
+  'packages/web/overlays/popover/PopoverProps.ts',
+  'packages/web/overlays/__tests__/Popover.test.tsx',
+  'packages/web/overlays/popover/usePopper.ts',
+  'packages/web/controls/Select.tsx',
+  'packages/web/controls/SelectOption.tsx',
+  'packages/web/controls/__stories__/Select.stories.tsx',
+  'packages/web/controls/__stories__/SelectInteraction.stories.tsx',
+  'packages/web/controls/__stories__/SelectOption.stories.tsx',
+  'packages/web/controls/__tests__/Select.test.tsx',
+  'packages/web/navigation/SidebarItem.tsx',
+  'packages/web/navigation/SidebarMoreMenu.tsx',
+  'packages/web/overlays/Tooltip/Tooltip.tsx',
+  'packages/web/overlays/Tooltip/TooltipContent.tsx',
+  'packages/web/overlays/Tooltip/TooltipProps.ts',
+  'packages/web/overlays/__stories__/Tooltip.stories.tsx',
+  'packages/web/overlays/__stories__/TooltipContent.stories.tsx',
+  'packages/web/overlays/Tooltip/useTooltipState.ts',
+];
+
 /** See go/frozen-components for more info */
 const frozenComponentPatterns = [
   'packages/mobile/visualizations/sparkline-interactive/*.(ts|tsx)',
@@ -42,6 +89,7 @@ const frozenComponentPatterns = [
   'packages/web/dropdown/*.(ts|tsx)',
   'packages/web/overlays/popover/*.(ts|tsx)',
   'packages/common/animation/dropdown.ts',
+  ...cdsWebOverlayMovedComponents,
 ];
 
 const nonTestTsFiles = danger.git.fileMatch(

@@ -7,7 +7,13 @@
       "path": "packages/cds-migrator"
     },
     {
+      "path": "packages/cds-web-overlays"
+    },
+    {
       "path": "packages/cds-tasks"
+    },
+    {
+      "path": "packages/cds-web-overlays"
     },
     {
       "path": "packages/codegen"
