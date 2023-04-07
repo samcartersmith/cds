@@ -449,7 +449,7 @@ const sidebars = {
             },
           ],
         },
-        { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search  Input' },
+        { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search Input' },
         {
           type: 'doc',
           id: 'components/overlays/SectionTitle/section-title',

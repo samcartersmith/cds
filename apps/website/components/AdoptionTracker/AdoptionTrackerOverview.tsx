@@ -3,18 +3,23 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
 import { css } from 'linaria';
+import { kebabCase } from 'lodash';
 import getFirst from 'lodash/first';
 import groupBy from 'lodash/groupBy';
 import toPairs from 'lodash/toPairs';
 import { CellDetailVariant, join, SetState, useToggler } from '@cbhq/cds-common';
+import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { Card } from '@cbhq/cds-web/alpha/Card';
 import { Button } from '@cbhq/cds-web/buttons';
 import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
 import { Collapsible } from '@cbhq/cds-web/collapsible';
 import { Icon } from '@cbhq/cds-web/icons';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
-import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Box, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Modal, ModalBody } from '@cbhq/cds-web/overlays';
 import { PressableOpacity, ThemeProvider } from '@cbhq/cds-web/system';
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-web/tables';
+import { useSortableCell, UseSortableCellProps } from '@cbhq/cds-web/tables/hooks/useSortableCell';
 import {
   TextBody,
   TextCaption,
@@ -35,6 +40,7 @@ import { AdopterProjectInfoProvider } from './context/AdopterProjectInfoProvider
 import { AdopterStatsProvider, statsFallback } from './context/AdopterStatsProvider';
 import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
 import { useAdopterStats } from './hooks/useAdopterStats';
+import { getComponentInstances } from './utils/getComponentUsage';
 import { getPercentageText } from './utils/getPercentageText';
 import { AdopterStatsBreakdownCell } from './AdopterStatsBreakdown';
 import type { Adopter, Adopters, AdopterStatsItem } from './types';
@@ -72,16 +78,19 @@ function useStatForLastPeriod() {
   );
 }
 
+// Get projects by pillar
 const getProjects = (pillar?: string) => {
   return adopters.filter((adopter) => adopter.pillar === pillar || !pillar);
 };
 
+// Get stats for each project
 const getStats = (project: ProjectProps) => {
   return require(`@site/static/data/__generated__/adoption/${project.id}/stats.json`) as AdopterStats;
 };
 
 type PercentageGetterProps = { pillar?: string; average?: boolean };
 
+// Get the percentage of adoption for each project
 const getPercentage = ({ pillar, average }: PercentageGetterProps) => {
   const projects = getProjects(pillar);
   const change =
@@ -96,6 +105,7 @@ const getPercentage = ({ pillar, average }: PercentageGetterProps) => {
   return { variant, percentage } as const;
 };
 
+// Get the percentage change for each project by pillar
 const getPercentageChange = ({ pillar, average }: PercentageGetterProps) => {
   const projects = getProjects(pillar);
   const change =
@@ -409,7 +419,33 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
   );
 };
 
+type SortableColumns = 'name' | 'totalInstances';
 export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) => {
+  // ===========================
+  // COMPONENT USAGE MODAL
+  // ===========================
+  const [usageModalIsVisible, { toggleOff, toggleOn }] = useToggler(false);
+  const [{ sortBy, sortDirection }, setSort] = useState<{
+    sortBy: SortableColumns;
+    sortDirection: UseSortableCellProps['sortDirection'];
+  }>({
+    sortBy: 'totalInstances',
+    sortDirection: 'descending',
+  });
+  const onChange = useCallback(
+    (by: SortableColumns) => {
+      const flipSort = by === sortBy && sortDirection === 'ascending';
+      setSort({ sortBy: by, sortDirection: flipSort ? 'descending' : 'ascending' });
+    },
+    [sortBy, sortDirection],
+  );
+  const data = getComponentInstances();
+  const getSortableProps = useSortableCell({ sortDirection, sortBy, onChange });
+  const sortedComponentUsage = useSort({ data, sortBy, sortDirection });
+  // ===========================
+  // END COMPONENT USAGE MODAL
+  // ===========================
+
   const scopedAdopters = getSortedProjectPairs(hidden ? hiddenAdopters : adopters);
   // Sort projects by pillar adoption, and make sure projects are also sorted
   const { variant, percentage } = getPercentage({ average: true });
@@ -479,8 +515,41 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
           )}
         </TextTitle2>
       </VStack>
+      <Box spacingBottom={4}>
+        <Button variant="secondary" onPress={toggleOn} compact>
+          Show current component usage
+        </Button>
+      </Box>
       <Divider direction="horizontal" />
       <SplitScreenStack start={start} end={end} />
+      <Modal visible={usageModalIsVisible} onRequestClose={toggleOff}>
+        <ModalBody>
+          <Table variant="ruled">
+            <TableHeader>
+              <TableRow>
+                <TableCell title="Component" {...getSortableProps('name')} />
+                <TableCell title="Total instances" {...getSortableProps('totalInstances')} />
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {sortedComponentUsage.map(({ name, totalInstances }) => {
+                return (
+                  <TableRow>
+                    <TableCell>
+                      <Link to={`/components/${kebabCase(name)}`}>{name}</Link>
+                    </TableCell>
+                    <TableCell alignItems="flex-end">
+                      <TextBody as="span" color="foregroundMuted" tabularNumbers>
+                        {new Intl.NumberFormat('en-us').format(totalInstances)}
+                      </TextBody>
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </ModalBody>
+      </Modal>
     </ThemeProvider>
   );
 });
