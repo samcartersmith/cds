@@ -12,6 +12,7 @@ RUN yarn --immutable
 
 # Build the app with nx
 ENV NODE_ENV=development
+ENV NODE_OPTIONS="--max-old-space-size=24000"
 ENV CODEFLOW=true
 RUN yarn nx run website:build
 
