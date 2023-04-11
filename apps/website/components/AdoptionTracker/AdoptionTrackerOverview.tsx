@@ -3,12 +3,10 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
 import { css } from 'linaria';
-import { kebabCase } from 'lodash';
 import getFirst from 'lodash/first';
 import groupBy from 'lodash/groupBy';
 import toPairs from 'lodash/toPairs';
 import { CellDetailVariant, join, SetState, useToggler } from '@cbhq/cds-common';
-import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { Card } from '@cbhq/cds-web/alpha/Card';
 import { Button } from '@cbhq/cds-web/buttons';
 import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
@@ -18,8 +16,6 @@ import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { Box, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Modal, ModalBody } from '@cbhq/cds-web/overlays';
 import { PressableOpacity, ThemeProvider } from '@cbhq/cds-web/system';
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-web/tables';
-import { useSortableCell, UseSortableCellProps } from '@cbhq/cds-web/tables/hooks/useSortableCell';
 import {
   TextBody,
   TextCaption,
@@ -40,9 +36,9 @@ import { AdopterProjectInfoProvider } from './context/AdopterProjectInfoProvider
 import { AdopterStatsProvider, statsFallback } from './context/AdopterStatsProvider';
 import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
 import { useAdopterStats } from './hooks/useAdopterStats';
-import { getComponentInstances } from './utils/getComponentUsage';
 import { getPercentageText } from './utils/getPercentageText';
 import { AdopterStatsBreakdownCell } from './AdopterStatsBreakdown';
+import { ComponentUsageTable } from './ComponentUsageTable';
 import type { Adopter, Adopters, AdopterStatsItem } from './types';
 import { AdopterProjectInfo, AdopterStats } from './types';
 
@@ -419,33 +415,8 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
   );
 };
 
-type SortableColumns = 'name' | 'totalInstances';
 export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) => {
-  // ===========================
-  // COMPONENT USAGE MODAL
-  // ===========================
   const [usageModalIsVisible, { toggleOff, toggleOn }] = useToggler(false);
-  const [{ sortBy, sortDirection }, setSort] = useState<{
-    sortBy: SortableColumns;
-    sortDirection: UseSortableCellProps['sortDirection'];
-  }>({
-    sortBy: 'totalInstances',
-    sortDirection: 'descending',
-  });
-  const onChange = useCallback(
-    (by: SortableColumns) => {
-      const flipSort = by === sortBy && sortDirection === 'ascending';
-      setSort({ sortBy: by, sortDirection: flipSort ? 'descending' : 'ascending' });
-    },
-    [sortBy, sortDirection],
-  );
-  const data = getComponentInstances();
-  const getSortableProps = useSortableCell({ sortDirection, sortBy, onChange });
-  const sortedComponentUsage = useSort({ data, sortBy, sortDirection });
-  // ===========================
-  // END COMPONENT USAGE MODAL
-  // ===========================
-
   const scopedAdopters = getSortedProjectPairs(hidden ? hiddenAdopters : adopters);
   // Sort projects by pillar adoption, and make sure projects are also sorted
   const { variant, percentage } = getPercentage({ average: true });
@@ -524,30 +495,7 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
       <SplitScreenStack start={start} end={end} />
       <Modal visible={usageModalIsVisible} onRequestClose={toggleOff}>
         <ModalBody>
-          <Table variant="ruled">
-            <TableHeader>
-              <TableRow>
-                <TableCell title="Component" {...getSortableProps('name')} />
-                <TableCell title="Total instances" {...getSortableProps('totalInstances')} />
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {sortedComponentUsage.map(({ name, totalInstances }) => {
-                return (
-                  <TableRow>
-                    <TableCell>
-                      <Link to={`/components/${kebabCase(name)}`}>{name}</Link>
-                    </TableCell>
-                    <TableCell alignItems="flex-end">
-                      <TextBody as="span" color="foregroundMuted" tabularNumbers>
-                        {new Intl.NumberFormat('en-us').format(totalInstances)}
-                      </TextBody>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
+          <ComponentUsageTable />
         </ModalBody>
       </Modal>
     </ThemeProvider>
