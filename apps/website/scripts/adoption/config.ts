@@ -20,6 +20,7 @@ export const generatedStaticDataDir = {
   },
 };
 
+const frontendWebGit = 'frontend/web';
 const assethubGit = 'c3/assethub-frontend';
 const monorepoGit = 'mono/repo';
 const retailMobileGit = 'consumer/react-native';
@@ -170,10 +171,10 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        ...monorepoConfig,
+        root: path.join(tempDir, frontendWebGit, 'apps/unified-login'),
+        github: frontendWebGit,
         id: 'unified-login',
         label: 'Unified Login Web',
-        projectTsAliases: ['@trust_and_safety'],
         type: 'doc',
       },
       {
