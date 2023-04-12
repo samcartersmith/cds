@@ -65,7 +65,7 @@ describe('Modal', () => {
     render(<MockModal onRequestClose={onRequestClose} onDidClose={onDidClose} />);
 
     fireEvent.press(screen.getByText('Open Modal'));
-    fireEvent.press(screen.getByTestId('modal-close-button'));
+    fireEvent.press(screen.getByLabelText('Close'));
 
     expect(onRequestClose).toHaveBeenCalledTimes(1);
   });
@@ -77,7 +77,7 @@ describe('Modal', () => {
       render(<MockModal onDidClose={onDidClose} />);
 
       fireEvent.press(screen.getByText('Open Modal'));
-      fireEvent.press(screen.getByTestId('modal-close-button'));
+      fireEvent.press(screen.getByLabelText('Close'));
 
       act(() => {
         advanceAnimationByTime(100);
@@ -91,7 +91,7 @@ describe('Modal', () => {
     render(<MockModal onBackButtonPress={onBackButtonPress} />);
 
     fireEvent.press(screen.getByText('Open Modal'));
-    fireEvent.press(screen.getByTestId('modal-back-button'));
+    fireEvent.press(screen.getByLabelText('Back'));
 
     expect(onBackButtonPress).toHaveBeenCalledTimes(1);
   });

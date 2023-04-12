@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.3 (4/11/2023 PST)
+
+#### 🐞 Fixes
+
+- **[ModalHeader]** Add missing accessibility labels on icon buttons. [[#1906](https://github.cbhq.net/frontend/cds/pull/1906)] [[DX-1027](https://jira.coinbase-corp.com/browse/DX-1027)]
+
 ## 4.2.2 (4/5/2023 PST)
 
 #### 🐞 Fixes
