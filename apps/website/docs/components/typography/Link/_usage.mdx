@@ -132,6 +132,26 @@ As of React Native v0.68.2, nesting a Link inside of a Text component and applyi
 
 :::
 
+:::caution Links nested inside Text components (Mobile only)
+
+There is also a known issue where if you nest a Link inside of a Text component the line height may be incorrect if the parent text component is anything other than TextBody. To fix this, make sure the `variant` of the Link is the same as the parent component. By default, the Link component uses the same styles as TextBody.
+
+<br />
+
+```jsx live
+<TextLegal as="p">
+  This is going to be a really long paragraph that includes a
+  <Link to="https://www.google.com" variant="legal">
+    {'link'}
+  </Link>
+  . You'll notice that when you add and remove the variant prop the line height will change (only in
+  cds-mobile). That's because Link by default uses the same line height as TextBody. You'll need to override
+  that by supplying a variant.
+</TextLegal>
+```
+
+:::
+
 ```jsx live
 <VStack alignItems="flex-start" gap={3}>
   <Link variant="title1" to="https://www.google.com/" openInNewWindow>
