@@ -2,6 +2,7 @@ import React, { forwardRef, memo } from 'react';
 import { css } from 'linaria';
 import { ForwardedRef, InputVariant, SelectBaseProps } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
+import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import {
   labelTextColor,
@@ -9,7 +10,6 @@ import {
   selectTriggerMinHeight,
 } from '@cbhq/cds-common/tokens/select';
 
-import { useA11yId } from '../hooks/useA11yId';
 import { HStack } from '../layout/HStack';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { PressableOpacity } from '../system';
@@ -54,8 +54,10 @@ export const SelectTrigger = memo(
     }: SelectTriggerProps,
     ref: ForwardedRef<HTMLElement>,
   ) {
-    const accessibilityLabelId = useA11yId();
-    const accessibilityDescriptionId = useA11yId();
+    const [accessibilityLabelId, accessibilityDescriptionId] = usePrefixedId([
+      'label',
+      'description',
+    ]);
     const focusedVariant = useInputVariant(triggerHasFocus, variant as InputVariant);
     const minHeight = useScaleConditional(
       compact ? selectTriggerCompactMinHeight : selectTriggerMinHeight,

@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
-import { generateRandomId } from '@cbhq/cds-utils/string';
+import React from 'react';
 
+import { usePrefixedId } from '../hooks/usePrefixedId';
 import { useToggler } from '../hooks/useToggler';
 import type {
   BoxBaseProps,
@@ -42,8 +42,7 @@ export function collapsibleBuilder({
   const BasicCollapsible = () => {
     const [collapsed, { toggle }] = useToggler(true);
     // Use the useA11yControlledVisibility to setup the collapsible a11y props more easily
-    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
-    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
+    const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
       <>
@@ -65,8 +64,7 @@ export function collapsibleBuilder({
 
   const RevealTop = () => {
     const [collapsed, { toggle }] = useToggler(true);
-    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
-    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
+    const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
       <>
@@ -82,8 +80,7 @@ export function collapsibleBuilder({
 
   const DefaultExpanded = () => {
     const [collapsed, { toggle }] = useToggler(false);
-    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
-    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
+    const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
       <>
@@ -105,8 +102,7 @@ export function collapsibleBuilder({
 
   const Scroll = () => {
     const [collapsed, { toggle }] = useToggler(true);
-    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
-    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
+    const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
       <>
@@ -133,8 +129,7 @@ export function collapsibleBuilder({
 
   const Horizontal = () => {
     const [collapsed, { toggle }] = useToggler(true);
-    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
-    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
+    const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
       <HStack alignItems="center">
@@ -164,8 +159,7 @@ export function collapsibleBuilder({
 
   const MockCollapsible = () => {
     const [collapsed, { toggle }] = useToggler(true);
-    const triggerId = useMemo(() => generateRandomId('trigger-id--'), []);
-    const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
+    const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
       <>

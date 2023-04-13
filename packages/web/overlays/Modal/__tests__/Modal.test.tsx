@@ -97,8 +97,8 @@ describe('Modal', () => {
     const modal = screen.getByRole('dialog');
 
     expect(modal).toHaveAttribute('aria-modal', 'true');
-    expect(modal).toHaveAttribute('aria-labelledby', expect.stringMatching(/modal-title-.*/));
-    expect(screen.getByText(TITLE)).toHaveAttribute('id', expect.stringMatching(/modal-title-.*/));
+    expect(modal).toHaveAttribute('aria-labelledby', expect.stringMatching(/:r[0-9].*/));
+    expect(screen.getByText(TITLE)).toHaveAttribute('id', expect.stringMatching(/:r[0-9].*/));
     expect(modal).not.toHaveAttribute('aria-label');
   });
 

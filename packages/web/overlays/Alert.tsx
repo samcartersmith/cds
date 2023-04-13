@@ -45,7 +45,6 @@ export const Alert = memo(
       ref,
     ) => {
       const { labelledBySource, labelledBy, label } = useA11yLabels({
-        labelledByIdPrefix: 'alert-title-',
         accessibilityLabelledBy,
         accessibilityLabel,
       });

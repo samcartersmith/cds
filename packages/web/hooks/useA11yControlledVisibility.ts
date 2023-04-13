@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { generateRandomId } from '@cbhq/cds-utils';
+import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
 
 export type AriaHasPopupType = 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 
@@ -29,7 +29,7 @@ export const useA11yControlledVisibility = (
   isVisible: boolean,
   { accessibilityLabel, hasPopupType = 'dialog' }: Options | undefined = defaultOptions,
 ): AccessibleControlledReturnType => {
-  const uniqueId = useMemo(() => generateRandomId(accessibilityLabel), [accessibilityLabel]);
+  const uniqueId = usePrefixedId(accessibilityLabel);
 
   const triggerAccessibilityProps = useMemo(
     () => ({

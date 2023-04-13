@@ -1,11 +1,10 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useId, useMemo } from 'react';
 import { css } from 'linaria';
 import { TabIndicatorProps, TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 
 import { Collapsible } from '../collapsible';
 import { DotCount } from '../dots/DotCount';
-import { useA11yId } from '../hooks/useA11yId';
 import { useDimensions } from '../hooks/useDimensions';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 import { HStack } from '../layout';
@@ -51,9 +50,7 @@ export const TabLabel = memo(
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
     const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
     const prevCount = usePreviousValue<number>(count);
-    const accessibilityLabelId = useA11yId({
-      prefix: `cds-tag-label--`,
-    });
+    const accessibilityLabelId = useId();
 
     const TextElement = useMemo(() => {
       if (variant === 'primary') return TextHeadline;

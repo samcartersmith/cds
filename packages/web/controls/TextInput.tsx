@@ -10,10 +10,10 @@ import React, {
 } from 'react';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 
-import { useA11yId } from '../hooks/useA11yId';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
 import { TextLabel1 } from '../typography';
@@ -82,15 +82,12 @@ export const TextInput = memo(
 
     // Only generate a helperTextId if helperText is defined, otherwise
     // set it to undefined
-    const helperTextId = useA11yId({
-      prefix: 'cds-textinput-description-',
-      shouldNotGenerate: helperText === '',
-    });
-
-    const labelId = useA11yId({
-      prefix: 'cds-textinput-label-',
-      shouldNotGenerate: label === undefined,
-    });
+    const shouldSetHelperTextId = useMemo(() => helperText !== '', [helperText]);
+    const shouldSetLabelId = label !== undefined;
+    const [helperTextId, labelId] = usePrefixedId([
+      'cds-textinput-description',
+      'cds-textinput-label',
+    ]);
 
     // TODO surface this as a prop
     const hasError = variant === 'negative';
@@ -120,7 +117,7 @@ export const TextInput = memo(
      * If start exist, the padding
      * between input area and icon should be 0.5 (4px).
      * This is not the case when there is no start.
-     * In normal circumnstances, spacing horizontal should be 2 (16px)
+     * In normal circumstances, spacing horizontal should be 2 (16px)
      */
     const startSpacing = useSpacingStyles({
       spacingVertical: compact ? 1 : 2,
@@ -135,9 +132,9 @@ export const TextInput = memo(
           onFocus: handleOnFocus,
           onBlur: handleOnBlur,
           ref: refs,
-          'aria-describedby': helperTextId,
+          'aria-describedby': shouldSetHelperTextId && helperTextId,
           'aria-invalid': hasError,
-          id: labelId,
+          id: shouldSetLabelId && labelId,
           disabled,
         });
 
@@ -149,7 +146,7 @@ export const TextInput = memo(
         <NativeInput
           align={align}
           accessibilityLabel={accessibilityLabel ?? label}
-          accessibilityHint={helperTextId}
+          accessibilityHint={shouldSetHelperTextId ? helperTextId : undefined}
           containerSpacing={start ? startSpacing : undefined}
           onFocus={handleOnFocus}
           onBlur={handleOnBlur}
@@ -178,6 +175,8 @@ export const TextInput = memo(
       refs,
       hasError,
       htmlInputElmProps,
+      shouldSetHelperTextId,
+      shouldSetLabelId,
       labelId,
     ]);
 
@@ -198,7 +197,10 @@ export const TextInput = memo(
           labelNode={
             !compact &&
             !!label && (
-              <InputLabel testID={testIDMap?.label ?? ''} htmlFor={labelId}>
+              <InputLabel
+                testID={testIDMap?.label ?? ''}
+                htmlFor={shouldSetLabelId ? labelId : undefined}
+              >
                 {label}
               </InputLabel>
             )
@@ -211,7 +213,7 @@ export const TextInput = memo(
                 color={variant}
                 align={align}
                 accessibilityLabel={helperText}
-                id={helperTextId}
+                id={shouldSetHelperTextId ? helperTextId : undefined}
               >
                 {helperText}
               </HelperText>
@@ -227,7 +229,7 @@ export const TextInput = memo(
                 gap={2}
               >
                 {compact && !!label && (
-                  <InputLabel htmlFor={labelId} spacingStart={2}>
+                  <InputLabel htmlFor={shouldSetLabelId ? labelId : undefined} spacingStart={2}>
                     {label}
                   </InputLabel>
                 )}

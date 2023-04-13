@@ -2,10 +2,10 @@ import React, { forwardRef, InputHTMLAttributes, memo, useMemo, useRef } from 'r
 import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
+import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { useA11yId } from '../hooks/useA11yId';
 import { Box, Spacer } from '../layout';
 import { Interactable, InteractableProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
@@ -85,14 +85,9 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     );
   }
   // Setup a11y IDs
-  const randomLabelId = useA11yId({
-    prefix: 'cds-checkbox-label--',
-  });
-  const randomInputId = useA11yId({
-    prefix: 'cds-checkbox-input--',
-  });
-  const labelId = useMemo(() => ariaLabelledby ?? randomLabelId, [ariaLabelledby, randomLabelId]);
-  const inputId = useMemo(() => htmlProps.id ?? randomInputId, [htmlProps.id, randomInputId]);
+  const [id1, id2] = usePrefixedId(['trigger', 'collapsible']);
+  const labelId = useMemo(() => ariaLabelledby ?? id1, [ariaLabelledby, id1]);
+  const inputId = useMemo(() => htmlProps.id ?? id2, [htmlProps.id, id2]);
 
   const internalInputRef = useRef<HTMLInputElement>();
   const inputRef = useMergedRef(ref, internalInputRef);

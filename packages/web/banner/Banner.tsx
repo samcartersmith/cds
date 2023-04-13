@@ -1,4 +1,12 @@
-import React, { forwardRef, isValidElement, memo, useCallback, useMemo, useState } from 'react';
+import React, {
+  forwardRef,
+  isValidElement,
+  memo,
+  useCallback,
+  useId,
+  useMemo,
+  useState,
+} from 'react';
 import { css } from 'linaria';
 import { ForwardedRef, SpacingScale } from '@cbhq/cds-common';
 import { variants } from '@cbhq/cds-common/tokens/banner';
@@ -9,7 +17,6 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { HStack } from '../alpha/HStack';
 import { VStack } from '../alpha/VStack';
 import { Collapsible } from '../collapsible';
-import { useA11yId } from '../hooks/useA11yId';
 import { useDimensions } from '../hooks/useDimensions';
 import { Icon } from '../icons';
 import { Box } from '../layout/Box';
@@ -89,9 +96,7 @@ export const Banner = memo(
       forwardedRef: ForwardedRef<HTMLDivElement>,
     ) => {
       const [isCollapsed, setIsCollapsed] = useState(false);
-      const titleId = useA11yId({
-        prefix: 'cds-banner-',
-      });
+      const titleId = useId();
 
       // Measure and configure layout
       const { observe, currentBreakpoint } = useDimensions(breakpointConfig);

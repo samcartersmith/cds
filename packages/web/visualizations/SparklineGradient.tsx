@@ -1,8 +1,7 @@
-import React, { forwardRef, memo, useMemo, useRef } from 'react';
+import React, { forwardRef, memo, useId, useMemo, useRef } from 'react';
 import { SparklineBaseProps } from '@cbhq/cds-common/types';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
-import { generateRandomId } from '@cbhq/cds-utils';
 
 import { useAccessibleForeground } from '../color/useAccessibleForeground';
 import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroundGradient';
@@ -13,7 +12,8 @@ import { SparklinePath, SparklinePathRef } from './SparklinePath';
 export const SparklineGradient = memo(
   forwardRef<SparklinePathRef, SparklineBaseProps>(
     ({ background, color, path, height, width, yAxisScalingFactor, children }, forwardedRef) => {
-      const patternId = useRef<string>(generateRandomId());
+      const randomId = useId();
+      const patternId = useRef<string>(randomId);
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
       const areaColor = useAccessibleForeground({ background, color, usage: 'graphic' });
       const gradientId = background

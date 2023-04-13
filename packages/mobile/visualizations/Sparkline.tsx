@@ -1,10 +1,9 @@
-import React, { memo, useRef } from 'react';
+import React, { memo, useId, useRef } from 'react';
 import Svg, { Defs, G, Path } from 'react-native-svg';
 import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import { SparklineBaseProps } from '@cbhq/cds-common/types';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
-import { generateRandomId } from '@cbhq/cds-utils';
 
 import { useAccessibleForeground } from '../color/useAccessibleForeground';
 
@@ -20,7 +19,8 @@ export const Sparkline = memo(
     yAxisScalingFactor,
     children,
   }: SparklineBaseProps) => {
-    const patternId = useRef<string>(generateRandomId());
+    const randomId = useId();
+    const patternId = useRef<string>(randomId);
     const stroke = useAccessibleForeground({ background, color, usage: 'graphic' });
     const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
 

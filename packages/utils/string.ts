@@ -27,6 +27,7 @@ export const capitalize = <T extends string>(str: T): Capitalize<T> => {
   return (str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)) as Capitalize<T>;
 };
 
+// @danger most cases should use useId from react
 export const generateRandomId = <T extends string>(prefix?: T) => {
   return Math.random()
     .toString(36)

@@ -1,8 +1,7 @@
-import { useMemo } from 'react';
+import { useId } from 'react';
 import { getAnimatedStyle } from 'react-native-reanimated/src/reanimated2/jestUtils';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { useToggler } from '@cbhq/cds-common';
-import { generateRandomId } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons';
 import { TextBody } from '../../typography';
@@ -10,7 +9,7 @@ import { Collapsible } from '../Collapsible';
 
 const MockCollapsible = ({ defaultCollapsed = true }: { defaultCollapsed?: boolean }) => {
   const [collapsed, { toggle }] = useToggler(defaultCollapsed);
-  const collapsibleId = useMemo(() => generateRandomId('collapsible-id--'), []);
+  const collapsibleId = useId();
   return (
     <>
       <Button

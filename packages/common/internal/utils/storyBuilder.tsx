@@ -1,8 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { useId, useMemo } from 'react';
 import isObject from 'lodash/isObject';
 import merge from 'lodash/merge';
 import omit from 'lodash/omit';
-import { generateRandomId } from '@cbhq/cds-utils/string';
 
 import { Scale, Spectrum } from '../../types';
 
@@ -183,8 +182,8 @@ export function storyBuilder<StoryBuilderArgs, WrapperProps>(
       args?: PropsWithoutChildren,
       customConfig?: StoryBuilderConfig<PropsWithoutChildren, BuildWrapperProps>,
     ) {
-      const id = generateRandomId();
       const TemplateFn = (props: Props) => {
+        const id = useId();
         const sanitizedProps = useMemo(() => sanitizeProps(props), [props]);
         return <Component key={id} {...sanitizedProps} />;
       };

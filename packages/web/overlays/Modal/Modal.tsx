@@ -70,7 +70,6 @@ export const Modal = memo(
     } = props;
 
     const { labelledBySource, labelledBy, label } = useA11yLabels({
-      labelledByIdPrefix: 'modal-title-',
       accessibilityLabelledBy,
       accessibilityLabel,
     });
