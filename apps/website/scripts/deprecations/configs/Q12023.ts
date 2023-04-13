@@ -2,6 +2,7 @@ import { Deprecation } from '../types';
 
 export const Q12023: Deprecation = {
   endOfLife: 'Q12023',
+  prevMajorVersion: 'v4.1.3',
   components: [
     {
       name: 'Badge',

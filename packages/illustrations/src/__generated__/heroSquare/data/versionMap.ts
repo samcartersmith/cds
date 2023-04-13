@@ -287,7 +287,7 @@ const versionMap: Record<HeroSquareName, number> = {
   defiHow: 1,
   primeDeFi: 1,
   enableBiometrics: 0,
-  keyGeneration: 0,
+  keyGeneration: 1,
   web3ActivityError: 0,
   web3ActivitySigned: 0,
   web3MobileSetupSuccess: 0,

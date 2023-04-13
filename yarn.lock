@@ -337,7 +337,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:>=7.9.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.12.9, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.8, @babel/core@npm:^7.15.5, @babel/core@npm:^7.17.8, @babel/core@npm:^7.18.13, @babel/core@npm:^7.18.5, @babel/core@npm:^7.19.0, @babel/core@npm:^7.19.6, @babel/core@npm:^7.20.0, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.2, @babel/core@npm:^7.7.5":
+"@babel/core@npm:>=7.9.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.8, @babel/core@npm:^7.15.5, @babel/core@npm:^7.17.8, @babel/core@npm:^7.18.13, @babel/core@npm:^7.18.5, @babel/core@npm:^7.19.0, @babel/core@npm:^7.19.6, @babel/core@npm:^7.20.0, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.2, @babel/core@npm:^7.7.5":
   version: 7.21.0
   resolution: "@babel/core@npm:7.21.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40babel%2Fcore%2F-%2Fcore-7.21.0.tgz"
   dependencies:
@@ -2271,24 +2271,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/cds-common@workspace:*, @cbhq/cds-common@workspace:^, @cbhq/cds-common@workspace:packages/common":
+"@cbhq/cds-common@workspace:^, @cbhq/cds-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
   dependencies:
-    "@cbhq/cds-tasks": "workspace:*"
-    "@cbhq/cds-utils": "workspace:*"
-    "@cbhq/d3": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/d3": "workspace:^"
     d3-array: 2.12.1
     d3-shape: ^2.1.0
     jest-date-mock: ^1.0.8
     lodash: ^4.17.21
     react-is: ^17.0.2
-    type-fest: ^1.2.0
+    type-fest: ^2.19.0
   peerDependencies:
-    "@cbhq/cds-icons": "workspace:*"
-    "@cbhq/cds-illustrations": "workspace:*"
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
+    react: 18.2.0
+    react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
@@ -2302,18 +2302,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-figma-icons-plugin@workspace:apps/figma-icons-plugin"
   dependencies:
-    "@cbhq/figma-styles": "workspace:*"
+    "@cbhq/figma-styles": "workspace:^"
     "@figma/plugin-typings": ^1.49.0
     "@types/react": 18.0.28
     "@types/react-dom": ^18.0.11
     "@vitejs/plugin-react": ^2.2.0
-    react: ^18.2.0
+    react: 18.2.0
     react-dom: ^18.2.0
     react-figma-plugin-ds: ^2.3.0
     vite: ^3.0.0
     vite-plugin-singlefile: ^0.11.0
-    yargs: ^17.3.1
-    zx: ^7.0.7
+    yargs: ^17.5.1
+    zx: ^7.2.0
   languageName: unknown
   linkType: soft
 
@@ -2324,28 +2324,28 @@ __metadata:
     "@cbhq/figma-styles": "workspace:^"
     "@figma/plugin-typings": ^1.49.0
     "@types/react": 18.0.28
-    "@types/react-dom": 18.0.11
+    "@types/react-dom": ^18.0.11
     "@vitejs/plugin-react-refresh": ^1.3.6
     esbuild: ^0.14.49
-    react: ^18.2.0
+    react: 18.2.0
     react-dom: ^18.2.0
     react-figma-plugin-ds: ^2.3.0
     vite: ^3.0.0
     vite-plugin-singlefile: ^0.11.0
-    yargs: ^17.3.1
-    zx: ^7.0.7
+    yargs: ^17.5.1
+    zx: ^7.2.0
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-fonts@workspace:*, @cbhq/cds-fonts@workspace:^, @cbhq/cds-fonts@workspace:packages/fonts":
+"@cbhq/cds-fonts@workspace:^, @cbhq/cds-fonts@workspace:packages/fonts":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-fonts@workspace:packages/fonts"
   dependencies:
-    "@cbhq/cds-tasks": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:^"
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-icons@workspace:*, @cbhq/cds-icons@workspace:^, @cbhq/cds-icons@workspace:packages/icons":
+"@cbhq/cds-icons@workspace:^, @cbhq/cds-icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-icons@workspace:packages/icons"
   dependencies:
@@ -2353,7 +2353,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-illustrations@workspace:*, @cbhq/cds-illustrations@workspace:^, @cbhq/cds-illustrations@workspace:packages/illustrations":
+"@cbhq/cds-illustrations@workspace:^, @cbhq/cds-illustrations@workspace:packages/illustrations":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-illustrations@workspace:packages/illustrations"
   dependencies:
@@ -2362,11 +2362,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-lottie-files@workspace:*, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
+"@cbhq/cds-lottie-files@workspace:^, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-lottie-files@workspace:packages/lottie-files"
   dependencies:
-    "@cbhq/cds-tasks": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -2382,15 +2382,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-mobile@workspace:*, @cbhq/cds-mobile@workspace:packages/mobile":
+"@cbhq/cds-mobile@workspace:^, @cbhq/cds-mobile@workspace:packages/mobile":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-mobile@workspace:packages/mobile"
   dependencies:
-    "@cbhq/cds-common": "workspace:*"
-    "@cbhq/cds-fonts": "workspace:*"
-    "@cbhq/cds-lottie-files": "workspace:*"
-    "@cbhq/cds-tasks": "workspace:*"
-    "@cbhq/cds-utils": "workspace:*"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-fonts": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
+    "@cbhq/cds-tasks": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
     "@react-native-community/netinfo": ^7.1.7
     "@testing-library/react-native": ^11.3.0
     "@types/react-native": ^0.71.3
@@ -2404,32 +2404,32 @@ __metadata:
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.2
     react-native-reanimated: 3.0.2
-    react-native-safe-area-context: ^4.5.0
+    react-native-safe-area-context: 4.5.0
     react-native-svg: 13.8.0
     react-test-renderer: ^18.2.0
-    type-fest: ^1.2.0
+    type-fest: ^2.19.0
   peerDependencies:
-    "@cbhq/cds-icons": "workspace:*"
-    "@cbhq/cds-illustrations": "workspace:*"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
     "@react-navigation/native": ^6.1.6
     "@react-navigation/native-stack": ^6.9.12
     "@react-navigation/stack": ^6.3.16
     lottie-ios: ^3.4.1
-    lottie-react-native: ^5.1.4
-    react: ">=17.0.2"
+    lottie-react-native: ^5.1.5
+    react: 18.2.0
     react-native: ">=0.68.2"
     react-native-gesture-handler: 2.9.0
     react-native-inappbrowser-reborn: 3.7.0
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.2
     react-native-reanimated: 3.0.2
-    react-native-safe-area-context: ">=3.2.0"
-    react-native-screens: ^3.20.0
+    react-native-safe-area-context: 4.5.0
+    react-native-screens: ~3.20.0
     react-native-svg: 13.8.0
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-tasks@workspace:*, @cbhq/cds-tasks@workspace:packages/cds-tasks":
+"@cbhq/cds-tasks@workspace:^, @cbhq/cds-tasks@workspace:packages/cds-tasks":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-tasks@workspace:packages/cds-tasks"
   dependencies:
@@ -2440,13 +2440,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-utils@workspace:*, @cbhq/cds-utils@workspace:packages/utils":
+"@cbhq/cds-utils@workspace:^, @cbhq/cds-utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-utils@workspace:packages/utils"
   dependencies:
-    "@cbhq/cds-tasks": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:^"
     humps: ^2.0.1
-    type-fest: ^1.2.0
+    type-fest: ^2.19.0
   languageName: unknown
   linkType: soft
 
@@ -2454,7 +2454,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web-overlays@workspace:packages/cds-web-overlays"
   dependencies:
-    "@cbhq/cds-tasks": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:^"
     "@popperjs/core": ^2.9.0
     framer-motion: ^6.2.8
     linaria: ^2.3.1
@@ -2464,18 +2464,18 @@ __metadata:
     "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
+    react: 18.2.0
+    react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web-utils@workspace:*, @cbhq/cds-web-utils@workspace:packages/web-utils":
+"@cbhq/cds-web-utils@workspace:^, @cbhq/cds-web-utils@workspace:packages/web-utils":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web-utils@workspace:packages/web-utils"
   dependencies:
     "@babel/types": ^7.20.7
-    "@testing-library/react": ^12.1.5
-    chalk: ^4.1.0
+    "@testing-library/react": ^13.4.0
+    chalk: ^4.1.2
     jest-axe: ^4.1.0
     linaria: ^2.3.1
     source-map: ^0.7.3
@@ -2488,17 +2488,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web@workspace:packages/web"
   dependencies:
-    "@cbhq/cds-common": "workspace:*"
-    "@cbhq/cds-fonts": "workspace:*"
-    "@cbhq/cds-lottie-files": "workspace:*"
-    "@cbhq/cds-tasks": "workspace:*"
-    "@cbhq/cds-utils": "workspace:*"
-    "@cbhq/cds-web-utils": "workspace:*"
-    "@cbhq/d3": "workspace:*"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-fonts": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
+    "@cbhq/cds-tasks": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/cds-web-utils": "workspace:^"
+    "@cbhq/d3": "workspace:^"
     "@popperjs/core": ^2.9.0
     "@storybook/testing-library": ^0.0.13
     d3-interpolate-path: ^2.2.2
-    d3-selection: ^1.4.2
+    d3-selection: 1.4.2
     focus-visible: ^5.2.0
     framer-motion: ^6.2.8
     linaria: ^2.3.1
@@ -2507,10 +2507,10 @@ __metadata:
     react-popper: ^2.2.4
     reakit: ^1.3.11
   peerDependencies:
-    "@cbhq/cds-icons": "workspace:*"
-    "@cbhq/cds-illustrations": "workspace:*"
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
+    react: 18.2.0
+    react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
@@ -2528,7 +2528,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/d3@workspace:*, @cbhq/d3@workspace:packages/d3":
+"@cbhq/d3@workspace:^, @cbhq/d3@workspace:packages/d3":
   version: 0.0.0-use.local
   resolution: "@cbhq/d3@workspace:packages/d3"
   dependencies:
@@ -2584,7 +2584,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/docusaurus-plugin-docgen@workspace:*, @cbhq/docusaurus-plugin-docgen@workspace:packages/docusaurus-plugin-docgen":
+"@cbhq/docusaurus-plugin-docgen@workspace:^, @cbhq/docusaurus-plugin-docgen@workspace:packages/docusaurus-plugin-docgen":
   version: 0.0.0-use.local
   resolution: "@cbhq/docusaurus-plugin-docgen@workspace:packages/docusaurus-plugin-docgen"
   dependencies:
@@ -2596,26 +2596,26 @@ __metadata:
     ejs: ^3.1.7
     react-docgen-typescript: ^2.2.2
   peerDependencies:
-    "@cbhq/eslint-plugin": ">=1.5.0"
-    fast-glob: ">=3.2.11"
-    lodash: ">=4.17.21"
-    prettier: ">=2.5.1"
-    type-fest: ">=1.2.0"
+    "@cbhq/eslint-plugin": ^1.26.3
+    fast-glob: ^3.2.11
+    lodash: ^4.17.21
+    prettier: ^2.8.3
+    type-fest: ^2.19.0
   languageName: unknown
   linkType: soft
 
-"@cbhq/docusaurus-plugin-kbar@workspace:*, @cbhq/docusaurus-plugin-kbar@workspace:packages/docusaurus-plugin-kbar":
+"@cbhq/docusaurus-plugin-kbar@workspace:^, @cbhq/docusaurus-plugin-kbar@workspace:packages/docusaurus-plugin-kbar":
   version: 0.0.0-use.local
   resolution: "@cbhq/docusaurus-plugin-kbar@workspace:packages/docusaurus-plugin-kbar"
   dependencies:
-    "@docusaurus/logger": 2.0.0-beta.20
+    "@docusaurus/logger": ^2.0.0-beta.20
     "@docusaurus/plugin-content-docs": 2.0.0-beta.18
     "@docusaurus/types": 2.0.0-beta.18
     kbar: ^0.1.0-beta.35
     lodash: ^4.17.21
-    type-fest: 1.2.0
+    type-fest: ^2.19.0
   peerDependencies:
-    "@cbhq/cds-common": "workspace:*"
+    "@cbhq/cds-common": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -2623,23 +2623,23 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/docusaurus-preset@workspace:packages/docusaurus-preset"
   dependencies:
-    "@cbhq/docusaurus-plugin-docgen": "workspace:*"
-    "@cbhq/docusaurus-plugin-kbar": "workspace:*"
-    "@cbhq/docusaurus-theme": "workspace:*"
+    "@cbhq/docusaurus-plugin-docgen": "workspace:^"
+    "@cbhq/docusaurus-plugin-kbar": "workspace:^"
+    "@cbhq/docusaurus-theme": "workspace:^"
     "@docusaurus/preset-classic": 2.0.0-beta.18
     "@docusaurus/theme-live-codeblock": 2.0.0-beta.18
     "@docusaurus/types": 2.0.0-beta.18
-    type-fest: 1.2.0
+    type-fest: ^2.19.0
   peerDependencies:
-    "@cbhq/cds-common": "workspace:*"
+    "@cbhq/cds-common": "workspace:^"
   languageName: unknown
   linkType: soft
 
-"@cbhq/docusaurus-theme@workspace:*, @cbhq/docusaurus-theme@workspace:packages/docusaurus-theme":
+"@cbhq/docusaurus-theme@workspace:^, @cbhq/docusaurus-theme@workspace:packages/docusaurus-theme":
   version: 0.0.0-use.local
   resolution: "@cbhq/docusaurus-theme@workspace:packages/docusaurus-theme"
   dependencies:
-    "@cbhq/cds-tasks": "workspace:*"
+    "@cbhq/cds-tasks": "workspace:^"
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/module-type-aliases": 2.0.0-beta.18
     "@docusaurus/theme-classic": 2.0.0-beta.18
@@ -2648,7 +2648,7 @@ __metadata:
     "@joshcena/docusaurus-plugin-utils": ^0.1.3
     "@types/postcss-preset-env": ^6.7.3
     "@types/react": 18.0.28
-    "@types/react-dom": 18.0.11
+    "@types/react-dom": ^18.0.11
     concurrently: ^7.2.1
     nodemon: ^2.0.16
     postcss: ^8.4.14
@@ -2656,13 +2656,13 @@ __metadata:
     schedulely: ^0.0.31
     ts-node: ^10.7.0
   peerDependencies:
-    "@cbhq/cds-common": "workspace:*"
-    "@cbhq/cds-web": "workspace:*"
-    "@cbhq/docusaurus-plugin-docgen": "workspace:*"
-    "@cbhq/docusaurus-plugin-kbar": "workspace:*"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
+    "@cbhq/docusaurus-plugin-docgen": "workspace:^"
+    "@cbhq/docusaurus-plugin-kbar": "workspace:^"
     kbar: ^0.1.0-beta.35
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
+    react: 18.2.0
+    react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
@@ -2709,7 +2709,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/figma-styles@workspace:*, @cbhq/figma-styles@workspace:^, @cbhq/figma-styles@workspace:packages/figma-styles":
+"@cbhq/figma-styles@workspace:^, @cbhq/figma-styles@workspace:packages/figma-styles":
   version: 0.0.0-use.local
   resolution: "@cbhq/figma-styles@workspace:packages/figma-styles"
   dependencies:
@@ -2721,7 +2721,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/figma-tasks@workspace:packages/figma-tasks"
   dependencies:
-    "@cbhq/d3": "workspace:*"
+    "@cbhq/d3": "workspace:^"
     "@cbhq/figma-api": "workspace:^"
     "@cbhq/mono-tasks": ^0.6.8
     "@cbhq/script-utils": "workspace:^"
@@ -2733,7 +2733,7 @@ __metadata:
     update-notifier: ^5.1.0
     webfont: 9.0.0
   peerDependencies:
-    "@nrwl/devkit": ^15.0.0
+    "@nrwl/devkit": ">=15.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2803,9 +2803,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mono-pipeline@npm:^0.11.14":
-  version: 0.11.14
-  resolution: "@cbhq/mono-pipeline@npm:0.11.14::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.14.tgz"
+"@cbhq/mono-pipeline@npm:^0.11.17":
+  version: 0.11.17
+  resolution: "@cbhq/mono-pipeline@npm:0.11.17::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.17.tgz"
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/traverse": ^7.20.13
@@ -2824,7 +2824,7 @@ __metadata:
     "@cbhq/mono-tasks": ">=0.7.1"
   bin:
     mono-pipeline: ./lib/bin.js
-  checksum: 6a3a71cda5017bf6783e142fd12ec1c86f862e6a7b920f5fb8e0ebfce4e6b58e64714f2d65b1a87b04a258010ff106f46fd1c7e6c837979d1b220a6bc3a79bc6
+  checksum: a84a2249cbb134941cdc856b42ae9153c13b138920c434afd1391710aa0bfce957e4493fc2e643044c7e0c0c99356fb1aaa8b7a7380a10e907f72182b4930a54
   languageName: node
   linkType: hard
 
@@ -2937,36 +2937,36 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/script-utils@workspace:packages/script-utils"
   dependencies:
-    type-fest: 1.2.0
+    type-fest: ^2.19.0
   peerDependencies:
-    "@cbhq/eslint-plugin": "*"
-    "@cbhq/mono-tasks": ^0.5.2
-    lodash: "*"
-    prettier: "*"
+    "@cbhq/eslint-plugin": ^1.26.3
+    "@cbhq/mono-tasks": ^0.6.8
+    lodash: ^4.17.21
+    prettier: ^2.8.3
   languageName: unknown
   linkType: soft
 
-"@cbhq/ui-mobile-playground@workspace:*, @cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
+"@cbhq/ui-mobile-playground@workspace:^, @cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
   dependencies:
     "@react-navigation/native": ^6.1.6
     "@react-navigation/stack": ^6.3.16
     "@types/react": 18.0.28
-    detox: ^19.9.1
+    detox: ^20.5.0
     lodash: ^4.17.21
   peerDependencies:
-    "@cbhq/cds-common": "workspace:*"
-    "@cbhq/cds-mobile": "workspace:*"
-    "@react-navigation/native": ^6.0.11
-    "@react-navigation/stack": ^6.2.2
-    react: ^17.0.2
-    react-native: ^0.68.2
-    react-native-safe-area-context: ^3.2.0
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
+    "@react-navigation/native": ^6.1.6
+    "@react-navigation/stack": ^6.3.16
+    react: 18.2.0
+    react-native: ">=0.68.2"
+    react-native-safe-area-context: 4.5.0
   languageName: unknown
   linkType: soft
 
-"@cbhq/ui-mobile-visreg@workspace:*, @cbhq/ui-mobile-visreg@workspace:packages/ui-mobile-visreg":
+"@cbhq/ui-mobile-visreg@workspace:^, @cbhq/ui-mobile-visreg@workspace:packages/ui-mobile-visreg":
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-visreg@workspace:packages/ui-mobile-visreg"
   dependencies:
@@ -2975,11 +2975,11 @@ __metadata:
     "@percy/client": ^1.13.0
     "@percy/sdk-utils": ^1.13.0
     "@percy/storybook": ^4.3.4
-    detox: ^19.9.1
+    detox: ^20.5.0
     lodash: ^4.17.21
   peerDependencies:
-    "@cbhq/cds-mobile": "workspace:*"
-    detox: ">=19.0.0"
+    "@cbhq/cds-mobile": "workspace:^"
+    detox: ^20.5.0
   languageName: unknown
   linkType: soft
 
@@ -2998,8 +2998,8 @@ __metadata:
     update-notifier: ^5.1.0
     yargs: ^17.5.1
   peerDependencies:
-    "@cbhq/mono-tasks": ">=0.6.3"
-    typescript: ">=4.7.2"
+    "@cbhq/mono-tasks": ^0.6.8
+    typescript: ~4.9.4
   bin:
     ui-scorecard: ./cjs/bin.cjs
   languageName: unknown
@@ -3014,10 +3014,9 @@ __metadata:
     ejs: ^3.1.7
     enquirer: ^2.3.6
     hygen: "patch:hygen@^6.2.0#./patches/hygen.patch"
-    react-docgen-typescript: ^2.0.0
     svgo: ^3.0.2
     ts-node: ^10.7.0
-    yargs: ^17.3.1
+    yargs: ^17.5.1
     yargs-parser: ^21.0.1
   languageName: unknown
   linkType: soft
@@ -3050,8 +3049,8 @@ __metadata:
     storybook-dark-mode: ^1.1.2
     wait-on: ^6.0.1
   peerDependencies:
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
+    react: 18.2.0
+    react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
@@ -3081,7 +3080,7 @@ __metadata:
     dayjs: ^1.11.3
     dayjs-recur: ^1.0.1
     get-tsconfig: ^4.2.0
-    react: ^18.2.0
+    react: 18.2.0
     react-dom: ^18.2.0
     react-virtualized: ^9.22.3
     semver: ^7.3.7
@@ -3557,16 +3556,6 @@ __metadata:
     chalk: ^4.1.2
     tslib: ^2.3.1
   checksum: 5821a9f360d3eff64a12722c0e39a83d9226116ba78ef5ec9b2400248e46b09ed4e754bb72939aa08375dedf8324bbad8b820d73d0f8c27be9a2e2d720d8010c
-  languageName: node
-  linkType: hard
-
-"@docusaurus/logger@npm:2.0.0-beta.20":
-  version: 2.0.0-beta.20
-  resolution: "@docusaurus/logger@npm:2.0.0-beta.20"
-  dependencies:
-    chalk: ^4.1.2
-    tslib: ^2.4.0
-  checksum: 71ac220746f09bdf0180369460c44c324a0bc931617d9868ccc2b739ab6f15a800c277cf62d54c1c354f5db3251b558006ef4ad7512dd2f21060c437e1e69e5e
   languageName: node
   linkType: hard
 
@@ -5116,7 +5105,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/environment@npm:^29.4.0, @jest/environment@npm:^29.5.0":
+"@jest/environment@npm:^29.5.0":
   version: 29.5.0
   resolution: "@jest/environment@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Fenvironment%2F-%2Fenvironment-29.5.0.tgz"
   dependencies:
@@ -5180,7 +5169,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/fake-timers@npm:^29.4.0, @jest/fake-timers@npm:^29.5.0":
+"@jest/fake-timers@npm:^29.5.0":
   version: 29.5.0
   resolution: "@jest/fake-timers@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Ffake-timers%2F-%2Ffake-timers-29.5.0.tgz"
   dependencies:
@@ -5489,7 +5478,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/types@npm:^29.4.0, @jest/types@npm:^29.4.3, @jest/types@npm:^29.5.0":
+"@jest/types@npm:^29.4.3, @jest/types@npm:^29.5.0":
   version: 29.5.0
   resolution: "@jest/types@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Ftypes%2F-%2Ftypes-29.5.0.tgz"
   dependencies:
@@ -8950,7 +8939,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^8.0.0, @testing-library/dom@npm:^8.3.0, @testing-library/dom@npm:^8.5.0":
+"@testing-library/dom@npm:^8.3.0, @testing-library/dom@npm:^8.5.0":
   version: 8.20.0
   resolution: "@testing-library/dom@npm:8.20.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40testing-library%2Fdom%2F-%2Fdom-8.20.0.tgz"
   dependencies:
@@ -9036,20 +9025,6 @@ __metadata:
     jest:
       optional: true
   checksum: fb028396b52e9b27e5151366b67fe4ecdb632504cc1f569e39e84debc216ed50f659abdd0e2e592fc7149cbf25f86e71927d84b239d51ab97e83c4444a80ebde
-  languageName: node
-  linkType: hard
-
-"@testing-library/react@npm:^12.1.5":
-  version: 12.1.5
-  resolution: "@testing-library/react@npm:12.1.5::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40testing-library%252freact%2F-%2Freact-12.1.5.tgz"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@testing-library/dom": ^8.0.0
-    "@types/react-dom": <18.0.0
-  peerDependencies:
-    react: <18.0.0
-    react-dom: <18.0.0
-  checksum: 4abd0490405e709a7df584a0db604e508a4612398bb1326e8fa32dd9393b15badc826dcf6d2f7525437886d507871f719f127b9860ed69ddd204d1fa834f576a
   languageName: node
   linkType: hard
 
@@ -9613,17 +9588,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsdom@npm:^16.2.4":
-  version: 16.2.15
-  resolution: "@types/jsdom@npm:16.2.15"
-  dependencies:
-    "@types/node": "*"
-    "@types/parse5": ^6.0.3
-    "@types/tough-cookie": "*"
-  checksum: e038335321bef42ebf220aaf597e186e2eec8de6107ce7a70de1c046a84c1fbb42d454e195a20383a6870b18c7ef6fa6b73812a626f88a4a2ef1f711d2e2e13c
-  languageName: node
-  linkType: hard
-
 "@types/jsdom@npm:^20.0.0":
   version: 20.0.0
   resolution: "@types/jsdom@npm:20.0.0"
@@ -9786,13 +9750,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/parse5@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "@types/parse5@npm:6.0.3"
-  checksum: ddb59ee4144af5dfcc508a8dcf32f37879d11e12559561e65788756b95b33e6f03ea027d88e1f5408f9b7bfb656bf630ace31a2169edf44151daaf8dd58df1b7
-  languageName: node
-  linkType: hard
-
 "@types/postcss-preset-env@npm:^6.7.3":
   version: 6.7.3
   resolution: "@types/postcss-preset-env@npm:6.7.3"
@@ -9904,7 +9861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-test-renderer@npm:18.0.0, @types/react-test-renderer@npm:^18.0.0":
+"@types/react-test-renderer@npm:^18.0.0":
   version: 18.0.0
   resolution: "@types/react-test-renderer@npm:18.0.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Freact-test-renderer%2F-%2Freact-test-renderer-18.0.0.tgz"
   dependencies:
@@ -10469,6 +10426,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wayfair/one-version@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@wayfair/one-version@npm:0.4.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40wayfair%2Fone-version%2F-%2Fone-version-0.4.0.tgz"
+  dependencies:
+    chalk: ^4
+    commander: ^10
+  bin:
+    one-version: src/index.js
+  checksum: 8ab85f7b8f1626d581a1e11ef053680131f5909671644a94f8ecb770027474e6c6c22ebfe7ff30022232ec861842ea28d8133f7300fd35174c59122a79b08230
+  languageName: node
+  linkType: hard
+
 "@webassemblyjs/ast@npm:1.11.1":
   version: 1.11.1
   resolution: "@webassemblyjs/ast@npm:1.11.1"
@@ -10926,7 +10895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"abab@npm:^2.0.5, abab@npm:^2.0.6":
+"abab@npm:^2.0.6":
   version: 2.0.6
   resolution: "abab@npm:2.0.6"
   checksum: 6ffc1af4ff315066c62600123990d87551ceb0aafa01e6539da77b0f5987ac7019466780bf480f1787576d4385e3690c81ccc37cfda12819bf510b8ab47e5a3e
@@ -13244,18 +13213,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bunyan-debug-stream@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "bunyan-debug-stream@npm:2.0.1"
-  dependencies:
-    colors: 1.4.0
-    exception-formatter: ^1.0.4
-  peerDependencies:
-    bunyan: "*"
-  checksum: a43f6c2946cfb7c63fc7926d90328be5f45fd42be7ef7390efc403156a071cd1f971ad91a7fd037fab593d7a989796223c697cba6455da55fa67a1f482d495ad
-  languageName: node
-  linkType: hard
-
 "bunyan-debug-stream@npm:^3.1.0":
   version: 3.1.0
   resolution: "bunyan-debug-stream@npm:3.1.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbunyan-debug-stream%2F-%2Fbunyan-debug-stream-3.1.0.tgz"
@@ -13675,7 +13632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
+"chalk@npm:4.1.2, chalk@npm:^4, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -14338,6 +14295,13 @@ __metadata:
   version: 0.1.2
   resolution: "command-score@npm:0.1.2"
   checksum: b733fd552d7e569070da3d474b1ed5f54785fdf3dd61670002e0a00b2eff1a547c2b6d3af3683c012f4f39c6455f9e7ee5e9997a79c08048ec37ec2195d3df08
+  languageName: node
+  linkType: hard
+
+"commander@npm:^10":
+  version: 10.0.0
+  resolution: "commander@npm:10.0.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcommander%2F-%2Fcommander-10.0.0.tgz"
+  checksum: 9f6495651f878213005ac744dd87a85fa3d9f2b8b90d1c19d0866d666bda7f735adfd7c2f10dfff345782e2f80ea258f98bb4efcef58e4e502f25f883940acfd
   languageName: node
   linkType: hard
 
@@ -15543,7 +15507,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3-selection@npm:1.4.2, d3-selection@npm:^1.4.2":
+"d3-selection@npm:1.4.2":
   version: 1.4.2
   resolution: "d3-selection@npm:1.4.2"
   checksum: 2484b392259b087a98f546f2610e6a11c90f38dae6b6b20a3fc85171038fcab4c72e702788b1960a4fece88bed2e36f268096358b5b48d3c7f0d35cfbe305da6
@@ -15669,7 +15633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"data-urls@npm:^3.0.1, data-urls@npm:^3.0.2":
+"data-urls@npm:^3.0.2":
   version: 3.0.2
   resolution: "data-urls@npm:3.0.2"
   dependencies:
@@ -16182,7 +16146,7 @@ __metadata:
     "@cbhq/jest-preset": ^0.2.3
     "@cbhq/jest-preset-mobile": ^0.2.0
     "@cbhq/mono-env": ^0.2.16
-    "@cbhq/mono-pipeline": ^0.11.14
+    "@cbhq/mono-pipeline": ^0.11.17
     "@cbhq/mono-tasks": ^0.6.8
     "@cbhq/mono-tasks-mobile": ^0.3.16
     "@cbhq/mono-templates": ^0.6.1
@@ -16208,14 +16172,15 @@ __metadata:
     "@types/mini-css-extract-plugin": ^2.2.0
     "@types/node": ^14.0.14
     "@types/react": 18.0.28
-    "@types/react-dom": 18.0.11
+    "@types/react-dom": ^18.0.11
     "@types/react-is": ^17.0.2
     "@types/react-router-dom": ^5.2.0
-    "@types/react-test-renderer": 18.0.0
+    "@types/react-test-renderer": ^18.0.0
     "@types/react-virtualized": ^9.21.13
     "@types/semver": 7.3.4
     "@types/url-parse": ^1.4.3
     "@types/yargs": ^15.0.5
+    "@wayfair/one-version": ^0.4.0
     autoprefixer: ^10.4.7
     axios: ^0.18.0
     babel-loader: ^9.1.0
@@ -16224,16 +16189,16 @@ __metadata:
     babel-plugin-replace-ts-export-assignment: ^0.0.2
     chalk: ^4.1.2
     danger: ^11.1.4
-    detox: ^19.9.1
+    detox: ^20.5.0
     dotenv-webpack: 7.0.3
     eslint: ^8.32.0
     eslint-plugin-codegen: ^0.16.1
     eslint-plugin-testing-library: ^5.10.0
     execa: ^5.1.1
-    fast-glob: ^3.2.5
-    jest: ^28.1.3
+    fast-glob: ^3.2.11
+    jest: ^29.5.0
     jest-axe: ^4.1.0
-    jest-environment-jsdom: ^28.1.3
+    jest-environment-jsdom: ^29.5.0
     nx: 15.7.1
     postcss-cli: ^9.1.0
     postcss-nested: ^5.0.6
@@ -16248,7 +16213,7 @@ __metadata:
     stylelint-high-performance-animation: ^1.5.2
     stylelint-no-unsupported-browser-features: ^4.0.0
     stylelint-prettier: ^1.2.0
-    ts-node: ^10.0.0
+    ts-node: ^10.7.0
     tsconfig-paths: ^4.0.0
     type-fest: ^2.19.0
     typescript: ~4.9.4
@@ -16347,50 +16312,6 @@ __metadata:
     detect: ./bin/detect-port
     detect-port: ./bin/detect-port
   checksum: 93c40febe714f56711d1fedc2b7a9cc4cbaa0fcddec0509876c46b9dd6099ed6bfd6662a4f35e5fa0301660f48ed516829253ab0fc90b9e79b823dd77786b379
-  languageName: node
-  linkType: hard
-
-"detox@npm:^19.9.1":
-  version: 19.12.1
-  resolution: "detox@npm:19.12.1"
-  dependencies:
-    ajv: ^8.6.3
-    bunyan: ^1.8.12
-    bunyan-debug-stream: ^2.0.1
-    chalk: ^2.4.2
-    child-process-promise: ^2.2.0
-    find-up: ^4.1.0
-    fs-extra: ^4.0.2
-    funpermaproxy: ^1.0.1
-    ini: ^1.3.4
-    lodash: ^4.17.5
-    minimist: ^1.2.0
-    proper-lockfile: ^3.0.2
-    resolve-from: ^5.0.0
-    sanitize-filename: ^1.6.1
-    semver: ^7.0.0
-    serialize-error: ^8.0.1
-    shell-quote: ^1.7.2
-    signal-exit: ^3.0.3
-    tail: ^2.0.0
-    telnet-client: 1.2.8
-    tempfile: ^2.0.0
-    which: ^1.3.1
-    ws: ^7.0.0
-    yargs: ^16.0.3
-    yargs-parser: ^20.2.2
-    yargs-unparser: ^2.0.0
-  peerDependencies:
-    jest: 26.0.x - 26.4.x || ^26.5.2 || 27.x.x || 28.x.x
-    mocha: ">=6.0.0"
-  peerDependenciesMeta:
-    jest:
-      optional: true
-    mocha:
-      optional: true
-  bin:
-    detox: local-cli/cli.js
-  checksum: 535955e708b0ea40705a3c6b63485ffdd05c69265e3db8920e4696d25cd2e81c245f2f8bc65d8b5f341ff6fd4acbd3ee61abe682bf58dca4488fa0ca14faca8d
   languageName: node
   linkType: hard
 
@@ -18290,15 +18211,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"exception-formatter@npm:^1.0.4":
-  version: 1.0.7
-  resolution: "exception-formatter@npm:1.0.7"
-  dependencies:
-    colors: ^1.0.3
-  checksum: 31c197e7990660447392a1021ef44ddc119f0a0f4711a94bfa01c27fe784c77938249ace6acf7755a0283226b9e68fd58a10f51918b3c9914ce89c644c57378e
-  languageName: node
-  linkType: hard
-
 "exec-async@npm:^2.2.0":
   version: 2.2.0
   resolution: "exec-async@npm:2.2.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexec-async%2F-%2Fexec-async-2.2.0.tgz"
@@ -19839,7 +19751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"funpermaproxy@npm:^1.0.1, funpermaproxy@npm:^1.1.0":
+"funpermaproxy@npm:^1.1.0":
   version: 1.1.0
   resolution: "funpermaproxy@npm:1.1.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ffunpermaproxy%2F-%2Ffunpermaproxy-1.1.0.tgz"
   checksum: 74cf0aafeadbd79053324f1fb981c1a4358618722ad01c65bd1466b42498fd07acb7749ab9224b25fc8e81c2e1283b92ceee61dded265bd7527b225351db998b
@@ -23236,40 +23148,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-jsdom@npm:^28.1.3":
-  version: 28.1.3
-  resolution: "jest-environment-jsdom@npm:28.1.3"
+"jest-environment-jsdom@npm:^29.3.0, jest-environment-jsdom@npm:^29.5.0":
+  version: 29.5.0
+  resolution: "jest-environment-jsdom@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-environment-jsdom%2F-%2Fjest-environment-jsdom-29.5.0.tgz"
   dependencies:
-    "@jest/environment": ^28.1.3
-    "@jest/fake-timers": ^28.1.3
-    "@jest/types": ^28.1.3
-    "@types/jsdom": ^16.2.4
-    "@types/node": "*"
-    jest-mock: ^28.1.3
-    jest-util: ^28.1.3
-    jsdom: ^19.0.0
-  checksum: 32758f9b9a1fd04ec3ebaaa608d740a36b960d37d00bd3d4d83fdc4b527afc474c14f04fa860817e1fa22923e2dc3cd2b497db41af6a5d73e91327951612025e
-  languageName: node
-  linkType: hard
-
-"jest-environment-jsdom@npm:^29.3.0":
-  version: 29.4.0
-  resolution: "jest-environment-jsdom@npm:29.4.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-environment-jsdom%2F-%2Fjest-environment-jsdom-29.4.0.tgz"
-  dependencies:
-    "@jest/environment": ^29.4.0
-    "@jest/fake-timers": ^29.4.0
-    "@jest/types": ^29.4.0
+    "@jest/environment": ^29.5.0
+    "@jest/fake-timers": ^29.5.0
+    "@jest/types": ^29.5.0
     "@types/jsdom": ^20.0.0
     "@types/node": "*"
-    jest-mock: ^29.4.0
-    jest-util: ^29.4.0
+    jest-mock: ^29.5.0
+    jest-util: ^29.5.0
     jsdom: ^20.0.0
   peerDependencies:
     canvas: ^2.5.0
   peerDependenciesMeta:
     canvas:
       optional: true
-  checksum: 617fc8972792b601ecdf20041ae3508d3b7b671da10c6c72e6b0c9b16947d063ba333d94ac8878f5a42f984434181d7f8484e0fd499e4cc1095df4e65fcf1743
+  checksum: 3df7fc85275711f20b483ac8cd8c04500704ed0f69791eb55c574b38f5a39470f03d775cf20c1025bc1884916ac0573aa2fa4db1bb74225bc7fdd95ba97ad0da
   languageName: node
   linkType: hard
 
@@ -23544,7 +23440,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-mock@npm:^29.4.0, jest-mock@npm:^29.5.0":
+"jest-mock@npm:^29.5.0":
   version: 29.5.0
   resolution: "jest-mock@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-mock%2F-%2Fjest-mock-29.5.0.tgz"
   dependencies:
@@ -23944,7 +23840,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^29.4.0, jest-util@npm:^29.5.0":
+"jest-util@npm:^29.5.0":
   version: 29.5.0
   resolution: "jest-util@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-util%2F-%2Fjest-util-29.5.0.tgz"
   dependencies:
@@ -24094,7 +23990,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^28.0.0, jest@npm:^28.1.3":
+"jest@npm:^28.0.0":
   version: 28.1.3
   resolution: "jest@npm:28.1.3"
   dependencies:
@@ -24113,7 +24009,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^29.2.1":
+"jest@npm:^29.5.0":
   version: 29.5.0
   resolution: "jest@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest%2F-%2Fjest-29.5.0.tgz"
   dependencies:
@@ -24268,46 +24164,6 @@ __metadata:
   bin:
     jscodeshift: bin/jscodeshift.js
   checksum: 1c35938de5fc29cafec80e2c37d5c3411f85cd5d40e0243b52f2da0c1ab4b659daddfd62de558eca5d562303616f7838097727b651f4ad8e32b1e96f169cdd76
-  languageName: node
-  linkType: hard
-
-"jsdom@npm:^19.0.0":
-  version: 19.0.0
-  resolution: "jsdom@npm:19.0.0"
-  dependencies:
-    abab: ^2.0.5
-    acorn: ^8.5.0
-    acorn-globals: ^6.0.0
-    cssom: ^0.5.0
-    cssstyle: ^2.3.0
-    data-urls: ^3.0.1
-    decimal.js: ^10.3.1
-    domexception: ^4.0.0
-    escodegen: ^2.0.0
-    form-data: ^4.0.0
-    html-encoding-sniffer: ^3.0.0
-    http-proxy-agent: ^5.0.0
-    https-proxy-agent: ^5.0.0
-    is-potential-custom-element-name: ^1.0.1
-    nwsapi: ^2.2.0
-    parse5: 6.0.1
-    saxes: ^5.0.1
-    symbol-tree: ^3.2.4
-    tough-cookie: ^4.0.0
-    w3c-hr-time: ^1.0.2
-    w3c-xmlserializer: ^3.0.0
-    webidl-conversions: ^7.0.0
-    whatwg-encoding: ^2.0.0
-    whatwg-mimetype: ^3.0.0
-    whatwg-url: ^10.0.0
-    ws: ^8.2.3
-    xml-name-validator: ^4.0.0
-  peerDependencies:
-    canvas: ^2.5.0
-  peerDependenciesMeta:
-    canvas:
-      optional: true
-  checksum: 94b693bf4a394097dd96705550bb7b6cd3c8db3c5414e6e9c92a0995ed8b61067597da2f37fca6bed4b5a2f1ef33960ee759522156dccd0b306311988ea87cfb
   languageName: node
   linkType: hard
 
@@ -25347,7 +25203,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.17.5":
+"lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -27118,14 +26974,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mobile-app@workspace:apps/mobile-app"
   dependencies:
-    "@babel/core": ^7.12.9
-    "@cbhq/cds-fonts": "workspace:*"
-    "@cbhq/cds-icons": "workspace:*"
-    "@cbhq/cds-illustrations": "workspace:*"
-    "@cbhq/cds-mobile": "workspace:*"
+    "@babel/core": ^7.20.12
+    "@cbhq/cds-fonts": "workspace:^"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/metro-config": ^0.0.2
-    "@cbhq/ui-mobile-playground": "workspace:*"
-    "@cbhq/ui-mobile-visreg": "workspace:*"
+    "@cbhq/ui-mobile-playground": "workspace:^"
+    "@cbhq/ui-mobile-visreg": "workspace:^"
     "@config-plugins/detox": ^5.0.1
     "@expo/config": "*"
     "@react-navigation/native": ^6.1.6
@@ -27142,14 +26998,14 @@ __metadata:
     expo-status-bar: ~1.4.4
     expo-system-ui: ~2.2.1
     intl: ^1.2.5
-    jest: ^29.2.1
+    jest: ^29.5.0
     lottie-react-native: ^5.1.5
     react: 18.2.0
     react-native: 0.71.6
     react-native-bundle-visualizer: ^3.1.3
-    react-native-gesture-handler: ~2.9.0
-    react-native-inappbrowser-reborn: ^3.7.0
-    react-native-navigation-bar-color: ^2.0.2
+    react-native-gesture-handler: 2.9.0
+    react-native-inappbrowser-reborn: 3.7.0
+    react-native-navigation-bar-color: 2.0.2
     react-native-reanimated: 3.0.2
     react-native-safe-area-context: 4.5.0
     react-native-screens: ~3.20.0
@@ -28943,17 +28799,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse5@npm:6.0.1, parse5@npm:^6.0.0":
-  version: 6.0.1
-  resolution: "parse5@npm:6.0.1"
-  checksum: 7d569a176c5460897f7c8f3377eff640d54132b9be51ae8a8fa4979af940830b2b0c296ce75e5bd8f4041520aadde13170dbdec44889975f906098ea0002f4bd
-  languageName: node
-  linkType: hard
-
 "parse5@npm:^5.0.0":
   version: 5.1.1
   resolution: "parse5@npm:5.1.1"
   checksum: 613a714af4c1101d1cb9f7cece2558e35b9ae8a0c03518223a4a1e35494624d9a9ad5fad4c13eab66a0e0adccd9aa3d522fc8f5f9cc19789e0579f3fa0bdfc65
+  languageName: node
+  linkType: hard
+
+"parse5@npm:^6.0.0":
+  version: 6.0.1
+  resolution: "parse5@npm:6.0.1"
+  checksum: 7d569a176c5460897f7c8f3377eff640d54132b9be51ae8a8fa4979af940830b2b0c296ce75e5bd8f4041520aadde13170dbdec44889975f906098ea0002f4bd
   languageName: node
   linkType: hard
 
@@ -31880,7 +31736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:^2.0.0, react-docgen-typescript@npm:^2.1.1, react-docgen-typescript@npm:^2.2.2":
+"react-docgen-typescript@npm:^2.1.1, react-docgen-typescript@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
   peerDependencies:
@@ -32129,7 +31985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gesture-handler@npm:2.9.0, react-native-gesture-handler@npm:~2.9.0":
+"react-native-gesture-handler@npm:2.9.0":
   version: 2.9.0
   resolution: "react-native-gesture-handler@npm:2.9.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-gesture-handler%2F-%2Freact-native-gesture-handler-2.9.0.tgz"
   dependencies:
@@ -32152,7 +32008,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-inappbrowser-reborn@npm:3.7.0, react-native-inappbrowser-reborn@npm:^3.7.0":
+"react-native-inappbrowser-reborn@npm:3.7.0":
   version: 3.7.0
   resolution: "react-native-inappbrowser-reborn@npm:3.7.0"
   dependencies:
@@ -32173,7 +32029,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-navigation-bar-color@npm:2.0.2, react-native-navigation-bar-color@npm:^2.0.2":
+"react-native-navigation-bar-color@npm:2.0.2":
   version: 2.0.2
   resolution: "react-native-navigation-bar-color@npm:2.0.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-navigation-bar-color%2F-%2Freact-native-navigation-bar-color-2.0.2.tgz"
   checksum: 47b74fc343c63b90819a67889b7af6e9b6524a663586dc8a7927d81e8517fbf8b395545d651ddf44e978167e4d8994a4b6d6e3dc086a35903c48087fa40155cd
@@ -32199,7 +32055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-safe-area-context@npm:4.5.0, react-native-safe-area-context@npm:^4.5.0":
+"react-native-safe-area-context@npm:4.5.0":
   version: 4.5.0
   resolution: "react-native-safe-area-context@npm:4.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-safe-area-context%2F-%2Freact-native-safe-area-context-4.5.0.tgz"
   peerDependencies:
@@ -32499,7 +32355,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.2.0, react@npm:^18.2.0":
+"react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact%2F-%2Freact-18.2.0.tgz"
   dependencies:
@@ -33830,15 +33686,6 @@ __metadata:
   version: 1.2.4
   resolution: "sax@npm:1.2.4"
   checksum: d3df7d32b897a2c2f28e941f732c71ba90e27c24f62ee918bd4d9a8cfb3553f2f81e5493c7f0be94a11c1911b643a9108f231dd6f60df3fa9586b5d2e3e9e1fe
-  languageName: node
-  linkType: hard
-
-"saxes@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "saxes@npm:5.0.1"
-  dependencies:
-    xmlchars: ^2.2.0
-  checksum: 5636b55cf15f7cf0baa73f2797bf992bdcf75d1b39d82c0aa4608555c774368f6ac321cb641fd5f3d3ceb87805122cd47540da6a7b5960fe0dbdb8f8c263f000
   languageName: node
   linkType: hard
 
@@ -36022,13 +35869,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tail@npm:^2.0.0":
-  version: 2.2.4
-  resolution: "tail@npm:2.2.4"
-  checksum: 2cc8b54d3286cbc3227cb356ece75b19ece0dd104267252744e573f4f6cd385629ec30321d9dac236adf23a3783fdb0c9c2ed437964c1aff0f8618f16043cb24
-  languageName: node
-  linkType: hard
-
 "tapable@npm:^1.0.0, tapable@npm:^1.1.3":
   version: 1.1.3
   resolution: "tapable@npm:1.1.3"
@@ -36723,7 +36563,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.0.0, ts-node@npm:^10.7.0, ts-node@npm:^10.9.1":
+"ts-node@npm:^10.7.0, ts-node@npm:^10.9.1":
   version: 10.9.1
   resolution: "ts-node@npm:10.9.1"
   dependencies:
@@ -36906,13 +36746,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:1.2.0":
-  version: 1.2.0
-  resolution: "type-fest@npm:1.2.0"
-  checksum: 72c7be3e8643bf7841d3474b0ddc37f4cdff65d38dd71bb91d9618d9625238a4cd010459c33f5a34afba0e77be5921a77e8eb75bda37060a936baaebd256705d
-  languageName: node
-  linkType: hard
-
 "type-fest@npm:^0.12.0":
   version: 0.12.0
   resolution: "type-fest@npm:0.12.0"
@@ -36976,7 +36809,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^1.0.2, type-fest@npm:^1.2.0":
+"type-fest@npm:^1.0.2":
   version: 1.4.0
   resolution: "type-fest@npm:1.4.0"
   checksum: b011c3388665b097ae6a109a437a04d6f61d81b7357f74cbcb02246f2f5bd72b888ae33631b99871388122ba0a87f4ff1c94078e7119ff22c70e52c0ff828201
@@ -38623,16 +38456,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"whatwg-url@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "whatwg-url@npm:10.0.0"
-  dependencies:
-    tr46: ^3.0.0
-    webidl-conversions: ^7.0.0
-  checksum: a21ec309c5cc743fe9414509408bedf65eaf0fb5c17ac66baa08ef12fce16da4dd30ce90abefbd5a716408301c58a73666dabfd5042cf4242992eb98b954f861
-  languageName: node
-  linkType: hard
-
 "whatwg-url@npm:^11.0.0":
   version: 11.0.0
   resolution: "whatwg-url@npm:11.0.0"
@@ -39278,7 +39101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zx@npm:^7.0.7, zx@npm:^7.2.0":
+"zx@npm:^7.2.0":
   version: 7.2.1
   resolution: "zx@npm:7.2.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fzx%2F-%2Fzx-7.2.1.tgz"
   dependencies:

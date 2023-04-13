@@ -10,13 +10,13 @@
     "platform": "node"
   },
   "peerDependencies": {
-    "@cbhq/cds-common": "workspace:*",
-    "@cbhq/cds-mobile": "workspace:*",
-    "@react-navigation/native": "^6.0.11",
-    "@react-navigation/stack": "^6.2.2",
-    "react": "^17.0.2",
-    "react-native": "^0.68.2",
-    "react-native-safe-area-context": "^3.2.0"
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-mobile": "workspace:^",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/stack": "^6.3.16",
+    "react": "18.2.0",
+    "react-native": ">=0.68.2",
+    "react-native-safe-area-context": "4.5.0"
   },
   "dependencies": {
     "lodash": "^4.17.21"
@@ -25,7 +25,7 @@
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "^6.3.16",
     "@types/react": "18.0.28",
-    "detox": "^19.9.1"
+    "detox": "^20.5.0"
   },
   "types": "./dts/index.d.ts",
   "main": "./lib/index.js",

@@ -119,3 +119,5 @@ export const AdopterComponentProps = memo(
     );
   },
 );
+
+AdopterComponentProps.displayName = 'AdopterComponentProps';

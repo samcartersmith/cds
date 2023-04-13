@@ -83,9 +83,9 @@ const tabs = [
   },
 ];
 type NavigationBarFullExampleProps = {
-  pageTitle: string;
-  onTabChange: (id: string) => void;
-  onBackPress: () => void;
+  pageTitle?: string;
+  onTabChange?: (id: string) => void;
+  onBackPress?: () => void;
 };
 /**
  * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
@@ -96,6 +96,7 @@ export function NavigationBarFullExample({
   onBackPress,
 }: NavigationBarFullExampleProps) {
   const [value, setValue] = useState(tabs[0].id);
+
   const showBackButton = useMemo(
     () => (pageTitle ? pageTitle !== 'Dashboard' : value !== tabs[0].id),
     [pageTitle, value],
@@ -280,10 +281,15 @@ const renderCB1 = (isCollapsed: boolean) => {
     </Pressable>
   );
 };
+
+type SidebarExampleProps = {
+  children?: React.ReactNode;
+} & Omit<SidebarMoreMenuProps, 'children'>;
+
 /**
  * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
  */
-export const SidebarExample = ({ children, ...props }: SidebarMoreMenuProps) => {
+export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
 

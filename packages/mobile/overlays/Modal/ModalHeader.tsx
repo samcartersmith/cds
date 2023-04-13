@@ -32,6 +32,8 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
             name="backArrow"
             onPress={onBackButtonPress}
             testID="modal-back-button"
+            accessibilityLabel="Back"
+            accessibilityHint="Press to navigate back to the previous view"
           />
         )}
       </Box>
@@ -45,6 +47,8 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
             name="close"
             onPress={onRequestClose}
             testID="modal-close-button"
+            accessibilityLabel="Close"
+            accessibilityHint="Press this button to dismiss the modal and go back to the previous view"
           />
         )}
       </Box>

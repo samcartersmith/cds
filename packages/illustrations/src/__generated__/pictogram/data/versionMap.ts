@@ -285,6 +285,8 @@ const versionMap: Record<PictogramName, number> = {
   primeMobileApp: 0,
   securityKey: 0,
   ManageWeb3Signers: 0,
+  walletAsServiceNavigation: 0,
+  planet: 0,
 };
 
 export default versionMap;

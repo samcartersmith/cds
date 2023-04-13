@@ -117,9 +117,15 @@ describe('FullscreenModal', () => {
       await screen.findByText(TITLE);
     });
 
-    expect(await screen.findByText(TITLE)).toBeVisible();
-    expect(await screen.findByText(PRIMARY_CONTENT)).toBeVisible();
-    expect(await screen.findByText(SECONDARY_CONTENT)).toBeVisible();
+    await waitFor(async () => {
+      expect(screen.getByText(TITLE)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(screen.getByText(PRIMARY_CONTENT)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(screen.getByText(SECONDARY_CONTENT)).toBeVisible();
+    });
   });
 
   it('does not render content when modal is not visible', () => {

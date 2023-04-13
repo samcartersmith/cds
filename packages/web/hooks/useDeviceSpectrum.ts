@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Spectrum } from '@cbhq/cds-common/types';
 
 import { getBrowserGlobals } from '../utils/browser';
+import { addMediaQueryListener, removeMediaQueryListener } from '../utils/mediaQueryListener';
 
 export const useDeviceSpectrum = () => {
   const window = getBrowserGlobals()?.window;
@@ -22,10 +23,10 @@ export const useDeviceSpectrum = () => {
     const listener = ({ matches }: { matches: boolean }) => mediaQueryListEventHandler(matches);
 
     const currentMediaQuery = mediaQuery.current;
-    currentMediaQuery?.addEventListener('change', listener);
+    addMediaQueryListener(currentMediaQuery, listener);
 
     return () => {
-      currentMediaQuery?.removeEventListener('change', listener);
+      removeMediaQueryListener(currentMediaQuery, listener);
     };
   }, [mediaQueryListEventHandler]);
 

@@ -29,7 +29,7 @@ nx run common:lint
 | yarn nx run codegen:illustrations                   | Prepare illustrations                                        |
 | yarn nx run codegen:lint                            | Lint the `codegen` project.                                  |
 | yarn nx run codegen:lint --fix                      | Lint the `codegen` project and fix errors.                   |
-| yarn nx run codegen:routes                          | Create routes for mobile-playgrounds from screens directory. |
+| yarn nx run codegen:mobile-routes                   | Create routes for mobile-playgrounds from screens directory. |
 | yarn nx run codegen:release                         | Automatically update CHANGELOG based on PR titles            |
 | ----                                                | ----                                                         |
 | yarn nx run common:build                            | Build the `common` package.                                  |

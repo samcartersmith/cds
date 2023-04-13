@@ -25,6 +25,36 @@ All notable changes to this project will be documented in this file.
 
 - **[ui-mobile-playground]** Separate UI code from visreg code for playgrounds. [#1810](https://github.cbhq.net/frontend/cds/pull/1810)
 
+## 4.2.3 (4/11/2023 PST)
+
+#### 🐞 Fixes
+
+- **[ModalHeader]** Add missing accessibility labels on icon buttons. [[#1906](https://github.cbhq.net/frontend/cds/pull/1906)] [[DX-1027](https://jira.coinbase-corp.com/browse/DX-1027)]
+
+## 4.2.2 (4/5/2023 PST)
+
+#### 🐞 Fixes
+
+- Update dependencies for repo alignment. [[#1894](https://github.cbhq.net/frontend/cds/pull/1894)] [[DX-179](https://jira.coinbase-corp.com/browse/DX-179)]
+
+##
+
+## 4.2.1 (4/5/2023 PST)
+
+#### 🐞 Fixes
+
+- Polyfill legacy browser media query event listener. [[#1886](https://github.cbhq.net/frontend/cds/pull/1886)] [[RA-1145](https://jira.coinbase-corp.com/browse/RA-1145)]
+
+#### 📘 Misc
+
+- Update buildkite validate step to version packages.
+
+## 4.2.0 (3/29/2023, 01:33 PM PST)
+
+#### 🚀 Updates
+
+- **[PatternTag]** Add PatternTag component to facilitate patterns tracking. [#1855](https://github.cbhq.net/frontend/cds/pull/1855), [CDS-3066](https://jira.coinbase-corp.com/browse/CDS-3066)
+
 ## 4.1.3 (3/22/2023, 10:33 AM PST)
 
 This is an artificial version bump with no new change.

@@ -39,7 +39,7 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
             name="backArrow"
             onPress={onBackButtonPress}
             testID="modal-back-button"
-            aria-label="Back button"
+            accessibilityLabel="Back"
           />
         ) : (
           emptyPlaceholder
@@ -57,7 +57,7 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
             name="close"
             onPress={onRequestClose}
             testID="modal-close-button"
-            aria-label="Close button"
+            accessibilityLabel="Close"
           />
         ) : (
           emptyPlaceholder

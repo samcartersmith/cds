@@ -59,6 +59,7 @@ export type ComponentData = {
     aliasPath: string;
     callSites: string[];
   }[];
+  isFeatured?: true;
 };
 
 export type AdopterTabKey = 'cds' | 'presentational' | 'other' | 'okr';

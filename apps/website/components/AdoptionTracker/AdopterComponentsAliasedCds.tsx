@@ -128,3 +128,5 @@ export const AdopterComponentsAliasedCds = memo(
     );
   },
 );
+
+AdopterComponentsAliasedCds.displayName = 'AdopterComponentsAliasedCds';

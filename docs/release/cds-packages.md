@@ -5,9 +5,11 @@ We release our packages to consumers through Coinbase's internal NPM registry (A
 The following sections describe how to push new package releases to our consumers through Verdaccio.
 
 - [Release CDS Packages (@cbhq/cds-web, @cbhq/cds-mobile, etc.)](#release-cds-packages-cbhqcds-web-cbhqcds-mobile-etc)
-  - [Cutting a Release](#cutting-a-release)
+  - [Monthly package maintenance](#monthly-package-maintenance)
+  - [Cutting a release](#cutting-a-release)
   - [Deploying a Release](#deploying-a-release)
   - [Verifying a Release](#verifying-a-release)
+  - [Tagging a Release](#tagging-a-release)
   - [Deploying Old Releases](#deploying-old-releases)
   - [Updating Our Consumers](#updating-our-consumers)
   - [Manually Testing Local Builds in Consumer Apps](#manually-testing-local-builds-in-consumer-apps)
@@ -16,40 +18,23 @@ The following sections describe how to push new package releases to our consumer
   - [Create an Alpha release](#create-an-alpha-release)
   - [More Release Information](#more-release-information)
 
-## Cutting a Release
+## Monthly package maintenance
 
-When you're ready to cut a new release, do the following:
+1. Ensure cds-mobile|web|common has been recently deployed on Codeflow.
+2. [Tag your Release](#tagging-a-release)
+3. Update in #announcements-cds of our latest version available.
 
-1. Check with the team for any last minute additions/merges to the release.
+## Cutting a release
 
-2. Announce a **CODE MERGE FREEZE** in #cds-engineering. This prevents PRs from being merged after generating the CHANGELOG, and keeps our semver aligned with what packages are released.
-
-3. Ensure you have the latest from master, then checkout a new branch with a branch name following the format `last-name/release-mm-dd-yyyy`.
-
-4. Run `yarn release` in the repo root directory.
-
-The `yarn release` script will automatically update the `CHANGELOG` with the latest version and add latest merged PR titles, links, and Jira tickets. It will also run the docgen script and lint the website files. You can see the public changelog [here](https://cds.cbhq.net/changelog/mobile/)
-
-5. Copy the title that is in the output logs after "Pull request title: " and use it for **BOTH** the commit and the PR title. It can be found directly above " > NX Successfully ran target release for project codegen (24s)".
-
-**Notes**:
-
-- Since this is likely a single commit, if the commit message is not the provided title, it will break the `CHANGELOG` for future commits.
-- cds-mobile, cds-web, and cds-common all need to bump at the same time. If a bump is not introduced for one of these packages, please add one like [this](https://github.cbhq.net/frontend/cds/pull/1448).
-
-Your PR should like [this](https://github.cbhq.net/frontend/cds/pull/1112).
-
-6. If your release has generated a breaking change (major bump) or introduced a major library change in the changelog, **you must confirm your changes in a consumer iOS & android emulator prior to merging the release**. This is helpful for generating major bump PRs in consumer apps, confirming library versions are still compatible, and preventing high severity regression incidents. To test, follow this document on [generating a Tarball](https://docs.google.com/document/d/1yF8IkgLI53l7t9z0lq7wktbYIhxrf8ohAY3J0PCkZRY/edit#heading=h.fxzn0dxbrhom).
-
-7. If your release has a major bump, you must include a migration guide to bump to your version. [Example](https://github.cbhq.net/frontend/cds/pull/1256)
-
-8. After your release PR is merged, announce that the Code Freeze is over and merges can resume in #cds-engineering.
-
-9. Tag your release in Github by going to the [release page](https://github.cbhq.net/frontend/cds/releases) and clicking 'Draft a new release'. Create a new tag to match the current CDS version (e.g. v3.1.0). **Make sure you tag the release commit (select the correct commit in Recent Commits in the Target dropdown)**. In the textarea field, provide a summary of the changes and wrap a copy of the full changelog in a dropdown (refer to previous release examples and click 'Edit' to see proper formatting).
+1. Verify that your PR has a version bump and passes `yarn release` prior to merge.
+2. Merge your PR and wait for codeflow to build.
+3. [Deploy a Release](#deploying-a-release)
+4. [Verify a Release](#verifying-a-release)
+5. [Tag a Release](#tagging-a-release)
 
 ## Deploying a Release
 
-Locate your release commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) and manually deploy to all of the following:
+Any commit can be deployed because we version every change. Locate your release commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) and manually deploy to all of the following:
 
 - corporate::cds-web-esm
 - corporate::cds-web
@@ -57,6 +42,7 @@ Locate your release commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cd
 - corporate::cds-mobile
 - production::upload-css
 - production::upload-css-sw-cache
+- production::cds-docs
 
 heimdall should automatically deploy to the following when the build finishes:
 
@@ -82,6 +68,16 @@ You will also need to verify that the CSS was deployed to AWS. If web was bumped
 Verify that the [changelogs](https://cds.cbhq.net/changelog/mobile/) on the CDS website were properly updated.
 
 Once verifications are complete, announce the new release in the [#announcements-cds](https://coinbase.slack.com/archives/C018PD8E6JG) Slack channel. You can reuse the same summary that you prepared for the Github release tag above.
+
+## Tagging a Release
+
+Create a github tag in frontend/cds [releases](https://github.cbhq.net/frontend/cds/releases). Click "draft a new release".
+
+- Tag: create a tag that matches your bump (v4.2.1)
+- Target: target your commit, **Make sure you tag the correct commit (select the correct commit in Recent Commits**.
+- Title: same as your tag version (v4.2.1)
+- Describe this release: click "Generate release notes"
+- Publish release
 
 ## Deploying Old Releases
 

@@ -56,6 +56,8 @@ const AdopterTabs = memo(() => {
   return <Tabs id={`adopter-${id}`} defaultTab="cds" values={values} />;
 });
 
+AdopterTabs.displayName = 'AdopterTabs';
+
 const RouterLink = (props: React.ComponentProps<typeof Link>) => (
   <Link {...props} to="/adoption-tracker-overview" />
 );
@@ -88,3 +90,5 @@ export const AdopterDetails = memo(() => {
     </VStack>
   );
 });
+
+AdopterDetails.displayName = 'AdopterDetails';

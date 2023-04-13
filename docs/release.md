@@ -15,6 +15,7 @@ This sections guides you through releasing the following:
 4. [Adoption Tracker](./release/adoption-tracker.md)
 5. [UI Mobile Visreg](./release/ui-mobile-visreg.md)
 6. [UI Mobile Playground](./release/ui-mobile-playground.md)
+7. [Creating & using a release candidate branch](./release/release-candidate.md)
 
 ## Other Helpful links
 

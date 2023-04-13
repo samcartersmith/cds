@@ -159,3 +159,5 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
     );
   },
 );
+
+BetaCell.displayName = 'BetaCell';

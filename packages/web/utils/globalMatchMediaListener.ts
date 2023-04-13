@@ -1,6 +1,7 @@
 import { NoopFn } from '@cbhq/cds-common/types/Helpers';
 
 import { getBrowserGlobals } from './browser';
+import { addMediaQueryListener, removeMediaQueryListener } from './mediaQueryListener';
 
 const callbackByQueryMap: Map<string, Set<NoopFn>> = new Map();
 const listenerByQueryMap: Map<string, NoopFn> = new Map();
@@ -22,9 +23,8 @@ export function addMatchMediaListener(deviceQuery: string, cb: NoopFn) {
     };
     listenerByQueryMap.set(deviceQuery, listenerByQuery);
     // attach a single listener per query, and assign a single callback with will fire all callbacks associated with that query
-    getBrowserGlobals()
-      ?.window.matchMedia(deviceQuery)
-      ?.addEventListener('change', listenerByQuery);
+    const mediaQuery = getBrowserGlobals()?.window.matchMedia(deviceQuery);
+    addMediaQueryListener(mediaQuery, listenerByQuery);
   }
 }
 
@@ -39,9 +39,9 @@ export function removeMatchMediaListener(deviceQuery: string, cb: NoopFn) {
   // If there are no callbacks left we can remove global media query listener
   if (set.size === 0) {
     if (listenerByQueryMap.has(deviceQuery)) {
-      getBrowserGlobals()
-        ?.window.matchMedia(deviceQuery)
-        ?.removeEventListener('change', listenerByQueryMap.get(deviceQuery) as NoopFn);
+      const mediaQuery = getBrowserGlobals()?.window.matchMedia(deviceQuery);
+      const handler = listenerByQueryMap.get(deviceQuery) as NoopFn;
+      removeMediaQueryListener(mediaQuery, handler);
       listenerByQueryMap.delete(deviceQuery);
     }
   }

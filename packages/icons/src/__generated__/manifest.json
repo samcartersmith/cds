@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-02-22T17:16:23.857Z",
-  "metadata": { "lastUnicode": 61651 },
+  "lastUpdated": "2023-04-05T15:09:33.881Z",
+  "metadata": { "lastUnicode": 61657 },
   "items": {
     "2:27": {
       "hash": "ZhHC6oUswQWbMhmWLoI8hSnujxxSOwC1cNsjfP5az4s=",
@@ -2248,9 +2248,9 @@
       }
     },
     "513:3553": {
-      "hash": "C4A63nRm6ZlZNVerVHmgrfCecaQrcwwASbnOPTd0Iqw=",
       "type": "ui",
       "name": "cashUSD",
+      "hash": "K9SCvrLyfZMOC/MHVdulcOgqxdXm/yRfiKCfKJCAeCc=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59753 } },
@@ -2258,7 +2258,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59751 } }
       ],
       "createdAt": "2023-02-01T23:25:40.760Z",
-      "lastUpdated": "2023-02-07T14:43:56.418Z",
+      "lastUpdated": "2023-03-22T15:35:41.763Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashUSD-12.svg",
         "svg16": "./ui/svg/ui-cashUSD-16.svg",
@@ -6115,6 +6115,30 @@
         "svg12": "./ui/svg/ui-cashCanadianDollar-12.svg",
         "svg16": "./ui/svg/ui-cashCanadianDollar-16.svg",
         "svg24": "./ui/svg/ui-cashCanadianDollar-24.svg"
+      }
+    },
+    "741:129": {
+      "type": "nav",
+      "name": "faucet",
+      "hash": "Ki5s+ZXvHOgaVMtO1SNpmtp9EtLq9H3Ukb1YCZ9HVew=",
+      "description": "faucet, drip, droplet, water, hydration, 💧, 🚰, 💦",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61657 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61656 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61655 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61654 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61653 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61652 } }
+      ],
+      "createdAt": "2023-03-22T15:35:41.748Z",
+      "lastUpdated": "2023-03-22T15:35:41.748Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-faucet-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-faucet-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-faucet-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-faucet-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-faucet-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-faucet-24-inactive.svg"
       }
     }
   }

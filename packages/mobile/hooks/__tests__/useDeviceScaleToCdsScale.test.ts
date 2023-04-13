@@ -57,8 +57,14 @@ describe('useDeviceScaleToCdsScale', () => {
     expect(result.current).toBe('xxLarge');
   });
 
+  it('returns correct CDS scale if font scale is xxLarge or above', () => {
+    mockDeviceScale(deviceScaleMap.xxLarge + 0.04);
+    const { result } = renderHook(() => useDeviceScaleToCdsScale());
+    expect(result.current).toBe('xxxLarge');
+  });
+
   it('returns correct CDS scale if font scale is xxxLarge or above', () => {
-    mockDeviceScale(deviceScaleMap.xxxLarge + 0.4);
+    mockDeviceScale(deviceScaleMap.xxxLarge + 0.04);
     const { result } = renderHook(() => useDeviceScaleToCdsScale());
     expect(result.current).toBe('xxxLarge');
   });

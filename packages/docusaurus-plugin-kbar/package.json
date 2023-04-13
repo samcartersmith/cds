@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/docusaurus-plugin-kbar",
   "version": "0.0.1",
+  "private": true,
   "description": "Docusaurus plugin for command bar",
   "keywords": [
     "docusaurus",
@@ -10,15 +11,15 @@
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "authors": "Coinbase",
   "dependencies": {
-    "@docusaurus/logger": "2.0.0-beta.20",
+    "@docusaurus/logger": "^2.0.0-beta.20",
     "@docusaurus/plugin-content-docs": "2.0.0-beta.18",
     "@docusaurus/types": "2.0.0-beta.18",
     "kbar": "^0.1.0-beta.35",
     "lodash": "^4.17.21",
-    "type-fest": "1.2.0"
+    "type-fest": "^2.19.0"
   },
   "peerDependencies": {
-    "@cbhq/cds-common": "workspace:*"
+    "@cbhq/cds-common": "workspace:^"
   },
   "packemon": {
     "format": "lib",

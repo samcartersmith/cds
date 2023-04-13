@@ -78,3 +78,9 @@ export type Enhancers = Record<string, EnhanceComponentCb>;
 export type PreviousAdoptionStats = { latest: AdoptionStats; previous: AdoptionStats[] };
 
 export type { AdoptionStats };
+
+export type FeaturedComponentsConfig = {
+  cds: string[];
+  presentational: string[];
+  other: string[];
+};

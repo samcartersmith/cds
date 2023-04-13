@@ -13,3 +13,5 @@ export const AdopterComponentsEmptyState = memo(() => {
     </VStack>
   );
 });
+
+AdopterComponentsEmptyState.displayName = 'AdopterComponentsEmptyState';

@@ -14,8 +14,8 @@
     "platform": "node"
   },
   "peerDependencies": {
-    "@cbhq/cds-mobile": "workspace:*",
-    "detox": ">=19.0.0"
+    "@cbhq/cds-mobile": "workspace:^",
+    "detox": "^20.5.0"
   },
   "dependencies": {
     "@cbhq/detox-utils": "^0.2.3",
@@ -26,7 +26,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "detox": "^19.9.1"
+    "detox": "^20.5.0"
   },
   "types": "./dts/index.d.ts",
   "main": "./lib/index.js",

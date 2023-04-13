@@ -7,6 +7,7 @@ const baseDeprecation: Partial<Component> = {
 
 export const Q22023: Deprecation = {
   endOfLife: 'Q22023',
+  prevMajorVersion: 'v4.1.3',
   components: [
     { ...baseDeprecation, name: 'Dropdown', path: 'packages/web/dropdown/Dropdown.tsx' },
     {

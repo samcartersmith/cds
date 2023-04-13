@@ -43,6 +43,12 @@ type Param = {
 export type Deprecation = {
   /** Which quarter all these deprecations will be deleted */
   endOfLife: `Q${number}202${number}`;
+  /**
+   * This is the branch of the latest major release before the deprecations will be deleted
+   * this will be used to populate the github URL's for deprecations prior to deletion
+   * @example 'v4.1.3' in https://github.cbhq.net/frontend/cds/blob/v4.1.3
+   */
+  prevMajorVersion: string;
   components?: Partial<Component>[];
   types?: Type[];
   props?: Prop[];
@@ -51,3 +57,5 @@ export type Deprecation = {
   tokens?: (SharedProps & Pick<Scope, 'exportNames'>)[];
   params?: Param[];
 };
+
+export type DeprecationGroups = keyof Omit<Deprecation, 'endOfLife' | 'prevMajorVersion'>;

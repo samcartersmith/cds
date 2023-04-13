@@ -1,10 +1,12 @@
-import React, { memo, useCallback, useContext, useEffect, useState } from 'react';
+import React, { memo, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import AutoSizer, { Size } from 'react-virtualized/dist/commonjs/AutoSizer';
 import List, { ListRowProps } from 'react-virtualized/dist/commonjs/List';
 import WindowScroller, {
   WindowScrollerChildProps,
 } from 'react-virtualized/dist/commonjs/WindowScroller';
+import { partition } from 'lodash';
 import { ListCell } from '@cbhq/cds-web/cells';
+import { Divider } from '@cbhq/cds-web/layout';
 import { TextLabel1 } from '@cbhq/cds-web/typography';
 
 import {
@@ -22,32 +24,51 @@ import { getResultsByType, isMatch } from './AdoptionTracker/search/SearchUtils'
 import type { AdopterSearchResult, AdopterTabKey, ComponentData } from './AdoptionTracker/types';
 import { SplitScreenStack } from './SplitScreenStack';
 
-type ListCellProps = ComponentData & {
-  isActive: boolean;
+type ComponentListCellProps = {
+  id: string;
+  activeComponent: ComponentData;
   setActiveComponent: () => void;
-};
+  index: number;
+  style?: React.CSSProperties;
+} & Pick<ComponentData, 'name' | 'totalCallSites' | 'totalInstances'>;
 
 const innerCellSpacing = { spacingHorizontal: 1 } as const;
 const outerCellSpacing = { spacingHorizontal: 2, spacingEnd: 4 } as const;
-const ComponentListCell = memo((props: ListCellProps) => {
-  const { isActive, setActiveComponent, ...componentInfo } = props;
-  const { name, totalCallSites, totalInstances } = componentInfo;
 
-  const handleOnPress = useCallback(() => setActiveComponent(), [setActiveComponent]);
+const ComponentListCell = memo(
+  ({
+    id,
+    activeComponent,
+    index,
+    style,
+    setActiveComponent,
+    name,
+    totalCallSites,
+    totalInstances,
+  }: ComponentListCellProps) => {
+    const activeId = activeComponent
+      ? `${activeComponent.name}-${activeComponent.sourceFile}`
+      : undefined;
+    const isActive = activeId === id;
 
-  return (
-    <ListCell
-      title={name}
-      description={`${totalCallSites} files`}
-      detail={`${totalInstances} instances`}
-      accessory={isActive ? 'selected' : 'arrow'}
-      onPress={handleOnPress}
-      selected={isActive}
-      innerSpacing={innerCellSpacing}
-      outerSpacing={outerCellSpacing}
-    />
-  );
-});
+    return (
+      <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
+        <ListCell
+          title={name}
+          description={`${totalCallSites} files`}
+          detail={`${totalInstances} instances`}
+          accessory={isActive ? 'selected' : 'arrow'}
+          onPress={setActiveComponent}
+          selected={isActive}
+          innerSpacing={innerCellSpacing}
+          outerSpacing={outerCellSpacing}
+        />
+      </div>
+    );
+  },
+);
+
+ComponentListCell.displayName = 'ComponentListCell';
 
 function getFilteredSearchResults(
   searchResults: AdopterSearchResult[],
@@ -70,85 +91,102 @@ function getFilteredSearchResults(
 
 export const AdopterComponentsList = memo(
   ({ components, type }: { components: ComponentData[]; type: AdopterTabKey }) => {
-    const [activeComponentIndex, setActiveComponentIndex] = useState<number>(0);
-
     const { results } = useContext(AdopterSearchContext) as AdopterSearchContextType;
+    const { setTabKey } = useContext(AdopterTabContext) as AdopterTabContextType;
     const { props: propSearchResults, components: componentSearchResults } =
       getResultsByType(results);
 
-    const { setTabKey } = useContext(AdopterTabContext) as AdopterTabContextType;
+    const filteredComponents = useMemo(() => {
+      const filtered = getFilteredSearchResults(componentSearchResults, components, (component) => [
+        component.name,
+      ]);
+
+      return getFilteredSearchResults(propSearchResults, filtered, (component) => {
+        return Object.keys(component.propsWithCallSites ?? {});
+      });
+    }, [componentSearchResults, components, propSearchResults]);
+
+    const [featuredComponents, otherComponents] = useMemo(
+      () => partition(filteredComponents, ({ isFeatured }) => isFeatured),
+      [filteredComponents],
+    );
+
+    const [activeComponent, setActiveComponent] = useState<ComponentData>(
+      featuredComponents.length > 0 ? featuredComponents[0] : otherComponents[0],
+    );
+
+    const getSetActiveComponentHandler = useCallback(
+      (activeComp: ComponentData) => () => setActiveComponent(activeComp),
+      [],
+    );
+
     useEffect(() => {
       setTabKey(type);
     }, [setTabKey, type]);
 
-    let filteredComponents = getFilteredSearchResults(
-      componentSearchResults,
-      components,
-      (component) => [component.name],
-    );
-    filteredComponents = getFilteredSearchResults(
-      propSearchResults,
-      filteredComponents,
-      (component) => {
-        return Object.keys(component.propsWithCallSites ?? {});
-      },
-    );
-
-    if (filteredComponents.length === 0) {
+    if (featuredComponents.length === 0 && otherComponents.length === 0) {
       return <AdopterComponentsEmptyState />;
     }
 
-    const activeComponent =
-      activeComponentIndex < filteredComponents.length
-        ? filteredComponents[activeComponentIndex]
-        : filteredComponents[0];
-
     // eslint-disable-next-line react/no-unstable-nested-components
     const Row = ({ index, style }: ListRowProps) => {
-      const item = filteredComponents[index];
-      const { name, sourceFile } = item;
+      const item = otherComponents[index];
+      const { name, sourceFile, totalCallSites, totalInstances } = item;
       const id = `${name}-${sourceFile}`;
-      const activeId = activeComponent
-        ? `${activeComponent.name}-${activeComponent.sourceFile}`
-        : undefined;
-      const isActive = activeId === id;
 
       return (
-        <div
-          key={`${name}-${sourceFile}`}
-          className={index % 2 ? 'ListItemOdd' : 'ListItemEven'}
+        <ComponentListCell
+          key={id}
+          id={id}
+          activeComponent={activeComponent}
+          setActiveComponent={getSetActiveComponentHandler(item)}
+          index={index}
           style={style}
-        >
-          <ComponentListCell
-            isActive={isActive}
-            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-            setActiveComponent={() => setActiveComponentIndex(index)}
-            {...item}
-          />
-        </div>
+          name={name}
+          totalCallSites={totalCallSites}
+          totalInstances={totalInstances}
+        />
       );
     };
 
     const start = (
-      <div style={{ height: `${80 * filteredComponents.length}px` }}>
+      <>
         {type === 'cds' && (
           <TextLabel1 as="p" color="foregroundMuted" spacingBottom={3}>
             🎨 This project depends on{' '}
-            <TextLabel1 as="span" color="foreground" spacingBottom={3}>
+            <TextLabel1 as="span" color="foreground">
               {components.length} components
             </TextLabel1>{' '}
             from CDS
           </TextLabel1>
         )}
+        {featuredComponents.map((component, index) => {
+          const { name, sourceFile, totalCallSites, totalInstances } = component;
+          const id = `${name}-${sourceFile}`;
+
+          return (
+            <ComponentListCell
+              key={id}
+              id={id}
+              activeComponent={activeComponent}
+              setActiveComponent={getSetActiveComponentHandler(component)}
+              index={index}
+              name={name}
+              totalCallSites={totalCallSites}
+              totalInstances={totalInstances}
+            />
+          );
+        })}
+        {featuredComponents.length > 0 && <Divider spacingVertical={3} />}
         <WindowScroller>
           {({ height, scrollTop }: WindowScrollerChildProps) => (
-            <AutoSizer>
+            <AutoSizer disableHeight>
               {({ width }: Size) => (
                 <List
                   autoHeight
                   className="List"
                   height={height}
-                  rowCount={filteredComponents.length}
+                  rowCount={otherComponents.length}
                   rowHeight={80}
                   rowRenderer={Row}
                   scrollTop={scrollTop}
@@ -160,7 +198,7 @@ export const AdopterComponentsList = memo(
             </AutoSizer>
           )}
         </WindowScroller>
-      </div>
+      </>
     );
 
     const end = activeComponent ? <AdopterComponentDetails {...activeComponent} /> : null;
@@ -168,3 +206,5 @@ export const AdopterComponentsList = memo(
     return <SplitScreenStack start={start} end={end} />;
   },
 );
+
+AdopterComponentsList.displayName = 'AdopterComponentsList';

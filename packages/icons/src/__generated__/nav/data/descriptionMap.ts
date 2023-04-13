@@ -466,7 +466,7 @@ const descriptionMap: Record<string, string[]> = {
   '🖋': ['pencil'],
   '✒️': ['pencil'],
   condensation: ['cloud'],
-  water: ['cloud'],
+  water: ['cloud', 'faucet'],
   droplets: ['cloud'],
   vapor: ['cloud'],
   'science rules': ['cloud'],
@@ -479,8 +479,8 @@ const descriptionMap: Record<string, string[]> = {
   '🌨': ['cloud'],
   '⛈': ['cloud'],
   '🌩': ['cloud'],
-  '💦': ['cloud'],
-  '💧': ['cloud'],
+  '💦': ['cloud', 'faucet'],
+  '💧': ['cloud', 'faucet'],
   notification: ['bell'],
   update: ['bell'],
   new: ['bell'],
@@ -524,6 +524,11 @@ const descriptionMap: Record<string, string[]> = {
   menu: ['menu'],
   '🍔': ['menu'],
   '🥪': ['menu'],
+  faucet: ['faucet'],
+  drip: ['faucet'],
+  droplet: ['faucet'],
+  hydration: ['faucet'],
+  '🚰': ['faucet'],
 };
 
 export default descriptionMap;

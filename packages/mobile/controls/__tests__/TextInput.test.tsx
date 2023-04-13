@@ -101,4 +101,18 @@ describe('TextInput', () => {
     );
     expect(screen.getByTestId(testID)).toBeDefined();
   });
+
+  it('applies device font size scaling', () => {
+    const testID = 'native-input-id';
+    render(
+      <TextInput
+        accessibilityHint="Text input field"
+        accessibilityLabel="Text input field"
+        testID={testID}
+        end={<TextTitle1>Hello</TextTitle1>}
+      />,
+    );
+    expect(screen.getByTestId(testID)).toHaveProp('allowFontScaling', true);
+    expect(screen.getByTestId(testID)).toHaveProp('maxFontSizeMultiplier', 1);
+  });
 });

@@ -2,6 +2,7 @@
   "name": "@cbhq/docusaurus-preset",
   "version": "0.0.1",
   "description": "CDS Docusaurus preset",
+  "private": true,
   "keywords": [
     "docusaurus",
     "preset"
@@ -13,18 +14,18 @@
     "platform": "node"
   },
   "dependencies": {
-    "@cbhq/docusaurus-plugin-docgen": "workspace:*",
-    "@cbhq/docusaurus-plugin-kbar": "workspace:*",
-    "@cbhq/docusaurus-theme": "workspace:*",
+    "@cbhq/docusaurus-plugin-docgen": "workspace:^",
+    "@cbhq/docusaurus-plugin-kbar": "workspace:^",
+    "@cbhq/docusaurus-theme": "workspace:^",
     "@docusaurus/preset-classic": "2.0.0-beta.18",
     "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
-    "type-fest": "1.2.0"
+    "type-fest": "^2.19.0"
   },
   "devDependencies": {
     "@docusaurus/types": "2.0.0-beta.18"
   },
   "peerDependencies": {
-    "@cbhq/cds-common": "workspace:*"
+    "@cbhq/cds-common": "workspace:^"
   },
   "types": "./dts/index.d.ts",
   "main": "./lib/index.js",

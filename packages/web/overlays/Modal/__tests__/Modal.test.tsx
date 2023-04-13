@@ -161,7 +161,7 @@ describe('Modal', () => {
     fireEvent.click(screen.getByRole('button'));
 
     await screen.findByRole('dialog');
-    fireEvent.click(screen.getByTestId('modal-close-button'));
+    fireEvent.click(screen.getByLabelText('Close'));
 
     expect(onRequestClose).toHaveBeenCalledTimes(1);
   });
@@ -183,7 +183,7 @@ describe('Modal', () => {
     const onBackButtonPress = jest.fn();
     render(<MockModal visible onRequestClose={jest.fn()} onBackButtonPress={onBackButtonPress} />);
 
-    fireEvent.click(screen.getByTestId('modal-back-button'));
+    fireEvent.click(screen.getByLabelText('Back'));
 
     expect(onBackButtonPress).toHaveBeenCalledTimes(1);
   });

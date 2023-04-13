@@ -3,7 +3,7 @@ import { getPath } from '@cbhq/script-utils';
 
 import { flattenConfig } from './utils/flattenConfig';
 import { formatSidebar } from './utils/formatSidebar';
-import type { AdoptersConfig } from './types';
+import type { AdoptersConfig, FeaturedComponentsConfig } from './types';
 
 export const tempDir = getPath(`apps/website/.docusaurus/@cbhq/adoption`);
 /**
@@ -20,6 +20,7 @@ export const generatedStaticDataDir = {
   },
 };
 
+const frontendWebGit = 'frontend/web';
 const assethubGit = 'c3/assethub-frontend';
 const monorepoGit = 'mono/repo';
 const retailMobileGit = 'consumer/react-native';
@@ -170,10 +171,10 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        ...monorepoConfig,
+        root: path.join(tempDir, frontendWebGit, 'apps/unified-login'),
+        github: frontendWebGit,
         id: 'unified-login',
         label: 'Unified Login Web',
-        projectTsAliases: ['@trust_and_safety'],
         type: 'doc',
       },
       {
@@ -260,7 +261,7 @@ export const config: AdoptersConfig[] = [
 /** Used for AST parser */
 export const adopters = flattenConfig(config);
 
-/** Required to for website sidebar. */
+/** Required for website sidebar. */
 export const adoptersSidebar = formatSidebar(config, hiddenProjects);
 
 /** Required to associate adopters with their stats.json file for Adoption Overview page. */
@@ -278,3 +279,10 @@ export const hiddenAdoptersWithPillar = adopters
     id: item.id,
     pillar: item.pillar,
   }));
+
+/** Adds an `isFeatured` flag to metadata of listed components */
+export const featuredComponentsConfig: FeaturedComponentsConfig = {
+  cds: ['PatternTag'],
+  presentational: [],
+  other: [],
+};

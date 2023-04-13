@@ -13,7 +13,8 @@ import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
 import { Collapsible } from '@cbhq/cds-web/collapsible';
 import { Icon } from '@cbhq/cds-web/icons';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
-import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Box, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Modal, ModalBody } from '@cbhq/cds-web/overlays';
 import { PressableOpacity, ThemeProvider } from '@cbhq/cds-web/system';
 import {
   TextBody,
@@ -37,6 +38,7 @@ import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
 import { useAdopterStats } from './hooks/useAdopterStats';
 import { getPercentageText } from './utils/getPercentageText';
 import { AdopterStatsBreakdownCell } from './AdopterStatsBreakdown';
+import { ComponentUsageTable } from './ComponentUsageTable';
 import type { Adopter, Adopters, AdopterStatsItem } from './types';
 import { AdopterProjectInfo, AdopterStats } from './types';
 
@@ -71,15 +73,20 @@ function useStatForLastPeriod() {
       .find((prev) => Boolean(prev.period)) ?? fallback
   );
 }
+
+// Get projects by pillar
 const getProjects = (pillar?: string) => {
   return adopters.filter((adopter) => adopter.pillar === pillar || !pillar);
 };
 
+// Get stats for each project
 const getStats = (project: ProjectProps) => {
   return require(`@site/static/data/__generated__/adoption/${project.id}/stats.json`) as AdopterStats;
 };
 
 type PercentageGetterProps = { pillar?: string; average?: boolean };
+
+// Get the percentage of adoption for each project
 const getPercentage = ({ pillar, average }: PercentageGetterProps) => {
   const projects = getProjects(pillar);
   const change =
@@ -94,6 +101,7 @@ const getPercentage = ({ pillar, average }: PercentageGetterProps) => {
   return { variant, percentage } as const;
 };
 
+// Get the percentage change for each project by pillar
 const getPercentageChange = ({ pillar, average }: PercentageGetterProps) => {
   const projects = getProjects(pillar);
   const change =
@@ -205,6 +213,8 @@ const PercentChange = memo(
   },
 );
 
+PercentChange.displayName = 'PercentChange';
+
 export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
   const { label, id } = useAdopterProjectInfo();
   const { latest } = useAdopterStats();
@@ -242,6 +252,8 @@ export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps)
   );
 });
 
+ProjectCell.displayName = 'ProjectCell';
+
 export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = memo(({ id, children }) => {
   const { projectInfo, stats } = useProject(id);
   return (
@@ -250,6 +262,8 @@ export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = memo(({ 
     </AdopterProjectInfoProvider>
   );
 });
+
+Project.displayName = 'Project';
 
 const DetailStatCell = memo(
   ({
@@ -323,6 +337,8 @@ const DetailStatCell = memo(
   },
 );
 
+DetailStatCell.displayName = 'DetailStatCell';
+
 export const ActiveProject = memo(() => {
   const { label, id } = useAdopterProjectInfo();
   const { latest, previous } = useAdopterStats();
@@ -366,6 +382,8 @@ export const ActiveProject = memo(() => {
   );
 });
 
+ActiveProject.displayName = 'ActiveProject';
+
 const ProjectTitle = ({ pillar }: { pillar: string }) => {
   const { percentage } = getPercentage({ pillar, average: true });
   const { variant: changedVariant, percentage: changePercentage } = getPercentageChange({
@@ -398,6 +416,7 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
 };
 
 export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) => {
+  const [usageModalIsVisible, { toggleOff, toggleOn }] = useToggler(false);
   const scopedAdopters = getSortedProjectPairs(hidden ? hiddenAdopters : adopters);
   // Sort projects by pillar adoption, and make sure projects are also sorted
   const { variant, percentage } = getPercentage({ average: true });
@@ -467,11 +486,23 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
           )}
         </TextTitle2>
       </VStack>
+      <Box spacingBottom={4}>
+        <Button variant="secondary" onPress={toggleOn} compact>
+          Show current component usage
+        </Button>
+      </Box>
       <Divider direction="horizontal" />
       <SplitScreenStack start={start} end={end} />
+      <Modal visible={usageModalIsVisible} onRequestClose={toggleOff}>
+        <ModalBody>
+          <ComponentUsageTable />
+        </ModalBody>
+      </Modal>
     </ThemeProvider>
   );
 });
+
+AdoptionTrackerOverview.displayName = 'AdoptionTrackerOverview';
 
 export const tableOfContents = [
   ...toPairs(groupBy(adopters, 'pillar')).map(([pillar]) => {

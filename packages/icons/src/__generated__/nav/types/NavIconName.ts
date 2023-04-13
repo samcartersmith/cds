@@ -31,6 +31,7 @@ export type NavIconName =
   | 'earn'
   | 'eye'
   | 'faces'
+  | 'faucet'
   | 'gab'
   | 'ghost'
   | 'giftBox'

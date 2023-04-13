@@ -79,6 +79,7 @@ const sidebars = {
               description:
                 'Guidelines for creating equally usable, relevant, and meaningful experiences globally.',
             },
+            tag: 'new',
           },
         },
         {
@@ -449,7 +450,7 @@ const sidebars = {
             },
           ],
         },
-        { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search  Input' },
+        { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search Input' },
         {
           type: 'doc',
           id: 'components/controls/SegmentedControl/segmented-control',
@@ -646,7 +647,14 @@ const sidebars = {
         'patterns/empty-states',
         'patterns/forms',
         'patterns/loading-states',
-        'patterns/disclosures',
+        {
+          type: 'doc',
+          id: 'patterns/disclosures',
+          label: 'Disclosures',
+          customProps: {
+            tag: 'new',
+          },
+        },
       ],
       customProps: {
         kbar: {
@@ -810,11 +818,19 @@ const sidebars = {
           label: 'Changelog',
           items: [
             { type: 'doc', id: 'changelog/common', label: '@cbhq/cds-common' },
+            { type: 'doc', id: 'changelog/d3', label: '@cbhq/d3' },
             { type: 'doc', id: 'changelog/fonts', label: '@cbhq/cds-fonts' },
+            { type: 'doc', id: 'changelog/icons', label: '@cbhq/cds-icons' },
+            { type: 'doc', id: 'changelog/illustrations', label: '@cbhq/cds-illustrations' },
             { type: 'doc', id: 'changelog/lottie-files', label: '@cbhq/cds-lottie-files' },
             { type: 'doc', id: 'changelog/mobile', label: '@cbhq/cds-mobile' },
             { type: 'doc', id: 'changelog/utils', label: '@cbhq/cds-utils' },
             { type: 'doc', id: 'changelog/web', label: '@cbhq/cds-web' },
+            {
+              type: 'doc',
+              id: 'changelog/ui-mobile-playground',
+              label: '@cbhq/ui-mobile-playground',
+            },
           ],
         },
         'resources/contribution',

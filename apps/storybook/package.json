@@ -1,6 +1,7 @@
 {
   "name": "@cds/storybook",
   "version": "0.0.0",
+  "private": true,
   "dependencies": {
     "@cbhq/cds-fonts": "workspace:^",
     "@cbhq/cds-icons": "workspace:^",
@@ -10,8 +11,8 @@
     "@juggle/resize-observer": "^3.4.0"
   },
   "peerDependencies": {
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
+    "react": "18.2.0",
+    "react-dom": "^18.2.0"
   },
   "scripts": {
     "test-storybook": "test-storybook"

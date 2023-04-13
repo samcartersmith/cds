@@ -1,11 +1,12 @@
 {
   "name": "@cbhq/cds-web-utils",
   "version": "0.0.0",
+  "private": true,
   "description": "Jest utils and developer tools.",
   "dependencies": {
     "@babel/types": "^7.20.7",
-    "@testing-library/react": "^12.1.5",
-    "chalk": "^4.1.0",
+    "@testing-library/react": "^13.4.0",
+    "chalk": "^4.1.2",
     "jest-axe": "^4.1.0",
     "linaria": "^2.3.1",
     "source-map": "^0.7.3",

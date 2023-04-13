@@ -765,6 +765,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/pizza-0').content,
     dark: () => require('../svgJs/dark/pizza-0').content,
   },
+  planet: {
+    light: () => require('../svgJs/light/planet-0').content,
+    dark: () => require('../svgJs/dark/planet-0').content,
+  },
   pluginBrowser: {
     light: () => require('../svgJs/light/pluginBrowser-1').content,
     dark: () => require('../svgJs/dark/pluginBrowser-1').content,
@@ -1036,6 +1040,10 @@ const svgJsMap = {
   wallet: {
     light: () => require('../svgJs/light/wallet-0').content,
     dark: () => require('../svgJs/dark/wallet-0').content,
+  },
+  walletAsServiceNavigation: {
+    light: () => require('../svgJs/light/walletAsServiceNavigation-0').content,
+    dark: () => require('../svgJs/dark/walletAsServiceNavigation-0').content,
   },
   walletDeposit: {
     light: () => require('../svgJs/light/walletDeposit-0').content,

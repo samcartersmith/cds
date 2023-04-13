@@ -38,7 +38,7 @@ export const useDeviceScaleToCdsScale = () => {
     if (deviceScale <= deviceScaleMap.xxLarge) {
       return 'xxLarge';
     }
-    if (deviceScale >= deviceScaleMap.xxxLarge) {
+    if (deviceScale > deviceScaleMap.xxLarge) {
       return 'xxxLarge';
     }
     return 'large';

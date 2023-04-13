@@ -113,6 +113,16 @@ describe('FullscreenAlert', () => {
       await screen.findByText(TITLE);
     });
 
+    await waitFor(async () => {
+      expect(screen.getByText(TITLE)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(screen.getByText(BODY)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(screen.getByText(PREFERRED_ACTION_LABEL)).toBeVisible();
+    });
+
     expect(await screen.findByText(TITLE)).toBeVisible();
     expect(await screen.findByText(BODY)).toBeVisible();
     expect(await screen.findByText(PREFERRED_ACTION_LABEL)).toBeVisible();

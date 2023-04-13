@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/docusaurus-plugin-docgen",
   "version": "0.0.1",
+  "private": true,
   "description": "Docusaurus plugin for generating api documentation from Typescript files",
   "keywords": [
     "docusaurus",
@@ -22,11 +23,11 @@
     "@types/lodash": "^4.14.178"
   },
   "peerDependencies": {
-    "@cbhq/eslint-plugin": ">=1.5.0",
-    "fast-glob": ">=3.2.11",
-    "lodash": ">=4.17.21",
-    "prettier": ">=2.5.1",
-    "type-fest": ">=1.2.0"
+    "@cbhq/eslint-plugin": "^1.26.3",
+    "fast-glob": "^3.2.11",
+    "lodash": "^4.17.21",
+    "prettier": "^2.8.3",
+    "type-fest": "^2.19.0"
   },
   "packemon": {
     "format": "lib",

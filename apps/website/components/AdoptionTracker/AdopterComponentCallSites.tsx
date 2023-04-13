@@ -47,3 +47,5 @@ export const AdopterComponentCallSites = memo(
     );
   },
 );
+
+AdopterComponentCallSites.displayName = 'AdopterComponentCallSites';
