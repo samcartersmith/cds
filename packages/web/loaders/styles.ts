@@ -1,4 +1,5 @@
 import { css } from 'linaria';
+import { durations } from '@cbhq/cds-common/motion/tokens';
 
 export const spinner = {
   base: css`
@@ -16,3 +17,15 @@ export const materialSpinner = {
     transform-origin: center;
   `,
 };
+
+export const spinnerAnimation = css`
+  animation: spin ${durations.slow4}ms linear infinite;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;

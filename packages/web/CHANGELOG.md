@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.4 (4/14/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] feat: replaced Spinner motion with vanilla CSS to improve performance. [[#1919](https://github.cbhq.net/frontend/cds/pull/1919)] [[DX-742](https://jira.coinbase-corp.com/browse/DX-742)]
+
 ## 4.2.3 (4/11/2023 PST)
 
 #### 🐞 Fixes

@@ -1,10 +1,9 @@
 import React, { memo, useMemo } from 'react';
-import { m as motion } from 'framer-motion';
 import { SharedProps } from '@cbhq/cds-common';
 import { PaletteForeground } from '@cbhq/cds-common/types/Palette';
 
 import { usePalette } from '../hooks/usePalette';
-import { useMotionProps } from '../motion/useMotionProps';
+import { cx } from '../utils/linaria';
 
 import * as styles from './styles';
 
@@ -27,10 +26,6 @@ export const Spinner = memo(function Spinner({
   testID,
 }: SpinnerProps) {
   const palette = usePalette();
-  const motionProps = useMotionProps({
-    animate: { rotate: [0, 360] },
-    transition: { repeat: Infinity, easing: 'linear', duration: 'slow4' },
-  });
 
   const spinnerStyle = useMemo(
     () => ({
@@ -44,14 +39,13 @@ export const Spinner = memo(function Spinner({
   );
 
   return (
-    <motion.div
+    <div
       data-testid={testID}
       role="status"
       aria-busy
       aria-live="polite"
       style={spinnerStyle}
-      className={styles.spinner.base}
-      {...motionProps}
+      className={cx(styles.spinner.base, styles.spinnerAnimation)}
     />
   );
 });
