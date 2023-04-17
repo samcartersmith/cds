@@ -160,10 +160,10 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
         <p>
           Card can now be imported from{' '}
           <a
-            href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/cards/Card.tsx"
+            href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/cards/Card.tsx"
             target="_blank"
           >
-            packages/web/cards/Card.tsx
+            packages/mobile/cards/Card.tsx
           </a>
         </p>
       </p>
@@ -822,6 +822,29 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
             packages/web/dropdown/Dropdown.tsx
           </a>
         </p>
+        <p>
+          {' '}
+          The API has changed: <ul>
+            <li>
+              <code>visible</code> has been removed
+            </li>
+            <li>
+              <code>openMenu</code> has been removed
+            </li>
+            <li>
+              <code>closeMenu</code> has been removed
+            </li>
+            <li>
+              <code>searchEnabled</code> has been removed
+            </li>
+            <li>
+              <code>flush</code> has been replaced with <code>block</code>
+            </li>
+            <li>
+              <code>popoverPositionConfig</code> has been replaced with <code>contentPosition</code>
+            </li>
+          </ul>
+        </p>
       </p>
     </VStack>
   </AccordionItem>
@@ -1056,10 +1079,10 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
 
 <Accordion>
   <AccordionItem
-    itemKey="IconBase.badge.mobile"
+    itemKey="Icon.badge.mobile"
     title={
       <HStack gap={1}>
-        IconBase.badge <Tag colorScheme="red">removed</Tag>
+        Icon.badge <Tag colorScheme="red">removed</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-mobile"
@@ -1069,10 +1092,23 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="IconBase.badge.web"
+    itemKey="NavigationIcon.badge.mobile"
     title={
       <HStack gap={1}>
-        IconBase.badge <Tag colorScheme="red">removed</Tag>
+        NavigationIcon.badge <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <code>badge</code> has been removed from the CDS library.
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Icon.badge.web"
+    title={
+      <HStack gap={1}>
+        Icon.badge <Tag colorScheme="red">removed</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-web"
@@ -1082,10 +1118,23 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="createText.deprecatedLineHeight.mobile"
+    itemKey="NavigationIcon.badge.web"
     title={
       <HStack gap={1}>
-        createText.deprecatedLineHeight <Tag colorScheme="red">removed</Tag>
+        NavigationIcon.badge <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <code>badge</code> has been removed from the CDS library.
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Typography.deprecatedLineHeight.mobile"
+    title={
+      <HStack gap={1}>
+        Typography.deprecatedLineHeight <Tag colorScheme="red">removed</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-mobile"
