@@ -111,16 +111,6 @@ if (frozenComponentFiles.edited && !acceptedOverrideFrozenComponent) {
   );
 }
 
-// Make sure PR title follows CDS convention
-const regex =
-  /\[(trivial|DX-\d{4}|CDS-\d{4})\]\s(breaking|feat|change|new|update|fix|patch|chore|types|internal|docs|tests|release)(\(.*\))?:.*/i;
-
-if (!regex.test(pr.title)) {
-  warn(
-    'Please update your PR title that follows [CDS convention](https://github.cbhq.net/frontend/cds/blob/master/docs/first-pull-request.md).',
-  );
-}
-
 // Encourage smaller PRs
 if (pr.additions + pr.deletions > bigPRThreshold) {
   message(

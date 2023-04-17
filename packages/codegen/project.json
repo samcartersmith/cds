@@ -73,15 +73,6 @@
         "script": "./main.ts"
       }
     },
-    "release": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./releasePackages.ts",
-        "args": [
-          "--packages=d3|fonts|web|lottie-files|mobile|utils|common"
-        ]
-      }
-    },
     "updateWebsiteChangelogs": {
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
@@ -89,6 +80,12 @@
         "args": [
           "--packages=common|icons|illustrations|lottie-files|mobile|ui-mobile-playground|web|utils|fonts"
         ]
+      }
+    },
+    "updatePkgsForGenericBump": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./release/updatePkgsForGenericBump.ts"
       }
     },
     "mobile-routes": {
