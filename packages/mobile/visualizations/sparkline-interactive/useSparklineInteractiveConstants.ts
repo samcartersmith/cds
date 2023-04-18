@@ -14,6 +14,9 @@ type Props = {
   compact?: boolean;
 };
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export function useSparklineInteractiveConstants({ compact = false }: Props) {
   const spacing = useSpacingScale();
   const { width: screenWidth } = useWindowDimensions();

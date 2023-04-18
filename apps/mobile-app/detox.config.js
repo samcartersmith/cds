@@ -43,9 +43,9 @@ const config = {
     emulator: {
       type: 'android.emulator',
       device: {
-        avdName: 'cds_detox',
+        avdName: isCI() ? 'cds_detox' : 'cds_detox_local',
       },
-      bootArgs: '-skin 600x5000',
+      bootArgs: isCI() ? '-skin 600x5000' : undefined,
     },
   },
   configurations: {

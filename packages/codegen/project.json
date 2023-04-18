@@ -96,8 +96,7 @@
       "options": {
         "cwd": "packages/codegen",
         "commands": [
-          "ts-node ./playground/prepareRoutes.ts",
-          "ts-node ./playground/prepareNewRoutes.ts"
+          "ts-node ./playground/prepareRoutes.ts"
         ],
         "parallel": true
       }

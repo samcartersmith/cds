@@ -107,6 +107,38 @@ const sparklineWebMovedComponents = [
   'packages/web/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
 ];
 
+const sparklineMobileMovedComponents = [
+  'packages/mobile/visualizations/Sparkline.tsx',
+  'packages/mobile/visualizations/Sparkline.tsx',
+  'packages/mobile/visualizations/SparklineArea.tsx',
+  'packages/mobile/visualizations/SparklineAreaPattern.tsx',
+  'packages/mobile/visualizations/SparklineGradient.tsx',
+  'packages/mobile/visualizations/VisualizationContainer.tsx',
+  'packages/mobile/visualizations/VisualizationContainer.tsx',
+  'packages/mobile/visualizations/__stories__/SparklineGradient_Deprecated.stories.tsx',
+  'packages/mobile/visualizations/__stories__/Sparkline_Deprecated.stories.tsx',
+  'packages/mobile/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx',
+  'packages/mobile/visualizations/sparkline-interactive-header/__stories__/SparklineInteractiveHeader_Deprecated.stories.tsx',
+  'packages/mobile/visualizations/sparkline-interactive-header/useSparklineInteractiveHeaderStyles.ts',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractive.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMinMax.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePanGestureHandler.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/__stories__/SparklineInteractive_Deprecated.stories.tsx',
+  'packages/mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation.ts',
+  'packages/mobile/visualizations/sparkline-interactive/useMinMaxTransform.ts',
+  'packages/mobile/visualizations/sparkline-interactive/useOpacityAnimation.ts',
+  'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
+  'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveLineStyles.ts',
+];
+
 /** See go/frozen-components for more info */
 const frozenComponentPatterns = [
   'packages/mobile/visualizations/sparkline-interactive/*.(ts|tsx)',
@@ -116,6 +148,7 @@ const frozenComponentPatterns = [
   'packages/common/animation/dropdown.ts',
   ...overlayWebMovedComponents,
   ...sparklineWebMovedComponents,
+  ...sparklineMobileMovedComponents,
 ];
 
 const nonTestTsFiles = danger.git.fileMatch(

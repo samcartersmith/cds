@@ -173,8 +173,119 @@ const sparklineWebDeprecations = [
   },
 ];
 
+const baseMobileDeprecation: Partial<Component> = {
+  package: 'mobile',
+  type: ['path'],
+};
+
+const sparklineMobileDeprecations = [
+  {
+    ...baseMobileDeprecation,
+    name: 'newRoutes',
+    path: 'packages/mobile/examples/newRoutes.ts',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'Sparkline',
+    path: 'packages/mobile/visualizations/Sparkline.ts',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractive',
+    path: 'packages/mobile/visualizations/SparklineInteractive.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractiveHeader',
+    path: 'packages/mobile/visualizations/SparklineInteractiveHeader.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineGradient',
+    path: 'packages/mobile/visualizations/SparklineGradient.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractiveAnimatedPath',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractiveHoverDate',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractiveLineVertical',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractiveMarkerDates',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractiveMinMax',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMinMax.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractivePanGestureHandler',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePanGestureHandler.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractivePaths',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractivePeriodSelector',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractiveProvider',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'SparklineInteractiveTimeseriesPaths',
+    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'useInterruptiblePathAnimation',
+    path: 'packages/mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation.ts',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'useMinMaxTransform',
+    path: 'packages/mobile/visualizations/sparkline-interactive/useMinMaxTransform.ts',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'useOpacityAnimation',
+    path: 'packages/mobile/visualizations/sparkline-interactive/useOpacityAnimation.ts',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'useSparklineInteractiveConstants',
+    path: 'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
+  },
+  {
+    ...baseMobileDeprecation,
+    name: 'useSparklineInteractiveLineStyles',
+    path: 'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveLineStyles.ts',
+  },
+];
 export const Q22023: Deprecation = {
   endOfLife: 'Q22023',
   prevMajorVersion: 'v4.1.3',
-  components: [...overlayWebDeprecations, ...sparklineWebDeprecations],
+  components: [
+    ...overlayWebDeprecations,
+    ...sparklineWebDeprecations,
+    ...sparklineMobileDeprecations,
+  ],
 };

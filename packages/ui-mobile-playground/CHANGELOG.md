@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Rebase sparkline-mobile decomposition on release branch.
+
+#### 📘 Misc
+
 - Merge master into release.
 
 ## 1.0.0-rc.2 (3/22/2023 PST)

@@ -6,13 +6,13 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import * as Linking from 'expo-linking';
 import * as SplashScreen from 'expo-splash-screen';
-import { routes as codegenRoutes } from '@cbhq/cds-mobile/examples/newRoutes';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
 import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';
 import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
 import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
+import { routes as codegenRoutes } from '@cbhq/ui-mobile-playground';
 import { Playground } from '@cbhq/ui-mobile-playground';
 
 import { useFonts } from './hooks/useFonts';

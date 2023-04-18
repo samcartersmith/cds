@@ -6,15 +6,15 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
+import { Cell } from '@cbhq/cds-mobile/cells/Cell';
+import { CellMedia } from '@cbhq/cds-mobile/cells/CellMedia';
+import { Example, ExampleScreen } from '@cbhq/cds-mobile/examples/ExampleScreen';
+import { useSpacingScale } from '@cbhq/cds-mobile/hooks/useSpacingScale';
+import { HStack } from '@cbhq/cds-mobile/layout/HStack';
+import { VStack } from '@cbhq/cds-mobile/layout/VStack';
+import { TextBody } from '@cbhq/cds-mobile/typography/TextBody';
+import { TextHeadline } from '@cbhq/cds-mobile/typography/TextHeadline';
 
-import { Cell } from '../../cells/Cell';
-import { CellMedia } from '../../cells/CellMedia';
-import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { useSpacingScale } from '../../hooks/useSpacingScale';
-import { HStack } from '../../layout/HStack';
-import { VStack } from '../../layout/VStack';
-import { TextBody } from '../../typography/TextBody';
-import { TextHeadline } from '../../typography/TextHeadline';
 import { Sparkline } from '../Sparkline';
 import { SparklineArea } from '../SparklineArea';
 

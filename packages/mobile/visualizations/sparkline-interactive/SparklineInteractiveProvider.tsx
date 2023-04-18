@@ -134,6 +134,9 @@ export const SparklineInteractiveProvider = memo(
   },
 );
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export function useSparklineInteractiveContext() {
   return useContext(SparklineInteractiveContext);
 }

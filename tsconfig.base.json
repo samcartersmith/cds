@@ -65,6 +65,12 @@
       "@cbhq/cds-web-overlays/*": [
         "packages/cds-web-overlays/src/*"
       ],
+      "@cbhq/cds-mobile-visualization": [
+        "packages/mobile-visualization/src"
+      ],
+      "@cbhq/cds-mobile-visualization/*": [
+        "packages/mobile-visualization/src/*"
+      ],
       "@cbhq/cds-utils": [
         "packages/utils"
       ],

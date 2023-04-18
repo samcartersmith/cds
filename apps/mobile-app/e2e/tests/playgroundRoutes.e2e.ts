@@ -1,5 +1,8 @@
-import { routes } from '@cbhq/cds-mobile/examples/newRoutes';
-import { getPlaygroundRoutes, uploadScreenshotsToPercyForRoute } from '@cbhq/ui-mobile-visreg';
+import {
+  getPlaygroundRoutes,
+  routes,
+  uploadScreenshotsToPercyForRoute,
+} from '@cbhq/ui-mobile-visreg';
 
 const disabledRoutes = {
   disabledRoutes: [

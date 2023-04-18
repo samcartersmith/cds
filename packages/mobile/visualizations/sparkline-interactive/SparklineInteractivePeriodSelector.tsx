@@ -16,6 +16,9 @@ import { Haptics } from '../../utils/haptics';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export const SparklineInteractivePeriodSelector = <Period extends string>({
   selectedPeriod,
   setSelectedPeriod,

@@ -15,6 +15,7 @@
   },
   "peerDependencies": {
     "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/cds-mobile-visualization": "workspace:^",
     "detox": "^20.5.0"
   },
   "dependencies": {

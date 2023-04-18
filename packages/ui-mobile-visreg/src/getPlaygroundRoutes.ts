@@ -1,6 +1,4 @@
 /* eslint-disable no-restricted-globals */
-import { routes as codegenRoutes } from '@cbhq/cds-mobile/examples/newRoutes';
-
 //  https://buildkite.com/docs/tutorials/parallel-builds
 // BUILDKITE_PARALLEL_JOB starts at zero based index and VISREG_JOB_NUMBER expects 1 based index
 const TOTAL_JOBS = Number(process.env.BUILDKITE_PARALLEL_JOB_COUNT ?? 1);
@@ -15,7 +13,10 @@ export function getPlaygroundRoutes({
   iosDisabledRoutes = [],
   androidDisabledRoutes = [],
 }: {
-  routes: typeof codegenRoutes;
+  routes: {
+    key: string;
+    getComponent: () => unknown;
+  }[];
   disabledRoutes: string[];
   iosDisabledRoutes: string[];
   androidDisabledRoutes: string[];

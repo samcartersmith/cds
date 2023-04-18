@@ -11,6 +11,9 @@ import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export const SparklineInteractiveAnimatedPath = memo(
   ({
     d = '',

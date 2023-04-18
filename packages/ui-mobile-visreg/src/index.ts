@@ -148,3 +148,4 @@ export function finishVisregTests() {
 
 export * from './detox';
 export { getPlaygroundRoutes } from './getPlaygroundRoutes';
+export * from './routes';

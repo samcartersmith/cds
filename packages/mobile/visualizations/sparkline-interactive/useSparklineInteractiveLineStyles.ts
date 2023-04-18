@@ -13,6 +13,9 @@ const staticLineProps = {
   strokeDasharray: lineDashArray,
 };
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export function useSparklineInteractiveLineStyles() {
   const colors = usePalette();
   const spacing = useSpacingScale();

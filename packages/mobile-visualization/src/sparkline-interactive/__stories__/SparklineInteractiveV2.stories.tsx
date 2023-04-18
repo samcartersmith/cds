@@ -8,10 +8,10 @@ import {
   sparklineInteractiveHoverData,
   strokeColor,
 } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import { Example, ExampleScreen } from '@cbhq/cds-mobile/examples/ExampleScreen';
+import { Box } from '@cbhq/cds-mobile/layout';
+import { TextTitle3 } from '@cbhq/cds-mobile/typography/TextTitle3';
 
-import { Example, ExampleScreen } from '../../../examples/ExampleScreen';
-import { Box } from '../../../layout';
-import { TextTitle3 } from '../../../typography/TextTitle3';
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineInteractive } from '../SparklineInteractive';
 
@@ -30,7 +30,7 @@ const SparklineInteractiveScreen = () => {
   return (
     <ExampleScreen>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Default
           </TextTitle3>
@@ -38,7 +38,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Compact
           </TextTitle3>
@@ -50,7 +50,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Disable Scrubbing
           </TextTitle3>
@@ -62,7 +62,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Hide period selector
           </TextTitle3>
@@ -74,7 +74,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Hide min/max label
           </TextTitle3>
@@ -86,7 +86,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Default period All
           </TextTitle3>
@@ -98,7 +98,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Fill
           </TextTitle3>
@@ -110,7 +110,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Y axis scaling
           </TextTitle3>
@@ -122,7 +122,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Fallback
           </TextTitle3>
@@ -130,7 +130,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Fallback Negative
           </TextTitle3>
@@ -138,7 +138,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Fallback Compact
           </TextTitle3>
@@ -146,7 +146,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             No Hover Date
           </TextTitle3>
@@ -158,7 +158,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             With Header Node
           </TextTitle3>
@@ -169,7 +169,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             No Spacing
           </TextTitle3>
@@ -182,7 +182,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={4}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3}>In Container With 4 spacing</TextTitle3>
           <SparklineInteractiveWithHeaderBuild
             data={sparklineInteractiveData}
@@ -193,7 +193,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Custom screen spacing 6
           </TextTitle3>
@@ -205,7 +205,7 @@ const SparklineInteractiveScreen = () => {
         </Box>
       </Example>
       <Example spacing={0}>
-        <Box>
+        <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
             Hover data
           </TextTitle3>
