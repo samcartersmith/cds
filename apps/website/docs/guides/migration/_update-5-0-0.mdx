@@ -1,0 +1,65 @@
+## 5.0.0
+
+Howdy folks! Here is a list of what's new with this migration. Please use the cds-migrator and go through each section following to ensure you're codebase is ready for launch. Happy coding!
+
+Major changes include:
+
+- Splitting ui-mobile-playground into two packages: ui-mobile-playground and ui-mobile-visreg. This reduces the amount of dependencies brought into repos, and easily enables consumers to utilize our same mobile playground UI.
+- RN 71.3 Bump
+- React 18 Bump
+- Reanimated V3 Bump
+- Update A11y styling for VStack 'ul' components
+
+### Happy path upgrade steps
+
+1. From your root NX workspace install the new cds-migrator tool
+
+```shell
+yarn add @cbhq/cds-migrator --dev
+```
+
+2. From your root NX workspace run the following command:
+
+```tsx
+yarn nx generate @cbhq/cds-migrator:migrate 5.0.0
+```
+
+3. Run yarn install to capture any updates to package.json
+
+```shell
+yarn install
+```
+
+4. If you are a mobile app, you will need to re-link native assets. This looks different depending on your setup, but after linking assets you will need to run a fresh native build.
+
+5. Run typecheck to identify any issues not caught with migrator
+
+6. Remove @cbhq/cds-migrator from dev dependencies if you want to avoid having to install unused dependencies. If you removed you will need to re-run install to capture changes in yarn.lock.
+
+### Splitting UI Mobile Playground into two packages
+
+#### Update ui-mobile-playground
+
+If you're consumers of `ui-mobile-playground`, upgrade to 1.0.0.
+
+#### Update `'@cbhq/ui-mobile-playground/visreg';`
+
+This import has been deprecated and those packages have been moved to `@cbhq/ui-mobile-visreg@1.0.0`.
+
+```shell
+yarn add @cbhq/ui-mobile-visreg
+```
+
+and change your imports from `'@cbhq/ui-mobile-playground/visreg';` to `@cbhq/ui-mobile-visreg`.
+
+### Update Major dependencies
+
+We now support these major versions and have them listed as peer dependnecies. Please upgrade to these versions prior to bumping to 5.0.0.
+
+- RN 71.3 Bump
+- React 18 Bump
+- Reanimated V3 Bump
+
+### Handle A11y styling automatically for VStack components that use as="ul"
+
+We removed web api styling (margin-top, margin-bottom, padding-left) for `<Vstack as=ul >` components. The cds-migrator will flag usages of VStack that may be impacted. Please verify that they look as expected.

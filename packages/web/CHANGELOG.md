@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file.
 
 - **[all]** Base PR for Expo Migration, React Native 71.4, Reanimated V3 & React 18. [#1775](https://github.cbhq.net/frontend/cds/pull/1775), [DX-709](https://jira.coinbase-corp.com/browse/DX-709)
 - **[ui-mobile-playground, ui-mobile-visreg]** Release Candidate 1. [#1822](https://github.cbhq.net/frontend/cds/pull/1822)
+- [VStack] Updated VStack styling for when as="ul" is enabled [#1922](https://github.cbhq.net/frontend/cds/pull/1922), [DX-990](https://jira.coinbase-corp.com/browse/DX-990)
 
 #### 🐞 Fixes
 

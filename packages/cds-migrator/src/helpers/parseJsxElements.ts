@@ -1,17 +1,17 @@
 import fs from 'node:fs';
-import { Project, SyntaxKind } from 'ts-morph';
+import { Project, SourceFile, SyntaxKind } from 'ts-morph';
 
 import { JsxElementType } from './types';
 
 /** Parses source files for JSX Elements (self enclosed components and opening elements) and passes each element to a callback function */
-export default function parseJsxElements({
+export function parseJsxElements({
   path,
   project,
   callback,
 }: {
   path: string;
   project: Project;
-  callback: (jsx: JsxElementType) => void;
+  callback: (jsx: JsxElementType, sourceFile: SourceFile) => void;
 }) {
   const sourceContent = fs.readFileSync(path, 'utf-8');
   const sourceFile = project.createSourceFile(path, sourceContent);
@@ -21,6 +21,6 @@ export default function parseJsxElements({
   ];
 
   jsxElements.forEach((jsx) => {
-    callback(jsx);
+    callback(jsx, sourceFile);
   });
 }

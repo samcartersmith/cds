@@ -18,10 +18,7 @@ export type TransformFnType = {
  * and are Typescript projects
  * Passes the absolute path, tree, and project of each sourceFile to the @transformFn
  */
-export default async function parseSourceFiles(
-  tree: Tree,
-  transformFn: (params: TransformFnType) => void,
-) {
+export async function parseSourceFiles(tree: Tree, transformFn: (params: TransformFnType) => void) {
   const projects = getProjects(tree);
   logStartTask(`Grabbing source files with CDS as dependency`);
 
