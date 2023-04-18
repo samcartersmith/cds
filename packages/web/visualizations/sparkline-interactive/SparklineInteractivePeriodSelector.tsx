@@ -55,6 +55,9 @@ const SparklineInteractivePeriod = memo(
   SparklineInteractivePeriodWithGeneric,
 ) as typeof SparklineInteractivePeriodWithGeneric;
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export const SparklineInteractivePeriodSelector = <Period extends string>({
   selectedPeriod,
   setSelectedPeriod,

@@ -14,7 +14,7 @@ import { SparklineInteractive } from '../SparklineInteractive';
 
 export default {
   component: SparklineInteractive,
-  title: 'Core Components/SparklineInteractive',
+  title: 'Core Components/SparklineInteractive - (deprecate moved to cds-web-visualization)',
 };
 
 const SparklineInteractiveBuild = sparklineInteractiveBuilder({

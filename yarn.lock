@@ -2484,6 +2484,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/cds-web-visualization@workspace:^, @cbhq/cds-web-visualization@workspace:packages/web-visualization":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/cds-web-visualization@workspace:packages/web-visualization"
+  dependencies:
+    "@cbhq/d3": "workspace:^"
+    d3-interpolate-path: ^2.2.2
+    d3-selection: ^1.4.2
+    linaria: ^2.3.1
+    lodash: ^4.17.21
+  peerDependencies:
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
+    react: 18.2.0
+    react-dom: ^18.2.0
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/cds-web@workspace:^, @cbhq/cds-web@workspace:packages/web":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web@workspace:packages/web"
@@ -2498,7 +2517,7 @@ __metadata:
     "@popperjs/core": ^2.9.0
     "@storybook/testing-library": ^0.0.13
     d3-interpolate-path: ^2.2.2
-    d3-selection: 1.4.2
+    d3-selection: ^1.4.2
     focus-visible: ^5.2.0
     framer-motion: ^6.2.8
     linaria: ^2.3.1
@@ -2540,7 +2559,7 @@ __metadata:
     d3-dispatch: 1.0.6
     d3-ease: 1.0.7
     d3-format: 2.0.0
-    d3-selection: 1.4.2
+    d3-selection: ^1.4.2
     d3-time: 2.1.1
     d3-time-format: 3.0.0
     d3-timer: 1.0.10
@@ -2805,7 +2824,7 @@ __metadata:
 
 "@cbhq/mono-pipeline@npm:^0.11.17":
   version: 0.11.17
-  resolution: "@cbhq/mono-pipeline@npm:0.11.17::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.17.tgz"
+  resolution: "@cbhq/mono-pipeline@npm:0.11.17::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.17.tgz"
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/traverse": ^7.20.13
@@ -2919,8 +2938,8 @@ __metadata:
   linkType: hard
 
 "@cbhq/mono-templates@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "@cbhq/mono-templates@npm:0.6.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-templates%2F-%2F%40cbhq%2Fmono-templates-0.6.1.tgz"
+  version: 0.6.3
+  resolution: "@cbhq/mono-templates@npm:0.6.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-templates%2F-%2F%40cbhq%2Fmono-templates-0.6.3.tgz"
   dependencies:
     "@nrwl/devkit": 15.7.2
     execa: ^5.1.1
@@ -2929,7 +2948,7 @@ __metadata:
   peerDependencies:
     "@cbhq/data-layer-nx-tasks": ">=1.1.1"
     "@cbhq/mono-tasks": ">=0.7.1"
-  checksum: 1f99b9b94fd051230a25683ab78bd3f12261a5b59799df2eadb955f4f634bfee1d5c8b2dfaa7fa6b7a50269c6f71130981cd761455972645a8a62b379cf11357
+  checksum: 0bd9a11dca15b473d1840993174de39eb76e5bbb8099afe020e09885ab3581ea00d2d6c983b03296e06b9b28ce9f0bdd3295cc6cff7a29c5615ccfec1e7b11b9
   languageName: node
   linkType: hard
 
@@ -3030,6 +3049,7 @@ __metadata:
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
     "@cbhq/cds-web-overlays": "workspace:^"
+    "@cbhq/cds-web-visualization": "workspace:^"
     "@juggle/resize-observer": ^3.4.0
     "@percy/cli": ^1.13.0
     "@percy/storybook": ^4.3.4
@@ -10428,7 +10448,7 @@ __metadata:
 
 "@wayfair/one-version@npm:^0.4.0":
   version: 0.4.0
-  resolution: "@wayfair/one-version@npm:0.4.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40wayfair%2Fone-version%2F-%2Fone-version-0.4.0.tgz"
+  resolution: "@wayfair/one-version@npm:0.4.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40wayfair%2Fone-version%2F-%2Fone-version-0.4.0.tgz"
   dependencies:
     chalk: ^4
     commander: ^10
@@ -14300,7 +14320,7 @@ __metadata:
 
 "commander@npm:^10":
   version: 10.0.0
-  resolution: "commander@npm:10.0.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcommander%2F-%2Fcommander-10.0.0.tgz"
+  resolution: "commander@npm:10.0.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcommander%2F-%2Fcommander-10.0.0.tgz"
   checksum: 9f6495651f878213005ac744dd87a85fa3d9f2b8b90d1c19d0866d666bda7f735adfd7c2f10dfff345782e2f80ea258f98bb4efcef58e4e502f25f883940acfd
   languageName: node
   linkType: hard
@@ -15507,7 +15527,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3-selection@npm:1.4.2":
+"d3-selection@npm:^1.4.2":
   version: 1.4.2
   resolution: "d3-selection@npm:1.4.2"
   checksum: 2484b392259b087a98f546f2610e6a11c90f38dae6b6b20a3fc85171038fcab4c72e702788b1960a4fece88bed2e36f268096358b5b48d3c7f0d35cfbe305da6
@@ -23150,7 +23170,7 @@ __metadata:
 
 "jest-environment-jsdom@npm:^29.3.0, jest-environment-jsdom@npm:^29.5.0":
   version: 29.5.0
-  resolution: "jest-environment-jsdom@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-environment-jsdom%2F-%2Fjest-environment-jsdom-29.5.0.tgz"
+  resolution: "jest-environment-jsdom@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-environment-jsdom%2F-%2Fjest-environment-jsdom-29.5.0.tgz"
   dependencies:
     "@jest/environment": ^29.5.0
     "@jest/fake-timers": ^29.5.0
@@ -24011,7 +24031,7 @@ __metadata:
 
 "jest@npm:^29.5.0":
   version: 29.5.0
-  resolution: "jest@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest%2F-%2Fjest-29.5.0.tgz"
+  resolution: "jest@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest%2F-%2Fjest-29.5.0.tgz"
   dependencies:
     "@jest/core": ^29.5.0
     "@jest/types": ^29.5.0
@@ -24023,7 +24043,7 @@ __metadata:
     node-notifier:
       optional: true
   bin:
-    jest: bin/jest.js
+    jest: ./bin/jest.js
   checksum: a8ff2eb0f421623412236e23cbe67c638127fffde466cba9606bc0c0553b4c1e5cb116d7e0ef990b5d1712851652c8ee461373b578df50857fe635b94ff455d5
   languageName: node
   linkType: hard

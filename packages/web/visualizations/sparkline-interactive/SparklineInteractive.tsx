@@ -319,6 +319,9 @@ function SparklineInteractiveWithGeneric<Period extends string>({
   );
 }
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 // typescript doesn't understand the memo with the generic so it gets casted to a base react component
 export const SparklineInteractive = memo(
   SparklineInteractiveWithGeneric,

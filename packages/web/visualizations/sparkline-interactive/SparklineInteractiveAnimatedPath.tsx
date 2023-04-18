@@ -15,6 +15,9 @@ import { useSparklineInteractiveConstants } from './useSparklineInteractiveConst
 
 const { duration, easing } = animatedPathConfig;
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export const SparklineInteractiveAnimatedPath = memo(
   ({
     d = '',

@@ -12,6 +12,9 @@ const textClassName = css`
   align-items: center;
 `;
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export const SparklineInteractiveHoverDate = memo(() => {
   const { setHoverDateDOMNode } = useSparklineInteractiveScrubContext();
   const dateString = new Date().toLocaleString();

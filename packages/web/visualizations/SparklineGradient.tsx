@@ -9,6 +9,9 @@ import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroun
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 import { SparklinePath, SparklinePathRef } from './SparklinePath';
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export const SparklineGradient = memo(
   forwardRef<SparklinePathRef, SparklineBaseProps>(
     ({ background, color, path, height, width, yAxisScalingFactor, children }, forwardedRef) => {

@@ -2,6 +2,9 @@ import React from 'react';
 import { SparklineAreaPatternBaseProps } from '@cbhq/cds-common';
 import { useSparklineAreaOpacity } from '@cbhq/cds-common/visualizations/useSparklineAreaOpacity';
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export const SparklineAreaPattern = ({ color, id }: SparklineAreaPatternBaseProps) => {
   const fillOpacity = useSparklineAreaOpacity();
   return (

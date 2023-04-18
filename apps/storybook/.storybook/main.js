@@ -8,6 +8,7 @@ const BABEL_OPTIONS = { configFile: true, rootMode: 'upward' };
 const config = {
   framework: '@storybook/react', // required in v7
   stories: [
+    path.resolve(__dirname, `../../../packages/web-visualization/**/*.stories.@(tsx|mdx)`),
     path.resolve(__dirname, `../../../packages/web/**/*.stories.@(tsx|mdx)`),
     path.resolve(__dirname, `../../../packages/cds-web-overlays/**/*.stories.@(tsx|mdx)`),
   ],

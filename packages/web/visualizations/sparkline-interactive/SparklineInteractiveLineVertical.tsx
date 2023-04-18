@@ -44,6 +44,9 @@ const lineProps: React.SVGProps<SVGLineElement> = {
   strokeWidth: borderWidth.sparkline,
 };
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export const SparklineInteractiveLineVertical = memo(
   ({ color }: SparklineInteractiveLineVerticalProps) => {
     const { setLineDOMNode, setMaskDOMNode } = useSparklineInteractiveScrubContext();

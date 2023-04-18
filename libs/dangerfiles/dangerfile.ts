@@ -35,7 +35,7 @@ const fileIgnorePatterns = [
   '!**/types/*.ts',
 ];
 
-const cdsWebOverlayMovedComponents = [
+const overlayWebMovedComponents = [
   'packages/web/__stories__/AppSwitcher.stories.tsx',
   'packages/web/__stories__/AppSwitcherContent.tsx',
   'packages/web/__stories__/Navigation.stories.tsx',
@@ -82,6 +82,31 @@ const cdsWebOverlayMovedComponents = [
   'packages/web/overlays/Tooltip/useTooltipState.ts',
 ];
 
+const sparklineWebMovedComponents = [
+  'packages/web/visualizations/Counter.tsx',
+  'packages/web/visualizations/Sparkline.tsx',
+  'packages/web/visualizations/SparklineArea.tsx',
+  'packages/web/visualizations/SparklineAreaPattern.tsx',
+  'packages/web/visualizations/SparklineGradient.tsx',
+  'packages/web/visualizations/SparklinePath.tsx',
+  'packages/web/visualizations/VisualizationContainer.tsx',
+  'packages/web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx',
+  'packages/web/visualizations/sparkline-interactive-header/__stories__/SparklineInteractiveHeader.stories.tsx',
+  'packages/web/visualizations/sparkline-interactive/InnerSparklineInteractiveProvider.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractive.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubHandler.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubProvider.tsx',
+  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
+  'packages/web/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
+];
+
 /** See go/frozen-components for more info */
 const frozenComponentPatterns = [
   'packages/mobile/visualizations/sparkline-interactive/*.(ts|tsx)',
@@ -89,7 +114,8 @@ const frozenComponentPatterns = [
   'packages/web/dropdown/*.(ts|tsx)',
   'packages/web/overlays/popover/*.(ts|tsx)',
   'packages/common/animation/dropdown.ts',
-  ...cdsWebOverlayMovedComponents,
+  ...overlayWebMovedComponents,
+  ...sparklineWebMovedComponents,
 ];
 
 const nonTestTsFiles = danger.git.fileMatch(
