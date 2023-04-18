@@ -3,7 +3,8 @@ import fs from 'fs';
 import { ColorScheme } from '@cbhq/cds-common';
 import { objectKeys, writePrettyFile } from '@cbhq/script-utils';
 
-import { Deprecation, deprecations, MigrationMap, MigrationType } from './deprecations';
+import { deprecations } from './deprecations';
+import { Deprecation, DeprecationGroups, MigrationMap, MigrationType } from './types';
 
 const templateStart = '<!-- template-start -->';
 const githubBaseUrl = 'https://github.cbhq.net/frontend/cds/blob/';
@@ -115,9 +116,6 @@ const formatDeprecationGuide = ({
   </AccordionItem>`;
 };
 
-type DeprecationGroups = keyof Omit<Deprecation, 'endOfLife' | 'prevMajorVersion'>;
-type RemainingDeprecationGroups = Exclude<DeprecationGroups, 'props' | 'params'>;
-
 function formatDeprecations(deprecationObj: Deprecation): string {
   const groups: Record<DeprecationGroups, string[]> = {
     components: ['### 🧱 Components', ''],
@@ -175,27 +173,31 @@ function formatDeprecations(deprecationObj: Deprecation): string {
       groups.params.push('</Accordion>');
       return;
     }
-    if (deprecationObj[key]?.length) {
-      const groupForKey = groups[key as RemainingDeprecationGroups];
-      if (groupForKey) {
-        groupForKey.push('<Accordion>');
-        deprecationObj[key as RemainingDeprecationGroups]?.forEach(
-          ({ package: pkgName, name, path, type, migrationMap }) => {
-            groups[key as RemainingDeprecationGroups].push(
-              formatDeprecationGuide({
-                name,
-                pkgName,
-                type,
-                // @ts-expect-error Not sure why this thinks it's a partial
-                migrationMap,
-                guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
+    if (
+      deprecationObj[key]?.length &&
+      (key === 'components' ||
+        key === 'types' ||
+        key === 'hooks' ||
+        key === 'tokens' ||
+        key === 'functions')
+    ) {
+      const groupForKey = groups[key];
+
+      groupForKey.push('<Accordion>');
+      deprecationObj[key]?.forEach(({ package: pkgName, name, path, type, migrationMap }) => {
+        if (name && pkgName && type) {
+          groups[key].push(
+            formatDeprecationGuide({
+              name,
+              pkgName,
+              type,
+              guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
                 <p>${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}</p>`,
-              }),
-            );
-          },
-        );
-        groupForKey.push('</Accordion>');
-      }
+            }),
+          );
+        }
+      });
+      groupForKey.push('</Accordion>');
     }
   });
 
@@ -206,7 +208,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
   ];
 
   Object.values(groups).forEach((group) => {
-    if (group.length > 1) {
+    if (group.length > 2) {
       block.push('', ...group);
     }
   });
@@ -216,13 +218,28 @@ function formatDeprecations(deprecationObj: Deprecation): string {
 
 // Updates the Deprecations page on the go/cds website
 async function updateDeprecations() {
-  let contents = await fs.promises.readFile(fullPath, 'utf8');
+  const contents = await fs.promises.readFile(fullPath, 'utf8');
   const formattedDeprecations = deprecations.map((obj) => formatDeprecations(obj));
+  let updatedContents: string | null = null;
 
-  contents = contents.replace(`${templateStart}`, `${templateStart}\n\n${formattedDeprecations}`);
+  const startIndex = contents.indexOf(templateStart);
+
+  // So that we don't need to manually delete contents every time.
+  if (startIndex !== -1) {
+    updatedContents = `${contents.substring(
+      0,
+      startIndex,
+    )}${templateStart}\n\n${formattedDeprecations.join('\n\n')}`;
+  } else {
+    throw new Error('Unexpected: TemplateStart not found.');
+  }
+
+  if (updatedContents === null) {
+    throw new Error('Unexpected: Updated contents is null.');
+  }
 
   try {
-    await writePrettyFile(fullPath, contents);
+    await writePrettyFile(fullPath, updatedContents);
     console.log(chalk.green('Success! The Deprecations page has been updated.'));
   } catch (error) {
     console.error(chalk.red(`FAILED: ${error}`));
