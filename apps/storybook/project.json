@@ -59,9 +59,9 @@
     "storybook-e2e-test": {
       "executor": "nx:run-commands",
       "cwd": "apps/storybook",
+      "parallel": false,
       "options": {
         "commands": [
-          "npx playwright install-deps",
           "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"nx run storybook:build && npx http-server /workdir/.nx/outs/projects/apps/storybook/storybook --port 6006 --silent\" \"wait-on tcp:6006 && yarn workspace @cds/storybook test-storybook --index-json\""
         ]
       },

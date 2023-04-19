@@ -8,7 +8,6 @@ COPY . .
 
 # Install dependencies
 RUN yarn --immutable
-RUN yarn build
 
 # Build the package with nx
 RUN yarn nx run mobile-visualization:build
