@@ -145,13 +145,8 @@
   },
   "packageManager": "yarn@3.2.2",
   "lint-staged": {
-    "*.{js, ts}": [
-      "eslint --fix --ext .js --ext .ts",
-      "prettier --write",
-      "stylelint"
-    ],
-    "*.tsx": [
-      "eslint --fix --ext .tsx",
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
       "prettier --write",
       "stylelint"
     ],
