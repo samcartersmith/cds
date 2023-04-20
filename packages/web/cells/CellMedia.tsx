@@ -1,6 +1,6 @@
 import React, { cloneElement, memo } from 'react';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
+import { imageSize, mediaSize, pictogramScaleMultiplier } from '@cbhq/cds-common/tokens/cell';
 import type { CellMediaProps } from '@cbhq/cds-common/types';
 
 import { Icon } from '../icons/Icon';
@@ -12,6 +12,8 @@ export type { CellMediaProps };
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   const mediaSizeScaled = useScaleConditional(mediaSize);
   const imageSizeScaled = useScaleConditional(imageSize);
+  const pictogramScaleMultiplierScaled = useScaleConditional(pictogramScaleMultiplier);
+
   let size = mediaSizeScaled;
   let content = null;
 
@@ -40,8 +42,8 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   if (props.type === 'pictogram') {
     size = imageSizeScaled;
     content = cloneElement(props.illustration, {
-      width: size,
-      height: size,
+      dimension: '48x48',
+      scaleMultiplier: pictogramScaleMultiplierScaled,
     });
   }
 

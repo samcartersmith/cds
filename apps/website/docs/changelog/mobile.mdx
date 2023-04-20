@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 4.2.5 (4/20/2023 PST)
+
+#### 🐞 Fixes
+
+- **[CellMedia]** Fix Pictogram automatic density scaling. [[#1940](https://github.cbhq.net/frontend/cds/pull/1940)] [[DX-1119](https://jira.coinbase-corp.com/browse/DX-1119)]
 
 #### 📘 Misc
 

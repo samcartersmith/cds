@@ -3,7 +3,7 @@ import { cellPriorities } from '../tokens/cell';
 import { BorderRadius } from './BorderRadius';
 import { FallbackRectWidthProps } from './FallbackBaseProps';
 import { IconName } from './IconName';
-import { IllustrationPictogramNames } from './IllustrationNames';
+import { PictogramProps } from './IllustrationProps';
 import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
 import { OffsetProps, SpacingProps } from './SpacingProps';
@@ -94,11 +94,7 @@ export type CellMediaIconProps = {
 
 export type CellMediaPictogramProps = {
   type: Extract<CellMediaType, 'pictogram'>;
-  illustration: React.ReactElement<{
-    name: IllustrationPictogramNames;
-    height?: number;
-    width?: number;
-  }>;
+  illustration: React.ReactElement<PictogramProps>;
 } & SharedProps;
 
 export type CellMediaOtherProps = {
@@ -114,7 +110,7 @@ export type ContentCellBaseProps = {
   accessory?: CellAccessoryType;
   /** Description of content. Content will wrap accordingly. */
   description?: React.ReactNode;
-  /* Media (icon, asset, image, etc) to display at the start of the cell. */
+  /** Media (icon, asset, image, etc) to display at the start of the cell. */
   media?: React.ReactElement;
   /** Meta information to display at the end of the title. */
   meta?: React.ReactNode;

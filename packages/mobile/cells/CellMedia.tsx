@@ -2,7 +2,7 @@ import React, { cloneElement, memo } from 'react';
 import { ImageURISource } from 'react-native';
 import { CellMediaProps as CellMediaBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
-import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
+import { imageSize, mediaSize, pictogramScaleMultiplier } from '@cbhq/cds-common/tokens/cell';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
@@ -19,6 +19,8 @@ export type CellMediaProps = CellMediaBaseProps & {
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   const mediaSizeScaled = useScaleConditional(mediaSize);
   const imageSizeScaled = useScaleConditional(imageSize);
+  const pictogramScaleMultiplierScaled = useScaleConditional(pictogramScaleMultiplier);
+
   let size = mediaSizeScaled;
   let content = null;
 
@@ -59,8 +61,8 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   if (props.type === 'pictogram') {
     size = imageSizeScaled;
     content = cloneElement(props.illustration, {
-      width: size,
-      height: size,
+      dimension: '48x48',
+      scaleMultiplier: pictogramScaleMultiplierScaled,
     });
   }
 
