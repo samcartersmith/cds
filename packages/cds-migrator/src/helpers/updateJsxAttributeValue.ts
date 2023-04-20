@@ -1,12 +1,12 @@
-import { SyntaxKind } from 'ts-morph';
+import { JsxOpeningElement, JsxSelfClosingElement, SyntaxKind } from 'ts-morph';
 
-import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from './findReplaceInComponent';
+export type UpdateJsxAttributeValue = {
+  updateMap: Record<string, string>;
+  attribute: string;
+  jsx: JsxOpeningElement | JsxSelfClosingElement;
+};
 
-export function updateJsxAttributeValue({
-  updateMap,
-  attribute,
-  jsx,
-}: FindReplaceCallbackParams): FindReplaceCallbackReturnType {
+export function updateJsxAttributeValue({ updateMap, attribute, jsx }: UpdateJsxAttributeValue) {
   let oldValue: string | undefined;
   let newValue: string | undefined;
 
@@ -14,6 +14,10 @@ export function updateJsxAttributeValue({
   const attributeToUpdate = jsx.getAttribute(attribute);
   /** The `cbOnePercentOff` in <HeroSquare name="cbOnePercentOff" */
   const stringLiteral = attributeToUpdate?.getFirstDescendantByKind(SyntaxKind.StringLiteral);
+
+  const jsxExpressionIdentifier = attributeToUpdate
+    ?.getFirstDescendantByKind(SyntaxKind.JsxExpression)
+    ?.getFirstDescendantByKind(SyntaxKind.Identifier);
 
   if (stringLiteral) {
     const stringLiteralText = stringLiteral?.getLiteralText();
@@ -23,15 +27,23 @@ export function updateJsxAttributeValue({
       stringLiteral.setLiteralValue(newValue);
     }
   }
+  if (jsxExpressionIdentifier) {
+    const literalValue = jsxExpressionIdentifier.getType().getLiteralValue();
 
-  // @ts-expect-error TODO: fix this
+    oldValue = literalValue && typeof literalValue === 'string' ? literalValue : undefined;
+    newValue = oldValue ? updateMap[oldValue] : undefined;
+    if (newValue !== undefined) {
+      jsxExpressionIdentifier.rename(newValue);
+    }
+  }
+
   return {
     oldValue,
     newValue,
     details: {
       attributeToUpdate: attributeToUpdate?.print(),
       stringLiteral: stringLiteral?.print(),
-      // jsxExpressionIdentifier: jsxExpressionIdentifier?.print(),
+      jsxExpressionIdentifier: jsxExpressionIdentifier?.print(),
     },
   };
 }

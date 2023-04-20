@@ -8,7 +8,6 @@
   "properties": {
     "version": {
       "type": "string",
-      "x-prompt": "What version would you like to migrate to?",
       "enum": [
         "4.0.0"
       ],
