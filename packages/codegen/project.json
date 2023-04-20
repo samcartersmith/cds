@@ -78,7 +78,7 @@
       "options": {
         "script": "./website/updateWebsiteChangelogs.ts",
         "args": [
-          "--packages=common|icons|illustrations|lottie-files|mobile|ui-mobile-playground|web|utils|fonts"
+          "--packages=common|icons|illustrations|lottie-files|mobile|ui-mobile-playground|web|utils|fonts|docusaurus-theme|docusaurus-plugin-kbar"
         ]
       }
     },

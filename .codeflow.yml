@@ -26,6 +26,22 @@ build:
         path: ./apps/storybook/production.Dockerfile
     # Packages
     - BaldurNode:
+        name: package-cds-docusaurus-plugin-kbar
+        path: ./packages/docusaurus-plugin-kbar/publish.Dockerfile
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
+        expire_keep_tags_after_days: 1
+        expire_tmp_tags_after_days: 1
+        expire_all_after_days: 2
+    - BaldurNode:
+        name: package-cds-docusaurus-theme
+        path: ./packages/docusaurus-theme/publish.Dockerfile
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
+        expire_keep_tags_after_days: 1
+        expire_tmp_tags_after_days: 1
+        expire_all_after_days: 2
+    - BaldurNode:
         name: package-cds-common
         path: ./packages/common/publish.Dockerfile
     - BaldurNode:
