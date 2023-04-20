@@ -10,4 +10,8 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Test package deployment.
+
+#### 📘 Misc
+
 - Merge master into release.
