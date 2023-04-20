@@ -1,11 +1,8 @@
 import { Tree } from '@nrwl/devkit';
 
-import {
-  logStartTask,
-  parseSourceFiles,
-  TransformFnType,
-  updateImportPath,
-} from '../../helpers/index';
+import { logStartTask } from '../../helpers/logStartTask';
+import parseSourceFiles, { TransformFnType } from '../../helpers/parseSourceFiles';
+import updateImportPath from '../../helpers/updateImportPath';
 
 const OLD_IMPORT = '@cbhq/cds-web/styles/icon-font.css';
 const NEW_IMPORT = '@cbhq/cds-icons/fonts/web/icon-font.css';

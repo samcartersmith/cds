@@ -11,4 +11,3 @@ All notable changes to this project will be documented in this file.
 #### 💥 Breaking
 
 - Create cds-migrator.
-- Added 5.0.0 Migration script & helper function for prop/value comparison [#1922](https://github.cbhq.net/frontend/cds/pull/1922)

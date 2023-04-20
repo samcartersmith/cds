@@ -1,16 +1,13 @@
 import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
-import {
-  fileIncludesRenamedValue,
-  findReplaceInComponent,
-  getComponentName,
-  logStartTask,
-  parseJsxElements,
-  parseSourceFiles,
-  TransformFnType,
-  updateJsxAttributeValue,
-} from '../../helpers/index';
+import { fileIncludesRenamedValue } from '../../helpers/fileIncludesRenamedValue';
+import { findReplaceInComponent } from '../../helpers/findReplaceInComponent';
+import { getComponentName } from '../../helpers/getComponentName';
+import { logStartTask } from '../../helpers/logStartTask';
+import parseJsxElements from '../../helpers/parseJsxElements';
+import parseSourceFiles, { TransformFnType } from '../../helpers/parseSourceFiles';
+import { updateJsxAttributeValue } from '../../helpers/updateJsxAttributeValue';
 
 import { illustrationRenames } from './data/illustrationRenames';
 

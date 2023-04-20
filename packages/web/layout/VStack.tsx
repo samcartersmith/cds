@@ -10,14 +10,9 @@ import { Spacer } from './Spacer';
 export type VStackProps<As extends BoxElement> = Omit<BoxProps<As>, 'flexDirection'> &
   StackBaseProps;
 
-const a11yStyleOverrides = {
-  marginTop: 0,
-  marginBottom: 0,
-};
-
 const OldVStack = memo(
   forwardRef(function OldVStack<As extends BoxElement = 'div'>(
-    { as, children, gap, dangerouslySetStyle, spacingStart, ...props }: VStackProps<As>,
+    { as, children, gap, ...props }: VStackProps<As>,
     forwardedRef: ForwardedRef<HTMLElement>,
   ) {
     const content = gap
@@ -27,22 +22,8 @@ const OldVStack = memo(
         )
       : children;
 
-    const styles =
-      as === 'ul'
-        ? ({ ...a11yStyleOverrides, ...dangerouslySetStyle } as React.CSSProperties)
-        : dangerouslySetStyle;
-
-    const spacingStartValue = as === 'ul' && !spacingStart ? 0 : spacingStart;
-
     return (
-      <Box
-        {...props}
-        ref={forwardedRef}
-        as={as}
-        flexDirection="column"
-        spacingStart={spacingStartValue}
-        dangerouslySetStyle={styles}
-      >
+      <Box {...props} ref={forwardedRef} as={as} flexDirection="column">
         {content}
       </Box>
     );

@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { Project } from 'ts-morph';
 
 import { findReplaceInFile } from './findReplaceInFile';
-import { parseJsxElements } from './parseJsxElements';
+import parseJsxElements from './parseJsxElements';
 import {
   AttributeValueRenameMapShape,
   JsxElementType,
