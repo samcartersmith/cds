@@ -1,7 +1,5 @@
 FROM 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v18
 
-RUN apt-get update && apt-get install
-
 WORKDIR /repo
 
 COPY . .
@@ -13,7 +11,7 @@ RUN yarn --immutable
 RUN yarn nx run cds-migrator:build
 
 # Prepare the package for publish
-RUN cd packages/cds-migrator && yarn pack 
+RUN cd packages/cds-migrator && yarn pack
 RUN mv /repo/packages/cds-migrator /shared
 
 WORKDIR /shared

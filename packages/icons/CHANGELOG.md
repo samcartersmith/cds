@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Update publish.Dockerfile files. [[#1943](https://github.cbhq.net/frontend/cds/pull/1943)]
+
 ## 1.3.0 (4/5/2023 PST)
 
 #### 🚀 Updates
