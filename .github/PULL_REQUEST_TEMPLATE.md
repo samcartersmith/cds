@@ -30,7 +30,7 @@ _Web_
 | -------------- | -------------- |
 | old screenshot | new screenshot |
 
-\*\*How has it been tested?
+**How has it been tested?**
 
 <!-- Automated tests are required for all code changes. If your change cannot be tested, please describe the reason here. -->
 
