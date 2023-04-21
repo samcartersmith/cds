@@ -121,6 +121,7 @@ export function createRenameScript<RenameMap extends RenameMapShape>({
 
       if (newContent) {
         tree.write(relativeFilePath, newContent);
+        fs.writeFileSync(absoluteFilePath, newContent, 'utf-8');
       }
     }
 
