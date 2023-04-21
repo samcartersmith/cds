@@ -9,7 +9,7 @@ To make feature requests, report bugs, or request assistance when working with C
 - For design inquiries: #ask-design-foundations
 - For engineering inquiries: #ask-dx-ui-systems
 
-## Get Started
+## Getting Started
 
 1. To get started you can run the following commands:
 
