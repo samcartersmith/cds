@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-mobile-visualization",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Coinbase Design System - Mobile Visualization Native",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -8,8 +8,8 @@
     "mobile",
     "native"
   ],
-  "types": "src/index.d.ts",
-  "main": "src/index",
+  "types": "index.d.ts",
+  "main": "index",
   "dependencies": {
     "d3-interpolate-path": "^2.2.2",
     "lodash": "^4.17.21"

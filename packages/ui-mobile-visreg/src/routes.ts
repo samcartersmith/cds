@@ -239,7 +239,8 @@ export const routes = [
   {
     key: 'SparklineGradientV2',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/__stories__/SparklineGradientV2.stories').default,
+      require('@cbhq/cds-mobile-visualization/src/sparkline/__stories__/SparklineGradientV2.stories')
+        .default,
   },
   {
     key: 'SparklineInteractive_Deprecated',
@@ -256,19 +257,20 @@ export const routes = [
   {
     key: 'SparklineInteractiveHeaderV2',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline-interactive-header/__stories__/SparklineInteractiveHeaderV2.stories')
+      require('@cbhq/cds-mobile-visualization/src/sparkline/sparkline-interactive-header/__stories__/SparklineInteractiveHeaderV2.stories')
         .default,
   },
   {
     key: 'SparklineInteractiveV2',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline-interactive/__stories__/SparklineInteractiveV2.stories')
+      require('@cbhq/cds-mobile-visualization/src/sparkline/sparkline-interactive/__stories__/SparklineInteractiveV2.stories')
         .default,
   },
   {
     key: 'SparklineV2',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/__stories__/SparklineV2.stories').default,
+      require('@cbhq/cds-mobile-visualization/src/sparkline/__stories__/SparklineV2.stories')
+        .default,
   },
   {
     key: 'Spectrum',

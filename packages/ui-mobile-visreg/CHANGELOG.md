@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Sync changelog.
+
+#### 📘 Misc
+
 - Rebase sparkline-mobile decomposition on release branch.
 
 #### 📘 Misc

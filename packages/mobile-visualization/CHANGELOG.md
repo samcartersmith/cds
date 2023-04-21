@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Move sparkline code into own folder to enable scalability of package.
+
+#### 📘 Misc
+
 - Correct Deployment script and move sparkline code into nested folder to enable package scalability.
 
 #### 📘 Misc
