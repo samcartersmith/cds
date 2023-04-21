@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-commented-out-tests */
 import { render, screen } from '@testing-library/react-native';
 import { CellScaleDensity } from '@cbhq/cds-common/tokens/cell';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
@@ -18,6 +19,154 @@ describe('CellMedia', () => {
   afterAll(() => {
     useScaleConditionalSpy.mockRestore();
   });
+
+  it('icon passes accessibility', () => {
+    render(<CellMedia type="icon" name="arrowUp" testID="cell-media-id" />);
+
+    expect(screen.getByTestId('cell-media-id')).toBeAccessible();
+  });
+
+  it('asset passes accessibility', () => {
+    render(<CellMedia type="asset" source="some/image/path" testID="cell-media-id" />);
+
+    expect(screen.getByTestId('cell-media-id')).toBeAccessible();
+  });
+
+  it('avatar passes accessibility', () => {
+    render(<CellMedia type="avatar" source="some/image/path" testID="cell-media-id" />);
+
+    expect(screen.getByTestId('cell-media-id')).toBeAccessible();
+  });
+
+  it('image passes accessibility', () => {
+    render(<CellMedia type="image" source="some/image/path" testID="cell-media-id" />);
+
+    expect(screen.getByTestId('cell-media-id')).toBeAccessible();
+  });
+
+  it('pictogram passes accessibility', () => {
+    render(
+      <CellMedia type="pictogram" illustration={<Pictogram name="2fa" />} testID="cell-media-id" />,
+    );
+
+    expect(screen.getByTestId('cell-media-id')).toBeAccessible();
+  });
+
+  // TODO: enable when accessibility is hooked up for icon type
+  // it('icon sets an accessible label', () => {
+  //   render(
+  //     <CellMedia
+  //       type="icon"
+  //       name="arrowUp"
+  //       accessibilityLabel="Icon label"
+  //       accessibilityHint="Icon hint"
+  //     />,
+  //   );
+
+  //   expect(screen.getByLabelText('Icon label')).toBeTruthy();
+  //   expect(screen.getByHintText('Icon hint')).toBeTruthy();
+  // });
+
+  it('asset sets an accessible label', () => {
+    render(
+      <CellMedia
+        type="asset"
+        source="some/image/path"
+        accessibilityLabel="Asset label"
+        accessibilityHint="Asset hint"
+      />,
+    );
+
+    expect(screen.getByLabelText('Asset label')).toBeTruthy();
+    expect(screen.getByHintText('Asset hint')).toBeTruthy();
+  });
+
+  it('avatar sets an accessible label', () => {
+    render(
+      <CellMedia
+        type="avatar"
+        source="some/image/path"
+        accessibilityLabel="Avatar label"
+        accessibilityHint="Avatar hint"
+      />,
+    );
+
+    expect(screen.getByLabelText('Avatar label')).toBeTruthy();
+    expect(screen.getByHintText('Avatar hint')).toBeTruthy();
+  });
+
+  it('image sets an accessible label', () => {
+    render(
+      <CellMedia
+        type="image"
+        source="some/image/path"
+        accessibilityLabel="Image label"
+        accessibilityHint="Image hint"
+      />,
+    );
+
+    expect(screen.getByLabelText('Image label')).toBeTruthy();
+    expect(screen.getByHintText('Image hint')).toBeTruthy();
+  });
+
+  // TODO: enable when accessibility is hooked up for pictogram type
+  // it('pictogram sets an accessible label', () => {
+  //   render(
+  //     <CellMedia
+  //       type="pictogram"
+  //       illustration={<Pictogram name="2fa" />}
+  //       accessibilityLabel="Pictogram label"
+  //       accessibilityHint="Pictogram hint"
+  //     />,
+  //   );
+
+  //   expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
+  //   expect(screen.getByHintText('Pictogram hint')).toBeTruthy();
+  // });
+
+  // it('pictogram sets an accessible label on CellMedia', () => {
+  //   render(
+  //     <CellMedia
+  //       type="pictogram"
+  //       illustration={<Pictogram name="2fa" />}
+  //       accessibilityLabel="Pictogram label"
+  //       accessibilityHint="Pictogram hint"
+  //     />,
+  //   );
+
+  //   expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
+  //   expect(screen.getByHintText('Pictogram hint')).toBeTruthy();
+  // });
+
+  // it('pictogram sets an accessible label on Pictogram', () => {
+  //   render(
+  //     <CellMedia
+  //       type="pictogram"
+  //       illustration={
+  //         <Pictogram name="2fa" accessibilityLabel="Pictogram label" accessibilityHint="Pictogram hint" />
+  //       }
+  //     />,
+  //   );
+
+  //   expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
+  //   expect(screen.getByHintText('Pictogram hint')).toBeTruthy();
+  // });
+
+  // it('pictogram CellMedia accessible labels override Pictogram accessible labels', () => {
+  //   render(
+  //     <CellMedia
+  //       type="pictogram"
+  //       illustration={
+  //         <Pictogram name="2fa" accessibilityLabel="Pictogram label" accessibilityHint="Pictogram hint" />
+  //       }
+  //       accessibilityLabel="CellMedia label"
+  //       accessibilityHint="CellMedia hint"
+  //     />,
+  //   );
+
+  //   expect(screen.getByLabelText('CellMedia label')).toBeTruthy();
+  //   expect(screen.getByHintText('CellMedia hint')).toBeTruthy();
+  // });
 
   it('renders an icon', () => {
     render(<CellMedia type="icon" name="arrowUp" />);

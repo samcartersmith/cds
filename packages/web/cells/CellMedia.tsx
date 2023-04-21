@@ -1,13 +1,17 @@
 import React, { cloneElement, memo } from 'react';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { imageSize, mediaSize, pictogramScaleMultiplier } from '@cbhq/cds-common/tokens/cell';
-import type { CellMediaProps } from '@cbhq/cds-common/types';
+import type {
+  CellMediaProps as CellMediaBaseProps,
+  SharedAccessibilityProps,
+} from '@cbhq/cds-common/types';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
-export type { CellMediaProps };
+export type CellMediaProps = CellMediaBaseProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   const mediaSizeScaled = useScaleConditional(mediaSize);
@@ -18,7 +22,14 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   let content = null;
 
   if (props.type === 'icon') {
-    content = <Icon size="s" name={props.name} color={props.color ?? 'foreground'} />;
+    content = (
+      <Icon
+        size="s"
+        name={props.name}
+        color={props.color ?? 'foreground'}
+        accessibilityLabel={props.accessibilityLabel}
+      />
+    );
   }
 
   if (props.type === 'asset' || props.type === 'avatar' || props.type === 'image') {
@@ -30,7 +41,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
 
     content = (
       <RemoteImage
-        alt={props.title}
+        alt={props.accessibilityLabel ?? props.title}
         source={String(props.source)}
         shape={isImage ? 'squircle' : 'circle'}
         width={size}
@@ -44,6 +55,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
     content = cloneElement(props.illustration, {
       dimension: '48x48',
       scaleMultiplier: pictogramScaleMultiplierScaled,
+      alt: props.accessibilityLabel ?? props.illustration.props.alt,
     });
   }
 

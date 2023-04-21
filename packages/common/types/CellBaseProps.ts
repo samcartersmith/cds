@@ -99,6 +99,11 @@ export type CellMediaPictogramProps = {
 
 export type CellMediaOtherProps = {
   type: Exclude<CellMediaType, 'icon' | 'pictogram'>;
+  /**
+   * @deprecated This prop will be removed at the end of Q32023.
+   * If required, use `accessibilityLabel` and `accessibilityHint` instead to set accessible labels.
+   * Refer to https://cds.cbhq.net/components/cell-media/ for updated accessibility guidance.
+   */
   title?: string;
   source: CellMediaSource;
 } & SharedProps;

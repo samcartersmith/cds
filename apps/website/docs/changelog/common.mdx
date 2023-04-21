@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.6 (4/20/2023 PST)
+
+#### 🐞 Fixes
+
+- **[CellMedia]** Deprecate title prop in favor of accessibility props. [[#1946](https://github.cbhq.net/frontend/cds/pull/1946)] [[DX-548](https://jira.coinbase-corp.com/browse/DX-548)]
+
 ## 4.2.5 (4/20/2023 PST)
 
 #### 🐞 Fixes

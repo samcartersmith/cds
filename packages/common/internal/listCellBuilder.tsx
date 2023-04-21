@@ -415,7 +415,7 @@ export function listCellBuilder(
         title="Avatar"
         description="Description"
         detail="Detail"
-        media={<CellMedia type="avatar" source={assets.eth.imageUrl} title="Title" />}
+        media={<CellMedia type="avatar" source={assets.eth.imageUrl} />}
       />
 
       <ListCell
@@ -423,13 +423,13 @@ export function listCellBuilder(
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        media={<CellMedia type="asset" source={assets.eth.imageUrl} title="Title" />}
+        media={<CellMedia type="asset" source={assets.eth.imageUrl} />}
       />
 
       <ListCell
         title="Image"
         detail="Detail"
-        media={<CellMedia type="image" source={assets.eth.imageUrl} title="Title" />}
+        media={<CellMedia type="image" source={assets.eth.imageUrl} />}
       />
 
       <ListCell

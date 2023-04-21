@@ -86,14 +86,14 @@ export function contentCellBuilder(
         title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         subtitle="Subtitle is short lol"
         description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
-        media={<CellMedia type="avatar" source={assets.eth.imageUrl} title="Title" />}
+        media={<CellMedia type="avatar" source={assets.eth.imageUrl} />}
         accessory="more"
       />
 
       <ContentCell
         title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         meta="Long meta title"
-        media={<CellMedia type="avatar" source={assets.eth.imageUrl} title="Title" />}
+        media={<CellMedia type="avatar" source={assets.eth.imageUrl} />}
       />
     </>
   );
@@ -148,7 +148,7 @@ export function contentCellBuilder(
         title="Avatar"
         description="Description"
         subtitle="Subtitle"
-        media={<CellMedia type="avatar" source={assets.eth.imageUrl} title="Title" />}
+        media={<CellMedia type="avatar" source={assets.eth.imageUrl} />}
       />
 
       <ContentCell
@@ -156,14 +156,14 @@ export function contentCellBuilder(
         description="Description"
         meta="Meta"
         subtitle="Subtitle"
-        media={<CellMedia type="asset" source={assets.eth.imageUrl} title="Title" />}
+        media={<CellMedia type="asset" source={assets.eth.imageUrl} />}
       />
 
       <ContentCell
         title="Image"
         subtitle="Subtitle"
         meta="Meta"
-        media={<CellMedia type="image" source={assets.eth.imageUrl} title="Title" />}
+        media={<CellMedia type="image" source={assets.eth.imageUrl} />}
       />
 
       <ContentCell

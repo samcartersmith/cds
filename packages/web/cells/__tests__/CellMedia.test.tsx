@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { CellScaleDensity } from '@cbhq/cds-common/tokens/cell';
+import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Pictogram } from '../../illustrations';
@@ -19,16 +20,94 @@ describe('CellMedia', () => {
     useScaleConditionalSpy.mockRestore();
   });
 
-  it('passes accessibility', async () => {
+  it('icon passes accessibility', async () => {
+    expect(await renderA11y(<CellMedia type="icon" name="arrowUp" />)).toHaveNoViolations();
+  });
+
+  it('asset passes accessibility', async () => {
     expect(
-      await renderA11y(<CellMedia type="asset" source="some/image/path" title="Test" />),
+      await renderA11y(<CellMedia type="asset" source="some/image/path" />),
     ).toHaveNoViolations();
+  });
+
+  it('avatar passes accessibility', async () => {
+    expect(
+      await renderA11y(<CellMedia type="avatar" source="some/image/path" />),
+    ).toHaveNoViolations();
+  });
+
+  it('image passes accessibility', async () => {
+    expect(
+      await renderA11y(<CellMedia type="image" source="some/image/path" />),
+    ).toHaveNoViolations();
+  });
+
+  it('pictogram passes accessibility', async () => {
+    expect(
+      await renderA11y(<CellMedia type="pictogram" illustration={<Pictogram name="2fa" />} />),
+    ).toHaveNoViolations();
+  });
+
+  it('icon sets an accessible label', () => {
+    render(<CellMedia type="icon" name="arrowUp" accessibilityLabel="Icon label" />);
+
+    expect(screen.getByLabelText('Icon label')).toBeVisible();
+  });
+
+  it('asset sets an accessible label', () => {
+    render(<CellMedia type="asset" source="some/image/path" accessibilityLabel="Asset label" />);
+
+    expect(screen.getByAltText('Asset label')).toBeVisible();
+  });
+
+  it('avatar sets an accessible label', () => {
+    render(<CellMedia type="avatar" source="some/image/path" accessibilityLabel="Avatar label" />);
+
+    expect(screen.getByAltText('Avatar label')).toBeVisible();
+  });
+
+  it('image sets an accessible label', () => {
+    render(<CellMedia type="image" source="some/image/path" accessibilityLabel="Image label" />);
+
+    expect(screen.getByAltText('Image label')).toBeVisible();
+  });
+
+  it('pictogram sets an accessible label on CellMedia', () => {
+    render(
+      <CellMedia
+        type="pictogram"
+        illustration={<Pictogram name="2fa" />}
+        accessibilityLabel="Pictogram label"
+      />,
+    );
+
+    expect(screen.getByAltText('Pictogram label')).toBeVisible();
+  });
+
+  it('pictogram sets an accessible label on Pictogram', () => {
+    render(
+      <CellMedia type="pictogram" illustration={<Pictogram name="2fa" alt="Pictogram label" />} />,
+    );
+
+    expect(screen.getByAltText('Pictogram label')).toBeVisible();
+  });
+
+  it('pictogram CellMedia accessible label overrides Pictogram accessible label', () => {
+    render(
+      <CellMedia
+        type="pictogram"
+        illustration={<Pictogram name="2fa" alt="Pictogram label" />}
+        accessibilityLabel="CellMedia label"
+      />,
+    );
+
+    expect(screen.getByAltText('CellMedia label')).toBeVisible();
   });
 
   it('renders an icon', () => {
     render(<CellMedia type="icon" name="arrowUp" />);
 
-    expect(screen.getByTestId('icon-base-glyph')).toHaveAttribute('data-icon-name', 'arrowUp');
+    expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toBeVisible();
   });
 
   it('renders an asset', () => {
@@ -65,7 +144,7 @@ describe('CellMedia', () => {
     it('sets icon size', () => {
       render(<CellMedia type="icon" name="arrowUp" />);
 
-      expect(screen.getByTestId('icon-base-glyph')).toHaveStyle({ fontSize: '16px' });
+      expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toHaveStyle({ fontSize: '16px' });
     });
 
     it('sets asset size', () => {
@@ -122,7 +201,7 @@ describe('CellMedia', () => {
     it('sets icon size', () => {
       render(<CellMedia type="icon" name="arrowUp" />);
 
-      expect(screen.getByTestId('icon-base-glyph')).toHaveStyle({ fontSize: '12px' });
+      expect(screen.getByText(glyphMap['ui-arrowUp-12'])).toHaveStyle({ fontSize: '12px' });
     });
 
     it('sets asset size', () => {

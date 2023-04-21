@@ -1997,3 +1997,53 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
     </VStack>
   </AccordionItem>
 </Accordion>
+
+## Q32023 Deprecations
+
+The following items will be deleted at the end of Q32023 in a breaking release. Release version is TBD.
+
+### 🎭 Props
+
+<Accordion>
+  <AccordionItem
+    itemKey="CellMedia.title.web"
+    title={
+      <HStack gap={1}>
+        CellMedia.title <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>title</code> has been replaced with <code>accessibilityLabel</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="CellMedia.title.mobile"
+    title={
+      <HStack gap={1}>
+        CellMedia.title <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>title</code> has been replaced with{' '}
+            <code>accessibilityLabel and accessibilityHint</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
