@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Add index files because deep imports aren't supported in all projects.
+
+#### 📘 Misc
+
 - Correct Deployment script.
 
 #### 📘 Misc

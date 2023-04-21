@@ -3,8 +3,8 @@
   "version": "0.0.2",
   "description": "",
   "keywords": [],
-  "typings": "index.d.ts",
   "main": "index",
+  "typings": "index.d.ts",
   "peerDependencies": {
     "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-utils": "workspace:^",
