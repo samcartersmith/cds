@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import { writePrettyFile } from '@cbhq/script-utils';
 
 import { ProjectParser } from './parsers/ProjectParser';
+import { getListOfComponentsAndImports } from './utils/getListOfComponentsAndImports';
 import { getPreviousStats } from './utils/getPreviousStats';
 import { cleanup, getTempRepos } from './utils/getTempRepos';
 import { preGenerateCleanup } from './utils/preGenerateCleanup';
@@ -126,6 +127,7 @@ async function main() {
     await getTempRepos();
     // Required to associate adopters with their stats.json file for Adoption Overview page.
     await generateAdoptionFiles();
+    await getListOfComponentsAndImports();
     cleanup();
   } catch (err) {
     if (err instanceof Error) {
