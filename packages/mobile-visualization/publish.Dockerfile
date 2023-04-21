@@ -13,7 +13,7 @@ RUN yarn --immutable
 RUN yarn nx run mobile-visualization:build
 
 # Prepare the package for publish
-RUN cd packages/mobile-visualization && yarn pack
-RUN mv /repo/packages/mobile-visualization /shared
+RUN cd /repo/.nx/dist/packages/mobile-visualization && npm pack
+RUN mv /repo/.nx/dist/packages/mobile-visualization /shared
 
 WORKDIR /shared

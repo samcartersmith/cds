@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Correct Deployment script.
+
+#### 📘 Misc
+
 - Test package deployment.
 
 #### 📘 Misc

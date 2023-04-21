@@ -13,7 +13,7 @@ RUN yarn --immutable
 RUN yarn nx run cds-web-overlays:build
 
 # Prepare the package for publish
-RUN cd packages/cds-web-overlays && yarn pack
-RUN mv /repo/packages/cds-web-overlays /shared
+RUN cd /repo/.nx/dist/packages/cds-web-overlays && npm pack
+RUN mv /repo/.nx/dist/packages/cds-web-overlays /shared
 
 WORKDIR /shared
