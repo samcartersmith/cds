@@ -17,7 +17,7 @@
     "codeowners": "mono-pipeline sync-codeowners",
     "diagnose": "mono-env diagnose --group common web mobile",
     "setup": "yarn build-required-packages && mono-env setup --group common web mobile",
-    "release": "yarn mono-pipeline validate-versioned --projectsWithNoSrcFolder='web,mobile,common' && yarn nx run codegen:updatePkgsForGenericBump && yarn nx run codegen:updateWebsiteChangelogs",
+    "release": "yarn mono-pipeline validate-versioned --projectsWithNoSrcFolder='web,mobile,common' && yarn nx run codegen:updatePkgsForGenericBump && yarn nx run codegen:updateWebsiteChangelogs && yarn nx run cds-tasks:validate-website-changelog-updates",
     "one-version:check": "one-version check",
     "postinstall": "husky install"
   },

@@ -21,3 +21,7 @@ All notable changes to this project will be documented in this file.
 #### 📘 Misc
 
 - Publish docusaurus-theme. [[#1941](https://github.cbhq.net/frontend/cds/pull/1941)]
+
+## 0.0.1
+
+Initial creation of the docusaurus theme package.

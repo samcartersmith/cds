@@ -76,10 +76,7 @@
     "updateWebsiteChangelogs": {
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "script": "./website/updateWebsiteChangelogs.ts",
-        "args": [
-          "--packages=common|icons|illustrations|lottie-files|mobile|ui-mobile-playground|web|utils|fonts|docusaurus-theme|docusaurus-plugin-kbar|cds-migrator"
-        ]
+        "script": "./website/updateWebsiteChangelogs.ts"
       }
     },
     "updatePkgsForGenericBump": {
