@@ -12,4 +12,8 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Revert 1943. [[#1945](https://github.cbhq.net/frontend/cds/pull/1945)]
+
+#### 📘 Misc
+
 - Publish docusaurus-plugin-kbar. [[#1941](https://github.cbhq.net/frontend/cds/pull/1941)]

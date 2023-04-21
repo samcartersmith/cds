@@ -1,5 +1,7 @@
 FROM 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v18
 
+RUN apt-get update && apt-get install
+
 WORKDIR /repo
 
 COPY . .
@@ -11,7 +13,7 @@ RUN yarn --immutable
 RUN yarn nx run icons:build
 
 # Prepare the package for publish
-RUN cd packages/icons && yarn pack
+RUN cd packages/icons && yarn pack 
 RUN mv /repo/packages/icons /shared
 
 WORKDIR /shared
