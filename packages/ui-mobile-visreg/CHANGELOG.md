@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Update route generator script.
+
+#### 📘 Misc
+
 - Sync changelog.
 
 #### 📘 Misc

@@ -12,10 +12,10 @@ import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePrefere
 import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
 import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
-import { routes as codegenRoutes } from '@cbhq/ui-mobile-playground';
 import { Playground } from '@cbhq/ui-mobile-playground';
 
 import { useFonts } from './hooks/useFonts';
+import { routes as codegenRoutes } from './routes';
 
 const linking = {
   prefixes: [Linking.createURL('/')],

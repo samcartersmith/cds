@@ -45,9 +45,15 @@ async function getRoutes() {
 
     const processedFiles = files
       .map((file) => {
+        const hotReloadPath = getRelativePath(file);
+        const consumerPath = hotReloadPath.includes('/src')
+          ? hotReloadPath.replace('/src', '')
+          : hotReloadPath;
+
         return {
           name: path.basename(file, '.stories.tsx'),
-          path: getRelativePath(file),
+          path: hotReloadPath,
+          consumerPath,
         };
       })
       .sort((prev, next) => prev.name.localeCompare(next.name));
@@ -61,21 +67,35 @@ async function getRoutes() {
 export async function prepare() {
   try {
     const routes = await getRoutes();
-    const baseTemplateConfig = {
-      data: { routes },
-      template: 'mobileRoutes.ejs',
-    };
 
-    // Write to ui-mobile-playground package
+    const hotReloadRoutes = routes.map((route) => ({
+      name: route.name,
+      path: route.path,
+    }));
+    const consumerRoutes = routes.map((route) => ({
+      name: route.name,
+      path: route.consumerPath,
+    }));
+
+    // Write to ui-mobile-playground package. This includes the route paths that consumers would use.
     await writeFile({
-      ...baseTemplateConfig,
-      dest: `packages/ui-mobile-playground/src/components/routes.ts`,
+      data: { routes: consumerRoutes },
+      template: 'mobileRoutes.ejs',
+      dest: `packages/ui-mobile-playground/src/routes.ts`,
     });
 
-    // Write to ui-mobile-visreg package
+    // Write to ui-mobile-visreg package. The keys are required for usage in the jest context to direct visreg tests.
     await writeFile({
-      ...baseTemplateConfig,
+      data: { routes: consumerRoutes },
+      template: 'mobileRoutes.ejs',
       dest: `packages/ui-mobile-visreg/src/routes.ts`,
+    });
+
+    // Write to mobile-app. This is required for hot reload - internal packages need src in path for hot reload, while consumers do not.
+    await writeFile({
+      data: { routes: hotReloadRoutes },
+      template: 'mobileRoutes.ejs',
+      dest: `apps/mobile-app/src/routes.ts`,
     });
   } catch (err) {
     if (err instanceof Error) {

@@ -6,7 +6,10 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 1.0.0-rc.3 (4/25/2023 PST)
+
+- You now import routes from a new path. `@cbhq/ui-mobile-playground/routes`
+- Enable consumer usage of mobile playground when package uses `src/` convention like our new cds-web-visualizations package. Note about this - local development should reference with `src/` in path to enable hot reloading in development, but builds that consumers use will not have src in build output paths.
 
 #### 📘 Misc
 

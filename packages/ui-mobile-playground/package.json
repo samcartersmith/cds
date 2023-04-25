@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-mobile-playground",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "description": "Mobile UI Components in a Playground",
   "keywords": [
     "playground"
@@ -30,6 +30,7 @@
   },
   "types": "./dts/index.d.ts",
   "main": "./lib/index.js",
+  "routes": "./lib/routes.js",
   "exports": {
     "./package.json": "./package.json",
     "./*": {
