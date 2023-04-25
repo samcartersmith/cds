@@ -5,7 +5,6 @@ COPY . .
 
 # Install dependencies
 RUN yarn --immutable
-RUN yarn build
 
 # Build the package
 RUN yarn nx run docusaurus-plugin-kbar:build
