@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.3 (4/26/2023 PST)
+
+#### 🐞 Fixes
+
+- Add files to enable import resolution for any typescript/node combination.
 
 #### 📘 Misc
 
