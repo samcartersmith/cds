@@ -18,7 +18,7 @@ export type ParseJsxElementsCbParams = {
  * @param tree - The NX Tree instance
  * @param callback - The callback function to run on each JSX element. It will be passed the JSX element and the `sourceFile`
  */
-export default function parseJsxElements({
+export function parseJsxElements({
   path,
   project,
   tree,

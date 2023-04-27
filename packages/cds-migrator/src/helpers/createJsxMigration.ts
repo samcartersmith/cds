@@ -1,7 +1,7 @@
 import { Tree } from '@nrwl/devkit';
 
-import parseJsxElements, { ParseJsxElementsCbParams } from './parseJsxElements';
-import parseSourceFiles, { TransformFnType } from './parseSourceFiles';
+import { parseJsxElements, ParseJsxElementsCbParams } from './parseJsxElements';
+import { parseSourceFiles, TransformFnType } from './parseSourceFiles';
 
 type CreateJsxMigrationParams = {
   /** The NX Tree */

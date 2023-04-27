@@ -1,7 +1,7 @@
 import { output } from '@nrwl/devkit';
 import fs from 'node:fs';
 
-export default function updateImportPath({
+export function updateImportPath({
   filePath,
   oldImport,
   newImport,

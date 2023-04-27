@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+#### 💥 Breaking
+
+- [VStack] Updated VStack styling for when as="ul" is enabled [#1922](https://github.cbhq.net/frontend/cds/pull/1922), [DX-990](https://jira.coinbase-corp.com/browse/DX-990)
+
 #### 📘 Misc
 
 - Rebase sparkline-web decomposition on release branch.

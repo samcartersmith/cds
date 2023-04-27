@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.7 (4/27/2023 PST)
+
+#### 🚀 Updates
+
+- Add new helper and v5 migrations for Vstack. [[#1965](https://github.cbhq.net/frontend/cds/pull/1965)] [[DX-990](https://jira.coinbase-corp.com/browse/DX-990)]
 
 #### 📘 Misc
 

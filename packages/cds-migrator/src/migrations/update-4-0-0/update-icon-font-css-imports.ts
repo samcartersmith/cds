@@ -3,7 +3,7 @@ import fs from 'node:fs';
 
 import { findReplaceInFile } from '../../helpers/findReplaceInFile';
 import { logNote } from '../../helpers/loggingHelpers';
-import parseSourceFiles, { TransformFnType } from '../../helpers/parseSourceFiles';
+import { parseSourceFiles, TransformFnType } from '../../helpers/parseSourceFiles';
 import { RenameMap } from '../../helpers/types';
 
 const oldPath = '@cbhq/cds-web/styles/icon-font.css';

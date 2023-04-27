@@ -20,7 +20,7 @@ export type TransformFnType = {
  * @param transformFn - The function that will be called for each sourceFile. Passes through the NX tree and ts-morph sourceFile
  * @filterSourceFiles - Parses sourceFiles that meet a conditional
  */
-export default async function parseSourceFiles(
+export async function parseSourceFiles(
   tree: Tree,
   transformFn: (params: TransformFnType) => void,
   filterSourceFiles?: (path: string) => boolean,
