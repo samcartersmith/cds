@@ -138,6 +138,7 @@ const names: SpotRectangleName[] = [
   'transferFunds',
   'trendingHotAssets',
   'uob',
+  'update',
   'walletReconnect',
   'walletReconnectSuccess',
   'walletSecurity',

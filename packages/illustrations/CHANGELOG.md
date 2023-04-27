@@ -8,6 +8,130 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.6.0 (4/27/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat(Illustrations): Publish illustrations 04/27/2023. [[#1966](https://github.cbhq.net/frontend/cds/pull/1966)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- baseLogoNavigation
+
+#### Spot Rectangle
+
+- update
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- bigWarning
+- brdGift
+- browseDecentralizedApps
+- coinbaseCardSpendCrypto
+- collectableNfts
+- cryptoAndMore
+- cryptoAppsWallet
+- cryptoAssets
+- dappsFinance
+- docError
+- earnSuccess
+- emptyCollection
+- fileYourCryptoTaxes
+- iceCreamMeltingSystemError
+- mic
+- notificationsAlt
+- polling
+- recommendInvest
+- referralsAvatars
+- secureGlobalTransactions
+- semiCustodial
+- web3ActivitySigned
+- web3MobileSetupSuccess
+
+#### Spot Square
+
+- addMultipleCrypto
+- blockchain
+- borrowLimitsAddressed
+- coinbaseOneRewards
+- coinbaseOneTokenRewards
+- congratulationsOnEarningCrypto
+- crossBorderPayments
+- cryptoApps
+- cryptoAssets
+- cryptoForBeginners
+- cryptoWallet
+- defiEarnAnnouncement
+- didDecentralizedIdentity
+- earn
+- earnInterestOnCryptocurrency
+- frameEmpty
+- gasFeesNetworkFees
+- getStartedInMinutes
+- giftBoxCrypto
+- gifting
+- globalTransactions
+- interestForYou
+- moneyDecentralized
+- moneyRewards
+- multicoinSupport
+- nft
+- nuxEarnYield
+- optInPushNotificationsEmail
+- phoneNotifications
+- pixBankDeposits
+- pixDeposits
+- quickAndSimple
+- referralsPeople
+- semiCustodial
+- shareOnSocialMedia
+- sparkleToken
+- transferringCrypto
+- unsupportedAsset
+- walletApp
+
+#### Pictogram
+
+- blockchainConnection
+- browserMultiPlatform
+- chat
+- congratulations
+- earnNavigation
+- email
+- exchangeNavigation
+- explore
+- gem
+- learn
+- lightbulbLearn
+- myNumberCard
+- notificationHubNews
+- supportChat
+- taxCenterNavigation
+- taxes
+- trendingAssets
+- walletAsServiceNavigation
+
+#### Spot Rectangle
+
+- basedInUsa
+- cryptoAssets
+- cryptoForBeginners
+- decentralization
+- diamond
+- getStartedInMinutes
+- giftBoxRewards
+- linkingYourWalletToYourCoinbaseAccount
+- margin
+- portfolioOverview
+
 ## 1.5.1 (4/5/2023 PST)
 
 #### 🐞 Fixes
