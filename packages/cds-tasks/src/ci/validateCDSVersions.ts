@@ -20,7 +20,7 @@ async function getPkgVersion(pkgJsonPath: string) {
 
 async function getChangelogVersion(changelogPath: string) {
   const changelogContent = fs.readFileSync(changelogPath, 'utf8');
-  const versionHeaderRegex = /##\s+(\d+\.\d+\.\d+)\b/;
+  const versionHeaderRegex = /##\s+(\d+\.\d+\.\d+(?:-rc\.\d*)?)\b/;
   const versionHeaderMatch = changelogContent.match(versionHeaderRegex);
 
   if (versionHeaderMatch) {
