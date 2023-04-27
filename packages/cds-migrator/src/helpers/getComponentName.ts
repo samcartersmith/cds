@@ -1,28 +1,12 @@
-import { getImportAlias } from './getImportAlias';
-import { AttributeValueRenameMapShape, JsxElementType } from './types';
-
-export type ParseComponentsType = {
-  renameMap: AttributeValueRenameMapShape;
-  jsx: JsxElementType;
-};
+import { JsxElementType } from './types';
 
 /**
  * Get the name of a Component from a JSXElement
  * Even works for components that use import aliases!
+ * @param jsx - The JSX element to get the name of
+ * @returns the display name of the component
  */
-export function getComponentName({ renameMap, jsx }: ParseComponentsType) {
+export function getComponentName(jsx: JsxElementType) {
   // Component display name
-  let componentType = jsx.getTagNameNode().getText();
-
-  const importAlias = getImportAlias({
-    componentType,
-    componentNames: Object.keys(renameMap),
-    jsx,
-  });
-
-  if (importAlias) {
-    componentType = importAlias;
-  }
-
-  return componentType;
+  return jsx.getTagNameNode().getText();
 }

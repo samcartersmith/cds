@@ -73,13 +73,16 @@
         "script": "./main.ts"
       }
     },
-    "release": {
+    "updateWebsiteChangelogs": {
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "script": "./releasePackages.ts",
-        "args": [
-          "--packages=d3|fonts|web|lottie-files|mobile|utils|common"
-        ]
+        "script": "./website/updateWebsiteChangelogs.ts"
+      }
+    },
+    "updatePkgsForGenericBump": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./release/updatePkgsForGenericBump.ts"
       }
     },
     "updateWebsiteChangelogs": {

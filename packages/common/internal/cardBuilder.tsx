@@ -89,7 +89,7 @@ export function cardBuilder({
                 variant="negative"
                 detailWidth={95}
                 intermediary={<CellMedia type="icon" name="chartLine" />}
-                media={<CellMedia type="image" source={assets.eth.imageUrl} title="Title" />}
+                media={<CellMedia type="image" source={assets.eth.imageUrl} />}
                 innerSpacing={innerSpacingConfig}
               />
             );

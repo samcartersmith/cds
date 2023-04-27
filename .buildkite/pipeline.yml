@@ -51,7 +51,7 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline validate-codeowners
       - yarn mono-pipeline validate-lockfile
-      - yarn mono-pipeline validate-versioned --projectsWithNoSrcFolder='web,mobile,common'
+      - yarn mono-pipeline validate-versioned --projectsWithNoSrcFolder='web,mobile,common' --allOnMaster
       - yarn mono-pipeline validate-patches
       - yarn nx run cds-tasks:validate-cds-versions
       - yarn nx run cds-tasks:validate-website-changelog-updates

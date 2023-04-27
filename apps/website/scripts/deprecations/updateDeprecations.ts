@@ -173,26 +173,31 @@ function formatDeprecations(deprecationObj: Deprecation): string {
       groups.params.push('</Accordion>');
       return;
     }
-    if (deprecationObj[key]?.length) {
-      if (key === 'components' || key === 'types' || key === 'hooks' || key === 'functions') {
-        const groupForKey = groups[key];
+    if (
+      deprecationObj[key]?.length &&
+      (key === 'components' ||
+        key === 'types' ||
+        key === 'hooks' ||
+        key === 'tokens' ||
+        key === 'functions')
+    ) {
+      const groupForKey = groups[key];
 
-        groupForKey.push('<Accordion>');
-        deprecationObj[key]?.forEach(({ package: pkgName, name, path, type, migrationMap }) => {
-          if (name && pkgName && type) {
-            groups[key].push(
-              formatDeprecationGuide({
-                name,
-                pkgName,
-                type,
-                guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
+      groupForKey.push('<Accordion>');
+      deprecationObj[key]?.forEach(({ package: pkgName, name, path, type, migrationMap }) => {
+        if (name && pkgName && type) {
+          groups[key].push(
+            formatDeprecationGuide({
+              name,
+              pkgName,
+              type,
+              guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
                 <p>${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}</p>`,
-              }),
-            );
-          }
-        });
-        groupForKey.push('</Accordion>');
-      }
+            }),
+          );
+        }
+      });
+      groupForKey.push('</Accordion>');
     }
   });
 
@@ -203,7 +208,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
   ];
 
   Object.values(groups).forEach((group) => {
-    if (group.length > 1) {
+    if (group.length > 2) {
       block.push('', ...group);
     }
   });

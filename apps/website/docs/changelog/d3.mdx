@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Rebase sparkline-web decomposition on release branch.
+
 ## 0.0.2 (10/20/2022, 02:12 PM PST)
 
 #### 🐞 Fixes

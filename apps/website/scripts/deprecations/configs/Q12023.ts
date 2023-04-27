@@ -61,7 +61,7 @@ export const Q12023: Deprecation = {
       },
       type: 'path',
       migrationMap: {
-        path: 'packages/web/cards/Card.tsx',
+        path: 'packages/mobile/cards/Card.tsx',
       },
     },
     {
@@ -274,6 +274,14 @@ export const Q12023: Deprecation = {
       migrationMap: {
         replaced: 'Dropdown',
         path: 'packages/web/dropdown/Dropdown.tsx',
+        api: {
+          visible: null,
+          openMenu: null,
+          closeMenu: null,
+          searchEnabled: null,
+          flush: 'block',
+          popoverPositionConfig: 'contentPosition',
+        },
       },
     },
     {
@@ -357,19 +365,19 @@ export const Q12023: Deprecation = {
   props: [
     {
       name: 'badge',
-      components: ['IconBase'],
+      components: ['Icon', 'NavigationIcon'],
       package: 'mobile',
       type: 'removed',
     },
     {
       name: 'badge',
-      components: ['IconBase'],
+      components: ['Icon', 'NavigationIcon'],
       package: 'web',
       type: 'removed',
     },
     {
       name: 'deprecatedLineHeight',
-      components: ['createText'],
+      components: ['Typography'],
       package: 'mobile',
       type: 'removed',
     },

@@ -2,23 +2,30 @@ import { ScaleDensity } from '../types/Scale';
 
 import { gutter } from './sizing';
 
-export const mediaSize: Record<ScaleDensity, number> = {
+export type CellScaleDensity = Record<ScaleDensity, number>;
+
+export const mediaSize: CellScaleDensity = {
   dense: 24,
   normal: 32,
 };
 
 // Height of the inner cell without padding
-export const imageSize: Record<ScaleDensity, number> = {
+export const imageSize: CellScaleDensity = {
   dense: 40,
   normal: 48,
 };
 
-export const listHeight: Record<ScaleDensity, number> = {
+export const pictogramScaleMultiplier: CellScaleDensity = {
+  dense: 0.834,
+  normal: 1,
+};
+
+export const listHeight: CellScaleDensity = {
   normal: 80,
   dense: 64,
 };
 
-export const compactListHeight: Record<ScaleDensity, number> = {
+export const compactListHeight: CellScaleDensity = {
   normal: 40,
   dense: 36,
 };
@@ -39,7 +46,7 @@ export const defaultSpacingConfig = {
   },
 } as const;
 
-export const selectOptionHeight: Record<ScaleDensity, number> = {
+export const selectOptionHeight: CellScaleDensity = {
   normal: 56,
   dense: 44,
 };

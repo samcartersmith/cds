@@ -1,18 +1,30 @@
 import { Tree } from '@nrwl/devkit';
+import fs from 'node:fs';
 
-import { logStartTask } from '../../helpers/logStartTask';
+import { findReplaceInFile } from '../../helpers/findReplaceInFile';
+import { logNote } from '../../helpers/loggingHelpers';
 import parseSourceFiles, { TransformFnType } from '../../helpers/parseSourceFiles';
-import updateImportPath from '../../helpers/updateImportPath';
+import { RenameMap } from '../../helpers/types';
 
-const OLD_IMPORT = '@cbhq/cds-web/styles/icon-font.css';
-const NEW_IMPORT = '@cbhq/cds-icons/fonts/web/icon-font.css';
+const oldPath = '@cbhq/cds-web/styles/icon-font.css';
+const renameMap: RenameMap = {
+  [oldPath]: '@cbhq/cds-icons/fonts/web/icon-font.css',
+};
+
+const filterSourceFiles = (path: string) => {
+  const sourceContent = fs.readFileSync(path, 'utf-8');
+  if (sourceContent.includes(oldPath)) {
+    return true;
+  }
+  return false;
+};
 
 function updateIconImportPaths({ path }: TransformFnType) {
-  updateImportPath({ filePath: path, oldImport: OLD_IMPORT, newImport: NEW_IMPORT });
+  findReplaceInFile({ renameMap, path });
 }
 
 export default async function updateIconImports(tree: Tree) {
-  logStartTask(`Updating icon-font.css usages`);
+  logNote('Updating icon-font.css usages');
 
-  await parseSourceFiles(tree, updateIconImportPaths);
+  await parseSourceFiles(tree, updateIconImportPaths, filterSourceFiles);
 }

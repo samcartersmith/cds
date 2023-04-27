@@ -160,10 +160,10 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
         <p>
           Card can now be imported from{' '}
           <a
-            href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/cards/Card.tsx"
+            href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/cards/Card.tsx"
             target="_blank"
           >
-            packages/web/cards/Card.tsx
+            packages/mobile/cards/Card.tsx
           </a>
         </p>
       </p>
@@ -822,6 +822,29 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
             packages/web/dropdown/Dropdown.tsx
           </a>
         </p>
+        <p>
+          {' '}
+          The API has changed: <ul>
+            <li>
+              <code>visible</code> has been removed
+            </li>
+            <li>
+              <code>openMenu</code> has been removed
+            </li>
+            <li>
+              <code>closeMenu</code> has been removed
+            </li>
+            <li>
+              <code>searchEnabled</code> has been removed
+            </li>
+            <li>
+              <code>flush</code> has been replaced with <code>block</code>
+            </li>
+            <li>
+              <code>popoverPositionConfig</code> has been replaced with <code>contentPosition</code>
+            </li>
+          </ul>
+        </p>
       </p>
     </VStack>
   </AccordionItem>
@@ -1056,10 +1079,10 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
 
 <Accordion>
   <AccordionItem
-    itemKey="IconBase.badge.mobile"
+    itemKey="Icon.badge.mobile"
     title={
       <HStack gap={1}>
-        IconBase.badge <Tag colorScheme="red">removed</Tag>
+        Icon.badge <Tag colorScheme="red">removed</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-mobile"
@@ -1069,10 +1092,23 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="IconBase.badge.web"
+    itemKey="NavigationIcon.badge.mobile"
     title={
       <HStack gap={1}>
-        IconBase.badge <Tag colorScheme="red">removed</Tag>
+        NavigationIcon.badge <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <code>badge</code> has been removed from the CDS library.
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Icon.badge.web"
+    title={
+      <HStack gap={1}>
+        Icon.badge <Tag colorScheme="red">removed</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-web"
@@ -1082,10 +1118,23 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="createText.deprecatedLineHeight.mobile"
+    itemKey="NavigationIcon.badge.web"
     title={
       <HStack gap={1}>
-        createText.deprecatedLineHeight <Tag colorScheme="red">removed</Tag>
+        NavigationIcon.badge <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <code>badge</code> has been removed from the CDS library.
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Typography.deprecatedLineHeight.mobile"
+    title={
+      <HStack gap={1}>
+        Typography.deprecatedLineHeight <Tag colorScheme="red">removed</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-mobile"
@@ -1429,6 +1478,245 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
 </Accordion>
 
 ### 🪙 Tokens
+
+<Accordion>
+  <AccordionItem
+    itemKey="motion.common"
+    title={
+      <HStack gap={1}>
+        motion <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/common/tokens/motion.ts"
+          target="_blank"
+        >
+          packages/common/tokens/motion.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          motion can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/common/motion/tokens.ts"
+            target="_blank"
+          >
+            packages/common/motion/tokens.ts
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="navigationStyles.web"
+    title={
+      <HStack gap={1}>
+        navigationStyles <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/deprecated/navigation/navigationStyles.ts"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/navigationStyles.ts
+        </a>
+      </p>
+      <p>
+        <code>navigationStyles</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="navigationTokens.web"
+    title={
+      <HStack gap={1}>
+        navigationTokens <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/deprecated/navigation/navigationTokens.ts"
+          target="_blank"
+        >
+          packages/web/deprecated/navigation/navigationTokens.ts
+        </a>
+      </p>
+      <p>
+        <code>navigationTokens</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="borderRadius.web"
+    title={
+      <HStack gap={1}>
+        borderRadius <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/styles/borderRadius.ts"
+          target="_blank"
+        >
+          packages/web/styles/borderRadius.ts
+        </a>
+      </p>
+      <p>
+        <p>borderRadius has been replaced with Use rounded border radius variables instead</p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="responsive.web"
+    title={
+      <HStack gap={1}>
+        responsive{' '}
+        <>
+          {' '}
+          <Tag colorScheme="gray">path</Tag> <Tag colorScheme="yellow">replaced</Tag>
+        </>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/layout/responsive.ts"
+          target="_blank"
+        >
+          packages/web/layout/responsive.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          responsive can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/layout/breakpoints.ts"
+            target="_blank"
+          >
+            packages/web/layout/breakpoints.ts
+          </a>
+        </p>
+        <p>
+          responsive has been replaced with Use deviceBreakpoints, deviceMqs, and deviceMqRanges
+          instead
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="elevation.web"
+    title={
+      <HStack gap={1}>
+        elevation <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/styles/elevation.ts"
+          target="_blank"
+        >
+          packages/web/styles/elevation.ts
+        </a>
+      </p>
+      <p>
+        <code>elevation</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="border.common"
+    title={
+      <HStack gap={1}>
+        border <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/common/tokens/border.ts"
+          target="_blank"
+        >
+          packages/common/tokens/border.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          border can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/Use tokens/borderWidth and tokens/borderRadius respectively"
+            target="_blank"
+          >
+            Use tokens/borderWidth and tokens/borderRadius respectively
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="interactable.common"
+    title={
+      <HStack gap={1}>
+        interactable <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/common/tokens/interactable.ts"
+          target="_blank"
+        >
+          packages/common/tokens/interactable.ts
+        </a>
+      </p>
+      <p>
+        <p>
+          interactable has been replaced with Use tokens/interatableHeight variables instead, and
+          opacityDisabled -> accessibleOpacityDisabled
+        </p>
+        <p>
+          interactable can now be imported from{' '}
+          <a
+            href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/common/tokens/interactableHeight.ts"
+            target="_blank"
+          >
+            packages/common/tokens/interactableHeight.ts
+          </a>
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
 
 ### 👨‍💻 Functions
 
@@ -3111,14 +3399,52 @@ The following items will be deleted at the end of Q22023 in a breaking release. 
   </AccordionItem>
 </Accordion>
 
-### 🔐 Types
+## Q32023 Deprecations
+
+The following items will be deleted at the end of Q32023 in a breaking release. Release version is TBD.
 
 ### 🎭 Props
 
-### 🪝 Hooks
-
-### 🪙 Tokens
-
-### 👨‍💻 Functions
-
-### 🏗️ Params
+<Accordion>
+  <AccordionItem
+    itemKey="CellMedia.title.web"
+    title={
+      <HStack gap={1}>
+        CellMedia.title <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>title</code> has been replaced with <code>accessibilityLabel</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="CellMedia.title.mobile"
+    title={
+      <HStack gap={1}>
+        CellMedia.title <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>title</code> has been replaced with{' '}
+            <code>accessibilityLabel and accessibilityHint</code>
+          </li>
+        </ul>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>

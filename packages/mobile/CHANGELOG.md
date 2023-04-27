@@ -31,6 +31,26 @@ All notable changes to this project will be documented in this file.
 
 - **[ui-mobile-playground]** Separate UI code from visreg code for playgrounds. [#1810](https://github.cbhq.net/frontend/cds/pull/1810)
 
+## 4.2.6 (4/20/2023 PST)
+
+#### 🐞 Fixes
+
+- **[CellMedia]** Deprecate title prop in favor of accessibility props. [[#1946](https://github.cbhq.net/frontend/cds/pull/1946)] [[DX-548](https://jira.coinbase-corp.com/browse/DX-548)]
+
+## 4.2.5 (4/20/2023 PST)
+
+#### 🐞 Fixes
+
+- **[CellMedia]** Fix Pictogram automatic density scaling. [[#1940](https://github.cbhq.net/frontend/cds/pull/1940)] [[DX-1119](https://jira.coinbase-corp.com/browse/DX-1119)]
+
+#### 📘 Misc
+
+- This is an artificial version bump with no new change.
+
+## 4.2.4 (4/14/2023 PST)
+
+- This is an artificial version bump with no new change.
+
 ## 4.2.3 (4/11/2023 PST)
 
 #### 🐞 Fixes

@@ -1,7 +1,14 @@
 import { SyntaxKind } from 'ts-morph';
 
-import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from './findReplaceInComponent';
+import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from '../types';
 
+/**
+ * Replaces a specified attribute with the new value
+ * Make sure you call writeMigrationToFile to save changes to the file system
+ * @param updateMap - Key value pairs of old and new values
+ * @param attribute - The attribute to update
+ * @param jsx - The JSX element to update
+ */
 export function updateJsxAttribute({
   updateMap,
   attribute,

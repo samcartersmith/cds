@@ -1,5 +1,9 @@
-When type is `asset`, `avatar`, or `image`, a `title` prop is required.
+:::tip Accessibility tip
 
-```jsx
-<CellMedia type="asset" source={btcPath} title="Bitcoin asset logo" />
-```
+By default, `CellMedia` is considered decorative because it typically does not provide any new information to the user. When one is presented in a cell alongside a title or other descriptive text, there's no need to set an accessible label as the visible text already provides the necessary context.
+
+<br />
+
+However, in the rare case that `CellMedia` is used inside of a cell as a stand-alone image without a visible label, an accessible label should be provided via the `accessibilityLabel` and `accessibilityHint` props.
+
+:::

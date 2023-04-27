@@ -1,5 +1,7 @@
-Most likely you'd want to extract your `Modal` into a separate component.
-You can do that by adding a `visible: boolean` and `onDidClose: () => void` prop to your extracted component and pass through those props to `Modal`.
+:::info
+If you are wrapping a CDS `Modal` to create a custom Modal component, you will want to spread props `...props` or explicitly pass through `visible` and `onDidClose` to the underlying `Modal` component. Under the hood, we use `cloneElement` to pass `visible` and other handlers to the `Modal` component which are required for it to work.
+:::
+
 See example below:
 
 ```jsx live

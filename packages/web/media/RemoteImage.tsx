@@ -47,7 +47,6 @@ const imageRatio = css`
 `;
 
 type BaseRemoteImageProps = {
-  alt?: string;
   /** Absolute url to the image that should be shown in the RemoteImage. If no source is provided then a generic fallback image is used. */
   source?: string;
   dangerouslySetClassName?: string;

@@ -48,7 +48,7 @@ const SparklineExample = ({ imageUrl, name, symbol, color }: SparklineExamplePro
           </VStack>
         </HStack>
       }
-      media={<CellMedia type="image" source={imageUrl} title="Title" />}
+      media={<CellMedia type="image" source={imageUrl} />}
     >
       <VStack justifyContent="center">
         <TextHeadline numberOfLines={1} ellipsize="tail">

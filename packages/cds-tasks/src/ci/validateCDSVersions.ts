@@ -18,8 +18,28 @@ async function getPkgVersion(pkgJsonPath: string) {
   return pkg.version;
 }
 
+async function getChangelogVersion(changelogPath: string) {
+  const changelogContent = fs.readFileSync(changelogPath, 'utf8');
+  const versionHeaderRegex = /##\s+(\d+\.\d+\.\d+(?:-rc\.\d*)?)\b/;
+  const versionHeaderMatch = changelogContent.match(versionHeaderRegex);
+
+  if (versionHeaderMatch) {
+    const versionNumber = versionHeaderMatch[1];
+    console.info(chalk.gray(`${changelogPath} latest version is ${versionNumber}.`));
+
+    return versionNumber;
+  }
+  throw new Error(chalk.red(`Could not find any versions in ${changelogPath}`));
+}
+
 async function validateCDSVersions() {
   const pkgJsonPaths = await glob(`packages/(web|mobile|common)/package.json`, {
+    absolute: true,
+    cwd: MONOREPO_ROOT,
+    onlyFiles: true,
+  });
+
+  const changelogPaths = await glob(`packages/(web|mobile|common)/CHANGELOG.md`, {
     absolute: true,
     cwd: MONOREPO_ROOT,
     onlyFiles: true,
@@ -34,8 +54,18 @@ async function validateCDSVersions() {
     ),
   );
 
-  if (versions.length) {
-    const versionsAligned = !versions.find((v) => versions[0] !== v);
+  const changelogVersions = await Promise.all(
+    changelogPaths.map(async (changelogPath) =>
+      getChangelogVersion(changelogPath).catch((error) => {
+        console.error(chalk.red(`FAIL: ${error}`));
+        return '';
+      }),
+    ),
+  );
+
+  if (versions.length && changelogVersions) {
+    const combinedVersions = [...versions, ...changelogVersions];
+    const versionsAligned = !combinedVersions.find((v) => combinedVersions[0] !== v);
 
     if (!versionsAligned) {
       throw new Error(

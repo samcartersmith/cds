@@ -41,7 +41,7 @@ const SparklineGradientExample = ({
 
   return (
     <VStack>
-      <Cell media={<CellMedia type="image" source={imageUrl} title="Title" />}>
+      <Cell media={<CellMedia type="image" source={imageUrl} />}>
         <VStack justifyContent="center">
           <TextHeadline numberOfLines={1} ellipsize="tail">
             {name}
