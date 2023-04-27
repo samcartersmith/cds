@@ -1,16 +1,24 @@
-export const iconRenames = {
+import { AttributeValueRenameMapShape } from '../../../helpers/types';
+
+export const iconRenames: AttributeValueRenameMapShape = {
   Icon: {
-    breifcase: 'briefcase',
-    checkbox: 'checkboxChecked',
-    pencilAlt: 'pencil',
+    attribute: 'name',
+    valueMap: {
+      breifcase: 'briefcase',
+      checkbox: 'checkboxChecked',
+      pencilAlt: 'pencil',
+    },
   },
   NavigationIcon: {
-    activityNav: 'activity',
-    commentNav: 'comment',
-    copyNav: 'copy',
-    ghostNav: 'ghost',
-    hammerNav: 'hammer',
-    heartNav: 'heart',
-    royaltyNav: 'royalty',
+    attribute: 'name',
+    valueMap: {
+      activityNav: 'activity',
+      commentNav: 'comment',
+      copyNav: 'copy',
+      ghostNav: 'ghost',
+      hammerNav: 'hammer',
+      heartNav: 'heart',
+      royaltyNav: 'royalty',
+    },
   },
 };

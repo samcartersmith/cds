@@ -1,7 +1,7 @@
-import { addDependenciesToPackageJson, getProjects, output, Tree } from '@nrwl/devkit';
+import { addDependenciesToPackageJson, getProjects, Tree } from '@nrwl/devkit';
 
 import { CdsDependencyCheck, checkHasCdsDependency } from '../../helpers/checkHasCdsDependency';
-import { logStartTask } from '../../helpers/logStartTask';
+import { logError, logNote, logSuccess } from '../../helpers/loggingHelpers';
 
 const depsToAddMap = {
   mobile: {
@@ -39,7 +39,7 @@ function updateDeps(
 }
 
 export default async function upgradeCdsPackages(tree: Tree) {
-  logStartTask('Upgrading necessary CDS dependencies');
+  logNote('Upgrading necessary CDS dependencies');
 
   const projects = getProjects(tree);
   const packageJsonsWithUpdates: string[] = [];
@@ -81,17 +81,11 @@ export default async function upgradeCdsPackages(tree: Tree) {
   });
 
   if (packageJsonsWithUpdates.length) {
-    output.success({
-      title: `Upgraded CDS dependencies in the following files:`,
-      bodyLines: packageJsonsWithUpdates,
-    });
+    logSuccess(`Upgraded CDS dependencies in the following files:`, packageJsonsWithUpdates);
   } else {
-    output.error({
-      title: `Unable to find any projects consuming CDS packages.`,
-      bodyLines: [
-        `Ensure this generator is being run within an nx workspace.`,
-        `As a workaround you can add @cbhq/cds-web or @cbhq/cds-mobile to the dependencies or devDependencies of the package.json for the projects you want to run the codemod in.`,
-      ],
-    });
+    logError(`Unable to find any projects consuming CDS packages.`, [
+      `Ensure this generator is being run within an nx workspace.`,
+      `As a workaround you can add @cbhq/cds-web or @cbhq/cds-mobile to the dependencies or devDependencies of the package.json for the projects you want to run the codemod in.`,
+    ]);
   }
 }
