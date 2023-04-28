@@ -9,7 +9,7 @@ steps:
   - label: iOS - Prebuild - visreg
     key: 'visreg_ios_prebuild'
     agents:
-      queue: macos-metal
+      queue: macos-metal-xcode14
     commands:
       - tools/ci/visreg.sh ios build
     artifact_paths:
@@ -20,7 +20,7 @@ steps:
     depends_on: 'visreg_ios_prebuild'
     parallelism: 8
     agents:
-      queue: macos-metal
+      queue: macos-metal-xcode14
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - tools/ci/visreg.sh ios test
@@ -32,7 +32,7 @@ steps:
     depends_on: 'visreg_ios'
     allow_dependency_failure: true
     agents:
-      queue: macos-metal
+      queue: macos-metal-xcode14
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - npm install -g @percy/cli
