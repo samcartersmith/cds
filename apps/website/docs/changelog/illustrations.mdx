@@ -8,6 +8,147 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.7.0 (5/4/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 05/04/2023. [[#1974](https://github.cbhq.net/frontend/cds/pull/1974)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Square
+
+- accessToAdvancedCharts
+- addPhoneNumber
+- advancedTrading
+- advancedTradingUi
+- appTrackingTransparency
+- automaticPayments
+- bigBtc
+- coinbaseCardLock
+- coinbaseCardPocket
+- coinbaseFees
+- coinbaseOneDiscountedAmount
+- coinbaseOneSavingFunds
+- commerceAccounting
+- commerceInvoices
+- contactsListWarning
+- cryptoAndMore
+- defiEarn
+- defiHow
+- defiRisk
+- documentCertified
+- documentSuccess
+- earnInterest
+- estimatedAmount
+- focusLimitOrders
+- freeBtc
+- holdCrypto
+- holdingCrypto
+- notificationsAlt
+- onTheList
+- openEmail
+- phoneNumber
+- readyToTrade
+- securityShield
+- switchAdvancedToSimpleTrading
+- tradeImmediately
+- verifyEmail
+- verifyInfo
+- walletNotifications
+
+#### Spot Rectangle
+
+- addPhoneNumber
+- advancedTrading
+- advancedTradingUi
+- appTrackingTransparency
+- automaticPayments
+- bigBtc
+- coinbaseCardLock
+- coinbaseCardPocket
+- coinbaseFees
+- coinbaseOneDiscountedAmount
+- coinbaseOneSavingFunds
+- commerceAccounting
+- commerceInvoices
+- contactsListWarning
+- cryptoAndMore
+- cryptoApps
+- defiEarn
+- defiHow
+- defiRisk
+- documentCertified
+- documentSuccess
+- earnInterest
+- estimatedAmount
+- exploreDecentralizedApps
+- freeBtc
+- holdCrypto
+- holdingCrypto
+- notificationsAlt
+- onTheList
+- openEmail
+- phoneNumber
+- readyToTrade
+- securityShield
+- tradeImmediately
+- verifyEmail
+- verifyInfo
+- walletNotifications
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- bigBtc
+- cryptoApps
+- cryptoForBeginners
+- dappsArts
+- dappsMusic
+- diamondHands
+- directDepositPhone
+- ethereumToWallet
+- ethStakingUpsell
+- fileYourCryptoTaxesCheck
+- futures
+- payUpFront
+- powerOfCrypto
+- ratingsAndReviews
+- referralsBitcoin
+- restrictedCountry
+- rotatingRewards
+
+#### Spot Square
+
+- boostedCard
+- cardBlocked
+- cryptoApps
+- ethStaking
+- futures
+- nuxChecklist
+- offersEmpty
+- poweredByEthereum
+- yieldCenter
+
+#### Spot Rectangle
+
+- accessToAdvancedCharts
+- focusLimitOrders
+- linkCoinbaseWallet
+- marginWarning
+- switchAdvancedToSimpleTrading
+- uob
+
+#### Pictogram
+
+- crypto101
+- email
+
 ## 1.6.0 (4/27/2023 PST)
 
 #### 🚀 Updates

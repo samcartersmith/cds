@@ -310,8 +310,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/creditCard-0').content,
   },
   crypto101: {
-    light: () => require('../svgJs/light/crypto101-0').content,
-    dark: () => require('../svgJs/dark/crypto101-0').content,
+    light: () => require('../svgJs/light/crypto101-1').content,
+    dark: () => require('../svgJs/dark/crypto101-1').content,
   },
   cryptoCard: {
     light: () => require('../svgJs/light/cryptoCard-0').content,
@@ -406,8 +406,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/economyGlobal-0').content,
   },
   email: {
-    light: () => require('../svgJs/light/email-2').content,
-    dark: () => require('../svgJs/dark/email-2').content,
+    light: () => require('../svgJs/light/email-3').content,
+    dark: () => require('../svgJs/dark/email-3').content,
   },
   emailAndMessages: {
     light: () => require('../svgJs/light/emailAndMessages-0').content,
