@@ -5,6 +5,7 @@ Howdy folks! Here is a list of what's new with this migration. Please use the cd
 Major changes include:
 
 - Splitting ui-mobile-playground into two packages: ui-mobile-playground and ui-mobile-visreg. This reduces the amount of dependencies brought into repos, and easily enables consumers to utilize our same mobile playground UI.
+- Components related to select web, dropdown web, tooltip web, popover web, sparkline web and sparkline mobile have been moved into their own standalone packages. Currently this is non-breaking, but we will be removing the instances from cds-web|mobile next quarter so a migration now is recommended.
 - RN 71.3 Bump
 - React 18 Bump
 - Reanimated V3 Bump
@@ -51,6 +52,32 @@ yarn add @cbhq/ui-mobile-visreg
 ```
 
 and change your imports from `'@cbhq/ui-mobile-playground/visreg';` to `@cbhq/ui-mobile-visreg`.
+
+#### Update Routes path
+
+The import path for playground routes should be updated from `import { routes } from '@cbhq/cds-mobile/examples/newRoutes';` to `import { routes } from '@cbhq/ui-mobile-playground/routes';`
+
+This branch demos the required path change and works with sparkline in the retail-cds playground: https://github.cbhq.net/consumer/react-native/pull/20330/files#r1115425
+
+### Component Migrations (Select, dropdown, tooltip, popover, sparkline and related components)
+
+As part of an effort to address tech debt in the CDS repo we have opted to migrate a number of problem components out of cds-web|mobile into their own packages (cds-web-overlays, cds-web-visualization, cds-mobile-visualization).
+
+Although these components are not yet removed from cds-web|mobile, we plan to remove them next quarter which will be a breaking change. Our recommendation is to migrate them now.
+
+Web components moved out of cds-web:
+
+- Dropdown related components
+- Select related components
+- Popover releated components
+- Tooltip related components
+- Sparkline related components
+
+Mobile components moved out of cds-mobile:
+
+- Sparkline related components
+
+To see a full list of deprecations for Q22023 navigate to the [deprecations page](https://cds.cbhq.net/resources/deprecations/#q22023-deprecations)
 
 ### Update Major dependencies
 
