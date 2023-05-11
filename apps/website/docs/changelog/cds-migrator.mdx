@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.0 (5/11/2023 PST)
+
+#### 💥 Breaking
+
+- Removed find/replace helper. [[#1982](https://github.cbhq.net/frontend/cds/pull/1982)]
+
 ## 0.0.6 (4/24/2023 PST)
 
 #### 🚀 Updates

@@ -4,7 +4,6 @@ import fs from 'node:fs';
 import { updateJsxAttributeValue } from '../../helpers/componentMigrationHelpers/updateJsxAttributeValue';
 import { createJsxMigration } from '../../helpers/createJsxMigration';
 import { fileIncludesRenamedValue } from '../../helpers/fileIncludesRenamedValue';
-import { findReplaceInFile } from '../../helpers/findReplaceInFile';
 import { getComponentFromJsx } from '../../helpers/getComponentFromJsx';
 import { logNote } from '../../helpers/loggingHelpers';
 import { ParseJsxElementsCbParams } from '../../helpers/parseJsxElements';
@@ -72,10 +71,6 @@ function callback(args: ParseJsxElementsCbParams) {
     });
     if (oldValue && newValue) {
       writeMigrationToFile({ oldValue, newValue, jsx, sourceFile, tree });
-    } else {
-      const path = sourceFile.getFilePath();
-      // else manually find/replace the text in the file and save to file system
-      findReplaceInFile({ renameMap: updateMap.valueMap, path, jsx });
     }
   }
 }

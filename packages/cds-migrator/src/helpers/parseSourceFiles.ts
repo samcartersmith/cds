@@ -51,7 +51,11 @@ export default async function parseSourceFiles(
         });
 
         sourceFiles.forEach((path) => {
-          if (filterSourceFiles?.(path)) {
+          if (filterSourceFiles) {
+            if (filterSourceFiles?.(path)) {
+              transformFn({ path, tree, project: tsProject });
+            }
+          } else {
             transformFn({ path, tree, project: tsProject });
           }
         });
