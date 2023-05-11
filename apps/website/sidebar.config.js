@@ -821,8 +821,15 @@ const sidebars = {
 
           label: 'Changelog',
           items: [
+            { type: 'doc', id: 'changelog/cds-migrator', label: '@cbhq/cds-migrator' },
             { type: 'doc', id: 'changelog/common', label: '@cbhq/cds-common' },
             { type: 'doc', id: 'changelog/d3', label: '@cbhq/d3' },
+            {
+              type: 'doc',
+              id: 'changelog/docusaurus-plugin-kbar',
+              label: '@cbhq/docusaurus-plugin-kbar',
+            },
+            { type: 'doc', id: 'changelog/docusaurus-theme', label: '@cbhq/docusaurus-theme' },
             { type: 'doc', id: 'changelog/fonts', label: '@cbhq/cds-fonts' },
             { type: 'doc', id: 'changelog/icons', label: '@cbhq/cds-icons' },
             { type: 'doc', id: 'changelog/illustrations', label: '@cbhq/cds-illustrations' },
@@ -834,6 +841,11 @@ const sidebars = {
               type: 'doc',
               id: 'changelog/ui-mobile-playground',
               label: '@cbhq/ui-mobile-playground',
+            },
+            {
+              type: 'doc',
+              id: 'changelog/ui-scorecard',
+              label: '@cbhq/ui-scorecard',
             },
           ],
         },

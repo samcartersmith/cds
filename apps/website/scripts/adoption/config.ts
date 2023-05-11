@@ -178,10 +178,10 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        ...monorepoConfig,
+        root: path.join(tempDir, frontendWebGit, 'packages/two-factor-web'),
+        github: frontendWebGit,
         id: 'two-factor-web',
         label: 'Two Factor Web',
-        projectTsAliases: ['@cbhq/two-factor-web'],
         type: 'doc',
       },
       {
