@@ -10,6 +10,7 @@ Major changes include:
 - React 18 Bump
 - Reanimated V3 Bump
 - Update A11y styling for VStack 'ul' components
+- [Q1 2023 Deprecations](../../resources/deprecations#q12023-deprecations) were deleted. Use the `cds-migrator` script for `5.0.0` to automatically migrate most deprecations or output migration guidance for manual migrations.
 
 ### Happy path upgrade steps
 
@@ -90,3 +91,11 @@ We now support these major versions and have them listed as peer dependencies. P
 ### Handle A11y styling automatically for VStack components that use as="ul"
 
 We removed web api styling (margin-top, margin-bottom, padding-left) for `<Vstack as=ul >` components. The cds-migrator will flag usages of VStack that may be impacted. Please verify that they look as expected.
+
+### Q12023 Deprecations
+
+See [Q12023 Deprecations](../../resources/deprecations#q12023-deprecations) for the full list of deprecations as well as migration guidance. Most deprecations are automatically migratable using `cds-migrator`, however there are a few known issues which require manual review for all migrations:
+
+- Deprecations that require manual migration will be outputted to `cds-migrator-output.md` at the root of the repo
+- Dynamic, conditional, and spread props (`...props`) are not automatically migratable, eg: `<Button variant={variant} />` where variant is a dynamic prop. The migrator will output a message to manually migrate these instances. Make sure you run all affected applications to check for runtime errors after migrating.
+- Some function migrations were not automatically migratable if a variable was destructured from the function. For example, `const { foo } = bar()` would not be automatically migratable. The migrator will output a message to manually migrate these instances. The inverse is also true, if you assigned a function to a variable and the replacement requires that you destructure a variable, it will be broken, eg: `const { isMobile } = useBreakpoints()` which replaces `const isMobile = useIsMobile()`.

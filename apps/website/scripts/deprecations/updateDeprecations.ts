@@ -127,7 +127,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     params: ['### 🏗️ Params', ''],
   };
 
-  const { prevMajorVersion, endOfLife } = deprecationObj;
+  const { prevMajorVersion, endOfLife, breakingRelease } = deprecationObj;
 
   objectKeys(deprecationObj).forEach((key) => {
     if (key === 'props') {
@@ -204,7 +204,9 @@ function formatDeprecations(deprecationObj: Deprecation): string {
   const block: string[] = [
     `## ${endOfLife} Deprecations`,
     '',
-    `The following items will be deleted at the end of ${endOfLife} in a breaking release. Release version is TBD.`,
+    `The following items will be deleted at the end of ${endOfLife} in ${
+      breakingRelease ?? 'a breaking release.'
+    }`,
   ];
 
   Object.values(groups).forEach((group) => {
