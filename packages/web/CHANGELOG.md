@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Docs(Sparkline): add example for stacking sparkline. [[DX-1283](https://jira.coinbase-corp.com/browse/DX-1283)]
+
+#### 📘 Misc
+
 - **[Icon]** Split up icon story so percy will upload snapshot again. [[#1972](https://github.cbhq.net/frontend/cds/pull/1972)] [[DX-1271](https://jira.coinbase-corp.com/browse/DX-1271)]
 
 ## 4.2.6 (4/20/2023 PST)

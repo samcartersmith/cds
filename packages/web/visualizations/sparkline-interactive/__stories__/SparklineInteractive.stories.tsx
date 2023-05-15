@@ -8,6 +8,8 @@ import {
   sparklineInteractiveHoverData,
 } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 
+import { VStack } from '../../../layout';
+import { Box } from '../../../layout';
 import { enableJavascript } from '../../../utils/storybookParams/percy';
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineInteractive } from '../SparklineInteractive';
@@ -143,6 +145,19 @@ export const BottomPeriodSelector = () => {
       strokeColor={strokeColor}
       periodSelectorPlacement="below"
     />
+  );
+};
+
+export const VStackedSparkline = () => {
+  return (
+    <VStack width="100%">
+      <Box width="100%">
+        <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
+      </Box>
+      <Box background="secondary" width="100%" height={20} spacingTop={8}>
+        This is an element below the sparkline
+      </Box>
+    </VStack>
   );
 };
 
