@@ -7,6 +7,13 @@ import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 import { ThemeProvider } from '../../system';
 import { RemoteImage } from '../RemoteImage';
 
+const mockSvgFetch = async () =>
+  Promise.resolve(
+    new Response(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="blue" /></svg>',
+    ),
+  );
+
 describe('RemoteImage', () => {
   it('shouldApplyDarkModeEnhacements border styles takes precedence over custom borderColor and passes a11y', () => {
     const spectrum = 'dark';
@@ -79,5 +86,65 @@ describe('RemoteImage', () => {
         borderColor: rgbaString,
       });
     });
+  });
+
+  it('sets accessibility attributes and labels for svgs', async () => {
+    const spy = jest.spyOn(global, 'fetch').mockImplementation(mockSvgFetch);
+
+    render(
+      <RemoteImage
+        source="https://example.com/example.svg"
+        accessibilityLabel="A label"
+        accessibilityHint="A hint"
+      />,
+    );
+
+    expect(await screen.findByRole('image')).toHaveProp('accessible', true);
+    expect(await screen.findByLabelText('A label')).toBeTruthy();
+    expect(await screen.findByHintText('A hint')).toBeTruthy();
+
+    spy.mockRestore();
+  });
+
+  it('sets accessibility attributes and labels for hexagon shaped images', () => {
+    render(
+      <RemoteImage
+        source="https://images.coinbase.com/avatar?s=56"
+        shape="hexagon"
+        accessibilityLabel="A label"
+        accessibilityHint="A hint"
+      />,
+    );
+
+    expect(screen.getByRole('image')).toHaveProp('accessible', true);
+    expect(screen.getByLabelText('A label')).toBeTruthy();
+    expect(screen.getByHintText('A hint')).toBeTruthy();
+  });
+
+  it('sets accessibility attributes and labels for images', () => {
+    render(
+      <RemoteImage
+        source="https://images.coinbase.com/avatar?s=56"
+        accessibilityLabel="A label"
+        accessibilityHint="A hint"
+      />,
+    );
+
+    expect(screen.getByRole('image')).toHaveProp('accessible', true);
+    expect(screen.getByLabelText('A label')).toBeTruthy();
+    expect(screen.getByHintText('A hint')).toBeTruthy();
+  });
+
+  it('sets accessibility attributes and labels for the fallback', () => {
+    render(
+      <RemoteImage
+        fallbackAccessibilityLabel="A fallback label"
+        fallbackAccessibilityHint="A fallback hint"
+      />,
+    );
+
+    expect(screen.getByRole('image')).toHaveProp('accessible', true);
+    expect(screen.getByLabelText('A fallback label')).toBeTruthy();
+    expect(screen.getByHintText('A fallback hint')).toBeTruthy();
   });
 });

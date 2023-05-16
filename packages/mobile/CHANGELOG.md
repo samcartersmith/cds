@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.7 (5/15/2023 PST)
+
+#### 🐞 Fixes
+
+- **[RemoteImage]** Expose accessibility props on all image variants. [[#1988](https://github.cbhq.net/frontend/cds/pull/1988)] [[DX-1124](https://jira.coinbase-corp.com/browse/DX-1124)]
+
 ## 4.2.6 (4/20/2023 PST)
 
 #### 🐞 Fixes

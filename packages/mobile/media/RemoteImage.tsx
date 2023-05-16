@@ -1,5 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import {
+  AccessibilityProps,
   Image,
   ImageProps,
   ImageResizeMode,
@@ -25,6 +26,8 @@ type BaseRemoteImageProps = {
   /** Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.  */
   shouldApplyDarkModeEnhacements?: boolean;
   source?: SourceProp;
+  fallbackAccessibilityLabel?: AccessibilityProps['accessibilityLabel'];
+  fallbackAccessibilityHint?: AccessibilityProps['accessibilityHint'];
 } & Omit<ImageProps, 'style' | 'width' | 'height' | 'source'> &
   DangerouslySetStyle<ImageStyle, false> &
   RemoteImageBaseProps;
@@ -75,11 +78,11 @@ function isSvg(source: SourceProp): boolean {
 
 type HexagonClipPathProps = {
   image: React.ReactElement;
-};
+} & AccessibilityProps;
 
-const HexagonClipPath = ({ image }: HexagonClipPathProps) => {
+const HexagonClipPath = ({ image, ...props }: HexagonClipPathProps) => {
   return (
-    <Svg viewBox="0 0 66 62">
+    <Svg {...props} viewBox="0 0 66 62">
       <Defs>
         <ClipPath id="hex-hw-shapeclip-clipconfig">
           <Path d="M63.4372 22.8624C66.2475 27.781 66.2475 33.819 63.4372 38.7376L54.981 53.5376C52.1324 58.5231 46.8307 61.6 41.0887 61.6H24.4562C18.7142 61.6 13.4125 58.5231 10.564 53.5376L2.10774 38.7376C-0.702577 33.819 -0.702582 27.781 2.10774 22.8624L10.564 8.06243C13.4125 3.07687 18.7142 0 24.4562 0H41.0887C46.8307 0 52.1324 3.07686 54.981 8.06242L63.4372 22.8624Z" />
@@ -100,6 +103,8 @@ export const RemoteImage = memo(function RemoteImage({
   size = 'm',
   dangerouslySetStyle,
   borderColor,
+  fallbackAccessibilityLabel,
+  fallbackAccessibilityHint,
   ...props
 }: RemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
@@ -166,11 +171,15 @@ export const RemoteImage = memo(function RemoteImage({
     [finalHeight, finalWidth, styles],
   );
 
+  const isAccessible = props.accessible ?? !!props.accessibilityLabel;
+
   if (isSvg(transformedSource as SourceProp)) {
     return (
       <SvgCssUri
         style={styles}
         uri={Image.resolveAssetSource(transformedSource as ImageSourcePropType).uri}
+        accessible={!!props.accessibilityLabel}
+        accessibilityRole="image"
         {...props}
         width={finalWidth}
         height={finalHeight}
@@ -190,6 +199,10 @@ export const RemoteImage = memo(function RemoteImage({
         xml={spectrum === 'dark' ? darkFallback.content : lightFallback.content}
         width={finalWidth}
         height={finalHeight}
+        accessible={!!fallbackAccessibilityLabel}
+        accessibilityRole={props.accessibilityRole ?? 'image'}
+        accessibilityLabel={fallbackAccessibilityLabel}
+        accessibilityHint={fallbackAccessibilityHint}
       />
     );
   }
@@ -207,6 +220,10 @@ export const RemoteImage = memo(function RemoteImage({
             height="100%"
           />
         }
+        accessible={isAccessible}
+        accessibilityRole={props.accessibilityRole ?? 'image'}
+        accessibilityLabel={props.accessibilityLabel}
+        accessibilityHint={props.accessibilityHint}
       />
     );
   }
@@ -215,6 +232,7 @@ export const RemoteImage = memo(function RemoteImage({
     <Image
       accessibilityIgnoresInvertColors
       source={transformedSource as ImageSourcePropType}
+      accessible={!!props.accessibilityLabel}
       accessibilityRole="image"
       {...props}
       style={stylesWithDimensions}
