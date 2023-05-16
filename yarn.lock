@@ -2351,6 +2351,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-migrator@workspace:packages/cds-migrator"
   dependencies:
+    chalk: ^4.1.2
     fast-glob: ^3.2.11
     ts-morph: ^17.0.1
     update-notifier: ^5.1.0
@@ -2995,6 +2996,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cds/storybook@workspace:apps/storybook"
   dependencies:
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"

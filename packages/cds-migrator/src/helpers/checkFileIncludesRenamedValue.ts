@@ -4,6 +4,9 @@
  * @param renameMap - The rename map to check against
  * @returns boolean
  */
-export function fileIncludesRenamedValue(sourceContent: string, renamedValues: string[]): boolean {
+export function checkFileIncludesRenamedValue(
+  sourceContent: string,
+  renamedValues: string[],
+): boolean {
   return renamedValues.some((val) => sourceContent.includes(val));
 }

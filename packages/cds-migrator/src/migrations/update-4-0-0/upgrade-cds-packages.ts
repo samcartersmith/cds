@@ -1,7 +1,7 @@
 import { addDependenciesToPackageJson, getProjects, Tree } from '@nrwl/devkit';
 
 import { CdsDependencyCheck, checkHasCdsDependency } from '../../helpers/checkHasCdsDependency';
-import { logError, logNote, logSuccess } from '../../helpers/loggingHelpers';
+import { logDebug, logError, logSuccess } from '../../helpers/loggingHelpers';
 
 const depsToAddMap = {
   mobile: {
@@ -39,7 +39,7 @@ function updateDeps(
 }
 
 export default async function upgradeCdsPackages(tree: Tree) {
-  logNote('Upgrading necessary CDS dependencies');
+  logDebug('Upgrading necessary CDS dependencies');
 
   const projects = getProjects(tree);
   const packageJsonsWithUpdates: string[] = [];

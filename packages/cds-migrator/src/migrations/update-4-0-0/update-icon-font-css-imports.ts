@@ -2,7 +2,7 @@ import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
 import { createMigration, CreateMigrationParams } from '../../helpers/createMigration';
-import { logNote } from '../../helpers/loggingHelpers';
+import { logDebug } from '../../helpers/loggingHelpers';
 import { replaceImportPath } from '../../helpers/replaceImportPath';
 import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
 
@@ -28,7 +28,7 @@ function updateIconImportPaths({ sourceFile, tree }: CreateMigrationParams) {
 }
 
 export default async function updateIconImports(tree: Tree) {
-  logNote('Updating icon-font.css usages');
+  logDebug('Updating icon-font.css usages');
 
   await createMigration({ tree, callback: updateIconImportPaths, filterSourceFiles });
 }

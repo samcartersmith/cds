@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.1 (5/14/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: Added migration scripts for v5 release [[#1963](https://github.cbhq.net/frontend/cds/pull/1963)]
+
 ## 0.1.0 (5/11/2023 PST)
 
 #### 💥 Breaking

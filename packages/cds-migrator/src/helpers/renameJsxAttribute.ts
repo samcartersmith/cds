@@ -1,6 +1,6 @@
 import { SyntaxKind } from 'ts-morph';
 
-import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from '../types';
+import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from './types';
 
 /**
  * Replaces a specified attribute with the new value
@@ -9,7 +9,7 @@ import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from '../typ
  * @param attribute - The attribute to update
  * @param jsx - The JSX element to update
  */
-export function updateJsxAttribute({
+export function renameJsxAttribute({
   updateMap,
   attribute,
   jsx,

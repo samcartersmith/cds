@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-fonts": "workspace:^",
     "@cbhq/cds-icons": "workspace:^",
     "@cbhq/cds-illustrations": "workspace:^",
