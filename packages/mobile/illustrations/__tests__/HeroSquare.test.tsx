@@ -1,24 +1,24 @@
 import { render, screen } from '@testing-library/react-native';
 
-import { Pictogram } from '../Pictogram';
+import { HeroSquare } from '../HeroSquare';
 
-const PICTOGRAM_TEST_ID = 'add-pictogram-test';
+const PICTOGRAM_TEST_ID = 'add-hero-square-test';
 
-describe('Pictogram', () => {
+describe('HeroSquare', () => {
   it('passes a11y', () => {
-    render(<Pictogram name="add" testID={PICTOGRAM_TEST_ID} />);
+    render(<HeroSquare name="docError" testID={PICTOGRAM_TEST_ID} />);
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeAccessible();
   });
 
-  it('renders a pictogram', () => {
-    render(<Pictogram name="add" testID={PICTOGRAM_TEST_ID} />);
+  it('renders a HeroSquare', () => {
+    render(<HeroSquare name="docError" testID={PICTOGRAM_TEST_ID} />);
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
   });
 
-  it('renders a pictogram with accessibilityHint and accessibilityLabel', () => {
+  it('renders a HeroSquare with accessibilityHint and accessibilityLabel', () => {
     render(
-      <Pictogram
-        name="add"
+      <HeroSquare
+        name="docError"
         testID={PICTOGRAM_TEST_ID}
         accessibilityHint="Accessibility Hint"
         accessibilityLabel="Accessibility Label"
@@ -33,25 +33,28 @@ describe('Pictogram', () => {
       'accessibilityHint',
       'Accessibility Hint',
     );
-    // This should automatically be set always
+    // This should automatically be set to always be image
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toHaveProp('accessibilityRole', 'image');
 
     // This should be true if accessibility label is passed
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toHaveProp('accessible', true);
   });
-
-  it('renders a Pictogram with accessibilityHint and no accessibilityLabel', () => {
+  it('renders a HeroSquare with accessibilityHint and no accessibilityLabel', () => {
     render(
-      <Pictogram name="add" testID={PICTOGRAM_TEST_ID} accessibilityHint="Accessibility Hint" />,
+      <HeroSquare
+        name="docError"
+        testID={PICTOGRAM_TEST_ID}
+        accessibilityHint="Accessibility Hint"
+      />,
     );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
 
-    const PictogramComponent = screen.getByTestId(PICTOGRAM_TEST_ID);
+    const HeroSquareComponent = screen.getByTestId(PICTOGRAM_TEST_ID);
 
-    expect(PictogramComponent).toHaveProp('accessibilityLabel', undefined);
-    expect(PictogramComponent).toHaveProp('accessibilityHint', 'Accessibility Hint');
+    expect(HeroSquareComponent).toHaveProp('accessibilityLabel', undefined);
+    expect(HeroSquareComponent).toHaveProp('accessibilityHint', 'Accessibility Hint');
 
-    // This should automatically be set always
+    // This should automatically be set to always be image
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toHaveProp('accessibilityRole', 'image');
 
     // This should be false since there's no accessible prop or accessibilityLabel prop

@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.8 (5/16/2023 PST)
+
+#### 🐞 Fixes
+
+- Move 'alt' prop to platform specific props. [[#1984](https://github.cbhq.net/frontend/cds/pull/1984)] [[DX-1126](https://jira.coinbase-corp.com/browse/DX-1126)]
+- Fix CardMedia generator to implicitly pass 'alt' for illustration. [[#1984](https://github.cbhq.net/frontend/cds/pull/1984)] [[DX-1126](https://jira.coinbase-corp.com/browse/DX-1126)]
+
 ## 4.2.7 ((5/15/2023, 04:29 PM PST))
 
 This is an artificial version bump with no new change.

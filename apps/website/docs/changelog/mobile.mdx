@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.8 (5/16/2023 PST)
+
+#### 🐞 Fixes
+
+- Expose a11y props for Illustration for mobile component. [[#1984](https://github.cbhq.net/frontend/cds/pull/1984)] [[DX-1126](https://jira.coinbase-corp.com/browse/DX-1126)]
+
 ## 4.2.7 (5/15/2023 PST)
 
 #### 🐞 Fixes

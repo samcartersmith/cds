@@ -31,11 +31,11 @@ export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMed
     if (props.type === 'spotSquare') {
       return (
         <Illustration
+          {...props}
           type="spotSquare"
           dimension={defaultMediaDimension}
           name={props.name}
           testID={props.testID}
-          alt={props.alt ?? ''}
         />
       );
     }
@@ -43,11 +43,11 @@ export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMed
     if (props.type === 'pictogram') {
       return (
         <Illustration
+          {...props}
           type="pictogram"
           dimension={defaultMediaDimension}
           name={props.name}
           testID={props.testID}
-          alt={props.alt ?? ''}
         />
       );
     }
