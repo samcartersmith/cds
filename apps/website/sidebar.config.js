@@ -854,6 +854,7 @@ const sidebars = {
         { type: 'doc', id: 'guides/migration/overview', label: 'Migration Guides' },
         'cds/support',
         { type: 'doc', id: 'resources/deprecations', label: 'Deprecations' },
+        { type: 'doc', id: 'resources/gaad/index', label: 'GAAD' },
       ],
     },
   ],

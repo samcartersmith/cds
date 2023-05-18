@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Package.json format update.
+
 ## 4.2.10 (5/17/2023 PST)
 
 #### 🐞 Fixes

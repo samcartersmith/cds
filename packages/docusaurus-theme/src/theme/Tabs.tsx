@@ -96,7 +96,8 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
   if (groupId != null) {
     const urlValue = urlParams?.get(groupId);
     const shouldUpdateUrlParams = urlValue && selectedValue !== urlValue;
-    const relevantTabGroupChoice = tabGroupChoices[groupId];
+    const dynamicHash = history.location.hash.replace(`#${groupId}=`, '');
+    const relevantTabGroupChoice = dynamicHash ?? tabGroupChoices[groupId];
     if (shouldUpdateUrlParams) {
       setSelectedValue(urlValue);
     } else if (
@@ -104,7 +105,7 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
       relevantTabGroupChoice !== selectedValue &&
       values.some((item) => item.value === relevantTabGroupChoice)
     ) {
-      if (urlParams) {
+      if (urlParams && urlParams?.toString() !== '') {
         urlParams.set(groupId, relevantTabGroupChoice);
         history.replace({ ...location, hash: urlParams.toString() });
       } else {

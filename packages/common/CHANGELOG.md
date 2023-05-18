@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Updated some shared mocks to look like real data.
+
 ## 4.2.10 (5/17/2023 PST)
 
 #### 🐞 Fixes
