@@ -76,18 +76,25 @@ describe('Modal', () => {
   });
 
   it('passes a11y', async () => {
-    expect(await renderA11y(<MockModal visible />)).toHaveNoViolations();
+    expect(
+      await renderA11y(
+        <MockModal visible closeAccessibilityLabel="Close" backAccessibilityLabel="Back" />,
+      ),
+    ).toHaveNoViolations();
   });
 
   it('passes a11y when visible', async () => {
     expect(
-      await renderA11y(<MockModal />, {
-        async afterRender() {
-          fireEvent.click(screen.getByRole('button'));
+      await renderA11y(
+        <MockModal closeAccessibilityLabel="Close" backAccessibilityLabel="Back" />,
+        {
+          async afterRender() {
+            fireEvent.click(screen.getByRole('button'));
 
-          return waitFor(() => screen.getByRole('dialog'));
+            return waitFor(() => screen.getByRole('dialog'));
+          },
         },
-      }),
+      ),
     ).toHaveNoViolations();
   });
 
@@ -156,7 +163,7 @@ describe('Modal', () => {
 
   it('triggers close on close button click', async () => {
     const onRequestClose = jest.fn();
-    render(<MockModal onRequestClose={onRequestClose} />);
+    render(<MockModal onRequestClose={onRequestClose} closeAccessibilityLabel="Close" />);
 
     fireEvent.click(screen.getByRole('button'));
 
@@ -181,7 +188,14 @@ describe('Modal', () => {
 
   it('triggers back action on back button click', async () => {
     const onBackButtonPress = jest.fn();
-    render(<MockModal visible onRequestClose={jest.fn()} onBackButtonPress={onBackButtonPress} />);
+    render(
+      <MockModal
+        visible
+        onRequestClose={jest.fn()}
+        onBackButtonPress={onBackButtonPress}
+        backAccessibilityLabel="Back"
+      />,
+    );
 
     fireEvent.click(screen.getByLabelText('Back'));
 
@@ -283,5 +297,35 @@ describe('Modal', () => {
     await new Promise((r) => setTimeout(r, DURATION));
     await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
     expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('sets accessible labels on close button', () => {
+    render(
+      <>
+        <span id="close-hint">Close button hint</span>
+        <MockModal closeAccessibilityLabel="Close" closeAccessibilityHint="close-hint" />
+      </>,
+    );
+
+    fireEvent.click(screen.getByRole('button'));
+
+    expect(screen.getByLabelText('Close')).toHaveAccessibleDescription('Close button hint');
+  });
+
+  it('sets accessible labels on back button', () => {
+    render(
+      <>
+        <span id="back-hint">Back button hint</span>
+        <MockModal
+          onBackButtonPress={jest.fn()}
+          backAccessibilityLabel="Back"
+          backAccessibilityHint="back-hint"
+        />
+      </>,
+    );
+
+    fireEvent.click(screen.getByRole('button'));
+
+    expect(screen.getByLabelText('Back')).toHaveAccessibleDescription('Back button hint');
   });
 });

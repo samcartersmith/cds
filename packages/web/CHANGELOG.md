@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.10 (5/17/2023 PST)
+
+#### 🐞 Fixes
+
+- **[ModalHeader]** Remove hard coded accessibility labels. [[#1995](https://github.cbhq.net/frontend/cds/pull/1995)] [[DX-1418](https://jira.coinbase-corp.com/browse/DX-1418)]
+
 ## 4.2.9 (5/17/2023 PST)
 
 #### 🐞 Fixes
