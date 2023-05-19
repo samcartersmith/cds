@@ -1,7 +1,11 @@
 import React, { cloneElement, memo, useMemo } from 'react';
 import { Animated, Text, TextStyle } from 'react-native';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
-import type { IconBaseProps, PaletteForeground } from '@cbhq/cds-common/types';
+import type {
+  IconBaseProps,
+  PaletteForeground,
+  SharedAccessibilityProps,
+} from '@cbhq/cds-common/types';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils';
 
@@ -23,9 +27,12 @@ export type IconProps = IconBaseProps & {
   color?: PaletteForeground;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetColor?: string | Animated.AnimatedInterpolation;
-} & DangerouslySetStyle<TextStyle>;
+} & DangerouslySetStyle<TextStyle> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
 export const Icon = memo(function Icon({
+  accessibilityLabel,
+  accessibilityHint,
   animated = false,
   badge,
   bordered = false,
@@ -95,7 +102,10 @@ export const Icon = memo(function Icon({
       <Box alignItems="center" justifyContent="center" width={wrapperSize} height={wrapperSize}>
         <TextComponent
           allowFontScaling={false}
+          accessible={!!accessibilityLabel}
           accessibilityRole="image"
+          accessibilityLabel={accessibilityLabel}
+          accessibilityHint={accessibilityHint}
           style={fontStyles as TextStyle}
         >
           {glyph}

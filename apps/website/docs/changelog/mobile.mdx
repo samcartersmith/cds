@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 4.2.11 (5/18/2023 PST)
+
+#### 🐞 Fixes
+
+- **[Icon, NavigationIcon]** Expose accessibility props on mobile. [[#1996](https://github.cbhq.net/frontend/cds/pull/1996)] [[DX-1125](https://jira.coinbase-corp.com/browse/DX-1125)]
 
 #### 📘 Misc
 
