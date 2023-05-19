@@ -175,6 +175,7 @@ export const config: AdoptersConfig[] = [
         github: frontendWebGit,
         id: 'unified-login',
         label: 'Unified Login Web',
+        sourceGlob: ['apps/unified-login/**/*.(ts|tsx)'],
         type: 'doc',
       },
       {
@@ -182,6 +183,7 @@ export const config: AdoptersConfig[] = [
         github: frontendWebGit,
         id: 'two-factor-web',
         label: 'Two Factor Web',
+        sourceGlob: ['packages/two-factor-web/**/*.(ts|tsx)'],
         type: 'doc',
       },
       {
