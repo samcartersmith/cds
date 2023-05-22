@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- **[Visreg]** Upgrade Visreg iOS device to iPhone 14. [[#1997](https://github.cbhq.net/frontend/cds/pull/1997)] [[DX-1440](https://jira.coinbase-corp.com/browse/DX-1440)]
+
 ## 0.3.7 (4/5/2023 PST)
 
 #### 🐞 Fixes

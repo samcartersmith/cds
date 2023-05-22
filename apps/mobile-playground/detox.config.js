@@ -14,6 +14,10 @@ const detoxConfig = createConfig({
  */
 detoxConfig.devices.emulator.bootArgs = '-writable-system -no-window';
 
+// Updates default iOS sim from iPhone 12 to iPhone 14
+detoxConfig.configurations['ios.debug'].device = 'simulator.14';
+detoxConfig.configurations['ios.release'].device = 'simulator.14';
+
 const disabledRoutes = {
   disabledRoutes: [
     'Alerts', // pointless
