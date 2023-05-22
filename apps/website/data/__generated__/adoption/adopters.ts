@@ -18,6 +18,7 @@ export const adopters = [
   { id: 'unified-login', pillar: 'Platform' },
   { id: 'two-factor-web', pillar: 'Platform' },
   { id: 'tax-center', pillar: 'Platform' },
+  { id: 'cloud-console', pillar: 'Platform' },
   { id: 'retail-mobile', pillar: 'Retail' },
   { id: 'retail-web-logged-in', pillar: 'Retail' },
   { id: 'umo', pillar: 'Retail' },

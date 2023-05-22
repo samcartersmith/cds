@@ -194,6 +194,14 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: ['@taxcenter'],
         type: 'doc',
       },
+      {
+        root: path.join(tempDir, frontendWebGit, 'apps/cloud-console'),
+        github: frontendWebGit,
+        id: 'cloud-console',
+        label: 'Cloud Console',
+        projectTsAliases: [':cloud'],
+        type: 'doc',
+      },
     ],
   },
   {
