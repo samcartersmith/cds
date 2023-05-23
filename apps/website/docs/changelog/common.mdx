@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.12 (5/23/2023 PST)
+
+#### 🐞 Fixes
+
+- Add testID for ListCellFallback props. [[DX-1070](https://jira.coinbase-corp.com/browse/DX-1070)]
+
 ## 4.2.11 (5/18/2023, 04:33 PM PST)
 
 This is an artificial version bump with no new change.
