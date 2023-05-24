@@ -11,7 +11,7 @@ import { Lottie } from './Lottie';
 type LottiePlayerRef = LottiePlayer<TradeStatusLottie>;
 
 export const LottieStatusAnimation = memo(
-  ({ status = 'loading', onFinish, ...otherProps }: LottieStatusAnimationProps) => {
+  ({ status = 'loading', onFinish, testID, ...otherProps }: LottieStatusAnimationProps) => {
     const [, forceUpdate] = useState(0);
     const lottie = useRef<LottiePlayerRef>();
 
@@ -30,6 +30,7 @@ export const LottieStatusAnimation = memo(
 
     return (
       <Lottie
+        testID={testID}
         ref={handleRef}
         source={tradeStatus}
         onAnimationFinish={handlePolling}

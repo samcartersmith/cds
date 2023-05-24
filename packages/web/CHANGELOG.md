@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.13 (5/23/2023 PST)
+
+#### 🐞 Fixes
+
+- Add testID to LottieStatusAnimation & test coverage. [[#2001](https://github.cbhq.net/frontend/cds/pull/2001)] [[DX-1071](https://jira.coinbase-corp.com/browse/DX-1071)]
+
 ## 4.2.12 (5/23/2023 PST)
 
 #### 🐞 Fixes

@@ -7,10 +7,11 @@ import { useLottie } from './useLottie';
 export const LottieStatusAnimation = ({
   status = 'loading',
   onFinish,
+  testID,
   ...otherProps
 }: LottieStatusAnimationProps) => {
   const { playMarkers, Lottie } = useLottie(tradeStatus);
   const handlePolling = useStatusAnimationPoller({ status, playMarkers, onFinish });
 
-  return <Lottie {...otherProps} onAnimationFinish={handlePolling} />;
+  return <Lottie {...otherProps} testID={testID} onAnimationFinish={handlePolling} />;
 };
