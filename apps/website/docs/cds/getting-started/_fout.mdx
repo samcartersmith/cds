@@ -1,0 +1,45 @@
+CDS ships `@font-face` declarations for Coinbase fonts with the `font-display: swap` property, meaning that a fallback font will be used until the Coinbase font has loaded into the browser, at which point the Coinbase font is swapped in:
+
+```css title="@cbhq/cds-fonts/fonts.css"
+@font-face {
+  font-display: swap;
+  font-family: 'CoinbaseDisplay';
+  src: url('./CoinbaseDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+```
+
+While we think this provides the best overall experience, users may briefly see FOUT (the fallback font) while Coinbase fonts are being loaded. Although it's difficult to completely prevent FOUT, one way you can mitigate it is to preload fonts by adding a `link` tag with the `rel="preload"` attribute to the head of your HTML file:
+
+```html
+<link rel="preload" href="path/to/CoinbaseDisplay-Regular.woff2" as="font" />
+```
+
+Another more complex approach you could consider is to store the fonts in browser local storage after the first download. On subsequent page loads, the fonts can be pulled directly from local storage rather than needing to be downloaded again.
+
+However, if you would instead prefer to defer rendering of any text until after the Coinbase font has loaded in, you can redefine the `@font-face` declaration with the `font-display: block` property:
+
+```css title="fonts-override.css"
+@font-face {
+  font-display: block;
+  font-family: 'CoinbaseDisplay';
+  src: url('./CoinbaseDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+```
+
+This rule delays text rendering for up to 3 seconds if the Coinbase font hasn't loaded yet, potentially mitigating FOUT. If the font still hasn't loaded after this period, the text will be displayed with a fallback font. When the Coinbase font does eventually load, the text will swap to using it.
+
+:::warning
+
+While it's possible to defer text rendering this way, we generally don't recommended it because it can lead to a poor user experience, especially on slow connections. The user may perceive the website as slow or unresponsive if there's a noticeable delay before anything is rendered.
+
+:::
+
+If you're defining these `@font-face` declarations in a stylesheet and importing them into your React app, they need to imported after the global CDS styles in order to properly override our default declarations:
+
+```tsx title="App.tsx"
+// order matters
+import '@cbhq/cds-web/globalStyles';
+import './path/to/fonts-override.css';
+```
