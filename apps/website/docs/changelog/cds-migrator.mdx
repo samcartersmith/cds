@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.2 (5/25/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: add peer dependencies to CDSDep check. [[#2002](https://github.cbhq.net/frontend/cds/pull/2002)]
+
 ## 0.1.1 (5/14/2023 PST)
 
 #### 🚀 Updates
