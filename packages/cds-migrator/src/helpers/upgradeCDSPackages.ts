@@ -1,7 +1,7 @@
 import { addDependenciesToPackageJson, getProjects, output, Tree } from '@nrwl/devkit';
 
 import { CdsDependencyCheck, checkHasCdsDependency } from './checkHasCdsDependency';
-import { logNote } from './loggingHelpers';
+import { logDebug } from './loggingHelpers';
 
 type PackageName = 'mobile' | 'web' | 'common' | 'lottie-files';
 type PackageVersionType = Record<string, string>;
@@ -25,7 +25,7 @@ function updateDeps(
 }
 
 export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap) {
-  logNote('Upgrading necessary CDS dependencies');
+  logDebug('Upgrading necessary CDS dependencies');
 
   const projects = getProjects(tree);
   const packageJsonsWithUpdates: string[] = [];

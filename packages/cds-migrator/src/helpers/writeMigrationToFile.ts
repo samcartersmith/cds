@@ -7,10 +7,10 @@ import { JsxElementType } from './types';
 
 type WriteToFileType = {
   oldValue: string;
-  newValue: string;
+  newValue?: string;
   sourceFile: SourceFile;
-  jsx: JsxElementType;
   tree: Tree;
+  jsx?: JsxElementType;
 };
 
 /**
@@ -28,13 +28,17 @@ export function writeMigrationToFile({
   sourceFile,
   tree,
 }: WriteToFileType) {
-  const jsxContent = jsx.print();
-  const bodyLines = [jsxContent];
+  const jsxContent = jsx?.print();
+  const bodyLines = jsxContent ? [jsxContent] : undefined;
   const path = sourceFile.getFilePath();
 
-  if (oldValue !== undefined && newValue !== undefined) {
-    logSuccess(`Renaming ${oldValue} -> ${newValue}`, bodyLines);
+  if (oldValue !== undefined) {
     sourceFile.saveSync();
+    if (newValue !== undefined) {
+      logSuccess(`Successful migration from: ${oldValue} --> ${newValue}`, bodyLines);
+    } else {
+      logSuccess(`Successful migration of: ${oldValue}`, bodyLines);
+    }
   }
 
   // grab all the changes from ts-morph and write to the file system

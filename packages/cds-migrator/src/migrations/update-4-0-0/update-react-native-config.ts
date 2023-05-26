@@ -2,10 +2,10 @@ import { Tree } from '@nrwl/devkit';
 import glob from 'fast-glob';
 import fs from 'node:fs';
 
-import { logNote, logSuccess, logWarning } from '../../helpers/loggingHelpers';
+import { logDebug, logSuccess, logWarning } from '../../helpers/loggingHelpers';
 
 export default async function updateReactNativeConfig(tree: Tree) {
-  logNote('Updating react-native.config.js to use @cbhq/cds-icons font');
+  logDebug('Updating react-native.config.js to use @cbhq/cds-icons font');
 
   await glob(['**/react-native.config.js'], {
     ignore: ['node_modules'],

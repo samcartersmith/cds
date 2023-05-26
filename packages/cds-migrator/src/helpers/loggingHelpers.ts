@@ -1,6 +1,6 @@
 import { output } from '@nrwl/devkit';
 
-export function logNote(title: string, bodyLines?: string[]) {
+export function logDebug(title: string, bodyLines?: string[]) {
   output.log({ title, bodyLines, color: 'white' });
 }
 

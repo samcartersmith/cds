@@ -23,8 +23,8 @@ https://polaris.shopify.com/tools/polaris-migrator#usage
 ## Create Your Own Migrator Script
 
 1. Create a directory under `src/migrations/update<YOUR_VERSION>` suffixed with the CDS version you're upgrading to.
-2. Create your migrator functions in this directory. You can access the project tree (the NX project where you are running the script) by passing `tree` as an argument to the default export function in a migrator file.
-3. Add a key for the version to the `migrations` obejct in `src/migrations/migrations.ts` and pass it your migrator functions as an array.
+2. Create your migrator functions in this directory. You can access the project tree (the NX project where you are running the script) by passing `tree` as an argument to the default export function in a migrator file. Check out the "Writing Your Own Migrator Script" section for guidance on how to write these functions.
+3. Add a case for the version you are adding to the switch case statement in `packages/cds-migrator/src/generators/migrate/migrate.ts` and pass it your migrator functions and the tree as an argument.
 4. Add the same key to `properties.version.enum` in `src/generators/migrate/schema.json`
 5. Clear your NX cache with `yarn nx reset`
 6. Build and watch for changes in the migrator package by running `yarn nx run cds-migrator:build --skip-nx-cache && yarn nx run cds-migrator:watch`
@@ -45,10 +45,7 @@ yarn nx run cds-migrator:build --skip-nx-cache && yarn nx run cds-migrator:watch
 
 ## Writing Your Own Migrator Script
 
-There's quite a lot of boilerplate that goes into creating a generator. We've abstracted a lot of the `ts-morph` and NX generator logic into friendly helpers:
-
-- `createJsxMigration`, that takes the `tree` of the NX project calls a callback for each JSX element within a `sourceFile` that meets a conditional passed to `filterSourceFiles`.
-- `parseSourceFiles`, takes the `tree` calls a callback over every `sourceFile` that meets a conditional passed to `filterSourceFiles`.
+There's quite a lot of boilerplate that goes into creating a generator. We've abstracted a lot of the `ts-morph` and NX generator logic into friendly helpers called `createMigration` and `createJsxMigration`. Both functions need to be passed the NX `tree` instance in order to have read/write access to all the projects in an NX workspace.
 
 ### Terminology
 
@@ -58,31 +55,26 @@ Every NX generator receives a `tree` argument. This allows a generator to have a
 
 #### sourceFile
 
-When you setup `ts-morph` you have to create a `Project` instance, which stores a copy of mutated files in temporary memory. As you make changes to a `sourceFile` these changes are saved to the `Project` instance, and once all mutations are complete we overwrite the actual disc's file system with the content of the mutated `sourceFile`.
+When we're performing our migrations we don't want to parse every file in an NX workspace, so we use a temporary `ts-morph` file system that only contains files that contain migrations. This file system is called a `Project` instance, and as you make changes to a `sourceFile` these changes are saved to the `Project` instance. It's important to note that if you want the actual disc's file system to reflect your changes you'll need to use a helper like `writeMigrationToFile` to copy these changes over to the file system.
 
-### How Does createJsxMigration Work?
+### How Do createJsxMigration and createMigration Work?
 
 # 1. Gathers sourceFiles
 
-`createJsxMigration` is a generator helper that traverses the NX `tree` and performs transformations in each project within an NX workspace. First we gather the `sourceFiles` of workspaces that have CDS packages as a dependency. We use the `parseSourceFiles` helper to parse each project and store copies of the `sourceFiles` in temporary memory (under the hood we use `ts-morph` to instantiate a temporary Project which contains copies of `sourceFiles` that we will modify).
+First we need to create a temporary file system that only contains files with migratable instances. Both helpers use `parseSourceFiles` under the hood to traverse the NX `tree` and gather the `sourceFiles` of workspaces that have CDS packages as a dependency.
+
+You can customize this script to only add `sourceFiles` that meet a given conditional; like `filterSourceFiles` checks if a file contains a migratable instace, or `checkSourceFile` makes it easy to parse the actual JSX elements in a file that meets a condition (the latter is more accurate as it checks the actual JSX and not the file content as a string). These helpers gate your migration scripts from being run over irrelevant files that don't contain migrations.
 
 # 2. Parses JSX Elements
 
-It then uses the `parseJsxElements` helper to pull JSX elements out of a `sourceFile` and perform transformations over each element. The callback gets access to the JSX element itself, as well as some other crucial information you'll need to perform your `ts-morph` migrations.
+`createJsxMigration` then uses the `parseJsxElements` helper to pull JSX elements out of a `sourceFile` and perform transformations over each element. The callback gets access to the JSX element itself, as well as some other crucial information you'll need to perform your `ts-morph` migrations.
 
-```ts
-type ParseJsxElementsCbParams = {
-  jsx: JsxElementType;
-  sourceFile: SourceFile;
-  tree: Tree;
-  path: string;
-};
-```
+Note: If you don't need access to the JSX in a file, use `createMigration` instead. It's much faster because it only parses the content of a file as a string, as opposed to looping over every JSX element in a `sourceFile`.
 
 # 3. Ready, Set, Migrate!
 
-You now have access to all the JSX elements in every `sourceFile`! Use the [helpers](./helpers) we've provided to traverse and manipulate the JSX to perform your migrations.
+Use the [helpers](./helpers) we've provided to traverse and manipulate file contents and JSX to perform your migrations.
 
 # 4. Save to the File System
 
-When you're done making changes to a file, make sure you call `writeMigrationToFile`, which will sync your changes with the NX and `ts-morph` file system copies, as well as writing these changes back to the disc file system.
+Whenever you modify a file, make sure you write the changes to the disc file system with `writeMigrationToFile` otherwise your changes will only be reflected in the `ts-morph` project instance (a copy of the file system).

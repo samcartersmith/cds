@@ -1,4 +1,4 @@
-import { FindReplaceCallbackReturnType, JsxElementType, PropToAttributeValue } from '../types';
+import { FindReplaceCallbackReturnType, JsxElementType, PropToAttributeValue } from './types';
 
 /**
  * Replaces a specified attribute with a new attribute and value
@@ -8,7 +8,7 @@ import { FindReplaceCallbackReturnType, JsxElementType, PropToAttributeValue } f
  * @param newAttribute - Replaces oldAttribute
  * @param jsx - The JSX element to update
  */
-export function updateJsxAttributeWithAttributeAndValue({
+export function renameJsxAttributeWithAttributeAndValue({
   oldAttribute,
   newAttribute,
   value,
@@ -17,10 +17,10 @@ export function updateJsxAttributeWithAttributeAndValue({
   // remove the boolean prop
   jsx.getAttribute(oldAttribute)?.remove();
   // add the new attribute value pair
-  jsx.addAttribute({ name: newAttribute, initializer: value });
+  jsx.addAttribute({ name: newAttribute, initializer: `"${value}"` });
 
   return {
     oldValue: oldAttribute,
-    newValue: `${newAttribute}=${value}`,
+    newValue: `${newAttribute}="${value}"`,
   };
 }

@@ -13,14 +13,9 @@ export function checkHasImportAlias(jsx: JsxElementType): boolean {
     .getFirstDescendantByKind(SyntaxKind.Identifier)
     ?.getSymbol()
     ?.getDeclarations();
-  let hasImportAlias = false;
-  if (declarations) {
-    declarations.forEach((declaration) => {
-      /** If declaration.compilerNode.propertyName is present, it has an import alias */
-      if (declaration.compilerNode?.propertyName?.escapedText) {
-        hasImportAlias = true;
-      }
-    });
-  }
-  return hasImportAlias;
+
+  /** If declaration.compilerNode.propertyName is present, it has an import alias */
+  return declarations
+    ? declarations.some((declaration) => declaration.compilerNode?.propertyName?.escapedText)
+    : false;
 }

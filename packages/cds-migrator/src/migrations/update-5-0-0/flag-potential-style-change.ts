@@ -6,7 +6,7 @@ import {
   createJsxMigration,
   generateManualMigrationOutput,
   getTerminalHyperlink,
-  logNote,
+  logDebug,
   ParseJsxElementsCbParams,
   searchAndProcessComponent,
 } from '../../helpers/index';
@@ -48,7 +48,7 @@ const filterSourceFiles = (path: string) => {
 };
 
 export default async function migrations(tree: Tree) {
-  logNote('Identifying code that could potential fail with Vstack A11y change');
+  logDebug('Identifying code that could potential fail with Vstack A11y change');
   await createJsxMigration({
     tree,
     filterSourceFiles,
