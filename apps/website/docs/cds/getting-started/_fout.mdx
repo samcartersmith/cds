@@ -23,7 +23,7 @@ However, if you would instead prefer to defer rendering of any text until after 
 @font-face {
   font-display: block;
   font-family: 'CoinbaseDisplay';
-  src: url('./CoinbaseDisplay-Regular.woff2') format('woff2');
+  src: url('path/to/CoinbaseDisplay-Regular.woff2') format('woff2');
   font-weight: 400;
 }
 ```
@@ -43,3 +43,7 @@ If you're defining these `@font-face` declarations in a stylesheet and importing
 import '@cbhq/cds-web/globalStyles';
 import './path/to/fonts-override.css';
 ```
+
+Since our consumers can implement our styles and fonts in different ways, your font paths and URLs will ultimately depend on where they reside in your application.
+
+For the full list of CDS `@font-face` declarations, please refer to the [@cbhq/cds-fonts/fonts.css](https://github.cbhq.net/frontend/cds/blob/master/packages/fonts/fonts.css) file.
