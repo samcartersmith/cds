@@ -32,11 +32,25 @@
     },
     "includeZeroCoverageAudit": {
       "type": "boolean",
-      "description": "Generate list of components with zero jest coverage from coverage-summary.json file if included"
+      "description": "Generate list of components with zero jest coverage from coverage-summary.json file if included."
     },
     "getComponentsMissingA11yCoverage": {
       "type": "boolean",
-      "description": "Generates list of components without a11y coverage",
+      "description": "Generates list of components without a11y coverage.",
+      "default": true
+    },
+    "eventProjectName": {
+      "type": "string",
+      "description": "Snake-cased project name that enables sending of a11y scores to Snowflake and allows grouping with other project-related metrics."
+    },
+    "debugEvents": {
+      "type": "boolean",
+      "description": "Enable verbose logging for debugging Snowflake-bound events. Requires a `projectName` to take effect.",
+      "default": false
+    },
+    "sendEventsToProd": {
+      "type": "boolean",
+      "description": "Send a11y scores to Snowflake production environment if `true`, otherwise send to development environment. Requires a `projectName` to take effect.",
       "default": true
     }
   }

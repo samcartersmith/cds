@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@cbhq/cds-tasks": "workspace:^",
+    "@cbhq/ui-scorecard": "workspace:^",
     "@react-native-community/netinfo": "^7.1.7",
     "@testing-library/react-native": "^11.3.0",
     "@types/react-native": "^0.68.2",

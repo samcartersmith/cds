@@ -2369,6 +2369,7 @@ __metadata:
     "@cbhq/cds-lottie-files": "workspace:^"
     "@cbhq/cds-tasks": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/ui-scorecard": "workspace:^"
     "@react-native-community/netinfo": ^7.1.7
     "@testing-library/react-native": ^11.3.0
     "@types/react-native": ^0.68.2
@@ -2483,6 +2484,20 @@ __metadata:
   peerDependencies:
     react: ">=17.0.0"
   checksum: 255fbcee0b8edc01dc8c84763365bbb1e942d3c723652b1f72d77425c0fe23f76cacc240b1aa8eb135a55d2420d81c36edda0c5b6fe165763f2891a654b341dd
+  languageName: node
+  linkType: hard
+
+"@cbhq/client-analytics@npm:^8.6.0":
+  version: 8.6.0
+  resolution: "@cbhq/client-analytics@npm:8.6.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-8.6.0.tgz"
+  dependencies:
+    idb: ^7.0.2
+    md5: ^2.3.0
+    perfume.js: 9.0.0-rc.3
+    ua-parser-js: ^1.0.2
+  peerDependencies:
+    react: ">=17.0.0"
+  checksum: 9ee75ab06e73d83c0f10f5abeda744cfc57b177af12511459df2048e3e416ff72a2064307af6650e83cde0c4d24f4d0e7141bd6ecb27b06340a8d532ce58642a
   languageName: node
   linkType: hard
 
@@ -2922,10 +2937,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/ui-scorecard@workspace:packages/ui-scorecard":
+"@cbhq/ui-scorecard@workspace:^, @cbhq/ui-scorecard@workspace:packages/ui-scorecard":
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-scorecard@workspace:packages/ui-scorecard"
   dependencies:
+    "@cbhq/client-analytics": ^8.6.0
     "@types/update-notifier": ^5.1.0
     "@types/yargs": ^17.0.11
     aws-sdk: ^2.1207.0
@@ -28095,6 +28111,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"perfume.js@npm:9.0.0-rc.3":
+  version: 9.0.0-rc.3
+  resolution: "perfume.js@npm:9.0.0-rc.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fperfume.js%2F-%2Fperfume.js-9.0.0-rc.3.tgz"
+  dependencies:
+    web-vitals: ^3.1.0
+  checksum: d4e49a9f1a286c74ef333df11daca8f3fce7e6629b7c2316d32ecba3584904ab3dd41b568a8595a4ea17e436c390e9c77f778ff41b552f12226e6810e49e674a
+  languageName: node
+  linkType: hard
+
 "perfume.js@npm:^6.3.0":
   version: 6.3.0
   resolution: "perfume.js@npm:6.3.0"
@@ -36752,6 +36777,13 @@ __metadata:
   version: 3.2.1
   resolution: "web-streams-polyfill@npm:3.2.1"
   checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02
+  languageName: node
+  linkType: hard
+
+"web-vitals@npm:^3.1.0":
+  version: 3.3.1
+  resolution: "web-vitals@npm:3.3.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fweb-vitals%2F-%2Fweb-vitals-3.3.1.tgz"
+  checksum: ff417dec2d77f57bc5130767f47aad6f93173e5d0e24a179082c7dca423850106ba1d66c737f91400a6bed6585a7295531d9e54354d1cb31d1a3e68596bb2000
   languageName: node
   linkType: hard
 

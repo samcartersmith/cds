@@ -59,6 +59,7 @@ export class A11yLogger extends TestTask {
       totalNumberOfComponents: 0,
       componentsWithTest: [],
       totalNumberOfComponentsWithTest: 0,
+      automatedA11yScore: 0,
     };
 
     this.filePaths = filePaths;
@@ -108,7 +109,7 @@ export class A11yLogger extends TestTask {
       this.log.totalNumberOfComponentsWithTest = this.log.componentsWithTest.length;
     } else {
       const componentsWithTest = await this.a11yAuditor.getComponentsWithTestList();
-      this.log.totalNumberOfComponentTests = componentsWithTest.length;
+      this.log.totalNumberOfComponentsWithTest = componentsWithTest.length;
     }
 
     const elapsed = performance.now() - start;
@@ -314,7 +315,6 @@ export class A11yLogger extends TestTask {
       let status: 'passed' | 'failed' = 'passed';
 
       // We only consider it failing if it contains the following regex pattern  /.*pathToComponent:.*problem:.*solution:.*link:.*/}.
-
       // There may be times when there are other console.error errors, but are not A11y VIOLATION, therefore this check is important to capture failures that are specific to A11y
       if (stderr.match(/.*pathToComponent:.*problem:.*solution:.*link:.*/) != null) {
         status = 'failed';
@@ -411,5 +411,49 @@ export class A11yLogger extends TestTask {
     const elapsed = new Date().getTime() - start;
 
     A11yLogger.logFunctionAndDuration('componentsWithoutToBeAccessibleTest', elapsed);
+  }
+
+  private async logA11yScore() {
+    if (this.log.totalNumberOfComponentsWithTest === 0) {
+      await this.logTotalNumberOfComponentsWithTest();
+    }
+
+    if (this.log.totalNumberOfPassingToBeAccessibleTests === 0) {
+      this.logTotalNumberOfPassingToBeAccessibleTests();
+    }
+
+    let a11yScore =
+      this.log.totalNumberOfPassingToBeAccessibleTests / this.log.totalNumberOfComponentsWithTest;
+
+    if (isNaN(a11yScore) || a11yScore === Infinity) {
+      a11yScore = 0;
+    } else {
+      // multiplying by 100 and rounding to two decimal places
+      a11yScore = Math.round(a11yScore * 10000) / 100;
+    }
+
+    this.log.a11yScore = a11yScore;
+
+    return a11yScore;
+  }
+
+  private logJestScore() {
+    if (this.log.jestCoverage === undefined) {
+      this.logCoverageSummaryTotal();
+    }
+
+    this.log.jestScore = this.log.jestCoverage ? this.log.jestCoverage.lines.pct : 0;
+
+    return this.log.jestScore;
+  }
+
+  public async logAutomatedA11yScore() {
+    const a11yScore = this.log.a11yScore ?? (await this.logA11yScore());
+    const jestScore = this.log.jestScore ?? this.logJestScore();
+
+    const automatedA11yScore = (a11yScore + jestScore * 2) / 3;
+
+    // rounding to one decimal place
+    this.log.automatedA11yScore = Math.round(automatedA11yScore * 10) / 10;
   }
 }

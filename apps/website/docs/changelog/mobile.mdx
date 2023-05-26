@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Add ui-scorecard as a dev dep. [[#2004](https://github.cbhq.net/frontend/cds/pull/2004)]
+
 ## 4.2.13 (5/23/2023 PST)
 
 #### 🐞 Fixes
