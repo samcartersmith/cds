@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Convert Divider story from mdx to tsx. [[#2007](https://github.cbhq.net/frontend/cds/pull/2007)] [[DX-192](https://jira.coinbase-corp.com/browse/DX-192)]
+
+#### 📘 Misc
+
 - Update documentation in the README. [[#2006](https://github.cbhq.net/frontend/cds/pull/2006)] [[DX-1620](https://jira.coinbase-corp.com/browse/DX-1620)]
 
 ## 4.2.13 (5/23/2023 PST)
