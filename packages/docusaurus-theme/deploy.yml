@@ -1,2 +1,4 @@
 engine: Node
 build_name: package-cds-docusaurus-theme
+continuous: true
+quiet_deploy: true
