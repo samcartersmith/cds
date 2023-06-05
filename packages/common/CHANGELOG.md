@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 4.2.14 ((6/4/2023, 12:57 PM PST))
+
+This is an artificial version bump with no new change.
+
+#### 📘 Misc
+
+- Enabled storybook testing for mobile for various configurations. [[#2009](https://github.cbhq.net/frontend/cds/pull/2009)] [[DX-1627](https://jira.coinbase-corp.com/browse/DX-1627)]
+
 ## 4.2.13 (5/23/2023 PST)
 
 #### 🐞 Fixes

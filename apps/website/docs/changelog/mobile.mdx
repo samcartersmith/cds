@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 4.2.14 (6/4/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix Sparkline Period Selector to be compatible with variable sized periods. [[#2009](https://github.cbhq.net/frontend/cds/pull/2009)] [[DX-1627](https://jira.coinbase-corp.com/browse/DX-1627)]
 
 #### 📘 Misc
 
