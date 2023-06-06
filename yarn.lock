@@ -2398,7 +2398,7 @@ __metadata:
     react: 18.2.0
     react-native: ">=0.68.2"
     react-native-gesture-handler: 2.9.0
-    react-native-reanimated: 3.0.2
+    react-native-reanimated: 3.1.0
     react-native-safe-area-context: ^4.5.0
     react-native-svg: 13.8.0
   languageName: unknown
@@ -2425,7 +2425,7 @@ __metadata:
     react-native-inappbrowser-reborn: 3.7.0
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.2
-    react-native-reanimated: 3.0.2
+    react-native-reanimated: 3.1.0
     react-native-safe-area-context: ^4.5.0
     react-native-svg: 13.8.0
     react-test-renderer: ^18.2.0
@@ -2444,7 +2444,7 @@ __metadata:
     react-native-inappbrowser-reborn: 3.7.0
     react-native-linear-gradient: 2.5.6
     react-native-navigation-bar-color: 2.0.2
-    react-native-reanimated: 3.0.2
+    react-native-reanimated: 3.1.0
     react-native-safe-area-context: ^4.5.0
     react-native-screens: ~3.20.0
     react-native-svg: 13.8.0
@@ -4410,6 +4410,26 @@ __metadata:
   peerDependencies:
     expo-modules-autolinking: ">=0.8.1"
   checksum: 56be876959ce4d71734e26cd71f743fc06f1563548d8a41a9378c05ca075c073bfebbd89170188ea4ff2a1677eb2bae330f8f803b060796e4fd8cfc3a312302d
+  languageName: node
+  linkType: hard
+
+"@expo/prebuild-config@npm:6.0.1":
+  version: 6.0.1
+  resolution: "@expo/prebuild-config@npm:6.0.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40expo%2Fprebuild-config%2F-%2Fprebuild-config-6.0.1.tgz"
+  dependencies:
+    "@expo/config": ~8.0.0
+    "@expo/config-plugins": ~6.0.0
+    "@expo/config-types": ^48.0.0
+    "@expo/image-utils": 0.3.22
+    "@expo/json-file": ^8.2.37
+    debug: ^4.3.1
+    fs-extra: ^9.0.0
+    resolve-from: ^5.0.0
+    semver: 7.3.2
+    xml2js: 0.4.23
+  peerDependencies:
+    expo-modules-autolinking: ">=0.8.1"
+  checksum: 81ea222fe64ba18e958535c9ee36682ffc533daf1567910311fae19f4a6ded4712b1c0db997658e34911868d66bf911a6af02c5a7d8a8a942ef3b98b34c2986a
   languageName: node
   linkType: hard
 
@@ -18476,7 +18496,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-build-properties@npm:^0.5.1, expo-build-properties@npm:~0.5.1":
+"expo-build-properties@npm:^0.5.1":
   version: 0.5.1
   resolution: "expo-build-properties@npm:0.5.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexpo-build-properties%2F-%2Fexpo-build-properties-0.5.1.tgz"
   dependencies:
@@ -18485,6 +18505,18 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: edadd4bef246bc91e9655a50631af65e517516f5c32e21613adb8ef8348fcd551f167ff3fd90953304b2cc52aeb69feed73ee4bfb4a3ab4136944c98d183b578
+  languageName: node
+  linkType: hard
+
+"expo-build-properties@npm:~0.6.0":
+  version: 0.6.0
+  resolution: "expo-build-properties@npm:0.6.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexpo-build-properties%2F-%2Fexpo-build-properties-0.6.0.tgz"
+  dependencies:
+    ajv: ^8.11.0
+    semver: ^7.3.5
+  peerDependencies:
+    expo: "*"
+  checksum: 81827f80a368915224f7b4b3ae8682b13e9e683511c329084da7a2a659253b2281dae33cf386cc82f599c2c458aa57c66c6565c917ebeb4799bebc3044974037
   languageName: node
   linkType: hard
 
@@ -18569,15 +18601,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-splash-screen@npm:~0.18.1":
-  version: 0.18.1
-  resolution: "expo-splash-screen@npm:0.18.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexpo-splash-screen%2F-%2Fexpo-splash-screen-0.18.1.tgz"
+"expo-splash-screen@npm:~0.18.2":
+  version: 0.18.2
+  resolution: "expo-splash-screen@npm:0.18.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexpo-splash-screen%2F-%2Fexpo-splash-screen-0.18.2.tgz"
   dependencies:
     "@expo/configure-splash-screen": ^0.6.0
-    "@expo/prebuild-config": 6.0.0
+    "@expo/prebuild-config": 6.0.1
   peerDependencies:
     expo: "*"
-  checksum: 39a43bd3f779432721e845f171c51b0a64d713029ec14202e65a84434b09b9184dd6b173d13331321766854cf400186b3ae4aa8736d6fda40f380aae756d6673
+  checksum: 2c62d2989bf8945efb41056eb93b711cec260d24eed96a58789c961ab86fa3552466d221f1d3e2d926134136aa95337cdba94035d328a28c92793c31de95e718
   languageName: node
   linkType: hard
 
@@ -25198,13 +25230,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.isequal@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "lodash.isequal@npm:4.5.0"
-  checksum: da27515dc5230eb1140ba65ff8de3613649620e8656b19a6270afe4866b7bd461d9ba2ac8a48dcc57f7adac4ee80e1de9f965d89d4d81a0ad52bb3eec2609644
-  languageName: node
-  linkType: hard
-
 "lodash.isinteger@npm:^4.0.4":
   version: 4.0.4
   resolution: "lodash.isinteger@npm:4.0.4::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Flodash.isinteger%2F-%2Flodash.isinteger-4.0.4.tgz"
@@ -25436,8 +25461,8 @@ __metadata:
   linkType: hard
 
 "lottie-react-native@npm:^5.1.5":
-  version: 5.1.5
-  resolution: "lottie-react-native@npm:5.1.5::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Flottie-react-native%2F-%2Flottie-react-native-5.1.5.tgz"
+  version: 5.1.6
+  resolution: "lottie-react-native@npm:5.1.6::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Flottie-react-native%2F-%2Flottie-react-native-5.1.6.tgz"
   dependencies:
     invariant: ^2.2.2
     react-native-safe-modules: ^1.0.3
@@ -25449,7 +25474,7 @@ __metadata:
   peerDependenciesMeta:
     react-native-windows:
       optional: true
-  checksum: e8f437fcba54d3983e4fae9faa45fc130a68cffd2943624abaeb19ff2ae7ddf462315d7d323471d3db645c59f84dbf1a1620566a6b6365eb4e5313524c0d34c5
+  checksum: e051e3c3e50b6d0c766895ac122cdccdd1acb76daec6eac9538a2892d8e52ab9e0b5580ab258c37d04b1924bc9962c9b8fdcced0a81d332a6076bfa045783f50
   languageName: node
   linkType: hard
 
@@ -27160,22 +27185,22 @@ __metadata:
     detox: ^20.5.0
     expo: ~48.0.10
     expo-application: ~5.1.1
-    expo-build-properties: ~0.5.1
+    expo-build-properties: ~0.6.0
     expo-font: ~11.1.1
     expo-linking: ~4.0.1
-    expo-splash-screen: ~0.18.1
+    expo-splash-screen: ~0.18.2
     expo-status-bar: ~1.4.4
     expo-system-ui: ~2.2.1
     intl: ^1.2.5
     jest: ^29.5.0
     lottie-react-native: ^5.1.5
     react: 18.2.0
-    react-native: 0.71.6
+    react-native: 0.71.8
     react-native-bundle-visualizer: ^3.1.3
     react-native-gesture-handler: 2.9.0
     react-native-inappbrowser-reborn: 3.7.0
     react-native-navigation-bar-color: 2.0.2
-    react-native-reanimated: 3.0.2
+    react-native-reanimated: 3.1.0
     react-native-safe-area-context: ^4.5.0
     react-native-screens: ~3.20.0
     react-native-svg: 13.8.0
@@ -32204,10 +32229,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gradle-plugin@npm:^0.71.17":
-  version: 0.71.17
-  resolution: "react-native-gradle-plugin@npm:0.71.17::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-gradle-plugin%2F-%2Freact-native-gradle-plugin-0.71.17.tgz"
-  checksum: 5ff996bafc3959a36551dc34d481cefb070ede4025b5eb2ce659f51adf74ba0e6845cc019ea1d547e0b4007f1c3c68146fa719688f09bde308f25320c6c6f834
+"react-native-gradle-plugin@npm:^0.71.18":
+  version: 0.71.18
+  resolution: "react-native-gradle-plugin@npm:0.71.18::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-gradle-plugin%2F-%2Freact-native-gradle-plugin-0.71.18.tgz"
+  checksum: 19f0a41e29c9210ff495010aaa612f2c2f4f5f937b6c20266c8dc62f4ccedc65bb7576de59b2f3fd2bb8044ce9785e56673879f2eb452f948e6659a5e1fa5894
   languageName: node
   linkType: hard
 
@@ -32239,22 +32264,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-reanimated@npm:3.0.2":
-  version: 3.0.2
-  resolution: "react-native-reanimated@npm:3.0.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-reanimated%2F-%2Freact-native-reanimated-3.0.2.tgz"
+"react-native-reanimated@npm:3.1.0":
+  version: 3.1.0
+  resolution: "react-native-reanimated@npm:3.1.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native-reanimated%2F-%2Freact-native-reanimated-3.1.0.tgz"
   dependencies:
     "@babel/plugin-transform-object-assign": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
-    convert-source-map: ^1.7.0
+    convert-source-map: ^2.0.0
     invariant: ^2.2.4
-    lodash.isequal: ^4.5.0
-    setimmediate: ^1.0.5
-    string-hash-64: ^1.0.3
   peerDependencies:
     "@babel/core": ^7.0.0-0
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.0.0-0
+    "@babel/plugin-proposal-optional-chaining": ^7.0.0-0
+    "@babel/plugin-transform-arrow-functions": ^7.0.0-0
+    "@babel/plugin-transform-shorthand-properties": ^7.0.0-0
+    "@babel/plugin-transform-template-literals": ^7.0.0-0
     react: "*"
     react-native: "*"
-  checksum: 7635d6d490eecdf74d3b3560e0696df14c8528f58b4c79d680bb623053e6a13e51e05f62aa9d40e1d53e9b2c90d67ac77ff1f4128400f14ab4a524ef3dec036b
+  checksum: 28279642056c7b214649ff14d3c9f1e914c9dd3dd74afc734fc10d1af088a2c3b0e187751e2713d54fc0a9916c394068b29aec51e754b51625a4179f10e38bcd
   languageName: node
   linkType: hard
 
@@ -32305,9 +32332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native@npm:0.71.6":
-  version: 0.71.6
-  resolution: "react-native@npm:0.71.6::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native%2F-%2Freact-native-0.71.6.tgz"
+"react-native@npm:0.71.8":
+  version: 0.71.8
+  resolution: "react-native@npm:0.71.8::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-native%2F-%2Freact-native-0.71.8.tgz"
   dependencies:
     "@jest/create-cache-key-function": ^29.2.1
     "@react-native-community/cli": 10.2.2
@@ -32334,7 +32361,7 @@ __metadata:
     promise: ^8.3.0
     react-devtools-core: ^4.26.1
     react-native-codegen: ^0.71.5
-    react-native-gradle-plugin: ^0.71.17
+    react-native-gradle-plugin: ^0.71.18
     react-refresh: ^0.4.0
     react-shallow-renderer: ^16.15.0
     regenerator-runtime: ^0.13.2
@@ -32347,7 +32374,7 @@ __metadata:
     react: 18.2.0
   bin:
     react-native: cli.js
-  checksum: aadbd9b57dd9b10a41b60337ea1a4103e2fb2320784bf148100e807bd0a77929bdb310ea68d054165cd3c00647a3d020eecb0efb864cc7a93733b2d580e1e675
+  checksum: fe887c1b8bded23f9efea9dc10a8a8b2f32147e06418fc9a78294944874797abb0185ebcb0fdc5ce88046280bca72264ae8d119f4ca681a3e0bc502d0f75bfbe
   languageName: node
   linkType: hard
 
@@ -35289,13 +35316,6 @@ __metadata:
   version: 1.0.1
   resolution: "string-env-interpolation@npm:1.0.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fstring-env-interpolation%2F-%2Fstring-env-interpolation-1.0.1.tgz"
   checksum: d126329587f635bee65300e4451e7352b9b67e03daeb62f006ca84244cac12a1f6e45176b018653ba0c3ec3b5d980f9ca59d2eeed99cf799501cdaa7f871dc6f
-  languageName: node
-  linkType: hard
-
-"string-hash-64@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "string-hash-64@npm:1.0.3"
-  checksum: 79de8431b4fa3e85a2429cd52a34f7948221ff167b7a094e05d6bcfd0173474b232e0c9845c96f74b0d7b6b0c8bbe2c3532a4cacb21635293ef0cf3cc8e77f06
   languageName: node
   linkType: hard
 

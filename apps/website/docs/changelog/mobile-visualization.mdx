@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.5 (6/5/2023 PST)
+
+#### 🐞 Fixes
+
+- Updated reanimated to 3.1.0. [[#2012](https://github.cbhq.net/frontend/cds/pull/2012)] [[DX-1646](https://jira.coinbase-corp.com/browse/DX-1646)]
+
 ## 0.0.4 (4/26/2023 PST)
 
 #### 🐞 Fixes
