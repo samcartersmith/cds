@@ -64,7 +64,7 @@ This branch demos the required path change and works with sparkline in the retai
 
 As part of an effort to address tech debt in the CDS repo we have opted to migrate a number of problem components out of cds-web|mobile into their own packages (cds-web-overlays, cds-web-visualization, cds-mobile-visualization).
 
-Although these components are not yet removed from cds-web|mobile, we plan to remove them next quarter which will be a breaking change. Our recommendation is to migrate them now.
+Although these components are not yet removed from cds-web|mobile, we plan to remove them next quarter which will be a breaking change. Our recommendation is to migrate them now using the `cds-migrator` v5 script, which will update import references for these components for you.
 
 Web components moved out of cds-web:
 
@@ -99,3 +99,4 @@ See [Q12023 Deprecations](../../resources/deprecations#q12023-deprecations) for 
 - Deprecations that require manual migration will be outputted to `cds-migrator-output.md` at the root of the repo
 - Dynamic, conditional, and spread props (`...props`) are not automatically migratable, eg: `<Button variant={variant} />` where variant is a dynamic prop. The migrator will output a message to manually migrate these instances. Make sure you run all affected applications to check for runtime errors after migrating.
 - Some function migrations were not automatically migratable if a variable was destructured from the function. For example, `const { foo } = bar()` would not be automatically migratable. The migrator will output a message to manually migrate these instances. The inverse is also true, if you assigned a function to a variable and the replacement requires that you destructure a variable, it will be broken, eg: `const { isMobile } = useBreakpoints()` which replaces `const isMobile = useIsMobile()`.
+- There is a known issue with the migration script for components that were deprecated and migrated to alternatives where it will sometimes throw an error saying ` >  NX   Attempted to get information from a node that was removed or forgotten.` this is a known issue, and is often seen after a successful migration. We have a fix in the works, so please ignore this error for now.
