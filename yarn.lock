@@ -2351,7 +2351,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-migrator@workspace:packages/cds-migrator"
   dependencies:
+    "@types/cli-progress": ^3.11.0
     chalk: ^4.1.2
+    cli-progress: ^3.12.0
     fast-glob: ^3.2.11
     ts-morph: ^17.0.1
     update-notifier: ^5.1.0
@@ -8798,6 +8800,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cli-progress@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "@types/cli-progress@npm:3.11.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fcli-progress%2F-%2Fcli-progress-3.11.0.tgz"
+  dependencies:
+    "@types/node": "*"
+  checksum: d4401622333e888925b47c5d5bb0b89dddae17cc020f909a64ad7275b326bf3c6e9cd467f625a197fd958a1e49220d32f4a2b0bf2948fee330c719a9b985674e
+  languageName: node
+  linkType: hard
+
 "@types/configstore@npm:*":
   version: 6.0.0
   resolution: "@types/configstore@npm:6.0.0"
@@ -13373,6 +13384,15 @@ __metadata:
   dependencies:
     restore-cursor: ^2.0.0
   checksum: d88e97bfdac01046a3ffe7d49f06757b3126559d7e44aa2122637eb179284dc6cd49fca2fac4f67c19faaf7e6dab716b6fe1dfcd309977407d8c7578ec2d044d
+  languageName: node
+  linkType: hard
+
+"cli-progress@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "cli-progress@npm:3.12.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcli-progress%2F-%2Fcli-progress-3.12.0.tgz"
+  dependencies:
+    string-width: ^4.2.3
+  checksum: e8390dc3cdf3c72ecfda0a1e8997bfed63a0d837f97366bbce0ca2ff1b452da386caed007b389f0fe972625037b6c8e7ab087c69d6184cc4dfc8595c4c1d3e6e
   languageName: node
   linkType: hard
 

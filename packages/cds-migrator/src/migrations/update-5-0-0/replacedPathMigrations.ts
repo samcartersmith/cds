@@ -24,12 +24,12 @@ const callback = (args: CreateMigrationParams) => {
       const newPath = pathMigrations[oldPath];
       replaceImportPath({ sourceFile, oldPath, newPath });
       writeMigrationToFile({ sourceFile, tree, oldValue: oldPath, newValue: newPath });
-      logDebug('Make sure you run lint --fix to sort imports in affected files. ');
     });
   }
 };
 
 export default async function migration(tree: Tree) {
+  logDebug('Migrating deprecated paths');
   await createMigration({
     tree,
     callback,

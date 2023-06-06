@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.3 (6/2/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: improved file parsing performance. [[#2008](https://github.cbhq.net/frontend/cds/pull/2008)]
+
 ## 0.1.2 (5/25/2023 PST)
 
 #### 🐞 Fixes

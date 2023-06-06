@@ -33,11 +33,12 @@ export function writeMigrationToFile({
   const path = sourceFile.getFilePath();
 
   if (oldValue !== undefined) {
+    sourceFile.organizeImports();
     sourceFile.saveSync();
     if (newValue !== undefined) {
-      logSuccess(`Successful migration from: ${oldValue} --> ${newValue}`, bodyLines);
+      logSuccess(`Successful migration from: ${oldValue} --> ${newValue} in ${path}`, bodyLines);
     } else {
-      logSuccess(`Successful migration of: ${oldValue}`, bodyLines);
+      logSuccess(`Successful migration of: ${oldValue} in ${path}`, bodyLines);
     }
   }
 
