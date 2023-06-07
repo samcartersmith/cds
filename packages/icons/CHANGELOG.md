@@ -8,11 +8,137 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 1.4.0 (5/3/2023 PST)
 
-#### 📘 Misc
+#### 🚀 Updates
 
-- Merge master into release.
+- Publish icons 05/03/2023. [[#1972](https://github.cbhq.net/frontend/cds/pull/1972)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- passport
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- activity
+- addPeople
+- appSwitcher
+- astronautHelmet
+- bell
+- browser
+- caret
+- chartBar
+- comment
+- copy
+- crystalBall
+- dashboard
+- diamond
+- documentation
+- earn
+- gab
+- giftBox
+- hammer
+- home
+- invoice
+- light
+- menu
+- newsfeed
+- peopleGroup
+- queryTransact
+- rocketShip
+- securityShield
+- settings
+- support
+- tag
+- trading
+- trophyCup
+
+#### Ui
+
+- add
+- annotation
+- api
+- arrowDown
+- arrowUp
+- avatar
+- backArrow
+- bank
+- card
+- caretDown
+- caretRight
+- caretUp
+- cashCanadianDollar
+- chartLine
+- chartVolume
+- chatBotAgent
+- chatBubble
+- checkmark
+- circleCheckmark
+- circleCross
+- close
+- coinbaseOne
+- comment
+- commentActive
+- currencies
+- defi
+- diamondActive
+- diamondInactive
+- directDepositIconInactive
+- document
+- drag
+- dropsActive
+- dropsInactive
+- email
+- ethereum
+- faucetInactive
+- flame
+- forwardArrow
+- gear
+- generalCharacter
+- giftBox
+- group
+- hamburger
+- info
+- list
+- lock
+- minus
+- more
+- newsFeed
+- newsletter
+- nft
+- nftBuyActive
+- orderHistory
+- pay
+- payouts
+- phone
+- planetInactive
+- questionMark
+- refresh
+- rocket
+- royaltyActive
+- share
+- sortDown
+- stake
+- starActive
+- starInactive
+- step1
+- step2
+- step3
+- thumbsUp
+- trashCan
+- trophy
+- ultility
+- unlock
+- visibleActive
+- wallet
 
 ## 1.3.0 (4/5/2023 PST)
 

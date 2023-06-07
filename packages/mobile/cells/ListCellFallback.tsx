@@ -19,14 +19,17 @@ export const ListCellFallback = memo(function ListCellFallback({
   compact,
   disableRandomRectWidth,
   rectWidthVariant,
+  testID,
 }: ListCellFallbackProps) {
   const lineHeight = useLineHeightMap();
 
   return (
     <ListCell
+      testID={testID}
       description={
         description && (
           <Fallback
+            testID="list-cell-fallback-description"
             height={lineHeight.body}
             width={110}
             spacingTop={0.5}
@@ -39,6 +42,7 @@ export const ListCellFallback = memo(function ListCellFallback({
       detail={
         detail && (
           <Fallback
+            testID="list-cell-fallback-detail"
             height={lineHeight.body}
             width={60}
             disableRandomRectWidth={disableRandomRectWidth}
@@ -46,10 +50,11 @@ export const ListCellFallback = memo(function ListCellFallback({
           />
         )
       }
-      media={media ? <MediaFallback type={media} /> : undefined}
+      media={media ? <MediaFallback testID="list-cell-fallback-media" type={media} /> : undefined}
       subdetail={
         subdetail && (
           <Fallback
+            testID="list-cell-fallback-subdetail"
             height={lineHeight.body}
             width={60}
             spacingTop={0.5}
@@ -61,6 +66,7 @@ export const ListCellFallback = memo(function ListCellFallback({
       title={
         title && (
           <Fallback
+            testID="list-cell-fallback-title"
             height={lineHeight.headline}
             width={90}
             disableRandomRectWidth={disableRandomRectWidth}

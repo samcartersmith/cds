@@ -4,6 +4,10 @@ import {
   uploadScreenshotsToPercyForRoute,
 } from '@cbhq/ui-mobile-visreg';
 
+// Updates default iOS sim from iPhone 12 to iPhone 14
+detoxConfig.configurations['ios.debug'].device = 'simulator.14';
+detoxConfig.configurations['ios.release'].device = 'simulator.14';
+
 const disabledRoutes = {
   disabledRoutes: [
     'Alert', // pointless

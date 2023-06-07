@@ -5,13 +5,17 @@ import type {
   CellMediaProps as CellMediaBaseProps,
   SharedAccessibilityProps,
 } from '@cbhq/cds-common/types';
+import { PictogramProps } from '@cbhq/cds-common/types';
 
 import { Icon } from '../icons/Icon';
+import { IllustrationA11yProps } from '../illustrations/createIllustration';
 import { Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
 export type CellMediaProps = CellMediaBaseProps &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
+    illustration?: React.ReactElement<PictogramProps & IllustrationA11yProps>;
+  };
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   const mediaSizeScaled = useScaleConditional(mediaSize);

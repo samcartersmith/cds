@@ -33,7 +33,6 @@ const callback = (args: CreateMigrationParams) => {
         path: oldPath,
       });
       replaceImportPath({ sourceFile, oldPath, newPath });
-      logDebug('Make sure you run lint --fix to sort imports in affected files.');
       renameFunction({
         name,
         sourceFile,
@@ -48,6 +47,7 @@ const callback = (args: CreateMigrationParams) => {
 };
 
 export default async function migration(tree: Tree) {
+  logDebug('Migrating deprecated functions');
   await createMigration({
     tree,
     callback,

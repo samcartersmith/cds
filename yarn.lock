@@ -2374,7 +2374,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-migrator@workspace:packages/cds-migrator"
   dependencies:
+    "@types/cli-progress": ^3.11.0
     chalk: ^4.1.2
+    cli-progress: ^3.12.0
     fast-glob: ^3.2.11
     ts-morph: ^17.0.1
     update-notifier: ^5.1.0
@@ -2539,7 +2541,7 @@ __metadata:
     "@popperjs/core": ^2.9.0
     "@storybook/testing-library": ^0.0.13
     d3-interpolate-path: ^2.2.2
-    d3-selection: ^1.4.2
+    d3-selection: 1.4.2
     focus-visible: ^5.2.0
     framer-motion: ^6.2.8
     linaria: ^2.3.1
@@ -2566,6 +2568,20 @@ __metadata:
   peerDependencies:
     react: ">=17.0.0"
   checksum: 255fbcee0b8edc01dc8c84763365bbb1e942d3c723652b1f72d77425c0fe23f76cacc240b1aa8eb135a55d2420d81c36edda0c5b6fe165763f2891a654b341dd
+  languageName: node
+  linkType: hard
+
+"@cbhq/client-analytics@npm:^8.6.0":
+  version: 8.7.0
+  resolution: "@cbhq/client-analytics@npm:8.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-8.7.0.tgz"
+  dependencies:
+    idb: ^7.0.2
+    md5: ^2.3.0
+    perfume.js: 9.0.0-rc.3
+    ua-parser-js: ^1.0.2
+  peerDependencies:
+    react: ">=17.0.0"
+  checksum: e94242dfdc70b575a42938ae6978ad7eb79b6f29594a53431c8d21541df2503ef48ef3c1353824cff9c9d8aadcd0c28e6a72665eb0dd179dce47e60ac9ed9837
   languageName: node
   linkType: hard
 
@@ -3030,6 +3046,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-scorecard@workspace:packages/ui-scorecard"
   dependencies:
+    "@cbhq/client-analytics": ^8.6.0
     "@types/update-notifier": ^5.1.0
     "@types/yargs": ^17.0.11
     aws-sdk: ^2.1207.0
@@ -3710,7 +3727,7 @@ __metadata:
 
 "@docusaurus/plugin-content-docs@patch:@docusaurus/plugin-content-docs@npm:2.0.0-beta.18#.yarn/patches/@docusaurus-plugin-content-docs-npm-2.0.0-beta.18-48b9b95b87::locator=design-system%40workspace%3A.":
   version: 2.0.0-beta.18
-  resolution: "@docusaurus/plugin-content-docs@patch:@docusaurus/plugin-content-docs@npm%3A2.0.0-beta.18#.yarn/patches/@docusaurus-plugin-content-docs-npm-2.0.0-beta.18-48b9b95b87::version=2.0.0-beta.18&hash=ac946e&locator=design-system%40workspace%3A."
+  resolution: "@docusaurus/plugin-content-docs@patch:@docusaurus/plugin-content-docs@npm%3A2.0.0-beta.18#.yarn/patches/@docusaurus-plugin-content-docs-npm-2.0.0-beta.18-48b9b95b87::version=2.0.0-beta.18&hash=e0982a&locator=design-system%40workspace%3A."
   dependencies:
     "@docusaurus/core": 2.0.0-beta.18
     "@docusaurus/logger": 2.0.0-beta.18
@@ -9129,7 +9146,7 @@ __metadata:
 
 "@testing-library/user-event@patch:@testing-library/user-event@npm:14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170::locator=design-system%40workspace%3A.":
   version: 14.0.4
-  resolution: "@testing-library/user-event@patch:@testing-library/user-event@npm%3A14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170::version=14.0.4&hash=80affb&locator=design-system%40workspace%3A."
+  resolution: "@testing-library/user-event@patch:@testing-library/user-event@npm%3A14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170::version=14.0.4&hash=a9185f&locator=design-system%40workspace%3A."
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
   checksum: ae29b925ca8543fc75f0dca92dadce56af80d7ad55f3b5e9c4c36a4e0435eea5b58fac79b86bf856e1e10fac800fc602b2be78abda99b2ed45ab6414c486edc0
@@ -9297,6 +9314,15 @@ __metadata:
     "@types/node": "*"
     "@types/responselike": "*"
   checksum: 667d25808dbf46fe104d6f029e0281ff56058d50c7c1b9182774b3e38bb9c1124f56e4c367ba54f92dbde2d1cc573f26eb0e9748710b2822bc0fd1e5498859c6
+  languageName: node
+  linkType: hard
+
+"@types/cli-progress@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "@types/cli-progress@npm:3.11.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fcli-progress%2F-%2Fcli-progress-3.11.0.tgz"
+  dependencies:
+    "@types/node": "*"
+  checksum: d4401622333e888925b47c5d5bb0b89dddae17cc020f909a64ad7275b326bf3c6e9cd467f625a197fd958a1e49220d32f4a2b0bf2948fee330c719a9b985674e
   languageName: node
   linkType: hard
 
@@ -14052,6 +14078,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cli-progress@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "cli-progress@npm:3.12.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcli-progress%2F-%2Fcli-progress-3.12.0.tgz"
+  dependencies:
+    string-width: ^4.2.3
+  checksum: e8390dc3cdf3c72ecfda0a1e8997bfed63a0d837f97366bbce0ca2ff1b452da386caed007b389f0fe972625037b6c8e7ab087c69d6184cc4dfc8595c4c1d3e6e
+  languageName: node
+  linkType: hard
+
 "cli-spinners@npm:2.6.1, cli-spinners@npm:^2.0.0, cli-spinners@npm:^2.3.0, cli-spinners@npm:^2.5.0":
   version: 2.6.1
   resolution: "cli-spinners@npm:2.6.1"
@@ -15582,7 +15617,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3-selection@npm:^1.4.2":
+"d3-selection@npm:1.4.2, d3-selection@npm:^1.4.2":
   version: 1.4.2
   resolution: "d3-selection@npm:1.4.2"
   checksum: 2484b392259b087a98f546f2610e6a11c90f38dae6b6b20a3fc85171038fcab4c72e702788b1960a4fece88bed2e36f268096358b5b48d3c7f0d35cfbe305da6
@@ -19559,7 +19594,7 @@ __metadata:
 
 "framer-motion@patch:framer-motion@npm:6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad::locator=design-system%40workspace%3A.":
   version: 6.2.8
-  resolution: "framer-motion@patch:framer-motion@npm%3A6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad::version=6.2.8&hash=2d372b&locator=design-system%40workspace%3A."
+  resolution: "framer-motion@patch:framer-motion@npm%3A6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad::version=6.2.8&hash=da9212&locator=design-system%40workspace%3A."
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     framesync: 6.0.1
@@ -19815,7 +19850,7 @@ __metadata:
 
 "fsevents@patch:fsevents@^1.2.7#~builtin<compat/fsevents>":
   version: 1.2.13
-  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=d11327"
   dependencies:
     bindings: ^1.5.0
     nan: ^2.12.1
@@ -19825,7 +19860,7 @@ __metadata:
 
 "fsevents@patch:fsevents@^2.1.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -21430,7 +21465,7 @@ __metadata:
 
 "hygen@patch:hygen@^6.2.0#./patches/hygen.patch::locator=%40cds%2Fcodegen%40workspace%3Apackages%2Fcodegen":
   version: 6.2.0
-  resolution: "hygen@patch:hygen@npm%3A6.2.0#./patches/hygen.patch::version=6.2.0&hash=3e5333&locator=%40cds%2Fcodegen%40workspace%3Apackages%2Fcodegen"
+  resolution: "hygen@patch:hygen@npm%3A6.2.0#./patches/hygen.patch::version=6.2.0&hash=5e0b34&locator=%40cds%2Fcodegen%40workspace%3Apackages%2Fcodegen"
   dependencies:
     "@types/node": ^17.0.19
     chalk: ^4.1.2
@@ -29273,6 +29308,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"perfume.js@npm:9.0.0-rc.3":
+  version: 9.0.0-rc.3
+  resolution: "perfume.js@npm:9.0.0-rc.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fperfume.js%2F-%2Fperfume.js-9.0.0-rc.3.tgz"
+  dependencies:
+    web-vitals: ^3.1.0
+  checksum: d4e49a9f1a286c74ef333df11daca8f3fce7e6629b7c2316d32ecba3584904ab3dd41b568a8595a4ea17e436c390e9c77f778ff41b552f12226e6810e49e674a
+  languageName: node
+  linkType: hard
+
 "perfume.js@npm:^6.3.0":
   version: 6.3.0
   resolution: "perfume.js@npm:6.3.0"
@@ -33514,7 +33558,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -33527,7 +33571,7 @@ __metadata:
 
 "resolve@patch:resolve@^2.0.0-next.4#~builtin<compat/resolve>":
   version: 2.0.0-next.4
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4%3A%3A__archiveUrl=https%253A%252F%252Fartifactory-proxy.cbhq.net%252Fartifactory%252Fapi%252Fnpm%252Fcb-npm-master%252Fresolve%252F-%252Fresolve-2.0.0-next.4.tgz#~builtin<compat/resolve>::version=2.0.0-next.4&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4%3A%3A__archiveUrl=https%253A%252F%252Fartifactory-proxy.cbhq.net%252Fartifactory%252Fapi%252Fnpm%252Fcb-npm-master%252Fresolve%252F-%252Fresolve-2.0.0-next.4.tgz#~builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -33540,7 +33584,7 @@ __metadata:
 
 "resolve@patch:resolve@~1.7.1#~builtin<compat/resolve>":
   version: 1.7.1
-  resolution: "resolve@patch:resolve@npm%3A1.7.1%3A%3A__archiveUrl=https%253A%252F%252Fartifactory-proxy.cbhq.net%252Fartifactory%252Fapi%252Fnpm%252Fcb-npm-master%252Fresolve%252F-%252Fresolve-1.7.1.tgz#~builtin<compat/resolve>::version=1.7.1&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.7.1%3A%3A__archiveUrl=https%253A%252F%252Fartifactory-proxy.cbhq.net%252Fartifactory%252Fapi%252Fnpm%252Fcb-npm-master%252Fresolve%252F-%252Fresolve-1.7.1.tgz#~builtin<compat/resolve>::version=1.7.1&hash=3bafbf"
   dependencies:
     path-parse: ^1.0.5
   checksum: c2a6f0e3856ac1ddc8297091c20ca6c36d99bf289ddea366c46bd2a7ed8b31075c7f9d01ff5d390ebed1fe41b9fabe57a79ae087992ba92e3592f0c3be07c1ac
@@ -37140,11 +37184,11 @@ __metadata:
 
 "typescript@patch:typescript@~4.9.4#~builtin<compat/typescript>":
   version: 4.9.4
-  resolution: "typescript@patch:typescript@npm%3A4.9.4%3A%3A__archiveUrl=https%253A%252F%252Fartifactory-proxy.cbhq.net%252Fartifactory%252Fapi%252Fnpm%252Fcb-npm-master%252Ftypescript%252F-%252Ftypescript-4.9.4.tgz#~builtin<compat/typescript>::version=4.9.4&hash=f456af"
+  resolution: "typescript@patch:typescript@npm%3A4.9.4%3A%3A__archiveUrl=https%253A%252F%252Fartifactory-proxy.cbhq.net%252Fartifactory%252Fapi%252Fnpm%252Fcb-npm-master%252Ftypescript%252F-%252Ftypescript-4.9.4.tgz#~builtin<compat/typescript>::version=4.9.4&hash=23ec76"
   bin:
     tsc: ./bin/tsc
     tsserver: ./bin/tsserver
-  checksum: 37f6e2c3c5e2aa5934b85b0fddbf32eeac8b1bacf3a5b51d01946936d03f5377fe86255d4e5a4ae628fd0cd553386355ad362c57f13b4635064400f3e8e05b9d
+  checksum: 3e2ab0772908676d9b9cb83398c70003a3b08e1c6b3b122409df9f4b520f2fdaefa20c3d7d57dce283fed760ac94b3ce94d4a7fa875127b67852904425a1f0dc
   languageName: node
   linkType: hard
 
@@ -38236,6 +38280,13 @@ __metadata:
   version: 3.2.1
   resolution: "web-streams-polyfill@npm:3.2.1"
   checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02
+  languageName: node
+  linkType: hard
+
+"web-vitals@npm:^3.1.0":
+  version: 3.3.2
+  resolution: "web-vitals@npm:3.3.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fweb-vitals%2F-%2Fweb-vitals-3.3.2.tgz"
+  checksum: 76e832341d213d5de6f6767fef7f8c02163ab94326912a6355bbf6e194d930196ca5094b0d0d493b4c194acaaabcc96f0adc87870b913a7b9a51b225807abccf
   languageName: node
   linkType: hard
 

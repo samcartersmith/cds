@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.0 (5/25/2023 PST)
+
+#### 🚀 Updates
+
+- Integrate CCA to send automatedA11yScore to Snowflake. [[#2004](https://github.cbhq.net/frontend/cds/pull/2004)] [[CDS-3074](https://jira.coinbase-corp.com/browse/CDS-3074)]
+
 ## 0.0.4 (4/5/2023 PST)
 
 #### 🐞 Fixes

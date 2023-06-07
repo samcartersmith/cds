@@ -85,15 +85,6 @@
         "script": "./release/updatePkgsForGenericBump.ts"
       }
     },
-    "updateWebsiteChangelogs": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./website/updateWebsiteChangelogs.ts",
-        "args": [
-          "--packages=common|icons|illustrations|lottie-files|mobile|ui-mobile-playground|web|utils|fonts"
-        ]
-      }
-    },
     "mobile-routes": {
       "executor": "nx:run-commands",
       "options": {

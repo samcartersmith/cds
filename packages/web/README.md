@@ -24,7 +24,7 @@ Make sure `@cbhq:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
 yarn add @cbhq/cds-web
 ```
 
-You can start using CDS-web like so. CDS only supports ES modules currently. If your project doesn't, please reach out to the CDS team about it in #ask-cds.
+You can start using CDS-web like so. CDS only supports ES modules currently. If your project doesn't, please reach out to the CDS team about it in [#ask-dx-ui-systems](http://go/ask-cds).
 
 ```tsx
 import '@cbhq/cds-web/globalStyles';

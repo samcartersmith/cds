@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.2 (5/15/2023 PST)
+
+#### 🐞 Fixes
+
+- Fixes tab navigation router.
 
 #### 📘 Misc
 

@@ -1,7 +1,10 @@
 /* eslint-disable react/jsx-handler-names */
 import { Meta, Story } from '@storybook/react';
+import { css } from 'linaria';
 
+import { Accordion, AccordionItem } from '../../accordion';
 import { VStack } from '../../alpha/VStack';
+import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Avatar } from '../../media';
 import { ThemeProvider } from '../../system';
 import { TextBody, TextHeadline, TextLabel2 } from '../../typography';
@@ -33,6 +36,36 @@ export const CellSpacing: Story = () => {
       <TableBody>
         <TableRow>
           <TableCell title="$2,475.68" subtitle="0.11882557" />
+        </TableRow>
+      </TableBody>
+    </Table>
+  );
+};
+
+const flex = css`
+  display: flex;
+`;
+
+export const VerticallyAlignedTableCell: Story = () => {
+  return (
+    <Table variant="ruled" bordered cellSpacing={spacingConfig.flush}>
+      <TableBody>
+        <TableRow>
+          <TableCell
+            dangerouslySetClassName={flex}
+            width={300}
+            title="This TableCell will be aligned to the top of its parent"
+            alignItems="flex-start"
+          />
+          <TableCell>
+            <Accordion>
+              <AccordionItem itemKey="1" title="Accordion Item">
+                <TextBody as="p">
+                  <LoremIpsum repeat={3} />
+                </TextBody>
+              </AccordionItem>
+            </Accordion>
+          </TableCell>
         </TableRow>
       </TableBody>
     </Table>

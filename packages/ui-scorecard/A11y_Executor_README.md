@@ -1,273 +1,273 @@
-<h1 align="center">A11 Executor</h1>
+# A11y Executor
 
 ## Table of Contents
 
 - [Overview](#overview)
-- [How to use](#how-to-use)
+- [Getting Started](#getting-started)
   - [Installation](#installation)
-  - [General Usage](#general-usage)
-    - [Prerequisite Knowledge](#prerequisite-knowledge)
-    - [Add and run executor locally](#add-and-run-executor-locally)
-    - [Add and run executor on CI](#add-and-run-executor-on-ci)
-- [Understanding the report](#understanding-the-report)
-  - [Why create a score?](#why-create-a-score)
-  - [What is parsableA11yScore?](#what-is-parsablea11yscore)
+  - [Configuration](#configuration)
+    - [Sending Scores to Snowflake](#sending-scores-to-snowflake)
+  - [Executing Locally](#executing-locally)
+  - [Executing on CI](#executing-on-ci)
+- [Understanding the Report](#understanding-the-report)
+  - [Why automatedA11yScore?](#why-automateda11yscore)
+  - [What is automatedA11yScore?](#what-is-automateda11yscore)
     - [What is a11yScore?](#what-is-a11yscore)
-    - [What is jestScore](#what-is-jestscore)
-  - [parsableA11yScore for Retail Mobile on Dec 7th, 2022](#parsablea11yscore-for-retail-mobile-on-dec-7th-2022)
-  - [Other helpful metrics](#other-helpful-metrics)
-- [2023 Roadmap](#2023-roadmap)
-- [Contribution](#contributing)
+    - [What is jestScore?](#what-is-jestscore)
+  - [Example Scores](#example-scores)
+  - [Other Metrics and Info](#other-metrics-and-info)
+- [Roadmap](#roadmap)
+- [Contributions](#contributions)
   - [Setup](#setup)
-  - [Testing the executor](#testing-the-executor)
-  - [Understanding the architecture](#understanding-the-architecture)
+  - [Feature Testing](#feature-testing)
+  - [Architecture](#architecture)
 - [Related Links](#related-links)
 
-# Overview
+## Overview
 
-A11y Executor is an automated tool for measuring the accessibility-ness of a mobile application. It is not a tool to detect accessibility issues. To detect accessibility issues, please use the open-source package [react-native-accessibility-engine](https://www.npmjs.com/package/react-native-accessibility-engine). A11y Executor can be run on any repository that has nx setup and is a React-Native application. It is meant to be used in tandem with the [react-native-accessibility-engine](https://www.npmjs.com/package/react-native-accessibility-engine).
+A11y Executor is an automated solution for assessing the accessibility of Coinbase React Native apps and is intended to be used in conjunction with [React Native Accessibility Engine](https://www.npmjs.com/package/react-native-accessibility-engine) (RNAE). RNAE is an open-source library that facilitates developers in evaluating and enhancing the accessibility of their React Native apps by employing predefined rules and custom Jest matchers.
 
-It is important to note: A11y Executor is only one of the many executors inside `@cbhq/ui-scorecard` package. Once you have installed the package and added the executor to the project you want metrics for, you can now run the executor (more information on how to install and use the executor in this [section](#add-and-run-executor-locally)). Once the executor successfully finishes its task, the report will be generated in the .nx folder. The output location is dependent on where your project is.
+A11y Executor is one of several executors included in the `@cbhq/ui-scorecard` package. After installing the package and integrating the executor into your project, you can use it to generate an accessibility report for your app.
 
-Here is an example of where the output goes when the executor is run on the CDS mobile package.
-![Sample output location](images/mobilePackageExecutorOutLocation.png)
+This short [video](https://drive.google.com/file/d/1nAwEi4hYJZCSowbUQWIyc1BcOttIMcYn/view?usp=sharing) provides a high level overview of its features.
 
-Not everyone likes reading, so we also created a [video](https://drive.google.com/file/d/1nAwEi4hYJZCSowbUQWIyc1BcOttIMcYn/view?usp=sharing)
+## Getting Started
 
-# How to use
+Having some context around [Nx task executors](https://nx.dev/plugin-features/use-task-executors) will make the following setup easier to understand.
 
-## Installation
+### Installation
 
-```
+```sh
 yarn add --dev @cbhq/ui-scorecard
 ```
 
-You read it right. This should only be a dev dependency as these tools are not necessary to run the actual mobile application.
+Install this package as a dev dependency as it's not required to run your app.
 
-## General Usage
+### Configuration
 
-### Prerequisite knowledge
+Add the task to the list of targets in your `project.json` file:
 
-To understand how a11y executor works, you must first understand what [nx task executor](https://nx.dev/plugin-features/use-task-executors) is. With that understanding, everything becomes easy.
-
-### Add and run executor locally
-
-If you just want to be able to run the executor locally, not on CI, you can do this.
-
-Add the task executor to the target within a project that you are interested in tracking accessibility for.
-
-Here is a snippet for adding the task to the target
-
-```
+```json
 {
-   // …
-   “targets”: {
-        // …
-        "audit-a11y": {
-            "executor": "@cbhq/ui-scorecard:audit-a11y",
-            // This depends on test because we have to capture
-            // the jest coverage score line to generate the parsableA11yScore
-           “dependsOn”: [“^build”, “test”]
-        },
-    }
+  // …
+  “targets”: {
+    // …
+    "audit-a11y": {
+      "executor": "@cbhq/ui-scorecard:audit-a11y",
+      "dependsOn": [
+        "^build",
+        "test"
+      ]
+    },
+  }
 }
 ```
 
-For example, if you are interested in tracking for accessibility in the retail mobile app, you would add the task to the project.json [here](https://github.cbhq.net/consumer/react-native/pull/17091/files#diff-dfe9f3b550a63164e5df3b30ac99517e971486c15fd9c50e1555a7d1cbe695c3R111).
+Our task is dependent on your `test` task because we require test coverage info in order to generate the [automatedA11yScore](#what-is-automateda11yscore).
 
-**Note:** You can name the key in project.json hashmap as anything. But we recommend keeping it as "audit-a11y". As this name matches the functionality of the executor.
+Options for configuing the executor are listed in the `properties` of [schema.json](./src/executors/audit-a11y/schema.json):
 
-When you run this locally, you will get the output here in the `.nx/outs` directory. For retail, this was where the output log was generated.
-<br />
+```json
+{
+  // …
+  “targets”: {
+    // …
+    "audit-a11y": {
+      "executor": "@cbhq/ui-scorecard:audit-a11y",
+      "options": {
+        "cache": false,
+        "debug": true
+      },
+      "dependsOn": [
+        "^build",
+        "test"
+      ]
+    },
+  }
+}
+```
+
+#### Sending Scores to Snowflake
+
+Configuring your task with the `eventProjectName` option will automatically send your `automatedA11yScore` to [Snowflake](https://confluence.coinbase-corp.com/display/DATA/Snowflake+Documentation), our company-wide data warehouse. If an `eventProjectName` is not provided, no data will be sent.
+
+Event properties:
+
+| Key                | Value                                 |
+| ------------------ | ------------------------------------- |
+| project_name       | `eventProjectName` from config option |
+| event_type         | "accessibility_score"                 |
+| action             | "measurement"                         |
+| automatedA11yScore | `automatedA11yScore`                  |
+
+An updated `automatedA11yScore` will be sent each time the `audit-a11y` task is executed.
+
+By default, events are written to `events.analytics_service`, Snowflake's production table. However, you can instead send events to the `events_dev.analytics_service` development table (e.g. for testing purposes) by setting the `sendEventsToProd` option in your task config to `false`, or by passing a `--no-sendEventsToProd` flag when executing the script via CLI (see [Executing Locally](#executing-locally) below).
+
+If there is a [product scorecard](https://scorecards.cbhq.net/) currently configured for your app/project, your `automatedA11yScore` data will be automatically pulled from Snowflake's production table and made available for viewing on the scorecard. Be sure to provide the same `eventProjectName` that your scorecard is using for your project in Snowflake, otherwise your `automatedA11yScore` data will not be captured.
+
+### Executing Locally
+
+```sh
+yarn nx run mobile:audit-a11y
+```
+
+You can also pass any of the `properties` defined in [schema.json](./src/executors/audit-a11y/schema.json) as additional CLI flags, and these will override any `options` or `properties` defaults defined in your `project.json` or `schema.json` files, respectively:
+
+```sh
+yarn nx run mobile:audit-a11y --no-sendEventsToProd --debugEvents
+```
+
+When run locally, the report is output to the `.nx/outs` directory. This is the report location when the script is executed in the [Consumer - React Native repository](https://github.cbhq.net/consumer/react-native):
 
 ![Retail Log Output Location](images/retailExecutorOutLocation.png)
 
-**Here are some example PRs:**
+### Executing on CI
 
-- [Adding it to Retail Mobile App](https://github.cbhq.net/consumer/react-native/pull/17091)
-- [A11y Log from Dec 7th 7:46 PST](https://drive.google.com/drive/folders/1rjkC0fxuA4VTdPz9gFI5ju0y47xarXpm)
+**_NOTE: This section is still WIP_**
 
-Suppose you want to run the audit-a11y executor in the [mobile package](https://github.cbhq.net/frontend/cds/blob/3dae0cb8cfa35ae21c958c097137cb2e0dc5825b/packages/mobile/project.json). Here is the command for it
+If you want to enable automation on CI and perform a regular a11y audit of your code base, add a step to your `.pipeline.yml` file:
 
-```
-yarn nx run mobile:a11y-audit
-```
-
-### Add and run executor on CI
-
-You may want to add this step to your CI so that every time you are merging to master, it will generate the report and send it to Snowflake. (The sending to Snowflake part is not done yet. It is part of 2023 Roadmap)
-
-Add this to your .pipeline.yml. Here is an [example](https://github.cbhq.net/consumer/react-native/pull/17091/files#diff-a3991ebf1475eb82acab13946ffc1eca02b43917f6d5bec3898f45c8b0b9bd53R154)
-
-```
+```yml
 steps:
-  // ……
+  # …
   - label: Report A11y on Mobile
-    <<: *nx_shared_step
+    <<: # shared step(s) if required
     commands:
-      - scripts/ci/setup.sh
-      - yarn nx run-many --target=a11y --all
-    artifact_paths: '**/artifacts/a11y-mobile.*'
+      -  # setup script(s) if required
+      - yarn nx run-many --target=audit-a11y --all
+    artifact_paths: '**/artifacts/a11y-mobile-log.*' # report output location
 ```
 
-# Understanding the Report
+## Understanding the Report
 
-## Why create a score?
+### Why automatedA11yScore?
 
-The overall score is important to give you a gauge on how accessible your mobile app is, but like all scores, take it with a grain of salt. It is only one metric to indicate accessibility, but it is not the full picture. These are the [rules](https://github.com/aryella-lacerda/react-native-accessibility-engine#current-rules) that the `toBeAccessible` test matcher checks for. These are not all the rules that exist. We will incrementally add more rules with time. Further, there are rules that cannot be captured through automation. Thus, I stress that this is not the full picture and why we call it the parsableA11yScore.
+The primary objective behind establishing this score is to promote the resolution of accessibility issues.
 
-With that, let's talk about how the parsableA11yScore is generated. We created this score to help incentivize fixing accessibility issues. I want you to understand what contributes to this score, so you know exactly how to improve it.
+This score acts as a gauge for the accessibility of a mobile app, but it only covers a specific set of metrics and doesn't offer a complete assessment. We utilize a `toBeAccessible` test to evaluate the app according to these [RNAE rules](https://github.com/aryella-lacerda/react-native-accessibility-engine#current-rules), which are not comprehensive. Over time, we plan to incrementally expand the rule set. However, it's important to note that some accessibility guidelines cannot be assessed through automation alone. As a result, this score is limited in scope, which is why we refer to it as the `automatedA11yScore`.
 
-## What is parsableA11yScore?
+### What is automatedA11yScore?
 
-This is the final accessibility score for the app which this executor is run on.
+The `automatedA11yScore` is a metric representing the accessibility of a mobile app, based solely on the results of automated accessibility testing. It provides a limited assessment of overall compliance.
 
-![parsableA11yScore](images/parsableA11yScore_formula.png)
+$$
+automatedA11yScore = \frac{a11yScore + jestScore\times 2}{3}
+$$
 
-### What is a11yScore?
+#### What is a11yScore?
 
-![a11yScoreFormula](images/a11yScore_formula.png)
+$$
+a11yScore = \frac{\text{components and screens with passing }toBeAccessible\text{ tests}}{\text{components and screens with tests}}\times 100
+$$
 
-Lets break these number down and understand what the numerator and denominator mean.
+##### Components and Screens with Tests
 
-**What does # of components/screen with tests mean?**
-The number of components/screen with tests mean that the component/screen has a matching test file. Say we have a component AssetRatingTitle. If we find a file AssetRatingTitle.test.tsx, then we say AssetRatingTitle has a test. Thus, if you create a test file that is testing AssetRatingTitle but is not named AssetRatingTitle.test.tsx, it will not be captured.
+These are the components and screens that have a corresponding test file with a matching name. For instance, if a component is named `ComponentName`, a test file named `ComponentName.test.tsx` is expected. If the test file for `ComponentName` has a different name, it will not be captured.
 
-**What does the # of components/screen with tests that includes toBeAccessible and passed mean?**
+##### Components and Screens with Passing toBeAccessible Tests
 
-This number captures the number of components/screen with tests that have toBeAccessible and is passing.
-
-Let's take this component, [AssetRatingTitle](https://github.cbhq.net/consumer/react-native/blob/af3d47c739f429e1eca3b5d19243d91a545a8d36/src/packages/app/src/screens/AssetStructuredReview/components/AssetRatingTitle.tsx) from Retail as an example. This is a component that has a test because the file AssetRatingTitle.test.tsx exists.
-
-This test has a toBeAccessible, but the toBeAccessible is not passing. While it “passes” the test for CI purposes, it throws a console.error which violates A11Y. Hence it is not passing. Therefore, AssetRatingTitle would not increment this score because it has a failing toBeAccessible test.
+These are the components and screens that have a corresponding test file (see [Components and screens with tests](#components-and-screens-with-tests) above) with passing `toBeAccessible` tests. A `toBeAccessible` test will fail when an a11y violation is detected:
 
 ![a11yTestFailing Example](images/a11yTestFailing_example.png)
 
-Here is an example of a test case that passes a11y. It will not show any console.error
+#### What is jestScore?
 
-![a11yTestPassing Example](images/a11yTestPassing_example.png)
-
-### What is jestScore?
-
-![jestScoreFormula](images/jestScore_formula.png)
+$$
+jestScore = \text{Jest code coverage percentage (by line)}
+$$
 
 ![jestCoverage Score](images/jestCoverage_score.png)
 
-The jestScore has a weight of 2 because we find that it is more important than the a11yScore. If your overall Jest test coverage is poor, a high a11yScore on a small subset of your code base is not that significant.
+The `jestScore` carries a weight of 2 in the `automatedA11yScore` calculation as it is considered more important than the `a11yScore`. A high `a11yScore` is less meaningful if your overall Jest test coverage is poor.
 
-To give you a concrete example of the problem. Suppose you have 500 components. Of the 500 components, you have 250 test files. That means only 250 files can have toBeAccessible. So while 250/250 of those files have toBeAccessible, giving your a11yScore 100%, you are not truly 100% accessible because half of your components aren't even covered. Therefore, jestScore is extremely important in this equation.
+To illustrate this, imagine you have 500 components. Of these, only half (250) have matching test files. If all 250 test files contain a passing `toBeAccessible` test, your resulting `a11yScore` would be 100%. However, your app is not truly 100% accessibile since only half of your components were tested and audited.
 
-### parsableA11yScore for Retail Mobile on Dec 7th, 2022
+### Example Scores
 
-We ran this executor on the Retail Mobile App repository on Dec 7th 2022. Here is the [code](https://github.cbhq.net/consumer/react-native/pull/17091/files#diff-dfe9f3b550a63164e5df3b30ac99517e971486c15fd9c50e1555a7d1cbe695c3R111) that adds the executor to run this on the Retail App.
+We performed a test of this executor on the [Consumer - React Native repository](https://github.cbhq.net/consumer/react-native) on Dec 7th, 2022.
 
-Here is the [log](https://drive.google.com/drive/folders/1rjkC0fxuA4VTdPz9gFI5ju0y47xarXpm) that was generated on Dec 7th 2022 19:56:02 (7:56 pm PST). Here are the key metrics:
+Here are the key metrics from the [report](https://drive.google.com/drive/folders/1rjkC0fxuA4VTdPz9gFI5ju0y47xarXpm) that was generated from this test run:
 
-| keyName on Log                          | Description of keyName                                                                   | value |
-| --------------------------------------- | ---------------------------------------------------------------------------------------- | ----- |
-| totalNumberOfToBeAccessibleTests        | Total number of tests that have toBeAccessible                                           | 753   |
-| totalNumberOfPassingToBeAccessibleTests | Total number of tests that have toBeAccessible and is passing                            | 441   |
-| totalNumberOfComponentsWithTest         | Total number of screens/components that have a matching test file                        | 810   |
-| totalNumberOfComponents                 | Total number of screens/components. We called it components to keep the key name shorter | 2447  |
+| Metric                                  | Description                                                           | Value |
+| --------------------------------------- | --------------------------------------------------------------------- | ----- |
+| totalNumberOfToBeAccessibleTests        | Total number of test files with toBeAccessible tests                  | 753   |
+| totalNumberOfPassingToBeAccessibleTests | Total number of test files with passing toBeAccessible tests          | 441   |
+| totalNumberOfComponentsWithTest         | Total number of components and screens that have a matching test file | 810   |
+| totalNumberOfComponents                 | Total number of components and screens                                | 2447  |
 
-Therefore, the parsableA11yScore = 0.622. Here is a breakdown of the numbers
+| Score              | Calculation              | Result |
+| ------------------ | ------------------------ | ------ |
+| a11yScore          | (441 / 810) \* 100       | 54.44  |
+| jestScore          | 66.14                    | 66.14  |
+| automatedA11yScore | (54.44 + 66.14 \* 2) / 3 | 62.2   |
 
-| Metric                         | Metric Result                 |
-| ------------------------------ | ----------------------------- |
-| a11yScore on Retail Mobile App | 441 / 810 = 0.544             |
-| jestScore                      | 0.6614                        |
-| parsableA11yScore              | (0.544 + 0.6614\*2)/3 = 0.622 |
+### Other Metrics and Info
 
-## Other helpful metrics
-
-We care deeply about our customers, and try to add as many features to help make their lives easier when it comes to remediating accessibility issues.
-
-Our log shows a list of test files that do not have toBeAccessible tests. By adding toBeAccessible tests to these test cases, you will greatly increase your score.
-
-Here is the output from Retail Mobile App
+The report includes a `testFilesWithoutToBeAccessibleTest` field, which highlights test files lacking `toBeAccessible` tests:
 
 ![retailMobileApp Sample Output](images/retail_mobile_app_output.png)
 
-We also capture a list of tests that are failing toBeAccessible and the reasons for the failures. Currently, messages are output in ANSI format, which means for the time being you'll need to manually console.log the messages to view the output in a more readable format. Alternatively, you can also run the test locally to view any errors.
+Adding missing `toBeAccessible` tests will increase your `a11yScore`, leading to an improved `automatedA11yScore`.
 
-By fixing failing tests, the a11yScore can be greatly improved. In this example, remediating all of the failures would result in raising totalNumberOfPassingToBeAccessibleTests from 441 to 753, resulting in an a11yScore of ~93% (753/810). If we were to also add toBeAccessible to the remaining tests, we could raise our a11yScore to a perfect 100%.
+Under the `testDetails` field, a list of test files containing toBeAccessible tests is also captured, along with their pass or fail status and the corresponding test message details. At present, messages are output in ANSI format. To view the output in a more readable format, you'll need to process the messages with another tool capable of parsing ANSI (e.g. `console.log`). Alternatively, you can run the test locally to view any errors.
 
-PASSED toBeAccessible - Here is an example of a test that passed the toBeAccessible test.
+PASSING `toBeAccessible`:
+
 ![passingToBeAccessible on log](images/passingToBeAccessible_on_log.png)
 
-FAILED toBeAccessible - Here is an example of a test that failed the toBeAccessible test. As mentioned previously, the message is captured in an ansi form
+FAILING `toBeAccessible`:
+
 ![failingToBeAccessible on log](images/failingToBeAccessible_on_log.png)
 
-# 2023 Roadmap
+Fixing failing tests will naturally improve your `a11yScore`. Using our previous [example](#example-scores), remediating all of the failures would increase `totalNumberOfPassingToBeAccessibleTests` from 441 to 753, resulting in an `a11yScore` of ~93% (753/810). If we were to also add missing `toBeAccessible` tests to the remaining test files, we would raise our `a11yScore` to a perfect 100%.
 
-We have drafted the features we think will be highest priority for this product for 2023. The features are ranked based on priority. Thus, if it is the 1st on the list, it means it is the highest priority.
+## Roadmap
 
-Each item also includes a note in brackets which attempts to estimate the difficulty/complexity of the task. You can also view a history of the roadmap for this project in this [doc](https://docs.google.com/document/d/1msNpZVw-sh_ouGtQHIcy-rmneP3ePBTI6W6KwDKGs7s/).
+View the current roadmap for this project [here](https://docs.google.com/document/d/1msNpZVw-sh_ouGtQHIcy-rmneP3ePBTI6W6KwDKGs7s).
 
-## New Features for A11y Engine Executor
-
-1. Transforming the raw data into a way that snowflake understands [don’t know]
-   a. [Product scorecard roadmap](https://docs.google.com/document/d/1z3olkpjXzxM5EKjvP1sKKdekQAp_qLFI08Xeviwr9kA/edit)
-2. Add the parsableA11yScore on the scorecard [easy]
-3. Add linter rule - if the jest test is for a screen or component, it should warn them and say they should add a a11y jest test [medium]
-4. Add audit-a11y executor to nx-scaffolder for React Native projects (example: https://frontend.cbhq.net/nx/new-package) [don't know]
-5. Think of ways to optimize the time it takes to run jest tests that have toBeAccessible [difficult]
-
-## New Features for react-native-accessibility-engine (RNAE)
-
-1. Create a framework to determine what rule sets are highest priority to fix [don't know]
-2. Add new rules to the library (it's open source) [medium]
-3. Rank rules based on criticality [medium]
-
-## Monitoring
-
-1. Datadog dashboard to monitor the number of projects that are using this audit-a11y executor [don't know]
-2. Monitor the number of projects who has @cbhq/eslint-plugin a11y rule enabled [don't know]
-3. Monitor the average time the executor takes to run. Create Datadog dashboard [don't know]
-4. Monitor the resource usage (RAM, CPU, Network IO etc..) [don't know]
-
-# Contributing
+## Contributions
 
 Contributions are always welcome, no matter how large or small!
 
-## Setup
+### Setup
 
 On the first checkout of the repository, you'll need to install dependencies and build the project.
 
 To install dependencies, run
 
-```
+```sh
 yarn install
 ```
 
-To build the ui-scorecard package, run
+To build the `@cbhq/ui-scorecard` package, run
 
-```
+```sh
 yarn nx run ui-scorecard:build
 ```
 
-## Testing the executor
+### Feature Testing
 
-We have integrated this executor into the @cbhq/cds-mobile package. [Here](https://sourcegraph.cbhq.net/github.cbhq.net/frontend/cds/-/blob/packages/mobile/project.json?L20) is where the executor is integrated. We recommend using this package as a testing ground for new features.
+A11y Executor is integrated into the `@cbhq/cds-mobile` package. You can manually test any features or modifications related to the executor with this package.
 
-The command to run the a11y report for the cds-mobile package:
+To run the a11y audit and generate an accessibility report for this package:
 
-```
+```sh
 yarn nx run mobile:audit-a11y
 ```
 
-## Understanding the architecture
+### Architecture
 
-The `impl.ts` file is the entry point. Think of it like an `index.ts` file for an app. This is the file that gets executed when you run `nx run <project-name>:audit-a11y`. The `implementation` field in [executor.json](https://github.cbhq.net/frontend/cds/blob/965687c6a58fd770c6c7eefbed51dd454d9cea72/packages/ui-scorecard/executors.json) is what determines the entry point of this executor.
+The [impl.ts](./src/executors/audit-a11y/impl.ts) file serves as the entry point for this project and is executed when running `nx run <project-name>:audit-a11y`. The entry point is determined by the `implementation` field in the [executor.json](./executors.json) file.
 
 ## Related Links
 
 - [Mobile A11y Runbook](https://docs.google.com/document/d/1fCmteNp_ZEWoMxi74YZnbvhGV3CnZjUlWzAeF-9_1Sk/edit#heading=h.2y07lmtwzk7o) - This contains instructions to run the [react-native-accessibility-engine](https://github.com/aryella-lacerda/react-native-accessibility-engine) as well.
+- [Roadmap](https://docs.google.com/document/d/1msNpZVw-sh_ouGtQHIcy-rmneP3ePBTI6W6KwDKGs7s)
 - [A11y Measurement Epic](https://jira.coinbase-corp.com/browse/CDS-2572)
 - [A11y Measurement Epic - Filtered tickets based on Code Optimization tag](https://jira.coinbase-corp.com/browse/CDS-2809?jql=project%20%3D%20%22Coinbase%20Design%20System%22%20AND%20labels%20%3D%20code-optimization%20AND%20%22Epic%20Link%22%20%3D%20CDS-2572%20)
 - [A11y Engine Initial Project TDD](https://docs.google.com/document/d/1y9T3tP-40gPqMxcQAE-Ast4M08n-sK7z2tO5BaTAHMc/edit)
 - [Sample JSON Outputs](https://drive.google.com/drive/u/0/folders/1VimSMEclCl45PbDl2jkw5Lk4QHOSMaAa)
-- [Support Channels](#support-channels)
-  - Slack Handle: [#ask-ui-systems-accessibility-tooling](https://coinbase.slack.com/archives/C03TGNBJCMQ)
-  - Handy Go links:
-    - [go/mobile-a11y-runbook](https://docs.google.com/document/d/1fCmteNp_ZEWoMxi74YZnbvhGV3CnZjUlWzAeF-9_1Sk/edit#heading=h.2y07lmtwzk7o)
+- Slack: [#ask-ui-systems-accessibility-tooling](https://coinbase.slack.com/archives/C03TGNBJCMQ)
+- Go links:
+  - [go/mobile-a11y-runbook](https://docs.google.com/document/d/1fCmteNp_ZEWoMxi74YZnbvhGV3CnZjUlWzAeF-9_1Sk/edit#heading=h.2y07lmtwzk7o)

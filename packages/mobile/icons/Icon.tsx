@@ -1,7 +1,11 @@
-import React, { memo, useMemo } from 'react';
+import React, { cloneElement, memo, useMemo } from 'react';
 import { Animated, Text, TextStyle } from 'react-native';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
-import type { IconBaseProps, PaletteForeground } from '@cbhq/cds-common/types';
+import type {
+  IconBaseProps,
+  PaletteForeground,
+  SharedAccessibilityProps,
+} from '@cbhq/cds-common/types';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils';
 
@@ -10,17 +14,27 @@ import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Box } from '../layout/Box';
 import type { DangerouslySetStyle } from '../types';
 
+import type { BadgeProps } from './Badge';
 import { IconOutline } from './IconOutline';
 
 export type IconProps = IconBaseProps & {
+  /**
+   * @deprecated - use Icon paired with DotCount/DotSymbol/DotStatusColor instead
+   * Add a badge to the top right of an icon
+   */
+  badge?: React.ReactElement<BadgeProps>;
   /** Color of the icon when used as a foreground. */
   color?: PaletteForeground;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetColor?: string | Animated.AnimatedInterpolation<string>;
-} & DangerouslySetStyle<TextStyle>;
+} & DangerouslySetStyle<TextStyle> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
 export const Icon = memo(function Icon({
+  accessibilityLabel,
+  accessibilityHint,
   animated = false,
+  badge,
   bordered = false,
   color = 'primary',
   dangerouslySetColor,
@@ -88,7 +102,10 @@ export const Icon = memo(function Icon({
       <Box alignItems="center" justifyContent="center" width={wrapperSize} height={wrapperSize}>
         <TextComponent
           allowFontScaling={false}
+          accessible={!!accessibilityLabel}
           accessibilityRole="image"
+          accessibilityLabel={accessibilityLabel}
+          accessibilityHint={accessibilityHint}
           style={fontStyles as TextStyle}
         >
           {glyph}
@@ -101,6 +118,12 @@ export const Icon = memo(function Icon({
             color={iconColor}
           />
         )}
+        {!!badge &&
+          cloneElement(badge, {
+            position: 'absolute',
+            top: '-45%',
+            right: '-50%',
+          })}
       </Box>
     </Box>
   );

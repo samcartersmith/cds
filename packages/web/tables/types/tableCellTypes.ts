@@ -98,6 +98,10 @@ type TableCellBaseProps = {
    * @default `th` when rendered inside a TableHeader, `td` when rendered inside a TableBody or TableFooter
    */
   as?: 'td' | 'th';
+  /**
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  dangerouslySetClassName?: string;
 } & TableCellSharedProps;
 
 type TableCellPropsWithInputs = {

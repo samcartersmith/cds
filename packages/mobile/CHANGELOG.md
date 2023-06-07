@@ -2,7 +2,7 @@
 
 > [NPM registry](https://registry-npm.cbhq.net/-/web/detail/@cbhq/cds-mobile)
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file!
 
 `@cbhq/cds-mobile` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
@@ -18,8 +18,6 @@ All notable changes to this project will be documented in this file.
 
 - Rebase sparkline-mobile decomposition on release branch.
 
-## 5.0.0-rc.2 (3/23/2023, 06:36 PM PST)
-
 #### 💥 Breaking
 
 - **[all]** Base PR for Expo Migration, React Native 71.4, Reanimated V3 & React 18. [#1775](https://github.cbhq.net/frontend/cds/pull/1775), [DX-709](https://jira.coinbase-corp.com/browse/DX-709)
@@ -29,11 +27,63 @@ All notable changes to this project will be documented in this file.
 
 - **[ui-mobile-playground, ui-mobile-visreg]** Fix Npm Pack. [#1841](https://github.cbhq.net/frontend/cds/pull/1841)
 
-## 5.0.0-rc.1 (3/20/2023, 10:29 AM PST)
-
 #### 💥 Breaking
 
 - **[ui-mobile-playground]** Separate UI code from visreg code for playgrounds. [#1810](https://github.cbhq.net/frontend/cds/pull/1810)
+
+## 4.2.14 (6/4/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix Sparkline Period Selector to be compatible with variable sized periods. [[#2009](https://github.cbhq.net/frontend/cds/pull/2009)] [[DX-1627](https://jira.coinbase-corp.com/browse/DX-1627)]
+
+#### 📘 Misc
+
+- Add ui-scorecard as a dev dep. [[#2004](https://github.cbhq.net/frontend/cds/pull/2004)]
+
+## 4.2.13 (5/23/2023 PST)
+
+#### 🐞 Fixes
+
+- Add testID to LottieStatusAnimation & test coverage. [[#2001](https://github.cbhq.net/frontend/cds/pull/2001)] [[DX-1071](https://jira.coinbase-corp.com/browse/DX-1071)]
+
+## 4.2.12 (5/23/2023 PST)
+
+#### 🐞 Fixes
+
+- Add testID for ListCellFallback & tests. [[DX-1070](https://jira.coinbase-corp.com/browse/DX-1070)]
+
+## 4.2.11 (5/18/2023 PST)
+
+#### 🐞 Fixes
+
+- **[Icon, NavigationIcon]** Expose accessibility props on mobile. [[#1996](https://github.cbhq.net/frontend/cds/pull/1996)] [[DX-1125](https://jira.coinbase-corp.com/browse/DX-1125)]
+
+#### 📘 Misc
+
+- Package.json format update.
+
+## 4.2.10 (5/17/2023 PST)
+
+#### 🐞 Fixes
+
+- **[ModalHeader]** Remove hard coded accessibility labels. [[#1995](https://github.cbhq.net/frontend/cds/pull/1995)] [[DX-1418](https://jira.coinbase-corp.com/browse/DX-1418)]
+
+## 4.2.9 ((5/17/2023, 08:34 AM PST))
+
+This is an artificial version bump with no new change.
+
+## 4.2.8 (5/16/2023 PST)
+
+#### 🐞 Fixes
+
+- Expose a11y props for Illustration for mobile component. [[#1984](https://github.cbhq.net/frontend/cds/pull/1984)] [[DX-1126](https://jira.coinbase-corp.com/browse/DX-1126)]
+
+## 4.2.7 (5/15/2023 PST)
+
+#### 🐞 Fixes
+
+- **[RemoteImage]** Expose accessibility props on all image variants. [[#1988](https://github.cbhq.net/frontend/cds/pull/1988)] [[DX-1124](https://jira.coinbase-corp.com/browse/DX-1124)]
 
 ## 4.2.6 (4/20/2023 PST)
 
