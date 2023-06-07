@@ -6,11 +6,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## 0.1.3 (5/25/2023 PST)
+## 0.1.3 (6/2/2023 PST)
 
 #### 🚀 Updates
 
 - [trivial] feat: Added scripts for package decomp migrations. [[#1998](https://github.cbhq.net/frontend/cds/pull/1998)]
+
+#### 🚀 Updates
+
+- [trivial] feat: improved file parsing performance. [[#2008](https://github.cbhq.net/frontend/cds/pull/2008)]
+
+## 0.1.2 (5/25/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: add peer dependencies to CDSDep check. [[#2002](https://github.cbhq.net/frontend/cds/pull/2002)]
 
 ## 0.1.1 (5/14/2023 PST)
 
@@ -27,6 +37,10 @@ All notable changes to this project will be documented in this file.
 #### 📘 Misc
 
 - Update release branch to latest master. [[#1961](https://github.cbhq.net/frontend/cds/pull/1961)]
+
+#### 💥 Breaking
+
+- Removed find/replace helper. [[#1982](https://github.cbhq.net/frontend/cds/pull/1982)]
 
 ## 0.0.6 (4/24/2023 PST)
 

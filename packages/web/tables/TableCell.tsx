@@ -44,6 +44,7 @@ export const TableCell = memo(
     outerSpacing,
     responsiveConfig,
     as,
+    dangerouslySetClassName,
     ...props
   }: TableCellProps) => {
     // THROW WANRING IN DEVELOPMENT
@@ -137,7 +138,7 @@ export const TableCell = memo(
     return (
       <TableCellComponent
         data-testid={testID}
-        className={tableCellClass}
+        className={cx(tableCellClass, dangerouslySetClassName)}
         colSpan={colSpan}
         style={inlineStyles}
         scope={cellScope}

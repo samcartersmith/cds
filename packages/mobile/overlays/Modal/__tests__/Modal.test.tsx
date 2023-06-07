@@ -66,7 +66,13 @@ describe('Modal', () => {
     const onRequestClose = jest.fn();
     const onDidClose = jest.fn();
 
-    render(<MockModal onRequestClose={onRequestClose} onDidClose={onDidClose} />);
+    render(
+      <MockModal
+        onRequestClose={onRequestClose}
+        onDidClose={onDidClose}
+        closeAccessibilityLabel="Close"
+      />,
+    );
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByLabelText('Close'));
@@ -77,7 +83,7 @@ describe('Modal', () => {
   it('triggers onDidClose after animation finished', () => {
     const onDidClose = jest.fn();
 
-    render(<MockModal onDidClose={onDidClose} />);
+    render(<MockModal onDidClose={onDidClose} closeAccessibilityLabel="Close" />);
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByLabelText('Close'));
@@ -90,7 +96,7 @@ describe('Modal', () => {
 
   it('triggers back action on back button press', () => {
     const onBackButtonPress = jest.fn();
-    render(<MockModal onBackButtonPress={onBackButtonPress} />);
+    render(<MockModal onBackButtonPress={onBackButtonPress} backAccessibilityLabel="Back" />);
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByLabelText('Back'));
@@ -143,5 +149,31 @@ describe('Modal', () => {
 
     expect(animationParallelSpy).toHaveBeenCalled();
     expect(animationTimingSpy).toHaveBeenCalled();
+  });
+
+  it('sets accessible labels on close button', () => {
+    render(
+      <MockModal closeAccessibilityLabel="Close" closeAccessibilityHint="Close button hint" />,
+    );
+
+    fireEvent.press(screen.getByText('Open Modal'));
+
+    expect(screen.getByLabelText('Close')).toBeTruthy();
+    expect(screen.getByHintText('Close button hint')).toBeTruthy();
+  });
+
+  it('sets accessible labels on back button', () => {
+    render(
+      <MockModal
+        onBackButtonPress={jest.fn()}
+        backAccessibilityLabel="Back"
+        backAccessibilityHint="Back button hint"
+      />,
+    );
+
+    fireEvent.press(screen.getByText('Open Modal'));
+
+    expect(screen.getByLabelText('Back')).toBeTruthy();
+    expect(screen.getByHintText('Back button hint')).toBeTruthy();
   });
 });

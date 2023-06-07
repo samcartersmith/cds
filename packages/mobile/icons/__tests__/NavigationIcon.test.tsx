@@ -26,4 +26,18 @@ describe('NavigationIcon.test', () => {
 
     expect(screen.getByTestId('test-nav-icon')).toBeTruthy();
   });
+
+  it('sets accessibility attributes and labels', () => {
+    render(
+      <NavigationIcon
+        name="account"
+        accessibilityLabel="An icon label"
+        accessibilityHint="An icon hint"
+      />,
+    );
+
+    expect(screen.getByRole('image')).toHaveProp('accessible', true);
+    expect(screen.getByLabelText('An icon label')).toBeTruthy();
+    expect(screen.getByHintText('An icon hint')).toBeTruthy();
+  });
 });

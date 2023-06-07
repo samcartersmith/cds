@@ -1,5 +1,5 @@
 // This should change to: '@cbhq/cds-icons/fonts/web/icon-font.css'
-// leave this commented out or it'll break the build
+// uncomment this for testing, but do not commit this uncommented or it will break the build
 // import '@cbhq/cds-web/styles/icon-font.css';
 
 import React from 'react';

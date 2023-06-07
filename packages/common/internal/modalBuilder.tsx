@@ -54,6 +54,7 @@ export function modalBuilder({
         disablePortal?: boolean;
         visible?: boolean;
         hideDividers?: boolean;
+        enableBackButton?: boolean;
       }
     >
   > = ({
@@ -63,6 +64,7 @@ export function modalBuilder({
     hideDividers,
     triggerRef,
     focusTrigger,
+    enableBackButton,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible ?? true);
 
@@ -78,7 +80,12 @@ export function modalBuilder({
           hideDividers={hideDividers}
           onDidClose={focusTrigger}
         >
-          <ModalHeader title="Basic Modal" />
+          <ModalHeader
+            title="Basic Modal"
+            closeAccessibilityLabel="Close"
+            backAccessibilityLabel="Back"
+            onBackButtonPress={enableBackButton ? toggleOff : undefined}
+          />
           <ModalBody>{children}</ModalBody>
           <ModalFooter
             primaryAction={<Button onPress={toggleOff}>Save</Button>}
@@ -104,7 +111,7 @@ export function modalBuilder({
       () =>
         openModal(
           <Modal visible onRequestClose={closeModal} onDidClose={focusTrigger}>
-            <ModalHeader title="Basic Modal" />
+            <ModalHeader title="Default Modal" closeAccessibilityLabel="Close" />
             <ModalBody>{children}</ModalBody>
             <ModalFooter
               primaryAction={<Button onPress={closeModal}>Save</Button>}
@@ -137,6 +144,10 @@ export function modalBuilder({
     focusTrigger,
     accessibilityLabelledBy,
     accessibilityLabel,
+    backAccessibilityLabel,
+    backAccessibilityHint,
+    closeAccessibilityLabel,
+    closeAccessibilityHint,
   }: Partial<ModalBaseProps & ModalHeaderBaseProps> & ModalA11yProps) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(externalVisible);
 
@@ -164,7 +175,14 @@ export function modalBuilder({
           onDidClose={handleDidClose}
           disablePortal
         >
-          <ModalHeader onBackButtonPress={onBackButtonPress} title={title} />
+          <ModalHeader
+            onBackButtonPress={onBackButtonPress}
+            title={title}
+            backAccessibilityLabel={backAccessibilityLabel}
+            backAccessibilityHint={backAccessibilityHint}
+            closeAccessibilityLabel={closeAccessibilityLabel}
+            closeAccessibilityHint={closeAccessibilityHint}
+          />
           <ModalBody>
             <LoremIpsum />
           </ModalBody>
@@ -188,6 +206,12 @@ export function modalBuilder({
 
   const BasicModal = (props: ModalA11yProps) => (
     <BasicModalExample {...props}>
+      <LoremIpsum />
+    </BasicModalExample>
+  );
+
+  const BackButtonModal = (props: ModalA11yProps) => (
+    <BasicModalExample {...props} enableBackButton>
       <LoremIpsum />
     </BasicModalExample>
   );
@@ -221,6 +245,7 @@ export function modalBuilder({
 
   return {
     BasicModal,
+    BackButtonModal,
     VisibleModal,
     ModalWithoutPortal,
     LongModal,

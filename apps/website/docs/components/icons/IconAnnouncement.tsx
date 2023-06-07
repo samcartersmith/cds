@@ -12,20 +12,20 @@ export const IconAnnouncement = function IconAnnouncement() {
       body={
         <VStack>
           <TextBody as="p" spacingBottom={1}>
-            Icons (Navigation and Product Icons) are released every other{' '}
-            <strong>Wednesday at 1pm</strong>. Icons will release in one week, and Illustrations
-            will release in the next. For the icon to be included in this cycle, the request must be
-            submitted{' '}
+            Icons (Navigation and Product Icons) and Illustrations are released the first{' '}
+            <strong>Wednesday of each month</strong>. For the icon to be included in this cycle, the
+            request must be submitted{' '}
             <TextBody as="strong" color="negative">
-              <strong>before 1pm on Tuesdays (a day before the release)</strong>
+              <strong>
+                before 1pm the Tuesday before the first Wednesday of the month (a day before the
+                release)
+              </strong>
             </TextBody>
             .
           </TextBody>
           <TextBody as="p" spacingBottom={1}>
             To see Icons released this cycle, check{' '}
-            <Link to="https://docs.google.com/document/d/19N5EpYixyttCbmi2pbO0DsC0waL14v77MrwR7OQrwJQ">
-              go/icon-illo-release-history
-            </Link>
+            <Link to="https://cds.cbhq.net/changelog/icons/">Icon Changelog</Link>
           </TextBody>
           <TextBody as="p" spacingBottom={1}>
             If request is <strong>urgent</strong>:
@@ -38,9 +38,10 @@ export const IconAnnouncement = function IconAnnouncement() {
                 form
               </li>
               <li>
-                Attach the ticket to message and cc{' '}
-                <a href="mailto:maryanne.nguyen@coinbase.com">@maryanne-nguyen</a>, and ping{' '}
-                <Link to="https://coinbase.slack.com/archives/C01A6PKGM3J">#ask-cds</Link>{' '}
+                Attach the ticket to message and ping{' '}
+                <Link to="https://coinbase.slack.com/archives/C3NH7A137">
+                  #ask-design-foundations
+                </Link>{' '}
               </li>
             </ol>
           </TextBody>

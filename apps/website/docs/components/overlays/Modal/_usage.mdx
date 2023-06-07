@@ -59,7 +59,12 @@ function DefaultModalExample() {
           </Switch>
         </ButtonGroup>
         <Modal visible={visible} onRequestClose={toggleOff} onDidClose={handleDidClose}>
-          <ModalHeader title="Basic Modal" />
+          <ModalHeader
+            title="Default Modal"
+            onBackButtonPress={toggleOff}
+            backAccessibilityLabel="Back"
+            closeAccessibilityLabel="Close"
+          />
           <ModalBody>
             <TextBody as="p">{loremIpsum.repeat(scrolling ? 50 : 1)}</TextBody>
           </ModalBody>
@@ -93,8 +98,8 @@ Multiple modals? No problem, check out this example [here](/hooks/useOverlay#mul
 // import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 // import { useModal } from '@cbhq/cds-web/overlays/useModal';
 
-function PortalModalExample() {
-  function PortalModal() {
+function ControlledModalExample() {
+  function ControlledModal() {
     const { openModal, closeModal } = useModal();
     const triggerRef = useRef(null); // only required for web
 
@@ -108,7 +113,12 @@ function PortalModalExample() {
       () =>
         openModal(
           <Modal visible onRequestClose={closeModal} onDidClose={handleDidClose}>
-            <ModalHeader title="Basic Modal" />
+            <ModalHeader
+              title="Controlled Modal"
+              onBackButtonPress={closeModal}
+              backAccessibilityLabel="Back"
+              closeAccessibilityLabel="Close"
+            />
             <ModalBody>
               <TextBody as="p">{loremIpsum}</TextBody>
             </ModalBody>
@@ -130,7 +140,7 @@ function PortalModalExample() {
   return (
     <PortalProvider>
       <ExampleWithThemeToggles>
-        <PortalModal />
+        <ControlledModal />
       </ExampleWithThemeToggles>
     </PortalProvider>
   );

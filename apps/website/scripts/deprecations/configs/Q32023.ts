@@ -26,5 +26,16 @@ export const Q32023: Deprecation = {
         },
       },
     },
+    {
+      name: 'alt',
+      components: ['HeroSquare', 'Pictogram', 'SpotSquare', 'SpotRectangle'],
+      package: 'mobile',
+      type: 'replaced',
+      migrationMap: {
+        api: {
+          alt: 'accessibilityLabel and accessibilityHint',
+        },
+      },
+    },
   ],
 };
