@@ -8,8 +8,6 @@ const lottieFilesPackage = '@cbhq/cds-lottie-files';
 const depsToCheck = [webPackage, mobilePackage, commonPackage, lottieFilesPackage];
 export type CdsPackages = (typeof depsToCheck)[number];
 
-export type CdsDependencyCheck = ReturnType<typeof checkHasCdsPackage>;
-
 /**
  * Checks if the project uses a specified CDS package as a dependency
  * @param packageName - The name of the CDS package you are looking for, eg: @cbhq/cds-web
