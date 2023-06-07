@@ -67,7 +67,7 @@ export const V5MigrationsTest = () => {
       {/* <CollapseArrow /> */}
       {/* this should not be deprecated after package decomp migrations run */}
       <Dropdown content="test">
-        <IconButton name="caretDown" />
+        <IconButton name="caretDown" accessibilityLabel="Open Dropdown Button" />
       </Dropdown>
     </VStack>
   );
