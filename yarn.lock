@@ -2541,7 +2541,7 @@ __metadata:
     "@popperjs/core": ^2.9.0
     "@storybook/testing-library": ^0.0.13
     d3-interpolate-path: ^2.2.2
-    d3-selection: 1.4.2
+    d3-selection: ^1.4.2
     focus-visible: ^5.2.0
     framer-motion: ^6.2.8
     linaria: ^2.3.1
@@ -15617,7 +15617,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3-selection@npm:1.4.2, d3-selection@npm:^1.4.2":
+"d3-selection@npm:^1.4.2":
   version: 1.4.2
   resolution: "d3-selection@npm:1.4.2"
   checksum: 2484b392259b087a98f546f2610e6a11c90f38dae6b6b20a3fc85171038fcab4c72e702788b1960a4fece88bed2e36f268096358b5b48d3c7f0d35cfbe305da6
