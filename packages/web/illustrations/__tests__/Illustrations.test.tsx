@@ -3,7 +3,11 @@ import { IllustrationNames, IllustrationVariant } from '@cbhq/cds-common';
 import { Spectrum } from '@cbhq/cds-common/types/Spectrum';
 
 import { ThemeProvider } from '../../system';
+import { HeroSquare } from '../HeroSquare';
 import { Illustration, versionMaps } from '../Illustration';
+import { Pictogram } from '../Pictogram';
+import { SpotRectangle } from '../SpotRectangle';
+import { SpotSquare } from '../SpotSquare';
 
 const getURL = (
   type: IllustrationVariant,
@@ -58,5 +62,30 @@ describe('illustrations have correct url and alt tag for light mode', () => {
     );
 
     expect(screen.getByTestId(TEST_ILLO_NAME)).toHaveAttribute('alt', TEST_ILLO_ALT);
+  });
+});
+
+describe('can set alt for each variant', () => {
+  it('can set a custom alt attr for a Pictogram', () => {
+    render(<Pictogram name="2fa" testID="pictogram-example" alt={TEST_ILLO_ALT} />);
+
+    expect(screen.getByTestId('pictogram-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
+  });
+  it('can set a custom alt attr for a SpotSquare', () => {
+    render(
+      <SpotSquare name="accessToAdvancedCharts" testID="spotSquare-example" alt={TEST_ILLO_ALT} />,
+    );
+
+    expect(screen.getByTestId('spotSquare-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
+  });
+  it('can set a custom alt attr for a SpotRectangle', () => {
+    render(<SpotRectangle name="addBank" testID="SpotRectangle-example" alt={TEST_ILLO_ALT} />);
+
+    expect(screen.getByTestId('SpotRectangle-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
+  });
+  it('can set a custom alt attr for a HeroSquare', () => {
+    render(<HeroSquare name="add2Fa" testID="HeroSquare-example" alt={TEST_ILLO_ALT} />);
+
+    expect(screen.getByTestId('HeroSquare-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
   });
 });

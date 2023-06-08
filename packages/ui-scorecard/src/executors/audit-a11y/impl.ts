@@ -1,10 +1,18 @@
-import { color, createTask } from '@cbhq/mono-tasks';
+import {
+  ActionType,
+  AnalyticsEventImportance,
+  ComponentType,
+  init,
+  logEvent,
+  PlatformName,
+} from '@cbhq/client-analytics';
+import { color, createTask, logError, logVerbose } from '@cbhq/mono-tasks';
 
 import { A11yLogger } from './A11yLogger';
 import { FilesParser } from './FilesParser';
 import { FileWriter } from './FileWriter';
 import { Task } from './TestTask';
-import { TestOptions } from './types';
+import { A11yLogType, TestOptions } from './types';
 
 /**
  * This is main file. This is what the executor will run
@@ -51,6 +59,50 @@ async function runAudit({
   await a11yLogger.logAccessibleTestsJestOutput(jestArgs);
 
   a11yLogger.logTotalNumberOfPassingToBeAccessibleTests();
+
+  await a11yLogger.logAutomatedA11yScore();
+}
+
+async function sleep(ms: number): Promise<void> {
+  // eslint-disable-next-line no-promise-executor-return
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function sendScores(options: TestOptions, { automatedA11yScore }: A11yLogType) {
+  init({
+    // client-analytics batches events, we want to send them as fast as possible
+    // https://frontend.cbhq.net/analytics/quick-start#sdk-configs
+    batchEventsPeriod: 0,
+    isProd: options.sendEventsToProd,
+    platform: PlatformName.ios,
+    projectName: options.eventProjectName,
+    showDebugLogging: options.debugEvents,
+    onError: (error) => logError(String(error)),
+    version: '1.0.0',
+  });
+
+  logVerbose({
+    event: {
+      eventName: 'accessibility_score',
+      action: ActionType.measurement,
+      componentType: ComponentType.unknown,
+      automatedA11yScore,
+    },
+  });
+
+  logEvent(
+    'accessibility_score',
+    {
+      loggingId: 'cc464392-65f0-42ca-bfd8-f8649eb63640',
+      action: ActionType.measurement,
+      componentType: ComponentType.unknown,
+      automatedA11yScore,
+    },
+    AnalyticsEventImportance.high,
+  );
+
+  // delay that gives enough time to send event
+  await sleep(1000);
 }
 
 const audit = createTask<TestOptions>('audit', async (task, options) => {
@@ -94,6 +146,10 @@ const audit = createTask<TestOptions>('audit', async (task, options) => {
 
   if (options.includeZeroCoverageAudit) {
     a11yLogger.logComponentsWithZeroCoverage();
+  }
+
+  if (options.eventProjectName) {
+    await sendScores(options, a11yLogger.getLog);
   }
 
   fileWriter.writeA11yLogToOutDir({ log: a11yLogger.getLog });

@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+#### 📘 Misc
+
+- Merge master into release.
+
 ## 0.0.5 (6/5/2023 PST)
 
 #### 🐞 Fixes

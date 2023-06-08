@@ -317,10 +317,11 @@ export class ProjectParser {
   }
 
   get stats() {
+    // If project is a new addition, it won't have any previous stats
+    const previousStatsDate = this.previousStats[this.previousStats.length - 1]?.date || new Date();
+
     // check if this report should be marked as the final report for the previous quarter
-    const lastPeriod = getPeriodInfo(
-      new Date(this.previousStats[this.previousStats.length - 1].date),
-    );
+    const lastPeriod = getPeriodInfo(new Date(previousStatsDate));
     const currentPeriod = getPeriodInfo(new Date());
     const period = currentPeriod !== lastPeriod ? lastPeriod : undefined;
 

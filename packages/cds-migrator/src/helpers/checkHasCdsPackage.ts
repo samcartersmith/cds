@@ -26,8 +26,11 @@ export function checkHasCdsPackage(
     const pkg = readJson<PackageJson>(tree, packageJsonPath);
 
     if (pkg.dependencies) {
-      const depKeys = Object.keys(pkg.dependencies);
-      return depKeys ? depKeys.some((key: CdsPackages) => key === packageName) : false;
+      const deps: string[] = [...Object.keys(pkg.dependencies)];
+      if (pkg.peerDependencies) {
+        deps.push(...Object.keys(pkg.peerDependencies));
+      }
+      return deps ? deps.some((key: CdsPackages) => key === packageName) : false;
     }
   }
   return false;

@@ -15,6 +15,10 @@ export type ModalHeaderProps = {
 export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = ({
   title,
   onBackButtonPress,
+  backAccessibilityLabel,
+  backAccessibilityHint,
+  closeAccessibilityLabel,
+  closeAccessibilityHint,
 }) => {
   const height = useInteractableHeight(true);
   const { onRequestClose, accessibilityLabelledBy, hideCloseButton, hideDividers } =
@@ -39,7 +43,8 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
             name="backArrow"
             onPress={onBackButtonPress}
             testID="modal-back-button"
-            accessibilityLabel="Back"
+            accessibilityLabel={backAccessibilityLabel}
+            accessibilityHint={backAccessibilityHint}
           />
         ) : (
           emptyPlaceholder
@@ -57,7 +62,8 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
             name="close"
             onPress={onRequestClose}
             testID="modal-close-button"
-            accessibilityLabel="Close"
+            accessibilityLabel={closeAccessibilityLabel}
+            accessibilityHint={closeAccessibilityHint}
           />
         ) : (
           emptyPlaceholder

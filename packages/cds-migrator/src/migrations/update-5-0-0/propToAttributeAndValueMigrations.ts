@@ -1,5 +1,4 @@
 import { Tree } from '@nrwl/devkit';
-import fs from 'node:fs';
 import { SourceFile } from 'ts-morph';
 
 import { checkFileIncludesImport } from '../../helpers/checkFileIncludesImport';
@@ -21,8 +20,8 @@ const renamedProp = Object.keys(
   Object.values(migrateBooleanPropToAttributeAndValueMigrations).map((val) => val.oldAttribute),
 );
 
-const filterSourceFiles = (path: string, sourceFile: SourceFile) => {
-  const sourceContent = fs.readFileSync(path, 'utf-8');
+const checkSourceFile = (sourceFile: SourceFile) => {
+  const sourceContent = sourceFile.getFullText();
   const hasRenamedValue = checkFileIncludesRenamedValue(sourceContent, renamedProp);
   const hasImport = checkFileIncludesImport(sourceFile, importPaths);
   if (hasRenamedValue && hasImport) {
@@ -32,13 +31,11 @@ const filterSourceFiles = (path: string, sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, tree, sourceFile, path } = args;
+  const { jsx, tree, sourceFile } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(migrateBooleanPropToAttributeAndValueMigrations),
   });
-
-  if (!filterSourceFiles(path, sourceFile)) return;
 
   let renameMap = migrateBooleanPropToAttributeAndValueMigrations;
   if (actualComponentName) {
@@ -83,5 +80,6 @@ export default async function migrations(tree: Tree) {
   await createJsxMigration({
     tree,
     callback,
+    checkSourceFile,
   });
 }

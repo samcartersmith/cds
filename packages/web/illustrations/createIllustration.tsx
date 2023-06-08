@@ -14,13 +14,23 @@ type IllustrationConfigShape<Variant extends IllustrationVariant> = Record<
   number
 >;
 
+export type IllustrationA11yProps = {
+  /** Alt tag to apply to the img
+   * @default "" will identify the image as decorative
+   */
+  alt?: string;
+};
+
+export type IllustrationBasePropsWithA11y<Type extends IllustrationVariant> =
+  IllustrationBaseProps<Type> & IllustrationA11yProps;
+
 export function createIllustration<Variant extends IllustrationVariant>(
   variant: Variant,
   config: IllustrationConfigShape<Variant>,
 ) {
   const defaultSize = getDefaultSizeObjectForIllustration(variant);
 
-  type IllustrationProps = IllustrationBaseProps<Variant>;
+  type IllustrationProps = IllustrationBasePropsWithA11y<Variant>;
 
   const Illustration = memo(function Illustration({
     name,
