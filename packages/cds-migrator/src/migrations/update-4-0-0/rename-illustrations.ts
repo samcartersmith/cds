@@ -9,29 +9,29 @@ import { ParseJsxElementsCbParams } from '../../helpers/parseJsxElements';
 import { renameJsxAttributeValue } from '../../helpers/renameJsxAttributeValue';
 import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
 
-import { illustrationRenames } from './data/illustrationRenames';
+import { iconRenames } from './data/iconRenames';
 
 function oldImportCheck(str: string) {
-  return ['web', 'mobile'].some((platform) => str.includes(`@cbhq/cds-${platform}/illustrations`));
+  return ['web', 'mobile'].some((platform) => str.includes(`@cbhq/cds-${platform}/icons`));
 }
 
-const renamedIllos = Object.keys(Object.values(illustrationRenames).map((val) => val.valueMap));
+const renamedIcons = Object.keys(Object.values(iconRenames).map((val) => val.valueMap));
 
 const filterSourceFiles = (path: string) => {
   const sourceContent = fs.readFileSync(path, 'utf-8');
-  if (oldImportCheck(sourceContent) || checkFileIncludesRenamedValue(sourceContent, renamedIllos)) {
+  if (oldImportCheck(sourceContent) || checkFileIncludesRenamedValue(sourceContent, renamedIcons)) {
     return true;
   }
   return false;
 };
 
-const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, tree, sourceFile } = args;
+function callback(args: ParseJsxElementsCbParams) {
+  const { tree, jsx, sourceFile } = args;
   const { updateMap, isMigratable } = checkIsComponentWithMigrations({
     jsx,
-    componentNames: Object.keys(illustrationRenames),
+    componentNames: Object.keys(iconRenames),
     attribute: 'name',
-    renameMap: illustrationRenames,
+    renameMap: iconRenames,
   });
 
   if (isMigratable) {
@@ -44,15 +44,13 @@ const callback = (args: ParseJsxElementsCbParams) => {
       writeMigrationToFile({ oldValue, newValue, jsx, sourceFile, tree });
     }
   }
-};
+}
 
 export default async function migrations(tree: Tree) {
-  logDebug('Migrating Illustrations');
+  logDebug('Migrating Icons');
   await createJsxMigration({
     tree,
     filterSourceFiles,
     callback,
-    excludeOpeningElements: true,
-    packageNames: ['@cbhq/cds-web', '@cbhq/cds-mobile'],
   });
 }

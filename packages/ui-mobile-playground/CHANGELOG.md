@@ -6,26 +6,34 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## 1.0.0 (4/25/2023 PST)
+## 1.0.0-rc.3 (4/25/2023 PST)
 
 - You now import routes from a new path. `@cbhq/ui-mobile-playground/routes`
 - Enable consumer usage of mobile playground when package uses `src/` convention like our new cds-web-visualizations package. Note about this - local development should reference with `src/` in path to enable hot reloading in development, but builds that consumers use will not have src in build output paths.
 
 #### 📘 Misc
 
+- Sync changelog.
+
+#### 📘 Misc
+
 - Rebase sparkline-mobile decomposition on release branch.
+
+#### 📘 Misc
+
+- Merge master into release.
+
+## 1.0.0-rc.2 (3/22/2023 PST)
 
 #### 🐞 Fixes
 
 - Fix exports of src/index. [[#1841](https://github.cbhq.net/frontend/cds/pull/1833)]
 
+## 1.0.0-rc.1 (3/17/2023 PST)
+
 #### 💥 Breaking
 
 - Removed visreg into ui-mobile-visreg package. [[#1810](https://github.cbhq.net/frontend/cds/pull/1810)]
-
-#### 📘 Misc
-
-- **[Visreg]** Upgrade Visreg iOS device to iPhone 14. [[#1997](https://github.cbhq.net/frontend/cds/pull/1997)] [[DX-1440](https://jira.coinbase-corp.com/browse/DX-1440)]
 
 ## 0.3.7 (4/5/2023 PST)
 

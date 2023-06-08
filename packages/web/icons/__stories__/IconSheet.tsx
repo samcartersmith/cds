@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { css } from 'linaria';
 import { IconName, IconSize, useIconSize } from '@cbhq/cds-common';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
+import names from '@cbhq/cds-icons/__generated__/ui/data/names';
 
 import { HStack, VStack } from '../../layout';
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
@@ -32,11 +33,7 @@ function DisclaimerText() {
   );
 }
 
-type IconSheetProps = {
-  names: IconName[];
-};
-
-export const IconSheet = memo(function IconSheet({ names }: IconSheetProps) {
+export const IconSheet = memo(function IconSheet() {
   return (
     <FeatureFlagProvider flexGap>
       <VStack gap={2}>

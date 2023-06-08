@@ -35,17 +35,11 @@ export type AdopterConfig = {
   label: string;
   /** The Typescript Alias for the project (optional). */
   projectTsAliases?: string[];
-  /** Array of presentational elements or components to whitelist when grouping presentational components. */
   presentationalElements?: string[];
-  /** Array of presentational libraries to whitelist when grouping presentational components. */
   presentationalLibraries?: string[];
-  /** Array of presentational attributes to whitelist when grouping presentational components. */
   presentationalAttributes?: string[];
-  /** Array of Components that should be grouped with CDS components. */
   cdsAliases?: string[];
-  /** Array of file globs to ignore when parsing files. */
   ignoreDirs?: string[];
-  /** Optional override of the default source glob * */
   sourceGlob?: string[];
   tsconfigFileName?: string;
   type: 'doc';

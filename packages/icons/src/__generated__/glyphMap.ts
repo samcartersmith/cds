@@ -1162,9 +1162,6 @@ const glyphMap: Record<InternalIconName, string> = {
   'nav-faucet-16-inactive': '',
   'nav-faucet-24-active': '',
   'nav-faucet-24-inactive': '',
-  'ui-passport-12': '',
-  'ui-passport-16': '',
-  'ui-passport-24': '',
 };
 
 export default glyphMap;

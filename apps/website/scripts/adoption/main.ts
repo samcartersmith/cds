@@ -82,12 +82,6 @@ module.exports.adopters = ${JSON.stringify(adoptersSidebar)};
   );
 }
 
-async function generateAdoptionDirectory(project: ProjectParser) {
-  return fs.promises.mkdir(`${generatedStaticDataDir.absolutePath}/${project.id}`, {
-    recursive: true,
-  });
-}
-
 async function generateAdopterComponentsData(project: ProjectParser) {
   return fs.promises.writeFile(
     `${generatedStaticDataDir.absolutePath}/${project.id}/components.json`,
@@ -119,7 +113,6 @@ async function generateAdoptionFiles() {
         generateAdoptersData(),
         generateHiddenAdoptersData(),
         generateAdoptersSidebarData(),
-        generateAdoptionDirectory(project),
         generateAdopterComponentsData(project),
         generateAdopterStatsData(project),
         generateAdopterProjectInfoData(project),

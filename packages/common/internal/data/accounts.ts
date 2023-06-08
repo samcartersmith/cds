@@ -42,7 +42,7 @@ export const accounts = [
       type: 'fiat',
     },
     balance: {
-      amount: '1003039.590',
+      amount: '0.00',
       currency: 'USD',
     },
     created_at: '2021-09-02T23:24:06Z',
@@ -81,7 +81,7 @@ export const accounts = [
       type: 'fiat',
     },
     balance: {
-      amount: '40.00',
+      amount: '0.00',
       currency: 'GBP',
     },
     created_at: '2021-09-02T23:22:54Z',
@@ -113,7 +113,7 @@ export const accounts = [
       type: 'fiat',
     },
     balance: {
-      amount: '110.10',
+      amount: '0.00',
       currency: 'EUR',
     },
     created_at: '2021-09-02T23:22:54Z',
@@ -155,7 +155,7 @@ export const accounts = [
       slug: 'bitcoin',
     },
     balance: {
-      amount: '12.100000000',
+      amount: '0.00000000',
       currency: 'BTC',
     },
     created_at: '2021-09-02T23:22:17Z',
@@ -183,7 +183,7 @@ export const accounts = [
       slug: 'ethereum',
     },
     balance: {
-      amount: '10200.940000000',
+      amount: '0.00000000',
       currency: 'ETH',
     },
     created_at: null,

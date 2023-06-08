@@ -267,7 +267,6 @@ const names: UiIconName[] = [
   'coinbaseOne',
   'cashSingaporeDollar',
   'cashCanadianDollar',
-  'passport',
 ];
 
 export default names;

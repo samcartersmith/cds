@@ -3,7 +3,7 @@ import { output, Tree } from '@nrwl/devkit';
 import { checkFileIncludesImport } from '../../helpers/checkFileIncludesImport';
 import { createMigration, CreateMigrationParams } from '../../helpers/createMigration';
 import { generateManualMigrationOutput } from '../../helpers/generateManualMigrationOutput';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
+import { logWarning } from '../../helpers/loggingHelpers';
 
 import { removedFunctions } from './data/functionMigrations';
 
@@ -40,7 +40,6 @@ const callback = (args: CreateMigrationParams) => {
 };
 
 export default async function migration(tree: Tree) {
-  logDebug('Migrating deprecated functions');
   await createMigration({
     tree,
     callback,

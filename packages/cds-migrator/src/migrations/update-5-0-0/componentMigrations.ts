@@ -67,6 +67,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
     }
     writeMigrationToFile({ sourceFile, tree, oldValue: name, newValue: replacement });
 
+    logDebug('Make sure you run lint --fix to sort imports in affected files.');
     if (warning) {
       logWarning(`Please check all instances of ${name}. ${warning}`);
     }
@@ -74,7 +75,6 @@ const callback = (args: ParseJsxElementsCbParams) => {
 };
 
 export default async function migration(tree: Tree) {
-  logDebug('Migrating deprecated components');
   await createJsxMigration({
     tree,
     callback,

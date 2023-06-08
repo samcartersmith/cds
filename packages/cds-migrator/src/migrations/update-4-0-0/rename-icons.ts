@@ -52,7 +52,5 @@ export default async function migrations(tree: Tree) {
     tree,
     filterSourceFiles,
     callback,
-    excludeOpeningElements: true,
-    packageNames: ['@cbhq/cds-web', '@cbhq/cds-mobile'],
   });
 }

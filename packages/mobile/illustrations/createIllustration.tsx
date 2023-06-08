@@ -1,5 +1,4 @@
 import React, { memo, useMemo } from 'react';
-import { AccessibilityProps } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 import { IllustrationVariant, useSpectrum } from '@cbhq/cds-common';
 import { IllustrationBaseProps } from '@cbhq/cds-common/types/IllustrationProps';
@@ -10,27 +9,13 @@ import { isDevelopment } from '@cbhq/cds-utils';
 
 type IllustrationConfigShape = Record<string, { light: () => string; dark: () => string }>;
 
-export type IllustrationA11yProps = Pick<
-  AccessibilityProps,
-  'accessibilityLabel' | 'accessibilityHint'
-> & {
-  /** Alt tag to apply to the img
-   * @default "" will identify the image as decorative
-   * @deprecated Use accessibilityLabel and accessibilityHint instead
-   */
-  alt?: string;
-};
-
-export type IllustrationBasePropsWithA11y<Type extends IllustrationVariant> =
-  IllustrationBaseProps<Type> & IllustrationA11yProps;
-
 export function createIllustration<
   Variant extends IllustrationVariant,
   Config extends IllustrationConfigShape,
 >(variant: Variant, config: Config) {
   const defaultSize = getDefaultSizeObjectForIllustration(variant);
 
-  type IllustrationProps = IllustrationBasePropsWithA11y<Variant>;
+  type IllustrationProps = IllustrationBaseProps<Variant>;
 
   const Illustration = memo(function Illustration({
     fallback = null,
@@ -38,8 +23,6 @@ export function createIllustration<
     dimension,
     scaleMultiplier,
     testID,
-    accessibilityHint,
-    accessibilityLabel,
   }: IllustrationProps) {
     const spectrum = useSpectrum();
     const requireFn = config[name]?.[spectrum];
@@ -65,17 +48,7 @@ export function createIllustration<
       return fallback;
     }
 
-    return (
-      <SvgXml
-        style={style}
-        xml={xml}
-        testID={testID}
-        accessible={!!accessibilityLabel}
-        accessibilityRole="image"
-        accessibilityLabel={accessibilityLabel}
-        accessibilityHint={accessibilityHint}
-      />
-    );
+    return <SvgXml style={style} xml={xml} testID={testID} />;
   });
 
   Illustration.displayName = `Illustration`;

@@ -32,7 +32,6 @@ export type PictogramName =
   | 'authenticatorAlt'
   | 'authenticatorProgress'
   | 'barChart'
-  | 'baseLogoNavigation'
   | 'bitcoinPizza'
   | 'bitcoinWhitePaper'
   | 'blockchainConnection'

@@ -1,6 +1,5 @@
 import React, { memo, useMemo } from 'react';
 import { Text, TextStyle } from 'react-native';
-import { SharedAccessibilityProps } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import { NavigationBaseIconProps } from '@cbhq/cds-common/types/NavigationBaseIconProps';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
@@ -9,12 +8,9 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
 
-export type NavigationIconProps = NavigationBaseIconProps &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
+export type NavigationIconProps = NavigationBaseIconProps;
 
 export const NavigationIcon = memo(function NavigationIcon({
-  accessibilityLabel,
-  accessibilityHint,
   active = false,
   fallback = null,
   name,
@@ -73,14 +69,7 @@ export const NavigationIcon = memo(function NavigationIcon({
       spacingHorizontal={spacingHorizontal}
       testID={testID}
     >
-      <Text
-        allowFontScaling={false}
-        accessible={!!accessibilityLabel}
-        accessibilityRole="image"
-        accessibilityLabel={accessibilityLabel}
-        accessibilityHint={accessibilityHint}
-        style={fontStyles as TextStyle}
-      >
+      <Text allowFontScaling={false} accessibilityRole="image" style={fontStyles as TextStyle}>
         {glyph}
       </Text>
     </Box>

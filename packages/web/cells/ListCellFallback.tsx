@@ -16,7 +16,6 @@ export const ListCellFallback = memo(function ListCellFallback({
   detail,
   subdetail,
   media,
-  testID,
   disableRandomRectWidth,
   rectWidthVariant,
 }: ListCellFallbackProps) {
@@ -24,7 +23,6 @@ export const ListCellFallback = memo(function ListCellFallback({
   // Flexbox collides with percentages also, so we need to wrap in normal divs.
   return (
     <Cell
-      testID={testID}
       detail={
         (detail || subdetail) && (
           <div style={{ width: '100%' }}>
@@ -34,7 +32,6 @@ export const ListCellFallback = memo(function ListCellFallback({
               alignItems="flex-end"
               justifyContent="center"
               flexShrink={0}
-              testID="list-cell-fallback-detail"
             >
               {detail && (
                 <Fallback
@@ -59,12 +56,11 @@ export const ListCellFallback = memo(function ListCellFallback({
           </div>
         )
       }
-      media={media && <MediaFallback type={media} testID="list-cell-fallback-media" />}
+      media={media && <MediaFallback type={media} />}
     >
       <div style={{ width: '100%' }}>
         {title && (
           <Fallback
-            testID="list-cell-fallback-title"
             height={22}
             width={65}
             percentage
@@ -74,7 +70,6 @@ export const ListCellFallback = memo(function ListCellFallback({
         )}
         {description && (
           <Fallback
-            testID="list-cell-fallback-description"
             height={22}
             width={85}
             spacingTop={0.5}

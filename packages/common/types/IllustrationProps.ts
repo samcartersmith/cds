@@ -55,6 +55,10 @@ export type IllustrationBaseProps<T extends keyof IllustrationNamesMap> = {
   dimension?: IllustrationDimensionsMap[T];
   /** Multiply the width & height while maintaining aspect ratio */
   scaleMultiplier?: number;
+  /** Alt tag to apply to the img
+   * @default "" will identify the image as decorative
+   */
+  alt?: string;
   /**
    * Fallback element to render if unable to find an illustration with the matching name
    * @default null

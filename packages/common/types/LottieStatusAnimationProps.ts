@@ -1,6 +1,5 @@
 import { DimensionValue } from './DimensionStyles';
 import { NoopFn } from './Helpers';
-import { SharedProps } from './SharedProps';
 
 export type LottieStatusAnimationType =
   | 'loading'
@@ -30,5 +29,4 @@ type StatusAnimationWithHeight = {
   height: DimensionValue;
 } & BaseStatusAnimationProps;
 
-export type LottieStatusAnimationProps = (StatusAnimationWithWidth | StatusAnimationWithHeight) &
-  SharedProps;
+export type LottieStatusAnimationProps = StatusAnimationWithWidth | StatusAnimationWithHeight;

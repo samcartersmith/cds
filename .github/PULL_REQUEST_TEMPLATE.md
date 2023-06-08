@@ -1,4 +1,4 @@
-<!-- Please ensure your pull request title adheres to our [Commit Message Conventions](https://github.cbhq.net/frontend/cds/blob/develop/docs/misc.md#commit-message-conventions). -->
+<!-- Please ensure your pull request title adheres to our [Commit Message Conventions](https://github.cbhq.net/frontend/cds/blob/develop/docs/first-pull-request.md#commit-message-conventions). -->
 
 **What changed? Why?**
 

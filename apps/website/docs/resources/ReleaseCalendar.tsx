@@ -1,8 +1,9 @@
 import { memo, useMemo } from 'react';
 import Calendar, { CalendarEvent } from '@theme/Calendar';
-import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
-import weekday from 'dayjs/plugin/weekday';
+import dayjs, { Dayjs, PluginFunc } from 'dayjs';
+import isBetween from 'dayjs/plugin/isBetween';
+import dayjsRecur from 'dayjs-recur';
+import increment from 'semver/functions/inc';
 import { useToggler } from '@cbhq/cds-common';
 import { Icon } from '@cbhq/cds-web/icons';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
@@ -10,8 +11,15 @@ import { OnPress, Pressable } from '@cbhq/cds-web/system';
 import { palette } from '@cbhq/cds-web/tokens';
 import { TextLabel1, TextTitle1 } from '@cbhq/cds-web/typography';
 
-dayjs.extend(weekday);
-dayjs.extend(customParseFormat);
+type DayjsRecur = Dayjs & {
+  recur: (start: string, end: string) => DayjsRecur;
+  every: (val: number) => DayjsRecur;
+  days: () => DayjsRecur;
+  all: () => Dayjs[];
+};
+
+const dayjsRecurrence = dayjs.extend(dayjsRecur as PluginFunc<DayjsRecur>) as DayjsRecur;
+dayjs.extend(isBetween);
 
 type EventType = 'beta' | 'asset' | 'freeze';
 type CustomCalendarEvent = CalendarEvent & { type?: EventType };
@@ -21,6 +29,34 @@ type FilterProps = {
   checked?: boolean;
   onPress: OnPress;
 };
+
+function createEventForRange({
+  summary,
+  color,
+  start,
+  duration,
+  type,
+}: {
+  summary: string;
+  color: string;
+  start: string;
+  /** Duration in days */
+  duration: number;
+  type: EventType;
+}) {
+  const startDate = dayjs(start);
+  const startIso = startDate.toISOString();
+  const endDate = startDate.add(duration, 'days');
+  const endIso = endDate.toISOString();
+  return {
+    id: `${type}-${startIso}-${endIso}`,
+    start: startIso,
+    end: endIso,
+    summary,
+    type,
+    color,
+  };
+}
 
 function excludeType(type: EventType) {
   return function filter(item: CustomCalendarEvent) {
@@ -57,76 +93,96 @@ const Filter = memo(function Filter({ label, checked, onPress }: FilterProps) {
   );
 });
 
-const getFirstWednesday = (date: dayjs.Dayjs) => {
-  const dateOfFirstOfTheMonth = date.startOf('month').day();
-
-  // if first day of the month is >= 3 (Thursday - 4, Friday - 5, Saturday 6), then we need to go to the start of next week
-  const firstWednesday =
-    dateOfFirstOfTheMonth <= 3
-      ? date.startOf('month').weekday(3)
-      : date.startOf('month').add(1, 'week').weekday(3);
-
-  return firstWednesday;
-};
-
 const ReleaseCalendar = memo(function ReleaseCalendar() {
-  const [showAssets, { toggle: toggleAssets }] = useToggler(true);
-  // Get the current date
-  const currentDate = dayjs();
+  const [showBeta, { toggle: toggleBeta }] = useToggler(false);
+  const [showAssets, { toggle: toggleAssets }] = useToggler(false);
+  const [showFreezes, { toggle: toggleFreezes }] = useToggler(true);
 
   const events = useMemo(() => {
-    // Create an array to store the event dates
-    const eventDates = [];
+    let prodVersion = '0.43.0';
+    const prodVersions: string[] = [];
+    let betaVersion = '1.0.0';
+    const betaVersions: string[] = [];
 
-    // Loop through the next 12 months and find the first Wednesday of each month
-    for (let i = 0; i < 12; i += 1) {
-      // create CustomCalendarEvent using the firstWednesday date
-      const month = currentDate.month(i);
-      const firstWednesday = getFirstWednesday(month).toISOString();
-
-      const illustrationEvent = {
-        id: `asset-${i}`,
-        start: firstWednesday,
-        end: firstWednesday,
-        summary: '🔀 Illustration',
-        type: 'asset',
+    const codeFreezes = [
+      createEventForRange({
+        start: '06/30/2022',
+        duration: 11,
+        type: 'freeze',
+        summary: 'Code freeze',
         color: palette.backgroundOverlay,
-      };
-
-      const iconEvent = {
-        id: `asset-${i}`,
-        start: firstWednesday,
-        end: firstWednesday,
-        summary: '🔀 Icons',
-        type: 'asset',
+      }),
+      createEventForRange({
+        start: '09/26/2022',
+        duration: 4,
+        type: 'freeze',
+        summary: 'Code freeze',
         color: palette.backgroundOverlay,
-      };
+      }),
+    ];
 
-      const packageRelease = {
-        id: `asset-${i}`,
-        start: firstWednesday,
-        end: firstWednesday,
-        summary: '🚀 CDS Packages',
-        color: palette.backgroundOverlay,
-      };
+    const releases = dayjsRecurrence
+      .recur('06/22/2022', '06/01/2023')
+      .every(7)
+      .days()
+      .all()
+      .filter((item) => {
+        const betweenChecks = codeFreezes.map((freeze) => {
+          const asIso = item.toISOString();
+          return dayjs(asIso).isBetween(freeze.start, freeze.end, 'day', '[]');
+        });
+        return betweenChecks.filter(Boolean).length === 0;
+      })
+      .reduce((prev, date, index) => {
+        // Every other release is production
+        const isProd = index % 2 === 0;
+        const startAssetRelease = date.hour(12 + 3).toISOString();
+        const startRelease = date.hour(12 + 4).toISOString();
+        const endRelease = date.hour(12 + 5).toISOString();
+        const isFirstRelease = index === 0;
 
-      const adoptionTracker = {
-        id: `asset-${i}`,
-        start: firstWednesday,
-        end: firstWednesday,
-        summary: '🚀 Adoption Tracker',
-        color: palette.backgroundOverlay,
-      };
+        const assetVersion = increment(prodVersion, 'patch') ?? prodVersion;
 
-      eventDates.push(illustrationEvent, iconEvent, packageRelease, adoptionTracker);
-    }
+        if (isProd) {
+          prodVersion = isFirstRelease ? '1.0.0' : (increment(prodVersion, 'minor') as string);
+          prodVersions.push(prodVersion);
+        } else {
+          betaVersion = increment(betaVersion, 'minor') as string;
+          betaVersions.push(betaVersion);
+        }
 
-    return eventDates as CustomCalendarEvent[];
-  }, [currentDate]);
+        const version = isProd ? prodVersion : betaVersion;
+
+        return [
+          ...prev,
+          isFirstRelease
+            ? null
+            : {
+                id: `asset-${assetVersion}`,
+                start: startAssetRelease,
+                end: startRelease,
+                summary: isProd ? `🔀 Illustration @ ${assetVersion}` : `🔀 Icon @ ${assetVersion}`,
+                type: 'asset',
+              },
+          {
+            id: `release-${version}`,
+            start: startRelease,
+            summary: isProd ? `🚀 Production @ ${version}` : `🍞 Beta @ ${version}`,
+            end: endRelease,
+            type: isProd ? undefined : 'beta',
+          },
+        ].filter(Boolean) as CustomCalendarEvent[];
+      }, [] as CustomCalendarEvent[]);
+
+    return [...codeFreezes, ...releases];
+  }, []);
 
   const filteredEvents = useMemo(() => {
-    return events.filter(showAssets ? noopFilter : excludeType('asset'));
-  }, [events, showAssets]);
+    return events
+      .filter(showBeta ? noopFilter : excludeType('beta'))
+      .filter(showAssets ? noopFilter : excludeType('asset'))
+      .filter(showFreezes ? noopFilter : excludeType('freeze'));
+  }, [events, showAssets, showBeta, showFreezes]);
 
   return (
     <VStack justifyContent="flex-end" gap={3} bordered>
@@ -140,14 +196,16 @@ const ReleaseCalendar = memo(function ReleaseCalendar() {
       >
         <TextTitle1 as="h2">Schedule</TextTitle1>
         <VStack alignItems="flex-end">
+          <Filter label="Show Beta releases" checked={showBeta} onPress={toggleBeta} />
           <Filter
             label="Show Icon/Illustration releases"
             checked={showAssets}
             onPress={toggleAssets}
           />
+          <Filter label="Show code freezes" checked={showFreezes} onPress={toggleFreezes} />
         </VStack>
       </HStack>
-      <Calendar initialDate={currentDate.toISOString()} events={filteredEvents} />
+      <Calendar initialDate={events[0].start} events={filteredEvents} />
     </VStack>
   );
 });

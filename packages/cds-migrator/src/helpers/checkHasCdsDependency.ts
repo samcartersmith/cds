@@ -22,14 +22,13 @@ export type CdsDependencyCheck = ReturnType<typeof checkHasCdsDependency>;
  * Checks if the project uses a CDS package as a dependency
  * @param tree - The NX @nrwl/devkit tree that gets passed to a generator
  * @param project - The project configuration
- * @returns { hasCdsDependency: boolean, hasCoreCdsDependency: boolean, packageJsonPath: string, dependencies: Partial<Record<string, string>>, devDependencies: Partial<Record<string, string>>, peerDependencies: Partial<Record<string, string>>}
+ * @returns { hasCdsDependency: boolean, hasCoreCdsDependency: boolean, packageJsonPath: string, dependencies: Partial<Record<string, string>>, devDependencies: Partial<Record<string, string>>}
  */
 export function checkHasCdsDependency(tree: Tree, project: ProjectConfiguration) {
   const packageJsonPath = joinPathFragments(project.root, `package.json`);
 
   let dependencies: Partial<Record<string, string>> | undefined;
   let devDependencies: Partial<Record<string, string>> | undefined;
-  let peerDependencies: Partial<Record<string, string>> | undefined;
   let hasCoreDep = false;
 
   if (tree.isFile(packageJsonPath)) {
@@ -51,16 +50,9 @@ export function checkHasCdsDependency(tree: Tree, project: ProjectConfiguration)
       }
       hasCoreDep = devDepKeys.some(hasCdsCoreDependency);
     }
-    if (pkg.peerDependencies) {
-      const peerDepKeys = Object.keys(pkg.peerDependencies);
-      if (peerDepKeys.some(hasCdsDep)) {
-        peerDependencies = pkg.peerDependencies;
-      }
-      hasCoreDep = peerDepKeys.some(hasCdsCoreDependency);
-    }
   }
 
-  const hasCdsDependency = Boolean(dependencies ?? devDependencies ?? peerDependencies);
+  const hasCdsDependency = Boolean(dependencies ?? devDependencies);
 
   return {
     hasCdsDependency,
@@ -80,14 +72,6 @@ export function checkHasCdsDependency(tree: Tree, project: ProjectConfiguration)
           web: devDependencies[webPackage],
           common: devDependencies[commonPackage],
           'lottie-files': devDependencies[lottieFilesPackage],
-        }
-      : undefined,
-    peerDependencies: peerDependencies
-      ? {
-          mobile: peerDependencies[mobilePackage],
-          web: peerDependencies[webPackage],
-          common: peerDependencies[commonPackage],
-          'lottie-files': peerDependencies[lottieFilesPackage],
         }
       : undefined,
   };

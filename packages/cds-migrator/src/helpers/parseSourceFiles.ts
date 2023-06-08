@@ -1,12 +1,9 @@
 import { getProjects, joinPathFragments, ProjectConfiguration, Tree } from '@nrwl/devkit';
-import chalk from 'chalk';
-import progress from 'cli-progress';
 import glob from 'fast-glob';
 import fs from 'node:fs';
 import { Project } from 'ts-morph';
 
 import { checkHasCdsDependency } from './checkHasCdsDependency';
-import { CdsPackages, checkHasCdsPackage } from './checkHasCdsPackage';
 
 export type TransformFnType = {
   path: string;
@@ -21,34 +18,22 @@ export type TransformFnType = {
  * and are Typescript projects
  * Passes the absolute path, tree, and project of each sourceFile to the @transformFn
  * @param tree - The NX @nrwl/devkit tree that gets passed to a generator
- * @param transformFn - The function that will be called for each sourceFile. Passes through the NX tree and ts-morph sourceFile
- * @param filterSourceFiles - Parses sourceFiles that meet a conditional
- * @param packageNames - Checks if a project has specific CDS package(s) as a dependency
+ * @param transformFn - The function that will be called for each sourceFile. Passes through the NX tree, ts-morph Project instance, and NX project configuration
+ * @filterSourceFiles - Parses sourceFiles that meet a conditional
  */
 export default async function parseSourceFiles(
   tree: Tree,
   transformFn: (params: TransformFnType) => void,
   filterSourceFiles?: (path: string) => boolean,
-  packageNames?: CdsPackages[],
 ) {
   const projects = getProjects(tree);
 
   await Promise.all(
     [...projects.values()].map(async (projectConfig) => {
-      let projectHasCdsDependency = false;
-      if (packageNames?.length) {
-        projectHasCdsDependency = packageNames?.some((pkg) =>
-          checkHasCdsPackage(pkg, tree, projectConfig),
-        );
-      } else {
-        const { hasCdsDependency } = checkHasCdsDependency(tree, projectConfig);
-        if (hasCdsDependency) {
-          projectHasCdsDependency = true;
-        }
-      }
+      const { hasCdsDependency } = checkHasCdsDependency(tree, projectConfig);
       const tsConfigFilePath = joinPathFragments(tree.root, projectConfig.root, 'tsconfig.json');
 
-      if (fs.existsSync(tsConfigFilePath) && projectHasCdsDependency) {
+      if (fs.existsSync(tsConfigFilePath) && hasCdsDependency) {
         /** https://ts-morph.com/ */
         /** https://ts-ast-viewer.com/ */
         const project = new Project({
@@ -66,34 +51,11 @@ export default async function parseSourceFiles(
           absolute: true,
         });
 
-        const bar = new progress.SingleBar(
-          {
-            format: `${chalk.cyan(
-              '{bar}',
-            )}| {percentage}% || {value}/{total} files parsed in ${chalk.cyanBright(
-              projectConfig.name,
-            )} || time elapsed: {duration_formatted}`,
-            barCompleteChar: '\u2588',
-            barIncompleteChar: '\u2591',
-            hideCursor: true,
-          },
-          progress.Presets.shades_classic,
-        );
-        bar.start(sourceFiles.length, 0);
-
-        const numFilteredFiles: string[] = [];
         sourceFiles.forEach((path) => {
-          bar.increment();
-          if (filterSourceFiles?.(path)) {
-            numFilteredFiles.push(path);
-            // we don't want to fire the transform function if it doesn't meet the filter
-            transformFn({ path, tree, project, projectConfig });
-          } else {
+          if (!filterSourceFiles || filterSourceFiles?.(path)) {
             transformFn({ path, tree, project, projectConfig });
           }
         });
-
-        bar.stop();
       }
 
       return null;

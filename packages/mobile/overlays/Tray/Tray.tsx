@@ -10,7 +10,9 @@ type RenderTrayProps = {
 };
 
 export const Tray = memo(
-  forwardRef<DrawerRefBaseProps, TrayBaseProps>(function Tray({ children, title, ...props }, ref) {
+  forwardRef<DrawerRefBaseProps, TrayBaseProps>(function Tray(props, ref) {
+    const { children, title, ...restProps } = props;
+
     const renderChildren = useCallback(
       ({ handleClose }: RenderTrayProps) => (
         <VStack spacingTop={title ? 0 : 2}>
@@ -26,7 +28,7 @@ export const Tray = memo(
     );
 
     return (
-      <Drawer pin="bottom" {...props} ref={ref}>
+      <Drawer pin="bottom" {...restProps} ref={ref}>
         {renderChildren}
       </Drawer>
     );

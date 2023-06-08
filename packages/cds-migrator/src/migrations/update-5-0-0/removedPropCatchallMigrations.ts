@@ -3,7 +3,7 @@ import fs from 'node:fs';
 
 import { createMigration, CreateMigrationParams } from '../../helpers/createMigration';
 import { generateManualMigrationOutput } from '../../helpers/generateManualMigrationOutput';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
+import { logWarning } from '../../helpers/loggingHelpers';
 
 import { removedPropsCatchAll } from './data/propMigrations';
 
@@ -24,7 +24,6 @@ const callback = (args: CreateMigrationParams) => {
 };
 
 export default async function migration(tree: Tree) {
-  logDebug('Migrating deprecated props');
   await createMigration({
     tree,
     callback,

@@ -1,15 +1,10 @@
-import names from '@cbhq/cds-icons/__generated__/ui/data/names';
-
 import { Icon } from '../Icon';
 
-import { IconSheet } from './IconSheet';
+import { IconSheet as NewIconSheet } from './IconSheet';
 
 export default {
   title: 'Icon',
   component: Icon,
 };
 
-// TODO: figure out a way to handle this split dynamically, maybe add a codegen script that executes as part of release script
-// single icon sheet is too large for percy, need to split them up in chunks of 160 to stay under limit
-export const Icons1 = () => <IconSheet names={names.slice(0, 160)} />;
-export const Icons2 = () => <IconSheet names={names.slice(160, 320)} />;
+export const All = () => <NewIconSheet />;

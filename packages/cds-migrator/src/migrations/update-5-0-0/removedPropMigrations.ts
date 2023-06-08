@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import { createJsxMigration } from '../../helpers/createJsxMigration';
 import { generateManualMigrationOutput } from '../../helpers/generateManualMigrationOutput';
 import { getComponentFromJsx } from '../../helpers/getComponentFromJsx';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
+import { logWarning } from '../../helpers/loggingHelpers';
 import { ParseJsxElementsCbParams } from '../../helpers/parseJsxElements';
 import { searchAndProcessComponent } from '../../helpers/searchAndProcessComponent';
 
@@ -60,7 +60,6 @@ const callback = (args: ParseJsxElementsCbParams) => {
 };
 
 export default async function migration(tree: Tree) {
-  logDebug('Migrating removed props');
   await createJsxMigration({
     tree,
     callback,

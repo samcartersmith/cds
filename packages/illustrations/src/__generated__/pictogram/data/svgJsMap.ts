@@ -121,10 +121,6 @@ const svgJsMap = {
     light: () => require('../svgJs/light/barChart-0').content,
     dark: () => require('../svgJs/dark/barChart-0').content,
   },
-  baseLogoNavigation: {
-    light: () => require('../svgJs/light/baseLogoNavigation-0').content,
-    dark: () => require('../svgJs/dark/baseLogoNavigation-0').content,
-  },
   bitcoinPizza: {
     light: () => require('../svgJs/light/bitcoinPizza-0').content,
     dark: () => require('../svgJs/dark/bitcoinPizza-0').content,
@@ -134,8 +130,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/bitcoinWhitePaper-0').content,
   },
   blockchainConnection: {
-    light: () => require('../svgJs/light/blockchainConnection-1').content,
-    dark: () => require('../svgJs/dark/blockchainConnection-1').content,
+    light: () => require('../svgJs/light/blockchainConnection-0').content,
+    dark: () => require('../svgJs/dark/blockchainConnection-0').content,
   },
   borrowCoins: {
     light: () => require('../svgJs/light/borrowCoins-0').content,
@@ -154,8 +150,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/browser-0').content,
   },
   browserMultiPlatform: {
-    light: () => require('../svgJs/light/browserMultiPlatform-2').content,
-    dark: () => require('../svgJs/dark/browserMultiPlatform-2').content,
+    light: () => require('../svgJs/light/browserMultiPlatform-1').content,
+    dark: () => require('../svgJs/dark/browserMultiPlatform-1').content,
   },
   browserTransaction: {
     light: () => require('../svgJs/light/browserTransaction-0').content,
@@ -198,8 +194,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/chart-0').content,
   },
   chat: {
-    light: () => require('../svgJs/light/chat-1').content,
-    dark: () => require('../svgJs/dark/chat-1').content,
+    light: () => require('../svgJs/light/chat-0').content,
+    dark: () => require('../svgJs/dark/chat-0').content,
   },
   checkmark: {
     light: () => require('../svgJs/light/checkmark-0').content,
@@ -286,8 +282,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/completeQuiz-1').content,
   },
   congratulations: {
-    light: () => require('../svgJs/light/congratulations-1').content,
-    dark: () => require('../svgJs/dark/congratulations-1').content,
+    light: () => require('../svgJs/light/congratulations-0').content,
+    dark: () => require('../svgJs/dark/congratulations-0').content,
   },
   connectNavigation: {
     light: () => require('../svgJs/light/connectNavigation-1').content,
@@ -310,8 +306,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/creditCard-0').content,
   },
   crypto101: {
-    light: () => require('../svgJs/light/crypto101-1').content,
-    dark: () => require('../svgJs/dark/crypto101-1').content,
+    light: () => require('../svgJs/light/crypto101-0').content,
+    dark: () => require('../svgJs/dark/crypto101-0').content,
   },
   cryptoCard: {
     light: () => require('../svgJs/light/cryptoCard-0').content,
@@ -394,8 +390,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/earnGraph-1').content,
   },
   earnNavigation: {
-    light: () => require('../svgJs/light/earnNavigation-2').content,
-    dark: () => require('../svgJs/dark/earnNavigation-2').content,
+    light: () => require('../svgJs/light/earnNavigation-1').content,
+    dark: () => require('../svgJs/dark/earnNavigation-1').content,
   },
   easyToUse: {
     light: () => require('../svgJs/light/easyToUse-0').content,
@@ -406,8 +402,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/economyGlobal-0').content,
   },
   email: {
-    light: () => require('../svgJs/light/email-3').content,
-    dark: () => require('../svgJs/dark/email-3').content,
+    light: () => require('../svgJs/light/email-1').content,
+    dark: () => require('../svgJs/dark/email-1').content,
   },
   emailAndMessages: {
     light: () => require('../svgJs/light/emailAndMessages-0').content,
@@ -434,12 +430,12 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/ethStaking-0').content,
   },
   exchangeNavigation: {
-    light: () => require('../svgJs/light/exchangeNavigation-2').content,
-    dark: () => require('../svgJs/dark/exchangeNavigation-2').content,
+    light: () => require('../svgJs/light/exchangeNavigation-1').content,
+    dark: () => require('../svgJs/dark/exchangeNavigation-1').content,
   },
   explore: {
-    light: () => require('../svgJs/light/explore-1').content,
-    dark: () => require('../svgJs/dark/explore-1').content,
+    light: () => require('../svgJs/light/explore-0').content,
+    dark: () => require('../svgJs/dark/explore-0').content,
   },
   fast: {
     light: () => require('../svgJs/light/fast-0').content,
@@ -474,8 +470,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/gasFees-1').content,
   },
   gem: {
-    light: () => require('../svgJs/light/gem-1').content,
-    dark: () => require('../svgJs/dark/gem-1').content,
+    light: () => require('../svgJs/light/gem-0').content,
+    dark: () => require('../svgJs/dark/gem-0').content,
   },
   genericCountryIDCard: {
     light: () => require('../svgJs/light/genericCountryIDCard-0').content,
@@ -574,16 +570,16 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/layerNetworks-1').content,
   },
   learn: {
-    light: () => require('../svgJs/light/learn-1').content,
-    dark: () => require('../svgJs/dark/learn-1').content,
+    light: () => require('../svgJs/light/learn-0').content,
+    dark: () => require('../svgJs/dark/learn-0').content,
   },
   learningRewardsNavigation: {
     light: () => require('../svgJs/light/learningRewardsNavigation-1').content,
     dark: () => require('../svgJs/dark/learningRewardsNavigation-1').content,
   },
   lightbulbLearn: {
-    light: () => require('../svgJs/light/lightbulbLearn-2').content,
-    dark: () => require('../svgJs/dark/lightbulbLearn-2').content,
+    light: () => require('../svgJs/light/lightbulbLearn-1').content,
+    dark: () => require('../svgJs/dark/lightbulbLearn-1').content,
   },
   linkYourAccount: {
     light: () => require('../svgJs/light/linkYourAccount-0').content,
@@ -670,8 +666,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/musicAndSounds-0').content,
   },
   myNumberCard: {
-    light: () => require('../svgJs/light/myNumberCard-1').content,
-    dark: () => require('../svgJs/dark/myNumberCard-1').content,
+    light: () => require('../svgJs/light/myNumberCard-0').content,
+    dark: () => require('../svgJs/dark/myNumberCard-0').content,
   },
   newUserChecklistBuyCrypto: {
     light: () => require('../svgJs/light/newUserChecklistBuyCrypto-0').content,
@@ -710,8 +706,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/notificationHubAnalysis-1').content,
   },
   notificationHubNews: {
-    light: () => require('../svgJs/light/notificationHubNews-2').content,
-    dark: () => require('../svgJs/dark/notificationHubNews-2').content,
+    light: () => require('../svgJs/light/notificationHubNews-1').content,
+    dark: () => require('../svgJs/dark/notificationHubNews-1').content,
   },
   notificationHubPortfolio: {
     light: () => require('../svgJs/light/notificationHubPortfolio-1').content,
@@ -946,8 +942,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/support-1').content,
   },
   supportChat: {
-    light: () => require('../svgJs/light/supportChat-2').content,
-    dark: () => require('../svgJs/dark/supportChat-2').content,
+    light: () => require('../svgJs/light/supportChat-1').content,
+    dark: () => require('../svgJs/dark/supportChat-1').content,
   },
   takeQuiz: {
     light: () => require('../svgJs/light/takeQuiz-0').content,
@@ -962,12 +958,12 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/taxBeta-0').content,
   },
   taxCenterNavigation: {
-    light: () => require('../svgJs/light/taxCenterNavigation-2').content,
-    dark: () => require('../svgJs/dark/taxCenterNavigation-2').content,
+    light: () => require('../svgJs/light/taxCenterNavigation-1').content,
+    dark: () => require('../svgJs/dark/taxCenterNavigation-1').content,
   },
   taxes: {
-    light: () => require('../svgJs/light/taxes-1').content,
-    dark: () => require('../svgJs/dark/taxes-1').content,
+    light: () => require('../svgJs/light/taxes-0').content,
+    dark: () => require('../svgJs/dark/taxes-0').content,
   },
   taxesArrangement: {
     light: () => require('../svgJs/light/taxesArrangement-0').content,
@@ -998,8 +994,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/transistor-0').content,
   },
   trendingAssets: {
-    light: () => require('../svgJs/light/trendingAssets-1').content,
-    dark: () => require('../svgJs/dark/trendingAssets-1').content,
+    light: () => require('../svgJs/light/trendingAssets-0').content,
+    dark: () => require('../svgJs/dark/trendingAssets-0').content,
   },
   trusted: {
     light: () => require('../svgJs/light/trusted-1').content,
@@ -1046,8 +1042,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/wallet-0').content,
   },
   walletAsServiceNavigation: {
-    light: () => require('../svgJs/light/walletAsServiceNavigation-1').content,
-    dark: () => require('../svgJs/dark/walletAsServiceNavigation-1').content,
+    light: () => require('../svgJs/light/walletAsServiceNavigation-0').content,
+    dark: () => require('../svgJs/dark/walletAsServiceNavigation-0').content,
   },
   walletDeposit: {
     light: () => require('../svgJs/light/walletDeposit-0').content,

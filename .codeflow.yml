@@ -24,7 +24,6 @@ build:
     - BaldurECR:
         name: cds-storybook
         path: ./apps/storybook/production.Dockerfile
-
     # Packages
     - BaldurNode:
         name: package-cds-docusaurus-plugin-kbar
@@ -44,121 +43,70 @@ build:
     - BaldurNode:
         name: package-cds-common
         path: ./packages/common/publish.Dockerfile
-        autobuild_files:
-          - packages/common/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-docusaurus-plugin-kbar
-        path: ./packages/docusaurus-plugin-kbar/publish.Dockerfile
-        autobuild_files:
-          - packages/docusaurus-plugin-kbar/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-docusaurus-theme
-        path: ./packages/docusaurus-theme/publish.Dockerfile
-        autobuild_files:
-          - packages/docusaurus-theme/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-fonts
         path: ./packages/fonts/publish.Dockerfile
-        autobuild_files:
-          - packages/fonts/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-icons
         path: ./packages/icons/publish.Dockerfile
-        autobuild_files:
-          - packages/icons/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
+        expire_keep_tags_after_days: 1 # the number of days to keep a master build after it has been successfully deployed. There's no reason to republish a package, so this value is 1.
+        expire_tmp_tags_after_days: 1 # the number of days to keep a master build. Since builds are manual for packages, publishing should happen quickly after a build, so this value is 1.
+        expire_all_after_days: 2 # the number of days to keep any other build tags. This should be unused, but it's set to 2 so if it breaks something it's easier to identify that this is what caused it.
     - BaldurNode:
         name: package-cds-illustrations
         path: ./packages/illustrations/publish.Dockerfile
-        autobuild_files:
-          - packages/illustrations/package.json
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
         expire_keep_tags_after_days: 1
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-lottie-files
         path: ./packages/lottie-files/publish.Dockerfile
-        autobuild_files:
-          - packages/lottie-files/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-migrator
         path: ./packages/cds-migrator/publish.Dockerfile
-        autobuild_files:
-          - packages/cds-migrator/package.json
+        autobuild: false
+        compute_type: BUILD_GENERAL1_SMALL
         expire_keep_tags_after_days: 1
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-mobile
         path: ./packages/mobile/publish.Dockerfile
-        autobuild_files:
-          - packages/mobile/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-utils
-        path: ./packages/utils/publish.Dockerfile
-        autobuild_files:
-          - packages/utils/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-web
-        path: ./packages/web/publish.Dockerfile
-        autobuild_files:
-          - packages/web/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-web-esm
-        path: ./packages/web/publish-esm.Dockerfile
-        autobuild_files:
-          - packages/web/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
     - BaldurNode:
         name: package-d3
         path: ./packages/d3/publish.Dockerfile
-        autobuild_files:
-          - packages/d3/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
+    - BaldurNode:
+        name: package-ui-mobile-visreg
+        path: ./packages/ui-mobile-visreg/publish.Dockerfile
     - BaldurNode:
         name: package-ui-mobile-playground
         path: ./packages/ui-mobile-playground/publish.Dockerfile
-        autobuild_files:
-          - packages/ui-mobile-playground/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
     - BaldurNode:
         name: package-ui-scorecard
         path: ./packages/ui-scorecard/publish.Dockerfile
-        autobuild: false # Not ready yet
-        autobuild_files:
-          - packages/ui-scorecard/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
+        autobuild: false
+    - BaldurNode:
+        name: package-cds-utils
+        path: ./packages/utils/publish.Dockerfile
+    - BaldurNode:
+        name: package-cds-web
+        path: ./packages/web/publish.Dockerfile
+    - BaldurNode:
+        name: package-cds-web-esm
+        path: ./packages/web/publish-esm.Dockerfile
+    - BaldurNode:
+        name: package-cds-tasks
+        path: ./packages/cds-tasks/publish.Dockerfile
+    - BaldurNode:
+        name: package-cds-web-visualization
+        path: ./packages/web-visualization/publish.Dockerfile
+    - BaldurNode:
+        name: package-mobile-visualization
+        path: ./packages/mobile-visualization/publish.Dockerfile
+    - BaldurNode:
+        name: package-cds-web-overlays
+        path: ./packages/cds-web-overlays/publish.Dockerfile

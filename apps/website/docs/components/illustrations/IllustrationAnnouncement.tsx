@@ -12,19 +12,19 @@ export const IllustrationAnnouncement = function IllustrationAnnouncement() {
       body={
         <VStack>
           <TextBody as="p" spacingBottom={1}>
-            Illustrations are released the <strong>first Wednesday of the month</strong>. For the
-            illustration to be included in this cycle, the request must be submitted{' '}
+            Illustrations are released every other <strong>Wednesday at 1pm</strong>. Illustrations
+            and Icons will not be released on the same week. For the illustration to be included in
+            this cycle, the request must be submitted{' '}
             <TextBody as="strong" color="negative">
-              <strong>
-                before 1pm on Tuesday before the first Wednesday of the month (a day before the
-                release)
-              </strong>
+              <strong>before 1pm on Tuesdays (a day before the release)</strong>
             </TextBody>
             .
           </TextBody>
           <TextBody as="p" spacingBottom={1}>
             To see Illustrations released this cycle, check{' '}
-            <Link to="https://cds.cbhq.net/changelog/illustrations/">Illustration Changelog</Link>
+            <Link to="https://coda.io/d/Illustration-HQ_dCaDeg02jeR/Start-New-Project_su-3z#_lu41Y">
+              go/icon-illo-release-history
+            </Link>
           </TextBody>
           <TextBody as="p" spacingBottom={1}>
             If request is <strong>urgent</strong>:
@@ -38,10 +38,9 @@ export const IllustrationAnnouncement = function IllustrationAnnouncement() {
               </li>
               <li>
                 Attach the ticket to message and cc{' '}
+                <a href="mailto:maryanne.nguyen@coinbase.com">@maryanne-nguyen</a> and{' '}
                 <a href="mailto:dominic.flask@coinbase.com">@dominic-flask</a>, and ping{' '}
-                <Link to="https://coinbase.slack.com/archives/C3NH7A137">
-                  #ask-design-foundations
-                </Link>{' '}
+                <Link to="https://coinbase.slack.com/archives/C01A6PKGM3J">#ask-cds</Link>{' '}
               </li>
             </ol>
           </TextBody>

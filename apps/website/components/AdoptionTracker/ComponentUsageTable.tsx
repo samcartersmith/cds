@@ -6,22 +6,14 @@ import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-we
 import { useSortableCell, UseSortableCellProps } from '@cbhq/cds-web/tables/hooks/useSortableCell';
 import { TextBody } from '@cbhq/cds-web/typography';
 
+import { getComponentInstances } from './utils/getComponentUsage';
+
 type SortState = {
   sortBy: 'name' | 'totalInstances';
   sortDirection: UseSortableCellProps['sortDirection'];
 };
-
-type UsageData = {
-  name: string;
-  importPaths: string;
-  totalInstances: number;
-};
-const cmptsUsageAndImportData =
-  // eslint-disable-next-line global-require
-  require(`@site/static/data/__generated__/adoption/componentsUsageAndImportData.json`) as UsageData[];
-
 export const ComponentUsageTable = memo(() => {
-  const data = cmptsUsageAndImportData;
+  const data = getComponentInstances();
   const [{ sortBy, sortDirection }, setSort] = useState<SortState>({
     sortBy: 'totalInstances',
     sortDirection: 'descending',

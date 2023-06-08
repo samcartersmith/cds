@@ -2,7 +2,6 @@ import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 import { SourceFile } from 'ts-morph';
 
-import { CdsPackages } from './checkHasCdsPackage';
 import parseSourceFiles, { TransformFnType } from './parseSourceFiles';
 
 export type CreateMigrationParams = TransformFnType & {
@@ -16,13 +15,11 @@ export type CreateMigrationParams = TransformFnType & {
  * @param callback - he function that will be called for each sourceFile. Passes through the NX tree, path, project instance, and ts-morph sourceFile
  * @param filterSourceFiles - Prevents unnecessary parsing of sourceFiles that don't meet a conditional
  * @example check if sourceFile path or content includes 'foo' and gates the callback to only fire if true
- * @param packageNames - Checks if a project has specific CDS package(s) as a dependency
  */
 export const createMigration = async ({
   tree,
   callback,
   filterSourceFiles,
-  packageNames,
 }: {
   /** The NX tree */
   tree: Tree;
@@ -34,8 +31,6 @@ export const createMigration = async ({
    * @example check if sourceFile path or content includes 'foo' and gates the callback to only fire if true
    */
   filterSourceFiles?: (path: string) => boolean;
-  /** Checks if a project has specific CDS package(s) as a dependency */
-  packageNames?: CdsPackages[];
 }) => {
   const createSourceFile = (args: TransformFnType) => {
     const sourceContent = fs.readFileSync(args.path, 'utf-8');
@@ -47,5 +42,5 @@ export const createMigration = async ({
   };
 
   const parseSourceFile = (args: TransformFnType) => createSourceFile(args);
-  await parseSourceFiles(tree, parseSourceFile, filterSourceFiles, packageNames);
+  await parseSourceFiles(tree, parseSourceFile, filterSourceFiles);
 };

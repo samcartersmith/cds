@@ -10,7 +10,7 @@ steps:
     key: 'visreg_ios'
     parallelism: 5
     agents:
-      queue: macos-metal-xcode14
+      queue: macos-metal
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - tools/ci/setup.sh
@@ -23,7 +23,7 @@ steps:
     depends_on: 'visreg_ios'
     allow_dependency_failure: true
     agents:
-      queue: macos-metal-xcode14
+      queue: macos-metal
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - npm install -g @percy/cli

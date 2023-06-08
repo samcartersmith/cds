@@ -1,7 +1,9 @@
 import { Tree } from '@nrwl/devkit';
 
 import componentMigrations from './componentMigrations';
+import flagPotentialA11yStyleChange from './flag-potential-style-change';
 import functionMigrations from './functionMigrations';
+import packageDecompMigrations from './packageDecompMigrations';
 import propToAttributeAndValueMigrations from './propToAttributeAndValueMigrations';
 import propValueMigrations from './propValueMigrations';
 import removedComponents from './removedComponents';
@@ -11,10 +13,9 @@ import removedParams from './removedParams';
 import removedPropCatchallMigrations from './removedPropCatchallMigrations';
 import removedPropMigrations from './removedPropMigrations';
 import replacedPathMigrations from './replacedPathMigrations';
-import upgradePackages from './upgradePackages';
+import upgradeCdsPackageTo5 from './upgrade-cds-packages-5-0-0';
 
 export default async function main(tree: Tree) {
-  await upgradePackages(tree);
   await removedImports(tree);
   await replacedPathMigrations(tree);
   await removedParams(tree);
@@ -26,4 +27,7 @@ export default async function main(tree: Tree) {
   await removedPropCatchallMigrations(tree);
   await removedComponents(tree);
   await componentMigrations(tree);
+  await packageDecompMigrations(tree);
+  await flagPotentialA11yStyleChange(tree);
+  await upgradeCdsPackageTo5(tree);
 }

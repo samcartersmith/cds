@@ -5,7 +5,7 @@ If you are wrapping a CDS `Modal` to create a custom Modal component, you will w
 See example below:
 
 ```jsx live
-function ExtractedModalExample() {
+function PortalModalExample() {
   const triggerRef = useRef(null); // only required for web
 
   function ExtractedModal({ visible, closeModal, onDidClose }) {
@@ -21,12 +21,7 @@ function ExtractedModalExample() {
 
     return (
       <Modal visible={visible} onRequestClose={closeModal} onDidClose={handleDidClose}>
-        <ModalHeader
-          title="Extracted Modal"
-          onBackButtonPress={closeModal}
-          backAccessibilityLabel="Back"
-          closeAccessibilityLabel="Close"
-        />
+        <ModalHeader title="Basic Modal" />
         <ModalBody>
           <TextBody as="p">{loremIpsum}</TextBody>
         </ModalBody>
@@ -35,7 +30,7 @@ function ExtractedModalExample() {
     );
   }
 
-  function ControlledModal() {
+  function PortalModal() {
     const { openModal, closeModal } = useModal();
 
     const handlePress = useCallback(
@@ -55,7 +50,7 @@ function ExtractedModalExample() {
   return (
     <PortalProvider>
       <ExampleWithThemeToggles>
-        <ControlledModal />
+        <PortalModal />
       </ExampleWithThemeToggles>
     </PortalProvider>
   );

@@ -15,10 +15,6 @@ type ModalHeaderProps = {
 export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = ({
   title,
   onBackButtonPress,
-  backAccessibilityLabel,
-  backAccessibilityHint,
-  closeAccessibilityLabel,
-  closeAccessibilityHint,
 }) => {
   const { onRequestClose, hideCloseButton, hideDividers } = useModalParent();
 
@@ -36,8 +32,8 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
             name="backArrow"
             onPress={onBackButtonPress}
             testID="modal-back-button"
-            accessibilityLabel={backAccessibilityLabel}
-            accessibilityHint={backAccessibilityHint}
+            accessibilityLabel="Back"
+            accessibilityHint="Press to navigate back to the previous view"
           />
         )}
       </Box>
@@ -51,8 +47,8 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
             name="close"
             onPress={onRequestClose}
             testID="modal-close-button"
-            accessibilityLabel={closeAccessibilityLabel}
-            accessibilityHint={closeAccessibilityHint}
+            accessibilityLabel="Close"
+            accessibilityHint="Press this button to dismiss the modal and go back to the previous view"
           />
         )}
       </Box>

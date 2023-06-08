@@ -41,7 +41,6 @@ module.exports.adopters = [
       { type: 'doc', id: 'adoption-tracker/unified-login', label: 'Unified Login Web' },
       { type: 'doc', id: 'adoption-tracker/two-factor-web', label: 'Two Factor Web' },
       { type: 'doc', id: 'adoption-tracker/tax-center', label: 'Tax Center' },
-      { type: 'doc', id: 'adoption-tracker/cloud-console', label: 'Cloud Console' },
     ],
   },
   {

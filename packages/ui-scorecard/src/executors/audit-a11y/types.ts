@@ -28,9 +28,6 @@ export type TestOptions = {
   serial?: boolean;
   includeZeroCoverageAudit?: boolean;
   getComponentsMissingA11yCoverage?: boolean;
-  eventProjectName?: string;
-  debugEvents?: boolean;
-  sendEventsToProd?: boolean;
 };
 
 export type CoverageAreas = {
@@ -65,11 +62,11 @@ export type A11yLogType = {
    * */
   totalNumberOfComponentTests: number;
   /**
-   * Number of test files with toBeAccessible tests
+   * Number of tests that have toBeAccessible jest test
    */
   totalNumberOfToBeAccessibleTests: number;
   /**
-   * Number of test files with passing toBeAccessible tests
+   * Number of tests that have toBeAccessible jest test and is passing
    */
   totalNumberOfPassingToBeAccessibleTests: number;
   /**
@@ -112,7 +109,7 @@ export type A11yLogType = {
    */
   components: string[];
   /**
-   * Total number of components and screens
+   * Total number of components
    */
   totalNumberOfComponents: number;
   /**
@@ -120,19 +117,7 @@ export type A11yLogType = {
    */
   componentsWithTest: string[];
   /**
-   * Total number of components and screens that have a matching test file
+   * Total number of components with tests
    */
   totalNumberOfComponentsWithTest: number;
-  /**
-   * Percentage of components and screens with passing toBeAccessible tests
-   */
-  a11yScore?: number;
-  /**
-   * Jest code coverage percentage (by line)
-   */
-  jestScore?: number;
-  /**
-   * Metric representing accessibility, based solely on the results of automated accessibility testing
-   */
-  automatedA11yScore: number;
 };

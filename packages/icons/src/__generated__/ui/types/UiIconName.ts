@@ -174,7 +174,6 @@ export type UiIconName =
   | 'outline'
   | 'paperAirplane'
   | 'paperclip'
-  | 'passport'
   | 'pause'
   | 'pay'
   | 'payouts'
