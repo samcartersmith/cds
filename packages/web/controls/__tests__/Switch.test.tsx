@@ -1,6 +1,7 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop, react-perf/jsx-no-new-object-as-prop */
 import { ChangeEventHandler, useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { Switch } from '../Switch';
 
@@ -31,6 +32,10 @@ describe('Switch.test', () => {
     fireEvent.click(screen.getByRole('switch'));
 
     expect(screen.getByText('checked is false')).toBeTruthy();
+  });
+
+  it('passes accessibility', async () => {
+    expect(await renderA11y(<Switch onChange={jest.fn()}>test label</Switch>)).toHaveNoViolations();
   });
 
   it('renders label', () => {
