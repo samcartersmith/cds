@@ -27,6 +27,67 @@ describe('Table Cell', () => {
     ).toHaveNoViolations();
   });
 
+  it('renders with children', () => {
+    render(
+      <Table>
+        <TableBody>
+          <TableRow fullWidth>
+            <TableCell testID={exampleTestId}>children text</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>,
+    );
+
+    expect(screen.getByText('children text')).toBeTruthy();
+  });
+
+  it('renders with title and subtitle', () => {
+    render(
+      <Table>
+        <TableBody>
+          <TableRow fullWidth>
+            <TableCell testID={exampleTestId} title="test title" subtitle="test subtitle" />
+          </TableRow>
+        </TableBody>
+      </Table>,
+    );
+
+    expect(screen.getByText('test title')).toBeTruthy();
+    expect(screen.getByText('test subtitle')).toBeTruthy();
+  });
+
+  it('renders `start` element', () => {
+    render(
+      <Table>
+        <TableBody>
+          <TableRow fullWidth>
+            <TableCell testID={exampleTestId} start={<div>test start element</div>}>
+              Cell
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>,
+    );
+
+    expect(screen.getByText('test start element')).toBeTruthy();
+  });
+
+  it('renders `end` element', () => {
+    render(
+      <Table>
+        <TableBody>
+          <TableRow fullWidth>
+            <TableCell testID={exampleTestId} end={<div>test end element</div>}>
+              Cell
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>,
+    );
+
+    expect(screen.getByText('test end element')).toBeTruthy();
+  });
+
   it('passes a className to dangerouslySetClassName', () => {
     render(
       <Table>
