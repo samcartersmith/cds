@@ -1,11 +1,18 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/web-visualization",
+    "outDir": "../../.nx/dts/packages/web-visualization",
     "rootDir": "src"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "jest.config.js", "babel.config.js", "babel.build.config.js"],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "jest.config.js",
+    "babel.config.js",
+    "babel.build.config.js"
+  ],
   "references": [
     {
       "path": "../../packages/common"

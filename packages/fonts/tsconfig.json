@@ -1,9 +1,13 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/fonts",
+    "outDir": "../../.nx/dts/packages/fonts",
     "rootDir": "./"
   },
-  "include": ["**/*"],
-  "exclude": ["**/*.test.*"]
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "**/*.test.*"
+  ]
 }

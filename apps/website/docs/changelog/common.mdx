@@ -2,7 +2,7 @@
 
 > [NPM registry](https://registry-npm.cbhq.net/-/web/detail/@cbhq/cds-common)
 
-All notable changes to this project will be documented in this file!
+All notable changes to this project will be documented in this file.
 
 `@cbhq/cds-common` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
@@ -21,12 +21,6 @@ All notable changes to this project will be documented in this file!
 #### 🐞 Fixes
 
 - **[ui-mobile-playground, ui-mobile-visreg]** Fix Npm Pack. [#1841](https://github.cbhq.net/frontend/cds/pull/1841)
-
-## Unreleased
-
-#### 📘 Misc
-
-- Fix spacing comparison w/ mono-pipeline.
 
 ## 4.2.14 ((6/4/2023, 12:57 PM PST))
 
