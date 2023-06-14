@@ -56,7 +56,7 @@ describe('Table Cell', () => {
     expect(screen.getByText('test subtitle')).toBeTruthy();
   });
 
-  it('renders `start` element', () => {
+  it('renders start element', () => {
     render(
       <Table>
         <TableBody>
@@ -72,7 +72,7 @@ describe('Table Cell', () => {
     expect(screen.getByText('test start element')).toBeTruthy();
   });
 
-  it('renders `end` element', () => {
+  it('renders end element', () => {
     render(
       <Table>
         <TableBody>
