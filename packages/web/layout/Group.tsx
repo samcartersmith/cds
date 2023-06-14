@@ -21,17 +21,15 @@ export const Group = memo(
     (
       {
         children,
-        direction: directionProp = 'vertical',
+        direction = 'vertical',
         divider,
         gap,
-        horizontal,
         renderItem = fallbackRenderItem,
         ...boxProps
       },
       forwardedRef,
     ) => {
       // TODO: Remove once `horizontal` is sunset in Q2.
-      const direction = horizontal ? 'horizontal' : directionProp;
       const contents = useMemo(
         () =>
           flattenAndJoinNodes({

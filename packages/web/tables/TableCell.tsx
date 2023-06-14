@@ -39,7 +39,6 @@ export const TableCell = memo(
     titleColor,
     subtitle,
     subtitleColor = 'foregroundMuted',
-    dangerouslySetHtmlWidth,
     width,
     innerSpacing,
     outerSpacing,
@@ -141,7 +140,6 @@ export const TableCell = memo(
         data-testid={testID}
         className={cx(tableCellClass, dangerouslySetClassName)}
         colSpan={colSpan}
-        width={dangerouslySetHtmlWidth}
         style={inlineStyles}
         scope={cellScope}
         {...props}

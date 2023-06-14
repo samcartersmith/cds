@@ -16,5 +16,6 @@ export const cardSizes = {
 } as const;
 
 export const defaultMediaDimension = '96x96';
+export const defaultPictogramMediaDimension = '64x64';
 export const defaultMediaSize = convertDimensionToSize(defaultMediaDimension);
 export const defaultSpacingBottom = 2;

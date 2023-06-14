@@ -1,6 +1,10 @@
 import React, { memo } from 'react';
 
-import { defaultMediaDimension, defaultMediaSize } from '../tokens/card';
+import {
+  defaultMediaDimension,
+  defaultMediaSize,
+  defaultPictogramMediaDimension,
+} from '../tokens/card';
 import type { IllustrationPropsDiscriminatedUnion } from '../types';
 import type {
   CardMediaImageSizeObject,
@@ -45,7 +49,7 @@ export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMed
         <Illustration
           {...props}
           type="pictogram"
-          dimension={defaultMediaDimension}
+          dimension={defaultPictogramMediaDimension}
           name={props.name}
           testID={props.testID}
         />

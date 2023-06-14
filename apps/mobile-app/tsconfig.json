@@ -1,0 +1,46 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "resolveJsonModule": true,
+    "moduleSuffixes": [
+      ".ios",
+      ".android",
+      ".native",
+      ""
+    ],
+    "outDir": "../../.nx/dts/apps/mobile-app"
+  },
+  "include": [
+    "src",
+    "*.config.js",
+    "*.config.ts",
+    "scripts",
+    ".eslintrc.js",
+    "*.d.ts",
+    "*.json",
+    "e2e"
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js"
+  ],
+  "references": [
+    {
+      "path": "../../packages/illustrations"
+    },
+    {
+      "path": "../../packages/icons"
+    },
+    {
+      "path": "../../packages/mobile"
+    },
+    {
+      "path": "../../packages/ui-mobile-playground"
+    },
+    {
+      "path": "../../packages/ui-mobile-visreg"
+    }
+  ]
+}

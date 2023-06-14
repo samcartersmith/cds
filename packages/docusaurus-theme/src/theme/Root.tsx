@@ -1,9 +1,12 @@
-import React, { memo } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { ChangelogTOCProvider } from '@theme/ChangelogTOCManager';
 import { PropsTOCProvider } from '@theme/PropsTOCManager';
 import { TOCProvider } from '@theme/TOCManager';
 
-const Root = memo(({ children }) => {
+type RootProps = {
+  children?: ReactNode;
+};
+const Root = memo(({ children }: RootProps) => {
   return (
     <TOCProvider>
       <ChangelogTOCProvider>

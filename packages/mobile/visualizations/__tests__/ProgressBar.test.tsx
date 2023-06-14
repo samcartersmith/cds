@@ -9,23 +9,11 @@ import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
 
+jest.useFakeTimers();
+
 jest.mock('@cbhq/cds-common/visualizations/useCounter', () => ({
   useCounter: ({ endNum }: UseCounterParams) => endNum,
 }));
-
-jest.mock('react-native/Libraries/Animated/Animated', () => {
-  return {
-    ...jest.requireActual<Record<string, unknown>>('react-native/Libraries/Animated/Animated'),
-    timing: (value: { setValue: (arg0: unknown) => void }, config: { toValue: unknown }) => {
-      return {
-        start: jest.fn((callback?: ({ finished }: { finished: boolean }) => void) => {
-          value.setValue(config.toValue);
-          callback?.({ finished: true });
-        }),
-      };
-    },
-  };
-});
 
 function fireTextEvent(floatLabel: ReactTestInstance) {
   fireEvent(floatLabel, 'layout', {
@@ -98,6 +86,8 @@ describe('ProgressBar test', () => {
 
     fireTextContainerEvent(screen.getByTestId('cds-progress-bar-float-label-container'));
 
+    // necessary for Animated.timing delay
+    jest.runAllTimers();
     expect(floatLabel).toHaveStyle({
       transform: [{ translateX: 90 }], // (200/2) -10
     });
@@ -145,6 +135,8 @@ describe('ProgressBar test', () => {
     fireTextContainerEvent(screen.getByTestId('cds-progress-bar-inner-bar-container'));
 
     const bar = screen.getByTestId('cds-progress-bar-inner-bar');
+    // necessary for Animated.timing delay
+    jest.runAllTimers();
     expect(bar).toHaveStyle({
       backgroundColor: paletteValueToRgbaString(defaultPalette.positive, 'light'),
       transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))
@@ -177,10 +169,14 @@ describe('ProgressBar test', () => {
     fireTextContainerEvent(screen.getByTestId('cds-progress-bar-inner-bar-container'));
 
     const bar = screen.getByTestId('cds-progress-bar-inner-bar');
+
+    // necessary for Animated.timing delay
+    jest.runAllTimers();
     expect(bar).toHaveStyle({
       backgroundColor: paletteValueToRgbaString(defaultPalette.lineHeavy, 'light'),
       transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))
     });
+
     expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
 

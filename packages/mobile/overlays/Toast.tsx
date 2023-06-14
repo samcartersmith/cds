@@ -95,7 +95,7 @@ export const Toast = memo(
                 spacingEnd={1}
                 elevation={2}
                 background
-                borderRadius="standard"
+                borderRadius="rounded"
                 alignItems="center"
                 overflow="hidden"
                 dangerouslySetStyle={{

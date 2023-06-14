@@ -1,4 +1,4 @@
-import { getProjects, joinPathFragments, Tree } from '@nrwl/devkit';
+import { getProjects, joinPathFragments, ProjectConfiguration, Tree } from '@nrwl/devkit';
 import chalk from 'chalk';
 import progress from 'cli-progress';
 import glob from 'fast-glob';
@@ -12,6 +12,7 @@ export type TransformFnType = {
   path: string;
   tree: Tree;
   project: Project;
+  projectConfig: ProjectConfiguration;
 };
 
 /**
@@ -33,29 +34,29 @@ export default async function parseSourceFiles(
   const projects = getProjects(tree);
 
   await Promise.all(
-    [...projects.values()].map(async (project) => {
+    [...projects.values()].map(async (projectConfig) => {
       let projectHasCdsDependency = false;
       if (packageNames?.length) {
         projectHasCdsDependency = packageNames?.some((pkg) =>
-          checkHasCdsPackage(pkg, tree, project),
+          checkHasCdsPackage(pkg, tree, projectConfig),
         );
       } else {
-        const { hasCdsDependency } = checkHasCdsDependency(tree, project);
+        const { hasCdsDependency } = checkHasCdsDependency(tree, projectConfig);
         if (hasCdsDependency) {
           projectHasCdsDependency = true;
         }
       }
-      const tsConfigFilePath = joinPathFragments(tree.root, project.root, 'tsconfig.json');
+      const tsConfigFilePath = joinPathFragments(tree.root, projectConfig.root, 'tsconfig.json');
 
       if (fs.existsSync(tsConfigFilePath) && projectHasCdsDependency) {
         /** https://ts-morph.com/ */
         /** https://ts-ast-viewer.com/ */
-        const tsProject = new Project({
+        const project = new Project({
           skipAddingFilesFromTsConfig: true,
           useInMemoryFileSystem: true,
         });
 
-        const cwd = joinPathFragments(tree.root, project.sourceRoot ?? project.root);
+        const cwd = joinPathFragments(tree.root, projectConfig.sourceRoot ?? projectConfig.root);
 
         const sourceFiles = await glob(['**/*.tsx', '**/*.ts'], {
           ignore: ['node_modules'],
@@ -70,7 +71,7 @@ export default async function parseSourceFiles(
             format: `${chalk.cyan(
               '{bar}',
             )}| {percentage}% || {value}/{total} files parsed in ${chalk.cyanBright(
-              project.name,
+              projectConfig.name,
             )} || time elapsed: {duration_formatted}`,
             barCompleteChar: '\u2588',
             barIncompleteChar: '\u2591',
@@ -83,13 +84,12 @@ export default async function parseSourceFiles(
         const numFilteredFiles: string[] = [];
         sourceFiles.forEach((path) => {
           bar.increment();
-          if (filterSourceFiles) {
-            if (filterSourceFiles?.(path)) {
-              numFilteredFiles.push(path);
-              transformFn({ path, tree, project: tsProject });
-            }
+          if (filterSourceFiles?.(path)) {
+            numFilteredFiles.push(path);
+            // we don't want to fire the transform function if it doesn't meet the filter
+            transformFn({ path, tree, project, projectConfig });
           } else {
-            transformFn({ path, tree, project: tsProject });
+            transformFn({ path, tree, project, projectConfig });
           }
         });
 

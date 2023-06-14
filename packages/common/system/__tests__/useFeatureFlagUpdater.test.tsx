@@ -1,11 +1,14 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { FeatureFlagProvider } from '../FeatureFlagProvider';
+import { FeatureFlagProvider, FeatureFlagProviderProps } from '../FeatureFlagProvider';
 import { useFeatureFlags } from '../useFeatureFlags';
 import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
 
 describe('useFeatureFlagUpdater', () => {
   it('updates features flags when called', () => {
+    function Wrapper(props: FeatureFlagProviderProps) {
+      return <FeatureFlagProvider {...props} />;
+    }
     const { result } = renderHook(
       () => {
         return {
@@ -14,7 +17,7 @@ describe('useFeatureFlagUpdater', () => {
         };
       },
       {
-        wrapper: (props) => <FeatureFlagProvider {...props} />,
+        wrapper: Wrapper,
       },
     );
 
@@ -26,6 +29,9 @@ describe('useFeatureFlagUpdater', () => {
   });
 
   it('merges updates', () => {
+    function Wrapper(props: FeatureFlagProviderProps) {
+      return <FeatureFlagProvider {...props} />;
+    }
     const { result } = renderHook(
       () => {
         return {
@@ -34,7 +40,7 @@ describe('useFeatureFlagUpdater', () => {
         };
       },
       {
-        wrapper: (props) => <FeatureFlagProvider {...props} />,
+        wrapper: Wrapper,
       },
     );
 
@@ -51,6 +57,9 @@ describe('useFeatureFlagUpdater', () => {
   });
 
   it('correctly handles toggling frontier on and off', () => {
+    function Wrapper(props: FeatureFlagProviderProps) {
+      return <FeatureFlagProvider {...props} />;
+    }
     const { result } = renderHook(
       () => {
         return {
@@ -59,7 +68,7 @@ describe('useFeatureFlagUpdater', () => {
         };
       },
       {
-        wrapper: (props) => <FeatureFlagProvider {...props} />,
+        wrapper: Wrapper,
       },
     );
 

@@ -36,7 +36,7 @@ export type ControlProps<T extends string> = {
   /** Toggle control selected state. */
   onChange?: (value?: T) => void;
 } & Omit<PressableProps, 'disabled' | 'children' | 'style'> &
-  ControlBaseProps<T>;
+  Omit<ControlBaseProps<T>, 'children'>;
 
 type ControlInternalProps<T extends string> = {
   /** Control icon to show. */

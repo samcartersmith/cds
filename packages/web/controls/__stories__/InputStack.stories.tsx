@@ -24,14 +24,14 @@ export const InputStackExamples = () => (
       </Box>
     }
     startNode={
-      <Box background="positive" borderRadius="input">
+      <Box background="positive" borderRadius="rounded">
         <TextBody as="p" color="positiveForeground">
           StartContent
         </TextBody>
       </Box>
     }
     endNode={
-      <Box background="positive" borderRadius="input">
+      <Box background="positive" borderRadius="rounded">
         <TextBody as="p" color="positiveForeground">
           EndContent
         </TextBody>
@@ -59,21 +59,21 @@ export const InputStackExamples = () => (
 export const Append = () => (
   <InputStack
     appendNode={
-      <Box background="primary" borderRadius="input">
+      <Box background="primary" borderRadius="rounded">
         <TextBody as="p" color="primaryForeground">
           Append
         </TextBody>
       </Box>
     }
     startNode={
-      <Box background="positive" borderRadius="input">
+      <Box background="positive" borderRadius="rounded">
         <TextBody as="p" color="positiveForeground">
           StartContent
         </TextBody>
       </Box>
     }
     endNode={
-      <Box background="positive" borderRadius="input">
+      <Box background="positive" borderRadius="rounded">
         <TextBody as="p" color="positiveForeground">
           EndContent
         </TextBody>
@@ -101,21 +101,21 @@ export const Append = () => (
 export const Prepend = () => (
   <InputStack
     prependNode={
-      <Box background="primary" borderRadius="input">
+      <Box background="primary" borderRadius="rounded">
         <TextBody as="p" color="primaryForeground">
           Append
         </TextBody>
       </Box>
     }
     startNode={
-      <Box background="positive" borderRadius="input">
+      <Box background="positive" borderRadius="rounded">
         <TextBody as="p" color="positiveForeground">
           StartContent
         </TextBody>
       </Box>
     }
     endNode={
-      <Box background="positive" borderRadius="input">
+      <Box background="positive" borderRadius="rounded">
         <TextBody as="p" color="positiveForeground">
           EndContent
         </TextBody>

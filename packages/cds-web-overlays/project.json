@@ -1,0 +1,47 @@
+{
+  "sourceRoot": "packages/cds-web-overlays",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/cds-tasks:build-package",
+      "outputs": [
+        "{workspaceRoot}/.nx/dist/packages/cds-web-overlays"
+      ],
+      "options": {
+        "destinationDir": ".nx/dist/packages/cds-web-overlays",
+        "srcDir": "src",
+        "babelConfig": "./packages/cds-web-overlays/babel.config.js",
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "staticFilesToCopy": [
+          "package.json",
+          "README.md",
+          "CHANGELOG.md"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
+        "typescriptConfig": "packages/cds-web-overlays/tsconfig.build.json"
+      }
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "report-disabled-eslint-rules": {
+      "executor": "@cbhq/prevent-eslint-disable:report"
+    }
+  }
+}

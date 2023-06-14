@@ -45,6 +45,7 @@ export function StoryContainer<Props>(
         return React.Children.toArray(
           stories.map((child) => {
             const mergedProps = sanitizeProps(merge({}, child.args, context.args));
+            // @ts-expect-error - TODO: Fix this
             return React.createElement(child, mergedProps);
           }),
         );

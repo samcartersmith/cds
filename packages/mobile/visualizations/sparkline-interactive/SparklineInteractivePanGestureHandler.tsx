@@ -13,6 +13,9 @@ import { useSparklineInteractiveConstants } from './useSparklineInteractiveConst
 
 const { lightImpact } = Haptics;
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export type SparklineInteractivePanGestureHandlerProps<Period extends string> = {
   onScrub?: (params: ChartScrubParams<Period>) => void;
   getMarker: ChartGetMarker;

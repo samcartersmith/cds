@@ -6,6 +6,7 @@ import {
   CardBaseProps,
   CardBodyBaseProps,
   CellMediaProps,
+  CellSpacing,
   FeedCardBaseProps,
   IconButtonBaseProps,
   ListCellBaseProps,
@@ -55,6 +56,8 @@ export type CreateCardProps = {
   ThemeProvider: React.ComponentType<React.PropsWithChildren<unknown>>;
 };
 
+const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+
 export function cardBuilder({
   Box,
   Button,
@@ -87,7 +90,7 @@ export function cardBuilder({
                 detailWidth={95}
                 intermediary={<CellMedia type="icon" name="chartLine" />}
                 media={<CellMedia type="image" source={assets.eth.imageUrl} />}
-                reduceHorizontalSpacing
+                innerSpacing={innerSpacingConfig}
               />
             );
           })}

@@ -146,7 +146,7 @@ export const SearchInput = memo(
               />
             )
           }
-          borderRadius="search"
+          borderRadius="roundedFull"
           ref={refs}
           end={
             !!value && (

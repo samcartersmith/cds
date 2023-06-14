@@ -8,7 +8,7 @@ import { pauseStory } from '../../utils/storybook';
 import { Default } from './Dropdown.stories';
 
 export default {
-  title: 'Interactive/Dropdown',
+  title: 'Interactive/Dropdown (deprecated - moved to cds-web-overlays)',
   component: Default,
 };
 
@@ -73,5 +73,14 @@ export const ScrollContainer: ComponentStoryObj<typeof Default> = {
     const canvas = within(canvasElement);
     // open the menu
     await userEvent.click(canvas.getByText('Open Menu'));
+  },
+};
+
+// Copying this approach from SimpleDropdown
+ScrollContainer.parameters = {
+  a11y: {
+    config: {
+      rules: [{ id: 'aria-required-children', enabled: false }],
+    },
   },
 };

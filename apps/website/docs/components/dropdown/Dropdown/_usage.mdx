@@ -23,7 +23,11 @@ function Example() {
   const content = useMemo(
     () => (
       <>
-        <SectionTitle text="Section Heading" />
+        <HStack spacingHorizontal={2} spacingVertical={2}>
+          <TextCaption as="h2" color="foregroundMuted">
+            Section Heading
+          </TextCaption>
+        </HStack>
         {options.map((option) => (
           <SelectOption value={option} title={option} />
         ))}

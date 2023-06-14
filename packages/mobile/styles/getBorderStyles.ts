@@ -5,10 +5,8 @@ import {
   BorderWidth,
   ThemeConfigForSpectrum,
 } from '@cbhq/cds-common';
-import {
-  borderRadius as borderRadii,
-  borderWidth as borderWidthTokens,
-} from '@cbhq/cds-common/tokens/border';
+import { borderRadius as borderRadii } from '@cbhq/cds-common/tokens/borderRadius';
+import { borderWidth as borderWidthTokens } from '@cbhq/cds-common/tokens/borderWidth';
 import { memoize } from '@cbhq/cds-common/utils/memoize';
 
 import { ElevationConfigForSpectrum } from '../system/createElevationConfigForSpectrum';

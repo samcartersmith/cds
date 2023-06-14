@@ -83,7 +83,7 @@ describe('Box', () => {
 
   it('renders borders and radius', async () => {
     render(
-      <Box testID="parent" bordered borderRadius="standard">
+      <Box testID="parent" bordered borderRadius="rounded">
         <Text>Child</Text>
       </Box>,
     );

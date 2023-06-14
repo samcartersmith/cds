@@ -42,17 +42,23 @@ describe('EventDelegationProvider', () => {
   });
 
   it('should return noOp when called with no config and no parameters', () => {
+    function Wrapper({ children }: { children: React.ReactNode }) {
+      return <EventHandlerProvider>{children}</EventHandlerProvider>;
+    }
+
     const { result } = renderHook(() => useEventHandler('Button', 'onPress'), {
-      wrapper: ({ children }) => <EventHandlerProvider>{children}</EventHandlerProvider>,
+      wrapper: Wrapper,
     });
     expect(result.current).toBeDefined();
   });
 
   it('should use noOp because customOptions are not provided', () => {
+    function Wrapper({ children }: { children: React.ReactNode }) {
+      return <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>{children}</EventHandlerProvider>;
+    }
+
     const { result } = renderHook(() => useEventHandler('Button', 'onPress'), {
-      wrapper: ({ children }) => (
-        <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>{children}</EventHandlerProvider>
-      ),
+      wrapper: Wrapper,
     });
     expect(result.current).not.toBe(EVENT_HANDLER_CONFIG.handlers?.Button.onPress);
   });
@@ -65,10 +71,13 @@ describe('EventDelegationProvider', () => {
         currency: 'BTC',
       },
     };
+
+    function Wrapper({ children }: { children: React.ReactNode }) {
+      return <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>{children}</EventHandlerProvider>;
+    }
+
     const { result } = renderHook(() => useEventHandler('Button', 'onPress', customEventConfig), {
-      wrapper: ({ children }) => (
-        <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>{children}</EventHandlerProvider>
-      ),
+      wrapper: Wrapper,
     });
     void act(() => result.current());
     expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).toHaveBeenCalled();
@@ -82,10 +91,12 @@ describe('EventDelegationProvider', () => {
         currency: 'BTC',
       },
     };
+
+    function Wrapper({ children }: { children: React.ReactNode }) {
+      return <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>{children}</EventHandlerProvider>;
+    }
     const { result } = renderHook(() => useEventHandler('Button', 'onPress', customEventConfig), {
-      wrapper: ({ children }) => (
-        <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>{children}</EventHandlerProvider>
-      ),
+      wrapper: Wrapper,
     });
     void act(() => result.current());
     expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).not.toHaveBeenCalled();
@@ -100,12 +111,16 @@ describe('EventDelegationProvider', () => {
       },
     };
 
-    const { result } = renderHook(() => useEventHandler('Button', 'onPress', customEventConfig), {
-      wrapper: ({ children }) => (
+    function Wrapper({ children }: { children: React.ReactNode }) {
+      return (
         <EventHandlerProvider config={CUSTOM_EVENT_HANDLER_WITH_MAPPING}>
           {children}
         </EventHandlerProvider>
-      ),
+      );
+    }
+
+    const { result } = renderHook(() => useEventHandler('Button', 'onPress', customEventConfig), {
+      wrapper: Wrapper,
     });
 
     void act(() => result.current());
@@ -124,11 +139,12 @@ describe('EventDelegationProvider', () => {
         currency: 'BTC',
       },
     };
+    function Wrapper({ children }: { children: React.ReactNode }) {
+      return <EventHandlerProvider config={CUSTOM_HANDLER_CONFIG}>{children}</EventHandlerProvider>;
+    }
 
     const { result } = renderHook(() => useEventHandler('Button', 'onPress', customEventConfig), {
-      wrapper: ({ children }) => (
-        <EventHandlerProvider config={CUSTOM_HANDLER_CONFIG}>{children}</EventHandlerProvider>
-      ),
+      wrapper: Wrapper,
     });
     void act(() => result.current());
     expect(CUSTOM_HANDLER_CONFIG.handlers?.Button.onPress).not.toHaveBeenCalled();

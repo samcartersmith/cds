@@ -100,7 +100,7 @@ describe('TextInput', () => {
 
     expect(screen.getByTestId('internal-input')).toHaveAttribute(
       'id',
-      expect.stringMatching(/cds-textinput-label-.*/),
+      expect.stringMatching(/label-.*/),
     );
   });
 
@@ -115,7 +115,7 @@ describe('TextInput', () => {
 
     expect(screen.getByTestId('textinput-testid')).toHaveAttribute(
       'aria-describedby',
-      expect.stringMatching(/cds-textinput-description-.*/),
+      expect.stringMatching(/description-.*/),
     );
   });
 

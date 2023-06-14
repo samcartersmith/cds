@@ -22,7 +22,7 @@ const userSwitcherHeight = 674;
 const Subject = ({ title, description }: SwitcherSubjectProps) => {
   const avatarColorScheme = getAvatarFallbackColor(title);
   return (
-    <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="standard">
+    <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="rounded">
       <HStack gap={1} alignItems="center">
         <Avatar size="xl" alt={title} name={title} colorScheme={avatarColorScheme} />
         <VStack maxWidth={172} minWidth={0}>
@@ -51,7 +51,7 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
   gap: 1,
 };
 
-const UserSwitcherRecipe = memo(({ children }) => {
+const UserSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
   return (
     <FeatureFlagProvider frontierColor frontierButton>
       <HStack>
@@ -72,6 +72,9 @@ const UserSwitcherRecipe = memo(({ children }) => {
   );
 });
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectProps) => {
   return (
     <UserSwitcherRecipe>
@@ -80,7 +83,10 @@ export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectPr
   );
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export default {
-  title: 'Core Components/Switchers/UserSwitcher',
+  title: 'Core Components/Switchers/UserSwitcher  (deprecated - moved to cds-web-overlays)',
   component: UserSwitcher,
 };

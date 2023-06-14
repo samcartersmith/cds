@@ -2,6 +2,9 @@ import { useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import { fadeDuration } from '@cbhq/cds-common/tokens/sparkline';
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export function useOpacityAnimation(
   initialValue: number | undefined = 0,
   duration: number | undefined = fadeDuration,

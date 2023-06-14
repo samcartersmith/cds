@@ -44,7 +44,7 @@ export const Menu = ({
       background
       elevation={2}
       width={275}
-      borderRadius="popover"
+      borderRadius="roundedLarge"
       dangerouslySetClassName={popoverStyleOverrides}
       maxHeight={300}
     >

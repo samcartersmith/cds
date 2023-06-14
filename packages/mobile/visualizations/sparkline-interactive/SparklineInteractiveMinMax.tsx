@@ -14,6 +14,9 @@ type SparklineInteractiveMinMaxContentProps = {
   x: number;
 };
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export const SparklineInteractiveMinMax: FunctionComponent<
   React.PropsWithChildren<SparklineInteractiveMinMaxProps>
 > = memo(({ formatMinMaxLabel, dataPoint, xFunction }) => {

@@ -9,15 +9,7 @@ describe('useA11yLabels', () => {
   it('generates default props when no options are passed', () => {
     const { result } = renderHook(() => useA11yLabels());
 
-    expect(result.current.labelledBySource).toMatch(/a11y-id-.*/);
-    expect(result.current.labelledBy).toBe(result.current.labelledBySource);
-    expect(result.current.label).toBeUndefined();
-  });
-
-  it('generates a labelledBy id with a provided prefix', () => {
-    const { result } = renderHook(() => useA11yLabels({ labelledByIdPrefix: 'some-prefix-' }));
-
-    expect(result.current.labelledBySource).toMatch(/some-prefix-.*/);
+    expect(result.current.labelledBySource).toMatch(/:r[0-9].*/);
     expect(result.current.labelledBy).toBe(result.current.labelledBySource);
     expect(result.current.label).toBeUndefined();
   });

@@ -15,7 +15,7 @@ const LandingPageAnnouncements = memo(function LandingPageAnnouncements({
   announcements,
 }: LandingPageAnnouncementsProps) {
   const renderCards = useCallback(
-    (cards) => <CMSContent content={cards as ContentfulAnnouncements} />,
+    (cards: unknown[]) => <CMSContent content={cards as ContentfulAnnouncements} />,
     [],
   );
 

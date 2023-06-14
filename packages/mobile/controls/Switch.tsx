@@ -62,7 +62,7 @@ const SwitchIcon = ({
       pressed={pressed}
       backgroundColor={checked ? 'primary' : 'backgroundAlternate'}
       disabled={disabled}
-      borderRadius="pill"
+      borderRadius="roundedLarge"
       style={trackStyle}
     >
       <Interactable
@@ -71,7 +71,7 @@ const SwitchIcon = ({
         backgroundColor="background"
         borderColor="line"
         borderWidth="card"
-        borderRadius="round"
+        borderRadius="roundedFull"
         style={thumbStyle}
       />
     </Interactable>

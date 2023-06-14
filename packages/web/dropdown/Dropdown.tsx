@@ -17,7 +17,7 @@ import { dropdownMaxHeight } from '@cbhq/cds-common/tokens/menu';
 import { SelectProvider } from '../controls/selectContext';
 import { useA11yControlledVisibility } from '../hooks/useA11yControlledVisibility';
 import { useBoundingClientRect } from '../hooks/useBoundingClientRect';
-import { useIsMobile } from '../hooks/useIsMobile';
+import { useBreakpoints } from '../hooks/useBreakpoints';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 import { useSpacingValue } from '../hooks/useSpacingValue';
 import { FocusTrap } from '../overlays/FocusTrap';
@@ -276,6 +276,9 @@ const PopoverDropdown = memo(
   ),
 );
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Dropdown = memo(
   forwardRef(
     (
@@ -289,7 +292,7 @@ export const Dropdown = memo(
       }: DropdownProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
-      const isMobile = useIsMobile();
+      const { isMobile } = useBreakpoints();
       const [visible, { toggleOn, toggleOff }] = useToggler();
 
       const handleOpenMenu = useCallback(() => {

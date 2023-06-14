@@ -41,7 +41,7 @@ const Example = (props: PlaygroundProps) => {
       background="backgroundAlternate"
       spacing={3}
       borderColor="line"
-      borderRadius="standard"
+      borderRadius="rounded"
       {...props}
     >
       <TextHeadline as="h3">I am as wide as {deviceName()}</TextHeadline>

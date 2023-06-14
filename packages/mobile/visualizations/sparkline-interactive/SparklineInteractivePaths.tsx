@@ -62,6 +62,9 @@ function SparklineInteractivePathsWithGeneric<Period extends string>({
   );
 }
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export const SparklineInteractivePaths = memo(
   SparklineInteractivePathsWithGeneric,
 ) as typeof SparklineInteractivePathsWithGeneric;

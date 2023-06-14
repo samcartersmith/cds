@@ -1,6 +1,11 @@
 import React from 'react';
 
-import type { CellMediaProps, ContentCellBaseProps, IllustrationPictogramNames } from '../types';
+import type {
+  CellMediaProps,
+  CellSpacing,
+  ContentCellBaseProps,
+  IllustrationPictogramNames,
+} from '../types';
 
 import { assets } from './data/assets';
 
@@ -36,6 +41,8 @@ export function contentCellBuilder(
     </>
   );
 
+  const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+
   const PressableContent = () => (
     <>
       <ContentCell title="Title" to="#" onPress={onPressConsole} />
@@ -49,7 +56,7 @@ export function contentCellBuilder(
         subtitle="Subtitle"
         onPress={onPressConsole}
         to="#"
-        reduceHorizontalSpacing
+        innerSpacing={innerSpacingConfig}
       />
 
       <ContentCell description="Description" subtitle="Subtitle" onPress={onPressConsole} />
@@ -59,7 +66,7 @@ export function contentCellBuilder(
         description="Description"
         meta="Meta"
         onPress={onPressConsole}
-        reduceHorizontalSpacing
+        innerSpacing={innerSpacingConfig}
         selected
       />
 

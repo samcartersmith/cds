@@ -22,11 +22,17 @@ const SelectForm = (props: SelectProps) => {
   );
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export default {
-  title: 'Interactive/Select',
+  title: 'Interactive/Select (deprecated - moved to cds-web-overlays)',
   component: SelectForm,
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const SimpleSelect: ComponentStoryObj<typeof SelectForm> = {
   args: {
     placeholder,
@@ -64,6 +70,9 @@ export const SimpleSelect: ComponentStoryObj<typeof SelectForm> = {
   },
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const SmallSelect: ComponentStoryObj<typeof SelectForm> = {
   args: {
     placeholder,

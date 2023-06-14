@@ -16,6 +16,9 @@ import { cx } from '../utils/linaria';
 
 import { useSelectContext } from './selectContext';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const selectOptionStaticClassName = 'cds-select-option';
 
 const pressableStyles = css`
@@ -26,18 +29,21 @@ const pressableStyles = css`
   border: none;
   &:first-child {
     &:before {
-      border-top-right-radius: ${borderRadius.popover};
-      border-top-left-radius: ${borderRadius.popover};
+      border-top-right-radius: ${borderRadius.roundedLarge};
+      border-top-left-radius: ${borderRadius.roundedLarge};
     }
   }
   &:last-child {
     &:before {
-      border-bottom-right-radius: ${borderRadius.popover};
-      border-bottom-left-radius: ${borderRadius.popover};
+      border-bottom-right-radius: ${borderRadius.roundedLarge};
+      border-bottom-left-radius: ${borderRadius.roundedLarge};
     }
   }
 `;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export type SelectOptionProps = {
   /** Prevent menu from closing when an option is selected */
   disableCloseOnOptionChange?: boolean;
@@ -67,6 +73,9 @@ const selectOptionCompactMaxHeight: Record<ScaleDensity, number> = {
   dense: 48,
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const SelectOption = memo(
   ({
     title,
@@ -142,7 +151,7 @@ export const SelectOption = memo(
       >
         <Cell
           {...selectCellSpacingConfig}
-          borderRadius="none"
+          borderRadius="roundedNone"
           minHeight={minHeight}
           maxHeight={multiline ? undefined : maxHeight}
           accessory={

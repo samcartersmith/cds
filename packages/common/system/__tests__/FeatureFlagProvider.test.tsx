@@ -1,22 +1,30 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { defaultFeatureFlags } from '../FeatureFlagContext';
-import { FeatureFlagProvider } from '../FeatureFlagProvider';
+import { FeatureFlagProvider, FeatureFlagProviderProps } from '../FeatureFlagProvider';
 import { useFeatureFlags } from '../useFeatureFlags';
 import { useFeatureFlagUpdater } from '../useFeatureFlagUpdater';
 
 describe('FeatureFlagProvider', () => {
   it('sets defaultFeatureFlags iF no props are provided', () => {
+    function Wrapper(props: FeatureFlagProviderProps) {
+      return <FeatureFlagProvider {...props} />;
+    }
+
     const { result } = renderHook(() => useFeatureFlags(), {
-      wrapper: (props) => <FeatureFlagProvider {...props} />,
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual(defaultFeatureFlags);
   });
 
   it('toggles all frontier features true if frontier: true', () => {
     const features = { frontier: true };
+    function Wrapper(props: FeatureFlagProviderProps) {
+      return <FeatureFlagProvider {...features} {...props} />;
+    }
+
     const { result } = renderHook(() => useFeatureFlags(), {
-      wrapper: (props) => <FeatureFlagProvider {...features} {...props} />,
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({
       fabric: false,
@@ -32,8 +40,11 @@ describe('FeatureFlagProvider', () => {
 
   it('handles frontier: true and individual frontier overrides properly', () => {
     const features = { frontier: true, frontierButton: false };
+    function Wrapper(props: FeatureFlagProviderProps) {
+      return <FeatureFlagProvider {...features} {...props} />;
+    }
     const { result } = renderHook(() => useFeatureFlags(), {
-      wrapper: (props) => <FeatureFlagProvider {...features} {...props} />,
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({
       fabric: false,

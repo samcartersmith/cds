@@ -121,7 +121,7 @@ export const Select = memo(
                   <HStack
                     alignItems="center"
                     background
-                    borderRadius="standard"
+                    borderRadius="rounded"
                     justifyContent={compact ? 'flex-end' : 'flex-start'}
                     spacingStart={startNode ? 0 : getSpacingStart}
                     spacingVertical={compact ? 1 : 2}

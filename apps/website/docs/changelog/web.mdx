@@ -8,11 +8,19 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.0.0 ((6/5/2023, 04:33 PM PST))
 
-#### 📘 Misc
+#### 💥 Breaking
 
-- Fix spacing comparison w/ mono-pipeline.
+- **[Q1 2023 Deprecations]** Deprecations were removed, see [go/cds-deprecations](https://cds.cbhq.net/resources/deprecations) for the full list of deprecations and migration guidance
+- **[VStack]** Updated VStack styling for when as="ul" is enabled [#1922](https://github.cbhq.net/frontend/cds/pull/1922), [DX-990](https://jira.coinbase-corp.com/browse/DX-990)
+- **[all]** Base PR for Expo Migration, React Native 71.4, Reanimated V3 & React 18. [#1775](https://github.cbhq.net/frontend/cds/pull/1775), [DX-709](https://jira.coinbase-corp.com/browse/DX-709)
+- **[ui-mobile-playground, ui-mobile-visreg]** Release Candidate 1. [#1822](https://github.cbhq.net/frontend/cds/pull/1822)
+- **[ui-mobile-playground]** Separate UI code from visreg code for playgrounds. [#1810](https://github.cbhq.net/frontend/cds/pull/1810)
+
+#### 🐞 Fixes
+
+- **[ui-mobile-playground, ui-mobile-visreg]** Fix Npm Pack. [#1841](https://github.cbhq.net/frontend/cds/pull/1841)
 
 ## 4.2.14 ((6/4/2023, 12:57 PM PST))
 

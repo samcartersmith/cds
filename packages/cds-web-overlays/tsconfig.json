@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "outDir": "../../.nx/dts/packages/cds-web-overlays",
+    "rootDir": "./src"
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "dts",
+    "lib",
+    "dist", 
+    "jest.config.js", 
+    "babel.config.js", 
+    "babel.build.config.js"
+  ],
+  "references": [
+    {
+      "path": "../../packages/web"
+    },
+    {
+      "path": "../../packages/common"
+    }
+  ]
+}

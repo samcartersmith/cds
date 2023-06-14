@@ -103,6 +103,8 @@ export const RemoteImage = memo(function RemoteImage({
   size = 'm',
   dangerouslySetStyle,
   borderColor,
+  onError,
+  onLoad,
   fallbackAccessibilityLabel,
   fallbackAccessibilityHint,
   ...props
@@ -234,6 +236,8 @@ export const RemoteImage = memo(function RemoteImage({
       source={transformedSource as ImageSourcePropType}
       accessible={!!props.accessibilityLabel}
       accessibilityRole="image"
+      onError={onError}
+      onLoad={onLoad}
       {...props}
       style={stylesWithDimensions}
     />

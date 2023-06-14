@@ -59,6 +59,18 @@
       "@cbhq/cds-mobile/*": [
         "packages/mobile/*"
       ],
+      "@cbhq/cds-web-overlays": [
+        "packages/cds-web-overlays/src"
+      ],
+      "@cbhq/cds-web-overlays/*": [
+        "packages/cds-web-overlays/src/*"
+      ],
+      "@cbhq/cds-mobile-visualization": [
+        "packages/mobile-visualization/src"
+      ],
+      "@cbhq/cds-mobile-visualization/*": [
+        "packages/mobile-visualization/src/*"
+      ],
       "@cbhq/cds-utils": [
         "packages/utils"
       ],
@@ -67,6 +79,9 @@
       ],
       "@cbhq/cds-web": [
         "packages/web"
+      ],
+      "@cbhq/cds-web-visualization": [
+        "packages/web-visualization"
       ],
       "@cbhq/cds-web-utils": [
         "packages/web-utils/src"
@@ -102,7 +117,10 @@
         "packages/script-utils/src"
       ],
       "@cbhq/ui-mobile-playground": [
-        "packages/ui-mobile-playground"
+        "packages/ui-mobile-playground/src"
+      ],
+      "@cbhq/ui-mobile-visreg": [
+        "packages/ui-mobile-visreg/src"
       ],
       "@cbhq/ui-scorecard": [
         "packages/ui-scorecard"

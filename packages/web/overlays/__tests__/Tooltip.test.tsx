@@ -1,7 +1,31 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { BaseTooltipPlacement } from '@cbhq/cds-common/types';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { StoryExample } from '../__fixtures__/StoryExample';
+import { Button } from '../../buttons/Button';
+import { PortalProvider } from '../PortalProvider';
+import { Tooltip } from '../Tooltip/Tooltip';
+
+const tooltipTestID = 'tooltip-test';
+
+const StoryExample = ({
+  placement = 'top',
+}: {
+  disabled?: boolean;
+  placement?: BaseTooltipPlacement;
+}) => {
+  return (
+    <PortalProvider>
+      <Tooltip
+        testID={tooltipTestID}
+        content="This is the content in the tooltip!"
+        placement={placement}
+      >
+        <Button>Button</Button>
+      </Tooltip>
+    </PortalProvider>
+  );
+};
 
 describe('Tooltip', () => {
   it('passes accessibility', async () => {
@@ -13,33 +37,28 @@ describe('Tooltip', () => {
       await renderA11y(<StoryExample />, {
         async afterRender() {
           fireEvent.mouseEnter(screen.getByRole('button'));
-
-          return waitFor(() => screen.getByRole('tooltip'));
+          const tooltip = await screen.findByTestId(tooltipTestID);
+          return tooltip;
         },
       }),
     ).toHaveNoViolations();
   });
 
-  it('renders the button with a tooltip', () => {
+  it('renders the button with a tooltip but does not show content', () => {
     render(<StoryExample />);
 
     expect(screen.getByRole('button')).toBeDefined();
-    expect(screen.getByRole('tooltip', { hidden: true })).toBeDefined();
+    expect(screen.queryByTestId(tooltipTestID)).not.toBeInTheDocument();
   });
 
-  it('shows tooltip on hover', async () => {
+  it('shows tooltip content on hover', async () => {
     render(<StoryExample />);
     const button = screen.getByRole('button');
 
-    let tooltip = screen.getByRole('tooltip', { hidden: true });
-
-    expect(button).toHaveAttribute('aria-describedby', tooltip.id);
-    expect(tooltip).toHaveAttribute('hidden');
+    expect(screen.queryByTestId(tooltipTestID)).not.toBeInTheDocument();
 
     fireEvent.mouseEnter(button as Element);
 
-    tooltip = await screen.findByRole('tooltip');
-
-    expect(tooltip).not.toHaveAttribute('hidden');
+    expect(await screen.findByTestId(tooltipTestID)).toBeInTheDocument();
   });
 });

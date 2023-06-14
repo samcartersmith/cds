@@ -1,0 +1,35 @@
+{
+  "name": "@cbhq/cds-web-visualization",
+  "version": "0.0.4",
+  "description": "Coinbase Design System - Web Sparkline",
+  "repository": "git@github.cbhq.net:frontend/cds.git",
+  "keywords": [
+    "design system",
+    "component library",
+    "sparkline",
+    "react",
+    "typescript"
+  ],
+  "authors": {
+    "coinbase": "coinbase"
+  },
+  "main": "index",
+  "typings": "index.d.ts",
+  "dependencies": {
+    "@cbhq/d3": "workspace:^",
+    "d3-interpolate-path": "^2.2.2",
+    "d3-selection": "^1.4.2",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-lottie-files": "workspace:^",
+    "@cbhq/cds-utils": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "linaria": "^2.3.1"
+  }
+}

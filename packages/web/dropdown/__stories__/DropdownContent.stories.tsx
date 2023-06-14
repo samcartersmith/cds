@@ -51,6 +51,6 @@ export const DropdownContentExamples = () => {
 };
 
 export default {
-  title: 'Core Components/Dropdown/DropdownContent',
+  title: 'Core Components/Dropdown/DropdownContent (deprecated - moved to cds-web-overlays)',
   component: DropdownExample,
 };

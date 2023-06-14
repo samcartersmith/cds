@@ -12,7 +12,7 @@ import { VStack, HStack } from '@cbhq/cds-web/layout';
 
 Deprecations will be deleted at the end of each quarter in a breaking release. The previous two major releases will enter maintenance mode and will be patched as needed.
 
-Resources for how to migrate deprecations, workarounds, and documentation are forthcoming in Q12023.
+We strongly recommend that you use `cds-migrator` to automatically migrate deprecations to their respective replacements. In the case that a migration is not possible, we will provide a manual migration guide in the console. Refer to the [Migration Guide](../../guides/migration) for the appropriate breaking release for more information.
 
 <!-- DO NOT MODIFY below this line, this is codegen -->
 <!-- You can update this page by deleting everything below the `template-start` comment and run `yarn nx run website:deprecations` -->
@@ -20,7 +20,7 @@ Resources for how to migrate deprecations, workarounds, and documentation are fo
 
 ## Q12023 Deprecations
 
-The following items will be deleted at the end of Q12023 in a breaking release. Release version is TBD.
+The following items will be deleted at the end of Q12023 in v5.0.0
 
 ### 🧱 Components
 
@@ -1998,9 +1998,1410 @@ The following items will be deleted at the end of Q12023 in a breaking release. 
   </AccordionItem>
 </Accordion>
 
+## Q22023 Deprecations
+
+The following items will be deleted at the end of Q22023 in a breaking release.
+
+### 🧱 Components
+
+<Accordion>
+  <AccordionItem
+    itemKey="Dropdown.web"
+    title={
+      <HStack gap={1}>
+        Dropdown <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/dropdown/Dropdown.tsx"
+          target="_blank"
+        >
+          packages/web/dropdown/Dropdown.tsx
+        </a>
+      </p>
+      <p>
+        <code>Dropdown</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="DropdownContent.web"
+    title={
+      <HStack gap={1}>
+        DropdownContent <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/dropdown/DropdownContent.tsx"
+          target="_blank"
+        >
+          packages/web/dropdown/DropdownContent.tsx
+        </a>
+      </p>
+      <p>
+        <code>DropdownContent</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="DropdownProps.web"
+    title={
+      <HStack gap={1}>
+        DropdownProps <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/dropdown/DropdownProps.ts"
+          target="_blank"
+        >
+          packages/web/dropdown/DropdownProps.ts
+        </a>
+      </p>
+      <p>
+        <code>DropdownProps</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="MenuItem.web"
+    title={
+      <HStack gap={1}>
+        MenuItem <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/dropdown/MenuItem.tsx"
+          target="_blank"
+        >
+          packages/web/dropdown/MenuItem.tsx
+        </a>
+      </p>
+      <p>
+        <code>MenuItem</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="index.web"
+    title={
+      <HStack gap={1}>
+        index <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/dropdown/index.ts"
+          target="_blank"
+        >
+          packages/web/dropdown/index.ts
+        </a>
+      </p>
+      <p>
+        <code>index</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="index.web"
+    title={
+      <HStack gap={1}>
+        index <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/index.ts"
+          target="_blank"
+        >
+          packages/web/index.ts
+        </a>
+      </p>
+      <p>
+        <code>index</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Popover.web"
+    title={
+      <HStack gap={1}>
+        Popover <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/overlays/popover/Popover.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/popover/Popover.tsx
+        </a>
+      </p>
+      <p>
+        <code>Popover</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="PopoverProps.web"
+    title={
+      <HStack gap={1}>
+        PopoverProps <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/overlays/popover/PopoverProps.ts"
+          target="_blank"
+        >
+          packages/web/overlays/popover/PopoverProps.ts
+        </a>
+      </p>
+      <p>
+        <code>PopoverProps</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="usePopper.web"
+    title={
+      <HStack gap={1}>
+        usePopper <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/overlays/popover/usePopper.ts"
+          target="_blank"
+        >
+          packages/web/overlays/popover/usePopper.ts
+        </a>
+      </p>
+      <p>
+        <code>usePopper</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Select.web"
+    title={
+      <HStack gap={1}>
+        Select <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/controls/Select.tsx"
+          target="_blank"
+        >
+          packages/web/controls/Select.tsx
+        </a>
+      </p>
+      <p>
+        <code>Select</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SelectOption.web"
+    title={
+      <HStack gap={1}>
+        SelectOption <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/controls/SelectOption.tsx"
+          target="_blank"
+        >
+          packages/web/controls/SelectOption.tsx
+        </a>
+      </p>
+      <p>
+        <code>SelectOption</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SidebarItem.web"
+    title={
+      <HStack gap={1}>
+        SidebarItem <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/navigation/SidebarItem.tsx"
+          target="_blank"
+        >
+          packages/web/navigation/SidebarItem.tsx
+        </a>
+      </p>
+      <p>
+        <code>SidebarItem</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SidebarMoreMenu.web"
+    title={
+      <HStack gap={1}>
+        SidebarMoreMenu <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/navigation/SidebarMoreMenu.tsx"
+          target="_blank"
+        >
+          packages/web/navigation/SidebarMoreMenu.tsx
+        </a>
+      </p>
+      <p>
+        <code>SidebarMoreMenu</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Tooltip.web"
+    title={
+      <HStack gap={1}>
+        Tooltip <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/overlays/Tooltip/Tooltip.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/Tooltip/Tooltip.tsx
+        </a>
+      </p>
+      <p>
+        <code>Tooltip</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="TooltipContent.web"
+    title={
+      <HStack gap={1}>
+        TooltipContent <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/overlays/Tooltip/TooltipContent.tsx"
+          target="_blank"
+        >
+          packages/web/overlays/Tooltip/TooltipContent.tsx
+        </a>
+      </p>
+      <p>
+        <code>TooltipContent</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="TooltipProps.web"
+    title={
+      <HStack gap={1}>
+        TooltipProps <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/overlays/Tooltip/TooltipProps.ts"
+          target="_blank"
+        >
+          packages/web/overlays/Tooltip/TooltipProps.ts
+        </a>
+      </p>
+      <p>
+        <code>TooltipProps</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useTooltipState.web"
+    title={
+      <HStack gap={1}>
+        useTooltipState <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/overlays/Tooltip/useTooltipState.ts"
+          target="_blank"
+        >
+          packages/web/overlays/Tooltip/useTooltipState.ts
+        </a>
+      </p>
+      <p>
+        <code>useTooltipState</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineGradient.web"
+    title={
+      <HStack gap={1}>
+        SparklineGradient <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/SparklineGradient.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/SparklineGradient.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineGradient</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineAreaPattern.web"
+    title={
+      <HStack gap={1}>
+        SparklineAreaPattern <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/SparklineAreaPattern.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/SparklineAreaPattern.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineAreaPattern</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineArea.web"
+    title={
+      <HStack gap={1}>
+        SparklineArea <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/SparklineArea.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/SparklineArea.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineArea</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Sparkline.web"
+    title={
+      <HStack gap={1}>
+        Sparkline <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/Sparkline.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/Sparkline.tsx
+        </a>
+      </p>
+      <p>
+        <code>Sparkline</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Counter.web"
+    title={
+      <HStack gap={1}>
+        Counter <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/Counter.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/Counter.tsx
+        </a>
+      </p>
+      <p>
+        <code>Counter</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklinePath.web"
+    title={
+      <HStack gap={1}>
+        SparklinePath <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/SparklinePath.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/SparklinePath.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklinePath</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="VisualizationContainer.web"
+    title={
+      <HStack gap={1}>
+        VisualizationContainer <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/VisualizationContainer.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/VisualizationContainer.tsx
+        </a>
+      </p>
+      <p>
+        <code>VisualizationContainer</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveHeader.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveHeader <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveHeader</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="InnerSparklineInteractiveProvider.web"
+    title={
+      <HStack gap={1}>
+        InnerSparklineInteractiveProvider <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/InnerSparklineInteractiveProvider.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/InnerSparklineInteractiveProvider.tsx
+        </a>
+      </p>
+      <p>
+        <code>InnerSparklineInteractiveProvider</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractive.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractive <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractive.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractive.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractive</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveAnimatedPath.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveAnimatedPath <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveAnimatedPath</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveHoverDate.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveHoverDate <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveHoverDate</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveLineVertical.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveLineVertical <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveLineVertical</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveMarkerDates.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveMarkerDates <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveMarkerDates</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractivePaths.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractivePaths <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractivePaths</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractivePeriodSelector.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractivePeriodSelector <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractivePeriodSelector</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveProvider.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveProvider <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveProvider</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveScrubHandler.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveScrubHandler <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubHandler.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubHandler.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveScrubHandler</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveScrubProvider.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveScrubProvider <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubProvider.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubProvider.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveScrubProvider</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveTimeseriesPaths.web"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveTimeseriesPaths <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveTimeseriesPaths</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useSparklineInteractiveConstants.web"
+    title={
+      <HStack gap={1}>
+        useSparklineInteractiveConstants <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/web/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts"
+          target="_blank"
+        >
+          packages/web/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts
+        </a>
+      </p>
+      <p>
+        <code>useSparklineInteractiveConstants</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="newRoutes.mobile"
+    title={
+      <HStack gap={1}>
+        newRoutes <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/examples/newRoutes.ts"
+          target="_blank"
+        >
+          packages/mobile/examples/newRoutes.ts
+        </a>
+      </p>
+      <p>
+        <code>newRoutes</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Sparkline.mobile"
+    title={
+      <HStack gap={1}>
+        Sparkline <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/Sparkline.ts"
+          target="_blank"
+        >
+          packages/mobile/visualizations/Sparkline.ts
+        </a>
+      </p>
+      <p>
+        <code>Sparkline</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractive.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractive <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/SparklineInteractive.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/SparklineInteractive.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractive</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveHeader.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveHeader <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/SparklineInteractiveHeader.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/SparklineInteractiveHeader.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveHeader</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineGradient.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineGradient <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/SparklineGradient.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/SparklineGradient.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineGradient</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveAnimatedPath.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveAnimatedPath <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveAnimatedPath</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveHoverDate.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveHoverDate <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveHoverDate</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveLineVertical.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveLineVertical <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveLineVertical</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveMarkerDates.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveMarkerDates <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveMarkerDates</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveMinMax.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveMinMax <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMinMax.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMinMax.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveMinMax</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractivePanGestureHandler.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractivePanGestureHandler <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePanGestureHandler.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePanGestureHandler.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractivePanGestureHandler</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractivePaths.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractivePaths <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractivePaths</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractivePeriodSelector.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractivePeriodSelector <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractivePeriodSelector</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveProvider.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveProvider <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveProvider</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="SparklineInteractiveTimeseriesPaths.mobile"
+    title={
+      <HStack gap={1}>
+        SparklineInteractiveTimeseriesPaths <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx
+        </a>
+      </p>
+      <p>
+        <code>SparklineInteractiveTimeseriesPaths</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useInterruptiblePathAnimation.mobile"
+    title={
+      <HStack gap={1}>
+        useInterruptiblePathAnimation <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation.ts"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation.ts
+        </a>
+      </p>
+      <p>
+        <code>useInterruptiblePathAnimation</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useMinMaxTransform.mobile"
+    title={
+      <HStack gap={1}>
+        useMinMaxTransform <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/useMinMaxTransform.ts"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/useMinMaxTransform.ts
+        </a>
+      </p>
+      <p>
+        <code>useMinMaxTransform</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useOpacityAnimation.mobile"
+    title={
+      <HStack gap={1}>
+        useOpacityAnimation <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/useOpacityAnimation.ts"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/useOpacityAnimation.ts
+        </a>
+      </p>
+      <p>
+        <code>useOpacityAnimation</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useSparklineInteractiveConstants.mobile"
+    title={
+      <HStack gap={1}>
+        useSparklineInteractiveConstants <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts
+        </a>
+      </p>
+      <p>
+        <code>useSparklineInteractiveConstants</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="useSparklineInteractiveLineStyles.mobile"
+    title={
+      <HStack gap={1}>
+        useSparklineInteractiveLineStyles <Tag colorScheme="gray">path</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v4.1.3/packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveLineStyles.ts"
+          target="_blank"
+        >
+          packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveLineStyles.ts
+        </a>
+      </p>
+      <p>
+        <code>useSparklineInteractiveLineStyles</code> has been removed from the CDS library.
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
+
 ## Q32023 Deprecations
 
-The following items will be deleted at the end of Q32023 in a breaking release. Release version is TBD.
+The following items will be deleted at the end of Q32023 in a breaking release.
 
 ### 🎭 Props
 

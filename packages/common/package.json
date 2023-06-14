@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-common",
-  "version": "4.2.14",
+  "version": "5.0.0",
   "description": "Coinbase Design System - Common",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -23,8 +23,8 @@
   "peerDependencies": {
     "@cbhq/cds-icons": "workspace:^",
     "@cbhq/cds-illustrations": "workspace:^",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "18.2.0",
+    "react-dom": "^18.2.0"
   },
   "react-native": "./index.ts",
   "main": "index",

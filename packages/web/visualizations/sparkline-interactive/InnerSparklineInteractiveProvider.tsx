@@ -9,6 +9,9 @@ type InnerSparklineInteractiveProviderProps = {
   children: React.ReactNode;
 };
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export const InnerSparklineInteractiveProvider = ({
   width,
   height,

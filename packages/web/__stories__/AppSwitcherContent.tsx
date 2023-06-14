@@ -4,7 +4,7 @@ import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { TileButton } from '../buttons/TileButton';
 import { Divider, HStack, VStack } from '../layout';
-import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
+import { TextCaption } from '../typography/TextCaption';
 import { getZIndexFromRow } from '../utils/overflow';
 
 const appSwitcherData: AppSwitcherData = {
@@ -67,7 +67,11 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
   const rowsArr = Array.from(Array(rows), (_, i) => i + 1);
   return (
     <VStack spacingHorizontal={2}>
-      <SectionTitle text={data.sectionTitle} />
+      <HStack spacingHorizontal={2} spacingVertical={2}>
+        <TextCaption as="h2" color="foregroundMuted">
+          {data.sectionTitle}
+        </TextCaption>
+      </HStack>
       {rowsArr.map((_, row) => {
         return (
           <HStack gap={0.5} key={_}>
@@ -98,6 +102,9 @@ type AppSwitcherContentProps = {
   data?: AppSwitcherData;
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const AppSwitcherContent = memo(
   ({ columns = 3, data = appSwitcherData }: AppSwitcherContentProps) => {
     return (

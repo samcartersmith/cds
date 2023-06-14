@@ -31,21 +31,29 @@ const paletteAsCssVars = {
 
 describe('useElevationStyles', () => {
   it('returns emptyObject if not used in an elevated surface and no elevation is passed in', () => {
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return <div {...props} />;
+    }
+
     const { result } = renderHook(() => useElevationStyles(), {
-      wrapper: (props) => <div {...props} />,
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({});
   });
 
   it('light mode - returns emptyObject if used in an elevated surface but no elevation is passed to ElevationProvider', () => {
-    const { result } = renderHook(() => useElevationStyles(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider>
           <ElevationProvider>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+
+    const { result } = renderHook(() => useElevationStyles(), {
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({});
   });
@@ -67,39 +75,48 @@ describe('useElevationStyles', () => {
   });
 
   it('light mode - does not return a style object for the child of an elevated surface with level 1', () => {
-    const { result } = renderHook(() => useElevationStyles(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider>
           <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => useElevationStyles(), {
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({});
   });
 
   it('light mode - does not return a style object for the child of an elevated surface with level 2', () => {
-    const { result } = renderHook(() => useElevationStyles(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider>
-          <ElevationProvider elevation={2}>
+          <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => useElevationStyles(), {
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({});
   });
 
   it('dark mode - returns a style object for an elevated surface with level 1', () => {
     /** If value is passed in then we know this is for the elevated surface and not its children */
-    const { result } = renderHook(() => useElevationStyles(1), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={1} {...props} />
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => useElevationStyles(1), {
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({
       ...paletteAsCssVars,
@@ -111,12 +128,15 @@ describe('useElevationStyles', () => {
 
   it('dark mode - returns a style object for an elevated surface with level 2', () => {
     /** If value is passed in then we know this is for the elevated surface and not its children */
-    const { result } = renderHook(() => useElevationStyles(2), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={2} {...props} />
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => useElevationStyles(2), {
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({
       ...paletteAsCssVars,
@@ -127,14 +147,17 @@ describe('useElevationStyles', () => {
   });
 
   it('dark mode - returns a style object for the child of an elevated surface with level 1', () => {
-    const { result } = renderHook(() => useElevationStyles(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => useElevationStyles(), {
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({
       ...paletteAsCssVars,
@@ -146,14 +169,17 @@ describe('useElevationStyles', () => {
   });
 
   it('dark mode - returns a style object for the child of an elevated surface with level 2', () => {
-    const { result } = renderHook(() => useElevationStyles(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={2}>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => useElevationStyles(), {
+      wrapper: Wrapper,
     });
     expect(result.current).toEqual({
       ...paletteAsCssVars,

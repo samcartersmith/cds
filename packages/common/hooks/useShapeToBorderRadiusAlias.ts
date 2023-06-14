@@ -1,11 +1,9 @@
 import { useMemo } from 'react';
 
-import { BorderRadiusAlpha } from '../types/BorderRadius';
+import { BorderRadius } from '../types/BorderRadius';
 import { Shape } from '../types/Shape';
 
-export function useShapeToBorderRadiusAlias(
-  shape: Shape | undefined,
-): BorderRadiusAlpha | undefined {
+export function useShapeToBorderRadiusAlias(shape: Shape | undefined): BorderRadius | undefined {
   return useMemo(() => {
     switch (shape) {
       case 'circle':

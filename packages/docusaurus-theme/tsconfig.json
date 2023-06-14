@@ -2,10 +2,17 @@
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "lib"
+    "outDir": "../../.nx/dts/packages/docusaurus-theme"
   },
-  "include": ["src", "scripts"],
-  "exclude": ["node_modules", "**/__tests__/**/*", "lib"],
+  "include": [
+    "src",
+    "scripts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__tests__/**/*",
+    "lib"
+  ],
   "references": [
     {
       "path": "../docusaurus-plugin-docgen"
@@ -26,6 +33,8 @@
   "ts-node": {
     "transpileOnly": true,
     "files": true,
-    "require": ["tsconfig-paths/register"]
+    "require": [
+      "tsconfig-paths/register"
+    ]
   }
 }

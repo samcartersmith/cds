@@ -7,6 +7,9 @@ import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export default {
   title: 'Core Components/Inputs/Select',
   component: Select,
@@ -26,6 +29,9 @@ const components = {
   InputIcon,
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const { Default, InputStackOptions, Disabled, Compact, Variants } = selectBuilder(
   components as unknown as CreateSelectStoriesProps,
 );
@@ -45,8 +51,14 @@ Disabled.parameters = {
   },
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const SmallSelect = () => <Default width={80} />;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const {
   Default: DarkMode,
   InputStackOptions: DarkInputStackOptions,
@@ -73,6 +85,9 @@ DarkDisabled.parameters = {
   },
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const {
   Default: Dense,
   InputStackOptions: DenseInputStackOptions,
@@ -110,6 +125,9 @@ const NativeSelect = () => {
   );
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const {
   HundredCDSComponents: HundredCDSSelectComponents,
   HundredHTMLComponent: HundredNativeSelectComponents,

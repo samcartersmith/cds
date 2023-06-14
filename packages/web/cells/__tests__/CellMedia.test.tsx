@@ -183,7 +183,7 @@ describe('CellMedia', () => {
       render(
         <CellMedia
           type="pictogram"
-          illustration={<Pictogram name="2fa" dimension="96x96" scaleMultiplier={2} />}
+          illustration={<Pictogram name="2fa" dimension="64x64" scaleMultiplier={2} />}
         />,
       );
       const image = screen.getByRole('img');
@@ -240,7 +240,7 @@ describe('CellMedia', () => {
       render(
         <CellMedia
           type="pictogram"
-          illustration={<Pictogram name="2fa" dimension="96x96" scaleMultiplier={2} />}
+          illustration={<Pictogram name="2fa" dimension="64x64" scaleMultiplier={2} />}
         />,
       );
       const image = screen.getByRole('img');

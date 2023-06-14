@@ -33,7 +33,7 @@ const SelectExample = () => {
         alignItems="center"
         spacing={6}
         background="backgroundAlternate"
-        borderRadius="standard"
+        borderRadius="rounded"
       >
         <div>
           <TextTitle3 as="h2" spacingBottom={2}>

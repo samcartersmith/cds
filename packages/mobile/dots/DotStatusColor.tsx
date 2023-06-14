@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { View, ViewStyle } from 'react-native';
 import { useIconSize } from '@cbhq/cds-common';
-import { borderRadius } from '@cbhq/cds-common/tokens/border';
+import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
@@ -32,7 +32,7 @@ export const DotStatusColor = memo(
 
     const dotContentStyles: ViewStyle = useMemo(() => {
       return {
-        borderRadius: borderRadius.round,
+        borderRadius: borderRadius.roundedFull,
         width: iconSize,
         height: iconSize,
         backgroundColor: palette[variant],

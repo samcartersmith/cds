@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Merge master into release.
+
 ## 1.4.0 (5/3/2023 PST)
 
 #### 🚀 Updates

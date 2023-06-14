@@ -1,0 +1,25 @@
+{
+  "name": "@cbhq/cds-web-overlays",
+  "version": "0.0.3",
+  "description": "",
+  "keywords": [],
+  "main": "index",
+  "typings": "index.d.ts",
+  "peerDependencies": {
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-utils": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.0",
+    "framer-motion": "^6.2.8",
+    "react-popper": "^2.2.4"
+  },
+  "devDependencies": {
+    "@cbhq/cds-tasks": "workspace:^",
+    "linaria": "^2.3.1",
+    "lodash": "^4.17.21"
+  }
+}

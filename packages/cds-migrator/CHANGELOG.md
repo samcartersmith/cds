@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 🚀 Updates
 
+- [trivial] feat: Added scripts for package decomp migrations. [[#1998](https://github.cbhq.net/frontend/cds/pull/1998)]
+
+#### 🚀 Updates
+
 - [trivial] feat: improved file parsing performance. [[#2008](https://github.cbhq.net/frontend/cds/pull/2008)]
 
 ## 0.1.2 (5/25/2023 PST)
@@ -25,6 +29,14 @@ All notable changes to this project will be documented in this file.
 - [trivial] feat: Added migration scripts for v5 release [[#1963](https://github.cbhq.net/frontend/cds/pull/1963)]
 
 ## 0.1.0 (5/11/2023 PST)
+
+#### 🚀 Updates
+
+- Add new helper and v5 migrations for Vstack. [[#1965](https://github.cbhq.net/frontend/cds/pull/1965)] [[DX-990](https://jira.coinbase-corp.com/browse/DX-990)]
+
+#### 📘 Misc
+
+- Update release branch to latest master. [[#1961](https://github.cbhq.net/frontend/cds/pull/1961)]
 
 #### 💥 Breaking
 

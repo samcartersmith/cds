@@ -49,6 +49,10 @@ export type Deprecation = {
    * @example 'v4.1.3' in https://github.cbhq.net/frontend/cds/blob/v4.1.3
    */
   prevMajorVersion: string;
+  /**
+   * Major release where the deprecations will be deleted
+   */
+  breakingRelease?: string;
   components?: Partial<Component>[];
   types?: Type[];
   props?: Prop[];
@@ -58,4 +62,7 @@ export type Deprecation = {
   params?: Param[];
 };
 
-export type DeprecationGroups = keyof Omit<Deprecation, 'endOfLife' | 'prevMajorVersion'>;
+export type DeprecationGroups = keyof Omit<
+  Deprecation,
+  'endOfLife' | 'prevMajorVersion' | 'breakingRelease'
+>;

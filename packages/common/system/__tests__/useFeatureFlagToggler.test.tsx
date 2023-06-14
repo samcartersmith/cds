@@ -1,11 +1,14 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { FeatureFlagProvider } from '../FeatureFlagProvider';
+import { FeatureFlagProvider, FeatureFlagProviderProps } from '../FeatureFlagProvider';
 import { useFeatureFlags } from '../useFeatureFlags';
 import { useFeatureFlagToggler } from '../useFeatureFlagToggler';
 
 describe('useFeatureFlagToggler', () => {
   it('correctly handles toggling a feature flag', () => {
+    function Wrapper(props: FeatureFlagProviderProps) {
+      return <FeatureFlagProvider {...props} />;
+    }
     const { result } = renderHook(
       () => {
         return {
@@ -14,7 +17,7 @@ describe('useFeatureFlagToggler', () => {
         };
       },
       {
-        wrapper: (props) => <FeatureFlagProvider {...props} />,
+        wrapper: Wrapper,
       },
     );
     expect(result.current.featureFlags.frontierTypography).toBe(false);

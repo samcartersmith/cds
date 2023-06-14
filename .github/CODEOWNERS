@@ -5,3 +5,6 @@
 .* @frontend/dx-ui-systems-guild
 *.config.js @frontend/dx-ui-systems-guild
 *.json @frontend/dx-ui-systems-guild
+
+# FROM ./packages/mobile-visualization/OWNERS
+/packages/mobile-visualization/ @frontend/dx-ui-systems-guild

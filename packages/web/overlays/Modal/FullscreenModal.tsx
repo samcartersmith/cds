@@ -97,7 +97,6 @@ export const FullscreenModal = memo(function FullscreenModal({
   accessibilityLabel,
 }: FullscreenModalProps) {
   const { labelledBySource, labelledBy, label } = useA11yLabels({
-    labelledByIdPrefix: 'modal-title-',
     accessibilityLabelledBy,
     accessibilityLabel,
   });

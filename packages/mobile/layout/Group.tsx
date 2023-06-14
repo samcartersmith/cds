@@ -11,19 +11,9 @@ export type GroupProps = GroupBaseProps<BoxProps>;
 
 export const Group = memo(
   forwardRef<View, GroupProps>(function Group(
-    {
-      children,
-      direction: directionProp = 'vertical',
-      divider,
-      gap,
-      horizontal,
-      renderItem,
-      ...boxProps
-    },
+    { children, direction = 'vertical', divider, gap, renderItem, ...boxProps },
     forwardedRef,
   ) {
-    // TODO: Remove once `horizontal` is sunset in Q2.
-    const direction = horizontal ? 'horizontal' : directionProp;
     const contents = useMemo(
       () =>
         flattenAndJoinNodes({

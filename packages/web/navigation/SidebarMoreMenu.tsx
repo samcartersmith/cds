@@ -10,6 +10,9 @@ import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 import { useSidebarContext } from './SidebarContext';
 import { SidebarItem, SidebarItemProps } from './SidebarItem';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export type SidebarMoreMenuProps = {
   children: ReactNode;
   /**
@@ -21,6 +24,9 @@ export type SidebarMoreMenuProps = {
   Pick<SidebarItemProps, 'active' | 'tooltipContent' | 'onPress'> &
   SharedProps;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   children,
   active,

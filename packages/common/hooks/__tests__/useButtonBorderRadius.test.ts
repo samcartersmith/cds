@@ -7,12 +7,12 @@ import { useInteractableHeight } from '../useInteractableHeight';
 describe('useButtonBorderRadius', () => {
   it('returns correct borderRadius for frontier: false & compact: false', () => {
     const { result } = renderHook(() => useButtonBorderRadius(false));
-    expect(result.current).toBe('standard');
+    expect(result.current).toBe('rounded');
   });
 
   it('returns correct borderRadius for frontier: false & compact: true', () => {
     const { result } = renderHook(() => useButtonBorderRadius(true));
-    expect(result.current).toBe('compact');
+    expect(result.current).toBe('roundedSmall');
   });
 
   it('returns correct borderRadius for frontier: true & compact: false', () => {

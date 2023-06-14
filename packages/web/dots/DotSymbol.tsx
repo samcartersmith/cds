@@ -78,7 +78,7 @@ export const DotSymbol = memo(
               dangerouslySetClassName={iconBorderClassName}
               spacing={0.5}
               background="primary"
-              borderRadius="round"
+              borderRadius="roundedFull"
               borderColor="secondary"
             >
               <Icon color="primaryForeground" name={iconName} size={size} />

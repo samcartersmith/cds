@@ -73,11 +73,17 @@ const longTabs: TabProps[] = [
 ];
 const tabs = longTabs.slice(0, 5);
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export default {
-  title: 'Core Components/Tabs/TabNavigation',
+  title: 'Core Components/Tabs/TabNavigation (deprecated - moved to cds-web-overlays)',
   component: TabNavigation,
 } as Meta;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Default: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
 
@@ -118,6 +124,9 @@ Default.parameters = {
   a11y: a11ySkipConfig,
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const WithPaddles: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
 
@@ -125,6 +134,9 @@ export const WithPaddles: Story = () => {
 };
 WithPaddles.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const WithDotCountChange: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
   const [count, setCount] = useState(0);
@@ -177,6 +189,9 @@ export const WithDotCountChange: Story = () => {
 };
 WithDotCountChange.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Secondary: Story = () => {
   const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>();
 
@@ -227,6 +242,9 @@ export const Secondary: Story = () => {
 };
 Secondary.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const AccessibilityTest: Story = () => {
   const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>(tabs[0].id);
 

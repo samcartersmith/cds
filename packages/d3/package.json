@@ -21,7 +21,7 @@
     "d3-dispatch": "1.0.6",
     "d3-ease": "1.0.7",
     "d3-format": "2.0.0",
-    "d3-selection": "1.4.2",
+    "d3-selection": "^1.4.2",
     "d3-time": "2.1.1",
     "d3-time-format": "3.0.0",
     "d3-timer": "1.0.10"

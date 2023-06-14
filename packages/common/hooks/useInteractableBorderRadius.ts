@@ -1,4 +1,4 @@
-import { borderRadius as borderRadii } from '../tokens/border';
+import { borderRadius as borderRadii } from '../tokens/borderRadius';
 import { InteractableBaseProps } from '../types/InteractableBaseProps';
 
 export function useInteractableBorderRadius(borderRadius?: InteractableBaseProps['borderRadius']) {

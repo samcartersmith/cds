@@ -21,6 +21,10 @@ import { UserSwitcher } from './UserSwitcher.stories';
 
 const sidebarItems = items.slice(0, 4);
 const moreMenuOptions = items.slice(4);
+
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const NavigationRecipe = () => {
   const [isCollapsed, handleToggleCollapsed] = useToggler(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -112,7 +116,10 @@ export const NavigationRecipe = () => {
   );
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export default {
-  title: 'Core Components/Recipes/Navigation',
+  title: 'Core Components/Recipes/Navigation  (deprecated - moved to cds-web-overlays)',
   component: NavigationRecipe,
 };

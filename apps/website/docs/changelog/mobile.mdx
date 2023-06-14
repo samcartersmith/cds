@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.0.0 (6/5/2023 PST)
+
+#### 💥 Breaking
+
+- **[Q1 2023 Deprecations]** Deprecations were removed, see [go/cds-deprecations](https://cds.cbhq.net/resources/deprecations) for the full list of deprecations and migration guidance
+- **[all]** Base PR for Expo Migration, React Native 71.4, Reanimated V3 & React 18. [#1775](https://github.cbhq.net/frontend/cds/pull/1775), [DX-709](https://jira.coinbase-corp.com/browse/DX-709)
+- **[ui-mobile-playground, ui-mobile-visreg]** Release Candidate 1. [#1822](https://github.cbhq.net/frontend/cds/pull/1822)
+- **[ui-mobile-playground]** Separate UI code from visreg code for playgrounds. [#1810](https://github.cbhq.net/frontend/cds/pull/1810)
+
+#### 🐞 Fixes
+
+- Updated reanimated to 3.1.0. [[#2012](https://github.cbhq.net/frontend/cds/pull/2012)] [[DX-1646](https://jira.coinbase-corp.com/browse/DX-1646)]
+- **[ui-mobile-playground, ui-mobile-visreg]** Fix Npm Pack. [#1841](https://github.cbhq.net/frontend/cds/pull/1841)
+
+#### 📘 Misc
+
+- Rebase sparkline-mobile decomposition on release branch.
+
 ## 4.2.14 (6/4/2023 PST)
 
 #### 🐞 Fixes

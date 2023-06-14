@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { generateRandomId } from '@cbhq/cds-utils';
+import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
 
 export type AriaHasPopupType = 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 
@@ -20,7 +20,7 @@ export const usePopoverA11y = (
   isDropdown: boolean,
   accessibilityLabel?: string,
 ): AccessibleControlledReturnType => {
-  const uniqueId = useMemo(() => generateRandomId(accessibilityLabel), [accessibilityLabel]);
+  const uniqueId = usePrefixedId(accessibilityLabel);
 
   //   only add a11y props to the subject when the content is visible
   const subjectAccessibilityProps = useMemo(

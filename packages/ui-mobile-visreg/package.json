@@ -1,0 +1,54 @@
+{
+  "name": "@cbhq/ui-mobile-visreg",
+  "version": "1.0.0",
+  "description": "Visreg Helpers",
+  "keywords": [
+    "visreg",
+    "playground",
+    "ci",
+    "percy",
+    "detox"
+  ],
+  "packemon": {
+    "format": "lib",
+    "platform": "node"
+  },
+  "peerDependencies": {
+    "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/cds-mobile-visualization": "workspace:^",
+    "detox": "^20.5.0"
+  },
+  "dependencies": {
+    "@cbhq/detox-utils": "^0.2.3",
+    "@percy/cli": "^1.13.0",
+    "@percy/client": "^1.13.0",
+    "@percy/sdk-utils": "^1.13.0",
+    "@percy/storybook": "^4.3.4",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "detox": "^20.5.0"
+  },
+  "types": "./dts/index.d.ts",
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js",
+      "default": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts}",
+    "CHANGELOG.md",
+    "README.md"
+  ]
+}

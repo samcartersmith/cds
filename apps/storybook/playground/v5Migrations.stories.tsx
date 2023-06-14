@@ -1,40 +1,51 @@
+// THIS FILE IS FOR TESTING THE CDS MIGRATOR AND SHOULD NEVER BE BUILT
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 // should update to '@cbhq-common/motion/tokens'
-import { curves } from '@cbhq/cds-common/tokens/motion';
-import { Animated } from '@cbhq/cds-web/animation/Animated';
-import { CollapseArrow } from '@cbhq/cds-web/collapsible/CollapseArrow';
+// import { curves } from '@cbhq/cds-common/tokens/motion';
+// import { Animated } from '@cbhq/cds-web/animation/Animated';
+import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
+// should change to Animated Caret
+// import { CollapseArrow } from '@cbhq/cds-web/collapsible/CollapseArrow';
 // should update to '@cbhq-web/navigation/Sidebar'
-import { Sidebar } from '@cbhq/cds-web/deprecated/navigation/Sidebar';
-import { useIsMobile } from '@cbhq/cds-web/hooks/useIsMobile';
+// import { Sidebar } from '@cbhq/cds-web/deprecated/navigation/Sidebar';
+// the import path should change to the decomped package
+import { Dropdown } from '@cbhq/cds-web/dropdown';
+// import { useIsMobile } from '@cbhq/cds-web/hooks/useIsMobile';
 // Badge import should throw warning that component was removed
+// @ts-expect-error testing
 import { Badge, Icon, LogoMark, NavigationIcon as NavIcon } from '@cbhq/cds-web/icons';
 import { Pictogram as CDSPictogram, Pictogram, SpotSquare } from '@cbhq/cds-web/illustrations';
 import { Box, Group, VStack } from '@cbhq/cds-web/layout';
 // should update to '@cbhq-web/cards/Card'
-import { Card } from '@cbhq/cds-web/layout/Card';
-import { none } from '@cbhq/cds-web/styles/borderRadius';
+// import { Card } from '@cbhq/cds-web/layout/Card';
+// import { none } from '@cbhq/cds-web/styles/borderRadius';
 
 export const V5MigrationsTest = () => {
   // migrated token
-  const radii = none;
+  // const radii = none;
   // removed token
-  const { global } = curves;
+  // const { global } = curves;
   // removed param
   const testDeprecatedParam = useCellSpacing({
+    // @ts-expect-error testing
     reduceHorizontalSpacing: true,
     offsetHorizontal: 1,
   });
   // migrated function
-  const isMobile = useIsMobile();
+  // const isMobile = useIsMobile();
   // removed function
-  const animatedTest = Animated;
+  // const animatedTest = Animated;
   return (
     <VStack>
       {/* prop value migrations */}
+      {/* @ts-expect-error testing */}
       <SpotSquare name="addCard" dimension="120x120" />
+      {/* @ts-expect-error testing */}
       <Pictogram name="2fa" dimension="96x96" />
+      {/* @ts-expect-error testing */}
       <CDSPictogram name="2fa" dimension="96x96" />
       {/* boolean prop -> attribute value migrations */}
       <Group horizontal>
@@ -42,16 +53,22 @@ export const V5MigrationsTest = () => {
         <Box />
       </Group>
       {/* removed props */}
+      {/* @ts-expect-error testing */}
       <Icon name="add" size="s" badge={<Badge />} />
+      {/* @ts-expect-error testing */}
       <NavIcon name="addPeople" size="s" badge={<Badge />} />
       {/* import path migrations */}
-      <Card />
+      {/* <Card /> */}
       {/* removed exports with no replacement */}
-      <Sidebar logo={<LogoMark />}>
+      {/* <Sidebar logo={<LogoMark />}>
         <li>Test</li>
-      </Sidebar>
+      </Sidebar> */}
       {/* This should get swapped out with AnimatedCaret */}
-      <CollapseArrow />
+      {/* <CollapseArrow /> */}
+      {/* this should not be deprecated after package decomp migrations run */}
+      <Dropdown content="test">
+        <IconButton name="caretDown" accessibilityLabel="Open Dropdown Button" />
+      </Dropdown>
     </VStack>
   );
 };

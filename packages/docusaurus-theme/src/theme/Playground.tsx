@@ -70,7 +70,7 @@ const Playground = memo(function Playground({
       <LiveProvider code={code} transformCode={transformCode} theme={prismTheme} {...props}>
         {!hidePreview && (
           <VStack
-            borderRadius="popover"
+            borderRadius="roundedLarge"
             bordered={!borderless}
             overflow={!borderless ? 'hidden' : undefined}
             spacing={borderless ? 0 : 3}
@@ -82,7 +82,7 @@ const Playground = memo(function Playground({
           <HStack gap={0.5} alignItems="center" offsetHorizontal={1}>
             <Pressable
               backgroundColor="background"
-              borderRadius="popover"
+              borderRadius="roundedLarge"
               onPress={toggle}
               noScaleOnPress
               transparentWhileInactive
@@ -96,7 +96,7 @@ const Playground = memo(function Playground({
             </Pressable>
             <Pressable
               backgroundColor="background"
-              borderRadius="round"
+              borderRadius="roundedFull"
               noScaleOnPress
               onPress={handleCopyToClipboard}
               transparentWhileInactive
@@ -111,7 +111,7 @@ const Playground = memo(function Playground({
           </HStack>
         )}
         <Collapsible collapsed={collapsed}>
-          <VStack width="100%" borderRadius="popover" overflow="hidden">
+          <VStack width="100%" borderRadius="roundedLarge" overflow="hidden">
             <LiveEditor
               className="playground-live-wrapper"
               // @ts-expect-error - issue with LiveEditor props

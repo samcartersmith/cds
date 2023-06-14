@@ -37,10 +37,8 @@ export type IllustrationDimension =
 
 export type IllustrationDimensionsMap = {
   heroSquare: HeroSquareDimension;
-  /** @deprecated spotSquare size 120x120 is deprecated. Use size 96x96 */
   spotSquare: SpotSquareDimension;
   spotRectangle: SpotRectangleDimension;
-  /** @deprecated pictogram size 96x96 is deprecated. Use size 64x64 */
   pictogram: PictogramDimension;
 };
 
@@ -48,15 +46,9 @@ export type IllustrationBaseProps<T extends keyof IllustrationNamesMap> = {
   /** Name of illustration as defined in Figma */
   name: IllustrationNamesMap[T];
   /**
-   * @deprecated
-   * The prop itself is not deprecated, but some of the sizes are.
-   *
    * HeroSquare Default:  240x240
-   * SpotSquare Default: 120x120 (120x120 is being deprecated. Please use
-   * 96x96 instead. The default size of SpotSquare will be 96x96 in the next
-   * major release)
-   * Pictogram Default: 48x48. The size 96x96 is soon to be deprecated. Please
-   * use 64x64 instead.
+   * SpotSquare Default: 96x96
+   * Pictogram Default: 48x48
    * SpotRectangle Default: 240x120
    *
    */
@@ -80,18 +72,13 @@ export type HeroSquareProps = IllustrationBaseProps<'heroSquare'> & {
 
 export type SpotSquareProps = IllustrationBaseProps<'spotSquare'> & {
   /**
-   * @deprecated SpotSquare dimensions. The prop itself is not deprecated, but
-   * the size 120x120 is deprecated in SpotSquare. Please use 96x96 instead.
-   * The default size of SpotSquare will be 96x96 it the next major release.
-   * @default 120x120
+   * @default 96x96
    * */
   dimension?: IllustrationDimensionsMap['spotSquare'];
 };
 
 export type PictogramProps = IllustrationBaseProps<'pictogram'> & {
   /**
-   * @deprecated Pictogram dimensions. The prop itself is not deprecated, but
-   * the size 96x96 is deprecated. Please use 64x64 instead.
    * @default 48x48
    * */
   dimension?: IllustrationDimensionsMap['pictogram'];

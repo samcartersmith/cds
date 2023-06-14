@@ -1,8 +1,4 @@
 import { Animated, Modal as RNModal } from 'react-native';
-import {
-  advanceAnimationByTime,
-  withReanimatedTimer,
-} from 'react-native-reanimated/lib/reanimated2/jestUtils';
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
 
@@ -20,6 +16,15 @@ const animationParallelSpy = jest.spyOn(Animated, 'parallel');
 const animationTimingSpy = jest.spyOn(Animated, 'timing');
 
 describe('Alert', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
+  });
+
   it('renders React Native Modal', () => {
     render(<MockAlert />);
 
@@ -87,30 +92,28 @@ describe('Alert', () => {
   });
 
   it('renders dismiss action and passes a11y', () => {
-    withReanimatedTimer(() => {
-      const onRequestClose = jest.fn();
+    const onRequestClose = jest.fn();
 
-      render(
-        <MockAlert
-          testID="mock-alert"
-          visible
-          dismissActionLabel="Cancel"
-          onRequestClose={onRequestClose}
-        />,
-      );
+    render(
+      <MockAlert
+        testID="mock-alert"
+        visible
+        dismissActionLabel="Cancel"
+        onRequestClose={onRequestClose}
+      />,
+    );
 
-      expect(screen.getByTestId('mock-alert')).toBeAccessible();
+    expect(screen.getByTestId('mock-alert')).toBeAccessible();
 
-      fireEvent.press(screen.getByText('Cancel'));
+    fireEvent.press(screen.getByText('Cancel'));
 
-      // out animation
-      expect(animationParallelSpy).toHaveBeenCalled();
-      expect(animationTimingSpy).toHaveBeenCalled();
+    // out animation
+    expect(animationParallelSpy).toHaveBeenCalled();
+    expect(animationTimingSpy).toHaveBeenCalled();
 
-      act(() => {
-        advanceAnimationByTime(100);
-        expect(onRequestClose).toHaveBeenCalledTimes(1);
-      });
+    act(() => {
+      jest.advanceTimersByTime(100);
+      expect(onRequestClose).toHaveBeenCalledTimes(1);
     });
   });
 });

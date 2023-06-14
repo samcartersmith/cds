@@ -14,8 +14,11 @@ import { PortalProvider } from '../PortalProvider';
 import { Tooltip } from '../Tooltip/Tooltip';
 import { TooltipProps } from '../Tooltip/TooltipProps';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export default {
-  title: 'Core Components/Tooltip',
+  title: 'Core Components/Tooltip (deprecated - moved to cds-web-overlays)',
   component: Tooltip,
   parameters: {
     layout: 'padded',
@@ -116,12 +119,18 @@ const Template: ComponentStory<typeof BasicTooltip> = (args: BasicTooltipProps) 
   <BasicTooltip {...args} />
 );
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Default = Template.bind({});
 
 Default.args = {
   content: 'This is the tooltip Content',
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const TooltipLongContent = Template.bind({});
 
 const longContent =

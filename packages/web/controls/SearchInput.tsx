@@ -95,7 +95,7 @@ export const SearchInput = memo(
             </Box>
           )
         }
-        borderRadius="search"
+        borderRadius="roundedFull"
         onChange={handleOnChange}
         onKeyUp={handleOnKeyUp}
         role="searchbox"

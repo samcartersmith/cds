@@ -54,14 +54,14 @@ describe('FullscreenAlert', () => {
     expect(await renderA11y(<FullscreenAlertExample />)).toHaveNoViolations();
   });
 
-  it('has expected default a11y attrs', () => {
+  it('has expected correct a11y attrs', () => {
     render(<FullscreenAlertExample />);
 
     const modal = screen.getByRole('alertdialog');
+    const modalId = modal.getAttribute('aria-labelledBy');
 
     expect(modal).toHaveAttribute('aria-modal', 'true');
-    expect(modal).toHaveAttribute('aria-labelledby', expect.stringMatching(/alert-title-.*/));
-    expect(screen.getByText(TITLE)).toHaveAttribute('id', expect.stringMatching(/alert-title-.*/));
+    expect(screen.getByText(TITLE)).toHaveAttribute('id', modalId);
   });
 
   it('overrides default a11y attrs when accessibilityLabelledBy is provided', () => {
@@ -111,6 +111,16 @@ describe('FullscreenAlert', () => {
 
     await waitFor(async () => {
       await screen.findByText(TITLE);
+    });
+
+    await waitFor(async () => {
+      expect(screen.getByText(TITLE)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(screen.getByText(BODY)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(screen.getByText(PREFERRED_ACTION_LABEL)).toBeVisible();
     });
 
     expect(await screen.findByText(TITLE)).toBeVisible();

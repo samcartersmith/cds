@@ -28,9 +28,3 @@ function DefaultSelect() {
   );
 }
 ```
-
-:::tip Accessibility tip (server-side rendered web)
-
-For accessibilty purposes, we need to attach an ID to the tooltip element. If one is not provided via the `tooltipId` prop, we generate a random one by default. However, this has implications for server-side rendering (SSR) as the ID that is generated on the server will be different than the one generated on the client. Therefore, when using this component with SSR, a unique ID should be provided using the `tooltipId` prop.
-
-:::

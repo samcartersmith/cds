@@ -1,6 +1,7 @@
 import React, { memo, useMemo, useRef } from 'react';
 import { NoopFn } from '@cbhq/cds-common';
 
+import { useIsBrowser } from '../hooks/useIsBrowser';
 import { palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
@@ -25,6 +26,7 @@ export const TableRow = memo(
     responsiveConfig,
     ...rest
   }: TableRowProps) => {
+    const isBrowser = useIsBrowser();
     const tableSectionType = useTableSectionTag();
     const isCellInBody = tableSectionType === 'tbody';
     const shouldIndicateHover = isCellInBody && !disableHoverIndicator;
@@ -40,6 +42,9 @@ export const TableRow = memo(
         cursor: onPress ? 'pointer' : 'default',
       };
     }, [backgroundColor, color, onPress]);
+
+    // @link https://nextjs.org/docs/messages/react-hydration-error
+    const innerChildren = useMemo(() => (isBrowser ? children : ''), [children, isBrowser]);
 
     return (
       <tr
@@ -60,7 +65,7 @@ export const TableRow = memo(
             innerSpacing={innerSpacing}
             responsiveConfig={responsiveConfig}
           >
-            {children}
+            {innerChildren}
           </TableCell>
         ) : (
           children

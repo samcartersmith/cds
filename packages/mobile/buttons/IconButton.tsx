@@ -27,7 +27,7 @@ export const PreFrontierIconButton = memo(function PreFrontierIconButton({
       transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
       borderColor={borderColor}
-      borderRadius="round"
+      borderRadius="roundedFull"
       borderWidth="button"
       feedback={feedback}
       {...props}

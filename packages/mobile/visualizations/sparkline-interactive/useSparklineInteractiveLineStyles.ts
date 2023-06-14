@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import { lineDashArray, lineOpacity } from '@cbhq/cds-common/tokens/sparkline';
 
 import { usePalette } from '../../hooks/usePalette';
@@ -13,6 +13,9 @@ const staticLineProps = {
   strokeDasharray: lineDashArray,
 };
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export function useSparklineInteractiveLineStyles() {
   const colors = usePalette();
   const spacing = useSpacingScale();

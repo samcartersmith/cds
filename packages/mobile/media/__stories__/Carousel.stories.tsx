@@ -5,8 +5,9 @@ import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';
 import { svgs } from '@cbhq/cds-common/internal/data/assets';
 
 import { Button } from '../../buttons';
+import { Card } from '../../cards';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { Card, HStack } from '../../layout';
+import { HStack } from '../../layout';
 import { TextHeadline } from '../../typography/TextHeadline';
 import { TextLabel1 } from '../../typography/TextLabel1';
 import { Carousel } from '../Carousel/Carousel';

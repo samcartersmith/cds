@@ -27,7 +27,7 @@ const SearchBar = memo(function SearchBar() {
     <HStack alignItems="center" gap={3} dangerouslySetClassName="search">
       <TextInput
         width={200}
-        borderRadius="search"
+        borderRadius="roundedFull"
         start={<InputIcon name="search" />}
         end={
           <HStack spacingEnd={2}>

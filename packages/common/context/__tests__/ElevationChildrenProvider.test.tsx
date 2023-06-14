@@ -8,28 +8,36 @@ import { ElevationChildrenProvider, ElevationProvider } from '../ElevationProvid
 describe('ElevationChildrenProvider', () => {
   /** Light mode */
   it('does not override palette variables if spectrum is light and parent has elevation of 1', () => {
-    const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider>
           <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+
+    const { result } = renderHook(() => usePaletteConfig(), {
+      wrapper: Wrapper,
     });
     expect(result.current.secondary).toEqual(defaultPalette.secondary);
     expect(result.current.line).toEqual(defaultPalette.line);
   });
 
   it('does not override palette variables if spectrum is light and parent has elevation of 2', () => {
-    const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider>
           <ElevationProvider elevation={2}>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+
+    const { result } = renderHook(() => usePaletteConfig(), {
+      wrapper: Wrapper,
     });
     expect(result.current.secondary).toEqual(defaultPalette.secondary);
     expect(result.current.line).toEqual(defaultPalette.line);
@@ -37,28 +45,34 @@ describe('ElevationChildrenProvider', () => {
 
   /** Dark mode */
   it('does not override palette variables if spectrum is dark and no elevation is set', () => {
-    const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider spectrum="dark">
           <ElevationProvider>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => usePaletteConfig(), {
+      wrapper: Wrapper,
     });
     expect(result.current.secondary).toEqual(defaultPalette.secondary);
     expect(result.current.line).toEqual(defaultPalette.line);
   });
 
   it('overrides palette variables if spectrum is dark and parent has elevation of 1', () => {
-    const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={1}>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => usePaletteConfig(), {
+      wrapper: Wrapper,
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
     expect(result.current.background).toBe('gray5');
@@ -69,14 +83,17 @@ describe('ElevationChildrenProvider', () => {
   });
 
   it('overrides palette variables if spectrum is dark and parent has elevation of 2', () => {
-    const { result } = renderHook(() => usePaletteConfig(), {
-      wrapper: (props) => (
+    function Wrapper(props: React.PropsWithChildren<unknown>) {
+      return (
         <SystemProvider spectrum="dark">
           <ElevationProvider elevation={2}>
             <ElevationChildrenProvider {...props} />
           </ElevationProvider>
         </SystemProvider>
-      ),
+      );
+    }
+    const { result } = renderHook(() => usePaletteConfig(), {
+      wrapper: Wrapper,
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
     expect(result.current.background).toBe('gray10');

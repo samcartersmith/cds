@@ -47,7 +47,6 @@ export const TableCellFallback = memo(
       <TableCellComponent data-testid={testID} className={tableCell} {...rest}>
         <Cell
           gap={cellGap}
-          reduceHorizontalSpacing
           accessory={end && <MediaFallback type={end} testID="table-cell-fallback-accessory" />}
           media={start && <MediaFallback type={start} testID="table-cell-fallback-media" />}
           outerSpacing={cellOuterSpacing}

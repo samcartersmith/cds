@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/app/storybook",
+    "outDir": "../../.nx/dts/apps/storybook",
     "rootDir": "./"
   },
   "references": [
@@ -16,7 +16,15 @@
     },
     {
       "path": "../../packages/illustrations"
+    },
+    {
+      "path": "../../packages/cds-web-overlays"
+    },
+    {
+      "path": "../../packages/web-visualization"
     }
   ],
-  "exclude": ["babel.config.js"]
+  "exclude": [
+    "babel.config.js"
+  ]
 }

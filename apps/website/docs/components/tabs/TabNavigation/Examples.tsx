@@ -61,7 +61,7 @@ const ExampleContainer = memo(({ children }: PropsWithChildren<unknown>) => {
   return (
     <VStack
       background="backgroundAlternate"
-      borderRadius="standard"
+      borderRadius="rounded"
       dangerouslySetClassName={exampleClassName}
       spacingVertical={7}
       spacingHorizontal={4}

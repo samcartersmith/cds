@@ -1,9 +1,9 @@
-import { borderRadius as borderRadii } from '../tokens/border';
-import { Shape } from '../types';
+import { borderRadius as borderRadiusTokens } from '../tokens/borderRadius';
+import { BorderRadius, Shape } from '../types';
 
 import { useShapeToBorderRadiusAlias } from './useShapeToBorderRadiusAlias';
 
 export function useShapeToBorderRadiusSize(shape: Shape) {
-  const borderRadiusType = useShapeToBorderRadiusAlias(shape);
-  return borderRadiusType ? borderRadii[borderRadiusType] : 0;
+  const borderRadius: BorderRadius | undefined = useShapeToBorderRadiusAlias(shape);
+  return borderRadius ? borderRadiusTokens[borderRadius] : 0;
 }

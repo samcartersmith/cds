@@ -64,13 +64,18 @@ type NFTTileProps = {
 export const NFTTile = ({ name, available, src, comments, likes, price, target }: NFTTileProps) => {
   return (
     <VStack>
-      <VStack borderRadius="pill" overflow="clip" minHeight={430} background="backgroundAlternate">
+      <VStack
+        borderRadius="roundedLarge"
+        overflow="clip"
+        minHeight={430}
+        background="backgroundAlternate"
+      >
         <a href={target}>
           <VStack position="relative">
             <RemoteImage src={src} alt={name} height="264" />
             <HStack
               background="backgroundAlternate"
-              borderRadius="standard"
+              borderRadius="rounded"
               position="absolute"
               bottom={20}
               left={20}

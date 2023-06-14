@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { breakpoints } from '../../layout/responsive';
+import { deviceBreakpoints } from '../../layout/breakpoints';
 import { BreakpointsProvider, BreakpointsProviderProps } from '../../system/BreakpointsProvider';
 import { defaultDeviceMatchesMap, useBreakpoints } from '../useBreakpoints';
 
@@ -15,7 +15,7 @@ const wrapper = ({ children, device }: WrapperProps) => (
 
 describe('useBreakpoints hook', () => {
   it('matches tablet breakpoint and smaller devices when window width is 768px', () => {
-    window.innerWidth = breakpoints.tablet;
+    window.innerWidth = deviceBreakpoints.tablet;
     const { result } = renderHook(() => useBreakpoints());
 
     expect(result.current).toStrictEqual({

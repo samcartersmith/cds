@@ -293,6 +293,9 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
   );
 };
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export const SparklineInteractiveScrubHandler = memo(
   SparklineInteractiveScrubHandlerWithGeneric,
 ) as typeof SparklineInteractiveScrubHandlerWithGeneric;

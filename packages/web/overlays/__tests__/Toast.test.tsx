@@ -21,9 +21,15 @@ describe('Toast', () => {
   it('renders text and close button', async () => {
     render(<Toast text={TEXT} />);
 
-    expect(await screen.findByText(TEXT)).toBeVisible();
-    expect(await screen.findByTestId('cds-toast-close-button')).toBeVisible();
-    expect(await screen.findByTestId('cds-toast-close-button')).toHaveAccessibleName('close');
+    await waitFor(async () => {
+      expect(screen.getByText(TEXT)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(await screen.findByTestId('cds-toast-close-button')).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(await screen.findByTestId('cds-toast-close-button')).toHaveAccessibleName('close');
+    });
   });
 
   it('renders action', () => {

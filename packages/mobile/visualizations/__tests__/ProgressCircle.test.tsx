@@ -7,6 +7,8 @@ import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { paletteValueToRgbaString } from '../../utils/palette';
 import { ProgressCircle } from '../ProgressCircle';
 
+jest.useFakeTimers();
+
 const MockView = View;
 jest.mock('react-native-svg', () => {
   return {
@@ -17,21 +19,6 @@ jest.mock('react-native-svg', () => {
     Circle: (props: Record<string, unknown>) => {
       return <MockView {...props} />;
     },
-  };
-});
-
-jest.mock('react-native/Libraries/Animated/Animated', () => {
-  return {
-    ...jest.requireActual<Record<string, unknown>>('react-native/Libraries/Animated/Animated'),
-    timing: (value: { setValue: (arg0: unknown) => void }, config: { toValue: unknown }) => {
-      return {
-        start: jest.fn((callback?: ({ finished }: { finished: boolean }) => void) => {
-          value.setValue(config.toValue);
-          callback?.({ finished: true });
-        }),
-      };
-    },
-    createAnimatedComponent: (c: React.ComponentType<React.PropsWithChildren<unknown>>) => c,
   };
 });
 
@@ -47,9 +34,9 @@ describe('ProgressCircle tests and passes a11y', () => {
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
-    // eslint-disable-next-line no-underscore-dangle
-    expect(innerCircle.props.strokeDashoffset._value).toEqual(circumference);
 
+    // necessary for Animated.timing delay
+    jest.runAllTimers();
     expect(innerCircle.props.strokeDasharray).toEqual(circumference);
 
     expect(innerCircle.props.stroke).toEqual(
@@ -68,9 +55,12 @@ describe('ProgressCircle tests and passes a11y', () => {
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
+
+    // necessary for Animated.timing delay
+    jest.runAllTimers();
+
     // eslint-disable-next-line no-underscore-dangle
     expect(innerCircle.props.strokeDashoffset._value).toEqual(circumference * 0.5);
-
     expect(innerCircle.props.strokeDasharray).toEqual(circumference);
 
     expect(innerCircle.props.stroke).toEqual(
@@ -88,6 +78,9 @@ describe('ProgressCircle tests and passes a11y', () => {
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
+    // necessary for Animated.timing delay
+    jest.runAllTimers();
+
     // eslint-disable-next-line no-underscore-dangle
     expect(innerCircle.props.strokeDashoffset._value).toBe(0);
 

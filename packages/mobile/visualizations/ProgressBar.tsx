@@ -77,7 +77,7 @@ export const ProgressBar = memo(
               flexShrink={1}
               height={height}
               dangerouslySetBackground={palette.line}
-              borderRadius="standard"
+              borderRadius="rounded"
               overflow="hidden"
             >
               <Box
@@ -90,7 +90,7 @@ export const ProgressBar = memo(
                 width="100%"
                 animated
                 dangerouslySetStyle={progressStyle}
-                borderRadius="standard"
+                borderRadius="rounded"
                 dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
               />
             </Box>

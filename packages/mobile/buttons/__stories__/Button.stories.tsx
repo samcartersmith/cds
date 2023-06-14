@@ -1,18 +1,11 @@
 import React from 'react';
-import { buttonBuilderDeprecated } from '@cbhq/cds-common/internal/buttonBuilderDeprecated';
-import { entries } from '@cbhq/cds-utils';
+import { buttonStories } from '@cbhq/cds-common/internal/buttonBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
-import { VStack } from '../../layout/VStack';
 import { RemoteImage } from '../../media/RemoteImage';
 import { TextLabel2 } from '../../typography/TextLabel2';
 import { Button } from '../Button';
-
-const stories = buttonBuilderDeprecated({
-  Button,
-  VStack,
-});
 
 const ButtonScreen = () => {
   return (
@@ -27,13 +20,19 @@ const ButtonScreen = () => {
           </HStack>
         </Button>
       </Example>
-      {entries(stories).map(([name, Component]) => {
+      {buttonStories.map((props) => {
         return (
-          <Example key={name} inline title={name}>
-            <Component />
+          <Example inline>
+            <Button {...props}>I am a button/</Button>
           </Example>
         );
       })}
+      <Example title="Long text content">
+        <Button>
+          Some really really really long button text that should get truncated after wrapping two
+          lines
+        </Button>
+      </Example>
     </ExampleScreen>
   );
 };

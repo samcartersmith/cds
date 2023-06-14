@@ -46,6 +46,9 @@ Any commit can be deployed because we version every change. Locate your release 
 
 heimdall should automatically deploy to the following when the build finishes:
 
+- corporate::ui-mobile-playground
+- corporate::ui-mobile-visreg
+- production::cds-docs
 - development::cds-storybook
 
 If heimdall fails to do this for some reason, then manually deploy to those targets as well.

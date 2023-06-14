@@ -6,13 +6,13 @@ import React, {
   Fragment,
   memo,
   useCallback,
+  useId,
   useState,
 } from 'react';
 import { css } from 'linaria';
 import { IconName, IconSize, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
 
 import { useIconButtonStyles } from '../buttons/useIconButtonStyles';
-import { useA11yId } from '../hooks/useA11yId';
 import { Icon } from '../icons/Icon';
 import { insetFocusRing } from '../styles/focus';
 import { xSmallVariables } from '../styles/scale';
@@ -21,8 +21,6 @@ import { borderRadius, palette, spacing } from '../tokens';
 import { bodyStyles, headlineStyles } from '../typography/textStyles';
 import { cx } from '../utils/linaria';
 
-const prefix = 'cds-segmented-';
-
 function SegmentedControlInternal(
   props: SegmentedControlProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -30,7 +28,7 @@ function SegmentedControlInternal(
   const { type, options, block, disabled, testID, onChange } = props;
 
   const [selectedValue, setSelectedValue] = useState(props.value);
-  const name = useA11yId({ prefix });
+  const name = useId();
   const heightVar = useIconButtonStyles();
   const vars = { '--width': block ? '100%' : 'max-content', ...heightVar };
   const size = type === 'icon' ? props.iconSize : 'l';

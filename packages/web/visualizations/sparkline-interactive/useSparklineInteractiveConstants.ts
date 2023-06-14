@@ -8,6 +8,9 @@ import {
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ */
 export function useSparklineInteractiveConstants() {
   const { width: chartWidth, compact } = useSparklineInteractiveContext();
 

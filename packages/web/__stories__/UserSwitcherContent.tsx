@@ -13,10 +13,9 @@ import { useSpacingValue } from '../hooks/useSpacingValue';
 import { Divider, HStack, VStack } from '../layout';
 import { Avatar } from '../media/Avatar';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
-import { SectionTitle } from '../overlays/PopoverMenu/SectionTitle';
 import { insetFocusRing } from '../styles/focus';
 import { PressableOpacity } from '../system/PressableOpacity';
-import { TextBody, TextLegal, TextTitle3 } from '../typography';
+import { TextBody, TextCaption, TextLegal, TextTitle3 } from '../typography';
 
 type UserSwitcherData = {
   name: string;
@@ -70,7 +69,7 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
   const avatarColorScheme = getAvatarFallbackColor(name);
 
   return (
-    <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="standard">
+    <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="rounded">
       <PressableOpacity noScaleOnPress className={insetFocusRing} onPress={toggle}>
         <ListCell
           title={name}
@@ -107,6 +106,9 @@ type UserSwitcherContentProps = {
   data?: UserSwitcherData[];
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitcherContentProps) => {
   const { name, email, avatarUri } = data.find((user) => user.selected) as UserSwitcherData;
   const otherAccountsData = data.filter((user) => !user.selected);
@@ -140,7 +142,11 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
       </VStack>
       <Divider spacingTop={3} />
       <VStack spacingHorizontal={2}>
-        <SectionTitle text="Your other accounts" />
+        <HStack spacingHorizontal={2} spacingVertical={2}>
+          <TextCaption as="h2" color="foregroundMuted">
+            Your other accounts
+          </TextCaption>
+        </HStack>
       </VStack>
       <VStack
         minHeight={userAccountsListMinHeight}

@@ -42,11 +42,6 @@ export type TextProps = {
    * @link [React Native docs](https://reactnative.dev/docs/text#ellipsizemode)
    */
   ellipsize?: RNTextProps['ellipsizeMode'];
-  /**
-   * Override line-height. This is deprecated since overriding this prevents line height from being scale aware.
-   * @deprecated
-   */
-  deprecatedLineHeight?: number | 'none';
 } & TextBaseProps &
   SharedProps &
   OmitStyle<RNTextProps, 'selectable'> &
@@ -61,7 +56,6 @@ export const createText = (name: Typography, overrides?: TextProps) => {
     ellipsize = overrides?.ellipsize,
     animated = overrides?.animated,
     dangerouslySetStyle = overrides?.dangerouslySetStyle,
-    deprecatedLineHeight = overrides?.deprecatedLineHeight,
     adjustsFontSizeToFit = overrides?.adjustsFontSizeToFit,
     // TODO: replace with glyph. This is not implemented yet
     slashedZero,
@@ -92,17 +86,6 @@ export const createText = (name: Typography, overrides?: TextProps) => {
 
     const textTransform = useTextTransform(name, transform);
 
-    // TODO: Update React Native to not override this and remove deprecatedLineHeight
-    const lineHeight = useMemo(() => {
-      if (deprecatedLineHeight === undefined) {
-        return textStyles?.lineHeight;
-      }
-      if (deprecatedLineHeight === 'none') {
-        return undefined;
-      }
-      return deprecatedLineHeight;
-    }, [deprecatedLineHeight, textStyles?.lineHeight]);
-
     const spacingStyles = useSpacingStyles({
       spacing,
       spacingBottom,
@@ -128,7 +111,7 @@ export const createText = (name: Typography, overrides?: TextProps) => {
         {
           textTransform,
           color: dangerouslySetColor ?? palette[color],
-          lineHeight,
+          lineHeight: textStyles?.lineHeight,
           overflow: ellipsize ? ('hidden' as const) : ('visible' as const),
         },
         tabularNumbers && styles.tabularNumbers,
@@ -144,7 +127,6 @@ export const createText = (name: Typography, overrides?: TextProps) => {
         textTransform,
         palette,
         textAlign,
-        lineHeight,
         color,
         tabularNumbers,
         underline,

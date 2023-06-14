@@ -2,7 +2,7 @@ import 'react-native-gesture-handler/jestSetup';
 import 'react-native-accessibility-engine';
 import '@testing-library/jest-native/extend-expect';
 
-import { setUpTests } from 'react-native-reanimated/lib/reanimated2/jestUtils';
+import { setUpTests } from 'react-native-reanimated/src/reanimated2/jestUtils';
 
 import { mockStatusBarHeight } from './constants';
 
@@ -11,12 +11,52 @@ jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = require('react-native-reanimated/mock');
+  Reanimated.makeMutable = Reanimated.useSharedValue;
+
+  // eslint-disable-next-line no-unused-vars
+  Reanimated.useAnimatedReaction = (prepare, react, deps) => {
+    react(prepare());
+  };
+
+  return Reanimated;
+});
+
 jest.mock('react-native', () => {
   const RN = jest.requireActual('react-native');
 
   RN.NativeModules.StatusBarManager = {
     getHeight: jest.fn((cb) => cb({ height: mockStatusBarHeight })),
   };
+
+  RN.Animated.loop = jest.fn(() => {
+    return {
+      start: jest.fn(),
+    };
+  });
+
+  RN.Animated.timing = jest.fn((value, config) => {
+    return {
+      start: jest.fn().mockImplementation((callback) => {
+        return setTimeout(() => {
+          value.setValue(config.toValue);
+          callback?.({ finished: true });
+        }, 0);
+      }),
+      stop: jest.fn(),
+    };
+  });
+
+  RN.Animated.parallel = () => {
+    return {
+      start: jest.fn((callback) => {
+        callback?.({ finished: true });
+      }),
+    };
+  };
+
+  RN.Animated.createAnimatedComponent = (component) => component;
 
   return RN;
 });

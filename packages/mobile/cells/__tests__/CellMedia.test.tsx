@@ -247,7 +247,7 @@ describe('CellMedia', () => {
         <CellMedia
           type="pictogram"
           illustration={
-            <Pictogram name="2fa" testID="pictogram-id" dimension="96x96" scaleMultiplier={2} />
+            <Pictogram name="2fa" testID="pictogram-id" dimension="64x64" scaleMultiplier={2} />
           }
         />,
       );
@@ -301,7 +301,7 @@ describe('CellMedia', () => {
         <CellMedia
           type="pictogram"
           illustration={
-            <Pictogram name="2fa" testID="pictogram-id" dimension="96x96" scaleMultiplier={2} />
+            <Pictogram name="2fa" testID="pictogram-id" dimension="64x64" scaleMultiplier={2} />
           }
         />,
       );

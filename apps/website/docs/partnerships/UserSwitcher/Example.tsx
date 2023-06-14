@@ -12,7 +12,7 @@ export const UserSwitcherExample = () => {
           justifyContent="center"
           spacingVertical={4}
           bordered
-          borderRadius="standard"
+          borderRadius="rounded"
         >
           <UserSwitcher title="Brian Armstrong" description="brian.armstrong@coinbase.com" />
         </VStack>

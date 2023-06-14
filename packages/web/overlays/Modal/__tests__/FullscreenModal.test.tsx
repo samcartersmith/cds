@@ -64,8 +64,8 @@ describe('FullscreenModal', () => {
     const modal = screen.getByRole('dialog');
 
     expect(modal).toHaveAttribute('aria-modal', 'true');
-    expect(modal).toHaveAttribute('aria-labelledby', expect.stringMatching(/modal-title-.*/));
-    expect(screen.getByText(TITLE)).toHaveAttribute('id', expect.stringMatching(/modal-title-.*/));
+    expect(modal).toHaveAttribute('aria-labelledby', expect.stringMatching(/:r[0-9].*/));
+    expect(screen.getByText(TITLE)).toHaveAttribute('id', expect.stringMatching(/:r[0-9].*/));
   });
 
   it('overrides default a11y attrs when accessibilityLabelledBy is provided', () => {
@@ -117,9 +117,15 @@ describe('FullscreenModal', () => {
       await screen.findByText(TITLE);
     });
 
-    expect(await screen.findByText(TITLE)).toBeVisible();
-    expect(await screen.findByText(PRIMARY_CONTENT)).toBeVisible();
-    expect(await screen.findByText(SECONDARY_CONTENT)).toBeVisible();
+    await waitFor(async () => {
+      expect(screen.getByText(TITLE)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(screen.getByText(PRIMARY_CONTENT)).toBeVisible();
+    });
+    await waitFor(async () => {
+      expect(screen.getByText(SECONDARY_CONTENT)).toBeVisible();
+    });
   });
 
   it('does not render content when modal is not visible', () => {

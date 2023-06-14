@@ -184,7 +184,7 @@ export const TabNavigation = memo(
         };
       }, []);
 
-      const getScrollIntoViewHandler = useCallback((ref) => {
+      const getScrollIntoViewHandler = useCallback((ref: React.RefObject<HTMLElement>) => {
         return function handleFocus() {
           // Container
           const container = scrollRef.current;

@@ -15,7 +15,6 @@ import { helperTextHeight, inputStackGap } from '@cbhq/cds-common/tokens/input';
 import { FOCUSABLE_ELEMENTS } from '@cbhq/cds-common/tokens/overlays';
 import { SelectBaseProps } from '@cbhq/cds-common/types';
 
-import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { Dropdown } from '../dropdown/Dropdown';
 import { DropdownProps } from '../dropdown/DropdownProps';
 import { useSpacingValue } from '../hooks/useSpacingValue';
@@ -26,11 +25,17 @@ import { isBrowser } from '../utils/browser';
 import { TextInputFocusVariantContext } from './context';
 import { SelectTrigger } from './SelectTrigger';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export type SelectProps = {
   children: ReactNode;
 } & SelectBaseProps &
   Pick<DropdownProps, 'disablePortal'>;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Select = memo(
   forwardRef(function Select(
     {
@@ -50,8 +55,6 @@ export const Select = memo(
   ) {
     const [visible, toggleDropdownVisibility] = useToggler(false);
     const [hasBeenInFocus, toggleHasBeenInFocus] = useToggler(false);
-    const { rotateAnimationRef, animateClockwise, animateCounterClockwise } =
-      useRotateAnimation(180);
     const focusedVariant = useInputVariant(visible, variant);
     /** prevents animation from firing on mount */
     const [animationsEnabled, toggleAnimations] = useToggler(false);
@@ -63,17 +66,6 @@ export const Select = memo(
       onPress?.();
       toggleAnimations.toggleOn();
     }, [onPress, toggleAnimations]);
-
-    useEffect(() => {
-      if (!animationsEnabled) {
-        return;
-      }
-      if (visible) {
-        void animateClockwise();
-      } else {
-        void animateCounterClockwise();
-      }
-    }, [animateClockwise, animateCounterClockwise, visible, animationsEnabled]);
 
     const onOpenMenu = useCallback(() => {
       if (!hasBeenInFocus) {
@@ -93,29 +85,29 @@ export const Select = memo(
         <TextInputFocusVariantContext.Provider value={focusedVariant}>
           <SelectTrigger
             disabled={disabled}
-            rotateAnimationRef={rotateAnimationRef}
             value={valueLabel ?? value}
             variant={variant}
             triggerHasFocus={visible}
             onPress={handleOnSelectPress}
             ref={refs}
             helperText={helperText}
+            visible={animationsEnabled && visible}
             {...props}
           />
         </TextInputFocusVariantContext.Provider>
       ),
       [
-        disabled,
         focusedVariant,
-        handleOnSelectPress,
-        helperText,
-        props,
-        rotateAnimationRef,
-        value,
+        disabled,
         valueLabel,
+        value,
         variant,
         visible,
+        handleOnSelectPress,
         refs,
+        helperText,
+        animationsEnabled,
+        props,
       ],
     );
 

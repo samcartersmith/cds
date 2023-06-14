@@ -9,11 +9,13 @@ For more information on release visit [go/cds](https://cds.cbhq.net/resources/re
 
 This sections guides you through releasing the following:
 
-1. [CDS packages (@cbhq/cds-web, @cbhq/cds-mobile, etc.)](./release/cds-packages.md)
+1. [CDS packages (@cbhq/cds-web, @cbhq/cds-mobile, @cbhq/cds-common)](./release/cds-packages.md)
 2. [Illustrations](./release/illustrations.md)
 3. [Icons](./release/icons.md)
 4. [Adoption Tracker](./release/adoption-tracker.md)
-5. [Creating & using a release candidate branch](./release/release-candidate.md)
+5. [UI Mobile Visreg](./release/ui-mobile-visreg.md)
+6. [UI Mobile Playground](./release/ui-mobile-playground.md)
+7. [Creating & using a release candidate branch](./release/release-candidate.md)
 
 ## Other Helpful links
 

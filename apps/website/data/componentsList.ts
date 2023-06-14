@@ -79,7 +79,6 @@ export const components = [
   'PopoverMenu',
   'PopoverTrigger',
   'PopoverTriggerWrapper',
-  'SectionTitle',
   'Drawer',
   'Tray',
   'DevicePreferencesProvider',

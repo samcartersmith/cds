@@ -27,7 +27,7 @@ export type ModalProps = ModalBaseProps &
   Omit<RNModalProps, 'children' | 'visible' | 'onRequestClose' | 'animationType'>;
 
 export const Modal = memo(
-  forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
+  forwardRef<ModalRefBaseProps, ModalProps>((props, ref) => {
     const {
       children,
       visible,

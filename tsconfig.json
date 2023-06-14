@@ -7,7 +7,13 @@
       "path": "packages/cds-migrator"
     },
     {
+      "path": "packages/cds-web-overlays"
+    },
+    {
       "path": "packages/cds-tasks"
+    },
+    {
+      "path": "packages/cds-web-overlays"
     },
     {
       "path": "packages/codegen"
@@ -49,10 +55,16 @@
       "path": "packages/mobile"
     },
     {
+      "path": "packages/mobile-visualization"
+    },
+    {
       "path": "packages/script-utils"
     },
     {
       "path": "packages/ui-mobile-playground"
+    },
+    {
+      "path": "packages/ui-mobile-visreg"
     },
     {
       "path": "packages/ui-scorecard"
@@ -62,6 +74,9 @@
     },
     {
       "path": "packages/web"
+    },
+    {
+      "path": "packages/web-visualization"
     },
     {
       "path": "packages/web-utils"

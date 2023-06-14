@@ -1,39 +1,36 @@
 {
   "name": "@cbhq/ui-mobile-playground",
-  "version": "0.3.7",
-  "description": "",
-  "keywords": [],
+  "version": "1.0.0",
+  "description": "Mobile UI Components in a Playground",
+  "keywords": [
+    "playground"
+  ],
   "packemon": {
     "format": "lib",
-    "platform": "node",
-    "inputs": {
-      "index": "src/index.ts",
-      "visreg": "src/visreg.ts"
-    }
+    "platform": "node"
   },
   "peerDependencies": {
     "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-mobile": "workspace:^",
-    "@react-navigation/native": "^6.0.11",
-    "@react-navigation/stack": "^6.2.2",
-    "detox": "^19.12.6",
-    "react": "^17.0.2",
-    "react-native": "^0.68.2",
-    "react-native-safe-area-context": "^3.2.0"
+    "@cbhq/cds-mobile-visualization": "workspace:^",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/stack": "^6.3.16",
+    "react": "18.2.0",
+    "react-native": ">=0.68.2",
+    "react-native-safe-area-context": "^4.5.0"
   },
   "dependencies": {
-    "@cbhq/detox-utils": "^0.2.3",
-    "@percy/cli": "^1.13.0",
-    "@percy/client": "^1.13.0",
-    "@percy/sdk-utils": "^1.13.0",
-    "@percy/storybook": "^4.3.4",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "detox": "^19.12.6"
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/stack": "^6.3.16",
+    "@types/react": "18.0.28",
+    "detox": "^20.5.0"
   },
   "types": "./dts/index.d.ts",
   "main": "./lib/index.js",
+  "routes": "./lib/routes.js",
   "exports": {
     "./package.json": "./package.json",
     "./*": {
@@ -46,5 +43,12 @@
       "node": "./lib/index.js",
       "default": "./lib/index.js"
     }
-  }
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx}",
+    "CHANGELOG.md",
+    "README.md"
+  ]
 }

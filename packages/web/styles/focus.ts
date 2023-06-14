@@ -56,7 +56,7 @@ export const insetFocusRing = css`
       right: ${INSET_FOCUS_RING_PADDING}px;
       bottom: ${INSET_FOCUS_RING_PADDING}px;
       border: ${borderWidth.focusRing} solid ${palette.primary};
-      border-radius: ${borderRadius.compact};
+      border-radius: ${borderRadius.roundedSmall};
     }
   }
   &.${focusVisibleClassName} + label {

@@ -153,7 +153,7 @@ export const Drawer = memo(
           <View>
             <HandleBar />
             <Box
-              borderRadius="pill"
+              borderRadius="roundedLarge"
               dangerouslySetStyle={shouldShowHandleBar && cardStyles.overflowStyles}
             >
               {typeof children === 'function' ? children({ handleClose }) : children}
@@ -178,7 +178,7 @@ export const Drawer = memo(
         <Box
           {...getPanGestureHandlers}
           background="background"
-          borderRadius={isPinHorizontal ? 'none' : 'pill'}
+          borderRadius={isPinHorizontal ? 'roundedNone' : 'roundedLarge'}
           bordered={scheme === 'dark'}
           elevation={scheme === 'dark' ? 2 : 0}
           pin={pin}

@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-import React, { Fragment, memo, useEffect, useState } from 'react';
+import React, { Fragment, memo, ReactNode, useEffect, useState } from 'react';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocgenProjectProvider from '@theme/DocgenProjectProvider';
 import KBarProvider from '@theme/KBarProvider';
@@ -8,6 +8,10 @@ import OriginalLayoutProviders from '@theme-init/LayoutProviders';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { RootScaleProvider } from '@cbhq/cds-web/system/RootScaleProvider';
+
+type ProviderProps = {
+  children?: ReactNode;
+};
 
 // Guarantee that we are synced with light/dark mode changes were are triggerd on data-theme attribute of page
 function useIsDarkMode() {
@@ -31,7 +35,7 @@ function useIsDarkMode() {
   return isDarkTheme;
 }
 
-const CdsProviders = memo(function CdsProviders({ children }) {
+const CdsProviders = memo(function CdsProviders({ children }: ProviderProps) {
   const { enabled } = useDocgenPluginData();
   const isDarkMode = useIsDarkMode();
   const DocgenProvider = enabled ? DocgenProjectProvider : Fragment;
@@ -50,7 +54,7 @@ const CdsProviders = memo(function CdsProviders({ children }) {
   );
 });
 
-const LayoutProviders = memo(function LayoutProviders({ children }) {
+const LayoutProviders = memo(function LayoutProviders({ children }: ProviderProps) {
   return (
     <OriginalLayoutProviders>
       <CdsProviders>{children}</CdsProviders>

@@ -1,4 +1,4 @@
-import { borderWidth } from '../tokens/border';
+import { borderWidth } from '../tokens/borderWidth';
 
 export const getSparklineRange = ({
   height,

@@ -11,7 +11,7 @@ import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
 
 export default {
   component: SparklineInteractiveHeader,
-  title: 'Core Components/SparklineInteractiveHeader',
+  title: 'Core Components/SparklineInteractiveHeader - (deprecate moved to cds-web-visualization)',
 };
 
 const HeaderLabel = () => {

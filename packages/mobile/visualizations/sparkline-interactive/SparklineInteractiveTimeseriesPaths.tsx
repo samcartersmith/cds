@@ -1,8 +1,7 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import { TextInput } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
 import * as interpolate from 'd3-interpolate-path';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import {
   SparklineInteractiveTimeseriesPathsProps,
   TimeseriesPathProps,
@@ -16,7 +15,7 @@ import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
 
 const TimeseriesPath = memo(
   ({ timeseries, lineFn, initialPath, onRender, areaFn }: TimeseriesPathProps) => {
-    const pathRef = useRef<TextInput | null>(null);
+    const pathRef = useRef<Path | null>(null);
     const { strokeColor } = timeseries;
 
     const lineColor = useAccessibleForeground({ color: strokeColor, usage: 'graphic' });
@@ -82,6 +81,9 @@ const TimeseriesPath = memo(
   },
 );
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export const SparklineInteractiveTimeseriesPaths = memo(
   ({ data, width, height, initialPath, onRender }: SparklineInteractiveTimeseriesPathsProps) => {
     const { lineFn, areaFn } = useTimeseriesPaths({

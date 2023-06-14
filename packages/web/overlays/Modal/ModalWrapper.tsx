@@ -1,9 +1,9 @@
 import React, { AriaRole, ForwardedRef, forwardRef, memo, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { ModalBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 
 import { NoopFn } from '../..';
+import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { Box, BoxProps } from '../../layout';
 import { Overlay } from '../Overlay/Overlay';
@@ -56,6 +56,7 @@ export const ModalWrapper = memo(
       id,
       disableOverlayPress = false,
       dangerouslyDisableResponsiveness = false,
+
       onOverlayPress,
       onDidClose,
       hideOverlay = false,
@@ -74,7 +75,7 @@ export const ModalWrapper = memo(
     }, [visible, blockScroll]);
 
     return (
-      <AnimatePresence onExitComplete={onDidClose}>
+      <NewAnimatePresence onExitComplete={onDidClose}>
         {visible && (
           <Portal disablePortal={disablePortal} containerId={modalContainerId}>
             <Box
@@ -94,24 +95,28 @@ export const ModalWrapper = memo(
               testID={testID}
               ref={ref}
             >
-              {!hideOverlay && (
-                <Overlay
-                  onPress={disableOverlayPress ? undefined : onOverlayPress}
-                  dangerouslySetClassName={
-                    !dangerouslyDisableResponsiveness ? modalOverlayResponsiveClassName : undefined
-                  }
-                  testID="modal-overlay"
-                  animated
-                />
-              )}
-              {/* NOTE: Add position or zIndex to children to avoid displaying under overlay
-               * https://www.freecodecamp.org/news/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3/
-               */}
-              {children}
+              <>
+                {!hideOverlay && (
+                  <Overlay
+                    onPress={!disableOverlayPress ? onOverlayPress : undefined}
+                    dangerouslySetClassName={
+                      !dangerouslyDisableResponsiveness
+                        ? modalOverlayResponsiveClassName
+                        : undefined
+                    }
+                    testID="modal-overlay"
+                    animated
+                  />
+                )}
+                {/* NOTE: Add position or zIndex to children to avoid displaying under overlay
+                 * https://www.freecodecamp.org/news/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3/
+                 */}
+                {children}
+              </>
             </Box>
           </Portal>
         )}
-      </AnimatePresence>
+      </NewAnimatePresence>
     );
   }),
 );

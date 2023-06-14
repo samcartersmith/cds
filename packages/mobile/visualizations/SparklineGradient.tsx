@@ -1,21 +1,23 @@
-import React, { forwardRef, memo, useMemo, useRef } from 'react';
-import { TextInput } from 'react-native';
+import React, { forwardRef, memo, useId, useMemo, useRef } from 'react';
 import Svg, { Defs, G, LinearGradient, Path, Stop } from 'react-native-svg';
-import { borderWidth } from '@cbhq/cds-common/tokens/border';
+import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 import { SparklineBaseProps } from '@cbhq/cds-common/types/SparklineBaseProps';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
-import { generateRandomId } from '@cbhq/cds-utils';
 
 import { useAccessibleForeground } from '../color/useAccessibleForeground';
 import { useAccessibleForegroundGradient } from '../color/useAccessibleForegroundGradient';
 
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export const SparklineGradient = memo(
-  forwardRef<TextInput | null, SparklineBaseProps>(
+  forwardRef<Path | null, SparklineBaseProps>(
     ({ background, color, path, height, width, yAxisScalingFactor, children }, ref) => {
-      const patternId = useRef<string>(generateRandomId());
+      const randomId = useId();
+      const patternId = useRef<string>(randomId);
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
       const areaColor = useAccessibleForeground({ background, color, usage: 'graphic' });
@@ -36,7 +38,7 @@ export const SparklineGradient = memo(
       }, [areaColor, hasChildren, gradient]);
 
       return (
-        <Svg width={width} height={height}>
+        <Svg width={width} height={height} fill="none">
           {linearGradient}
           <G {...translateProps}>
             <Path

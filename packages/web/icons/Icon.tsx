@@ -1,4 +1,4 @@
-import React, { cloneElement, forwardRef, memo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import type {
   IconBaseProps,
@@ -11,18 +11,12 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { usePalette } from '../hooks/usePalette';
 import { Box } from '../layout/Box';
 
-import type { BadgeProps } from './Badge';
 import { iconStyles } from './iconStyles';
 
 export type IconProps = IconBaseProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
     /** Color of the icon when used as a foreground. */
     color?: PaletteForeground | 'currentColor';
-    /**
-     * @deprecated - use Icon paired with DotCount/DotSymbol/DotStatusColor instead
-     * Add a badge to the top right of an icon
-     */
-    badge?: React.ReactElement<BadgeProps>;
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
     dangerouslySetColor?: string;
   };
@@ -32,7 +26,6 @@ export const Icon = memo(
     (
       {
         accessibilityLabel,
-        badge,
         // TODO: border not implemented.
         bordered = false,
         color = 'primary',
@@ -96,12 +89,6 @@ export const Icon = memo(
             >
               {glyph}
             </span>
-            {badge &&
-              cloneElement(badge, {
-                position: 'absolute',
-                top: '-45%',
-                right: '-50%',
-              })}
           </div>
         </Box>
       );

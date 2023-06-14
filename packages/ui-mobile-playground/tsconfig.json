@@ -7,13 +7,15 @@
     "**/*"
   ],
   "exclude": [
-    "cjs",
     "dts",
     "lib"
   ],
   "references": [
     {
       "path": "../mobile"
+    },
+    {
+      "path": "../mobile-visualization"
     },
     {
       "path": "../common"

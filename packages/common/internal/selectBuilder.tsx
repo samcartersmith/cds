@@ -249,7 +249,7 @@ type SelectOptionMobileProps = {
 
 export type CreateSelectProps = {
   Select: ComponentType<React.PropsWithChildren<SelectBaseProps>>;
-  Tray: ComponentType<React.PropsWithChildren<TrayBaseProps>>;
+  Tray: ComponentType<TrayBaseProps>;
   SelectOption: ComponentType<React.PropsWithChildren<SelectOptionMobileProps>>;
   ScrollView: ComponentType<React.PropsWithChildren<unknown>>;
   HStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;

@@ -15,6 +15,9 @@ type SparklineInteractiveLineVerticalMobileProps = SparklineInteractiveLineVerti
   showHoverDate: boolean;
 };
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export const SparklineInteractiveLineVertical = memo(
   ({ color, showHoverDate }: SparklineInteractiveLineVerticalMobileProps) => {
     const { markerOpacity } = useSparklineInteractiveContext();

@@ -100,12 +100,12 @@ describe('Grid', () => {
       expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
-        <Grid columnMin="0px" borderRadius="standard">
+        <Grid columnMin="0px" borderRadius="rounded">
           Child
         </Grid>,
       );
 
-      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} standard`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} rounded`);
     });
 
     it(`will set border radius class name for \`borderRadius\` prop`, () => {
@@ -114,12 +114,12 @@ describe('Grid', () => {
       expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
-        <Grid columnMin="0px" borderRadius="badge">
+        <Grid columnMin="0px" borderRadius="rounded">
           Child
         </Grid>,
       );
 
-      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} badge`);
+      expect(screen.getByText('Child')).toHaveAttribute('class', `${DEFAULT_CLASS} rounded`);
     });
   });
 

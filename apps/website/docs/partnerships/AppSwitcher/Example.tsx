@@ -36,7 +36,7 @@ export const AppSwitcherExample = () => {
           justifyContent="center"
           spacingVertical={4}
           bordered
-          borderRadius="standard"
+          borderRadius="rounded"
         >
           <AppSwitcherRecipe>
             <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />

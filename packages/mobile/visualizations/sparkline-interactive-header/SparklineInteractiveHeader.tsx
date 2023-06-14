@@ -31,6 +31,9 @@ type SparklineInteractiveHeaderMobileProps = {
   trailing?: ReactNode;
 } & SparklineInteractiveHeaderProps;
 
+/**
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ */
 export const SparklineInteractiveHeader = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderMobileProps>(
     ({ defaultLabel, defaultTitle, defaultSubHead, testID, trailing, labelNode }, ref) => {

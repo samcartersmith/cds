@@ -10,7 +10,7 @@ export type LottieProps = {
    * animation will correspondingly update to the frame at that progress value. This
    * prop is not required if you are using the imperative API.
    */
-  progress?: number | Animated.Value | Animated.AnimatedInterpolation;
+  progress?: number | Animated.Value | Animated.AnimatedInterpolation<number>;
   /**
    * An array of layers you want to override its color filter.
    */

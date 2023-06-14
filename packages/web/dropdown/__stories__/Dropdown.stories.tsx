@@ -6,15 +6,17 @@ import { DotCount } from '../../dots';
 import { Icon } from '../../icons';
 import { HStack } from '../../layout';
 import { PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
-import { SectionTitle } from '../../overlays/PopoverMenu/SectionTitle';
 import { Pressable, PressableOpacity } from '../../system';
-import { TextBody, TextHeadline, TextTitle2 } from '../../typography';
+import { TextBody, TextCaption, TextHeadline, TextTitle2 } from '../../typography';
 import { Dropdown } from '../Dropdown';
 import { DropdownProps, DropdownRefProps } from '../DropdownProps';
 import { MenuItem } from '../MenuItem';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export default {
-  title: 'Core Components/Dropdown',
+  title: 'Core Components/Dropdown (deprecated - moved to cds-web-overlays)',
   component: Dropdown,
 };
 
@@ -41,6 +43,9 @@ type MockDropdownProps = {
   'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur' | 'onCloseMenu' | 'disablePortal'
 >;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Default = ({
   options = defaultOptions,
   containerHeight,
@@ -51,7 +56,11 @@ export const Default = ({
 
   const content = (
     <>
-      <SectionTitle text="Section Heading" />
+      <HStack spacingHorizontal={2} spacingVertical={2}>
+        <TextCaption as="h2" color="foregroundMuted">
+          Section Heading
+        </TextCaption>
+      </HStack>
       {options.map((option) => (
         <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
       ))}
@@ -83,7 +92,11 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
 
   const content = (
     <>
-      <SectionTitle text="Section Heading" />
+      <HStack spacingHorizontal={2} spacingVertical={2}>
+        <TextCaption as="h2" color="foregroundMuted">
+          Section Heading
+        </TextCaption>
+      </HStack>
       {defaultOptions.map((option) => (
         <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
       ))}
@@ -106,8 +119,14 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
   );
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const Wrapped = () => <BaseWrapped />;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const WrappedMobileModal = () => <BaseWrapped enableMobileModal />;
 
 const subMenuPosition: PopoverContentPositionConfig = {
@@ -115,6 +134,9 @@ const subMenuPosition: PopoverContentPositionConfig = {
   placement: 'right-start',
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const SubMenu = () => {
   const [menuValue, setMenuValue] = useState<string>();
   const [subMenuValue, setSubMenuValue] = useState<string>();
@@ -144,7 +166,11 @@ export const SubMenu = () => {
   const content = useMemo(
     () => (
       <>
-        <SectionTitle text="Section 1" />
+        <HStack spacingHorizontal={2} spacingVertical={2}>
+          <TextCaption as="h2" color="foregroundMuted">
+            Section Heading
+          </TextCaption>
+        </HStack>
         {defaultOptions.slice(0, 2).map((option) => (
           <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
         ))}
@@ -190,7 +216,7 @@ export const SubMenu = () => {
       </HStack>
       <HStack
         background="backgroundAlternate"
-        borderRadius="standard"
+        borderRadius="rounded"
         justifyContent="center"
         alignItems="center"
         spacing={3}
@@ -219,9 +245,18 @@ const emojiMap = [
   { label: 'coder', glyph: '👩🏼‍💻' },
 ];
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const ShowOverlay = () => <Default showOverlay />;
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const MobileModal = () => <Default enableMobileModal />;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const CustomOptions = () => {
   const [value, onChange] = useState<string | undefined>();
   const currentGlyph = useMemo(
@@ -232,7 +267,11 @@ export const CustomOptions = () => {
   const content = useMemo(
     () => (
       <>
-        <SectionTitle text="Most Popular" />
+        <HStack spacingHorizontal={2} spacingVertical={2}>
+          <TextCaption as="h2" color="foregroundMuted">
+            Section Heading
+          </TextCaption>
+        </HStack>
         <HStack gap={1} flexWrap="wrap" spacingHorizontal={2} spacingBottom={2}>
           {emojiMap.map(({ label, glyph }) => (
             <MenuItem value={label}>

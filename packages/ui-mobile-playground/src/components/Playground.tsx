@@ -1,5 +1,4 @@
 import React, { memo, useMemo } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 
 import { ExamplesListScreen } from './ExamplesListScreen';
@@ -74,13 +73,5 @@ export const Playground = memo((props: PlaygroundProps) => {
     <ExamplesSearchProvider>
       <PlaygroundContent {...props} />
     </ExamplesSearchProvider>
-  );
-});
-
-export const PlaygroundWithNavContainer = memo((props: PlaygroundProps) => {
-  return (
-    <NavigationContainer>
-      <Playground {...props} />
-    </NavigationContainer>
   );
 });

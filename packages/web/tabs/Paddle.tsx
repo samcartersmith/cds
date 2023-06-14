@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatePresence, m as motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
 import {
   PaletteBackground,
@@ -18,6 +18,7 @@ import { durations } from '@cbhq/cds-common/motion/tokens';
 import { tabsPaddleSpacing, tabsPaddleWidth } from '@cbhq/cds-common/tokens/tabs';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
+import { NewAnimatePresence } from '../animation/NewAnimatePresence';
 import { IconButton } from '../buttons/IconButton';
 import { usePalette } from '../hooks/usePalette';
 import { useMotionProps } from '../motion/useMotionProps';
@@ -111,7 +112,7 @@ export const Paddle = ({
   });
 
   return (
-    <AnimatePresence>
+    <NewAnimatePresence>
       {show && (
         <span
           className={className}
@@ -130,7 +131,7 @@ export const Paddle = ({
           <motion.span className={paddleGradientClassName} {...gradientMotionProps} />
         </span>
       )}
-    </AnimatePresence>
+    </NewAnimatePresence>
   );
 };
 

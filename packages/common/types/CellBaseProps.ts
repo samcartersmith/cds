@@ -7,7 +7,6 @@ import { PictogramProps } from './IllustrationProps';
 import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
 import { OffsetProps, SpacingProps } from './SpacingProps';
-import { SpacingScale } from './SpacingScale';
 
 export type CellSpacing = SpacingProps & OffsetProps;
 export type CellSpacingConfig = Pick<CellBaseProps, 'innerSpacing' | 'outerSpacing'>;
@@ -23,14 +22,6 @@ export type CellCommonProps = {
   disabled?: boolean;
   /** Which piece of content has the highest priority in regards to text truncation, growing, and shrinking. */
   priority?: CellPriority | CellPriority[];
-  /** Reduce horizontal spacing for tighter layout requirements.
-   * @deprecated Please use innerSpacing={{ spacingHorizontal: xyz }} moving forward
-   */
-  reduceHorizontalSpacing?: boolean;
-  /** Reduce horizontal offset if parent container already has spacing.
-   * @deprecated Please use outerSpacing={{ offsetHorizontal: xyz }} moving forward
-   */
-  offsetHorizontal?: SpacingScale;
   /** Is the cell selected? Will apply a background and selected accessory. */
   selected?: boolean;
   /** The spacing to use on the parent wrapper of Cell */

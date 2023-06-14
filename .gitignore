@@ -31,6 +31,7 @@ xcuserdata
 DerivedData
 *.hmap
 *.ipa
+*.app
 *.xcuserstate
 *.xcworkspace
 *.xcodeproj/
@@ -116,20 +117,38 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 
-## Detox
-
-apps/mobile-playground/artifacts
-
 ## Bundle artifact
 *.jsbundle
 
 ## CocoaPods
 **/ios/Pods/
-/
 
 ## Nested node_modules
 
 node_modules/
+
+# Expo
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.log
+*.mobileprovision
+*.orig.*
+web-build/
+ios
+android
+# percy screenshots. defined in ui-mobile-visreg
+artifacts/playground-screenshots 
+# failed detox test screenshots
+apps/mobile-app/artifacts
+apps/mobile-app/prebuilds/android-*
+!apps/mobile-app/prebuilds/android-release-*.zip
+!apps/mobile-app/credentials/android-release-*.keystore
 
 #reassure
 .reassure/

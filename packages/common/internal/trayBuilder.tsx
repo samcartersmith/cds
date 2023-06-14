@@ -56,7 +56,7 @@ type FlatListProps = {
 };
 
 export type CreateTrayProps = {
-  Tray: React.ComponentType<React.PropsWithChildren<TrayProps>>;
+  Tray: React.ComponentType<TrayProps>;
   Button: React.ComponentType<
     React.PropsWithChildren<ButtonBaseProps & SharedProps & { onPress?: () => void }>
   >;

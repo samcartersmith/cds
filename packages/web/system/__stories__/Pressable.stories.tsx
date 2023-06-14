@@ -141,7 +141,7 @@ const Borders = () => {
         as="button"
         backgroundColor="background"
         borderColor="primary"
-        borderRadius="compact"
+        borderRadius="roundedSmall"
       >
         <TextBody as="p" spacing={1}>
           primary + compact
@@ -156,7 +156,7 @@ const Borders = () => {
         as="button"
         backgroundColor="primary"
         borderColor="positive"
-        borderRadius="standard"
+        borderRadius="rounded"
       >
         <TextBody as="p" spacing={1} color="primaryForeground">
           positive + standard
@@ -166,13 +166,18 @@ const Borders = () => {
         as="button"
         backgroundColor="secondary"
         borderColor="lineHeavy"
-        borderRadius="tooltip"
+        borderRadius="rounded"
       >
         <TextBody as="p" spacing={1} color="secondaryForeground">
           lineHeavy + tooltip
         </TextBody>
       </Pressable>
-      <Pressable as="button" backgroundColor="positive" borderColor="line" borderRadius="pill">
+      <Pressable
+        as="button"
+        backgroundColor="positive"
+        borderColor="line"
+        borderRadius="roundedLarge"
+      >
         <TextBody as="p" spacing={1} color="positiveForeground">
           line + pill
         </TextBody>
@@ -181,7 +186,7 @@ const Borders = () => {
         as="button"
         backgroundColor="negative"
         borderColor="primaryWash"
-        borderRadius="round"
+        borderRadius="roundedFull"
       >
         <TextBody as="p" spacing={1} color="negativeForeground">
           primaryWash + round

@@ -1,3 +1,3 @@
-import { borderWidth } from '../tokens/border';
+import { borderWidth } from '../tokens/borderWidth';
 
 export type BorderWidth = keyof typeof borderWidth;

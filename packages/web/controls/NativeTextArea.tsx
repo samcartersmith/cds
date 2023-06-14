@@ -35,7 +35,7 @@ const nativeTextAreaBaseStyle = css`
     }
 
     &:-webkit-autofill {
-      border-radius: ${borderRadius.input};
+      border-radius: ${borderRadius.rounded};
     }
   }
 `;

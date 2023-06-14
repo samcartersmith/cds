@@ -6,6 +6,7 @@ import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootSca
 import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
 import { useRootSpectrumPreference } from '@cbhq/cds-common/spectrum/useRootSpectrumPreference';
 import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
+import { DevicePreferencesBaseProviderProps } from '@cbhq/cds-common/system/DevicePreferencesBaseProvider';
 
 import { DevicePreferencesProvider } from '../DevicePreferencesProvider';
 
@@ -39,6 +40,16 @@ describe('DevicePreferencesProvider', () => {
   });
 
   it('returns the correct spectrum based on device media query', () => {
+    function Wrapper(props: DevicePreferencesBaseProviderProps) {
+      return (
+        <DevicePreferencesProvider>
+          {/*
+          // @ts-expect-error - this is a stand-in element for other providers& components */}
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
+
     for (const match of [true, false]) {
       mockMatchMedia(match);
 
@@ -56,11 +67,7 @@ describe('DevicePreferencesProvider', () => {
           };
         },
         {
-          wrapper: (props) => (
-            <DevicePreferencesProvider>
-              <div {...props} />
-            </DevicePreferencesProvider>
-          ),
+          wrapper: Wrapper,
         },
       );
 
@@ -77,6 +84,16 @@ describe('DevicePreferencesProvider', () => {
   test('passed in props take priority over device', () => {
     mockMatchMedia(false); // light mode
 
+    function Wrapper(props: DevicePreferencesBaseProviderProps) {
+      return (
+        <DevicePreferencesProvider spectrum="dark" scale="xSmall">
+          {/*
+          // @ts-expect-error - this is a stand-in element for other providers& components */}
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
+
     const { result } = renderHook(
       () => {
         return {
@@ -91,11 +108,7 @@ describe('DevicePreferencesProvider', () => {
         };
       },
       {
-        wrapper: (props) => (
-          <DevicePreferencesProvider spectrum="dark" scale="xSmall">
-            <div {...props} />
-          </DevicePreferencesProvider>
-        ),
+        wrapper: Wrapper,
       },
     );
 
@@ -109,6 +122,16 @@ describe('DevicePreferencesProvider', () => {
 
   test('unmount unsubscribes media listener', () => {
     mockMatchMedia(false);
+
+    function Wrapper(props: DevicePreferencesBaseProviderProps) {
+      return (
+        <DevicePreferencesProvider>
+          {/*
+          // @ts-expect-error - this is a stand-in element for other providers& components */}
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
 
     const { result, unmount, rerender } = renderHook(
       () => {
@@ -124,11 +147,7 @@ describe('DevicePreferencesProvider', () => {
         };
       },
       {
-        wrapper: (props) => (
-          <DevicePreferencesProvider>
-            <div {...props} />
-          </DevicePreferencesProvider>
-        ),
+        wrapper: Wrapper,
       },
     );
 
@@ -154,6 +173,15 @@ describe('DevicePreferencesProvider', () => {
   test('system to scale and spectrum updates', () => {
     mockMatchMedia(true);
 
+    function Wrapper(props: DevicePreferencesBaseProviderProps) {
+      return (
+        <DevicePreferencesProvider>
+          {/*
+          // @ts-expect-error - this is a stand-in element for other providers& components */}
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
     const { result } = renderHook(
       () => {
         return {
@@ -168,11 +196,7 @@ describe('DevicePreferencesProvider', () => {
         };
       },
       {
-        wrapper: (props) => (
-          <DevicePreferencesProvider>
-            <div {...props} />
-          </DevicePreferencesProvider>
-        ),
+        wrapper: Wrapper,
       },
     );
 
@@ -200,6 +224,16 @@ describe('DevicePreferencesProvider', () => {
   test('scale and spectrum to system updates', () => {
     mockMatchMedia(true);
 
+    function Wrapper(props: DevicePreferencesBaseProviderProps) {
+      return (
+        <DevicePreferencesProvider scale="medium" spectrum="light">
+          {/*
+          // @ts-expect-error - this is a stand-in element for other providers& components */}
+          <div {...props} />
+        </DevicePreferencesProvider>
+      );
+    }
+
     const { result } = renderHook(
       () => {
         return {
@@ -214,11 +248,7 @@ describe('DevicePreferencesProvider', () => {
         };
       },
       {
-        wrapper: (props) => (
-          <DevicePreferencesProvider scale="medium" spectrum="light">
-            <div {...props} />
-          </DevicePreferencesProvider>
-        ),
+        wrapper: Wrapper,
       },
     );
 

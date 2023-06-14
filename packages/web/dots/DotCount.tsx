@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { AnimatePresence, m as motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
 import {
   dotOpacityEnterConfig,
@@ -15,6 +15,7 @@ import {
 import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
 import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';
 
+import { NewAnimatePresence } from '../animation/NewAnimatePresence';
 import { usePalette } from '../hooks/usePalette';
 import { useMotionProps } from '../motion/useMotionProps';
 import { TextCaption } from '../typography/TextCaption';
@@ -67,7 +68,7 @@ export const DotCount = memo(
         {...props}
       >
         {children}
-        <AnimatePresence>
+        <NewAnimatePresence>
           {count > 0 && (
             <motion.div
               {...motionProps}
@@ -81,7 +82,7 @@ export const DotCount = memo(
               </TextCaption>
             </motion.div>
           )}
-        </AnimatePresence>
+        </NewAnimatePresence>
       </div>
     );
   },

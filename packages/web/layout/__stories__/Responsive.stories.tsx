@@ -170,7 +170,7 @@ export const ResponsiveStacks = () => (
   <HStack responsiveConfig={responsiveConfigHoisted}>
     <VStack
       background="backgroundAlternate"
-      borderRadius="standard"
+      borderRadius="rounded"
       responsiveConfig={responsiveConfigHoisted}
     >
       <ListCell title="Title" description="Description" />
@@ -179,7 +179,7 @@ export const ResponsiveStacks = () => (
     </VStack>
     <VStack
       background="backgroundAlternate"
-      borderRadius="standard"
+      borderRadius="rounded"
       responsiveConfig={responsiveConfigHoisted}
     >
       <ListCell title="Title" description="Description" />

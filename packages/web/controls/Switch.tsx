@@ -44,7 +44,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
       label={children}
       ref={ref}
       backgroundColor={checked ? 'primary' : 'backgroundAlternate'}
-      borderRadius="pill"
+      borderRadius="roundedLarge"
       checked={checked}
       {...props}
     >

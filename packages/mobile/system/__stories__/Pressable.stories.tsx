@@ -27,7 +27,7 @@ const PressableScreen = () => {
             accessibilityRole="button"
             backgroundColor="background"
             borderColor="primary"
-            borderRadius="pill"
+            borderRadius="roundedLarge"
             borderWidth="button"
           >
             <TextBody>With border</TextBody>
@@ -37,7 +37,7 @@ const PressableScreen = () => {
           <Pressable
             accessibilityRole="button"
             backgroundColor="primary"
-            borderRadius="pill"
+            borderRadius="roundedLarge"
             borderWidth="button"
           >
             <TextBody color="negativeForeground">Primary</TextBody>
@@ -47,7 +47,7 @@ const PressableScreen = () => {
           <Pressable
             accessibilityRole="button"
             backgroundColor="primary"
-            borderRadius="pill"
+            borderRadius="roundedLarge"
             borderWidth="button"
             loading
           >

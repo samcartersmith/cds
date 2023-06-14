@@ -2,7 +2,7 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import type { ColorSurgeBackground } from '@cbhq/cds-common';
-import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/border';
+import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/borderRadius';
 import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import { InputStackBaseProps } from '@cbhq/cds-common/types/InputBaseProps';
@@ -36,7 +36,7 @@ export const InputStack = memo(function InputStack({
   variant,
   labelNode,
   testID = '',
-  borderRadius = 'input',
+  borderRadius = 'rounded',
   borderFocusedStyle,
   focused,
   enableColorSurge,

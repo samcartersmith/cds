@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from '@storybook/jest';
 import { ComponentStoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/testing-library';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
 
 import { AddressForm } from './AddressForm';
 
@@ -24,6 +24,6 @@ export const FormFilled: ComponentStoryObj<typeof AddressForm> = {
     userEvent.type(canvas.getByLabelText('Postal code'), '89201');
     userEvent.type(canvas.getByLabelText('Country'), 'United States');
     userEvent.click(canvas.getByTestId('save-btn'));
-    expect(canvas.getByText('Submit button was clicked')).toBeInTheDocument();
+    await waitFor(() => expect(canvas.getByText('Submit button was clicked')).toBeInTheDocument());
   },
 };

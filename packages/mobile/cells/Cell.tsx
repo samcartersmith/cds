@@ -19,7 +19,7 @@ export type CellProps = CellBaseProps & CellSharedProps;
 export const Cell = memo(function Cell({
   accessory,
   alignItems = 'center',
-  borderRadius = 'standard',
+  borderRadius = 'rounded',
   children,
   detail,
   detailWidth,

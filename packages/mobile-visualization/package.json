@@ -1,0 +1,32 @@
+{
+  "name": "@cbhq/cds-mobile-visualization",
+  "version": "0.0.5",
+  "description": "Coinbase Design System - Mobile Visualization Native",
+  "repository": "git@github.cbhq.net:frontend/cds.git",
+  "keywords": [
+    "design system",
+    "mobile",
+    "native"
+  ],
+  "types": "index.d.ts",
+  "main": "index",
+  "dependencies": {
+    "d3-interpolate-path": "^2.2.2",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-lottie-files": "workspace:^",
+    "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/cds-utils": "workspace:^",
+    "react": "18.2.0",
+    "react-native": ">=0.68.2",
+    "react-native-gesture-handler": "2.9.0",
+    "react-native-reanimated": "3.1.0",
+    "react-native-safe-area-context": "^4.5.0",
+    "react-native-svg": "13.8.0"
+  },
+  "devDependencies": {
+    "react-test-renderer": "^18.2.0"
+  }
+}

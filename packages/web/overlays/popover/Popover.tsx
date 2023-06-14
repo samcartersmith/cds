@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { memo, MouseEvent, useCallback, useMemo } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { css } from 'linaria';
 import { useScale } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
+import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { usePopoverA11y } from '../../hooks/usePopoverA11y';
 import { Box } from '../../layout/Box';
 import { ThemeProvider } from '../../system';
@@ -41,6 +41,9 @@ const inverseConfig = { light: 'dark', dark: 'light' } as const;
 /**
  * Popover is the internal recommended base component used for any overlay that is laid out with respect to a subject.
  * It is purposely a flexible component and is reserved for CDS internal usage.
+ */
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
  */
 export const Popover = memo(
   ({
@@ -157,7 +160,7 @@ export const Popover = memo(
         >
           {children}
         </div>
-        <AnimatePresence>
+        <NewAnimatePresence>
           {visible ? (
             <Portal disablePortal={disablePortal} containerId={tooltipContainerId}>
               <ThemeProvider
@@ -179,7 +182,7 @@ export const Popover = memo(
               </ThemeProvider>
             </Portal>
           ) : undefined}
-        </AnimatePresence>
+        </NewAnimatePresence>
       </div>
     );
   },

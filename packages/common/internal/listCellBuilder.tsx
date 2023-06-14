@@ -5,6 +5,7 @@ import type {
   ButtonBaseProps,
   CellMediaProps,
   CellPriority,
+  CellSpacing,
   ControlBaseProps,
   IconButtonBaseProps,
   IllustrationPictogramNames,
@@ -117,6 +118,8 @@ export function listCellBuilder(
     );
   };
 
+  const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+
   const PressableContent = () => (
     <>
       <ListCell title="Title" onPress={onPressConsole} />
@@ -156,7 +159,7 @@ export function listCellBuilder(
         detail="Detail"
         subdetail="Neutral"
         onPress={onPressConsole}
-        reduceHorizontalSpacing
+        innerSpacing={innerSpacingConfig}
       />
 
       <ListCell
@@ -175,7 +178,7 @@ export function listCellBuilder(
         subdetail="Neutral"
         onPress={onPressConsole}
         disabled
-        reduceHorizontalSpacing
+        innerSpacing={innerSpacingConfig}
       />
 
       <ListCell
@@ -246,7 +249,7 @@ export function listCellBuilder(
         detail="Detail"
         subdetail="Neutral"
         onPress={onPressConsole}
-        reduceHorizontalSpacing
+        innerSpacing={innerSpacingConfig}
       />
 
       <ListCell
@@ -267,7 +270,7 @@ export function listCellBuilder(
         subdetail="Neutral"
         onPress={onPressConsole}
         disabled
-        reduceHorizontalSpacing
+        innerSpacing={innerSpacingConfig}
       />
 
       <ListCell
@@ -514,7 +517,7 @@ export function listCellBuilder(
         detailWidth={100}
         onPress={onPressConsole}
         selected
-        borderRadius="none"
+        borderRadius="roundedNone"
         {...selectCellSpacingConfig}
       />
       <ListCell
@@ -523,7 +526,7 @@ export function listCellBuilder(
         detail="$1,230"
         detailWidth={100}
         onPress={onPressConsole}
-        borderRadius="none"
+        borderRadius="roundedNone"
         {...selectCellSpacingConfig}
       />
     </>

@@ -6,10 +6,6 @@ force: true
 
 /** The values for these CSS variables are defined in [styles/borderRadius](./styles/borderRadius.ts) */
 export const borderRadius = {
-  <% Object.entries(configs.borderRadiusDeprecated).map(([alias, value]) => { _%>
-    /** @deprecated Please use new rounded prefixed values */
-    <%- alias %>: '<%- h.toCssVarGetter(`borderRadius`, alias) %>',
-  <% }) _%>
   <% Object.entries(configs.borderRadius).map(([alias, value]) => { _%>
       <%- alias %>: '<%- h.toCssVarGetter(`borderRadius`, alias) %>',
   <% }) _%>

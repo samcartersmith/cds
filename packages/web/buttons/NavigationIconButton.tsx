@@ -64,7 +64,7 @@ export const NavigationIconButton = memo(
 
     return (
       <Pressable
-        borderRadius="round"
+        borderRadius="roundedFull"
         borderColor={borderColor}
         borderWidth="button"
         onPress={handlePress}
