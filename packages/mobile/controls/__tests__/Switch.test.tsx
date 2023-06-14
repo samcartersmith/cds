@@ -39,7 +39,6 @@ describe('Switch.test', () => {
       // disable 'disabled-state-required' since it's flagging passing disabled
       // to Interactable and unclear if we're lacking a11y affordances here
       customViolationHandler: (violations) => {
-        console.log(violations);
         return violations.filter(
           (v) =>
             v.problem !== "This component has a disabled state but it isn't exposed to the user",
