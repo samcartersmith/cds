@@ -1,6 +1,8 @@
 import {
   AttributeValueRenameMapShape,
+  PropToAttributeValue,
   PropToAttributeValueMigrationShape,
+  RenameValueMapShape,
 } from '../../../helpers/types';
 
 // Migrations for both web and mobile packages
@@ -10,6 +12,45 @@ export const migrateBooleanPropToAttributeAndValueMigrations: PropToAttributeVal
     newAttribute: 'direction',
     value: 'horizontal',
   },
+};
+
+export const manualPropMigrations: Record<string, PropToAttributeValue[]> = {
+  Cell: [
+    {
+      oldAttribute: 'reduceHorizontalSpacing',
+      newAttribute: 'innerSpacing',
+      value: '{ spacingHorizontal: 1 }',
+    },
+    {
+      oldAttribute: 'offsetHorizontal',
+      newAttribute: 'outerSpacing',
+      value: '{ offsetHorizontal: 2 }',
+    },
+  ],
+  ContentCell: [
+    {
+      oldAttribute: 'reduceHorizontalSpacing',
+      newAttribute: 'innerSpacing',
+      value: '{ spacingHorizontal: 1 }',
+    },
+    {
+      oldAttribute: 'offsetHorizontal',
+      newAttribute: 'outerSpacing',
+      value: '{ offsetHorizontal: 2 }',
+    },
+  ],
+  ListCell: [
+    {
+      oldAttribute: 'reduceHorizontalSpacing',
+      newAttribute: 'innerSpacing',
+      value: '{ spacingHorizontal: 1 }',
+    },
+    {
+      oldAttribute: 'offsetHorizontal',
+      newAttribute: 'outerSpacing',
+      value: '{ offsetHorizontal: 2 }',
+    },
+  ],
 };
 
 export const propValueMigrations: AttributeValueRenameMapShape = {
@@ -54,3 +95,21 @@ export const removedProps: Record<string, RemovedProp> = {
 
 // this is used in all Typography components so just going to look for files with CDS web/mobile imports and surface a warning if prop is present
 export const removedPropsCatchAll = ['deprecatedLineHeight'];
+
+export const catchAllPropValueMigrations: RenameValueMapShape[] = [
+  {
+    attribute: 'borderRadius',
+    valueMap: {
+      none: 'roundedNone',
+      compact: 'roundedSmall',
+      tooltipV2: 'rounded',
+      standard: 'rounded',
+      badge: 'rounded',
+      tooltip: 'roundedLarge',
+      pill: 'roundedLarge',
+      round: 'roundedFull',
+      input: 'rounded',
+      search: 'roundedFull',
+    },
+  },
+];

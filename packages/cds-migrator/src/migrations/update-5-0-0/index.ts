@@ -2,6 +2,7 @@ import { Tree } from '@nrwl/devkit';
 
 import componentMigrations from './componentMigrations';
 import functionMigrations from './functionMigrations';
+import manualPropMigrations from './manualPropMigrations';
 import propToAttributeAndValueMigrations from './propToAttributeAndValueMigrations';
 import propValueMigrations from './propValueMigrations';
 import removedComponents from './removedComponents';
@@ -26,4 +27,5 @@ export default async function main(tree: Tree) {
   await removedPropCatchallMigrations(tree);
   await removedComponents(tree);
   await componentMigrations(tree);
+  await manualPropMigrations(tree);
 }

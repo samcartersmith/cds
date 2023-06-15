@@ -10,6 +10,7 @@ import { curves } from '@cbhq/cds-common/tokens/motion';
 // @ts-expect-error testing
 import { Animated } from '@cbhq/cds-web/animation/Animated';
 import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
+import { ContentCell, ListCell } from '@cbhq/cds-web/cells';
 // @ts-expect-error testing
 import { CollapseArrow } from '@cbhq/cds-web/collapsible/CollapseArrow';
 // should update to '@cbhq-web/navigation/Sidebar'
@@ -54,6 +55,12 @@ export const V5MigrationsTest = () => {
       <Pictogram name="2fa" dimension="96x96" />
       {/* @ts-expect-error testing */}
       <CDSPictogram name="2fa" dimension="96x96" />
+      {/* @ts-expect-error testing */}
+      <ContentCell reduceHorizontalSpacing />
+      {/* @ts-expect-error testing */}
+      <ListCell offsetHorizontal={2} />
+      {/* @ts-expect-error testing */}
+      <Box borderRadius="tooltip" />
       {/* boolean prop -> attribute value migrations */}
       <Group horizontal>
         <Box />

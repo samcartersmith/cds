@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.4 (6/15/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat(CDS Migrator): Added missing v5 migration scripts. [[#2029](https://github.cbhq.net/frontend/cds/pull/2029)]
+
 ## 0.1.3 (6/2/2023 PST)
 
 #### 🚀 Updates
