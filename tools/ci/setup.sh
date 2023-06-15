@@ -9,6 +9,12 @@ yarn config set enableGlobalCache false
 # Immutable is the same as a frozen lockfile
 yarn install --immutable
 
+# Yarn formats package.json files
+if ! git diff --quiet; then
+    echo "Error: Changes detected after yarn install."
+    exit 1
+fi
+
 # Need to make sure base branch is up-to-date. If not running on a PR, use `BUILDKITE_BRANCH`
 BASE_BRANCH=$BUILDKITE_PULL_REQUEST_BASE_BRANCH
 
