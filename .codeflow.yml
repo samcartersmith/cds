@@ -169,7 +169,7 @@ build:
         name: package-cds-web-visualization
         path: ./packages/web-visualization/publish.Dockerfile
         autobuild: false
-        compute_type: BUILD_GENERAL1_SMALL
+        compute_type: BUILD_GENERAL1_MEDIUM
         expire_keep_tags_after_days: 1
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
@@ -177,7 +177,7 @@ build:
         name: package-mobile-visualization
         path: ./packages/mobile-visualization/publish.Dockerfile
         autobuild: false
-        compute_type: BUILD_GENERAL1_SMALL
+        compute_type: BUILD_GENERAL1_MEDIUM
         expire_keep_tags_after_days: 1
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
@@ -185,7 +185,7 @@ build:
         name: package-cds-web-overlays
         path: ./packages/cds-web-overlays/publish.Dockerfile
         autobuild: false
-        compute_type: BUILD_GENERAL1_SMALL
+        compute_type: BUILD_GENERAL1_MEDIUM
         expire_keep_tags_after_days: 1
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
