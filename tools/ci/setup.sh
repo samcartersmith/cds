@@ -12,8 +12,8 @@ yarn install --immutable
 # Yarn formats package.json files
 if ! git diff --quiet -- '**/package.json'
 then
-    echo "Error: Changes detected after yarn install. Verify that all package.json files are formatted correctly by running yarn install locally."
     git diff
+    echo "Error: Changes detected after yarn install. Verify that all package.json files are formatted correctly by running yarn install locally."
     exit 1
 fi
 
