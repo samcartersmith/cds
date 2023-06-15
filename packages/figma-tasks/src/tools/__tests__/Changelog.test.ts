@@ -16,7 +16,8 @@ jest.mock('@cbhq/mono-tasks', () => ({
 }));
 
 jest.mock('node:fs', () => ({
-  existsSync: jest.fn(),
+  // TODO: Remove when errors in `mono-env` due to `existsSync` being mocked have been resolved
+  existsSync: jest.fn().mockReturnValue(true),
   promises: {
     readFile: jest.fn(),
     writeFile: jest.fn(),
