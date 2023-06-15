@@ -36,13 +36,14 @@ The following sections describe how to push new package releases to our consumer
 
 Any commit can be deployed because we version every change. Locate your release commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) and manually deploy to all of the following:
 
-- corporate::cds-web-esm
 - corporate::cds-web
 - corporate::cds-common
 - corporate::cds-mobile
+- corporate::cds-web-visualization
+- corporate::cds-web-overlays
+- corporate::cds-mobile-visualization
 - production::upload-css
 - production::upload-css-sw-cache
-- production::cds-docs
 
 heimdall should automatically deploy to the following when the build finishes:
 
@@ -54,6 +55,10 @@ heimdall should automatically deploy to the following when the build finishes:
 If heimdall fails to do this for some reason, then manually deploy to those targets as well.
 
 ![release.png](/docs/release.png)
+
+If any changes were made to the `cds-migrator` package, manually deploy:
+
+- corporate::cds-migrator
 
 ## Verifying a Release
 
