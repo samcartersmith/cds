@@ -38,6 +38,7 @@ export const CodeExample = memo(function CodeExample({
           {description}
         </TextBody>
       )}
+      {image && <CMSContent content={image} />}
       {code && (
         <CodePlayground
           code={code}
@@ -45,7 +46,6 @@ export const CodeExample = memo(function CodeExample({
           editorStartsExpanded={editorStartsExpanded}
         />
       )}
-      {image && <CMSContent content={image} />}
     </VStack>
   );
 });

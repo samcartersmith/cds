@@ -36,6 +36,7 @@ export function useComposePage<T>(slug?: string) {
           locale: 'en',
           spaceId: space,
           clientKey,
+          include: 10,
         },
         handleError,
       );
