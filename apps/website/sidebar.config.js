@@ -833,6 +833,13 @@ const sidebars = {
             { type: 'doc', id: 'changelog/mobile', label: '@cbhq/cds-mobile' },
             { type: 'doc', id: 'changelog/utils', label: '@cbhq/cds-utils' },
             { type: 'doc', id: 'changelog/web', label: '@cbhq/cds-web' },
+            { type: 'doc', id: 'changelog/cds-web-overlays', label: '@cbhq/cds-web-overlays' },
+            {
+              type: 'doc',
+              id: 'changelog/mobile-visualization',
+              label: '@cbhq/mobile-visualization',
+            },
+            { type: 'doc', id: 'changelog/web-visualization', label: '@cbhq/web-visualization' },
             {
               type: 'doc',
               id: 'changelog/ui-mobile-playground',
