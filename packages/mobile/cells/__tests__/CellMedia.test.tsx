@@ -1,4 +1,3 @@
-/* eslint-disable jest/no-commented-out-tests */
 import { render, screen } from '@testing-library/react-native';
 import { CellScaleDensity } from '@cbhq/cds-common/tokens/cell';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
@@ -52,20 +51,19 @@ describe('CellMedia', () => {
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
-  // TODO: enable when accessibility is hooked up for icon type
-  // it('icon sets an accessible label', () => {
-  //   render(
-  //     <CellMedia
-  //       type="icon"
-  //       name="arrowUp"
-  //       accessibilityLabel="Icon label"
-  //       accessibilityHint="Icon hint"
-  //     />,
-  //   );
+  it('icon sets an accessible label', () => {
+    render(
+      <CellMedia
+        type="icon"
+        name="arrowUp"
+        accessibilityLabel="Icon label"
+        accessibilityHint="Icon hint"
+      />,
+    );
 
-  //   expect(screen.getByLabelText('Icon label')).toBeTruthy();
-  //   expect(screen.getByHintText('Icon hint')).toBeTruthy();
-  // });
+    expect(screen.getByLabelText('Icon label')).toBeTruthy();
+    expect(screen.getByHintText('Icon hint')).toBeTruthy();
+  });
 
   it('asset sets an accessible label', () => {
     render(
@@ -109,64 +107,57 @@ describe('CellMedia', () => {
     expect(screen.getByHintText('Image hint')).toBeTruthy();
   });
 
-  // TODO: enable when accessibility is hooked up for pictogram type
-  // it('pictogram sets an accessible label', () => {
-  //   render(
-  //     <CellMedia
-  //       type="pictogram"
-  //       illustration={<Pictogram name="2fa" />}
-  //       accessibilityLabel="Pictogram label"
-  //       accessibilityHint="Pictogram hint"
-  //     />,
-  //   );
+  it('pictogram sets an accessible label on CellMedia', () => {
+    render(
+      <CellMedia
+        type="pictogram"
+        illustration={<Pictogram name="2fa" />}
+        accessibilityLabel="Pictogram label"
+        accessibilityHint="Pictogram hint"
+      />,
+    );
 
-  //   expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
-  //   expect(screen.getByHintText('Pictogram hint')).toBeTruthy();
-  // });
+    expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
+    expect(screen.getByHintText('Pictogram hint')).toBeTruthy();
+  });
 
-  // it('pictogram sets an accessible label on CellMedia', () => {
-  //   render(
-  //     <CellMedia
-  //       type="pictogram"
-  //       illustration={<Pictogram name="2fa" />}
-  //       accessibilityLabel="Pictogram label"
-  //       accessibilityHint="Pictogram hint"
-  //     />,
-  //   );
+  it('pictogram sets an accessible label on Pictogram', () => {
+    render(
+      <CellMedia
+        type="pictogram"
+        illustration={
+          <Pictogram
+            name="2fa"
+            accessibilityLabel="Pictogram label"
+            accessibilityHint="Pictogram hint"
+          />
+        }
+      />,
+    );
 
-  //   expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
-  //   expect(screen.getByHintText('Pictogram hint')).toBeTruthy();
-  // });
+    expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
+    expect(screen.getByHintText('Pictogram hint')).toBeTruthy();
+  });
 
-  // it('pictogram sets an accessible label on Pictogram', () => {
-  //   render(
-  //     <CellMedia
-  //       type="pictogram"
-  //       illustration={
-  //         <Pictogram name="2fa" accessibilityLabel="Pictogram label" accessibilityHint="Pictogram hint" />
-  //       }
-  //     />,
-  //   );
+  it('pictogram CellMedia accessible labels override Pictogram accessible labels', () => {
+    render(
+      <CellMedia
+        type="pictogram"
+        illustration={
+          <Pictogram
+            name="2fa"
+            accessibilityLabel="Pictogram label"
+            accessibilityHint="Pictogram hint"
+          />
+        }
+        accessibilityLabel="CellMedia label"
+        accessibilityHint="CellMedia hint"
+      />,
+    );
 
-  //   expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
-  //   expect(screen.getByHintText('Pictogram hint')).toBeTruthy();
-  // });
-
-  // it('pictogram CellMedia accessible labels override Pictogram accessible labels', () => {
-  //   render(
-  //     <CellMedia
-  //       type="pictogram"
-  //       illustration={
-  //         <Pictogram name="2fa" accessibilityLabel="Pictogram label" accessibilityHint="Pictogram hint" />
-  //       }
-  //       accessibilityLabel="CellMedia label"
-  //       accessibilityHint="CellMedia hint"
-  //     />,
-  //   );
-
-  //   expect(screen.getByLabelText('CellMedia label')).toBeTruthy();
-  //   expect(screen.getByHintText('CellMedia hint')).toBeTruthy();
-  // });
+    expect(screen.getByLabelText('CellMedia label')).toBeTruthy();
+    expect(screen.getByHintText('CellMedia hint')).toBeTruthy();
+  });
 
   it('renders an icon', () => {
     render(<CellMedia type="icon" name="arrowUp" />);

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.0.1 (6/16/2023 PST)
+
+#### 🐞 Fixes
+
+- **[CellMedia]** Hooked up a11y props on all image variants. [[#2039](https://github.cbhq.net/frontend/cds/pull/2039)] [[DX-1127](https://jira.coinbase-corp.com/browse/DX-1127)]
+
 ## 5.0.0 (6/5/2023 PST)
 
 #### 💥 Breaking

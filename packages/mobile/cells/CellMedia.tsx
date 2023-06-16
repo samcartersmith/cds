@@ -5,6 +5,7 @@ import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional'
 import { imageSize, mediaSize, pictogramScaleMultiplier } from '@cbhq/cds-common/tokens/cell';
 
 import { Icon } from '../icons/Icon';
+import { PictogramProps } from '../illustrations';
 import { Box } from '../layout/Box';
 import { getSource, RemoteImage } from '../media/RemoteImage';
 
@@ -14,7 +15,7 @@ export type CellMediaProps = {
    * @link https://reactnative.dev/docs/0.67/images#cache-control-ios-only
    */
   cache?: ImageURISource['cache'];
-} & CellMediaBaseProps &
+} & CellMediaBaseProps<PictogramProps> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
@@ -26,8 +27,15 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   let content = null;
 
   if (props.type === 'icon') {
-    // TODO: hook up accessibilityLabel and accessibilityHint
-    content = <Icon size="s" name={props.name} color={props.color ?? 'foreground'} />;
+    content = (
+      <Icon
+        size="s"
+        name={props.name}
+        color={props.color ?? 'foreground'}
+        accessibilityLabel={props.accessibilityLabel}
+        accessibilityHint={props.accessibilityHint}
+      />
+    );
   }
 
   if (props.type === 'asset' || props.type === 'avatar') {
@@ -62,10 +70,11 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
 
   if (props.type === 'pictogram') {
     size = imageSizeScaled;
-    // TODO: hook up accessibilityLabel and accessibilityHint
     content = cloneElement(props.illustration, {
       dimension: '48x48',
       scaleMultiplier: pictogramScaleMultiplierScaled,
+      accessibilityLabel: props.accessibilityLabel ?? props.illustration.props.accessibilityLabel,
+      accessibilityHint: props.accessibilityHint ?? props.illustration.props.accessibilityHint,
     });
   }
 

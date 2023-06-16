@@ -83,9 +83,9 @@ export type CellMediaIconProps = {
   color?: Extract<PaletteForeground, 'primary' | 'foreground' | 'foregroundMuted'>;
 } & SharedProps;
 
-export type CellMediaPictogramProps = {
+export type CellMediaPictogramProps<T> = {
   type: Extract<CellMediaType, 'pictogram'>;
-  illustration: React.ReactElement<PictogramProps>;
+  illustration: React.ReactElement<T>;
 } & SharedProps;
 
 export type CellMediaOtherProps = {
@@ -99,7 +99,10 @@ export type CellMediaOtherProps = {
   source: CellMediaSource;
 } & SharedProps;
 
-export type CellMediaProps = CellMediaIconProps | CellMediaPictogramProps | CellMediaOtherProps;
+export type CellMediaProps<T = PictogramProps> =
+  | CellMediaIconProps
+  | CellMediaPictogramProps<T>
+  | CellMediaOtherProps;
 
 export type ContentCellBaseProps = {
   /** Accessory to display at the end of the cell. */
