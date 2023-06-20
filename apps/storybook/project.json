@@ -24,12 +24,22 @@
       "executor": "@cbhq/mono-tasks:typecheck"
     },
     "build": {
-      "executor": "@cbhq/mono-tasks:build-storybook"
+      "executor": "@cbhq/mono-tasks:build-storybook",
+      "outputs": [
+        "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
+      ]
     },
     "build-for-tests": {
       "executor": "@cbhq/mono-tasks:build-storybook",
       "dependsOn": [
         "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "outputs": [
+        "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
       ]
     },
     "a11y-web": {

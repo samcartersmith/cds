@@ -17,12 +17,11 @@
           "build-css",
           "build-esm",
           "build-for-tests",
+          "format",
           "lint",
           "lint-styles",
           "test",
-          "typecheck",
-          "e2e",
-          "visreg"
+          "typecheck"
         ],
         "captureStderr": true
       }
@@ -30,24 +29,65 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "outputs": [
+        "{workspaceRoot}/.nx/outs/projects/{projectRoot}",
+        "{projectRoot}/assets",
+        "{projectRoot}/cjs",
+        "{projectRoot}/dts",
+        "{projectRoot}/esm",
+        "{projectRoot}/lib",
+        "{projectRoot}/mjs"
+      ]
     },
     "start": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     },
     "lint": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/.eslintignore"
+      ]
     },
     "test": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "outputs": [
+        "{workspaceRoot}/.nx/outs/projects/{projectRoot}/coverage"
+      ]
     },
     "typecheck": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "outputs": [
+        "{workspaceRoot}/.nx/dts/{projectRoot}"
+      ]
     }
   },
   "workspaceLayout": {
@@ -55,7 +95,10 @@
     "libsDir": "packages"
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "sharedGlobals": [
       "{workspaceRoot}/.buildkite/*.yml",
       "{workspaceRoot}/.eslintrc.js",
@@ -64,10 +107,12 @@
       "{workspaceRoot}/nx.json",
       "{workspaceRoot}/package.json",
       "{workspaceRoot}/tsconfig.json",
-      "{workspaceRoot}/tsconfig.*.json",
-      "{workspaceRoot}/workspace.json"
+      "{workspaceRoot}/tsconfig.*.json"
     ],
-    "production": ["default"]
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)"
+    ]
   },
   "$schema": "./node_modules/nx/schemas/nx-schema.json"
 }

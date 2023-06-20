@@ -56,6 +56,10 @@
     },
     "build-esm": {
       "executor": "@cbhq/cds-tasks:build-package-esm",
+      "inputs": [
+        "production",
+        "^production"
+      ],
       "outputs": [
         "{workspaceRoot}/.nx/dist/packages/web-esm"
       ],
@@ -93,6 +97,12 @@
     },
     "build-css": {
       "executor": "@cbhq/cds-tasks:build-css",
+      "inputs": [
+        "{workspaceRoot}/packages/icons/fonts/web/**/*",
+        "{workspaceRoot}/.nx/dist/packages/fonts/**/*",
+        "{workspaceRoot}/.nx/dist/packages/web/**/*",
+        "production"
+      ],
       "outputs": [
         "{workspaceRoot}/.nx/dist/cloud/css"
       ],
