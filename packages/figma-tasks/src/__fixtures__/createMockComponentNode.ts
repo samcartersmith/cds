@@ -76,5 +76,6 @@ export function createMockComponentNode({
       file_key: '',
       description: '',
     },
+    status: 200,
   };
 }

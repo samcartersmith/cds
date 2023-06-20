@@ -43,22 +43,12 @@
         ]
       }
     },
-    "update-playground": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "apps/mobile-playground",
-        "commands": [
-          "yarn react-native-asset"
-        ]
-      }
-    },
     "release": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/icons",
         "commands": [
-          "nx run icons:sync",
-          "nx run icons:update-playground"
+          "nx run icons:sync"
         ],
         "parallel": false
       }

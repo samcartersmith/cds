@@ -980,6 +980,11 @@ export type ProjectSummary = {
   readonly name: string;
 };
 
+export type Response = {
+  readonly err?: string;
+  readonly status?: number;
+};
+
 export type FileResponse = {
   readonly components: Readonly<Record<string, ComponentMetadata>>;
   readonly styles: Readonly<Record<string, Style>>;
@@ -990,7 +995,7 @@ export type FileResponse = {
   readonly schemaVersion: number;
   readonly thumbnailUrl: string;
   readonly version: string;
-};
+} & Response;
 
 export type NodeStyles = Readonly<Record<string, Style>>;
 
@@ -1000,7 +1005,7 @@ export type NodeResponse = {
   readonly componentSets: Readonly<Record<string, ComponentSetMetadata>>;
   readonly styles: NodeStyles;
   readonly schemaVersion: number;
-};
+} & Response;
 
 export type FileNodesResponse = {
   readonly nodes: Readonly<Record<string, null | NodeResponse>>;
@@ -1009,7 +1014,7 @@ export type FileNodesResponse = {
   readonly role: RoleType;
   readonly thumbnailUrl: string;
   readonly version: string;
-};
+} & Response;
 
 export type VersionMetadata = {
   /** Unique identifier for version */
@@ -1026,42 +1031,33 @@ export type VersionMetadata = {
 
 export type FileVersionsResponse = {
   readonly versions: readonly VersionMetadata[];
-};
+} & Response;
 
 export type FileImageResponse = {
-  readonly err: string | null;
   readonly images: Readonly<Record<string, string>>;
-};
+} & Response;
 
 export type FileImageFillsResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: {
     readonly images: Readonly<Record<string, string>>;
   };
-};
+} & Response;
 
 export type CommentsResponse = {
   readonly comments: readonly Comment[];
-};
+} & Response;
 
 export type ComponentResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: FullComponentMetadata;
-};
+} & Response;
 
 export type ComponentSetResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: FullComponentSetMetadata;
-};
+} & Response;
 
 export type StyleResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: FullStyleMetadata;
-};
+} & Response;
 
 export type FileSummary = {
   readonly key: string;
@@ -1073,12 +1069,12 @@ export type FileSummary = {
 export type TeamProjectsResponse = {
   readonly name: string;
   readonly projects: readonly ProjectSummary[];
-};
+} & Response;
 
 export type ProjectFilesResponse = {
   readonly name: string;
   readonly files: readonly FileSummary[];
-};
+} & Response;
 
 type PaginationMeta = {
   readonly before: number;
@@ -1086,52 +1082,40 @@ type PaginationMeta = {
 };
 
 export type TeamComponentsResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: {
     readonly components: readonly FullComponentMetadata[];
     readonly cursor: PaginationMeta;
   };
-};
+} & Response;
 
 export type FileComponentsResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: {
     readonly components: readonly FullComponentMetadata[];
   };
-};
+} & Response;
 
 export type TeamComponentSetsResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: {
     readonly component_sets: readonly FullComponentSetMetadata[];
     readonly cursor: PaginationMeta;
   };
-};
+} & Response;
 
 export type FileComponentSetsResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: {
     readonly component_sets: readonly FullComponentSetMetadata[];
   };
-};
+} & Response;
 
 export type TeamStylesResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: {
     readonly styles: readonly FullStyleMetadata[];
     readonly cursor: PaginationMeta;
   };
-};
+} & Response;
 
 export type FileStylesResponse = {
-  readonly error: boolean;
-  readonly status: number;
   readonly meta: {
     readonly styles: FullStyleMetadata[];
   };
-};
+} & Response;

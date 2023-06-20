@@ -1,9 +1,14 @@
 import https from 'node:https';
 import { URL } from 'node:url';
 
+import { Response } from './types';
+
 type Primitive = string | boolean | number;
 
-export function createClient<ApiParams extends Record<string, Primitive>, Response>() {
+export function createClient<
+  ApiParams extends Record<string, Primitive>,
+  ClientResponse extends Response,
+>() {
   return async function api(path: string, params?: ApiParams) {
     const figmaUrl = new URL(`https://api.figma.com/v1/${path}`);
 
@@ -12,7 +17,7 @@ export function createClient<ApiParams extends Record<string, Primitive>, Respon
       figmaUrl.searchParams.set(param, value);
     });
 
-    return new Promise<Response>((resolve, reject) => {
+    return new Promise<ClientResponse>((resolve, reject) => {
       let resBody = '';
 
       const req = https.request(
@@ -30,8 +35,15 @@ export function createClient<ApiParams extends Record<string, Primitive>, Respon
             resBody += chunk;
           });
           res.on('end', () => {
-            const data = JSON.parse(resBody) as Response;
-            resolve(data);
+            const data = JSON.parse(resBody) as ClientResponse;
+
+            // Figma API is not consistent with its response structure, endpoints don't always return a 200 status,
+            // but should always return a non 200 status
+            if (data.status && data.status !== 200) {
+              reject(new Error(`Status: ${data.status}, Message: ${data.err}, URL: ${figmaUrl}`));
+            } else {
+              resolve(data);
+            }
           });
         },
       );

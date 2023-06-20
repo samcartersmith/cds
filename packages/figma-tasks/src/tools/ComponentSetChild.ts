@@ -24,6 +24,7 @@ export type ComponentSetChildParams<ChildShape extends ComponentSetChildShape> =
   metadata?: ComponentSetChildMetadata;
   node: NodeResponseWithMetadata;
   props: ComponentSetChildProps;
+  hashSource: string;
 };
 
 export class ComponentSetChild<ChildShape extends ComponentSetChildShape = ComponentSetChildShape> {
@@ -41,9 +42,17 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
 
   public readonly props: ChildShape['props'] = {} as ChildShape['props'];
 
+  public readonly hashSource: string;
+
   private _metadata: ChildShape['metadata'] = undefined;
 
-  constructor({ componentSet, node, metadata, props }: ComponentSetChildParams<ChildShape>) {
+  constructor({
+    componentSet,
+    node,
+    metadata,
+    props,
+    hashSource,
+  }: ComponentSetChildParams<ChildShape>) {
     const { document } = node;
     const { width, height } = getSize(document);
     this.componentSet = componentSet;
@@ -53,6 +62,7 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
     this.width = width;
     this.height = height;
     this.props = props;
+    this.hashSource = hashSource;
   }
 
   public get createdAt() {

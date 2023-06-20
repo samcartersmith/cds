@@ -1,5 +1,6 @@
 import camelCase from 'lodash/camelCase';
 import path from 'node:path';
+import type { SyncedLibrary } from '@cbhq/figma-api';
 import { createTask } from '@cbhq/mono-tasks';
 import {
   getAbsolutePath,
@@ -16,8 +17,10 @@ import { FontConfig } from '../../helpers/font/types';
 import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { createSvgContent } from '../../helpers/image/createSvgContent';
+import { getIdMappedSvg } from '../../helpers/image/getIdMappedSvg';
 import { sortByCreatedAt } from '../../helpers/sortByCreatedAt';
 import { CodegenItemConfig } from '../../helpers/types';
+import type { ComponentSetManifest } from '../../tools/ComponentSet';
 import { ComponentSet } from '../../tools/ComponentSet';
 import { ComponentSetChild } from '../../tools/ComponentSetChild';
 import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manifest';
@@ -52,6 +55,14 @@ function getOutputKey(item: IconComponentSetChild) {
   return camelCase(kebabCaseKey);
 }
 
+async function getHashSourceItem(id: string, syncedLibrary: SyncedLibrary) {
+  return getIdMappedSvg(id, syncedLibrary, svgoConfig);
+}
+
+async function createItem(manifest: ComponentSetManifest) {
+  return ComponentSet.create(manifest, getHashSourceItem);
+}
+
 export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (task) => {
   const codegenHeader = `
     /**
@@ -63,9 +74,9 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
   const { manifest, changelog } = await Manifest.init<IconsManifestShape, SyncIconsTaskOptions>(
     task,
     {
-      requestType: 'component_sets',
-      createItem: ComponentSet.create,
       imageFormats: ['svg'],
+      requestType: 'component_sets',
+      createItem,
     },
   );
 
@@ -94,13 +105,11 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
 
       if (hasChanged) {
         componentSet.addToOutputs({});
-        const figmaUrl = manifest.syncedLibrary.imageUrls.svg[item.id];
 
         await createSvgContent({
+          svg: item.hashSource,
           imageName,
           svgDir,
-          figmaUrl,
-          svgoConfig,
         });
 
         componentSet.addToOutputs({ [outputKey]: svgFilePath });

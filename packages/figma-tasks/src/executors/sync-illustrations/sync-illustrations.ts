@@ -1,4 +1,5 @@
 import path from 'node:path';
+import type { SyncedLibrary } from '@cbhq/figma-api';
 import { createTask } from '@cbhq/mono-tasks';
 import {
   getAbsolutePath,
@@ -15,6 +16,7 @@ import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { createPngContent } from '../../helpers/image/createPngContent';
 import { createSvgContent } from '../../helpers/image/createSvgContent';
+import { getIdMappedSvg } from '../../helpers/image/getIdMappedSvg';
 import { sortByCreatedAt } from '../../helpers/sortByCreatedAt';
 import { Component } from '../../tools/Component';
 import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manifest';
@@ -27,6 +29,14 @@ export type SyncIllustrationsTaskOptions = {
 } & ManifestTaskOptions;
 
 export type IllustrationsManifestShape = ManifestShape<Component>;
+
+async function getHashSourceMap(id: string, syncedLibrary: SyncedLibrary) {
+  return getIdMappedSvg(id, syncedLibrary, svgoConfig);
+}
+
+async function createItem(manifest: Manifest<ManifestShape<Component>>) {
+  return Component.create(manifest, getHashSourceMap);
+}
 
 export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
   'sync-illustrations',
@@ -44,7 +54,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
     >(task, {
       imageFormats: ['svg'],
       requestType: 'components',
-      createItem: Component.create,
+      createItem,
       versioned: true,
     });
 
@@ -59,13 +69,6 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
       }[]
     > = {};
 
-    const validItems: Record<
-      string,
-      {
-        name: string;
-        figmaUrl: string;
-      }[]
-    > = {};
     function generateImageFormatsForItem(type: string) {
       return async (item: Component) => {
         const hasNotChanged = !manifest.syncedLibrary.recentlyUpdatedIds.includes(item.id);
@@ -73,6 +76,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
         if (hasNotChanged) {
           return item;
         }
+
         item.addToOutputs({});
 
         const { svgDir, svgJsDir, pngDir } = getOutputDirectories({ type, generatedDirectory });
@@ -81,12 +85,11 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
 
         const figmaUrl = manifest.syncedLibrary.imageUrls.svg[item.id];
         const { svgContent, outputs: svgOutputs } = await createSvgContent({
+          svg: item.hashSource,
           imageName,
           svgDir,
           svgJsDir,
-          figmaUrl,
           colorStyles,
-          svgoConfig,
         });
 
         imageOutputs = { ...imageOutputs, ...svgOutputs };
@@ -105,14 +108,6 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
             invalidItems[type] = [];
           }
           invalidItems[type].push({
-            name: item.name,
-            figmaUrl,
-          });
-        } else {
-          if (!validItems[type]) {
-            validItems[type] = [];
-          }
-          validItems[type].push({
             name: item.name,
             figmaUrl,
           });

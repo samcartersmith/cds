@@ -12,6 +12,9 @@ const svgoConfig: Config = {
           cleanupNumericValues: {
             floatPrecision: 2,
           },
+          convertPathData: {
+            floatPrecision: 2,
+          },
           convertColors: {
             names2hex: true,
             rgb2hex: true,

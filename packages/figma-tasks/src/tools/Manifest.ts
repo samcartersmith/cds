@@ -18,7 +18,7 @@ import { ColorStyles } from './ColorStyles';
 
 export type ItemShape = {
   id: string;
-  /** Base64 representation of vector data from Figma node response */
+  /** Base64 representation of provided hash source */
   hash?: string;
   name: string;
   type: string;
@@ -51,6 +51,8 @@ export type ManifestTaskOptions = {
   lightModeManifestFile?: string;
   /** The manifest.json file which contains dark color styles */
   darkModeManifestFile?: string;
+  /** Sync all items regardless of when they were last updated */
+  syncAll: boolean;
 };
 
 export type GetManifestItem<T extends ManifestShape> = T['items'][number][1];
@@ -179,6 +181,7 @@ export class Manifest<
         } else {
           const hashingEnabled = Boolean(item.hash && prevNode?.hash);
           const hasVisualChange = hashingEnabled ? item.hash !== prevNode.hash : true;
+
           if (hasVisualChange) {
             this.updates.add(item);
             if (this.versioned) {
@@ -188,7 +191,7 @@ export class Manifest<
 
               const renameFn = (output: string) =>
                 output.replace(`-${oldVersion}`, `-${newVersion}`);
-              // If it already existed we need to rename outputs before writting new content
+              // If it already existed we need to rename outputs before writing new content
               await this.renameOutputs(item, renameFn);
             }
           } else {
@@ -290,7 +293,7 @@ export class Manifest<
     const syncedLibrary = await syncLibrary({
       fileId: task.options.figmaApiFileId,
       requestType,
-      lastUpdated: previousManifest.lastUpdated,
+      lastUpdated: task.options.syncAll ? undefined : previousManifest.lastUpdated,
       imageFormats,
       batchSize: 500,
     });

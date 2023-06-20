@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 import { mapValues } from 'lodash';
-import { NodeResponseWithMetadata } from '@cbhq/figma-api';
+import type { NodeResponseWithMetadata, SyncedLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
 import { sortByAlphabet } from '@cbhq/script-utils';
 
-import { createHashFromNodeChildren } from '../helpers/createHashFromNodeChildren';
+import { createHashFromObject } from '../helpers/createHashFromObject';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { parseName } from '../helpers/parseName';
 
@@ -23,7 +23,8 @@ type MetadataShape = Record<string, string | number>;
 
 export type ComponentSetParams<Metadata extends MetadataShape = MetadataShape> = {
   id: string;
-  /** Base64 representation of vector data from Figma node response */
+  hashSourceMap: Record<string, string>;
+  /** Base64 representation of provided hash source */
   hash: string;
   description: string;
   name: string;
@@ -74,6 +75,7 @@ export class ComponentSet<
   constructor({
     description,
     id,
+    hashSourceMap,
     hash,
     name,
     node,
@@ -129,6 +131,7 @@ export class ComponentSet<
               node: { ...node, document: child },
               props,
               metadata: childMetadata,
+              hashSource: hashSourceMap[child.id],
             }),
           );
         }
@@ -198,6 +201,10 @@ export class ComponentSet<
 
   static async create<ChildShape extends ComponentSetChildShape = ComponentSetChildShape>(
     manifest: ComponentSetManifest,
+    getHashSourceMapItem: (
+      id: string,
+      syncedLibrary: SyncedLibrary,
+    ) => Promise<Record<string, string>>,
   ) {
     await Promise.all(
       Object.values(manifest.syncedLibrary.nodes).map(async (node) => {
@@ -206,12 +213,21 @@ export class ComponentSet<
           const { type, name } = parseName(node);
           const { description, updated_at: lastUpdated, created_at: createdAt } = node.metadata;
           const oldVersion = manifest.getPreviousItem({ id, type, name });
-          const hash = createHashFromNodeChildren(node.document.children);
+
+          const hashSourceMap = await Promise.all(
+            node.document.children.map(async (child) => {
+              return getHashSourceMapItem(child.id, manifest.syncedLibrary);
+            }),
+          ).then((results) => results.reduce((acc, result) => ({ ...acc, ...result }), {}));
+
+          // generate a single hash for the entire set of components
+          const hash = createHashFromObject(hashSourceMap);
 
           const params = {
             ...oldVersion,
             node,
             id,
+            hashSourceMap,
             hash,
             type,
             name,

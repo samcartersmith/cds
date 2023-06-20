@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import { mapValues } from 'lodash';
-import type { NodeResponseWithMetadata } from '@cbhq/figma-api';
+import type { NodeResponseWithMetadata, SyncedLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
 
-import { createHashFromNodeChildren } from '../helpers/createHashFromNodeChildren';
+import { createHashFromObject } from '../helpers/createHashFromObject';
 import { getSize } from '../helpers/getSize';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { parseName } from '../helpers/parseName';
@@ -15,7 +15,8 @@ type MetadataShape = Record<string, string | number>;
 export type ComponentParams<Metadata extends MetadataShape = MetadataShape> = {
   id: string;
   description: string;
-  /** Base64 representation of vector data from Figma node response */
+  hashSource: string;
+  /** Base64 representation of provided hash source */
   hash: string;
   height: number;
   name: string;
@@ -36,6 +37,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
   public readonly description: string;
 
   public readonly id: string;
+
+  public readonly hashSource: string;
 
   public readonly hash: string;
 
@@ -64,6 +67,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
   constructor({
     description,
     id,
+    hashSource,
     hash,
     height,
     width,
@@ -88,6 +92,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     this.task = task;
 
     this.node = node;
+    this.hashSource = hashSource;
     this.hash = hash;
 
     if (metadata) {
@@ -136,7 +141,10 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     };
   }
 
-  static async create(manifest: Manifest<ManifestShape<Component>>) {
+  static async create(
+    manifest: Manifest<ManifestShape<Component>>,
+    getHashSourceMap: (id: string, syncedLibrary: SyncedLibrary) => Promise<Record<string, string>>,
+  ) {
     await Promise.all(
       Object.values(manifest.syncedLibrary.nodes).map(async (node) => {
         if (node?.document?.type === 'COMPONENT') {
@@ -150,7 +158,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
             );
           const { width, height } = getSize(node.document);
           const { description, updated_at: lastUpdated, created_at: createdAt } = node.metadata;
-          const hash = createHashFromNodeChildren(node.document.children);
+          const hashSourceMap = await getHashSourceMap(id, manifest.syncedLibrary);
+          const hash = createHashFromObject(hashSourceMap);
 
           const params = {
             ...oldVersion,
@@ -159,6 +168,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
             type,
             name,
             width,
+            hashSource: hashSourceMap[id],
             hash,
             height,
             description,

@@ -72,6 +72,11 @@
           }
         ]
       }
+    },
+    "syncAll": {
+      "type": "boolean",
+      "description": "Sync all icons regardless of when they were last updated",
+      "default": false
     }
   }
 }

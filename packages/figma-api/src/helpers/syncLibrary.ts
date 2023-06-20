@@ -11,7 +11,7 @@ type SyncLibraryParams = {
    * The ISO timestamp from the last time the figma library was synced. This will
    * ensure any items which were updated before the last update are excluded.
    * Because our Figma libraries are so large (>=1600 components), we do not want to
-   * have to fetch images or detailed node information for items which have no changed.
+   * have to fetch images or detailed node information for items which have not changed.
    *
    * Set this to undefined or an empty string to ensure all data is returned from response
    * regardless of when an item was last updated.
