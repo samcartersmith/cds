@@ -6158,27 +6158,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/cli@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/cli@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fcli%2F-%2Fcli-15.7.1.tgz"
+"@nrwl/cli@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/cli@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fcli%2F-%2Fcli-15.7.2.tgz"
   dependencies:
-    nx: 15.7.1
-  checksum: 87cbeb22ba6b2e3770fa9e034eaf4f45403d3162848b22b2a8155e1ee53a7d73c46190cccaa28f3aa89676afc47ae2464e2b703d3408440d8818a719825ccd95
-  languageName: node
-  linkType: hard
-
-"@nrwl/devkit@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/devkit@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fdevkit%2F-%2Fdevkit-15.7.1.tgz"
-  dependencies:
-    "@phenomnomnominal/tsquery": 4.1.1
-    ejs: ^3.1.7
-    ignore: ^5.0.4
-    semver: 7.3.4
-    tslib: ^2.3.0
-  peerDependencies:
-    nx: ">= 14.1 <= 16"
-  checksum: fc876cdf855b7a75d4e15b25a25ba15ff213ab38517d2f6a55a1217a766e13ada3c87a35611b2e070ccf721041b9041a73e7313d543438f99718db5f4a9d30a6
+    nx: 15.7.2
+  checksum: c59130679458e1572181d8b49ff3a755bba4e07f8fe9a4c0b20330a16105548381467c557a4f3dd09051cf6ae8bcea15c3f2ccd2dba9ad6d0dfec79de0b61b49
   languageName: node
   linkType: hard
 
@@ -6197,11 +6182,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/linter@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/linter@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Flinter%2F-%2Flinter-15.7.1.tgz"
+"@nrwl/linter@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/linter@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Flinter%2F-%2Flinter-15.7.2.tgz"
   dependencies:
-    "@nrwl/devkit": 15.7.1
+    "@nrwl/devkit": 15.7.2
     "@phenomnomnominal/tsquery": 4.1.1
     tmp: ~0.2.1
     tslib: ^2.3.0
@@ -6210,90 +6195,90 @@ __metadata:
   peerDependenciesMeta:
     eslint:
       optional: true
-  checksum: 4a48256ea07069eed10e2d3663d354541a6157e570c4e69bd21d72d3e5e020a3d9a5938e53258018e5f7cd3cdfed26cf262ddbc912acf05419f7edeabd4d916e
+  checksum: e2b61240404a81d8c30a046ec0940a9b1987e0744d0472cef32a867258531cb271e165a6f9c5c9a7e0739f1e871b4018d3e93f91b1d95290bcd2510e0e25babd
   languageName: node
   linkType: hard
 
-"@nrwl/nx-darwin-arm64@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-darwin-arm64@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-darwin-arm64%2F-%2Fnx-darwin-arm64-15.7.1.tgz"
+"@nrwl/nx-darwin-arm64@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-darwin-arm64@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-darwin-arm64%2F-%2Fnx-darwin-arm64-15.7.2.tgz"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@nrwl/nx-darwin-x64@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-darwin-x64@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-darwin-x64%2F-%2Fnx-darwin-x64-15.7.1.tgz"
+"@nrwl/nx-darwin-x64@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-darwin-x64@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-darwin-x64%2F-%2Fnx-darwin-x64-15.7.2.tgz"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@nrwl/nx-linux-arm-gnueabihf@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-linux-arm-gnueabihf@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-arm-gnueabihf%2F-%2Fnx-linux-arm-gnueabihf-15.7.1.tgz"
+"@nrwl/nx-linux-arm-gnueabihf@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-linux-arm-gnueabihf@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-arm-gnueabihf%2F-%2Fnx-linux-arm-gnueabihf-15.7.2.tgz"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@nrwl/nx-linux-arm64-gnu@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-linux-arm64-gnu@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-arm64-gnu%2F-%2Fnx-linux-arm64-gnu-15.7.1.tgz"
+"@nrwl/nx-linux-arm64-gnu@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-linux-arm64-gnu@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-arm64-gnu%2F-%2Fnx-linux-arm64-gnu-15.7.2.tgz"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@nrwl/nx-linux-arm64-musl@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-linux-arm64-musl@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-arm64-musl%2F-%2Fnx-linux-arm64-musl-15.7.1.tgz"
+"@nrwl/nx-linux-arm64-musl@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-linux-arm64-musl@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-arm64-musl%2F-%2Fnx-linux-arm64-musl-15.7.2.tgz"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@nrwl/nx-linux-x64-gnu@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-linux-x64-gnu@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-x64-gnu%2F-%2Fnx-linux-x64-gnu-15.7.1.tgz"
+"@nrwl/nx-linux-x64-gnu@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-linux-x64-gnu@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-x64-gnu%2F-%2Fnx-linux-x64-gnu-15.7.2.tgz"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@nrwl/nx-linux-x64-musl@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-linux-x64-musl@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-x64-musl%2F-%2Fnx-linux-x64-musl-15.7.1.tgz"
+"@nrwl/nx-linux-x64-musl@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-linux-x64-musl@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-linux-x64-musl%2F-%2Fnx-linux-x64-musl-15.7.2.tgz"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@nrwl/nx-win32-arm64-msvc@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-win32-arm64-msvc@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-win32-arm64-msvc%2F-%2Fnx-win32-arm64-msvc-15.7.1.tgz"
+"@nrwl/nx-win32-arm64-msvc@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-win32-arm64-msvc@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-win32-arm64-msvc%2F-%2Fnx-win32-arm64-msvc-15.7.2.tgz"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@nrwl/nx-win32-x64-msvc@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/nx-win32-x64-msvc@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-win32-x64-msvc%2F-%2Fnx-win32-x64-msvc-15.7.1.tgz"
+"@nrwl/nx-win32-x64-msvc@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/nx-win32-x64-msvc@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fnx-win32-x64-msvc%2F-%2Fnx-win32-x64-msvc-15.7.2.tgz"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@nrwl/tao@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/tao@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Ftao%2F-%2Ftao-15.7.1.tgz"
+"@nrwl/tao@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/tao@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Ftao%2F-%2Ftao-15.7.2.tgz"
   dependencies:
-    nx: 15.7.1
+    nx: 15.7.2
   bin:
     tao: index.js
-  checksum: 47c468077bd23c6bd03c421f2f6efe509eda5b53fa15c90d296b061b76ffb40de505ad4e4d71338200e90c28994dfa1c24a48c12a802a40ba3d6d4e980b0d46f
+  checksum: cbf76f385bffb1bf1bde52d4ad950a8abd1ba9865f47afb67a58bb5dc5d7be0d21c5021a3332d2ab665d99b36ec1f08ee260c1289bb7e69783e69712145d2709
   languageName: node
   linkType: hard
 
-"@nrwl/workspace@npm:15.7.1":
-  version: 15.7.1
-  resolution: "@nrwl/workspace@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fworkspace%2F-%2Fworkspace-15.7.1.tgz"
+"@nrwl/workspace@npm:15.7.2":
+  version: 15.7.2
+  resolution: "@nrwl/workspace@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fworkspace%2F-%2Fworkspace-15.7.2.tgz"
   dependencies:
-    "@nrwl/devkit": 15.7.1
-    "@nrwl/linter": 15.7.1
+    "@nrwl/devkit": 15.7.2
+    "@nrwl/linter": 15.7.2
     "@parcel/watcher": 2.0.4
     chalk: ^4.1.0
     chokidar: ^3.5.1
@@ -6302,13 +6287,11 @@ __metadata:
     dotenv: ~10.0.0
     figures: 3.2.0
     flat: ^5.0.2
-    fs-extra: ^11.1.0
     glob: 7.1.4
     ignore: ^5.0.4
-    jsonc-parser: 3.2.0
     minimatch: 3.0.5
     npm-run-path: ^4.0.1
-    nx: 15.7.1
+    nx: 15.7.2
     open: ^8.4.0
     rxjs: ^6.5.4
     semver: 7.3.4
@@ -6321,7 +6304,7 @@ __metadata:
   peerDependenciesMeta:
     prettier:
       optional: true
-  checksum: b01e537f4de9141ff928cb114b2af08d3d7fba73c14aff7ee64e9753974fe923246e4f41fd90180395e7e69e435ccb2ad9230044a2a3c85184c7564ee9cb5024
+  checksum: 8e4c0920d85353963ed6f21d5ec58ba82d204832597c33326843b32909deb4107b72994859c192e43b455ccb09e8a7f7e06697765e3eb5382091f43153e3e0fc
   languageName: node
   linkType: hard
 
@@ -16693,7 +16676,7 @@ __metadata:
     "@cbhq/mono-tasks-mobile": ^0.3.16
     "@cbhq/mono-templates": ^0.6.1
     "@joshcena/docusaurus-plugin-utils": ^0.1.3
-    "@nrwl/workspace": 15.7.1
+    "@nrwl/workspace": 15.7.2
     "@parcel/css-cli": ^1.9.0
     "@storybook/jest": ^0.0.10
     "@storybook/testing-library": ^0.0.13
@@ -16743,7 +16726,7 @@ __metadata:
     jest-axe: ^4.1.0
     jest-environment-jsdom: ^29.5.0
     lint-staged: ^13.2.1
-    nx: 15.7.1
+    nx: 15.7.2
     postcss-cli: ^9.1.0
     postcss-nested: ^5.0.6
     postcss-sort-media-queries: ^4.2.1
@@ -28613,21 +28596,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nx@npm:15.7.1":
-  version: 15.7.1
-  resolution: "nx@npm:15.7.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fnx%2F-%2Fnx-15.7.1.tgz"
+"nx@npm:15.7.2":
+  version: 15.7.2
+  resolution: "nx@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fnx%2F-%2Fnx-15.7.2.tgz"
   dependencies:
-    "@nrwl/cli": 15.7.1
-    "@nrwl/nx-darwin-arm64": 15.7.1
-    "@nrwl/nx-darwin-x64": 15.7.1
-    "@nrwl/nx-linux-arm-gnueabihf": 15.7.1
-    "@nrwl/nx-linux-arm64-gnu": 15.7.1
-    "@nrwl/nx-linux-arm64-musl": 15.7.1
-    "@nrwl/nx-linux-x64-gnu": 15.7.1
-    "@nrwl/nx-linux-x64-musl": 15.7.1
-    "@nrwl/nx-win32-arm64-msvc": 15.7.1
-    "@nrwl/nx-win32-x64-msvc": 15.7.1
-    "@nrwl/tao": 15.7.1
+    "@nrwl/cli": 15.7.2
+    "@nrwl/nx-darwin-arm64": 15.7.2
+    "@nrwl/nx-darwin-x64": 15.7.2
+    "@nrwl/nx-linux-arm-gnueabihf": 15.7.2
+    "@nrwl/nx-linux-arm64-gnu": 15.7.2
+    "@nrwl/nx-linux-arm64-musl": 15.7.2
+    "@nrwl/nx-linux-x64-gnu": 15.7.2
+    "@nrwl/nx-linux-x64-musl": 15.7.2
+    "@nrwl/nx-win32-arm64-msvc": 15.7.2
+    "@nrwl/nx-win32-x64-msvc": 15.7.2
+    "@nrwl/tao": 15.7.2
     "@parcel/watcher": 2.0.4
     "@yarnpkg/lockfile": ^1.1.0
     "@yarnpkg/parsers": ^3.0.0-rc.18
@@ -28690,7 +28673,7 @@ __metadata:
       optional: true
   bin:
     nx: bin/nx.js
-  checksum: eabad8cbdc46b229a981a0a5dafb75294f7e03c4fc3c8662fb79b390cddc2961b057343411b52dc7c7d657f1714dd605a0ab2b54f10a1dd34f0c5680f3c0d610
+  checksum: c5765575146bb94f54c1da3d6dec600e6414c0cc64c198821a3de10a72583933f1a752a61452b74f02492e3518f4ead3c287416173b1bb3bbc15ce82bd8d2bb4
   languageName: node
   linkType: hard
 
