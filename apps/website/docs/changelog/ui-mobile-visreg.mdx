@@ -6,27 +6,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.1 (6/15/2023 PST)
+
+#### 🐞 Fixes
+
+- **[Visreg]** Upgrade Visreg/Detox iOS sim to iPhone 14. [[#2038](https://github.cbhq.net/frontend/cds/pull/2038)], [[DX-1440](https://jira.coinbase-corp.com/browse/DX-1440)]
+
 #### 📘 Misc
 
 - Merge master into release.
-
-## Unreleased
-
-#### 📘 Misc
-
 - Update route generator script.
-
-#### 📘 Misc
-
 - Sync changelog.
-
-#### 📘 Misc
-
 - Rebase sparkline-mobile decomposition on release branch.
-
-#### 📘 Misc
-
-- Merge master into release.
 
 ## 1.0.0-rc.2 (3/22/2023 PST)
 

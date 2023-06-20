@@ -37,7 +37,7 @@ const config = {
     simulator: {
       type: 'ios.simulator',
       device: {
-        type: isCI() ? 'iPhone 12' : 'iPhone 14',
+        type: 'iPhone 14',
       },
     },
     emulator: {
