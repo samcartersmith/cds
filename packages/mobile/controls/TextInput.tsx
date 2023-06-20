@@ -44,8 +44,13 @@ export type TextInputProps = {
    * @default auto
    */
   minHeight?: DimensionValue;
+  /**
+   * Native TextInput textAlign with the extra unset option to remove the textAlign style.
+   * Use this to workaround the issue where long text does not ellipsis in TextInput
+   */
+  textAlign?: RNTextInputProps['textAlign'] | 'unset';
 } & TextInputBaseProps &
-  Omit<RNTextInputProps, 'value' | 'onChange' | 'onChangeText'>;
+  Omit<RNTextInputProps, 'value' | 'onChange' | 'onChangeText' | 'textAlign'>;
 
 export const TextInput = memo(
   forwardRef(

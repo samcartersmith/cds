@@ -55,6 +55,16 @@ export default function InputScreen() {
           placeholder="john.doe@coinbase.com"
         />
       </Example>
+      <Example inline title="TextInput ellipsis long text">
+        <MockTextInput
+          label="Username"
+          helperText="Use textAlign='unset' to workaround the issue where long text does not ellipsis correctly."
+          variant="foregroundMuted"
+          placeholder="john.doe@coinbase.com"
+          value="https://github.cbhq.net/frontend/cds/blob/master/docs/commands.md!-|?/"
+          textAlign="unset"
+        />
+      </Example>
       <Example inline title="TextInput Positive">
         <MockTextInput
           label="Username"

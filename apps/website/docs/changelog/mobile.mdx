@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.0.2 (6/20/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix incorrect text truncation on TextInput. [[#2030](https://github.cbhq.net/frontend/cds/pull/2030)] [[DX-1683](https://jira.coinbase-corp.com/browse/DX-1683)]
+
 ## 5.0.1 (6/16/2023 PST)
 
 #### 🐞 Fixes

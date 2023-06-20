@@ -21,13 +21,19 @@ export type NativeInputProps = {
    * @default false
    * */
   disabled?: boolean;
+  /**
+   * Native TextInput textAlign with the extra unset option to remove the textAlign style.
+   * Use this to workaround the issue where long text does not ellipsis in TextInput
+   * @warning Setting this to unset will break alignment for RTL languages.
+   */
+  textAlign?: TextInputProps['textAlign'] | 'unset';
 } & SharedProps &
   Pick<TextInputBaseProps, 'compact'> &
   Pick<
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   > &
-  TextInputProps;
+  Omit<TextInputProps, 'textAlign'>;
 
 export const NativeInput = memo(
   forwardRef(
@@ -37,6 +43,7 @@ export const NativeInput = memo(
         testID = '',
         align = 'start',
         disabled,
+        textAlign,
         accessibilityLabel,
         compact,
         ...editableInputAddonProps
@@ -60,8 +67,16 @@ export const NativeInput = memo(
       }, [containerSpacing, containerSpacingStyle]);
 
       const inputRootStyles = useMemo(() => {
-        return [inputTextStyle, containerStyle, { textAlign: textAlignInputTransformed }];
-      }, [containerStyle, inputTextStyle, textAlignInputTransformed]);
+        return [
+          inputTextStyle,
+          containerStyle,
+          /**
+           * To workaround a known RN bug (link below) where long text does not ellipsis correctly in TextInput
+           * @link https://github.com/facebook/react-native/issues/29068
+           */
+          { textAlign: textAlign === 'unset' ? undefined : textAlignInputTransformed },
+        ];
+      }, [containerStyle, inputTextStyle, textAlignInputTransformed, textAlign]);
 
       return (
         <RNTextInput
@@ -74,6 +89,7 @@ export const NativeInput = memo(
           accessibilityRole="search"
           placeholderTextColor={palette.foregroundMuted}
           keyboardAppearance={spectrum}
+          textAlign={textAlign !== 'unset' ? textAlign : undefined}
           {...editableInputAddonProps}
         />
       );
