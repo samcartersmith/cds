@@ -47,6 +47,7 @@ const names: HeroSquareName[] = [
   'catHoldingWalletEmptyState',
   'catLostSystemError',
   'chickenFishSystemError',
+  'cloudBacking',
   'coinCheckmark',
   'coinbaseCard',
   'coinbaseCardIssue',

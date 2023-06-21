@@ -194,6 +194,7 @@ const names: PictogramName[] = [
   'orders',
   'partialCoins',
   'participateNavigation',
+  'passport',
   'passwordWalletLocked',
   'payNavigation',
   'paypal',

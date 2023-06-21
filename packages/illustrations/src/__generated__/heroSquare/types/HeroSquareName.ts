@@ -41,6 +41,7 @@ export type HeroSquareName =
   | 'catHoldingWalletEmptyState'
   | 'catLostSystemError'
   | 'chickenFishSystemError'
+  | 'cloudBacking'
   | 'coinbaseCard'
   | 'coinbaseCardIssue'
   | 'coinbaseCardLock'

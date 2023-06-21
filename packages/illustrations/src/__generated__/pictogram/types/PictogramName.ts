@@ -188,6 +188,7 @@ export type PictogramName =
   | 'orders'
   | 'partialCoins'
   | 'participateNavigation'
+  | 'passport'
   | 'passwordWalletLocked'
   | 'payNavigation'
   | 'paypal'
