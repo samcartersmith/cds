@@ -24,6 +24,7 @@ export type NavIconName =
   | 'crystalBall'
   | 'dashboard'
   | 'defi'
+  | 'derivatives'
   | 'diamond'
   | 'directDeposit'
   | 'documentation'

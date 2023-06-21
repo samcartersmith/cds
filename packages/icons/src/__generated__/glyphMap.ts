@@ -1165,6 +1165,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-passport-12': '',
   'ui-passport-16': '',
   'ui-passport-24': '',
+  'nav-derivatives-12-active': '',
+  'nav-derivatives-12-inactive': '',
+  'nav-derivatives-16-active': '',
+  'nav-derivatives-16-inactive': '',
+  'nav-derivatives-24-active': '',
+  'nav-derivatives-24-inactive': '',
 };
 
 export default glyphMap;

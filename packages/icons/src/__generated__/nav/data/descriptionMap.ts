@@ -233,7 +233,7 @@ const descriptionMap: Record<string, string[]> = {
   '🥈': ['trophyCup'],
   '🥉': ['trophyCup'],
   '🏅': ['trophyCup'],
-  more: ['moreVertical'],
+  more: ['moreVertical', 'derivatives'],
   kebab: ['moreVertical'],
   mochi: ['moreVertical'],
   additional: ['moreVertical'],
@@ -529,6 +529,17 @@ const descriptionMap: Record<string, string[]> = {
   droplet: ['faucet'],
   hydration: ['faucet'],
   '🚰': ['faucet'],
+  derivatives: ['derivatives'],
+  fulcrum: ['derivatives'],
+  lever: ['derivatives'],
+  coins: ['derivatives'],
+  leverage: ['derivatives'],
+  scale: ['derivatives'],
+  'for less': ['derivatives'],
+  size: ['derivatives'],
+  yours: ['derivatives'],
+  is: ['derivatives'],
+  not: ['derivatives'],
 };
 
 export default descriptionMap;
