@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Bump peerDep.
+
 ## 0.1.0 (5/25/2023 PST)
 
 #### 🚀 Updates

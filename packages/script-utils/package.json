@@ -18,7 +18,7 @@
   },
   "peerDependencies": {
     "@cbhq/eslint-plugin": "^1.26.3",
-    "@cbhq/mono-tasks": "^0.6.8",
+    "@cbhq/mono-tasks": "^0.9.12",
     "lodash": "^4.17.21",
     "prettier": "^2.8.3"
   },

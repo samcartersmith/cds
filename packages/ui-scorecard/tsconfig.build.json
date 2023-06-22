@@ -7,8 +7,13 @@
     "src"
   ],
   "exclude": [
-    ".eslintrc.js",
-    "cjs",
-    "dts"
+    "**/*.spec.*",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__fixtures__/**",
+    "**/__mocks__/**",
+    "**/__stories__/**",
+    "**/__tests__/**",
+    ".eslintrc.js"
   ]
 }

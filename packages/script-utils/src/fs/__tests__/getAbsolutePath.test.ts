@@ -13,7 +13,7 @@ const mockTask = new Task(
       executor: `@cbhq/mock-tasks:test`,
       options: {},
     },
-    workspace: {
+    projectsConfigurations: {
       projects: {
         'mock-tasks': {
           root: `packages/mock-tasks`,

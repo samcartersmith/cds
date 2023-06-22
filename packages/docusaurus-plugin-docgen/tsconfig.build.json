@@ -8,7 +8,12 @@
     "module-declarations.d.ts"
   ],
   "exclude": [
-    "dts",
-    "lib"
+    "**/*.spec.*",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__fixtures__/**",
+    "**/__mocks__/**",
+    "**/__stories__/**",
+    "**/__tests__/**"
   ]
 }

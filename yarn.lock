@@ -252,7 +252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/cli@npm:^7.19.3, @babel/cli@npm:^7.20.7":
+"@babel/cli@npm:^7.20.7":
   version: 7.20.7
   resolution: "@babel/cli@npm:7.20.7::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40babel%2Fcli%2F-%2Fcli-7.20.7.tgz"
   dependencies:
@@ -337,7 +337,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:>=7.9.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.8, @babel/core@npm:^7.15.5, @babel/core@npm:^7.17.8, @babel/core@npm:^7.18.13, @babel/core@npm:^7.18.5, @babel/core@npm:^7.19.0, @babel/core@npm:^7.19.6, @babel/core@npm:^7.20.0, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.2, @babel/core@npm:^7.22.1, @babel/core@npm:^7.7.5":
+"@babel/core@npm:>=7.9.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.8, @babel/core@npm:^7.15.5, @babel/core@npm:^7.17.8, @babel/core@npm:^7.18.13, @babel/core@npm:^7.18.5, @babel/core@npm:^7.19.0, @babel/core@npm:^7.19.6, @babel/core@npm:^7.20.0, @babel/core@npm:^7.20.12, @babel/core@npm:^7.22.1, @babel/core@npm:^7.7.5":
   version: 7.22.5
   resolution: "@babel/core@npm:7.22.5::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40babel%2Fcore%2F-%2Fcore-7.22.5.tgz"
   dependencies:
@@ -2454,21 +2454,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/cca@npm:^3.6.1":
-  version: 3.8.0
-  resolution: "@cbhq/cca@npm:3.8.0"
-  dependencies:
-    babel-plugin-search-and-replace: ^1.1.0
-    idb: ^7.0.0
-    md5: ^2.3.0
-    perfume.js: ^6.3.0
-    ua-parser-js: ^0.7.30
-  peerDependencies:
-    react: ">=16.13"
-  checksum: 6a6d931938470446570a6a49faedd9f355a59ebfc1d7070b16a0934fa3d5b492861519d27e02b30c041db87bec2dedb603f9ddfaf04e880a158a784bd224e7f3
-  languageName: node
-  linkType: hard
-
 "@cbhq/cds-common@workspace:^, @cbhq/cds-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
@@ -2755,17 +2740,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/client-analytics@npm:^5.7.0":
-  version: 5.9.2
-  resolution: "@cbhq/client-analytics@npm:5.9.2"
+"@cbhq/client-analytics-prebuilt@npm:@cbhq/client-analytics@^7.2.0":
+  version: 7.2.0
+  resolution: "@cbhq/client-analytics@npm:7.2.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-7.2.0.tgz"
   dependencies:
     idb: ^7.0.2
     md5: ^2.3.0
-    perfume.js: ^7.0.0
+    perfume.js: ^8.3.0
     ua-parser-js: ^1.0.2
   peerDependencies:
     react: ">=17.0.0"
-  checksum: 255fbcee0b8edc01dc8c84763365bbb1e942d3c723652b1f72d77425c0fe23f76cacc240b1aa8eb135a55d2420d81c36edda0c5b6fe165763f2891a654b341dd
+  checksum: 0e05488d03e85dfacb3fe691fe5ee924b8f2af1b073a84243f22a17e5412fda3fa87beac351458083d96f7d1814aa3cf3788ae3500ee141af0e03916c76e7318
   languageName: node
   linkType: hard
 
@@ -2978,7 +2963,7 @@ __metadata:
   dependencies:
     "@cbhq/d3": "workspace:^"
     "@cbhq/figma-api": "workspace:^"
-    "@cbhq/mono-tasks": ^0.6.8
+    "@cbhq/mono-tasks": ^0.9.12
     "@cbhq/script-utils": "workspace:^"
     "@types/sharp": ^0.31.0
     "@types/svgo": ^2.6.4
@@ -3058,9 +3043,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mono-pipeline@npm:^0.11.19":
-  version: 0.11.19
-  resolution: "@cbhq/mono-pipeline@npm:0.11.19::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.19.tgz"
+"@cbhq/mono-pipeline@npm:^0.11.22":
+  version: 0.11.22
+  resolution: "@cbhq/mono-pipeline@npm:0.11.22::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.22.tgz"
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/traverse": ^7.20.13
@@ -3070,7 +3055,7 @@ __metadata:
     fast-glob: ^3.2.11
     inquirer: ^8.2.4
     micromatch: ^4.0.5
-    packemon: ^3.1.0
+    packemon: ^3.1.1
     semver: ^7.3.7
     update-notifier: ^5.1.0
     yaml: ^2.1.1
@@ -3079,52 +3064,27 @@ __metadata:
     "@cbhq/mono-tasks": ">=0.7.1"
   bin:
     mono-pipeline: ./lib/bin.js
-  checksum: 31e8392e7ce749d16018a99b3fc1ec3ba152c693d7b40faac6ddf9c3c0cb8683b926a6ce200be672133f54fb4377c0829198a35aa89c5b31aae11d7a10be4fc4
+  checksum: eb1d56b64b6719618403a93232cdf7feadb117726c6c9aceb6ef2666b4814aff1fe554a55f4edfbcbf4937ec1f08d3880dd8c073234afa3ab74409db0edbdeb7
   languageName: node
   linkType: hard
 
-"@cbhq/mono-tasks-mobile@npm:^0.3.16":
-  version: 0.3.16
-  resolution: "@cbhq/mono-tasks-mobile@npm:0.3.16::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-tasks-mobile%2F-%2F%40cbhq%2Fmono-tasks-mobile-0.3.16.tgz"
+"@cbhq/mono-tasks@npm:^0.9.12":
+  version: 0.9.12
+  resolution: "@cbhq/mono-tasks@npm:0.9.12::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-tasks%2F-%2F%40cbhq%2Fmono-tasks-0.9.12.tgz"
   dependencies:
-    "@cbhq/client-analytics": ^5.7.0
-    "@nrwl/devkit": ^15.0.9
-    ajv: ^8.6.3
-    aws-sdk: ^2.982.0
-    chalk: ^4.1.2
-    execa: ^5.1.1
-    inquirer: ^8.2.4
-    node-fetch: ^2.6.7
-    ora: ^5.4.1
-    plist: ^3.0.5
-    update-notifier: ^5.1.0
-  peerDependencies:
-    "@cbhq/mono-env": ">=0.2.0"
-    "@cbhq/mono-tasks": ">=0.3.22"
-    react-native: ">=0.64.0"
-    relay-compiler: ^13.0.0
-  checksum: a06e33abc59927ea3ed30b914463edfbd0507544e368244817ce45191f1ec5e99f4ad68054e367a2fd179314a91d37aa2c2e0747162e87fc24caa1d23f3a2a3f
-  languageName: node
-  linkType: hard
-
-"@cbhq/mono-tasks@npm:^0.6.8":
-  version: 0.6.8
-  resolution: "@cbhq/mono-tasks@npm:0.6.8::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-tasks%2F-%2F%40cbhq%2Fmono-tasks-0.6.8.tgz"
-  dependencies:
-    "@babel/cli": ^7.19.3
-    "@babel/core": ^7.20.2
+    "@babel/cli": ^7.20.7
+    "@babel/core": ^7.20.12
     "@babel/preset-env": ^7.20.2
     "@babel/preset-flow": ^7.18.6
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
     "@boost/common": ^4.0.0
-    "@cbhq/cca": ^3.6.1
-    "@graphql-tools/stitch": ^8.7.6
-    "@graphql-tools/wrap": ^9.0.4
-    "@nrwl/devkit": ^15.0.9
+    "@cbhq/client-analytics-prebuilt": "npm:@cbhq/client-analytics@^7.2.0"
+    "@nrwl/devkit": 15.7.2
     babel-jest: ^29.3.0
     chalk: ^4.1.2
     execa: ^5.1.1
+    ignore: ^5.2.0
     node-fetch: ^2.6.7
     packemon: ^2.4.1
     proper-lockfile: ^4.1.2
@@ -3141,10 +3101,9 @@ __metadata:
     danger: ^11.0.2
     detox: ^19.0.0
     eslint: ^8.0.0
-    graphql: ^15.0.0
     jest: ">=28.0.0"
+    nx: ^15.7.2
     prettier: ^2.0.0
-    relay-compiler: ">=13.0.0"
     stylelint: ^14.0.0
     typescript: ^4.0.0
     webpack: ^5.67.0
@@ -3161,15 +3120,11 @@ __metadata:
       optional: true
     detox:
       optional: true
-    graphql:
-      optional: true
-    relay-compiler:
-      optional: true
     stylelint:
       optional: true
     webpack:
       optional: true
-  checksum: 6976796a4442148503edcb5f7e80045285d1eab86837e8a14e54868912c74a6078f12249126572195a71e0bdab5e02930aed3fa1adb6e08b12f335ffe6d985ee
+  checksum: db80aa5547c873bdd4b033a3dc4031dbeab11499185289a86dd2e61d7dc5bc244d3d5a441d1d802f992b5bc35b886b110b49142df50386057e3c9ae01b12a28a
   languageName: node
   linkType: hard
 
@@ -3195,7 +3150,7 @@ __metadata:
     type-fest: ^2.19.0
   peerDependencies:
     "@cbhq/eslint-plugin": ^1.26.3
-    "@cbhq/mono-tasks": ^0.6.8
+    "@cbhq/mono-tasks": ^0.9.12
     lodash: ^4.17.21
     prettier: ^2.8.3
   languageName: unknown
@@ -3256,7 +3211,7 @@ __metadata:
     update-notifier: ^5.1.0
     yargs: ^17.5.1
   peerDependencies:
-    "@cbhq/mono-tasks": ^0.6.8
+    "@cbhq/mono-tasks": ^0.9.12
     typescript: ~4.9.4
   bin:
     ui-scorecard: ./cjs/bin.cjs
@@ -4802,20 +4757,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/batch-delegate@npm:8.4.1":
-  version: 8.4.1
-  resolution: "@graphql-tools/batch-delegate@npm:8.4.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40graphql-tools%252fbatch-delegate%2F-%2Fbatch-delegate-8.4.1.tgz"
-  dependencies:
-    "@graphql-tools/delegate": 9.0.8
-    "@graphql-tools/utils": 8.12.0
-    dataloader: 2.1.0
-    tslib: ^2.4.0
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 55f089bd8e42e0f8f4078a246385f2d5d817a3c11ad55e6a471571fa9bd8c3579fd0d960b3b42b1235366a11f5a10f1e7a12eb414d4f19403536da43d57140d0
-  languageName: node
-  linkType: hard
-
 "@graphql-tools/batch-execute@npm:8.5.15":
   version: 8.5.15
   resolution: "@graphql-tools/batch-execute@npm:8.5.15::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40graphql-tools%2Fbatch-execute%2F-%2Fbatch-execute-8.5.15.tgz"
@@ -4827,20 +4768,6 @@ __metadata:
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
   checksum: 7fadddd49cafee2f32e501a6e27d26d3a6958a1298ba2c71d82aabd273e0289197f6138ab22a4aa08c6d29d18a805eace6b2d5f3454e888866bcbf5ca065937c
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/batch-execute@npm:8.5.6":
-  version: 8.5.6
-  resolution: "@graphql-tools/batch-execute@npm:8.5.6::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40graphql-tools%252fbatch-execute%2F-%2Fbatch-execute-8.5.6.tgz"
-  dependencies:
-    "@graphql-tools/utils": 8.12.0
-    dataloader: 2.1.0
-    tslib: ^2.4.0
-    value-or-promise: 1.0.11
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: a5afd4adfc70ba3694c194a5bbdaf425d66fedc4b83f0f41347dd1f2bc2c61fc98d4c36badc246aced7baa068de2aab336b6cb4b8b91f006a40060cfc4186959
   languageName: node
   linkType: hard
 
@@ -4873,22 +4800,6 @@ __metadata:
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
   checksum: 310c21ab12dedd3eda0ee91637148be51de1109325379ddb27630d85ba0079090ce27b8225901063ee55e2434c84923b828f7047d8f2e3cd2d6ab1b35e3885f8
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/delegate@npm:9.0.8":
-  version: 9.0.8
-  resolution: "@graphql-tools/delegate@npm:9.0.8::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40graphql-tools%252fdelegate%2F-%2Fdelegate-9.0.8.tgz"
-  dependencies:
-    "@graphql-tools/batch-execute": 8.5.6
-    "@graphql-tools/schema": 9.0.4
-    "@graphql-tools/utils": 8.12.0
-    dataloader: 2.1.0
-    tslib: ~2.4.0
-    value-or-promise: 1.0.11
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 0edc09362457d072d2da12ecbfbb48cf71fa0472d1a625575cd63a35413d3c5e7c014fc05da812327694d83ae116bbc64fe01250bf4bedf2401d14e5bfced069
   languageName: node
   linkType: hard
 
@@ -5041,18 +4952,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/merge@npm:8.3.6":
-  version: 8.3.6
-  resolution: "@graphql-tools/merge@npm:8.3.6::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40graphql-tools%252fmerge%2F-%2Fmerge-8.3.6.tgz"
-  dependencies:
-    "@graphql-tools/utils": 8.12.0
-    tslib: ^2.4.0
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 3e45ebff0dce9524e72c4af1d2b9799c16515c1236290e07cd68fb2226c4e54734e2444d89a64b387b7ba991d15c6f948fdfc20c77a74b1d24babddd865ff32a
-  languageName: node
-  linkType: hard
-
 "@graphql-tools/schema@npm:9.0.14":
   version: 9.0.14
   resolution: "@graphql-tools/schema@npm:9.0.14::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40graphql-tools%2Fschema%2F-%2Fschema-9.0.14.tgz"
@@ -5064,38 +4963,6 @@ __metadata:
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
   checksum: ae958892363fe8b1715a9fd3c4bdb56d0d5d429693dbb9774ce930d104ed5a7c94db3c41c12d91fd930bf90ab186337d3ba660e765a99a98bde892f0d2dcf40e
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/schema@npm:9.0.4":
-  version: 9.0.4
-  resolution: "@graphql-tools/schema@npm:9.0.4::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40graphql-tools%252fschema%2F-%2Fschema-9.0.4.tgz"
-  dependencies:
-    "@graphql-tools/merge": 8.3.6
-    "@graphql-tools/utils": 8.12.0
-    tslib: ^2.4.0
-    value-or-promise: 1.0.11
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 0644ba225ff7fb03c6fb7f026b6a77a4ac5dd14fd10bb562ea0072bfe0258620fd4789b851b0b97007db8754d0b7d88a1061bb98bacc679b22e2eb7706e79e0e
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/stitch@npm:^8.7.6":
-  version: 8.7.13
-  resolution: "@graphql-tools/stitch@npm:8.7.13::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40graphql-tools%252fstitch%2F-%2Fstitch-8.7.13.tgz"
-  dependencies:
-    "@graphql-tools/batch-delegate": 8.4.1
-    "@graphql-tools/delegate": 9.0.8
-    "@graphql-tools/merge": 8.3.6
-    "@graphql-tools/schema": 9.0.4
-    "@graphql-tools/utils": 8.12.0
-    "@graphql-tools/wrap": 9.2.3
-    tslib: ^2.4.0
-    value-or-promise: ^1.0.11
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 49ba229924b978996fffd1cfab581e7dd259825db7efe8ef6092bb75d026caaab7dfc9851310a95d643a49059d350ec1195743ae5563702376e7b296f598cfcc
   languageName: node
   linkType: hard
 
@@ -5122,17 +4989,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/utils@npm:8.12.0":
-  version: 8.12.0
-  resolution: "@graphql-tools/utils@npm:8.12.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40graphql-tools%252futils%2F-%2Futils-8.12.0.tgz"
-  dependencies:
-    tslib: ^2.4.0
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 24edc6ba3bcfa9a4c1d1d37117c3f96d847beed9638325083c32c6ec9674729dc89fc8cc389d317ae5d9dba22e91443bd9788f1dc8de91a1b6f1e592112bd48f
-  languageName: node
-  linkType: hard
-
 "@graphql-tools/utils@npm:9.1.4, @graphql-tools/utils@npm:^9.0.0":
   version: 9.1.4
   resolution: "@graphql-tools/utils@npm:9.1.4::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40graphql-tools%2Futils%2F-%2Futils-9.1.4.tgz"
@@ -5144,22 +5000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/wrap@npm:9.2.3":
-  version: 9.2.3
-  resolution: "@graphql-tools/wrap@npm:9.2.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40graphql-tools%252fwrap%2F-%2Fwrap-9.2.3.tgz"
-  dependencies:
-    "@graphql-tools/delegate": 9.0.8
-    "@graphql-tools/schema": 9.0.4
-    "@graphql-tools/utils": 8.12.0
-    tslib: ^2.4.0
-    value-or-promise: 1.0.11
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: dcb130685d1206d5401d3dafe3461aef77cd508f5fe76a26a1fa403f0294fd9fa325e15ad61f7ef46b5aa73040e0ca46d0cf54103b897fe943acf452b1fa8fb9
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/wrap@npm:9.3.2, @graphql-tools/wrap@npm:^9.0.4":
+"@graphql-tools/wrap@npm:9.3.2":
   version: 9.3.2
   resolution: "@graphql-tools/wrap@npm:9.3.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40graphql-tools%2Fwrap%2F-%2Fwrap-9.3.2.tgz"
   dependencies:
@@ -6167,7 +6008,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/devkit@npm:15.7.2, @nrwl/devkit@npm:^15.0.9":
+"@nrwl/devkit@npm:15.7.2":
   version: 15.7.2
   resolution: "@nrwl/devkit@npm:15.7.2::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40nrwl%2Fdevkit%2F-%2Fdevkit-15.7.2.tgz"
   dependencies:
@@ -12365,7 +12206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:^2.1207.0, aws-sdk@npm:^2.982.0":
+"aws-sdk@npm:^2.1207.0":
   version: 2.1218.0
   resolution: "aws-sdk@npm:2.1218.0"
   dependencies:
@@ -12832,13 +12673,6 @@ __metadata:
   version: 0.0.2
   resolution: "babel-plugin-replace-ts-export-assignment@npm:0.0.2"
   checksum: da749130fe0479cd9da73f8b3aafc62e05885b12732ce0e25976a7138dad1688a03366791b12633afdd8a702e2018ec01764c4ddb0ed0dbc3783b7e75b1b148a
-  languageName: node
-  linkType: hard
-
-"babel-plugin-search-and-replace@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "babel-plugin-search-and-replace@npm:1.1.0"
-  checksum: 489784ff4a117b50eb3ce36f700366a44b1bc52499c25bd64975f1a0798618ba9b3a4bd85a6392c52785168cadee93b6b49cbe5499ebd3d63f6e1077c2aa98ba
   languageName: node
   linkType: hard
 
@@ -16671,9 +16505,8 @@ __metadata:
     "@cbhq/jest-preset": ^0.2.3
     "@cbhq/jest-preset-mobile": ^0.2.0
     "@cbhq/mono-env": ^0.2.24
-    "@cbhq/mono-pipeline": ^0.11.19
-    "@cbhq/mono-tasks": ^0.6.8
-    "@cbhq/mono-tasks-mobile": ^0.3.16
+    "@cbhq/mono-pipeline": ^0.11.22
+    "@cbhq/mono-tasks": ^0.9.12
     "@cbhq/mono-templates": ^0.6.1
     "@joshcena/docusaurus-plugin-utils": ^0.1.3
     "@nrwl/workspace": 15.7.2
@@ -19365,13 +19198,13 @@ __metadata:
   linkType: hard
 
 "fast-xml-parser@npm:^4.0.12":
-  version: 4.1.3
-  resolution: "fast-xml-parser@npm:4.1.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ffast-xml-parser%2F-%2Ffast-xml-parser-4.1.3.tgz"
+  version: 4.2.4
+  resolution: "fast-xml-parser@npm:4.2.4::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ffast-xml-parser%2F-%2Ffast-xml-parser-4.2.4.tgz"
   dependencies:
     strnum: ^1.0.5
   bin:
     fxparser: src/cli/cli.js
-  checksum: 6123d374ee10a92850422acfc49ff1cb7c993ede160a4b753498ccdd22c6f4876ef52065a256bd03991432ca43b3bd9ddc06d825b1d77850e4fa26652fb9d26c
+  checksum: d3b4d0c0152c09f98def792769fca6bb3fa1d597f9745d9564451c239089bd86bdf573c9263b4944860028cb7edb81752d64399c1aff8b87c9225ecef96905f7
   languageName: node
   linkType: hard
 
@@ -22013,7 +21846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"idb@npm:^7.0.0, idb@npm:^7.0.2":
+"idb@npm:^7.0.2":
   version: 7.0.2
   resolution: "idb@npm:7.0.2"
   checksum: 60ebe6d5c25d9d82d400fa90e769045a9a3f44dfbc3094b105f8666f025d84f2a779e5416211572fc51f6057f8e130cb1bbfaa06cfd6f196701a8fca9f0eda17
@@ -29441,7 +29274,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"packemon@npm:^3.1.0":
+"packemon@npm:^3.1.1":
   version: 3.1.1
   resolution: "packemon@npm:3.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fpackemon%2F-%2Fpackemon-3.1.1.tgz"
   dependencies:
@@ -29950,17 +29783,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"perfume.js@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "perfume.js@npm:6.3.0"
-  checksum: 6570fcafaa524c618f63ff83a68f962756006d71628a5a8b715da27e58fec52a34b6ca43430741ec7b2e38aec810ea1e8950ea434861b048be067f2e80e292af
-  languageName: node
-  linkType: hard
-
-"perfume.js@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "perfume.js@npm:7.0.0"
-  checksum: 4e50e707cfda0ff662984be95acf8b69b9de21715d6d0935878e77dae983632865c3e3fad94a48fe46851b1479ad308d374f6e397d6aecb32c8dd9fc08687919
+"perfume.js@npm:^8.3.0":
+  version: 8.4.0
+  resolution: "perfume.js@npm:8.4.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fperfume.js%2F-%2Fperfume.js-8.4.0.tgz"
+  dependencies:
+    web-vitals: ^3.1.0
+  checksum: 32d04443e599681fd7a58a3ae9a033df6183051f15a8236b49fcfc7718938c9ef6b57a4c3763720e21cabb5c9f282676b9d307ed306b46f34bc15d9709eee0ad
   languageName: node
   linkType: hard
 
@@ -37663,12 +37491,19 @@ __metadata:
 
 "tslib@npm:^1.8.1, tslib@npm:^1.9.0, tslib@npm:^1.9.3":
   version: 1.14.1
-  resolution: "tslib@npm:1.14.1"
+  resolution: "tslib@npm:1.14.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftslib%2F-%2Ftslib-1.14.1.tgz"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.4.1, tslib@npm:~2.4.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.4.1":
+  version: 2.5.3
+  resolution: "tslib@npm:2.5.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftslib%2F-%2Ftslib-2.5.3.tgz"
+  checksum: 88902b309afaf83259131c1e13da1dceb0ad1682a213143a1346a649143924d78cf3760c448b84d796938fd76127183894f8d85cbb3bf9c4fddbfcc140c0003c
+  languageName: node
+  linkType: hard
+
+"tslib@npm:~2.4.0":
   version: 2.4.1
   resolution: "tslib@npm:2.4.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftslib%2F-%2Ftslib-2.4.1.tgz"
   checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
@@ -38737,13 +38572,6 @@ __metadata:
   version: 1.0.1
   resolution: "value-equal@npm:1.0.1"
   checksum: bb7ae1facc76b5cf8071aeb6c13d284d023fdb370478d10a5d64508e0e6e53bb459c4bbe34258df29d82e6f561f874f0105eba38de0e61fe9edd0bdce07a77a2
-  languageName: node
-  linkType: hard
-
-"value-or-promise@npm:1.0.11":
-  version: 1.0.11
-  resolution: "value-or-promise@npm:1.0.11::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fvalue-or-promise%2F-%2Fvalue-or-promise-1.0.11.tgz"
-  checksum: 13f8f2ef620118c73b4d1beee8ce6045d7182bbf15090ecfbcafb677ec43698506a5e9ace6bea5ea35c32bc612c9b1f824bb59b6581cdfb5c919052745c277d5
   languageName: node
   linkType: hard
 

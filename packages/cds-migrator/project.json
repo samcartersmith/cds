@@ -10,6 +10,7 @@
         "^build"
       ],
       "outputs": [
+        "{projectRoot}/assets",
         "{projectRoot}/dts",
         "{projectRoot}/lib"
       ]
