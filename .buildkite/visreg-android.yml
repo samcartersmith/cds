@@ -1,11 +1,6 @@
 _visreg_android_shared: &visreg_android_shared
-  plugins: &android_plugins
-    - file:///buildkite/plugins/cache: &cache_plugin
-        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
-        paths:
-          - ./.yarn/cache
-          - ./.yarn/install-state.gz
-    - file:///buildkite/plugins/docker: &docker_plugin
+  plugins:
+    - file:///buildkite/plugins/docker:
         image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:android
         wait-network: true
         privileged: true
@@ -25,6 +20,11 @@ _visreg_android_shared: &visreg_android_shared
           - PLAYSTORE_PACKAGE_NAME
           - PERCY_TOKEN
           - PERCY_TARGET_BRANCH
+    - file:///buildkite/plugins/cache:
+        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
+        paths:
+          - ./.yarn/cache
+          - ./.yarn/install-state.gz
     - ssh://git@github.cbhq.net/frontend/aws-sm-buildkite-plugin:
         env:
           PERCY_TOKEN: infra/buildkite/cds-percy-token-android

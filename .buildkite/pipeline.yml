@@ -6,7 +6,7 @@ env:
 
 _shared_step: &shared_step
   plugins:
-    - file:///buildkite/plugins/docker: &docker_plugin
+    - file:///buildkite/plugins/docker:
         image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v18
         always-pull: true
         propagate-environment: true
@@ -17,6 +17,7 @@ _shared_step: &shared_step
           - ${HOME}/.git:/root/.git
         environment:
           - 'BUILDKITE_API_TOKEN'
+          - 'PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1'
     - file:///buildkite/plugins/cache: &cache_plugin
         key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
         paths:
@@ -36,8 +37,14 @@ _chrome_step: &chrome_step
     STORYBOOK_SKIP_ANIMATION: true
   plugins:
     - file:///buildkite/plugins/docker:
-        <<: *docker_plugin
         image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v18-chrome
+        always-pull: true
+        propagate-environment: true
+        propagate-uid-gid: true
+        volumes:
+          # Allow git operations to work
+          - ${HOME}/.ssh:/root/.ssh
+          - ${HOME}/.git:/root/.git
         environment:
           - 'BUILDKITE_API_TOKEN'
           - 'PERCY_TOKEN'
