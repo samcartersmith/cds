@@ -3,6 +3,7 @@ env:
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
+  NX_ENABLE_REMOTE_CACHE: true
   IOS_PERCY_SECRET: 'infra/buildkite/cds-percy-token-ios'
 
 steps:
@@ -14,6 +15,7 @@ steps:
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - tools/ci/setup.sh
+      - echo "--- Running iOS visreg tests"
       - yarn nx run mobile-app:detox:ios-release
     retry:
       automatic:

@@ -8,7 +8,7 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@cbhq/nx-tasks-runner",
       "options": {
         "cacheDirectory": "./.nx/cache",
         "cacheableOperations": [

@@ -20,6 +20,11 @@ _visreg_android_shared: &visreg_android_shared
           - PLAYSTORE_PACKAGE_NAME
           - PERCY_TOKEN
           - PERCY_TARGET_BRANCH
+          - BUILDKITE_PIPELINE_SLUG
+          - BUILDKITE_PLUGIN_CACHE_S3_BUCKET
+          - AWS_ACCESS_KEY_ID
+          - AWS_SECRET_ACCESS_KEY
+          - AWS_SESSION_TOKEN
     - file:///buildkite/plugins/cache:
         key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
         paths:
@@ -40,6 +45,7 @@ env:
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
+  NX_ENABLE_REMOTE_CACHE: true
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
 
 steps:

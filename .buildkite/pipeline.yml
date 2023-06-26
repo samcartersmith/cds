@@ -3,6 +3,7 @@ env:
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
+  NX_ENABLE_REMOTE_CACHE: true
 
 _shared_step: &shared_step
   plugins:
@@ -18,6 +19,11 @@ _shared_step: &shared_step
         environment:
           - 'BUILDKITE_API_TOKEN'
           - 'PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1'
+          - 'BUILDKITE_PIPELINE_SLUG'
+          - 'BUILDKITE_PLUGIN_CACHE_S3_BUCKET'
+          - 'AWS_ACCESS_KEY_ID'
+          - 'AWS_SECRET_ACCESS_KEY'
+          - 'AWS_SESSION_TOKEN'
     - file:///buildkite/plugins/cache: &cache_plugin
         key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
         paths:
@@ -46,6 +52,11 @@ _chrome_step: &chrome_step
           - 'BUILDKITE_API_TOKEN'
           - 'PERCY_TOKEN'
           - 'STORYBOOK_SKIP_ANIMATION'
+          - 'BUILDKITE_PIPELINE_SLUG'
+          - 'BUILDKITE_PLUGIN_CACHE_S3_BUCKET'
+          - 'AWS_ACCESS_KEY_ID'
+          - 'AWS_SECRET_ACCESS_KEY'
+          - 'AWS_SESSION_TOKEN'
     - file:///buildkite/plugins/cache: *cache_plugin
 
 steps:
