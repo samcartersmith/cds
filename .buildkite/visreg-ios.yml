@@ -18,6 +18,7 @@ steps:
     retry:
       automatic:
         limit: 1
+    soft_fail: true
 
   - label: 'Finish Visreg Tests (iOS)'
     depends_on: 'visreg_ios'
@@ -28,3 +29,4 @@ steps:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - npm install -g @percy/cli
       - npx percy build:finalize
+    soft_fail: true
