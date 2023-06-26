@@ -56,7 +56,7 @@ steps:
       - yarn mono-pipeline validate-codeflow
       - yarn mono-pipeline validate-codeowners
       - yarn mono-pipeline validate-lockfile
-      - yarn mono-pipeline validate-versioned --projectsWithNoSrcFolder='web,mobile,common' --allOnMaster
+      - yarn mono-pipeline validate-versioned --projectsWithNoSrcFolder='web,mobile,common'
       - yarn mono-pipeline validate-package-jsons
       - yarn mono-pipeline validate-patches
       - yarn nx run cds-tasks:validate-cds-versions
@@ -67,7 +67,7 @@ steps:
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci build --exclude=mobile-app
+      - yarn mono-pipeline run-ci build --exclude=mobile-app --allOnMaster
 
   - label: Build ESM
     <<: *shared_step
@@ -76,25 +76,25 @@ steps:
       # Bundling the esm build with web:build target causes >2x computation time.
       # As a result we are running it as its own build step until we confirm that the esm build is actually needed for ssr.
       # See profile results: https://github.cbhq.net/frontend/cds/pull/1751
-      - yarn mono-pipeline run-ci other --targets=build-esm
+      - yarn mono-pipeline run-ci other --targets=build-esm --allOnMaster
 
   - label: Lint
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci lint
+      - yarn mono-pipeline run-ci lint --allOnMaster
 
   - label: Format
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci format
+      - yarn mono-pipeline run-ci format --allOnMaster
 
   - label: Test
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci test
+      - yarn mono-pipeline run-ci test --allOnMaster
     retry:
       automatic:
         limit: 1
@@ -103,14 +103,14 @@ steps:
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci typecheck
+      - yarn mono-pipeline run-ci typecheck --allOnMaster
 
   - label: Danger
     <<: *shared_step
     parallelism: 1
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci danger
+      - yarn mono-pipeline run-ci danger --allOnMaster
     retry:
       automatic: false
     soft_fail: true
@@ -121,13 +121,13 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-percy storybook
-      - yarn mono-pipeline run-ci other --targets=a11y-web
+      - yarn mono-pipeline run-ci other --targets=a11y-web --allOnMaster
 
   - label: 'Percy (Mobile)'
     <<: *shared_step
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --targets=visreg
+      - yarn mono-pipeline run-ci other --targets=visreg --allOnMaster
     agents:
       queue: k8s-docker
       agent-size: large
@@ -136,6 +136,6 @@ steps:
     <<: *chrome_step
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --targets=storybook-e2e-test
+      - yarn mono-pipeline run-ci other --targets=storybook-e2e-test --allOnMaster
     retry:
       automatic: false
