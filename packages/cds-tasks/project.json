@@ -8,7 +8,6 @@
       "executor": "@cbhq/mono-tasks:build-package",
       "outputs": [
         "{projectRoot}/assets",
-        "{projectRoot}/dts",
         "{projectRoot}/lib"
       ]
     },

@@ -1,1 +1,1 @@
-export * from './dts/jest';
+export * from './lib/jest';

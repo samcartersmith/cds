@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.buildOptions.json",
   "compilerOptions": {
-    "outDir": "dts"
+    "outDir": "lib"
   },
   "include": [
     "src"
@@ -15,5 +15,21 @@
     "**/__stories__/**",
     "**/__tests__/**"
   ],
-  "references": []
+  "references": [
+    {
+      "path": "../docusaurus-plugin-docgen"
+    },
+    {
+      "path": "../docusaurus-plugin-kbar"
+    },
+    {
+      "path": "../docusaurus-theme"
+    },
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../web"
+    }
+  ]
 }

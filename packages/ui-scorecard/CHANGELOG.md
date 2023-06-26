@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.1.1 (6/23/2023 PST)
+
+#### 🐞 Fixes
+
+- Use tsconfig.lib format. [[#2057](https://github.cbhq.net/frontend/cds/pull/2057)] [[DX-1739](https://jira.coinbase-corp.com/browse/DX-1739)]
 
 #### 📘 Misc
 

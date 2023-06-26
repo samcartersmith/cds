@@ -19,19 +19,22 @@
   },
   "executors": "./executors.json",
   "main": "./lib/index.js",
-  "types": "./dts/index.d.ts",
+  "types": "./lib/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dts/index.d.ts",
-      "node": "./lib/index.js",
+      "types": "./lib/index.d.ts",
+      "node": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      },
       "default": "./lib/index.js"
     }
   },
   "dependencies": {
     "@cbhq/d3": "workspace:^",
     "@cbhq/figma-api": "workspace:^",
-    "@cbhq/mono-tasks": "^0.9.12",
+    "@cbhq/mono-tasks": "^0.10.1",
     "@cbhq/script-utils": "workspace:^",
     "@types/svgo": "^2.6.4",
     "lodash": "^4.17.21",

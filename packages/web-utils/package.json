@@ -16,31 +16,46 @@
   "keywords": [
     "web utils"
   ],
-  "packemon": {
-    "format": "lib",
-    "platform": "node",
-    "externals": [
-      "axe-core"
-    ]
-  },
-  "types": "./dts/index.d.ts",
+  "packemon": [
+    {
+      "format": "lib",
+      "platform": "node",
+      "inputs": {
+        "index": "src/index.ts",
+        "jest": "src/jest/index.ts"
+      },
+      "externals": [
+        "axe-core"
+      ]
+    }
+  ],
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     "./jest": {
-      "types": "./dts/jest/index.d.ts",
-      "node": "./lib/jest/index.js",
+      "types": "./lib/jest/index.d.ts",
+      "node": {
+        "types": "./lib/jest/index.d.ts",
+        "default": "./lib/jest/index.js"
+      },
       "default": "./lib/jest/index.js"
     },
-    "./*": {
-      "types": "./dts/*.d.ts",
-      "node": "./lib/*.js",
-      "default": "./lib/*.js"
-    },
     ".": {
-      "types": "./dts/index.d.ts",
-      "node": "./lib/index.js",
+      "types": "./lib/index.d.ts",
+      "node": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      },
       "default": "./lib/index.js"
+    },
+    "./*": {
+      "types": "./lib/*.d.ts",
+      "node": {
+        "types": "./lib/*.d.ts",
+        "default": "./lib/*.js"
+      },
+      "default": "./lib/*.js"
     }
   }
 }
