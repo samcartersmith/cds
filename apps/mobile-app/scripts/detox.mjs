@@ -39,6 +39,9 @@ if (profile === 'release') {
   if (platform === 'ios') await ios.patchBundle();
 }
 
+// Clear Jest cache
+await $`yarn workspace mobile-app detox test --configuration ${platform}-${profile} --clearCache`;
+
 if (platform === 'android' && isCI) {
   await $`yarn workspace mobile-app detox test --configuration ${platform}-${profile} --headless --cleanup --force-adb-install`;
 } else {

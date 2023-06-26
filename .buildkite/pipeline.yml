@@ -26,9 +26,6 @@ _shared_step: &shared_step
   agents:
     queue: docker
     resource_class: large
-  retry:
-    automatic:
-      limit: 1
 
 _chrome_step: &chrome_step
   <<: *shared_step
@@ -98,6 +95,9 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci test
+    retry:
+      automatic:
+        limit: 1
 
   - label: Typecheck
     <<: *shared_step
@@ -128,8 +128,9 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --targets=visreg
-    retry:
-      automatic: false
+    agents:
+      queue: k8s-docker
+      agent-size: large
 
   - label: 'Storybook E2E Test'
     <<: *chrome_step
