@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Increase web code coverage for Tag. [[DX-1072](https://jira.coinbase-corp.com/browse/DX-1072)]
+
 ## 5.0.2 ((6/20/2023, 09:41 AM PST))
 
 This is an artificial version bump with no new change.

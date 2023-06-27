@@ -53,6 +53,7 @@ export const Tag = memo(
           dangerouslySetStyle={styleOverride}
           borderRadius={borderRadius}
           data-testid={testID}
+          testID={testID}
           background="background"
           alignItems={alignItems}
           justifyContent={justifyContent}
