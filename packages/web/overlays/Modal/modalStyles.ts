@@ -23,6 +23,7 @@ export const modalDefault = css`
     top: ${modalTopSpacing};
     width: 612px;
     max-height: calc(100vh - ${modalTopSpacing}*2);
+    max-height: calc(100dvh - ${modalTopSpacing}*2);
     display: flex;
     justify-content: center;
     /* this makes sure modal dialogue displays on top of overlay */
@@ -41,6 +42,7 @@ export const modalResponsive = css`
 
     @media only screen and (${devices.phone}) {
       max-height: 100vh;
+      max-height: 100dvh;
       top: 0;
       bottom: 0;
       right: 0;

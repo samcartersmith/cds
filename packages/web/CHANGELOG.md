@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.0.3 (6/28/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-1414] fix(Modal): Use dvh to prevent Modal being overlaid by native mobile elements.
 
 #### 📘 Misc
 
