@@ -5,10 +5,10 @@
     - [What is a debug build?](#what-is-a-debug-build)
     - [When do you need to rebuild debug builds?](#when-do-you-need-to-rebuild-debug-builds)
     - [How do I rebuild a debug build?](#how-do-i-rebuild-a-debug-build)
-  - [Production Builds](#production-builds)
-    - [What is a production build?](#what-is-a-production-build)
-    - [When do you need to rebuild production builds?](#when-do-you-need-to-rebuild-production-builds)
-    - [How do I rebuild a production build?](#how-do-i-rebuild-a-production-build)
+  - [Release Builds](#release-builds)
+    - [What is a release build?](#what-is-a-release-build)
+    - [When do you need to rebuild release builds?](#when-do-you-need-to-rebuild-release-builds)
+    - [How do I rebuild a release build?](#how-do-i-rebuild-a-release-build)
   - [Advanced](#advanced)
     - [Android V8](#android-v8)
     - [Creating new build configurations](#creating-new-build-configurations)
@@ -35,9 +35,9 @@ It is a native module build of your application that is:
 | ios      | local - jsc           | `yarn nx run mobile-app:build:ios-local`     |
 | android  | local -hermes         | `yarn nx run mobile-app:build:android-local` |
 
-## Production Builds
+## Release Builds
 
-### What is a production build?
+### What is a release build?
 
 It is a native module build of your application that is:
 
@@ -45,20 +45,20 @@ It is a native module build of your application that is:
 - Much smaller & commited to our repo
 - Cannot support hot reloading
 
-### When do you need to rebuild production builds?
+### When do you need to rebuild release builds?
 
 - Any dependency change in `apps/mobile-app/package.json` and `packages/mobile/package.json`
 - Any JS change in `packages/mobile/*`.
 
-### How do I rebuild a production build?
+### How do I rebuild a release build?
 
 Generate the new shared, native module builds for everyone to use. **Be sure to commit both**. Visreg will use these builds to compare UIs from your PR to what was generated on master.
 
 **Note: Committing these builds reduces CI time drastically by 14min for ios and 7 mins for android**
 
 ```shell
-yarn nx run mobile-app:build:ios-production
-yarn nx run mobile-app:build:android-production
+yarn nx run mobile-app:build:ios-release
+yarn nx run mobile-app:build:android-release
 ```
 
 ## Advanced

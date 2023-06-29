@@ -44,6 +44,8 @@ See more info about mobile builds [here](./docs/building-mobile.md).
 | android  | debug - jsc           | `yarn nx run mobile-app:build --platform android --jsEngine jsc --profile debug`   |
 | android  | release - jsc         | `yarn nx run mobile-app:build --platform android --jsEngine jsc --profile release` |
 
+**Note: If you run into errors when trying to prebuild, run `yarn workspace mobile-app expo prebuild -p <ios|android>` then rerun the `build` script.**
+
 2. Install app in your simulator with `launch` configuration.
 
 **Note: You can skip this if you've already launched the build in your [prebuilds](./prebuilds/) in your simulator.**
@@ -68,7 +70,11 @@ See more info about mobile builds [here](./docs/building-mobile.md).
 | ios      | debug - jsc           | `yarn nx run mobile-app:start:ios-debug --jsEngine jsc`     |
 | android  | debug - jsc           | `yarn nx run mobile-app:start:android-debug --jsEngine jsc` |
 
-4. Run detox tests locally
+**Note: If you see `CommandError: No development build (com.ui-systems.debug-ios-hermes) for this project is installed. Please make and install a development build on the device first.` delete `/mobile-app/ios` and `/mobile-app/.expo` and rerun the `start` script.**
+
+When running the debug app after a rebuild or restart, you'll most likely need to close out the Debug app and reopen it to trigger the bundler to recompile.
+
+1. Run detox tests locally
 
 | Platform | Profile - engine type | Command                                                                            |
 | -------- | --------------------- | ---------------------------------------------------------------------------------- |

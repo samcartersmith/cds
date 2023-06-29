@@ -9,8 +9,8 @@ Check out this doc [for more about mobile builds in general](./building-mobile.m
 1.  Update to the new package
 
 ```shell
-yarn workspace mobile-app yarn add <dependency name>@<version>
-yarn workspace mobile yarn add <dependency name>@<version>
+yarn workspace mobile-app add <dependency name>@<version>
+yarn workspace @cbhq/cds-mobile add <dependency name>@<version>
 yarn
 ```
 
