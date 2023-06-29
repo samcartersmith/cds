@@ -4299,10 +4299,10 @@ __metadata:
   resolution: "@cbhq/ui-mobile-visreg@workspace:packages/ui-mobile-visreg"
   dependencies:
     "@cbhq/detox-utils": ^0.2.3
-    "@percy/cli": ^1.13.0
-    "@percy/client": ^1.13.0
-    "@percy/sdk-utils": ^1.13.0
-    "@percy/storybook": ^4.3.4
+    "@percy/cli": ^1.26.1
+    "@percy/client": ^1.26.1
+    "@percy/sdk-utils": ^1.26.1
+    "@percy/storybook": ^4.3.6
     detox: ^20.5.0
     lodash: ^4.17.21
   peerDependencies:
@@ -4363,8 +4363,8 @@ __metadata:
     "@cbhq/cds-web-overlays": "workspace:^"
     "@cbhq/cds-web-visualization": "workspace:^"
     "@juggle/resize-observer": ^3.4.0
-    "@percy/cli": ^1.13.0
-    "@percy/storybook": ^4.3.4
+    "@percy/cli": ^1.26.1
+    "@percy/storybook": ^4.3.6
     "@shopify/storybook-a11y-test": ^1.1.0
     "@storybook/addon-a11y": ^6.5.12
     "@storybook/addon-essentials": ^6.5.12
@@ -7533,128 +7533,128 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@percy/cli-app@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/cli-app@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-app%2F-%2Fcli-app-1.13.0.tgz"
+"@percy/cli-app@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/cli-app@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-app%2F-%2Fcli-app-1.26.1.tgz"
   dependencies:
-    "@percy/cli-command": 1.13.0
-    "@percy/cli-exec": 1.13.0
-  checksum: be7a603c01b560764fe39ff428bf3051dbcd4c3f56341ef17593babb02c4a876da43356fadcae1a645bd398ada7782904863959f71acd6d9c10a166b2f7bc530
+    "@percy/cli-command": 1.26.1
+    "@percy/cli-exec": 1.26.1
+  checksum: 05c6f9d678b7ecdbbc3324935b903159c63dfd8a2f12feb0a09e7f0bbab006407098823ea25b8d32a26ac7f253b00ea07317338db31bb82fa8794daca143eb63
   languageName: node
   linkType: hard
 
-"@percy/cli-build@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/cli-build@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-build%2F-%2Fcli-build-1.13.0.tgz"
+"@percy/cli-build@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/cli-build@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-build%2F-%2Fcli-build-1.26.1.tgz"
   dependencies:
-    "@percy/cli-command": 1.13.0
-  checksum: e48a193e11839bdec15f2ac9ee87cb13d47c56192f9284aa825b273d8b1c8e32dba08ea262e12c648d33df61c8438198ea715b92fd8b6321efe3ad8557c97469
+    "@percy/cli-command": 1.26.1
+  checksum: e40aceef407fc539062d6df4d67fcd35e543a90bc4d2624aaa647a873f8c9fb22d42e47d0431d8fb62d942336cd0d57e99ac2f75919fd89f5d446ea7a5a9ce3b
   languageName: node
   linkType: hard
 
-"@percy/cli-command@npm:1.13.0, @percy/cli-command@npm:^1.10.4":
-  version: 1.13.0
-  resolution: "@percy/cli-command@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-command%2F-%2Fcli-command-1.13.0.tgz"
+"@percy/cli-command@npm:1.26.1, @percy/cli-command@npm:^1.24.0":
+  version: 1.26.1
+  resolution: "@percy/cli-command@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-command%2F-%2Fcli-command-1.26.1.tgz"
   dependencies:
-    "@percy/config": 1.13.0
-    "@percy/core": 1.13.0
-    "@percy/logger": 1.13.0
+    "@percy/config": 1.26.1
+    "@percy/core": 1.26.1
+    "@percy/logger": 1.26.1
   bin:
     percy-cli-readme: bin/readme.js
-  checksum: fa009eef5a5aa151cc84db09318a6dc335a201660c7510febfb465448edfae2b0fcdc6d7a2b45de527650f88931fcbcba80e6f79a464f76b516c09e6309f25c3
+  checksum: aabb1e25473520dfd0b5029336514237835994ec75b75b34808d637f2edcce71987badbfebcb369eb12f9755effead2624d6948febec6ed420473e6121f9becd
   languageName: node
   linkType: hard
 
-"@percy/cli-config@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/cli-config@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-config%2F-%2Fcli-config-1.13.0.tgz"
+"@percy/cli-config@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/cli-config@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-config%2F-%2Fcli-config-1.26.1.tgz"
   dependencies:
-    "@percy/cli-command": 1.13.0
-  checksum: 7fc555f60e5bc3bd366d8b506b5e062d149eb2fed176851527f621055f6c261f1bca133ad8b34ceaa684107a259f2c095709d025cb2343292e8b834172974f12
+    "@percy/cli-command": 1.26.1
+  checksum: f34b617ac104371bf1fc778f0199fb92a660aaa86abed8a4f9aab360a08b66c1a9ed1c7d5442e831bd602e77e3e493c128bf4446f3ade42be445fdee86cf5bf0
   languageName: node
   linkType: hard
 
-"@percy/cli-exec@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/cli-exec@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-exec%2F-%2Fcli-exec-1.13.0.tgz"
+"@percy/cli-exec@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/cli-exec@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-exec%2F-%2Fcli-exec-1.26.1.tgz"
   dependencies:
-    "@percy/cli-command": 1.13.0
+    "@percy/cli-command": 1.26.1
     cross-spawn: ^7.0.3
     which: ^2.0.2
-  checksum: b9cff8071a3800b9229b64cae5a432704f50a140889d707b8f5be052c83e335956e9ecfdd27e3b3ef92224488a88dd244f80ebfd69494c339a684070cd6373f7
+  checksum: 66c107d227b92a4d006497e24f7e8c40d1d353db90d5f3692d7ed0f923e6e61cdd04e97452733a7e4445ac609e1d7ef18aef15fdba040cd002a4fce31066fef0
   languageName: node
   linkType: hard
 
-"@percy/cli-snapshot@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/cli-snapshot@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-snapshot%2F-%2Fcli-snapshot-1.13.0.tgz"
+"@percy/cli-snapshot@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/cli-snapshot@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-snapshot%2F-%2Fcli-snapshot-1.26.1.tgz"
   dependencies:
-    "@percy/cli-command": 1.13.0
+    "@percy/cli-command": 1.26.1
     yaml: ^2.0.0
-  checksum: 156b5f215e7724bec3c79175dca93324581561dc28fcdc67628cf393b1e094587c288bbdd952676bac1c886e054471ab5abf471756d31ed0f0dd86480cbdce56
+  checksum: 179a276bc38b4735876b9ecee6c50a077712e3fdae6e4c50051e5bc02e92d5c9c8da695b25521e2b0e7fe0e3be58ef522e58121eb202b009ae06637f0200de54
   languageName: node
   linkType: hard
 
-"@percy/cli-upload@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/cli-upload@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-upload%2F-%2Fcli-upload-1.13.0.tgz"
+"@percy/cli-upload@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/cli-upload@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli-upload%2F-%2Fcli-upload-1.26.1.tgz"
   dependencies:
-    "@percy/cli-command": 1.13.0
+    "@percy/cli-command": 1.26.1
     fast-glob: ^3.2.11
     image-size: ^1.0.0
-  checksum: fe3887f8e64fd7ac64d30426328a9107b7100b6bfee7e9215ac444ec140a4c00be662d4e772316cb67699732124e5e5f0420d4680bd96a4c2737f5c07a316fba
+  checksum: 01f945ca2a3494c8e6659670c18f8867f170f040d455d7effc178e57105ab81aa688d1e9e556af4478581662469577a07a86c0c2affce18b1470a004036360bb
   languageName: node
   linkType: hard
 
-"@percy/cli@npm:^1.13.0":
-  version: 1.13.0
-  resolution: "@percy/cli@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli%2F-%2Fcli-1.13.0.tgz"
+"@percy/cli@npm:^1.26.1":
+  version: 1.26.1
+  resolution: "@percy/cli@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcli%2F-%2Fcli-1.26.1.tgz"
   dependencies:
-    "@percy/cli-app": 1.13.0
-    "@percy/cli-build": 1.13.0
-    "@percy/cli-command": 1.13.0
-    "@percy/cli-config": 1.13.0
-    "@percy/cli-exec": 1.13.0
-    "@percy/cli-snapshot": 1.13.0
-    "@percy/cli-upload": 1.13.0
-    "@percy/client": 1.13.0
-    "@percy/logger": 1.13.0
+    "@percy/cli-app": 1.26.1
+    "@percy/cli-build": 1.26.1
+    "@percy/cli-command": 1.26.1
+    "@percy/cli-config": 1.26.1
+    "@percy/cli-exec": 1.26.1
+    "@percy/cli-snapshot": 1.26.1
+    "@percy/cli-upload": 1.26.1
+    "@percy/client": 1.26.1
+    "@percy/logger": 1.26.1
   bin:
     percy: bin/run.cjs
-  checksum: 48269037f254433a3ed5d324f8b9e0570e4321dbcff30cc971e1f4d4eff9a3dc088bd13ffeb31bee595711e2aa104905b61e76cdbf9f12b0dac0d2dcfd12487b
+  checksum: 114761ed1725335f20b33aea0cfd144e4a11ee2bf5e51249f649bac26429f0a1e5667184400f8d94427731181f3cc28dfab5977b77c0f2c1001886241daba2a0
   languageName: node
   linkType: hard
 
-"@percy/client@npm:1.13.0, @percy/client@npm:^1.13.0":
-  version: 1.13.0
-  resolution: "@percy/client@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fclient%2F-%2Fclient-1.13.0.tgz"
+"@percy/client@npm:1.26.1, @percy/client@npm:^1.26.1":
+  version: 1.26.1
+  resolution: "@percy/client@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fclient%2F-%2Fclient-1.26.1.tgz"
   dependencies:
-    "@percy/env": 1.13.0
-    "@percy/logger": 1.13.0
-  checksum: 327457a19fe6b7f1e0e80831c3476493554cdd5df5361d2ee1e050e0d437635b15e1c40439fb2358012605338ef51a0f82f6216bdeb8054fbdcd85d8daad4725
+    "@percy/env": 1.26.1
+    "@percy/logger": 1.26.1
+  checksum: 112e70ec4e400ef0c117826094b0714cfffa18d31c664f2653e14b0381dbf9f2969bc384dc94237557a6bab415b222da32d7bce6ecd420ee5e524564c1ae4a2a
   languageName: node
   linkType: hard
 
-"@percy/config@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/config@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fconfig%2F-%2Fconfig-1.13.0.tgz"
+"@percy/config@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/config@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fconfig%2F-%2Fconfig-1.26.1.tgz"
   dependencies:
-    "@percy/logger": 1.13.0
+    "@percy/logger": 1.26.1
     ajv: ^8.6.2
-    cosmiconfig: ^7.0.0
+    cosmiconfig: ^8.0.0
     yaml: ^2.0.0
-  checksum: 226e46e1e93a3d714511ff34a060216ba72b78c6c8156c3abfeaded6ddc7a6a9462bdb8e32fb9825b8a3ca4b397b5255653adef12f1e94fdc50830cb80ad394b
+  checksum: 79c4a4f6e0cd02a3ba3381243348011127be3e31e2fe38361d4d8cda6f5e4e618ce95dbe129ec66325778119869603fb779fc3eff02dc65d752610ad12a99bdb
   languageName: node
   linkType: hard
 
-"@percy/core@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/core@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcore%2F-%2Fcore-1.13.0.tgz"
+"@percy/core@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/core@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fcore%2F-%2Fcore-1.26.1.tgz"
   dependencies:
-    "@percy/client": 1.13.0
-    "@percy/config": 1.13.0
-    "@percy/dom": 1.13.0
-    "@percy/logger": 1.13.0
+    "@percy/client": 1.26.1
+    "@percy/config": 1.26.1
+    "@percy/dom": 1.26.1
+    "@percy/logger": 1.26.1
     content-disposition: ^0.5.4
     cross-spawn: ^7.0.3
     extract-zip: ^2.0.1
@@ -7664,48 +7664,50 @@ __metadata:
     path-to-regexp: ^6.2.0
     rimraf: ^3.0.2
     ws: ^8.0.0
-  checksum: eca1b249b99e6ac8fa2df34d4f01e12fdb6ef9fc7e9af243d150bcdd97392b28ddd59c2057529c5931cb986e1fb4aea2c9f46c3c7f978092d171421af5f78d82
+  checksum: ec62eae7b1cf331187a0c026664d936a76a8ec4d4f913880d50a80fbf0d507c9b4037d5e60939df4fc38e968d01fb79e88073630221b0f0b5c7df67d0f0b561f
   languageName: node
   linkType: hard
 
-"@percy/dom@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/dom@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fdom%2F-%2Fdom-1.13.0.tgz"
-  checksum: 33893587596c1be67aa0f8d37cac25f132fd1df6da848e034fd3b677d5f833606bc5bea732cbe91c67959bbfd9c8c44cf27200635e74c05f4c70f0c88ca08406
+"@percy/dom@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/dom@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fdom%2F-%2Fdom-1.26.1.tgz"
+  checksum: 62a396935d616f892a6a05b0c062e3e5d0d12352f907a641d79a98fc80a9d8722f221be14951ea31c649aa616311a0d3e49733f52762cb917bb2c48c9e7ed153
   languageName: node
   linkType: hard
 
-"@percy/env@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/env@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fenv%2F-%2Fenv-1.13.0.tgz"
-  checksum: 3174c25b5f34d57b121ec6c9eb4a7a18914e847c875b76bb893e0f9412cb94be1aaaf2d260739beed1f8f7178a0b49fd2f030768893134796c5ab8115ca7a80d
-  languageName: node
-  linkType: hard
-
-"@percy/logger@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@percy/logger@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Flogger%2F-%2Flogger-1.13.0.tgz"
-  checksum: 71dc463eac90dbb03c0ba01480b0c8bc2b442368684fffbd7fb6347c7528d447018579bd109258d1ac22027a0b5c5407c7a312d3dd43e156210f0851874417a8
-  languageName: node
-  linkType: hard
-
-"@percy/sdk-utils@npm:^1.13.0":
-  version: 1.13.0
-  resolution: "@percy/sdk-utils@npm:1.13.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2F%40percy%252fsdk-utils%2F-%2Fsdk-utils-1.13.0.tgz"
-  checksum: 4e4fe8d27da76c3156e9990e2cec8319be66c3da058777060d63f4e2b151d7a4cc1f0349fd16085178e1ec0a307c8768b57980ceed4b90ea65fa776471b4420d
-  languageName: node
-  linkType: hard
-
-"@percy/storybook@npm:^4.3.4":
-  version: 4.3.4
-  resolution: "@percy/storybook@npm:4.3.4::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fstorybook%2F-%2Fstorybook-4.3.4.tgz"
+"@percy/env@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/env@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fenv%2F-%2Fenv-1.26.1.tgz"
   dependencies:
-    "@percy/cli-command": ^1.10.4
+    "@percy/logger": 1.26.1
+  checksum: bb3f4ff3ed611c6433ce495a867ec419ab3f6b04d40c9d581fbdaa15acad884e62a5eba9e0fdbf399fbcb819fcd64ea8cba3192549d594c4a84c6c575ac7bc7c
+  languageName: node
+  linkType: hard
+
+"@percy/logger@npm:1.26.1":
+  version: 1.26.1
+  resolution: "@percy/logger@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Flogger%2F-%2Flogger-1.26.1.tgz"
+  checksum: 87fe1ab55ff9a0f3df1ae6f0d86cd48c4439644c832b9449b7e935f6d1cdf5c01bb08ad624f69460921c1408670ef56dce7fa78464ad66ce3720daa70b35957d
+  languageName: node
+  linkType: hard
+
+"@percy/sdk-utils@npm:^1.26.1":
+  version: 1.26.1
+  resolution: "@percy/sdk-utils@npm:1.26.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fsdk-utils%2F-%2Fsdk-utils-1.26.1.tgz"
+  checksum: da984a8c1801f87451c30f37f78b0b35443b3130df92aad8e960a47f1d30af2b78c94acb11eaaae672773e981f0a7b161575c370f1d3a56b1d4a26232c5d0aa4
+  languageName: node
+  linkType: hard
+
+"@percy/storybook@npm:^4.3.6":
+  version: 4.3.6
+  resolution: "@percy/storybook@npm:4.3.6::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40percy%2Fstorybook%2F-%2Fstorybook-4.3.6.tgz"
+  dependencies:
+    "@percy/cli-command": ^1.24.0
     cross-spawn: ^7.0.3
     qs: ^6.11.0
   bin:
     percy-storybook: bin/percy-storybook.cjs
-  checksum: c99fab93b7c0b7fcab403b4b658a0a215cc0c80217bb25e91486f7f858b7ca2b9b79879c4a3422acd45b363b26376b61e1728761e96f8bea11aa2a2d9388fa09
+  checksum: 80dd41e31614f3480a459927df697c0ac9dbbbceed5903f71cbf6d053b9f88ea8fe9484ce2bca75eaba01eaf2d756a0ae2073551775009bbc8dfac057ccea1ec
   languageName: node
   linkType: hard
 
@@ -16169,6 +16171,18 @@ __metadata:
     path-type: ^4.0.0
     yaml: ^1.10.0
   checksum: 4be63e7117955fd88333d7460e4c466a90f556df6ef34efd59034d2463484e339666c41f02b523d574a797ec61f4a91918c5b89a316db2ea2f834e0d2d09465b
+  languageName: node
+  linkType: hard
+
+"cosmiconfig@npm:^8.0.0":
+  version: 8.2.0
+  resolution: "cosmiconfig@npm:8.2.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcosmiconfig%2F-%2Fcosmiconfig-8.2.0.tgz"
+  dependencies:
+    import-fresh: ^3.2.1
+    js-yaml: ^4.1.0
+    parse-json: ^5.0.0
+    path-type: ^4.0.0
+  checksum: 836d5d8efa750f3fb17b03d6ca74cd3154ed025dffd045304b3ef59637f662bde1e5dc88f8830080d180ec60841719cf4ea2ce73fb21ec694b16865c478ff297
   languageName: node
   linkType: hard
 

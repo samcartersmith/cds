@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.3 (6/28/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-877] internal: upgrade percy.
+
 ## 1.0.2 (6/23/2023 PST)
 
 #### 🐞 Fixes
