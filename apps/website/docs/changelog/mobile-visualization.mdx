@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.6 (6/28/2023 PST)
+
+#### 🐞 Fixes
+
+- **[Sparkline]** Make SparklineV2 periods horizontally scrollable. [[#2070](https://github.cbhq.net/frontend/cds/pull/2070)] [[DX-1627](https://jira.coinbase-corp.com/browse/DX-1627)]
+
 #### 📘 Misc
 
 - Merge master into release.

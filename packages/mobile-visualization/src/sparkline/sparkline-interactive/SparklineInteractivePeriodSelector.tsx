@@ -1,11 +1,12 @@
 import React, { memo, useCallback, useMemo } from 'react';
-import { Animated } from 'react-native';
+import { LayoutChangeEvent, ScrollView, StyleSheet } from 'react-native';
 import { periodLabelMap } from '@cbhq/cds-common/tokens/sparkline';
 import {
   SparklineInteractivePeriodProps,
   SparklineInteractivePeriodSelectorProps,
 } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useAccessibleForeground } from '@cbhq/cds-mobile/color/useAccessibleForeground';
+import { useHorizontallyScrollingPressables } from '@cbhq/cds-mobile/hooks/useHorizontallyScrollingPressables';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { Box } from '@cbhq/cds-mobile/layout/Box';
 import { HStack } from '@cbhq/cds-mobile/layout/HStack';
@@ -19,8 +20,11 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   period,
   selectedPeriod,
   setSelectedPeriod,
+  getLayoutHandler,
   color,
-}: SparklineInteractivePeriodProps<Period>) {
+}: SparklineInteractivePeriodProps<Period> & {
+  getLayoutHandler: (id: string) => ({ nativeEvent: { layout } }: LayoutChangeEvent) => void;
+}) {
   const isSelected = period.value === selectedPeriod;
   const periodLabel = periodLabelMap[period.label] ?? period.label;
   const periodHint = useMemo(
@@ -52,7 +56,13 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   );
 
   return (
-    <Box spacingVertical={2} alignItems="center" justifyContent="center">
+    <Box
+      key={period.value}
+      spacingVertical={2}
+      alignItems="center"
+      justifyContent="center"
+      onLayout={getLayoutHandler(period.value)}
+    >
       <Pressable
         borderRadius="roundedFull"
         backgroundColor={isSelected ? 'primaryWash' : 'background'}
@@ -70,9 +80,19 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   );
 }
 
+const periodSelectorStyles = StyleSheet.create({
+  scrollViewContainer: {
+    flexGrow: 1,
+  },
+  hStackContainer: {
+    flex: 1,
+  },
+});
+
 const SparklineInteractivePeriod = memo(
   SparklineInteractivePeriodWithGeneric,
 ) as typeof SparklineInteractivePeriodWithGeneric;
+
 export const SparklineInteractivePeriodSelector = <Period extends string>({
   selectedPeriod,
   setSelectedPeriod,
@@ -84,29 +104,57 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
     usage: 'normalText',
   });
   const { markerOpacity } = useSparklineInteractiveContext();
+  const {
+    scrollRef,
+    isScrollContentOverflowing,
+    isScrollContentOffscreenRight,
+    handleScroll,
+    handleScrollContainerLayout,
+    handleScrollContentSizeChange,
+    getPressableLayoutHandler,
+  } = useHorizontallyScrollingPressables(selectedPeriod);
 
-  const rootStyle = useMemo(() => {
-    return {
-      opacity: markerOpacity.interpolate({
-        inputRange: [0, 1],
-        outputRange: [1, 0],
-      }),
-    };
-  }, [markerOpacity]);
+  const opacity = markerOpacity.interpolate({
+    inputRange: [0, 1],
+    outputRange: [1, 0],
+  });
 
   return (
-    <Animated.View style={rootStyle}>
-      <HStack justifyContent="space-between" spacing={0}>
-        {periods.map((period) => (
-          <SparklineInteractivePeriod
-            key={period.value}
-            period={period}
-            selectedPeriod={selectedPeriod}
-            setSelectedPeriod={setSelectedPeriod}
-            color={accessibleForeground}
-          />
-        ))}
-      </HStack>
-    </Animated.View>
+    <Box
+      overflow={
+        isScrollContentOverflowing && isScrollContentOffscreenRight ? 'gradient' : 'visible'
+      }
+      animated
+      opacity={opacity}
+      background="background"
+    >
+      <ScrollView
+        horizontal
+        scrollEventThrottle={1}
+        showsHorizontalScrollIndicator={false}
+        ref={scrollRef}
+        onScroll={handleScroll}
+        onLayout={handleScrollContainerLayout}
+        onContentSizeChange={handleScrollContentSizeChange}
+        contentContainerStyle={periodSelectorStyles.scrollViewContainer}
+      >
+        <HStack
+          dangerouslySetStyle={periodSelectorStyles.hStackContainer}
+          spacing={0}
+          justifyContent="space-between"
+        >
+          {periods.map((period) => (
+            <SparklineInteractivePeriod
+              key={period.value}
+              period={period}
+              getLayoutHandler={getPressableLayoutHandler}
+              selectedPeriod={selectedPeriod}
+              setSelectedPeriod={setSelectedPeriod}
+              color={accessibleForeground}
+            />
+          ))}
+        </HStack>
+      </ScrollView>
+    </Box>
   );
 };

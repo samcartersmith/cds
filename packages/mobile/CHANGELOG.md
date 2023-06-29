@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.0.4 (6/28/2023 PST)
+
+#### 🐞 Fixes
+
+- **[Sparkline, TabNavigation]** Fix scroll overflow gradient being applied even when fully scrolled to right. [[#2070](https://github.cbhq.net/frontend/cds/pull/2070)] [[DX-1627](https://jira.coinbase-corp.com/browse/DX-1627)]
+
 ## 5.0.3 ((6/28/2023, 01:39 PM PST))
 
 This is an artificial version bump with no new change.
