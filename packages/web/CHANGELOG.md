@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.1.0 (6/29/2023 PST)
+
+#### 🚀 Updates
+
+- Add changes to expose Ref for Table Component. [[#2074](https://github.cbhq.net/kamal-mukkamala/cds/pull/2074)] [[CRPL-1217](https://jira.coinbase-corp.com/browse/CRPL-1217)]
+
 ## 5.0.4 ((6/28/2023, 08:59 PM PST))
 
 This is an artificial version bump with no new change.

@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -14,6 +15,25 @@ const TableMock = (props: TableMockProps) => (
     <>Child</>
   </Table>
 );
+
+const TableMockWithRef = (props: TableMockProps) => {
+  const tableRef = useRef<HTMLTableElement | null>(null);
+
+  return (
+    <Table ref={tableRef} {...props}>
+      <thead>
+        <tr>
+          <th>Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cell</td>
+        </tr>
+      </tbody>
+    </Table>
+  );
+};
 
 describe('Table', () => {
   it('passes accessibility', async () => {
@@ -37,5 +57,12 @@ describe('Table', () => {
     render(<TableMock accessibilityLabel={A11Y_LABEL} />);
 
     expect(screen.getByLabelText(A11Y_LABEL)).toBeTruthy();
+  });
+
+  it('is passed with the ref and renders the table', async () => {
+    render(<TableMockWithRef />);
+
+    const tableElement = screen.getByRole('table');
+    expect(tableElement).toBeInTheDocument();
   });
 });
