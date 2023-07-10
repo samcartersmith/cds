@@ -1,6 +1,8 @@
+/* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { responsiveClassName } from '../../styles/responsive';
 import { palette } from '../../tokens';
 import { TextDisplay2 } from '../../typography';
 import { Table } from '../Table';
@@ -98,5 +100,21 @@ describe('TableCaption', () => {
     render(<TableCaptionMock backgroundColor="negative" />);
 
     expect(screen.getByTestId(CAPTION_TEST_ID)).toHaveStyle({ backgroundColor: palette.negative });
+  });
+
+  it('sets responsiveClassName', () => {
+    render(
+      <TableCaptionMock
+        responsiveConfig={{
+          phone: {
+            innerSpacing: {
+              spacing: 2,
+            },
+          },
+        }}
+      />,
+    );
+    // eslint-disable-next-line testing-library/no-node-access
+    expect(screen.getByTestId(CAPTION_TEST_ID).firstChild).toHaveClass(responsiveClassName);
   });
 });
