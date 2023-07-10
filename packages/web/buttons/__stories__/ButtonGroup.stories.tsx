@@ -103,33 +103,6 @@ export const Vertical = () => (
   </ButtonGroup>
 );
 
-/**
- * Disabling this a11y rule until we hear back from Sam if we should make a permanent change to the component.
- */
-Default.parameters = {
-  a11y: {
-    config: {
-      rules: [{ id: 'listitem', enabled: false }],
-    },
-  },
-};
-
-Block.parameters = {
-  a11y: {
-    config: {
-      rules: [{ id: 'listitem', enabled: false }],
-    },
-  },
-};
-
-Vertical.parameters = {
-  a11y: {
-    config: {
-      rules: [{ id: 'listitem', enabled: false }],
-    },
-  },
-};
-
 export default {
   title: 'Core Components/Buttons/ButtonGroup',
   component: ButtonGroup,

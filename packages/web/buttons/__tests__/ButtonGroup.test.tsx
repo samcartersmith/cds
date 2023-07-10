@@ -12,7 +12,7 @@ describe('ButtonGroup.test', () => {
       </ButtonGroup>,
     );
 
-    expect(screen.getByRole('group')).toBeTruthy();
+    expect(screen.getByRole('list')).toBeTruthy();
     expect(screen.getAllByRole('listitem')).toBeTruthy();
     expect(screen.getAllByRole('button')).toBeTruthy();
   });
@@ -25,7 +25,7 @@ describe('ButtonGroup.test', () => {
       </ButtonGroup>,
     );
 
-    expect(screen.getByRole('group')).toBeTruthy();
+    expect(screen.getByRole('list')).toBeTruthy();
     expect(screen.getAllByRole('listitem')).toBeTruthy();
     expect(screen.getAllByRole('button')).toBeTruthy();
   });
@@ -38,7 +38,7 @@ describe('ButtonGroup.test', () => {
       </ButtonGroup>,
     );
 
-    expect(screen.getByRole('group')).toBeTruthy();
+    expect(screen.getByRole('list')).toBeTruthy();
     expect(screen.getAllByRole('listitem')).toBeTruthy();
     expect(screen.getAllByRole('button')).toBeTruthy();
   });
@@ -51,7 +51,7 @@ describe('ButtonGroup.test', () => {
       </ButtonGroup>,
     );
 
-    expect(screen.getByRole('group')).toBeTruthy();
+    expect(screen.getByRole('list')).toBeTruthy();
     expect(screen.queryAllByRole('listitem')).toHaveLength(0);
     expect(screen.queryAllByRole('button')).toHaveLength(0);
   });

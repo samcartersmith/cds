@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.1.1 (6/30/2023 PST)
+
+#### 🐞 Fixes
+
+- ButtonGroup role is now correctly 'list'. [[#2077](https://github.cbhq.net/frontend/cds/pull/2077)]
 
 #### 📘 Misc
 

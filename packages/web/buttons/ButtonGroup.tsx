@@ -33,7 +33,6 @@ export const ButtonGroup = memo(function ButtonGroup({
   return (
     <Stack
       aria-label={accessibilityLabel}
-      role="group"
       as="ul"
       alignItems="stretch"
       flexWrap="nowrap"
