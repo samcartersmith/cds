@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.1.2 (7/12/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-1787] Added undefined value to EventDataEntryTypes. [[#2081](https://github.cbhq.net/frontend/cds/pull/2081)] [[DX-1787](https://jira.coinbase-corp.com/browse/DX-1787)]
+
 ## 5.1.1 ((6/30/2023, 11:20 AM PST))
 
 This is an artificial version bump with no new change.

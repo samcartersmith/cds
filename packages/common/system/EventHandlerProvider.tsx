@@ -2,7 +2,7 @@ import React, { createContext, useMemo } from 'react';
 
 type RecursiveMapType<T> = T | Record<string, T>;
 
-export type EventDataEntryTypes = string | number | boolean | null;
+export type EventDataEntryTypes = string | number | boolean | null | undefined;
 export type EventDataEntry = EventDataEntryTypes | EventDataEntryTypes[];
 
 export type EventHandlerAction = string;
