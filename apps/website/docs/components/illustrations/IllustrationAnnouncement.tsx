@@ -27,23 +27,8 @@ export const IllustrationAnnouncement = function IllustrationAnnouncement() {
             <Link to="https://cds.cbhq.net/changelog/illustrations/">Illustration Changelog</Link>
           </TextBody>
           <TextBody as="p" spacingBottom={1}>
-            If request is <strong>urgent</strong>:
-            <ol>
-              <li>
-                fill{' '}
-                <Link to="https://jira.coinbase-corp.com/secure/CreateIssueDetails!init.jspa?pid=15203&issuetype=3&priority=4&labels=Illustration&labels=Icon&labels=Request&components=20226&assignee=dominic.flask@coinbase.com&summary=%5BIllustration%20or%20Icon%20Request%5D%20&description=(_Please%20make%20sure%20you%E2%80%99re%20requesting%20support%20at%20least%202%20weeks%20prior%20to%20the%20due%20date.%20%20Please%20be%20as%20descriptive%20as%20possible,%20this%20will%20set%20up%20the%20Illustration%20Team%20for%20success._)%20%0A%0A*Estimated%20Scope:*%20(_Ideal%20delivery%20date?%20Any%20important%20dates%20we%20should%20know?_)%0A%0A*Project%20Description:*%20(_Provide%20brief,%20examples,%20and%20DRI%E2%80%99s_)%0A%0A*Resources:*%20(_Provide%20links,%20Figma,%20decks,%20documentation_)">
-                  go/icon-illustration
-                </Link>{' '}
-                form
-              </li>
-              <li>
-                Attach the ticket to message and cc{' '}
-                <a href="mailto:dominic.flask@coinbase.com">@dominic-flask</a>, and ping{' '}
-                <Link to="https://coinbase.slack.com/archives/C3NH7A137">
-                  #ask-design-foundations
-                </Link>{' '}
-              </li>
-            </ol>
+            If request is <strong>urgent</strong>: ping{' '}
+            <Link to="https://coinbase.slack.com/archives/C3NH7A137">#ask-design-foundations</Link>
           </TextBody>
         </VStack>
       }
