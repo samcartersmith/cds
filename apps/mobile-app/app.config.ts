@@ -93,6 +93,12 @@ const expo: ExpoConfig = {
       },
     ],
     '@config-plugins/detox',
+    [
+      'expo-gradle-ext-vars',
+      {
+        androidXBrowser: '1.5.0',
+      },
+    ],
   ],
 };
 
