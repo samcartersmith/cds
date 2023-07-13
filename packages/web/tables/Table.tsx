@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React, { forwardRef, memo, useMemo } from 'react';
 
 import { cx } from '../utils/linaria';
@@ -47,7 +46,6 @@ const TableWithRef = forwardRef<HTMLTableElement, TableProps>(function TableWith
           aria-label={accessibilityLabel}
           data-testid={testID}
           {...rest}
-          tabIndex={0}
         >
           {children}
         </table>

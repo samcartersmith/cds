@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.1.3 (7/13/2023 PST)
+
+#### 🐞 Fixes
+
+- **[Table]** Remove forced tabindex setting. [[#2088](https://github.cbhq.net/frontend/cds/pull/2088)] [[DX-1804](https://jira.coinbase-corp.com/browse/DX-1804)]
+
 ## 5.1.2 (7/12/2023 PST)
 
 This is an artificial version bump with no new change.

@@ -17,7 +17,6 @@ export const SortingFocus: ComponentStoryObj<typeof StickyHeaderSortingExample> 
 
     // Tab into the document and expect the active element to be in focus
     userEvent.tab();
-    userEvent.tab();
     expect(firstSortButton).toHaveFocus();
   },
 };
