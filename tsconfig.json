@@ -4,6 +4,9 @@
   "files": [],
   "references": [
     {
+      "path": "apps/next-example"
+    },
+    {
       "path": "packages/cds-migrator"
     },
     {

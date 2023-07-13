@@ -1,0 +1,29 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "emitDeclarationOnly": false,
+    "noEmit": true,
+    "outDir": "../../.nx/dts/apps/next-example"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*",
+    "../../types/**/*"
+  ],
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "../../packages/web"
+    },
+    {
+      "path": "../../packages/illustrations"
+    },
+    {
+      "path": "../../packages/icons"
+    },
+    {
+      "path": "../../packages/fonts"
+    },
+  ]
+}

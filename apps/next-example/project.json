@@ -1,0 +1,32 @@
+{
+  "name": "next-example",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/next-example",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-next"
+    },
+    "start": {
+      "executor": "@cbhq/mono-tasks:start-next"
+    },
+    "extract": {
+      "executor": "@cbhq/mono-tasks:extract-messages"
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "report-disabled-eslint-rules": {
+      "executor": "@cbhq/prevent-eslint-disable:report"
+    }
+  }
+}

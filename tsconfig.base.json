@@ -20,6 +20,9 @@
     "strict": true,
     "target": "ES6",
     "paths": {
+      ":next-example/*": [
+        "apps/next-example/src/*"
+      ],
       ":cds-website/*": [
         "apps/website/*"
       ],

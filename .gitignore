@@ -48,6 +48,7 @@ local.properties
 
 # Nx/Builds
 .nx
+.next
 cjs/
 dts/
 lib/
