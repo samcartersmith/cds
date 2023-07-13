@@ -281,8 +281,8 @@ const sparklineMobileDeprecations = [
   },
 ];
 export const Q22023: Deprecation = {
-  endOfLife: 'Q22023',
-  prevMajorVersion: 'v4.1.3',
+  endOfLife: 'Q32023',
+  prevMajorVersion: 'v5.0.0',
   components: [
     ...overlayWebDeprecations,
     ...sparklineWebDeprecations,

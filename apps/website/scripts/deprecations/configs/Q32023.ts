@@ -2,7 +2,7 @@ import { Deprecation } from '../types';
 
 export const Q32023: Deprecation = {
   endOfLife: 'Q32023',
-  prevMajorVersion: 'v4.2.1',
+  prevMajorVersion: 'v5.0.0',
   props: [
     {
       name: 'title',
