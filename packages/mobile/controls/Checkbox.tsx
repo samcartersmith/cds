@@ -80,13 +80,13 @@ const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
 
   return (
     <Control<T>
-      {...props}
-      {...accessibilityProps}
       accessible
       accessibilityRole="switch"
+      hitSlop={5}
+      {...props}
+      {...accessibilityProps}
       label={children}
       ref={ref}
-      hitSlop={5}
     >
       {CheckboxIcon}
     </Control>
