@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.8.3 (7/14/2023 PST)
+
+#### 🐞 Fixes
+
+- Artificial version bump. [[#2094](https://github.cbhq.net/frontend/cds/pull/2094)]
+
 ## 1.8.1 (6/23/2023 PST)
 
 #### 🐞 Fixes
