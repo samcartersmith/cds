@@ -67,6 +67,12 @@ _docker_chrome: &docker_chrome
           - 'AWS_SESSION_TOKEN'
     - file:///buildkite/plugins/cache: *cache_plugin
 
+_k8s_medium_chrome: &k8s_medium_chrome
+  <<: *docker_chrome
+  agents:
+    queue: k8s-docker
+    agent-size: medium
+
 _k8s_large_chrome: &k8s_large_chrome
   <<: *docker_chrome
   agents:
@@ -110,7 +116,7 @@ steps:
       - yarn mono-pipeline run-ci lint --allOnMaster
 
   - label: Format
-    <<: *k8s_large
+    <<: *k8s_medium
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci format --allOnMaster
@@ -136,8 +142,6 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci danger --allOnMaster
-    retry:
-      automatic: false
     soft_fail: true
 
   - label: 'Percy (Web)'
@@ -153,14 +157,9 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --targets=visreg --allOnMaster
-    agents:
-      queue: k8s-docker
-      agent-size: large
 
   - label: 'Storybook E2E Test'
-    <<: *k8s_large_chrome
+    <<: *k8s_medium_chrome
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --targets=storybook-e2e-test --allOnMaster
-    retry:
-      automatic: false
