@@ -3,9 +3,9 @@ env:
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
-  NX_ENABLE_REMOTE_CACHE: true
+  NX_ENABLE_REMOTE_CACHE: false
 
-_shared_step: &shared_step
+_docker_shared: &docker_shared
   plugins:
     - file:///buildkite/plugins/docker:
         image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v18
@@ -29,12 +29,20 @@ _shared_step: &shared_step
         paths:
           - ./.yarn/cache
           - ./.yarn/install-state.gz
-  agents:
-    queue: docker
-    resource_class: large
 
-_chrome_step: &chrome_step
-  <<: *shared_step
+_k8s_medium: &k8s_medium
+  <<: *docker_shared
+  agents:
+    queue: k8s-docker
+    agent-size: medium
+
+_k8s_large: &k8s_large
+  <<: *docker_shared
+  agents:
+    queue: k8s-docker
+    agent-size: large
+
+_docker_chrome: &docker_chrome
   env:
     CONFIG_SERVICE_CONTEXT: percy-cds
     STORYBOOK_SKIP_ANIMATION: true
@@ -59,9 +67,15 @@ _chrome_step: &chrome_step
           - 'AWS_SESSION_TOKEN'
     - file:///buildkite/plugins/cache: *cache_plugin
 
+_k8s_large_chrome: &k8s_large_chrome
+  <<: *docker_chrome
+  agents:
+    queue: k8s-docker
+    agent-size: large
+
 steps:
   - label: Validate
-    <<: *shared_step
+    <<: *k8s_medium
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline validate-codeflow
@@ -75,13 +89,13 @@ steps:
       - yarn one-version:check
 
   - label: Build
-    <<: *shared_step
+    <<: *k8s_large
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci build --exclude=mobile-app --allOnMaster
 
   - label: Build ESM
-    <<: *shared_step
+    <<: *k8s_medium
     commands:
       - tools/ci/setup.sh
       # Bundling the esm build with web:build target causes >2x computation time.
@@ -90,19 +104,19 @@ steps:
       - yarn mono-pipeline run-ci other --targets=build-esm --allOnMaster
 
   - label: Lint
-    <<: *shared_step
+    <<: *k8s_large
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci lint --allOnMaster
 
   - label: Format
-    <<: *shared_step
+    <<: *k8s_large
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci format --allOnMaster
 
   - label: Test
-    <<: *shared_step
+    <<: *k8s_large
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci test --allOnMaster
@@ -111,13 +125,13 @@ steps:
         limit: 1
 
   - label: Typecheck
-    <<: *shared_step
+    <<: *k8s_medium
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci typecheck --allOnMaster
 
   - label: Danger
-    <<: *shared_step
+    <<: *k8s_medium
     parallelism: 1
     commands:
       - tools/ci/setup.sh
@@ -127,7 +141,7 @@ steps:
     soft_fail: true
 
   - label: 'Percy (Web)'
-    <<: *chrome_step
+    <<: *k8s_large_chrome
     cancel_on_build_failing: true
     commands:
       - tools/ci/setup.sh
@@ -135,7 +149,7 @@ steps:
       - yarn mono-pipeline run-ci other --targets=a11y-web --allOnMaster
 
   - label: 'Percy (Mobile)'
-    <<: *shared_step
+    <<: *k8s_medium
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --targets=visreg --allOnMaster
@@ -144,7 +158,7 @@ steps:
       agent-size: large
 
   - label: 'Storybook E2E Test'
-    <<: *chrome_step
+    <<: *k8s_large_chrome
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --targets=storybook-e2e-test --allOnMaster
