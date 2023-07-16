@@ -22,6 +22,9 @@ import { SelectOption } from '../../select/SelectOption';
 import { SidebarItem, SidebarItemProps } from '../../sidebarMoreMenu/SidebarItem';
 import { SidebarMoreMenu, SidebarMoreMenuProps } from '../../sidebarMoreMenu/SidebarMoreMenu';
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
   TabsAndTitle: 'With Tabs and displayTitle',
@@ -29,6 +32,9 @@ export const StoryMap = {
 
 // Helpers
 type Items = { title: string; icon: SidebarItemProps['icon'] }[];
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const items: Items = [
   { title: 'Assets', icon: 'chartPie' },
   { title: 'Trade', icon: 'trading' },
@@ -71,16 +77,20 @@ const tabs = [
   },
 ];
 type NavigationBarFullExampleProps = {
-  pageTitle: string;
-  onTabChange: (id: string) => void;
-  onBackPress: () => void;
+  pageTitle?: string;
+  onTabChange?: (id: string) => void;
+  onBackPress?: () => void;
 };
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export function NavigationBarFullExample({
   pageTitle,
   onTabChange,
   onBackPress,
 }: NavigationBarFullExampleProps) {
   const [value, setValue] = useState(tabs[0].id);
+
   const showBackButton = useMemo(
     () => (pageTitle ? pageTitle !== 'Dashboard' : value !== tabs[0].id),
     [pageTitle, value],
@@ -130,6 +140,9 @@ export function NavigationBarFullExample({
   );
 }
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const NavigationBarTitle = () => {
   return (
     <NavigationBar
@@ -149,6 +162,9 @@ export const NavigationBarTitle = () => {
   );
 };
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const ComposedSystem = () => {
   const [activeSidebarIndex, setActiveSidebarIndex] = useState(0);
   const [activeTabId, setActiveTabId] = useState('all');
@@ -211,6 +227,9 @@ const testOverrideClass = css`
   }
 `;
 
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
 export const NavLinkExample = () => {
   const [activeItem, setActiveItem] = useState('assets');
   const getProps = (name: string) => ({
@@ -256,7 +275,15 @@ const renderCB1 = (isCollapsed: boolean) => {
     </Pressable>
   );
 };
-export const SidebarExample = ({ children, ...props }: SidebarMoreMenuProps) => {
+
+type SidebarExampleProps = {
+  children?: React.ReactNode;
+} & Omit<SidebarMoreMenuProps, 'children'>;
+
+/**
+ * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ */
+export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
 
