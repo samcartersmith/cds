@@ -40,6 +40,7 @@ Once you have run commands above you are ready to start contributing.
 - [React Native Development](./docs/react-native.md): Learn how to contibute to the @cbhq/cds-mobile package.
 - [The CDS Website Development](./docs/website.md): Learn how to contibute to the CDS website which contains our public facing documentation.
 - [Testing](./docs/testing.md): Because we support so many teams it is important that our team maintains high test coverage.
+- [Git hooks](./docs/git-hooks.md): Optionally configure Husky for pre-commit linting.
 
 ## Internal Process and Best Practices
 
