@@ -37,10 +37,11 @@
 - [Octokit features](https://github.com/octokit/octokit.js#features)
 - [Octokit `App` client](https://github.com/octokit/octokit.js#app-client)
 - [`@octokit/app` API reference](https://github.com/octokit/app.js#readme)
+- [`@octokit/auth-app` API reference](https://github.com/octokit/auth-app.js#readme)
 
 ## About Octokit
 
-[Octokit](https://github.com/octokit/octokit.js#features) is the GitHub API's official SDK. The `octokit` npm package combines several core packages for integrating with [different aspects of GitHub's APIs](https://github.com/octokit/octokit.js#readme). It's useful to consult the docs for the individual Octokit packages, such as the [`@octokit/app`](https://github.com/octokit/app.js#readme) package for integrating with GitHub Apps.
+[Octokit](https://github.com/octokit/octokit.js#features) is the GitHub API's official SDK. The `octokit` npm package combines several core packages for integrating with [different aspects of GitHub's APIs](https://github.com/octokit/octokit.js#readme). The docs for the individual Octokit packages such as [`@octokit/app`](https://github.com/octokit/app.js#readme) and [`@octokit/auth-app`](https://github.com/octokit/auth-app.js#readme) contain additional information.
 
 ## How to create a NodeJS GitHub App
 
