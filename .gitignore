@@ -153,3 +153,12 @@ apps/mobile-app/prebuilds/android-*
 
 #reassure
 .reassure/
+
+# Husky
+.husky
+
+# Lint-staged
+.lintstagedrc*
+
+# MDX Stories
+*.stories.mdx
