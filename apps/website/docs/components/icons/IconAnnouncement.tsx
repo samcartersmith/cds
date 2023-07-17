@@ -39,9 +39,7 @@ export const IconAnnouncement = function IconAnnouncement() {
               </li>
               <li>
                 Attach the ticket to message and ping{' '}
-                <Link to="https://coinbase.slack.com/archives/C3NH7A137">
-                  #ask-design-foundations
-                </Link>{' '}
+                <Link to="https://coinbase.slack.com/archives/C05H922EYP7">#ask-ui-systems</Link>{' '}
               </li>
             </ol>
           </TextBody>

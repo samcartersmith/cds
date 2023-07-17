@@ -62,8 +62,8 @@ module.exports = {
         },
         {
           type: 'link',
-          label: '#ask-dx-ui-systems',
-          href: `slack://channel?team=${SLACK_TEAM}&id=C04MX9N0RA9`,
+          label: '#ask-ui-systems',
+          href: `slack://channel?team=${SLACK_TEAM}&id=C05H922EYP7`,
         },
         {
           type: 'link',

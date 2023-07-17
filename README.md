@@ -4,10 +4,7 @@ Welcome to the Coinbase Design System. If you are looking to contribute to CDS y
 
 If you are looking for something else here are some other important links:
 
-To make feature requests, report bugs, or request assistance when working with CDS you can find us on slack:
-
-- For design inquiries: #ask-design-foundations
-- For engineering inquiries: #ask-dx-ui-systems
+To make feature requests, report bugs, or request assistance when working with CDS you can find us on slack: #ask-ui-systems
 
 ## Get Started
 

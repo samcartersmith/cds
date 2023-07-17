@@ -28,7 +28,7 @@ export const IllustrationAnnouncement = function IllustrationAnnouncement() {
           </TextBody>
           <TextBody as="p" spacingBottom={1}>
             If request is <strong>urgent</strong>: ping{' '}
-            <Link to="https://coinbase.slack.com/archives/C3NH7A137">#ask-design-foundations</Link>
+            <Link to="https://coinbase.slack.com/archives/C05H922EYP7">#ask-ui-systems</Link>
           </TextBody>
         </VStack>
       }

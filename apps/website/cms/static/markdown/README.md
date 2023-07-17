@@ -6,7 +6,7 @@ If you are looking for something else here are some other important links:
 
 - [View our feature request backlog](https://coda.io/d/CDS-Team_dFaC-pktuzN/Backlog_suIz1#_lufbp)
 - [Submit a request for new features/tooling](https://coda.io/d/CDS-Team_dFaC-pktuzN/Submit-a-Request-to-CDS_suHBY#_luhU2)
-- Visit the [#ask-dx-ui-systems](http://go/ask-cds) slack channel to ask the team a question
+- Visit the [#ask-ui-systems](http://go/ask-cds) slack channel to ask the team a question
 
 ## Getting started
 
