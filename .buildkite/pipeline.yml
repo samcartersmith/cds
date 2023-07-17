@@ -3,7 +3,7 @@ env:
   CI: true
   NX_CAPTURE_METRICS: true
   NX_CAPTURE_TEST_METRICS: true
-  NX_ENABLE_REMOTE_CACHE: false
+  NX_ENABLE_REMOTE_CACHE: true
 
 _docker_shared: &docker_shared
   plugins:
