@@ -38,11 +38,12 @@
 - [Octokit `App` client](https://github.com/octokit/octokit.js#app-client)
 - [`@octokit/app` API reference](https://github.com/octokit/app.js#readme)
 - [`@octokit/auth-app` API reference](https://github.com/octokit/auth-app.js#readme)
+- [Octokit `authentication-strategies.js` API reference](https://github.com/octokit/authentication-strategies.js/#authentication-strategiesjs)
 - [Octokit - GitHub App or installation authentication](https://github.com/octokit/authentication-strategies.js/#github-app-or-installation-authentication)
 
 ## About Octokit
 
-[Octokit](https://github.com/octokit/octokit.js#features) is the GitHub API's official SDK. The `octokit` npm package combines several core packages for integrating with [different aspects of GitHub's APIs](https://github.com/octokit/octokit.js#readme). The docs for the individual Octokit packages such as [`@octokit/app`](https://github.com/octokit/app.js#readme) and [`@octokit/auth-app`](https://github.com/octokit/auth-app.js#readme) contain additional information. Read Octokit's [_GitHub App or installation authentication_](https://github.com/octokit/authentication-strategies.js/#github-app-or-installation-authentication) guide for integrating with your GitHub App.
+[Octokit](https://github.com/octokit/octokit.js#features) is the GitHub API's official SDK. The `octokit` npm package combines several core packages for integrating with [different aspects of GitHub's APIs](https://github.com/octokit/octokit.js#readme). The docs for the individual Octokit packages such as [`@octokit/app`](https://github.com/octokit/app.js#readme), [`@octokit/auth-app`](https://github.com/octokit/auth-app.js#readme), and [`authentication-strategies.js`](https://github.com/octokit/authentication-strategies.js/#readme) contain additional information. Read Octokit's [_GitHub App or installation authentication_](https://github.com/octokit/authentication-strategies.js/#github-app-or-installation-authentication) guide for integrating with your GitHub App.
 
 ## How to create a NodeJS GitHub App
 
