@@ -1,1 +1,11 @@
 `Radio` is a control component that allows users to select one option from a set.
+
+:::caution Types
+
+RadioGroup onPress fails without a string type declaration for setGroup fns.
+
+```
+const [group, setGroup] = useState<string>();
+```
+
+:::
