@@ -33,7 +33,6 @@ const DEFAULT_PRESENTATIONAL_LIBRARIES = [
   'react-native-linear-gradient',
   'react-native-reanimated',
   'react-select',
-  'antd',
 ];
 
 const DEFAULT_PRESENTATIONAL_ELEMENTS = [
