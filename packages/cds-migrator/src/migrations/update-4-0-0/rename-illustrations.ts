@@ -26,7 +26,7 @@ const filterSourceFiles = (path: string) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, tree, sourceFile } = args;
+  const { jsx, sourceFile } = args;
   const { updateMap, isMigratable } = checkIsComponentWithMigrations({
     jsx,
     componentNames: Object.keys(illustrationRenames),
@@ -41,7 +41,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
       jsx,
     });
     if (oldValue && newValue) {
-      writeMigrationToFile({ oldValue, newValue, jsx, sourceFile, tree });
+      writeMigrationToFile({ oldValue, newValue, jsx, sourceFile });
     }
   }
 };

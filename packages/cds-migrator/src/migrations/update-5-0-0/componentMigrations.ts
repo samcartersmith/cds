@@ -1,5 +1,4 @@
-import { Tree } from '@nrwl/devkit';
-import chalk from 'chalk';
+import { output, Tree } from '@nrwl/devkit';
 import { SourceFile } from 'ts-morph';
 
 import { checkFileIncludesImportedModule } from '../../helpers/checkFileIncludesImportedModule';
@@ -29,9 +28,9 @@ const checkSourceFile = (sourceFile: SourceFile): boolean => {
     if (hasImportForDeprecatedComponent) {
       checkSourceFileHasDeprecatedComponent = true;
       generateManualMigrationOutput(
-        `The ${name} component was replaced with ${replacement} at ${chalk.underline(
+        `## The ${name} component was replaced with ${replacement} at ${output.underline(
           path,
-        )}. Manual migration is required since the API has changed. Refer to go/cds-deprecations for API migration guidance.`,
+        )}. \n - Manual migration is required since the API has changed. Refer to go/cds-deprecations for API migration guidance.`,
       );
     }
   });
@@ -39,7 +38,7 @@ const checkSourceFile = (sourceFile: SourceFile): boolean => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { tree, jsx, sourceFile } = args;
+  const { jsx, sourceFile } = args;
 
   oneToOneMigrations?.forEach(({ name, path: componentPath, replacement, warning }) => {
     const oldPath = Object.keys(componentPath)[0];
@@ -65,7 +64,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
       });
       renameJsxTag({ jsx, value: replacement });
     }
-    writeMigrationToFile({ sourceFile, tree, oldValue: name, newValue: replacement });
+    writeMigrationToFile({ sourceFile, oldValue: name, newValue: replacement });
 
     if (warning) {
       logWarning(`Please check all instances of ${name}. ${warning}`);

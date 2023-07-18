@@ -6,7 +6,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.6 (7/17/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: Cleaned up file parsing logic and missing node error. [[#2104](https://github.cbhq.net/frontend/cds/pull/2104)] [[DX-1789](https://jira.coinbase-corp.com/browse/DX-1789)]
+
 ## 0.1.5 (6/23/2023 PST)
+
+:::danger
+🚫 This release includes a regression, please use `@cbhq/cds-migrator@0.1.6` or higher.
+:::
 
 #### 🐞 Fixes
 

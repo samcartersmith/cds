@@ -84,7 +84,6 @@ const callback = (args: CreateMigrationParams) => {
       // after all file changes are made, write the migration file
       writeMigrationToFile({
         sourceFile,
-        tree,
         oldValue: pkg,
         newValue: migrationConfig?.newDir,
       });

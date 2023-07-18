@@ -21,7 +21,7 @@ const checkSourceFile = (sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, tree, sourceFile } = args;
+  const { jsx, sourceFile } = args;
 
   catchAllPropValueMigrations.forEach((migration) => {
     const { oldValue, newValue } = renameJsxAttributeValue({
@@ -30,7 +30,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
       jsx,
     });
     if (oldValue && newValue) {
-      writeMigrationToFile({ oldValue, newValue, jsx, sourceFile, tree });
+      writeMigrationToFile({ oldValue, newValue, jsx, sourceFile });
     }
   });
 };

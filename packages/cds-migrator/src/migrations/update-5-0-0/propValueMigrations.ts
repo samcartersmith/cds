@@ -1,5 +1,4 @@
 import { Tree } from '@nrwl/devkit';
-import fs from 'node:fs';
 import { SourceFile } from 'ts-morph';
 
 import { checkFileIncludesImport } from '../../helpers/checkFileIncludesImport';
@@ -20,8 +19,8 @@ const renamedPropValues = Object.keys(
   Object.values(propValueMigrations).map((val) => val.valueMap),
 );
 
-const filterSourceFiles = (path: string, sourceFile: SourceFile) => {
-  const sourceContent = fs.readFileSync(path, 'utf-8');
+const checkSourceFile = (sourceFile: SourceFile) => {
+  const sourceContent = sourceFile.getFullText();
   const hasRenamedValue = checkFileIncludesRenamedValue(sourceContent, renamedPropValues);
   const hasImport = checkFileIncludesImport(sourceFile, importPaths);
   if (hasRenamedValue && hasImport) {
@@ -31,13 +30,11 @@ const filterSourceFiles = (path: string, sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, tree, sourceFile, path } = args;
+  const { jsx, sourceFile } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(propValueMigrations),
   });
-
-  if (!filterSourceFiles(path, sourceFile)) return;
 
   let renameMap = propValueMigrations;
   if (actualComponentName) {
@@ -76,7 +73,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
       jsx,
     });
     if (oldValue && newValue) {
-      writeMigrationToFile({ oldValue, newValue, jsx, sourceFile, tree });
+      writeMigrationToFile({ oldValue, newValue, jsx, sourceFile });
     }
   }
 };
@@ -86,5 +83,6 @@ export default async function migrations(tree: Tree) {
   await createJsxMigration({
     tree,
     callback,
+    checkSourceFile,
   });
 }

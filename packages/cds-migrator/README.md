@@ -43,7 +43,16 @@ I recommend storing this as an alias:
 yarn nx run cds-migrator:build --skip-nx-cache && yarn nx run cds-migrator:watch
 ```
 
-## Writing Your Own Migrator Script
+## Testing in Consumer Repos
+
+1. Add the `@cbhq/cds-migrator` package as a dependency in the consuming repo
+2. You'll need to have the `frontend/cds` repo cloned locally. Resolve the `cds-migrator` dependency to the absolute path of your local instances, eg: `"@cbhq/cds-migrator": "file:/Users/blairmckee/code/cds/packages/cds-migrator"`
+3. Run the debug script in `frontend/cds`: `yarn nx run cds-migrator:build --skip-nx-cache && yarn nx run cds-migrator:watch`
+4. Run `yarn` in the consuming repo
+5. Every time you make a change in `frontend/cds` you'll need to rerun `yarn` in the consuming repo, because the `cds-migrator` package needs to be rebuilt and reinstalled in the consumer.
+6. Rinse and repeat steps 4 & 5 whenever you make a change in `frontend/cds`.
+
+## How It Works
 
 There's quite a lot of boilerplate that goes into creating a generator. We've abstracted a lot of the `ts-morph` and NX generator logic into friendly helpers called `createMigration` and `createJsxMigration`. Both functions need to be passed the NX `tree` instance in order to have read/write access to all the projects in an NX workspace.
 
@@ -55,7 +64,7 @@ Every NX generator receives a `tree` argument. This allows a generator to have a
 
 #### sourceFile
 
-When we're performing our migrations we don't want to parse every file in an NX workspace, so we use a temporary `ts-morph` file system that only contains files that contain migrations. This file system is called a `Project` instance, and as you make changes to a `sourceFile` these changes are saved to the `Project` instance. It's important to note that if you want the actual disc's file system to reflect your changes you'll need to use a helper like `writeMigrationToFile` to copy these changes over to the file system.
+When we're performing our migrations we don't want to parse every file in an NX workspace, so we use a temporary `ts-morph` file system that only contains files that are pertinent to migrations. This file system is called a `Project` instance, and as you make changes to a `sourceFile` these changes are saved to the `Project` instance. It's important to note that if you want the actual disc's file system to reflect your changes you'll need to use a helper like `writeMigrationToFile` to copy these changes over to the file system.
 
 ### How Do createJsxMigration and createMigration Work?
 

@@ -2,6 +2,7 @@ import { Tree } from '@nrwl/devkit';
 
 import migrateTo4_0_0 from '../../migrations/update-4-0-0';
 import migrateTo5_0_0 from '../../migrations/update-5-0-0';
+import migrateToDecompedPackages from '../../migrations/update-decomp';
 
 type MigrateOptions = {
   version: string;
@@ -17,6 +18,10 @@ async function migrate(tree: Tree, options: MigrateOptions) {
 
     case '5.0.0':
       await migrateTo5_0_0(tree);
+      break;
+
+    case 'package-decomp':
+      await migrateToDecompedPackages(tree);
       break;
 
     default:

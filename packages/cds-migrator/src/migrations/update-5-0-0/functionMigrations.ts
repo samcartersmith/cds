@@ -11,7 +11,7 @@ import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
 import { functionMigrations } from './data/functionMigrations';
 
 const callback = (args: CreateMigrationParams) => {
-  const { sourceFile, tree } = args;
+  const { sourceFile } = args;
   const oldPaths = functionMigrations.map(({ path }) => Object.keys(path)[0]);
   const deprecatedPathsInFile: string[] = [];
 
@@ -38,7 +38,7 @@ const callback = (args: CreateMigrationParams) => {
         sourceFile,
         replacement,
       });
-      writeMigrationToFile({ sourceFile, tree, oldValue: name, newValue: replacement });
+      writeMigrationToFile({ sourceFile, oldValue: name, newValue: replacement });
       logWarning(
         'Manually review all function migrations. Destructured variables or function calls may need to be updated.',
       );

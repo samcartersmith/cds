@@ -9,7 +9,7 @@ import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
 import { pathMigrations } from './data/pathMigrations';
 
 const callback = (args: CreateMigrationParams) => {
-  const { sourceFile, tree } = args;
+  const { sourceFile } = args;
   const oldPaths = Object.keys(pathMigrations);
   const deprecatedPathsInFile: string[] = [];
 
@@ -23,7 +23,7 @@ const callback = (args: CreateMigrationParams) => {
     deprecatedPathsInFile.forEach((oldPath) => {
       const newPath = pathMigrations[oldPath];
       replaceImportPath({ sourceFile, oldPath, newPath });
-      writeMigrationToFile({ sourceFile, tree, oldValue: oldPath, newValue: newPath });
+      writeMigrationToFile({ sourceFile, oldValue: oldPath, newValue: newPath });
     });
   }
 };

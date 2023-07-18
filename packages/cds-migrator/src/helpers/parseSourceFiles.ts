@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import progress from 'cli-progress';
 import glob from 'fast-glob';
 import fs from 'node:fs';
-import { Project } from 'ts-morph';
+import { Project, SourceFile } from 'ts-morph';
 
 import { checkHasCdsDependency } from './checkHasCdsDependency';
 import { CdsPackages, checkHasCdsPackage } from './checkHasCdsPackage';
@@ -11,7 +11,7 @@ import { CdsPackages, checkHasCdsPackage } from './checkHasCdsPackage';
 export type TransformFnType = {
   path: string;
   tree: Tree;
-  project: Project;
+  sourceFile: SourceFile;
   projectConfig: ProjectConfiguration;
 };
 
@@ -84,12 +84,20 @@ export default async function parseSourceFiles(
         const numFilteredFiles: string[] = [];
         sourceFiles.forEach((path) => {
           bar.increment();
-          if (filterSourceFiles?.(path)) {
+
+          // only fire the transform function if the file meets the filter conditional or if there's no filter
+          if (!filterSourceFiles || filterSourceFiles?.(path)) {
+            // increment the progress bar
             numFilteredFiles.push(path);
-            // we don't want to fire the transform function if it doesn't meet the filter
-            transformFn({ path, tree, project, projectConfig });
-          } else {
-            transformFn({ path, tree, project, projectConfig });
+
+            // add the file to the ts-morph project instance
+            const sourceContent = fs.readFileSync(path, 'utf-8');
+            // we want to always overwrite this to ensure if there are multiple scripts updating a single file the subsequent scripts will have the latest changes
+            const sourceFile = project.createSourceFile(path, sourceContent, {
+              overwrite: true,
+            });
+
+            transformFn({ path, tree, sourceFile, projectConfig });
           }
         });
 

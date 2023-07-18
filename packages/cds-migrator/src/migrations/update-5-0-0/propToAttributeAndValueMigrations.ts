@@ -31,7 +31,7 @@ const checkSourceFile = (sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, tree, sourceFile } = args;
+  const { jsx, sourceFile } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(migrateBooleanPropToAttributeAndValueMigrations),
@@ -70,7 +70,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
       jsx,
     });
     if (oldValue && newValue) {
-      writeMigrationToFile({ oldValue, newValue, jsx, sourceFile, tree });
+      writeMigrationToFile({ oldValue, newValue, jsx, sourceFile });
     }
   }
 };

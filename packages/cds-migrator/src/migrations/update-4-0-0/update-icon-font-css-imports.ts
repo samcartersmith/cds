@@ -17,13 +17,12 @@ const filterSourceFiles = (path: string) => {
   return false;
 };
 
-function updateIconImportPaths({ sourceFile, tree }: CreateMigrationParams) {
+function updateIconImportPaths({ sourceFile }: CreateMigrationParams) {
   replaceImportPath({ sourceFile, oldPath, newPath });
   writeMigrationToFile({
     oldValue: oldPath,
     newValue: newPath,
     sourceFile,
-    tree,
   });
 }
 

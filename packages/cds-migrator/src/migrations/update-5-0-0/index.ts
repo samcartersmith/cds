@@ -4,6 +4,7 @@ import componentMigrations from './componentMigrations';
 import functionMigrations from './functionMigrations';
 import manualPropMigrations from './manualPropMigrations';
 import propToAttributeAndValueMigrations from './propToAttributeAndValueMigrations';
+import propValueCatchAllMigrations from './propValueCatchAllMigrations';
 import propValueMigrations from './propValueMigrations';
 import removedComponents from './removedComponents';
 import removedFunctions from './removedFunctions';
@@ -15,6 +16,7 @@ import replacedPathMigrations from './replacedPathMigrations';
 import upgradePackages from './upgradePackages';
 
 export default async function main(tree: Tree) {
+  await propValueCatchAllMigrations(tree);
   await upgradePackages(tree);
   await removedImports(tree);
   await replacedPathMigrations(tree);

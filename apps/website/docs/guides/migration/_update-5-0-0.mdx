@@ -32,6 +32,14 @@ yarn nx generate @cbhq/cds-migrator:migrate 5.0.0
 yarn install
 ```
 
+and
+
+```shell
+lint --fix
+```
+
+to automatically sort imports that may have changed during the migration.
+
 4. If you are a mobile app, you will need to re-link native assets. This looks different depending on your setup, but after linking assets you will need to run a fresh native build.
 
 5. Run typecheck to identify any issues not caught with migrator

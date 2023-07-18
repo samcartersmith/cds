@@ -1,5 +1,4 @@
 import { Tree } from '@nrwl/devkit';
-import fs from 'node:fs';
 import { SourceFile } from 'ts-morph';
 
 import { CdsPackages } from './checkHasCdsPackage';
@@ -49,15 +48,9 @@ export async function createJsxMigration({
   packageNames,
 }: CreateJsxMigrationParams) {
   const parseSourceFile = (args: TransformFnType) => {
-    const sourceContent = fs.readFileSync(args.path, 'utf-8');
-    // we want to always overwrite this to ensure if there are multiple scripts updating a single file the subsequent scripts will have the latest changes
-    const sourceFile = args.project.createSourceFile(args.path, sourceContent, {
-      overwrite: true,
-    });
     return parseJsxElements({
       ...args,
       callback,
-      sourceFile,
       checkSourceFile,
       excludeOpeningElements,
     });
