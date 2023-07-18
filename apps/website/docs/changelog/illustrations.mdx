@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.8.4 (7/18/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] internal: remove the files property in illustrations package.json.
+
 ## 1.8.3 (7/14/2023 PST)
 
 #### 🐞 Fixes
