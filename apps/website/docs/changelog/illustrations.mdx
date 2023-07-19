@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file.
 
 ## 1.8.3 (7/14/2023 PST)
 
+:::danger
+🚫 This release includes a regression, please use `@cbhq/cds-illustrations@1.8.4` or higher.
+:::
+
 #### 🐞 Fixes
 
 - Artificial version bump. [[#2094](https://github.cbhq.net/frontend/cds/pull/2094)]
