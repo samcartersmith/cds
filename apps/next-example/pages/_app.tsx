@@ -3,7 +3,7 @@
 // BEWARE: enabling this bluries whether CDS is working or not - this was originally a hack for the font.
 // import './global.css';
 
-import '@cbhq/cds-web/globalStyles';
+import '../../../.nx/dist/packages/web/globalStyles';
 
 // Next.js has built-in i18n support: https://nextjs.org/docs/advanced-features/i18n-routing
 // However, this *does not* work with static builds, which is our Nx default if you're

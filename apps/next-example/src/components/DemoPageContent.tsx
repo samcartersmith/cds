@@ -1,26 +1,42 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { accounts } from '@cbhq/cds-common/internal/data/accounts';
-import { assetColors, assetImages, assets } from '@cbhq/cds-common/internal/data/assets';
-import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
-import { prices } from '@cbhq/cds-common/internal/data/prices';
-import { product } from '@cbhq/cds-common/internal/data/product';
-import { users } from '@cbhq/cds-common/internal/data/users';
-import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
-import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import { SetState } from '@cbhq/cds-web';
-import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
-import { Button, IconButton } from '@cbhq/cds-web/buttons';
-import { Card, CardBody, CardFooter, CardGroup, FeedCard } from '@cbhq/cds-web/cards';
-import { ListCell } from '@cbhq/cds-web/cells';
-import { Checkbox, Select, SelectOption, Switch } from '@cbhq/cds-web/controls';
-import { Dropdown } from '@cbhq/cds-web/dropdown';
-import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web/icons';
-import { Pictogram } from '@cbhq/cds-web/illustrations';
-import { Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
-import { Avatar } from '@cbhq/cds-web/media';
-import { NavigationBar, NavigationTitle, Sidebar, SidebarItem } from '@cbhq/cds-web/navigation';
+
+import { useToggler } from '../../../../.nx/dist/packages/common/hooks/useToggler';
+import { accounts } from '../../../../.nx/dist/packages/common/internal/data/accounts';
+import {
+  assetColors,
+  assetImages,
+  assets,
+} from '../../../../.nx/dist/packages/common/internal/data/assets';
+import { loremIpsum } from '../../../../.nx/dist/packages/common/internal/data/loremIpsum';
+import { prices } from '../../../../.nx/dist/packages/common/internal/data/prices';
+import { product } from '../../../../.nx/dist/packages/common/internal/data/product';
+import { users } from '../../../../.nx/dist/packages/common/internal/data/users';
+import { sparklineInteractiveWithHeaderBuilder } from '../../../../.nx/dist/packages/common/internal/sparklineInteractiveBuilder';
+import { sparklineInteractiveData } from '../../../../.nx/dist/packages/common/internal/visualizations/SparklineInteractiveData';
+import { gutter } from '../../../../.nx/dist/packages/common/tokens/sizing';
+import { SetState } from '../../../../.nx/dist/packages/web';
+import { Accordion, AccordionItem } from '../../../../.nx/dist/packages/web/accordion';
+import { Button, IconButton } from '../../../../.nx/dist/packages/web/buttons';
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardGroup,
+  FeedCard,
+} from '../../../../.nx/dist/packages/web/cards';
+import { ListCell } from '../../../../.nx/dist/packages/web/cells';
+import { Checkbox, Select, SelectOption, Switch } from '../../../../.nx/dist/packages/web/controls';
+import { Dropdown } from '../../../../.nx/dist/packages/web/dropdown/Dropdown';
+import { Icon, LogoMark, NavigationIconProps } from '../../../../.nx/dist/packages/web/icons';
+import { Pictogram } from '../../../../.nx/dist/packages/web/illustrations';
+import { Box, Divider, Group, HStack, VStack } from '../../../../.nx/dist/packages/web/layout';
+import { Avatar } from '../../../../.nx/dist/packages/web/media';
+import {
+  NavigationBar,
+  NavigationTitle,
+  Sidebar,
+  SidebarItem,
+} from '../../../../.nx/dist/packages/web/navigation';
 import {
   Alert,
   FullscreenAlert,
@@ -29,12 +45,12 @@ import {
   ModalBody,
   ModalFooter,
   ModalHeader,
-  Tooltip,
-} from '@cbhq/cds-web/overlays';
-import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
-import { useModal } from '@cbhq/cds-web/overlays/useModal';
-import { useToast } from '@cbhq/cds-web/overlays/useToast';
-import { Pressable } from '@cbhq/cds-web/system';
+} from '../../../../.nx/dist/packages/web/overlays';
+import { Tooltip } from '../../../../.nx/dist/packages/web/overlays';
+import { useAlert } from '../../../../.nx/dist/packages/web/overlays/useAlert';
+import { useModal } from '../../../../.nx/dist/packages/web/overlays/useModal';
+import { useToast } from '../../../../.nx/dist/packages/web/overlays/useToast';
+import { Pressable } from '../../../../.nx/dist/packages/web/system';
 import {
   Table,
   TableBody,
@@ -42,21 +58,21 @@ import {
   TableFooter,
   TableHeader,
   TableRow,
-} from '@cbhq/cds-web/tables';
+} from '../../../../.nx/dist/packages/web/tables';
 import {
   TextBody,
+  TextCaption,
   TextHeadline,
-  TextLabel1,
   TextTitle1,
   TextTitle3,
-} from '@cbhq/cds-web/typography';
+} from '../../../../.nx/dist/packages/web/typography';
 import {
   ProgressBar,
   ProgressBarWithFloatLabel,
   ProgressCircle,
   SparklineInteractive,
   SparklineInteractiveHeader,
-} from '@cbhq/cds-web/visualizations';
+} from '../../../../.nx/dist/packages/web/visualizations';
 
 const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
   SparklineInteractive,
@@ -135,7 +151,9 @@ function Popover({ trigger }: { trigger: () => React.ReactElement }) {
       value={value}
       content={
         <>
-          <TextLabel1 as="label">For Individuals</TextLabel1>
+          <Box spacing={2}>
+            <TextCaption as="label">For Individuals</TextCaption>
+          </Box>
           {options.map(createMenuOption())}
         </>
       }
@@ -439,7 +457,7 @@ function ChartWithBalance() {
   }, []);
 
   return (
-    <VStack width="100%" spacingVertical={2}>
+    <VStack width="100%" spacingVertical={6}>
       {!data && <div style={{ height: '500px' }} />}
       {data && <SparklineInteractiveWithHeaderBuild data={data} strokeColor={assets.btc.color} />}
     </VStack>
@@ -525,7 +543,11 @@ const dropdownOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option
 
 const DropdownContent = () => (
   <>
-    <TextLabel1 as="label">Section Heading</TextLabel1>
+    <Box spacing={2}>
+      <TextCaption as="h2" color="foregroundMuted">
+        Section Heading
+      </TextCaption>
+    </Box>
     {dropdownOptions.map((option) => (
       <SelectOption key={option} value={option} title={option} />
     ))}
@@ -538,10 +560,12 @@ function AppContent() {
   const [showOverlay, toggleOverlay] = useToggler(false);
 
   return (
-    <HStack>
-      <Sidebar logo={<LogoMark />} autoCollapse>
-        {sidebarItems.map(createSidebarItem(activeIndex, setActiveIndex))}
-      </Sidebar>
+    <HStack background="background">
+      <VStack>
+        <Sidebar logo={<LogoMark />} autoCollapse>
+          {sidebarItems.map(createSidebarItem(activeIndex, setActiveIndex))}
+        </Sidebar>
+      </VStack>
       <VStack>
         <NavigationBar
           end={
