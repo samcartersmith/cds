@@ -1,6 +1,5 @@
-// @ts-check
-
 const { adopters } = require('./data/__generated__/adoption/adopters-sidebar');
+const { deprecations } = require('./data/__generated__/deprecations/deprecations-sidebar');
 
 /**
  * Please see the [website docs](../../docs/website.md) for more info
@@ -808,7 +807,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'Adoption',
-          // @ts-expect-error The adopters array is codegenerated + isn't typed so ignoring for now
           items: [{ type: 'doc', id: 'adoption-tracker-overview', label: 'Overview' }, ...adopters],
         },
         { type: 'doc', id: 'a11y-report', label: 'Accessibility Tracker' },
@@ -854,10 +852,26 @@ const sidebars = {
         },
         'resources/contribution',
         'resources/release',
-        { type: 'doc', id: 'guides/migration/overview', label: 'Migration Guides' },
+        {
+          type: 'category',
+          label: 'Migration Guides',
+          items: [
+            { type: 'doc', id: 'guides/migration/overview', label: 'Overview' },
+            { type: 'doc', id: 'guides/migration/5-0-0', label: '5.0.0' },
+            { type: 'doc', id: 'guides/migration/4-0-0', label: '4.0.0' },
+            { type: 'doc', id: 'guides/migration/3-0-0', label: '3.0.0' },
+            { type: 'doc', id: 'guides/migration/0-41-0', label: '0.41.0' },
+          ],
+        },
         'cds/support',
-        { type: 'doc', id: 'resources/deprecations', label: 'Deprecations' },
-        { type: 'doc', id: 'resources/gaad/index', label: 'GAAD' },
+        {
+          type: 'category',
+          label: 'Deprecations',
+          items: [
+            { type: 'doc', id: 'resources/deprecations/overview', label: 'Overview' },
+            ...deprecations,
+          ],
+        },
       ],
     },
   ],

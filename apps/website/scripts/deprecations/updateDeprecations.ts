@@ -1,16 +1,79 @@
 import chalk from 'chalk';
-import fs from 'fs';
 import { ColorScheme } from '@cbhq/cds-common';
 import { objectKeys, writePrettyFile } from '@cbhq/script-utils';
 
 import { deprecations } from './deprecations';
 import { Deprecation, DeprecationGroups, MigrationMap, MigrationType } from './types';
 
-const templateStart = '<!-- template-start -->';
 const githubBaseUrl = 'https://github.cbhq.net/frontend/cds/blob/';
-const deprecationsPagePath = 'apps/website/docs/resources/deprecations.mdx';
+const DEPRECATION_DIR = 'apps/website/docs/resources/deprecations';
+const MDX_PATHNAME = 'resources/deprecations';
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
-const fullPath = `${MONOREPO_ROOT}/${deprecationsPagePath}`;
+const GENERATED_DATA_DIR = 'apps/website/data/__generated__/deprecations';
+
+// const deprecationsPagePath = 'apps/website/docs/resources/deprecations.mdx';
+const fullDeprecationPath = `${MONOREPO_ROOT}/${DEPRECATION_DIR}`;
+
+type SidebarData = {
+  type: string;
+  id: string;
+  label: string;
+};
+
+/**
+ * Generates dynamic sidebar data for sidebar.config.js
+ * @param deprecationsSidebar : SidebarData[]
+ * @returns string;
+ */
+async function generateDeprecationsSidebarData(deprecationsSidebar: SidebarData[]) {
+  return writePrettyFile(
+    `${MONOREPO_ROOT}/${GENERATED_DATA_DIR}/deprecations-sidebar.js`,
+    `
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run website:deprecations
+ */
+module.exports.deprecations = ${JSON.stringify(deprecationsSidebar)};
+`.trimStart(),
+  );
+}
+
+/**
+ * Generates deprecation file content with correct imports
+ * @param content: Deprecation Content
+ * @returns string;
+ */
+async function generateDeprecationMDXFile(filePathName: string, content: string) {
+  return writePrettyFile(
+    filePathName,
+    `
+import { Tag } from '@cbhq/cds-web/tag/Tag';
+import { AccordionItem } from '@cbhq/cds-web/accordion/AccordionItem';
+import { Accordion } from '@cbhq/cds-web/accordion/Accordion';
+import { VStack, HStack } from '@cbhq/cds-web/layout';
+
+${content}
+`.trimStart(),
+  );
+}
+
+/**
+ * Generates TOCUpdater using the active group names from config
+ * @param groupsUsed : string[]
+ * @returns string
+ */
+function generateTOCUpdater(groupsUsed: string[]) {
+  const tocObjects = groupsUsed.map((group) => {
+    const capitalizedGroup = group.charAt(0).toUpperCase() + group.slice(1);
+    return {
+      value: capitalizedGroup,
+      id: group.toLowerCase(),
+      level: 2,
+    };
+  });
+
+  return `<TOCUpdater toc={${JSON.stringify(tocObjects)}} />`;
+}
 
 const typeColorMap: Record<MigrationType, ColorScheme> = {
   api: 'blue',
@@ -118,16 +181,16 @@ const formatDeprecationGuide = ({
 
 function formatDeprecations(deprecationObj: Deprecation): string {
   const groups: Record<DeprecationGroups, string[]> = {
-    components: ['### 🧱 Components', ''],
-    types: ['### 🔐 Types', ''],
-    props: ['### 🎭 Props', ''],
-    hooks: ['### 🪝 Hooks', ''],
-    tokens: ['### 🪙 Tokens', ''],
-    functions: ['### 👨‍💻 Functions', ''],
-    params: ['### 🏗️ Params', ''],
+    components: ['### 🧱 Components {#components}', ''],
+    types: ['### 🔐 Types {#types}', ''],
+    props: ['### 🎭 Props {#props}', ''],
+    hooks: ['### 🪝 Hooks {#hooks}', ''],
+    tokens: ['### 🪙 Tokens {#tokens}', ''],
+    functions: ['### 👨‍💻 Functions {#functions}', ''],
+    params: ['### 🏗️ Params {#params}', ''],
   };
 
-  const { prevMajorVersion, endOfLife, breakingRelease } = deprecationObj;
+  const { prevMajorVersion, endOfLife, breakingRelease, ...groupsInUse } = deprecationObj;
 
   objectKeys(deprecationObj).forEach((key) => {
     if (key === 'props') {
@@ -215,37 +278,44 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     }
   });
 
-  return block.join('\n');
+  const deprecationContent = block.join('\n');
+
+  return `${deprecationContent}\n\n${generateTOCUpdater(Object.keys(groupsInUse))}`;
 }
 
-// Updates the Deprecations page on the go/cds website
+// Updates the Deprecations section on the go/cds website
 async function updateDeprecations() {
-  const contents = await fs.promises.readFile(fullPath, 'utf8');
-  const formattedDeprecations = deprecations.map((obj) => formatDeprecations(obj));
-  let updatedContents: string | null = null;
+  const deprecationsSidebar: SidebarData[] = [];
 
-  const startIndex = contents.indexOf(templateStart);
+  await Promise.all(
+    deprecations.map(async (obj) => {
+      const content = formatDeprecations(obj);
 
-  // So that we don't need to manually delete contents every time.
-  if (startIndex !== -1) {
-    updatedContents = `${contents.substring(
-      0,
-      startIndex,
-    )}${templateStart}\n\n${formattedDeprecations.join('\n\n')}`;
-  } else {
-    throw new Error('Unexpected: TemplateStart not found.');
-  }
+      deprecationsSidebar.push({
+        type: 'doc',
+        id: `${MDX_PATHNAME}/${obj.endOfLife}`,
+        label: obj.endOfLife,
+      });
 
-  if (updatedContents === null) {
-    throw new Error('Unexpected: Updated contents is null.');
-  }
+      const filePathName = `${fullDeprecationPath}/${obj.endOfLife}.mdx`;
 
-  try {
-    await writePrettyFile(fullPath, updatedContents);
-    console.log(chalk.green('Success! The Deprecations page has been updated.'));
-  } catch (error) {
-    console.error(chalk.red(`FAILED: ${error}`));
-  }
+      if (content === null) {
+        throw new Error(`Unexpected: Updated content for ${obj.endOfLife} is null.`);
+      }
+      try {
+        // For each deprecation, create a new file in the deprecations folder with formatted content
+        await generateDeprecationMDXFile(filePathName, content);
+        console.log(
+          chalk.green(`Success! The Deprecations page for ${obj.endOfLife} has been updated.`),
+        );
+      } catch (error) {
+        console.error(chalk.red(`FAILED: ${error}`));
+      }
+    }),
+  );
+
+  // Add file data to deprecations_sidebar.js, which is used in sidebar.config.js
+  await generateDeprecationsSidebarData(deprecationsSidebar);
 }
 
 void updateDeprecations();

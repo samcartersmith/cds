@@ -1,3 +1,8 @@
+---
+title: v4.0.0 Migration Guide
+slug: /guides/migration/4-0-0
+---
+
 ## 4.0.0
 
 Today we’re releasing cds-web and cds-mobile version 4.0.0! This is a feature-packed release including:
@@ -6,7 +11,7 @@ Today we’re releasing cds-web and cds-mobile version 4.0.0! This is a feature-
 - @cbhq/cds-migrator: Codemod transformations to help upgrade your CDS codebase easier and faster.
 - Changes to address accessibility issues in our icon, cell, and pressable components, including API updates to align with our current standards.
 
-### Happy path upgrade steps
+### Happy path upgrade steps {#migrator}
 
 1. From your root NX workspace install the new cds-migrator tool
 
@@ -40,7 +45,7 @@ to automatically sort imports that may have changed during the migration.
 
 6. Remove @cbhq/cds-migrator from dev dependencies if you want to avoid having to install unused dependencies. If you removed you will need to re-run install to capture changes in yarn.lock.
 
-## In-depth overview of breaking changes
+## In-depth overview of breaking changes {#in-depth}
 
 ### Icon renames
 
@@ -421,3 +426,18 @@ This occurs because icons are now `aria-hidden` by default and no longer count a
   /** Used to associate descriptive text to an input for accessibility */
   accessibilityDescriptionId?: string;
 ```
+
+<TOCUpdater
+  toc={[
+    {
+      value: 'Happy Path Upgrades',
+      id: 'migrator',
+      level: 2,
+    },
+    {
+      value: 'Deep Dive',
+      id: 'in-depth',
+      level: 2,
+    },
+  ]}
+/>

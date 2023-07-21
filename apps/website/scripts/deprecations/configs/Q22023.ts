@@ -1,291 +1,677 @@
-import { Component, Deprecation } from '../types';
+import { Deprecation } from '../types';
 
-const baseWebDeprecation: Partial<Component> = {
-  package: 'web',
-  type: ['path'],
-};
-
-const overlayWebDeprecations = [
-  { ...baseWebDeprecation, name: 'Dropdown', path: 'packages/web/dropdown/Dropdown.tsx' },
-  {
-    ...baseWebDeprecation,
-    name: 'DropdownContent',
-    path: 'packages/web/dropdown/DropdownContent.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'DropdownProps',
-    path: 'packages/web/dropdown/DropdownProps.ts',
-  },
-  { ...baseWebDeprecation, name: 'MenuItem', path: 'packages/web/dropdown/MenuItem.tsx' },
-  { ...baseWebDeprecation, name: 'index', path: 'packages/web/dropdown/index.ts' },
-  { ...baseWebDeprecation, name: 'index', path: 'packages/web/index.ts' },
-  {
-    ...baseWebDeprecation,
-    name: 'Popover',
-    path: 'packages/web/overlays/popover/Popover.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'PopoverProps',
-    path: 'packages/web/overlays/popover/PopoverProps.ts',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'usePopper',
-    path: 'packages/web/overlays/popover/usePopper.ts',
-  },
-  { ...baseWebDeprecation, name: 'Select', path: 'packages/web/controls/Select.tsx' },
-  {
-    ...baseWebDeprecation,
-    name: 'SelectOption',
-    path: 'packages/web/controls/SelectOption.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SidebarItem',
-    path: 'packages/web/navigation/SidebarItem.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SidebarMoreMenu',
-    path: 'packages/web/navigation/SidebarMoreMenu.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'Tooltip',
-    path: 'packages/web/overlays/Tooltip/Tooltip.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'TooltipContent',
-    path: 'packages/web/overlays/Tooltip/TooltipContent.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'TooltipProps',
-    path: 'packages/web/overlays/Tooltip/TooltipProps.ts',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'useTooltipState',
-    path: 'packages/web/overlays/Tooltip/useTooltipState.ts',
-  },
-];
-
-const sparklineWebDeprecations = [
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineGradient',
-    path: 'packages/web/visualizations/SparklineGradient.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineAreaPattern',
-    path: 'packages/web/visualizations/SparklineAreaPattern.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineArea',
-    path: 'packages/web/visualizations/SparklineArea.tsx',
-  },
-  { ...baseWebDeprecation, name: 'Sparkline', path: 'packages/web/visualizations/Sparkline.tsx' },
-  { ...baseWebDeprecation, name: 'Counter', path: 'packages/web/visualizations/Counter.tsx' },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklinePath',
-    path: 'packages/web/visualizations/SparklinePath.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'VisualizationContainer',
-    path: 'packages/web/visualizations/VisualizationContainer.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveHeader',
-    path: 'packages/web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'InnerSparklineInteractiveProvider',
-    path: 'packages/web/visualizations/sparkline-interactive/InnerSparklineInteractiveProvider.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractive',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractive.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveAnimatedPath',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveHoverDate',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveLineVertical',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveMarkerDates',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractivePaths',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractivePeriodSelector',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveProvider',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveScrubHandler',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubHandler.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveScrubProvider',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubProvider.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'SparklineInteractiveTimeseriesPaths',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
-  },
-  {
-    ...baseWebDeprecation,
-    name: 'useSparklineInteractiveConstants',
-    path: 'packages/web/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
-  },
-];
-
-const baseMobileDeprecation: Partial<Component> = {
-  package: 'mobile',
-  type: ['path'],
-};
-
-const sparklineMobileDeprecations = [
-  {
-    ...baseMobileDeprecation,
-    name: 'newRoutes',
-    path: 'packages/mobile/examples/newRoutes.ts',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'Sparkline',
-    path: 'packages/mobile/visualizations/Sparkline.ts',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractive',
-    path: 'packages/mobile/visualizations/SparklineInteractive.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractiveHeader',
-    path: 'packages/mobile/visualizations/SparklineInteractiveHeader.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineGradient',
-    path: 'packages/mobile/visualizations/SparklineGradient.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractiveAnimatedPath',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractiveHoverDate',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractiveLineVertical',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractiveMarkerDates',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractiveMinMax',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMinMax.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractivePanGestureHandler',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePanGestureHandler.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractivePaths',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractivePeriodSelector',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractiveProvider',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'SparklineInteractiveTimeseriesPaths',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'useInterruptiblePathAnimation',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation.ts',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'useMinMaxTransform',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useMinMaxTransform.ts',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'useOpacityAnimation',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useOpacityAnimation.ts',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'useSparklineInteractiveConstants',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
-  },
-  {
-    ...baseMobileDeprecation,
-    name: 'useSparklineInteractiveLineStyles',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveLineStyles.ts',
-  },
-];
 export const Q22023: Deprecation = {
-  endOfLife: 'Q32023',
-  prevMajorVersion: 'v5.0.0',
+  endOfLife: 'Q22023',
+  prevMajorVersion: 'v4.1.3',
+  breakingRelease: 'v5.0.0',
   components: [
-    ...overlayWebDeprecations,
-    ...sparklineWebDeprecations,
-    ...sparklineMobileDeprecations,
+    {
+      name: 'Badge',
+      package: 'web',
+      path: 'packages/web/icons/Badge.tsx',
+      scope: {
+        exportNames: ['Badge', 'BadgeProps'],
+      },
+      type: ['replaced'],
+      migrationMap: {
+        replaced: 'DotCount, DotColor, DotSymbol',
+      },
+    },
+    {
+      name: 'Badge',
+      package: 'mobile',
+      path: 'packages/mobile/icons/Badge.tsx',
+      scope: {
+        exportNames: ['Badge', 'BadgeProps'],
+      },
+      type: ['replaced'],
+      migrationMap: {
+        replaced: 'DotCount, DotColor, DotSymbol',
+      },
+    },
+    {
+      name: 'Tooltip V1',
+      package: 'web',
+      path: 'packages/web/overlays/Deprecated/Tooltip.tsx',
+      scope: {
+        exportNames: ['Tooltip'],
+      },
+      type: 'path',
+      migrationMap: {
+        path: 'packages/web/overlays/Tooltip.tsx',
+      },
+    },
+    {
+      name: 'Card',
+      package: 'web',
+      path: 'packages/web/layout/Card.tsx',
+      scope: {
+        exportNames: ['Card'],
+      },
+      type: 'path',
+      migrationMap: {
+        path: 'packages/web/cards/Card.tsx',
+      },
+    },
+    {
+      name: 'Card',
+      package: 'mobile',
+      path: 'packages/mobile/layout/Card.tsx',
+      scope: {
+        exportNames: ['Card'],
+      },
+      type: 'path',
+      migrationMap: {
+        path: 'packages/mobile/cards/Card.tsx',
+      },
+    },
+    {
+      name: 'CollapseArrow',
+      package: 'web',
+      path: 'packages/web/collapsible/CollapseArrow.tsx',
+      scope: {
+        exportNames: ['CollapseArrow', 'CollapseArrowProps'],
+      },
+      type: ['replaced', 'api'],
+      migrationMap: {
+        replaced: 'AnimatedCaret',
+        api: {
+          degrees: 'rotate',
+          collapsed: null,
+        },
+        path: 'packages/web/motion/AnimatedCaret.tsx',
+      },
+    },
+    {
+      name: 'BetaProvider',
+      package: 'common',
+      path: 'packages/common/beta/BetaProvider.tsx',
+      scope: {
+        exportNames: ['BetaProvider', 'BetaProviderProps'],
+      },
+      type: 'replaced',
+      migrationMap: {
+        replaced: 'FeatureFlagProvider',
+        path: 'packages/web/system/FeatureFlagProvider.tsx',
+      },
+    },
+    {
+      name: 'BetaContext',
+      package: 'common',
+      path: 'packages/common/beta/BetaContext.tsx',
+      scope: {
+        exportNames: ['BetaContext', 'BetaContextProps', 'DEFAULT_BETA_CONTEXT'],
+      },
+      type: 'replaced',
+      migrationMap: {
+        replaced: 'FeatureFlagContext',
+        path: 'packages/web/system/FeatureFlagContext.tsx',
+      },
+    },
+    {
+      path: 'packages/web/deprecated/navigation/MobileMenu.tsx',
+      name: 'MobileMenu',
+      package: 'web',
+      scope: { exportNames: ['MobileMenu', 'MobileMenuProps'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/MobileMenuChildrenContext.tsx',
+      name: 'MobileMenuChildrenContext',
+      package: 'web',
+      scope: { exportNames: ['MobileMenuChildrenContext', 'useMobileMenuChildrenContext'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/Navigation.tsx',
+      name: 'Navigation',
+      package: 'web',
+      scope: { exportNames: ['Navigation', 'NavigationProps'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/NavigationBar.tsx',
+      name: 'NavigationBar',
+      package: 'web',
+      scope: { exportNames: ['NavigationBar', 'NavigationBarProps'] },
+      type: ['path', 'api'],
+      migrationMap: {
+        path: 'packages/web/navigation/NavigationBar.tsx',
+        api: {
+          controls: null,
+          titles: null,
+          ctas: null,
+          actions: null,
+          animatedOpacity: null,
+        },
+      },
+    },
+    {
+      path: 'packages/web/deprecated/navigation/NavigationBarActions.tsx',
+      name: 'NavigationBarActions',
+      package: 'web',
+      scope: { exportNames: ['NavigationBarActions'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/NavigationBarControls.tsx',
+      name: 'NavigationBarControls',
+      package: 'web',
+      scope: { exportNames: ['NavigationBarControls', 'NavigationBarControlsProps'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/NavigationBarCtas.tsx',
+      name: 'NavigationBarCtas',
+      package: 'web',
+      scope: { exportNames: ['NavigationBarCtas', 'NavigationBarCtasProps'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/NavigationBarTitles.tsx',
+      name: 'NavigationBarTitles',
+      package: 'web',
+      scope: { exportNames: ['NavigationBarTitles', 'NavigationBarTitlesProps'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/NavigationDisplayTitle.tsx',
+      name: 'NavigationDisplayTitle',
+      package: 'web',
+      scope: { exportNames: ['NavigationDisplayTitle', 'NavigationDisplayTitleProps'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/NavigationIconButton.tsx',
+      name: 'NavigationIconButton',
+      package: 'web',
+      scope: { exportNames: ['NavigationIconButton', 'NavigationIconButtonProps'] },
+      type: ['path', 'api'],
+      migrationMap: {
+        path: 'packages/web/buttons/NavigationIconButton.tsx',
+        api: {
+          label: null,
+        },
+      },
+    },
+    {
+      path: 'packages/web/deprecated/navigation/NavigationListItem.tsx',
+      name: 'NavigationListItem',
+      package: 'web',
+      scope: {
+        exportNames: [
+          'NavigationListItem',
+          'NavigationListItemProps',
+          'NavigationListItemLinkProps',
+        ],
+      },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/Sidebar.tsx',
+      name: 'Sidebar',
+      package: 'web',
+      scope: { exportNames: ['Sidebar', 'SidebarProps'] },
+      type: 'path',
+      migrationMap: {
+        path: 'packages/web/navigation/Sidebar.tsx',
+      },
+    },
+    {
+      path: 'packages/web/deprecated/navigation/SidebarSection.tsx',
+      name: 'SidebarSection',
+      package: 'web',
+      scope: { exportNames: ['SidebarSection', 'SidebarSectionProps'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/TabItem.tsx',
+      name: 'TabItem',
+      package: 'web',
+      scope: { exportNames: ['TabItem', 'TabItemBaseProps', 'TabItemProps'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/Tabs.tsx',
+      name: 'Tabs',
+      package: 'web',
+      scope: { exportNames: ['Tabs', 'TabProps'] },
+      type: 'replaced',
+      migrationMap: {
+        replaced: 'TabNavigation',
+        path: 'packages/web/tabs/TabNavigation.tsx',
+      },
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/MenuItem.tsx',
+      name: 'MenuItem',
+      package: 'web',
+      scope: { exportNames: ['MenuItem'] },
+      type: 'path',
+      migrationMap: {
+        path: 'packages/web/dropdown/MenuItem.tsx',
+      },
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/PopoverContent.tsx',
+      name: 'PopoverContent',
+      package: 'web',
+      scope: { exportNames: ['PopoverContent'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/PopoverContext.ts',
+      name: 'PopoverContext',
+      package: 'web',
+      scope: { exportNames: ['PopoverContext', 'PopoverProvider', 'usePopoverContext'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/PopoverMenu.tsx',
+      name: 'PopoverMenu',
+      package: 'web',
+      scope: { exportNames: ['PopoverMenu'] },
+      type: 'replaced',
+      migrationMap: {
+        replaced: 'Dropdown',
+        path: 'packages/web/dropdown/Dropdown.tsx',
+        api: {
+          visible: null,
+          openMenu: null,
+          closeMenu: null,
+          searchEnabled: null,
+          flush: 'block',
+          popoverPositionConfig: 'contentPosition',
+        },
+      },
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/PopoverTrigger.tsx',
+      name: 'PopoverTrigger',
+      package: 'web',
+      scope: {
+        exportNames: ['PopoverTrigger', 'PopoverTriggerHOCProps', 'ClonedPopoverTriggerRef'],
+      },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/PopoverTriggerWrapper.tsx',
+      name: 'PopoverTriggerWrapper',
+      package: 'web',
+      scope: {
+        exportNames: ['PopoverTriggerWrapper', 'PopoverTriggerWrapperProps'],
+      },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/SectionTitle.tsx',
+      name: 'SectionTitle',
+      package: 'web',
+      scope: { exportNames: ['SectionTitle', 'SectionTitleProps'] },
+      type: 'replaced',
+      migrationMap: {
+        replaced:
+          'Compose by wrapping a <code>TextCaption color="foregroundMuted"</code> with an <code>HStack spacingHorizontal="2" spacingVertical="2"</code>',
+      },
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/usePopoverChildren.ts',
+      name: 'usePopoverChildren',
+      package: 'web',
+      scope: { exportNames: ['usePopoverChildren'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/usePopoverMenu.tsx',
+      name: 'usePopoverMenu',
+      package: 'web',
+      scope: { exportNames: ['usePopoverMenu'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/usePopoverMenuAnimation.ts',
+      name: 'usePopoverMenuAnimation',
+      package: 'web',
+      scope: { exportNames: ['usePopoverMenuAnimation'] },
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/overlays/PopoverMenu/usePopoverPosition.ts',
+      name: 'usePopoverPosition',
+      package: 'web',
+      scope: { exportNames: ['usePopoverPosition'] },
+      type: 'removed',
+    },
+  ],
+  types: [
+    {
+      name: 'BadgeBaseProps',
+      package: 'common',
+      path: 'packages/common/types/BadgeBaseProps.ts',
+      scope: {
+        exportNames: ['BadgeBaseProps', 'BadgeVariant', 'BadgeValue'],
+      },
+      type: 'removed',
+    },
+    {
+      name: 'BadgeDotBaseProps',
+      package: 'common',
+      path: 'packages/common/types/BadgeDotBaseProps.ts',
+      scope: {
+        exportNames: ['BadgeDotBaseProps'],
+      },
+      type: 'removed',
+    },
+  ],
+  props: [
+    {
+      name: 'badge',
+      components: ['Icon', 'NavigationIcon'],
+      package: 'mobile',
+      type: 'removed',
+    },
+    {
+      name: 'badge',
+      components: ['Icon', 'NavigationIcon'],
+      package: 'web',
+      type: 'removed',
+    },
+    {
+      name: 'deprecatedLineHeight',
+      components: ['Typography'],
+      package: 'mobile',
+      type: 'removed',
+    },
+    {
+      name: 'dangerouslySetHtmlWidth',
+      components: ['TableCell'],
+      package: 'web',
+      type: 'removed',
+    },
+    {
+      name: 'horizontal',
+      components: ['Group'],
+      package: 'web',
+      type: 'api',
+      migrationMap: {
+        api: {
+          horizontal: 'direction',
+        },
+      },
+    },
+    {
+      name: 'horizontal',
+      components: ['Group'],
+      package: 'mobile',
+      type: 'api',
+      migrationMap: {
+        api: {
+          horizontal: 'direction',
+        },
+      },
+    },
+    {
+      name: 'horizontal',
+      components: [
+        'announcementCardBuilder',
+        'featureEntryCardBuilder',
+        'feedCardBuilder',
+        'cardGroupBuilder',
+      ],
+      package: 'common',
+      type: 'api',
+      migrationMap: {
+        api: {
+          horizontal: 'direction',
+        },
+      },
+    },
+    {
+      name: 'dimension',
+      components: ['SpotSquare'],
+      package: 'web',
+      type: 'propValue',
+      migrationMap: {
+        propValue: {
+          '120x120': '96x96',
+        },
+      },
+    },
+    {
+      name: 'dimension',
+      components: ['Pictogram'],
+      package: 'web',
+      type: 'propValue',
+      migrationMap: {
+        propValue: {
+          '96x96': '64x64',
+        },
+      },
+    },
+    {
+      name: 'dimension',
+      components: ['SpotSquare'],
+      package: 'mobile',
+      type: 'propValue',
+      migrationMap: {
+        propValue: {
+          '120x120': '96x96',
+        },
+      },
+    },
+    {
+      name: 'dimension',
+      components: ['Pictogram'],
+      package: 'mobile',
+      type: 'propValue',
+      migrationMap: {
+        propValue: {
+          '96x96': '64x64',
+        },
+      },
+    },
+  ],
+  hooks: [
+    {
+      name: 'useBadge',
+      path: 'packages/common/hooks/useBadge.ts',
+      package: 'common',
+      type: 'removed',
+    },
+    {
+      name: 'useBeta',
+      package: 'common',
+      path: 'packages/common/beta/useBeta.tsx',
+      type: 'removed',
+    },
+    {
+      name: 'useIsMobile',
+      package: 'web',
+      path: 'packages/web/hooks/useIsMobile.ts',
+      type: 'replaced',
+      migrationMap: {
+        replaced: 'useBreakpoints',
+        path: 'packages/web/hooks/useBreakpoints.ts',
+      },
+    },
+    {
+      name: 'useRotateAnimation',
+      package: 'web',
+      path: 'packages/web/hooks/useRotateAnimation.ts',
+      type: 'replaced',
+      migrationMap: {
+        replaced: 'AnimatedCaret',
+        path: 'packages/web/motion/AnimationCaret.tsx',
+      },
+    },
+  ],
+  tokens: [
+    {
+      name: 'motion',
+      package: 'common',
+      path: 'packages/common/tokens/motion.ts',
+      exportNames: ['durations', 'curves', 'EasingArray'],
+      type: 'path',
+      migrationMap: {
+        path: 'packages/common/motion/tokens.ts',
+      },
+    },
+    {
+      path: 'packages/web/deprecated/navigation/navigationStyles.ts',
+      name: 'navigationStyles',
+      package: 'web',
+      exportNames: [
+        'rootStyles',
+        'gridForSidebar',
+        'scrollContent',
+        'disableScroll',
+        'sidebarItemStyles',
+        'sidebarListReset',
+        'hideForCondensed',
+        'showForCondensed',
+        'hideForMobile',
+        'ForMobile',
+        'unsetVisuallyHidden',
+        'visuallyHidden',
+      ],
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/deprecated/navigation/navigationTokens.ts',
+      name: 'navigationTokens',
+      package: 'web',
+      exportNames: [
+        'navbarSpacing',
+        'displayTitleSpacing',
+        'sidebarWidth',
+        'appContentSpacing',
+        'subtitleColor',
+        'iconContainerSize',
+        'unsetVisuallyHidden',
+        'visuallyHidden',
+      ],
+      type: 'removed',
+    },
+    {
+      path: 'packages/web/styles/borderRadius.ts',
+      name: 'borderRadius',
+      package: 'web',
+      type: 'replaced',
+      migrationMap: {
+        replaced: 'Use rounded border radius variables instead',
+      },
+    },
+    {
+      path: 'packages/web/layout/responsive.ts',
+      name: 'responsive',
+      package: 'web',
+      type: ['path', 'replaced'],
+      migrationMap: {
+        path: 'packages/web/layout/breakpoints.ts',
+        replaced: 'Use deviceBreakpoints, deviceMqs, and deviceMqRanges instead',
+      },
+    },
+    {
+      path: 'packages/web/styles/elevation.ts',
+      name: 'elevation',
+      package: 'web',
+      type: 'removed',
+    },
+    {
+      path: 'packages/common/tokens/border.ts',
+      name: 'border',
+      package: 'common',
+      type: 'path',
+      migrationMap: {
+        path: 'Use tokens/borderWidth and tokens/borderRadius respectively',
+      },
+    },
+    {
+      path: 'packages/common/tokens/interactable.ts',
+      name: 'interactable',
+      package: 'common',
+      exportNames: ['defaultHeight', 'compactHeight', 'opacityDisabled'],
+      type: 'replaced',
+      migrationMap: {
+        replaced:
+          'Use tokens/interatableHeight variables instead, and opacityDisabled -> accessibleOpacityDisabled',
+        path: 'packages/common/tokens/interactableHeight.ts',
+      },
+    },
+  ],
+  functions: [
+    {
+      name: 'buttonBuilderDeprecated',
+      path: 'packages/common/internal/buttonBuilderDeprecated.tsx',
+      package: 'common',
+      type: ['replaced', 'path'],
+      migrationMap: {
+        path: 'packages/common/internal/buttonBuilder.ts',
+      },
+    },
+    {
+      name: 'Animated',
+      package: 'web',
+      path: 'packages/web/animation/Animated.ts',
+      type: 'removed',
+      migrationMap: {
+        replaced: 'use useMotionProps and Framer Motion instead',
+      },
+    },
+    {
+      path: 'packages/common/utils/getButtonSpacing.ts',
+      name: 'getButtonSpacing',
+      package: 'common',
+      type: ['replaced', 'path'],
+      migrationMap: {
+        path: 'packages/common/utils/getButtonSpacingProps.ts',
+        replaced: 'getButtonSpacingProps',
+      },
+    },
+    {
+      path: 'packages/common/utils/getIllustrationScaledDimension.ts',
+      name: 'getIllustrationScaledDimension',
+      package: 'common',
+      type: 'removed',
+      migrationMap: {
+        replaced: 'Please use convertDimensionToSize and convertSizeWithMultiplier instead',
+      },
+    },
+    {
+      path: 'packages/common/cards/createAnnouncementCardDeprecated.tsx',
+      name: 'createAnnouncementCardDeprecated',
+      package: 'common',
+      type: ['replaced', 'path'],
+      migrationMap: {
+        replaced: 'createAnnouncementCard',
+        path: 'packages/common/cards/createAnnouncementCard.tsx',
+      },
+    },
+    {
+      path: 'packages/common/cards/createFeatureEntryCardDeprecated.tsx',
+      name: 'createFeatureEntryCardDeprecated',
+      package: 'common',
+      type: ['replaced', 'path'],
+      migrationMap: {
+        replaced: 'createFeatureEntryCard',
+        path: 'packages/common/cards/createFeatureEntryCard.tsx',
+      },
+    },
+  ],
+  params: [
+    {
+      function: 'useCellSpacing',
+      params: ['reduceHorizontalSpacing', 'offsetHorizontal'],
+      path: 'packages/common/hooks/useCellSpacing.ts',
+      package: 'common',
+      type: 'api',
+      migrationMap: {
+        api: {
+          reduceHorizontalSpacing:
+            'Use the innerSpacing property with a key of spacingHorizontal instead',
+          offsetHorizontal: 'Use the outerSpacing property with a key of offsetHorizontal instead',
+        },
+      },
+    },
   ],
 };

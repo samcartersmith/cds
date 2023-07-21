@@ -3,19 +3,8 @@ title: Migration Guides
 slug: /guides/migration
 ---
 
-import ZeroFourOne, { toc as zeroFourOneToc } from './_update-0-41-0.mdx';
-import ThreeZeroZero, { toc as threeZeroZeroToc } from './_update-3-0-0.mdx';
-import FourZeroZero, { toc as fourZeroZeroToc } from './_update-4-0-0.mdx';
-import FiveZeroZero, { toc as fiveZeroZeroToc } from './_update-5-0-0.mdx';
+# Migrations
 
-<TOCUpdater
-  toc={[...fiveZeroZeroToc, ...fourZeroZeroToc, ...threeZeroZeroToc, ...zeroFourOneToc]}
-/>
+Breaking releases of CDS core libraries can be found in this directory. We will always provide a migration guide to help your app move to the latest version.
 
-<FiveZeroZero />
-
-<FourZeroZero />
-
-<ThreeZeroZero />
-
-<ZeroFourOne />
+We strongly recommend that you use `cds-migrator` to automatically migrate deprecations to their respective replacements. In the case that a migration is not possible, we will provide a manual migration guide in the console. Refer to your specific release version in the sidebar for more information.
