@@ -2,8 +2,6 @@
 
 Welcome to the Coinbase Design System. If you are looking to contribute to CDS you are in the correct place! Please read the sections below to get a better feel for our repo.
 
-If you are looking for something else here are some other important links:
-
 To make feature requests, report bugs, or request assistance when working with CDS you can find us on slack: #ask-ui-systems
 
 ## Get Started
@@ -31,6 +29,7 @@ To ensure doc discoverability we keep all docs in the same location: the [docs f
 
 Once you have run commands above you are ready to start contributing.
 
+- [Contribution Guides](./CONTRIBUTING.md)
 - [Opening your first pull request](./docs/first-pull-request.md)
 - [Repo Commands](./docs/commands.md): Learn how to leverage our tooling via nx and yarn commands.
 - [Web Development](./docs/web.md): Learn how to contibute to the @cbhq/cds-web package.
@@ -43,7 +42,7 @@ Once you have run commands above you are ready to start contributing.
 
 - [Component Development Best Practices](./docs/component-development.md)
 - [Release Workflows](./docs/release.md)
-- Bug Priorization Framework[go/dx-ui-systems-prioritization](http://go/dx-ui-systems-prioritization)
+- Bug Priorization Framework [go/dx-ui-systems-prioritization](http://go/dx-ui-systems-prioritization)
 - On call guide: [http://go/dx-ui-systems-on-call](https://docs.google.com/document/d/1UQpvgfo7AhA6NKQ9baglmQC7NKu5rJIuzUnvoSvdFyQ/edit#heading=h.g4i6psiisqyg)
 - [Engineer's Guide to Contentful](./docs/contentful.md)
 - [Deprecations Process](./docs/deprecations.md)
