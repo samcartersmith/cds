@@ -15,7 +15,7 @@ const PatternTagErrorScreen = () => {
   return (
     <ExampleScreen>
       <Example title="Pattern Tag - Error">
-        <Button onPress={toggleOn}>View Error Pattern</Button>
+        <Button onPress={toggleOn}>View Error</Button>
         <PatternTag error>
           <Modal
             visible={visible}
@@ -25,7 +25,10 @@ const PatternTagErrorScreen = () => {
             accessibilityHint="The requested page was not found. Close this dialog to continue."
             hideDividers
           >
-            <ModalHeader />
+            <ModalHeader
+              closeAccessibilityLabel="Close"
+              closeAccessibilityHint="Close this dialog to continue"
+            />
             <ModalBody contentContainerStyle={{ flex: 1 }}>
               <VStack justifyContent="center" alignItems="center" flexGrow={1}>
                 <HeroSquare name="errorWeb404" />

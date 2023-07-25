@@ -1,7 +1,15 @@
+import { useCallback, useMemo, useState } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 
+import { HStack } from '../../alpha/HStack';
+import { VStack } from '../../alpha/VStack';
 import { Button } from '../../buttons';
-import { FullscreenAlert } from '../../overlays';
+import { Checkbox } from '../../controls';
+import { Icon } from '../../icons';
+import { SpotRectangle } from '../../illustrations';
+import { Box } from '../../layout';
+import { FullscreenAlert, Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';
+import { Link, TextBody, TextHeadline, TextLabel2, TextTitle3 } from '../../typography';
 import { PatternTag } from '../PatternTag';
 
 export default {
@@ -14,7 +22,7 @@ export const Error = () => {
 
   return (
     <>
-      <Button onPress={toggleOn}>View Error Pattern</Button>
+      <Button onPress={toggleOn}>View Error</Button>
       <PatternTag error>
         <FullscreenAlert
           visible={visible}
@@ -25,6 +33,300 @@ export const Error = () => {
           preferredActionLabel="Back to Coinbase"
           onPreferredActionPress={toggleOff}
         />
+      </PatternTag>
+    </>
+  );
+};
+
+export const DisclosureLowFriction = () => {
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+
+  const data = useMemo(
+    () => [
+      {
+        id: 1,
+        headline: 'Benefit to highlight 1',
+        body: 'Bullets explaining selling points and potential risks (can include “learn more” links).',
+      },
+      {
+        id: 2,
+        headline: 'Risk to highlight 1',
+        body: 'Bullets explaining selling points and potential risks (can include “learn more” links).',
+      },
+      {
+        id: 3,
+        headline: 'Risk to highlight 2',
+        body: 'Bullets explaining selling points and potential risks (can include “learn more” links).',
+      },
+    ],
+    [],
+  );
+
+  return (
+    <>
+      <Button onPress={toggleOn}>View Low-Friction Disclosure</Button>
+      <PatternTag disclosure>
+        <Modal
+          visible={visible}
+          onRequestClose={toggleOff}
+          accessibilityLabelledBy="dlf-title"
+          hideDividers
+        >
+          <ModalHeader closeAccessibilityLabel="Close" />
+          <ModalBody>
+            <Box justifyContent="center">
+              <SpotRectangle name="accessToAdvancedCharts" />
+            </Box>
+            <TextTitle3 id="dlf-title" as="h2" spacingTop={4}>
+              Title outlining the action and benefit in 1-2 lines
+            </TextTitle3>
+            <VStack as="ul" spacingVertical={3} gap={3}>
+              {data.map(({ id, headline, body }) => (
+                <VStack key={id} as="li" gap={1}>
+                  <HStack gap={2} alignItems="center">
+                    <Icon size="s" name="checkmark" color="foreground" />
+                    <TextHeadline as="h3">{headline}</TextHeadline>
+                  </HStack>
+                  <TextBody as="p" spacingStart={4}>
+                    {body}
+                  </TextBody>
+                </VStack>
+              ))}
+            </VStack>
+          </ModalBody>
+          <ModalFooter
+            primaryAction={<Button onPress={toggleOff}>[Affirmative CTA]</Button>}
+            secondaryAction={
+              <Button to="https://www.coinbase.com" target="_blank" variant="secondary">
+                Terms and conditions
+              </Button>
+            }
+          />
+        </Modal>
+      </PatternTag>
+    </>
+  );
+};
+
+export const DisclosureMediumFriction = () => {
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+
+  const data = useMemo(
+    () => [
+      {
+        id: 1,
+        headline: 'Risk to highlight 1',
+        body: 'Bullets explaining selling points and potential risks (include “learn more” links in risk bullets).',
+      },
+      {
+        id: 2,
+        headline: 'Risk to highlight 2',
+        body: 'Bullets explaining selling points and potential risks (include “learn more” links in risk bullets).',
+      },
+    ],
+    [],
+  );
+
+  return (
+    <>
+      <Button onPress={toggleOn}>View Medium-Friction Disclosure</Button>
+      <PatternTag disclosure>
+        <Modal
+          visible={visible}
+          onRequestClose={toggleOff}
+          accessibilityLabelledBy="dmf-title"
+          hideDividers
+        >
+          <ModalHeader closeAccessibilityLabel="Close" />
+          <ModalBody>
+            <Box justifyContent="center">
+              <SpotRectangle name="accessToAdvancedCharts" />
+            </Box>
+            <TextTitle3 id="dmf-title" as="h2" spacingTop={4}>
+              Title outlining the benefit in 1-2 lines
+            </TextTitle3>
+            <VStack as="ul" spacingVertical={3} gap={3}>
+              {data.map(({ id, headline, body }) => (
+                <VStack key={id} as="li" gap={1}>
+                  <HStack gap={2} alignItems="center">
+                    <Icon size="s" name="checkmark" color="foreground" />
+                    <TextHeadline as="h3">{headline}</TextHeadline>
+                  </HStack>
+                  <TextBody as="p" spacingStart={4}>
+                    {body}
+                  </TextBody>
+                </VStack>
+              ))}
+            </VStack>
+          </ModalBody>
+          <ModalFooter
+            primaryAction={<Button onPress={toggleOff}>[Affirmative CTA]</Button>}
+            secondaryAction={
+              <Button to="https://www.coinbase.com" target="_blank" variant="secondary">
+                Terms and conditions
+              </Button>
+            }
+          />
+        </Modal>
+      </PatternTag>
+    </>
+  );
+};
+
+export const DisclosureHighFrictionBenefit = () => {
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+
+  const data = useMemo(
+    () => [
+      {
+        id: 1,
+        headline: 'Benefit to highlight 1',
+        body: 'Bullet outlining benefits.',
+      },
+      {
+        id: 2,
+        headline: 'Benefit to highlight 2',
+        body: 'Bullet outlining benefits.',
+      },
+    ],
+    [],
+  );
+
+  return (
+    <>
+      <Button onPress={toggleOn}>View High-Friction Benefit Disclosure</Button>
+      <PatternTag disclosure>
+        <Modal
+          visible={visible}
+          onRequestClose={toggleOff}
+          accessibilityLabelledBy="dhfb-title"
+          hideDividers
+        >
+          <ModalHeader closeAccessibilityLabel="Close" />
+          <ModalBody>
+            <Box justifyContent="center">
+              <SpotRectangle name="accessToAdvancedCharts" />
+            </Box>
+            <TextTitle3 id="dhfb-title" as="h2" spacingTop={4}>
+              Title outlining the benefit in 1-2 lines
+            </TextTitle3>
+            <TextLabel2 as="p" spacingTop={1}>
+              Body text saying &quot;By verbing, you will get X, Y, Z.&quot;
+            </TextLabel2>
+            <VStack as="ul" spacingVertical={3} gap={3}>
+              {data.map(({ id, headline, body }) => (
+                <VStack key={id} as="li" gap={1}>
+                  <HStack gap={2} alignItems="center">
+                    <Icon size="s" name="checkmark" color="foreground" />
+                    <TextHeadline as="h3">{headline}</TextHeadline>
+                  </HStack>
+                  <TextBody as="p" spacingStart={4}>
+                    {body}
+                  </TextBody>
+                </VStack>
+              ))}
+            </VStack>
+          </ModalBody>
+          <ModalFooter primaryAction={<Button onPress={toggleOff}>[CTA]</Button>} />
+        </Modal>
+      </PatternTag>
+    </>
+  );
+};
+
+export const DisclosureHighFrictionRisk = () => {
+  const data = useMemo(
+    () => [
+      {
+        id: 1,
+        headline: 'Risk item 1',
+        checkboxLabel: "I understand that I won't be able to do X because of Y.",
+        linkText: 'Learn more',
+        linkUrl: 'https://www.coinbase.com',
+      },
+      {
+        id: 2,
+        headline: 'Risk item 2',
+        checkboxLabel: "I understand that I won't be able to do X because of Y.",
+        linkText: 'Learn more',
+        linkUrl: 'https://www.coinbase.com',
+      },
+    ],
+    [],
+  );
+  const initialCheckboxesState = useMemo(() => data.map(() => false), [data]);
+
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [checkboxes, setCheckboxes] = useState(initialCheckboxesState);
+
+  const checkboxLabelStyles = useMemo(() => ({ cursor: 'pointer' }), []);
+  const isCtaDisabled = useMemo(() => checkboxes.some((checked) => !checked), [checkboxes]);
+
+  const handleCheckboxChange = useCallback(
+    (index: number) => () => {
+      setCheckboxes((prevCheckboxes) =>
+        prevCheckboxes.map((checked, i) => (i === index ? !checked : checked)),
+      );
+    },
+    [],
+  );
+
+  return (
+    <>
+      <Button onPress={toggleOn}>View High-Friction Risk Disclosure</Button>
+      <PatternTag disclosure>
+        <Modal
+          visible={visible}
+          onRequestClose={toggleOff}
+          accessibilityLabelledBy="dhfr-title"
+          hideDividers
+        >
+          <ModalHeader
+            onBackButtonPress={toggleOff}
+            backAccessibilityLabel="Back"
+            closeAccessibilityLabel="Close"
+          />
+          <ModalBody>
+            <Box justifyContent="center">
+              <SpotRectangle name="accessToAdvancedCharts" />
+            </Box>
+            <TextTitle3 id="dhfr-title" as="h2" spacingTop={4}>
+              Title outlining risk in 1-2 lines
+            </TextTitle3>
+            <TextLabel2 as="p" spacingTop={1}>
+              Body text saying &quot;Before you [verb], here are a few things you need to understand
+              about [action].&quot;
+            </TextLabel2>
+            <VStack as="ul" spacingVertical={3} gap={3}>
+              {data.map(({ id, headline, checkboxLabel, linkText, linkUrl }, index) => (
+                <VStack key={id} as="li" gap={1}>
+                  <TextHeadline as="h3">{headline}</TextHeadline>
+                  <HStack
+                    as="label"
+                    gap={1}
+                    alignItems="center"
+                    dangerouslySetStyle={checkboxLabelStyles}
+                  >
+                    <Checkbox checked={checkboxes[index]} onChange={handleCheckboxChange(index)} />
+                    <TextLabel2 as="span">
+                      {checkboxLabel}{' '}
+                      <Link to={linkUrl} underline openInNewWindow>
+                        {linkText}
+                      </Link>
+                    </TextLabel2>
+                  </HStack>
+                </VStack>
+              ))}
+            </VStack>
+          </ModalBody>
+          <ModalFooter
+            primaryAction={
+              <Button onPress={toggleOff} disabled={isCtaDisabled}>
+                {`[${isCtaDisabled ? 'Disabled' : 'Enabled'} CTA]`}
+              </Button>
+            }
+          />
+        </Modal>
       </PatternTag>
     </>
   );

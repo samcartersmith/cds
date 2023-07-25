@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- **[Patterns]** Add Disclosure stories. [[#2116](https://github.cbhq.net/frontend/cds/pull/2116)]
+
 ## 1.0.1 (6/23/2023 PST)
 
 #### 🐞 Fixes
