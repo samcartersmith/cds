@@ -639,12 +639,40 @@ const sidebars = {
               },
             },
             'patterns/messaging/informational',
-            'patterns/messaging/success',
-            'patterns/messaging/warning',
+            {
+              type: 'doc',
+              id: 'patterns/messaging/success',
+              label: 'Success',
+              customProps: {
+                tag: 'new',
+              },
+            },
+            {
+              type: 'doc',
+              id: 'patterns/messaging/warning',
+              label: 'Warning',
+              customProps: {
+                tag: 'new',
+              },
+            },
           ],
         },
-        'patterns/empty-states',
-        'patterns/forms',
+        {
+          type: 'doc',
+          id: 'patterns/empty-states',
+          label: 'Empty States',
+          customProps: {
+            tag: 'new',
+          },
+        },
+        {
+          type: 'doc',
+          id: 'patterns/forms',
+          label: 'Forms',
+          customProps: {
+            tag: 'new',
+          },
+        },
         'patterns/loading-states',
         {
           type: 'doc',
