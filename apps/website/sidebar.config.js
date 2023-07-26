@@ -835,7 +835,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'Adoption',
-          items: [{ type: 'doc', id: 'adoption-tracker-overview', label: 'Overview' }, ...adopters],
+          items: [
+            { type: 'doc', id: 'adoption-tracker-overview', label: 'Overview' },
+            { type: 'doc', id: 'historical-adoption', label: 'Historical Tracker Data' },
+            ...adopters,
+          ],
         },
         { type: 'doc', id: 'a11y-report', label: 'Accessibility Tracker' },
         {

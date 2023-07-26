@@ -1,9 +1,10 @@
-import React, { memo, useCallback, useMemo } from 'react';
+/* eslint-disable global-require */
+import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
-import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
+import { ChartData } from '@cbhq/cds-web-visualization/src/sparkline/sparkline-interactive/SparklineInteractive';
 
 import { StatsTextStack } from ':cds-website/components/StatsTextStack';
 import { Tabs } from ':cds-website/components/Tabs';
@@ -17,9 +18,45 @@ import { useAdopterStats } from './hooks/useAdopterStats';
 import { useAdoptionPercent } from './hooks/useAdoptionPercent';
 import { useOkrPlanningComponents } from './hooks/useOkrPlanningComponents';
 import { AdopterSearchProvider } from './search/AdopterSearchProvider';
+import { downloadCSV } from './utils/downloadCSV';
 import { getCdsRecs } from './utils/getCdsRecs';
 import { AdopterStatsBreakdown } from './AdopterStatsBreakdown';
+import { AdoptionChart } from './AdoptionChart';
 import { ComponentData } from './types';
+
+type AdoptionImpactReports = {
+  adoptionTrackerCSVData: string;
+  collectiveProjectReportCSVData: string;
+};
+
+const ADOPTION_AND_PROJECT_IMPACT_REPORT_DATA =
+  require(`@site/static/data/__generated__/adoption/adoption_and_impact_reports.json`) as AdoptionImpactReports;
+
+function formatWeekData(projectId: string): { value: number; date: Date }[] {
+  const { collectiveProjectReportCSVData } = ADOPTION_AND_PROJECT_IMPACT_REPORT_DATA;
+
+  // filter collectiveProjectReportCSVData to only include the rows for the current project
+  // format the data to be in the format that the sparkline chart expects
+
+  return collectiveProjectReportCSVData
+    .split('\n')
+    .slice(1) // removes header
+    .filter((line) => {
+      // only return rows that are not empty and are for the current project
+      const project = line.split(',')[2];
+      return line !== '' && project === projectId;
+    })
+    .map((line) => {
+      // convert each row into an object with a date and value for JSON
+      const lineArray = line.split(',');
+      const adoptionRate = lineArray[3];
+      const percent = Number(adoptionRate);
+      return {
+        date: new Date(lineArray[0]),
+        value: Number(percent),
+      };
+    });
+}
 
 const AdopterTabs = memo(() => {
   const { id } = useAdopterProjectInfo();
@@ -86,34 +123,17 @@ function convertArrayOfObjectsToCSV(data: ComponentData[]) {
   return `${csvHeader}\n${csvRows.join('\n')}`;
 }
 
-function downloadCSV(csvData: string, fileName: string) {
-  // Creating a Blob for having a csv file format
-  // and passing the data with type
-  const blob = new Blob([csvData], { type: 'text/csv' });
-
-  // Creating an object for downloading url
-  const url = getBrowserGlobals()?.window.URL.createObjectURL(blob);
-
-  // Creating an anchor(a) tag of HTML
-  const a = getBrowserGlobals()?.document.createElement('a');
-
-  if (a) {
-    // Passing the blob downloading url
-    a.setAttribute('href', url ?? '');
-
-    // Setting the anchor tag attribute for downloading
-    // and passing the download file name
-    a.setAttribute('download', fileName);
-
-    // Performing a download with click
-    a.click();
-  }
-}
-
 export const AdopterDetails = memo(() => {
-  const { label } = useAdopterProjectInfo();
+  const { label, id } = useAdopterProjectInfo();
   const { latest } = useAdopterStats();
   const okrPlanning = useOkrPlanningComponents();
+  const [sparklineData, setSparklineData] = useState<Record<string, ChartData> | undefined>();
+
+  useEffect(() => {
+    setSparklineData({
+      week: formatWeekData(id),
+    });
+  }, [id]);
 
   const handleDownload = useCallback(() => {
     const csvData = convertArrayOfObjectsToCSV(okrPlanning);
@@ -124,7 +144,7 @@ export const AdopterDetails = memo(() => {
 
   return (
     <VStack>
-      <VStack>
+      <VStack gap={3} spacingBottom={6}>
         <HStack alignItems="flex-start" justifyContent="space-between" spacingBottom={2}>
           <VStack gap={1}>
             <HStack alignItems="center" gap={2}>
@@ -142,6 +162,7 @@ export const AdopterDetails = memo(() => {
           </HStack>
         </HStack>
         <AdopterStatsBreakdown />
+        {sparklineData && <AdoptionChart chartData={sparklineData} />}
       </VStack>
       <AdopterTabProvider>
         <AdopterSearchProvider>

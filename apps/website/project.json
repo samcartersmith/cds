@@ -63,6 +63,12 @@
       "options": {
         "script": "./scripts/deprecations/updateDeprecations.ts"
       }
+    },
+    "generateAdoptionAndImpactReports": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./scripts/adoption/generateAdoptionAndImpactReports.ts"
+      }
     }
   }
 }

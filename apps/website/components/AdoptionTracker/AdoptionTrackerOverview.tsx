@@ -425,6 +425,7 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
   });
   const direction = changedVariant === 'negative' ? 'Down' : 'Up';
   const [activeProjectId, setActiveProject] = useState<Adopter>(scopedAdopters[0][1][0].id);
+
   const projects = useMemo(() => {
     return scopedAdopters.map(([pillar, projectsInPillar]) => {
       return (

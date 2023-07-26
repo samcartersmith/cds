@@ -15,6 +15,7 @@ import {
   generatedStaticDataDir,
   hiddenAdoptersWithPillar,
 } from './config';
+import { generateAdoptionAndImpactReports } from './generateAdoptionAndImpactReports';
 
 async function generateMdxFiles(project: ProjectParser) {
   return writePrettyFile(
@@ -135,6 +136,7 @@ async function main() {
     // Required to associate adopters with their stats.json file for Adoption Overview page.
     await generateAdoptionFiles();
     await getListOfComponentsAndImports();
+    await generateAdoptionAndImpactReports();
     cleanup();
   } catch (err) {
     if (err instanceof Error) {
