@@ -90,7 +90,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(
 
   const IllustrationSheet = memo(function IllustrationSheet() {
     const getItemLayout = useCallback(function getItemLayout(
-      _data: DataItem[] | null | undefined,
+      _data: ArrayLike<DataItem> | null | undefined,
       index: number,
     ) {
       return {

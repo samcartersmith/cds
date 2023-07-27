@@ -5,17 +5,6 @@ import { paletteConfigToRgbaStrings } from '@cbhq/cds-mobile/utils/palette';
 
 import { useSparklineInteractiveHeaderStyles } from '../useSparklineInteractiveHeaderStyles';
 
-jest.mock('react-native/Libraries/Utilities/PixelRatio', () => ({
-  get: jest.fn().mockReturnValue(1),
-  getFontScale: jest.fn(() => 1),
-  getPixelSizeForLayoutSize: jest.fn((layoutSize) => Math.round(layoutSize * 1)),
-  roundToNearestPixel: jest.fn((layoutSize) => {
-    const ratio = 1;
-    return Math.round(layoutSize * ratio) / ratio;
-  }),
-  startDetecting: jest.fn(),
-}));
-
 const getStyleValue = (styles: StyleProp<TextStyle>, styleProp: keyof TextStyle) =>
   (styles as TextStyle[]).reverse().find((item: TextStyle) => item?.[styleProp])?.[styleProp];
 

@@ -1,6 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import {
   AccessibilityProps,
+  DimensionValue,
   Image,
   ImageProps,
   ImageResizeMode,
@@ -169,7 +170,10 @@ export const RemoteImage = memo(function RemoteImage({
   );
 
   const stylesWithDimensions = useMemo(
-    () => [...styles, { width: finalWidth, height: finalHeight }],
+    () => [
+      ...styles,
+      { width: finalWidth as DimensionValue, height: finalHeight as DimensionValue },
+    ],
     [finalHeight, finalWidth, styles],
   );
 

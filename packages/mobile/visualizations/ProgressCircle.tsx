@@ -42,7 +42,7 @@ const ProgressCircleInner = memo(
   ({ size, progress, color, weight, visuallyDisabled }: ProgressInnerCircleBaseProps) => {
     const strokeWidth = useProgressSize(weight);
     const palette = usePalette();
-    const circleRef = useRef<typeof AnimatedCircle | undefined>();
+    const circleRef = useRef<React.Component<CircleProps>>(null);
 
     const circumference = getCircumference(getRadius(size, strokeWidth));
     const animatedStrokeDashOffset = React.useRef(new Animated.Value(circumference));

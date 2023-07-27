@@ -16,6 +16,7 @@ import { DotSymbol } from '../DotSymbol';
 
 const {
   DotCountBasic,
+  DotCountDynamic,
   DotCountVariant,
   DotCountPlacements,
   DotCountOverlap,
@@ -48,6 +49,9 @@ const DotScreen = () => {
     <ExampleScreen>
       <Example inline title="DotCount Basic">
         <DotCountBasic />
+      </Example>
+      <Example inline title="DotCount Dynamic">
+        <DotCountDynamic />
       </Example>
       <Example inline title="DotCount Placements">
         <DotCountPlacements />

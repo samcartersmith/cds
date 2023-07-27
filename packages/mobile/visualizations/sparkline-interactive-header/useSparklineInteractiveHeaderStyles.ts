@@ -109,15 +109,16 @@ export function useSparklineInteractiveHeaderStyles() {
       subHead: (
         color: SparklineInteractiveSubHeadIconColor,
         useFullWidth = true,
-      ): StyleProp<TextStyle> => [
-        typography.label1,
-        numberStyles,
-        ...(useFullWidth ? [styles.fullWidth] : [{ width: 'auto' }]),
-        styles.inputReset,
-        {
-          color: palette[color],
-        },
-      ],
+      ): StyleProp<TextStyle> =>
+        [
+          typography.label1,
+          numberStyles,
+          ...(useFullWidth ? [styles.fullWidth] : [{ width: 'auto' }]),
+          styles.inputReset,
+          {
+            color: palette[color],
+          },
+        ] as TextStyle,
       subHeadAccessory: (): StyleProp<TextStyle> => [
         typography.label2,
         styles.inputReset,

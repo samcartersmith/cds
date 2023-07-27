@@ -237,7 +237,7 @@ export const Box = memo(
     const ViewComponent = animated ? Animated.View : View;
 
     return (
-      <ViewComponent style={style} {...props} ref={forwardedRef}>
+      <ViewComponent style={style as ViewStyle} {...props} ref={forwardedRef}>
         {ElevationWrapperForChildren ? (
           <ElevationWrapperForChildren>{children}</ElevationWrapperForChildren>
         ) : (

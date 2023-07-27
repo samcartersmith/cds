@@ -12,6 +12,7 @@ import {
   animateOutMaxSizeConfig,
   animateOutOpacityConfig,
 } from '@cbhq/cds-common/animation/collapsible';
+import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 
 import { useContentSize } from '../hooks/useContentSize';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
@@ -80,6 +81,8 @@ export const Collapsible = memo(
         spacingVertical,
       });
 
+      const prevCollapsed = usePreviousValue(collapsed);
+
       // build props base on direction
       const { shouldEnableScroll, animateToSize, horizontal } = useMemo(() => {
         if (direction === 'vertical') {
@@ -99,7 +102,7 @@ export const Collapsible = memo(
 
       useAnimatedReaction(
         () => collapsed,
-        (_collapsed, prevCollapsed) => {
+        (_collapsed) => {
           if (contentHeight === null) {
             return;
           }
@@ -130,9 +133,11 @@ export const Collapsible = memo(
        * https://github.com/software-mansion/react-native-reanimated/issues/4162
        * */
       const animatedInMaxSizeHeight = useAnimatedStyle(() => ({
-        height: heightAnimatedValue.value,
+        height: heightAnimatedValue.value as number,
       }));
-      const animatedInMaxSizeWidth = useAnimatedStyle(() => ({ width: heightAnimatedValue.value }));
+      const animatedInMaxSizeWidth = useAnimatedStyle(() => ({
+        width: heightAnimatedValue.value as number,
+      }));
       const animatedInMaxSize =
         animateInMaxSize.property === 'height' ? animatedInMaxSizeHeight : animatedInMaxSizeWidth;
       const animatedStyles = useAnimatedStyle(() => ({

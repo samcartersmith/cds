@@ -1,18 +1,16 @@
-const { resolveRequest } = require('@cbhq/metro-config/resolveRequest');
+const cbConfig = require('@cbhq/metro-config');
 const { getDefaultConfig } = require('expo/metro-config');
+const { mergeConfig } = require('@react-native/metro-config');
 
 // Learn more https://docs.expo.io/guides/customizing-metro
 const expoConfig = getDefaultConfig(__dirname);
 
 /**
- * @type {import('metro-config').InputConfigT}
+ * Metro configuration
+ * https://facebook.github.io/metro/docs/configuration
+ *
+ * @type {import('metro-config').MetroConfig}
  */
-const metroConfig = {
-  ...expoConfig,
-  resolver: {
-    ...expoConfig.resolver,
-    resolveRequest,
-  },
-};
+const metroConfig = mergeConfig(expoConfig, cbConfig);
 
 module.exports = metroConfig;

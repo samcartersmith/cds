@@ -11,7 +11,7 @@ let androidBuildToolsVersion = process.env.ANDROID_TOOLS_VERSION;
 
 async function patchBundleForPlatform({ platform: platformParam, fileToPatch }) {
   await $`expo export --output-dir lib -p ${platformParam}`;
-  const matches = await glob([`lib/bundles/${platformParam}-*.js`]);
+  const matches = await glob([`lib/bundles/${platformParam}-*`]);
   if (matches.length) {
     const jsBundle = matches[0];
     await $`mv ${jsBundle} ${fileToPatch}`;

@@ -11,20 +11,17 @@ jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
-jest.mock('react-native-reanimated', () => {
-  const Reanimated = require('react-native-reanimated/mock');
-  Reanimated.makeMutable = Reanimated.useSharedValue;
-
-  // eslint-disable-next-line no-unused-vars
-  Reanimated.useAnimatedReaction = (prepare, react, deps) => {
-    react(prepare());
-  };
-
-  return Reanimated;
-});
-
 jest.mock('react-native', () => {
   const RN = jest.requireActual('react-native');
+
+  RN.PixelRatio.get = jest.fn(() => 1);
+  RN.PixelRatio.roundToNearestPixel = jest.fn((layoutSize) => {
+    const ratio = 1;
+    return Math.round(layoutSize * ratio) / ratio;
+  });
+  RN.PixelRatio.getFontScale = jest.fn(() => 1);
+  RN.PixelRatio.getPixelSizeForLayoutSize = jest.fn((layoutSize) => Math.round(layoutSize * 1));
+  RN.PixelRatio.startDetecting = jest.fn();
 
   RN.NativeModules.StatusBarManager = {
     getHeight: jest.fn((cb) => cb({ height: mockStatusBarHeight })),

@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.2.0 ((7/27/2023, 01:25 PM PST))
+
+This is an artificial version bump with no new change.
+
 ## Unreleased
 
 #### 📘 Misc

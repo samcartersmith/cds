@@ -1,3 +1,4 @@
+import { PixelRatio } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 import { entries } from '@cbhq/cds-utils';
 
@@ -5,9 +6,7 @@ import { deviceScaleMap, useDeviceScaleToCdsScale } from '../useDeviceScaleToCds
 
 const mockDeviceScale = (fontScale: number) => {
   jest.resetModules();
-  jest.doMock('react-native/Libraries/Utilities/PixelRatio', () => ({
-    getFontScale: jest.fn(() => fontScale),
-  }));
+  jest.spyOn(PixelRatio, 'getFontScale').mockImplementation(() => fontScale);
 };
 
 describe('useDeviceScaleToCdsScale', () => {

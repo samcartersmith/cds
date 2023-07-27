@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.7 (7/27/2023 PST)
+
+#### 🚀 Updates
+
+- Uprade expo, RN, reanimated and other packages. [[DX-1772](https://jira.coinbase-corp.com/browse/DX-1772)]
+
 ## 0.0.6 (6/28/2023 PST)
 
 #### 🐞 Fixes

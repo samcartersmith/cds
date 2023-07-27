@@ -1,4 +1,4 @@
-import { PlatformOSType } from 'react-native';
+import { PixelRatio, PlatformOSType } from 'react-native';
 import { act, renderHook } from '@testing-library/react-hooks';
 import { Spectrum, useScale, useSpectrum } from '@cbhq/cds-common';
 import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
@@ -14,9 +14,7 @@ import { DevicePreferencesProvider } from '../DevicePreferencesProvider';
 
 const mockDeviceScale = (fontScale: number) => {
   jest.resetModules();
-  jest.doMock('react-native/Libraries/Utilities/PixelRatio', () => ({
-    getFontScale: jest.fn(() => fontScale),
-  }));
+  jest.spyOn(PixelRatio, 'getFontScale').mockImplementation(() => fontScale);
 };
 
 const mockPlatform = (os: PlatformOSType) => {

@@ -6,6 +6,7 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
+import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 import {
   dotOpacityEnterConfig,
   dotOpacityExitConfig,
@@ -47,6 +48,7 @@ export const DotCount = memo(
     const scaleAnimatedValue = useSharedValue(scaleEnter.fromValue);
     const [shouldUnmount, setShouldUnmount] = useState(count === 0);
     const [countInternal, setCountInternal] = useState(count);
+    const prevCount = usePreviousValue<number>(count);
 
     const pinStyles: ViewStyle = useMemo(() => {
       if (pin) {
@@ -73,7 +75,7 @@ export const DotCount = memo(
       ];
     }, [palette, pinStyles, variant]);
 
-    // avoid displaying 0 during animations
+    // avoid displaying 0 during animations and preserve exit animation
     useEffect(() => {
       if (count !== 0) {
         setCountInternal(count);
@@ -82,22 +84,23 @@ export const DotCount = memo(
 
     useAnimatedReaction(
       () => count,
-      (result, prev) => {
+      (result) => {
         // play enter animation
-        if ((prev === 0 || prev === null) && result > 0) {
+        if ((prevCount === 0 || prevCount === undefined) && result > 0) {
           runOnJS(setShouldUnmount)(false);
           opacityAnimatedValue.value = withMotionTiming(opacityEnter);
           scaleAnimatedValue.value = withMotionTiming(scaleEnter);
         }
 
         // play exit animation
-        if (prev && prev > 0 && result === 0) {
+        if (prevCount && prevCount > 0 && result === 0) {
           opacityAnimatedValue.value = withMotionTiming(opacityExit, () => {
             runOnJS(setShouldUnmount)(true);
           });
           scaleAnimatedValue.value = withMotionTiming(scaleExit);
         }
       },
+      [count],
     );
 
     const animatedStyles = useAnimatedStyle(() => {

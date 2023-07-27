@@ -1,4 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
+import { DimensionValue } from 'react-native';
 import LottieView from 'lottie-react-native';
 import { ForwardedRef } from '@cbhq/cds-common';
 
@@ -26,8 +27,8 @@ const LottieContent = memo(
       const aspectRatio = source.w / source.h;
       const lottieStyles = useMemo(
         () => ({
-          width: '100%',
-          height: '100%',
+          width: '100%' as DimensionValue,
+          height: '100%' as DimensionValue,
           aspectRatio,
         }),
         [aspectRatio],
@@ -41,7 +42,7 @@ const LottieContent = memo(
             colorFilters={colorFilters}
             loop={loop}
             progress={progress}
-            // TODO: If huwaii device, force to use SOFTWARE renderMode
+            // TODO: If huawei device, force to use SOFTWARE renderMode
             renderMode="AUTOMATIC"
             resizeMode={resizeMode}
             source={source}

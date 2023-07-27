@@ -1,6 +1,6 @@
 // Simplified version of https://github.com/tomzaku/react-native-shimmer-placeholder/blob/master/lib/ShimmerPlaceholder.js
 import React, { memo, useEffect, useMemo, useRef } from 'react';
-import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
+import { Animated, DimensionValue, StyleSheet, View, ViewStyle } from 'react-native';
 import { FallbackBaseProps } from '@cbhq/cds-common';
 import { useFallbackShape, UseFallbackShapeOptions } from '@cbhq/cds-common/hooks/useFallbackShape';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
@@ -60,8 +60,8 @@ export const Fallback = memo(function Fallback({
 
   const containerStyle: ViewStyle = useMemo(
     () => ({
-      width,
-      height,
+      width: width as DimensionValue,
+      height: height as DimensionValue,
       overflow: 'hidden',
       backgroundColor: shimmerColor[0],
       borderRadius,

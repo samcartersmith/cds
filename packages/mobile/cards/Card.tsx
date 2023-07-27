@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { ViewStyle } from 'react-native';
+import { DimensionValue, ViewStyle } from 'react-native';
 import { usePinBorderRadiusStyles } from '@cbhq/cds-common/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { CardBaseProps } from '@cbhq/cds-common/types';
@@ -70,7 +70,7 @@ const OldCard: React.FC<React.PropsWithChildren<CardProps>> = memo(function OldC
       onPress={onPress}
       accessibilityLabel={accessibilityLabel}
       accessibilityHint={accessibilityHint}
-      style={{ ...pinStyles, width, height }}
+      style={{ ...pinStyles, width: width as DimensionValue, height: height as DimensionValue }}
     >
       {content}
     </Pressable>

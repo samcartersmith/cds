@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import React, { ComponentType, useEffect, useState } from 'react';
 
 import { avatarDotSizeMap, avatarIconSizeMap } from '../tokens/dot';
 import type {
@@ -53,6 +53,25 @@ export function dotBuilder(
           <DotCount count={11} max={9} />
         </Box>
       </>
+    );
+  };
+
+  const DotCountDynamic = () => {
+    const [count, setCount] = useState<number>(0);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCount((prev) => (prev === 0 ? Math.floor(Math.random() * 99) : 0));
+      }, 1000);
+      return () => {
+        clearInterval(interval);
+      };
+    }, []);
+    return (
+      <Box alignItems="flex-start" spacing={1} minHeight={100}>
+        <DotCount count={count}>
+          <Icon size="m" name="airdrop" />
+        </DotCount>
+      </Box>
     );
   };
 
@@ -136,6 +155,7 @@ export function dotBuilder(
     return (
       <VStack gap={2}>
         <DotCountBasic />
+        <DotCountDynamic />
         <DotCountVariant />
         <DotCountOverlap />
         <DotCountPlacements />
@@ -381,6 +401,7 @@ export function dotBuilder(
 
   return {
     DotCountBasic,
+    DotCountDynamic,
     DotCountVariant,
     DotCountOverlap,
     DotCountPlacements,

@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { View, ViewStyle } from 'react-native';
+import { DimensionValue, View, ViewStyle } from 'react-native';
 import type { CardBaseProps } from '@cbhq/cds-common/types/alpha';
 
 import { VStack } from '../layout/VStack';
@@ -33,7 +33,11 @@ export const Card = memo(
     ref,
   ) {
     const pressableStyles = useMemo(
-      () => ({ width, height, dangerouslySetStyle }),
+      () => ({
+        width: width as DimensionValue,
+        height: height as DimensionValue,
+        dangerouslySetStyle,
+      }),
       [height, width, dangerouslySetStyle],
     );
 

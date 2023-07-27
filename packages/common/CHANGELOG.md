@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.2.0 (7/27/2023 PST)
+
+#### 🚀 Updates
+
+- Add DotDynamic story for testing animation.
+
 ## 5.1.4 ((7/14/2023, 09:34 AM PST))
 
 This is an artificial version bump with no new change.
