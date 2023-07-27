@@ -13,6 +13,7 @@
     "clean-dist-outs": "rm -rf packages/*/dist || true",
     "reset-nx-daemon": "nx reset",
     "clean": "yarn clean-nx-dir && yarn clean-packemon-outs && yarn clean-dist-outs && yarn reset-nx-daemon",
+    "clean-expo": "rm -rf apps/mobile-app/ios && rm -rf apps/mobile-app/.expo",
     "build-required-packages": "yarn nx run cds-tasks:build",
     "codeowners": "mono-pipeline sync-codeowners",
     "diagnose": "mono-env diagnose --group common web mobile",
