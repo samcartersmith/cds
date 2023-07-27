@@ -179,16 +179,11 @@ export async function generateAdoptionAndImpactReports() {
   // Generate collection of all data to easily parse for reports
   const allHistoricalProjectData = await getHistoricalData(statsPaths);
 
-  // Create Adoption Rate CSV
+  // Create Adoption Rate CSV String
   const adoptionTrackerCSVData = generateAdoptionTrackerCSVData(allHistoricalProjectData);
-  saveToFile(adoptionTrackerCSVData, `${ADOPTION_REPORTS_DIR}/adoption_rate.csv`);
 
-  // Create Collective Project Report
+  // Create Collective Project Report CSV String
   const collectiveProjectReportCSVData = generateCollectiveProjectCSVData(allHistoricalProjectData);
-  saveToFile(
-    collectiveProjectReportCSVData,
-    `${ADOPTION_REPORTS_DIR}/collective_impact_report.csv`,
-  );
 
   // Create json file for both reports to be used in the website adoption page
   const adoptionAndImpactReports = {
