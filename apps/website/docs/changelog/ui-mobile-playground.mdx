@@ -12,8 +12,6 @@ All notable changes to this project will be documented in this file.
 
 - Uprade expo, RN, reanimated and other packages. [[DX-1772](https://jira.coinbase-corp.com/browse/DX-1772)]
 
-## Unreleased
-
 #### 📘 Misc
 
 - **[Patterns]** Add Disclosure stories. [[#2116](https://github.cbhq.net/frontend/cds/pull/2116)]

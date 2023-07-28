@@ -107,7 +107,7 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
 
   checkSpacing({
     testID: `${TEST_ID}-icon`,
-    customStyle: { paddingTop: 2 },
+    customStyle: { paddingTop: 4 },
   });
 
   checkSpacing({
@@ -136,7 +136,7 @@ describe('Banner testing with narrow screen configurations (screen size < 724)',
   checkSpacing({
     testID: `${TEST_ID}-icon`,
     customStyle: {
-      paddingTop: 2,
+      paddingTop: 4,
     },
   });
 

@@ -8,13 +8,17 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.2.1 (7/28/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix mobile Banner icon padding to align with title text. [[#2123](https://github.cbhq.net/frontend/cds/pull/2123)] [[DX-1901](https://jira.coinbase-corp.com/browse/DX-1901)]
+
 ## 5.2.0 (7/27/2023 PST)
 
 #### 🚀 Updates
 
 - Upgrade expo, RN, reanimated and other packages. [[DX-1772](https://jira.coinbase-corp.com/browse/DX-1772)]
-
-## Unreleased
 
 #### 📘 Misc
 

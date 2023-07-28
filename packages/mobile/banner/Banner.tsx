@@ -21,7 +21,7 @@ import { TextHeadline } from '../typography/TextHeadline';
 // This custom spacing is necessary so that
 // the iconButton and the icon can horizontally
 // align with the text
-const customSpacing = { paddingTop: 2 };
+const customSpacing = { paddingTop: 4 };
 
 // TODO use a system like tokens/tags.ts#tagColorMap
 const stylesForVariant = {
