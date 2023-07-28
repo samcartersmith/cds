@@ -1,11 +1,18 @@
 # CDS Engineering Conventions
 
+## Propose a Convention
+
+🔗 [go/cds-eng-convention-process](https://docs.google.com/document/d/1Y_VWrbgfbDAMFG2zc8MGO3bybWsl2LzP8_Wq9KtTJAs/edit?usp=sharing)
+
 ## Accepted Conventions
 
 - [API Design](./api-design.mdx)
-- [Component Documentation](./component-documentation.md)
 - [Component Composition](./composition.mdx)
-- [Memoization](./memoization.mdx)
+- [Best Practices](./best-practices.mdx)
+
+### Processes
+
+- [Documentation](./documentation.md)
 - [Deprecations](./deprecations.md)
 
 Review previous discussions about best practices and decisions at [go/cds-convention-discussions](https://docs.google.com/document/d/1WEpQshnobk-malpw_hokcI090HbBL4Q4LGsNzdmLhQ8/edit#heading=h.9f1j0imjgzvm)

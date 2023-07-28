@@ -1,4 +1,6 @@
-### Component API Documentation
+# Documentation
+
+## Component API Documentation
 
 Because our components are used by so many teams it is vital that we document their APIs well. This section give a quick preview of how to effectively document our components.
 
@@ -9,3 +11,10 @@ Web + Mobile documentation is viewed together on our website and we try minimze 
 - `@link`: Link to MDN React Native or other documentation which is relevant
 - `@experimental`: Experimental/unstable APIs
 - `@deprecated`: Deprecated APIs
+
+## Implementation
+
+All components should include live code examples that demonstrate how to use the component in the most basic context.
+
+- If there are known concerns for particular compositions of the component include examples for each.
+- Use [disclosures](https://docusaurus.io/docs/markdown-features/admonitions) eg: `:::info` to call out warnings and tips to resolve commonly surfaced issues.
