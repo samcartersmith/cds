@@ -13,7 +13,7 @@ import removedParams from './removedParams';
 import removedPropCatchallMigrations from './removedPropCatchallMigrations';
 import removedPropMigrations from './removedPropMigrations';
 import replacedPathMigrations from './replacedPathMigrations';
-import upgradePackages from './upgradePackages';
+import upgradePackages from './upgrade-cds-packages-5-0-0';
 
 export default async function main(tree: Tree) {
   await propValueCatchAllMigrations(tree);

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.7 (7/28/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: peer dependencies work for upgrading packages. [[#2121](https://github.cbhq.net/frontend/cds/pull/2121)] [[DX-1864](https://jira.coinbase-corp.com/browse/DX-1864)]
+
 ## 0.1.6 (7/17/2023 PST)
 
 #### 🐞 Fixes

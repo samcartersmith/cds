@@ -1,19 +1,21 @@
-import { addDependenciesToPackageJson, getProjects, output, Tree } from '@nrwl/devkit';
+import { addDependenciesToPackageJson, getProjects, output, Tree, updateJson } from '@nrwl/devkit';
 
 import { CdsDependencyCheck, checkHasCdsDependency } from './checkHasCdsDependency';
 import { logDebug } from './loggingHelpers';
 
-type PackageName = 'mobile' | 'web' | 'common' | 'lottie-files';
+const packageNames = ['mobile', 'web', 'common', 'lottie-files'] as const;
+type PackageName = (typeof packageNames)[number];
 type PackageVersionType = Record<string, string>;
 type DepsToAddMap = Record<PackageName, PackageVersionType>;
+type DepType = 'deps' | 'devDeps' | 'peerDeps';
 
 function updateDeps(
   depCheck: CdsDependencyCheck,
   pkg: keyof DepsToAddMap,
-  onComplete: (type: 'deps' | 'devDeps', val?: Record<string, string>) => void,
+  onComplete: (type: DepType, val?: Record<string, string>) => void,
   depsToAddMap: DepsToAddMap,
 ) {
-  const { dependencies, devDependencies } = depCheck;
+  const { dependencies, devDependencies, peerDependencies } = depCheck;
 
   if (dependencies?.[pkg]) {
     onComplete('deps', depsToAddMap[pkg]);
@@ -22,6 +24,28 @@ function updateDeps(
   if (devDependencies?.[pkg]) {
     onComplete('devDeps', depsToAddMap[pkg]);
   }
+
+  if (peerDependencies?.[pkg]) {
+    onComplete('peerDeps', depsToAddMap[pkg]);
+  }
+}
+
+function updatePeerDependencies(
+  tree: Tree,
+  depsToAdd: Partial<DepsToAddMap>,
+  pathToProject?: string,
+) {
+  updateJson(tree, `${pathToProject}/package.json`, (json) => {
+    Object.entries(depsToAdd).forEach(([pkg, version]) => {
+      if (json.peerDependencies?.[pkg]) {
+        // eslint-disable-next-line no-param-reassign
+        json.peerDependencies[pkg] = version;
+      }
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return json;
+  });
 }
 
 export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap) {
@@ -32,36 +56,53 @@ export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap)
 
   projects.forEach((project) => {
     const depCheck = checkHasCdsDependency(tree, project);
-    let depsToAdd: Record<string, string> = {};
-    let devDepsToAdd: Record<string, string> = {};
+    let depsToAdd: Partial<DepsToAddMap> = {};
+    let devDepsToAdd: Partial<DepsToAddMap> = {};
+    let peerDepsToAdd: Partial<DepsToAddMap> = {};
     let hasUpdates = false;
 
-    function onDepCheckComplete(type: 'deps' | 'devDeps', val?: Record<string, string>) {
+    function onDepCheckComplete(type: DepType, val?: Record<string, string>) {
       if (val) {
         hasUpdates = true;
       }
-      if (type === 'deps') {
-        depsToAdd = {
-          ...depsToAdd,
-          ...val,
-        };
-      }
-      if (type === 'devDeps') {
-        devDepsToAdd = {
-          ...devDepsToAdd,
-          ...val,
-        };
+      switch (type) {
+        case 'deps':
+          depsToAdd = {
+            ...depsToAdd,
+            ...val,
+          };
+          break;
+        case 'devDeps':
+          devDepsToAdd = {
+            ...devDepsToAdd,
+            ...val,
+          };
+          break;
+        case 'peerDeps':
+          peerDepsToAdd = {
+            ...peerDepsToAdd,
+            ...val,
+          };
+          break;
+        default:
+          break;
       }
     }
 
-    updateDeps(depCheck, 'lottie-files', onDepCheckComplete, depsToAddMap);
-    updateDeps(depCheck, 'common', onDepCheckComplete, depsToAddMap);
-    updateDeps(depCheck, 'web', onDepCheckComplete, depsToAddMap);
-    updateDeps(depCheck, 'mobile', onDepCheckComplete, depsToAddMap);
+    packageNames.forEach((pkg) => updateDeps(depCheck, pkg, onDepCheckComplete, depsToAddMap));
 
     if (hasUpdates) {
       const { packageJsonPath } = depCheck;
-      addDependenciesToPackageJson(tree, depsToAdd, devDepsToAdd, packageJsonPath);
+      // casting because addDependenciesToPackageJson expects a less specific type
+      addDependenciesToPackageJson(
+        tree,
+        depsToAdd as Record<string, string>,
+        devDepsToAdd as Record<string, string>,
+        packageJsonPath,
+      );
+      if (peerDepsToAdd) {
+        updatePeerDependencies(tree, peerDepsToAdd, project.root);
+      }
       packageJsonsWithUpdates.push(packageJsonPath);
     }
   });
