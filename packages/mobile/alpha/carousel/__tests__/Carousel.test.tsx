@@ -32,6 +32,7 @@ describe('Carousel.test', () => {
   it('passes a11y', () => {
     render(
       <Carousel
+        showDismiss
         onDismissItem={jest.fn()}
         onDismissLastItem={jest.fn()}
         testID="mock-carousel"
@@ -39,10 +40,18 @@ describe('Carousel.test', () => {
           <AnnouncementCard key="item1" title="Item1 title" description="Item1 description" />,
           <AnnouncementCard key="item2" title="Item2 title" description="Item2 description" />,
         ]}
+        dismissButtonAccessibilityLabel="Dismiss"
+        dismissButtonAccessibilityHint="Dismiss announcement"
       />,
     );
 
     expect(screen.getByTestId('mock-carousel')).toBeAccessible();
+
+    ['item1', 'item2'].forEach((key, index) => {
+      expect(screen.queryByTestId(`CarouselItemDismiss-${key}`)).toBeAccessible();
+      expect(screen.getAllByLabelText('Dismiss')[index]).toBeTruthy();
+      expect(screen.getAllByHintText('Dismiss announcement')[index]).toBeTruthy();
+    });
   });
 
   it('renders items', () => {

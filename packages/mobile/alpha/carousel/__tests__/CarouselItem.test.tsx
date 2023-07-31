@@ -104,4 +104,33 @@ describe('CarouselItem.test', () => {
       expect(onDismissLastItem).toHaveBeenCalledTimes(1);
     });
   });
+
+  it('passes a11y', () => {
+    render(
+      <CarouselItem
+        id="item1"
+        index={0}
+        spacingEnd={2}
+        xOffset={new Animated.Value(10)}
+        totalItems={3}
+        width={50}
+        onMount={jest.fn()}
+        showDismiss
+        dismissButtonAccessibilityLabel="Dismiss"
+        dismissButtonAccessibilityHint="Dismiss this item"
+      >
+        <Text>test</Text>
+      </CarouselItem>,
+    );
+
+    const carouselItem = screen.getByTestId('CarouselItemWrapper-item1');
+    expect(carouselItem).toBeTruthy();
+    expect(carouselItem).toBeAccessible();
+
+    const dismissBtn = screen.getByTestId('CarouselItemDismiss-item1');
+    expect(dismissBtn).toBeTruthy();
+    expect(dismissBtn).toBeAccessible();
+    expect(screen.getByLabelText('Dismiss')).toBeTruthy();
+    expect(screen.getByHintText('Dismiss this item')).toBeTruthy();
+  });
 });

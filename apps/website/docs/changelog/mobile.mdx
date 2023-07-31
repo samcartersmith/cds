@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.2.2 (7/31/2023 PST)
+
+#### 🐞 Fixes
+
+- Expose accessibility props of CarouselItem dismiss button. [[#2019](https://github.cbhq.net/frontend/cds/pull/2019)] [[A11Y-422](https://jira.coinbase-corp.com/browse/A11Y-422)]
+
 ## 5.2.1 (7/28/2023 PST)
 
 #### 🐞 Fixes

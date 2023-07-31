@@ -1,6 +1,6 @@
 import React, { createContext, memo, useCallback, useMemo, useRef, useState } from 'react';
 import { Animated, View } from 'react-native';
-import { NoopFn, SpacingScale } from '@cbhq/cds-common';
+import { NoopFn, SharedAccessibilityProps, SpacingScale } from '@cbhq/cds-common';
 import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common/animation/carousel';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
@@ -52,6 +52,8 @@ type CarouselItemProps = {
   /** Optional callback function which will run after the last item is dismissed and Carousel height is collapsed. */
   onDismissLastItem?: NoopFn;
   onMount: CarouselOnItemMount;
+  dismissButtonAccessibilityLabel?: SharedAccessibilityProps['accessibilityLabel'];
+  dismissButtonAccessibilityHint?: SharedAccessibilityProps['accessibilityHint'];
 };
 
 export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> = memo(
@@ -68,6 +70,8 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
     onDismiss,
     onDismissLastItem,
     onMount,
+    dismissButtonAccessibilityLabel,
+    dismissButtonAccessibilityHint,
   }) => {
     const snapPoint = width * index;
     const isOnlyItem = totalItems === 1;
@@ -171,6 +175,8 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
                   name="close"
                   onPress={handleDismissPress}
                   testID={`CarouselItemDismiss-${id}`}
+                  accessibilityLabel={dismissButtonAccessibilityLabel}
+                  accessibilityHint={dismissButtonAccessibilityHint}
                 />
               </CarouselControlsWrapper>
             ) : null}

@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import { Animated, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
-import { SharedProps, SpacingScale } from '@cbhq/cds-common';
+import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { emptyObject } from '@cbhq/cds-utils';
 
@@ -54,6 +54,10 @@ export type CarouselProps = {
   itemWidth?: number;
   /** Optional boolean to have the Carousel calculate the Carousel Item height */
   autoHeight?: boolean;
+  /** Accessibility label of CarouselItem dismiss button */
+  dismissButtonAccessibilityLabel?: SharedAccessibilityProps['accessibilityLabel'];
+  /** Accessibility hint of CarouselItem dismiss button */
+  dismissButtonAccessibilityHint?: SharedAccessibilityProps['accessibilityHint'];
 } & Omit<ScrollViewProps, 'style'> &
   SharedProps;
 
@@ -71,6 +75,8 @@ export const Carousel = memo(
         showDismiss = false,
         itemWidth: itemWidthProp,
         autoHeight = false,
+        dismissButtonAccessibilityLabel,
+        dismissButtonAccessibilityHint,
         ...otherProps
       },
       forwardedRef,
@@ -220,6 +226,8 @@ export const Carousel = memo(
               onDismiss={getDismissItemHandler(id)}
               onDismissLastItem={getOnDismissLastItemHandler(id)}
               onMount={getOnMountItemHandler(id, index)}
+              dismissButtonAccessibilityLabel={dismissButtonAccessibilityLabel}
+              dismissButtonAccessibilityHint={dismissButtonAccessibilityHint}
             >
               {children}
             </CarouselItem>
@@ -232,8 +240,10 @@ export const Carousel = memo(
         xOffset,
         itemWidth,
         getDismissItemHandler,
-        getOnMountItemHandler,
         getOnDismissLastItemHandler,
+        getOnMountItemHandler,
+        dismissButtonAccessibilityLabel,
+        dismissButtonAccessibilityHint,
       ]);
 
       const progressSpacingEnd = useSpacingValue(0.5);
