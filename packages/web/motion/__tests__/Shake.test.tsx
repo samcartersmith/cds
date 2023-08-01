@@ -1,8 +1,17 @@
 import { RefObject } from 'react';
-import { Animated, Text } from 'react-native';
-import { act, render, screen } from '@testing-library/react-native';
+import { act, render, screen } from '@testing-library/react';
+import { useAnimation } from 'framer-motion';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Shake } from '../Shake';
+
+jest.mock('framer-motion', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return {
+    ...jest.requireActual('framer-motion'),
+    useAnimation: jest.fn(),
+  };
+});
 
 describe('Shake', () => {
   let start = jest.fn();
@@ -11,40 +20,37 @@ describe('Shake', () => {
   beforeEach(() => {
     start = jest.fn();
     stop = jest.fn();
-    // @ts-expect-error - mock is incomplete but functional
-    jest.spyOn(Animated, 'timing').mockImplementation(() => ({ start }));
-    // @ts-expect-error - mock is incomplete but functional
-    jest.spyOn(Animated, 'Value').mockImplementation(() => ({
-      stopAnimation: stop,
-      setValue: jest.fn(),
-      interpolate: jest.fn(),
+    (useAnimation as jest.Mock).mockImplementation(() => ({
+      start,
+      stop,
+      set: jest.fn(),
     }));
   });
 
-  it('passes a11y', () => {
-    const childrenText = 'Children text';
-    render(
-      <Shake>
-        <Text>{childrenText}</Text>
-      </Shake>,
-    );
-    expect(screen.getByText(childrenText)).toBeAccessible();
+  it('passes a11y', async () => {
+    expect(
+      await renderA11y(
+        <Shake>
+          <div>Children</div>
+        </Shake>,
+      ),
+    ).toHaveNoViolations();
   });
 
   it('renders children', () => {
     const childrenText = 'Children text';
     render(
       <Shake>
-        <Text>{childrenText}</Text>
+        <div>{childrenText}</div>
       </Shake>,
     );
-    expect(screen.getByText(childrenText)).toBeDefined();
+    expect(screen.getByText('Children text')).toBeInTheDocument();
   });
 
   it('starts animation on mount by default', () => {
     render(
       <Shake>
-        <Text>Children</Text>
+        <div>Children</div>
       </Shake>,
     );
     expect(start).toHaveBeenCalledTimes(1);
@@ -53,7 +59,7 @@ describe('Shake', () => {
   it('doesnt start animation on mount when disableAnimateOnMount', () => {
     render(
       <Shake disableAnimateOnMount>
-        <Text>Children</Text>
+        <div>Children</div>
       </Shake>,
     );
     expect(start).not.toHaveBeenCalled();
@@ -65,10 +71,11 @@ describe('Shake', () => {
     }>;
     render(
       <Shake ref={ref}>
-        <Text>Children</Text>
+        <div>Children</div>
       </Shake>,
     );
     start.mockClear();
+
     expect(start).not.toHaveBeenCalled();
     act(() => void ref.current?.play());
     expect(start).toHaveBeenCalledTimes(1);

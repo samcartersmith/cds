@@ -1,8 +1,17 @@
 import { RefObject } from 'react';
-import { Animated, Text } from 'react-native';
-import { act, render, screen } from '@testing-library/react-native';
+import { act, render, screen } from '@testing-library/react';
+import { useAnimation } from 'framer-motion';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Pulse } from '../Pulse';
+
+jest.mock('framer-motion', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return {
+    ...jest.requireActual('framer-motion'),
+    useAnimation: jest.fn(),
+  };
+});
 
 describe('Pulse', () => {
   let start = jest.fn();
@@ -11,40 +20,37 @@ describe('Pulse', () => {
   beforeEach(() => {
     start = jest.fn();
     stop = jest.fn();
-    // @ts-expect-error - mock is incomplete but functional
-    jest.spyOn(Animated, 'loop').mockImplementation(() => ({ start }));
-    // @ts-expect-error - mock is incomplete but functional
-    jest.spyOn(Animated, 'Value').mockImplementation(() => ({
-      stopAnimation: stop,
-      setValue: jest.fn(),
-      interpolate: jest.fn(),
+    (useAnimation as jest.Mock).mockImplementation(() => ({
+      start,
+      stop,
+      set: jest.fn(),
     }));
   });
 
-  it('passes a11y', () => {
-    const childrenText = 'Children text';
-    render(
-      <Pulse>
-        <Text>{childrenText}</Text>
-      </Pulse>,
-    );
-    expect(screen.getByText(childrenText)).toBeAccessible();
+  it('passes a11y', async () => {
+    expect(
+      await renderA11y(
+        <Pulse>
+          <div>Children</div>
+        </Pulse>,
+      ),
+    ).toHaveNoViolations();
   });
 
   it('renders children', () => {
     const childrenText = 'Children text';
     render(
       <Pulse>
-        <Text>{childrenText}</Text>
+        <div>{childrenText}</div>
       </Pulse>,
     );
-    expect(screen.getByText(childrenText)).toBeDefined();
+    expect(screen.getByText('Children text')).toBeInTheDocument();
   });
 
   it('starts animation on mount by default', () => {
     render(
       <Pulse>
-        <Text>Children</Text>
+        <div>Children</div>
       </Pulse>,
     );
     expect(start).toHaveBeenCalledTimes(1);
@@ -53,7 +59,7 @@ describe('Pulse', () => {
   it('doesnt start animation on mount when disableAnimateOnMount', () => {
     render(
       <Pulse disableAnimateOnMount>
-        <Text>Children</Text>
+        <div>Children</div>
       </Pulse>,
     );
     expect(start).not.toHaveBeenCalled();
@@ -66,7 +72,7 @@ describe('Pulse', () => {
     }>;
     render(
       <Pulse ref={ref}>
-        <Text>Children</Text>
+        <div>Children</div>
       </Pulse>,
     );
     start.mockClear();
