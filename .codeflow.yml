@@ -19,6 +19,7 @@ build:
     - BaldurECR:
         name: cds-website-docs
         path: ./apps/website/production.Dockerfile
+        autobuild: true
     - BaldurECR:
         name: cds-website-docs-development
         path: ./apps/website/development.Dockerfile
