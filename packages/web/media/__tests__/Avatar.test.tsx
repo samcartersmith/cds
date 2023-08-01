@@ -86,6 +86,15 @@ describe('Avatar', () => {
     expect(fallbackBox).toHaveClass(avatarColoredFallbackClassName);
     expect(fallbackBox?.style.background).toBe(pinkBackgroundColor);
   });
+  it('when passed an empty string for src it shows a fallback image', () => {
+    const name = 'Test Name';
+    render(<Avatar alt={name} src="" />);
+
+    const imgNode = screen.queryByAltText(name);
+
+    expect(imgNode).toBeTruthy();
+    expect((imgNode as HTMLImageElement).src).toMatch(/^data:image/);
+  });
   it('does not render a border if there is a name prop and uses the fallback color treatment', () => {
     render(
       <Avatar

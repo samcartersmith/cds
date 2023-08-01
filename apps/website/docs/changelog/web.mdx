@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.2.3 (8/1/2023 PST)
+
+#### 🐞 Fixes
+
+- Rendering fallback image for Avatar when src is an empty string. [[#2129](https://github.cbhq.net/frontend/cds/pull/2129)]
+
 ## 5.2.2 ((7/31/2023, 02:13 PM PST))
 
 This is an artificial version bump with no new change.
