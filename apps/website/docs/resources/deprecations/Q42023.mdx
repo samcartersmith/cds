@@ -1,0 +1,39 @@
+import { Tag } from '@cbhq/cds-web/tag/Tag';
+import { AccordionItem } from '@cbhq/cds-web/accordion/AccordionItem';
+import { Accordion } from '@cbhq/cds-web/accordion/Accordion';
+import { VStack, HStack } from '@cbhq/cds-web/layout';
+
+## Q42023 Deprecations
+
+The following items will be deleted at the end of Q42023 in a breaking release.
+
+### 🧱 Components {#components}
+
+<Accordion>
+  <AccordionItem
+    itemKey="FiatIcon.mobile"
+    title={
+      <HStack gap={1}>
+        FiatIcon <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v6.0.0/packages/mobile/icons/FiatIcon.tsx"
+          target="_blank"
+        >
+          packages/mobile/icons/FiatIcon.tsx
+        </a>
+      </p>
+      <p>
+        <p>FiatIcon has been replaced with Icon</p>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
+
+<TOCUpdater toc={[{ value: 'Components', id: 'components', level: 2 }]} />

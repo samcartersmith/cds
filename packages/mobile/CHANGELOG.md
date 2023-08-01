@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.2.4 (8/1/2023 PST)
+
+#### 🐞 Fixes
+
+- Added FiatIcon to deprecation list for Q42023. [[#2130](https://github.cbhq.net/frontend/cds/pull/2130)] [[DX-694](https://jira.coinbase-corp.com/browse/DX-694)]
+
 ## 5.2.3 (8/1/2023 PST)
 
 #### 🐞 Fixes

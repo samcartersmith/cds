@@ -18,6 +18,7 @@ type FiatIconProps = {
   size?: Exclude<IconSize, 'xs'>;
 } & SharedProps;
 
+/** @deprecated this component will be removed from CDS at the end of Q42023. Please use Icon & bordered prop instead */
 export const FiatIcon: FunctionComponent<React.PropsWithChildren<FiatIconProps>> = ({
   currencyCode,
   size = 'l',

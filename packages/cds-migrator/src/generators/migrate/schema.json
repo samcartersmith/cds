@@ -12,7 +12,8 @@
       "enum": [
         "4.0.0",
         "5.0.0",
-        "package-decomp"
+        "package-decomp",
+        "q42023-deprecations"
       ],
       "description": "Version to migrate to",
       "$default": {

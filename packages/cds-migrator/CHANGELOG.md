@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.8 (8/1/2023 PST)
+
+#### 🚀 Updates
+
+- Added Q42023 Setup & migration script for FiatIcon cmpt deprecation. [[#2130](https://github.cbhq.net/frontend/cds/pull/2130)] [[DX-694](https://jira.coinbase-corp.com/browse/DX-694)]
+
 ## 0.1.7 (7/28/2023 PST)
 
 #### 🐞 Fixes
