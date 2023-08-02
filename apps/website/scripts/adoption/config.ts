@@ -257,7 +257,7 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        root: path.join(tempDir, retailWebGit, 'identity'),
+        root: path.join(tempDir, retailWebGit, 'onboarding'),
         github: retailWebGit,
         id: 'retail-web-identity',
         label: 'Retail Onboarding',
