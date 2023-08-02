@@ -38,4 +38,9 @@ export const buttonStories: Omit<ButtonBaseProps, 'children'>[] = [
   { startIcon: 'backArrow', endIcon: 'forwardArrow', block: true },
   { transparent: true, flush: 'start', compact: true, endIcon: 'forwardArrow' },
   { transparent: true, flush: 'end', compact: true, endIcon: 'forwardArrow' },
+  { flush: 'start', endIcon: 'forwardArrow' },
+  { flush: 'end', endIcon: 'forwardArrow' },
+  { startIcon: 'backArrow', endIcon: 'forwardArrow', compact: true },
+  { startIcon: 'backArrow', compact: true },
+  { endIcon: 'forwardArrow', compact: true },
 ];

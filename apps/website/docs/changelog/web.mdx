@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.3.0 ((7/31/2023, 03:36 PM PST))
+
+This is an artificial version bump with no new change.
+
+#### 📘 Misc
+
+- Added additional Frontier button stories. [[#2126](https://github.cbhq.net/frontend/cds/pull/2126)] [[DX-1910](https://jira.coinbase-corp.com/browse/DX-1910)]
+
 ## 5.2.4 ((8/1/2023, 11:30 AM PST))
 
 This is an artificial version bump with no new change.

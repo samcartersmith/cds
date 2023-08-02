@@ -3,7 +3,6 @@ import type { ButtonBaseProps } from '../types';
 import { memoize } from './memoize';
 
 const defaultSpacing = 4;
-const iconSpacing = 3;
 const flushSpacing = 2;
 
 export type GetButtonSpacingParams = {
@@ -22,8 +21,7 @@ const getCacheKey = ({ compact, flush, startIcon, endIcon }: GetButtonSpacingPar
 
 /** TODO: pull into common once web alpha Button is ready */
 export const getButtonSpacingProps = memoize(function getButtonSpacingProps({
-  startIcon,
-  endIcon,
+  compact,
   flush,
 }: GetButtonSpacingParams) {
   if (flush) {
@@ -34,8 +32,8 @@ export const getButtonSpacingProps = memoize(function getButtonSpacingProps({
     } as const;
   }
   return {
-    spacingStart: startIcon ? iconSpacing : defaultSpacing,
-    spacingEnd: endIcon ? iconSpacing : defaultSpacing,
+    spacingStart: compact ? flushSpacing : defaultSpacing,
+    spacingEnd: compact ? flushSpacing : defaultSpacing,
   } as const;
 },
 getCacheKey);

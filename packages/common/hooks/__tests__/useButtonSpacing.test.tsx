@@ -47,23 +47,11 @@ describe('useButtonSpacing', () => {
     ).result.current;
   }
 
-  it('there is no change for compact: true or compact:false for frontier', () => {
+  it('there is expected change for compact: true or compact:false for frontier', () => {
     const compactValue = createFrontierHook({ compact: true });
-    expect(compactValue).toEqual({ start: 4, end: 4 });
+    expect(compactValue).toEqual({ start: 2, end: 2 });
     const defaultValue = createFrontierHook({ compact: false });
     expect(defaultValue).toEqual({ start: 4, end: 4 });
-  });
-
-  it('decreases spacing if startIcon and/or endIcon is present', () => {
-    const withStartIcon = createFrontierHook({ startIcon: 'shield' });
-    expect(withStartIcon).toEqual({ start: 3, end: 4 });
-    const withEndIcon = createFrontierHook({ endIcon: 'shield' });
-    expect(withEndIcon).toEqual({ start: 4, end: 3 });
-    const withStartAndEndIcon = createFrontierHook({
-      startIcon: 'smartContract',
-      endIcon: 'shield',
-    });
-    expect(withStartAndEndIcon).toEqual({ start: 3, end: 3 });
   });
 
   it('returns correct size if flush for frontier', () => {

@@ -3,7 +3,6 @@ import { ButtonBaseProps, IconName, InternalSpacingProps } from '../types';
 import { memoize } from './memoize';
 
 const defaultSpacing = 4;
-const iconSpacing = 3;
 const flushSpacing = 2;
 
 export type GetButtonSpacingParams = {
@@ -31,18 +30,15 @@ const getCacheKey = ({
 /** @deprecated Please use getButtonSpacingProps moving forward */
 export const getButtonSpacing = memoize(function getButtonSpacing({
   compact,
-  startIcon,
-  endIcon,
   flush,
   hasFrontier,
 }: GetButtonSpacingParams): InternalSpacingProps {
+  // Frontier Web Button styles are pulled from here
   if (hasFrontier) {
     const spacing: InternalSpacingProps = {
-      start: flush ? flushSpacing : defaultSpacing,
-      end: flush ? flushSpacing : defaultSpacing,
+      start: flush || compact ? flushSpacing : defaultSpacing,
+      end: flush || compact ? flushSpacing : defaultSpacing,
     };
-    if (!flush && startIcon) spacing.start = iconSpacing;
-    if (!flush && endIcon) spacing.end = iconSpacing;
     return spacing;
   }
 
