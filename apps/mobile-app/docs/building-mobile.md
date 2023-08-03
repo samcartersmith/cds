@@ -71,3 +71,15 @@ Create a new config in [project.json](./../project.json) `targets.build.configur
 Pass ENVs to configure your build. See [setEnvVars](../scripts/utils/setEnvVars.mjs) for options and [project.json](./../project.json) for examples.
 
 [Here is the reference guide on app configurations from Expo](https://docs.expo.dev/versions/latest/config/app/).
+
+### Run on real device
+
+With [Expo Go](https://docs.expo.dev/get-started/expo-go/), you can easily run the app on a real physical device by following these steps:
+
+**NOTE:** For security reasons, please make sure your device has Coinbase Security Profile installed before proceeding.
+
+1. Download [Expo Go](https://expo.dev/client) to your device.
+2. Run `yarn workspace mobile-app expo start` to start the development server. This will output a QR code in your terminal.
+3. Make sure your device and metro are connected to the same network. You might also need to disconnect VPN.
+4. On your device, scan the QR code generated in step2. It will redirect you to Expo Go and install the debug app.
+5. The app will now reload whenever you save changes in your code.

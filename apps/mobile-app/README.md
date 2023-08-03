@@ -44,6 +44,8 @@ See more info about mobile builds [here](./docs/building-mobile.md).
 
 2. Install app in your simulator with `launch` configuration.
 
+If you want to test on real device, checkout [this](./docs/building-mobile.md#run-on-real-device) guide.
+
 **Note: You can skip this if you've already launched the build in your [prebuilds](./prebuilds/) in your simulator.**
 
 | Platform | Profile - engine type | Command                                         |
