@@ -8,6 +8,7 @@ import { TextInput } from '../TextInput';
 
 export const {
   Basic,
+  AccessibleInputIcon,
   DefaultsToForeground,
   SetColorAndInheritFocusStyle,
   BasicEnd,
@@ -23,6 +24,10 @@ const InputIconScreen = () => {
     <ExampleScreen>
       <Example title="InputIcon changes color with focus state">
         <Basic />
+      </Example>
+
+      <Example title="Accessible Label Equivalent for Icon">
+        <AccessibleInputIcon />
       </Example>
 
       <Example title="InputIcon defaults to foreground if no color is passed in">

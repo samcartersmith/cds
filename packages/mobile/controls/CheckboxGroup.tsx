@@ -51,7 +51,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   // TODO (hannah): Update default styles once Caroline has the design ready. (Add default distance between
   // checkboxes.)
   return (
-    <View ref={ref} accessible accessibilityRole="combobox" testID={testID} {...restProps}>
+    <View ref={ref} accessibilityRole="combobox" testID={testID} {...restProps}>
       {label}
       {optionCheckboxes}
     </View>

@@ -18,27 +18,25 @@ export type InputIconProps = {
   SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
-export const InputIcon = memo(
-  ({
-    disableInheritFocusStyle = false,
-    testID,
-    color = 'foreground',
-    compact,
-    accessibilityLabel,
-    accessibilityHint,
-    ...props
-  }: InputIconProps) => {
-    const variant = useContext(TextInputFocusVariantContext) ?? color;
+export const InputIcon = memo(function InputIcon({
+  disableInheritFocusStyle = false,
+  testID,
+  color = 'foreground',
+  compact,
+  accessibilityLabel,
+  accessibilityHint,
+  ...props
+}: InputIconProps) {
+  const variant = useContext(TextInputFocusVariantContext) ?? color;
 
-    return (
-      <Box
-        accessibilityLabel={accessibilityLabel ?? props.name}
-        accessibilityHint={accessibilityHint ?? props.name}
-        spacingHorizontal={compact ? 1 : 2}
-        testID={testID}
-      >
-        <Icon color={disableInheritFocusStyle ? color : variant} size="s" {...props} />
-      </Box>
-    );
-  },
-);
+  return (
+    <Box
+      accessibilityLabel={accessibilityLabel ?? props.name}
+      accessibilityHint={accessibilityHint ?? props.name}
+      spacingHorizontal={compact ? 1 : 2}
+      testID={testID}
+    >
+      <Icon color={disableInheritFocusStyle ? color : variant} size="s" {...props} />
+    </Box>
+  );
+});

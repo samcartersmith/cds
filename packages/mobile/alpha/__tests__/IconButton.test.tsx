@@ -1,5 +1,3 @@
-/* eslint-disable react-native-a11y/has-accessibility-hint */
-
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { debounce } from '../../utils/debounce';

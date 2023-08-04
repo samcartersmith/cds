@@ -1,7 +1,16 @@
-import React, { ForwardedRef, forwardRef, memo, useCallback, useEffect, useMemo } from 'react';
+import React, {
+  ForwardedRef,
+  forwardRef,
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common/animation/select';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
+import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import {
@@ -11,6 +20,7 @@ import {
 import { SelectBaseProps } from '@cbhq/cds-common/types';
 
 import { useRotateAnimation } from '../animation/useRotateAnimation';
+import { useA11y } from '../hooks/useA11y';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { HStack } from '../layout/HStack';
 import { TextBody } from '../typography/TextBody';
@@ -51,9 +61,11 @@ export const Select = memo(
       const [isSelectTrayOpen, toggleSelectTray] = useToggler(false);
       const focusedVariant = useInputVariant(!!isSelectTrayOpen, variant);
       const sanitizedValue = defaultValue === '' ? undefined : defaultValue;
+      const internalRef = useRef(null);
+      const refs = useMergedRef(ref, internalRef);
       const context = useSelect({ value: sanitizedValue, onChange });
       const { value } = context;
-
+      const { setA11yFocus, announceForA11y } = useA11y();
       const getSpacingStart = compact ? 1 : 2;
       const minHeight = useScaleConditional(
         compact ? selectTriggerCompactMinHeight : selectTriggerMinHeight,
@@ -67,15 +79,34 @@ export const Select = memo(
 
       const labelTextColor = 'foreground';
 
+      const handleA11y = useCallback(() => {
+        // bring a11y focus back to the trigger
+        setA11yFocus(internalRef);
+        // announce select value to screen reader
+        announceForA11y(`${value} selected`);
+      }, [value, announceForA11y, setA11yFocus]);
+
       useEffect(() => {
         if (children) {
           rotateAnimation.flattenOffset();
           animateRotateIn.start();
           return;
         }
-        animateRotateOut.start();
+        animateRotateOut.start(({ finished }) => {
+          if (finished) {
+            // This needs to execute after exit animation to avoid interrupting announcement.
+            handleA11y();
+          }
+        });
         toggleSelectTray.toggleOff();
-      }, [animateRotateIn, animateRotateOut, children, rotateAnimation, toggleSelectTray]);
+      }, [
+        animateRotateIn,
+        animateRotateOut,
+        children,
+        rotateAnimation,
+        toggleSelectTray,
+        handleA11y,
+      ]);
 
       const handleOnSubjectPress = useCallback(() => {
         onPress?.();
@@ -84,6 +115,9 @@ export const Select = memo(
 
       const accessibilityState = useMemo(() => ({ disabled: !!disabled }), [disabled]);
 
+      const defaultAccessibilityLabel =
+        (label ?? ',') + (value ?? placeholder ?? ',') + (helperText ?? '');
+
       return (
         <TextInputFocusVariantContext.Provider value={focusedVariant}>
           <SelectProvider value={context}>
@@ -91,11 +125,11 @@ export const Select = memo(
               accessibilityRole="menu"
               onPress={handleOnSubjectPress}
               testID={testID}
-              accessibilityLabel={accessibilityLabel ?? label ?? placeholder}
-              accessibilityHint={accessibilityHint ?? label ?? placeholder}
+              accessibilityLabel={accessibilityLabel ?? defaultAccessibilityLabel}
+              accessibilityHint={accessibilityHint}
               disabled={disabled}
               accessibilityState={accessibilityState}
-              ref={ref}
+              ref={refs}
             >
               <InputStack
                 width={width}

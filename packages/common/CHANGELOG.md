@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.3.1 (8/3/2023 PST)
+
+#### 🐞 Fixes
+
+- Add accessible InputIcon story. [[#2132](https://github.cbhq.net/frontend/cds/pull/2132)]
+
 ## 5.3.0 (7/31/2023 PST)
 
 #### 🚀 Updates

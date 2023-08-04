@@ -23,7 +23,6 @@ export const ModalFooter = ({
 
   return (
     <Box spacingHorizontal={3} spacingVertical={2} testID={testID} borderedTop={!hideDividers}>
-      {/* eslint-disable-next-line react-native-a11y/has-accessibility-hint */}
       <ButtonGroup accessibilityLabel="Group" block={!vertical} vertical={vertical}>
         {actions.map((action, i) => (
           // actions are stable so should be fine to use index as key

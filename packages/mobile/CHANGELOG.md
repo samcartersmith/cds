@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.3.1 (8/3/2023 PST)
+
+#### 🐞 Fixes
+
+- [Select] Announce all text including label, placeholder, value and helper text. [[#2132](https://github.cbhq.net/frontend/cds/pull/2132)]
+- [Select] Announce selected item. [[#2132](https://github.cbhq.net/frontend/cds/pull/2132)]
+- [InputIcon] Fix InputIcon focus. [[#2132](https://github.cbhq.net/frontend/cds/pull/2132)]
+- [Toast] Announce toast copy and action label. [[#2132](https://github.cbhq.net/frontend/cds/pull/2132)]
+- [CheckboxGroup] Select checkbox item individually. [[#2132](https://github.cbhq.net/frontend/cds/pull/2132)]
+
 ## 5.3.0 ((7/31/2023, 03:37 PM PST))
 
 This is an artificial version bump with no new change.

@@ -10,6 +10,7 @@ import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { Button } from '../buttons';
+import { useA11y } from '../hooks/useA11y';
 import { useSpacingScale } from '../hooks/useSpacingScale';
 import { Box, HStack } from '../layout';
 import { ColorSurge } from '../motion/ColorSurge';
@@ -32,13 +33,23 @@ export type ToastProps = ToastBaseProps;
 
 export const Toast = memo(
   forwardRef<ToastRefBaseProps, ToastProps>(
-    ({ text, action, onWillHide, onDidHide, bottomOffset, variant, ...rest }, ref) => {
+    (
+      { text, action, onWillHide, onDidHide, bottomOffset, variant, accessibilityLabel, ...rest },
+      ref,
+    ) => {
       const [{ opacity, bottom }, animateIn, animateOut] = useToastAnimation();
       const spacing = useSpacingScale();
+      const { announceForA11y } = useA11y();
+      const defaultA11yLabel = text + (action ? action.label : '');
 
       useEffect(() => {
-        animateIn.start();
-      }, [animateIn]);
+        animateIn.start(({ finished }) => {
+          if (finished) {
+            // announce toast copy and action label to screen reader
+            announceForA11y(accessibilityLabel ?? defaultA11yLabel);
+          }
+        });
+      }, [animateIn, text, action, accessibilityLabel, defaultA11yLabel, announceForA11y]);
 
       const handleClose: ToastHandleClose = useCallback(async () => {
         onWillHide?.();
@@ -87,6 +98,7 @@ export const Toast = memo(
               }}
               // A11y props
               {...rest}
+              accessibilityRole="alert"
             >
               <HStack
                 animated

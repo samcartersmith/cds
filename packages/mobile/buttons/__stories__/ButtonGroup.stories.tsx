@@ -1,4 +1,3 @@
-/* eslint-disable react-native-a11y/has-accessibility-hint */
 import React from 'react';
 import { GestureResponderEvent } from 'react-native';
 

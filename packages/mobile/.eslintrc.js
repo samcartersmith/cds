@@ -24,6 +24,7 @@ module.exports = {
             patterns: ['@cbhq/cds-mobile/*'],
           },
         ],
+        'react-native-a11y/has-accessibility-hint': 0,
       },
     },
     {

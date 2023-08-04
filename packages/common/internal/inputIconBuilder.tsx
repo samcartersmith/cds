@@ -16,6 +16,7 @@ export function inputIconBuilder(
         disableInheritFocusStyle?: boolean;
         name: IconName;
         color?: PaletteForeground;
+        accessibilityLabel?: string;
       } & Omit<IconBaseProps, 'name' | 'size'>
     >
   >,
@@ -35,6 +36,15 @@ export function inputIconBuilder(
           />
         ))}
       </>
+    );
+  };
+
+  const AccessibleInputIcon = () => {
+    return (
+      <TextInput
+        label="Add"
+        start={<InputIcon name="add" accessibilityLabel="Search add an item" />}
+      />
     );
   };
 
@@ -87,6 +97,7 @@ export function inputIconBuilder(
 
   return {
     Basic,
+    AccessibleInputIcon,
     DefaultsToForeground,
     SetColorAndInheritFocusStyle,
     BasicEnd,
