@@ -1,5 +1,6 @@
 secure:
   required_reviews: 1
+  codeowners_enabled: true
   branches:
     - master
 build:
