@@ -17,9 +17,6 @@
     },
     "start": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-        "^build"
-      ],
       "options": {
         "cwd": "apps/website",
         "commands": [

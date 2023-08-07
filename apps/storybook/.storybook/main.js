@@ -89,7 +89,16 @@ const config = {
         }
       }
     });
-
+    config.resolve = config.resolve || {};
+    /**
+     * Compiler paths are not respected by storybook. So if any module alias is not working
+     * you need to module alias here.
+     **/
+    config.resolve.alias = {
+      ...config.resolve?.alias,
+      '@cbhq/cds-illustrations': path.resolve(__dirname, '../../../packages/illustrations/src'),
+      '@cbhq/cds-icons': path.resolve(__dirname, '../../../packages/icons/src'),
+    };
     return config;
   },
 };

@@ -47,18 +47,12 @@
       ]
     },
     "start": {
-      "dependsOn": [
-        "^build"
-      ],
       "inputs": [
         "production",
         "^production"
       ]
     },
     "lint": {
-      "dependsOn": [
-        "^build"
-      ],
       "inputs": [
         "default",
         "^production",
@@ -78,9 +72,6 @@
       ]
     },
     "typecheck": {
-      "dependsOn": [
-        "^build"
-      ],
       "inputs": [
         "default",
         "^production"

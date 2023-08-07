@@ -55,9 +55,6 @@
     },
     "start": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-        "^build"
-      ],
       "options": {
         "cwd": "apps/mobile-app",
         "command": "node ./scripts/start.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"

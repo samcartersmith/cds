@@ -3,6 +3,10 @@
   "compilerOptions": {
     "outDir": "../../.nx/dts/apps/storybook",
     "rootDir": "./"
+    /** 
+     * Compiler paths are not respected by storybook. So if any module alias is not working
+     * you need to add it to `config.resolve.alias` in main.js.
+     **/
   },
   "references": [
     {

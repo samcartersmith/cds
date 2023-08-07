@@ -2,7 +2,13 @@
 import './polyfills';
 import 'focus-visible';
 import '@cbhq/cds-fonts/fonts.css';
-import '@cbhq/cds-icons/fonts/web/icon-font.css';
+/**
+ * Cannot module alias here because all module alias points to `src` folder
+ * but the following file is outside the src folder. Alternative is to run
+ * build before storybook, but storybook needs to run on source file and not
+ * built artifacts.
+ */
+import '../../../packages/icons/fonts/web/icon-font.css';
 import { globalStyles } from '@cbhq/cds-web/styles/global';
 import { withPerformance } from 'storybook-addon-performance';
 import { StoryContainer } from '@cbhq/cds-web/storybook-decorators/StoryContainer';
