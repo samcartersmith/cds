@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Add "metroSrc" field to package.json. This field points to the source code and is used by the CDS mobile-app for local development. [[#2141](https://github.cbhq.net/frontend/cds/pull/2141)]
+
+#### 📘 Misc
+
 - **[Patterns]** Add Disclosure stories. [[#2116](https://github.cbhq.net/frontend/cds/pull/2116)]
 
 ## 1.0.3 (6/28/2023 PST)

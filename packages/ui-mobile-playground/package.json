@@ -31,6 +31,7 @@
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
   "routes": "./lib/routes.js",
+  "metroSrc": "./src/index.ts",
   "exports": {
     "./package.json": "./package.json",
     "./*": {

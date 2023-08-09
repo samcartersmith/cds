@@ -11,6 +11,15 @@
         "{projectRoot}/lib"
       ]
     },
+    "mobile-build": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "command": "echo 'Building icons for mobile'"
+      }
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },

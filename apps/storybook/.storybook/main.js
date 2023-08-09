@@ -96,8 +96,8 @@ const config = {
      **/
     config.resolve.alias = {
       ...config.resolve?.alias,
-      '@cbhq/cds-illustrations': path.resolve(__dirname, '../../../packages/illustrations/src'),
       '@cbhq/cds-icons': path.resolve(__dirname, '../../../packages/icons/src'),
+      '@cbhq/cds-illustrations': path.resolve(__dirname, '../../../packages/illustrations/src'),
     };
     return config;
   },

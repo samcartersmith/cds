@@ -9,10 +9,16 @@
         "{projectRoot}/assets",
         "{projectRoot}/lib"
       ],
-      "dependsOn": [
-        "^build"
-      ],
       "executor": "@cbhq/mono-tasks:build-package"
+    },
+    "mobile-build": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "command": "echo 'Building illustrations for mobile'"
+      }
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
