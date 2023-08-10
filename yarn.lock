@@ -20207,14 +20207,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-splash-screen@npm:~0.20.4":
-  version: 0.20.4
-  resolution: "expo-splash-screen@npm:0.20.4::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexpo-splash-screen%2F-%2Fexpo-splash-screen-0.20.4.tgz"
+"expo-splash-screen@npm:~0.20.5":
+  version: 0.20.5
+  resolution: "expo-splash-screen@npm:0.20.5::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexpo-splash-screen%2F-%2Fexpo-splash-screen-0.20.5.tgz"
   dependencies:
     "@expo/prebuild-config": 6.2.6
   peerDependencies:
     expo: "*"
-  checksum: cbdeffd4493d715b7625fba060e70d647358d5cfea3120d6b8d52df5e721bc65f65d80987f9327ef61ac3f0f3cfe53935af11e009be74d1cc1dcf124822eece5
+  checksum: c4b0db3d0e8ab755a9f4afb1f20824229fa84ea2410528e4316a62e676e08f990157c9edd4af0978f79183d6b47cf3d4843b86f76c084274a40e07adfd697889
   languageName: node
   linkType: hard
 
@@ -28557,7 +28557,7 @@ __metadata:
     expo-font: ~11.4.0
     expo-gradle-ext-vars: ^0.1.1
     expo-linking: ~5.0.2
-    expo-splash-screen: ~0.20.4
+    expo-splash-screen: ~0.20.5
     expo-status-bar: ~1.6.0
     expo-system-ui: ~2.4.0
     intl: ^1.2.5

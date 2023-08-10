@@ -13,7 +13,7 @@ brew install fastlane
 npm install -g eas-cli@<insert version>
 ```
 
-1. Add EXPO_TOKEN added to your root .env.local
+2. Add EXPO_TOKEN to `mobile-app/.env.local`
 
 ```shell
 EXPO_TOKEN=<get token from UI Systems 1Password>
