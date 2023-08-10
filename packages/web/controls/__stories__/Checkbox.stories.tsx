@@ -67,6 +67,10 @@ export const DisabledUnselected = () => (
 
 export const ReadOnlyUnselected = () => <Checkbox readOnly>Read-only unselected</Checkbox>;
 ReadOnlyUnselected.parameters = {
+  /**
+   * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
+   * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+   */
   a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
 };
 
@@ -76,6 +80,10 @@ export const ReadOnlySelected = () => (
   </Checkbox>
 );
 ReadOnlySelected.parameters = {
+  /**
+   * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
+   * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+   */
   a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
 };
 

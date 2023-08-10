@@ -125,11 +125,3 @@ export const Story: ComponentStoryObj<typeof MockTabNavigation> = {
     }
   },
 };
-
-Story.parameters = {
-  a11y: {
-    config: {
-      rules: [{ id: 'aria-required-children', enabled: false }],
-    },
-  },
-};

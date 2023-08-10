@@ -30,6 +30,7 @@ jest.mock('react-native', () => {
   RN.Animated.loop = jest.fn(() => {
     return {
       start: jest.fn(),
+      stop: jest.fn(),
     };
   });
 

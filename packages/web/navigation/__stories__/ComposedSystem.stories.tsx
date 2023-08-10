@@ -11,12 +11,6 @@ export default {
   title: 'Core Components/Navigation/System',
 };
 
-const a11ySkipConfig = {
-  config: {
-    rules: [{ id: 'aria-required-children', enabled: false }],
-  },
-};
-
 const FullSystemExample: Story = () => {
   return (
     <VStack alignItems="flex-start">
@@ -25,10 +19,6 @@ const FullSystemExample: Story = () => {
       <ComposedSystem />
     </VStack>
   );
-};
-
-FullSystemExample.parameters = {
-  a11y: a11ySkipConfig,
 };
 
 export { FullSystemExample };

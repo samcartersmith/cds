@@ -104,7 +104,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       id: inputId,
       'aria-labelledby': labelId,
       'aria-checked': checked,
-      'aria-readonly': readOnly,
       'aria-required': type !== 'checkbox' ? required : undefined,
       'data-testid': testID,
       ...htmlProps,

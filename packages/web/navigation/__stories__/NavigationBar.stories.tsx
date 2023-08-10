@@ -14,11 +14,12 @@ export default {
 
 const a11ySkipConfig = {
   config: {
-    /** The NavigationBar docs explain the proper way to setup the tabpanel */
-    rules: [
-      { id: 'aria-valid-attr-value', enabled: false },
-      { id: 'aria-required-children', enabled: false },
-    ],
+    /**
+     * The TabNavigation docs explain the proper way to setup the tabpanel.
+     * Disabled because CDS TabNavigation doesn't have associated panels.
+     * @link https://cds.cbhq.net/components/tab-navigation#accessibility
+     * */
+    rules: [{ id: 'aria-valid-attr-value', enabled: false }],
   },
 };
 

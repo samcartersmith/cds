@@ -93,24 +93,6 @@ export const Group = () => {
   );
 };
 
-const a11yDisabled = {
-  a11y: {
-    config: {
-      rules: [
-        // TODO: In Control.tsx we need to remove default value for readOnly and spread in that prop only if prop is present -->
-        { id: 'aria-allowed-attr', enabled: false },
-      ],
-    },
-  },
-};
-
-Normal.parameters = a11yDisabled;
-Dense.parameters = a11yDisabled;
-DisabledUnselected.parameters = a11yDisabled;
-DisabledSelected.parameters = a11yDisabled;
-MultiLineLabels.parameters = a11yDisabled;
-Group.parameters = a11yDisabled;
-
 export default {
   title: 'Core Components/RadioGroup',
   component: RadioGroup,

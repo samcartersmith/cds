@@ -22,8 +22,9 @@ import { tabsPaddleWidth } from '@cbhq/cds-common/tokens/tabs';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { noop } from '@cbhq/cds-utils';
 
+import { HStack } from '../alpha/HStack';
+import { VStack } from '../alpha/VStack';
 import { useDimensions } from '../hooks/useDimensions';
-import { HStack, VStack } from '../layout';
 import { insetFocusRing } from '../styles/focus';
 import { PressableOpacity, PressableOpacityProps } from '../system/PressableOpacity';
 import { ThemeProvider } from '../system/ThemeProvider';

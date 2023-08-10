@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Remediate a11y disable rules. [[#2142](https://github.cbhq.net/frontend/cds/pull/2142)] [[DX-1760](https://jira.coinbase-corp.com/browse/DX-1760)]
+
+#### 📘 Misc
+
 - Convert navigation stories to tsx. [[#2095](https://github.cbhq.net/frontend/cds/pull/2095)]
 
 ## 0.0.3 (4/26/2023 PST)

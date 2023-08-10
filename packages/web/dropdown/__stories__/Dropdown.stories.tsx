@@ -56,7 +56,7 @@ export const Default = ({
 
   const content = (
     <>
-      <HStack spacingHorizontal={2} spacingVertical={2}>
+      <HStack spacingHorizontal={2} spacingVertical={2} role="separator">
         <TextCaption as="h2" color="foregroundMuted">
           Section Heading
         </TextCaption>

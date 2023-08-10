@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.3.2 (8/8/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix a11y: Remove unnecessary aria-readonly in Control and Replace with alpha Stacks in TabNavigation. [[#2142](https://github.cbhq.net/frontend/cds/pull/2142)] [[DX-1760](https://jira.coinbase-corp.com/browse/DX-1760)]
+
 ## 5.3.1 ((8/3/2023, 10:04 AM PST))
 
 This is an artificial version bump with no new change.

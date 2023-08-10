@@ -14,16 +14,16 @@ import { TabNavigation } from '../TabNavigation';
 
 import { MockTabPanel } from './MockTabPanel';
 
-const skipRequiredChildren = { id: 'aria-required-children', enabled: false };
-
 const a11ySkipConfig = {
   config: {
-    /** The TabNavigation docs explain the proper way to setup the tabpanel, and
-     *  this is handled in the Accessibility and TabNavigationInteractive stories */
+    /**
+     * The TabNavigation docs explain the proper way to setup the tabpanel.
+     * Disabled because CDS TabNavigation doesn't have associated panels.
+     * @link https://cds.cbhq.net/components/tab-navigation#accessibility
+     * */
     rules: [
       { id: 'aria-valid-attr-value', enabled: false },
       { id: 'duplicate-id-active', enabled: false },
-      skipRequiredChildren,
     ],
   },
 };
@@ -291,12 +291,4 @@ export const AccessibilityTest: Story = () => {
       </MockTabPanel>
     </VStack>
   );
-};
-AccessibilityTest.parameters = {
-  percy: enableJavascript,
-  a11y: {
-    config: {
-      rules: [skipRequiredChildren],
-    },
-  },
 };
