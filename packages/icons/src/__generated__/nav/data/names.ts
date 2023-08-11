@@ -74,6 +74,16 @@ const names: NavIconName[] = [
   'rocketShip',
   'faucet',
   'derivatives',
+  'base',
+  'eventContracts',
+  'perpetualSwap',
+  'rollingSpot',
+  'folderArrow',
+  'folder',
+  'globe',
+  'regulatedFutures',
+  'options',
+  'compass',
 ];
 
 export default names;

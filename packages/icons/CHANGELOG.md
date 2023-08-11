@@ -8,6 +8,38 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.6.0 (8/10/2023 PST)
+
+#### 🚀 Updates
+
+- Publish icons 08/10/2023. [[#2149](https://github.cbhq.net/frontend/cds/pull/2149)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- base
+- compass
+- eventContracts
+- folder
+- folderArrow
+- globe
+- options
+- perpetualSwap
+- regulatedFutures
+- rollingSpot
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- cashUSD
+- close
+
 ## 1.5.1 (6/23/2023 PST)
 
 #### 🐞 Fixes

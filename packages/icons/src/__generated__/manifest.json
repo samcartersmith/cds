@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-06-21T16:03:32.477Z",
-  "metadata": { "lastUnicode": 61666 },
+  "lastUpdated": "2023-08-10T22:18:07.153Z",
+  "metadata": { "lastUnicode": 61726 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -113,7 +113,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60811 } }
       ],
       "createdAt": "2022-08-24T18:51:39.397Z",
-      "lastUpdated": "2023-04-06T10:18:42.122Z",
+      "lastUpdated": "2023-07-18T17:34:22.503Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-support-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-support-12-inactive.svg",
@@ -185,7 +185,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60691 } }
       ],
       "createdAt": "2022-08-24T18:51:39.658Z",
-      "lastUpdated": "2023-04-17T14:43:52.473Z",
+      "lastUpdated": "2023-07-17T19:19:23.316Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-settings-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-settings-12-inactive.svg",
@@ -233,7 +233,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60706 } }
       ],
       "createdAt": "2022-08-24T18:51:39.759Z",
-      "lastUpdated": "2023-02-07T14:44:36.605Z",
+      "lastUpdated": "2023-07-21T05:22:37.012Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-scanQrCode-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-scanQrCode-12-inactive.svg",
@@ -329,7 +329,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61121 } }
       ],
       "createdAt": "2022-08-24T18:51:39.248Z",
-      "lastUpdated": "2023-04-18T20:32:38.626Z",
+      "lastUpdated": "2023-07-17T19:19:08.541Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-peopleGroup-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-peopleGroup-12-inactive.svg",
@@ -425,7 +425,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61301 } }
       ],
       "createdAt": "2022-08-24T18:51:39.269Z",
-      "lastUpdated": "2023-02-07T14:44:36.324Z",
+      "lastUpdated": "2023-06-21T22:20:17.707Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-participate-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-participate-12-inactive.svg",
@@ -449,7 +449,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60561 } }
       ],
       "createdAt": "2022-08-24T18:51:39.674Z",
-      "lastUpdated": "2023-04-14T18:46:47.489Z",
+      "lastUpdated": "2023-07-13T20:47:21.078Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-newsfeed-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-newsfeed-12-inactive.svg",
@@ -737,7 +737,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60646 } }
       ],
       "createdAt": "2022-08-24T18:51:39.319Z",
-      "lastUpdated": "2023-04-14T18:33:26.666Z",
+      "lastUpdated": "2023-07-13T20:39:53.636Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gab-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gab-12-inactive.svg",
@@ -809,7 +809,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60766 } }
       ],
       "createdAt": "2022-08-24T18:51:39.425Z",
-      "lastUpdated": "2023-04-11T18:46:24.064Z",
+      "lastUpdated": "2023-07-24T16:03:27.060Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-earn-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-earn-12-inactive.svg",
@@ -833,7 +833,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61631 } }
       ],
       "createdAt": "2022-08-24T18:52:03.034Z",
-      "lastUpdated": "2023-02-07T14:44:49.941Z",
+      "lastUpdated": "2023-06-21T23:06:48.558Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-drops-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-drops-12-inactive.svg",
@@ -881,7 +881,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60801 } }
       ],
       "createdAt": "2022-08-24T18:51:39.521Z",
-      "lastUpdated": "2023-02-07T14:44:49.906Z",
+      "lastUpdated": "2023-06-23T14:46:28.868Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-directDeposit-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-directDeposit-12-inactive.svg",
@@ -953,7 +953,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60571 } }
       ],
       "createdAt": "2022-08-24T18:51:40.078Z",
-      "lastUpdated": "2023-04-14T18:41:25.626Z",
+      "lastUpdated": "2023-07-13T17:47:33.822Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-dashboard-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-dashboard-12-inactive.svg",
@@ -1001,7 +1001,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61196 } }
       ],
       "createdAt": "2022-08-24T18:51:39.563Z",
-      "lastUpdated": "2023-04-10T18:07:45.585Z",
+      "lastUpdated": "2023-07-18T17:52:55.948Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-comment-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-comment-12-inactive.svg",
@@ -1049,7 +1049,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61291 } }
       ],
       "createdAt": "2022-08-24T18:51:39.784Z",
-      "lastUpdated": "2023-05-04T22:44:27.417Z",
+      "lastUpdated": "2023-07-14T15:15:11.743Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-cloud-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-cloud-12-inactive.svg",
@@ -1073,7 +1073,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60536 } }
       ],
       "createdAt": "2022-08-24T18:51:39.575Z",
-      "lastUpdated": "2023-05-29T20:12:05.039Z",
+      "lastUpdated": "2023-07-13T20:34:38.246Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-chartPie-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-chartPie-12-inactive.svg",
@@ -1217,7 +1217,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60526 } }
       ],
       "createdAt": "2022-08-24T18:51:39.828Z",
-      "lastUpdated": "2023-04-25T19:55:38.552Z",
+      "lastUpdated": "2023-07-21T05:22:36.931Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-bell-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-bell-12-inactive.svg",
@@ -1289,7 +1289,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60886 } }
       ],
       "createdAt": "2022-08-24T18:51:39.187Z",
-      "lastUpdated": "2023-04-25T23:21:37.420Z",
+      "lastUpdated": "2023-07-14T15:14:57.154Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-appSwitcher-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-appSwitcher-12-inactive.svg",
@@ -1481,7 +1481,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60696 } }
       ],
       "createdAt": "2023-02-01T18:32:06.565Z",
-      "lastUpdated": "2023-05-25T23:45:38.956Z",
+      "lastUpdated": "2023-07-19T13:44:45.492Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-wallet-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-wallet-12-inactive.svg",
@@ -1502,7 +1502,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60081 } }
       ],
       "createdAt": "2023-02-01T23:25:49.773Z",
-      "lastUpdated": "2023-04-18T20:09:09.251Z",
+      "lastUpdated": "2023-07-13T02:46:42.313Z",
       "outputs": {
         "svg12": "./ui/svg/ui-add-12.svg",
         "svg16": "./ui/svg/ui-add-16.svg",
@@ -1592,7 +1592,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60091 } }
       ],
       "createdAt": "2023-02-01T23:25:02.061Z",
-      "lastUpdated": "2023-04-16T23:49:19.618Z",
+      "lastUpdated": "2023-07-18T17:46:07.245Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowDown-12.svg",
         "svg16": "./ui/svg/ui-arrowDown-16.svg",
@@ -1628,7 +1628,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59796 } }
       ],
       "createdAt": "2023-02-01T23:25:58.673Z",
-      "lastUpdated": "2023-02-07T14:44:23.538Z",
+      "lastUpdated": "2023-07-13T19:37:59.309Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowRight-12.svg",
         "svg16": "./ui/svg/ui-arrowRight-16.svg",
@@ -1646,7 +1646,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60096 } }
       ],
       "createdAt": "2023-02-01T23:25:58.834Z",
-      "lastUpdated": "2023-04-07T18:56:16.820Z",
+      "lastUpdated": "2023-07-18T17:46:00.113Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowUp-12.svg",
         "svg16": "./ui/svg/ui-arrowUp-16.svg",
@@ -1718,7 +1718,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60421 } }
       ],
       "createdAt": "2023-02-01T23:25:58.729Z",
-      "lastUpdated": "2023-04-18T15:56:46.900Z",
+      "lastUpdated": "2023-07-13T20:56:25.035Z",
       "outputs": {
         "svg12": "./ui/svg/ui-avatar-12.svg",
         "svg16": "./ui/svg/ui-avatar-16.svg",
@@ -1934,7 +1934,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59936 } }
       ],
       "createdAt": "2023-02-01T23:25:58.687Z",
-      "lastUpdated": "2023-04-13T14:57:27.410Z",
+      "lastUpdated": "2023-07-12T18:40:59.206Z",
       "outputs": {
         "svg12": "./ui/svg/ui-card-12.svg",
         "svg16": "./ui/svg/ui-card-16.svg",
@@ -1952,7 +1952,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60491 } }
       ],
       "createdAt": "2023-02-01T23:25:49.871Z",
-      "lastUpdated": "2023-04-14T18:17:22.293Z",
+      "lastUpdated": "2023-07-12T20:51:43.158Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretDown-12.svg",
         "svg16": "./ui/svg/ui-caretDown-16.svg",
@@ -1988,7 +1988,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60476 } }
       ],
       "createdAt": "2023-02-01T23:26:07.638Z",
-      "lastUpdated": "2023-04-26T22:57:55.973Z",
+      "lastUpdated": "2023-07-13T19:44:36.310Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretRight-12.svg",
         "svg16": "./ui/svg/ui-caretRight-16.svg",
@@ -2222,7 +2222,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61241 } }
       ],
       "createdAt": "2023-02-01T23:25:30.983Z",
-      "lastUpdated": "2023-02-07T14:44:49.790Z",
+      "lastUpdated": "2023-06-26T06:44:46.206Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashThaiBaht-12.svg",
         "svg16": "./ui/svg/ui-cashThaiBaht-16.svg",
@@ -2250,7 +2250,7 @@
     "513:3553": {
       "type": "ui",
       "name": "cashUSD",
-      "hash": "JnpbFtH8psVEpFzvil9xAz6IaUhiHAyryRho61iyJHc=",
+      "hash": "erT9LnD5WqumXy/n8fzRJmoRN6DlVsPiga6HmZXh8Us=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59753 } },
@@ -2258,7 +2258,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59751 } }
       ],
       "createdAt": "2023-02-01T23:25:40.760Z",
-      "lastUpdated": "2023-03-22T15:35:41.763Z",
+      "lastUpdated": "2023-08-10T14:36:54.795Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashUSD-12.svg",
         "svg16": "./ui/svg/ui-cashUSD-16.svg",
@@ -2510,7 +2510,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59776 } }
       ],
       "createdAt": "2023-02-01T23:25:49.686Z",
-      "lastUpdated": "2023-04-07T19:39:54.231Z",
+      "lastUpdated": "2023-07-12T00:21:28.824Z",
       "outputs": {
         "svg12": "./ui/svg/ui-checkmark-12.svg",
         "svg16": "./ui/svg/ui-checkmark-16.svg",
@@ -2628,7 +2628,7 @@
     "513:3784": {
       "type": "ui",
       "name": "close",
-      "hash": "Eecr0cewlzMp7seNJhnmqkLWSu8eA4IF2tI5VwArHJI=",
+      "hash": "lE4u9+svI9g8GQz9JnyoDhRGVQ1wGUin0QrY0TC8AaA=",
       "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60498 } },
@@ -2636,7 +2636,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60496 } }
       ],
       "createdAt": "2023-02-01T23:26:07.579Z",
-      "lastUpdated": "2023-04-18T22:17:30.938Z",
+      "lastUpdated": "2023-08-10T14:36:54.786Z",
       "outputs": {
         "svg12": "./ui/svg/ui-close-12.svg",
         "svg16": "./ui/svg/ui-close-16.svg",
@@ -2780,7 +2780,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60241 } }
       ],
       "createdAt": "2023-02-01T23:25:40.833Z",
-      "lastUpdated": "2023-05-18T15:59:59.816Z",
+      "lastUpdated": "2023-07-18T15:51:39.219Z",
       "outputs": {
         "svg12": "./ui/svg/ui-copy-12.svg",
         "svg16": "./ui/svg/ui-copy-16.svg",
@@ -2798,7 +2798,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60311 } }
       ],
       "createdAt": "2023-02-01T23:25:40.810Z",
-      "lastUpdated": "2023-02-07T14:43:56.117Z",
+      "lastUpdated": "2023-07-18T17:15:51.511Z",
       "outputs": {
         "svg12": "./ui/svg/ui-crossTrade-12.svg",
         "svg16": "./ui/svg/ui-crossTrade-16.svg",
@@ -2960,7 +2960,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61181 } }
       ],
       "createdAt": "2023-02-01T23:25:40.739Z",
-      "lastUpdated": "2023-04-06T01:02:13.901Z",
+      "lastUpdated": "2023-08-03T00:49:47.297Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diamondInactive-12.svg",
         "svg16": "./ui/svg/ui-diamondInactive-16.svg",
@@ -3086,7 +3086,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60461 } }
       ],
       "createdAt": "2023-02-01T23:25:40.718Z",
-      "lastUpdated": "2023-05-22T17:23:52.786Z",
+      "lastUpdated": "2023-07-21T05:22:36.738Z",
       "outputs": {
         "svg12": "./ui/svg/ui-downArrow-12.svg",
         "svg16": "./ui/svg/ui-downArrow-16.svg",
@@ -3140,7 +3140,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61176 } }
       ],
       "createdAt": "2023-02-01T23:26:07.616Z",
-      "lastUpdated": "2023-04-20T00:30:36.202Z",
+      "lastUpdated": "2023-07-25T22:45:54.000Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dropsActive-12.svg",
         "svg16": "./ui/svg/ui-dropsActive-16.svg",
@@ -3194,7 +3194,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60356 } }
       ],
       "createdAt": "2023-02-01T23:25:21.972Z",
-      "lastUpdated": "2023-02-07T14:43:33.607Z",
+      "lastUpdated": "2023-07-11T18:18:24.651Z",
       "outputs": {
         "svg12": "./ui/svg/ui-error-12.svg",
         "svg16": "./ui/svg/ui-error-16.svg",
@@ -3302,7 +3302,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60276 } }
       ],
       "createdAt": "2023-02-01T23:25:21.873Z",
-      "lastUpdated": "2023-05-16T22:35:30.873Z",
+      "lastUpdated": "2023-07-17T16:07:39.737Z",
       "outputs": {
         "svg12": "./ui/svg/ui-externalLink-12.svg",
         "svg16": "./ui/svg/ui-externalLink-16.svg",
@@ -3392,7 +3392,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60411 } }
       ],
       "createdAt": "2023-02-01T23:26:07.564Z",
-      "lastUpdated": "2023-02-07T14:44:49.917Z",
+      "lastUpdated": "2023-07-19T02:22:14.504Z",
       "outputs": {
         "svg12": "./ui/svg/ui-filter-12.svg",
         "svg16": "./ui/svg/ui-filter-16.svg",
@@ -3500,7 +3500,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60451 } }
       ],
       "createdAt": "2023-02-01T23:25:31.021Z",
-      "lastUpdated": "2023-04-19T16:58:58.003Z",
+      "lastUpdated": "2023-07-13T19:38:17.015Z",
       "outputs": {
         "svg12": "./ui/svg/ui-forwardArrow-12.svg",
         "svg16": "./ui/svg/ui-forwardArrow-16.svg",
@@ -3788,7 +3788,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59971 } }
       ],
       "createdAt": "2023-02-01T23:25:21.939Z",
-      "lastUpdated": "2023-02-07T14:43:33.499Z",
+      "lastUpdated": "2023-06-21T21:57:22.061Z",
       "outputs": {
         "svg12": "./ui/svg/ui-home-12.svg",
         "svg16": "./ui/svg/ui-home-16.svg",
@@ -3860,7 +3860,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60101 } }
       ],
       "createdAt": "2023-02-01T23:25:40.711Z",
-      "lastUpdated": "2023-04-25T06:59:16.816Z",
+      "lastUpdated": "2023-07-28T15:45:18.663Z",
       "outputs": {
         "svg12": "./ui/svg/ui-info-12.svg",
         "svg16": "./ui/svg/ui-info-16.svg",
@@ -4310,7 +4310,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59956 } }
       ],
       "createdAt": "2023-02-01T23:25:21.791Z",
-      "lastUpdated": "2023-02-07T14:43:33.526Z",
+      "lastUpdated": "2023-07-14T00:06:32.725Z",
       "outputs": {
         "svg12": "./ui/svg/ui-paperAirplane-12.svg",
         "svg16": "./ui/svg/ui-paperAirplane-16.svg",
@@ -4454,7 +4454,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60711 } }
       ],
       "createdAt": "2023-02-01T23:25:12.980Z",
-      "lastUpdated": "2023-02-07T14:43:33.343Z",
+      "lastUpdated": "2023-07-12T22:07:51.922Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pin-12.svg",
         "svg16": "./ui/svg/ui-pin-16.svg",
@@ -4490,7 +4490,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59981 } }
       ],
       "createdAt": "2023-02-01T23:25:40.840Z",
-      "lastUpdated": "2023-06-12T20:51:31.803Z",
+      "lastUpdated": "2023-07-13T20:56:33.236Z",
       "outputs": {
         "svg12": "./ui/svg/ui-profile-12.svg",
         "svg16": "./ui/svg/ui-profile-16.svg",
@@ -4544,7 +4544,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60741 } }
       ],
       "createdAt": "2023-02-01T23:25:49.722Z",
-      "lastUpdated": "2023-02-07T14:44:23.568Z",
+      "lastUpdated": "2023-07-13T16:39:06.941Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pyramid-12.svg",
         "svg16": "./ui/svg/ui-pyramid-16.svg",
@@ -4562,7 +4562,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59946 } }
       ],
       "createdAt": "2023-02-01T23:25:12.960Z",
-      "lastUpdated": "2023-06-12T20:49:17.572Z",
+      "lastUpdated": "2023-07-14T00:06:42.907Z",
       "outputs": {
         "svg12": "./ui/svg/ui-qrCode-12.svg",
         "svg16": "./ui/svg/ui-qrCode-16.svg",
@@ -4580,7 +4580,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60211 } }
       ],
       "createdAt": "2023-02-01T23:26:07.556Z",
-      "lastUpdated": "2023-04-24T21:27:52.153Z",
+      "lastUpdated": "2023-07-17T20:17:35.141Z",
       "outputs": {
         "svg12": "./ui/svg/ui-questionMark-12.svg",
         "svg16": "./ui/svg/ui-questionMark-16.svg",
@@ -4940,7 +4940,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59871 } }
       ],
       "createdAt": "2023-02-01T23:25:12.848Z",
-      "lastUpdated": "2023-02-07T14:43:19.133Z",
+      "lastUpdated": "2023-07-13T16:40:56.242Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sortUp-12.svg",
         "svg16": "./ui/svg/ui-sortUp-16.svg",
@@ -5066,7 +5066,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59961 } }
       ],
       "createdAt": "2023-02-01T23:25:12.807Z",
-      "lastUpdated": "2023-04-14T18:05:57.103Z",
+      "lastUpdated": "2023-07-13T17:28:12.722Z",
       "outputs": {
         "svg12": "./ui/svg/ui-starActive-12.svg",
         "svg16": "./ui/svg/ui-starActive-16.svg",
@@ -5156,7 +5156,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59806 } }
       ],
       "createdAt": "2023-02-01T23:25:12.784Z",
-      "lastUpdated": "2023-04-07T23:05:24.611Z",
+      "lastUpdated": "2023-07-19T02:58:45.902Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step2-12.svg",
         "svg16": "./ui/svg/ui-step2-16.svg",
@@ -5174,7 +5174,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59811 } }
       ],
       "createdAt": "2023-02-01T23:25:12.777Z",
-      "lastUpdated": "2023-04-07T23:05:26.513Z",
+      "lastUpdated": "2023-07-19T03:11:49.990Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step3-12.svg",
         "svg16": "./ui/svg/ui-step3-16.svg",
@@ -5516,7 +5516,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60781 } }
       ],
       "createdAt": "2023-02-01T23:25:02.322Z",
-      "lastUpdated": "2023-02-07T14:43:19.019Z",
+      "lastUpdated": "2023-07-17T20:17:24.873Z",
       "outputs": {
         "svg12": "./ui/svg/ui-unknown-12.svg",
         "svg16": "./ui/svg/ui-unknown-16.svg",
@@ -5552,7 +5552,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60456 } }
       ],
       "createdAt": "2023-02-01T23:26:07.548Z",
-      "lastUpdated": "2023-05-16T23:53:06.627Z",
+      "lastUpdated": "2023-07-13T16:41:12.820Z",
       "outputs": {
         "svg12": "./ui/svg/ui-upArrow-12.svg",
         "svg16": "./ui/svg/ui-upArrow-16.svg",
@@ -5660,7 +5660,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59906 } }
       ],
       "createdAt": "2023-02-01T23:25:02.268Z",
-      "lastUpdated": "2023-04-05T21:23:37.869Z",
+      "lastUpdated": "2023-07-28T19:55:02.230Z",
       "outputs": {
         "svg12": "./ui/svg/ui-wallet-12.svg",
         "svg16": "./ui/svg/ui-wallet-16.svg",
@@ -5912,7 +5912,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61516 } }
       ],
       "createdAt": "2023-02-01T23:25:02.178Z",
-      "lastUpdated": "2023-02-07T14:43:19.151Z",
+      "lastUpdated": "2023-06-30T19:53:05.872Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lightbulb-12.svg",
         "svg16": "./ui/svg/ui-lightbulb-16.svg",
@@ -5984,7 +5984,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61536 } }
       ],
       "createdAt": "2023-02-01T23:25:02.121Z",
-      "lastUpdated": "2023-02-07T14:43:19.142Z",
+      "lastUpdated": "2023-06-22T17:44:43.752Z",
       "outputs": {
         "svg12": "./ui/svg/ui-blog-12.svg",
         "svg16": "./ui/svg/ui-blog-16.svg",
@@ -6002,7 +6002,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61526 } }
       ],
       "createdAt": "2023-02-01T23:25:02.090Z",
-      "lastUpdated": "2023-02-07T14:43:19.371Z",
+      "lastUpdated": "2023-06-22T17:43:51.118Z",
       "outputs": {
         "svg12": "./ui/svg/ui-book-12.svg",
         "svg16": "./ui/svg/ui-book-16.svg",
@@ -6056,7 +6056,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61637 } }
       ],
       "createdAt": "2023-02-07T14:44:09.948Z",
-      "lastUpdated": "2023-06-14T15:02:03.826Z",
+      "lastUpdated": "2023-07-19T13:00:43.888Z",
       "outputs": {
         "svg12": "./ui/svg/ui-planetActive-12.svg",
         "svg16": "./ui/svg/ui-planetActive-16.svg",
@@ -6074,7 +6074,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61643 } }
       ],
       "createdAt": "2023-02-14T17:51:53.021Z",
-      "lastUpdated": "2023-04-19T18:17:59.067Z",
+      "lastUpdated": "2023-07-25T20:15:19.838Z",
       "outputs": {
         "svg12": "./ui/svg/ui-coinbaseOne-12.svg",
         "svg16": "./ui/svg/ui-coinbaseOne-16.svg",
@@ -6173,7 +6173,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61661 } }
       ],
       "createdAt": "2023-06-20T18:06:21.233Z",
-      "lastUpdated": "2023-06-20T18:06:21.233Z",
+      "lastUpdated": "2023-08-10T14:36:54.778Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-derivatives-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-derivatives-12-inactive.svg",
@@ -6181,6 +6181,246 @@
         "svg16Inactive": "./nav/svg/nav-derivatives-16-inactive.svg",
         "svg24Active": "./nav/svg/nav-derivatives-24-active.svg",
         "svg24Inactive": "./nav/svg/nav-derivatives-24-inactive.svg"
+      }
+    },
+    "1287:170": {
+      "type": "nav",
+      "name": "folder",
+      "hash": "e0gvosq6f1hxdbWErfsXWscleK3Ny8cGWzxGE9VTWqw=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61690 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61689 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61688 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61687 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61686 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61685 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.726Z",
+      "lastUpdated": "2023-08-10T14:36:54.726Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-folder-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-folder-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-folder-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-folder-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-folder-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-folder-24-inactive.svg"
+      }
+    },
+    "1287:181": {
+      "type": "nav",
+      "name": "folderArrow",
+      "hash": "9YkUx5rIH+pCH5jMP+5D280YqM2Yj5KEE2443XbbLxs=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61696 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61695 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61694 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61693 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61692 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61691 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.717Z",
+      "lastUpdated": "2023-08-10T14:36:54.717Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-folderArrow-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-folderArrow-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-folderArrow-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-folderArrow-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-folderArrow-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-folderArrow-24-inactive.svg"
+      }
+    },
+    "1287:190": {
+      "type": "nav",
+      "name": "regulatedFutures",
+      "hash": "2AcAQtbhgLW51Jhjqgw+Nma/hu6eW0YEDhzYjy80u+8=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61720 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61719 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61718 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61717 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61716 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61715 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.741Z",
+      "lastUpdated": "2023-08-10T14:36:54.741Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-regulatedFutures-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-regulatedFutures-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-regulatedFutures-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-regulatedFutures-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-regulatedFutures-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-regulatedFutures-24-inactive.svg"
+      }
+    },
+    "1287:197": {
+      "type": "nav",
+      "name": "rollingSpot",
+      "hash": "Y4ghkgy8c5ez2eRs2+fLoLdOdFerY7oCAY/wPGuNOcc=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61726 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61725 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61724 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61723 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61722 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61721 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.709Z",
+      "lastUpdated": "2023-08-10T14:36:54.709Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-rollingSpot-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-rollingSpot-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-rollingSpot-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-rollingSpot-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-rollingSpot-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-rollingSpot-24-inactive.svg"
+      }
+    },
+    "1287:205": {
+      "type": "nav",
+      "name": "perpetualSwap",
+      "hash": "+uoqhfbK14a44MhsqRuOJknEOzH1w7y2gFncakX96q8=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61714 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61713 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61712 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61711 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61710 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61709 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.701Z",
+      "lastUpdated": "2023-08-10T14:36:54.701Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-perpetualSwap-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-perpetualSwap-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-perpetualSwap-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-perpetualSwap-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-perpetualSwap-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-perpetualSwap-24-inactive.svg"
+      }
+    },
+    "1287:212": {
+      "type": "nav",
+      "name": "options",
+      "hash": "IHrpiXZYLiNnAKbotEBKzM+myz394A3+F2gCGSoS70c=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61708 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61707 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61706 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61705 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61704 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61703 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.748Z",
+      "lastUpdated": "2023-08-10T14:36:54.748Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-options-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-options-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-options-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-options-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-options-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-options-24-inactive.svg"
+      }
+    },
+    "1287:247": {
+      "type": "nav",
+      "name": "eventContracts",
+      "hash": "sJW8u/8jRK/CuHICIzDFulXn3Yn2/gPhlOVms74Dq2o=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61684 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61683 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61682 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61681 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61680 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61679 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.693Z",
+      "lastUpdated": "2023-08-10T14:36:54.693Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-eventContracts-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-eventContracts-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-eventContracts-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-eventContracts-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-eventContracts-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-eventContracts-24-inactive.svg"
+      }
+    },
+    "1287:254": {
+      "type": "nav",
+      "name": "globe",
+      "hash": "mnFyerLZ/ypoSbA7fMBnH6X1McrrF7Fv6NJK1oJyFlA=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61702 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61701 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61700 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61699 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61698 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61697 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.734Z",
+      "lastUpdated": "2023-08-10T14:36:54.734Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-globe-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-globe-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-globe-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-globe-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-globe-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-globe-24-inactive.svg"
+      }
+    },
+    "1287:262": {
+      "type": "nav",
+      "name": "base",
+      "hash": "FS/G7NGnibp9nmn+1JVMgERko/ZdUdGTc+wck2CqLhQ=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61672 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61671 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61670 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61669 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61668 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61667 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.683Z",
+      "lastUpdated": "2023-08-10T14:36:54.683Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-base-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-base-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-base-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-base-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-base-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-base-24-inactive.svg"
+      }
+    },
+    "1287:269": {
+      "type": "nav",
+      "name": "compass",
+      "hash": "kyBPUDBA5Sxf7VGhsUFaQqz1S251c6wGvHDxjAjrZQ0=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61678 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61677 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61676 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61675 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61674 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61673 } }
+      ],
+      "createdAt": "2023-08-10T14:36:54.755Z",
+      "lastUpdated": "2023-08-10T21:15:38.471Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-compass-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-compass-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-compass-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-compass-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-compass-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-compass-24-inactive.svg"
       }
     }
   }
