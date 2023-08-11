@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.3.3 ((8/10/2023, 11:39 AM PST))
+
+This is an artificial version bump with no new change.
+
+#### 📘 Misc
+
+- Add accessible tray example. [[#2145](https://github.cbhq.net/frontend/cds/pull/2145)]
+
 ## 5.3.2 ((8/8/2023, 12:33 PM PST))
 
 This is an artificial version bump with no new change.

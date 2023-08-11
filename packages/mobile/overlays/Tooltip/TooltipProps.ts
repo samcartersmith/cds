@@ -1,4 +1,4 @@
-import { Animated, LayoutRectangle } from 'react-native';
+import { Animated, LayoutRectangle, ViewProps } from 'react-native';
 import { NoopFn, SharedAccessibilityProps } from '@cbhq/cds-common';
 import { BaseTooltipPlacement, TooltipBaseProps } from '@cbhq/cds-common/types/TooltipBaseProps';
 
@@ -57,6 +57,8 @@ export type InternalTooltipProps = {
   opacity: Animated.Value;
   animateIn: Animated.CompositeAnimation;
   translateY: Animated.Value;
+  onAccessibilityEscape?: ViewProps['onAccessibilityEscape'];
+  onAccessibilityTap?: ViewProps['onAccessibilityTap'];
 } & Pick<TooltipProps, 'content' | 'placement' | 'gap' | 'testID' | 'yShiftByStatusBarHeight'> &
   SharedAccessibilityProps;
 

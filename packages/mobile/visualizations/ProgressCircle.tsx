@@ -106,6 +106,9 @@ export const ProgressCircle = memo(
               width={width}
               height={height}
               ref={forwardedRef}
+              accessible
+              accessibilityLabel={`${progress * 100}%`}
+              accessibilityRole="progressbar"
             >
               <Box flexGrow={0} flexShrink={0} width={circleSize} height={circleSize}>
                 <Svg

@@ -39,6 +39,7 @@ export const Drawer = memo(
       disableCapturePanGestureToDismiss = false,
       onBlur,
       verticalDrawerPercentageOfView = defaultVerticalDrawerPercentageOfView,
+      handleBarAccessibilityLabel,
       ...props
     },
     ref,
@@ -151,7 +152,10 @@ export const Drawer = memo(
       if (shouldShowHandleBar) {
         return (
           <View>
-            <HandleBar />
+            <HandleBar
+              accessibilityLabel={handleBarAccessibilityLabel}
+              onAccessibilityTap={handleClose}
+            />
             <Box
               borderRadius="roundedLarge"
               dangerouslySetStyle={shouldShowHandleBar && cardStyles.overflowStyles}
@@ -162,7 +166,7 @@ export const Drawer = memo(
         );
       }
       return <View>{typeof children === 'function' ? children({ handleClose }) : children}</View>;
-    }, [shouldShowHandleBar, cardStyles, children, handleClose]);
+    }, [shouldShowHandleBar, cardStyles, children, handleClose, handleBarAccessibilityLabel]);
 
     return (
       <Modal
@@ -172,6 +176,7 @@ export const Drawer = memo(
         visible
         animationType="none"
         {...props}
+        accessibilityRole="alert"
       >
         <DrawerStatusBar pin={pin} visible />
         <Overlay opacity={opacityAnimation} onTouchStart={handleOverlayPress} />
@@ -186,6 +191,9 @@ export const Drawer = memo(
           maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
           width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
           dangerouslySetStyle={combinedStyles}
+          // close modal when user performs the "escape" accessibility gesture
+          // https://reactnative.dev/docs/accessibility#onaccessibilityescape-ios
+          onAccessibilityEscape={handleClose}
         >
           {content}
         </Box>

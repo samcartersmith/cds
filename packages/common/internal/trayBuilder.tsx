@@ -360,11 +360,50 @@ export const trayBuilder = ({
       </>
     );
   };
+
+  const AccessibleTray = ({ title }: DefaultTrayTypes) => {
+    const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
+      useToggler(false);
+    const [value, setValue] = useState<string>();
+    const trayRef = useRef<DrawerRefBaseProps | undefined>(undefined);
+
+    const handleOptionPress = () => {
+      trayRef.current?.handleClose();
+    };
+
+    return (
+      <>
+        <Button onPress={handleOpenTray}>Open</Button>
+        {isTrayVisible && (
+          <Tray
+            title={title}
+            onCloseComplete={handlehandleClose}
+            handleBarAccessibilityLabel="This is a handlebar, double tap to dismiss the tray"
+            ref={trayRef}
+          >
+            <Menu value={value} onChange={setValue}>
+              {options.map((option: string) => (
+                <SelectOption
+                  key={option}
+                  title={option}
+                  description="BTC"
+                  onPress={handleOptionPress}
+                  value={option}
+                />
+              ))}
+            </Menu>
+          </Tray>
+        )}
+      </>
+    );
+  };
+
   return {
     DefaultTray,
     ScrollableTray,
     FeedCardTray,
     NavigationTray,
     TrayWithinTray,
+    AccessibleTray,
   };
 };

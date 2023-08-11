@@ -72,8 +72,10 @@ export const Tooltip = memo(
           typeof content === 'string' && accessibilityHintForContent === undefined
             ? content
             : accessibilityHintForContent,
+        onAccessibilityEscape: handleRequestClose,
+        onAccessibilityTap: handleRequestClose,
       }),
-      [content, accessibilityLabelForContent, accessibilityHintForContent],
+      [content, accessibilityLabelForContent, accessibilityHintForContent, handleRequestClose],
     );
 
     return (
@@ -92,6 +94,7 @@ export const Tooltip = memo(
           animationType="none"
           visible={isOpen}
           onRequestClose={handleRequestClose}
+          accessibilityRole="alert"
         >
           <TouchableOpacity
             accessibilityRole="button"

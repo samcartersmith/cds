@@ -39,6 +39,11 @@ export type DrawerBaseProps = {
    * @example if you want a Drawer to take up 50% of the screen, you would pass a value of `0.5`
    */
   verticalDrawerPercentageOfView?: number;
+  /**
+   * Accessibility label for handlebar
+   * @example This is a handlebar, double tap to dismiss the tray.
+   */
+  handleBarAccessibilityLabel?: string;
 } & SharedProps;
 
 export type DrawerRefBaseProps = {

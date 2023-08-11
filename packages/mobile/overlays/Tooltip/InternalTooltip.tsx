@@ -21,6 +21,8 @@ export const InternalTooltip = memo(function InternalTooltip({
   gap,
   yShiftByStatusBarHeight,
   testID,
+  onAccessibilityEscape,
+  onAccessibilityTap,
   ...props
 }: InternalTooltipProps) {
   const didMount = useRef(false);
@@ -55,7 +57,15 @@ export const InternalTooltip = memo(function InternalTooltip({
   }, [calculatedTooltipPosition, tooltipExternalGap]);
 
   return (
-    <View style={outerTooltipStyles} onLayout={onTooltipLayout}>
+    <View
+      style={outerTooltipStyles}
+      onLayout={onTooltipLayout}
+      accessible
+      // close tooltip on escape a11y gesture
+      onAccessibilityEscape={onAccessibilityEscape}
+      // close tooltip on double tapping in voiceover mode
+      onAccessibilityTap={onAccessibilityTap}
+    >
       <Box
         animated
         borderRadius="rounded"

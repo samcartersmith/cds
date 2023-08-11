@@ -8,6 +8,15 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.3.3 (8/10/2023 PST)
+
+#### 🐞 Fixes
+
+- [Drawer] Close Drawer using escape gesture. [[#2145](https://github.cbhq.net/frontend/cds/pull/2145)]
+- [Tray] Close Tray using escape gesture or double tapping on handlebar. [[#2145](https://github.cbhq.net/frontend/cds/pull/2145)]
+- [Tooltip] Close Tooltip using escape gesture or double tapping. [[#2145](https://github.cbhq.net/frontend/cds/pull/2145)]
+- [ProgressBar/ProgressCircle] Announce progress percentage correctly. [[#2145](https://github.cbhq.net/frontend/cds/pull/2145)]
+
 ## 5.3.2 (8/8/2023 PST)
 
 #### 🐞 Fixes

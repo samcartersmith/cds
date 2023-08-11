@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ViewProps } from 'react-native';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { handleBarHeight, handleBarOffset } from '@cbhq/cds-common/tokens/drawer';
 
 import { usePalette } from '../../hooks/usePalette';
 import { useSpacingScale } from '../../hooks/useSpacingScale';
 
-export const HandleBar = () => {
+export const HandleBar = (props: ViewProps) => {
   const colors = usePalette();
   const handleBarBackgroundColor = useSpectrumConditional({
     dark: colors.line,
@@ -19,7 +19,7 @@ export const HandleBar = () => {
   };
 
   return (
-    <View style={styles.touchableArea} testID="handleBar">
+    <View style={styles.touchableArea} testID="handleBar" accessible {...props}>
       <View style={[styles.handleBar, handleBarStyles]} />
     </View>
   );

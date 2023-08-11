@@ -14,28 +14,36 @@ import { TextBody } from '../../typography';
 import { Tray } from '../Tray/Tray';
 
 const TrayScreen = () => {
-  const { DefaultTray, ScrollableTray, FeedCardTray, NavigationTray, TrayWithinTray } = trayBuilder(
-    {
-      Tray,
-      Button,
-      SelectOption,
-      FlatList,
-      View,
-      IconButton,
-      FeedCard,
-      Pictogram,
-      HStack,
-      VStack,
-      TextBody,
-      Menu,
-      Fallback,
-    } as unknown as CreateTrayProps,
-  );
+  const {
+    DefaultTray,
+    AccessibleTray,
+    ScrollableTray,
+    FeedCardTray,
+    NavigationTray,
+    TrayWithinTray,
+  } = trayBuilder({
+    Tray,
+    Button,
+    SelectOption,
+    FlatList,
+    View,
+    IconButton,
+    FeedCard,
+    Pictogram,
+    HStack,
+    VStack,
+    TextBody,
+    Menu,
+    Fallback,
+  } as unknown as CreateTrayProps);
 
   return (
     <ExampleScreen>
       <Example title="Tray">
         <DefaultTray />
+      </Example>
+      <Example title="Tray with accessible handlebar">
+        <AccessibleTray />
       </Example>
       <Example title="Tray with Title">
         <DefaultTray title="How much would you like to donate? " />

@@ -66,7 +66,15 @@ export const ProgressBar = memo(
       };
 
       return (
-        <VStack flexGrow={1} flexShrink={0} testID={testID} ref={forwardedRef}>
+        <VStack
+          flexGrow={1}
+          flexShrink={0}
+          testID={testID}
+          ref={forwardedRef}
+          accessible
+          accessibilityLabel={`${progress * 100}%`}
+          accessibilityRole="progressbar"
+        >
           <HStack justifyContent="center" alignItems="center">
             <Box
               onLayout={handleLayout}
