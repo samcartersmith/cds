@@ -32,7 +32,7 @@ export async function generateGlyphMap({
        * 1. It powers the icon font glyph lookup
        * 2. The keys (i.e. fully qualified internal icon name) is used to pass into our BaseIcon component when rendering stories in Percy.
        *
-       * The second use case requires lastUpdated to ensure backward compatible layouts when pulling updates from Figma.
+       * The second use case requires createdAt to ensure backward compatible layouts when pulling updates from Figma.
        */
       .sort(sortByCreatedAt)
       .map((item) => {
@@ -75,7 +75,7 @@ export async function generateGlyphMap({
 
         /**
           * This file powers the icon font lookup on web and mobile.
-          * In addition, this is used to populate the stories in percy, so the sort order based on last updated is important.
+          * In addition, this is used to populate the stories in percy, so the sort order based on createdAt is important.
           */
         const glyphMap: Record<InternalIconName, string>  = ${content};
 

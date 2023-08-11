@@ -219,7 +219,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
                * 
                * 'https://static-assets.coinbase.com/design-system/illustrations/${illustrationType}/light/someIllustration-2.svg
                * 
-               * In addition, this file is used to populate ${pascalCaseIllustrationType} stories in percy, so the sort order based on last updated is important.
+               * In addition, this file is used to populate ${pascalCaseIllustrationType} stories in percy, so the sort order based on createdAt is important.
                */
               const versionMap: Record<${typescriptData.exportName}, number> = ${sortedItemsForVersion};
 
