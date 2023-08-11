@@ -294,6 +294,7 @@ const versionMap: Record<HeroSquareName, number> = {
   requestSent: 1,
   web3MobileSetupStart: 1,
   cloudBacking: 0,
+  stakingMissedReturns: 0,
 };
 
 export default versionMap;

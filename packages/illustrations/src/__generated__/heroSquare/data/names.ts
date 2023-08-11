@@ -252,6 +252,7 @@ const names: HeroSquareName[] = [
   'squidEmptyState',
   'stableValue',
   'staking',
+  'stakingMissedReturns',
   'startToday',
   'stayInControlSelfHostedWalletsStorage',
   'stopLimitOrder',

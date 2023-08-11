@@ -1050,8 +1050,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/wallet-1').content,
   },
   walletAsServiceNavigation: {
-    light: () => require('../svgJs/light/walletAsServiceNavigation-2').content,
-    dark: () => require('../svgJs/dark/walletAsServiceNavigation-2').content,
+    light: () => require('../svgJs/light/walletAsServiceNavigation-3').content,
+    dark: () => require('../svgJs/dark/walletAsServiceNavigation-3').content,
   },
   walletDeposit: {
     light: () => require('../svgJs/light/walletDeposit-1').content,
@@ -1090,8 +1090,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/walletWarning-2').content,
   },
   warning: {
-    light: () => require('../svgJs/light/warning-1').content,
-    dark: () => require('../svgJs/dark/warning-1').content,
+    light: () => require('../svgJs/light/warning-2').content,
+    dark: () => require('../svgJs/dark/warning-2').content,
   },
   worldwide: {
     light: () => require('../svgJs/light/worldwide-1').content,

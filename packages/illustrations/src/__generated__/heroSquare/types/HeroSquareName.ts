@@ -246,6 +246,7 @@ export type HeroSquareName =
   | 'squidEmptyState'
   | 'stableValue'
   | 'staking'
+  | 'stakingMissedReturns'
   | 'startToday'
   | 'stayInControlSelfHostedWalletsStorage'
   | 'stopLimitOrder'

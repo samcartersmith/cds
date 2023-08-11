@@ -8,6 +8,29 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.9.0 (8/10/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 08/10/2023. [[#2150](https://github.cbhq.net/frontend/cds/pull/2150)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- stakingMissedReturns
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- walletAsServiceNavigation
+- warning
+
 ## 1.8.4 (7/18/2023 PST)
 
 #### 🐞 Fixes

@@ -977,6 +977,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/staking-1').content,
     dark: () => require('../svgJs/dark/staking-1').content,
   },
+  stakingMissedReturns: {
+    light: () => require('../svgJs/light/stakingMissedReturns-0').content,
+    dark: () => require('../svgJs/dark/stakingMissedReturns-0').content,
+  },
   startToday: {
     light: () => require('../svgJs/light/startToday-1').content,
     dark: () => require('../svgJs/dark/startToday-1').content,
