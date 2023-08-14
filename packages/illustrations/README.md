@@ -70,7 +70,7 @@ yarn mono-pipeline version illustrations
 
 10. When the Percy diffs are ready, share them with the Illustrations DRI for approval. Merge your PR once the DRI has signed off.
 
-11. Locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits), manually rebuild `package-cds-illustrations`, and deploy to `corporate::cds-illustrations` when the build is complete
+11. Locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) and check that `package-cds-illustrations` has been built, and that the `corporate::cds-illustrations` and `production::cds-docs` targets have been deployed when the entire build is finished. If not, manually trigger the build if necessary and/or deploy the targets as needed when the build is complete. **_NOTE:_** If you're releasing both icons and illustrations at the same time, you only need to deploy to `production::cds-docs` once, so just pick whichever commit is the most recent and deploy from there.
 
 12. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-illustrations/-/@cbhq/cds-illustrations-0.0.1.tgz).
 
