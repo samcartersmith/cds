@@ -1,12 +1,12 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-08-10T22:18:07.153Z",
+  "lastUpdated": "2023-08-14T22:58:54.068Z",
   "metadata": { "lastUnicode": 61726 },
   "items": {
     "2:27": {
       "type": "nav",
       "name": "trophyCup",
-      "hash": "NMRyL39B25egTfTbcFeLj6MxNiDGjfBLoCOg+rBpVY0=",
+      "hash": "9ybfdTT2Yh295CvbAUB3aZcA8NFjj0G4hJ5YtxFQJWk=",
       "description": "navigation, speciality, winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60988 } },
@@ -30,7 +30,7 @@
     "2:44": {
       "type": "nav",
       "name": "trading",
-      "hash": "/clSI1ANt4+DNzbJ1CPOY+Q6TU97DYqrqOHozQYWwTE=",
+      "hash": "K3l2DH9tDKBMe4AvW04SKGmwzv/whfcdOLS8Y2ftQ0M=",
       "description": "navigation, speciality, average, trading, math, graph, mean, median, midpoint, center, norm, standard",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60513 } },
@@ -54,7 +54,7 @@
     "2:61": {
       "type": "nav",
       "name": "taxes",
-      "hash": "t/9fSuwHXbuBS2Ga1aovuYzd67OCeMTEqXHW5xjspAk=",
+      "hash": "e4aOyzGbaDw1HvpP+fBcXR+be7P/WbFL6tZ7WYzlXfg=",
       "description": "navigation, speciality, percentage, tax, tax season, document, 📄, 📃, 📜, 📑",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60958 } },
@@ -78,7 +78,7 @@
     "2:78": {
       "type": "nav",
       "name": "tag",
-      "hash": "icXjllCrq38q/Ic0sTw4xv+DvNv8ErC21T4C2qZjXrk=",
+      "hash": "MtZfX9xxeL3obweiqi+jDIaQRadWvOX56DHOg0DeinQ=",
       "description": "navigation, speciality, tag, checkout, shopping, commerce, 🏷, 🔖",
       "components": [
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 60583 } },
@@ -102,7 +102,7 @@
     "2:95": {
       "type": "nav",
       "name": "support",
-      "hash": "fwwatCm9gsZCY52+5mHyx0j3jC4kgaAskZY1dgLhQEo=",
+      "hash": "6cCPAQyZb3jbrzQxdK9WDrK3L8ifeHr1ViIXaYAxpYM=",
       "description": "navigation, speciality, support, help, communication, chat, heart, assist, aid, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 💬, 🎗, 📞, ☎️",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60808 } },
@@ -126,7 +126,7 @@
     "2:112": {
       "type": "nav",
       "name": "sun",
-      "hash": "abkHi+p1DVt9Z6VXXPdH0GGMoZ2s9/QzqAi2TI817uQ=",
+      "hash": "FxMeS4HK62hLTwv/N0cIxvIlqS6qICGeinXkW+B7qao=",
       "description": "navigation, speciality, sun, sunny, sunlight, light, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61088 } },
@@ -150,7 +150,7 @@
     "2:129": {
       "type": "nav",
       "name": "shoppingCart",
-      "hash": "hRuLMKbycbV4WJuBV8j7s6Izbew14Ty5vkWUvWZDf1Q=",
+      "hash": "9y+jAwMWIB1HI03yhZGDAaGdcNJxw6iNY98ExSmBNSM=",
       "description": "navigation, speciality, shopping, cart, checkout, trolley, groceries, 🛒",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60918 } },
@@ -174,7 +174,7 @@
     "2:146": {
       "type": "nav",
       "name": "settings",
-      "hash": "5WC9JM7UQKqbtq/N+oKH3Ur+P66E6rVjYGN3oMeeSIA=",
+      "hash": "a6qcU4SRFdnmcgFcno3rlWHYKiB0hzuIqcuk+CFvqnE=",
       "description": "navigation, speciality, settings, cog, machine, ⚙️",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60688 } },
@@ -198,7 +198,7 @@
     "2:163": {
       "type": "nav",
       "name": "securityShield",
-      "hash": "ERg+rZH6+JM1wv8bODn7HwMXrVcWuM+PecFi4mnqwAE=",
+      "hash": "P/eu2bpRlhkkLeuxHTYERvGqW9d2vn1ghp8+zY+A4Pw=",
       "description": "navigation, speciality, shield, protection, guard, defense, cover, safety, security",
       "components": [
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 60938 } },
@@ -222,7 +222,7 @@
     "2:180": {
       "type": "nav",
       "name": "scanQrCode",
-      "hash": "Hco+p3qREP98tDwYvrlKbToFZ9ndjKAi3nFaCmIy3pc=",
+      "hash": "+dbl85HEwXbQuGShZ1+SNcH9VO301ZVlioYxED1aJuw=",
       "description": "navigation, speciality, qr code, scan, matrix, barcode, label, readable, information",
       "components": [
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 60703 } },
@@ -270,7 +270,7 @@
     "2:218": {
       "type": "nav",
       "name": "queryTransact",
-      "hash": "Xo8aa22zN0hFzzcBuf9VFydOyXALn7O9yWRlw4NRshk=",
+      "hash": "7GeA+N75eKWj43VpqdQIVQE6TH0PNSaFg2LYGZt8mq4=",
       "description": "navigation, specialty, cloud, query, transact, diamond, vibes",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61308 } },
@@ -294,7 +294,7 @@
     "2:235": {
       "type": "nav",
       "name": "planet",
-      "hash": "DT4GCej4iBwgD8Kg0dGAMlYd0mxKOTiJgPfOhVFqRAU=",
+      "hash": "C55oe+EU7XvEkaVENVuMAPxgXlalRuzFsqoCpDXPlGI=",
       "description": "navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60818 } },
@@ -318,7 +318,7 @@
     "2:252": {
       "type": "nav",
       "name": "peopleGroup",
-      "hash": "8ErNFaAMhLTA7ZmZzUuPXmJ2zM+aB0OnafVl0rJL53E=",
+      "hash": "IPN4KnBEfTmgSr8/bJAoMN+CLECoq3D7xoHBDrJPKvc=",
       "description": "navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61118 } },
@@ -342,7 +342,7 @@
     "2:269": {
       "type": "nav",
       "name": "pencil",
-      "hash": "RFq7Gm7zIkl1d5xLO69z9EIToPJx1pVF/evqqXMn6ko=",
+      "hash": "DkuPufoR/aZKtcPT+SQ7FYCfT4eO+dvBxZql31m6wTs=",
       "description": "navigation, specialty, pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️",
       "components": [
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61228 } },
@@ -390,7 +390,7 @@
     "2:303": {
       "type": "nav",
       "name": "pay",
-      "hash": "ORJitWgKLNkRcY8o0mP6e75waZXCB0Zjs2h7J1sxVA8=",
+      "hash": "M7JptTb5XFjwVtegeNriwhuph+OepIMoRRH825zY5T4=",
       "description": "navigation, speciality, pay, crypto, finance, assets, coin, payment",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60533 } },
@@ -414,7 +414,7 @@
     "2:320": {
       "type": "nav",
       "name": "participate",
-      "hash": "RHQc8FdeLOB5Q+vCwgDJBjXiphCrNmizTnF2240J8FM=",
+      "hash": "n6H7ntQg9qF0w2X0RaJJm2miN2Jl04b/Qj3EYXed0o8=",
       "description": "navigation, specialty, cloud, vibes, hexagon, developer",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61298 } },
@@ -438,7 +438,7 @@
     "2:337": {
       "type": "nav",
       "name": "newsfeed",
-      "hash": "pjdtTAv8BOY8qNufqjAwld0GwfdjApIymuThpUWkmz8=",
+      "hash": "BJWOoNKIJzT+u14xCaCwNoBHk9ek3VuDCZ2krr0hDcc=",
       "description": "navigation, speciality, newsfeed, news, articles, layout, 📰,  🗞",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60558 } },
@@ -486,7 +486,7 @@
     "2:371": {
       "type": "nav",
       "name": "moon",
-      "hash": "TIMgWAk1/atzDF3Jw0wPO6Qqkuq0cto+LR7xyRPu2Xo=",
+      "hash": "qxYbgFCn5Ql9LHNYDaLlq/saNwVfc/9RIg480MAkpYY=",
       "description": "navigation, speciality, moon, night, dark mode, star, 🌕, 🌖, 🌗, 🌘, 🌑, 🌒, 🌓, 🌔, 🌙, 🌛, 🌜, 🌝",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61078 } },
@@ -510,7 +510,7 @@
     "2:388": {
       "type": "nav",
       "name": "light",
-      "hash": "OkDvD/QH9yf0bPQDMFpvIyfejmwmZIzXzZSVKoH4ay8=",
+      "hash": "z0cd4NtA6NKtkSHtAGylIzzC2Jqp+shAECxGOndupGs=",
       "description": "navigation, speciality, light, beam, glow, moment, sunshine, best day, summer, daylight, daytime, rise and shine, ☀️, 🌞, 🌻, 🌅 ",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61093 } },
@@ -534,7 +534,7 @@
     "2:405": {
       "type": "nav",
       "name": "invoice",
-      "hash": "zPAAllmrauvQ6I3Cf5PtxOeWHiJwp7lrgIuHFlN9Yys=",
+      "hash": "9cvt8BKtT09DRgxgvtj1k+tBwz2ZL3pcHzYkcj929dY=",
       "description": "navigation, speciality, invoice, commerce, paper, receipt, 🧾",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60588 } },
@@ -558,7 +558,7 @@
     "2:422": {
       "type": "nav",
       "name": "interest",
-      "hash": "oiuehNa1+piBWBlaRk2L0z8Jih9j0l7YP8MJk4CcC38=",
+      "hash": "PBOrnEo9JOtNAp/sO4ppi42RJcp4Qw1H2TGneagEqJ8=",
       "description": "navigation, speciality, percentage, interest, reward, rate, ratio, pct, measurement, %",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61023 } },
@@ -582,7 +582,7 @@
     "2:439": {
       "type": "nav",
       "name": "home",
-      "hash": "n6tlSBfntX9OG1/CwWOlcmeE2JthnYNunsokR8TD524=",
+      "hash": "8wcwjtO+gXqo9JD/ZeZS6eNHGYcsf+FRK99KBQrJ68g=",
       "description": "navigation, speciality, home, hub, central, building, homepage,  🏡, 🏠",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60643 } },
@@ -606,7 +606,7 @@
     "2:456": {
       "type": "nav",
       "name": "hiddenEye",
-      "hash": "LrrPXlVv0TvY4MGWxfB1Soe7LyqB8SehoTyY5mno3fM=",
+      "hash": "RBRNnzkrwz9Ub+4iukmHT1zwQZic1nxxb9caqIo9Vt8=",
       "description": "navigation, speciality, closed, eye, unwatch, not visible, 👀, 👁",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61203 } },
@@ -630,7 +630,7 @@
     "2:473": {
       "type": "nav",
       "name": "heart",
-      "hash": "aXmJeEPXXOzA0yW2ymcAJvIrbys0h9o682iJhskxYZY=",
+      "hash": "5qOgzy63BAFN7E70W+lvlnGyBExsXE7yjPFel6LBoGs=",
       "description": "navigation, specialty, heart, like, special, ❤️, ",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61143 } },
@@ -654,7 +654,7 @@
     "2:490": {
       "type": "nav",
       "name": "hammer",
-      "hash": "kD3Qk1b98tumDus4+eFIwMNu1Sk9ItGC/Xs3i0HPWSE=",
+      "hash": "1zMBiCwoIRQLRd5/RxvxLnhXM3mnq+cDawNBEph7PNQ=",
       "description": "navigation, specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61318 } },
@@ -678,7 +678,7 @@
     "2:507": {
       "type": "nav",
       "name": "giftBox",
-      "hash": "zEjYirXHC+4AN334lqCQHNhpasjX9ezAShcsJtzWgDc=",
+      "hash": "YGgceW6N3DWuiQAue+yhkz+qeAMNM4vUTAxMmJNG6uE=",
       "description": "navigation, speciality, gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60613 } },
@@ -702,7 +702,7 @@
     "2:524": {
       "type": "nav",
       "name": "ghost",
-      "hash": "4wqw3rNJONUEI+zy83+ccrR5DLr0H5DYOeZbfcFMGh8=",
+      "hash": "DDFWnfwGdOFtZ97zK25LioiC/G5HhyS/cvmvQZe0rpQ=",
       "description": "navigation, specialty, ghost, hide, hidden, unseen, 👻",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61383 } },
@@ -726,7 +726,7 @@
     "2:541": {
       "type": "nav",
       "name": "gab",
-      "hash": "0iDvInpOAstUjM2VZ3CnzsyyBMbjMMay0LNHizX8MS4=",
+      "hash": "AltX0CVXcBdJ/Yi3S0GjiLrS4gw9mI3nvNefH2CnRvc=",
       "description": "navigation, speciality, side by side, left, right,  opposite, trading, retrieve, sell, convert, ↔️",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60638 } },
@@ -750,7 +750,7 @@
     "2:558": {
       "type": "nav",
       "name": "faces",
-      "hash": "lTXSavUvASIMZ5rcZf6+0gkeWryJvWtFDeDCqEHN/HA=",
+      "hash": "jpU6TfpdNT/9WNnLqokrisAElNHRXhOfMdKCLeUVZTE=",
       "description": "navigation, speciality, faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61068 } },
@@ -774,7 +774,7 @@
     "2:575": {
       "type": "nav",
       "name": "eye",
-      "hash": "LFP6WDCnP06ZOwbDRso9sE1M6OBJIuvUNHIlQM5pEf0=",
+      "hash": "dkBipS+eeL4A90bUxtax1FO+GuXWSxkX1A642YHwg4I=",
       "description": "navigation, speciality, eye, privacy, protection, personal",
       "components": [
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 60943 } },
@@ -798,7 +798,7 @@
     "2:592": {
       "type": "nav",
       "name": "earn",
-      "hash": "d0ywg+gpuxRGdASgK9GYUB2ByfCLYu3I0WqvdBc9te4=",
+      "hash": "ZRFMGeY7MFI/VKD2ZbTNIbFLIaSWyaYJ3+gdzZfsWCY=",
       "description": "navigation, speciality, earn, medal, star, rewards, 🥇, 🏆, ✨, ❇️",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60763 } },
@@ -822,7 +822,7 @@
     "2:609": {
       "type": "nav",
       "name": "drops",
-      "hash": "1W9tA04yndNyCKWGfjZgjgFXEjfGAempV686HB5yDOc=",
+      "hash": "cMmnwOMVImMJ/kMndvaIPUPxiZb9BWA5XMyrSqyNYck=",
       "description": "navigation, specialty, sparkles, drops, special, rare, ✨",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61636 } },
@@ -846,7 +846,7 @@
     "2:626": {
       "type": "nav",
       "name": "documentation",
-      "hash": "emSmqP63PoHP8I51123q4h2IJsYFLvPSlPbhaDXM/kA=",
+      "hash": "M8YHSrybdS2ZciNJ2Hn5gGkjNSuoQnDJauClPmt25fY=",
       "description": "navigation, speciality, smart, contract, rules, policy, list, document, agreement, commitment, arrangement, settlement, 📄, 📃, 📜, 📑",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60968 } },
@@ -894,7 +894,7 @@
     "2:660": {
       "type": "nav",
       "name": "diamond",
-      "hash": "CA6CcE1iWOrK/ndwzl/Vq+NYB9Qg+5iRZ8QNslUFii8=",
+      "hash": "2c9MDmA1gpNQl5L7eU7Kvx7taOtRKEHi3LpmQlHgnDg=",
       "description": "navigation, specialty, diamond, rare, crystal, gem, hold, 💎",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61630 } },
@@ -918,7 +918,7 @@
     "2:677": {
       "type": "nav",
       "name": "defi",
-      "hash": "oVVkvqATACIbjm13z0vcjj+FyWC+6oZCJ7qwBE0YG2s=",
+      "hash": "YFbXwhqEBhFUWkop/LsMUnPbDB/tieKm4NpYPtswNQY=",
       "description": "navigation, speciality, defi, finance,c crypto, blockchain",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60628 } },
@@ -942,7 +942,7 @@
     "2:694": {
       "type": "nav",
       "name": "dashboard",
-      "hash": "fpnCgNQcJpRqtVkaYbTJiP0BWTcWPCOZELoCnIybC3M=",
+      "hash": "Mft2x0xm+tWiDmBNqc0XlrE35cxYz9/OgMXFixtdZb8=",
       "description": "navigation, speciality, dashboard, everything, graphs, content, home",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60568 } },
@@ -966,7 +966,7 @@
     "2:711": {
       "type": "nav",
       "name": "crystalBall",
-      "hash": "p6yxiQbi7gpgHQ1RUu7MkGoKHgD0Ax6/BtppFYakHRA=",
+      "hash": "p2PJsZajfHDGn2+MQ5GIlbSorCrVrRFq1uTX8ufA2FE=",
       "description": "navigation, speciality, non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61048 } },
@@ -990,7 +990,7 @@
     "2:728": {
       "type": "nav",
       "name": "comment",
-      "hash": "TKldfmGFJu7lTZwyzppkDTWfxvrProSoKIYW9Ww7IdQ=",
+      "hash": "FvyyjtJxI3FIfurjOiiDXEKZS1nhUJfn+yORoc98ecM=",
       "description": "navigation, speciality, chat, comment, speak, bubble, thread, message, 💬, 🗣",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61193 } },
@@ -1014,7 +1014,7 @@
     "2:745": {
       "type": "nav",
       "name": "collection",
-      "hash": "MV+E8G+m2VzRrR5CzOtfSh/Ub7puyQ3Oulrn5gka80c=",
+      "hash": "/ci9r1PjDJvUv9hSdsuNipaKV/qNYyAedFL/vXt/dZg=",
       "description": "navigation, specialty collection, gallery, library, artworks, picture, frame, 🖼, 📸",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61163 } },
@@ -1038,7 +1038,7 @@
     "2:762": {
       "type": "nav",
       "name": "cloud",
-      "hash": "gzE76KwU3uZxIqorzuqrAWWzRVjSXUwDDsBuMVZVPoc=",
+      "hash": "47lAKYaqM0j30KMIzgIHl2hRn26wjdpZvxo0rTIfvYc=",
       "description": "navigation, specialty, cloud, condensation, water, droplets, vapor, science rules, nature, ☁️, 🌤, 🌥, ⛅️, 🌧, 🌨, ⛈, 🌩, 💦, 💧",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61288 } },
@@ -1062,7 +1062,7 @@
     "2:779": {
       "type": "nav",
       "name": "chartPie",
-      "hash": "Cr6HY6cpw6PcULDphHtYsco7PJ1Kw8xf7W/7P2k8mbo=",
+      "hash": "bEJ+RtmLBTcuNk7abxmT87/dw1kqegbkZA8kSdtPY44=",
       "description": "navigation, speciality, chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧",
       "components": [
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 60543 } },
@@ -1110,7 +1110,7 @@
     "2:813": {
       "type": "nav",
       "name": "chartBar",
-      "hash": "mkVAmLNY41oJGo7GfsillErBoc2aal4s5UHNRNfWJ6I=",
+      "hash": "jTGVor7L//emibaW1cI/0NwB/hle9BT7zYAhAM183Ew=",
       "description": "navigation, speciality, chart bar, data, visualization, numbers, graph, 📊, 📉, 📈",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60733 } },
@@ -1134,7 +1134,7 @@
     "2:830": {
       "type": "nav",
       "name": "cash",
-      "hash": "CcZQs8v573UDBTH53QJo8cAdH2LPyZBkldFWXyEiano=",
+      "hash": "xbkyGuhp+qv/gff4CKhIYHraFoU88lcuUtPiFmWtCcQ=",
       "description": "navigation, speciality, wallet, pay, retrieve, cash, 💰, 💵, 💸",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60618 } },
@@ -1158,7 +1158,7 @@
     "2:847": {
       "type": "nav",
       "name": "caret",
-      "hash": "Xr4NealZO/Isg+23hpPnTSsjZjDXUcJbMizoLeqdCXI=",
+      "hash": "ZPU/nsVnFiEq5Ta6U3QLxDRJz5MxrO8Pz6M64fjBsow=",
       "description": "navigation, speciality, see more, chevron, caret, 🔽, 👇",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60603 } },
@@ -1182,7 +1182,7 @@
     "2:864": {
       "type": "nav",
       "name": "browser",
-      "hash": "K5lTkbVpxpiQkgnhyDEKKmp6lAjTMMnSvdmW5xLbcfQ=",
+      "hash": "nbR07dx3Gpi+TaFuEtHFbz0qYLTZyoWJ9EKPbUPPbbc=",
       "description": "navigation, speciality, globe, earth, international, continents, global, internet, browsing, surfing, 🌎, 🌍, 🌐, 🌏",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61013 } },
@@ -1206,7 +1206,7 @@
     "2:881": {
       "type": "nav",
       "name": "bell",
-      "hash": "VW0Y2XgvLbOXYlfUF3dsfmqPo4zD6q71ic5jtPhQNtk=",
+      "hash": "wzF8AGUzVs7tN4igGpy+0gLkRKZ82OFAvEmdpWMW9cs=",
       "description": "navigation, speciality, notification, update, news, new, bell, 🔔, 🛎",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60518 } },
@@ -1230,7 +1230,7 @@
     "2:898": {
       "type": "nav",
       "name": "astronautHelmet",
-      "hash": "Fh4plasZNtxIatvj+zK4YUxJT+1C9Vv13tw2UOo0DDE=",
+      "hash": "5DDvfHkutMhu1YYMIk9uD7U26fY7B/fAzZbWfK3312w=",
       "description": "navigation, speciality, space, helmet,  astronaut, galaxy, 🪐, 🔭, 🛸, 👽, 👩‍🚀, 🧑‍🚀, 👨‍🚀",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61108 } },
@@ -1302,7 +1302,7 @@
     "2:949": {
       "type": "nav",
       "name": "addPeople",
-      "hash": "eN0y8ReyUWlYKWwUXIPukaQabv35N7VptXQeW5MDTeM=",
+      "hash": "PZ0VcpuQtuhF4oC4fb60FaDBwlL+rbREe1IF6Fudej4=",
       "description": "navigation, speciality, people, add, invite, refer, follow, ➕, 👯‍♀️, 👨‍👩‍👦‍👦, 👨‍👩‍👧‍👧, 👨‍👩‍👦‍👦",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60623 } },
@@ -1326,7 +1326,7 @@
     "2:966": {
       "type": "nav",
       "name": "activity",
-      "hash": "bdjrytw85iZUN+gpxc4G5Q9QjwxQC9vlvkK1f3ygYD8=",
+      "hash": "7ofhSSTLT7xdgJUdzcjk5QphqYabY7FQyVbd+11tJ3A=",
       "description": "navigation, specialty, activities, history, trending",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61418 } },
@@ -1350,7 +1350,7 @@
     "2:983": {
       "type": "nav",
       "name": "account",
-      "hash": "8RJcJ4syX4syj/ZZ4/IdQhbY7683VYGRgkGG9mrwN+k=",
+      "hash": "C0KNTdaoAmAJ1fdpZLuWqjD2Tih5kqFo0IemZ4F80Hk=",
       "description": "navigation, speciality, profile, account, person, individual",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60928 } },
@@ -1374,7 +1374,7 @@
     "242:1001": {
       "type": "nav",
       "name": "magnifyingGlass",
-      "hash": "SKMkcAtpYTqfzRA+XFnQjz083Q6e1AcsmW1PPyNwYIM=",
+      "hash": "UsCyYdYUmzbB+5b0bDgRrjcRgwwMlILeNi0UpSPC+Wk=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61433 } },
@@ -1422,7 +1422,7 @@
     "242:1003": {
       "type": "nav",
       "name": "menu",
-      "hash": "M7ztdUP7jbTwa+L6g2PFqzdpgguvtoop44C7OiudR6E=",
+      "hash": "BFrEWP8L0nKS3JRMtOGAUNlMESFVNSTMA3uXKtZ9XDs=",
       "description": "hamburger, menu, navigation, 🍔, 🥪",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61553 } },
@@ -1446,7 +1446,7 @@
     "513:132": {
       "type": "nav",
       "name": "rocketShip",
-      "hash": "UiDQTfpmNtb/G7xSMoyG0c3OJoRkx7nqfwe4eLKzDgs=",
+      "hash": "g8QPMRJSd9vlYSeD6S3ARUMm+6Zx3o+90MOJTO1j8bg=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61613 } },
@@ -1470,7 +1470,7 @@
     "513:219": {
       "type": "nav",
       "name": "wallet",
-      "hash": "utFmyzxIsJIytDlOUlRZOo45NtHBfUS726Fl+j7iqmI=",
+      "hash": "8pHWJNde5gmGZRbhBGRw86Rv/11p9C9Ta6WcjEJJFWA=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60683 } },
@@ -1512,7 +1512,7 @@
     "513:3102": {
       "type": "ui",
       "name": "airdrop",
-      "hash": "mEBmgV6dWXZBzwlHrwn5rpHu8VGE9mUkSFJdN/7OnVM=",
+      "hash": "55nbdchPWE3CoyJD/NSIb60d31Z4gT7Iibfs4WRhaQE=",
       "description": "airdrop, 🪂, parachute, send",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60773 } },
@@ -1584,7 +1584,7 @@
     "513:3146": {
       "type": "ui",
       "name": "arrowDown",
-      "hash": "L0PJVR81Tf/gjMNW8LIUhYzQMBLRy7mQeDPmcWZrTNw=",
+      "hash": "XIbJUQd8VqSyaztL81Duw+Qx+s8s0uz6HenbCsRl4yk=",
       "description": "arrow up, receive, downwards, decrease, ⬇️, ⬇",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60093 } },
@@ -1638,7 +1638,7 @@
     "513:3179": {
       "type": "ui",
       "name": "arrowUp",
-      "hash": "hurIOMzIuf+eDte4jBA1ICugAgqEchJJXwEO5Dc3tO4=",
+      "hash": "qaf7fttg6q1JTt2AizxDNZjLcbs2lq+9g3tnkpfhOU4=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60098 } },
@@ -1656,7 +1656,7 @@
     "513:3190": {
       "type": "ui",
       "name": "arrowsHorizontal",
-      "hash": "t5cLQNNZIRrUa9GMq3WAnJS21Fyj2ziOWh9v6MdMv9I=",
+      "hash": "jXE9/NmL8Al4P+sw3NhjrfntX44vjnQJw1YlegD2Vdk=",
       "description": "arrows, side by side, left, right,  opposite, ↔️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60033 } },
@@ -1674,7 +1674,7 @@
     "513:3201": {
       "type": "ui",
       "name": "arrowsVertical",
-      "hash": "ov1CgSW7PzjtuUmWusHX4KScNXMjEegjzp50hMNaVMQ=",
+      "hash": "lHPk3R5ypWG70XoHvzm7vUx71uZDL9d5l6iLJY1yuwo=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60113 } },
@@ -1692,7 +1692,7 @@
     "513:3212": {
       "type": "ui",
       "name": "artwork",
-      "hash": "MTfDFUefer/ydrgslGEq9wRSqorDJUTE3RGlxjMvhEw=",
+      "hash": "nJEhQJ68RXCCZojrRKkklLpxGz10hhu/iAJbbLq1zO8=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61453 } },
@@ -1710,7 +1710,7 @@
     "513:3223": {
       "type": "ui",
       "name": "avatar",
-      "hash": "MFAsDRxTM2zOvXtAIzQcPmm+hF/VuY+pjPuSIgdcydM=",
+      "hash": "l1BbaxDDp+b9sjOofKu4yCc5Mn1/h9g0qT0nU//199A=",
       "description": "avatar, profile, person, individual, human",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60423 } },
@@ -1746,7 +1746,7 @@
     "513:3245": {
       "type": "ui",
       "name": "backArrow",
-      "hash": "I5trwFsVLs56Y3v+wxWPG2+pUtgAFWR7SMaVXWP2ckE=",
+      "hash": "+4nayYJvFPL7k5dxraO17rUxOqOpA1IQBd0Yg2jUzeY=",
       "description": "arrow left, backwards, reverse, behind, 🔙, ⏮, ⏪, ⬅️, ⬅",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60448 } },
@@ -1782,7 +1782,7 @@
     "513:3267": {
       "type": "ui",
       "name": "bell",
-      "hash": "iqLIBmIC60nmOdwVS/fvxfQ1HgEQigYS6o/VJ3hepXM=",
+      "hash": "abCyK0Gcedyr6ZF5twx3CcQ3C7bFmgjjciKrht692f0=",
       "description": "notification, update, news, new, bell, 🔔, 🛎",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59943 } },
@@ -1836,7 +1836,7 @@
     "513:3300": {
       "type": "ui",
       "name": "bookmarkInactive",
-      "hash": "9J4v3LO1tg13itA7sQYW4pqvMsTfm4VcHxRvtsAbTvw=",
+      "hash": "8dUARu2ujpKKdSO71S87AQzJ+8QRGjNHm1lYvmxwIRY=",
       "description": "unbookmark, unsave, 🔖, inactive",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60748 } },
@@ -1872,7 +1872,7 @@
     "513:3322": {
       "type": "ui",
       "name": "bridging",
-      "hash": "pOiQOMH2HLTK2cHWaPeNa5JWdaDNSGNGA/XeqcPGW8E=",
+      "hash": "h8xT1l0iI49E6jezK1lp1gwp0pCiRgrr8ktuUi4g3IQ=",
       "description": "bridge, send, exchange, change, 🌁, 🌉",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61213 } },
@@ -1890,7 +1890,7 @@
     "513:3333": {
       "type": "ui",
       "name": "calendar",
-      "hash": "kmNlIPF2FlgUzN8OH1b+XyukL1ny50C0tLZPUyCx9u4=",
+      "hash": "+K8XeavYqTvxFp5PhfFKwosMVFZY0+Jll7sinabQLag=",
       "description": "calendar, date, year, month, week, schedule, 📆, 📅, 🗓",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60123 } },
@@ -1908,7 +1908,7 @@
     "513:3344": {
       "type": "ui",
       "name": "camera",
-      "hash": "1/D8Y0ui+NEBJyjpl9U+8hVmEo7sNzXXtRuLwdZQPmw=",
+      "hash": "bRpK7aEhPSX8Ucw90q3sqN1psdWes9Rc6+n8UB8ZCg0=",
       "description": "camera, snap, scan, photo, record, photography, 📸, 📷, 🎥, 📹, 🎞, 🤳, 📽",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60438 } },
@@ -2034,7 +2034,7 @@
     "513:3421": {
       "type": "ui",
       "name": "cashAustralianDollar",
-      "hash": "vNabk4a7o5nCJ0eGqBRz8Qly2GmvWgCKBr0bF4Yfvug=",
+      "hash": "maKpevGgGSnM7A29iPpPzWODD+RF62GRJljA26vQTUc=",
       "description": "currency, international, money, dollarydoos, 🇦🇺, 🐨, 🦘, 🍻, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61283 } },
@@ -2052,7 +2052,7 @@
     "513:3432": {
       "type": "ui",
       "name": "cashBrazilianReal",
-      "hash": "0bZZ7He8t9atoVeD9S8lv9glAqKOwxRywS2tAeXTs4I=",
+      "hash": "nwZ94C+v1C+6W6KxYpknODHrm9c/6FN9bXT9URVJEkE=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61223 } },
@@ -2088,7 +2088,7 @@
     "513:3454": {
       "type": "ui",
       "name": "cashGBP",
-      "hash": "NXi5lVvg35klQCEWdxERLc2nC+2ulSSpJmKcdmQBXf8=",
+      "hash": "C5LVrMglp+3LKEbFSHoVTnYktzsgJfZFVdB34DNnVpo=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59758 } },
@@ -2106,7 +2106,7 @@
     "513:3465": {
       "type": "ui",
       "name": "cashIndonesianRupiah",
-      "hash": "rpIWwGPBmhFe9hdtl8H0gFP5JEdaZqpBrHWpEJ5iKr0=",
+      "hash": "eqxhIEZefcmA8/GnhyxY6c8A2NjXgQypYIq0QFLrC1c=",
       "description": "currency, international, money,  🇮🇩, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61253 } },
@@ -2142,7 +2142,7 @@
     "513:3487": {
       "type": "ui",
       "name": "cashPhilippinePeso",
-      "hash": "miZOFLKEZu81ORfGS4hfSVqHFbAfWCgj+XPdQpTXq0I=",
+      "hash": "MGsSaxNXFX0VFYKaIsg0wp/KLdH2bciiVQD6CxO8OHA=",
       "description": "currency, international, money,  🇵🇭, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61248 } },
@@ -2160,7 +2160,7 @@
     "513:3498": {
       "type": "ui",
       "name": "cashPolishZłoty",
-      "hash": "ZrxMWKWyBzJ32z1wea3hGv52nDW+Eq8Ku8nQlZc6LYs=",
+      "hash": "XBHmAPlf2CrMsbO5oP5KC22XbWYXdT9dQeKwx8/NN0Q=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61273 } },
@@ -2178,7 +2178,7 @@
     "513:3509": {
       "type": "ui",
       "name": "cashRupee",
-      "hash": "RR8DvpehGO5a5nnfnnbyOqUs51rB9ZFDCRxs7ebFG/M=",
+      "hash": "lOMxVn3nfsW3d6LiOgqJdxhgFdbMFyDN45r8W5FBkiA=",
       "description": "cash, money, ₹, currency, international, india, indonesia, the maldives, mauritius, nepal, pakistan, seychelles, sri lanka, 🇮🇳, 🇮🇩, 🇲🇻, 🇲🇺, 🇳🇵, 🇵🇰, 🇸🇨, 🇱🇰, 💰, 💵, 💸",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60863 } },
@@ -2196,7 +2196,7 @@
     "513:3520": {
       "type": "ui",
       "name": "cashSwissFranc",
-      "hash": "dFGU0ipekNOyPkqIerUsDFBcSzQLGFpl5gREmd6MAgA=",
+      "hash": "RhdTz2stRybv89gOLQiRl4TtajWEWGpmJhGorKwsYB8=",
       "description": "currency, international, money, 🇨🇭,  🇱🇮, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61268 } },
@@ -2214,7 +2214,7 @@
     "513:3531": {
       "type": "ui",
       "name": "cashThaiBaht",
-      "hash": "af4P0H1V7+tx+XFrf0dOP54TI0lxaBB8WweMrcE/kfI=",
+      "hash": "MiUofVue8Dq++w3Oo4BJfnmr2ShPIn5fZf9mZ9uqZVM=",
       "description": "currency, international, money,  🇹🇭, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61243 } },
@@ -2232,7 +2232,7 @@
     "513:3542": {
       "type": "ui",
       "name": "cashTurkishLira",
-      "hash": "kija7ikXJjgqDOS/MRrCtjSnbIsD5zkwJ6Cc6Q9xywo=",
+      "hash": "OgbagdnAIc/h2uZpVJ0lbztLEycMNtqAjUBUPtq/eag=",
       "description": "currency, international, money, 🇹🇷, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61263 } },
@@ -2250,7 +2250,7 @@
     "513:3553": {
       "type": "ui",
       "name": "cashUSD",
-      "hash": "erT9LnD5WqumXy/n8fzRJmoRN6DlVsPiga6HmZXh8Us=",
+      "hash": "/T7dlkj4Vq1ayz/Pg7TJv1WcGSA7PiOIFf+LbFpfeE4=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59753 } },
@@ -2268,7 +2268,7 @@
     "513:3564": {
       "type": "ui",
       "name": "cashUaeDirham",
-      "hash": "zUNMNgDJAIlCLLfggUZiVpAFqj5o5Rgq+IVPP5hgX7Q=",
+      "hash": "adAIaE7krogx7fRQeiSXlPJ4d4e6/1P5qbAvmq+aels=",
       "description": "currency, international, money,  🇦🇪, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61278 } },
@@ -2286,7 +2286,7 @@
     "513:3575": {
       "type": "ui",
       "name": "cashVietnameseDong",
-      "hash": "v4a98vn3/+idxVilKgnks3iqD0J/Gv/398CECDBWGfE=",
+      "hash": "ww6DzQFRcnTeHwStmr7W2j4GvGBk9jT/HUVUEvMG0TA=",
       "description": "currency, international, money,  🇻🇳, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61258 } },
@@ -2304,7 +2304,7 @@
     "513:3586": {
       "type": "ui",
       "name": "chainLink",
-      "hash": "inEJP2EwjRaezA8nAH55e2DQwLAaTNQ1bcGL4L1YnmI=",
+      "hash": "g6ufUYvnp5REZPH/7KfTJxH6G+kH5vAxBnRWOtl23f8=",
       "description": "link, attach, linkage, connect, connection, ⛓, 🔗, 🖇",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60868 } },
@@ -2340,7 +2340,7 @@
     "513:3608": {
       "type": "ui",
       "name": "chartCandles",
-      "hash": "8GJTvm6w50Mo/I2iTXPwCRjgT9oPOzeOcW60nOzr314=",
+      "hash": "Rex6zZp9foyxwKDAK746+BgA5JAkk2hwq1O8XW/RT44=",
       "description": "chart, trading, candles, graph, numbers, data, visualization, 📈, 📉, 📊",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60273 } },
@@ -2358,7 +2358,7 @@
     "513:3619": {
       "type": "ui",
       "name": "chartLine",
-      "hash": "pOu9OD84cvlQ9NLOLL1pjXL60+vPG+u6uXGw6Cebqjg=",
+      "hash": "tjX4yfCBv91h779PXr7qU7wiamq6ovki9VGN8Gtx4Dc=",
       "description": "chart, line, trading, activity, trading, spark, line, 📈, 📉",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60268 } },
@@ -2376,7 +2376,7 @@
     "513:3630": {
       "type": "ui",
       "name": "chartPie",
-      "hash": "CSOYIaVIwtZiczniOcGNLRUUIJwR47eHAUbG7Zuqssc=",
+      "hash": "kFGNK37wpydh6cfMiTaHNF2lg4sMdn4X8ZljD408xJk=",
       "description": "chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60068 } },
@@ -2394,7 +2394,7 @@
     "513:3641": {
       "type": "ui",
       "name": "chartPieCircle",
-      "hash": "GVQA995dZBZ/BbUumMruUbZFTd8J90NOm7hKDX11DLY=",
+      "hash": "sKkfJSnCUVd1sonZAY4pRGfJuyRY50nmv9Deerz2e4s=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60208 } },
@@ -2430,7 +2430,7 @@
     "513:3663": {
       "type": "ui",
       "name": "chatBotAgent",
-      "hash": "0Q5ii4CFwyEk+tLsFgAoEi953sg/xpfWIIaR+fdfgus=",
+      "hash": "O1XySLNsiSDvc+U8SyolESPNd+ECWsGqh/7YG1L9cYo=",
       "description": "chat, bot, agent, person, help, support, 💬, 👩‍💼, 🧑‍💼, 👨‍💼",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61138 } },
@@ -2502,7 +2502,7 @@
     "513:3707": {
       "type": "ui",
       "name": "checkmark",
-      "hash": "gtOXjEyjnFHNhIyRlROk+JbvRBU7dNqsFmU+IBZFhQc=",
+      "hash": "H1YKOaNRdVLuZJsUn/Qfx/RHXUp+z++86G3SEvXk/ac=",
       "description": "checkmark, check, tick, confirmation, accept, confirm, success, positive, ✅, ✔️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59778 } },
@@ -2520,7 +2520,7 @@
     "513:3718": {
       "type": "ui",
       "name": "circleCheckmark",
-      "hash": "VKiCsEWFTE4kSFYzw5FEqZTKOCWnqHxXcF8UVbgd6/I=",
+      "hash": "VYKy+SrDPWade154RmYXlmOGDXhqujIXE9J9XpaBGHs=",
       "description": "circle, checkmark, check, tick, confirmation, success, positive, ✅, ✔️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60348 } },
@@ -2538,7 +2538,7 @@
     "513:3729": {
       "type": "ui",
       "name": "circleCross",
-      "hash": "NOoZwFe6pCOSHjUWM7By9KWAcIMXVyeiVTdeDVVinCo=",
+      "hash": "G5K5r+qH08L0m7xAByW5c1ZCvD5DfEuIn4OyW1SE5xo=",
       "description": "circle, cross, x, check, decline, remove, rejection, removal, delete, unsuccessful, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60258 } },
@@ -2556,7 +2556,7 @@
     "513:3740": {
       "type": "ui",
       "name": "circulatingSupply",
-      "hash": "HtOhLwqBkPSLxgnk2XflE88upk8YdCDUJd0Pk8ohNWo=",
+      "hash": "MI5/uQXfT+60bgdJM3BrMYAu2TPONNru6V5emj74qOw=",
       "description": "circulating supply, remainder,  availability, coins, amount",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60048 } },
@@ -2592,7 +2592,7 @@
     "513:3762": {
       "type": "ui",
       "name": "clock",
-      "hash": "ZjhAmnohn431pZGEFuXzWoJhlcKpIhI/743QydwW+es=",
+      "hash": "mdOm6mZbguVZVf/F+09gJm2nVHdIPVlIHNcvRlN1g/Y=",
       "description": "clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60283 } },
@@ -2610,7 +2610,7 @@
     "513:3773": {
       "type": "ui",
       "name": "clockOutline",
-      "hash": "U7dDGa2Tmzb39FqJftmCyKhNZBnjFBNPI5c4fx3QYJ4=",
+      "hash": "JRSSPslr0GoIQ84Sel8JqOig65zVUblBN+1G1yCBT4Y=",
       "description": "clock, time, record, minute, hour, day, 24 hours, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60858 } },
@@ -2628,7 +2628,7 @@
     "513:3784": {
       "type": "ui",
       "name": "close",
-      "hash": "lE4u9+svI9g8GQz9JnyoDhRGVQ1wGUin0QrY0TC8AaA=",
+      "hash": "ag/kIbj/a0bUJl+YbWlubdxTs+a7rFIiYN8edLkOUj8=",
       "description": "close, cross, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60498 } },
@@ -2646,7 +2646,7 @@
     "513:3795": {
       "type": "ui",
       "name": "closeCaption",
-      "hash": "rWbLc0vcPHWz+fEOLXIk9yK5o5DK5DklBrhugOfGR0U=",
+      "hash": "VDFG3aYn/dh425/BCuASUuX1OkHpxquIbOU7Uy+vXfo=",
       "description": "close caption, cc, subtitles, information, text, helper",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60373 } },
@@ -2664,7 +2664,7 @@
     "513:3806": {
       "type": "ui",
       "name": "collapse",
-      "hash": "kAic9V4kwqGHDFcS+1HuPpN8fKxrrKXdaLT/AoIpeo0=",
+      "hash": "QYtzGkFSSLYfCKnMADkfd/jBnRLmAxVZyTlkJ4ZHz5E=",
       "description": "collapse, shrink, arrow, lessen",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60388 } },
@@ -2682,7 +2682,7 @@
     "513:3817": {
       "type": "ui",
       "name": "collectibles",
-      "hash": "1zriyLGWWJnaqL6Mpez8YWK53147uewH2mnCGagcL3M=",
+      "hash": "AYa6k1sOiHe9g5wz0/5NSy0KD3UI/xU0d//iahf8D90=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61443 } },
@@ -2700,7 +2700,7 @@
     "513:3828": {
       "type": "ui",
       "name": "comment",
-      "hash": "hL59jYP//xFHqFDMZfzTObDh9IRuxE9S9mHfUu3LHmE=",
+      "hash": "hBax1morIsCcI5GDDjKptse9MIXu51f4l4b6O5LaqUg=",
       "description": "chat bubble, speech, communication, social, interaction, message, 💬",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61033 } },
@@ -2718,7 +2718,7 @@
     "513:3839": {
       "type": "ui",
       "name": "commentActive",
-      "hash": "mjd02J10KkZJqvjqENyrMegE96DwDiyhGbNUTTvSSv0=",
+      "hash": "E9Zzp+htPuJjEf2CqBunQeZXKhJ3SH5Qk2Gfr2Q3mqw=",
       "description": "comments, thread, message, chat, speak, bubble, active, 💬",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61238 } },
@@ -2754,7 +2754,7 @@
     "513:3861": {
       "type": "ui",
       "name": "convert",
-      "hash": "zgqrIE9rwSBCpjy2N0sFFcI67SpkzzQz71Lg0abqdDg=",
+      "hash": "Eev3aknnOcs2fHQbq7Hz+v86n/6HbVjJ9opo6N3zRMc=",
       "description": "convert, change, turn, transform, turn, 🔄",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60078 } },
@@ -2808,7 +2808,7 @@
     "513:3894": {
       "type": "ui",
       "name": "currencies",
-      "hash": "e19wQgNx0jUE8iFc9I3+Dyl7MiiNEZF00Jes8VPXbwI=",
+      "hash": "HTVhia8MrjYsiGBLoZ/3QtVtdMo1wd9QngUXtil1AnY=",
       "description": "currency, crypto, cryptocurrency, tokens, pay",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59998 } },
@@ -2826,7 +2826,7 @@
     "513:3905": {
       "type": "ui",
       "name": "defi",
-      "hash": "FBrbq6FKKa25h+Wh+vtCEOuKc/+rjl2CsLfD1vyqqTY=",
+      "hash": "P6nvCb7YMNFnkOAzAycP38wVp13y2B0aCUbEjOtbw80=",
       "description": "decentralized, finance, blockchain, exchange, transactions, nodes",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59993 } },
@@ -2862,7 +2862,7 @@
     "513:3927": {
       "type": "ui",
       "name": "dex",
-      "hash": "qAOci5SB1boDSNgB0CqeN+RQco+vbCc6sjP//13EWmA=",
+      "hash": "Zi0BBjHbrusJR2TWCMaczOsbu+FhTpO6fl7CBsHU8OY=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60728 } },
@@ -2880,7 +2880,7 @@
     "513:3938": {
       "type": "ui",
       "name": "diagonalDownArrow",
-      "hash": "LboQPg7Kap+EYdgeL9Q/RWzgJwrxIRoV5zMsPIUiT2o=",
+      "hash": "u9by9hl/TiDrNoyMSMYBM9SJxJW2rJcmI5yMEaWDpq8=",
       "description": "arrow, diagonal, down, negative, progress, ↙️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60913 } },
@@ -2916,7 +2916,7 @@
     "513:3960": {
       "type": "ui",
       "name": "diagonalUpArrow",
-      "hash": "8scERO9ytOVecPaFT4WIHtJ7CWf90s4Hb+uMea2Qx0I=",
+      "hash": "EnzZG0ZSwNz9A9k/z8AKxT5w6lNkdfbSCIabMpPTR+c=",
       "description": "arrow, diagonal, up, positive, progress, ↗️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60908 } },
@@ -2934,7 +2934,7 @@
     "513:3971": {
       "type": "ui",
       "name": "diamondActive",
-      "hash": "eddEJEzj2Fiaq+44y/aGNVdszhuItRBpWlSGvlz9wMM=",
+      "hash": "OUaHhHiJsJFE3jF6Mo9xK85Am5HiHJ+kKgZx1Ox/wgc=",
       "description": "special, unique, diamond, rare, limited, scarce, crystal, gem, hold, active, 💎",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61188 } },
@@ -2952,7 +2952,7 @@
     "513:3982": {
       "type": "ui",
       "name": "diamondInactive",
-      "hash": "2irbwu8VF00+QYxYd6VeecOI33g6HqPoHaKNxK7Vsgo=",
+      "hash": "ibR6nCxHHe4AbGHFdojhg/yBQ+krTIMdY3SL+V34jPY=",
       "description": "special, unique, diamond, rare, limited, scarce, crystal, gem, hold, inactive, 💎",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61183 } },
@@ -3006,7 +3006,7 @@
     "513:4015": {
       "type": "ui",
       "name": "discordLogo",
-      "hash": "VedpFicQj3Z2iOlG50GHM27W6C+8N5lS4DhSd5t4Z7o=",
+      "hash": "mbV4naIGmg5YlpAcpQvQ2+sfr4E+giCIxzW6Y563pzI=",
       "description": "social media, logo, chat, conversation",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61583 } },
@@ -3078,7 +3078,7 @@
     "513:4059": {
       "type": "ui",
       "name": "downArrow",
-      "hash": "SVtcvb3+FjRPN1TmGhlrkRLIHgiS13sY0xLqY0aeGnI=",
+      "hash": "yYYrc8Nbwn0hEDYDhs9UOvsAyd1uaG08nyok80kSzSU=",
       "description": "arrow, downwards, down, direction, 👇, ⬇️, 🔻",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60463 } },
@@ -3096,7 +3096,7 @@
     "513:4070": {
       "type": "ui",
       "name": "download",
-      "hash": "yhq03RO+h5a7gB9FcyjnQsqxnj1mCDQWzLGoROFAESU=",
+      "hash": "6XM+JDyancbdYa2fZZdRbtpH+5c5wGBBoUPFhDJd6n4=",
       "description": "download, data, receiving, arrow down, ⬇️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60898 } },
@@ -3114,7 +3114,7 @@
     "513:4081": {
       "type": "ui",
       "name": "drag",
-      "hash": "Gi1TRqAnQZ6gqGE+jhiM3exz1iootgN/QwqnqTJOeEM=",
+      "hash": "kdpIzjdZkt3qqS4rkTqLeMobmHjR39vcta0w0e6Lr30=",
       "description": "drag, direction, move, 👆, 👉, 👇, 👈, 🗺",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60403 } },
@@ -3132,7 +3132,7 @@
     "513:4092": {
       "type": "ui",
       "name": "dropsActive",
-      "hash": "4p3SRguzYOTFe57DZBtKM95ONcHn8KZG8dTzX8wQ+4U=",
+      "hash": "QCPFEvtHxphvzX7zh7+j5Fwx6VdLcY3HwcbBrp1AjaU=",
       "description": "specialty, sparkles, drops, special, rare, ✨",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61178 } },
@@ -3150,7 +3150,7 @@
     "513:4103": {
       "type": "ui",
       "name": "dropsInactive",
-      "hash": "HIvvP9lnCoE8Wu+7mDLIo3aUOdtTcuXsM4yW8KlfAgU=",
+      "hash": "/kgP1sbN2x5/VMFixKDAOxUdNTJoWnIk3Hv2b2/cEm8=",
       "description": "specialty, sparkles, drops, special, rare, ✨",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61173 } },
@@ -3186,7 +3186,7 @@
     "513:4125": {
       "type": "ui",
       "name": "error",
-      "hash": "rf19R0vWQlI/2NDRpvOQ5gVGbMy8fXEyom0bv9P9Zx0=",
+      "hash": "Wk8I5sIcwjGZ5tnD38nDqpuvnl+j1nnjtcZjZjwAxrI=",
       "description": "error, alert, message, crucial, 🚨, ❗️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60358 } },
@@ -3204,7 +3204,7 @@
     "513:4136": {
       "type": "ui",
       "name": "ethereum",
-      "hash": "YD+gNbguBpvjqkOcQrbHwhQVbsF+1el1rZBNDfNmjSY=",
+      "hash": "rT59/S6G8/TJVzhvFBDTaOnMR4YWVw1fTnzDpXIjz+8=",
       "description": "decentralized, open-source, blockchain, crypto, cryptocurrency",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59988 } },
@@ -3240,7 +3240,7 @@
     "513:4158": {
       "type": "ui",
       "name": "expand",
-      "hash": "wt/QszSn1Jf+6DHga11OUOjGhy55o1X8inA7/MXW/Lg=",
+      "hash": "NgFYDyhZ7MUOXLQm5EEFo6r7E7yu9CmLRWYrxs47gLY=",
       "description": "expand all, full, arrow, outwards",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60383 } },
@@ -3294,7 +3294,7 @@
     "513:4191": {
       "type": "ui",
       "name": "externalLink",
-      "hash": "Zy8t5zQbHnf6GsBhO2MdsDLXos51pNELWTmezOo8sJs=",
+      "hash": "JEb55oQaa6O53HuehuX37wMyJtGERDLGEQxSSZ3XD8E=",
       "description": "external link, link out, tab, hyperlink, link",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60278 } },
@@ -3312,7 +3312,7 @@
     "513:4202": {
       "type": "ui",
       "name": "faceScan",
-      "hash": "NVG8Ab2wcGhGqu/pJ/f+lA2jltwH5/VeOkIjrzCM3zA=",
+      "hash": "WpeBED9cACVPT518f9ul8lQfCE+7Kuk+EtqWHzTw1Bs=",
       "description": "face, scan, access, security",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61568 } },
@@ -3330,7 +3330,7 @@
     "513:4213": {
       "type": "ui",
       "name": "faucetActive",
-      "hash": "BmG62kQJ5XHn9kcaRpBUd8kXkjlWioylPLm2hw9Flg8=",
+      "hash": "SVlsLrxf1STf1c1tlFiKepUI5hJob8hln+muTn+3xdU=",
       "description": "faucet, drip, droplet, water, hydration, 💧, 🚰, 💦",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61623 } },
@@ -3348,7 +3348,7 @@
     "513:4224": {
       "type": "ui",
       "name": "faucetInactive",
-      "hash": "QjfHmsBTdn1yLw/Voi645Wtu1H79YL0oyj6+v4atmP4=",
+      "hash": "nET9VOQxDv1zzcxnwCGmYToyTdqdS7MW9Rmmm3eLASM=",
       "description": "faucet, drip, droplet, water, hydration, 💧, 🚰, 💦",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61618 } },
@@ -3402,7 +3402,7 @@
     "513:4257": {
       "type": "ui",
       "name": "fingerprint",
-      "hash": "W78bpNE2j8SSD/UmuI+25xZ8C3CzLzpA+nYp+g+5NRk=",
+      "hash": "SmW/5FVIAflHH1C+I6RxVmKhdMy3TNsuvYnuUSNqPjk=",
       "description": "finger, print, scan, access, security",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61563 } },
@@ -3420,7 +3420,7 @@
     "513:4268": {
       "type": "ui",
       "name": "flame",
-      "hash": "fnv3tI/iw255tnsMNceCC+AYg9NKsFDK7Zq1ncJko88=",
+      "hash": "ubm1NYwAx6CW2fDmxbRCyV4+N7WiJDtKVupW0N+58HQ=",
       "description": "flame, hot, fire, burn, inferno, trending, blaze, popular, light, glow, fresh, 🔥, ☄️, 🧑‍🚒, 👨‍🚒, 👩‍🚒",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60013 } },
@@ -3438,7 +3438,7 @@
     "513:4279": {
       "type": "ui",
       "name": "followActive",
-      "hash": "tsZ7RbXytrRO0FkCQmO98oAlcqEdowvO+/YtZ4gNwqE=",
+      "hash": "E+cCGxMFMmWVHbWRoLfhWjbDSNWrBhhQR1LY9EIOk34=",
       "description": "follow, invite, person, people, add, ➕, 🙍‍♀️, 🙎‍♂️, ✅",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60678 } },
@@ -3474,7 +3474,7 @@
     "513:4301": {
       "type": "ui",
       "name": "fork",
-      "hash": "g4QvIfUmq9pDrlzogSx6EuS6m39eYMPiafh/TUhc2E0=",
+      "hash": "L/h1R503EKS6KPhVYfDbNniCzjf4ikzWxioWkTmAwo4=",
       "description": "fork, 🍴, ⑂, ⑃, ⋔, ⫚",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60778 } },
@@ -3492,7 +3492,7 @@
     "513:4312": {
       "type": "ui",
       "name": "forwardArrow",
-      "hash": "TLuUGBTuWSeiWewZWEpC8mfwS8LrQdsaqSPOU1oE2nk=",
+      "hash": "GDX927o8eybM28XlLtAfzEkl6C2SDICbGFVgA17tP2s=",
       "description": "arrow right, forward, ahead, ➡️, 🔜, →, ➡",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60453 } },
@@ -3510,7 +3510,7 @@
     "513:4323": {
       "type": "ui",
       "name": "games",
-      "hash": "KeNS7XtGsMjgHuYt79BRjDrUm4QmmyBx6HnJeWVwrr8=",
+      "hash": "vGxqAYQtDDSWSdJ87efs4f/aiAcB11EoP8f095XzVR0=",
       "description": "controller, game, buttons, dpad, remote, video, gamer, 🎮, 👾, 🕹",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61463 } },
@@ -3528,7 +3528,7 @@
     "513:4334": {
       "type": "ui",
       "name": "gauge",
-      "hash": "0hNeXBXSxlywaFX92i9wbeXaOGFvH+59z/e45HR/Xt8=",
+      "hash": "5I+RfAWQMREKIDlF0kDPtyqSWGnLPnJIYhB2L7fD+H0=",
       "description": "gauge, measure, size, scope, calculate, machine",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60378 } },
@@ -3546,7 +3546,7 @@
     "513:4345": {
       "type": "ui",
       "name": "gavel",
-      "hash": "pN0pDola1lpV+q9/sWXAz8fKuv/KenPOIHkeD/ejMo4=",
+      "hash": "8XUTtY1lbihLG0CIm+G44MG5Jxirpx/xlqYl5DnKgWk=",
       "description": "gavel, hammer, mallet, attention, 🧑‍⚖️, 👨‍⚖️, 👩‍⚖️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60203 } },
@@ -3564,7 +3564,7 @@
     "513:4356": {
       "type": "ui",
       "name": "gear",
-      "hash": "hjmECKqUa4EwZTgzOaljRGa4DMVkuB6BRuTTfhpI+Ns=",
+      "hash": "0KXnQv+F603eyHpMPsGF0VmkXGi1t4grKj80p/UjAh8=",
       "description": "gear, settings, cog, machine, tool, ⚙️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60018 } },
@@ -3582,7 +3582,7 @@
     "513:4367": {
       "type": "ui",
       "name": "ghostActive",
-      "hash": "Ui0vDv8YQcKQDvwJDeqwszDrqMHG2fWNVS0eT4tkOA8=",
+      "hash": "7oW5xc9srpot9QaRMTJlbVZbaBwuCAbcFNKs1ud+6G0=",
       "description": "ghost, hidden, hide, disappear",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61353 } },
@@ -3600,7 +3600,7 @@
     "513:4378": {
       "type": "ui",
       "name": "ghostInactive",
-      "hash": "XwFALUBRbN9XEQqak+f76o3qyEVIMkYL62XlTzFA0Lw=",
+      "hash": "vgsMgRa5G2SkY+PDuypWCe5PYEltztiYsIxLzxSa7BY=",
       "description": "ghost, hidden, hide, disappear",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61348 } },
@@ -3618,7 +3618,7 @@
     "513:4389": {
       "type": "ui",
       "name": "giftBox",
-      "hash": "nxV5PnknUwUXm68GB5JJnJGKCtrZJgJeMz3m3kB9NLE=",
+      "hash": "CEmNCX6JbkbtPpSmqwJaIipW8m++qOUBovPDx0SpzE0=",
       "description": "gift box, present, rewards, joy, contribution, perk, giving, 🎁, 🎉, 🎊, 🥳",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60218 } },
@@ -3636,7 +3636,7 @@
     "513:4400": {
       "type": "ui",
       "name": "giftCard",
-      "hash": "sffiUMJbh433krGJ268IwncsTweLsMM+FOoUSwnuCTI=",
+      "hash": "Ns3igZhpp1e3E+ouPJDnGbIAF81QTvpxI3q3YHyGEnM=",
       "description": "giftcard, card, gift, present, sharing, celebration, donate, 🎁, 🎉, 🎊, 🥳",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60418 } },
@@ -3654,7 +3654,7 @@
     "513:4411": {
       "type": "ui",
       "name": "globe",
-      "hash": "p5g5gpcUrHMQsfQTMh7OF/YmIAL4TbN44pdFeCcQfDE=",
+      "hash": "LlfRctENG5/Kv4VsWPBCrTiD04x7itOB2bqJGL4cX44=",
       "description": "globe, earth, international, continents, global, 🌎, 🌍, 🌐, 🌏",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60043 } },
@@ -3672,7 +3672,7 @@
     "513:4422": {
       "type": "ui",
       "name": "group",
-      "hash": "AcF70fhiDJH2xEmZVanuSm0LeOp6JGqCc0Wrnjgxjic=",
+      "hash": "GsQdJQEA4+iGfjijqxPH1hSSmwSoHdSe9R5jR/eKzpE=",
       "description": "faces, humans, people, community, circles, friends, family, 👯‍♀️, 👯, 👯‍♂️, 👨‍👩‍👧‍👦, 👨‍👩‍👦, 👨‍👩‍👧",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61128 } },
@@ -3708,7 +3708,7 @@
     "513:4444": {
       "type": "ui",
       "name": "hammerActive",
-      "hash": "7mA12c6jg6VO4QLWHquCr2HbH0nzqZag1tUF+sezkeQ=",
+      "hash": "RD2It5sYiZNIYjZ62PkRc4nmUKtR4rsdDMubaIPZMrE=",
       "description": "specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61158 } },
@@ -3726,7 +3726,7 @@
     "513:4455": {
       "type": "ui",
       "name": "hammerInactive",
-      "hash": "xvHMZj+3sOKGrlyhloZ3CDLjhGKzwEm7oB+/T1+s1mI=",
+      "hash": "iCuxcmGJ/XbPvyfGwpQUeh8MG+Io424Mw0dJXBShVkQ=",
       "description": "specialty, minting, creating, making, building, mint, pickaxe, 🔨, ⚒, ⚒️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61153 } },
@@ -3744,7 +3744,7 @@
     "513:4466": {
       "type": "ui",
       "name": "heartActive",
-      "hash": "8WgzxDSovVNywnMM+DU3YENTcZrIcxmIiogylLIbyzc=",
+      "hash": "GZvOQdcz6c9fD1Tx3iQNoTC5CMtdBUXjRNF8clJxMb4=",
       "description": "heart, love, support, active, ❤️, 💕, 💙, 💜, 💗, 🖤, 💛, 💖, 💚, 🧡, 😍, 😻",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60138 } },
@@ -3762,7 +3762,7 @@
     "513:4477": {
       "type": "ui",
       "name": "heartInactive",
-      "hash": "q5w+klniWWZxMDED6xZuAFbLIYX0GMFGyGgn5F7qsVw=",
+      "hash": "uNOSCEeoftPzipqwwfFyEEnffTqTPlMWRjIew0NQbKs=",
       "description": "unheart, empty, unfavorite, inactive, 💔",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60143 } },
@@ -3816,7 +3816,7 @@
     "513:4510": {
       "type": "ui",
       "name": "ideal",
-      "hash": "DHRa1fFaSuB7i6AZokCEqsRu/9hh+7zkmk0y7PK0f30=",
+      "hash": "rOpW1Ws6W3Wdd0kWIdc4ENwLg1WIosP08CLfqAY24uQ=",
       "description": "ideal, payment, brand, 💳, 🏦",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59928 } },
@@ -3834,7 +3834,7 @@
     "513:4521": {
       "type": "ui",
       "name": "identityCard",
-      "hash": "jNV70rsQf++vtz9letWdvmbAXkUuNmRa/G3Qm7cJolQ=",
+      "hash": "dkavod9jq3LQEqQhihZnHZDZNsRUeeAHvP4EFzIvQ4g=",
       "description": "identity card, profile, personal, ID, card, 🆔",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59903 } },
@@ -3852,7 +3852,7 @@
     "513:4532": {
       "type": "ui",
       "name": "info",
-      "hash": "f6beETYA6cn3UBUSs4bzsSS2F9SywOLcZL0+zWo60fI=",
+      "hash": "8UXy209ZA8RVIZtPieIiJ9R8Hl3P5zzPITwzHnN7Nkw=",
       "description": "information, info, resource, help, guide, details, facts, ℹ️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60103 } },
@@ -3888,7 +3888,7 @@
     "513:4554": {
       "type": "ui",
       "name": "instagramLogo",
-      "hash": "jr4DHuAM0Dl7qv8/OFQv4nJRDCtPzLpPFLkRP29Ej7Y=",
+      "hash": "22yspnuvsF3b/j6czjtUvuquomRsXWPEx/SK19D45Zs=",
       "description": "social media, logo, photos, gram",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61578 } },
@@ -3906,7 +3906,7 @@
     "513:4565": {
       "type": "ui",
       "name": "keyboard",
-      "hash": "f5m+xg/k4M0z72EkeUY9k5uWZif2iGGElaDUs1Kpbio=",
+      "hash": "8uUssy8ZSeP2iTyyHvLEtCw0Ouz+yuljFiH3GZxUN2M=",
       "description": "keys, computing, panel, device, ⌨️, 🎹, ⌨",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60718 } },
@@ -3924,7 +3924,7 @@
     "513:4576": {
       "type": "ui",
       "name": "laptop",
-      "hash": "3TFA++6OSqXaX5t81ig3+nZxiCSmJYnjWjyNNZiMPNY=",
+      "hash": "iLHPgqR/xKyoqAhqjer3clXeEqy3sbh2XyeZTp27nbQ=",
       "description": "computer, device, screen, 💻, 👩‍💻, 🧑‍💻, 👨‍💻, 💼",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60853 } },
@@ -3978,7 +3978,7 @@
     "513:4609": {
       "type": "ui",
       "name": "lock",
-      "hash": "ipYEZ2Tfd6VSfMP+2uawHju1v2L3MO7FCYTeRr/pb0w=",
+      "hash": "iX4cdW/uSRHWNM6mjZAGccosU/KxMA2vJF6TFnVtsTA=",
       "description": "lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59783 } },
@@ -3996,7 +3996,7 @@
     "513:4620": {
       "type": "ui",
       "name": "marketCap",
-      "hash": "jCWhh414fLp+SSBDc6NNSO9JDGRDHos+e7NtRlcAw9g=",
+      "hash": "mgk/IREgouM+EyRXcvU52ejmkOMal+O1KAVowi1yLUY=",
       "description": "market cap, capitalization, stock market, shares, share price, traded, 📈, 📉",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60228 } },
@@ -4014,7 +4014,7 @@
     "513:4631": {
       "type": "ui",
       "name": "metaverse",
-      "hash": "cMGTvS8jB4TbHUu9vqQJ6d0BpHa9oyvBTh1JB+gZ3C4=",
+      "hash": "wVay48LbyNuMRSC8H/mge0YDBBqOFHPNSUA1F4FvDIo=",
       "description": "3D, virtual, reality, controller, game, video, 🎮, 👾, 🕹",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61468 } },
@@ -4068,7 +4068,7 @@
     "513:4664": {
       "type": "ui",
       "name": "music",
-      "hash": "ZjdE8prR56NkvHK84lsOLcmVUVEXu/vyO1pZqOwdbXg=",
+      "hash": "N0jLdVHXb2N8ZLhFYR93XLKkMfjelQq+2wi+y91QoQc=",
       "description": "musical, music, note, notes, beamed, octave, ottava, signs, signing, 🎶, 🎵, 🎤, 🎸, 🎹",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61473 } },
@@ -4086,7 +4086,7 @@
     "513:4675": {
       "type": "ui",
       "name": "newsFeed",
-      "hash": "b8LxDbhlMHkKoVxEXmO6uY/eIG0h3lOzbWhQt1f3oPo=",
+      "hash": "OLLFnL/IsqsodDF2Abqyctkbnx2XvgbOCf4xQJ3etRk=",
       "description": "newsfeed, news, articles, layout, 📰,  🗞",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60223 } },
@@ -4104,7 +4104,7 @@
     "513:4686": {
       "type": "ui",
       "name": "nft",
-      "hash": "vKxo1YYlrn1nF+3rBEDv510OWySEt/MYuptwRfIMo0k=",
+      "hash": "bfKAN5uddFc0fbaRNPhL4RATUlYua1fwZh1oXMBegmQ=",
       "description": "non fungible token, blockchain, certify, magical, audio, photos, audio, digital, art, items, ✨,  ❇️, 🪄, 🔮",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60003 } },
@@ -4158,7 +4158,7 @@
     "513:4719": {
       "type": "ui",
       "name": "nftOfferActive",
-      "hash": "y66jHiSnYlI1Z/IALoIkFMA+rGmDYFiaR5l+KUZKTYU=",
+      "hash": "hKw7Is0cB5Y5yiLs4sjjIa58zSV3o6ngHGWALdCoaWs=",
       "description": "give, estimate, pay, value",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61373 } },
@@ -4176,7 +4176,7 @@
     "513:4730": {
       "type": "ui",
       "name": "nftOfferInactive",
-      "hash": "NS/ORcveWmevtmPx4UILgI8+4pNQ2xoPYkjtyDGZEqI=",
+      "hash": "EkezaVLvj2+p/KSuWtpSzu7aF+AXm2TMecJ04ITIKbw=",
       "description": "give, estimate, pay, value",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61368 } },
@@ -4230,7 +4230,7 @@
     "513:4763": {
       "type": "ui",
       "name": "noWifi",
-      "hash": "gcb5NSRHVsj6hR7ncDeJ6A1FnWDHW+JZTyoZTWZRonY=",
+      "hash": "MdW9Himgx6TpDDsZIL42Yo8dYRx+LNHprnByEQmz+Kc=",
       "description": "internet, disconnect, disconnection, wireless",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60838 } },
@@ -4248,7 +4248,7 @@
     "513:4774": {
       "type": "ui",
       "name": "orderHistory",
-      "hash": "dJPtk5zefcSmkq2ouE8Qt8Yg9h583zWM9AKZZMVlssA=",
+      "hash": "Gc5NHOsC0hZl1XH2A70iLhrzTj5/VnvVjAVM1DMT9Ms=",
       "description": "order, history, past, inventory, records, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️\n",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60443 } },
@@ -4266,7 +4266,7 @@
     "513:4785": {
       "type": "ui",
       "name": "outline",
-      "hash": "tAq321Kj9Lp4TAfEMaOA1thUR6yoXgNBamgpKZKuKSM=",
+      "hash": "p1eDZV/8CllEL943tuHCTCj/VrOdFYtpQo18zBkDqDQ=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60363 } },
@@ -4284,7 +4284,7 @@
     "513:4796": {
       "type": "ui",
       "name": "pFPS",
-      "hash": "Afq7UixEoKr1H4dVu1/bS/MiX6CN+kesxHQZGGcBsk4=",
+      "hash": "9drxth9SibiQrgWqqUBSqzEpDx15Sy+rleRtp/BF4/4=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61448 } },
@@ -4320,7 +4320,7 @@
     "513:4818": {
       "type": "ui",
       "name": "paperclip",
-      "hash": "2l9n+Sx/WLLoQHB5KOd0cr7vLvGr5SKfYzxGsPShcmo=",
+      "hash": "nsN/p2JImOeiCXRJVOR/JFv0mZWgn7iQLWs0GRejCfI=",
       "description": "paperclip, attach, attachment, file, document, picture, movie, sound file, spreadsheet, 📎, 🖇, 🗃, 📁, 📂, 🗂",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60828 } },
@@ -4356,7 +4356,7 @@
     "513:4840": {
       "type": "ui",
       "name": "pay",
-      "hash": "ctYBdeUqZVKMs7VxFjGaygGPRcqg15z7IcGrMxeYOnk=",
+      "hash": "T6f2QCCaTOJzP28IN9EnPQCljw9/F3h0N9Zt9oDgRe0=",
       "description": "pay, crypto, finance, assets, coin, payment",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60393 } },
@@ -4374,7 +4374,7 @@
     "513:4851": {
       "type": "ui",
       "name": "paypal",
-      "hash": "x5xv5ZiOtMZPoLOy2tJA9SMGoOWe+B26XBmN/NW7UUI=",
+      "hash": "l9cZTA23SwDH0hK+RTINzIb4oNuK63d2eGbQgyvuQpQ=",
       "description": "paypal, payment, brand, 💳, 🏦",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59918 } },
@@ -4392,7 +4392,7 @@
     "513:4862": {
       "type": "ui",
       "name": "pencil",
-      "hash": "V+mLUUCxc0aNFXDfj6r849OtjLhRZ7qPVlRoJ2p6B7w=",
+      "hash": "quvbNabMW7Tm5FHf1BBoBSNH66pZ5WZM+b1zKkxWtC4=",
       "description": "pencil, pen, edit, correct, check, copyedit, improve, ✏️, 📝, ✍️, 🖊, 🖋, ✒️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60193 } },
@@ -4410,7 +4410,7 @@
     "513:4873": {
       "type": "ui",
       "name": "percentage",
-      "hash": "DLL4kyUSwdyyI0DZ2eB22oXipov50uhDmYG30gAvolc=",
+      "hash": "qKN561AeEmWJTvawY7pPNsZ3W8nVeNACi40AhJlO88I=",
       "description": "percentage, interest, reward, rate, ratio, pct, measurement, %",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60248 } },
@@ -4428,7 +4428,7 @@
     "513:4884": {
       "type": "ui",
       "name": "phone",
-      "hash": "8w8fJJdUFlGstj+DAcqbLCZOka5hQt9L9opEl0QJA8k=",
+      "hash": "YJeETozrtiKHhmzG09uXqiusktCJ1paTsdwUfvxDukU=",
       "description": "phone, mobile, cellphone, 📲, 📱, 🤳",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59773 } },
@@ -4446,7 +4446,7 @@
     "513:4895": {
       "type": "ui",
       "name": "pin",
-      "hash": "2GXxsROYMXdWoEId1yXefvnju1duWdpXgg3rRzuOz5k=",
+      "hash": "hSFHZIFpPwk1C8jGfRn/NX7y1vRcZCId2/8j7OgfkFc=",
       "description": "attach, location, mark, marker, push pin, remember, 📍, 📌, 🧷",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60713 } },
@@ -4482,7 +4482,7 @@
     "513:4917": {
       "type": "ui",
       "name": "profile",
-      "hash": "axGPtE3YRF5oA1THz5OshFesKnxym0Cm2T0b/73sHj0=",
+      "hash": "q/p2PlHNC8sgiOEQjhS4iESqcJDi1tPpxffq++7DqWA=",
       "description": "profile, person, individual, human",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59983 } },
@@ -4500,7 +4500,7 @@
     "513:4928": {
       "type": "ui",
       "name": "protection",
-      "hash": "fSl0+7sTEUYq82tgHdd8q6UGqDNYl6a1uJlE/jv+oao=",
+      "hash": "kVD5udEbtjdcXqsfy9O9hEhIFohnZL2lE3QN/JCO9b4=",
       "description": "shield, protection, guard, defense, cover, safety, security",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60433 } },
@@ -4536,7 +4536,7 @@
     "513:4950": {
       "type": "ui",
       "name": "pyramid",
-      "hash": "HACcHzRi6mkaJHMbmjhSUjG9vwhjdibSVvAhf5fYK7E=",
+      "hash": "d2MaCQGOHn3m9KHd/E+VWsjphNWftbFc1y8rPrlOMX4=",
       "description": "triangle, chart, levels, progress, important, pyramid, data, visualization, numbers, graph, 📊, 📉, 📈, 🔺",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60743 } },
@@ -4572,7 +4572,7 @@
     "513:4972": {
       "type": "ui",
       "name": "questionMark",
-      "hash": "dABLjM7UpQ7yovs3aRlnivy8NlyhOxUUJ091pEErX+o=",
+      "hash": "lyn05jUoA9SgKnPhONC4rPs8SIENkvUjMJg5YgTDCK4=",
       "description": "question, examine, curious, unknown, ❓, 🙋‍♀️, 🙋‍♂️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60213 } },
@@ -4626,7 +4626,7 @@
     "513:5005": {
       "type": "ui",
       "name": "recurring",
-      "hash": "7IHZc23Wg4nwUZ76PFH5/n3MPHe6t3FKd2pf5nq6beY=",
+      "hash": "57CPJU/Er3uZ/NHB0T+OXKlUCaEodb3kpUMcJKkp1nI=",
       "description": "recurring, history, clock, time, back, time, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60073 } },
@@ -4644,7 +4644,7 @@
     "513:5016": {
       "type": "ui",
       "name": "regulated",
-      "hash": "GLtKg0y0IfsMPq2sn949zv2bp4nBmqVa0qhP9AeKYLY=",
+      "hash": "HwpBc6w5j7JsCqnfPo8POFHD5pMrDVvJxKxiHXUkLIw=",
       "description": "regulated, magnifying glass, confirmation, 🔎, 🔍, ✅",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60428 } },
@@ -4662,7 +4662,7 @@
     "513:5027": {
       "type": "ui",
       "name": "reportActive",
-      "hash": "n2fosE6gScOYRAzf48Kmyx7wsSxAn8vcKOhjmCFjLuM=",
+      "hash": "pXdBOnDUxUlWWnCj0MtSTpme43+0Uga/0M/RL95jI6g=",
       "description": "flag, report, 🏳",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60758 } },
@@ -4680,7 +4680,7 @@
     "513:5038": {
       "type": "ui",
       "name": "reportInactive",
-      "hash": "nsAZamIDpNNzsNsv+h2TYydBWxf2yOeNXudGQr3OmQo=",
+      "hash": "USdL451zwVFRwM3/xkfxooIKfxqKclclWHF0pfrd9ks=",
       "description": "flag, report, 🏳",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60893 } },
@@ -4734,7 +4734,7 @@
     "513:5071": {
       "type": "ui",
       "name": "safe",
-      "hash": "rJLMs+TXpMqkwFE/2lw1j7QPwVbtmadE862bJJZfISo=",
+      "hash": "Hd/6Q+rtVk66mfalR5v2uhsMrYhCSZKv1uwQYrGVHYk=",
       "description": "safe, storage, protection, safety, crypt, security",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60178 } },
@@ -4770,7 +4770,7 @@
     "513:5093": {
       "type": "ui",
       "name": "search",
-      "hash": "ezCFNYtlfnN4nTrDX0eWtz/g0LGuWctsERdHMpAnaUE=",
+      "hash": "GeYVlYGVcad79T5FuD9gJZ97Vx7YpN/I43mZP3lPkH4=",
       "description": "search, magnifying glass, look, explore, 🔎, 🔍, 🕵️, 🕵️‍♀️, 🕵️‍♂️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59953 } },
@@ -4788,7 +4788,7 @@
     "513:5104": {
       "type": "ui",
       "name": "seenActive",
-      "hash": "YUxc782Vd6O5OFJYOrq+Gs9TLKv/YUC30l4sW7fex9E=",
+      "hash": "EtJbMo4+aCjV8neicdq1U9WxT3AUasf3k1fksUkYnFE=",
       "description": "seen, read, checkmark, double checkmark, send receipts, ✅, 🤓",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61008 } },
@@ -4806,7 +4806,7 @@
     "513:5115": {
       "type": "ui",
       "name": "setPinCode",
-      "hash": "BhdhDCZvB/t4GYYZjybtlP0ok5mplzmZlISUvpvpDnk=",
+      "hash": "FPpEklVX8wYkrNnJW9XE4GP89ZzRVbFchP/4jPinGf8=",
       "description": "spin, password, protection, code, device, phone, laptop, security, 🔐",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60903 } },
@@ -4824,7 +4824,7 @@
     "513:5126": {
       "type": "ui",
       "name": "share",
-      "hash": "c272zMn17JmcszoOsopAkF4OtSb3g3WEtydIW7oaQQc=",
+      "hash": "to0+aT3ob/73QQf9knQyMo2tSCDm5/a/fQhNBxc1GzY=",
       "description": "share, send, connect",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60398 } },
@@ -4878,7 +4878,7 @@
     "513:5159": {
       "type": "ui",
       "name": "sofort",
-      "hash": "3u2WMiJeg/BT+SvICTKehr2H4xVCxXpECBF64ZZgOW4=",
+      "hash": "/sUwL60tP0kr4XUULHI1weeo1u1F6dfmvVKQeJIs0JE=",
       "description": "sofort, payment, brand, 💳, 🏦",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59923 } },
@@ -4986,7 +4986,7 @@
     "513:5226": {
       "type": "ui",
       "name": "soundOn",
-      "hash": "LE9QWfwKpIwhFuvSlAs+VriLND0wfiKEZahVOrJ+Jeg=",
+      "hash": "0uNMRomyV7G/x0f4KptAwfGMkdXtH3WKUQeSxOOy6AI=",
       "description": "sound, on, volume, increase, loud, music, songs, amplification, 🔈, 🔊, 🔉, 🎚, 🎶, 🎼, 🎵, 🎤, 🎸, 🥁, 🎹, 🎺, 🎻, 🎷, 🪗, 🪘, 🪕, 💿, 🎥",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60163 } },
@@ -5040,7 +5040,7 @@
     "513:5259": {
       "type": "ui",
       "name": "stake",
-      "hash": "KIGlxmipzxQaINLOXk3QzPw7IntbEgTRdX9ovQQdprk=",
+      "hash": "PMWVu/ot2rfIJE9j+UtUm5QxDadpvFq8CDAKQjmQd70=",
       "description": "stake, crypto, deposit, collateral, verify",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60168 } },
@@ -5058,7 +5058,7 @@
     "513:5270": {
       "type": "ui",
       "name": "starActive",
-      "hash": "J1U96qLezXKsuIrwmX1orl71ySuWNTAELRsEd8mkbJg=",
+      "hash": "p04wPos4lT400rPAkfDvG3IYX6JJHbJPXUxrLU2CsFs=",
       "description": "star, favorite, ⭐️, 🌟, 💫, 🤩, active",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59963 } },
@@ -5076,7 +5076,7 @@
     "513:5281": {
       "type": "ui",
       "name": "starInactive",
-      "hash": "tu3sHvy9EN/XIqWgFUIdjNlWZ0ILVdxX4JAL/aVy9io=",
+      "hash": "eo+opqbUXab8dxsQ3h2H+adIFg0LgbjrEHxhN/20nSM=",
       "description": "unstar, unfavorite, ⭐️, 🌟, 💫, 🤩, \ninactive",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59968 } },
@@ -5202,7 +5202,7 @@
     "513:5358": {
       "type": "ui",
       "name": "step5",
-      "hash": "EvxleclxdEnRyuWI8K5MdmQogH0Kfzf32Hi6gtvtVWQ=",
+      "hash": "gqJnDVd39YrEUZke4YPMB4Ng8LcsTFbRma1vk5UWDwk=",
       "description": "step five, 5, sequence, numbers, order, instructions",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59823 } },
@@ -5220,7 +5220,7 @@
     "513:5369": {
       "type": "ui",
       "name": "step6",
-      "hash": "GKWz8li6OSCmHcPMGgxTTr4HFfLQXPLEpNHN3d9lyWY=",
+      "hash": "xkHSXBBwPddQ09QEwskvusH3xgXk9GTHvZbld4qQj3c=",
       "description": "step six, 6, sequence, numbers, order, instructions",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59828 } },
@@ -5292,7 +5292,7 @@
     "513:5413": {
       "type": "ui",
       "name": "taxesReceipt",
-      "hash": "836+KQofIH0gkx5uQ1i7Xw1kEsgN5lN1SHkr4APkGsk=",
+      "hash": "bPR1iDEKWwmQzgdlzrybDvQwJVefPAG4Z6bM6EhfcEs=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61043 } },
@@ -5310,7 +5310,7 @@
     "513:5424": {
       "type": "ui",
       "name": "taxesReceiptInactive",
-      "hash": "F9OyTf4Y5sWbZJY8ZRnPOVbYXqEnU2PFaFuQuqzfoFE=",
+      "hash": "6GdhHSzKiBJeeX7nvz3ivoW3wCWRXVfAMATqkUdr0gM=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61403 } },
@@ -5328,7 +5328,7 @@
     "513:5435": {
       "type": "ui",
       "name": "telephone",
-      "hash": "qnRslbTkHfRhenZACBS81fGXZG7N9JfghcuhBVdjFWs=",
+      "hash": "bfYlqp++cWBw4lwIoz17y0jGV/JoH9aRPk4BqMQR/ZE=",
       "description": "phone, call, device, communication, communicate, conversation, 📞, ☎️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60848 } },
@@ -5346,7 +5346,7 @@
     "513:5446": {
       "type": "ui",
       "name": "thumbsDown",
-      "hash": "6g4nGT3QAfG23+yme/oNwF1UZ4bp8chn9luf79QHGOU=",
+      "hash": "TgsjDf8Uhm5Bqv8Y7CvHLfCD+KF1GWdzYz6ua0KLk+g=",
       "description": "no, thumbs down, thumb, down, 👎",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60788 } },
@@ -5364,7 +5364,7 @@
     "513:5457": {
       "type": "ui",
       "name": "thumbsDownOutline",
-      "hash": "l7fu7BN1EHjqgCMIIua2BTntq3IW958R+Lm9CmPV4gI=",
+      "hash": "A8xEHCmA1bvr5I700Xfz6N5EBkvo6x3nwEmUP6PAkZ4=",
       "description": "no, thumbs down, thumb, down, 👎",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61133 } },
@@ -5382,7 +5382,7 @@
     "513:5468": {
       "type": "ui",
       "name": "thumbsUp",
-      "hash": "oNIonfJaSl2U1O9ILtor5uPZTlLbBztvco5XmuLkBb0=",
+      "hash": "kZaoXN1j72vuguGvTbU/fnwIH5veh6xZs2uSUJ0sQyM=",
       "description": "yes, thumbs up, thumb, up, 👍",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60793 } },
@@ -5400,7 +5400,7 @@
     "513:5479": {
       "type": "ui",
       "name": "thumbsUpOutline",
-      "hash": "NNYgIq1g1hGibsGWclaHSQhK7orZPJFd0xCH90Z1hWg=",
+      "hash": "ccvd7lVxN7r673RsVtheZwDW9oNAEVCa22LcYNsMQXU=",
       "description": "yes, thumbs up, thumb, up, 👍",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61063 } },
@@ -5418,7 +5418,7 @@
     "513:5490": {
       "type": "ui",
       "name": "trashCan",
-      "hash": "KlorZJgAxFRk7pttAxf0MNk8QE7FQbB8hLzY58bM11A=",
+      "hash": "QVkC7bq28O6EIG72mDUUhJpgF5qPY6CE8FpHJCEGLKE=",
       "description": "trash, rubbish, remove, junk, waste, delete, 🗑, 🚮",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60353 } },
@@ -5436,7 +5436,7 @@
     "513:5501": {
       "type": "ui",
       "name": "trophy",
-      "hash": "tVpFFQCgxZFKGigX9oCWcymQ0nILTzhMU6Sed5WfKL8=",
+      "hash": "nI/pkgMm3+vIvYGxqEYwHIsHNiCzCS1Z2VY+MkSSgfw=",
       "description": "winner, win, reward, triumph, medal, first, prize, 🏆, 🥇, 🥈, 🥉, 🏅",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60408 } },
@@ -5454,7 +5454,7 @@
     "513:5512": {
       "type": "ui",
       "name": "twitterLogo",
-      "hash": "pm/9dByZKSw0SDOk89eWrmCvV2jkW87h7F1QCoWmv7s=",
+      "hash": "Yc0t03OT5u0g5soDi1TyGz6k5cKv+jd2vkwxB8X/gbI=",
       "description": "social media, logo, bird app, 🐦",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61573 } },
@@ -5472,7 +5472,7 @@
     "513:5523": {
       "type": "ui",
       "name": "ultility",
-      "hash": "OmWxU1XagVAvmp3TPwpx+gWn0Zwl0bpoaeNGr8nkQVQ=",
+      "hash": "eTGnwIsI5nsqd6NskFaBzE3ssZ0w6j4eFfC/imoqBus=",
       "description": "gears, block, chain, multifaceted ",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61458 } },
@@ -5490,7 +5490,7 @@
     "513:5534": {
       "type": "ui",
       "name": "undo",
-      "hash": "zsUDT8Xo40Q975ugg2AodwBqm86/QtoGeG0arKloC7g=",
+      "hash": "BXVFbeMRgPtj+HBuD8TYmsQethdJmBFJ0E0e28jmMh0=",
       "description": "undo, mistake, arrow, reverse",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60263 } },
@@ -5508,7 +5508,7 @@
     "513:5545": {
       "type": "ui",
       "name": "unknown",
-      "hash": "flAbuPw8pYWcNzkIXnb+jkWYKAtp6TmKOxhXheHAd+U=",
+      "hash": "+YXoR5AvnqHdWsvI4r7H0vjslyiXTsa995fIh7t5KbY=",
       "description": "unknown, question, question mark, ?, mystery, ❓, ❔, ?, ⁇, ﹖, ︖",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60783 } },
@@ -5526,7 +5526,7 @@
     "513:5556": {
       "type": "ui",
       "name": "unlock",
-      "hash": "DEe3WeAlJt9VeANdeEVZg2o6zlOz5bWO07VQ8V8DAaw=",
+      "hash": "PKIw/XTcjYyz/XDDdA7lyNcOY2zeIjLVEvAWC7XTmKg=",
       "description": "unlock, access, latch, open, freedom., 🔒, 🔐, 🔑, 🗝, 🔓",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61038 } },
@@ -5544,7 +5544,7 @@
     "513:5568": {
       "type": "ui",
       "name": "upArrow",
-      "hash": "3IujN+x8WheKGoJJbQ+Kr2ecPn2nTBMmtF4gcLLb9pw=",
+      "hash": "bqup2txzwdcFTo9i261Q6PmNlcXFmgAlXhtBu/Z2JHQ=",
       "description": "arrow, upwards, up, direction, 👆, ☝️, 🆙, ⬆️, 🔝, 🔼, 🔺",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60458 } },
@@ -5562,7 +5562,7 @@
     "513:5579": {
       "type": "ui",
       "name": "upload",
-      "hash": "5uC5MEdNwTf6Q3USCmcWUVIcYMHD/FmVBbJ39RHQ3lQ=",
+      "hash": "36NLChWtAdPPGAGIunfpswJp7x6zqPUJ/sd5nX9SKp8=",
       "description": "upload, transmit, data, file, uploading, ⬆️, 🔼, ⏫, 📎, 🖇, 🗃, 📁, 📂, 🗂",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60833 } },
@@ -5598,7 +5598,7 @@
     "513:5601": {
       "type": "ui",
       "name": "visibleActive",
-      "hash": "0YAhIWUDbeqBGHLQ9leEIuIdpoV31qx3em//A2Kcyyg=",
+      "hash": "d860NXy3VgqPM27Zn+SrZvh/4mf73hOoXoPDR8Q4QNg=",
       "description": "visible, eye, transparency, watching, 👀, 👁, active",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60188 } },
@@ -5616,7 +5616,7 @@
     "513:5612": {
       "type": "ui",
       "name": "visibleFilled",
-      "hash": "N2SLI3Ha9IV6GzGbPLYUPYzSKSB7RgK6qTq2oi7bHZA=",
+      "hash": "x3QTUkpTx7BhZX0Ne5Wv5OhIm47hc2xixYl8IyDfz2o=",
       "description": "eye, privacy, protection, personal, filled, 👀, 👁, 🧿, 👁‍🗨",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61058 } },
@@ -5634,7 +5634,7 @@
     "513:5623": {
       "type": "ui",
       "name": "visibleInactive",
-      "hash": "3uj9ZJRtSAoZVeBcpWqo99hyz5x5BnY7LpQnm8NIRfo=",
+      "hash": "snN1CWR+UL3NT6DJ5mAmTn2ku+GIKi+6J4vvbQjC/uY=",
       "description": "closed, eye, unwatch, not visible, 👀, 👁, inactive",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59913 } },
@@ -5652,7 +5652,7 @@
     "513:5634": {
       "type": "ui",
       "name": "wallet",
-      "hash": "dxNwFoRBeZ3ry1F/9FWnllRmty7zbF60FrDK1b+2Ox8=",
+      "hash": "zaAAPYO0nDHQJMPunEqs0NqZmiAxMNsBpwLkp1xf6NM=",
       "description": "wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 59908 } },
@@ -5670,7 +5670,7 @@
     "513:5645": {
       "type": "ui",
       "name": "warning",
-      "hash": "s1Sq551B/ZjZLxbLo+qxpqNNNvyqX1dgjmBTfJwXN9M=",
+      "hash": "MDEdj8c7eFPU5QFON/TaAlavdvGrl5PGkkRQeA8/1Fk=",
       "description": "warning, caution, message, notification, notice, hint, ⚠️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60468 } },
@@ -5688,7 +5688,7 @@
     "513:5656": {
       "type": "ui",
       "name": "wifi",
-      "hash": "jkW+mOFoxIW1u7EvbKw8o0a8SyobJFRI3dTHRHVJinA=",
+      "hash": "AqsqVxfGynSjpLq/9+YlMaRU9Ss38oW+6QVkTKDx5xE=",
       "description": "internet, connection, connect, wireless",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60843 } },
@@ -5706,7 +5706,7 @@
     "513:5667": {
       "type": "ui",
       "name": "wireTransfer",
-      "hash": "0L4pGugd4y1NqSVRzoCkh38AzAsuHLxdZ1PGh50VhhY=",
+      "hash": "QfHh4evZx1jQNXdjSyEibHLXRs1MY+48rMHVQwqAu04=",
       "description": "wire transfer, send, bank, credit, electronic",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60118 } },
@@ -5742,7 +5742,7 @@
     "513:5689": {
       "type": "ui",
       "name": "wrapToken",
-      "hash": "jIUluxeWFPSbkpdnuCkiRjYRwmucPA6VnZ+ODqe1OE8=",
+      "hash": "+r/y8g511KZxb/2ux2fbOtXQHNu06JeYdn3Ums1y9lU=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61598 } },
@@ -5778,7 +5778,7 @@
     "519:74": {
       "type": "ui",
       "name": "payouts",
-      "hash": "xynrzcqz9J1GNvItPvwZSEUiOiTr1LYyFtDTert8DTc=",
+      "hash": "Mmro1sK3nwjSeSLkVUaFPbpDoN0TMnrjSlDVsLyDwl0=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61593 } },
@@ -5796,7 +5796,7 @@
     "519:134": {
       "type": "ui",
       "name": "newsletter",
-      "hash": "7pS68nDUMuf8B1GMtn9Ewv5F7aJIS8XGyqIa8Yj9+iY=",
+      "hash": "AFpCYSF4nTpAGZBk3gNbEH63AC12rbQPCPCqgKHBnes=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61533 } },
@@ -5814,7 +5814,7 @@
     "522:192": {
       "type": "ui",
       "name": "refresh",
-      "hash": "ykbkqwAnwdoVA7UpG2fJ4yIH/tUw/veBAD9nADNdXB0=",
+      "hash": "+Sg3GRN7tCDLhNiIit5eiT7Lf6Q43ZIdSf27v7s4pj0=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61588 } },
@@ -5832,7 +5832,7 @@
     "524:235": {
       "type": "ui",
       "name": "rocket",
-      "hash": "wh5rBPfqqRQbExtL88NbOPc804X/Ys7hfBY4PSwp77o=",
+      "hash": "mGyjOCfU1/0XryNilOib27yQzzrGe+wppkV3Q2VS9zg=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61493 } },
@@ -5850,7 +5850,7 @@
     "524:289": {
       "type": "ui",
       "name": "qrCodeAlt",
-      "hash": "z2I07SrWDuYX3/dmG3TC63UN32NSqIGrIoqD4RBSV4M=",
+      "hash": "QK6CDKTXF0gh4BOpAA/Zwkogl+4NrWKmb9Nqq3/mVdY=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61498 } },
@@ -5868,7 +5868,7 @@
     "524:339": {
       "type": "ui",
       "name": "generalCharacter",
-      "hash": "LeSv1czmWdpX5lrdu94WcnvrnCv97Ql2r3ae0gkjmMk=",
+      "hash": "LiDXguHW4yohZRgXnIko+nXeeiQLfCXZGjQNdxYF72w=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61428 } },
@@ -5886,7 +5886,7 @@
     "524:412": {
       "type": "ui",
       "name": "institute",
-      "hash": "gGGT4O1/+VlvLw5CXpXIK9HrDsbd+ncocy4dt/tU37M=",
+      "hash": "wfc5Qjqpml2rDSeHo4LxyLFXkGYoI07D13c2PlOX2Vc=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61543 } },
@@ -5904,7 +5904,7 @@
     "524:455": {
       "type": "ui",
       "name": "lightbulb",
-      "hash": "C653OoA6b6mDSYsiAcltRRkNiJTMRQftW4QTaxBtMNQ=",
+      "hash": "blpgKZioA6v6YHILPTdORkJjZejy3E5TeRJgmUv74wY=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61518 } },
@@ -5940,7 +5940,7 @@
     "524:539": {
       "type": "ui",
       "name": "cryptobasics",
-      "hash": "Cuzqf0Lq4eNbz8GbBve4bWSeu7MCJWisdgRbSc37A1E=",
+      "hash": "GAODk6v9un4YAUJqdCt5SeFQrWoe3Y54tlD27VvzHpc=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61548 } },
@@ -5994,7 +5994,7 @@
     "524:668": {
       "type": "ui",
       "name": "book",
-      "hash": "BcRSZ6adeVgvKEo1McbBGV1ABE+znGwTDbo4H0nwPvI=",
+      "hash": "7KtZu6S/V7TjjNtXq0x2mw+dpYAFJDTBQH+swMJcvrI=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61528 } },
@@ -6012,7 +6012,7 @@
     "524:720": {
       "type": "ui",
       "name": "cashBrazillianReal",
-      "hash": "lv1IQaqicMUyEnHXYL3FUdgf9sHNwBMvvfQLVJK9U+o=",
+      "hash": "wUsF1oBmY1+jmXHtS+RpnmdgURNWTEnK/Dq4jcSEJi8=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61218 } },
@@ -6030,7 +6030,7 @@
     "569:58": {
       "type": "ui",
       "name": "planetInactive",
-      "hash": "XIBvv9HMCzS0PZn4LmaVoUM5rUHkdi3ZAhDedZAIqu4=",
+      "hash": "NkHncBp7pYyJooMEiGGdZRQH3zB0/igSys6R+vAWJ8k=",
       "description": "navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61642 } },
@@ -6048,7 +6048,7 @@
     "569:71": {
       "type": "ui",
       "name": "planetActive",
-      "hash": "oueHdy+SxXxYoYqn8OrIoYJ3gGX/7M8e1Ywe2gADPCs=",
+      "hash": "3rh5ur26StBm5gJcgOLkcUoPShWHgEOOW4vn8lpuqCM=",
       "description": "navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61639 } },
@@ -6066,7 +6066,7 @@
     "626:71": {
       "type": "ui",
       "name": "coinbaseOne",
-      "hash": "Iybf9oO6Ivi/Wx/olNr6IX5aQdP298ApxMuUtDwAihc=",
+      "hash": "9UmkODHtw7Mqo67qyIYUmqGxZpNPXsu95NpXTAt734Y=",
       "description": "cb1, logo, one, first, coinbase, speciality",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61645 } },
@@ -6084,7 +6084,7 @@
     "643:67": {
       "type": "ui",
       "name": "cashSingaporeDollar",
-      "hash": "0KDeV4lIiVcWg/QGIZNi5m96ls8m+ZutMu+ddymTwPo=",
+      "hash": "vA8GEjC4h4G+4et03suh5qzQXUZd/TEWhmr212+4Nkg=",
       "description": "currency, international, money,  🇸🇬, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61651 } },
@@ -6102,7 +6102,7 @@
     "643:83": {
       "type": "ui",
       "name": "cashCanadianDollar",
-      "hash": "dpGTeirJJlUUpuSmpmpor4spGOjBmnIprr73UxvRgME=",
+      "hash": "pHE7SjEQWHB3VSlTIVVM/PDX2i+SS9oYYi+YkTWB4lY=",
       "description": "currency, international, money,  🇨🇦, 💵, 💸, 🪙",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61648 } },
@@ -6120,7 +6120,7 @@
     "741:129": {
       "type": "nav",
       "name": "faucet",
-      "hash": "MTefx+Tr4uVS3kiKLXrXAO9qn+sgEWlUn6JI9KFzGMs=",
+      "hash": "QAwrLUlOi1s6Q/AfpMkRYW0Ei7QzjvQiDIASkrAoZSs=",
       "description": "faucet, drip, droplet, water, hydration, 💧, 🚰, 💦",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61657 } },
@@ -6144,7 +6144,7 @@
     "807:92": {
       "type": "ui",
       "name": "passport",
-      "hash": "pIaexZhyHf/v1v6VahVjL666R8MYdv5ktUX1FJ5fjnA=",
+      "hash": "sIYMjKDEw3Dee2HosaY7mD8FLPO6JsUfqv83ZyUPqiI=",
       "description": "international, mr worldwide, book, world, global, earth, identity, transport, 🛂, 🌎, 🌍, 🌏, 🌐, 📕, 📗, 📘, 📙, ✈️, 🛫, 🛬, 🛩️",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61660 } },
@@ -6162,7 +6162,7 @@
     "1126:368": {
       "type": "nav",
       "name": "derivatives",
-      "hash": "Vw7HA0G5k+9BLsRglgZaMGte72sj+ixTUy2dqAARbEg=",
+      "hash": "+dhHHsc4r51Jr20LQTcwyZlu7kqewkkd1ZXKLqYmP+E=",
       "description": "derivatives, fulcrum, lever, coins, leverage, scale, more, for less, size, yours, is, not",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61666 } },
@@ -6210,7 +6210,7 @@
     "1287:181": {
       "type": "nav",
       "name": "folderArrow",
-      "hash": "9YkUx5rIH+pCH5jMP+5D280YqM2Yj5KEE2443XbbLxs=",
+      "hash": "kpVupdeZRm68fQzVrxof+64RQc+HBRtxpBIPM/pna9M=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61696 } },
@@ -6282,7 +6282,7 @@
     "1287:205": {
       "type": "nav",
       "name": "perpetualSwap",
-      "hash": "+uoqhfbK14a44MhsqRuOJknEOzH1w7y2gFncakX96q8=",
+      "hash": "uxK3J+bAU/xYTq9WB76iggAiHyX2zMCvXe4HC+5Z8Zc=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61714 } },
@@ -6306,7 +6306,7 @@
     "1287:212": {
       "type": "nav",
       "name": "options",
-      "hash": "IHrpiXZYLiNnAKbotEBKzM+myz394A3+F2gCGSoS70c=",
+      "hash": "Q2G5S5VLHEnVc9/oPKdaJRc7wHLD5WgRXQgiIr5aAaU=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61708 } },
@@ -6330,7 +6330,7 @@
     "1287:247": {
       "type": "nav",
       "name": "eventContracts",
-      "hash": "sJW8u/8jRK/CuHICIzDFulXn3Yn2/gPhlOVms74Dq2o=",
+      "hash": "CV7SGN/YP8YgRDs5LpQpPAVc4xoq2H6Bozw/57bNH0Y=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61684 } },
@@ -6354,7 +6354,7 @@
     "1287:254": {
       "type": "nav",
       "name": "globe",
-      "hash": "mnFyerLZ/ypoSbA7fMBnH6X1McrrF7Fv6NJK1oJyFlA=",
+      "hash": "t2akdlJ6v7DFEOXTYDtfuqwnvYXU7KcvYHmQcg9aU5o=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61702 } },
@@ -6378,7 +6378,7 @@
     "1287:262": {
       "type": "nav",
       "name": "base",
-      "hash": "FS/G7NGnibp9nmn+1JVMgERko/ZdUdGTc+wck2CqLhQ=",
+      "hash": "87nkC5cH+8h+GWowQAMIHxpSlBZ9i+BBZvtypxproU8=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61672 } },
@@ -6402,7 +6402,7 @@
     "1287:269": {
       "type": "nav",
       "name": "compass",
-      "hash": "kyBPUDBA5Sxf7VGhsUFaQqz1S251c6wGvHDxjAjrZQ0=",
+      "hash": "5DhUj80WifQKXvOwMXohHtjEK2/S/KlQWfzdogDYEfg=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61678 } },

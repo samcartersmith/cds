@@ -10,7 +10,7 @@ type InternalIconName = NavIconNameInternal | UiIconNameInternal;
 
 /**
  * This file powers the icon font lookup on web and mobile.
- * In addition, this is used to populate the stories in percy, so the sort order based on last updated is important.
+ * In addition, this is used to populate the stories in percy, so the sort order based on createdAt is important.
  */
 const glyphMap: Record<InternalIconName, string> = {
   'nav-hiddenEye-12-active': '',
