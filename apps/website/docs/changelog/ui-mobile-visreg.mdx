@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Remove "metroSrc" field from package.json and prefer explicitly configured module aliases. [[#2155](https://github.cbhq.net/frontend/cds/pull/2155)]
+
+#### 📘 Misc
+
 - Add "metroSrc" field to package.json. This field points to the source code and is used by the CDS mobile-app for local development. [[#2141](https://github.cbhq.net/frontend/cds/pull/2141)]
 
 #### 📘 Misc

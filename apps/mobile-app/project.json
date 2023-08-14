@@ -19,7 +19,7 @@
     "setup": {
       "executor": "nx:run-commands",
       "dependsOn": [
-        "^mobile-build"
+        "^build"
       ],
       "options": {
         "cwd": "apps/mobile-app",
@@ -52,9 +52,6 @@
     },
     "start": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-        "^mobile-build"
-      ],
       "options": {
         "cwd": "apps/mobile-app",
         "command": "node ./scripts/start.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"

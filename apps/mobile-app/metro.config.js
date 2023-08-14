@@ -1,12 +1,10 @@
 const cbConfig = require('@cbhq/metro-config');
 const { getDefaultConfig } = require('expo/metro-config');
 const { mergeConfig } = require('@react-native/metro-config');
-const metroResolver = require('metro-resolver');
+const path = require('node:path');
 
 // Learn more https://docs.expo.io/guides/customizing-metro
 const expoConfig = getDefaultConfig(__dirname);
-
-const pkgCache = {};
 
 const getBaseModule = (moduleName) => {
   const parts = moduleName.split('/');
@@ -14,48 +12,37 @@ const getBaseModule = (moduleName) => {
   return `${parts[0]}/${parts[1]}`;
 };
 
-const loadPackageJson = (pkgPath) => {
-  if (!pkgCache[pkgPath]) pkgCache[pkgPath] = require(pkgPath);
-  return pkgCache[pkgPath];
-};
-
 const cbResolveRequest = cbConfig.resolver.resolveRequest;
 
-// Configure Expo's default Metro resolver to use the `metroSrc` field in a module's package.json
-expoConfig.resolver.resolverMainFields = ['metroSrc', ...expoConfig.resolver.resolverMainFields];
+const aliases = {
+  '@cbhq/cds-icons': path.resolve(__dirname, '../../packages/icons/src'),
+  '@cbhq/cds-illustrations': path.resolve(__dirname, '../../packages/illustrations/src'),
+  '@cbhq/ui-mobile-playground': path.resolve(__dirname, '../../packages/ui-mobile-playground/src'),
+  '@cbhq/ui-mobile-visreg': path.resolve(__dirname, '../../packages/ui-mobile-visreg/src'),
+};
 
-/**
- * This custom Metro resolver will skip using the @cbhq/metro-config resolver when the module's
- * package.json includes the `metroSrc` field. This allows us to use the `metroSrc` field to point
- * to the package's source code, rather than the built package's entry point via `exports`.
- */
+// This custom Metro resolver will try to use the aliases defined above.
 const customResolveRequest = (context, baseModuleName, platform) => {
-  const resolveRequestInner = context.resolveRequest;
   const moduleName = context.redirectModulePath(baseModuleName);
+  const baseModule = moduleName && getBaseModule(moduleName);
 
-  if (!moduleName || !moduleName.startsWith('@cb'))
-    return cbResolveRequest(context, baseModuleName, platform);
+  if (baseModule && aliases[baseModule]) {
+    const aliasPath = moduleName.replace(baseModule, aliases[baseModule]);
+    return context.resolveRequest(context, aliasPath, platform);
+  }
 
-  const pkgPath = require.resolve(`${getBaseModule(moduleName)}/package.json`);
-  const pkg = loadPackageJson(pkgPath);
-
-  if (!('metroSrc' in pkg)) return cbResolveRequest(context, baseModuleName, platform);
-
-  if (resolveRequestInner) return resolveRequestInner(context, moduleName, platform);
-
-  delete context.resolveRequest;
-  return metroResolver.resolve(context, moduleName, platform);
+  return cbResolveRequest(context, baseModuleName, platform);
 };
 
 // Only use our custom resolver when not running in CI or production
 if (process.env.CI !== 'true' && process.env.NODE_ENV !== 'production') {
   console.log(
-    'Using custom Metro resolver: looking for "metroSrc" field in package.json to resolve source code',
+    'Using custom Metro resolver: mapping some packages to source code via "aliases" in metro.config.js',
   );
   cbConfig.resolver.resolveRequest = customResolveRequest;
 } else
   console.log(
-    'Not using custom Metro resolver: all packages will be resolved via "exports" (and so must be built)',
+    'No custom Metro resolver: packages will be resolved via package.json "exports" (and so must be built)',
   );
 
 /**

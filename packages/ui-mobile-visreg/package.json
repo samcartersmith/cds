@@ -31,7 +31,6 @@
   },
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
-  "metroSrc": "./src/index.ts",
   "exports": {
     "./package.json": "./package.json",
     "./*": {
