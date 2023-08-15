@@ -126,6 +126,7 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci test --allOnMaster
+      - yarn nx run-many --target=audit-a11y --all
     retry:
       automatic:
         limit: 1

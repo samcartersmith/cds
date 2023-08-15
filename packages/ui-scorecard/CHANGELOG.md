@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.2 (8/14/2023 PST)
+
+#### 🐞 Fixes
+
+- Remove depreacted loggingId and update readme. [[#2151](https://github.cbhq.net/frontend/cds/pull/2151)]
+
 ## 0.1.1 (6/23/2023 PST)
 
 #### 🐞 Fixes

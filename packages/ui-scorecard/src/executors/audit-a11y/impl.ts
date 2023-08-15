@@ -84,6 +84,7 @@ async function sendScores(options: TestOptions, { automatedA11yScore }: A11yLogT
   logVerbose({
     event: {
       eventName: 'accessibility_score',
+      projectName: options.eventProjectName,
       action: ActionType.measurement,
       componentType: ComponentType.unknown,
       automatedA11yScore,
@@ -93,7 +94,6 @@ async function sendScores(options: TestOptions, { automatedA11yScore }: A11yLogT
   logEvent(
     'accessibility_score',
     {
-      loggingId: 'cc464392-65f0-42ca-bfd8-f8649eb63640',
       action: ActionType.measurement,
       componentType: ComponentType.unknown,
       automatedA11yScore,

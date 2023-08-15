@@ -22,7 +22,10 @@
       "dependsOn": [
         "^build",
         "test"
-      ]
+      ],
+      "options": {
+        "eventProjectName": "cds_mobile"
+      }
     },
     "build": {
       "executor": "@cbhq/cds-tasks:build-package",

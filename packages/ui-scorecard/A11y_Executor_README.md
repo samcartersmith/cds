@@ -271,3 +271,13 @@ The [impl.ts](./src/executors/audit-a11y/impl.ts) file serves as the entry point
 - Slack: [#ask-ui-systems-accessibility-tooling](https://coinbase.slack.com/archives/C03TGNBJCMQ)
 - Go links:
   - [go/mobile-a11y-runbook](https://docs.google.com/document/d/1fCmteNp_ZEWoMxi74YZnbvhGV3CnZjUlWzAeF-9_1Sk/edit#heading=h.2y07lmtwzk7o)
+
+## Troubleshooting
+
+1. `The "path" argument must be of type string. Received undefined`.
+
+- Make sure `@cbhq/ui-scorecard` is in your project dependencies. If not, run `yarn add --dev @cbhq/ui-scorecard`.
+
+2. `Coverage Summary does not exist at ...`
+
+- Jest coverage may not be enabled by default. Make sure your jest config has `coverageReporters: ['json-summary']` which generates coverage summary after tests run. The report will be picked up by the executor.

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Add eventProjectName to audit-a11y script. [[#2151](https://github.cbhq.net/frontend/cds/pull/2151)]
+
 ## 5.3.3 (8/10/2023 PST)
 
 #### 🐞 Fixes

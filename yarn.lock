@@ -3681,6 +3681,7 @@ __metadata:
     "@cbhq/cds-lottie-files": "workspace:^"
     "@cbhq/cds-tasks": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/ui-scorecard": "workspace:^"
     "@react-native-community/netinfo": ^7.1.7
     "@testing-library/react-native": ^11.3.0
     "@types/react-native": ^0.71.3
@@ -4303,7 +4304,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/ui-scorecard@workspace:packages/ui-scorecard":
+"@cbhq/ui-scorecard@workspace:^, @cbhq/ui-scorecard@workspace:packages/ui-scorecard":
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-scorecard@workspace:packages/ui-scorecard"
   dependencies:
