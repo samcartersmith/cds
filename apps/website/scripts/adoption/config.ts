@@ -29,6 +29,7 @@ const walletGit = 'wallet/wallet-mobile';
 const unifiedAccountsGit = 'frontend/unified-identity-accounts';
 const mauiGit = 'frontend/maui';
 const primeMobileGit = 'prime/mobile';
+const primeWebGit = 'institutional/frontend';
 const commercePayerGit = 'commerce/www';
 
 const assethubConfig = {
@@ -41,6 +42,12 @@ const monorepoConfig = {
   root: path.join(tempDir, monorepoGit),
   github: monorepoGit,
   tsconfigFileName: 'tsconfig.options.json',
+};
+
+const primeWebConfig = {
+  root: path.join(tempDir, primeWebGit),
+  github: primeWebGit,
+  tsconfigFileName: 'tsconfig.base.json',
 };
 
 export const hiddenProjects = ['commerce-merchant', 'commerce-payer'];
@@ -134,17 +141,17 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        ...monorepoConfig,
+        ...primeWebConfig,
         id: 'prime-web',
         label: 'Prime Web',
-        projectTsAliases: ['@cbhq/prime-ui', '@cbhq/insto-ui-web'],
+        projectTsAliases: ['@prime-ui'],
         type: 'doc',
       },
       {
-        ...monorepoConfig,
+        ...primeWebConfig,
         id: 'prime-admin',
         label: 'Prime Admin',
-        projectTsAliases: ['@prime-admin', '@cbhq/prime-ui', '@cbhq/insto-ui-web'],
+        projectTsAliases: ['@prime-admin', ':prime/admin', '@prime-ui'],
         type: 'doc',
       },
       {
