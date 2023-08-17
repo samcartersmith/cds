@@ -134,7 +134,7 @@ export const TextInput = memo(
           ref: refs,
           'aria-describedby': shouldSetHelperTextId && helperTextId,
           'aria-invalid': hasError,
-          id: shouldSetLabelId && labelId,
+          id: shouldSetLabelId ? labelId : undefined,
           disabled,
         });
 
