@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.9 (8/9/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] chore: Align ts-morph version with root. [[#2137](https://github.cbhq.net/frontend/cds/pull/2137)]
+
 ## 0.1.8 (8/1/2023 PST)
 
 #### 🚀 Updates

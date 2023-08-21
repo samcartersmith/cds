@@ -3,7 +3,16 @@
 import { danger, fail, message, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
 
-import { findFileDifferences, findPatternInFile } from './utils';
+import checkForBreakingChanges from './breakingChanges/checkForBreakingChanges';
+import checkFilesForRemovedExports from './breakingChanges/exports';
+import checkFilesForRemovedParams from './breakingChanges/params';
+import {
+  cdsPackagesPatterns,
+  componentPatterns,
+  fileIgnorePatterns,
+  frozenComponentPatterns,
+} from './patterns';
+import { findAssociatedFilesWithoutSuffix, findPatternInGitDiffs, getModifiedFiles } from './utils';
 
 // Useful for running locally with yarn danger local --dangerfile libs/dangerfiles/dangerfile.ts
 const MOCK_PR = {
@@ -22,142 +31,14 @@ danger.git.fileMatch = chainsmoker({
 
 const bigPRThreshold = 600;
 
-// Add ignorable files to the bottom of this list
-// Example: "!**/*.native.(ts|tsx)" would ignore *.native.ts or *.native.tsx files
-const fileIgnorePatterns = [
-  '!**/*.md',
-  '!**/*.ejs.t',
-  '!**/*.test.(ts|tsx)',
-  '!**/*.stories.(ts|tsx)',
-  '!**/*.d.(ts|tsx)',
-  '!**/dangerfile.ts',
-  '!**/dangerfile-coverage.ts',
-  '!**/types/*.ts',
-];
+const pr = danger.github?.pr || MOCK_PR;
+const bodyAndTitle = (pr.body + pr.title).toLowerCase();
 
-const overlayWebMovedComponents = [
-  'packages/web/__stories__/AppSwitcher.stories.tsx',
-  'packages/web/__stories__/AppSwitcherContent.tsx',
-  'packages/web/__stories__/Navigation.stories.tsx',
-  'packages/web/tabs/__stories__/TabNavigation.stories.tsx',
-  'packages/web/__stories__/UserSwitcher.stories.tsx',
-  'packages/web/__stories__/UserSwitcherContent.tsx',
-  'packages/web/dropdown/Dropdown.tsx',
-  'packages/web/dropdown/DropdownContent.tsx',
-  'packages/web/dropdown/DropdownProps.ts',
-  'packages/web/dropdown/MenuItem.tsx',
-  'packages/web/dropdown/__stories__/Dropdown.stories.tsx',
-  'packages/web/dropdown/__stories__/DropdownContent.stories.tsx',
-  'packages/web/dropdown/__stories__/DropdownInteractive.stories.tsx',
-  'packages/web/dropdown/__tests__/Dropdown.test.tsx',
-  'packages/web/dropdown/__tests__/MenuItem.test.tsx',
-  'packages/web/dropdown/index.ts',
-  'packages/web/index.ts',
-  'packages/web/navigation/__stories__/ComposedSystem.stories.mdx',
-  'packages/web/navigation/__stories__/NavLink.stories.mdx',
-  'packages/web/navigation/__stories__/NavigationBar.stories.mdx',
-  'packages/web/navigation/__stories__/NavigationStorySetup.tsx',
-  'packages/web/navigation/__stories__/Sidebar.stories.mdx',
-  'packages/web/navigation/__tests__/SidebarMoreMenu.test.tsx',
-  'packages/web/overlays/__stories__/AllOverlays.stories.tsx',
-  'packages/web/overlays/__stories__/SearchInputMenu.stories.tsx',
-  'packages/web/overlays/__tests__/FocusTrap.test.tsx',
-  'packages/web/overlays/popover/Popover.tsx',
-  'packages/web/overlays/popover/PopoverProps.ts',
-  'packages/web/overlays/__tests__/Popover.test.tsx',
-  'packages/web/overlays/popover/usePopper.ts',
-  'packages/web/controls/Select.tsx',
-  'packages/web/controls/SelectOption.tsx',
-  'packages/web/controls/__stories__/Select.stories.tsx',
-  'packages/web/controls/__stories__/SelectInteraction.stories.tsx',
-  'packages/web/controls/__stories__/SelectOption.stories.tsx',
-  'packages/web/controls/__tests__/Select.test.tsx',
-  'packages/web/navigation/SidebarItem.tsx',
-  'packages/web/navigation/SidebarMoreMenu.tsx',
-  'packages/web/overlays/Tooltip/Tooltip.tsx',
-  'packages/web/overlays/Tooltip/TooltipContent.tsx',
-  'packages/web/overlays/Tooltip/TooltipProps.ts',
-  'packages/web/overlays/__stories__/Tooltip.stories.tsx',
-  'packages/web/overlays/__stories__/TooltipContent.stories.tsx',
-  'packages/web/overlays/Tooltip/useTooltipState.ts',
-];
-
-const sparklineWebMovedComponents = [
-  'packages/web/visualizations/Counter.tsx',
-  'packages/web/visualizations/Sparkline.tsx',
-  'packages/web/visualizations/SparklineArea.tsx',
-  'packages/web/visualizations/SparklineAreaPattern.tsx',
-  'packages/web/visualizations/SparklineGradient.tsx',
-  'packages/web/visualizations/SparklinePath.tsx',
-  'packages/web/visualizations/VisualizationContainer.tsx',
-  'packages/web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx',
-  'packages/web/visualizations/sparkline-interactive-header/__stories__/SparklineInteractiveHeader.stories.tsx',
-  'packages/web/visualizations/sparkline-interactive/InnerSparklineInteractiveProvider.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractive.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubHandler.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubProvider.tsx',
-  'packages/web/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
-  'packages/web/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
-];
-
-const sparklineMobileMovedComponents = [
-  'packages/mobile/visualizations/Sparkline.tsx',
-  'packages/mobile/visualizations/Sparkline.tsx',
-  'packages/mobile/visualizations/SparklineArea.tsx',
-  'packages/mobile/visualizations/SparklineAreaPattern.tsx',
-  'packages/mobile/visualizations/SparklineGradient.tsx',
-  'packages/mobile/visualizations/VisualizationContainer.tsx',
-  'packages/mobile/visualizations/VisualizationContainer.tsx',
-  'packages/mobile/visualizations/__stories__/SparklineGradient_Deprecated.stories.tsx',
-  'packages/mobile/visualizations/__stories__/Sparkline_Deprecated.stories.tsx',
-  'packages/mobile/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx',
-  'packages/mobile/visualizations/sparkline-interactive-header/__stories__/SparklineInteractiveHeader_Deprecated.stories.tsx',
-  'packages/mobile/visualizations/sparkline-interactive-header/useSparklineInteractiveHeaderStyles.ts',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractive.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMinMax.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePanGestureHandler.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/__stories__/SparklineInteractive_Deprecated.stories.tsx',
-  'packages/mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation.ts',
-  'packages/mobile/visualizations/sparkline-interactive/useMinMaxTransform.ts',
-  'packages/mobile/visualizations/sparkline-interactive/useOpacityAnimation.ts',
-  'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
-  'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveLineStyles.ts',
-];
-
-/** See go/frozen-components for more info */
-const frozenComponentPatterns = [
-  'packages/mobile/visualizations/sparkline-interactive/*.(ts|tsx)',
-  'packages/mobile/visualizations/sparkline-interactive-header/*.(ts|tsx)',
-  'packages/web/dropdown/*.(ts|tsx)',
-  'packages/web/overlays/popover/*.(ts|tsx)',
-  'packages/common/animation/dropdown.ts',
-  ...overlayWebMovedComponents,
-  ...sparklineWebMovedComponents,
-  ...sparklineMobileMovedComponents,
-];
-
-const componentPatterns = [
-  'packages/web/**/*.tsx',
-  'packages/mobile/**/*.tsx',
-  'packages/web-visualization/**/*.tsx',
-  'packages/mobile-visualization/**/*.tsx',
-  'packages/cds-web-overlays/**/*.tsx',
-];
+// Custom modifiers for people submitting PRs to be able to say "skip this"
+const acceptedNoTests = bodyAndTitle.includes('#skip_tests');
+const acceptedNoStories = bodyAndTitle.includes('#skip_stories');
+const acceptedOverrideFrozenComponent = bodyAndTitle.includes('#skip_frozen_component');
+const acceptedOverrideDeprecation = bodyAndTitle.includes('#skip_deprecations');
 
 const nonTestTsFiles = danger.git.fileMatch(
   `packages/${process.env.NX_PROJECT_NAME}/**/*.(ts|tsx)`,
@@ -177,15 +58,7 @@ const storyFiles = danger.git.fileMatch(
 
 const frozenComponentFiles = danger.git.fileMatch(...frozenComponentPatterns);
 const componentFiles = danger.git.fileMatch(...componentPatterns);
-
-const pr = danger.github?.pr || MOCK_PR;
-const bodyAndTitle = (pr.body + pr.title).toLowerCase();
-
-// Custom modifiers for people submitting PRs to be able to say "skip this"
-const acceptedNoTests = bodyAndTitle.includes('#skip_tests');
-const acceptedNoStories = bodyAndTitle.includes('#skip_stories');
-const acceptedOverrideFrozenComponent = bodyAndTitle.includes('#skip_frozen_component');
-const acceptedOverrideDeprecation = bodyAndTitle.includes('#skip_deprecations');
+const cdsPackagesFiles = danger.git.fileMatch(...cdsPackagesPatterns);
 
 // Encourage stories
 if (nonTestTsxFiles.created && !storyFiles.edited && !acceptedNoStories) {
@@ -193,7 +66,11 @@ if (nonTestTsxFiles.created && !storyFiles.edited && !acceptedNoStories) {
     [
       "## 📕 Don't forget to add stories!",
       `You have added .tsx files in the **${process.env.NX_PROJECT_NAME}** package. Please consider adding **stories** or add \`#skip_stories\` in the PR description to skip this check.\n`,
-      findFileDifferences(nonTestTsxFiles.getKeyedPaths().edited, storyFiles.getKeyedPaths().edited)
+      findAssociatedFilesWithoutSuffix({
+        paths: nonTestTsxFiles.getKeyedPaths().edited,
+        targetPaths: storyFiles.getKeyedPaths().edited,
+        suffix: 'stories',
+      })
         .map((file) => `- ${file}`)
         .join('\n'),
     ].join('\n'),
@@ -206,7 +83,11 @@ if (nonTestTsFiles.edited && !testTsFiles.edited && !acceptedNoTests) {
     [
       "## 🧪 Don't forget to add tests!",
       `You have edited files in the **${process.env.NX_PROJECT_NAME}** package. Please consider adding **tests** or add \`#skip_tests\` in the PR description to skip this check.\n`,
-      findFileDifferences(nonTestTsFiles.getKeyedPaths().edited, testTsFiles.getKeyedPaths().edited)
+      findAssociatedFilesWithoutSuffix({
+        paths: nonTestTsFiles.getKeyedPaths().edited,
+        targetPaths: testTsFiles.getKeyedPaths().edited,
+        suffix: 'test',
+      })
         .map((file) => `- ${file}`)
         .join('\n'),
     ].join('\n'),
@@ -277,9 +158,9 @@ if (pr.additions + pr.deletions > bigPRThreshold) {
 
 // Look for deprecated in each file that has been touched
 void (async () => {
-  const deprecations = await findPatternInFile({
+  const deprecations = await findPatternInGitDiffs({
     pattern: /@deprecated/g,
-    files: nonTestTsFiles,
+    files: cdsPackagesFiles,
     diffFn: danger.git.diffForFile,
   });
 
@@ -316,3 +197,14 @@ void (async () => {
     );
   }
 })();
+
+// When testing breaking changes scripts you will have to commit breaking changes before running the scripts
+void checkForBreakingChanges({
+  files: getModifiedFiles(cdsPackagesFiles),
+  checkFn: checkFilesForRemovedExports,
+});
+
+void checkForBreakingChanges({
+  files: getModifiedFiles(cdsPackagesFiles),
+  checkFn: checkFilesForRemovedParams,
+});
