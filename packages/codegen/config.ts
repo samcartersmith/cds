@@ -118,7 +118,7 @@ export const config: RunnerConfig = {
   templates,
   logger: new Logger(console.log.bind(console)),
   debug: !!process.env.DEBUG,
-  exec: (action: string, body: string) => {
+  exec: async (action: string, body: string) => {
     const opts: Options<string> = { input: body && body.length > 0 ? body : '' };
     return command(action, { ...opts, shell: true });
   },

@@ -7,7 +7,6 @@ export async function downloadPngImage(url: string, dest: string): Promise<void>
       let imagedata = '';
       response.setEncoding('binary');
       response.on('data', (chunk) => {
-        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         imagedata += chunk;
       });
       response.on('end', () => {

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.3 (8/18/2023 PST)
+
+#### 🐞 Fixes
+
+- Use nullish operator. [[#2135](https://github.cbhq.net/frontend/cds/pull/2135)]
+
 ## 0.1.2 (8/14/2023 PST)
 
 #### 🐞 Fixes

@@ -132,8 +132,7 @@ export class A11yAuditor extends TestTask {
     // run these operation in any particular order.
     // But, if we already have a list of components, we don't want to
     // regenerate it to speed up operation.
-    const internalComponents =
-      components === undefined ? await this.getComponentsList() : components;
+    const internalComponents = components ?? (await this.getComponentsList());
 
     const testFilesToSearch = internalComponents.map((component) => {
       const extName = path.extname(component);

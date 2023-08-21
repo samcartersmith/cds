@@ -48,7 +48,6 @@ export const ContentCell = memo(function ContentCell({
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const hasTitles = Boolean(title || subtitle);
   const accessoryType = selected ? 'selected' : accessory;
 

@@ -18,7 +18,7 @@ export const useEventHandler = (
   const config = useContext<EventHandlerConfig>(EventHandlerContext);
 
   return useCallback(() => {
-    if (!config.handlers || !eventConfig || !eventConfig?.actions.length) {
+    if (!config.handlers || !eventConfig?.actions.length) {
       return noOp();
     }
 

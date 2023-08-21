@@ -14,6 +14,7 @@ module.exports = {
         'codegen/codegen': 'error',
         'react/jsx-uses-react': 'error',
         'react/react-in-jsx-scope': 'error',
+        '@typescript-eslint/prefer-nullish-coalescing': 'off',
         'import/no-extraneous-dependencies': [
           'error',
           {

@@ -41,9 +41,9 @@ export function hintMotionBuilder({
   const ColorSurge = () => {
     const ref = useRef<ColorSurgeRefBaseProps>(null);
 
-    const handleSurgePrimary = useCallback(() => ref.current?.play('primary'), []);
-    const handleSurgePositive = useCallback(() => ref.current?.play('positive'), []);
-    const handleSurgeNegative = useCallback(() => ref.current?.play('negative'), []);
+    const handleSurgePrimary = useCallback(async () => ref.current?.play('primary'), []);
+    const handleSurgePositive = useCallback(async () => ref.current?.play('positive'), []);
+    const handleSurgeNegative = useCallback(async () => ref.current?.play('negative'), []);
 
     return (
       <VStack gap={3}>
@@ -61,7 +61,7 @@ export function hintMotionBuilder({
   const Shake = () => {
     const ref = useRef<ShakeRefBaseProps>(null);
 
-    const handleShake = useCallback(() => ref.current?.play(), []);
+    const handleShake = useCallback(async () => ref.current?.play(), []);
 
     return (
       <VStack gap={3}>
@@ -78,9 +78,9 @@ export function hintMotionBuilder({
   const Pulse = () => {
     const ref = useRef<PulseRefBaseProps>(null);
 
-    const handlePulseHeavy = useCallback(() => ref.current?.play('heavy'), []);
-    const handlePulseModerate = useCallback(() => ref.current?.play('moderate'), []);
-    const handlePulseSubtle = useCallback(() => ref.current?.play('subtle'), []);
+    const handlePulseHeavy = useCallback(async () => ref.current?.play('heavy'), []);
+    const handlePulseModerate = useCallback(async () => ref.current?.play('moderate'), []);
+    const handlePulseSubtle = useCallback(async () => ref.current?.play('subtle'), []);
     const handleStop = useCallback(() => ref.current?.stop(), []);
 
     return (

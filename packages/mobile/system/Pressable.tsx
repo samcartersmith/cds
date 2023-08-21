@@ -151,7 +151,6 @@ export const Pressable = memo(
       <BasePressable
         accessibilityRole="button"
         accessibilityState={accessibilityState}
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         disabled={disabled || loading}
         onPress={handlePress}
         onPressIn={handlePressIn}

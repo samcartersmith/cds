@@ -39,7 +39,6 @@ export const ListCell = memo(function ListCell({
 }: ListCellProps) {
   const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
   const accessoryType = selected ? 'selected' : accessory;
-  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const hasDetails = Boolean(detail || subdetail);
 
   return (

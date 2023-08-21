@@ -5,8 +5,8 @@ import { NoopFn } from '@cbhq/cds-common';
  * @link https://github.com/facebook/fbjs/blob/main/packages/fbjs/src/core/ExecutionEnvironment.js
  */
 export function isBrowser() {
-  // eslint-disable-next-line no-restricted-globals
-  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+  // eslint-disable-next-line @typescript-eslint/prefer-optional-chain, no-restricted-globals
+  return !!(typeof window !== 'undefined' && window?.document?.createElement);
 }
 
 export function isSSR() {

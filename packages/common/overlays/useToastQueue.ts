@@ -25,7 +25,7 @@ export const useToastQueue = () => {
 
   hasActiveToast.current = !!activeToast;
 
-  const hideToast = useCallback(() => activeToastRef.current?.hide(), [activeToastRef]);
+  const hideToast = useCallback(async () => activeToastRef.current?.hide(), [activeToastRef]);
 
   const removeToast = useCallback(() => {
     timer.clear();

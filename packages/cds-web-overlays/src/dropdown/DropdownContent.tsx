@@ -38,7 +38,6 @@ export const DropdownContent = memo(
       { children, value, onOpen, placement, minWidth, ...props }: DropdownContentProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       const isHorizontal = placement?.includes('left') || placement?.includes('right');
       const translate = isHorizontal ? 'x' : 'y';
 

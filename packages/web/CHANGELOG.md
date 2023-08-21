@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.3.5 (8/18/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix linting issues. [[#2135](https://github.cbhq.net/frontend/cds/pull/2135)]
+
 ## 5.3.4 (8/16/2023 PST)
 
 #### 🐞 Fixes

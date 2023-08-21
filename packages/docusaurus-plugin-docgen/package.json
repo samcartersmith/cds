@@ -23,7 +23,7 @@
     "@types/lodash": "^4.14.178"
   },
   "peerDependencies": {
-    "@cbhq/eslint-plugin": "^1.26.3",
+    "@cbhq/eslint-plugin": "^1.40.1",
     "fast-glob": "^3.2.11",
     "lodash": "^4.17.21",
     "prettier": "^2.8.3",

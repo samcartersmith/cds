@@ -147,7 +147,6 @@ export const InteractableContent = forwardRef(function InteractableContent(
   /**
    * this variable should only be used when conditionally rendering the disabled DOM attribute
    */
-  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const shouldBeDisabled = loading || disabled;
 
   const className = cx(

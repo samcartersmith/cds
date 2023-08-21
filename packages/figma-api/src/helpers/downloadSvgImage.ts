@@ -7,7 +7,6 @@ export async function downloadSvgImage(url: string): Promise<string> {
         let imagedata = '';
         response.setEncoding('utf-8');
         response.on('data', (chunk) => {
-          // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
           imagedata += chunk;
         });
         response.on('end', () => {

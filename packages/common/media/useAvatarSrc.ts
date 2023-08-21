@@ -9,6 +9,5 @@ const fallbackImageSrc =
 
 export function useAvatarSrc(src?: string) {
   // Expected to use || here as we want to fallback on empty string and not just undefined
-  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   return useMemo(() => src || fallbackImageSrc, [src]);
 }

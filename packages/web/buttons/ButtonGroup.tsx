@@ -44,7 +44,6 @@ export const ButtonGroup = memo(function ButtonGroup({
         child ? (
           <li className={cx(item, block && fill)}>
             {cloneElement(child, {
-              // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
               block: block || vertical,
             })}
           </li>
