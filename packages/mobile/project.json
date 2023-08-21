@@ -17,16 +17,6 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
-    "audit-a11y": {
-      "executor": "@cbhq/ui-scorecard:audit-a11y",
-      "dependsOn": [
-        "^build",
-        "test"
-      ],
-      "options": {
-        "eventProjectName": "cds_mobile"
-      }
-    },
     "build": {
       "executor": "@cbhq/cds-tasks:build-package",
       "outputs": [
@@ -94,6 +84,15 @@
         "^build",
         "perf-test-clean"
       ]
+    },
+    "audit-a11y": {
+      "executor": "@cbhq/ui-scorecard:audit-a11y",
+      "dependsOn": [
+        "test"
+      ],
+      "options": {
+        "eventProjectName": "cds_mobile"
+      }
     }
   }
 }
