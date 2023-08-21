@@ -42,4 +42,4 @@ USE will lead monthly check-ins with component DRI’s (PED). Eventually this wi
 - Expected behavior on all devices (Android and IOS) and browsers (Chrome, Safari, Firefox), no runtime errors/warnings, performant in SSR environment, etc.
 - Motion sign off (if applicable)
 
-🔗 [Bug Bash Template](go/cds-bugbash-template)
+🔗 [Bug Bash Template](https://go/cds-bugbash-template)

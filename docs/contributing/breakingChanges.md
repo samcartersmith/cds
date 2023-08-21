@@ -15,4 +15,4 @@ We recommend you use the [CDS Eng Contribution Scope Framework](https://docs.goo
 - Meets WCAG accessibility standards
 - Tested on all devices and browsers
 
-🔗 [Bug Bash Template](go/cds-bugbash-template)
+🔗 [Bug Bash Template](https://go/cds-bugbash-template)

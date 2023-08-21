@@ -12,4 +12,4 @@ Before you begin, make sure you've completed your CDS Engineering Onboarding by 
 
 ## Additional Resources
 
-🔗 Learn more about our [CDS Eng Contribution Model](go/cds-contribution-model)
+🔗 Learn more about our [CDS Eng Contribution Model](https://go/cds-contribution-model)

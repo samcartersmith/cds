@@ -12,4 +12,4 @@ If you are modifying a pattern, please schedule time with USD during office hour
 
 We recommend you use the [CDS Eng Contribution Scope Framework](https://docs.google.com/spreadsheets/u/0/d/1uf6IzEzZst4WvhlLQ-EV5rWQkwHen9lOw9oKMut6PVg/edit) to size the effort, generate acceptance criteria, and required reviewers.
 
-🔗 [Bug Bash Template](go/cds-bugbash-template)
+🔗 [Bug Bash Template](https://go/cds-bugbash-template)
