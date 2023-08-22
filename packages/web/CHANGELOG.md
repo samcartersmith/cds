@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Remove esm build and stop publishing @cbhq/cds-web-esm. [[#2173](https://github.cbhq.net/frontend/cds/pull/2173)]
+
 ## 5.3.5 (8/18/2023 PST)
 
 #### 🐞 Fixes

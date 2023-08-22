@@ -33,7 +33,6 @@
           "linaria.config.js",
           "tsconfig.json",
           "tsconfig.build.json",
-          "tsconfig.build-esm.json",
           "project.json"
         ],
         "babelConfig": "./packages/web/babel.config.js",
@@ -49,47 +48,6 @@
           "storybook-decorators"
         ],
         "typescriptConfig": "packages/web/tsconfig.build.json"
-      },
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "build-esm": {
-      "executor": "@cbhq/cds-tasks:build-package-esm",
-      "inputs": [
-        "production",
-        "^production"
-      ],
-      "outputs": [
-        "{workspaceRoot}/.nx/dist/packages/web-esm"
-      ],
-      "options": {
-        "destinationDir": ".nx/dist/packages/web-esm",
-        "staticFilesToIgnore": [
-          "babel.config.js",
-          "jest.config.js",
-          "linaria.config.js",
-          "tsconfig.json",
-          "tsconfig.build.json",
-          "tsconfig.build-esm.json",
-          "project.json"
-        ],
-        "babelConfig": "./packages/web/babel.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx",
-          "**/*.stories.tsx",
-          "storybook-decorators"
-        ],
-        "typescriptConfig": "packages/web/tsconfig.build-esm.json",
-        "iconsOutputDir": "packages/icons/fonts/web",
-        "fontsOutputDir": "packages/fonts",
-        "maxFileSizeInKb": 115
       },
       "dependsOn": [
         "^build"

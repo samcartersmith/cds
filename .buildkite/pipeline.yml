@@ -100,15 +100,6 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci build --exclude=mobile-app --allOnMaster
 
-  - label: Build ESM
-    <<: *k8s_medium
-    commands:
-      - tools/ci/setup.sh
-      # Bundling the esm build with web:build target causes >2x computation time.
-      # As a result we are running it as its own build step until we confirm that the esm build is actually needed for ssr.
-      # See profile results: https://github.cbhq.net/frontend/cds/pull/1751
-      - yarn mono-pipeline run-ci other --targets=build-esm --allOnMaster
-
   - label: Lint
     <<: *k8s_large
     commands:
