@@ -10,6 +10,7 @@ type Entry = {
   period?: string;
   cdsPercent: number;
   cds: number;
+  totalCdsAndPresentational: number;
 };
 
 type JSONData = {
@@ -19,6 +20,7 @@ type JSONData = {
 
 type StatsData = {
   cdsPercent: number;
+  totalCdsAndPresentational: number;
   cds: number;
 };
 
@@ -57,23 +59,39 @@ async function getHistoricalData(statsPaths: string[]): Promise<HistoricalProjec
       // if date a key in historical data, then add project & cdsPercent to it.
       // otherwise, create new date key then add project/cdsPercent to it
       const { latest, previous } = jsonData;
-      const { date: adoptionDate, cdsPercent, cds } = latest;
+      const { date: adoptionDate, cdsPercent, cds, totalCdsAndPresentational } = latest;
       if (!allHistoricalProjectData[adoptionDate]) {
-        allHistoricalProjectData[adoptionDate] = { [statsPath]: { cdsPercent, cds } };
+        allHistoricalProjectData[adoptionDate] = {
+          [statsPath]: { cdsPercent, cds, totalCdsAndPresentational },
+        };
       } else {
-        allHistoricalProjectData[adoptionDate][statsPath] = { cdsPercent, cds };
+        allHistoricalProjectData[adoptionDate][statsPath] = {
+          cdsPercent,
+          cds,
+          totalCdsAndPresentational,
+        };
       }
 
       previous.forEach((entry) => {
-        const { date, cdsPercent: percent, cds: numOfCmpts } = entry;
+        const {
+          date,
+          cdsPercent: percent,
+          cds: numOfCmpts,
+          totalCdsAndPresentational: totalCmpts,
+        } = entry;
         if (!allHistoricalProjectData[date]) {
           allHistoricalProjectData[date] = {
-            [statsPath]: { cdsPercent: percent, cds: numOfCmpts },
+            [statsPath]: {
+              cdsPercent: percent,
+              cds: numOfCmpts,
+              totalCdsAndPresentational: totalCmpts,
+            },
           };
         } else {
           allHistoricalProjectData[date][statsPath] = {
             cdsPercent: percent,
             cds: numOfCmpts,
+            totalCdsAndPresentational: totalCmpts,
           };
         }
       });
@@ -120,8 +138,12 @@ function generateAdoptionTrackerCSVData(allHistoricalProjectData: HistoricalProj
   allHistoricalProjectData.sortedDates.forEach((date) => {
     const projects = allHistoricalProjectData.data[date];
     const projectCount = Object.keys(projects).length;
-    const cdsPercentSum = Object.values(projects).reduce((acc, curr) => acc + curr.cdsPercent, 0);
-    const averageCdsPercent = cdsPercentSum / projectCount;
+    const sumCdsCmpts = Object.values(projects).reduce((acc, curr) => acc + curr.cds, 0);
+    const sumTotalCmpts = Object.values(projects).reduce(
+      (acc, curr) => acc + curr.totalCdsAndPresentational,
+      0,
+    );
+    const averageCdsPercent = sumCdsCmpts / sumTotalCmpts;
 
     // we have some stats data with only 1 or 2 stats files which skews the data (e.g. 100% adoption rate with 1 project)
     if (projectCount >= 15) {

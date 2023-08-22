@@ -40,8 +40,14 @@ module.exports.adopters = [
       { type: 'doc', id: 'adoption-tracker/unified-accounts', label: 'Unified Accounts' },
       { type: 'doc', id: 'adoption-tracker/unified-login', label: 'Unified Login Web' },
       { type: 'doc', id: 'adoption-tracker/two-factor-web', label: 'Two Factor Web' },
+      { type: 'doc', id: 'adoption-tracker/two-factor-mobile', label: 'Two Factor Mobile' },
       { type: 'doc', id: 'adoption-tracker/tax-center', label: 'Tax Center' },
       { type: 'doc', id: 'adoption-tracker/cloud-console', label: 'Cloud Console' },
+      { type: 'doc', id: 'adoption-tracker/cb-chat', label: 'Coinbase Chat Web' },
+      { type: 'doc', id: 'adoption-tracker/cb-chat-mobile', label: 'Coinbase Chat Mobile' },
+      { type: 'doc', id: 'adoption-tracker/neptune', label: 'Neptune' },
+      { type: 'doc', id: 'adoption-tracker/abor', label: 'Abor' },
+      { type: 'doc', id: 'adoption-tracker/stand-with-crypto', label: 'Stand With Crypto' },
     ],
   },
   {
@@ -54,6 +60,7 @@ module.exports.adopters = [
       { type: 'doc', id: 'adoption-tracker/umo', label: 'Unified Mobile Onboarding' },
       { type: 'doc', id: 'adoption-tracker/retail-web-logged-out', label: 'Retail Web Logged Out' },
       { type: 'doc', id: 'adoption-tracker/retail-web-identity', label: 'Retail Onboarding' },
+      { type: 'doc', id: 'adoption-tracker/advanced-trade-web', label: 'Advanced Trade Web' },
     ],
   },
 ];

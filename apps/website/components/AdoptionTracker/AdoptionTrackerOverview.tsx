@@ -16,6 +16,7 @@ import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { Box, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Modal, ModalBody } from '@cbhq/cds-web/overlays';
 import { PressableOpacity, ThemeProvider } from '@cbhq/cds-web/system';
+import { Tag } from '@cbhq/cds-web/tag/Tag';
 import {
   TextBody,
   TextCaption,
@@ -84,65 +85,99 @@ const getStats = (project: ProjectProps) => {
   return require(`@site/static/data/__generated__/adoption/${project.id}/stats.json`) as AdopterStats;
 };
 
-type PercentageGetterProps = { pillar?: string; average?: boolean };
-
-// Get the percentage of adoption for each project
-const getPercentage = ({ pillar, average }: PercentageGetterProps) => {
+// Get total number of component instances across all projects
+const getTotalInstancesLatest = (
+  key: 'cds' | 'presentational' | 'totalCdsAndPresentational',
+  pillar?: string,
+) => {
   const projects = getProjects(pillar);
-  const change =
-    projects.reduce((acc, project) => {
-      const stats = getStats(project);
-      const latestStat = stats.latest ?? statsFallback?.latest;
-      return acc + latestStat.cdsPercent;
-    }, 0) / (average ? projects.length : 1);
-  const variant = Number(change) >= TARGET_ADOPTION_PERCENTAGE ? 'positive' : 'negative';
-  const percentage = `${getPercentageText(change)}`;
-
-  return { variant, percentage } as const;
+  return projects.reduce((acc, project) => {
+    const stats = getStats(project);
+    const latestStat = stats.latest ?? statsFallback?.latest;
+    return acc + latestStat[key];
+  }, 0);
 };
 
-// Get the percentage change for each project by pillar
-const getPercentageChange = ({ pillar, average }: PercentageGetterProps) => {
+const getTotalInstancesPrevious = (
+  key: 'cds' | 'presentational' | 'totalCdsAndPresentational',
+  pillar?: string,
+) => {
   const projects = getProjects(pillar);
-  const change =
-    projects.reduce((acc, project) => {
-      const stats = getStats(project);
-      const fallback = getFirst(stats.previous) ?? statsFallback?.latest;
-      const statToCompare =
-        stats.previous
-          .slice()
-          .reverse()
-          .find((prev) => Boolean(prev.period)) ?? fallback;
+  return projects.reduce((acc, project) => {
+    const stats = getStats(project);
+    const fallback = getFirst(stats.previous) ?? statsFallback?.latest;
+    const previous =
+      stats.previous
+        .slice()
+        .reverse()
+        .find((prev) => Boolean(prev.period)) ?? fallback;
 
-      return acc + (stats.latest.cdsPercent - (statToCompare?.cdsPercent ?? 0));
-    }, 0) / (average ? projects.length : 1);
+    return acc + previous[key];
+  }, 0);
+};
+
+/**
+ * Gets the adoption percentage for a given pillar.
+ * Returns overall percentage if no pillar provided.
+ *
+ * @param pillar - Optional pillar name to get percentage for.
+ * @returns The percentage as a string formatted like "85%".
+ */
+const getPercentage = (pillar?: string) => {
+  const totalCds = getTotalInstancesLatest('cds', pillar);
+  const totalCdsAndPresentational = getTotalInstancesLatest('totalCdsAndPresentational', pillar);
+  const percentage = totalCds / totalCdsAndPresentational;
+
+  const variant = Number(percentage) >= TARGET_ADOPTION_PERCENTAGE ? 'positive' : 'negative';
+  const percentageText = getPercentageText(percentage);
+
+  return { variant, percentageText, percentage } as const;
+};
+
+/**
+ * Calculates the percentage change for a given pillar from the adoption stats.
+ * Returns overall percentage change if no pillar provided.
+ *
+ * @param pillar - The pillar to calculate percentage change for.
+ * @returns The percentage change as a string formatted like "+10%" or "-5%".
+ */
+const getPercentageChange = (pillar?: string) => {
+  const { percentage: latestPercentage } = getPercentage(pillar);
+  const totalCdsPrevious = getTotalInstancesPrevious('cds', pillar);
+  const totalCdsAndPresentationalPrevious = getTotalInstancesPrevious(
+    'totalCdsAndPresentational',
+    pillar,
+  );
+  const previousPercentage = totalCdsPrevious / totalCdsAndPresentationalPrevious;
+
+  const change = latestPercentage - previousPercentage;
 
   let variant: CellDetailVariant = 'foregroundMuted';
-  let percentage = `${getPercentageText(change)}`;
+  let changePercentageText = getPercentageText(change);
 
   if (change > 0) {
     variant = 'positive';
-    percentage = `+${getPercentageText(change)}`;
+    changePercentageText = `+${getPercentageText(change)}`;
   }
   if (change < 0) {
     variant = 'negative';
-    percentage = getPercentageText(change);
+    changePercentageText = getPercentageText(change);
   }
   if (change === 0) {
-    percentage = 'No change';
+    changePercentageText = 'No change';
   }
 
-  return { variant, percentage } as const;
+  return { variant, changePercentageText } as const;
 };
 
 const getSortedProjectPairs = (adoptersJson: Adopters) =>
   toPairs(groupBy(adoptersJson, 'pillar'))
     .sort(([pillarA], [pillarB]) => {
       // Sort projects by their total adoption percentage
-      const { percentage: percentageA } = getPercentage({ pillar: pillarA, average: true });
-      const { percentage: percentageB } = getPercentage({ pillar: pillarB, average: true });
+      const { percentage: percentageA } = getPercentage(pillarA);
+      const { percentage: percentageB } = getPercentage(pillarB);
 
-      return Number(percentageA.replace('%', '')) - Number(percentageB.replace('%', ''));
+      return percentageA - percentageB;
     })
     .map(([pillar, projectsInPillar]) => {
       return [
@@ -162,6 +197,7 @@ const getSortedProjectPairs = (adoptersJson: Adopters) =>
 function usePercentChange() {
   const { latest } = useAdopterStats();
   const statToCompare = useStatForLastPeriod();
+
   return useMemo(() => {
     let changeVariant: CellDetailVariant = 'foregroundMuted';
     let change: string | undefined;
@@ -191,6 +227,8 @@ const PercentChange = memo(
     showParenthesis?: boolean;
     showComparisonTime?: boolean;
   }) => {
+    const { previous } = useAdopterStats();
+    const isNew = previous.length === 0;
     const { change, changeVariant } = usePercentChange();
     const statToCompare = useStatForLastPeriod();
     const comparisonTime = useMemo(
@@ -200,10 +238,16 @@ const PercentChange = memo(
 
     return (
       <HStack gap={0.5} spacingStart={showParenthesis ? 1 : 0} alignSelf="flex-end">
-        <TextBody as="p" color={changeVariant}>
-          {showParenthesis ? `(${change})` : change}
-        </TextBody>
-        {showComparisonTime && (
+        {isNew ? (
+          <Tag intent="promotional" colorScheme="blue">
+            New
+          </Tag>
+        ) : (
+          <TextBody as="p" color={changeVariant}>
+            {showParenthesis ? `(${change})` : change}
+          </TextBody>
+        )}
+        {showComparisonTime && !isNew && (
           <TextBody as="p" color="foregroundMuted">
             ({comparisonTime})
           </TextBody>
@@ -385,11 +429,8 @@ export const ActiveProject = memo(() => {
 ActiveProject.displayName = 'ActiveProject';
 
 const ProjectTitle = ({ pillar }: { pillar: string }) => {
-  const { percentage } = getPercentage({ pillar, average: true });
-  const { variant: changedVariant, percentage: changePercentage } = getPercentageChange({
-    pillar,
-    average: true,
-  });
+  const { percentageText } = getPercentage(pillar);
+  const { variant: changedVariant, changePercentageText } = getPercentageChange(pillar);
   return (
     <VStack spacingBottom={2} gap={1}>
       <TextCaption as="span" color="foregroundMuted" id={pillar}>
@@ -398,8 +439,8 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
           &nbsp;
         </a>
       </TextCaption>
-      <TextDisplay3 as="span">{percentage}</TextDisplay3>
-      {changePercentage !== 'No change' && (
+      <TextDisplay3 as="span">{percentageText}</TextDisplay3>
+      {changePercentageText !== 'No change' && (
         <TextLabel1 as="span" color={changedVariant}>
           <HStack gap={1} alignItems="center">
             <Icon
@@ -407,7 +448,7 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
               name={`diagonal${changedVariant === 'negative' ? 'Down' : 'Up'}Arrow`}
               size="s"
             />
-            {changePercentage}{' '}
+            {changePercentageText}{' '}
           </HStack>
         </TextLabel1>
       )}
@@ -419,10 +460,8 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
   const [usageModalIsVisible, { toggleOff, toggleOn }] = useToggler(false);
   const scopedAdopters = getSortedProjectPairs(hidden ? hiddenAdopters : adopters);
   // Sort projects by pillar adoption, and make sure projects are also sorted
-  const { variant, percentage } = getPercentage({ average: true });
-  const { variant: changedVariant, percentage: changePercentage } = getPercentageChange({
-    average: true,
-  });
+  const { variant, percentageText } = getPercentage();
+  const { variant: changedVariant, changePercentageText } = getPercentageChange();
   const direction = changedVariant === 'negative' ? 'Down' : 'Up';
   const [activeProjectId, setActiveProject] = useState<Adopter>(scopedAdopters[0][1][0].id);
 
@@ -474,13 +513,13 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
           Our Adoption Tool allows us to view component level insight into CDS adoption. Today, CDS
           adoption across all products is{' '}
           <TextTitle2 as="span" color={variant}>
-            {percentage}.{' '}
+            {percentageText}.{' '}
           </TextTitle2>
-          {changePercentage !== 'No change' && (
+          {changePercentageText !== 'No change' && (
             <TextTitle2 as="span" color="foregroundMuted">
               {direction}{' '}
               <TextTitle2 as="span" color={changedVariant}>
-                {changePercentage}
+                {changePercentageText}
               </TextTitle2>{' '}
               for the quarter.
             </TextTitle2>

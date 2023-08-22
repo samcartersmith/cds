@@ -20,19 +20,24 @@ import { fromId, toId } from '../utils/id';
 import { FileParser } from './FileParser';
 
 const DEFAULT_PRESENTATIONAL_LIBRARIES = [
+  // web
   '@ant-design',
-  '@cb/shared',
-  '@components/UI',
-  '@components/interactables',
-  '@designSystem',
   '@material-ui',
-  'highcharts',
   'react-admin',
   'react-datepicker',
   'react-modal',
+  '@cb/shared',
+  'react-select',
+  'react-table',
+  'reactjs-popup',
+  'highcharts',
+  // mobile
+  '@gorhom/bottom-sheet',
   'react-native-linear-gradient',
   'react-native-reanimated',
-  'react-select',
+  '@designSystem',
+  '@components/UI',
+  '@components/interactables',
 ];
 
 const DEFAULT_PRESENTATIONAL_ELEMENTS = [
