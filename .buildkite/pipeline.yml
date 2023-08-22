@@ -143,10 +143,13 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-percy storybook
       - yarn mono-pipeline run-ci other --targets=a11y-web --allOnMaster
+    retry:
+      automatic:
+        limit: 1
 
   - label: 'Percy (Mobile - All)'
     <<: *k8s_medium
-    if: build.branch == 'master' || build.pull_request.labels	includes 'visreg'
+    if: build.branch == 'master' || build.pull_request.labels includes 'visreg'
     env:
       DETOX_RUN_ALL: true
     commands:
@@ -165,3 +168,6 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --targets=storybook-e2e-test --allOnMaster
+    retry:
+      automatic:
+        limit: 1
