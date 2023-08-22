@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
+import { ResponsiveProps, ResponsivePropsDevices } from '@cbhq/cds-common';
 import { variantsWithTransforms } from '@cbhq/cds-common/hooks/useTextTransform';
 import type { Typography } from '@cbhq/cds-common/types';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { responsiveClassName } from '../../styles/responsive';
 import { ThemeProvider } from '../../system';
 import { DynamicElement } from '../../types';
 import {
@@ -198,6 +200,74 @@ describe('Text', () => {
           expect(screen.getByText('Child')).toHaveClass('uppercase');
         });
       }
+    });
+  });
+
+  describe('responsive styles', () => {
+    const DEFAULT_CLASS = 'typographyResets';
+
+    const getClassNamesForResponsiveProps = (config: ResponsiveProps, style: string) => {
+      const classNames: string[] = [];
+
+      classNames.push(DEFAULT_CLASS);
+
+      (Object.keys(config) as ResponsivePropsDevices[]).forEach((device) => {
+        // @ts-expect-error PITA to type this
+        classNames.push(config[device]?.[style] as string);
+      });
+
+      classNames.push(responsiveClassName);
+
+      return classNames.join(' ');
+    };
+
+    const responsiveFlexStylesConfig: ResponsiveProps = {
+      phone: {
+        justifyContent: 'flex-start',
+      },
+      tablet: {
+        justifyContent: 'space-around',
+      },
+      desktop: {
+        justifyContent: 'flex-end',
+      },
+    };
+
+    it('renders flex classNames for styles at each device breakpoint', () => {
+      render(
+        <TextTitle1 as="h1" responsiveConfig={responsiveFlexStylesConfig}>
+          Child
+        </TextTitle1>,
+      );
+      const classNames = getClassNamesForResponsiveProps(
+        responsiveFlexStylesConfig,
+        'justifyContent',
+      );
+
+      expect(screen.getByText('Child')).toHaveClass(classNames);
+    });
+
+    const responsiveVisibilityStylesConfig: ResponsiveProps = {
+      phone: {
+        visibility: 'hidden',
+      },
+      tablet: {
+        visibility: 'visible',
+      },
+    };
+
+    it('renders visibility classNames for styles at each device breakpoint', () => {
+      render(
+        <TextTitle1 as="h1" responsiveConfig={responsiveVisibilityStylesConfig}>
+          Child
+        </TextTitle1>,
+      );
+      const classNames = getClassNamesForResponsiveProps(
+        responsiveVisibilityStylesConfig,
+        'visibility',
+      );
+
+      expect(screen.getByText('Child')).toHaveClass(classNames);
     });
   });
 });

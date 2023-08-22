@@ -1,7 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { ResponsiveProps, ResponsivePropsDevices } from '@cbhq/cds-common';
 import { noop } from '@cbhq/cds-utils';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { responsiveClassName } from '../../styles/responsive';
 import { FeatureFlagProvider } from '../../system';
 import { Card } from '../Card';
 
@@ -162,5 +164,65 @@ describe('Card', () => {
     fireEvent.keyPress(screen.getByRole('button'), { charCode: 13 });
 
     expect(onKeyPressSpy).toHaveBeenCalledTimes(1);
+  });
+
+  describe('responsive styles', () => {
+    const DEFAULT_CLASS = 'flex';
+
+    const getClassNamesForResponsiveProps = (config: ResponsiveProps, style: string) => {
+      const classNames: string[] = [];
+
+      classNames.push(DEFAULT_CLASS);
+
+      (Object.keys(config) as ResponsivePropsDevices[]).forEach((device) => {
+        // @ts-expect-error PITA to type this
+        classNames.push(config[device]?.[style] as string);
+      });
+
+      classNames.push(responsiveClassName);
+
+      return classNames.join(' ');
+    };
+
+    const responsiveFlexStylesConfig: ResponsiveProps = {
+      phone: {
+        justifyContent: 'flex-start',
+      },
+      tablet: {
+        justifyContent: 'space-around',
+      },
+      desktop: {
+        justifyContent: 'flex-end',
+      },
+    };
+
+    it('renders flex classNames for styles at each device breakpoint', () => {
+      render(<Card responsiveConfig={responsiveFlexStylesConfig}>Child</Card>);
+      const classNames = getClassNamesForResponsiveProps(
+        responsiveFlexStylesConfig,
+        'justifyContent',
+      );
+
+      expect(screen.getByText('Child')).toHaveClass(classNames);
+    });
+
+    const responsiveVisibilityStylesConfig: ResponsiveProps = {
+      phone: {
+        visibility: 'hidden',
+      },
+      tablet: {
+        visibility: 'visible',
+      },
+    };
+
+    it('renders visibility classNames for styles at each device breakpoint', () => {
+      render(<Card responsiveConfig={responsiveVisibilityStylesConfig}>Child</Card>);
+      const classNames = getClassNamesForResponsiveProps(
+        responsiveVisibilityStylesConfig,
+        'visibility',
+      );
+
+      expect(screen.getByText('Child')).toHaveClass(classNames);
+    });
   });
 });

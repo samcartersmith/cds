@@ -285,22 +285,22 @@ describe('Box', () => {
     });
   });
 
-  const getClassNamesForResponsiveProps = (config: ResponsiveProps, style: string) => {
-    const classNames: string[] = [];
-
-    classNames.push(DEFAULT_CLASS);
-
-    (Object.keys(config) as ResponsivePropsDevices[]).forEach((device) => {
-      // @ts-expect-error PITA to type this
-      classNames.push(config[device]?.[style] as string);
-    });
-
-    classNames.push(responsiveClassName);
-
-    return classNames.join(' ');
-  };
-
   describe('responsive styles', () => {
+    const getClassNamesForResponsiveProps = (config: ResponsiveProps, style: string) => {
+      const classNames: string[] = [];
+
+      classNames.push(DEFAULT_CLASS);
+
+      (Object.keys(config) as ResponsivePropsDevices[]).forEach((device) => {
+        // @ts-expect-error PITA to type this
+        classNames.push(config[device]?.[style] as string);
+      });
+
+      classNames.push(responsiveClassName);
+
+      return classNames.join(' ');
+    };
+
     const responsiveFlexStylesConfig: ResponsiveProps = {
       phone: {
         justifyContent: 'flex-start',
@@ -312,6 +312,7 @@ describe('Box', () => {
         justifyContent: 'flex-end',
       },
     };
+
     it('renders flex classNames for styles at each device breakpoint', () => {
       render(<Box responsiveConfig={responsiveFlexStylesConfig}>Child</Box>);
       const classNames = getClassNamesForResponsiveProps(
@@ -319,26 +320,26 @@ describe('Box', () => {
         'justifyContent',
       );
 
-      expect(screen.getByText('Child')).toHaveAttribute('class', classNames);
+      expect(screen.getByText('Child')).toHaveClass(classNames);
     });
-  });
 
-  const responsiveVisibilityStylesConfig: ResponsiveProps = {
-    phone: {
-      visibility: 'hidden',
-    },
-    tablet: {
-      visibility: 'visible',
-    },
-  };
+    const responsiveVisibilityStylesConfig: ResponsiveProps = {
+      phone: {
+        visibility: 'hidden',
+      },
+      tablet: {
+        visibility: 'visible',
+      },
+    };
 
-  it('renders visibility classNames for styles at each device breakpoint', () => {
-    render(<Box responsiveConfig={responsiveVisibilityStylesConfig}>Child</Box>);
-    const classNames = getClassNamesForResponsiveProps(
-      responsiveVisibilityStylesConfig,
-      'visibility',
-    );
+    it('renders visibility classNames for styles at each device breakpoint', () => {
+      render(<Box responsiveConfig={responsiveVisibilityStylesConfig}>Child</Box>);
+      const classNames = getClassNamesForResponsiveProps(
+        responsiveVisibilityStylesConfig,
+        'visibility',
+      );
 
-    expect(screen.getByText('Child')).toHaveAttribute('class', classNames);
+      expect(screen.getByText('Child')).toHaveClass(classNames);
+    });
   });
 });
