@@ -70,7 +70,7 @@
       "dependsOn": [],
       "options": {
         "cwd": "apps/mobile-app",
-        "command": "node ./scripts/build.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
+        "command": "export CDS_METRO_RESOLVER=false && node ./scripts/build.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
       },
       "configurations": {
         "ios-debug": {

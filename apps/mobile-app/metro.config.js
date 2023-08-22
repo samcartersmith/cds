@@ -35,7 +35,11 @@ const customResolveRequest = (context, baseModuleName, platform) => {
 };
 
 // Only use our custom resolver when not running in CI or production
-if (process.env.CI !== 'true' && process.env.NODE_ENV !== 'production') {
+if (
+  process.env.CI !== 'true' &&
+  process.env.NODE_ENV !== 'production' &&
+  process.env.CDS_METRO_RESOLVER !== 'false'
+) {
   console.log(
     'Using custom Metro resolver: mapping some packages to source code via "aliases" in metro.config.js',
   );
