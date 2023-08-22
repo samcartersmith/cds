@@ -1,0 +1,60 @@
+> [@cbhq/cds-common/hooks/useSort](https://github.cbhq.net/frontend/cds/blob/master/packages/common/hooks/useSort.ts)
+
+Sorting and filtering your data can happen in many ways, and CDS doesn't have a firm stance on _how_ you manipulate the data you provide. However, it is **_very_** important you configure your table to be accessible when dealing with data changes. The following example shows how to configure a simple sortable table using our `useSort` and `useSortableCell` hooks.
+
+```jsx live borderless
+function SortingExample() {
+  // Hooks and memoized data
+  const [{ sortBy, sortDirection }, setSort] = useState({
+    sortBy: 'name',
+    sortDirection: 'ascending',
+  });
+
+  // Naive sort iterator -> ascending / descending / none
+  const onChange = (key) => {
+    const isAscending = key === sortBy && sortDirection === 'ascending';
+    const ascendingOrDescending = isAscending ? 'descending' : 'ascending';
+    setSort({ sortBy: key, sortDirection: ascendingOrDescending });
+  };
+
+  // CDS provides a sorting hook to help out. This is not required, you can keep sorting things your way
+  const data = useSort({ data: mocks.accounts, sortDirection, sortBy });
+
+  // CDS provides a hook to help you get relevant sorting props
+  const getSortableProps = useSortableCell({ sortBy, sortDirection, onChange });
+
+  return (
+    <Table maxHeight={360} bordered>
+      <TableCaption>Sorting Example</TableCaption>
+      <TableHeader sticky>
+        <TableRow>
+          <TableCell title="Asset" {...getSortableProps('name')} />
+          <TableCell title="Balance" {...getSortableProps('balance.amount')} />
+          <TableCell title="Status" alignItems="flex-end" />
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {data.map((account) => {
+          return (
+            <TableRow key={`row--${account.name}`}>
+              <TableCell
+                start={<Icon name="currencies" size="m" />}
+                title={account.name}
+                subtitle={account.currency.name}
+              />
+              <TableCell title={`$${account.balance.amount}`} subtitle={account.balance.currency} />
+              <TableCell direction="horizontal" justifyContent="flex-end">
+                <Icon
+                  name={account.primary ? 'circleCheckmark' : 'circleCross'}
+                  size="m"
+                  color={account.primary ? 'positive' : 'negative'}
+                />
+              </TableCell>
+            </TableRow>
+          );
+        })}
+      </TableBody>
+    </Table>
+  );
+}
+```

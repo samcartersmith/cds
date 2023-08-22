@@ -824,6 +824,37 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Hooks',
+      customProps: {
+        kbar: {
+          description: 'Useful hooks for building experiences with CDS.',
+        },
+      },
+      items: [
+        'hooks/useAccessibleForeground',
+        'hooks/useAlert',
+        'hooks/useBreakpoints',
+        'hooks/useDeviceSpectrum',
+        'hooks/useEventHandler',
+        'hooks/useHasMounted',
+        'hooks/useIsBrowser',
+        'hooks/useModal',
+        'hooks/useOverlay',
+        'hooks/usePalette',
+        'hooks/usePaletteConfig',
+        'hooks/usePaletteValueToRgbaString',
+        'hooks/usePreviousValue',
+        'hooks/useScaleConditional',
+        'hooks/useSort',
+        'hooks/useSparklinePath',
+        'hooks/useSpectrum',
+        'hooks/useSpectrumConditional',
+        'hooks/useToast',
+        'hooks/useToggler',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Resources',
       customProps: {
         kbar: {
