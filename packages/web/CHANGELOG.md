@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file!
 #### 📘 Misc
 
 - Remove esm build and stop publishing @cbhq/cds-web-esm. [[#2173](https://github.cbhq.net/frontend/cds/pull/2173)]
+- Update TextInput stories to use async userEvents and pauseStory.
 
 ## 5.3.5 (8/18/2023 PST)
 
