@@ -21,16 +21,16 @@
   ],
   "references": [
     {
-      "path": "../../packages/common"
+      "path": "../common"
     },
     {
-      "path": "../../packages/web"
+      "path": "../web"
     },
     {
-      "path": "../../packages/utils"
+      "path": "../utils"
     },
     {
-      "path": "../../packages/lottie-files"
+      "path": "../lottie-files"
     }
   ]
 }

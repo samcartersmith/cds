@@ -20,6 +20,9 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
+    "export-package-version": {
+      "executor": "@cbhq/cds-tasks:export-package-version"
+    },
     "build": {
       "executor": "@cbhq/cds-tasks:build-package",
       "outputs": [

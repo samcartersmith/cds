@@ -1,9 +1,12 @@
 {
   "name": "web-visualization",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/web-visualization",
+  "sourceRoot": "packages/web-visualization/src",
   "projectType": "library",
   "targets": {
+    "export-package-version": {
+      "executor": "@cbhq/cds-tasks:export-package-version"
+    },
     "build": {
       "executor": "@cbhq/cds-tasks:build-package",
       "outputs": [

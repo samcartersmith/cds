@@ -13,6 +13,9 @@
   ],
   "references": [
     {
+      "path": "../docusaurus-plugin-docgen"
+    },
+    {
       "path": "../icons"
     },
     {

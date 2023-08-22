@@ -1,7 +1,7 @@
 {
   "name": "ui-mobile-visreg",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/ui-mobile-visreg",
+  "sourceRoot": "packages/ui-mobile-visreg/src",
   "projectType": "library",
   "targets": {
     "build": {

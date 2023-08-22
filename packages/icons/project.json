@@ -1,9 +1,12 @@
 {
   "name": "icons",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/icons",
+  "sourceRoot": "packages/icons/src",
   "projectType": "library",
   "targets": {
+    "export-package-version": {
+      "executor": "@cbhq/cds-tasks:export-package-version"
+    },
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
       "outputs": [

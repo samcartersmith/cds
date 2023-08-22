@@ -6,9 +6,6 @@
   "targets": {
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
-      "dependsOn": [
-        "^build"
-      ],
       "outputs": [
         "{projectRoot}/assets",
         "{projectRoot}/lib"

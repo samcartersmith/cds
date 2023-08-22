@@ -14,6 +14,11 @@
       "implementation": "./lib/executors/build-package/impl",
       "schema": "./src/executors/build-package/schema.json",
       "description": "Builds a CDS npm package"
+    },
+    "export-package-version": {
+      "implementation": "./lib/executors/export-package-version/impl",
+      "schema": "./src/executors/export-package-version/schema.json",
+      "description": "Exposes the package's version via a new /version export path"
     }
   }
 }

@@ -1,7 +1,12 @@
 {
-  "sourceRoot": "packages/cds-web-overlays",
+  "name": "cds-web-overlays",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/cds-web-overlays/src",
   "projectType": "library",
   "targets": {
+    "export-package-version": {
+      "executor": "@cbhq/cds-tasks:export-package-version"
+    },
     "build": {
       "executor": "@cbhq/cds-tasks:build-package",
       "outputs": [

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.5 (8/22/2023 PST)
+
+#### 🚀 Updates
+
+- Exposed package version via `import { version } from '@cbhq/cds-web-visualization/version'`. [[#2175](https://github.cbhq.net/frontend/cds/pull/2175)]
+
 ## 0.0.4 (4/26/2023 PST)
 
 #### 🐞 Fixes

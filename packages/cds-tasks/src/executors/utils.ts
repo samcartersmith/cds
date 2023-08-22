@@ -6,13 +6,24 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export function getProjectPath(context: ExecutorContext): string {
-  const projectPath = context.workspace?.projects[context.projectName as string].root;
+  const projectPath = context.projectsConfigurations?.projects[context.projectName as string].root;
 
   if (projectPath === undefined) {
     throw new Error('Unexpected: project path is undefined.');
   }
 
   return projectPath;
+}
+
+export function getProjectSourcePath(context: ExecutorContext): string {
+  const projectSourcePath =
+    context.projectsConfigurations?.projects[context.projectName as string].sourceRoot;
+
+  if (projectSourcePath === undefined) {
+    throw new Error('Unexpected: project source path is undefined.');
+  }
+
+  return projectSourcePath;
 }
 
 /**

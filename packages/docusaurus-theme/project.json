@@ -1,7 +1,7 @@
 {
   "name": "docusaurus-theme",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/docusaurus-theme",
+  "sourceRoot": "packages/docusaurus-theme/src",
   "projectType": "library",
   "targets": {
     "build": {
@@ -11,9 +11,6 @@
       },
       "outputs": [
         "{projectRoot}/lib"
-      ],
-      "dependsOn": [
-        "^build"
       ]
     },
     "watch": {

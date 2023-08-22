@@ -1,9 +1,12 @@
 {
   "name": "illustrations",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/illustrations",
+  "sourceRoot": "packages/illustrations/src",
   "projectType": "library",
   "targets": {
+    "export-package-version": {
+      "executor": "@cbhq/cds-tasks:export-package-version"
+    },
     "build": {
       "outputs": [
         "{projectRoot}/assets",

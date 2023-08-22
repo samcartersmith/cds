@@ -164,4 +164,5 @@ apps/mobile-app/prebuilds/android-*
 *.stories.mdx
 
 # Auto Generated files
+version.ts
 packages/web-utils/jest.d.ts

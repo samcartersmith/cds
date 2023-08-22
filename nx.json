@@ -29,7 +29,8 @@
   "targetDefaults": {
     "build": {
       "dependsOn": [
-        "^build"
+        "^build",
+        "export-package-version"
       ],
       "inputs": [
         "production",

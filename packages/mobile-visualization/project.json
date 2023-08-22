@@ -1,7 +1,12 @@
 {
-  "sourceRoot": "packages/mobile-visualization",
+  "name": "mobile-visualization",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/mobile-visualization/src",
   "projectType": "library",
   "targets": {
+    "export-package-version": {
+      "executor": "@cbhq/cds-tasks:export-package-version"
+    },
     "build": {
       "executor": "@cbhq/cds-tasks:build-package",
       "outputs": [

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.4.0 (8/22/2023 PST)
+
+#### 🚀 Updates
+
+- Exposed package version via `import { version } from '@cbhq/cds-common/version'`. [[#2175](https://github.cbhq.net/frontend/cds/pull/2175)]
+
 ## 5.3.5 (8/18/2023 PST)
 
 #### 🐞 Fixes

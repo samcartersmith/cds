@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.4 (8/22/2023 PST)
+
+#### 🚀 Updates
+
+- Exposed package version via `import { version } from '@cbhq/cds-web-overlays/version'`. [[#2175](https://github.cbhq.net/frontend/cds/pull/2175)]
 
 #### 📘 Misc
 
