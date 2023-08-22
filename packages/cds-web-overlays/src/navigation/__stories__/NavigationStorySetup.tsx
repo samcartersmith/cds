@@ -10,6 +10,7 @@ import { LoremIpsum } from '@cbhq/cds-web/layout/__stories__/LoremIpsum';
 import { Avatar } from '@cbhq/cds-web/media';
 import { NavigationBar, NavigationTitle, NavLink, Sidebar } from '@cbhq/cds-web/navigation/index';
 import { navLinkClassName } from '@cbhq/cds-web/navigation/NavLink';
+import { SidebarItem, SidebarItemProps } from '@cbhq/cds-web/navigation/SidebarItem';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { Pressable } from '@cbhq/cds-web/system';
 import { TabNavigation } from '@cbhq/cds-web/tabs';
@@ -19,7 +20,6 @@ import { TextDisplay2, TextHeadline, TextLegal } from '@cbhq/cds-web/typography'
 import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
 import { SelectOption } from '../../select/SelectOption';
-import { SidebarItem, SidebarItemProps } from '../../sidebarMoreMenu/SidebarItem';
 import { SidebarMoreMenu, SidebarMoreMenuProps } from '../../sidebarMoreMenu/SidebarMoreMenu';
 
 /**

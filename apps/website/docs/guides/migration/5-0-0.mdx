@@ -77,7 +77,7 @@ This branch demos the required path change and works with sparkline in the retai
 
 As part of an effort to address tech debt in the CDS repo we have opted to migrate a number of problem components out of cds-web|mobile into their own packages (cds-web-overlays, cds-web-visualization, cds-mobile-visualization).
 
-Although these components are not yet removed from cds-web|mobile, we plan to remove them next quarter which will be a breaking change. Our recommendation is to migrate them now using the `cds-migrator` v5 script, which will update import references for these components for you.
+Although these components are not yet removed from cds-web|mobile, we plan to remove them next quarter which will be a breaking change. Our recommendation is to migrate them now using `yarn nx generate @cbhq/cds-migrator:migrate package-decomp`, which will update import references for these components for you.
 
 Web components moved out of cds-web:
 

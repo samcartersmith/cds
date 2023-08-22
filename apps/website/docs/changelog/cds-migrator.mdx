@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.10 (8/22/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] chore: removed SidebarItem from package decomp migrator script. [[#2178](https://github.cbhq.net/frontend/cds/pull/2178)] [[DX-2145](https://jira.coinbase-corp.com/browse/DX-2145)]
+
 ## 0.1.9 (8/9/2023 PST)
 
 #### 🐞 Fixes

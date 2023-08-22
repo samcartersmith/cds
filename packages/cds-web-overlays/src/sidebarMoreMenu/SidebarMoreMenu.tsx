@@ -3,12 +3,11 @@ import { SharedProps, SpacingScale } from '@cbhq/cds-common';
 import { sidebarMenuMaxWidth, sidebarMenuMinWidth } from '@cbhq/cds-common/tokens/menu';
 import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 import { useSidebarContext } from '@cbhq/cds-web/navigation/SidebarContext';
+import { SidebarItem, SidebarItemProps } from '@cbhq/cds-web/navigation/SidebarItem';
 
 import { Dropdown, DropdownProps } from '../dropdown';
 import { PopoverContentPositionConfig } from '../popover/PopoverProps';
 import { Tooltip } from '../tooltip/Tooltip';
-
-import { SidebarItem, SidebarItemProps } from './SidebarItem';
 
 export type SidebarMoreMenuProps = {
   children: ReactNode;

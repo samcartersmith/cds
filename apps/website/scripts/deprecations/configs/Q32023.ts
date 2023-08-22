@@ -43,11 +43,6 @@ const overlayWebDeprecations = [
   },
   {
     ...baseWebDeprecation,
-    name: 'SidebarItem',
-    path: 'packages/web/navigation/SidebarItem.tsx',
-  },
-  {
-    ...baseWebDeprecation,
     name: 'SidebarMoreMenu',
     path: 'packages/web/navigation/SidebarMoreMenu.tsx',
   },

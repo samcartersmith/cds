@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.5 (8/22/2023 PST)
+
+#### 💥 Breaking
+
+- [DX-2145] breaking: removed SidebarItem from cds-web-overlays package. [[#2178](https://github.cbhq.net/frontend/cds/pull/2178)] [[DX-2145](https://jira.coinbase-corp.com/browse/DX-2145)]
+
 ## 0.0.4 (8/22/2023 PST)
 
 #### 🚀 Updates

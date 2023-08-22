@@ -8,11 +8,19 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.5.0 (8/22/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-2145] update: Undeprecated SidebarItem. [[#2178](https://github.cbhq.net/frontend/cds/pull/2178)] [[DX-2145](https://jira.coinbase-corp.com/browse/DX-2145)]
+
 ## 5.4.0 (8/22/2023 PST)
 
 #### 🚀 Updates
 
 - Exposed package version via `import { version } from '@cbhq/cds-web/version'`. [[#2175](https://github.cbhq.net/frontend/cds/pull/2175)]
+
+## Unreleased
 
 #### 📘 Misc
 

@@ -26,7 +26,7 @@ export const migrations: {
     version: '0.0.3',
   },
   {
-    exports: ['SidebarMoreMenu', 'SidebarItem'],
+    exports: ['SidebarMoreMenu'],
     oldDir: '@cbhq/cds-web/navigation',
     newDir: '@cbhq/cds-web-overlays',
     version: '0.0.3',

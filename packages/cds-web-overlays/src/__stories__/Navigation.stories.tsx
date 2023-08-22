@@ -4,12 +4,12 @@ import { Button } from '@cbhq/cds-web/buttons';
 import { LogoMark, NavigationIcon } from '@cbhq/cds-web/icons';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { NavigationBar, NavigationTitle, Sidebar } from '@cbhq/cds-web/navigation';
+import { SidebarItem } from '@cbhq/cds-web/navigation/SidebarItem';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { FeatureFlagProvider } from '@cbhq/cds-web/system';
 
 import { items } from '../navigation/__stories__/NavigationStorySetup';
 import { SelectOption } from '../select/SelectOption';
-import { SidebarItem } from '../sidebarMoreMenu/SidebarItem';
 import { SidebarMoreMenu } from '../sidebarMoreMenu/SidebarMoreMenu';
 
 import { AppSwitcher } from './AppSwitcher.stories';

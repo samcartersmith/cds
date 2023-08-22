@@ -48,7 +48,6 @@ export const overlayWebMovedComponents = [
   'packages/web/controls/__stories__/SelectInteraction.stories.tsx',
   'packages/web/controls/__stories__/SelectOption.stories.tsx',
   'packages/web/controls/__tests__/Select.test.tsx',
-  'packages/web/navigation/SidebarItem.tsx',
   'packages/web/navigation/SidebarMoreMenu.tsx',
   'packages/web/overlays/Tooltip/Tooltip.tsx',
   'packages/web/overlays/Tooltip/TooltipContent.tsx',
