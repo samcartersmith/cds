@@ -97,6 +97,13 @@ export async function prepare() {
       template: 'mobileRoutes.ejs',
       dest: `apps/mobile-app/src/routes.ts`,
     });
+
+    // Write to mobile-app. This is required for evaluating which routes to run during visreg testing.
+    await writeFile({
+      data: { routes: consumerRoutes },
+      template: 'mobileRoutes.ejs',
+      dest: `apps/mobile-app/scripts/utils/routes.mjs`,
+    });
   } catch (err) {
     if (err instanceof Error) {
       console.log(err.message);

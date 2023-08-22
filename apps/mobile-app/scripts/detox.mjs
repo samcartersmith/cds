@@ -3,10 +3,27 @@ import { $, argv, within } from 'zx'; // https://github.com/google/zx
 import detoxConfig from '../detox.config.js';
 
 import { isCI } from './utils/env.mjs';
+import { getAffectedRoutes } from './utils/getAffectedRoutes.mjs';
 import { getBuildInfo } from './utils/getBuildInfo.mjs';
 import { setEnvVars } from './utils/setEnvVars.mjs';
 
 const { platform, profile, jsEngine } = argv;
+
+const { commonChanged, affectedRouteKeys } = await getAffectedRoutes();
+
+const runAll = process.env.DETOX_RUN_ALL === 'true';
+
+// Only run detox if packages/common or code in a route's parent directory changed, or DETOX_RUN_ALL is true
+if (!runAll && !commonChanged && !affectedRouteKeys.length) {
+  console.log('No relevant changes to test, skipping detox');
+  process.exit(0);
+}
+// Set the affected route keys for playgroundRoutes.e2e.ts, and flag as Percy partial build
+if (!runAll && !commonChanged) {
+  console.log('Only testing routes affected by changes:', affectedRouteKeys);
+  process.env.DETOX_AFFECTED_ROUTE_KEYS = affectedRouteKeys.join(',');
+  process.env.PERCY_PARTIAL_BUILD = '1';
+} else console.log('Testing all routes');
 
 const { ios, android } = getBuildInfo();
 

@@ -5,6 +5,7 @@ env:
   NX_CAPTURE_TEST_METRICS: true
   NX_ENABLE_REMOTE_CACHE: true
   IOS_PERCY_SECRET: 'infra/buildkite/cds-percy-token-ios'
+  DETOX_RUN_ALL: $DETOX_RUN_ALL
 
 steps:
   - label: 'Visreg Test (iOS) %N'

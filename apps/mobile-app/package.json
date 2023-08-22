@@ -50,6 +50,7 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "eas-build-pre-install": "cd ../../ && yarn install && yarn nx run mobile-app:setup"
+    "eas-build-pre-install": "cd ../../ && yarn install && yarn nx run mobile-app:setup",
+    "should-run-visreg": "node ./scripts/utils/shouldRunVisreg.mjs"
   }
 }

@@ -47,6 +47,7 @@ env:
   NX_CAPTURE_TEST_METRICS: true
   NX_ENABLE_REMOTE_CACHE: true
   ANDROID_NDK_HOME: '$$ANDROID_HOME/ndk/$$NDK_VERSION'
+  DETOX_RUN_ALL: $DETOX_RUN_ALL
 
 steps:
   - label: 'Visreg Test (Android) %N'

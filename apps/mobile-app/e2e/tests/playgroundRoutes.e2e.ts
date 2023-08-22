@@ -4,6 +4,13 @@ import {
   uploadScreenshotsToPercyForRoute,
 } from '@cbhq/ui-mobile-visreg';
 
+// eslint-disable-next-line no-restricted-globals
+const affectedRouteKeys = process.env.DETOX_AFFECTED_ROUTE_KEYS?.split(',');
+
+const filteredRoutes = !affectedRouteKeys
+  ? routes
+  : routes.filter((route) => affectedRouteKeys.includes(route.key));
+
 const disabledRoutes = {
   disabledRoutes: [
     'Alert', // pointless
@@ -46,7 +53,7 @@ const disabledRoutes = {
 };
 
 describe('All Playground Routes', () => {
-  it.each(getPlaygroundRoutes({ routes, ...disabledRoutes }))(
+  it.each(getPlaygroundRoutes({ routes: filteredRoutes, ...disabledRoutes }))(
     '%p Visual Diff Test.',
     async (routeName) => {
       await device.openURL({
