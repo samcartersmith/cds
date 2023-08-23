@@ -5,15 +5,31 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "export-package-version": {
+      "executor": "@cbhq/cds-tasks:export-package-version"
+    },
     "build": {
       "executor": "@cbhq/cds-tasks:build-package",
-      "outputs": ["{workspaceRoot}/.nx/dist/packages/fonts"],
+      "outputs": [
+        "{workspaceRoot}/.nx/dist/packages/fonts"
+      ],
       "options": {
         "destinationDir": ".nx/dist/packages/fonts",
-        "staticFilesToIgnore": ["tsconfig.json", "tsconfig.build.json", "project.json"],
+        "staticFilesToIgnore": [
+          "tsconfig.json",
+          "tsconfig.build.json",
+          "project.json"
+        ],
         "babelConfig": "./babel.config.js",
-        "babelExtensions": [".ts", ".tsx"],
-        "babelIgnore": ["**/*.js", "**/*.test.ts", "**/*.test.tsx"],
+        "babelExtensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "babelIgnore": [
+          "**/*.js",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ],
         "typescriptConfig": "packages/fonts/tsconfig.build.json"
       }
     },

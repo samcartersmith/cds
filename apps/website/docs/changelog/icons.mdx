@@ -14,6 +14,10 @@ All notable changes to this project will be documented in this file.
 
 - Exposed package version via `import { version } from '@cbhq/cds-icons/version'`. [[#2175](https://github.cbhq.net/frontend/cds/pull/2175)]
 
+#### 🐞 Fixes
+
+- Add @cbhq/cds-tasks as a devDependency. [[#2184](https://github.cbhq.net/frontend/cds/pull/2184)]
+
 ## 1.7.0 (8/14/2023 PST)
 
 #### 🚀 Updates

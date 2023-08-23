@@ -49,6 +49,7 @@
     }
   },
   "devDependencies": {
+    "@cbhq/cds-tasks": "workspace:^",
     "@cbhq/figma-tasks": "workspace:^"
   }
 }

@@ -3615,6 +3615,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-icons@workspace:packages/icons"
   dependencies:
+    "@cbhq/cds-tasks": "workspace:^"
     "@cbhq/figma-tasks": "workspace:^"
   languageName: unknown
   linkType: soft
@@ -3623,6 +3624,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-illustrations@workspace:packages/illustrations"
   dependencies:
+    "@cbhq/cds-tasks": "workspace:^"
     "@cbhq/figma-styles": "workspace:^"
     "@cbhq/figma-tasks": "workspace:^"
   languageName: unknown

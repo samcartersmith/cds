@@ -16,6 +16,7 @@
     "platform": "node"
   },
   "devDependencies": {
+    "@cbhq/cds-tasks": "workspace:^",
     "@cbhq/figma-styles": "workspace:^",
     "@cbhq/figma-tasks": "workspace:^"
   },
