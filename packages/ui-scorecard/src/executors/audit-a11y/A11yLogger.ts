@@ -425,7 +425,7 @@ export class A11yLogger extends TestTask {
     let a11yScore =
       this.log.totalNumberOfPassingToBeAccessibleTests / this.log.totalNumberOfComponentsWithTest;
 
-    if (isNaN(a11yScore) || a11yScore === Infinity) {
+    if (Number.isNaN(a11yScore) || a11yScore === Infinity) {
       a11yScore = 0;
     } else {
       // multiplying by 100 and rounding to two decimal places

@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 
 import { ThemeProvider } from '../system/ThemeProvider';
 import { isSSR } from '../utils/browser';
-/* eslint-disable no-restricted-globals */
 
 export type PortalProps = {
   /**

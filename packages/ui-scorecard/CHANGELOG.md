@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Update eslint config. [[#2188](https://github.cbhq.net/frontend/cds/pull/2188)]
+
 ## 0.1.3 (8/18/2023 PST)
 
 #### 🐞 Fixes

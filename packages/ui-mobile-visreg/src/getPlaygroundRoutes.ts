@@ -1,5 +1,4 @@
-/* eslint-disable no-restricted-globals */
-//  https://buildkite.com/docs/tutorials/parallel-builds
+// https://buildkite.com/docs/tutorials/parallel-builds
 // BUILDKITE_PARALLEL_JOB starts at zero based index and VISREG_JOB_NUMBER expects 1 based index
 const TOTAL_JOBS = Number(process.env.BUILDKITE_PARALLEL_JOB_COUNT ?? 1);
 const JOB_INDEX = Number(process.env.BUILDKITE_PARALLEL_JOB ?? 0);

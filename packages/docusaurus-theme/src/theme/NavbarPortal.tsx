@@ -13,10 +13,8 @@ const NavbarPortal = memo(function NavbarPortal({ children }: NavbarPortalProps)
 
   useEffect(() => {
     if (isBrowser) {
-      // eslint-disable-next-line no-restricted-globals
       const navbar = document.querySelector('.navbar__items--right');
       if (navbar) {
-        // eslint-disable-next-line no-restricted-globals
         const portal = document.createElement('div');
         navbar?.prepend(portal);
         if (portal) {

@@ -154,7 +154,6 @@ export async function fetchOriginMaster() {
   }
 }
 
-// eslint-disable-next-line no-restricted-globals
 export const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT ?? '';
 
 export function getParamsFromExportedDeclaration(declaration: ExportedDeclarations) {

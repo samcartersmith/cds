@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Update eslint config. [[#2188](https://github.cbhq.net/frontend/cds/pull/2188)]
+
+#### 📘 Misc
+
 - Remove "metroSrc" field from package.json and prefer explicitly configured module aliases. [[#2155](https://github.cbhq.net/frontend/cds/pull/2155)]
 
 #### 📘 Misc

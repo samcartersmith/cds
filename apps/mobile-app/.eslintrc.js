@@ -5,9 +5,6 @@ const config = {
     {
       files: ['*.config.js', '*.config.ts'],
       extends: ['plugin:@cbhq/node'],
-      rules: {
-        'no-restricted-globals': 'off',
-      },
     },
     {
       files: ['scripts/**'],

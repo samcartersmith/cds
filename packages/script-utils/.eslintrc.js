@@ -3,9 +3,6 @@ module.exports = {
     {
       files: ['src/**/*.ts'],
       extends: ['plugin:@cbhq/node'],
-      rules: {
-        'no-restricted-globals': 'off',
-      },
     },
   ],
 };

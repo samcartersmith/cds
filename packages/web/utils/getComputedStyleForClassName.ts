@@ -1,5 +1,4 @@
 import { isSSR } from './browser';
-/* eslint-disable no-restricted-globals */
 
 /**
  * Look up the first element with a given className and access a CSS property value from that element.

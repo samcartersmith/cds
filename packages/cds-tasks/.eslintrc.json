@@ -11,8 +11,7 @@
       "rules": {
         "no-restricted-imports": [
           "error"
-        ],
-        "no-restricted-globals": "off"
+        ]
       }
     }
   ]

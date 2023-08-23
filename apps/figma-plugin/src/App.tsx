@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/button-has-type */
-/* eslint-disable no-restricted-globals */
 import 'react-figma-plugin-ds/figma-plugin-ds.css';
 import './styles.css';
 

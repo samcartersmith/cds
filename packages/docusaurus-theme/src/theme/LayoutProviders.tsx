@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-globals */
 import React, { Fragment, memo, ReactNode, useEffect, useState } from 'react';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocgenProjectProvider from '@theme/DocgenProjectProvider';

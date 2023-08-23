@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-restricted-globals */
 import { danger, fail, message, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
 

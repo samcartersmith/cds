@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-globals */
 import { withCustomConfig } from 'react-docgen-typescript';
 import mapValues from 'lodash/mapValues';
 import omit from 'lodash/omit';

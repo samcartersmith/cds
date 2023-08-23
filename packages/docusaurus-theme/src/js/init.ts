@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-globals */
-
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 /**
@@ -8,7 +6,7 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
  * we add a slight delay to better guarantee the element is mounted before calling the scrollTo function.
  */
 if (ExecutionEnvironment.canUseDOM) {
-  const { hash } = location;
+  const { hash } = window.location;
   setTimeout(() => {
     if (!hash) {
       window.scrollTo(0, 0);

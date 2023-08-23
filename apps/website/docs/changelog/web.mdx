@@ -24,6 +24,10 @@ All notable changes to this project will be documented in this file!
 
 #### 📘 Misc
 
+- Update eslint config. [[#2188](https://github.cbhq.net/frontend/cds/pull/2188)]
+
+#### 📘 Misc
+
 - Remove esm build and stop publishing @cbhq/cds-web-esm. [[#2173](https://github.cbhq.net/frontend/cds/pull/2173)]
 - Update TextInput stories to use async userEvents and pauseStory.
 
