@@ -52,15 +52,17 @@ const disabledRoutes = {
   ],
 };
 
-describe('All Playground Routes', () => {
-  it.each(getPlaygroundRoutes({ routes: filteredRoutes, ...disabledRoutes }))(
-    '%p Visual Diff Test.',
-    async (routeName) => {
-      await device.openURL({
-        url: `cds://Debug${routeName}`,
-      });
+const testRoutes = getPlaygroundRoutes({ routes: filteredRoutes, ...disabledRoutes });
 
-      await uploadScreenshotsToPercyForRoute(routeName);
-    },
-  );
+// eslint-disable-next-line no-restricted-globals
+if (!testRoutes.length) process.exit(0);
+
+describe('All Playground Routes', () => {
+  it.each(testRoutes)('%p Visual Diff Test.', async (routeName) => {
+    await device.openURL({
+      url: `cds://Debug${routeName}`,
+    });
+
+    await uploadScreenshotsToPercyForRoute(routeName);
+  });
 });
