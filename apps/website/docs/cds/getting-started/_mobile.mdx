@@ -5,6 +5,7 @@ import mobilePackage from ':docgen/mobile/metadata';
 import illustrationPackage from ':docgen/illustrations/metadata';
 import iconPackage from ':docgen/icons/metadata';
 import CodeBlock from '@theme/CodeBlock';
+import MetroMobile from './_metro-mobile.mdx';
 
 export const tocOverride = [...toc, ...providersToc, ...eslintToc];
 
@@ -43,3 +44,7 @@ Our cds-mobile package uses react-native-reanimated under the hood. This require
     ],
   };
 ```
+
+### Configuring with Metro
+
+<MetroMobile />

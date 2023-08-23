@@ -1,0 +1,1 @@
+The cds-mobile package uses deep imports, which currently aren't supported by react-native. If your app doesn't use the `@cbhq/metro-config` package, you'll have to add [this resolver](https://github.cbhq.net/consumer/react-native/blob/master/packages/metro-config/src/resolveRequest.ts#L44) to your metro configuration to manually resolve deep imports.
