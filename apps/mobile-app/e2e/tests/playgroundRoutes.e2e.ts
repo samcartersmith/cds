@@ -53,7 +53,6 @@ const disabledRoutes = {
 
 const testRoutes = getPlaygroundRoutes({ routes: filteredRoutes, ...disabledRoutes });
 
-// eslint-disable-next-line no-restricted-globals
 if (!testRoutes.length) process.exit(0);
 
 describe('All Playground Routes', () => {
