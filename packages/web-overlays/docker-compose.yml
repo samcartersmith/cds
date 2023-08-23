@@ -3,4 +3,4 @@ services:
   app:
     build:
       context: ../../
-      dockerfile: packages/cds-web-overlays/publish.Dockerfile
+      dockerfile: packages/web-overlays/publish.Dockerfile
