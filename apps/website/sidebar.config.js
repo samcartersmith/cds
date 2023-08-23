@@ -894,7 +894,7 @@ const sidebars = {
             { type: 'doc', id: 'changelog/mobile', label: '@cbhq/cds-mobile' },
             { type: 'doc', id: 'changelog/utils', label: '@cbhq/cds-utils' },
             { type: 'doc', id: 'changelog/web', label: '@cbhq/cds-web' },
-            { type: 'doc', id: 'changelog/cds-web-overlays', label: '@cbhq/cds-web-overlays' },
+            { type: 'doc', id: 'changelog/web-overlays', label: '@cbhq/cds-web-overlays' },
             {
               type: 'doc',
               id: 'changelog/mobile-visualization',

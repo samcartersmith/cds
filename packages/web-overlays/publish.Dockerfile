@@ -10,10 +10,10 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
-RUN yarn nx run cds-web-overlays:build
+RUN yarn nx run web-overlays:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/cds-web-overlays && npm pack
-RUN mv /repo/.nx/dist/packages/cds-web-overlays /shared
+RUN cd /repo/.nx/dist/packages/web-overlays && npm pack
+RUN mv /repo/.nx/dist/packages/web-overlays /shared
 
 WORKDIR /shared

@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.buildOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/cds-web-overlays",
+    "outDir": "../../.nx/dist/packages/web-overlays",
     "rootDir": "src"
   },
   "include": [

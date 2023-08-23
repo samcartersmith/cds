@@ -10,7 +10,7 @@ const config = {
   stories: [
     path.resolve(__dirname, `../../../packages/web-visualization/**/*.stories.@(tsx|mdx)`),
     path.resolve(__dirname, `../../../packages/web/**/*.stories.@(tsx|mdx)`),
-    path.resolve(__dirname, `../../../packages/cds-web-overlays/**/*.stories.@(tsx|mdx)`),
+    path.resolve(__dirname, `../../../packages/web-overlays/**/*.stories.@(tsx|mdx)`),
     path.resolve(__dirname, `../../../packages/web/**/*.stories.@(tsx|mdx)`),
     path.resolve(__dirname, '../playground/**/*.stories.tsx'),
   ],

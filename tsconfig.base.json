@@ -63,10 +63,10 @@
         "packages/mobile/*"
       ],
       "@cbhq/cds-web-overlays": [
-        "packages/cds-web-overlays/src"
+        "packages/web-overlays/src"
       ],
       "@cbhq/cds-web-overlays/*": [
-        "packages/cds-web-overlays/src/*"
+        "packages/web-overlays/src/*"
       ],
       "@cbhq/cds-mobile-visualization": [
         "packages/mobile-visualization/src"

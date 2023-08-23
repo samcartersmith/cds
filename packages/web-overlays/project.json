@@ -1,7 +1,7 @@
 {
-  "name": "cds-web-overlays",
+  "name": "web-overlays",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/cds-web-overlays/src",
+  "sourceRoot": "packages/web-overlays/src",
   "projectType": "library",
   "targets": {
     "export-package-version": {
@@ -10,12 +10,12 @@
     "build": {
       "executor": "@cbhq/cds-tasks:build-package",
       "outputs": [
-        "{workspaceRoot}/.nx/dist/packages/cds-web-overlays"
+        "{workspaceRoot}/.nx/dist/packages/web-overlays"
       ],
       "options": {
-        "destinationDir": ".nx/dist/packages/cds-web-overlays",
+        "destinationDir": ".nx/dist/packages/web-overlays",
         "srcDir": "src",
-        "babelConfig": "./packages/cds-web-overlays/babel.config.js",
+        "babelConfig": "./packages/web-overlays/babel.config.js",
         "babelExtensions": [
           ".ts",
           ".tsx"
@@ -30,7 +30,7 @@
           "**/*.test.ts",
           "**/*.test.tsx"
         ],
-        "typescriptConfig": "packages/cds-web-overlays/tsconfig.build.json"
+        "typescriptConfig": "packages/web-overlays/tsconfig.build.json"
       }
     },
     "format": {

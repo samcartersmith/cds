@@ -3743,9 +3743,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web-overlays@workspace:^, @cbhq/cds-web-overlays@workspace:packages/cds-web-overlays":
+"@cbhq/cds-web-overlays@workspace:^, @cbhq/cds-web-overlays@workspace:packages/web-overlays":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-web-overlays@workspace:packages/cds-web-overlays"
+  resolution: "@cbhq/cds-web-overlays@workspace:packages/web-overlays"
   dependencies:
     "@cbhq/cds-tasks": "workspace:^"
     "@popperjs/core": ^2.9.0
