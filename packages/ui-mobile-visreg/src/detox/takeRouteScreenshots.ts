@@ -13,7 +13,6 @@ import getDevicePlatform from './getDevicePlatform';
 
 async function scrollToEnd() {
   try {
-    // eslint-disable-next-line @typescript-eslint/await-thenable
     await expect(findElementById(scrollViewEnd)).not.toBeVisible();
 
     // detox scroll on Android and swipe on iOS are not deterministic,

@@ -92,7 +92,7 @@ steps:
       - yarn mono-pipeline validate-patches
       - yarn nx run cds-tasks:validate-cds-versions
       - yarn nx run cds-tasks:validate-website-changelog-updates
-      - yarn one-version:check
+      - yarn constraints || exit 1
 
   - label: Build
     <<: *k8s_large

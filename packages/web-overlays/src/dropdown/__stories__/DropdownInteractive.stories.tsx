@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/await-thenable */
 import { expect } from '@storybook/jest';
 import { ComponentStoryObj } from '@storybook/react';
 import { userEvent, waitFor, within } from '@storybook/testing-library';

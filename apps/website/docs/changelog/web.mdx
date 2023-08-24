@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.5.1 (8/23/2023 PST)
+
+#### 🐞 Fixes
+
+- Bump yargs to v17. [[#2180](https://github.cbhq.net/frontend/cds/pull/2180)]
+
 ## 5.5.0 (8/22/2023 PST)
 
 #### 🚀 Updates
@@ -20,14 +26,9 @@ All notable changes to this project will be documented in this file!
 
 - Exposed package version via `import { version } from '@cbhq/cds-web/version'`. [[#2175](https://github.cbhq.net/frontend/cds/pull/2175)]
 
-## Unreleased
-
 #### 📘 Misc
 
 - Update eslint config. [[#2188](https://github.cbhq.net/frontend/cds/pull/2188)]
-
-#### 📘 Misc
-
 - Remove esm build and stop publishing @cbhq/cds-web-esm. [[#2173](https://github.cbhq.net/frontend/cds/pull/2173)]
 - Update TextInput stories to use async userEvents and pauseStory.
 

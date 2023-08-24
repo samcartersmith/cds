@@ -100,6 +100,7 @@ module.exports = {
     'import/no-duplicates': 'off',
     'import/no-relative-packages': 'off',
     '@cbhq/ts-singular-type-name': 'off',
+    '@typescript-eslint/await-thenable': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
   },
 };

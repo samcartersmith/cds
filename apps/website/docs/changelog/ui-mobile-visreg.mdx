@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 1.0.4 (8/23/2023 PST)
+
+#### 🐞 Fixes
+
+- Bump yargs to v17. [[#2180](https://github.cbhq.net/frontend/cds/pull/2180)]
 
 #### 📘 Misc
 

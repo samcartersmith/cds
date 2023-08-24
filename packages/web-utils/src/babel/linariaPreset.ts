@@ -5,13 +5,25 @@ import { argv } from 'yargs';
 
 import { linariaCssExtractPlugin } from './linariaCssExtractPlugin';
 
+type ArgvSync = {
+  [x: string]: unknown;
+  _: (string | number)[];
+  $0: string;
+};
+
 export default function linariaPreset(
   babel: ConfigAPI,
   options: Record<string, unknown>,
   cwd: string,
 ): TransformOptions {
+  if (Object.prototype.hasOwnProperty.call(argv, 'then')) {
+    throw Error('linariaPreset argv must not be async');
+  }
+
+  const argvSync = argv as ArgvSync;
+
   // If we're not building a package, we can skip the extraction plugin
-  if (!argv._[0]) {
+  if (!argvSync._[0]) {
     return {};
   }
 
@@ -20,9 +32,9 @@ export default function linariaPreset(
     linariaCssExtractPlugin,
     {
       // bazel-out/darwin-fastbuild/bin/eng/shared/design-system/<package>/lib
-      outDir: argv.outDir,
+      outDir: argvSync.outDir,
       // /private/var/tmp/<hash>/sandbox/darwin-sandbox/execroot/coinbazel/eng/shared/design-system/<package>
-      sandboxDir: path.join(cwd, path.basename(String(argv._[0]))),
+      sandboxDir: path.join(cwd, path.basename(String(argvSync._[0]))),
     },
   ];
 

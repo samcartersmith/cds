@@ -7,7 +7,7 @@ echo "--- Installing yarn dependencies"
 yarn config set enableGlobalCache false
 
 # Immutable is the same as a frozen lockfile
-yarn install --immutable
+yarn install --immutable || exit 1
 
 # Yarn formats package.json files
 if ! git diff --quiet -- '**/package.json'

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/await-thenable */
 import React from 'react';
 import { expect } from '@storybook/jest';
 import { ComponentStoryObj } from '@storybook/react';

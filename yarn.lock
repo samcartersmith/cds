@@ -12045,7 +12045,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/yargs@npm:^15.0.0, @types/yargs@npm:^15.0.5":
+"@types/yargs@npm:^15.0.0":
   version: 15.0.15
   resolution: "@types/yargs@npm:15.0.15::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fyargs%2F-%2Fyargs-15.0.15.tgz"
   dependencies:
@@ -12487,18 +12487,6 @@ __metadata:
   peerDependencies:
     vite: ^3.0.0
   checksum: cc85ab31b4689ab137c4b1e65383dccce494371523eb164c579096e513a2abbaa7efb49ba08655fae9f6692f5b7b2602ad339bdce4ae5982fc08fe444fb8a4e5
-  languageName: node
-  linkType: hard
-
-"@wayfair/one-version@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@wayfair/one-version@npm:0.4.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40wayfair%2Fone-version%2F-%2Fone-version-0.4.0.tgz"
-  dependencies:
-    chalk: ^4
-    commander: ^10
-  bin:
-    one-version: src/index.js
-  checksum: 8ab85f7b8f1626d581a1e11ef053680131f5909671644a94f8ecb770027474e6c6c22ebfe7ff30022232ec861842ea28d8133f7300fd35174c59122a79b08230
   languageName: node
   linkType: hard
 
@@ -15684,7 +15672,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:4.1.2, chalk@npm:^4, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
+"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -16356,13 +16344,6 @@ __metadata:
   version: 0.1.2
   resolution: "command-score@npm:0.1.2"
   checksum: b733fd552d7e569070da3d474b1ed5f54785fdf3dd61670002e0a00b2eff1a547c2b6d3af3683c012f4f39c6455f9e7ee5e9997a79c08048ec37ec2195d3df08
-  languageName: node
-  linkType: hard
-
-"commander@npm:^10":
-  version: 10.0.0
-  resolution: "commander@npm:10.0.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcommander%2F-%2Fcommander-10.0.0.tgz"
-  checksum: 9f6495651f878213005ac744dd87a85fa3d9f2b8b90d1c19d0866d666bda7f735adfd7c2f10dfff345782e2f80ea258f98bb4efcef58e4e502f25f883940acfd
   languageName: node
   linkType: hard
 
@@ -18284,8 +18265,7 @@ __metadata:
     "@types/react-virtualized": ^9.21.13
     "@types/semver": 7.3.4
     "@types/url-parse": ^1.4.3
-    "@types/yargs": ^15.0.5
-    "@wayfair/one-version": ^0.4.0
+    "@types/yargs": ^17.0.11
     autoprefixer: ^10.4.7
     axios: ^0.18.0
     babel-loader: ^9.1.0
@@ -18331,7 +18311,7 @@ __metadata:
     webpack-bundle-analyzer: 4.4.2
     webpack-cli: ^4.7.2
     webpack-dev-server: ^3.11.0
-    yargs: ^15.3.1
+    yargs: ^17.5.1
   languageName: unknown
   linkType: soft
 
@@ -40728,7 +40708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^15.0.2, yargs@npm:^15.1.0, yargs@npm:^15.3.1":
+"yargs@npm:^15.0.2, yargs@npm:^15.1.0":
   version: 15.4.1
   resolution: "yargs@npm:15.4.1"
   dependencies:
