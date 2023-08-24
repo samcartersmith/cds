@@ -65,4 +65,12 @@ describe('Table', () => {
     const tableElement = screen.getByRole('table');
     expect(tableElement).toBeInTheDocument();
   });
+
+  const testClassName = 'test-class-name';
+  const exampleTestId = 'table-test-id';
+  it('passes dangerouslySetClassName', () => {
+    render(<TableMock testID={exampleTestId} dangerouslySetClassName={testClassName} />);
+
+    expect(screen.getByTestId(exampleTestId)).toHaveClass(testClassName);
+  });
 });

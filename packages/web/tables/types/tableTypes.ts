@@ -50,6 +50,10 @@ export type TableProps = {
   height?: DimensionValue;
   /** Set a maximum height. */
   maxHeight?: DimensionValue;
+  /**
+   * @danger This is an escape hatch. It is not intended to be used normally.
+   */
+  dangerouslySetClassName?: string;
 } & SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabelledBy' | 'accessibilityLabel'> &
   Omit<React.HTMLAttributes<HTMLTableElement>, 'dangerouslySetInnerHTML'>;

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.6.0 (8/24/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-2164] feat: added dangerouslySetClassName to Table web. [[#2196](https://github.cbhq.net/frontend/cds/pull/2196)] [[DX-2164](https://jira.coinbase-corp.com/browse/DX-2164)]
+
 ## 5.5.1 (8/23/2023 PST)
 
 #### 🐞 Fixes
