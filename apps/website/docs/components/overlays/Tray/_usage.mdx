@@ -2,15 +2,11 @@ A `Tray` is an elevated container that is pinned to the bottom of the screen. It
 
 ### How to Use a Tray
 
-`Tray`s should be conditionally rendered.
+`Tray`s should be conditionally rendered, but only closed using the `handleClose()` method exposed on the Tray's `ref` or via a callback passed a `Tray`'s children; otherwise, if you conditionally close a Tray the exit animation won't work and lifecycle logic won't behave as intended.
 
-`Tray`s expose an `onCloseComplete` prop, this takes a callback which will be fired **after** exit animation has completed.
-
-By default, they are pinned to the bottom of the screen, if you want to pin it to a different side of the screen, use `Drawer` instead.
+By default, `Tray` is pinned to the bottom of the screen, if you want to pin it to a different side of the screen, use `Drawer` instead.
 
 By default, `Tray`s have a `HandleBar` which is used to drag the `Tray` on and off the screen. It can be disabled with `hideHandleBar`.
-
-`Tray`s can have a title.
 
 ### Render methods
 
@@ -41,7 +37,7 @@ function DefaultTray() {
 
 #### Close with a ref
 
-If you don't want to render children inside of a callback, you can also use the `handlehandleClose` method exposed through a `ref` on the `Tray`.
+If you don't want to render children inside of a callback, you can also use the `handleClose` method exposed through a `ref` on the `Tray`.
 
 ```jsx
 const TrayWithRef = () => {
@@ -108,8 +104,7 @@ If you want to render a list of `SelectOption`s as children of a `Tray`, you wil
 
 ```jsx
 const TrayMenu = () => {
-  const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
-    useToggler(false);
+  const [isTrayVisible, { toggleOff: handleClose, toggleOn: handleOpenTray }] = useToggler(false);
   const [value, setValue] = useState();
   const trayRef = useRef(undefined);
 
@@ -121,7 +116,7 @@ const TrayMenu = () => {
     <>
       <Button onPress={handleOpenTray}>Open</Button>
       {isTrayVisible && (
-        <Tray title={title} onCloseComplete={handlehandleClose} ref={trayRef}>
+        <Tray title={title} onCloseComplete={handleClose} ref={trayRef}>
           {/* Make sure you pass both a value and onChange handler to Menu */}
           <Menu value={value} onChange={setValue}>
             {/* children can be anything, but in order to make it work like a select, you need to pass some SelectOptions */}
@@ -140,4 +135,51 @@ const TrayMenu = () => {
     </>
   );
 };
+```
+
+### Flows with Multiple Overlay Components
+
+If you want an overlay component to trigger the visibility of another overlay component, you need to make sure the first component has completely dismounted before opening the next one. Overlay components expose lifecycle methods like `onDidClose` or `onCloseComplete` that can be used to trigger the next overlay component.
+
+```jsx
+function TrayToModalFlow() {
+  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
+    useToggler(false);
+  const [isModalVisible, { toggleOff: handleCloseModal, toggleOn: handleOpenModal }] =
+    useToggler(false);
+
+  const handleTrayCloseComplete = useCallback(() => {
+    handleCloseTray();
+    handleOpenModal();
+  }, [handleCloseTray, handleOpenModal]);
+
+  return (
+    <>
+      <Button onPress={handleOpenTray}>Open Tray</Button>
+      {isTrayVisible && (
+        <Tray title={title} onCloseComplete={handleTrayCloseComplete}>
+          {({ handleClose }) => {
+            return (
+              <>
+                <HStack spacing={3}>
+                  <LoremIpsum />
+                </HStack>
+                <HStack justifyContent="center">
+                  <Button onPress={handleClose}>Open Modal</Button>
+                </HStack>
+              </>
+            );
+          }}
+        </Tray>
+      )}
+      <Modal visible={isModalVisible} onRequestClose={handleCloseModal}>
+        <ModalHeader title="I am a Modal" />
+        <ModalBody>
+          <LoremIpsum />
+          <Button onPress={handleCloseModal}>Close</Button>
+        </ModalBody>
+      </Modal>
+    </>
+  );
+}
 ```

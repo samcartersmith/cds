@@ -40,8 +40,7 @@ function DefaultSelect() {
 
 ```jsx
 const SelectMobile = () => {
-  const [isTrayVisible, { toggleOff: handlehandleClose, toggleOn: handleOpenTray }] =
-    useToggler(false);
+  const [isTrayVisible, { toggleOff: handleClose, toggleOn: handleOpenTray }] = useToggler(false);
   const [value, setValue] = useState();
   const trayRef = useRef(undefined);
 
@@ -55,7 +54,7 @@ const SelectMobile = () => {
     <>
       <Select value={value} onPress={handleOpenTray} />
       {isTrayVisible && (
-        <Tray title={title} onCloseComplete={handlehandleClose} ref={trayRef}>
+        <Tray title={title} onCloseComplete={handleClose} ref={trayRef}>
           {/* You must wrap options in Menu. Treat it as a Select on web */}
           <Menu value={value} onChange={setValue}>
             {options.map((option: string) => (

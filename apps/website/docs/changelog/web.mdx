@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Docs(Tray): added guidance on rendering flows with multiple overlays. [[#2197](https://github.cbhq.net/frontend/cds/pull/2197)] [[DX-1623](https://jira.coinbase-corp.com/browse/DX-1623)]
+
 ## 5.7.0 (8/24/2023 PST)
 
 #### 🚀 Updates
