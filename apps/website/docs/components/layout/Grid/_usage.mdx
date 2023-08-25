@@ -94,7 +94,7 @@ We do not recommend this method for SSR/SSG environments, unless you are wrappin
 
 ### Implicit Columns
 
-If you do not pass anything to the `columns` or `templateColumns` props, Grid will automatically lay out children based on available space. When children can no longer fit within a row, it will create additional rows to fit the content. You will have to provide a `minColumn` value, which will determine the minimum track sizing for the columns. You can optionally pass `maxColumn` as well.
+If you do not pass anything to the `columns` or `templateColumns` props, Grid will automatically lay out children based on available space. When children can no longer fit within a row, it will create additional rows to fit the content. You will have to provide a `columnMin` value, which will determine the minimum track sizing for the columns. You can optionally pass `columnMax` as well.
 
 When using implicit columns, Grid will not support `responsiveConfig`. Rather, columns will automatically wrap to the next line, whichs makes them great when you don't know the size of your content but want to make sure your layout is responsive!
 
