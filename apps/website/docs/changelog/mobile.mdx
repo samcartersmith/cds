@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.7.0 (8/24/2023 PST)
+
+#### 🚀 Updates
+
+- [CI-28735] Add Indeterminate State for Checkbox. [[#2195](https://github.cbhq.net/frontend/cds/pull/2195)] [[CI-28735](https://jira.coinbase-corp.com/browse/CI-28735)]
+
 ## 5.6.0 ((8/24/2023, 07:13 AM PST))
 
 This is an artificial version bump with no new change.

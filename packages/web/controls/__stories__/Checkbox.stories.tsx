@@ -19,6 +19,15 @@ export const Normal = () => {
   );
 };
 
+export const Indeterminate = () => {
+  const [indeterminate, { toggle }] = useToggler();
+  return (
+    <Checkbox name="indeterminate-checkbox" indeterminate={indeterminate} onChange={toggle}>
+      Indeterminate
+    </Checkbox>
+  );
+};
+
 export const Dense = () => {
   const [checked, { toggle }] = useToggler();
   return (

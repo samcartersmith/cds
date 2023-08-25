@@ -13,4 +13,6 @@ export type ControlBaseProps<T extends string> = {
   value?: T;
   /** Accessibility label describing the element. */
   accessibilityLabel?: string;
+  /** Enable indeterminate state. Useful when you want to indicate that sub-items of a control are partially filled. */
+  indeterminate?: boolean;
 };

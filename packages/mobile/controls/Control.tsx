@@ -26,6 +26,7 @@ import { useControlMotionProps } from './useControlMotionProps';
 export type ControlIconProps = {
   pressed: boolean;
   checked?: boolean;
+  indeterminate?: boolean;
   disabled?: boolean;
   backgroundColor: PaletteBackground;
   animatedScaleValue: Animated.Value;
@@ -52,6 +53,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     testID,
     label,
     checked,
+    indeterminate,
     disabled = false,
     readOnly = false,
     onChange,
@@ -78,7 +80,11 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   const isMounted = useRef(false);
 
   const { animation, animatedBoxValue, animatedScaleValue, animatedOpacityValue } =
-    useControlMotionProps({ checked, disabled, shouldUseSwitchTransition });
+    useControlMotionProps({
+      checked: checked || indeterminate,
+      disabled,
+      shouldUseSwitchTransition,
+    });
 
   const pressDisabled = disabled || readOnly;
 
@@ -88,7 +94,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     } else {
       isMounted.current = true;
     }
-  }, [checked, animation]);
+  }, [checked, indeterminate, animation]);
 
   const handlePress = useCallback(() => {
     void Haptics.lightImpact();
@@ -98,7 +104,8 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
 
   const controlIconProps = {
     checked,
-    backgroundColor: checked ? ('primary' as const) : ('background' as const),
+    indeterminate,
+    backgroundColor: checked || indeterminate ? ('primary' as const) : ('background' as const),
     disabled: pressDisabled,
     animatedScaleValue,
     animatedOpacityValue,
@@ -120,7 +127,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       accessible
       accessibilityState={{
         disabled: pressDisabled,
-        checked,
+        checked: checked || indeterminate,
       }}
       accessibilityRole={accessibilityRole}
       accessibilityLabel={accessibilityLabel}
@@ -163,7 +170,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
                 // Prevent text element from expanding beyond available width.
                 flexShrink: 1,
               }}
-              color={checked ? 'foreground' : 'foregroundMuted'}
+              color={checked || indeterminate ? 'foreground' : 'foregroundMuted'}
             >
               {label}
             </TextBody>

@@ -31,6 +31,21 @@ describe('Checkbox', () => {
     expect(screen.getByTestId('mock-checkbox')).toBeAccessible();
   });
 
+  it('renders a minus icon when indeterminate', () => {
+    render(<Checkbox indeterminate>Indeterminate</Checkbox>);
+
+    const icon = screen.getByText(glyphMap['ui-minus-16']);
+    expect(icon).toBeTruthy();
+  });
+  it('indeterminate Checkbox passes a11y', () => {
+    render(
+      <Checkbox testID="mock-checkbox" indeterminate>
+        Checkbox
+      </Checkbox>,
+    );
+    expect(screen.getByTestId('mock-checkbox')).toBeAccessible();
+  });
+
   it('attaches testID', () => {
     const TEST_ID = 'checkbox-testid-test';
     render(<Checkbox testID={TEST_ID}>Checkbox</Checkbox>);

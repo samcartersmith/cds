@@ -18,10 +18,10 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   { children, ...props }: CheckboxProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
-  const { checked } = props;
+  const { checked, indeterminate } = props;
 
   const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
-    checked,
+    checked: checked || indeterminate,
   });
 
   return (
@@ -35,11 +35,11 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
       <motion.div
         role="presentation"
         className={cx(checkbox, focusRing)}
-        data-filled={checked}
+        data-filled={checked || indeterminate}
         {...outerContainerMotionProps}
       >
         <motion.div {...innerContainerMotionProps}>
-          <Icon name="checkmark" size="s" color="primaryForeground" />
+          <Icon name={checked ? 'checkmark' : 'minus'} size="s" color="primaryForeground" />
         </motion.div>
       </motion.div>
     </Control>
