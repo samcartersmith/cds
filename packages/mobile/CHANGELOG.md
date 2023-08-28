@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.8.0 (8/26/2023 PST)
+
+#### 🚀 Updates
+
+- Update CardMedia to use SpotSquare and Pictogram directly. [[#2200](https://github.cbhq.net/frontend/cds/pull/2200)] [[DX-813](https://jira.coinbase-corp.com/browse/DX-813)]
 
 #### 📘 Misc
 

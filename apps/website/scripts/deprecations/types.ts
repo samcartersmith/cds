@@ -12,7 +12,7 @@ export type MigrationMap = Record<
   Extract<MigrationType, 'api' | 'propValue'>,
   Record<string, string | null>
 > &
-  Record<Extract<MigrationType, 'replaced' | 'path' | 'rename'>, string>;
+  Record<Extract<MigrationType, 'replaced' | 'path' | 'rename'>, string | string[]>;
 
 type SharedProps = {
   name: string;

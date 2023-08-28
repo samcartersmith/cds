@@ -24,10 +24,10 @@ export type IllustrationNamesMap = {
   spotSquare: SpotSquareName;
 };
 
-type HeroSquareDimension = (typeof illustrationDimensions.heroSquare)[number];
-type SpotSquareDimension = (typeof illustrationDimensions.spotSquare)[number];
-type SpotRectangleDimension = (typeof illustrationDimensions.spotRectangle)[number];
-type PictogramDimension = (typeof illustrationDimensions.pictogram)[number];
+export type HeroSquareDimension = (typeof illustrationDimensions.heroSquare)[number];
+export type SpotSquareDimension = (typeof illustrationDimensions.spotSquare)[number];
+export type SpotRectangleDimension = (typeof illustrationDimensions.spotRectangle)[number];
+export type PictogramDimension = (typeof illustrationDimensions.pictogram)[number];
 
 export type IllustrationDimension =
   | HeroSquareDimension

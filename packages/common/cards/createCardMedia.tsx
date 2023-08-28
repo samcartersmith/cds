@@ -5,7 +5,7 @@ import {
   defaultMediaSize,
   defaultPictogramMediaDimension,
 } from '../tokens/card';
-import type { IllustrationPropsDiscriminatedUnion } from '../types';
+import type { PictogramProps, SpotSquareProps } from '../types';
 import type {
   CardMediaImageSizeObject,
   CardMediaPlacement,
@@ -14,11 +14,12 @@ import type {
 } from '../types/alpha';
 
 type CreateCardMediaParams = {
-  Illustration: React.ComponentType<React.PropsWithChildren<IllustrationPropsDiscriminatedUnion>>;
+  SpotSquare: React.ComponentType<React.PropsWithChildren<SpotSquareProps>>;
+  Pictogram: React.ComponentType<React.PropsWithChildren<PictogramProps>>;
   CardRemoteImage: React.ComponentType<React.PropsWithChildren<CardRemoteImageProps>>;
 };
 
-export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMediaParams) {
+export function createCardMedia({ SpotSquare, Pictogram, CardRemoteImage }: CreateCardMediaParams) {
   const imageProps: Record<CardMediaPlacement, CardMediaImageSizeObject> = {
     start: {
       width: '50%',
@@ -34,9 +35,8 @@ export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMed
   const CardMedia = memo(function CardMedia(props: CardMediaProps) {
     if (props.type === 'spotSquare') {
       return (
-        <Illustration
+        <SpotSquare
           {...props}
-          type="spotSquare"
           dimension={defaultMediaDimension}
           name={props.name}
           testID={props.testID}
@@ -46,9 +46,8 @@ export function createCardMedia({ Illustration, CardRemoteImage }: CreateCardMed
 
     if (props.type === 'pictogram') {
       return (
-        <Illustration
+        <Pictogram
           {...props}
-          type="pictogram"
           dimension={defaultPictogramMediaDimension}
           name={props.name}
           testID={props.testID}

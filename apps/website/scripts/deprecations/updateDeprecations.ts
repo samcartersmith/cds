@@ -116,8 +116,9 @@ const getMigrationValue = (migrationMap: Partial<MigrationMap>, key: keyof Migra
       objectKeys(migrationRecord).forEach((prevValue) => {
         const newValue = migrationRecord[prevValue];
         if (newValue) {
+          const text = Array.isArray(newValue) ? newValue.concat(', ') : newValue;
           formattedMap.push(
-            `  <li><code>${prevValue}</code> has been replaced with <code>${newValue}</code></li>`,
+            `  <li><code>${prevValue}</code> has been replaced with <code>${text}</code></li>`,
           );
         } else {
           formattedMap.push(`  <li><code>${prevValue}</code> has been removed</li>`);

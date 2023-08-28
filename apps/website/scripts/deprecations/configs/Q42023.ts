@@ -16,5 +16,41 @@ export const Q42023: Deprecation = {
         replaced: 'Icon',
       },
     },
+    {
+      package: 'web',
+      name: 'Illustration',
+      type: ['replaced'],
+      path: 'packages/web/illustrations/Illustration.tsx',
+      scope: {
+        exportNames: ['Illustration'],
+      },
+      migrationMap: {
+        replaced: ['Pictogram', 'HeroSquare', 'SpotSquare', 'SpotRectangle'],
+      },
+    },
+    {
+      package: 'mobile',
+      name: 'Illustration',
+      type: ['replaced'],
+      path: 'packages/mobile/illustrations/Illustration.tsx',
+      scope: {
+        exportNames: ['Illustration'],
+      },
+      migrationMap: {
+        replaced: ['Pictogram', 'HeroSquare', 'SpotSquare', 'SpotRectangle'],
+      },
+    },
+  ],
+  tokens: [
+    {
+      path: 'packages/web/illustrations/Illustration.tsx',
+      name: 'versionMaps',
+      package: 'web',
+      exportNames: ['versionMaps'],
+      type: 'removed',
+      migrationMap: {
+        replaced: '@cbhq/cds-illustrations/generated/**illustration type**/data/versionMap',
+      },
+    },
   ],
 };

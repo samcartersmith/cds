@@ -1,13 +1,13 @@
 import React, { memo, useCallback } from 'react';
 import { Dimensions, FlatList } from 'react-native';
 import {
-  IllustrationDimensionsMap,
+  HeroSquareDimension,
   IllustrationNamesMap,
   IllustrationVariant,
+  PictogramDimension,
   Spectrum,
 } from '@cbhq/cds-common';
-import { convertDimensionToSize } from '@cbhq/cds-common/utils/convertDimensionToSize';
-import { convertSizeWithMultiplier } from '@cbhq/cds-common/utils/convertSizeWithMultiplier';
+import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
@@ -16,7 +16,16 @@ import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSqua
 import { Divider, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextLegal } from '../../typography';
-import { Illustration } from '../Illustration';
+import {
+  HeroSquare,
+  HeroSquareName,
+  Pictogram,
+  PictogramName,
+  SpotRectangle,
+  SpotRectangleName,
+  SpotSquare,
+  SpotSquareName,
+} from '../index';
 
 function keys<T>(obj: { [key in keyof T]: T[key] }) {
   return Object.keys(obj) as unknown as Extract<keyof T, string>[];
@@ -29,13 +38,7 @@ const images = {
   spotSquare: keys(spotSquareVersionMap),
 };
 
-export function getIllustrationSheet<Type extends IllustrationVariant>(
-  type: Type,
-  {
-    scaleMultiplier = 1,
-    dimension,
-  }: { scaleMultiplier?: number; dimension: IllustrationDimensionsMap[Type] },
-) {
+export function getIllustrationSheet<Type extends IllustrationVariant>(type: Type) {
   /** Constants */
   const FLAT_LIST_STYLE = { width: '100%' } as const;
   const FLAT_LIST_CONTAINER_STYLE = {
@@ -44,10 +47,30 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(
     alignContent: 'flex-start',
   } as const;
   const SCREEN_WIDTH = Dimensions.get('window').width - FLAT_LIST_CONTAINER_STYLE.marginLeft * 2;
-  const ITEM_SIZE = convertSizeWithMultiplier(convertDimensionToSize(dimension), scaleMultiplier);
-  const ITEM_WIDTH = ITEM_SIZE.width;
-  const ITEM_HEIGHT = ITEM_SIZE.height + 10; // account for text underneath
-  const ITEM_COLUMNS = Math.floor(SCREEN_WIDTH / ITEM_WIDTH);
+
+  const SIZES = {
+    pictogram: {
+      height: illustrationSizes[illustrationDimensions.pictogram[0]][1],
+      width: illustrationSizes[illustrationDimensions.pictogram[0]][0],
+      scaleMultiplier: 1,
+    },
+    spotSquare: {
+      height: illustrationSizes[illustrationDimensions.spotSquare[0]][1],
+      width: illustrationSizes[illustrationDimensions.spotSquare[0]][0],
+      scaleMultiplier: 0.4,
+    },
+    spotRectangle: {
+      height: illustrationSizes[illustrationDimensions.spotRectangle[0]][1],
+      width: illustrationSizes[illustrationDimensions.spotRectangle[0]][0],
+      scaleMultiplier: 0.3,
+    },
+    heroSquare: {
+      height: illustrationSizes[illustrationDimensions.heroSquare[0]][1],
+      width: illustrationSizes[illustrationDimensions.heroSquare[0]][0],
+      scaleMultiplier: 0.24,
+    },
+  };
+  const ITEM_COLUMNS = Math.floor(SCREEN_WIDTH / (SIZES[type].width * SIZES[type].scaleMultiplier));
 
   type IllustrationName = IllustrationNamesMap[Type];
 
@@ -73,15 +96,46 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(
   });
 
   const renderItem = ({ item }: { item: DataItem }) => {
+    const dim = `${SIZES[type].width}x${SIZES[type].height}` as const;
+
     return (
       <ThemeProvider name="default" scale="xSmall" spectrum={item.spectrum}>
-        <VStack overflow="hidden" background width={ITEM_WIDTH}>
-          <Illustration
-            type={type}
-            name={item.name}
-            dimension={dimension}
-            scaleMultiplier={scaleMultiplier}
-          />
+        <VStack
+          overflow="hidden"
+          background
+          width={SIZES[type].width * SIZES[type].scaleMultiplier}
+        >
+          {type === 'heroSquare' && (
+            // render a 48x48 thumbnail
+            <HeroSquare
+              name={item.name as HeroSquareName}
+              dimension={dim as HeroSquareDimension}
+              scaleMultiplier={SIZES.heroSquare.scaleMultiplier}
+            />
+          )}
+          {type === 'spotSquare' && (
+            // render a 48x48 thumbnail
+            <SpotSquare
+              name={item.name as SpotSquareName}
+              scaleMultiplier={SIZES.spotSquare.scaleMultiplier}
+            />
+          )}
+
+          {type === 'spotRectangle' && (
+            // render a 72x36 thumbnail
+            <SpotRectangle
+              name={item.name as SpotRectangleName}
+              scaleMultiplier={SIZES.spotRectangle.scaleMultiplier}
+            />
+          )}
+          {type === 'pictogram' && (
+            <Pictogram
+              name={item.name as PictogramName}
+              dimension={dim as PictogramDimension}
+              scaleMultiplier={SIZES.pictogram.scaleMultiplier}
+            />
+          )}
+
           <TextLegal ellipsize="tail">{item.name}</TextLegal>
         </VStack>
       </ThemeProvider>
@@ -94,8 +148,8 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(
       index: number,
     ) {
       return {
-        length: ITEM_HEIGHT,
-        offset: ITEM_HEIGHT * index,
+        length: SIZES[type].height * SIZES[type].scaleMultiplier,
+        offset: SIZES[type].height * SIZES[type].scaleMultiplier * index,
         index,
       };
     },

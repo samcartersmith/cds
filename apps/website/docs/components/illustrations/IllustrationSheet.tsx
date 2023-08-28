@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
+import { HeroSquareDimension, IllustrationVariant, PictogramDimension } from '@cbhq/cds-common';
 import {
   illustrationDimensionDefaults,
   illustrationDimensions,
   illustrationSizes,
 } from '@cbhq/cds-common/tokens/illustrations';
-import { IllustrationVariant } from '@cbhq/cds-common/types/IllustrationNames';
 import heroSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/descriptionMap';
 import heroSquareNames from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
 import pictogramDescriptionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/descriptionMap';
@@ -17,7 +17,16 @@ import spotRectangleNames from '@cbhq/cds-illustrations/__generated__/spotRectan
 import spotSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/descriptionMap';
 import spotSquareNames from '@cbhq/cds-illustrations/__generated__/spotSquare/data/names';
 import { SearchInput, Select, SelectOption } from '@cbhq/cds-web/controls';
-import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
+import {
+  HeroSquare,
+  HeroSquareName,
+  Pictogram,
+  PictogramName,
+  SpotRectangle,
+  SpotRectangleName,
+  SpotSquare,
+  SpotSquareName,
+} from '@cbhq/cds-web/illustrations';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 
 const variantToNamesMap = {
@@ -169,7 +178,25 @@ export const IllustrationSheet = function IllustrationSheet({
               <HStack flexWrap="wrap" gap={2}>
                 {filteredNames.map((filteredName) => (
                   <VStack alignItems="center" key={filteredName} width={width} overflow="auto">
-                    <Illustration type={variant} name={filteredName} dimension={dim} />
+                    {variant === 'heroSquare' && (
+                      <HeroSquare
+                        name={filteredName as HeroSquareName}
+                        dimension={dim as HeroSquareDimension}
+                      />
+                    )}
+                    {variant === 'spotSquare' && (
+                      <SpotSquare name={filteredName as SpotSquareName} />
+                    )}
+                    {variant === 'spotRectangle' && (
+                      <SpotRectangle name={filteredName as SpotRectangleName} />
+                    )}
+                    {variant === 'pictogram' && (
+                      <Pictogram
+                        name={filteredName as PictogramName}
+                        dimension={dim as PictogramDimension}
+                      />
+                    )}
+
                     <p style={illustrationLabelStyles}>{filteredName}</p>
                   </VStack>
                 ))}

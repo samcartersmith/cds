@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import type { PictogramName, SpotSquareName } from '@cbhq/cds-common';
 import { CardBody } from '@cbhq/cds-web/alpha/CardBody';
-import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
+import { Pictogram, SpotSquare } from '@cbhq/cds-web/illustrations';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import useGoToLinkHandler from '@cbhq/docusaurus-theme/src/theme/useGoToLinkHandler';
 
@@ -33,8 +33,8 @@ const LandingPageCategoryItem = memo(function LandingPageCategoryItem({
         mediaPlacement="above"
         media={
           <Box spacingStart={3}>
-            {pictogram && <Illustration type="pictogram" name={pictogram} dimension="48x48" />}
-            {spotSquare && <Illustration type="spotSquare" name={spotSquare} dimension="48x48" />}
+            {pictogram && <Pictogram name={pictogram} />}
+            {spotSquare && <SpotSquare name={spotSquare} />}
           </Box>
         }
         actionLabel={actionLabel}

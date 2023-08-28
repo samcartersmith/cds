@@ -34,6 +34,91 @@ The following items will be deleted at the end of Q42023 in a breaking release.
       </p>
     </VStack>
   </AccordionItem>
+  <AccordionItem
+    itemKey="Illustration.web"
+    title={
+      <HStack gap={1}>
+        Illustration <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v6.0.0/packages/web/illustrations/Illustration.tsx"
+          target="_blank"
+        >
+          packages/web/illustrations/Illustration.tsx
+        </a>
+      </p>
+      <p>
+        <p>Illustration has been replaced with Pictogram,HeroSquare,SpotSquare,SpotRectangle</p>
+      </p>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="Illustration.mobile"
+    title={
+      <HStack gap={1}>
+        Illustration <Tag colorScheme="yellow">replaced</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-mobile"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v6.0.0/packages/mobile/illustrations/Illustration.tsx"
+          target="_blank"
+        >
+          packages/mobile/illustrations/Illustration.tsx
+        </a>
+      </p>
+      <p>
+        <p>Illustration has been replaced with Pictogram,HeroSquare,SpotSquare,SpotRectangle</p>
+      </p>
+    </VStack>
+  </AccordionItem>
 </Accordion>
 
-<TOCUpdater toc={[{ value: 'Components', id: 'components', level: 2 }]} />
+### 🪙 Tokens {#tokens}
+
+<Accordion>
+  <AccordionItem
+    itemKey="versionMaps.web"
+    title={
+      <HStack gap={1}>
+        versionMaps <Tag colorScheme="red">removed</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        Original Path:{' '}
+        <a
+          href="https://github.cbhq.net/frontend/cds/blob/v6.0.0/packages/web/illustrations/Illustration.tsx"
+          target="_blank"
+        >
+          packages/web/illustrations/Illustration.tsx
+        </a>
+      </p>
+      <p>
+        <p>
+          versionMaps has been replaced with @cbhq/cds-illustrations/generated/**illustration
+          type**/data/versionMap
+        </p>
+      </p>
+    </VStack>
+  </AccordionItem>
+</Accordion>
+
+<TOCUpdater
+  toc={[
+    { value: 'Components', id: 'components', level: 2 },
+    { value: 'Tokens', id: 'tokens', level: 2 },
+  ]}
+/>

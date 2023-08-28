@@ -53,6 +53,7 @@ const nonTestTsxFiles = danger.git.fileMatch(
 );
 const storyFiles = danger.git.fileMatch(
   `packages/${process.env.NX_PROJECT_NAME}/**/*.stories.(ts|tsx)`,
+  `packages/${process.env.NX_PROJECT_NAME}/__stories__/**.(ts|tsx)`,
 );
 
 const frozenComponentFiles = danger.git.fileMatch(...frozenComponentPatterns);

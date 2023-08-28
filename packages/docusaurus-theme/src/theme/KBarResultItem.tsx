@@ -1,7 +1,7 @@
 import React, { forwardRef, Fragment, memo, useMemo } from 'react';
 import KBarListCell from '@theme/KBarListCell';
 import { KBarResultItemProps } from '@theme/KBarResultItem';
-import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
+import { Pictogram, SpotSquare } from '@cbhq/cds-web/illustrations';
 import { HStack } from '@cbhq/cds-web/layout';
 import { RemoteImage } from '@cbhq/cds-web/media';
 
@@ -79,11 +79,11 @@ const KBarResultItem = memo(
 
       const media = useMemo(() => {
         if (action.spotSquare) {
-          return <Illustration type="spotSquare" name={action.spotSquare} dimension="48x48" />;
+          return <SpotSquare name={action.spotSquare} />;
         }
 
         if (action.pictogram) {
-          return <Illustration type="pictogram" name={action.pictogram} dimension="48x48" />;
+          return <Pictogram name={action.pictogram} />;
         }
 
         if (action.image) {

@@ -7,6 +7,9 @@ import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSqua
 
 import { createIllustration, IllustrationBasePropsWithA11y } from './createIllustration';
 
+/**
+ * @deprecated This token will be deleted in Q42023. Please use versionMaps from @cbhq/cds-illustrations/__generated__/ instead.
+ */
 export const versionMaps: Record<IllustrationVariant, Record<string, number>> = {
   heroSquare: heroSquareVersionMap,
   spotSquare: spotSquareVersionMap,
@@ -19,9 +22,7 @@ type IllustrationProps<Type extends IllustrationVariant> = IllustrationBaseProps
 };
 
 /**
- * @deprecated Do not use this component directly as this is not optimized for tree-shaking and will cause all
- * illustration assets to be included in your app. This component is used within CDS for visreg.
- *
+ * @deprecated This component will be deleted in Q42023. Please use HeroSquare, SpotSquare, SpotRectangle, or Pictogram components instead.
  */
 export const Illustration = memo(function Illustration<Type extends IllustrationVariant>({
   type,
