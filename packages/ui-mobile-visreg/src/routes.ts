@@ -250,32 +250,9 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Spacer.stories').default,
   },
   {
-    key: 'Sparkline_Deprecated',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/visualizations/__stories__/Sparkline_Deprecated.stories').default,
-  },
-  {
-    key: 'SparklineGradient_Deprecated',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/visualizations/__stories__/SparklineGradient_Deprecated.stories')
-        .default,
-  },
-  {
     key: 'SparklineGradientV2',
     getComponent: () =>
       require('@cbhq/cds-mobile-visualization/sparkline/__stories__/SparklineGradientV2.stories')
-        .default,
-  },
-  {
-    key: 'SparklineInteractive_Deprecated',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/visualizations/sparkline-interactive/__stories__/SparklineInteractive_Deprecated.stories')
-        .default,
-  },
-  {
-    key: 'SparklineInteractiveHeader_Deprecated',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/visualizations/sparkline-interactive-header/__stories__/SparklineInteractiveHeader_Deprecated.stories')
         .default,
   },
   {

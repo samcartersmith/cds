@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file!
 
 #### 📘 Misc
 
-- Artificial version bump.
+- [trivial] internal: delete decomped component stories in mobile.
 
 ## 5.7.0 (8/24/2023 PST)
 

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- [trivial] internal: delete decomped component stories in mobile. [[#2199](https://github.cbhq.net/frontend/cds/pull/2199)] [[DX-1821](https://jira.coinbase-corp.com/browse/DX-1821)]
+
 ## 1.0.4 (8/23/2023 PST)
 
 #### 🐞 Fixes

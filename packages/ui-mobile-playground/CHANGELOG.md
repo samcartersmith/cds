@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- [trivial] internal: delete decomped component stories in mobile. [[#2199](https://github.cbhq.net/frontend/cds/pull/2199)] [[DX-1821](https://jira.coinbase-corp.com/browse/DX-1821)]
+
+#### 📘 Misc
+
 - Remove "metroSrc" field from package.json and prefer explicitly configured module aliases. [[#2155](https://github.cbhq.net/frontend/cds/pull/2155)]
 
 #### 📘 Misc
