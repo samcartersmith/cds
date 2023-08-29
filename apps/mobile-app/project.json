@@ -85,7 +85,8 @@
         "android-release": {
           "args": "--profile release --jsEngine hermes --platform android"
         }
-      }
+      },
+      "defaultConfiguration": "ios-debug"
     },
     "detox": {
       "executor": "nx:run-commands",
