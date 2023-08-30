@@ -13,6 +13,7 @@ import { FeedCard } from '../../cards/FeedCard';
 import { Menu } from '../../controls/Menu';
 import { SelectOption } from '../../controls/SelectOption';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useA11y } from '../../hooks/useA11y';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { Fallback, HStack, VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
@@ -335,21 +336,31 @@ const TrayToModalFlow = ({ title }: { title?: string }) => {
 };
 
 const AccessibleTray = ({ title }: { title?: string }) => {
-  const [isTrayVisible, { toggleOff: handleClose, toggleOn: handleOpenTray }] = useToggler(false);
+  const [isTrayVisible, { toggleOff, toggleOn: handleOpenTray }] = useToggler(false);
   const [value, setValue] = useState<string>();
   const trayRef = useRef<DrawerRefBaseProps>(null);
+  const triggerRef = useRef(null);
+  const { setA11yFocus } = useA11y();
 
   const handleOptionPress = () => {
     trayRef.current?.handleClose();
   };
 
+  const handleCloseTray = useCallback(() => {
+    toggleOff();
+    // return a11y focus to trigger
+    setA11yFocus(triggerRef);
+  }, [toggleOff, setA11yFocus]);
+
   return (
     <>
-      <Button onPress={handleOpenTray}>Open</Button>
+      <Button onPress={handleOpenTray} ref={triggerRef}>
+        Open
+      </Button>
       {isTrayVisible && (
         <Tray
           title={title}
-          onCloseComplete={handleClose}
+          onCloseComplete={handleCloseTray}
           handleBarAccessibilityLabel="This is a handlebar, double tap to dismiss the tray"
           ref={trayRef}
         >
@@ -376,7 +387,7 @@ export const TrayScreen = () => {
       <Example title="Tray">
         <DefaultTray />
       </Example>
-      <Example title="Tray with accessible handlebar">
+      <Example title="Accessible Tray">
         <AccessibleTray />
       </Example>
       <Example title="Tray with Title">

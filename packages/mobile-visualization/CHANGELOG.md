@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.9 (8/28/2023 PST)
+
+#### 🚀 Updates
+
+- [Sparkline] Make Sparkline chart accessible. [[#2203](https://github.cbhq.net/frontend/cds/pull/2203)]
+
 ## 0.0.8 (8/22/2023 PST)
 
 #### 🚀 Updates

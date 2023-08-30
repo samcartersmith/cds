@@ -30,7 +30,6 @@ import { TextLabel1 } from '../typography/TextLabel1';
 
 import { TextInputFocusVariantContext } from './context';
 import { HelperText } from './HelperText';
-import { InputIcon } from './InputIcon';
 import { InputIconButton, InputIconButtonProps } from './InputIconButton';
 import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
@@ -115,7 +114,7 @@ export const TextInput = memo(
 
       // Get the accessability label from the start node child
       const startIconA11yLabel = useMemo(() => {
-        if (isValidElement(start) && (start.type === InputIconButton || start.type === InputIcon)) {
+        if (isValidElement(start) && start.type === InputIconButton) {
           return (start.props as InputIconButtonProps).accessibilityLabel;
         }
 

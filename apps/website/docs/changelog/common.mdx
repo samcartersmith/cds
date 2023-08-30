@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.8.1 ((8/28/2023, 10:24 PM PST))
+
+This is an artificial version bump with no new change.
+
+#### 📘 Misc
+
+- Update InputIcon A11y example. [[#2203](https://github.cbhq.net/frontend/cds/pull/2203)]
+
 ## 5.8.0 (8/26/2023 PST)
 
 #### 🚀 Updates

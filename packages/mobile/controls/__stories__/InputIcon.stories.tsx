@@ -26,7 +26,7 @@ const InputIconScreen = () => {
         <Basic />
       </Example>
 
-      <Example title="Accessible Label Equivalent for Icon">
+      <Example title="With good accessible label">
         <AccessibleInputIcon />
       </Example>
 

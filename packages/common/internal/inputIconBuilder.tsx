@@ -43,7 +43,8 @@ export function inputIconBuilder(
     return (
       <TextInput
         label="Add"
-        start={<InputIcon name="add" accessibilityLabel="Search add an item" />}
+        accessibilityLabel="Search add an item"
+        start={<InputIcon name="add" />}
       />
     );
   };

@@ -21,11 +21,13 @@ import { useSparklineCoordinates } from '@cbhq/cds-common/visualizations/useSpar
 import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-files';
 import { Lottie } from '@cbhq/cds-mobile/animation';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
+import { useScreenReaderStatus } from '@cbhq/cds-mobile/hooks/useScreenReaderStatus';
 import { useSpacingScale } from '@cbhq/cds-mobile/hooks/useSpacingScale';
 import { Box } from '@cbhq/cds-mobile/layout';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 import { emptyArray, noop } from '@cbhq/cds-utils';
 
+import { SparklineAccessibleView } from './SparklineAccessibleView';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
 import { SparklineInteractiveMarkerDates } from './SparklineInteractiveMarkerDates';
@@ -138,6 +140,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
   const chartHoverTextInputRef = useRef<SparklineInteractiveHoverDateRefProps<Period> | null>(null);
   const palette = usePalette();
+  const isScreenReaderEnabled = useScreenReaderStatus();
 
   const dataForPeriod = useMemo(() => {
     if (!data) {
@@ -256,6 +259,9 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           />
         )}
         <View style={chartDimensionStyles}>
+          {isScreenReaderEnabled && (
+            <SparklineAccessibleView data={data} selectedPeriod={selectedPeriod} />
+          )}
           {!!isFallbackVisible && (
             <View style={StyleSheet.absoluteFill}>
               {fallback ?? <DefaultFallback fallbackType={fallbackType} />}

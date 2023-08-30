@@ -18,9 +18,9 @@ import { AccessibilityInfo, findNodeHandle } from 'react-native';
  *
  */
 export const useA11y = () => {
-  const setA11yFocus = useCallback((ref: React.MutableRefObject<null>) => {
+  const setA11yFocus = useCallback(<T>(ref: React.RefObject<T>) => {
     // TODO: Migrate this to fabric supported API
-    const reactTag = findNodeHandle(ref.current);
+    const reactTag = findNodeHandle(ref.current as React.Component);
     if (reactTag) {
       AccessibilityInfo.setAccessibilityFocus(reactTag);
     }

@@ -8,6 +8,7 @@ import { Button } from '../../buttons/Button';
 import { ListCell } from '../../cells/ListCell';
 import { Menu, SelectOption } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useA11y } from '../../hooks/useA11y';
 import { Icon } from '../../icons/Icon';
 import { Fallback, Spacer, VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
@@ -224,6 +225,31 @@ const SideDrawerWithFallback = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) 
   );
 };
 
+const SideDrawerWithA11y = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
+  const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
+  const triggerRef = useRef(null);
+  const { setA11yFocus } = useA11y();
+
+  const handleCloseDrawer = useCallback(() => {
+    toggleOff();
+    // return a11y focus to trigger
+    setA11yFocus(triggerRef);
+  }, [toggleOff, setA11yFocus]);
+
+  return (
+    <>
+      <Button onPress={toggleOn} ref={triggerRef}>
+        Open
+      </Button>
+      {isVisible && (
+        <Drawer pin={pin} onCloseComplete={handleCloseDrawer}>
+          {({ handleClose }) => <SideDrawerContent handleClose={handleClose} />}
+        </Drawer>
+      )}
+    </>
+  );
+};
+
 const DrawerScreen = () => {
   return (
     <ExampleScreen>
@@ -244,6 +270,9 @@ const DrawerScreen = () => {
       </Example>
       <Example title="Side Drawer with Scrollable Content">
         <SideDrawerScrollableContent pin="left" />
+      </Example>
+      <Example title="Drawer with A11y focus return">
+        <SideDrawerWithA11y pin="left" />
       </Example>
     </ExampleScreen>
   );

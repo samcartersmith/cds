@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.8.1 (8/28/2023 PST)
+
+#### 🐞 Fixes
+
+- [TabsNavigation] Announce selected state. [[#2203](https://github.cbhq.net/frontend/cds/pull/2203)]
+- [Accordion] Announce expand/collapse state [[#2203](https://github.cbhq.net/frontend/cds/pull/2203)]
+- [Text] Added example for announcing headings [[#2203](https://github.cbhq.net/frontend/cds/pull/2203)]
+- [Toast] Fix a11y focus order [[#2203](https://github.cbhq.net/frontend/cds/pull/2203)]
+- [Tooltip, Drawer, Tray] Add examples for a11y focus return after closing [[#2203](https://github.cbhq.net/frontend/cds/pull/2203)]
+- [Button] Support fowarding ref [[#2203](https://github.cbhq.net/frontend/cds/pull/2203)]]
+
 ## 5.8.0 (8/26/2023 PST)
 
 #### 🚀 Updates

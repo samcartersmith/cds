@@ -1,14 +1,21 @@
-import React from 'react';
-import { Modal as RNModal, ScrollView } from 'react-native';
+import React, { useCallback, useRef } from 'react';
+import { Modal as RNModal, ScrollView, View } from 'react-native';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useA11y } from '../../hooks/useA11y';
 import { Icon } from '../../icons/Icon';
 import { Box, HStack, VStack } from '../../layout';
 import { TextLabel2 } from '../../typography';
 import { Modal as CDSModal } from '../Modal/Modal';
 import { Tooltip } from '../Tooltip/Tooltip';
+
+type ContentTypes = {
+  title: string;
+  tooltipText: string;
+  yShiftByStatusBarHeight?: boolean;
+};
 
 const topTextSubject = 'TOP';
 const bottomTextSubject = 'BOTTOM';
@@ -17,15 +24,29 @@ const shortText = 'This is the short text.';
 const longText =
   'This is the really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long text.';
 
-const Content = ({
-  title,
-  tooltipText,
-  yShiftByStatusBarHeight,
-}: {
-  title: string;
-  tooltipText: string;
-  yShiftByStatusBarHeight?: boolean;
-}) => {
+const ToolTipWithA11y = ({ tooltipText, yShiftByStatusBarHeight }: Omit<ContentTypes, 'title'>) => {
+  const triggerRef = useRef(null);
+  const { setA11yFocus } = useA11y();
+
+  const handleClose = useCallback(() => {
+    // return a11y focus to trigger
+    setA11yFocus(triggerRef);
+  }, [setA11yFocus]);
+
+  return (
+    <Tooltip
+      content={tooltipText}
+      yShiftByStatusBarHeight={yShiftByStatusBarHeight}
+      onCloseTooltip={handleClose}
+    >
+      <View ref={triggerRef}>
+        <Icon name="info" size="s" />
+      </View>
+    </Tooltip>
+  );
+};
+
+const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) => {
   return (
     <Example title={title}>
       <VStack gap={8} background="backgroundAlternate" spacingVertical={2} height={800}>
@@ -41,15 +62,18 @@ const Content = ({
           </Tooltip>
         </HStack>
         <HStack justifyContent="space-evenly">
-          <Tooltip content={tooltipText} yShiftByStatusBarHeight={yShiftByStatusBarHeight}>
-            <Icon name="info" size="s" />
-          </Tooltip>
-          <Tooltip content={tooltipText} yShiftByStatusBarHeight={yShiftByStatusBarHeight}>
-            <Icon name="info" size="s" />
-          </Tooltip>
-          <Tooltip content={tooltipText} yShiftByStatusBarHeight={yShiftByStatusBarHeight}>
-            <Icon name="info" size="s" />
-          </Tooltip>
+          <ToolTipWithA11y
+            tooltipText={tooltipText}
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
+          />
+          <ToolTipWithA11y
+            tooltipText={tooltipText}
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
+          />
+          <ToolTipWithA11y
+            tooltipText={tooltipText}
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
+          />
         </HStack>
         <HStack justifyContent="space-around">
           <Tooltip

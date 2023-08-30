@@ -154,6 +154,7 @@ export const Drawer = memo(
           <View>
             <HandleBar
               accessibilityLabel={handleBarAccessibilityLabel}
+              accessibilityRole="button"
               onAccessibilityTap={handleClose}
             />
             <Box

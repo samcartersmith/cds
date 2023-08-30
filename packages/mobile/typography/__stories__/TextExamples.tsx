@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
@@ -6,12 +6,14 @@ import { TextProps } from '../createText';
 
 const TextExamplesScreen = ({
   component: Text,
+  extraExample,
 }: {
   component: React.ComponentType<React.PropsWithChildren<TextProps>>;
+  extraExample?: ReactNode;
 }) => {
   return (
     <ExampleScreen>
-      <Example title="Mono">
+      <Example title="Mono" accessibilityRole="header">
         <Text mono>Mono font</Text>
       </Example>
       <Example title="Colors">
@@ -132,6 +134,7 @@ const TextExamplesScreen = ({
           <Text disabled>Hello</Text>
         </Box>
       </Example>
+      {extraExample}
     </ExampleScreen>
   );
 };

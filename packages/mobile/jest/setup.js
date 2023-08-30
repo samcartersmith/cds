@@ -56,6 +56,9 @@ jest.mock('react-native', () => {
 
   RN.Animated.createAnimatedComponent = (component) => component;
 
+  RN.AccessibilityInfo.isScreenReaderEnabled = jest.fn();
+  RN.AccessibilityInfo.addEventListener = jest.fn();
+
   return RN;
 });
 

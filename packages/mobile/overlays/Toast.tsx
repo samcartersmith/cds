@@ -118,7 +118,7 @@ export const Toast = memo(
               >
                 <ColorSurge background={variant} />
                 {/* avoid pushing contents off screen */}
-                <Box flexShrink={1} spacingEnd={2} spacingVertical={1}>
+                <Box flexShrink={1} spacingEnd={2} spacingVertical={1} accessible>
                   <TextHeadline>{text}</TextHeadline>
                 </Box>
                 {!!action && (

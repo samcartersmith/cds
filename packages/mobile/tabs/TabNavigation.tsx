@@ -76,6 +76,8 @@ export const TabNavigation = memo(
                       onPress={getTabPressHandler({ id, onPress })}
                       transparentWhilePressed
                       testID={tabLabelTestID}
+                      accessibilityState={{ selected: id === value }}
+                      accessibilityRole="tab"
                     >
                       <TabLabel active={id === value} variant={variant} count={count} max={max}>
                         {label}
@@ -106,6 +108,7 @@ export const TabNavigation = memo(
             onScroll={handleScroll}
             onLayout={handleScrollContainerLayout}
             onContentSizeChange={handleScrollContentSizeChange}
+            accessibilityRole="tablist"
           >
             <VStack>
               {shouldOverrideScale ? (

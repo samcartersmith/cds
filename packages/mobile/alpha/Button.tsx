@@ -1,5 +1,5 @@
-import React, { isValidElement, memo, useMemo } from 'react';
-import { ActivityIndicator, StyleSheet } from 'react-native';
+import React, { ForwardedRef, forwardRef, isValidElement, memo, useMemo } from 'react';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import type { ButtonBaseProps } from '@cbhq/cds-common/types/alpha';
@@ -18,124 +18,130 @@ export type ButtonProps = ButtonBaseProps<OnPress> &
   Omit<PressableProps, 'onPress'> &
   ComponentEventHandlerProps;
 
-export const Button = memo(function Button({
-  block,
-  children,
-  compact,
-  endIcon,
-  feedback = compact ? 'light' : 'normal',
-  loading,
-  startIcon,
-  transparent,
-  flush,
-  variant = 'primary',
-  numberOfLines = 1,
-  noScaleOnPress,
-  accessibilityLabel,
-  accessibilityHint,
-  ...props
-}: ButtonProps) {
-  const palette = usePalette();
-  const scale = useScale();
-  const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-  const { borderRadius, minHeight, iconSize } = useMemo(
-    () => getButtonSizeProps({ compact, scale }),
-    [compact, scale],
-  );
+export const Button = memo(
+  forwardRef(function Button(
+    {
+      block,
+      children,
+      compact,
+      endIcon,
+      feedback = compact ? 'light' : 'normal',
+      loading,
+      startIcon,
+      transparent,
+      flush,
+      variant = 'primary',
+      numberOfLines = 1,
+      noScaleOnPress,
+      accessibilityLabel,
+      accessibilityHint,
+      ...props
+    }: ButtonProps,
+    ref: ForwardedRef<View>,
+  ) {
+    const palette = usePalette();
+    const scale = useScale();
+    const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
+    const { borderRadius, minHeight, iconSize } = useMemo(
+      () => getButtonSizeProps({ compact, scale }),
+      [compact, scale],
+    );
 
-  const { spacingStart, spacingEnd, offsetHorizontal } = useMemo(
-    () => getButtonSpacingProps({ compact, flush, startIcon, endIcon }),
-    [compact, endIcon, flush, startIcon],
-  );
-  const spacingStyles = useInternalSpacingStyles({
-    isInverted: true,
-    horizontal: offsetHorizontal,
-  });
-  const pressableStyles = useMemo(
-    () => ({ ...spacingStyles, ...(block ? styles.block : styles.inline) }),
-    [block, spacingStyles],
-  );
+    const { spacingStart, spacingEnd, offsetHorizontal } = useMemo(
+      () => getButtonSpacingProps({ compact, flush, startIcon, endIcon }),
+      [compact, endIcon, flush, startIcon],
+    );
+    const spacingStyles = useInternalSpacingStyles({
+      isInverted: true,
+      horizontal: offsetHorizontal,
+    });
+    const pressableStyles = useMemo(
+      () => ({ ...spacingStyles, ...(block ? styles.block : styles.inline) }),
+      [block, spacingStyles],
+    );
 
-  const justifyContent = useMemo(() => {
-    if (startIcon || endIcon) {
-      return 'space-between';
-    }
-    return 'center';
-  }, [endIcon, startIcon]);
+    const justifyContent = useMemo(() => {
+      if (startIcon || endIcon) {
+        return 'space-between';
+      }
+      return 'center';
+    }, [endIcon, startIcon]);
 
-  const childrenNode = useMemo(
-    () =>
-      isValidElement(children) && Boolean(children.props.children) ? (
-        children
-      ) : (
-        <TextHeadline
-          testID="text-headline"
-          color={color}
-          selectable="none"
-          numberOfLines={numberOfLines}
-          align="center"
-          dangerouslySetStyle={styles.text}
-        >
-          {children}
-        </TextHeadline>
-      ),
-    [children, color, numberOfLines],
-  );
-
-  return (
-    <Pressable
-      transparentWhileInactive={transparent}
-      backgroundColor={backgroundColor}
-      block={block}
-      borderColor={borderColor}
-      borderRadius={borderRadius}
-      borderWidth="button"
-      feedback={feedback}
-      loading={loading}
-      style={pressableStyles}
-      noScaleOnPress={noScaleOnPress}
-      accessibilityLabel={loading ? 'loading' : accessibilityLabel}
-      accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
-      {...props}
-    >
-      <HStack
-        justifyContent={justifyContent}
-        alignItems="center"
-        flexWrap="nowrap"
-        minHeight={minHeight}
-        dangerouslySetStyle={block ? styles.block : styles.inline}
-        spacingStart={spacingStart}
-        spacingEnd={spacingEnd}
-      >
-        {loading ? (
-          <ActivityIndicator size="small" color={palette[color]} />
+    const childrenNode = useMemo(
+      () =>
+        isValidElement(children) && Boolean(children.props.children) ? (
+          children
         ) : (
-          <>
-            {!!startIcon && (
-              <Icon
-                name={startIcon}
-                size={iconSize}
-                color={color}
-                spacingEnd={1}
-                dangerouslySetStyle={styles.icon}
-              />
-            )}
-            {childrenNode}
-            {!!endIcon && (
-              <Icon
-                name={endIcon}
-                size={iconSize}
-                color={color}
-                spacingStart={1}
-                dangerouslySetStyle={styles.icon}
-              />
-            )}
-          </>
-        )}
-      </HStack>
-    </Pressable>
-  );
-});
+          <TextHeadline
+            testID="text-headline"
+            color={color}
+            selectable="none"
+            numberOfLines={numberOfLines}
+            align="center"
+            dangerouslySetStyle={styles.text}
+          >
+            {children}
+          </TextHeadline>
+        ),
+      [children, color, numberOfLines],
+    );
+
+    return (
+      <Pressable
+        transparentWhileInactive={transparent}
+        backgroundColor={backgroundColor}
+        block={block}
+        borderColor={borderColor}
+        borderRadius={borderRadius}
+        borderWidth="button"
+        feedback={feedback}
+        loading={loading}
+        style={pressableStyles}
+        noScaleOnPress={noScaleOnPress}
+        accessibilityLabel={loading ? 'loading' : accessibilityLabel}
+        accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
+        ref={ref}
+        {...props}
+      >
+        <HStack
+          justifyContent={justifyContent}
+          alignItems="center"
+          flexWrap="nowrap"
+          minHeight={minHeight}
+          dangerouslySetStyle={block ? styles.block : styles.inline}
+          spacingStart={spacingStart}
+          spacingEnd={spacingEnd}
+        >
+          {loading ? (
+            <ActivityIndicator size="small" color={palette[color]} />
+          ) : (
+            <>
+              {!!startIcon && (
+                <Icon
+                  name={startIcon}
+                  size={iconSize}
+                  color={color}
+                  spacingEnd={1}
+                  dangerouslySetStyle={styles.icon}
+                />
+              )}
+              {childrenNode}
+              {!!endIcon && (
+                <Icon
+                  name={endIcon}
+                  size={iconSize}
+                  color={color}
+                  spacingStart={1}
+                  dangerouslySetStyle={styles.icon}
+                />
+              )}
+            </>
+          )}
+        </HStack>
+      </Pressable>
+    );
+  }),
+);
 
 export const styles = StyleSheet.create({
   inline: {
