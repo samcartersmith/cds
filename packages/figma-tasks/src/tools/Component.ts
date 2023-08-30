@@ -18,6 +18,7 @@ export type ComponentParams<Metadata extends MetadataShape = MetadataShape> = {
   hashSource: string;
   /** Base64 representation of provided hash source */
   hash: string;
+  hasVisualChange: boolean;
   height: number;
   name: string;
   type: string;
@@ -41,6 +42,8 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
   public readonly hashSource: string;
 
   public readonly hash: string;
+
+  public readonly hasVisualChange: boolean;
 
   public readonly height: number;
 
@@ -69,6 +72,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     id,
     hashSource,
     hash,
+    hasVisualChange,
     height,
     width,
     name,
@@ -94,6 +98,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
     this.node = node;
     this.hashSource = hashSource;
     this.hash = hash;
+    this.hasVisualChange = hasVisualChange;
 
     if (metadata) {
       this._metadata = metadata;
@@ -150,14 +155,9 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
         if (node?.document?.type === 'COMPONENT') {
           const { id } = node.document;
           const { type, name } = parseName(node);
-          const oldVersion =
-            manifest.previousItems.get(id) ??
-            // The ids might be different, but the intent is that they are treated as the same asset.
-            manifest.previousItemsArray.find(
-              (prev) => `${prev.type}-${prev.name}` === `${type}-${name}`,
-            );
           const { width, height } = getSize(node.document);
           const { description, updated_at: lastUpdated, created_at: createdAt } = node.metadata;
+          const oldVersion = manifest.getPreviousItem({ id, type, name });
           const hashSourceMap = await getHashSourceMap(id, manifest.syncedLibrary);
           const hash = createHashFromObject(hashSourceMap);
 
@@ -170,6 +170,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
             width,
             hashSource: hashSourceMap[id],
             hash,
+            hasVisualChange: oldVersion?.hash !== hash,
             height,
             description,
             /**
@@ -178,9 +179,9 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
              */
             createdAt: oldVersion?.createdAt ?? createdAt,
             lastUpdated,
-            recentlyUpdated: manifest.syncedLibrary.recentlyUpdatedIds.includes(id),
             task: manifest.task,
           };
+
           const newComponent = new Component(params);
           await manifest.syncItem(newComponent);
         }

@@ -47,7 +47,7 @@ export const syncStyles = createTask<SyncStylesTaskOptions>('sync-styles', async
 
   await Promise.all([
     writePrettyFile(colorStyleMap.dest, colorStyleMap.content),
-    manifest.generateFile(),
+    manifest.generateFile(task, { ignoreBreakingChanges: true }),
     changelog?.generateFile({ task, manifest }),
   ]);
 

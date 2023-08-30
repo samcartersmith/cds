@@ -1,6 +1,13 @@
-import type { Manifest } from '../tools/Manifest';
+import { output as devkitOutput } from '@nrwl/devkit';
+import { Task } from '@cbhq/mono-tasks';
 
-export function logSummary(manifest: Manifest) {
+import type { Manifest, ManifestTaskOptions } from '../tools/Manifest';
+
+export function logSummary(
+  manifest: Manifest,
+  task: Task<ManifestTaskOptions>,
+  options: { ignoreBreakingChanges?: boolean } = {},
+) {
   if (manifest.renames.size) {
     console.log(`
 /* -------------------------------------------------------------------------- */
@@ -46,5 +53,18 @@ export function logSummary(manifest: Manifest) {
     console.table(
       [...manifest.deletions.values()].map((item) => ({ type: item.type, name: item.name })),
     );
+  }
+
+  if (!options.ignoreBreakingChanges && (manifest.renames.size || manifest.deletions.size)) {
+    if (task.options.exitOnBreakingChanges) {
+      throw new Error('Renames and deletions are breaking changes');
+    }
+
+    devkitOutput.warn({
+      title: 'Renames and deletions are breaking changes',
+      bodyLines: [
+        'Please ensure that you publish a migration guide and a migrator script along with this release',
+      ],
+    });
   }
 }

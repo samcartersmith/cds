@@ -97,6 +97,7 @@ export async function createSvgContent({
           ]
         : []),
     ]);
+
     return {
       outputs: {
         svgLight,
@@ -108,6 +109,7 @@ export async function createSvgContent({
       svgContent,
     };
   }
+
   const svgLight = await writeVersionedFile({
     ...sharedParams,
     writeFile: svgWriter(svgContent.light),

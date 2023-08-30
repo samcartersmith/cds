@@ -30,10 +30,21 @@ In order for engineering to generate a dark mode version of an illustration asse
 FIGMA_ACCESS_TOKEN=[access or request access to the UI Infra shared vault on 1Password for the token]
 ```
 
-2. (**optional**) Sync the latest illustration Figma color styles if a new color style was added. **You do not need to do a version bump for any changes**.
+2. (**optional**) Sync the latest illustration Figma color styles if they were changed. **You do not need to do a version bump for any changes**.
+
+- If you know that all four color palettes have received an update, you can run the following to sync them all at once:
 
 ```shell
 yarn nx run figma-styles:sync
+```
+
+- Otherwise, individually sync the color palettes that have been updated:
+
+```shell
+yarn nx run figma-styles:sync-illustration-dark-styles
+yarn nx run figma-styles:sync-illustration-light-styles
+yarn nx run figma-styles:sync-ui-dark-styles
+yarn nx run figma-styles:sync-ui-light-styles
 ```
 
 3. Sync the latest Figma illustration components. This also programatically opens a PR in the [static-assets](https://github.cbhq.net/engineering/static-assets) repo. If you've never done this before, follow these [setup steps](#release-setup) first
@@ -41,6 +52,8 @@ yarn nx run figma-styles:sync
 ```shell
 yarn nx run illustrations:release
 ```
+
+- **IMPORTANT:** If any illustrations are renamed or deleted, this update will be a breaking change for consumers. Please ensure that you publish a migration guide and a migrator script along with this release to aid consumers with migration.
 
 4. Merge the PR in static-assets and confirm the deploy in [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits). Heimdall should automatically deploy the production shards after all build checks are complete, but if it fails to do this for some reason, then manually deploy:
 
@@ -59,7 +72,7 @@ yarn mono-pipeline version illustrations
 ```
 
 - When prompted, do the following:
-  - Type of change?: "Update"
+  - Type of change?: "Update" or "Breaking"
   - Changelog message?: Copy/paste your PR title (just the part after `feat(Illustrations):`)
   - PR number?: Copy/paste your PR number
   - Skip the rest (press enter to use defaults)
@@ -92,4 +105,4 @@ brew install hub
 
 - If seeing this error: Cannot read properties of undefined ('styles'), you need to update your FIGMA token to the new value.
 
-- If seeing a failed task, check that it's expected. You may see "There are no new updates since last release XXXX-XX-XX". Verify this is expected with design.
+- If seeing a failed task, check that it's expected. You may see "There are no changes since the last update on XX/XX/XXXX". Verify this is expected with design.

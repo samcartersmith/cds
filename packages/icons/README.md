@@ -28,6 +28,8 @@ FIGMA_ACCESS_TOKEN=[access or request access to the UI Infra shared vault on 1Pa
 yarn nx run icons:release
 ```
 
+- **IMPORTANT:** If any icons are renamed or deleted, this update will be a breaking change for consumers. Please ensure that you publish a migration guide and a migrator script along with this release to aid consumers with migration.
+
 3. Commit the changes with a message in the following format: `[trivial] feat(Icons): Publish icons mm/dd/yyyy`
 
 4. Open a PR with the changes
@@ -39,7 +41,7 @@ yarn mono-pipeline version icons
 ```
 
 - When prompted, do the following:
-  - Type of change?: "Update"
+  - Type of change?: "Update" or "Breaking"
   - Changelog message?: Copy/paste your PR title (just the part after `feat(Icons):`)
   - PR number?: Copy/paste your PR number
   - Skip the rest (press enter to use defaults)
@@ -54,8 +56,6 @@ yarn mono-pipeline version icons
 
 10. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-icons/-/@cbhq/cds-icons-1.0.0.tgz).
 
-### FAQ
+### Gotchas
 
-`yarn nx run icons:update-playground` fails with " [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string."
-
-This occurs because you have not built our mobile-playground. Run `yarn nx run mobile-playground:build-ios` and `yarn nx run mobile-playground:build-android`, then retry `yarn nx run icons:update-playground`. **This is required to pass prior to merging the new icon release**
+- If seeing a failed task, check that it's expected. You may see "There are no changes since the last update on XX/XX/XXXX". Verify this is expected with design.

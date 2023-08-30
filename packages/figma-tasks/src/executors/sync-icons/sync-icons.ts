@@ -100,10 +100,10 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
       const imageName = ComponentSetChild.getSvgName(componentSetChild);
       const outputKey = getOutputKey(componentSetChild);
       const svgFilePath = path.join(svgDir, `${imageName}.svg`);
-      svgFileMap.set(svgFilePath, componentSetChild);
-      const hasChanged = manifest.syncedLibrary.recentlyUpdatedIds.includes(componentSet.id);
 
-      if (hasChanged) {
+      svgFileMap.set(svgFilePath, componentSetChild);
+
+      if (componentSet.hasVisualChange) {
         componentSet.addToOutputs({});
 
         await createSvgContent({
@@ -242,7 +242,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
   });
 
   await Promise.all([
-    manifest.generateFile(),
+    manifest.generateFile(task),
     changelog?.generateFile({ task, manifest, groupByType: true }),
   ]);
 

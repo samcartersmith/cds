@@ -77,6 +77,11 @@
       "type": "boolean",
       "description": "Sync all icons regardless of when they were last updated",
       "default": false
+    },
+    "exitOnBreakingChanges": {
+      "type": "boolean",
+      "description": "Exit with an error when breaking changes are detected",
+      "default": false
     }
   }
 }

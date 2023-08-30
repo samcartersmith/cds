@@ -28,5 +28,6 @@ export async function writeVersionedFile({
     await existsOrCreateDir(imagePath);
     await writeFile(imagePath);
   }
+
   return imagePath;
 }

@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-import { output as devkitOutput } from '@nrwl/devkit';
 import { uniqBy } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';
@@ -20,6 +19,7 @@ export type ItemShape = {
   id: string;
   /** Base64 representation of provided hash source */
   hash?: string;
+  hasVisualChange?: boolean;
   name: string;
   type: string;
   version: number;
@@ -53,6 +53,8 @@ export type ManifestTaskOptions = {
   darkModeManifestFile?: string;
   /** Sync all items regardless of when they were last updated */
   syncAll: boolean;
+  /** Exit with an error when breaking changes are detected */
+  exitOnBreakingChanges: boolean;
 };
 
 export type GetManifestItem<T extends ManifestShape> = T['items'][number][1];
@@ -135,9 +137,11 @@ export class Manifest<
     return async (output: string) => {
       const oldPath = path.normalize(`${this.generatedDirectory}/${output}`);
       const newPath = renameFn(oldPath);
+
       if (fs.existsSync(oldPath)) {
         return fs.promises.rename(oldPath, newPath);
       }
+
       return undefined;
     };
   }
@@ -151,69 +155,71 @@ export class Manifest<
   public getPreviousItem(item: Pick<ItemShape, 'id' | 'type' | 'name'>) {
     return (
       this.previousItems.get(item.id) ??
+      // The ids might be different, but the intent is that they are treated as the same asset.
       this.previousItemsArray.find(
         (prev) => `${prev.type}-${prev.name}` === `${item.type}-${item.name}`,
       )
     );
   }
 
-  public async checkIfUpdated(item: GetManifestItem<T>) {
+  private async processItemUpdates(item: GetManifestItem<T>) {
     const prevNode = this.getPreviousItem(item);
-    const updatedRemotely = this.syncedLibrary.recentlyUpdatedIds.includes(item.id);
 
-    if (updatedRemotely) {
-      // Changed items
-      if (prevNode) {
-        // Handle renames
-        const prevName = prevNode.name;
-        const newName = item.name;
-        const wasRenamed = prevName !== newName;
+    // Changed items
+    if (prevNode) {
+      // Handle renames
+      const prevName = prevNode.name;
+      const newName = item.name;
+      const wasRenamed = prevName !== newName;
 
-        if (wasRenamed) {
-          this.renames.set(prevNode, item);
-          const renameFn = (output: string) => output.replace(prevName, newName);
-          await this.renameOutputs(prevNode, renameFn);
-
-          // Reset versioning
-          if (this.versioned) {
-            item.setVersion(0);
-          }
-        } else {
-          const hashingEnabled = Boolean(item.hash && prevNode?.hash);
-          const hasVisualChange = hashingEnabled ? item.hash !== prevNode.hash : true;
-
-          if (hasVisualChange) {
-            this.updates.add(item);
-            if (this.versioned) {
-              const oldVersion = item.version;
-              const newVersion = oldVersion + 1;
-              item.setVersion(newVersion);
-
-              const renameFn = (output: string) =>
-                output.replace(`-${oldVersion}`, `-${newVersion}`);
-              // If it already existed we need to rename outputs before writing new content
-              await this.renameOutputs(item, renameFn);
-            }
-          } else {
-            devkitOutput.warn({
-              title: `Skipping SVG updates for ${item.type}/${item.name}`,
-              bodyLines: [
-                `Figma indicates that ${item.type}/${item.name} was recently updated, but the vector data has not changed.`,
-                `Verify with design that this item has not had any visual changes`,
-              ],
-            });
-          }
+      if (wasRenamed) {
+        if (prevName.toLowerCase() === newName.toLowerCase()) {
+          throw new Error(
+            `Renaming is not case sensitive: ${prevName} -> ${newName}. Update the Figma file with a new distinct name for ${prevNode.type}/${prevName}.`,
+          );
         }
 
-        this.previousItems.delete(prevNode.id); // remove old from manifest so we don't have duplicates
+        let renameFn: (output: string) => string;
+
+        this.renames.set(prevNode, item);
+
+        if (this.versioned) {
+          // Reset versioning
+          item.setVersion(0);
+          renameFn = (output: string) =>
+            output.replace(`${prevName}-${prevNode.version}`, `${newName}-0`);
+        } else {
+          renameFn = (output: string) => output.replace(prevName, newName);
+        }
+
+        await this.renameOutputs(prevNode, renameFn);
       } else {
-        this.additions.add(item);
+        const shouldUpdate = item.hasVisualChange ?? true;
+
+        if (shouldUpdate) {
+          this.updates.add(item);
+
+          if (this.versioned) {
+            const oldVersion = item.version;
+            const newVersion = oldVersion + 1;
+            item.setVersion(newVersion);
+
+            const renameFn = (output: string) => output.replace(`-${oldVersion}`, `-${newVersion}`);
+            // If it already existed we need to rename outputs before writing new content
+            await this.renameOutputs(item, renameFn);
+          }
+        }
       }
+
+      this.previousItems.delete(prevNode.id); // remove old from manifest so we don't have duplicates
+    } else {
+      this.additions.add(item);
     }
   }
 
   private async handleDeletions(remoteIds: string[]) {
     const promises: Promise<void>[] = [];
+
     this.previousItems.forEach((item) => {
       if (!remoteIds.includes(item.id)) {
         // Delete outputs
@@ -225,15 +231,17 @@ export class Manifest<
             }
           });
         }
+
         this.previousItems.delete(item.id);
         this.deletions.add(item);
       }
     });
+
     await Promise.all(promises);
   }
 
   public async syncItem(item: GetManifestItem<T>) {
-    await this.checkIfUpdated(item);
+    await this.processItemUpdates(item);
     this.items.set(item.id, item);
   }
 
@@ -277,9 +285,12 @@ export class Manifest<
     };
   }
 
-  public async generateFile() {
+  public async generateFile(
+    task: Task<ManifestTaskOptions>,
+    options: { ignoreBreakingChanges?: boolean } = {},
+  ) {
     await writePrettyFile(this.filePath, JSON.stringify(this.toJSON()));
-    logSummary(this);
+    logSummary(this, task, options);
   }
 
   static async init<
@@ -298,12 +309,6 @@ export class Manifest<
       batchSize: 500,
     });
 
-    if (syncedLibrary.recentlyUpdatedIds.length === 0) {
-      throw new Error(
-        `There are no new updates since last update on ${previousManifest.lastUpdated}`,
-      );
-    }
-
     const manifest = new Manifest<T, TaskOptions>({
       task,
       filePath: manifestPath,
@@ -314,6 +319,19 @@ export class Manifest<
 
     await createItem(manifest, task.options);
     await manifest.handleDeletions(syncedLibrary.remoteIds);
+
+    if (
+      !manifest.renames.size &&
+      !manifest.updates.size &&
+      !manifest.additions.size &&
+      !manifest.deletions.size
+    ) {
+      throw new Error(
+        `There are no changes since the last update on ${new Date(
+          previousManifest.lastUpdated,
+        ).toLocaleDateString()}`,
+      );
+    }
 
     const [changelog, colorStyles] = await Promise.all([
       Changelog.loadFromDisk(task),

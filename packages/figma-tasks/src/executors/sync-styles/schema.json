@@ -29,6 +29,16 @@
     "prefix": {
       "type": "string",
       "description": "Prefix to add to style name and generated css variables"
+    },
+    "syncAll": {
+      "type": "boolean",
+      "description": "Sync all styles regardless of when they were last updated",
+      "default": false
+    },
+    "exitOnBreakingChanges": {
+      "type": "boolean",
+      "description": "Exit with an error when breaking changes are detected",
+      "default": false
     }
   }
 }

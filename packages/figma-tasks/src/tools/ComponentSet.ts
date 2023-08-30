@@ -26,6 +26,7 @@ export type ComponentSetParams<Metadata extends MetadataShape = MetadataShape> =
   hashSourceMap: Record<string, string>;
   /** Base64 representation of provided hash source */
   hash: string;
+  hasVisualChange: boolean;
   description: string;
   name: string;
   type: string;
@@ -52,6 +53,8 @@ export class ComponentSet<
 
   public readonly hash: string;
 
+  public readonly hasVisualChange: boolean;
+
   public readonly name: string;
 
   public readonly node: NodeResponseWithMetadata | undefined;
@@ -77,6 +80,7 @@ export class ComponentSet<
     id,
     hashSourceMap,
     hash,
+    hasVisualChange,
     name,
     node,
     type,
@@ -89,6 +93,7 @@ export class ComponentSet<
   }: ComponentSetParams<Metadata>) {
     this.id = id;
     this.hash = hash;
+    this.hasVisualChange = hasVisualChange;
     this.description = description;
     this.name = name;
     this.type = type;
@@ -229,6 +234,7 @@ export class ComponentSet<
             id,
             hashSourceMap,
             hash,
+            hasVisualChange: oldVersion?.hash !== hash,
             type,
             name,
             description,
@@ -240,6 +246,7 @@ export class ComponentSet<
             lastUpdated,
             manifest,
           };
+
           const newComponentSet = new ComponentSet<ChildShape>(params);
           await manifest.syncItem(newComponentSet);
         }

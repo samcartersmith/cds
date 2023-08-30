@@ -71,9 +71,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
 
     function generateImageFormatsForItem(type: string) {
       return async (item: Component) => {
-        const hasNotChanged = !manifest.syncedLibrary.recentlyUpdatedIds.includes(item.id);
-
-        if (hasNotChanged) {
+        if (!item.hasVisualChange) {
           return item;
         }
 
@@ -99,6 +97,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
           pngDir,
           svgContent,
         });
+
         imageOutputs = { ...imageOutputs, ...pngOutputs };
 
         item.addToOutputs(imageOutputs);
@@ -107,6 +106,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
           if (!invalidItems[type]) {
             invalidItems[type] = [];
           }
+
           invalidItems[type].push({
             name: item.name,
             figmaUrl,
@@ -293,7 +293,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
     );
 
     await Promise.all([
-      manifest.generateFile(),
+      manifest.generateFile(task),
       changelog?.generateFile({ task, manifest, groupByType: true }),
     ]);
 
