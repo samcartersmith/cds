@@ -21,6 +21,16 @@ module.exports = {
             devDependencies: true,
           },
         ],
+        'react/boolean-prop-naming': [
+          'error',
+          {
+            rule: '^(?!(is|has|should)[A-Z]).*',
+            message:
+              'Please refer to the boolean naming conventions found here https://github.cbhq.net/frontend/cds/blob/master/docs/conventions/api-design.md#boolean',
+          },
+        ],
+        // makes sure event handlers are prefixed with handle*
+        'react/jsx-handler-names': 'error',
       },
     },
     // Jest configs
@@ -71,18 +81,15 @@ module.exports = {
     '@cbhq/graphql-require-description': 'off',
     '@graphql-eslint/no-duplicate-fields': 'off',
     '@cbhq/no-lodash': 'off',
-    '@cbhq/react-no-default-props': 'off',
+    '@cbhq/react-require-use-memo': 'off',
     '@cbhq/no-class-decorator': 'off',
     '@cbhq/no-lib-import': 'off',
     '@cbhq/no-regex-lookbehind': 'off',
     '@cbhq/no-unsafe-methods': 'off',
     '@cbhq/react-intl-no-unused-message': 'off',
     '@cbhq/react-no-inline-props-types': 'off',
-    '@cbhq/react-no-static-methods-memo': 'off',
     '@cbhq/react-prefer-named-module-import': 'off', // Do not enable this rule until thoroughly tested. We have had an incident caused by this in the past because not all consumers are compatible.
     '@cbhq/react-ref-requires-key': 'off',
-    '@cbhq/react-require-use-memo': 'off',
-    '@cbhq/react-use-callback-for-function': 'off',
     '@graphql-eslint/no-deprecated': 'off',
     '@cbhq/react-native-no-fabric-incompatible-apis': 'off',
     '@cbhq/graphql-field-alias': 'off',

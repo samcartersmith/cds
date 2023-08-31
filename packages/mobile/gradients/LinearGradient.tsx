@@ -49,6 +49,8 @@ type LinearGradientProps = {
    * Sets layout position between SVG and children. Set it to false when gradient should overlay children content.
    * @default true
    */
+  // TODO: will be fixed during API Alignment Q3 2022
+  // eslint-disable-next-line react/boolean-prop-naming
   isBelowChildren?: boolean;
   /**
    * Sets gradient angle.

@@ -259,6 +259,8 @@ export type CreateSelectProps = {
 
 type DefaultSelectTypes = {
   trayTitle?: string;
+  // TODO: will be fixed during API Alignment Q3 2022
+  // eslint-disable-next-line react/boolean-prop-naming
   hasDescription?: boolean;
   compactSelectOption?: boolean;
   hideHandleBar?: boolean;

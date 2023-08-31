@@ -36,6 +36,10 @@ This is an artificial version bump with no new change.
 
 #### 📘 Misc
 
+- [trivial] internal: Added ESLint rules to enforce accepted component API conventions. [[#2202](https://github.cbhq.net/frontend/cds/pull/2202)]
+
+#### 📘 Misc
+
 - Artificial version bump.
 
 ## 5.7.0 (8/24/2023 PST)
