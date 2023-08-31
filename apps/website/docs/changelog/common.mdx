@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.9.0 (8/30/2023 PST)
+
+#### 🚀 Updates
+
+- Add 12px and 24px border radius tokens. [[#2206](https://github.cbhq.net/frontend/cds/pull/2206)] [[DX-2020](https://jira.coinbase-corp.com/browse/DX-2020)]
+
 ## 5.8.1 ((8/28/2023, 10:24 PM PST))
 
 This is an artificial version bump with no new change.

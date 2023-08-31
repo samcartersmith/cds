@@ -1,7 +1,10 @@
-import { PaletteForeground } from '@cbhq/cds-common';
+import { Fragment } from 'react';
+import { BorderRadius, PaletteForeground } from '@cbhq/cds-common';
 
-import { TextBody } from '../../typography';
+import { borderRadius } from '../../tokens';
+import { TextBody, TextTitle4 } from '../../typography';
 import { Box } from '../Box';
+import { VStack } from '../VStack';
 
 const Lipsum = ({ color }: { color?: PaletteForeground }) => (
   <TextBody as="p" color={color}>
@@ -108,10 +111,21 @@ export const BorderedAndRounded = () => (
   </Box>
 );
 
-export const RoundedOnly = () => (
-  <Box background="backgroundAlternate" borderRadius="rounded" spacing={2}>
-    <Lipsum />
-  </Box>
+export const RoundedVariations = () => (
+  <VStack gap={1}>
+    {Object.entries(borderRadius).map(([key]) => {
+      return (
+        <Fragment key={key}>
+          <TextTitle4 as="p">{key}</TextTitle4>
+          <Box background="backgroundAlternate" borderRadius={key as BorderRadius} spacing={2}>
+            <VStack gap={1}>
+              <Lipsum />
+            </VStack>
+          </Box>
+        </Fragment>
+      );
+    })}
+  </VStack>
 );
 
 export const Spacing = () => (

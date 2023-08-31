@@ -7,7 +7,9 @@ export const borderRadius = {
   roundedNone: 'var(--border-radius-rounded-none)',
   roundedSmall: 'var(--border-radius-rounded-small)',
   rounded: 'var(--border-radius-rounded)',
+  roundedMedium: 'var(--border-radius-rounded-medium)',
   roundedLarge: 'var(--border-radius-rounded-large)',
+  roundedXLarge: 'var(--border-radius-rounded-x-large)',
   roundedFull: 'var(--border-radius-rounded-full)',
 } as const;
 

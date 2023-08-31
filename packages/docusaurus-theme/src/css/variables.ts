@@ -87,7 +87,9 @@ export const baseVariables = {
   '--border-radius-rounded-none': '0px',
   '--border-radius-rounded-small': '4px',
   '--border-radius-rounded': '8px',
+  '--border-radius-rounded-medium': '12px',
   '--border-radius-rounded-large': '16px',
+  '--border-radius-rounded-x-large': '24px',
   '--border-radius-rounded-full': '1000px',
 };
 
