@@ -10,7 +10,7 @@ Run `yarn install && yarn setup` at the root of the cds repo.
 
 The mobile app is the host react native app that CDS uses to test our components.
 
-Refer to the mobile-app [README.md](apps/mobile-app/docs/upgrading-mobile-dep.md) and [docs](apps/mobile-app/docs) for guidance on how to use this app.
+Refer to the mobile-app [README.md](/apps/mobile-app/README.md) and [docs](/apps/mobile-app/docs) for guidance on how to use this app.
 
 ### Visreg Testing
 
