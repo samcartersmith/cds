@@ -1,12 +1,9 @@
 import { useScaleDensity } from '../scale/useScaleDensity';
 import { TextTransform, Typography } from '../types';
 
-export const denseTextTransforms = new Set<Typography>(['label1', 'label2', 'caption']);
-export const normalTextTransforms = new Set<Typography>(['caption']);
-
 export const variantsWithTransforms = {
-  dense: denseTextTransforms,
-  normal: normalTextTransforms,
+  dense: new Set<Typography>(['caption']),
+  normal: new Set<Typography>(['caption']),
 };
 
 export function useTextTransform(name: Typography, override?: TextTransform) {

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.9.1 (8/30/2023 PST)
+
+#### 🐞 Fixes
+
+- Update TextLabel1 and TextLabel2 to not capitalize when in dense mode. [[DX-2180](https://jira.coinbase-corp.com/browse/DX-2180)]
+
 ## 5.9.0 (8/30/2023 PST)
 
 #### 🚀 Updates
