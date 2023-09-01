@@ -21,7 +21,7 @@ export const ButtonGroup = memo(function ButtonGroup({
       accessibilityLabel={accessibilityLabel}
       alignItems="stretch"
       flexWrap="nowrap"
-      gap={2}
+      gap={1}
       testID={testID}
     >
       {Children.map(children, (child) =>

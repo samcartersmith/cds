@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.9.2 (8/31/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2079] Tighten ButtonGroup gap. [[#2213](https://github.cbhq.net/frontend/cds/pull/2213)] [[DX-2079](https://jira.coinbase-corp.com/browse/DX-2079)]
+
 ## 5.9.1 ((8/30/2023, 10:26 AM PST))
 
 This is an artificial version bump with no new change.
