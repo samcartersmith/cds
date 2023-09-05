@@ -324,7 +324,7 @@ When you run `yarn nx run website:start` you should see a [.docusaurus folder](.
 
 ## Theme
 
-[README](../packages/docusaurus-theme/README.md)
+If you want to modify any components or styles used in the website, you can do so in the [theme plugin](../packages/docusaurus-theme/README.md).
 
 ## Preset
 
