@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.11 (8/30/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: Added migration scripts for API Alignment deprecations. [[#2208](https://github.cbhq.net/frontend/cds/pull/2208)]
+
 ## 0.1.10 (8/22/2023 PST)
 
 #### 🚀 Updates

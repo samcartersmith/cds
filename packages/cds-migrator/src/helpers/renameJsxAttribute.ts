@@ -1,47 +1,35 @@
-import { SyntaxKind } from 'ts-morph';
+import { JsxAttribute } from 'ts-morph';
 
-import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from './types';
+import { JsxElementType } from './types';
 
 /**
  * Replaces a specified attribute with the new value
  * Make sure you call writeMigrationToFile to save changes to the file system
- * @param updateMap - Key value pairs of old and new values
- * @param attribute - The attribute to update
+ * @param oldAttribute - The attribute to update
+ * @param newAttribute - The name of the new attribute
  * @param jsx - The JSX element to update
+ * @param boolean - When true will replace attribute with no value initializer, eg: <HeroSquare active="false" /> -> <HeroSquare disabled />
  */
 export function renameJsxAttribute({
-  updateMap,
-  attribute,
+  oldAttribute,
+  newAttribute,
   jsx,
-}: FindReplaceCallbackParams): FindReplaceCallbackReturnType {
-  let oldValue: string | undefined;
-  let newValue: string | undefined;
+  boolean,
+}: {
+  oldAttribute: string;
+  newAttribute: string;
+  jsx: JsxElementType;
+  boolean?: boolean;
+}) {
+  // have to cast because JSXLike is what it comes out to
+  const attribute = jsx.getAttribute(oldAttribute) as JsxAttribute;
 
-  /** The `name="cbOnePercentOff"` in <HeroSquare name="cbOnePercentOff" /> */
-  const attributeToUpdate = jsx.getAttribute(attribute);
-
-  /** The `name` in <HeroSquare name="cbOnePercentOff" */
-  const jsxExpressionIdentifier = attributeToUpdate
-    ?.getFirstDescendantByKind(SyntaxKind.JsxExpression)
-    ?.getFirstDescendantByKind(SyntaxKind.Identifier);
-
-  if (jsxExpressionIdentifier) {
-    const literalValue = jsxExpressionIdentifier.getType().getLiteralValue();
-
-    oldValue = literalValue && typeof literalValue === 'string' ? literalValue : undefined;
-    newValue = oldValue ? updateMap[oldValue] : undefined;
-    if (newValue !== undefined) {
-      jsxExpressionIdentifier.rename(newValue);
+  if (attribute) {
+    const attributeValue = attribute.getInitializer()?.getText();
+    if (boolean) {
+      attribute.replaceWithText(newAttribute);
+    } else {
+      attribute.replaceWithText(`${newAttribute}=${attributeValue}`);
     }
   }
-
-  // @ts-expect-error TODO: fix this
-  return {
-    oldValue,
-    newValue,
-    details: {
-      attributeToUpdate: attributeToUpdate?.print(),
-      jsxExpressionIdentifier: jsxExpressionIdentifier?.print(),
-    },
-  };
 }

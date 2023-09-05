@@ -13,7 +13,10 @@ export type RenameAttributeMapShape = {
 };
 
 export type AttributeValueRenameMapShape = Record<string, RenameValueMapShape>;
-export type AttributeRenameMapShape = Record<string, RenameAttributeMapShape>;
+export type AttributeRenameMapShape = Record<
+  string,
+  RenameAttributeMapShape | RenameAttributeMapShape[]
+>;
 
 export type JsxElementType = JsxSelfClosingElement | JsxOpeningElement;
 
@@ -45,3 +48,15 @@ export type PropToAttributeValue = {
   value: string;
 };
 export type PropToAttributeValueMigrationShape = Record<string, PropToAttributeValue>;
+
+export type AttributeValueToBooleanType = Record<
+  string,
+  {
+    oldAttribute: string;
+    newAttribute: string;
+    path: string;
+  }
+>;
+
+export const objectKeys = <Obj>(obj: { [key in keyof Obj]: Obj[key] }) =>
+  Object.keys(obj) as Extract<keyof Obj, string>[];

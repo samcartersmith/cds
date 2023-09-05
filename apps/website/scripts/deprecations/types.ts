@@ -1,3 +1,5 @@
+import { Expand } from '@cbhq/cds-common';
+
 type Scope = {
   /** List every exported function that will be deleted
    * @danger If a component is being deprecated, every export in the component's file must be listed
@@ -8,11 +10,10 @@ type Scope = {
 };
 
 export type MigrationType = 'renamed' | 'replaced' | 'path' | 'api' | 'removed' | 'propValue';
-export type MigrationMap = Record<
-  Extract<MigrationType, 'api' | 'propValue'>,
-  Record<string, string | null>
-> &
-  Record<Extract<MigrationType, 'replaced' | 'path' | 'rename'>, string | string[]>;
+export type MigrationMap = Expand<
+  Record<Extract<MigrationType, 'api' | 'propValue'>, Record<string, string | null>> &
+    Record<Extract<MigrationType, 'replaced' | 'path' | 'rename'>, string | string[]>
+>;
 
 type SharedProps = {
   name: string;
@@ -23,17 +24,23 @@ type SharedProps = {
 };
 
 /** Deprecation config for Components only. If you are deprecating a prop and not the parent component, use the prop field */
-export type Component = {
-  scope: Scope;
-} & SharedProps;
+export type Component = Expand<
+  {
+    scope: Scope;
+  } & SharedProps
+>;
 
-type Prop = {
-  components: string[];
-} & Pick<SharedProps, 'package' | 'name' | 'type' | 'migrationMap'>;
+type Prop = Expand<
+  {
+    components?: string[];
+  } & Pick<SharedProps, 'package' | 'name' | 'type' | 'migrationMap'>
+>;
 
-type Type = {
-  scope: Pick<Scope, 'exportNames'>;
-} & SharedProps;
+type Type = Expand<
+  {
+    scope: Pick<Scope, 'exportNames'>;
+  } & SharedProps
+>;
 
 type Param = {
   function: string;

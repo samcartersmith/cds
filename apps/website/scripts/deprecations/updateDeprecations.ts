@@ -198,7 +198,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
       groups.props.push('<Accordion>');
       deprecationObj.props?.forEach(
         ({ name, components, package: pkgName, type, migrationMap }) => {
-          components.forEach((component) => {
+          components?.forEach((component) => {
             groups.props.push(
               formatDeprecationGuide({
                 name: `${component}.${name}`,
