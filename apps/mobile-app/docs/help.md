@@ -154,4 +154,5 @@ which watchman
 - Select Macintosh HD in the folders list
 - Press `shift + Command + .` at the same time to see all the directories list
 - Drill into the directory that `which watchman` printed and find all executables prefixed with `watchman` and add each one to have Full Disk Access list
+  - even if `watchman*` processes were previously provided full-disk-access, make sure to re-add access after reinstalling watchman
 - Run `yarn nx run mobile-app:start` multiple times to confirm you are no longer seeing the warning
