@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 1.1.1 (9/1/2023 PST)
+
+#### 🐞 Fixes
+
+- **[ExamplesListScreen]** Fix route navigation TS error. [[#2216](https://github.cbhq.net/frontend/cds/pull/2216)] [[DX-2204](https://jira.coinbase-corp.com/browse/DX-2204)]
 
 #### 📘 Misc
 

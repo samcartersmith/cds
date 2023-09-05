@@ -26,7 +26,7 @@ export function ExamplesListScreen() {
       const handlePress = () => {
         setFilter('');
         // typing not clean due to dynamic routes
-        navigate(keyToRouteName(item) as never, {} as never);
+        navigate(keyToRouteName(item) as never);
       };
 
       return (
