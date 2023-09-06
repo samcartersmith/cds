@@ -154,7 +154,7 @@ const getMigrationRecommendation = (
       }
     });
   } else {
-    migrationRec.push(`<code>${deprecation}</code> has been removed from the CDS library.`);
+    migrationRec.push(`<p><code>${deprecation}</code> has been removed from the CDS library.</p>`);
   }
 
   return migrationRec.join('\n');
@@ -165,18 +165,29 @@ const formatDeprecationGuide = ({
   pkgName,
   type,
   guidance,
+  components,
 }: {
   name: string;
   pkgName: string;
   type: MigrationType | MigrationType[];
   guidance: string;
+  components?: string[];
 }) => {
   return `<AccordionItem
     itemKey="${name}.${pkgName}"
     title={<HStack gap={1}>${name} ${getTypes(type)}</HStack>}
     subtitle="@cbhq/cds-${pkgName}"
   >
-    <VStack>${guidance}</VStack>
+    <VStack>
+      ${guidance}
+      ${
+        components
+          ? `<TextHeadline spacingTop="2" as="h4">Impacted Components: </TextHeadline><ul>${components
+              .map((comp) => `<li>${comp}</li>`)
+              .join('\n')}</ul>`
+          : ''
+      }
+    </VStack>
   </AccordionItem>`;
 };
 
@@ -198,18 +209,17 @@ function formatDeprecations(deprecationObj: Deprecation): string {
       groups.props.push('<Accordion>');
       deprecationObj.props?.forEach(
         ({ name, components, package: pkgName, type, migrationMap }) => {
-          components?.forEach((component) => {
-            groups.props.push(
-              formatDeprecationGuide({
-                name: `${component}.${name}`,
-                pkgName,
-                type,
-                // @ts-expect-error Not sure why this thinks it's a partial
-                migrationMap,
-                guidance: `${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}`,
-              }),
-            );
-          });
+          groups.props.push(
+            formatDeprecationGuide({
+              name,
+              pkgName,
+              type,
+              // @ts-expect-error Not sure why this thinks it's a partial
+              migrationMap,
+              guidance: `${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}`,
+              components,
+            }),
+          );
         },
       );
       groups.props.push('</Accordion>');
