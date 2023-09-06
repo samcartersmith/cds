@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useMemo, useState } from 'react';
-import { View, ViewStyle } from 'react-native';
+import { TranslateXTransform, TranslateYTransform, View, ViewStyle } from 'react-native';
 import Animated, {
   runOnJS,
   useAnimatedReaction,
@@ -121,8 +121,8 @@ export const DotCount = memo(
             { scale: Number(scaleAnimatedValue.value) },
             // Spreading an array causes this known issue in Reanimated:
             // https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/troubleshooting#undefined-is-not-an-object-evaluating-_toconsumablearrayarraylengthmap
-            pinStyles.transform[0], // translateX
-            pinStyles.transform[1], // translateY
+            pinStyles.transform[0] as TranslateXTransform, // translateX
+            pinStyles.transform[1] as TranslateYTransform, // translateY
           ],
         };
       }

@@ -2,10 +2,10 @@
 
 Expo handles react native upgrades through their [SDK](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/). Their SDK will handle updating native modules, as well as recommend native package versions that are compatible with the new react native version. **The only native config that isn't managed by expo is @cbhq/metro-config, which App Infra manages**. We can stray from their recommendations, but with caution. Here's an [example PR](https://github.cbhq.net/frontend/cds/pull/2090) to use as a reference.
 
-1.  Update to the new SDK version from root:
+1.  Update to the new SDK version from root. You can check the [latest patch version on npm](https://www.npmjs.com/package/expo):
 
 ```shell
-yarn workspace mobile-app add expo@^49.0.0
+yarn workspace mobile-app add expo@^<version on npm>
 ```
 
 2. Fixes native and expo dependencies to match recommended versions. You can override versions in package.json after running the fix command.

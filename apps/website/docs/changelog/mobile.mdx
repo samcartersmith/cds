@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.9.3 (9/3/2023 PST)
+
+#### 🐞 Fixes
+
+- Bump RN to 0.72.4. [[#2217](https://github.cbhq.net/frontend/cds/pull/2217)]
+
 ## 5.9.2 (8/31/2023 PST)
 
 #### 🐞 Fixes
