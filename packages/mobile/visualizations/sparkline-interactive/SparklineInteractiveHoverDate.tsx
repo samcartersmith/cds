@@ -136,7 +136,7 @@ type ForwardRefWithPeriod<Period extends string> = React.ForwardRefExoticCompone
 >;
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 export const SparklineInteractiveHoverDate =
   /* eslint-disable-next-line  @typescript-eslint/no-explicit-any */

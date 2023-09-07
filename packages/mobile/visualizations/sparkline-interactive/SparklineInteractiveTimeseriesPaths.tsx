@@ -82,7 +82,7 @@ const TimeseriesPath = memo(
 );
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 export const SparklineInteractiveTimeseriesPaths = memo(
   ({ data, width, height, initialPath, onRender }: SparklineInteractiveTimeseriesPathsProps) => {

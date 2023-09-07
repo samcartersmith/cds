@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
 });
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 export function useSparklineInteractiveHeaderStyles() {
   const palette = usePalette();

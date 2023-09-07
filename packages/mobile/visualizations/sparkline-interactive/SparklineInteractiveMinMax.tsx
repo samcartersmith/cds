@@ -15,7 +15,7 @@ type SparklineInteractiveMinMaxContentProps = {
 };
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 export const SparklineInteractiveMinMax: FunctionComponent<
   React.PropsWithChildren<SparklineInteractiveMinMaxProps>

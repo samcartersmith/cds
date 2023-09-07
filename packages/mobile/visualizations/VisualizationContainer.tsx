@@ -6,7 +6,7 @@ import { useLayout } from '../hooks/useLayout';
 import { Box } from '../layout';
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 /*
 Some visualizations need a static width to render. This container can be dynamically sized and it will inject its static calculated dimensions into its child

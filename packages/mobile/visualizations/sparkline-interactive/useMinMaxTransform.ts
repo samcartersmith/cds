@@ -15,7 +15,7 @@ type MinMaxTransformParams = {
 };
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 export function useMinMaxTransform({ minMaxLayout, x, transform, opacity }: MinMaxTransformParams) {
   const spacing = useSpacingScale();

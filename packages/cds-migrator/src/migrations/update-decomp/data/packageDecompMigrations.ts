@@ -49,4 +49,16 @@ export const migrations: {
     newDir: '@cbhq/web-visualization',
     version: '0.0.4',
   },
+  {
+    exports: [
+      'Sparkline',
+      'SparklineArea',
+      'SparklineGradient',
+      'SparklineInteractiveHeader',
+      'SparklineInteractive',
+    ],
+    oldDir: '@cbhq/cds-mobile/visualizations',
+    newDir: '@cbhq/cds-mobile-visualization',
+    version: '0.0.4',
+  },
 ];

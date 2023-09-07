@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- [trivial] internal: fixed typo in new package for decomped mobile components. [[#2227](https://github.cbhq.net/frontend/cds/pull/2227)] [[DX-2225](https://jira.coinbase-corp.com/browse/DX-2225)]
+
 ## 5.9.3 (9/3/2023 PST)
 
 #### 🐞 Fixes

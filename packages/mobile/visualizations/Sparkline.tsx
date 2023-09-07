@@ -10,7 +10,7 @@ import { useAccessibleForeground } from '../color/useAccessibleForeground';
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 export const Sparkline = memo(
   ({

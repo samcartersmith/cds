@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.11 (9/7/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2225] fix(Sparkline): Added mobile Sparkline to package decomp script. [[#2227](https://github.cbhq.net/frontend/cds/pull/2227)] [[DX-2225](https://jira.coinbase-corp.com/browse/DX-2225)]
+
 ## 0.1.11 (8/30/2023 PST)
 
 #### 🚀 Updates

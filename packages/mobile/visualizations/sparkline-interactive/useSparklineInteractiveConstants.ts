@@ -15,7 +15,7 @@ type Props = {
 };
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 export function useSparklineInteractiveConstants({ compact = false }: Props) {
   const spacing = useSpacingScale();

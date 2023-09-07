@@ -3,7 +3,7 @@ import { Animated } from 'react-native';
 import { fadeDuration } from '@cbhq/cds-common/tokens/sparkline';
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-sparkline.
+ * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-mobile-visualization.
  */
 export function useOpacityAnimation(
   initialValue: number | undefined = 0,
