@@ -15,6 +15,9 @@ build:
         name: cds-css-upload-development
         path: ./packages/web/cssupload-development.Dockerfile
     - BaldurECR:
+        name: cds-figma-sync
+        path: ./apps/cds-figma-sync/Dockerfile
+    - BaldurECR:
         name: cds-storybook
         path: ./apps/storybook/production.Dockerfile
     - BaldurECR:

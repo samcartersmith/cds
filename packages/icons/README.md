@@ -30,7 +30,7 @@ yarn nx run icons:release
 
 - **IMPORTANT:** If any icons are renamed or deleted, this update will be a breaking change for consumers. Please ensure that you publish a migration guide and a migrator script along with this release to aid consumers with migration.
 
-3. Commit the changes with a message in the following format: `[trivial] feat(Icons): Publish icons mm/dd/yyyy`
+3. Commit the changes with a message in the following format: `[trivial] <feat/breaking>(Icons): Publish icons mm/dd/yyyy`
 
 4. Open a PR with the changes
 
@@ -42,7 +42,7 @@ yarn mono-pipeline version icons
 
 - When prompted, do the following:
   - Type of change?: "Update" or "Breaking"
-  - Changelog message?: Copy/paste your PR title (just the part after `feat(Icons):`)
+  - Changelog message?: Copy/paste your PR title (just the part after `(Icons):`)
   - PR number?: Copy/paste your PR number
   - Skip the rest (press enter to use defaults)
 
@@ -58,4 +58,4 @@ yarn mono-pipeline version icons
 
 ### Gotchas
 
-- If seeing a failed task, check that it's expected. You may see "There are no changes since the last update on XX/XX/XXXX". Verify this is expected with design.
+- You may see the task complete without any changes and the message: "There are no changes since the last update on XX/XX/XXXX". Verify this is expected with design.

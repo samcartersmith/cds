@@ -1,0 +1,39 @@
+{
+  "name": "cds-figma-sync",
+  "version": "0.0.0",
+  "private": true,
+  "description": "NodeJS service and GitHub App for syncing Figma assets",
+  "main": "./mjs/index.mjs",
+  "type": "module",
+  "scripts": {
+    "dockerup": "docker-compose build && docker-compose up -d && docker-compose exec app sh",
+    "dockerdown": "docker-compose down"
+  },
+  "packemon": {
+    "format": "mjs",
+    "platform": "node"
+  },
+  "dependencies": {
+    "@cb/config-service-node": "^3.4.0",
+    "@cbhq/figma-tasks": "workspace:^",
+    "dotenv": "^16.3.1",
+    "octokit": "^3.0.0",
+    "winston": "^3.10.0"
+  },
+  "types": "./mjs/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "node": {
+        "types": "./mjs/*.d.ts",
+        "import": "./mjs/*.mjs"
+      }
+    },
+    ".": {
+      "node": {
+        "types": "./mjs/index.d.ts",
+        "import": "./mjs/index.mjs"
+      }
+    }
+  }
+}

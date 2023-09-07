@@ -4,6 +4,9 @@
   "files": [],
   "references": [
     {
+      "path": "apps/cds-figma-sync"
+    },
+    {
       "path": "apps/next-example"
     },
     {

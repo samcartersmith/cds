@@ -1,0 +1,34 @@
+# Ignore these files
+node_modules
+.git
+apps/*/**
+docs/*/**
+libs/*/**
+packages/*/**
+tools/*/**
+.buildkite
+.github
+.nx
+.vscode
+
+# Allow these files
+!.yarn
+!.yarnrc.yml
+!yarn.lock
+!**/package.json
+!**/project.json
+!apps/cds-figma-sync
+!packages/codegen
+!packages/d3
+!packages/figma-api
+!packages/figma-styles
+!packages/figma-tasks
+!packages/script-utils
+
+# Ignore these files
+private-key.pem
+.env
+.env.*
+mjs
+temp
+*.log

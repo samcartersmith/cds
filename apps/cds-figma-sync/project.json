@@ -1,0 +1,36 @@
+{
+  "name": "cds-figma-sync",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/cds-figma-sync",
+  "projectType": "library",
+  "targets": {
+    "dev": {
+      "command": "ts-node-esm ./apps/cds-figma-sync/src/dev.ts"
+    },
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": [
+        "{projectRoot}/assets",
+        "{projectRoot}/mjs"
+      ]
+    },
+    "start": {
+      "command": "node ./apps/cds-figma-sync/mjs/index.mjs",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}

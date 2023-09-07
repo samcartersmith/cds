@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+import { output as devkitOutput } from '@nrwl/devkit';
 import { uniqBy } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';
@@ -326,11 +327,13 @@ export class Manifest<
       !manifest.additions.size &&
       !manifest.deletions.size
     ) {
-      throw new Error(
-        `There are no changes since the last update on ${new Date(
+      devkitOutput.log({
+        title: `There are no changes since the last update on ${new Date(
           previousManifest.lastUpdated,
         ).toLocaleDateString()}`,
-      );
+      });
+
+      process.exit();
     }
 
     const [changelog, colorStyles] = await Promise.all([

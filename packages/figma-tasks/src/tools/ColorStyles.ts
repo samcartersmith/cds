@@ -52,6 +52,8 @@ export class ColorStyles {
     });
   }
 
+  // this setup assumes that each light color style is assigned a unique hex value;
+  // if there are duplicates, only the first light/dark pair in the array that matches will replace colors
   public replaceLightWithDarkFills(content: string) {
     let transformedContent = content;
     this.lightToDarkTuple.forEach(([target, replacement]) => {

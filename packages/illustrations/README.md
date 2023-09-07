@@ -32,19 +32,9 @@ FIGMA_ACCESS_TOKEN=[access or request access to the UI Infra shared vault on 1Pa
 
 2. (**optional**) Sync the latest illustration Figma color styles if they were changed. **You do not need to do a version bump for any changes**.
 
-- If you know that all four color palettes have received an update, you can run the following to sync them all at once:
-
-```shell
-yarn nx run figma-styles:sync
-```
-
-- Otherwise, individually sync the color palettes that have been updated:
-
 ```shell
 yarn nx run figma-styles:sync-illustration-dark-styles
 yarn nx run figma-styles:sync-illustration-light-styles
-yarn nx run figma-styles:sync-ui-dark-styles
-yarn nx run figma-styles:sync-ui-light-styles
 ```
 
 3. Sync the latest Figma illustration components. This also programatically opens a PR in the [static-assets](https://github.cbhq.net/engineering/static-assets) repo. If you've never done this before, follow these [setup steps](#release-setup) first
@@ -61,7 +51,7 @@ yarn nx run illustrations:release
 - `production::production-shard-1`
 - `production::production-shard-2`
 
-5. Once the static-assets deployments are finished (the new assets need to be available before Percy can diff properly), commit the changes in the CDS repo with a message in the following format: `[trivial] feat(Illustrations): Publish illustrations mm/dd/yyyy`
+5. Once the static-assets deployments are finished (the new assets need to be available before Percy can diff properly), commit the changes in the CDS repo with a message in the following format: `[trivial] <feat/breaking>(Illustrations): Publish illustrations mm/dd/yyyy`
 
 6. Open a PR in the CDS repo with the changes
 
@@ -73,7 +63,7 @@ yarn mono-pipeline version illustrations
 
 - When prompted, do the following:
   - Type of change?: "Update" or "Breaking"
-  - Changelog message?: Copy/paste your PR title (just the part after `feat(Illustrations):`)
+  - Changelog message?: Copy/paste your PR title (just the part after `(Illustrations):`)
   - PR number?: Copy/paste your PR number
   - Skip the rest (press enter to use defaults)
 
@@ -99,10 +89,12 @@ brew install hub
 
 ### Gotchas
 
-- It is important to note that if an illustration asset is referencing a color style which was _not_ present the last time the color styles sync was run, then it will need to be run again before running `yarn nx run illustrations:release`.
+- It is important to note that if an illustration asset is referencing a color style which was _not_ present the last time the color syncs were run, then the `yarn nx run figma-styles:sync-*` commands will need to be run again before running `yarn nx run illustrations:release`.
 
 - The `illustrations:release` command calls `illustrations:sync` which requires a `lightModeManifestFile` and `darkModeManifestFile` as inputs in `project.json` when generating the svg assets on the fly. If those files are stale, the executor will fallback to the hex value of the color style used (which will always be a light mode fill since that is the only asset design provides), thus making the light and dark mode images the same.
 
-- If seeing this error: Cannot read properties of undefined ('styles'), you need to update your FIGMA token to the new value.
+- The release script assumes that each light mode color style synced with `figma-styles:sync-illustration-light-styles` is assigned a unique hex value in Figma. If there are duplicate hex values (check the [light mode manifest](../figma-styles/__generated__/illustration/light/manifest.json)), dark mode variants generated during the `illustrations:release` task may not have the correct colors.
 
-- If seeing a failed task, check that it's expected. You may see "There are no changes since the last update on XX/XX/XXXX". Verify this is expected with design.
+- If seeing this error: "Cannot read properties of undefined ('styles')", you need to update your FIGMA token to the new value.
+
+- You may see the task complete without any changes and the message: "There are no changes since the last update on XX/XX/XXXX". Verify this is expected with design.

@@ -20,11 +20,11 @@
     "strict": true,
     "target": "ES6",
     "paths": {
-      ":next-example/*": [
-        "apps/next-example/src/*"
-      ],
       ":cds-website/*": [
         "apps/website/*"
+      ],
+      ":next-example/*": [
+        "apps/next-example/src/*"
       ],
       "@cbhq/cds-common": [
         "packages/common"
@@ -83,14 +83,14 @@
       "@cbhq/cds-web": [
         "packages/web"
       ],
-      "@cbhq/cds-web-visualization": [
-        "packages/web-visualization"
-      ],
       "@cbhq/cds-web-utils": [
         "packages/web-utils/src"
       ],
       "@cbhq/cds-web-utils/*": [
         "packages/web-utils/src/*"
+      ],
+      "@cbhq/cds-web-visualization": [
+        "packages/web-visualization"
       ],
       "@cbhq/cds-web/*": [
         "packages/web/*"
