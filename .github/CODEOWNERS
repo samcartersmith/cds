@@ -2,9 +2,9 @@
 ### Run `yarn codeowners` to update
 
 # FROM ./OWNERS
-.* @frontend/dx-ui-systems-guild
-*.config.js @frontend/dx-ui-systems-guild
-*.json @frontend/dx-ui-systems-guild
+.* @frontend/ui-systems-eng-team
+*.config.js @frontend/ui-systems-eng-team
+*.json @frontend/ui-systems-eng-team
 
 # FROM ./packages/mobile-visualization/OWNERS
-/packages/mobile-visualization/ @frontend/dx-ui-systems-guild
+/packages/mobile-visualization/ @frontend/ui-systems-eng-team
