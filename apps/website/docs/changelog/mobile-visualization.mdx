@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.11 (9/7/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix sparkline time announcement and make interactive header single focus stop. [[#2237](https://github.cbhq.net/frontend/cds/pull/2237)]
+
 ## 0.0.10 (9/3/2023 PST)
 
 #### 🐞 Fixes

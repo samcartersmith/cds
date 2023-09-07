@@ -19,22 +19,6 @@ const styles = StyleSheet.create({
   },
 });
 
-// map months to English
-const MONTH_IN_EN = {
-  0: 'January',
-  1: 'February',
-  2: 'March',
-  3: 'April',
-  4: 'May',
-  5: 'June',
-  6: 'July',
-  7: 'August',
-  8: 'September',
-  9: 'October',
-  10: 'November',
-  11: 'December',
-};
-
 /**
  * SparklineAccessibleView renders an accessible view for Sparkline Chart.
  *
@@ -74,22 +58,32 @@ export const SparklineAccessibleView = memo(function SparklineAccessibleView<
         // only announce time for hour and day
         const shouldAnnounceTime = selectedPeriod === 'hour' || selectedPeriod === 'day';
 
-        const hours = new Date(item.date).getHours();
-        const minutes = new Date(item.date).getMinutes();
-        const month = new Date(item.date).getMonth() as keyof typeof MONTH_IN_EN;
-        const date = new Date(item.date).getDate();
-        const year = new Date(item.date).getFullYear();
-        const price = item.value.toFixed(2);
+        // Extract date formatting options
+        const timeOptions: Intl.DateTimeFormatOptions = {
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: true,
+        };
+
+        const dateOptions: Intl.DateTimeFormatOptions = {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+        };
 
         // TODO: localize date and time
-        const a11yLabelWithDate = `${MONTH_IN_EN[month]} ${date}, ${year}, $${price}`;
-        const a11yLabelWithTime = `${hours} ${minutes} , $${price}`;
+        const dateTime = item.date.toLocaleString(
+          'en-US',
+          shouldAnnounceTime ? timeOptions : dateOptions,
+        );
+
+        const price = item.value.toFixed(2);
 
         return (
           <View
             key={String(item.date)}
             accessible
-            accessibilityLabel={shouldAnnounceTime ? a11yLabelWithTime : a11yLabelWithDate}
+            accessibilityLabel={`${dateTime}, $${price}`}
             // variable width base on chunk length
             style={getStyleByLength(dataChunk.length)}
           />

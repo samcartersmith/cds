@@ -170,7 +170,7 @@ const SparklineInteractiveHeaderStable = memo(
             />
           </View>
           {!!defaultSubHead && (
-            <HStack spacing={0} alignItems="center">
+            <HStack spacing={0} alignItems="center" accessible>
               <TextInput
                 ref={subHeadIconRef}
                 editable={false}
@@ -208,6 +208,12 @@ const SparklineInteractiveHeaderStable = memo(
         </>
       );
 
+      const trendA11yLabel = defaultSubHead
+        ? `${defaultSubHead?.variant === 'positive' ? 'up' : 'down'}`
+        : '';
+
+      const headerA11yLabel = `${defaultLabel}, ${defaultTitle}, ${trendA11yLabel} ${defaultSubHead?.priceChange}, ${defaultSubHead?.percent}`;
+
       return (
         <HStack
           testID={testID}
@@ -218,7 +224,7 @@ const SparklineInteractiveHeaderStable = memo(
           accessibilityLabel="Asset summary"
           accessibilityHint="The price and difference for this time period"
         >
-          <VStack spacing={0} flexShrink={1}>
+          <VStack spacing={0} flexShrink={1} accessible accessibilityLabel={headerA11yLabel}>
             {labelNode ?? label}
             {title}
           </VStack>
