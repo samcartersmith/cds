@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 1.0.5 (9/6/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix ui-mobile-visreg output files. [[#2229](https://github.cbhq.net/frontend/cds/pull/2229)]
 
 #### 📘 Misc
 

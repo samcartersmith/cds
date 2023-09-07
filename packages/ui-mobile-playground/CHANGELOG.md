@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.3 (9/6/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] Fix ui-mobile-playground output files. [[#2229](https://github.cbhq.net/frontend/cds/pull/2229)]
+
 ## 1.1.2 (9/3/2023 PST)
 
 #### 🐞 Fixes

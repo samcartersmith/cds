@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-mobile-visreg",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Visreg Helpers",
   "keywords": [
     "visreg",
@@ -52,7 +52,7 @@
   },
   "files": [
     "dts/**/*.d.ts",
-    "lib/**/*.{js,map}",
+    "lib/**/*.{js,map,d.ts}",
     "src/**/*.{ts}",
     "CHANGELOG.md",
     "README.md"
