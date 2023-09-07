@@ -33,9 +33,9 @@ const variants: ButtonVariantConfig = {
     borderColor: 'transparent',
   },
   negative: {
-    color: 'negative',
-    backgroundColor: 'background',
-    borderColor: 'line',
+    color: 'negativeForeground',
+    backgroundColor: 'negative',
+    borderColor: 'transparent',
   },
 };
 

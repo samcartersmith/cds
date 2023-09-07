@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.9.4 (9/7/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2021] fix: update button negative variant styles. [[#2232](https://github.cbhq.net/frontend/cds/pull/2232)] [[DX-2021](https://jira.coinbase-corp.com/browse/DX-2021)]
+
 ## 5.9.3 ((9/3/2023, 04:48 PM PST))
 
 This is an artificial version bump with no new change.
