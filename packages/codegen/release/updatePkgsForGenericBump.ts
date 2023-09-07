@@ -23,7 +23,7 @@ async function updatePkgVersion(pkgPath: string, highestVersion: string) {
   };
 
   pkg.version = `${highestVersion}`;
-  await fs.promises.writeFile(pkgPath, JSON.stringify(pkg, null, 2));
+  await fs.promises.writeFile(pkgPath, `${JSON.stringify(pkg, null, 2).trimEnd()}\n`);
 
   console.info(chalk.green(`Updated ${pkgPath} version to ${highestVersion}`));
 }
