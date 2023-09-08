@@ -36,42 +36,44 @@ const callback = (args: CreateMigrationParams) => {
     if (migrationConfig) {
       const { newDir } = migrationConfig;
       if (checkFileIncludesImport(sourceFile, oldDirectory)) {
-        const declarationFromOldPath = sourceFile
+        const declarationsFromOldPath = sourceFile
           .getImportDeclarations()
-          .find((imp) => imp.getModuleSpecifierValue().includes(oldDirectory));
-        if (declarationFromOldPath) {
+          .filter((imp) => imp.getModuleSpecifierValue().startsWith(oldDirectory));
+        if (declarationsFromOldPath) {
           // check that the declaration includes a named import that has been decomped
           // eg: import { Button } from '@cbhq/cds-web/button';
-          declarationFromOldPath.getNamedImports().forEach((namedImp) => {
-            const decompedExport = namedImp.getText();
-            const checkHasDecompedModule = decompedExports?.some((exp) => exp === decompedExport);
-            if (checkHasDecompedModule) {
-              packagesToAdd.push(oldDirectory);
+          declarationsFromOldPath.forEach((declaration) => {
+            declaration.getNamedImports().forEach((namedImp) => {
+              const decompedExport = namedImp.getText();
+              const checkHasDecompedModule = decompedExports?.some((exp) => exp === decompedExport);
+              if (checkHasDecompedModule) {
+                packagesToAdd.push(newDir);
 
-              // if there's only one module exported and it's the one being decomped, delete the whole import
-              // eg: import { Button } from '@cbhq/cds-web/button'; would get deleted
-              if (declarationFromOldPath.getNamedImports().length === 1) {
-                declarationFromOldPath.remove();
-              } else {
-                // otherwise, just delete the named import that's being decomped
-                // eg: import { Button, Link } from '@cbhq/cds-web/pressables'; Button would get deleted
-                namedImp.remove();
+                // if there's only one module exported and it's the one being decomped, delete the whole import
+                // eg: import { Button } from '@cbhq/cds-web/button'; would get deleted
+                if (declaration.getNamedImports().length === 1) {
+                  declaration.remove();
+                } else {
+                  // otherwise, just delete the named import that's being decomped
+                  // eg: import { Button, Link } from '@cbhq/cds-web/pressables'; Button would get deleted
+                  namedImp.remove();
+                }
+                // check if file already has the decomped package imported
+                if (checkFileIncludesImport(sourceFile, newDir)) {
+                  // if it does, add the named import to the existing import statement
+                  const existingImport = sourceFile
+                    .getImportDeclarations()
+                    .find((imp) => imp.getModuleSpecifierValue().includes(newDir));
+                  existingImport?.addNamedImport(decompedExport);
+                } else {
+                  // add a new import statement for the decomped package with the imported module
+                  sourceFile.addImportDeclaration({
+                    moduleSpecifier: newDir,
+                    namedImports: [decompedExport],
+                  });
+                }
               }
-              // check if file already has the decomped package imported
-              if (checkFileIncludesImport(sourceFile, newDir)) {
-                // if it does, add the named import to the existing import statement
-                const existingImport = sourceFile
-                  .getImportDeclarations()
-                  .find((imp) => imp.getModuleSpecifierValue().includes(newDir));
-                existingImport?.addNamedImport(decompedExport);
-              } else {
-                // add a new import statement for the decomped package with the imported module
-                sourceFile.addImportDeclaration({
-                  moduleSpecifier: newDir,
-                  namedImports: [decompedExport],
-                });
-              }
-            }
+            });
           });
         }
       }

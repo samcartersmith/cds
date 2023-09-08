@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.12 (9/8/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: Package decomp works for multiple imported paths in a single file. [[#2238](https://github.cbhq.net/frontend/cds/pull/2238)]
+
 ## 0.1.11 (9/7/2023 PST)
 
 #### 🐞 Fixes
