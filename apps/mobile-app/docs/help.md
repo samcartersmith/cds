@@ -156,3 +156,25 @@ which watchman
 - Drill into the directory that `which watchman` printed and find all executables prefixed with `watchman` and add each one to have Full Disk Access list
   - even if `watchman*` processes were previously provided full-disk-access, make sure to re-add access after reinstalling watchman
 - Run `yarn nx run mobile-app:start` multiple times to confirm you are no longer seeing the warning
+
+12. Expo is throwing this error while I'm running a build or launch command (`yarn nx run mobile-app:<build|launch>:<build type>`): Props Authentication Token not found, Props token or EXPO login error.
+
+Approaches to resolve:
+
+- Run the following in the root directory
+
+```shell
+cd apps/mobile-app && eas build --local --non-interactive --json --clear-cache --platform ios --profile debug
+```
+
+- Prebuild with a clean .env.local newly created at root after reset.
+  - In the root directory, run `git clean -xfd`
+  - Run `yarn`
+  - Create the env file: `touch .env.local`
+  - Paste `EXPO_TOKEN` in the `.env.local` file
+  - Run `yarn workspace mobile-app expo prebuild --platform android`
+  - If prebuild is successful: `yarn nx run  mobile-app:build:android-debug`
+
+13. Cocoapods is not setup or the following error is thrown: Cocoapods is not available, make sure it's installed and in your PATH.
+
+- Run `gem install cocoapods`
