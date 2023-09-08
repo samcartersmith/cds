@@ -30,6 +30,18 @@ module.exports = {
         src: 'img/logo.svg',
         srcDark: 'img/logo_dark.svg',
       },
+      items: [
+        {
+          href: 'slack://channel?team=T02Q6DY7G&id=C05H922EYP7',
+          label: 'Ask',
+          position: 'right',
+        },
+        {
+          href: 'https://github.cbhq.net/frontend/cds',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
     },
     // https://docusaurus.io/docs/api/themes/configuration#footer-1
     footer: {

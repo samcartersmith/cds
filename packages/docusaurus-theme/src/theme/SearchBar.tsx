@@ -35,7 +35,7 @@ const SearchBar = memo(function SearchBar() {
             <kbd style={kbdStyles}>K</kbd>
           </HStack>
         }
-        bordered={false}
+        bordered
         compact
         placeholder="Search"
         onFocus={handleOnPress}

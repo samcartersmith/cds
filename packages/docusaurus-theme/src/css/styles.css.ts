@@ -273,10 +273,6 @@ export default css`
   /* To get search in navbar to appear to the left of dark mode toggle */
   .navbar__items--right {
     gap: ${spacing[3]};
-
-    & .search {
-      order: -1;
-    }
   }
 
   /* 
