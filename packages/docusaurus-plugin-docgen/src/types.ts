@@ -20,11 +20,6 @@ export type PluginOptions = {
    */
   enabled?: boolean;
   /**
-   * If plugin should generate changelog data for each doc
-   * @default false
-   */
-  changelog?: boolean;
-  /**
    * Absolute paths to tsconfig.json's for any projects that sourceFiles belong to.
    * When the plugin is run it will loop through each tsconfig and determine
    * which sourceFiles are present in those packages.
@@ -96,7 +91,6 @@ export type DocTags = {
   /**
    * Comma separated list of files, relative to source file, which we should also include when running git log for component changelog.
    */
-  changelog?: string;
   danger?: string;
   deprecated?: string;
   description?: string;

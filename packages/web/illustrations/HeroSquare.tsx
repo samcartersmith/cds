@@ -5,9 +5,6 @@ import { createIllustration, IllustrationA11yProps } from './createIllustration'
 
 export type HeroSquareProps = HeroSquareCommonProps & IllustrationA11yProps;
 
-/**
- * @changelog ./createIllustration.tsx, ./Illustration.tsx
- */
 export const HeroSquare = createIllustration('heroSquare', heroSquareVersionMap);
 
 export type { HeroSquareName } from '@cbhq/cds-illustrations';

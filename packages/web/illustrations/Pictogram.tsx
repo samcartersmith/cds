@@ -3,9 +3,6 @@ import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram
 
 import { createIllustration, IllustrationA11yProps } from './createIllustration';
 
-/**
- * @changelog ./createIllustration.tsx, ./Illustration.tsx
- */
 export const Pictogram = createIllustration('pictogram', pictogramVersionMap);
 
 export type PictogramProps = CommonPictogramProps & IllustrationA11yProps;

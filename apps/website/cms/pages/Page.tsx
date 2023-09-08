@@ -32,7 +32,6 @@ type DocgenProps = {
 };
 
 export type CMSProps = {
-  changelog?: DocgenProps;
   propsTable?: DocgenProps;
   metadata?: DocgenProps;
   /**

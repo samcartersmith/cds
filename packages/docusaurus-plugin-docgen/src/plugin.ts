@@ -63,21 +63,7 @@ export default function plugin(
     configureWebpack(_webpackConfig, _isServer, _utils, content) {
       let metadataAliases = {};
       let apiAliases = {};
-      let changelogAliases = {};
       if (content) {
-        /**
-         * If changelog is false but app references those files via webpack alias,
-         * then we need to create webpack aliases to point to a placeholder mdx file so website will still run properly.
-         */
-        changelogAliases = Object.fromEntries(
-          content.parsedDocs.map((item) => [
-            path.join(':docgen', path.relative(pluginDir, item.cacheDirectory), 'changelog.mdx'),
-            options.changelog
-              ? path.join(item.cacheDirectory, 'changelog.mdx')
-              : path.join(pluginDir, '_placeholders', 'changelog.mdx'),
-          ]),
-        );
-
         apiAliases = Object.fromEntries(
           content.parsedDocs.map((item) => [
             path.join(':docgen', path.relative(pluginDir, item.cacheDirectory), 'api.mdx'),
@@ -95,7 +81,6 @@ export default function plugin(
 
       const aliases = {
         ...apiAliases,
-        ...changelogAliases,
         ...metadataAliases,
         [`:docgen/_types/sharedTypeAliases`]: path.join(pluginDir, '_types/sharedTypeAliases'),
         [`:docgen/_types/sharedParentTypes`]: path.join(pluginDir, '_types/sharedParentTypes'),

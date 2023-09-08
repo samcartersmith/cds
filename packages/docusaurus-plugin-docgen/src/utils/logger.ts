@@ -33,12 +33,6 @@ export const logger = {
   writingData: () => {
     log.info(`${PREFIX}: Writing data...`);
   },
-  preppingChangelog: () => {
-    log.info(`${PREFIX}: changelog: true. Pulling git history...`);
-  },
-  skippingChangelog: () => {
-    log.info(`${PREFIX}: changelog: false. Skipped pulling from git history...`);
-  },
   pluginComplete: () => {
     log.success(`${PREFIX}: Success`);
   },

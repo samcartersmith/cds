@@ -5,9 +5,6 @@ import { createIllustration, IllustrationA11yProps } from './createIllustration'
 
 export type SpotRectangleProps = SpotRectangleCommonProps & IllustrationA11yProps;
 
-/**
- * @changelog ./createIllustration.tsx, ./Illustration.tsx
- */
 export const SpotRectangle = createIllustration('spotRectangle', spotRectangleIllustrations);
 
 export type { SpotRectangleName } from '@cbhq/cds-illustrations';

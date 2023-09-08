@@ -22,7 +22,6 @@ type DocgenProps = {
 };
 
 export type ComponentPageProps = {
-  changelog?: DocgenProps;
   propsTable?: DocgenProps;
   metadata?: DocgenProps;
   staticExamples?: DocgenProps;
@@ -51,7 +50,6 @@ export const ComponentPage = memo(function ComponentPage({
   content: contentData,
   metadata,
   propsTable,
-  changelog,
   staticExamples,
 }: ComponentPageProps) {
   const {
@@ -154,11 +152,6 @@ export const ComponentPage = memo(function ComponentPage({
         </Section>
       )}
     </TabItemOriginal>,
-    changelog && (
-      <TabItemOriginal value="changelog" label="Changelog" toc={changelog.toc}>
-        {changelog.element}
-      </TabItemOriginal>
-    ),
   ].filter(Boolean);
 
   return (

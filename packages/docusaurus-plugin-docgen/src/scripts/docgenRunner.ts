@@ -18,7 +18,6 @@ import type {
 import { getPackageJsonFromTsconfig } from '../utils/getPackageJsonFromTsconfig';
 import { logger } from '../utils/logger';
 
-import { docgenChangelogBuilder } from './docgenChangelogBuilder';
 import { docgenParser, sharedParentTypesCache, sharedTypeAliasesCache } from './docgenParser';
 import { docgenScaffolder } from './docgenScaffolder';
 
@@ -59,7 +58,6 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
     forceDocs,
     pluginDir,
     onProcessDoc,
-    changelog,
   } = params;
   let filesToWriteToDisk: WriteFileConfig[] = [];
   const parsedProjects: Projects = [];
@@ -213,22 +211,6 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
   if (docsDir) {
     const scaffolds = docgenScaffolder({ docsDir, forceDocs, sourceFiles, docs });
     filesToWriteToDisk = [...filesToWriteToDisk, ...scaffolds];
-  }
-
-  if (changelog) {
-    logger.preppingChangelog();
-    const changelogs = await docgenChangelogBuilder(docs);
-    filesToWriteToDisk = [...filesToWriteToDisk, ...changelogs];
-  } else {
-    logger.skippingChangelog();
-    filesToWriteToDisk = [
-      ...filesToWriteToDisk,
-      {
-        dest: `${pluginDir}/_placeholders/changelog.mdx`,
-        data: {},
-        template: 'doc-item/changelog-placeholder',
-      },
-    ];
   }
 
   /** Output all shared parentTypes to object. We group by parent name, i.e SpacingProps

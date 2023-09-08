@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Remove changelog types, @changelog, and changelog template. [[#2239](https://github.cbhq.net/frontend/cds/pull/2239)] [[DX-2250](https://jira.coinbase-corp.com/browse/DX-2250)]
+
 ## 5.9.4 ((9/7/2023, 11:02 AM PST))
 
 This is an artificial version bump with no new change.

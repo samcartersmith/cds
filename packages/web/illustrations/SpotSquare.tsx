@@ -3,10 +3,6 @@ import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSqua
 
 import { createIllustration, IllustrationA11yProps } from './createIllustration';
 
-/**
- * @changelog ./createIllustration.tsx, ./Illustration.tsx
- */
-
 export const SpotSquare = createIllustration('spotSquare', spotSquareVersionMap);
 
 export type SpotSquareProps = SpotSquareCommonProps & IllustrationA11yProps;

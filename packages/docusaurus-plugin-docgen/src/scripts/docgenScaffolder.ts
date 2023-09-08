@@ -52,7 +52,6 @@ export function docgenScaffolder({
         title: startCase(displayName),
         kebabCaseName,
         apiPartials: uniqBy(dataForGroup, 'apiPartial.name'),
-        changelogPartials: uniqBy(dataForGroup, 'changelogPartial.name'),
         templates,
         hasDesign,
       };
@@ -73,12 +72,6 @@ export function docgenScaffolder({
         dest: path.join(outputDir, `_metadata.mdx`),
         data,
         template: 'doc/metadata',
-      });
-
-      filesToWriteToDisk.push({
-        dest: path.join(outputDir, `_changelog.mdx`),
-        data,
-        template: 'doc/changelog',
       });
     };
 
