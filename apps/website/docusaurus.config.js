@@ -32,6 +32,16 @@ module.exports = {
       },
       items: [
         {
+          href: 'https://cds-storybook.cbhq.net/',
+          label: 'Storybook',
+          position: 'right',
+        },
+        {
+          href: 'https://www.figma.com/files/657352101224507447/project/62154462/%E2%9C%A8-CDS-Libraries?fuid=992108968165608574',
+          label: 'Figma',
+          position: 'right',
+        },
+        {
           href: 'slack://channel?team=T02Q6DY7G&id=C05H922EYP7',
           label: 'Ask',
           position: 'right',
