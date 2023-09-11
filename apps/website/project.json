@@ -69,6 +69,15 @@
       "options": {
         "script": "./scripts/adoption/generateAdoptionAndImpactReports.ts"
       }
+    },
+    "adoption-snowflake-upload": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/website",
+        "commands": [
+          "ADOPTION_DIRECTORY=./static/data/__generated__/adoption sh ./scripts/adoption/snowflake-upload.sh"
+        ]
+      }
     }
   }
 }

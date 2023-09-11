@@ -14,3 +14,4 @@ Full documentation for the go/cds website can be found in our [docs](https://git
 | `yarn nx run website:typecheck`                        | Typecheck website code               |
 | `yarn nx run website:deprecations`                     | Update deprecations data             |
 | `yarn nx run website:generateAdoptionAndImpactReports` | Generate adoption and impact reports |
+| `yarn nx run website:adoption-snowflake-upload`        | Upload adoption data to Snowflake    |
