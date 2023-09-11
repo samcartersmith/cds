@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.13 (9/8/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: added package decomp migration script for jest.mocks. [[#2241](https://github.cbhq.net/frontend/cds/pull/2241)]
+
 ## 0.1.12 (9/8/2023 PST)
 
 #### 🐞 Fixes

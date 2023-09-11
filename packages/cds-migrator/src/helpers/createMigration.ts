@@ -22,6 +22,7 @@ export const createMigration = async ({
   callback,
   filterSourceFiles,
   packageNames,
+  onlyTestFiles,
 }: {
   /** The NX tree */
   tree: Tree;
@@ -35,6 +36,8 @@ export const createMigration = async ({
   filterSourceFiles?: (path: string) => boolean;
   /** Checks if a project has specific CDS package(s) as a dependency */
   packageNames?: CdsPackages[];
+  /** Only include test files */
+  onlyTestFiles?: boolean;
 }) => {
-  await parseSourceFiles(tree, callback, filterSourceFiles, packageNames);
+  await parseSourceFiles(tree, callback, filterSourceFiles, packageNames, onlyTestFiles);
 };

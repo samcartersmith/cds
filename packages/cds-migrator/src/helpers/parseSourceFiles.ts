@@ -30,6 +30,7 @@ export default async function parseSourceFiles(
   transformFn: (params: TransformFnType) => void,
   filterSourceFiles?: (path: string) => boolean,
   packageNames?: CdsPackages[],
+  onlyTestFiles?: boolean,
 ) {
   const projects = getProjects(tree);
 
@@ -58,13 +59,16 @@ export default async function parseSourceFiles(
 
         const cwd = joinPathFragments(tree.root, projectConfig.sourceRoot ?? projectConfig.root);
 
-        const sourceFiles = await glob(['**/*.tsx', '**/*.ts'], {
-          ignore: ['node_modules'],
-          onlyFiles: true,
-          cwd,
-          // Return the absolute path for entries.
-          absolute: true,
-        });
+        const sourceFiles = await glob(
+          onlyTestFiles ? ['**/*.test.tsx', '**/*.test.ts'] : ['**/*.tsx', '**/*.ts'],
+          {
+            ignore: ['node_modules'],
+            onlyFiles: true,
+            cwd,
+            // Return the absolute path for entries.
+            absolute: true,
+          },
+        );
 
         const bar = new progress.SingleBar(
           {
