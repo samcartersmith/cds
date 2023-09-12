@@ -31,6 +31,7 @@ export type TestOptions = {
   eventProjectName?: string;
   debugEvents?: boolean;
   sendEventsToProd?: boolean;
+  skipAccessibleTest?: boolean;
 };
 
 export type CoverageAreas = {

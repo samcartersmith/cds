@@ -94,13 +94,15 @@ export class A11yAuditor extends TestTask {
   }
 
   static getTotalNumberOfPassingToBeAccessibleTests(testDetails: TestDetail) {
-    let numberOfPassingToBeAccessibleTests = 0;
-
-    Object.entries(testDetails).forEach(([, detail]) => {
-      if (detail.status === 'passed') {
-        numberOfPassingToBeAccessibleTests += 1;
-      }
-    });
+    const numberOfPassingToBeAccessibleTests = Object.entries(testDetails).reduce(
+      (acc, [, detail]) => {
+        if (detail.status === 'passed') {
+          return acc + 1;
+        }
+        return acc;
+      },
+      0,
+    );
 
     return numberOfPassingToBeAccessibleTests;
   }

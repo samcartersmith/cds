@@ -6,7 +6,16 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.1.4 (9/11/2023 PST)
+
+#### 🚀 Updates
+
+- Remove running toBeAccessible tests. [[#2248](https://github.cbhq.net/frontend/cds/pull/2248)]
+- Log more stats into snowflake. [[#2248](https://github.cbhq.net/frontend/cds/pull/2248)]
+
+#### 🐞 Fixes
+
+- Add try-catch to handle errors. [[#2248](https://github.cbhq.net/frontend/cds/pull/2248)]
 
 #### 📘 Misc
 

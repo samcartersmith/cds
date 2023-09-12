@@ -52,6 +52,11 @@
       "type": "boolean",
       "description": "Send a11y scores to Snowflake production environment if `true`, otherwise send to development environment. Requires a `projectName` to take effect.",
       "default": true
+    },
+    "skipAccessibleTest": {
+      "type": "boolean",
+      "description": "Skip running the toBeAccessible tests and assume all tests passed.",
+      "default": true
     }
   }
 }

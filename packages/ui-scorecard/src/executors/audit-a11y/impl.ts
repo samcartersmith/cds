@@ -32,10 +32,12 @@ async function runAudit({
   a11yLogger,
   jestArgs,
   task,
+  skipAccessibleTest = true,
 }: {
   a11yLogger: A11yLogger;
   jestArgs: string[];
   task: Task;
+  skipAccessibleTest?: boolean;
 }) {
   console.log(color.project(`Start populating a11y log for project:${task.projectName}`));
 
@@ -52,13 +54,15 @@ async function runAudit({
   await a11yLogger.logComponentsWithTest();
   await a11yLogger.logTotalNumberOfComponentsWithTest();
 
-  console.log(
-    color.project(`\nStart running and capturing test results for tests that have toBeAccessible`),
-  );
+  /**
+   * Skip running a11y tests because the a11y engine depends on jest coverage, we first run the unit tests.
+   * we can safely assume those tests passed before hitting this point.
+   */
+  if (!skipAccessibleTest) {
+    await a11yLogger.logAccessibleTestsJestOutput(jestArgs);
+  }
 
-  await a11yLogger.logAccessibleTestsJestOutput(jestArgs);
-
-  a11yLogger.logTotalNumberOfPassingToBeAccessibleTests();
+  a11yLogger.logTotalNumberOfPassingToBeAccessibleTests(skipAccessibleTest);
 
   await a11yLogger.logAutomatedA11yScore();
 }
@@ -68,7 +72,16 @@ async function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function sendScores(options: TestOptions, { automatedA11yScore }: A11yLogType) {
+async function sendScores(
+  options: TestOptions,
+  {
+    automatedA11yScore,
+    a11yScore,
+    jestScore,
+    totalNumberOfComponentsWithTest,
+    totalNumberOfPassingToBeAccessibleTests,
+  }: A11yLogType,
+) {
   init({
     // client-analytics batches events, we want to send them as fast as possible
     // https://frontend.cbhq.net/analytics/quick-start#sdk-configs
@@ -88,6 +101,10 @@ async function sendScores(options: TestOptions, { automatedA11yScore }: A11yLogT
       action: ActionType.measurement,
       componentType: ComponentType.unknown,
       automatedA11yScore,
+      a11yScore,
+      jestScore,
+      totalNumberOfComponentsWithTest,
+      totalNumberOfPassingToBeAccessibleTests,
     },
   });
 
@@ -97,6 +114,10 @@ async function sendScores(options: TestOptions, { automatedA11yScore }: A11yLogT
       action: ActionType.measurement,
       componentType: ComponentType.unknown,
       automatedA11yScore,
+      a11yScore: a11yScore ?? null,
+      jestScore: a11yScore ?? null,
+      totalNumberOfComponentsWithTest,
+      totalNumberOfPassingToBeAccessibleTests,
     },
     AnalyticsEventImportance.high,
   );
@@ -106,55 +127,60 @@ async function sendScores(options: TestOptions, { automatedA11yScore }: A11yLogT
 }
 
 const audit = createTask<TestOptions>('audit', async (task, options) => {
-  const args: string[] = ['--color', '--passWithNoTests'];
+  try {
+    const args: string[] = ['--color', '--passWithNoTests'];
 
-  if (options.cache) {
-    args.unshift(
-      '--cache',
-      '--cacheDirectory',
-      task.cache.getSharedCachePath('tools/jestTransforms').toString(),
-    );
+    if (options.cache) {
+      args.unshift(
+        '--cache',
+        '--cacheDirectory',
+        task.cache.getSharedCachePath('tools/jestTransforms').toString(),
+      );
+    }
+
+    if (options.debug) {
+      args.unshift('--debug', '--detectOpenHandles', '--logHeapUsage');
+    }
+
+    if (options.serial) {
+      args.unshift('--maxWorkers', '1', '--runInBand');
+    }
+
+    // Automatically detect a config in the project, otherwise use the preset
+    const projectConfig = task.projectRoot.append('jest.config.js');
+
+    if (projectConfig.exists()) {
+      args.unshift('--config', './jest.config.js');
+    } else {
+      args.unshift('--preset', '@cbhq/jest-preset-mobile');
+    }
+
+    const fileWriter = new FileWriter(task);
+    const testFilePaths = await getTestFilePathsForAudit(task);
+
+    const a11yLogger = new A11yLogger(task, testFilePaths);
+
+    await runAudit({
+      a11yLogger,
+      jestArgs: args,
+      task,
+      skipAccessibleTest: options.skipAccessibleTest,
+    });
+
+    if (options.includeZeroCoverageAudit) {
+      a11yLogger.logComponentsWithZeroCoverage();
+    }
+
+    if (options.eventProjectName) {
+      await sendScores(options, a11yLogger.getLog);
+    }
+
+    fileWriter.writeA11yLogToOutDir({ log: a11yLogger.getLog });
+  } catch (error) {
+    console.log(color.failure(error));
   }
 
-  if (options.debug) {
-    args.unshift('--debug', '--detectOpenHandles', '--logHeapUsage');
-  }
-
-  if (options.serial) {
-    args.unshift('--maxWorkers', '1', '--runInBand');
-  }
-
-  // Automatically detect a config in the project, otherwise use the preset
-  const projectConfig = task.projectRoot.append('jest.config.js');
-
-  if (projectConfig.exists()) {
-    args.unshift('--config', './jest.config.js');
-  } else {
-    args.unshift('--preset', '@cbhq/jest-preset-mobile');
-  }
-
-  const fileWriter = new FileWriter(task);
-  const testFilePaths = await getTestFilePathsForAudit(task);
-
-  const a11yLogger = new A11yLogger(task, testFilePaths);
-
-  await runAudit({
-    a11yLogger,
-    jestArgs: args,
-    task,
-  });
-
-  if (options.includeZeroCoverageAudit) {
-    a11yLogger.logComponentsWithZeroCoverage();
-  }
-
-  if (options.eventProjectName) {
-    await sendScores(options, a11yLogger.getLog);
-  }
-
-  fileWriter.writeA11yLogToOutDir({ log: a11yLogger.getLog });
-
-  return task.exec('echo', [`Finished auditing a11y log for ${task.projectName} workspace`]);
+  return task.exec('echo', [`Finished auditing a11y log for ${task.projectName}`]);
 });
 
 export default audit;

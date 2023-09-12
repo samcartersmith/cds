@@ -117,17 +117,24 @@ export class A11yLogger extends TestTask {
     A11yLogger.logFunctionAndDuration('totalNumberOfComponentsWithTest', elapsed);
   }
 
-  public logTotalNumberOfPassingToBeAccessibleTests() {
+  public logTotalNumberOfPassingToBeAccessibleTests(skipAccessibleTest = true) {
     const start = performance.now();
 
-    if (Object.keys(this.log.testDetails).length <= 0) {
+    if (Object.keys(this.log.testDetails).length <= 0 && !skipAccessibleTest) {
       throw new Error(
         'Due to the how expensive it is to run jest tests, please first run logAccessibleTestsJestOutput before running logTotalNumberOfPassingToBeAccessibleTests.',
       );
     }
 
-    this.log.totalNumberOfPassingToBeAccessibleTests =
-      A11yAuditor.getTotalNumberOfPassingToBeAccessibleTests(this.log.testDetails);
+    if (this.log.testFilesWithToBeAccessibleTest.length <= 0 && skipAccessibleTest) {
+      throw new Error(
+        'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessibleTest() to obtain the a list of test files with toBeAccessible before running this command',
+      );
+    }
+
+    this.log.totalNumberOfPassingToBeAccessibleTests = skipAccessibleTest
+      ? this.log.testFilesWithToBeAccessibleTest.length
+      : A11yAuditor.getTotalNumberOfPassingToBeAccessibleTests(this.log.testDetails);
 
     const elapsed = performance.now() - start;
 
@@ -455,5 +462,7 @@ export class A11yLogger extends TestTask {
 
     // rounding to one decimal place
     this.log.automatedA11yScore = Math.round(automatedA11yScore * 10) / 10;
+
+    return this.log.automatedA11yScore;
   }
 }
