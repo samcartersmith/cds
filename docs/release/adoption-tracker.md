@@ -22,10 +22,10 @@ parsers - `apps/website/scripts/adoption/parsers/`
 
 1. Make sure you have [`snowsql` installed](https://docs.snowflake.com/en/user-guide/snowsql)
 2. Retrieve the CDS Snowflake service account password from the UI Systems account in 1Password
-3. Set the `SNOWSQL_PASSWORD` environment variable and run the `adoption-snowflake-upload` script in your branch:
+3. Set the `SNOWSQL_PWD` environment variable and run the `adoption-snowflake-upload` script in your branch:
 
 ```sh
-SNOWSQL_PASSWORD=JDtdbe2mKSm13jDqlS yarn nx run website:adoption-snowflake-upload
+SNOWSQL_PWD=JDtdbe2mKSm13jDqlS yarn nx run website:adoption-snowflake-upload
 ```
 
 4. You can view the uploaded adoption stats [in Snowflake here](https://app.us-east-1.privatelink.snowflakecomputing.com/mx78708/coinbase/#/data/databases/ANALYTICS/schemas/AD_HOC/table/CDS_STATS).

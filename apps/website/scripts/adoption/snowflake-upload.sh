@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # - snowsql must be installed to run this: https://docs.snowflake.com/en/user-guide/snowsql
-# - SNOWSQL_PASSWORD for the cds_snowflake_user service account must be set in your environment
+# - SNOWSQL_PWD for the cds_snowflake_user service account must be set in your environment
 
 echo " "
 echo "Uploading adoption tracker project data to Snowflake"
