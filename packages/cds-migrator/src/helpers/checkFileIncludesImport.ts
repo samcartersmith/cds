@@ -11,8 +11,8 @@ export function checkFileIncludesImport(sourceFile: SourceFile, path: string | s
   const declarations = sourceFile.getImportDeclarations();
   declarations.forEach((declaration) => {
     const importPath = declaration.getModuleSpecifierValue();
-    if (Array.isArray(path)) {
-      hasImport = path.some((p) => importPath.includes(p));
+    if (Array.isArray(path) && path.some((p) => importPath.includes(p))) {
+      hasImport = true;
     }
     if (typeof path === 'string' && importPath.includes(path)) {
       hasImport = true;

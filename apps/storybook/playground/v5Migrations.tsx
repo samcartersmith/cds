@@ -31,6 +31,8 @@ import { Card } from '@cbhq/cds-web/layout/Card';
 // @ts-expect-error testing
 import { none } from '@cbhq/cds-web/styles/borderRadius';
 
+const testVar = '120x120';
+
 export const V5MigrationsTest = () => {
   // migrated token
   const radii = none;
@@ -50,9 +52,9 @@ export const V5MigrationsTest = () => {
     <VStack>
       {/* prop value migrations */}
       {/* @ts-expect-error testing */}
-      <SpotSquare name="addCard" dimension="120x120" />
+      <SpotSquare name="addCard" dimension={testVar} />
       {/* @ts-expect-error testing */}
-      <Pictogram name="2fa" dimension="96x96" />
+      <Pictogram name="2fa" dimension={isMobile ? '96x96' : '64x64'} />
       {/* @ts-expect-error testing */}
       <CDSPictogram name="2fa" dimension="96x96" />
       {/* @ts-expect-error testing */}

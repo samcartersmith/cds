@@ -2,7 +2,6 @@ import { Tree } from '@nrwl/devkit';
 import { SourceFile } from 'ts-morph';
 
 import { checkFileIncludesImport } from '../../helpers/checkFileIncludesImport';
-import { checkFileIncludesRenamedValue } from '../../helpers/checkFileIncludesRenamedValue';
 import { createJsxMigration } from '../../helpers/createJsxMigration';
 import { getComponentFromJsx } from '../../helpers/getComponentFromJsx';
 import { logDebug } from '../../helpers/loggingHelpers';
@@ -15,18 +14,9 @@ import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
 import { propValueMigrations } from './data/propMigrations';
 
 const importPaths = ['@cbhq/cds-web/illustrations', '@cbhq/cds-mobile/illustrations'];
-const renamedPropValues = Object.keys(
-  Object.values(propValueMigrations).map((val) => val.valueMap),
-);
 
 const checkSourceFile = (sourceFile: SourceFile) => {
-  const sourceContent = sourceFile.getFullText();
-  const hasRenamedValue = checkFileIncludesRenamedValue(sourceContent, renamedPropValues);
-  const hasImport = checkFileIncludesImport(sourceFile, importPaths);
-  if (hasRenamedValue && hasImport) {
-    return true;
-  }
-  return false;
+  return checkFileIncludesImport(sourceFile, importPaths);
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
@@ -49,17 +39,12 @@ const callback = (args: ParseJsxElementsCbParams) => {
   // gate for components that are not migratable
   let isMigratable = false;
   if (updateMap) {
-    const migratableValues = Object.keys(updateMap.valueMap);
     const attributeToMigrate = updateMap.attribute;
     searchAndProcessComponent({
       jsx,
       componentName: component,
-      callback: (propName, propValue) => {
-        if (
-          typeof propValue === 'string' &&
-          attributeToMigrate.includes(propName) &&
-          migratableValues.includes(propValue)
-        ) {
+      callback: (propName) => {
+        if (attributeToMigrate === propName) {
           isMigratable = true;
         }
       },

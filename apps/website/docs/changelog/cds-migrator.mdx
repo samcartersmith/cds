@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.14 (9/12/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: added warning for dynamic prop values and ternaries are now migratable. [[#2252](https://github.cbhq.net/frontend/cds/pull/2252)]
+
 ## 0.1.13 (9/8/2023 PST)
 
 #### 🚀 Updates
