@@ -136,4 +136,10 @@ export type A11yLogType = {
    * Metric representing accessibility, based solely on the results of automated accessibility testing
    */
   automatedA11yScore: number;
+  // track if functions have been called
+  functionsCalled: {
+    logTestFilesWithoutToBeAccessible: boolean;
+    logAccessibleTestsJestOutput: boolean;
+    logTestFilesWithToBeAccessible: boolean;
+  };
 };

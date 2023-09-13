@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.5 (9/13/2023 PST)
+
+#### 🐞 Fixes
+
+- Track function calls. [[#2253](https://github.cbhq.net/frontend/cds/pull/2253)]
+
 ## 0.1.4 (9/11/2023 PST)
 
 #### 🚀 Updates

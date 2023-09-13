@@ -177,7 +177,7 @@ const audit = createTask<TestOptions>('audit', async (task, options) => {
 
     fileWriter.writeA11yLogToOutDir({ log: a11yLogger.getLog });
   } catch (error) {
-    console.log(color.failure(error));
+    logError(color.failure(error));
   }
 
   return task.exec('echo', [`Finished auditing a11y log for ${task.projectName}`]);

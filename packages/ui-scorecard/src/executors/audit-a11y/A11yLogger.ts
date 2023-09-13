@@ -60,6 +60,12 @@ export class A11yLogger extends TestTask {
       componentsWithTest: [],
       totalNumberOfComponentsWithTest: 0,
       automatedA11yScore: 0,
+      // track if functions have been called
+      functionsCalled: {
+        logTestFilesWithoutToBeAccessible: false,
+        logAccessibleTestsJestOutput: false,
+        logTestFilesWithToBeAccessible: false,
+      },
     };
 
     this.filePaths = filePaths;
@@ -73,8 +79,16 @@ export class A11yLogger extends TestTask {
     return this.log;
   }
 
+  get getFunctionsCalled(): A11yLogType['functionsCalled'] {
+    return this.log.functionsCalled;
+  }
+
   static logFunctionAndDuration(functionName: string, elapsed: number) {
     logSuccess(`Logged ${functionName} - ${color.shell(`duration: [${elapsed / 1000}s]`)}`);
+  }
+
+  logFunctionCall(functionName: keyof A11yLogType['functionsCalled']) {
+    this.log.functionsCalled[functionName] = true;
   }
 
   public async logComponentsWithTest({
@@ -120,15 +134,15 @@ export class A11yLogger extends TestTask {
   public logTotalNumberOfPassingToBeAccessibleTests(skipAccessibleTest = true) {
     const start = performance.now();
 
-    if (Object.keys(this.log.testDetails).length <= 0 && !skipAccessibleTest) {
+    if (!this.getFunctionsCalled.logAccessibleTestsJestOutput && !skipAccessibleTest) {
       throw new Error(
         'Due to the how expensive it is to run jest tests, please first run logAccessibleTestsJestOutput before running logTotalNumberOfPassingToBeAccessibleTests.',
       );
     }
 
-    if (this.log.testFilesWithToBeAccessibleTest.length <= 0 && skipAccessibleTest) {
+    if (!this.getFunctionsCalled.logTestFilesWithoutToBeAccessible && skipAccessibleTest) {
       throw new Error(
-        'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessibleTest() to obtain the a list of test files with toBeAccessible before running this command',
+        'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessible() to obtain the a list of test files with toBeAccessible before running this command',
       );
     }
 
@@ -237,6 +251,7 @@ export class A11yLogger extends TestTask {
     const elapsed = new Date().getTime() - start;
 
     A11yLogger.logFunctionAndDuration('testFilesWithToBeAccessibleTest', elapsed);
+    this.logFunctionCall('logTestFilesWithToBeAccessible');
   }
 
   public logTestFilesWithoutToBeAccessible({
@@ -262,6 +277,7 @@ export class A11yLogger extends TestTask {
     const elapsed = new Date().getTime() - start;
 
     A11yLogger.logFunctionAndDuration('testFilesWithoutToBeAccessibleTest', elapsed);
+    this.logFunctionCall('logTestFilesWithoutToBeAccessible');
   }
 
   /**
@@ -344,9 +360,9 @@ export class A11yLogger extends TestTask {
      * means it was skipped. It could be because it does not have toBeAccessible
      */
 
-    if (this.log.testFilesWithToBeAccessibleTest.length <= 0) {
+    if (!this.getFunctionsCalled.logTestFilesWithToBeAccessible) {
       throw new Error(
-        'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessibleTest() to obtain the a list of test files with toBeAccessible before running this command',
+        'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessible() to obtain the a list of test files with toBeAccessible before running this command',
       );
     }
 
@@ -354,6 +370,7 @@ export class A11yLogger extends TestTask {
       filePaths: this.log.testFilesWithToBeAccessibleTest,
       args,
     });
+    this.logFunctionCall('logAccessibleTestsJestOutput');
   }
 
   public logCoverageSummaryTotal() {

@@ -3850,9 +3850,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/client-analytics@npm:^10.7.0":
-  version: 10.7.0
-  resolution: "@cbhq/client-analytics@npm:10.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-10.7.0.tgz"
+"@cbhq/client-analytics@npm:^10.7.0, @cbhq/client-analytics@npm:^10.7.1":
+  version: 10.7.2
+  resolution: "@cbhq/client-analytics@npm:10.7.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-10.7.2.tgz"
   dependencies:
     idb: ^7.0.2
     md5: ^2.3.0
@@ -3860,21 +3860,7 @@ __metadata:
     ua-parser-js: ^1.0.35
   peerDependencies:
     react: ">=17.0.0"
-  checksum: d560908c23cbb862fa4b08dca93798e28fd5c36cec5d1c75e9d031dd54f1eecb95c68e585f9b69e2fbd17a71195e8ab384e2ce727a5936040d876cf279371319
-  languageName: node
-  linkType: hard
-
-"@cbhq/client-analytics@npm:^8.6.0":
-  version: 8.7.0
-  resolution: "@cbhq/client-analytics@npm:8.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-8.7.0.tgz"
-  dependencies:
-    idb: ^7.0.2
-    md5: ^2.3.0
-    perfume.js: 9.0.0-rc.3
-    ua-parser-js: ^1.0.2
-  peerDependencies:
-    react: ">=17.0.0"
-  checksum: e94242dfdc70b575a42938ae6978ad7eb79b6f29594a53431c8d21541df2503ef48ef3c1353824cff9c9d8aadcd0c28e6a72665eb0dd179dce47e60ac9ed9837
+  checksum: d04eca59a5052836ab62a9fdd367cb4d25e99299fa798eb02c8aa008cc9bed05acfc7b383d732f698a1221e110bdebdb61976d1c9bc352c474d184ce4367ddae
   languageName: node
   linkType: hard
 
@@ -4338,7 +4324,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-scorecard@workspace:packages/ui-scorecard"
   dependencies:
-    "@cbhq/client-analytics": ^8.6.0
+    "@cbhq/client-analytics": ^10.7.1
     "@types/update-notifier": ^5.1.0
     "@types/yargs": ^17.0.11
     aws-sdk: ^2.1207.0
