@@ -84,7 +84,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
    * The font generator needs a map of filePath -> IconComponentSetChild.
    * When the font generator is run it will loop through all svgs and only has access
    * to the svg file name which we can then use to associate the svg with the IconComponentSetChild.
-   * If the IconComponentSetChild has a unicode in it's metadata property, then that unicode
+   * If the IconComponentSetChild has a unicode in its metadata property, then that unicode
    * will be assigned on subsequent font generations. This is important so that we maintain
    * backwards compatability and avoid having glyphs re-assigned to different unicodes
    * based on alphabetical sorting.
@@ -104,6 +104,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
       svgFileMap.set(svgFilePath, componentSetChild);
 
       if (componentSet.hasVisualChange) {
+        // empty out existing outputs
         componentSet.addToOutputs({});
 
         await createSvgContent({

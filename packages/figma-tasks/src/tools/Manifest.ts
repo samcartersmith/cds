@@ -25,6 +25,7 @@ export type ItemShape = {
   type: string;
   version: number;
   outputs?: Record<string, string>;
+  addToOutputs: (newOutputs: Record<string, string>) => void;
   setVersion: (num: number) => void;
 };
 
@@ -148,8 +149,22 @@ export class Manifest<
   }
 
   private async renameOutputs(item: GetManifestItem<T>, renameFn: (output: string) => string) {
-    if (item.outputs) {
-      await Promise.all(Object.values(item.outputs).map(this.renameOutput(renameFn)));
+    const { outputs } = item;
+
+    if (outputs) {
+      // rename item output files
+      await Promise.all(Object.values(outputs).map(this.renameOutput(renameFn)));
+
+      // empty out existing item outputs
+      item.addToOutputs({});
+
+      const renamedOutputs = Object.keys(outputs).reduce(
+        (acc, outputKey) => ({ ...acc, [outputKey]: renameFn(outputs[outputKey]) }),
+        {},
+      );
+
+      // add renamed item outputs for manifest
+      item.addToOutputs(renamedOutputs);
     }
   }
 
@@ -190,10 +205,13 @@ export class Manifest<
           renameFn = (output: string) =>
             output.replace(`${prevName}-${prevNode.version}`, `${newName}-0`);
         } else {
+          // TODO: should probably make this rename function more robust;
+          // if the asset name happens to match a substring in the path before it reaches the file name,
+          // it will incorrectly replace that substring instead
           renameFn = (output: string) => output.replace(prevName, newName);
         }
 
-        await this.renameOutputs(prevNode, renameFn);
+        await this.renameOutputs(item, renameFn);
       } else {
         const shouldUpdate = item.hasVisualChange ?? true;
 
@@ -205,7 +223,8 @@ export class Manifest<
             const newVersion = oldVersion + 1;
             item.setVersion(newVersion);
 
-            const renameFn = (output: string) => output.replace(`-${oldVersion}`, `-${newVersion}`);
+            const renameFn = (output: string) =>
+              output.replace(`${item.name}-${oldVersion}`, `${item.name}-${newVersion}`);
             // If it already existed we need to rename outputs before writing new content
             await this.renameOutputs(item, renameFn);
           }

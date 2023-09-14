@@ -33,12 +33,11 @@
 
 # -u (USERNAME) = set your github username
 # -b (BRANCHNAME) = set the branch name of this cloned static asset
-# -c (CREATEDIRFLAG) = if true, will create a ui-infra/illustration directory in static-asset repo. default: false
 # -o (OPENPRFLAG) = if true, will openPR using hub pull-request command. default: false
 # -d (DELREPO) = if true, will remove static-assets repo. default: true
 
 usage() {
-	echo "USAGE: ./uploadToStaticAssets -r <root-dir-name> [optional flags: -b (BRANCHNAME) -u (USERNAME) -c (CREATEDIRFLAG) -o (OPENPRFLAG) -d (DELREPO)]"
+	echo "USAGE: ./uploadToStaticAssets -r <root-dir-name> [optional flags: -b (BRANCHNAME) -u (USERNAME) -o (OPENPRFLAG) -d (DELREPO)]"
 }
 
 getGithubUsername() {
@@ -77,7 +76,6 @@ while getopts b:r:u:c:o:d: option; do
 	b) BRANCHNAME=${OPTARG} ;;
 	r) ROOTDIRPATH=${OPTARG} ;;
 	u) USERNAME=${OPTARG} ;;
-	c) CREATEDIRFLAG=${OPTARG} ;;
 	o) OPENPRFLAG=${OPTARG} ;;
 	d) DELREPO=${OPTARG} ;;
 	esac
@@ -112,25 +110,22 @@ cd static-assets
 git pull origin "${USERNAME}/${BRANCHNAME}"
 
 ILLUSTRATION_VERSION="v1"
-VARIANTS=('heroSquare' 'pictogram' 'spotRectangle' 'spotSquare')
+VARIANTS=('heroSquare' 'pictogram' 'spotRectangle' 'spotSquare' 'spotIcon')
+FOLDER_PREFIX="assets/$TEAM_NAME/illustration/$ILLUSTRATION_VERSION"
 
-if [ ${CREATEDIRFLAG=false} == true ]; then
-	FOLDER_PREFIX="assets/$TEAM_NAME/illustration/$ILLUSTRATION_VERSION"
+for variant in "${VARIANTS[@]}"; do
+	echo "Creating $FOLDER_PREFIX/$variant/png/dark directory..."
+	mkdir -p $FOLDER_PREFIX/$variant/png/dark
 
-	for variant in "${VARIANTS[@]}"; do
-		echo "Creating $FOLDER_PREFIX/$variant/png/dark directory..."
-		mkdir -p $FOLDER_PREFIX/$variant/png/dark
+	echo "Creating $FOLDER_PREFIX/$variant/png/light directory..."
+	mkdir -p $FOLDER_PREFIX/$variant/png/light
 
-		echo "Creating $FOLDER_PREFIX/$variant/png/light directory..."
-		mkdir -p $FOLDER_PREFIX/$variant/png/light
+	echo "Creating $FOLDER_PREFIX/$variant/svg/dark directory..."
+	mkdir -p $FOLDER_PREFIX/$variant/svg/dark
 
-		echo "Creating $FOLDER_PREFIX/$variant/svg/dark directory..."
-		mkdir -p $FOLDER_PREFIX/$variant/svg/dark
-
-		echo "Creating $FOLDER_PREFIX/$variant/svg/light directory..."
-		mkdir -p $FOLDER_PREFIX/$variant/svg/light
-	done
-fi
+	echo "Creating $FOLDER_PREFIX/$variant/svg/light directory..."
+	mkdir -p $FOLDER_PREFIX/$variant/svg/light
+done
 
 echo "Copying images to static-assets..."
 

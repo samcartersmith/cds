@@ -75,6 +75,7 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
           return item;
         }
 
+        // empty out existing outputs
         item.addToOutputs({});
 
         const { svgDir, svgJsDir, pngDir } = getOutputDirectories({ type, generatedDirectory });
@@ -236,33 +237,33 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
 
             const contentAsString = illustrations
               .sort((prev, next) => sortByAlphabet(prev.name, next.name))
-              .reduce((prev, next) => {
-                if (!next.outputs.svgJsLight) {
-                  throw new Error(`Unable to find svgJsLight file path for ${next.name}`);
+              .reduce((acc, item) => {
+                if (!item.outputs.svgJsLight) {
+                  throw new Error(`Unable to find svgJsLight file path for ${item.name}`);
                 }
 
-                if (!next.outputs.svgJsDark) {
-                  throw new Error(`Unable to find svgJsDark file path for ${next.name}`);
+                if (!item.outputs.svgJsDark) {
+                  throw new Error(`Unable to find svgJsDark file path for ${item.name}`);
                 }
 
-                const absoluteLight = path.isAbsolute(next.outputs.svgJsLight)
-                  ? next.outputs.svgJsLight
-                  : path.normalize(`${manifest.generatedDirectory}/${next.outputs.svgJsLight}`);
+                const absoluteLight = path.isAbsolute(item.outputs.svgJsLight)
+                  ? item.outputs.svgJsLight
+                  : path.normalize(`${manifest.generatedDirectory}/${item.outputs.svgJsLight}`);
 
-                const absoluteDark = path.isAbsolute(next.outputs.svgJsDark)
-                  ? next.outputs.svgJsDark
-                  : path.normalize(`${manifest.generatedDirectory}/${next.outputs.svgJsDark}`);
+                const absoluteDark = path.isAbsolute(item.outputs.svgJsDark)
+                  ? item.outputs.svgJsDark
+                  : path.normalize(`${manifest.generatedDirectory}/${item.outputs.svgJsDark}`);
 
                 const relativeLight = getRelativePathForImport(destDir, absoluteLight);
                 const relativeDark = getRelativePathForImport(destDir, absoluteDark);
 
                 const newContent = `
-                    '${next.name}': {
+                    '${item.name}': {
                       light: () => require('${relativeLight}').content,
                       dark: () => require('${relativeDark}').content,
                     },
                   `.trimStart();
-                return `${prev}${newContent}`;
+                return `${acc}${newContent}`;
               }, '');
 
             return tokensTemplate`
