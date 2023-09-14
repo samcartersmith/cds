@@ -9,7 +9,7 @@ import type { ProjectParser } from './ProjectParser';
 
 const rootElementsToStopAt = new Set<string>(['svg']);
 
-function isExportedStatement(node: ts.Node) {
+function isExportedStatement(node: ts.FunctionDeclaration | ts.VariableStatement) {
   return (
     node.modifiers &&
     node.modifiers.length > 0 &&
@@ -429,9 +429,12 @@ export class FileParser {
 
       for (const attribute of openingElement.attributes.properties) {
         if (ts.isJsxAttribute(attribute)) {
-          const propName = attribute.name.escapedText as string;
-          if (this.project.isPresentationalProp(propName)) {
-            return [tagName, true];
+          if (ts.isIdentifier(attribute.name)) {
+            const propName = attribute.name.escapedText as string;
+
+            if (this.project.isPresentationalProp(propName)) {
+              return [tagName, true];
+            }
           }
         }
       }
@@ -476,7 +479,9 @@ export class FileParser {
     ) {
       node.attributes.properties.forEach((attribute) => {
         if (ts.isJsxAttribute(attribute)) {
-          props.push(attribute.name.escapedText as string);
+          if (ts.isIdentifier(attribute.name)) {
+            props.push(attribute.name.escapedText as string);
+          }
         }
         if (ts.isJsxSpreadAttribute(attribute)) {
           // TODO: handle attributes that are spread in

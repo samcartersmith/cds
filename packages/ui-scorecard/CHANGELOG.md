@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.6 (9/14/2023 PST)
+
+#### 🐞 Fixes
+
+- Updated peer Dep for typescript to 5.2.2.
+
 ## 0.1.5 (9/13/2023 PST)
 
 #### 🐞 Fixes
