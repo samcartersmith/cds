@@ -8,6 +8,36 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.0.0 (9/14/2023 PST)
+
+#### 💥 Breaking
+
+- Publish icons 09/14/2023. [[#2260](https://github.cbhq.net/frontend/cds/pull/2260)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- sortDoubleArrow
+
+#### Nav
+
+- commerceProduct
+- gasFees
+- key
+- securityKey
+- walletLogo
+
+### 🐞 Renames
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- cashPolishZłoty -> cashPolishZloty
+
 ## 1.8.0 (8/22/2023 PST)
 
 #### 🚀 Updates

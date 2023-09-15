@@ -123,7 +123,7 @@ const names: UiIconName[] = [
   'undo',
   'cashThaiBaht',
   'faceScan',
-  'cashPolishZłoty',
+  'cashPolishZloty',
   'fork',
   'horizontalLine',
   'forwardArrow',
@@ -268,6 +268,7 @@ const names: UiIconName[] = [
   'cashSingaporeDollar',
   'cashCanadianDollar',
   'passport',
+  'sortDoubleArrow',
 ];
 
 export default names;

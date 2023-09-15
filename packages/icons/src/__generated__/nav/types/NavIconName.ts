@@ -21,6 +21,7 @@ export type NavIconName =
   | 'cloud'
   | 'collection'
   | 'comment'
+  | 'commerceProduct'
   | 'compass'
   | 'copy'
   | 'crystalBall'
@@ -39,6 +40,7 @@ export type NavIconName =
   | 'folder'
   | 'folderArrow'
   | 'gab'
+  | 'gasFees'
   | 'ghost'
   | 'giftBox'
   | 'globe'
@@ -48,6 +50,7 @@ export type NavIconName =
   | 'home'
   | 'interest'
   | 'invoice'
+  | 'key'
   | 'light'
   | 'magnifyingGlass'
   | 'menu'
@@ -68,6 +71,7 @@ export type NavIconName =
   | 'rollingSpot'
   | 'royalty'
   | 'scanQrCode'
+  | 'securityKey'
   | 'securityShield'
   | 'settings'
   | 'shoppingCart'
@@ -77,4 +81,5 @@ export type NavIconName =
   | 'taxes'
   | 'trading'
   | 'trophyCup'
-  | 'wallet';
+  | 'wallet'
+  | 'walletLogo';

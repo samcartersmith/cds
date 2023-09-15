@@ -84,6 +84,11 @@ const names: NavIconName[] = [
   'regulatedFutures',
   'options',
   'compass',
+  'walletLogo',
+  'commerceProduct',
+  'key',
+  'gasFees',
+  'securityKey',
 ];
 
 export default names;
