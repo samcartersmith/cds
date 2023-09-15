@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
-import { HeroSquareDimension, IllustrationVariant, PictogramDimension } from '@cbhq/cds-common';
+import {
+  HeroSquareDimension,
+  IllustrationVariant,
+  PictogramDimension,
+  SpotIconDimension,
+} from '@cbhq/cds-common';
 import {
   illustrationDimensionDefaults,
   illustrationDimensions,
@@ -12,6 +17,8 @@ import heroSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/hero
 import heroSquareNames from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
 import pictogramDescriptionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/descriptionMap';
 import pictogramNames from '@cbhq/cds-illustrations/__generated__/pictogram/data/names';
+import spotIconDescriptionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/data/descriptionMap';
+import spotIconNames from '@cbhq/cds-illustrations/__generated__/spotIcon/data/names';
 import spotRectangleDescriptionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/descriptionMap';
 import spotRectangleNames from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/names';
 import spotSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/descriptionMap';
@@ -22,6 +29,8 @@ import {
   HeroSquareName,
   Pictogram,
   PictogramName,
+  SpotIcon,
+  SpotIconName,
   SpotRectangle,
   SpotRectangleName,
   SpotSquare,
@@ -34,6 +43,7 @@ const variantToNamesMap = {
   spotRectangle: spotRectangleNames,
   spotSquare: spotSquareNames,
   pictogram: pictogramNames,
+  spotIcon: spotIconNames,
 };
 
 const descriptionMap = {
@@ -41,6 +51,7 @@ const descriptionMap = {
   spotRectangle: spotRectangleDescriptionMap,
   spotSquare: spotSquareDescriptionMap,
   pictogram: pictogramDescriptionMap,
+  spotIcon: spotIconDescriptionMap,
 };
 
 /**
@@ -194,6 +205,12 @@ export const IllustrationSheet = function IllustrationSheet({
                       <Pictogram
                         name={filteredName as PictogramName}
                         dimension={dim as PictogramDimension}
+                      />
+                    )}
+                    {variant === 'spotIcon' && (
+                      <SpotIcon
+                        name={filteredName as SpotIconName}
+                        dimension={dim as SpotIconDimension}
                       />
                     )}
 

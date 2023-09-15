@@ -2,6 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { IllustrationVariant } from '@cbhq/cds-common/types';
 import heroSquares from '@cbhq/cds-illustrations/__generated__/heroSquare/data/svgJsMap';
 import pictograms from '@cbhq/cds-illustrations/__generated__/pictogram/data/svgJsMap';
+import spotIcons from '@cbhq/cds-illustrations/__generated__/spotIcon/data/svgJsMap';
 import spotRectangles from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/svgJsMap';
 import spotSquares from '@cbhq/cds-illustrations/__generated__/spotSquare/data/svgJsMap';
 
@@ -12,6 +13,7 @@ const illustrations = {
   spotSquare: spotSquares,
   spotRectangle: spotRectangles,
   pictogram: pictograms,
+  spotIcon: spotIcons,
 };
 
 type IllustrationProps<Type extends IllustrationVariant> = IllustrationBasePropsWithA11y<Type> & {

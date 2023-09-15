@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.0 (9/14/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: added SpotIcon to mobile and web. [[#2224](https://github.cbhq.net/blair-mckee/cds/pull/2262)]
+
 ## 2.0.0 (9/14/2023 PST)
 
 #### 💥 Breaking

@@ -281,6 +281,11 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/loaders/__stories__/Spinner.stories').default,
   },
   {
+    key: 'SpotIcon',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/illustrations/__stories__/SpotIcon.stories').default,
+  },
+  {
     key: 'SpotRectangle',
     getComponent: () =>
       require('@cbhq/cds-mobile/illustrations/__stories__/SpotRectangle.stories').default,

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.0 (9/15/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: Added SpotIcon. [[#2262](https://github.cbhq.net/blair-mckee/cds/pull/2262)]
+
 ## 1.1.3 (9/6/2023 PST)
 
 #### 🐞 Fixes

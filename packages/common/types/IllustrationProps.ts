@@ -3,18 +3,25 @@ import { illustrationDimensions } from '../tokens/illustrations';
 import type {
   IllustrationHeroSquareNames,
   IllustrationPictogramNames,
+  IllustrationSpotIconNames,
   IllustrationSpotRectangleNames,
   IllustrationSpotSquareNames,
   IllustrationVariant,
 } from './IllustrationNames';
 import type { SharedProps } from './SharedProps';
 
-export type IllustrationNames = HeroSquareName | SpotSquareName | SpotRectangleName | PictogramName;
+export type IllustrationNames =
+  | HeroSquareName
+  | SpotSquareName
+  | SpotRectangleName
+  | PictogramName
+  | SpotIconName;
 
 export type HeroSquareName = IllustrationHeroSquareNames;
 export type PictogramName = IllustrationPictogramNames;
 export type SpotRectangleName = IllustrationSpotRectangleNames;
 export type SpotSquareName = IllustrationSpotSquareNames;
+export type SpotIconName = IllustrationSpotIconNames;
 export type IllustrationType = IllustrationVariant;
 
 export type IllustrationNamesMap = {
@@ -22,24 +29,28 @@ export type IllustrationNamesMap = {
   spotRectangle: SpotRectangleName;
   pictogram: PictogramName;
   spotSquare: SpotSquareName;
+  spotIcon: SpotIconName;
 };
 
 export type HeroSquareDimension = (typeof illustrationDimensions.heroSquare)[number];
 export type SpotSquareDimension = (typeof illustrationDimensions.spotSquare)[number];
 export type SpotRectangleDimension = (typeof illustrationDimensions.spotRectangle)[number];
 export type PictogramDimension = (typeof illustrationDimensions.pictogram)[number];
+export type SpotIconDimension = (typeof illustrationDimensions.spotIcon)[number];
 
 export type IllustrationDimension =
   | HeroSquareDimension
   | SpotSquareDimension
   | SpotRectangleDimension
-  | PictogramDimension;
+  | PictogramDimension
+  | SpotIconDimension;
 
 export type IllustrationDimensionsMap = {
   heroSquare: HeroSquareDimension;
   spotSquare: SpotSquareDimension;
   spotRectangle: SpotRectangleDimension;
   pictogram: PictogramDimension;
+  spotIcon: SpotIconDimension;
 };
 
 export type IllustrationBaseProps<T extends keyof IllustrationNamesMap> = {
@@ -77,6 +88,13 @@ export type SpotSquareProps = IllustrationBaseProps<'spotSquare'> & {
   dimension?: IllustrationDimensionsMap['spotSquare'];
 };
 
+export type SpotIconProps = IllustrationBaseProps<'spotIcon'> & {
+  /**
+   * @default 32x32
+   * */
+  dimension?: IllustrationDimensionsMap['spotSquare'];
+};
+
 export type PictogramProps = IllustrationBaseProps<'pictogram'> & {
   /**
    * @default 48x48
@@ -104,4 +122,7 @@ export type IllustrationPropsDiscriminatedUnion =
     } & SpotRectangleProps)
   | ({
       type: 'pictogram';
-    } & PictogramProps);
+    } & PictogramProps)
+  | ({
+      type: 'spotIcon';
+    } & SpotIconProps);

@@ -6,10 +6,12 @@ import {
   IllustrationVariant,
   PictogramDimension,
   Spectrum,
+  SpotIconDimension,
 } from '@cbhq/cds-common';
 import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
+import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/data/versionMap';
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
@@ -21,6 +23,8 @@ import {
   HeroSquareName,
   Pictogram,
   PictogramName,
+  SpotIcon,
+  SpotIconName,
   SpotRectangle,
   SpotRectangleName,
   SpotSquare,
@@ -36,6 +40,7 @@ const images = {
   pictogram: keys(pictogramVersionMap),
   spotRectangle: keys(spotRectangleVersionMap),
   spotSquare: keys(spotSquareVersionMap),
+  spotIcon: keys(spotIconVersionMap),
 };
 
 export function getIllustrationSheet<Type extends IllustrationVariant>(type: Type) {
@@ -68,6 +73,11 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
       height: illustrationSizes[illustrationDimensions.heroSquare[0]][1],
       width: illustrationSizes[illustrationDimensions.heroSquare[0]][0],
       scaleMultiplier: 0.24,
+    },
+    spotIcon: {
+      height: illustrationSizes[illustrationDimensions.spotIcon[0]][1],
+      width: illustrationSizes[illustrationDimensions.spotIcon[0]][0],
+      scaleMultiplier: 1,
     },
   };
   const ITEM_COLUMNS = Math.floor(SCREEN_WIDTH / (SIZES[type].width * SIZES[type].scaleMultiplier));
@@ -133,6 +143,13 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
               name={item.name as PictogramName}
               dimension={dim as PictogramDimension}
               scaleMultiplier={SIZES.pictogram.scaleMultiplier}
+            />
+          )}
+          {type === 'spotIcon' && (
+            <SpotIcon
+              name={item.name as SpotIconName}
+              dimension={dim as SpotIconDimension}
+              scaleMultiplier={SIZES.spotIcon.scaleMultiplier}
             />
           )}
 

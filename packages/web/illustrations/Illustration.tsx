@@ -2,6 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { IllustrationVariant } from '@cbhq/cds-common/types';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
+import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/data/versionMap';
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
@@ -15,6 +16,7 @@ export const versionMaps: Record<IllustrationVariant, Record<string, number>> = 
   spotSquare: spotSquareVersionMap,
   spotRectangle: spotRectangleVersionMap,
   pictogram: pictogramVersionMap,
+  spotIcon: spotIconVersionMap,
 };
 
 type IllustrationProps<Type extends IllustrationVariant> = IllustrationBasePropsWithA11y<Type> & {
