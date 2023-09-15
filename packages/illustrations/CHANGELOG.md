@@ -8,6 +8,58 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.0.0 (9/14/2023 PST)
+
+#### 💥 Breaking
+
+- Publish illustrations 09/14/2023. [[#2256](https://github.cbhq.net/frontend/cds/pull/2256)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- productCoinbaseCard
+- productCompliance
+- productEarn
+- productPro
+- productWallet
+
+#### Hero Square
+
+- claimCryptoUsername
+- ensProfilePic
+- noLongAddresses
+- referralsCoinbaseOne
+
+#### Spot Rectangle
+
+- referralsCoinbaseOne
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- ethTrading
+- ethTradingTwo
+- ethWrappedStakingRewards
+
+#### Hero Square
+
+- cloudBacking
+- ethereumToWallet
+
+### 🐞 Renames
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- ManageWeb3Signers -> manageWeb3SignersAcct
+
 ## 1.11.0 (8/22/2023 PST)
 
 #### 🚀 Updates

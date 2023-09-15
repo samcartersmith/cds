@@ -153,7 +153,7 @@ export type PictogramName =
   | 'locationUsa'
   | 'lock'
   | 'lowFees'
-  | 'ManageWeb3Signers'
+  | 'manageWeb3SignersAcct'
   | 'miningCoins'
   | 'mintedNft'
   | 'mobileCharts'

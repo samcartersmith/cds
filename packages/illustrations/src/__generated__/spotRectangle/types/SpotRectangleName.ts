@@ -142,6 +142,7 @@ export type SpotRectangleName =
   | 'readyToTrade'
   | 'referralsBitcoin'
   | 'referralsBonus'
+  | 'referralsCoinbaseOne'
   | 'retailUSDCRewards'
   | 'scanCode'
   | 'secureAndTrusted'

@@ -605,9 +605,9 @@ const svgJsMap = {
     light: () => require('../svgJs/light/lowFees-2').content,
     dark: () => require('../svgJs/dark/lowFees-2').content,
   },
-  ManageWeb3Signers: {
-    light: () => require('../svgJs/light/ManageWeb3Signers-2').content,
-    dark: () => require('../svgJs/dark/ManageWeb3Signers-2').content,
+  manageWeb3SignersAcct: {
+    light: () => require('../svgJs/light/manageWeb3SignersAcct-0').content,
+    dark: () => require('../svgJs/dark/manageWeb3SignersAcct-0').content,
   },
   miningCoins: {
     light: () => require('../svgJs/light/miningCoins-2').content,

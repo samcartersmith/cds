@@ -132,7 +132,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   shareOnSocialMedia: 2,
   backedByUsDollar: 3,
   ethStakingRewards: 3,
-  ethWrappedStakingRewards: 2,
+  ethWrappedStakingRewards: 3,
   cbEth: 2,
   transferEth: 2,
   ethStakeOrWrap: 2,
@@ -147,8 +147,8 @@ const versionMap: Record<SpotRectangleName, number> = {
   connectWalletTutorial: 2,
   wrapEth: 3,
   eth2SendSell: 3,
-  ethTrading: 3,
-  ethTradingTwo: 2,
+  ethTrading: 4,
+  ethTradingTwo: 3,
   eth2SendSellTwo: 2,
   ethStakeOrWrapTwo: 2,
   wrapEthTwo: 2,
@@ -192,6 +192,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   holdingCrypto: 2,
   scanCode: 1,
   uploadDocument: 0,
+  referralsCoinbaseOne: 0,
 };
 
 export default versionMap;

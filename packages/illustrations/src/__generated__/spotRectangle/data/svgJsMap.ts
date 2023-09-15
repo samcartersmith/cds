@@ -314,16 +314,16 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/ethStakingRewards-3').content,
   },
   ethTrading: {
-    light: () => require('../svgJs/light/ethTrading-3').content,
-    dark: () => require('../svgJs/dark/ethTrading-3').content,
+    light: () => require('../svgJs/light/ethTrading-4').content,
+    dark: () => require('../svgJs/dark/ethTrading-4').content,
   },
   ethTradingTwo: {
-    light: () => require('../svgJs/light/ethTradingTwo-2').content,
-    dark: () => require('../svgJs/dark/ethTradingTwo-2').content,
+    light: () => require('../svgJs/light/ethTradingTwo-3').content,
+    dark: () => require('../svgJs/dark/ethTradingTwo-3').content,
   },
   ethWrappedStakingRewards: {
-    light: () => require('../svgJs/light/ethWrappedStakingRewards-2').content,
-    dark: () => require('../svgJs/dark/ethWrappedStakingRewards-2').content,
+    light: () => require('../svgJs/light/ethWrappedStakingRewards-3').content,
+    dark: () => require('../svgJs/dark/ethWrappedStakingRewards-3').content,
   },
   exploreDecentralizedApps: {
     light: () => require('../svgJs/light/exploreDecentralizedApps-2').content,
@@ -560,6 +560,10 @@ const svgJsMap = {
   referralsBonus: {
     light: () => require('../svgJs/light/referralsBonus-2').content,
     dark: () => require('../svgJs/dark/referralsBonus-2').content,
+  },
+  referralsCoinbaseOne: {
+    light: () => require('../svgJs/light/referralsCoinbaseOne-0').content,
+    dark: () => require('../svgJs/dark/referralsCoinbaseOne-0').content,
   },
   retailUSDCRewards: {
     light: () => require('../svgJs/light/retailUSDCRewards-3').content,

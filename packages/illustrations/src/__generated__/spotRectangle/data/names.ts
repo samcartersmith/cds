@@ -148,6 +148,7 @@ const names: SpotRectangleName[] = [
   'readyToTrade',
   'referralsBitcoin',
   'referralsBonus',
+  'referralsCoinbaseOne',
   'retailUSDCRewards',
   'scanCode',
   'secureAndTrusted',

@@ -284,7 +284,7 @@ const versionMap: Record<PictogramName, number> = {
   assetManagement: 2,
   primeMobileApp: 2,
   securityKey: 2,
-  ManageWeb3Signers: 2,
+  manageWeb3SignersAcct: 0,
   walletAsServiceNavigation: 4,
   planet: 2,
   baseLogoNavigation: 2,

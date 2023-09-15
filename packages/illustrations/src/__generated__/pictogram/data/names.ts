@@ -11,7 +11,6 @@ import type { PictogramName } from '../types/PictogramName';
  */
 const names: PictogramName[] = [
   '2fa',
-  'ManageWeb3Signers',
   'accountsNavigation',
   'add',
   'addCard',
@@ -160,6 +159,7 @@ const names: PictogramName[] = [
   'locationUsa',
   'lock',
   'lowFees',
+  'manageWeb3SignersAcct',
   'miningCoins',
   'mintedNft',
   'mobileCharts',

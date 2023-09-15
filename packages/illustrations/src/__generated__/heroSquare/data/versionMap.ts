@@ -273,7 +273,7 @@ const versionMap: Record<HeroSquareName, number> = {
   coinbaseOneTokenRewards: 2,
   bitcoinGlobe: 3,
   ethStakingRewards: 2,
-  ethereumToWallet: 3,
+  ethereumToWallet: 4,
   globalTransactions: 3,
   polling: 2,
   hiddenCollection: 2,
@@ -293,8 +293,12 @@ const versionMap: Record<HeroSquareName, number> = {
   web3MobileSetupSuccess: 3,
   requestSent: 2,
   web3MobileSetupStart: 2,
-  cloudBacking: 1,
+  cloudBacking: 2,
   stakingMissedReturns: 1,
+  claimCryptoUsername: 0,
+  ensProfilePic: 0,
+  noLongAddresses: 0,
+  referralsCoinbaseOne: 0,
 };
 
 export default versionMap;

@@ -157,9 +157,13 @@ const svgJsMap = {
     light: () => require('../svgJs/light/chickenFishSystemError-2').content,
     dark: () => require('../svgJs/dark/chickenFishSystemError-2').content,
   },
+  claimCryptoUsername: {
+    light: () => require('../svgJs/light/claimCryptoUsername-0').content,
+    dark: () => require('../svgJs/dark/claimCryptoUsername-0').content,
+  },
   cloudBacking: {
-    light: () => require('../svgJs/light/cloudBacking-1').content,
-    dark: () => require('../svgJs/dark/cloudBacking-1').content,
+    light: () => require('../svgJs/light/cloudBacking-2').content,
+    dark: () => require('../svgJs/dark/cloudBacking-2').content,
   },
   coinbaseCard: {
     light: () => require('../svgJs/light/coinbaseCard-2').content,
@@ -505,6 +509,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/encryptedEverything-3').content,
     dark: () => require('../svgJs/dark/encryptedEverything-3').content,
   },
+  ensProfilePic: {
+    light: () => require('../svgJs/light/ensProfilePic-0').content,
+    dark: () => require('../svgJs/dark/ensProfilePic-0').content,
+  },
   error400: {
     light: () => require('../svgJs/light/error400-2').content,
     dark: () => require('../svgJs/dark/error400-2').content,
@@ -534,8 +542,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/estimatedAmount-2').content,
   },
   ethereumToWallet: {
-    light: () => require('../svgJs/light/ethereumToWallet-3').content,
-    dark: () => require('../svgJs/dark/ethereumToWallet-3').content,
+    light: () => require('../svgJs/light/ethereumToWallet-4').content,
+    dark: () => require('../svgJs/dark/ethereumToWallet-4').content,
   },
   ethStakingRewards: {
     light: () => require('../svgJs/light/ethStakingRewards-2').content,
@@ -737,6 +745,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/noFees-3').content,
     dark: () => require('../svgJs/dark/noFees-3').content,
   },
+  noLongAddresses: {
+    light: () => require('../svgJs/light/noLongAddresses-0').content,
+    dark: () => require('../svgJs/dark/noLongAddresses-0').content,
+  },
   notificationsAlt: {
     light: () => require('../svgJs/light/notificationsAlt-3').content,
     dark: () => require('../svgJs/dark/notificationsAlt-3').content,
@@ -864,6 +876,10 @@ const svgJsMap = {
   referralsBitcoin: {
     light: () => require('../svgJs/light/referralsBitcoin-4').content,
     dark: () => require('../svgJs/dark/referralsBitcoin-4').content,
+  },
+  referralsCoinbaseOne: {
+    light: () => require('../svgJs/light/referralsCoinbaseOne-0').content,
+    dark: () => require('../svgJs/dark/referralsCoinbaseOne-0').content,
   },
   referralsWalletPhones: {
     light: () => require('../svgJs/light/referralsWalletPhones-2').content,
