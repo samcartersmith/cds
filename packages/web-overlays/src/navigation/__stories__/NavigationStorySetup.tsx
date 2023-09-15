@@ -46,7 +46,7 @@ export const items: Items = [
 ];
 
 const handlePress = (name: string) => console.log(`Pressed ${name}`);
-const tabs = [
+export const tabs = [
   {
     id: 'all',
     label: 'All',

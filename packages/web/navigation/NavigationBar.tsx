@@ -31,45 +31,58 @@ export type NavigationBarProps = {
    * @default undefined
    */
   children: NonNullable<ReactNode>;
+  /**
+   * Accessibility label for the nav bar
+   */
+  accessibilityLabel?: string;
 };
 
-export const NavigationBar = memo(({ start, children, end, bottom }: NavigationBarProps) => {
-  const prevStart = usePreviousValue<NavigationBarProps['start']>(start);
-  const startNode = useMemo(() => (!start ? prevStart : start), [start, prevStart]);
+export const NavigationBar = memo(
+  ({
+    start,
+    children,
+    end,
+    bottom,
+    accessibilityLabel = 'main navigation',
+  }: NavigationBarProps) => {
+    const prevStart = usePreviousValue<NavigationBarProps['start']>(start);
+    const startNode = useMemo(() => (!start ? prevStart : start), [start, prevStart]);
 
-  return (
-    <ThemeProvider scale={DEFAULT_SCALE} display="contents">
-      <VStack
-        as="nav"
-        position="sticky"
-        top={0}
-        left={0}
-        right={0}
-        background
-        borderedBottom
-        spacingHorizontal={2}
-        minHeight={navigationBarMinHeight}
-        spacingTop={2}
-        gap={2}
-        spacingBottom={bottom ? undefined : 2}
-        zIndex={zIndex.navigation}
-        width="100%"
-      >
-        <HStack alignItems="center" justifyContent="space-between">
-          <VStack>
-            <HStack alignItems="center" justifyContent="flex-start">
+    return (
+      <ThemeProvider scale={DEFAULT_SCALE} display="contents">
+        <VStack
+          as="nav"
+          position="sticky"
+          top={0}
+          left={0}
+          right={0}
+          background
+          borderedBottom
+          spacingHorizontal={2}
+          minHeight={navigationBarMinHeight}
+          spacingTop={2}
+          gap={2}
+          spacingBottom={bottom ? undefined : 2}
+          zIndex={zIndex.navigation}
+          width="100%"
+          accessibilityLabel={accessibilityLabel}
+        >
+          <HStack alignItems="center" justifyContent="space-between" gap={2}>
+            <HStack alignItems="center" justifyContent="flex-start" flexGrow={1} gap={0}>
               <Collapsible collapsed={!start} direction="horizontal">
-                <Box spacingEnd={3}>{startNode}</Box>
+                <Box spacingEnd={2}>{startNode}</Box>
               </Collapsible>
-              <VStack gap={2}>{children}</VStack>
+              <HStack alignItems="center" flexGrow={1} gap={1}>
+                {children}
+              </HStack>
             </HStack>
-          </VStack>
-          {end}
-        </HStack>
-        {bottom}
-      </VStack>
-    </ThemeProvider>
-  );
-});
+            {end}
+          </HStack>
+          {bottom}
+        </VStack>
+      </ThemeProvider>
+    );
+  },
+);
 
 NavigationBar.displayName = 'NavigationBar';

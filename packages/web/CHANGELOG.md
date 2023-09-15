@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.11.0 (9/15/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-2151] update: refactor NavigationBar to support Identity team. [[#2263](https://github.cbhq.net/frontend/cds/pull/2263)] [[DX-2151](https://jira.coinbase-corp.com/browse/DX-2151)]
+
 ## 5.10.0 (9/14/2023 PST)
 
 #### 🚀 Updates
