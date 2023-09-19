@@ -1,6 +1,6 @@
 ---
 title: v5.0.0 Migration Guide
-slug: /guides/migration/5-0-0
+slug: /guides/migration/web-and-mobile/5-0-0
 ---
 
 ## 5.0.0
@@ -15,7 +15,7 @@ Major changes include:
 - React 18 Bump
 - Reanimated V3.1.0 Bump
 - Update A11y styling for VStack 'ul' components
-- [Q2 2023 Deprecations](../../../resources/deprecations/Q22023) were deleted. Use the `cds-migrator` script for `5.0.0` to automatically migrate most deprecations or output migration guidance for manual migrations.
+- [Q22023 Deprecations](/resources/deprecations/Q22023) were deleted. Use the `cds-migrator` script for `5.0.0` to automatically migrate most deprecations or output migration guidance for manual migrations.
 
 ### Happy path upgrade steps {#migrator}
 
@@ -107,7 +107,7 @@ We removed web api styling (margin-top, margin-bottom, padding-left) for `<Vstac
 
 ### Q22023 Deprecations {#deprecations}
 
-See [Q22023 Deprecations](../../../resources/deprecations/Q22023) for the full list of deprecations as well as migration guidance. Most deprecations are automatically migratable using `cds-migrator`, however there are a few known issues which require manual review for all migrations:
+See [Q22023 Deprecations](/resources/deprecations/Q22023) for the full list of deprecations as well as migration guidance. Most deprecations are automatically migratable using `cds-migrator`, however there are a few known issues which require manual review for all migrations:
 
 - Deprecations that require manual migration will be outputted to `cds-migrator-output.md` at the root of the repo
 - Dynamic, conditional, and spread props (`...props`) are not automatically migratable, eg: `<Button variant={variant} />` where variant is a dynamic prop. The migrator will output a message to manually migrate these instances. Make sure you run all affected applications to check for runtime errors after migrating.

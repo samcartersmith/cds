@@ -920,10 +920,26 @@ const sidebars = {
           label: 'Migration Guides',
           items: [
             { type: 'doc', id: 'guides/migration/overview', label: 'Overview' },
-            { type: 'doc', id: 'guides/migration/5-0-0', label: '5.0.0' },
-            { type: 'doc', id: 'guides/migration/4-0-0', label: '4.0.0' },
-            { type: 'doc', id: 'guides/migration/3-0-0', label: '3.0.0' },
-            { type: 'doc', id: 'guides/migration/0-41-0', label: '0.41.0' },
+            {
+              type: 'category',
+              label: 'Web and Mobile',
+              items: [
+                { type: 'doc', id: 'guides/migration/web-and-mobile/5-0-0', label: '5.0.0' },
+                { type: 'doc', id: 'guides/migration/web-and-mobile/4-0-0', label: '4.0.0' },
+                { type: 'doc', id: 'guides/migration/web-and-mobile/3-0-0', label: '3.0.0' },
+                { type: 'doc', id: 'guides/migration/web-and-mobile/0-41-0', label: '0.41.0' },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Icons',
+              items: [{ type: 'doc', id: 'guides/migration/icons/2-0-0', label: '2.0.0' }],
+            },
+            {
+              type: 'category',
+              label: 'Illustrations',
+              items: [{ type: 'doc', id: 'guides/migration/illustrations/2-0-0', label: '2.0.0' }],
+            },
           ],
         },
         'cds/support',
