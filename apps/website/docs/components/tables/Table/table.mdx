@@ -19,6 +19,42 @@ keywords:
   - useSortableCell
 ---
 
-import OldPage from './_old-page.mdx';
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Usage, { toc as usageToc } from './_usage.mdx';
+import Example, { toc as exampleToc } from './_example.mdx';
+import CompactExample, { toc as compactExampleToc } from './_compactExample.mdx';
+import StickyExample, { toc as stickyExampleToc } from './_stickyExample.mdx';
+import SortingExample, { toc as sortingExampleToc } from './_sortingExample.mdx';
+import DomExample, { toc as domExampleToc } from './_domExample.mdx';
+import A11Y, { toc as a11yToc } from './_a11y.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Page fallback={<OldPage />} />
+<Tabs groupId="page">
+  <TabItem value="guidelines" label="Guidelines" toc={[...usageToc]}>
+    <Usage />
+  </TabItem>
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[
+      ...metadataToc,
+      ...a11yToc,
+      ...exampleToc,
+      ...compactExampleToc,
+      ...stickyExampleToc,
+      ...domExampleToc,
+      ...sortingExampleToc,
+      ...implementationToc,
+    ]}
+  >
+    <Metadata />
+    <A11Y />
+    <Example />
+    <CompactExample />
+    <StickyExample />
+    <DomExample />
+    <SortingExample />
+    <Implementation />
+  </TabItem>
+
+</Tabs>
