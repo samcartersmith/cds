@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.15 (9/19/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix(CDS Migrator): upgradeCdsPackages works for root now. [[#2268](https://github.cbhq.net/frontend/cds/pull/2268)]
+
 ## 0.1.14 (9/12/2023 PST)
 
 #### 🐞 Fixes

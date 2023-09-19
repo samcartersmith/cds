@@ -18,14 +18,21 @@ function hasCdsCoreDependency(dep: string) {
 
 export type CdsDependencyCheck = ReturnType<typeof checkHasCdsDependency>;
 
+type Params = {
+  tree: Tree;
+  project?: ProjectConfiguration;
+  checkRoot?: boolean;
+};
+
 /**
  * Checks if the project uses a CDS package as a dependency
  * @param tree - The NX @nrwl/devkit tree that gets passed to a generator
  * @param project - The project configuration
  * @returns { hasCdsDependency: boolean, hasCoreCdsDependency: boolean, packageJsonPath: string, dependencies: Partial<Record<string, string>>, devDependencies: Partial<Record<string, string>>, peerDependencies: Partial<Record<string, string>>}
  */
-export function checkHasCdsDependency(tree: Tree, project: ProjectConfiguration) {
-  const packageJsonPath = joinPathFragments(project.root, `package.json`);
+export function checkHasCdsDependency({ tree, project, checkRoot }: Params) {
+  const packageJsonPath =
+    !checkRoot && project ? joinPathFragments(project.root, `package.json`) : `package.json`;
 
   let dependencies: Partial<Record<string, string>> | undefined;
   let devDependencies: Partial<Record<string, string>> | undefined;

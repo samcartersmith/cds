@@ -9,33 +9,13 @@ type PackageVersionType = Record<string, string>;
 type DepsToAddMap = Record<PackageName, PackageVersionType>;
 type DepType = 'deps' | 'devDeps' | 'peerDeps';
 
-function updateDeps(
-  depCheck: CdsDependencyCheck,
-  pkg: keyof DepsToAddMap,
-  onComplete: (type: DepType, val?: Record<string, string>) => void,
-  depsToAddMap: DepsToAddMap,
-) {
-  const { dependencies, devDependencies, peerDependencies } = depCheck;
-
-  if (dependencies?.[pkg]) {
-    onComplete('deps', depsToAddMap[pkg]);
-  }
-
-  if (devDependencies?.[pkg]) {
-    onComplete('devDeps', depsToAddMap[pkg]);
-  }
-
-  if (peerDependencies?.[pkg]) {
-    onComplete('peerDeps', depsToAddMap[pkg]);
-  }
-}
-
-function updatePeerDependencies(
+export function updatePeerDependencies(
   tree: Tree,
   depsToAdd: Partial<DepsToAddMap>,
   pathToProject?: string,
 ) {
-  updateJson(tree, `${pathToProject}/package.json`, (json) => {
+  const packageJsonPath = pathToProject ? `${pathToProject}/package.json` : 'package.json';
+  updateJson(tree, packageJsonPath, (json) => {
     Object.entries(depsToAdd).forEach(([pkg, version]) => {
       if (json.peerDependencies?.[pkg]) {
         // eslint-disable-next-line no-param-reassign
@@ -48,62 +28,146 @@ function updatePeerDependencies(
   });
 }
 
+type DepCheckReturnType = {
+  depsToAdd: Partial<DepsToAddMap>;
+  devDepsToAdd: Partial<DepsToAddMap>;
+  peerDepsToAdd: Partial<DepsToAddMap>;
+  hasUpdates: boolean;
+};
+
+function updateDeps(
+  depCheck: CdsDependencyCheck,
+  pkg: keyof DepsToAddMap,
+  onComplete: (type: DepType, val?: Record<string, string>) => DepCheckReturnType,
+  depsToAddMap: DepsToAddMap,
+) {
+  const { dependencies, devDependencies, peerDependencies } = depCheck;
+
+  if (dependencies?.[pkg]) {
+    return onComplete('deps', depsToAddMap[pkg]);
+  }
+
+  if (devDependencies?.[pkg]) {
+    return onComplete('devDeps', depsToAddMap[pkg]);
+  }
+
+  if (peerDependencies?.[pkg]) {
+    return onComplete('peerDeps', depsToAddMap[pkg]);
+  }
+
+  return {
+    depsToAdd: {},
+    devDepsToAdd: {},
+    peerDepsToAdd: {},
+    hasUpdates: false,
+  };
+}
+
+function onDepCheckComplete(type: DepType, val?: Record<string, string>): DepCheckReturnType {
+  let depsToAdd: Partial<DepsToAddMap> = {};
+  let devDepsToAdd: Partial<DepsToAddMap> = {};
+  let peerDepsToAdd: Partial<DepsToAddMap> = {};
+  let hasUpdates = false;
+
+  if (val) {
+    hasUpdates = true;
+  }
+  switch (type) {
+    case 'deps':
+      depsToAdd = {
+        ...depsToAdd,
+        ...val,
+      };
+      break;
+    case 'devDeps':
+      devDepsToAdd = {
+        ...devDepsToAdd,
+        ...val,
+      };
+      break;
+    case 'peerDeps':
+      peerDepsToAdd = {
+        ...peerDepsToAdd,
+        ...val,
+      };
+      break;
+    default:
+      break;
+  }
+
+  return {
+    depsToAdd,
+    devDepsToAdd,
+    peerDepsToAdd,
+    hasUpdates,
+  };
+}
+
 export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap) {
   logDebug('Upgrading necessary CDS dependencies');
 
   const projects = getProjects(tree);
   const packageJsonsWithUpdates: string[] = [];
 
-  projects.forEach((project) => {
-    const depCheck = checkHasCdsDependency(tree, project);
-    let depsToAdd: Partial<DepsToAddMap> = {};
-    let devDepsToAdd: Partial<DepsToAddMap> = {};
-    let peerDepsToAdd: Partial<DepsToAddMap> = {};
-    let hasUpdates = false;
+  const rootDepCheck = checkHasCdsDependency({
+    tree,
+    checkRoot: true,
+  });
 
-    function onDepCheckComplete(type: DepType, val?: Record<string, string>) {
-      if (val) {
-        hasUpdates = true;
-      }
-      switch (type) {
-        case 'deps':
-          depsToAdd = {
-            ...depsToAdd,
-            ...val,
-          };
-          break;
-        case 'devDeps':
-          devDepsToAdd = {
-            ...devDepsToAdd,
-            ...val,
-          };
-          break;
-        case 'peerDeps':
-          peerDepsToAdd = {
-            ...peerDepsToAdd,
-            ...val,
-          };
-          break;
-        default:
-          break;
-      }
-    }
-
-    packageNames.forEach((pkg) => updateDeps(depCheck, pkg, onDepCheckComplete, depsToAddMap));
-
-    if (hasUpdates) {
-      const { packageJsonPath } = depCheck;
-      // casting because addDependenciesToPackageJson expects a less specific type
-      addDependenciesToPackageJson(
-        tree,
-        depsToAdd as Record<string, string>,
-        devDepsToAdd as Record<string, string>,
-        packageJsonPath,
+  if (rootDepCheck.hasCdsDependency) {
+    packageNames.forEach((pkg) => {
+      const { depsToAdd, devDepsToAdd, peerDepsToAdd, hasUpdates } = updateDeps(
+        rootDepCheck,
+        pkg,
+        onDepCheckComplete,
+        depsToAddMap,
       );
-      if (peerDepsToAdd) {
-        updatePeerDependencies(tree, peerDepsToAdd, project.root);
+      if (hasUpdates) {
+        const { packageJsonPath } = rootDepCheck;
+        // casting because addDependenciesToPackageJson expects a less specific type
+        addDependenciesToPackageJson(
+          tree,
+          depsToAdd as Record<string, string>,
+          devDepsToAdd as Record<string, string>,
+          packageJsonPath,
+        );
+        if (peerDepsToAdd) {
+          updatePeerDependencies(tree, peerDepsToAdd);
+        }
+        if (!packageJsonsWithUpdates.includes(packageJsonPath)) {
+          packageJsonsWithUpdates.push(packageJsonPath);
+        }
       }
-      packageJsonsWithUpdates.push(packageJsonPath);
+    });
+  }
+
+  projects.forEach((project) => {
+    const depCheck = checkHasCdsDependency({ tree, project });
+    if (depCheck.hasCdsDependency) {
+      packageNames.forEach((pkg) => {
+        const { depsToAdd, devDepsToAdd, peerDepsToAdd, hasUpdates } = updateDeps(
+          depCheck,
+          pkg,
+          onDepCheckComplete,
+          depsToAddMap,
+        );
+        if (hasUpdates) {
+          const { packageJsonPath } = depCheck;
+          // casting because addDependenciesToPackageJson expects a less specific type
+          addDependenciesToPackageJson(
+            tree,
+            depsToAdd as Record<string, string>,
+            devDepsToAdd as Record<string, string>,
+            packageJsonPath,
+          );
+          if (peerDepsToAdd) {
+            updatePeerDependencies(tree, peerDepsToAdd, project.root);
+          }
+          if (!packageJsonsWithUpdates.includes(packageJsonPath)) {
+            packageJsonsWithUpdates.push(packageJsonPath);
+          }
+        }
+      });
     }
   });
 

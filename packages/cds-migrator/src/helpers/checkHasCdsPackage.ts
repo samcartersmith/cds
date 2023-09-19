@@ -8,6 +8,13 @@ const lottieFilesPackage = '@cbhq/cds-lottie-files';
 const depsToCheck = [webPackage, mobilePackage, commonPackage, lottieFilesPackage];
 export type CdsPackages = (typeof depsToCheck)[number];
 
+type Params = {
+  packageName: CdsPackages;
+  tree: Tree;
+  project?: ProjectConfiguration;
+  checkRoot?: boolean;
+};
+
 /**
  * Checks if the project uses a specified CDS package as a dependency
  * @param packageName - The name of the CDS package you are looking for, eg: @cbhq/cds-web
@@ -15,12 +22,9 @@ export type CdsPackages = (typeof depsToCheck)[number];
  * @param project - The project configuration
  * @returns boolean
  */
-export function checkHasCdsPackage(
-  packageName: CdsPackages,
-  tree: Tree,
-  project: ProjectConfiguration,
-): boolean {
-  const packageJsonPath = joinPathFragments(project.root, `package.json`);
+export function checkHasCdsPackage({ packageName, tree, project, checkRoot }: Params): boolean {
+  const packageJsonPath =
+    !checkRoot && project ? joinPathFragments(project.root, `package.json`) : `package.json`;
 
   if (tree.isFile(packageJsonPath)) {
     const pkg = readJson<PackageJson>(tree, packageJsonPath);

@@ -39,10 +39,10 @@ export default async function parseSourceFiles(
       let projectHasCdsDependency = false;
       if (packageNames?.length) {
         projectHasCdsDependency = packageNames?.some((pkg) =>
-          checkHasCdsPackage(pkg, tree, projectConfig),
+          checkHasCdsPackage({ packageName: pkg, tree, project: projectConfig }),
         );
       } else {
-        const { hasCdsDependency } = checkHasCdsDependency(tree, projectConfig);
+        const { hasCdsDependency } = checkHasCdsDependency({ tree, project: projectConfig });
         if (hasCdsDependency) {
           projectHasCdsDependency = true;
         }
