@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.11.1 (9/15/2023 PST)
+
+#### 🐞 Fixes
+
+- Deprecated frontier flags. [[#2264](https://github.cbhq.net/frontend/cds/pull/2264)] [[DX-2297](https://jira.coinbase-corp.com/browse/DX-2297)]
+
 ## 5.11.0 ((9/15/2023, 10:53 AM PST))
 
 This is an artificial version bump with no new change.

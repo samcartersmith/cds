@@ -6,6 +6,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.16 (9/15/2023 PST)
+
+#### 🚀 Updates
+
+- Added component migration script for Illustration. [[#2264](https://github.cbhq.net/frontend/cds/pull/2264)] [[DX-2297](https://jira.coinbase-corp.com/browse/DX-2297)]
+- Added prop migration script for frontier flag deprecation. [[#2264](https://github.cbhq.net/frontend/cds/pull/2264)] [[DX-2297](https://jira.coinbase-corp.com/browse/DX-2297)]
+
 ## 0.1.15 (9/19/2023 PST)
 
 #### 🐞 Fixes

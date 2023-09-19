@@ -55,6 +55,42 @@ export const Q42023: Deprecation = {
   ],
   props: [
     {
+      name: 'frontier',
+      components: ['FeatureFlagProvider', 'Card', 'Button', 'Sparkline', 'Typography'],
+      type: 'removed',
+      package: 'common',
+    },
+    {
+      name: 'frontierTypography',
+      components: ['FeatureFlagProvider', 'Card', 'Button', 'Sparkline', 'Typography'],
+      type: 'removed',
+      package: 'common',
+    },
+    {
+      name: 'frontierButton',
+      components: ['FeatureFlagProvider', 'Card', 'Button', 'Sparkline', 'Typography'],
+      type: 'removed',
+      package: 'common',
+    },
+    {
+      name: 'frontierColor',
+      components: ['FeatureFlagProvider', 'Card', 'Button', 'Sparkline', 'Typography'],
+      type: 'removed',
+      package: 'common',
+    },
+    {
+      name: 'frontierCard',
+      components: ['FeatureFlagProvider', 'Card', 'Button', 'Sparkline', 'Typography'],
+      type: 'removed',
+      package: 'common',
+    },
+    {
+      name: 'frontierSparkline',
+      components: ['FeatureFlagProvider', 'Card', 'Button', 'Sparkline', 'Typography'],
+      type: 'removed',
+      package: 'common',
+    },
+    {
       name: 'shouldApplyDarkModeEnhacements',
       components: ['CellMedia', 'DotSymbol', 'RemoteImage'],
       type: 'api',

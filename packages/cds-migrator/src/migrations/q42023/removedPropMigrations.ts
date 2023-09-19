@@ -14,14 +14,20 @@ const filterSourceFiles = (path: string) => {
   const sourceFile = fs.readFileSync(path, 'utf-8');
   const pathsForRemovedProps: string[] = [];
   const removedPropsList: string[] = [];
-  Object.values(removedProps).forEach(({ path: removedPropPath, prop }) => {
-    removedPropsList.push(prop);
+
+  Object.values(removedProps).forEach(({ path: removedPropPath, props }) => {
+    console.log('props', props);
+    removedPropsList.push(...props);
     if (Array.isArray(removedPropPath)) {
       removedPropPath.forEach((p) => pathsForRemovedProps.push(p));
     } else {
       pathsForRemovedProps.push(removedPropPath);
     }
   });
+
+  console.log('removedPropsList', removedPropsList);
+  console.log('pathsForRemovedProps', pathsForRemovedProps);
+
   const hasImportForRemovedProp = pathsForRemovedProps.some((p) => sourceFile.includes(p));
   const hasRemovedProp = removedPropsList.some((p) => sourceFile.includes(p));
   return hasImportForRemovedProp && hasRemovedProp;
@@ -35,16 +41,16 @@ const callback = (args: ParseJsxElementsCbParams) => {
   });
   const removedPropConfig = removedProps[actualComponentName ?? component];
   if (!removedPropConfig) return;
-  const { prop, replacement } = removedPropConfig;
+  const { props, replacement } = removedPropConfig;
 
   searchAndProcessComponent({
     jsx,
     componentName: component,
     callback: (propName) => {
-      if (prop === propName) {
+      if (props.includes(propName)) {
         const title = `The ${propName} prop has been removed from the ${
           actualComponentName ?? component
-        } component. Please ${replacement}.`;
+        } component. ${replacement}.`;
         const outputMessage =
           'All manual migrations are output to the root of the repo in a file called:';
         const outputPath = output.underline(`${args.tree.root}/cds-migrator-output.md`);

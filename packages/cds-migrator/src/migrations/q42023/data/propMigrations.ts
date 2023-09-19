@@ -111,6 +111,29 @@ export const catchAllPropMigrations: RenameAttributeMapShape[] = [
   },
 ];
 
+type RemovedProp = {
+  props: string | string[];
+  replacement: string;
+  /** component path */
+  path: string | string[];
+};
+
+export const removedProps: Record<string, RemovedProp> = {
+  FeatureFlagProvider: {
+    props: [
+      'frontier',
+      'frontierTypography',
+      'frontierColors',
+      'frontierCard',
+      'frontierButton',
+      'frontierSparkline',
+    ],
+    replacement:
+      'All frontier styles have been adopted with CDS components. Please delete the usage of this flag & resolve and visual regressions',
+    path: ['web/system', 'mobile/system'],
+  },
+};
+
 // cell components use (inner|outer)Spacing with keys of offset*
 const cellSpacingComponents = ['Cell', 'ContentCell', 'ListCell'];
 
