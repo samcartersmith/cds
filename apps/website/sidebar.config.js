@@ -71,8 +71,8 @@ const sidebars = {
           customProps: { kbar: { description: 'Deliver clear, functional layouts.' } },
         },
         {
-          type: 'doc',
-          id: 'foundation/international',
+          type: 'category',
+          label: 'International',
           customProps: {
             kbar: {
               description:
@@ -80,6 +80,20 @@ const sidebars = {
             },
             tag: 'new',
           },
+          items: [
+            {
+              type: 'doc',
+              id: 'foundation/international/design',
+              label: 'Design',
+              customProps: { tag: 'new' },
+            },
+            {
+              type: 'doc',
+              id: 'foundation/international/content',
+              label: 'Content',
+              customProps: { tag: 'new' },
+            },
+          ],
         },
         {
           type: 'category',
