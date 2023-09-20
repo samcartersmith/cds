@@ -1,6 +1,6 @@
 # Commands
 
-The CDS website (which can be accessed at [go/cds](https://cds.cbhq.net)) is built using using Docusaurus 2 and is where we document CDS principles, best practices, components, hooks and more.
+The CDS website (which can be accessed at [go/cds](https://cds.cbhq.net)) is built using using Docusaurus 2 and Contentful (see [contentful docs](./contentful.md)) and is where we document CDS principles, best practices, components, hooks and more.
 
 This website is very important because it gives the consumers of the design system a centralized location to identify the best way for their team to leverage the design system.
 
