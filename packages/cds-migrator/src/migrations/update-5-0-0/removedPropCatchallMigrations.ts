@@ -1,9 +1,13 @@
 import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
-import { createMigration, CreateMigrationParams } from '../../helpers/createMigration';
-import { generateManualMigrationOutput } from '../../helpers/generateManualMigrationOutput';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
+import {
+  createMigration,
+  CreateMigrationParams,
+  generateManualMigrationOutput,
+  logDebug,
+  logWarning,
+} from '../../helpers';
 
 import { removedPropsCatchAll } from './data/propMigrations';
 

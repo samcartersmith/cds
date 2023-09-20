@@ -3,7 +3,7 @@ import {
   PropToAttributeValue,
   PropToAttributeValueMigrationShape,
   RenameValueMapShape,
-} from '../../../helpers/types';
+} from '../../../helpers';
 
 // Migrations for both web and mobile packages
 export const migrateBooleanPropToAttributeAndValueMigrations: PropToAttributeValueMigrationShape = {

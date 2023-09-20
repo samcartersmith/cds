@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.16 (9/19/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix(CDS Migrator): Consolidated types, shallow imports, and misc cleanup. [[#2266](https://github.cbhq.net/frontend/cds/pull/2266)]
+
 ## 0.1.16 (9/15/2023 PST)
 
 #### 🚀 Updates

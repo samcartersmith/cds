@@ -1,12 +1,16 @@
 import { Tree } from '@nrwl/devkit';
 
-import { checkFileIncludesImport } from '../../helpers/checkFileIncludesImport';
-import { createMigration, CreateMigrationParams } from '../../helpers/createMigration';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
-import { renameFunction } from '../../helpers/renameFunction';
-import { replaceImportedModule } from '../../helpers/replaceImportedModule';
-import { replaceImportPath } from '../../helpers/replaceImportPath';
-import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
+import {
+  checkFileIncludesImport,
+  createMigration,
+  CreateMigrationParams,
+  logDebug,
+  logWarning,
+  renameFunction,
+  replaceImportedModule,
+  replaceImportPath,
+  writeMigrationToFile,
+} from '../../helpers';
 
 import { functionMigrations } from './data/functionMigrations';
 

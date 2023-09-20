@@ -1,8 +1,4 @@
-type ParamMigration = {
-  name: string;
-  path: string;
-  params: string[];
-};
+import { ParamMigration } from '../../../helpers';
 
 export const removedParamMigrations: ParamMigration[] = [
   {

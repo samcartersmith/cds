@@ -1,12 +1,15 @@
 import { output, Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
-import { createJsxMigration } from '../../helpers/createJsxMigration';
-import { generateManualMigrationOutput } from '../../helpers/generateManualMigrationOutput';
-import { getComponentFromJsx } from '../../helpers/getComponentFromJsx';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
-import { ParseJsxElementsCbParams } from '../../helpers/parseJsxElements';
-import { searchAndProcessComponent } from '../../helpers/searchAndProcessComponent';
+import {
+  createJsxMigration,
+  generateManualMigrationOutput,
+  getComponentFromJsx,
+  logDebug,
+  logWarning,
+  ParseJsxElementsCbParams,
+  searchAndProcessComponent,
+} from '../../helpers';
 
 import { removedProps } from './data/propMigrations';
 

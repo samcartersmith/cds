@@ -96,7 +96,7 @@ const callback = (args: CreateMigrationParams) => {
       const hasDecompedPackageDep = checkHasDependency(pkg, tree, projectConfig);
       if (!hasDecompedPackageDep && migrationConfig) {
         const packageJsonPath = joinPathFragments(projectConfig.root, 'package.json');
-        addDependenciesToPackageJson(tree, { [pkg]: migrationConfig.version }, {}, packageJsonPath);
+        addDependenciesToPackageJson(tree, { pkg: 'latest' }, {}, packageJsonPath);
         logSuccess(`Added ${pkg} to ${projectConfig.root}/package.json`);
       }
     });

@@ -1,13 +1,15 @@
 import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
-import { checkFileIncludesRenamedValue } from '../../helpers/checkFileIncludesRenamedValue';
-import { checkIsComponentWithMigrations } from '../../helpers/checkIsComponentWithMigrations';
-import { createJsxMigration } from '../../helpers/createJsxMigration';
-import { logDebug } from '../../helpers/loggingHelpers';
-import { ParseJsxElementsCbParams } from '../../helpers/parseJsxElements';
-import { renameJsxAttributeValue } from '../../helpers/renameJsxAttributeValue';
-import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
+import {
+  checkFileIncludesRenamedValue,
+  checkIsComponentWithMigrations,
+  createJsxMigration,
+  logDebug,
+  ParseJsxElementsCbParams,
+  renameJsxAttributeValue,
+  writeMigrationToFile,
+} from '../../helpers';
 
 import { illustrationRenames } from './data/illustrationRenames';
 

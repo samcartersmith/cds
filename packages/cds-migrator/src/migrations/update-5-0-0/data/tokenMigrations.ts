@@ -1,13 +1,10 @@
+import { TokenMigration } from '../../../helpers';
+
 export const removedPaths = [
   'web/deprecated/navigation/navigationStyles',
   'web/deprecated/navigation/navigationTokens',
   'web/styles/elevation',
 ];
-
-type TokenMigration = {
-  path: string;
-  warning?: string;
-};
 
 export const tokenMigrations: TokenMigration[] = [
   {

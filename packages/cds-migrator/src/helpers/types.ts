@@ -60,3 +60,57 @@ export type AttributeValueToBooleanType = Record<
 
 export const objectKeys = <Obj>(obj: { [key in keyof Obj]: Obj[key] }) =>
   Object.keys(obj) as Extract<keyof Obj, string>[];
+
+export type ComponentMigration = {
+  name: string;
+  path: Record<string, string>;
+  /** what component replaces it */
+  replacement?: string;
+  /** custom warning message to show in console and cds-migrator-output.md */
+  warning?: string;
+};
+
+export type RemovedComponent = {
+  name: string;
+  path: string;
+  /** what component replaces it */
+  replacement?: string;
+};
+
+export type FunctionMigration = {
+  name: string;
+  path: Record<string, string>;
+  /** function name that replaces it */
+  replacement: string;
+};
+
+export type ParamMigration = {
+  name: string;
+  path: string;
+  params: string[];
+};
+
+export type PathMigrations = Record<string, string>;
+
+export type TokenMigration = {
+  path: string;
+  warning?: string;
+};
+
+export type ManualPropMigrationType = Record<
+  string,
+  {
+    // Component attribute
+    props: string[];
+    // Prop value as object, get the keys eg: <Cell innerSpacing={{ offsetTop: 10 }} /> => ['offsetTop']
+    valueKeys: string[];
+  }
+>;
+
+export type DecompedMigration = {
+  exports: string[];
+  /** shallow directory, will check that import source includes this string */
+  oldDir: string;
+  /** shallow directory */
+  newDir: string;
+};

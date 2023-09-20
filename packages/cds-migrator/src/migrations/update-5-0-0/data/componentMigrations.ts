@@ -1,9 +1,4 @@
-type ComponentMigration = {
-  name: string;
-  path: Record<string, string>;
-  replacement?: string;
-  warning?: string;
-};
+import { ComponentMigration, RemovedComponent } from '../../../helpers';
 
 const warningText =
   'This component has been replaced by a component with a different API. Please migrate props manually. Refer to go/cds-deprecations for API migration guidance.';
@@ -71,12 +66,6 @@ export const oneToOneMigrations: ComponentMigration[] = [
     replacement: 'Tooltip',
   },
 ];
-
-type RemovedComponent = {
-  name: string;
-  path: string;
-  replacement?: string;
-};
 
 export const removedComponents: RemovedComponent[] = [
   {

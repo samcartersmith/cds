@@ -1,15 +1,18 @@
 import { Tree } from '@nrwl/devkit';
 import { SourceFile } from 'ts-morph';
 
-import { generateManualMigrationOutput } from '../../helpers';
-import { checkFileIncludesImport } from '../../helpers/checkFileIncludesImport';
-import { checkFileIncludesRenamedValue } from '../../helpers/checkFileIncludesRenamedValue';
-import { createJsxMigration } from '../../helpers/createJsxMigration';
-import { getComponentFromJsx } from '../../helpers/getComponentFromJsx';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
-import { ParseJsxElementsCbParams } from '../../helpers/parseJsxElements';
-import { replaceKey } from '../../helpers/replaceKey';
-import { searchAndProcessComponent } from '../../helpers/searchAndProcessComponent';
+import {
+  checkFileIncludesImport,
+  checkFileIncludesRenamedValue,
+  createJsxMigration,
+  generateManualMigrationOutput,
+  getComponentFromJsx,
+  logDebug,
+  logWarning,
+  ParseJsxElementsCbParams,
+  replaceKey,
+  searchAndProcessComponent,
+} from '../../helpers';
 
 import { manualPropMigrations } from './data/propMigrations';
 

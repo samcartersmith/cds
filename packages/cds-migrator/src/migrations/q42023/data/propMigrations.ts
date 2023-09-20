@@ -1,6 +1,7 @@
 import {
   AttributeRenameMapShape,
   AttributeValueToBooleanType,
+  ManualPropMigrationType,
   objectKeys,
   RenameAttributeMapShape,
 } from '../../../helpers';
@@ -136,16 +137,6 @@ export const removedProps: Record<string, RemovedProp> = {
 
 // cell components use (inner|outer)Spacing with keys of offset*
 const cellSpacingComponents = ['Cell', 'ContentCell', 'ListCell'];
-
-type ManualPropMigrationType = Record<
-  string,
-  {
-    // Component attribute
-    props: string[];
-    // Prop value as object, get the keys eg: <Cell innerSpacing={{ offsetTop: 10 }} /> => ['offsetTop']
-    valueKeys: string[];
-  }
->;
 
 export const manualPropMigrations = cellSpacingComponents.reduce((acc, component) => {
   acc[component] = {

@@ -1,9 +1,4 @@
-type ComponentMigration = {
-  name: string;
-  path: Record<string, string>;
-  replacement?: string;
-  warning?: string;
-};
+import { ComponentMigration } from '../../../helpers';
 
 type RemovedComponent = {
   name: string;

@@ -9,7 +9,7 @@ import {
   logDebug,
   ParseJsxElementsCbParams,
   searchAndProcessComponent,
-} from '../../helpers/index';
+} from '../../helpers';
 
 /*
  * If JSX Element is VStack, then get attributes.

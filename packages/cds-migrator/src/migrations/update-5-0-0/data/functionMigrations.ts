@@ -1,8 +1,4 @@
-type FunctionMigration = {
-  name: string;
-  path: Record<string, string>;
-  replacement: string;
-};
+import { FunctionMigration } from '../../../helpers';
 
 export const functionMigrations: FunctionMigration[] = [
   {

@@ -1,5 +1,7 @@
+import { PathMigrations } from '../../../helpers';
+
 /** These are essentially redirects. Component API and and name remain the same */
-export const pathMigrations: Record<string, string> = {
+export const pathMigrations: PathMigrations = {
   '@cbhq/cds-web/layout/Card': '@cbhq/cds-web/cards/Card',
   '@cbhq/cds-web/deprecated/navigation/Sidebar': '@cbhq/cds-web/navigation/Sidebar',
   '@cbhq/cds-web/overlays/PopoverMenu/MenuItem': '@cbhq/cds-web/dropdown/MenuItem',

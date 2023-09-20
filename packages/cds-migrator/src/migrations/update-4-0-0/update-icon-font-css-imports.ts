@@ -1,10 +1,13 @@
 import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
-import { createMigration, CreateMigrationParams } from '../../helpers/createMigration';
-import { logDebug } from '../../helpers/loggingHelpers';
-import { replaceImportPath } from '../../helpers/replaceImportPath';
-import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
+import {
+  createMigration,
+  CreateMigrationParams,
+  logDebug,
+  replaceImportPath,
+  writeMigrationToFile,
+} from '../../helpers';
 
 const oldPath = '@cbhq/cds-web/styles/icon-font.css';
 const newPath = '@cbhq/cds-icons/fonts/web/icon-font.css';
