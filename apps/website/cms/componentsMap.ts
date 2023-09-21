@@ -2,6 +2,7 @@ import { ComponentMapValue } from '@cb/cms';
 import { Banner } from '@cbhq/cds-web/banner/Banner';
 
 import { Accordion } from './misc/Accordion';
+import { Admonition } from './misc/Admonition';
 import { CodePlayground } from './misc/CodePlayground';
 import { Embedded } from './misc/Embedded';
 import { Link } from './misc/Link';
@@ -36,4 +37,5 @@ export const componentsMap = {
   moduleCardList: CardList,
   moduleCard: Card,
   moduleBanner: Banner,
+  miscAdmonition: Admonition,
 } as unknown as Record<string, ComponentMapValue>;
