@@ -2,14 +2,11 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useTimer } from '../useTimer';
 
-jest.useFakeTimers();
-jest.spyOn(global, 'setTimeout');
-jest.spyOn(global, 'clearTimeout');
-
 describe('useTimer', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-    jest.clearAllTimers();
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.spyOn(global, 'setTimeout');
+    jest.spyOn(global, 'clearTimeout');
   });
 
   it('returns functions', () => {
@@ -49,7 +46,7 @@ describe('useTimer', () => {
     const remainingTime = result.current.pause();
 
     expect(remainingTime).toBe(expectedRemainingTime);
-    expect(clearTimeout).toHaveBeenCalledTimes(2);
+    expect(clearTimeout).toHaveBeenCalledTimes(1);
   });
   it('resumes timer', async () => {
     const { result } = renderHook(() => useTimer());
@@ -73,6 +70,6 @@ describe('useTimer', () => {
     result.current.start(callback, duration);
     result.current.clear();
 
-    expect(clearTimeout).toHaveBeenCalledTimes(2);
+    expect(clearTimeout).toHaveBeenCalledTimes(1);
   });
 });

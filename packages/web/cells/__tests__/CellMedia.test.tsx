@@ -6,20 +6,13 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 import { Pictogram } from '../../illustrations';
 import { CellMedia } from '../CellMedia';
 
-const useScaleConditionalSpy = jest.spyOn(
-  require('@cbhq/cds-common/scale/useScaleConditional'),
-  'useScaleConditional',
-) as jest.SpyInstance<number, [CellScaleDensity]>;
-
 describe('CellMedia', () => {
-  afterEach(() => {
-    useScaleConditionalSpy.mockReset();
+  beforeEach(() => {
+    jest.spyOn(
+      require('@cbhq/cds-common/scale/useScaleConditional'),
+      'useScaleConditional',
+    ) as jest.SpyInstance<number, [CellScaleDensity]>;
   });
-
-  afterAll(() => {
-    useScaleConditionalSpy.mockRestore();
-  });
-
   it('icon passes accessibility', async () => {
     expect(await renderA11y(<CellMedia type="icon" name="arrowUp" />)).toHaveNoViolations();
   });
@@ -195,6 +188,10 @@ describe('CellMedia', () => {
 
   describe('at dense scale', () => {
     beforeEach(() => {
+      const useScaleConditionalSpy = jest.spyOn(
+        require('@cbhq/cds-common/scale/useScaleConditional'),
+        'useScaleConditional',
+      ) as jest.SpyInstance<number, [CellScaleDensity]>;
       useScaleConditionalSpy.mockImplementation((config) => config.dense);
     });
 

@@ -4,16 +4,12 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useTriggerFocus } from '../useTriggerFocus';
 
 const focusSpy = jest.fn();
-const mockRef = { current: { focus: focusSpy } };
-const useRefMock = jest.spyOn(React, 'useRef').mockReturnValue(mockRef);
+let mockRef = { current: { focus: jest.fn() } };
 
 describe('useTriggerFocus', () => {
-  afterEach(() => {
-    focusSpy.mockClear();
-  });
-
-  afterAll(() => {
-    useRefMock.mockRestore();
+  beforeEach(() => {
+    mockRef = { current: { focus: focusSpy } };
+    jest.spyOn(React, 'useRef').mockReturnValue(mockRef);
   });
 
   it('returns expected props', () => {

@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-mobile-visreg",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Visreg Helpers",
   "keywords": [
     "visreg",
@@ -19,7 +19,7 @@
     "detox": "^20.5.0"
   },
   "dependencies": {
-    "@cbhq/detox-utils": "^0.2.3",
+    "@cbhq/detox-utils": "^0.5.0",
     "@percy/cli": "^1.26.1",
     "@percy/client": "^1.26.1",
     "@percy/sdk-utils": "^1.26.1",

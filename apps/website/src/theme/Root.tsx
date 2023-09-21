@@ -8,6 +8,7 @@ const Root = memo(({ children }: { children: React.ReactNode }) => {
   const { accessToken, space, host, clientKey, environment } = useContentfulConfig();
 
   initContentfulClient(
+    'website',
     {
       accessToken,
       space,

@@ -2,16 +2,14 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { TileButton } from '../TileButton';
 
-const mockConsoleWarn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+let mockConsoleWarn = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
 describe('TileButton.test', () => {
-  afterEach(() => {
-    mockConsoleWarn.mockReset();
-    process.env.NODE_ENV = 'test';
+  beforeEach(() => {
+    mockConsoleWarn = jest.spyOn(console, 'warn').mockImplementation(() => {});
   });
-
-  afterAll(() => {
-    mockConsoleWarn.mockRestore();
+  afterEach(() => {
+    process.env.NODE_ENV = 'test';
   });
 
   it('triggers press', () => {

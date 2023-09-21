@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.1 (9/20/2023 PST)
+
+#### 🐞 Fixes
+
+- Upgrade detox-utils to 0.5.0. [[#2186](https://github.cbhq.net/frontend/cds/pull/2186)]
+
 ## 1.1.0 (9/15/2023 PST)
 
 #### 🚀 Updates

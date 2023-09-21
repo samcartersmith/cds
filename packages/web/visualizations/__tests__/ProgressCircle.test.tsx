@@ -28,6 +28,25 @@ jest.mock('../../hooks/useDimensions', () => ({
 }));
 
 describe('ProgressCircle tests', () => {
+  beforeEach(() => {
+    jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb: FrameRequestCallback) => {
+      const time = Date.now();
+      cb(time);
+      return time;
+    });
+    jest.mock('@cbhq/cds-common/visualizations/useCounter', () => ({
+      useCounter: ({ endNum }: UseCounterParams) => endNum,
+    }));
+    jest.mock('../../hooks/useDimensions', () => ({
+      useDimensions: jest.fn(() => {
+        return {
+          width: 200,
+          height: 100,
+          observe: jest.fn(),
+        };
+      }),
+    }));
+  });
   it('passes accessibility', async () => {
     expect(await renderA11y(<ProgressCircle progress={0} />)).toHaveNoViolations();
   });

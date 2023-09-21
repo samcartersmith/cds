@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@cb/cms": "^0.1.4",
+    "@cb/cms": "^0.3.0",
     "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-icons": "workspace:^",
     "@cbhq/cds-illustrations": "workspace:^",

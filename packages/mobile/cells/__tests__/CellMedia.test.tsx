@@ -11,14 +11,6 @@ const useScaleConditionalSpy = jest.spyOn(
 ) as jest.SpyInstance<number, [CellScaleDensity]>;
 
 describe('CellMedia', () => {
-  afterEach(() => {
-    useScaleConditionalSpy.mockReset();
-  });
-
-  afterAll(() => {
-    useScaleConditionalSpy.mockRestore();
-  });
-
   it('icon passes accessibility', () => {
     render(<CellMedia type="icon" name="arrowUp" testID="cell-media-id" />);
 
