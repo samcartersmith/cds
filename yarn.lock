@@ -4161,9 +4161,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mono-pipeline@npm:^0.11.27":
-  version: 0.11.27
-  resolution: "@cbhq/mono-pipeline@npm:0.11.27::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.27.tgz"
+"@cbhq/mono-pipeline@npm:^0.11.28":
+  version: 0.11.28
+  resolution: "@cbhq/mono-pipeline@npm:0.11.28::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.28.tgz"
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/traverse": ^7.20.13
@@ -4183,7 +4183,7 @@ __metadata:
     "@cbhq/mono-tasks": ">=0.7.1"
   bin:
     mono-pipeline: ./lib/bin.js
-  checksum: ebde08bb3d3c5c242dd2c92b196f4fdf52b920c2695820904379f1fca2856b53bb3c351e5e34fa741ee052135ce878b4869b2ae2947b6e98a8a1f6c1ee279120
+  checksum: 4097d834b52f58ae3aa951ca77636aa3dc886d901da5ff32982f9e67af0184d3c147cc2c3d68376c3553fc320c4e98265efa6de0311dfd4912b582d9b57b8df4
   languageName: node
   linkType: hard
 
@@ -18502,7 +18502,7 @@ __metadata:
     "@cbhq/jest-preset": ^0.3.2
     "@cbhq/jest-preset-mobile": ^0.3.1
     "@cbhq/mono-env": ^0.2.24
-    "@cbhq/mono-pipeline": ^0.11.27
+    "@cbhq/mono-pipeline": ^0.11.28
     "@cbhq/mono-tasks": ^0.10.1
     "@cbhq/mono-templates": ^0.8.0
     "@cbhq/nx-tasks-runner": ^0.1.0
