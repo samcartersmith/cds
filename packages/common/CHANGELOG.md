@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.12.0 (9/25/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-2152] update(TileButton): add support for rendering remote images. [[#2273](https://github.cbhq.net/frontend/cds/pull/2273)] [[DX-2152](https://jira.coinbase-corp.com/browse/DX-2152)]
+
 ## 5.11.1 (9/15/2023 PST)
 
 #### 🐞 Fixes

@@ -1,8 +1,10 @@
 import React, { memo } from 'react';
-import { IllustrationPictogramNames, NoopFn as NoopFnType } from '@cbhq/cds-common';
+import { useSpectrum } from '@cbhq/cds-common';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
-import { TileButton } from '@cbhq/cds-web/buttons/TileButton';
+import { TileButton, TileButtonProps } from '@cbhq/cds-web/buttons/TileButton';
 import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { RemoteImage } from '@cbhq/cds-web/media';
+import { ThemeProvider } from '@cbhq/cds-web/system';
 import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
 
@@ -43,12 +45,7 @@ const appSwitcherData: AppSwitcherData = {
 
 type AppSwitcherSection = {
   sectionTitle: string;
-  tiles: {
-    pictogram: IllustrationPictogramNames;
-    title: string;
-    onPress: NoopFnType;
-    count?: number;
-  }[];
+  tiles: TileButtonProps[];
 };
 
 type AppSwitcherData = {
@@ -61,6 +58,7 @@ type AppSwitcherContentSectionProps = {
 };
 
 const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSectionProps) => {
+  const theme = useSpectrum();
   const rows = Math.ceil(data.tiles.length / columns);
   // this creates a key for each row
   const rowsArr = Array.from(Array(rows), (_, i) => i + 1);
@@ -85,7 +83,13 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
                     spacingBottom={0.5}
                     key={props.title}
                   >
-                    <TileButton {...props} />
+                    <TileButton {...props}>
+                      <RemoteImage
+                        source={`https://static-assets.coinbase.com/ui-infra/illustration/v1/pictogram/svg/${theme}/${props.pictogram}-2.svg`}
+                        width={38.4}
+                        height={38.4}
+                      />
+                    </TileButton>
                   </HStack>
                 );
               })}
@@ -104,20 +108,22 @@ type AppSwitcherContentProps = {
 export const AppSwitcherContent = memo(
   ({ columns = 3, data = appSwitcherData }: AppSwitcherContentProps) => {
     return (
-      <VStack spacingVertical={2}>
-        {data.sections.map((section, idx) => {
-          return (
-            <>
-              <AppSwitcherContentSection
-                key={section.sectionTitle}
-                data={section}
-                columns={columns}
-              />
-              {data.sections.length - 1 !== idx && <Divider spacingVertical={1} />}
-            </>
-          );
-        })}
-      </VStack>
+      <ThemeProvider>
+        <VStack spacingVertical={2}>
+          {data.sections.map((section, idx) => {
+            return (
+              <>
+                <AppSwitcherContentSection
+                  key={section.sectionTitle}
+                  data={section}
+                  columns={columns}
+                />
+                {data.sections.length - 1 !== idx && <Divider spacingVertical={1} />}
+              </>
+            );
+          })}
+        </VStack>
+      </ThemeProvider>
     );
   },
 );

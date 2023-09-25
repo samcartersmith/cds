@@ -22,6 +22,10 @@ type PatternTagProps = {
   success: true;
   /** Set to track a Warning pattern. */
   warning: true;
+  /** Set to track navigation pattern. */
+  navigation: true;
+  /** * Set to track a appSwitcher pattern. */
+  appSwitcher: true;
 }>;
 
 /**

@@ -1,4 +1,4 @@
-`TileButton`s are a pressable layout component that displays a Pictogram with a Title. The Title will reveal truncated text on hover.
+`TileButton`s are a pressable layout component that displays a Pictogram or ReactNode with a Title. The Title will reveal truncated text on hover.
 
 :::tip Accessibility tip
 
@@ -8,6 +8,7 @@ To ensure your `TileButton` implementation is accessible, the Title must contain
 
 ```jsx live
 function TileButtonExample() {
+  const theme = useSpectrum();
   function NoopFn() {
     console.log('pressed');
   }
@@ -22,6 +23,18 @@ function TileButtonExample() {
       title: 'Private Client',
       onPress: NoopFn,
       count: 4,
+    },
+    {
+      title: 'Chat',
+      onPress: NoopFn,
+      count: 1,
+      children: (
+        <RemoteImage
+          source={`https://static-assets.coinbase.com/ui-infra/illustration/v1/pictogram/svg/${theme}/coinbaseOneChat-2.svg`}
+          width={38.4}
+          height={38.4}
+        />
+      ),
     },
   ];
 

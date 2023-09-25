@@ -1,10 +1,9 @@
 import React, { memo, useCallback, useEffect, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
-import { pictogramWrapperSize, tileSize } from '@cbhq/cds-common/tokens/tile';
+import { tileSize } from '@cbhq/cds-common/tokens/tile';
 import { TileBaseProps } from '@cbhq/cds-common/types';
 
 import { DotCount } from '../dots/DotCount';
-import { Pictogram } from '../illustrations';
 import { VStack } from '../layout/VStack';
 import { TextLabel2 } from '../typography';
 import { getOverflowTextStyles } from '../utils/overflow';
@@ -12,7 +11,7 @@ import { getOverflowTextStyles } from '../utils/overflow';
 /**
  * @danger this component is for internal use only
  */
-export const Tile = memo(({ pictogram, title, count, showOverflow }: TileBaseProps) => {
+export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProps) => {
   const [shouldOverflow, toggleShouldOverflow] = useToggler(false);
   const overflowTextStyles = getOverflowTextStyles(shouldOverflow);
 
@@ -31,16 +30,16 @@ export const Tile = memo(({ pictogram, title, count, showOverflow }: TileBasePro
     }
   }, [showOverflow, handleShowOverflow, handleHideOverflow]);
 
-  /* Pictogram size is a close estimation of maxWidth and maxHeight based on Figma specs which vary by Pictogram type */
-  const renderPictogram = useMemo(() => {
+  /* If count is provided, wrap the children in a DotCount */
+  const renderContent = useMemo(() => {
     return count ? (
       <DotCount count={count} pin="top-end">
-        <Pictogram name={pictogram} scaleMultiplier={0.9} />
+        {children}
       </DotCount>
     ) : (
-      <Pictogram name={pictogram} scaleMultiplier={0.9} />
+      children
     );
-  }, [count, pictogram]);
+  }, [children, count]);
 
   return (
     <VStack
@@ -52,13 +51,8 @@ export const Tile = memo(({ pictogram, title, count, showOverflow }: TileBasePro
       onMouseEnter={handleShowOverflow}
       onMouseLeave={handleHideOverflow}
     >
-      <VStack
-        justifyContent="center"
-        alignItems="center"
-        minHeight={pictogramWrapperSize}
-        minWidth={pictogramWrapperSize}
-      >
-        {renderPictogram}
+      <VStack justifyContent="center" alignItems="center">
+        {renderContent}
       </VStack>
       <TextLabel2 align="center" dangerouslySetClassName={overflowTextStyles} as="p">
         {title}

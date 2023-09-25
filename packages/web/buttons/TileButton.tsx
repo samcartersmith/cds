@@ -1,11 +1,12 @@
-import React, { ForwardedRef, forwardRef, memo, useCallback } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useCallback, useMemo } from 'react';
 import { css } from 'linaria';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import { tileSize } from '@cbhq/cds-common/tokens/tile';
-import { SharedProps, TileBaseProps } from '@cbhq/cds-common/types';
+import { pictogramScaleMultiplier, tileSize } from '@cbhq/cds-common/tokens/tile';
+import { IllustrationPictogramNames, SharedProps, TileBaseProps } from '@cbhq/cds-common/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
+import { Pictogram, PictogramName } from '../illustrations';
 import { focusVisibleClassName, insetFocusRing } from '../styles/focus';
 import { Pressable, PressableInternalProps } from '../system/Pressable';
 import { borderRadius } from '../tokens';
@@ -32,11 +33,14 @@ const wrapperStyles = css`
 
 export type TileButtonProps = TileBaseProps &
   Omit<PressableInternalProps, 'noScaleOnPress' | 'loading' | 'children' | 'backgroundColor'> &
-  SharedProps;
+  SharedProps & {
+    /** Name of illustration as defined in Figma */
+    pictogram?: IllustrationPictogramNames;
+  };
 
 export const TileButton = memo(
   forwardRef(function TileButton(
-    { pictogram, title, count, ...props }: TileButtonProps,
+    { pictogram, title, count, children, ...props }: TileButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) {
     if (isDevelopment() && title.trim() === '') {
@@ -56,6 +60,14 @@ export const TileButton = memo(
       toggleShouldOverflow.toggleOff();
     }, [toggleShouldOverflow]);
 
+    const content = useMemo(() => {
+      return (
+        children || (
+          <Pictogram name={pictogram as PictogramName} scaleMultiplier={pictogramScaleMultiplier} />
+        )
+      );
+    }, [children, pictogram]);
+
     return (
       <div className={wrapperStyles}>
         <Pressable
@@ -69,7 +81,9 @@ export const TileButton = memo(
           onFocus={handleShowOverflow}
           onBlur={handleHideOverflow}
         >
-          <Tile title={title} pictogram={pictogram} count={count} showOverflow={shouldOverflow} />
+          <Tile title={title} count={count} showOverflow={shouldOverflow}>
+            {content}
+          </Tile>
         </Pressable>
       </div>
     );
