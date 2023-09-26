@@ -35,6 +35,26 @@ const config = {
       from: '../../../packages/icons/src/__generated__/nav/svg',
       to: '@cbhq/cds-icons/__generated__/nav/svg',
     },
+    {
+      from: '../../../packages/illustrations/src/__generated__/heroSquare/svg',
+      to: '@cbhq/cds-illustrations/__generated__/heroSquare/svg',
+    },
+    {
+      from: '../../../packages/illustrations/src/__generated__/pictogram/svg',
+      to: '@cbhq/cds-illustrations/__generated__/pictogram/svg',
+    },
+    {
+      from: '../../../packages/illustrations/src/__generated__/spotIcon/svg',
+      to: '@cbhq/cds-illustrations/__generated__/spotIcon/svg',
+    },
+    {
+      from: '../../../packages/illustrations/src/__generated__/spotRectangle/svg',
+      to: '@cbhq/cds-illustrations/__generated__/spotRectangle/svg',
+    },
+    {
+      from: '../../../packages/illustrations/src/__generated__/spotSquare/svg',
+      to: '@cbhq/cds-illustrations/__generated__/spotSquare/svg',
+    },
   ],
   core: {
     builder: 'webpack5',

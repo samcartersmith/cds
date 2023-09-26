@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- **[Illustrations]** Update Storybook sheets to use local svg files. [[#2275](https://github.cbhq.net/frontend/cds/pull/2275)] [[DX-2321](https://jira.coinbase-corp.com/browse/DX-2321)]
+
 ## 5.12.0 (9/25/2023 PST)
 
 #### 🚀 Updates

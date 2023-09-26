@@ -1,12 +1,5 @@
 import React, { memo } from 'react';
-import type {
-  HeroSquareDimension,
-  IllustrationNamesMap,
-  IllustrationVariant,
-  PictogramDimension,
-  Spectrum,
-  SpotIconDimension,
-} from '@cbhq/cds-common';
+import type { IllustrationNamesMap, IllustrationVariant, Spectrum } from '@cbhq/cds-common';
 import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
@@ -15,133 +8,121 @@ import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotR
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
 import { HStack } from '../../alpha/HStack';
-import { VStack } from '../../layout';
-import { FeatureFlagProvider } from '../../system';
+import { VStack } from '../../alpha/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextLegal } from '../../typography';
-import {
-  HeroSquare,
-  HeroSquareName,
-  Pictogram,
-  PictogramName,
-  SpotIcon,
-  SpotIconName,
-  SpotRectangle,
-  SpotRectangleName,
-  SpotSquare,
-  SpotSquareName,
-} from '../index';
 
-const SIZES = {
-  pictogram: {
-    height: illustrationSizes[illustrationDimensions.pictogram[0]][1],
-    width: illustrationSizes[illustrationDimensions.pictogram[0]][0],
-    scaleMultiplier: 1,
-  },
-  spotSquare: {
-    height: illustrationSizes[illustrationDimensions.spotSquare[0]][1],
-    width: illustrationSizes[illustrationDimensions.spotSquare[0]][0],
-    scaleMultiplier: 0.4,
-  },
-  spotRectangle: {
-    height: illustrationSizes[illustrationDimensions.spotRectangle[0]][1],
-    width: illustrationSizes[illustrationDimensions.spotRectangle[0]][0],
-    scaleMultiplier: 0.3,
-  },
+type TypeMap = {
+  [K in IllustrationVariant]: {
+    versionMap: Record<IllustrationNamesMap[K], number>;
+    sizes: {
+      height: number;
+      width: number;
+      scaleMultiplier: number;
+    };
+  };
+};
+
+const typeMap: TypeMap = {
   heroSquare: {
-    height: illustrationSizes[illustrationDimensions.heroSquare[0]][1],
-    width: illustrationSizes[illustrationDimensions.heroSquare[0]][0],
-    scaleMultiplier: 0.24,
+    versionMap: heroSquareVersionMap,
+    sizes: {
+      // render a 72x72 thumbnail
+      height: illustrationSizes[illustrationDimensions.heroSquare[0]][1],
+      width: illustrationSizes[illustrationDimensions.heroSquare[0]][0],
+      scaleMultiplier: 0.3,
+    },
+  },
+  pictogram: {
+    versionMap: pictogramVersionMap,
+    sizes: {
+      // render a 72x72 thumbnail
+      height: illustrationSizes[illustrationDimensions.pictogram[0]][1],
+      width: illustrationSizes[illustrationDimensions.pictogram[0]][0],
+      scaleMultiplier: 1.5,
+    },
   },
   spotIcon: {
-    height: illustrationSizes[illustrationDimensions.spotIcon[0]][1],
-    width: illustrationSizes[illustrationDimensions.spotIcon[0]][0],
-    scaleMultiplier: 1,
+    versionMap: spotIconVersionMap,
+    sizes: {
+      // render a 72x72 thumbnail
+      height: illustrationSizes[illustrationDimensions.spotIcon[0]][1],
+      width: illustrationSizes[illustrationDimensions.spotIcon[0]][0],
+      scaleMultiplier: 2.25,
+    },
+  },
+  spotRectangle: {
+    versionMap: spotRectangleVersionMap,
+    sizes: {
+      // render a 144x72 thumbnail
+      height: illustrationSizes[illustrationDimensions.spotRectangle[0]][1],
+      width: illustrationSizes[illustrationDimensions.spotRectangle[0]][0],
+      scaleMultiplier: 0.6,
+    },
+  },
+  spotSquare: {
+    versionMap: spotSquareVersionMap,
+    sizes: {
+      // render a 72x72 thumbnail
+      height: illustrationSizes[illustrationDimensions.spotSquare[0]][1],
+      width: illustrationSizes[illustrationDimensions.spotSquare[0]][0],
+      scaleMultiplier: 0.75,
+    },
   },
 };
 
-function keys<T>(obj: { [key in keyof T]: T[key] }) {
-  return Object.keys(obj) as unknown as Extract<keyof T, string>[];
-}
-
-const images = {
-  heroSquare: keys(heroSquareVersionMap),
-  pictogram: keys(pictogramVersionMap),
-  spotRectangle: keys(spotRectangleVersionMap),
-  spotSquare: keys(spotSquareVersionMap),
-  spotIcon: keys(spotIconVersionMap),
+type IllustrationSheetProps<Type> = {
+  type: Type;
+  startIndex?: number;
+  endIndex?: number;
 };
 
-export function getIllustrationSheet<Type extends IllustrationVariant>(type: Type) {
+export function getIllustrationSheet<Type extends IllustrationVariant>({
+  type,
+  startIndex,
+  endIndex,
+}: IllustrationSheetProps<Type>) {
   type IllustrationName = IllustrationNamesMap[Type];
-
-  const names = images[type] as IllustrationName[];
   type DataItem = { name: IllustrationName; spectrum: Spectrum };
+  type LocalIllustrationProps = { spectrum: Spectrum; name: IllustrationName; version: number };
 
-  const data: DataItem[] = [];
+  const { versionMap, sizes } = typeMap[type];
+  const width = sizes.width * sizes.scaleMultiplier;
+  const height = sizes.height * sizes.scaleMultiplier;
 
-  names.forEach((name) => {
-    data.push({
-      name,
-      spectrum: 'light' as const,
-    });
-    data.push({
-      name,
-      spectrum: 'dark' as const,
-    });
+  const data = (Object.keys(versionMap) as IllustrationName[])
+    .slice(startIndex, endIndex)
+    .reduce(
+      (acc: DataItem[], name) => [
+        ...acc,
+        { name, spectrum: 'light' as const },
+        { name, spectrum: 'dark' as const },
+      ],
+      [],
+    );
+
+  const LocalIllustration = memo(function LocalIllustration({
+    spectrum,
+    name,
+    version,
+  }: LocalIllustrationProps) {
+    const svgPath = `@cbhq/cds-illustrations/__generated__/${type}/svg/${spectrum}/${name}-${version}.svg`;
+
+    return <img src={svgPath} alt={name} width={width} height={height} />;
   });
 
   const renderItem = ({ name, spectrum }: DataItem) => {
-    const dim = `${SIZES[type].width}x${SIZES[type].height}` as const;
     return (
-      <ThemeProvider scale="xSmall" spectrum={spectrum}>
+      <ThemeProvider key={`${name}-${spectrum}`} scale="xSmall" spectrum={spectrum}>
         <VStack
-          key={`${name}-${spectrum}`}
           background
           gap={1}
           alignItems="flex-start"
-          width={SIZES[type].width * SIZES[type].scaleMultiplier}
-          height={SIZES[type].height * SIZES[type].scaleMultiplier + 20}
+          width={width}
+          height={height + 20}
           overflow="hidden"
         >
-          {type === 'heroSquare' && (
-            // render a 48x48 thumbnail
-            <HeroSquare
-              name={name as HeroSquareName}
-              dimension={dim as HeroSquareDimension}
-              scaleMultiplier={SIZES.heroSquare.scaleMultiplier}
-            />
-          )}
-          {type === 'spotSquare' && (
-            // render a 48x48 thumbnail
-            <SpotSquare
-              name={name as SpotSquareName}
-              scaleMultiplier={SIZES.spotSquare.scaleMultiplier}
-            />
-          )}
-          {type === 'spotRectangle' && (
-            // render a 72x36 thumbnail
-            <SpotRectangle
-              name={name as SpotRectangleName}
-              scaleMultiplier={SIZES.spotRectangle.scaleMultiplier}
-            />
-          )}
-          {type === 'pictogram' && (
-            // render a 48x48 thumbnail
-            <Pictogram
-              name={name as PictogramName}
-              dimension={dim as PictogramDimension}
-              scaleMultiplier={SIZES.pictogram.scaleMultiplier}
-            />
-          )}
-          {type === 'spotIcon' && (
-            // render a 32x32 thumbnail
-            <SpotIcon
-              name={name as SpotIconName}
-              dimension={dim as SpotIconDimension}
-              scaleMultiplier={SIZES.spotIcon.scaleMultiplier}
-            />
-          )}
+          <LocalIllustration spectrum={spectrum} name={name} version={versionMap[name]} />
           <TextLegal as="p" noWrap>
             {name}
           </TextLegal>
@@ -152,17 +133,15 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
 
   const IllustrationSheet = memo(function IllustrationSheet() {
     return (
-      <FeatureFlagProvider flexGap>
-        <HStack
-          flexWrap="wrap"
-          gap={2}
-          spacingVertical={1}
-          justifyContent="flex-start"
-          alignItems="flex-start"
-        >
-          {data.map(renderItem)}
-        </HStack>
-      </FeatureFlagProvider>
+      <HStack
+        flexWrap="wrap"
+        gap={2}
+        spacingVertical={1}
+        justifyContent="flex-start"
+        alignItems="flex-start"
+      >
+        {data.map(renderItem)}
+      </HStack>
     );
   });
 
