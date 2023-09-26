@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.12.1 (9/26/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2296] fix: RemoteImageGroup image overlap is reversed on web. [[#2283](https://github.cbhq.net/frontend/cds/pull/2283)] [[DX-2296](https://jira.coinbase-corp.com/browse/DX-2296)]
 
 #### 📘 Misc
 

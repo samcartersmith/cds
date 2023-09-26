@@ -74,7 +74,13 @@ export const RemoteImageGroup = ({
           background="backgroundOverlay"
           justifyContent="center"
         >
-          <p className={typographyStyles} style={fontSizeStyle}>{`+${excess}`}</p>
+          <p
+            data-testid={`${testID}-excess-text`}
+            className={typographyStyles}
+            style={fontSizeStyle}
+          >
+            +{excess}
+          </p>
         </Box>
       )}
       {Children.map(reverseChildren, (child, index) => {
@@ -85,6 +91,7 @@ export const RemoteImageGroup = ({
 
           if (sizeIsString) {
             overrideChildProps = {
+              ...overrideChildProps,
               size,
             };
           } else if (sizeIsNumber) {
@@ -92,6 +99,7 @@ export const RemoteImageGroup = ({
             // size from the above statement. Its either
             // use this size or the size above
             overrideChildProps = {
+              ...overrideChildProps,
               width: size,
               height: size,
             };
@@ -99,6 +107,7 @@ export const RemoteImageGroup = ({
             // No size was set, carry the default
             // avatarSize of m to child
             overrideChildProps = {
+              ...overrideChildProps,
               width: avatarSize,
               height: avatarSize,
             };
@@ -114,7 +123,15 @@ export const RemoteImageGroup = ({
 
           const clonedChild = React.cloneElement(child, overrideChildProps);
 
-          return <Box offsetEnd={isFirstRemoteImage ? 0 : overlapSpacing}>{clonedChild}</Box>;
+          return (
+            <Box
+              testID={`${testID}-inner-box-${index}`}
+              offsetEnd={isFirstRemoteImage ? 0 : overlapSpacing}
+              zIndex={index}
+            >
+              {clonedChild}
+            </Box>
+          );
         }
 
         return null;

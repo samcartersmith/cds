@@ -74,10 +74,9 @@ export const RemoteImageGroup = ({
           background="backgroundOverlay"
           justifyContent="center"
         >
-          <Text
-            testID={`${testID}-excess-text`}
-            style={[typographyStyles, styles.centerText]}
-          >{`+${excess}`}</Text>
+          <Text testID={`${testID}-excess-text`} style={[typographyStyles, styles.centerText]}>
+            +{excess}
+          </Text>
         </Box>
       )}
       {Children.map(reverseChildren, (child, index) => {
