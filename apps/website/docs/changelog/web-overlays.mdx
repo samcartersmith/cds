@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- [DX-2154] internal: add new ProfileMenu recipe. [[#2281](https://github.cbhq.net/frontend/cds/pull/2281)] [[DX-2154](https://jira.coinbase-corp.com/browse/DX-2154)]
+
 ## 0.0.8 (9/25/2023 PST)
 
 #### 🚀 Updates

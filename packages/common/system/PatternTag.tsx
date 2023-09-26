@@ -24,8 +24,10 @@ type PatternTagProps = {
   warning: true;
   /** Set to track navigation pattern. */
   navigation: true;
-  /** * Set to track a appSwitcher pattern. */
+  /** * Set to track appSwitcher pattern. */
   appSwitcher: true;
+  /** Set to track profileMenu pattern. */
+  profileMenu: true;
 }>;
 
 /**
