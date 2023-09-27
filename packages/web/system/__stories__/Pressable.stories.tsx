@@ -48,34 +48,6 @@ const Default = () => {
   );
 };
 
-// const Backgrounds = () => {
-//   return (
-
-//   )
-// }
-
-const Layers = () => {
-  return (
-    <Grid columnMin={200} gap={2}>
-      <Pressable as="button" backgroundColor="background">
-        <TextBody as="p" spacing={1}>
-          none
-        </TextBody>
-      </Pressable>
-      <Pressable as="button" backgroundColor="background" wrapWithLayeredElements>
-        <TextBody as="p" spacing={1}>
-          layered
-        </TextBody>
-      </Pressable>
-      <Pressable as="button" backgroundColor="transparent" wrapWithLayeredElements>
-        <TextBody as="p" spacing={1}>
-          layered + transparent
-        </TextBody>
-      </Pressable>
-    </Grid>
-  );
-};
-
 const Transparent = () => {
   return (
     <Grid columnMin={200} gap={2}>
@@ -201,7 +173,6 @@ export const Variations = () => {
     <VStack gap={3}>
       <Default />
       <Transparent />
-      <Layers />
       <Borders />
     </VStack>
   );

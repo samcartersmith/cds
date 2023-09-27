@@ -134,7 +134,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         disabled={disabled || readOnly}
         testID={testID ? `${testID}-parent` : undefined}
         transparentWhileInactive
-        wrapWithLayeredElements
         className={interactableContainer}
       >
         <>

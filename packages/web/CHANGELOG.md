@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.12.2 (9/27/2023 PST)
+
+#### 🐞 Fixes
+
+- Remove unused wrapWithLayeredElements from Interactable. [[#2278](https://github.cbhq.net/frontend/cds/pull/2278)] [[DX-2344](https://jira.coinbase-corp.com/browse/DX-2344)]
+
 ## 5.12.1 (9/26/2023 PST)
 
 #### 🐞 Fixes

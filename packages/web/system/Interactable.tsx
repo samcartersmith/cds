@@ -92,8 +92,6 @@ export type InteractableProps = {
     | React.ComponentType<React.PropsWithChildren<any>>;
   /** Apply class names to the outer container. */
   className?: string;
-  /** Inject and wrap the content with overlay and underlay elements. */
-  wrapWithLayeredElements?: boolean;
 } & InteractableBaseProps &
   InteractableInheritedProps &
   SharedProps &
@@ -119,7 +117,6 @@ export const InteractableContent = forwardRef(function InteractableContent(
     style: customStyle,
     testID,
     transparentWhileInactive,
-    wrapWithLayeredElements,
     width,
     height,
     accessibilityLabel,
@@ -151,7 +148,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
 
   const className = cx(
     interactable,
-    !wrapWithLayeredElements && transparentChildren,
+    transparentChildren,
     disabled ? disabledState : focusRing,
     disabled && borderColor === 'transparent' ? disabledBorder : null,
     transparentWhileInactive ? borderColors.transparent : borderColors[borderColor],
