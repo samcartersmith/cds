@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.17 (9/27/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-2337] chore: deprecated vertical prop. [[#2284](https://github.cbhq.net/frontend/cds/pull/2284)] [[DX-2337](https://jira.coinbase-corp.com/browse/DX-2337)]
+
 ## 0.1.16 (9/19/2023 PST)
 
 #### 🐞 Fixes

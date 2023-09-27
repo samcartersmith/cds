@@ -46,6 +46,7 @@ export type PropToAttributeValue = {
   oldAttribute: string;
   newAttribute: string;
   value: string;
+  paths: string[];
 };
 export type PropToAttributeValueMigrationShape = Record<string, PropToAttributeValue>;
 

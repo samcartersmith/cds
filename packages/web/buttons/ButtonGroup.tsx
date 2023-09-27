@@ -27,8 +27,10 @@ export const ButtonGroup = memo(function ButtonGroup({
   children,
   testID,
   vertical,
+  direction,
 }: ButtonGroupProps) {
-  const Stack = vertical ? VStack : HStack;
+  const isVertical = direction === 'vertical' || vertical;
+  const Stack = isVertical ? VStack : HStack;
 
   return (
     <Stack
@@ -44,7 +46,7 @@ export const ButtonGroup = memo(function ButtonGroup({
         child ? (
           <li className={cx(item, block && fill)}>
             {cloneElement(child, {
-              block: block || vertical,
+              block: block || isVertical,
             })}
           </li>
         ) : null,

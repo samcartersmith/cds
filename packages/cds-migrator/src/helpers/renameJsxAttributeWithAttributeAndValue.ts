@@ -13,7 +13,7 @@ export function renameJsxAttributeWithAttributeAndValue({
   newAttribute,
   value,
   jsx,
-}: { jsx: JsxElementType } & PropToAttributeValue): FindReplaceCallbackReturnType {
+}: { jsx: JsxElementType } & Omit<PropToAttributeValue, 'paths'>): FindReplaceCallbackReturnType {
   // remove the boolean prop
   jsx.getAttribute(oldAttribute)?.remove();
   // add the new attribute value pair

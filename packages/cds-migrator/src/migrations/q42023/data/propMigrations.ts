@@ -3,6 +3,7 @@ import {
   AttributeValueToBooleanType,
   ManualPropMigrationType,
   objectKeys,
+  PropToAttributeValueMigrationShape,
   RenameAttributeMapShape,
 } from '../../../helpers';
 
@@ -151,5 +152,20 @@ export const attributeValueToBooleanMigrations: AttributeValueToBooleanType = {
     oldAttribute: 'isBelowChildren', // defaults to true, so usage would be <LinearGradient isBelowChildren="false" />
     newAttribute: 'elevated', // defaults to false replace with <LinearGradient elevated />
     path: '@cbhq/cds-mobile/gradients',
+  },
+};
+
+export const booleanToAttributeValueMigrations: PropToAttributeValueMigrationShape = {
+  ButtonGroup: {
+    oldAttribute: 'vertical',
+    newAttribute: 'direction',
+    value: 'vertical',
+    paths: ['@cbhq/cds-web/buttons', '@cbhq/cds-mobile/buttons'],
+  },
+  ModalFooter: {
+    oldAttribute: 'vertical',
+    newAttribute: 'direction',
+    value: 'vertical',
+    paths: ['@cbhq/cds-web/overlays', '@cbhq/cds-mobile/overlays'],
   },
 };

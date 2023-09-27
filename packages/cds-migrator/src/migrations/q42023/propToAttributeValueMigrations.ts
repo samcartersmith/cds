@@ -14,15 +14,11 @@ import {
   writeMigrationToFile,
 } from '../../helpers';
 
-import { migrateBooleanPropToAttributeAndValueMigrations } from './data/propMigrations';
+import { booleanToAttributeValueMigrations } from './data/propMigrations';
 
-const importPaths = Object.values(migrateBooleanPropToAttributeAndValueMigrations).flatMap(
-  (mig) => mig.paths,
-);
+const importPaths = Object.values(booleanToAttributeValueMigrations).flatMap((mig) => mig.paths);
 
-const renamedProp = Object.values(migrateBooleanPropToAttributeAndValueMigrations).map(
-  (val) => val.oldAttribute,
-);
+const renamedProp = Object.values(booleanToAttributeValueMigrations).map((val) => val.oldAttribute);
 
 const checkSourceFile = (sourceFile: SourceFile) => {
   const sourceContent = sourceFile.getFullText();
@@ -38,13 +34,13 @@ const callback = (args: ParseJsxElementsCbParams) => {
   const { jsx, sourceFile } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
-    componentNames: Object.keys(migrateBooleanPropToAttributeAndValueMigrations),
+    componentNames: Object.keys(booleanToAttributeValueMigrations),
   });
 
-  let renameMap = migrateBooleanPropToAttributeAndValueMigrations;
+  let renameMap = booleanToAttributeValueMigrations;
   if (actualComponentName) {
     renameMap = replaceKey({
-      obj: migrateBooleanPropToAttributeAndValueMigrations,
+      obj: booleanToAttributeValueMigrations,
       oldKey: component,
       newKey: actualComponentName,
     });

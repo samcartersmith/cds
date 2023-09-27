@@ -11,6 +11,7 @@ export const migrateBooleanPropToAttributeAndValueMigrations: PropToAttributeVal
     oldAttribute: 'horizontal',
     newAttribute: 'direction',
     value: 'horizontal',
+    paths: ['@cbhq/cds-web/cells', '@cbhq/cds-mobile/cells'],
   },
 };
 
@@ -20,11 +21,13 @@ export const manualPropMigrations: Record<string, PropToAttributeValue[]> = {
       oldAttribute: 'reduceHorizontalSpacing',
       newAttribute: 'innerSpacing',
       value: '{ spacingHorizontal: 1 }',
+      paths: ['@cbhq/cds-web/cells', '@cbhq/cds-mobile/cells'],
     },
     {
       oldAttribute: 'offsetHorizontal',
       newAttribute: 'outerSpacing',
       value: '{ offsetHorizontal: 2 }',
+      paths: ['@cbhq/cds-web/cells', '@cbhq/cds-mobile/cells'],
     },
   ],
   ContentCell: [
@@ -32,11 +35,13 @@ export const manualPropMigrations: Record<string, PropToAttributeValue[]> = {
       oldAttribute: 'reduceHorizontalSpacing',
       newAttribute: 'innerSpacing',
       value: '{ spacingHorizontal: 1 }',
+      paths: ['@cbhq/cds-web/cells', '@cbhq/cds-mobile/cells'],
     },
     {
       oldAttribute: 'offsetHorizontal',
       newAttribute: 'outerSpacing',
       value: '{ offsetHorizontal: 2 }',
+      paths: ['@cbhq/cds-web/cells', '@cbhq/cds-mobile/cells'],
     },
   ],
   ListCell: [
@@ -44,11 +49,13 @@ export const manualPropMigrations: Record<string, PropToAttributeValue[]> = {
       oldAttribute: 'reduceHorizontalSpacing',
       newAttribute: 'innerSpacing',
       value: '{ spacingHorizontal: 1 }',
+      paths: ['@cbhq/cds-web/cells', '@cbhq/cds-mobile/cells'],
     },
     {
       oldAttribute: 'offsetHorizontal',
       newAttribute: 'outerSpacing',
       value: '{ offsetHorizontal: 2 }',
+      paths: ['@cbhq/cds-web/cells', '@cbhq/cds-mobile/cells'],
     },
   ],
 };

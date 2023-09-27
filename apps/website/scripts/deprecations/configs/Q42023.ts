@@ -331,5 +331,16 @@ export const Q42023: Deprecation = {
       },
       components: ['Box', 'HStack', 'VStack', 'Card', 'Group', 'ListCell', 'Grid'],
     },
+    {
+      name: 'vertical',
+      components: ['ButtonGroup', 'ModalFooter'],
+      package: 'common',
+      type: 'api',
+      migrationMap: {
+        api: {
+          horizontal: 'direction',
+        },
+      },
+    },
   ],
 };

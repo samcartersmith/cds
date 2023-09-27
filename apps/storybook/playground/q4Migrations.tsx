@@ -1,5 +1,6 @@
 import React from 'react';
 import { CellSpacing } from '@cbhq/cds-common';
+import { Button, ButtonGroup } from '@cbhq/cds-web/buttons';
 import { ListCell } from '@cbhq/cds-web/cells';
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { Box } from '@cbhq/cds-web/layout';
@@ -29,6 +30,10 @@ export const Q4Migrations = () => {
         {/* eslint-disable-next-line react-perf/jsx-no-new-object-as-prop */}
         <ListCell innerSpacing={{ offsetHorizontal: 2 }} />
         <ListCell outerSpacing={offsetConfig} />
+        <ButtonGroup vertical>
+          <Button>First</Button>
+          <Button>Second</Button>
+        </ButtonGroup>
       </Box>
     </FeatureFlagProvider>
   );

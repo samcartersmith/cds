@@ -1,3 +1,4 @@
+import { GroupDirection } from './GroupBaseProps';
 import { IconName } from './IconName';
 import { ElementChildren } from './React';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
@@ -46,6 +47,11 @@ export type ButtonGroupBaseProps = {
   block?: boolean;
   /** Buttons to render as a group. */
   children: ElementChildren<ButtonBaseProps>;
-  /** Stack buttons vertically instead of horizontally. */
+  /** @deprecated Q4 2023 Use direction='vertical' instead */
   vertical?: boolean;
+  /**
+   * @default horizontal
+   * Stack buttons vertically or horizontally.
+   */
+  direction?: GroupDirection;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
