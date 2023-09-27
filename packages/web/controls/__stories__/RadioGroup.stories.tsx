@@ -3,6 +3,7 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { Box } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { TextLabel1 } from '../../typography';
 import { TextHeadline } from '../../typography/TextHeadline';
 import { Radio, RadioGroup } from '../RadioGroup';
 
@@ -53,10 +54,17 @@ const options2 = {
   bronco: 'Bronco',
 };
 
+const options3 = {
+  taco: 'tacos',
+  puttanesca: 'Spaghetti',
+  'hamachi-salad': <TextLabel1 as="span">Hamachi salad</TextLabel1>,
+};
+
 export const Group = () => {
   const [group1, setGroup1] = useState<string>('btc');
   const [group2, setGroup2] = useState<string>();
   const [group3, setGroup3] = useState<string>();
+  const [group4, setGroup4] = useState<keyof typeof options3>();
 
   return (
     <>
@@ -86,6 +94,15 @@ export const Group = () => {
         selectedValue={group3}
         onChange={setGroup3}
         options={options1}
+        gap={2}
+        direction="horizontal"
+      />
+      <TextHeadline as="h1">Select a dish to order</TextHeadline>
+      <RadioGroup
+        name="radio-group4"
+        onChange={setGroup4}
+        selectedValue={group4}
+        options={options3}
         gap={2}
         direction="horizontal"
       />

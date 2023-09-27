@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.14.0 (9/27/2023 PST)
+
+#### 🚀 Updates
+
+- [CDS-3091] update(RadioGroup): added support for ReactNode options. [[#2285](https://github.cbhq.net/frontend/cds/pull/2285)] [[CDS-3091](https://jira.coinbase-corp.com/browse/CDS-3091)]
+
 ## 5.13.0 (9/27/2023 PST)
 
 #### 🚀 Updates

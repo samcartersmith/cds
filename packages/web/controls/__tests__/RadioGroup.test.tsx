@@ -1,12 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { TextHeadline } from '../../typography';
+import { TextHeadline, TextLabel1 } from '../../typography';
 import { Radio, RadioGroup } from '../RadioGroup';
 
 const options = {
   btc: 'Bitcoin',
   eth: 'Ethereum',
   dai: 'Dai',
+  usdc: <TextLabel1 as="span">Custom ReactNode</TextLabel1>,
 };
 
 const onChange = jest.fn();
@@ -32,7 +33,7 @@ describe('RadioGroup.test', () => {
     );
 
     expect(screen.getByRole('radiogroup')).toBeTruthy();
-    expect(screen.getByRole('radiogroup').childNodes).toHaveLength(3);
+    expect(screen.getByRole('radiogroup').childNodes).toHaveLength(4);
   });
 
   it('renders label', () => {

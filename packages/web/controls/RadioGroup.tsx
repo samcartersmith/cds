@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import React, { forwardRef, memo, useCallback } from 'react';
+import React, { forwardRef, memo, ReactNode, useCallback } from 'react';
 import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
 import { SharedProps } from '@cbhq/cds-common';
@@ -72,7 +72,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   return (
     <Group role="radiogroup" ref={ref} testID={testID} {...restProps}>
       {label}
-      {Object.entries<string>(options).map(([value, optionLabel]) => (
+      {Object.entries<string | ReactNode>(options).map(([value, option]) => (
         <Radio
           key={value}
           value={value}
@@ -82,7 +82,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
           onChange={handleSelect}
           testID={testID ? `${testID}-${value}` : undefined}
         >
-          {optionLabel}
+          {option}
         </Radio>
       ))}
     </Group>

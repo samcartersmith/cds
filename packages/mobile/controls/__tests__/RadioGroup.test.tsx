@@ -2,6 +2,7 @@ import { Pressable } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
+import { TextLabel1 } from '../../typography';
 import { Radio } from '../RadioGroup';
 
 describe('Radio', () => {
@@ -79,5 +80,15 @@ describe('Radio', () => {
     fireEvent.press(screen.getByText('Radio'));
 
     expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('renders a ReactNode as content', () => {
+    render(
+      <Radio>
+        <TextLabel1>Custom ReactNode</TextLabel1>
+      </Radio>,
+    );
+
+    expect(screen.getByText('Custom ReactNode')).toBeTruthy();
   });
 });

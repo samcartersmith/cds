@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo, ReactNode, useMemo } from 'react';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
 import { SharedProps, useScale } from '@cbhq/cds-common';
 import type { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
@@ -127,17 +127,17 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
       {...restProps}
     >
       {label}
-      {entries<Record<T, string>>(options).map(([value, optionLabel]) => (
+      {entries<Record<T, string | ReactNode>>(options).map(([value, option]) => (
         <Radio<T>
           key={value}
           value={value}
-          accessibilityLabel={optionLabel}
-          accessibilityHint={optionLabel}
+          accessibilityLabel={typeof option === 'string' ? option : undefined}
+          accessibilityHint={typeof option === 'string' ? option : undefined}
           checked={selectedValue === value}
           onChange={onChange}
           testID={testID ? `${testID}-${value}` : undefined}
         >
-          {optionLabel}
+          {option}
         </Radio>
       ))}
     </Group>

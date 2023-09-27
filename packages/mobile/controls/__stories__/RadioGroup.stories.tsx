@@ -3,6 +3,7 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextHeadline } from '../../typography/TextHeadline';
+import { TextLabel1 } from '../../typography/TextLabel1';
 import { Radio, RadioGroup } from '../RadioGroup';
 
 const RadioGroupScreen = () => {
@@ -45,10 +46,18 @@ const RadioGroupScreen = () => {
             bronco: 'Bronco',
           };
 
+          const options3 = {
+            taco: 'tacos',
+            puttanesca: 'Spaghetti',
+            'hamachi-salad': <TextLabel1>Hamachi salad</TextLabel1>,
+          };
+
           /* eslint-disable react-hooks/rules-of-hooks */
           const [group1, setGroup1] = useState<keyof typeof options1 | undefined>('btc');
           const [group2, setGroup2] = useState<keyof typeof options2>();
           const [group3, setGroup3] = useState<keyof typeof options1>();
+          const [group4, setGroup4] = useState<keyof typeof options3>();
+
           /* eslint-enable react-hooks/rules-of-hooks */
 
           return (
@@ -73,6 +82,15 @@ const RadioGroupScreen = () => {
                 onChange={setGroup3}
                 selectedValue={group3}
                 options={options1}
+                gap={2}
+                direction="horizontal"
+              />
+              <TextHeadline>Select a dish to order</TextHeadline>
+              <RadioGroup<keyof typeof options3>
+                accessibilityLabel="Select a dish to order"
+                onChange={setGroup4}
+                selectedValue={group4}
+                options={options3}
                 gap={2}
                 direction="horizontal"
               />
