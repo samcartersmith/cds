@@ -58,6 +58,14 @@ export const oneToOneMigrations: ComponentMigration[] = [
     replacement: 'Dropdown',
   },
   {
+    name: 'PopoverMenuTrigger',
+    path: {
+      '@cbhq/cds-web/overlays': '@cbhq/cds-web/dropdown',
+    },
+    warning: warningText,
+    replacement: 'Dropdown',
+  },
+  {
     name: 'Tooltip',
     path: {
       '@cbhq/cds-web/overlays/Deprecated/Tooltip': '@cbhq/cds-web/overlays/Tooltip',

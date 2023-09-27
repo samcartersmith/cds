@@ -1,4 +1,4 @@
-import { output, Tree } from '@nrwl/devkit';
+import { Tree } from '@nrwl/devkit';
 import { SourceFile } from 'ts-morph';
 
 import {
@@ -17,26 +17,25 @@ import {
 
 import { oneToOneMigrations } from './data/componentMigrations';
 
+const componentNames = oneToOneMigrations.map((config) => config.name);
+
 const checkSourceFile = (sourceFile: SourceFile): boolean => {
   let checkSourceFileHasDeprecatedComponent = false;
-  const path = sourceFile.getFilePath();
+  componentNames.forEach((component) => {
+    const pathConfig = oneToOneMigrations.find(({ name }) => name === component)?.path;
+    if (pathConfig) {
+      const hasImportForDeprecatedComponent = checkFileIncludesImportedModule({
+        sourceFile,
+        path: Object.keys(pathConfig)[0],
+        module: component,
+      });
 
-  Object.values(oneToOneMigrations).forEach(({ path: componentPath, name, replacement }) => {
-    const oldPath = Object.keys(componentPath)[0];
-    const hasImportForDeprecatedComponent = checkFileIncludesImportedModule({
-      sourceFile,
-      path: oldPath,
-      module: name,
-    });
-    if (hasImportForDeprecatedComponent) {
-      checkSourceFileHasDeprecatedComponent = true;
-      generateManualMigrationOutput(
-        `## The ${name} component was replaced with ${replacement} at ${output.underline(
-          path,
-        )}. \n - Manual migration is required since the API has changed. Refer to go/cds-deprecations for API migration guidance.`,
-      );
+      if (hasImportForDeprecatedComponent) {
+        checkSourceFileHasDeprecatedComponent = true;
+      }
     }
   });
+
   return checkSourceFileHasDeprecatedComponent;
 };
 
@@ -70,6 +69,9 @@ const callback = (args: ParseJsxElementsCbParams) => {
     writeMigrationToFile({ sourceFile, oldValue: name, newValue: replacement });
 
     if (warning) {
+      generateManualMigrationOutput(
+        `## Warning: ${name} was replaced with ${replacement} at ${sourceFile.getFilePath()}, manual migration required. \n - The APIs are different, so you will need to manually migrate. Refer to go/cds-deprecations for API migration guidance.`,
+      );
       logWarning(`Please check all instances of ${name}. ${warning}`);
     }
   });

@@ -18,7 +18,7 @@ export const checkFileIncludesImportedModule = ({
 }): boolean => {
   const importPath = sourceFile
     .getImportDeclarations()
-    .find((declaration) => declaration.getModuleSpecifierValue() === path);
+    .find((declaration) => declaration.getModuleSpecifierValue().startsWith(path));
   return importPath
     ? importPath.getNamedImports().some((namedImport) => namedImport.getText() === module)
     : false;

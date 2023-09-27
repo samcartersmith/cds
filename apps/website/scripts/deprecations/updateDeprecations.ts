@@ -166,12 +166,14 @@ const formatDeprecationGuide = ({
   type,
   guidance,
   components,
+  exportNames,
 }: {
   name: string;
   pkgName: string;
   type: MigrationType | MigrationType[];
   guidance: string;
   components?: string[];
+  exportNames?: string[];
 }) => {
   return `<AccordionItem
     itemKey="${name}.${pkgName}"
@@ -181,8 +183,13 @@ const formatDeprecationGuide = ({
     <VStack>
       ${guidance}
       ${
+        // eslint-disable-next-line no-nested-ternary
         components
           ? `<TextHeadline spacingTop="2" as="h4">Impacted Components: </TextHeadline><ul>${components
+              .map((comp) => `<li>${comp}</li>`)
+              .join('\n')}</ul>`
+          : exportNames
+          ? `<TextHeadline spacingTop="2" as="h4">The following exports have been removed: </TextHeadline><ul>${exportNames
               .map((comp) => `<li>${comp}</li>`)
               .join('\n')}</ul>`
           : ''
@@ -249,11 +256,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     }
     if (
       deprecationObj[key]?.length &&
-      (key === 'components' ||
-        key === 'types' ||
-        key === 'hooks' ||
-        key === 'tokens' ||
-        key === 'functions')
+      (key === 'components' || key === 'types' || key === 'hooks' || key === 'functions')
     ) {
       const groupForKey = groups[key];
 
@@ -271,6 +274,28 @@ function formatDeprecations(deprecationObj: Deprecation): string {
           );
         }
       });
+      groupForKey.push('</Accordion>');
+    }
+    if (deprecationObj[key]?.length && key === 'tokens') {
+      const groupForKey = groups[key];
+
+      groupForKey.push('<Accordion>');
+      deprecationObj[key]?.forEach(
+        ({ package: pkgName, name, path, type, migrationMap, exportNames }) => {
+          if (name && pkgName && type) {
+            groups[key].push(
+              formatDeprecationGuide({
+                name,
+                pkgName,
+                type,
+                exportNames,
+                guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
+                <p>${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}</p>`,
+              }),
+            );
+          }
+        },
+      );
       groupForKey.push('</Accordion>');
     }
   });

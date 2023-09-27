@@ -34,7 +34,7 @@ const checkSourceFile = (sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx } = args;
+  const { jsx, path } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(manualPropMigrations),
@@ -64,7 +64,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
         },
       });
       if (isMigratable) {
-        const warning = `## Warning: ${component} has deprecated prop ${oldAttribute}. \n  - Please use ${newAttribute} with a value of ${value} instead.`;
+        const warning = `## Warning: ${component} has deprecated prop ${oldAttribute} at ${path}. \n  - Please use ${newAttribute} with a value of ${value} instead.`;
         generateManualMigrationOutput(warning);
         logWarning(warning);
       }

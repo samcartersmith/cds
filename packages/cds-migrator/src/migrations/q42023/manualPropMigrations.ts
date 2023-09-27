@@ -31,7 +31,7 @@ const checkSourceFile = (sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx } = args;
+  const { jsx, path } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: componentsWithDeprecations,
@@ -75,7 +75,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
         : propsWithDeprecatedValues[0];
     const warning = `## Warning: ${
       actualComponentName ?? component
-    } is potentially using a deprecated spacing and/or offset style in the ${props} prop(s). \n  - You will need to manually migrate to using styles prefixed with margin > offset, and padding > spacing.  \n  - Refer to the migration guide for details: https://cds.cbhq.net/guides/migration/`;
+    } is potentially using a deprecated spacing and/or offset style in the ${props} prop(s) at ${path}. \n  - You will need to manually migrate to using styles prefixed with margin > offset, and padding > spacing.  \n  - Refer to the migration guide for details: https://cds.cbhq.net/guides/migration/`;
     generateManualMigrationOutput(warning);
     logWarning(warning);
   }

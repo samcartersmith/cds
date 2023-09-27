@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.18 (9/27/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2348] fix(CDS Migrator): Adds more logs for manual migrations and ensures all logs include path to deprecation usage. Added exported variables to migration guide for deleted files. [[#2276](https://github.cbhq.net/frontend/cds/pull/2276)] [[DX-2348](https://jira.coinbase-corp.com/browse/DX-2348)]
+
 ## 0.1.17 (9/27/2023 PST)
 
 #### 🚀 Updates

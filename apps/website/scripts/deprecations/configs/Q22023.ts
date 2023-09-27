@@ -570,6 +570,7 @@ export const Q22023: Deprecation = {
         path: 'packages/web/layout/breakpoints.ts',
         replaced: 'Use deviceBreakpoints, deviceMqs, and deviceMqRanges instead',
       },
+      exportNames: ['devices', 'breakpoints'],
     },
     {
       path: 'packages/web/styles/elevation.ts',

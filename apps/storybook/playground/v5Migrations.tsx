@@ -29,6 +29,8 @@ import { Box, Group, VStack } from '@cbhq/cds-web/layout';
 // @ts-expect-error testing
 import { Card } from '@cbhq/cds-web/layout/Card';
 // @ts-expect-error testing
+import { PopoverMenu, PopoverTrigger } from '@cbhq/cds-web/overlays';
+// @ts-expect-error testing
 import { none } from '@cbhq/cds-web/styles/borderRadius';
 
 const testVar = '120x120';
@@ -85,6 +87,9 @@ export const V5MigrationsTest = () => {
       <Dropdown content="test">
         <IconButton name="caretDown" />
       </Dropdown>
+      <PopoverMenu>
+        <PopoverTrigger />
+      </PopoverMenu>
     </VStack>
   );
 };
