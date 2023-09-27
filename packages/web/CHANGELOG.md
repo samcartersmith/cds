@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.14.1 (9/27/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2345] fix: useBoundingClientRect performance. [[#2294](https://github.cbhq.net/frontend/cds/pull/2294)] [[DX-2345](https://jira.coinbase-corp.com/browse/DX-2345)]
+
 ## 5.14.0 (9/27/2023 PST)
 
 #### 🚀 Updates

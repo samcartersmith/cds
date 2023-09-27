@@ -1,4 +1,5 @@
-import { MutableRefObject, useCallback, useState } from 'react';
+import { MutableRefObject, useCallback, useRef } from 'react';
+import { debounce } from '@cbhq/cds-common/utils/debounce';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { getBrowserGlobals, isSSR } from '../utils/browser';
@@ -18,24 +19,26 @@ const defaultValue: DOMRect = {
 };
 
 export const useBoundingClientRect = (ref: MutableRefObject<HTMLElement | null>) => {
-  const [rect, setRect] = useState<DOMRect>(ref.current?.getBoundingClientRect() ?? defaultValue);
+  const rectRef = useRef<DOMRect>(ref.current?.getBoundingClientRect() ?? defaultValue);
 
   const handleResize = useCallback(() => {
     if (ref.current) {
-      setRect(ref.current?.getBoundingClientRect());
+      rectRef.current = ref.current?.getBoundingClientRect();
     }
   }, [ref]);
 
+  const debouncedResize = debounce(handleResize, 200);
+
   useIsoEffect(() => {
     if (ref.current) {
-      handleResize();
+      debouncedResize();
     }
     if (isSSR()) {
       return undefined;
     }
-    getBrowserGlobals()?.window.addEventListener('resize', handleResize);
-    return () => getBrowserGlobals()?.window.removeEventListener('resize', handleResize);
-  }, [ref, handleResize]);
+    getBrowserGlobals()?.window.addEventListener('resize', debouncedResize);
+    return () => getBrowserGlobals()?.window.removeEventListener('resize', debouncedResize);
+  }, [ref, debouncedResize]);
 
-  return rect;
+  return rectRef.current;
 };
