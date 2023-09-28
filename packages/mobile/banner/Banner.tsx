@@ -8,7 +8,7 @@ import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SpacingScale } from '@cbhq/cds-common/types/SpacingScale';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { Collapsible } from '../collapsible';
+import { Collapsible } from '../alpha/Collapsible';
 import { Icon } from '../icons';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';

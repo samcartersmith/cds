@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.14.2 (9/28/2023 PST)
+
+#### 🐞 Fixes
+
+- Migrate Accordion and Banner to alpha Collapsible. [[#2296](https://github.cbhq.net/frontend/cds/pull/2296)]
+
 ## 5.14.1 ((9/27/2023, 03:05 PM PST))
 
 This is an artificial version bump with no new change.
