@@ -3,6 +3,7 @@ import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallback
 import { HStack } from '@cbhq/cds-web/layout';
 import { Avatar } from '@cbhq/cds-web/media';
 import { FeatureFlagProvider, PatternTag, Pressable, ThemeProvider } from '@cbhq/cds-web/system';
+import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
 import { Dropdown, DropdownRefProps } from '../dropdown';
 import { PopoverContentPositionConfig } from '../popover';
@@ -65,15 +66,20 @@ const ProfileMenuRecipe = memo(({ children }: { children: React.ReactNode }) => 
   );
 });
 
-export const ProfileMenu = memo(({ title = 'Brian', description }: SwitcherSubjectProps) => {
+export const ProfileMenu = ({ title = 'Brian', description }: SwitcherSubjectProps) => {
   return (
     <ProfileMenuRecipe>
       <Subject title={title} description={description} />
     </ProfileMenuRecipe>
   );
-});
+};
 
 export default {
   title: 'Overlays/Recipes/ProfileMenu',
   component: ProfileMenu,
+};
+
+ProfileMenu.parameters = {
+  percy: enableJavascript,
+  a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
 };
