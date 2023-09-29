@@ -71,8 +71,8 @@ const sidebars = {
           customProps: { kbar: { description: 'Deliver clear, functional layouts.' } },
         },
         {
-          type: 'doc',
-          id: 'foundation/international',
+          type: 'category',
+          label: 'International',
           customProps: {
             kbar: {
               description:
@@ -80,6 +80,20 @@ const sidebars = {
             },
             tag: 'new',
           },
+          items: [
+            {
+              type: 'doc',
+              id: 'foundation/international/design',
+              label: 'Design',
+              customProps: { tag: 'new' },
+            },
+            {
+              type: 'doc',
+              id: 'foundation/international/content',
+              label: 'Content',
+              customProps: { tag: 'new' },
+            },
+          ],
         },
         {
           type: 'category',
@@ -272,8 +286,14 @@ const sidebars = {
         {
           type: 'category',
           label: 'Card',
+          customProps: { tag: 'new' },
           items: [
-            'components/cards/Card/card',
+            {
+              type: 'doc',
+              id: 'components/cards/Card/card',
+              label: 'Card',
+              customProps: { tag: 'new' },
+            },
             { type: 'doc', id: 'components/cards/CardBody/card-body', label: 'Card Body' },
             { type: 'doc', id: 'components/cards/CardFooter/card-footer', label: 'Card Footer' },
             { type: 'doc', id: 'components/cards/CardGroup/card-group', label: 'Card Group' },
@@ -311,6 +331,37 @@ const sidebars = {
           ],
         },
         { type: 'doc', id: 'components/controls/Checkbox/checkbox', label: 'Checkbox' },
+        {
+          type: 'category',
+          label: 'Chips',
+          items: [
+            {
+              type: 'doc',
+              id: 'components/chips/input-chip',
+              label: 'Input Chip',
+              customProps: { tag: 'new' },
+            },
+            {
+              type: 'doc',
+              id: 'components/chips/select-chip',
+              label: 'Select Chip',
+              customProps: { tag: 'new' },
+            },
+            {
+              type: 'doc',
+              id: 'components/chips/grouped-chip',
+              label: 'Grouped Chip',
+              customProps: { tag: 'new' },
+            },
+            {
+              type: 'doc',
+              id: 'components/chips/tabbed-chip',
+              label: 'Tabbed Chip',
+              customProps: { tag: 'new' },
+            },
+          ],
+          customProps: { tag: 'new' },
+        },
         { type: 'doc', id: 'components/collapsible/Collapsible/collapsible', label: 'Collapsible' },
         { type: 'doc', id: 'components/layout/Divider/divider', label: 'Divider' },
         {
@@ -398,6 +449,12 @@ const sidebars = {
           ],
         },
         {
+          type: 'doc',
+          id: 'components/numpad/numpad',
+          label: 'Numpad',
+          customProps: { tag: 'new' },
+        },
+        {
           type: 'category',
           label: 'Navigation Bar',
           items: [
@@ -454,9 +511,6 @@ const sidebars = {
           type: 'doc',
           id: 'components/controls/SegmentedControl/segmented-control',
           label: 'Segmented Control',
-          customProps: {
-            tag: 'new',
-          },
         },
         {
           type: 'category',
@@ -533,19 +587,19 @@ const sidebars = {
         {
           type: 'category',
           label: 'Table',
-          customProps: {
-            tag: 'new',
-          },
+          customProps: { tag: 'new' },
           items: [
-            'components/tables/Table/table',
+            {
+              type: 'doc',
+              id: 'components/tables/Table/table',
+              label: 'Table',
+              customProps: { tag: 'new' },
+            },
             { type: 'doc', id: 'components/tables/TableBody/table-body', label: 'Table Body' },
             {
               type: 'doc',
               id: 'components/tables/TableCaption/table-caption',
               label: 'Table Caption',
-              customProps: {
-                tag: 'new',
-              },
             },
             { type: 'doc', id: 'components/tables/TableCell/table-cell', label: 'Table Cell' },
             {
@@ -618,42 +672,27 @@ const sidebars = {
           type: 'doc',
           id: 'patterns/overview',
           label: 'Overview',
-          customProps: {
-            tag: 'new',
-          },
         },
         {
           type: 'category',
           label: 'Messaging',
-          customProps: {
-            tag: 'new',
-          },
           items: [
             'patterns/messaging/overview',
             {
               type: 'doc',
               id: 'patterns/messaging/error',
               label: 'Error',
-              customProps: {
-                tag: 'new',
-              },
             },
             'patterns/messaging/informational',
             {
               type: 'doc',
               id: 'patterns/messaging/success',
               label: 'Success',
-              customProps: {
-                tag: 'new',
-              },
             },
             {
               type: 'doc',
               id: 'patterns/messaging/warning',
               label: 'Warning',
-              customProps: {
-                tag: 'new',
-              },
             },
           ],
         },
@@ -661,26 +700,17 @@ const sidebars = {
           type: 'doc',
           id: 'patterns/empty-states',
           label: 'Empty States',
-          customProps: {
-            tag: 'new',
-          },
         },
         {
           type: 'doc',
           id: 'patterns/forms',
           label: 'Forms',
-          customProps: {
-            tag: 'new',
-          },
         },
         'patterns/loading-states',
         {
           type: 'doc',
           id: 'patterns/disclosures',
           label: 'Disclosures',
-          customProps: {
-            tag: 'new',
-          },
         },
       ],
       customProps: {
@@ -784,9 +814,6 @@ const sidebars = {
           type: 'doc',
           id: 'components/system/PatternTag/pattern-tag',
           label: 'PatternTag',
-          customProps: {
-            tag: 'new',
-          },
         },
         {
           type: 'category',
