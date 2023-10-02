@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.15.0 (9/28/2023 PST)
+
+#### 🚀 Updates
+
+- Add 1.5 spacing scale. [[#2298](https://github.cbhq.net/frontend/cds/pull/2298)] [[DX-2263](https://jira.coinbase-corp.com/browse/DX-2263)]
+
 ## 5.14.2 (9/28/2023 PST)
 
 #### 🐞 Fixes

@@ -101,6 +101,14 @@ export const desktopStyles = {
         }
       }
     `,
+
+    1.5: css`
+      @media (min-width: 1280px) {
+        &.cds-responsive {
+          gap: var(--spacing-1\\.5);
+        }
+      }
+    `,
   },
 
   alignItems: {
@@ -899,6 +907,14 @@ export const tabletStyles = {
         }
       }
     `,
+
+    1.5: css`
+      @media (max-width: 1279px) {
+        &.cds-responsive {
+          gap: var(--spacing-1\\.5);
+        }
+      }
+    `,
   },
 
   alignItems: {
@@ -1694,6 +1710,14 @@ export const phoneStyles = {
       @media (max-width: 767px) {
         &.cds-responsive {
           gap: var(--spacing-0\\.5);
+        }
+      }
+    `,
+
+    1.5: css`
+      @media (max-width: 767px) {
+        &.cds-responsive {
+          gap: var(--spacing-1\\.5);
         }
       }
     `,

@@ -41,6 +41,9 @@ export const all = {
   0.5: css`
     padding: var(--spacing-0\\.5);
   `,
+  1.5: css`
+    padding: var(--spacing-1\\.5);
+  `,
 };
 
 export const top = {
@@ -79,6 +82,9 @@ export const top = {
   `,
   0.5: css`
     padding-top: var(--spacing-0\\.5);
+  `,
+  1.5: css`
+    padding-top: var(--spacing-1\\.5);
   `,
 };
 
@@ -119,6 +125,9 @@ export const bottom = {
   0.5: css`
     padding-bottom: var(--spacing-0\\.5);
   `,
+  1.5: css`
+    padding-bottom: var(--spacing-1\\.5);
+  `,
 };
 
 export const left = {
@@ -158,6 +167,9 @@ export const left = {
   0.5: css`
     padding-left: var(--spacing-0\\.5);
   `,
+  1.5: css`
+    padding-left: var(--spacing-1\\.5);
+  `,
 };
 
 export const right = {
@@ -196,5 +208,8 @@ export const right = {
   `,
   0.5: css`
     padding-right: var(--spacing-0\\.5);
+  `,
+  1.5: css`
+    padding-right: var(--spacing-1\\.5);
   `,
 };

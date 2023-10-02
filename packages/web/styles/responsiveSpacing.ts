@@ -102,6 +102,14 @@ export const desktopStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          &.cds-responsive {
+            padding: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
 
     top: {
@@ -197,6 +205,14 @@ export const desktopStyles = {
         @media (min-width: 1280px) {
           &.cds-responsive {
             padding-top: var(--spacing-0\\.5);
+          }
+        }
+      `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          &.cds-responsive {
+            padding-top: var(--spacing-1\\.5);
           }
         }
       `,
@@ -298,6 +314,14 @@ export const desktopStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          &.cds-responsive {
+            padding-bottom: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
 
     left: {
@@ -393,6 +417,14 @@ export const desktopStyles = {
         @media (min-width: 1280px) {
           &.cds-responsive {
             padding-left: var(--spacing-0\\.5);
+          }
+        }
+      `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          &.cds-responsive {
+            padding-left: var(--spacing-1\\.5);
           }
         }
       `,
@@ -494,6 +526,14 @@ export const desktopStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          &.cds-responsive {
+            padding-right: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
   },
 
@@ -570,6 +610,12 @@ export const desktopStyles = {
           margin: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          margin: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     top: {
@@ -642,6 +688,12 @@ export const desktopStyles = {
       0.5: css`
         @media (min-width: 1280px) {
           margin-top: calc(-1 * var(--spacing-0\\.5));
+        }
+      `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          margin-top: calc(-1 * var(--spacing-1\\.5));
         }
       `,
     },
@@ -718,6 +770,12 @@ export const desktopStyles = {
           margin-bottom: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          margin-bottom: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     left: {
@@ -792,6 +850,12 @@ export const desktopStyles = {
           margin-left: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          margin-left: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     right: {
@@ -864,6 +928,12 @@ export const desktopStyles = {
       0.5: css`
         @media (min-width: 1280px) {
           margin-right: calc(-1 * var(--spacing-0\\.5));
+        }
+      `,
+
+      1.5: css`
+        @media (min-width: 1280px) {
+          margin-right: calc(-1 * var(--spacing-1\\.5));
         }
       `,
     },
@@ -968,6 +1038,14 @@ export const tabletStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          &.cds-responsive {
+            padding: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
 
     top: {
@@ -1063,6 +1141,14 @@ export const tabletStyles = {
         @media (max-width: 1279px) {
           &.cds-responsive {
             padding-top: var(--spacing-0\\.5);
+          }
+        }
+      `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          &.cds-responsive {
+            padding-top: var(--spacing-1\\.5);
           }
         }
       `,
@@ -1164,6 +1250,14 @@ export const tabletStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          &.cds-responsive {
+            padding-bottom: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
 
     left: {
@@ -1259,6 +1353,14 @@ export const tabletStyles = {
         @media (max-width: 1279px) {
           &.cds-responsive {
             padding-left: var(--spacing-0\\.5);
+          }
+        }
+      `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          &.cds-responsive {
+            padding-left: var(--spacing-1\\.5);
           }
         }
       `,
@@ -1360,6 +1462,14 @@ export const tabletStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          &.cds-responsive {
+            padding-right: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
   },
 
@@ -1436,6 +1546,12 @@ export const tabletStyles = {
           margin: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          margin: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     top: {
@@ -1508,6 +1624,12 @@ export const tabletStyles = {
       0.5: css`
         @media (max-width: 1279px) {
           margin-top: calc(-1 * var(--spacing-0\\.5));
+        }
+      `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          margin-top: calc(-1 * var(--spacing-1\\.5));
         }
       `,
     },
@@ -1584,6 +1706,12 @@ export const tabletStyles = {
           margin-bottom: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          margin-bottom: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     left: {
@@ -1658,6 +1786,12 @@ export const tabletStyles = {
           margin-left: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          margin-left: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     right: {
@@ -1730,6 +1864,12 @@ export const tabletStyles = {
       0.5: css`
         @media (max-width: 1279px) {
           margin-right: calc(-1 * var(--spacing-0\\.5));
+        }
+      `,
+
+      1.5: css`
+        @media (max-width: 1279px) {
+          margin-right: calc(-1 * var(--spacing-1\\.5));
         }
       `,
     },
@@ -1834,6 +1974,14 @@ export const phoneStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          &.cds-responsive {
+            padding: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
 
     top: {
@@ -1929,6 +2077,14 @@ export const phoneStyles = {
         @media (max-width: 767px) {
           &.cds-responsive {
             padding-top: var(--spacing-0\\.5);
+          }
+        }
+      `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          &.cds-responsive {
+            padding-top: var(--spacing-1\\.5);
           }
         }
       `,
@@ -2030,6 +2186,14 @@ export const phoneStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          &.cds-responsive {
+            padding-bottom: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
 
     left: {
@@ -2125,6 +2289,14 @@ export const phoneStyles = {
         @media (max-width: 767px) {
           &.cds-responsive {
             padding-left: var(--spacing-0\\.5);
+          }
+        }
+      `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          &.cds-responsive {
+            padding-left: var(--spacing-1\\.5);
           }
         }
       `,
@@ -2226,6 +2398,14 @@ export const phoneStyles = {
           }
         }
       `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          &.cds-responsive {
+            padding-right: var(--spacing-1\\.5);
+          }
+        }
+      `,
     },
   },
 
@@ -2302,6 +2482,12 @@ export const phoneStyles = {
           margin: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          margin: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     top: {
@@ -2374,6 +2560,12 @@ export const phoneStyles = {
       0.5: css`
         @media (max-width: 767px) {
           margin-top: calc(-1 * var(--spacing-0\\.5));
+        }
+      `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          margin-top: calc(-1 * var(--spacing-1\\.5));
         }
       `,
     },
@@ -2450,6 +2642,12 @@ export const phoneStyles = {
           margin-bottom: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          margin-bottom: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     left: {
@@ -2524,6 +2722,12 @@ export const phoneStyles = {
           margin-left: calc(-1 * var(--spacing-0\\.5));
         }
       `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          margin-left: calc(-1 * var(--spacing-1\\.5));
+        }
+      `,
     },
 
     right: {
@@ -2596,6 +2800,12 @@ export const phoneStyles = {
       0.5: css`
         @media (max-width: 767px) {
           margin-right: calc(-1 * var(--spacing-0\\.5));
+        }
+      `,
+
+      1.5: css`
+        @media (max-width: 767px) {
+          margin-right: calc(-1 * var(--spacing-1\\.5));
         }
       `,
     },

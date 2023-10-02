@@ -47,6 +47,7 @@ const sharedDenseVariables = {
   '--label2-font-family': 'var(--cds-font-text)',
   '--caption-font-family': 'var(--cds-font-text)',
   '--legal-font-family': 'var(--cds-font-text)',
+  '--spacing-1\\.5': '10px',
   '--spacing-2': '12px',
   '--spacing-3': '16px',
   '--spacing-4': '20px',
@@ -66,6 +67,7 @@ const sharedDenseVariables = {
 const sharedNormalVariables = {
   '--label1-font-family': 'var(--cds-font-sans)',
   '--label2-font-family': 'var(--cds-font-sans)',
+  '--spacing-1\\.5': '12px',
   '--spacing-2': '16px',
   '--spacing-3': '24px',
   '--spacing-4': '32px',

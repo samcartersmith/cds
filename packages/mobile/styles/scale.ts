@@ -34,6 +34,7 @@ export const xSmall = {
     '9': 40,
     '10': 44,
     '0.5': 4,
+    '1.5': 10,
   },
   control: {
     checkboxSize: 16,
@@ -75,6 +76,7 @@ export const small = {
     '9': 40,
     '10': 44,
     '0.5': 4,
+    '1.5': 10,
   },
   control: {
     checkboxSize: 16,
@@ -116,6 +118,7 @@ export const medium = {
     '9': 40,
     '10': 44,
     '0.5': 4,
+    '1.5': 10,
   },
   control: {
     checkboxSize: 16,
@@ -157,6 +160,7 @@ export const large = {
     '9': 72,
     '10': 80,
     '0.5': 4,
+    '1.5': 12,
   },
   control: {
     checkboxSize: 20,
@@ -198,6 +202,7 @@ export const xLarge = {
     '9': 72,
     '10': 80,
     '0.5': 4,
+    '1.5': 12,
   },
   control: {
     checkboxSize: 20,
@@ -239,6 +244,7 @@ export const xxLarge = {
     '9': 72,
     '10': 80,
     '0.5': 4,
+    '1.5': 12,
   },
   control: {
     checkboxSize: 20,
@@ -280,6 +286,7 @@ export const xxxLarge = {
     '9': 72,
     '10': 80,
     '0.5': 4,
+    '1.5': 12,
   },
   control: {
     checkboxSize: 20,

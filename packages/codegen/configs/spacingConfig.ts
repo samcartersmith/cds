@@ -22,5 +22,5 @@ export const spacingConfig = {
   xxxLarge: normal,
 } as const;
 
-export const spacingScale = [0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+export const spacingScale = [0, 0.5, 1, 1.5, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 export const spacingDirections = ['all', 'top', 'bottom', 'left', 'right'] as const;

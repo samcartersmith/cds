@@ -41,4 +41,7 @@ export const gap = {
   0.5: css`
     gap: var(--spacing-0\\.5);
   `,
+  1.5: css`
+    gap: var(--spacing-1\\.5);
+  `,
 };

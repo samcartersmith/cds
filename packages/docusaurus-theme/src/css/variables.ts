@@ -62,6 +62,7 @@ export const baseVariables = {
   '--spacing-0': '0px',
   '--spacing-0\\.5': '4px',
   '--spacing-1': '8px',
+  '--spacing-1\\.5': '12px',
   '--spacing-2': '16px',
   '--spacing-3': '24px',
   '--spacing-4': '32px',
