@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- [trivial] internal: added stories for select used as asset selector.
+
+#### 📘 Misc
+
 - [trivial] internal: refactor ProfileMenu with MenuItem component. [[DX-2154](https://jira.coinbase-corp.com/browse/DX-2154)]
 - [DX-2154] internal: add new ProfileMenu recipe. [[#2281](https://github.cbhq.net/frontend/cds/pull/2281)] [[DX-2154](https://jira.coinbase-corp.com/browse/DX-2154)]
 

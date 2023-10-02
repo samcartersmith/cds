@@ -6,8 +6,11 @@ import {
 } from '@cbhq/cds-common/internal/selectBuilder';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { DotSymbol } from '../../dots';
 import { Icon } from '../../icons/Icon';
+import { Box } from '../../layout';
 import { VStack } from '../../layout/VStack';
+import { RemoteImage } from '../../media';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
@@ -20,6 +23,9 @@ const { Default: MockSelect } = selectBuilder({
   ThemeProvider,
   Icon,
   InputIcon,
+  Box,
+  RemoteImage,
+  DotSymbol,
 } as unknown as CreateSelectStoriesProps);
 
 const mockPlaceholder = 'Choose something...';

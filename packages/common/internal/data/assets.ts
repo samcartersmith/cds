@@ -71,6 +71,8 @@ export const assets = {
   },
 };
 
+export type AssetKey = keyof typeof assets;
+
 export const squareAssets = {
   human1: 'https://avatars3.githubusercontent.com/u/100200?s=460&v=4',
   human2: 'https://bit.ly/kent-c-dodds',

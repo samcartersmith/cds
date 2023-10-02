@@ -2,8 +2,10 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
 
+import { DotSymbol } from '../../dots';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { HStack, VStack } from '../../layout';
+import { Box, HStack, VStack } from '../../layout';
+import { RemoteImage } from '../../media';
 import { Tray } from '../../overlays/Tray/Tray';
 import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
@@ -11,20 +13,27 @@ import { SelectOption } from '../SelectOption';
 import { TextInput } from '../TextInput';
 
 export default function SelectScreen() {
-  const { DefaultSelect, ScrollableSelect, SelectFilter, SelectForm } = selectBuilderMobile({
-    Tray,
-    Select,
-    SelectOption,
-    ScrollView,
-    HStack,
-    TextInput,
-    VStack,
-  } as CreateSelectProps);
+  const { DefaultSelect, AssetSelect, ScrollableSelect, SelectFilter, SelectForm } =
+    selectBuilderMobile({
+      Tray,
+      Select,
+      SelectOption,
+      ScrollView,
+      HStack,
+      TextInput,
+      VStack,
+      Box,
+      RemoteImage,
+      DotSymbol,
+    } as CreateSelectProps);
 
   return (
     <ExampleScreen>
       <Example title="Default with Tray">
         <DefaultSelect placeholder="Select an option... " />
+      </Example>
+      <Example title="Asset Select with Tray">
+        <AssetSelect />
       </Example>
       <Example title="Scrollable Tray">
         <ScrollableSelect placeholder="Select an option... " hasDescription />

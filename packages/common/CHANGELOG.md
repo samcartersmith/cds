@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- [trivial] internal: added stories for select used as asset selector.
+
 ## 5.15.0 (9/28/2023 PST)
 
 #### 🚀 Updates

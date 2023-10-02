@@ -2,7 +2,10 @@ import React from 'react';
 import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
 import { CreateSelectStoriesProps, selectBuilder } from '@cbhq/cds-common/internal/selectBuilder';
 import { InputIcon } from '@cbhq/cds-web/controls/InputIcon';
+import { DotSymbol } from '@cbhq/cds-web/dots';
+import { Box } from '@cbhq/cds-web/layout';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
+import { RemoteImage } from '@cbhq/cds-web/media';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 
 import { Select } from '../Select';
@@ -25,11 +28,13 @@ const components = {
   SelectOption,
   ThemeProvider,
   InputIcon,
+  DotSymbol,
+  RemoteImage,
+  Box,
 };
 
-export const { Default, InputStackOptions, Disabled, Compact, Variants } = selectBuilder(
-  components as unknown as CreateSelectStoriesProps,
-);
+export const { Default, AssetSelect, InputStackOptions, Disabled, Compact, Variants } =
+  selectBuilder(components as unknown as CreateSelectStoriesProps);
 
 Disabled.bind({});
 /** TODO: convert to CSF (Component Story Format v3) */
@@ -50,6 +55,7 @@ export const SmallSelect = () => <Default width={80} />;
 
 export const {
   Default: DarkMode,
+  AssetSelect: DarkAssetSelect,
   InputStackOptions: DarkInputStackOptions,
   Disabled: DarkDisabled,
   Compact: DarkCompact,
@@ -76,6 +82,7 @@ DarkDisabled.parameters = {
 
 export const {
   Default: Dense,
+  AssetSelect: DenseAssetSelect,
   InputStackOptions: DenseInputStackOptions,
   Disabled: DenseDisabled,
   Compact: DenseCompact,

@@ -1,7 +1,10 @@
 import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
 import { CreateSelectStoriesProps, selectBuilder } from '@cbhq/cds-common/internal/selectBuilder';
 
+import { DotSymbol } from '../../dots';
+import { Box } from '../../layout';
 import { VStack } from '../../layout/VStack';
+import { RemoteImage } from '../../media';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
@@ -27,6 +30,9 @@ const components = {
   SelectOption,
   ThemeProvider,
   InputIcon,
+  DotSymbol,
+  RemoteImage,
+  Box,
 };
 
 /**

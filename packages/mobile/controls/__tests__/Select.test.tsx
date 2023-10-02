@@ -3,7 +3,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common/internal/selectBuilder';
 
-import { HStack, VStack } from '../../layout';
+import { DotSymbol } from '../../dots';
+import { Box, HStack, VStack } from '../../layout';
+import { RemoteImage } from '../../media';
 import { Tray } from '../../overlays/Tray/Tray';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
 import { Select } from '../Select';
@@ -18,6 +20,9 @@ const { DefaultSelect } = selectBuilderMobile({
   HStack,
   VStack,
   TextInput,
+  Box,
+  RemoteImage,
+  DotSymbol,
 } as CreateSelectProps);
 
 const placeholderText = 'Choose something';

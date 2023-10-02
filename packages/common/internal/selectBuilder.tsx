@@ -3,8 +3,10 @@ import React, { ComponentType, ReactNode, RefAttributes, useState } from 'react'
 import { useToggler } from '../hooks/useToggler';
 import type {
   BoxBaseProps,
+  DotSymbolBaseProps,
   IconBaseProps,
   NoopFn,
+  RemoteImageBaseProps,
   Scale,
   SelectBaseProps,
   SelectOptionBaseProps,
@@ -14,6 +16,8 @@ import type {
   ThemeProviderBaseProps,
   TrayBaseProps,
 } from '../types';
+
+import { AssetKey, assets } from './data/assets';
 
 type LinkableProps = {
   onPress?: null | ((event: unknown) => void) | undefined;
@@ -42,6 +46,9 @@ export type CreateSelectStoriesProps = {
   spectrum?: Spectrum;
   scale?: Scale;
   InputIcon: ComponentType<React.PropsWithChildren<Omit<IconBaseProps, 'size'>>>;
+  DotSymbol: ComponentType<React.PropsWithChildren<DotSymbolBaseProps & { source: string }>>;
+  RemoteImage: ComponentType<React.PropsWithChildren<RemoteImageBaseProps & { source: string }>>;
+  Box: ComponentType<React.PropsWithChildren<BoxBaseProps>>;
 };
 
 export const priceOptions = [
@@ -68,6 +75,8 @@ export const exampleOptions = [
   'Option 6',
 ];
 
+const assetKeys = Object.keys(assets) as AssetKey[];
+
 export const selectBuilder = ({
   Select,
   VStack,
@@ -76,6 +85,9 @@ export const selectBuilder = ({
   spectrum,
   scale,
   InputIcon,
+  DotSymbol,
+  RemoteImage,
+  Box,
 }: CreateSelectStoriesProps) => {
   const Default = ({
     variant,
@@ -131,6 +143,47 @@ export const selectBuilder = ({
                 title={option}
                 description="BTC"
                 testID={`option-${option}`}
+              />
+            ))}
+          </Select>
+        </VStack>
+      </ThemeProvider>
+    );
+  };
+
+  const AssetSelect = () => {
+    const [asset, setAsset] = useState<string | undefined>('btc');
+    const assetConfig = assets[(asset as AssetKey) ?? 'btc'];
+    const ethLogo = assets.eth.imageUrl;
+
+    return (
+      <ThemeProvider spectrum={spectrum} scale={scale}>
+        <VStack spacing={2} background minHeight={100}>
+          <Select
+            value={asset}
+            onChange={setAsset}
+            label="Select Asset"
+            startNode={
+              <Box spacingHorizontal={2}>
+                <DotSymbol pin="bottom-end" overlap="circular" size="s" source={ethLogo}>
+                  <RemoteImage source={assetConfig.imageUrl} shape="circle" size="l" />
+                </DotSymbol>
+              </Box>
+            }
+            valueLabel={assetConfig.name}
+          >
+            {Object.values(assets).map(({ name, imageUrl }, idx) => (
+              <SelectOption
+                media={
+                  <DotSymbol pin="bottom-end" overlap="circular" size="s" source={ethLogo}>
+                    <RemoteImage source={imageUrl} shape="circle" size="l" />
+                  </DotSymbol>
+                }
+                value={assetKeys[idx]}
+                key={name}
+                title={name}
+                description="BTC"
+                testID={`option-${name}`}
               />
             ))}
           </Select>
@@ -236,6 +289,7 @@ export const selectBuilder = ({
   };
   return {
     Default,
+    AssetSelect,
     InputStackOptions,
     Compact,
     Variants,
@@ -255,6 +309,9 @@ export type CreateSelectProps = {
   HStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
   VStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
   TextInput: ComponentType<React.PropsWithChildren<TextInputBaseProps>>;
+  DotSymbol: ComponentType<React.PropsWithChildren<DotSymbolBaseProps & { source: string }>>;
+  RemoteImage: ComponentType<React.PropsWithChildren<RemoteImageBaseProps & { source: string }>>;
+  Box: ComponentType<React.PropsWithChildren<BoxBaseProps>>;
 };
 
 type DefaultSelectTypes = {
@@ -274,6 +331,9 @@ export const selectBuilderMobile = ({
   HStack,
   VStack,
   TextInput,
+  Box,
+  RemoteImage,
+  DotSymbol,
 }: CreateSelectProps) => {
   const DefaultSelect = ({
     trayTitle,
@@ -304,6 +364,52 @@ export const selectBuilderMobile = ({
                   />
                 );
               })
+            }
+          </Tray>
+        )}
+      </Select>
+    );
+  };
+
+  const AssetSelect = () => {
+    const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
+    const [asset, setAsset] = useState<string | undefined>('btc');
+    const assetConfig = assets[(asset as AssetKey) ?? 'btc'];
+    const ethLogo = assets.eth.imageUrl;
+
+    return (
+      <Select
+        onPress={toggleOn}
+        value={asset}
+        onChange={setAsset}
+        label="Select Asset"
+        startNode={
+          <Box spacingHorizontal={2}>
+            <DotSymbol pin="bottom-end" overlap="circular" size="s" source={ethLogo}>
+              <RemoteImage source={assetConfig.imageUrl} shape="circle" size="l" />
+            </DotSymbol>
+          </Box>
+        }
+        valueLabel={assetConfig.name}
+      >
+        {isTrayVisible && (
+          <Tray onCloseComplete={toggleOff}>
+            {({ handleClose }) =>
+              Object.values(assets).map(({ name, imageUrl }, idx) => (
+                <SelectOption
+                  media={
+                    <DotSymbol pin="bottom-end" overlap="circular" size="s" source={ethLogo}>
+                      <RemoteImage source={imageUrl} shape="circle" size="l" />
+                    </DotSymbol>
+                  }
+                  value={assetKeys[idx]}
+                  key={name}
+                  title={name}
+                  description="BTC"
+                  testID={`option-${name}`}
+                  onPress={handleClose}
+                />
+              ))
             }
           </Tray>
         )}
@@ -346,16 +452,7 @@ export const selectBuilderMobile = ({
     const [assetTrayVisible, handleAssetTrayVisibility] = useToggler(false);
 
     const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021'];
-    const assets = [
-      'Bitcoin',
-      'Litecoin',
-      'Ethereum',
-      'Algorand',
-      'Cardano',
-      'Doge',
-      'AMP',
-      'Arpa',
-    ];
+
     return (
       <HStack width="100%" gap={1}>
         <Select
@@ -392,7 +489,7 @@ export const selectBuilderMobile = ({
           {assetTrayVisible && (
             <Tray onCloseComplete={handleAssetTrayVisibility.toggleOff}>
               {({ handleClose }) =>
-                assets.map((option) => {
+                Object.values(assets).map(({ name: option }) => {
                   return (
                     <SelectOption
                       title={option}
@@ -449,6 +546,7 @@ export const selectBuilderMobile = ({
 
   return {
     DefaultSelect,
+    AssetSelect,
     ScrollableSelect,
     SelectFilter,
     SelectForm,
