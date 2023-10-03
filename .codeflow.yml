@@ -3,6 +3,7 @@ secure:
   codeowners_enabled: true
   branches:
     - master
+  auto_assign_reviewers: true
 build:
   engines:
     # Apps
@@ -27,7 +28,6 @@ build:
     - BaldurECR:
         name: cds-website-docs-development
         path: ./apps/website/development.Dockerfile
-
     # Packages
     - BaldurNode:
         name: package-cds-common
