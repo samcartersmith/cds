@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.1 (10/3/2023 PST)
+
+#### 🐞 Fixes
+
+- Upgrade to RN 0.72.5 and Expo 49.0.13. [[#2306](https://github.cbhq.net/frontend/cds/pull/2306)]
+
 ## 1.2.0 (9/15/2023 PST)
 
 #### 🚀 Updates
