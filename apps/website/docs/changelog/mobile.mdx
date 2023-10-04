@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.15.2 (10/4/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2346] patch(mobile/ModalFooter): remove hardcoded a11y prop. [[DX-2346](https://jira.coinbase-corp.com/browse/DX-2346)]
+
 ## 5.15.1 (10/3/2023 PST)
 
 #### 🐞 Fixes
