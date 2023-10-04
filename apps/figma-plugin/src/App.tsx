@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/button-has-type */
+/* eslint-disable @cbhq/react-prefer-named-module-import */
 import 'react-figma-plugin-ds/figma-plugin-ds.css';
 import './styles.css';
 
-import { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Button, Select, SelectOption, Text, Title } from 'react-figma-plugin-ds';
 
 import type { FigmaContext, FigmaMessage, Spectrum } from './types';

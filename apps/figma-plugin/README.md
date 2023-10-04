@@ -6,11 +6,11 @@
 2. Create a new design file (command + n)
 3. Go to top menu, Plugins > Development > Import plugin from manifest
 4. Select the manifest.json file in cds/apps/figma-plugin/manifest.json
-5. Run `yarn figma-plugin start` to live reload plugin on changes
+5. Run `yarn nx run figma-plugin:start` to live reload plugin on changes
 
 ## Publish
 
-1. Run `yarn figma-plugin build` to build plugin with changes you wish to publish
+1. Run `yarn nx run figma-plugin:build` to build plugin with changes you wish to publish
 2. Open Figma Desktop
 3. Go to top menu, Plugins > Development > Import plugin from manifest
 4. Select the manifest.json file in cds/apps/figma-plugin/manifest.json
