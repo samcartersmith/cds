@@ -39,6 +39,9 @@ export function populateGuidelinesToc(fields: ComponentPageFields) {
   if (fields.accessibility) {
     toc.push('Accessibility');
   }
+  if (fields.others) {
+    toc.push('Others');
+  }
 
   return toc.map((item) => ({
     id: slugify(item),
