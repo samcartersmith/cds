@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 
 #### 🐞 Fixes
 
+- [DX-2327] fix(useTooltipState): add missing tooltipId. [[#2309](https://github.cbhq.net/frontend/cds/pull/2309)] [[DX-2327](https://jira.coinbase-corp.com/browse/DX-2327)]
 - Remove PatternTag. [[#2302](https://github.cbhq.net/frontend/cds/pull/2302)]
 
 #### 📘 Misc

@@ -19,9 +19,10 @@ export const Tooltip = ({
   disablePortal,
   testID,
   zIndex,
+  tooltipId: tooltipIdDefault,
 }: TooltipProps) => {
   const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur, tooltipId } =
-    useTooltipState();
+    useTooltipState(tooltipIdDefault);
 
   const clonedChild = useMemo(() => {
     return cloneElement(children, {
