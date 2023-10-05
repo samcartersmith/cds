@@ -44,7 +44,7 @@ export type ComponentPageFields = {
   callToAction?: Entry<Document>[];
   motion?: Entry<Document>[];
   accessibility?: Entry<Document>[];
-  others?: Entry<Document>[];
+  research?: Entry<Document>[];
 };
 
 export const ComponentPage = memo(function ComponentPage({
@@ -67,7 +67,7 @@ export const ComponentPage = memo(function ComponentPage({
     callToAction,
     motion,
     accessibility,
-    others,
+    research,
   } = contentData;
 
   const shouldShowExamplesTab = codeExamples || metadata || propsTable;
@@ -153,9 +153,9 @@ export const ComponentPage = memo(function ComponentPage({
           <CMSContent content={accessibility} />
         </Section>
       )}
-      {others && (
-        <Section title="Others">
-          <CMSContent content={others} />
+      {research && (
+        <Section title="Research">
+          <CMSContent content={research} />
         </Section>
       )}
     </TabItemOriginal>,
