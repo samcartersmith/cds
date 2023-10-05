@@ -2,7 +2,7 @@ import { memo, useEffect, useRef } from 'react';
 import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 import { HStack } from '@cbhq/cds-web/layout';
 import { Avatar } from '@cbhq/cds-web/media';
-import { FeatureFlagProvider, PatternTag, Pressable, ThemeProvider } from '@cbhq/cds-web/system';
+import { FeatureFlagProvider, Pressable, ThemeProvider } from '@cbhq/cds-web/system';
 import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
 import { Dropdown, DropdownRefProps } from '../dropdown';
@@ -41,28 +41,26 @@ const ProfileMenuRecipe = memo(({ children }: { children: React.ReactNode }) => 
     dropdownRef.current?.openMenu();
   }, []);
   return (
-    <PatternTag profileMenu>
-      <FeatureFlagProvider frontierColor frontierButton>
-        <ThemeProvider>
-          {/* below HStack is for demo purpose only */}
-          <HStack>
-            <Dropdown
-              ref={dropdownRef}
-              width={profileMenuWidth}
-              maxHeight={profileMenuHeight}
-              // this forces truncation, otherwise minWidth default is min-content
-              minWidth={0}
-              content={<ProfileMenuContent />}
-              showOverlay
-              contentPosition={switcherPositionConfig}
-              enableMobileModal
-            >
-              {children}
-            </Dropdown>
-          </HStack>
-        </ThemeProvider>
-      </FeatureFlagProvider>
-    </PatternTag>
+    <FeatureFlagProvider frontierColor frontierButton>
+      <ThemeProvider>
+        {/* below HStack is for demo purpose only */}
+        <HStack>
+          <Dropdown
+            ref={dropdownRef}
+            width={profileMenuWidth}
+            maxHeight={profileMenuHeight}
+            // this forces truncation, otherwise minWidth default is min-content
+            minWidth={0}
+            content={<ProfileMenuContent />}
+            showOverlay
+            contentPosition={switcherPositionConfig}
+            enableMobileModal
+          >
+            {children}
+          </Dropdown>
+        </HStack>
+      </ThemeProvider>
+    </FeatureFlagProvider>
   );
 });
 

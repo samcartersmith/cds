@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import { NavigationIconButton } from '@cbhq/cds-web/buttons/NavigationIconButton';
 import { DotCount } from '@cbhq/cds-web/dots/DotCount';
 import { HStack } from '@cbhq/cds-web/layout';
-import { PatternTag } from '@cbhq/cds-web/system';
 
 import { Dropdown } from '../dropdown';
 import { PopoverContentPositionConfig } from '../popover/PopoverProps';
@@ -33,11 +32,9 @@ const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => 
 export const AppSwitcher = () => {
   return (
     <HStack>
-      <PatternTag appSwitcher>
-        <AppSwitcherRecipe>
-          <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
-        </AppSwitcherRecipe>
-      </PatternTag>
+      <AppSwitcherRecipe>
+        <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+      </AppSwitcherRecipe>
     </HStack>
   );
 };
@@ -45,13 +42,11 @@ export const AppSwitcher = () => {
 export const AppSwitcherWithDot = () => {
   return (
     <HStack>
-      <PatternTag appSwitcher>
-        <AppSwitcherRecipe>
-          <DotCount pin="top-end" count={4}>
-            <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
-          </DotCount>
-        </AppSwitcherRecipe>
-      </PatternTag>
+      <AppSwitcherRecipe>
+        <DotCount pin="top-end" count={4}>
+          <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+        </DotCount>
+      </AppSwitcherRecipe>
     </HStack>
   );
 };

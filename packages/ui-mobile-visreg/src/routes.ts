@@ -166,35 +166,6 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Overlay.stories').default,
   },
   {
-    key: 'PatternTagDisclosureHighFrictionBenefit',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/system/__stories__/PatternTagDisclosureHighFrictionBenefit.stories')
-        .default,
-  },
-  {
-    key: 'PatternTagDisclosureHighFrictionRisk',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/system/__stories__/PatternTagDisclosureHighFrictionRisk.stories')
-        .default,
-  },
-  {
-    key: 'PatternTagDisclosureLowFriction',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/system/__stories__/PatternTagDisclosureLowFriction.stories')
-        .default,
-  },
-  {
-    key: 'PatternTagDisclosureMedFriction',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/system/__stories__/PatternTagDisclosureMedFriction.stories')
-        .default,
-  },
-  {
-    key: 'PatternTagError',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/system/__stories__/PatternTagError.stories').default,
-  },
-  {
     key: 'Pictogram',
     getComponent: () =>
       require('@cbhq/cds-mobile/illustrations/__stories__/Pictogram.stories').default,

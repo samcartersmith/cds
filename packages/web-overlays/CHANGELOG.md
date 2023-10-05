@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.9 (10/4/2023 PST)
+
+#### 🐞 Fixes
+
+- Remove PatternTag. [[#2302](https://github.cbhq.net/frontend/cds/pull/2302)]
 
 #### 📘 Misc
 

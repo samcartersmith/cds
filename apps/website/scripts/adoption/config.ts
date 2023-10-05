@@ -354,7 +354,7 @@ export const hiddenAdoptersWithPillar = adopters
 
 /** Adds an `isFeatured` flag to metadata of listed components */
 export const featuredComponentsConfig: FeaturedComponentsConfig = {
-  cds: ['PatternTag'],
+  cds: [],
   presentational: [],
   other: [],
 };

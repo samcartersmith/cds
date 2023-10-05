@@ -6,7 +6,7 @@ import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { NavigationBar, NavigationTitle, Sidebar } from '@cbhq/cds-web/navigation';
 import { SidebarItem } from '@cbhq/cds-web/navigation/SidebarItem';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
-import { FeatureFlagProvider, PatternTag } from '@cbhq/cds-web/system';
+import { FeatureFlagProvider } from '@cbhq/cds-web/system';
 
 import { items } from '../navigation/__stories__/NavigationStorySetup';
 import { SelectOption } from '../select/SelectOption';
@@ -41,50 +41,54 @@ export const NavigationRecipe = () => {
   );
 
   return (
-    <PatternTag navigation>
-      <PortalProvider>
-        <FeatureFlagProvider frontierColor frontierButton>
-          <HStack>
-            <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
-              {sidebarItems.map((props, index) => (
-                <SidebarItem
-                  key={`sidebar-item--${props.title}`}
-                  active={index === activeIndex}
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                  onPress={() => handleItemPress(index)}
-                  tooltipContent={props.title}
-                  {...props}
+    <PortalProvider>
+      <FeatureFlagProvider frontierColor frontierButton>
+        <HStack>
+          <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
+            {sidebarItems.map((props, index) => (
+              <SidebarItem
+                key={`sidebar-item--${props.title}`}
+                active={index === activeIndex}
+                // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+                onPress={() => handleItemPress(index)}
+                tooltipContent={props.title}
+                {...props}
+              />
+            ))}
+            <SidebarMoreMenu
+              onChange={handleMoreMenuChange}
+              value={moreMenuValue}
+              active={activeIndex >= sidebarItems.length}
+              tooltipContent="More"
+            >
+              {moreMenuOptions.map((item) => (
+                <SelectOption
+                  key={`sidebar-more-menu-item--${item.title}`}
+                  value={item.title}
+                  description={item.title}
+                  media={<NavigationIcon name={item.icon} />}
                 />
               ))}
-              <SidebarMoreMenu
-                onChange={handleMoreMenuChange}
-                value={moreMenuValue}
-                active={activeIndex >= sidebarItems.length}
-                tooltipContent="More"
-              >
-                {moreMenuOptions.map((item) => (
-                  <SelectOption
-                    key={`sidebar-more-menu-item--${item.title}`}
-                    value={item.title}
-                    description={item.title}
-                    media={<NavigationIcon name={item.icon} />}
-                  />
-                ))}
-              </SidebarMoreMenu>
-            </Sidebar>
-            <VStack width="100%">
-              <NavigationBar
-                end={
-                  <HStack alignItems="center" justifyContent="flex-end" gap={1}>
-                    <AppSwitcher />
-                    <UserSwitcher title="Brian" />
-                  </HStack>
-                }
-              >
-                <NavigationTitle>
-                  {[...items, ...moreMenuOptions][activeIndex].title}
-                </NavigationTitle>
-              </NavigationBar>
+            </SidebarMoreMenu>
+          </Sidebar>
+          <VStack width="100%">
+            <NavigationBar
+              end={
+                <HStack alignItems="center" justifyContent="flex-end" gap={1}>
+                  <AppSwitcher />
+                  <UserSwitcher title="Brian" />
+                </HStack>
+              }
+            >
+              <NavigationTitle>{[...items, ...moreMenuOptions][activeIndex].title}</NavigationTitle>
+            </NavigationBar>
+            <HStack
+              justifyContent="center"
+              alignItems="flex-start"
+              background="backgroundAlternate"
+              flexGrow={1}
+              spacing={4}
+            >
               <HStack
                 justifyContent="center"
                 alignItems="flex-start"
@@ -92,23 +96,15 @@ export const NavigationRecipe = () => {
                 flexGrow={1}
                 spacing={4}
               >
-                <HStack
-                  justifyContent="center"
-                  alignItems="flex-start"
-                  background="backgroundAlternate"
-                  flexGrow={1}
-                  spacing={4}
-                >
-                  <Button compact variant="primary" onPress={handleToggleCollapsed.toggle}>
-                    {isCollapsed ? 'Expand' : 'Collapse'} Sidebar
-                  </Button>
-                </HStack>
+                <Button compact variant="primary" onPress={handleToggleCollapsed.toggle}>
+                  {isCollapsed ? 'Expand' : 'Collapse'} Sidebar
+                </Button>
               </HStack>
-            </VStack>
-          </HStack>
-        </FeatureFlagProvider>
-      </PortalProvider>
-    </PatternTag>
+            </HStack>
+          </VStack>
+        </HStack>
+      </FeatureFlagProvider>
+    </PortalProvider>
   );
 };
 

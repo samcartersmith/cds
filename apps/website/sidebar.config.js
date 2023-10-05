@@ -811,11 +811,6 @@ const sidebars = {
         },
         { type: 'doc', id: 'components/system/Interactable/interactable', label: 'Interactable' },
         {
-          type: 'doc',
-          id: 'components/system/PatternTag/pattern-tag',
-          label: 'PatternTag',
-        },
-        {
           type: 'category',
           label: 'PortalProvider',
           items: [
