@@ -203,6 +203,8 @@ const versionMap: Record<SpotSquareName, number> = {
   securityShield: 2,
   switchAdvancedToSimpleTrading: 2,
   holdingCrypto: 2,
+  coinbaseOneUSDC: 0,
+  noPortfolio: 0,
 };
 
 export default versionMap;

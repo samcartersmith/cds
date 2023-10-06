@@ -245,6 +245,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseOneTokenRewards-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneTokenRewards-2').content,
   },
+  coinbaseOneUSDCBig: {
+    light: () => require('../svgJs/light/coinbaseOneUSDCBig-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneUSDCBig-0').content,
+  },
   coinbaseOneUSDCIncentives: {
     light: () => require('../svgJs/light/coinbaseOneUSDCIncentives-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneUSDCIncentives-2').content,
@@ -733,9 +737,17 @@ const svgJsMap = {
     light: () => require('../svgJs/light/multipleAccountsWalletsForOneUser-3').content,
     dark: () => require('../svgJs/dark/multipleAccountsWalletsForOneUser-3').content,
   },
+  multiplePortfolios: {
+    light: () => require('../svgJs/light/multiplePortfolios-0').content,
+    dark: () => require('../svgJs/dark/multiplePortfolios-0').content,
+  },
   myNameIsSatoshi: {
     light: () => require('../svgJs/light/myNameIsSatoshi-2').content,
     dark: () => require('../svgJs/dark/myNameIsSatoshi-2').content,
+  },
+  namePortfolio: {
+    light: () => require('../svgJs/light/namePortfolio-0').content,
+    dark: () => require('../svgJs/dark/namePortfolio-0').content,
   },
   networkWarning: {
     light: () => require('../svgJs/light/networkWarning-3').content,

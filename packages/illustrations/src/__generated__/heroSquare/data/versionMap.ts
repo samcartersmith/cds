@@ -299,6 +299,9 @@ const versionMap: Record<HeroSquareName, number> = {
   ensProfilePic: 0,
   noLongAddresses: 0,
   referralsCoinbaseOne: 0,
+  namePortfolio: 0,
+  multiplePortfolios: 0,
+  coinbaseOneUSDCBig: 0,
 };
 
 export default versionMap;

@@ -8,6 +8,39 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.2.0 (10/6/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 10/6/2023. [[#2317](https://github.cbhq.net/frontend/cds/pull/2317)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- coinbaseOneUSDCBig
+- multiplePortfolios
+- namePortfolio
+
+#### Spot Square
+
+- coinbaseOneUSDC
+- noPortfolio
+
+#### Pictogram
+
+- standWithCryptoLogoNavigation
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- globalTransactions
+
 ## 2.1.0 (9/14/2023 PST)
 
 #### 🚀 Updates

@@ -89,6 +89,14 @@ const names: NavIconName[] = [
   'key',
   'gasFees',
   'securityKey',
+  'waasProduct',
+  'signinProduct',
+  'rosettaProduct',
+  'exchangeProduct',
+  'primePoduct',
+  'advancedTradeProduct',
+  'payProduct',
+  'staking',
 ];
 
 export default names;

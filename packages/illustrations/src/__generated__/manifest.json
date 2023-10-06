@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-09-14T17:17:28.768Z",
+  "lastUpdated": "2023-10-06T16:07:27.678Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -3190,7 +3190,7 @@
       "height": 240,
       "description": "order, books, ui, chart, buying, selling, trading",
       "createdAt": "2022-08-05T05:37:08.903Z",
-      "lastUpdated": "2023-08-23T00:01:03.860Z",
+      "lastUpdated": "2023-10-04T21:12:48.093Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/orderBooks-1.svg",
         "svgDark": "./heroSquare/svg/dark/orderBooks-1.svg",
@@ -6965,22 +6965,22 @@
     "2:41461": {
       "type": "pictogram",
       "name": "globalTransactions",
-      "hash": "yG1pXiL5m4sAeeSB+YqVbC9yMFv/Yo/FG3EFt+1niOU=",
+      "hash": "hyrgcNfcroHWLb+q695uuR0B00lLsB7zJmUG85jmR6M=",
       "width": 48,
       "height": 48,
       "description": "",
       "createdAt": "2022-08-05T05:36:47.533Z",
-      "lastUpdated": "2023-09-05T22:05:53.496Z",
+      "lastUpdated": "2023-09-19T14:40:27.803Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/globalTransactions-3.svg",
-        "svgDark": "./pictogram/svg/dark/globalTransactions-3.svg",
-        "svgThemed": "./pictogram/svg/themeable/globalTransactions-3.svg",
-        "svgJsLight": "./pictogram/svgJs/light/globalTransactions-3.js",
-        "svgJsDark": "./pictogram/svgJs/dark/globalTransactions-3.js",
-        "pngLight": "./pictogram/png/light/globalTransactions-3.png",
-        "pngDark": "./pictogram/png/dark/globalTransactions-3.png"
+        "svgLight": "./pictogram/svg/light/globalTransactions-4.svg",
+        "svgDark": "./pictogram/svg/dark/globalTransactions-4.svg",
+        "svgThemed": "./pictogram/svg/themeable/globalTransactions-4.svg",
+        "svgJsLight": "./pictogram/svgJs/light/globalTransactions-4.js",
+        "svgJsDark": "./pictogram/svgJs/dark/globalTransactions-4.js",
+        "pngLight": "./pictogram/png/light/globalTransactions-4.png",
+        "pngDark": "./pictogram/png/dark/globalTransactions-4.png"
       },
-      "version": 3
+      "version": 4
     },
     "2:41462": {
       "type": "pictogram",
@@ -12550,7 +12550,7 @@
       "height": 96,
       "description": "Opt, In, Push, Notifications, Email, Bubble, Window, Notify, Account, Security, Prices",
       "createdAt": "2022-11-23T13:41:30.949Z",
-      "lastUpdated": "2023-09-05T22:05:44.767Z",
+      "lastUpdated": "2023-10-04T21:12:47.993Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/optInPushNotificationsEmail-3.svg",
         "svgDark": "./spotSquare/svg/dark/optInPushNotificationsEmail-3.svg",
@@ -12670,7 +12670,7 @@
       "height": 96.0006103515625,
       "description": "share, social, media, circles, blue, yellow, coins",
       "createdAt": "2022-11-23T13:42:05.903Z",
-      "lastUpdated": "2023-09-05T22:05:44.619Z",
+      "lastUpdated": "2023-10-04T21:12:47.907Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/shareOnSocialMedia-3.svg",
         "svgDark": "./spotSquare/svg/dark/shareOnSocialMedia-3.svg",
@@ -13230,7 +13230,7 @@
       "height": 96,
       "description": "Lock, security, key, authentication, 2FA, wallet, secure, passcode",
       "createdAt": "2022-11-23T13:41:31.178Z",
-      "lastUpdated": "2023-09-05T22:05:45.156Z",
+      "lastUpdated": "2023-10-04T21:12:48.129Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/walletSecurity-3.svg",
         "svgDark": "./spotSquare/svg/dark/walletSecurity-3.svg",
@@ -13270,7 +13270,7 @@
       "height": 96,
       "description": "self, custody, store, storage, wallet, coins, user, avatar",
       "createdAt": "2022-11-23T13:41:31.153Z",
-      "lastUpdated": "2023-09-05T22:05:30.336Z",
+      "lastUpdated": "2023-10-04T21:12:47.858Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/selfCustody-2.svg",
         "svgDark": "./spotSquare/svg/dark/selfCustody-2.svg",
@@ -13610,7 +13610,7 @@
       "height": 96,
       "description": "start, today, watch, earn, videos, calendar, week, learn",
       "createdAt": "2022-11-23T13:41:31.166Z",
-      "lastUpdated": "2023-09-05T22:05:44.408Z",
+      "lastUpdated": "2023-10-04T21:12:47.841Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/startToday-3.svg",
         "svgDark": "./spotSquare/svg/dark/startToday-3.svg",
@@ -13670,7 +13670,7 @@
       "height": 96,
       "description": "browser, extension, desktop, integrate, wallet, leverage, web, website, coinbase",
       "createdAt": "2022-11-23T13:41:30.962Z",
-      "lastUpdated": "2023-09-05T22:05:44.401Z",
+      "lastUpdated": "2023-10-04T21:12:47.833Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/browserExtension-2.svg",
         "svgDark": "./spotSquare/svg/dark/browserExtension-2.svg",
@@ -13730,7 +13730,7 @@
       "height": 96,
       "description": "cold, storage, check, mark, checkmark, coins, secure, trusted, security",
       "createdAt": "2022-11-23T13:42:05.573Z",
-      "lastUpdated": "2023-09-05T22:05:53.384Z",
+      "lastUpdated": "2023-10-04T21:12:48.021Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/stressTestedColdStorage-2.svg",
         "svgDark": "./spotSquare/svg/dark/stressTestedColdStorage-2.svg",
@@ -13790,7 +13790,7 @@
       "height": 96,
       "description": "arrow, up, trend, trending, assets, hot, coin, and, to, the, right",
       "createdAt": "2022-11-23T13:42:05.761Z",
-      "lastUpdated": "2023-09-05T22:05:44.137Z",
+      "lastUpdated": "2023-10-04T21:12:47.706Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/trendingHotAssets-2.svg",
         "svgDark": "./spotSquare/svg/dark/trendingHotAssets-2.svg",
@@ -16650,7 +16650,7 @@
       "height": 96,
       "description": "fees, coin, arrow, ",
       "createdAt": "2023-05-03T19:12:53.313Z",
-      "lastUpdated": "2023-09-05T22:05:53.342Z",
+      "lastUpdated": "2023-10-04T21:12:47.988Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/coinbaseFees-2.svg",
         "svgDark": "./spotSquare/svg/dark/coinbaseFees-2.svg",
@@ -16670,7 +16670,7 @@
       "height": 96,
       "description": "tag, coinbaseone, one, discounted, amount",
       "createdAt": "2023-05-03T19:12:53.258Z",
-      "lastUpdated": "2023-09-05T22:05:44.705Z",
+      "lastUpdated": "2023-10-04T21:12:47.947Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/coinbaseOneDiscountedAmount-2.svg",
         "svgDark": "./spotSquare/svg/dark/coinbaseOneDiscountedAmount-2.svg",
@@ -16690,7 +16690,7 @@
       "height": 96,
       "description": "notification, bell, alert, 🔔, 🔕 ",
       "createdAt": "2023-05-03T19:12:53.276Z",
-      "lastUpdated": "2023-09-05T22:05:44.930Z",
+      "lastUpdated": "2023-10-04T21:12:48.045Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/notificationsAlt-2.svg",
         "svgDark": "./spotSquare/svg/dark/notificationsAlt-2.svg",
@@ -16710,7 +16710,7 @@
       "height": 96,
       "description": "defi, how, staking, coin, coins, arrow",
       "createdAt": "2023-05-03T19:12:53.326Z",
-      "lastUpdated": "2023-09-05T22:05:45.279Z",
+      "lastUpdated": "2023-10-04T21:12:48.156Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/defiHow-2.svg",
         "svgDark": "./spotSquare/svg/dark/defiHow-2.svg",
@@ -16730,7 +16730,7 @@
       "height": 96,
       "description": "recurring, automatic, payments, pay, card, loan, arrow, calendar, once, month, one, time",
       "createdAt": "2023-05-03T19:12:53.270Z",
-      "lastUpdated": "2023-09-05T22:05:44.343Z",
+      "lastUpdated": "2023-10-04T21:12:47.808Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/automaticPayments-2.svg",
         "svgDark": "./spotSquare/svg/dark/automaticPayments-2.svg",
@@ -16750,7 +16750,7 @@
       "height": 96,
       "description": "chart, advanced, arrow, barchart, candle, candlesticks, rat",
       "createdAt": "2023-05-03T19:12:53.238Z",
-      "lastUpdated": "2023-09-05T22:05:44.911Z",
+      "lastUpdated": "2023-10-04T21:12:48.038Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/accessToAdvancedCharts-2.svg",
         "svgDark": "./spotSquare/svg/dark/accessToAdvancedCharts-2.svg",
@@ -16770,7 +16770,7 @@
       "height": 96,
       "description": "apps, ghost, unicorn, charts",
       "createdAt": "2023-01-19T05:38:48.468Z",
-      "lastUpdated": "2023-09-05T22:05:44.741Z",
+      "lastUpdated": "2023-10-04T21:12:47.965Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/cryptoApps-5.svg",
         "svgDark": "./spotSquare/svg/dark/cryptoApps-5.svg",
@@ -16790,7 +16790,7 @@
       "height": 96,
       "description": "switch, advanced, candle, candlesticks, graph, simple, ui, change, browser",
       "createdAt": "2023-05-03T19:12:53.357Z",
-      "lastUpdated": "2023-09-05T22:05:53.236Z",
+      "lastUpdated": "2023-10-04T21:12:47.877Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/switchAdvancedToSimpleTrading-2.svg",
         "svgDark": "./spotSquare/svg/dark/switchAdvancedToSimpleTrading-2.svg",
@@ -16810,7 +16810,7 @@
       "height": 96,
       "description": "tracking, transparency, check, phone, account,  ✔️, 📱, 📱, success state",
       "createdAt": "2023-05-03T19:12:53.332Z",
-      "lastUpdated": "2023-09-05T22:05:44.748Z",
+      "lastUpdated": "2023-10-04T21:12:47.971Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/appTrackingTransparency-2.svg",
         "svgDark": "./spotSquare/svg/dark/appTrackingTransparency-2.svg",
@@ -16830,7 +16830,7 @@
       "height": 96,
       "description": "chart, earn, interest, percentage, barchart, chart,  📊, 📈, 📉",
       "createdAt": "2023-05-03T19:12:53.344Z",
-      "lastUpdated": "2023-09-05T22:05:44.036Z",
+      "lastUpdated": "2023-10-04T21:12:47.688Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/earnInterest-2.svg",
         "svgDark": "./spotSquare/svg/dark/earnInterest-2.svg",
@@ -16850,7 +16850,7 @@
       "height": 96,
       "description": "deFi, risk, banner, percent, sign, trust, yield, earn",
       "createdAt": "2023-05-03T19:12:53.282Z",
-      "lastUpdated": "2023-09-05T22:05:44.870Z",
+      "lastUpdated": "2023-10-04T21:12:48.026Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/defiRisk-2.svg",
         "svgDark": "./spotSquare/svg/dark/defiRisk-2.svg",
@@ -16870,7 +16870,7 @@
       "height": 96,
       "description": "Hold, crypto, HODL, coins, assets, cryptocurrency, currency, arrow, down, store, save, stake",
       "createdAt": "2023-05-03T19:12:53.364Z",
-      "lastUpdated": "2023-09-05T22:05:45.235Z",
+      "lastUpdated": "2023-10-04T21:12:48.151Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/holdingCrypto-2.svg",
         "svgDark": "./spotSquare/svg/dark/holdingCrypto-2.svg",
@@ -16890,7 +16890,7 @@
       "height": 96,
       "description": "wallet, notifications, green, phone, 📱, 📱",
       "createdAt": "2023-05-03T19:12:53.187Z",
-      "lastUpdated": "2023-09-05T22:05:45.106Z",
+      "lastUpdated": "2023-10-04T21:12:48.112Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/walletNotifications-2.svg",
         "svgDark": "./spotSquare/svg/dark/walletNotifications-2.svg",
@@ -16910,7 +16910,7 @@
       "height": 96,
       "description": "focus, limit, limitorders, arrow, chart, advanced, advancedtrading ",
       "createdAt": "2023-05-03T19:12:53.307Z",
-      "lastUpdated": "2023-09-05T22:05:53.607Z",
+      "lastUpdated": "2023-10-04T21:12:48.135Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/focusLimitOrders-2.svg",
         "svgDark": "./spotSquare/svg/dark/focusLimitOrders-2.svg",
@@ -16950,7 +16950,7 @@
       "height": 96,
       "description": "contacts, contact, list, warning, ⚠, warning state",
       "createdAt": "2023-05-03T19:12:53.288Z",
-      "lastUpdated": "2023-09-05T22:05:53.350Z",
+      "lastUpdated": "2023-10-04T21:12:47.999Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/contactsListWarning-2.svg",
         "svgDark": "./spotSquare/svg/dark/contactsListWarning-2.svg",
@@ -16970,7 +16970,7 @@
       "height": 96,
       "description": "add, phone, number, account, details, onboarding, security",
       "createdAt": "2023-05-03T19:12:52.906Z",
-      "lastUpdated": "2023-09-05T22:05:45.229Z",
+      "lastUpdated": "2023-10-04T21:12:48.146Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/addPhoneNumber-2.svg",
         "svgDark": "./spotSquare/svg/dark/addPhoneNumber-2.svg",
@@ -16990,7 +16990,7 @@
       "height": 96,
       "description": "verify, email, envelope, checkmark, nux, onboarding, ✅, success state",
       "createdAt": "2023-05-03T19:12:52.914Z",
-      "lastUpdated": "2023-09-05T22:05:44.639Z",
+      "lastUpdated": "2023-10-04T21:12:47.915Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/verifyEmail-2.svg",
         "svgDark": "./spotSquare/svg/dark/verifyEmail-2.svg",
@@ -17030,7 +17030,7 @@
       "height": 96,
       "description": "commerce, invoices, plus, document, 📝, 📄, 📃, 📑, ➕, 💲 ",
       "createdAt": "2023-05-03T19:12:52.892Z",
-      "lastUpdated": "2023-09-05T22:05:44.273Z",
+      "lastUpdated": "2023-10-04T21:12:47.785Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/commerceInvoices-2.svg",
         "svgDark": "./spotSquare/svg/dark/commerceInvoices-2.svg",
@@ -17050,7 +17050,7 @@
       "height": 96,
       "description": "success, coin, balloon, welcome, account, created, start, trading, success state",
       "createdAt": "2023-05-03T19:12:52.934Z",
-      "lastUpdated": "2023-09-05T22:05:45.366Z",
+      "lastUpdated": "2023-10-04T21:12:48.178Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/readyToTrade-2.svg",
         "svgDark": "./spotSquare/svg/dark/readyToTrade-2.svg",
@@ -17070,7 +17070,7 @@
       "height": 96,
       "description": "open, email, envelope, letter, 📧 📥 📤 ✉ 📩 📨 ",
       "createdAt": "2023-05-03T19:12:52.899Z",
-      "lastUpdated": "2023-09-05T22:05:44.569Z",
+      "lastUpdated": "2023-10-04T21:12:47.895Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/openEmail-1.svg",
         "svgDark": "./spotSquare/svg/dark/openEmail-1.svg",
@@ -17090,7 +17090,7 @@
       "height": 120,
       "description": "verify, email, envelope, checkmark, nux, onboarding, ✅, success state",
       "createdAt": "2023-05-03T19:12:53.174Z",
-      "lastUpdated": "2023-08-23T00:00:32.044Z",
+      "lastUpdated": "2023-10-04T21:12:47.796Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/verifyEmail-2.svg",
         "svgDark": "./spotRectangle/svg/dark/verifyEmail-2.svg",
@@ -17110,7 +17110,7 @@
       "height": 120,
       "description": "success, coin, balloon, welcome, account, created, start, trading, success state",
       "createdAt": "2023-05-03T19:12:53.010Z",
-      "lastUpdated": "2023-08-23T00:00:32.473Z",
+      "lastUpdated": "2023-10-04T21:12:47.977Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/readyToTrade-2.svg",
         "svgDark": "./spotRectangle/svg/dark/readyToTrade-2.svg",
@@ -17130,7 +17130,7 @@
       "height": 120,
       "description": "apps, ghost, unicorn, charts",
       "createdAt": "2023-05-03T19:12:53.023Z",
-      "lastUpdated": "2023-09-05T22:05:44.957Z",
+      "lastUpdated": "2023-10-04T21:12:48.071Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/cryptoApps-2.svg",
         "svgDark": "./spotRectangle/svg/dark/cryptoApps-2.svg",
@@ -17150,7 +17150,7 @@
       "height": 120,
       "description": "piggy, bank, pig, arrow, coin, safe, money, funds, saving, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷, 🐖, 💲",
       "createdAt": "2023-05-03T19:12:53.029Z",
-      "lastUpdated": "2023-08-23T00:00:32.192Z",
+      "lastUpdated": "2023-10-04T21:12:47.864Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/coinbaseOneSavingFunds-2.svg",
         "svgDark": "./spotRectangle/svg/dark/coinbaseOneSavingFunds-2.svg",
@@ -17170,7 +17170,7 @@
       "height": 96,
       "description": "free, bitcoin, get, money, get, paid, sparkle, star, join, refer, referral, coin, BTC, earn, hodl",
       "createdAt": "2023-05-03T19:12:52.949Z",
-      "lastUpdated": "2023-09-05T22:05:44.890Z",
+      "lastUpdated": "2023-10-04T21:12:48.032Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/freeBtc-2.svg",
         "svgDark": "./spotSquare/svg/dark/freeBtc-2.svg",
@@ -17190,7 +17190,7 @@
       "height": 96,
       "description": "clipboard, list, checkmark, confirmed, on, waiting, notify, document, paper, details, success state",
       "createdAt": "2023-05-03T19:12:52.956Z",
-      "lastUpdated": "2023-09-05T22:05:44.109Z",
+      "lastUpdated": "2023-10-04T21:12:47.700Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/onTheList-2.svg",
         "svgDark": "./spotSquare/svg/dark/onTheList-2.svg",
@@ -17210,7 +17210,7 @@
       "height": 120,
       "description": "contacts, contact, list, warning, ⚠, warning state",
       "createdAt": "2023-05-03T19:12:53.121Z",
-      "lastUpdated": "2023-08-23T00:00:48.147Z",
+      "lastUpdated": "2023-10-04T21:12:48.064Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/contactsListWarning-2.svg",
         "svgDark": "./spotRectangle/svg/dark/contactsListWarning-2.svg",
@@ -17230,7 +17230,7 @@
       "height": 120,
       "description": "commerce, invoices, plus, document, 📝, 📄, 📃, 📑, ➕, 💲 ",
       "createdAt": "2023-05-03T19:12:53.096Z",
-      "lastUpdated": "2023-08-23T00:00:32.057Z",
+      "lastUpdated": "2023-10-04T21:12:47.802Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/commerceInvoices-2.svg",
         "svgDark": "./spotRectangle/svg/dark/commerceInvoices-2.svg",
@@ -17250,7 +17250,7 @@
       "height": 120,
       "description": "estimated, amount, prices, browser, money, crypto, coin, calculation",
       "createdAt": "2023-05-03T19:12:53.044Z",
-      "lastUpdated": "2023-08-23T00:00:32.831Z",
+      "lastUpdated": "2023-10-04T21:12:48.140Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/estimatedAmount-2.svg",
         "svgDark": "./spotRectangle/svg/dark/estimatedAmount-2.svg",
@@ -17270,7 +17270,7 @@
       "height": 96,
       "description": "switch, advanced, trading, rat, candlesticks, 📊, 📈, 📉",
       "createdAt": "2023-05-03T19:12:52.854Z",
-      "lastUpdated": "2023-09-05T22:05:45.149Z",
+      "lastUpdated": "2023-10-04T21:12:48.123Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/advancedTrading-2.svg",
         "svgDark": "./spotSquare/svg/dark/advancedTrading-2.svg",
@@ -17290,7 +17290,7 @@
       "height": 120,
       "description": "phone, number, 2FA, security, passcode, lock, asterisk",
       "createdAt": "2023-05-03T19:12:53.168Z",
-      "lastUpdated": "2023-08-23T00:01:04.096Z",
+      "lastUpdated": "2023-10-04T21:12:48.173Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/phoneNumber-2.svg",
         "svgDark": "./spotRectangle/svg/dark/phoneNumber-2.svg",
@@ -17310,7 +17310,7 @@
       "height": 120,
       "description": "Hold, crypto, HODL, coins, assets, cryptocurrency, currency, arrow, down, store, save, stake",
       "createdAt": "2023-05-03T19:12:53.319Z",
-      "lastUpdated": "2023-09-05T22:05:53.317Z",
+      "lastUpdated": "2023-10-04T21:12:47.922Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/holdingCrypto-2.svg",
         "svgDark": "./spotRectangle/svg/dark/holdingCrypto-2.svg",
@@ -17330,7 +17330,7 @@
       "height": 120,
       "description": "defi, how, staking, coin, coins, arrow",
       "createdAt": "2023-05-03T19:12:53.219Z",
-      "lastUpdated": "2023-08-23T00:00:32.256Z",
+      "lastUpdated": "2023-10-04T21:12:47.870Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/defiHow-2.svg",
         "svgDark": "./spotRectangle/svg/dark/defiHow-2.svg",
@@ -17350,7 +17350,7 @@
       "height": 120,
       "description": "yield, hold, crypto, coins, hodl, currency, basket, stake, store, bowl",
       "createdAt": "2023-05-03T19:12:53.058Z",
-      "lastUpdated": "2023-08-23T00:00:32.731Z",
+      "lastUpdated": "2023-10-04T21:12:48.088Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/holdCrypto-2.svg",
         "svgDark": "./spotRectangle/svg/dark/holdCrypto-2.svg",
@@ -17370,7 +17370,7 @@
       "height": 96,
       "description": "Documents, reviewed, success, checkmark, confirm, complete, ✅, success state",
       "createdAt": "2023-05-03T19:12:53.231Z",
-      "lastUpdated": "2023-09-05T22:05:45.309Z",
+      "lastUpdated": "2023-10-04T21:12:48.162Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/documentSuccess-2.svg",
         "svgDark": "./spotSquare/svg/dark/documentSuccess-2.svg",
@@ -17390,7 +17390,7 @@
       "height": 120,
       "description": "switch, advanced, candle, candlesticks, graph, simple, ui, change, browser",
       "createdAt": "2022-08-05T05:37:09.208Z",
-      "lastUpdated": "2023-08-23T00:00:48.361Z",
+      "lastUpdated": "2023-10-04T21:12:48.107Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/switchAdvancedToSimpleTrading-4.svg",
         "svgDark": "./spotRectangle/svg/dark/switchAdvancedToSimpleTrading-4.svg",
@@ -17410,7 +17410,7 @@
       "height": 120,
       "description": "coin, coins, moon, more, empty state",
       "createdAt": "2023-05-03T19:12:53.181Z",
-      "lastUpdated": "2023-09-05T22:05:44.356Z",
+      "lastUpdated": "2023-10-04T21:12:47.814Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/cryptoAndMore-2.svg",
         "svgDark": "./spotRectangle/svg/dark/cryptoAndMore-2.svg",
@@ -17430,7 +17430,7 @@
       "height": 96,
       "description": "commerce, accounting, arrow, document, 📝, 📄, 📃, 📑,  ⬇ ",
       "createdAt": "2023-05-03T19:12:52.974Z",
-      "lastUpdated": "2023-09-05T22:05:44.803Z",
+      "lastUpdated": "2023-10-04T21:12:48.004Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/commerceAccounting-2.svg",
         "svgDark": "./spotSquare/svg/dark/commerceAccounting-2.svg",
@@ -17450,7 +17450,7 @@
       "height": 120,
       "description": "trade, immediately, swap, now, start, today, coin, currency, asset, switch, empty state",
       "createdAt": "2023-05-03T19:12:53.077Z",
-      "lastUpdated": "2023-08-23T00:00:32.372Z",
+      "lastUpdated": "2023-10-04T21:12:47.928Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/tradeImmediately-2.svg",
         "svgDark": "./spotRectangle/svg/dark/tradeImmediately-2.svg",
@@ -17470,7 +17470,7 @@
       "height": 96,
       "description": "clipboard, verify, info, information, document, warning, error, issue, concern, ⚠️, warning state",
       "createdAt": "2023-05-03T19:12:52.927Z",
-      "lastUpdated": "2023-09-05T22:05:44.995Z",
+      "lastUpdated": "2023-10-04T21:12:48.082Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/verifyInfo-2.svg",
         "svgDark": "./spotSquare/svg/dark/verifyInfo-2.svg",
@@ -17490,7 +17490,7 @@
       "height": 120,
       "description": "Documents, reviewed, success, checkmark, confirm, complete, ✅, success state",
       "createdAt": "2023-05-03T19:12:53.083Z",
-      "lastUpdated": "2023-08-23T00:00:31.917Z",
+      "lastUpdated": "2023-10-04T21:12:47.750Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/documentSuccess-2.svg",
         "svgDark": "./spotRectangle/svg/dark/documentSuccess-2.svg",
@@ -17510,7 +17510,7 @@
       "height": 120,
       "description": "earn, defi, coins, coins, percentage, arrows",
       "createdAt": "2023-05-03T19:12:53.016Z",
-      "lastUpdated": "2023-08-23T00:00:32.631Z",
+      "lastUpdated": "2023-10-04T21:12:48.051Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/defiEarn-2.svg",
         "svgDark": "./spotRectangle/svg/dark/defiEarn-2.svg",
@@ -17530,7 +17530,7 @@
       "height": 120,
       "description": "fees, coin, arrow, ",
       "createdAt": "2023-05-03T19:12:53.051Z",
-      "lastUpdated": "2023-09-05T22:05:44.394Z",
+      "lastUpdated": "2023-10-04T21:12:47.826Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/coinbaseFees-2.svg",
         "svgDark": "./spotRectangle/svg/dark/coinbaseFees-2.svg",
@@ -17550,7 +17550,7 @@
       "height": 96,
       "description": "estimated, amount, prices, browser, money, crypto, coin, calculation",
       "createdAt": "2023-05-03T19:12:52.994Z",
-      "lastUpdated": "2023-09-05T22:05:44.549Z",
+      "lastUpdated": "2023-10-04T21:12:47.883Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/estimatedAmount-2.svg",
         "svgDark": "./spotSquare/svg/dark/estimatedAmount-2.svg",
@@ -17570,7 +17570,7 @@
       "height": 120,
       "description": "chart, earn, interest, percentage, barchart, chart,  📊, 📈, 📉",
       "createdAt": "2023-05-03T19:12:53.128Z",
-      "lastUpdated": "2023-08-23T00:00:31.826Z",
+      "lastUpdated": "2023-10-04T21:12:47.712Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/earnInterest-2.svg",
         "svgDark": "./spotRectangle/svg/dark/earnInterest-2.svg",
@@ -17590,7 +17590,7 @@
       "height": 120,
       "description": "security, lock, onboarding, safety, coin, padlock, secure",
       "createdAt": "2023-05-03T19:12:53.065Z",
-      "lastUpdated": "2023-08-23T00:00:31.923Z",
+      "lastUpdated": "2023-10-04T21:12:47.756Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/securityShield-2.svg",
         "svgDark": "./spotRectangle/svg/dark/securityShield-2.svg",
@@ -17610,7 +17610,7 @@
       "height": 120,
       "description": "add, credit, card, plastic, money, plus, payment, method, confirm, details, account",
       "createdAt": "2023-05-03T19:12:53.090Z",
-      "lastUpdated": "2023-08-23T00:00:32.116Z",
+      "lastUpdated": "2023-10-04T21:12:47.847Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/coinbaseCardLock-2.svg",
         "svgDark": "./spotRectangle/svg/dark/coinbaseCardLock-2.svg",
@@ -17630,7 +17630,7 @@
       "height": 120,
       "description": "open, email, envelope, letter, 📧 📥 📤 ✉ 📩 📨 ",
       "createdAt": "2023-05-03T19:12:52.968Z",
-      "lastUpdated": "2023-08-23T00:00:16.684Z",
+      "lastUpdated": "2023-10-04T21:12:47.958Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/openEmail-2.svg",
         "svgDark": "./spotRectangle/svg/dark/openEmail-2.svg",
@@ -17650,7 +17650,7 @@
       "height": 96,
       "description": "security, lock, onboarding, safety, coin, padlock, secure",
       "createdAt": "2023-05-03T19:12:53.351Z",
-      "lastUpdated": "2023-09-05T22:05:44.431Z",
+      "lastUpdated": "2023-10-04T21:12:47.852Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/securityShield-2.svg",
         "svgDark": "./spotSquare/svg/dark/securityShield-2.svg",
@@ -17670,7 +17670,7 @@
       "height": 120,
       "description": "trading, UI, advanced, chart, candlestick, order, book, depth",
       "createdAt": "2023-05-03T19:12:53.212Z",
-      "lastUpdated": "2023-08-23T00:00:47.095Z",
+      "lastUpdated": "2023-10-04T21:12:47.726Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/advancedTradingUi-1.svg",
         "svgDark": "./spotRectangle/svg/dark/advancedTradingUi-1.svg",
@@ -17690,7 +17690,7 @@
       "height": 120,
       "description": "switch, advanced, trading, rat, candlesticks, 📊, 📈, 📉",
       "createdAt": "2023-05-03T19:12:53.300Z",
-      "lastUpdated": "2023-09-05T22:05:53.262Z",
+      "lastUpdated": "2023-10-04T21:12:47.901Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/advancedTrading-2.svg",
         "svgDark": "./spotRectangle/svg/dark/advancedTrading-2.svg",
@@ -17710,7 +17710,7 @@
       "height": 120,
       "description": "art, image, ghost, graph, phone, magical, nft, phone, coinbase, wallet, 👻, 🖼, 📱, 📲, 📊",
       "createdAt": "2023-05-03T19:12:53.225Z",
-      "lastUpdated": "2023-09-05T22:05:44.721Z",
+      "lastUpdated": "2023-10-04T21:12:47.953Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/exploreDecentralizedApps-2.svg",
         "svgDark": "./spotRectangle/svg/dark/exploreDecentralizedApps-2.svg",
@@ -17730,7 +17730,7 @@
       "height": 120,
       "description": "document, certified, correct, ribbon, checkmark, confirmed, reviewed, approved, stamped, papers, success state",
       "createdAt": "2023-05-03T19:12:53.294Z",
-      "lastUpdated": "2023-08-23T00:01:03.868Z",
+      "lastUpdated": "2023-10-04T21:12:48.099Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/documentCertified-2.svg",
         "svgDark": "./spotRectangle/svg/dark/documentCertified-2.svg",
@@ -17750,7 +17750,7 @@
       "height": 120,
       "description": "recurring, automatic, payments, pay, card, loan, arrow, calendar, once, month, one, time",
       "createdAt": "2023-05-03T19:12:53.193Z",
-      "lastUpdated": "2023-08-23T00:00:31.973Z",
+      "lastUpdated": "2023-10-04T21:12:47.779Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/automaticPayments-2.svg",
         "svgDark": "./spotRectangle/svg/dark/automaticPayments-2.svg",
@@ -17770,7 +17770,7 @@
       "height": 96,
       "description": "add, credit, card, plastic, money, plus, payment, method, confirm, details, account",
       "createdAt": "2023-05-03T19:12:52.981Z",
-      "lastUpdated": "2023-09-05T22:05:45.128Z",
+      "lastUpdated": "2023-10-04T21:12:48.118Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/coinbaseCardPocket-2.svg",
         "svgDark": "./spotSquare/svg/dark/coinbaseCardPocket-2.svg",
@@ -17790,7 +17790,7 @@
       "height": 120,
       "description": "clipboard, list, checkmark, confirmed, on, waiting, notify, document, paper, details, success state",
       "createdAt": "2023-05-03T19:12:53.264Z",
-      "lastUpdated": "2023-08-23T00:00:47.663Z",
+      "lastUpdated": "2023-10-04T21:12:47.889Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/onTheList-2.svg",
         "svgDark": "./spotRectangle/svg/dark/onTheList-2.svg",
@@ -17810,7 +17810,7 @@
       "height": 120,
       "description": "tag, coinbaseone, one, discounted, amount",
       "createdAt": "2023-05-03T19:12:53.200Z",
-      "lastUpdated": "2023-08-23T00:00:31.657Z",
+      "lastUpdated": "2023-10-04T21:12:47.682Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/coinbaseOneDiscountedAmount-2.svg",
         "svgDark": "./spotRectangle/svg/dark/coinbaseOneDiscountedAmount-2.svg",
@@ -17850,7 +17850,7 @@
       "height": 120,
       "description": "add, credit, card, plastic, money, plus, payment, method, confirm, details, account",
       "createdAt": "2023-05-03T19:12:53.206Z",
-      "lastUpdated": "2023-08-23T00:00:47.271Z",
+      "lastUpdated": "2023-10-04T21:12:47.772Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/coinbaseCardPocket-2.svg",
         "svgDark": "./spotRectangle/svg/dark/coinbaseCardPocket-2.svg",
@@ -17870,7 +17870,7 @@
       "height": 96,
       "description": "phone, number, 2FA, security, passcode, lock, asterisk",
       "createdAt": "2023-05-03T19:12:52.987Z",
-      "lastUpdated": "2023-09-05T22:05:44.692Z",
+      "lastUpdated": "2023-10-04T21:12:47.940Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/phoneNumber-1.svg",
         "svgDark": "./spotSquare/svg/dark/phoneNumber-1.svg",
@@ -17890,7 +17890,7 @@
       "height": 120,
       "description": "focus, limit, limitorders, arrow, chart, advanced, advancedtrading ",
       "createdAt": "2022-08-05T05:37:09.197Z",
-      "lastUpdated": "2023-08-23T00:00:47.463Z",
+      "lastUpdated": "2023-10-04T21:12:47.820Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/focusLimitOrders-3.svg",
         "svgDark": "./spotRectangle/svg/dark/focusLimitOrders-3.svg",
@@ -17910,7 +17910,7 @@
       "height": 120,
       "description": "free, bitcoin, get, money, get, paid, sparkle, star, join, refer, referral, coin, BTC, earn, hodl",
       "createdAt": "2023-05-03T19:12:53.038Z",
-      "lastUpdated": "2023-08-23T00:00:32.650Z",
+      "lastUpdated": "2023-10-04T21:12:48.057Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/freeBtc-2.svg",
         "svgDark": "./spotRectangle/svg/dark/freeBtc-2.svg",
@@ -17930,7 +17930,7 @@
       "height": 96,
       "description": "document, certified, correct, ribbon, checkmark, confirmed, reviewed, approved, stamped, papers, success state",
       "createdAt": "2023-05-03T19:12:52.847Z",
-      "lastUpdated": "2023-09-05T22:05:45.336Z",
+      "lastUpdated": "2023-10-04T21:12:48.167Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/documentCertified-2.svg",
         "svgDark": "./spotSquare/svg/dark/documentCertified-2.svg",
@@ -17950,7 +17950,7 @@
       "height": 120,
       "description": "Coin, Coins, Currency, Crypto, Bitcoin, BTC, store, value, money, asset, sparkles, stars, ✨, success state",
       "createdAt": "2023-05-03T19:12:53.252Z",
-      "lastUpdated": "2023-08-23T00:00:47.248Z",
+      "lastUpdated": "2023-10-04T21:12:47.763Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/bigBtc-2.svg",
         "svgDark": "./spotRectangle/svg/dark/bigBtc-2.svg",
@@ -17990,7 +17990,7 @@
       "height": 120,
       "description": "commerce, accounting, arrow, document, 📝, 📄, 📃, 📑,  ⬇ ",
       "createdAt": "2023-05-03T19:12:53.102Z",
-      "lastUpdated": "2023-08-23T00:00:31.864Z",
+      "lastUpdated": "2023-10-04T21:12:47.738Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/commerceAccounting-1.svg",
         "svgDark": "./spotRectangle/svg/dark/commerceAccounting-1.svg",
@@ -18010,7 +18010,7 @@
       "height": 120,
       "description": "clipboard, verify, info, information, document, warning, error, issue, concern, ⚠️, warning state",
       "createdAt": "2023-05-03T19:12:53.115Z",
-      "lastUpdated": "2023-08-23T00:00:31.629Z",
+      "lastUpdated": "2023-10-04T21:12:47.673Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/verifyInfo-2.svg",
         "svgDark": "./spotRectangle/svg/dark/verifyInfo-2.svg",
@@ -18030,7 +18030,7 @@
       "height": 120,
       "description": "notification, bell, alert, 🔔, 🔕 ",
       "createdAt": "2023-05-03T19:12:53.149Z",
-      "lastUpdated": "2023-08-23T00:00:31.893Z",
+      "lastUpdated": "2023-10-04T21:12:47.744Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/notificationsAlt-2.svg",
         "svgDark": "./spotRectangle/svg/dark/notificationsAlt-2.svg",
@@ -18050,7 +18050,7 @@
       "height": 96,
       "description": "yield, hold, crypto, coins, hodl, currency, basket, stake, store, bowl",
       "createdAt": "2023-05-03T19:12:52.962Z",
-      "lastUpdated": "2023-09-05T22:05:44.754Z",
+      "lastUpdated": "2023-10-04T21:12:47.982Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/holdCrypto-2.svg",
         "svgDark": "./spotSquare/svg/dark/holdCrypto-2.svg",
@@ -18070,7 +18070,7 @@
       "height": 96,
       "description": "trade, immediately, swap, now, start, today, coin, currency, asset, switch, empty state",
       "createdAt": "2023-05-03T19:12:52.885Z",
-      "lastUpdated": "2023-09-05T22:05:44.828Z",
+      "lastUpdated": "2023-10-04T21:12:48.010Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/tradeImmediately-2.svg",
         "svgDark": "./spotSquare/svg/dark/tradeImmediately-2.svg",
@@ -18090,7 +18090,7 @@
       "height": 120,
       "description": "deFi, risk, banner, percent, sign, trust, yield, earn",
       "createdAt": "2023-05-03T19:12:53.108Z",
-      "lastUpdated": "2023-08-23T00:00:32.387Z",
+      "lastUpdated": "2023-10-04T21:12:47.934Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/defiRisk-2.svg",
         "svgDark": "./spotRectangle/svg/dark/defiRisk-2.svg",
@@ -18110,7 +18110,7 @@
       "height": 96,
       "description": "piggy, bank, pig, arrow, coin, safe, money, funds, saving, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷, 🐖, 💲",
       "createdAt": "2023-05-03T19:12:52.839Z",
-      "lastUpdated": "2023-09-05T22:05:29.999Z",
+      "lastUpdated": "2023-10-04T21:12:47.732Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/coinbaseOneSavingFunds-2.svg",
         "svgDark": "./spotSquare/svg/dark/coinbaseOneSavingFunds-2.svg",
@@ -18130,7 +18130,7 @@
       "height": 120,
       "description": "tracking, transparency, check, phone, account,  ✔️, 📱, 📱, success state",
       "createdAt": "2023-05-03T19:12:53.156Z",
-      "lastUpdated": "2023-08-23T00:01:03.748Z",
+      "lastUpdated": "2023-10-04T21:12:48.077Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/appTrackingTransparency-2.svg",
         "svgDark": "./spotRectangle/svg/dark/appTrackingTransparency-2.svg",
@@ -18150,7 +18150,7 @@
       "height": 96,
       "description": "earn, defi, coins, coins, percentage, arrows",
       "createdAt": "2023-05-03T19:12:52.869Z",
-      "lastUpdated": "2023-09-05T22:05:44.103Z",
+      "lastUpdated": "2023-10-04T21:12:47.694Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/defiEarn-2.svg",
         "svgDark": "./spotSquare/svg/dark/defiEarn-2.svg",
@@ -18170,7 +18170,7 @@
       "height": 120,
       "description": "add, phone, number, account, details, onboarding, security",
       "createdAt": "2023-05-03T19:12:53.071Z",
-      "lastUpdated": "2023-08-23T00:00:47.345Z",
+      "lastUpdated": "2023-10-04T21:12:47.791Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/addPhoneNumber-2.svg",
         "svgDark": "./spotRectangle/svg/dark/addPhoneNumber-2.svg",
@@ -18190,7 +18190,7 @@
       "height": 120,
       "description": "wallet, notifications, green, phone, 📱, 📱",
       "createdAt": "2023-05-03T19:12:53.162Z",
-      "lastUpdated": "2023-08-23T00:01:14.303Z",
+      "lastUpdated": "2023-10-04T21:12:47.720Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/walletNotifications-2.svg",
         "svgDark": "./spotRectangle/svg/dark/walletNotifications-2.svg",
@@ -18210,7 +18210,7 @@
       "height": 120,
       "description": "document, upload, proof, address, paper, address, mailing, letter  papers",
       "createdAt": "2023-06-20T18:08:28.718Z",
-      "lastUpdated": "2023-08-23T00:01:14.738Z",
+      "lastUpdated": "2023-10-04T21:12:48.015Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/uploadDocument-0.svg",
         "svgDark": "./spotRectangle/svg/dark/uploadDocument-0.svg",
@@ -18499,6 +18499,126 @@
         "svgJsDark": "./spotRectangle/svgJs/dark/referralsCoinbaseOne-0.js",
         "pngLight": "./spotRectangle/png/light/referralsCoinbaseOne-0.png",
         "pngDark": "./spotRectangle/png/dark/referralsCoinbaseOne-0.png"
+      },
+      "version": 0
+    },
+    "4017:187": {
+      "type": "heroSquare",
+      "name": "namePortfolio",
+      "hash": "s1gBaRycoCbeCrWgut5IvpbSHzorRZuyEry4J1hJibI=",
+      "width": 240,
+      "height": 240,
+      "description": "portfolio, multiple, multi, many, port, crypto, assets, piechart, UI, name, type, select",
+      "createdAt": "2023-10-04T21:12:47.278Z",
+      "lastUpdated": "2023-10-04T21:12:47.278Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/namePortfolio-0.svg",
+        "svgDark": "./heroSquare/svg/dark/namePortfolio-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/namePortfolio-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/namePortfolio-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/namePortfolio-0.js",
+        "pngLight": "./heroSquare/png/light/namePortfolio-0.png",
+        "pngDark": "./heroSquare/png/dark/namePortfolio-0.png"
+      },
+      "version": 0
+    },
+    "4017:188": {
+      "type": "heroSquare",
+      "name": "multiplePortfolios",
+      "hash": "MKscpxCu+TZYHqtEGY0Fv9UyQK4s7hzJiiMNu14dG0Q=",
+      "width": 240,
+      "height": 240,
+      "description": "portfolio, multiple, multi, many, port, crypto, assets, piechart, UI, new, select",
+      "createdAt": "2023-10-04T21:12:47.283Z",
+      "lastUpdated": "2023-10-04T21:12:47.283Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/multiplePortfolios-0.svg",
+        "svgDark": "./heroSquare/svg/dark/multiplePortfolios-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/multiplePortfolios-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/multiplePortfolios-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/multiplePortfolios-0.js",
+        "pngLight": "./heroSquare/png/light/multiplePortfolios-0.png",
+        "pngDark": "./heroSquare/png/dark/multiplePortfolios-0.png"
+      },
+      "version": 0
+    },
+    "4017:201": {
+      "type": "spotSquare",
+      "name": "noPortfolio",
+      "hash": "0I+tfPejvFBDYHuE4gGSTlRHy1BRhoBWRFRQ53BkUNU=",
+      "width": 96,
+      "height": 96,
+      "description": "coin, folder, crypto, portfolio, storage, cryptocurrency, empty, state, none, not, here, no",
+      "createdAt": "2023-10-04T21:12:47.289Z",
+      "lastUpdated": "2023-10-04T21:12:47.289Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/noPortfolio-0.svg",
+        "svgDark": "./spotSquare/svg/dark/noPortfolio-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/noPortfolio-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/noPortfolio-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/noPortfolio-0.js",
+        "pngLight": "./spotSquare/png/light/noPortfolio-0.png",
+        "pngDark": "./spotSquare/png/dark/noPortfolio-0.png"
+      },
+      "version": 0
+    },
+    "4017:220": {
+      "type": "pictogram",
+      "name": "standWithCryptoLogoNavigation",
+      "hash": "AdNswQth39KL9n7xjUxmbbxEm2Yl9BMPY5x+SjHFiyI=",
+      "width": 40,
+      "height": 40,
+      "description": "stand, with, crypto, swc, shield, pictogram, logo, navigation, nav, app, switcher",
+      "createdAt": "2023-10-04T21:12:47.264Z",
+      "lastUpdated": "2023-10-04T21:12:47.264Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/standWithCryptoLogoNavigation-0.svg",
+        "svgDark": "./pictogram/svg/dark/standWithCryptoLogoNavigation-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/standWithCryptoLogoNavigation-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/standWithCryptoLogoNavigation-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/standWithCryptoLogoNavigation-0.js",
+        "pngLight": "./pictogram/png/light/standWithCryptoLogoNavigation-0.png",
+        "pngDark": "./pictogram/png/dark/standWithCryptoLogoNavigation-0.png"
+      },
+      "version": 0
+    },
+    "4049:300": {
+      "type": "spotSquare",
+      "name": "coinbaseOneUSDC",
+      "hash": "bWJHr7KBmJnR78o5F19Eu1Ds7UqB+KwzSfsj/dz0HPA=",
+      "width": 96,
+      "height": 96,
+      "description": "coinbase, One, cb1, usdc, USDCoin, coin, USD, linking, to, connect, both, user, avatar, coins",
+      "createdAt": "2023-10-04T21:12:47.271Z",
+      "lastUpdated": "2023-10-04T21:12:47.271Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/coinbaseOneUSDC-0.svg",
+        "svgDark": "./spotSquare/svg/dark/coinbaseOneUSDC-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/coinbaseOneUSDC-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/coinbaseOneUSDC-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneUSDC-0.js",
+        "pngLight": "./spotSquare/png/light/coinbaseOneUSDC-0.png",
+        "pngDark": "./spotSquare/png/dark/coinbaseOneUSDC-0.png"
+      },
+      "version": 0
+    },
+    "4049:301": {
+      "type": "heroSquare",
+      "name": "coinbaseOneUSDCBig",
+      "hash": "5LQhe4V2OXd+YgudRN8Fx9+M2TQ2NYd0oHsOioJrtzw=",
+      "width": 240,
+      "height": 240,
+      "description": "coinbase, One, cb1, usdc, USDCoin, coin, USD, linking, to, connect, both, user, avatar, coins",
+      "createdAt": "2023-10-04T21:12:47.295Z",
+      "lastUpdated": "2023-10-04T21:12:47.295Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/coinbaseOneUSDCBig-0.svg",
+        "svgDark": "./heroSquare/svg/dark/coinbaseOneUSDCBig-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/coinbaseOneUSDCBig-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/coinbaseOneUSDCBig-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/coinbaseOneUSDCBig-0.js",
+        "pngLight": "./heroSquare/png/light/coinbaseOneUSDCBig-0.png",
+        "pngDark": "./heroSquare/png/dark/coinbaseOneUSDCBig-0.png"
       },
       "version": 0
     }

@@ -234,6 +234,7 @@ export type PictogramName =
   | 'stableCoinMetaphor'
   | 'stacking'
   | 'stakingGraph'
+  | 'standWithCryptoLogoNavigation'
   | 'startToday'
   | 'strongInfo'
   | 'strongWarning'

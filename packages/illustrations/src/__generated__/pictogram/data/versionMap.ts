@@ -23,7 +23,7 @@ const versionMap: Record<PictogramName, number> = {
   moneySwift: 2,
   decentralizedExchange: 3,
   trendingAssets: 3,
-  globalTransactions: 3,
+  globalTransactions: 4,
   orders: 1,
   emailAndMessages: 2,
   smsAuthenticate: 2,
@@ -289,6 +289,7 @@ const versionMap: Record<PictogramName, number> = {
   planet: 2,
   baseLogoNavigation: 2,
   passport: 1,
+  standWithCryptoLogoNavigation: 0,
 };
 
 export default versionMap;

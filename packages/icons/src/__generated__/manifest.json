@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-09-15T00:23:29.091Z",
-  "metadata": { "lastUnicode": 61759 },
+  "lastUpdated": "2023-10-06T16:07:11.231Z",
+  "metadata": { "lastUnicode": 61807 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -1062,18 +1062,18 @@
     "2:779": {
       "type": "nav",
       "name": "chartPie",
-      "hash": "bEJ+RtmLBTcuNk7abxmT87/dw1kqegbkZA8kSdtPY44=",
+      "hash": "YNHTo9ixpvcIfeNw82NdmgRZPVqsHJdnshv6qLDUEa0=",
       "description": "navigation, speciality, chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧",
       "components": [
         { "props": { "size": 24, "active": true }, "metadata": { "unicode": 60543 } },
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60538 } },
-        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 60537 } },
         { "props": { "size": 16, "active": true }, "metadata": { "unicode": 60542 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 60537 } },
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60541 } },
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60536 } }
       ],
       "createdAt": "2022-08-24T18:51:39.575Z",
-      "lastUpdated": "2023-09-14T16:15:11.663Z",
+      "lastUpdated": "2023-10-05T21:13:36.302Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-chartPie-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-chartPie-12-inactive.svg",
@@ -1457,7 +1457,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61606 } }
       ],
       "createdAt": "2023-02-01T18:32:06.575Z",
-      "lastUpdated": "2023-09-14T16:15:25.251Z",
+      "lastUpdated": "2023-10-05T21:13:36.365Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-rocketShip-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-rocketShip-12-inactive.svg",
@@ -6221,7 +6221,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61691 } }
       ],
       "createdAt": "2023-08-10T14:36:54.717Z",
-      "lastUpdated": "2023-09-14T16:13:41.572Z",
+      "lastUpdated": "2023-10-05T21:13:36.313Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-folderArrow-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-folderArrow-12-inactive.svg",
@@ -6245,7 +6245,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61715 } }
       ],
       "createdAt": "2023-08-10T14:36:54.741Z",
-      "lastUpdated": "2023-09-14T16:15:25.176Z",
+      "lastUpdated": "2023-10-05T21:13:36.330Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-regulatedFutures-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-regulatedFutures-12-inactive.svg",
@@ -6269,7 +6269,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61721 } }
       ],
       "createdAt": "2023-08-10T14:36:54.709Z",
-      "lastUpdated": "2023-09-14T16:13:41.641Z",
+      "lastUpdated": "2023-10-05T21:13:36.342Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-rollingSpot-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-rollingSpot-12-inactive.svg",
@@ -6293,7 +6293,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61709 } }
       ],
       "createdAt": "2023-08-10T14:36:54.701Z",
-      "lastUpdated": "2023-09-14T16:13:41.588Z",
+      "lastUpdated": "2023-10-05T21:13:36.325Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-perpetualSwap-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-perpetualSwap-12-inactive.svg",
@@ -6317,7 +6317,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61703 } }
       ],
       "createdAt": "2023-08-10T14:36:54.748Z",
-      "lastUpdated": "2023-09-14T16:15:41.032Z",
+      "lastUpdated": "2023-10-05T21:13:36.353Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-options-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-options-12-inactive.svg",
@@ -6341,7 +6341,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61679 } }
       ],
       "createdAt": "2023-08-10T14:36:54.693Z",
-      "lastUpdated": "2023-09-14T16:13:41.694Z",
+      "lastUpdated": "2023-10-05T21:13:36.359Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-eventContracts-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-eventContracts-12-inactive.svg",
@@ -6365,7 +6365,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61697 } }
       ],
       "createdAt": "2023-08-10T14:36:54.734Z",
-      "lastUpdated": "2023-09-14T16:13:41.626Z",
+      "lastUpdated": "2023-10-05T21:13:36.337Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-globe-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-globe-12-inactive.svg",
@@ -6389,7 +6389,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61667 } }
       ],
       "createdAt": "2023-08-10T14:36:54.683Z",
-      "lastUpdated": "2023-09-14T16:13:41.581Z",
+      "lastUpdated": "2023-10-05T21:13:36.320Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-base-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-base-12-inactive.svg",
@@ -6413,7 +6413,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61673 } }
       ],
       "createdAt": "2023-08-10T14:36:54.755Z",
-      "lastUpdated": "2023-09-14T16:15:56.175Z",
+      "lastUpdated": "2023-10-05T21:13:36.296Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-compass-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-compass-12-inactive.svg",
@@ -6503,7 +6503,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61745 } }
       ],
       "createdAt": "2023-09-14T22:57:49.346Z",
-      "lastUpdated": "2023-09-14T22:57:49.346Z",
+      "lastUpdated": "2023-10-05T21:13:36.308Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-securityKey-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-securityKey-12-inactive.svg",
@@ -6516,7 +6516,7 @@
     "1348:59": {
       "type": "nav",
       "name": "key",
-      "hash": "dqKpiHGB/m7NQnYDtIb6tYVmWt9yXvULEJgs6qPSR9c=",
+      "hash": "e4+XRezQM8ntmzsJyIQaB8cjj2VoW/hIX4MCCUBqr24=",
       "description": "key, security, secure, icon, skeleton, lock, unlock, 🔑, 🗝️",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61744 } },
@@ -6527,7 +6527,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61739 } }
       ],
       "createdAt": "2023-09-14T22:57:49.335Z",
-      "lastUpdated": "2023-09-15T00:07:14.193Z",
+      "lastUpdated": "2023-10-05T21:13:36.348Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-key-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-key-12-inactive.svg",
@@ -6551,7 +6551,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61733 } }
       ],
       "createdAt": "2023-09-14T22:57:49.341Z",
-      "lastUpdated": "2023-09-14T22:57:49.341Z",
+      "lastUpdated": "2023-10-05T21:13:36.289Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gasFees-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gasFees-12-inactive.svg",
@@ -6559,6 +6559,198 @@
         "svg16Inactive": "./nav/svg/nav-gasFees-16-inactive.svg",
         "svg24Active": "./nav/svg/nav-gasFees-24-active.svg",
         "svg24Inactive": "./nav/svg/nav-gasFees-24-inactive.svg"
+      }
+    },
+    "1411:442": {
+      "type": "nav",
+      "name": "staking",
+      "hash": "omiamWBMlra4PRbC96EQcozOHOM7bbCDrWLrif10pL8=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61801 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61800 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61799 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61798 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61797 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61796 } }
+      ],
+      "createdAt": "2023-10-05T21:13:36.226Z",
+      "lastUpdated": "2023-10-05T21:13:36.226Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-staking-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-staking-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-staking-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-staking-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-staking-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-staking-24-inactive.svg"
+      }
+    },
+    "1411:449": {
+      "type": "nav",
+      "name": "primePoduct",
+      "hash": "bc4+9xnhi2GR6DCmitrL53dO9JuUPnTeFUtWoZF9zb0=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61783 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61782 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61781 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61780 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61779 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61778 } }
+      ],
+      "createdAt": "2023-10-05T21:13:36.207Z",
+      "lastUpdated": "2023-10-05T21:13:36.207Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-primePoduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-primePoduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-primePoduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-primePoduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-primePoduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-primePoduct-24-inactive.svg"
+      }
+    },
+    "1411:456": {
+      "type": "nav",
+      "name": "exchangeProduct",
+      "hash": "asjTCs47jT/HUDj6RSUnoeyLRMf60UBFmWLYqEJxzks=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61771 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61770 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61769 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61768 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61767 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61766 } }
+      ],
+      "createdAt": "2023-10-05T21:13:36.201Z",
+      "lastUpdated": "2023-10-05T21:13:36.201Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-exchangeProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-exchangeProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-exchangeProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-exchangeProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-exchangeProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-exchangeProduct-24-inactive.svg"
+      }
+    },
+    "1411:464": {
+      "type": "nav",
+      "name": "rosettaProduct",
+      "hash": "qd0VIfcXxyZLL1msergKulLM9MZjzGbImzVbG/H5N5o=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61789 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61788 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61787 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61786 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61785 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61784 } }
+      ],
+      "createdAt": "2023-10-05T21:13:36.195Z",
+      "lastUpdated": "2023-10-05T21:13:36.195Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-rosettaProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-rosettaProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-rosettaProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-rosettaProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-rosettaProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-rosettaProduct-24-inactive.svg"
+      }
+    },
+    "1411:471": {
+      "type": "nav",
+      "name": "signinProduct",
+      "hash": "PZKzMHycev+Fxududgo6WZVtGPPN53m7TkeSmbA6YlA=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61795 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61794 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61793 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61792 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61791 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61790 } }
+      ],
+      "createdAt": "2023-10-05T21:13:36.189Z",
+      "lastUpdated": "2023-10-05T21:13:36.189Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-signinProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-signinProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-signinProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-signinProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-signinProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-signinProduct-24-inactive.svg"
+      }
+    },
+    "1411:478": {
+      "type": "nav",
+      "name": "waasProduct",
+      "hash": "QLYOQkfQ9oEkK4AcWfUpL2Vu6EnYAsFF+m493gGn1/c=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61807 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61806 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61805 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61804 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61803 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61802 } }
+      ],
+      "createdAt": "2023-10-05T21:13:36.179Z",
+      "lastUpdated": "2023-10-05T21:13:36.179Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-waasProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-waasProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-waasProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-waasProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-waasProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-waasProduct-24-inactive.svg"
+      }
+    },
+    "1411:485": {
+      "type": "nav",
+      "name": "payProduct",
+      "hash": "JP6LWrNj96dwO6eo6s6XPD0YaMbWlZF4YFozCZ6E6xk=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61777 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61776 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61775 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61774 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61773 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61772 } }
+      ],
+      "createdAt": "2023-10-05T21:13:36.220Z",
+      "lastUpdated": "2023-10-05T21:13:36.220Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-payProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-payProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-payProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-payProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-payProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-payProduct-24-inactive.svg"
+      }
+    },
+    "1411:492": {
+      "type": "nav",
+      "name": "advancedTradeProduct",
+      "hash": "Ji3CEXIzkoAH7qG8/MoWPukfUm7Ecsvi/9w3VpYAne4=",
+      "description": "",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61765 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61764 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61763 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61762 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61761 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61760 } }
+      ],
+      "createdAt": "2023-10-05T21:13:36.213Z",
+      "lastUpdated": "2023-10-05T21:13:36.213Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-advancedTradeProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-advancedTradeProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-advancedTradeProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-advancedTradeProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-advancedTradeProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-advancedTradeProduct-24-inactive.svg"
       }
     }
   }

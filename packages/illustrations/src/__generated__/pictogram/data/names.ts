@@ -240,6 +240,7 @@ const names: PictogramName[] = [
   'stableCoinMetaphor',
   'stacking',
   'stakingGraph',
+  'standWithCryptoLogoNavigation',
   'startToday',
   'strongInfo',
   'strongWarning',

@@ -177,6 +177,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseOneTokenRewards-3').content,
     dark: () => require('../svgJs/dark/coinbaseOneTokenRewards-3').content,
   },
+  coinbaseOneUSDC: {
+    light: () => require('../svgJs/light/coinbaseOneUSDC-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneUSDC-0').content,
+  },
   collectingNfts: {
     light: () => require('../svgJs/light/collectingNfts-3').content,
     dark: () => require('../svgJs/dark/collectingNfts-3').content,
@@ -500,6 +504,10 @@ const svgJsMap = {
   noFees: {
     light: () => require('../svgJs/light/noFees-3').content,
     dark: () => require('../svgJs/dark/noFees-3').content,
+  },
+  noPortfolio: {
+    light: () => require('../svgJs/light/noPortfolio-0').content,
+    dark: () => require('../svgJs/dark/noPortfolio-0').content,
   },
   notificationsAlt: {
     light: () => require('../svgJs/light/notificationsAlt-2').content,

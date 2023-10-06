@@ -498,8 +498,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/globalPayments-3').content,
   },
   globalTransactions: {
-    light: () => require('../svgJs/light/globalTransactions-3').content,
-    dark: () => require('../svgJs/dark/globalTransactions-3').content,
+    light: () => require('../svgJs/light/globalTransactions-4').content,
+    dark: () => require('../svgJs/dark/globalTransactions-4').content,
   },
   googleAuthenticator: {
     light: () => require('../svgJs/light/googleAuthenticator-2').content,
@@ -928,6 +928,10 @@ const svgJsMap = {
   stakingGraph: {
     light: () => require('../svgJs/light/stakingGraph-3').content,
     dark: () => require('../svgJs/dark/stakingGraph-3').content,
+  },
+  standWithCryptoLogoNavigation: {
+    light: () => require('../svgJs/light/standWithCryptoLogoNavigation-0').content,
+    dark: () => require('../svgJs/dark/standWithCryptoLogoNavigation-0').content,
   },
   startToday: {
     light: () => require('../svgJs/light/startToday-2').content,

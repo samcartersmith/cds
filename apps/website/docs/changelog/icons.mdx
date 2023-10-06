@@ -8,6 +8,36 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.0 (10/6/2023 PST)
+
+#### 🚀 Updates
+
+- Publish icons 10/6/2023. [[#2317](https://github.cbhq.net/frontend/cds/pull/2317)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- advancedTradeProduct
+- exchangeProduct
+- payProduct
+- primePoduct
+- rosettaProduct
+- signinProduct
+- staking
+- waasProduct
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- chartPie
+- key
+
 ## 2.0.0 (9/14/2023 PST)
 
 #### 💥 Breaking
