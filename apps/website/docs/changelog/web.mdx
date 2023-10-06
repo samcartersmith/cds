@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.16.0 (10/6/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] update(navigation-bar): remove ThemeProvider wrapper. [[#2315](https://github.cbhq.net/frontend/cds/pull/2315)]
+
 ## 5.15.3 (10/4/2023 PST)
 
 #### 🐞 Fixes
