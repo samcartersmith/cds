@@ -1,3 +1,3 @@
-import { main } from './index.js';
+import { syncAssets } from './syncAssets.js';
 
-void main();
+void syncAssets();

@@ -20,6 +20,14 @@ export type AppConfig = {
     /* The personal access token for the Figma API */
     accessToken: string;
   };
+  repo: {
+    /* The directory where the icons sync script outputs files and assets */
+    generatedIconsPath: string;
+    /* The directory where the illustrations sync script outputs files and assets */
+    generatedIllustrationsPath: string;
+    /* The pattern to use to locate updated project changelogs */
+    changelogPath: string;
+  };
 };
 
 const config: AppConfig = {
@@ -30,16 +38,22 @@ const config: AppConfig = {
     appId: 82,
     privateKey: '',
     installationOwner: 'frontend',
-    installationRepo: 'cds-figma-assets',
+    installationRepo: 'cds',
   },
   figma: {
     accessToken: '',
+  },
+  repo: {
+    generatedIconsPath: 'packages/icons/src/__generated__',
+    generatedIllustrationsPath: 'packages/illustrations/src/__generated__',
+    changelogPath: 'packages/{project}/CHANGELOG.md',
   },
 };
 
 let initialized = false;
 
 const initializeAppConfig = async () => {
+  logger.info('Initializing app config');
   await initializeConfigService();
   const privateKey = getConfigServiceValue('PRIVATE_KEY');
   const figmaToken = getConfigServiceValue('FIGMA_TOKEN');
@@ -51,7 +65,6 @@ const initializeAppConfig = async () => {
   config.octokit.privateKey = privateKey as string;
   config.figma.accessToken = figmaToken as string;
   initialized = true;
-  logger.info(`cody figmaToken === ${figmaToken}`);
 };
 
 export const getAppConfig = async (): Promise<AppConfig> => {

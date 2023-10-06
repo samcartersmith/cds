@@ -1,25 +1,8 @@
 import type { SpawnSyncOptionsWithStringEncoding } from 'node:child_process';
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, rmSync } from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
 import { logger } from './logger.js';
-
-// eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-let workingDirectory = __dirname;
-
-export const deleteWorkingDirectoryContents = () => {
-  logger.info('Resetting working directory');
-  if (existsSync(workingDirectory)) rmSync(workingDirectory, { recursive: true });
-  mkdirSync(workingDirectory);
-};
-
-export const setWorkingDirectory = (directory: string) => {
-  workingDirectory = path.resolve(__dirname, directory);
-};
+import { resolveWorkingDirectoryPath } from './workingDirectory.js';
 
 export const spawn = (
   command: string,
@@ -29,10 +12,10 @@ export const spawn = (
   const result = spawnSync(commands.shift() ?? '', commands, {
     encoding: 'utf-8',
     shell: true,
-    cwd: workingDirectory,
+    cwd: resolveWorkingDirectoryPath(),
     ...options,
     env: {
-      PATH: process.env.PATH,
+      ...process.env,
       ...options?.env,
     },
     // stdio: 'inherit',

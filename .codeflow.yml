@@ -28,6 +28,7 @@ build:
     - BaldurECR:
         name: cds-website-docs-development
         path: ./apps/website/development.Dockerfile
+
     # Packages
     - BaldurNode:
         name: package-cds-common
@@ -181,3 +182,10 @@ build:
         expire_keep_tags_after_days: 1
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
+
+    # Static assets
+    - BaldurECR:
+        name: static-assets
+        path: ./apps/cds-figma-sync/static-assets.Dockerfile
+        autobuild_files:
+          - packages/illustrations/package.json

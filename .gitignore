@@ -3,6 +3,7 @@ node_modules
 yarn-debug.log*
 yarn-error.log*
 dist
+temp
 
 # Local env variables
 .env.local

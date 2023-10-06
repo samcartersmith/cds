@@ -8,8 +8,12 @@ export const execute = async <T>(
   handler: (...args: unknown[]) => Promise<T>,
 ): Promise<T> => {
   try {
-    logger.info(message);
-    return await handler();
+    const startTime = Date.now();
+    logger.info(`${message} - started`);
+    const result = await handler();
+    const elapsedTime = (Date.now() - startTime) / 1000;
+    logger.info(`${message} - finished in ${elapsedTime}s`);
+    return result;
   } catch (error) {
     logger.error(error);
     throw error;

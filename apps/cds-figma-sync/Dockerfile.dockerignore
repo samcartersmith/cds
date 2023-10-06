@@ -11,6 +11,12 @@ tools/*/**
 .nx
 .vscode
 
+apps/cds-figma-sync/mjs
+apps/cds-figma-sync/*Dockerfile
+apps/cds-figma-sync/docker-compose.yml
+apps/cds-figma-sync/static-assets.docker-compose.yml
+apps/cds-figma-sync/shard-assets.sh
+
 # Allow these files
 !.yarn
 !.yarnrc.yml
