@@ -15,28 +15,25 @@
   ],
   "references": [
     {
-      "path": "../common"
+      "path": "../../packages/common"
     },
     {
-      "path": "../docusaurus-plugin-docgen"
+      "path": "../../packages/icons"
     },
     {
-      "path": "../icons"
+      "path": "../../packages/illustrations"
     },
     {
-      "path": "../illustrations"
+      "path": "../../packages/lottie-files"
     },
     {
-      "path": "../lottie-files"
+      "path": "../../packages/utils"
     },
     {
-      "path": "../utils"
+      "path": "../../packages/fonts"
     },
     {
-      "path": "../fonts"
-    },
-    {
-      "path": "../web-utils"
+      "path": "../../libs/web-utils"
     }
   ]
 }

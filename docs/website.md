@@ -250,7 +250,7 @@ import Usage, { toc as usageToc } from './_usage.mdx';
 
 # MDX Components
 
-You can view or add any components you want to be globally available in all mdx files in [MDXComponents.tsx file](../packages/docusaurus-theme/src/theme/MDXComponents.tsx) of our theme plugin.
+You can view or add any components you want to be globally available in all mdx files in [MDXComponents.tsx file](../libs/docusaurus-theme/src/theme/MDXComponents.tsx) of our theme plugin.
 
 # react-live
 
@@ -327,16 +327,16 @@ When you run `yarn nx run website:start` you should see a [.docusaurus folder](.
 
 ## Docgen plugin
 
-[README](../packages/docusaurus-plugin-docgen/README.md)
+[README](../libs/docusaurus-plugin-docgen/README.md)
 
 ## KBar plugin
 
-[README](../packages/docusaurus-plugin-kbar/README.md)
+[README](../libs/docusaurus-plugin-kbar/README.md)
 
 ## Theme
 
-If you want to modify any components or styles used in the website, you can do so in the [theme plugin](../packages/docusaurus-theme/README.md).
+If you want to modify any components or styles used in the website, you can do so in the [theme plugin](../libs/docusaurus-theme/README.md).
 
 ## Preset
 
-[README](../packages/docusaurus-preset/README.md)
+[README](../libs/docusaurus-preset/README.md)

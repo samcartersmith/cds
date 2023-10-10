@@ -1,0 +1,32 @@
+{
+  "name": "web-utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web-utils/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": [
+        "{projectRoot}/assets",
+        "{projectRoot}/lib"
+      ]
+    },
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/web-utils",
+        "command": "packemon watch --quiet --loadConfigs"
+      }
+    }
+  }
+}

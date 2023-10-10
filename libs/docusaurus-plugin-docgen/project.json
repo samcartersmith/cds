@@ -1,0 +1,46 @@
+{
+  "name": "docusaurus-plugin-docgen",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/docusaurus-plugin-docgen/src",
+  "projectType": "library",
+  "targets": {
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "cwd": "libs/docusaurus-plugin-docgen",
+        "command": "packemon watch --quiet --loadConfigs"
+      }
+    },
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": [
+        "{projectRoot}/assets",
+        "{projectRoot}/lib"
+      ]
+    },
+    "debug": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/docusaurus-plugin-docgen",
+        "commands": [
+          "node /lib/scripts/debug.js"
+        ]
+      }
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}

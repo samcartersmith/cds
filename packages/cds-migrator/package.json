@@ -8,8 +8,8 @@
     "directory": "packages/cds-migrator"
   },
   "keywords": [
-    "cds",
-    "cli",
+    "migrator",
+    "migration",
     "codemod"
   ],
   "packemon": {
@@ -25,6 +25,9 @@
   },
   "peerDependencies": {
     "@nrwl/devkit": ">=15.0.0"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.11.0"
   },
   "generators": "./generators.json",
   "types": "./lib/index.d.ts",
@@ -47,8 +50,5 @@
       },
       "default": "./lib/index.js"
     }
-  },
-  "devDependencies": {
-    "@types/cli-progress": "^3.11.0"
   }
 }

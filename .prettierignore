@@ -8,7 +8,7 @@ apps/website/static/**/*.json
 apps/mobile-playground/vendor
 
 # Codegen 
-packages/docusaurus-theme/src/theme/**/*.d.ts
+libs/docusaurus-theme/src/theme/**/*.d.ts
 
 # Nx
 dist/

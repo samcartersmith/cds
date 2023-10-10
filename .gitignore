@@ -54,6 +54,7 @@ cjs/
 dts/
 lib/
 esm/
+mjs/
 *.tsbuildinfo
 /.cache-loader
 /.linaria-cache
@@ -166,4 +167,4 @@ apps/mobile-app/prebuilds/android-*
 
 # Auto Generated files
 version.ts
-packages/web-utils/jest.d.ts
+libs/web-utils/jest.d.ts

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "outDir": "../../.nx/dts/libs/figma-styles"
+  },
+  "include": [
+    "__generated__"
+  ],
+  "exclude": [
+    ".eslintrc.js"
+  ]
+}

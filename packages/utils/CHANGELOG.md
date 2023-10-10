@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Move private packages to libs directory. [[#2320](https://github.cbhq.net/frontend/cds/pull/2320)]
+
 ## 1.1.2 (4/5/2023 PST)
 
 #### 🐞 Fixes

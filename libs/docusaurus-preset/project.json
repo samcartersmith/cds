@@ -1,0 +1,36 @@
+{
+  "name": "docusaurus-preset",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/docusaurus-preset/src",
+  "projectType": "library",
+  "targets": {
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/docusaurus-preset",
+        "commands": [
+          "packemon watch --quiet --loadConfigs"
+        ]
+      }
+    },
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": [
+        "{projectRoot}/assets",
+        "{projectRoot}/lib"
+      ]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}

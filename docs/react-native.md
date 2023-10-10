@@ -18,7 +18,7 @@ See the [Visreg docs](/docs/rn-visreg-testing.md) to explore the associated comm
 
 ### Adding Routes (Stories) to the Mobile App
 
-We use codegen to parse all the stories in our mobile package and turn them into routes. See the `prepareRoutes` script (`packages/codegen/playground/prepareRoutes.ts`).
+We use codegen to parse all the stories in our mobile package and turn them into routes. See the `prepareRoutes` script (`libs/codegen/playground/prepareRoutes.ts`).
 
 #### Requirements
 

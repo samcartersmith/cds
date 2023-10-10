@@ -8,7 +8,7 @@
   "exclude": ["dist", "**/*.test.ts", "**/*.test.tsx", "jest.config.js"],
   "references": [
     {
-      "path": "../utils"
+      "path": "../../packages/utils"
     }
   ]
 }

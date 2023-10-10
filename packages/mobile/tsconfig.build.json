@@ -17,22 +17,22 @@
   ],
   "references": [
     {
-      "path": "../illustrations"
+      "path": "../../packages/illustrations"
     },
     {
-      "path": "../utils"
+      "path": "../../packages/utils"
     },
     {
-      "path": "../common"
+      "path": "../../packages/common"
     },
     {
-      "path": "../icons"
+      "path": "../../packages/icons"
     },
     {
-      "path": "../lottie-files"
+      "path": "../../packages/lottie-files"
     },
     {
-      "path": "../fonts"
-    },
+      "path": "../../packages/fonts"
+    }
   ]
 }

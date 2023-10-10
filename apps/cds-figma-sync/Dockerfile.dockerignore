@@ -24,12 +24,12 @@ apps/cds-figma-sync/shard-assets.sh
 !**/package.json
 !**/project.json
 !apps/cds-figma-sync
-!packages/codegen
+!libs/codegen
 !packages/d3
-!packages/figma-api
-!packages/figma-styles
-!packages/figma-tasks
-!packages/script-utils
+!libs/figma-api
+!libs/figma-styles
+!libs/figma-tasks
+!libs/script-utils
 
 # Ignore these files
 private-key.pem

@@ -17,13 +17,10 @@
   ],
   "references": [
     {
-      "path": "../mobile"
+      "path": "../../packages/mobile"
     },
     {
-      "path": "../mobile-visualization"
-    },
-    {
-      "path": "../common"
+      "path": "../../packages/mobile-visualization"
     }
   ]
 }

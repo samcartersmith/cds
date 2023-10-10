@@ -9,9 +9,6 @@
     "react",
     "typescript"
   ],
-  "authors": {
-    "coinbase": "coinbase"
-  },
   "sideEffects": [
     "*.css",
     "globalStyles.js",

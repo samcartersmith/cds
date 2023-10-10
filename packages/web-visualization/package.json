@@ -10,9 +10,6 @@
     "react",
     "typescript"
   ],
-  "authors": {
-    "coinbase": "coinbase"
-  },
   "main": "index",
   "typings": "index.d.ts",
   "dependencies": {

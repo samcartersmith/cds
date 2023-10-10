@@ -1,0 +1,34 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "outDir": "../../.nx/dts/libs/codegen",
+    "rootDir": "./"
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    "jest.config.js",
+    "babel.config.js",
+    "babel.build.config.js"
+  ],
+  "references": [
+    {
+      "path": "../../packages/common"
+    },
+    {
+      "path": "../../packages/web"
+    },
+    {
+      "path": "../../packages/utils"
+    }
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  }
+}

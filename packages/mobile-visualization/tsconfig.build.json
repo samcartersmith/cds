@@ -19,16 +19,16 @@
   ],
   "references": [
     {
-      "path": "../common"
+      "path": "../../packages/common"
     },
     {
-      "path": "../utils"
+      "path": "../../packages/utils"
     },
     {
-      "path": "../mobile"
+      "path": "../../packages/mobile"
     },
     {
-      "path": "../lottie-files"
+      "path": "../../packages/lottie-files"
     },
   ]
 }

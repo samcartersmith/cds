@@ -17,10 +17,10 @@
   ],
   "references": [
     {
-      "path": "../figma-styles"
+      "path": "../../libs/figma-styles"
     },
     {
-      "path": "../figma-tasks"
+      "path": "../../libs/figma-tasks"
     }
   ]
 }

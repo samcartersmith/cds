@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Move private packages to libs directory. [[#2320](https://github.cbhq.net/frontend/cds/pull/2320)]
+
 ## 5.16.0 ((10/6/2023, 11:24 AM PST))
 
 This is an artificial version bump with no new change.

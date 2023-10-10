@@ -10,7 +10,6 @@
     "common",
     "types"
   ],
-  "authors": "Coinbase",
   "dependencies": {
     "@cbhq/cds-utils": "workspace:^",
     "@cbhq/d3": "workspace:^",
@@ -26,11 +25,11 @@
     "react": "18.2.0",
     "react-dom": "^18.2.0"
   },
-  "react-native": "./index.ts",
-  "main": "index",
-  "typings": "index.d.ts",
   "devDependencies": {
     "@cbhq/cds-tasks": "workspace:^",
     "jest-date-mock": "^1.0.8"
-  }
+  },
+  "react-native": "./index.ts",
+  "main": "index",
+  "typings": "index.d.ts"
 }

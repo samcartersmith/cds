@@ -21,10 +21,10 @@
   ],
   "references": [
     {
-      "path": "../web"
+      "path": "../../packages/web"
     },
     {
-      "path": "../common"
+      "path": "../../packages/common"
     }
   ]
 }

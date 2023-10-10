@@ -13,16 +13,13 @@
   ],
   "references": [
     {
-      "path": "../docusaurus-plugin-docgen"
+      "path": "../../packages/icons"
     },
     {
-      "path": "../icons"
+      "path": "../../packages/illustrations"
     },
     {
-      "path": "../illustrations"
-    },
-    {
-      "path": "../utils"
+      "path": "../../packages/utils"
     }
   ]
 }

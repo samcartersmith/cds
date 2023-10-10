@@ -13,11 +13,6 @@
     "format": "lib",
     "platform": "node"
   },
-  "peerDependencies": {
-    "@cbhq/cds-mobile": "workspace:^",
-    "@cbhq/cds-mobile-visualization": "workspace:^",
-    "detox": "^20.5.0"
-  },
   "dependencies": {
     "@cbhq/detox-utils": "^0.5.0",
     "@percy/cli": "^1.26.1",
@@ -25,6 +20,11 @@
     "@percy/sdk-utils": "^1.26.1",
     "@percy/storybook": "^4.3.6",
     "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/cds-mobile-visualization": "workspace:^",
+    "detox": "^20.5.0"
   },
   "devDependencies": {
     "detox": "^20.5.0"

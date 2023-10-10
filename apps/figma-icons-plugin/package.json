@@ -1,7 +1,7 @@
 {
   "name": "@cbhq/cds-figma-icons-plugin",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "dependencies": {
     "@cbhq/figma-styles": "workspace:^",
     "react": "18.2.0",

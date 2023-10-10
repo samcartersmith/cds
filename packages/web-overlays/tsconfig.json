@@ -17,13 +17,10 @@
   ],
   "references": [
     {
-      "path": "../docusaurus-plugin-docgen"
+      "path": "../../packages/web"
     },
     {
-      "path": "../web"
-    },
-    {
-      "path": "../common"
+      "path": "../../packages/common"
     }
   ]
 }

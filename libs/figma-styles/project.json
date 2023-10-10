@@ -1,0 +1,87 @@
+{
+  "name": "figma-styles",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/figma-styles",
+  "projectType": "library",
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "sync-ui-dark-styles": {
+      "executor": "@cbhq/figma-tasks:sync-styles",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "figmaApiFileId": "lQEzxkEp0nQPS6zV1ZpLNO",
+        "changelogFile": "./CHANGELOG.md",
+        "manifestFile": "./__generated__/ui/dark/manifest.json",
+        "generatedDirectory": "./__generated__/ui/dark",
+        "prefix": "ui"
+      }
+    },
+    "sync-ui-light-styles": {
+      "executor": "@cbhq/figma-tasks:sync-styles",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "figmaApiFileId": "0LGLs39lCL3WIFUadyGH1A",
+        "changelogFile": "./CHANGELOG.md",
+        "manifestFile": "./__generated__/ui/light/manifest.json",
+        "generatedDirectory": "./__generated__/ui/light",
+        "prefix": "ui"
+      }
+    },
+    "sync-illustration-dark-styles": {
+      "executor": "@cbhq/figma-tasks:sync-styles",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "figmaApiFileId": "etJaiHq7aFlJFICLKIrcK7",
+        "changelogFile": "./CHANGELOG.md",
+        "manifestFile": "./__generated__/illustration/dark/manifest.json",
+        "generatedDirectory": "./__generated__/illustration/dark",
+        "prefix": "illustration"
+      }
+    },
+    "sync-illustration-light-styles": {
+      "executor": "@cbhq/figma-tasks:sync-styles",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "figmaApiFileId": "skPXKFmI64GqqEkOaBSHcL",
+        "changelogFile": "./CHANGELOG.md",
+        "manifestFile": "./__generated__/illustration/light/manifest.json",
+        "generatedDirectory": "./__generated__/illustration/light",
+        "prefix": "illustration"
+      }
+    },
+    "sync": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "commands": [
+          "nx run figma-styles:sync-illustration-dark-styles",
+          "nx run figma-styles:sync-illustration-light-styles",
+          "nx run figma-styles:sync-ui-dark-styles",
+          "nx run figma-styles:sync-ui-light-styles"
+        ],
+        "parallel": false
+      }
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}

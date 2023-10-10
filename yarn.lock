@@ -3752,9 +3752,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-tasks@workspace:^, @cbhq/cds-tasks@workspace:packages/cds-tasks":
+"@cbhq/cds-tasks@workspace:^, @cbhq/cds-tasks@workspace:libs/cds-tasks":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-tasks@workspace:packages/cds-tasks"
+  resolution: "@cbhq/cds-tasks@workspace:libs/cds-tasks"
   dependencies:
     chalk: ^4.1.2
     execa: ^5.1.1
@@ -3792,9 +3792,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web-utils@workspace:^, @cbhq/cds-web-utils@workspace:packages/web-utils":
+"@cbhq/cds-web-utils@workspace:^, @cbhq/cds-web-utils@workspace:libs/web-utils":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-web-utils@workspace:packages/web-utils"
+  resolution: "@cbhq/cds-web-utils@workspace:libs/web-utils"
   dependencies:
     "@babel/types": ^7.20.7
     "@testing-library/react": ^13.4.0
@@ -3940,9 +3940,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/docusaurus-plugin-docgen@workspace:^, @cbhq/docusaurus-plugin-docgen@workspace:packages/docusaurus-plugin-docgen":
+"@cbhq/docusaurus-plugin-docgen@workspace:^, @cbhq/docusaurus-plugin-docgen@workspace:libs/docusaurus-plugin-docgen":
   version: 0.0.0-use.local
-  resolution: "@cbhq/docusaurus-plugin-docgen@workspace:packages/docusaurus-plugin-docgen"
+  resolution: "@cbhq/docusaurus-plugin-docgen@workspace:libs/docusaurus-plugin-docgen"
   dependencies:
     "@docusaurus/logger": ^2.0.0-beta.20
     "@docusaurus/types": 2.0.0-beta.18
@@ -3960,9 +3960,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/docusaurus-plugin-kbar@workspace:^, @cbhq/docusaurus-plugin-kbar@workspace:packages/docusaurus-plugin-kbar":
+"@cbhq/docusaurus-plugin-kbar@workspace:^, @cbhq/docusaurus-plugin-kbar@workspace:libs/docusaurus-plugin-kbar":
   version: 0.0.0-use.local
-  resolution: "@cbhq/docusaurus-plugin-kbar@workspace:packages/docusaurus-plugin-kbar"
+  resolution: "@cbhq/docusaurus-plugin-kbar@workspace:libs/docusaurus-plugin-kbar"
   dependencies:
     "@docusaurus/logger": ^2.0.0-beta.20
     "@docusaurus/plugin-content-docs": 2.0.0-beta.18
@@ -3975,9 +3975,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/docusaurus-preset@workspace:^, @cbhq/docusaurus-preset@workspace:packages/docusaurus-preset":
+"@cbhq/docusaurus-preset@workspace:^, @cbhq/docusaurus-preset@workspace:libs/docusaurus-preset":
   version: 0.0.0-use.local
-  resolution: "@cbhq/docusaurus-preset@workspace:packages/docusaurus-preset"
+  resolution: "@cbhq/docusaurus-preset@workspace:libs/docusaurus-preset"
   dependencies:
     "@cbhq/docusaurus-plugin-docgen": "workspace:^"
     "@cbhq/docusaurus-plugin-kbar": "workspace:^"
@@ -3991,9 +3991,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/docusaurus-theme@workspace:^, @cbhq/docusaurus-theme@workspace:packages/docusaurus-theme":
+"@cbhq/docusaurus-theme@workspace:^, @cbhq/docusaurus-theme@workspace:libs/docusaurus-theme":
   version: 0.0.0-use.local
-  resolution: "@cbhq/docusaurus-theme@workspace:packages/docusaurus-theme"
+  resolution: "@cbhq/docusaurus-theme@workspace:libs/docusaurus-theme"
   dependencies:
     "@cbhq/cds-tasks": "workspace:^"
     "@docusaurus/core": 2.0.0-beta.18
@@ -4061,23 +4061,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/figma-api@workspace:^, @cbhq/figma-api@workspace:packages/figma-api":
+"@cbhq/figma-api@workspace:^, @cbhq/figma-api@workspace:libs/figma-api":
   version: 0.0.0-use.local
-  resolution: "@cbhq/figma-api@workspace:packages/figma-api"
+  resolution: "@cbhq/figma-api@workspace:libs/figma-api"
   languageName: unknown
   linkType: soft
 
-"@cbhq/figma-styles@workspace:^, @cbhq/figma-styles@workspace:packages/figma-styles":
+"@cbhq/figma-styles@workspace:^, @cbhq/figma-styles@workspace:libs/figma-styles":
   version: 0.0.0-use.local
-  resolution: "@cbhq/figma-styles@workspace:packages/figma-styles"
+  resolution: "@cbhq/figma-styles@workspace:libs/figma-styles"
   dependencies:
     "@cbhq/figma-tasks": "workspace:^"
   languageName: unknown
   linkType: soft
 
-"@cbhq/figma-tasks@workspace:^, @cbhq/figma-tasks@workspace:packages/figma-tasks":
+"@cbhq/figma-tasks@workspace:^, @cbhq/figma-tasks@workspace:libs/figma-tasks":
   version: 0.0.0-use.local
-  resolution: "@cbhq/figma-tasks@workspace:packages/figma-tasks"
+  resolution: "@cbhq/figma-tasks@workspace:libs/figma-tasks"
   dependencies:
     "@cbhq/d3": "workspace:^"
     "@cbhq/figma-api": "workspace:^"
@@ -4286,16 +4286,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/script-utils@workspace:^, @cbhq/script-utils@workspace:packages/script-utils":
+"@cbhq/script-utils@workspace:^, @cbhq/script-utils@workspace:libs/script-utils":
   version: 0.0.0-use.local
-  resolution: "@cbhq/script-utils@workspace:packages/script-utils"
+  resolution: "@cbhq/script-utils@workspace:libs/script-utils"
   dependencies:
-    type-fest: ^2.19.0
-  peerDependencies:
+    "@cb/config-service-node": ^3.4.0
     "@cbhq/eslint-plugin": ^1.40.1
     "@cbhq/mono-tasks": ^0.10.1
     lodash: ^4.17.21
+    octokit: ^3.0.0
     prettier: ^2.8.3
+    type-fest: ^2.19.0
+    winston: ^3.10.0
   languageName: unknown
   linkType: soft
 
@@ -4361,10 +4363,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cds/codegen@workspace:packages/codegen":
+"@cds/codegen@workspace:libs/codegen":
   version: 0.0.0-use.local
-  resolution: "@cds/codegen@workspace:packages/codegen"
+  resolution: "@cds/codegen@workspace:libs/codegen"
   dependencies:
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
     "@k-vyn/coloralgorithm": ^1.0.0
     axios: ^0.18.0
     ejs: ^3.1.7
@@ -23738,9 +23743,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hygen@patch:hygen@^6.2.0#./patches/hygen.patch::locator=%40cds%2Fcodegen%40workspace%3Apackages%2Fcodegen":
+"hygen@patch:hygen@^6.2.0#./patches/hygen.patch::locator=%40cds%2Fcodegen%40workspace%3Alibs%2Fcodegen":
   version: 6.2.0
-  resolution: "hygen@patch:hygen@npm%3A6.2.0#./patches/hygen.patch::version=6.2.0&hash=5e0b34&locator=%40cds%2Fcodegen%40workspace%3Apackages%2Fcodegen"
+  resolution: "hygen@patch:hygen@npm%3A6.2.0#./patches/hygen.patch::version=6.2.0&hash=5e0b34&locator=%40cds%2Fcodegen%40workspace%3Alibs%2Fcodegen"
   dependencies:
     "@types/node": ^17.0.19
     chalk: ^4.1.2

@@ -1,0 +1,60 @@
+{
+  "name": "@cbhq/script-utils",
+  "version": "0.0.0",
+  "private": true,
+  "description": "NodeJS utility functions for scripts, bots, and other automation",
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "libs/script-utils"
+  },
+  "keywords": [
+    "script",
+    "bot",
+    "automation",
+    "utils"
+  ],
+  "packemon": [
+    {
+      "format": "lib",
+      "platform": "node"
+    },
+    {
+      "format": "mjs",
+      "platform": "node"
+    }
+  ],
+  "dependencies": {
+    "@cb/config-service-node": "^3.4.0",
+    "@cbhq/eslint-plugin": "^1.40.1",
+    "@cbhq/mono-tasks": "^0.10.1",
+    "lodash": "^4.17.21",
+    "octokit": "^3.0.0",
+    "prettier": "^2.8.3",
+    "type-fest": "^2.19.0",
+    "winston": "^3.10.0"
+  },
+  "types": "./mjs/index.d.ts",
+  "main": "./mjs/index.mjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./lib/*.d.ts",
+      "node": {
+        "types": "./mjs/*.d.ts",
+        "import": "./mjs/*.mjs",
+        "default": "./lib/*.js"
+      },
+      "default": "./lib/*.js"
+    },
+    ".": {
+      "types": "./lib/index.d.ts",
+      "node": {
+        "types": "./mjs/index.d.ts",
+        "import": "./mjs/index.mjs",
+        "default": "./lib/index.js"
+      },
+      "default": "./lib/index.js"
+    }
+  }
+}

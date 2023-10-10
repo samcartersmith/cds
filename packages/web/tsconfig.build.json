@@ -19,25 +19,25 @@
   ],
   "references": [
     {
-      "path": "../utils"
+      "path": "../../packages/common"
     },
     {
-      "path": "../common"
+      "path": "../../packages/icons"
     },
     {
-      "path": "../icons"
+      "path": "../../packages/illustrations"
     },
     {
-      "path": "../illustrations"
+      "path": "../../packages/lottie-files"
     },
     {
-      "path": "../lottie-files"
+      "path": "../../packages/utils"
     },
     {
-      "path": "../fonts"
+      "path": "../../packages/fonts"
     },
     {
-      "path": "../web-utils"
+      "path": "../../libs/web-utils"
     }
   ]
 }

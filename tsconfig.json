@@ -13,31 +13,31 @@
       "path": "packages/cds-migrator"
     },
     {
-      "path": "packages/cds-tasks"
+      "path": "libs/cds-tasks"
     },
     {
-      "path": "packages/codegen"
+      "path": "libs/codegen"
     },
     {
       "path": "packages/common"
     },
     {
-      "path": "packages/docusaurus-plugin-docgen"
+      "path": "libs/docusaurus-plugin-docgen"
     },
     {
-      "path": "packages/docusaurus-plugin-kbar"
+      "path": "libs/docusaurus-plugin-kbar"
     },
     {
-      "path": "packages/docusaurus-preset"
+      "path": "libs/docusaurus-preset"
     },
     {
-      "path": "packages/docusaurus-theme"
+      "path": "libs/docusaurus-theme"
     },
     {
-      "path": "packages/figma-api"
+      "path": "libs/figma-api"
     },
     {
-      "path": "packages/figma-styles"
+      "path": "libs/figma-styles"
     },
     {
       "path": "packages/fonts"
@@ -58,7 +58,7 @@
       "path": "packages/mobile-visualization"
     },
     {
-      "path": "packages/script-utils"
+      "path": "libs/script-utils"
     },
     {
       "path": "packages/ui-mobile-playground"
@@ -82,7 +82,7 @@
       "path": "packages/web-visualization"
     },
     {
-      "path": "packages/web-utils"
+      "path": "libs/web-utils"
     }
   ]
 }

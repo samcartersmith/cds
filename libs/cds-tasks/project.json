@@ -1,0 +1,49 @@
+{
+  "name": "cds-tasks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/cds-tasks/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": [
+        "{projectRoot}/assets",
+        "{projectRoot}/lib"
+      ]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "report-disabled-eslint-rules": {
+      "executor": "@cbhq/prevent-eslint-disable:report"
+    },
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/figma-tasks",
+        "command": "packemon watch --quiet --loadConfigs"
+      }
+    },
+    "validate-cds-versions": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./src/ci/validateCDSVersions.ts"
+      }
+    },
+    "validate-website-changelog-updates": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./src/ci/validateWebsiteChangelogUpdates.ts"
+      }
+    }
+  }
+}

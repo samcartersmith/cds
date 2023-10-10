@@ -1,0 +1,37 @@
+{
+  "name": "script-utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/script-utils/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": [
+        "{projectRoot}/assets",
+        "{projectRoot}/lib",
+        "{projectRoot}/mjs"
+      ]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    },
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/script-utils",
+        "commands": [
+          "packemon watch --quiet --loadConfigs"
+        ]
+      }
+    }
+  }
+}

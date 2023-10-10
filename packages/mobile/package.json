@@ -9,7 +9,6 @@
     "mobile",
     "native"
   ],
-  "authors": "Coinbase",
   "dependencies": {
     "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-fonts": "workspace:^",

@@ -15,10 +15,7 @@
   ],
   "references": [
     {
-      "path": "../../packages/figma-styles"
-    },
-    {
-      "path": "../../packages/script-utils"
+      "path": "../../libs/figma-styles"
     }
   ]
 }

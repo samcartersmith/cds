@@ -38,8 +38,8 @@
         "figmaApiFileId": "LmkJatvMRVzNgfiIkJDb99",
         "changelogFile": "./CHANGELOG.md",
         "manifestFile": "./src/__generated__/manifest.json",
-        "darkModeManifestFile": "packages/figma-styles/__generated__/illustration/dark/manifest.json",
-        "lightModeManifestFile": "packages/figma-styles/__generated__/illustration/light/manifest.json",
+        "darkModeManifestFile": "libs/figma-styles/__generated__/illustration/dark/manifest.json",
+        "lightModeManifestFile": "libs/figma-styles/__generated__/illustration/light/manifest.json",
         "generatedDirectory": "./src/__generated__"
       }
     },

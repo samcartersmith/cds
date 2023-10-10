@@ -15,19 +15,16 @@
   ],
   "references": [
     {
-      "path": "../common"
+      "path": "../../packages/common"
     },
     {
-      "path": "../docusaurus-plugin-docgen"
+      "path": "../../packages/utils"
     },
     {
-      "path": "../utils"
+      "path": "../../packages/mobile"
     },
     {
-      "path": "../mobile"
-    },
-    {
-      "path": "../lottie-files"
+      "path": "../../packages/lottie-files"
     },
   ]
 }

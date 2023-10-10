@@ -1,0 +1,35 @@
+{
+  "extends": "../../tsconfig.buildOptions.json",
+  "compilerOptions": {
+    "outDir": "lib"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/*.spec.*",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__fixtures__/**",
+    "**/__mocks__/**",
+    "**/__stories__/**",
+    "**/__tests__/**"
+  ],
+  "references": [
+    {
+      "path": "../../libs/docusaurus-plugin-docgen"
+    },
+    {
+      "path": "../../libs/docusaurus-plugin-kbar"
+    },
+    {
+      "path": "../../libs/docusaurus-theme"
+    },
+    {
+      "path": "../../packages/common"
+    },
+    {
+      "path": "../../packages/web"
+    }
+  ]
+}

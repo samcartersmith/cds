@@ -18,6 +18,10 @@
     "format": "lib",
     "platform": "node"
   },
+  "devDependencies": {
+    "@cbhq/cds-tasks": "workspace:^",
+    "@cbhq/figma-tasks": "workspace:^"
+  },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
@@ -47,9 +51,5 @@
       },
       "default": "./lib/index.js"
     }
-  },
-  "devDependencies": {
-    "@cbhq/cds-tasks": "workspace:^",
-    "@cbhq/figma-tasks": "workspace:^"
   }
 }

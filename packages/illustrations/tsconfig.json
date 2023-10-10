@@ -13,13 +13,10 @@
   ],
   "references": [
     {
-      "path": "../docusaurus-plugin-docgen"
+      "path": "../../libs/figma-styles"
     },
     {
-      "path": "../figma-styles"
-    },
-    {
-      "path": "../figma-tasks"
+      "path": "../../libs/figma-tasks"
     }
   ]
 }

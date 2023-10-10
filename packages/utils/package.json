@@ -8,7 +8,6 @@
     "helpers"
   ],
   "repository": "git@github.cbhq.net:frontend/cds.git",
-  "authors": "Coinbase",
   "dependencies": {
     "humps": "^2.0.1",
     "type-fest": "^2.19.0"

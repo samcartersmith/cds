@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.projectOptions.json",
+  "compilerOptions": {
+    "outDir": "../../.nx/dts/libs/docusaurus-plugin-kbar"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    ".eslintrc.js",
+    "dts",
+    "lib"
+  ],
+  "references": [
+    {
+      "path": "../../packages/common"
+    }
+  ]
+}

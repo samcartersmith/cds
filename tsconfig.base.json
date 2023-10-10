@@ -84,10 +84,10 @@
         "packages/web"
       ],
       "@cbhq/cds-web-utils": [
-        "packages/web-utils/src"
+        "libs/web-utils/src"
       ],
       "@cbhq/cds-web-utils/*": [
-        "packages/web-utils/src/*"
+        "libs/web-utils/src/*"
       ],
       "@cbhq/cds-web-visualization": [
         "packages/web-visualization"
@@ -96,28 +96,28 @@
         "packages/web/*"
       ],
       "@cbhq/docusaurus-plugin-docgen": [
-        "packages/docusaurus-plugin-docgen/src"
+        "libs/docusaurus-plugin-docgen/src"
       ],
       "@cbhq/docusaurus-plugin-kbar": [
-        "packages/docusaurus-plugin-kbar/src"
+        "libs/docusaurus-plugin-kbar/src"
       ],
       "@cbhq/docusaurus-preset": [
-        "packages/docusaurus-preset/src"
+        "libs/docusaurus-preset/src"
       ],
       "@cbhq/docusaurus-preset/*": [
-        "packages/docusaurus-preset/src/*"
+        "libs/docusaurus-preset/src/*"
       ],
       "@cbhq/docusaurus-theme": [
-        "packages/docusaurus-theme"
+        "libs/docusaurus-theme"
       ],
       "@cbhq/figma-api": [
-        "packages/figma-api/src"
+        "libs/figma-api/src"
       ],
       "@cbhq/figma-styles/*": [
-        "packages/figma-styles/*"
+        "libs/figma-styles/*"
       ],
       "@cbhq/script-utils": [
-        "packages/script-utils/src"
+        "libs/script-utils/src"
       ],
       "@cbhq/ui-mobile-playground": [
         "packages/ui-mobile-playground/src"

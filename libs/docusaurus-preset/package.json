@@ -1,0 +1,50 @@
+{
+  "name": "@cbhq/docusaurus-preset",
+  "version": "0.0.0",
+  "description": "CDS Docusaurus preset",
+  "private": true,
+  "keywords": [
+    "docusaurus",
+    "preset"
+  ],
+  "repository": "git@github.cbhq.net:frontend/cds.git",
+  "packemon": {
+    "format": "lib",
+    "platform": "node"
+  },
+  "dependencies": {
+    "@cbhq/docusaurus-plugin-docgen": "workspace:^",
+    "@cbhq/docusaurus-plugin-kbar": "workspace:^",
+    "@cbhq/docusaurus-theme": "workspace:^",
+    "@docusaurus/preset-classic": "2.0.0-beta.18",
+    "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
+    "type-fest": "^2.19.0"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "2.0.0-beta.18"
+  },
+  "peerDependencies": {
+    "@cbhq/cds-common": "workspace:^"
+  },
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./lib/*.d.ts",
+      "node": {
+        "types": "./lib/*.d.ts",
+        "default": "./lib/*.js"
+      },
+      "default": "./lib/*.js"
+    },
+    ".": {
+      "types": "./lib/index.d.ts",
+      "node": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "default": "./lib/index.js"
+    }
+  }
+}

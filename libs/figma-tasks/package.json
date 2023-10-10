@@ -1,0 +1,52 @@
+{
+  "name": "@cbhq/figma-tasks",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Figma nx tasks",
+  "keywords": [
+    "figma",
+    "nx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "libs/figma-tasks"
+  },
+  "packemon": {
+    "api": "private",
+    "format": "lib",
+    "platform": "node"
+  },
+  "executors": "./executors.json",
+  "dependencies": {
+    "@cbhq/d3": "workspace:^",
+    "@cbhq/figma-api": "workspace:^",
+    "@cbhq/mono-tasks": "^0.10.1",
+    "@cbhq/script-utils": "workspace:^",
+    "@types/svgo": "^2.6.4",
+    "lodash": "^4.17.21",
+    "sharp": "^0.31.2",
+    "svgo": "^3.0.2",
+    "update-notifier": "^5.1.0",
+    "webfont": "9.0.0"
+  },
+  "peerDependencies": {
+    "@nrwl/devkit": ">=15.0.0"
+  },
+  "devDependencies": {
+    "@types/sharp": "^0.31.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./lib/index.d.ts",
+      "node": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "default": "./lib/index.js"
+    }
+  }
+}

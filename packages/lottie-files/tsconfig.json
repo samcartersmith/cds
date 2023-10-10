@@ -14,10 +14,7 @@
   ],
   "references": [
     {
-      "path": "../docusaurus-plugin-docgen"
-    },
-    {
-      "path": "../utils"
+      "path": "../../packages/utils"
     }
   ]
 }

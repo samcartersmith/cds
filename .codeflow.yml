@@ -39,29 +39,6 @@ build:
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
     - BaldurNode:
-        name: package-cds-docusaurus-plugin-kbar
-        path: ./packages/docusaurus-plugin-kbar/publish.Dockerfile
-        autobuild: false # This package was moved to frontend/web
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-docusaurus-theme
-        path: ./packages/docusaurus-theme/publish.Dockerfile
-        autobuild_files:
-          - packages/docusaurus-theme/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-docusaurus-theme
-        path: ./packages/docusaurus-theme/publish.Dockerfile
-        autobuild_files:
-          - packages/docusaurus-theme/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
         name: package-cds-fonts
         path: ./packages/fonts/publish.Dockerfile
         autobuild_files:
