@@ -509,6 +509,12 @@ const sidebars = {
         { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search Input' },
         {
           type: 'doc',
+          id: 'components/section-title/section-title',
+          label: 'Section Title',
+          customProps: { tag: 'new' },
+        },
+        {
+          type: 'doc',
           id: 'components/controls/SegmentedControl/segmented-control',
           label: 'Segmented Control',
         },
