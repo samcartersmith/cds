@@ -286,13 +286,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'Card',
-          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
               id: 'components/cards/Card/card',
-              label: 'Card',
-              customProps: { tag: 'new' },
+              label: 'Card 🚧',
             },
             { type: 'doc', id: 'components/cards/CardBody/card-body', label: 'Card Body' },
             { type: 'doc', id: 'components/cards/CardFooter/card-footer', label: 'Card Footer' },
@@ -338,29 +336,24 @@ const sidebars = {
             {
               type: 'doc',
               id: 'components/chips/input-chip',
-              label: 'Input Chip',
-              customProps: { tag: 'new' },
+              label: 'Input Chip 🚧',
             },
             {
               type: 'doc',
               id: 'components/chips/select-chip',
-              label: 'Select Chip',
-              customProps: { tag: 'new' },
+              label: 'Select Chip 🚧',
             },
             {
               type: 'doc',
               id: 'components/chips/grouped-chip',
-              label: 'Grouped Chip',
-              customProps: { tag: 'new' },
+              label: 'Grouped Chip 🚧',
             },
             {
               type: 'doc',
               id: 'components/chips/tabbed-chip',
-              label: 'Tabbed Chip',
-              customProps: { tag: 'new' },
+              label: 'Tabbed Chip 🚧',
             },
           ],
-          customProps: { tag: 'new' },
         },
         { type: 'doc', id: 'components/collapsible/Collapsible/collapsible', label: 'Collapsible' },
         { type: 'doc', id: 'components/layout/Divider/divider', label: 'Divider' },
@@ -451,8 +444,7 @@ const sidebars = {
         {
           type: 'doc',
           id: 'components/numpad/numpad',
-          label: 'Numpad',
-          customProps: { tag: 'new' },
+          label: 'Numpad 🚧',
         },
         {
           type: 'category',
@@ -510,8 +502,7 @@ const sidebars = {
         {
           type: 'doc',
           id: 'components/section-title/section-title',
-          label: 'Section Title',
-          customProps: { tag: 'new' },
+          label: 'Section Title 🚧',
         },
         {
           type: 'doc',
