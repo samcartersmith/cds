@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.1.19 (10/10/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: added admonition about breaking spoticon changes and minor v5 prop migration fixes.
 
 #### 📘 Misc
 

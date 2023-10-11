@@ -11,7 +11,7 @@ export const migrateBooleanPropToAttributeAndValueMigrations: PropToAttributeVal
     oldAttribute: 'horizontal',
     newAttribute: 'direction',
     value: 'horizontal',
-    paths: ['@cbhq/cds-web/cells', '@cbhq/cds-mobile/cells'],
+    paths: ['@cbhq/cds-web/layout', '@cbhq/cds-mobile/layout'],
   },
 };
 
@@ -117,6 +117,7 @@ export const catchAllPropValueMigrations: RenameValueMapShape[] = [
       round: 'roundedFull',
       input: 'rounded',
       search: 'roundedFull',
+      popover: 'roundedLarge',
     },
   },
 ];
