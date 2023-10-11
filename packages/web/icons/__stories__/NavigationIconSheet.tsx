@@ -4,8 +4,8 @@ import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import names from '@cbhq/cds-icons/__generated__/nav/data/names';
 
-import { HStack, VStack } from '../../layout';
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
+import { HStack } from '../../alpha/HStack';
+import { VStack } from '../../alpha/VStack';
 import { palette } from '../../tokens';
 import { TextLegal } from '../../typography';
 import { NavigationIcon, NavigationIconName, NavigationIconSize } from '../NavigationIcon';
@@ -34,50 +34,56 @@ function DisclaimerText() {
   );
 }
 
-export const NavigationIconSheet = memo(function NavigationIconSheet() {
+type NavigationIconSheetProps = {
+  startIndex?: number;
+  endIndex?: number;
+};
+
+export const NavigationIconSheet = memo(function NavigationIconSheet({
+  startIndex,
+  endIndex,
+}: NavigationIconSheetProps) {
   return (
-    <FeatureFlagProvider flexGap>
-      <VStack gap={2}>
-        <DisclaimerText />
-        <HStack gap={2} spacingBottom={2} flexWrap="wrap">
-          {names.map((name) => {
-            return (
-              <HStack key={`nav-icon-wrapper-${name}`} gap={2} flexWrap="wrap">
-                <VStack gap={2}>
-                  <HStack gap={2} alignItems="center" dangerouslySetClassName={iconFontOverride}>
-                    <ScaleProvider value="xSmall">
-                      <NavigationIcon name={name} size="s" />
-                      <NavigationIcon name={name} size="s" active />
-                    </ScaleProvider>
-                    {(['s', 'm', 'l'] as const).map((size) => {
-                      return (
-                        <>
-                          <NavigationIcon name={name} size={size} />
-                          <NavigationIcon name={name} size={size} active />
-                        </>
-                      );
-                    })}
-                  </HStack>
-                  <HStack gap={2} alignItems="center">
-                    <ScaleProvider value="xSmall">
-                      <SvgFromFigma name={name} size="s" />
-                      <SvgFromFigma name={name} size="s" active />
-                    </ScaleProvider>
-                    {(['s', 'm', 'l'] as const).map((size) => {
-                      return (
-                        <>
-                          <SvgFromFigma name={name} size={size} />
-                          <SvgFromFigma name={name} size={size} active />
-                        </>
-                      );
-                    })}
-                  </HStack>
-                </VStack>
-              </HStack>
-            );
-          })}
-        </HStack>
-      </VStack>
-    </FeatureFlagProvider>
+    <VStack gap={2}>
+      <DisclaimerText />
+      <HStack gap={2} spacingBottom={2} flexWrap="wrap">
+        {names.slice(startIndex, endIndex).map((name) => {
+          return (
+            <HStack key={`nav-icon-wrapper-${name}`} gap={2} flexWrap="wrap">
+              <VStack gap={2}>
+                <HStack gap={2} alignItems="center" dangerouslySetClassName={iconFontOverride}>
+                  <ScaleProvider value="xSmall">
+                    <NavigationIcon name={name} size="s" />
+                    <NavigationIcon name={name} size="s" active />
+                  </ScaleProvider>
+                  {(['s', 'm', 'l'] as const).map((size) => {
+                    return (
+                      <>
+                        <NavigationIcon name={name} size={size} />
+                        <NavigationIcon name={name} size={size} active />
+                      </>
+                    );
+                  })}
+                </HStack>
+                <HStack gap={2} alignItems="center">
+                  <ScaleProvider value="xSmall">
+                    <SvgFromFigma name={name} size="s" />
+                    <SvgFromFigma name={name} size="s" active />
+                  </ScaleProvider>
+                  {(['s', 'm', 'l'] as const).map((size) => {
+                    return (
+                      <>
+                        <SvgFromFigma name={name} size={size} />
+                        <SvgFromFigma name={name} size={size} active />
+                      </>
+                    );
+                  })}
+                </HStack>
+              </VStack>
+            </HStack>
+          );
+        })}
+      </HStack>
+    </VStack>
   );
 });

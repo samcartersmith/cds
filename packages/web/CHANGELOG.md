@@ -12,6 +12,8 @@ All notable changes to this project will be documented in this file!
 
 #### 📘 Misc
 
+- Update icons Storybook sheets. [[#2325](https://github.cbhq.net/frontend/cds/pull/2325)] [[DX-2459](https://jira.coinbase-corp.com/browse/DX-2459)]
+
 - Move private packages to libs directory. [[#2320](https://github.cbhq.net/frontend/cds/pull/2320)]
 
 ## 5.16.0 (10/6/2023 PST)
