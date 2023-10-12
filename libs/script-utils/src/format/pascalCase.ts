@@ -1,5 +1,6 @@
-import startCase from 'lodash/startCase';
-
 export function pascalCase(str: string) {
-  return startCase(str).replace(/ /g, '');
+  return str
+    .split(' ')
+    .map((s) => `${s.charAt(0).toUpperCase()}${s.slice(1)}`)
+    .join('');
 }

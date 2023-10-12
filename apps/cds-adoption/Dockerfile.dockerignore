@@ -1,0 +1,40 @@
+# Ignore these files
+node_modules
+.git
+apps/*/**
+docs/*/**
+libs/*/**
+packages/*/**
+tools/*/**
+.buildkite
+.github
+.nx
+.vscode
+
+apps/cds-adoption/mjs
+apps/cds-adoption/*Dockerfile
+apps/cds-adoption/docker-compose.yml
+apps/cds-adoption/static-assets.docker-compose.yml
+apps/cds-adoption/shard-assets.sh
+
+# Allow these files
+!.yarn
+!.yarnrc.yml
+!yarn.lock
+!**/package.json
+!**/project.json
+!apps/cds-adoption
+!libs/codegen
+!packages/d3
+!libs/figma-api
+!libs/figma-styles
+!libs/figma-tasks
+!libs/script-utils
+
+# Ignore these files
+private-key.pem
+.env
+.env.*
+mjs
+temp
+*.log

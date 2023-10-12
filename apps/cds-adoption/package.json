@@ -1,13 +1,12 @@
 {
-  "name": "cds-figma-sync",
+  "name": "cds-adoption",
   "version": "0.0.0",
   "private": true,
-  "description": "NodeJS service and GitHub App for syncing Figma assets",
+  "description": "NodeJS service and GitHub App for updating CDS adoption stats",
   "main": "./mjs/index.mjs",
   "type": "module",
   "scripts": {
-    "dockerup-app": "docker-compose -f docker-compose.yml build && docker-compose -f docker-compose.yml up -d && docker-compose exec app sh",
-    "dockerup-static-assets": "docker-compose -f static-assets.docker-compose.yml build && docker-compose -f static-assets.docker-compose.yml up -d && docker-compose exec app sh",
+    "dockerup": "docker-compose build && docker-compose up -d && docker-compose exec app sh",
     "dockerdown": "docker-compose down"
   },
   "packemon": {

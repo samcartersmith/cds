@@ -4,7 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "outDir": "../../.nx/dts/apps/cds-figma-sync"
+    "outDir": "../../.nx/dts/apps/cds-adoption"
   },
   "include": [
     "**/*"

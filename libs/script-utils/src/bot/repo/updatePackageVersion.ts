@@ -1,0 +1,41 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+import type { VersionBump } from '@cbhq/mono-pipeline/lib/bumpVersion';
+
+import { execute } from './execute.js';
+import { spawn } from './spawn.js';
+
+type UpdatePackageVersionOptions = {
+  project: string;
+  changelogPath: string;
+  versionBump: VersionBump;
+  message: string;
+  prNumber?: number;
+  jiraTicket?: string;
+};
+
+export const updatePackageVersion = async ({
+  project,
+  changelogPath,
+  versionBump,
+  message,
+  prNumber,
+  jiraTicket,
+}: UpdatePackageVersionOptions) =>
+  execute<string>(
+    `Bumping package version and updating changelog for project ${project}`,
+    async () => {
+      const prFlag = jiraTicket ? ` --pr=${prNumber}` : '';
+      const jiraFlag = jiraTicket ? ` --jira=${jiraTicket}` : '';
+
+      const changelogUpdateResult = await spawn(
+        `yarn mono-pipeline version ${project} -b "${versionBump}" -m "${message}"${prFlag}${jiraFlag}`,
+      );
+
+      // Remove x-access-token from github remote URL in changelog
+      const changelogText = readFileSync(changelogPath, 'utf8');
+      const newChangelogText = changelogText.replaceAll(/x-access-token.*@/g, '');
+      writeFileSync(changelogPath, newChangelogText);
+
+      return changelogUpdateResult;
+    },
+  );

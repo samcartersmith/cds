@@ -11,7 +11,7 @@ process.env.GITHUB_PRIVATE_KEY =
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
 const ConfigServiceClient: typeof configServiceNode = (configServiceNode as any).default;
 
-const configServiceScope = 'frontend/cds-cds-figma-sync';
+const configServiceScope = 'frontend/cds-cds-adoption';
 
 const isEnabled = process.env.ENABLE_CONFIG_SERVICE !== 'false';
 

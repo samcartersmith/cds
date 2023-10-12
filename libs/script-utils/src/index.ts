@@ -1,3 +1,4 @@
+export * from './bot';
 export * from './filter';
 export * from './format';
 export * from './fs';

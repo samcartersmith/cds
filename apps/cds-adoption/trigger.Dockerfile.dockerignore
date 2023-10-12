@@ -1,0 +1,5 @@
+# Ignore these files
+*
+
+# Allow these files
+!apps/cds-adoption/trigger.mjs

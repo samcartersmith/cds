@@ -1,4 +1,11 @@
 import path from 'node:path';
+
+/**
+ * PROJECT_CWD comes from yarn
+ * NX_MONOREPO_ROOT comes from mono-tasks
+ */
+export const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
+
 /**
  * Get absolute file path, relative to the root of repo.
  * @param pathInput - i.e. packages/mobile/package.json
@@ -6,17 +13,11 @@ import path from 'node:path';
  */
 export function getPath(pathInput: string) {
   /**
-   * PROJECT_CWD comes from yarn
-   * NX_MONOREPO_ROOT comes from mono-tasks
-   * If unable to resolve any of those than walk back to root of repo manually
+   * If unable to resolve MONOREPO_ROOT then walk back to root of repo manually
    */
 
-  if (process.env.PROJECT_CWD) {
-    return `${process.env.PROJECT_CWD}/${pathInput}`;
-  }
-
-  if (process.env.NX_MONOREPO_ROOT) {
-    return `${process.env.NX_MONOREPO_ROOT}/${pathInput}`;
+  if (MONOREPO_ROOT) {
+    return `${MONOREPO_ROOT}/${pathInput}`;
   }
 
   return path.resolve(__dirname, '../../../', pathInput);

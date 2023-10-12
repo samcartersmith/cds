@@ -51,10 +51,11 @@ export const syncAssets = async () => {
 
     await bot.yarnInstall();
 
-    // TODO: Re-enable color styles syncing once migration to Figma Variables API is complete
-    // Sync color styles
+    // TODO: Re-enable illustration color styles syncing once migration to Figma Variables API is complete
     // await bot.runNxTarget('figma-styles:sync-illustration-light-styles');
     // await bot.runNxTarget('figma-styles:sync-illustration-dark-styles');
+
+    // TODO: Re-enable ui styles syncing once migration to Figma Variables API is complete
     // await bot.runNxTarget('figma-styles:sync-ui-light-styles');
     // await bot.runNxTarget('figma-styles:sync-ui-dark-styles');
 
@@ -66,7 +67,7 @@ export const syncAssets = async () => {
 
     const dateString = new Date().toISOString().replace(/\..*/, '').replaceAll(':', '-');
     const localeDateString = new Date().toLocaleDateString();
-    const newBranchName = `cds-figma-sync-bot-${dateString}`;
+    const newBranchName = `cds-adoption-bot-${dateString}`;
     const commitMessage = `${COMMIT_MSG_PREFIX} ${localeDateString}`;
 
     const changedFiles = await bot.git.checkStatus();

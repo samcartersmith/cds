@@ -8,6 +8,9 @@ build:
   engines:
     # Apps
     - BaldurECR:
+        name: cds-adoption
+        path: ./apps/cds-adoption/Dockerfile
+    - BaldurECR:
         name: cds-css-upload
         path: ./packages/web/cssupload-production.Dockerfile
         autobuild_files:

@@ -1,0 +1,36 @@
+{
+  "name": "cds-adoption",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/cds-adoption",
+  "projectType": "library",
+  "targets": {
+    "dev": {
+      "command": "ts-node-esm ./apps/cds-adoption/src/dev.ts"
+    },
+    "build": {
+      "executor": "@cbhq/mono-tasks:build-package",
+      "outputs": [
+        "{projectRoot}/assets",
+        "{projectRoot}/mjs"
+      ]
+    },
+    "start": {
+      "command": "node ./apps/cds-adoption/mjs/index.mjs",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
+    }
+  }
+}
