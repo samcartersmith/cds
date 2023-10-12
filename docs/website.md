@@ -206,6 +206,10 @@ The Table of Contents section below has more details about why this is necessary
 
 Add doc to [sidebar.config.js](../apps/website/sidebar.config.js)
 
+See example PRs for updating sidebar:
+- [Update CDS Website Sidebar for Contentful Release](https://github.cbhq.net/frontend/cds/pull/2300)
+- [Contentful Release - Add SectionTitle to CDS Sidebar](https://github.cbhq.net/frontend/cds/pull/2322)
+
 # Table of contents (right sidebar)
 
 ## TOCUpdater
@@ -225,6 +229,9 @@ import Partial2, { toc2 } from './_partial2.mdx'
 <Partial1 />
 <Partial2 />
 ```
+Example PRs of adding to right sidebar / toc:
+- [Add others section to numpad on contentful](https://github.cbhq.net/frontend/cds/pull/2313)
+- [Change "Others" to "Research" for CDS Website](https://github.cbhq.net/frontend/cds/pull/2314)
 
 ## Table of contents with Tabs
 
