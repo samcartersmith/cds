@@ -30,8 +30,8 @@ const server = createServer((request, response) => {
     });
   }
 
-  if (request.url === '/logs') data = getCombinedLogs();
-  if (request.url === '/errors') data = getErrorLogs();
+  if (request.url === '/logs') data = getCombinedLogs() || 'No logs';
+  if (request.url === '/errors') data = getErrorLogs() || 'No errors';
   if (request.url === '/_health') data = 'ok';
 
   if (data) {

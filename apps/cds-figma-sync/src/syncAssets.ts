@@ -73,11 +73,10 @@ export const syncAssets = async () => {
 
     await yarnInstall();
 
-    // TODO: Re-enable illustration color styles syncing once migration to Figma Variables API is complete
+    // TODO: Re-enable color styles syncing once migration to Figma Variables API is complete
+    // Sync color styles
     // await runNxTarget('figma-styles:sync-illustration-light-styles');
     // await runNxTarget('figma-styles:sync-illustration-dark-styles');
-
-    // TODO: Re-enable ui styles syncing once migration to Figma Variables API is complete
     // await runNxTarget('figma-styles:sync-ui-light-styles');
     // await runNxTarget('figma-styles:sync-ui-dark-styles');
 

@@ -20,6 +20,24 @@
         "build"
       ]
     },
+    "dockerup": {
+      "executor": "@cbhq/mono-tasks:run-package-script",
+      "defaultConfiguration": "app",
+      "configurations": {
+        "app": {
+          "script": "dockerup-app"
+        },
+        "static-assets": {
+          "script": "dockerup-static-assets"
+        }
+      }
+    },
+    "dockerdown": {
+      "executor": "@cbhq/mono-tasks:run-package-script",
+      "options": {
+        "script": "dockerdown"
+      }
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },
