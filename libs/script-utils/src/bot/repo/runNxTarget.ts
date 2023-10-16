@@ -3,7 +3,8 @@ import { type SpawnOptions, spawn } from './spawn.js';
 
 export const runNxTarget = async (nxTarget: string, options?: SpawnOptions) =>
   execute<string>(`Running Nx target ${nxTarget}`, async () => {
-    const [projectName, targetName] = nxTarget.split(':');
+    const nxTargetMinusFlags = nxTarget.replace(/ .*/, '');
+    const [projectName, targetName] = nxTargetMinusFlags.split(':', 2);
 
     const nxTargetResult = spawn(`yarn nx run ${nxTarget}`, options);
 

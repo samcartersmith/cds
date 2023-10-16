@@ -5,7 +5,10 @@
   "projectType": "library",
   "targets": {
     "dev": {
-      "command": "ts-node-esm ./apps/cds-figma-sync/src/dev.ts"
+      "command": "ts-node-esm ./apps/cds-figma-sync/src/dev.ts",
+      "dependsOn": [
+        "^build"
+      ]
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
