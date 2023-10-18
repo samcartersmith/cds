@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import { isActiveSidebarItem } from '@docusaurus/theme-common';
 import JSDocTag, { JSDocTagVariant } from '@theme/JSDocTag';
@@ -91,7 +91,14 @@ function CollapsibleCategory({
   parentLevel = 0,
 }: CollapsibleCategoryProps) {
   const isActive = isActiveSidebarItem(item, activePath);
-  const [collapsed, { toggle }] = useToggler(isActive ? false : item.collapsed);
+  const [collapsed, { toggle, toggleOff }] = useToggler(isActive ? false : item.collapsed);
+
+  // expand if corresponding page is active
+  useEffect(() => {
+    if (isActive) {
+      toggleOff();
+    }
+  }, [isActive, toggleOff]);
 
   return (
     <VStack spacingHorizontal={0}>
