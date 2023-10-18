@@ -42,7 +42,7 @@ function CheckboxGroupDemo() {
   const optionValues = Object.keys(options);
 
   // example component using CheckboxGroup
-  const [selectedValues, { toggle, isAllSelected }] = useCheckboxGroupState(optionValues);
+  const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
   return (
     <>
       <TextHeadline as="h1" id="order-dinner-label">
@@ -52,7 +52,6 @@ function CheckboxGroupDemo() {
         aria-labelledby="order-dinner-label"
         name="checkbox-group"
         selectedValues={selectedValues}
-        isAllSelected={isAllSelected}
         onChange={toggle}
       >
         {Object.entries(options).map(([value, label]) => (
