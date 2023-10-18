@@ -933,7 +933,6 @@ const sidebars = {
           ],
         },
         'resources/contribution',
-        'resources/release',
         {
           type: 'category',
           label: 'Migration Guides',
