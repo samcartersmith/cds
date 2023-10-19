@@ -6,6 +6,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.20 (10/18/2023 PST)
+
+#### 🐞 Fixes
+
+- Add PopoverProps and SelectProps to deprecations. [[#2344](https://github.cbhq.net/frontend/cds/pull/2344)]
+- Add web-visualization migration. [[#2344](https://github.cbhq.net/frontend/cds/pull/2344)]
+- Add missing mobile-visualization exports. [[#2344](https://github.cbhq.net/frontend/cds/pull/2344)]
+
 ## 0.1.19 (10/10/2023 PST)
 
 #### 🐞 Fixes
