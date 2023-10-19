@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.16.1 (10/19/2023 PST)
+
+#### 🐞 Fixes
+
+- Remove preventDismissGestures check on handleClose. [[#2346](https://github.cbhq.net/frontend/cds/pull/2346)] [[DX-2531](https://jira.coinbase-corp.com/browse/DX-2531)]
 
 #### 📘 Misc
 

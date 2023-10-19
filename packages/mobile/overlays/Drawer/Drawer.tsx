@@ -61,15 +61,13 @@ export const Drawer = memo(
     const isMounted = useRef(false);
 
     const handleClose = useCallback(() => {
-      if (!preventDismissGestures) {
-        Animated.parallel([animateDrawerOut, animateOverlayOut]).start(({ finished }) => {
-          if (finished) {
-            isMounted.current = false;
-            onCloseComplete?.();
-          }
-        });
-      }
-    }, [animateDrawerOut, animateOverlayOut, onCloseComplete, preventDismissGestures]);
+      Animated.parallel([animateDrawerOut, animateOverlayOut]).start(({ finished }) => {
+        if (finished) {
+          isMounted.current = false;
+          onCloseComplete?.();
+        }
+      });
+    }, [animateDrawerOut, animateOverlayOut, onCloseComplete]);
 
     const handleSwipeToClose = useCallback(() => {
       if (!preventDismissGestures) {
@@ -180,7 +178,11 @@ export const Drawer = memo(
         accessibilityRole="alert"
       >
         <DrawerStatusBar pin={pin} visible />
-        <Overlay opacity={opacityAnimation} onTouchStart={handleOverlayPress} />
+        <Overlay
+          opacity={opacityAnimation}
+          onTouchStart={handleOverlayPress}
+          testID="drawer-overlay"
+        />
         <Box
           {...getPanGestureHandlers}
           background="background"

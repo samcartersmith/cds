@@ -109,14 +109,14 @@ describe('Drawer', () => {
 
     expect(screen.getByTestId('handleBar')).toBeTruthy();
   });
-  it('does not close the drawer when preventDismissGestures is true', async () => {
+  it('does not close the drawer on overlay press when preventDismissGestures is true', async () => {
     const onCloseComplete = jest.fn();
     render(<MockDrawerWithSafeArea onCloseComplete={onCloseComplete} preventDismissGestures />);
 
     fireEvent.press(screen.getByText('Open Drawer'));
     expect(screen.getByText(loremIpsum)).toBeTruthy();
 
-    fireEvent.press(screen.getByTestId('close-drawer-button'));
+    fireEvent(screen.getByTestId('drawer-overlay'), 'onTouchStart');
 
     // Make sure the drawer is still visible after the expected animation duration
     await delay(DURATION);
