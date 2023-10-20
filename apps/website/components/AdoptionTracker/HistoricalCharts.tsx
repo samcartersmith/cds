@@ -89,10 +89,10 @@ export const HistoricalCharts = () => {
     <VStack gap={8}>
       <HStack width="300px">
         <ButtonGroup>
-          <Button block variant="primary" onPress={handleAdoptionDataDownload} compact>
+          <Button block compact onPress={handleAdoptionDataDownload} variant="primary">
             Download Adoption Data
           </Button>
-          <Button block variant="secondary" onPress={handleImpactReportDownload} compact>
+          <Button block compact onPress={handleImpactReportDownload} variant="secondary">
             Download Impact Report
           </Button>
         </ButtonGroup>

@@ -12,14 +12,32 @@ const InputStackBasic = (props: InputStackBaseProps) => {
   //  */}
   return (
     <InputStack
-      prependNode={
-        <Box background="primary">
-          <TextBody>Prepend</TextBody>
-        </Box>
-      }
       appendNode={
         <Box background="primary">
           <TextBody>Append</TextBody>
+        </Box>
+      }
+      borderStyle={{
+        borderWidth: 1,
+      }}
+      endNode={
+        <Box background="positive">
+          <TextBody>EndContent</TextBody>
+        </Box>
+      }
+      helperTextNode={
+        <Box background="backgroundOverlay" height={30} width="100%">
+          <TextBody>helperText</TextBody>
+        </Box>
+      }
+      labelNode={
+        <Box background="backgroundAlternate" height={30} width="100%">
+          <TextBody>Label</TextBody>
+        </Box>
+      }
+      prependNode={
+        <Box background="primary">
+          <TextBody>Prepend</TextBody>
         </Box>
       }
       startNode={
@@ -27,24 +45,6 @@ const InputStackBasic = (props: InputStackBaseProps) => {
           <TextBody>StartContent</TextBody>
         </Box>
       }
-      endNode={
-        <Box background="positive">
-          <TextBody>EndContent</TextBody>
-        </Box>
-      }
-      labelNode={
-        <Box background="backgroundAlternate" width="100%" height={30}>
-          <TextBody>Label</TextBody>
-        </Box>
-      }
-      helperTextNode={
-        <Box background="backgroundOverlay" width="100%" height={30}>
-          <TextBody>helperText</TextBody>
-        </Box>
-      }
-      borderStyle={{
-        borderWidth: 1,
-      }}
       variant="primary"
       {...props}
     />
@@ -65,12 +65,12 @@ export default function InputStackScreen() {
       </Example>
       <Example inline title="Input Stack Focused">
         <InputStackBasic
+          focused
           inputNode={
             <Box background="backgroundAlternate" flexGrow={2}>
               <TextBody>Input</TextBody>
             </Box>
           }
-          focused
         />
       </Example>
       <Example inline title="Input Prepend Only - Test for borderRadius">
@@ -78,6 +78,29 @@ export default function InputStackScreen() {
          * Ensure that every compartment does what its suppose to
          */}
         <InputStack
+          borderStyle={{
+            borderWidth: 1,
+          }}
+          endNode={
+            <Box background="positive">
+              <TextBody>EndContent</TextBody>
+            </Box>
+          }
+          helperTextNode={
+            <Box background="backgroundOverlay" height={30} width="100%">
+              <TextBody>helperText</TextBody>
+            </Box>
+          }
+          inputNode={
+            <Box background="backgroundAlternate" flexGrow={2}>
+              <TextBody>Input</TextBody>
+            </Box>
+          }
+          labelNode={
+            <Box background="backgroundAlternate" height={30} width="100%">
+              <TextBody>Label</TextBody>
+            </Box>
+          }
           prependNode={
             <Box background="primary">
               <TextBody>Prepend</TextBody>
@@ -88,29 +111,6 @@ export default function InputStackScreen() {
               <TextBody>StartContent</TextBody>
             </Box>
           }
-          endNode={
-            <Box background="positive">
-              <TextBody>EndContent</TextBody>
-            </Box>
-          }
-          inputNode={
-            <Box background="backgroundAlternate" flexGrow={2}>
-              <TextBody>Input</TextBody>
-            </Box>
-          }
-          labelNode={
-            <Box background="backgroundAlternate" width="100%" height={30}>
-              <TextBody>Label</TextBody>
-            </Box>
-          }
-          helperTextNode={
-            <Box background="backgroundOverlay" width="100%" height={30}>
-              <TextBody>helperText</TextBody>
-            </Box>
-          }
-          borderStyle={{
-            borderWidth: 1,
-          }}
           variant="primary"
         />
       </Example>
@@ -124,14 +124,17 @@ export default function InputStackScreen() {
               <TextBody>Append</TextBody>
             </Box>
           }
-          startNode={
-            <Box background="positive">
-              <TextBody>StartContent</TextBody>
-            </Box>
-          }
+          borderStyle={{
+            borderWidth: 1,
+          }}
           endNode={
             <Box background="positive">
               <TextBody>EndContent</TextBody>
+            </Box>
+          }
+          helperTextNode={
+            <Box background="backgroundOverlay" height={30} width="100%">
+              <TextBody>helperText</TextBody>
             </Box>
           }
           inputNode={
@@ -140,18 +143,15 @@ export default function InputStackScreen() {
             </Box>
           }
           labelNode={
-            <Box background="backgroundAlternate" width="100%" height={30}>
+            <Box background="backgroundAlternate" height={30} width="100%">
               <TextBody>Label</TextBody>
             </Box>
           }
-          helperTextNode={
-            <Box background="backgroundOverlay" width="100%" height={30}>
-              <TextBody>helperText</TextBody>
+          startNode={
+            <Box background="positive">
+              <TextBody>StartContent</TextBody>
             </Box>
           }
-          borderStyle={{
-            borderWidth: 1,
-          }}
           variant="primary"
         />
       </Example>

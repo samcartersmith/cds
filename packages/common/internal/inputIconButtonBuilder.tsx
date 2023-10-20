@@ -20,12 +20,12 @@ export function inputIconButtonBuilder(
       <>
         {variants.map((variant) => (
           <TextInput
-            label={variant}
             key={`${variant}-input-iconbutton`}
-            variant={variant}
+            label={variant}
             start={
-              <InputIconButton variant="foregroundMuted" name="add" accessibilityLabel="Add" />
+              <InputIconButton accessibilityLabel="Add" name="add" variant="foregroundMuted" />
             }
+            variant={variant}
           />
         ))}
       </>
@@ -36,8 +36,8 @@ export function inputIconButtonBuilder(
     return (
       <TextInput
         label="Label"
+        start={<InputIconButton accessibilityLabel="Search" name="search" />}
         variant="foregroundMuted"
-        start={<InputIconButton name="search" accessibilityLabel="Search" />}
       />
     );
   };
@@ -46,15 +46,15 @@ export function inputIconButtonBuilder(
     return (
       <TextInput
         label="Search"
+        start={<InputIconButton accessibilityLabel="Search" name="search" variant="secondary" />}
         variant="foregroundMuted"
-        start={<InputIconButton variant="secondary" name="search" accessibilityLabel="Search" />}
       />
     );
   };
 
   const BasicEnd = () => {
     return (
-      <TextInput label="Label" end={<InputIconButton name="add" accessibilityLabel="Add" />} />
+      <TextInput end={<InputIconButton accessibilityLabel="Add" name="add" />} label="Label" />
     );
   };
 
@@ -65,9 +65,9 @@ export function inputIconButtonBuilder(
         start={
           <InputIconButton
             disableInheritFocusStyle
-            variant="foregroundMuted"
-            name="add"
             accessibilityLabel="Add"
+            name="add"
+            variant="foregroundMuted"
           />
         }
       />
@@ -77,16 +77,16 @@ export function inputIconButtonBuilder(
   const AddCustomColorEnd = () => {
     return (
       <TextInput
-        label="Label"
         end={
           <InputIconButton
-            transparent
             disableInheritFocusStyle
-            variant="foregroundMuted"
-            name="add"
+            transparent
             accessibilityLabel="Add"
+            name="add"
+            variant="foregroundMuted"
           />
         }
+        label="Label"
       />
     );
   };
@@ -95,7 +95,7 @@ export function inputIconButtonBuilder(
   const InvalidPlacement = () => {
     return (
       <Box>
-        <InputIconButton name="add" variant="foregroundMuted" accessibilityLabel="Add" />
+        <InputIconButton accessibilityLabel="Add" name="add" variant="foregroundMuted" />
       </Box>
     );
   };

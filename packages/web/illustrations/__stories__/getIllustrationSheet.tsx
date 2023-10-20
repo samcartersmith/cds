@@ -108,7 +108,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
   }: LocalIllustrationProps) {
     const svgPath = `@cbhq/cds-illustrations/__generated__/${type}/svg/${spectrum}/${name}-${version}.svg`;
 
-    return <img src={svgPath} alt={name} width={width} height={height} />;
+    return <img alt={name} height={height} src={svgPath} width={width} />;
   });
 
   const renderItem = ({ name, spectrum }: DataItem) => {
@@ -116,14 +116,14 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
       <ThemeProvider key={`${name}-${spectrum}`} scale="xSmall" spectrum={spectrum}>
         <VStack
           background
-          gap={1}
           alignItems="flex-start"
-          width={width}
+          gap={1}
           height={height + 20}
           overflow="hidden"
+          width={width}
         >
-          <LocalIllustration spectrum={spectrum} name={name} version={versionMap[name]} />
-          <TextLegal as="p" noWrap>
+          <LocalIllustration name={name} spectrum={spectrum} version={versionMap[name]} />
+          <TextLegal noWrap as="p">
             {name}
           </TextLegal>
         </VStack>
@@ -134,11 +134,11 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
   const IllustrationSheet = memo(function IllustrationSheet() {
     return (
       <HStack
+        alignItems="flex-start"
         flexWrap="wrap"
         gap={2}
-        spacingVertical={1}
         justifyContent="flex-start"
-        alignItems="flex-start"
+        spacingVertical={1}
       >
         {data.map(renderItem)}
       </HStack>

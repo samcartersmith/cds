@@ -5,7 +5,7 @@ import { Control } from '../Control';
 describe('Control', () => {
   it('renders label and children', () => {
     render(
-      <Control label="test label" readOnly>
+      <Control readOnly label="test label">
         <div>test children</div>
       </Control>,
     );
@@ -17,7 +17,7 @@ describe('Control', () => {
   it('triggers onChange', () => {
     const onChange = jest.fn();
     render(
-      <Control label="test label" type="checkbox" onChange={onChange} testID="test-control">
+      <Control label="test label" onChange={onChange} testID="test-control" type="checkbox">
         <div />
       </Control>,
     );
@@ -35,7 +35,7 @@ describe('Control', () => {
     jest.spyOn(console, 'warn').mockImplementation(() => {});
 
     // @ts-expect-error Test falsy children to trigger console warning
-    render(<Control label="test label" type="checkbox" onChange={onChange} />);
+    render(<Control label="test label" onChange={onChange} type="checkbox" />);
 
     expect(console.warn).toHaveBeenCalledTimes(1);
     process.env.NODE_ENV = 'test';

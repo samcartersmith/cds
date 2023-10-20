@@ -3,7 +3,7 @@ import { TextBody } from '@cbhq/cds-web/typography';
 
 export function ExampleBox({ children, ...otherProps }: BoxProps) {
   return (
-    <Box spacing={1} background="backgroundAlternate" {...otherProps}>
+    <Box background="backgroundAlternate" spacing={1} {...otherProps}>
       <TextBody as="p">{children}</TextBody>
     </Box>
   );

@@ -24,63 +24,63 @@ export const ListCellFallback = memo(function ListCellFallback({
   // Flexbox collides with percentages also, so we need to wrap in normal divs.
   return (
     <Cell
-      testID={testID}
       detail={
         (detail || subdetail) && (
           <div style={{ width: '100%' }}>
             <Box
-              flexDirection="column"
               alignContent="flex-end"
               alignItems="flex-end"
-              justifyContent="center"
+              flexDirection="column"
               flexShrink={0}
+              justifyContent="center"
               testID="list-cell-fallback-detail"
             >
               {detail && (
                 <Fallback
-                  height={22}
-                  width={60}
                   percentage
                   disableRandomRectWidth={disableRandomRectWidth}
+                  height={22}
                   rectWidthVariant={getRectWidthVariant(rectWidthVariant, 0)}
+                  width={60}
                 />
               )}
               {subdetail && (
                 <Fallback
-                  height={22}
-                  width={50}
-                  spacingTop={0.5}
                   percentage
                   disableRandomRectWidth={disableRandomRectWidth}
+                  height={22}
                   rectWidthVariant={getRectWidthVariant(rectWidthVariant, 1)}
+                  spacingTop={0.5}
+                  width={50}
                 />
               )}
             </Box>
           </div>
         )
       }
-      media={media && <MediaFallback type={media} testID="list-cell-fallback-media" />}
+      media={media && <MediaFallback testID="list-cell-fallback-media" type={media} />}
+      testID={testID}
     >
       <div style={{ width: '100%' }}>
         {title && (
           <Fallback
-            testID="list-cell-fallback-title"
-            height={22}
-            width={65}
             percentage
             disableRandomRectWidth={disableRandomRectWidth}
+            height={22}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 2)}
+            testID="list-cell-fallback-title"
+            width={65}
           />
         )}
         {description && (
           <Fallback
-            testID="list-cell-fallback-description"
-            height={22}
-            width={85}
-            spacingTop={0.5}
             percentage
             disableRandomRectWidth={disableRandomRectWidth}
+            height={22}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 3)}
+            spacingTop={0.5}
+            testID="list-cell-fallback-description"
+            width={85}
           />
         )}
       </div>

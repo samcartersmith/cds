@@ -33,15 +33,15 @@ describe('Carousel.test', () => {
     render(
       <Carousel
         showDismiss
+        dismissButtonAccessibilityHint="Dismiss announcement"
+        dismissButtonAccessibilityLabel="Dismiss"
+        items={[
+          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+        ]}
         onDismissItem={jest.fn()}
         onDismissLastItem={jest.fn()}
         testID="mock-carousel"
-        items={[
-          <AnnouncementCard key="item1" title="Item1 title" description="Item1 description" />,
-          <AnnouncementCard key="item2" title="Item2 title" description="Item2 description" />,
-        ]}
-        dismissButtonAccessibilityLabel="Dismiss"
-        dismissButtonAccessibilityHint="Dismiss announcement"
       />,
     );
 
@@ -57,12 +57,12 @@ describe('Carousel.test', () => {
   it('renders items', () => {
     render(
       <Carousel
+        items={[
+          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+        ]}
         onDismissItem={jest.fn()}
         onDismissLastItem={jest.fn()}
-        items={[
-          <AnnouncementCard key="item1" title="Item1 title" description="Item1 description" />,
-          <AnnouncementCard key="item2" title="Item2 title" description="Item2 description" />,
-        ]}
       />,
     );
 
@@ -79,12 +79,12 @@ describe('Carousel.test', () => {
       <Carousel
         showDismiss
         showProgress
+        items={[
+          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+        ]}
         onDismissItem={jest.fn()}
         onDismissLastItem={jest.fn()}
-        items={[
-          <AnnouncementCard key="item1" title="Item1 title" description="Item1 description" />,
-          <AnnouncementCard key="item2" title="Item2 title" description="Item2 description" />,
-        ]}
       />,
     );
 
@@ -105,12 +105,12 @@ describe('Carousel.test', () => {
       <Carousel
         showDismiss
         showProgress
+        items={[
+          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+        ]}
         onDismissItem={onDismissItem}
         onDismissLastItem={onDismissLastItem}
-        items={[
-          <AnnouncementCard key="item1" title="Item1 title" description="Item1 description" />,
-          <AnnouncementCard key="item2" title="Item2 title" description="Item2 description" />,
-        ]}
       />,
     );
 
@@ -150,14 +150,14 @@ describe('Carousel.test', () => {
       <Carousel
         showDismiss
         showProgress
-        onDismissItem={jest.fn()}
-        onDismissLastItem={jest.fn()}
-        items={[
-          <AnnouncementCard key="item1" title="Item1 title" description="Item1 description" />,
-          <AnnouncementCard key="item2" title="Item2 title" description="Item2 description" />,
-        ]}
         carouselRef={ref as React.MutableRefObject<CarouselRef>}
         itemWidth={300}
+        items={[
+          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+        ]}
+        onDismissItem={jest.fn()}
+        onDismissLastItem={jest.fn()}
       />,
     );
 

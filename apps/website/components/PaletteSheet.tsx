@@ -51,15 +51,15 @@ export const PaletteTiles = () => {
             }}
           >
             <TextHeadline
-              color="currentColor"
+              noWrap
               as="span"
+              color="currentColor"
               display="block"
               transform="capitalize"
-              noWrap
             >
               {wordCase(name)}
             </TextHeadline>
-            <TextLabel1 color="currentColor" as="span" display="block" transform="capitalize">
+            <TextLabel1 as="span" color="currentColor" display="block" transform="capitalize">
               {opacity !== 1 ? `${hueStep} @ ${opacity}` : hueStep}
             </TextLabel1>
           </div>

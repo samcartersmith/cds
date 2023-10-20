@@ -90,19 +90,18 @@ export const Collapsible = memo(
 
       return (
         <Animated.View
-          testID={testID}
-          style={containerStyles}
           ref={forwardedRef}
           aria-expanded={!collapsed}
+          style={containerStyles}
+          testID={testID}
         >
           <ScrollView
-            horizontal={horizontal}
-            scrollEnabled={shouldEnableScroll}
-            onContentSizeChange={handleContentSizeChange}
-            // for Android
             nestedScrollEnabled
-            style={scrollViewStyles}
             contentContainerStyle={restPadding}
+            horizontal={horizontal}
+            onContentSizeChange={handleContentSizeChange}
+            scrollEnabled={shouldEnableScroll}
+            style={scrollViewStyles}
             {...scrollViewProps}
           >
             {children}

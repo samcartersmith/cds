@@ -81,11 +81,10 @@ export const Collapsible = memo(
       return (
         <motion.div
           {...styles}
-          data-testid={testID}
           ref={forwardedRef}
-          // A11y props
-          id={id}
           aria-labelledby={accessibilityLabelledBy}
+          data-testid={testID}
+          id={id}
           role={role}
         >
           <div className={outerSpacing}>

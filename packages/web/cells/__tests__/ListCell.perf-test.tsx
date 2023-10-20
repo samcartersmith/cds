@@ -8,15 +8,15 @@ describe('ListCell performance test', () => {
   it('renders', async () => {
     await measurePerformance(
       <ListCell
-        title="Asset with a really long name"
+        selected
         description="Some description of the asset"
         detail="$334,239.03"
-        subdetail="+4.06%"
-        variant="positive"
-        intermediary={<CellMedia type="icon" name="chartLine" />}
-        priority="start"
+        intermediary={<CellMedia name="chartLine" type="icon" />}
         onPress={NoopFn}
-        selected
+        priority="start"
+        subdetail="+4.06%"
+        title="Asset with a really long name"
+        variant="positive"
       />,
     );
   });

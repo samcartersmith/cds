@@ -8,23 +8,23 @@ import { TabLabel } from '../TabLabel';
 const TabLabelScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="Tab Label (defaults to primary)" spacing={gutter} overflow="visible">
+      <Example overflow="visible" spacing={gutter} title="Tab Label (defaults to primary)">
         <HStack gap={4}>
           <TabLabel active>Active label</TabLabel>
           <TabLabel>Inactive label</TabLabel>
         </HStack>
       </Example>
-      <Example title="Tab Label (primary)" spacing={gutter} overflow="visible">
+      <Example overflow="visible" spacing={gutter} title="Tab Label (primary)">
         <HStack gap={4}>
-          <TabLabel variant="primary" active>
+          <TabLabel active variant="primary">
             Active label
           </TabLabel>
           <TabLabel variant="primary">Inactive label</TabLabel>
         </HStack>
       </Example>
-      <Example title="Tab Label (secondary)" spacing={gutter} overflow="visible">
+      <Example overflow="visible" spacing={gutter} title="Tab Label (secondary)">
         <HStack gap={4}>
-          <TabLabel variant="secondary" active>
+          <TabLabel active variant="secondary">
             Active label
           </TabLabel>
           <TabLabel variant="secondary">Inactive label</TabLabel>

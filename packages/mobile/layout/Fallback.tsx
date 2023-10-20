@@ -93,11 +93,11 @@ export const Fallback = memo(function Fallback({
           ]}
         >
           <LinearGradient
-            style={styles.child}
             colors={shimmerColor}
-            start={gradStart}
             end={gradEnd}
+            start={gradStart}
             stops={gradLocations}
+            style={styles.child}
           />
         </Animated.View>
       </View>

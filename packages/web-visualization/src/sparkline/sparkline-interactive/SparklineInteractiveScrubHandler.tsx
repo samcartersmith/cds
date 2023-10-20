@@ -276,16 +276,16 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
       {!disabled && (
         <div
           ref={observe}
-          role="button"
           aria-label="Price chart (use arrow keys to adjust view)"
-          tabIndex={0}
+          className={scrubHandlerClassNameWithFocus}
+          onBlur={handleMouseLeave}
+          onFocus={handleMouseEnter}
           onKeyDown={handleKeyDown}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onMouseMove={handleMouseMove}
-          onBlur={handleMouseLeave}
-          onFocus={handleMouseEnter}
-          className={scrubHandlerClassNameWithFocus}
+          role="button"
+          tabIndex={0}
         />
       )}
     </div>

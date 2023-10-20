@@ -100,7 +100,7 @@ export const createLottie = <Source extends LottieSource>(
   };
 
   const LottieComponent = (props: Omit<LottieProps, 'source'>) => (
-    <Lottie ref={lottieRef} source={source} progress={progress} {...props} />
+    <Lottie ref={lottieRef} progress={progress} source={source} {...props} />
   );
 
   LottieComponent.displayName = 'Lottie' as const;

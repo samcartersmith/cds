@@ -27,13 +27,13 @@ const LogoScreen = () => {
         </HStack>
         <HStack>
           <Box spacingEnd={2}>
-            <LogoMark size={16} foreground />
+            <LogoMark foreground size={16} />
           </Box>
           <Box spacingEnd={2}>
-            <LogoMark size={24} foreground />
+            <LogoMark foreground size={24} />
           </Box>
           <Box spacingEnd={2}>
-            <LogoMark size={32} foreground />
+            <LogoMark foreground size={32} />
           </Box>
         </HStack>
       </Example>
@@ -44,12 +44,12 @@ const LogoScreen = () => {
             <LogoWordmark />
           </Box>
           <SpectrumProvider value="light">
-            <Box height={30} background spacing={1}>
+            <Box background height={30} spacing={1}>
               <LogoWordmark foreground />
             </Box>
           </SpectrumProvider>
           <SpectrumProvider value="dark">
-            <Box height={30} background spacing={1}>
+            <Box background height={30} spacing={1}>
               <LogoWordmark foreground />
             </Box>
           </SpectrumProvider>
@@ -57,19 +57,19 @@ const LogoScreen = () => {
       </Example>
       <Example title="SubBrandLogoMark">
         <VStack>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoMark type="analytics" />
           </Box>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoMark type="ventures" />
           </Box>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoMark type="assetHub" />
           </Box>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoMark type="commerce" />
           </Box>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoMark type="wallet" />
           </Box>
         </VStack>
@@ -77,19 +77,19 @@ const LogoScreen = () => {
 
       <Example title="SubBrandLogoWordmark">
         <VStack>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoWordmark type="analytics" />
           </Box>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoWordmark type="ventures" />
           </Box>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoWordmark type="assetHub" />
           </Box>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoWordmark foreground type="commerce" />
           </Box>
-          <Box spacing={1} height={50}>
+          <Box height={50} spacing={1}>
             <SubBrandLogoWordmark foreground type="wallet" />
           </Box>
         </VStack>

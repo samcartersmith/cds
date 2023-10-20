@@ -43,14 +43,14 @@ export const Cell = memo(function Cell({
 
   let content = (
     <HStack
+      alignItems={alignItems}
       background={selected ? 'backgroundAlternate' : undefined}
       borderRadius={borderRadius}
-      alignItems={alignItems}
       flexGrow={1}
       gap={2}
-      width="100%"
       renderToHardwareTextureAndroid={disabled}
       testID={testID}
+      width="100%"
       {...spacing.inner}
       offsetHorizontal={onPress ? undefined : spacing.inner.offsetHorizontal}
     >
@@ -80,12 +80,12 @@ export const Cell = memo(function Cell({
 
       {!!detail && (
         <Box
+          alignItems="flex-end"
           flexGrow={detailWidth ? undefined : 1}
           flexShrink={
             // eslint-disable-next-line no-nested-ternary
             detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1
           }
-          alignItems="flex-end"
           justifyContent="flex-end"
           width={detailWidth}
         >
@@ -104,17 +104,17 @@ export const Cell = memo(function Cell({
   if (onPress) {
     content = (
       <Pressable
-        accessibilityLabel={accessibilityLabel}
-        accessibilityHint={accessibilityHint}
+        block
         noScaleOnPress
         transparentWhileInactive
+        accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
         backgroundColor="background"
         borderRadius={borderRadius}
-        block
+        contentStyle={pressStyles}
         disabled={disabled}
         onPress={onPress}
         style={[offsetStyle, pressStyles]}
-        contentStyle={pressStyles}
       >
         {content}
       </Pressable>
@@ -125,10 +125,10 @@ export const Cell = memo(function Cell({
     <Box
       alignItems="stretch"
       flexDirection="row"
-      width="100%"
-      minHeight={minHeight}
       maxHeight={maxHeight}
+      minHeight={minHeight}
       onLayout={onLayout}
+      width="100%"
       {...spacing.outer}
     >
       {content}

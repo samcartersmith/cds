@@ -23,11 +23,11 @@ export const Principles = (props: PrinciplesProps) => {
   const principles = Object.entries(props);
 
   return (
-    <HStack justifyContent="space-between" gap={4}>
+    <HStack gap={4} justifyContent="space-between">
       {principles.map(([principle, description]) => (
-        <VStack gap={0.5} key={principle}>
+        <VStack key={principle} gap={0.5}>
           <Pictogram name={principlesPictogramMap[principle]} />
-          <TextTitle3 as="h2" spacingTop={2} spacingBottom={1}>
+          <TextTitle3 as="h2" spacingBottom={1} spacingTop={2}>
             {startCase(principle)}
           </TextTitle3>
           <TextBody as="p">{description}</TextBody>

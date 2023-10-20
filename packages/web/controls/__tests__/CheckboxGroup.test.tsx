@@ -6,7 +6,7 @@ import { CheckboxGroup } from '../CheckboxGroup';
 describe('CheckboxGroup.test', () => {
   it('renders label and children', () => {
     render(
-      <CheckboxGroup label="test label" selectedValues={new Set('1')} onChange={jest.fn()}>
+      <CheckboxGroup label="test label" onChange={jest.fn()} selectedValues={new Set('1')}>
         <div>test children</div>
         <div>test children2</div>
       </CheckboxGroup>,
@@ -20,11 +20,11 @@ describe('CheckboxGroup.test', () => {
     const onChange = jest.fn();
 
     render(
-      <CheckboxGroup selectedValues={new Set('1')} onChange={onChange} testID="test-group">
-        <Checkbox value="1" id="item1">
+      <CheckboxGroup onChange={onChange} selectedValues={new Set('1')} testID="test-group">
+        <Checkbox id="item1" value="1">
           1
         </Checkbox>
-        <Checkbox value="2" id="item2">
+        <Checkbox id="item2" value="2">
           2
         </Checkbox>
       </CheckboxGroup>,
@@ -45,7 +45,7 @@ describe('CheckboxGroup.test', () => {
     jest.spyOn(console, 'warn').mockImplementation(() => {});
 
     render(
-      <CheckboxGroup selectedValues={new Set('1')} onChange={onChange}>
+      <CheckboxGroup onChange={onChange} selectedValues={new Set('1')}>
         <Checkbox value="1">1</Checkbox>
         <Checkbox value="2">2</Checkbox>
       </CheckboxGroup>,
@@ -63,7 +63,7 @@ describe('CheckboxGroup.test', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
 
     render(
-      <CheckboxGroup selectedValues={new Set('1')} onChange={onChange}>
+      <CheckboxGroup onChange={onChange} selectedValues={new Set('1')}>
         <Checkbox>1</Checkbox>
         <Checkbox value="2">2</Checkbox>
       </CheckboxGroup>,

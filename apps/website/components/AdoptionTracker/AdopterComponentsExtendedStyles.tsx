@@ -60,16 +60,16 @@ export const AdopterComponentsExtendedStyles = memo(
 
           return (
             <BetaCell
-              priority="end"
+              end={<TextLabel2 align="end" as="p">{`${callSiteCount} ${callSiteText}`}</TextLabel2>}
+              endAccessory={<Icon color="foregroundMuted" name="externalLink" size="s" />}
               offsetHorizontal={1}
               onPress={handleOnPropCallSite(callSite)}
+              priority="end"
               start={
                 <TextLabel2 as="p" overflow="truncate">
                   {callSite}
                 </TextLabel2>
               }
-              end={<TextLabel2 as="p" align="end">{`${callSiteCount} ${callSiteText}`}</TextLabel2>}
-              endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
             />
           );
         });
@@ -89,19 +89,19 @@ export const AdopterComponentsExtendedStyles = memo(
           return (
             <>
               <BetaCell
-                priority="start"
-                offsetHorizontal={1}
-                start={<TextLabel2 as="p">{alias}</TextLabel2>}
                 end={<TextLabel2 as="p">{`${callSiteCount} ${instancesText}`}</TextLabel2>}
                 endAccessory={
                   <Icon
-                    size="s"
-                    name={selected ? 'caretUp' : 'caretDown'}
                     color={selected ? 'primary' : 'foregroundMuted'}
+                    name={selected ? 'caretUp' : 'caretDown'}
+                    size="s"
                   />
                 }
+                offsetHorizontal={1}
                 onPress={handleOnPress(alias)}
+                priority="start"
                 selected={selected}
+                start={<TextLabel2 as="p">{alias}</TextLabel2>}
               />
               {selected && selectedContent(callSites)}
             </>

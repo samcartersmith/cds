@@ -85,7 +85,7 @@ describe('ButtonEventDelegation', () => {
 
     render(
       <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
-        <Button onPress={spy} eventConfig={customEventConfig} testID="button">
+        <Button eventConfig={customEventConfig} onPress={spy} testID="button">
           Child
         </Button>
       </EventHandlerProvider>,
@@ -109,7 +109,7 @@ describe('ButtonEventDelegation', () => {
 
     render(
       <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
-        <Button onPress={spy} eventConfig={customEventConfig} testID="button">
+        <Button eventConfig={customEventConfig} onPress={spy} testID="button">
           Child
         </Button>
       </EventHandlerProvider>,
@@ -133,7 +133,7 @@ describe('ButtonEventDelegation', () => {
 
     render(
       <EventHandlerProvider config={CUSTOM_EVENT_HANDLER_WITH_MAPPING}>
-        <Button onPress={spy} eventConfig={customEventConfig} testID="button">
+        <Button eventConfig={customEventConfig} onPress={spy} testID="button">
           Child
         </Button>
       </EventHandlerProvider>,

@@ -71,23 +71,23 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
       </HStack>
       {rowsArr.map((_, row) => {
         return (
-          <HStack gap={0.5} key={_}>
+          <HStack key={_} gap={0.5}>
             {data.tiles
               // We are able to infer the interval because we know how big dataset is + what row we are on.
               .slice(row * columns, row * columns + columns)
               .map((props) => {
                 return (
                   <HStack
-                    zIndex={getZIndexFromRow(row, rows)}
+                    key={props.title}
                     gap={0.5}
                     spacingBottom={0.5}
-                    key={props.title}
+                    zIndex={getZIndexFromRow(row, rows)}
                   >
                     <TileButton {...props}>
                       <RemoteImage
+                        height={38.4}
                         source={`https://static-assets.coinbase.com/ui-infra/illustration/v1/pictogram/svg/${theme}/${props.pictogram}-2.svg`}
                         width={38.4}
-                        height={38.4}
                       />
                     </TileButton>
                   </HStack>
@@ -115,8 +115,8 @@ export const AppSwitcherContent = memo(
               <>
                 <AppSwitcherContentSection
                   key={section.sectionTitle}
-                  data={section}
                   columns={columns}
+                  data={section}
                 />
                 {data.sections.length - 1 !== idx && <Divider spacingVertical={1} />}
               </>

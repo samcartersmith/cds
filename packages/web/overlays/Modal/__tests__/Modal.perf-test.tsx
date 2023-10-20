@@ -16,7 +16,7 @@ const MockModal = (props: Pick<ModalProps, 'disableFocusTrap' | 'disablePortal'>
   }, []);
   return (
     <>
-      <Modal {...props} visible={isVisible} onRequestClose={handleOnRequestClose}>
+      <Modal {...props} onRequestClose={handleOnRequestClose} visible={isVisible}>
         <ModalHeader title="Title" />
       </Modal>
       <Button onPress={handleOpenModal}>Click me</Button>

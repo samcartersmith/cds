@@ -17,12 +17,12 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
 const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
   return (
     <Dropdown
-      width={359}
-      maxHeight={600}
-      content={<AppSwitcherContent />}
-      showOverlay
       enableMobileModal
+      showOverlay
+      content={<AppSwitcherContent />}
       contentPosition={switcherPositionConfig}
+      maxHeight={600}
+      width={359}
     >
       {children}
     </Dropdown>
@@ -49,7 +49,7 @@ export const AppSwitcherWithDot = () => {
   return (
     <HStack>
       <AppSwitcherRecipe>
-        <DotCount pin="top-end" count={4}>
+        <DotCount count={4} pin="top-end">
           <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
         </DotCount>
       </AppSwitcherRecipe>

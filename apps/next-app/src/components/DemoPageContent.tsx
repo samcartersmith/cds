@@ -88,9 +88,8 @@ function createSidebarItem(activeIndex: number, setActiveIndex: SetState<number>
       <SidebarItem
         key={`example--sidebar-item--${title}`}
         active={index === activeIndex}
-        // onPress={setActiveIndex} // todo: callback includes index by default
-        onPress={handlePress}
         icon={icon as NavigationIconProps['name']}
+        onPress={handlePress} // onPress={setActiveIndex} // todo: callback includes index by default
         title={title}
       />
     );
@@ -117,10 +116,10 @@ function createMenuOption() {
   return (item: (typeof options)[number]) => (
     <SelectOption
       key={item.name}
-      value={item.value}
-      title={item.name}
       description={item.description}
       media={<Pictogram name={item.mediaName} />}
+      title={item.name}
+      value={item.value}
     />
   );
 }
@@ -130,9 +129,6 @@ function Popover({ trigger }: { trigger: () => React.ReactElement }) {
   const [value, onChange] = useState<string>('');
   return (
     <Dropdown
-      width={350}
-      onChange={onChange}
-      value={value}
       content={
         <>
           <Box spacing={2}>
@@ -141,6 +137,9 @@ function Popover({ trigger }: { trigger: () => React.ReactElement }) {
           {options.map(createMenuOption())}
         </>
       }
+      onChange={onChange}
+      value={value}
+      width={350}
     >
       {trigger()}
     </Dropdown>
@@ -150,14 +149,14 @@ function Popover({ trigger }: { trigger: () => React.ReactElement }) {
 /** Triggers */
 function MoreTrigger() {
   return (
-    <IconButton accessibilityLabel="More actions" transparent name="more" variant="secondary" />
+    <IconButton transparent accessibilityLabel="More actions" name="more" variant="secondary" />
   );
 }
 
 function AvatarTrigger() {
   return (
     <Pressable backgroundColor="transparent">
-      <HStack gap={1} alignItems="center">
+      <HStack alignItems="center" gap={1}>
         <Avatar alt="Kat" src={avatar} />
         <TextHeadline as="h2">{name}</TextHeadline>
       </HStack>
@@ -176,15 +175,15 @@ function FeedCardWithPopover() {
     () =>
       alert.open(
         <Alert
-          title="Alert title"
-          body="Alert body type that can run over multiple lines, but should be kept short."
-          pictogram="warning"
           visible
-          // eslint-disable-next-line react/jsx-handler-names
-          onRequestClose={alert.close}
-          preferredActionLabel="Save"
+          body="Alert body type that can run over multiple lines, but should be kept short."
           // eslint-disable-next-line react/jsx-handler-names
           onPreferredActionPress={alert.close}
+          // eslint-disable-next-line react/jsx-handler-names
+          onRequestClose={alert.close}
+          pictogram="warning"
+          preferredActionLabel="Save"
+          title="Alert title"
         />,
       ),
     [alert],
@@ -202,7 +201,7 @@ function FeedCardWithPopover() {
       'https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png',
     bodyOrientation: 'vertical',
     footerActions: (
-      <Button compact variant="secondary" onPress={showAlert}>
+      <Button compact onPress={showAlert} variant="secondary">
         Earn AMP
       </Button>
     ),
@@ -221,13 +220,13 @@ function DataCardWithCircle() {
   return (
     <Card>
       <CardBody
-        title="Crypto earned"
         description="Earn $40 more by learning about new assets"
-        orientation="horizontal"
         media={<ProgressCircle progress={0.5} size={100} />}
+        orientation="horizontal"
+        title="Crypto earned"
       />
       <CardFooter>
-        <Button compact variant="secondary" onPress={showToast}>
+        <Button compact onPress={showToast} variant="secondary">
           See more
         </Button>
       </CardFooter>
@@ -264,15 +263,15 @@ function DataCardWithBar() {
 
   return (
     <Card>
-      <CardBody title="Crypto earned" description="Earn $40 more by learning about new assets">
+      <CardBody description="Earn $40 more by learning about new assets" title="Crypto earned">
         <VStack spacingBottom={gutter}>
-          <ProgressBarWithFloatLabel progress={0.6} label={label} labelPlacement="above">
+          <ProgressBarWithFloatLabel label={label} labelPlacement="above" progress={0.6}>
             <ProgressBar progress={0.6} />
           </ProgressBarWithFloatLabel>
         </VStack>
       </CardBody>
       <CardFooter>
-        <Button compact variant="secondary" onPress={showModal}>
+        <Button compact onPress={showModal} variant="secondary">
           See more
         </Button>
       </CardFooter>
@@ -285,9 +284,9 @@ const FullScreenModalSelectComponent = () => {
   const selectOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
 
   return (
-    <Select value={value} placeholder="Choose something..." onChange={setValue}>
+    <Select onChange={setValue} placeholder="Choose something..." value={value}>
       {selectOptions.map((option) => (
-        <SelectOption value={option} key={option} title={option} description="Description" />
+        <SelectOption key={option} description="Description" title={option} value={option} />
       ))}
     </Select>
   );
@@ -308,35 +307,35 @@ function FullScreenModalAmp() {
       <TextBody as="p">This is a test Fullscreen Modal with components composition.</TextBody>
       <FeedCard
         avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-        headerMetaData="Dec 18"
-        headerDescription="Earn crypto"
-        headerActionNode={
-          <IconButton
-            accessibilityLabel="More actions"
-            name="more"
-            variant="foregroundMuted"
-            transparent
-          />
-        }
-        bodyTitle="Learn AMP. Earn $3 in AMP."
         bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
         bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
         bodyOrientation="vertical"
+        bodyTitle="Learn AMP. Earn $3 in AMP."
         footerActions={
           <Button compact variant="secondary">
             Earn AMP
           </Button>
         }
+        headerActionNode={
+          <IconButton
+            transparent
+            accessibilityLabel="More actions"
+            name="more"
+            variant="foregroundMuted"
+          />
+        }
+        headerDescription="Earn crypto"
+        headerMetaData="Dec 18"
       />
       <ListCell
-        title="Bitcoin"
         description="BTC"
         detail="$45,123"
         subdetail="+4.55%"
+        title="Bitcoin"
         variant="positive"
       />
       <FullScreenModalSelectComponent />
-      <HStack spacingVertical={3} gap={3}>
+      <HStack gap={3} spacingVertical={3}>
         <Button onPress={toggleOff}>Yes</Button>
         <Button onPress={toggleOff} variant="secondary">
           No
@@ -348,10 +347,10 @@ function FullScreenModalAmp() {
   const secondaryContent = (
     <VStack borderRadius="rounded" elevation={1}>
       <Accordion defaultActiveKey="2">
-        <AccordionItem itemKey="1" title="Accordion #1" subtitle="subtitle1">
+        <AccordionItem itemKey="1" subtitle="subtitle1" title="Accordion #1">
           <TextBody as="p">{loremIpsum}</TextBody>
         </AccordionItem>
-        <AccordionItem itemKey="2" title="Accordion #2" subtitle="subtitle2">
+        <AccordionItem itemKey="2" subtitle="subtitle2" title="Accordion #2">
           <TextBody as="p">{loremIpsum}</TextBody>
         </AccordionItem>
       </Accordion>
@@ -362,11 +361,11 @@ function FullScreenModalAmp() {
     <>
       <Button onPress={toggleOn}>Open Modal</Button>
       <FullscreenModal
-        visible={visible}
         onRequestClose={handleClose}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         title="Modal title"
+        visible={visible}
       />
     </>
   );
@@ -376,10 +375,10 @@ function DataCardWithFullScreenModal() {
   return (
     <Card>
       <CardBody
-        title="Crypto earned"
         description="Earn $40 more by learning about new assets"
-        orientation="horizontal"
         media={<ProgressCircle progress={0.5} size={100} />}
+        orientation="horizontal"
+        title="Crypto earned"
       />
       <CardFooter>
         <FullScreenModalAmp />
@@ -395,15 +394,15 @@ function FullScreenAlertAmp() {
     <>
       <Button onPress={toggleOn}>Open Alert</Button>
       <FullscreenAlert
-        visible={visible}
-        onRequestClose={toggleOff}
-        title="Connection trouble"
         body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
-        heroSquare="errorApp500"
-        preferredActionLabel="Try again"
-        onPreferredActionPress={toggleOff}
         dismissActionLabel="Cancel"
+        heroSquare="errorApp500"
         onDismissActionPress={toggleOff}
+        onPreferredActionPress={toggleOff}
+        onRequestClose={toggleOff}
+        preferredActionLabel="Try again"
+        title="Connection trouble"
+        visible={visible}
       />
     </>
   );
@@ -413,10 +412,10 @@ function DataCardWithFullScreenAlert() {
   return (
     <Card>
       <CardBody
-        title="Crypto earned"
         description="Earn $40 more by learning about new assets"
-        orientation="horizontal"
         media={<ProgressCircle progress={0.5} size={100} />}
+        orientation="horizontal"
+        title="Crypto earned"
       />
       <CardFooter>
         <FullScreenAlertAmp />
@@ -441,7 +440,7 @@ function ChartWithBalance() {
   }, []);
 
   return (
-    <VStack width="100%" spacingVertical={6}>
+    <VStack spacingVertical={6} width="100%">
       {!data && <div style={{ height: '500px' }} />}
       {data && <SparklineInteractiveWithHeaderBuild data={data} strokeColor={assets.btc.color} />}
     </VStack>
@@ -458,7 +457,7 @@ function AssetTable() {
   const accountsCopy = mocks.accounts.slice(startIdx, endIdx);
 
   return (
-    <Table bordered variant="ruled" tableLayout={isFixed ? 'fixed' : 'auto'}>
+    <Table bordered tableLayout={isFixed ? 'fixed' : 'auto'} variant="ruled">
       <TableHeader>
         <TableRow>
           <TableCell title="Currency" width="20%" />
@@ -471,7 +470,7 @@ function AssetTable() {
               </TextHeadline>
             </Tooltip>
           </TableCell>
-          <TableCell title="Status" alignItems="flex-end" width="60%" />
+          <TableCell alignItems="flex-end" title="Status" width="60%" />
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -480,15 +479,15 @@ function AssetTable() {
             <TableRow key={`row--${account.name}`}>
               <TableCell
                 start={<Icon name="currencies" size="m" />}
-                title={account.name}
                 subtitle={account.currency.name}
+                title={account.name}
               />
-              <TableCell title={`$${account.balance.amount}`} subtitle={account.balance.currency} />
+              <TableCell subtitle={account.balance.currency} title={`$${account.balance.amount}`} />
               <TableCell direction="horizontal" justifyContent="flex-end">
                 <Icon
-                  size="m"
-                  name={account.primary ? 'circleCheckmark' : 'circleCross'}
                   color={account.primary ? 'positive' : 'negative'}
+                  name={account.primary ? 'circleCheckmark' : 'circleCross'}
+                  size="m"
                 />
               </TableCell>
             </TableRow>
@@ -497,23 +496,23 @@ function AssetTable() {
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell direction="horizontal" colSpan={2}>
+          <TableCell colSpan={2} direction="horizontal">
             <HStack gap={1}>
               {[1, 2, 3, 4, 5].map((pg) => (
                 <Button
                   key={pg}
                   compact
-                  variant={page === pg ? 'primary' : 'secondary'}
                   // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
                   onPress={() => setPage(pg)}
+                  variant={page === pg ? 'primary' : 'secondary'}
                 >
                   {pg}
                 </Button>
               ))}
             </HStack>
           </TableCell>
-          <TableCell colSpan={1} alignItems="flex-end">
-            <Switch onChange={toggle} checked={isFixed}>
+          <TableCell alignItems="flex-end" colSpan={1}>
+            <Switch checked={isFixed} onChange={toggle}>
               Fixed Layout
             </Switch>
           </TableCell>
@@ -533,7 +532,7 @@ const DropdownContent = () => (
       </TextCaption>
     </Box>
     {dropdownOptions.map((option) => (
-      <SelectOption key={option} value={option} title={option} />
+      <SelectOption key={option} title={option} value={option} />
     ))}
   </>
 );
@@ -546,23 +545,23 @@ function AppContent() {
   return (
     <HStack background="background">
       <VStack>
-        <Sidebar logo={<LogoMark />} autoCollapse>
+        <Sidebar autoCollapse logo={<LogoMark />}>
           {sidebarItems.map(createSidebarItem(activeIndex, setActiveIndex))}
         </Sidebar>
       </VStack>
       <VStack>
         <NavigationBar
           end={
-            <HStack gap={1} alignItems="center">
+            <HStack alignItems="center" gap={1}>
               {/* eslint-disable-next-line react/jsx-handler-names */}
-              <Checkbox value="hyped" onChange={toggleOverlay.toggle} checked={showOverlay}>
+              <Checkbox checked={showOverlay} onChange={toggleOverlay.toggle} value="hyped">
                 Show overlay
               </Checkbox>
               <Dropdown
-                value={value}
-                onChange={setValue}
                 content={<DropdownContent />}
+                onChange={setValue}
                 showOverlay={showOverlay}
+                value={value}
               >
                 <IconButton name="more" />
               </Dropdown>
@@ -574,22 +573,22 @@ function AppContent() {
           <NavigationTitle>{sidebarItems[activeIndex].title}</NavigationTitle>
         </NavigationBar>
         <Group
-          position="relative"
-          divider={VerticalDivider}
           direction="horizontal"
+          divider={VerticalDivider}
           justifyContent="space-between"
+          position="relative"
         >
-          <Group divider={Divider} gap={0} flexGrow={3} flexShrink={1} flexBasis="0%">
+          <Group divider={Divider} flexBasis="0%" flexGrow={3} flexShrink={1} gap={0}>
             <ChartWithBalance />
             <AssetTable />
           </Group>
           <VStack
-            spacing={gutter}
-            spacingTop={0}
+            flexBasis="0%"
             flexGrow={1}
             flexShrink={0}
-            flexBasis="0%"
             minHeight="100vh"
+            spacing={gutter}
+            spacingTop={0}
           >
             <CardGroup>
               <FeedCardWithPopover />

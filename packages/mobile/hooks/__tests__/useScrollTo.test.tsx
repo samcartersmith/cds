@@ -24,7 +24,7 @@ describe('useScrollTo', () => {
       const onPress = useCallback(() => scrollTo({ x: 400 }), [scrollTo]);
       return (
         <Box>
-          <Button testID="Button" onPress={onPress}>
+          <Button onPress={onPress} testID="Button">
             Scroll To
           </Button>
           <ScrollView ref={scrollRef} horizontal>
@@ -48,7 +48,7 @@ describe('useScrollTo', () => {
       const onPress = useCallback(() => scrollToEnd(), [scrollToEnd]);
       return (
         <Box>
-          <Button testID="Button" onPress={onPress}>
+          <Button onPress={onPress} testID="Button">
             Scroll To
           </Button>
           <ScrollView ref={scrollRef} horizontal>

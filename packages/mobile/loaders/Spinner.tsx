@@ -15,5 +15,5 @@ export const Spinner = memo(function Spinner({
     dark: palette.backgroundOverlay,
   });
 
-  return <ActivityIndicator color={color} size={size} animating={animating} {...props} />;
+  return <ActivityIndicator animating={animating} color={color} size={size} {...props} />;
 });

@@ -8,7 +8,7 @@ const testHref = 'https://www.coinbase.com/';
 describe('Link performance test', () => {
   it('renders', async () => {
     await measurePerformance(
-      <Link onPress={NoopFn} href={testHref}>
+      <Link href={testHref} onPress={NoopFn}>
         Child
       </Link>,
     );

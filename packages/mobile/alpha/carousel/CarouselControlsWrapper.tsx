@@ -16,14 +16,14 @@ export const CarouselControlsWrapper = memo(function CarouselControlsWrapper({
 }: CarouselControlsWrapperProps) {
   return (
     <HStack
-      position="absolute"
-      top={0}
+      animated
       left={0}
+      opacity={opacity}
+      position="absolute"
       right={0}
       spacingHorizontal={gutter}
+      top={0}
       zIndex={zIndex.interactable}
-      animated
-      opacity={opacity}
       {...props}
     >
       {children}

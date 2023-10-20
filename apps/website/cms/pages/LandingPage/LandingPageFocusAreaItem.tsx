@@ -11,7 +11,7 @@ const LandingPageFocusAreaItem = memo(function LandingPageFocusAreaItem({
   url,
 }: LandingPageFocusAreaItemProps) {
   return (
-    <Link key={label} to={url} variant="title4" openInNewWindow underline>
+    <Link key={label} openInNewWindow underline to={url} variant="title4">
       {label}
     </Link>
   );

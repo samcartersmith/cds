@@ -33,14 +33,14 @@ describe('Toast', () => {
   });
 
   it('renders action', () => {
-    render(<Toast text={TEXT} action={mockAction} />);
+    render(<Toast action={mockAction} text={TEXT} />);
 
     fireEvent.click(screen.getByTestId(mockAction.testID));
     expect(mockAction.onPress).toHaveBeenCalledTimes(1);
   });
 
   it('has correct styles at the end of animation', async () => {
-    render(<Toast text={TEXT} action={mockAction} testID="mock-toast" />);
+    render(<Toast action={mockAction} testID="mock-toast" text={TEXT} />);
 
     await waitFor(() =>
       expect(screen.getByTestId('mock-toast-motion')).toHaveStyle({
@@ -51,7 +51,7 @@ describe('Toast', () => {
   });
 
   it('has the correct a11y role', async () => {
-    render(<Toast text={TEXT} testID="mock-toast" />);
+    render(<Toast testID="mock-toast" text={TEXT} />);
 
     expect(await screen.findByTestId('mock-toast')).toHaveAttribute('role', 'alert');
   });
@@ -59,11 +59,11 @@ describe('Toast', () => {
   it('can provide a11y props', async () => {
     render(
       <Toast
-        text={TEXT}
-        action={mockAction}
-        testID="mock-toast"
         accessibilityLabel={MOCK_A11Y_LABEL}
+        action={mockAction}
         closeButtonAccessibilityProps={MOCK_A11Y_PROPS}
+        testID="mock-toast"
+        text={TEXT}
       />,
     );
 

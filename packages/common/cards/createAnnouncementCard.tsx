@@ -27,12 +27,12 @@ export function createAnnouncementCard<OnPressFn>({
     return (
       <Card
         {...accessibilityProps}
-        onPress={onPress}
-        width={width}
-        testID={props.testID}
         flexShrink={0}
+        onPress={onPress}
+        testID={props.testID}
+        width={width}
       >
-        <CardBody mediaPlacement="end" alignItems="flex-start" {...props} />
+        <CardBody alignItems="flex-start" mediaPlacement="end" {...props} />
       </Card>
     );
   });

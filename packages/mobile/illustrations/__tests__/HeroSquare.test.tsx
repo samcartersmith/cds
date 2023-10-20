@@ -18,10 +18,10 @@ describe('HeroSquare', () => {
   it('renders a HeroSquare with accessibilityHint and accessibilityLabel', () => {
     render(
       <HeroSquare
-        name="docError"
-        testID={PICTOGRAM_TEST_ID}
         accessibilityHint="Accessibility Hint"
         accessibilityLabel="Accessibility Label"
+        name="docError"
+        testID={PICTOGRAM_TEST_ID}
       />,
     );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
@@ -42,9 +42,9 @@ describe('HeroSquare', () => {
   it('renders a HeroSquare with accessibilityHint and no accessibilityLabel', () => {
     render(
       <HeroSquare
+        accessibilityHint="Accessibility Hint"
         name="docError"
         testID={PICTOGRAM_TEST_ID}
-        accessibilityHint="Accessibility Hint"
       />,
     );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();

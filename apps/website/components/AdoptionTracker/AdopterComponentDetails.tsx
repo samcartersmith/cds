@@ -79,9 +79,9 @@ export const AdopterComponentDetails = memo(
         {!cds && cdsRecommendations.length > 0 && (
           <AdopterCdsRecommendation componentName={name} recommendations={cdsRecommendations} />
         )}
-        <ComponentDetailsTextStack title="Source file" details={sourceFile} />
+        <ComponentDetailsTextStack details={sourceFile} title="Source file" />
         {styledComponent && (
-          <ComponentDetailsTextStack title="Styled component" details={styledComponent} />
+          <ComponentDetailsTextStack details={styledComponent} title="Styled component" />
         )}
         {propsWithCallSites && <AdopterComponentProps propsWithCallSites={propsWithCallSites} />}
         {extendedStyledComponents && (

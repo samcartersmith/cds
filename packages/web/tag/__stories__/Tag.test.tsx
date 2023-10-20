@@ -45,7 +45,7 @@ describe('Tag', () => {
 
   it('set full border-radius when intent is promotional', () => {
     render(
-      <Tag colorScheme="blue" testID={TEST_ID} intent="promotional">
+      <Tag colorScheme="blue" intent="promotional" testID={TEST_ID}>
         <TextBody as="p">Tag</TextBody>
       </Tag>,
     );

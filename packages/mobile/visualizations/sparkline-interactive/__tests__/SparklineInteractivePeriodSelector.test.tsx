@@ -22,10 +22,10 @@ const setSelectedPeriodSpy = jest.fn();
 const SparklineInteractivePeriodSelectorExample = () => {
   return (
     <SparklineInteractivePeriodSelector
+      color="blue"
       periods={periods}
       selectedPeriod="1d"
       setSelectedPeriod={setSelectedPeriodSpy}
-      color="blue"
     />
   );
 };

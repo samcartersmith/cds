@@ -19,8 +19,8 @@ const DocgenModalLink = memo(function DocgenModalLink({ name }: TypesModaLinkPro
   } else if (sharedParentTypes[name]) {
     modalContent = (
       <PropsTable
-        sharedTypeAliases={sharedTypeAliases}
         props={Object.values(sharedParentTypes[name])}
+        sharedTypeAliases={sharedTypeAliases}
       />
     );
   } else {
@@ -29,7 +29,7 @@ const DocgenModalLink = memo(function DocgenModalLink({ name }: TypesModaLinkPro
   }
 
   return (
-    <ModalLink variant="body" mono content={modalContent}>
+    <ModalLink mono content={modalContent} variant="body">
       {name}
     </ModalLink>
   );

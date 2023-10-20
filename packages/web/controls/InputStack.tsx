@@ -136,10 +136,10 @@ export const InputStack = memo(
 
     return (
       <VStack
-        testID={testID}
-        width={width}
         gap={inputStackGap}
         opacity={disabled ? accessibleOpacityDisabled : 1}
+        testID={testID}
+        width={width}
         {...props}
       >
         {!!labelNode && (
@@ -149,16 +149,16 @@ export const InputStack = memo(
           {!!prependNode && <>{prependNode}</>}
           <div className={inputAreaContainerStyles}>
             <Interactable
+              ref={ref}
               as="span"
               backgroundColor="background"
-              borderWidth={borderWidth}
-              ref={ref}
-              height={height}
-              disabled={disabled}
-              testID="input-interactable-area"
               borderRadius={borderRadius}
-              style={defaultBorderStyles}
+              borderWidth={borderWidth}
               className={cx(inputBaseAreaStyles, focused && persistedFocusStyles)}
+              disabled={disabled}
+              height={height}
+              style={defaultBorderStyles}
+              testID="input-interactable-area"
             >
               {focused && enableColorSurge && (
                 <ColorSurge background={focusedVariant as ColorSurgeBackground} />

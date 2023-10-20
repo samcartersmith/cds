@@ -27,7 +27,7 @@ const ModalLink = memo(function ModalLink({ children, content, ...props }: Modal
       </Link>
       {/* eslint-disable-next-line react/jsx-boolean-value */}
       <ModalChildContext.Provider value={true}>
-        <Modal visible={visible} onRequestClose={toggleOff}>
+        <Modal onRequestClose={toggleOff} visible={visible}>
           <ModalHeader title={children} />
           <ModalBody>
             {typeof content === 'string' ? <TextBody as="p">{content}</TextBody> : content}

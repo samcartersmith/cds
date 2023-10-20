@@ -28,10 +28,10 @@ const Video = memo(function Video({
   const style = useMemo(() => ({ maxWidth, maxHeight }), [maxHeight, maxWidth]);
   return (
     <video
-      src={srcFromSpectrum}
       autoPlay={autoPlay}
-      loop={loop}
       controls={controls}
+      loop={loop}
+      src={srcFromSpectrum}
       style={style}
     />
   );

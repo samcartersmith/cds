@@ -50,7 +50,7 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
             children
           ) : (
             <ThemeConfigProvider value={config}>
-              <ElevationConfigsProvider parentThemeConfig={config} hasFrontier={hasFrontier}>
+              <ElevationConfigsProvider hasFrontier={hasFrontier} parentThemeConfig={config}>
                 {children}
               </ElevationConfigsProvider>
             </ThemeConfigProvider>

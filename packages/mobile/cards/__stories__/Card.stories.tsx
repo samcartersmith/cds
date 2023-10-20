@@ -35,7 +35,7 @@ const {
 } = cardBuilder({
   Box,
   Button,
-  Card: (props) => <Card accessibilityLabel="Card" accessibilityHint="Card" {...props} />,
+  Card: (props) => <Card accessibilityHint="Card" accessibilityLabel="Card" {...props} />,
   IconButton,
   VStack,
   ListCell,
@@ -48,7 +48,7 @@ const CardScreen = () => {
   return (
     <ExampleScreen>
       <CardGroup spacingHorizontal={gutter}>
-        <Box spacingVertical={2} spacingHorizontal={gutter} background="backgroundAlternate">
+        <Box background="backgroundAlternate" spacingHorizontal={gutter} spacingVertical={2}>
           <TextHeadline>Data Cards</TextHeadline>
         </Box>
         {dataCards.map((item) => (
@@ -57,13 +57,13 @@ const CardScreen = () => {
         {feedCards.map(({ like: getLikeProps, ...item }) => (
           <FeedCard {...item} like={getLikeProps()} />
         ))}
-        <Box spacingVertical={2} spacingHorizontal={gutter} background="backgroundAlternate">
+        <Box background="backgroundAlternate" spacingHorizontal={gutter} spacingVertical={2}>
           <TextHeadline>Announcement Cards</TextHeadline>
         </Box>
         {announcementCards.map((item) => (
           <AnnouncementCard key={item.title} {...item} />
         ))}
-        <Box spacingVertical={2} spacingHorizontal={gutter} background="backgroundAlternate">
+        <Box background="backgroundAlternate" spacingHorizontal={gutter} spacingVertical={2}>
           <TextHeadline>Feature Entry Cards</TextHeadline>
         </Box>
         {featureEntryCards.map((item) => (

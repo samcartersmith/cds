@@ -19,7 +19,7 @@ const ListCellScreen = () => {
     <ExampleScreen>
       {entries(stories).map(([name, Component]) => {
         return (
-          <Example key={name} title={name} inline spacingHorizontal={0} titleSpacing={titleSpacing}>
+          <Example key={name} inline spacingHorizontal={0} title={name} titleSpacing={titleSpacing}>
             <Component />
           </Example>
         );

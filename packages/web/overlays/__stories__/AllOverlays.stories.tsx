@@ -39,23 +39,23 @@ const CompositeOverlays = ({ disablePortal = false }: Pick<DropdownProps, 'disab
   const handleShowAlertButton = useCallback(() => {
     openAlert(
       <Alert
-        title="Alert title"
-        body="Alert body type that can run over multiple lines, but should be kept short."
-        pictogram="warning"
         visible
+        body="Alert body type that can run over multiple lines, but should be kept short."
         onRequestClose={handleCloseAlert}
+        pictogram="warning"
         preferredActionLabel="Save"
+        title="Alert title"
       />,
     );
   }, [handleCloseAlert, openAlert]);
 
   const handleModalTriggerPress = useCallback(() => {
     openModal(
-      <Modal disablePortal={disablePortal} visible onRequestClose={closeModal}>
+      <Modal visible disablePortal={disablePortal} onRequestClose={closeModal}>
         <ModalHeader title="Basic Modal" />
         <ModalBody>
           <VStack gap={2}>
-            <Tooltip disablePortal={disablePortal} content="I am some tooltip content">
+            <Tooltip content="I am some tooltip content" disablePortal={disablePortal}>
               <TextBody as="p">{loremIpsum}</TextBody>
             </Tooltip>
             <Button onPress={handleShowAlertButton}>Show Alert</Button>
@@ -63,11 +63,11 @@ const CompositeOverlays = ({ disablePortal = false }: Pick<DropdownProps, 'disab
             <DropdownExample />
             <Select
               onChange={setSelectedValue}
-              value={selectedValue}
               placeholder="Select something... "
+              value={selectedValue}
             >
               {options.map((option) => (
-                <SelectOption value={option} title={option} />
+                <SelectOption title={option} value={option} />
               ))}
             </Select>
           </VStack>

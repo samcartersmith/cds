@@ -97,21 +97,21 @@ export const Avatar = memo(
     const avatarText = useMemo(() => {
       if (isLargestSize || isNormalAvatarButton) {
         return (
-          <TextTitle2 as="p" dangerouslySetColor={fallbackTextColor} align="center">
+          <TextTitle2 align="center" as="p" dangerouslySetColor={fallbackTextColor}>
             {placeholderLetter}
           </TextTitle2>
         );
       }
       if (size === 'm' || isCompactAvatarButton) {
         return (
-          <TextCaption as="p" dangerouslySetColor={fallbackTextColor} align="center">
+          <TextCaption align="center" as="p" dangerouslySetColor={fallbackTextColor}>
             {placeholderLetter}
           </TextCaption>
         );
       }
 
       return (
-        <TextBody as="p" dangerouslySetColor={fallbackTextColor} align="center">
+        <TextBody align="center" as="p" dangerouslySetColor={fallbackTextColor}>
           {placeholderLetter}
         </TextBody>
       );
@@ -136,13 +136,13 @@ export const Avatar = memo(
     const coloredFallback = useMemo(() => {
       return (
         <Box
+          alignItems="center"
           borderRadius={borderRadius}
+          dangerouslySetClassName={avatarColoredFallbackClassName}
+          dangerouslySetStyle={styleOverrides}
           flexGrow={1}
           height="100%"
           justifyContent="center"
-          alignItems="center"
-          dangerouslySetStyle={styleOverrides}
-          dangerouslySetClassName={avatarColoredFallbackClassName}
           testID={`${testID}-fallback`}
         >
           {avatarText}
@@ -163,6 +163,10 @@ export const Avatar = memo(
     return (
       <Box position="relative">
         <Box
+          alignItems="center"
+          borderColor={hasBorder ? borderColor : 'transparent'}
+          borderRadius={borderRadius}
+          dangerouslySetBackground={dangerouslySetBackground}
           dangerouslySetClassName={cx(
             staticClassName,
             dangerouslySetClassName as string,
@@ -170,34 +174,30 @@ export const Avatar = memo(
             hexagonClassName,
           )}
           dangerouslySetStyle={selected && !isHexagon ? ringStyles : undefined}
-          dangerouslySetBackground={dangerouslySetBackground}
-          borderRadius={borderRadius}
-          borderColor={hasBorder ? borderColor : 'transparent'}
-          width={computedSize}
-          height={computedSize}
-          position="relative"
-          overflow={boxOverflow}
-          alignItems="center"
-          justifyContent="center"
-          flexShrink={0}
           flexGrow={0}
+          flexShrink={0}
+          height={computedSize}
+          justifyContent="center"
+          overflow={boxOverflow}
+          position="relative"
           testID={testID}
+          width={computedSize}
         >
           {shouldShowAvatarImage ? (
             <RemoteImage
-              shape={shape}
-              width={computedSize}
-              height={computedSize}
-              source={avatarSrc}
               alt={alt}
+              height={computedSize}
+              shape={shape}
+              source={avatarSrc}
+              width={computedSize}
             />
           ) : (
             coloredFallback
           )}
         </Box>
-        {isHexagon && selected && <HexagonBorder strokeColor={colorSchemeRgb} offset size={size} />}
+        {isHexagon && selected && <HexagonBorder offset size={size} strokeColor={colorSchemeRgb} />}
         {isHexagon && borderColor && (
-          <HexagonBorder strokeColor={`var(--${borderColor})`} size={size} />
+          <HexagonBorder size={size} strokeColor={`var(--${borderColor})`} />
         )}
       </Box>
     );

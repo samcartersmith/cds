@@ -5,9 +5,9 @@ import { TextHeadline } from '@cbhq/cds-web/typography';
 
 export const AdopterComponentsEmptyState = memo(() => {
   return (
-    <VStack spacing={4} maxWidth="40%" alignItems="center" gap={2}>
+    <VStack alignItems="center" gap={2} maxWidth="40%" spacing={4}>
       <HeroSquare name="docError" />
-      <TextHeadline as="h1" align="center">
+      <TextHeadline align="center" as="h1">
         There are no components for this segment
       </TextHeadline>
     </VStack>

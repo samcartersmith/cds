@@ -18,10 +18,10 @@ describe('SpotRectangle', () => {
   it('renders a SpotRectangle with accessibilityHint and accessibilityLabel', () => {
     render(
       <SpotRectangle
-        name="creditCardExcitement"
-        testID={SPOT_RECTANGLE_TEST_ID}
         accessibilityHint="Accessibility Hint"
         accessibilityLabel="Accessibility Label"
+        name="creditCardExcitement"
+        testID={SPOT_RECTANGLE_TEST_ID}
       />,
     );
     expect(screen.getByTestId(SPOT_RECTANGLE_TEST_ID)).toBeTruthy();
@@ -43,9 +43,9 @@ describe('SpotRectangle', () => {
   it('renders a SpotRectangle with accessibilityHint and no accessibilityLabel', () => {
     render(
       <SpotRectangle
+        accessibilityHint="Accessibility Hint"
         name="creditCardExcitement"
         testID={SPOT_RECTANGLE_TEST_ID}
-        accessibilityHint="Accessibility Hint"
       />,
     );
     expect(screen.getByTestId(SPOT_RECTANGLE_TEST_ID)).toBeTruthy();

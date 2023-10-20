@@ -36,18 +36,13 @@ function DocSidebarItems({ items, ...props }: DocSidebarItemsProps): JSX.Element
       <Group
         divider={DividerWithGap}
         renderItem={renderItem}
-        spacingVertical={1}
-        spacingHorizontal={1}
         spacingBottom={3}
+        spacingHorizontal={1}
+        spacingVertical={1}
       >
         {filteredItems.map((item, index) => (
-          <DocSidebarItem
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
-            item={item}
-            index={index}
-            {...props}
-          />
+          // eslint-disable-next-line react/no-array-index-key
+          <DocSidebarItem key={index} index={index} item={item} {...props} />
         ))}
       </Group>
     </DocSidebarItemsExpandedStateProvider>

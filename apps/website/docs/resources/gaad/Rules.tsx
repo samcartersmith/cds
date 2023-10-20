@@ -53,10 +53,10 @@ export const Rules = () => {
 
   return (
     <Box spacingTop={3}>
-      <Button compact onPress={openModal} ref={buttonRef}>
+      <Button ref={buttonRef} compact onPress={openModal}>
         Show the rules
       </Button>
-      <Modal visible={isModalOpen} onRequestClose={closeModal}>
+      <Modal onRequestClose={closeModal} visible={isModalOpen}>
         <ModalHeader title="Tips, tricks, and rules for the hunt" />
         <ModalBody>
           <TextTitle2 as="h2" spacingBottom={1}>
@@ -69,51 +69,51 @@ export const Rules = () => {
             <TextBody as="li" color="foregroundMuted">
               To turn on VoiceOver Choose{' '}
               <Box
-                background="secondary"
-                display="inline-block"
-                borderRadius="rounded"
-                spacingHorizontal={1}
                 as="label"
+                background="secondary"
+                borderRadius="rounded"
+                display="inline-block"
+                spacingHorizontal={1}
               >
                 
               </Box>
               {' > '}
               <Box
-                background="secondary"
-                display="inline-block"
-                borderRadius="rounded"
-                spacingHorizontal={1}
                 as="label"
+                background="secondary"
+                borderRadius="rounded"
+                display="inline-block"
+                spacingHorizontal={1}
               >
                 System Settings
               </Box>
               , then click{' '}
               <HStack
-                background="secondary"
-                display="inline-flex"
-                borderRadius="rounded"
-                spacingHorizontal={1}
                 alignItems="center"
-                justifyContent="center"
-                gap={0.5}
                 as="label"
+                background="secondary"
+                borderRadius="rounded"
+                display="inline-flex"
+                gap={0.5}
+                justifyContent="center"
+                spacingHorizontal={1}
               >
                 <img
                   alt="a11y icon"
-                  src="https://help.apple.com/assets/63BCA927AAE78C58DD7FBE35/63BCA92AAAE78C58DD7FBE3E/en_US/2b2f66e61ae2036a31e141807277a025.png"
-                  width="16"
                   height="16"
+                  src="https://help.apple.com/assets/63BCA927AAE78C58DD7FBE35/63BCA92AAAE78C58DD7FBE3E/en_US/2b2f66e61ae2036a31e141807277a025.png"
                   style={{ display: 'inline-block' }}
+                  width="16"
                 />
                 Accessibility
               </HStack>{' '}
               in the sidebar (you may need to scroll down). Click{' '}
               <Box
-                background="secondary"
-                display="inline-block"
-                borderRadius="rounded"
-                spacingHorizontal={1}
                 as="label"
+                background="secondary"
+                borderRadius="rounded"
+                display="inline-block"
+                spacingHorizontal={1}
               >
                 VoiceOver
               </Box>{' '}
@@ -131,21 +131,21 @@ export const Rules = () => {
             <TextBody as="li" color="foregroundMuted">
               Use
               <Box
-                background="secondary"
-                display="inline-block"
-                borderRadius="rounded"
-                spacingHorizontal={1}
                 as="label"
+                background="secondary"
+                borderRadius="rounded"
+                display="inline-block"
+                spacingHorizontal={1}
               >
                 CTRL
               </Box>{' '}
               +
               <Box
-                background="secondary"
-                display="inline-block"
-                borderRadius="rounded"
-                spacingHorizontal={1}
                 as="label"
+                background="secondary"
+                borderRadius="rounded"
+                display="inline-block"
+                spacingHorizontal={1}
               >
                 Option
               </Box>{' '}

@@ -49,7 +49,7 @@ export const TableCaption = memo(
     );
 
     return (
-      <caption style={inlineStyles} data-testid={testID} {...rest}>
+      <caption data-testid={testID} style={inlineStyles} {...rest}>
         <Box
           {...outerCaptionSpacing}
           dangerouslySetClassName={cx(
@@ -58,8 +58,8 @@ export const TableCaption = memo(
           )}
         >
           <Box
-            flexDirection="column"
             alignContent="stretch"
+            flexDirection="column"
             flexGrow={1}
             {...innerCaptionSpacing}
             dangerouslySetClassName={cx(
@@ -68,7 +68,7 @@ export const TableCaption = memo(
             )}
           >
             {typeof children === 'string' ? (
-              <TextTitle3 as={as} align={align} color="currentColor">
+              <TextTitle3 align={align} as={as} color="currentColor">
                 {children}
               </TextTitle3>
             ) : (

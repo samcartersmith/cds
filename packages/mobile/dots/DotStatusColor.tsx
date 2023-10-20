@@ -44,10 +44,10 @@ export const DotStatusColor = memo(
 
     return (
       <View {...props}>
-        <View testID={`${props.testID}-children`} onLayout={onLayout}>
+        <View onLayout={onLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
-        <View testID="dotstatuscolor-inner-container" style={dotContentStyles} />
+        <View style={dotContentStyles} testID="dotstatuscolor-inner-container" />
       </View>
     );
   },

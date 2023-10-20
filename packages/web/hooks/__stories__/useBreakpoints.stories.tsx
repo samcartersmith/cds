@@ -39,9 +39,9 @@ const Example = (props: PlaygroundProps) => {
   return (
     <HStack
       background="backgroundAlternate"
-      spacing={3}
       borderColor="line"
       borderRadius="rounded"
+      spacing={3}
       {...props}
     >
       <TextHeadline as="h3">I am as wide as {deviceName()}</TextHeadline>

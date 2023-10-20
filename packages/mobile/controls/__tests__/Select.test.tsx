@@ -31,7 +31,7 @@ describe('Select Input', () => {
   it('passes a11y', () => {
     render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <DefaultSelect testID="mock-select" placeholder={placeholderText} />
+        <DefaultSelect placeholder={placeholderText} testID="mock-select" />
       </SafeAreaProvider>,
     );
     expect(screen.getByTestId('mock-select')).toBeAccessible();
@@ -49,7 +49,7 @@ describe('Select Input', () => {
     const onPressSpy = jest.fn();
     render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <DefaultSelect placeholder={placeholderText} onPress={onPressSpy} disabled />
+        <DefaultSelect disabled onPress={onPressSpy} placeholder={placeholderText} />
       </SafeAreaProvider>,
     );
 

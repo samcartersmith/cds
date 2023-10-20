@@ -84,11 +84,11 @@ export const Modal = memo(
 
     return (
       <RNModal
-        statusBarTranslucent
         hardwareAccelerated
+        statusBarTranslucent
         transparent
-        visible={internalVisible}
         onRequestClose={onRequestClose}
+        visible={internalVisible}
         {...restProps}
         // prevent animation from overridden
         animationType="none"
@@ -96,8 +96,8 @@ export const Modal = memo(
         <VStack
           animated
           dangerouslySetStyle={{ transform: [{ scale }], opacity, borderWidth: 0 }}
-          pin="all"
           elevation={2}
+          pin="all"
         >
           <SafeAreaView style={styles.safeAreaContainer}>
             <ModalParentContext.Provider value={modalData}>

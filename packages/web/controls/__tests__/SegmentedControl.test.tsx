@@ -34,7 +34,7 @@ describe('SegmentedControl', () => {
 
   it('passes accessibility with icon options', async () => {
     expect(
-      await renderA11y(<SegmentedControl options={ICON_OPTIONS} type="icon" iconSize="s" />),
+      await renderA11y(<SegmentedControl iconSize="s" options={ICON_OPTIONS} type="icon" />),
     ).toHaveNoViolations();
   });
 
@@ -52,7 +52,7 @@ describe('SegmentedControl', () => {
   });
 
   it('renders icons', () => {
-    render(<SegmentedControl options={ICON_OPTIONS} type="icon" iconSize="s" />);
+    render(<SegmentedControl iconSize="s" options={ICON_OPTIONS} type="icon" />);
 
     expect(screen.getAllByTestId('icon-base-glyph')).toHaveLength(8);
   });
@@ -60,7 +60,7 @@ describe('SegmentedControl', () => {
   it('triggers onChange', () => {
     const onChange = jest.fn();
 
-    render(<SegmentedControl options={TEXT_OPTIONS} onChange={onChange} />);
+    render(<SegmentedControl onChange={onChange} options={TEXT_OPTIONS} />);
 
     fireEvent.click(screen.getAllByText('Bitcoin')[0]);
 

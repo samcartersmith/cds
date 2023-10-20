@@ -68,9 +68,9 @@ describe('Modal', () => {
 
     render(
       <MockModal
-        onRequestClose={onRequestClose}
-        onDidClose={onDidClose}
         closeAccessibilityLabel="Close"
+        onDidClose={onDidClose}
+        onRequestClose={onRequestClose}
       />,
     );
 
@@ -83,7 +83,7 @@ describe('Modal', () => {
   it('triggers onDidClose after animation finished', () => {
     const onDidClose = jest.fn();
 
-    render(<MockModal onDidClose={onDidClose} closeAccessibilityLabel="Close" />);
+    render(<MockModal closeAccessibilityLabel="Close" onDidClose={onDidClose} />);
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByLabelText('Close'));
@@ -96,7 +96,7 @@ describe('Modal', () => {
 
   it('triggers back action on back button press', () => {
     const onBackButtonPress = jest.fn();
-    render(<MockModal onBackButtonPress={onBackButtonPress} backAccessibilityLabel="Back" />);
+    render(<MockModal backAccessibilityLabel="Back" onBackButtonPress={onBackButtonPress} />);
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByLabelText('Back'));
@@ -153,7 +153,7 @@ describe('Modal', () => {
 
   it('sets accessible labels on close button', () => {
     render(
-      <MockModal closeAccessibilityLabel="Close" closeAccessibilityHint="Close button hint" />,
+      <MockModal closeAccessibilityHint="Close button hint" closeAccessibilityLabel="Close" />,
     );
 
     fireEvent.press(screen.getByText('Open Modal'));
@@ -165,9 +165,9 @@ describe('Modal', () => {
   it('sets accessible labels on back button', () => {
     render(
       <MockModal
-        onBackButtonPress={jest.fn()}
-        backAccessibilityLabel="Back"
         backAccessibilityHint="Back button hint"
+        backAccessibilityLabel="Back"
+        onBackButtonPress={jest.fn()}
       />,
     );
 

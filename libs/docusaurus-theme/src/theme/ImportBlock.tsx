@@ -28,31 +28,31 @@ const ImportBlock = memo(function ImportBlock({ name, from }: ImportBlockProps) 
 
   return (
     <HStack
-      spacing={2}
       alignItems="center"
       borderRadius="rounded"
-      justifyContent="space-between"
       dangerouslySetBackground={paletteValueToCssVar('blue0')}
+      justifyContent="space-between"
+      spacing={2}
     >
       <HStack>
         <TextLabel2
-          as="span"
           mono
+          as="span"
           dangerouslySetColor={paletteValueToCssVar('purple60')}
           spacingEnd={1}
         >
           {`import { ${name} } from `}
         </TextLabel2>
-        <TextLabel2 as="span" mono dangerouslySetColor={paletteValueToCssVar('blue50')}>
+        <TextLabel2 mono as="span" dangerouslySetColor={paletteValueToCssVar('blue50')}>
           {` '${from}'`}
         </TextLabel2>
       </HStack>
       <IconButton
         compact
-        variant="secondary"
         transparent
         name={iconName}
         onPress={handleCopyToClipboard}
+        variant="secondary"
       />
     </HStack>
   );

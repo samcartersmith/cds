@@ -48,8 +48,8 @@ export const DotStatusColor = memo(
         jsx-a11y/no-static-element-interactions */}
         <div
           data-testid="dotstatuscolor-inner-container"
-          style={styles}
           onClick={handlePreventPropagation}
+          style={styles}
         />
       </div>
     );

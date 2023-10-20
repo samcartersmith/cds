@@ -30,10 +30,10 @@ export const Card = memo(
     const content = (
       <VStack
         ref={onPress ? undefined : ref}
-        width={width}
-        height={height}
         dangerouslySetClassName={dangerouslySetClassName}
+        height={height}
         testID={onPress ? undefined : testID}
+        width={width}
         {...props}
       >
         {children}
@@ -43,11 +43,11 @@ export const Card = memo(
     return onPress ? (
       <Pressable
         ref={ref}
-        testID={testID}
+        noScaleOnPress
         backgroundColor="transparent"
         onPress={onPress}
         style={pressableStyles}
-        noScaleOnPress
+        testID={testID}
         {...pressableProps}
       >
         {content}

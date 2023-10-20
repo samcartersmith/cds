@@ -46,15 +46,15 @@ const MockDrawer = ({
       </Button>
       {isVisible ? (
         <Drawer
-          visible={isVisible}
           onCloseComplete={handleRequestClose}
           pin={pin}
           preventDismissGestures={preventDismissGestures}
+          visible={isVisible}
         >
           {({ handleClose }) => (
             <VStack spacing={2}>
               <LoremIpsum />
-              <Button testID="close-drawer-button" onPress={handleClose}>
+              <Button onPress={handleClose} testID="close-drawer-button">
                 Close Drawer
               </Button>
             </VStack>
@@ -111,7 +111,7 @@ describe('Drawer', () => {
   });
   it('does not close the drawer on overlay press when preventDismissGestures is true', async () => {
     const onCloseComplete = jest.fn();
-    render(<MockDrawerWithSafeArea onCloseComplete={onCloseComplete} preventDismissGestures />);
+    render(<MockDrawerWithSafeArea preventDismissGestures onCloseComplete={onCloseComplete} />);
 
     fireEvent.press(screen.getByText('Open Drawer'));
     expect(screen.getByText(loremIpsum)).toBeTruthy();

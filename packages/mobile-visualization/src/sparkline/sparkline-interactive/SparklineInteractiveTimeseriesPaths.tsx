@@ -71,10 +71,10 @@ const TimeseriesPath = memo(
       <Path
         ref={pathRef}
         d={initialPath}
-        strokeLinejoin="round"
-        strokeLinecap="round"
-        strokeWidth={borderWidth.sparkline}
         stroke={lineColor}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={borderWidth.sparkline}
       />
     );
   },
@@ -92,18 +92,18 @@ export const SparklineInteractiveTimeseriesPaths = memo(
     const paths = data.map((timeseries, index) => {
       return (
         <TimeseriesPath
-          timeseries={timeseries}
           key={timeseries.id}
-          lineFn={lineFn}
-          initialPath={initialPath}
           areaFn={areaFn}
+          initialPath={initialPath}
+          lineFn={lineFn}
           onRender={index === 0 ? onRender : undefined}
+          timeseries={timeseries}
         />
       );
     });
 
     return (
-      <Svg width={width} height={height}>
+      <Svg height={height} width={width}>
         <G {...translateProps}>{paths}</G>
       </Svg>
     );

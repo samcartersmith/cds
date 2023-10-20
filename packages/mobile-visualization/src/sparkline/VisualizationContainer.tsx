@@ -19,7 +19,7 @@ export const VisualizationContainer: React.FC<VisualizationContainerBaseProps> =
     });
 
     return (
-      <Box onLayout={dimensions.shouldObserve ? onLayout : undefined} width={width} height={height}>
+      <Box height={height} onLayout={dimensions.shouldObserve ? onLayout : undefined} width={width}>
         {dimensions.width && dimensions.height ? children(dimensions) : null}
       </Box>
     );

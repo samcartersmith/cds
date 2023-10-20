@@ -43,19 +43,19 @@ const TabNavigationScreen = () => {
 
   return (
     <ExampleScreen>
-      <Example title="Tab Navigation" spacing={gutter} overflow="visible">
-        <TabNavigation tabs={tabs} value={currentTabOne} onChange={setCurrentTabOne} />
+      <Example overflow="visible" spacing={gutter} title="Tab Navigation">
+        <TabNavigation onChange={setCurrentTabOne} tabs={tabs} value={currentTabOne} />
         <Button onPress={randomizeCurrentTabOne}>Select random item</Button>
       </Example>
-      <Example title="Tab Navigation (with Default Tab)" spacing={gutter} overflow="visible">
-        <TabNavigation value={currentTabTwo} onChange={setCurrentTabTwo} tabs={tabs} />
+      <Example overflow="visible" spacing={gutter} title="Tab Navigation (with Default Tab)">
+        <TabNavigation onChange={setCurrentTabTwo} tabs={tabs} value={currentTabTwo} />
       </Example>
-      <Example title="Tab Navigation (Secondary)" spacing={gutter} overflow="visible">
+      <Example overflow="visible" spacing={gutter} title="Tab Navigation (Secondary)">
         <TabNavigation
-          variant="secondary"
-          value={currentTabThree}
           onChange={setCurrentTabThree}
           tabs={tabs}
+          value={currentTabThree}
+          variant="secondary"
         />
       </Example>
     </ExampleScreen>

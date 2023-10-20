@@ -48,21 +48,20 @@ export const TableRow = memo(
 
     return (
       <tr
-        style={inlineStyles}
+        ref={rowRef} // click/event support
         className={cx(tableRow, shouldIndicateHover && tableRowHover)}
         data-testid={testID}
-        // click/event support
-        ref={rowRef}
         onClick={onPress}
+        style={inlineStyles}
         tabIndex={onPress && 0}
         {...rest}
       >
         {fullWidth ? (
           <TableCell
-            direction="horizontal"
             colSpan={1000}
-            outerSpacing={outerSpacing}
+            direction="horizontal"
             innerSpacing={innerSpacing}
+            outerSpacing={outerSpacing}
             responsiveConfig={responsiveConfig}
           >
             {innerChildren}

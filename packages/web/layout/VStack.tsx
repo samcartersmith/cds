@@ -39,9 +39,9 @@ const OldVStack = memo(
         {...props}
         ref={forwardedRef}
         as={as}
+        dangerouslySetStyle={styles}
         flexDirection="column"
         spacingStart={spacingStartValue}
-        dangerouslySetStyle={styles}
       >
         {content}
       </Box>

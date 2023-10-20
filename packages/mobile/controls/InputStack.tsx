@@ -98,10 +98,10 @@ export const InputStack = memo(function InputStack({
 
   return (
     <VStack
-      testID={testID}
-      width={width}
       gap={0.5}
       opacity={disabled ? accessibleOpacityDisabled : 1}
+      testID={testID}
+      width={width}
       {...props}
     >
       {!!labelNode && <>{labelNode}</>}
@@ -111,8 +111,8 @@ export const InputStack = memo(function InputStack({
           {focused && <Animated.View style={borderFocusedStyles} />}
           <Animated.View
             onLayout={onInputAreaLayout}
-            testID={testID && `${testID}-input-area`}
             style={inputAreaStyles}
+            testID={testID && `${testID}-input-area`}
           >
             {focused && enableColorSurge && (
               <ColorSurge background={variant as ColorSurgeBackground} />

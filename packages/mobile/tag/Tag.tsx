@@ -41,16 +41,16 @@ export const Tag = memo(
       return (
         <Box
           ref={forwardedRef}
-          dangerouslySetStyle={style}
-          dangerouslySetBackground={backgroundColor}
-          background="background"
           alignItems={alignItems}
-          justifyContent={justifyContent}
+          background="background"
           borderRadius={borderRadius}
+          dangerouslySetBackground={backgroundColor}
+          dangerouslySetStyle={style}
+          justifyContent={justifyContent}
           testID={testID}
           {...props}
         >
-          <Text numberOfLines={1} dangerouslySetColor={color} data-testid={`${testID}--text`}>
+          <Text dangerouslySetColor={color} data-testid={`${testID}--text`} numberOfLines={1}>
             {children}
           </Text>
         </Box>

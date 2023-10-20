@@ -31,37 +31,37 @@ export const SelectStack = memo(
   ) {
     return (
       <InputStack
-        width="100%"
-        disabled={disabled}
-        variant={variant}
         ref={ref}
+        disabled={disabled}
         focused={focused}
         helperTextNode={
           Boolean(helperText) && (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={handlePreventPropagation}>
               <HelperText
-                overflow="truncate"
                 color={variant ?? 'foregroundMuted'}
                 id={accessibilityDescriptionId}
+                overflow="truncate"
               >
                 {helperText}
               </HelperText>
             </div>
           )
         }
+        inputNode={children}
         labelNode={
           !compact &&
           !!label && (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={handlePreventPropagation}>
-              <InputLabel overflow="truncate" color={labelTextColor} id={accessibilityLabelId}>
+              <InputLabel color={labelTextColor} id={accessibilityLabelId} overflow="truncate">
                 {label}
               </InputLabel>
             </div>
           )
         }
-        inputNode={children}
+        variant={variant}
+        width="100%"
       />
     );
   }),

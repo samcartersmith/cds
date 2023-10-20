@@ -16,12 +16,12 @@ export const SubBrandLogoMark = memo((props: SubBrandLogoMarkProps) => {
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
       aria-labelledby={title}
-      viewBox={viewBox}
       className={iconStyles}
+      role="img"
+      viewBox={viewBox}
       width="100%"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <title>{title}</title>
       <g>

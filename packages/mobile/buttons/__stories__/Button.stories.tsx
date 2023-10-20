@@ -11,10 +11,10 @@ const ButtonScreen = () => {
   return (
     <ExampleScreen>
       <Example inline title="Complex example">
-        <Button endIcon="caretDown" compact variant="secondary">
-          <HStack spacingTop={0} alignItems="center" justifyContent="center">
-            <RemoteImage shape="circle" height={16} width={16} resizeMode="cover" />
-            <TextLabel2 spacingStart={1} color="foregroundMuted" testID="DexInputNetwork">
+        <Button compact endIcon="caretDown" variant="secondary">
+          <HStack alignItems="center" justifyContent="center" spacingTop={0}>
+            <RemoteImage height={16} resizeMode="cover" shape="circle" width={16} />
+            <TextLabel2 color="foregroundMuted" spacingStart={1} testID="DexInputNetwork">
               Ethereum
             </TextLabel2>
           </HStack>

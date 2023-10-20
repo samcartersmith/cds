@@ -71,26 +71,25 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
     <VStack background={collapsed ? 'background' : 'backgroundAlternate'} borderRadius="rounded">
       <PressableOpacity noScaleOnPress className={insetFocusRing} onPress={toggle}>
         <ListCell
-          title={name}
-          description={email}
+          compact
           action={<AnimatedCaret rotate={collapsed ? 90 : 180} />}
-          outerSpacing={userCellOuterSpacingConfig}
+          description={email}
           intermediary={!authenticated && <TextLegal as="span">Signed out</TextLegal>}
-          priority={cellPriority}
           media={
             <Avatar
-              src={avatarUri}
               alt={name}
+              colorScheme={avatarColorScheme} // business accounts should use the gray colorScheme, all else should leverage getAvatarFallbackColor
               name={name}
-              // business accounts should use the gray colorScheme, all else should leverage getAvatarFallbackColor
-              colorScheme={avatarColorScheme}
+              src={avatarUri}
             />
           }
-          compact
+          outerSpacing={userCellOuterSpacingConfig}
+          priority={cellPriority}
+          title={name}
         />
       </PressableOpacity>
       <Collapsible collapsed={collapsed}>
-        <HStack spacingTop={0.5} spacingBottom={1} spacingStart={8} gap={0.5}>
+        <HStack gap={0.5} spacingBottom={1} spacingStart={8} spacingTop={0.5}>
           <Button compact>Sign in</Button>
           <Button compact transparent variant="secondary">
             Remove
@@ -114,15 +113,15 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
   const userAccountsListMaxHeight = listCellHeight * 2.5 + gutter;
   return (
     <VStack spacingVertical={2}>
-      <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
+      <VStack alignItems="center" gap={1} spacingHorizontal={1} spacingTop={1}>
         {/* the selected user's avatar should always use the blue colorScheme */}
         <Avatar
-          size="xxxl"
           selected
           alt="Brian Armstrong"
-          src={avatarUri}
-          name={name}
           colorScheme="blue"
+          name={name}
+          size="xxxl"
+          src={avatarUri}
         />
         <VStack alignItems="center">
           <TextTitle3 align="center" as="h3" overflow="break">
@@ -145,28 +144,28 @@ export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitch
         </HStack>
       </VStack>
       <VStack
-        minHeight={userAccountsListMinHeight}
-        maxHeight={userAccountsListMaxHeight}
-        spacingBottom={1}
-        overflow="auto"
         gap={0.5}
+        maxHeight={userAccountsListMaxHeight}
+        minHeight={userAccountsListMinHeight}
+        overflow="auto"
+        spacingBottom={1}
         spacingHorizontal={1}
       >
         {otherAccountsData.map((userProps) => (
           <UserAccountListCell key={userProps.email} {...userProps} />
         ))}
         <HStack spacingHorizontal={0.5}>
-          <Button startIcon="followInactive" transparent>
+          <Button transparent startIcon="followInactive">
             Add Account
           </Button>
         </HStack>
       </VStack>
       <Divider spacingBottom={2} />
       <VStack alignItems="center" gap={1} spacingHorizontal={1}>
-        <Button variant="secondary" block>
+        <Button block variant="secondary">
           Sign out
         </Button>
-        <Button transparent block>
+        <Button block transparent>
           Sign out of all accounts
         </Button>
       </VStack>

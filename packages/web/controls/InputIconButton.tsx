@@ -33,7 +33,7 @@ export const InputIconButton = memo(
     const transformedVariant = secondaryVariants.has(contextVariant) ? 'primary' : contextVariant;
 
     return (
-      <Box spacingStart={1} spacingEnd={0.5} testID={testID}>
+      <Box spacingEnd={0.5} spacingStart={1} testID={testID}>
         <IconButton
           ref={ref}
           transparent

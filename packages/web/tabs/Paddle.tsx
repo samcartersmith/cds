@@ -116,16 +116,16 @@ export const Paddle = ({
       {show && (
         <span
           className={className}
-          style={{ color: palette[background] }}
           data-testid={`${testID}--container`}
+          style={{ color: palette[background] }}
         >
           <motion.span className={buttonClassName} {...buttonMotionProps}>
             <IconButton
+              accessibilityLabel={accessibilityLabel}
               name={direction === 'left' ? 'caretLeft' : 'caretRight'}
               onPress={onPress}
-              variant="secondary"
               testID={testID}
-              accessibilityLabel={accessibilityLabel}
+              variant="secondary"
             />
           </motion.span>
           <motion.span className={paddleGradientClassName} {...gradientMotionProps} />

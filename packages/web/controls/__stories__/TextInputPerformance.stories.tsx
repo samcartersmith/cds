@@ -23,11 +23,11 @@ const borderStyle = css`
 `;
 
 export const CDSTextInput = () => {
-  return <TextInput label="Label" helperText="Helper Text" align="start" compact />;
+  return <TextInput compact align="start" helperText="Helper Text" label="Label" />;
 };
 
 export const HTMLInput = () => {
-  return <input className={borderStyle} type="text" id="name" name="name" required />;
+  return <input required className={borderStyle} id="name" name="name" type="text" />;
 };
 
 export const {

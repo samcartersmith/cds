@@ -42,15 +42,15 @@ export const TooltipContent = memo(
         <motion.div {...motionProps} data-testid={`${testID}-motion`}>
           <Box
             ref={ref}
-            spacingHorizontal={spacingHorizontal}
-            spacingVertical={spacingVertical}
             background="background"
             borderRadius="rounded"
             maxWidth={maxWidth}
+            spacingHorizontal={spacingHorizontal}
+            spacingVertical={spacingVertical}
             testID={testID}
           >
             {typeof content === 'string' ? (
-              <TextLabel2 as="p" overflow="break" id={tooltipId} accessibilityLabel={content}>
+              <TextLabel2 accessibilityLabel={content} as="p" id={tooltipId} overflow="break">
                 {content}
               </TextLabel2>
             ) : (

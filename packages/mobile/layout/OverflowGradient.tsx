@@ -48,11 +48,11 @@ export const OverflowGradient = memo(function OverflowGradient({
 
   return (
     <LinearGradient
-      pointerEvents="none"
-      style={[styles.gradient, pinStyles, dangerouslySetStyle]}
       colors={gradientColors}
-      start={gradient[pin].start}
       end={gradient[pin].end}
+      pointerEvents="none"
+      start={gradient[pin].start}
+      style={[styles.gradient, pinStyles, dangerouslySetStyle]}
       testID={testID}
     />
   );

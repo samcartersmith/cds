@@ -25,15 +25,15 @@ export function contentCellBuilder(
 ) {
   const Content = () => (
     <>
-      <ContentCell title="Title" meta="Meta" />
+      <ContentCell meta="Meta" title="Title" />
 
-      <ContentCell title="Title" subtitle="Subtitle" />
+      <ContentCell subtitle="Subtitle" title="Title" />
 
-      <ContentCell title="Title" description="Description" meta="Meta" />
+      <ContentCell description="Description" meta="Meta" title="Title" />
 
-      <ContentCell title="Title" description="Description" subtitle="Subtitle" />
+      <ContentCell description="Description" subtitle="Subtitle" title="Title" />
 
-      <ContentCell subtitle="Subtitle" meta="Meta" />
+      <ContentCell meta="Meta" subtitle="Subtitle" />
 
       <ContentCell description="Description" subtitle="Subtitle" />
 
@@ -45,138 +45,138 @@ export function contentCellBuilder(
 
   const PressableContent = () => (
     <>
-      <ContentCell title="Title" to="#" onPress={onPressConsole} />
+      <ContentCell onPress={onPressConsole} title="Title" to="#" />
 
-      <ContentCell title="Title" subtitle="Subtitle" onPress={onPressConsole} />
+      <ContentCell onPress={onPressConsole} subtitle="Subtitle" title="Title" />
 
       <ContentCell
-        title="Title"
-        meta="Meta"
         description="Description"
-        subtitle="Subtitle"
+        innerSpacing={innerSpacingConfig}
+        meta="Meta"
         onPress={onPressConsole}
+        subtitle="Subtitle"
+        title="Title"
         to="#"
-        innerSpacing={innerSpacingConfig}
       />
 
-      <ContentCell description="Description" subtitle="Subtitle" onPress={onPressConsole} />
+      <ContentCell description="Description" onPress={onPressConsole} subtitle="Subtitle" />
 
       <ContentCell
-        title="Title"
+        selected
         description="Description"
+        innerSpacing={innerSpacingConfig}
         meta="Meta"
         onPress={onPressConsole}
-        innerSpacing={innerSpacingConfig}
-        selected
+        title="Title"
       />
 
       <ContentCell
-        title="Title"
-        description="Description"
-        subtitle="Subtitle"
-        onPress={onPressConsole}
         disabled
+        description="Description"
+        onPress={onPressConsole}
+        subtitle="Subtitle"
+        title="Title"
       />
 
-      <ContentCell title="Title" subtitle="Subtitle" onPress={onPressConsole} selected disabled />
+      <ContentCell disabled selected onPress={onPressConsole} subtitle="Subtitle" title="Title" />
     </>
   );
 
   const LongContent = () => (
     <>
       <ContentCell
-        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
+        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
       />
 
       <ContentCell
-        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
-        subtitle="Subtitle is short lol"
-        description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
-        media={<CellMedia type="avatar" source={assets.eth.imageUrl} />}
         accessory="more"
+        description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
+        media={<CellMedia source={assets.eth.imageUrl} type="avatar" />}
+        subtitle="Subtitle is short lol"
+        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
       />
 
       <ContentCell
-        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
+        media={<CellMedia source={assets.eth.imageUrl} type="avatar" />}
         meta="Long meta title"
-        media={<CellMedia type="avatar" source={assets.eth.imageUrl} />}
+        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
       />
     </>
   );
 
   const WithAccessory = () => (
     <>
-      <ContentCell title="Title" meta="Meta" accessory="arrow" />
+      <ContentCell accessory="arrow" meta="Meta" title="Title" />
 
-      <ContentCell title="Title" subtitle="Subtitle" accessory="more" />
+      <ContentCell accessory="more" subtitle="Subtitle" title="Title" />
 
-      <ContentCell title="Title" description="Description" accessory="selected" />
+      <ContentCell accessory="selected" description="Description" title="Title" />
 
       <ContentCell
-        title="Title"
-        meta="Meta"
-        description="Description"
-        subtitle="Subtitle"
         accessory="arrow"
+        description="Description"
+        meta="Meta"
+        subtitle="Subtitle"
+        title="Title"
       />
 
-      <ContentCell description="Description" subtitle="Subtitle" meta="Meta" accessory="more" />
+      <ContentCell accessory="more" description="Description" meta="Meta" subtitle="Subtitle" />
 
-      <ContentCell title="Title" description="Description" accessory="selected" />
+      <ContentCell accessory="selected" description="Description" title="Title" />
 
-      <ContentCell description="Description" accessory="arrow" />
+      <ContentCell accessory="arrow" description="Description" />
     </>
   );
 
   const WithMedia = () => (
     <>
-      <ContentCell title="Icon" media={<CellMedia type="icon" name="email" />} />
+      <ContentCell media={<CellMedia name="email" type="icon" />} title="Icon" />
 
       <ContentCell
-        title="Icon (pressable)"
-        media={<CellMedia type="icon" name="email" />}
+        media={<CellMedia name="email" type="icon" />}
         onPress={onPressConsole}
+        title="Icon (pressable)"
       />
 
       <ContentCell
+        description="Description"
+        media={<CellMedia name="phone" type="icon" />}
         title="Icon"
-        description="Description"
-        media={<CellMedia type="icon" name="phone" />}
       />
 
       <ContentCell
+        description="Description"
+        media={<CellMedia color="primary" name="phone" type="icon" />}
         title="Icon (With Primary Color)"
-        description="Description"
-        media={<CellMedia type="icon" name="phone" color="primary" />}
       />
 
       <ContentCell
+        description="Description"
+        media={<CellMedia source={assets.eth.imageUrl} type="avatar" />}
+        subtitle="Subtitle"
         title="Avatar"
-        description="Description"
-        subtitle="Subtitle"
-        media={<CellMedia type="avatar" source={assets.eth.imageUrl} />}
       />
 
       <ContentCell
+        description="Description"
+        media={<CellMedia source={assets.eth.imageUrl} type="asset" />}
+        meta="Meta"
+        subtitle="Subtitle"
         title="Asset"
-        description="Description"
-        meta="Meta"
-        subtitle="Subtitle"
-        media={<CellMedia type="asset" source={assets.eth.imageUrl} />}
       />
 
       <ContentCell
+        media={<CellMedia source={assets.eth.imageUrl} type="image" />}
+        meta="Meta"
+        subtitle="Subtitle"
         title="Image"
-        subtitle="Subtitle"
-        meta="Meta"
-        media={<CellMedia type="image" source={assets.eth.imageUrl} />}
       />
 
       <ContentCell
-        title="Pictogram"
         description="Description"
-        media={<CellMedia type="pictogram" illustration={<Pictogram name="shield" />} />}
+        media={<CellMedia illustration={<Pictogram name="shield" />} type="pictogram" />}
+        title="Pictogram"
       />
     </>
   );

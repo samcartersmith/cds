@@ -55,13 +55,13 @@ const PropsTableRow = memo(function PropsTableRow({ prop, sharedTypeAliases }: P
     if (type in sharedTypeAliases) {
       const typeAlias = sharedTypeAliases[type];
       return (
-        <ModalLink variant="body" mono content={<TypeAliasModalContent typeAlias={typeAlias} />}>
+        <ModalLink mono content={<TypeAliasModalContent typeAlias={typeAlias} />} variant="body">
           {type}
         </ModalLink>
       );
     }
     return (
-      <TextBody as="p" mono overflow="break">
+      <TextBody mono as="p" overflow="break">
         {type}
       </TextBody>
     );
@@ -72,7 +72,7 @@ const PropsTableRow = memo(function PropsTableRow({ prop, sharedTypeAliases }: P
       <h2 className="anchor props-table-wrapper" id={name}>
         <VStack>
           <TextBody as="p">{name}</TextBody>
-          <TextLabel2 spacingTop={0.5} as="p" color="foregroundMuted" overflow="break">
+          <TextLabel2 as="p" color="foregroundMuted" overflow="break" spacingTop={0.5}>
             {description}
           </TextLabel2>
         </VStack>
@@ -88,7 +88,7 @@ const PropsTableRow = memo(function PropsTableRow({ prop, sharedTypeAliases }: P
       <TableCell>{tagComponents}</TableCell>
       <TableCell>{typeContent}</TableCell>
       <TableCell alignItems="flex-end">
-        <TextBody as="span" align="end" mono>
+        <TextBody mono align="end" as="span">
           {defaultValue ?? '--'}
         </TextBody>
       </TableCell>

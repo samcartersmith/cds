@@ -15,21 +15,21 @@ export const TabIndicator = memo(
       const { widthStyle, xStyle } = useTabIndicatorStyles({ width, x });
 
       return (
-        <Animated.View testID={testID} ref={forwardedRef} style={xStyle} {...props}>
+        <Animated.View ref={forwardedRef} style={xStyle} testID={testID} {...props}>
           <Box
-            testID="cds-tab-indicator-inner-bar-container"
+            background="primary"
             flexGrow={1}
             height={2}
             overflow="hidden"
-            background="primary"
+            testID="cds-tab-indicator-inner-bar-container"
           >
             <Box
-              testID="cds-tab-indicator-inner-bar"
-              height={2}
-              width="100%"
               animated
-              dangerouslySetStyle={widthStyle}
               background={background}
+              dangerouslySetStyle={widthStyle}
+              height={2}
+              testID="cds-tab-indicator-inner-bar"
+              width="100%"
             />
           </Box>
         </Animated.View>

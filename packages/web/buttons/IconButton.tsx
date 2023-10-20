@@ -47,8 +47,8 @@ export const IconButton = forwardRef(
     return (
       <Pressable
         {...props}
+        ref={ref}
         as={as}
-        transparentWhileInactive={transparent}
         backgroundColor={backgroundColor}
         borderColor={borderColor}
         borderRadius="roundedFull"
@@ -57,10 +57,10 @@ export const IconButton = forwardRef(
         disabled={disabled}
         onPress={onPress}
         style={styles}
-        ref={ref}
         to={to}
+        transparentWhileInactive={transparent}
       >
-        <Icon name={name} size={hasFrontier ? iconSize : 's'} color={color} />
+        <Icon color={color} name={name} size={hasFrontier ? iconSize : 's'} />
       </Pressable>
     );
   },

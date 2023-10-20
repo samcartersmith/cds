@@ -95,7 +95,7 @@ export const Lottie = memo(
       useLottieListeners(animationRef, listeners);
 
       return (
-        <Box as="div" ref={containerRef} dangerouslySetClassName={lottieStyles} {...otherProps} />
+        <Box ref={containerRef} as="div" dangerouslySetClassName={lottieStyles} {...otherProps} />
       );
     },
   ),

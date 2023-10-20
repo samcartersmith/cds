@@ -29,7 +29,7 @@ export const remoteImageBuilder = ({
         return (
           <VStack key={key}>
             <TextBody>{size}</TextBody>
-            <RemoteImage key={key} shape="squircle" source={imageURL} size={size} />
+            <RemoteImage key={key} shape="squircle" size={size} source={imageURL} />
           </VStack>
         );
       })}
@@ -43,7 +43,7 @@ export const remoteImageBuilder = ({
         return (
           <VStack key={key}>
             <TextBody>{size}</TextBody>
-            <RemoteImage shape="circle" source={imageURL} size={size} />
+            <RemoteImage shape="circle" size={size} source={imageURL} />
           </VStack>
         );
       })}
@@ -57,10 +57,10 @@ export const remoteImageBuilder = ({
         return (
           <RemoteImage
             key={key}
-            shape="circle"
-            source={imageURL}
-            size="xxl"
             borderColor={borderColor}
+            shape="circle"
+            size="xxl"
+            source={imageURL}
           />
         );
       })}
@@ -74,10 +74,10 @@ export const remoteImageBuilder = ({
         return (
           <RemoteImage
             key={key}
-            shape="circle"
-            source={svgs[0]}
-            size="xxl"
             borderColor={borderColor}
+            shape="circle"
+            size="xxl"
+            source={svgs[0]}
           />
         );
       })}
@@ -117,7 +117,7 @@ export const remoteImageBuilder = ({
   };
 
   const RectangleFallback = () => {
-    return <RemoteImage shape="rectangle" width={30} height={10} />;
+    return <RemoteImage height={10} shape="rectangle" width={30} />;
   };
 
   return {

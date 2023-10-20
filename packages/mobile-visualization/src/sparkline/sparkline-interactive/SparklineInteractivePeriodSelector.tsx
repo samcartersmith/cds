@@ -58,21 +58,21 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   return (
     <Box
       key={period.value}
-      spacingVertical={2}
       alignItems="center"
       justifyContent="center"
       onLayout={getLayoutHandler(period.value)}
+      spacingVertical={2}
     >
       <Pressable
-        borderRadius="roundedFull"
+        accessibilityHint={periodHint}
+        accessibilityLabel={periodLabel}
+        accessibilityState={accessibilityState}
         backgroundColor={isSelected ? 'primaryWash' : 'background'}
         borderColor="transparent"
+        borderRadius="roundedFull"
         onPress={handleOnPress}
-        accessibilityLabel={periodLabel}
-        accessibilityHint={periodHint}
-        accessibilityState={accessibilityState}
       >
-        <TextLabel1 spacingHorizontal={2} spacingVertical={1} dangerouslySetStyle={textStyle}>
+        <TextLabel1 dangerouslySetStyle={textStyle} spacingHorizontal={2} spacingVertical={1}>
           {period.label}
         </TextLabel1>
       </Pressable>
@@ -121,36 +121,36 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
 
   return (
     <Box
+      animated
+      background="background"
+      opacity={opacity}
       overflow={
         isScrollContentOverflowing && isScrollContentOffscreenRight ? 'gradient' : 'visible'
       }
-      animated
-      opacity={opacity}
-      background="background"
     >
       <ScrollView
+        ref={scrollRef}
         horizontal
+        contentContainerStyle={periodSelectorStyles.scrollViewContainer}
+        onContentSizeChange={handleScrollContentSizeChange}
+        onLayout={handleScrollContainerLayout}
+        onScroll={handleScroll}
         scrollEventThrottle={1}
         showsHorizontalScrollIndicator={false}
-        ref={scrollRef}
-        onScroll={handleScroll}
-        onLayout={handleScrollContainerLayout}
-        onContentSizeChange={handleScrollContentSizeChange}
-        contentContainerStyle={periodSelectorStyles.scrollViewContainer}
       >
         <HStack
           dangerouslySetStyle={periodSelectorStyles.hStackContainer}
-          spacing={0}
           justifyContent="space-between"
+          spacing={0}
         >
           {periods.map((period) => (
             <SparklineInteractivePeriod
               key={period.value}
-              period={period}
+              color={accessibleForeground}
               getLayoutHandler={getPressableLayoutHandler}
+              period={period}
               selectedPeriod={selectedPeriod}
               setSelectedPeriod={setSelectedPeriod}
-              color={accessibleForeground}
             />
           ))}
         </HStack>

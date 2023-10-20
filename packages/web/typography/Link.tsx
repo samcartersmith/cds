@@ -123,9 +123,9 @@ export const Link = memo(
         <TextComponent
           as="span"
           color={color}
+          dangerouslySetClassName={linkContainerClassName}
           mono={mono}
           underline={underline}
-          dangerouslySetClassName={linkContainerClassName}
         >
           {children}
         </TextComponent>

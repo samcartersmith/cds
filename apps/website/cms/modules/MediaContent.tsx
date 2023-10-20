@@ -24,12 +24,12 @@ export const MediaContent = memo(function MediaContent({
   return (
     <Stack gap={4}>
       <TextBlock
-        title={title}
         description={description}
-        width={isHorizontal ? '30%' : 'auto'}
+        title={title}
         titleColor={titleColor}
+        width={isHorizontal ? '30%' : 'auto'}
       />
-      <VStack width={isHorizontal ? '70%' : 'auto'} gap={3}>
+      <VStack gap={3} width={isHorizontal ? '70%' : 'auto'}>
         {media?.map((asset) => (
           // ID: miscMediaAsset
           <CMSContent key={asset.sys.id} content={asset} />

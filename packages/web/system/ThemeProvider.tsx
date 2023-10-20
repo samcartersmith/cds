@@ -27,7 +27,7 @@ const ThemeManager: React.FC<React.PropsWithChildren<ThemeManagerProps>> = ({
 }) => {
   const { style, className } = useThemeProviderStyles();
   return (
-    <div style={style} className={cx(className, display === 'contents' && displayContents)}>
+    <div className={cx(className, display === 'contents' && displayContents)} style={style}>
       {children}
     </div>
   );

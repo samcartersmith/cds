@@ -12,21 +12,21 @@ const SpacerScreen = () => {
     <ExampleScreen>
       <Example title="Vertical space">
         <Box
-          height={100}
-          width="100%"
           alignItems="center"
-          justifyContent="center"
           background="backgroundAlternate"
+          height={100}
+          justifyContent="center"
+          width="100%"
         >
           <TextBody>Top Content</TextBody>
         </Box>
         <Spacer vertical={3} />
         <Box
-          height={100}
-          width="100%"
           alignItems="center"
-          justifyContent="center"
           background="backgroundAlternate"
+          height={100}
+          justifyContent="center"
+          width="100%"
         >
           <TextBody>Bottom Content</TextBody>
         </Box>
@@ -35,21 +35,21 @@ const SpacerScreen = () => {
       <Example title="Horizontal space">
         <HStack>
           <Box
-            height={30}
-            width={150}
             alignItems="center"
-            justifyContent="center"
             background="backgroundAlternate"
+            height={30}
+            justifyContent="center"
+            width={150}
           >
             <TextBody>Left Content</TextBody>
           </Box>
           <Spacer horizontal={3} />
           <Box
-            height={50}
-            width={150}
             alignItems="center"
-            justifyContent="center"
             background="backgroundAlternate"
+            height={50}
+            justifyContent="center"
+            width={150}
           >
             <TextBody>Right Content</TextBody>
           </Box>
@@ -57,33 +57,33 @@ const SpacerScreen = () => {
       </Example>
 
       <Example title="Fluid space">
-        <VStack height={150} background="primaryWash">
-          <Box height={50} width="100%" alignItems="center" justifyContent="center" bordered>
+        <VStack background="primaryWash" height={150}>
+          <Box bordered alignItems="center" height={50} justifyContent="center" width="100%">
             <TextBody>Top Content</TextBody>
           </Box>
           <Spacer />
-          <Box height={50} width="100%" alignItems="center" justifyContent="center" bordered>
+          <Box bordered alignItems="center" height={50} justifyContent="center" width="100%">
             <TextBody>Bottom Content</TextBody>
           </Box>
         </VStack>
 
         <HStack>
           <Box
-            height={50}
-            width={150}
             alignItems="center"
-            justifyContent="center"
             background="backgroundAlternate"
+            height={50}
+            justifyContent="center"
+            width={150}
           >
             <TextBody>Left Content</TextBody>
           </Box>
           <Spacer />
           <Box
-            height={50}
-            width={150}
             alignItems="center"
-            justifyContent="center"
             background="backgroundAlternate"
+            height={50}
+            justifyContent="center"
+            width={150}
           >
             <TextBody>Right Content</TextBody>
           </Box>

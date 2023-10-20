@@ -19,7 +19,7 @@ export const HandleBar = (props: ViewProps) => {
   };
 
   return (
-    <View style={styles.touchableArea} testID="handleBar" accessible {...props}>
+    <View accessible style={styles.touchableArea} testID="handleBar" {...props}>
       <View style={[styles.handleBar, handleBarStyles]} />
     </View>
   );

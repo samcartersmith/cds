@@ -49,9 +49,9 @@ export const StatusBar = memo((props: StatusBarProps) => {
   return (
     <RNStatusBar
       animated
-      barStyle={props?.barStyle ?? barStyle}
-      backgroundColor="transparent"
       translucent
+      backgroundColor="transparent"
+      barStyle={props?.barStyle ?? barStyle}
     />
   );
 });

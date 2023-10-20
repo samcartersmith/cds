@@ -20,10 +20,10 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
   }) => {
     const textContent = (
       <>
-        <TextHeadline numberOfLines={numberOfLines} ellipsizeMode="tail">
+        <TextHeadline ellipsizeMode="tail" numberOfLines={numberOfLines}>
           {title}
         </TextHeadline>
-        <TextBody numberOfLines={numberOfLines} ellipsizeMode="tail" color="foregroundMuted">
+        <TextBody color="foregroundMuted" ellipsizeMode="tail" numberOfLines={numberOfLines}>
           {description}
         </TextBody>
       </>
@@ -42,12 +42,12 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
 
     const horizontalContent = (
       <HStack
+        alignItems="center"
         gap={1}
         justifyContent="space-between"
-        alignItems="center"
+        spacingBottom={media ? 2 : 0}
         spacingHorizontal={3}
         spacingTop={2}
-        spacingBottom={media ? 2 : 0}
         testID={`${testID}-horizontal`}
       >
         <VStack gap={2} width="70%">

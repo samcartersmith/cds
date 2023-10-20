@@ -60,7 +60,7 @@ export function createDataCard<OnPressFn>({
             <TextHeadline testID={`${testID}-start-label`}>{startLabelProp}</TextHeadline>
           )}
           {!!endLabelProp && (
-            <TextEndLabel testID={`${testID}-end-label`} color="foregroundMuted">
+            <TextEndLabel color="foregroundMuted" testID={`${testID}-end-label`}>
               {endLabelProp}
             </TextEndLabel>
           )}
@@ -70,20 +70,20 @@ export function createDataCard<OnPressFn>({
 
     if (progressVariant === 'circle') {
       return (
-        <Card testID={testID} onPress={onPress} {...cardProps}>
+        <Card onPress={onPress} testID={testID} {...cardProps}>
           <CardBody
-            testID={`${testID}-body`}
-            title={title}
             description={description}
             media={
               !!progress && (
                 <ProgressCircle
-                  progress={progress}
                   color={progressColor}
+                  progress={progress}
                   size={defaultMediaSize.width}
                 />
               )
             }
+            testID={`${testID}-body`}
+            title={title}
           >
             {content}
           </CardBody>
@@ -92,11 +92,11 @@ export function createDataCard<OnPressFn>({
     }
 
     return (
-      <Card testID={testID} onPress={onPress} gap={2} spacing={gutter} {...cardProps}>
-        <CardBody testID={`${testID}-body`} title={title} description={description} spacing={0} />
+      <Card gap={2} onPress={onPress} spacing={gutter} testID={testID} {...cardProps}>
+        <CardBody description={description} spacing={0} testID={`${testID}-body`} title={title} />
         {content}
         {progressVariant === 'bar' && !!progress && (
-          <ProgressBar progress={progress} color={progressColor} />
+          <ProgressBar color={progressColor} progress={progress} />
         )}
       </Card>
     );

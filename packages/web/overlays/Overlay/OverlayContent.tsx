@@ -29,9 +29,9 @@ export const OverlayContent = forwardRef<HTMLElement, OverlayProps>(
 
     const content = (
       <VStack
-        pin="all"
         background="backgroundOverlay"
         onClick={onPress}
+        pin="all"
         {...props}
         ref={forwardedRef}
       />

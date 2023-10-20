@@ -22,7 +22,7 @@ function SvgFromFigma({ name, size, active }: SvgFromFigmaProps) {
   const { iconSize, sourceSize } = useIconSize(size);
   const activeSuffix = active ? 'active' : 'inactive';
   const svgPath = `@cbhq/cds-icons/__generated__/nav/svg/nav-${name}-${sourceSize}-${activeSuffix}.svg`;
-  return <img src={svgPath} alt={name} width={iconSize} height={iconSize} />;
+  return <img alt={name} height={iconSize} src={svgPath} width={iconSize} />;
 }
 
 function DisclaimerText() {
@@ -46,35 +46,35 @@ export const NavigationIconSheet = memo(function NavigationIconSheet({
   return (
     <VStack gap={2}>
       <DisclaimerText />
-      <HStack gap={2} spacingBottom={2} flexWrap="wrap">
+      <HStack flexWrap="wrap" gap={2} spacingBottom={2}>
         {names.slice(startIndex, endIndex).map((name) => {
           return (
-            <HStack key={`nav-icon-wrapper-${name}`} gap={2} flexWrap="wrap">
+            <HStack key={`nav-icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
               <VStack gap={2}>
-                <HStack gap={2} alignItems="center" dangerouslySetClassName={iconFontOverride}>
+                <HStack alignItems="center" dangerouslySetClassName={iconFontOverride} gap={2}>
                   <ScaleProvider value="xSmall">
                     <NavigationIcon name={name} size="s" />
-                    <NavigationIcon name={name} size="s" active />
+                    <NavigationIcon active name={name} size="s" />
                   </ScaleProvider>
                   {(['s', 'm', 'l'] as const).map((size) => {
                     return (
                       <>
                         <NavigationIcon name={name} size={size} />
-                        <NavigationIcon name={name} size={size} active />
+                        <NavigationIcon active name={name} size={size} />
                       </>
                     );
                   })}
                 </HStack>
-                <HStack gap={2} alignItems="center">
+                <HStack alignItems="center" gap={2}>
                   <ScaleProvider value="xSmall">
                     <SvgFromFigma name={name} size="s" />
-                    <SvgFromFigma name={name} size="s" active />
+                    <SvgFromFigma active name={name} size="s" />
                   </ScaleProvider>
                   {(['s', 'm', 'l'] as const).map((size) => {
                     return (
                       <>
                         <SvgFromFigma name={name} size={size} />
-                        <SvgFromFigma name={name} size={size} active />
+                        <SvgFromFigma active name={name} size={size} />
                       </>
                     );
                   })}

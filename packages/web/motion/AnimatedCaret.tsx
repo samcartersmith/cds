@@ -48,7 +48,7 @@ export const AnimatedCaret = memo(function AnimatedCaret({
     <HStack {...spacingProps}>
       <MotionConfig reducedMotion="user">
         <motion.div {...motionProps} data-testid={`${testID}-motion`}>
-          <Icon name="caretUp" size={size} color={variant} {...rest} />
+          <Icon color={variant} name="caretUp" size={size} {...rest} />
         </motion.div>
       </MotionConfig>
     </HStack>

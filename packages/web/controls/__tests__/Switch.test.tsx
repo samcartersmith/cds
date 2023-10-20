@@ -14,7 +14,7 @@ describe('Switch.test', () => {
       return (
         <div>
           <div>checked is {checked ? 'true' : 'false'}</div>
-          <Switch onChange={onChange} checked={checked}>
+          <Switch checked={checked} onChange={onChange}>
             test label
           </Switch>
         </div>
@@ -47,7 +47,7 @@ describe('Switch.test', () => {
   it('disables user interaction when disabled', () => {
     const onChange = jest.fn();
 
-    render(<Switch onChange={onChange} disabled />);
+    render(<Switch disabled onChange={onChange} />);
 
     // dispatching event doesn't respect disabled inputs
     // so we use click method directly

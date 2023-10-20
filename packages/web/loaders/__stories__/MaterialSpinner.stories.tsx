@@ -14,7 +14,7 @@ export const MaterialSpinnerDefault = () => {
     <VStack alignItems="flex-start">
       <TextTitle1 as="h1">Material Spinner</TextTitle1>
       <Spacer />
-      <MaterialSpinner size={30} color="primary" />
+      <MaterialSpinner color="primary" size={30} />
     </VStack>
   );
 };

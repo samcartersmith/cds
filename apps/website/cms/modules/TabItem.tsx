@@ -38,14 +38,14 @@ export const TabItem = memo(function TabItem({ label, value, sections }: TabItem
     .filter(Boolean);
 
   return (
-    <TabItemOriginal value={value} label={label} toc={toc}>
+    <TabItemOriginal label={label} toc={toc} value={value}>
       {sections?.map((section) => {
         const { sys, fields } = section;
         switch (sys.contentType.sys.id) {
           case 'moduleSection': {
             const { direction, title, gap, modules } = fields;
             return (
-              <Section key={sys.id} title={title} direction={direction} gap={gap}>
+              <Section key={sys.id} direction={direction} gap={gap} title={title}>
                 <CMSContent content={modules} />
               </Section>
             );

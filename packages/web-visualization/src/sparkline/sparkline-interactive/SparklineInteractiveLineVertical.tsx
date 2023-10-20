@@ -71,11 +71,11 @@ export const SparklineInteractiveLineVertical = memo(
     return (
       <div className={verticalLineClassName}>
         <div
+          ref={setupMaskRef}
           className={cx(maskClassName, resetFadeClassName)}
           style={maskStyle}
-          ref={setupMaskRef}
         />
-        <div className={cx(lineContainerClassName, resetFadeClassName)} ref={setupLineRef}>
+        <div ref={setupLineRef} className={cx(lineContainerClassName, resetFadeClassName)}>
           <svg className={lineContainerClassName}>
             <line {...lineProps} stroke={color} y2={height} />
           </svg>

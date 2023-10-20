@@ -71,14 +71,14 @@ export const Alert = memo(
       const actionFlexBasis = isVerticalActions ? undefined : 0;
       const actions = [
         !!dismissActionLabel && (
-          <Box flexGrow={1} flexBasis={actionFlexBasis} key="dismiss">
-            <Button onPress={handleSecondaryActionPress} block variant="secondary">
+          <Box key="dismiss" flexBasis={actionFlexBasis} flexGrow={1}>
+            <Button block onPress={handleSecondaryActionPress} variant="secondary">
               {dismissActionLabel}
             </Button>
           </Box>
         ),
-        <Box flexGrow={1} flexBasis={actionFlexBasis} key="preferred">
-          <Button onPress={handlePrimaryActionPress} block variant={preferredActionVariant}>
+        <Box key="preferred" flexBasis={actionFlexBasis} flexGrow={1}>
+          <Button block onPress={handlePrimaryActionPress} variant={preferredActionVariant}>
             {preferredActionLabel}
           </Button>
         </Box>,
@@ -91,53 +91,53 @@ export const Alert = memo(
 
       return (
         <RNModal
-          visible={visible}
-          onRequestClose={handleClose}
-          statusBarTranslucent
           hardwareAccelerated
+          statusBarTranslucent
           transparent
           animationType="none"
+          onRequestClose={handleClose}
           testID={testID}
+          visible={visible}
         >
-          <Box pin="all" alignItems="center" justifyContent="center">
+          <Box alignItems="center" justifyContent="center" pin="all">
             <Overlay opacity={overlayOpacity} />
             <Box
               animated
               borderRadius="rounded"
-              width={318}
               dangerouslySetStyle={{
                 transform: [{ scale: modalScale }],
                 opacity: modalOpacity,
                 borderWidth: 0,
               }}
               elevation={2}
+              width={318}
             >
               <Box
+                alignItems="center"
+                flexDirection="column"
+                spacingBottom={1}
                 spacingHorizontal={3}
                 spacingTop={3}
-                spacingBottom={1}
-                flexDirection="column"
-                alignItems="center"
               >
                 {!!pictogram && (
                   <Box spacingBottom={2}>
                     {/* fixed size: 120x120 */}
                     <Pictogram
-                      name={pictogram}
                       dimension="48x48"
+                      name={pictogram}
                       scaleMultiplier={2.5}
                       testID={testID && `${testID}-pictogram`}
                     />
                   </Box>
                 )}
-                <TextTitle3 spacingBottom={0.5} align="center">
+                <TextTitle3 align="center" spacingBottom={0.5}>
                   {title}
                 </TextTitle3>
-                <TextBody color="foregroundMuted" align="center">
+                <TextBody align="center" color="foregroundMuted">
                   {body}
                 </TextBody>
               </Box>
-              <ActionsContainer spacingHorizontal={3} spacingVertical={2} gap={2}>
+              <ActionsContainer gap={2} spacingHorizontal={3} spacingVertical={2}>
                 {actions}
               </ActionsContainer>
             </Box>

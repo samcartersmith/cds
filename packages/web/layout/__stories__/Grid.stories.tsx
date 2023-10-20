@@ -19,9 +19,9 @@ const Item: React.FC<React.PropsWithChildren<HStackProps<BoxElement>>> = ({
   ...props
 }) => (
   <HStack
+    alignItems="center"
     background="backgroundAlternate"
     justifyContent="center"
-    alignItems="center"
     spacing={2}
     {...props}
   >
@@ -112,16 +112,16 @@ const responsiveColumnConfig = (idx: number) =>
 
 const ColumnExamples = ({ responsive }: GridColumnProps) => {
   return (
-    <Grid gap={0.5} columns={12}>
+    <Grid columns={12} gap={0.5}>
       {Array.from({ length: 12 }).map((_, idx) => (
         <GridColumn
-          background="primary"
-          spacing={2}
-          colStart={1}
-          colEnd={(idx + 2) as GridColumnType}
           // eslint-disable-next-line react/no-array-index-key
           key={idx}
+          background="primary"
+          colEnd={(idx + 2) as GridColumnType}
+          colStart={1}
           responsiveConfig={responsive ? responsiveColumnConfig(idx) : undefined}
+          spacing={2}
         />
       ))}
     </Grid>
@@ -141,10 +141,10 @@ const FullBleedExample = () => {
         <TextBody as="p">Gutter</TextBody>
       </Item>
       <GridColumn
-        justifyContent="center"
         background="backgroundAlternate"
-        spacing={2}
         gridColumn="1 / -1"
+        justifyContent="center"
+        spacing={2}
       >
         <TextBody as="p">Full Bleed</TextBody>
       </GridColumn>
@@ -166,7 +166,7 @@ export const GridExamples = () => {
       </VStack>
       <VStack gap={1}>
         <TextTitle1 as="h2">As a List</TextTitle1>
-        <GridBase columns={12} as="ul" />
+        <GridBase as="ul" columns={12} />
       </VStack>
       <VStack gap={1}>
         <TextTitle1 as="h2">Implicit Grid</TextTitle1>
@@ -174,7 +174,7 @@ export const GridExamples = () => {
       </VStack>
       <VStack gap={1}>
         <TextTitle1 as="h2">Implicit Grid with Clamps</TextTitle1>
-        <ImplicitGridClamped columnMin="min-content" columnMax="200px" />
+        <ImplicitGridClamped columnMax="200px" columnMin="min-content" />
       </VStack>
       <VStack gap={1}>
         <TextTitle1 as="h2">Column Span</TextTitle1>

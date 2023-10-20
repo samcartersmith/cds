@@ -13,7 +13,7 @@ const TextExamplesScreen = ({
 }) => {
   return (
     <ExampleScreen>
-      <Example title="Mono" accessibilityRole="header">
+      <Example accessibilityRole="header" title="Mono">
         <Text mono>Mono font</Text>
       </Example>
       <Example title="Colors">
@@ -29,11 +29,11 @@ const TextExamplesScreen = ({
           <Text color="primary">Primary foreground</Text>
         </Box>
 
-        <Box spacing={1} background="primary">
+        <Box background="primary" spacing={1}>
           <Text color="primaryForeground">Foreground ON primary</Text>
         </Box>
 
-        <Box spacing={1} background="secondary">
+        <Box background="secondary" spacing={1}>
           <Text color="secondaryForeground">Foreground ON secondary</Text>
         </Box>
 
@@ -41,7 +41,7 @@ const TextExamplesScreen = ({
           <Text color="positive">Positive foreground</Text>
         </Box>
 
-        <Box spacing={1} background="positive">
+        <Box background="positive" spacing={1}>
           <Text color="positiveForeground">Foreground ON positive</Text>
         </Box>
 
@@ -49,7 +49,7 @@ const TextExamplesScreen = ({
           <Text color="negative">Negative foreground</Text>
         </Box>
 
-        <Box spacing={1} background="negative">
+        <Box background="negative" spacing={1}>
           <Text color="negativeForeground">Foreground ON negative</Text>
         </Box>
       </Example>

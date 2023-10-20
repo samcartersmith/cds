@@ -25,7 +25,7 @@ export const Divider = memo(function Divider({
   );
 
   return (
-    <Box alignSelf="stretch" alignItems="stretch" {...boxProps}>
+    <Box alignItems="stretch" alignSelf="stretch" {...boxProps}>
       <View style={style} />
     </Box>
   );

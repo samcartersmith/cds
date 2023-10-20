@@ -38,7 +38,7 @@ export const Normal = () => (
     {textComponents.map((Component) => {
       const name = Component.displayName.slice(4);
       return (
-        <Component as="p" key={name}>
+        <Component key={name} as="p">
           {name}
         </Component>
       );
@@ -51,7 +51,7 @@ export const Dense = () => (
     {textComponents.map((Component) => {
       const name = Component.displayName.slice(4);
       return (
-        <Component as="p" display="block" key={name}>
+        <Component key={name} as="p" display="block">
           {name}
         </Component>
       );
@@ -64,7 +64,7 @@ export const FrontierNormal = () => (
     {textComponents.map((Component) => {
       const name = Component.displayName.slice(4);
       return (
-        <Component as="p" display="block" key={name}>
+        <Component key={name} as="p" display="block">
           {name}
         </Component>
       );
@@ -78,7 +78,7 @@ export const FrontierDense = () => (
       {textComponents.map((Component) => {
         const name = Component.displayName.slice(4);
         return (
-          <Component as="p" display="block" key={name}>
+          <Component key={name} as="p" display="block">
             {name}
           </Component>
         );
@@ -92,7 +92,7 @@ export const MonoFont = () => (
     {textComponents.map((Component) => {
       const name = Component.displayName.slice(4);
       return (
-        <Component as="p" mono key={name}>
+        <Component key={name} mono as="p">
           {name}
         </Component>
       );
@@ -101,17 +101,17 @@ export const MonoFont = () => (
 );
 
 export const SlashedZero = () => (
-  <TextBody as="p" slashedZero>
+  <TextBody slashedZero as="p">
     OZY28019
   </TextBody>
 );
 
 export const TabularNumbers = () => (
   <>
-    <TextBody as="p" tabularNumbers align="end">
+    <TextBody tabularNumbers align="end" as="p">
       91.23450
     </TextBody>
-    <TextBody as="p" tabularNumbers align="end">
+    <TextBody tabularNumbers align="end" as="p">
       11.98762
     </TextBody>
   </>
@@ -130,13 +130,13 @@ export const SelectableText = () => (
 );
 
 export const SelectableAll = () => (
-  <TextBody as="p" selectable="all" slashedZero>
+  <TextBody slashedZero as="p" selectable="all">
     bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
   </TextBody>
 );
 
 export const Underline = () => (
-  <TextBody as="p" underline>
+  <TextBody underline as="p">
     Learn more
   </TextBody>
 );
@@ -151,7 +151,7 @@ const MediumContainer = ({ children }: { children?: React.ReactNode }) => (
 
 export const NoWrap = () => (
   <MediumContainer>
-    <TextBody as="p" noWrap>
+    <TextBody noWrap as="p">
       As with any asset, the value of Digital Currencies can
     </TextBody>
   </MediumContainer>
@@ -197,7 +197,7 @@ export const TextNumberOfLines = () => (
 );
 
 export const TextNumberOfLinesSiblings = () => (
-  <VStack maxWidth={300} gap={3}>
+  <VStack gap={3} maxWidth={300}>
     <TextBody as="p" numberOfLines={1} overflow="break">
       Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
       Digital Currencies can go up or down and there can be a substantial risk that you lose money
@@ -226,7 +226,7 @@ export const TextNumberOfLinesSiblings = () => (
 );
 
 export const TextNumberOfLinesNested = () => (
-  <VStack maxWidth={300} gap={3}>
+  <VStack gap={3} maxWidth={300}>
     <TextBody as="p" numberOfLines={2}>
       <TextBody as="p" numberOfLines={3}>
         The parent Text says this should only wrap to 2 lines, but the child which actually renders

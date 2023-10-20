@@ -18,10 +18,10 @@ describe('Pictogram', () => {
   it('renders a pictogram with accessibilityHint and accessibilityLabel', () => {
     render(
       <Pictogram
-        name="add"
-        testID={PICTOGRAM_TEST_ID}
         accessibilityHint="Accessibility Hint"
         accessibilityLabel="Accessibility Label"
+        name="add"
+        testID={PICTOGRAM_TEST_ID}
       />,
     );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
@@ -42,7 +42,7 @@ describe('Pictogram', () => {
 
   it('renders a Pictogram with accessibilityHint and no accessibilityLabel', () => {
     render(
-      <Pictogram name="add" testID={PICTOGRAM_TEST_ID} accessibilityHint="Accessibility Hint" />,
+      <Pictogram accessibilityHint="Accessibility Hint" name="add" testID={PICTOGRAM_TEST_ID} />,
     );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
 

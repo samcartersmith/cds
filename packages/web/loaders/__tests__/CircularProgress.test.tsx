@@ -24,9 +24,9 @@ describe('CircularProgress', () => {
     expect(
       await renderA11y(
         <CircularProgress
-          strokeWidth={testVals.strokeWidth}
-          radius={testVals.radius}
           progress={testVals.progress}
+          radius={testVals.radius}
+          strokeWidth={testVals.strokeWidth}
         />,
       ),
     ).toHaveNoViolations();
@@ -35,9 +35,9 @@ describe('CircularProgress', () => {
   it('should render with a svg element', async () => {
     render(
       <CircularProgress
-        strokeWidth={testVals.strokeWidth}
-        radius={testVals.radius}
         progress={testVals.progress}
+        radius={testVals.radius}
+        strokeWidth={testVals.strokeWidth}
         testID="circular-progress-svg"
       />,
     );
@@ -49,9 +49,9 @@ describe('CircularProgress', () => {
   it('radius and strokeWidths props are correctly assigned', async () => {
     render(
       <CircularProgress
-        strokeWidth={testVals.strokeWidth}
-        radius={testVals.radius}
         progress={testVals.progress}
+        radius={testVals.radius}
+        strokeWidth={testVals.strokeWidth}
         testID="circular-progress-svg"
       />,
     );
@@ -66,9 +66,9 @@ describe('CircularProgress', () => {
   it('calling render with the same component on the same container does not remount', async () => {
     const { rerender } = render(
       <CircularProgress
-        strokeWidth={testVals.strokeWidth}
-        radius={testVals.radius}
         progress={testVals.progress}
+        radius={testVals.radius}
+        strokeWidth={testVals.strokeWidth}
         testID="circular-progress-svg"
       />,
     );
@@ -77,9 +77,9 @@ describe('CircularProgress', () => {
 
     rerender(
       <CircularProgress
-        strokeWidth={newTestVals.strokeWidth}
-        radius={newTestVals.radius}
         progress={newTestVals.progress}
+        radius={newTestVals.radius}
+        strokeWidth={newTestVals.strokeWidth}
         testID="circular-progress-svg"
       />,
     );

@@ -31,8 +31,8 @@ export const InputIcon = memo(function InputIcon({
 
   return (
     <Box
-      accessibilityLabel={accessibilityLabel ?? props.name}
       accessibilityHint={accessibilityHint ?? props.name}
+      accessibilityLabel={accessibilityLabel ?? props.name}
       spacingHorizontal={compact ? 1 : 2}
       testID={testID}
     >

@@ -39,25 +39,25 @@ export const Tooltip = ({
 
   return (
     <Popover
-      contentPosition={contentPosition}
-      disablePortal={disablePortal}
-      onMouseEnter={handleOnMouseEnter}
-      onMouseLeave={handleOnMouseLeave}
-      onFocus={handleOnFocus}
-      onBlur={handleOnBlur}
-      onMouseDown={preventMouseDown}
       invertPopoverSpectrum
-      visible={isOpen}
       content={
         <TooltipContent
-          tooltipId={tooltipId}
           content={content}
           gap={gap}
-          testID={testID}
-          zIndex={zIndex}
           placement={placement}
+          testID={testID}
+          tooltipId={tooltipId}
+          zIndex={zIndex}
         />
       }
+      contentPosition={contentPosition}
+      disablePortal={disablePortal}
+      onBlur={handleOnBlur}
+      onFocus={handleOnFocus}
+      onMouseDown={preventMouseDown}
+      onMouseEnter={handleOnMouseEnter}
+      onMouseLeave={handleOnMouseLeave}
+      visible={isOpen}
     >
       {clonedChild}
     </Popover>

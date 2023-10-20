@@ -49,17 +49,17 @@ export const CircularProgress = memo(
       return undefined;
     }, [indeterminate, internalProgress, direction]);
     return (
-      <svg height={radius * 2} width={radius * 2} data-testid={testID}>
+      <svg data-testid={testID} height={radius * 2} width={radius * 2}>
         <circle
+          cx={radius}
+          cy={radius}
+          data-testid={`${testID}-circle`}
+          fill="transparent"
+          r={normalizedRadius}
           stroke="blue"
           strokeDasharray={`${circumference} ${circumference}`}
           strokeDashoffset={strokeDashoffset}
           strokeWidth={strokeWidth}
-          fill="transparent"
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-          data-testid={`${testID}-circle`}
         />
       </svg>
     );

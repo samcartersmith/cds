@@ -45,14 +45,14 @@ const OldCard: React.FC<React.PropsWithChildren<CardProps>> = memo(function OldC
 
   const content = (
     <VStack
-      testID={onPress ? undefined : testID}
-      borderRadius={borderRadius}
       background={onPress ? undefined : bg}
-      pin={onPress ? undefined : pin}
-      elevation={onPress ? undefined : elevation}
-      width={onPress ? undefined : width}
-      height={onPress ? undefined : height}
+      borderRadius={borderRadius}
       dangerouslySetStyle={contentStyles}
+      elevation={onPress ? undefined : elevation}
+      height={onPress ? undefined : height}
+      pin={onPress ? undefined : pin}
+      testID={onPress ? undefined : testID}
+      width={onPress ? undefined : width}
       {...props}
     >
       {children}
@@ -61,16 +61,16 @@ const OldCard: React.FC<React.PropsWithChildren<CardProps>> = memo(function OldC
 
   return onPress ? (
     <Pressable
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
       accessibilityRole="button"
-      testID={testID}
       backgroundColor={bg}
       borderRadius={borderRadius}
       borderWidth="card"
       elevation={elevation}
       onPress={onPress}
-      accessibilityLabel={accessibilityLabel}
-      accessibilityHint={accessibilityHint}
       style={{ ...pinStyles, width: width as DimensionValue, height: height as DimensionValue }}
+      testID={testID}
     >
       {content}
     </Pressable>

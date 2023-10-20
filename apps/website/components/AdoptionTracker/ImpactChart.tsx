@@ -69,8 +69,8 @@ export const ImpactChart = ({ chartData }: { chartData: Record<string, ChartData
     <SparklineInteractiveHeader
       ref={headerRef}
       defaultLabel={defaultLabel}
-      defaultTitle={defaultTitle}
       defaultSubHead={defaultSubHead}
+      defaultTitle={defaultTitle}
     />
   );
 
@@ -87,18 +87,18 @@ export const ImpactChart = ({ chartData }: { chartData: Record<string, ChartData
 
   return (
     <SparklineInteractive
-      periods={periods}
-      data={chartData}
-      strokeColor="#F7931A"
       compact
-      headerNode={header}
+      data={chartData}
       defaultPeriod="week"
       formatDate={formatDate}
       formatHoverDate={formatDate}
-      yAxisScalingFactor={0.8}
+      headerNode={header}
       onScrub={handleScrub}
-      onScrubStart={handleScrubStart}
       onScrubEnd={handleScrubEnd}
+      onScrubStart={handleScrubStart}
+      periods={periods}
+      strokeColor="#F7931A"
+      yAxisScalingFactor={0.8}
     />
   );
 };

@@ -27,7 +27,7 @@ const spacingConfig = {
 
 export const CellSpacing: Story = () => {
   return (
-    <Table variant="ruled" bordered cellSpacing={spacingConfig.flush}>
+    <Table bordered cellSpacing={spacingConfig.flush} variant="ruled">
       <TableHeader>
         <TableRow backgroundColor="backgroundAlternate">
           <TableCell title="First Header" />
@@ -35,7 +35,7 @@ export const CellSpacing: Story = () => {
       </TableHeader>
       <TableBody>
         <TableRow>
-          <TableCell title="$2,475.68" subtitle="0.11882557" />
+          <TableCell subtitle="0.11882557" title="$2,475.68" />
         </TableRow>
       </TableBody>
     </Table>
@@ -48,14 +48,14 @@ const flex = css`
 
 export const VerticallyAlignedTableCell: Story = () => {
   return (
-    <Table variant="ruled" bordered cellSpacing={spacingConfig.flush}>
+    <Table bordered cellSpacing={spacingConfig.flush} variant="ruled">
       <TableBody>
         <TableRow>
           <TableCell
-            dangerouslySetClassName={flex}
-            width={300}
-            title="This TableCell will be aligned to the top of its parent"
             alignItems="flex-start"
+            dangerouslySetClassName={flex}
+            title="This TableCell will be aligned to the top of its parent"
+            width={300}
           />
           <TableCell>
             <Accordion>
@@ -79,76 +79,76 @@ export const ComplexSpacingOverride: Story = () => {
         This story is complex on purpose - it is intended to provide visgreg testing to ensure crazy
         spacing configs do what they are supposed to do:
       </TextBody>
-      <Table variant="ruled" bordered cellSpacing={spacingConfig.flush}>
+      <Table bordered cellSpacing={spacingConfig.flush} variant="ruled">
         <TableHeader>
           <TableRow backgroundColor="backgroundAlternate">
-            <TableCell title="Flush first column" subtitle="Default set on Table" />
-            <TableCell title="Flush second column" subtitle="Default set on Table" />
-            <TableCell title="Flush third column" subtitle="Default set on Table" />
+            <TableCell subtitle="Default set on Table" title="Flush first column" />
+            <TableCell subtitle="Default set on Table" title="Flush second column" />
+            <TableCell subtitle="Default set on Table" title="Flush third column" />
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
             <TableCell
-              onPress={console.log}
-              title="TableCell with defined innerSpacing"
-              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.normal)}`}
               innerSpacing={spacingConfig.normal}
+              onPress={console.log}
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.normal)}`}
+              title="TableCell with defined innerSpacing"
             />
             <TableCell
-              onPress={console.log}
-              title="TableCell with defined innerSpacing"
-              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.big)}`}
               innerSpacing={spacingConfig.big}
+              onPress={console.log}
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.big)}`}
+              title="TableCell with defined innerSpacing"
             />
             <TableCell
-              onPress={console.log}
-              title="TableCell with defined innerSpacing"
-              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.huge)}`}
               innerSpacing={spacingConfig.huge}
+              onPress={console.log}
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.huge)}`}
+              title="TableCell with defined innerSpacing"
             />
           </TableRow>
           <TableRow backgroundColor="backgroundAlternate">
             <TableCell
               onPress={console.log}
-              title="TableCell with defined innerSpacing"
-              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.normal)}`}
               outerSpacing={spacingConfig.normal}
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.normal)}`}
+              title="TableCell with defined innerSpacing"
             />
             <TableCell
               onPress={console.log}
-              title="TableCell with defined outerSpacing"
-              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.big)}`}
               outerSpacing={spacingConfig.big}
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.big)}`}
+              title="TableCell with defined outerSpacing"
             />
             <TableCell
               onPress={console.log}
-              title="TableCell with defined outerSpacing"
-              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.huge)}`}
               outerSpacing={spacingConfig.huge}
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.huge)}`}
+              title="TableCell with defined outerSpacing"
             />
           </TableRow>
           <TableRow>
             <TableCell
-              onPress={console.log}
-              title="TableCell with defined spacing"
-              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.normal)}`}
               innerSpacing={spacingConfig.normal}
+              onPress={console.log}
               outerSpacing={spacingConfig.normal}
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.normal)}`}
+              title="TableCell with defined spacing"
             />
             <TableCell
-              onPress={console.log}
-              title="TableCell with defined spacing"
-              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.big)}`}
               innerSpacing={spacingConfig.big}
+              onPress={console.log}
               outerSpacing={spacingConfig.big}
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.big)}`}
+              title="TableCell with defined spacing"
             />
             <TableCell
-              onPress={console.log}
-              title="TableCell with defined spacing"
-              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.huge)}`}
               innerSpacing={spacingConfig.huge}
+              onPress={console.log}
               outerSpacing={spacingConfig.huge}
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.huge)}`}
+              title="TableCell with defined spacing"
             />
           </TableRow>
         </TableBody>
@@ -160,7 +160,7 @@ export const ComplexSpacingOverride: Story = () => {
 export const SampleCells: Story = () => {
   return (
     <ThemeProvider spectrum="light">
-      <Table variant="ruled" bordered>
+      <Table bordered variant="ruled">
         <TableHeader>
           <TableRow backgroundColor="backgroundAlternate">
             <TableCell title="First Header" />
@@ -175,18 +175,18 @@ export const SampleCells: Story = () => {
         <TableBody>
           <TableRow>
             <TableCell
+              overflow="truncate"
               start={
                 <Avatar
                   alt="test-avatar"
-                  src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
                   size="l"
+                  src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
                 />
               }
-              title="Bitcoin"
               subtitle="BTC and I'm like please please truncate me"
-              overflow="truncate"
+              title="Bitcoin"
             />
-            <TableCell title="$2,475.68" subtitle="0.11882557" />
+            <TableCell subtitle="0.11882557" title="$2,475.68" />
             <TableCell>
               <TextHeadline as="h2" color="currentColor">
                 $2,221.01
@@ -220,7 +220,7 @@ export const SampleCellsDense = () => {
 export const SampleFixedLayout: Story = () => {
   return (
     <ThemeProvider spectrum="light">
-      <Table variant="ruled" bordered tableLayout="fixed">
+      <Table bordered tableLayout="fixed" variant="ruled">
         <TableHeader>
           <TableRow backgroundColor="backgroundAlternate">
             <TableCell title="First Header" width="20%" />
@@ -235,18 +235,18 @@ export const SampleFixedLayout: Story = () => {
         <TableBody>
           <TableRow>
             <TableCell
+              overflow="truncate"
               start={
                 <Avatar
                   alt="test-avatar"
-                  src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
                   size="l"
+                  src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
                 />
               }
-              title="Bitcoin"
               subtitle="BTC and I'm like please please truncate me"
-              overflow="truncate"
+              title="Bitcoin"
             />
-            <TableCell title="$2,475.68" subtitle="0.11882557" />
+            <TableCell subtitle="0.11882557" title="$2,475.68" />
             <TableCell>
               <TextHeadline as="h2" color="currentColor">
                 $2,221.01

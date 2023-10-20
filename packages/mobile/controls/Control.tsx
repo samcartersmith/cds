@@ -123,16 +123,17 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   return (
     <Pressable
       ref={ref}
-      disabled={pressDisabled}
       accessible
+      accessibilityActions={[{ name: 'activate' }]}
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityRole={accessibilityRole}
       accessibilityState={{
         disabled: pressDisabled,
         checked: checked || indeterminate,
       }}
-      accessibilityRole={accessibilityRole}
-      accessibilityLabel={accessibilityLabel}
-      accessibilityHint={accessibilityHint}
-      accessibilityActions={[{ name: 'activate' }]}
+      disabled={pressDisabled}
+      hitSlop={hitSlop}
       onAccessibilityAction={useCallback(
         (event: AccessibilityActionEvent) => {
           if (event.nativeEvent.actionName === 'activate') {
@@ -141,12 +142,11 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         },
         [handlePress],
       )}
+      onPress={handlePress}
       style={{
         flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
         alignItems: 'flex-start',
       }}
-      hitSlop={hitSlop}
-      onPress={handlePress}
       {...props}
     >
       {({ pressed }) =>
@@ -158,8 +158,8 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
             </View>
             <Spacer horizontal={1} />
             <TextBody
-              testID={`${testID}Label`}
               animated
+              color={checked || indeterminate ? 'foreground' : 'foregroundMuted'}
               dangerouslySetStyle={{
                 color: animatedBoxValue.interpolate({
                   inputRange: [0, 1],
@@ -170,7 +170,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
                 // Prevent text element from expanding beyond available width.
                 flexShrink: 1,
               }}
-              color={checked || indeterminate ? 'foreground' : 'foregroundMuted'}
+              testID={`${testID}Label`}
             >
               {label}
             </TextBody>

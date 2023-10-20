@@ -56,7 +56,7 @@ export const TextIcon = memo(function TextIcon({
 
   if (glyph) {
     return (
-      <Component testID={testID} allowFontScaling={false} accessibilityRole="image" style={styles}>
+      <Component accessibilityRole="image" allowFontScaling={false} style={styles} testID={testID}>
         {glyph}
       </Component>
     );

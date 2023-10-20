@@ -16,7 +16,7 @@ const MockModal = () => {
   }, []);
   return (
     <>
-      <Modal visible={isVisible} onRequestClose={handleOnRequestClose}>
+      <Modal onRequestClose={handleOnRequestClose} visible={isVisible}>
         <ModalHeader title="Title" />
       </Modal>
       <Button onPress={handleOpenModal}>Click me</Button>

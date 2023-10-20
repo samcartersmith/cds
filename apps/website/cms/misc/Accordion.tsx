@@ -22,9 +22,9 @@ export const Accordion = memo(function Accordion({ defaultActiveKey, items }: Ac
         <AccordionItem
           key={title}
           itemKey={title}
-          title={title}
-          subtitle={subtitle}
           maxHeight={1000}
+          subtitle={subtitle}
+          title={title}
         >
           <RichText content={content} />
         </AccordionItem>

@@ -26,15 +26,15 @@ const baseProps = {
 };
 
 const DropdownExample = (props: Pick<DropdownContentProps, 'placement'>) => (
-  <div aria-modal="true" role="dialog" aria-label="Example">
+  <div aria-label="Example" aria-modal="true" role="dialog">
     <DropdownContent {...baseProps} {...props}>
       {defaultOptions.map((option) => (
-        <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
+        <SelectOption key={option} testID={`option-${option}`} title={option} value={option} />
       ))}
       <SelectOption
-        value="long"
         key="long"
         title="Really long content that will get clipped when it wants to wrap"
+        value="long"
       />
     </DropdownContent>
   </div>

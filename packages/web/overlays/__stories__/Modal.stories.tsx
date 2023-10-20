@@ -29,35 +29,35 @@ const {
 export const BasicModal = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
-  return <BasicModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} />;
+  return <BasicModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
 };
 
 export const BackButtonModal = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
-  return <BackButtonModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} />;
+  return <BackButtonModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
 };
 
 export const VisibleModal = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
-  return <VisibleModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} />;
+  return <VisibleModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
 };
 
 export const ModalWithoutPortal = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
-  return <ModalWithoutPortalExample triggerRef={triggerRef} focusTrigger={focusTrigger} />;
+  return <ModalWithoutPortalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
 };
 
 export const LongModal = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
-  return <LongModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} />;
+  return <LongModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
 };
 
 export const PortalModal = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
-  return <PortalModalExample triggerRef={triggerRef} focusTrigger={focusTrigger} />;
+  return <PortalModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
 };

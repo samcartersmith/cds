@@ -24,15 +24,15 @@ const IdentityNavigationBar = memo(({ start, end, bottom, children }: Navigation
   return (
     <NavigationBar
       accessibilityLabel="main navigation"
-      start={start}
+      bottom={bottom}
       end={
-        <HStack gap={1} alignItems="center">
+        <HStack alignItems="center" gap={1}>
           {end}
           <AppSwitcher />
           <UserSwitcher title="Brian" />
         </HStack>
       }
-      bottom={bottom}
+      start={start}
     >
       {children}
     </NavigationBar>
@@ -47,34 +47,34 @@ const IdentityNavigationBarConsumer = () => {
   }, [setTab]);
   return (
     <IdentityNavigationBar
-      start={
-        tab !== tabs[0].id && (
-          <IconButton name="backArrow" onPress={handleBackIconClick} accessibilityLabel="Back" />
-        )
-      }
+      bottom={<TabNavigation onChange={setTab} tabs={tabs} value={tab} />}
       end={
-        <HStack gap={2} alignItems="center">
-          <HStack gap={1} alignItems="center">
+        <HStack alignItems="center" gap={2}>
+          <HStack alignItems="center" gap={1}>
             <Button compact>Primary</Button>
             <Button compact variant="secondary">
               Secondary
             </Button>
           </HStack>
-          <HStack gap={1} alignItems="center">
-            <NavigationIconButton name="globe" active={false} accessibilityLabel="Language" />
-            <NavigationIconButton name="bell" active={false} accessibilityLabel="Notifications" />
+          <HStack alignItems="center" gap={1}>
+            <NavigationIconButton accessibilityLabel="Language" active={false} name="globe" />
+            <NavigationIconButton accessibilityLabel="Notifications" active={false} name="bell" />
           </HStack>
         </HStack>
       }
-      bottom={<TabNavigation tabs={tabs} value={tab} onChange={setTab} />}
+      start={
+        tab !== tabs[0].id && (
+          <IconButton accessibilityLabel="Back" name="backArrow" onPress={handleBackIconClick} />
+        )
+      }
     >
-      <HStack gap={1} flexGrow={1} alignItems="center">
+      <HStack alignItems="center" flexGrow={1} gap={1}>
         <SearchInput
           compact
-          value={search}
+          accessibilityLabel="Search"
           onChangeText={setSearch}
           placeholder="Search"
-          accessibilityLabel="Search"
+          value={search}
         />
       </HStack>
     </IdentityNavigationBar>
@@ -84,7 +84,7 @@ const IdentityNavigationBarConsumer = () => {
 export const IdentityNavigationBarExampleDefault: Story = () => {
   return (
     <PortalProvider>
-      <FeatureFlagProvider frontierColor frontierButton>
+      <FeatureFlagProvider frontierButton frontierColor>
         <TextTitle1 as="h1">NavigationBar example for Identity Team</TextTitle1>
         <Spacer />
         <IdentityNavigationBarConsumer />

@@ -21,17 +21,17 @@ import { ProgressBarsExample } from './CarouselAlphaExample';
 const ExampleCarouselItem = memo(({ svgId = 1 }: { svgId?: number }) => {
   const { dismiss } = useCarouselItem();
   return (
-    <Card spacing={2} onPress={() => dismiss()}>
+    <Card onPress={() => dismiss()} spacing={2}>
       <TextLabel1 ellipsize="tail">Label</TextLabel1>
-      <TextHeadline color="foregroundMuted" numberOfLines={2} ellipsize="tail" spacingBottom={0.5}>
+      <TextHeadline color="foregroundMuted" ellipsize="tail" numberOfLines={2} spacingBottom={0.5}>
         Title
       </TextHeadline>
       <RemoteImage
-        shape="squircle"
-        width={120}
         height={120}
         resizeMode="cover"
+        shape="squircle"
         source={svgs[svgId]}
+        width={120}
       />
     </Card>
   );
@@ -62,7 +62,6 @@ const UpdateOnMountExample = () => {
   return (
     <Example title="Carousel - snap to index on mount">
       <Carousel
-        onReady={handleOnReady}
         items={[
           <ExampleCarouselItem key="item1" svgId={4} />,
           <ExampleCarouselItem key="item2" svgId={3} />,
@@ -71,6 +70,7 @@ const UpdateOnMountExample = () => {
           <ExampleCarouselItem key="item5" svgId={2} />,
           <ExampleCarouselItem key="item6" svgId={2} />,
         ]}
+        onReady={handleOnReady}
       />
     </Example>
   );

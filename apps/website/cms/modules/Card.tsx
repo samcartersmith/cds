@@ -40,13 +40,13 @@ export const Card = memo(function Card({ title, description, pictogram, link }: 
 
   return (
     <CDSCard
-      gap={2}
-      flexBasis="45%" // needs to be below 50% because of the gap
-      borderRadius="roundedLarge"
       bordered
-      spacing={3}
       alignItems="flex-start"
+      borderRadius="roundedLarge"
+      flexBasis="45%" // needs to be below 50% because of the gap
+      gap={2}
       overflow="hidden"
+      spacing={3}
     >
       {pictogram && <Pictogram name={pictogram} />}
       <TextTitle2 as="h2">{title}</TextTitle2>
@@ -54,11 +54,11 @@ export const Card = memo(function Card({ title, description, pictogram, link }: 
       {link && (
         <Button
           compact
-          flush="start"
           transparent
-          variant="primary"
           endIcon="forwardArrow"
+          flush="start"
           onPress={onLinkPress}
+          variant="primary"
         >
           {link.fields.label}
         </Button>

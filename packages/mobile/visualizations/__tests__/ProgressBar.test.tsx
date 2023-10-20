@@ -53,7 +53,7 @@ describe('ProgressBar test', () => {
   it('places bar label in correct position if it flows off the left container and passes a11y', async () => {
     render(
       <Box width="200">
-        <ProgressBarWithFloatLabel testID="mock-progress-bar" label={0} progress={0}>
+        <ProgressBarWithFloatLabel label={0} progress={0} testID="mock-progress-bar">
           <ProgressBar progress={0} />
         </ProgressBarWithFloatLabel>
       </Box>,
@@ -75,7 +75,7 @@ describe('ProgressBar test', () => {
   it('places bar label in correct position in middle', () => {
     render(
       <Box width="200">
-        <ProgressBarWithFloatLabel testID="mock-progress-bar" label={50} progress={0.5}>
+        <ProgressBarWithFloatLabel label={50} progress={0.5} testID="mock-progress-bar">
           <ProgressBar progress={0.5} />
         </ProgressBarWithFloatLabel>
       </Box>,
@@ -103,10 +103,10 @@ describe('ProgressBar test', () => {
     render(
       <Box width="200">
         <ProgressBarWithFixedLabels
-          testID="mock-progress-bar"
-          startLabel={0}
           endLabel={50}
           labelPlacement="above"
+          startLabel={0}
+          testID="mock-progress-bar"
         >
           <ProgressBar progress={50} />
         </ProgressBarWithFixedLabels>
@@ -128,7 +128,7 @@ describe('ProgressBar test', () => {
   it('has correct bar width', () => {
     render(
       <Box width="200">
-        <ProgressBar testID="mock-progress-bar" progress={0.77} color="positive" />
+        <ProgressBar color="positive" progress={0.77} testID="mock-progress-bar" />
       </Box>,
     );
 
@@ -147,7 +147,7 @@ describe('ProgressBar test', () => {
   it('has correct bar height', () => {
     render(
       <Box width="200">
-        <ProgressBar testID="mock-progress-bar" progress={0.77} weight="heavy" />
+        <ProgressBar progress={0.77} testID="mock-progress-bar" weight="heavy" />
       </Box>,
     );
 
@@ -163,7 +163,7 @@ describe('ProgressBar test', () => {
   it('handles disabled state for just ProgressBar correctly & passes a11y', () => {
     render(
       <Box width="200">
-        <ProgressBar progress={0.77} disabled testID="mock-progress-bar" />
+        <ProgressBar disabled progress={0.77} testID="mock-progress-bar" />
       </Box>,
     );
     fireTextContainerEvent(screen.getByTestId('cds-progress-bar-inner-bar-container'));
@@ -184,10 +184,10 @@ describe('ProgressBar test', () => {
     render(
       <Box width="200">
         <ProgressBarWithFixedLabels
-          testID="mock-progress-bar"
-          startLabel={0}
-          endLabel={77}
           disabled
+          endLabel={77}
+          startLabel={0}
+          testID="mock-progress-bar"
         >
           <ProgressBar progress={0.77} />
         </ProgressBarWithFixedLabels>

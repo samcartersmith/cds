@@ -78,9 +78,9 @@ describe('Tooltip', () => {
     const onOpenTooltip = jest.fn();
     render(
       <MockTooltip
-        onOpenTooltip={onOpenTooltip}
-        accessibilityLabel="test-a11y-label"
         accessibilityHint="test-a11y-hint"
+        accessibilityLabel="test-a11y-label"
+        onOpenTooltip={onOpenTooltip}
       >
         <Button>{subjectText}</Button>
       </MockTooltip>,

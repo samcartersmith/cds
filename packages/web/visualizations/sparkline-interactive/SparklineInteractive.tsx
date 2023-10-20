@@ -50,7 +50,7 @@ const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallb
   const source = fallbackType === 'negative' ? chartFallbackNegative : chartFallbackPositive;
   return (
     <ThemeProvider palette={customPalette}>
-      {!skipLottie && <Lottie height="100%" width="100%" autoplay source={source} loop />}
+      {!skipLottie && <Lottie autoplay loop height="100%" source={source} width="100%" />}
     </ThemeProvider>
   );
 });
@@ -159,7 +159,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   let header;
   if (headerNode) {
     header = (
-      <Box spacingHorizontal={!isMobileLayout ? gutter : 0} flexGrow={1}>
+      <Box flexGrow={1} spacingHorizontal={!isMobileLayout ? gutter : 0}>
         {headerNode}
       </Box>
     );
@@ -182,10 +182,10 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
 
   const periodSelector = (
     <SparklineInteractivePeriodSelector
+      color={color}
       periods={periods}
       selectedPeriod={selectedPeriod}
       setSelectedPeriod={updatePeriod}
-      color={color}
     />
   );
 
@@ -198,7 +198,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
               {periodSelector}
             </Box>
           )}
-          <Box justifyContent="space-between" spacingBottom={2} alignItems="center">
+          <Box alignItems="center" justifyContent="space-between" spacingBottom={2}>
             {header ?? <div />}
             {!isMobileLayout && periodSelectorPlacement === 'above' && (
               <Box flexGrow={0}>{periodSelector}</Box>
@@ -212,37 +212,37 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
             <SparklineInteractiveHoverDate />
           </Box>
         )}
-        <VisualizationContainer width="100%" height={innerSparklineInteractiveHeight}>
+        <VisualizationContainer height={innerSparklineInteractiveHeight} width="100%">
           {({ width, height }: VisualizationContainerDimension) => (
-            <InnerSparklineInteractiveProvider width={width} height={height}>
+            <InnerSparklineInteractiveProvider height={height} width={width}>
               <SparklineInteractiveScrubHandler
+                disabled={disableScrubbing}
+                formatHoverDate={formatHoverDate}
+                getMarker={getMarker}
                 onScrub={onScrub}
                 onScrubEnd={handleScrubEnd}
                 onScrubStart={handleScrubStart}
-                disabled={disableScrubbing}
                 selectedPeriod={selectedPeriod}
-                formatHoverDate={formatHoverDate}
-                getMarker={getMarker}
               >
-                <Box width={width} height={height} position="relative">
+                <Box height={height} position="relative" width={width}>
                   {!!isFallbackVisible && (
-                    <Box width="100%" height="100%" position="absolute" justifyContent="center">
+                    <Box height="100%" justifyContent="center" position="absolute" width="100%">
                       {fallback ?? <DefaultFallback fallbackType={fallbackType} />}
                     </Box>
                   )}
-                  <Box width="100%" height="100%">
+                  <Box height="100%" width="100%">
                     {!!hasData && !!path && (
                       <>
                         <SparklineInteractivePaths
-                          strokeColor={color}
-                          showHoverData={isScrubbing}
-                          path={path}
                           area={area}
-                          selectedPeriod={selectedPeriod}
-                          fill={fill}
-                          yAxisScalingFactor={yAxisScalingFactor}
                           compact={compact}
+                          fill={fill}
                           hoverData={hoverData}
+                          path={path}
+                          selectedPeriod={selectedPeriod}
+                          showHoverData={isScrubbing}
+                          strokeColor={color}
+                          yAxisScalingFactor={yAxisScalingFactor}
                         />
 
                         <SparklineInteractiveLineVertical
@@ -259,10 +259,10 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
       </SparklineInteractiveScrubProvider>
       <Box position="relative">
         {showBottomMarkerDates && (
-          <Box pin="top" width="100%" dangerouslySetStyle={stylesToPreventInteraction} background>
+          <Box background dangerouslySetStyle={stylesToPreventInteraction} pin="top" width="100%">
             <SparklineInteractiveMarkerDates
-              getMarker={getMarker}
               formatDate={formatDate}
+              getMarker={getMarker}
               selectedPeriod={selectedPeriod}
               timePeriodGutter={timePeriodGutter}
             />
@@ -270,12 +270,12 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
         )}
         {/* Must always be mounted so we can tab directly to it */}
         <Box
-          width="100%"
-          spacingTop={1}
-          zIndex={1}
-          pin="top"
-          dangerouslySetClassName={animatedPeriodSelectorClassName}
           background
+          dangerouslySetClassName={animatedPeriodSelectorClassName}
+          pin="top"
+          spacingTop={1}
+          width="100%"
+          zIndex={1}
         >
           {periodSelector}
         </Box>

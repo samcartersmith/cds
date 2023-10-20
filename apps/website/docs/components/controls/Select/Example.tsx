@@ -31,9 +31,9 @@ const SelectExample = () => {
     <VStack spacingBottom={4}>
       <VStack
         alignItems="center"
-        spacing={6}
         background="backgroundAlternate"
         borderRadius="rounded"
+        spacing={6}
       >
         <div>
           <TextTitle3 as="h2" spacingBottom={2}>
@@ -42,11 +42,11 @@ const SelectExample = () => {
           <HStack gap={2} minHeight={320}>
             <VStack width={300}>
               <Select
-                width="100%"
-                value={value}
                 label="Designer"
-                placeholder="Select your designer"
                 onChange={setValue}
+                placeholder="Select your designer"
+                value={value}
+                width="100%"
               >
                 {design.map((option) => (
                   <SelectOption description={option} value={option} />
@@ -55,11 +55,11 @@ const SelectExample = () => {
             </VStack>
             <VStack width={300}>
               <Select
-                width="100%"
-                value={valueRight}
                 label="Engineer"
-                placeholder="Select your engineer"
                 onChange={setValueRight}
+                placeholder="Select your engineer"
+                value={valueRight}
+                width="100%"
               >
                 {eng.map((option) => (
                   <SelectOption description={option} value={option} />

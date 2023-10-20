@@ -84,37 +84,37 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
     <>
       {/* CHALLENGE ONE */}
       {currentStep === 1 && (
-        <VStack gap={1} dangerouslySetClassName={visuallyHidden} width="100%">
+        <VStack dangerouslySetClassName={visuallyHidden} gap={1} width="100%">
           <TextDisplay1 as="h1">Beginning of the hunt</TextDisplay1>
           <Box>
             <Tooltip
-              zIndex={-1}
-              tooltipId="tooltip-1"
               content="Tabs are a paradigm screen reader users have gotten used to. They expect a list of
               tabs to receive a single focus stop and then to use the right and left arrow keys to
               move between tabs."
+              tooltipId="tooltip-1"
+              zIndex={-1}
             >
-              <Button onPress={noop} transparent compact ref={startStepRef}>
+              <Button ref={startStepRef} compact transparent onPress={noop}>
                 How to use Tabs with the keyboard
               </Button>
             </Tooltip>
           </Box>
 
           <Tabs groupId="page" variant="primary">
-            <TabItem value="tab_one" label="I don’t think this where you’re headed">
+            <TabItem label="I don’t think this where you’re headed" value="tab_one">
               <Link href="https://www.w3.org/WAI/WCAG21/Understanding/">WCAG 2.1</Link>
             </TabItem>
-            <TabItem value="tab_two" label="This might be where you want to go">
-              <TextBody as="p" aria-live="polite">
+            <TabItem label="This might be where you want to go" value="tab_two">
+              <TextBody aria-live="polite" as="p">
                 Wow you’ve made it this far. We’re really glad you’ve taken the time to use a screen
                 reader. If this is your first time turning one on we’re extra proud. Keep going to
                 learn more about how to use a screen reader.
               </TextBody>
-              <Link to="#nice-work" onClick={focusNextButton}>
+              <Link onClick={focusNextButton} to="#nice-work">
                 You’re headed in the right direction!
               </Link>
             </TabItem>
-            <TabItem value="tab_three" label="I know this isn’t where you want to go">
+            <TabItem label="I know this isn’t where you want to go" value="tab_three">
               <Link href="https://www.google.com/search?q=binance+meme&tbm=isch&sa=X">
                 Link to Binance
               </Link>
@@ -125,9 +125,9 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
             <TextBody as="p">Keep searching below for the end of step one</TextBody>
 
             <Button
-              onPress={completeStep1}
               ref={completeStepRef}
               disabled={stepReadyToComplete !== currentStep}
+              onPress={completeStep1}
             >
               Complete step one
             </Button>
@@ -138,13 +138,13 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
 
       {/* CHALLENGE TWO */}
       {currentStep === 2 && (
-        <VStack gap={1} dangerouslySetClassName={visuallyHidden} width="100%">
+        <VStack dangerouslySetClassName={visuallyHidden} gap={1} width="100%">
           <TextDisplay1 as="h1">Middle of the hunt</TextDisplay1>
-          <Button onPress={noop} transparent compact ref={startStepRef}>
+          <Button ref={startStepRef} compact transparent onPress={noop}>
             Let the fun begin
           </Button>
           <Accordion>
-            <AccordionItem itemKey="section_one" title="Section 1" maxHeight={800}>
+            <AccordionItem itemKey="section_one" maxHeight={800} title="Section 1">
               <VStack gap={1} width="100%">
                 <Tooltip
                   content="
@@ -179,9 +179,9 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
             </AccordionItem>
           </Accordion>
           <Button
-            onPress={completeStep2}
             ref={completeStepRef}
             disabled={stepReadyToComplete !== currentStep}
+            onPress={completeStep2}
           >
             Complete step two
           </Button>
@@ -191,51 +191,51 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
 
       {/* CHALLENGE THREE */}
       {currentStep === 3 && (
-        <VStack gap={1} dangerouslySetClassName={visuallyHidden} width="100%">
+        <VStack dangerouslySetClassName={visuallyHidden} gap={1} width="100%">
           <TextDisplay1 as="h1">End of the hunt</TextDisplay1>
-          <IconButton name="close" onPress={noop} ref={startStepRef} />
+          <IconButton ref={startStepRef} name="close" onPress={noop} />
           <IconButton name="bookmarkActive" onPress={noop} />
           <Button onPress={noop}>↗</Button>
           <ButtonGroup>
-            <Button onPress={noop} loading>
+            <Button loading onPress={noop}>
               Submitting
             </Button>
             <Button onPress={noop}>™</Button>
             <Button onPress={noop}>Cancel</Button>
           </ButtonGroup>
           <Tooltip
-            tooltipId="tooltip-2"
             content="
             This tooltip isn’t what you’re looking for, but you had to open it to find out due to
             its label :troll-face-emoji:"
+            tooltipId="tooltip-2"
           >
             <Button onPress={noop}>Tooltip</Button>
           </Tooltip>
           <IconButton name="arrowLeft" onPress={noop} />
-          <Button type="button" accessibilityLabel="Heading in the right direction">
+          <Button accessibilityLabel="Heading in the right direction" type="button">
             Button with label maybe we’re starting to get in the right direction
           </Button>
           <Button
-            type="button"
             // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
             onPress={() => {
               setIsCollapsed(!isCollapsed);
               setStepReadyToComplete(currentStep);
             }}
+            type="button"
           >
             {isCollapsed ? 'Open me!' : 'Close me!'}
           </Button>
           <Collapsible collapsed={isCollapsed}>
             <TableExample />
           </Collapsible>
-          <Button onPress={completeStep3} disabled={stepReadyToComplete !== currentStep}>
+          <Button disabled={stepReadyToComplete !== currentStep} onPress={completeStep3}>
             Looks like you found the right spot
           </Button>
         </VStack>
       )}
       {/* END OF CHALLENGE THREE */}
 
-      <Modal visible={isModalOpen} onRequestClose={handleModalClose}>
+      <Modal onRequestClose={handleModalClose} visible={isModalOpen}>
         {currentStep === 2 && (
           <div aria-live="assertive">
             <ModalHeader title="Congrats! You made it through the first challenge!" />
@@ -243,7 +243,7 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
               To complete the next step, ensure you still have VoiceOver on. Close the modal and
               move focus down to the next visually hidden experience. You’ll find a skip link
               especially helpful 😉
-              <HStack gap={1} alignItems="center" spacingTop={3} spacingBottom={1}>
+              <HStack alignItems="center" gap={1} spacingBottom={1} spacingTop={3}>
                 <Icon name="info" size="s" />
                 <TextLabel1 as="label">
                   Tips for using our sparkline component or price chart via the keyboard.
@@ -281,11 +281,11 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
                 Isn’t it frustrating when things don’t work as they’re expected to? Having properly
                 labeled elements is so crucial for someone who can’t see the screen.
               </TextBody>
-              <VStack gap={1} alignItems="center">
+              <VStack alignItems="center" gap={1}>
                 <RemoteImage
+                  height={244}
                   source="https://assets.poap.xyz/2746f816-2adb-4d24-8b0d-95a8c24a53dd.gif"
                   width={244}
-                  height={244}
                 />
                 <Button onPress={completeStep3} to="https://poap.website/gaad-2k-23">
                   Claim your POAP!

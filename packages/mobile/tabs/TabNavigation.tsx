@@ -71,15 +71,15 @@ export const TabNavigation = memo(
                 return (
                   <View key={id} onLayout={getPressableLayoutHandler(id)}>
                     <PressableOpacity
-                      accessibilityLabel={accessibilityLabel}
-                      accessibilityHint={accessibilityLabel}
-                      onPress={getTabPressHandler({ id, onPress })}
                       transparentWhilePressed
-                      testID={tabLabelTestID}
-                      accessibilityState={{ selected: id === value }}
+                      accessibilityHint={accessibilityLabel}
+                      accessibilityLabel={accessibilityLabel}
                       accessibilityRole="tab"
+                      accessibilityState={{ selected: id === value }}
+                      onPress={getTabPressHandler({ id, onPress })}
+                      testID={tabLabelTestID}
                     >
-                      <TabLabel active={id === value} variant={variant} count={count} max={max}>
+                      <TabLabel active={id === value} count={count} max={max} variant={variant}>
                         {label}
                       </TabLabel>
                     </PressableOpacity>
@@ -92,23 +92,23 @@ export const TabNavigation = memo(
 
       return (
         <Box
-          testID={testID}
+          ref={forwardedRef}
+          background={background}
           overflow={
             isScrollContentOverflowing && isScrollContentOffscreenRight ? 'gradient' : 'visible'
           }
-          ref={forwardedRef}
-          background={background}
+          testID={testID}
           {...rest}
         >
           <ScrollView
+            ref={scrollRef}
             horizontal
+            accessibilityRole="tablist"
+            onContentSizeChange={handleScrollContentSizeChange}
+            onLayout={handleScrollContainerLayout}
+            onScroll={handleScroll}
             scrollEventThrottle={1}
             showsHorizontalScrollIndicator={false}
-            ref={scrollRef}
-            onScroll={handleScroll}
-            onLayout={handleScrollContainerLayout}
-            onContentSizeChange={handleScrollContentSizeChange}
-            accessibilityRole="tablist"
           >
             <VStack>
               {shouldOverrideScale ? (
@@ -121,8 +121,8 @@ export const TabNavigation = memo(
               {isPrimary && (
                 <TabIndicator
                   background={background}
-                  x={activeTabLayout.x}
                   width={activeTabLayout.width}
+                  x={activeTabLayout.x}
                 />
               )}
             </VStack>

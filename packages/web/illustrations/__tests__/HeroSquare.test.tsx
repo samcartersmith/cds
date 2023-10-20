@@ -48,7 +48,7 @@ describe('HeroSquares have correct url and alt tag for light mode', () => {
 
 describe('can set alt', () => {
   it('for a HeroSquare', () => {
-    render(<HeroSquare name="add2Fa" testID="HeroSquare-example" alt={TEST_ILLO_ALT} />);
+    render(<HeroSquare alt={TEST_ILLO_ALT} name="add2Fa" testID="HeroSquare-example" />);
 
     expect(screen.getByTestId('HeroSquare-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
   });

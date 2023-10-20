@@ -49,7 +49,7 @@ const LandingPage = memo(function LandingPage({ title, categories }: LandingPage
 
   if (!pageData?.content?.fields) {
     return (
-      <Group position="relative" divider={HorizontalDivider} dangerouslySetClassName="landing-page">
+      <Group dangerouslySetClassName="landing-page" divider={HorizontalDivider} position="relative">
         <h1 className="hero-title">{title}</h1>
         <LandingPageAnnouncementsFallback />
         <LandingPageCategories categories={categories} />
@@ -61,8 +61,8 @@ const LandingPage = memo(function LandingPage({ title, categories }: LandingPage
   const { announcements, focusAreas } = pageData.content.fields;
 
   return (
-    <CMSProvider spaceId={space} locale="en" onError={handleError} components={componentsMap}>
-      <Group position="relative" divider={HorizontalDivider} dangerouslySetClassName="landing-page">
+    <CMSProvider components={componentsMap} locale="en" onError={handleError} spaceId={space}>
+      <Group dangerouslySetClassName="landing-page" divider={HorizontalDivider} position="relative">
         <h1 className="hero-title">{title}</h1>
         <LandingPageAnnouncements announcements={announcements} />
         <LandingPageCategories categories={categories} />

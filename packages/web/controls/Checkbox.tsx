@@ -26,20 +26,20 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
 
   return (
     <Control
-      type="checkbox"
-      label={children}
-      aria-label={props.accessibilityLabel}
       ref={ref}
+      aria-label={props.accessibilityLabel}
+      label={children}
+      type="checkbox"
       {...props}
     >
       <motion.div
-        role="presentation"
         className={cx(checkbox, focusRing)}
         data-filled={checked || indeterminate}
+        role="presentation"
         {...outerContainerMotionProps}
       >
         <motion.div {...innerContainerMotionProps}>
-          <Icon name={checked ? 'checkmark' : 'minus'} size="s" color="primaryForeground" />
+          <Icon color="primaryForeground" name={checked ? 'checkmark' : 'minus'} size="s" />
         </motion.div>
       </motion.div>
     </Control>

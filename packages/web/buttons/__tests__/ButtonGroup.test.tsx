@@ -31,7 +31,7 @@ describe('ButtonGroup.test', () => {
   });
   it('renders vertical when direction is vertical list', () => {
     render(
-      <ButtonGroup direction="vertical" accessibilityLabel="Group">
+      <ButtonGroup accessibilityLabel="Group" direction="vertical">
         <Button>Save</Button>
         <Button variant="secondary">Cancel</Button>
       </ButtonGroup>,

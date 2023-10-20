@@ -87,7 +87,7 @@ const KBarResultItem = memo(
         }
 
         if (action.image) {
-          return <RemoteImage size="xl" alt={action.name} source={action.image} />;
+          return <RemoteImage alt={action.name} size="xl" source={action.image} />;
         }
         return undefined;
       }, [action.image, action.name, action.pictogram, action.spotSquare]);
@@ -95,14 +95,14 @@ const KBarResultItem = memo(
       return (
         <KBarListCell
           ref={ref}
-          title={title}
+          compact
+          accessory={active ? '↩' : undefined}
+          action={shortcut}
           description={action.subtitle}
           media={media}
-          action={shortcut}
-          selected={active}
-          accessory={active ? '↩' : undefined}
-          compact
           outerSpacing={cellOuterSpacing}
+          selected={active}
+          title={title}
         />
       );
     },

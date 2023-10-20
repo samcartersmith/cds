@@ -160,11 +160,11 @@ const SparklineInteractiveHeaderStable = memo(
           </TextSubHead>
           {!!defaultSubHead.accessoryText && (
             <TextSubHead
+              aria-hidden
               tabularNumbers
               as="span"
               color="foregroundMuted"
               spacingStart={1}
-              aria-hidden
             >
               <span ref={subHeadAccessoryRef}>{defaultSubHead.accessoryText}</span>
             </TextSubHead>
@@ -174,7 +174,7 @@ const SparklineInteractiveHeaderStable = memo(
 
       const TextTitle = createText(compact ? 'title1' : 'display3');
       const title = (
-        <VStack spacing={0} alignItems="baseline">
+        <VStack alignItems="baseline" spacing={0}>
           <TextTitle tabularNumbers as="div" color="foreground" spacingEnd={1}>
             <span ref={titleRef}>{defaultTitle}</span>
           </TextTitle>
@@ -184,7 +184,7 @@ const SparklineInteractiveHeaderStable = memo(
 
       return (
         <>
-          <div data-testid={testID} style={{ width: '100%' }} aria-hidden>
+          <div aria-hidden data-testid={testID} style={{ width: '100%' }}>
             {labelNode ?? label}
             {title}
           </div>
@@ -199,17 +199,17 @@ export const SparklineInteractiveHeader = memo(
     ({ defaultLabel, defaultTitle, defaultSubHead, testID, labelNode, compact }, ref) => {
       return (
         <SparklineInteractiveHeaderStable
-          ref={ref}
           // All updates after initial load should be handled imperatively
           // via update function in forwarded ref to prevent overriding
           // values unexpectedly. This is why we use ref here so that the
           // default value is stable and never updates on re-renders
-          defaultLabel={useRef(defaultLabel).current}
-          defaultTitle={useRef(defaultTitle).current}
-          defaultSubHead={useRef(defaultSubHead).current}
-          testID={testID}
-          labelNode={labelNode}
+          ref={ref}
           compact={compact}
+          defaultLabel={useRef(defaultLabel).current}
+          defaultSubHead={useRef(defaultSubHead).current}
+          defaultTitle={useRef(defaultTitle).current}
+          labelNode={labelNode}
+          testID={testID}
         />
       );
     },

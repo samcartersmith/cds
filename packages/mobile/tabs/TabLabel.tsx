@@ -68,7 +68,7 @@ export const TabLabel = memo(
           <View>
             <TextElement color={color} {...props} dangerouslySetStyle={dynamicStyles} />
             {/* This element is used to ensure the element width doesn't change when we change font-weight */}
-            <TextTitle3 dangerouslySetStyle={styles.hiddenElement} aria-hidden {...props} />
+            <TextTitle3 aria-hidden dangerouslySetStyle={styles.hiddenElement} {...props} />
           </View>
         ) : (
           <TextElement color={color} {...props} dangerouslySetStyle={dynamicStyles} />

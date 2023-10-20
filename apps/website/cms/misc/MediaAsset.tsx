@@ -23,7 +23,7 @@ export const MediaAsset = memo(function MediaAsset({
   const { file, description, title } = source.fields;
   return (
     <VStack gap={1}>
-      <RemoteImage source={file.url} alt={description ?? title} width={width} height={height} />
+      <RemoteImage alt={description ?? title} height={height} source={file.url} width={width} />
       {description && (
         <TextBody as="p" color="foregroundMuted">
           {description}

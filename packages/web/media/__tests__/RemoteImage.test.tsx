@@ -23,7 +23,7 @@ describe('RemoteImage', () => {
   });
 
   it('handles a custom alt attribute', async () => {
-    render(<RemoteImage source={src} testID={TEST_ID} alt={TEST_ALT} />);
+    render(<RemoteImage alt={TEST_ALT} source={src} testID={TEST_ID} />);
     const image = screen.getByTestId(TEST_ID);
     expect(image).toBeTruthy();
 

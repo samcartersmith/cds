@@ -57,9 +57,9 @@ export function createCardMedia({ SpotSquare, Pictogram, CardRemoteImage }: Crea
     if (props.type === 'image') {
       return (
         <CardRemoteImage
+          alt={props.alt ?? ''}
           src={props.src}
           testID={props.testID}
-          alt={props.alt ?? ''}
           {...imageProps[props.placement]}
         />
       );

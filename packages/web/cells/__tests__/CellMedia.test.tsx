@@ -14,53 +14,53 @@ describe('CellMedia', () => {
     ) as jest.SpyInstance<number, [CellScaleDensity]>;
   });
   it('icon passes accessibility', async () => {
-    expect(await renderA11y(<CellMedia type="icon" name="arrowUp" />)).toHaveNoViolations();
+    expect(await renderA11y(<CellMedia name="arrowUp" type="icon" />)).toHaveNoViolations();
   });
 
   it('asset passes accessibility', async () => {
     expect(
-      await renderA11y(<CellMedia type="asset" source="some/image/path" />),
+      await renderA11y(<CellMedia source="some/image/path" type="asset" />),
     ).toHaveNoViolations();
   });
 
   it('avatar passes accessibility', async () => {
     expect(
-      await renderA11y(<CellMedia type="avatar" source="some/image/path" />),
+      await renderA11y(<CellMedia source="some/image/path" type="avatar" />),
     ).toHaveNoViolations();
   });
 
   it('image passes accessibility', async () => {
     expect(
-      await renderA11y(<CellMedia type="image" source="some/image/path" />),
+      await renderA11y(<CellMedia source="some/image/path" type="image" />),
     ).toHaveNoViolations();
   });
 
   it('pictogram passes accessibility', async () => {
     expect(
-      await renderA11y(<CellMedia type="pictogram" illustration={<Pictogram name="2fa" />} />),
+      await renderA11y(<CellMedia illustration={<Pictogram name="2fa" />} type="pictogram" />),
     ).toHaveNoViolations();
   });
 
   it('icon sets an accessible label', () => {
-    render(<CellMedia type="icon" name="arrowUp" accessibilityLabel="Icon label" />);
+    render(<CellMedia accessibilityLabel="Icon label" name="arrowUp" type="icon" />);
 
     expect(screen.getByLabelText('Icon label')).toBeVisible();
   });
 
   it('asset sets an accessible label', () => {
-    render(<CellMedia type="asset" source="some/image/path" accessibilityLabel="Asset label" />);
+    render(<CellMedia accessibilityLabel="Asset label" source="some/image/path" type="asset" />);
 
     expect(screen.getByAltText('Asset label')).toBeVisible();
   });
 
   it('avatar sets an accessible label', () => {
-    render(<CellMedia type="avatar" source="some/image/path" accessibilityLabel="Avatar label" />);
+    render(<CellMedia accessibilityLabel="Avatar label" source="some/image/path" type="avatar" />);
 
     expect(screen.getByAltText('Avatar label')).toBeVisible();
   });
 
   it('image sets an accessible label', () => {
-    render(<CellMedia type="image" source="some/image/path" accessibilityLabel="Image label" />);
+    render(<CellMedia accessibilityLabel="Image label" source="some/image/path" type="image" />);
 
     expect(screen.getByAltText('Image label')).toBeVisible();
   });
@@ -68,9 +68,9 @@ describe('CellMedia', () => {
   it('pictogram sets an accessible label on CellMedia', () => {
     render(
       <CellMedia
-        type="pictogram"
-        illustration={<Pictogram name="2fa" />}
         accessibilityLabel="Pictogram label"
+        illustration={<Pictogram name="2fa" />}
+        type="pictogram"
       />,
     );
 
@@ -79,7 +79,7 @@ describe('CellMedia', () => {
 
   it('pictogram sets an accessible label on Pictogram', () => {
     render(
-      <CellMedia type="pictogram" illustration={<Pictogram name="2fa" alt="Pictogram label" />} />,
+      <CellMedia illustration={<Pictogram alt="Pictogram label" name="2fa" />} type="pictogram" />,
     );
 
     expect(screen.getByAltText('Pictogram label')).toBeVisible();
@@ -88,9 +88,9 @@ describe('CellMedia', () => {
   it('pictogram CellMedia accessible label overrides Pictogram accessible label', () => {
     render(
       <CellMedia
-        type="pictogram"
-        illustration={<Pictogram name="2fa" alt="Pictogram label" />}
         accessibilityLabel="CellMedia label"
+        illustration={<Pictogram alt="Pictogram label" name="2fa" />}
+        type="pictogram"
       />,
     );
 
@@ -98,13 +98,13 @@ describe('CellMedia', () => {
   });
 
   it('renders an icon', () => {
-    render(<CellMedia type="icon" name="arrowUp" />);
+    render(<CellMedia name="arrowUp" type="icon" />);
 
     expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toBeVisible();
   });
 
   it('renders an asset', () => {
-    render(<CellMedia type="asset" source="some/image/path" />);
+    render(<CellMedia source="some/image/path" type="asset" />);
     const image = screen.getByRole('img');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
@@ -112,7 +112,7 @@ describe('CellMedia', () => {
   });
 
   it('renders an avatar', () => {
-    render(<CellMedia type="avatar" source="some/image/path" />);
+    render(<CellMedia source="some/image/path" type="avatar" />);
     const image = screen.getByRole('img');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
@@ -120,7 +120,7 @@ describe('CellMedia', () => {
   });
 
   it('renders an image', () => {
-    render(<CellMedia type="image" source="some/image/path" />);
+    render(<CellMedia source="some/image/path" type="image" />);
     const image = screen.getByRole('img');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
@@ -128,20 +128,20 @@ describe('CellMedia', () => {
   });
 
   it('renders a pictogram', () => {
-    render(<CellMedia type="pictogram" illustration={<Pictogram name="2fa" />} />);
+    render(<CellMedia illustration={<Pictogram name="2fa" />} type="pictogram" />);
 
     expect(screen.getByRole('img')).toHaveAttribute('src', expect.stringContaining('2fa'));
   });
 
   describe('at normal scale', () => {
     it('sets icon size', () => {
-      render(<CellMedia type="icon" name="arrowUp" />);
+      render(<CellMedia name="arrowUp" type="icon" />);
 
       expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toHaveStyle({ fontSize: '16px' });
     });
 
     it('sets asset size', () => {
-      render(<CellMedia type="asset" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="asset" />);
       const image = screen.getByRole('img');
 
       expect(image).toHaveAttribute('width', '32');
@@ -149,7 +149,7 @@ describe('CellMedia', () => {
     });
 
     it('sets avatar size', () => {
-      render(<CellMedia type="avatar" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="avatar" />);
       const image = screen.getByRole('img');
 
       expect(image).toHaveAttribute('width', '32');
@@ -157,7 +157,7 @@ describe('CellMedia', () => {
     });
 
     it('sets image size', () => {
-      render(<CellMedia type="image" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="image" />);
       const image = screen.getByRole('img');
 
       expect(image).toHaveAttribute('width', '48');
@@ -165,7 +165,7 @@ describe('CellMedia', () => {
     });
 
     it('sets pictogram size', () => {
-      render(<CellMedia type="pictogram" illustration={<Pictogram name="2fa" />} />);
+      render(<CellMedia illustration={<Pictogram name="2fa" />} type="pictogram" />);
       const image = screen.getByRole('img');
 
       expect(image).toHaveAttribute('width', '48');
@@ -175,8 +175,8 @@ describe('CellMedia', () => {
     it('sets pictogram size and cannot be overridden by Pictogram props', () => {
       render(
         <CellMedia
+          illustration={<Pictogram dimension="64x64" name="2fa" scaleMultiplier={2} />}
           type="pictogram"
-          illustration={<Pictogram name="2fa" dimension="64x64" scaleMultiplier={2} />}
         />,
       );
       const image = screen.getByRole('img');
@@ -196,13 +196,13 @@ describe('CellMedia', () => {
     });
 
     it('sets icon size', () => {
-      render(<CellMedia type="icon" name="arrowUp" />);
+      render(<CellMedia name="arrowUp" type="icon" />);
 
       expect(screen.getByText(glyphMap['ui-arrowUp-12'])).toHaveStyle({ fontSize: '12px' });
     });
 
     it('sets asset size', () => {
-      render(<CellMedia type="asset" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="asset" />);
       const image = screen.getByRole('img');
 
       expect(image).toHaveAttribute('width', '24');
@@ -210,7 +210,7 @@ describe('CellMedia', () => {
     });
 
     it('sets avatar size', () => {
-      render(<CellMedia type="avatar" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="avatar" />);
       const image = screen.getByRole('img');
 
       expect(image).toHaveAttribute('width', '24');
@@ -218,7 +218,7 @@ describe('CellMedia', () => {
     });
 
     it('sets image size', () => {
-      render(<CellMedia type="image" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="image" />);
       const image = screen.getByRole('img');
 
       expect(image).toHaveAttribute('width', '40');
@@ -226,7 +226,7 @@ describe('CellMedia', () => {
     });
 
     it('sets pictogram size', () => {
-      render(<CellMedia type="pictogram" illustration={<Pictogram name="2fa" />} />);
+      render(<CellMedia illustration={<Pictogram name="2fa" />} type="pictogram" />);
       const image = screen.getByRole('img');
 
       expect(image).toHaveAttribute('width', '40.032');
@@ -236,8 +236,8 @@ describe('CellMedia', () => {
     it('sets pictogram size and cannot be overridden by Pictogram props', () => {
       render(
         <CellMedia
+          illustration={<Pictogram dimension="64x64" name="2fa" scaleMultiplier={2} />}
           type="pictogram"
-          illustration={<Pictogram name="2fa" dimension="64x64" scaleMultiplier={2} />}
         />,
       );
       const image = screen.getByRole('img');

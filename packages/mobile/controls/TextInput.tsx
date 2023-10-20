@@ -138,48 +138,71 @@ export const TextInput = memo(
 
       return (
         <InputStack
-          width={width}
-          borderRadius={borderRadius}
-          disabled={disabled}
-          variant={focusedVariant}
-          borderStyle={borderUnfocusedStyle}
           borderFocusedStyle={borderFocusedStyle}
-          focused={focused}
+          borderRadius={borderRadius}
+          borderStyle={borderUnfocusedStyle}
+          disabled={disabled}
           enableColorSurge={enableColorSurge}
+          endNode={
+            (suffix !== '' || !!end) && (
+              <HStack
+                alignItems="center"
+                gap={2}
+                justifyContent="center"
+                testID={testIDMap?.end ?? ''}
+              >
+                <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
+                  <HStack>
+                    {suffix !== '' && (
+                      <TextLabel1 color="foregroundMuted" spacingEnd={2}>
+                        {suffix}
+                      </TextLabel1>
+                    )}
+                    {!!end && (
+                      <TextInputFocusVariantContext.Provider value={focusedVariant}>
+                        {end}
+                      </TextInputFocusVariantContext.Provider>
+                    )}
+                  </HStack>
+                </Pressable>
+              </HStack>
+            )
+          }
+          focused={focused}
+          helperTextNode={
+            !!helperText && (
+              <HelperText align={align} color={variant} testID={testIDMap?.helperText ?? ''}>
+                {helperText}
+              </HelperText>
+            )
+          }
           inputNode={
             <NativeInput
-              containerSpacing={start ? startSpacing : {}}
-              align={align}
               ref={refs}
-              accessibilityLabel={accessibilityLabel}
               accessibilityHint={accessibilityLabel}
-              disabled={disabled}
+              accessibilityLabel={accessibilityLabel}
+              align={align}
               compact={compact}
+              containerSpacing={start ? startSpacing : {}}
+              disabled={disabled}
               testID={testID}
               {...editableInputAddonProps}
               {...fontScaleProps}
             />
-          }
-          helperTextNode={
-            !!helperText && (
-              <HelperText testID={testIDMap?.helperText ?? ''} color={variant} align={align}>
-                {helperText}
-              </HelperText>
-            )
           }
           labelNode={
             !compact && !!label && <InputLabel testID={testIDMap?.label ?? ''}>{label}</InputLabel>
           }
           startNode={
             ((compact && !!label) || !!start) && (
-              <Box justifyContent="center" alignItems="center" testID={testIDMap?.start}>
+              <Box alignItems="center" justifyContent="center" testID={testIDMap?.start}>
                 <Pressable
                   accessibilityElementsHidden={!startIconA11yLabel}
-                  importantForAccessibility={startIconA11yLabel ? 'auto' : 'no'}
-                  accessibilityLabel={startIconA11yLabel}
                   accessibilityHint={startIconA11yLabel}
+                  accessibilityLabel={startIconA11yLabel}
                   accessibilityRole="button"
                   disabled={disabled}
+                  importantForAccessibility={startIconA11yLabel ? 'auto' : 'no'}
                   onPress={handleNodePress}
                 >
                   <HStack>
@@ -194,31 +217,8 @@ export const TextInput = memo(
               </Box>
             )
           }
-          endNode={
-            (suffix !== '' || !!end) && (
-              <HStack
-                justifyContent="center"
-                alignItems="center"
-                gap={2}
-                testID={testIDMap?.end ?? ''}
-              >
-                <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
-                  <HStack>
-                    {suffix !== '' && (
-                      <TextLabel1 spacingEnd={2} color="foregroundMuted">
-                        {suffix}
-                      </TextLabel1>
-                    )}
-                    {!!end && (
-                      <TextInputFocusVariantContext.Provider value={focusedVariant}>
-                        {end}
-                      </TextInputFocusVariantContext.Provider>
-                    )}
-                  </HStack>
-                </Pressable>
-              </HStack>
-            )
-          }
+          variant={focusedVariant}
+          width={width}
         />
       );
     },

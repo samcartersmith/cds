@@ -15,7 +15,7 @@ export const Tray = memo(
       ({ handleClose }: RenderTrayProps) => (
         <VStack spacingTop={title ? 0 : 2}>
           {title ? (
-            <HStack spacingHorizontal={3} spacingTop={3} spacingBottom={2} alignItems="center">
+            <HStack alignItems="center" spacingBottom={2} spacingHorizontal={3} spacingTop={3}>
               <TextTitle3>{title}</TextTitle3>
             </HStack>
           ) : null}

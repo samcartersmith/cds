@@ -39,7 +39,7 @@ export const Admonition = ({
     <VStack spacingVertical={1}>
       <VStack borderRadius="roundedLarge" dangerouslySetBackground={backgroundColor} spacing={3}>
         <HStack gap={3}>
-          <Icon name={iconMap[type]} size="s" spacingTop={1} color="foreground" />
+          <Icon color="foreground" name={iconMap[type]} size="s" spacingTop={1} />
           {title ? <TextTitle4 as="h4">{title}</TextTitle4> : null}
         </HStack>
         <HStack spacingStart={5}>

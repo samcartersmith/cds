@@ -31,11 +31,11 @@ export function ExamplesListScreen() {
 
       return (
         <ListCell
-          title={item}
-          accessory="arrow"
-          onPress={handlePress}
-          innerSpacing={innerSpacingConfig}
           compact
+          accessory="arrow"
+          innerSpacing={innerSpacingConfig}
+          onPress={handlePress}
+          title={item}
         />
       );
     },
@@ -54,11 +54,11 @@ export function ExamplesListScreen() {
   return (
     <Box background flexGrow={1} testID="mobile-playground-home-screen">
       <FlatList
-        testID="mobile-playground-home-flatlist"
-        data={data}
-        renderItem={renderItem}
         ItemSeparatorComponent={null}
+        data={data}
         initialNumToRender={14}
+        renderItem={renderItem}
+        testID="mobile-playground-home-flatlist"
       />
     </Box>
   );

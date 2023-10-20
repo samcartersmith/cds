@@ -70,19 +70,19 @@ export const SelectOption = memo(function SelectOption({
   return (
     <Cell
       {...selectCellMobileSpacingConfig}
-      borderRadius="roundedNone"
-      minHeight={minHeight}
-      maxHeight={multiline ? undefined : maxHeight}
-      accessory={selected ? <CellAccessory type="selected" /> : undefined}
-      selected={selected}
-      accessibilityLabel={accessibilityProps.accessibilityLabel}
       accessibilityHint={accessibilityProps.accessibilityHint}
+      accessibilityLabel={accessibilityProps.accessibilityLabel}
+      accessory={selected ? <CellAccessory type="selected" /> : undefined}
+      borderRadius="roundedNone"
+      maxHeight={multiline ? undefined : maxHeight}
+      minHeight={minHeight}
       onPress={handlePress}
+      selected={selected}
       {...props}
     >
       <VStack justifyContent="center">
         {!!title && (
-          <TextHeadline numberOfLines={description ? 1 : 2} ellipsize="tail">
+          <TextHeadline ellipsize="tail" numberOfLines={description ? 1 : 2}>
             {title}
           </TextHeadline>
         )}
@@ -90,9 +90,9 @@ export const SelectOption = memo(function SelectOption({
         {!!description && (
           <TextBody
             color="foregroundMuted"
+            ellipsize={multiline ? undefined : 'tail'}
             // eslint-disable-next-line no-nested-ternary
             numberOfLines={multiline ? undefined : title ? 1 : 2}
-            ellipsize={multiline ? undefined : 'tail'}
           >
             {description}
           </TextBody>

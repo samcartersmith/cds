@@ -14,11 +14,11 @@ export const SparklinePath = memo(
       <path
         ref={forwardedRef}
         d={path}
-        stroke={stroke}
-        strokeWidth={borderWidth.sparkline}
-        strokeLinejoin="round"
-        strokeLinecap="round"
         fill="transparent"
+        stroke={stroke}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={borderWidth.sparkline}
       />
     );
   }),

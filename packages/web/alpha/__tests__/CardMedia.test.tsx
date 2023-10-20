@@ -9,11 +9,11 @@ describe('CardMedia.test', () => {
   it('renders spotSquare with alt', () => {
     render(
       <CardMedia
+        alt={TEST_ALT}
         name="accessToAdvancedCharts"
-        type="spotSquare"
         placement="above"
         testID={TEST_ID}
-        alt={TEST_ALT}
+        type="spotSquare"
       />,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('alt', TEST_ALT);
@@ -21,21 +21,21 @@ describe('CardMedia.test', () => {
 
   it('renders pictogram with alt', () => {
     render(
-      <CardMedia name="2fa" type="pictogram" placement="above" testID={TEST_ID} alt={TEST_ALT} />,
+      <CardMedia alt={TEST_ALT} name="2fa" placement="above" testID={TEST_ID} type="pictogram" />,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('alt', TEST_ALT);
   });
 
   it('renders spot rectangle with alt', () => {
     render(
-      <CardMedia src="fake-url" type="image" placement="above" testID={TEST_ID} alt={TEST_ALT} />,
+      <CardMedia alt={TEST_ALT} placement="above" src="fake-url" testID={TEST_ID} type="image" />,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('alt', TEST_ALT);
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('src', 'fake-url');
   });
 
   it('reverts to empty string if alt is not set via props', () => {
-    render(<CardMedia name="2fa" type="pictogram" placement="above" testID={TEST_ID} />);
+    render(<CardMedia name="2fa" placement="above" testID={TEST_ID} type="pictogram" />);
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('alt', '');
   });
 });

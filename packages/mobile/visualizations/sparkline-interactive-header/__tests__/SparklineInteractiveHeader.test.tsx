@@ -13,9 +13,9 @@ describe('SparklineInteractiveHeader.test', () => {
   it('renders text', () => {
     render(
       <SparklineInteractiveHeader
-        defaultTitle="test title"
         defaultLabel="test label"
         defaultSubHead={defaultSubHead}
+        defaultTitle="test title"
       />,
     );
 
@@ -35,7 +35,7 @@ describe('SparklineInteractiveHeader.test', () => {
 
   it('renders without default label', () => {
     render(
-      <SparklineInteractiveHeader defaultTitle="test title" defaultSubHead={defaultSubHead} />,
+      <SparklineInteractiveHeader defaultSubHead={defaultSubHead} defaultTitle="test title" />,
     );
 
     expect(screen.getByTestId('SparklineInteractiveHeaderTitle').props.defaultValue).toBe(
@@ -50,7 +50,7 @@ describe('SparklineInteractiveHeader.test', () => {
   });
 
   it('renders without default subhead', () => {
-    render(<SparklineInteractiveHeader defaultTitle="test title" defaultLabel="test label" />);
+    render(<SparklineInteractiveHeader defaultLabel="test label" defaultTitle="test title" />);
 
     expect(screen.getByTestId('SparklineInteractiveHeaderTitle').props.defaultValue).toBe(
       'test title',

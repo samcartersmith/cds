@@ -62,26 +62,26 @@ const ProgressBarFloatLabel = memo(
 
     return (
       <Box
-        onLayout={onLayout}
-        testID="cds-progress-bar-float-label-container"
         flexWrap="nowrap"
+        onLayout={onLayout}
         spacingBottom={labelPlacement === 'above' ? 1 : 0}
         spacingTop={labelPlacement === 'below' ? 1 : 0}
+        testID="cds-progress-bar-float-label-container"
       >
         <Box
+          animated
+          alignSelf="flex-start"
+          dangerouslySetStyle={progressStyle}
           flexGrow={0}
           flexShrink={0}
-          testID="cds-progress-bar-float-label"
           onLayout={handleTextLayout}
-          animated
-          dangerouslySetStyle={progressStyle}
-          alignSelf="flex-start"
+          testID="cds-progress-bar-float-label"
         >
           <ProgressTextLabel
-            value={labelNum}
-            renderLabel={renderLabel}
-            disabled={disabled}
             color="foregroundMuted"
+            disabled={disabled}
+            renderLabel={renderLabel}
+            value={labelNum}
           />
         </Box>
       </Box>
@@ -94,10 +94,10 @@ export const ProgressBarWithFloatLabel: React.FC<
 > = memo(({ label, labelPlacement = 'above', progress, disabled, children, testID }) => {
   const progressBarFloatLabel = (
     <ProgressBarFloatLabel
-      label={label}
-      progress={progress}
       disabled={disabled}
+      label={label}
       labelPlacement={labelPlacement}
+      progress={progress}
     />
   );
 

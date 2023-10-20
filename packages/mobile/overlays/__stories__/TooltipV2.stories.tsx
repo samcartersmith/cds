@@ -36,8 +36,8 @@ const ToolTipWithA11y = ({ tooltipText, yShiftByStatusBarHeight }: Omit<ContentT
   return (
     <Tooltip
       content={tooltipText}
-      yShiftByStatusBarHeight={yShiftByStatusBarHeight}
       onCloseTooltip={handleClose}
+      yShiftByStatusBarHeight={yShiftByStatusBarHeight}
     >
       <View ref={triggerRef}>
         <Icon name="info" size="s" />
@@ -49,7 +49,7 @@ const ToolTipWithA11y = ({ tooltipText, yShiftByStatusBarHeight }: Omit<ContentT
 const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) => {
   return (
     <Example title={title}>
-      <VStack gap={8} background="backgroundAlternate" spacingVertical={2} height={800}>
+      <VStack background="backgroundAlternate" gap={8} height={800} spacingVertical={2}>
         <HStack justifyContent="space-around">
           <Tooltip content={tooltipText} yShiftByStatusBarHeight={yShiftByStatusBarHeight}>
             <TextLabel2>{topTextSubject}</TextLabel2>
@@ -78,22 +78,22 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
         <HStack justifyContent="space-around">
           <Tooltip
             content={tooltipText}
-            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
             placement="bottom"
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
             <TextLabel2>{bottomTextSubject}</TextLabel2>
           </Tooltip>
           <Tooltip
             content={tooltipText}
-            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
             placement="bottom"
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
             <TextLabel2>{bottomTextSubject}</TextLabel2>
           </Tooltip>
           <Tooltip
             content={tooltipText}
-            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
             placement="bottom"
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
             <TextLabel2>{bottomTextSubject}</TextLabel2>
           </Tooltip>
@@ -101,22 +101,22 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
         <HStack justifyContent="space-evenly">
           <Tooltip
             content={tooltipText}
-            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
             placement="bottom"
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
             <Icon name="info" size="s" />
           </Tooltip>
           <Tooltip
             content={tooltipText}
-            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
             placement="bottom"
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
             <Icon name="info" size="s" />
           </Tooltip>
           <Tooltip
             content={tooltipText}
-            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
             placement="bottom"
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
             <Icon name="info" size="s" />
           </Tooltip>
@@ -160,9 +160,9 @@ const CDSModalTest = () => {
   return (
     <>
       <Button onPress={toggleOn}>Open CDS Modal Test</Button>
-      <CDSModal visible={visible} onRequestClose={toggleOff}>
+      <CDSModal onRequestClose={toggleOff} visible={visible}>
         {({ closeModal }) => (
-          <ModalContent openModalText="Close CDS Modal Test" closeModal={closeModal} />
+          <ModalContent closeModal={closeModal} openModalText="Close CDS Modal Test" />
         )}
       </CDSModal>
     </>
@@ -207,8 +207,8 @@ const RNModalTest = () => {
           <TextLabel2>{`yShiftByStatusBarHeight: ${yShiftByStatusBarHeight}`}</TextLabel2>
         </VStack>
         <ModalContent
-          openModalText="Close RN Modal Test"
           closeModal={toggleOff}
+          openModalText="Close RN Modal Test"
           yShiftByStatusBarHeight={yShiftByStatusBarHeight}
         />
       </RNModal>

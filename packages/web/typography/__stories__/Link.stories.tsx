@@ -16,14 +16,14 @@ export const Default = () => (
 );
 
 export const VariantBody = () => (
-  <Link variant="body" to="https://www.google.com/">
+  <Link to="https://www.google.com/" variant="body">
     Body
   </Link>
 );
 
 export const NegativeColor = () => (
   <div>
-    <Link variant="headline" to="https://www.google.com/" color="negative">
+    <Link color="negative" to="https://www.google.com/" variant="headline">
       Negative
     </Link>
   </div>
@@ -40,11 +40,11 @@ export const Underline = () => (
       As a button
     </Link>
     <br />
-    <Link underline variant="body" to="https://www.google.com/">
+    <Link underline to="https://www.google.com/" variant="body">
       Body
     </Link>
     <br />
-    <Link underline variant="headline" to="https://www.google.com/" color="negative">
+    <Link underline color="negative" to="https://www.google.com/" variant="headline">
       Negative
     </Link>
   </div>
@@ -80,7 +80,7 @@ export const DifferentTextStyle = () => (
   <div>
     <Type.TextBody as="span">
       Go here:{' '}
-      <Link variant="title3" to="https://www.coinbase.com">
+      <Link to="https://www.coinbase.com" variant="title3">
         Title3
       </Link>
     </Type.TextBody>
@@ -89,7 +89,7 @@ export const DifferentTextStyle = () => (
 
 export const OpenWindowInExistingTab = () => (
   <div>
-    <Link variant="title1" to="https://www.google.com/" openInNewWindow>
+    <Link openInNewWindow to="https://www.google.com/" variant="title1">
       Default
     </Link>
   </div>
@@ -97,7 +97,7 @@ export const OpenWindowInExistingTab = () => (
 
 export const SetsRelToNorefferer = () => (
   <div>
-    <Link variant="title2" to="https://www.google.com/" rel="noreferrer">
+    <Link rel="noreferrer" to="https://www.google.com/" variant="title2">
       Default
     </Link>
   </div>
@@ -105,7 +105,7 @@ export const SetsRelToNorefferer = () => (
 
 export const SetsRelToNoopener = () => (
   <div>
-    <Link variant="title3" to="https://www.google.com/" rel="noopener">
+    <Link rel="noopener" to="https://www.google.com/" variant="title3">
       Default
     </Link>
   </div>
@@ -113,7 +113,7 @@ export const SetsRelToNoopener = () => (
 
 export const OnClick = () => (
   <div>
-    <Link variant="headline" to="#tagname" onPress={onClick} rel="noopener">
+    <Link onPress={onClick} rel="noopener" to="#tagname" variant="headline">
       Link onClick
     </Link>
   </div>
@@ -126,11 +126,11 @@ export const RenderContainer = () => (
   <div>
     <Router>
       <Link
-        variant="body"
-        to="#tagname"
         color="primary"
         onPress={onClick}
         renderContainer={RenderContainerExample}
+        to="#tagname"
+        variant="body"
       >
         Test renderContainer
       </Link>
@@ -142,11 +142,11 @@ export const RenderContainerColor = () => (
   <div>
     <Router>
       <Link
-        variant="label1"
-        to="#tagname"
         color="negative"
         onPress={onClick}
         renderContainer={RenderContainerExample}
+        to="#tagname"
+        variant="label1"
       >
         Test renderContainer
       </Link>

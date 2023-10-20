@@ -18,10 +18,10 @@ describe('SpotSquare', () => {
   it('renders a SpotSquare with accessibilityHint and accessibilityLabel', () => {
     render(
       <SpotSquare
-        name="gifting"
-        testID={SPOT_SQUARE_TEST_ID}
         accessibilityHint="Accessibility Hint"
         accessibilityLabel="Accessibility Label"
+        name="gifting"
+        testID={SPOT_SQUARE_TEST_ID}
       />,
     );
     expect(screen.getByTestId(SPOT_SQUARE_TEST_ID)).toBeTruthy();
@@ -41,9 +41,9 @@ describe('SpotSquare', () => {
   it('renders a SpotSquare with accessibilityHint and no accessibilityLabel', () => {
     render(
       <SpotSquare
+        accessibilityHint="Accessibility Hint"
         name="gifting"
         testID={SPOT_SQUARE_TEST_ID}
-        accessibilityHint="Accessibility Hint"
       />,
     );
     expect(screen.getByTestId(SPOT_SQUARE_TEST_ID)).toBeTruthy();

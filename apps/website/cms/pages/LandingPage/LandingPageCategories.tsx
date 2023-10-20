@@ -17,7 +17,7 @@ const LandingPageCategories = memo(function LandingPageCategories({
 }: LandingPageCategoriesProps) {
   if (categories) {
     return (
-      <CardGroup divider={VerticalDivider} direction="horizontal" justifyContent="space-between">
+      <CardGroup direction="horizontal" divider={VerticalDivider} justifyContent="space-between">
         {categories.map((item) => (
           <LandingPageCategoryItem key={item.title} {...item} />
         ))}

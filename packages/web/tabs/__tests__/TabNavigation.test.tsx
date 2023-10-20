@@ -17,7 +17,7 @@ const tabs = [
 
 const MockTabNavigation = ({ testID }: { testID: string }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-  return <TabNavigation testID={testID} value={activeTab} tabs={tabs} onChange={setActiveTab} />;
+  return <TabNavigation onChange={setActiveTab} tabs={tabs} testID={testID} value={activeTab} />;
 };
 describe('TabNavigation', () => {
   const TEST_ID = 'mainTabNav';

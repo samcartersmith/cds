@@ -7,7 +7,6 @@ import { AnnouncementCard } from ':cds-website/components/AnnouncementCard';
 export const IconAnnouncement = function IconAnnouncement() {
   return (
     <AnnouncementCard
-      title="Icon Release Cycle"
       backgroundColor="primaryWash"
       body={
         <VStack>
@@ -45,6 +44,7 @@ export const IconAnnouncement = function IconAnnouncement() {
           </TextBody>
         </VStack>
       }
+      title="Icon Release Cycle"
     />
   );
 };

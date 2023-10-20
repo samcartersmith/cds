@@ -17,11 +17,11 @@ export const AddressForm = ({ ...props }) => {
     <form {...props} method="get">
       <VStack gap={gap}>
         <TextInput
+          helperText="Please enter your primary address."
           label="Street address"
           placeholder="4321 Jade Palace"
-          helperText="Please enter your primary address."
         />
-        <TextInput label="Unit #" aria-required="true" />
+        <TextInput aria-required="true" label="Unit #" />
         <HStack gap={gap}>
           <TextInput label="City/town" width="70%" />
           <TextInput label="State" width="30%" />

@@ -13,7 +13,7 @@ describe('ListCell', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <ListCell title="Title" description="Description" detail="Detail" subdetail="Subdetail" />,
+        <ListCell description="Description" detail="Detail" subdetail="Subdetail" title="Title" />,
       ),
     ).toHaveNoViolations();
   });
@@ -22,11 +22,11 @@ describe('ListCell', () => {
     expect(
       await renderA11y(
         <ListCell
-          onPress={noop}
-          title="Title"
           description="Description"
           detail="Detail"
+          onPress={noop}
           subdetail="Subdetail"
+          title="Title"
         />,
       ),
     ).toHaveNoViolations();
@@ -36,18 +36,18 @@ describe('ListCell', () => {
     expect(
       await renderA11y(
         <ListCell
-          to={URL}
-          title="Title"
           description="Description"
           detail="Detail"
           subdetail="Subdetail"
+          title="Title"
+          to={URL}
         />,
       ),
     ).toHaveNoViolations();
   });
 
   it('sets an accessibile label with accessibilityLabel when pressable', () => {
-    render(<ListCell onPress={noop} accessibilityLabel={A11Y_TEXT} />);
+    render(<ListCell accessibilityLabel={A11Y_TEXT} onPress={noop} />);
 
     expect(screen.getByRole('button')).toHaveAccessibleName(A11Y_TEXT);
   });
@@ -58,7 +58,7 @@ describe('ListCell', () => {
     render(
       <>
         <span id={labelId}>{A11Y_TEXT}</span>
-        <ListCell onPress={noop} accessibilityLabelledBy={labelId} />
+        <ListCell accessibilityLabelledBy={labelId} onPress={noop} />
       </>,
     );
 
@@ -71,7 +71,7 @@ describe('ListCell', () => {
     render(
       <>
         <span id={descriptionId}>{A11Y_TEXT}</span>
-        <ListCell onPress={noop} accessibilityHint={descriptionId} />
+        <ListCell accessibilityHint={descriptionId} onPress={noop} />
       </>,
     );
 
@@ -97,13 +97,13 @@ describe('ListCell', () => {
   });
 
   it('renders a subdetail', () => {
-    render(<ListCell title="Title" subdetail={<div data-testid="subdetail">Subdetail</div>} />);
+    render(<ListCell subdetail={<div data-testid="subdetail">Subdetail</div>} title="Title" />);
 
     expect(screen.getByTestId('subdetail')).toBeVisible();
   });
 
   it('renders media', () => {
-    render(<ListCell media={<CellMedia type="icon" name="add" testID="media" />} />);
+    render(<ListCell media={<CellMedia name="add" testID="media" type="icon" />} />);
 
     expect(screen.getByTestId('media')).toBeVisible();
   });
@@ -167,7 +167,7 @@ describe('ListCell', () => {
   });
 
   it('renders link when pressable callback is defined but href is set with a url', () => {
-    render(<ListCell onPress={noop} href={URL} />);
+    render(<ListCell href={URL} onPress={noop} />);
 
     const link = screen.getByRole('link');
 
@@ -178,7 +178,7 @@ describe('ListCell', () => {
   it('sets target on link when target is defined', () => {
     const target = '_blank';
 
-    render(<ListCell to={URL} target={target} />);
+    render(<ListCell target={target} to={URL} />);
 
     expect(screen.getByRole('link')).toHaveAttribute('target', target);
   });

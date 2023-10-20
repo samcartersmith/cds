@@ -8,12 +8,12 @@ export const LogoWordmark = memo(({ foreground }: LogoWordmarkParams) => {
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
       aria-labelledby="Coinbase logo"
-      viewBox={viewBox}
       className={iconStyles}
+      role="img"
+      viewBox={viewBox}
       width="100%"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <title>Coinbase logo</title>
       <path d={path} fill={color} />

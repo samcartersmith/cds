@@ -14,7 +14,7 @@ const LottieScreen = () => {
           {Object.entries(animations).map(([name, source]) => (
             <Box key={name} width={200}>
               <TextBody>{name}</TextBody>
-              <Lottie autoplay loop source={source} width={200} height={200} />
+              <Lottie autoplay loop height={200} source={source} width={200} />
             </Box>
           ))}
         </Box>

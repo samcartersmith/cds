@@ -47,9 +47,9 @@ export const ProgressIndicator = memo(
         ref={ref}
         animated
         alignItems="center"
+        dangerouslySetStyle={dangerouslySetStyle}
         justifyContent="center"
         testID={testID}
-        dangerouslySetStyle={dangerouslySetStyle}
         {...boxProps}
       >
         <Animated.View style={outerStyles}>

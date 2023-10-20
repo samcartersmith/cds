@@ -81,16 +81,16 @@ export function cardBuilder({
               <ListCell
                 // eslint-disable-next-line react/no-array-index-key
                 key={`card-cell-${i}`}
-                onPress={onPressConsole}
-                title="Title"
                 description="Description"
                 detail="$942,103"
-                subdetail="-2.34%"
-                variant="negative"
                 detailWidth={95}
-                intermediary={<CellMedia type="icon" name="chartLine" />}
-                media={<CellMedia type="image" source={assets.eth.imageUrl} />}
                 innerSpacing={innerSpacingConfig}
+                intermediary={<CellMedia name="chartLine" type="icon" />}
+                media={<CellMedia source={assets.eth.imageUrl} type="image" />}
+                onPress={onPressConsole}
+                subdetail="-2.34%"
+                title="Title"
+                variant="negative"
               />
             );
           })}
@@ -177,7 +177,7 @@ export function cardBuilder({
     <ThemeProvider>
       <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
         <Card {...pinnedSharedProps} pin="top">
-          <LoremIpsum title="Top" concise />
+          <LoremIpsum concise title="Top" />
         </Card>
       </Box>
     </ThemeProvider>
@@ -187,7 +187,7 @@ export function cardBuilder({
     <ThemeProvider>
       <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
         <Card {...pinnedSharedProps} pin="right">
-          <LoremIpsum title="Right" concise />
+          <LoremIpsum concise title="Right" />
         </Card>
       </Box>
     </ThemeProvider>
@@ -197,7 +197,7 @@ export function cardBuilder({
     <ThemeProvider>
       <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
         <Card {...pinnedSharedProps} pin="bottom">
-          <LoremIpsum title="Bottom" concise />
+          <LoremIpsum concise title="Bottom" />
         </Card>
       </Box>
     </ThemeProvider>
@@ -207,7 +207,7 @@ export function cardBuilder({
     <ThemeProvider>
       <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
         <Card {...pinnedSharedProps} pin="left">
-          <LoremIpsum title="Left" concise />
+          <LoremIpsum concise title="Left" />
         </Card>
       </Box>
     </ThemeProvider>
@@ -219,24 +219,24 @@ export function cardBuilder({
         <ThemeProvider>
           <FeedCard
             avatarUrl="https://images.coinbase.com/avatar?s=350"
-            headerDescription="Earn crypto"
-            headerActionNode={
-              <IconButton
-                accessibilityLabel="More actions"
-                name="more"
-                variant="foregroundMuted"
-                transparent
-              />
-            }
-            bodyTitle="LEARN AMP. EARN $3 IN AMP."
             bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
             bodyMediaUrl="https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png"
             bodyOrientation="vertical"
+            bodyTitle="LEARN AMP. EARN $3 IN AMP."
             footerActions={
               <Button compact variant="secondary">
                 Actions
               </Button>
             }
+            headerActionNode={
+              <IconButton
+                transparent
+                accessibilityLabel="More actions"
+                name="more"
+                variant="foregroundMuted"
+              />
+            }
+            headerDescription="Earn crypto"
           />
         </ThemeProvider>
       );
@@ -250,10 +250,10 @@ export function cardBuilder({
         <ThemeProvider>
           <Card>
             <CardBody
-              title="Title/Headline"
               description="You can fit up to fifty two chararcters on 2 lines"
               media={<SpotSquare name="addMultipleCrypto" />}
               orientation="horizontal"
+              title="Title/Headline"
             />
           </Card>
         </ThemeProvider>

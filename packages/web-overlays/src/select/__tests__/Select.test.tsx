@@ -51,7 +51,7 @@ describe('Select', () => {
   });
   it('opens the Menu when the Select is pressed', async () => {
     const onPressSpy = jest.fn();
-    render(<MockSelect placeholder={mockPlaceholder} onPress={onPressSpy} />);
+    render(<MockSelect onPress={onPressSpy} placeholder={mockPlaceholder} />);
 
     fireEvent.click(screen.getByText(mockPlaceholder));
     expect(onPressSpy).toHaveBeenCalled();
@@ -63,7 +63,7 @@ describe('Select', () => {
   it('closes the Menu when an option is pressed and fires onChange', async () => {
     const onChangeSpy = jest.fn();
 
-    render(<MockSelect placeholder={mockPlaceholder} onPress={onChangeSpy} />);
+    render(<MockSelect onPress={onChangeSpy} placeholder={mockPlaceholder} />);
 
     const placeholder = screen.getByText(mockPlaceholder);
 

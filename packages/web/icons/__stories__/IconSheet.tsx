@@ -21,7 +21,7 @@ const iconFontOverride = css`
 function SvgFromFigma({ name, size }: SvgFromFigmaProps) {
   const { iconSize, sourceSize } = useIconSize(size);
   const svgPath = `@cbhq/cds-icons/__generated__/ui/svg/ui-${name}-${sourceSize}.svg`;
-  return <img src={svgPath} alt={name} width={iconSize} height={iconSize} />;
+  return <img alt={name} height={iconSize} src={svgPath} width={iconSize} />;
 }
 
 function DisclaimerText() {
@@ -42,20 +42,20 @@ export const IconSheet = memo(function IconSheet({ startIndex, endIndex }: IconS
   return (
     <VStack gap={2}>
       <DisclaimerText />
-      <HStack gap={2} spacingBottom={2} flexWrap="wrap">
+      <HStack flexWrap="wrap" gap={2} spacingBottom={2}>
         {names.slice(startIndex, endIndex).map((name) => {
           return (
-            <HStack key={`icon-wrapper-${name}`} gap={2} flexWrap="wrap">
+            <HStack key={`icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
               <VStack gap={2}>
-                <HStack gap={2} alignItems="center" dangerouslySetClassName={iconFontOverride}>
+                <HStack alignItems="center" dangerouslySetClassName={iconFontOverride} gap={2}>
                   <ScaleProvider value="xSmall">
-                    <Icon name={name} size="s" color="foreground" />
+                    <Icon color="foreground" name={name} size="s" />
                   </ScaleProvider>
                   {(['s', 'm', 'l'] as const).map((size) => {
-                    return <Icon key={`icon-${size}`} name={name} size={size} color="foreground" />;
+                    return <Icon key={`icon-${size}`} color="foreground" name={name} size={size} />;
                   })}
                 </HStack>
-                <HStack gap={2} alignItems="center">
+                <HStack alignItems="center" gap={2}>
                   <ScaleProvider value="xSmall">
                     <SvgFromFigma name={name} size="s" />
                   </ScaleProvider>

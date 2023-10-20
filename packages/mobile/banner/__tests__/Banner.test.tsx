@@ -27,7 +27,7 @@ const MockBanner = ({
   testID = TEST_ID,
   ...props
 }: Partial<BannerBaseProps>) => (
-  <Banner title={title} startIcon={startIcon} variant={variant} testID={testID} {...props}>
+  <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
     <TextBody>Banner content</TextBody>
   </Banner>
 );
@@ -80,7 +80,7 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
   });
 
   it('Banner bordered={false} borderRadius="roundedNone" has correct visuals', () => {
-    render(<MockBanner bordered={false} borderRadius="roundedNone" />);
+    render(<MockBanner borderRadius="roundedNone" bordered={false} />);
 
     const rootContainer = screen.getByTestId(TEST_ID);
 
@@ -152,7 +152,7 @@ describe('Banner actions', () => {
 
   it('fires `onClose` when dismiss icon button is pressed', () => {
     const spy = jest.fn();
-    render(<MockBanner testID={TEST_ID} onClose={spy} showDismiss />);
+    render(<MockBanner showDismiss onClose={spy} testID={TEST_ID} />);
 
     const dismissBtn = screen.getByLabelText('close');
 
@@ -163,7 +163,7 @@ describe('Banner actions', () => {
 
   it('Bannner collapses when dismiss icon button is pressed', () => {
     const spy = jest.fn();
-    render(<MockBanner onClose={spy} showDismiss />);
+    render(<MockBanner showDismiss onClose={spy} />);
 
     const dismissBtn = screen.getByLabelText('close');
 
@@ -180,7 +180,7 @@ describe('Banner actions', () => {
   it('Banner forwardRef works as expected', () => {
     const ref = React.createRef<View>();
     render(
-      <Banner ref={ref} variant="warning" testID={TEST_ID} startIcon="cashUSD" title="Banner title">
+      <Banner ref={ref} startIcon="cashUSD" testID={TEST_ID} title="Banner title" variant="warning">
         <TextBody>Content</TextBody>
       </Banner>,
     );

@@ -37,15 +37,15 @@ const PatternDisclosureLowFrictionScreen = () => {
       <Example title="Pattern - Low-Friction Disclosure">
         <Button onPress={toggleOn}>View LF Disclosure</Button>
         <Modal
-          visible={visible}
-          onRequestClose={toggleOff}
-          accessibilityLabel="Title outlining the action and benefit in 1-2 lines"
-          accessibilityHint="Hint providing more context about the disclosure. Close this dialog to continue."
           hideDividers
+          accessibilityHint="Hint providing more context about the disclosure. Close this dialog to continue."
+          accessibilityLabel="Title outlining the action and benefit in 1-2 lines"
+          onRequestClose={toggleOff}
+          visible={visible}
         >
           <ModalHeader
-            closeAccessibilityLabel="Close"
             closeAccessibilityHint="Close this dialog to continue"
+            closeAccessibilityLabel="Close"
           />
           <ModalBody>
             <Box alignItems="center">
@@ -54,11 +54,11 @@ const PatternDisclosureLowFrictionScreen = () => {
             <TextTitle3 spacingTop={4}>
               Title outlining the action and benefit in 1-2 lines
             </TextTitle3>
-            <VStack spacingVertical={3} gap={3}>
+            <VStack gap={3} spacingVertical={3}>
               {data.map(({ id, headline, body }) => (
                 <VStack key={id} gap={1}>
-                  <HStack gap={2} alignItems="center">
-                    <Icon size="s" name="checkmark" color="foreground" />
+                  <HStack alignItems="center" gap={2}>
+                    <Icon color="foreground" name="checkmark" size="s" />
                     <TextHeadline dangerouslySetStyle={{ flex: 1 }}>{headline}</TextHeadline>
                   </HStack>
                   <TextBody spacingStart={4}>{body}</TextBody>

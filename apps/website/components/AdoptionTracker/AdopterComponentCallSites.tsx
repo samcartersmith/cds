@@ -30,16 +30,16 @@ export const AdopterComponentCallSites = memo(
           const callSiteText = callSiteCount === 1 ? 'instance' : 'instances';
           return (
             <BetaCell
-              priority="end"
+              end={<TextLabel2 align="end" as="p">{`${callSiteCount} ${callSiteText}`}</TextLabel2>}
+              endAccessory={<Icon color="foregroundMuted" name="externalLink" size="s" />}
               offsetHorizontal={1}
+              onPress={handleOnPress(callSite)}
+              priority="end"
               start={
                 <TextLabel2 as="p" overflow="truncate">
                   {callSite}
                 </TextLabel2>
               }
-              end={<TextLabel2 as="p" align="end">{`${callSiteCount} ${callSiteText}`}</TextLabel2>}
-              onPress={handleOnPress(callSite)}
-              endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
             />
           );
         })}

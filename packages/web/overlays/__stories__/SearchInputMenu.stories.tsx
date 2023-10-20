@@ -88,10 +88,10 @@ const SearchInputMenuRecipe = () => {
           </HStack>
         )}
         {shouldShowAllResultsButton ? (
-          <Pressable backgroundColor="background" noScaleOnPress block onPress={handleClear}>
-            <HStack alignItems="center" spacingVertical={2} spacingHorizontal={2} gap={1}>
+          <Pressable block noScaleOnPress backgroundColor="background" onPress={handleClear}>
+            <HStack alignItems="center" gap={1} spacingHorizontal={2} spacingVertical={2}>
               <TextLabel1 as="p">View all results</TextLabel1>
-              <Icon size="xs" name="forwardArrow" color="foreground" />
+              <Icon color="foreground" name="forwardArrow" size="xs" />
             </HStack>
           </Pressable>
         ) : null}
@@ -102,23 +102,23 @@ const SearchInputMenuRecipe = () => {
 
   return (
     <Dropdown
-      value={selectedValue}
-      onChange={handleMenuChange}
-      width="100%"
+      ref={dropdownRef}
       block
       disableCloseOnOptionChange
-      ref={dropdownRef}
-      content={content}
       disableTypeFocus
+      content={content}
+      onChange={handleMenuChange}
+      value={selectedValue}
+      width="100%"
     >
       <SearchInput
+        accessibilityLabel="search-input"
         onChangeText={setSearchValue}
-        value={selectedValue ?? searchValue ?? ''}
-        width="100%"
         onClear={handleClear}
         onKeyDown={handleKeyDown}
         onPress={handleSearchInputPress}
-        accessibilityLabel="search-input"
+        value={selectedValue ?? searchValue ?? ''}
+        width="100%"
       />
     </Dropdown>
   );

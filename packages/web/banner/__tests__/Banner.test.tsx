@@ -19,7 +19,7 @@ const TEST_ID = 'test-banner';
 describe('Banner Actions', () => {
   it('fires `onClose` when dismiss icon button is pressed', () => {
     const spy = jest.fn();
-    render(<MockBanner testID={TEST_ID} onClose={spy} showDismiss />);
+    render(<MockBanner showDismiss onClose={spy} testID={TEST_ID} />);
 
     const dismissBtn = screen.getByLabelText('close');
 
@@ -30,7 +30,7 @@ describe('Banner Actions', () => {
 
   it('Bannner collapses when dismiss icon button is pressed', async () => {
     const spy = jest.fn();
-    render(<MockBanner testID={TEST_ID} onClose={spy} showDismiss />);
+    render(<MockBanner showDismiss onClose={spy} testID={TEST_ID} />);
     const collapsibleTestID = `${TEST_ID}-collapsible`;
 
     const dismissBtn = screen.getByLabelText('close');
@@ -56,11 +56,11 @@ describe('Banner', () => {
 
     render(
       <Banner
-        testID={TEST_ID}
         dangerouslySetClassName={customClassName}
-        variant="warning"
         startIcon="cashUSD"
+        testID={TEST_ID}
         title=""
+        variant="warning"
       >
         Banner Content
       </Banner>,
@@ -78,11 +78,11 @@ describe('Banner', () => {
 
     render(
       <Banner
-        testID={TEST_ID}
         dangerouslySetStyle={customClassName}
-        variant="warning"
         startIcon="cashUSD"
+        testID={TEST_ID}
         title=""
+        variant="warning"
       >
         Banner Content
       </Banner>,

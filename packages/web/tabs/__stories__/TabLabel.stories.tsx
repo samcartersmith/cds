@@ -27,12 +27,12 @@ const Example = ({ variant, spectrum }: ExampleProps) => {
 
   return (
     <ThemeProvider spectrum={spectrum}>
-      <VStack spacing={4} gap={2} background="background">
-        <Button onPress={updateCount} block>
+      <VStack background="background" gap={2} spacing={4}>
+        <Button block onPress={updateCount}>
           Randomize count: {variant} ({spectrum})
         </Button>
         <HStack gap={2}>
-          <TabLabel count={count} variant={variant} active>
+          <TabLabel active count={count} variant={variant}>
             All
           </TabLabel>
           <TabLabel variant={variant}>Tradable</TabLabel>

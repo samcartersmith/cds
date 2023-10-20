@@ -58,7 +58,7 @@ describe('Alert', () => {
 
   it('renders body and passes a11y', () => {
     const body = 'Test body';
-    render(<MockAlert testID="mock-alert" body={body} />);
+    render(<MockAlert body={body} testID="mock-alert" />);
 
     fireEvent.press(screen.getByText('Show Alert'));
 
@@ -74,10 +74,10 @@ describe('Alert', () => {
     render(
       <MockAlert
         visible
-        testID="mock-alert"
-        preferredActionLabel="Save"
         onPreferredActionPress={onPreferredActionPress}
         onRequestClose={onRequestClose}
+        preferredActionLabel="Save"
+        testID="mock-alert"
       />,
     );
 
@@ -96,10 +96,10 @@ describe('Alert', () => {
 
     render(
       <MockAlert
-        testID="mock-alert"
         visible
         dismissActionLabel="Cancel"
         onRequestClose={onRequestClose}
+        testID="mock-alert"
       />,
     );
 

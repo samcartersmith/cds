@@ -19,10 +19,10 @@ describe('SparklineInteractiveTimeseriesPaths.test', () => {
     render(
       <SparklineInteractiveTimeseriesPaths
         data={data}
-        initialPath=""
-        width={300}
         height={100}
+        initialPath=""
         onRender={onRender}
+        width={300}
       />,
     );
 

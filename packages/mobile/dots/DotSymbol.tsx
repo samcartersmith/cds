@@ -60,30 +60,30 @@ export const DotSymbol = memo(
 
     return (
       <View {...props}>
-        <View testID={`${props.testID}-children`} onLayout={onChildrenLayout}>
+        <View onLayout={onChildrenLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
-        <View testID="dotsymbol-inner-container" style={pinStyles}>
+        <View style={pinStyles} testID="dotsymbol-inner-container">
           {source !== undefined && (
             <RemoteImage
-              shape="circle"
-              testID="dotsymbol-remote-image"
               shouldApplyDarkModeEnhacements
               dangerouslySetStyle={imageBorderStyle}
-              source={typeof source === 'string' ? { uri: source } : source}
-              width={iconSize}
               height={iconSize}
               resizeMode="cover"
+              shape="circle"
+              source={typeof source === 'string' ? { uri: source } : source}
+              testID="dotsymbol-remote-image"
+              width={iconSize}
             />
           )}
           {iconName !== undefined && (
             <Box
-              onLayout={onIconWrapperLayout}
-              spacing={0.5}
-              dangerouslySetStyle={iconBorderStyle}
-              borderRadius="roundedFull"
               background="primary"
               borderColor="secondary"
+              borderRadius="roundedFull"
+              dangerouslySetStyle={iconBorderStyle}
+              onLayout={onIconWrapperLayout}
+              spacing={0.5}
             >
               <Icon color="primaryForeground" name={iconName} size={size} />
             </Box>

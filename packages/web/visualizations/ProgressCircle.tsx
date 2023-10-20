@@ -27,11 +27,11 @@ const svgClassName = css`
 
 const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseProps) => {
   return (
-    <Box width="100%" height="100%" position="absolute" justifyContent="center" alignItems="center">
+    <Box alignItems="center" height="100%" justifyContent="center" position="absolute" width="100%">
       <ProgressTextLabel
-        value={Math.round(progress * 100)}
-        disabled={disabled}
         color="foregroundMuted"
+        disabled={disabled}
+        value={Math.round(progress * 100)}
       />
     </Box>
   );
@@ -60,8 +60,8 @@ const ProgressCircleInner = memo(
 
     return (
       <motion.circle
-        data-testid="cds-progress-circle-inner"
         ref={circleRef}
+        data-testid="cds-progress-circle-inner"
         strokeDasharray={circumference}
         strokeLinecap="round"
         {...motionProps}
@@ -94,28 +94,28 @@ export const ProgressCircle = memo(
 
       const visSize = size ?? '100%';
       return (
-        <VisualizationContainer width={visSize} height={visSize}>
+        <VisualizationContainer height={visSize} width={visSize}>
           {({ width, height, circleSize }: VisualizationContainerDimension) => (
             <Box
-              testID={testID}
-              alignItems="center"
-              justifyContent="center"
-              width={width}
-              height={height}
               ref={forwardedRef}
+              alignItems="center"
+              height={height}
+              justifyContent="center"
+              testID={testID}
+              width={width}
             >
               <Box
                 flexGrow={0}
                 flexShrink={0}
-                width={circleSize}
                 height={circleSize}
                 position="relative"
+                width={circleSize}
               >
                 <svg
                   key={circleSize}
                   className={svgClassName}
-                  width={circleSize}
                   height={circleSize}
+                  width={circleSize}
                 >
                   <circle
                     {...getProgressCircleParams({
@@ -125,14 +125,14 @@ export const ProgressCircle = memo(
                     })}
                   />
                   <ProgressCircleInner
-                    progress={progress}
                     color={color}
+                    progress={progress}
                     size={circleSize}
-                    weight={weight}
                     visuallyDisabled={disabled}
+                    weight={weight}
                   />
                 </svg>
-                {!hideText && <ProgressCircleText progress={progress} disabled={disabled} />}
+                {!hideText && <ProgressCircleText disabled={disabled} progress={progress} />}
               </Box>
             </Box>
           )}

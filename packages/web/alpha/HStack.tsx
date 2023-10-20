@@ -17,8 +17,8 @@ export const HStack = memo(
       <Box
         {...props}
         ref={forwardedRef}
-        flexDirection="row"
         dangerouslySetClassName={cx(gapProp ? gap[gapProp] : null, dangerouslySetClassName)}
+        flexDirection="row"
       >
         {children}
       </Box>

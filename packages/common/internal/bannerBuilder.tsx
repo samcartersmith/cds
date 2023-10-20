@@ -172,8 +172,8 @@ export function bannerBuilder(
           borderRadius="roundedNone"
           bordered={false}
           {...sharedProps}
-          variant="danger"
           title={`${sharedProps.title}(Full bleed)`}
+          variant="danger"
         />
       </Container>
     );
@@ -181,16 +181,16 @@ export function bannerBuilder(
 
   const LongTitle = () => {
     return (
-      <Container showVariations={false} gap={2} title="LongTitle">
-        <Banner {...sharedProps} variant="danger" title={longMessage} />
+      <Container gap={2} showVariations={false} title="LongTitle">
+        <Banner {...sharedProps} title={longMessage} variant="danger" />
       </Container>
     );
   };
 
   const BannerWithLink = () => {
     return (
-      <Container showVariations={false} gap={2} title="BannerWithLink">
-        <Banner showDismiss startIcon="pencil" variant="promotional" title="Banner with a Link">
+      <Container gap={2} showVariations={false} title="BannerWithLink">
+        <Banner showDismiss startIcon="pencil" title="Banner with a Link" variant="promotional">
           {shortMessage}
           {shortMessage} <Link to="https://www.coinbase.com">Learn more</Link>
         </Banner>
@@ -204,13 +204,13 @@ export function bannerBuilder(
     }, []);
 
     return (
-      <Container showVariations={false} gap={2} title="OnClose">
+      <Container gap={2} showVariations={false} title="OnClose">
         <Banner
           {...sharedProps}
-          variant="danger"
           showDismiss
-          title="Close the banner"
           onClose={handleOnClose}
+          title="Close the banner"
+          variant="danger"
         />
       </Container>
     );
@@ -236,7 +236,7 @@ export function bannerBuilder(
     testID,
     ...props
   }: Partial<BannerBaseProps>) => (
-    <Banner title={title} startIcon={startIcon} variant={variant} testID={testID} {...props}>
+    <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
       Banner content
     </Banner>
   );

@@ -19,11 +19,11 @@ export function CarouselItem({
 
   return (
     <AnnouncementCard
-      title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"
-      spotSquare={spotSquare}
-      pictogram={pictogram}
       onPress={handleOnPress}
+      pictogram={pictogram}
+      spotSquare={spotSquare}
+      title="Title/Headline"
     />
   );
 }
@@ -35,10 +35,10 @@ export function CarouselItemImage({ image }: { image: string }) {
 
   return (
     <AnnouncementCard
-      title="Title/Headline"
       description="You can fit up to fifty two chararcters on 2 lines"
       image={image}
       onPress={handleOnPress}
+      title="Title/Headline"
     />
   );
 }
@@ -53,28 +53,28 @@ export function ProgressBarsExample() {
   }, []);
 
   return (
-    <FeatureFlagProvider frontierCard frontierButton>
+    <FeatureFlagProvider frontierButton frontierCard>
       <Carousel
         showDismiss
         showProgress
-        onDismissItem={onDismissItem}
-        onDismissLastItem={onDismissLastItem}
         items={[
           <CarouselItem key="item1" spotSquare="sparkleToken" />,
           <CarouselItem key="item2" pictogram="addressBook" />,
           <CarouselItem key="item3" spotSquare="announcementAdvancedTrading" />,
           <CarouselItem key="item4" pictogram="worldwide" />,
         ]}
+        onDismissItem={onDismissItem}
+        onDismissLastItem={onDismissLastItem}
       />
       <Divider />
       <Carousel
         showDismiss
         showProgress
-        onDismissItem={onDismissItem}
-        onDismissLastItem={onDismissLastItem}
         items={feedImages.map((item) => (
           <CarouselItemImage key={item} image={item} />
         ))}
+        onDismissItem={onDismissItem}
+        onDismissLastItem={onDismissLastItem}
       />
       <Divider />
     </FeatureFlagProvider>

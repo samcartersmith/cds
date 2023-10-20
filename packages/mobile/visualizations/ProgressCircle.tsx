@@ -26,12 +26,12 @@ const AnimatedCircle = Animated.createAnimatedComponent(Circle as CircleType);
 
 const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseProps) => {
   return (
-    <Box width="100%" height="100%" position="absolute" justifyContent="center" alignItems="center">
-      <Box flexGrow={0} flexShrink={0} alignSelf="center">
+    <Box alignItems="center" height="100%" justifyContent="center" position="absolute" width="100%">
+      <Box alignSelf="center" flexGrow={0} flexShrink={0}>
         <ProgressTextLabel
-          value={Math.round(progress * 100)}
-          disabled={disabled}
           color="foregroundMuted"
+          disabled={disabled}
+          value={Math.round(progress * 100)}
         />
       </Box>
     </Box>
@@ -62,12 +62,11 @@ const ProgressCircleInner = memo(
 
     return (
       <AnimatedCircle
-        testID="cds-progress-circle-inner"
-        // This is required because Circle is mocked in the unit test to support testID. The mock does not support refs
-        ref={!isTest() ? circleRef : undefined}
+        ref={!isTest() ? circleRef : undefined} // This is required because Circle is mocked in the unit test to support testID. The mock does not support refs
         strokeDasharray={circumference}
         strokeDashoffset={animatedStrokeDashOffset.current}
         strokeLinecap={progress > 0 ? 'round' : 'butt'}
+        testID="cds-progress-circle-inner"
         {...getProgressCircleParams({
           size,
           strokeWidth,
@@ -97,27 +96,27 @@ export const ProgressCircle = memo(
 
       const visSize = size ?? '100%';
       return (
-        <VisualizationContainer width={visSize} height={visSize}>
+        <VisualizationContainer height={visSize} width={visSize}>
           {({ width, height, circleSize }: VisualizationContainerDimension) => (
             <Box
-              testID={testID}
-              alignItems="center"
-              justifyContent="center"
-              width={width}
-              height={height}
               ref={forwardedRef}
               accessible
               accessibilityLabel={`${progress * 100}%`}
               accessibilityRole="progressbar"
+              alignItems="center"
+              height={height}
+              justifyContent="center"
+              testID={testID}
+              width={width}
             >
-              <Box flexGrow={0} flexShrink={0} width={circleSize} height={circleSize}>
+              <Box flexGrow={0} flexShrink={0} height={circleSize} width={circleSize}>
                 <Svg
                   key={circleSize}
-                  width={circleSize}
                   height={circleSize}
                   viewBox={`0 0 ${circleSize} ${circleSize}`}
+                  width={circleSize}
                 >
-                  <G rotation={-90} origin={`${circleSize / 2}, ${circleSize / 2}`}>
+                  <G origin={`${circleSize / 2}, ${circleSize / 2}`} rotation={-90}>
                     <Circle
                       {...getProgressCircleParams({
                         size: circleSize,
@@ -126,15 +125,15 @@ export const ProgressCircle = memo(
                       })}
                     />
                     <ProgressCircleInner
-                      progress={progress}
                       color={color}
+                      progress={progress}
                       size={circleSize}
-                      weight={weight}
                       visuallyDisabled={disabled}
+                      weight={weight}
                     />
                   </G>
                 </Svg>
-                {!hideText && <ProgressCircleText progress={progress} disabled={disabled} />}
+                {!hideText && <ProgressCircleText disabled={disabled} progress={progress} />}
               </Box>
             </Box>
           )}

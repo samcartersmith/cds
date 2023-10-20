@@ -100,6 +100,7 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
 
     return (
       <Animated.View
+        pointerEvents="none"
         style={[
           {
             position: shouldTakeUpHeight ? 'relative' : 'absolute',
@@ -109,7 +110,6 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
           },
           styles.outer,
         ]}
-        pointerEvents="none"
       >
         <Animated.View
           style={[
@@ -120,10 +120,10 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
           ]}
         >
           <TextInput
-            accessibilityLabel="Text input field"
-            accessibilityHint="Text input field"
-            style={[label2Styles, labelStyles]}
             ref={textInputRef}
+            accessibilityHint="Text input field"
+            accessibilityLabel="Text input field"
+            style={[label2Styles, labelStyles]}
           />
         </Animated.View>
       </Animated.View>

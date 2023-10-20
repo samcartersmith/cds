@@ -23,12 +23,12 @@ type ExampleProps = {
 
 export const Example = memo(function Example({ children, media, type }: ExampleProps) {
   return (
-    <VStack flexGrow={1} flexBasis={0} minWidth={200} height="100%" gap={1}>
-      <Box minHeight={200} justifyContent="center" alignItems="center">
+    <VStack flexBasis={0} flexGrow={1} gap={1} height="100%" minWidth={200}>
+      <Box alignItems="center" justifyContent="center" minHeight={200}>
         {media}
       </Box>
       {/* @ts-expect-error These palette colors will work fine */}
-      <Divider height={4} color={type === 'dont' ? 'negative' : 'positive'} />
+      <Divider color={type === 'dont' ? 'negative' : 'positive'} height={4} />
       <TextHeadline as="p" color={type === 'dont' ? 'negative' : 'positive'}>
         {type === 'dont' ? 'DO NOT' : 'DO'}
       </TextHeadline>
@@ -55,7 +55,7 @@ export const DontExample = memo(function DontExample({ children, ...props }: DoO
 
 const DoDont = memo(function DoDont({ children }: DoDontProps) {
   return (
-    <HStack gap={2} spacingVertical={6} borderRadius="rounded">
+    <HStack borderRadius="rounded" gap={2} spacingVertical={6}>
       {children}
     </HStack>
   );

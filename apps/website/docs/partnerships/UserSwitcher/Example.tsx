@@ -5,16 +5,16 @@ import { FeatureFlagProvider } from '@cbhq/cds-web/system/FeatureFlagProvider';
 
 export const UserSwitcherExample = () => {
   return (
-    <FeatureFlagProvider frontierColor frontierButton>
+    <FeatureFlagProvider frontierButton frontierColor>
       <PortalProvider>
         <VStack
+          bordered
           alignItems="center"
+          borderRadius="rounded"
           justifyContent="center"
           spacingVertical={4}
-          bordered
-          borderRadius="rounded"
         >
-          <UserSwitcher title="Brian Armstrong" description="brian.armstrong@coinbase.com" />
+          <UserSwitcher description="brian.armstrong@coinbase.com" title="Brian Armstrong" />
         </VStack>
       </PortalProvider>
     </FeatureFlagProvider>

@@ -24,11 +24,11 @@ const ThemeToggles = memo(function ThemeToggles() {
   }, [scale, scaleUpdate]);
 
   return (
-    <VStack offsetTop={2} offsetHorizontal={4} gap={3}>
-      <Switch onChange={toggleSpectrum} checked={colorMode === 'dark'}>
+    <VStack gap={3} offsetHorizontal={4} offsetTop={2}>
+      <Switch checked={colorMode === 'dark'} onChange={toggleSpectrum}>
         Dark Spectrum
       </Switch>
-      <Switch onChange={toggleScale} checked={scale === 'medium'}>
+      <Switch checked={scale === 'medium'} onChange={toggleScale}>
         Dense Scale
       </Switch>
     </VStack>

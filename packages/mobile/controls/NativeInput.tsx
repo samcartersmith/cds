@@ -80,15 +80,15 @@ export const NativeInput = memo(
 
       return (
         <RNTextInput
-          testID={testID}
           ref={ref}
-          style={inputRootStyles}
-          editable={!disabled}
-          accessibilityLabel={accessibilityLabel}
           accessibilityHint={accessibilityLabel}
+          accessibilityLabel={accessibilityLabel}
           accessibilityRole="search"
-          placeholderTextColor={palette.foregroundMuted}
+          editable={!disabled}
           keyboardAppearance={spectrum}
+          placeholderTextColor={palette.foregroundMuted}
+          style={inputRootStyles}
+          testID={testID}
           textAlign={textAlign !== 'unset' ? textAlign : undefined}
           {...editableInputAddonProps}
         />

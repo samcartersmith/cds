@@ -79,10 +79,10 @@ const ModalDropdown = memo(
       return (
         <SelectProvider value={context}>
           <ModalWrapper
-            visible={visible}
+            dangerouslyDisableResponsiveness
             disablePortal={disablePortal}
             onOverlayPress={onCloseMenu}
-            dangerouslyDisableResponsiveness
+            visible={visible}
             {...controlledElementAccessibilityProps}
           >
             <FocusTrap onEscPress={onCloseMenu}>
@@ -217,13 +217,13 @@ const PopoverDropdown = memo(
         return (
           <DropdownContent
             ref={dropdownRef}
-            width={block ? subjectRect.width : width}
-            minWidth={minWidth}
-            maxWidth={maxWidth}
             height={dropdownHeight}
             maxHeight={maxHeight}
-            value={value}
+            maxWidth={maxWidth}
+            minWidth={minWidth}
             placement={contentPosition.placement}
+            value={value}
+            width={block ? subjectRect.width : width}
           >
             {content}
           </DropdownContent>
@@ -254,16 +254,16 @@ const PopoverDropdown = memo(
         <SelectProvider value={context}>
           <Popover
             // DropdownContent will handle exit animation on menu blur, including pressing the subject again to close
-            onPressSubject={!visible ? onOpenMenu : undefined}
-            onClose={onCloseMenu}
-            visible={visible}
+            block={block}
             content={memoizedContent}
-            showOverlay={showOverlay}
             contentPosition={contentPosition ?? defaultPopoverContentPositionConfig}
-            testID={testID}
             disablePortal={disablePortal}
             onBlur={onBlur}
-            block={block}
+            onClose={onCloseMenu}
+            onPressSubject={!visible ? onOpenMenu : undefined}
+            showOverlay={showOverlay}
+            testID={testID}
+            visible={visible}
             {...props}
           >
             <div ref={subjectRef} style={{ width: '100%' }}>
@@ -304,22 +304,22 @@ export const Dropdown = memo(
 
       return isMobile && enableMobileModal ? (
         <ModalDropdown
-          maxHeight={maxHeight}
-          visible={visible}
-          onOpenMenu={handleOpenMenu}
-          onCloseMenu={handleCloseMenu}
           ref={ref}
+          maxHeight={maxHeight}
+          onCloseMenu={handleCloseMenu}
+          onOpenMenu={handleOpenMenu}
+          visible={visible}
           {...props}
         >
           {children}
         </ModalDropdown>
       ) : (
         <PopoverDropdown
-          maxHeight={maxHeight}
-          visible={visible}
-          onOpenMenu={handleOpenMenu}
-          onCloseMenu={handleCloseMenu}
           ref={ref}
+          maxHeight={maxHeight}
+          onCloseMenu={handleCloseMenu}
+          onOpenMenu={handleOpenMenu}
+          visible={visible}
           {...props}
         >
           {children}

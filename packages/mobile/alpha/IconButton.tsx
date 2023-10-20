@@ -68,16 +68,16 @@ export const IconButton = memo(function IconButton({
 
   return (
     <Pressable
-      transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
       borderColor={borderColor}
       borderRadius="roundedFull"
       borderWidth="button"
       feedback={feedback}
       style={pressableStyles}
+      transparentWhileInactive={transparent}
       {...props}
     >
-      <Icon name={name} size={iconSize} color={color} dangerouslySetStyle={iconStyles} />
+      <Icon color={color} dangerouslySetStyle={iconStyles} name={name} size={iconSize} />
     </Pressable>
   );
 });

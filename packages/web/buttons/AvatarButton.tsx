@@ -50,21 +50,21 @@ export const AvatarButton = memo(
         <PressableOpacity
           aria-label={accessibilityLabel}
           {...props}
+          ref={ref}
           as={as}
           className={cx(flexStyles, avatarButton)}
           onPress={onPress}
           style={style}
           to={to}
-          ref={ref}
         >
           <Avatar
-            src={src}
             alt={alt}
-            dangerouslySetSize={height}
             colorScheme={colorScheme}
-            shape={shape}
-            selected={selected}
+            dangerouslySetSize={height}
             name={name}
+            selected={selected}
+            shape={shape}
+            src={src}
           />
         </PressableOpacity>
       );

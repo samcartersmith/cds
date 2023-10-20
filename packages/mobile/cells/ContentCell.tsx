@@ -61,15 +61,15 @@ export const ContentCell = memo(function ContentCell({
   return (
     <Cell
       {...props}
+      accessibilityHint={computedAccessibilityHint}
+      accessibilityLabel={computedAccessibilityLabel}
       accessory={
-        accessoryType ? <CellAccessory type={accessoryType} spacingTop={0.5} /> : undefined
+        accessoryType ? <CellAccessory spacingTop={0.5} type={accessoryType} /> : undefined
       }
       alignItems="flex-start"
-      media={media}
       disabled={disabled}
+      media={media}
       selected={selected}
-      accessibilityLabel={computedAccessibilityLabel}
-      accessibilityHint={computedAccessibilityHint}
     >
       <VStack>
         {hasTitles && (
@@ -78,14 +78,14 @@ export const ContentCell = memo(function ContentCell({
               {!!title && <TextHeadline>{title}</TextHeadline>}
 
               {!!subtitle && (
-                <TextLabel2 spacingTop={title ? 0.5 : 0} spacingBottom={description ? 0.5 : 0}>
+                <TextLabel2 spacingBottom={description ? 0.5 : 0} spacingTop={title ? 0.5 : 0}>
                   {subtitle}
                 </TextLabel2>
               )}
             </Box>
 
             {!!meta && (
-              <Box justifyContent="flex-end" spacingTop={0.5} spacingStart={1}>
+              <Box justifyContent="flex-end" spacingStart={1} spacingTop={0.5}>
                 <TextLabel2 color="foregroundMuted">{meta}</TextLabel2>
               </Box>
             )}

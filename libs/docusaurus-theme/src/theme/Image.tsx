@@ -26,9 +26,9 @@ const Image = memo(function Image({
 
   return (
     <VStack spacingVertical={spacingVertical}>
-      <Box justifyContent="center" elevation={0} borderRadius="rounded" overflow="hidden">
+      <Box borderRadius="rounded" elevation={0} justifyContent="center" overflow="hidden">
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
-        <img style={style} src={srcFromSpectrum} />
+        <img src={srcFromSpectrum} style={style} />
       </Box>
     </VStack>
   );

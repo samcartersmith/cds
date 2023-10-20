@@ -10,20 +10,20 @@ type SplitScreenStackProps = {
 export const SplitScreenStack = memo(({ start, end }: SplitScreenStackProps) => {
   return (
     <HStack alignItems="flex-start" justifyContent="space-between">
-      <VStack flexGrow={1} width="50%" flexShrink={0}>
+      <VStack flexGrow={1} flexShrink={0} width="50%">
         {start}
       </VStack>
       <Divider direction="vertical" spacingEnd={3} />
       <VStack
-        width="50%"
+        gap={3}
+        left={0}
         maxHeight="90vh"
         overflow="scroll"
         position="sticky"
-        top={76}
-        left={0}
         right={0}
-        gap={3}
         spacingHorizontal={2}
+        top={76}
+        width="50%"
       >
         {flattenNodes(end)}
       </VStack>

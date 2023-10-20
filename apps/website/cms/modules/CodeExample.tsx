@@ -42,8 +42,8 @@ export const CodeExample = memo(function CodeExample({
       {code && (
         <CodePlayground
           code={code}
-          readOnly={readOnly}
           editorStartsExpanded={editorStartsExpanded}
+          readOnly={readOnly}
         />
       )}
     </VStack>

@@ -59,17 +59,17 @@ export const ListCell = memo(function ListCell({
         ))
       }
       detailWidth={detailWidth}
-      media={media}
       disabled={disabled}
+      media={media}
       minHeight={minHeight}
-      selected={selected}
       onPress={onPress}
+      selected={selected}
     >
       <VStack justifyContent="center">
         {!!title && (
           <TextHeadline
-            numberOfLines={description || disableMultilineTitle ? 1 : 2}
             ellipsize="tail"
+            numberOfLines={description || disableMultilineTitle ? 1 : 2}
           >
             {title}
           </TextHeadline>
@@ -78,9 +78,9 @@ export const ListCell = memo(function ListCell({
         {!!description && (
           <TextBody
             color="foregroundMuted"
+            ellipsize={multiline ? undefined : 'tail'}
             // eslint-disable-next-line no-nested-ternary
             numberOfLines={multiline ? undefined : title ? 1 : 2}
-            ellipsize={multiline ? undefined : 'tail'}
           >
             {description}
           </TextBody>

@@ -71,7 +71,7 @@ export const TabLabel = memo(
     }, [getOnLayoutHandler]);
 
     return (
-      <HStack alignItems="center" ref={observe}>
+      <HStack ref={observe} alignItems="center">
         {shouldMeasureElement ? (
           <span className={containerClassName}>
             <TextElement as="h2" color={color} {...props} />
@@ -80,8 +80,8 @@ export const TabLabel = memo(
               as="h2"
               id={accessibilityLabelId}
               {...props}
-              dangerouslySetClassName={hiddenClassName}
               aria-hidden="true"
+              dangerouslySetClassName={hiddenClassName}
             />
           </span>
         ) : (
@@ -93,7 +93,7 @@ export const TabLabel = memo(
             dangerouslySetClassName={variant === 'primary' ? tabLabelSpacingClassName : undefined}
           />
         )}
-        <Collapsible role="status" collapsed={!count} direction="horizontal" spacingStart={0.5}>
+        <Collapsible collapsed={!count} direction="horizontal" role="status" spacingStart={0.5}>
           {/* When count is set to 0 this will fallback to prevCount
           which has the previous count value to keep the component mounted */}
           <DotCount

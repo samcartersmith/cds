@@ -31,11 +31,11 @@ export const InputIconButton = memo(function InputIconButton({
   const transformedVariant = secondaryVariants.has(contextVariant) ? 'primary' : contextVariant;
 
   return (
-    <Box spacingStart={1} spacingEnd={0.5} testID={testID}>
+    <Box spacingEnd={0.5} spacingStart={1} testID={testID}>
       <IconButton
         transparent
-        accessibilityLabel={accessibilityLabel ?? props.name}
         accessibilityHint={accessibilityHint ?? props.name}
+        accessibilityLabel={accessibilityLabel ?? props.name}
         variant={disableInheritFocusStyle ? variant : (transformedVariant as IconButtonVariant)}
         {...props}
       />

@@ -73,32 +73,32 @@ export function useExampleNavigatorProps() {
       );
 
       return (
-        <Box animated background onLayout={onLayout} dangerouslySetStyle={style}>
+        <Box animated background dangerouslySetStyle={style} onLayout={onLayout}>
           <HStack
             alignItems="center"
             justifyContent="center"
-            spacingVertical={1}
             spacingHorizontal={2}
+            spacingVertical={1}
           >
             {leftHeaderButton}
             <Spacer />
             <Box
-              width="100%"
+              alignItems="center"
               pointerEvents={isSearch ? undefined : 'none'}
               position="absolute"
-              alignItems="center"
+              width="100%"
             >
               {isSearch ? (
                 <TextInput
-                  accessibilityLabel="Search for component"
-                  start={<IconButton transparent name="backArrow" onPress={goBack} />}
-                  label=""
-                  placeholder="Search"
-                  onChange={handleSearch}
                   accessibilityHint="Search for component"
+                  accessibilityLabel="Search for component"
+                  label=""
+                  onChange={handleSearch}
+                  placeholder="Search"
+                  start={<IconButton transparent name="backArrow" onPress={goBack} />}
                 />
               ) : (
-                <TextHeadline align="center" animated dangerouslySetStyle={titleStyle}>
+                <TextHeadline animated align="center" dangerouslySetStyle={titleStyle}>
                   {titleForScene}
                 </TextHeadline>
               )}

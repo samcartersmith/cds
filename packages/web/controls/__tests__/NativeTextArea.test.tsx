@@ -9,7 +9,7 @@ const TEST_ID = 'native-textarea';
 describe('NativeTextArea Accessibility', () => {
   it('passes accessibility', async () => {
     expect(
-      await renderA11y(<TextInput label="label" inputNode={<NativeTextArea />} />),
+      await renderA11y(<TextInput inputNode={<NativeTextArea />} label="label" />),
     ).toHaveNoViolations();
   });
 });

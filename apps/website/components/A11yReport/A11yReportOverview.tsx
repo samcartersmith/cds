@@ -62,13 +62,13 @@ export const A11yReportOverview = memo(() => {
   return (
     <ThemeProvider>
       <TabNavigation
-        value={report}
-        tabs={reports}
         onChange={getOnReportChangeHandler()}
         spacingBottom={3}
+        tabs={reports}
+        value={report}
         variant="secondary"
       />
-      <TabNavigation value={tab} tabs={tabs} onChange={setTab} spacingBottom={3} />
+      <TabNavigation onChange={setTab} spacingBottom={3} tabs={tabs} value={tab} />
       {/* TODO fix this type */}
       <A11yReportDetails impact={tab} reportDoc={reportDoc as unknown as ReportDoc} />
     </ThemeProvider>

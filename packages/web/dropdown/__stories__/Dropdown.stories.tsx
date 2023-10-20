@@ -56,13 +56,13 @@ export const Default = ({
 
   const content = (
     <>
-      <HStack spacingHorizontal={2} spacingVertical={2} role="separator">
+      <HStack role="separator" spacingHorizontal={2} spacingVertical={2}>
         <TextCaption as="h2" color="foregroundMuted">
           Section Heading
         </TextCaption>
       </HStack>
       {options.map((option) => (
-        <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
+        <SelectOption key={option} testID={`option-${option}`} title={option} value={option} />
       ))}
     </>
   );
@@ -72,14 +72,14 @@ export const Default = ({
   }, []);
 
   return (
-    <HStack gap={3} spacing={4} height={containerHeight}>
-      <Dropdown ref={dropdownRef} onChange={setValue} content={content} value={value} {...props}>
+    <HStack gap={3} height={containerHeight} spacing={4}>
+      <Dropdown ref={dropdownRef} content={content} onChange={setValue} value={value} {...props}>
         <IconButton
-          name="more"
-          variant="secondary"
-          accessibilityLabel="More"
           transparent
+          accessibilityLabel="More"
+          name="more"
           testID={props.subjectTestID}
+          variant="secondary"
         />
       </Dropdown>
       <Button onPress={handleButtonPress}>Open Menu</Button>
@@ -98,7 +98,7 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
         </TextCaption>
       </HStack>
       {defaultOptions.map((option) => (
-        <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
+        <SelectOption key={option} testID={`option-${option}`} title={option} value={option} />
       ))}
     </>
   );
@@ -106,13 +106,13 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
   return (
     <HStack spacing={4}>
       <Dropdown
-        onChange={setValue}
         content={content}
-        value={value}
         enableMobileModal={enableMobileModal}
+        onChange={setValue}
+        value={value}
       >
         <DotCount count={4} pin="top-end">
-          <IconButton name="more" variant="secondary" transparent accessibilityLabel="More" />
+          <IconButton transparent accessibilityLabel="More" name="more" variant="secondary" />
         </DotCount>
       </Dropdown>
     </HStack>
@@ -156,7 +156,7 @@ export const SubMenu = () => {
     () => (
       <>
         {defaultOptions.slice(2, 6).map((option) => (
-          <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
+          <SelectOption key={option} testID={`option-${option}`} title={option} value={option} />
         ))}
       </>
     ),
@@ -172,27 +172,27 @@ export const SubMenu = () => {
           </TextCaption>
         </HStack>
         {defaultOptions.slice(0, 2).map((option) => (
-          <SelectOption value={option} key={option} title={option} testID={`option-${option}`} />
+          <SelectOption key={option} testID={`option-${option}`} title={option} value={option} />
         ))}
         <Dropdown
           content={subMenuContent}
+          contentPosition={subMenuPosition}
+          minWidth={200}
           onChange={handleSubMenuValueChange}
           value={subMenuValue}
-          contentPosition={subMenuPosition}
           width="100%"
-          minWidth={200}
         >
           {/* Note: you can't use a SelectOption as the trigger or else SelectProvider will think this is a menu option */}
           <Pressable backgroundColor="background" width="100%">
             <HStack
-              justifyContent="space-between"
               alignItems="center"
+              justifyContent="space-between"
+              spacingHorizontal={2}
               spacingVertical={1}
               width="100%"
-              spacingHorizontal={2}
             >
               <TextHeadline as="p">More</TextHeadline>
-              <Icon size="s" name="caretRight" color="foreground" />
+              <Icon color="foreground" name="caretRight" size="s" />
             </HStack>
           </Pressable>
         </Dropdown>
@@ -202,25 +202,25 @@ export const SubMenu = () => {
   );
 
   return (
-    <HStack spacing={3} justifyContent="space-between" gap={2}>
+    <HStack gap={2} justifyContent="space-between" spacing={3}>
       <HStack flexGrow={1}>
         <Dropdown
           ref={menuRef}
-          width={200}
           content={content}
           onChange={handleMenuValueChange}
           value={menuValue}
+          width={200}
         >
-          <IconButton name="more" accessibilityLabel="More" />
+          <IconButton accessibilityLabel="More" name="more" />
         </Dropdown>
       </HStack>
       <HStack
+        alignItems="center"
         background="backgroundAlternate"
         borderRadius="rounded"
-        justifyContent="center"
-        alignItems="center"
-        spacing={3}
         flexGrow={3}
+        justifyContent="center"
+        spacing={3}
       >
         <TextBody as="p">You chose: {subMenuValue ?? menuValue}</TextBody>
       </HStack>
@@ -272,7 +272,7 @@ export const CustomOptions = () => {
             Section Heading
           </TextCaption>
         </HStack>
-        <HStack gap={1} flexWrap="wrap" spacingHorizontal={2} spacingBottom={2}>
+        <HStack flexWrap="wrap" gap={1} spacingBottom={2} spacingHorizontal={2}>
           {emojiMap.map(({ label, glyph }) => (
             <MenuItem value={label}>
               <TextTitle2 as="p">{glyph}</TextTitle2>
@@ -285,7 +285,7 @@ export const CustomOptions = () => {
   );
 
   return (
-    <Dropdown maxWidth={190} content={content} value={value} onChange={onChange}>
+    <Dropdown content={content} maxWidth={190} onChange={onChange} value={value}>
       <PressableOpacity>
         <TextTitle2 as="p">{currentGlyph}</TextTitle2>
       </PressableOpacity>

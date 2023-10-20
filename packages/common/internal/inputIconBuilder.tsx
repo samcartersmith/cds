@@ -31,8 +31,8 @@ export function inputIconBuilder(
           <TextInput
             key={`${variant}-inputicon`}
             label={variant}
-            variant={variant}
             start={<InputIcon color={variant} name="add" />}
+            variant={variant}
           />
         ))}
       </>
@@ -42,8 +42,8 @@ export function inputIconBuilder(
   const AccessibleInputIcon = () => {
     return (
       <TextInput
-        label="Add"
         accessibilityLabel="Search add an item"
+        label="Add"
         start={<InputIcon name="add" />}
       />
     );
@@ -51,7 +51,7 @@ export function inputIconBuilder(
 
   const DefaultsToForeground = () => {
     return (
-      <TextInput label="Search" variant="foregroundMuted" start={<InputIcon name="search" />} />
+      <TextInput label="Search" start={<InputIcon name="search" />} variant="foregroundMuted" />
     );
   };
 
@@ -59,14 +59,14 @@ export function inputIconBuilder(
     return (
       <TextInput
         label="Search"
-        variant="foregroundMuted"
         start={<InputIcon color="positive" name="search" />}
+        variant="foregroundMuted"
       />
     );
   };
 
   const BasicEnd = () => {
-    return <TextInput label="Label" end={<InputIcon name="add" />} />;
+    return <TextInput end={<InputIcon name="add" />} label="Label" />;
   };
 
   const AddCustomColor = () => {
@@ -81,8 +81,8 @@ export function inputIconBuilder(
   const AddCustomColorEnd = () => {
     return (
       <TextInput
-        label="Label"
         end={<InputIcon disableInheritFocusStyle color="foreground" name="add" />}
+        label="Label"
       />
     );
   };

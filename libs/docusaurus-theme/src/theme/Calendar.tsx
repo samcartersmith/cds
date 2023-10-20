@@ -15,18 +15,18 @@ const CalendarHeader = memo(function CalendarHeader({
 }: HeaderProps) {
   return (
     <HStack
-      width="100%"
       alignItems="center"
       justifyContent="space-between"
-      spacingHorizontal={2}
       spacingBottom={2}
+      spacingHorizontal={2}
+      width="100%"
     >
-      <IconButton name="caretLeft" variant="secondary" compact onPress={onPrevMonth} />
+      <IconButton compact name="caretLeft" onPress={onPrevMonth} variant="secondary" />
       <HStack gap={0.5}>
         <TextTitle2 as="h3">{`${month} - ${year}`}</TextTitle2>
-        {isCurrentMonth ? <Icon name="dot" color="primary" size="xs" /> : null}
+        {isCurrentMonth ? <Icon color="primary" name="dot" size="xs" /> : null}
       </HStack>
-      <IconButton name="caretRight" variant="secondary" compact onPress={onNextMonth} />
+      <IconButton compact name="caretRight" onPress={onNextMonth} variant="secondary" />
     </HStack>
   );
 });
@@ -36,7 +36,7 @@ const componentOverrides: CalendarProps['schedulelyComponents'] = {
 };
 
 const Calendar = memo(function Calendar(props: CalendarProps) {
-  return <Schedulely theme="minimal" schedulelyComponents={componentOverrides} {...props} />;
+  return <Schedulely schedulelyComponents={componentOverrides} theme="minimal" {...props} />;
 });
 
 export default Calendar;

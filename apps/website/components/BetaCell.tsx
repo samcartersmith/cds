@@ -97,16 +97,16 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
         transparentWhileInactive
         backgroundColor="background"
         borderRadius="rounded"
+        className={`${pressClassName} ${offsetClassName}`}
         disabled={disabled}
         onPress={onPress}
         to={to}
-        className={`${pressClassName} ${offsetClassName}`}
       >
         <HStack
-          flexGrow={1}
+          alignItems="center"
           background={selected ? 'backgroundAlternate' : undefined}
           borderRadius="rounded"
-          alignItems="center"
+          flexGrow={1}
           gap={2}
           spacingHorizontal={1}
           spacingVertical={1}
@@ -115,10 +115,10 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
         >
           {!!start && (
             <Box
+              dangerouslySetClassName={truncateClassName}
               flexGrow={getFlexGrow(startWidth, priority === 'start')}
               flexShrink={getFlexShrink(startWidth, priority === 'start')}
               justifyContent="flex-start"
-              dangerouslySetClassName={truncateClassName}
             >
               {start}
             </Box>
@@ -126,10 +126,10 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
 
           {!!middle && (
             <Box
+              dangerouslySetClassName={truncateClassName}
               flexGrow={getFlexGrow(middleWidth, priority === 'middle')}
               flexShrink={getFlexShrink(middleWidth, priority === 'middle')}
               justifyContent="center"
-              dangerouslySetClassName={truncateClassName}
             >
               {middle}
             </Box>
@@ -137,13 +137,13 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
 
           {!!end && (
             <Box
+              alignItems="flex-end"
+              dangerouslySetClassName={truncateClassName}
+              flexDirection="column"
               flexGrow={getFlexGrow(endWidth, priority === 'end')}
               flexShrink={getFlexShrink(endWidth, priority === 'end')}
-              flexDirection="column"
-              alignItems="flex-end"
               justifyContent="flex-end"
               width={endWidth}
-              dangerouslySetClassName={truncateClassName}
             >
               {end}
             </Box>

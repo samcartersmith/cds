@@ -35,14 +35,14 @@ export const TileButtonPictogram = () => {
         <TileButton onPress={handleNoop} pictogram="chart" title="Analytics" />
       </HStack>
       <HStack zIndex={getZIndexFromRow(4, 3)}>
-        <TileButton onPress={handleNoop} title="Bitcoin" count={0}>
-          <RemoteImage source={assets.btc.imageUrl} width={38.4} height={38.4} />
+        <TileButton count={0} onPress={handleNoop} title="Bitcoin">
+          <RemoteImage height={38.4} source={assets.btc.imageUrl} width={38.4} />
         </TileButton>
-        <TileButton onPress={handleNoop} title="Ethereum" count={1}>
-          <RemoteImage source={assets.eth.imageUrl} width={38.4} height={38.4} />
+        <TileButton count={1} onPress={handleNoop} title="Ethereum">
+          <RemoteImage height={38.4} source={assets.eth.imageUrl} width={38.4} />
         </TileButton>
-        <TileButton onPress={handleNoop} title="Sushi" count={100}>
-          <RemoteImage source={assets.sushi.imageUrl} width={38.4} height={38.4} />
+        <TileButton count={100} onPress={handleNoop} title="Sushi">
+          <RemoteImage height={38.4} source={assets.sushi.imageUrl} width={38.4} />
         </TileButton>
       </HStack>
     </VStack>

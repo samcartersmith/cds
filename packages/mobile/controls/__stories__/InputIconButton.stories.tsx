@@ -46,7 +46,7 @@ const InputIconButtonScreen = () => {
       </Example>
 
       <Example title="Using InputIconButton outside of a TextInput should not throw error">
-        <Box flexDirection="row" alignItems="center" justifyContent="space-between" width={350}>
+        <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
           <InputIconButton name="add" variant="foregroundMuted" />
         </Box>
       </Example>

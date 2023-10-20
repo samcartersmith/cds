@@ -25,16 +25,16 @@ export const ModalBody: React.FC<React.PropsWithChildren<ModalBodyProps>> = ({
   return (
     <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <ScrollView
-        scrollEnabled={shouldEnableScroll}
         onContentSizeChange={onContentSizeChange}
         onLayout={onLayout}
+        scrollEnabled={shouldEnableScroll}
         {...props}
       >
         <Box
+          flexGrow={1}
           spacingHorizontal={3}
           // remove vertical padding when dividers hidden
           spacingVertical={hideDividers ? 0 : 3}
-          flexGrow={1}
         >
           {children}
         </Box>

@@ -66,14 +66,14 @@ export const Alert = memo(
         () => [
           !!dismissActionLabel && (
             // need to set minWidth to 0 to make actions equal width
-            <Box flexGrow={1} flexBasis={0} minWidth={0} key="dismiss">
-              <Button onPress={handleDismissActionPress} block variant="secondary">
+            <Box key="dismiss" flexBasis={0} flexGrow={1} minWidth={0}>
+              <Button block onPress={handleDismissActionPress} variant="secondary">
                 {dismissActionLabel}
               </Button>
             </Box>
           ),
-          <Box flexGrow={1} flexBasis={0} minWidth={0} key="preferred">
-            <Button onPress={handlePreferredActionPress} block variant={preferredActionVariant}>
+          <Box key="preferred" flexBasis={0} flexGrow={1} minWidth={0}>
+            <Button block onPress={handlePreferredActionPress} variant={preferredActionVariant}>
               {preferredActionLabel}
             </Button>
           </Box>,
@@ -95,49 +95,49 @@ export const Alert = memo(
       return (
         <Portal containerId={alertContainerId} disablePortal={disablePortal}>
           <Modal
-            visible={visible}
-            accessibilityLabelledBy={labelledBy}
-            accessibilityLabel={label}
-            onRequestClose={onRequestClose}
+            ref={ref}
+            dangerouslyDisableResponsiveness
+            disableOverlayPress
             disablePortal
             hideDividers
-            disableOverlayPress
-            dangerouslySetWidth={318} // from design
-            dangerouslyDisableResponsiveness
-            dangerouslySetPosition={!stacked ? 'static' : undefined} // center alert vertically
-            shouldCloseOnEscPress={!!dismissActionLabel} // disable esc close when no dismiss action
+            accessibilityLabel={label}
+            accessibilityLabelledBy={labelledBy}
             dangerouslySetClassName={stacked ? alertOverModalClassName : undefined}
-            testID={testID}
-            ref={ref}
+            dangerouslySetPosition={!stacked ? 'static' : undefined} // center alert vertically
+            dangerouslySetWidth={318} // from design
+            onRequestClose={onRequestClose}
             role="alertdialog"
+            shouldCloseOnEscPress={!!dismissActionLabel} // disable esc close when no dismiss action
+            testID={testID}
+            visible={visible}
             {...props}
           >
             <Box
+              alignItems="center"
+              flexDirection="column"
+              spacingBottom={1}
               spacingHorizontal={3}
               spacingTop={3}
-              spacingBottom={1}
-              flexDirection="column"
-              alignItems="center"
             >
               {!!pictogram && (
                 <Box spacingBottom={2}>
                   {/* fixed size: 120x120 */}
                   <Pictogram
-                    name={pictogram}
                     dimension="48x48"
+                    name={pictogram}
                     scaleMultiplier={2.5}
                     testID={testID && `${testID}-pictogram`}
                   />
                 </Box>
               )}
-              <TextTitle3 id={labelledBySource} as="h3" spacingBottom={0.5} align="center">
+              <TextTitle3 align="center" as="h3" id={labelledBySource} spacingBottom={0.5}>
                 {title}
               </TextTitle3>
-              <TextBody as="p" color="foregroundMuted" align="center">
+              <TextBody align="center" as="p" color="foregroundMuted">
                 {body}
               </TextBody>
             </Box>
-            <ActionsContainer spacingHorizontal={3} spacingVertical={2} gap={2}>
+            <ActionsContainer gap={2} spacingHorizontal={3} spacingVertical={2}>
               {actions}
             </ActionsContainer>
           </Modal>

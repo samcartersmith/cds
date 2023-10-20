@@ -122,18 +122,18 @@ export const FullscreenModal = memo(function FullscreenModal({
 
   const header = (
     <HStack
+      alignItems="center"
       borderedBottom={!hideDivider}
+      dangerouslySetClassName={headerClassName}
       spacingHorizontal={4}
       spacingVertical={2}
-      dangerouslySetClassName={headerClassName}
-      alignItems="center"
     >
-      <Box spacingEnd={3} dangerouslySetClassName={headerLogoClassName}>
+      <Box dangerouslySetClassName={headerLogoClassName} spacingEnd={3}>
         {logo ?? <LogoMark size={32} />}
       </Box>
       <Box flexGrow={1}>
         {title ? (
-          <TextTitle1 id={labelledBySource} as="h1">
+          <TextTitle1 as="h1" id={labelledBySource}>
             {title}
           </TextTitle1>
         ) : (
@@ -142,7 +142,7 @@ export const FullscreenModal = memo(function FullscreenModal({
           </div>
         )}
         <Box flexGrow={1} justifyContent="flex-end">
-          <IconButton transparent name="close" onPress={onRequestClose} aria-label="Close button" />
+          <IconButton transparent aria-label="Close button" name="close" onPress={onRequestClose} />
         </Box>
       </Box>
     </HStack>
@@ -170,15 +170,15 @@ export const FullscreenModal = memo(function FullscreenModal({
 
   return (
     <ModalWrapper
-      visible={visible}
       hideOverlay
-      testID={testID}
-      zIndex={zIndex}
-      disablePortal={disablePortal}
-      role={role}
-      onDidClose={onDidClose}
-      accessibilityLabelledBy={labelledBy}
       accessibilityLabel={label}
+      accessibilityLabelledBy={labelledBy}
+      disablePortal={disablePortal}
+      onDidClose={onDidClose}
+      role={role}
+      testID={testID}
+      visible={visible}
+      zIndex={zIndex}
     >
       {overlay}
       <motion.div {...dialogMotionProps} className={pinStyles}>

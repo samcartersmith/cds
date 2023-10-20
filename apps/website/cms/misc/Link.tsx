@@ -8,7 +8,7 @@ export type LinkFields = {
 
 export const Link = memo(function Link({ label, url, ...rest }: LinkFields) {
   return (
-    <CDSLink to={url} openInNewWindow {...rest}>
+    <CDSLink openInNewWindow to={url} {...rest}>
       {label}
     </CDSLink>
   );

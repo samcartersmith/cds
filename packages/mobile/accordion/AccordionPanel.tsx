@@ -20,10 +20,10 @@ export const AccordionPanel = memo(
 
       return (
         <Collapsible
+          ref={forwardedRef}
           collapsed={collapsed}
           maxHeight={maxHeight}
           testID={testID}
-          ref={forwardedRef}
           {...spacing}
         >
           {children}

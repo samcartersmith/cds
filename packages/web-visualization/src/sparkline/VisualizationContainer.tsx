@@ -21,9 +21,9 @@ export const VisualizationContainer: React.FC<
   return (
     <Box
       ref={dimensions.shouldObserve ? observe : undefined}
-      width={width}
       height={height}
       role="application"
+      width={width}
     >
       {dimensions.width && dimensions.height ? children(dimensions) : null}
     </Box>

@@ -3,18 +3,18 @@ import { IconButton } from '../IconButton';
 
 export const Default = () => (
   <VStack>
-    <IconButton name="arrowsHorizontal" accessibilityLabel="Horizontal arrows" />
-    <IconButton name="arrowsHorizontal" accessibilityLabel="Horizontal arrows" to="/" />
+    <IconButton accessibilityLabel="Horizontal arrows" name="arrowsHorizontal" />
+    <IconButton accessibilityLabel="Horizontal arrows" name="arrowsHorizontal" to="/" />
   </VStack>
 );
 
 export const WithoutCompactStyles = () => (
   <VStack>
-    <IconButton name="arrowsHorizontal" compact={false} accessibilityLabel="Horizontal arrows" />
+    <IconButton accessibilityLabel="Horizontal arrows" compact={false} name="arrowsHorizontal" />
     <IconButton
-      name="arrowsHorizontal"
-      compact={false}
       accessibilityLabel="Horizontal arrows"
+      compact={false}
+      name="arrowsHorizontal"
       to="/"
     />
   </VStack>
@@ -23,31 +23,31 @@ export const WithoutCompactStyles = () => (
 export const PrimaryDisabled = () => (
   <IconButton
     disabled
-    variant="primary"
-    name="arrowsHorizontal"
     accessibilityLabel="Horizontal arrows"
+    name="arrowsHorizontal"
+    variant="primary"
   />
 );
 
 export const SecondaryDisabled = () => (
-  <IconButton disabled name="arrowsHorizontal" accessibilityLabel="Horizontal arrows" />
+  <IconButton disabled accessibilityLabel="Horizontal arrows" name="arrowsHorizontal" />
 );
 export const Primary = () => (
   <VStack gap={2}>
-    <IconButton variant="primary" name="arrowsHorizontal" accessibilityLabel="Horizontal arrows" />
+    <IconButton accessibilityLabel="Horizontal arrows" name="arrowsHorizontal" variant="primary" />
     <IconButton
-      variant="primary"
       transparent
-      name="arrowsHorizontal"
       accessibilityLabel="Horizontal arrows"
+      name="arrowsHorizontal"
+      variant="primary"
     />
   </VStack>
 );
 
 export const Secondary = () => (
   <VStack gap={2}>
-    <IconButton name="arrowsHorizontal" accessibilityLabel="Horizontal arrows" />
-    <IconButton transparent name="arrowsHorizontal" accessibilityLabel="Horizontal arrows" />
+    <IconButton accessibilityLabel="Horizontal arrows" name="arrowsHorizontal" />
+    <IconButton transparent accessibilityLabel="Horizontal arrows" name="arrowsHorizontal" />
   </VStack>
 );
 

@@ -82,16 +82,16 @@ const RemoteImageScreen = () => {
           <RemoteImage source={wideLogoSource} {...customDimensions} resizeMode="cover" />
           <RemoteImage source={wideLogoSource} {...customDimensions} resizeMode="contain" />
           <RemoteImage
+            aspectRatio={[9, 1]}
+            resizeMode="contain"
             source={wideLogoSource}
             width={customDimensions.width}
-            aspectRatio={[9, 1]}
-            resizeMode="contain"
           />
           <RemoteImage
-            source={wideLogoSource}
-            height={customDimensions.height}
             aspectRatio={[9, 1]}
+            height={customDimensions.height}
             resizeMode="contain"
+            source={wideLogoSource}
           />
         </VStack>
       </Example>

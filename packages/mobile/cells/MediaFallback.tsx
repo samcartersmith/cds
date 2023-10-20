@@ -14,10 +14,10 @@ export const MediaFallback = memo(function MediaFallback({ type, testID }: Media
   const imageSizeScaled = useScaleConditional(imageSize);
 
   if (type === 'image') {
-    return <Fallback height={imageSizeScaled} width={imageSizeScaled} shape="squircle" />;
+    return <Fallback height={imageSizeScaled} shape="squircle" width={imageSizeScaled} />;
   }
 
   return (
-    <Fallback testID={testID} height={mediaSizeScaled} width={mediaSizeScaled} shape="circle" />
+    <Fallback height={mediaSizeScaled} shape="circle" testID={testID} width={mediaSizeScaled} />
   );
 });

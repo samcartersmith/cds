@@ -24,16 +24,16 @@ export const PreFrontierIconButton = memo(function PreFrontierIconButton({
 
   return (
     <Pressable
-      transparentWhileInactive={transparent}
       backgroundColor={backgroundColor}
       borderColor={borderColor}
       borderRadius="roundedFull"
       borderWidth="button"
       feedback={feedback}
+      transparentWhileInactive={transparent}
       {...props}
     >
       <View style={[styles.iconButton, { height, width: height }]}>
-        <Icon name={name} size="s" color={color} />
+        <Icon color={color} name={name} size="s" />
       </View>
     </Pressable>
   );

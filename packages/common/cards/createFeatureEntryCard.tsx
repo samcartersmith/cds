@@ -25,8 +25,8 @@ export function createFeatureEntryCard<OnPressFn>({
     );
 
     return (
-      <Card {...accessibilityProps} testID={testID} onPress={onPress} flexShrink={0}>
-        <CardBody testID={`${testID}-body`} mediaPlacement="end" {...props} />
+      <Card {...accessibilityProps} flexShrink={0} onPress={onPress} testID={testID}>
+        <CardBody mediaPlacement="end" testID={`${testID}-body`} {...props} />
       </Card>
     );
   });

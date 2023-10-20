@@ -25,7 +25,7 @@ export const ModalFooter = ({
   }
 
   return (
-    <Box spacingHorizontal={3} spacingVertical={2} testID={testID} borderedTop={!hideDividers}>
+    <Box borderedTop={!hideDividers} spacingHorizontal={3} spacingVertical={2} testID={testID}>
       <ButtonGroup block={!isVertical} direction={direction}>
         {actions.map((action, i) => (
           // actions are stable so should be fine to use index as key

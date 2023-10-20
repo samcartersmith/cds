@@ -58,20 +58,20 @@ const SwitchIcon = ({
 
   return (
     <Interactable
-      testID={testID}
-      pressed={pressed}
       backgroundColor={checked ? 'primary' : 'backgroundAlternate'}
-      disabled={disabled}
       borderRadius="roundedLarge"
+      disabled={disabled}
+      pressed={pressed}
       style={trackStyle}
+      testID={testID}
     >
       <Interactable
-        pressed={pressed}
-        disabled={disabled}
         backgroundColor="background"
         borderColor="line"
-        borderWidth="card"
         borderRadius="roundedFull"
+        borderWidth="card"
+        disabled={disabled}
+        pressed={pressed}
         style={thumbStyle}
       />
     </Interactable>
@@ -88,11 +88,11 @@ const SwitchWithRef = forwardRef(function SwitchWithRef(
   const switchNode = (
     <Control
       {...props}
+      ref={ref}
       accessible
+      shouldUseSwitchTransition
       accessibilityRole="switch"
       label={children}
-      ref={ref}
-      shouldUseSwitchTransition
     >
       {SwitchIcon}
     </Control>
@@ -101,7 +101,7 @@ const SwitchWithRef = forwardRef(function SwitchWithRef(
   return (
     <ThemeProvider name="switch-control" palette={switchControlPalette}>
       {children ? (
-        <Box flexDirection="row" minHeight={switchHeight} alignItems="center">
+        <Box alignItems="center" flexDirection="row" minHeight={switchHeight}>
           {switchNode}
         </Box>
       ) : (

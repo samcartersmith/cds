@@ -23,7 +23,7 @@ export const LottieExample = () => {
   return (
     <HStack>
       <Button onPress={play}>Play</Button>
-      <Lottie ref={lottie} source={nux} height={500} onAnimationFinish={onAnimationFinish} />
+      <Lottie ref={lottie} height={500} onAnimationFinish={onAnimationFinish} source={nux} />
     </HStack>
   );
 };

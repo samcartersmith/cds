@@ -60,21 +60,21 @@ export const Avatar = memo(
     const avatarText = useMemo(() => {
       if (isLargestSize || isNormalAvatarButton) {
         return (
-          <TextTitle2 dangerouslySetColor={fallbackTextColor} align="center">
+          <TextTitle2 align="center" dangerouslySetColor={fallbackTextColor}>
             {placeholderLetter}
           </TextTitle2>
         );
       }
       if (size === 'm' || isCompactAvatarButton) {
         return (
-          <TextCaption dangerouslySetColor={fallbackTextColor} align="center">
+          <TextCaption align="center" dangerouslySetColor={fallbackTextColor}>
             {placeholderLetter}
           </TextCaption>
         );
       }
 
       return (
-        <TextBody dangerouslySetColor={fallbackTextColor} align="center">
+        <TextBody align="center" dangerouslySetColor={fallbackTextColor}>
           {placeholderLetter}
         </TextBody>
       );
@@ -90,13 +90,13 @@ export const Avatar = memo(
     const coloredFallback = useMemo(() => {
       return (
         <Box
-          borderRadius={borderRadius}
-          height="100%"
-          width="100%"
-          justifyContent="center"
           alignItems="center"
+          borderRadius={borderRadius}
           dangerouslySetBackground={colorSchemeProp ? colorSchemeHex : undefined}
+          height="100%"
+          justifyContent="center"
           testID={coloredFallbackTestID}
+          width="100%"
         >
           {avatarText}
         </Box>
@@ -105,28 +105,28 @@ export const Avatar = memo(
 
     return (
       <Box
-        dangerouslySetBackground={src}
-        borderRadius={borderRadius}
-        borderColor={borderColor}
-        width={computedSize}
-        height={computedSize}
-        position="relative"
-        overflow="hidden"
         alignItems="center"
-        justifyContent="center"
+        borderColor={borderColor}
+        borderRadius={borderRadius}
+        dangerouslySetBackground={src}
         dangerouslySetStyle={hasBorder ? styles.border : undefined}
-        flexShrink={0}
         flexGrow={0}
+        flexShrink={0}
+        height={computedSize}
+        justifyContent="center"
+        overflow="hidden"
+        position="relative"
         testID={testID}
+        width={computedSize}
       >
         {shouldShowAvatarImage ? (
           <RemoteImage
-            shape={shape}
-            width={computedSize}
             height={computedSize}
-            source={{ uri: imgSrc }}
             resizeMode="cover"
+            shape={shape}
+            source={{ uri: imgSrc }}
             testID={`${testID ?? ''}-image`}
+            width={computedSize}
           />
         ) : (
           coloredFallback

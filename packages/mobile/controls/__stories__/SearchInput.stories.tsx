@@ -23,7 +23,7 @@ const CustomRef = () => {
 
   const [text, setText] = useState('');
 
-  return <SearchInput value={text} onChangeText={setText} ref={ref} />;
+  return <SearchInput ref={ref} onChangeText={setText} value={text} />;
 };
 
 /**
@@ -44,10 +44,10 @@ export const OnChangeExample = () => {
   return (
     <>
       <SearchInput
-        value={text}
         onBack={handleOnBack}
         onChange={handleOnChange}
         onChangeText={setText}
+        value={text}
       />
       <TextLabel1>{text}</TextLabel1>
     </>
@@ -63,7 +63,7 @@ export const DisableBackArrow = () => {
 
   return (
     <>
-      <SearchInput value={text} disableBackArrow onSearch={handleOnSearch} onChangeText={setText} />
+      <SearchInput disableBackArrow onChangeText={setText} onSearch={handleOnSearch} value={text} />
       <TextLabel1>{text}</TextLabel1>
     </>
   );
@@ -79,10 +79,10 @@ const SetCustomSearchStartIcon = () => {
   return (
     <>
       <SearchInput
-        value={text}
-        startIcon="search"
-        onSearch={handleOnSearch}
         onChangeText={setText}
+        onSearch={handleOnSearch}
+        startIcon="search"
+        value={text}
       />
       <TextLabel1>{text}</TextLabel1>
     </>
@@ -99,10 +99,10 @@ const SetCustomBackArrowStartIcon = () => {
   return (
     <>
       <SearchInput
-        value={text}
-        startIcon="backArrow"
-        onSearch={handleOnSearch}
         onChangeText={setText}
+        onSearch={handleOnSearch}
+        startIcon="backArrow"
+        value={text}
       />
       <TextLabel1>{text}</TextLabel1>
     </>

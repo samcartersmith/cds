@@ -3,7 +3,7 @@ import type { ChangelogListProps } from '@theme/ChangelogList';
 import { VStack } from '@cbhq/cds-web/layout';
 
 const ChangelogList = memo(function ChangelogList(props: ChangelogListProps) {
-  return <VStack offsetHorizontal={3} dangerouslySetClassName="changelog-list" {...props} />;
+  return <VStack dangerouslySetClassName="changelog-list" offsetHorizontal={3} {...props} />;
 });
 
 ChangelogList.displayName = 'ChangelogList';

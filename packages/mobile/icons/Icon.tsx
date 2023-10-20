@@ -92,13 +92,13 @@ export const Icon = memo(function Icon({
 
   return (
     <Box animated={animated} dangerouslySetStyle={boxStyles} testID={testID}>
-      <Box alignItems="center" justifyContent="center" width={wrapperSize} height={wrapperSize}>
+      <Box alignItems="center" height={wrapperSize} justifyContent="center" width={wrapperSize}>
         <TextComponent
-          allowFontScaling={false}
-          accessible={!!accessibilityLabel}
-          accessibilityRole="image"
-          accessibilityLabel={accessibilityLabel}
           accessibilityHint={accessibilityHint}
+          accessibilityLabel={accessibilityLabel}
+          accessibilityRole="image"
+          accessible={!!accessibilityLabel}
+          allowFontScaling={false}
           style={fontStyles as TextStyle}
         >
           {glyph}
@@ -106,9 +106,9 @@ export const Icon = memo(function Icon({
         {bordered && (
           <IconOutline
             animated={animated}
+            color={iconColor}
             size={wrapperSize}
             sourceSize={sourceSize}
-            color={iconColor}
           />
         )}
       </Box>

@@ -9,7 +9,7 @@ import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
  */
 export const DataTable = ({ data }: { data: Record<string, string> }) => {
   return (
-    <Table variant="graph" bordered>
+    <Table bordered variant="graph">
       <TableBody>
         {Object.entries(data).map(([headline, body]) => {
           return (

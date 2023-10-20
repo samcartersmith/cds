@@ -5,7 +5,7 @@ import { NavigationBar } from '../NavigationBar';
 describe('NavigationBar', () => {
   it('renders start, children, end and bottom correctly for valid props', () => {
     render(
-      <NavigationBar start={<div>Start</div>} end={<div>End</div>} bottom={<div>Bottom</div>}>
+      <NavigationBar bottom={<div>Bottom</div>} end={<div>End</div>} start={<div>Start</div>}>
         <div>Children</div>
       </NavigationBar>,
     );
@@ -16,7 +16,7 @@ describe('NavigationBar', () => {
   });
   it('does not render start, children, end and bottom for invalid props', () => {
     render(
-      <NavigationBar start={null} end={null} bottom={null}>
+      <NavigationBar bottom={null} end={null} start={null}>
         <div />
       </NavigationBar>,
     );

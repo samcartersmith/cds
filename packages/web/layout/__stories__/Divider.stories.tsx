@@ -20,18 +20,18 @@ const Template: ComponentStory<typeof Divider> = ({ direction, ...rest }) => {
   if (direction === 'horizontal') {
     return (
       <VStack width={500}>
-        <Box height={100} width={500} background="background" />
+        <Box background="background" height={100} width={500} />
         <Divider direction={direction} {...rest} />
-        <Box height={100} width={500} background="background" />
+        <Box background="background" height={100} width={500} />
       </VStack>
     );
   }
 
   return (
     <HStack>
-      <Box height={200} width={250} background="background" />
+      <Box background="background" height={200} width={250} />
       <Divider direction={direction} {...rest} />
-      <Box height={200} width={250} background="background" />
+      <Box background="background" height={200} width={250} />
     </HStack>
   );
 };

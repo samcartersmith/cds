@@ -32,20 +32,20 @@ export const AccordionItem = memo(
     return (
       <VStack minWidth={accordionMinWidth}>
         <AccordionHeader
+          ref={headerRef}
+          collapsed={collapsed}
           itemKey={itemKey}
           media={media}
-          title={title}
-          subtitle={subtitle}
           onPress={onPress}
-          collapsed={collapsed}
+          subtitle={subtitle}
           testID={testID && `${testID}-header`}
-          ref={headerRef}
+          title={title}
         />
         <AccordionPanel
+          ref={panelRef}
           collapsed={collapsed}
           itemKey={itemKey}
           testID={testID && `${testID}-panel`}
-          ref={panelRef}
         >
           {children}
         </AccordionPanel>

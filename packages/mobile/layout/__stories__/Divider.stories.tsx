@@ -14,9 +14,9 @@ const DividerScreen = () => {
 
       <Example title="Vertical & heavy">
         <HStack>
-          <Box height={100} width={100} background="backgroundAlternate" />
+          <Box background="backgroundAlternate" height={100} width={100} />
           <Divider color="lineHeavy" direction="vertical" />
-          <Box height={100} width={100} background="backgroundAlternate" />
+          <Box background="backgroundAlternate" height={100} width={100} />
         </HStack>
       </Example>
     </ExampleScreen>

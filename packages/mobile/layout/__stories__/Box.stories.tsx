@@ -12,67 +12,67 @@ const BoxScreen = () => {
           <TextBody>Default background</TextBody>
         </Box>
 
-        <Box spacing={1} background="backgroundAlternate">
+        <Box background="backgroundAlternate" spacing={1}>
           <TextBody>Alternate background</TextBody>
         </Box>
 
-        <Box spacing={1} background="backgroundOverlay">
+        <Box background="backgroundOverlay" spacing={1}>
           <TextBody>Overlay background</TextBody>
         </Box>
 
-        <Box spacing={1} background="primary">
+        <Box background="primary" spacing={1}>
           <TextBody>Primary background</TextBody>
         </Box>
 
-        <Box spacing={1} background="secondary">
+        <Box background="secondary" spacing={1}>
           <TextBody>Secondary background</TextBody>
         </Box>
 
-        <Box spacing={1} background="positive">
+        <Box background="positive" spacing={1}>
           <TextBody>Positive background</TextBody>
         </Box>
 
-        <Box spacing={1} background="negative">
+        <Box background="negative" spacing={1}>
           <TextBody>Negative background</TextBody>
         </Box>
       </Example>
 
       <Example title="Borders">
-        <Box spacing={1} bordered>
+        <Box bordered spacing={1}>
           <TextBody>With borders</TextBody>
         </Box>
 
-        <Box spacing={1} bordered borderRadius="rounded">
+        <Box bordered borderRadius="rounded" spacing={1}>
           <TextBody>With rounded borders</TextBody>
         </Box>
 
-        <Box spacing={1} borderRadius="rounded" background="backgroundAlternate">
+        <Box background="backgroundAlternate" borderRadius="rounded" spacing={1}>
           <TextBody>With rounded corners</TextBody>
         </Box>
       </Example>
 
       <Example title="Elevation">
-        <Box spacing={1} elevation={1}>
+        <Box elevation={1} spacing={1}>
           <TextBody>Level 1</TextBody>
         </Box>
 
-        <Box spacing={1} elevation={2} borderRadius="rounded">
+        <Box borderRadius="rounded" elevation={2} spacing={1}>
           <TextBody>Level 2</TextBody>
         </Box>
       </Example>
 
       <Example title="Dimensions">
-        <Box spacing={1} width="50%" background="backgroundAlternate">
+        <Box background="backgroundAlternate" spacing={1} width="50%">
           <TextBody>Custom width</TextBody>
         </Box>
 
-        <Box spacing={1} height={100} background="backgroundAlternate">
+        <Box background="backgroundAlternate" height={100} spacing={1}>
           <TextBody>Custom height</TextBody>
         </Box>
       </Example>
 
       <Example title="Overflow Gradient">
-        <Box spacing={1} alignItems="flex-end" overflow="gradient" background="backgroundAlternate">
+        <Box alignItems="flex-end" background="backgroundAlternate" overflow="gradient" spacing={1}>
           <TextBody>
             Some large text that should fill the screen so we can see the gradient
           </TextBody>
@@ -80,102 +80,102 @@ const BoxScreen = () => {
       </Example>
 
       <Example title="Opacity">
-        <Box spacing={1} opacity={0.1} background="backgroundAlternate">
+        <Box background="backgroundAlternate" opacity={0.1} spacing={1}>
           <TextBody>Custom Opacity</TextBody>
         </Box>
 
-        <Box spacing={1} opacity={0.5} background="backgroundAlternate">
+        <Box background="backgroundAlternate" opacity={0.5} spacing={1}>
           <TextBody>Custom Opacity</TextBody>
         </Box>
       </Example>
 
       <Example title="Spacing">
-        <Box spacing={3} background="backgroundAlternate">
+        <Box background="backgroundAlternate" spacing={3}>
           <TextBody>All sides</TextBody>
         </Box>
 
         <Box
-          spacingTop={1}
-          spacingEnd={2}
-          spacingBottom={3}
-          spacingStart={4}
           background="backgroundAlternate"
+          spacingBottom={3}
+          spacingEnd={2}
+          spacingStart={4}
+          spacingTop={1}
         >
           <TextBody>Custom sides</TextBody>
         </Box>
 
-        <Box spacingVertical={3} background="backgroundAlternate">
+        <Box background="backgroundAlternate" spacingVertical={3}>
           <TextBody>Vertical only</TextBody>
         </Box>
 
-        <Box spacingHorizontal={3} background="backgroundAlternate">
+        <Box background="backgroundAlternate" spacingHorizontal={3}>
           <TextBody>Horizontal only</TextBody>
         </Box>
       </Example>
 
       <Example title="Offset">
-        <Box spacing={5} background="backgroundAlternate">
-          <Box offset={3} background>
+        <Box background="backgroundAlternate" spacing={5}>
+          <Box background offset={3}>
             <TextBody>All sides</TextBody>
           </Box>
         </Box>
 
-        <Box spacing={5} background="backgroundAlternate">
-          <Box offsetTop={1} offsetEnd={2} offsetBottom={3} offsetStart={4} background>
+        <Box background="backgroundAlternate" spacing={5}>
+          <Box background offsetBottom={3} offsetEnd={2} offsetStart={4} offsetTop={1}>
             <TextBody>Custom sides</TextBody>
           </Box>
         </Box>
 
-        <Box spacing={5} background="backgroundAlternate">
-          <Box offsetVertical={3} background>
+        <Box background="backgroundAlternate" spacing={5}>
+          <Box background offsetVertical={3}>
             <TextBody>Vertical only</TextBody>
           </Box>
         </Box>
 
-        <Box spacing={5} background="backgroundAlternate">
-          <Box offsetHorizontal={3} background>
+        <Box background="backgroundAlternate" spacing={5}>
+          <Box background offsetHorizontal={3}>
             <TextBody>Horizontal only</TextBody>
           </Box>
         </Box>
       </Example>
 
       <Example title="Positioning">
-        <Box spacing={1} height={100} background="backgroundAlternate">
+        <Box background="backgroundAlternate" height={100} spacing={1}>
           <TextBody>Relative parent</TextBody>
 
-          <Box position="absolute" right={8} bottom={16}>
+          <Box bottom={16} position="absolute" right={8}>
             <TextBody>Absolute child</TextBody>
           </Box>
         </Box>
       </Example>
 
       <Example title="Pinning">
-        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
-          <Box pin="top" background="backgroundOverlay">
+        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
+          <Box background="backgroundOverlay" pin="top">
             <TextBody>Top from left to right</TextBody>
           </Box>
         </Box>
 
-        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
-          <Box pin="right" background="backgroundOverlay">
+        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
+          <Box background="backgroundOverlay" pin="right">
             <TextBody>Right from top to bottom</TextBody>
           </Box>
         </Box>
 
-        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
-          <Box pin="bottom" background="backgroundOverlay">
+        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
+          <Box background="backgroundOverlay" pin="bottom">
             <TextBody>Bottom from left to right</TextBody>
           </Box>
         </Box>
 
-        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
-          <Box pin="left" background="backgroundOverlay">
+        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
+          <Box background="backgroundOverlay" pin="left">
             <TextBody>Left from top to bottom</TextBody>
           </Box>
         </Box>
 
-        <Box width="100%" height={150} background="backgroundAlternate" position="relative">
-          <Box pin="all" background="backgroundOverlay">
+        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
+          <Box background="backgroundOverlay" pin="all">
             <TextBody>To all corners</TextBody>
           </Box>
         </Box>

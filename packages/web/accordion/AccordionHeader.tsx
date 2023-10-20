@@ -33,10 +33,10 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => (
 
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
   <Box
+    dangerouslySetClassName={truncateClassName}
     flexGrow={1}
     flexShrink={1}
     justifyContent="flex-start"
-    dangerouslySetClassName={truncateClassName}
   >
     <VStack>
       <TextHeadline as="div" overflow="wrap">
@@ -45,9 +45,9 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
       {!!subtitle && (
         <TextBody
           as="div"
-          overflow="wrap"
           color="foregroundMuted"
           dangerouslySetClassName={overflowClassName}
+          overflow="wrap"
         >
           {subtitle}
         </TextBody>
@@ -82,27 +82,26 @@ export const AccordionHeader = memo(
       return (
         <h2 className={typographyResets}>
           <Pressable
+            ref={forwardedRef}
             noScaleOnPress
             transparentWhileInactive
-            backgroundColor="background"
-            onPress={handlePress}
-            width="100%"
-            testID={testID}
-            ref={forwardedRef}
-            // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
-            aria-expanded={!collapsed}
             aria-controls={getAccordionPanelId(itemKey)}
+            aria-expanded={!collapsed} // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
+            backgroundColor="background"
             id={getAccordionHeaderId(itemKey)}
+            onPress={handlePress}
+            testID={testID}
+            width="100%"
           >
             <HStack
-              width="100%"
               alignItems="center"
               gap={2}
               minHeight={minHeight}
+              width="100%"
               {...spacing.outer}
             >
               {!!media && <AccordionMedia media={media} />}
-              <AccordionTitle title={title} subtitle={subtitle} />
+              <AccordionTitle subtitle={subtitle} title={title} />
               <AccordionIcon collapsed={collapsed} />
             </HStack>
           </Pressable>

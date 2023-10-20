@@ -92,13 +92,13 @@ export const Link = memo(
 
     return (
       <TextComponent
-        accessibilityRole="link"
         accessibilityHint={accessibilityLabel}
         accessibilityLabel={accessibilityLabel}
-        testID={testID}
-        onPress={openUrlOnPress}
+        accessibilityRole="link"
         color={color}
         mono={mono}
+        onPress={openUrlOnPress}
+        testID={testID}
         underline={underline}
       >
         {children}

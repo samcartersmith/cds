@@ -14,12 +14,12 @@ describe('Search', () => {
   beforeAll(() => {
     SearchComponent = (
       <SearchInput
-        value="value"
-        testID={TEST_ID}
-        onSearch={onSearchSpy}
-        onClear={onClearSpy}
         onChangeText={onChangeTextSpy}
+        onClear={onClearSpy}
+        onSearch={onSearchSpy}
         placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
       />
     );
   });
@@ -49,13 +49,13 @@ describe('Search', () => {
   it('renders a backArrow icon button at the start node', () => {
     render(
       <SearchInput
-        value="value"
-        testID={TEST_ID}
-        onSearch={onSearchSpy}
-        onClear={onClearSpy}
         onChangeText={onChangeTextSpy}
+        onClear={onClearSpy}
+        onSearch={onSearchSpy}
         placeholder="Placeholder"
         startIcon="backArrow"
+        testID={TEST_ID}
+        value="value"
       />,
     );
 
@@ -65,11 +65,11 @@ describe('Search', () => {
   it('does not render a startIcon when hideStartIcon=true', () => {
     render(
       <SearchInput
-        onChangeText={onChangeTextSpy}
-        value="value"
-        testID={TEST_ID}
-        placeholder="Placeholder"
         hideStartIcon
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
       />,
     );
 
@@ -86,13 +86,13 @@ describe('Search', () => {
   it('announces the Back arrow icon button', () => {
     render(
       <SearchInput
-        value="value"
-        testID={TEST_ID}
-        onSearch={onSearchSpy}
-        onClear={onClearSpy}
         onChangeText={onChangeTextSpy}
+        onClear={onClearSpy}
+        onSearch={onSearchSpy}
         placeholder="Placeholder"
         startIcon="backArrow"
+        testID={TEST_ID}
+        value="value"
       />,
     );
 

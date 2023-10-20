@@ -20,7 +20,7 @@ describe('Tile.test', () => {
 
   it('renders count', () => {
     render(
-      <Tile title="test title" count={4}>
+      <Tile count={4} title="test title">
         <MockPictogram />
       </Tile>,
     );
@@ -30,7 +30,7 @@ describe('Tile.test', () => {
 
   it('overflows text', () => {
     render(
-      <Tile title="test title" showOverflow>
+      <Tile showOverflow title="test title">
         <MockPictogram />
       </Tile>,
     );

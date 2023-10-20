@@ -40,12 +40,12 @@ export const Spinner = memo(function Spinner({
 
   return (
     <div
-      data-testid={testID}
-      role="status"
       aria-busy
       aria-live="polite"
-      style={spinnerStyle}
       className={cx(styles.spinner.base, styles.spinnerAnimation)}
+      data-testid={testID}
+      role="status"
+      style={spinnerStyle}
     />
   );
 });

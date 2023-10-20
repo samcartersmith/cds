@@ -29,8 +29,8 @@ export const HexagonAvatarClipPath = () => {
     <svg height="0" viewBox="0 0 66 62" width="0">
       <defs>
         <clipPath
-          id={hexagonAvatarClipId}
           clipPathUnits="objectBoundingBox"
+          id={hexagonAvatarClipId}
           transform={`scale(${xScale} ${yScale})`}
         >
           <path d="M63.4372 22.8624C66.2475 27.781 66.2475 33.819 63.4372 38.7376L54.981 53.5376C52.1324 58.5231 46.8307 61.6 41.0887 61.6H24.4562C18.7142 61.6 13.4125 58.5231 10.564 53.5376L2.10774 38.7376C-0.702577 33.819 -0.702582 27.781 2.10774 22.8624L10.564 8.06243C13.4125 3.07687 18.7142 0 24.4562 0H41.0887C46.8307 0 52.1324 3.07686 54.981 8.06242L63.4372 22.8624Z" />
@@ -72,15 +72,15 @@ export const HexagonBorder = memo(
     const svgTransformStyles = hexagonSvgTransformStyles[offset ? 'offset' : 'standard'][size];
 
     return (
-      <Box position="absolute" width="100%" height="100%" aria-hidden testID={testID}>
-        <svg data-testid={`${testID}-svg`} viewBox="-2.25 0 70 62" style={svgTransformStyles}>
+      <Box aria-hidden height="100%" position="absolute" testID={testID} width="100%">
+        <svg data-testid={`${testID}-svg`} style={svgTransformStyles} viewBox="-2.25 0 70 62">
           <path
-            data-testid={`${testID}-path`}
             d="M63.4372 22.8624C66.2475 27.781 66.2475 33.819 63.4372 38.7376L54.981 53.5376C52.1324 58.5231 46.8307 61.6 41.0887 61.6H24.4562C18.7142 61.6 13.4125 58.5231 10.564 53.5376L2.10774 38.7376C-0.702577 33.819 -0.702582 27.781 2.10774 22.8624L10.564 8.06243C13.4125 3.07687 18.7142 0 24.4562 0H41.0887C46.8307 0 52.1324 3.07686 54.981 8.06242L63.4372 22.8624Z"
-            stroke={strokeColor}
-            strokeWidth={1.5}
-            strokeLinecap="round"
+            data-testid={`${testID}-path`}
             fill="none"
+            stroke={strokeColor}
+            strokeLinecap="round"
+            strokeWidth={1.5}
             vectorEffect="non-scaling-stroke"
           />
         </svg>

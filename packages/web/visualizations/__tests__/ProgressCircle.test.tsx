@@ -108,7 +108,7 @@ describe('ProgressCircle tests', () => {
 
   it('handles heavy weight', () => {
     const size = 100;
-    render(<ProgressCircle progress={1} weight="heavy" size={size} />);
+    render(<ProgressCircle progress={1} size={size} weight="heavy" />);
 
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
@@ -117,7 +117,7 @@ describe('ProgressCircle tests', () => {
 
   it('handles no text', () => {
     const size = 100;
-    render(<ProgressCircle progress={1} hideText size={size} />);
+    render(<ProgressCircle hideText progress={1} size={size} />);
 
     expect(screen.queryAllByText('100%')).toHaveLength(0);
   });

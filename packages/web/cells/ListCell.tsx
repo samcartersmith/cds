@@ -47,13 +47,13 @@ export const ListCell = memo(
     return (
       <Cell
         {...props}
+        ref={ref}
         accessory={accessoryType && <CellAccessory type={accessoryType} />}
         detail={end}
-        media={media}
         disabled={disabled}
+        media={media}
         minHeight={minHeight}
         selected={selected}
-        ref={ref}
       >
         <VStack>
           {!!title && (
@@ -66,8 +66,8 @@ export const ListCell = memo(
             <TextBody
               as="div"
               color="foregroundMuted"
-              overflow={multiline ? undefined : 'truncate'}
               dangerouslySetClassName={multiline ? overflowClassName : undefined}
+              overflow={multiline ? undefined : 'truncate'}
             >
               {description}
             </TextBody>

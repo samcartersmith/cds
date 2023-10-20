@@ -38,7 +38,7 @@ export const Example = ({ children, inline, title, titleSpacing, ...props }: Exa
 
   const content = (
     <>
-      <Box spacing={2} spacingBottom={3} background {...props}>
+      <Box background spacing={2} spacingBottom={3} {...props}>
         {!!title && <TextTitle3 {...titleSpacing}>{title}</TextTitle3>}
 
         {typeof children === 'function'
@@ -62,11 +62,11 @@ const Screen: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
 
   return (
     <ScrollView
-      style={{ backgroundColor: palette.background, height: '100%' }}
       keyboardShouldPersistTaps="always"
-      testID="mobile-playground-scrollview"
       persistentScrollbar={false}
       showsVerticalScrollIndicator={false}
+      style={{ backgroundColor: palette.background, height: '100%' }}
+      testID="mobile-playground-scrollview"
     >
       {children}
       <Divider testID="mobile-playground-scrollview-end" />
@@ -104,14 +104,14 @@ export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ chil
       <Screen>
         <ScaleProvider value="xSmall">
           <VStack>
-            <VStack gap={1} spacingVertical={3} spacingHorizontal={gutter} background>
-              <Switch onChange={toggleDark} checked={isDarkEnabled}>
+            <VStack background gap={1} spacingHorizontal={gutter} spacingVertical={3}>
+              <Switch checked={isDarkEnabled} onChange={toggleDark}>
                 Dark Spectrum
               </Switch>
-              <Switch onChange={toggleDense} checked={isDenseEnabled}>
+              <Switch checked={isDenseEnabled} onChange={toggleDense}>
                 Dense Scale
               </Switch>
-              <Switch onChange={toggleFrontier} checked={frontier}>
+              <Switch checked={frontier} onChange={toggleFrontier}>
                 Frontier
               </Switch>
             </VStack>

@@ -114,7 +114,7 @@ describe('useTableTag', () => {
 
   it('Get default cell spacing dense', () => {
     const wrapper = ({ children }: PropsWithChildren<unknown>) => (
-      <ThemeProvider spectrum="light" scale="xSmall">
+      <ThemeProvider scale="xSmall" spectrum="light">
         <Table>
           <TableBody>{children}</TableBody>
         </Table>

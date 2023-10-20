@@ -48,7 +48,7 @@ describe('styles', () => {
       borderWidth: 1,
     };
 
-    render(<InputStack testID={TEST_ID} borderStyle={borderStyle} inputNode={<NativeInput />} />);
+    render(<InputStack borderStyle={borderStyle} inputNode={<NativeInput />} testID={TEST_ID} />);
 
     await screen.findByTestId(`${TEST_ID}-input-area`);
 

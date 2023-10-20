@@ -214,20 +214,20 @@ export const Carousel = memo(
           const isLastItem = index === visibleItems.length - 1;
           return (
             <CarouselItem
+              key={`carousel-item-${id}`}
+              dismissButtonAccessibilityHint={dismissButtonAccessibilityHint}
+              dismissButtonAccessibilityLabel={dismissButtonAccessibilityLabel}
               id={id}
               index={index}
-              key={`carousel-item-${id}`}
-              spacingEnd={isLastItem ? 0 : gap}
-              showDismiss={showDismiss}
-              xOffset={xOffset}
-              totalItems={visibleItems.length}
-              width={itemWidth}
-              progressOpacity={indicatorsOpacity.current}
               onDismiss={getDismissItemHandler(id)}
               onDismissLastItem={getOnDismissLastItemHandler(id)}
               onMount={getOnMountItemHandler(id, index)}
-              dismissButtonAccessibilityLabel={dismissButtonAccessibilityLabel}
-              dismissButtonAccessibilityHint={dismissButtonAccessibilityHint}
+              progressOpacity={indicatorsOpacity.current}
+              showDismiss={showDismiss}
+              spacingEnd={isLastItem ? 0 : gap}
+              totalItems={visibleItems.length}
+              width={itemWidth}
+              xOffset={xOffset}
             >
               {children}
             </CarouselItem>
@@ -255,7 +255,6 @@ export const Carousel = memo(
             return (
               <ProgressIndicator
                 key={`progress-indicator-${id}`}
-                progress={progress}
                 dangerouslySetStyle={{
                   opacity: animatedStyles.opacity,
                   width: animatedStyles.opacity.interpolate({
@@ -263,6 +262,7 @@ export const Carousel = memo(
                     outputRange: [0, PROGRESS_INDICATOR_WIDTH + progressSpacingEnd],
                   }),
                 }}
+                progress={progress}
               />
             );
           }
@@ -276,27 +276,27 @@ export const Carousel = memo(
         <VStack>
           {showProgress && (
             <CarouselControlsWrapper
-              pointerEvents="none"
               animated
-              height={progressHeight}
               alignItems="flex-end"
+              height={progressHeight}
               opacity={indicatorsOpacity.current}
+              pointerEvents="none"
               testID="Carousel-progress"
             >
               {progressIndicators}
             </CarouselControlsWrapper>
           )}
           <Animated.ScrollView
-            decelerationRate="fast"
-            horizontal
             ref={scrollRef}
+            horizontal
+            decelerationRate="fast"
+            onScroll={onScroll}
+            overScrollMode="always"
             scrollEventThrottle={1}
             showsHorizontalScrollIndicator={false}
             snapToInterval={itemWidth}
             style={memoizedStyles}
             testID={testID}
-            onScroll={onScroll}
-            overScrollMode="always"
             {...otherProps}
           >
             {content}

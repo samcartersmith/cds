@@ -26,13 +26,13 @@ export const LogoSheet = () => {
       </HStack>
       <HStack>
         <Box spacingEnd={2}>
-          <LogoMark size={16} foreground />
+          <LogoMark foreground size={16} />
         </Box>
         <Box spacingEnd={2}>
-          <LogoMark size={24} foreground />
+          <LogoMark foreground size={24} />
         </Box>
         <Box spacingEnd={2}>
-          <LogoMark size={32} foreground />
+          <LogoMark foreground size={32} />
         </Box>
       </HStack>
       <VStack>
@@ -40,49 +40,49 @@ export const LogoSheet = () => {
           <LogoWordmark />
         </Box>
         <ThemeProvider spectrum="light">
-          <Box height={30} background spacing={1}>
+          <Box background height={30} spacing={1}>
             <LogoWordmark foreground />
           </Box>
         </ThemeProvider>
         <ThemeProvider spectrum="dark">
-          <Box height={30} background spacing={1}>
+          <Box background height={30} spacing={1}>
             <LogoWordmark foreground />
           </Box>
         </ThemeProvider>
       </VStack>
 
       <VStack>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoMark type="analytics" />
         </Box>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoMark type="ventures" />
         </Box>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoMark type="assetHub" />
         </Box>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoMark type="commerce" />
         </Box>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoMark type="wallet" />
         </Box>
       </VStack>
 
       <VStack>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoWordmark type="analytics" />
         </Box>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoWordmark type="ventures" />
         </Box>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoWordmark type="assetHub" />
         </Box>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoWordmark foreground type="commerce" />
         </Box>
-        <Box spacing={1} height={50}>
+        <Box height={50} spacing={1}>
           <SubBrandLogoWordmark foreground type="wallet" />
         </Box>
       </VStack>

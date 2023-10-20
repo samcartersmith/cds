@@ -14,7 +14,7 @@ type ExampleProps = {
 
 const PopoverExample = ({ visible = false }: ExampleProps) => {
   return (
-    <Popover content={<Box />} visible={visible} testID={CONTENT_TEST_ID}>
+    <Popover content={<Box />} testID={CONTENT_TEST_ID} visible={visible}>
       <Pressable backgroundColor="primary" testID={SUBJECT_TEST_ID}>
         Button
       </Pressable>

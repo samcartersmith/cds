@@ -6,11 +6,11 @@ import { TabIndicator } from '../TabIndicator';
 
 describe('TabIndicator', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<TabIndicator x={0} width={100} />)).toHaveNoViolations();
+    expect(await renderA11y(<TabIndicator width={100} x={0} />)).toHaveNoViolations();
   });
 
   it('renders x and width', async () => {
-    render(<TabIndicator x={50} width={1000} background="secondary" />);
+    render(<TabIndicator background="secondary" width={1000} x={50} />);
     // wait for animations
     await waitFor(() =>
       expect(
@@ -26,20 +26,20 @@ describe('TabIndicator', () => {
   });
 
   it('renders background', () => {
-    render(<TabIndicator x={0} width={100} background="secondary" />);
+    render(<TabIndicator background="secondary" width={100} x={0} />);
     expect(screen.getByTestId('cds-tab-indicator-inner-bar')).toHaveClass('secondary');
   });
 
   it('renders with testID', () => {
     const TEST_ID = 'tabIndicator';
-    render(<TabIndicator x={0} width={100} testID={TEST_ID} />);
+    render(<TabIndicator testID={TEST_ID} width={100} x={0} />);
     expect(screen.getByTestId(TEST_ID)).toBeInTheDocument();
   });
 
   it('renders with ref', () => {
     const TEST_ID = 'tabIndicator';
     const ref = { current: undefined } as unknown as RefObject<HTMLElement>;
-    render(<TabIndicator x={0} width={100} testID={TEST_ID} ref={ref} />);
+    render(<TabIndicator ref={ref} testID={TEST_ID} width={100} x={0} />);
     expect(ref.current).toBeInstanceOf(HTMLElement);
   });
 });

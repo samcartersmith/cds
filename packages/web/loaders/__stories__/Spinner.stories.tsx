@@ -24,7 +24,7 @@ export const SpinnerPrimary = () => {
     <VStack>
       <TextTitle1 as="h1">Spinner Primary Color</TextTitle1>
       <Spacer />
-      <Spinner size={10} color="primary" />
+      <Spinner color="primary" size={10} />
     </VStack>
   );
 };

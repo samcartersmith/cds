@@ -140,14 +140,14 @@ export const DotCount = memo(
 
     return (
       <View {...props}>
-        <View testID={`${props.testID}-children`} onLayout={onChildrenLayout}>
+        <View onLayout={onChildrenLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
         {!shouldUnmount && (
           <Animated.View
-            testID="dotcount-inner-container"
             onLayout={onDotLayout}
             style={dotCountInnerContainerStyle}
+            testID="dotcount-inner-container"
           >
             <TextCaption color="primaryForeground">
               {parseDotCountMaxOverflow(countInternal, max)}

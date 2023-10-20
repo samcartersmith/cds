@@ -26,7 +26,7 @@ describe('Card', () => {
 
   it('sets an accessible label with accessibilityLabel when pressable', () => {
     render(
-      <Card onPress={noop} accessibilityLabel={A11Y_TEXT}>
+      <Card accessibilityLabel={A11Y_TEXT} onPress={noop}>
         {CARD_TEXT}
       </Card>,
     );
@@ -40,7 +40,7 @@ describe('Card', () => {
     render(
       <>
         <span id={labelId}>{A11Y_TEXT}</span>
-        <Card onPress={noop} accessibilityLabelledBy={labelId}>
+        <Card accessibilityLabelledBy={labelId} onPress={noop}>
           {CARD_TEXT}
         </Card>
       </>,
@@ -55,7 +55,7 @@ describe('Card', () => {
     render(
       <>
         <span id={descriptionId}>{A11Y_TEXT}</span>
-        <Card onPress={noop} accessibilityHint={descriptionId}>
+        <Card accessibilityHint={descriptionId} onPress={noop}>
           {CARD_TEXT}
         </Card>
       </>,
@@ -125,7 +125,7 @@ describe('Card', () => {
 
   it('renders link when pressable callback is defined but href is set with a url', () => {
     render(
-      <Card onPress={noop} href={URL}>
+      <Card href={URL} onPress={noop}>
         {CARD_TEXT}
       </Card>,
     );
@@ -140,7 +140,7 @@ describe('Card', () => {
     const target = '_blank';
 
     render(
-      <Card to={URL} target={target}>
+      <Card target={target} to={URL}>
         {CARD_TEXT}
       </Card>,
     );

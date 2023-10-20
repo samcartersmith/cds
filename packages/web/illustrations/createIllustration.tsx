@@ -64,7 +64,7 @@ export function createIllustration<Variant extends IllustrationVariant>(
       return fallback;
     }
 
-    return <img src={src} alt={alt} width={width} height={height} data-testid={testID} />;
+    return <img alt={alt} data-testid={testID} height={height} src={src} width={width} />;
   });
 
   Illustration.displayName = 'Illustration';

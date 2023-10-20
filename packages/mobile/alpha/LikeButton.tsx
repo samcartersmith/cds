@@ -77,29 +77,29 @@ export const LikeButton = memo(function LikeButton({
 
   return (
     <Pressable
-      backgroundColor="transparent"
-      accessibilityLabel="Like button"
       accessibilityHint="Click to like"
-      style={pressableStyles}
-      onPress={handleOnPress}
+      accessibilityLabel="Like button"
+      backgroundColor="transparent"
       feedback="light"
+      onPress={handleOnPress}
+      style={pressableStyles}
       {...props}
     >
       <HStack
         alignItems="center"
-        justifyContent="flex-start"
-        flexWrap="nowrap"
         flexShrink={0}
+        flexWrap="nowrap"
+        gap={1}
+        justifyContent="flex-start"
         minHeight={size}
         minWidth={size}
-        gap={1}
       >
         <TextIcon
           animated
-          name={liked ? 'heartActive' : 'heartInactive'}
           color={liked ? 'negative' : 'foreground'}
-          size={iconSize}
           dangerouslySetStyle={iconStyles}
+          name={liked ? 'heartActive' : 'heartInactive'}
+          size={iconSize}
         />
         {count > 0 ? <TextLabel1 mono>{count}</TextLabel1> : null}
       </HStack>

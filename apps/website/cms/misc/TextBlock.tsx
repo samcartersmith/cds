@@ -31,7 +31,7 @@ export const TextBlock = memo(function TextBlock({
 
   return (
     <VStack width={width}>
-      <TextHeadline as="p" spacingBottom={2} color={titleColor}>
+      <TextHeadline as="p" color={titleColor} spacingBottom={2}>
         {title}
       </TextHeadline>
       <RichText content={description} />

@@ -42,22 +42,22 @@ function SparklineInteractivePathsWithGeneric<Period extends string>({
     <>
       {!showHoverData && (
         <SparklineInteractiveAnimatedPath
-          initialPath={hoverPathRef.current}
-          initialArea={hoverAreaRef.current}
-          d={path}
           area={shouldShowFill ? area : undefined}
           color={strokeColor}
+          d={path}
+          initialArea={hoverAreaRef.current}
+          initialPath={hoverPathRef.current}
           selectedPeriod={selectedPeriod}
           yAxisScalingFactor={yAxisScalingFactor}
         />
       )}
       {!!showHoverData && (
         <SparklineInteractiveTimeseriesPaths
-          initialPath={path}
-          width={chartWidth}
-          height={innerSparklineInteractiveHeight}
           data={hoverData?.[selectedPeriod] as ChartTimeseries[]}
+          height={innerSparklineInteractiveHeight}
+          initialPath={path}
           onRender={handleMultiTimeseriesRender}
+          width={chartWidth}
         />
       )}
     </>

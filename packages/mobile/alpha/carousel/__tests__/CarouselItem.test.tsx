@@ -13,11 +13,11 @@ describe('CarouselItem.test', () => {
       <CarouselItem
         id="item1"
         index={0}
+        onMount={onMount}
         spacingEnd={2}
-        xOffset={new Animated.Value(10)}
         totalItems={3}
         width={50}
-        onMount={onMount}
+        xOffset={new Animated.Value(10)}
       >
         <Text>test</Text>
       </CarouselItem>,
@@ -40,17 +40,17 @@ describe('CarouselItem.test', () => {
 
     render(
       <CarouselItem
+        showDismiss
         id="item1"
         index={0}
-        spacingEnd={2}
-        xOffset={new Animated.Value(10)}
-        progressOpacity={new Animated.Value(0.5)}
-        totalItems={2}
-        width={50}
-        onMount={jest.fn()}
-        showDismiss
         onDismiss={onDismiss}
         onDismissLastItem={onDismissLastItem}
+        onMount={jest.fn()}
+        progressOpacity={new Animated.Value(0.5)}
+        spacingEnd={2}
+        totalItems={2}
+        width={50}
+        xOffset={new Animated.Value(10)}
       >
         <Text>test</Text>
       </CarouselItem>,
@@ -78,17 +78,17 @@ describe('CarouselItem.test', () => {
 
     render(
       <CarouselItem
+        showDismiss
         id="item1"
         index={0}
-        spacingEnd={2}
-        xOffset={new Animated.Value(10)}
-        progressOpacity={new Animated.Value(0)}
-        totalItems={1}
-        width={50}
-        onMount={jest.fn()}
-        showDismiss
         onDismiss={onDismiss}
         onDismissLastItem={onDismissLastItem}
+        onMount={jest.fn()}
+        progressOpacity={new Animated.Value(0)}
+        spacingEnd={2}
+        totalItems={1}
+        width={50}
+        xOffset={new Animated.Value(10)}
       >
         <Text>test</Text>
       </CarouselItem>,
@@ -108,16 +108,16 @@ describe('CarouselItem.test', () => {
   it('passes a11y', () => {
     render(
       <CarouselItem
+        showDismiss
+        dismissButtonAccessibilityHint="Dismiss this item"
+        dismissButtonAccessibilityLabel="Dismiss"
         id="item1"
         index={0}
+        onMount={jest.fn()}
         spacingEnd={2}
-        xOffset={new Animated.Value(10)}
         totalItems={3}
         width={50}
-        onMount={jest.fn()}
-        showDismiss
-        dismissButtonAccessibilityLabel="Dismiss"
-        dismissButtonAccessibilityHint="Dismiss this item"
+        xOffset={new Animated.Value(10)}
       >
         <Text>test</Text>
       </CarouselItem>,

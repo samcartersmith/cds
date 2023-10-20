@@ -169,34 +169,34 @@ export const Drawer = memo(
 
     return (
       <Modal
-        transparent
-        onRequestClose={handleClose}
         hardwareAccelerated
+        transparent
         visible
         animationType="none"
+        onRequestClose={handleClose}
         {...props}
         accessibilityRole="alert"
       >
-        <DrawerStatusBar pin={pin} visible />
+        <DrawerStatusBar visible pin={pin} />
         <Overlay
-          opacity={opacityAnimation}
           onTouchStart={handleOverlayPress}
+          opacity={opacityAnimation}
           testID="drawer-overlay"
         />
         <Box
           {...getPanGestureHandlers}
+          animated
           background="background"
           borderRadius={isPinHorizontal ? 'roundedNone' : 'roundedLarge'}
           bordered={scheme === 'dark'}
-          elevation={scheme === 'dark' ? 2 : 0}
-          pin={pin}
-          animated
-          maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
-          width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
           dangerouslySetStyle={combinedStyles}
+          elevation={scheme === 'dark' ? 2 : 0}
+          maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
+          onAccessibilityEscape={handleClose}
+          pin={pin}
           // close modal when user performs the "escape" accessibility gesture
           // https://reactnative.dev/docs/accessibility#onaccessibilityescape-ios
-          onAccessibilityEscape={handleClose}
+          width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
         >
           {content}
         </Box>

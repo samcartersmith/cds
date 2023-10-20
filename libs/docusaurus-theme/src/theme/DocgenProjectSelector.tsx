@@ -38,11 +38,11 @@ const DocgenProjectSelector = memo(function DocgenProjectSelector() {
 
   return (
     <HStack
-      dangerouslySetClassName="docgen-project-selector-wrapper"
       borderRadius="roundedLarge"
-      overflow="hidden"
+      dangerouslySetClassName="docgen-project-selector-wrapper"
       justifyContent="space-between"
       minWidth={175}
+      overflow="hidden"
     >
       {projects.map((project) => {
         const isActive = project.label === activeProject?.label;
@@ -50,8 +50,8 @@ const DocgenProjectSelector = memo(function DocgenProjectSelector() {
           <Pressable
             key={project.label}
             backgroundColor={isActive ? 'foreground' : 'background'}
-            onPress={getOnPressHandler(project)}
             className={spacingStyles}
+            onPress={getOnPressHandler(project)}
           >
             <TextHeadline as="span" dangerouslySetColor={isActive ? activeForeground : undefined}>
               {project.label}

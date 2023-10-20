@@ -13,7 +13,7 @@ import { CheckboxGroup } from '../CheckboxGroup';
 export const Normal = () => {
   const [checked, { toggle }] = useToggler();
   return (
-    <Checkbox name="normal-checkbox" checked={checked} onChange={toggle}>
+    <Checkbox checked={checked} name="normal-checkbox" onChange={toggle}>
       Normal
     </Checkbox>
   );
@@ -22,7 +22,7 @@ export const Normal = () => {
 export const Indeterminate = () => {
   const [indeterminate, { toggle }] = useToggler();
   return (
-    <Checkbox name="indeterminate-checkbox" indeterminate={indeterminate} onChange={toggle}>
+    <Checkbox indeterminate={indeterminate} name="indeterminate-checkbox" onChange={toggle}>
       Indeterminate
     </Checkbox>
   );
@@ -32,7 +32,7 @@ export const Dense = () => {
   const [checked, { toggle }] = useToggler();
   return (
     <ThemeProvider scale="xSmall">
-      <Checkbox name="dense-checkbox" checked={checked} onChange={toggle}>
+      <Checkbox checked={checked} name="dense-checkbox" onChange={toggle}>
         Dense
       </Checkbox>
     </ThemeProvider>
@@ -121,8 +121,8 @@ export const Group = () => {
       <CheckboxGroup
         aria-labelledby="order-dinner-label-no-select-all"
         name="checkbox-group-default"
-        selectedValues={selectedValues}
         onChange={toggle}
+        selectedValues={selectedValues}
       >
         {Object.entries(options).map(([value, label]) => (
           <Checkbox key={value} value={value}>
@@ -142,13 +142,13 @@ export const CustomStylesCheckboxGroup = () => {
         Custom checkbox group
       </TextHeadline>
       <CheckboxGroup
-        selectedValues={selectedValues}
         aria-labelledby="custom-styles-checkbox-group"
         name="checkbox-group-custom-styles"
+        selectedValues={selectedValues}
       >
         {Object.entries(options).map(([value, label]) => (
           <div key={value} style={{ padding: '6px 8px' }}>
-            <Checkbox value={value} checked={selectedValues.has(value)} onChange={toggle}>
+            <Checkbox checked={selectedValues.has(value)} onChange={toggle} value={value}>
               {label}
             </Checkbox>
           </div>

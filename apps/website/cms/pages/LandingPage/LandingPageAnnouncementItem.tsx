@@ -22,11 +22,11 @@ const LandingPageAnnouncementItem = memo(function LandingPageAnnouncementItem({
 }: LandingPageAnnouncementItemProps) {
   const handleOnPress = useGoToLinkHandler(actionUrl);
   return (
-    <VStack gap={1} alignItems="flex-start">
+    <VStack alignItems="flex-start" gap={1}>
       <TextTitle1 as="h2">{title}</TextTitle1>
       <TextLabel2 as="p">{description}</TextLabel2>
       {actionLabel ? (
-        <Button compact transparent flush="start" endIcon="forwardArrow" onPress={handleOnPress}>
+        <Button compact transparent endIcon="forwardArrow" flush="start" onPress={handleOnPress}>
           {actionLabel}
         </Button>
       ) : null}

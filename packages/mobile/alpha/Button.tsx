@@ -73,12 +73,12 @@ export const Button = memo(
           children
         ) : (
           <TextHeadline
-            testID="text-headline"
-            color={color}
-            selectable="none"
-            numberOfLines={numberOfLines}
             align="center"
+            color={color}
             dangerouslySetStyle={styles.text}
+            numberOfLines={numberOfLines}
+            selectable="none"
+            testID="text-headline"
           >
             {children}
           </TextHeadline>
@@ -88,7 +88,9 @@ export const Button = memo(
 
     return (
       <Pressable
-        transparentWhileInactive={transparent}
+        ref={ref}
+        accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
+        accessibilityLabel={loading ? 'loading' : accessibilityLabel}
         backgroundColor={backgroundColor}
         block={block}
         borderColor={borderColor}
@@ -96,43 +98,41 @@ export const Button = memo(
         borderWidth="button"
         feedback={feedback}
         loading={loading}
-        style={pressableStyles}
         noScaleOnPress={noScaleOnPress}
-        accessibilityLabel={loading ? 'loading' : accessibilityLabel}
-        accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
-        ref={ref}
+        style={pressableStyles}
+        transparentWhileInactive={transparent}
         {...props}
       >
         <HStack
-          justifyContent={justifyContent}
           alignItems="center"
-          flexWrap="nowrap"
-          minHeight={minHeight}
           dangerouslySetStyle={block ? styles.block : styles.inline}
-          spacingStart={spacingStart}
+          flexWrap="nowrap"
+          justifyContent={justifyContent}
+          minHeight={minHeight}
           spacingEnd={spacingEnd}
+          spacingStart={spacingStart}
         >
           {loading ? (
-            <ActivityIndicator size="small" color={palette[color]} />
+            <ActivityIndicator color={palette[color]} size="small" />
           ) : (
             <>
               {!!startIcon && (
                 <Icon
+                  color={color}
+                  dangerouslySetStyle={styles.icon}
                   name={startIcon}
                   size={iconSize}
-                  color={color}
                   spacingEnd={1}
-                  dangerouslySetStyle={styles.icon}
                 />
               )}
               {childrenNode}
               {!!endIcon && (
                 <Icon
+                  color={color}
+                  dangerouslySetStyle={styles.icon}
                   name={endIcon}
                   size={iconSize}
-                  color={color}
                   spacingStart={1}
-                  dangerouslySetStyle={styles.icon}
                 />
               )}
             </>

@@ -33,14 +33,14 @@ const FullscreenAlertExample = ({
 
   return (
     <FullscreenAlert
-      visible={visible}
-      onRequestClose={handleClose}
-      title={TITLE}
-      body={BODY}
-      preferredActionLabel={PREFERRED_ACTION_LABEL}
-      accessibilityLabelledBy={accessibilityLabelledBy}
-      accessibilityLabel={accessibilityLabel}
       disablePortal
+      accessibilityLabel={accessibilityLabel}
+      accessibilityLabelledBy={accessibilityLabelledBy}
+      body={BODY}
+      onRequestClose={handleClose}
+      preferredActionLabel={PREFERRED_ACTION_LABEL}
+      title={TITLE}
+      visible={visible}
     />
   );
 };
@@ -88,8 +88,8 @@ describe('FullscreenAlert', () => {
     render(
       <FullscreenAlertExample
         visible
-        accessibilityLabelledBy={LABELLED_BY}
         accessibilityLabel={LABEL}
+        accessibilityLabelledBy={LABELLED_BY}
       />,
     );
 
@@ -104,8 +104,8 @@ describe('FullscreenAlert', () => {
     render(
       <FullscreenAlertExample
         visible
-        accessibilityLabelledBy={LABELLED_BY}
         accessibilityLabel={LABEL}
+        accessibilityLabelledBy={LABELLED_BY}
       />,
     );
 

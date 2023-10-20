@@ -78,7 +78,7 @@ describe('useCarouselItem', () => {
       const { dismiss } = useCarouselItem();
       const handleDismiss = useCallback(() => dismiss(), [dismiss]);
       return (
-        <Button testID="DismissButton" onPress={handleDismiss}>
+        <Button onPress={handleDismiss} testID="DismissButton">
           Dismiss
         </Button>
       );

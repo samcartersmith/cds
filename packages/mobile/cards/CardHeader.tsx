@@ -11,15 +11,15 @@ export const CardHeader = memo(
   ({ avatarUrl, metaData, description, action, testID }: CardHeaderProps) => {
     return (
       <HStack
-        justifyContent="space-between"
         alignItems="center"
-        spacingVertical={2}
+        justifyContent="space-between"
         spacingHorizontal={3}
+        spacingVertical={2}
         testID={testID}
       >
-        <HStack flexGrow={1} alignItems="center" gap={1}>
+        <HStack alignItems="center" flexGrow={1} gap={1}>
           {avatarUrl ? (
-            <RemoteImage source={{ uri: avatarUrl }} width={32} height={32} resizeMode="center" />
+            <RemoteImage height={32} resizeMode="center" source={{ uri: avatarUrl }} width={32} />
           ) : null}
           {!!description && <TextLabel1>{description}</TextLabel1>}
           {!!metaData && <TextLegal>{metaData}</TextLegal>}

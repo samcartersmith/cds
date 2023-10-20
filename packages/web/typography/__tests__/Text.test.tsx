@@ -113,7 +113,7 @@ describe('Text', () => {
   it('can show tabular numbers', () => {
     textTestRunner((TextComponent) => {
       render(
-        <TextComponent as="p" tabularNumbers>
+        <TextComponent tabularNumbers as="p">
           20.21
         </TextComponent>,
       );
@@ -125,7 +125,7 @@ describe('Text', () => {
   it('can show slashed Zero', () => {
     textTestRunner((TextComponent) => {
       render(
-        <TextComponent as="p" slashedZero>
+        <TextComponent slashedZero as="p">
           YO2021Coinbase
         </TextComponent>,
       );
@@ -137,7 +137,7 @@ describe('Text', () => {
   it('can show underline', () => {
     textTestRunner((TextComponent) => {
       render(
-        <TextComponent as="p" underline>
+        <TextComponent underline as="p">
           Underline
         </TextComponent>,
       );
@@ -149,7 +149,7 @@ describe('Text', () => {
   it('can be styled to not wrap', () => {
     textTestRunner((TextComponent) => {
       render(
-        <TextComponent as="p" noWrap>
+        <TextComponent noWrap as="p">
           No Wrap
         </TextComponent>,
       );

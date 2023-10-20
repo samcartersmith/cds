@@ -9,7 +9,7 @@ export const Default = () => (
   <VStack gap={2}>
     <ButtonGroup accessibilityLabel="Group">
       <Button onPress={onPress}>Save</Button>
-      <Button variant="negative" onPress={onPress}>
+      <Button onPress={onPress} variant="negative">
         Cancel
       </Button>
     </ButtonGroup>
@@ -20,34 +20,34 @@ export const Default = () => (
     </ButtonGroup>
 
     <ButtonGroup accessibilityLabel="Group">
-      <Button compact variant="secondary" onPress={onPress}>
+      <Button compact onPress={onPress} variant="secondary">
         Button
       </Button>
-      <Button compact variant="secondary" onPress={onPress}>
+      <Button compact onPress={onPress} variant="secondary">
         Button
       </Button>
-      <Button compact variant="secondary" onPress={onPress}>
+      <Button compact onPress={onPress} variant="secondary">
         Button
       </Button>
-      <Button compact variant="secondary" onPress={onPress}>
-        Button
-      </Button>
-    </ButtonGroup>
-    <ButtonGroup accessibilityLabel="Group">
-      <Button transparent onPress={onPress}>
-        Button
-      </Button>
-      <Button transparent onPress={onPress}>
-        Button
-      </Button>
-      <Button transparent onPress={onPress}>
+      <Button compact onPress={onPress} variant="secondary">
         Button
       </Button>
     </ButtonGroup>
     <ButtonGroup accessibilityLabel="Group">
-      <IconButton name="arrowLeft" onPress={onPress} accessibilityLabel="Left" />
-      <IconButton name="arrowUp" onPress={onPress} accessibilityLabel="Up" />
-      <IconButton name="arrowRight" onPress={onPress} accessibilityLabel="Right" />
+      <Button transparent onPress={onPress}>
+        Button
+      </Button>
+      <Button transparent onPress={onPress}>
+        Button
+      </Button>
+      <Button transparent onPress={onPress}>
+        Button
+      </Button>
+    </ButtonGroup>
+    <ButtonGroup accessibilityLabel="Group">
+      <IconButton accessibilityLabel="Left" name="arrowLeft" onPress={onPress} />
+      <IconButton accessibilityLabel="Up" name="arrowUp" onPress={onPress} />
+      <IconButton accessibilityLabel="Right" name="arrowRight" onPress={onPress} />
     </ButtonGroup>
   </VStack>
 );
@@ -56,7 +56,7 @@ export const Block = () => (
   <VStack gap={2}>
     <ButtonGroup block accessibilityLabel="Group">
       <Button onPress={onPress}>Save</Button>
-      <Button variant="negative" onPress={onPress}>
+      <Button onPress={onPress} variant="negative">
         Cancel
       </Button>
     </ButtonGroup>
@@ -67,16 +67,16 @@ export const Block = () => (
     </ButtonGroup>
 
     <ButtonGroup block accessibilityLabel="Group">
-      <Button compact variant="secondary" onPress={onPress}>
+      <Button compact onPress={onPress} variant="secondary">
         Button
       </Button>
-      <Button compact variant="secondary" onPress={onPress}>
+      <Button compact onPress={onPress} variant="secondary">
         Button
       </Button>
-      <Button compact variant="secondary" onPress={onPress}>
+      <Button compact onPress={onPress} variant="secondary">
         Button
       </Button>
-      <Button compact variant="secondary" onPress={onPress}>
+      <Button compact onPress={onPress} variant="secondary">
         Button
       </Button>
     </ButtonGroup>
@@ -97,7 +97,7 @@ export const Block = () => (
 export const Vertical = () => (
   <ButtonGroup vertical accessibilityLabel="Group">
     <Button onPress={onPress}>Save</Button>
-    <Button variant="negative" onPress={onPress}>
+    <Button onPress={onPress} variant="negative">
       Cancel
     </Button>
   </ButtonGroup>

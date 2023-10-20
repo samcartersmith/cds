@@ -13,5 +13,5 @@ export const Embedded = memo(function Embedded({
   width = '100%',
   height,
 }: EmbeddedFields) {
-  return <iframe width={width} height={height} src={link} allowFullScreen title={title} />;
+  return <iframe allowFullScreen height={height} src={link} title={title} width={width} />;
 });

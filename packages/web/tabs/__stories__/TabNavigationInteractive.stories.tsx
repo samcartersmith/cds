@@ -75,19 +75,19 @@ const MockTabNavigation = () => {
   return (
     <VStack gap={2}>
       <TabNavigation
+        onChange={setActiveTab}
+        tabs={tabs}
         testID={TEST_IDS.tabNavigation}
         value={activeTab}
-        tabs={tabs}
-        onChange={setActiveTab}
       />
       <VStack
-        spacing={2}
         bordered
-        borderRadius="rounded"
-        background="primaryWash"
-        role="tabpanel"
-        id={`tabpanel--${activeTab}`}
         accessibilityLabelledBy={`tab--${activeTab}`}
+        background="primaryWash"
+        borderRadius="rounded"
+        id={`tabpanel--${activeTab}`}
+        role="tabpanel"
+        spacing={2}
       >
         <TextTitle1 as="h2">This is tab {activeTab}</TextTitle1>
       </VStack>

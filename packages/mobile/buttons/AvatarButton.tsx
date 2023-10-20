@@ -27,20 +27,20 @@ export const AvatarButton = memo(function AvatarButton({
 
   return (
     <PressableOpacity
-      accessibilityLabel={accessibilityLabel ?? alt}
       accessibilityHint={accessibilityLabel ?? alt}
+      accessibilityLabel={accessibilityLabel ?? alt}
       aria-label={accessibilityLabel}
       feedback={feedback}
       {...props}
     >
       <Avatar
-        src={src}
-        dangerouslySetSize={height}
-        shape={shape}
-        colorScheme={colorScheme}
-        borderColor={borderColor}
-        name={name}
         alt={alt}
+        borderColor={borderColor}
+        colorScheme={colorScheme}
+        dangerouslySetSize={height}
+        name={name}
+        shape={shape}
+        src={src}
       />
     </PressableOpacity>
   );

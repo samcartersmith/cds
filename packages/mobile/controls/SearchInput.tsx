@@ -125,46 +125,44 @@ export const SearchInput = memo(
 
       return (
         <TextInput
-          onFocus={handleOnFocus}
-          onBlur={handleOnBlur}
-          onSubmitEditing={handleOnSearch}
-          onChangeText={onChangeText}
-          disabled={disabled}
-          start={
-            !hideStartIcon && (
-              <InputIconButton
-                testID={testID && `${testID}-searchinput-iconbtn`}
-                onPress={startIconName === 'backArrow' ? handleOnBack : handleOnSearch}
-                disabled={disabled}
-                name={startIconName}
-                // A11y props will get passed to the pressable wrapper
-                accessibilityLabel={startIconAccessabilityLabel}
-                accessibilityHint={startIconAccessabilityHint}
-                // The pressable wrapper will be accessible, not the icon
-                accessibilityElementsHidden
-                importantForAccessibility="no"
-              />
-            )
-          }
-          borderRadius="roundedFull"
           ref={refs}
+          accessibilityRole="search"
+          borderRadius="roundedFull"
+          disabled={disabled}
           end={
             !!value && (
               <Box spacingEnd={0.5}>
                 <InputIconButton
-                  name="close"
-                  testID={testID && `${testID}-close-iconbtn`}
-                  accessibilityLabel="Clear text"
                   accessibilityHint="Clear text"
+                  accessibilityLabel="Clear text"
+                  name="close"
                   onPress={handleOnClear}
+                  testID={testID && `${testID}-close-iconbtn`}
                 />
               </Box>
             )
           }
-          accessibilityRole="search"
-          value={value}
-          testID={testID}
           keyboardType="web-search"
+          onBlur={handleOnBlur}
+          onChangeText={onChangeText}
+          onFocus={handleOnFocus}
+          onSubmitEditing={handleOnSearch}
+          start={
+            !hideStartIcon && (
+              <InputIconButton
+                accessibilityElementsHidden // The pressable wrapper will be accessible, not the icon
+                accessibilityHint={startIconAccessabilityHint}
+                accessibilityLabel={startIconAccessabilityLabel} // A11y props will get passed to the pressable wrapper
+                disabled={disabled}
+                importantForAccessibility="no"
+                name={startIconName}
+                onPress={startIconName === 'backArrow' ? handleOnBack : handleOnSearch}
+                testID={testID && `${testID}-searchinput-iconbtn`}
+              />
+            )
+          }
+          testID={testID}
+          value={value}
           {...props}
         />
       );

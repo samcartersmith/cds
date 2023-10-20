@@ -134,9 +134,9 @@ export const Carousel = memo(
             const isLastItem = index === itemsArray.length - 1;
             return (
               <CarouselItem
+                key={`carousel-item-${key}`}
                 dismiss={getDismissHandler(shouldAnimateHeight)}
                 id={key}
-                key={`carousel-item-${key}`}
                 spacingEnd={isLastItem ? 0 : gap}
                 updateLayoutMap={updateLayoutMap}
               >
@@ -150,10 +150,10 @@ export const Carousel = memo(
       return (
         <Animated.ScrollView
           {...otherProps}
+          ref={scrollRef}
+          horizontal
           contentContainerStyle={styles.scrollViewContainer}
           decelerationRate="fast"
-          horizontal
-          ref={scrollRef}
           scrollEventThrottle={1}
           showsHorizontalScrollIndicator={false}
           snapToOffsets={snapPoints}

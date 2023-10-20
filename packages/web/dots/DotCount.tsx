@@ -74,8 +74,8 @@ export const DotCount = memo(
               {...motionProps}
               className={dotCountContentLinaria}
               data-testid="dotcount-outer-container"
-              style={styles}
               onClick={handlePreventPropagation}
+              style={styles}
             >
               <TextCaption align="center" as="p" color="primaryForeground">
                 {parseDotCountMaxOverflow(count, max)}

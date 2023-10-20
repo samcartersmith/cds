@@ -43,18 +43,18 @@ export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProp
 
   return (
     <VStack
-      justifyContent="center"
       alignItems="center"
       gap={1}
-      spacing={1}
-      width={tileSize}
+      justifyContent="center"
       onMouseEnter={handleShowOverflow}
       onMouseLeave={handleHideOverflow}
+      spacing={1}
+      width={tileSize}
     >
-      <VStack justifyContent="center" alignItems="center">
+      <VStack alignItems="center" justifyContent="center">
         {renderContent}
       </VStack>
-      <TextLabel2 align="center" dangerouslySetClassName={overflowTextStyles} as="p">
+      <TextLabel2 align="center" as="p" dangerouslySetClassName={overflowTextStyles}>
         {title}
       </TextLabel2>
     </VStack>

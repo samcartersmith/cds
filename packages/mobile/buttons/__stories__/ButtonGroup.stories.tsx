@@ -16,7 +16,7 @@ const ButtonGroupScreen = () => {
       <Example>
         <ButtonGroup accessibilityLabel="Group">
           <Button onPress={onPress}>Save</Button>
-          <Button variant="negative" onPress={onPress}>
+          <Button onPress={onPress} variant="negative">
             Cancel
           </Button>
         </ButtonGroup>
@@ -28,16 +28,16 @@ const ButtonGroupScreen = () => {
         </ButtonGroup>
 
         <ButtonGroup accessibilityLabel="Group">
-          <Button compact variant="secondary" onPress={onPress}>
+          <Button compact onPress={onPress} variant="secondary">
             Button
           </Button>
-          <Button compact variant="secondary" onPress={onPress}>
+          <Button compact onPress={onPress} variant="secondary">
             Button
           </Button>
-          <Button compact variant="secondary" onPress={onPress}>
+          <Button compact onPress={onPress} variant="secondary">
             Button
           </Button>
-          <Button compact variant="secondary" onPress={onPress}>
+          <Button compact onPress={onPress} variant="secondary">
             Button
           </Button>
         </ButtonGroup>
@@ -64,7 +64,7 @@ const ButtonGroupScreen = () => {
       <Example title="Block">
         <ButtonGroup block accessibilityLabel="Group">
           <Button onPress={onPress}>Save</Button>
-          <Button variant="negative" onPress={onPress}>
+          <Button onPress={onPress} variant="negative">
             Cancel
           </Button>
         </ButtonGroup>
@@ -76,16 +76,16 @@ const ButtonGroupScreen = () => {
         </ButtonGroup>
 
         <ButtonGroup block accessibilityLabel="Group">
-          <Button compact variant="secondary" onPress={onPress}>
+          <Button compact onPress={onPress} variant="secondary">
             Button
           </Button>
-          <Button compact variant="secondary" onPress={onPress}>
+          <Button compact onPress={onPress} variant="secondary">
             Button
           </Button>
-          <Button compact variant="secondary" onPress={onPress}>
+          <Button compact onPress={onPress} variant="secondary">
             Button
           </Button>
-          <Button compact variant="secondary" onPress={onPress}>
+          <Button compact onPress={onPress} variant="secondary">
             Button
           </Button>
         </ButtonGroup>
@@ -106,7 +106,7 @@ const ButtonGroupScreen = () => {
       <Example title="Vertical">
         <ButtonGroup vertical accessibilityLabel="Group">
           <Button onPress={onPress}>Save</Button>
-          <Button variant="negative" onPress={onPress}>
+          <Button onPress={onPress} variant="negative">
             Cancel
           </Button>
         </ButtonGroup>

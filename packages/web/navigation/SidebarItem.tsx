@@ -79,20 +79,20 @@ export const SidebarItem = memo(
       const content = useMemo(
         () => (
           <Pressable
-            backgroundColor="primaryWash"
-            borderRadius="roundedFull"
-            transparentWhileInactive={!active}
-            onPress={onPress}
-            to={to}
-            width="100%"
             ref={ref}
-            testID={testID}
             accessibilityLabel={isCollapsed ? accessibilityLabel : undefined}
             aria-current={active ? 'page' : undefined}
+            backgroundColor="primaryWash"
+            borderRadius="roundedFull"
+            onPress={onPress}
+            testID={testID}
+            to={to}
+            transparentWhileInactive={!active}
+            width="100%"
             {...rest}
           >
-            <HStack gap={2} spacing={2} alignItems="center" justifyContent="flex-start">
-              <NavigationIcon name={icon} active={active} />
+            <HStack alignItems="center" gap={2} justifyContent="flex-start" spacing={2}>
+              <NavigationIcon active={active} name={icon} />
               {!isCollapsed && (
                 <TextHeadline as="span" color={color}>
                   {title}
@@ -117,7 +117,7 @@ export const SidebarItem = memo(
       );
 
       return tooltipContent && isCollapsed ? (
-        <Tooltip placement="right" disablePortal={disablePortal} content={tooltipContent}>
+        <Tooltip content={tooltipContent} disablePortal={disablePortal} placement="right">
           {content}
         </Tooltip>
       ) : (

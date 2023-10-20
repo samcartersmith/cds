@@ -10,7 +10,7 @@ function ParentTypes({ name, sharedTypeAliases, sharedParentTypes, props }: Pare
     const filteredProps = Object.values(sharedParentTypes[name]).filter((item) =>
       props.includes(item.name),
     );
-    return <PropsTable sharedTypeAliases={sharedTypeAliases} props={filteredProps} />;
+    return <PropsTable props={filteredProps} sharedTypeAliases={sharedTypeAliases} />;
   }, [sharedTypeAliases, name, sharedParentTypes, props]);
 
   return (
@@ -28,7 +28,7 @@ const ParentTypesList = memo(function ParentTypesList({
   const parentTypesAsArray = useMemo(() => Object.entries(parentTypes), [parentTypes]);
   if (parentTypesAsArray.length) {
     return (
-      <HStack gap={1} alignItems="center" flexWrap="wrap">
+      <HStack alignItems="center" flexWrap="wrap" gap={1}>
         <TextBody as="p" color="foregroundMuted">
           Extends from:
         </TextBody>
@@ -38,8 +38,8 @@ const ParentTypesList = memo(function ParentTypesList({
               key={key}
               name={key}
               props={value}
-              sharedTypeAliases={sharedTypeAliases}
               sharedParentTypes={sharedParentTypes}
+              sharedTypeAliases={sharedTypeAliases}
             />
           );
         })}

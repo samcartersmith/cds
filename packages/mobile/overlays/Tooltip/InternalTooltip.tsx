@@ -58,21 +58,18 @@ export const InternalTooltip = memo(function InternalTooltip({
 
   return (
     <View
-      style={outerTooltipStyles}
-      onLayout={onTooltipLayout}
       accessible
-      // close tooltip on escape a11y gesture
       onAccessibilityEscape={onAccessibilityEscape}
-      // close tooltip on double tapping in voiceover mode
       onAccessibilityTap={onAccessibilityTap}
+      // close tooltip on double tapping in voiceover mode
+      onLayout={onTooltipLayout}
+      // close tooltip on escape a11y gesture
+      style={outerTooltipStyles}
     >
       <Box
         animated
         borderRadius="rounded"
-        spacingHorizontal={spacingHorizontal}
-        spacingVertical={spacingVertical}
         dangerouslySetBackground={backgroundColor}
-        opacity={opacity}
         dangerouslySetStyle={{
           transform: [
             {
@@ -81,6 +78,9 @@ export const InternalTooltip = memo(function InternalTooltip({
           ],
         }}
         maxWidth={maxWidth}
+        opacity={opacity}
+        spacingHorizontal={spacingHorizontal}
+        spacingVertical={spacingVertical}
         testID={testID}
         {...props}
       >

@@ -47,15 +47,15 @@ export function collapsibleBuilder({
     return (
       <>
         <Button
-          onPress={toggle}
-          aria-controls={collapsibleId}
-          id={triggerId}
-          aria-expanded={!collapsed}
           disableDebounce
+          aria-controls={collapsibleId}
+          aria-expanded={!collapsed}
+          id={triggerId}
+          onPress={toggle}
         >
           Click me!
         </Button>
-        <Collapsible collapsed={collapsed} accessibilityLabelledBy={triggerId} id={collapsibleId}>
+        <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
           <TextBody as="p">{loremIpsum}</TextBody>
         </Collapsible>
       </>
@@ -68,10 +68,10 @@ export function collapsibleBuilder({
 
     return (
       <>
-        <Collapsible collapsed={collapsed} accessibilityLabelledBy={triggerId} id={collapsibleId}>
+        <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
           <TextBody as="p">{loremIpsum}</TextBody>
         </Collapsible>
-        <Button onPress={toggle} aria-controls={collapsibleId} id={triggerId} disableDebounce>
+        <Button disableDebounce aria-controls={collapsibleId} id={triggerId} onPress={toggle}>
           Click me!
         </Button>
       </>
@@ -85,15 +85,15 @@ export function collapsibleBuilder({
     return (
       <>
         <Button
-          onPress={toggle}
-          aria-controls={collapsibleId}
-          id={triggerId}
-          aria-expanded={!collapsed}
           disableDebounce
+          aria-controls={collapsibleId}
+          aria-expanded={!collapsed}
+          id={triggerId}
+          onPress={toggle}
         >
           Click me!
         </Button>
-        <Collapsible collapsed={collapsed} accessibilityLabelledBy={triggerId} id={collapsibleId}>
+        <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
           <TextBody as="p">{loremIpsum}</TextBody>
         </Collapsible>
       </>
@@ -107,19 +107,19 @@ export function collapsibleBuilder({
     return (
       <>
         <Button
-          onPress={toggle}
-          aria-controls={collapsibleId}
-          id={triggerId}
-          aria-expanded={!collapsed}
           disableDebounce
+          aria-controls={collapsibleId}
+          aria-expanded={!collapsed}
+          id={triggerId}
+          onPress={toggle}
         >
           Click me!
         </Button>
         <Collapsible
-          collapsed={collapsed}
-          maxHeight={400}
           accessibilityLabelledBy={triggerId}
+          collapsed={collapsed}
           id={collapsibleId}
+          maxHeight={400}
         >
           <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
         </Collapsible>
@@ -134,20 +134,20 @@ export function collapsibleBuilder({
     return (
       <HStack alignItems="center">
         <Button
-          onPress={toggle}
-          aria-controls={collapsibleId}
-          id={triggerId}
-          aria-expanded={!collapsed}
           disableDebounce
+          aria-controls={collapsibleId}
+          aria-expanded={!collapsed}
+          id={triggerId}
+          onPress={toggle}
         >
           Click me!
         </Button>
         <Collapsible
-          id={collapsibleId}
           accessibilityLabelledBy={triggerId}
-          direction="horizontal"
-          maxHeight={400}
           collapsed={collapsed}
+          direction="horizontal"
+          id={collapsibleId}
+          maxHeight={400}
         >
           <DotCount count={100} />
           <DotCount count={1} />
@@ -164,18 +164,18 @@ export function collapsibleBuilder({
     return (
       <>
         <Button
-          onPress={toggle}
-          aria-controls={collapsibleId}
-          id={triggerId}
-          aria-expanded={!collapsed}
           disableDebounce
+          aria-controls={collapsibleId}
+          aria-expanded={!collapsed}
+          id={triggerId}
+          onPress={toggle}
         >
           Click me!
         </Button>
         <Collapsible
-          id={collapsibleId}
           accessibilityLabelledBy={triggerId}
           collapsed={collapsed}
+          id={collapsibleId}
           testID="mock-collapse"
         >
           <TextBody as="p">Collapsible Content</TextBody>

@@ -67,13 +67,13 @@ export function createIllustration<
 
     return (
       <SvgXml
-        style={style}
-        xml={xml}
-        testID={testID}
-        accessible={!!accessibilityLabel}
-        accessibilityRole="image"
-        accessibilityLabel={accessibilityLabel}
         accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
+        accessibilityRole="image"
+        accessible={!!accessibilityLabel}
+        style={style}
+        testID={testID}
+        xml={xml}
       />
     );
   });

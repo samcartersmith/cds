@@ -8,11 +8,11 @@ import { useAdopterComponents } from ':cds-website/components/AdoptionTracker/ho
 export const AdopterStatsBreakdownCell = memo(
   ({ title, detail }: { title: string; detail: number }) => {
     return (
-      <HStack justifyContent="space-between" gap={1} spacingTop={1}>
+      <HStack gap={1} justifyContent="space-between" spacingTop={1}>
         <TextLabel1 as="p" overflow="truncate">
           {title}
         </TextLabel1>
-        <TextLabel2 as="p" align="end">
+        <TextLabel2 align="end" as="p">
           {`${detail} instances`}
         </TextLabel2>
       </HStack>
@@ -25,15 +25,15 @@ AdopterStatsBreakdownCell.displayName = 'AdopterStatsBreakdownCell';
 export const AdopterStatsBreakdown = memo(() => {
   const groups = useAdopterComponents();
   return (
-    <VStack spacingVertical={2} width={240} alignSelf="flex-end" position="absolute" top={140}>
-      <AdopterStatsBreakdownCell title="CDS" detail={groups.cds.totalInstances} />
+    <VStack alignSelf="flex-end" position="absolute" spacingVertical={2} top={140} width={240}>
+      <AdopterStatsBreakdownCell detail={groups.cds.totalInstances} title="CDS" />
       <AdopterStatsBreakdownCell
-        title="Presentational"
         detail={groups.presentational.totalInstances}
+        title="Presentational"
       />
       <AdopterStatsBreakdownCell
-        title="Total"
         detail={groups.cds.totalInstances + groups.presentational.totalInstances}
+        title="Total"
       />
     </VStack>
   );

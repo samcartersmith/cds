@@ -11,40 +11,40 @@ export default function SelectOptionScreen() {
   return (
     <ExampleScreen>
       <Example title="Default">
-        <SelectOption value="Title" description="Description" onPress={handleOptionPress} />
+        <SelectOption description="Description" onPress={handleOptionPress} value="Title" />
       </Example>
       <Example title="Default with description">
         <SelectOption
-          value="Title"
-          title="Title"
           description="Description"
           onPress={handleOptionPress}
+          title="Title"
+          value="Title"
         />
       </Example>
       <Example title="Default with description and selected">
         <SelectOption
-          value="Title"
-          title="Title"
           description="Description"
           onPress={handleOptionPress}
+          title="Title"
+          value="Title"
         />
       </Example>
       {/** I have an example here to test that title and description can take reactNode. If they take reactNode, we must specify the accessibilityLabel and accessibilityHint */}
       <Example title="Set title and description to be ReactNodes">
         <SelectOption
-          value="Title"
-          accessibilityLabel="Title"
           accessibilityHint="Hint"
-          title={<TextTitle1>Title</TextTitle1>}
+          accessibilityLabel="Title"
           description={<TextTitle1>Description</TextTitle1>}
           onPress={handleOptionPress}
+          title={<TextTitle1>Title</TextTitle1>}
+          value="Title"
         />
       </Example>
       <Example title="Multi line">
         <SelectOption
           multiline
-          title="Title"
           description="This is a really long description that will be multiple lines long"
+          title="Title"
           value="test"
         />
       </Example>

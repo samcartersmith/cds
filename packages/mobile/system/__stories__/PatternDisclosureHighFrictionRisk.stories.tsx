@@ -50,18 +50,18 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
       <Example title="Pattern - High-Friction Risk Disclosure">
         <Button onPress={toggleOn}>View HFR Disclosure</Button>
         <Modal
-          visible={visible}
-          onRequestClose={toggleOff}
-          accessibilityLabel="Title outlining risk in 1-2 lines"
-          accessibilityHint="Hint providing more context about the disclosure. Close this dialog to continue."
           hideDividers
+          accessibilityHint="Hint providing more context about the disclosure. Close this dialog to continue."
+          accessibilityLabel="Title outlining risk in 1-2 lines"
+          onRequestClose={toggleOff}
+          visible={visible}
         >
           <ModalHeader
-            onBackButtonPress={toggleOff}
-            closeAccessibilityLabel="Close"
-            closeAccessibilityHint="Close this dialog to continue"
-            backAccessibilityLabel="Back"
             backAccessibilityHint="Go back to the previous dialog"
+            backAccessibilityLabel="Back"
+            closeAccessibilityHint="Close this dialog to continue"
+            closeAccessibilityLabel="Close"
+            onBackButtonPress={toggleOff}
           />
           <ModalBody>
             <Box alignItems="center">
@@ -72,21 +72,21 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
               Body text saying &quot;Before you [verb], here are a few things you need to understand
               about [action].&quot;
             </TextLabel2>
-            <VStack spacingVertical={3} gap={3}>
+            <VStack gap={3} spacingVertical={3}>
               {data.map(({ id, headline, checkboxLabel, linkText, linkUrl }, index) => (
                 <VStack key={id} gap={1}>
                   <TextHeadline>{headline}</TextHeadline>
                   <HStack alignItems="center" gap={1}>
                     <Checkbox
+                      accessibilityHint="Toggle acknowledgment of this risk item. All risk items must be acknowledged to proceed."
+                      accessibilityLabel={checkboxLabel}
                       checked={checkboxes[index]}
                       onChange={handleCheckboxChange(index)}
-                      accessibilityLabel={checkboxLabel}
-                      accessibilityHint="Toggle acknowledgment of this risk item. All risk items must be acknowledged to proceed."
                     />
                     {/* eslint-disable react-native/no-raw-text */}
                     <TextLabel2 dangerouslySetStyle={{ flex: 1 }}>
                       {checkboxLabel}{' '}
-                      <Link to={linkUrl} underline>
+                      <Link underline to={linkUrl}>
                         {linkText}
                       </Link>
                     </TextLabel2>
@@ -97,7 +97,7 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
           </ModalBody>
           <ModalFooter
             primaryAction={
-              <Button onPress={toggleOff} disabled={isCtaDisabled}>
+              <Button disabled={isCtaDisabled} onPress={toggleOff}>
                 {`[${isCtaDisabled ? 'Disabled' : 'Enabled'} CTA]`}
               </Button>
             }

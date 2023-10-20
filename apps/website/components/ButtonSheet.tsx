@@ -5,7 +5,7 @@ const variants = ['primary', 'secondary', 'positive', 'negative'] as const;
 
 export const ButtonSheet = () => {
   return (
-    <ButtonGroup accessibilityLabel="button group" block>
+    <ButtonGroup block accessibilityLabel="button group">
       {variants.map((item) => (
         <Button key={item} variant={item}>
           {item.charAt(0).toUpperCase() + item.slice(1)}

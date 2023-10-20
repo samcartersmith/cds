@@ -78,16 +78,16 @@ export const NativeTextArea = memo(
 
     return (
       <textarea
+        ref={ref}
         aria-describedby={accessibilityHint}
         className={cx(nativeTextAreaBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
         data-testid={testID}
-        tabIndex={0}
+        onBlur={onBlur}
+        onChange={onChange}
         onClick={onPress}
         onFocus={onFocus}
-        onBlur={onBlur}
         onKeyDown={onKeyDown}
-        onChange={onChange}
-        ref={ref}
+        tabIndex={0}
         {...props}
       />
     );

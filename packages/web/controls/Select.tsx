@@ -84,13 +84,13 @@ export const Select = memo(
       () => (
         <TextInputFocusVariantContext.Provider value={focusedVariant}>
           <SelectTrigger
+            ref={refs}
             disabled={disabled}
+            helperText={helperText}
+            onPress={handleOnSelectPress}
+            triggerHasFocus={visible}
             value={valueLabel ?? value}
             variant={variant}
-            triggerHasFocus={visible}
-            onPress={handleOnSelectPress}
-            ref={refs}
-            helperText={helperText}
             visible={animationsEnabled && visible}
             {...props}
           />
@@ -142,15 +142,15 @@ export const Select = memo(
           trigger
         ) : (
           <Dropdown
+            block
             content={children}
+            contentPosition={contentPosition}
+            disablePortal={disablePortal}
+            onChange={onChange}
+            onCloseMenu={onCloseMenu}
+            onOpenMenu={onOpenMenu}
             value={value}
             width={width}
-            contentPosition={contentPosition}
-            block
-            onChange={onChange}
-            onOpenMenu={onOpenMenu}
-            onCloseMenu={onCloseMenu}
-            disablePortal={disablePortal}
           >
             {trigger}
           </Dropdown>

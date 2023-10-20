@@ -55,7 +55,7 @@ export const AccessibilityAnnouncer = memo(
       return (
         <div aria-atomic aria-live={politeness} className={visuallyHidden} data-testid={testID}>
           {isVisible && (
-            <p data-testid={`${testID}--message`} ref={mergedRef}>
+            <p ref={mergedRef} data-testid={`${testID}--message`}>
               {message}
             </p>
           )}

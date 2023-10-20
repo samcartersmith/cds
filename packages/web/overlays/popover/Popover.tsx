@@ -102,7 +102,7 @@ export const Popover = memo(
           {...popperAttributes.popper}
           onClick={handleCaptureEvents}
         >
-          <FocusTrap onEscPress={handleClose} disableTypeFocus={disableTypeFocus}>
+          <FocusTrap disableTypeFocus={disableTypeFocus} onEscPress={handleClose}>
             {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
             <Box
               dangerouslySetBackground="transparent"
@@ -131,13 +131,13 @@ export const Popover = memo(
       memoizedContent
     ) : (
       <Box
-        position="fixed"
-        pin="all"
-        zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
-        onClick={handleClose}
-        role="dialog"
-        aria-modal="true"
         accessibilityLabel={accessibilityLabel}
+        aria-modal="true"
+        onClick={handleClose}
+        pin="all"
+        position="fixed"
+        role="dialog"
+        zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
       >
         {memoizedContent}
       </Box>
@@ -145,16 +145,16 @@ export const Popover = memo(
 
     return (
       <div
+        className={block ? blockStyles : undefined}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        className={block ? blockStyles : undefined}
       >
         <div
           ref={setSubject}
-          onClick={onPressSubject}
           className={cx(subjectStyle, block ? blockStyles : undefined)}
-          onFocus={onFocus}
           onBlur={onBlur}
+          onClick={onPressSubject}
+          onFocus={onFocus}
           onMouseDown={onMouseDown}
           {...subjectAccessibilityProps}
         >
@@ -162,18 +162,18 @@ export const Popover = memo(
         </div>
         <NewAnimatePresence>
           {visible ? (
-            <Portal disablePortal={disablePortal} containerId={tooltipContainerId}>
+            <Portal containerId={tooltipContainerId} disablePortal={disablePortal}>
               <ThemeProvider
                 scale={scale}
                 spectrum={invertPopoverSpectrum ? invertedSpectrum : null}
               >
                 {showOverlay ? (
                   <Box
-                    position="fixed"
                     pin="all"
+                    position="fixed"
                     zIndex={zIndex.overlays.portal + zIndex.overlays.modal}
                   >
-                    <Overlay onPress={handleClose} animated />
+                    <Overlay animated onPress={handleClose} />
                     {memoizedContent}
                   </Box>
                 ) : (

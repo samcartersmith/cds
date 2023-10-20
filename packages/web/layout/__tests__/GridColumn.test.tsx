@@ -26,13 +26,13 @@ describe('GridColumn', () => {
   it('should set responsive config class names', () => {
     render(
       <GridColumn
-        testID={TEST_ID}
         responsiveConfig={{
           phone: {
             spacing: 2,
             gap: 0.5,
           },
         }}
+        testID={TEST_ID}
       />,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveClass('test-responsive-class-name');
@@ -41,13 +41,13 @@ describe('GridColumn', () => {
   it('can set responsive class name', () => {
     render(
       <GridColumn
-        testID={TEST_ID}
         responsiveConfig={{
           phone: {
             spacing: 2,
             gap: 0.5,
           },
         }}
+        testID={TEST_ID}
       />,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveClass(responsiveClassName);
@@ -56,10 +56,10 @@ describe('GridColumn', () => {
   it('can set custom styles', () => {
     render(
       <GridColumn
-        testID={TEST_ID}
         dangerouslySetStyle={{
           backgroundColor: 'red',
         }}
+        testID={TEST_ID}
       />,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
@@ -68,7 +68,7 @@ describe('GridColumn', () => {
   });
 
   it('can set gap', () => {
-    render(<GridColumn testID={TEST_ID} gap={2} />);
+    render(<GridColumn gap={2} testID={TEST_ID} />);
     expect(screen.getByTestId(TEST_ID)).toHaveClass(cx(gapStyles[2]));
   });
 });

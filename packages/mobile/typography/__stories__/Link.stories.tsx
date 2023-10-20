@@ -24,12 +24,12 @@ const typographies = [
 ] as const;
 
 const links = typographies.map((typography) => (
-  <Example inline key={typography}>
+  <Example key={typography} inline>
     <TextHeadline>Link with Text style {typography}</TextHeadline>
-    <Link variant={typography} to="https://www.coinbase.com/">
+    <Link to="https://www.coinbase.com/" variant={typography}>
       {capitalize(typography)}
     </Link>
-    <Link underline variant={typography} to="https://www.coinbase.com/">
+    <Link underline to="https://www.coinbase.com/" variant={typography}>
       {capitalize(typography)}
     </Link>
   </Example>
@@ -79,19 +79,19 @@ const LinkScreen = function LinkScreen() {
     <ExampleScreen>
       {links}
       <Example inline>
-        <Link variant="body" onPress={openURLOnPress}>
+        <Link onPress={openURLOnPress} variant="body">
           Test useWebBrowserOpener hook
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>Goes to coinbase.com</TextHeadline>
-        <Link variant="body" to="https://www.coinbase.com/">
+        <Link to="https://www.coinbase.com/" variant="body">
           Go to Coinbase
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>Coinbase link without protocol should crash</TextHeadline>
-        <Link variant="body" to="coinbase.com/">
+        <Link to="coinbase.com/" variant="body">
           Go to Coinbase
         </Link>
       </Example>
@@ -101,16 +101,16 @@ const LinkScreen = function LinkScreen() {
       </Example>
       <Example inline>
         <TextHeadline>Testing color</TextHeadline>
-        <Link variant="title1" to="https://www.coinbase.com/" color="negative">
+        <Link color="negative" to="https://www.coinbase.com/" variant="title1">
           Go to Coinbase
         </Link>
-        <Link underline variant="title1" to="https://www.coinbase.com/" color="negative">
+        <Link underline color="negative" to="https://www.coinbase.com/" variant="title1">
           Go to Coinbase
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>Testing onPress</TextHeadline>
-        <Link variant="title1" onPress={logPressed} color="negative">
+        <Link color="negative" onPress={logPressed} variant="title1">
           Go to Coinbase
         </Link>
       </Example>
@@ -118,7 +118,7 @@ const LinkScreen = function LinkScreen() {
         <TextHeadline>Wrap in TextBody</TextHeadline>
         <TextBody align="center">
           Go here:{' '}
-          <Link variant="body" to="https://www.coinbase.com/" onPress={logPressed} color="negative">
+          <Link color="negative" onPress={logPressed} to="https://www.coinbase.com/" variant="body">
             Go to Coinbase
           </Link>
         </TextBody>
@@ -131,41 +131,41 @@ const LinkScreen = function LinkScreen() {
       </Example>
       <Example inline>
         <TextHeadline>onPress and to used together</TextHeadline>
-        <Link variant="title1" onPress={logPressed} to="https://www.coinbase.com/" color="negative">
+        <Link color="negative" onPress={logPressed} to="https://www.coinbase.com/" variant="title1">
           Go to Coinbase
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>forceOpenOutsideApp is set to false by default</TextHeadline>
-        <Link variant="title1" to="https://www.coinbase.com/" color="negative">
+        <Link color="negative" to="https://www.coinbase.com/" variant="title1">
           Go to Coinbase within App
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>Incorrectly formatted Link</TextHeadline>
-        <Link variant="title1" to="xxx" color="negative">
+        <Link color="negative" to="xxx" variant="title1">
           Console.error when incorrectly formatted link is passed in
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>test forceOpenOutsideApp is set to true</TextHeadline>
-        <Link variant="title1" forceOpenOutsideApp to="https://www.google.com" color="negative">
+        <Link forceOpenOutsideApp color="negative" to="https://www.google.com" variant="title1">
           Go to Coinbase outside of App
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>test can set readerMode</TextHeadline>
-        <Link variant="title1" readerMode to="https://www.coinbase.com/" color="negative">
+        <Link readerMode color="negative" to="https://www.coinbase.com/" variant="title1">
           ReaderMode set
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>test preventRedirectionIntoApp</TextHeadline>
         <Link
-          variant="title1"
           preventRedirectionIntoApp
-          to="https://www.google.com"
           color="negative"
+          to="https://www.google.com"
+          variant="title1"
         >
           Test PreventRedirectionIntoApp
         </Link>
@@ -177,13 +177,13 @@ const LinkScreen = function LinkScreen() {
       </Example>
       <Example inline>
         <TextHeadline>tel Link</TextHeadline>
-        <Link variant="title2" to="tel:111-111-1111">
+        <Link to="tel:111-111-1111" variant="title2">
           Call Someone
         </Link>
       </Example>
       <Example inline>
         <TextHeadline>mailto Link</TextHeadline>
-        <Link variant="title2" to="mailto:someone@coinbase.com">
+        <Link to="mailto:someone@coinbase.com" variant="title2">
           Send email to Someone
         </Link>
       </Example>

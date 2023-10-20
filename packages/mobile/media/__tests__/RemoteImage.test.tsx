@@ -93,9 +93,9 @@ describe('RemoteImage', () => {
 
     render(
       <RemoteImage
-        source="https://example.com/example.svg"
-        accessibilityLabel="A label"
         accessibilityHint="A hint"
+        accessibilityLabel="A label"
+        source="https://example.com/example.svg"
       />,
     );
 
@@ -109,10 +109,10 @@ describe('RemoteImage', () => {
   it('sets accessibility attributes and labels for hexagon shaped images', () => {
     render(
       <RemoteImage
-        source="https://images.coinbase.com/avatar?s=56"
-        shape="hexagon"
-        accessibilityLabel="A label"
         accessibilityHint="A hint"
+        accessibilityLabel="A label"
+        shape="hexagon"
+        source="https://images.coinbase.com/avatar?s=56"
       />,
     );
 
@@ -124,9 +124,9 @@ describe('RemoteImage', () => {
   it('sets accessibility attributes and labels for images', () => {
     render(
       <RemoteImage
-        source="https://images.coinbase.com/avatar?s=56"
-        accessibilityLabel="A label"
         accessibilityHint="A hint"
+        accessibilityLabel="A label"
+        source="https://images.coinbase.com/avatar?s=56"
       />,
     );
 
@@ -138,8 +138,8 @@ describe('RemoteImage', () => {
   it('sets accessibility attributes and labels for the fallback', () => {
     render(
       <RemoteImage
-        fallbackAccessibilityLabel="A fallback label"
         fallbackAccessibilityHint="A fallback hint"
+        fallbackAccessibilityLabel="A fallback label"
       />,
     );
 

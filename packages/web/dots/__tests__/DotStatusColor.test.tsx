@@ -48,7 +48,7 @@ describe('DotStatusColor', () => {
   it('can change size to small', () => {
     const iconSize = normalScaleMap.s;
 
-    render(<DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="negative" size="s" />);
+    render(<DotStatusColor size="s" testID={DOTSTATUSCOLOR_TESTID} variant="negative" />);
 
     expect(screen.getByTestId('dotstatuscolor-inner-container')).toHaveStyle({
       width: `${iconSize}px`,

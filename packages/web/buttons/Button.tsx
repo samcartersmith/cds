@@ -74,7 +74,7 @@ const BaseButton = forwardRef(function Button(
     <Pressable
       aria-label={accessibilityLabel ?? (loading ? 'Loading' : undefined)}
       {...props}
-      transparentWhileInactive={transparent}
+      ref={ref}
       backgroundColor={backgroundColor}
       block={block}
       borderColor={borderColor}
@@ -89,35 +89,35 @@ const BaseButton = forwardRef(function Button(
         block && buttonStyles.buttonBlock,
         spacingClass,
       )}
-      loading={loading}
       disabled={disabled}
+      loading={loading}
+      noScaleOnPress={noScaleOnPress}
       onPress={onPress}
       style={style}
-      type={type}
-      ref={ref}
       to={to}
-      noScaleOnPress={noScaleOnPress}
+      transparentWhileInactive={transparent}
+      type={type}
     >
       {startIcon && (
         <span className={hasFrontier ? buttonStyles.frontierStartIcon : buttonStyles.startIcon}>
-          <Icon name={startIcon} size={iconSize} color={color} />
+          <Icon color={color} name={startIcon} size={iconSize} />
         </span>
       )}
 
       <span className={buttonStyles.positionRelative}>
         {loading && (
           <span className={cx(buttonStyles.centerLoader)}>
-            <MaterialSpinner size={buttonStyles.LOADERSIZE} color={color} />
+            <MaterialSpinner color={color} size={buttonStyles.LOADERSIZE} />
           </span>
         )}
-        <TextHeadline as="span" color={color} numberOfLines={numberOfLines} noWrap={!hasFrontier}>
+        <TextHeadline as="span" color={color} noWrap={!hasFrontier} numberOfLines={numberOfLines}>
           <span className={cx(loading && buttonStyles.visibilityHidden)}>{children}</span>
         </TextHeadline>
       </span>
 
       {endIcon && (
         <span className={hasFrontier ? buttonStyles.frontierEndIcon : buttonStyles.endIcon}>
-          <Icon name={endIcon} size={iconSize} color={color} />
+          <Icon color={color} name={endIcon} size={iconSize} />
         </span>
       )}
     </Pressable>

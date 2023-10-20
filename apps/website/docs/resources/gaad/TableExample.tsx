@@ -23,7 +23,7 @@ export const TableExample = () => {
         <TableRow>
           <TableCell scope="col" title="Currency" width="20%" />
           <TableCell scope="col" title="Balance" width="40%" />
-          <TableCell scope="col" title="Status" alignItems="flex-end" width="60%" />
+          <TableCell alignItems="flex-end" scope="col" title="Status" width="60%" />
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -40,9 +40,9 @@ export const TableExample = () => {
               <TableCell direction="horizontal" justifyContent="flex-end">
                 <Icon
                   accessibilityLabel={account.primary ? 'Primary' : 'Secondary'}
+                  color={account.primary ? 'positive' : 'negative'}
                   name={account.primary ? 'circleCheckmark' : 'circleCross'}
                   size="m"
-                  color={account.primary ? 'positive' : 'negative'}
                 />
               </TableCell>
             </TableRow>

@@ -23,7 +23,7 @@ export const Basic = () => {
           <TextBody as="p">
             Width: {width}, Height: {height}
           </TextBody>
-          <Fallback width={width} height={height} disableRandomRectWidth />
+          <Fallback disableRandomRectWidth height={height} width={width} />
         </>
       ))}
     </VStack>
@@ -31,7 +31,7 @@ export const Basic = () => {
 };
 
 export const HeightAsCSSVar = () => {
-  return <Fallback width={100} height="var(--title3-line-height)" />;
+  return <Fallback height="var(--title3-line-height)" width={100} />;
 };
 
 export const RectangleWidthVariants = () => {
@@ -40,7 +40,7 @@ export const RectangleWidthVariants = () => {
       {Array(10)
         .fill({})
         .map((_, i) => (
-          <Fallback width={100} height={20} rectWidthVariant={i} />
+          <Fallback height={20} rectWidthVariant={i} width={100} />
         ))}
     </VStack>
   );

@@ -13,7 +13,7 @@ describe('Switch.test', () => {
       return (
         <View>
           <Text>checked is {checked ? 'true' : 'false'}</Text>
-          <Switch onChange={onChange} checked={checked}>
+          <Switch checked={checked} onChange={onChange}>
             test label
           </Switch>
         </View>
@@ -56,9 +56,9 @@ describe('Switch.test', () => {
   it('renders accessibilityLabel', () => {
     render(
       <Switch
-        onChange={jest.fn()}
-        accessibilityLabel="test accessibility label"
         accessibilityHint="test accessibility hint"
+        accessibilityLabel="test accessibility label"
+        onChange={jest.fn()}
       >
         test label
       </Switch>,
@@ -80,7 +80,7 @@ describe('Switch.test', () => {
   it('disables user interaction when disabled', () => {
     const onChange = jest.fn();
 
-    render(<Switch onChange={onChange} disabled />);
+    render(<Switch disabled onChange={onChange} />);
 
     fireEvent.press(screen.getByRole('switch'));
 

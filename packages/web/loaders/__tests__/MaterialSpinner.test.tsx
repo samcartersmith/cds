@@ -6,11 +6,11 @@ import { MaterialSpinner } from '../MaterialSpinner';
 
 describe('MaterialSpinner', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<MaterialSpinner size={60} color="primary" />)).toHaveNoViolations();
+    expect(await renderA11y(<MaterialSpinner color="primary" size={60} />)).toHaveNoViolations();
   });
 
   it('size and color are correctly set', async () => {
-    render(<MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />);
+    render(<MaterialSpinner color="primary" size={60} testID="material-spinner-svg" />);
 
     expect(screen.getByTestId('material-spinner-svg')).toHaveAttribute('height', `${60}px`);
     expect(screen.getByTestId('material-spinner-svg')).toHaveAttribute(
@@ -20,7 +20,7 @@ describe('MaterialSpinner', () => {
   });
 
   it('should render with a svg element', () => {
-    render(<MaterialSpinner size={60} color="primary" testID="material-spinner-svg" />);
+    render(<MaterialSpinner color="primary" size={60} testID="material-spinner-svg" />);
     expect(screen.getByTestId('material-spinner-svg')).toBeTruthy();
   });
 });

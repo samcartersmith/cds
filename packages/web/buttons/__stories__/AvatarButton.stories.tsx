@@ -15,15 +15,15 @@ const FallbackColoredBase = ({
   ...props
 }: Pick<AvatarButtonProps, 'shape' | 'loading' | 'compact' | 'selected'> & { dense?: boolean }) => {
   return (
-    <HStack gap={dense ? 0.5 : 2} alignItems="center" flexWrap="wrap">
+    <HStack alignItems="center" flexWrap="wrap" gap={dense ? 0.5 : 2}>
       {names.map((name, idx) => {
         const avatarFallbackColor = getAvatarFallbackColor(name);
         return (
           <AvatarButton
-            alt=""
             key={name}
-            name={name}
+            alt=""
             colorScheme={idx === 0 ? 'blue' : avatarFallbackColor}
+            name={name}
             {...props}
           />
         );
@@ -46,42 +46,42 @@ export const Default = ({ scale }: Pick<ThemeProviderBaseProps, 'scale'>) => {
     <ThemeProvider scale={scale}>
       <VStack gap={2}>
         <TextHeadline as="h3">Default</TextHeadline>
-        <HStack gap={2} alignItems="center">
-          <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} />
+        <HStack alignItems="center" gap={2}>
+          <AvatarButton alt="Sneezy" onPress={handlePress} src={avatarImageUrl} />
           <AvatarButton compact alt="Sneezy" src={avatarImageUrl} to="/" />
         </HStack>
-        <HStack gap={2} alignItems="center">
+        <HStack alignItems="center" gap={2}>
           <AvatarButton alt="Sneezy" onPress={handlePress} />
           <AvatarButton compact alt="Sneezy" to="/" />
         </HStack>
       </VStack>
       <VStack gap={2} spacingTop={4}>
         <TextHeadline as="h3">Loading</TextHeadline>
-        <HStack gap={2} alignItems="center">
+        <HStack alignItems="center" gap={2}>
           <AvatarButton
-            alt="Sneezy"
-            src={avatarImageUrl}
-            onPress={handlePress}
             loading
             accessibilityLabel="Sneezy Button"
+            alt="Sneezy"
+            onPress={handlePress}
+            src={avatarImageUrl}
           />
           <AvatarButton
             compact
+            loading
+            accessibilityLabel="Sneezy Button"
             alt="Sneezy"
             src={avatarImageUrl}
             to="/"
-            loading
-            accessibilityLabel="Sneezy Button"
           />
         </HStack>
-        <HStack gap={2} alignItems="center">
+        <HStack alignItems="center" gap={2}>
           <AvatarButton
-            alt="Sneezy"
-            onPress={handlePress}
             loading
             accessibilityLabel="Sneezy Button"
+            alt="Sneezy"
+            onPress={handlePress}
           />
-          <AvatarButton compact alt="Sneezy" to="/" loading accessibilityLabel="Sneezy Button" />
+          <AvatarButton compact loading accessibilityLabel="Sneezy Button" alt="Sneezy" to="/" />
         </HStack>
       </VStack>
       <VStack gap={2} spacingTop={4}>
@@ -110,7 +110,7 @@ export const Default = ({ scale }: Pick<ThemeProviderBaseProps, 'scale'>) => {
       </VStack>
       <VStack gap={2} spacingTop={4}>
         <TextHeadline as="h3">Square Selected</TextHeadline>
-        <FallbackColoredBase shape="square" selected />
+        <FallbackColoredBase selected shape="square" />
       </VStack>
     </ThemeProvider>
   );

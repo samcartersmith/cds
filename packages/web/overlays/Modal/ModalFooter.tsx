@@ -21,14 +21,14 @@ export const ModalFooter = ({ primaryAction, secondaryAction, testID }: ModalFoo
 
   return (
     <HStack
+      borderedTop={!hideDividers}
+      dangerouslySetClassName={modalFooterClassName}
+      gap={2}
+      justifyContent="flex-end"
       spacingHorizontal={3}
       spacingVertical={2}
-      justifyContent="flex-end"
-      width="100%"
-      gap={2}
-      dangerouslySetClassName={modalFooterClassName}
       testID={testID}
-      borderedTop={!hideDividers}
+      width="100%"
     >
       {secondaryAction}
       {primaryAction}

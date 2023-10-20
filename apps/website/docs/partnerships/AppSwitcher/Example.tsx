@@ -15,12 +15,12 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
 const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
   return (
     <Dropdown
-      width={359}
-      maxHeight={600}
-      content={<AppSwitcherContent />}
-      showOverlay
       enableMobileModal
+      showOverlay
+      content={<AppSwitcherContent />}
       contentPosition={switcherPositionConfig}
+      maxHeight={600}
+      width={359}
     >
       {children}
     </Dropdown>
@@ -29,14 +29,14 @@ const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => 
 
 export const AppSwitcherExample = () => {
   return (
-    <FeatureFlagProvider frontierColor frontierButton>
+    <FeatureFlagProvider frontierButton frontierColor>
       <PortalProvider>
         <VStack
+          bordered
           alignItems="center"
+          borderRadius="rounded"
           justifyContent="center"
           spacingVertical={4}
-          bordered
-          borderRadius="rounded"
         >
           <AppSwitcherRecipe>
             <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />

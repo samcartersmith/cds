@@ -52,22 +52,22 @@ export function ResponsiveExample({
   return (
     <FeatureFlagProvider {...featureFlags} frontier={frontierEnabled}>
       <Box
-        spacing={gutter}
         alignItems="flex-start"
-        justifyContent="space-between"
         background="backgroundAlternate"
         flexDirection={notInLiveEditor ? 'row' : 'column-reverse'}
+        justifyContent="space-between"
+        spacing={gutter}
       >
         <Spacer />
         <ThemeProvider scale={selectedScale} spectrum={darkModeEnabled ? 'dark' : 'light'}>
           <Box
-            spacing={gutter}
-            overflow="scroll"
             background
             bordered
             alignItems="stretch"
-            flexWrap="nowrap"
             flexDirection="column"
+            flexWrap="nowrap"
+            overflow="scroll"
+            spacing={gutter}
             {...selected.dimensions}
           >
             {children}
@@ -80,33 +80,33 @@ export function ResponsiveExample({
           width={notInLiveEditor ? undefined : '100%'}
         >
           <Select
-            value={selectedId}
+            compact
             label="Device"
             onChange={setValue as unknown as SetState<string>}
-            compact
+            value={selectedId}
           >
             {entries(options).map(([id, { label }]) => (
-              <SelectOption key={id} value={id} title={label} />
+              <SelectOption key={id} title={label} value={id} />
             ))}
           </Select>
           <Select
-            value={selectedScale}
+            compact
             label="Scale"
             onChange={setScale as unknown as SetState<string>}
-            compact
+            value={selectedScale}
           >
             {scales.map((scale) => (
-              <SelectOption key={scale} value={scale} title={scale} />
+              <SelectOption key={scale} title={scale} value={scale} />
             ))}
           </Select>
-          <HStack alignItems="center" gap={1} flexShrink={0}>
-            <Switch onChange={toggleFrontier} checked={frontierEnabled} />
+          <HStack alignItems="center" flexShrink={0} gap={1}>
+            <Switch checked={frontierEnabled} onChange={toggleFrontier} />
             <TextLabel1 as="p" color="foregroundMuted">
               Frontier
             </TextLabel1>
           </HStack>
-          <HStack alignItems="center" gap={1} flexShrink={0}>
-            <Switch onChange={toggleDarkMode} checked={darkModeEnabled} />
+          <HStack alignItems="center" flexShrink={0} gap={1}>
+            <Switch checked={darkModeEnabled} onChange={toggleDarkMode} />
             <TextLabel1 as="p" color="foregroundMuted">
               Dark mode
             </TextLabel1>

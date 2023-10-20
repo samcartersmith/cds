@@ -21,7 +21,7 @@ export const FlexPage = memo(function FlexPage({ content }: FlexPageProps) {
   return (
     <>
       {overview && <CMSContent content={overview} />}
-      {tabs && <Tabs id="page" gap={0} items={tabs} />}
+      {tabs && <Tabs gap={0} id="page" items={tabs} />}
     </>
   );
 });

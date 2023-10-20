@@ -30,16 +30,16 @@ const LandingPageQuickLink = memo(function LandingPageQuickLink({
   const handleOnPress = useGoToLinkHandler(href);
   return (
     <Pressable
-      width="50%"
+      noScaleOnPress
       backgroundColor="background"
       onPress={onPress ?? handleOnPress}
-      noScaleOnPress
+      width="50%"
     >
       <VStack
+        flexGrow={flexGrow}
         gap={gap}
         spacingHorizontal={spacingHorizontal}
         spacingVertical={spacingVertical}
-        flexGrow={flexGrow}
         {...props}
       >
         <TextCaption as="p">{caption}</TextCaption>

@@ -15,12 +15,12 @@ describe('InternalTooltip.test', () => {
   it('passes a11y', () => {
     render(
       <InternalTooltip
+        animateIn={mockAnimateIn as unknown as Animated.CompositeAnimation}
+        content={<Text>test content</Text>}
+        opacity={new Animated.Value(1)}
+        placement="top"
         subjectLayout={{ width: 20, height: 30, pageOffsetX: 15, pageOffsetY: 25 }}
         testID="mock-internal-tooltip"
-        content={<Text>test content</Text>}
-        placement="top"
-        opacity={new Animated.Value(1)}
-        animateIn={mockAnimateIn as unknown as Animated.CompositeAnimation}
         translateY={new Animated.Value(5)}
       />,
     );
@@ -30,11 +30,11 @@ describe('InternalTooltip.test', () => {
   it('renders content', () => {
     render(
       <InternalTooltip
-        subjectLayout={{ width: 20, height: 30, pageOffsetX: 15, pageOffsetY: 25 }}
-        content={<Text>test content</Text>}
-        placement="top"
-        opacity={new Animated.Value(1)}
         animateIn={mockAnimateIn as unknown as Animated.CompositeAnimation}
+        content={<Text>test content</Text>}
+        opacity={new Animated.Value(1)}
+        placement="top"
+        subjectLayout={{ width: 20, height: 30, pageOffsetX: 15, pageOffsetY: 25 }}
         translateY={new Animated.Value(5)}
       />,
     );
@@ -46,11 +46,11 @@ describe('InternalTooltip.test', () => {
   it('renders string content', () => {
     render(
       <InternalTooltip
-        subjectLayout={{ width: 20, height: 30, pageOffsetX: 15, pageOffsetY: 25 }}
-        content="test content"
-        placement="bottom"
-        opacity={new Animated.Value(1)}
         animateIn={mockAnimateIn as unknown as Animated.CompositeAnimation}
+        content="test content"
+        opacity={new Animated.Value(1)}
+        placement="bottom"
+        subjectLayout={{ width: 20, height: 30, pageOffsetX: 15, pageOffsetY: 25 }}
         translateY={new Animated.Value(5)}
       />,
     );

@@ -26,11 +26,11 @@ export const ContentCellFallback = memo(function ContentCellFallback({
       description={
         description && (
           <Fallback
-            height={lineHeight.body}
-            width={110}
-            spacingTop={0.5}
             disableRandomRectWidth={disableRandomRectWidth}
+            height={lineHeight.body}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 0)}
+            spacingTop={0.5}
+            width={110}
           />
         )
       }
@@ -38,20 +38,20 @@ export const ContentCellFallback = memo(function ContentCellFallback({
       meta={
         meta && (
           <Fallback
-            height={lineHeight.label2}
-            width={50}
             disableRandomRectWidth={disableRandomRectWidth}
+            height={lineHeight.label2}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 1)}
+            width={50}
           />
         )
       }
       title={
         (title || subtitle) && (
           <Fallback
-            height={lineHeight.label2}
-            width={90}
             disableRandomRectWidth={disableRandomRectWidth}
+            height={lineHeight.label2}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 2)}
+            width={90}
           />
         )
       }

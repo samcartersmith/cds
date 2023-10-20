@@ -62,15 +62,15 @@ export function createCardBody<OnPressFn>({
     let mediaContent: React.ReactNode = mediaProp;
 
     if (spotSquare) {
-      mediaContent = <CardMedia type="spotSquare" placement={mediaPlacement} name={spotSquare} />;
+      mediaContent = <CardMedia name={spotSquare} placement={mediaPlacement} type="spotSquare" />;
     }
 
     if (pictogram) {
-      mediaContent = <CardMedia type="pictogram" placement={mediaPlacement} name={pictogram} />;
+      mediaContent = <CardMedia name={pictogram} placement={mediaPlacement} type="pictogram" />;
     }
 
     if (image) {
-      mediaContent = <CardMedia type="image" placement={mediaPlacement} src={image} />;
+      mediaContent = <CardMedia placement={mediaPlacement} src={image} type="image" />;
     }
 
     const maxWidth = props.maxWidth ?? !!mediaContent ? '70%' : undefined;
@@ -80,10 +80,10 @@ export function createCardBody<OnPressFn>({
       if (actionLabel && onActionPress) {
         return (
           <CardBodyAction
-            onPress={onActionPress}
-            endIcon="forwardArrow"
-            testID={`${testID}-action`}
             accessibilityLabel={accessibilityLabel ?? actionLabel}
+            endIcon="forwardArrow"
+            onPress={onActionPress}
+            testID={`${testID}-action`}
           >
             {actionLabel}
           </CardBodyAction>
@@ -105,13 +105,13 @@ export function createCardBody<OnPressFn>({
       return (
         <VStack
           gap={2}
-          testID={testID}
-          spacingTop={spacingTop}
           spacingBottom={spacingBottom}
+          spacingTop={spacingTop}
+          testID={testID}
           {...props}
         >
           {mediaContent}
-          <VStack gap={1} spacingStart={spacingStart} spacingEnd={spacingEnd}>
+          <VStack gap={1} spacingEnd={spacingEnd} spacingStart={spacingStart}>
             <TextHeadline {...textProps} testID={`${testID}-title`}>
               {title}
             </TextHeadline>
@@ -126,18 +126,18 @@ export function createCardBody<OnPressFn>({
 
     return (
       <HStack
+        alignItems="center"
         gap={1}
         justifyContent="space-between"
-        alignItems="center"
-        testID={testID}
-        spacingTop={spacingTop}
-        spacingBottom={spacingBottom}
-        spacingStart={spacingStart}
-        spacingEnd={spacingEnd}
         minHeight={minHeight}
+        spacingBottom={spacingBottom}
+        spacingEnd={spacingEnd}
+        spacingStart={spacingStart}
+        spacingTop={spacingTop}
+        testID={testID}
         {...props}
       >
-        <VStack gap={1} maxWidth={maxWidth} flexShrink={1} alignItems="flex-start">
+        <VStack alignItems="flex-start" flexShrink={1} gap={1} maxWidth={maxWidth}>
           <TextHeadline {...textProps} testID={`${testID}-title`}>
             {title}
           </TextHeadline>

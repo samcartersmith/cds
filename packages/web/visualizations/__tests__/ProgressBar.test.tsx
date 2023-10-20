@@ -97,7 +97,7 @@ describe('ProgressBar test', () => {
   it('renders fixed labels in correct position', () => {
     render(
       <Box width="200">
-        <ProgressBarWithFixedLabels startLabel={0} endLabel={50} labelPlacement="above">
+        <ProgressBarWithFixedLabels endLabel={50} labelPlacement="above" startLabel={0}>
           <ProgressBar progress={50} />
         </ProgressBarWithFixedLabels>
       </Box>,
@@ -117,7 +117,7 @@ describe('ProgressBar test', () => {
   it('has correct bar width', async () => {
     render(
       <Box width="200">
-        <ProgressBar progress={0.77} color="positive" />
+        <ProgressBar color="positive" progress={0.77} />
       </Box>,
     );
 
@@ -146,8 +146,8 @@ describe('ProgressBar test', () => {
   it('handles disabled state correctly', async () => {
     render(
       <Box width="200">
-        <ProgressBarWithFixedLabels startLabel={0} endLabel={77} disabled>
-          <ProgressBar progress={0.77} disabled />
+        <ProgressBarWithFixedLabels disabled endLabel={77} startLabel={0}>
+          <ProgressBar disabled progress={0.77} />
         </ProgressBarWithFixedLabels>
       </Box>,
     );

@@ -72,16 +72,16 @@ export const TileButton = memo(
       <div className={wrapperStyles}>
         <Pressable
           {...props}
+          ref={ref}
+          noScaleOnPress
           backgroundColor="background"
           borderRadius="rounded"
-          ref={ref}
-          width={tileSize}
-          noScaleOnPress
           className={cx(insetFocusRing, pressableStyles)}
-          onFocus={handleShowOverflow}
           onBlur={handleHideOverflow}
+          onFocus={handleShowOverflow}
+          width={tileSize}
         >
-          <Tile title={title} count={count} showOverflow={shouldOverflow}>
+          <Tile count={count} showOverflow={shouldOverflow} title={title}>
             {content}
           </Tile>
         </Pressable>

@@ -16,8 +16,8 @@ export default {
 export const withA11yOldVStack = () => {
   return (
     <VStack as="ul">
-      <ListCell as="li" title="Title" description="Description" />
-      <ListCell as="li" title="Title" description="Description" />
+      <ListCell as="li" description="Description" title="Title" />
+      <ListCell as="li" description="Description" title="Title" />
     </VStack>
   );
 };
@@ -25,8 +25,8 @@ export const withA11yOldVStack = () => {
 export const withA11yVStack = () => {
   return (
     <AlphaVStack as="ul">
-      <ListCell as="li" title="Title" description="Description" />
-      <ListCell as="li" title="Title" description="Description" />
+      <ListCell as="li" description="Description" title="Title" />
+      <ListCell as="li" description="Description" title="Title" />
     </AlphaVStack>
   );
 };

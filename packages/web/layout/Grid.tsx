@@ -60,7 +60,6 @@ export const Grid = memo(
     return (
       <Box
         ref={forwardedRef}
-        display="grid"
         dangerouslySetClassName={cx(
           columnsProp && columnsClassName,
           gap && gapStyles[gap],
@@ -69,6 +68,7 @@ export const Grid = memo(
           dangerouslySetClassName,
         )}
         dangerouslySetStyle={styles}
+        display="grid"
         {...props}
       >
         {children}

@@ -15,12 +15,12 @@ const handlePress = () => {
 
 export const TableRowExample: Story = () => {
   return (
-    <Table variant="ruled" bordered>
+    <Table bordered variant="ruled">
       <TableBody>
         <TableRow>
           <TableCell direction="horizontal">
             <TextHeadline as="h2">Sample Row 1</TextHeadline>
-            <Button variant="secondary" compact onPress={handlePress}>
+            <Button compact onPress={handlePress} variant="secondary">
               Export
             </Button>
           </TableCell>
@@ -28,18 +28,18 @@ export const TableRowExample: Story = () => {
         <TableRow backgroundColor="backgroundAlternate">
           <TableCell
             direction="horizontal"
-            title="Sample Row 2 (with background set)"
             end={
-              <Button variant="secondary" compact onPress={handlePress}>
+              <Button compact onPress={handlePress} variant="secondary">
                 Export
               </Button>
             }
+            title="Sample Row 2 (with background set)"
           />
         </TableRow>
         <TableRow disableHoverIndicator>
           <TableCell direction="horizontal">
             <TextHeadline as="h2">Sample Row 3 (disable hover indicator)</TextHeadline>
-            <Button variant="secondary" compact onPress={handlePress}>
+            <Button compact onPress={handlePress} variant="secondary">
               Export
             </Button>
           </TableCell>

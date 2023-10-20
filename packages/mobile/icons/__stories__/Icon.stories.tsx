@@ -53,12 +53,12 @@ const IconScreen = () => {
   const animatedIcon = (
     <Icon
       animated
-      size="l"
-      name="starActive"
       dangerouslySetColor={animationRef.interpolate({
         inputRange: [0, 1],
         outputRange: [palette.line, palette.primary],
       })}
+      name="starActive"
+      size="l"
     />
   );
 
@@ -89,10 +89,10 @@ const IconScreen = () => {
       </Example>
       <Example title="Animated Icon">
         <PressableOpacity
-          accessibilityLabel="rating a product"
-          accessibilityHint="hit star to rate the product"
-          onPress={toggle}
           noScaleOnPress
+          accessibilityHint="hit star to rate the product"
+          accessibilityLabel="rating a product"
+          onPress={toggle}
         >
           <HStack gap={1}>
             {animatedIcon}

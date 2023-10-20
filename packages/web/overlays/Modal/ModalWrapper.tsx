@@ -77,35 +77,35 @@ export const ModalWrapper = memo(
     return (
       <NewAnimatePresence onExitComplete={onDidClose}>
         {visible && (
-          <Portal disablePortal={disablePortal} containerId={modalContainerId}>
+          <Portal containerId={modalContainerId} disablePortal={disablePortal}>
             <Box
-              position="fixed"
-              pin="all"
-              height="100vh"
-              width="100vw"
-              justifyContent="center"
-              alignItems="center"
-              role={role}
-              aria-modal="true"
-              accessibilityLabelledBy={accessibilityLabelledBy}
-              accessibilityLabel={accessibilityLabel}
-              id={id}
-              zIndex={customZIndex}
-              dangerouslySetClassName={dangerouslySetClassName}
-              testID={testID}
               ref={ref}
+              accessibilityLabel={accessibilityLabel}
+              accessibilityLabelledBy={accessibilityLabelledBy}
+              alignItems="center"
+              aria-modal="true"
+              dangerouslySetClassName={dangerouslySetClassName}
+              height="100vh"
+              id={id}
+              justifyContent="center"
+              pin="all"
+              position="fixed"
+              role={role}
+              testID={testID}
+              width="100vw"
+              zIndex={customZIndex}
             >
               <>
                 {!hideOverlay && (
                   <Overlay
-                    onPress={!disableOverlayPress ? onOverlayPress : undefined}
+                    animated
                     dangerouslySetClassName={
                       !dangerouslyDisableResponsiveness
                         ? modalOverlayResponsiveClassName
                         : undefined
                     }
+                    onPress={!disableOverlayPress ? onOverlayPress : undefined}
                     testID="modal-overlay"
-                    animated
                   />
                 )}
                 {/* NOTE: Add position or zIndex to children to avoid displaying under overlay

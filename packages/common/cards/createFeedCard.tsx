@@ -59,31 +59,31 @@ export function createFeedCard<OnPressFn>({
       const hasFooter = hasFooterActions || Boolean(cta);
       if (hasFooter) {
         return (
-          <CardFooter testID={testID} justifyContent="space-between">
+          <CardFooter justifyContent="space-between" testID={testID}>
             {hasFooterActions && (
               <HStack gap={0.5}>
                 {like && <LikeButton testID={`${testID}-like`} {...like} />}
                 {comment && (
                   <IconButton
                     transparent
+                    accessibilityLabel="Comment"
                     name="annotation"
                     testID={`${testID}-comment`}
-                    accessibilityLabel="Comment"
                     {...comment}
                   />
                 )}
                 {share && (
                   <IconButton
                     transparent
+                    accessibilityLabel="Share"
                     name="share"
                     testID={`${testID}-share`}
-                    accessibilityLabel="Share"
                     {...share}
                   />
                 )}
               </HStack>
             )}
-            {cta && <Button compact transparent variant="secondary" flush="end" {...cta} />}
+            {cta && <Button compact transparent flush="end" variant="secondary" {...cta} />}
           </CardFooter>
         );
       }
@@ -91,28 +91,27 @@ export function createFeedCard<OnPressFn>({
     }, [comment, cta, like, share, testID]);
 
     return (
-      <Card testID={testID} gap={2} {...cardProps}>
+      <Card gap={2} testID={testID} {...cardProps}>
         <CardHeader
-          testID={`${testID}-header`}
-          avatar={avatar}
-          metadata={metadata}
-          author={author}
           action={
             headerAction && (
-              <IconButton transparent flush="end" accessibilityLabel="More" {...headerAction} />
+              <IconButton transparent accessibilityLabel="More" flush="end" {...headerAction} />
             )
           }
+          author={author}
+          avatar={avatar}
+          metadata={metadata}
+          testID={`${testID}-header`}
         />
         <CardBody
-          title={title}
           description={description}
-          pictogram={pictogram}
-          spotSquare={spotSquare}
           image={image}
           mediaPlacement={mediaPlacement}
-          /** Only override default CardBody spacing if footer is present */
-          spacingVertical={footer === null ? undefined : 0}
+          pictogram={pictogram}
+          spacingVertical={footer === null ? undefined : 0} // Only override default CardBody spacing if footer is present
+          spotSquare={spotSquare}
           testID={`${testID}-body`}
+          title={title}
         />
         {footer}
       </Card>

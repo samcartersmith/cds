@@ -51,7 +51,7 @@ export const ComponentCell = memo(
     );
 
     const end = (
-      <TextBody as="p" align="end" color={color} spacingStart={0}>
+      <TextBody align="end" as="p" color={color} spacingStart={0}>
         {item.passes} / {totalTests}
       </TextBody>
     );
@@ -61,13 +61,13 @@ export const ComponentCell = memo(
     return (
       <BetaCell
         key={`project-cell-${id}`}
-        priority="end"
-        offsetHorizontal={1}
-        start={start}
         end={end}
-        selected={active}
         endAccessory={<CellAccessory type={active ? 'selected' : 'arrow'} />}
+        offsetHorizontal={1}
         onPress={handlePress}
+        priority="end"
+        selected={active}
+        start={start}
       />
     );
   },
@@ -78,7 +78,7 @@ const Passes = ({ id, report }: { id: A11yComponent['id']; report: Report }) => 
   const total = item.passes;
 
   return (
-    <VStack borderRadius="rounded" borderColor="line" spacing={2}>
+    <VStack borderColor="line" borderRadius="rounded" spacing={2}>
       <TextLabel1 as="p" color="positive">
         {total} Passes
       </TextLabel1>
@@ -92,27 +92,27 @@ const Violations = ({ id, report }: { id: A11yComponent['id']; report: Report })
   const getDetailsHtml = useCallback((details: string) => ({ __html: details }), []);
 
   return (
-    <VStack borderRadius="rounded" borderColor="line" spacing={1}>
+    <VStack borderColor="line" borderRadius="rounded" spacing={1}>
       <BetaCell
-        onPress={total ? toggle : undefined}
-        offsetHorizontal={0}
-        spacing={2}
         key={`detail--${id}`}
-        justifyContent="space-between"
         endAccessory={
           total ? (
-            <HStack gap={1} alignItems="center">
+            <HStack alignItems="center" gap={1}>
               <TextLabel1 as="p" color={isCollapsed ? 'foregroundMuted' : 'primary'}>
                 View details
               </TextLabel1>
               <Icon
-                size="s"
-                name={isCollapsed ? 'caretDown' : 'caretUp'}
                 color={isCollapsed ? 'foregroundMuted' : 'primary'}
+                name={isCollapsed ? 'caretDown' : 'caretUp'}
+                size="s"
               />
             </HStack>
           ) : undefined
         }
+        justifyContent="space-between"
+        offsetHorizontal={0}
+        onPress={total ? toggle : undefined}
+        spacing={2}
         start={
           <TextLabel1 as="p" color="negative">
             {total} Violations
@@ -122,7 +122,7 @@ const Violations = ({ id, report }: { id: A11yComponent['id']; report: Report })
       <Collapsible collapsed={isCollapsed}>
         <VStack gap={3} spacing={1}>
           {item.violations.map(({ id: reportId, description, help, helpUrl, nodes }) => (
-            <VStack gap={1} key={reportId}>
+            <VStack key={reportId} gap={1}>
               <TextHeadline as="h2">{reportId}</TextHeadline>
               <TextTitle2 as="h3" color="primary">
                 {description}
@@ -131,7 +131,7 @@ const Violations = ({ id, report }: { id: A11yComponent['id']; report: Report })
                 {help}. <Link href={helpUrl}>Learn more</Link>
               </TextBody>
               {nodes.map(({ failureSummary, target, impact }) => (
-                <TextLabel1 as="p" key={`key--${target}-${impact}`}>
+                <TextLabel1 key={`key--${target}-${impact}`} as="p">
                   Target: <code>{target}</code>
                   <br />
                   <span dangerouslySetInnerHTML={getDetailsHtml(failureSummary)} />
@@ -195,10 +195,10 @@ export const A11yReportDetails = memo(({ impact = 'critical', reportDoc }: Props
         </VStack>
         {filteredReport.map(({ id }) => (
           <ComponentCell
-            id={id}
             key={id}
-            report={filteredReport}
             active={activeComponentId === id}
+            id={id}
+            report={filteredReport}
             setActiveComponent={setActiveComponentId}
           />
         ))}
@@ -211,7 +211,7 @@ export const A11yReportDetails = memo(({ impact = 'critical', reportDoc }: Props
     () => (
       <VStack gap={2}>
         <span>
-          <TextHeadline as="h2" spacingBottom={0} color="primary">
+          <TextHeadline as="h2" color="primary" spacingBottom={0}>
             {item.title.replace('Core Components/', '')}
           </TextHeadline>
           <TextTitle2 as="h2" spacingTop={0}>
@@ -227,7 +227,7 @@ export const A11yReportDetails = memo(({ impact = 'critical', reportDoc }: Props
 
   return (
     <ThemeProvider>
-      <SplitScreenStack start={start} end={end} />
+      <SplitScreenStack end={end} start={start} />
     </ThemeProvider>
   );
 });

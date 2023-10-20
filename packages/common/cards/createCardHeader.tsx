@@ -33,14 +33,14 @@ export function createCardHeader<T>({
   }: CardHeaderProps) {
     return (
       <HStack
-        justifyContent="space-between"
         alignItems="center"
-        spacingTop={2}
+        justifyContent="space-between"
         spacingHorizontal={gutter}
+        spacingTop={2}
         testID={testID}
       >
-        <HStack flexGrow={1} alignItems="center" gap={1}>
-          {avatar ? <Avatar alt={author ?? avatar} src={avatar} size="xl" shape="circle" /> : null}
+        <HStack alignItems="center" flexGrow={1} gap={1}>
+          {avatar ? <Avatar alt={author ?? avatar} shape="circle" size="xl" src={avatar} /> : null}
           <VStack>
             {author ? <TextLabel1>{author}</TextLabel1> : null}
             {metadata ? <TextLegal color="foregroundMuted">{metadata}</TextLegal> : null}

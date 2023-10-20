@@ -9,7 +9,7 @@ const URL = 'www.coinbase.com';
 describe('Link', () => {
   it('passes a11y', () => {
     render(
-      <Link variant="body" testID={TEST_ID} to="/">
+      <Link testID={TEST_ID} to="/" variant="body">
         Child
       </Link>,
     );
@@ -19,7 +19,7 @@ describe('Link', () => {
 
   it('renders a children text', () => {
     render(
-      <Link variant="body" to="/">
+      <Link to="/" variant="body">
         Child
       </Link>,
     );
@@ -29,7 +29,7 @@ describe('Link', () => {
 
   it('renders a link', () => {
     render(
-      <Link to="/" testID={TEST_ID}>
+      <Link testID={TEST_ID} to="/">
         Child
       </Link>,
     );
@@ -52,7 +52,7 @@ describe('Link', () => {
 
     variants.forEach((variant) => {
       const linkRenderer = TestRenderer.create(
-        <Link to="/" variant={variant} testID={TEST_ID}>
+        <Link testID={TEST_ID} to="/" variant={variant}>
           Child
         </Link>,
       );
@@ -65,7 +65,7 @@ describe('Link', () => {
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
     render(
-      <Link to="/" onPress={spy} testID={TEST_ID}>
+      <Link onPress={spy} testID={TEST_ID} to="/">
         Child
       </Link>,
     );
@@ -77,7 +77,7 @@ describe('Link', () => {
 
   it('to prop works as expected', () => {
     const linkRenderer = TestRenderer.create(
-      <Link to={URL} testID={TEST_ID}>
+      <Link testID={TEST_ID} to={URL}>
         Child
       </Link>,
     );
@@ -87,7 +87,7 @@ describe('Link', () => {
 
   it('can set forceOpenOutsideApp to true', () => {
     const linkRenderer = TestRenderer.create(
-      <Link to={URL} forceOpenOutsideApp testID={TEST_ID}>
+      <Link forceOpenOutsideApp testID={TEST_ID} to={URL}>
         Child
       </Link>,
     );
@@ -97,7 +97,7 @@ describe('Link', () => {
 
   it('can set readerMode to true', () => {
     const linkRenderer = TestRenderer.create(
-      <Link to={URL} readerMode testID={TEST_ID}>
+      <Link readerMode testID={TEST_ID} to={URL}>
         Child
       </Link>,
     );
@@ -107,7 +107,7 @@ describe('Link', () => {
 
   it('removes text style when inherited', () => {
     render(
-      <Link variant="inherit" to={URL} testID={TEST_ID}>
+      <Link testID={TEST_ID} to={URL} variant="inherit">
         Child
       </Link>,
     );
@@ -117,7 +117,7 @@ describe('Link', () => {
 
   it('inherits by default', () => {
     render(
-      <Link to={URL} testID={TEST_ID}>
+      <Link testID={TEST_ID} to={URL}>
         Child
       </Link>,
     );

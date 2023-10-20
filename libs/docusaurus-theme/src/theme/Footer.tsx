@@ -13,25 +13,25 @@ const Footer = memo(function Footer() {
   const { footer } = useThemeConfig();
   if (isSimpleFooter(footer)) {
     return (
-      <ThemeProvider spectrum="dark" display="contents">
-        <HStack spacingBottom={4} background borderedTop>
+      <ThemeProvider display="contents" spectrum="dark">
+        <HStack background borderedTop spacingBottom={4}>
           <Box width="calc(var(--doc-sidebar-width) + var(--spacing-8))" />
           <HStack
-            minHeight={180}
+            alignItems="flex-end"
             justifyContent="space-between"
+            minHeight={180}
             spacingHorizontal={4}
             width="100%"
-            alignItems="flex-end"
           >
             <HStack gap={3}>
               {footer.links.map((item) => (
                 <Link
                   key={item.label}
-                  to={item.href}
-                  variant="title4"
+                  openInNewWindow
                   color="foreground"
                   dangerouslySetClassName="footer-link"
-                  openInNewWindow
+                  to={item.href}
+                  variant="title4"
                 >
                   {item.label ?? ''}
                 </Link>

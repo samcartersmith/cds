@@ -20,18 +20,18 @@ describe('DotCount', () => {
   });
 
   it('passes a11y for single digit counter', () => {
-    render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={1} />);
+    render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 
   it('renders a DotCount', () => {
-    render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={1} />);
+    render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
 
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeTruthy();
   });
 
   it('renders a secondary border in light mode', () => {
-    render(<DotCount variant="negative" count={1} />);
+    render(<DotCount count={1} variant="negative" />);
 
     expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
       borderColor: paletteAliasToRgbaString('secondary', 'light'),
@@ -41,8 +41,8 @@ describe('DotCount', () => {
 
   it('renders a secondary border in dark mode', () => {
     render(
-      <ThemeProvider spectrum="dark" name="dotcount-theme-provider">
-        <DotCount variant="negative" count={1} />
+      <ThemeProvider name="dotcount-theme-provider" spectrum="dark">
+        <DotCount count={1} variant="negative" />
       </ThemeProvider>,
     );
 
@@ -55,8 +55,8 @@ describe('DotCount', () => {
   it('renders a secondary border in dark and frontier mode', () => {
     render(
       <FeatureFlagProvider frontier>
-        <ThemeProvider spectrum="dark" name="dotcount-theme-provider">
-          <DotCount variant="negative" count={1} />
+        <ThemeProvider name="dotcount-theme-provider" spectrum="dark">
+          <DotCount count={1} variant="negative" />
         </ThemeProvider>
       </FeatureFlagProvider>,
     );
@@ -68,30 +68,30 @@ describe('DotCount', () => {
   });
 
   it('renders correct count when count equals 1', () => {
-    render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={1} />);
+    render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
 
     expect(screen.getByText('1')).toBeTruthy();
   });
 
   it('renders correct count when count  0', () => {
-    render(<DotCount variant="negative" count={0} />);
+    render(<DotCount count={0} variant="negative" />);
 
     expect(screen.queryByText('0')).toBeNull();
   });
 
   it('passes a11y for 0 counter', () => {
-    render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={0} />);
+    render(<DotCount count={0} testID={DOTCOUNT_TESTID} variant="negative" />);
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 
   it('renders count 99+ when count > 99', () => {
-    render(<DotCount variant="negative" count={120} />);
+    render(<DotCount count={120} variant="negative" />);
 
     expect(screen.getByText('99+')).toBeTruthy();
   });
 
   it('passes a11y for double or more digit counter', () => {
-    render(<DotCount testID={DOTCOUNT_TESTID} variant="negative" count={120} />);
+    render(<DotCount count={120} testID={DOTCOUNT_TESTID} variant="negative" />);
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 
@@ -153,7 +153,7 @@ describe('DotCount', () => {
 
   it('passes a11y when dot is placed relative to its parent', () => {
     render(
-      <DotCount pin="top-end" testID={DOTCOUNT_TESTID} variant="negative" count={1}>
+      <DotCount count={1} pin="top-end" testID={DOTCOUNT_TESTID} variant="negative">
         <Icon name="airdrop" size="l" />
       </DotCount>,
     );

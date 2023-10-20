@@ -51,19 +51,19 @@ export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerPro
 
   return (
     <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
       data-testid={testID}
-      viewBox="0 0 66 66"
       height={`${size}px`}
+      viewBox="0 0 66 66"
+      xmlns="http://www.w3.org/2000/svg"
       {...svgMotionProps}
     >
       <motion.circle
-        fill="none"
-        strokeWidth="6"
-        strokeLinecap="round"
         cx="33"
         cy="33"
+        fill="none"
         r="30"
+        strokeLinecap="round"
+        strokeWidth="6"
         {...circleMotionProps}
         className={styles.materialSpinner.circle}
       />

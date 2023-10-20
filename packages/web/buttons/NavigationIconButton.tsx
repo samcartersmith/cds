@@ -64,19 +64,19 @@ export const NavigationIconButton = memo(
 
     return (
       <Pressable
-        borderRadius="roundedFull"
+        noScaleOnPress
         borderColor={borderColor}
+        borderRadius="roundedFull"
         borderWidth="button"
         onPress={handlePress}
-        noScaleOnPress
         {...props}
+        ref={ref}
         as={as}
         backgroundColor={backgroundColor}
         className={cx(flexStyles, iconButton, isActive ? focusVisibleClassName : null)}
-        ref={ref}
         disabled={disabled}
-        style={styles}
         onBlur={handleBlur}
+        style={styles}
       >
         <NavigationIcon name={name} size={iconSize} />
       </Pressable>

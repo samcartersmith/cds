@@ -35,7 +35,7 @@ describe('Grid', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <Grid columns={12} spacing={2} background="background">
+        <Grid background="background" columns={12} spacing={2}>
           Child
         </Grid>,
       ),
@@ -45,7 +45,7 @@ describe('Grid', () => {
   (['article', 'aside', 'div', 'footer', 'header', 'main', 'section'] as const).forEach((tag) => {
     it(`can render as a "${tag}" element using the \`as\` prop`, () => {
       const { container } = render(
-        <Grid columns={12} as={tag}>
+        <Grid as={tag} columns={12}>
           Child
         </Grid>,
       );
@@ -59,7 +59,7 @@ describe('Grid', () => {
 
   it('can pass a `role` attribute', () => {
     render(
-      <Grid columns={12} as="main" role="main">
+      <Grid as="main" columns={12} role="main">
         Child
       </Grid>,
     );
@@ -86,7 +86,7 @@ describe('Grid', () => {
       expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
-        <Grid columnMin="0px" bordered>
+        <Grid bordered columnMin="0px">
           Child
         </Grid>,
       );
@@ -100,7 +100,7 @@ describe('Grid', () => {
       expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
-        <Grid columnMin="0px" borderRadius="rounded">
+        <Grid borderRadius="rounded" columnMin="0px">
           Child
         </Grid>,
       );
@@ -114,7 +114,7 @@ describe('Grid', () => {
       expect(screen.getByText('Child')).toHaveAttribute('class', DEFAULT_CLASS);
 
       rerender(
-        <Grid columnMin="0px" borderRadius="rounded">
+        <Grid borderRadius="rounded" columnMin="0px">
           Child
         </Grid>,
       );
@@ -142,7 +142,7 @@ describe('Grid', () => {
       expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
-        <Grid columns={12} width="321px" maxWidth="789rem" minWidth="66%">
+        <Grid columns={12} maxWidth="789rem" minWidth="66%" width="321px">
           Child
         </Grid>,
       );
@@ -251,7 +251,7 @@ describe('implicit columns', () => {
     const columnMin = '100px';
     const columnMax = '200px';
     render(
-      <Grid columnMin={columnMin} columnMax={columnMax}>
+      <Grid columnMax={columnMax} columnMin={columnMin}>
         Child
       </Grid>,
     );

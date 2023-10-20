@@ -37,14 +37,14 @@ const FullscreenModalExample = ({
 
   return (
     <FullscreenModal
-      visible={visible}
+      disablePortal
+      accessibilityLabel={accessibilityLabel}
+      accessibilityLabelledBy={accessibilityLabelledBy}
       onRequestClose={handleClose}
       primaryContent={primaryContent}
       secondaryContent={secondaryContent}
       title={TITLE}
-      accessibilityLabelledBy={accessibilityLabelledBy}
-      accessibilityLabel={accessibilityLabel}
-      disablePortal
+      visible={visible}
     />
   );
 };
@@ -92,8 +92,8 @@ describe('FullscreenModal', () => {
     render(
       <FullscreenModalExample
         visible
-        accessibilityLabelledBy={LABELLED_BY}
         accessibilityLabel={LABEL}
+        accessibilityLabelledBy={LABELLED_BY}
       />,
     );
 
@@ -108,8 +108,8 @@ describe('FullscreenModal', () => {
     render(
       <FullscreenModalExample
         visible
-        accessibilityLabelledBy={LABELLED_BY}
         accessibilityLabel={LABEL}
+        accessibilityLabelledBy={LABELLED_BY}
       />,
     );
 

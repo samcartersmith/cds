@@ -9,11 +9,11 @@ export const ButtonOrLink = forwardRef<HTMLElement, Props>(
       return (
         <Button
           {...props}
+          ref={ref as React.ForwardedRef<HTMLAnchorElement>}
           as="a"
           href={to ?? href}
           rel={!rel && target === '_blank' ? 'noopener noreferrer' : rel}
           target={target}
-          ref={ref as React.ForwardedRef<HTMLAnchorElement>}
         />
       );
     }
@@ -21,9 +21,9 @@ export const ButtonOrLink = forwardRef<HTMLElement, Props>(
     return (
       <Button
         {...props}
+        ref={ref as React.ForwardedRef<HTMLButtonElement>}
         as="button"
         type={type as 'button'}
-        ref={ref as React.ForwardedRef<HTMLButtonElement>}
       />
     );
   },

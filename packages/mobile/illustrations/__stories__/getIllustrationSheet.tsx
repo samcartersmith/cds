@@ -111,15 +111,15 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
     return (
       <ThemeProvider name="default" scale="xSmall" spectrum={item.spectrum}>
         <VStack
-          overflow="hidden"
           background
+          overflow="hidden"
           width={SIZES[type].width * SIZES[type].scaleMultiplier}
         >
           {type === 'heroSquare' && (
             // render a 48x48 thumbnail
             <HeroSquare
-              name={item.name as HeroSquareName}
               dimension={dim as HeroSquareDimension}
+              name={item.name as HeroSquareName}
               scaleMultiplier={SIZES.heroSquare.scaleMultiplier}
             />
           )}
@@ -140,15 +140,15 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
           )}
           {type === 'pictogram' && (
             <Pictogram
-              name={item.name as PictogramName}
               dimension={dim as PictogramDimension}
+              name={item.name as PictogramName}
               scaleMultiplier={SIZES.pictogram.scaleMultiplier}
             />
           )}
           {type === 'spotIcon' && (
             <SpotIcon
-              name={item.name as SpotIconName}
               dimension={dim as SpotIconDimension}
+              name={item.name as SpotIconName}
               scaleMultiplier={SIZES.spotIcon.scaleMultiplier}
             />
           )}
@@ -179,23 +179,23 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
     return (
       <VStack
         // TODO: pull from ui-mobile-playground/helpers/constants via screen constant
-        testID="mobile-playground-screen"
         background
-        flexGrow={1}
         alignItems="center"
+        flexGrow={1}
         justifyContent="center"
+        testID="mobile-playground-screen"
       >
         <FlatList
-          style={FLAT_LIST_STYLE}
+          ListFooterComponent={ListFooterComponent}
           contentContainerStyle={FLAT_LIST_CONTAINER_STYLE}
-          // TODO: pull from ui-mobile-playground/helpers/constants via scrollView constant
-          testID="mobile-playground-scrollview"
           data={data}
           getItemLayout={getItemLayout}
-          renderItem={renderItem}
-          numColumns={ITEM_COLUMNS}
           keyExtractor={keyExtractor}
-          ListFooterComponent={ListFooterComponent}
+          numColumns={ITEM_COLUMNS}
+          renderItem={renderItem}
+          style={FLAT_LIST_STYLE}
+          // TODO: pull from ui-mobile-playground/helpers/constants via scrollView constant
+          testID="mobile-playground-scrollview"
         />
       </VStack>
     );

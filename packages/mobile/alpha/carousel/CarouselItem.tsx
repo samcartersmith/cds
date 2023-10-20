@@ -149,16 +149,16 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
     return (
       <CarouselItemContext.Provider value={contextValue}>
         <Box
-          onLayout={onWrapperLayout}
           animated
-          testID={`CarouselItemWrapper-${id}`}
           dangerouslySetStyle={animatedStyles}
+          onLayout={onWrapperLayout}
+          testID={`CarouselItemWrapper-${id}`}
         >
           <Box
-            animated
             ref={innerBox}
-            position="relative"
+            animated
             flexShrink={0}
+            position="relative"
             spacingEnd={spacingEnd}
             testID={`CarouselItemInner-${id}`}
             width={width}
@@ -166,17 +166,17 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
             {showDismiss ? (
               <CarouselControlsWrapper
                 animated
+                dangerouslySetStyle={dismissButtonStyles}
                 justifyContent="flex-end"
                 spacingEnd={0.5}
-                dangerouslySetStyle={dismissButtonStyles}
               >
                 <IconButton
                   transparent
+                  accessibilityHint={dismissButtonAccessibilityHint}
+                  accessibilityLabel={dismissButtonAccessibilityLabel}
                   name="close"
                   onPress={handleDismissPress}
                   testID={`CarouselItemDismiss-${id}`}
-                  accessibilityLabel={dismissButtonAccessibilityLabel}
-                  accessibilityHint={dismissButtonAccessibilityHint}
                 />
               </CarouselControlsWrapper>
             ) : null}

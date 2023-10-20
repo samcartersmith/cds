@@ -33,8 +33,8 @@ const BasicTooltipContent = ({ content }: PopperTooltipProps) => {
 
   return (
     <PortalProvider>
-      <HStack spacingHorizontal={8} spacingVertical={2} gap={5}>
-        <VStack spacingHorizontal={2} gap={2}>
+      <HStack gap={5} spacingHorizontal={8} spacingVertical={2}>
+        <VStack gap={2} spacingHorizontal={2}>
           <TooltipContent ref={ref} content={content} gap={0} />
         </VStack>
       </HStack>

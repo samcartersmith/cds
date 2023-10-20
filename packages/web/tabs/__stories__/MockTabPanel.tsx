@@ -20,17 +20,15 @@ export const MockTabPanel = ({
        * These three props are required to create a truly accessible
        * tab system, and must be named in the following format
        * */
-      role="tabpanel"
-      id={`tabpanel--${id}`}
-      accessibilityLabelledBy={`tab--${id}`}
-      // Make sure you're properly showing/hiding this tabpanel
-      display={display}
-      // Style as you wish
-      spacing={2}
-      gap={1}
       bordered
-      borderRadius="rounded"
+      accessibilityLabelledBy={`tab--${id}`}
       background="primaryWash"
+      borderRadius="rounded"
+      display={display}
+      gap={1}
+      id={`tabpanel--${id}`}
+      role="tabpanel" // Make sure you're properly showing/hiding this tabpanel
+      spacing={2}
     >
       {children}
     </VStack>

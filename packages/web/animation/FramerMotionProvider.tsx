@@ -7,7 +7,7 @@ export const FramerMotionProvider = memo(function FramerMotionProvider({
   children: React.ReactElement;
 }) {
   return (
-    <LazyMotion features={domMax} strict>
+    <LazyMotion strict features={domMax}>
       {children}
     </LazyMotion>
   );

@@ -16,7 +16,7 @@ const PressableScreen = () => {
           </Pressable>
         </Box>
 
-        <Box spacing={1} background="backgroundOverlay">
+        <Box background="backgroundOverlay" spacing={1}>
           <Pressable accessibilityRole="button" backgroundColor="backgroundAlternate">
             <TextBody>Other background</TextBody>
           </Pressable>
@@ -45,11 +45,11 @@ const PressableScreen = () => {
         </Box>
         <Box spacing={1}>
           <Pressable
+            loading
             accessibilityRole="button"
             backgroundColor="primary"
             borderRadius="roundedLarge"
             borderWidth="button"
-            loading
           >
             <TextBody color="negativeForeground">Primary + Loading</TextBody>
           </Pressable>
@@ -63,7 +63,7 @@ const PressableScreen = () => {
           </PressableOpacity>
         </Box>
 
-        <Box spacing={1} background="backgroundOverlay">
+        <Box background="backgroundOverlay" spacing={1}>
           <PressableOpacity>
             <TextBody>Other background</TextBody>
           </PressableOpacity>
@@ -71,13 +71,13 @@ const PressableScreen = () => {
       </Example>
       <Example title="Pressable transparentWhileInactive">
         <Box spacing={1}>
-          <Pressable backgroundColor="primary" transparentWhileInactive accessibilityRole="button">
+          <Pressable transparentWhileInactive accessibilityRole="button" backgroundColor="primary">
             <TextBody>Default background</TextBody>
           </Pressable>
         </Box>
 
-        <Box spacing={1} background="backgroundOverlay">
-          <Pressable backgroundColor="primary" transparentWhileInactive accessibilityRole="button">
+        <Box background="backgroundOverlay" spacing={1}>
+          <Pressable transparentWhileInactive accessibilityRole="button" backgroundColor="primary">
             <TextBody>Other background</TextBody>
           </Pressable>
         </Box>

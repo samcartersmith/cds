@@ -32,29 +32,29 @@ const SparklineExample = ({ imageUrl, name, symbol, color }: SparklineExamplePro
     <Cell
       detail={
         <HStack alignItems="center">
-          <Sparkline {...dimensions} path={path} color={color} />
+          <Sparkline {...dimensions} color={color} path={path} />
           <VStack
-            spacingStart={2}
             alignContent="flex-end"
             alignItems="flex-end"
             justifyContent="center"
+            spacingStart={2}
           >
             <TextBody align="end" numberOfLines={1}>
               $2,874.49
             </TextBody>
-            <TextBody align="end" numberOfLines={1} color="foregroundMuted">
+            <TextBody align="end" color="foregroundMuted" numberOfLines={1}>
               +36.08%
             </TextBody>
           </VStack>
         </HStack>
       }
-      media={<CellMedia type="image" source={imageUrl} title="Title" />}
+      media={<CellMedia source={imageUrl} title="Title" type="image" />}
     >
       <VStack justifyContent="center">
-        <TextHeadline numberOfLines={1} ellipsize="tail">
+        <TextHeadline ellipsize="tail" numberOfLines={1}>
           {name}
         </TextHeadline>
-        <TextBody numberOfLines={1} ellipsize="tail">
+        <TextBody ellipsize="tail" numberOfLines={1}>
           {symbol}
         </TextBody>
       </VStack>
@@ -81,13 +81,13 @@ const SparklineScalingExample: React.FC<React.PropsWithChildren<SparklineCompact
 
   return (
     <VStack>
-      <TextHeadline numberOfLines={1} ellipsize="tail">
+      <TextHeadline ellipsize="tail" numberOfLines={1}>
         Scale: {props.yAxisScalingFactor}
       </TextHeadline>
       <Sparkline
         {...dimensions}
-        path={path}
         color="#F7931A"
+        path={path}
         yAxisScalingFactor={props.yAxisScalingFactor}
       >
         {props.fill && <SparklineArea area={area} />}

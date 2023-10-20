@@ -21,7 +21,7 @@ describe('Dropdown performance tests', () => {
       await screen.findByText(options[0]);
     };
 
-    await measurePerformance(<DropdownExample subjectTestID={subjectTestID} options={options} />, {
+    await measurePerformance(<DropdownExample options={options} subjectTestID={subjectTestID} />, {
       scenario,
     });
   });
@@ -32,7 +32,7 @@ describe('Dropdown performance tests', () => {
     };
 
     await measurePerformance(
-      <DropdownExample disablePortal subjectTestID={subjectTestID} options={options} />,
+      <DropdownExample disablePortal options={options} subjectTestID={subjectTestID} />,
       {
         scenario,
       },

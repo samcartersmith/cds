@@ -5,7 +5,7 @@ import { MediaFallback } from '../MediaFallback';
 
 describe('MediaFallback.test', () => {
   it('renders media fallback', () => {
-    render(<MediaFallback type="asset" testID="test-media-fallback" />);
+    render(<MediaFallback testID="test-media-fallback" type="asset" />);
 
     expect(screen.getByTestId('test-media-fallback')).toHaveStyle({
       width: `${mediaSize.normal}px`,
@@ -13,7 +13,7 @@ describe('MediaFallback.test', () => {
   });
 
   it('renders image fallback', () => {
-    render(<MediaFallback type="image" testID="test-media-fallback" />);
+    render(<MediaFallback testID="test-media-fallback" type="image" />);
 
     expect(screen.getByTestId('test-media-fallback')).toHaveStyle({
       width: `${imageSize.normal}px`,

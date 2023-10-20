@@ -54,11 +54,11 @@ export const V5MigrationsTest = () => {
     <VStack>
       {/* prop value migrations */}
       {/* @ts-expect-error testing */}
-      <SpotSquare name="addCard" dimension={testVar} />
+      <SpotSquare dimension={testVar} name="addCard" />
       {/* @ts-expect-error testing */}
-      <Pictogram name="2fa" dimension={isMobile ? '96x96' : '64x64'} />
+      <Pictogram dimension={isMobile ? '96x96' : '64x64'} name="2fa" />
       {/* @ts-expect-error testing */}
-      <CDSPictogram name="2fa" dimension="96x96" />
+      <CDSPictogram dimension="96x96" name="2fa" />
       {/* @ts-expect-error testing */}
       <ContentCell reduceHorizontalSpacing />
       {/* @ts-expect-error testing */}
@@ -72,9 +72,9 @@ export const V5MigrationsTest = () => {
       </Group>
       {/* removed props */}
       {/* @ts-expect-error testing */}
-      <Icon name="add" size="s" badge={<Badge />} />
+      <Icon badge={<Badge />} name="add" size="s" />
       {/* @ts-expect-error testing */}
-      <NavIcon name="addPeople" size="s" badge={<Badge />} />
+      <NavIcon badge={<Badge />} name="addPeople" size="s" />
       {/* import path migrations */}
       <Card />
       {/* removed exports with no replacement */}

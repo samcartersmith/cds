@@ -137,58 +137,58 @@ export const TableCell = memo(
 
     return (
       <TableCellComponent
-        data-testid={testID}
         className={cx(tableCellClass, dangerouslySetClassName)}
         colSpan={colSpan}
-        style={inlineStyles}
+        data-testid={testID}
         scope={cellScope}
+        style={inlineStyles}
         {...props}
       >
         <Cell
-          onPress={onPress}
-          alignItems={alignItems}
-          media={start}
           accessory={end}
-          shouldOverflow={!overflow}
-          outerSpacing={outer}
-          innerSpacing={inner}
-          responsiveConfig={responsiveConfig}
+          alignItems={alignItems}
           gap={cellGap}
+          innerSpacing={inner}
+          media={start}
+          onPress={onPress}
+          outerSpacing={outer}
+          responsiveConfig={responsiveConfig}
+          shouldOverflow={!overflow}
         >
           {children ? (
-            <TextComponent as="div" noWrap={!!overflow} color={color} overflow={overflow}>
+            <TextComponent as="div" color={color} noWrap={!!overflow} overflow={overflow}>
               <Stack
+                alignItems={smartAlignItems}
                 flexGrow={1}
                 flexShrink={1}
                 gap={0.5}
                 justifyContent={smartJustifyContent}
-                alignItems={smartAlignItems}
               >
                 {children}
               </Stack>
             </TextComponent>
           ) : (
             <Stack
+              alignItems={smartAlignItems}
+              dangerouslySetClassName={stackClassName}
               flexGrow={1}
               flexShrink={1}
-              dangerouslySetClassName={stackClassName}
               justifyContent={smartJustifyContent}
-              alignItems={smartAlignItems}
             >
               <TextComponent
-                noWrap={!!overflow}
                 as="div"
                 color={smartTitleColor}
+                noWrap={!!overflow}
                 overflow={overflow}
               >
                 {title}
               </TextComponent>
               {subtitle ? (
                 <TextLabel2
-                  color={subtitleColor}
                   as="div"
-                  spacingTop={textSpacingTop}
+                  color={subtitleColor}
                   overflow={overflow}
+                  spacingTop={textSpacingTop}
                 >
                   {subtitle}
                 </TextLabel2>

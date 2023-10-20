@@ -20,7 +20,7 @@ export const InputLabelTextAlignments = () => {
   return (
     <div>
       {textAlignments.map((align) => (
-        <div className={wrapperStyle} key={align}>
+        <div key={align} className={wrapperStyle}>
           <InputLabel align={align}>{`${align} Label`}</InputLabel>
         </div>
       ))}
@@ -38,7 +38,7 @@ export const InputLabelDangerouslySetClassName = () => {
   `;
 
   return (
-    <InputLabel dangerouslySetClassName={fontWeight} color="foregroundMuted">
+    <InputLabel color="foregroundMuted" dangerouslySetClassName={fontWeight}>
       Label
     </InputLabel>
   );

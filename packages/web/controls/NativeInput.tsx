@@ -123,18 +123,18 @@ export const NativeInput = memo(
 
     return (
       <input
-        style={dynamicStyles}
-        aria-label={accessibilityLabel}
+        ref={ref}
         aria-describedby={accessibilityHint}
+        aria-label={accessibilityLabel}
         className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
         data-testid={testID}
-        tabIndex={0}
+        onBlur={onBlur}
+        onChange={onChange}
         onClick={onPress}
         onFocus={onFocus}
-        onBlur={onBlur}
         onKeyDown={onKeyDown}
-        onChange={onChange}
-        ref={ref}
+        style={dynamicStyles}
+        tabIndex={0}
         {...props}
       />
     );

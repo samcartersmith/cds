@@ -6,7 +6,7 @@ import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-we
 
 const PropsTable = memo(function PropsTable({ props, sharedTypeAliases }: PropsTableProps) {
   return (
-    <Box offset={2} background overflow="auto">
+    <Box background offset={2} overflow="auto">
       <Table tableLayout="fixed">
         <TableHeader>
           <TableRow>
@@ -14,7 +14,7 @@ const PropsTable = memo(function PropsTable({ props, sharedTypeAliases }: PropsT
             {/* Colspan won't work with fixed tableLayout so we render an empty cell */}
             <TableCell title="" />
             <TableCell title="Type" width="35%" />
-            <TableCell title="Default" alignItems="flex-end" />
+            <TableCell alignItems="flex-end" title="Default" />
           </TableRow>
         </TableHeader>
         <TableBody>

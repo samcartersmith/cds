@@ -9,11 +9,11 @@ import { NavigationIcon } from '../NavigationIcon';
 function NavigationIconScreen() {
   return (
     <ExampleScreen>
-      <HStack spacingVertical={2} gap={2} flexWrap="wrap" justifyContent="center">
+      <HStack flexWrap="wrap" gap={2} justifyContent="center" spacingVertical={2}>
         {names.map((name) => {
           return (
-            <HStack key={`nav-icon-wrapper-${name}`} gap={2} alignItems="center">
-              <HStack gap={2} alignItems="center">
+            <HStack key={`nav-icon-wrapper-${name}`} alignItems="center" gap={2}>
+              <HStack alignItems="center" gap={2}>
                 <ScaleProvider value="xSmall">
                   <NavigationIcon name={name} size="s" />
                 </ScaleProvider>
@@ -21,13 +21,13 @@ function NavigationIconScreen() {
                   return <NavigationIcon key={`${name}-${size}`} name={name} size={size} />;
                 })}
               </HStack>
-              <HStack gap={2} alignItems="center">
+              <HStack alignItems="center" gap={2}>
                 <ScaleProvider value="xSmall">
-                  <NavigationIcon name={name} size="s" active />
+                  <NavigationIcon active name={name} size="s" />
                 </ScaleProvider>
                 {(['s', 'm', 'l'] as const).map((size) => {
                   return (
-                    <NavigationIcon key={`${name}-${size}-active`} name={name} size={size} active />
+                    <NavigationIcon key={`${name}-${size}-active`} active name={name} size={size} />
                   );
                 })}
               </HStack>

@@ -12,7 +12,7 @@ export const TableSection = memo(
     // be smart about how to render their content.
     return (
       <TableSectionContext.Provider value={value}>
-        <TableSectionComponent data-testid={testID} className={dangerouslySetClassName} {...rest}>
+        <TableSectionComponent className={dangerouslySetClassName} data-testid={testID} {...rest}>
           {Children.map(children, (child: ReactNode) => {
             // extra whitespace in table sections causes DOM validation errors
             // so we need to filter out empty children

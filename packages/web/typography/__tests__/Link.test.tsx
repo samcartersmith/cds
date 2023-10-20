@@ -10,7 +10,7 @@ describe('Link', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <Link variant="body" to="/">
+        <Link to="/" variant="body">
           Child
         </Link>,
       ),
@@ -20,7 +20,7 @@ describe('Link', () => {
   it('able to set accessibilityLabel', async () => {
     const accessibilityLabel = 'link-accessibility-label';
     render(
-      <Link variant="body" to="/" accessibilityLabel={accessibilityLabel}>
+      <Link accessibilityLabel={accessibilityLabel} to="/" variant="body">
         Child
       </Link>,
     );
@@ -29,7 +29,7 @@ describe('Link', () => {
 
   it('should render with anchor element', async () => {
     render(
-      <Link variant="body" to="/">
+      <Link to="/" variant="body">
         Child
       </Link>,
     );
@@ -40,7 +40,7 @@ describe('Link', () => {
   it('should render with button element if no href', async () => {
     render(
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
-      <Link variant="body" onPress={handlePress}>
+      <Link onPress={handlePress} variant="body">
         Child
       </Link>,
     );
@@ -50,7 +50,7 @@ describe('Link', () => {
 
   it('can set openInNewWindow to true', async () => {
     render(
-      <Link variant="body" to="/" openInNewWindow testID={testID}>
+      <Link openInNewWindow testID={testID} to="/" variant="body">
         Child
       </Link>,
     );
@@ -59,7 +59,7 @@ describe('Link', () => {
 
   it('can set openInNewWindow to false', async () => {
     render(
-      <Link variant="body" to="/" openInNewWindow={false} testID={testID}>
+      <Link openInNewWindow={false} testID={testID} to="/" variant="body">
         Child
       </Link>,
     );
@@ -69,7 +69,7 @@ describe('Link', () => {
   it('doesnt set target or rel if a button', async () => {
     render(
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
-      <Link variant="body" openInNewWindow testID={testID}>
+      <Link openInNewWindow testID={testID} variant="body">
         Child
       </Link>,
     );
@@ -80,7 +80,7 @@ describe('Link', () => {
 
   it('defaults to noopener noreferrer when openInNewWindow', async () => {
     render(
-      <Link variant="body" to="https://www.coinbase.com/" openInNewWindow testID={testID}>
+      <Link openInNewWindow testID={testID} to="https://www.coinbase.com/" variant="body">
         Child
       </Link>,
     );
@@ -89,7 +89,7 @@ describe('Link', () => {
 
   it('set rel to noopener', async () => {
     render(
-      <Link variant="body" to="https://www.coinbase.com/" rel="noopener" testID={testID}>
+      <Link rel="noopener" testID={testID} to="https://www.coinbase.com/" variant="body">
         Child
       </Link>,
     );
@@ -98,7 +98,7 @@ describe('Link', () => {
 
   it('set rel to noreferrer', async () => {
     render(
-      <Link variant="body" to="https://www.coinbase.com/" rel="noreferrer" testID={testID}>
+      <Link rel="noreferrer" testID={testID} to="https://www.coinbase.com/" variant="body">
         Child
       </Link>,
     );
@@ -108,7 +108,7 @@ describe('Link', () => {
   it('to is set correctly', async () => {
     const url = 'https://www.google.com/';
     render(
-      <Link variant="body" to={url} testID={testID}>
+      <Link testID={testID} to={url} variant="body">
         Child
       </Link>,
     );
@@ -118,7 +118,7 @@ describe('Link', () => {
   it('inherits text styles', () => {
     const url = 'https://www.coinbase.com/';
     render(
-      <Link variant="inherit" to={url} testID={testID}>
+      <Link testID={testID} to={url} variant="inherit">
         Child
       </Link>,
     );
@@ -128,7 +128,7 @@ describe('Link', () => {
   it('inherits by default', () => {
     const url = 'https://www.coinbase.com/';
     render(
-      <Link to={url} testID={testID}>
+      <Link testID={testID} to={url}>
         Child
       </Link>,
     );

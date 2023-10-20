@@ -49,18 +49,18 @@ export const Tag = memo(
       return (
         <Box
           ref={forwardedRef}
+          alignItems={alignItems}
+          background="background"
+          borderRadius={borderRadius}
           dangerouslySetClassName={cx(tagStaticClassName, spacingClassName)}
           dangerouslySetStyle={styleOverride}
-          borderRadius={borderRadius}
           data-testid={testID}
-          testID={testID}
-          background="background"
-          alignItems={alignItems}
-          justifyContent={justifyContent}
           display={display}
+          justifyContent={justifyContent}
+          testID={testID}
           {...props}
         >
-          <Text as="span" color="foreground" overflow="truncate" data-testid={`${testID}--text`}>
+          <Text as="span" color="foreground" data-testid={`${testID}--text`} overflow="truncate">
             {children}
           </Text>
         </Box>

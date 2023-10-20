@@ -76,9 +76,9 @@ export const ComponentPage = memo(function ComponentPage({
     shouldShowExamplesTab && (
       <TabItemOriginal
         key="examples"
-        value="examples"
         label="Examples"
         toc={populateExamplesToc({ metadata, propsTable, codeExamples, staticExamples })}
+        value="examples"
       >
         <Section title="Examples">
           <Group divider={Divider}>
@@ -94,12 +94,12 @@ export const ComponentPage = memo(function ComponentPage({
     ),
     <TabItemOriginal
       key="guidelines"
-      value="guidelines"
       label="Guidelines"
       toc={populateGuidelinesToc(contentData)}
+      value="guidelines"
     >
       {principles && (
-        <Section title="Principles" gap={6} direction="horizontal">
+        <Section direction="horizontal" gap={6} title="Principles">
           <CMSContent content={principles} />
         </Section>
       )}
@@ -164,7 +164,7 @@ export const ComponentPage = memo(function ComponentPage({
   return (
     <>
       {overview && <CMSContent content={overview} />}
-      <TabsOriginal groupId="page" gap={0} spacerHeight={8}>
+      <TabsOriginal gap={0} groupId="page" spacerHeight={8}>
         {tabItems}
       </TabsOriginal>
     </>

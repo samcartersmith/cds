@@ -60,13 +60,13 @@ const exampleClassName = css`
 const ExampleContainer = memo(({ children }: PropsWithChildren<unknown>) => {
   return (
     <VStack
+      alignItems="center"
       background="backgroundAlternate"
       borderRadius="rounded"
       dangerouslySetClassName={exampleClassName}
-      spacingVertical={7}
-      spacingHorizontal={4}
-      alignItems="center"
       justifyContent="center"
+      spacingHorizontal={4}
+      spacingVertical={7}
     >
       <VStack gap={2} overflow="hidden">
         {children}
@@ -83,15 +83,15 @@ export const IntroExample = memo(() => {
     <ExampleContainer>
       <TabNavigation
         background="backgroundAlternate"
-        value={value}
-        tabs={tabs}
         onChange={setValue}
+        tabs={tabs}
+        value={value}
       />
       <TabNavigation
-        variant="secondary"
-        value={secondaryValue}
-        tabs={secondaryTabs}
         onChange={setSecondaryValue}
+        tabs={secondaryTabs}
+        value={secondaryValue}
+        variant="secondary"
       />
     </ExampleContainer>
   );
@@ -104,9 +104,9 @@ export const PrimaryExample = memo(() => {
     <ExampleContainer>
       <TabNavigation
         background="backgroundAlternate"
-        value={value}
-        tabs={tabs}
         onChange={setValue}
+        tabs={tabs}
+        value={value}
       />
     </ExampleContainer>
   );
@@ -119,10 +119,10 @@ export const SecondaryExample = memo(() => {
     <ExampleContainer>
       <TabNavigation
         background="backgroundAlternate"
-        variant="secondary"
-        value={value}
-        tabs={secondaryTabs}
         onChange={setValue}
+        tabs={secondaryTabs}
+        value={value}
+        variant="secondary"
       />
     </ExampleContainer>
   );
@@ -135,9 +135,9 @@ export const PaddleExample = memo(() => {
     <ExampleContainer>
       <TabNavigation
         background="backgroundAlternate"
-        value={value}
-        tabs={longTabs}
         onChange={setValue}
+        tabs={longTabs}
+        value={value}
       />
     </ExampleContainer>
   );
@@ -154,9 +154,9 @@ export const DotCountExample = memo(() => {
     <ExampleContainer>
       <TabNavigation
         background="backgroundAlternate"
-        value={value}
-        tabs={dottedTabs}
         onChange={setValue}
+        tabs={dottedTabs}
+        value={value}
       />
     </ExampleContainer>
   );

@@ -10,7 +10,7 @@ import { CheckboxGroup } from '../CheckboxGroup';
 const CheckboxScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="Default" inline>
+      <Example inline title="Default">
         {() => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const [checked, { toggle }] = useToggler();
@@ -22,11 +22,11 @@ const CheckboxScreen = () => {
         }}
       </Example>
 
-      <Example title="States" inline>
+      <Example inline title="States">
         <Checkbox checked>Selected</Checkbox>
         <Checkbox disabled>Disabled</Checkbox>
         <Checkbox indeterminate>Indeterminate</Checkbox>
-        <Checkbox disabled checked>
+        <Checkbox checked disabled>
           Checked and disabled
         </Checkbox>
         <Checkbox readOnly>Read Only</Checkbox>
@@ -38,7 +38,7 @@ const CheckboxScreen = () => {
         </Checkbox>
       </Example>
 
-      <Example title="Checkbox Group" inline>
+      <Example inline title="Checkbox Group">
         {() => {
           const options = {
             'fish-taco': 'Fish tacos',
@@ -56,8 +56,8 @@ const CheckboxScreen = () => {
               <TextHeadline>Order Dinner</TextHeadline>
               <CheckboxGroup<keyof typeof options>
                 accessibilityLabel="Order Dinner"
-                selectedValues={selectedValues}
                 onChange={toggle}
+                selectedValues={selectedValues}
               >
                 {Object.entries(options).map(([value, label]) => (
                   <Checkbox key={value} value={value}>

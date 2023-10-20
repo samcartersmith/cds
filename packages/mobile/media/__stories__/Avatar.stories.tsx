@@ -17,15 +17,15 @@ const FallbackColoredBase = ({
   dense = true,
 }: Pick<AvatarBaseProps, 'shape' | 'size'> & { dense?: boolean }) => {
   return (
-    <HStack gap={dense ? 0.5 : 2} alignItems="center" flexWrap="wrap">
+    <HStack alignItems="center" flexWrap="wrap" gap={dense ? 0.5 : 2}>
       {names.map((name, idx) => {
         const avatarFallbackColor = getAvatarFallbackColor(name);
         return (
           <Avatar
-            alt=""
             key={name}
-            name={name}
+            alt=""
             colorScheme={idx === 0 ? 'blue' : avatarFallbackColor}
+            name={name}
             shape={shape}
             size={size}
           />
@@ -39,21 +39,21 @@ const AvatarScreen = () => {
   return (
     <ExampleScreen>
       <Example title="Normal">
-        <HStack gap={2} alignItems="center" flexWrap="wrap">
+        <HStack alignItems="center" flexWrap="wrap" gap={2}>
           <Avatar alt="" src={image} />
-          <Avatar alt="" name="Happy" src={image} shape="square" />
-          <Avatar alt="" name="Grumpy" src={image} shape="hexagon" />
-          <Avatar alt="" name="Sleepy" src={image} borderColor="positive" />
-          <Avatar alt="" name="Bashful" src={image} size="m" />
-          <Avatar alt="" name="Grumpy" src={image} size="l" />
-          <Avatar alt="" name="Grumpy" src={image} size="xl" />
-          <Avatar alt="" name="Grumpy" src={image} size="xxl" />
-          <Avatar alt="" name="Grumpy" src={image} size="xxxl" />
+          <Avatar alt="" name="Happy" shape="square" src={image} />
+          <Avatar alt="" name="Grumpy" shape="hexagon" src={image} />
+          <Avatar alt="" borderColor="positive" name="Sleepy" src={image} />
+          <Avatar alt="" name="Bashful" size="m" src={image} />
+          <Avatar alt="" name="Grumpy" size="l" src={image} />
+          <Avatar alt="" name="Grumpy" size="xl" src={image} />
+          <Avatar alt="" name="Grumpy" size="xxl" src={image} />
+          <Avatar alt="" name="Grumpy" size="xxxl" src={image} />
         </HStack>
       </Example>
 
       <Example title="Fallback Image">
-        <HStack gap={2} alignItems="center" flexWrap="wrap">
+        <HStack alignItems="center" flexWrap="wrap" gap={2}>
           <Avatar alt="" />
           <Avatar alt="" shape="square" />
           <Avatar alt="" shape="hexagon" />

@@ -150,48 +150,48 @@ export const Banner = memo(
     }, [spectrum, variant]);
 
     return (
-      <Collapsible testID={`${testID}-collapsible`} collapsed={isCollapsed} ref={forwardedRef}>
+      <Collapsible ref={forwardedRef} collapsed={isCollapsed} testID={`${testID}-collapsible`}>
         <HStack
           // Consistent props
+          background={background}
+          borderColor={borderColor}
+          borderRadius={borderRadius}
+          bordered={bordered}
+          dangerouslySetStyle={rootStyle}
+          flexShrink={1}
           gap={2}
           spacing={2}
           spacingBottom={spacingBottom}
           testID={testID}
-          borderRadius={borderRadius}
-          bordered={bordered}
-          background={background}
-          borderColor={borderColor}
-          dangerouslySetStyle={rootStyle}
-          flexShrink={1}
         >
           {/** Start */}
           <Icon
-            testID={`${testID}-icon`}
+            color={iconColor}
+            dangerouslySetStyle={customSpacing}
             name={startIcon}
             size="s"
-            dangerouslySetStyle={customSpacing}
-            color={iconColor}
+            testID={`${testID}-icon`}
           />
           <Stack
-            testID={`${testID}-inner-end-box`}
-            justifyContent="space-between"
+            alignItems={stackAlignment}
             flexGrow={1}
             flexShrink={1}
             gap={stackGap}
-            alignItems={stackAlignment}
+            justifyContent="space-between"
+            testID={`${testID}-inner-end-box`}
           >
             {/** Middle */}
-            <VStack testID={`${testID}-content-box`} gap={0.5}>
-              <TextHeadline numberOfLines={2} color={textColor}>
+            <VStack gap={0.5} testID={`${testID}-content-box`}>
+              <TextHeadline color={textColor} numberOfLines={2}>
                 {title}
               </TextHeadline>
-              <TextBody numberOfLines={numberOfLines} color={textColor}>
+              <TextBody color={textColor} numberOfLines={numberOfLines}>
                 {children}
               </TextBody>
             </VStack>
             {/** Actions */}
             {(!!clonedPrimaryAction || !!clonedSecondaryAction) && (
-              <HStack testID={`${testID}-action`} spacingVertical={1} alignItems="center" gap={4}>
+              <HStack alignItems="center" gap={4} spacingVertical={1} testID={`${testID}-action`}>
                 {clonedPrimaryAction}
                 {clonedSecondaryAction}
               </HStack>
@@ -201,16 +201,16 @@ export const Banner = memo(
           {showDismiss && (
             <Box alignItems="flex-start" dangerouslySetStyle={customSpacing}>
               <Pressable
-                accessibilityRole="button"
-                accessibilityLabel="close"
                 accessibilityHint="close banner"
-                onPress={handleOnDismiss}
+                accessibilityLabel="close"
+                accessibilityRole="button"
                 backgroundColor="transparent"
                 borderRadius="roundedFull"
-                testID={`${testID}-dimiss-btn`}
                 hitSlop={{ top: 15, left: 15, bottom: 15, right: 15 }}
+                onPress={handleOnDismiss}
+                testID={`${testID}-dimiss-btn`}
               >
-                <Icon size="s" name="close" color={iconButtonColor} />
+                <Icon color={iconButtonColor} name="close" size="s" />
               </Pressable>
             </Box>
           )}

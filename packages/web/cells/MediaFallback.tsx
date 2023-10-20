@@ -15,11 +15,11 @@ export const MediaFallback = memo(function MediaFallback({ type, testID }: Media
 
   if (type === 'image') {
     return (
-      <Fallback height={imageSizeScaled} width={imageSizeScaled} shape="squircle" testID={testID} />
+      <Fallback height={imageSizeScaled} shape="squircle" testID={testID} width={imageSizeScaled} />
     );
   }
 
   return (
-    <Fallback height={mediaSizeScaled} width={mediaSizeScaled} shape="circle" testID={testID} />
+    <Fallback height={mediaSizeScaled} shape="circle" testID={testID} width={mediaSizeScaled} />
   );
 });

@@ -10,7 +10,7 @@ describe('Overlay', () => {
   });
 
   it('renders animated overlay', async () => {
-    render(<Overlay testID="overlay-content" animated />);
+    render(<Overlay animated testID="overlay-content" />);
 
     await waitFor(() => {
       expect(screen.getByTestId('overlay-content-motion')).toHaveStyle({ opacity: 1 });

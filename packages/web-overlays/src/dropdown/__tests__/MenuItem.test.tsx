@@ -22,7 +22,7 @@ describe('MenuItem', () => {
 
     render(
       <SelectProvider value={{ handleCloseMenu }}>
-        <MenuItem value="1" onPress={onPress} testID="test-menu-item">
+        <MenuItem onPress={onPress} testID="test-menu-item" value="1">
           <TextTitle2 as="p">Item1</TextTitle2>
         </MenuItem>
       </SelectProvider>,
@@ -40,7 +40,7 @@ describe('MenuItem', () => {
 
     render(
       <SelectProvider value={{ handleCloseMenu }}>
-        <MenuItem value="1" onPress={onPress} testID="test-menu-item" disableCloseOnOptionChange>
+        <MenuItem disableCloseOnOptionChange onPress={onPress} testID="test-menu-item" value="1">
           <TextTitle2 as="p">Item1</TextTitle2>
         </MenuItem>
       </SelectProvider>,

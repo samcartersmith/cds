@@ -36,7 +36,7 @@ function handlePress() {
 
 const HeaderLabel = () => {
   return (
-    <HStack gap={1} alignItems="center" spacingBottom={0}>
+    <HStack alignItems="center" gap={1} spacingBottom={0}>
       <Icon name="wallet" size="s" />
       <TextTitle3>CustomHeader</TextTitle3>
     </HStack>
@@ -47,8 +47,8 @@ const SparklineInteractiveHeaderScreen = () => {
   const trailing = useMemo(() => {
     return (
       <HStack gap={1}>
-        <IconButton onPress={handlePress} variant="secondary" name="starActive" feedback="heavy" />
-        <IconButton onPress={handlePress} variant="secondary" name="share" feedback="heavy" />
+        <IconButton feedback="heavy" name="starActive" onPress={handlePress} variant="secondary" />
+        <IconButton feedback="heavy" name="share" onPress={handlePress} variant="secondary" />
       </HStack>
     );
   }, []);
@@ -57,7 +57,7 @@ const SparklineInteractiveHeaderScreen = () => {
     <ExampleScreen>
       <Example spacing={0}>
         <Box>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             SparklineInteractive Header Example
           </TextTitle3>
           <SparklineInteractiveWithHeaderBuild
@@ -68,7 +68,7 @@ const SparklineInteractiveHeaderScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             SparklineInteractive Header Trailing
           </TextTitle3>
           <SparklineInteractiveWithHeaderBuild
@@ -80,19 +80,19 @@ const SparklineInteractiveHeaderScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             SparklineInteractive Header Custom Label
           </TextTitle3>
           <SparklineInteractiveWithHeaderBuild
             data={sparklineInteractiveData}
-            strokeColor="#F7931A"
             labelNode={<HeaderLabel />}
+            strokeColor="#F7931A"
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             SparklineInteractive Header Example with AltHeader
           </TextTitle3>
           <SparklineInteractiveWithAltHeader
@@ -103,7 +103,7 @@ const SparklineInteractiveHeaderScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             SparklineInteractive Header Example with Smaller Period Set
           </TextTitle3>
           <SparklineInteractiveWithSmallerPeriodSet
@@ -114,13 +114,13 @@ const SparklineInteractiveHeaderScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             SparklineInteractive Header Example with No Period Set
           </TextTitle3>
           <SparklineInteractiveWithHeaderBuild
+            hidePeriodSelector
             data={sparklineInteractiveData}
             strokeColor="#F7931A"
-            hidePeriodSelector
           />
         </Box>
       </Example>

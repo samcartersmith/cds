@@ -9,7 +9,7 @@ import { Icon } from '../Icon';
 function IconSheetRow({ name }: { name: IconName }) {
   return (
     <VStack>
-      <HStack spacingBottom={2} gap={2}>
+      <HStack gap={2} spacingBottom={2}>
         <ScaleProvider value="xSmall">
           <Icon color="foreground" name={name} size="xs" />
         </ScaleProvider>
@@ -24,7 +24,7 @@ function IconSheetRow({ name }: { name: IconName }) {
 export function IconSheet() {
   return (
     <VStack>
-      <HStack gap={2} flexWrap="wrap">
+      <HStack flexWrap="wrap" gap={2}>
         {names.map((item) => {
           return <IconSheetRow key={`icon-row-${item}`} name={item} />;
         })}

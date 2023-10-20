@@ -8,13 +8,13 @@ describe('TextInput', () => {
     const testID = 'textinput-id';
     render(
       <TextInput
-        label="Text"
-        helperText="Text"
-        placeholder="Text"
-        start={<TextTitle1>Node</TextTitle1>}
-        end={<TextTitle1>Node</TextTitle1>}
         accessibilityHint="Text"
         accessibilityLabel="Text"
+        end={<TextTitle1>Node</TextTitle1>}
+        helperText="Text"
+        label="Text"
+        placeholder="Text"
+        start={<TextTitle1>Node</TextTitle1>}
         testID={testID}
       />,
     );
@@ -28,9 +28,9 @@ describe('TextInput', () => {
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
-        value={value}
         onChange={jest.fn()}
         testID={testID}
+        value={value}
       />,
     );
     expect(screen.getByTestId(testID).props.value).toBe(value);
@@ -57,9 +57,9 @@ describe('TextInput', () => {
     const labelText = 'Example label';
     render(
       <TextInput
+        compact
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
-        compact
         label="Example label"
         testIDMap={{
           start: testID,
@@ -74,9 +74,9 @@ describe('TextInput', () => {
     const helperText = 'Example helper text';
     render(
       <TextInput
+        compact
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
-        compact
         helperText={helperText}
         testIDMap={{
           helperText: testID,
@@ -171,8 +171,8 @@ describe('TextInput', () => {
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
-        onFocus={onFocus}
         onBlur={onBlur}
+        onFocus={onFocus}
         testID={testID}
       />,
     );
@@ -192,8 +192,8 @@ describe('TextInput', () => {
       <TextInput
         accessibilityHint="Text input field"
         accessibilityLabel="Text input field"
-        testID={testID}
         end={<TextTitle1>Hello</TextTitle1>}
+        testID={testID}
       />,
     );
     expect(screen.getByTestId(testID)).toHaveProp('allowFontScaling', true);

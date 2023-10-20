@@ -8,21 +8,21 @@ export function contentCellFallbackBuilder(
   const Fallbacks = () => {
     return (
       <>
-        <ContentCellFallback title disableRandomRectWidth />
-        <ContentCellFallback title description disableRandomRectWidth />
-        <ContentCellFallback title meta disableRandomRectWidth />
-        <ContentCellFallback title subtitle disableRandomRectWidth />
-        <ContentCellFallback title meta description disableRandomRectWidth />
-        <ContentCellFallback title description meta subtitle disableRandomRectWidth />
-        <ContentCellFallback title media="icon" disableRandomRectWidth />
-        <ContentCellFallback title description media="asset" disableRandomRectWidth />
-        <ContentCellFallback title meta media="image" disableRandomRectWidth />
-        <ContentCellFallback title subtitle media="avatar" disableRandomRectWidth />
-        <ContentCellFallback title meta description media="icon" disableRandomRectWidth />
-        <ContentCellFallback title description meta subtitle media="asset" disableRandomRectWidth />
-        <ContentCellFallback title description meta subtitle media="asset" rectWidthVariant={0} />
-        <ContentCellFallback title description meta subtitle media="asset" rectWidthVariant={1} />
-        <ContentCellFallback title description meta subtitle media="asset" rectWidthVariant={2} />
+        <ContentCellFallback disableRandomRectWidth title />
+        <ContentCellFallback description disableRandomRectWidth title />
+        <ContentCellFallback disableRandomRectWidth meta title />
+        <ContentCellFallback disableRandomRectWidth subtitle title />
+        <ContentCellFallback description disableRandomRectWidth meta title />
+        <ContentCellFallback description disableRandomRectWidth meta subtitle title />
+        <ContentCellFallback disableRandomRectWidth title media="icon" />
+        <ContentCellFallback description disableRandomRectWidth title media="asset" />
+        <ContentCellFallback disableRandomRectWidth meta title media="image" />
+        <ContentCellFallback disableRandomRectWidth subtitle title media="avatar" />
+        <ContentCellFallback description disableRandomRectWidth meta title media="icon" />
+        <ContentCellFallback description disableRandomRectWidth meta subtitle title media="asset" />
+        <ContentCellFallback description meta subtitle title media="asset" rectWidthVariant={0} />
+        <ContentCellFallback description meta subtitle title media="asset" rectWidthVariant={1} />
+        <ContentCellFallback description meta subtitle title media="asset" rectWidthVariant={2} />
       </>
     );
   };

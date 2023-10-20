@@ -42,8 +42,7 @@ const LottieContent = memo(
             colorFilters={colorFilters}
             loop={loop}
             progress={progress}
-            // TODO: If huawei device, force to use SOFTWARE renderMode
-            renderMode="AUTOMATIC"
+            renderMode="AUTOMATIC" // TODO: If huawei device, force to use SOFTWARE renderMode
             resizeMode={resizeMode}
             source={source}
             style={lottieStyles}

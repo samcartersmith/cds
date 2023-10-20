@@ -149,6 +149,7 @@ export const Pressable = memo(
 
     return (
       <BasePressable
+        ref={forwardedRef}
         accessibilityRole="button"
         accessibilityState={accessibilityState}
         disabled={disabled || loading}
@@ -156,7 +157,6 @@ export const Pressable = memo(
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
         style={style}
-        ref={forwardedRef}
         {...props}
       >
         <Interactable
@@ -165,12 +165,11 @@ export const Pressable = memo(
           borderColor={borderColor}
           borderRadius={borderRadius}
           borderWidth={borderWidth}
+          contentStyle={contentStyle}
           disabled={disabled}
           elevation={elevation}
-          // loading shares the same styles as pressed
-          pressed={pressed || loading}
+          pressed={pressed || loading} // loading shares the same styles as pressed
           style={!noScaleOnPress ? scaleOnPressStyle : undefined}
-          contentStyle={contentStyle}
           transparentWhileInactive={transparentWhileInactive}
           transparentWhilePressed={transparentWhilePressed}
         >

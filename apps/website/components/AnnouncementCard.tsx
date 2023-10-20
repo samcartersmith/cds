@@ -15,7 +15,7 @@ export const AnnouncementCard = memo(function AnnouncementCard({
   backgroundColor,
 }: AnnouncementCardProps) {
   return (
-    <Card background={backgroundColor} spacing={2} elevation={1}>
+    <Card background={backgroundColor} elevation={1} spacing={2}>
       <TextTitle1 as="h3" spacingBottom={1}>
         {title}
       </TextTitle1>

@@ -49,7 +49,7 @@ describe('ContentCellFallback', () => {
   });
 
   it('should render meta fallback', () => {
-    render(<ContentCellFallback meta title subtitle disableRandomRectWidth rectWidthVariant={1} />);
+    render(<ContentCellFallback disableRandomRectWidth meta subtitle title rectWidthVariant={1} />);
     expect(Fallback).toHaveBeenCalledWith(
       {
         height: 2,
@@ -62,7 +62,7 @@ describe('ContentCellFallback', () => {
   });
 
   it('should render title fallback', () => {
-    render(<ContentCellFallback title disableRandomRectWidth rectWidthVariant={1} />);
+    render(<ContentCellFallback disableRandomRectWidth title rectWidthVariant={1} />);
     expect(screen.getByText('Fallback')).toBeDefined();
     expect(Fallback).toHaveBeenCalledWith(
       {
@@ -76,7 +76,7 @@ describe('ContentCellFallback', () => {
   });
 
   it('should render subtitle fallback', () => {
-    render(<ContentCellFallback subtitle disableRandomRectWidth rectWidthVariant={1} />);
+    render(<ContentCellFallback disableRandomRectWidth subtitle rectWidthVariant={1} />);
     expect(screen.getByText('Fallback')).toBeDefined();
     expect(Fallback).toHaveBeenCalledWith(
       {

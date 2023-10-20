@@ -33,10 +33,10 @@ export function createConfigs<WrapperProps, PressFn>({
     headerDescription: 'Earn crypto',
     headerActionNode: (
       <IconButton
+        transparent
         accessibilityLabel="More actions"
         name="more"
         variant="foregroundMuted"
-        transparent
       />
     ),
     bodyTitle: 'LEARN AMP. EARN $3 IN AMP.',
@@ -45,7 +45,7 @@ export function createConfigs<WrapperProps, PressFn>({
     bodyMediaUrl: 'https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png',
     bodyOrientation: 'vertical',
     footerActions: (
-      <Button compact variant="secondary" onPress={onPressConsole}>
+      <Button compact onPress={onPressConsole} variant="secondary">
         Actions
       </Button>
     ),

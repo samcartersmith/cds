@@ -18,7 +18,7 @@ const TabIndicatorScreen = () => {
 
   return (
     <ExampleScreen>
-      <Example title="Tab Indicator" spacing={gutter} overflow="visible">
+      <Example overflow="visible" spacing={gutter} title="Tab Indicator">
         <VStack gap={2}>
           <Button onPress={handlePress}>Randomize</Button>
           <TabIndicator width={width} x={x} />

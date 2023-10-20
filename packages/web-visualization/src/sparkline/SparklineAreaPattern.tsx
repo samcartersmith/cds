@@ -5,10 +5,10 @@ import { useSparklineAreaOpacity } from '@cbhq/cds-common/visualizations/useSpar
 export const SparklineAreaPattern = ({ color, id }: SparklineAreaPatternBaseProps) => {
   const fillOpacity = useSparklineAreaOpacity();
   return (
-    <pattern id={id} x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+    <pattern height="4" id={id} patternUnits="userSpaceOnUse" width="4" x="0" y="0">
       <g>
         <rect fill="transparent" height="4" width="4" />
-        <circle cx="1" cy="1" r="1" fill={color} fillOpacity={fillOpacity} />
+        <circle cx="1" cy="1" fill={color} fillOpacity={fillOpacity} r="1" />
       </g>
     </pattern>
   );

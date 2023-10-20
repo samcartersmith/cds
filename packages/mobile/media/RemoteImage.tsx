@@ -182,13 +182,13 @@ export const RemoteImage = memo(function RemoteImage({
   if (isSvg(transformedSource as SourceProp)) {
     return (
       <SvgCssUri
+        accessibilityRole="image"
+        accessible={!!props.accessibilityLabel}
         style={styles}
         uri={Image.resolveAssetSource(transformedSource as ImageSourcePropType).uri}
-        accessible={!!props.accessibilityLabel}
-        accessibilityRole="image"
         {...props}
-        width={finalWidth}
         height={finalHeight}
+        width={finalWidth}
       />
     );
   }
@@ -201,14 +201,14 @@ export const RemoteImage = memo(function RemoteImage({
 
     return (
       <SvgXml
-        style={styles}
-        xml={spectrum === 'dark' ? darkFallback.content : lightFallback.content}
-        width={finalWidth}
-        height={finalHeight}
-        accessible={!!fallbackAccessibilityLabel}
-        accessibilityRole={props.accessibilityRole ?? 'image'}
-        accessibilityLabel={fallbackAccessibilityLabel}
         accessibilityHint={fallbackAccessibilityHint}
+        accessibilityLabel={fallbackAccessibilityLabel}
+        accessibilityRole={props.accessibilityRole ?? 'image'}
+        accessible={!!fallbackAccessibilityLabel}
+        height={finalHeight}
+        style={styles}
+        width={finalWidth}
+        xml={spectrum === 'dark' ? darkFallback.content : lightFallback.content}
       />
     );
   }
@@ -216,20 +216,20 @@ export const RemoteImage = memo(function RemoteImage({
   if (shape === 'hexagon') {
     return (
       <HexagonClipPath
+        accessibilityHint={props.accessibilityHint}
+        accessibilityLabel={props.accessibilityLabel}
+        accessibilityRole={props.accessibilityRole ?? 'image'}
+        accessible={isAccessible}
         image={
           <SvgImage
-            href={source as ImageProps['source']}
             clipPath="url(#hex-hw-shapeclip-clipconfig)"
+            height="100%"
+            href={source as ImageProps['source']}
+            width="100%"
             x={0}
             y={0}
-            width="100%"
-            height="100%"
           />
         }
-        accessible={isAccessible}
-        accessibilityRole={props.accessibilityRole ?? 'image'}
-        accessibilityLabel={props.accessibilityLabel}
-        accessibilityHint={props.accessibilityHint}
       />
     );
   }
@@ -237,11 +237,11 @@ export const RemoteImage = memo(function RemoteImage({
   return (
     <Image
       accessibilityIgnoresInvertColors
-      source={transformedSource as ImageSourcePropType}
-      accessible={!!props.accessibilityLabel}
       accessibilityRole="image"
+      accessible={!!props.accessibilityLabel}
       onError={onError}
       onLoad={onLoad}
+      source={transformedSource as ImageSourcePropType}
       {...props}
       style={stylesWithDimensions}
     />

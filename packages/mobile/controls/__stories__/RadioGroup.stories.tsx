@@ -9,7 +9,7 @@ import { Radio, RadioGroup } from '../RadioGroup';
 const RadioGroupScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="Default" inline>
+      <Example inline title="Default">
         {() => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const [checked, { toggle }] = useToggler();
@@ -21,7 +21,7 @@ const RadioGroupScreen = () => {
         }}
       </Example>
 
-      <Example title="States" inline>
+      <Example inline title="States">
         <Radio checked>Selected</Radio>
         <Radio disabled>Disabled</Radio>
         <Radio readOnly>Read Only</Radio>
@@ -32,7 +32,7 @@ const RadioGroupScreen = () => {
         </Radio>
       </Example>
 
-      <Example title="Radio Group" inline>
+      <Example inline title="Radio Group">
         {() => {
           const options1 = {
             btc: 'Bitcoin',
@@ -66,33 +66,33 @@ const RadioGroupScreen = () => {
               <RadioGroup<keyof typeof options1>
                 accessibilityLabel="Select a currency to trade"
                 onChange={setGroup1}
-                selectedValue={group1}
                 options={options1}
+                selectedValue={group1}
               />
               <RadioGroup<keyof typeof options2>
-                label={<TextHeadline>Choose a Mascot</TextHeadline>}
                 accessibilityLabel="Choose as mascot for your team"
+                label={<TextHeadline>Choose a Mascot</TextHeadline>}
                 onChange={setGroup2}
-                selectedValue={group2}
                 options={options2}
+                selectedValue={group2}
               />
               <TextHeadline>Select a Currency</TextHeadline>
               <RadioGroup<keyof typeof options1>
                 accessibilityLabel="Select a currency to trade"
-                onChange={setGroup3}
-                selectedValue={group3}
-                options={options1}
-                gap={2}
                 direction="horizontal"
+                gap={2}
+                onChange={setGroup3}
+                options={options1}
+                selectedValue={group3}
               />
               <TextHeadline>Select a dish to order</TextHeadline>
               <RadioGroup<keyof typeof options3>
                 accessibilityLabel="Select a dish to order"
-                onChange={setGroup4}
-                selectedValue={group4}
-                options={options3}
-                gap={2}
                 direction="horizontal"
+                gap={2}
+                onChange={setGroup4}
+                options={options3}
+                selectedValue={group4}
               />
             </>
           );

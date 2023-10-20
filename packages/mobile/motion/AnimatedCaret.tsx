@@ -57,11 +57,11 @@ export const AnimatedCaret = memo(function AnimatedCaret({
     // HStack to limit rotate boundary
     <HStack>
       <Icon
+        animated
+        color={color}
+        dangerouslySetStyle={[dangerouslySetStyle, animatedStyles]}
         name="caretUp"
         size={size}
-        color={color}
-        animated
-        dangerouslySetStyle={[dangerouslySetStyle, animatedStyles]}
         {...rest}
       />
     </HStack>

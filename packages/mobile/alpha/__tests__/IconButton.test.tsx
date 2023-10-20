@@ -12,20 +12,20 @@ const name = 'allTimeHigh';
 
 describe('IconButton', () => {
   it('passes accessibility', async () => {
-    render(<IconButton name={name} accessibilityLabel="test-label" />);
+    render(<IconButton accessibilityLabel="test-label" name={name} />);
 
     expect(screen.getByRole('button')).toBeAccessible();
   });
 
   it('renders an accessibility label', () => {
-    render(<IconButton name={name} accessibilityLabel="test-label" />);
+    render(<IconButton accessibilityLabel="test-label" name={name} />);
 
     expect(screen.getByLabelText('test-label')).toBeTruthy();
   });
 
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
-    render(<IconButton onPress={spy} name={name} />);
+    render(<IconButton name={name} onPress={spy} />);
 
     fireEvent.press(screen.getByRole('button'));
 
@@ -34,7 +34,7 @@ describe('IconButton', () => {
 
   it('disables user interaction when disabled', () => {
     const spy = jest.fn();
-    render(<IconButton onPress={spy} name={name} disabled />);
+    render(<IconButton disabled name={name} onPress={spy} />);
 
     fireEvent.press(screen.getByRole('button'));
 
@@ -53,7 +53,7 @@ describe('IconButton', () => {
 
   it('disables user interaction when loading', () => {
     const spy = jest.fn();
-    render(<IconButton onPress={spy} name={name} loading />);
+    render(<IconButton loading name={name} onPress={spy} />);
 
     fireEvent.press(screen.getByRole('button'));
 

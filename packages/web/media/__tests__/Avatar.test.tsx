@@ -26,7 +26,7 @@ describe('Avatar', () => {
   });
 
   it('has a border color', () => {
-    render(<Avatar alt="TestName" src={src} borderColor="positive" testID="avatar-component" />);
+    render(<Avatar alt="TestName" borderColor="positive" src={src} testID="avatar-component" />);
     const box = screen.getByTestId('avatar-component');
 
     expect(box).toBeTruthy();
@@ -73,7 +73,7 @@ describe('Avatar', () => {
     expect(hexagon?.className).toContain('cds-hexagon');
   });
   it('when passed a name prop and no src is provided it shows a fallback color and first letter of name prop', () => {
-    render(<Avatar alt="" name="TestName" colorScheme="pink" testID="avatar-component" />);
+    render(<Avatar alt="" colorScheme="pink" name="TestName" testID="avatar-component" />);
     const pinkBackgroundColor = `rgb(${
       // @ts-expect-error can't index readonly type
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -99,9 +99,9 @@ describe('Avatar', () => {
     render(
       <Avatar
         alt=""
-        name="TestName"
-        colorScheme="pink"
         borderColor="positive"
+        colorScheme="pink"
+        name="TestName"
         testID="avatar-component"
       />,
     );

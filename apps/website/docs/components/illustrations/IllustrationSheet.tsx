@@ -138,22 +138,22 @@ export const IllustrationSheet = function IllustrationSheet({
 
   return (
     <>
-      <HStack spacingVertical={2} gap={2}>
+      <HStack gap={2} spacingVertical={2}>
         <SearchInput
-          value={query}
           onChangeText={searchOnChange}
-          type="text"
-          width="70%"
           placeholder="Illustration name"
+          type="text"
+          value={query}
+          width="70%"
         />
         <Select
-          value={selectedCategory}
-          placeholder="Choose something..."
-          width="30%"
           onChange={setSelectedCategory}
+          placeholder="Choose something..."
+          value={selectedCategory}
+          width="30%"
         >
           {options.map((option) => (
-            <SelectOption value={option} key={option} title={option} />
+            <SelectOption key={option} title={option} value={option} />
           ))}
         </Select>
       </HStack>
@@ -188,11 +188,11 @@ export const IllustrationSheet = function IllustrationSheet({
             <TabItem key={dim} value={dim}>
               <HStack flexWrap="wrap" gap={2}>
                 {filteredNames.map((filteredName) => (
-                  <VStack alignItems="center" key={filteredName} width={width} overflow="auto">
+                  <VStack key={filteredName} alignItems="center" overflow="auto" width={width}>
                     {variant === 'heroSquare' && (
                       <HeroSquare
-                        name={filteredName as HeroSquareName}
                         dimension={dim as HeroSquareDimension}
+                        name={filteredName as HeroSquareName}
                       />
                     )}
                     {variant === 'spotSquare' && (
@@ -203,14 +203,14 @@ export const IllustrationSheet = function IllustrationSheet({
                     )}
                     {variant === 'pictogram' && (
                       <Pictogram
-                        name={filteredName as PictogramName}
                         dimension={dim as PictogramDimension}
+                        name={filteredName as PictogramName}
                       />
                     )}
                     {variant === 'spotIcon' && (
                       <SpotIcon
-                        name={filteredName as SpotIconName}
                         dimension={dim as SpotIconDimension}
+                        name={filteredName as SpotIconName}
                       />
                     )}
 

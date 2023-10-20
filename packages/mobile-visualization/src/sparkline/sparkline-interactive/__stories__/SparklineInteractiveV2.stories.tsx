@@ -31,7 +31,7 @@ const SparklineInteractiveScreen = () => {
     <ExampleScreen>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Default
           </TextTitle3>
           <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
@@ -39,79 +39,79 @@ const SparklineInteractiveScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Compact
           </TextTitle3>
           <SparklineInteractiveBuild
+            compact
             data={sparklineInteractiveData}
             strokeColor={strokeColor}
-            compact
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Disable Scrubbing
           </TextTitle3>
           <SparklineInteractiveBuild
+            disableScrubbing
             data={sparklineInteractiveData}
             strokeColor={strokeColor}
-            disableScrubbing
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Hide period selector
           </TextTitle3>
           <SparklineInteractiveBuild
+            hidePeriodSelector
             data={sparklineInteractiveData}
             strokeColor={strokeColor}
-            hidePeriodSelector
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Hide min/max label
           </TextTitle3>
           <SparklineInteractiveBuild
+            hideMinMaxLabel
             data={sparklineInteractiveData}
             strokeColor={strokeColor}
-            hideMinMaxLabel
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Default period All
           </TextTitle3>
           <SparklineInteractiveBuild
             data={sparklineInteractiveData}
-            strokeColor={strokeColor}
             defaultPeriod="all"
+            strokeColor={strokeColor}
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Fill
           </TextTitle3>
           <SparklineInteractiveBuild
+            fill
             data={sparklineInteractiveData}
             strokeColor={strokeColor}
-            fill
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Y axis scaling
           </TextTitle3>
           <SparklineInteractiveBuild
@@ -123,7 +123,7 @@ const SparklineInteractiveScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Fallback
           </TextTitle3>
           <SparklineInteractiveBuild strokeColor={strokeColor} />
@@ -131,7 +131,7 @@ const SparklineInteractiveScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Fallback Negative
           </TextTitle3>
           <SparklineInteractiveBuild fallbackType="negative" strokeColor={strokeColor} />
@@ -139,27 +139,27 @@ const SparklineInteractiveScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Fallback Compact
           </TextTitle3>
-          <SparklineInteractiveBuild strokeColor={strokeColor} compact />
+          <SparklineInteractiveBuild compact strokeColor={strokeColor} />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             No Hover Date
           </TextTitle3>
           <SparklineInteractiveBuild
-            strokeColor={strokeColor}
-            data={sparklineInteractiveData}
             hideHoverDate
+            data={sparklineInteractiveData}
+            strokeColor={strokeColor}
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             With Header Node
           </TextTitle3>
           <SparklineInteractiveWithHeaderBuild
@@ -170,13 +170,13 @@ const SparklineInteractiveScreen = () => {
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             No Spacing
           </TextTitle3>
           <SparklineInteractiveBuild
             data={sparklineInteractiveData}
-            strokeColor="#F7931A"
             gutter={0}
+            strokeColor="#F7931A"
             timePeriodGutter={3}
           />
         </Box>
@@ -185,34 +185,34 @@ const SparklineInteractiveScreen = () => {
         <Box spacingVertical={8}>
           <TextTitle3 spacingVertical={3}>In Container With 4 spacing</TextTitle3>
           <SparklineInteractiveWithHeaderBuild
-            data={sparklineInteractiveData}
-            strokeColor="#F7931A"
-            gutter={4}
             disableHorizontalPadding
+            data={sparklineInteractiveData}
+            gutter={4}
+            strokeColor="#F7931A"
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Custom screen spacing 6
           </TextTitle3>
           <SparklineInteractiveBuild
             data={sparklineInteractiveData}
-            strokeColor="#F7931A"
             gutter={6}
+            strokeColor="#F7931A"
           />
         </Box>
       </Example>
       <Example spacing={0}>
         <Box spacingVertical={8}>
-          <TextTitle3 spacingVertical={3} spacingHorizontal={3}>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
             Hover data
           </TextTitle3>
           <SparklineInteractiveBuild
             data={sparklineInteractiveData}
-            strokeColor={strokeColor}
             hoverData={sparklineInteractiveHoverData}
+            strokeColor={strokeColor}
           />
         </Box>
       </Example>

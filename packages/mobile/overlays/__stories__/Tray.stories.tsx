@@ -41,14 +41,14 @@ const DefaultTray = ({ title }: { title?: string }) => {
     <>
       <Button onPress={handleOpenTray}>Open</Button>
       {isTrayVisible && (
-        <Tray title={title} onCloseComplete={handleCloseTray} ref={trayRef}>
-          <Menu value={value} onChange={setValue}>
+        <Tray ref={trayRef} onCloseComplete={handleCloseTray} title={title}>
+          <Menu onChange={setValue} value={value}>
             {options.map((option: string) => (
               <SelectOption
                 key={option}
-                title={option}
                 description="BTC"
                 onPress={handleOptionPress}
+                title={option}
                 value={option}
               />
             ))}
@@ -61,9 +61,9 @@ const DefaultTray = ({ title }: { title?: string }) => {
 
 const TrayFallbackContent = () => {
   return (
-    <VStack gap={2} alignItems="center">
+    <VStack alignItems="center" gap={2}>
       {lotsOfOptions.map((item) => (
-        <Fallback key={item} height={30} width="90%" disableRandomRectWidth />
+        <Fallback key={item} disableRandomRectWidth height={30} width="90%" />
       ))}
     </VStack>
   );
@@ -109,9 +109,9 @@ const ScrollableTray = ({
       return (
         <SelectOption
           key={index}
-          title={item}
           description="BTC"
           onPress={handleOptionPress}
+          title={item}
           value={item}
         />
       );
@@ -124,20 +124,20 @@ const ScrollableTray = ({
       <Button onPress={handleOpenTray}>Open</Button>
       {isTrayVisible && (
         <Tray
-          title={title}
-          onCloseComplete={handleCloseTray}
-          disableCapturePanGestureToDismiss
           ref={trayRef}
+          disableCapturePanGestureToDismiss
+          onCloseComplete={handleCloseTray}
+          title={title}
           verticalDrawerPercentageOfView={verticalDrawerPercentageOfView}
         >
           {isLoading ? (
             <TrayFallbackContent />
           ) : (
-            <Menu value={value} onChange={setValue}>
+            <Menu onChange={setValue} value={value}>
               <FlatList
+                contentContainerStyle={spacingStyles}
                 data={lotsOfOptions}
                 renderItem={renderItem}
-                contentContainerStyle={spacingStyles}
               />
             </Menu>
           )}
@@ -163,29 +163,29 @@ const FeedCardTray = () => {
     <>
       <FeedCard
         avatarUrl="https://images.coinbase.com/avatar?s=350"
-        headerDescription="Earn crypto"
-        headerActionNode={
-          <IconButton
-            name="more"
-            accessibilityLabel="More actions"
-            variant="foregroundMuted"
-            transparent
-            onPress={handleFeedCardHeaderButtonPress}
-          />
-        }
-        bodyTitle="LEARN AMP. EARN $3 IN AMP."
         bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
         bodyMediaUrl="https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png"
         bodyOrientation="vertical"
+        bodyTitle="LEARN AMP. EARN $3 IN AMP."
         footerActions={
           <Button compact variant="secondary">
             Actions
           </Button>
         }
+        headerActionNode={
+          <IconButton
+            transparent
+            accessibilityLabel="More actions"
+            name="more"
+            onPress={handleFeedCardHeaderButtonPress}
+            variant="foregroundMuted"
+          />
+        }
+        headerDescription="Earn crypto"
       />
       {isTrayVisible && (
-        <Tray onCloseComplete={handleCloseTray} ref={trayRef}>
-          <Menu value={value} onChange={setValue}>
+        <Tray ref={trayRef} onCloseComplete={handleCloseTray}>
+          <Menu onChange={setValue} value={value}>
             {simpleOptions.map((option: string) => (
               <SelectOption
                 key={option}
@@ -214,7 +214,7 @@ const NavigationTray = () => {
   }, [handleOpenTray]);
   return (
     <>
-      <HStack justifyContent="flex-end" minHeight={200} gap={2}>
+      <HStack gap={2} justifyContent="flex-end" minHeight={200}>
         <IconButton name="hamburger" onPress={handleAppSwitcherPress} />
         <IconButton name="profile" onPress={NoopFn} />
       </HStack>
@@ -224,12 +224,12 @@ const NavigationTray = () => {
             {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
               <SelectOption
                 key={optionValue}
-                title={name}
                 description={description}
                 media={
                   <Pictogram dimension="48x48" name={mediaName as IllustrationPictogramNames} />
                 }
                 onPress={handleOptionPress}
+                title={name}
                 value={optionValue}
               />
             ))}
@@ -264,7 +264,7 @@ const TrayWithinTray = ({ title }: { title?: string }) => {
     <>
       <Button onPress={handleOpenTray}>Open</Button>
       {isTrayVisible && (
-        <Tray title={title} onCloseComplete={onTrayClose} onBlur={handleBlur}>
+        <Tray onBlur={handleBlur} onCloseComplete={onTrayClose} title={title}>
           {({ handleClose }) => {
             return (
               <>
@@ -280,7 +280,7 @@ const TrayWithinTray = ({ title }: { title?: string }) => {
         </Tray>
       )}
       {isInceptionTrayVisible && (
-        <Tray title={title} onCloseComplete={handleCloseInceptionTray}>
+        <Tray onCloseComplete={handleCloseInceptionTray} title={title}>
           {() => {
             return (
               <HStack spacing={3}>
@@ -309,7 +309,7 @@ const TrayToModalFlow = ({ title }: { title?: string }) => {
     <>
       <Button onPress={handleOpenTray}>Open Tray</Button>
       {isTrayVisible && (
-        <Tray title={title} onCloseComplete={handleTrayCloseComplete}>
+        <Tray onCloseComplete={handleTrayCloseComplete} title={title}>
           {({ handleClose }) => {
             return (
               <>
@@ -324,7 +324,7 @@ const TrayToModalFlow = ({ title }: { title?: string }) => {
           }}
         </Tray>
       )}
-      <Modal visible={isModalVisible} onRequestClose={handleCloseModal}>
+      <Modal onRequestClose={handleCloseModal} visible={isModalVisible}>
         <ModalHeader title="I am a Modal" />
         <ModalBody>
           <LoremIpsum />
@@ -354,23 +354,23 @@ const AccessibleTray = ({ title }: { title?: string }) => {
 
   return (
     <>
-      <Button onPress={handleOpenTray} ref={triggerRef}>
+      <Button ref={triggerRef} onPress={handleOpenTray}>
         Open
       </Button>
       {isTrayVisible && (
         <Tray
-          title={title}
-          onCloseComplete={handleCloseTray}
-          handleBarAccessibilityLabel="This is a handlebar, double tap to dismiss the tray"
           ref={trayRef}
+          handleBarAccessibilityLabel="This is a handlebar, double tap to dismiss the tray"
+          onCloseComplete={handleCloseTray}
+          title={title}
         >
-          <Menu value={value} onChange={setValue}>
+          <Menu onChange={setValue} value={value}>
             {options.map((option: string) => (
               <SelectOption
                 key={option}
-                title={option}
                 description="BTC"
                 onPress={handleOptionPress}
+                title={option}
                 value={option}
               />
             ))}
@@ -412,7 +412,7 @@ export const TrayScreen = () => {
         <TrayToModalFlow />
       </Example>
       <Example title="Tray with Fallback">
-        <ScrollableTray title="You are going to be waiting awhile..." fallbackEnabled />
+        <ScrollableTray fallbackEnabled title="You are going to be waiting awhile..." />
       </Example>
     </ExampleScreen>
   );

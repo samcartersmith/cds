@@ -19,10 +19,10 @@ export const CodePlayground = memo(
       // <Playground /> has spacing bottom 3 + gap 1, offset it to have consistent spacing
       <VStack offsetBottom={4}>
         <Playground
-          scope={ReactLiveScope as LiveProviderProps['scope']}
           disabled={readOnly}
-          hidePreview={readOnly}
           editorStartsExpanded={editorStartsExpanded}
+          hidePreview={readOnly}
+          scope={ReactLiveScope as LiveProviderProps['scope']}
         >
           {documentToPlainTextString(code, '\n')}
         </Playground>

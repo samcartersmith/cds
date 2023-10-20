@@ -114,35 +114,35 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <ThemeProvider spectrum={spectrum} scale={scale}>
-        <VStack spacing={2} background>
+      <ThemeProvider scale={scale} spectrum={spectrum}>
+        <VStack background spacing={2}>
           <Select
+            accessibilityLabel={accessibilityLabel}
+            helperText={helperText}
+            label={label}
+            onBlur={onBlur}
+            onChange={setValue}
+            onPress={onPress}
+            placeholder={placeholder}
+            testID={testID}
             value={value}
             variant={variant}
-            label={label}
-            placeholder={placeholder}
-            onChange={setValue}
-            accessibilityLabel={accessibilityLabel}
-            testID={testID}
-            onPress={onPress}
-            helperText={helperText}
-            onBlur={onBlur}
             width={width}
           >
             <SelectOption
-              value="disabled"
               key="Disabled"
-              title="Disabled"
-              description="BTC"
               disabled
+              description="BTC"
+              title="Disabled"
+              value="disabled"
             />
             {exampleOptions.map((option) => (
               <SelectOption
-                value={option}
                 key={option}
-                title={option}
                 description="BTC"
                 testID={`option-${option}`}
+                title={option}
+                value={option}
               />
             ))}
           </Select>
@@ -157,33 +157,33 @@ export const selectBuilder = ({
     const ethLogo = assets.eth.imageUrl;
 
     return (
-      <ThemeProvider spectrum={spectrum} scale={scale}>
-        <VStack spacing={2} background minHeight={100}>
+      <ThemeProvider scale={scale} spectrum={spectrum}>
+        <VStack background minHeight={100} spacing={2}>
           <Select
-            value={asset}
-            onChange={setAsset}
             label="Select Asset"
+            onChange={setAsset}
             startNode={
               <Box spacingHorizontal={2}>
-                <DotSymbol pin="bottom-end" overlap="circular" size="s" source={ethLogo}>
-                  <RemoteImage source={assetConfig.imageUrl} shape="circle" size="l" />
+                <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
+                  <RemoteImage shape="circle" size="l" source={assetConfig.imageUrl} />
                 </DotSymbol>
               </Box>
             }
+            value={asset}
             valueLabel={assetConfig.name}
           >
             {Object.values(assets).map(({ name, imageUrl }, idx) => (
               <SelectOption
+                key={name}
+                description="BTC"
                 media={
-                  <DotSymbol pin="bottom-end" overlap="circular" size="s" source={ethLogo}>
-                    <RemoteImage source={imageUrl} shape="circle" size="l" />
+                  <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
+                    <RemoteImage shape="circle" size="l" source={imageUrl} />
                   </DotSymbol>
                 }
-                value={assetKeys[idx]}
-                key={name}
-                title={name}
-                description="BTC"
                 testID={`option-${name}`}
+                title={name}
+                value={assetKeys[idx]}
               />
             ))}
           </Select>
@@ -195,23 +195,23 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <ThemeProvider spectrum={spectrum} scale={scale}>
-        <VStack spacing={2} background minHeight={100}>
+      <ThemeProvider scale={scale} spectrum={spectrum}>
+        <VStack background minHeight={100} spacing={2}>
           <Select
-            value={value}
+            helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
+            label="I am a very long label that is supposed to be indicative of what my purpose is. Do you know my purpose? Directive? Directive? Directive? "
             onChange={setValue}
             placeholder="I am some ridiculously, absurdly, ostentatiously long placeholder text that would ideally get truncated when I meet the edge of my parent container. "
-            label="I am a very long label that is supposed to be indicative of what my purpose is. Do you know my purpose? Directive? Directive? Directive? "
-            helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
             startNode={<InputIcon name="calendar" />}
+            value={value}
           >
             {exampleOptions.map((option) => (
               <SelectOption
-                value={option}
                 key={option}
-                title={option}
                 description="BTC"
                 testID={`option-${option}`}
+                title={option}
+                value={option}
               />
             ))}
           </Select>
@@ -223,23 +223,23 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <ThemeProvider spectrum={spectrum} scale={scale}>
-        <VStack spacing={2} background minHeight={100}>
+      <ThemeProvider scale={scale} spectrum={spectrum}>
+        <VStack background minHeight={100} spacing={2}>
           <Select
-            value={value}
+            disabled
+            helperText="You can only choose one option"
+            label="How many would you like?"
             onChange={setValue}
             placeholder="Choose an amount"
-            label="How many would you like?"
-            helperText="You can only choose one option"
-            disabled
+            value={value}
           >
             {exampleOptions.map((option) => (
               <SelectOption
-                value={option}
                 key={option}
-                title={option}
                 description="BTC"
                 testID={`option-${option}`}
+                title={option}
+                value={option}
               />
             ))}
           </Select>
@@ -251,24 +251,24 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <ThemeProvider spectrum={spectrum} scale={scale}>
-        <VStack spacing={2} background minHeight={100}>
+      <ThemeProvider scale={scale} spectrum={spectrum}>
+        <VStack background minHeight={100} spacing={2}>
           <Select
-            value={value}
             compact
+            helperText="You only get one choice"
+            label="How many would you like? "
             onChange={setValue}
             placeholder="Choose an amount"
-            label="How many would you like? "
-            helperText="You only get one choice"
+            value={value}
           >
             {exampleOptions.map((option) => (
               <SelectOption
-                value={option}
                 key={option}
                 compact
-                title={option}
                 description="BTC"
                 testID={`option-${option}`}
+                title={option}
+                value={option}
               />
             ))}
           </Select>
@@ -279,11 +279,11 @@ export const selectBuilder = ({
   const Variants = () => {
     return (
       <VStack>
-        <Default label="I am a label" helperText="I am helpful text" variant="foreground" />
-        <Default label="I am a label" helperText="I am helpful text" variant="foregroundMuted" />
-        <Default label="I am a label" helperText="I am helpful text" variant="primary" />
-        <Default label="I am a label" helperText="I am helpful text" variant="positive" />
-        <Default label="I am a label" helperText="I am helpful text" variant="negative" />
+        <Default helperText="I am helpful text" label="I am a label" variant="foreground" />
+        <Default helperText="I am helpful text" label="I am a label" variant="foregroundMuted" />
+        <Default helperText="I am helpful text" label="I am a label" variant="primary" />
+        <Default helperText="I am helpful text" label="I am a label" variant="positive" />
+        <Default helperText="I am helpful text" label="I am a label" variant="negative" />
       </VStack>
     );
   };
@@ -344,22 +344,22 @@ export const selectBuilderMobile = ({
     const [isTrayVisible, { toggleOff, toggleOn }] = useToggler(false);
     const [selectedValue, setValue] = useState<string | undefined>();
     return (
-      <Select value={selectedValue} onPress={toggleOn} onChange={setValue} {...props}>
+      <Select onChange={setValue} onPress={toggleOn} value={selectedValue} {...props}>
         {isTrayVisible && (
           <Tray
-            title={trayTitle}
-            onCloseComplete={toggleOff}
             hideHandleBar={hideHandleBar}
+            onCloseComplete={toggleOff}
             testID="select-input-tray"
+            title={trayTitle}
           >
             {({ handleClose }) =>
               exampleOptions.map((option) => {
                 return (
                   <SelectOption
-                    title={option}
                     key={option}
                     description={hasDescription && 'Description'}
                     onPress={handleClose}
+                    title={option}
                     value={option}
                   />
                 );
@@ -379,17 +379,17 @@ export const selectBuilderMobile = ({
 
     return (
       <Select
-        onPress={toggleOn}
-        value={asset}
-        onChange={setAsset}
         label="Select Asset"
+        onChange={setAsset}
+        onPress={toggleOn}
         startNode={
           <Box spacingHorizontal={2}>
-            <DotSymbol pin="bottom-end" overlap="circular" size="s" source={ethLogo}>
-              <RemoteImage source={assetConfig.imageUrl} shape="circle" size="l" />
+            <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
+              <RemoteImage shape="circle" size="l" source={assetConfig.imageUrl} />
             </DotSymbol>
           </Box>
         }
+        value={asset}
         valueLabel={assetConfig.name}
       >
         {isTrayVisible && (
@@ -397,17 +397,17 @@ export const selectBuilderMobile = ({
             {({ handleClose }) =>
               Object.values(assets).map(({ name, imageUrl }, idx) => (
                 <SelectOption
+                  key={name}
+                  description="BTC"
                   media={
-                    <DotSymbol pin="bottom-end" overlap="circular" size="s" source={ethLogo}>
-                      <RemoteImage source={imageUrl} shape="circle" size="l" />
+                    <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
+                      <RemoteImage shape="circle" size="l" source={imageUrl} />
                     </DotSymbol>
                   }
-                  value={assetKeys[idx]}
-                  key={name}
-                  title={name}
-                  description="BTC"
-                  testID={`option-${name}`}
                   onPress={handleClose}
+                  testID={`option-${name}`}
+                  title={name}
+                  value={assetKeys[idx]}
                 />
               ))
             }
@@ -421,18 +421,18 @@ export const selectBuilderMobile = ({
     const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
     const [selectedValue, setValue] = useState<string | undefined>(exampleOptions[2]);
     return (
-      <Select value={selectedValue} onPress={toggleOn} onChange={setValue} {...props}>
+      <Select onChange={setValue} onPress={toggleOn} value={selectedValue} {...props}>
         {isTrayVisible && (
-          <Tray disableCapturePanGestureToDismiss title={trayTitle} onCloseComplete={toggleOff}>
+          <Tray disableCapturePanGestureToDismiss onCloseComplete={toggleOff} title={trayTitle}>
             {({ handleClose }) => (
               <ScrollView>
                 {exampleOptions.map((option) => {
                   return (
                     <SelectOption
-                      title={option}
                       key={option}
                       description={hasDescription && 'Description'}
                       onPress={handleClose}
+                      title={option}
                       value={option}
                     />
                   );
@@ -454,13 +454,13 @@ export const selectBuilderMobile = ({
     const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021'];
 
     return (
-      <HStack width="100%" gap={1}>
+      <HStack gap={1} width="100%">
         <Select
-          width="48%"
+          onChange={setYear}
+          onPress={handleYearTrayVisibility.toggle}
           placeholder="All years"
           value={year}
-          onPress={handleYearTrayVisibility.toggle}
-          onChange={setYear}
+          width="48%"
         >
           {yearTrayVisible && (
             <Tray onCloseComplete={handleYearTrayVisibility.toggleOff}>
@@ -468,9 +468,9 @@ export const selectBuilderMobile = ({
                 years.map((option) => {
                   return (
                     <SelectOption
-                      title={option}
                       key={option}
                       onPress={handleClose}
+                      title={option}
                       value={option}
                     />
                   );
@@ -480,11 +480,11 @@ export const selectBuilderMobile = ({
           )}
         </Select>
         <Select
-          width="48%"
+          onChange={setAsset}
+          onPress={handleAssetTrayVisibility.toggle}
           placeholder="All assets"
           value={asset}
-          onPress={handleAssetTrayVisibility.toggle}
-          onChange={setAsset}
+          width="48%"
         >
           {assetTrayVisible && (
             <Tray onCloseComplete={handleAssetTrayVisibility.toggleOff}>
@@ -492,9 +492,9 @@ export const selectBuilderMobile = ({
                 Object.values(assets).map(({ name: option }) => {
                   return (
                     <SelectOption
-                      title={option}
                       key={option}
                       onPress={handleClose}
+                      title={option}
                       value={option}
                     />
                   );
@@ -513,15 +513,15 @@ export const selectBuilderMobile = ({
     const [visible, handleTrayVisibility] = useToggler(false);
 
     return (
-      <VStack gap={2} minHeight={400} background="background">
+      <VStack background="background" gap={2} minHeight={400}>
         <TextInput label="Account number" />
         <TextInput label="Re-enter account number" />
         <Select
-          accessibilityLabel="Account number"
           accessibilityHint="Enter account number"
-          value={accountType}
-          onPress={handleTrayVisibility.toggle}
+          accessibilityLabel="Account number"
           onChange={setAccountType}
+          onPress={handleTrayVisibility.toggle}
+          value={accountType}
         >
           {visible && (
             <Tray onCloseComplete={handleTrayVisibility.toggleOff}>
@@ -529,9 +529,9 @@ export const selectBuilderMobile = ({
                 accountTypeOptions.map((option) => {
                   return (
                     <SelectOption
-                      title={option}
                       key={option}
                       onPress={handleClose}
+                      title={option}
                       value={option}
                     />
                   );

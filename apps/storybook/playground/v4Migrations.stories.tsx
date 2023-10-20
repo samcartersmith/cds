@@ -9,7 +9,7 @@ import { HStack } from '@cbhq/cds-web/layout';
 
 export const V4MigrationsTest = () => {
   return (
-    <HStack background="secondary" spacing={3} gap={3} borderRadius="rounded">
+    <HStack background="secondary" borderRadius="rounded" gap={3} spacing={3}>
       {/* @ts-expect-error Will be renamed to briefcase */}
       <Icon name="breifcase" size="m" />
       {/* @ts-expect-error Will be renamed to pencil */}

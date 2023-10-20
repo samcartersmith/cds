@@ -44,34 +44,34 @@ export const TableCellFallback = memo(
     );
 
     return (
-      <TableCellComponent data-testid={testID} className={tableCell} {...rest}>
+      <TableCellComponent className={tableCell} data-testid={testID} {...rest}>
         <Cell
+          accessory={end && <MediaFallback testID="table-cell-fallback-accessory" type={end} />}
           gap={cellGap}
-          accessory={end && <MediaFallback type={end} testID="table-cell-fallback-accessory" />}
-          media={start && <MediaFallback type={start} testID="table-cell-fallback-media" />}
-          outerSpacing={cellOuterSpacing}
           innerSpacing={cellInnerSpacing}
+          media={start && <MediaFallback testID="table-cell-fallback-media" type={start} />}
+          outerSpacing={cellOuterSpacing}
           responsiveConfig={responsiveConfig}
         >
           {title && (
             <Fallback
-              height={24}
-              width={45}
-              disableRandomRectWidth={disableRandomRectWidth}
-              rectWidthVariant={getRectWidthVariant(rectWidthVariant, 0)}
               percentage
+              disableRandomRectWidth={disableRandomRectWidth}
+              height={24}
+              rectWidthVariant={getRectWidthVariant(rectWidthVariant, 0)}
               testID="table-cell-fallback-title"
+              width={45}
             />
           )}
           {subtitle && (
             <Fallback
-              height={16}
-              width={35}
-              spacingTop={textSpacingTop}
-              disableRandomRectWidth={disableRandomRectWidth}
-              rectWidthVariant={getRectWidthVariant(rectWidthVariant, 1)}
               percentage
+              disableRandomRectWidth={disableRandomRectWidth}
+              height={16}
+              rectWidthVariant={getRectWidthVariant(rectWidthVariant, 1)}
+              spacingTop={textSpacingTop}
               testID="table-cell-fallback-subtitle"
+              width={35}
             />
           )}
         </Cell>

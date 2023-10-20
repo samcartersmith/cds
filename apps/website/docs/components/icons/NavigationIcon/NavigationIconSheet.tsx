@@ -40,7 +40,7 @@ export const NavigationIconSheet = () => {
       })
       .map((name) => {
         return (
-          <VStack spacing={3} alignItems="center" key={name} width={120}>
+          <VStack key={name} alignItems="center" spacing={3} width={120}>
             <NavigationIcon name={name} size="m" />
             <TextLabel1 align="center" as="p" spacing={2}>
               {name}
@@ -54,14 +54,14 @@ export const NavigationIconSheet = () => {
     <>
       <Box flexWrap="wrap">
         <TextInput
-          onChange={searchOnChange}
-          type="text"
-          placeholder="Navigation icon name"
           label="Filter Icons"
+          onChange={searchOnChange}
+          placeholder="Navigation icon name"
+          type="text"
         />
       </Box>
 
-      <HStack flexWrap="wrap" spacingVertical={1} justifyContent="flex-start" alignItems="center">
+      <HStack alignItems="center" flexWrap="wrap" justifyContent="flex-start" spacingVertical={1}>
         {icons}
       </HStack>
     </>

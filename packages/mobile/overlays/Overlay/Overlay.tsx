@@ -15,10 +15,10 @@ export const Overlay = memo(function Overlay({ opacity, ...props }: OverlayProps
     <ThemeProvider name="overlay" palette={overlayPalette}>
       <VStack
         animated
-        opacity={opacity}
-        pin="all"
         renderToHardwareTextureAndroid
         background="backgroundOverlay"
+        opacity={opacity}
+        pin="all"
         {...props}
       />
     </ThemeProvider>

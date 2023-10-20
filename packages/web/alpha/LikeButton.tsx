@@ -42,20 +42,20 @@ export const LikeButton = memo(function LikeButton({
     <Pressable backgroundColor="transparent" className={pressableClassName} {...props}>
       <HStack
         alignItems="center"
-        justifyContent="flex-start"
-        flexWrap="nowrap"
         flexShrink={0}
+        flexWrap="nowrap"
+        gap={1}
+        justifyContent="flex-start"
         minHeight={size}
         minWidth={size}
-        gap={1}
       >
         <Icon
-          name={liked ? 'heartActive' : 'heartInactive'}
           color={liked ? 'negative' : 'foreground'}
+          name={liked ? 'heartActive' : 'heartInactive'}
           size={iconSize}
         />
         {count > 0 ? (
-          <TextLabel1 as="p" mono>
+          <TextLabel1 mono as="p">
             {count}
           </TextLabel1>
         ) : null}

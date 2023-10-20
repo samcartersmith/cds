@@ -4,14 +4,14 @@ import { Box, Fallback, HStack } from '@cbhq/cds-web/layout';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 
 const LandingAreaFocusAreaItemFallback = () => {
-  return <Fallback width={200} height={28.39} />;
+  return <Fallback height={28.39} width={200} />;
 };
 
 const LandingAreaFocusAreaGroupFallback = () => {
   return (
     <HStack>
       <Box width="25%">
-        <Fallback width={107} height={24} />
+        <Fallback height={24} width={107} />
       </Box>
       <VStack>
         <LandingAreaFocusAreaItemFallback />
@@ -25,10 +25,10 @@ const LandingAreaFocusAreaGroupFallback = () => {
 const LandingPageFocusAreasFallback = () => {
   return (
     <HStack minHeight={600}>
-      <Box spacing={gutter} width="50%" borderedEnd>
-        <Fallback width={320} height={126} />
+      <Box borderedEnd spacing={gutter} width="50%">
+        <Fallback height={126} width={320} />
       </Box>
-      <VStack spacing={gutter} gap={gutter} width="50%">
+      <VStack gap={gutter} spacing={gutter} width="50%">
         <LandingAreaFocusAreaGroupFallback />
         <LandingAreaFocusAreaGroupFallback />
         <LandingAreaFocusAreaGroupFallback />

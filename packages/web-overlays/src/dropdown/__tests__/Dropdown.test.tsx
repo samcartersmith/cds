@@ -24,7 +24,7 @@ describe('Dropdown', () => {
     expect(await renderA11y(<DropdownExample />)).toHaveNoViolations();
   });
   it('opens the menu when the subject is pressed', async () => {
-    render(<DropdownExample subjectTestID={subjectTestID} options={options} />);
+    render(<DropdownExample options={options} subjectTestID={subjectTestID} />);
 
     fireEvent.click(screen.getByTestId(subjectTestID));
 
@@ -32,7 +32,7 @@ describe('Dropdown', () => {
     expect(await screen.findByText(options[0])).toBeDefined();
   });
   it('opens the menu when enter is typed when the subject is focused', async () => {
-    render(<DropdownExample subjectTestID={subjectTestID} options={options} />);
+    render(<DropdownExample options={options} subjectTestID={subjectTestID} />);
 
     fireEvent.keyDown(screen.getByTestId(subjectTestID), {
       key: 'Enter',
@@ -43,7 +43,7 @@ describe('Dropdown', () => {
     expect(await screen.findByText(options[0])).toBeDefined();
   });
   it('DropdownContent has overflow set to auto', async () => {
-    render(<DropdownExample subjectTestID={subjectTestID} options={options} />);
+    render(<DropdownExample options={options} subjectTestID={subjectTestID} />);
 
     fireEvent.click(screen.getByTestId(subjectTestID));
 

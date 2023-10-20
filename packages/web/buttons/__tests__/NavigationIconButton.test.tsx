@@ -6,7 +6,7 @@ describe('NavigationIconButton.test', () => {
   it('triggers onPress', () => {
     const onPress = jest.fn();
 
-    render(<NavigationIconButton onPress={onPress} name="account" testID="test-nav-icon-button" />);
+    render(<NavigationIconButton name="account" onPress={onPress} testID="test-nav-icon-button" />);
 
     fireEvent.click(screen.getByTestId('test-nav-icon-button'));
     expect(onPress).toHaveBeenCalledTimes(1);

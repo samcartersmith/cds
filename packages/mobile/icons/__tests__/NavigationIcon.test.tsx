@@ -16,13 +16,13 @@ describe('NavigationIcon.test', () => {
   });
 
   it('passes a11y for active color', () => {
-    render(<NavigationIcon name="account" active testID="test-nav-icon" />);
+    render(<NavigationIcon active name="account" testID="test-nav-icon" />);
 
     expect(screen.getByTestId('test-nav-icon')).toBeAccessible();
   });
 
   it('renders with active color', () => {
-    render(<NavigationIcon name="account" active testID="test-nav-icon" />);
+    render(<NavigationIcon active name="account" testID="test-nav-icon" />);
 
     expect(screen.getByTestId('test-nav-icon')).toBeTruthy();
   });
@@ -30,9 +30,9 @@ describe('NavigationIcon.test', () => {
   it('sets accessibility attributes and labels', () => {
     render(
       <NavigationIcon
-        name="account"
-        accessibilityLabel="An icon label"
         accessibilityHint="An icon hint"
+        accessibilityLabel="An icon label"
+        name="account"
       />,
     );
 

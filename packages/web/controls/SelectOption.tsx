@@ -136,30 +136,29 @@ export const SelectOption = memo(
 
     return (
       <Pressable
-        backgroundColor="background"
-        onPress={handlePress}
-        onKeyPress={handleKeyPress}
-        // default to -1 since this is a grouped control and the parent control will have tabIndex 0
-        tabIndex={tabIndex ?? -1}
-        className={cx(selectOptionStaticClassName, insetFocusRing, pressableStyles)}
         ref={selectOptionRef}
-        role="menuitem"
         noScaleOnPress
         accessibilityLabel={accessibilityLabel}
-        testID={testID}
+        backgroundColor="background"
+        className={cx(selectOptionStaticClassName, insetFocusRing, pressableStyles)}
         disabled={disabled}
+        onKeyPress={handleKeyPress}
+        onPress={handlePress}
+        role="menuitem"
+        tabIndex={tabIndex ?? -1} // default to -1 since this is a grouped control and the parent control will have tabIndex 0
+        testID={testID}
       >
         <Cell
           {...selectCellSpacingConfig}
-          borderRadius="roundedNone"
-          minHeight={minHeight}
-          maxHeight={multiline ? undefined : maxHeight}
           accessory={
             <CellAccessory
-              type="selected"
               dangerouslySetClassName={selected ? visibility.visible : visibility.hidden}
+              type="selected"
             />
           }
+          borderRadius="roundedNone"
+          maxHeight={multiline ? undefined : maxHeight}
+          minHeight={minHeight}
           selected={selected}
           {...props}
         >
@@ -174,8 +173,8 @@ export const SelectOption = memo(
               <TextBody
                 as="div"
                 color="foregroundMuted"
-                overflow={multiline ? undefined : 'truncate'}
                 dangerouslySetClassName={multiline ? overflowClassName : undefined}
+                overflow={multiline ? undefined : 'truncate'}
               >
                 {description}
               </TextBody>

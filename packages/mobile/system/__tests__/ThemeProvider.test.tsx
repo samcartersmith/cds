@@ -164,7 +164,7 @@ describe('ThemeProvider', () => {
                 <FeatureFlagContext.Provider
                   value={{ ...defaultFeatureFlags, frontierColor: true }}
                 >
-                  <ThemeProvider name="example5" spectrum="dark" palette={{ primary: 'indigo40' }}>
+                  <ThemeProvider name="example5" palette={{ primary: 'indigo40' }} spectrum="dark">
                     {children}
                   </ThemeProvider>
                 </FeatureFlagContext.Provider>
@@ -300,7 +300,7 @@ describe('ThemeProvider', () => {
   it('merges custom palette with default palette', () => {
     const { result } = renderHook(() => useThemeConfig(), {
       wrapper: ({ children }: { children: React.ReactNode }) => (
-        <ThemeProvider name="custom-green" spectrum="dark" palette={{ background: 'green50' }}>
+        <ThemeProvider name="custom-green" palette={{ background: 'green50' }} spectrum="dark">
           {children}
         </ThemeProvider>
       ),
@@ -329,10 +329,10 @@ describe('ThemeProvider', () => {
 
     const { result } = renderHook(() => useThemeConfig(), {
       wrapper: ({ children }: { children: React.ReactNode }) => (
-        <ThemeProvider name="palette1" spectrum="dark" palette={palette1}>
-          <ThemeProvider name="palette2" spectrum="light" palette={palette2}>
-            <ThemeProvider name="palette3" spectrum="dark" palette={palette3}>
-              <ThemeProvider name="palette4" spectrum="light" palette={palette4}>
+        <ThemeProvider name="palette1" palette={palette1} spectrum="dark">
+          <ThemeProvider name="palette2" palette={palette2} spectrum="light">
+            <ThemeProvider name="palette3" palette={palette3} spectrum="dark">
+              <ThemeProvider name="palette4" palette={palette4} spectrum="light">
                 {children}
               </ThemeProvider>
             </ThemeProvider>

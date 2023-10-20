@@ -36,13 +36,13 @@ describe('useCarousel', () => {
 
     return (
       <>
-        <Button testID="LogLength" onPress={handleLogLength} disableDebounce>
+        <Button disableDebounce onPress={handleLogLength} testID="LogLength">
           Log Length
         </Button>
-        <Button testID="ScrollTo" onPress={handleScrollTo}>
+        <Button onPress={handleScrollTo} testID="ScrollTo">
           Trigger ScrollTo
         </Button>
-        <Button testID="ScrollToEnd" onPress={handleScrollToEnd}>
+        <Button onPress={handleScrollToEnd} testID="ScrollToEnd">
           Trigger ScrollToEnd
         </Button>
         <Carousel carouselRef={carouselRef} items={items} />

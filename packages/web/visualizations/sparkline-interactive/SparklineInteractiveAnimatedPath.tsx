@@ -129,9 +129,9 @@ export const SparklineInteractiveAnimatedPath = memo(
     return (
       <SparklineGradient
         ref={pathRef}
-        width={chartWidth}
-        height={chartHeight}
         color={color}
+        height={chartHeight}
+        width={chartWidth}
         yAxisScalingFactor={yAxisScalingFactor}
       >
         {!!area && <SparklineArea ref={areaRef} />}

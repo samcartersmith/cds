@@ -232,11 +232,11 @@ export const sparklineInteractiveBuilder = ({
     return (
       <SparklineInteractive
         {...props}
-        periods={configurablePeriods}
+        defaultPeriod={defaultPeriod ?? DEFAULT_PERIOD}
         formatDate={formatDateWithConfig}
         formatHoverDate={!hideHoverDate ? formatHoverDate : undefined}
-        defaultPeriod={defaultPeriod ?? DEFAULT_PERIOD}
         formatMinMaxLabel={formatMinMaxLabel}
+        periods={configurablePeriods}
       />
     );
   });
@@ -334,12 +334,12 @@ export const sparklineInteractiveWithHeaderBuilder = ({
     const header = (
       <SparklineInteractiveHeader
         ref={headerRef}
-        defaultLabel={labelNode ? 'CustomHeader' : 'Bitcoin Price'}
-        defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
-        defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
-        trailing={trailing}
-        labelNode={labelNode}
         compact={compact}
+        defaultLabel={labelNode ? 'CustomHeader' : 'Bitcoin Price'}
+        defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
+        defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
+        labelNode={labelNode}
+        trailing={trailing}
       />
     );
 
@@ -347,9 +347,9 @@ export const sparklineInteractiveWithHeaderBuilder = ({
       <SparklineInteractiveBuild
         {...props}
         headerNode={header}
+        onPeriodChanged={handleOnPeriodChanged}
         onScrub={handleScrub}
         onScrubEnd={handleScrubEnd}
-        onPeriodChanged={handleOnPeriodChanged}
       />
     );
   });

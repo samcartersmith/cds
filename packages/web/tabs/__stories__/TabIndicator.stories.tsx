@@ -25,8 +25,8 @@ export const Default: Story = () => {
 
   return (
     <ThemeProvider spectrum="light">
-      <VStack spacing={4} gap={2} background="background">
-        <Button onPress={handlePress} block>
+      <VStack background="background" gap={2} spacing={4}>
+        <Button block onPress={handlePress}>
           Randomize
         </Button>
         <TabIndicator width={width} x={x} />

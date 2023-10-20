@@ -48,24 +48,24 @@ export const NavigationBar = memo(
 
     return (
       <VStack
-        as="nav"
-        position="sticky"
-        top={0}
-        left={0}
-        right={0}
         background
         borderedBottom
-        spacingHorizontal={2}
-        minHeight={navigationBarMinHeight}
-        spacingTop={2}
-        gap={2}
-        spacingBottom={bottom ? undefined : 2}
-        zIndex={zIndex.navigation}
-        width="100%"
         accessibilityLabel={accessibilityLabel}
+        as="nav"
+        gap={2}
+        left={0}
+        minHeight={navigationBarMinHeight}
+        position="sticky"
+        right={0}
+        spacingBottom={bottom ? undefined : 2}
+        spacingHorizontal={2}
+        spacingTop={2}
+        top={0}
+        width="100%"
+        zIndex={zIndex.navigation}
       >
-        <HStack alignItems="center" justifyContent="space-between" gap={2}>
-          <HStack alignItems="center" justifyContent="flex-start" flexGrow={1} gap={0}>
+        <HStack alignItems="center" gap={2} justifyContent="space-between">
+          <HStack alignItems="center" flexGrow={1} gap={0} justifyContent="flex-start">
             <Collapsible collapsed={!start} direction="horizontal">
               <Box spacingEnd={2}>{startNode}</Box>
             </Collapsible>

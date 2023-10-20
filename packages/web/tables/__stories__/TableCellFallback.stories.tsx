@@ -23,12 +23,12 @@ export const TableCellFallbackExample: Story = () => {
 
   return (
     <ThemeProvider spectrum="light">
-      <Table variant="ruled" bordered>
+      <Table bordered variant="ruled">
         <TableHeader>
           <TableRow fullWidth>
-            <HStack alignItems="center" justifyContent="space-between" flexGrow={1}>
+            <HStack alignItems="center" flexGrow={1} justifyContent="space-between">
               <TextDisplay2 as="h2">Sample Table</TextDisplay2>
-              <Switch onChange={toggle} checked={loading}>
+              <Switch checked={loading} onChange={toggle}>
                 Loading
               </Switch>
             </HStack>
@@ -38,8 +38,8 @@ export const TableCellFallbackExample: Story = () => {
               loading ? (
                 <TableCellFallback
                   key={`header-fallback-cell${label}`}
-                  title
                   disableRandomRectWidth
+                  title
                 />
               ) : (
                 <TableCell key={`header-cell-${label}`} title={label} />
@@ -60,32 +60,32 @@ export const TableCellFallbackExample: Story = () => {
                     return loading ? (
                       <TableCellFallback
                         key={`fallback-cell-${key}`}
-                        width="33%"
-                        title
                         subtitle
-                        start={mediaTypes[index % mediaTypes.length]}
+                        title
                         disableRandomRectWidth={isEven}
                         rectWidthVariant={!isEven ? index + rowIndex : undefined}
+                        start={mediaTypes[index % mediaTypes.length]}
+                        width="33%"
                       />
                     ) : (
                       <TableCell
-                        width="33%"
                         key={`cell-${key}`}
-                        title={`${val}`}
-                        subtitle="Some subtitle"
                         start={
                           mediaType === 'image' ? (
                             <CellMedia
-                              type="image"
                               source="https://images.coinbase.com/avatar?s=56"
+                              type="image"
                             />
                           ) : (
                             <CellMedia
-                              type="avatar"
                               source="https://images.coinbase.com/avatar?s=56"
+                              type="avatar"
                             />
                           )
                         }
+                        subtitle="Some subtitle"
+                        title={`${val}`}
+                        width="33%"
                       />
                     );
                   })}

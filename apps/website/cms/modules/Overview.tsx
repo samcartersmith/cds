@@ -40,21 +40,21 @@ export const Overview = memo(function Overview({
 }: OverviewFields) {
   return (
     <VStack spacingBottom={9}>
-      <RichText options={richTextOptions} content={description} />
+      <RichText content={description} options={richTextOptions} />
       {(figmaLink || storybookLink) && (
         <HStack gap={3} spacingTop={6}>
           {figmaLink && (
-            <HStack gap={1} alignItems="center">
-              <img src={figmaIcon} alt="figma icon" />
-              <Link to={figmaLink} variant="headline" openInNewWindow>
+            <HStack alignItems="center" gap={1}>
+              <img alt="figma icon" src={figmaIcon} />
+              <Link openInNewWindow to={figmaLink} variant="headline">
                 Figma
               </Link>
             </HStack>
           )}
           {storybookLink && (
-            <HStack gap={1} alignItems="center">
-              <img src={storybookIcon} alt="storybook icon" />
-              <Link to={storybookLink} variant="headline" openInNewWindow>
+            <HStack alignItems="center" gap={1}>
+              <img alt="storybook icon" src={storybookIcon} />
+              <Link openInNewWindow to={storybookLink} variant="headline">
                 Storybook
               </Link>
             </HStack>

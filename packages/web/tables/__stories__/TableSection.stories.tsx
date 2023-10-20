@@ -15,17 +15,17 @@ export const SampleTableSection: Story = () => {
     <Table bordered variant="ruled">
       <TableHeader>
         <TableRow>
-          <TableCell title="TableHeader" subtitle="This is the TableHeader" />
+          <TableCell subtitle="This is the TableHeader" title="TableHeader" />
         </TableRow>
       </TableHeader>
       <TableBody>
         <TableRow>
-          <TableCell title="TableBody" subtitle="This is the TableBody" />
+          <TableCell subtitle="This is the TableBody" title="TableBody" />
         </TableRow>
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell title="TableFooter" subtitle="This is the TableFooter" />
+          <TableCell subtitle="This is the TableFooter" title="TableFooter" />
         </TableRow>
       </TableFooter>
     </Table>
@@ -37,17 +37,17 @@ export const SectionFlowControl: Story = () => {
     <Table bordered variant="ruled">
       <TableBody>
         <TableRow>
-          <TableCell title="TableBody" subtitle="This is the TableBody" />
+          <TableCell subtitle="This is the TableBody" title="TableBody" />
         </TableRow>
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell title="TableFooter" subtitle="This is the TableFooter" />
+          <TableCell subtitle="This is the TableFooter" title="TableFooter" />
         </TableRow>
       </TableFooter>
       <TableHeader>
         <TableRow>
-          <TableCell title="TableHeader" subtitle="This is the TableHeader" />
+          <TableCell subtitle="This is the TableHeader" title="TableHeader" />
         </TableRow>
       </TableHeader>
     </Table>
@@ -63,9 +63,9 @@ export const LoadingStateExample: Story = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        <VStack minHeight={500} alignItems="center" justifyContent="center">
-          <Spinner size={4} color="primary" />
-          <TextHeadline as="p" spacingTop={2} color="foregroundMuted">
+        <VStack alignItems="center" justifyContent="center" minHeight={500}>
+          <Spinner color="primary" size={4} />
+          <TextHeadline as="p" color="foregroundMuted" spacingTop={2}>
             Loading content...
           </TextHeadline>
         </VStack>

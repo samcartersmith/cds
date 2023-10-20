@@ -10,13 +10,13 @@ export const LogoMark = memo(({ size, foreground }: LogoMarkProps) => {
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
       aria-label="Coinbase logo"
+      className={iconStyles}
+      height={height}
+      role="img"
       viewBox={viewBox}
       width={width}
-      height={height}
-      className={iconStyles}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <title>Coinbase logo</title>
       <path d={path} fill={color} />

@@ -16,7 +16,7 @@ describe('TileButton.test', () => {
     const onPress = jest.fn();
 
     render(
-      <TileButton onPress={onPress} title="test title" pictogram="add" testID="test-tile-button" />,
+      <TileButton onPress={onPress} pictogram="add" testID="test-tile-button" title="test title" />,
     );
 
     fireEvent.click(screen.getByTestId('test-tile-button'));
@@ -29,7 +29,7 @@ describe('TileButton.test', () => {
 
     const onPress = jest.fn();
 
-    render(<TileButton onPress={onPress} title="  " pictogram="add" />);
+    render(<TileButton onPress={onPress} pictogram="add" title="  " />);
 
     expect(mockConsoleWarn).toHaveBeenCalledTimes(1);
   });
@@ -37,7 +37,7 @@ describe('TileButton.test', () => {
   it('does not log warning in a non dev environment', () => {
     const onPress = jest.fn();
 
-    render(<TileButton onPress={onPress} title="  " pictogram="add" />);
+    render(<TileButton onPress={onPress} pictogram="add" title="  " />);
 
     expect(mockConsoleWarn).toHaveBeenCalledTimes(0);
   });
@@ -47,7 +47,7 @@ describe('TileButton.test', () => {
 
     const onPress = jest.fn();
 
-    render(<TileButton onPress={onPress} title="test title" pictogram="add" />);
+    render(<TileButton onPress={onPress} pictogram="add" title="test title" />);
 
     expect(mockConsoleWarn).toHaveBeenCalledTimes(0);
   });

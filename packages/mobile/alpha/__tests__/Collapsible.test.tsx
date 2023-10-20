@@ -13,11 +13,11 @@ const MockCollapsible = ({ defaultCollapsed = true }: { defaultCollapsed?: boole
   return (
     <>
       <Button
-        onPress={toggle}
+        disableDebounce
         aria-controls={collapsibleId}
         aria-expanded={!collapsed}
+        onPress={toggle}
         testID="mock-collapse-trigger"
-        disableDebounce
       >
         Click me!
       </Button>

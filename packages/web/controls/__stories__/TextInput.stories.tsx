@@ -40,7 +40,7 @@ export const Basic = function Basic() {
     console.log('Blurring');
   }, []);
 
-  return <TextInput label="Label" onFocus={onFocus} onBlur={onBlur} />;
+  return <TextInput label="Label" onBlur={onBlur} onFocus={onFocus} />;
 };
 
 export const Placeholder = function Placeholder() {
@@ -48,7 +48,7 @@ export const Placeholder = function Placeholder() {
 };
 
 export const HelperText = function HelperText() {
-  return <TextInput label="Label" placeholder="placeholder" helperText="helperText" />;
+  return <TextInput helperText="helperText" label="Label" placeholder="placeholder" />;
 };
 
 export const Align = function Align() {
@@ -58,10 +58,10 @@ export const Align = function Align() {
     <>
       {alignments.map((align) => (
         <TextInput
+          align={align}
+          helperText="helperText"
           label={`Label: ${align}`}
           placeholder="placeholder"
-          helperText="helperText"
-          align={align}
         />
       ))}
     </>
@@ -75,9 +75,9 @@ export const Variants = function Variants() {
     <>
       {variants.map((variant) => (
         <TextInput
+          helperText="helperText"
           label={`Label: ${variant}`}
           placeholder="placeholder"
-          helperText="helperText"
           variant={variant}
         />
       ))}
@@ -92,11 +92,11 @@ export const ColorSurge = function ColorSurge() {
     <>
       {variants.map((variant) => (
         <TextInput
+          enableColorSurge
+          helperText="helperText"
           label={`Label: ${variant}`}
           placeholder="placeholder"
-          helperText="helperText"
           variant={variant}
-          enableColorSurge
         />
       ))}
     </>
@@ -111,9 +111,9 @@ export const Width = function Width() {
       {widths.map((width) => (
         <TextInput
           key={`input-width-${width}`}
+          helperText="helperText"
           label={`Width: ${width}`}
           placeholder="placeholder"
-          helperText="helperText"
           width={width}
         />
       ))}
@@ -129,10 +129,10 @@ export const Height = function Height() {
       {heights.map((height) => (
         <TextInput
           key={`input-height-${height}`}
+          height={height}
+          helperText="helperText"
           label={`Height: ${height}`}
           placeholder="placeholder"
-          helperText="helperText"
-          height={height}
         />
       ))}
     </>
@@ -147,10 +147,10 @@ export const BorderRadius = function BorderRadius() {
       {borderRadiuses.map((localborderRadius) => (
         <TextInput
           key={`border-radius-${localborderRadius}`}
+          borderRadius={localborderRadius}
+          helperText="helperText"
           label={`BorderRadius: ${localborderRadius}`}
           placeholder="placeholder"
-          helperText="helperText"
-          borderRadius={localborderRadius}
         />
       ))}
     </>
@@ -160,10 +160,10 @@ export const BorderRadius = function BorderRadius() {
 export const Borderless = function Borderless() {
   return (
     <TextInput
+      bordered={false}
+      helperText="helperText"
       label="borderless"
       placeholder="placeholder"
-      helperText="helperText"
-      bordered={false}
     />
   );
 };
@@ -171,11 +171,11 @@ export const Borderless = function Borderless() {
 export const Disabled = function Disabled() {
   return (
     <>
-      <TextInput label="Disabled label" disabled />
+      <TextInput disabled label="Disabled label" />
       <TextInput
-        label="Label"
-        start={<InputIconButton name="add" transparent accessibilityLabel="Add" />}
         disabled
+        label="Label"
+        start={<InputIconButton transparent accessibilityLabel="Add" name="add" />}
       />
     </>
   );
@@ -202,7 +202,7 @@ export const StartContent = function StartContent() {
   return (
     <TextInput
       label="Label"
-      start={<InputIconButton name="add" transparent accessibilityLabel="Add" />}
+      start={<InputIconButton transparent accessibilityLabel="Add" name="add" />}
     />
   );
 };
@@ -210,7 +210,6 @@ export const StartContent = function StartContent() {
 export const EndContent = function EndContent() {
   return (
     <TextInput
-      label="Label"
       end={
         <HStack spacingEnd={1}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -219,6 +218,7 @@ export const EndContent = function EndContent() {
           </Link>
         </HStack>
       }
+      label="Label"
     />
   );
 };
@@ -230,9 +230,9 @@ export const Suffix = function Suffix() {
 export const SuffixAndEndContent = function SuffixAndEndContent() {
   return (
     <TextInput
+      end={<InputIconButton transparent accessibilityLabel="Add" name="add" />}
       label="Label"
       suffix="USD"
-      end={<InputIconButton name="add" transparent accessibilityLabel="Add" />}
     />
   );
 };
@@ -242,23 +242,23 @@ export const SuffixAndEndContent = function SuffixAndEndContent() {
  */
 
 export const CompactInput = function CompactInput() {
-  return <TextInput label="Label" compact />;
+  return <TextInput compact label="Label" />;
 };
 
 export const CompactInputStart = function CompactInputStart() {
   return (
     <TextInput
+      compact
       label="Label"
       start={
         <Box>
           <Avatar
+            alt="address"
             size="l"
             src="https://dynamic-assets.coinbase.com/e785e0181f1a23a30d9476038d9be91e9f6c63959b538eabbc51a1abc8898940383291eede695c3b8dfaa1829a9b57f5a2d0a16b0523580346c6b8fab67af14b/asset_icons/b57ac673f06a4b0338a596817eb0a50ce16e2059f327dc117744449a47915cb2.png"
-            alt="address"
           />
         </Box>
       }
-      compact
     />
   );
 };
@@ -266,7 +266,7 @@ export const CompactInputStart = function CompactInputStart() {
 export const CompactInputEnd = function CompactInputEnd() {
   return (
     <TextInput
-      label="Label"
+      compact
       end={
         <HStack spacingEnd={1}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -275,17 +275,17 @@ export const CompactInputEnd = function CompactInputEnd() {
           </Link>
         </HStack>
       }
-      compact
+      label="Label"
     />
   );
 };
 
 export const CompactInputSuffix = function CompactInputSuffix() {
-  return <TextInput label="Label" suffix="USD" compact />;
+  return <TextInput compact label="Label" suffix="USD" />;
 };
 
 export const CompactHelperText = function CompactHelperText() {
-  return <TextInput label="Label" suffix="USD" compact helperText="helperText" />;
+  return <TextInput compact helperText="helperText" label="Label" suffix="USD" />;
 };
 
 export const InputOnChange = function InputOnChange() {
@@ -297,7 +297,7 @@ export const InputOnChange = function InputOnChange() {
 
   return (
     <div>
-      <TextInput onChange={onChange} helperText={inputText} label="Label" />
+      <TextInput helperText={inputText} label="Label" onChange={onChange} />
     </div>
   );
 };
@@ -313,14 +313,14 @@ export const RenderInputDefault = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: borderRadius.rounded }}
       onChange={onChange}
+      style={{ width: '100%', borderRadius: borderRadius.rounded }}
     />
   );
 
   return (
     <div>
-      <TextInput ref={ref} inputNode={renderInput} helperText={inputText} label="Label" />
+      <TextInput ref={ref} helperText={inputText} inputNode={renderInput} label="Label" />
     </div>
   );
 };
@@ -336,15 +336,15 @@ export const RenderInputDisabled = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: borderRadius.rounded }}
       onChange={onChange}
+      style={{ width: '100%', borderRadius: borderRadius.rounded }}
       value="Custom Input"
     />
   );
 
   return (
     <div>
-      <TextInput ref={ref} disabled inputNode={renderInput} helperText={inputText} label="Label" />
+      <TextInput ref={ref} disabled helperText={inputText} inputNode={renderInput} label="Label" />
     </div>
   );
 };
@@ -373,14 +373,14 @@ export const RenderInputCompact = () => {
   const renderInput = (
     <input
       className={nativeInputCustomCSS}
-      style={{ width: '100%', borderRadius: borderRadius.rounded }}
       onChange={onChange}
+      style={{ width: '100%', borderRadius: borderRadius.rounded }}
     />
   );
 
   return (
     <div>
-      <TextInput ref={ref} compact inputNode={renderInput} helperText={inputText} label="Label" />
+      <TextInput ref={ref} compact helperText={inputText} inputNode={renderInput} label="Label" />
     </div>
   );
 };
@@ -401,16 +401,16 @@ export const RenderNativeTextArea = () => {
   return (
     <div>
       <TextInput
+        helperText="Test"
         inputNode={
           <NativeTextArea
-            value={inputText}
-            onChange={onChange}
-            style={customNativeTextAreaCSS}
-            rows={7}
             cols={5}
+            onChange={onChange}
+            rows={7}
+            style={customNativeTextAreaCSS}
+            value={inputText}
           />
         }
-        helperText="Test"
         label="Label"
       />
     </div>
@@ -437,17 +437,17 @@ export const RenderNativeTextAreaCustomSpacing = () => {
   return (
     <div>
       <TextInput
+        helperText="Test"
         inputNode={
           <NativeTextArea
-            value={inputText}
-            onChange={onChange}
-            containerSpacing={customContainerSpacing}
-            style={customNativeTextAreaCSS}
-            rows={7}
             cols={5}
+            containerSpacing={customContainerSpacing}
+            onChange={onChange}
+            rows={7}
+            style={customNativeTextAreaCSS}
+            value={inputText}
           />
         }
-        helperText="Test"
         label="Label"
       />
     </div>
@@ -481,16 +481,16 @@ export const CopyTextInput = function CopyTextInput() {
         /* eslint-disable jsx-a11y/anchor-is-valid */
         end={
           <HStack>
-            <Link onPress={handleOnPress} color={variant}>
+            <Link color={variant} onPress={handleOnPress}>
               {copied ? 'copied' : 'copy'}
             </Link>
             <InputIcon name="visibleActive" />
           </HStack>
         }
-        onChange={handleOnChange}
-        variant={variant}
         helperText="Warning: Something interesting"
         label="Label"
+        onChange={handleOnChange}
+        variant={variant}
       />
     </div>
   );

@@ -34,14 +34,14 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
       <>
         <Button onPress={toggleOn}>Show Alert</Button>
         <Alert
-          visible={visible}
-          title="Alert title"
           body="Alert body type that can run over multiple lines, but should be kept short."
-          pictogram="warning"
-          onRequestClose={toggleOff}
-          preferredActionLabel="Primary"
-          onPreferredActionPress={onPressConsole}
           dismissActionLabel={singleAction ? undefined : 'Cancel'}
+          onPreferredActionPress={onPressConsole}
+          onRequestClose={toggleOff}
+          pictogram="warning"
+          preferredActionLabel="Primary"
+          title="Alert title"
+          visible={visible}
         />
       </>
     );
@@ -54,14 +54,14 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
       <>
         <Button onPress={toggleOn}>Show Alert</Button>
         <Alert
-          visible={visible}
-          title="Multiline title should be centered"
           body="Alert body type that can run over multiple lines, but should be kept short."
-          pictogram="warning"
-          onRequestClose={toggleOff}
-          preferredActionLabel="Primary"
-          onPreferredActionPress={onPressConsole}
           dismissActionLabel={singleAction ? undefined : 'Cancel'}
+          onPreferredActionPress={onPressConsole}
+          onRequestClose={toggleOff}
+          pictogram="warning"
+          preferredActionLabel="Primary"
+          title="Multiline title should be centered"
+          visible={visible}
         />
       </>
     );
@@ -72,14 +72,14 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
 
     return (
       <Alert
-        visible={visible}
-        title="Alert title"
         body="Alert body type that can run over multiple lines, but should be kept short."
+        dismissActionLabel={singleAction ? undefined : 'Cancel'}
+        onPreferredActionPress={onPressConsole}
+        onRequestClose={toggleOff}
         pictogram="warning"
         preferredActionLabel="Primary"
-        onPreferredActionPress={onPressConsole}
-        dismissActionLabel={singleAction ? undefined : 'Cancel'}
-        onRequestClose={toggleOff}
+        title="Alert title"
+        visible={visible}
       />
     );
   };
@@ -94,14 +94,14 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
           open(
             <Alert
               visible
-              title="Alert title"
               body="Alert body type that can run over multiple lines, but should be kept short."
-              pictogram="warning"
-              onRequestClose={close}
-              preferredActionLabel="Save"
-              onPreferredActionPress={onPressConsole}
-              preferredActionVariant="negative"
               dismissActionLabel="Cancel"
+              onPreferredActionPress={onPressConsole}
+              onRequestClose={close}
+              pictogram="warning"
+              preferredActionLabel="Save"
+              preferredActionVariant="negative"
+              title="Alert title"
             />,
           ),
         [open, close],
@@ -137,20 +137,20 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
       <>
         <Button onPress={toggleOn}>Show Alert</Button>
         <Alert
-          testID={testID}
-          visible={externalVisible ?? visible}
-          title={title ?? 'Alert title'}
+          disablePortal
+          accessibilityLabel={accessibilityLabel}
+          accessibilityLabelledBy={accessibilityLabelledBy}
           body={
             body ?? 'Alert body type that can run over multiple lines, but should be kept short.'
           }
-          pictogram={pictogram ?? 'warning'}
-          onRequestClose={onRequestClose ?? toggleOff}
-          preferredActionLabel={preferredActionLabel ?? 'Save'}
-          onPreferredActionPress={onPreferredActionPress ?? onPressConsole}
           dismissActionLabel={dismissActionLabel}
-          accessibilityLabelledBy={accessibilityLabelledBy}
-          accessibilityLabel={accessibilityLabel}
-          disablePortal
+          onPreferredActionPress={onPreferredActionPress ?? onPressConsole}
+          onRequestClose={onRequestClose ?? toggleOff}
+          pictogram={pictogram ?? 'warning'}
+          preferredActionLabel={preferredActionLabel ?? 'Save'}
+          testID={testID}
+          title={title ?? 'Alert title'}
+          visible={externalVisible ?? visible}
         />
       </>
     );

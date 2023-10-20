@@ -27,14 +27,14 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
 
     const horizontalContent = (
       <HStack
+        alignItems="center"
         gap={1}
         justifyContent="space-between"
-        alignItems="center"
         spacingHorizontal={3}
         spacingVertical={3}
         testID={testID}
       >
-        <VStack gap={2} width="70%" alignItems="flex-start">
+        <VStack alignItems="flex-start" gap={2} width="70%">
           <VStack gap={1} spacingTop={media ? 0 : 2}>
             <TextHeadline as="h3">{title}</TextHeadline>
             <TextLabel2 as="p" color="foregroundMuted">

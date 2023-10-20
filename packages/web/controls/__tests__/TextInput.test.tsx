@@ -11,13 +11,13 @@ describe('TextInput', () => {
     expect(
       await renderA11y(
         <TextInput
-          label="Text"
-          helperText="Text"
-          placeholder="Text"
-          start={<TextTitle1 as="h1">Node</TextTitle1>}
-          end={<TextTitle1 as="h1">Node</TextTitle1>}
           accessibilityHint="Text"
           accessibilityLabel="Text"
+          end={<TextTitle1 as="h1">Node</TextTitle1>}
+          helperText="Text"
+          label="Text"
+          placeholder="Text"
+          start={<TextTitle1 as="h1">Node</TextTitle1>}
         />,
       ),
     ).toHaveNoViolations();
@@ -25,7 +25,7 @@ describe('TextInput', () => {
 
   it('renders an input', () => {
     const value = 'Example value';
-    render(<TextInput value={value} onChange={jest.fn()} />);
+    render(<TextInput onChange={jest.fn()} value={value} />);
     expect(screen.getByRole('textbox')).toHaveValue(value);
   });
 
@@ -136,7 +136,7 @@ describe('TextInput', () => {
   it('calls onFocus and onBlur when input is focused / blurred', () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
-    render(<TextInput onFocus={onFocus} onBlur={onBlur} />);
+    render(<TextInput onBlur={onBlur} onFocus={onFocus} />);
     expect(onFocus).not.toHaveBeenCalled();
     expect(onBlur).not.toHaveBeenCalled();
     fireEvent.focus(screen.getByRole('textbox'));
@@ -161,14 +161,14 @@ describe('TextInput', () => {
   it('focuses input when end node is pressed', () => {
     const onFocus = jest.fn();
     const endNodeText = 'End';
-    render(<TextInput onFocus={onFocus} end={<TextTitle1 as="h1">{endNodeText}</TextTitle1>} />);
+    render(<TextInput end={<TextTitle1 as="h1">{endNodeText}</TextTitle1>} onFocus={onFocus} />);
     expect(onFocus).not.toHaveBeenCalled();
     fireEvent.click(screen.getByText(endNodeText));
     expect(onFocus).toHaveBeenCalledTimes(1);
   });
 
   it('Generates accessible id for screen reader to read label if label exists', () => {
-    render(<TextInput label="textinput" inputNode={<input data-testid="internal-input" />} />);
+    render(<TextInput inputNode={<input data-testid="internal-input" />} label="textinput" />);
 
     expect(screen.getByTestId('internal-input')).toHaveAttribute(
       'id',
@@ -183,7 +183,7 @@ describe('TextInput', () => {
   });
 
   it('Generates accessibleHint mapping if helperText exists', () => {
-    render(<TextInput testID="textinput-testid" label="textinput" helperText="success" />);
+    render(<TextInput helperText="success" label="textinput" testID="textinput-testid" />);
 
     expect(screen.getByTestId('textinput-testid')).toHaveAttribute(
       'aria-describedby',
@@ -192,7 +192,7 @@ describe('TextInput', () => {
   });
 
   it('accessibilityHint is undefined if label does not exist', () => {
-    render(<TextInput testID="textinput-testid" label="textinput" />);
+    render(<TextInput label="textinput" testID="textinput-testid" />);
 
     expect(screen.getByTestId('textinput-testid')).not.toHaveAttribute('aria-describedby');
   });

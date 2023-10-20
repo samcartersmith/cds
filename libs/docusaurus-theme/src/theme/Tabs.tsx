@@ -145,13 +145,13 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
   return (
     <VStack ref={wrapperRef}>
       <TabNavigation
-        variant={variant}
-        value={selectedValue ?? ''}
         onChange={handleTabChange}
         tabs={values.map((item) => ({
           id: item.value,
           label: item.label ?? item.value,
         }))}
+        value={selectedValue ?? ''}
+        variant={variant}
       />
       <Spacer vertical={spacerHeight} />
       {children

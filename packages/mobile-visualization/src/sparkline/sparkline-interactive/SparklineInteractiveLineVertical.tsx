@@ -111,7 +111,7 @@ export const SparklineInteractiveLineVertical = memo(
     }, [markerOpacity]);
 
     return (
-      <RNAnimated.View style={rootStyle} pointerEvents="none">
+      <RNAnimated.View pointerEvents="none" style={rootStyle}>
         <SparklineInteractiveDottedLine color={color} showHoverDate={showHoverDate} />
       </RNAnimated.View>
     );

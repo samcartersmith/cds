@@ -31,7 +31,7 @@ export const Page = memo(function CMS({ fallback, ...props }: CMSProps) {
   if (isLoading) {
     return (
       <Box alignItems="center" justifyContent="center">
-        <Spinner size={5} color="primary" />
+        <Spinner color="primary" size={5} />
       </Box>
     );
   }
@@ -59,7 +59,7 @@ export const Page = memo(function CMS({ fallback, ...props }: CMSProps) {
   };
 
   return (
-    <CMSProvider spaceId={space} locale="en" onError={handleError} components={componentsMap}>
+    <CMSProvider components={componentsMap} locale="en" onError={handleError} spaceId={space}>
       {renderPage()}
     </CMSProvider>
   );

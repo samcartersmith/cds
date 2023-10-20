@@ -31,7 +31,7 @@ const Child = () => {
       <TextBody as="p" color="secondary">
         ClassName value at nested ThemeProvider parent level: {className}
       </TextBody>
-      <IconButton name="caretDown" accessibilityLabel="Test" />
+      <IconButton accessibilityLabel="Test" name="caretDown" />
     </VStack>
   );
 };

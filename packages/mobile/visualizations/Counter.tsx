@@ -14,7 +14,7 @@ export const Counter = ({ startNum, endNum, renderNum, durationInMillis }: Count
   }, [renderNum]);
 
   return (
-    <Box justifyContent="center" alignSelf="flex-start">
+    <Box alignSelf="flex-start" justifyContent="center">
       <View style={styles.hidden}>{renderFunction(endNum)}</View>
       <View style={styles.visible}>{renderFunction(count)}</View>
     </Box>

@@ -28,18 +28,18 @@ const LandingPageCategoryItem = memo(function LandingPageCategoryItem({
   return (
     <Box width="100%">
       <CardBody
-        title={title}
+        actionLabel={actionLabel}
         description={description}
-        mediaPlacement="above"
+        justifyContent="space-between"
         media={
           <Box spacingStart={3}>
             {pictogram && <Pictogram name={pictogram} />}
             {spotSquare && <SpotSquare name={spotSquare} />}
           </Box>
         }
-        actionLabel={actionLabel}
-        justifyContent="space-between"
+        mediaPlacement="above"
         onActionPress={handlePress}
+        title={title}
       />
     </Box>
   );

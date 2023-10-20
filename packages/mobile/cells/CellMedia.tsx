@@ -29,11 +29,11 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   if (props.type === 'icon') {
     content = (
       <Icon
-        size="s"
-        name={props.name}
-        color={props.color ?? 'foreground'}
-        accessibilityLabel={props.accessibilityLabel}
         accessibilityHint={props.accessibilityHint}
+        accessibilityLabel={props.accessibilityLabel}
+        color={props.color ?? 'foreground'}
+        name={props.name}
+        size="s"
       />
     );
   }
@@ -41,14 +41,14 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   if (props.type === 'asset' || props.type === 'avatar') {
     content = (
       <RemoteImage
-        accessibilityLabel={props.accessibilityLabel ?? props.title}
+        shouldApplyDarkModeEnhacements
         accessibilityHint={props.accessibilityHint}
-        source={getSource(props.source, props.cache)}
+        accessibilityLabel={props.accessibilityLabel ?? props.title}
+        height={size}
         resizeMode="cover"
         shape="circle"
+        source={getSource(props.source, props.cache)}
         width={size}
-        height={size}
-        shouldApplyDarkModeEnhacements
       />
     );
   }
@@ -57,13 +57,13 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
     size = imageSizeScaled;
     content = (
       <RemoteImage
-        accessibilityLabel={props.accessibilityLabel ?? props.title}
         accessibilityHint={props.accessibilityHint}
-        source={getSource(props.source, props.cache)}
+        accessibilityLabel={props.accessibilityLabel ?? props.title}
+        height={size}
         resizeMode="contain"
         shape="squircle"
+        source={getSource(props.source, props.cache)}
         width={size}
-        height={size}
       />
     );
   }
@@ -84,11 +84,11 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
 
   return (
     <Box
-      width={size}
-      height={size}
       alignItems="center"
+      height={size}
       justifyContent="center"
       testID={props.testID}
+      width={size}
     >
       {content}
     </Box>

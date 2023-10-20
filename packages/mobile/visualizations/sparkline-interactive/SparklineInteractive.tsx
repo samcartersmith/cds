@@ -50,7 +50,7 @@ const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallb
   return (
     <ThemeProvider name="sparkline-fallback" palette={sparklinePalette}>
       <Box alignItems="center" justifyContent="center">
-        <Lottie autoplay height="100%" source={source} loop />
+        <Lottie autoplay loop height="100%" source={source} />
       </Box>
     </ThemeProvider>
   );
@@ -231,24 +231,24 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     <Animated.View style={style}>
       {header}
       <SparklineInteractivePanGestureHandler
+        disabled={disableScrubbing}
+        getMarker={getMarker}
+        onScrub={handleScrub}
         onScrubEnd={handleScrubEnd}
         onScrubStart={handleScrubStart}
-        getMarker={getMarker}
         selectedPeriod={selectedPeriod}
-        disabled={disableScrubbing}
-        onScrub={handleScrub}
       >
         {!!formatHoverDate && (
           <SparklineInteractiveHoverDate
-            shouldTakeUpHeight={hideMinMaxLabel}
-            formatHoverDate={formatHoverDate}
             ref={chartHoverTextInputRef}
+            formatHoverDate={formatHoverDate}
+            shouldTakeUpHeight={hideMinMaxLabel}
           />
         )}
         {!hideMinMaxLabel && (
           <SparklineInteractiveMinMax
-            formatMinMaxLabel={formatMinMaxLabel}
             dataPoint={max}
+            formatMinMaxLabel={formatMinMaxLabel}
             xFunction={xFunction}
           />
         )}
@@ -266,15 +266,15 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
                   showHoverDate={!!formatHoverDate}
                 />
                 <SparklineInteractivePaths
-                  strokeColor={color}
-                  showHoverData={isScrubbing}
-                  path={path}
                   area={area}
-                  selectedPeriod={selectedPeriod}
-                  fill={fill}
-                  yAxisScalingFactor={yAxisScalingFactor}
                   compact={compact}
+                  fill={fill}
                   hoverData={hoverData}
+                  path={path}
+                  selectedPeriod={selectedPeriod}
+                  showHoverData={isScrubbing}
+                  strokeColor={color}
+                  yAxisScalingFactor={yAxisScalingFactor}
                 />
               </>
             )}
@@ -282,8 +282,8 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
         </View>
         {!hideMinMaxLabel && (
           <SparklineInteractiveMinMax
-            formatMinMaxLabel={formatMinMaxLabel}
             dataPoint={min}
+            formatMinMaxLabel={formatMinMaxLabel}
             xFunction={xFunction}
           />
         )}
@@ -336,16 +336,16 @@ function BelowChartWithGeneric<Period extends string>({
   return (
     <View style={style}>
       <SparklineInteractiveMarkerDates
-        getMarker={getMarker}
         formatDate={formatDate}
+        getMarker={getMarker}
         selectedPeriod={selectedPeriod}
         timePeriodGutter={timePeriodGutter}
       />
       <SparklineInteractivePeriodSelector
+        color={color}
         periods={periods}
         selectedPeriod={selectedPeriod}
         setSelectedPeriod={setSelectedPeriod}
-        color={color}
       />
     </View>
   );

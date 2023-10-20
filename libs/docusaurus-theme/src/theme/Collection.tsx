@@ -14,10 +14,10 @@ const Collection = memo(function Collection({
 }: CollectionProps) {
   return (
     <HStack
-      spacingVertical={spacingVertical}
+      alignItems="flex-start"
       flexWrap="wrap"
       justifyContent="flex-start"
-      alignItems="flex-start"
+      spacingVertical={spacingVertical}
       {...props}
     >
       {children}

@@ -42,15 +42,15 @@ export const AdopterCdsRecommendation = ({
         return (
           <BetaCell
             key={`${componentName}-${item}`}
-            priority="start"
+            endAccessory={<Icon color="foregroundMuted" name="externalLink" size="s" />}
             offsetHorizontal={1}
+            onPress={handleOnPress(item)}
+            priority="start"
             start={
               <TextLabel2 as="p" overflow="truncate">
                 {item}
               </TextLabel2>
             }
-            onPress={handleOnPress(item)}
-            endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
           />
         );
       })}

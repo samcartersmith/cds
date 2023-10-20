@@ -63,15 +63,15 @@ function SidebarItemLink({
   return (
     <VStack>
       <Pressable
-        as={Link}
         key={item.label}
+        noScaleOnPress
         transparentWhileInactive
+        as={Link}
         backgroundColor="background"
         borderRadius="roundedLarge"
         to={item.href}
-        noScaleOnPress
       >
-        <HStack gap={2} spacingHorizontal={2} alignItems="center" justifyContent="space-between">
+        <HStack alignItems="center" gap={2} justifyContent="space-between" spacingHorizontal={2}>
           <TextBody as="p" color={isActive ? 'primary' : 'foregroundMuted'} spacingVertical={1}>
             {item.label}
           </TextBody>
@@ -103,30 +103,30 @@ function CollapsibleCategory({
   return (
     <VStack spacingHorizontal={0}>
       <Pressable
+        noScaleOnPress
+        transparentWhileInactive
         backgroundColor="background"
         borderRadius="roundedLarge"
         onPress={toggle}
-        noScaleOnPress
-        transparentWhileInactive
       >
         <HStack
-          width="100%"
-          gap={1}
           alignItems="center"
+          flexWrap="wrap"
+          gap={1}
           justifyContent="space-between"
           spacingHorizontal={2}
-          flexWrap="wrap"
+          width="100%"
         >
           {parentLevel === 0 && level === 1 ? (
-            <TextCaption as="p" spacingVertical={2} noWrap overflow="truncate">
+            <TextCaption noWrap as="p" overflow="truncate" spacingVertical={2}>
               {item.label}
             </TextCaption>
           ) : (
-            <TextBody as="p" color="foregroundMuted" spacingVertical={1} noWrap overflow="truncate">
+            <TextBody noWrap as="p" color="foregroundMuted" overflow="truncate" spacingVertical={1}>
               {item.label}
             </TextBody>
           )}
-          <HStack gap={2} alignItems="center" justifyContent="space-between">
+          <HStack alignItems="center" gap={2} justifyContent="space-between">
             {typeof item.customProps?.tag === 'string' ? (
               <JSDocTag variant={item.customProps.tag} />
             ) : null}
@@ -135,17 +135,17 @@ function CollapsibleCategory({
         </HStack>
       </Pressable>
       <Collapsible collapsed={collapsed}>
-        <VStack width="100%" spacingHorizontal={parentLevel}>
+        <VStack spacingHorizontal={parentLevel} width="100%">
           {item.items.map((val, index) => (
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             <DocSidebarItem
               // eslint-disable-next-line react/no-array-index-key
               key={`${level}-${index}`}
+              activePath={activePath}
               index={index}
+              item={val}
               level={addLevel(level, 1)}
               parentLevel={level}
-              activePath={activePath}
-              item={val}
             />
           ))}
         </VStack>

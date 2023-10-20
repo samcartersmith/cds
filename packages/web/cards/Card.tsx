@@ -75,14 +75,14 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
 
     const content = (
       <VStack
-        borderRadius={borderRadius}
         background={linkable ? undefined : bg}
-        pin={linkable ? undefined : pin}
+        borderRadius={borderRadius}
         elevation={getElevation(linkable ? undefined : elevation)}
-        width={linkable ? undefined : width}
         height={linkable ? undefined : height}
         overflow="hidden"
+        pin={linkable ? undefined : pin}
         testID={linkable ? undefined : testID}
+        width={linkable ? undefined : width}
         {...props}
       >
         {children}
@@ -91,23 +91,23 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
 
     return linkable ? (
       <Pressable
+        accessibilityHint={accessibilityHint}
         accessibilityLabel={accessibilityLabel}
         accessibilityLabelledBy={accessibilityLabelledBy}
-        accessibilityHint={accessibilityHint}
         backgroundColor={bg}
-        borderRadius={borderRadius}
         borderColor={borderColor}
+        borderRadius={borderRadius}
         borderWidth={getBorderWidth('card')}
-        elevation={getElevation(elevation)}
-        onPress={onPress}
-        onKeyPress={onKeyPress}
         className={cx(cardPressableStyles, pinStyles)}
-        to={to}
-        target={target}
-        href={href}
-        width={width}
+        elevation={getElevation(elevation)}
         height={height}
+        href={href}
+        onKeyPress={onKeyPress}
+        onPress={onPress}
+        target={target}
         testID={testID}
+        to={to}
+        width={width}
       >
         {content}
       </Pressable>

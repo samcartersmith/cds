@@ -11,7 +11,7 @@ export const Normal = () => {
   const [checked, { toggle }] = useToggler();
 
   return (
-    <Radio name="normal-radio" checked={checked} onChange={toggle}>
+    <Radio checked={checked} name="normal-radio" onChange={toggle}>
       Normal
     </Radio>
   );
@@ -21,7 +21,7 @@ export const Dense = () => {
   const [checked, { toggle }] = useToggler();
   return (
     <ThemeProvider scale="xSmall">
-      <Radio name="dense-radio" checked={checked} onChange={toggle}>
+      <Radio checked={checked} name="dense-radio" onChange={toggle}>
         Dense
       </Radio>
     </ThemeProvider>
@@ -31,7 +31,7 @@ export const Dense = () => {
 export const DisabledUnselected = () => <Radio disabled>Disabled unselected</Radio>;
 
 export const DisabledSelected = () => (
-  <Radio disabled checked>
+  <Radio checked disabled>
     Disabled selected
   </Radio>
 );
@@ -72,39 +72,39 @@ export const Group = () => {
         id="currency-radio-group"
         label={<TextHeadline as="h1">Choose a currency</TextHeadline>}
         name="radio-group1"
-        selectedValue={group1}
         onChange={setGroup1}
         options={options1}
+        selectedValue={group1}
       />
       <TextHeadline as="h1" id="choose-a-mascot">
         Choose a mascot
       </TextHeadline>
       <RadioGroup
-        id="mascot-radio-group"
         aria-labelledby="choose-a-mascot"
+        id="mascot-radio-group"
         name="radio-group2"
-        selectedValue={group2}
         onChange={setGroup2}
         options={options2}
+        selectedValue={group2}
       />
       <RadioGroup
+        direction="horizontal"
+        gap={2}
         id="horizontal-radio-group"
         label={<TextHeadline as="h1">Choose a currency</TextHeadline>}
         name="radio-group3"
-        selectedValue={group3}
         onChange={setGroup3}
         options={options1}
-        gap={2}
-        direction="horizontal"
+        selectedValue={group3}
       />
       <TextHeadline as="h1">Select a dish to order</TextHeadline>
       <RadioGroup
+        direction="horizontal"
+        gap={2}
         name="radio-group4"
         onChange={setGroup4}
-        selectedValue={group4}
         options={options3}
-        gap={2}
-        direction="horizontal"
+        selectedValue={group4}
       />
     </>
   );

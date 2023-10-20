@@ -77,7 +77,7 @@ export const FeedCard = ({
   ...props
 }: FeedCardProps & Omit<ThemeProviderProps, 'display' | 'palette'>) => {
   return (
-    <ThemeProvider display="contents" spectrum={spectrum} scale={scale}>
+    <ThemeProvider display="contents" scale={scale} spectrum={spectrum}>
       <FeedCardComponent
         background
         {...feedCards[0]}

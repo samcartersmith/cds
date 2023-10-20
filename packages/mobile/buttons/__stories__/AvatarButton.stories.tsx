@@ -19,15 +19,15 @@ const FallbackColoredForAvatarButtonBase = ({
   ...props
 }: Pick<AvatarButtonProps, 'shape' | 'loading' | 'compact'> & { dense?: boolean }) => {
   return (
-    <HStack gap={dense ? 0.5 : 2} alignItems="center" flexWrap="wrap">
+    <HStack alignItems="center" flexWrap="wrap" gap={dense ? 0.5 : 2}>
       {names.map((name, idx) => {
         const avatarFallbackColor = getAvatarFallbackColor(name);
         return (
           <AvatarButton
             key={name}
             alt=""
-            name={name}
             colorScheme={idx === 0 ? 'blue' : avatarFallbackColor}
+            name={name}
             {...props}
           />
         );
@@ -50,26 +50,26 @@ const AvatarButtonScreen = () => {
       </View>
       <Example title="Normal">
         <VStack gap={2}>
-          <HStack gap={2} alignItems="center" flexWrap="wrap">
-            <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} />
-            <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} compact />
+          <HStack alignItems="center" flexWrap="wrap" gap={2}>
+            <AvatarButton alt="Sneezy" onPress={handlePress} src={avatarImageUrl} />
+            <AvatarButton compact alt="Sneezy" onPress={handlePress} src={avatarImageUrl} />
           </HStack>
-          <HStack gap={2} alignItems="center" flexWrap="wrap">
+          <HStack alignItems="center" flexWrap="wrap" gap={2}>
             <AvatarButton alt="Sneezy" onPress={handlePress} />
-            <AvatarButton alt="Sneezy" onPress={handlePress} compact />
+            <AvatarButton compact alt="Sneezy" onPress={handlePress} />
           </HStack>
         </VStack>
       </Example>
 
       <Example title="Loading">
         <VStack gap={2}>
-          <HStack gap={2} alignItems="center" flexWrap="wrap">
-            <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} loading />
-            <AvatarButton alt="Sneezy" src={avatarImageUrl} onPress={handlePress} loading compact />
+          <HStack alignItems="center" flexWrap="wrap" gap={2}>
+            <AvatarButton loading alt="Sneezy" onPress={handlePress} src={avatarImageUrl} />
+            <AvatarButton compact loading alt="Sneezy" onPress={handlePress} src={avatarImageUrl} />
           </HStack>
-          <HStack gap={2} alignItems="center" flexWrap="wrap">
-            <AvatarButton alt="Sneezy" onPress={handlePress} loading />
-            <AvatarButton alt="Sneezy" onPress={handlePress} loading compact />
+          <HStack alignItems="center" flexWrap="wrap" gap={2}>
+            <AvatarButton loading alt="Sneezy" onPress={handlePress} />
+            <AvatarButton compact loading alt="Sneezy" onPress={handlePress} />
           </HStack>
         </VStack>
       </Example>

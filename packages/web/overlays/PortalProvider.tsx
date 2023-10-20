@@ -55,24 +55,24 @@ const PortalHost = memo(() => {
   return createPortal(
     <>
       <div
+        data-testid="portal-modal-container"
         id={modalContainerId}
         style={{ zIndex: zIndex.overlays.modal }}
-        data-testid="portal-modal-container"
       />
       <div
+        data-testid="portal-toast-container"
         id={toastContainerId}
         style={{ zIndex: zIndex.overlays.toast }}
-        data-testid="portal-toast-container"
       />
       <div
+        data-testid="portal-alert-container"
         id={alertContainerId}
         style={{ zIndex: zIndex.overlays.alert }}
-        data-testid="portal-alert-container"
       />
       <div
+        data-testid="portal-tooltip-container"
         id={tooltipContainerId}
         style={{ zIndex: zIndex.overlays.tooltip }}
-        data-testid="portal-tooltip-container"
       />
     </>,
     portalRoot,

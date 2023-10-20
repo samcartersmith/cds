@@ -25,10 +25,10 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   if (props.type === 'icon') {
     content = (
       <Icon
-        size="s"
-        name={props.name}
-        color={props.color ?? 'foreground'}
         accessibilityLabel={props.accessibilityLabel}
+        color={props.color ?? 'foreground'}
+        name={props.name}
+        size="s"
       />
     );
   }
@@ -43,10 +43,10 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
     content = (
       <RemoteImage
         alt={props.accessibilityLabel ?? props.title}
-        source={String(props.source)}
-        shape={isImage ? 'squircle' : 'circle'}
-        width={size}
         height={size}
+        shape={isImage ? 'squircle' : 'circle'}
+        source={String(props.source)}
+        width={size}
       />
     );
   }
@@ -66,11 +66,11 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
 
   return (
     <Box
-      width={size}
-      height={size}
       alignItems="center"
+      height={size}
       justifyContent="center"
       testID={props.testID}
+      width={size}
     >
       {content}
     </Box>

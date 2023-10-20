@@ -68,33 +68,33 @@ export const SelectTrigger = memo(
 
     return (
       <SelectStack
-        compact={compact}
-        label={label}
-        helperText={helperText}
-        disabled={disabled}
-        variant={variant}
-        focused={triggerHasFocus}
         ref={ref}
-        accessibilityLabelId={accessibilityLabelId}
         accessibilityDescriptionId={accessibilityDescriptionId}
+        accessibilityLabelId={accessibilityLabelId}
+        compact={compact}
+        disabled={disabled}
+        focused={triggerHasFocus}
+        helperText={helperText}
+        label={label}
+        variant={variant}
       >
         <PressableOpacity
-          onPress={onPress}
-          width="100%"
           noScaleOnPress
           className={pressableOverrides}
+          onPress={onPress}
           tabIndex={0}
+          width="100%"
           {...props}
         >
-          <HStack minHeight={minHeight} width="100%" minWidth={0} spacingStart={startNode ? 0 : 2}>
+          <HStack minHeight={minHeight} minWidth={0} spacingStart={startNode ? 0 : 2} width="100%">
             {!!startNode && (
               <HStack alignItems="center" justifyContent="center" minWidth={0}>
                 {startNode}
               </HStack>
             )}
             {shouldShowCompactLabel ? (
-              <HStack spacingEnd={1} alignItems="center" maxWidth="40%">
-                <InputLabel color={labelTextColor} overflow="truncate" id={accessibilityLabelId}>
+              <HStack alignItems="center" maxWidth="40%" spacingEnd={1}>
+                <InputLabel color={labelTextColor} id={accessibilityLabelId} overflow="truncate">
                   {label}
                 </InputLabel>
               </HStack>
@@ -103,21 +103,21 @@ export const SelectTrigger = memo(
               alignItems="center"
               borderRadius="rounded"
               justifyContent="space-between"
+              minWidth={0}
               spacingVertical={compact ? 1 : 2}
               width="100%"
-              minWidth={0}
             >
               <HStack
                 flexGrow={1}
                 flexShrink={1}
-                minWidth={0}
                 justifyContent={shouldShowCompactLabel ? 'flex-end' : 'flex-start'}
+                minWidth={0}
               >
                 <TextBody
+                  align={shouldShowCompactLabel ? 'end' : 'start'}
                   as="p"
                   color={sanitizedValue ? 'foreground' : 'foregroundMuted'}
                   overflow="truncate"
-                  align={shouldShowCompactLabel ? 'end' : 'start'}
                 >
                   {sanitizedValue ?? placeholder ?? (!compact ? label : null)}
                 </TextBody>

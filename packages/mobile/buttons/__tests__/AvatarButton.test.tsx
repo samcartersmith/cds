@@ -8,7 +8,7 @@ jest.mock('../../utils/debounce');
 
 describe('AvatarButton', () => {
   it('passes a11y', () => {
-    render(<AvatarButton testID="avatar-button" alt="Sneezy" />);
+    render(<AvatarButton alt="Sneezy" testID="avatar-button" />);
 
     expect(screen.getByTestId('avatar-button')).toBeAccessible();
   });
@@ -28,9 +28,9 @@ describe('AvatarButton', () => {
   it('renders children Avatar', () => {
     render(
       <AvatarButton
-        testID="avatar-button"
-        src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
         alt="Sneezy"
+        src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
+        testID="avatar-button"
       />,
     );
 
@@ -49,7 +49,7 @@ describe('AvatarButton', () => {
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
     (debounce as jest.Mock).mockImplementation(() => spy);
-    render(<AvatarButton testID="avatar-button" alt="Sneezy" onPress={spy} />);
+    render(<AvatarButton alt="Sneezy" onPress={spy} testID="avatar-button" />);
 
     fireEvent.press(screen.getByTestId('avatar-button'));
 

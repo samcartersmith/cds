@@ -14,15 +14,15 @@ export const Basic = () => {
     <>
       <Button onPress={toggleOn}>Open Alert</Button>
       <FullscreenAlert
-        visible={visible}
-        onRequestClose={toggleOff}
-        title="Connection trouble"
         body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
-        heroSquare="errorApp500"
-        preferredActionLabel="Try again"
-        onPreferredActionPress={toggleOff}
         dismissActionLabel="Cancel"
+        heroSquare="errorApp500"
         onDismissActionPress={toggleOff}
+        onPreferredActionPress={toggleOff}
+        onRequestClose={toggleOff}
+        preferredActionLabel="Try again"
+        title="Connection trouble"
+        visible={visible}
       />
     </>
   );
@@ -35,13 +35,13 @@ export const SingleAction = () => {
     <>
       <Button onPress={toggleOn}>Open Alert</Button>
       <FullscreenAlert
-        visible={visible}
-        onRequestClose={toggleOff}
-        title="Connection trouble"
         body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
         heroSquare="errorApp500"
-        preferredActionLabel="Try again"
         onPreferredActionPress={toggleOff}
+        onRequestClose={toggleOff}
+        preferredActionLabel="Try again"
+        title="Connection trouble"
+        visible={visible}
       />
     </>
   );

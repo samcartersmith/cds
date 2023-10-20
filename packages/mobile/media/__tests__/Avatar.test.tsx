@@ -48,8 +48,8 @@ describe('Avatar', () => {
       render(
         <Avatar
           alt=""
-          size={size}
           name="TestName"
+          size={size}
           src="https://images.coinbase.com/avatar?s=56"
           testID="avatar"
         />,
@@ -120,7 +120,7 @@ describe('Avatar', () => {
     expect(box).toBeTruthy();
   });
   it('when passed a name prop and no src is provided it shows a fallback color and first letter of name prop', async () => {
-    render(<Avatar alt="" name="TestName" colorScheme="pink" testID="avatar" />);
+    render(<Avatar alt="" colorScheme="pink" name="TestName" testID="avatar" />);
 
     const pinkBackgroundColor = paletteValueToHex('pink60', 'light');
 

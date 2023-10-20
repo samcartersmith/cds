@@ -52,7 +52,7 @@ export const ComponentUsageTable = memo(() => {
                 <Link to={`/components/${kebabCase(name)}`}>{name}</Link>
               </TableCell>
               <TableCell alignItems="flex-end">
-                <TextBody as="span" color="foregroundMuted" tabularNumbers>
+                <TextBody tabularNumbers as="span" color="foregroundMuted">
                   {new Intl.NumberFormat('en-us').format(totalInstances)}
                 </TextBody>
               </TableCell>

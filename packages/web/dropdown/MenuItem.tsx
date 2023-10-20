@@ -41,12 +41,12 @@ export const MenuItem = memo(
       );
       return (
         <Pressable
-          backgroundColor="transparent"
-          noScaleOnPress
-          role="menuitem"
           ref={ref}
+          noScaleOnPress
+          backgroundColor="transparent"
           className={insetFocusRing}
           onPress={handlePress}
+          role="menuitem"
           tabIndex={tabIndex ?? -1}
           {...props}
         >

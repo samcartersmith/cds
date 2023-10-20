@@ -30,5 +30,5 @@ export const FiatIcon: FunctionComponent<React.PropsWithChildren<FiatIconProps>>
     return null;
   }
 
-  return <Icon size={size} name={iconName} bordered={size === 'l'} testID={testID} />;
+  return <Icon bordered={size === 'l'} name={iconName} size={size} testID={testID} />;
 };

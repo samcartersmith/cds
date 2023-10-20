@@ -36,7 +36,7 @@ const ContentCellScreen = () => {
         <WithMedia />
       </Example>
 
-      <Example title="Example screen" spacingHorizontal={3}>
+      <Example spacingHorizontal={3} title="Example screen">
         <Box offsetHorizontal={3}>
           <PressableContent />
         </Box>

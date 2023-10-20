@@ -11,21 +11,21 @@ export const CellAccessory = memo(function CellAccessory({ type, ...props }: Cel
   let icon;
 
   if (type === 'more') {
-    icon = <Icon name="more" size="s" color="foregroundMuted" />;
+    icon = <Icon color="foregroundMuted" name="more" size="s" />;
   }
 
   if (type === 'arrow') {
     icon = (
       <Icon
+        color="foregroundMuted"
         name={I18nManager.isRTL ? 'caretLeft' : 'caretRight'}
         size="s"
-        color="foregroundMuted"
       />
     );
   }
 
   if (type === 'selected') {
-    icon = <Icon name="checkmark" size="s" color="primary" />;
+    icon = <Icon color="primary" name="checkmark" size="s" />;
   }
 
   if (!icon) {

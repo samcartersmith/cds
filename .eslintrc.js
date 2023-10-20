@@ -109,5 +109,12 @@ module.exports = {
     '@cbhq/ts-singular-type-name': 'off',
     '@typescript-eslint/await-thenable': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
+    'react/jsx-sort-props': [
+      'warn',
+      {
+        shorthandFirst: true,
+        reservedFirst: true,
+      },
+    ],
   },
 };

@@ -41,12 +41,12 @@ export const IconButtonSheet = memo(() => {
       <HStack alignSelf="flex-start">
         {defaultOptions.map((option, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <Box flexDirection="row" key={index} spacingEnd={10}>
+          <Box key={index} flexDirection="row" spacingEnd={10}>
             <IconButton
-              variant={option.variant}
-              transparent={false}
               accessibilityLabel={option.iconName}
               name={option.iconName}
+              transparent={false}
+              variant={option.variant}
             />
             <p style={{ paddingTop: 5, paddingLeft: 10 }}>{`${capitalize(option.variant)}`}</p>
           </Box>
@@ -55,12 +55,12 @@ export const IconButtonSheet = memo(() => {
       <HStack alignSelf="flex-start" spacingVertical={3}>
         {transparentOptions.map((option, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <Box flexDirection="row" key={index} spacingEnd={2}>
+          <Box key={index} flexDirection="row" spacingEnd={2}>
             <IconButton
-              variant={option.variant}
               transparent
               accessibilityLabel={option.iconName}
               name={option.iconName}
+              variant={option.variant}
             />
             <p style={{ paddingTop: 5, paddingLeft: 10 }}>
               {`${capitalize(option.variant)} Transparent`}

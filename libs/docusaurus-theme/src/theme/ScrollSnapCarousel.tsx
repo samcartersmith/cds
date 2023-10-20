@@ -106,37 +106,37 @@ const ScrollSnapCarousel = memo(function ScrollSnapCarousel({
     >
       {(currentCards.length > 1 || dismissableCards) && (
         <HStack
-          spacingBottom={1}
-          offsetHorizontal={1}
-          offsetTop={1}
           justifyContent={
             currentCards.length === 1 && dismissableCards ? 'flex-end' : 'space-between'
           }
+          offsetHorizontal={1}
+          offsetTop={1}
+          spacingBottom={1}
         >
           {currentCards.length > 1 && (
             <HStack gap={1}>
               <IconButton
+                transparent
+                disabled={backArrowDisabled}
                 name="backArrow"
                 onPress={handleBackPress}
-                disabled={backArrowDisabled}
-                transparent
               />
               <IconButton
+                transparent
+                disabled={forwardArrowDisabled}
                 name="forwardArrow"
                 onPress={handleForwardPress}
-                disabled={forwardArrowDisabled}
-                transparent
               />
             </HStack>
           )}
-          {dismissableCards && <IconButton name="close" onPress={handleClosePress} transparent />}
+          {dismissableCards && <IconButton transparent name="close" onPress={handleClosePress} />}
         </HStack>
       )}
       <HStack
-        dangerouslySetClassName="scroll-snap-carousel"
         ref={carouselRef}
-        overflow="scroll"
+        dangerouslySetClassName="scroll-snap-carousel"
         onScroll={handleScroll}
+        overflow="scroll"
       >
         {renderCards(currentCards)}
       </HStack>

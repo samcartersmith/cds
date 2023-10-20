@@ -14,21 +14,21 @@ const CAPTION_SPACING = { spacing: 3 } as const;
 export const SpacingExamples = () => {
   return (
     <VStack gap={2}>
-      <Table variant="ruled" bordered>
+      <Table bordered variant="ruled">
         <TableCaption>Default Spacing</TableCaption>
       </Table>
-      <Table variant="ruled" cellSpacing={TABLE_SPACING} bordered>
+      <Table bordered cellSpacing={TABLE_SPACING} variant="ruled">
         <TableCaption outerSpacing={CAPTION_SPACING}>
           {'Outer Spacing: { spacing: 3 }'}
         </TableCaption>
       </Table>
-      <Table variant="ruled" cellSpacing={TABLE_SPACING} bordered>
+      <Table bordered cellSpacing={TABLE_SPACING} variant="ruled">
         <TableCaption innerSpacing={CAPTION_SPACING}>
           {'Inner Spacing: { spacing: 3 }'}
         </TableCaption>
       </Table>
-      <Table variant="ruled" cellSpacing={TABLE_SPACING} bordered>
-        <TableCaption outerSpacing={CAPTION_SPACING} innerSpacing={CAPTION_SPACING}>
+      <Table bordered cellSpacing={TABLE_SPACING} variant="ruled">
+        <TableCaption innerSpacing={CAPTION_SPACING} outerSpacing={CAPTION_SPACING}>
           {'Outer Spacing: { spacing: 3 } + Inner Spacing: { spacing: 3 }'}
         </TableCaption>
       </Table>

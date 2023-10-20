@@ -83,52 +83,51 @@ export const Toast = memo(
       }, [action, handleClose]);
 
       return (
-        <ThemeProvider name="toast" scale={DEFAULT_SCALE} palette={toastPalette}>
+        <ThemeProvider name="toast" palette={toastPalette} scale={DEFAULT_SCALE}>
           <ScaleProvider value={DEFAULT_SCALE}>
             <Box
-              spacing={2}
-              position="absolute"
               alignSelf="center"
               bottom={bottomOffset ?? spacing[2]}
-              zIndex={zIndex.overlays.portal}
-              maxWidth="100%"
               dangerouslySetStyle={{
                 // display on android
                 elevation: zIndex.overlays.portal,
               }}
-              // A11y props
+              maxWidth="100%"
+              position="absolute"
+              spacing={2}
+              zIndex={zIndex.overlays.portal}
               {...rest}
               accessibilityRole="alert"
             >
               <HStack
                 animated
-                spacingVertical={1}
-                spacingStart={3}
-                spacingEnd={1}
-                elevation={2}
                 background
-                borderRadius="rounded"
                 alignItems="center"
-                overflow="hidden"
+                borderRadius="rounded"
                 dangerouslySetStyle={{
                   opacity,
                   transform: [{ translateY: bottom }, ...panResponderAnimation],
                 }}
+                elevation={2}
+                overflow="hidden"
+                spacingEnd={1}
+                spacingStart={3}
+                spacingVertical={1}
                 {...panHandlers}
               >
                 <ColorSurge background={variant} />
                 {/* avoid pushing contents off screen */}
-                <Box flexShrink={1} spacingEnd={2} spacingVertical={1} accessible>
+                <Box accessible flexShrink={1} spacingEnd={2} spacingVertical={1}>
                   <TextHeadline>{text}</TextHeadline>
                 </Box>
                 {!!action && (
                   // TODO: remove once fixed globally on mobile
                   <ThemeProvider name="toastAction" palette={toastActionPalette}>
                     <Button
-                      onPress={handleActionPress}
-                      testID={action.testID ?? 'toast-action'}
                       compact
                       transparent
+                      onPress={handleActionPress}
+                      testID={action.testID ?? 'toast-action'}
                     >
                       {action.label}
                     </Button>

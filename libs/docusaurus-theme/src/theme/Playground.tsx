@@ -65,9 +65,9 @@ const Playground = memo(function Playground({
   );
 
   return (
-    <VStack gap={1} spacingBottom={3} dangerouslySetClassName="code-playground">
+    <VStack dangerouslySetClassName="code-playground" gap={1} spacingBottom={3}>
       {/* @ts-expect-error - issue with LiveProvider props */}
-      <LiveProvider code={code} transformCode={transformCode} theme={prismTheme} {...props}>
+      <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
         {!hidePreview && (
           <VStack
             borderRadius="roundedLarge"
@@ -79,31 +79,31 @@ const Playground = memo(function Playground({
           </VStack>
         )}
         {!hideControls && (
-          <HStack gap={0.5} alignItems="center" offsetHorizontal={1}>
+          <HStack alignItems="center" gap={0.5} offsetHorizontal={1}>
             <Pressable
+              noScaleOnPress
+              transparentWhileInactive
               backgroundColor="background"
               borderRadius="roundedLarge"
               onPress={toggle}
-              noScaleOnPress
-              transparentWhileInactive
             >
-              <HStack gap={1} spacing={1} width={112} alignItems="center">
-                <Icon name={collapsed ? 'caretDown' : 'caretUp'} size="xs" color="primary" />
-                <TextCaption transform="none" as="p" color="primary">
+              <HStack alignItems="center" gap={1} spacing={1} width={112}>
+                <Icon color="primary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
+                <TextCaption as="p" color="primary" transform="none">
                   {collapsed ? 'Show code' : 'Hide code'}
                 </TextCaption>
               </HStack>
             </Pressable>
             <Pressable
+              noScaleOnPress
+              transparentWhileInactive
               backgroundColor="background"
               borderRadius="roundedFull"
-              noScaleOnPress
               onPress={handleCopyToClipboard}
-              transparentWhileInactive
             >
-              <HStack gap={1} spacing={1} alignItems="center">
-                <Icon name="copy" size="xs" color="primary" />
-                <TextCaption transform="none" as="p" color="primary">
+              <HStack alignItems="center" gap={1} spacing={1}>
+                <Icon color="primary" name="copy" size="xs" />
+                <TextCaption as="p" color="primary" transform="none">
                   Copy code
                 </TextCaption>
               </HStack>
@@ -111,7 +111,7 @@ const Playground = memo(function Playground({
           </HStack>
         )}
         <Collapsible collapsed={collapsed}>
-          <VStack width="100%" borderRadius="roundedLarge" overflow="hidden">
+          <VStack borderRadius="roundedLarge" overflow="hidden" width="100%">
             <LiveEditor
               className="playground-live-wrapper"
               // @ts-expect-error - issue with LiveEditor props

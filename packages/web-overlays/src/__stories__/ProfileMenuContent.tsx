@@ -59,11 +59,11 @@ type ProfileMenuItemData = {
 const ProfileMenuItem = memo(({ name, label, icon, action }: ProfileMenuItemData) => {
   return (
     <MenuItem value={name}>
-      <HStack flexGrow={1} gap={2} spacingVertical={2} spacingHorizontal={1} alignItems="center">
-        <Box spacingStart={0.5} spacingEnd={0.5}>
+      <HStack alignItems="center" flexGrow={1} gap={2} spacingHorizontal={1} spacingVertical={2}>
+        <Box spacingEnd={0.5} spacingStart={0.5}>
           {icon}
         </Box>
-        <HStack justifyContent="space-between" flexGrow={1} alignItems="center">
+        <HStack alignItems="center" flexGrow={1} justifyContent="space-between">
           {label || <TextHeadline as="p">{name}</TextHeadline>}
           {action}
         </HStack>
@@ -98,15 +98,15 @@ export const ProfileMenuContent = memo(({ data = profileMenuData }: ProfileMenuC
           </TextHeadline>
         ),
         icon: <NavigationIcon name="moon" size="m" />,
-        action: <Switch onChange={handleThemeChange} checked={darkModeEnabled} />,
+        action: <Switch checked={darkModeEnabled} onChange={handleThemeChange} />,
       },
       {
         name: 'Sign out',
         icon: (
           <Icon
+            dangerouslySetColor={palette.negative}
             name="backArrow"
             size="s"
-            dangerouslySetColor={palette.negative}
             spacingHorizontal={0.5}
           />
         ),
@@ -114,15 +114,15 @@ export const ProfileMenuContent = memo(({ data = profileMenuData }: ProfileMenuC
     ];
   }, [darkModeEnabled, handleThemeChange]);
   return (
-    <VStack spacing={1} alignItems="stretch" gap={0} overflow="hidden">
-      <HStack flexGrow={1} gap={2} alignItems="center" spacing={2}>
+    <VStack alignItems="stretch" gap={0} overflow="hidden" spacing={1}>
+      <HStack alignItems="center" flexGrow={1} gap={2} spacing={2}>
         <Avatar
-          src={avatarUri}
-          size="l"
-          alt={name}
-          name={name}
-          colorScheme={avatarColorScheme}
           selected
+          alt={name}
+          colorScheme={avatarColorScheme}
+          name={name}
+          size="l"
+          src={avatarUri}
         />
         <VStack>
           <TextHeadline as="p">{name}</TextHeadline>

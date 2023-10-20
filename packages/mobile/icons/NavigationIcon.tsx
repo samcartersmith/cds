@@ -61,24 +61,24 @@ export const NavigationIcon = memo(function NavigationIcon({
   return (
     <Box
       alignItems="center"
-      justifyContent="center"
-      width={wrapperSize}
       height={wrapperSize}
+      justifyContent="center"
       spacing={spacing}
-      spacingTop={spacingTop}
       spacingBottom={spacingBottom}
-      spacingStart={spacingStart}
       spacingEnd={spacingEnd}
-      spacingVertical={spacingVertical}
       spacingHorizontal={spacingHorizontal}
+      spacingStart={spacingStart}
+      spacingTop={spacingTop}
+      spacingVertical={spacingVertical}
       testID={testID}
+      width={wrapperSize}
     >
       <Text
-        allowFontScaling={false}
-        accessible={!!accessibilityLabel}
-        accessibilityRole="image"
-        accessibilityLabel={accessibilityLabel}
         accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
+        accessibilityRole="image"
+        accessible={!!accessibilityLabel}
+        allowFontScaling={false}
         style={fontStyles as TextStyle}
       >
         {glyph}

@@ -50,7 +50,7 @@ export const NavigationRecipe = () => {
 
   return (
     <PortalProvider>
-      <FeatureFlagProvider frontierColor frontierButton>
+      <FeatureFlagProvider frontierButton frontierColor>
         <HStack>
           <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
             {sidebarItems.map((props, index) => (
@@ -64,17 +64,17 @@ export const NavigationRecipe = () => {
               />
             ))}
             <SidebarMoreMenu
-              onChange={handleMoreMenuChange}
-              value={moreMenuValue}
               active={activeIndex >= sidebarItems.length}
+              onChange={handleMoreMenuChange}
               tooltipContent="More"
+              value={moreMenuValue}
             >
               {moreMenuOptions.map((item) => (
                 <SelectOption
                   key={`sidebar-more-menu-item--${item.title}`}
-                  value={item.title}
                   description={item.title}
                   media={<NavigationIcon name={item.icon} />}
+                  value={item.title}
                 />
               ))}
             </SidebarMoreMenu>
@@ -82,7 +82,7 @@ export const NavigationRecipe = () => {
           <VStack width="100%">
             <NavigationBar
               end={
-                <HStack alignItems="center" justifyContent="flex-end" gap={1}>
+                <HStack alignItems="center" gap={1} justifyContent="flex-end">
                   <AppSwitcher />
                   <UserSwitcher title="Brian" />
                 </HStack>
@@ -91,20 +91,20 @@ export const NavigationRecipe = () => {
               <NavigationTitle>{[...items, ...moreMenuOptions][activeIndex].title}</NavigationTitle>
             </NavigationBar>
             <HStack
-              justifyContent="center"
               alignItems="flex-start"
               background="backgroundAlternate"
               flexGrow={1}
+              justifyContent="center"
               spacing={4}
             >
               <HStack
-                justifyContent="center"
                 alignItems="flex-start"
                 background="backgroundAlternate"
                 flexGrow={1}
+                justifyContent="center"
                 spacing={4}
               >
-                <Button compact variant="primary" onPress={handleToggleCollapsed.toggle}>
+                <Button compact onPress={handleToggleCollapsed.toggle} variant="primary">
                   {isCollapsed ? 'Expand' : 'Collapse'} Sidebar
                 </Button>
               </HStack>

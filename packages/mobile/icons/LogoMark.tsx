@@ -6,7 +6,7 @@ export const LogoMark = memo(({ size, foreground }: LogoMarkParams) => {
   const { viewBox, width, height, path, color } = useLogoMark({ size, foreground });
 
   return (
-    <Svg viewBox={viewBox} width={width} height={height}>
+    <Svg height={height} viewBox={viewBox} width={width}>
       <Path d={path} fill={color} />
     </Svg>
   );

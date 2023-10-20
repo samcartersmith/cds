@@ -12,7 +12,7 @@ describe('ContentCell', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <ContentCell title="Title" subtitle="Subtitle" description="Description" meta="Meta" />,
+        <ContentCell description="Description" meta="Meta" subtitle="Subtitle" title="Title" />,
       ),
     ).toHaveNoViolations();
   });
@@ -21,11 +21,11 @@ describe('ContentCell', () => {
     expect(
       await renderA11y(
         <ContentCell
-          onPress={noop}
-          title="Title"
-          subtitle="Subtitle"
           description="Description"
           meta="Meta"
+          onPress={noop}
+          subtitle="Subtitle"
+          title="Title"
         />,
       ),
     ).toHaveNoViolations();
@@ -35,18 +35,18 @@ describe('ContentCell', () => {
     expect(
       await renderA11y(
         <ContentCell
-          to={URL}
-          title="Title"
-          subtitle="Subtitle"
           description="Description"
           meta="Meta"
+          subtitle="Subtitle"
+          title="Title"
+          to={URL}
         />,
       ),
     ).toHaveNoViolations();
   });
 
   it('sets an accessibile label with accessibilityLabel when pressable', () => {
-    render(<ContentCell onPress={noop} accessibilityLabel={A11Y_TEXT} />);
+    render(<ContentCell accessibilityLabel={A11Y_TEXT} onPress={noop} />);
 
     expect(screen.getByRole('button')).toHaveAccessibleName(A11Y_TEXT);
   });
@@ -57,7 +57,7 @@ describe('ContentCell', () => {
     render(
       <>
         <span id={labelId}>{A11Y_TEXT}</span>
-        <ContentCell onPress={noop} accessibilityLabelledBy={labelId} />
+        <ContentCell accessibilityLabelledBy={labelId} onPress={noop} />
       </>,
     );
 
@@ -70,7 +70,7 @@ describe('ContentCell', () => {
     render(
       <>
         <span id={descriptionId}>{A11Y_TEXT}</span>
-        <ContentCell onPress={noop} accessibilityHint={descriptionId} />
+        <ContentCell accessibilityHint={descriptionId} onPress={noop} />
       </>,
     );
 
@@ -108,13 +108,13 @@ describe('ContentCell', () => {
   });
 
   it('renders meta', () => {
-    render(<ContentCell title="Title" meta={<div data-testid="meta">Meta</div>} />);
+    render(<ContentCell meta={<div data-testid="meta">Meta</div>} title="Title" />);
 
     expect(screen.getByTestId('meta')).toBeVisible();
   });
 
   it('renders media', () => {
-    render(<ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />);
+    render(<ContentCell media={<CellMedia name="add" testID="media" type="icon" />} />);
 
     expect(screen.getByTestId('media')).toBeVisible();
   });
@@ -171,7 +171,7 @@ describe('ContentCell', () => {
   });
 
   it('renders link when pressable callback is defined but href is set with a url', () => {
-    render(<ContentCell onPress={noop} href={URL} />);
+    render(<ContentCell href={URL} onPress={noop} />);
 
     const link = screen.getByRole('link');
 
@@ -182,7 +182,7 @@ describe('ContentCell', () => {
   it('sets target on link when target is defined', () => {
     const target = '_blank';
 
-    render(<ContentCell to={URL} target={target} />);
+    render(<ContentCell target={target} to={URL} />);
 
     expect(screen.getByRole('link')).toHaveAttribute('target', target);
   });

@@ -27,7 +27,7 @@ const SparklineInteractiveMarkerDate: FunctionComponent<
   const fallback = <span style={{ visibility: 'hidden' }}>-</span>;
   return (
     <span ref={setupRef}>
-      <TextLabel2 as="span" color="foregroundMuted" align="center" spacingTop={3}>
+      <TextLabel2 align="center" as="span" color="foregroundMuted" spacingTop={3}>
         {dateStr || fallback}
       </TextLabel2>
     </span>
@@ -65,13 +65,13 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
     <Box
       key={selectedPeriod}
       ref={setupRef}
-      position="relative"
       background="background"
-      justifyContent="space-between"
-      width="100%"
-      spacingTop={2}
-      spacingHorizontal={timePeriodGutter}
       dangerouslySetClassName={fadeInClassName}
+      justifyContent="space-between"
+      position="relative"
+      spacingHorizontal={timePeriodGutter}
+      spacingTop={2}
+      width="100%"
     >
       {markers}
     </Box>

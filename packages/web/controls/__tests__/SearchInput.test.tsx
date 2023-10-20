@@ -18,17 +18,17 @@ describe('Search', () => {
     expect(
       await renderA11y(
         <SearchInput
-          value="value"
+          accessibilityLabel="Search Assets"
           onChangeText={onChangeTextSpy}
           placeholder="Placeholder"
-          accessibilityLabel="Search Assets"
+          value="value"
         />,
       ),
     ).toHaveNoViolations();
   });
 
   it('able to set a default value', () => {
-    render(<SearchInput onChangeText={onChangeTextSpy} value="value" testID={TEST_ID} />);
+    render(<SearchInput onChangeText={onChangeTextSpy} testID={TEST_ID} value="value" />);
 
     expect(screen.getByRole('searchbox')).toHaveValue('value');
   });
@@ -37,10 +37,10 @@ describe('Search', () => {
   it('renders a search', () => {
     render(
       <SearchInput
-        value="value"
         onChangeText={onChangeTextSpy}
-        testID={TEST_ID}
         placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
       />,
     );
     const search = screen.queryByRole(ROLE);
@@ -50,10 +50,10 @@ describe('Search', () => {
   it('renders a Search IconButton at the start node', () => {
     render(
       <SearchInput
-        value="value"
         onChangeText={onChangeTextSpy}
-        testID={TEST_ID}
         placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
       />,
     );
     const searchIconBtn = screen.getByTestId(`${TEST_ID}-search-icon`);
@@ -63,11 +63,11 @@ describe('Search', () => {
   it('does not render a Search IconButton when hideStartIcon=true', () => {
     render(
       <SearchInput
-        value="value"
-        onChangeText={onChangeTextSpy}
-        testID={TEST_ID}
         hideStartIcon
+        onChangeText={onChangeTextSpy}
         placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
       />,
     );
     expect(screen.queryByTestId(`${TEST_ID}-search-icon`)).toBeNull();
@@ -77,9 +77,9 @@ describe('Search', () => {
     render(
       <SearchInput
         onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
         testID={TEST_ID}
         value="value"
-        placeholder="Placeholder"
       />,
     );
     const closeIconBtn = screen.getByTestId(`${TEST_ID}-close-iconbtn`);
@@ -91,10 +91,10 @@ describe('Search', () => {
     render(
       <SearchInput
         onChangeText={onChangeTextSpy}
-        value="value"
-        testID={TEST_ID}
         onClear={onClearSpy}
         placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
       />,
     );
 

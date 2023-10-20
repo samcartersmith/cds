@@ -20,11 +20,11 @@ export function loremIpsumBuilder({ TextLabel1, TextBody }: CreateLoremIpsumProp
   const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
     return (
       <>
-        <TextLabel1 spacingBottom={1} as="p">
+        <TextLabel1 as="p" spacingBottom={1}>
           {title}
         </TextLabel1>
         {concise ? null : (
-          <TextBody spacingBottom={3} as="p">
+          <TextBody as="p" spacingBottom={3}>
             {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
           </TextBody>
         )}

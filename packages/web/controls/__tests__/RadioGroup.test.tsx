@@ -29,7 +29,7 @@ describe('RadioGroup.test', () => {
 
   it('renders options', () => {
     render(
-      <RadioGroup name="radio-group" selectedValue="btc" onChange={onChange} options={options} />,
+      <RadioGroup name="radio-group" onChange={onChange} options={options} selectedValue="btc" />,
     );
 
     expect(screen.getByRole('radiogroup')).toBeTruthy();
@@ -39,11 +39,11 @@ describe('RadioGroup.test', () => {
   it('renders label', () => {
     render(
       <RadioGroup
-        name="radio-group"
         label={<TextHeadline as="span">Choose a currency</TextHeadline>}
-        selectedValue="btc"
+        name="radio-group"
         onChange={onChange}
         options={options}
+        selectedValue="btc"
       />,
     );
 
@@ -53,11 +53,11 @@ describe('RadioGroup.test', () => {
   it('triggers onChange', () => {
     render(
       <RadioGroup
-        name="radio-group"
         label={<TextHeadline as="span">Choose a currency</TextHeadline>}
-        selectedValue="btc"
+        name="radio-group"
         onChange={onChange}
         options={options}
+        selectedValue="btc"
         testID="test-radio-group"
       />,
     );

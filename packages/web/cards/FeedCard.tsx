@@ -26,23 +26,23 @@ export const FeedCard: React.FC<React.PropsWithChildren<FeedCardBaseProps>> = me
     return (
       <Card testID={testID}>
         <CardHeader
-          avatarUrl={avatarUrl}
-          metaData={headerMetaData}
-          description={headerDescription}
           action={headerActionNode}
+          avatarUrl={avatarUrl}
+          description={headerDescription}
+          metaData={headerMetaData}
         />
         <CardBody
-          title={bodyTitle}
           description={bodyDescription}
           media={
             <RemoteImage
-              source={bodyMediaUrl}
-              height="auto"
-              width="100%"
               aspectRatio={aspectRatio}
+              height="auto"
+              source={bodyMediaUrl}
+              width="100%"
             />
           }
           orientation={bodyOrientation}
+          title={bodyTitle}
         />
         <CardFooter>{footerActions}</CardFooter>
       </Card>

@@ -39,13 +39,13 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
 
   const switchNode = (
     <Control
-      role="switch"
-      type="checkbox"
-      label={children}
       ref={ref}
       backgroundColor={checked ? 'primary' : 'backgroundAlternate'}
       borderRadius="roundedLarge"
       checked={checked}
+      label={children}
+      role="switch"
+      type="checkbox"
       {...props}
     >
       <motion.div
@@ -54,13 +54,13 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
         {...outerContainerMotionProps}
       >
         <MotionBox
-          dangerouslySetClassName={cx(thumb, roundedFull, thumbColor)}
-          elevation={1}
           /**
            * Framer layout animation has better performance than CSS transforms
            * more about layout animation https://www.framer.com/docs/layout-animations/
            */
           layout
+          dangerouslySetClassName={cx(thumb, roundedFull, thumbColor)}
+          elevation={1}
           transition={convertTransition(switchTransitionConfig)}
         />
       </motion.div>
@@ -71,10 +71,10 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
     <ThemeProvider palette={switchPalette}>
       {children ? (
         <Box
-          minHeight={control.switchHeight}
-          width="fit-content"
           alignItems="center"
+          minHeight={control.switchHeight}
           role="presentation"
+          width="fit-content"
         >
           {switchNode}
         </Box>

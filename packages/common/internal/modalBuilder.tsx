@@ -70,21 +70,21 @@ export function modalBuilder({
 
     return (
       <>
-        <Button onPress={toggleOn} ref={triggerRef}>
+        <Button ref={triggerRef} onPress={toggleOn}>
           Open Modal
         </Button>
         <Modal
-          visible={visible}
-          onRequestClose={toggleOff}
           disablePortal={disablePortal}
           hideDividers={hideDividers}
           onDidClose={focusTrigger}
+          onRequestClose={toggleOff}
+          visible={visible}
         >
           <ModalHeader
-            title="Basic Modal"
-            closeAccessibilityLabel="Close"
             backAccessibilityLabel="Back"
+            closeAccessibilityLabel="Close"
             onBackButtonPress={enableBackButton ? toggleOff : undefined}
+            title="Basic Modal"
           />
           <ModalBody>{children}</ModalBody>
           <ModalFooter
@@ -110,8 +110,8 @@ export function modalBuilder({
     const handlePress = useCallback(
       () =>
         openModal(
-          <Modal visible onRequestClose={closeModal} onDidClose={focusTrigger}>
-            <ModalHeader title="Default Modal" closeAccessibilityLabel="Close" />
+          <Modal visible onDidClose={focusTrigger} onRequestClose={closeModal}>
+            <ModalHeader closeAccessibilityLabel="Close" title="Default Modal" />
             <ModalBody>{children}</ModalBody>
             <ModalFooter
               primaryAction={<Button onPress={closeModal}>Save</Button>}
@@ -127,7 +127,7 @@ export function modalBuilder({
     );
 
     return (
-      <Button onPress={handlePress} ref={triggerRef}>
+      <Button ref={triggerRef} onPress={handlePress}>
         Open Modal
       </Button>
     );
@@ -163,31 +163,30 @@ export function modalBuilder({
 
     return (
       <>
-        <Button onPress={toggleOn} ref={triggerRef} testID="modal-trigger">
+        <Button ref={triggerRef} onPress={toggleOn} testID="modal-trigger">
           Open Modal
         </Button>
         <Modal
+          disablePortal
+          accessibilityLabel={accessibilityLabel}
+          accessibilityLabelledBy={accessibilityLabelledBy}
+          onDidClose={handleDidClose}
+          onRequestClose={handleClose}
           testID={testID}
           visible={visible}
-          accessibilityLabelledBy={accessibilityLabelledBy}
-          accessibilityLabel={accessibilityLabel}
-          onRequestClose={handleClose}
-          onDidClose={handleDidClose}
-          disablePortal
         >
           <ModalHeader
+            backAccessibilityHint={backAccessibilityHint}
+            backAccessibilityLabel={backAccessibilityLabel}
+            closeAccessibilityHint={closeAccessibilityHint}
+            closeAccessibilityLabel={closeAccessibilityLabel}
             onBackButtonPress={onBackButtonPress}
             title={title}
-            backAccessibilityLabel={backAccessibilityLabel}
-            backAccessibilityHint={backAccessibilityHint}
-            closeAccessibilityLabel={closeAccessibilityLabel}
-            closeAccessibilityHint={closeAccessibilityHint}
           />
           <ModalBody>
             <LoremIpsum />
           </ModalBody>
           <ModalFooter
-            testID="modal-footer"
             primaryAction={
               <Button onPress={toggleOff} testID="modal-footer-save">
                 Save
@@ -198,6 +197,7 @@ export function modalBuilder({
                 Cancel
               </Button>
             }
+            testID="modal-footer"
           />
         </Modal>
       </>

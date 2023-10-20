@@ -237,9 +237,9 @@ const PercentChange = memo(
     );
 
     return (
-      <HStack gap={0.5} spacingStart={showParenthesis ? 1 : 0} alignSelf="flex-end">
+      <HStack alignSelf="flex-end" gap={0.5} spacingStart={showParenthesis ? 1 : 0}>
         {isNew ? (
-          <Tag intent="promotional" colorScheme="blue">
+          <Tag colorScheme="blue" intent="promotional">
             New
           </Tag>
         ) : (
@@ -273,7 +273,7 @@ export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps)
 
   const end = (
     <VStack>
-      <TextBody as="p" align="end" overflow="truncate">
+      <TextBody align="end" as="p" overflow="truncate">
         {`${getPercentageText(latest.cdsPercent)} CDS`}
       </TextBody>
       <PercentChange showComparisonTime />
@@ -285,13 +285,13 @@ export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps)
   return (
     <BetaCell
       key={`project-cell-${id}`}
-      priority="end"
-      offsetHorizontal={1}
-      start={start}
       end={end}
-      selected={active}
       endAccessory={<CellAccessory type={active ? 'selected' : 'arrow'} />}
+      offsetHorizontal={1}
       onPress={handlePress}
+      priority="end"
+      selected={active}
+      start={start}
     />
   );
 });
@@ -334,42 +334,42 @@ const DetailStatCell = memo(
       }
     }, [allExpanded, toggleOn, toggleOff, isLatest]);
     const expandedDetailsNode = (
-      <VStack width="100%" flexGrow={1} spacingTop={2}>
-        <AdopterStatsBreakdownCell title="CDS" detail={cds} />
-        <AdopterStatsBreakdownCell title="Presentational" detail={presentational} />
+      <VStack flexGrow={1} spacingTop={2} width="100%">
+        <AdopterStatsBreakdownCell detail={cds} title="CDS" />
+        <AdopterStatsBreakdownCell detail={presentational} title="Presentational" />
         <Divider direction="horizontal" spacingVertical={1} />
-        <AdopterStatsBreakdownCell title="Total" detail={totalCdsAndPresentational} />
+        <AdopterStatsBreakdownCell detail={totalCdsAndPresentational} title="Total" />
       </VStack>
     );
     return (
       <Card
-        spacing={2}
         background={expanded ? 'backgroundAlternate' : 'transparent'}
-        offsetHorizontal={2}
         borderRadius={expanded ? 'roundedLarge' : 'roundedNone'}
+        offsetHorizontal={2}
+        spacing={2}
       >
         <PressableOpacity onPress={isLatest ? undefined : toggle}>
           <HStack
-            gap={2}
-            justifyContent="space-between"
             alignItems="center"
             borderRadius="roundedLarge"
+            gap={2}
+            justifyContent="space-between"
           >
             <TextBody as="p" overflow="truncate">
               {date} {period && `(End of ${period})`}
             </TextBody>
-            <HStack gap={0.5} alignItems="center">
+            <HStack alignItems="center" gap={0.5}>
               <HStack justifyContent="flex-end">
-                <TextBody as="p" align="end">
+                <TextBody align="end" as="p">
                   {getPercentageText(cdsPercent)}
                 </TextBody>
                 {percentChange}
               </HStack>
               {!isLatest && (
                 <Icon
-                  size="s"
-                  name={expanded ? 'caretUp' : 'caretDown'}
                   color={expanded ? 'primary' : 'foregroundMuted'}
+                  name={expanded ? 'caretUp' : 'caretDown'}
+                  size="s"
                 />
               )}
             </HStack>
@@ -396,8 +396,8 @@ export const ActiveProject = memo(() => {
 
   return (
     <VStack gap={3}>
-      <VStack gap={2} spacingVertical={4} spacingTop={7}>
-        <HStack gap={2} justifyContent="space-between" alignItems="center">
+      <VStack gap={2} spacingTop={7} spacingVertical={4}>
+        <HStack alignItems="center" gap={2} justifyContent="space-between">
           <TextDisplay3 as="h4">{label}</TextDisplay3>
           <Pictogram name="analyticsNavigation" />
         </HStack>
@@ -407,15 +407,15 @@ export const ActiveProject = memo(() => {
         </TextBody>
         <HStack gap={1}>
           <Button
+            compact
             // @ts-expect-error This should be allowed
             as={Link}
             to={`/adoption-tracker/${id}`}
             variant="primary"
-            compact
           >
             View details
           </Button>
-          <Button variant="secondary" compact onPress={setAllExpanded}>
+          <Button compact onPress={setAllExpanded} variant="secondary">
             {allExpanded ? 'Collapse all' : 'Expand all'}
           </Button>
         </HStack>
@@ -432,7 +432,7 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
   const { percentageText } = getPercentage(pillar);
   const { variant: changedVariant, changePercentageText } = getPercentageChange(pillar);
   return (
-    <VStack spacingBottom={2} gap={1}>
+    <VStack gap={1} spacingBottom={2}>
       <TextCaption as="span" color="foregroundMuted" id={pillar}>
         {pillar}
         <a className="hash-link" href={`#${pillar}`} title="Direct link to heading">
@@ -442,7 +442,7 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
       <TextDisplay3 as="span">{percentageText}</TextDisplay3>
       {changePercentageText !== 'No change' && (
         <TextLabel1 as="span" color={changedVariant}>
-          <HStack gap={1} alignItems="center">
+          <HStack alignItems="center" gap={1}>
             <Icon
               color={changedVariant}
               name={`diagonal${changedVariant === 'negative' ? 'Down' : 'Up'}Arrow`}
@@ -483,8 +483,8 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
 
   const start = (
     <VStack gap={2} spacingEnd={3}>
-      <VStack gap={2} spacingVertical={4} spacingTop={7}>
-        <HStack gap={2} justifyContent="space-between" alignItems="center">
+      <VStack gap={2} spacingTop={7} spacingVertical={4}>
+        <HStack alignItems="center" gap={2} justifyContent="space-between">
           <TextDisplay3 as="h2">Scoreboard</TextDisplay3>
           <Pictogram name="congratulations" />
         </HStack>
@@ -505,8 +505,8 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
 
   return (
     <ThemeProvider>
-      <VStack spacingBottom={4} gap={5} alignItems="baseline" maxWidth={900}>
-        <TextDisplay1 as="h1" spacingBottom={0} dangerouslySetClassName={titleClass}>
+      <VStack alignItems="baseline" gap={5} maxWidth={900} spacingBottom={4}>
+        <TextDisplay1 as="h1" dangerouslySetClassName={titleClass} spacingBottom={0}>
           Adoption
         </TextDisplay1>
         <TextTitle2 as="span" color="foregroundMuted">
@@ -527,13 +527,13 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
         </TextTitle2>
       </VStack>
       <Box spacingBottom={4}>
-        <Button variant="secondary" onPress={toggleOn} compact>
+        <Button compact onPress={toggleOn} variant="secondary">
           Show current component usage
         </Button>
       </Box>
       <Divider direction="horizontal" />
-      <SplitScreenStack start={start} end={end} />
-      <Modal visible={usageModalIsVisible} onRequestClose={toggleOff}>
+      <SplitScreenStack end={end} start={start} />
+      <Modal onRequestClose={toggleOff} visible={usageModalIsVisible}>
         <ModalBody>
           <ComponentUsageTable />
         </ModalBody>

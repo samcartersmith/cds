@@ -58,7 +58,7 @@ describe('Text', () => {
   it('renders an Animated.Text when animated={true}', () => {
     textTestRunner((TextComponent) => {
       render(
-        <TextComponent testID="mock-text" animated>
+        <TextComponent animated testID="mock-text">
           Text
         </TextComponent>,
       );
@@ -71,7 +71,7 @@ describe('Text', () => {
   textTestRunner((TextComponent) => {
     it(`${TextComponent.displayName} can show tabular numbers`, async () => {
       render(
-        <TextComponent testID="mock-text" tabularNumbers>
+        <TextComponent tabularNumbers testID="mock-text">
           Text
         </TextComponent>,
       );
@@ -88,7 +88,7 @@ describe('Text', () => {
   textTestRunner((TextComponent) => {
     it(`${TextComponent.displayName} can show underline`, async () => {
       render(
-        <TextComponent testID="mock-text" underline>
+        <TextComponent underline testID="mock-text">
           Text
         </TextComponent>,
       );
@@ -105,7 +105,7 @@ describe('Text', () => {
   textTestRunner((TextComponent) => {
     it(`${TextComponent.displayName} can be styled to not wrap`, async () => {
       render(
-        <TextComponent testID="mock-text" noWrap>
+        <TextComponent noWrap testID="mock-text">
           Text
         </TextComponent>,
       );
@@ -119,7 +119,7 @@ describe('Text', () => {
   textTestRunner((TextComponent) => {
     it(`${TextComponent.displayName} renders mono font`, async () => {
       render(
-        <TextComponent testID="mock-text" mono>
+        <TextComponent mono testID="mock-text">
           Text
         </TextComponent>,
       );

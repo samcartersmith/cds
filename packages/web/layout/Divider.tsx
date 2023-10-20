@@ -33,11 +33,11 @@ export const Divider = ({
   ...boxProps
 }: DividerProps) => {
   return (
-    <Box alignSelf="stretch" alignItems="stretch" {...boxProps}>
+    <Box alignItems="stretch" alignSelf="stretch" {...boxProps}>
       <Separator
         as="div"
-        orientation={direction}
         className={cx(styles[direction], styles[color])}
+        orientation={direction}
       />
     </Box>
   );

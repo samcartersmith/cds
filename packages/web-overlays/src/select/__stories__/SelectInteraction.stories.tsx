@@ -13,9 +13,9 @@ const placeholder = 'Select an option';
 const SelectForm = (props: SelectProps) => {
   const [value, setValue] = useState<string | undefined>(undefined);
   return (
-    <Select disablePortal value={value} onChange={setValue} {...props}>
+    <Select disablePortal onChange={setValue} value={value} {...props}>
       {options.map((option) => (
-        <SelectOption value={option} key={option} title={option} />
+        <SelectOption key={option} title={option} value={option} />
       ))}
     </Select>
   );

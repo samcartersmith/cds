@@ -28,12 +28,12 @@ export const Sparkline = memo(
 
     const defs = children ? (
       <defs>
-        <SparklineAreaPattern id={patternId.current} color={stroke} />
+        <SparklineAreaPattern color={stroke} id={patternId.current} />
       </defs>
     ) : null;
 
     return (
-      <svg width={width} height={height}>
+      <svg height={height} width={width}>
         {defs}
         <g {...translateProps}>
           <SparklinePath path={path} stroke={stroke} />

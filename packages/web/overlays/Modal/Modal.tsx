@@ -115,19 +115,19 @@ export const Modal = memo(
 
     return (
       <ModalWrapper
-        visible={visible}
-        disablePortal={disablePortal}
-        accessibilityLabelledBy={labelledBy}
         accessibilityLabel={label}
-        zIndex={customZIndex}
-        dangerouslySetClassName={dangerouslySetClassName}
-        id={id}
-        disableOverlayPress={disableOverlayPress}
+        accessibilityLabelledBy={labelledBy}
         dangerouslyDisableResponsiveness={dangerouslyDisableResponsiveness}
-        onOverlayPress={handleClose}
+        dangerouslySetClassName={dangerouslySetClassName}
+        disableOverlayPress={disableOverlayPress}
+        disablePortal={disablePortal}
+        id={id}
         onDidClose={onDidClose}
-        testID={testID}
+        onOverlayPress={handleClose}
         role={role}
+        testID={testID}
+        visible={visible}
+        zIndex={customZIndex}
       >
         <motion.div
           {...motionProps}
@@ -135,22 +135,22 @@ export const Modal = memo(
             modalDefaultClassName,
             !dangerouslyDisableResponsiveness && modalResponsiveClassName,
           )}
-          style={dialogStyles}
           data-testid="modal-dialog-motion"
+          style={dialogStyles}
         >
           <FocusTrap
             disableFocusTrap={disableFocusTrap}
             onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
           >
             <VStack
-              elevation={2}
               background="background"
-              width={dangerouslySetWidth ?? '100%'}
-              overflow="hidden"
               dangerouslySetClassName={cx(
                 modalDialogClassName,
                 !dangerouslyDisableResponsiveness && modalDialogResponsiveClassName,
               )}
+              elevation={2}
+              overflow="hidden"
+              width={dangerouslySetWidth ?? '100%'}
             >
               <ModalParentContext.Provider value={modalData}>
                 {typeof children === 'function' ? children(renderChildrenProps) : children}

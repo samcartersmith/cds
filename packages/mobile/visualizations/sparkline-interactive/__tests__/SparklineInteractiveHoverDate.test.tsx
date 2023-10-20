@@ -12,9 +12,9 @@ describe('SparklineInteractiveHoverDate.test', () => {
 
     render(
       <SparklineInteractiveHoverDate
+        ref={ref}
         shouldTakeUpHeight
         formatHoverDate={formatHoverDate}
-        ref={ref}
       />,
     );
 

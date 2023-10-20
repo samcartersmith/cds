@@ -13,20 +13,20 @@ const LinearGradientScreen = () => {
   const backgroundTransparent = overrideAlpha(background, 0);
   return (
     <ExampleScreen>
-      <Example title="As Background" inline>
+      <Example inline title="As Background">
         <LinearGradient colors={[primary, positive]}>
           <TextBody>First example</TextBody>
         </LinearGradient>
-        <LinearGradient stops={stops} colors={[primary, positive, negative]}>
+        <LinearGradient colors={[primary, positive, negative]} stops={stops}>
           <TextBody>Second example</TextBody>
         </LinearGradient>
         <TextLabel1>Horizontal gradient</TextLabel1>
-        <LinearGradient angle={90} stops={stops} colors={[primary, positive, negative]}>
+        <LinearGradient angle={90} colors={[primary, positive, negative]} stops={stops}>
           <TextBody>Horizontal angle example</TextBody>
         </LinearGradient>
       </Example>
-      <Example title="As Shadow" inline>
-        <LinearGradient isBelowChildren={false} colors={[backgroundTransparent, background]}>
+      <Example inline title="As Shadow">
+        <LinearGradient colors={[backgroundTransparent, background]} isBelowChildren={false}>
           <TextBody>{loremIpsum}...</TextBody>
         </LinearGradient>
         <TextLabel1>More</TextLabel1>

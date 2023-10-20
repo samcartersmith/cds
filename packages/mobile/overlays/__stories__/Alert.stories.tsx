@@ -27,12 +27,12 @@ const AlertOnModal = () => {
       open(
         <Alert
           visible
-          onRequestClose={close}
-          title="Alert title"
           body="Alert body type that can run over multiple lines, but should be kept short."
+          onPreferredActionPress={close}
+          onRequestClose={close}
           pictogram="warning"
           preferredActionLabel="Primary"
-          onPreferredActionPress={close}
+          title="Alert title"
         />,
       ),
     [open, close],

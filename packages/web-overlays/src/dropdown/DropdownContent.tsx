@@ -68,18 +68,17 @@ export const DropdownContent = memo(
         <MotionVStack
           ref={ref}
           background
-          overflow="auto"
-          tabIndex={0}
-          elevation={2}
           borderRadius="roundedLarge"
-          zIndex={zIndex.overlays.dropdown}
-          role="menu"
-          minWidth={minWidth}
-          // if there's a custom minWidth, we don't want to override that
           dangerouslySetClassName={cx(
             dropdownStaticClassName,
             !minWidth ? dropdownStyleOverrides : undefined,
-          )}
+          )} // if there's a custom minWidth, we don't want to override that
+          elevation={2}
+          minWidth={minWidth}
+          overflow="auto"
+          role="menu"
+          tabIndex={0}
+          zIndex={zIndex.overlays.dropdown}
           {...props}
           {...(motionProps as AnimationProps)}
         >

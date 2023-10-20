@@ -58,19 +58,19 @@ export const AccordionHeader = memo(
 
       return (
         <Pressable
-          accessibilityRole="togglebutton"
-          accessibilityLabel={title}
-          accessibilityState={{ expanded: !collapsed }}
+          ref={forwardedRef}
           noScaleOnPress
           transparentWhileInactive
+          accessibilityLabel={title}
+          accessibilityRole="togglebutton"
+          accessibilityState={{ expanded: !collapsed }}
           backgroundColor="background"
           onPress={handlePress}
           testID={testID}
-          ref={forwardedRef}
         >
-          <HStack width="100%" alignItems="center" gap={2} minHeight={minHeight} {...spacing.outer}>
+          <HStack alignItems="center" gap={2} minHeight={minHeight} width="100%" {...spacing.outer}>
             {!!media && <AccordionMedia media={media} />}
-            <AccordionTitle title={title} subtitle={subtitle} />
+            <AccordionTitle subtitle={subtitle} title={title} />
             <AccordionIcon collapsed={collapsed} />
           </HStack>
         </Pressable>

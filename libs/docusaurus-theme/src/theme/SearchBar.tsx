@@ -24,21 +24,21 @@ const SearchBar = memo(function SearchBar() {
   }, [query]);
 
   return (
-    <HStack alignItems="center" gap={3} dangerouslySetClassName="search">
+    <HStack alignItems="center" dangerouslySetClassName="search" gap={3}>
       <TextInput
-        width={200}
+        bordered
+        compact
         borderRadius="roundedFull"
-        start={<InputIcon name="search" />}
         end={
           <HStack spacingEnd={2}>
             <kbd style={kbdStyles}>⌘</kbd>
             <kbd style={kbdStyles}>K</kbd>
           </HStack>
         }
-        bordered
-        compact
-        placeholder="Search"
         onFocus={handleOnPress}
+        placeholder="Search"
+        start={<InputIcon name="search" />}
+        width={200}
       />
     </HStack>
   );

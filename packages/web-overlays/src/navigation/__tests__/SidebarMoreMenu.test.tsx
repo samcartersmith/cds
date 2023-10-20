@@ -25,13 +25,13 @@ const SidebarMoreMenuExample = ({ value, collapsed = false }: ExampleProps) => {
 
   return (
     <SidebarProvider value={contextValue}>
-      <SidebarMoreMenu value={value} onChange={onChangeSpy} testID={MENU_TEST_ID}>
+      <SidebarMoreMenu onChange={onChangeSpy} testID={MENU_TEST_ID} value={value}>
         {moreMenuOptions.map((item) => (
           <SelectOption
             key={`sidebar-more-menu-item--${item.title}`}
-            value={item.title}
             description={item.title}
             media={<NavigationIcon name={item.icon} />}
+            value={item.title}
           />
         ))}
       </SidebarMoreMenu>

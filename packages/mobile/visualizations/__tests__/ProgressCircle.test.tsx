@@ -29,7 +29,7 @@ jest.mock('@cbhq/cds-common/visualizations/useCounter', () => ({
 describe('ProgressCircle tests and passes a11y', () => {
   it('handles 0 percent', () => {
     const size = 100;
-    render(<ProgressCircle testID="mock-progress-circle" progress={0} size={size} />);
+    render(<ProgressCircle progress={0} size={size} testID="mock-progress-circle" />);
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -50,7 +50,7 @@ describe('ProgressCircle tests and passes a11y', () => {
 
   it('handles 50 percent', () => {
     const size = 100;
-    render(<ProgressCircle testID="mock-progress-circle" progress={0.5} size={size} />);
+    render(<ProgressCircle progress={0.5} size={size} testID="mock-progress-circle" />);
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -73,7 +73,7 @@ describe('ProgressCircle tests and passes a11y', () => {
 
   it('handles 100 percent', () => {
     const size = 100;
-    render(<ProgressCircle testID="mock-progress-circle" progress={1} size={size} />);
+    render(<ProgressCircle progress={1} size={size} testID="mock-progress-circle" />);
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -97,7 +97,7 @@ describe('ProgressCircle tests and passes a11y', () => {
   it('handles heavy weight', () => {
     const size = 100;
     render(
-      <ProgressCircle testID="mock-progress-circle" progress={1} weight="heavy" size={size} />,
+      <ProgressCircle progress={1} size={size} testID="mock-progress-circle" weight="heavy" />,
     );
 
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -108,7 +108,7 @@ describe('ProgressCircle tests and passes a11y', () => {
 
   it('handles no text', () => {
     const size = 100;
-    render(<ProgressCircle testID="mock-progress-circle" progress={1} hideText size={size} />);
+    render(<ProgressCircle hideText progress={1} size={size} testID="mock-progress-circle" />);
 
     expect(screen.queryAllByText('100%')).toHaveLength(0);
     expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
@@ -117,7 +117,7 @@ describe('ProgressCircle tests and passes a11y', () => {
   it('handles different color', () => {
     const size = 100;
     render(
-      <ProgressCircle testID="mock-progress-circle" color="positive" progress={1} size={size} />,
+      <ProgressCircle color="positive" progress={1} size={size} testID="mock-progress-circle" />,
     );
 
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');

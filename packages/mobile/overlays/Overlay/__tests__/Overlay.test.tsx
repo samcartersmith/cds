@@ -7,7 +7,7 @@ import { useOverlayAnimation } from '../useOverlayAnimation';
 describe('Overlay', () => {
   const TestComponent = () => {
     const [opacity] = useOverlayAnimation();
-    return <Overlay testID="mock-overlay" opacity={opacity} />;
+    return <Overlay opacity={opacity} testID="mock-overlay" />;
   };
 
   it('passes a11y', () => {

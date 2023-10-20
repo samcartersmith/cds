@@ -5,11 +5,11 @@ import { Spinner } from '../Spinner';
 
 describe('MaterialSpinner', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<Spinner size={60} color="primary" />)).toHaveNoViolations();
+    expect(await renderA11y(<Spinner color="primary" size={60} />)).toHaveNoViolations();
   });
 
   it('should render with a div element', () => {
-    render(<Spinner size={60} color="primary" testID="div-spinner" />);
+    render(<Spinner color="primary" size={60} testID="div-spinner" />);
     expect(screen.getByTestId('div-spinner')).toBeTruthy();
   });
 

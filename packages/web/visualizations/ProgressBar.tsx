@@ -54,34 +54,34 @@ export const ProgressBar = memo(
       });
 
       return (
-        <VStack flexGrow={1} flexShrink={0} testID={testID} ref={forwardedRef}>
+        <VStack ref={forwardedRef} flexGrow={1} flexShrink={0} testID={testID}>
           <HStack alignItems="center">
             <Box
-              testID="cds-progress-bar-inner-bar-container"
-              justifyContent={isRtl() ? 'flex-end' : 'flex-start'}
               alignItems="center"
+              borderRadius="rounded"
+              dangerouslySetBackground={palette.line}
+              dangerouslySetClassName={boxClassName}
               flexGrow={1}
               flexShrink={1}
               height={height}
-              dangerouslySetBackground={palette.line}
-              borderRadius="rounded"
-              dangerouslySetClassName={boxClassName}
+              justifyContent={isRtl() ? 'flex-end' : 'flex-start'}
               overflow="hidden"
+              testID="cds-progress-bar-inner-bar-container"
             >
               <MotionBox
-                testID="cds-progress-bar-inner-bar"
                 alignItems="center"
-                justifyContent="flex-start"
-                height={height}
-                flexShrink={0}
-                flexGrow={0}
-                width="100%"
-                opacity={disableAnimateOnMount ? 1 : 0}
+                animate={motionProps.animate}
                 borderRadius="rounded"
                 dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
-                animate={motionProps.animate}
-                transition={motionProps.transition}
+                flexGrow={0}
+                flexShrink={0}
+                height={height}
+                justifyContent="flex-start"
+                opacity={disableAnimateOnMount ? 1 : 0}
                 style={motionProps.style}
+                testID="cds-progress-bar-inner-bar"
+                transition={motionProps.transition}
+                width="100%"
               />
             </Box>
           </HStack>

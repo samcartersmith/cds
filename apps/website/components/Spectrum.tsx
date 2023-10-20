@@ -42,7 +42,7 @@ export const Spectrum = () => {
                 return (
                   <div key={paletteValue} className={styles.hueBox} style={{ backgroundColor }}>
                     <span className={styles.hue}>
-                      <TextCaption dangerouslySetColor={foreground} as="span" align="center">
+                      <TextCaption align="center" as="span" dangerouslySetColor={foreground}>
                         {paletteValue}
                       </TextCaption>
                     </span>

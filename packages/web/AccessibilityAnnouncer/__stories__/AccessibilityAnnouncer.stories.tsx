@@ -22,7 +22,7 @@ const MockAppScreen = ({ message, ...rest }: AccessibilityAnnouncerProps) => {
     <VStack gap={2}>
       <TextHeadline as="h2">Open VoiceOver and update the Message field 👀</TextHeadline>
       <>
-        <TextBody as="p" aria-hidden>
+        <TextBody aria-hidden as="p">
           {message}
         </TextBody>
         <AccessibilityAnnouncer message={internalMessage} {...rest} />

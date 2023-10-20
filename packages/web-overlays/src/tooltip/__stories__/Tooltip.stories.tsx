@@ -30,8 +30,8 @@ type BasicTooltipProps = {
 const BasicTooltip = ({ content }: BasicTooltipProps) => {
   return (
     <PortalProvider>
-      <HStack spacingHorizontal={8} spacingVertical={2} gap={5}>
-        <VStack spacingHorizontal={2} gap={2}>
+      <HStack gap={5} spacingHorizontal={8} spacingVertical={2}>
+        <VStack gap={2} spacingHorizontal={2}>
           <Tooltip content={content}>
             <Button>Default</Button>
           </Tooltip>
@@ -49,7 +49,7 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
           </Tooltip>
         </VStack>
 
-        <VStack spacingHorizontal={2} gap={3}>
+        <VStack gap={3} spacingHorizontal={2}>
           <Tooltip
             content={
               <VStack gap={2}>
@@ -60,37 +60,37 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
             }
           >
             <VStack spacing={2}>
-              <DotSymbol size="m" pin="bottom-start" source={assets.eth.imageUrl}>
-                <IconButton name="bell" variant="secondary" accessibilityLabel="Notifications" />
+              <DotSymbol pin="bottom-start" size="m" source={assets.eth.imageUrl}>
+                <IconButton accessibilityLabel="Notifications" name="bell" variant="secondary" />
               </DotSymbol>
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="left">
-            <DotSymbol size="s" pin="top-end" source={assets.ada.imageUrl}>
+            <DotSymbol pin="top-end" size="s" source={assets.ada.imageUrl}>
               <VStack spacing={2}>
-                <IconButton name="bell" variant="secondary" accessibilityLabel="Notifications" />
+                <IconButton accessibilityLabel="Notifications" name="bell" variant="secondary" />
               </VStack>
             </DotSymbol>
           </Tooltip>
           <Tooltip content={content} placement="right">
             <VStack spacing={2}>
-              <IconButton name="bell" variant="secondary" accessibilityLabel="Notifications" />
+              <IconButton accessibilityLabel="Notifications" name="bell" variant="secondary" />
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="bottom">
             <VStack spacing={2}>
-              <IconButton name="bell" variant="secondary" accessibilityLabel="Notifications" />
+              <IconButton accessibilityLabel="Notifications" name="bell" variant="secondary" />
             </VStack>
           </Tooltip>
         </VStack>
 
-        <VStack spacing={2} gap={4}>
+        <VStack gap={4} spacing={2}>
           <Tooltip content={content}>
             <TextLabel1 as="p">Default</TextLabel1>
           </Tooltip>
           <Tooltip content={content} placement="left">
             <VStack spacing={2}>
-              <DotSymbol size="s" pin="top-end" source={assets.ada.imageUrl}>
+              <DotSymbol pin="top-end" size="s" source={assets.ada.imageUrl}>
                 <VStack spacing={2}>
                   <TextLabel1 as="p">left</TextLabel1>
                 </VStack>

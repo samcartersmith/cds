@@ -15,13 +15,12 @@ export const ModalBody: React.FC<React.PropsWithChildren<ModalBodyProps>> = ({
 
   return (
     <Box
-      spacingHorizontal={3}
-      // remove vertical padding when dividers hidden
-      spacingVertical={hideDividers ? 0 : 3}
+      flexDirection={flexDirection}
       flexGrow={1}
       overflow="auto"
+      spacingHorizontal={3}
+      spacingVertical={hideDividers ? 0 : 3} // remove vertical padding when dividers hidden
       tabIndex={0}
-      flexDirection={flexDirection}
       {...props}
     >
       {children}

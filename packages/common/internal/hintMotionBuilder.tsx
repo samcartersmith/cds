@@ -47,7 +47,7 @@ export function hintMotionBuilder({
 
     return (
       <VStack gap={3}>
-        <Box spacing={3} borderRadius="rounded" overflow="hidden" position="relative" bordered>
+        <Box bordered borderRadius="rounded" overflow="hidden" position="relative" spacing={3}>
           <ColorSurgeComponent ref={ref} disableAnimateOnMount />
           <TextBody as="p">Color Surge</TextBody>
         </Box>
@@ -66,7 +66,7 @@ export function hintMotionBuilder({
     return (
       <VStack gap={3}>
         <ShakeComponent ref={ref} disableAnimateOnMount>
-          <Box spacing={3} borderRadius="rounded" bordered>
+          <Box bordered borderRadius="rounded" spacing={3}>
             <TextBody as="p">Shaking Box</TextBody>
           </Box>
         </ShakeComponent>
@@ -85,10 +85,10 @@ export function hintMotionBuilder({
 
     return (
       <VStack gap={3}>
-        <PulseComponent variant="heavy" ref={ref} disableAnimateOnMount>
-          <Box width={50} height={50} background="primary" />
-          <Box width={50} height={50} background="negative" />
-          <Box width={50} height={50} background="positive" />
+        <PulseComponent ref={ref} disableAnimateOnMount variant="heavy">
+          <Box background="primary" height={50} width={50} />
+          <Box background="negative" height={50} width={50} />
+          <Box background="positive" height={50} width={50} />
         </PulseComponent>
         <Button onPress={handlePulseHeavy}>Pulse - Heavy</Button>
         <Button onPress={handlePulseModerate}>Pulse - Moderate</Button>

@@ -23,12 +23,12 @@ export const ProgressTextLabel = memo(
         if (typeof textValue === 'string') {
           return (
             <TextLabel2
-              tabularNumbers
               noWrap
+              tabularNumbers
+              align="end"
+              as="span"
               color={color ?? 'foreground'}
               disabled={disabled}
-              as="span"
-              align="end"
             >
               {textValue}
             </TextLabel2>
@@ -41,10 +41,10 @@ export const ProgressTextLabel = memo(
     );
     return (
       <Counter
-        startNum={getPreviousValue() ?? 0}
-        renderNum={renderNum}
-        endNum={value}
         durationInMillis={durations[animateProgressBaseSpec.duration as MotionDuration]}
+        endNum={value}
+        renderNum={renderNum}
+        startNum={getPreviousValue() ?? 0}
       />
     );
   },

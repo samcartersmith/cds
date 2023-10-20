@@ -49,7 +49,7 @@ const TestWrapper = (props: ColorSurgeTypes) => {
   return (
     <>
       <ColorSurge {...props} ref={ref} />
-      <button type="button" onClick={handleClick}>
+      <button onClick={handleClick} type="button">
         set background
       </button>
     </>

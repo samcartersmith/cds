@@ -68,11 +68,11 @@ export const ColorSurge = memo(
 
     return (
       <MotionBox
-        variants={motionProps.variants}
         animate={controls}
-        initial={disableAnimateOnMount ? 'exit' : 'enter'}
         background={backgroundState}
+        initial={disableAnimateOnMount ? 'exit' : 'enter'}
         pin="all"
+        variants={motionProps.variants}
       />
     );
   }),

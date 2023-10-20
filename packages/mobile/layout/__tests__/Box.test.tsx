@@ -26,7 +26,7 @@ describe('Box', () => {
 
   it('renders an animated view', () => {
     render(
-      <Box testID="parent" animated>
+      <Box animated testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -52,7 +52,7 @@ describe('Box', () => {
 
   it('renders alternate background', async () => {
     render(
-      <Box testID="parent" background="backgroundAlternate">
+      <Box background="backgroundAlternate" testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -69,7 +69,7 @@ describe('Box', () => {
   it('can dangerously override styles', async () => {
     render(
       // eslint-disable-next-line react-native/no-color-literals
-      <Box testID="parent" dangerouslySetStyle={{ backgroundColor: '#000' }}>
+      <Box dangerouslySetStyle={{ backgroundColor: '#000' }} testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -83,7 +83,7 @@ describe('Box', () => {
 
   it('renders borders and radius', async () => {
     render(
-      <Box testID="parent" bordered borderRadius="rounded">
+      <Box bordered borderRadius="rounded" testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -101,7 +101,7 @@ describe('Box', () => {
 
   it('renders elevation 1 styles', async () => {
     render(
-      <Box testID="parent" elevation={1}>
+      <Box elevation={1} testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -119,7 +119,7 @@ describe('Box', () => {
 
   it('renders elevation 2 styles', async () => {
     render(
-      <Box testID="parent" elevation={2}>
+      <Box elevation={2} testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -137,7 +137,7 @@ describe('Box', () => {
 
   it('renders width styles', async () => {
     render(
-      <Box testID="parent" width="321px" maxWidth={789} minWidth="66%">
+      <Box maxWidth={789} minWidth="66%" testID="parent" width="321px">
         <Text>Child</Text>
       </Box>,
     );
@@ -155,7 +155,7 @@ describe('Box', () => {
 
   it('renders height styles', async () => {
     render(
-      <Box testID="parent" height="321px" maxHeight={789} minHeight="66%">
+      <Box height="321px" maxHeight={789} minHeight="66%" testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -174,12 +174,12 @@ describe('Box', () => {
   it('renders position styles', async () => {
     render(
       <Box
-        testID="parent"
-        position="absolute"
-        top="25%"
-        right="30px"
         bottom="8rem"
         left="1000%"
+        position="absolute"
+        right="30px"
+        testID="parent"
+        top="25%"
         zIndex={200}
       >
         <Text>Child</Text>
@@ -203,7 +203,6 @@ describe('Box', () => {
   it('renders flex styles', async () => {
     render(
       <Box
-        testID="parent"
         alignContent="space-around"
         alignItems="center"
         alignSelf="auto"
@@ -213,6 +212,7 @@ describe('Box', () => {
         flexShrink={3}
         flexWrap="nowrap"
         justifyContent="space-evenly"
+        testID="parent"
       >
         <Text>Child</Text>
       </Box>,
@@ -237,7 +237,7 @@ describe('Box', () => {
 
   it('renders an overflow gradient', async () => {
     render(
-      <Box testID="parent" overflow="gradient">
+      <Box overflow="gradient" testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -252,7 +252,7 @@ describe('Box', () => {
   describe('spacing', () => {
     it('renders all', async () => {
       render(
-        <Box testID="parent" spacing={1}>
+        <Box spacing={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -271,7 +271,7 @@ describe('Box', () => {
 
     it('renders horizontal', async () => {
       render(
-        <Box testID="parent" spacingHorizontal={1}>
+        <Box spacingHorizontal={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -288,7 +288,7 @@ describe('Box', () => {
 
     it('renders vertical', async () => {
       render(
-        <Box testID="parent" spacingVertical={1}>
+        <Box spacingVertical={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -305,7 +305,7 @@ describe('Box', () => {
 
     it('renders start/end', async () => {
       render(
-        <Box testID="parent" spacingStart={1} spacingEnd={2}>
+        <Box spacingEnd={2} spacingStart={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -322,7 +322,7 @@ describe('Box', () => {
 
     it('renders individual', async () => {
       render(
-        <Box testID="parent" spacingTop={1} spacingBottom={2} spacingStart={3} spacingEnd={4}>
+        <Box spacingBottom={2} spacingEnd={4} spacingStart={3} spacingTop={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -343,7 +343,7 @@ describe('Box', () => {
   describe('offset', () => {
     it('renders all', async () => {
       render(
-        <Box testID="parent" offset={1}>
+        <Box offset={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -360,7 +360,7 @@ describe('Box', () => {
 
     it('renders horizontal', async () => {
       render(
-        <Box testID="parent" offsetHorizontal={1}>
+        <Box offsetHorizontal={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -375,7 +375,7 @@ describe('Box', () => {
 
     it('renders vertical', async () => {
       render(
-        <Box testID="parent" offsetVertical={1}>
+        <Box offsetVertical={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -390,7 +390,7 @@ describe('Box', () => {
 
     it('renders start/end', async () => {
       render(
-        <Box testID="parent" offsetStart={1} offsetEnd={2}>
+        <Box offsetEnd={2} offsetStart={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -405,7 +405,7 @@ describe('Box', () => {
 
     it('renders individual', async () => {
       render(
-        <Box testID="parent" offsetTop={1} offsetBottom={2} offsetStart={3} offsetEnd={4}>
+        <Box offsetBottom={2} offsetEnd={4} offsetStart={3} offsetTop={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -424,7 +424,7 @@ describe('Box', () => {
   describe('pin', () => {
     it('renders "top" pin', async () => {
       render(
-        <Box testID="parent" pin="top">
+        <Box pin="top" testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -441,7 +441,7 @@ describe('Box', () => {
 
     it('renders "bottom" pin', async () => {
       render(
-        <Box testID="parent" pin="bottom">
+        <Box pin="bottom" testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -458,7 +458,7 @@ describe('Box', () => {
 
     it('renders "right" pin', async () => {
       render(
-        <Box testID="parent" pin="right">
+        <Box pin="right" testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -475,7 +475,7 @@ describe('Box', () => {
 
     it('renders "left" pin', async () => {
       render(
-        <Box testID="parent" pin="left">
+        <Box pin="left" testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -492,7 +492,7 @@ describe('Box', () => {
 
     it('renders "all" pin', async () => {
       render(
-        <Box testID="parent" pin="all">
+        <Box pin="all" testID="parent">
           <Text>Child</Text>
         </Box>,
       );

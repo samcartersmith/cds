@@ -25,28 +25,27 @@ export const ListCellFallback = memo(function ListCellFallback({
 
   return (
     <ListCell
-      testID={testID}
+      compact={compact}
       description={
         description && (
           <Fallback
-            testID="list-cell-fallback-description"
-            height={lineHeight.body}
-            width={110}
-            spacingTop={0.5}
             disableRandomRectWidth={disableRandomRectWidth}
+            height={lineHeight.body}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 0)}
+            spacingTop={0.5}
+            testID="list-cell-fallback-description"
+            width={110}
           />
         )
       }
-      compact={compact}
       detail={
         detail && (
           <Fallback
-            testID="list-cell-fallback-detail"
-            height={lineHeight.body}
-            width={60}
             disableRandomRectWidth={disableRandomRectWidth}
+            height={lineHeight.body}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 1)}
+            testID="list-cell-fallback-detail"
+            width={60}
           />
         )
       }
@@ -54,23 +53,24 @@ export const ListCellFallback = memo(function ListCellFallback({
       subdetail={
         subdetail && (
           <Fallback
-            testID="list-cell-fallback-subdetail"
-            height={lineHeight.body}
-            width={60}
-            spacingTop={0.5}
             disableRandomRectWidth={disableRandomRectWidth}
+            height={lineHeight.body}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 2)}
+            spacingTop={0.5}
+            testID="list-cell-fallback-subdetail"
+            width={60}
           />
         )
       }
+      testID={testID}
       title={
         title && (
           <Fallback
-            testID="list-cell-fallback-title"
-            height={lineHeight.headline}
-            width={90}
             disableRandomRectWidth={disableRandomRectWidth}
+            height={lineHeight.headline}
             rectWidthVariant={getRectWidthVariant(rectWidthVariant, 3)}
+            testID="list-cell-fallback-title"
+            width={90}
           />
         )
       }

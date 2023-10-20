@@ -23,8 +23,8 @@ const ProgressBarScreen = () => {
         <ProgressContainerWithButtons>
           {({ calculateProgress }) => (
             <HStack gap={2}>
-              <ProgressCircle progress={calculateProgress(0)} weight="heavy" size={100} />
-              <ProgressCircle progress={calculateProgress(0.2)} weight="heavy" size={100} />
+              <ProgressCircle progress={calculateProgress(0)} size={100} weight="heavy" />
+              <ProgressCircle progress={calculateProgress(0.2)} size={100} weight="heavy" />
             </HStack>
           )}
         </ProgressContainerWithButtons>
@@ -33,32 +33,32 @@ const ProgressBarScreen = () => {
         <ProgressContainerWithButtons>
           {({ calculateProgress }) => (
             <HStack gap={2}>
-              <ProgressCircle progress={calculateProgress(0)} hideText size={100} />
-              <ProgressCircle progress={calculateProgress(0.2)} hideText size={100} />
+              <ProgressCircle hideText progress={calculateProgress(0)} size={100} />
+              <ProgressCircle hideText progress={calculateProgress(0.2)} size={100} />
             </HStack>
           )}
         </ProgressContainerWithButtons>
       </Example>
       <Example title="Disabled">
         <HStack gap={2}>
-          <ProgressCircle progress={0} disabled size={100} />
-          <ProgressCircle progress={0.6} disabled size={100} />
-          <ProgressCircle progress={1} disabled size={100} />
+          <ProgressCircle disabled progress={0} size={100} />
+          <ProgressCircle disabled progress={0.6} size={100} />
+          <ProgressCircle disabled progress={1} size={100} />
         </HStack>
       </Example>
       <Example title="Colors">
-        <HStack gap={2} flexWrap="wrap">
-          <ProgressCircle progress={0.5} color="positive" size={100} />
-          <ProgressCircle progress={0.5} color="negative" size={100} />
-          <ProgressCircle progress={0.5} color="primary" size={100} />
-          <ProgressCircle progress={0.5} color="foreground" size={100} />
-          <ProgressCircle progress={0.5} color="foreground" disabled size={100} />
+        <HStack flexWrap="wrap" gap={2}>
+          <ProgressCircle color="positive" progress={0.5} size={100} />
+          <ProgressCircle color="negative" progress={0.5} size={100} />
+          <ProgressCircle color="primary" progress={0.5} size={100} />
+          <ProgressCircle color="foreground" progress={0.5} size={100} />
+          <ProgressCircle disabled color="foreground" progress={0.5} size={100} />
         </HStack>
       </Example>
       <Example title="FillParent">
         <ProgressContainerWithButtons>
           {({ calculateProgress }) => (
-            <HStack gap={2} flexWrap="wrap">
+            <HStack flexWrap="wrap" gap={2}>
               <View style={{ height: 100, width: 100 }}>
                 <ProgressCircle progress={calculateProgress(0)} />
               </View>

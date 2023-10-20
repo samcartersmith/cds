@@ -24,7 +24,7 @@ describe('Cell', () => {
 
   it('sets an accessible label with accessibilityLabel when pressable', () => {
     render(
-      <Cell onPress={noop} accessibilityLabel={A11Y_TEXT}>
+      <Cell accessibilityLabel={A11Y_TEXT} onPress={noop}>
         {CELL_TEXT}
       </Cell>,
     );
@@ -38,7 +38,7 @@ describe('Cell', () => {
     render(
       <>
         <span id={labelId}>{A11Y_TEXT}</span>
-        <Cell onPress={noop} accessibilityLabelledBy={labelId}>
+        <Cell accessibilityLabelledBy={labelId} onPress={noop}>
           {CELL_TEXT}
         </Cell>
       </>,
@@ -53,7 +53,7 @@ describe('Cell', () => {
     render(
       <>
         <span id={descriptionId}>{A11Y_TEXT}</span>
-        <Cell onPress={noop} accessibilityHint={descriptionId}>
+        <Cell accessibilityHint={descriptionId} onPress={noop}>
           {CELL_TEXT}
         </Cell>
       </>,
@@ -143,7 +143,7 @@ describe('Cell', () => {
 
   it('renders link when pressable callback is defined but href is set with a url', () => {
     render(
-      <Cell onPress={noop} href={URL}>
+      <Cell href={URL} onPress={noop}>
         {CELL_TEXT}
       </Cell>,
     );
@@ -158,7 +158,7 @@ describe('Cell', () => {
     const target = '_blank';
 
     render(
-      <Cell to={URL} target={target}>
+      <Cell target={target} to={URL}>
         {CELL_TEXT}
       </Cell>,
     );

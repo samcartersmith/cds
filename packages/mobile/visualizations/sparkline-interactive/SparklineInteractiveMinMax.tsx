@@ -26,6 +26,7 @@ export const SparklineInteractiveMinMax: FunctionComponent<
 
   return (
     <Animated.View
+      pointerEvents="none"
       style={[
         styles.outer,
         {
@@ -34,7 +35,6 @@ export const SparklineInteractiveMinMax: FunctionComponent<
           height: SparklineInteractiveMinMaxLabelHeight,
         },
       ]}
-      pointerEvents="none"
     >
       {!!dataPoint && (
         <SparklineInteractiveMinMaxContent x={xFunction(dataPoint.date)}>
@@ -87,9 +87,9 @@ const SparklineInteractiveMinMaxContent: FunctionComponent<
     >
       <TextLabel2
         color="foregroundMuted"
+        dangerouslySetStyle={[styles.caption, { backgroundColor: colors.background }]}
         onLayout={onLayout}
         spacing={0}
-        dangerouslySetStyle={[styles.caption, { backgroundColor: colors.background }]}
       >
         {children}
       </TextLabel2>

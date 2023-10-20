@@ -31,9 +31,9 @@ export const Group = memo(
     return (
       <Box
         ref={forwardedRef}
-        flexWrap="nowrap"
         alignItems="stretch"
         flexDirection={direction === 'horizontal' ? 'row' : 'column'}
+        flexWrap="nowrap"
         {...boxProps}
       >
         {contents}

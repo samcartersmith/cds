@@ -229,12 +229,12 @@ export const TabNavigation = memo(
       const getChildren = useCallback(
         ({ id, count, max, label }: TabProps) => (
           <TabLabel
-            id={id}
-            onLayout={handleLayout}
             active={id === value}
-            variant={variant}
             count={count}
+            id={id}
             max={max}
+            onLayout={handleLayout}
+            variant={variant}
           >
             {label}
           </TabLabel>
@@ -295,31 +295,31 @@ export const TabNavigation = memo(
       return (
         <div ref={observe} className={cx(tabNavigationStaticClassName, containerClassName)}>
           <Paddle
-            background={background}
-            show={leftPaddle}
-            onPress={handleScrollLeft}
-            variant={variant}
             accessibilityLabel="Skip to beginning"
+            background={background}
+            onPress={handleScrollLeft}
+            show={leftPaddle}
             testID={`${tabNavigationStaticClassName}--paddle-left`}
+            variant={variant}
           />
           <HStack
             ref={scrollRef}
-            onScroll={handleOnScroll}
             alignItems="center"
-            position="relative"
             background={background}
             dangerouslySetClassName={cx(tabNavigationStaticClassName, scrollContainerClassName)}
+            onScroll={handleOnScroll}
+            position="relative"
           >
             <VStack testID={testID} {...rest} spacing={0}>
               {shouldOverrideScale ? (
                 <span style={{ zIndex: zIndex.navigation }}>
                   <ThemeProvider scale="large">
                     <HStack
-                      role="tablist"
-                      accessibilityLabelledBy={accessibilityLabelledBy}
                       accessibilityLabel={accessibilityLabel}
-                      gap={4}
+                      accessibilityLabelledBy={accessibilityLabelledBy}
                       flexShrink={0}
+                      gap={4}
+                      role="tablist"
                     >
                       {tabLabels}
                     </HStack>
@@ -327,11 +327,11 @@ export const TabNavigation = memo(
                 </span>
               ) : (
                 <HStack
-                  role="tablist"
-                  accessibilityLabelledBy={accessibilityLabelledBy}
                   accessibilityLabel={accessibilityLabel}
-                  gap={4}
+                  accessibilityLabelledBy={accessibilityLabelledBy}
                   flexShrink={0}
+                  gap={4}
+                  role="tablist"
                   zIndex={zIndex.navigation}
                 >
                   {tabLabels}
@@ -343,13 +343,13 @@ export const TabNavigation = memo(
             </VStack>
           </HStack>
           <Paddle
+            accessibilityLabel="skip to end"
             background={background}
             direction="right"
-            show={rightPaddle}
             onPress={handleScrollRight}
-            variant={variant}
-            accessibilityLabel="skip to end"
+            show={rightPaddle}
             testID={`${tabNavigationStaticClassName}--paddle-right`}
+            variant={variant}
           />
         </div>
       );

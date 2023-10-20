@@ -54,14 +54,14 @@ const ComponentListCell = memo(
     return (
       <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
         <ListCell
-          title={name}
+          accessory={isActive ? 'selected' : 'arrow'}
           description={`${totalCallSites} files`}
           detail={`${totalInstances} instances`}
-          accessory={isActive ? 'selected' : 'arrow'}
-          onPress={setActiveComponent}
-          selected={isActive}
           innerSpacing={innerCellSpacing}
+          onPress={setActiveComponent}
           outerSpacing={outerCellSpacing}
+          selected={isActive}
+          title={name}
         />
       </div>
     );
@@ -137,12 +137,12 @@ export const AdopterComponentsList = memo(
       return (
         <ComponentListCell
           key={id}
-          id={id}
           activeComponent={activeComponent}
-          setActiveComponent={getSetActiveComponentHandler(item)}
+          id={id}
           index={index}
-          style={style}
           name={name}
+          setActiveComponent={getSetActiveComponentHandler(item)}
+          style={style}
           totalCallSites={totalCallSites}
           totalInstances={totalInstances}
         />
@@ -167,11 +167,11 @@ export const AdopterComponentsList = memo(
           return (
             <ComponentListCell
               key={id}
-              id={id}
               activeComponent={activeComponent}
-              setActiveComponent={getSetActiveComponentHandler(component)}
+              id={id}
               index={index}
               name={name}
+              setActiveComponent={getSetActiveComponentHandler(component)}
               totalCallSites={totalCallSites}
               totalInstances={totalInstances}
             />
@@ -203,7 +203,7 @@ export const AdopterComponentsList = memo(
 
     const end = activeComponent ? <AdopterComponentDetails {...activeComponent} /> : null;
 
-    return <SplitScreenStack start={start} end={end} />;
+    return <SplitScreenStack end={end} start={start} />;
   },
 );
 

@@ -39,7 +39,7 @@ const CdsProviders = memo(function CdsProviders({ children }: ProviderProps) {
   const isDarkMode = useIsDarkMode();
   const DocgenProvider = enabled ? DocgenProjectProvider : Fragment;
   return (
-    <FeatureFlagProvider frontier flexGap>
+    <FeatureFlagProvider flexGap frontier>
       <RootScaleProvider>
         <ThemeProvider display="contents" spectrum={isDarkMode ? 'dark' : 'light'}>
           <PortalProvider>

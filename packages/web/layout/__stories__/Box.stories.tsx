@@ -50,11 +50,11 @@ export const Opacity = () => (
 Opacity.parameters = { a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } } };
 
 export const FlexControls = () => (
-  <Box flexDirection="row" justifyContent="space-between" alignItems="center" alignContent="center">
-    <Box background="positive" alignSelf="flex-end" spacing={1}>
+  <Box alignContent="center" alignItems="center" flexDirection="row" justifyContent="space-between">
+    <Box alignSelf="flex-end" background="positive" spacing={1}>
       <Lipsum color="positiveForeground" />
     </Box>
-    <Box background="backgroundAlternate" width="30%" spacing={1}>
+    <Box background="backgroundAlternate" spacing={1} width="30%">
       <Lipsum />
     </Box>
     <Box background="backgroundOverlay" flexGrow={1} spacing={1}>
@@ -129,110 +129,110 @@ export const RoundedVariations = () => (
 );
 
 export const Spacing = () => (
-  <Box spacing={3} background="backgroundAlternate">
+  <Box background="backgroundAlternate" spacing={3}>
     <TextBody as="p">All sides</TextBody>
   </Box>
 );
 
 export const CustomSpacing = () => (
   <Box
-    spacingTop={1}
-    spacingEnd={2}
-    spacingBottom={3}
-    spacingStart={4}
     background="backgroundAlternate"
+    spacingBottom={3}
+    spacingEnd={2}
+    spacingStart={4}
+    spacingTop={1}
   >
     <TextBody as="p">Custom sides</TextBody>
   </Box>
 );
 
 export const VerticalSpacing = () => (
-  <Box spacingVertical={3} background="backgroundAlternate">
+  <Box background="backgroundAlternate" spacingVertical={3}>
     <TextBody as="p">Vertical only</TextBody>
   </Box>
 );
 
 export const HorizontalSpacing = () => (
-  <Box spacingHorizontal={3} background="backgroundAlternate">
+  <Box background="backgroundAlternate" spacingHorizontal={3}>
     <TextBody as="p">Horizontal only</TextBody>
   </Box>
 );
 
 export const Offset = () => (
-  <Box spacing={5} background="backgroundAlternate">
-    <Box offset={3} background>
+  <Box background="backgroundAlternate" spacing={5}>
+    <Box background offset={3}>
       <TextBody as="p">All sides</TextBody>
     </Box>
   </Box>
 );
 
 export const CustomOffset = () => (
-  <Box spacing={5} background="backgroundAlternate">
-    <Box offsetTop={1} offsetEnd={2} offsetBottom={3} offsetStart={4} background>
+  <Box background="backgroundAlternate" spacing={5}>
+    <Box background offsetBottom={3} offsetEnd={2} offsetStart={4} offsetTop={1}>
       <TextBody as="p">Custom sides</TextBody>
     </Box>
   </Box>
 );
 
 export const VerticalOffset = () => (
-  <Box spacing={5} background="backgroundAlternate">
-    <Box offsetVertical={3} background>
+  <Box background="backgroundAlternate" spacing={5}>
+    <Box background offsetVertical={3}>
       <TextBody as="p">Vertical only</TextBody>
     </Box>
   </Box>
 );
 
 export const HorizontalOffset = () => (
-  <Box spacing={5} background="backgroundAlternate">
-    <Box offsetHorizontal={3} background>
+  <Box background="backgroundAlternate" spacing={5}>
+    <Box background offsetHorizontal={3}>
       <TextBody as="p">Horizontal only</TextBody>
     </Box>
   </Box>
 );
 
 export const Positioned = () => (
-  <Box background="backgroundAlternate" position="relative" height="300px" width="100%" spacing={1}>
-    <Box position="absolute" right="15px" bottom="15px" width="45%" spacing={1}>
+  <Box background="backgroundAlternate" height="300px" position="relative" spacing={1} width="100%">
+    <Box bottom="15px" position="absolute" right="15px" spacing={1} width="45%">
       <Lipsum />
     </Box>
   </Box>
 );
 
 export const TopPin = () => (
-  <Box width="100%" height={250} background="backgroundAlternate" position="relative">
-    <Box pin="top" background="backgroundOverlay">
+  <Box background="backgroundAlternate" height={250} position="relative" width="100%">
+    <Box background="backgroundOverlay" pin="top">
       <TextBody as="p">Top from left to right</TextBody>
     </Box>
   </Box>
 );
 
 export const RightPin = () => (
-  <Box width="100%" height={250} background="backgroundAlternate" position="relative">
-    <Box pin="right" background="backgroundOverlay">
+  <Box background="backgroundAlternate" height={250} position="relative" width="100%">
+    <Box background="backgroundOverlay" pin="right">
       <TextBody as="p"> Right from top to bottom</TextBody>
     </Box>
   </Box>
 );
 
 export const BottomPin = () => (
-  <Box width="100%" height={250} background="backgroundAlternate" position="relative">
-    <Box pin="bottom" background="backgroundOverlay">
+  <Box background="backgroundAlternate" height={250} position="relative" width="100%">
+    <Box background="backgroundOverlay" pin="bottom">
       <TextBody as="p">Bottom from left to right</TextBody>
     </Box>
   </Box>
 );
 
 export const LeftPin = () => (
-  <Box width="100%" height={250} background="backgroundAlternate" position="relative">
-    <Box pin="left" background="backgroundOverlay">
+  <Box background="backgroundAlternate" height={250} position="relative" width="100%">
+    <Box background="backgroundOverlay" pin="left">
       <TextBody as="p">Left from top to bottom</TextBody>
     </Box>
   </Box>
 );
 
 export const AllPin = () => (
-  <Box width="100%" height={250} background="backgroundAlternate" position="relative">
-    <Box pin="all" background="backgroundOverlay">
+  <Box background="backgroundAlternate" height={250} position="relative" width="100%">
+    <Box background="backgroundOverlay" pin="all">
       <TextBody as="p">To all corners</TextBody>
     </Box>
   </Box>

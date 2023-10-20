@@ -12,7 +12,7 @@ const TEST_ID = 'remote-image-test-id';
 const remoteImageIndices = [0, 1, 2, 3];
 
 const MockRemoteImageGroup = ({ ...props }: RemoteImageGroupBaseProps) => (
-  <RemoteImageGroup testID={TEST_ID} shape="circle" {...props}>
+  <RemoteImageGroup shape="circle" testID={TEST_ID} {...props}>
     {remoteImageIndices.map((index) => (
       <RemoteImage key={`remote-image-child-${index}`} source={src} />
     ))}

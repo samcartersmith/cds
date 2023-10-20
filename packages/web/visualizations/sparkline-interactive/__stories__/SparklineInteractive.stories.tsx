@@ -39,24 +39,24 @@ export const Default = () => (
 Default.parameters = { percy: enableJavascript };
 
 export const Compact = () => (
-  <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} compact />
+  <SparklineInteractiveBuild compact data={sparklineInteractiveData} strokeColor={strokeColor} />
 );
 Compact.parameters = { percy: enableJavascript };
 
 export const DisableScrubbing = () => (
   <SparklineInteractiveBuild
+    disableScrubbing
     data={sparklineInteractiveData}
     strokeColor={strokeColor}
-    disableScrubbing
   />
 );
 DisableScrubbing.parameters = { percy: enableJavascript };
 
 export const HidePeriodSelector = () => (
   <SparklineInteractiveBuild
+    hidePeriodSelector
     data={sparklineInteractiveData}
     strokeColor={strokeColor}
-    hidePeriodSelector
   />
 );
 HidePeriodSelector.parameters = { percy: enableJavascript };
@@ -72,7 +72,7 @@ yAxisScaling.parameters = { percy: enableJavascript };
 
 export const Fill = () => (
   <React.StrictMode>
-    <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} fill />
+    <SparklineInteractiveBuild fill data={sparklineInteractiveData} strokeColor={strokeColor} />
   </React.StrictMode>
 );
 Fill.parameters = { percy: enableJavascript };
@@ -84,15 +84,15 @@ export const FallbackNegative = () => (
 );
 
 export const FallbackCompact = () => (
-  <SparklineInteractiveBuild strokeColor={strokeColor} compact />
+  <SparklineInteractiveBuild compact strokeColor={strokeColor} />
 );
 
 export const NoHoverDate = () => (
   <SparklineInteractiveBuild
-    data={sparklineInteractiveData}
-    strokeColor={strokeColor}
     fill
     hideHoverDate
+    data={sparklineInteractiveData}
+    strokeColor={strokeColor}
   />
 );
 NoHoverDate.parameters = { percy: enableJavascript };
@@ -119,8 +119,8 @@ export const HoverData = () => {
   return (
     <SparklineInteractiveBuild
       data={sparklineInteractiveData}
-      strokeColor={strokeColor}
       hoverData={sparklineInteractiveHoverData}
+      strokeColor={strokeColor}
     />
   );
 };
@@ -129,10 +129,10 @@ HoverData.parameters = { percy: enableJavascript };
 export const HoverDataWithFill = () => {
   return (
     <SparklineInteractiveBuild
-      data={sparklineInteractiveData}
-      strokeColor={strokeColor}
-      hoverData={sparklineInteractiveHoverData}
       fill
+      data={sparklineInteractiveData}
+      hoverData={sparklineInteractiveHoverData}
+      strokeColor={strokeColor}
     />
   );
 };
@@ -142,8 +142,8 @@ export const BottomPeriodSelector = () => {
   return (
     <SparklineInteractiveBuild
       data={sparklineInteractiveData}
-      strokeColor={strokeColor}
       periodSelectorPlacement="below"
+      strokeColor={strokeColor}
     />
   );
 };
@@ -154,7 +154,7 @@ export const VStackedSparkline = () => {
       <Box width="100%">
         <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
       </Box>
-      <Box background="secondary" width="100%" height={20} spacingTop={8}>
+      <Box background="secondary" height={20} spacingTop={8} width="100%">
         This is an element below the sparkline
       </Box>
     </VStack>

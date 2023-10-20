@@ -13,7 +13,7 @@ describe('Tray', () => {
     const onCloseCompleteSpy = jest.fn();
     render(
       <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <Tray testID="mock-tray" onCloseComplete={onCloseCompleteSpy}>
+        <Tray onCloseComplete={onCloseCompleteSpy} testID="mock-tray">
           <TextBody>{loremIpsum}</TextBody>
         </Tray>
       </SafeAreaProvider>,

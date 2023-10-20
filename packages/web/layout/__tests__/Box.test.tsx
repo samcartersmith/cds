@@ -35,7 +35,7 @@ describe('Box', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <Box spacing={2} background="background">
+        <Box background="background" spacing={2}>
           Child
         </Box>,
       ),
@@ -126,7 +126,7 @@ describe('Box', () => {
       expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
-        <Box width="321px" maxWidth="789rem" minWidth="66%">
+        <Box maxWidth="789rem" minWidth="66%" width="321px">
           Child
         </Box>,
       );
@@ -164,7 +164,7 @@ describe('Box', () => {
       expect(screen.getByText('Child')).not.toHaveAttribute('style');
 
       rerender(
-        <Box position="absolute" top="25%" right="30px" bottom="8rem" left="1000%" zIndex={200}>
+        <Box bottom="8rem" left="1000%" position="absolute" right="30px" top="25%" zIndex={200}>
           Child
         </Box>,
       );

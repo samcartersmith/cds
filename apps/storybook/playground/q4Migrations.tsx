@@ -20,13 +20,13 @@ export const Q4Migrations = () => {
       frontierTypography
     >
       <Box
-        dangerouslySetClassName="test"
         dangerouslySetBackground="red"
+        dangerouslySetClassName="test"
         offsetBottom={2}
         offsetTop={3}
       >
-        <Illustration type="pictogram" name="2fa" />
-        <Avatar src="test" alt="alt text test" />
+        <Illustration name="2fa" type="pictogram" />
+        <Avatar alt="alt text test" src="test" />
         {/* eslint-disable-next-line react-perf/jsx-no-new-object-as-prop */}
         <ListCell innerSpacing={{ offsetHorizontal: 2 }} />
         <ListCell outerSpacing={offsetConfig} />

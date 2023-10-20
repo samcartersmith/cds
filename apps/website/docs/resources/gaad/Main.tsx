@@ -25,9 +25,9 @@ export const Main = () => {
   }, []);
 
   return (
-    <VStack spacing={3} justifyContent="center" alignItems="center">
+    <VStack alignItems="center" justifyContent="center" spacing={3}>
       <Box maxWidth={900} offsetTop={4}>
-        <Image srcLight="/img/gaad/hero-light.png" srcDark="/img/gaad/hero-dark.png" />
+        <Image srcDark="/img/gaad/hero-dark.png" srcLight="/img/gaad/hero-light.png" />
       </Box>
       <Box justifyContent="center" spacingBottom={4}>
         <Steps currentStep={currentStep} />
@@ -54,7 +54,7 @@ export const Main = () => {
                   chart If you have VoiceOver on listen to the announcements"
                 >
                   <PressableOpacity onPress={noop}>
-                    <HStack gap={1} alignItems="center">
+                    <HStack alignItems="center" gap={1}>
                       <Icon name="info" size="s" />
                       <TextLabel1 as="label">
                         Tips for using our sparkline component or price chart via the keyboard.
@@ -66,18 +66,18 @@ export const Main = () => {
             </Collapsible>
           </VStack>
           <Rules />
-          <Content onStepChange={handleStepChange} currentStep={currentStep} />
+          <Content currentStep={currentStep} onStepChange={handleStepChange} />
         </VStack>
         <VStack flexGrow={1} justifyContent="center" width="100%">
           <RemoteImage
+            height={244}
             source="https://assets.poap.xyz/2746f816-2adb-4d24-8b0d-95a8c24a53dd.gif"
             width={244}
-            height={244}
           />
         </VStack>
       </HStack>
       <VStack gap={2} width="100%">
-        <Box spacingTop={5} alignSelf="center">
+        <Box alignSelf="center" spacingTop={5}>
           <Button compact transparent>
             You’ve gone too far!
           </Button>

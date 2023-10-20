@@ -14,7 +14,7 @@ export const Determinate = () => {
     <VStack alignItems="flex-start">
       <TextTitle1 as="h1">Determinate</TextTitle1>
       <Spacer />
-      <CircularProgress progress={80} indeterminate={false} strokeWidth={4} radius={30} />
+      <CircularProgress indeterminate={false} progress={80} radius={30} strokeWidth={4} />
     </VStack>
   );
 };

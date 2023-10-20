@@ -7,5 +7,5 @@ export const Divider = memo(function Divider({
   spacingBottom = spacingVertical,
   ...rest
 }: DividerProps) {
-  return <CDSDivider spacingTop={spacingTop} spacingBottom={spacingBottom} {...rest} />;
+  return <CDSDivider spacingBottom={spacingBottom} spacingTop={spacingTop} {...rest} />;
 });

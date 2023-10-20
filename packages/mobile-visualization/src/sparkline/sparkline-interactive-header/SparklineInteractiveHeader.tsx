@@ -26,7 +26,7 @@ export * from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 const Trailing: FunctionComponent<React.PropsWithChildren<unknown>> = ({ children }) => {
   if (children) {
     return (
-      <VStack spacingStart={2} flexShrink={0} justifyContent="center" alignItems="center">
+      <VStack alignItems="center" flexShrink={0} justifyContent="center" spacingStart={2}>
         {children}
       </VStack>
     );
@@ -147,10 +147,10 @@ const SparklineInteractiveHeaderStable = memo(
       const label = !!defaultLabel && (
         <TextInput
           ref={labelRef}
-          editable={false}
-          style={styles.label}
           defaultValue={defaultLabel}
+          editable={false}
           pointerEvents="none"
+          style={styles.label}
           testID="SparklineInteractiveHeaderLabel"
           {...fontScaleProps}
         />
@@ -161,44 +161,44 @@ const SparklineInteractiveHeaderStable = memo(
           <View>
             <TextInput
               ref={titleRef}
-              editable={false}
-              style={styles.title(defaultTitle)}
               defaultValue={defaultTitle}
+              editable={false}
               pointerEvents="none"
+              style={styles.title(defaultTitle)}
               testID="SparklineInteractiveHeaderTitle"
               {...fontScaleProps}
             />
           </View>
           {!!defaultSubHead && (
-            <HStack spacing={0} alignItems="center" accessible>
+            <HStack accessible alignItems="center" spacing={0}>
               <TextInput
                 ref={subHeadIconRef}
-                editable={false}
-                style={styles.subHeadIcon(defaultSubHead.variant)}
                 defaultValue={subheadIconSignMap[defaultSubHead.sign]}
+                editable={false}
                 pointerEvents="none"
+                style={styles.subHeadIcon(defaultSubHead.variant)}
                 testID="SparklineInteractiveHeaderSubHeadIcon"
                 {...fontScaleProps}
               />
               <TextInput
                 ref={subHeadRef}
+                defaultValue={interpolateSubHeadText(defaultSubHead)}
                 editable={false}
+                pointerEvents="none"
                 style={styles.subHead(
                   defaultSubHead.variant,
                   defaultSubHead.accessoryText === undefined,
                 )}
-                defaultValue={interpolateSubHeadText(defaultSubHead)}
-                pointerEvents="none"
                 testID="SparklineInteractiveHeaderSubHead"
                 {...fontScaleProps}
               />
               {!!defaultSubHead.accessoryText && (
                 <TextInput
                   ref={subHeadAccessoryRef}
-                  editable={false}
-                  style={styles.subHeadAccessory()}
                   defaultValue={defaultSubHead.accessoryText}
+                  editable={false}
                   pointerEvents="none"
+                  style={styles.subHeadAccessory()}
                   testID="SparklineInteractiveHeaderSubHead"
                   {...fontScaleProps}
                 />
@@ -216,15 +216,15 @@ const SparklineInteractiveHeaderStable = memo(
 
       return (
         <HStack
-          testID={testID}
-          spacing={0}
-          justifyContent="space-between"
-          aria-live="polite"
-          accessibilityRole="header"
-          accessibilityLabel="Asset summary"
           accessibilityHint="The price and difference for this time period"
+          accessibilityLabel="Asset summary"
+          accessibilityRole="header"
+          aria-live="polite"
+          justifyContent="space-between"
+          spacing={0}
+          testID={testID}
         >
-          <VStack spacing={0} flexShrink={1} accessible accessibilityLabel={headerA11yLabel}>
+          <VStack accessible accessibilityLabel={headerA11yLabel} flexShrink={1} spacing={0}>
             {labelNode ?? label}
             {title}
           </VStack>
@@ -247,17 +247,17 @@ export const SparklineInteractiveHeader = memo(
     ({ defaultLabel, defaultTitle, defaultSubHead, testID, trailing, labelNode }, ref) => {
       return (
         <SparklineInteractiveHeaderStable
-          ref={ref}
           // All updates after initial load should be handled imperatively
           // via update function in forwarded ref to prevent overriding
           // values unexpectedly. This is why we use ref here so that the
           // default value is stable and never updates on re-renders
+          ref={ref}
           defaultLabel={useRef(defaultLabel).current}
-          defaultTitle={useRef(defaultTitle).current}
           defaultSubHead={useRef(defaultSubHead).current}
+          defaultTitle={useRef(defaultTitle).current}
+          labelNode={labelNode}
           testID={testID}
           trailing={trailing}
-          labelNode={labelNode}
         />
       );
     },

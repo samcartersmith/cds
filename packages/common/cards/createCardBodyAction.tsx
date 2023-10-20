@@ -18,12 +18,12 @@ export function createCardBodyAction<OnPressFn>({ Button }: CreateCardBodyParams
   }: ButtonBaseProps<OnPressFn>) {
     return (
       <Button
+        noScaleOnPress
         compact={compact}
         flush={flush}
+        numberOfLines={numberOfLines}
         transparent={transparent}
         variant={variant}
-        noScaleOnPress
-        numberOfLines={numberOfLines}
         {...props}
       >
         {children}

@@ -24,8 +24,8 @@ export function searchInputBuilder(
     return (
       <SearchInput
         accessibilityLabel="Search"
-        placeholder="Placeholder"
         onChangeText={setText}
+        placeholder="Placeholder"
         value={text}
       />
     );
@@ -38,8 +38,8 @@ export function searchInputBuilder(
       <SearchInput
         accessibilityLabel="Search"
         bordered={false}
-        value={text}
         onChangeText={setText}
+        value={text}
       />
     );
   };
@@ -48,7 +48,7 @@ export function searchInputBuilder(
     const [text, setText] = useState('');
 
     return (
-      <SearchInput accessibilityLabel="Search" value={text} hideStartIcon onChangeText={setText} />
+      <SearchInput hideStartIcon accessibilityLabel="Search" onChangeText={setText} value={text} />
     );
   };
 
@@ -62,10 +62,10 @@ export function searchInputBuilder(
     return (
       <SearchInput
         accessibilityLabel="Search"
-        onClear={handleOnClear}
         onChangeText={setText}
-        value={text}
+        onClear={handleOnClear}
         placeholder="Placeholder"
+        value={text}
       />
     );
   };
@@ -80,10 +80,10 @@ export function searchInputBuilder(
     return (
       <SearchInput
         accessibilityLabel="Search"
-        value={text}
         onChangeText={setText}
         onSearch={handleOnSearch}
         placeholder="Hit Enter to see the string logged to console"
+        value={text}
       />
     );
   };
@@ -98,10 +98,10 @@ export function searchInputBuilder(
     return (
       <SearchInput
         accessibilityLabel="Search"
-        value={text}
         onChangeText={setText}
         onFocus={handleOnFocus}
         placeholder="Placeholder"
+        value={text}
       />
     );
   };
@@ -116,10 +116,10 @@ export function searchInputBuilder(
     return (
       <SearchInput
         accessibilityLabel="Search"
-        value={text}
-        onChangeText={setText}
         onBlur={handleOnBlur}
+        onChangeText={setText}
         placeholder="Placeholder"
+        value={text}
       />
     );
   };
@@ -128,14 +128,14 @@ export function searchInputBuilder(
     const [text, setText] = useState('');
 
     return (
-      <SearchInput onChangeText={setText} value={text} accessibilityLabel="searchbox" compact />
+      <SearchInput compact accessibilityLabel="searchbox" onChangeText={setText} value={text} />
     );
   };
 
   const Disabled = () => {
     const [text, setText] = useState('');
 
-    return <SearchInput accessibilityLabel="Search" value={text} onChangeText={setText} disabled />;
+    return <SearchInput disabled accessibilityLabel="Search" onChangeText={setText} value={text} />;
   };
 
   const DisplayValue = () => {
@@ -143,7 +143,7 @@ export function searchInputBuilder(
 
     return (
       <>
-        <SearchInput accessibilityLabel="Search" value={text} onChangeText={setText} />
+        <SearchInput accessibilityLabel="Search" onChangeText={setText} value={text} />
         <TextLabel1>{text}</TextLabel1>
       </>
     );

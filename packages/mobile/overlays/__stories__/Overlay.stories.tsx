@@ -27,13 +27,13 @@ const OverlayScreen = () => {
       <Example>
         <Button onPress={openModal}>Open Modal</Button>
         <Modal
-          visible={visible}
-          animationType="none"
           hardwareAccelerated
           statusBarTranslucent
           transparent
+          animationType="none"
+          visible={visible}
         >
-          <Overlay opacity={opacity} onTouchStart={closeModal} />
+          <Overlay onTouchStart={closeModal} opacity={opacity} />
         </Modal>
       </Example>
     </ExampleScreen>

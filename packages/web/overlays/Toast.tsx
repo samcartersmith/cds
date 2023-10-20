@@ -104,7 +104,7 @@ export const Toast = memo(
       }, [action, handleClose]);
 
       return (
-        <Portal disablePortal={disablePortal} containerId={toastContainerId}>
+        <Portal containerId={toastContainerId} disablePortal={disablePortal}>
           {/* toast does not respond to density as per design guideline */}
           <ThemeProvider scale={DEFAULT_SCALE}>
             <motion.div
@@ -113,27 +113,26 @@ export const Toast = memo(
               data-testid={`${testID}-motion`}
             >
               <Box
-                width="100%"
                 justifyContent="center"
-                spacing={2}
-                // persist toast when hovering
-                onMouseEnter={pauseTimer}
+                onMouseEnter={pauseTimer} // persist toast when hovering
                 onMouseLeave={resumeTimer}
                 role="alert"
+                spacing={2}
                 testID={testID}
+                width="100%"
                 {...rest}
               >
                 <HStack
-                  spacingVertical={1}
-                  spacingStart={3}
-                  spacingEnd={1}
-                  elevation={2}
+                  alignItems="center"
                   background="backgroundAlternate"
                   borderRadius="rounded"
-                  alignItems="center"
+                  elevation={2}
                   maxWidth={550}
-                  position="relative"
                   overflow="hidden"
+                  position="relative"
+                  spacingEnd={1}
+                  spacingStart={3}
+                  spacingVertical={1}
                 >
                   {/* avoid pushing contents off screen */}
                   <Box flexShrink={1} spacingEnd={2} spacingVertical={1}>
@@ -145,21 +144,21 @@ export const Toast = memo(
                   <HStack>
                     {!!action && (
                       <Button
-                        onPress={handleActionPress}
-                        testID={action.testID ?? 'toast-action'}
                         compact
                         transparent
+                        onPress={handleActionPress}
+                        testID={action.testID ?? 'toast-action'}
                       >
                         {action.label}
                       </Button>
                     )}
                     {!hideCloseButton && (
                       <IconButton
+                        transparent
                         name="close"
-                        variant="foregroundMuted"
                         onPress={handleClose}
                         testID={`${testID}-close-button`}
-                        transparent
+                        variant="foregroundMuted"
                         {...closeButtonAccessibilityProps}
                       />
                     )}

@@ -77,25 +77,25 @@ const ProgressBarFloatLabel = memo(
 
     return (
       <Box
-        alignItems="center"
         ref={setupContainerRef}
-        testID="cds-progress-label-container"
-        width="100%"
+        alignItems="center"
         spacingBottom={labelPlacement === 'above' ? 1 : 0}
         spacingTop={labelPlacement === 'below' ? 1 : 0}
+        testID="cds-progress-label-container"
+        width="100%"
       >
         <motion.div
-          className={floatingTextContainerClassName}
-          data-testid="cds-progress-bar-float-label"
           ref={textContainerRef}
           animate={animationControls}
+          className={floatingTextContainerClassName}
+          data-testid="cds-progress-bar-float-label"
           style={motionStyle}
         >
           <ProgressTextLabel
-            value={labelNum}
-            renderLabel={renderLabel}
-            disabled={disabled}
             color="foregroundMuted"
+            disabled={disabled}
+            renderLabel={renderLabel}
+            value={labelNum}
           />
         </motion.div>
       </Box>
@@ -109,10 +109,10 @@ export const ProgressBarWithFloatLabel: React.FC<
   const skipLabel = isStorybook();
   const progressBarFloatLabel = !skipLabel && (
     <ProgressBarFloatLabel
-      label={label}
-      progress={progress}
       disabled={disabled}
+      label={label}
       labelPlacement={labelPlacement}
+      progress={progress}
     />
   );
 

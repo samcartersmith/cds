@@ -101,41 +101,41 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
     );
 
     return (
-      <ThemeProvider scale={DEFAULT_SCALE} display="contents">
+      <ThemeProvider display="contents" scale={DEFAULT_SCALE}>
         <SidebarProvider value={sidebarContext}>
           <VStack
-            as="nav"
             background
             borderedEnd
-            height="100%"
-            position="sticky"
-            top="0"
-            bottom="0"
-            left="0"
-            width={computedWidth}
-            minWidth={computedWidth}
-            spacingHorizontal={sidebarHorizontalSpacing}
-            spacingBottom={2}
-            spacingTop={2}
-            justifyContent="space-between"
-            zIndex={zIndex.navigation}
-            testID={testID}
             accessibilityLabel={accessibilityLabel}
+            as="nav"
+            bottom="0"
+            height="100%"
+            justifyContent="space-between"
+            left="0"
+            minWidth={computedWidth}
+            position="sticky"
+            spacingBottom={2}
+            spacingHorizontal={sidebarHorizontalSpacing}
+            spacingTop={2}
+            testID={testID}
+            top="0"
+            width={computedWidth}
+            zIndex={zIndex.navigation}
             {...rest}
           >
             <VStack>
               {logo && (
-                <VStack spacingBottom={4} spacingTop={1} spacingStart={1}>
+                <VStack spacingBottom={4} spacingStart={1} spacingTop={1}>
                   {logo}
                 </VStack>
               )}
-              <VStack gap={0.5} offsetStart={0.5} as="ul" dangerouslySetClassName={ulClassName}>
+              <VStack as="ul" dangerouslySetClassName={ulClassName} gap={0.5} offsetStart={0.5}>
                 {liWrappedChildren}
               </VStack>
             </VStack>
             {!!renderEnd && <Box spacingTop={4}>{renderEnd(!!computedCollapse)}</Box>}
           </VStack>
-          <span className={breakpointObserverClassName} ref={ref} />
+          <span ref={ref} className={breakpointObserverClassName} />
         </SidebarProvider>
       </ThemeProvider>
     );

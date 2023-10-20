@@ -13,28 +13,28 @@ function onPress(event: GestureResponderEvent) {
 const iconName = 'arrowsHorizontal';
 const variants = [
   {
-    component: <IconButton variant="primary" accessibilityLabel={iconName} name={iconName} />,
+    component: <IconButton accessibilityLabel={iconName} name={iconName} variant="primary" />,
     title: <TextBody>Primary</TextBody>,
   },
   {
     component: (
-      <IconButton transparent variant="primary" accessibilityLabel={iconName} name={iconName} />
+      <IconButton transparent accessibilityLabel={iconName} name={iconName} variant="primary" />
     ),
     title: <TextBody>Primary transparent</TextBody>,
   },
   {
-    component: <IconButton variant="secondary" accessibilityLabel={iconName} name={iconName} />,
+    component: <IconButton accessibilityLabel={iconName} name={iconName} variant="secondary" />,
     title: <TextBody>Secondary</TextBody>,
   },
   {
     component: (
-      <IconButton transparent variant="secondary" accessibilityLabel={iconName} name={iconName} />
+      <IconButton transparent accessibilityLabel={iconName} name={iconName} variant="secondary" />
     ),
     title: <TextBody>Secondary transparent</TextBody>,
   },
   {
     component: (
-      <IconButton variant="foregroundMuted" accessibilityLabel={iconName} name={iconName} />
+      <IconButton accessibilityLabel={iconName} name={iconName} variant="foregroundMuted" />
     ),
     title: <TextBody>ForegroundMuted</TextBody>,
   },
@@ -42,9 +42,9 @@ const variants = [
     component: (
       <IconButton
         transparent
-        variant="foregroundMuted"
         accessibilityLabel={iconName}
         name={iconName}
+        variant="foregroundMuted"
       />
     ),
     title: <TextBody>ForegroundMuted transparent</TextBody>,
@@ -54,30 +54,30 @@ const variants = [
 const IconButtonScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="Default" inline>
-        <IconButton onPress={onPress} accessibilityLabel={iconName} name={iconName} />
+      <Example inline title="Default">
+        <IconButton accessibilityLabel={iconName} name={iconName} onPress={onPress} />
       </Example>
 
-      <Example title="States" inline>
-        <Box flexDirection="row" alignItems="center" justifyContent="space-between" width={350}>
-          <IconButton accessibilityLabel={iconName} disabled name={iconName} variant="primary" />
+      <Example inline title="States">
+        <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
+          <IconButton disabled accessibilityLabel={iconName} name={iconName} variant="primary" />
           <TextBody>Disabled primary</TextBody>
         </Box>
 
-        <Box flexDirection="row" alignItems="center" justifyContent="space-between" width={350}>
-          <IconButton accessibilityLabel={iconName} disabled name={iconName} />
+        <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
+          <IconButton disabled accessibilityLabel={iconName} name={iconName} />
           <TextBody>Disabled secondary</TextBody>
         </Box>
       </Example>
 
-      <Example title="Variants" inline>
+      <Example inline title="Variants">
         {variants.map((variant, index) => {
           return (
             <Box
               // eslint-disable-next-line react/no-array-index-key
               key={index}
-              flexDirection="row"
               alignItems="center"
+              flexDirection="row"
               justifyContent="space-between"
               width={350}
             >

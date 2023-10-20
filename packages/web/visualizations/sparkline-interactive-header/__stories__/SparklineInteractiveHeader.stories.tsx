@@ -16,7 +16,7 @@ export default {
 
 const HeaderLabel = () => {
   return (
-    <HStack gap={1} alignItems="center" spacingBottom={0}>
+    <HStack alignItems="center" gap={1} spacingBottom={0}>
       <Icon name="wallet" size="s" />
       <TextTitle3 as="span">CustomHeader</TextTitle3>
     </HStack>
@@ -40,8 +40,8 @@ export const CustomLabel = () => {
   return (
     <SparklineInteractiveWithHeaderBuild
       data={sparklineInteractiveData}
-      strokeColor="#F7931A"
       labelNode={<HeaderLabel />}
+      strokeColor="#F7931A"
     />
   );
 };
@@ -62,10 +62,10 @@ Compact.parameters = { percy: enableJavascript };
 export const BottomPeriodSelector = () => {
   return (
     <SparklineInteractiveWithHeaderBuild
-      data={sparklineInteractiveData}
       compact
-      strokeColor="#F7931A"
+      data={sparklineInteractiveData}
       periodSelectorPlacement="below"
+      strokeColor="#F7931A"
     />
   );
 };

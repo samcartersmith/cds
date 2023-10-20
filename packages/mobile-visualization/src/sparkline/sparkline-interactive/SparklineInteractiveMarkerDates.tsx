@@ -39,11 +39,11 @@ const SparklineInteractiveMarkerDate: FunctionComponent<
 
   return (
     <TextLabel2
-      color="foregroundMuted"
       align="center"
-      spacingTop={3}
-      onLayout={onLayout}
+      color="foregroundMuted"
       dangerouslySetStyle={styles.label}
+      onLayout={onLayout}
+      spacingTop={3}
     >
       {getFormattedDate(x)}
     </TextLabel2>
@@ -84,7 +84,7 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
   }, [colors.background, markerOpacity, paddingHorizontalStyle]);
 
   return (
-    <Animated.View style={rootStyle} pointerEvents="none">
+    <Animated.View pointerEvents="none" style={rootStyle}>
       {times(numberOfLabels).map((_, i) => {
         // eslint-disable-next-line react/no-array-index-key
         return <SparklineInteractiveMarkerDate key={i} getFormattedDate={getFormattedDate} />;

@@ -59,31 +59,31 @@ export function createAnnouncementCardDeprecated<T>({
       return (
         <Card>
           <CardHeader
+            action={
+              <IconButton
+                transparent
+                accessibilityLabel="More"
+                name={headerAction}
+                onPress={onHeaderActionPress}
+              />
+            }
             avatarUrl={headerAvatarUrl}
             description={headerDescription}
             metaData={headerMetaData}
-            action={
-              <IconButton
-                name={headerAction}
-                onPress={onHeaderActionPress}
-                accessibilityLabel="More"
-                transparent
-              />
-            }
           />
           <CardBody
-            title={title}
             description={description}
+            media={pictogram && <Pictogram dimension="64x64" name={pictogram} />}
             orientation="horizontal"
-            media={pictogram && <Pictogram name={pictogram} dimension="64x64" />}
+            title={title}
           >
             <Button
               compact
-              flush="start"
               transparent
-              variant="primary"
-              onPress={onFooterActionPress}
               endIcon="forwardArrow"
+              flush="start"
+              onPress={onFooterActionPress}
+              variant="primary"
             >
               {footerAction}
             </Button>

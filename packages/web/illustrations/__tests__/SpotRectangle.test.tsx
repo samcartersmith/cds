@@ -62,7 +62,7 @@ describe('SpotRectangles have correct url and alt tag for light mode', () => {
 
 describe('can set alt', () => {
   it('for a SpotRectangle', () => {
-    render(<SpotRectangle name="addBank" testID="spotRectangle-example" alt={TEST_ILLO_ALT} />);
+    render(<SpotRectangle alt={TEST_ILLO_ALT} name="addBank" testID="spotRectangle-example" />);
     expect(screen.getByTestId('spotRectangle-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
   });
 });

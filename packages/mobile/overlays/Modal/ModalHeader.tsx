@@ -24,35 +24,35 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
 
   return (
     <HStack
-      spacingHorizontal={3}
-      spacingVertical={2}
       alignItems="center"
       borderedBottom={!hideDividers}
+      spacingHorizontal={3}
+      spacingVertical={2}
     >
-      <Box flexGrow={1} flexBasis={0}>
+      <Box flexBasis={0} flexGrow={1}>
         {!!onBackButtonPress && (
           <IconButton
             transparent
+            accessibilityHint={backAccessibilityHint}
+            accessibilityLabel={backAccessibilityLabel}
             name="backArrow"
             onPress={onBackButtonPress}
             testID="modal-back-button"
-            accessibilityLabel={backAccessibilityLabel}
-            accessibilityHint={backAccessibilityHint}
           />
         )}
       </Box>
-      <Box flexGrow={6} flexBasis={0} alignItems="center" justifyContent="center">
+      <Box alignItems="center" flexBasis={0} flexGrow={6} justifyContent="center">
         <TextHeadline align="center">{title}</TextHeadline>
       </Box>
-      <Box flexGrow={1} flexBasis={0} alignItems="flex-end">
+      <Box alignItems="flex-end" flexBasis={0} flexGrow={1}>
         {!hideCloseButton && (
           <IconButton
             transparent
+            accessibilityHint={closeAccessibilityHint}
+            accessibilityLabel={closeAccessibilityLabel}
             name="close"
             onPress={onRequestClose}
             testID="modal-close-button"
-            accessibilityLabel={closeAccessibilityLabel}
-            accessibilityHint={closeAccessibilityHint}
           />
         )}
       </Box>

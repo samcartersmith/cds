@@ -90,30 +90,30 @@ export const Default: Story = () => {
   return (
     <>
       <ThemeProvider spectrum="light">
-        <VStack spacing={2} gap={2} background="background">
+        <VStack background="background" gap={2} spacing={2}>
           <TextHeadline as="p">Default (Normal)</TextHeadline>
-          <TabNavigation value={value} tabs={tabs} onChange={setValue} />
+          <TabNavigation onChange={setValue} tabs={tabs} value={value} />
         </VStack>
-        <VStack spacing={2} gap={2} background="background">
+        <VStack background="background" gap={2} spacing={2}>
           <TextHeadline as="p">Default (Dense)</TextHeadline>
           <ThemeProvider scale="xSmall">
-            <TabNavigation value={value} tabs={tabs} onChange={setValue} />
+            <TabNavigation onChange={setValue} tabs={tabs} value={value} />
           </ThemeProvider>
         </VStack>
-        <VStack spacing={2} gap={2} background="backgroundAlternate">
+        <VStack background="backgroundAlternate" gap={2} spacing={2}>
           <TextHeadline as="p">Custom background</TextHeadline>
           <TabNavigation
             background="backgroundAlternate"
-            value={value}
-            tabs={tabs}
             onChange={setValue}
+            tabs={tabs}
+            value={value}
           />
         </VStack>
       </ThemeProvider>
       <ThemeProvider spectrum="dark">
-        <VStack spacing={2} gap={2} background="background">
+        <VStack background="background" gap={2} spacing={2}>
           <TextHeadline as="p">Dark</TextHeadline>
-          <TabNavigation value={value} tabs={tabs} onChange={setValue} />
+          <TabNavigation onChange={setValue} tabs={tabs} value={value} />
         </VStack>
       </ThemeProvider>
     </>
@@ -130,7 +130,7 @@ Default.parameters = {
 export const WithPaddles: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
 
-  return <TabNavigation value={value} tabs={longTabs} onChange={setValue} />;
+  return <TabNavigation onChange={setValue} tabs={longTabs} value={value} />;
 };
 WithPaddles.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
@@ -150,37 +150,37 @@ export const WithDotCountChange: Story = () => {
   return (
     <>
       <ThemeProvider spectrum="light">
-        <VStack spacing={2} gap={2} background="background">
-          <Select value={value} onChange={setValue} label="Select a tab">
+        <VStack background="background" gap={2} spacing={2}>
+          <Select label="Select a tab" onChange={setValue} value={value}>
             {tabsWithDot.map((option) => (
-              <SelectOption value={option.id} title={option.label} key={option.id} />
+              <SelectOption key={option.id} title={option.label} value={option.id} />
             ))}
           </Select>
           <Button onPress={updateCount}>Randomize dot count</Button>
           <TextHeadline as="p">Default (Normal)</TextHeadline>
-          <TabNavigation value={value} tabs={tabsWithDot} onChange={setValue} />
+          <TabNavigation onChange={setValue} tabs={tabsWithDot} value={value} />
         </VStack>
       </ThemeProvider>
-      <ThemeProvider spectrum="light" scale="xSmall">
-        <VStack spacing={2} gap={2} background="background">
+      <ThemeProvider scale="xSmall" spectrum="light">
+        <VStack background="background" gap={2} spacing={2}>
           <TextHeadline as="p">Default (Dense)</TextHeadline>
-          <TabNavigation value={value} tabs={tabsWithDot} onChange={setValue} />
+          <TabNavigation onChange={setValue} tabs={tabsWithDot} value={value} />
         </VStack>
       </ThemeProvider>
       <ThemeProvider spectrum="dark">
-        <VStack spacing={2} gap={2} background="background">
+        <VStack background="background" gap={2} spacing={2}>
           <TextHeadline as="p">Dark</TextHeadline>
-          <TabNavigation value={value} tabs={tabsWithDot} onChange={setValue} />
+          <TabNavigation onChange={setValue} tabs={tabsWithDot} value={value} />
         </VStack>
       </ThemeProvider>
       <ThemeProvider spectrum="light">
-        <VStack spacing={2} gap={2} background="backgroundAlternate">
+        <VStack background="backgroundAlternate" gap={2} spacing={2}>
           <TextHeadline as="p">Custom background</TextHeadline>
           <TabNavigation
             background="backgroundAlternate"
-            value={value}
-            tabs={tabsWithDot}
             onChange={setValue}
+            tabs={tabsWithDot}
+            value={value}
           />
         </VStack>
       </ThemeProvider>
@@ -198,41 +198,41 @@ export const Secondary: Story = () => {
   return (
     <>
       <ThemeProvider spectrum="light">
-        <VStack spacing={2} gap={2} background="background">
+        <VStack background="background" gap={2} spacing={2}>
           <TabNavigation
-            value={currentTab}
-            tabs={tabs}
-            variant="secondary"
             onChange={setCurrentTab}
+            tabs={tabs}
+            value={currentTab}
+            variant="secondary"
           />
         </VStack>
-        <ThemeProvider spectrum="light" scale="xSmall">
-          <VStack spacing={2} gap={2} background="background">
+        <ThemeProvider scale="xSmall" spectrum="light">
+          <VStack background="background" gap={2} spacing={2}>
             <TabNavigation
-              tabs={tabs}
-              variant="secondary"
-              value={currentTab}
               onChange={setCurrentTab}
+              tabs={tabs}
+              value={currentTab}
+              variant="secondary"
             />
           </VStack>
         </ThemeProvider>
       </ThemeProvider>
       <ThemeProvider spectrum="dark">
-        <VStack spacing={2} gap={2} background="background">
+        <VStack background="background" gap={2} spacing={2}>
           <TabNavigation
-            value={currentTab}
-            tabs={tabs}
-            variant="secondary"
             onChange={setCurrentTab}
+            tabs={tabs}
+            value={currentTab}
+            variant="secondary"
           />
         </VStack>
-        <ThemeProvider spectrum="light" scale="xSmall">
-          <VStack spacing={2} gap={2} background="background">
+        <ThemeProvider scale="xSmall" spectrum="light">
+          <VStack background="background" gap={2} spacing={2}>
             <TabNavigation
-              tabs={tabs}
-              variant="secondary"
-              value={currentTab}
               onChange={setCurrentTab}
+              tabs={tabs}
+              value={currentTab}
+              variant="secondary"
             />
           </VStack>
         </ThemeProvider>
@@ -252,9 +252,9 @@ export const AccessibilityTest: Story = () => {
     <VStack gap={2}>
       <TabNavigation
         accessibilityLabel="Really nice tab navigation"
-        value={currentTab}
-        tabs={tabs.slice(0, 3)}
         onChange={setCurrentTab}
+        tabs={tabs.slice(0, 3)}
+        value={currentTab}
       />
       <MockTabPanel id={tabs[0].id} isActive={currentTab === tabs[0].id}>
         <TextTitle1 as="h2" spacingBottom={2}>

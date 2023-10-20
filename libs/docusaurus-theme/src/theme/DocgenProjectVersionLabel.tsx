@@ -12,7 +12,7 @@ const DocgenActiveProjectVersion = memo(function DocgenActiveProjectVersion() {
       <TextLabel1 as="span" transform="none">
         Version:
       </TextLabel1>
-      <TextLabel1 as="span" mono>
+      <TextLabel1 mono as="span">
         {project.version}
       </TextLabel1>
     </HStack>

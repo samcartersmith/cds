@@ -7,7 +7,7 @@ import { Switch } from '../Switch';
 const SwitchScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="Default" inline>
+      <Example inline title="Default">
         {() => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const [isChecked, { toggle }] = useToggler();
@@ -19,7 +19,7 @@ const SwitchScreen = () => {
           );
         }}
       </Example>
-      <Example title="States" inline>
+      <Example inline title="States">
         <Switch checked>On</Switch>
         <Switch checked readOnly>
           On Readonly

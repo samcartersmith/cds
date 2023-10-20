@@ -122,12 +122,9 @@ export const RemoteImage = memo(function RemoteImage({
 
   return (
     <img
-      data-testid={testID}
       alt={alt}
+      data-testid={testID}
       {...props}
-      src={imageSrc}
-      width={finalWidth}
-      height={finalHeight}
       className={cx(
         image,
         imageOverflow,
@@ -135,7 +132,10 @@ export const RemoteImage = memo(function RemoteImage({
         resizeModes[resizeMode],
         dangerouslySetClassName,
       )}
+      height={finalHeight}
+      src={imageSrc}
       style={styles}
+      width={finalWidth}
     />
   );
 });

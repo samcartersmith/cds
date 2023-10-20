@@ -15,15 +15,15 @@ export const CellAccessory = memo(
     let icon;
 
     if (type === 'more') {
-      icon = <Icon name="more" size="s" color="foregroundMuted" />;
+      icon = <Icon color="foregroundMuted" name="more" size="s" />;
     }
 
     if (type === 'arrow') {
-      icon = <Icon name={isRtl() ? 'caretLeft' : 'caretRight'} size="s" color="foregroundMuted" />;
+      icon = <Icon color="foregroundMuted" name={isRtl() ? 'caretLeft' : 'caretRight'} size="s" />;
     }
 
     if (type === 'selected') {
-      icon = <Icon name="checkmark" size="s" color="primary" />;
+      icon = <Icon color="primary" name="checkmark" size="s" />;
     }
 
     if (!icon) {
@@ -31,7 +31,7 @@ export const CellAccessory = memo(
     }
 
     return (
-      <Box {...props} testID="accessory" ref={ref}>
+      <Box {...props} ref={ref} testID="accessory">
         {icon}
       </Box>
     );

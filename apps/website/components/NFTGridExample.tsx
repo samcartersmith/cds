@@ -65,20 +65,20 @@ export const NFTTile = ({ name, available, src, comments, likes, price, target }
   return (
     <VStack>
       <VStack
-        borderRadius="roundedLarge"
-        overflow="clip"
-        minHeight={430}
         background="backgroundAlternate"
+        borderRadius="roundedLarge"
+        minHeight={430}
+        overflow="clip"
       >
         <a href={target}>
           <VStack position="relative">
-            <RemoteImage src={src} alt={name} height="264" />
+            <RemoteImage alt={name} height="264" src={src} />
             <HStack
               background="backgroundAlternate"
               borderRadius="rounded"
-              position="absolute"
               bottom={20}
               left={20}
+              position="absolute"
               spacing={0.5}
             >
               <TextCaption as="p" color="foreground">
@@ -87,7 +87,7 @@ export const NFTTile = ({ name, available, src, comments, likes, price, target }
             </HStack>
           </VStack>
         </a>
-        <VStack justifyContent="space-between" spacing={2} flexGrow={1}>
+        <VStack flexGrow={1} justifyContent="space-between" spacing={2}>
           <VStack spacingBottom={2}>
             <TextCaption as="p" color="foregroundMuted">
               {name}
@@ -95,15 +95,15 @@ export const NFTTile = ({ name, available, src, comments, likes, price, target }
             <TextHeadline as="h4">{name}</TextHeadline>
           </VStack>
           <HStack gap={2}>
-            <HStack gap={1} alignItems="center">
+            <HStack alignItems="center" gap={1}>
               <Icon name="heartInactive" size="s" />
               <TextBody as="span">{likes}</TextBody>
             </HStack>
-            <HStack gap={1} alignItems="center">
+            <HStack alignItems="center" gap={1}>
               <Icon name="comment" size="s" />
               <TextBody as="span">{comments}</TextBody>
             </HStack>
-            <HStack gap={1} alignItems="center">
+            <HStack alignItems="center" gap={1}>
               <Icon name="ethereum" size="s" />
               <TextBody as="span">{price}</TextBody>
             </HStack>

@@ -24,26 +24,26 @@ export const LottieSheet = function LottieSheet() {
     <>
       <Box flexWrap="wrap" spacingVertical={2}>
         <TextInput
-          onChange={searchOnChange}
-          type="text"
-          placeholder="Animation name"
           label="Filter Animations"
+          onChange={searchOnChange}
+          placeholder="Animation name"
+          type="text"
         />
       </Box>
 
-      <Box flexWrap="wrap" spacingTop={1} spacingBottom={3}>
+      <Box flexWrap="wrap" spacingBottom={3} spacingTop={1}>
         <Box flexWrap="wrap" spacing={1}>
           {Object.keys(names)
             .filter((name) => name.includes(query))
             .map((filteredName) => (
-              <VStack spacing={3} alignItems="center" key={filteredName}>
+              <VStack key={filteredName} alignItems="center" spacing={3}>
                 <Lottie
+                  key={names[filteredName].name}
                   autoplay
                   loop
-                  key={names[filteredName].name}
+                  height={200}
                   source={names[filteredName].source}
                   width={200}
-                  height={200}
                 />
                 <TextLabel1 align="center" as="p" spacing={2}>
                   {filteredName}

@@ -17,19 +17,19 @@ export const TableCellSortIcon = memo(({ direction }: TableCellSortIconProps) =>
     <VStack gap={0.5}>
       <Box offsetBottom={0.5}>
         <Icon
+          aria-hidden="true"
           color={upColor}
           name="sortUpCenter"
           size="xs"
-          aria-hidden="true"
           testID="table-sort-icon-up"
         />
       </Box>
       <Box offsetTop={0.5}>
         <Icon
+          aria-hidden="true"
           color={downColor}
           name="sortDownCenter"
           size="xs"
-          aria-hidden="true"
           testID="table-sort-icon-down"
         />
       </Box>

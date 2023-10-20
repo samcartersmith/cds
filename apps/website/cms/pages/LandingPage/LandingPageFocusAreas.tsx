@@ -19,10 +19,10 @@ const LandingPageFocusAreas = memo(function LandingPageFocusAreas({
 }: FocusAreaSectionFields) {
   return (
     <HStack minHeight={600}>
-      <Box spacing={gutter} width="50%" borderedEnd>
+      <Box borderedEnd spacing={gutter} width="50%">
         <h3 className="project-categories-title">{label}</h3>
       </Box>
-      <VStack spacing={gutter} gap={gutter} width="50%">
+      <VStack gap={gutter} spacing={gutter} width="50%">
         <CMSContent content={focusAreas} />
       </VStack>
     </HStack>

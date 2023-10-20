@@ -126,15 +126,15 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   const iconNode = useMemo(
     () => (
       <Interactable
+        transparentWhileInactive
         as="div"
         backgroundColor={backgroundColor ?? (checked ? 'primary' : 'background')}
         borderColor={borderColor}
         borderRadius={borderRadius}
         borderWidth={borderWidth}
+        className={interactableContainer}
         disabled={disabled || readOnly}
         testID={testID ? `${testID}-parent` : undefined}
-        transparentWhileInactive
-        className={interactableContainer}
       >
         <>
           <input className={cx(controlInput, pointer)} {...inputProps} />
@@ -160,7 +160,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       <label className={pointer} htmlFor={inputId}>
         <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
           {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
-          <Box role="presentation" height="var(--body-line-height)" alignItems="center">
+          <Box alignItems="center" height="var(--body-line-height)" role="presentation">
             {iconNode}
           </Box>
           <Spacer horizontal={1} />

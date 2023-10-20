@@ -49,7 +49,7 @@ describe('SpotSquares have correct url and alt tag for light mode', () => {
 describe('can set alt', () => {
   it('for a SpotSquare', () => {
     render(
-      <SpotSquare name="accessToAdvancedCharts" testID="spotSquare-example" alt={TEST_ILLO_ALT} />,
+      <SpotSquare alt={TEST_ILLO_ALT} name="accessToAdvancedCharts" testID="spotSquare-example" />,
     );
     expect(screen.getByTestId('spotSquare-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
   });

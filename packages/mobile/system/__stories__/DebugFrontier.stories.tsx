@@ -39,19 +39,19 @@ const DebugFrontier = memo(() => {
       return (
         <ListCell
           key={item}
-          title={item}
-          description={descriptions[item]}
           multiline
           action={
             availableFlags.has(item) && (
               <Switch
-                accessibilityLabel={descriptions[item]}
                 accessibilityHint={descriptions[item]}
-                onChange={toggle}
+                accessibilityLabel={descriptions[item]}
                 checked={featureFlags[item]}
+                onChange={toggle}
               />
             )
           }
+          description={descriptions[item]}
+          title={item}
         />
       );
     });

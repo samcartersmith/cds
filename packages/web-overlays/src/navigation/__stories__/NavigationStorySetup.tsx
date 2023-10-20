@@ -111,27 +111,27 @@ export function NavigationBarFullExample({
 
   return (
     <NavigationBar
-      start={
-        showBackButton && (
-          <IconButton name="backArrow" onPress={handleBackPress} accessibilityLabel="Back" />
-        )
-      }
+      bottom={<TabNavigation onChange={handleTabChange} tabs={tabs} value={value} />}
       end={
-        <HStack gap={1} alignItems="center">
+        <HStack alignItems="center" gap={1}>
           <IconButton
+            accessibilityLabel="Notifications"
             name="bell"
             onPress={() => handlePress('Notifications')}
-            accessibilityLabel="Notifications"
           />
           <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
-            <HStack gap={1} alignItems="center">
+            <HStack alignItems="center" gap={1}>
               <Avatar alt="" size="xl" />
               <TextHeadline as="h2">Andy</TextHeadline>
             </HStack>
           </Pressable>
         </HStack>
       }
-      bottom={<TabNavigation tabs={tabs} value={value} onChange={handleTabChange} />}
+      start={
+        showBackButton && (
+          <IconButton accessibilityLabel="Back" name="backArrow" onPress={handleBackPress} />
+        )
+      }
     >
       <NavigationTitle>{pageTitle ?? `Personal Portfolio (${value})`}</NavigationTitle>
     </NavigationBar>
@@ -142,13 +142,13 @@ export const NavigationBarTitle = () => {
   return (
     <NavigationBar
       end={
-        <HStack gap={1} alignItems="center">
+        <HStack alignItems="center" gap={1}>
           <IconButton
+            accessibilityLabel="Notifications"
             name="bell"
             onPress={() => handlePress('Notifications')}
-            accessibilityLabel="Notifications"
           />
-          <AvatarButton alt="Donna" onPress={() => handlePress('Avatar')} compact />
+          <AvatarButton compact alt="Donna" onPress={() => handlePress('Avatar')} />
         </HStack>
       }
     >
@@ -189,9 +189,9 @@ export const ComposedSystem = () => {
       </Sidebar>
       <VStack overflow="clip">
         <NavigationBarFullExample
-          pageTitle={activePageTitle}
-          onTabChange={handleTabChange}
           onBackPress={() => setActiveSidebarIndex(-1)}
+          onTabChange={handleTabChange}
+          pageTitle={activePageTitle}
         />
         <VStack spacing={2}>
           {tabs.map(({ id }, idx) => {
@@ -245,13 +245,13 @@ const renderCB1 = (isCollapsed: boolean) => {
   const spacing = isCollapsed ? 1 : 2;
   return (
     <Pressable
-      onPress={() => handlePress('Notifications')}
       as="button"
-      borderRadius="roundedLarge"
       backgroundColor="primaryWash"
+      borderRadius="roundedLarge"
+      onPress={() => handlePress('Notifications')}
     >
-      <HStack gap={1} alignItems="center" justifyContent="center" spacing={spacing}>
-        <Pictogram name="coinbaseOneLogo" dimension="48x48" scaleMultiplier={0.8} />
+      <HStack alignItems="center" gap={1} justifyContent="center" spacing={spacing}>
+        <Pictogram dimension="48x48" name="coinbaseOneLogo" scaleMultiplier={0.8} />
         {!isCollapsed && (
           <VStack>
             <TextHeadline as="span">Coinbase One</TextHeadline>
@@ -288,12 +288,12 @@ export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
   return (
     <PortalProvider>
       <HStack
-        justifyContent="center"
         alignItems="flex-start"
         background="backgroundAlternate"
+        justifyContent="center"
         overflow="hidden"
       >
-        <Sidebar logo={<LogoMark />} autoCollapse renderEnd={renderCB1}>
+        <Sidebar autoCollapse logo={<LogoMark />} renderEnd={renderCB1}>
           {navItems.map((item, index) => (
             <SidebarItem
               key={`sidebar-item--${item.title}`}
@@ -304,27 +304,27 @@ export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
             />
           ))}
           <SidebarMoreMenu
-            onChange={handleMoreMenuChange}
-            value={moreMenuValue}
             active={activeIndex >= navItems.length}
+            onChange={handleMoreMenuChange}
             tooltipContent="More"
+            value={moreMenuValue}
             {...props}
           >
             {moreMenuOptions.map((item) => (
               <SelectOption
                 key={`sidebar-more-menu-item--${item.title}`}
-                value={item.title}
                 description={item.title}
                 media={<NavigationIcon name={item.icon} />}
+                value={item.title}
               />
             ))}
           </SidebarMoreMenu>
         </Sidebar>
-        <VStack spacing={2} gap={1} justifyContent="space-between" flexGrow={1}>
+        <VStack flexGrow={1} gap={1} justifyContent="space-between" spacing={2}>
           <TextHeadline as="h2">
             Active Page: {[...items, ...moreMenuOptions][activeIndex].title}
           </TextHeadline>
-          <HStack spacing={3} flexGrow={1} justifyContent="center" alignItems="center">
+          <HStack alignItems="center" flexGrow={1} justifyContent="center" spacing={3}>
             {children}
           </HStack>
         </VStack>

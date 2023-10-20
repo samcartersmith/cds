@@ -27,13 +27,12 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
 
   return (
     <Interactable
-      testID={testID}
-      pressed={pressed}
       backgroundColor="background"
       borderColor={checked ? 'primary' : 'lineHeavy'}
       borderRadius="roundedFull"
       borderWidth="radio"
       disabled={disabled}
+      pressed={pressed}
       style={[
         styles.circle,
         {
@@ -41,11 +40,12 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
           height: radioSize,
         },
       ]}
+      testID={testID}
     >
       <Animated.View
         style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
       >
-        <Icon name="dot" size="s" color="primary" />
+        <Icon color="primary" name="dot" size="s" />
       </Animated.View>
     </Interactable>
   );
@@ -73,10 +73,10 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
     <Control<T>
       {...props}
       {...accessibilityProps}
-      accessibilityRole="radio"
-      label={children}
       ref={ref}
+      accessibilityRole="radio"
       hitSlop={5}
+      label={children}
     >
       {RadioIcon}
     </Control>
@@ -120,8 +120,8 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
 
   return (
     <Group
-      accessibilityRole="radiogroup"
       ref={ref}
+      accessibilityRole="radiogroup"
       testID={testID}
       {...accessibilityProps}
       {...restProps}
@@ -130,12 +130,12 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
       {entries<Record<T, string | ReactNode>>(options).map(([value, option]) => (
         <Radio<T>
           key={value}
-          value={value}
-          accessibilityLabel={typeof option === 'string' ? option : undefined}
           accessibilityHint={typeof option === 'string' ? option : undefined}
+          accessibilityLabel={typeof option === 'string' ? option : undefined}
           checked={selectedValue === value}
           onChange={onChange}
           testID={testID ? `${testID}-${value}` : undefined}
+          value={value}
         >
           {option}
         </Radio>

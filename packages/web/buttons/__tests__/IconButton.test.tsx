@@ -9,7 +9,7 @@ const name = 'arrowsHorizontal';
 describe('IconButton', () => {
   it('passes accessibility', async () => {
     expect(
-      await renderA11y(<IconButton name={name} accessibilityLabel="test-label" />),
+      await renderA11y(<IconButton accessibilityLabel="test-label" name={name} />),
     ).toHaveNoViolations();
   });
 
@@ -41,7 +41,7 @@ describe('IconButton', () => {
   describe('disabled', () => {
     it('disables user interaction when disabled', () => {
       const spy = jest.fn();
-      render(<IconButton name={name} onPress={spy} disabled />);
+      render(<IconButton disabled name={name} onPress={spy} />);
 
       fireEvent.click(screen.getByRole('button'));
 
@@ -50,7 +50,7 @@ describe('IconButton', () => {
 
     it('passes accessibility', async () => {
       expect(
-        await renderA11y(<IconButton name={name} accessibilityLabel="test-label" disabled />),
+        await renderA11y(<IconButton disabled accessibilityLabel="test-label" name={name} />),
       ).toHaveNoViolations();
     });
   });
@@ -58,7 +58,7 @@ describe('IconButton', () => {
   describe('loading', () => {
     it('disables user interaction when loading', () => {
       const spy = jest.fn();
-      render(<IconButton name={name} onPress={spy} loading />);
+      render(<IconButton loading name={name} onPress={spy} />);
 
       fireEvent.click(screen.getByRole('button'));
 
@@ -67,14 +67,14 @@ describe('IconButton', () => {
 
     it('passes accessibility', async () => {
       expect(
-        await renderA11y(<IconButton name={name} accessibilityLabel="test-label" loading />),
+        await renderA11y(<IconButton loading accessibilityLabel="test-label" name={name} />),
       ).toHaveNoViolations();
     });
   });
 
   it('sets forwarded ref', () => {
     const ref = { current: null };
-    render(<IconButton name={name} ref={ref} />);
+    render(<IconButton ref={ref} name={name} />);
 
     expect(ref.current).toBeInstanceOf(HTMLElement);
   });

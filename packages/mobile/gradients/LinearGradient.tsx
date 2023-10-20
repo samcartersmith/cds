@@ -82,9 +82,9 @@ export function LinearGradient({
 
     return (
       <View key="GrandientSvgContainer" style={StyleSheet.absoluteFillObject}>
-        <Svg width="100%" height="100%">
+        <Svg height="100%" width="100%">
           <Defs>
-            <Lg id="LinearGradient" x1={x1} y1={y1} x2={x2} y2={y2}>
+            <Lg id="LinearGradient" x1={x1} x2={x2} y1={y1} y2={y2}>
               {colors.map((color, index) => (
                 <Stop
                   key={color + String(index)}
@@ -95,7 +95,7 @@ export function LinearGradient({
               ))}
             </Lg>
           </Defs>
-          <Rect width="100%" height="100%" fill="url(#LinearGradient)" />
+          <Rect fill="url(#LinearGradient)" height="100%" width="100%" />
         </Svg>
       </View>
     );
@@ -103,7 +103,7 @@ export function LinearGradient({
 
   const items = isBelowChildren ? [svg, children] : [children, svg];
   return (
-    <View style={style} pointerEvents={pointerEvents} testID={testID}>
+    <View pointerEvents={pointerEvents} style={style} testID={testID}>
       {items}
     </View>
   );

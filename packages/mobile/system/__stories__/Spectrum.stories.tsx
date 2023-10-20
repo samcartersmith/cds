@@ -43,7 +43,7 @@ const SpectrumScreen = () => {
                 });
                 return (
                   <VStack key={paletteValue} dangerouslySetBackground={background}>
-                    <TextCaption dangerouslySetColor={foreground} align="center">
+                    <TextCaption align="center" dangerouslySetColor={foreground}>
                       {paletteValue}
                     </TextCaption>
                   </VStack>

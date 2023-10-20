@@ -21,7 +21,7 @@ const SHAPE_TO_BORDERRADIUS_MAP = {
 } as const;
 
 const RemoteImageGroupDefaults = ({ ...props }: RemoteImageGroupBaseProps) => (
-  <RemoteImageGroup testID={TEST_ID} size={SIZE} shape="circle" {...props}>
+  <RemoteImageGroup shape="circle" size={SIZE} testID={TEST_ID} {...props}>
     <RemoteImage alt="Test RemoteImage" source={src} />
     <RemoteImage alt="Test RemoteImage" source={src} />
     <RemoteImage alt="Test RemoteImage" source={src} />

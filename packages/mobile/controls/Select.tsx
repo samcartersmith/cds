@@ -122,28 +122,66 @@ export const Select = memo(
         <TextInputFocusVariantContext.Provider value={focusedVariant}>
           <SelectProvider value={context}>
             <TouchableWithoutFeedback
+              ref={refs}
+              accessibilityHint={accessibilityHint}
+              accessibilityLabel={accessibilityLabel ?? defaultAccessibilityLabel}
               accessibilityRole="menu"
+              accessibilityState={accessibilityState}
+              disabled={disabled}
               onPress={handleOnSubjectPress}
               testID={testID}
-              accessibilityLabel={accessibilityLabel ?? defaultAccessibilityLabel}
-              accessibilityHint={accessibilityHint}
-              disabled={disabled}
-              accessibilityState={accessibilityState}
-              ref={refs}
             >
               <InputStack
-                width={width}
-                disabled={disabled}
-                variant={focusedVariant}
-                borderStyle={borderUnfocusedStyle}
-                borderFocusedStyle={borderFocusedStyle}
-                focused={isSelectTrayOpen}
                 animated
+                borderFocusedStyle={borderFocusedStyle}
+                borderStyle={borderUnfocusedStyle}
+                disabled={disabled}
+                endNode={
+                  <HStack alignItems="center">
+                    <InputIcon
+                      animated
+                      compact={compact}
+                      dangerouslySetStyle={rotateAnimationStyles}
+                      name="caretDown"
+                    />
+                  </HStack>
+                }
+                focused={isSelectTrayOpen}
+                helperTextNode={
+                  Boolean(helperText) && <HelperText color={variant}>{helperText}</HelperText>
+                }
+                inputNode={
+                  <HStack
+                    background
+                    alignItems="center"
+                    borderRadius="rounded"
+                    flexGrow={1}
+                    flexShrink={1}
+                    justifyContent={compact ? 'flex-end' : 'flex-start'}
+                    minHeight={minHeight}
+                    spacingStart={startNode ? 0 : getSpacingStart}
+                    spacingVertical={compact ? 1 : 2}
+                  >
+                    <TextBody
+                      accessibilityState={accessibilityState}
+                      align={compact ? 'end' : 'start'}
+                      color="foregroundMuted"
+                      disabled={disabled}
+                      ellipsize="tail"
+                    >
+                      {valueLabel ?? value ?? placeholder ?? (!compact && label)}
+                    </TextBody>
+                  </HStack>
+                }
+                labelNode={
+                  !compact &&
+                  Boolean(label) && <InputLabel color={labelTextColor}>{label}</InputLabel>
+                }
                 startNode={
                   <>
                     {compact && (
-                      <HStack spacingStart={2} alignItems="center" maxWidth="40%">
-                        <InputLabel color={labelTextColor} disabled={disabled} noWrap>
+                      <HStack alignItems="center" maxWidth="40%" spacingStart={2}>
+                        <InputLabel noWrap color={labelTextColor} disabled={disabled}>
                           {label}
                         </InputLabel>
                       </HStack>
@@ -151,46 +189,8 @@ export const Select = memo(
                     {!!startNode && <HStack alignItems="center">{startNode}</HStack>}
                   </>
                 }
-                inputNode={
-                  <HStack
-                    alignItems="center"
-                    background
-                    borderRadius="rounded"
-                    justifyContent={compact ? 'flex-end' : 'flex-start'}
-                    spacingStart={startNode ? 0 : getSpacingStart}
-                    spacingVertical={compact ? 1 : 2}
-                    flexGrow={1}
-                    flexShrink={1}
-                    minHeight={minHeight}
-                  >
-                    <TextBody
-                      color="foregroundMuted"
-                      ellipsize="tail"
-                      disabled={disabled}
-                      accessibilityState={accessibilityState}
-                      align={compact ? 'end' : 'start'}
-                    >
-                      {valueLabel ?? value ?? placeholder ?? (!compact && label)}
-                    </TextBody>
-                  </HStack>
-                }
-                endNode={
-                  <HStack alignItems="center">
-                    <InputIcon
-                      animated
-                      compact={compact}
-                      name="caretDown"
-                      dangerouslySetStyle={rotateAnimationStyles}
-                    />
-                  </HStack>
-                }
-                helperTextNode={
-                  Boolean(helperText) && <HelperText color={variant}>{helperText}</HelperText>
-                }
-                labelNode={
-                  !compact &&
-                  Boolean(label) && <InputLabel color={labelTextColor}>{label}</InputLabel>
-                }
+                variant={focusedVariant}
+                width={width}
               />
             </TouchableWithoutFeedback>
             {isSelectTrayOpen && children}

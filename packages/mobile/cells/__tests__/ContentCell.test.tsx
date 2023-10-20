@@ -62,12 +62,12 @@ describe('ContentCell', () => {
   it('Cell with subtitle passes a11y', () => {
     render(
       <ContentCell
-        testID="cell-with-subtitle"
         subtitle={
           <View testID="subtitle">
             <Text>Subtitle</Text>
           </View>
         }
+        testID="cell-with-subtitle"
       />,
     );
 
@@ -90,12 +90,12 @@ describe('ContentCell', () => {
   it('Cell with description passes a11y', () => {
     render(
       <ContentCell
-        testID="cell-with-description"
         description={
           <View testID="description">
             <Text>Description</Text>
           </View>
         }
+        testID="cell-with-description"
       />,
     );
 
@@ -105,12 +105,12 @@ describe('ContentCell', () => {
   it('renders meta', () => {
     render(
       <ContentCell
-        title="Title"
         meta={
           <View testID="meta">
             <Text>Meta</Text>
           </View>
         }
+        title="Title"
       />,
     );
 
@@ -120,13 +120,13 @@ describe('ContentCell', () => {
   it('Cell with meta passes a11y', () => {
     render(
       <ContentCell
-        testID="cell-with-meta"
-        title="Title"
         meta={
           <View testID="meta">
             <Text>Meta</Text>
           </View>
         }
+        testID="cell-with-meta"
+        title="Title"
       />,
     );
 
@@ -134,7 +134,7 @@ describe('ContentCell', () => {
   });
 
   it('renders media', () => {
-    render(<ContentCell media={<CellMedia type="icon" name="add" testID="media" />} />);
+    render(<ContentCell media={<CellMedia name="add" testID="media" type="icon" />} />);
 
     expect(screen.getByTestId('media')).not.toBeNull();
   });
@@ -142,8 +142,8 @@ describe('ContentCell', () => {
   it('Cell with media passes a11y', () => {
     render(
       <ContentCell
+        media={<CellMedia name="add" testID="media" type="icon" />}
         testID="cell-with-media"
-        media={<CellMedia type="icon" name="add" testID="media" />}
       />,
     );
 
@@ -157,13 +157,13 @@ describe('ContentCell', () => {
   });
 
   it('Cell with accessory passes a11y', () => {
-    render(<ContentCell testID="cell-with-accessory" accessory="arrow" />);
+    render(<ContentCell accessory="arrow" testID="cell-with-accessory" />);
 
     expect(screen.getByTestId('cell-with-accessory')).toBeAccessible();
   });
 
   it('renders empty strings without crashing', () => {
-    render(<ContentCell title="" subtitle="" description="" meta="" />);
+    render(<ContentCell description="" meta="" subtitle="" title="" />);
 
     expect(screen.container).not.toBeNull();
   });

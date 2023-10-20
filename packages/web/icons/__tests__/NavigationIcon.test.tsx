@@ -20,7 +20,7 @@ describe('NavigationIcon.test', () => {
   });
 
   it('renders with active color', () => {
-    render(<NavigationIcon name="account" active testID="test-nav-icon" />);
+    render(<NavigationIcon active name="account" testID="test-nav-icon" />);
 
     expect(screen.getByTestId('test-nav-icon')).toBeTruthy();
   });

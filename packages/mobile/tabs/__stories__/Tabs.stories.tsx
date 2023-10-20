@@ -38,11 +38,11 @@ const TabScreen = () => {
 
   return (
     <ExampleScreen>
-      <Example title="Tab System" spacing={gutter} overflow="visible">
-        <TabNavigation onChange={setActiveTabOne} value={activeTabOne} tabs={tabs} />
+      <Example overflow="visible" spacing={gutter} title="Tab System">
+        <TabNavigation onChange={setActiveTabOne} tabs={tabs} value={activeTabOne} />
         <VStack
-          background="backgroundAlternate"
           alignItems="center"
+          background="backgroundAlternate"
           justifyContent="center"
           spacingVertical={6}
         >
@@ -50,16 +50,16 @@ const TabScreen = () => {
           <TextTitle2 color="primary">{activeTabOne}</TextTitle2>
         </VStack>
       </Example>
-      <Example title="Tab System (Secondary)" spacing={gutter} overflow="visible">
+      <Example overflow="visible" spacing={gutter} title="Tab System (Secondary)">
         <TabNavigation
-          variant="secondary"
-          value={activeTabOne}
           onChange={setActiveTabOne}
           tabs={tabs}
+          value={activeTabOne}
+          variant="secondary"
         />
         <VStack
-          background="backgroundAlternate"
           alignItems="center"
+          background="backgroundAlternate"
           justifyContent="center"
           spacingVertical={6}
         >

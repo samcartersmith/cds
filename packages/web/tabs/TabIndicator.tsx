@@ -19,21 +19,21 @@ export const TabIndicator = memo(
       return (
         <Box ref={forwardedRef} testID={testID} {...props} overflow="hidden">
           <MotionBox
-            testID="cds-tab-indicator-inner-bar-container"
+            animate={xMotionProps.animate}
+            background="primary"
             flexGrow={1}
             height={2}
             overflow="hidden"
-            background="primary"
-            animate={xMotionProps.animate}
+            testID="cds-tab-indicator-inner-bar-container"
             transition={xMotionProps.transition}
           >
             <MotionBox
-              testID="cds-tab-indicator-inner-bar"
-              height={2}
-              width="100%"
-              background={background}
               animate={widthMotionProps.animate}
+              background={background}
+              height={2}
+              testID="cds-tab-indicator-inner-bar"
               transition={widthMotionProps.transition}
+              width="100%"
             />
           </MotionBox>
         </Box>

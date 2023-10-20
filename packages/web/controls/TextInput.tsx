@@ -144,18 +144,18 @@ export const TextInput = memo(
       // By default, it will use the NativeInput
       return (
         <NativeInput
-          align={align}
-          accessibilityLabel={accessibilityLabel ?? label}
-          accessibilityHint={shouldSetHelperTextId ? helperTextId : undefined}
-          containerSpacing={start ? startSpacing : undefined}
-          onFocus={handleOnFocus}
-          onBlur={handleOnBlur}
-          disabled={disabled}
-          compact={compact}
-          testID={testID}
           ref={refs}
-          id={label}
+          accessibilityHint={shouldSetHelperTextId ? helperTextId : undefined}
+          accessibilityLabel={accessibilityLabel ?? label}
+          align={align}
           aria-invalid={hasError}
+          compact={compact}
+          containerSpacing={start ? startSpacing : undefined}
+          disabled={disabled}
+          id={label}
+          onBlur={handleOnBlur}
+          onFocus={handleOnFocus}
+          testID={testID}
           {...htmlInputElmProps}
         />
       );
@@ -183,50 +183,66 @@ export const TextInput = memo(
     return (
       <TextInputFocusVariantContext.Provider value={focused ? focusedVariant : undefined}>
         <InputStack
-          width={width}
-          disabled={disabled}
-          variant={variant}
           borderRadius={borderRadius}
-          height={height}
           borderWidth={bordered ? 'input' : 'none'}
+          disableFocusedStyle={!bordered}
+          disabled={disabled}
+          enableColorSurge={enableColorSurge}
+          endNode={
+            (suffix !== '' || !!end) && (
+              <HStack
+                alignItems="center"
+                gap={2}
+                justifyContent="center"
+                onClick={handleNodePress}
+                testID={testIDMap?.end ?? ''}
+              >
+                {suffix !== '' && (
+                  <TextLabel1 as="p" color="foregroundMuted" spacingEnd={2}>
+                    {suffix}
+                  </TextLabel1>
+                )}
+                {!!end && <>{end}</>}
+              </HStack>
+            )
+          }
           focused={focused}
           // If bordered is true, we want disableFocusedStyle = false
           // If bordered is false, we want disableFocusedStyle = true
-          disableFocusedStyle={!bordered}
-          enableColorSurge={enableColorSurge}
-          labelNode={
-            !compact &&
-            !!label && (
-              <InputLabel
-                testID={testIDMap?.label ?? ''}
-                htmlFor={shouldSetLabelId ? labelId : undefined}
-              >
-                {label}
-              </InputLabel>
-            )
-          }
-          inputNode={inputNodeCloned}
+          height={height}
           helperTextNode={
             !!helperText && (
               <HelperText
-                testID={testIDMap?.helperText ?? ''}
-                color={variant}
-                align={align}
                 accessibilityLabel={helperText}
+                align={align}
+                color={variant}
                 id={shouldSetHelperTextId ? helperTextId : undefined}
+                testID={testIDMap?.helperText ?? ''}
               >
                 {helperText}
               </HelperText>
             )
           }
+          inputNode={inputNodeCloned}
+          labelNode={
+            !compact &&
+            !!label && (
+              <InputLabel
+                htmlFor={shouldSetLabelId ? labelId : undefined}
+                testID={testIDMap?.label ?? ''}
+              >
+                {label}
+              </InputLabel>
+            )
+          }
           startNode={
             (compact || !!start) && (
               <HStack
-                testID={testIDMap?.start ?? ''}
-                onClick={handleNodePress}
                 alignItems="center"
-                justifyContent="center"
                 gap={2}
+                justifyContent="center"
+                onClick={handleNodePress}
+                testID={testIDMap?.start ?? ''}
               >
                 {compact && !!label && (
                   <InputLabel htmlFor={shouldSetLabelId ? labelId : undefined} spacingStart={2}>
@@ -237,24 +253,8 @@ export const TextInput = memo(
               </HStack>
             )
           }
-          endNode={
-            (suffix !== '' || !!end) && (
-              <HStack
-                testID={testIDMap?.end ?? ''}
-                onClick={handleNodePress}
-                alignItems="center"
-                justifyContent="center"
-                gap={2}
-              >
-                {suffix !== '' && (
-                  <TextLabel1 spacingEnd={2} as="p" color="foregroundMuted">
-                    {suffix}
-                  </TextLabel1>
-                )}
-                {!!end && <>{end}</>}
-              </HStack>
-            )
-          }
+          variant={variant}
+          width={width}
         />
       </TextInputFocusVariantContext.Provider>
     );

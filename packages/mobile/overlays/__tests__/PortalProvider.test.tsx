@@ -5,7 +5,7 @@ import { PortalHost } from '../PortalProvider';
 
 describe('PortalProvider.test', () => {
   it('renders single portal node', () => {
-    const mockNodes = [{ id: 'node1', element: <View testID="view1" key="node1" /> }];
+    const mockNodes = [{ id: 'node1', element: <View key="node1" testID="view1" /> }];
     render(<PortalHost nodes={mockNodes} />);
 
     expect(screen.getByTestId('view1')).toBeTruthy();
@@ -16,7 +16,7 @@ describe('PortalProvider.test', () => {
       {
         id: 'node1',
         element: (
-          <View testID="view1" key="node1">
+          <View key="node1" testID="view1">
             <Text>Text1</Text>
           </View>
         ),
@@ -24,7 +24,7 @@ describe('PortalProvider.test', () => {
       {
         id: 'node2',
         element: (
-          <View testID="view2" key="node2">
+          <View key="node2" testID="view2">
             <Text>Text2</Text>
           </View>
         ),

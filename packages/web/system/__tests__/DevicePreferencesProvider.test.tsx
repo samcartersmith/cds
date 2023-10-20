@@ -86,7 +86,7 @@ describe('DevicePreferencesProvider', () => {
 
     function Wrapper(props: DevicePreferencesBaseProviderProps) {
       return (
-        <DevicePreferencesProvider spectrum="dark" scale="xSmall">
+        <DevicePreferencesProvider scale="xSmall" spectrum="dark">
           {/*
           // @ts-expect-error - this is a stand-in element for other providers& components */}
           <div {...props} />

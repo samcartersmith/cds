@@ -40,7 +40,7 @@ const LottieStatusAnimationScreen = () => {
       <Example>
         <LottieStatusAnimation key={key} height={250} status={status} />
         <HStack flexWrap="wrap">{buttons}</HStack>
-        <Button variant="secondary" onPress={handleReset}>
+        <Button onPress={handleReset} variant="secondary">
           Reset animation
         </Button>
       </Example>

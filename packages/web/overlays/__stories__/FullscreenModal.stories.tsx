@@ -29,29 +29,29 @@ export const Basic = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
-    <Box height={800} background="backgroundAlternate">
+    <Box background="backgroundAlternate" height={800}>
       <TextBody as="p">Primary Content {loremIpsum}</TextBody>
     </Box>
   );
 
   const secondaryContent = (
-    <Box height={800} background="backgroundAlternate">
+    <Box background="backgroundAlternate" height={800}>
       <TextBody as="p">Secondary Content {loremIpsum}</TextBody>
     </Box>
   );
 
   return (
     <>
-      <Button onPress={toggleOn} ref={triggerRef}>
+      <Button ref={triggerRef} onPress={toggleOn}>
         Open Modal
       </Button>
       <FullscreenModal
-        visible={visible}
-        onRequestClose={toggleOff}
         onDidClose={focusTrigger}
+        onRequestClose={toggleOff}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         title="Modal title"
+        visible={visible}
       />
     </>
   );
@@ -62,29 +62,29 @@ export const NoTitle = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
-    <Box height={800} background="backgroundAlternate">
+    <Box background="backgroundAlternate" height={800}>
       <TextBody as="p">Primary Content {loremIpsum}</TextBody>
     </Box>
   );
 
   const secondaryContent = (
-    <Box height={800} background="backgroundAlternate">
+    <Box background="backgroundAlternate" height={800}>
       <TextBody as="p">Secondary Content {loremIpsum}</TextBody>
     </Box>
   );
 
   return (
     <>
-      <Button onPress={toggleOn} ref={triggerRef}>
+      <Button ref={triggerRef} onPress={toggleOn}>
         Open Modal
       </Button>
       <FullscreenModal
-        visible={visible}
-        onRequestClose={toggleOff}
+        accessibilityLabel="Modal context info"
         onDidClose={focusTrigger}
+        onRequestClose={toggleOff}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
-        accessibilityLabel="Modal context info"
+        visible={visible}
       />
     </>
   );
@@ -95,22 +95,22 @@ export const NoSecondary = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
-    <Box height={800} background="backgroundAlternate">
+    <Box background="backgroundAlternate" height={800}>
       <TextBody as="p">Primary Content {loremIpsum}</TextBody>
     </Box>
   );
 
   return (
     <>
-      <Button onPress={toggleOn} ref={triggerRef}>
+      <Button ref={triggerRef} onPress={toggleOn}>
         Open Modal
       </Button>
       <FullscreenModal
-        visible={visible}
-        onRequestClose={toggleOff}
         onDidClose={focusTrigger}
+        onRequestClose={toggleOff}
         primaryContent={primaryContent}
         title="Modal title"
+        visible={visible}
       />
     </>
   );
@@ -123,34 +123,34 @@ export const Example = () => {
   const feedCard = (
     <FeedCard
       avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-      headerMetaData="Dec 18"
-      headerDescription="Earn crypto"
-      headerActionNode={
-        <IconButton
-          accessibilityLabel="More actions"
-          name="more"
-          variant="foregroundMuted"
-          transparent
-        />
-      }
-      bodyTitle="Learn AMP. Earn $3 in AMP."
       bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
       bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
       bodyOrientation="vertical"
+      bodyTitle="Learn AMP. Earn $3 in AMP."
       footerActions={
         <Button compact variant="secondary">
           Earn AMP
         </Button>
       }
+      headerActionNode={
+        <IconButton
+          transparent
+          accessibilityLabel="More actions"
+          name="more"
+          variant="foregroundMuted"
+        />
+      }
+      headerDescription="Earn crypto"
+      headerMetaData="Dec 18"
     />
   );
 
   const listcell = (
     <ListCell
-      title="Bitcoin"
       description="BTC"
       detail="$45,123"
       subdetail="+4.55%"
+      title="Bitcoin"
       variant="positive"
     />
   );
@@ -169,10 +169,10 @@ export const Example = () => {
   const secondaryContent = (
     <Box borderRadius="rounded" elevation={1} overflow="hidden">
       <Accordion defaultActiveKey="2">
-        <AccordionItem itemKey="1" title="Accordion #1" subtitle="subtitle1">
+        <AccordionItem itemKey="1" subtitle="subtitle1" title="Accordion #1">
           <TextBody as="p">{loremIpsum}</TextBody>
         </AccordionItem>
-        <AccordionItem itemKey="2" title="Accordion #2" subtitle="subtitle2">
+        <AccordionItem itemKey="2" subtitle="subtitle2" title="Accordion #2">
           <TextBody as="p">{loremIpsum}</TextBody>
         </AccordionItem>
       </Accordion>
@@ -181,16 +181,16 @@ export const Example = () => {
 
   return (
     <>
-      <Button onPress={toggleOn} ref={triggerRef}>
+      <Button ref={triggerRef} onPress={toggleOn}>
         Open Modal
       </Button>
       <FullscreenModal
-        visible={visible}
-        onRequestClose={toggleOff}
         onDidClose={focusTrigger}
+        onRequestClose={toggleOff}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         title="Modal title"
+        visible={visible}
       />
     </>
   );

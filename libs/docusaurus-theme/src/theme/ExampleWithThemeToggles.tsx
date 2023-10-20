@@ -10,7 +10,7 @@ type ExampleWithThemeTogglesProps = {
 const ExampleWithThemeToggles = memo(
   ({ children, ...toggleProps }: ExampleWithThemeTogglesProps) => {
     return (
-      <VStack spacingVertical={2} gap={3}>
+      <VStack gap={3} spacingVertical={2}>
         <ThemeProvider scale="xSmall">
           <VStack spacingHorizontal={3}>
             <ThemeToggles {...toggleProps} />

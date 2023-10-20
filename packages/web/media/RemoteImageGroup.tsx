@@ -57,8 +57,8 @@ export const RemoteImageGroup = ({
 
   return (
     <Box
-      display="flex"
       alignItems="center"
+      display="flex"
       flexDirection="row-reverse"
       justifyContent="flex-end"
       testID={testID}
@@ -66,17 +66,17 @@ export const RemoteImageGroup = ({
     >
       {showExcess && (
         <Box
-          height={excessSize}
-          width={excessSize}
-          offsetStart={overlapSpacing}
-          borderRadius={borderRadius}
           alignItems="center"
           background="backgroundOverlay"
+          borderRadius={borderRadius}
+          height={excessSize}
           justifyContent="center"
+          offsetStart={overlapSpacing}
+          width={excessSize}
         >
           <p
-            data-testid={`${testID}-excess-text`}
             className={typographyStyles}
+            data-testid={`${testID}-excess-text`}
             style={fontSizeStyle}
           >
             +{excess}
@@ -125,8 +125,8 @@ export const RemoteImageGroup = ({
 
           return (
             <Box
-              testID={`${testID}-inner-box-${index}`}
               offsetEnd={isFirstRemoteImage ? 0 : overlapSpacing}
+              testID={`${testID}-inner-box-${index}`}
               zIndex={index}
             >
               {clonedChild}

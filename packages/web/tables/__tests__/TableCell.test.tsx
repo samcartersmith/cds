@@ -46,7 +46,7 @@ describe('Table Cell', () => {
       <Table>
         <TableBody>
           <TableRow fullWidth>
-            <TableCell testID={exampleTestId} title="test title" subtitle="test subtitle" />
+            <TableCell subtitle="test subtitle" testID={exampleTestId} title="test title" />
           </TableRow>
         </TableBody>
       </Table>,
@@ -61,7 +61,7 @@ describe('Table Cell', () => {
       <Table>
         <TableBody>
           <TableRow fullWidth>
-            <TableCell testID={exampleTestId} start={<div>test start element</div>}>
+            <TableCell start={<div>test start element</div>} testID={exampleTestId}>
               Cell
             </TableCell>
           </TableRow>
@@ -77,7 +77,7 @@ describe('Table Cell', () => {
       <Table>
         <TableBody>
           <TableRow fullWidth>
-            <TableCell testID={exampleTestId} end={<div>test end element</div>}>
+            <TableCell end={<div>test end element</div>} testID={exampleTestId}>
               Cell
             </TableCell>
           </TableRow>
@@ -93,7 +93,7 @@ describe('Table Cell', () => {
       <Table>
         <TableBody>
           <TableRow fullWidth>
-            <TableCell testID={exampleTestId} dangerouslySetClassName={testClassName}>
+            <TableCell dangerouslySetClassName={testClassName} testID={exampleTestId}>
               Cell
             </TableCell>
           </TableRow>

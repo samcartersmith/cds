@@ -72,10 +72,10 @@ export const ResponsiveBox = ({
     <VStack gap={2}>
       <TextDisplay2 as="h2">Responsive Flex Props</TextDisplay2>
       <Box
-        minHeight={200}
-        responsiveConfig={responsiveConfig}
         borderColor="line"
         dangerouslySetClassName={animationStyles}
+        minHeight={200}
+        responsiveConfig={responsiveConfig}
       >
         <HStack {...itemProps}>
           <TextHeadline as="h3">Item 1</TextHeadline>
@@ -88,7 +88,7 @@ export const ResponsiveBox = ({
         </HStack>
       </Box>
       <TextDisplay2 as="h2">Responsive Ratio Layout</TextDisplay2>
-      <HStack spacing={1} gap={1} borderColor="line">
+      <HStack borderColor="line" gap={1} spacing={1}>
         <HStack background="backgroundAlternate" responsiveConfig={ratioItem1Config} {...itemProps}>
           <TextHeadline as="h3">Item 1</TextHeadline>
         </HStack>
@@ -173,18 +173,18 @@ export const ResponsiveStacks = () => (
       borderRadius="rounded"
       responsiveConfig={responsiveConfigHoisted}
     >
-      <ListCell title="Title" description="Description" />
-      <ListCell title="Title" description="Description" />
-      <ListCell title="Title" description="Description" />
+      <ListCell description="Description" title="Title" />
+      <ListCell description="Description" title="Title" />
+      <ListCell description="Description" title="Title" />
     </VStack>
     <VStack
       background="backgroundAlternate"
       borderRadius="rounded"
       responsiveConfig={responsiveConfigHoisted}
     >
-      <ListCell title="Title" description="Description" />
-      <ListCell title="Title" description="Description" />
-      <ListCell title="Title" description="Description" />
+      <ListCell description="Description" title="Title" />
+      <ListCell description="Description" title="Title" />
+      <ListCell description="Description" title="Title" />
     </VStack>
   </HStack>
 );
@@ -203,12 +203,12 @@ export const ResponsiveCard = () => {
   return (
     <Card responsiveConfig={responsiveCardConfig}>
       <CardHeader
-        avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-        metaData="Dec 18"
-        description="Earn crypto"
         action={
-          <IconButton name="more" variant="foregroundMuted" transparent accessibilityLabel="More" />
+          <IconButton transparent accessibilityLabel="More" name="more" variant="foregroundMuted" />
         }
+        avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        description="Earn crypto"
+        metaData="Dec 18"
       />
     </Card>
   );
@@ -237,37 +237,37 @@ export const ResponsiveCells = () => {
   return (
     <>
       <ListCell
-        responsiveConfig={responsiveCellSpacing}
-        onPress={NoopFn}
-        title="Title"
         description="Description"
+        onPress={NoopFn}
+        responsiveConfig={responsiveCellSpacing}
+        title="Title"
       />
       <ListCell
-        responsiveConfig={responsiveCellSpacing}
-        onPress={NoopFn}
-        title="Title"
         description="Description"
+        onPress={NoopFn}
+        responsiveConfig={responsiveCellSpacing}
+        title="Title"
       />
       <ListCell
-        responsiveConfig={responsiveCellSpacing}
-        onPress={NoopFn}
-        title="Title"
         description="Description"
+        onPress={NoopFn}
+        responsiveConfig={responsiveCellSpacing}
+        title="Title"
       />
       <Divider />
       <ContentCell
-        responsiveConfig={responsiveCellSpacing}
-        title="A deep dive into Eth 2.0, scaling that lets users buy the entire crypto market"
-        subtitle="The Block - Ethereum 2"
         description="On this episode of The Scoop, Ethereum 2.0 developer and Prysmatic Labs founder Preston Van Loon and Joe Sticco broke down Cryptex. The post A deep dive into Eth 2.0, scaling and a project that lets users buy the entire crypto market appeared first on The Block."
-        meta="March 2nd, 2021"
         media={
           <CellMedia
-            type="image"
             source="https://dynamic-assets.coinbase.com/2954170d91149bea19e2d2eab8acc2f50ff4446b4b6fb09a7983ad7a481c636e6b29c5e09cf90f49f57dcef30ef7ff50bb99ad4fc068cf43265ad135c590fa7d/news_article_images/28216c10d33e3f2147fe05aa8a27bf4b9620dd658ce0be6c482b5629176e52e4.png"
+            type="image"
           />
         }
+        meta="March 2nd, 2021"
         onPress={NoopFn}
+        responsiveConfig={responsiveCellSpacing}
+        subtitle="The Block - Ethereum 2"
+        title="A deep dive into Eth 2.0, scaling that lets users buy the entire crypto market"
       />
     </>
   );
@@ -275,35 +275,35 @@ export const ResponsiveCells = () => {
 
 export const ResponsiveTable = () => {
   return (
-    <Table variant="ruled" bordered>
+    <Table bordered variant="ruled">
       <TableBody>
         <TableRow>
-          <TableCell responsiveConfig={responsiveCellSpacing} direction="horizontal">
+          <TableCell direction="horizontal" responsiveConfig={responsiveCellSpacing}>
             <TextHeadline as="h2">Sample Row 1</TextHeadline>
-            <Button variant="secondary" compact onPress={NoopFn}>
+            <Button compact onPress={NoopFn} variant="secondary">
               Export
             </Button>
           </TableCell>
         </TableRow>
         <TableRow
-          responsiveConfig={responsiveCellSpacing}
           fullWidth
           backgroundColor="backgroundAlternate"
+          responsiveConfig={responsiveCellSpacing}
         >
           <TableCell
             direction="horizontal"
-            title="Sample Row 2 (with background set)"
             end={
-              <Button variant="secondary" compact onPress={NoopFn}>
+              <Button compact onPress={NoopFn} variant="secondary">
                 Export
               </Button>
             }
+            title="Sample Row 2 (with background set)"
           />
         </TableRow>
         <TableRow disableHoverIndicator>
-          <TableCell responsiveConfig={responsiveCellSpacing} direction="horizontal">
+          <TableCell direction="horizontal" responsiveConfig={responsiveCellSpacing}>
             <TextHeadline as="h2">Sample Row 3</TextHeadline>
-            <Button variant="secondary" compact onPress={NoopFn}>
+            <Button compact onPress={NoopFn} variant="secondary">
               Export
             </Button>
           </TableCell>
@@ -327,16 +327,16 @@ const responsiveTypography: ResponsiveProps = {
 export const ResponsiveTypography = () => {
   return (
     <VStack>
-      <TextDisplay1 responsiveConfig={responsiveTypography} as="h1">
+      <TextDisplay1 as="h1" responsiveConfig={responsiveTypography}>
         Headline
       </TextDisplay1>
-      <TextTitle1 responsiveConfig={responsiveTypography} as="h2">
+      <TextTitle1 as="h2" responsiveConfig={responsiveTypography}>
         Headline
       </TextTitle1>
-      <TextHeadline responsiveConfig={responsiveTypography} as="h3">
+      <TextHeadline as="h3" responsiveConfig={responsiveTypography}>
         Headline
       </TextHeadline>
-      <TextBody responsiveConfig={responsiveTypography} as="p">
+      <TextBody as="p" responsiveConfig={responsiveTypography}>
         Headline
       </TextBody>
     </VStack>

@@ -25,20 +25,20 @@ export const Sparkline = memo(
 
     const defs = children ? (
       <Defs>
-        <SparklineAreaPattern id={patternId.current} color={stroke} />
+        <SparklineAreaPattern color={stroke} id={patternId.current} />
       </Defs>
     ) : null;
 
     return (
-      <Svg width={width} height={height} fill="none">
+      <Svg fill="none" height={height} width={width}>
         {defs}
         <G {...translateProps}>
           <Path
             d={path}
             stroke={stroke}
-            strokeWidth={borderWidth.sparkline}
-            strokeLinejoin="round"
             strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={borderWidth.sparkline}
           />
           {generateSparklineAreaWithId(patternId.current, children)}
         </G>

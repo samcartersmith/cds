@@ -22,28 +22,28 @@ export const SparklineGradient = memo(
       const linearGradient = useMemo(() => {
         return (
           <Defs>
-            <LinearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <LinearGradient id="gradient" x1="0%" x2="100%" y1="0%" y2="0%">
               {gradient.map((item, i) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <Stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
               ))}
             </LinearGradient>
-            {hasChildren && <SparklineAreaPattern id={patternId.current} color={areaColor} />}
+            {hasChildren && <SparklineAreaPattern color={areaColor} id={patternId.current} />}
           </Defs>
         );
       }, [areaColor, hasChildren, gradient]);
 
       return (
-        <Svg width={width} height={height} fill="none">
+        <Svg fill="none" height={height} width={width}>
           {linearGradient}
           <G {...translateProps}>
             <Path
               ref={ref}
               d={path}
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth={borderWidth.sparkline}
               stroke="url(#gradient)"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={borderWidth.sparkline}
             />
             {generateSparklineAreaWithId(patternId.current, children)}
           </G>

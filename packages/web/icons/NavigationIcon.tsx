@@ -58,24 +58,24 @@ export const NavigationIcon = memo(
         <Box
           position="relative"
           spacing={spacing}
-          spacingTop={spacingTop}
           spacingBottom={spacingBottom}
-          spacingStart={spacingStart}
           spacingEnd={spacingEnd}
-          spacingVertical={spacingVertical}
           spacingHorizontal={spacingHorizontal}
+          spacingStart={spacingStart}
+          spacingTop={spacingTop}
+          spacingVertical={spacingVertical}
         >
           <div data-testid={testID} style={{ width: wrapperSize, height: wrapperSize }}>
             <span
               ref={ref}
-              className={iconStyles}
-              style={{ color: iconColor, fontSize: iconSize }}
-              role="img"
-              aria-label={accessibilityLabel}
               aria-hidden={!accessibilityLabel}
-              title={accessibilityLabel}
+              aria-label={accessibilityLabel}
+              className={iconStyles}
               data-icon-name={name}
               data-testid={glyphTestId}
+              role="img"
+              style={{ color: iconColor, fontSize: iconSize }}
+              title={accessibilityLabel}
             >
               {glyph}
             </span>

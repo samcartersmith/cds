@@ -64,19 +64,19 @@ export const AdopterComponentProps = memo(
           <VStack>
             {sortedCallSites.map(([callSite, callSiteCount]) => (
               <BetaCell
-                priority="end"
+                end={<TextLabel2 align="end" as="p">{`${callSiteCount}x`}</TextLabel2>}
+                endAccessory={<Icon color="foregroundMuted" name="externalLink" size="s" />}
                 offsetHorizontal={1}
                 onPress={handleOnPropCallSite(callSite)}
+                priority="end"
                 start={
                   <TextLabel2 as="p" overflow="truncate">
                     {callSite}
                   </TextLabel2>
                 }
-                end={<TextLabel2 as="p" align="end">{`${callSiteCount}x`}</TextLabel2>}
-                endAccessory={<Icon size="s" name="externalLink" color="foregroundMuted" />}
               />
             ))}
-            <Divider spacingTop={2} spacingBottom={2} />
+            <Divider spacingBottom={2} spacingTop={2} />
           </VStack>
         );
       },
@@ -97,19 +97,19 @@ export const AdopterComponentProps = memo(
             <>
               <BetaCell
                 key={prop}
-                priority="start"
-                offsetHorizontal={1}
-                start={<TextLabel2 as="p">{prop}</TextLabel2>}
                 end={<TextLabel2 as="p">{`${propCount} ${instancesText}`}</TextLabel2>}
                 endAccessory={
                   <Icon
-                    size="s"
-                    name={selected ? 'caretUp' : 'caretDown'}
                     color={selected ? 'primary' : 'foregroundMuted'}
+                    name={selected ? 'caretUp' : 'caretDown'}
+                    size="s"
                   />
                 }
+                offsetHorizontal={1}
                 onPress={handleOnPress(prop)}
+                priority="start"
                 selected={selected}
+                start={<TextLabel2 as="p">{prop}</TextLabel2>}
               />
               {selected && selectedContent(callSitePairs)}
             </>

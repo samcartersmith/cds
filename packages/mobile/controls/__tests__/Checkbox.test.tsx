@@ -24,7 +24,7 @@ describe('Checkbox', () => {
   });
   it('checked Checkbox passes a11y', () => {
     render(
-      <Checkbox testID="mock-checkbox" checked>
+      <Checkbox checked testID="mock-checkbox">
         Checkbox
       </Checkbox>,
     );
@@ -39,7 +39,7 @@ describe('Checkbox', () => {
   });
   it('indeterminate Checkbox passes a11y', () => {
     render(
-      <Checkbox testID="mock-checkbox" indeterminate>
+      <Checkbox indeterminate testID="mock-checkbox">
         Checkbox
       </Checkbox>,
     );
@@ -73,7 +73,7 @@ describe('Checkbox', () => {
 
   it('disabled checkbox passes a11y', () => {
     render(
-      <Checkbox testID="disabled-checkbox" disabled>
+      <Checkbox disabled testID="disabled-checkbox">
         Disabled
       </Checkbox>,
     );

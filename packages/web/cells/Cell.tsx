@@ -130,13 +130,13 @@ export const Cell = memo(
 
     let content = (
       <HStack
-        flexGrow={1}
+        alignItems={alignItems}
         background={selected ? 'backgroundAlternate' : undefined}
         borderRadius={borderRadius}
-        alignItems={alignItems}
+        flexGrow={1}
         gap={gap}
-        width="100%"
         testID={testID}
+        width="100%"
         {...spacing.inner}
         dangerouslySetClassName={cx(
           responsiveInnerSpacing,
@@ -151,20 +151,20 @@ export const Cell = memo(
         )}
 
         <Box
+          dangerouslySetClassName={maybeTruncateClassName}
           flexGrow={1}
           flexShrink={hasCellPriority('start', priority) ? 0 : 1}
           justifyContent="flex-start"
-          dangerouslySetClassName={maybeTruncateClassName}
         >
           {children}
         </Box>
 
         {!!intermediary && (
           <Box
+            dangerouslySetClassName={maybeTruncateClassName}
             flexGrow={0}
             flexShrink={hasCellPriority('middle', priority) ? 0 : 1}
             justifyContent="center"
-            dangerouslySetClassName={maybeTruncateClassName}
           >
             {intermediary}
           </Box>
@@ -172,16 +172,16 @@ export const Cell = memo(
 
         {!!detail && (
           <Box
+            alignItems="flex-end"
+            dangerouslySetClassName={maybeTruncateClassName}
+            flexDirection="column"
             flexGrow={detailWidth ? undefined : 1}
             flexShrink={
               // eslint-disable-next-line no-nested-ternary
               detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1
             }
-            flexDirection="column"
-            alignItems="flex-end"
             justifyContent="flex-end"
             width={detailWidth}
-            dangerouslySetClassName={maybeTruncateClassName}
           >
             {detail}
           </Box>
@@ -198,23 +198,23 @@ export const Cell = memo(
     if (linkable) {
       content = (
         <Pressable
-          accessibilityLabel={accessibilityLabel}
-          accessibilityLabelledBy={accessibilityLabelledBy}
-          accessibilityHint={accessibilityHint}
           noScaleOnPress
           transparentWhileInactive
+          accessibilityHint={accessibilityHint}
+          accessibilityLabel={accessibilityLabel}
+          accessibilityLabelledBy={accessibilityLabelledBy}
           backgroundColor="background"
           borderRadius={borderRadius}
+          className={cx(pressClassName, offsetClassName, insetFocusRing)}
           disabled={disabled}
-          onPress={onPress}
+          href={href}
           onKeyDown={onKeyDown}
           onKeyPress={onKeyPress}
-          to={to}
-          target={target}
-          href={href}
-          className={cx(pressClassName, offsetClassName, insetFocusRing)}
+          onPress={onPress}
           tabIndex={tabIndex}
+          target={target}
           testID={testID && `${testID}-cell-pressable`}
+          to={to}
         >
           {content}
         </Pressable>
@@ -223,17 +223,17 @@ export const Cell = memo(
 
     return (
       <Box
-        as={as}
         alignItems="stretch"
-        width="100%"
-        minHeight={minHeight}
+        as={as}
         maxHeight={maxHeight}
+        minHeight={minHeight}
+        width="100%"
         {...spacing.outer}
+        ref={ref}
         dangerouslySetClassName={cx(
           responsiveOuterSpacing,
           responsiveConfig && responsiveClassName,
         )}
-        ref={ref}
       >
         {content}
       </Box>

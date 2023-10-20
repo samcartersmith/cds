@@ -71,10 +71,10 @@ export const DeprecatedButton = memo(
           children
         ) : (
           <TextHeadline
-            testID="text-headline"
             color={color}
-            selectable="none"
             numberOfLines={numberOfLines}
+            selectable="none"
+            testID="text-headline"
           >
             {children}
           </TextHeadline>
@@ -84,7 +84,9 @@ export const DeprecatedButton = memo(
 
     return (
       <Pressable
-        transparentWhileInactive={transparent}
+        ref={ref}
+        accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
+        accessibilityLabel={loading ? 'loading' : accessibilityLabel}
         backgroundColor={backgroundColor}
         block={block}
         borderColor={borderColor}
@@ -92,27 +94,25 @@ export const DeprecatedButton = memo(
         borderWidth="button"
         feedback={feedback ?? (compact ? 'light' : 'normal')}
         loading={loading}
-        style={pressableStyles}
         noScaleOnPress={noScaleOnPress}
-        accessibilityLabel={loading ? 'loading' : accessibilityLabel}
-        accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
-        ref={ref}
+        style={pressableStyles}
+        transparentWhileInactive={transparent}
         {...props}
       >
         <View style={buttonStyles}>
           {loading ? (
-            <ActivityIndicator size="small" color={palette[color]} />
+            <ActivityIndicator color={palette[color]} size="small" />
           ) : (
             <>
               {!!startIcon && (
                 <View style={startIconStyles}>
-                  <Icon name={startIcon} size={iconSize} color={color} />
+                  <Icon color={color} name={startIcon} size={iconSize} />
                 </View>
               )}
               {childrenNode}
               {!!endIcon && (
                 <View style={endIconStyles}>
-                  <Icon name={endIcon} size={iconSize} color={color} />
+                  <Icon color={color} name={endIcon} size={iconSize} />
                 </View>
               )}
             </>

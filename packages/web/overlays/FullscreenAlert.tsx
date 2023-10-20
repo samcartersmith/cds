@@ -85,14 +85,14 @@ export const FullscreenAlert = memo(function FullscreenAlert({
 
   const primaryContent = (
     <VStack alignItems="center" height="100%" justifyContent="space-between">
-      <VStack spacingBottom={4} alignItems="center">
+      <VStack alignItems="center" spacingBottom={4}>
         {!!heroSquare && <HeroSquare name={heroSquare} />}
-        <Box spacingTop={3} spacingBottom={1}>
-          <TextTitle3 id={labelledBySource} as="h3" align="center">
+        <Box spacingBottom={1} spacingTop={3}>
+          <TextTitle3 align="center" as="h3" id={labelledBySource}>
             {title}
           </TextTitle3>
         </Box>
-        <TextBody as="p" color="foregroundMuted" align="center">
+        <TextBody align="center" as="p" color="foregroundMuted">
           {body}
         </TextBody>
       </VStack>
@@ -111,16 +111,16 @@ export const FullscreenAlert = memo(function FullscreenAlert({
 
   return (
     <FullscreenModal
-      visible={visible}
-      onRequestClose={onRequestClose}
-      primaryContent={primaryContent}
-      dangerouslySetContentClassName={centerContentClassName}
       hideDivider
-      disablePortal={disablePortal}
       accessibilityLabel={label}
       accessibilityLabelledBy={labelledBy}
-      testID={testID}
+      dangerouslySetContentClassName={centerContentClassName}
+      disablePortal={disablePortal}
+      onRequestClose={onRequestClose}
+      primaryContent={primaryContent}
       role="alertdialog"
+      testID={testID}
+      visible={visible}
     />
   );
 });

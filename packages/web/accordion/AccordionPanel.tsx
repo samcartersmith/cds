@@ -27,15 +27,15 @@ export const AccordionPanel = memo(
 
       return (
         <Collapsible
-          collapsed={collapsed}
-          testID={testID}
-          maxHeight={maxHeightParam ?? maxHeight}
           ref={forwardedRef}
+          collapsed={collapsed}
+          maxHeight={maxHeightParam ?? maxHeight}
+          testID={testID}
           {...spacing}
           // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
-          role="region"
           accessibilityLabelledBy={getAccordionHeaderId(itemKey)}
           id={getAccordionPanelId(itemKey)}
+          role="region"
         >
           {children}
         </Collapsible>

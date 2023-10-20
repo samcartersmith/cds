@@ -47,11 +47,11 @@ describe('Toast', () => {
     };
     render(
       <Toast
+        action={action}
+        onDidHide={onDidHide}
+        onWillHide={onWillHide}
         testID="mock-toast"
         text={text}
-        action={action}
-        onWillHide={onWillHide}
-        onDidHide={onDidHide}
       />,
     );
 

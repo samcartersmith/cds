@@ -44,7 +44,7 @@ describe('DotStatusColor', () => {
   });
 
   it('passes a11y for small size', () => {
-    render(<DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="positive" size="s" />);
+    render(<DotStatusColor size="s" testID={DOTSTATUSCOLOR_TESTID} variant="positive" />);
 
     expect(screen.getByTestId(DOTSTATUSCOLOR_TESTID)).toBeAccessible();
   });
@@ -52,7 +52,7 @@ describe('DotStatusColor', () => {
   it('can change size to small', () => {
     const iconSize = normalScaleMap.s;
 
-    render(<DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="negative" size="s" />);
+    render(<DotStatusColor size="s" testID={DOTSTATUSCOLOR_TESTID} variant="negative" />);
 
     expect(screen.getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       width: iconSize,
@@ -62,7 +62,7 @@ describe('DotStatusColor', () => {
 
   it('passes a11y for DotStatusColor that has a children', () => {
     render(
-      <DotStatusColor testID={DOTSTATUSCOLOR_TESTID} pin="bottom-start" variant="negative">
+      <DotStatusColor pin="bottom-start" testID={DOTSTATUSCOLOR_TESTID} variant="negative">
         <Icon name="airdrop" size="l" />
       </DotStatusColor>,
     );
@@ -75,7 +75,7 @@ describe('DotStatusColor', () => {
     const dotSize = 16;
 
     render(
-      <DotStatusColor testID={DOTSTATUSCOLOR_TESTID} pin="bottom-start" variant="negative">
+      <DotStatusColor pin="bottom-start" testID={DOTSTATUSCOLOR_TESTID} variant="negative">
         <Icon name="airdrop" size="l" />
       </DotStatusColor>,
     );

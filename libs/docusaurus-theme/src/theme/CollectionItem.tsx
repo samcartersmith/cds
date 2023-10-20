@@ -28,7 +28,7 @@ const CollectionItem = memo(function CollectionItem({
       return (
         <>
           {description.map((string) => (
-            <TextLabel2 key={string} color="foregroundMuted" as="p">
+            <TextLabel2 key={string} as="p" color="foregroundMuted">
               {string}
             </TextLabel2>
           ))}
@@ -37,7 +37,7 @@ const CollectionItem = memo(function CollectionItem({
     }
 
     return (
-      <TextLabel2 color="foregroundMuted" as="p">
+      <TextLabel2 as="p" color="foregroundMuted">
         {description}
       </TextLabel2>
     );
@@ -45,21 +45,21 @@ const CollectionItem = memo(function CollectionItem({
 
   return (
     <VStack
-      flexGrow={flexGrow}
-      flexBasis={0}
-      justifyContent="center"
       alignItems="center"
+      flexBasis={0}
+      flexGrow={flexGrow}
       gap={1}
-      spacingTop={4}
+      justifyContent="center"
       spacingHorizontal={1}
+      spacingTop={4}
       {...rest}
     >
       {children ?? (
-        <VStack flexGrow={0} flexBasis={0} alignItems={textAlign} justifyContent="flex-start">
+        <VStack alignItems={textAlign} flexBasis={0} flexGrow={0} justifyContent="flex-start">
           {media}
-          <VStack flexGrow={1} spacingTop={2} alignItems={textAlign} justifyContent="center">
+          <VStack alignItems={textAlign} flexGrow={1} justifyContent="center" spacingTop={2}>
             {!!title && (
-              <TextLabel1 as="p" noWrap spacingBottom={1}>
+              <TextLabel1 noWrap as="p" spacingBottom={1}>
                 {title}
               </TextLabel1>
             )}

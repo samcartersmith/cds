@@ -42,31 +42,31 @@ function SegmentedControlInternal(
   );
 
   return (
-    <div className={containerStyle} style={vars} ref={ref}>
+    <div ref={ref} className={containerStyle} style={vars}>
       {options.map(({ label, value, accessibilityLabel }) => (
         <Fragment key={value}>
           <input
-            type="radio"
+            aria-label={accessibilityLabel}
+            checked={selectedValue === value}
+            className={cx(radioStyle, insetFocusRing)}
+            data-testid={testID ? `${testID}-${value}` : undefined}
+            disabled={disabled}
             id={`${name}-${value}`}
             name={name}
-            className={cx(radioStyle, insetFocusRing)}
-            checked={selectedValue === value}
-            value={value}
-            disabled={disabled}
             onChange={handleChange}
-            data-testid={testID ? `${testID}-${value}` : undefined}
-            aria-label={accessibilityLabel}
+            type="radio"
+            value={value}
           />
           <Interactable
             as="label"
-            htmlFor={`${name}-${value}`}
+            backgroundColor="backgroundAlternate"
             className={labelStyle}
             disabled={disabled}
-            backgroundColor="backgroundAlternate"
+            htmlFor={`${name}-${value}`}
           >
             {/* Hidden label is used to mitigate resizing */}
-            <Label type={type} option={label} iconSize={size} hidden />
-            <Label type={type} option={label} iconSize={size} />
+            <Label hidden iconSize={size} option={label} type={type} />
+            <Label iconSize={size} option={label} type={type} />
           </Interactable>
         </Fragment>
       ))}
@@ -82,9 +82,9 @@ type LabelProps = Pick<SegmentedControlProps, 'type'> & {
 
 function Label({ type, option, iconSize, hidden }: LabelProps) {
   return (
-    <span className={cx(optionStyle, hidden && hiddenLabel)} aria-hidden={hidden}>
+    <span aria-hidden={hidden} className={cx(optionStyle, hidden && hiddenLabel)}>
       {type === 'icon' ? (
-        <Icon name={option as IconName} size={iconSize} color="currentColor" />
+        <Icon color="currentColor" name={option as IconName} size={iconSize} />
       ) : (
         option
       )}

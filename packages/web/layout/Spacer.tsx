@@ -27,9 +27,9 @@ export const Spacer = memo(function Spacer({
 }: SpacerProps) {
   return (
     <Component
-      role="presentation"
       aria-hidden="true"
       data-testid={testID}
+      role="presentation"
       style={getSpacerStyle({
         flexGrow,
         flexShrink,

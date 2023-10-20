@@ -64,7 +64,7 @@ describe('Alert', () => {
   });
 
   it('overrides accessibilityLabel with accessibilityLabelledBy when both are provided', () => {
-    render(<MockAlert visible accessibilityLabelledBy={LABELLED_BY} accessibilityLabel={LABEL} />);
+    render(<MockAlert visible accessibilityLabel={LABEL} accessibilityLabelledBy={LABELLED_BY} />);
 
     const modal = screen.getByRole('alertdialog');
 
@@ -112,9 +112,9 @@ describe('Alert', () => {
     render(
       <MockAlert
         visible
-        preferredActionLabel="Save"
         onPreferredActionPress={onPreferredActionPress}
         onRequestClose={onRequestClose}
+        preferredActionLabel="Save"
       />,
     );
 

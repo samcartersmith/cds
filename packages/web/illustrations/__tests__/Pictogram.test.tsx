@@ -50,7 +50,7 @@ describe('Pictograms have correct url and alt tag for light mode', () => {
 
 describe('can set alt', () => {
   it('for a Pictogram', () => {
-    render(<Pictogram name="2fa" testID="pictogram-example" alt={TEST_ILLO_ALT} />);
+    render(<Pictogram alt={TEST_ILLO_ALT} name="2fa" testID="pictogram-example" />);
     expect(screen.getByTestId('pictogram-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
   });
 });

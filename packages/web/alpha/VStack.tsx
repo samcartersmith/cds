@@ -36,12 +36,12 @@ export const VStack = memo(
     return (
       <Box
         {...props}
-        as={as}
         ref={forwardedRef}
+        as={as}
+        dangerouslySetClassName={cx(gapProp ? gap[gapProp] : null, dangerouslySetClassName)}
+        dangerouslySetStyle={styles}
         flexDirection="column"
         spacingStart={spacingStartValue}
-        dangerouslySetStyle={styles}
-        dangerouslySetClassName={cx(gapProp ? gap[gapProp] : null, dangerouslySetClassName)}
       >
         {children}
       </Box>

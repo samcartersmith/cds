@@ -50,7 +50,7 @@ export const Normal = () => {
 
       <SegmentedControl options={options2} />
 
-      <SegmentedControl options={options3} disabled />
+      <SegmentedControl disabled options={options3} />
     </VStack>
   );
 };
@@ -75,7 +75,7 @@ export const Dense = () => {
 
   return (
     <ThemeProvider scale="xSmall">
-      <SegmentedControl options={options} value={value} onChange={setValue} />
+      <SegmentedControl onChange={setValue} options={options} value={value} />
 
       <pre>Selected value: {value}</pre>
     </ThemeProvider>
@@ -102,38 +102,38 @@ export const Icons = () => {
     <VStack gap={2}>
       <pre>xs</pre>
       <SegmentedControl
-        type="icon"
         iconSize="xs"
-        options={options1}
-        value={value}
         onChange={setValue}
+        options={options1}
+        type="icon"
+        value={value}
       />
 
       <pre>s</pre>
       <SegmentedControl
-        type="icon"
         iconSize="s"
-        options={options1}
-        value={value}
         onChange={setValue}
+        options={options1}
+        type="icon"
+        value={value}
       />
 
       <pre>m</pre>
       <SegmentedControl
-        type="icon"
         iconSize="m"
-        options={options1}
-        value={value}
         onChange={setValue}
+        options={options1}
+        type="icon"
+        value={value}
       />
 
       <pre>l</pre>
       <SegmentedControl
-        type="icon"
         iconSize="l"
-        options={options1}
-        value={value}
         onChange={setValue}
+        options={options1}
+        type="icon"
+        value={value}
       />
     </VStack>
   );

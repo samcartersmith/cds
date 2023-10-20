@@ -30,10 +30,10 @@ export const LottieStatusAnimation = memo(
 
     return (
       <Lottie
-        testID={testID}
         ref={handleRef}
-        source={tradeStatus}
         onAnimationFinish={handlePolling}
+        source={tradeStatus}
+        testID={testID}
         {...otherProps}
       />
     );

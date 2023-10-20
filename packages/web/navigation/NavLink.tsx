@@ -52,9 +52,9 @@ export const NavLink = memo(({ active, dangerouslySetClassName, ...rest }: NavLi
 
   return (
     <Link
-      variant="label1"
       color="currentColor"
       dangerouslySetClassName={cx(className, dangerouslySetClassName)}
+      variant="label1"
       {...rest}
     />
   );

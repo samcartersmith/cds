@@ -28,12 +28,12 @@ const MockComplexInput = () => {
   return (
     <HStack justifyContent="center">
       <TextInput
-        accessibilityLabel="Text input field"
         accessibilityHint="Text Input field"
-        width="50%"
+        accessibilityLabel="Text input field"
         label="Test"
         onChangeText={onChangeText}
         value={text}
+        width="50%"
       />
       <VStack spacingTop={1}>
         <Box spacingTop={3}>
@@ -49,103 +49,103 @@ export default function InputScreen() {
     <ExampleScreen>
       <Example inline title="TextInput ForegroundMuted">
         <MockTextInput
-          label="Username"
           helperText="username must start with an @ symbol"
-          variant="foregroundMuted"
+          label="Username"
           placeholder="john.doe@coinbase.com"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput ellipsis long text">
         <MockTextInput
-          label="Username"
           helperText="Use textAlign='unset' to workaround the issue where long text does not ellipsis correctly."
-          variant="foregroundMuted"
+          label="Username"
           placeholder="john.doe@coinbase.com"
-          value="https://github.cbhq.net/frontend/cds/blob/master/docs/commands.md!-|?/"
           textAlign="unset"
+          value="https://github.cbhq.net/frontend/cds/blob/master/docs/commands.md!-|?/"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput Positive">
         <MockTextInput
-          label="Username"
           helperText="username must start with an @ symbol"
-          variant="positive"
+          label="Username"
           placeholder="john.doe@coinbase.com"
+          variant="positive"
         />
       </Example>
       <Example inline title="TextInput Negative">
         <MockTextInput
-          label="Username"
           helperText="username must start with an @ symbol"
-          variant="negative"
+          label="Username"
           placeholder="john.doe@coinbase.com"
+          variant="negative"
         />
       </Example>
       <Example inline title="TextInput ColorSurge">
         <MockTextInput
-          label="Username"
+          enableColorSurge
           helperText="username must start with an @ symbol"
+          label="Username"
+          placeholder="john.doe@coinbase.com"
           variant="foregroundMuted"
-          placeholder="john.doe@coinbase.com"
-          enableColorSurge
         />
         <MockTextInput
-          label="Username"
+          enableColorSurge
           helperText="username must start with an @ symbol"
+          label="Username"
+          placeholder="john.doe@coinbase.com"
           variant="positive"
-          placeholder="john.doe@coinbase.com"
-          enableColorSurge
         />
         <MockTextInput
-          label="Username"
-          helperText="username must start with an @ symbol"
-          variant="negative"
-          placeholder="john.doe@coinbase.com"
           enableColorSurge
+          helperText="username must start with an @ symbol"
+          label="Username"
+          placeholder="john.doe@coinbase.com"
+          variant="negative"
         />
       </Example>
       <Example title="TextInput VStack FlexGrow">
-        <VStack flexGrow={1} alignItems="flex-start">
+        <VStack alignItems="flex-start" flexGrow={1}>
           <MockTextInput
-            label="Username"
             helperText="username must start with an @ symbol"
-            variant="negative"
+            label="Username"
             placeholder="john.doe@coinbase.com"
+            variant="negative"
           />
           <MockTextInput
-            label="Username"
             helperText="username must start with an @ symbol"
-            variant="negative"
+            label="Username"
             placeholder="john.doe@coinbase.com"
+            variant="negative"
           />
         </VStack>
       </Example>
       <Example inline title="TextInput startNode">
         <MockTextInput
-          start={<InputIconButton name="search" transparent />}
-          label="Search"
           helperText="Search for assets here"
-          variant="foregroundMuted"
+          label="Search"
           placeholder="ex. Bitcoin"
+          start={<InputIconButton transparent name="search" />}
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput endNode">
         <MockTextInput
           end={<InputIcon name="lightningBolt" />}
-          label="Search"
           helperText="Search for assets here"
-          variant="foregroundMuted"
+          label="Search"
           placeholder="ex. Bitcoin"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput Height">
-        <MockTextInput label="Bitcoin" height={300} multiline value="100" />
+        <MockTextInput multiline height={300} label="Bitcoin" value="100" />
       </Example>
       <Example inline title="TextInput Min Height">
         <MockTextInput
+          multiline
           label="Bitcoin"
           minHeight={50}
-          multiline
           value="
             A really really really really
             long piece of text of text of text 
@@ -156,10 +156,10 @@ export default function InputScreen() {
       </Example>
       <Example inline title="TextArea">
         <MockTextInput
-          label="Textarea"
-          helperText="Write about yourself"
-          variant="foregroundMuted"
           multiline
+          helperText="Write about yourself"
+          label="Textarea"
+          placeholder="I am amazing!"
           value="
             A really really really really
             long piece 
@@ -173,33 +173,33 @@ export default function InputScreen() {
             of text
             displayed
           "
-          placeholder="I am amazing!"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput endNode 50%">
         <MockTextInput
           end={<InputIcon name="lightningBolt" />}
-          label="Search"
-          width="50%"
           helperText="Search for assets here"
-          variant="foregroundMuted"
+          label="Search"
           placeholder="ex. Bitcoin"
+          variant="foregroundMuted"
+          width="50%"
         />
       </Example>
       <Example inline title="TextInput Start Align Input Text and HelperText">
         <MockTextInput
-          label="Search"
-          placeholder="ex. Bitcoin"
           align="start"
           helperText="HelperText"
+          label="Search"
+          placeholder="ex. Bitcoin"
         />
       </Example>
       <Example inline title="TextInput End Align Input Text and HelperText">
         <MockTextInput
+          align="end"
+          helperText="HelperText"
           label="Search"
           placeholder="ex. Bitcoin"
-          helperText="HelperText"
-          align="end"
         />
       </Example>
       <Example inline title="TextInput start/end Node">
@@ -208,26 +208,26 @@ export default function InputScreen() {
             <TextBody
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
-              spacingEnd={2}
               color="foregroundMuted"
+              spacingEnd={2}
             >
               Cancel
             </TextBody>
           }
-          start={<InputIconButton name="search" transparent />}
-          label="Search"
           helperText="Search for assets here"
-          variant="foregroundMuted"
+          label="Search"
           placeholder="ex. Bitcoin"
+          start={<InputIconButton transparent name="search" />}
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput suffix">
         <MockTextInput
-          label="Search"
           helperText="Search for assets here"
-          variant="foregroundMuted"
+          label="Search"
           placeholder="ex. Bitcoin"
           suffix="DOGE"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput Disabled">
@@ -237,96 +237,96 @@ export default function InputScreen() {
             <TextBody
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
-              spacingEnd={2}
               color="foregroundMuted"
+              spacingEnd={2}
             >
               Cancel
             </TextBody>
           }
-          start={<InputIconButton disabled name="search" transparent />}
           label="One Time Password"
-          variant="foregroundMuted"
           placeholder="189-280-1111"
+          start={<InputIconButton disabled transparent name="search" />}
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput No Label">
-        <MockTextInput variant="foregroundMuted" placeholder="189-280-1111" />
+        <MockTextInput placeholder="189-280-1111" variant="foregroundMuted" />
       </Example>
       <Example inline title="CompactTextInput">
         <MockCompactTextInput
           label="One Time Password"
-          variant="foregroundMuted"
           placeholder="189-280-1111"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="CompactTextInput with start node">
         <MockCompactTextInput
-          variant="foregroundMuted"
           label="Compact Start Node"
+          placeholder="189-280-1111"
           start={
             <HStack accessibilityHint="Start Node" accessibilityLabel="Start Node">
               <TextBody>Start Node</TextBody>
             </HStack>
           }
-          placeholder="189-280-1111"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="CompactTextInput with suffix">
         <MockCompactTextInput
-          variant="foregroundMuted"
           label="Compact Suffix"
-          suffix="Suffix"
           placeholder="189-280-1111"
+          suffix="Suffix"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="CompactTextInput with End Node">
         <MockCompactTextInput
-          variant="foregroundMuted"
-          label="Compact Suffix"
           end={
             <TextBody accessibilityHint="Cancel" accessibilityLabel="Cancel">
               End Node
             </TextBody>
           }
+          label="Compact Suffix"
           placeholder="189-280-1111"
+          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="CompactTextInput Negative">
         <MockCompactTextInput
-          label="One Time Password"
-          variant="negative"
-          placeholder="189-280-1111"
           helperText="Password is in an incorrect format"
+          label="One Time Password"
+          placeholder="189-280-1111"
+          variant="negative"
         />
       </Example>
       <Example inline title="CompactTextInput Positive">
         <MockCompactTextInput
-          label="One Time Password"
-          variant="positive"
-          placeholder="189-280-1111"
           helperText="Password is looking good!"
+          label="One Time Password"
+          placeholder="189-280-1111"
+          variant="positive"
         />
       </Example>
       <Example inline title="CompactTextInput Start Align Input Text and HelperText">
         <MockCompactTextInput
-          label="One Time Password"
-          placeholder="189-280-1111"
           align="start"
           helperText="Password is looking good!"
+          label="One Time Password"
+          placeholder="189-280-1111"
         />
       </Example>
       <Example inline title="CompactTextInput 50%">
-        <MockCompactTextInput label="Bitcoin" width="50%" placeholder="190" />
+        <MockCompactTextInput label="Bitcoin" placeholder="190" width="50%" />
         <MockCompactTextInput />
       </Example>
       <Example inline title="CompactTextInput Disabled">
-        <MockCompactTextInput label="Bitcoin" disabled />
+        <MockCompactTextInput disabled label="Bitcoin" />
       </Example>
       <Example inline title="Accessibility Test">
         <MockCompactTextInput
-          label="Bitcoin"
           accessibilityHint="Bitcoin search"
           accessibilityLabel="Bitcoin search"
+          label="Bitcoin"
         />
       </Example>
       <Example>

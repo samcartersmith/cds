@@ -36,18 +36,18 @@ export function createFeatureEntryCardDeprecated<T>({
       return (
         <Card>
           <CardBody
-            title={title}
             description={description}
             media={<SpotSquare name={spotSquare} />}
             orientation="horizontal"
+            title={title}
           >
             <Button
-              flush="start"
               compact
-              variant="primary"
               transparent
-              onPress={onActionPress}
               endIcon="forwardArrow"
+              flush="start"
+              onPress={onActionPress}
+              variant="primary"
             >
               {action}
             </Button>

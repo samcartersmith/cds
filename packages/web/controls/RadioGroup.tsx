@@ -28,21 +28,21 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
 
   return (
     <Control
-      type="radio"
-      label={children}
       ref={ref}
       backgroundColor="background"
       borderRadius="roundedFull"
+      label={children}
+      type="radio"
       {...props}
     >
       <motion.div
-        role="presentation"
         className={cx(radio, focusRing)}
         data-filled={checked}
+        role="presentation"
         {...outerContainerMotionProps}
       >
         <motion.div {...innerContainerMotionProps}>
-          {checked && <Icon name="dot" size="s" color="primary" />}
+          {checked && <Icon color="primary" name="dot" size="s" />}
         </motion.div>
       </motion.div>
     </Control>
@@ -70,17 +70,17 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   const handleSelect = useHandleRadioSelect<T>(onChange);
 
   return (
-    <Group role="radiogroup" ref={ref} testID={testID} {...restProps}>
+    <Group ref={ref} role="radiogroup" testID={testID} {...restProps}>
       {label}
       {Object.entries<string | ReactNode>(options).map(([value, option]) => (
         <Radio
           key={value}
-          value={value}
+          checked={selectedValue === value}
           id={`${name}-${value}`}
           name={name}
-          checked={selectedValue === value}
           onChange={handleSelect}
           testID={testID ? `${testID}-${value}` : undefined}
+          value={value}
         >
           {option}
         </Radio>

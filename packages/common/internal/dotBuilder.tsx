@@ -45,7 +45,7 @@ export function dotBuilder(
     return (
       <>
         {counts.map((count) => (
-          <Box alignItems="flex-start" spacing={1} key={`DotCount-${count}`}>
+          <Box key={`DotCount-${count}`} alignItems="flex-start" spacing={1}>
             <DotCount count={count} />
           </Box>
         ))}
@@ -67,9 +67,9 @@ export function dotBuilder(
       };
     }, []);
     return (
-      <Box alignItems="flex-start" spacing={1} minHeight={100}>
+      <Box alignItems="flex-start" minHeight={100} spacing={1}>
         <DotCount count={count}>
-          <Icon size="m" name="airdrop" />
+          <Icon name="airdrop" size="m" />
         </DotCount>
       </Box>
     );
@@ -77,8 +77,8 @@ export function dotBuilder(
 
   const DotCountVariant = () => {
     return (
-      <VStack alignItems="flex-start" gap={1} key="DotCount-variant-negative">
-        <DotCount variant="negative" count={30} />
+      <VStack key="DotCount-variant-negative" alignItems="flex-start" gap={1}>
+        <DotCount count={30} variant="negative" />
       </VStack>
     );
   };
@@ -86,17 +86,17 @@ export function dotBuilder(
   const DotCountOverlap = () => {
     return (
       <>
-        <DotCount variant="negative" count={1} overlap="circular" pin="top-end">
-          <Avatar shape="circle" size="l" alt="Sneezy" />
+        <DotCount count={1} overlap="circular" pin="top-end" variant="negative">
+          <Avatar alt="Sneezy" shape="circle" size="l" />
         </DotCount>
-        <DotCount variant="negative" count={30} overlap="circular" pin="top-end">
-          <Avatar shape="circle" size="xl" alt="Sneezy" />
+        <DotCount count={30} overlap="circular" pin="top-end" variant="negative">
+          <Avatar alt="Sneezy" shape="circle" size="xl" />
         </DotCount>
-        <DotCount variant="negative" count={100} overlap="circular" pin="top-end">
-          <Avatar shape="circle" size="xxl" alt="Sneezy" />
+        <DotCount count={100} overlap="circular" pin="top-end" variant="negative">
+          <Avatar alt="Sneezy" shape="circle" size="xxl" />
         </DotCount>
-        <DotCount variant="negative" count={99} overlap="circular" pin="top-end">
-          <Avatar shape="circle" size="xxxl" alt="Sneezy" />
+        <DotCount count={99} overlap="circular" pin="top-end" variant="negative">
+          <Avatar alt="Sneezy" shape="circle" size="xxxl" />
         </DotCount>
       </>
     );
@@ -105,23 +105,23 @@ export function dotBuilder(
   const DotCountPlacements = () => {
     return (
       <VStack
+        key="DotCount-placement-top-end"
         alignItems="flex-start"
         gap={4}
         spacing={1}
-        key="DotCount-placement-top-end"
         spacingBottom={4}
       >
         <TextLabel1>top-end</TextLabel1>
-        <DotCount pin="top-end" count={30}>
-          <Avatar size="xl" shape="square" alt="Sneezy" />
+        <DotCount count={30} pin="top-end">
+          <Avatar alt="Sneezy" shape="square" size="xl" />
         </DotCount>
-        <DotCount pin="top-end" count={30}>
-          <Avatar size="l" shape="square" alt="Sneezy" />
+        <DotCount count={30} pin="top-end">
+          <Avatar alt="Sneezy" shape="square" size="l" />
         </DotCount>
-        <DotCount pin="top-end" count={1}>
+        <DotCount count={1} pin="top-end">
           <Icon name="calendar" size="m" />
         </DotCount>
-        <DotCount pin="top-end" count={0}>
+        <DotCount count={0} pin="top-end">
           <TextLabel1>Count = 0. Dot should not show up</TextLabel1>
           <Icon name="calendar" size="m" />
         </DotCount>
@@ -137,7 +137,7 @@ export function dotBuilder(
     return (
       <HStack gap={2}>
         <DotCount count={2} overlap="circular" pin="top-end">
-          <Avatar shape="circle" size="xxxl" alt="Sneezy" />
+          <Avatar alt="Sneezy" shape="circle" size="xxxl" />
         </DotCount>
         <VStack>
           <TextLabel1>Hello Hello</TextLabel1>
@@ -174,7 +174,7 @@ export function dotBuilder(
     return (
       <>
         {VARIANTS.map((variant) => (
-          <VStack alignItems="flex-start" gap={1} key={`DotStatusColor-variant-${variant}`}>
+          <VStack key={`DotStatusColor-variant-${variant}`} alignItems="flex-start" gap={1}>
             <DotStatusColor variant={variant} />
           </VStack>
         ))}
@@ -186,8 +186,8 @@ export function dotBuilder(
     return (
       <>
         {SIZES.map((size) => (
-          <VStack alignItems="flex-start" gap={1} key={`DotStatusColor-size-${size}`}>
-            <DotStatusColor variant="negative" size={size} />
+          <VStack key={`DotStatusColor-size-${size}`} alignItems="flex-start" gap={1}>
+            <DotStatusColor size={size} variant="negative" />
           </VStack>
         ))}
       </>
@@ -199,20 +199,20 @@ export function dotBuilder(
       <>
         {PIN_DIRECTIONS.map((pinDirection) => (
           <VStack
+            key={`DotStatusColor-placement-${pinDirection}`}
+            alignItems="flex-start"
             gap={4}
             spacing={1}
-            alignItems="flex-start"
-            key={`DotStatusColor-placement-${pinDirection}`}
             spacingBottom={4}
           >
             <TextLabel1>{pinDirection}</TextLabel1>
-            <DotStatusColor variant="positive" pin={pinDirection}>
-              <Avatar shape="square" size="l" alt="Sneezy" />
+            <DotStatusColor pin={pinDirection} variant="positive">
+              <Avatar alt="Sneezy" shape="square" size="l" />
             </DotStatusColor>
-            <DotStatusColor variant="positive" pin={pinDirection}>
-              <Avatar shape="square" size="xxl" alt="Sneezy" />
+            <DotStatusColor pin={pinDirection} variant="positive">
+              <Avatar alt="Sneezy" shape="square" size="xxl" />
             </DotStatusColor>
-            <DotStatusColor variant="positive" pin={pinDirection}>
+            <DotStatusColor pin={pinDirection} variant="positive">
               <Icon name="calendar" size="l" />
             </DotStatusColor>
           </VStack>
@@ -227,17 +227,17 @@ export function dotBuilder(
         {PIN_DIRECTIONS.map((pinDirection) =>
           avatarSizes.map((avatarSize) => (
             <VStack
+              key={`DotStatusColor-overlap-${pinDirection}-${avatarSize}`}
+              alignItems="flex-start"
               gap={4}
               spacing={1}
-              alignItems="flex-start"
-              key={`DotStatusColor-overlap-${pinDirection}-${avatarSize}`}
               spacingBottom={4}
             >
               <TextLabel1>
                 {pinDirection}, avatarSize: {avatarSize}
               </TextLabel1>
-              <DotStatusColor overlap="circular" variant="positive" pin={pinDirection}>
-                <Avatar shape="circle" size={avatarSize} alt="Unknown avatar circle" />
+              <DotStatusColor overlap="circular" pin={pinDirection} variant="positive">
+                <Avatar alt="Unknown avatar circle" shape="circle" size={avatarSize} />
               </DotStatusColor>
             </VStack>
           )),
@@ -265,20 +265,20 @@ export function dotBuilder(
       <>
         {PIN_DIRECTIONS.map((pinDirection) => (
           <VStack
+            key={`dotsymbol-placement-${pinDirection}`}
             alignItems="flex-start"
             gap={4}
             spacing={1}
-            key={`dotsymbol-placement-${pinDirection}`}
             spacingBottom={4}
           >
             <TextLabel1>{pinDirection}</TextLabel1>
-            <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
-              <Avatar shape="square" size="xxxl" alt="Sneezy" />
+            <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
+              <Avatar alt="Sneezy" shape="square" size="xxxl" />
             </DotSymbol>
-            <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
-              <Avatar shape="square" size="xl" alt="Sneezy" />
+            <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
+              <Avatar alt="Sneezy" shape="square" size="xl" />
             </DotSymbol>
-            <DotSymbol size="m" pin={pinDirection} source={assets.eth.imageUrl}>
+            <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
               <Icon name="airdrop" size="l" />
             </DotSymbol>
           </VStack>
@@ -291,8 +291,8 @@ export function dotBuilder(
     return (
       <>
         {SIZES.map((size) => (
-          <VStack alignItems="flex-start" gap={1} key={`dotsymbol-size-${size}`}>
-            <DotSymbol source={assets.eth.imageUrl} size={size} />
+          <VStack key={`dotsymbol-size-${size}`} alignItems="flex-start" gap={1}>
+            <DotSymbol size={size} source={assets.eth.imageUrl} />
           </VStack>
         ))}
       </>
@@ -305,10 +305,10 @@ export function dotBuilder(
         {PIN_DIRECTIONS.map((pinDirection) =>
           avatarSizes.map((avatarSize) => (
             <VStack
+              key={`dotsymbol-icons-${pinDirection}-${avatarSize}`}
               alignItems="flex-start"
               gap={4}
               spacing={1}
-              key={`dotsymbol-icons-${pinDirection}-${avatarSize}`}
               spacingBottom={4}
             >
               <TextLabel1>
@@ -316,12 +316,12 @@ export function dotBuilder(
                 {avatarIconSizeMap[avatarSize]}
               </TextLabel1>
               <DotSymbol
-                overlap="circular"
-                size={avatarIconSizeMap[avatarSize]}
-                pin={pinDirection}
                 iconName="safe"
+                overlap="circular"
+                pin={pinDirection}
+                size={avatarIconSizeMap[avatarSize]}
               >
-                <Avatar src={assets.eth.imageUrl} size={avatarSize} alt="Ethereum asset logo" />
+                <Avatar alt="Ethereum asset logo" size={avatarSize} src={assets.eth.imageUrl} />
               </DotSymbol>
             </VStack>
           )),
@@ -336,10 +336,10 @@ export function dotBuilder(
         {PIN_DIRECTIONS.map((pinDirection) =>
           iconSizes.map((size) => (
             <VStack
+              key={`dotsymbol-overlap-${size}-${pinDirection}`}
               alignItems="flex-start"
               gap={4}
               spacing={1}
-              key={`dotsymbol-overlap-${size}-${pinDirection}`}
               spacingBottom={4}
             >
               <TextLabel1>
@@ -347,11 +347,11 @@ export function dotBuilder(
               </TextLabel1>
               <DotSymbol
                 overlap="circular"
-                size={size}
                 pin={pinDirection}
+                size={size}
                 source={assets.ada.imageUrl}
               >
-                <Avatar src={assets.eth.imageUrl} size="xxxl" alt="Sneezy" />
+                <Avatar alt="Sneezy" size="xxxl" src={assets.eth.imageUrl} />
               </DotSymbol>
             </VStack>
           )),
@@ -370,10 +370,10 @@ export function dotBuilder(
         <DotSymbol
           overlap="circular"
           pin="bottom-end"
-          source={assets.polygon.imageUrl}
           size={avatarDotSizeMap.xxxl}
+          source={assets.polygon.imageUrl}
         >
-          <Avatar shape="square" size="xxl" alt="Sneezy" />
+          <Avatar alt="Sneezy" shape="square" size="xxl" />
         </DotSymbol>
         <VStack>
           <TextLabel1>Hello Hello</TextLabel1>

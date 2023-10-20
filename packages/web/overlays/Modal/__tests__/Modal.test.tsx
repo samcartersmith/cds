@@ -44,8 +44,8 @@ const ExampleModalScreen = ({ disableFocusTrap }: { disableFocusTrap?: boolean }
     <>
       <Modal
         disableFocusTrap={disableFocusTrap}
-        visible={isVisible}
         onRequestClose={handleOnRequestClose}
+        visible={isVisible}
       >
         <ModalHeader title={YUBIKEY_TITLE} />
       </Modal>
@@ -78,7 +78,7 @@ describe('Modal', () => {
   it('passes a11y', async () => {
     expect(
       await renderA11y(
-        <MockModal visible closeAccessibilityLabel="Close" backAccessibilityLabel="Back" />,
+        <MockModal visible backAccessibilityLabel="Back" closeAccessibilityLabel="Close" />,
       ),
     ).toHaveNoViolations();
   });
@@ -86,7 +86,7 @@ describe('Modal', () => {
   it('passes a11y when visible', async () => {
     expect(
       await renderA11y(
-        <MockModal closeAccessibilityLabel="Close" backAccessibilityLabel="Back" />,
+        <MockModal backAccessibilityLabel="Back" closeAccessibilityLabel="Close" />,
         {
           async afterRender() {
             fireEvent.click(screen.getByRole('button'));
@@ -130,7 +130,7 @@ describe('Modal', () => {
   });
 
   it('overrides accessibilityLabel with accessibilityLabelledBy when both are provided', () => {
-    render(<MockModal visible accessibilityLabelledBy={LABELLED_BY} accessibilityLabel={LABEL} />);
+    render(<MockModal visible accessibilityLabel={LABEL} accessibilityLabelledBy={LABELLED_BY} />);
 
     const modal = screen.getByRole('dialog');
 
@@ -163,7 +163,7 @@ describe('Modal', () => {
 
   it('triggers close on close button click', async () => {
     const onRequestClose = jest.fn();
-    render(<MockModal onRequestClose={onRequestClose} closeAccessibilityLabel="Close" />);
+    render(<MockModal closeAccessibilityLabel="Close" onRequestClose={onRequestClose} />);
 
     fireEvent.click(screen.getByRole('button'));
 
@@ -191,9 +191,9 @@ describe('Modal', () => {
     render(
       <MockModal
         visible
-        onRequestClose={jest.fn()}
-        onBackButtonPress={onBackButtonPress}
         backAccessibilityLabel="Back"
+        onBackButtonPress={onBackButtonPress}
+        onRequestClose={jest.fn()}
       />,
     );
 
@@ -303,7 +303,7 @@ describe('Modal', () => {
     render(
       <>
         <span id="close-hint">Close button hint</span>
-        <MockModal closeAccessibilityLabel="Close" closeAccessibilityHint="close-hint" />
+        <MockModal closeAccessibilityHint="close-hint" closeAccessibilityLabel="Close" />
       </>,
     );
 
@@ -317,9 +317,9 @@ describe('Modal', () => {
       <>
         <span id="back-hint">Back button hint</span>
         <MockModal
-          onBackButtonPress={jest.fn()}
-          backAccessibilityLabel="Back"
           backAccessibilityHint="back-hint"
+          backAccessibilityLabel="Back"
+          onBackButtonPress={jest.fn()}
         />
       </>,
     );

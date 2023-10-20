@@ -41,13 +41,13 @@ const KBarListCell = memo(
     return (
       <Cell
         {...props}
+        ref={ref}
         accessory={accessory ? <KBarCellAccessory>{accessory}</KBarCellAccessory> : undefined}
         detail={end}
-        media={media}
         disabled={disabled}
+        media={media}
         minHeight={minHeight}
         selected={selected}
-        ref={ref}
       >
         <VStack>
           {!!title && (
@@ -60,8 +60,8 @@ const KBarListCell = memo(
             <TextBody
               as="div"
               color="foregroundMuted"
-              overflow={multiline ? undefined : 'truncate'}
               dangerouslySetClassName={multiline ? overflowClassName : undefined}
+              overflow={multiline ? undefined : 'truncate'}
             >
               {description}
             </TextBody>

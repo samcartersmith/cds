@@ -39,18 +39,18 @@ export const SampleTable = () => {
 
   return (
     <>
-      <HStack alignItems="center" justifyContent="flex-end" gap={1} spacingBottom={3}>
+      <HStack alignItems="center" gap={1} justifyContent="flex-end" spacingBottom={3}>
         {variants.map((v: TableVariant) => (
           <Button
-            compact
             key={v}
-            variant={v === variant ? 'primary' : 'secondary'}
+            compact
             onPress={() => setVariant(v)}
+            variant={v === variant ? 'primary' : 'secondary'}
           >
             {v}
           </Button>
         ))}
-        <Switch onChange={toggle} checked={hasBorder}>
+        <Switch checked={hasBorder} onChange={toggle}>
           Border
         </Switch>
       </HStack>
@@ -102,7 +102,7 @@ export const StickyHeaderSortingExample = () => {
   const getSortableProps = useSortableCell({ sortBy, sortDirection, onChange });
 
   return (
-    <Table bordered variant="ruled" maxHeight={500}>
+    <Table bordered maxHeight={500} variant="ruled">
       <TableCaption as="h2" backgroundColor="background">
         Sticky Header + Sorting Table
       </TableCaption>
@@ -142,12 +142,12 @@ export const FixedLayoutExample = () => {
 
   return (
     <>
-      <HStack spacingBottom={3} alignItems="center" justifyContent="flex-end" flexGrow={1}>
-        <Switch onChange={toggle} checked={isFixed}>
+      <HStack alignItems="center" flexGrow={1} justifyContent="flex-end" spacingBottom={3}>
+        <Switch checked={isFixed} onChange={toggle}>
           Fixed Layout
         </Switch>
       </HStack>
-      <Table tableLayout={isFixed ? 'fixed' : 'auto'} variant="graph" bordered>
+      <Table bordered tableLayout={isFixed ? 'fixed' : 'auto'} variant="graph">
         <TableCaption as="h2" backgroundColor="background">
           Fixed Layout Table
         </TableCaption>
@@ -192,11 +192,11 @@ export const CompactExample = () => {
   return (
     <>
       <HStack alignItems="center" justifyContent="flex-end" spacingBottom={3}>
-        <Switch onChange={toggle} checked={compact}>
+        <Switch checked={compact} onChange={toggle}>
           Compact
         </Switch>
       </HStack>
-      <Table variant="ruled" bordered compact={compact}>
+      <Table bordered compact={compact} variant="ruled">
         <TableCaption as="h2" backgroundColor="background">
           Compact Table
         </TableCaption>
@@ -214,9 +214,9 @@ export const CompactExample = () => {
             <TableCell title="Title" />
           </TableRow>
           <TableRow>
-            <TableCell title="Title" subtitle="A description" />
-            <TableCell title="Title" subtitle="A description" />
-            <TableCell title="Title" subtitle="A description" />
+            <TableCell subtitle="A description" title="Title" />
+            <TableCell subtitle="A description" title="Title" />
+            <TableCell subtitle="A description" title="Title" />
           </TableRow>
           {data.map((row, index) => (
             <TableRow key={`row-${row.name}--${row.appSubmittedAt}`}>
@@ -227,21 +227,21 @@ export const CompactExample = () => {
                   return (
                     <TableCell
                       key={`cell-${key}`}
-                      title={`${val}`}
-                      subtitle="Some subtitle"
                       start={
                         mediaType === 'image' ? (
                           <CellMedia
-                            type="image"
                             source="https://images.coinbase.com/avatar?s=350"
+                            type="image"
                           />
                         ) : (
                           <CellMedia
-                            type="avatar"
                             source="https://images.coinbase.com/avatar?s=56"
+                            type="avatar"
                           />
                         )
                       }
+                      subtitle="Some subtitle"
+                      title={`${val}`}
                     />
                   );
                 })}

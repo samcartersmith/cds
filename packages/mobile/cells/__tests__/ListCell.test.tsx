@@ -38,7 +38,7 @@ describe('ListCell', () => {
   });
 
   it('passes a11y with a Text component description', () => {
-    render(<ListCell testID="listcell-with-description" description={<Text>Description</Text>} />);
+    render(<ListCell description={<Text>Description</Text>} testID="listcell-with-description" />);
 
     expect(screen.getByTestId('listcell-with-description')).toBeAccessible();
   });
@@ -50,7 +50,7 @@ describe('ListCell', () => {
   });
 
   it('passes a11y with a string description', () => {
-    render(<ListCell testID="listcell-with-description" description="Description" />);
+    render(<ListCell description="Description" testID="listcell-with-description" />);
 
     expect(screen.getByTestId('listcell-with-description')).toBeAccessible();
   });
@@ -62,7 +62,7 @@ describe('ListCell', () => {
   });
 
   it('passes a11y with a Text component detail', () => {
-    render(<ListCell testID="listcell-with-detail" detail={<Text>Detail</Text>} />);
+    render(<ListCell detail={<Text>Detail</Text>} testID="listcell-with-detail" />);
 
     expect(screen.getByTestId('listcell-with-detail')).toBeAccessible();
   });
@@ -74,7 +74,7 @@ describe('ListCell', () => {
   });
 
   it('passes a11y with a string detail', () => {
-    render(<ListCell testID="listcell-with-detail" detail="Detail" />);
+    render(<ListCell detail="Detail" testID="listcell-with-detail" />);
 
     expect(screen.getByTestId('listcell-with-detail')).toBeAccessible();
   });
@@ -86,7 +86,7 @@ describe('ListCell', () => {
   });
 
   it('passes a11y with a Text component subdetail', () => {
-    render(<ListCell testID="listcell-with-subdetail" subdetail={<Text>Subdetail</Text>} />);
+    render(<ListCell subdetail={<Text>Subdetail</Text>} testID="listcell-with-subdetail" />);
 
     expect(screen.getByTestId('listcell-with-subdetail')).toBeAccessible();
   });
@@ -98,13 +98,13 @@ describe('ListCell', () => {
   });
 
   it('passes a11y with a string subdetail', () => {
-    render(<ListCell testID="listcell-with-subdetail" subdetail="Subdetail" />);
+    render(<ListCell subdetail="Subdetail" testID="listcell-with-subdetail" />);
 
     expect(screen.getByTestId('listcell-with-subdetail')).toBeAccessible();
   });
 
   it('renders media', () => {
-    render(<ListCell media={<CellMedia type="icon" name="add" testID="media" />} />);
+    render(<ListCell media={<CellMedia name="add" testID="media" type="icon" />} />);
 
     expect(screen.getByTestId('media')).toBeTruthy();
   });
@@ -112,8 +112,8 @@ describe('ListCell', () => {
   it('passes a11y with media', () => {
     render(
       <ListCell
+        media={<CellMedia name="add" testID="media" type="icon" />}
         testID="listcell-with-media"
-        media={<CellMedia type="icon" name="add" testID="media" />}
       />,
     );
     expect(screen.getByTestId('listcell-with-media')).toBeAccessible();
@@ -126,7 +126,7 @@ describe('ListCell', () => {
   });
 
   it('passes a11y with accessory', () => {
-    render(<ListCell testID="listcell-with-accessory" accessory="arrow" />);
+    render(<ListCell accessory="arrow" testID="listcell-with-accessory" />);
 
     expect(screen.getByTestId('listcell-with-accessory')).toBeAccessible();
   });
@@ -138,13 +138,13 @@ describe('ListCell', () => {
   });
 
   it('passes a11y with action', () => {
-    render(<ListCell testID="listcell-with-action" action={<Button>Button</Button>} />);
+    render(<ListCell action={<Button>Button</Button>} testID="listcell-with-action" />);
 
     expect(screen.getByTestId('listcell-with-action')).toBeAccessible();
   });
 
   it('renders empty strings without crashing', () => {
-    render(<ListCell title="" description="" detail="" subdetail="" action="" />);
+    render(<ListCell action="" description="" detail="" subdetail="" title="" />);
 
     expect(screen.container).not.toBeNull();
   });
@@ -152,10 +152,10 @@ describe('ListCell', () => {
   it('can set an accessibilityLabel and accessibilityHint when a pressable', () => {
     render(
       <ListCell
-        testID="listcell-with-a11y"
-        accessibilityLabel="Some label"
         accessibilityHint="Some hint"
+        accessibilityLabel="Some label"
         onPress={noop}
+        testID="listcell-with-a11y"
       />,
     );
 

@@ -11,7 +11,7 @@ import { VStack } from '../layout/VStack';
 /** @deprecated Please use CardMedia moving forward */
 export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNames }) => {
   return (
-    <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>
+    <VStack alignItems="center" height="auto" justifyContent="center" spacingTop={2} width="100%">
       <SpotRectangle name={name} />
     </VStack>
   );
@@ -20,7 +20,7 @@ export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNam
 /** @deprecated Please use CardMedia moving forward */
 export const CardSpotSquare = ({ name }: { name: IllustrationSpotSquareNames }) => {
   return (
-    <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>
+    <VStack alignItems="center" height="auto" justifyContent="center" spacingTop={2} width="100%">
       <SpotSquare name={name} />
     </VStack>
   );
@@ -29,7 +29,7 @@ export const CardSpotSquare = ({ name }: { name: IllustrationSpotSquareNames }) 
 /** @deprecated Please use CardMedia moving forward */
 export const CardPictogram = ({ name }: { name: IllustrationPictogramNames }) => {
   return (
-    <VStack width="100%" alignItems="center" justifyContent="center" height="auto" spacingTop={2}>
+    <VStack alignItems="center" height="auto" justifyContent="center" spacingTop={2} width="100%">
       <Pictogram name={name} />
     </VStack>
   );

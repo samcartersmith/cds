@@ -52,34 +52,34 @@ export const DotSymbol = memo(
 
     return (
       <div
-        data-testid={testID}
-        className={dotRootContainerStyles}
         aria-label={accessibilityLabel}
+        className={dotRootContainerStyles}
+        data-testid={testID}
         {...props}
       >
         {children}
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
         <div
+          data-testid="dotsymbol-inner-container"
           onClick={handlePreventPropagation}
           style={pinStyles}
-          data-testid="dotsymbol-inner-container"
         >
           {source && (
             <RemoteImage
+              aspectRatio={aspectRatio}
               dangerouslySetClassName={imageBorderClassName}
               shape="circle"
-              aspectRatio={aspectRatio}
               source={source}
               width={iconSize}
             />
           )}
           {iconName && (
             <Box
+              background="primary"
+              borderColor="secondary"
+              borderRadius="roundedFull"
               dangerouslySetClassName={iconBorderClassName}
               spacing={0.5}
-              background="primary"
-              borderRadius="roundedFull"
-              borderColor="secondary"
             >
               <Icon color="primaryForeground" name={iconName} size={size} />
             </Box>

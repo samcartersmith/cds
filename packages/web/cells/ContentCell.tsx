@@ -38,15 +38,15 @@ export const ContentCell = memo(function ContentCell({
   return (
     <Cell
       {...props}
-      accessory={accessoryType && <CellAccessory type={accessoryType} spacingTop={0.5} />}
+      accessory={accessoryType && <CellAccessory spacingTop={0.5} type={accessoryType} />}
       alignItems="flex-start"
-      media={media}
       disabled={disabled}
+      media={media}
       selected={selected}
     >
       {hasTitles && (
         <HStack alignItems="flex-start" justifyContent="space-between">
-          <VStack flexGrow={1} flexShrink={1} dangerouslySetClassName={truncateClassName}>
+          <VStack dangerouslySetClassName={truncateClassName} flexGrow={1} flexShrink={1}>
             {!!title && (
               <TextHeadline as="div" overflow="truncate">
                 {title}
@@ -56,9 +56,9 @@ export const ContentCell = memo(function ContentCell({
             {!!subtitle && (
               <TextLabel2
                 as="div"
-                spacingTop={title ? 0.5 : 0}
-                spacingBottom={description ? 0.5 : 0}
                 overflow="truncate"
+                spacingBottom={description ? 0.5 : 0}
+                spacingTop={title ? 0.5 : 0}
               >
                 {subtitle}
               </TextLabel2>
@@ -67,12 +67,12 @@ export const ContentCell = memo(function ContentCell({
 
           {!!meta && (
             <Box
+              dangerouslySetClassName={truncateClassName}
               flexGrow={0}
               flexShrink={0}
               justifyContent="flex-end"
-              spacingTop={0.5}
               spacingStart={2}
-              dangerouslySetClassName={truncateClassName}
+              spacingTop={0.5}
             >
               <TextLabel2 as="span" color="foregroundMuted" overflow="truncate">
                 {meta}

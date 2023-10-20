@@ -18,7 +18,7 @@ export const Tabs = memo(function Tabs({
   ...rest
 }: TabsFields) {
   return (
-    <TabsOriginal groupId={id} variant={variant} spacerHeight={spacerHeight} {...rest}>
+    <TabsOriginal groupId={id} spacerHeight={spacerHeight} variant={variant} {...rest}>
       {items?.map(({ fields }) => (
         <TabItem key={fields.label} {...fields} />
       ))}

@@ -27,21 +27,21 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   const background = useMemo(() => (isSelected ? 'primaryWash' : 'transparent'), [isSelected]);
 
   return (
-    <Box alignItems="center" justifyContent="center" height="fit-content">
+    <Box alignItems="center" height="fit-content" justifyContent="center">
       <Pressable
-        borderRadius="rounded"
-        backgroundColor={background}
-        onPress={handleOnPress}
         accessibilityLabel={periodLabel}
         aria-pressed={isSelected}
+        backgroundColor={background}
+        borderRadius="rounded"
+        onPress={handleOnPress}
       >
         <TextLabel1
+          noWrap
           as="span"
+          dangerouslySetColor={isSelected ? color : colors.foregroundMuted}
           display="block"
           spacingHorizontal={2}
           spacingVertical={1}
-          dangerouslySetColor={isSelected ? color : colors.foregroundMuted}
-          noWrap
         >
           {period.label}
         </TextLabel1>
@@ -67,14 +67,14 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
   });
 
   return (
-    <HStack justifyContent="space-between" width="100%" spacing={0} spacingHorizontal={1}>
+    <HStack justifyContent="space-between" spacing={0} spacingHorizontal={1} width="100%">
       {periods.map((period) => (
         <SparklineInteractivePeriod
           key={period.value}
+          color={accessibleForeground}
           period={period}
           selectedPeriod={selectedPeriod}
           setSelectedPeriod={setSelectedPeriod}
-          color={accessibleForeground}
         />
       ))}
     </HStack>

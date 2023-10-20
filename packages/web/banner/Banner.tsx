@@ -184,30 +184,28 @@ export const Banner = memo(
 
       return (
         <Collapsible
-          testID={`${testID}-collapsible`}
-          collapsed={isCollapsed}
           ref={observe}
           accessibilityLabelledBy={titleId}
+          collapsed={isCollapsed}
           id={`${titleId}--controller`}
+          testID={`${testID}-collapsible`}
         >
           <HStack
             ref={forwardedRef}
-            // Consistent props
-            width="100%"
-            gap={2}
-            spacingTop={2}
-            spacingStart={spacingStart}
-            spacingEnd={3}
-            // Dynamic props
-            spacingBottom={spacingBottom}
-            testID={testID}
-            borderRadius={borderRadius}
-            bordered={bordered}
+            alignItems={isChildrenFalsy(children) && isWide ? 'center' : undefined}
             background={background}
             borderColor={borderColor}
-            alignItems={isChildrenFalsy(children) && isWide ? 'center' : undefined}
+            borderRadius={borderRadius}
+            bordered={bordered}
             dangerouslySetClassName={stackClassName}
             dangerouslySetStyle={dangerouslySetStyle}
+            gap={2}
+            spacingBottom={spacingBottom}
+            spacingEnd={3}
+            spacingStart={spacingStart}
+            spacingTop={2}
+            testID={testID}
+            width="100%"
           >
             {/** Start */}
             <Box
@@ -215,32 +213,32 @@ export const Banner = memo(
                 isChildrenFalsy(children) && isWide ? undefined : customSpacing
               }
             >
-              <Icon testID={`${testID}-icon`} name={startIcon} size="s" color={iconColor} />
+              <Icon color={iconColor} name={startIcon} size="s" testID={`${testID}-icon`} />
             </Box>
             <Stack
-              testID={`${testID}-inner-end-box`}
-              justifyContent="space-between"
+              alignItems={stackAlignment}
               flexGrow={1}
               gap={stackGap}
-              alignItems={stackAlignment}
+              justifyContent="space-between"
+              testID={`${testID}-inner-end-box`}
             >
               {/** Middle */}
-              <VStack testID={`${testID}-content-box`} gap={0.5}>
-                <TextHeadline as="p" numberOfLines={2} color={textColor} id={titleId}>
+              <VStack gap={0.5} testID={`${testID}-content-box`}>
+                <TextHeadline as="p" color={textColor} id={titleId} numberOfLines={2}>
                   {title}
                 </TextHeadline>
-                <TextBody as="p" numberOfLines={numberOfLines} color={textColor}>
+                <TextBody as="p" color={textColor} numberOfLines={numberOfLines}>
                   {children}
                 </TextBody>
               </VStack>
               {/** Actions */}
               {(!!clonedPrimaryAction || !!clonedSecondaryAction) && (
                 <HStack
-                  testID={`${testID}-action`}
-                  spacingVertical={1}
                   alignItems="center"
-                  gap={4}
                   dangerouslySetClassName={actionContainerStyle}
+                  gap={4}
+                  spacingVertical={1}
+                  testID={`${testID}-action`}
                 >
                   {clonedPrimaryAction}
                   {clonedSecondaryAction}
@@ -251,15 +249,15 @@ export const Banner = memo(
             {showDismiss && (
               <Box alignItems="flex-start" dangerouslySetClassName={customSpacing}>
                 <Pressable
-                  role="button"
-                  accessibilityLabel="close"
                   accessibilityHint="close banner"
-                  onPress={handleOnDismiss}
+                  accessibilityLabel="close"
                   backgroundColor="transparent"
                   borderRadius="roundedFull"
+                  onPress={handleOnDismiss}
+                  role="button"
                   testID={`${testID}-dimiss-btn`}
                 >
-                  <Icon size="s" name="close" color={iconButtonColor} />
+                  <Icon color={iconButtonColor} name="close" size="s" />
                 </Pressable>
               </Box>
             )}

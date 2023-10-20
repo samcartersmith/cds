@@ -21,9 +21,9 @@ const userSwitcherHeight = 674;
 const Subject = ({ title }: SwitcherSubjectProps) => {
   const avatarColorScheme = getAvatarFallbackColor(title);
   return (
-    <Pressable noScaleOnPress backgroundColor="transparent" as="button" borderRadius="rounded">
-      <HStack gap={1} alignItems="center">
-        <Avatar size="xl" alt={title} name={title} colorScheme={avatarColorScheme} />
+    <Pressable noScaleOnPress as="button" backgroundColor="transparent" borderRadius="rounded">
+      <HStack alignItems="center" gap={1}>
+        <Avatar alt={title} colorScheme={avatarColorScheme} name={title} size="xl" />
       </HStack>
     </Pressable>
   );
@@ -36,17 +36,16 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
 
 const UserSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
   return (
-    <FeatureFlagProvider frontierColor frontierButton>
+    <FeatureFlagProvider frontierButton frontierColor>
       <HStack>
         <Dropdown
-          width={userSwitcherWidth}
-          maxHeight={userSwitcherHeight}
-          // this forces truncation, otherwise minWidth default is min-content
-          minWidth={0}
-          content={<UserSwitcherContent />}
-          showOverlay
-          contentPosition={switcherPositionConfig}
           enableMobileModal
+          showOverlay
+          content={<UserSwitcherContent />}
+          contentPosition={switcherPositionConfig}
+          maxHeight={userSwitcherHeight}
+          minWidth={0} // this forces truncation, otherwise minWidth default is min-content
+          width={userSwitcherWidth}
         >
           {children}
         </Dropdown>
@@ -58,7 +57,7 @@ const UserSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) =>
 export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectProps) => {
   return (
     <UserSwitcherRecipe>
-      <Subject title={title} description={description} />
+      <Subject description={description} title={title} />
     </UserSwitcherRecipe>
   );
 };

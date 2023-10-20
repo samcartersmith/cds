@@ -8,7 +8,7 @@ export const IllustrationExample = memo(function IllustrationExample({
   children,
 }: PropsWithChildren<unknown>) {
   return (
-    <VStack gap={2} alignItems="flex-start">
+    <VStack alignItems="flex-start" gap={2}>
       <ThemeProvider spectrum="light">
         <Box background>{children}</Box>
       </ThemeProvider>

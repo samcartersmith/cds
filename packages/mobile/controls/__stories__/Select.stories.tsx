@@ -36,22 +36,22 @@ export default function SelectScreen() {
         <AssetSelect />
       </Example>
       <Example title="Scrollable Tray">
-        <ScrollableSelect placeholder="Select an option... " hasDescription />
+        <ScrollableSelect hasDescription placeholder="Select an option... " />
       </Example>
       <Example title="Label and Helper Text">
         <DefaultSelect
-          label="What do you want? "
           helperText="You may choose only one option"
+          label="What do you want? "
           placeholder="Select an option... "
         />
       </Example>
       <Example title="Compact with Label">
-        <ScrollableSelect label="Amt. to deposit" compact hasDescription compactSelectOption />
+        <ScrollableSelect compact compactSelectOption hasDescription label="Amt. to deposit" />
       </Example>
       <Example title="Start Node">
         <DefaultSelect
-          accessibilityLabel="USD Cash"
           accessibilityHint="Select cash amount"
+          accessibilityLabel="USD Cash"
           startNode={<InputIcon name="cashUSD" />}
         />
       </Example>
@@ -64,26 +64,26 @@ export default function SelectScreen() {
       </Example>
       <Example title="Disabled">
         <DefaultSelect
-          placeholder="This is a really long placeholder that will overflow and be truncated"
           disabled
-          label="I am a label"
           helperText="I am helpful"
+          label="I am a label"
+          placeholder="This is a really long placeholder that will overflow and be truncated"
         />
       </Example>
       <Example title="Negative without HandleBar">
         <DefaultSelect
-          label="I am a label"
-          variant="negative"
-          placeholder="Someone needs to fix this"
-          helperText="Wow this is really broken. Good luck! "
           hideHandleBar
+          helperText="Wow this is really broken. Good luck! "
+          label="I am a label"
+          placeholder="Someone needs to fix this"
+          variant="negative"
         />
       </Example>
       <Example title="Positive">
         <DefaultSelect
           label="What do you want?"
-          variant="positive"
           placeholder="Some positive feedback"
+          variant="positive"
         />
       </Example>
       <Example title="Select Filters">

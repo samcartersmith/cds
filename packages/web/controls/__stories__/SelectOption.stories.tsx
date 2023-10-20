@@ -20,22 +20,22 @@ export const Stories = () => {
       <VStack gap={3} width={200}>
         <VStack role="menu">
           <TextLabel1 as="p">Title and Description</TextLabel1>
-          <SelectOption title="Title" description="Description" value="test" />
+          <SelectOption description="Description" title="Title" value="test" />
         </VStack>
         <VStack role="menu">
           <TextLabel1 as="p">Disabled</TextLabel1>
-          <SelectOption disabled title="Title" description="Description" value="test" />
+          <SelectOption disabled description="Description" title="Title" value="test" />
         </VStack>
         <VStack role="menu">
           <TextLabel1 as="p">Compact</TextLabel1>
-          <SelectOption compact title="Title" description="Description" value="test" />
+          <SelectOption compact description="Description" title="Title" value="test" />
         </VStack>
         <VStack role="menu">
           <TextLabel1 as="p">Multiline</TextLabel1>
           <SelectOption
             multiline
-            title="Title"
             description="This is a really long description that will be multiple lines long"
+            title="Title"
             value="test"
           />
         </VStack>

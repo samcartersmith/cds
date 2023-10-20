@@ -37,12 +37,11 @@ const CheckboxIcon = memo(
 
     return (
       <Interactable
-        testID={testID}
-        pressed={pressed}
         backgroundColor={backgroundColor}
         borderColor={borderColor}
         borderWidth="checkbox"
         disabled={disabled}
+        pressed={pressed}
         style={[
           styles.box,
           {
@@ -50,11 +49,12 @@ const CheckboxIcon = memo(
             height: checkboxSize,
           },
         ]}
+        testID={testID}
       >
         <Animated.View
           style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
         >
-          <Icon size="s" name={checked ? 'checkmark' : 'minus'} color="primaryForeground" />
+          <Icon color="primaryForeground" name={checked ? 'checkmark' : 'minus'} size="s" />
         </Animated.View>
       </Interactable>
     );
@@ -86,8 +86,8 @@ const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
       hitSlop={5}
       {...props}
       {...accessibilityProps}
-      label={children}
       ref={ref}
+      label={children}
     >
       {CheckboxIcon}
     </Control>

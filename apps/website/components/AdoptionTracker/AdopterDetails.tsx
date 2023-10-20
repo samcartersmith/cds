@@ -68,7 +68,7 @@ const AdopterTabs = memo(() => {
       {
         label: 'CDS',
         id: 'cds',
-        content: <AdopterComponentsList key="cds" type="cds" components={cds.components} />,
+        content: <AdopterComponentsList key="cds" components={cds.components} type="cds" />,
       },
       {
         label: 'Presentational',
@@ -76,24 +76,24 @@ const AdopterTabs = memo(() => {
         content: (
           <AdopterComponentsList
             key="presentational"
-            type="presentational"
             components={presentational.components}
+            type="presentational"
           />
         ),
       },
       {
         label: 'Other',
         id: 'other',
-        content: <AdopterComponentsList key="other" type="other" components={other.components} />,
+        content: <AdopterComponentsList key="other" components={other.components} type="other" />,
       },
       {
         label: 'OKR Planning',
         id: 'okrPlanning',
-        content: <AdopterComponentsList key="okr" type="okr" components={okrPlanning} />,
+        content: <AdopterComponentsList key="okr" components={okrPlanning} type="okr" />,
       },
     ];
   }, [cds.components, okrPlanning, other.components, presentational.components]);
-  return <Tabs id={`adopter-${id}`} defaultTab="cds" values={values} />;
+  return <Tabs defaultTab="cds" id={`adopter-${id}`} values={values} />;
 });
 
 AdopterTabs.displayName = 'AdopterTabs';
@@ -148,15 +148,15 @@ export const AdopterDetails = memo(() => {
         <HStack alignItems="flex-start" justifyContent="space-between" spacingBottom={2}>
           <VStack gap={1}>
             <HStack alignItems="center" gap={2}>
-              <IconButton as={RouterLink} transparent name="backArrow" />
+              <IconButton transparent as={RouterLink} name="backArrow" />
               <TextTitle1 as="h1">{label}</TextTitle1>
               <TextBody as="p">{`Last updated ${latest.date}`}</TextBody>
             </HStack>
-            <Button variant="secondary" onPress={handleDownload}>
+            <Button onPress={handleDownload} variant="secondary">
               Download OKR Planning
             </Button>
           </VStack>
-          <HStack width={240} gap={6}>
+          <HStack gap={6} width={240}>
             <StatsTextStack label="CDS" stat={useAdoptionPercent('cds')} />
             <StatsTextStack label="Product" stat={useAdoptionPercent('presentational')} />
           </HStack>

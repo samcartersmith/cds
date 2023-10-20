@@ -6,7 +6,7 @@ import { SparklineInteractivePanGestureHandler } from '../SparklineInteractivePa
 describe('SparklineInteractivePanGestureHandler.test', () => {
   it('renders children', () => {
     render(
-      <SparklineInteractivePanGestureHandler selectedPeriod="1D" getMarker={jest.fn()}>
+      <SparklineInteractivePanGestureHandler getMarker={jest.fn()} selectedPeriod="1D">
         <Text>test</Text>
       </SparklineInteractivePanGestureHandler>,
     );
@@ -16,7 +16,7 @@ describe('SparklineInteractivePanGestureHandler.test', () => {
 
   it('renders disabled', () => {
     render(
-      <SparklineInteractivePanGestureHandler selectedPeriod="1D" getMarker={jest.fn()} disabled>
+      <SparklineInteractivePanGestureHandler disabled getMarker={jest.fn()} selectedPeriod="1D">
         <Text>test</Text>
       </SparklineInteractivePanGestureHandler>,
     );

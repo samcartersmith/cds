@@ -42,25 +42,25 @@ export const Menu = ({
   return (
     <VStack
       background
-      elevation={2}
-      width={275}
       borderRadius="roundedLarge"
       dangerouslySetClassName={popoverStyleOverrides}
+      elevation={2}
       maxHeight={300}
+      width={275}
     >
       {options.map((option, i) => (
         <SelectOption
           key={option}
-          value={option}
           description={preferTitle ? undefined : showDescription ? 'Description' : option}
-          title={preferTitle || showDescription ? option : undefined}
           media={
             showMediaIcons ? (
-              <CellMedia type="icon" name={iconNames[i]} />
+              <CellMedia name={iconNames[i]} type="icon" />
             ) : showMediaAssets ? (
-              <CellMedia type="asset" source={assetUrl} title={option} />
+              <CellMedia source={assetUrl} title={option} type="asset" />
             ) : undefined
           }
+          title={preferTitle || showDescription ? option : undefined}
+          value={option}
         />
       ))}
     </VStack>

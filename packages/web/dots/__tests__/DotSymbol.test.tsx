@@ -13,14 +13,14 @@ describe('DotSymbol', () => {
   });
 
   it('renders a DotSymbol', () => {
-    render(<DotSymbol testID={DOTSYMBOL_TESTID} source={src} />);
+    render(<DotSymbol source={src} testID={DOTSYMBOL_TESTID} />);
 
     expect(screen.getByTestId(DOTSYMBOL_TESTID)).toBeTruthy();
   });
 
   it('can wrap & render children', () => {
     render(
-      <DotSymbol testID={DOTSYMBOL_TESTID} source={src}>
+      <DotSymbol source={src} testID={DOTSYMBOL_TESTID}>
         <div>Test</div>
       </DotSymbol>,
     );

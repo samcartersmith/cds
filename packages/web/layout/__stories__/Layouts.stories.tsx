@@ -25,11 +25,11 @@ const Item: React.FC<React.PropsWithChildren<HStackProps<BoxElement>>> = ({
   ...props
 }) => (
   <HStack
+    alignItems="center"
     background="backgroundAlternate"
     justifyContent="center"
-    alignItems="center"
-    spacing={2}
     minWidth="100px"
+    spacing={2}
     {...props}
   >
     {children}
@@ -112,8 +112,8 @@ const FlexboxImplicitLayout = () => {
       {Array.from({ length: 12 }).map((_, idx) => (
         <Item
           key={idx}
-          flexBasis={idx % 2 ? '200px' : '100px'}
           background={idx % 2 ? 'primaryWash' : 'backgroundAlternate'}
+          flexBasis={idx % 2 ? '200px' : '100px'}
         >
           <TextBody as="p">{idx + 1}</TextBody>
         </Item>
@@ -176,9 +176,9 @@ const GridLayout = ({
 
 const GridImplicitLayout = () => {
   return (
-    <Grid columnMin="100px" columnMax="1fr" {...sharedWrapperProps}>
+    <Grid columnMax="1fr" columnMin="100px" {...sharedWrapperProps}>
       {Array.from({ length: 12 }).map((_, idx) => (
-        <Item key={idx} width="100px" background="backgroundAlternate">
+        <Item key={idx} background="backgroundAlternate" width="100px">
           <TextBody as="p">{idx + 1}</TextBody>
         </Item>
       ))}
@@ -201,7 +201,7 @@ const GridTwelveColLayout = () => {
 const FullBleedGrid = () => {
   return (
     <Grid columns={12} {...sharedWrapperProps}>
-      <GridColumn colSpan={12} background="backgroundAlternate">
+      <GridColumn background="backgroundAlternate" colSpan={12}>
         <TextBody as="p">Full Bleed</TextBody>
       </GridColumn>
     </Grid>
@@ -210,7 +210,7 @@ const FullBleedGrid = () => {
 
 const GridImplicitTextLayout = () => {
   return (
-    <Grid columnMin="max-content" columnMax="300px" {...sharedWrapperProps}>
+    <Grid columnMax="300px" columnMin="max-content" {...sharedWrapperProps}>
       <Item>
         <TextBody as="p">Small</TextBody>
       </Item>
@@ -268,40 +268,39 @@ export const Examples = () => {
       </TextDisplay2>
       <VStack gap={4}>
         <Example
-          title="HStack with No Props"
           description={
             <TextBody as="p">
               This layout is essentially <code>display: flex</code>. It fills the parent container
               and children are sized by <code>width: auto</code>.
             </TextBody>
           }
+          title="HStack with No Props"
         >
           <FlexLayout />
         </Example>
         <Example
-          title="Stretch/Grow Equal Columns"
           description={
             <TextBody as="p">
               The children <em>grow</em> to equally fill the available space when you pass{' '}
               <code>flex-grow: 1</code> to each child.
             </TextBody>
           }
+          title="Stretch/Grow Equal Columns"
         >
           <FlexGrow />
         </Example>
         <Example
-          title="Ratio Based Column Layout"
           description={
             <TextBody as="p">
               Children will grow proportionally depending on available space and their value of{' '}
               <code>flex-grow</code>.
             </TextBody>
           }
+          title="Ratio Based Column Layout"
         >
           <RatioLayout />
         </Example>
         <Example
-          title="The Holy Grail Layout"
           description={
             <TextBody as="p">
               The first and last child are given explicit sizes via <code>flex-basis</code>, while
@@ -309,6 +308,7 @@ export const Examples = () => {
               <code>flex-grow: 1</code>.
             </TextBody>
           }
+          title="The Holy Grail Layout"
         >
           <HolyGrailLayout />
         </Example>
@@ -326,7 +326,6 @@ export const Examples = () => {
       </TextBody>
       <VStack gap={4}>
         <Example
-          title="Grid with No Props"
           description={
             <TextBody as="p">
               This layout is essentially <code>display: grid</code>. The Grid fills the width of the
@@ -334,11 +333,11 @@ export const Examples = () => {
               no tracks have been defined, it will appear as a single column of children.
             </TextBody>
           }
+          title="Grid with No Props"
         >
           <GridLayout />
         </Example>
         <Example
-          title="Equal Columns"
           description={
             <VStack gap={1}>
               <TextBody as="p">The available space will be divided into equal columns.</TextBody>
@@ -361,22 +360,22 @@ export const Examples = () => {
               </ul>
             </VStack>
           }
+          title="Equal Columns"
         >
           <GridLayout columns={5} />
         </Example>
         <Example
-          title="Responsive Equal Columns"
           description={
             <TextBody as="p">
               You can pass a <code>responsiveConfig</code> and specify number of columns at each
               device breakpoint to make a Grid responsive.{' '}
             </TextBody>
           }
+          title="Responsive Equal Columns"
         >
           <GridLayout columns={5} responsiveConfig={responsiveColumns} />
         </Example>
         <Example
-          title="Ratio Based Column Layout"
           description={
             <TextBody as="p">
               In the context of Grid free space is referred to as <code>fr</code> and it can be
@@ -385,18 +384,19 @@ export const Examples = () => {
               proportionately sized by the number of <code>fr</code>.
             </TextBody>
           }
+          title="Ratio Based Column Layout"
         >
-          <GridLayout templateColumns="1fr 2fr 3fr" columnCount={3} />
+          <GridLayout columnCount={3} templateColumns="1fr 2fr 3fr" />
         </Example>
         <Example
-          title="The Holy Grail Layout"
           description={
             <TextBody as="p">
               Column widths will also apply to all other rows within the Grid.
             </TextBody>
           }
+          title="The Holy Grail Layout"
         >
-          <GridLayout templateColumns="200px 1fr 200px" columnCount={3} />
+          <GridLayout columnCount={3} templateColumns="200px 1fr 200px" />
         </Example>
         <Example title="Twelve Column Layout">
           <GridTwelveColLayout />
@@ -418,7 +418,6 @@ export const Examples = () => {
               Flexbox
             </TextDisplay2>
             <Example
-              title="Implicit Flexbox Layout"
               description={
                 <VStack gap={1}>
                   <TextBody as="p">
@@ -436,11 +435,11 @@ export const Examples = () => {
                   </TextBody>
                 </VStack>
               }
+              title="Implicit Flexbox Layout"
             >
               <FlexboxImplicitLayout />
             </Example>
             <Example
-              title="Implicit Layout with Inferred Column Sizes"
               description={
                 <TextBody as="p">
                   In this example all items are sized based on their content. We apply{' '}
@@ -448,6 +447,7 @@ export const Examples = () => {
                   the children flow into an implicit grid.
                 </TextBody>
               }
+              title="Implicit Layout with Inferred Column Sizes"
             >
               <FlexboxImplicitTextLayout />
             </Example>
@@ -467,7 +467,6 @@ export const Examples = () => {
               .
             </TextBody>
             <Example
-              title="Implicit Grid Layout"
               description={
                 <VStack gap={1}>
                   <TextBody as="p">
@@ -504,11 +503,11 @@ export const Examples = () => {
                   </ul>
                 </VStack>
               }
+              title="Implicit Grid Layout"
             >
               <GridImplicitLayout />
             </Example>
             <Example
-              title="Implicit Grid with Inferred Column Sizes"
               description={
                 <VStack gap={1}>
                   <TextBody as="p">
@@ -525,6 +524,7 @@ export const Examples = () => {
                   </TextBody>
                 </VStack>
               }
+              title="Implicit Grid with Inferred Column Sizes"
             >
               <GridImplicitTextLayout />
             </Example>

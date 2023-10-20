@@ -78,31 +78,31 @@ export const SearchInput = memo(
 
     return (
       <TextInput
-        start={
-          !hideStartIcon && <InputIcon testID={testID && `${testID}-search-icon`} name="search" />
-        }
-        height={height}
+        ref={refs}
+        borderRadius="roundedFull"
         bordered={bordered}
         end={
           !!value && (
             <Box spacingEnd={0.5}>
               <InputIconButton
-                name="close"
-                testID={testID && `${testID}-close-iconbtn`}
                 accessibilityLabel="Clear search query"
+                name="close"
                 onPress={handleOnClear}
+                testID={testID && `${testID}-close-iconbtn`}
               />
             </Box>
           )
         }
-        borderRadius="roundedFull"
+        height={height}
         onChange={handleOnChange}
         onKeyUp={handleOnKeyUp}
         role="searchbox"
-        type="search"
-        ref={refs}
-        value={value}
+        start={
+          !hideStartIcon && <InputIcon name="search" testID={testID && `${testID}-search-icon`} />
+        }
         testID={testID}
+        type="search"
+        value={value}
         {...props}
       />
     );

@@ -41,17 +41,17 @@ const SparklineGradientExample = ({
 
   return (
     <VStack>
-      <Cell media={<CellMedia type="image" source={imageUrl} />}>
+      <Cell media={<CellMedia source={imageUrl} type="image" />}>
         <VStack justifyContent="center">
-          <TextHeadline numberOfLines={1} ellipsize="tail">
+          <TextHeadline ellipsize="tail" numberOfLines={1}>
             {name}
           </TextHeadline>
-          <TextBody numberOfLines={1} ellipsize="tail">
+          <TextBody ellipsize="tail" numberOfLines={1}>
             {symbol}
           </TextBody>
         </VStack>
       </Cell>
-      <SparklineGradient {...dimensions} path={path} color={color}>
+      <SparklineGradient {...dimensions} color={color} path={path}>
         {fill && <SparklineArea area={area} />}
       </SparklineGradient>
     </VStack>
@@ -77,13 +77,13 @@ const SparklineScalingExample: React.FC<React.PropsWithChildren<SparklineCompact
 
   return (
     <VStack>
-      <TextHeadline numberOfLines={1} ellipsize="tail">
+      <TextHeadline ellipsize="tail" numberOfLines={1}>
         Scale: {props.yAxisScalingFactor}
       </TextHeadline>
       <SparklineGradient
         {...dimensions}
-        path={path}
         color="#F7931A"
+        path={path}
         yAxisScalingFactor={props.yAxisScalingFactor}
       >
         {props.fill && <SparklineArea area={area} />}

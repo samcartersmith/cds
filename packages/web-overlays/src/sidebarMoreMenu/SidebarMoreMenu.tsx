@@ -44,12 +44,12 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   const baseTrigger = useMemo(
     () => (
       <SidebarItem
-        onPress={onPress}
-        title={triggerTitle}
-        icon="moreVertical"
-        active={active}
         ref={triggerRef}
+        active={active}
+        icon="moreVertical"
+        onPress={onPress}
         testID="sidebar-more-menu-trigger"
+        title={triggerTitle}
       />
     ),
     [onPress, active, triggerTitle],
@@ -57,7 +57,7 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
 
   const trigger = useMemo(() => {
     return collapsed && tooltipContent ? (
-      <Tooltip placement="right" disablePortal={disablePortal} content={tooltipContent}>
+      <Tooltip content={tooltipContent} disablePortal={disablePortal} placement="right">
         {baseTrigger}
       </Tooltip>
     ) : (
@@ -71,13 +71,13 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
 
   return (
     <Dropdown
-      minWidth={sidebarMenuMinWidth}
-      maxWidth={sidebarMenuMaxWidth}
-      contentPosition={defaultContentPosition}
-      value={value}
-      disablePortal={disablePortal}
       content={children}
+      contentPosition={defaultContentPosition}
+      disablePortal={disablePortal}
+      maxWidth={sidebarMenuMaxWidth}
+      minWidth={sidebarMenuMinWidth}
       onCloseMenu={handleCloseMenu}
+      value={value}
       {...props}
     >
       {trigger}

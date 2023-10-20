@@ -17,9 +17,9 @@ const StoryExample = ({
   return (
     <PortalProvider>
       <Tooltip
-        testID={tooltipTestID}
         content="This is the content in the tooltip!"
         placement={placement}
+        testID={tooltipTestID}
       >
         <Button>Button</Button>
       </Tooltip>

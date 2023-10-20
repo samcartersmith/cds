@@ -39,35 +39,35 @@ export function listCellBuilder(
       <>
         <ListCell title="Title" />
 
-        <ListCell title="Title" detail="Detail" />
+        <ListCell detail="Detail" title="Title" />
 
-        <ListCell title="Title" description="Description" />
+        <ListCell description="Description" title="Title" />
 
-        <ListCell title="Title" description="Description" detail="Detail" />
+        <ListCell description="Description" detail="Detail" title="Title" />
 
-        <ListCell title="Title" description="Description" detail="Detail" subdetail="Neutral" />
+        <ListCell description="Description" detail="Detail" subdetail="Neutral" title="Title" />
 
-        <ListCell title="Title" detail="Detail" subdetail="Neutral" />
+        <ListCell detail="Detail" subdetail="Neutral" title="Title" />
 
         <ListCell
-          title="Title"
           description="Description"
           detail="Detail"
           subdetail="+Positive"
+          title="Title"
           variant="positive"
         />
 
-        <ListCell title="Title" subdetail="+Positive" variant="positive" />
+        <ListCell subdetail="+Positive" title="Title" variant="positive" />
 
         <ListCell
-          title="Title"
           description="Description"
           detail="Detail"
           subdetail="-Negative"
+          title="Title"
           variant="negative"
         />
 
-        <ListCell title="Title" detail="Detail" subdetail="-Negative" variant="negative" />
+        <ListCell detail="Detail" subdetail="-Negative" title="Title" variant="negative" />
       </>
     );
   };
@@ -77,43 +77,43 @@ export function listCellBuilder(
       <>
         <ListCell compact title="Title" />
 
-        <ListCell compact title="Title" detail="Detail" />
+        <ListCell compact detail="Detail" title="Title" />
 
-        <ListCell compact title="Title" description="Description" />
+        <ListCell compact description="Description" title="Title" />
 
-        <ListCell compact title="Title" description="Description" detail="Detail" />
+        <ListCell compact description="Description" detail="Detail" title="Title" />
 
         <ListCell
           compact
-          title="Title"
           description="Description"
           detail="Detail"
           subdetail="Neutral"
+          title="Title"
         />
 
-        <ListCell compact title="Title" detail="Detail" subdetail="Neutral" />
+        <ListCell compact detail="Detail" subdetail="Neutral" title="Title" />
 
         <ListCell
           compact
-          title="Title"
           description="Description"
           detail="Detail"
           subdetail="+Positive"
+          title="Title"
           variant="positive"
         />
 
-        <ListCell compact title="Title" subdetail="+Positive" variant="positive" />
+        <ListCell compact subdetail="+Positive" title="Title" variant="positive" />
 
         <ListCell
           compact
-          title="Title"
           description="Description"
           detail="Detail"
           subdetail="-Negative"
+          title="Title"
           variant="negative"
         />
 
-        <ListCell compact title="Title" detail="Detail" subdetail="-Negative" variant="negative" />
+        <ListCell compact detail="Detail" subdetail="-Negative" title="Title" variant="negative" />
       </>
     );
   };
@@ -122,167 +122,167 @@ export function listCellBuilder(
 
   const PressableContent = () => (
     <>
-      <ListCell title="Title" onPress={onPressConsole} />
+      <ListCell onPress={onPressConsole} title="Title" />
 
-      <ListCell title="Title" subdetail="Neutral" onPress={onPressConsole} />
+      <ListCell onPress={onPressConsole} subdetail="Neutral" title="Title" />
 
-      <ListCell title="Title" description="Multi-line description" onPress={onPressConsole} />
+      <ListCell description="Multi-line description" onPress={onPressConsole} title="Title" />
 
       <ListCell
-        title="Title"
+        multiline
+        selected
         description="Multi-line description"
         onPress={onPressConsole}
-        multiline
-        selected
+        title="Title"
       />
 
       <ListCell
-        title="Title"
+        multiline
         description="Multi-line description goes here with really long text"
         onPress={onPressConsole}
-        multiline
+        title="Title"
       />
 
       <ListCell
-        title="Title"
-        description="Multi-line description goes here with really long text"
-        onPress={onPressConsole}
         multiline
         selected
+        description="Multi-line description goes here with really long text"
+        onPress={onPressConsole}
+        title="Title"
       />
 
-      <ListCell title="Title" description="Description" detail="Detail" onPress={onPressConsole} />
+      <ListCell description="Description" detail="Detail" onPress={onPressConsole} title="Title" />
 
       <ListCell
-        title="Title"
         description="Description"
         detail="Detail"
-        subdetail="Neutral"
-        onPress={onPressConsole}
         innerSpacing={innerSpacingConfig}
+        onPress={onPressConsole}
+        subdetail="Neutral"
+        title="Title"
       />
 
       <ListCell
-        title="Title"
-        description="Description"
-        detail="Detail"
-        subdetail="Neutral"
-        onPress={onPressConsole}
         selected
+        description="Description"
+        detail="Detail"
+        onPress={onPressConsole}
+        subdetail="Neutral"
+        title="Title"
       />
 
       <ListCell
-        title="Title"
-        description="Description"
-        detail="Detail"
-        subdetail="Neutral"
-        onPress={onPressConsole}
         disabled
+        description="Description"
+        detail="Detail"
         innerSpacing={innerSpacingConfig}
+        onPress={onPressConsole}
+        subdetail="Neutral"
+        title="Title"
       />
 
       <ListCell
-        title="Title"
+        disabled
+        selected
         description="Description"
         detail="Detail"
+        onPress={onPressConsole}
         subdetail="+Postive"
+        title="Title"
         variant="positive"
-        onPress={onPressConsole}
-        selected
-        disabled
       />
     </>
   );
 
   const CompactPressableContent = () => (
     <>
-      <ListCell compact title="Title" onPress={onPressConsole} />
+      <ListCell compact onPress={onPressConsole} title="Title" />
 
-      <ListCell compact title="Title" subdetail="Neutral" onPress={onPressConsole} />
+      <ListCell compact onPress={onPressConsole} subdetail="Neutral" title="Title" />
 
       <ListCell
         compact
-        title="Title"
+        multiline
         description="Multi-line description"
         onPress={onPressConsole}
-        multiline
+        title="Title"
       />
 
       <ListCell
         compact
-        title="Title"
+        multiline
+        selected
         description="Multi-line description"
         onPress={onPressConsole}
-        multiline
-        selected
+        title="Title"
       />
 
       <ListCell
         compact
-        title="Title"
+        multiline
         description="Multi-line description goes here with really long text"
         onPress={onPressConsole}
-        multiline
+        title="Title"
       />
 
       <ListCell
         compact
-        title="Title"
-        description="Multi-line description goes here with really long text"
-        onPress={onPressConsole}
         multiline
         selected
+        description="Multi-line description goes here with really long text"
+        onPress={onPressConsole}
+        title="Title"
       />
 
       <ListCell
         compact
-        title="Title"
         description="Description"
         detail="Detail"
         onPress={onPressConsole}
+        title="Title"
       />
 
       <ListCell
         compact
-        title="Title"
         description="Description"
         detail="Detail"
-        subdetail="Neutral"
-        onPress={onPressConsole}
         innerSpacing={innerSpacingConfig}
+        onPress={onPressConsole}
+        subdetail="Neutral"
+        title="Title"
       />
 
       <ListCell
         compact
-        title="Title"
-        description="Description"
-        detail="Detail"
-        subdetail="Neutral"
-        onPress={onPressConsole}
         selected
+        description="Description"
+        detail="Detail"
+        onPress={onPressConsole}
+        subdetail="Neutral"
+        title="Title"
       />
 
       <ListCell
         compact
-        title="Title"
-        description="Description"
-        detail="Detail"
-        subdetail="Neutral"
-        onPress={onPressConsole}
         disabled
+        description="Description"
+        detail="Detail"
         innerSpacing={innerSpacingConfig}
+        onPress={onPressConsole}
+        subdetail="Neutral"
+        title="Title"
       />
 
       <ListCell
         compact
-        title="Title"
+        disabled
+        selected
         description="Description"
         detail="Detail"
+        onPress={onPressConsole}
         subdetail="+Postive"
+        title="Title"
         variant="positive"
-        onPress={onPressConsole}
-        selected
-        disabled
       />
     </>
   );
@@ -290,29 +290,29 @@ export function listCellBuilder(
   const LongContent = () => (
     <>
       <ListCell
-        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
         detail="Detail also has a very long string"
         subdetail="Neutral also does too"
+        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
       />
       <ListCell
-        title="disableMultilineTitle === undefined. Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         detail="Detail also has a very long string"
         subdetail="Neutral also does too"
+        title="disableMultilineTitle === undefined. Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
       />
       <ListCell
-        title="disableMultilineTitle === true. Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         disableMultilineTitle
         detail="Detail also has a very long string"
         subdetail="Neutral also does too"
+        title="disableMultilineTitle === true. Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
       />
       <ListCell
         multiline
         selected
-        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
         description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
         detail="Detail also has a very long string"
         subdetail="Neutral also does too"
+        title="Title with a very long length that should wrap to 2 lines when there is no subtitle or description"
       />
     </>
   );
@@ -322,148 +322,148 @@ export function listCellBuilder(
   const PriorityContent = () => (
     <>
       <ListCell
-        title="Asset with a really long name"
         description="Some description of the asset"
         detail="$334,239.03"
-        subdetail="+4.06%"
-        variant="positive"
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
         priority="start"
+        subdetail="+4.06%"
+        title="Asset with a really long name"
+        variant="positive"
       />
       <ListCell
-        title="Asset with a really long name"
         description="Some description of the asset"
         detail="$334,239.03"
-        subdetail="+4.06%"
-        variant="positive"
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
         priority="middle"
+        subdetail="+4.06%"
+        title="Asset with a really long name"
+        variant="positive"
       />
       <ListCell
-        title="Asset with a really long name"
         description="Some description of the asset"
         detail="$334,239.03"
-        subdetail="+4.06%"
-        variant="positive"
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
         priority="end"
+        subdetail="+4.06%"
+        title="Asset with a really long name"
+        variant="positive"
       />
       <ListCell
-        title="Asset with a really long name"
         description="Some description of the asset"
         detail="$334,239.03"
-        subdetail="+4.06%"
-        variant="positive"
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
         priority={cellPriorities}
+        subdetail="+4.06%"
+        title="Asset with a really long name"
+        variant="positive"
       />
     </>
   );
 
   const WithAccessory = () => (
     <>
-      <ListCell title="Title" accessory="arrow" />
+      <ListCell accessory="arrow" title="Title" />
 
-      <ListCell title="Title" detail="Detail" accessory="more" />
+      <ListCell accessory="more" detail="Detail" title="Title" />
 
-      <ListCell title="Title" description="Description" accessory="selected" />
+      <ListCell accessory="selected" description="Description" title="Title" />
 
-      <ListCell title="Title" description="Description" detail="Detail" accessory="arrow" />
+      <ListCell accessory="arrow" description="Description" detail="Detail" title="Title" />
 
       <ListCell
-        title="Title"
+        accessory="more"
         description="Description"
         detail="Detail"
         subdetail="Neutral"
-        accessory="more"
+        title="Title"
       />
 
       <ListCell
-        title="Title"
+        accessory="selected"
         description="Description"
         detail="Detail"
         subdetail="+Positive"
+        title="Title"
         variant="positive"
-        accessory="selected"
       />
 
       <ListCell
-        title="Title"
+        accessory="arrow"
         description="Description"
         detail="Detail"
         subdetail="-Negative"
+        title="Title"
         variant="negative"
-        accessory="arrow"
       />
     </>
   );
 
   const WithMedia = () => (
     <>
-      <ListCell title="Icon" media={<CellMedia type="icon" name="email" />} />
+      <ListCell media={<CellMedia name="email" type="icon" />} title="Icon" />
 
       <ListCell
-        title="Icon (pressable)"
-        media={<CellMedia type="icon" name="email" />}
+        media={<CellMedia name="email" type="icon" />}
         onPress={onPressConsole}
+        title="Icon (pressable)"
       />
 
       <ListCell
+        description="Description"
+        media={<CellMedia name="phone" type="icon" />}
         title="Icon"
-        description="Description"
-        media={<CellMedia type="icon" name="phone" />}
       />
 
       <ListCell
+        description="Description"
+        detail="Detail"
+        media={<CellMedia source={assets.eth.imageUrl} type="avatar" />}
         title="Avatar"
-        description="Description"
-        detail="Detail"
-        media={<CellMedia type="avatar" source={assets.eth.imageUrl} />}
       />
 
       <ListCell
-        title="Asset"
         description="Description"
         detail="Detail"
+        media={<CellMedia source={assets.eth.imageUrl} type="asset" />}
         subdetail="Neutral"
-        media={<CellMedia type="asset" source={assets.eth.imageUrl} />}
+        title="Asset"
       />
 
       <ListCell
-        title="Image"
         detail="Detail"
-        media={<CellMedia type="image" source={assets.eth.imageUrl} />}
+        media={<CellMedia source={assets.eth.imageUrl} type="image" />}
+        title="Image"
       />
 
       <ListCell
-        title="Pictogram"
         description="Description"
-        media={<CellMedia type="pictogram" illustration={<Pictogram name="shield" />} />}
+        media={<CellMedia illustration={<Pictogram name="shield" />} type="pictogram" />}
+        title="Pictogram"
       />
     </>
   );
 
   const WithActions = () => (
     <>
-      <ListCell title="Title" action={<Checkbox accessibilityLabel="Checkbox" checked />} />
+      <ListCell action={<Checkbox checked accessibilityLabel="Checkbox" />} title="Title" />
 
-      <ListCell title="Title" detail="Detail" action={<Button>Action</Button>} />
+      <ListCell action={<Button>Action</Button>} detail="Detail" title="Title" />
 
       <ListCell
-        title="Title"
-        description="Description"
         action={
           <Button compact variant="negative">
             Action
           </Button>
         }
+        description="Description"
+        title="Title"
       />
 
       <ListCell
-        title="Title"
+        action={<IconButton accessibilityLabel="External link" name="externalLink" />}
         description="Description"
         detail="Detail"
-        action={<IconButton name="externalLink" accessibilityLabel="External link" />}
+        title="Title"
       />
     </>
   );
@@ -471,39 +471,39 @@ export function listCellBuilder(
   const WithIntermediary = () => (
     <>
       <ListCell
-        title="Title"
         description="Description"
         detail="$1,230"
         detailWidth={100}
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
+        title="Title"
       />
       <ListCell
-        title="Title"
         description="Description"
         detail="$44,130"
         detailWidth={100}
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
+        title="Title"
       />
       <ListCell
-        title="Title"
         description="Description"
         detail="$942,103"
         detailWidth={100}
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
+        title="Title"
       />
       <ListCell
-        title="Title"
         description="Description"
         detail="$530"
         detailWidth={100}
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
+        title="Title"
       />
       <ListCell
-        title="Title"
         description="Description"
         detail="$123K"
         detailWidth={100}
-        intermediary={<CellMedia type="icon" name="chartLine" />}
+        intermediary={<CellMedia name="chartLine" type="icon" />}
+        title="Title"
       />
     </>
   );
@@ -511,22 +511,22 @@ export function listCellBuilder(
   const CustomSpacing = () => (
     <>
       <ListCell
-        title="Title"
+        selected
+        borderRadius="roundedNone"
         description="Description"
         detail="$1,230"
         detailWidth={100}
         onPress={onPressConsole}
-        selected
-        borderRadius="roundedNone"
+        title="Title"
         {...selectCellSpacingConfig}
       />
       <ListCell
-        title="Title"
+        borderRadius="roundedNone"
         description="Description"
         detail="$1,230"
         detailWidth={100}
         onPress={onPressConsole}
-        borderRadius="roundedNone"
+        title="Title"
         {...selectCellSpacingConfig}
       />
     </>

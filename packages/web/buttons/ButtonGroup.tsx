@@ -34,13 +34,13 @@ export const ButtonGroup = memo(function ButtonGroup({
 
   return (
     <Stack
+      alignItems="stretch"
       aria-label={accessibilityLabel}
       as="ul"
-      alignItems="stretch"
+      dangerouslySetClassName={list}
       flexWrap="nowrap"
       gap={1}
       testID={testID}
-      dangerouslySetClassName={list}
     >
       {Children.map(children, (child) =>
         child ? (

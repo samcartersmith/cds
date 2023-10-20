@@ -12,32 +12,32 @@ const useScaleConditionalSpy = jest.spyOn(
 
 describe('CellMedia', () => {
   it('icon passes accessibility', () => {
-    render(<CellMedia type="icon" name="arrowUp" testID="cell-media-id" />);
+    render(<CellMedia name="arrowUp" testID="cell-media-id" type="icon" />);
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
   it('asset passes accessibility', () => {
-    render(<CellMedia type="asset" source="some/image/path" testID="cell-media-id" />);
+    render(<CellMedia source="some/image/path" testID="cell-media-id" type="asset" />);
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
   it('avatar passes accessibility', () => {
-    render(<CellMedia type="avatar" source="some/image/path" testID="cell-media-id" />);
+    render(<CellMedia source="some/image/path" testID="cell-media-id" type="avatar" />);
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
   it('image passes accessibility', () => {
-    render(<CellMedia type="image" source="some/image/path" testID="cell-media-id" />);
+    render(<CellMedia source="some/image/path" testID="cell-media-id" type="image" />);
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
   it('pictogram passes accessibility', () => {
     render(
-      <CellMedia type="pictogram" illustration={<Pictogram name="2fa" />} testID="cell-media-id" />,
+      <CellMedia illustration={<Pictogram name="2fa" />} testID="cell-media-id" type="pictogram" />,
     );
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
@@ -46,10 +46,10 @@ describe('CellMedia', () => {
   it('icon sets an accessible label', () => {
     render(
       <CellMedia
-        type="icon"
-        name="arrowUp"
-        accessibilityLabel="Icon label"
         accessibilityHint="Icon hint"
+        accessibilityLabel="Icon label"
+        name="arrowUp"
+        type="icon"
       />,
     );
 
@@ -60,10 +60,10 @@ describe('CellMedia', () => {
   it('asset sets an accessible label', () => {
     render(
       <CellMedia
-        type="asset"
-        source="some/image/path"
-        accessibilityLabel="Asset label"
         accessibilityHint="Asset hint"
+        accessibilityLabel="Asset label"
+        source="some/image/path"
+        type="asset"
       />,
     );
 
@@ -74,10 +74,10 @@ describe('CellMedia', () => {
   it('avatar sets an accessible label', () => {
     render(
       <CellMedia
-        type="avatar"
-        source="some/image/path"
-        accessibilityLabel="Avatar label"
         accessibilityHint="Avatar hint"
+        accessibilityLabel="Avatar label"
+        source="some/image/path"
+        type="avatar"
       />,
     );
 
@@ -88,10 +88,10 @@ describe('CellMedia', () => {
   it('image sets an accessible label', () => {
     render(
       <CellMedia
-        type="image"
-        source="some/image/path"
-        accessibilityLabel="Image label"
         accessibilityHint="Image hint"
+        accessibilityLabel="Image label"
+        source="some/image/path"
+        type="image"
       />,
     );
 
@@ -102,10 +102,10 @@ describe('CellMedia', () => {
   it('pictogram sets an accessible label on CellMedia', () => {
     render(
       <CellMedia
-        type="pictogram"
-        illustration={<Pictogram name="2fa" />}
-        accessibilityLabel="Pictogram label"
         accessibilityHint="Pictogram hint"
+        accessibilityLabel="Pictogram label"
+        illustration={<Pictogram name="2fa" />}
+        type="pictogram"
       />,
     );
 
@@ -116,14 +116,14 @@ describe('CellMedia', () => {
   it('pictogram sets an accessible label on Pictogram', () => {
     render(
       <CellMedia
-        type="pictogram"
         illustration={
           <Pictogram
-            name="2fa"
-            accessibilityLabel="Pictogram label"
             accessibilityHint="Pictogram hint"
+            accessibilityLabel="Pictogram label"
+            name="2fa"
           />
         }
+        type="pictogram"
       />,
     );
 
@@ -134,16 +134,16 @@ describe('CellMedia', () => {
   it('pictogram CellMedia accessible labels override Pictogram accessible labels', () => {
     render(
       <CellMedia
-        type="pictogram"
+        accessibilityHint="CellMedia hint"
+        accessibilityLabel="CellMedia label"
         illustration={
           <Pictogram
-            name="2fa"
-            accessibilityLabel="Pictogram label"
             accessibilityHint="Pictogram hint"
+            accessibilityLabel="Pictogram label"
+            name="2fa"
           />
         }
-        accessibilityLabel="CellMedia label"
-        accessibilityHint="CellMedia hint"
+        type="pictogram"
       />,
     );
 
@@ -152,13 +152,13 @@ describe('CellMedia', () => {
   });
 
   it('renders an icon', () => {
-    render(<CellMedia type="icon" name="arrowUp" />);
+    render(<CellMedia name="arrowUp" type="icon" />);
 
     expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toBeTruthy();
   });
 
   it('renders an asset', () => {
-    render(<CellMedia type="asset" source="some/image/path" />);
+    render(<CellMedia source="some/image/path" type="asset" />);
     const image = screen.getByRole('image');
 
     expect(image).toHaveProp('source', { cache: undefined, uri: 'some/image/path' });
@@ -166,7 +166,7 @@ describe('CellMedia', () => {
   });
 
   it('renders an avatar', () => {
-    render(<CellMedia type="avatar" source="some/image/path" />);
+    render(<CellMedia source="some/image/path" type="avatar" />);
     const image = screen.getByRole('image');
 
     expect(image).toHaveProp('source', { cache: undefined, uri: 'some/image/path' });
@@ -174,7 +174,7 @@ describe('CellMedia', () => {
   });
 
   it('renders an image', () => {
-    render(<CellMedia type="image" source="some/image/path" />);
+    render(<CellMedia source="some/image/path" type="image" />);
     const image = screen.getByRole('image');
 
     expect(image).toHaveProp('source', { cache: undefined, uri: 'some/image/path' });
@@ -183,7 +183,7 @@ describe('CellMedia', () => {
 
   it('renders a pictogram', () => {
     render(
-      <CellMedia type="pictogram" illustration={<Pictogram name="2fa" testID="pictogram-id" />} />,
+      <CellMedia illustration={<Pictogram name="2fa" testID="pictogram-id" />} type="pictogram" />,
     );
 
     expect(screen.getByTestId('pictogram-id')).toBeTruthy();
@@ -191,25 +191,25 @@ describe('CellMedia', () => {
 
   describe('at normal scale', () => {
     it('sets icon size', () => {
-      render(<CellMedia type="icon" name="arrowUp" />);
+      render(<CellMedia name="arrowUp" type="icon" />);
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 16, height: 16 });
     });
 
     it('sets asset size', () => {
-      render(<CellMedia type="asset" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="asset" />);
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 32, height: 32 });
     });
 
     it('sets avatar size', () => {
-      render(<CellMedia type="avatar" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="avatar" />);
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 32, height: 32 });
     });
 
     it('sets image size', () => {
-      render(<CellMedia type="image" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="image" />);
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 48, height: 48 });
     });
@@ -217,8 +217,8 @@ describe('CellMedia', () => {
     it('sets pictogram size', () => {
       render(
         <CellMedia
-          type="pictogram"
           illustration={<Pictogram name="2fa" testID="pictogram-id" />}
+          type="pictogram"
         />,
       );
 
@@ -228,10 +228,10 @@ describe('CellMedia', () => {
     it('sets pictogram size and cannot be overridden by Pictogram props', () => {
       render(
         <CellMedia
-          type="pictogram"
           illustration={
-            <Pictogram name="2fa" testID="pictogram-id" dimension="64x64" scaleMultiplier={2} />
+            <Pictogram dimension="64x64" name="2fa" scaleMultiplier={2} testID="pictogram-id" />
           }
+          type="pictogram"
         />,
       );
 
@@ -245,25 +245,25 @@ describe('CellMedia', () => {
     });
 
     it('sets icon size', () => {
-      render(<CellMedia type="icon" name="arrowUp" />);
+      render(<CellMedia name="arrowUp" type="icon" />);
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 12, height: 12 });
     });
 
     it('sets asset size', () => {
-      render(<CellMedia type="asset" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="asset" />);
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 24, height: 24 });
     });
 
     it('sets avatar size', () => {
-      render(<CellMedia type="avatar" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="avatar" />);
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 24, height: 24 });
     });
 
     it('sets image size', () => {
-      render(<CellMedia type="image" source="some/image/path" />);
+      render(<CellMedia source="some/image/path" type="image" />);
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 40, height: 40 });
     });
@@ -271,8 +271,8 @@ describe('CellMedia', () => {
     it('sets pictogram size', () => {
       render(
         <CellMedia
-          type="pictogram"
           illustration={<Pictogram name="2fa" testID="pictogram-id" />}
+          type="pictogram"
         />,
       );
 
@@ -282,10 +282,10 @@ describe('CellMedia', () => {
     it('sets pictogram size and cannot be overridden by Pictogram props', () => {
       render(
         <CellMedia
-          type="pictogram"
           illustration={
-            <Pictogram name="2fa" testID="pictogram-id" dimension="64x64" scaleMultiplier={2} />
+            <Pictogram dimension="64x64" name="2fa" scaleMultiplier={2} testID="pictogram-id" />
           }
+          type="pictogram"
         />,
       );
 

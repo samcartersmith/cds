@@ -19,7 +19,7 @@ export default function DocItem({ content, ...props }: DocItemProps) {
   });
 
   return (
-    <VStack spacingHorizontal={TOKENS.docItem.spacingHorizontal} spacingBottom={10}>
+    <VStack spacingBottom={10} spacingHorizontal={TOKENS.docItem.spacingHorizontal}>
       <OriginalDocItem {...props} content={content} />
     </VStack>
   );

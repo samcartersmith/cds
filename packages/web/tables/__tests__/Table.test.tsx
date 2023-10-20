@@ -43,7 +43,7 @@ describe('Table', () => {
   it('has an accessible name when accessibilityLabelledBy is set', () => {
     render(
       <>
-        <TextTitle2 id="table-title" as="h2">
+        <TextTitle2 as="h2" id="table-title">
           {A11Y_LABEL}
         </TextTitle2>
         <TableMock accessibilityLabelledBy="table-title" />
@@ -69,7 +69,7 @@ describe('Table', () => {
   const testClassName = 'test-class-name';
   const exampleTestId = 'table-test-id';
   it('passes dangerouslySetClassName', () => {
-    render(<TableMock testID={exampleTestId} dangerouslySetClassName={testClassName} />);
+    render(<TableMock dangerouslySetClassName={testClassName} testID={exampleTestId} />);
 
     expect(screen.getByTestId(exampleTestId)).toHaveClass(testClassName);
   });

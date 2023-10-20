@@ -79,7 +79,7 @@ export const Tooltip = memo(
     );
 
     return (
-      <View collapsable={false} ref={subjectRef}>
+      <View ref={subjectRef} collapsable={false}>
         <TouchableOpacity
           {...accessibilityPropsForTrigger}
           accessibilityRole="button"
@@ -91,28 +91,28 @@ export const Tooltip = memo(
         <RNModal
           hardwareAccelerated
           transparent
-          animationType="none"
-          visible={isOpen}
-          onRequestClose={handleRequestClose}
           accessibilityRole="alert"
+          animationType="none"
+          onRequestClose={handleRequestClose}
+          visible={isOpen}
         >
           <TouchableOpacity
-            accessibilityRole="button"
             accessibilityElementsHidden
+            accessibilityRole="button"
+            activeOpacity={1}
             onPress={handleRequestClose}
             style={{ flex: 1 }}
-            activeOpacity={1}
           />
           <InternalTooltip
-            subjectLayout={subjectLayout}
-            content={content}
-            placement={placement}
-            opacity={opacity}
             animateIn={animateIn}
-            translateY={translateY}
+            content={content}
             gap={gap}
-            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
+            opacity={opacity}
+            placement={placement}
+            subjectLayout={subjectLayout}
             testID={testID}
+            translateY={translateY}
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
             {...accessibilityPropsForContent}
           />
         </RNModal>

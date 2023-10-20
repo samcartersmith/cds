@@ -15,7 +15,7 @@ describe('Icon', () => {
   });
 
   it('sets accessibility attributes and labels', () => {
-    render(<IconExample accessibilityLabel="An icon label" accessibilityHint="An icon hint" />);
+    render(<IconExample accessibilityHint="An icon hint" accessibilityLabel="An icon label" />);
 
     expect(screen.getByRole('image')).toHaveProp('accessible', true);
     expect(screen.getByLabelText('An icon label')).toBeTruthy();

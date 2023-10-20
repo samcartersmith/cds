@@ -94,7 +94,7 @@ describe('DevicePreferencesProvider', () => {
   test('passed in props take priority over device', () => {
     function Wrapper(props: React.PropsWithChildren<unknown>) {
       return (
-        <DevicePreferencesProvider spectrum="dark" scale="xSmall">
+        <DevicePreferencesProvider scale="xSmall" spectrum="dark">
           <div {...props} />
         </DevicePreferencesProvider>
       );
