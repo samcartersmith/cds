@@ -4,7 +4,7 @@
     "jsx": "preserve",
     "emitDeclarationOnly": false,
     "noEmit": true,
-    "outDir": "../../.nx/dts/apps/next-example"
+    "outDir": "../../.nx/dts/apps/next-app"
   },
   "include": [
     "next-env.d.ts",

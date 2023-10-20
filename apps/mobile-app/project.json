@@ -4,17 +4,11 @@
   "sourceRoot": "apps/mobile-app/src",
   "projectType": "application",
   "targets": {
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
-    "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
-    },
-    "test": {
-      "executor": "@cbhq/mono-tasks:test"
-    },
-    "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+    "go": {
+      "executor": "@cbhq/mono-tasks:run-package-script",
+      "options": {
+        "script": "go"
+      }
     },
     "setup": {
       "executor": "nx:run-commands",
@@ -72,6 +66,7 @@
         "cwd": "apps/mobile-app",
         "command": "export CDS_METRO_RESOLVER=false && node ./scripts/build.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
       },
+      "defaultConfiguration": "ios-debug",
       "configurations": {
         "ios-debug": {
           "args": "--profile debug --jsEngine hermes --platform ios"
@@ -85,8 +80,7 @@
         "android-release": {
           "args": "--profile release --jsEngine hermes --platform android"
         }
-      },
-      "defaultConfiguration": "ios-debug"
+      }
     },
     "detox": {
       "executor": "nx:run-commands",
@@ -128,6 +122,18 @@
         ],
         "parallel": true
       }
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "@cbhq/mono-tasks:typecheck"
     }
   },
   "tags": []

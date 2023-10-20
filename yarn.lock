@@ -177,9 +177,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@app/next-example@workspace:apps/next-example":
+"@app/next-app@workspace:apps/next-app":
   version: 0.0.0-use.local
-  resolution: "@app/next-example@workspace:apps/next-example"
+  resolution: "@app/next-app@workspace:apps/next-app"
   dependencies:
     "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-fonts": "workspace:^"

@@ -16,13 +16,7 @@ brew install fastlane
 npm install -g eas-cli@<insert version>
 ```
 
-2. Add EXPO_TOKEN to `mobile-app/.env.local`
-
-```shell
-EXPO_TOKEN=<get token from UI Systems 1Password>
-```
-
-3. Run `yarn install` from root
+2. Run `yarn install` from root
 
 > All yarn nx commands should be run at the root.
 

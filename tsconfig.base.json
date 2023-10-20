@@ -23,8 +23,8 @@
       ":cds-website/*": [
         "apps/website/*"
       ],
-      ":next-example/*": [
-        "apps/next-example/src/*"
+      ":next-app/*": [
+        "apps/next-app/src/*"
       ],
       "@cbhq/cds-common": [
         "packages/common"

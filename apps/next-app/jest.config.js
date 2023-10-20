@@ -3,7 +3,7 @@ module.exports = {
   // uncomment when we have stuff in this file:
   // setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.js'],
   moduleNameMapper: {
-    '^:next-example/(.*)$': '<rootDir>/src/$1',
+    '^:next-app/(.*)$': '<rootDir>/src/$1',
   },
   coverageThreshold: {
     global: {

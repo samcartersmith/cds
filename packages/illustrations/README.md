@@ -24,20 +24,14 @@ In order for engineering to generate a dark mode version of an illustration asse
 
 ### Releasing Illustrations
 
-1. Add a .env.local file at root of repo
-
-```
-FIGMA_ACCESS_TOKEN=[access or request access to the UI Infra shared vault on 1Password for the token]
-```
-
-2. (**optional**) Sync the latest illustration Figma color styles if they were changed. **You do not need to do a version bump for any changes**.
+1. (**optional**) Sync the latest illustration Figma color styles if they were changed. **You do not need to do a version bump for any changes**.
 
 ```shell
 yarn nx run figma-styles:sync-illustration-dark-styles
 yarn nx run figma-styles:sync-illustration-light-styles
 ```
 
-3. Sync the latest Figma illustration components. This also programatically opens a PR in the [static-assets](https://github.cbhq.net/engineering/static-assets) repo. If you've never done this before, follow these [setup steps](#release-setup) first
+2. Sync the latest Figma illustration components. This also programatically opens a PR in the [static-assets](https://github.cbhq.net/engineering/static-assets) repo. If you've never done this before, follow these [setup steps](#release-setup) first
 
 ```shell
 yarn nx run illustrations:release
@@ -45,17 +39,17 @@ yarn nx run illustrations:release
 
 - **IMPORTANT:** If any illustrations are renamed or deleted, this update will be a breaking change for consumers. Please ensure that you publish a migration guide and a migrator script along with this release to aid consumers with migration.
 
-4. Merge the PR in static-assets and confirm the deploy in [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits). Heimdall should automatically deploy the production shards after all build checks are complete, but if it fails to do this for some reason, then manually deploy:
+3. Merge the PR in static-assets and confirm the deploy in [Codeflow](https://codeflow.cbhq.net/#/engineering/static-assets/commits). Heimdall should automatically deploy the production shards after all build checks are complete, but if it fails to do this for some reason, then manually deploy:
 
 - `production::production-shard-0`
 - `production::production-shard-1`
 - `production::production-shard-2`
 
-5. Once the static-assets deployments are finished (the new assets need to be available before Percy can diff properly), commit the changes in the CDS repo with a message in the following format: `[trivial] <feat/breaking>(Illustrations): Publish illustrations mm/dd/yyyy`
+4. Once the static-assets deployments are finished (the new assets need to be available before Percy can diff properly), commit the changes in the CDS repo with a message in the following format: `[trivial] <feat/breaking>(Illustrations): Publish illustrations mm/dd/yyyy`
 
-6. Open a PR in the CDS repo with the changes
+5. Open a PR in the CDS repo with the changes
 
-7. Bump the package version and update the changelog
+6. Bump the package version and update the changelog
 
 ```shell
 yarn mono-pipeline version illustrations
@@ -67,15 +61,15 @@ yarn mono-pipeline version illustrations
   - PR number?: Copy/paste your PR number
   - Skip the rest (press enter to use defaults)
 
-8. Run `yarn release` to generate website changelogs.
+7. Run `yarn release` to generate website changelogs.
 
-9. Commit and push the changes to your existing PR
+8. Commit and push the changes to your existing PR
 
-10. When the Percy diffs are ready, share them with the Illustrations DRI for approval. Merge your PR once the DRI has signed off.
+9. When the Percy diffs are ready, share them with the Illustrations DRI for approval. Merge your PR once the DRI has signed off.
 
-11. Locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) and check that `package-cds-illustrations` has been built, and that the `corporate::cds-illustrations` and `production::cds-docs` targets have been deployed when the entire build is finished. If not, manually trigger the build if necessary and/or deploy the targets as needed when the build is complete. **_NOTE:_** If you're releasing both icons and illustrations at the same time, you only need to deploy to `production::cds-docs` once, so just pick whichever commit is the most recent and deploy from there.
+10. Locate your commit in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) and check that `package-cds-illustrations` has been built, and that the `corporate::cds-illustrations` and `production::cds-docs` targets have been deployed when the entire build is finished. If not, manually trigger the build if necessary and/or deploy the targets as needed when the build is complete. **_NOTE:_** If you're releasing both icons and illustrations at the same time, you only need to deploy to `production::cds-docs` once, so just pick whichever commit is the most recent and deploy from there.
 
-12. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-illustrations/-/@cbhq/cds-illustrations-0.0.1.tgz).
+11. After the deploy has succeeded, verify that the new package was published at the [production Coinbase NPM registry](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master). It usually takes about 10 min or so for the package to be uploaded. Look for the version number at the bottom of the artifact list in the [package directory](https://artifactory.cbhq.net/ui/repos/tree/General/cb-npm-master/@cbhq/cds-illustrations/-/@cbhq/cds-illustrations-0.0.1.tgz).
 
 ### Release Setup
 

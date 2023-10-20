@@ -36,44 +36,19 @@ Our expo builds are 'managed', and therefore are built in a temp directory outsi
 
 ## Common Errors
 
-1. Expo is throwing this error while I'm running a build or launch command (`yarn nx run mobile-app:<build|launch>:<build type>`): An Expo user account is required to proceed.
-   › Error: Either log in with eas login or set the EXPO_TOKEN environment
-
-- In root directory:
-
-```shell
-touch .env.local
-```
-
-- Open new file, and add:
-  EXPO_TOKEN=<Get from UI Systems 1Password File>
-
-2. Expo is throwing this error while I'm running a build or launch command (`yarn nx run mobile-app:<build|launch>:<build type>`)
-   `[Network] Unauthorized - Error: GraphQL request failed.` This means your token is present in `.env.local` but it is invalid.
-
-- In root directory:
-- `rm -rf .env.local` --> yes, delete this even if your file already exists
-- Recreate a new `.env.local`
-
-```shell
-touch .env.local
-```
-
-- Add the correct EXPO_TOKEN value from 1Password.
-
-3. `yarn nx run mobile-app:build:ios-debug` is throwing a `Error: spawn pod ENOENT` error.
+1. `yarn nx run mobile-app:build:ios-debug` is throwing a `Error: spawn pod ENOENT` error.
 
 - Run `yarn workspace mobile-app run expo prebuild -p ios --clean`
 - `yarn clean-expo`
 - `yarn nx run mobile-app:build:ios-debug` should work as expected
 
-1. `yarn nx run mobile-app:build:android-debug` is throwing this error `mobile-app/android directory not found`
+2. `yarn nx run mobile-app:build:android-debug` is throwing this error `mobile-app/android directory not found`
 
 - Run `mkdir apps/mobile-app/android`
 - `yarn nx run mobile-app:build:android-debug` should work as expected
 - Delete the `mobile-app/android` directory
 
-5. An error like "You are on eas-cli@3.7.2 which does not satisfy the CLI version constraint in eas.json (3.8.1)"
+3. An error like "You are on eas-cli@3.7.2 which does not satisfy the CLI version constraint in eas.json (3.8.1)"
 
 Look up the `cli.version` in `apps/mobile-app/eas.json`.
 
@@ -81,7 +56,7 @@ Look up the `cli.version` in `apps/mobile-app/eas.json`.
 npm -g install eas-cli@<version>
 ```
 
-6. I'm getting a fastlane build error:
+4. I'm getting a fastlane build error:
 
 ```shell
 Error: Fastlane build failed with unknown error. See logs for the "Run fastlane" and "Xcode Logs" phases for more information.
@@ -90,22 +65,22 @@ Fastlane errors in most cases are not printed at the end of the output, so you m
 
 This error can occur for a number of reasons. See debugging section above for how to access our iOS App Logs.
 
-7. Android build failure. Gradle build failed with unknown error. See logs for "Run gradlew" phase for more information.
+5. Android build failure. Gradle build failed with unknown error. See logs for "Run gradlew" phase for more information.
 
 This error can occur for a number of reasons. See debugging section above for how to run gradle locally.
 
-8. Pod Install error.
+6. Pod Install error.
 
 This error can occur for a number of reasons. See debugging section above for how to run pod install locally.
 
-9. No development build (com.ui-systems.debug-ios-hermes) for this project is installed. Please make and install development build on the device first.
+7. No development build (com.ui-systems.debug-ios-hermes) for this project is installed. Please make and install development build on the device first.
 
 This error occurs because mobile-app/ios directory was present at the time of launching the build onto a simulator. This interferes with expos naming of the app on the device.
 
 To resolve from root:
 `yarn clean-expo`
 
-10. I'm seeing this build error in my CDS log file in the expo temp directory:
+8. I'm seeing this build error in my CDS log file in the expo temp directory:
 
 ```shell
 [31mError: While resolving module `@cbhq/cds-icons/__generated__/nav/data/names`, the Haste package `@cbhq/cds-icons` was found. However the module `__generated__/nav/data/names` could not be found within the package. Indeed, none of these files exist:
@@ -116,7 +91,7 @@ This error can be caused by two things:
 - The packages are incorrectly built. All packages should be built in the preinstall `eas-build-pre-install` script found in the `mobile-app/package.json` file. If the package has an empty or missing `lib` in the expo temp directory, it didn't correctly build.
 - Metro error. Package exports are processed from the metro.config.js. We outsource this logic to [@cbhq/metro-config currently](https://github.cbhq.net/consumer/react-native/pull/22378). Both "metro" and "metro-config" npm library versions need to align for all of expo config dependencies & @cbhq/metro-config. You can verify through `yarn.lock`.
 
-11. I'm seeing lots of warnings about watchman recrawling. How can I remove these from my terminal output?
+9. I'm seeing lots of warnings about watchman recrawling. How can I remove these from my terminal output?
 
 - Shutdown watchman
 
@@ -157,7 +132,7 @@ which watchman
   - even if `watchman*` processes were previously provided full-disk-access, make sure to re-add access after reinstalling watchman
 - Run `yarn nx run mobile-app:start` multiple times to confirm you are no longer seeing the warning
 
-12. Expo is throwing this error while I'm running a build or launch command (`yarn nx run mobile-app:<build|launch>:<build type>`): Props Authentication Token not found, Props token or EXPO login error.
+10. Expo is throwing this error while I'm running a build or launch command (`yarn nx run mobile-app:<build|launch>:<build type>`): Props Authentication Token not found, Props token or EXPO login error.
 
 Approaches to resolve:
 
@@ -167,14 +142,6 @@ Approaches to resolve:
 cd apps/mobile-app && eas build --local --non-interactive --json --clear-cache --platform ios --profile debug
 ```
 
-- Prebuild with a clean .env.local newly created at root after reset.
-  - In the root directory, run `git clean -xfd`
-  - Run `yarn`
-  - Create the env file: `touch .env.local`
-  - Paste `EXPO_TOKEN` in the `.env.local` file
-  - Run `yarn workspace mobile-app expo prebuild --platform android`
-  - If prebuild is successful: `yarn nx run  mobile-app:build:android-debug`
-
-13. Cocoapods is not setup or the following error is thrown: Cocoapods is not available, make sure it's installed and in your PATH.
+11. Cocoapods is not setup or the following error is thrown: Cocoapods is not available, make sure it's installed and in your PATH.
 
 - Run `gem install cocoapods`
