@@ -148,7 +148,7 @@ export class FilesParser extends TestTask {
    */
   static async listFilePathsInRepo(filters: string[] = []): Promise<string[]> {
     const script = await execa('git', ['ls-files', '--', ...filters]);
-    const files = script.stdout.trim().split('\n');
+    const files = script.stdout.toString().trim().split('\n');
     return files;
   }
 

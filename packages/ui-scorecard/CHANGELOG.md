@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Added tests for a11y engine. [[#2339](https://github.cbhq.net/frontend/cds/pull/2339)] [[DX-2490](https://jira.coinbase-corp.com/browse/DX-2490)]
+
 ## 0.1.6 (9/14/2023 PST)
 
 #### 🐞 Fixes
