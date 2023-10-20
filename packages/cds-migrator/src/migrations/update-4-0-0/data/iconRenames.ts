@@ -8,6 +8,7 @@ export const iconRenames: AttributeValueRenameMapShape = {
       checkbox: 'checkboxChecked',
       pencilAlt: 'pencil',
     },
+    paths: ['@cbhq/cds-web/icons', '@cbhq/cds-mobile/icons'],
   },
   NavigationIcon: {
     attribute: 'name',
@@ -20,5 +21,6 @@ export const iconRenames: AttributeValueRenameMapShape = {
       heartNav: 'heart',
       royaltyNav: 'royalty',
     },
+    paths: ['@cbhq/cds-web/icons', '@cbhq/cds-mobile/icons'],
   },
 };

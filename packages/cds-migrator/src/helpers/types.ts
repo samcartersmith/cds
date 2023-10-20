@@ -5,6 +5,7 @@ export type RenameMap = Record<string, string>;
 export type RenameValueMapShape = {
   attribute: string;
   valueMap: RenameMap;
+  paths: string[];
 };
 
 export type RenameAttributeMapShape = {

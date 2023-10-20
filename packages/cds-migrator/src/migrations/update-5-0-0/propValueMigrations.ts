@@ -3,6 +3,7 @@ import { SourceFile } from 'ts-morph';
 
 import {
   checkFileIncludesImport,
+  checkFileIncludesRenamedValue,
   createJsxMigration,
   getComponentFromJsx,
   logDebug,
@@ -15,19 +16,30 @@ import {
 
 import { propValueMigrations } from './data/propMigrations';
 
-const importPaths = ['@cbhq/cds-web/illustrations', '@cbhq/cds-mobile/illustrations'];
+const renamedValues = Object.values(propValueMigrations).flatMap((obj) =>
+  Object.keys(obj.valueMap),
+);
+// unique values for all directories where migratable component would live
+const importPaths = [...new Set(Object.values(propValueMigrations).flatMap((obj) => obj.paths))];
+console.log({ importPaths });
 
 const checkSourceFile = (sourceFile: SourceFile) => {
-  return checkFileIncludesImport(sourceFile, importPaths);
+  const sourceContent = sourceFile.getFullText();
+  const hasRenamedValue = checkFileIncludesRenamedValue(sourceContent, renamedValues);
+  const hasImport = checkFileIncludesImport(sourceFile, importPaths);
+  return hasRenamedValue && hasImport;
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
   const { jsx, sourceFile } = args;
+
+  // parse JSX for the component we want
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(propValueMigrations),
   });
 
+  // if the component is aliased on import, we want to update our map to look for the alias JSX name
   let renameMap = propValueMigrations;
   if (actualComponentName) {
     renameMap = replaceKey({
@@ -38,7 +50,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
   }
   const updateMap = renameMap[actualComponentName ?? component];
 
-  // gate for components that are not migratable
+  // check if component contains migratable values for given prop
   let isMigratable = false;
   if (updateMap) {
     const attributeToMigrate = updateMap.attribute;
@@ -53,12 +65,14 @@ const callback = (args: ParseJsxElementsCbParams) => {
     });
   }
 
+  // migrate!
   if (isMigratable) {
     const { oldValue, newValue } = renameJsxAttributeValue({
       attribute: updateMap.attribute,
       updateMap: updateMap.valueMap,
       jsx,
     });
+    // save the file
     if (oldValue && newValue) {
       writeMigrationToFile({ oldValue, newValue, jsx, sourceFile });
     }

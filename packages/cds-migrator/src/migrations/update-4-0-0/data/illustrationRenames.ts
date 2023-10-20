@@ -27,6 +27,7 @@ export const illustrationRenames: AttributeValueRenameMapShape = {
       retailUSDCRewardsHeroSquare: 'retailUSDCRewards',
       walletSolana: 'borrowWallet',
     },
+    paths: ['@cbhq/cds-web/illustrations', '@cbhq/cds-mobile/illustrations'],
   },
   SpotSquare: {
     attribute: 'name',
@@ -124,6 +125,7 @@ export const illustrationRenames: AttributeValueRenameMapShape = {
       wrapEthSquare: 'wrapEth',
       yieldCenterUSDC: 'yieldCenter',
     },
+    paths: ['@cbhq/cds-web/illustrations', '@cbhq/cds-mobile/illustrations'],
   },
   SpotRectangle: {
     attribute: 'name',
@@ -219,6 +221,7 @@ export const illustrationRenames: AttributeValueRenameMapShape = {
       watchVideosRectangle: 'watchVideos',
       yieldHoldingAlt: 'yieldHolding',
     },
+    paths: ['@cbhq/cds-web/illustrations', '@cbhq/cds-mobile/illustrations'],
   },
   Pictogram: {
     attribute: 'name',
@@ -237,5 +240,6 @@ export const illustrationRenames: AttributeValueRenameMapShape = {
       ordersGray: 'orders',
       pendingApprovalGray: 'takeQuiz',
     },
+    paths: ['@cbhq/cds-web/illustrations', '@cbhq/cds-mobile/illustrations'],
   },
 };

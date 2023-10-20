@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.21 (10/19/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: made component migrations more specific by checking import statements. [[#2345](https://github.cbhq.net/frontend/cds/pull/2345)]
+
 ## 0.1.20 (10/18/2023 PST)
 
 #### 🐞 Fixes

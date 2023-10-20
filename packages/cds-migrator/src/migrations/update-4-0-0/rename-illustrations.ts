@@ -1,7 +1,9 @@
 import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
+import { SourceFile } from 'ts-morph';
 
 import {
+  checkFileIncludesImport,
   checkFileIncludesRenamedValue,
   checkIsComponentWithMigrations,
   createJsxMigration,
@@ -13,15 +15,16 @@ import {
 
 import { illustrationRenames } from './data/illustrationRenames';
 
-function oldImportCheck(str: string) {
-  return ['web', 'mobile'].some((platform) => str.includes(`@cbhq/cds-${platform}/illustrations`));
-}
+// unique values for all directories where migratable component would live
+const importPaths = [...new Set(Object.values(illustrationRenames).flatMap((obj) => obj.paths))];
+console.log({ importPaths });
 
 const renamedIllos = Object.keys(Object.values(illustrationRenames).map((val) => val.valueMap));
 
-const filterSourceFiles = (path: string) => {
-  const sourceContent = fs.readFileSync(path, 'utf-8');
-  if (oldImportCheck(sourceContent) || checkFileIncludesRenamedValue(sourceContent, renamedIllos)) {
+const checkSourceFile = (sourceFile: SourceFile) => {
+  const sourceContent = fs.readFileSync(sourceFile.getFilePath(), 'utf-8');
+  const hasOldImport = checkFileIncludesImport(sourceFile, importPaths);
+  if (hasOldImport || checkFileIncludesRenamedValue(sourceContent, renamedIllos)) {
     return true;
   }
   return false;
@@ -52,7 +55,7 @@ export default async function migrations(tree: Tree) {
   logDebug('Migrating Illustrations');
   await createJsxMigration({
     tree,
-    filterSourceFiles,
+    checkSourceFile,
     callback,
     excludeOpeningElements: true,
     packageNames: ['@cbhq/cds-web', '@cbhq/cds-mobile'],

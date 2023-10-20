@@ -66,12 +66,14 @@ export const propValueMigrations: AttributeValueRenameMapShape = {
     valueMap: {
       '120x120': '96x96',
     },
+    paths: ['@cbhq/cds-web/illustrations', '@cbhq/cds-mobile/illustrations'],
   },
   Pictogram: {
     attribute: 'dimension',
     valueMap: {
       '96x96': '64x64',
     },
+    paths: ['@cbhq/cds-web/illustrations', '@cbhq/cds-mobile/illustrations'],
   },
 };
 
@@ -103,7 +105,7 @@ export const removedProps: Record<string, RemovedProp> = {
 // this is used in all Typography components so just going to look for files with CDS web/mobile imports and surface a warning if prop is present
 export const removedPropsCatchAll = ['deprecatedLineHeight'];
 
-export const catchAllPropValueMigrations: RenameValueMapShape[] = [
+export const catchAllPropValueMigrations: Omit<RenameValueMapShape, 'paths'>[] = [
   {
     attribute: 'borderRadius',
     valueMap: {
