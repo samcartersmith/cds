@@ -10,11 +10,52 @@ Codemod transformations to help upgrade your CDS codebase
 yarn add @cbhq/cds-migrator --dev
 ```
 
-2. Run the generator and pass in the version you are trying to migrate to
+2. Setup handy aliases in your `.alias.zsh`
 
 ```shell
-yarn nx generate @cbhq/cds-migrator:migrate 4.0.0
+# Running generator
+alias mig="yarn nx generate @cbhq/cds-migrator:migrate"
+
+# Wipe nx cache and build package with watch for CDS migrator
+alias bumi="yarn nx run cds-migrator:build --skip-nx-cache && yarn nx run cds-migrator:watch"
 ```
+
+3. Wipe nx cache and build the package and watch changes. Open new terminal and run:
+
+```shell
+# With alias
+bumi
+
+# Without alias
+yarn nx run cds-migrator:build --skip-nx-cache && yarn nx run cds-migrator:watch
+```
+
+4. Run the generator and pass in the version you are trying to migrate to
+
+```shell
+# With alias
+ mig <version>
+
+# Example
+mig 4.0.0
+
+# Without alias
+yarn nx generate @cbhq/cds-migrator:migrate <version>
+
+# Example
+yarn nx generate @cbhq/cds-migrator:migrate 4.0.0
+
+```
+
+5. Clear NX cache when needed
+
+```shell
+yarn nx reset
+```
+
+### Example setup:
+
+![Alt text](image.png)
 
 ## Inspiration
 
