@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import * as useBreakpoints from '@cbhq/cds-web/hooks/useBreakpoints';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Default as DropdownExample } from '../__stories__/Dropdown.stories';
@@ -49,5 +50,18 @@ describe('Dropdown', () => {
 
     // look for overflow: auto
     expect(await screen.findByRole('menu')).toHaveClass('auto');
+  });
+
+  it('Dropdown renders as a modal when enableMobileModal is set', async () => {
+    jest.spyOn(useBreakpoints, 'useBreakpoints').mockImplementation(() => ({
+      isPhone: true,
+    }));
+
+    render(<DropdownExample enableMobileModal options={options} subjectTestID={subjectTestID} />);
+
+    fireEvent.click(screen.getByTestId(subjectTestID));
+
+    // look for overflow: auto
+    expect(await screen.findByTestId('dropdown-modal')).toBeInTheDocument();
   });
 });

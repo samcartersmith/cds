@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.11 (10/23/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix enableMobileModal on dropdown. [[#2352](https://github.cbhq.net/frontend/cds/pull/2352)]
+
 ## 0.0.10 (10/20/2023 PST)
 
 #### 🐞 Fixes

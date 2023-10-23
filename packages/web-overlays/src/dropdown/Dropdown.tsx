@@ -82,6 +82,7 @@ const ModalDropdown = memo(
             dangerouslyDisableResponsiveness
             disablePortal={disablePortal}
             onOverlayPress={onCloseMenu}
+            testID="dropdown-modal"
             visible={visible}
             {...controlledElementAccessibilityProps}
           >
@@ -289,7 +290,7 @@ export const Dropdown = memo(
       }: DropdownProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
-      const { isMobile } = useBreakpoints();
+      const { isPhone } = useBreakpoints();
       const [visible, { toggleOn, toggleOff }] = useToggler();
 
       const handleOpenMenu = useCallback(() => {
@@ -302,7 +303,7 @@ export const Dropdown = memo(
         onCloseMenu?.();
       }, [onCloseMenu, toggleOff]);
 
-      return isMobile && enableMobileModal ? (
+      return isPhone && enableMobileModal ? (
         <ModalDropdown
           ref={ref}
           maxHeight={maxHeight}

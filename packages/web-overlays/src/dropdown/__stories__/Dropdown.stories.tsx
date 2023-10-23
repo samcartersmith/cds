@@ -43,6 +43,7 @@ type MockDropdownProps = {
 export const Default = ({
   options = defaultOptions,
   containerHeight,
+  subjectTestID,
   ...props
 }: MockDropdownProps) => {
   const [value, setValue] = useState('');
@@ -72,7 +73,7 @@ export const Default = ({
           transparent
           accessibilityLabel="More"
           name="more"
-          testID={props.subjectTestID}
+          testID={subjectTestID}
           variant="secondary"
         />
       </Dropdown>
