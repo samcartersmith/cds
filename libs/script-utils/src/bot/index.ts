@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import * as git from './git';
 import { type OctokitBot, type OctokitConfig, initializeOctokit } from './octokit';
 import * as repo from './repo';

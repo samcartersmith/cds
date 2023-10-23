@@ -71,7 +71,6 @@ const KBarAnimator = memo(function KBarAnimator({ children }: KBarAnimatorProps)
       });
 
       ro.observe(inner);
-      // eslint-disable-next-line consistent-return
       return () => {
         ro.unobserve(inner);
       };

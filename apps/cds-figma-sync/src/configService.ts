@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import configServiceNode from '@cb/config-service-node';
 import { bot } from '@cbhq/script-utils';
 

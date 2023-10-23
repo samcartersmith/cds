@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { mapValues } from 'lodash';
 import type { NodeResponseWithMetadata, SyncedLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';

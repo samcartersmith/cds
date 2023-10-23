@@ -67,7 +67,6 @@ const SparklineInteractiveMinMaxContent: FunctionComponent<
         return;
       }
 
-      // eslint-disable-next-line consistent-return
       return onMinMaxLayout(event);
     },
     [onMinMaxLayout, children],

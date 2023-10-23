@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Update eslint rules. [[#2357](https://github.cbhq.net/frontend/cds/pull/2357)]
+
+#### 📘 Misc
+
 - Move private packages to libs directory. [[#2320](https://github.cbhq.net/frontend/cds/pull/2320)]
 
 ## 1.1.2 (10/4/2023 PST)

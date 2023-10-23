@@ -59,7 +59,6 @@ describe('ProgressCircle tests and passes a11y', () => {
     // necessary for Animated.timing delay
     jest.runAllTimers();
 
-    // eslint-disable-next-line no-underscore-dangle
     expect(innerCircle.props.strokeDashoffset._value).toEqual(circumference * 0.5);
     expect(innerCircle.props.strokeDasharray).toEqual(circumference);
 
@@ -81,7 +80,6 @@ describe('ProgressCircle tests and passes a11y', () => {
     // necessary for Animated.timing delay
     jest.runAllTimers();
 
-    // eslint-disable-next-line no-underscore-dangle
     expect(innerCircle.props.strokeDashoffset._value).toBe(0);
 
     expect(innerCircle.props.strokeDasharray).toEqual(circumference);

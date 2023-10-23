@@ -103,7 +103,6 @@ const periods = [
   },
 ];
 
-// eslint-disable-next-line consistent-return
 const getFormattingConfigForPeriod = (period: SparklinePeriod) => {
   // eslint-disable-next-line default-case
   switch (period) {

@@ -10,7 +10,6 @@ const animations = [nux, nux, nux];
 
 function getAnimatedValue(val: Animated.Value) {
   // @ts-expect-error: I know what I'm doing.
-  // eslint-disable-next-line no-underscore-dangle
   return val._value as unknown;
 }
 

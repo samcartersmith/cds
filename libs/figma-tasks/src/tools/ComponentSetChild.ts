@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { NodeResponseWithMetadata } from '@cbhq/figma-api';
 
 import { getSize } from '../helpers/getSize';
