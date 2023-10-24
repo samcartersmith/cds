@@ -6,12 +6,12 @@ const depsToAddMap = {
   mobile: {
     '@cbhq/cds-mobile': '^5.0.0',
     '@cbhq/cds-icons': '^1.3.0',
-    '@cbhq/cds-illustrations': '^1.5.1',
+    '@cbhq/cds-illustrations': '^2.1.0',
   },
   web: {
     '@cbhq/cds-web': '^5.0.0',
     '@cbhq/cds-icons': '^1.3.0',
-    '@cbhq/cds-illustrations': '^1.5.1',
+    '@cbhq/cds-illustrations': '^2.1.0',
   },
   common: {
     '@cbhq/cds-common': '^5.0.0',

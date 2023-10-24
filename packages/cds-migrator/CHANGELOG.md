@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.22 (10/24/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: v5 migrator should bump illo package to 2.1.0 or later to support SpotIcons. [[DX-2349](https://jira.coinbase-corp.com/browse/DX-2349)]
+
 ## 0.1.21 (10/19/2023 PST)
 
 #### 🐞 Fixes
