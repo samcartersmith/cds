@@ -18,8 +18,9 @@ export default async function exportPackageVersion(options: never, context: Exec
   let success = true;
 
   try {
+    const rootPath = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT ?? '';
     const projectPath = getProjectPath(context);
-    const packageJsonPath = path.join(projectPath, 'package.json');
+    const packageJsonPath = path.join(rootPath, projectPath, 'package.json');
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8')) as PackageJson;
     const { name: packageName, version, private: packagePrivate } = packageJson;
     const { projectName } = context;
@@ -33,7 +34,7 @@ export default async function exportPackageVersion(options: never, context: Exec
         `Attempted to run "export-package-version" executor on a package with no version: ${name}`,
       );
     const projectSourcePath = getProjectSourcePath(context);
-    const versionFilePath = path.join(projectSourcePath, 'version.ts');
+    const versionFilePath = path.join(rootPath, projectSourcePath, 'version.ts');
     const versionFileContent = `export const version = '${version}';\n`;
     fs.writeFileSync(versionFilePath, versionFileContent);
   } catch (e) {

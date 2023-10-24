@@ -79,6 +79,11 @@
       "outputs": [
         "{workspaceRoot}/.nx/dts/{projectRoot}"
       ]
+    },
+    "export-package-version": {
+      "dependsOn": [
+        "^build"
+      ]
     }
   },
   "workspaceLayout": {
