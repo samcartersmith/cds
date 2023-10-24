@@ -32,6 +32,14 @@ describe('Dropdown', () => {
     // expect to see first menu item
     expect(await screen.findByText(options[0])).toBeDefined();
   });
+  it('does not open the menu when disabled', () => {
+    render(<DropdownExample disabled options={options} subjectTestID={subjectTestID} />);
+
+    fireEvent.click(screen.getByTestId(subjectTestID));
+
+    // expect to see first menu item
+    expect(screen.queryByText(options[0])).not.toBeInTheDocument();
+  });
   it('opens the menu when enter is typed when the subject is focused', async () => {
     render(<DropdownExample options={options} subjectTestID={subjectTestID} />);
 

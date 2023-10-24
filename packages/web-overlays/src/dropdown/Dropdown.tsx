@@ -50,6 +50,7 @@ const ModalDropdown = memo(
         visible,
         onChange,
         width,
+        disabled,
         ...props
       }: Omit<DropdownProps, 'controlledElementAccessibilityProps' | 'onOpenMenu' | 'onCloseMenu'> &
         DropdownVisibilityProps,
@@ -93,7 +94,7 @@ const ModalDropdown = memo(
           {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
           <div
             {...triggerAccessibilityProps}
-            onClick={onOpenMenu}
+            onClick={disabled ? undefined : onOpenMenu}
             onKeyDown={onOpenMenu}
             style={{ width }}
           >
@@ -189,6 +190,7 @@ const PopoverDropdown = memo(
         onBlur,
         contentPosition = defaultPopoverContentPositionConfig,
         block,
+        disabled,
         ...props
       }: Omit<DropdownProps, 'enableMobileModal' | 'onOpenMenu' | 'onCloseMenu'> &
         DropdownVisibilityProps,
@@ -256,15 +258,16 @@ const PopoverDropdown = memo(
           <Popover
             // DropdownContent will handle exit animation on menu blur, including pressing the subject again to close
             block={block}
-            content={memoizedContent}
+            content={disabled ? undefined : memoizedContent}
             contentPosition={contentPosition ?? defaultPopoverContentPositionConfig}
             disablePortal={disablePortal}
+            disabled={disabled}
             onBlur={onBlur}
             onClose={onCloseMenu}
             onPressSubject={!visible ? onOpenMenu : undefined}
             showOverlay={showOverlay}
             testID={testID}
-            visible={visible}
+            visible={disabled ? false : visible}
             {...props}
           >
             <div ref={subjectRef} style={{ width: '100%' }}>

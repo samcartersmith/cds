@@ -37,6 +37,11 @@ export type DropdownProps = {
    * Portal is automatically disabled for SSR
    * */
   disablePortal?: boolean;
+  /**
+   * Prevents the Dropdown menu from opening.
+   * You'll need to surface disabled state on the trigger manually.
+   */
+  disabled?: boolean;
 } & Pick<
   PopoverProps,
   'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block' | 'disableTypeFocus'

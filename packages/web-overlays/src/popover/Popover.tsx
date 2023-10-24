@@ -61,6 +61,7 @@ export const Popover = memo(
     contentPosition = defaultContentPosition,
     block = false,
     disableTypeFocus = false,
+    disabled,
   }: PopoverProps) => {
     const { subject, setSubject, setPopper, popperStyles, popperAttributes } =
       usePopper(contentPosition);
@@ -75,6 +76,7 @@ export const Popover = memo(
 
     // We use this to infer that hover events are triggering the mounting/dismounting of the content
     const hasHoverInteractions = !!onMouseEnter && !!onMouseLeave && !onPressSubject;
+    const shouldShowContent = visible && !disabled;
 
     const handleClose = useCallback(async () => {
       subject?.focus(); // P3: get to refocus on subject upon close.
@@ -142,22 +144,22 @@ export const Popover = memo(
     return (
       <div
         className={block ? blockStyles : undefined}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onMouseEnter={disabled ? undefined : onMouseEnter}
+        onMouseLeave={disabled ? undefined : onMouseLeave}
       >
         <div
           ref={setSubject}
           className={cx(subjectStyle, block ? blockStyles : undefined)}
           onBlur={onBlur}
-          onClick={onPressSubject}
-          onFocus={onFocus}
-          onMouseDown={onMouseDown}
+          onClick={disabled ? undefined : onPressSubject}
+          onFocus={disabled ? undefined : onFocus}
+          onMouseDown={disabled ? undefined : onMouseDown}
           {...subjectAccessibilityProps}
         >
           {children}
         </div>
         <NewAnimatePresence>
-          {visible ? (
+          {shouldShowContent ? (
             <Portal containerId={tooltipContainerId} disablePortal={disablePortal}>
               <ThemeProvider
                 scale={scale}

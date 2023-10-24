@@ -1,21 +1,37 @@
-import { render, screen } from '@testing-library/react';
+import { useCallback } from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { useToggler } from '@cbhq/cds-common';
 import { Box } from '@cbhq/cds-web/layout';
 import { Pressable } from '@cbhq/cds-web/system';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Popover } from '../Popover';
+import { PopoverProps } from '../PopoverProps';
 
 const SUBJECT_TEST_ID = 'subject';
 const CONTENT_TEST_ID = 'content';
 
-type ExampleProps = {
-  visible?: boolean;
-};
-
-const PopoverExample = ({ visible = false }: ExampleProps) => {
+const PopoverExample = ({
+  visible: initialVisibility,
+  disabled,
+  onPressSubject,
+  ...props
+}: Partial<Pick<PopoverProps, 'visible' | 'disabled' | 'onPressSubject'>>) => {
+  const [visible, { toggleOn }] = useToggler(initialVisibility);
+  const handleSubjectPress = useCallback(() => {
+    toggleOn();
+    onPressSubject?.();
+  }, [onPressSubject, toggleOn]);
   return (
-    <Popover content={<Box />} testID={CONTENT_TEST_ID} visible={visible}>
-      <Pressable backgroundColor="primary" testID={SUBJECT_TEST_ID}>
+    <Popover
+      content={<Box />}
+      disabled={disabled}
+      onPressSubject={handleSubjectPress}
+      testID={CONTENT_TEST_ID}
+      visible={visible}
+      {...props}
+    >
+      <Pressable backgroundColor="primary" disabled={disabled} testID={SUBJECT_TEST_ID}>
         Button
       </Pressable>
     </Popover>
@@ -39,7 +55,22 @@ describe('Popover', () => {
 
     expect(await screen.findByTestId(CONTENT_TEST_ID)).toBeInTheDocument();
   });
+  it('renders content when subject is pressed', async () => {
+    const pressSpy = jest.fn();
+    render(<PopoverExample visible onPressSubject={pressSpy} />);
+    fireEvent.click(await screen.findByTestId(SUBJECT_TEST_ID));
 
+    expect(await screen.findByTestId(CONTENT_TEST_ID)).toBeInTheDocument();
+    expect(pressSpy).toHaveBeenCalled();
+  });
+  it('does not render content when disabled', async () => {
+    const pressSpy = jest.fn();
+    render(<PopoverExample disabled onPressSubject={pressSpy} />);
+    fireEvent.click(await screen.findByTestId(SUBJECT_TEST_ID));
+
+    expect(screen.queryByTestId(CONTENT_TEST_ID)).not.toBeInTheDocument();
+    expect(pressSpy).not.toHaveBeenCalled();
+  });
   it('renders content with a transparent container', async () => {
     render(<PopoverExample visible />);
 

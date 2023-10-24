@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.12 (10/23/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: add disabled prop to Dropdown and underlying Popover. [[#2355](https://github.cbhq.net/frontend/cds/pull/2355)] [[DX-2532](https://jira.coinbase-corp.com/browse/DX-2532)]
+
 ## 0.0.11 (10/23/2023 PST)
 
 #### 🐞 Fixes

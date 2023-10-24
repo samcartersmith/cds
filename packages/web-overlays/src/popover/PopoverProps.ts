@@ -59,5 +59,10 @@ export type PopoverProps = {
    * Use for editable Search Input components to ensure focus is correctly applied
    */
   disableTypeFocus?: boolean;
+  /**
+   * Prevents the Popover content from showing.
+   * You'll need to surface disabled state on the trigger manually.
+   */
+  disabled?: boolean;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
   SharedProps;

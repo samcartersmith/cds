@@ -37,12 +37,19 @@ type MockDropdownProps = {
   containerHeight?: number | string;
 } & Pick<
   DropdownProps,
-  'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur' | 'onCloseMenu' | 'disablePortal'
+  | 'enableMobileModal'
+  | 'showOverlay'
+  | 'testID'
+  | 'onBlur'
+  | 'onCloseMenu'
+  | 'disablePortal'
+  | 'disabled'
 >;
 
 export const Default = ({
   options = defaultOptions,
   containerHeight,
+  disabled,
   subjectTestID,
   ...props
 }: MockDropdownProps) => {
@@ -68,10 +75,18 @@ export const Default = ({
 
   return (
     <HStack gap={3} height={containerHeight} spacing={4}>
-      <Dropdown ref={dropdownRef} content={content} onChange={setValue} value={value} {...props}>
+      <Dropdown
+        ref={dropdownRef}
+        content={content}
+        disabled={disabled}
+        onChange={setValue}
+        value={value}
+        {...props}
+      >
         <IconButton
           transparent
           accessibilityLabel="More"
+          disabled={disabled}
           name="more"
           testID={subjectTestID}
           variant="secondary"
@@ -269,3 +284,10 @@ export const CustomOptions = () => {
     </Dropdown>
   );
 };
+
+export const Disabled = () => (
+  <>
+    <Default />
+    <Default disabled enableMobileModal />
+  </>
+);
