@@ -27,6 +27,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@cbhq/cds-tasks": "workspace:^",
     "linaria": "^2.3.1"
   }
 }

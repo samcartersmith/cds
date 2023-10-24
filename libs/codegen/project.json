@@ -21,52 +21,6 @@
     "typecheck": {
       "executor": "@cbhq/mono-tasks:typecheck"
     },
-    "generate-icon-stories": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/codegen",
-        "commands": [
-          "yarn ts-node ./createIconStories/main.ts"
-        ],
-        "parallel": false
-      }
-    },
-    "icons": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/codegen",
-        "commands": [
-          "ts-node ./icons/syncSvgsFromFigma.ts",
-          "svgo ../common/internal/data/iconSvgs/*.svg --config=configs/svgo.config.js",
-          "ts-node ./icons/build.ts",
-          "nx run codegen:generate-icon-stories"
-        ],
-        "parallel": false
-      }
-    },
-    "illustrations": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/codegen",
-        "commands": [
-          "ts-node ./illustrations/build.ts",
-          "nx run codegen:format",
-          "nx run mobile:format",
-          "nx run codegen:uploadToStaticAssets"
-        ],
-        "parallel": false
-      }
-    },
-    "uploadToStaticAssets": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/codegen/illustrations",
-        "commands": [
-          "./uploadToStaticAssets.sh"
-        ],
-        "parallel": false
-      }
-    },
     "all": {
       "executor": "@cbhq/mono-tasks:run-script",
       "options": {

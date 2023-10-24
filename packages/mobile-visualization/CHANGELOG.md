@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Add missing cds-tasks dev dependency. [[#2364](https://github.cbhq.net/frontend/cds/pull/2364)]
+
+#### 📘 Misc
+
 - Update eslint rules. [[#2357](https://github.cbhq.net/frontend/cds/pull/2357)]
 
 ## 0.0.13 (10/20/2023 PST)

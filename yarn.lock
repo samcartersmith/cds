@@ -3687,6 +3687,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-mobile-visualization@workspace:packages/mobile-visualization"
   dependencies:
+    "@cbhq/cds-tasks": "workspace:^"
     d3-interpolate-path: ^2.2.2
     lodash: ^4.17.21
     react-test-renderer: ^18.2.0
@@ -3811,6 +3812,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web-visualization@workspace:packages/web-visualization"
   dependencies:
+    "@cbhq/cds-tasks": "workspace:^"
     "@cbhq/d3": "workspace:^"
     d3-interpolate-path: ^2.2.2
     d3-selection: ^1.4.2
@@ -4371,11 +4373,12 @@ __metadata:
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
     "@k-vyn/coloralgorithm": ^1.0.0
-    axios: ^0.18.0
+    chalk: ^4.1.2
     ejs: ^3.1.7
     enquirer: ^2.3.6
+    fast-glob: ^3.2.11
     hygen: "patch:hygen@^6.2.0#./patches/hygen.patch"
-    svgo: ^3.0.2
+    semver: ^7.3.7
     ts-node: ^10.7.0
     yargs: ^17.5.1
     yargs-parser: ^21.0.1
@@ -4446,7 +4449,6 @@ __metadata:
     react: 18.2.0
     react-dom: ^18.2.0
     react-virtualized: ^9.22.3
-    semver: ^7.3.7
   languageName: unknown
   linkType: soft
 

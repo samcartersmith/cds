@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Add missing cds-tasks dev dependency. [[#2364](https://github.cbhq.net/frontend/cds/pull/2364)]
+
 ## 0.0.6 (10/20/2023 PST)
 
 #### 🐞 Fixes
