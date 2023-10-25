@@ -52,22 +52,33 @@
         "command": "nx run figma-styles:sync"
       }
     },
+    "generate-stories": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "script": "./scripts/generateStories.ts"
+      }
+    },
     "uploadToStaticAssets": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/illustrations",
         "commands": [
-          "./uploadToStaticAssets.sh"
+          "./scripts/uploadToStaticAssets.sh"
         ]
       }
     },
     "release": {
       "executor": "nx:run-commands",
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
-        "cwd": "packages/illustrations",
         "commands": [
           "nx run illustrations:sync",
-          "nx run illustrations:uploadToStaticAssets"
+          "nx run illustrations:generate-stories"
         ],
         "parallel": false
       }

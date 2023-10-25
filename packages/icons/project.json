@@ -55,12 +55,21 @@
         ]
       }
     },
+    "generate-stories": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "script": "./scripts/generateStories.ts"
+      }
+    },
     "release": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "packages/icons",
         "commands": [
-          "nx run icons:sync"
+          "nx run icons:sync",
+          "nx run icons:generate-stories"
         ],
         "parallel": false
       }

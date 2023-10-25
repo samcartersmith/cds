@@ -1,3 +1,8 @@
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run icons:generate-stories
+ */
+
 import { NavigationIcon } from '../NavigationIcon';
 
 import { NavigationIconSheet } from './NavigationIconSheet';
@@ -7,7 +12,6 @@ export default {
   component: NavigationIcon,
 };
 
-// TODO: figure out a way to handle this split dynamically, maybe add a codegen script that executes as part of release script
-// single icon sheet is too large for percy, need to split them up in chunks of 80 to stay under limit
-export const Sheet1 = () => <NavigationIconSheet endIndex={80} />;
+// single sheet is too large for Percy, need to split up in chunks of 80 to stay under resource limit
+export const Sheet1 = () => <NavigationIconSheet endIndex={80} startIndex={0} />;
 export const Sheet2 = () => <NavigationIconSheet endIndex={160} startIndex={80} />;

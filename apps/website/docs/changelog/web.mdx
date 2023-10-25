@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file!
 
 #### 📘 Misc
 
+- **[Icon, Illustration]** Dynamically split Storybook sheets to stay under Percy limits. [[#2362](https://github.cbhq.net/frontend/cds/pull/2362)] [[DX-2460](https://jira.coinbase-corp.com/browse/DX-2460)]
+
+#### 📘 Misc
+
 - Update eslint rules. [[#2357](https://github.cbhq.net/frontend/cds/pull/2357)]
 
 ## 5.16.2 (10/20/2023 PST)

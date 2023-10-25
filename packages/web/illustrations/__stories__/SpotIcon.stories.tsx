@@ -1,3 +1,8 @@
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run illustrations:generate-stories
+ */
+
 import { SpotIcon } from '../SpotIcon';
 
 import { getIllustrationSheet } from './getIllustrationSheet';
@@ -14,4 +19,9 @@ export const spotIcon = () => (
   </IllustrationExample>
 );
 
-export const spotIconSheet1 = getIllustrationSheet({ type: 'spotIcon' });
+// single sheet is too large for Percy, need to split up in chunks of 240 to stay under resource limit
+export const spotIconSheet1 = getIllustrationSheet({
+  type: 'spotIcon',
+  startIndex: 0,
+  endIndex: 240,
+});

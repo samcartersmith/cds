@@ -1,3 +1,8 @@
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run illustrations:generate-stories
+ */
+
 import { SpotSquare } from '../SpotSquare';
 
 import { getIllustrationSheet } from './getIllustrationSheet';
@@ -10,8 +15,13 @@ export default {
 
 export const spotSquare = () => (
   <IllustrationExample>
-    <SpotSquare name="accessToAdvancedCharts" />
+    <SpotSquare name="accessToAdvancedCharts" scaleMultiplier={1} />
   </IllustrationExample>
 );
 
-export const spotSquareSheet1 = getIllustrationSheet({ type: 'spotSquare' });
+// single sheet is too large for Percy, need to split up in chunks of 240 to stay under resource limit
+export const spotSquareSheet1 = getIllustrationSheet({
+  type: 'spotSquare',
+  startIndex: 0,
+  endIndex: 240,
+});

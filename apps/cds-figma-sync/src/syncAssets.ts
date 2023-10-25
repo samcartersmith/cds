@@ -43,6 +43,7 @@ export const syncAssets = async () => {
         repo: repoData.name,
         accessToken: tokenData.token,
       });
+
       await bot.git.cleanChanges();
       await bot.git.checkoutBranch('master');
       await bot.git.deleteBranchesExcept('master');
@@ -77,6 +78,10 @@ export const syncAssets = async () => {
       bot.logger.info('No changes to commit, exiting...');
       return;
     }
+
+    // Generate storybook sheets in cds-web
+    if (hasIconsChanges) await bot.runNxTarget('icons:generate-stories');
+    if (hasIllustrationsChanges) await bot.runNxTarget('illustrations:generate-stories');
 
     const gitUserName = getConfigServiceValue('GIT_USER_NAME') || '';
     const gitUserEmail = getConfigServiceValue('GIT_USER_EMAIL') || '';

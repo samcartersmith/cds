@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Dynamically split Storybook sheets to stay under Percy limits. [[#2362](https://github.cbhq.net/frontend/cds/pull/2362)] [[DX-2460](https://jira.coinbase-corp.com/browse/DX-2460)]
+
+#### 📘 Misc
+
 - Move private packages to libs directory. [[#2320](https://github.cbhq.net/frontend/cds/pull/2320)]
 
 ## 2.1.0 (10/6/2023 PST)

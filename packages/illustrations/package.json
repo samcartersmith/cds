@@ -18,7 +18,9 @@
   "devDependencies": {
     "@cbhq/cds-tasks": "workspace:^",
     "@cbhq/figma-styles": "workspace:^",
-    "@cbhq/figma-tasks": "workspace:^"
+    "@cbhq/figma-tasks": "workspace:^",
+    "@cbhq/script-utils": "workspace:^",
+    "chalk": "^4.1.2"
   },
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",

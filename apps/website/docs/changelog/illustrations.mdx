@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Dynamically split Storybook sheets to stay under Percy limits. [[#2362](https://github.cbhq.net/frontend/cds/pull/2362)] [[DX-2460](https://jira.coinbase-corp.com/browse/DX-2460)]
+
 ## 2.2.0 (10/6/2023 PST)
 
 #### 🚀 Updates

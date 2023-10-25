@@ -3647,6 +3647,8 @@ __metadata:
   dependencies:
     "@cbhq/cds-tasks": "workspace:^"
     "@cbhq/figma-tasks": "workspace:^"
+    "@cbhq/script-utils": "workspace:^"
+    chalk: ^4.1.2
   languageName: unknown
   linkType: soft
 
@@ -3657,6 +3659,8 @@ __metadata:
     "@cbhq/cds-tasks": "workspace:^"
     "@cbhq/figma-styles": "workspace:^"
     "@cbhq/figma-tasks": "workspace:^"
+    "@cbhq/script-utils": "workspace:^"
+    chalk: ^4.1.2
   languageName: unknown
   linkType: soft
 
@@ -16006,12 +16010,7 @@ __metadata:
   resolution: "cds-figma-sync@workspace:apps/cds-figma-sync"
   dependencies:
     "@cb/config-service-node": ^3.4.0
-    "@cbhq/figma-tasks": "workspace:^"
-    "@cbhq/mono-pipeline": ^0.11.28
     "@cbhq/script-utils": "workspace:^"
-    dotenv: ^16.3.1
-    octokit: ^3.0.0
-    winston: ^3.10.0
   languageName: unknown
   linkType: soft
 
