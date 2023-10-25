@@ -1,4 +1,10 @@
 import React, { memo } from 'react';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import {
+  appSwitcherMaxSize,
+  appSwitcherWidth,
+  denseAppSwitcherWidth,
+} from '@cbhq/cds-common/tokens/appSwitcher';
 import { NavigationIconButton } from '@cbhq/cds-web/buttons/NavigationIconButton';
 import { DotCount } from '@cbhq/cds-web/dots/DotCount';
 import { HStack } from '@cbhq/cds-web/layout';
@@ -15,14 +21,15 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
 
 /** This is the component that Identity will likely encapsulate themselves. */
 const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
+  const isDense = useScaleDensity() === 'dense';
   return (
     <Dropdown
       enableMobileModal
       showOverlay
       content={<AppSwitcherContent />}
       contentPosition={switcherPositionConfig}
-      maxHeight={600}
-      width={359}
+      maxHeight={appSwitcherMaxSize}
+      width={isDense ? denseAppSwitcherWidth : appSwitcherWidth}
     >
       {children}
     </Dropdown>

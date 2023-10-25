@@ -1,8 +1,9 @@
 import React, { ForwardedRef, forwardRef, memo, useCallback, useMemo } from 'react';
 import { css } from 'linaria';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import { pictogramScaleMultiplier, tileSize } from '@cbhq/cds-common/tokens/tile';
+import { denseTileSize, pictogramScaleMultiplier, tileSize } from '@cbhq/cds-common/tokens/tile';
 import { IllustrationPictogramNames, SharedProps, TileBaseProps } from '@cbhq/cds-common/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
@@ -19,16 +20,9 @@ const pressableStyles = css`
   padding: 0;
   &.${focusVisibleClassName} {
     &::before {
-      border-radius: ${borderRadius.rounded};
+      border-radius: ${borderRadius.roundedLarge};
     }
   }
-`;
-
-const wrapperStyles = css`
-  position: relative;
-  height: ${tileSize}px;
-  /* add gutter to account for the border added by Pressable */
-  width: ${tileSize + gutter}px;
 `;
 
 export type TileButtonProps = TileBaseProps &
@@ -52,6 +46,8 @@ export const TileButton = memo(
 
     const [shouldOverflow, toggleShouldOverflow] = useToggler(false);
 
+    const isDense = useScaleDensity() === 'dense';
+
     const handleShowOverflow = useCallback(() => {
       toggleShouldOverflow.toggleOn();
     }, [toggleShouldOverflow]);
@@ -68,18 +64,29 @@ export const TileButton = memo(
       );
     }, [children, pictogram]);
 
+    const computedTileSize = useMemo(() => {
+      return isDense ? denseTileSize : tileSize;
+    }, [isDense]);
+
     return (
-      <div className={wrapperStyles}>
+      <div
+        style={{
+          position: 'relative',
+          height: `${computedTileSize}px`,
+          /* add gutter to account for the border added by Pressable */
+          width: `${computedTileSize + gutter}px`,
+        }}
+      >
         <Pressable
           {...props}
           ref={ref}
           noScaleOnPress
           backgroundColor="background"
-          borderRadius="rounded"
+          borderRadius="roundedLarge"
           className={cx(insetFocusRing, pressableStyles)}
           onBlur={handleHideOverflow}
           onFocus={handleShowOverflow}
-          width={tileSize}
+          width={computedTileSize}
         >
           <Tile count={count} showOverflow={shouldOverflow} title={title}>
             {content}

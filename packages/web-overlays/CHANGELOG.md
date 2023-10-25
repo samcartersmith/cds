@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.13 (10/24/2023 PST)
+
+#### 🐞 Fixes
+
+- Internal: TileButton dense mode support. [[#2358](https://github.cbhq.net/frontend/cds/pull/2358)] [[DX-2557](https://jira.coinbase-corp.com/browse/DX-2557)]
+
 ## 0.0.12 (10/23/2023 PST)
 
 #### 🚀 Updates

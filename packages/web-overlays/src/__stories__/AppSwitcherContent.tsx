@@ -1,5 +1,7 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useSpectrum } from '@cbhq/cds-common';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { densePictogramSize, pictogramSize } from '@cbhq/cds-common/tokens/tile';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { TileButton, TileButtonProps } from '@cbhq/cds-web/buttons/TileButton';
 import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
@@ -59,9 +61,14 @@ type AppSwitcherContentSectionProps = {
 
 const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSectionProps) => {
   const theme = useSpectrum();
+  const isDense = useScaleDensity() === 'dense';
   const rows = Math.ceil(data.tiles.length / columns);
   // this creates a key for each row
   const rowsArr = Array.from(Array(rows), (_, i) => i + 1);
+  const computedPictogramSize = useMemo(
+    () => (isDense ? densePictogramSize : pictogramSize),
+    [isDense],
+  );
   return (
     <VStack spacingHorizontal={2}>
       <HStack spacingHorizontal={2} spacingVertical={2}>
@@ -85,9 +92,9 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
                   >
                     <TileButton {...props}>
                       <RemoteImage
-                        height={38.4}
+                        height={computedPictogramSize}
                         source={`https://static-assets.coinbase.com/ui-infra/illustration/v1/pictogram/svg/${theme}/${props.pictogram}-2.svg`}
-                        width={38.4}
+                        width={computedPictogramSize}
                       />
                     </TileButton>
                   </HStack>

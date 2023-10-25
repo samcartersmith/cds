@@ -1,4 +1,7 @@
 export const tileSize = 106;
+export const denseTileSize = 92;
+export const pictogramSize = 48;
+export const densePictogramSize = 40;
 export const pictogramWrapperSize = 62;
 
 /*

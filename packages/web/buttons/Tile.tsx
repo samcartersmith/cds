@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useEffect, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
-import { tileSize } from '@cbhq/cds-common/tokens/tile';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { denseTileSize, tileSize } from '@cbhq/cds-common/tokens/tile';
 import { TileBaseProps } from '@cbhq/cds-common/types';
 
 import { DotCount } from '../dots/DotCount';
@@ -14,6 +15,7 @@ import { getOverflowTextStyles } from '../utils/overflow';
 export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProps) => {
   const [shouldOverflow, toggleShouldOverflow] = useToggler(false);
   const overflowTextStyles = getOverflowTextStyles(shouldOverflow);
+  const isDense = useScaleDensity() === 'dense';
 
   const handleShowOverflow = useCallback(() => {
     toggleShouldOverflow.toggleOn();
@@ -41,6 +43,10 @@ export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProp
     );
   }, [children, count]);
 
+  const computedTileSize = useMemo(() => {
+    return isDense ? denseTileSize : tileSize;
+  }, [isDense]);
+
   return (
     <VStack
       alignItems="center"
@@ -49,7 +55,7 @@ export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProp
       onMouseEnter={handleShowOverflow}
       onMouseLeave={handleHideOverflow}
       spacing={1}
-      width={tileSize}
+      width={computedTileSize}
     >
       <VStack alignItems="center" justifyContent="center">
         {renderContent}
