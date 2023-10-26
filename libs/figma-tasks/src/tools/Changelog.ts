@@ -73,6 +73,7 @@ function getMarkdownForItems(
 }
 
 const TEMPLATE_START = `<!-- template-start -->`;
+const UNRELEASED_HEADER = `## Unreleased`;
 
 export class Changelog {
   private content: string;
@@ -88,6 +89,10 @@ export class Changelog {
     const newContent = [];
     const commandDescription = `Generated with \`yarn nx run ${task.projectName}:${task.targetName}\`\n`;
     const mdParams = { groupByType };
+
+    const insertionPoint = this.content.includes(UNRELEASED_HEADER)
+      ? UNRELEASED_HEADER
+      : TEMPLATE_START;
 
     if (manifest.additions.size > 0) {
       const addedContent = getMarkdownForItems(manifest.additions, mdParams);
@@ -111,8 +116,8 @@ export class Changelog {
 
     if (newContent.length > 0) {
       this.content = this.content.replace(
-        `${TEMPLATE_START}`,
-        `${TEMPLATE_START}\n\n${newContent.join(`\n`)}`,
+        `${insertionPoint}`,
+        `${insertionPoint}\n\n${newContent.join(`\n`)}`,
       );
 
       await writePrettyFile(this.filePath, this.content);
