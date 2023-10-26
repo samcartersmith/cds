@@ -3,6 +3,7 @@ import type { VersionBump } from '@cbhq/mono-pipeline/lib/bumpVersion';
 
 import { execute } from './execute.js';
 import { spawn } from './spawn.js';
+import { resolveWorkingDirectoryPath } from './workingDirectory.js';
 
 type UpdatePackageVersionOptions = {
   project: string;
@@ -31,10 +32,11 @@ export const updatePackageVersion = async ({
         `yarn mono-pipeline version ${project} -b "${versionBump}" -m "${message}"${prFlag}${jiraFlag}`,
       );
 
+      const fullChangelogPath = resolveWorkingDirectoryPath(changelogPath);
       // Remove x-access-token from github remote URL in changelog
-      const changelogText = readFileSync(changelogPath, 'utf8');
+      const changelogText = readFileSync(fullChangelogPath, 'utf8');
       const newChangelogText = changelogText.replaceAll(/x-access-token.*@/g, '');
-      writeFileSync(changelogPath, newChangelogText);
+      writeFileSync(fullChangelogPath, newChangelogText);
 
       return changelogUpdateResult;
     },
