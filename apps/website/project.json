@@ -6,6 +6,9 @@
   "targets": {
     "adoption": {
       "executor": "@cbhq/mono-tasks:run-script",
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "script": "./scripts/adoption/main.ts",
         "NODE_OPTIONS": {
