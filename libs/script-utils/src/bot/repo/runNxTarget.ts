@@ -8,7 +8,7 @@ export const runNxTarget = async (nxTarget: string, options?: SpawnOptions) =>
 
     const nxTargetResult = spawn(`yarn nx run ${nxTarget}`, options);
 
-    // eslint-disable-next-line
+    // eslint-disable-next-line no-control-regex
     const resultWithoutANSICodes = nxTargetResult.replace(/\x1B\[\d+m/g, '');
 
     // can't rely on stderr output because the sync scripts don't properly surface errors
@@ -16,9 +16,7 @@ export const runNxTarget = async (nxTarget: string, options?: SpawnOptions) =>
       `Successfully ran target ${targetName} for project ${projectName}`,
     );
 
-    if (isFailedRun) {
-      throw new Error(`Failed to run Nx target ${nxTarget}`);
-    }
+    if (isFailedRun) throw new Error(`Failed to run Nx target ${nxTarget}`);
 
     return nxTargetResult;
   });

@@ -6,8 +6,8 @@ import { getConfigServiceValue } from './configService.js';
 
 const COMMIT_MSG_PREFIX = 'Publish Figma color styles, icons, and illustrations';
 const PR_DESCRIPTION =
-  'This PR was created by the cds-figma-asset-sync bot. It automatically syncs and publishes Figma assets when changes are detected.';
-const GITHUB_BOT_LOGIN = 'cds-figma-asset-sync[bot]';
+  'This PR was created by the CDS Bot. It automatically syncs and publishes Figma assets regularly.';
+const GITHUB_BOT_LOGIN = 'cds-bot[bot]';
 
 export const syncAssets = async () => {
   try {
@@ -65,12 +65,8 @@ export const syncAssets = async () => {
     // Sync illustrations
     await bot.runNxTarget('illustrations:sync --exitOnBreakingChanges');
 
-    const dateString = new Date().toISOString().replace(/\..*/, '').replaceAll(':', '-');
-    const localeDateString = new Date().toLocaleDateString();
-    const newBranchName = `cds-figma-sync-bot-${dateString}`;
-    const commitMessage = `${COMMIT_MSG_PREFIX} ${localeDateString}`;
-
     const changedFiles = await bot.git.checkStatus();
+
     const hasIconsChanges = changedFiles.includes(config.repo.generatedIconsPath);
     const hasIllustrationsChanges = changedFiles.includes(config.repo.generatedIllustrationsPath);
 
@@ -83,6 +79,13 @@ export const syncAssets = async () => {
     if (hasIconsChanges) await bot.runNxTarget('icons:generate-stories');
     if (hasIllustrationsChanges) await bot.runNxTarget('illustrations:generate-stories');
 
+    const newerChangedFiles = await bot.git.checkStatus();
+
+    const hasWebChanges = newerChangedFiles.includes(config.repo.webPackagePath);
+    const dateString = new Date().toISOString().replace(/\..*/, '').replaceAll(':', '-');
+    const localeDateString = new Date().toLocaleDateString();
+    const newBranchName = `cds-bot-figma-sync-${dateString}`;
+    const commitMessage = `${COMMIT_MSG_PREFIX} ${localeDateString}`;
     const gitUserName = getConfigServiceValue('GIT_USER_NAME') || '';
     const gitUserEmail = getConfigServiceValue('GIT_USER_EMAIL') || '';
 
@@ -101,8 +104,8 @@ export const syncAssets = async () => {
       head: newBranchName,
     });
 
-    // Bump package versions and update changelogs if changes detected in icons or illustrations
-    if (hasIconsChanges || hasIllustrationsChanges) {
+    // Bump package versions and update changelogs if changes detected in icons, illustrations, or web
+    if (hasIconsChanges || hasIllustrationsChanges || hasWebChanges) {
       if (hasIconsChanges) {
         await bot.updatePackageVersion({
           project: 'icons',
@@ -120,6 +123,16 @@ export const syncAssets = async () => {
           versionBump: 'minor',
           message: `Publish illustrations ${localeDateString}`,
           changelogPath: config.repo.illustrationsChangelogPath,
+        });
+      }
+
+      if (hasWebChanges) {
+        await bot.updatePackageVersion({
+          project: 'web',
+          prNumber: newPR.number,
+          versionBump: 'none',
+          message: 'Regenerate icons and illustrations stories',
+          changelogPath: config.repo.webChangelogPath,
         });
       }
 

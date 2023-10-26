@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import { bot } from '@cbhq/script-utils';
 
-import { syncAssets } from './syncAssets.js';
+import { updateAdoptionStats } from './updateAdoptionStats.js';
 
 bot.resetLargeLogs();
 
@@ -18,20 +18,20 @@ const server = createServer((request, response) => {
 
   if (request.url === '/sync' && isSyncing) {
     response.writeHead(503);
-    response.end('Asset sync already in progress');
+    response.end('Adoption stats update already in progress');
     return;
   }
 
   if (request.url === '/sync') {
-    data = 'Starting asset sync';
+    data = 'Starting adoption stats update';
     isSyncing = true;
-    void syncAssets().finally(() => {
+    void updateAdoptionStats().finally(() => {
       isSyncing = false;
     });
   }
 
-  if (request.url === '/logs') data = bot.getCombinedLogs();
-  if (request.url === '/errors') data = bot.getErrorLogs();
+  if (request.url === '/logs') data = bot.getCombinedLogs() || 'No logs';
+  if (request.url === '/errors') data = bot.getErrorLogs() || 'No errors';
   if (request.url === '/_health') data = 'ok';
 
   if (data) {

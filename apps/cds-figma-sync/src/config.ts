@@ -20,10 +20,14 @@ export type AppConfig = {
     generatedIconsPath: string;
     /* The directory where the illustrations sync script outputs files and assets */
     generatedIllustrationsPath: string;
+    /* The path to the web package directory */
+    webPackagePath: string;
     /* The path to the icons changelog file */
     iconsChangelogPath: string;
     /* The path to the illustrations changelog file */
     illustrationsChangelogPath: string;
+    /* The path to the illustrations changelog file */
+    webChangelogPath: string;
   };
 };
 
@@ -39,8 +43,10 @@ const config: AppConfig = {
   repo: {
     generatedIconsPath: 'packages/icons/src/__generated__',
     generatedIllustrationsPath: 'packages/illustrations/src/__generated__',
+    webPackagePath: 'packages/web',
     iconsChangelogPath: 'packages/icons/CHANGELOG.md',
     illustrationsChangelogPath: 'packages/illustrations/CHANGELOG.md',
+    webChangelogPath: 'packages/web/CHANGELOG.md',
   },
 };
 

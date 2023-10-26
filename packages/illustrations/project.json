@@ -90,7 +90,7 @@
       "executor": "@cbhq/mono-tasks:typecheck"
     },
     "watch": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "packages/illustrations",
         "commands": [

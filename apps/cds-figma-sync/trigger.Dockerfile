@@ -7,8 +7,10 @@ ENV CODEFLOW_COMMIT_TAG=$CODEFLOW_COMMIT_TAG
 
 
 
+WORKDIR /repo
+
+COPY apps/cds-figma-sync/trigger.mjs /repo/apps/cds-figma-sync/trigger.mjs
+
 WORKDIR /shared
 
-COPY . .
-
-RUN (zip -r - .) > /main.zip
+RUN (cd /repo && zip -r - .) > /main.zip

@@ -22,7 +22,7 @@
       ]
     },
     "watch": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/web-utils",
         "command": "packemon watch --quiet --loadConfigs"

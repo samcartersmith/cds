@@ -32,6 +32,9 @@
         },
         "static-assets": {
           "script": "dockerup-static-assets"
+        },
+        "trigger": {
+          "script": "dockerup-trigger"
         }
       }
     },

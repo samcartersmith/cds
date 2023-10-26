@@ -8,6 +8,7 @@
   "scripts": {
     "dockerup-app": "docker-compose -f docker-compose.yml build && docker-compose -f docker-compose.yml up -d && docker-compose exec app sh",
     "dockerup-static-assets": "docker-compose -f static-assets.docker-compose.yml build && docker-compose -f static-assets.docker-compose.yml up -d && docker-compose exec app sh",
+    "dockerup-trigger": "docker-compose -f trigger.docker-compose.yml build && docker-compose -f trigger.docker-compose.yml up -d && docker-compose exec app sh",
     "dockerdown": "docker-compose down"
   },
   "packemon": {

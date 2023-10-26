@@ -10,19 +10,28 @@
       "path": "apps/cds-figma-sync"
     },
     {
+      "path": "apps/figma-icons-plugin"
+    },
+    {
+      "path": "apps/figma-plugin"
+    },
+    {
+      "path": "apps/mobile-app"
+    },
+    {
       "path": "apps/next-app"
     },
     {
-      "path": "packages/cds-migrator"
+      "path": "apps/storybook"
+    },
+    {
+      "path": "apps/website"
     },
     {
       "path": "libs/cds-tasks"
     },
     {
       "path": "libs/codegen"
-    },
-    {
-      "path": "packages/common"
     },
     {
       "path": "libs/docusaurus-plugin-docgen"
@@ -43,6 +52,24 @@
       "path": "libs/figma-styles"
     },
     {
+      "path": "libs/figma-tasks"
+    },
+    {
+      "path": "libs/script-utils"
+    },
+    {
+      "path": "libs/web-utils"
+    },
+    {
+      "path": "packages/cds-migrator"
+    },
+    {
+      "path": "packages/common"
+    },
+    {
+      "path": "packages/d3"
+    },
+    {
       "path": "packages/fonts"
     },
     {
@@ -59,9 +86,6 @@
     },
     {
       "path": "packages/mobile-visualization"
-    },
-    {
-      "path": "libs/script-utils"
     },
     {
       "path": "packages/ui-mobile-playground"
@@ -83,9 +107,6 @@
     },
     {
       "path": "packages/web-visualization"
-    },
-    {
-      "path": "libs/web-utils"
     }
   ]
 }

@@ -5,7 +5,10 @@
   "projectType": "library",
   "targets": {
     "dev": {
-      "command": "ts-node-esm ./apps/cds-adoption/src/dev.ts"
+      "command": "ts-node-esm ./apps/cds-adoption/src/dev.ts",
+      "dependsOn": [
+        "^build"
+      ]
     },
     "build": {
       "executor": "@cbhq/mono-tasks:build-package",
@@ -19,6 +22,24 @@
       "dependsOn": [
         "build"
       ]
+    },
+    "dockerup": {
+      "executor": "@cbhq/mono-tasks:run-package-script",
+      "defaultConfiguration": "app",
+      "configurations": {
+        "app": {
+          "script": "dockerup-app"
+        },
+        "trigger": {
+          "script": "dockerup-trigger"
+        }
+      }
+    },
+    "dockerdown": {
+      "executor": "@cbhq/mono-tasks:run-package-script",
+      "options": {
+        "script": "dockerdown"
+      }
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"

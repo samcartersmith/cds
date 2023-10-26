@@ -1,3 +1,3 @@
-import { syncAssets } from './syncAssets.js';
+import { updateAdoptionStats } from './updateAdoptionStats.js';
 
-void syncAssets();
+void updateAdoptionStats();

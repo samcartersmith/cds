@@ -1,21 +1,17 @@
 # Ignore these files
 node_modules
-.git
+
 apps/*/**
 docs/*/**
 libs/*/**
 packages/*/**
 tools/*/**
+
 .buildkite
+.git
 .github
 .nx
 .vscode
-
-apps/cds-figma-sync/mjs
-apps/cds-figma-sync/*Dockerfile
-apps/cds-figma-sync/docker-compose.yml
-apps/cds-figma-sync/static-assets.docker-compose.yml
-apps/cds-figma-sync/shard-assets.sh
 
 # Allow these files
 !.yarn
@@ -23,18 +19,21 @@ apps/cds-figma-sync/shard-assets.sh
 !yarn.lock
 !**/package.json
 !**/project.json
-!apps/cds-figma-sync
-!libs/codegen
-!packages/d3
-!libs/figma-api
-!libs/figma-styles
-!libs/figma-tasks
-!libs/script-utils
+!apps/cds-figma-sync/**/*
+!libs/codegen/**/*
+!packages/d3/**/*
+!libs/figma-api/**/*
+!libs/figma-styles/**/*
+!libs/figma-tasks/**/*
+!libs/script-utils/**/*
 
 # Ignore these files
 private-key.pem
 .env
 .env.*
+lib
 mjs
+esm
+dist
 temp
 *.log
