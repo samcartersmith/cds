@@ -152,7 +152,10 @@ export const syncAssets = async () => {
 
     const openPRs = await bot.octokit.getOpenPRs();
     const botPRs = openPRs.filter(
-      (pr) => pr.user?.login === GITHUB_BOT_LOGIN && pr.number !== newPR.number,
+      (pr) =>
+        pr.user?.login === GITHUB_BOT_LOGIN &&
+        pr.number !== newPR.number &&
+        pr.title.includes(COMMIT_MSG_PREFIX),
     );
 
     // Close any other open PRs previously created by the bot
