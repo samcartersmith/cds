@@ -157,6 +157,19 @@ describe('Text', () => {
       expect(screen.getAllByText('No Wrap')[0]).toHaveClass('noWrap');
     });
   });
+  it('sets forwarded ref', () => {
+    const ref = { current: null };
+    textTestRunner((TextComponent) => {
+      render(
+        <TextComponent ref={ref} as="p">
+          Text
+        </TextComponent>,
+      );
+
+      expect(ref.current).toBeInstanceOf(HTMLElement);
+    });
+  });
+
   describe('overflow', () => {
     textTestRunner((TextComponent) => {
       expectClassName(TextComponent, 'overflow', ['truncate', 'clip']);

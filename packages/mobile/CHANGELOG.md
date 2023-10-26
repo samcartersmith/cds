@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.16.4 (10/25/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: ref on text component. [[#2366](https://github.cbhq.net/frontend/cds/pull/2366)] [[DX-2527](https://jira.coinbase-corp.com/browse/DX-2527)]
+
 ## 5.16.3 ((10/24/2023, 10:28 PM PST))
 
 This is an artificial version bump with no new change.

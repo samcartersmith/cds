@@ -68,6 +68,20 @@ describe('Text', () => {
     });
   });
 
+  it('sets forwarded ref', () => {
+    textTestRunner((TextComponent) => {
+      const ref = { current: null };
+      render(
+        <TextComponent ref={ref} testID="mock-text">
+          Text
+        </TextComponent>,
+      );
+
+      expect(ref.current).toBeInstanceOf(Text);
+      expect(screen.getByTestId('mock-text')).toBeAccessible();
+    });
+  });
+
   textTestRunner((TextComponent) => {
     it(`${TextComponent.displayName} can show tabular numbers`, async () => {
       render(

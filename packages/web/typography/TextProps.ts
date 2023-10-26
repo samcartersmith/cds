@@ -1,3 +1,4 @@
+import { RefAttributes } from 'react';
 import type {
   PaletteForeground,
   ResponsiveProps,
@@ -31,6 +32,7 @@ export type TextProps = {
   responsiveConfig?: ResponsiveProps;
 } & TextBaseProps &
   SharedProps &
+  RefAttributes<HTMLElement> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'>;
 
 export type HTMLHeadingTags = 'h1' | 'h2' | 'h3' | 'h4';

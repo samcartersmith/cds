@@ -36,7 +36,7 @@ const textComponents = [
 export const Normal = () => (
   <>
     {textComponents.map((Component) => {
-      const name = Component.displayName.slice(4);
+      const name = Component.displayName?.slice(4);
       return (
         <Component key={name} as="p">
           {name}
@@ -49,7 +49,7 @@ export const Normal = () => (
 export const Dense = () => (
   <ThemeProvider scale="xSmall">
     {textComponents.map((Component) => {
-      const name = Component.displayName.slice(4);
+      const name = Component.displayName?.slice(4);
       return (
         <Component key={name} as="p" display="block">
           {name}
@@ -62,7 +62,7 @@ export const Dense = () => (
 export const FrontierNormal = () => (
   <FeatureFlagProvider frontierTypography>
     {textComponents.map((Component) => {
-      const name = Component.displayName.slice(4);
+      const name = Component.displayName?.slice(4);
       return (
         <Component key={name} as="p" display="block">
           {name}
@@ -76,7 +76,7 @@ export const FrontierDense = () => (
   <FeatureFlagProvider frontierTypography>
     <ThemeProvider scale="xSmall">
       {textComponents.map((Component) => {
-        const name = Component.displayName.slice(4);
+        const name = Component.displayName?.slice(4);
         return (
           <Component key={name} as="p" display="block">
             {name}
@@ -90,7 +90,7 @@ export const FrontierDense = () => (
 export const MonoFont = () => (
   <>
     {textComponents.map((Component) => {
-      const name = Component.displayName.slice(4);
+      const name = Component.displayName?.slice(4);
       return (
         <Component key={name} mono as="p">
           {name}
