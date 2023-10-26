@@ -4,7 +4,8 @@
     "outDir": "../../.nx/dts/packages/illustrations"
   },
   "include": [
-    "src"
+    "src",
+    "scripts"
   ],
   "exclude": [
     ".eslintrc.js",
@@ -13,10 +14,16 @@
   ],
   "references": [
     {
+      "path": "../../libs/cds-tasks"
+    },
+    {
       "path": "../../libs/figma-styles"
     },
     {
       "path": "../../libs/figma-tasks"
+    },
+    {
+      "path": "../../libs/script-utils"
     }
   ]
 }

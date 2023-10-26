@@ -57,7 +57,7 @@ const generateStory = async <T extends IllustrationType>(
   }
 
   await writePrettyFile(
-    `${storiesPath}/${type}.stories.tsx`,
+    `${storiesPath}/${capitalizedType}.stories.tsx`,
     `
 /**
  * DO NOT MODIFY

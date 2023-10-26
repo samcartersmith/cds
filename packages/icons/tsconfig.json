@@ -4,11 +4,23 @@
     "outDir": "../../.nx/dts/packages/icons"
   },
   "include": [
-    "src"
+    "src",
+    "scripts"
   ],
   "exclude": [
     ".eslintrc.js",
     "dts",
     "lib"
+  ],
+  "references": [
+    {
+      "path": "../../libs/cds-tasks"
+    },
+    {
+      "path": "../../libs/figma-tasks"
+    },
+    {
+      "path": "../../libs/script-utils"
+    }
   ]
 }
