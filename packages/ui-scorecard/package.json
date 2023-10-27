@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-scorecard",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "UI scorecard and adoption tracking cli tool",
   "keywords": [
     "ui",
@@ -22,7 +22,7 @@
   "type": "commonjs",
   "executors": "./executors.json",
   "dependencies": {
-    "@cbhq/client-analytics": "^10.7.1",
+    "@cbhq/client-analytics": "^10.9.1",
     "aws-sdk": "^2.1207.0",
     "chalk": "^4.1.2",
     "execa": "^5.1.1",

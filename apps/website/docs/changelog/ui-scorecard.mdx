@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.1.7 (10/27/2023 PST)
+
+#### 🐞 Fixes
+
+- Upgrade client-analytics, and mono-pipeline. [[#2274](https://github.cbhq.net/frontend/cds/pull/2274)]
 
 #### 📘 Misc
 

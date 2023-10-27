@@ -3876,9 +3876,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/client-analytics@npm:^10.7.1, @cbhq/client-analytics@npm:^10.7.3":
-  version: 10.7.3
-  resolution: "@cbhq/client-analytics@npm:10.7.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-10.7.3.tgz"
+"@cbhq/client-analytics@npm:^10.7.3, @cbhq/client-analytics@npm:^10.9.1":
+  version: 10.9.1
+  resolution: "@cbhq/client-analytics@npm:10.9.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-10.9.1.tgz"
   dependencies:
     idb: ^7.0.2
     md5: ^2.3.0
@@ -3886,7 +3886,7 @@ __metadata:
     ua-parser-js: ^1.0.35
   peerDependencies:
     react: ">=17.0.0"
-  checksum: 449ab80bffdb41c8b23f499a78a35737cf1f1e4761cee7e0d11fddbc9f899726bf209c58984bd745343cd6d70a0ebe13e2009718d01f5607a272895a4b2ea75c
+  checksum: 83a4115f5ad176d85e861413a6dcc43b14b65bddc123a0cca4262c2cf48d2f40a0cbf30bfde3df2eb8757270c9db1bd504414169ee43b7e27225d9fdb2e199ed
   languageName: node
   linkType: hard
 
@@ -4136,18 +4136,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/metro-config@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "@cbhq/metro-config@npm:0.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmetro-config%2F-%2F%40cbhq%2Fmetro-config-0.1.1.tgz"
+"@cbhq/metro-config@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@cbhq/metro-config@npm:0.1.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmetro-config%2F-%2F%40cbhq%2Fmetro-config-0.1.2.tgz"
   dependencies:
     metro: 0.76.7
     metro-config: 0.76.7
     metro-resolver: 0.76.7
-    resolve.exports: ^1.1.0
-    type-fest: ^3.1.0
+    resolve.exports: ^1.1.1
+    type-fest: ^3.13.1
   peerDependencies:
     react-native: ^0.72.0
-  checksum: 1770f1ea7499450d05a96e62f6eea65bab6efdf99a5bde7997bfaf61db8436648e38727537ddfa85c47622547163010d0cf0c59099cc920758602787fc65a0d3
+  checksum: 0dcbc86d73da61c3c55068a79ff8b04b12e38a95880dafbafc5c51d0f297b3bb543ab3ddbb92ad1af4b6111f04215dc3328cfeea18219be4f5c0ae9447f2a029
   languageName: node
   linkType: hard
 
@@ -4167,9 +4167,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/mono-pipeline@npm:^0.11.28":
-  version: 0.11.28
-  resolution: "@cbhq/mono-pipeline@npm:0.11.28::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.28.tgz"
+"@cbhq/mono-pipeline@npm:^0.11.29":
+  version: 0.11.29
+  resolution: "@cbhq/mono-pipeline@npm:0.11.29::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-0.11.29.tgz"
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/traverse": ^7.20.13
@@ -4189,7 +4189,7 @@ __metadata:
     "@cbhq/mono-tasks": ">=0.7.1"
   bin:
     mono-pipeline: ./lib/bin.js
-  checksum: 4097d834b52f58ae3aa951ca77636aa3dc886d901da5ff32982f9e67af0184d3c147cc2c3d68376c3553fc320c4e98265efa6de0311dfd4912b582d9b57b8df4
+  checksum: 4d4480ef733e53a9f26153b9f8a9a80788b5f3ae67f5723e8dee6dbbc03464f660381767ffcd767d89e03cc2d669e14746b3a801e06f6302fc259fe1604bc2dc
   languageName: node
   linkType: hard
 
@@ -4350,7 +4350,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-scorecard@workspace:packages/ui-scorecard"
   dependencies:
-    "@cbhq/client-analytics": ^10.7.1
+    "@cbhq/client-analytics": ^10.9.1
     "@types/update-notifier": ^5.1.0
     "@types/yargs": ^17.0.11
     aws-sdk: ^2.1207.0
@@ -18539,7 +18539,7 @@ __metadata:
     "@cbhq/jest-preset": ^0.3.2
     "@cbhq/jest-preset-mobile": ^0.3.1
     "@cbhq/mono-env": ^0.2.24
-    "@cbhq/mono-pipeline": ^0.11.28
+    "@cbhq/mono-pipeline": ^0.11.29
     "@cbhq/mono-tasks": ^0.10.1
     "@cbhq/mono-templates": ^0.8.0
     "@cbhq/nx-tasks-runner": ^0.1.0
@@ -29603,7 +29603,7 @@ __metadata:
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/cds-mobile-visualization": "workspace:^"
-    "@cbhq/metro-config": ^0.1.1
+    "@cbhq/metro-config": ^0.1.2
     "@cbhq/ui-mobile-playground": "workspace:^"
     "@cbhq/ui-mobile-visreg": "workspace:^"
     "@config-plugins/detox": ^5.0.1
@@ -35337,10 +35337,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve.exports@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "resolve.exports@npm:1.1.0"
-  checksum: 52865af8edb088f6c7759a328584a5de6b226754f004b742523adcfe398cfbc4559515104bc2ae87b8e78b1e4de46c9baec400b3fb1f7d517b86d2d48a098a2d
+"resolve.exports@npm:^1.1.0, resolve.exports@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "resolve.exports@npm:1.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fresolve.exports%2F-%2Fresolve.exports-1.1.1.tgz"
+  checksum: 485aa10082eb388a569d696e17ad7b16f4186efc97dd34eadd029d95b811f21ffee13b1b733198bb4584dbb3cb296aa6f141835221fb7613b9606b84f1386655
   languageName: node
   linkType: hard
 
@@ -38962,10 +38962,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^3.1.0":
-  version: 3.5.3
-  resolution: "type-fest@npm:3.5.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftype-fest%2F-%2Ftype-fest-3.5.3.tgz"
-  checksum: ac52b1a1c695cbbc5e18edf9b15b27d9135611b4be7a50a41ac07bed9687f79a8cad759aa4e17ef74f2ef5a72c503012de6f1a960a132040798ebc588f574f5c
+"type-fest@npm:^3.13.1":
+  version: 3.13.1
+  resolution: "type-fest@npm:3.13.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftype-fest%2F-%2Ftype-fest-3.13.1.tgz"
+  checksum: c06b0901d54391dc46de3802375f5579868949d71f93b425ce564e19a428a0d411ae8d8cb0e300d330071d86152c3ea86e744c3f2860a42a79585b6ec2fdae8e
   languageName: node
   linkType: hard
 
