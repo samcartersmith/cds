@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.14 (10/26/2023 PST)
+
+#### 🐞 Fixes
+
+- Bump rn(0.72.5) and expo(49.0.16). [[#2386](https://github.cbhq.net/frontend/cds/pull/2386)]
 
 #### 📘 Misc
 

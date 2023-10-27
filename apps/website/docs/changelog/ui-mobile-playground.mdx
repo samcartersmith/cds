@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.3 (10/26/2023 PST)
+
+#### 🐞 Fixes
+
+- Bump rn(0.72.5) and expo(49.0.16). [[#2386](https://github.cbhq.net/frontend/cds/pull/2386)]
+
 ## 1.2.2 (10/20/2023 PST)
 
 #### 🐞 Fixes
