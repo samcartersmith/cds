@@ -1,13 +1,16 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
-const LOTTIE_FILES_DIR = path.resolve(__dirname, '..', 'lottie-files');
+const LOTTIE_FILES_PATH = 'packages/lottie-files';
 const IGNORE_FILES = ['basepackage', 'package', 'index'];
 
-export const lottieFiles = (() => {
-  const lottiePath = (file: string) => path.join(LOTTIE_FILES_DIR, file, `${file}.json`);
+const rootPath = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT ?? '';
+const fullLottieFilesPath = path.resolve(rootPath, LOTTIE_FILES_PATH);
 
-  const files = fs.readdirSync(LOTTIE_FILES_DIR, { withFileTypes: true });
+export const lottieFiles = (() => {
+  const lottiePath = (file: string) => path.join(fullLottieFilesPath, file, `${file}.json`);
+
+  const files = fs.readdirSync(fullLottieFilesPath, { withFileTypes: true });
   const lottieFileNames = files
     .filter(
       (ent) =>
@@ -30,7 +33,7 @@ export const lottieFiles = (() => {
     const markers = json.markers.map((marker) => marker.cm);
 
     return {
-      dest: `packages/lottie-files/${file}/index.ts`,
+      dest: `${LOTTIE_FILES_PATH}/${file}/index.ts`,
       data: {
         file,
         type,
