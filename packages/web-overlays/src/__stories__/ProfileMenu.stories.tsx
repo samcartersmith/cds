@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 import { HStack } from '@cbhq/cds-web/layout';
 import { Avatar } from '@cbhq/cds-web/media';
@@ -13,32 +13,21 @@ import { ProfileMenuContent } from './ProfileMenuContent';
 const profileMenuWidth = 375;
 const profileMenuHeight = 359;
 
-type SwitcherSubjectProps = {
-  title: string;
-  description?: string;
-};
-
-const Subject = ({ title }: SwitcherSubjectProps) => {
-  const avatarColorScheme = getAvatarFallbackColor(title);
-  return (
-    <Pressable noScaleOnPress as="button" backgroundColor="transparent" borderRadius="rounded">
-      <HStack alignItems="center" gap={1}>
-        <Avatar alt={title} colorScheme={avatarColorScheme} name={title} size="xl" />
-      </HStack>
-    </Pressable>
-  );
-};
-
 const switcherPositionConfig: PopoverContentPositionConfig = {
   placement: 'bottom',
   gap: 1,
 };
 
-const ProfileMenuRecipe = memo(({ children }: { children: React.ReactNode }) => {
+export const ProfileMenu = ({ title = 'Brian' }: { title: string }) => {
+  const avatarColorScheme = getAvatarFallbackColor(title);
   const dropdownRef = useRef<DropdownRefProps>(null);
+  const pressableRef = useRef<HTMLButtonElement>(null);
   // open dropdown on mount for demo purpose only
   useEffect(() => {
     dropdownRef.current?.openMenu();
+  }, []);
+  const onCloseMenu = useCallback(() => {
+    pressableRef?.current?.focus();
   }, []);
   return (
     <FeatureFlagProvider frontierButton frontierColor>
@@ -53,21 +42,25 @@ const ProfileMenuRecipe = memo(({ children }: { children: React.ReactNode }) => 
             contentPosition={switcherPositionConfig}
             maxHeight={profileMenuHeight}
             minWidth={0} // this forces truncation, otherwise minWidth default is min-content
+            onCloseMenu={onCloseMenu}
             width={profileMenuWidth}
           >
-            {children}
+            <Pressable
+              ref={pressableRef}
+              noScaleOnPress
+              as="button"
+              backgroundColor="transparent"
+              borderRadius="roundedFull"
+              label="profile menu"
+            >
+              <HStack alignItems="center" gap={1}>
+                <Avatar alt={title} colorScheme={avatarColorScheme} name={title} size="xl" />
+              </HStack>
+            </Pressable>
           </Dropdown>
         </HStack>
       </ThemeProvider>
     </FeatureFlagProvider>
-  );
-});
-
-export const ProfileMenu = ({ title = 'Brian', description }: SwitcherSubjectProps) => {
-  return (
-    <ProfileMenuRecipe>
-      <Subject description={description} title={title} />
-    </ProfileMenuRecipe>
   );
 };
 

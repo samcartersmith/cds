@@ -11,7 +11,7 @@ import { TextTitle1 } from '@cbhq/cds-web/typography';
 import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
 import { AppSwitcher } from '../../__stories__/AppSwitcher.stories';
-import { UserSwitcher } from '../../__stories__/UserSwitcher.stories';
+import { ProfileMenu } from '../../__stories__/ProfileMenu.stories';
 
 import { tabs } from './NavigationStorySetup';
 
@@ -29,7 +29,7 @@ const IdentityNavigationBar = memo(({ start, end, bottom, children }: Navigation
         <HStack alignItems="center" gap={1}>
           {end}
           <AppSwitcher />
-          <UserSwitcher title="Brian" />
+          <ProfileMenu title="Brian" />
         </HStack>
       }
       start={start}

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- ProfileMenu a11y changes. [[#2388](https://github.cbhq.net/frontend/cds/pull/2388)] [[DX-2556](https://jira.coinbase-corp.com/browse/DX-2556)]
+
 ## 0.0.13 (10/24/2023 PST)
 
 #### 🐞 Fixes
