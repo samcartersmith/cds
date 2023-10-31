@@ -199,6 +199,7 @@ const names: SpotSquareName[] = [
   'watchVideos',
   'wrapEth',
   'yieldCenter',
+  'yieldCenterUSDC',
 ];
 
 export default names;

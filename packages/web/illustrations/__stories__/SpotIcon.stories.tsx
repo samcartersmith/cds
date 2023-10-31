@@ -15,7 +15,7 @@ export default {
 
 export const spotIcon = () => (
   <IllustrationExample>
-    <SpotIcon name="productCoinbaseCard" scaleMultiplier={3} />
+    <SpotIcon name="advancedTradeProduct" scaleMultiplier={3} />
   </IllustrationExample>
 );
 

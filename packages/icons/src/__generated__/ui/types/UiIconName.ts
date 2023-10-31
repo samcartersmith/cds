@@ -236,6 +236,7 @@ export type UiIconName =
   | 'step7'
   | 'step8'
   | 'step9'
+  | 'support'
   | 'taxesReceipt'
   | 'taxesReceiptInactive'
   | 'telephone'

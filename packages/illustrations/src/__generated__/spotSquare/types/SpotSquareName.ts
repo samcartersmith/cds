@@ -192,4 +192,5 @@ export type SpotSquareName =
   | 'walletSecurity'
   | 'watchVideos'
   | 'wrapEth'
-  | 'yieldCenter';
+  | 'yieldCenter'
+  | 'yieldCenterUSDC';

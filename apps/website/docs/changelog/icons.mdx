@@ -8,7 +8,59 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 2.2.0 (10/31/2023 PST)
+
+#### 🚀 Updates
+
+- Publish icons 10/31/2023.
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- assetHubProduct
+- assetManagementProduct
+- cloudProduct
+- coinbase
+- coinbaseCardProduct
+- complianceProduct
+- custodyProduct
+- dataMarketplaceProduct
+- delegateProduct
+- derivativesProduct
+- earnProduct
+- helpCenterProduct
+- institutionalProduct
+- learningRewardsProduct
+- nftProduct
+- nodeProduct
+- participateProduct
+- privateClientProduct
+- proProduct
+- rewardsProduct
+- venturesProduct
+- walletProduct
+
+#### Ui
+
+- support
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- expand
+
+#### Nav
+
+- advancedTradeProduct
+- commerceProduct
+- staking
+- waasProduct
 
 #### 📘 Misc
 

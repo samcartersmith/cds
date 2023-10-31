@@ -269,6 +269,7 @@ const names: UiIconName[] = [
   'cashCanadianDollar',
   'passport',
   'sortDoubleArrow',
+  'support',
 ];
 
 export default names;

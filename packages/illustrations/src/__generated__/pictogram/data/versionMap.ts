@@ -286,7 +286,7 @@ const versionMap: Record<PictogramName, number> = {
   securityKey: 2,
   manageWeb3SignersAcct: 0,
   walletAsServiceNavigation: 4,
-  planet: 2,
+  planet: 3,
   baseLogoNavigation: 2,
   passport: 1,
   standWithCryptoLogoNavigation: 0,

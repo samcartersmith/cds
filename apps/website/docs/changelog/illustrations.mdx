@@ -8,7 +8,155 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 2.3.0 (10/31/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 10/31/2023.
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- advancedTradeProduct
+- assetHubProduct
+- assetManagementProduct
+- base
+- borrowProduct
+- cloudProduct
+- coinbase
+- coinbaseOneProduct
+- commerceProduct
+- custodyProduct
+- dataMarketplace
+- delegateProduct
+- derivativesProduct
+- exchangeProduct
+- helpCenterProduct
+- institutionalProduct
+- internationalExchangeProduct
+- learningRewardsProduct
+- nftProduct
+- nodeProduct
+- participateProduct
+- paySDKProduct
+- primeProduct
+- privateClientProduct
+- rewardsProduct
+- rosettaProduct
+- signInProduct
+- stakingProduct
+- venturesProduct
+- wallet
+- walletAsAServiceProduct
+
+#### Spot Square
+
+- yieldCenterUSDC
+
+#### Hero Square
+
+- bridge
+- connectPeople
+- dappsGeneral
+- developer
+- engagement
+- indexer
+- innovation
+- layerOne
+- layerTwo
+- minting
+- noFeesMotion
+- privateKey
+- protocol
+- scalable
+- stablecoin
+- storage
+- tradeGeneral
+- unlockKey
+- usdtToUSDC
+- vote
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- planet
+
+#### Spot Square
+
+- addCard
+- addMultipleCrypto
+- addPasswordProtection
+- announcementAdvancedTrading
+- assetForward
+- assetRefresh
+- borrowLimitsAddressed
+- bullishCase
+- cardAnnouncement
+- cardAutoReload
+- cardBlocked
+- cardDeclined
+- cardShipped
+- coinbaseCardSparkle
+- confirmAddress
+- confirmEmail
+- confirmIDCard
+- confirmSocialSecurity
+- cryptoApps
+- darkModeIntroduction
+- defiEarnAnnouncement
+- defiNfts
+- directDepositExcitement
+- eth2SendSell
+- ethStakingRewards
+- fileYourCryptoTaxesCheckOther
+- fileYourCryptoTaxesOther
+- giftBoxCrypto
+- gifting
+- guideBullCase
+- guideCryptoBeginner
+- guideFiveThings
+- guideNftDefi
+- guideStartInvesting
+- interestForYou
+- miniGift
+- moneyRewards
+- nft
+- nftTag
+- nuxChecklist
+- nuxEarnCrypto
+- nuxEarnYield
+- nuxPopularAssets
+- nuxRecurringBuys
+- performance
+- phoneNotifications
+- priceAlerts
+- primeDeFi
+- primeEarn
+- primeStaking
+- recommendInvestments
+- refreshMobileApp
+- rewardExpiring
+- saveTheDate
+- sendCryptoFaster
+- sparkleToken
+- starToken
+- switchReward
+- taxDocuments
+- transferringCrypto
+- waitlistSignup
+- walletApp
+- yieldCenter
+
+#### Spot Icon
+
+- productCoinbaseCard
+- productEarn
 
 #### 📘 Misc
 

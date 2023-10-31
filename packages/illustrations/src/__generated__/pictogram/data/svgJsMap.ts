@@ -774,8 +774,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/pizza-2').content,
   },
   planet: {
-    light: () => require('../svgJs/light/planet-2').content,
-    dark: () => require('../svgJs/dark/planet-2').content,
+    light: () => require('../svgJs/light/planet-3').content,
+    dark: () => require('../svgJs/dark/planet-3').content,
   },
   pluginBrowser: {
     light: () => require('../svgJs/light/pluginBrowser-3').content,
