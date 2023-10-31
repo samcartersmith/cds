@@ -47,25 +47,32 @@ export const Button = memo(
       [compact, scale],
     );
 
-    const { spacingStart, spacingEnd, offsetHorizontal } = useMemo(
+    const { spacingStart, spacingEnd, offsetStart, offsetEnd } = useMemo(
       () => getButtonSpacingProps({ compact, flush, startIcon, endIcon }),
       [compact, endIcon, flush, startIcon],
     );
     const spacingStyles = useInternalSpacingStyles({
       isInverted: true,
-      horizontal: offsetHorizontal,
+      start: offsetStart,
+      end: offsetEnd,
     });
     const pressableStyles = useMemo(
-      () => ({ ...spacingStyles, ...(block ? styles.block : styles.inline) }),
+      () => ({
+        ...(block ? styles.block : styles.inline),
+        ...spacingStyles,
+      }),
       [block, spacingStyles],
     );
 
     const justifyContent = useMemo(() => {
+      if (flush) {
+        return 'flex-start';
+      }
       if (startIcon || endIcon) {
         return 'space-between';
       }
       return 'center';
-    }, [endIcon, startIcon]);
+    }, [endIcon, flush, startIcon]);
 
     const childrenNode = useMemo(
       () =>

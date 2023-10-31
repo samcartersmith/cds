@@ -27,11 +27,16 @@ const getIconStyles = memoize(function getIconStyles({
   flush,
 }: GetIconStylesParams) {
   const { minHeight, iconSize } = getButtonSizeProps({ compact, scale });
-  const { offsetHorizontal } = getButtonSpacingProps({
+  const { offsetEnd, offsetStart } = getButtonSpacingProps({
     compact,
     flush,
   });
-  const spacingStyles = getSpacingStyles({ isInverted: true, horizontal: offsetHorizontal, scale });
+  const spacingStyles = getSpacingStyles({
+    isInverted: true,
+    end: offsetEnd,
+    start: offsetStart,
+    scale,
+  });
   const sizingStyles = {
     height: minHeight,
     width: minHeight,

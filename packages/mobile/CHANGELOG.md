@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.16.6 (10/31/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2619] fix(Button): Fixed cache key and flush styles for button spacing (frontier and mobile only). [[#2400](https://github.cbhq.net/frontend/cds/pull/2400)] [[DX-2619](https://jira.coinbase-corp.com/browse/DX-2619)]
+
 ## 5.16.5 (10/26/2023 PST)
 
 #### 🐞 Fixes

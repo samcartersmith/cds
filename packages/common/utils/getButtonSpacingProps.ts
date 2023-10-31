@@ -16,7 +16,13 @@ export type GetButtonSpacingParams = {
 };
 
 const getCacheKey = ({ compact, flush, startIcon, endIcon }: GetButtonSpacingParams) => {
-  return `${compact}-${Boolean(flush)}-${Boolean(startIcon)}-${Boolean(endIcon)}`;
+  const strings = [];
+  if (compact) strings.push('compact');
+  if (flush) strings.push(flush);
+  if (startIcon) strings.push(startIcon);
+  if (endIcon) strings.push(endIcon);
+  const key = strings.join('-');
+  return key;
 };
 
 /** TODO: pull into common once web alpha Button is ready */
@@ -28,7 +34,8 @@ export const getButtonSpacingProps = memoize(function getButtonSpacingProps({
     return {
       spacingStart: flushSpacing,
       spacingEnd: flushSpacing,
-      offsetHorizontal: flushSpacing,
+      offsetEnd: flush === 'end' ? flushSpacing : undefined,
+      offsetStart: flush === 'start' ? flushSpacing : undefined,
     } as const;
   }
   return {

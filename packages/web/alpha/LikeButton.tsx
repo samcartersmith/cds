@@ -23,7 +23,8 @@ export const LikeButton = memo(function LikeButton({
   const {
     iconSize,
     minHeight: size,
-    offsetHorizontal,
+    offsetEnd,
+    offsetStart,
   } = useMemo(() => {
     const sizeProps = getButtonSizeProps({ compact, scale });
     const spacingProps = getButtonSpacingProps({ compact, flush });
@@ -35,7 +36,8 @@ export const LikeButton = memo(function LikeButton({
 
   const pressableClassName = useInternalSpacingStyles({
     isInverted: true,
-    horizontal: offsetHorizontal,
+    start: offsetStart,
+    end: offsetEnd,
   });
 
   return (
