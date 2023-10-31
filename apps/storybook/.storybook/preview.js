@@ -22,6 +22,7 @@ export const parameters = {
   layout: 'fullscreen',
   options: {
     storySort: {
+      method: 'alphabetical',
       order: ['Design Tokens', 'Layout', 'Core Components', 'Icons'],
     },
   },
