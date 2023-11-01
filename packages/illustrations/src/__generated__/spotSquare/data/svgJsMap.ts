@@ -74,8 +74,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/basedInUsa-3').content,
   },
   bigBtc: {
-    light: () => require('../svgJs/light/bigBtc-2').content,
-    dark: () => require('../svgJs/dark/bigBtc-2').content,
+    light: () => require('../svgJs/light/bigBtc-3').content,
+    dark: () => require('../svgJs/dark/bigBtc-3').content,
   },
   blockchain: {
     light: () => require('../svgJs/light/blockchain-4').content,

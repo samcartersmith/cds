@@ -198,7 +198,7 @@ const versionMap: Record<SpotSquareName, number> = {
   coinbaseFees: 2,
   defiHow: 2,
   appTrackingTransparency: 2,
-  bigBtc: 2,
+  bigBtc: 3,
   earnInterest: 2,
   securityShield: 2,
   switchAdvancedToSimpleTrading: 2,

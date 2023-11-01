@@ -8,6 +8,56 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.4.0 (11/1/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 11/1/2023.
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- advancedTradeProduct
+- assetManagementProduct
+- borrowProduct
+- cloudProduct
+- commerceProduct
+- custodyProduct
+- dataMarketplace
+- delegateProduct
+- derivativesProduct
+- exchangeProduct
+- helpCenterProduct
+- institutionalProduct
+- learningRewardsProduct
+- nftProduct
+- nodeProduct
+- participateProduct
+- primeProduct
+- productCoinbaseCard
+- productEarn
+- productPro
+- productWallet
+- rewardsProduct
+- rosettaProduct
+- signInProduct
+- stakingProduct
+- venturesProduct
+- walletAsAServiceProduct
+
+#### Spot Square
+
+- bigBtc
+
+#### Hero Square
+
+- layerOne
+- storage
+- unlockKey
+
 ## 2.3.0 (10/31/2023 PST)
 
 #### 🚀 Updates

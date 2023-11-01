@@ -714,8 +714,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/layeredNetworks-3').content,
   },
   layerOne: {
-    light: () => require('../svgJs/light/layerOne-0').content,
-    dark: () => require('../svgJs/dark/layerOne-0').content,
+    light: () => require('../svgJs/light/layerOne-1').content,
+    dark: () => require('../svgJs/dark/layerOne-1').content,
   },
   layerTwo: {
     light: () => require('../svgJs/light/layerTwo-0').content,
@@ -1086,8 +1086,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/stopLimitOrderDown-3').content,
   },
   storage: {
-    light: () => require('../svgJs/light/storage-0').content,
-    dark: () => require('../svgJs/dark/storage-0').content,
+    light: () => require('../svgJs/light/storage-1').content,
+    dark: () => require('../svgJs/dark/storage-1').content,
   },
   stressTestedColdStorage: {
     light: () => require('../svgJs/light/stressTestedColdStorage-3').content,
@@ -1134,8 +1134,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/twoIdVerify-2').content,
   },
   unlockKey: {
-    light: () => require('../svgJs/light/unlockKey-0').content,
-    dark: () => require('../svgJs/dark/unlockKey-0').content,
+    light: () => require('../svgJs/light/unlockKey-1').content,
+    dark: () => require('../svgJs/dark/unlockKey-1').content,
   },
   usdtToUSDC: {
     light: () => require('../svgJs/light/usdtToUSDC-0').content,
