@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.16.7 (10/31/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix dots layout. [[#2405](https://github.cbhq.net/frontend/cds/pull/2405)] [[DX-2514](https://jira.coinbase-corp.com/browse/DX-2514)]
+
 ## 5.16.6 (10/31/2023 PST)
 
 #### 🐞 Fixes

@@ -21,12 +21,22 @@ describe('DotSymbol', () => {
   });
 
   it('renders an image', () => {
-    render(<DotSymbol source={{ uri: src }} />);
+    render(<DotSymbol source={{ uri: src }} testID={DOTSYMBOL_TESTID} />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTSYMBOL_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.getByTestId('dotsymbol-remote-image').props.source).toEqual({ uri: src });
   });
   it('renders an image when source is a string', () => {
-    render(<DotSymbol source={src} />);
+    render(<DotSymbol source={src} testID={DOTSYMBOL_TESTID} />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTSYMBOL_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.getByTestId('dotsymbol-remote-image').props.source).toEqual({ uri: src });
   });

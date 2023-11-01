@@ -5,21 +5,21 @@ import { borderRadius } from '@cbhq/cds-common/tokens/borderRadius';
 import { DotBaseProps } from '@cbhq/cds-common/types/DotBaseProps';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
-import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
 
 import { getTransform } from './dotStyles';
+import { useDotsLayout } from './useDotsLayout';
 
 export const DotStatusColor = memo(
   ({ variant, pin, size = 's', children, overlap, ...props }: DotBaseProps) => {
     const palette = usePalette();
     const { iconSize } = useIconSize(size);
-    const [childrenSize, onLayout] = useLayout();
+    const [childrenSize, onLayout] = useDotsLayout();
 
     const transforms = useDotPinStyles(childrenSize, iconSize, overlap);
 
     const pinStyles = useMemo(() => {
-      if (pin) {
+      if (pin && transforms !== null) {
         const [vertical, horizontal] = (pin as string).split('-');
 
         return getTransform(
@@ -47,7 +47,9 @@ export const DotStatusColor = memo(
         <View onLayout={onLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
-        <View style={dotContentStyles} testID="dotstatuscolor-inner-container" />
+        {childrenSize !== null && (
+          <View style={dotContentStyles} testID="dotstatuscolor-inner-container" />
+        )}
       </View>
     );
   },

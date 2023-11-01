@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
+import { normalScaleMap } from '@cbhq/cds-common';
 import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 
 import { Icon } from '../../icons/Icon';
@@ -31,7 +32,12 @@ describe('DotCount', () => {
   });
 
   it('renders a secondary border in light mode', () => {
-    render(<DotCount count={1} variant="negative" />);
+    render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
       borderColor: paletteAliasToRgbaString('secondary', 'light'),
@@ -42,9 +48,14 @@ describe('DotCount', () => {
   it('renders a secondary border in dark mode', () => {
     render(
       <ThemeProvider name="dotcount-theme-provider" spectrum="dark">
-        <DotCount count={1} variant="negative" />
+        <DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />
       </ThemeProvider>,
     );
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
       borderColor: paletteAliasToRgbaString('secondary', 'dark', false),
@@ -56,10 +67,15 @@ describe('DotCount', () => {
     render(
       <FeatureFlagProvider frontier>
         <ThemeProvider name="dotcount-theme-provider" spectrum="dark">
-          <DotCount count={1} variant="negative" />
+          <DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />
         </ThemeProvider>
       </FeatureFlagProvider>,
     );
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
       borderColor: paletteAliasToRgbaString('secondary', 'dark', true),
@@ -70,11 +86,21 @@ describe('DotCount', () => {
   it('renders correct count when count equals 1', () => {
     render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
 
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
+
     expect(screen.getByText('1')).toBeTruthy();
   });
 
   it('renders correct count when count  0', () => {
-    render(<DotCount count={0} variant="negative" />);
+    render(<DotCount count={0} testID={DOTCOUNT_TESTID} variant="negative" />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.queryByText('0')).toBeNull();
   });
@@ -85,7 +111,12 @@ describe('DotCount', () => {
   });
 
   it('renders count 99+ when count > 99', () => {
-    render(<DotCount count={120} variant="negative" />);
+    render(<DotCount count={120} testID={DOTCOUNT_TESTID} variant="negative" />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.getByText('99+')).toBeTruthy();
   });

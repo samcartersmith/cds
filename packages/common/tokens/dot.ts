@@ -27,7 +27,7 @@ export const dotOuterContainerStyles = {
   borderWidth: borderWidth.button,
 } as const;
 
-const dotCountSize = 24;
+export const dotCountSize = 24;
 
 export const dotCountContent = {
   minWidth: dotCountSize,

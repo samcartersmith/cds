@@ -1,16 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
 import { LayoutChangeEvent, LayoutRectangle } from 'react-native';
 
-export type OnLayout = (event: LayoutChangeEvent) => void;
+import { OnLayout } from '../hooks/useLayout';
 
-export const useLayout = (): [LayoutRectangle, OnLayout] => {
-  // TODO: default sizing is problematic. Change to null.
-  const [size, setSize] = useState<LayoutRectangle>({
-    width: 0,
-    height: 0,
-    x: 0,
-    y: 0,
-  });
+export const useDotsLayout = (): [LayoutRectangle | null, OnLayout] => {
+  const [size, setSize] = useState<LayoutRectangle | null>(null);
 
   const onLayout = useCallback((event: LayoutChangeEvent) => {
     setSize(event.nativeEvent.layout);

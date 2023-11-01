@@ -4,10 +4,14 @@ import { DotOverlap } from '@cbhq/cds-common';
 export type DotPinStylesKey = 'end' | 'start' | 'bottom' | 'top';
 
 export const useDotPinStyles = (
-  childrenSize: LayoutRectangle,
-  dotSize: LayoutRectangle | number,
+  childrenSize: LayoutRectangle | null = null,
+  dotSize: LayoutRectangle | number | null = null,
   overlap?: DotOverlap,
 ) => {
+  if (childrenSize === null || dotSize === null) {
+    return null;
+  }
+
   const dotSizeWidth = typeof dotSize === 'number' ? dotSize : dotSize.width;
   const dotSizeHeight = typeof dotSize === 'number' ? dotSize : dotSize.height;
 

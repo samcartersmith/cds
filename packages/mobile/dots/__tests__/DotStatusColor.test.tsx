@@ -22,7 +22,12 @@ describe('DotStatusColor', () => {
   });
 
   it('can change variant to negative', () => {
-    render(<DotStatusColor variant="negative" />);
+    render(<DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="negative" />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTSTATUSCOLOR_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       backgroundColor: paletteAliasToRgbaString('negative', 'light'),
@@ -36,7 +41,12 @@ describe('DotStatusColor', () => {
   });
 
   it('can change variant to positive', () => {
-    render(<DotStatusColor variant="positive" />);
+    render(<DotStatusColor testID={DOTSTATUSCOLOR_TESTID} variant="positive" />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTSTATUSCOLOR_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
 
     expect(screen.getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       backgroundColor: paletteAliasToRgbaString('positive', 'light'),
@@ -53,6 +63,11 @@ describe('DotStatusColor', () => {
     const iconSize = normalScaleMap.s;
 
     render(<DotStatusColor size="s" testID={DOTSTATUSCOLOR_TESTID} variant="negative" />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTSTATUSCOLOR_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: iconSize, width: iconSize } },
+    });
 
     expect(screen.getByTestId(INNER_CONTAINER_TESTID)).toHaveStyle({
       width: iconSize,

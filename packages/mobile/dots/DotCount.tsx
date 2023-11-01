@@ -1,5 +1,11 @@
 import React, { memo, useEffect, useMemo, useState } from 'react';
-import { TranslateXTransform, TranslateYTransform, View, ViewStyle } from 'react-native';
+import {
+  LayoutRectangle,
+  TranslateXTransform,
+  TranslateYTransform,
+  View,
+  ViewStyle,
+} from 'react-native';
 import Animated, {
   runOnJS,
   useAnimatedReaction,
@@ -15,20 +21,20 @@ import {
 } from '@cbhq/cds-common/motion/dot';
 import {
   dotCountContent,
-  dotCountPadding,
+  dotCountSize,
   dotOuterContainerStyles,
 } from '@cbhq/cds-common/tokens/dot';
 import { DotCountBaseProps } from '@cbhq/cds-common/types/DotCountBaseProps';
 import { parseDotCountMaxOverflow } from '@cbhq/cds-common/utils/parseDotCountMaxOverflow';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
-import { useLayout } from '../hooks/useLayout';
 import { usePalette } from '../hooks/usePalette';
 import { convertMotionConfigs } from '../motion/convertMotionConfig';
 import { withMotionTiming } from '../motion/withMotionTiming';
 import { TextCaption } from '../typography/TextCaption';
 
 import { getTransform } from './dotStyles';
+import { useDotsLayout } from './useDotsLayout';
 
 const [opacityEnter, opacityExit, scaleEnter, scaleExit] = convertMotionConfigs([
   dotOpacityEnterConfig,
@@ -37,12 +43,17 @@ const [opacityEnter, opacityExit, scaleEnter, scaleExit] = convertMotionConfigs(
   dotScaleExitConfig,
 ]);
 
+const dotTextPaddingHorizontal = 6;
+
 export const DotCount = memo(
   ({ children, pin, variant = 'negative', count, max, overlap, ...props }: DotCountBaseProps) => {
     const palette = usePalette();
-    const [childrenSize, onChildrenLayout] = useLayout();
-    const [dotSize, onDotLayout] = useLayout();
-    const transforms = useDotPinStyles(childrenSize, dotSize, overlap);
+    const [childrenSize, onChildrenLayout] = useDotsLayout();
+    const transforms = useDotPinStyles(
+      childrenSize,
+      { width: dotCountSize + dotTextPaddingHorizontal, height: dotCountSize } as LayoutRectangle,
+      overlap,
+    );
 
     const opacityAnimatedValue = useSharedValue(opacityEnter.fromValue);
     const scaleAnimatedValue = useSharedValue(scaleEnter.fromValue);
@@ -51,7 +62,7 @@ export const DotCount = memo(
     const prevCount = usePreviousValue<number>(count);
 
     const pinStyles: ViewStyle = useMemo(() => {
-      if (pin) {
+      if (pin && transforms !== null) {
         const [vertical, horizontal] = (pin as string).split('-');
 
         return getTransform(
@@ -66,7 +77,6 @@ export const DotCount = memo(
       return [
         pinStyles,
         dotCountContent,
-        dotCountPadding,
         dotOuterContainerStyles,
         {
           backgroundColor: palette[variant],
@@ -100,7 +110,7 @@ export const DotCount = memo(
           scaleAnimatedValue.value = withMotionTiming(scaleExit);
         }
       },
-      [count],
+      [count, childrenSize],
     );
 
     const animatedStyles = useAnimatedStyle(() => {
@@ -143,13 +153,12 @@ export const DotCount = memo(
         <View onLayout={onChildrenLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
-        {!shouldUnmount && (
-          <Animated.View
-            onLayout={onDotLayout}
-            style={dotCountInnerContainerStyle}
-            testID="dotcount-inner-container"
-          >
-            <TextCaption color="primaryForeground">
+        {!shouldUnmount && childrenSize !== null && (
+          <Animated.View style={dotCountInnerContainerStyle} testID="dotcount-inner-container">
+            <TextCaption
+              color="primaryForeground"
+              dangerouslySetStyle={{ paddingHorizontal: dotTextPaddingHorizontal }}
+            >
               {parseDotCountMaxOverflow(countInternal, max)}
             </TextCaption>
           </Animated.View>
