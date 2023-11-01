@@ -8,6 +8,7 @@ import {
 import { NavigationIconButton } from '@cbhq/cds-web/buttons/NavigationIconButton';
 import { DotCount } from '@cbhq/cds-web/dots/DotCount';
 import { HStack } from '@cbhq/cds-web/layout';
+import { ThemeProvider } from '@cbhq/cds-web/system';
 
 import { Dropdown } from '../dropdown';
 import { PopoverContentPositionConfig } from '../popover/PopoverProps';
@@ -55,6 +56,18 @@ export const AppSwitcherWithDot = () => {
         </DotCount>
       </AppSwitcherRecipe>
     </HStack>
+  );
+};
+
+export const DenseAppSwitcher = () => {
+  return (
+    <ThemeProvider scale="xSmall">
+      <HStack>
+        <AppSwitcherRecipe>
+          <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+        </AppSwitcherRecipe>
+      </HStack>
+    </ThemeProvider>
   );
 };
 
