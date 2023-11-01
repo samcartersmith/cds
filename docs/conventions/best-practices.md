@@ -41,6 +41,10 @@ const Provider = memo(({ children, ...props }) => {
 
 Shared code should live in @cbhq/cds-common. We should strive to reuse code as often as possible.
 
+## Factory functions
+
+Historically, we've used factory functions to generate components that are the same across multiple packages, however this is no longer an accepted convention and instead components must be implemented in each package that requires them.
+
 ## Function Ordering
 
 Functions should be ordered in files based on usage, rather than relying on hoisting. This makes it easier to read and understand the code.

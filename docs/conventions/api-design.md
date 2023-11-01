@@ -124,6 +124,14 @@ Lifecycle methods are callbacks fired at different stages of a component's lifec
 - Style props should mirror those of CSS specs as closely as possible.
 - Boolean style props should be past tense and singular, eg: `bordered`.
 
+## DOM attribute parity
+
+If a prop has a similar DOM attribute equivalent, it should be named the same as the DOM attribute, even if DOM attribute goes against our internal conventions. For example: shorthand or abbreviated names for attributes.
+
+```jsx
+<Avatar src="<url>" />
+```
+
 ## Visibility
 
 ### Components that can be opened/closed
