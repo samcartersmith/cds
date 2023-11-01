@@ -4,27 +4,4 @@
 # Allow these files
 !apps/cds-figma-sync/shard-assets.sh
 
-!packages/illustrations/src/__generated__/heroSquare/png/dark/
-!packages/illustrations/src/__generated__/heroSquare/png/light/
-!packages/illustrations/src/__generated__/heroSquare/svg/dark/
-!packages/illustrations/src/__generated__/heroSquare/svg/light/
-
-!packages/illustrations/src/__generated__/pictogram/png/dark/
-!packages/illustrations/src/__generated__/pictogram/png/light/
-!packages/illustrations/src/__generated__/pictogram/svg/dark/
-!packages/illustrations/src/__generated__/pictogram/svg/light/
-
-!packages/illustrations/src/__generated__/spotIcon/png/dark/
-!packages/illustrations/src/__generated__/spotIcon/png/light/
-!packages/illustrations/src/__generated__/spotIcon/svg/dark/
-!packages/illustrations/src/__generated__/spotIcon/svg/light/
-
-!packages/illustrations/src/__generated__/spotRectangle/png/dark/
-!packages/illustrations/src/__generated__/spotRectangle/png/light/
-!packages/illustrations/src/__generated__/spotRectangle/svg/dark/
-!packages/illustrations/src/__generated__/spotRectangle/svg/light/
-
-!packages/illustrations/src/__generated__/spotSquare/png/dark/
-!packages/illustrations/src/__generated__/spotSquare/png/light/
-!packages/illustrations/src/__generated__/spotSquare/svg/dark/
-!packages/illustrations/src/__generated__/spotSquare/svg/light/
+!packages/illustrations/src/__generated__/
