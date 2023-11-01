@@ -19,12 +19,32 @@ import { A11yLogType, TestOptions } from './types';
  * when you run ```yarn nx run <project-name>:audit-a11y```
  */
 
-async function getTestFilePathsForAudit(task: Task) {
-  const filesParser = new FilesParser(task);
+/**
+ * Gets the Code Owner mappings for a target path by filtering the code owners file
+ * @param targetPath string - Filter for code owners
+ * @param codeOwnerFilePath? string - Path to code owners file
+ * @returns Filtered CodeOwnerObject
+ */
+async function getCodeOwnerMapping(targetPath: string, codeOwnerFilePath?: string) {
+  const defaultCodeOwnerFilePath = '.github/CODEOWNERS';
 
-  const allFilesParser = await filesParser.allFilePathsInProject();
+  const filteredCodeOwners = await FilesParser.readAndFilterCodeOwnersFile(
+    codeOwnerFilePath || defaultCodeOwnerFilePath,
+    targetPath,
+  );
+
+  return filteredCodeOwners;
+}
+
+async function getTestFilePathsForAudit(filesParser: FilesParser, pathsToGetTestsFor?: string[]) {
+  // Note: We need to get all the file paths in the project.
+  // Otherwise this.filePaths will be an empty array thus nothing to filter.
+  let allFilesParser: FilesParser = await filesParser.allFilePathsInProject();
+
+  if (pathsToGetTestsFor) {
+    allFilesParser = await filesParser.filterByProvidedPaths(pathsToGetTestsFor);
+  }
   const testFilePaths = allFilesParser.filterTestFiles().removeNonComponentFiles().getFilePaths;
-
   return testFilePaths;
 }
 
@@ -64,12 +84,28 @@ async function runAudit({
 
   a11yLogger.logTotalNumberOfPassingToBeAccessibleTests(skipAccessibleTest);
 
+  await a11yLogger.logCodeOwner();
   await a11yLogger.logAutomatedA11yScore();
 }
 
 async function sleep(ms: number): Promise<void> {
   // eslint-disable-next-line no-promise-executor-return
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function initializeAnalytics(options: TestOptions) {
+  init({
+    // client-analytics batches events, we batch events every 5 seconds
+    // https://frontend.cbhq.net/analytics/quick-start#sdk-configs
+    // Max period in milliseconds to wait for next batch
+    batchEventsPeriod: 5000,
+    isProd: options.sendEventsToProd,
+    platform: PlatformName.ios,
+    projectName: options.eventProjectName,
+    showDebugLogging: options.debugEvents,
+    onError: (error) => logError(String(error)),
+    version: '1.0.0',
+  });
 }
 
 async function sendScores(
@@ -80,20 +116,9 @@ async function sendScores(
     jestScore,
     totalNumberOfComponentsWithTest,
     totalNumberOfPassingToBeAccessibleTests,
+    codeOwner,
   }: A11yLogType,
 ) {
-  init({
-    // client-analytics batches events, we want to send them as fast as possible
-    // https://frontend.cbhq.net/analytics/quick-start#sdk-configs
-    batchEventsPeriod: 0,
-    isProd: options.sendEventsToProd,
-    platform: PlatformName.ios,
-    projectName: options.eventProjectName,
-    showDebugLogging: options.debugEvents,
-    onError: (error) => logError(String(error)),
-    version: '1.0.0',
-  });
-
   logVerbose({
     event: {
       eventName: 'accessibility_score',
@@ -105,6 +130,7 @@ async function sendScores(
       jestScore,
       totalNumberOfComponentsWithTest,
       totalNumberOfPassingToBeAccessibleTests,
+      codeOwner,
     },
   });
 
@@ -118,6 +144,7 @@ async function sendScores(
       jestScore: a11yScore ?? null,
       totalNumberOfComponentsWithTest,
       totalNumberOfPassingToBeAccessibleTests,
+      codeOwner: codeOwner ?? null,
     },
     AnalyticsEventImportance.high,
   );
@@ -126,56 +153,128 @@ async function sendScores(
   await sleep(1000);
 }
 
+function constructJestArgs(options: TestOptions, task: Task): string[] {
+  const args: string[] = ['--color', '--passWithNoTests'];
+
+  if (options.cache) {
+    args.unshift(
+      '--cache',
+      '--cacheDirectory',
+      task.cache.getSharedCachePath('tools/jestTransforms').toString(),
+    );
+  }
+
+  if (options.debug) {
+    args.unshift('--debug', '--detectOpenHandles', '--logHeapUsage');
+  }
+
+  if (options.serial) {
+    args.unshift('--maxWorkers', '1', '--runInBand');
+  }
+
+  return args;
+}
+
+function handleJestConfig(args: string[], task: Task): void {
+  const projectConfig = task.projectRoot.append('jest.config.js');
+
+  if (projectConfig.exists()) {
+    args.unshift('--config', './jest.config.js');
+  } else {
+    args.unshift('--preset', '@cbhq/jest-preset-mobile');
+  }
+}
+
+async function processLoggingAndScoring(
+  options: TestOptions,
+  a11yLogger: A11yLogger,
+  fileWriter: FileWriter,
+) {
+  if (options.eventProjectName) {
+    await sendScores(options, a11yLogger.getLog);
+  }
+
+  fileWriter.writeA11yLogToOutDir({ log: a11yLogger.getLog });
+}
+
+async function processAudit(
+  a11yLogger: A11yLogger,
+  options: TestOptions,
+  args: string[],
+  task: Task,
+) {
+  await runAudit({
+    a11yLogger,
+    jestArgs: args,
+    task,
+    skipAccessibleTest: options.skipAccessibleTest,
+  });
+
+  if (options.includeZeroCoverageAudit) {
+    a11yLogger.logComponentsWithZeroCoverage();
+  }
+}
+
+async function processWithTargetPath(
+  options: TestOptions,
+  task: Task,
+  args: string[],
+  fileWriter: FileWriter,
+  filesParser: FilesParser,
+  targetPath: string,
+  codeOwnerFilePath?: string,
+) {
+  const filteredCodeOwnersObject = await getCodeOwnerMapping(targetPath, codeOwnerFilePath);
+  if (filteredCodeOwnersObject?.codeOwners) {
+    await Promise.all(
+      filteredCodeOwnersObject.codeOwners.map(async (codeOwnerObjEntry) => {
+        const testFilePaths = await getTestFilePathsForAudit(filesParser, codeOwnerObjEntry.paths);
+        const a11yLogger = new A11yLogger(task, testFilePaths, codeOwnerObjEntry);
+        await processAudit(a11yLogger, options, args, task);
+        await processLoggingAndScoring(options, a11yLogger, fileWriter);
+      }),
+    );
+  }
+}
+
+async function processWithoutTargetPath(
+  options: TestOptions,
+  task: Task,
+  args: string[],
+  fileWriter: FileWriter,
+  filesParser: FilesParser,
+) {
+  const testFilePaths = await getTestFilePathsForAudit(filesParser);
+  const a11yLogger = new A11yLogger(task, testFilePaths);
+  await processAudit(a11yLogger, options, args, task);
+  await processLoggingAndScoring(options, a11yLogger, fileWriter);
+}
+
 const audit = createTask<TestOptions>('audit', async (task, options) => {
   try {
-    const args: string[] = ['--color', '--passWithNoTests'];
+    // Initialize configurations and utilities
+    const args = constructJestArgs(options, task);
+    handleJestConfig(args, task);
+    await initializeAnalytics(options);
 
-    if (options.cache) {
-      args.unshift(
-        '--cache',
-        '--cacheDirectory',
-        task.cache.getSharedCachePath('tools/jestTransforms').toString(),
-      );
-    }
-
-    if (options.debug) {
-      args.unshift('--debug', '--detectOpenHandles', '--logHeapUsage');
-    }
-
-    if (options.serial) {
-      args.unshift('--maxWorkers', '1', '--runInBand');
-    }
-
-    // Automatically detect a config in the project, otherwise use the preset
-    const projectConfig = task.projectRoot.append('jest.config.js');
-
-    if (projectConfig.exists()) {
-      args.unshift('--config', './jest.config.js');
-    } else {
-      args.unshift('--preset', '@cbhq/jest-preset-mobile');
-    }
-
+    const { targetPath, codeOwnerFilePath } = options;
     const fileWriter = new FileWriter(task);
-    const testFilePaths = await getTestFilePathsForAudit(task);
+    const filesParser = new FilesParser(task);
 
-    const a11yLogger = new A11yLogger(task, testFilePaths);
-
-    await runAudit({
-      a11yLogger,
-      jestArgs: args,
-      task,
-      skipAccessibleTest: options.skipAccessibleTest,
-    });
-
-    if (options.includeZeroCoverageAudit) {
-      a11yLogger.logComponentsWithZeroCoverage();
+    // Audit based on targetPath or general audit
+    if (targetPath) {
+      await processWithTargetPath(
+        options,
+        task,
+        args,
+        fileWriter,
+        filesParser,
+        targetPath,
+        codeOwnerFilePath,
+      );
+    } else {
+      await processWithoutTargetPath(options, task, args, fileWriter, filesParser);
     }
-
-    if (options.eventProjectName) {
-      await sendScores(options, a11yLogger.getLog);
-    }
-
-    fileWriter.writeA11yLogToOutDir({ log: a11yLogger.getLog });
   } catch (error) {
     logError(color.failure(error));
   }

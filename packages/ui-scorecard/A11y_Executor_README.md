@@ -31,6 +31,29 @@ A11y Executor is one of several executors included in the `@cbhq/ui-scorecard` p
 
 This short [video](https://drive.google.com/file/d/1nAwEi4hYJZCSowbUQWIyc1BcOttIMcYn/view?usp=sharing) provides a high level overview of its features.
 
+### Enhanced Features
+
+We have extended the A11y Executor with some additional features:
+
+- File path targetting and CODEOWNERS mapping.
+
+#### File path targetting and CODEOWNERS mapping.
+
+This allows running accessibility tests on specific files or directories and mapping the results to the responsible code owners. We map CODEOWNERS to their respective filepaths and get an a11y score for each. We generate each report in parallel and batch send to Snowflake. See [Executing Locally](#executing-locally) on how to run for specific / multiple filepaths.
+
+Sample CODEOWNERS file:
+
+```
+# CODE OWNERS TEST FILE
+# USING CDS REPO
+
+# FROM TEST 1
+packages/mobile/buttons/ @test/buttontest
+
+# FROM TEST 2
+packages/mobile/banner/ @test/bannertest
+```
+
 ## Getting Started
 
 Having some context around [Nx task executors](https://nx.dev/plugin-features/use-task-executors) will make the following setup easier to understand.
@@ -87,6 +110,29 @@ Options for configuing the executor are listed in the `properties` of [schema.js
 }
 ```
 
+To configure specific file paths to run a11y engine on, we can add the targetPath and codeOwnerFilePath:
+
+```json
+{
+  // …
+  “targets”: {
+    // …
+    "audit-a11y": {
+      "executor": "@cbhq/ui-scorecard:audit-a11y",
+      "options": {
+        "eventProjectName": "consumer_onboarding",
+        "targetPath": "/src/packages/onboarding/",
+        "codeOwnerFilePath": ".github/CODEOWNERS"
+      },
+      "dependsOn": [
+        "^build",
+        "test"
+      ]
+    },
+  }
+}
+```
+
 #### Sending Scores to Snowflake
 
 Configuring your task with the `eventProjectName` option will automatically send your `automatedA11yScore` to [Snowflake](https://confluence.coinbase-corp.com/display/DATA/Snowflake+Documentation), our company-wide data warehouse. If an `eventProjectName` is not provided, no data will be sent.
@@ -116,6 +162,19 @@ You can also pass any of the `properties` defined in [schema.json](./src/executo
 
 ```sh
 yarn nx run mobile:audit-a11y --no-sendEventsToProd --debugEvents
+```
+
+To execute specific a11y scores for specific or multiple paths, we can use the `targetPath` and `codeOwnerFilePath` as shown below:
+
+```sh
+yarn nx run <targetProject>:audit-a11y --targetPath=<path-string-to-filter-by> --codeOwnerFilePath=<path-to-codeowner-file>
+```
+
+Example for CDS Mobile:
+
+```sh
+yarn nx run mobile:audit-a11y --targetPath=/packages/mobile/screens  --codeOwnerFilePath=.github/CODEOWNERSTEST
+
 ```
 
 When run locally, the report is output to the `.nx/outs` directory. This is the report location when the script is executed in the [Consumer - React Native repository](https://github.cbhq.net/consumer/react-native):

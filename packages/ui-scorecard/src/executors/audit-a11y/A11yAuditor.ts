@@ -147,6 +147,13 @@ export class A11yAuditor extends TestTask {
     return componentsWithTests;
   }
 
+  /**
+   * Retrieves a list of component file paths in the project.
+   *
+   * Uses a FilesParser instance to find all files in the project,
+   * then filters out stories, tests, e2e, node_modules, and non-component files
+   * to produce the list of components.
+   */
   public async getComponentsList() {
     const filesParser = new FilesParser(this.getTask);
     const allFilesParser = await filesParser.allFilePathsInProject();

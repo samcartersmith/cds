@@ -57,6 +57,14 @@
       "type": "boolean",
       "description": "Skip running the toBeAccessible tests and assume all tests passed.",
       "default": true
+    },
+    "targetPath": {
+      "type": "string",
+      "description": "Path(s) for files or folders to target for accessibility testing."
+    },
+    "codeOwnerFilePath": {
+      "type": "string",
+      "description": "Path to a file containing code owners."
     }
   }
 }

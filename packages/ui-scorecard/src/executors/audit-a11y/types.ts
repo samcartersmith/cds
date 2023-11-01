@@ -32,6 +32,8 @@ export type TestOptions = {
   debugEvents?: boolean;
   sendEventsToProd?: boolean;
   skipAccessibleTest?: boolean;
+  codeOwnerFilePath?: string;
+  targetPath?: string;
 };
 
 export type CoverageAreas = {
@@ -50,6 +52,15 @@ export type TestDetail = Record<
     message: string;
   }
 >;
+
+export type CodeOwnerEntry = {
+  codeOwner: string;
+  paths: string[];
+};
+
+export type CodeOwnerObject = {
+  codeOwners: CodeOwnerEntry[];
+};
 
 /**
  * You can get more information about what these log represents
@@ -136,6 +147,14 @@ export type A11yLogType = {
    * Metric representing accessibility, based solely on the results of automated accessibility testing
    */
   automatedA11yScore: number;
+  /**
+   * Code Owner for this report
+   */
+  codeOwner?: string;
+  /**
+   * Code Owner Entry object
+   */
+  codeOwnerEntry?: CodeOwnerEntry;
   // track if functions have been called
   functionsCalled: {
     logTestFilesWithoutToBeAccessible: boolean;

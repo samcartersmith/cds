@@ -8,7 +8,7 @@ import { ansiToHumanText } from './FormatUtils';
 import { JestCoverageLogger } from './JestCoverageLogger';
 import { TestRunner } from './TestRunner';
 import { Task, TestTask } from './TestTask';
-import { A11yLogType } from './types';
+import { A11yLogType, CodeOwnerEntry } from './types';
 
 /**
  * Use these option to enable verbose console logging
@@ -33,11 +33,13 @@ export class A11yLogger extends TestTask {
 
   private filePaths: string[];
 
+  private codeOwnerEntry?: CodeOwnerEntry;
+
   private jestCoverageLogger: JestCoverageLogger;
 
   private a11yAuditor: A11yAuditor;
 
-  constructor(task: Task, filePaths: string[] = []) {
+  constructor(task: Task, filePaths: string[] = [], codeOwnerEntry?: CodeOwnerEntry) {
     super(task);
 
     this.log = {
@@ -70,9 +72,23 @@ export class A11yLogger extends TestTask {
 
     this.filePaths = filePaths;
 
+    this.codeOwnerEntry = codeOwnerEntry;
+
     this.jestCoverageLogger = new JestCoverageLogger(this.getTask);
 
     this.a11yAuditor = new A11yAuditor(this.getTask);
+  }
+
+  get getCodeOwnerEntry(): CodeOwnerEntry | undefined {
+    return this.codeOwnerEntry;
+  }
+
+  get getCodeOwner(): string {
+    return this.codeOwnerEntry?.codeOwner ?? '';
+  }
+
+  get getFilePaths(): string[] {
+    return this.filePaths;
   }
 
   get getLog(): A11yLogType {
@@ -159,8 +175,12 @@ export class A11yLogger extends TestTask {
     printComponents = false,
   }: Pick<DebugOptions, 'printComponents'> = {}) {
     const start = performance.now();
+    let components = await this.a11yAuditor.getComponentsList();
 
-    const components = await this.a11yAuditor.getComponentsList();
+    const { codeOwnerEntry } = this;
+    if (codeOwnerEntry) {
+      components = A11yLogger.filterComponentsByPath(components, codeOwnerEntry);
+    }
 
     if (printComponents) {
       console.log(components);
@@ -173,10 +193,35 @@ export class A11yLogger extends TestTask {
     A11yLogger.logFunctionAndDuration('getListOfComponents', elapsed);
   }
 
+  /**
+   * Filters the provided components array to only include components whose path matches the configured code owner paths.
+   *
+   * @param components - The array of component strings to filter
+   * @param codeOwnerEntry - The code owner entry to filter by
+   * @returns The filtered array of component strings
+   */
+  private static filterComponentsByPath(
+    components: string[],
+    codeOwnerEntry: CodeOwnerEntry,
+  ): string[] {
+    const { paths: pathsToFilterBy } = codeOwnerEntry;
+    if (pathsToFilterBy && pathsToFilterBy.length > 0) {
+      return components.filter((component) =>
+        pathsToFilterBy.some((path) => component.includes(path)),
+      );
+    }
+    return components;
+  }
+
   public async logTotalNumberOfComponents() {
     const start = new Date().getTime();
+    let components = await this.a11yAuditor.getComponentsList();
 
-    const components = await this.a11yAuditor.getComponentsList();
+    const { codeOwnerEntry } = this;
+    if (codeOwnerEntry) {
+      components = A11yLogger.filterComponentsByPath(components, codeOwnerEntry);
+    }
+
     this.log.totalNumberOfComponents = components.length;
 
     const elapsed = new Date().getTime() - start;
@@ -481,5 +526,12 @@ export class A11yLogger extends TestTask {
     this.log.automatedA11yScore = Math.round(automatedA11yScore * 10) / 10;
 
     return this.log.automatedA11yScore;
+  }
+
+  // Adds code owner and code owner entry to log
+  public async logCodeOwner() {
+    this.log.codeOwner = this.getCodeOwner;
+    this.log.codeOwnerEntry = this.getCodeOwnerEntry;
+    return this.getCodeOwner;
   }
 }

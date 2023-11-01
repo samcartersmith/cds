@@ -1,7 +1,9 @@
 import execa from 'execa';
+import { readFile } from 'fs/promises';
 import path from 'path';
 
 import { TestTask } from './TestTask';
+import { CodeOwnerEntry, CodeOwnerObject } from './types';
 
 /**
  * This class is responsible for parsing
@@ -80,6 +82,73 @@ export class FilesParser extends TestTask {
     });
 
     this.filePaths = filePathsWithTestFiles;
+    return this;
+  }
+
+  /**
+   * Read the CODEOWNERS file given a file path and parse into a CodeOwnerObject. Filter based on filter string
+   * and return a CodeOwnerObject with only the filtered paths.
+   * @param codeOwnerFilePath
+   * @param targetPath
+   * @returns Promise<CodeOwnerObject | null>
+   *
+   */
+  static async readAndFilterCodeOwnersFile(
+    codeOwnerFilePath: string,
+    targetPath: string,
+  ): Promise<CodeOwnerObject | null> {
+    try {
+      const fileContent = await readFile(codeOwnerFilePath, 'utf8');
+      const normalizedTargetPath = path.normalize(targetPath);
+      const codeOwnersMap: Record<string, string[]> = {};
+
+      fileContent.split('\n').forEach((line) => {
+        // Skip comments and empty lines
+        if (line.trim() === '' || line.trim().startsWith('#')) {
+          return;
+        }
+
+        const [entry, codeOwner] = line.split(' ');
+
+        // Only proceed if entry starts with target path
+        const normalizedEntry = path.normalize(entry);
+        if (!normalizedEntry.startsWith(normalizedTargetPath)) {
+          return;
+        }
+
+        if (codeOwner && entry) {
+          // Remove '@' part from codeOwner
+          const formattedCodeOwner = codeOwner.replace(/^@[^/]+\//, '');
+
+          if (!codeOwnersMap[formattedCodeOwner]) {
+            codeOwnersMap[formattedCodeOwner] = [];
+          }
+          codeOwnersMap[formattedCodeOwner].push(entry);
+        }
+      });
+
+      const codeOwners: CodeOwnerEntry[] = Object.entries(codeOwnersMap).map(
+        ([codeOwner, paths]) => {
+          return { codeOwner, paths };
+        },
+      );
+
+      return { codeOwners };
+    } catch (error) {
+      console.error(`Error reading CODEOWNERS file: ${codeOwnerFilePath}`, error);
+      return null;
+    }
+  }
+
+  // Filter the full pathlist based on the provided pathsToGetTestsFor
+  async filterByProvidedPaths(pathsToGetTestsFor: string[]): Promise<this> {
+    this.filePaths = this.filePaths.filter((filePath) =>
+      pathsToGetTestsFor.some((pathEntry) => {
+        const normalizedPathEntry = pathEntry.startsWith('/') ? pathEntry.slice(1) : pathEntry;
+        const normalizedFilePath = filePath.startsWith('/') ? filePath.slice(1) : filePath;
+        return normalizedFilePath.includes(normalizedPathEntry);
+      }),
+    );
     return this;
   }
 

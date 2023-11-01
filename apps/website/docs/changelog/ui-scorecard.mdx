@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.8 (10/30/2023 PST)
+
+#### 🚀 Updates
+
+- Add multiple a11y score reports and modify audit. [[#2289](https://github.cbhq.net/frontend/cds/pull/2289)] [[DX-2024](https://jira.coinbase-corp.com/browse/DX-2024)]
+
 ## 0.1.7 (10/27/2023 PST)
 
 #### 🐞 Fixes
