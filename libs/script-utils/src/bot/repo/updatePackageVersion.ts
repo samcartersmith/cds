@@ -25,7 +25,7 @@ export const updatePackageVersion = async ({
   execute<string>(
     `Bumping package version and updating changelog for project ${project}`,
     async () => {
-      const prFlag = jiraTicket ? ` --pr=${prNumber}` : '';
+      const prFlag = prNumber ? ` --pr=${prNumber}` : '';
       const jiraFlag = jiraTicket ? ` --jira=${jiraTicket}` : '';
 
       const changelogUpdateResult = await spawn(

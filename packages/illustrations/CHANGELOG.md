@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 #### 🚀 Updates
 
-- Publish illustrations 11/1/2023.
+- Publish illustrations 11/1/2023. [[#2414](https://github.cbhq.net/frontend/cds/pull/2414)]
 
 ### 🐞 Updated
 
@@ -62,7 +62,7 @@ Generated with `yarn nx run illustrations:sync`
 
 #### 🚀 Updates
 
-- Publish illustrations 10/31/2023.
+- Publish illustrations 10/31/2023. [[#2403](https://github.cbhq.net/frontend/cds/pull/2403)]
 
 ### 🚀 Added
 

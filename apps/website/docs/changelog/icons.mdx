@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 #### 🚀 Updates
 
-- Publish icons 10/31/2023.
+- Publish icons 10/31/2023. [[#2403](https://github.cbhq.net/frontend/cds/pull/2403)]
 
 ### 🚀 Added
 
