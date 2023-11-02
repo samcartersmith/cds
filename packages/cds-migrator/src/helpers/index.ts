@@ -1,4 +1,5 @@
 // codegen:start { preset: barrel, include: ./**/*.ts }
+export * from './addAttributeToJsx';
 export * from './checkFileIncludesImport';
 export * from './checkFileIncludesImportedModule';
 export * from './checkFileIncludesRenamedValue';
@@ -12,6 +13,7 @@ export * from './createJsxMigration';
 export * from './createMigration';
 export * from './findReplaceInFile';
 export * from './generateManualMigrationOutput';
+export * from './getAttributeValue';
 export * from './getComponentFromJsx';
 export * from './getComponentName';
 export * from './getImportAlias';
@@ -20,6 +22,7 @@ export * from './getTerminalHyperlink';
 export * from './loggingHelpers';
 export * from './parseJsxElements';
 export * from './parseSourceFiles';
+export * from './removeJsxAttribute';
 export * from './renameFunction';
 export * from './renameJsxAttribute';
 export * from './renameJsxAttributeValue';

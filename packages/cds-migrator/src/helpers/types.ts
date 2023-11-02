@@ -19,6 +19,7 @@ export type RenameValueMapShape = {
 export type RenameAttributeMapShape = {
   oldAttribute: string;
   newAttribute: string;
+  corePackageDependency?: string[];
 };
 
 export type AttributeValueRenameMapShape = Record<string, RenameValueMapShape>;

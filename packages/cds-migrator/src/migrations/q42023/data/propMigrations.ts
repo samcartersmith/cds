@@ -44,9 +44,35 @@ const spacingConfigs: AttributeRenameMapShape = spacingComponents.reduce((acc, c
 }, {} as AttributeRenameMapShape);
 
 export const renamedProps: AttributeRenameMapShape = {
-  CellMedia: {
-    oldAttribute: 'shouldApplyDarkModeEnhacements',
-    newAttribute: 'darkModeEnhancementsApplied',
+  CellMedia: [
+    {
+      oldAttribute: 'shouldApplyDarkModeEnhacements',
+      newAttribute: 'darkModeEnhancementsApplied',
+    },
+    {
+      oldAttribute: 'title',
+      newAttribute: 'accessibilityLabel',
+    },
+  ],
+  HeroSquare: {
+    oldAttribute: 'alt',
+    newAttribute: 'accessibilityLabel',
+    corePackageDependency: ['@cbhq/cds-mobile'],
+  },
+  Pictogram: {
+    oldAttribute: 'alt',
+    newAttribute: 'accessibilityLabel',
+    corePackageDependency: ['@cbhq/cds-mobile'],
+  },
+  SpotSquare: {
+    oldAttribute: 'alt',
+    newAttribute: 'accessibilityLabel',
+    corePackageDependency: ['@cbhq/cds-mobile'],
+  },
+  SpotRectangle: {
+    oldAttribute: 'alt',
+    newAttribute: 'accessibilityLabel',
+    corePackageDependency: ['@cbhq/cds-mobile'],
   },
   DotSymbol: {
     oldAttribute: 'shouldApplyDarkModeEnhacements',

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.24 (11/2/2023 PST)
+
+#### 🚀 Updates
+
+- Add Script for Q3 Prop Deprecations. [[#2353](https://github.cbhq.net/frontend/cds/pull/2353)] [[DX-2326](https://jira.coinbase-corp.com/browse/DX-2326)]
+
 ## 0.1.23 (11/2/2023 PST)
 
 #### 🐞 Fixes

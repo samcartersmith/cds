@@ -4,6 +4,7 @@ import { SourceFile } from 'ts-morph';
 import {
   checkFileIncludesImport,
   checkFileIncludesRenamedValue,
+  checkHasCdsDependency,
   createJsxMigration,
   getComponentFromJsx,
   logDebug,
@@ -36,7 +37,7 @@ const checkSourceFile = (sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, sourceFile } = args;
+  const { jsx, sourceFile, tree, projectConfig } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(renamedProps),
@@ -55,9 +56,26 @@ const callback = (args: ParseJsxElementsCbParams) => {
     });
   }
 
+  const shouldApplyRename = (corePackageDependency: string[]) => {
+    // If corePackageDependency is empty, apply to all
+    if (corePackageDependency.length === 0) {
+      return true;
+    }
+
+    // Check if any project has a matching CDS dependency
+    if (corePackageDependency?.length) {
+      const { hasCoreCdsDependency } = checkHasCdsDependency({
+        tree,
+        project: projectConfig,
+      });
+      return corePackageDependency.some(() => hasCoreCdsDependency);
+    }
+    return false;
+  };
+
   const renameAttribute = (config: RenameAttributeMapShape) => {
     const componentHasAttribute = jsx.getAttribute(config.oldAttribute);
-    if (componentHasAttribute) {
+    if (componentHasAttribute && shouldApplyRename(config.corePackageDependency || [])) {
       const { oldAttribute, newAttribute } = config;
       renameJsxAttribute({ oldAttribute, newAttribute, jsx });
       writeMigrationToFile({ oldValue: oldAttribute, newValue: newAttribute, jsx, sourceFile });
