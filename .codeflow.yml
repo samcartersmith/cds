@@ -23,6 +23,8 @@ build:
     - BaldurECR:
         name: cds-css-upload-development
         path: ./packages/web/cssupload-development.Dockerfile
+        autobuild_files:
+          - packages/web/package.json
     - BaldurECR:
         name: cds-figma-sync
         path: ./apps/cds-figma-sync/Dockerfile
@@ -34,6 +36,7 @@ build:
     - BaldurECR:
         name: cds-storybook
         path: ./apps/storybook/production.Dockerfile
+        autobuild: true
     - BaldurECR:
         name: cds-website-docs
         path: ./apps/website/production.Dockerfile
@@ -41,6 +44,7 @@ build:
     - BaldurECR:
         name: cds-website-docs-development
         path: ./apps/website/development.Dockerfile
+        autobuild: false
 
     # Packages
     - BaldurNode:
