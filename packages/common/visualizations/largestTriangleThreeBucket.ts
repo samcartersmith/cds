@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 /**
  * Downsampling timeseries data using the "Largest-Triangle-Three-Buckets algorithm" (LTTB) as described in Sveinn Steinarsson's 2013 Master's thesis Downsampling Time Series for Visual Representation.
  *

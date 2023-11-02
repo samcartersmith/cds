@@ -98,6 +98,8 @@ export const updateAdoptionStats = async () => {
     if (botPRs.length > 0)
       await Promise.all(botPRs.map(async (pr) => bot.octokit.closePR(pr.number)));
 
+    await bot.runNxTarget('website:adoption-snowflake-upload');
+
     bot.logger.info(
       `Finished updating adoption stats in ${(Date.now() - startTime) / 1000} seconds`,
     );

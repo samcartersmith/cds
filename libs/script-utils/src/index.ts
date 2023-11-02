@@ -2,6 +2,7 @@ export * from './bot';
 export * from './filter';
 export * from './format';
 export * from './fs';
+export * from './node';
 export * from './object';
 export * from './path';
 export * from './sort';

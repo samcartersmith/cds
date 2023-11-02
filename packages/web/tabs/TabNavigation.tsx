@@ -39,7 +39,7 @@ export const tabNavigationStaticClassName = 'cds-tab-navigation';
 const SCROLL_PADDING = 5; // How much breathing room do we want before showing the paddles
 const PRESS_TIMEOUT = 50;
 
-let scrollTimeout: number;
+let scrollTimeout: NodeJS.Timeout;
 const containerClassName = css`
   &.${tabNavigationStaticClassName} {
     position: relative;

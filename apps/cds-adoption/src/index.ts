@@ -1,14 +1,18 @@
 import { createServer } from 'node:http';
-import { bot } from '@cbhq/script-utils';
+import { bot, WorkerPool } from '@cbhq/script-utils';
 
-import { updateAdoptionStats } from './updateAdoptionStats.js';
+import { workerFilepath } from './worker.js';
 
 bot.resetLargeLogs();
 
 const HOSTNAME = '0.0.0.0';
 const PORT = 3001;
 
-let isSyncing = false;
+let running = false;
+
+const workerPool = new WorkerPool(1, new URL(workerFilepath));
+
+process.on('exit', workerPool.close);
 
 const server = createServer((request, response) => {
   if (request.url !== '/_health')
@@ -16,7 +20,7 @@ const server = createServer((request, response) => {
   response.setHeader('Content-Type', 'text/plain;charset=UTF-8');
   let data = '';
 
-  if (request.url === '/sync' && isSyncing) {
+  if (request.url === '/sync' && running) {
     response.writeHead(503);
     response.end('Adoption stats update already in progress');
     return;
@@ -24,9 +28,12 @@ const server = createServer((request, response) => {
 
   if (request.url === '/sync') {
     data = 'Starting adoption stats update';
-    isSyncing = true;
-    void updateAdoptionStats().finally(() => {
-      isSyncing = false;
+    running = true;
+
+    workerPool.runTask(undefined, (error, result) => {
+      if (error) bot.logger.error('WorkerPool task failed', error);
+      else bot.logger.info('WorkerPool task completed successfully', result);
+      running = false;
     });
   }
 

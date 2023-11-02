@@ -12037,10 +12037,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.14.2":
-  version: 18.15.5
-  resolution: "@types/node@npm:18.15.5::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fnode%2F-%2Fnode-18.15.5.tgz"
-  checksum: 5fbf3453bd5ce1402bb2964e55d928fc8a8a7de5451b1b0fe66587fecb8a3eb86854ca9cefa5076a5971e2cff00e1773ceeb5d872a54f6c6ddfbbc1064b4e91a
+"@types/node@npm:*, @types/node@npm:^18.14.2, @types/node@npm:^18.14.6":
+  version: 18.18.8
+  resolution: "@types/node@npm:18.18.8::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fnode%2F-%2Fnode-18.18.8.tgz"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: d6a82bfc28bca8e4e32ffc9526798d1aea62f6993ea3a535cd3f47ac3f725a48efe3f484d68168dd154af0001c89935e4e1d77e7b1809c3824c6382bf99b86f6
   languageName: node
   linkType: hard
 
@@ -12048,13 +12050,6 @@ __metadata:
   version: 16.11.64
   resolution: "@types/node@npm:16.11.64"
   checksum: 3634477efbeb586f8cdc1baf7670d8ea89c1eba1beac0354fa9123ca193d794da84ec40d4f8a54f694587ba5469e4124ebbba37542ed88eca95a3980ec45551a
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^14.0.14":
-  version: 14.18.28
-  resolution: "@types/node@npm:14.18.28"
-  checksum: 44225b3d8f13f4aba9a7bffec8dbc9be8fd396d26b8a1f58b1389da83fdc7485edb5642639e23b34f0efa349dafe4df618294122f0b39c8726df2b9e11413768
   languageName: node
   linkType: hard
 
@@ -18563,7 +18558,7 @@ __metadata:
     "@types/jest-axe": ^3.5.1
     "@types/lodash": ^4.14.178
     "@types/mini-css-extract-plugin": ^2.2.0
-    "@types/node": ^14.0.14
+    "@types/node": ^18.14.6
     "@types/react": 18.0.28
     "@types/react-dom": ^18.0.11
     "@types/react-is": ^17.0.2
@@ -39094,6 +39089,13 @@ __metadata:
   version: 2.0.5
   resolution: "undefsafe@npm:2.0.5"
   checksum: f42ab3b5770fedd4ada175fc1b2eb775b78f609156f7c389106aafd231bfc210813ee49f54483d7191d7b76e483bc7f537b5d92d19ded27156baf57592eb02cc
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fundici-types%2F-%2Fundici-types-5.26.5.tgz"
+  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
   languageName: node
   linkType: hard
 

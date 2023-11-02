@@ -18,7 +18,7 @@ export type AccessibilityAnnouncerProps = Omit<
   SharedProps;
 
 const DISPLAY_MESSAGE_MS = 500; // Needs to be *just* long enough for screen readers to pick it up
-let timerId: number;
+let timerId: NodeJS.Timeout;
 
 export const AccessibilityAnnouncer = memo(
   forwardRef(

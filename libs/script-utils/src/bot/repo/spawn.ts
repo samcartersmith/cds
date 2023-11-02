@@ -6,7 +6,16 @@ import { resolveWorkingDirectoryPath } from './workingDirectory.js';
 
 export type SpawnOptions = Omit<SpawnSyncOptionsWithStringEncoding, 'encoding'>;
 
-export const spawn = (command: string, options?: SpawnOptions) => {
+export type SpawnCustomOptions = {
+  skipInfoLog?: boolean;
+  throwOnStderr?: boolean;
+};
+
+export const spawn = (
+  command: string,
+  options?: SpawnOptions,
+  customOptions?: SpawnCustomOptions,
+) => {
   const commands = command.split(' ');
   const result = spawnSync(commands.shift() ?? '', commands, {
     encoding: 'utf-8',
@@ -21,7 +30,9 @@ export const spawn = (command: string, options?: SpawnOptions) => {
   });
   if (result.stderr) logger.warn(result.stderr);
   if (result.error) logger.error(result.error);
-  if (result.stdout) logger.info(result.stdout);
+  if (result.stdout && !customOptions?.skipInfoLog && process.env.FORCE_LOGS !== 'true')
+    logger.info(result.stdout);
   if (result.error) throw result.error;
+  if (result.stderr && customOptions?.throwOnStderr) throw Error(result.stderr);
   return result.stdout;
 };

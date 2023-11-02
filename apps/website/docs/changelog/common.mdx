@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Update types for Node 18. [[#2413](https://github.cbhq.net/frontend/cds/pull/2413)]
+
 ## 5.16.8 ((11/1/2023, 05:22 PM PST))
 
 This is an artificial version bump with no new change.

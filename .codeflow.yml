@@ -10,9 +10,11 @@ build:
     - BaldurECR:
         name: cds-adoption
         path: ./apps/cds-adoption/Dockerfile
+        autobuild: false
     - BaldurECR:
         name: cds-adoption-trigger
         path: ./apps/cds-adoption/trigger.Dockerfile
+        autobuild: false
     - BaldurECR:
         name: cds-css-upload
         path: ./packages/web/cssupload-production.Dockerfile
@@ -24,9 +26,11 @@ build:
     - BaldurECR:
         name: cds-figma-sync
         path: ./apps/cds-figma-sync/Dockerfile
+        autobuild: false
     - BaldurECR:
         name: cds-figma-sync-trigger
         path: ./apps/cds-figma-sync/trigger.Dockerfile
+        autobuild: false
     - BaldurECR:
         name: cds-storybook
         path: ./apps/storybook/production.Dockerfile
