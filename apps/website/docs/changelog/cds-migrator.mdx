@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.23 (11/2/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: pass projectConfig down to jsx migrations. [[DX-2650](https://jira.coinbase-corp.com/browse/DX-2650)]
+
 ## 0.1.22 (10/24/2023 PST)
 
 #### 🐞 Fixes

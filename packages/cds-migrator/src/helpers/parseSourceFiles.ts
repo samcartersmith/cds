@@ -1,19 +1,13 @@
-import { getProjects, joinPathFragments, ProjectConfiguration, Tree } from '@nrwl/devkit';
+import { getProjects, joinPathFragments, Tree } from '@nrwl/devkit';
 import chalk from 'chalk';
 import progress from 'cli-progress';
 import glob from 'fast-glob';
 import fs from 'node:fs';
-import { Project, SourceFile } from 'ts-morph';
+import { Project } from 'ts-morph';
 
 import { checkHasCdsDependency } from './checkHasCdsDependency';
 import { CdsPackages, checkHasCdsPackage } from './checkHasCdsPackage';
-
-export type TransformFnType = {
-  path: string;
-  tree: Tree;
-  sourceFile: SourceFile;
-  projectConfig: ProjectConfiguration;
-};
+import { CreateMigrationParams } from './types';
 
 /**
  * This is a faster way of getting project `sourceFiles` using fast-glob and nx devkit utils
@@ -25,9 +19,9 @@ export type TransformFnType = {
  * @param filterSourceFiles - Parses sourceFiles that meet a conditional
  * @param packageNames - Checks if a project has specific CDS package(s) as a dependency
  */
-export default async function parseSourceFiles(
+export async function parseSourceFiles(
   tree: Tree,
-  transformFn: (params: TransformFnType) => void,
+  transformFn: (params: CreateMigrationParams) => void,
   filterSourceFiles?: (path: string) => boolean,
   packageNames?: CdsPackages[],
   onlyTestFiles?: boolean,

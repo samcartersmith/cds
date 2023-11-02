@@ -1,14 +1,16 @@
-import { Tree } from '@nrwl/devkit';
 import { JsxOpeningElement, JsxSelfClosingElement, SourceFile, SyntaxKind } from 'ts-morph';
 
-import { JsxElementType } from './types';
+import { CreateMigrationParams, JsxElementType } from './types';
 
 export type ParseJsxElementsCbParams = {
   jsx: JsxElementType;
-  sourceFile: SourceFile;
-  tree: Tree;
-  path: string;
-};
+} & CreateMigrationParams;
+
+type ParseJsxElementParams = {
+  callback: (params: ParseJsxElementsCbParams) => void;
+  checkSourceFile?: (sourceFile: SourceFile) => boolean;
+  excludeOpeningElements?: boolean;
+} & CreateMigrationParams;
 
 /**
  * Parses `sourceFile` for JSX Elements (self enclosed components and opening elements) and passes each element to a callback function
@@ -26,14 +28,8 @@ export default function parseJsxElements({
   callback,
   checkSourceFile,
   excludeOpeningElements = false,
-}: {
-  path: string;
-  sourceFile: SourceFile;
-  tree: Tree;
-  callback: (params: ParseJsxElementsCbParams) => void;
-  checkSourceFile?: (sourceFile: SourceFile) => boolean;
-  excludeOpeningElements?: boolean;
-}) {
+  projectConfig,
+}: ParseJsxElementParams) {
   const jsxElements: (JsxSelfClosingElement | JsxOpeningElement)[] = [
     ...sourceFile.getDescendantsOfKind(SyntaxKind.JsxSelfClosingElement),
   ];
@@ -45,12 +41,12 @@ export default function parseJsxElements({
   if (checkSourceFile) {
     if (checkSourceFile?.(sourceFile)) {
       jsxElements.forEach((jsx) => {
-        callback({ jsx, sourceFile, tree, path });
+        callback({ jsx, sourceFile, tree, path, projectConfig });
       });
     }
   } else {
     jsxElements.forEach((jsx) => {
-      callback({ jsx, sourceFile, tree, path });
+      callback({ jsx, sourceFile, tree, path, projectConfig });
     });
   }
 }

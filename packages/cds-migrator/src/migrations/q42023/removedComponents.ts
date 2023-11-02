@@ -1,9 +1,13 @@
 import { output, Tree } from '@nrwl/devkit';
 
-import { checkFileIncludesImport } from '../../helpers/checkFileIncludesImport';
-import { createMigration, CreateMigrationParams } from '../../helpers/createMigration';
-import { generateManualMigrationOutput } from '../../helpers/generateManualMigrationOutput';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
+import {
+  checkFileIncludesImport,
+  createMigration,
+  CreateMigrationParams,
+  generateManualMigrationOutput,
+  logDebug,
+  logWarning,
+} from '../../helpers';
 
 import { removedComponents } from './data/componentMigrations';
 

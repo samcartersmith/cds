@@ -3,7 +3,8 @@ import { SourceFile } from 'ts-morph';
 
 import { CdsPackages } from './checkHasCdsPackage';
 import parseJsxElements, { ParseJsxElementsCbParams } from './parseJsxElements';
-import parseSourceFiles, { TransformFnType } from './parseSourceFiles';
+import { parseSourceFiles } from './parseSourceFiles';
+import { CreateMigrationParams } from './types';
 
 type CreateJsxMigrationParams = {
   /** The NX Tree */
@@ -47,7 +48,7 @@ export async function createJsxMigration({
   excludeOpeningElements,
   packageNames,
 }: CreateJsxMigrationParams) {
-  const parseSourceFile = (args: TransformFnType) => {
+  const parseSourceFile = (args: CreateMigrationParams) => {
     return parseJsxElements({
       ...args,
       callback,

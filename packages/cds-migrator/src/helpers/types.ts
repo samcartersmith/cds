@@ -1,4 +1,12 @@
-import { JsxOpeningElement, JsxSelfClosingElement } from 'ts-morph';
+import { ProjectConfiguration, Tree } from '@nrwl/devkit';
+import { JsxOpeningElement, JsxSelfClosingElement, SourceFile } from 'ts-morph';
+
+export type CreateMigrationParams = {
+  path: string;
+  tree: Tree;
+  sourceFile: SourceFile;
+  projectConfig: ProjectConfiguration;
+};
 
 export type RenameMap = Record<string, string>;
 

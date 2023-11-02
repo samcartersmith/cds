@@ -1,12 +1,8 @@
 import { Tree } from '@nrwl/devkit';
-import { SourceFile } from 'ts-morph';
 
 import { CdsPackages } from './checkHasCdsPackage';
-import parseSourceFiles, { TransformFnType } from './parseSourceFiles';
-
-export type CreateMigrationParams = TransformFnType & {
-  sourceFile: SourceFile;
-};
+import { parseSourceFiles } from './parseSourceFiles';
+import { CreateMigrationParams } from './types';
 
 /**
  * Helper script that makes it easy to write new cds-migrator scripts

@@ -1,10 +1,13 @@
 import { Tree } from '@nrwl/devkit';
 
-import { checkFileIncludesImport } from '../../helpers/checkFileIncludesImport';
-import { createMigration, CreateMigrationParams } from '../../helpers/createMigration';
-import { logDebug } from '../../helpers/loggingHelpers';
-import { replaceImportPath } from '../../helpers/replaceImportPath';
-import { writeMigrationToFile } from '../../helpers/writeMigrationToFile';
+import {
+  checkFileIncludesImport,
+  createMigration,
+  CreateMigrationParams,
+  logDebug,
+  replaceImportPath,
+  writeMigrationToFile,
+} from '../../helpers';
 
 import { pathMigrations } from './data/pathMigrations';
 
