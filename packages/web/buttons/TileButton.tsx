@@ -68,6 +68,13 @@ export const TileButton = memo(
       return isDense ? denseTileSize : tileSize;
     }, [isDense]);
 
+    const computedPressableStyles = useMemo(() => {
+      return {
+        minHeight: `${computedTileSize}px`,
+        width: `${computedTileSize}px`,
+      };
+    }, [computedTileSize]);
+
     return (
       <div
         style={{
@@ -86,7 +93,7 @@ export const TileButton = memo(
           className={cx(insetFocusRing, pressableStyles)}
           onBlur={handleHideOverflow}
           onFocus={handleShowOverflow}
-          width={computedTileSize}
+          style={computedPressableStyles}
         >
           <Tile count={count} showOverflow={shouldOverflow} title={title}>
             {content}
