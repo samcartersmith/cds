@@ -1,11 +1,4 @@
-# Ignore these files
 node_modules
-
-apps/*/**
-docs/*/**
-libs/*/**
-packages/*/**
-tools/*/**
 
 .buildkite
 .git
@@ -13,17 +6,6 @@ tools/*/**
 .nx
 .vscode
 
-# Allow these files
-!.yarn
-!.yarnrc.yml
-!yarn.lock
-!**/package.json
-!**/project.json
-!apps/cds-adoption/**/*
-!libs/codegen/**/*
-!libs/script-utils/**/*
-
-# Ignore these files
 private-key.pem
 .env
 .env.*
