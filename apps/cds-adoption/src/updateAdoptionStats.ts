@@ -57,8 +57,8 @@ export const updateAdoptionStats = async () => {
     const changedFiles = await bot.git.checkStatus();
 
     if (!changedFiles) {
-      bot.logger.info('No changes to commit, exiting...');
-      return;
+      bot.logger.info('No changes to commit, stopping update');
+      return 'No changes to commit';
     }
 
     const dateString = new Date().toISOString().replace(/\..*/, '').replaceAll(':', '-');
@@ -103,7 +103,9 @@ export const updateAdoptionStats = async () => {
     bot.logger.info(
       `Finished updating adoption stats in ${(Date.now() - startTime) / 1000} seconds`,
     );
+    return `New CDS adoption stats PR: ${newPR.html_url}`;
   } catch (error) {
     bot.logger.error(error);
+    throw error;
   }
 };

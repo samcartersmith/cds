@@ -71,8 +71,8 @@ export const syncAssets = async () => {
     const hasIllustrationsChanges = changedFiles.includes(config.repo.generatedIllustrationsPath);
 
     if (!changedFiles) {
-      bot.logger.info('No changes to commit, exiting...');
-      return;
+      bot.logger.info('No changes to commit, stopping sync');
+      return 'No changes to commit';
     }
 
     // Generate storybook sheets in cds-web
@@ -163,7 +163,10 @@ export const syncAssets = async () => {
       await Promise.all(botPRs.map(async (pr) => bot.octokit.closePR(pr.number)));
 
     bot.logger.info(`Finished syncing assets in ${(Date.now() - startTime) / 1000} seconds`);
+
+    return `New CDS Figma assets PR: ${newPR.html_url}`;
   } catch (error) {
     bot.logger.error(error);
+    throw error;
   }
 };

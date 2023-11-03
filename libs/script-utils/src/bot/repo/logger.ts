@@ -5,7 +5,8 @@ import { createLogger, format, transports } from 'winston';
 import { ROOT_WORKING_DIRECTORY } from './workingDirectory.js';
 
 const MEGABYTE = 1024 * 1024;
-const MAX_LOG_SIZE = 5 * MEGABYTE;
+const MAX_LOG_SIZE = 2 * MEGABYTE;
+const MAX_LOG_SIZE_STRING = '2MB';
 
 const errorLogFilepath = path.resolve(ROOT_WORKING_DIRECTORY, 'error.log');
 const combinedLogFilepath = path.resolve(ROOT_WORKING_DIRECTORY, 'combined.log');
@@ -37,11 +38,19 @@ export const resetLogs = () => {
 export const resetLargeLogs = () => {
   if (existsSync(combinedLogFilepath) && statSync(combinedLogFilepath).size > MAX_LOG_SIZE) {
     rmSync(combinedLogFilepath);
-    logger.info(`Reset logs in ${path.basename(combinedLogFilepath)} as it exceeded 5MB max size`);
+    logger.info(
+      `Reset logs in ${path.basename(
+        combinedLogFilepath,
+      )} as it exceeded ${MAX_LOG_SIZE_STRING} max size`,
+    );
   }
   if (existsSync(errorLogFilepath) && statSync(errorLogFilepath).size > MAX_LOG_SIZE) {
     rmSync(errorLogFilepath);
-    logger.info(`Reset logs in ${path.basename(errorLogFilepath)}  as it exceeded 5MB max size`);
+    logger.info(
+      `Reset logs in ${path.basename(
+        errorLogFilepath,
+      )}  as it exceeded ${MAX_LOG_SIZE_STRING} max size`,
+    );
   }
 };
 

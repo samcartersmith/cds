@@ -8,9 +8,17 @@ bot.resetLargeLogs();
 const HOSTNAME = '0.0.0.0';
 const PORT = 3001;
 
-let running = false;
+const STATUS = {
+  WAITING: 'Ready and waiting for a command',
+  WORKING: 'Adoption stats update in progress',
+  FINISHED: (message: string) => message,
+  ERROR: (error?: Error | string) => (error ? `Error: ${error}` : 'Error'),
+};
 
-const workerPool = new WorkerPool(1, new URL(workerFilepath));
+let running = false;
+let status = STATUS.WAITING;
+
+const workerPool = new WorkerPool<undefined, { message: string }>(1, new URL(workerFilepath));
 
 process.on('exit', workerPool.close);
 
@@ -27,14 +35,26 @@ const server = createServer((request, response) => {
   }
 
   if (request.url === '/sync') {
-    data = 'Starting adoption stats update';
     running = true;
+    status = STATUS.WORKING;
+    data = 'Starting adoption stats update';
 
     workerPool.runTask(undefined, (error, result) => {
-      if (error) bot.logger.error('WorkerPool task failed', error);
-      else bot.logger.info('WorkerPool task completed successfully', result);
       running = false;
+      if (error || !result) {
+        status = STATUS.ERROR(error || 'WorkerPool task result missing');
+        bot.logger.error('WorkerPool task failed', error);
+      } else {
+        status = STATUS.FINISHED(result.message);
+        bot.logger.info(`WorkerPool task completed successfully: ${result}`);
+      }
     });
+  }
+
+  if (request.url === '/status') data = status;
+  if (request.url === '/reset-status') {
+    status = STATUS.WAITING;
+    data = 'Status successfully reset';
   }
 
   if (request.url === '/logs') data = bot.getCombinedLogs() || 'No logs';

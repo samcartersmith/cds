@@ -8,7 +8,19 @@ ENV NODE_ENV=production
 ARG CODEFLOW_COMMIT_TAG
 ENV CODEFLOW_COMMIT_TAG=$CODEFLOW_COMMIT_TAG
 
+# Snowflake start
+RUN apt-get update && apt-get install -y wget
 
+ENV SNOWSQL_DEST=/usr/local/snowsql/
+ENV SNOWSQL_LOGIN_SHELL=/tmp/profile
+
+RUN wget -q -O snowsql.bash https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowsql-1.2.28-linux_x86_64.bash \
+  && touch /tmp/profile \
+  && bash snowsql.bash \
+  && mv /usr/local/snowsql/snowsql /usr/local/bin/ \
+  && rm -rf /usr/local/snowsql \
+  && rm snowsql.bash
+# Snowflake end
 
 WORKDIR /repo
 
