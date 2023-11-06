@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.9 (11/3/2023 PST)
+
+#### 🐞 Fixes
+
+- Resolve the codeOwnerFilePath relative to the current working directory in a11y FileParser. [[#2427](https://github.cbhq.net/frontend/cds/pull/2427)]
+
 ## 0.1.8 (10/30/2023 PST)
 
 #### 🚀 Updates

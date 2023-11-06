@@ -98,7 +98,12 @@ export class FilesParser extends TestTask {
     targetPath: string,
   ): Promise<CodeOwnerObject | null> {
     try {
-      const fileContent = await readFile(codeOwnerFilePath, 'utf8');
+      // Resolve the codeOwnerFilePath relative to the current working directory
+      const absoluteCodeOwnerFilePath = path.resolve(process.cwd(), codeOwnerFilePath);
+
+      // Read and process the CODEOWNERS file
+      const fileContent = await readFile(absoluteCodeOwnerFilePath, 'utf8');
+
       const normalizedTargetPath = path.normalize(targetPath);
       const codeOwnersMap: Record<string, string[]> = {};
 
