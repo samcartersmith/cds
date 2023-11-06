@@ -2,7 +2,7 @@
 
 try {
   await $`esbuild ./src/plugin.ts --bundle --outfile=dist/plugin.js`;
-  await $`vite build`;
+  await $`vite build -m production`;
 } catch (err) {
   // eslint-disable-next-line no-console
   console.error(err);

@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/apps/figma-plugin",
-    "rootDir": "./"
+    "outDir": "../../.nx/dts/apps/figma-strings-plugin",
+    "rootDir": "./",
+    "module": "ESNext"
   },
   "include": [
     "src",
@@ -17,5 +18,6 @@
     {
       "path": "../../libs/figma-styles"
     }
-  ]
+  ],
+
 }

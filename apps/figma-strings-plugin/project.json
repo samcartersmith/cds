@@ -1,7 +1,7 @@
 {
-  "name": "figma-plugin",
+  "name": "figma-strings-plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/figma-plugin",
+  "sourceRoot": "apps/figma-strings-plugin",
   "projectType": "application",
   "tags": [],
   "targets": {

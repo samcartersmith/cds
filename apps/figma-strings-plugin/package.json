@@ -1,5 +1,5 @@
 {
-  "name": "@cbhq/cds-figma-plugin",
+  "name": "@cbhq/cds-figma-strings-plugin",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@cbhq/figma-styles": "workspace:^",
+    "contentful": "^7.14.6",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-figma-plugin-ds": "^2.3.0"

@@ -1,4 +1,3 @@
-/* eslint-disable @cbhq/react-prefer-named-module-import */
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 

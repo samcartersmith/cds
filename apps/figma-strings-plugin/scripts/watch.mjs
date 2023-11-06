@@ -4,7 +4,7 @@ try {
   within(async () => {
     await $`esbuild ./src/plugin.ts --bundle --outfile=dist/plugin.js --watch`;
   });
-  await $`vite build --watch`;
+  await $`vite build --watch -m development`;
 } catch (err) {
   // eslint-disable-next-line no-console
   console.error(err);
