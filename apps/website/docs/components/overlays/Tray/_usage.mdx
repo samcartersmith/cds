@@ -139,7 +139,7 @@ const TrayMenu = () => {
 
 ### Flows with Multiple Overlay Components
 
-If you want an overlay component to trigger the visibility of another overlay component, you need to make sure the first component has completely dismounted before opening the next one. Overlay components expose lifecycle methods like `onDidClose` or `onCloseComplete` that can be used to trigger the next overlay component.
+If you want an overlay component to trigger the visibility of another overlay component, you need to make sure the first component has completely dismounted before opening the next one. Overlay components expose lifecycle methods like `onDidClose` or `onCloseComplete` that can be used to trigger the next overlay component. In the case of triggering navigation, you need to set state to conditionally render the overlay component and make sure it is dismounted on close, then call navigation on `onDidClose` or `onCloseComplete`.
 
 ```jsx
 function TrayToModalFlow() {

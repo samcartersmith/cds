@@ -204,7 +204,7 @@ const NavigationTray = () => {
   const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
     useToggler(false);
   const [value, setValue] = useState<string>();
-  const trayRef = useRef<DrawerRefBaseProps>();
+  const trayRef = useRef<DrawerRefBaseProps>(null);
 
   const handleOptionPress = useCallback(() => {
     trayRef.current?.handleClose();
@@ -219,7 +219,7 @@ const NavigationTray = () => {
         <IconButton name="profile" onPress={NoopFn} />
       </HStack>
       {isTrayVisible && (
-        <Tray onCloseComplete={handleCloseTray}>
+        <Tray ref={trayRef} onCloseComplete={handleCloseTray}>
           <Menu onChange={setValue} value={value}>
             {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
               <SelectOption

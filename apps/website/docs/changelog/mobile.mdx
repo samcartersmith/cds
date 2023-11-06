@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.16.9 (11/6/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] docs: update tray docs and minor changes to tray story. [[#2428](https://github.cbhq.net/frontend/cds/pull/2428)] [[DX-2248](https://jira.coinbase-corp.com/browse/DX-2248)]
+
 ## 5.16.8 ((11/1/2023, 05:22 PM PST))
 
 This is an artificial version bump with no new change.
