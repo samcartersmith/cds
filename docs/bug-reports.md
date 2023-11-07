@@ -1,6 +1,6 @@
 # Bug Reports
 
-**We require a minimum viable reproduction for all bug reports.**
+**We require a minimum viable reproduction for all bug reports. Please make sure you are using the [latest CDS version](https://github.cbhq.net/frontend/cds/releases).**
 
 If you're not familiar with creating a minimum viable reproduction, please read these two excellent posts:
 
