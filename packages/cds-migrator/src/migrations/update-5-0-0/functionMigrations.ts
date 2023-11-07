@@ -7,8 +7,7 @@ import {
   logDebug,
   logWarning,
   renameFunction,
-  replaceImportedModule,
-  replaceImportPath,
+  replaceImport,
   writeMigrationToFile,
 } from '../../helpers';
 
@@ -30,13 +29,7 @@ const callback = (args: CreateMigrationParams) => {
     if (migrationConfig) {
       const { name, path, replacement } = migrationConfig;
       const newPath = Object.values(path)[0];
-      replaceImportedModule({
-        sourceFile,
-        oldValue: name,
-        newValue: replacement,
-        path: oldPath,
-      });
-      replaceImportPath({ sourceFile, oldPath, newPath });
+      replaceImport({ sourceFile, oldPath, newPath, namedImport: name });
       renameFunction({
         name,
         sourceFile,

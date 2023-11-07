@@ -10,8 +10,7 @@ import {
   logWarning,
   ParseJsxElementsCbParams,
   renameJsxTag,
-  replaceImportedModule,
-  replaceImportPath,
+  replaceImport,
   writeMigrationToFile,
 } from '../../helpers';
 
@@ -55,16 +54,10 @@ const callback = (args: ParseJsxElementsCbParams) => {
       return;
     }
 
-    replaceImportPath({ sourceFile, oldPath, newPath });
+    replaceImport({ sourceFile, oldPath, newPath, namedImport: component });
     // some components were replaced by ones with the same name, but new path and API
     // so we only want to find/replace usage if there is a replacement
     if (replacement) {
-      replaceImportedModule({
-        sourceFile,
-        oldValue: name,
-        newValue: replacement,
-        path: newPath,
-      });
       renameJsxTag({ jsx, value: replacement });
     }
     writeMigrationToFile({ sourceFile, oldValue: name, newValue: replacement });

@@ -21,7 +21,6 @@ const renamedValues = Object.values(propValueMigrations).flatMap((obj) =>
 );
 // unique values for all directories where migratable component would live
 const importPaths = [...new Set(Object.values(propValueMigrations).flatMap((obj) => obj.paths))];
-console.log({ importPaths });
 
 const checkSourceFile = (sourceFile: SourceFile) => {
   const sourceContent = sourceFile.getFullText();

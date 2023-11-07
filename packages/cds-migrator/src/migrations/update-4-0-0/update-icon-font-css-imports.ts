@@ -5,7 +5,7 @@ import {
   createMigration,
   CreateMigrationParams,
   logDebug,
-  replaceImportPath,
+  replaceImport,
   writeMigrationToFile,
 } from '../../helpers';
 
@@ -21,7 +21,7 @@ const filterSourceFiles = (path: string) => {
 };
 
 function updateIconImportPaths({ sourceFile }: CreateMigrationParams) {
-  replaceImportPath({ sourceFile, oldPath, newPath });
+  replaceImport({ sourceFile, oldPath, newPath });
   writeMigrationToFile({
     oldValue: oldPath,
     newValue: newPath,

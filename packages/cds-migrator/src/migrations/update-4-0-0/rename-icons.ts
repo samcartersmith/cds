@@ -18,7 +18,6 @@ import { iconRenames } from './data/iconRenames';
 const renamedIcons = Object.keys(Object.values(iconRenames).map((val) => val.valueMap));
 // unique values for all directories where migratable component would live
 const importPaths = [...new Set(Object.values(iconRenames).flatMap((obj) => obj.paths))];
-console.log({ importPaths });
 
 const checkSourceFile = (sourceFile: SourceFile) => {
   const sourceContent = fs.readFileSync(sourceFile.getFilePath(), 'utf-8');

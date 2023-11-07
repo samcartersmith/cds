@@ -5,7 +5,7 @@ import {
   createMigration,
   CreateMigrationParams,
   logDebug,
-  replaceImportPath,
+  replaceImport,
   writeMigrationToFile,
 } from '../../helpers';
 
@@ -25,7 +25,7 @@ const callback = (args: CreateMigrationParams) => {
   if (deprecatedPathsInFile.length) {
     deprecatedPathsInFile.forEach((oldPath) => {
       const newPath = pathMigrations[oldPath];
-      replaceImportPath({ sourceFile, oldPath, newPath });
+      replaceImport({ sourceFile, oldPath, newPath });
       writeMigrationToFile({ sourceFile, oldValue: oldPath, newValue: newPath });
     });
   }

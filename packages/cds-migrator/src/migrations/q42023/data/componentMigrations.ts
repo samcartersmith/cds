@@ -14,7 +14,7 @@ export const oneToOneMigrations: ComponentMigration[] = [
   {
     name: 'FiatIcon',
     path: {
-      '@cbhq/cds-mobile/icons/FiatIcon': '@cbhq/cds-mobile/icons/Icon',
+      '@cbhq/cds-mobile/icons': '@cbhq/cds-mobile/icons',
     },
     replacement: 'Icon',
     warning: warningText,

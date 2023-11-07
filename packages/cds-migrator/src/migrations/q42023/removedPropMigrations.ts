@@ -16,7 +16,6 @@ const filterSourceFiles = (path: string) => {
   const removedPropsList: string[] = [];
 
   Object.values(removedProps).forEach(({ path: removedPropPath, props }) => {
-    console.log('props', props);
     removedPropsList.push(...props);
     if (Array.isArray(removedPropPath)) {
       removedPropPath.forEach((p) => pathsForRemovedProps.push(p));
@@ -24,9 +23,6 @@ const filterSourceFiles = (path: string) => {
       pathsForRemovedProps.push(removedPropPath);
     }
   });
-
-  console.log('removedPropsList', removedPropsList);
-  console.log('pathsForRemovedProps', pathsForRemovedProps);
 
   const hasImportForRemovedProp = pathsForRemovedProps.some((p) => sourceFile.includes(p));
   const hasRemovedProp = removedPropsList.some((p) => sourceFile.includes(p));

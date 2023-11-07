@@ -17,7 +17,6 @@ import { illustrationRenames } from './data/illustrationRenames';
 
 // unique values for all directories where migratable component would live
 const importPaths = [...new Set(Object.values(illustrationRenames).flatMap((obj) => obj.paths))];
-console.log({ importPaths });
 
 const renamedIllos = Object.keys(Object.values(illustrationRenames).map((val) => val.valueMap));
 

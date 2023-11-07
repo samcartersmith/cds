@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.25 (11/7/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: import migrations now work for shallow imports.
+
 ## 0.1.24 (11/2/2023 PST)
 
 #### 🚀 Updates
