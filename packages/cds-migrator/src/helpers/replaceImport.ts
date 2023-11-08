@@ -13,7 +13,17 @@ const addNewModuleImport = (sourceFile: SourceFile, namedImport: string, newPath
   }
 };
 
-/** Note! If you want to catch shallow imports, you'll have to pass a namedImport */
+/**
+ * Replace an import with a new path in a source file. If a namedImport is specified, only the import matching
+ * both the oldPath and the namedImport will be replaced. This allows for selective refactoring of imports.
+ * If the namedImport is also being renamed, specify the new name with newNamedImport.
+ *
+ * @param {SourceFile} sourceFile - The source file to refactor.
+ * @param {string} oldPath - The current import path to replace.
+ * @param {string} newPath - The new import path to use.
+ * @param {string} [namedImport] - The specific import to replace (for shallow imports).
+ * @param {string} [newNamedImport] - The new name for the named import if it is being renamed.
+ */
 export const replaceImport = ({
   sourceFile,
   oldPath,

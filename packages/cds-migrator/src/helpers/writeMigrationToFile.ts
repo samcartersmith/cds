@@ -8,7 +8,7 @@ type WriteToFileType = {
   oldValue: string;
   newValue?: string;
   sourceFile: SourceFile;
-  jsx?: JsxElementType;
+  jsx?: JsxElementType | string;
 };
 
 type WriteMultipleToFileType = {
@@ -59,7 +59,7 @@ export function writeMultipleMigrationsToFile({
  * @param sourceFile - The `sourceFile` contains the migration that needs to be saved
  */
 export function writeMigrationToFile({ oldValue, newValue, jsx, sourceFile }: WriteToFileType) {
-  const jsxContent = jsx?.print();
+  const jsxContent = typeof jsx === 'string' ? jsx : jsx?.print();
   const bodyLines = jsxContent ? [jsxContent] : undefined;
   const path = sourceFile.getFilePath();
 

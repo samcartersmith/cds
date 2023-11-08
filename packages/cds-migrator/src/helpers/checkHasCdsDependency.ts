@@ -5,8 +5,19 @@ const mobilePackage = '@cbhq/cds-mobile';
 const webPackage = '@cbhq/cds-web';
 const commonPackage = '@cbhq/cds-common';
 const lottieFilesPackage = '@cbhq/cds-lottie-files';
+const webVisualizationPackage = '@cbhq/cds-web-visualization';
+const mobileVisualizationPackage = '@cbhq/cds-mobilbe-visualization';
+const webOverlaysPackage = '@cbhq/cds-web-overlays';
 const coreDepsToCheck = [webPackage, mobilePackage];
-const depsToCheck = [webPackage, mobilePackage, commonPackage, lottieFilesPackage];
+const depsToCheck = [
+  webPackage,
+  mobilePackage,
+  commonPackage,
+  lottieFilesPackage,
+  webVisualizationPackage,
+  mobileVisualizationPackage,
+  webOverlaysPackage,
+];
 
 function hasCdsDep(dep: string) {
   return depsToCheck.includes(dep);
@@ -79,6 +90,9 @@ export function checkHasCdsDependency({ tree, project, checkRoot }: Params) {
           web: dependencies[webPackage],
           common: dependencies[commonPackage],
           'lottie-files': dependencies[lottieFilesPackage],
+          'cds-web-visualization': dependencies[webVisualizationPackage],
+          'cds-mobile-visualization': dependencies[mobileVisualizationPackage],
+          'cds-web-overlays': dependencies[webOverlaysPackage],
         }
       : undefined,
     devDependencies: devDependencies
@@ -87,6 +101,9 @@ export function checkHasCdsDependency({ tree, project, checkRoot }: Params) {
           web: devDependencies[webPackage],
           common: devDependencies[commonPackage],
           'lottie-files': devDependencies[lottieFilesPackage],
+          'cds-web-visualization': devDependencies[webVisualizationPackage],
+          'cds-mobile-visualization': devDependencies[mobileVisualizationPackage],
+          'cds-web-overlays': devDependencies[webOverlaysPackage],
         }
       : undefined,
     peerDependencies: peerDependencies
@@ -95,6 +112,9 @@ export function checkHasCdsDependency({ tree, project, checkRoot }: Params) {
           web: peerDependencies[webPackage],
           common: peerDependencies[commonPackage],
           'lottie-files': peerDependencies[lottieFilesPackage],
+          'cds-web-visualization': peerDependencies[webVisualizationPackage],
+          'cds-mobile-visualization': peerDependencies[mobileVisualizationPackage],
+          'cds-web-overlays': peerDependencies[webOverlaysPackage],
         }
       : undefined,
   };

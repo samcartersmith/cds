@@ -1,12 +1,15 @@
-import { addDependenciesToPackageJson, joinPathFragments, Tree } from '@nrwl/devkit';
+import { addDependenciesToPackageJson, Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
 import {
   checkFileIncludesImport,
+  checkHasCdsDependency,
   createMigration,
   CreateMigrationParams,
   logDebug,
   logSuccess,
+  replaceImport,
+  updatePeerDependencies,
   writeMigrationToFile,
 } from '../../helpers';
 import { checkHasDependency } from '../../helpers/checkHasDependency';
@@ -28,76 +31,94 @@ const filterSourceFiles = (path: string) => {
 };
 
 const callback = (args: CreateMigrationParams) => {
-  const { sourceFile, tree, projectConfig } = args;
+  const { sourceFile, tree, projectConfig: project } = args;
   const packagesToAdd: string[] = [];
 
   oldDirectories.forEach((oldDirectory) => {
-    const migrationConfig = migrations.find((mig) => mig.oldDir === oldDirectory);
-    if (migrationConfig) {
-      const { newDir } = migrationConfig;
-      if (checkFileIncludesImport(sourceFile, oldDirectory)) {
-        const declarationsFromOldPath = sourceFile
-          .getImportDeclarations()
-          .filter((imp) => imp.getModuleSpecifierValue().startsWith(oldDirectory));
-        if (declarationsFromOldPath) {
-          // check that the declaration includes a named import that has been decomped
-          // eg: import { Button } from '@cbhq/cds-web/button';
-          declarationsFromOldPath.forEach((declaration) => {
-            declaration.getNamedImports().forEach((namedImp) => {
-              const decompedExport = namedImp.getText();
-              const checkHasDecompedModule = decompedExports?.some((exp) => exp === decompedExport);
-              if (checkHasDecompedModule) {
-                packagesToAdd.push(newDir);
-
-                // if there's only one module exported and it's the one being decomped, delete the whole import
-                // eg: import { Button } from '@cbhq/cds-web/button'; would get deleted
-                if (declaration.getNamedImports().length === 1) {
-                  declaration.remove();
-                } else {
-                  // otherwise, just delete the named import that's being decomped
-                  // eg: import { Button, Link } from '@cbhq/cds-web/pressables'; Button would get deleted
-                  namedImp.remove();
-                }
-                // check if file already has the decomped package imported
-                if (checkFileIncludesImport(sourceFile, newDir)) {
-                  // if it does, add the named import to the existing import statement
-                  const existingImport = sourceFile
-                    .getImportDeclarations()
-                    .find((imp) => imp.getModuleSpecifierValue().includes(newDir));
-                  existingImport?.addNamedImport(decompedExport);
-                } else {
-                  // add a new import statement for the decomped package with the imported module
-                  sourceFile.addImportDeclaration({
-                    moduleSpecifier: newDir,
-                    namedImports: [decompedExport],
+    if (checkFileIncludesImport(sourceFile, oldDirectory)) {
+      const declarationsFromOldPath = sourceFile
+        .getImportDeclarations()
+        .filter((imp) => imp.getModuleSpecifierValue().startsWith(oldDirectory));
+      if (declarationsFromOldPath) {
+        // check that the declaration includes a named import that has been decomped
+        // eg: import { Button } from '@cbhq/cds-web/button';
+        declarationsFromOldPath.forEach((declaration) => {
+          const declarationPath = declaration.getModuleSpecifierValue();
+          declaration.getNamedImports().forEach((namedImp) => {
+            const impName = namedImp.getText();
+            // we're filtering because a single shallow path could have multiple decomped exports and we need to migrate each one
+            const decompedModules = decompedExports?.filter((exp) => exp === impName);
+            if (decompedModules) {
+              decompedModules.forEach((decompedExport) => {
+                // get the migration config for the found export
+                const migConfig = migrations.find(
+                  (mig) =>
+                    mig.exports.includes(decompedExport) && declarationPath.startsWith(mig.oldDir),
+                );
+                if (migConfig) {
+                  const { newDir, oldDir } = migConfig;
+                  // we'll need to add the newly decomped package to the project's package.json
+                  packagesToAdd.push(newDir);
+                  replaceImport({
+                    sourceFile,
+                    oldPath: oldDir,
+                    newPath: newDir,
+                    namedImport: decompedExport,
                   });
+                  // after all file changes are made, write the migration file
+                  writeMigrationToFile({
+                    sourceFile,
+                    oldValue: oldDir,
+                    newValue: newDir,
+                    jsx: decompedExport,
+                  });
+                  logDebug('Make sure you run lint --fix to sort imports in affected files. ');
                 }
-              }
-            });
+              });
+            }
           });
-        }
+        });
       }
     }
   });
   if (packagesToAdd.length) {
-    packagesToAdd.forEach((pkg) => {
-      const migrationConfig = migrations.find((mig) => mig.oldDir === pkg);
+    // we're basically checking where CDS core dependencies are installed so we can add decomped packages to the same place
+    const { peerDependencies, dependencies, devDependencies, packageJsonPath } =
+      checkHasCdsDependency({ tree, project });
 
-      // after all file changes are made, write the migration file
-      writeMigrationToFile({
-        sourceFile,
-        oldValue: pkg,
-        newValue: migrationConfig?.newDir,
-      });
-      logDebug('Make sure you run lint --fix to sort imports in affected files. ');
-
-      // update project dependencies to include decomped package
-      // check package.json for the decomped package and add it if it doesn't exist
-      const hasDecompedPackageDep = checkHasDependency(pkg, tree, projectConfig);
-      if (!hasDecompedPackageDep && migrationConfig) {
-        const packageJsonPath = joinPathFragments(projectConfig.root, 'package.json');
-        addDependenciesToPackageJson(tree, { pkg: 'latest' }, {}, packageJsonPath);
-        logSuccess(`Added ${pkg} to ${projectConfig.root}/package.json`);
+    packagesToAdd.forEach((packageName) => {
+      if (dependencies) {
+        // check if the decomped package is already installed
+        const hasDecompedPackageDep = checkHasDependency({ packageName, tree, project });
+        // if not, install it
+        if (!hasDecompedPackageDep) {
+          addDependenciesToPackageJson(tree, { [packageName]: 'latest' }, {}, packageJsonPath);
+          logSuccess(`Added ${packageName} to ${packageJsonPath}`);
+        }
+      }
+      if (peerDependencies) {
+        const hasDecompedPackageDep = checkHasDependency({
+          packageName,
+          tree,
+          project,
+          type: 'peerDependencies',
+        });
+        if (!hasDecompedPackageDep) {
+          updatePeerDependencies(tree, { [packageName]: 'latest' }, packageJsonPath);
+          logSuccess(`Added ${packageName} to ${packageJsonPath}`);
+        }
+      }
+      if (devDependencies) {
+        const hasDecompedPackageDep = checkHasDependency({
+          packageName,
+          tree,
+          project,
+          type: 'devDependencies',
+        });
+        if (!hasDecompedPackageDep) {
+          addDependenciesToPackageJson(tree, {}, { [packageName]: 'latest' }, packageJsonPath);
+          logSuccess(`Added ${packageName} to ${packageJsonPath}`);
+        }
       }
     });
   }

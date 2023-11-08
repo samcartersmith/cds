@@ -3,24 +3,30 @@ import { addDependenciesToPackageJson, getProjects, output, Tree, updateJson } f
 import { CdsDependencyCheck, checkHasCdsDependency } from './checkHasCdsDependency';
 import { logDebug } from './loggingHelpers';
 
-const packageNames = ['mobile', 'web', 'common', 'lottie-files'] as const;
+const packageNames = [
+  'mobile',
+  'web',
+  'common',
+  'lottie-files',
+  'cds-web-overlays',
+  'cds-mobile-visualization',
+  'cds-web-visualization',
+] as const;
 type PackageName = (typeof packageNames)[number];
 type PackageVersionType = Record<string, string>;
-type DepsToAddMap = Record<PackageName, PackageVersionType>;
+type DepsToAddMap = Partial<Record<PackageName, PackageVersionType>>;
 type DepType = 'deps' | 'devDeps' | 'peerDeps';
 
 export function updatePeerDependencies(
   tree: Tree,
   depsToAdd: Partial<DepsToAddMap>,
-  pathToProject?: string,
+  pathToPackageJson?: string,
 ) {
-  const packageJsonPath = pathToProject ? `${pathToProject}/package.json` : 'package.json';
+  const packageJsonPath = pathToPackageJson || 'package.json';
   updateJson(tree, packageJsonPath, (json) => {
     Object.entries(depsToAdd).forEach(([pkg, version]) => {
-      if (json.peerDependencies?.[pkg]) {
-        // eslint-disable-next-line no-param-reassign
-        json.peerDependencies[pkg] = version;
-      }
+      // eslint-disable-next-line no-param-reassign
+      json.peerDependencies[pkg] = version;
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
