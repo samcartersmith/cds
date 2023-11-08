@@ -21,6 +21,8 @@ export const oneToOneMigrations: ComponentMigration[] = [
   },
 ];
 
+const oldCardWarning = 'use UpsellCard or NudgeCard instead';
+
 export const removedComponents: RemovedComponent[] = [
   {
     name: 'Illustration',
@@ -31,5 +33,45 @@ export const removedComponents: RemovedComponent[] = [
     name: 'Illustration',
     path: '@cbhq/cds-mobile/illustrations/Illustration',
     replacement: 'use Pictogram, HeroSquare, SpotSquare, or SpotRectangle instead',
+  },
+  {
+    name: 'FeatureEntryCard',
+    path: '@cbhq/cds-mobile/cards/FeatureEntryCard.tsx',
+    replacement: oldCardWarning,
+  },
+  {
+    name: 'FeatureEntryCard',
+    path: '@cbhq/cds-web/cards/FeatureEntryCard.tsx',
+    replacement: oldCardWarning,
+  },
+  {
+    name: 'FeatureEntryCard',
+    path: '@cbhq/cds-mobile/alpha/FeatureEntryCard.tsx',
+    replacement: oldCardWarning,
+  },
+  {
+    name: 'FeatureEntryCard',
+    path: '@cbhq/cds-web/alpha/FeatureEntryCard.tsx',
+    replacement: oldCardWarning,
+  },
+  {
+    name: 'AnnouncementCard',
+    path: '@cbhq/cds-mobile/cards/AnnouncementCard.tsx',
+    replacement: oldCardWarning,
+  },
+  {
+    name: 'AnnouncementCard',
+    path: '@cbhq/cds-web/cards/AnnouncementCard.tsx',
+    replacement: oldCardWarning,
+  },
+  {
+    name: 'AnnouncementCard',
+    path: '@cbhq/cds-mobile/alpha/AnnouncementCard.tsx',
+    replacement: oldCardWarning,
+  },
+  {
+    name: 'AnnouncementCard',
+    path: '@cbhq/cds-web/alpha/AnnouncementCard.tsx',
+    replacement: oldCardWarning,
   },
 ];

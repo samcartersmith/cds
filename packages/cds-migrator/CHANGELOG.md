@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.27 (11/1/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] docs: added deprecations for FeatureEntry and Announcement cards.
+
 ## 0.1.26 (11/7/2023 PST)
 
 #### 🐞 Fixes
