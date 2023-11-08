@@ -42,4 +42,22 @@ describe('Tray', () => {
     );
     expect(screen.getByTestId('handleBar')).toBeTruthy();
   });
+
+  it('calls onVibilityChange callback on open and close', () => {
+    const onVisibilityChangeSpy = jest.fn();
+    const onCloseCompleteSpy = jest.fn();
+    const { unmount } = render(
+      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+        <Tray onCloseComplete={onCloseCompleteSpy} onVisibilityChange={onVisibilityChangeSpy}>
+          {loremIpsum}
+        </Tray>
+      </SafeAreaProvider>,
+    );
+
+    expect(onVisibilityChangeSpy).toHaveBeenCalledWith('visible');
+
+    unmount();
+
+    expect(onVisibilityChangeSpy).toHaveBeenCalledWith('hidden');
+  });
 });

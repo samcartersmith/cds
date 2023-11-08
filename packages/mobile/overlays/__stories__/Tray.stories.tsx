@@ -37,11 +37,20 @@ const DefaultTray = ({ title }: { title?: string }) => {
     trayRef.current?.handleClose();
   };
 
+  const handleTrayVisibilityChange = useCallback((e: 'visible' | 'hidden') => {
+    console.log('Tray visibility changed:', e);
+  }, []);
+
   return (
     <>
       <Button onPress={handleOpenTray}>Open</Button>
       {isTrayVisible && (
-        <Tray ref={trayRef} onCloseComplete={handleCloseTray} title={title}>
+        <Tray
+          ref={trayRef}
+          onCloseComplete={handleCloseTray}
+          onVisibilityChange={handleTrayVisibilityChange}
+          title={title}
+        >
           <Menu onChange={setValue} value={value}>
             {options.map((option: string) => (
               <SelectOption

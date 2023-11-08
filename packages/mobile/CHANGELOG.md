@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.16.10 (11/7/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2699] fix(Tray): use onVisibilityChange prop. [[#2442](https://github.cbhq.net/frontend/cds/pull/2442)] [[DX-2699](https://jira.coinbase-corp.com/browse/DX-2699)]
+
 ## 5.16.9 (11/6/2023 PST)
 
 #### 🐞 Fixes

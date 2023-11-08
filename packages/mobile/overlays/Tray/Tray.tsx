@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useCallback } from 'react';
+import React, { forwardRef, memo, useCallback, useEffect } from 'react';
 import { DrawerRefBaseProps, NoopFn, TrayBaseProps } from '@cbhq/cds-common/types';
 
 import { HStack, VStack } from '../../layout';
@@ -10,7 +10,10 @@ type RenderTrayProps = {
 };
 
 export const Tray = memo(
-  forwardRef<DrawerRefBaseProps, TrayBaseProps>(function Tray({ children, title, ...props }, ref) {
+  forwardRef<DrawerRefBaseProps, TrayBaseProps>(function Tray(
+    { children, title, onVisibilityChange, ...props },
+    ref,
+  ) {
     const renderChildren = useCallback(
       ({ handleClose }: RenderTrayProps) => (
         <VStack spacingTop={title ? 0 : 2}>
@@ -24,6 +27,13 @@ export const Tray = memo(
       ),
       [children, title],
     );
+
+    useEffect(() => {
+      onVisibilityChange?.('visible');
+      return () => {
+        onVisibilityChange?.('hidden');
+      };
+    }, [onVisibilityChange]);
 
     return (
       <Drawer pin="bottom" {...props} ref={ref}>

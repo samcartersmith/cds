@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.16.10 ((11/7/2023, 07:31 PM PST))
+
+This is an artificial version bump with no new change.
+
 ## 5.16.9 ((11/6/2023, 03:07 PM PST))
 
 This is an artificial version bump with no new change.
