@@ -30,9 +30,9 @@ export const spawn = (
   });
   if (result.stderr) logger.warn(result.stderr);
   if (result.error) logger.error(result.error);
-  if (result.stdout && !customOptions?.skipInfoLog && process.env.FORCE_LOGS !== 'true')
+  if (result.stdout && (process.env.FORCE_LOGS === 'true' || !customOptions?.skipInfoLog))
     logger.info(result.stdout);
   if (result.error) throw result.error;
-  if (result.stderr && customOptions?.throwOnStderr) throw Error(result.stderr);
+  if (result.stderr && customOptions?.throwOnStderr) throw new Error(result.stderr);
   return result.stdout;
 };
