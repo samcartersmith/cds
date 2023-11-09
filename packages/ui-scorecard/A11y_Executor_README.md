@@ -281,6 +281,18 @@ FAILING `toBeAccessible`:
 
 Fixing failing tests will naturally improve your `a11yScore`. Using our previous [example](#example-scores), remediating all of the failures would increase `totalNumberOfPassingToBeAccessibleTests` from 441 to 753, resulting in an `a11yScore` of ~93% (753/810). If we were to also add missing `toBeAccessible` tests to the remaining test files, we would raise our `a11yScore` to a perfect 100%.
 
+#### Terminology
+
+- `totalNumberOfComponents`: Total number of components and screens
+
+- `totalNumberOfComponentTests`: Number tests that are testing a Component. Discovered that components with render is likely to be a component
+
+- `totalNumberOfToBeAccessibleTests`: Number of test files with toBeAccessible tests
+
+- `totalNumberOfPassingToBeAccessibleTests`: Number of test files with passing toBeAccessible tests
+
+- `totalNumberOfComponentsWithTest`: Total number of components and screens that have a matching test file
+
 ## Roadmap
 
 View the current roadmap for this project [here](https://docs.google.com/document/d/1msNpZVw-sh_ouGtQHIcy-rmneP3ePBTI6W6KwDKGs7s).
