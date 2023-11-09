@@ -9,7 +9,7 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  padding: 16px;
+  padding: 4px 8px;
 }
 
 .section-title {
@@ -49,20 +49,36 @@
 }
 
 .divider {
-  margin-left: -16px;
-  margin-right: -16px;
+  margin: 8px -16px;
   border-top: 1px solid #e6e6e6;
-  flex-grow: 1;
 }
 
 .selection-controls .select-menu {
-  width: 120%;
+  width: 200px;
 }
 
 .button-reset p {
   pointer-events: none;
 }
 
-.search-input {
-  margin-top: 10;
+.strings-list-container {
+  flex-grow: 1;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.strings-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.strings-toggle:hover {
+  opacity: 0.7;
+}
+
+.strings-list {
+  padding: 0 1rem;
 }

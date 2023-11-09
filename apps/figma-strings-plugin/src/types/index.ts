@@ -8,19 +8,18 @@ export type FigmaMessage =
   | {
       type: 'populate-strings';
       strings?: Content[];
-      locale: Locale;
+      locale: string;
       stringsMap?: Map<string, Content>;
     }
   | {
       type: 'toggle-display-mode';
       strings?: Content[];
-      locale: Locale;
+      locale: string;
       displayMode: 'text' | 'key';
       stringsMap?: Map<string, Content>;
     };
 
-export type Locale = 'en' | 'zh-CN';
-export type LocalizedField = Record<Locale, string>;
+export type LocalizedField = Record<string, string>;
 export type Content = {
   key: LocalizedField;
   text: LocalizedField;

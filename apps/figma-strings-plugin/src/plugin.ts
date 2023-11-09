@@ -5,6 +5,7 @@ figma.showUI(__html__, { width: 300, height: 300 });
 // Skip over invisible nodes and their descendants inside instances
 // for faster performance.
 figma.skipInvisibleInstanceChildren = true;
+figma.ui.postMessage({ type: 'current-user', user: figma.currentUser });
 
 // get all text nodes in selection
 function findByType(arr: readonly SceneNode[], type: NodeType) {

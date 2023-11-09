@@ -1,60 +1,55 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import 'react-figma-plugin-ds/figma-plugin-ds.css';
 import './styles.css';
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Button, Checkbox, Icon, Input, Select, SelectOption, Text } from 'react-figma-plugin-ds';
 import {
-  Button,
-  Checkbox,
-  Disclosure,
-  Input,
-  Select,
-  SelectOption,
-  Text,
-} from 'react-figma-plugin-ds';
-import * as contentful from 'contentful';
+  ActionType,
+  AnalyticsEventImportance,
+  ComponentType,
+  init as InitAnalytics,
+  logEvent,
+  PlatformName,
+} from '@cbhq/client-analytics';
 
-import type { Content, FigmaMessage, Locale } from './types';
+import { useFilteredStrings, useLocales, useStrings } from './hooks';
+import type { FigmaMessage } from './types';
 
-const DEFAULT_LOCALE = 'en';
+InitAnalytics({
+  batchEventsPeriod: 0,
+  isProd: import.meta.env.PROD,
+  showDebugLogging: !import.meta.env.PROD,
+  platform: PlatformName.ios,
+  projectName: 'cds_strings_plugin',
+  version: '1.0.0',
+});
 
-const client = contentful.createClient({
-  space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
-  accessToken: import.meta.env.VITE_CONTENTFUL_TOKEN,
-  environment: import.meta.env.VITE_CONTENTFUL_ENV,
+let currentUser: User | null = null;
+
+window?.addEventListener('message', (event) => {
+  if (event.data.pluginMessage.type === 'current-user') {
+    currentUser = event.data.pluginMessage.user as User;
+  }
 });
 
 function App() {
-  const [strings, setStrings] = useState<Content[]>();
   const [displayMode, setDisplayMode] = useState<'text' | 'key'>('text');
-  const [localeOption, setLocaleOption] = useState<Locale>(DEFAULT_LOCALE);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const fetchStrings = useCallback(async () => {
-    const response = await client.getEntries({
-      content_type: 'localizedContent',
-      limit: 1000,
-      locale: '*',
-    });
-
-    const data = response.items.map((item) => item.fields);
-    setStrings(data as Content[]);
-  }, []);
+  const [localeOption, setLocaleOption] = useState<string>();
+  const [isStringsVisible, setIsStringsVisible] = useState(false);
+  const { strings, fetchStrings } = useStrings();
+  const { locales, defaultLocale } = useLocales();
+  const { filteredStrings, searchTerm, handleSearchChange } = useFilteredStrings(
+    strings,
+    localeOption,
+  );
 
   useEffect(() => {
-    void fetchStrings();
-  }, [fetchStrings]);
-
-  const filteredStrings = useMemo(() => {
-    if (strings && searchTerm) {
-      return strings?.filter(
-        (str) =>
-          str.text[localeOption].includes(searchTerm) || str.key[localeOption].includes(searchTerm),
-      );
+    if (defaultLocale) {
+      setLocaleOption(defaultLocale);
     }
-    return [];
-  }, [searchTerm, strings, localeOption]);
-
-  const handleSearchChange = useCallback((value: string) => setSearchTerm(value), []);
+  }, [defaultLocale]);
 
   const handlePostMessage = useCallback(
     (pluginMessage: FigmaMessage) => window?.parent.postMessage({ pluginMessage }, '*'),
@@ -62,43 +57,61 @@ function App() {
   );
 
   const handleLocaleChange = useCallback((option: SelectOption) => {
-    setLocaleOption(option.value as Locale);
+    setLocaleOption(option.value as string);
   }, []);
 
   const localeOptions = useMemo(() => {
-    return [
-      {
-        label: 'English',
-        value: 'en',
-      },
-      {
-        label: '中文',
-        value: 'zh-CN',
-      },
-    ];
-  }, []);
+    return locales.map((locale) => ({
+      label: locale.name,
+      value: locale.code,
+    }));
+  }, [locales]);
 
   const handleToggleDisplayMode = useCallback(() => {
     const targetMode = displayMode === 'text' ? 'key' : 'text';
 
-    handlePostMessage({
-      type: 'toggle-display-mode',
-      strings,
-      displayMode: targetMode,
-      locale: localeOption,
-    });
+    if (localeOption) {
+      handlePostMessage({
+        type: 'toggle-display-mode',
+        strings,
+        displayMode: targetMode,
+        locale: localeOption,
+      });
+    }
     setDisplayMode(targetMode);
   }, [displayMode, handlePostMessage, localeOption, strings]);
 
   const handleApply = useCallback(() => {
-    handlePostMessage({
-      type: 'populate-strings',
-      strings,
-      locale: localeOption,
-    });
+    logEvent(
+      'apply_strings',
+      {
+        action: ActionType.click,
+        componentType: ComponentType.unknown,
+        selectedLocale: localeOption,
+        figmaUserId: currentUser?.id,
+        figmaUserName: currentUser?.name,
+      },
+      AnalyticsEventImportance.high,
+    );
+
+    if (localeOption) {
+      handlePostMessage({
+        type: 'populate-strings',
+        strings,
+        locale: localeOption,
+      });
+    }
   }, [localeOption, strings, handlePostMessage]);
 
+  const toggleStringsVisibility = useCallback(() => {
+    setIsStringsVisible(!isStringsVisible);
+  }, [isStringsVisible]);
+
   const stringList = searchTerm ? filteredStrings : strings;
+
+  if (!defaultLocale) {
+    return null;
+  }
 
   return (
     <div className="App" tabIndex={-1}>
@@ -112,28 +125,37 @@ function App() {
           type="switch"
         />
       </div>
-      <div className="search-input">
-        <Input icon="search" onChange={handleSearchChange} placeholder="Search strings" />
+      <div className="strings-list-container">
+        <div className="strings-toggle" onClick={toggleStringsVisibility}>
+          <Icon name={isStringsVisible ? 'caret-down' : 'caret-right'} />
+          <Text weight="bold">{isStringsVisible ? 'Hide' : 'Show'} strings</Text>
+        </div>
+        {isStringsVisible && (
+          <>
+            <Input icon="search" onChange={handleSearchChange} placeholder="Search strings" />
+            <div className="strings-list">
+              {stringList?.map((string) => {
+                const key = string.key[defaultLocale];
+                const text = localeOption && string.text[localeOption];
+
+                return (
+                  <Text key={key}>
+                    {key}: {text}
+                  </Text>
+                );
+              })}
+            </div>
+          </>
+        )}
       </div>
-      <Disclosure isSection label="Strings">
-        {stringList?.map((string) => (
-          <div key={string.key[DEFAULT_LOCALE]}>
-            <Text>
-              {string.key[DEFAULT_LOCALE]}: {string.text[localeOption]}
-            </Text>
-          </div>
-        ))}
-      </Disclosure>
       <div className="divider" />
       <div className="selection-controls">
-        <div>
-          <Select
-            defaultValue={localeOption}
-            onChange={handleLocaleChange}
-            options={localeOptions}
-            placeholder="Select Locale"
-          />
-        </div>
+        <Select
+          defaultValue={defaultLocale}
+          onChange={handleLocaleChange}
+          options={localeOptions}
+          placeholder="Select Locale"
+        />
         <Button onClick={handleApply}>Apply</Button>
       </div>
     </div>

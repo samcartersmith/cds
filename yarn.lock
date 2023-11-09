@@ -3617,6 +3617,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-figma-strings-plugin@workspace:apps/figma-strings-plugin"
   dependencies:
+    "@cbhq/client-analytics": ^10.9.1
     "@cbhq/figma-styles": "workspace:^"
     "@figma/plugin-typings": ^1.49.0
     "@types/react": 18.0.28
