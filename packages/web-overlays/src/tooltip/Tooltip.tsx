@@ -20,6 +20,7 @@ export const Tooltip = ({
   testID,
   zIndex,
   tooltipId: tooltipIdDefault,
+  visible,
 }: TooltipProps) => {
   const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur, tooltipId } =
     useTooltipState(tooltipIdDefault);
@@ -36,6 +37,8 @@ export const Tooltip = ({
     }),
     [placement],
   );
+
+  const isVisible = useMemo(() => visible !== false && isOpen, [visible, isOpen]);
 
   return (
     <Popover
@@ -57,7 +60,7 @@ export const Tooltip = ({
       onMouseDown={preventMouseDown}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}
-      visible={isOpen}
+      visible={isVisible}
     >
       {clonedChild}
     </Popover>

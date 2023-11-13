@@ -216,6 +216,16 @@ const RNModalTest = () => {
   );
 };
 
+const DisabledTest = () => {
+  return (
+    <Example title="Non Visible Tooltip">
+      <Tooltip content="Disabled Tooltip" visible={false}>
+        <Button disabled>Disabled</Button>
+      </Tooltip>
+    </Example>
+  );
+};
+
 const TooltipV2Screen = () => {
   return (
     <ExampleScreen>
@@ -223,6 +233,7 @@ const TooltipV2Screen = () => {
       <RNModalTest />
       <Content title="Short Text Tooltip" tooltipText={shortText} />
       <Content title="Long Text Tooltip" tooltipText={longText} />
+      <DisabledTest />
     </ExampleScreen>
   );
 };

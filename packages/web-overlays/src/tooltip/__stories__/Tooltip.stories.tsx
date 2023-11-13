@@ -47,6 +47,9 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
           <Tooltip content={content} placement="bottom">
             <Button>Bottom</Button>
           </Tooltip>
+          <Tooltip content={content} placement="bottom" visible={false}>
+            <Button disabled>Disabled</Button>
+          </Tooltip>
         </VStack>
 
         <VStack gap={3} spacingHorizontal={2}>

@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.14 (11/13/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-2648] tooltip: add visible prop. [[#2446](https://github.cbhq.net/frontend/cds/pull/2446)] [[DX-2648](https://jira.coinbase-corp.com/browse/DX-2648)]
 
 #### 📘 Misc
 

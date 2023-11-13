@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.17.0 (11/13/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-2648] tooltip: add visible prop. [[#2446](https://github.cbhq.net/frontend/cds/pull/2446)] [[DX-2648](https://jira.coinbase-corp.com/browse/DX-2648)]
+
 ## 5.16.11 ((11/9/2023, 02:27 PM PST))
 
 This is an artificial version bump with no new change.

@@ -19,6 +19,7 @@ export const Tooltip = memo(
     accessibilityHint,
     accessibilityLabelForContent,
     accessibilityHintForContent,
+    visible,
   }: TooltipProps) => {
     const subjectRef = useRef<View | null>(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -78,6 +79,8 @@ export const Tooltip = memo(
       [content, accessibilityLabelForContent, accessibilityHintForContent, handleRequestClose],
     );
 
+    const isVisible = useMemo(() => visible !== false && isOpen, [visible, isOpen]);
+
     return (
       <View ref={subjectRef} collapsable={false}>
         <TouchableOpacity
@@ -94,7 +97,7 @@ export const Tooltip = memo(
           accessibilityRole="alert"
           animationType="none"
           onRequestClose={handleRequestClose}
-          visible={isOpen}
+          visible={isVisible}
         >
           <TouchableOpacity
             accessibilityElementsHidden

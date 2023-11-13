@@ -17,4 +17,9 @@ export type TooltipBaseProps = {
    * @default 1
    */
   gap?: GapSpacing;
+  /**
+   * Control whether the tooltip is shown or hidden.
+   * @default true
+   */
+  visible?: boolean;
 } & SharedProps;
