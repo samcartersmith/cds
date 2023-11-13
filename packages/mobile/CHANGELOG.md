@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.16.11 (11/9/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2731] upgrade react-native-linear-gradient to v2.8.3. [[DX-2731](https://jira.coinbase-corp.com/browse/DX-2731)]
+
 ## 5.16.10 (11/7/2023 PST)
 
 #### 🐞 Fixes
