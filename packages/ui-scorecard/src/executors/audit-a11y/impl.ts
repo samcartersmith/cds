@@ -141,7 +141,7 @@ async function sendScores(
       componentType: ComponentType.unknown,
       automatedA11yScore,
       a11yScore: a11yScore ?? null,
-      jestScore: a11yScore ?? null,
+      jestScore: jestScore ?? null,
       totalNumberOfComponentsWithTest,
       totalNumberOfPassingToBeAccessibleTests,
       codeOwner: codeOwner ?? null,

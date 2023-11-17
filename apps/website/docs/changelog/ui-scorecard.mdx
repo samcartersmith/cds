@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.10 (11/10/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix jestScore to log correct value to snowflake.
+
 ## 0.1.9 (11/3/2023 PST)
 
 #### 🐞 Fixes
