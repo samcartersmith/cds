@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.17.1 (11/17/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix(web): Pass correct id to NativeTextInput. [[#2459](https://github.cbhq.net/frontend/cds/pull/2459)]
+
 ## 5.17.0 ((11/13/2023, 11:02 AM PST))
 
 This is an artificial version bump with no new change.

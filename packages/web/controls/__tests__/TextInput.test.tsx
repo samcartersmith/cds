@@ -196,4 +196,19 @@ describe('TextInput', () => {
 
     expect(screen.getByTestId('textinput-testid')).not.toHaveAttribute('aria-describedby');
   });
+
+  it('focusses the input element when label is clicked', () => {
+    const labelTestID = 'label-testid';
+    render(
+      <TextInput
+        label="Example label"
+        testIDMap={{
+          label: labelTestID,
+        }}
+      />,
+    );
+    const labelForAttribute = screen.getByTestId(labelTestID).getAttribute('for');
+    expect(labelForAttribute?.startsWith('cds-textinput-label')).toBe(true);
+    expect(screen.getByRole('textbox')).toHaveAttribute('id', labelForAttribute);
+  });
 });
