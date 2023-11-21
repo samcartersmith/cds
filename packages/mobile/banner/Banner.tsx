@@ -1,5 +1,5 @@
 import React, { forwardRef, isValidElement, memo, useCallback, useMemo, useState } from 'react';
-import { useWindowDimensions, View } from 'react-native';
+import { useWindowDimensions, View, ViewStyle } from 'react-native';
 import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { variants } from '@cbhq/cds-common/tokens/banner';
@@ -14,6 +14,7 @@ import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Pressable } from '../system/Pressable';
+import { DangerouslySetStyle } from '../types';
 import { Link, LinkProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
 import { TextHeadline } from '../typography/TextHeadline';
@@ -60,7 +61,8 @@ export const Banner = memo(
       borderRadius = 'rounded',
       testID,
       numberOfLines = 3,
-    }: BannerBaseProps,
+      dangerouslySetStyle,
+    }: BannerBaseProps & Pick<DangerouslySetStyle<ViewStyle>, 'dangerouslySetStyle'>,
     forwardedRef: ForwardedRef<View>,
   ) {
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -144,10 +146,15 @@ export const Banner = memo(
     // The first HStack is referred to as root
     const rootStyle = useMemo(() => {
       const shouldOverride = variant === 'warning' || variant === 'promotional';
-      if (shouldOverride) return stylesForVariant[variant][spectrum];
+      if (shouldOverride) {
+        return {
+          ...stylesForVariant[variant][spectrum],
+          ...(dangerouslySetStyle as ViewStyle),
+        };
+      }
 
-      return undefined;
-    }, [spectrum, variant]);
+      return dangerouslySetStyle;
+    }, [spectrum, variant, dangerouslySetStyle]);
 
     return (
       <Collapsible ref={forwardedRef} collapsed={isCollapsed} testID={`${testID}-collapsible`}>

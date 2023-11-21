@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.19.0 (11/21/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: add dangerouslySetStyle prop to mobile banner. [[#2466](https://github.cbhq.net/frontend/cds/pull/2466)] [[DX-2758](https://jira.coinbase-corp.com/browse/DX-2758)]
+
 ## 5.18.0 (11/20/2023 PST)
 
 #### 🚀 Updates

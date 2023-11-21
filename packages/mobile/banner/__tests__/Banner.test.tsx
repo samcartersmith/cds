@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { stringify } from 'querystring';
@@ -9,6 +9,7 @@ import { InternalSpacingProps } from '@cbhq/cds-common/types/SpacingProps';
 import { useInternalSpacingStyles } from '../../hooks/internal/useInternalSpacingStyles';
 import { useDimensions } from '../../hooks/useDimensions';
 import { galaxyScreenDimensions as narrowScreenDimensions } from '../../overlays/Tooltip/__tests__/UseTooltipPositionTestData';
+import { DangerouslySetStyle } from '../../types';
 import { Link, TextBody } from '../../typography';
 import { Banner } from '../Banner';
 
@@ -26,7 +27,7 @@ const MockBanner = ({
   variant = 'warning',
   testID = TEST_ID,
   ...props
-}: Partial<BannerBaseProps>) => (
+}: Partial<BannerBaseProps> & Pick<DangerouslySetStyle<ViewStyle>, 'dangerouslySetStyle'>) => (
   <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
     <TextBody>Banner content</TextBody>
   </Banner>
@@ -97,6 +98,16 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
     expect(innerEndBox).toHaveStyle({
       flexDirection: 'row',
     });
+  });
+
+  it('can set dangerouslySetStyle', () => {
+    const bannerCustomStyle = {
+      paddingTop: 40,
+    };
+
+    render(<MockBanner dangerouslySetStyle={bannerCustomStyle} />);
+
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle(bannerCustomStyle);
   });
 
   checkSpacing({
