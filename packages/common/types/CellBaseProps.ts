@@ -162,5 +162,5 @@ export type ListCellFallbackProps = {
   /** Display title shimmer. */
   title?: boolean;
 } & FallbackRectWidthProps &
-  Pick<CellCommonProps, 'compact'> &
+  Pick<CellCommonProps, 'compact' | 'innerSpacing' | 'outerSpacing'> &
   SharedProps;

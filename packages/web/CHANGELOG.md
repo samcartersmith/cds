@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.18.0 (11/20/2023 PST)
+
+#### 🚀 Updates
+
+- Add innerSpacing and outerSpacing to ListCellFallback. [[#2462](https://github.cbhq.net/frontend/cds/pull/2462)] [[DX-2757](https://jira.coinbase-corp.com/browse/DX-2757)]
+
 ## 5.17.1 (11/17/2023 PST)
 
 #### 🐞 Fixes
