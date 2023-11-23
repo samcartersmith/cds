@@ -27,7 +27,7 @@ const ModalScreen = () => {
         <BasicModal />
       </Example>
       <Example title="Long Modal">
-        <LongModal />
+        <LongModal visible={false} />
       </Example>
       <Example title="Portal Modal">
         <PortalModal />

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Expose visibility prop for Long and Basic modal. [[#2470](https://github.cbhq.net/frontend/cds/pull/2470)] [[DX-2224](https://jira.coinbase-corp.com/browse/DX-2224)]
+
 ## 5.19.0 (11/21/2023 PST)
 
 #### 🚀 Updates

@@ -22,6 +22,13 @@ type ModalA11yProps = {
   focusTrigger?: () => void;
 } & ModalAccessibilityProps;
 
+type ModalOptions = {
+  disablePortal?: boolean;
+  visible?: boolean;
+  hideDividers?: boolean;
+  enableBackButton?: boolean;
+};
+
 export type CreateModalProps = {
   Modal: React.ComponentType<
     React.PropsWithChildren<ModalBaseProps & ModalAccessibilityProps & { disablePortal?: boolean }>
@@ -48,16 +55,7 @@ export function modalBuilder({
   TextInput, // test keyboard avoiding on mobile
   LoremIpsum,
 }: CreateModalProps) {
-  const BasicModalExample: React.FC<
-    React.PropsWithChildren<
-      ModalA11yProps & {
-        disablePortal?: boolean;
-        visible?: boolean;
-        hideDividers?: boolean;
-        enableBackButton?: boolean;
-      }
-    >
-  > = ({
+  const BasicModalExample: React.FC<React.PropsWithChildren<ModalA11yProps & ModalOptions>> = ({
     children,
     disablePortal,
     visible: defaultVisible,
@@ -204,7 +202,7 @@ export function modalBuilder({
     );
   };
 
-  const BasicModal = (props: ModalA11yProps) => (
+  const BasicModal = (props: ModalA11yProps & ModalOptions) => (
     <BasicModalExample {...props}>
       <LoremIpsum />
     </BasicModalExample>
@@ -228,7 +226,7 @@ export function modalBuilder({
     </BasicModalExample>
   );
 
-  const LongModal = (props: ModalA11yProps) => (
+  const LongModal = (props: ModalA11yProps & ModalOptions) => (
     <BasicModalExample {...props}>
       <LoremIpsum repeat={30} />
       {!!TextInput && <TextInput label="" placeholder="test input" />}
