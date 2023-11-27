@@ -1,4 +1,4 @@
-`NavigationIconButton` is meant to be used inside of a `NavigationBar`. It is typically used to trigger the visibility of a `PopoverMenu`.
+`NavigationIconButton` is meant to be used inside of a `NavigationBar`. It is typically used to trigger the visibility of a `Dropdown`.
 
 ```jsx live
 function NavigationMenu() {
@@ -33,33 +33,30 @@ function NavigationMenu() {
         end={
           <HStack gap={1}>
             <NavigationIconButton name="bell" variant="secondary" />
-            <PopoverMenu
+            <Dropdown
               width={350}
-              openMenu={togglePopoverMenuVisibility.toggleOn}
-              closeMenu={togglePopoverMenuVisibility.toggleOff}
-              visible={visible}
-              onChange={handleMenuValueChange}
-              value={value}
+              content={
+                <>
+                  <HStack spacingHorizontal={2} spacingVertical={2}>
+                    <TextCaption as="h2" color="foregroundMuted">
+                      For Individuals
+                    </TextCaption>
+                  </HStack>
+                  {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
+                    <SelectOption
+                      key={name}
+                      value={optionValue}
+                      title={name}
+                      description={description}
+                      media={<Pictogram dimension="48x48" name={mediaName} />}
+                      selected={value === optionValue}
+                    />
+                  ))}
+                </>
+              }
             >
-              <PopoverTrigger>
-                <NavigationIconButton name="appSwitcher" />
-              </PopoverTrigger>
-              <HStack spacingHorizontal={2} spacingVertical={2}>
-                <TextCaption as="h2" color="foregroundMuted">
-                  For Individuals
-                </TextCaption>
-              </HStack>
-              {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
-                <SelectOption
-                  key={name}
-                  value={optionValue}
-                  title={name}
-                  description={description}
-                  media={<Pictogram dimension="48x48" name={mediaName} />}
-                  selected={value === optionValue}
-                />
-              ))}
-            </PopoverMenu>
+              <NavigationIconButton name="appSwitcher" />
+            </Dropdown>
           </HStack>
         }
       >
