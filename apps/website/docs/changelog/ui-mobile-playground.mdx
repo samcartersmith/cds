@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.4 (11/27/2023 PST)
+
+#### 🐞 Fixes
+
+- Use yarn pack for workspace version substitution in packages published with packemon. [[#2479](https://github.cbhq.net/frontend/cds/pull/2479)] [[DX-2722](https://jira.coinbase-corp.com/browse/DX-2722)]
+
 ## 1.2.3 (10/26/2023 PST)
 
 #### 🐞 Fixes
@@ -17,16 +23,11 @@ All notable changes to this project will be documented in this file.
 #### 🐞 Fixes
 
 - Enforce props alphabetical sorting (react/jsx-sort-props). [[#2349](https://github.cbhq.net/frontend/cds/pull/2349)]
+- Remove PatternTag. [[#2302](https://github.cbhq.net/frontend/cds/pull/2302)]
 
 #### 📘 Misc
 
 - Move private packages to libs directory. [[#2320](https://github.cbhq.net/frontend/cds/pull/2320)]
-
-## 1.2.2 (10/4/2023 PST)
-
-#### 🐞 Fixes
-
-- Remove PatternTag. [[#2302](https://github.cbhq.net/frontend/cds/pull/2302)]
 
 ## 1.2.1 (10/3/2023 PST)
 

@@ -6,21 +6,17 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 1.1.2 (11/27/2023 PST)
+
+#### 🐞 Fixes
+
+- Use yarn pack for workspace version substitution in packages published with packemon. [[#2479](https://github.cbhq.net/frontend/cds/pull/2479)] [[DX-2722](https://jira.coinbase-corp.com/browse/DX-2722)]
+- Remove PatternTag. [[#2302](https://github.cbhq.net/frontend/cds/pull/2302)]
 
 #### 📘 Misc
 
 - Update eslint rules. [[#2357](https://github.cbhq.net/frontend/cds/pull/2357)]
-
-#### 📘 Misc
-
 - Move private packages to libs directory. [[#2320](https://github.cbhq.net/frontend/cds/pull/2320)]
-
-## 1.1.2 (10/4/2023 PST)
-
-#### 🐞 Fixes
-
-- Remove PatternTag. [[#2302](https://github.cbhq.net/frontend/cds/pull/2302)]
 
 ## 1.1.1 (9/20/2023 PST)
 
