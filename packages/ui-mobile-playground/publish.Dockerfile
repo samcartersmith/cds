@@ -13,7 +13,7 @@ RUN yarn --immutable
 RUN yarn nx run ui-mobile-playground:build
 
 # Prepare the package for publish
-RUN cd packages/ui-mobile-playground && npm pack
+RUN cd packages/ui-mobile-playground && yarn pack
 RUN mv /repo/packages/ui-mobile-playground /shared
 
 WORKDIR /shared

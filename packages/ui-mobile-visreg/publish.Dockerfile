@@ -13,7 +13,7 @@ RUN yarn --immutable
 RUN yarn nx run ui-mobile-visreg:build
 
 # Prepare the package for publish
-RUN cd packages/ui-mobile-visreg && npm pack
+RUN cd packages/ui-mobile-visreg && yarn pack
 RUN mv /repo/packages/ui-mobile-visreg /shared
 
 WORKDIR /shared
