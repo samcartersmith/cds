@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.15 (11/27/2023 PST)
+
+#### 🐞 Fixes
+
+- Avoid mutating memoed style. [[#2480](https://github.cbhq.net/frontend/cds/pull/2480)] [[DX-2827](https://jira.coinbase-corp.com/browse/DX-2827)]
+
 ## 0.0.14 (10/26/2023 PST)
 
 #### 🐞 Fixes

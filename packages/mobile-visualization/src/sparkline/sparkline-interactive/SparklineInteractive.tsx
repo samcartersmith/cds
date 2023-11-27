@@ -82,12 +82,14 @@ function BelowChartWithGeneric<Period extends string>({
 }: BelowChartProps<Period>) {
   const spacing = useSpacingScale();
 
-  const style: ViewStyle = useMemo(() => {
+  const style = useMemo(() => {
+    if (timePeriodGutter) {
+      return {
+        paddingHorizontal: spacing[timePeriodGutter],
+      };
+    }
     return {};
-  }, []);
-  if (timePeriodGutter) {
-    style.paddingHorizontal = spacing[timePeriodGutter];
-  }
+  }, [timePeriodGutter, spacing]);
 
   return (
     <View style={style}>
