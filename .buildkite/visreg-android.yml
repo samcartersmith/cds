@@ -1,7 +1,7 @@
 _visreg_android_shared: &visreg_android_shared
   plugins:
     - file:///buildkite/plugins/docker:
-        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:android
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/android:v33
         wait-network: true
         privileged: true
         always-pull: true
