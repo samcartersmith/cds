@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.19.1 (11/28/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2404] fix(checkbox): re-render when theme changes. [[#2430](https://github.cbhq.net/frontend/cds/pull/2430)] [[DX-2404](https://jira.coinbase-corp.com/browse/DX-2404)]
+
 ## 5.19.0 (11/21/2023 PST)
 
 #### 🚀 Updates

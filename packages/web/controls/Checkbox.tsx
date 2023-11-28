@@ -2,6 +2,7 @@
 import React, { forwardRef, memo } from 'react';
 import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
+import { useSpectrum } from '@cbhq/cds-common';
 import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 
@@ -19,10 +20,10 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   const { checked, indeterminate } = props;
-
   const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
     checked: checked || indeterminate,
   });
+  const theme = useSpectrum();
 
   return (
     <Control
@@ -33,6 +34,7 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
       {...props}
     >
       <motion.div
+        key={theme}
         className={cx(checkbox, focusRing)}
         data-filled={checked || indeterminate}
         role="presentation"
