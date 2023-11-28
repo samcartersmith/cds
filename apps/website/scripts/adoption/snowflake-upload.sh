@@ -16,11 +16,11 @@ for sub_directory in "$base_directory"/*; do
     # Check if the item is a directory
     if [ -d "$sub_directory" ]; then
         # Set the variable to the subdirectory name
-        project_name=$(basename "$sub_directory")
+        subdir_name=$(basename "$sub_directory")
 
-        echo "Processing adoption tracker project \"$project_name\""
+        echo "Processing adoption tracker project \"$sub_directory\""
         echo " "
-        
+
         # Create the staging table and upload the file there
         snowsql \
         -a coinbase.us-east-1.privatelink \
@@ -28,27 +28,22 @@ for sub_directory in "$base_directory"/*; do
         -d ANALYTICS \
         -s AD_HOC \
         -w ANALYSTS_WAREHOUSE \
-        -q "CREATE OR REPLACE TEMPORARY STAGE _staged_cds_stats 
-            file_format = (type = json);
-            PUT file://$sub_directory/stats.json @_staged_cds_stats;
-    
-            COPY INTO CDS_STATS (_DT, NAME, DATE, CDSPERCENT, CDS, PRESENTATIONAL, TOTALCDSANDPRESENTATIONAL, TOTALOTHER)
-                FROM (
-                    SELECT 
-                    CURRENT_TIMESTAMP(),
-                    '$project_name',
-                    TO_DATE(\$1:latest.date),
-                    \$1:latest.cdsPercent AS DOUBLE,
-                    \$1:latest.cds,
-                    \$1:latest.presentational,
-                    \$1:latest.totalCdsAndPresentational,
-                    \$1:latest.totalOther
-                FROM @_staged_cds_stats
-                );
+        -q "PUT file://$sub_directory/stats.json @~/stats.json OVERWRITE = TRUE;
+  
+        COPY INTO CDS_STATS (_DT, NAME, DATE, CDSPERCENT, CDS, PRESENTATIONAL, TOTALCDSANDPRESENTATIONAL, TOTALOTHER)
+            FROM (
+                SELECT CURRENT_TIMESTAMP(),
+                '$subdir_name',
+                TO_DATE(\$1:latest.date),
+                \$1:latest.cdsPercent AS DOUBLE,
+                \$1:latest.cds,
+                \$1:latest.presentational,
+                \$1:latest.totalCdsAndPresentational,
+                \$1:latest.totalOther
+            FROM @~/stats.json
+            )
+            FILE_FORMAT = (TYPE = 'JSON');
         "
-
-        echo " "
-        echo " "
     fi
 done
-
+"
