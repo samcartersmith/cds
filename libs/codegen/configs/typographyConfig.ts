@@ -1,6 +1,9 @@
 export const fontWeights = {
   Regular: 400,
-  Medium: 600, // NOTE: Using > 600 here ensures JA fonts render a heavier weight than Regular
+  // NOTE: Using > 600 here ensures JA fonts render a heavier weight than Regular
+  // PR: https://github.cbhq.net/frontend/cds/pull/1084
+  // ticket: https://jira.coinbase-corp.com/browse/CDS-2439
+  Medium: 600,
 } as const;
 
 export const xHeight = {

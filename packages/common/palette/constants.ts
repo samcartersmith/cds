@@ -10,7 +10,7 @@ export const defaultPalette = {
   backgroundAlternate: 'gray5',
   backgroundOverlay: ['gray80', 0.33],
   line: ['gray60', 0.2],
-  lineHeavy: ['gray60', 0.68],
+  lineHeavy: ['gray60', 0.66],
   primary: 'blue60',
   primaryWash: 'blue0',
   primaryForeground: 'gray0',

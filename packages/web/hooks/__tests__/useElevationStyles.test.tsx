@@ -16,7 +16,7 @@ const paletteAsCssVars = {
   '--background-alternate': 'rgb(var(--gray5))',
   '--background-overlay': 'rgba(var(--gray80),0.33)',
   '--line': 'rgba(var(--gray60),0.2)',
-  '--line-heavy': 'rgba(var(--gray60),0.68)',
+  '--line-heavy': 'rgba(var(--gray60),0.66)',
   '--primary': 'rgb(var(--blue60))',
   '--primary-wash': 'rgb(var(--blue0))',
   '--primary-foreground': 'rgb(var(--gray0))',

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.19.2 (11/28/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: line heavy opacity and template path for docusaurus-theme. [[#2475](https://github.cbhq.net/frontend/cds/pull/2475)] [[DX-2819](https://jira.coinbase-corp.com/browse/DX-2819)]
+
 ## 5.19.1 ((11/28/2023, 09:41 AM PST))
 
 This is an artificial version bump with no new change.
