@@ -6,6 +6,7 @@ import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
 
 import { Box } from '../layout/Box';
+import { FeatureFlagProvider, ThemeProvider } from '../system';
 import { borderWidth } from '../tokens';
 
 import { InputIcon } from './InputIcon';
@@ -37,7 +38,6 @@ export const SearchInput = memo(
       testID,
       value,
       compact,
-      bordered = true,
       hideStartIcon = false,
       ...props
     }: SearchInputProps,
@@ -77,34 +77,40 @@ export const SearchInput = memo(
     );
 
     return (
-      <TextInput
-        ref={refs}
-        borderRadius="roundedFull"
-        bordered={bordered}
-        end={
-          !!value && (
-            <Box spacingEnd={0.5}>
-              <InputIconButton
-                accessibilityLabel="Clear search query"
-                name="close"
-                onPress={handleOnClear}
-                testID={testID && `${testID}-close-iconbtn`}
-              />
-            </Box>
-          )
-        }
-        height={height}
-        onChange={handleOnChange}
-        onKeyUp={handleOnKeyUp}
-        role="searchbox"
-        start={
-          !hideStartIcon && <InputIcon name="search" testID={testID && `${testID}-search-icon`} />
-        }
-        testID={testID}
-        type="search"
-        value={value}
-        {...props}
-      />
+      <FeatureFlagProvider frontier>
+        <ThemeProvider>
+          <TextInput
+            ref={refs}
+            borderRadius="roundedFull"
+            end={
+              !!value && (
+                <Box spacingEnd={0.5}>
+                  <InputIconButton
+                    accessibilityLabel="Clear search query"
+                    name="close"
+                    onPress={handleOnClear}
+                    testID={testID && `${testID}-close-iconbtn`}
+                  />
+                </Box>
+              )
+            }
+            height={height}
+            onChange={handleOnChange}
+            onKeyUp={handleOnKeyUp}
+            role="searchbox"
+            start={
+              !hideStartIcon && (
+                <InputIcon name="search" testID={testID && `${testID}-search-icon`} />
+              )
+            }
+            testID={testID}
+            type="search"
+            value={value}
+            variant="secondary"
+            {...props}
+          />
+        </ThemeProvider>
+      </FeatureFlagProvider>
     );
   }),
 );

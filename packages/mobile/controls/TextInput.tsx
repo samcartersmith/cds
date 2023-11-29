@@ -217,7 +217,7 @@ export const TextInput = memo(
               </Box>
             )
           }
-          variant={focusedVariant}
+          variant={variant}
           width={width}
         />
       );

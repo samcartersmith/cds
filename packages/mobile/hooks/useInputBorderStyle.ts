@@ -24,10 +24,15 @@ export const useInputBorderStyle = (
   /** Border style for when input is not focused */
   const borderUnfocusedStyle = useMemo(() => {
     return {
-      borderColor: focused ? focusedBorderRgba : unFocusedBorderRgba,
+      // eslint-disable-next-line no-nested-ternary
+      borderColor: focused
+        ? focusedBorderRgba
+        : initialVariant === 'secondary'
+        ? 'transparent'
+        : unFocusedBorderRgba,
       borderWidth: inputBorderWidth,
     };
-  }, [focused, focusedBorderRgba, unFocusedBorderRgba]);
+  }, [focused, focusedBorderRgba, initialVariant, unFocusedBorderRgba]);
 
   /** Border style for when input is focused */
   const borderFocusedStyle = useMemo(() => {

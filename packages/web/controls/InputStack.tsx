@@ -127,7 +127,9 @@ export const InputStack = memo(
     const defaultBorderStyles = useMemo(() => {
       return {
         '--border-color-unfocused':
-          variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant],
+          variant === 'secondary'
+            ? 'transparent'
+            : palette[variant === 'foregroundMuted' || !variant ? 'lineHeavy' : variant],
         '--border-color-focused': borderColorFocused,
         '--border-width-focused': borderWidths[borderWidth],
         ...inputBorderRadius,
@@ -151,7 +153,7 @@ export const InputStack = memo(
             <Interactable
               ref={ref}
               as="span"
-              backgroundColor="background"
+              backgroundColor={variant === 'secondary' ? 'secondary' : 'background'}
               borderRadius={borderRadius}
               borderWidth={borderWidth}
               className={cx(inputBaseAreaStyles, focused && persistedFocusStyles)}

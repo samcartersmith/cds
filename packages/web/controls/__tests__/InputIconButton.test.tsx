@@ -11,6 +11,7 @@ describe('Test InputIconButton inheritFocusedVariant interaction', () => {
     primary: 'primary',
     negative: 'secondary',
     positive: 'secondary',
+    secondary: 'secondary',
   } as const;
 
   Object.entries(variantsToFocusedColor).map(([variant, focusedColor]) => {

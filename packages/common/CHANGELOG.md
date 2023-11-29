@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.20.0 (11/29/2023 PST)
+
+#### 🚀 Updates
+
+- Feat(SearchInput): Added background and removed border when unfocused. [[#2472](https://github.cbhq.net/frontend/cds/pull/2472)]
+
 ## 5.19.2 (11/28/2023 PST)
 
 #### 🐞 Fixes

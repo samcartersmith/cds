@@ -6,17 +6,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextLabel1 } from '../../typography/TextLabel1';
 import { SearchInput } from '../SearchInput';
 
-const {
-  Basic,
-  OnBlur,
-  OnFocus,
-  OnClear,
-  OnSearch,
-  Disabled,
-  Compact,
-  DisplayValue,
-  HideStartIcon,
-} = searchInputBuilder(SearchInput, TextLabel1);
+const { Basic, Disabled, Compact, HideStartIcon } = searchInputBuilder(SearchInput);
 
 const CustomRef = () => {
   const ref = useRef(null);
@@ -124,18 +114,6 @@ const SearchInputScreen = () => {
       <Example title="Basic">
         <Basic />
       </Example>
-      <Example title="OnBlur">
-        <OnBlur />
-      </Example>
-      <Example title="OnFocus">
-        <OnFocus />
-      </Example>
-      <Example title="OnClear">
-        <OnClear />
-      </Example>
-      <Example title="OnSearch">
-        <OnSearch />
-      </Example>
       <Example title="Disabled">
         <Disabled />
       </Example>
@@ -144,9 +122,6 @@ const SearchInputScreen = () => {
       </Example>
       <Example title="Compact">
         <Compact />
-      </Example>
-      <Example title="DisplayValue">
-        <DisplayValue />
       </Example>
       <Example title="Custom Start Icon - Search">
         <SetCustomSearchStartIcon />

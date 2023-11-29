@@ -1,9 +1,8 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
 
-import { IconButton } from '../../buttons/IconButton';
-import { HStack } from '../../layout/HStack';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { VStack } from '../../layout';
+import { FeatureFlagProvider, ThemeProvider } from '../../system';
 import { SearchInput } from '../SearchInput';
 
 export default {
@@ -11,26 +10,20 @@ export default {
   component: SearchInput,
 };
 
-export const {
-  Basic,
-  Borderless,
-  OnClear,
-  OnSearch,
-  OnFocus,
-  OnBlur,
-  Disabled,
-  Compact,
-  DisplayValue,
-  HideStartIcon,
-} = searchInputBuilder(SearchInput, (props) => <TextLabel1 as="p" {...props} />);
+const { Basic, Disabled, Compact, HideStartIcon } = searchInputBuilder(SearchInput);
 
-export const CustomRef = () => {
-  const ref = useRef(null);
-
-  const [text, setText] = useState('');
-
-  return <SearchInput ref={ref} accessibilityLabel="Search" onChangeText={setText} value={text} />;
-};
+export const Default = () => (
+  <FeatureFlagProvider frontier>
+    <ThemeProvider>
+      <VStack gap={2}>
+        <Basic />
+        <Disabled />
+        <Compact />
+        <HideStartIcon />
+      </VStack>
+    </ThemeProvider>
+  </FeatureFlagProvider>
+);
 
 /**
  * This tests how the SearchInput will work when
@@ -47,32 +40,16 @@ export const OnChangeExample = () => {
   );
 
   return (
-    <>
-      <SearchInput
-        accessibilityLabel="Search"
-        onChange={handleOnChange}
-        onChangeText={setText}
-        value={text}
-      />
-      <p>{text}</p>
-    </>
-  );
-};
-
-export const HideStartIconSearchExample = function HideStartIconSearchExample() {
-  const [text, setText] = useState('');
-
-  return (
-    <HStack gap={1} spacing={2}>
-      <IconButton transparent accessibilityLabel="Back arrow" name="backArrow" />
-      <SearchInput
-        compact
-        hideStartIcon
-        accessibilityLabel="Search"
-        onChangeText={setText}
-        placeholder="Placeholder"
-        value={text}
-      />
-    </HStack>
+    <FeatureFlagProvider frontier>
+      <ThemeProvider>
+        <SearchInput
+          accessibilityLabel="Search"
+          onChange={handleOnChange}
+          onChangeText={setText}
+          value={text}
+        />
+        <p>{text}</p>
+      </ThemeProvider>
+    </FeatureFlagProvider>
   );
 };

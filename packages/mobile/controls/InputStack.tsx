@@ -63,15 +63,17 @@ export const InputStack = memo(function InputStack({
 
     return {
       borderColor:
-        variant === 'foregroundMuted' ? palette.lineHeavy : palette[variant ?? 'lineHeavy'],
+        variant === 'secondary'
+          ? 'transparent'
+          : palette[variant === 'foregroundMuted' || !variant ? 'lineHeavy' : variant],
       flexDirection: 'row',
       flexGrow: 1,
-      backgroundColor: palette.background,
+      backgroundColor: variant === 'secondary' ? palette.secondary : palette.background,
       borderRadius: borderRadiusTokens[borderRadius],
       overflow: 'hidden',
       ...inputBorderRadius,
     };
-  }, [palette, prependNode, appendNode, variant, borderRadius]);
+  }, [prependNode, appendNode, variant, palette, borderRadius]);
 
   const inputAreaStyles = useMemo(() => {
     return [inputAreaStyle, borderStyle];

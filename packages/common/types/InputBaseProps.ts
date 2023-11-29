@@ -7,7 +7,7 @@ import type { SharedProps } from './SharedProps';
 
 export type InputVariant = Extract<
   PaletteForeground,
-  'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted'
+  'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted' | 'secondary'
 >;
 
 export type InputStackBorderRadius = Extract<BorderRadius, 'rounded' | 'roundedFull'>;
