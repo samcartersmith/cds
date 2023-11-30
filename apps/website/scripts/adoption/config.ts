@@ -31,6 +31,7 @@ const mauiGit = 'frontend/maui';
 const primeMobileGit = 'prime/mobile';
 const primeWebGit = 'institutional/frontend';
 const commercePayerGit = 'commerce/www';
+const identityGit = 'identity/frontend';
 
 const assethubConfig = {
   root: path.join(tempDir, assethubGit),
@@ -178,27 +179,27 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        root: path.join(tempDir, frontendWebGit, 'apps/unified-login'),
-        github: frontendWebGit,
+        root: path.join(tempDir, identityGit, 'apps/unified-login'),
+        github: identityGit,
         id: 'unified-login',
         label: 'Unified Login Web',
         sourceGlob: ['apps/unified-login/**/*.(ts|tsx)'],
         type: 'doc',
       },
       {
-        root: path.join(tempDir, frontendWebGit, 'packages/two-factor-web'),
-        github: frontendWebGit,
+        root: path.join(tempDir, identityGit, 'packages/two-factor-web'),
+        github: identityGit,
         id: 'two-factor-web',
         label: 'Two Factor Web',
         sourceGlob: ['packages/two-factor-web/**/*.(ts|tsx)'],
         type: 'doc',
       },
       {
-        root: path.join(tempDir, frontendWebGit, 'packages/two-factor-mobile-internal'),
-        github: frontendWebGit,
+        root: path.join(tempDir, identityGit, 'packages/two-factor-mobile'),
+        github: identityGit,
         id: 'two-factor-mobile',
         label: 'Two Factor Mobile',
-        sourceGlob: ['packages/two-factor-mobile-internal/**/*.(ts|tsx)'],
+        sourceGlob: ['packages/two-factor-mobile/**/*.(ts|tsx)'],
         type: 'doc',
       },
       {

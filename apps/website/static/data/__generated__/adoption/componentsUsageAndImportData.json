@@ -7,74 +7,74 @@
   {
     "name": "Icon",
     "importPaths": "@cbhq/cds-web/icons/Icon, @cbhq/cds-mobile/icons/Icon",
-    "totalInstances": 3007
+    "totalInstances": 3041
   },
   { "name": "NavLink", "importPaths": "@cbhq/cds-web/navigation/NavLink", "totalInstances": 13 },
   {
     "name": "Box",
     "importPaths": "@cbhq/cds-web/layout/Box, @cbhq/cds-mobile/layout/Box",
-    "totalInstances": 9347
+    "totalInstances": 9437
   },
   {
     "name": "VStack",
-    "importPaths": "@cbhq/cds-web/layout/VStack, @cbhq/cds-mobile/layout/VStack, @cbhq/cds-web/alpha/VStack",
-    "totalInstances": 14731
+    "importPaths": "@cbhq/cds-web/layout/VStack, @cbhq/cds-mobile/layout/VStack, @cbhq/cds-web/alpha/VStack, @cbhq/cds-web/layout/index/VStack",
+    "totalInstances": 14907
   },
   {
     "name": "HStack",
     "importPaths": "@cbhq/cds-web/layout/HStack, @cbhq/cds-mobile/layout/HStack, @cbhq/cds-web/alpha/HStack",
-    "totalInstances": 7941
+    "totalInstances": 8025
   },
   {
     "name": "Spinner",
     "importPaths": "@cbhq/cds-web/loaders/Spinner, @cbhq/cds-mobile/loaders/Spinner",
-    "totalInstances": 226
+    "totalInstances": 225
   },
   {
     "name": "ModalHeader",
-    "importPaths": "@cbhq/cds-web/overlays/index/ModalHeader, @cbhq/cds-web/overlays/Modal/ModalHeader, @cbhq/cds-web/overlays/ModalHeader, @cbhq/cds-mobile/overlays/Modal/ModalHeader, @cbhq/cds-mobile/overlays/ModalHeader",
-    "totalInstances": 393
+    "importPaths": "@cbhq/cds-web/overlays/index/ModalHeader, @cbhq/cds-web/overlays/ModalHeader, @cbhq/cds-web/overlays/Modal/ModalHeader, @cbhq/cds-mobile/overlays/Modal/ModalHeader, @cbhq/cds-mobile/overlays/ModalHeader",
+    "totalInstances": 401
   },
   {
     "name": "ModalBody",
     "importPaths": "@cbhq/cds-web/overlays/index/ModalBody, @cbhq/cds-web/overlays/ModalBody, @cbhq/cds-web/overlays/Modal/ModalBody, @cbhq/cds-mobile/overlays/ModalBody, @cbhq/cds-mobile/overlays/Modal/ModalBody",
-    "totalInstances": 406
+    "totalInstances": 413
   },
   {
     "name": "ModalFooter",
-    "importPaths": "@cbhq/cds-web/overlays/index/ModalFooter, @cbhq/cds-web/overlays/Modal/ModalFooter, @cbhq/cds-web/overlays/ModalFooter, @cbhq/cds-mobile/overlays/Modal/ModalFooter, @cbhq/cds-mobile/overlays/ModalFooter",
-    "totalInstances": 229
+    "importPaths": "@cbhq/cds-web/overlays/index/ModalFooter, @cbhq/cds-web/overlays/ModalFooter, @cbhq/cds-web/overlays/Modal/ModalFooter, @cbhq/cds-mobile/overlays/Modal/ModalFooter, @cbhq/cds-mobile/overlays/ModalFooter",
+    "totalInstances": 230
   },
   {
     "name": "Button",
-    "importPaths": "@cbhq/cds-web/buttons/Button, @cbhq/cds-mobile/buttons/Button, @components/interactables/Button, :rn/cds-wallet/components/interactables/Button",
-    "totalInstances": 5536
+    "importPaths": "@cbhq/cds-web/buttons/Button, @cbhq/cds-mobile/buttons/Button, @components/interactables/Button, @cbhq/cds-web/buttons/index/Button, :rn/cds-wallet/components/interactables/Button",
+    "totalInstances": 5570
   },
   {
     "name": "Divider",
     "importPaths": "@cbhq/cds-web/layout/Divider, @cbhq/cds-mobile/layout/Divider",
-    "totalInstances": 1213
+    "totalInstances": 1224
   },
   {
     "name": "Dropdown",
-    "importPaths": "@cbhq/cds-web/dropdown/Dropdown, @cbhq/cds-web-overlays/Dropdown, @cbhq/cds-web-overlays/dropdown/Dropdown",
+    "importPaths": "@cbhq/cds-web/dropdown/Dropdown, @cbhq/cds-web-overlays/Dropdown",
     "totalInstances": 105
   },
   { "name": "Sidebar", "importPaths": "@cbhq/cds-web/navigation/Sidebar", "totalInstances": 13 },
   {
     "name": "IconButton",
     "importPaths": "@cbhq/cds-web/buttons/IconButton, @cbhq/cds-mobile/buttons/IconButton, @cbhq/cds-web//buttons/IconButton, @components/interactables/IconButton",
-    "totalInstances": 615
+    "totalInstances": 620
   },
   {
     "name": "Fallback",
     "importPaths": "@cbhq/cds-web/layout/Fallback, @cbhq/cds-mobile/layout/Fallback, :rn/cds-wallet/components/Fallbacks/Fallback",
-    "totalInstances": 1725
+    "totalInstances": 1744
   },
   {
     "name": "TextInput",
     "importPaths": "@cbhq/cds-web/controls/TextInput, @cbhq/cds-mobile/controls/TextInput",
-    "totalInstances": 691
+    "totalInstances": 706
   },
   {
     "name": "NativeTextArea",
@@ -84,42 +84,42 @@
   {
     "name": "ListCell",
     "importPaths": "@cbhq/cds-web/cells/ListCell, @cbhq/cds-mobile/cells/ListCell",
-    "totalInstances": 788
+    "totalInstances": 810
   },
   {
     "name": "SelectOption",
     "importPaths": "@cbhq/cds-web/controls/SelectOption, @cbhq/cds-web-overlays/SelectOption, @cbhq/cds-mobile/controls/SelectOption",
-    "totalInstances": 550
+    "totalInstances": 555
   },
   {
     "name": "ButtonGroup",
     "importPaths": "@cbhq/cds-web/buttons/ButtonGroup, @cbhq/cds-mobile/buttons/ButtonGroup",
-    "totalInstances": 259
+    "totalInstances": 266
   },
   {
     "name": "Tooltip",
-    "importPaths": "@cbhq/cds-web/overlays/index/Tooltip, @cbhq/cds-web/overlays/Tooltip/Tooltip, @cbhq/cds-web/overlays/Deprecated/Tooltip, @cbhq/cds-web/overlays/Tooltip, @cbhq/cds-web-overlays/Tooltip, @cbhq/cds-mobile/overlays/Tooltip, @cbhq/cds-mobile/overlays/Tooltip/Tooltip",
-    "totalInstances": 487
+    "importPaths": "@cbhq/cds-web/overlays/index/Tooltip, @cbhq/cds-web/overlays/Deprecated/Tooltip, @cbhq/cds-web/overlays/Tooltip, @cbhq/cds-web/overlays/Tooltip/Tooltip, @cbhq/cds-web-overlays/Tooltip, @cbhq/cds-mobile/overlays/Tooltip, @cbhq/cds-mobile/overlays/Tooltip/Tooltip",
+    "totalInstances": 494
   },
   {
     "name": "PressableOpacity",
     "importPaths": "@cbhq/cds-web/system/PressableOpacity, @cbhq/cds-mobile/system/PressableOpacity",
-    "totalInstances": 532
+    "totalInstances": 538
   },
   {
     "name": "Spacer",
     "importPaths": "@cbhq/cds-web/layout/Spacer, @cbhq/cds-mobile/layout/Spacer",
-    "totalInstances": 2419
+    "totalInstances": 2437
   },
   {
     "name": "Pressable",
     "importPaths": "@cbhq/cds-web/system/Pressable, @cbhq/cds-mobile/system/Pressable",
-    "totalInstances": 592
+    "totalInstances": 596
   },
   {
     "name": "Collapsible",
     "importPaths": "@cbhq/cds-web/collapsible/Collapsible, @cbhq/cds-mobile/collapsible/Collapsible",
-    "totalInstances": 67
+    "totalInstances": 69
   },
   {
     "name": "AccordionItem",
@@ -129,12 +129,12 @@
   {
     "name": "Switch",
     "importPaths": "@cbhq/cds-web/controls/Switch, @cbhq/cds-mobile/controls/Switch",
-    "totalInstances": 175
+    "totalInstances": 178
   },
   {
     "name": "Tag",
     "importPaths": "@cbhq/cds-web/tag/Tag, @cbhq/cds-mobile/tag/Tag",
-    "totalInstances": 187
+    "totalInstances": 189
   },
   { "name": "Grid", "importPaths": "@cbhq/cds-web/layout/Grid", "totalInstances": 106 },
   {
@@ -142,54 +142,44 @@
     "importPaths": "@cbhq/cds-web/controls/Checkbox, @cbhq/cds-mobile/controls/Checkbox, :rn/cds-wallet/forms/ControlledCheckbox.tsx",
     "totalInstances": 238
   },
-  { "name": "Table", "importPaths": "@cbhq/cds-web/tables/Table", "totalInstances": 390 },
+  { "name": "Table", "importPaths": "@cbhq/cds-web/tables/Table", "totalInstances": 400 },
   {
     "name": "TableHeader",
     "importPaths": "@cbhq/cds-web/tables/TableHeader",
-    "totalInstances": 301
+    "totalInstances": 303
   },
-  { "name": "TableRow", "importPaths": "@cbhq/cds-web/tables/TableRow", "totalInstances": 1310 },
-  { "name": "TableCell", "importPaths": "@cbhq/cds-web/tables/TableCell", "totalInstances": 3031 },
-  { "name": "TableBody", "importPaths": "@cbhq/cds-web/tables/TableBody", "totalInstances": 414 },
+  { "name": "TableRow", "importPaths": "@cbhq/cds-web/tables/TableRow", "totalInstances": 1324 },
+  { "name": "TableCell", "importPaths": "@cbhq/cds-web/tables/TableCell", "totalInstances": 3059 },
+  { "name": "TableBody", "importPaths": "@cbhq/cds-web/tables/TableBody", "totalInstances": 424 },
   {
     "name": "Link",
     "importPaths": "@cbhq/cds-web/typography/Link, @cbhq/cds-mobile/typography/Link",
-    "totalInstances": 1599
-  },
-  {
-    "name": "SearchInput",
-    "importPaths": "@cbhq/cds-web/controls/SearchInput, @cbhq/cds-mobile/controls/SearchInput",
-    "totalInstances": 101
-  },
-  {
-    "name": "TabNavigation",
-    "importPaths": "@cbhq/cds-web/tabs/TabNavigation, @cbhq/cds-mobile/tabs/TabNavigation, :rn/cds-wallet/components/TabNavigatorWithOffset/TabNavigation",
-    "totalInstances": 96
-  },
-  {
-    "name": "Lottie",
-    "importPaths": "@cbhq/cds-web/animation/Lottie, @cbhq/cds-mobile/animation/Lottie, :rn/cds-wallet/components/Subdomain/hooks/useClaimUsernameEducationLottie.tsx, :rn/cds-wallet/components/Subdomain/hooks/useSuccessClaimLottie.tsx, :rn/cds-wallet/components/WarmWelcome/hooks/useWelcomeLottie.tsx",
-    "totalInstances": 21
+    "totalInstances": 1615
   },
   {
     "name": "NavigationIcon",
     "importPaths": "@cbhq/cds-web/icons/NavigationIcon, @cbhq/cds-mobile/icons/NavigationIcon",
-    "totalInstances": 85
+    "totalInstances": 86
   },
   {
     "name": "RemoteImage",
     "importPaths": "@cbhq/cds-web/media/RemoteImage, @cbhq/cds-mobile/media/RemoteImage, :rn/cds-wallet/components/media/RemoteImage",
-    "totalInstances": 370
+    "totalInstances": 378
   },
   {
     "name": "Select",
     "importPaths": "@cbhq/cds-web/controls/Select, @cbhq/cds-mobile/controls/Select",
-    "totalInstances": 369
+    "totalInstances": 372
   },
   {
     "name": "Group",
     "importPaths": "@cbhq/cds-web/layout/Group, @cbhq/cds-mobile/layout/Group",
     "totalInstances": 87
+  },
+  {
+    "name": "TabNavigation",
+    "importPaths": "@cbhq/cds-web/tabs/TabNavigation, @cbhq/cds-mobile/tabs/TabNavigation, :rn/cds-wallet/components/TabNavigatorWithOffset/TabNavigation",
+    "totalInstances": 96
   },
   {
     "name": "SidebarItem",
@@ -222,35 +212,40 @@
     "totalInstances": 38
   },
   {
-    "name": "CellMedia",
-    "importPaths": "@cbhq/cds-web/cells/CellMedia, @cbhq/cds-mobile/cells/CellMedia",
-    "totalInstances": 169
+    "name": "SearchInput",
+    "importPaths": "@cbhq/cds-web/controls/SearchInput, @cbhq/cds-mobile/controls/SearchInput",
+    "totalInstances": 102
+  },
+  {
+    "name": "Lottie",
+    "importPaths": "@cbhq/cds-web/animation/Lottie, @cbhq/cds-mobile/animation/Lottie, :rn/cds-wallet/components/Subdomain/hooks/useClaimUsernameEducationLottie.tsx, :rn/cds-wallet/components/Subdomain/hooks/useSuccessClaimLottie.tsx, :rn/cds-wallet/components/WarmWelcome/hooks/useWelcomeLottie.tsx",
+    "totalInstances": 21
   },
   {
     "name": "Tray",
     "importPaths": "@cbhq/cds-mobile/overlays/Tray, @cbhq/cds-mobile/overlays/Tray/Tray, :rn/cds-wallet/components/Tray/Tray",
-    "totalInstances": 226
+    "totalInstances": 230
   },
   {
     "name": "Banner",
     "importPaths": "@cbhq/cds-web/banner/Banner, @cbhq/cds-mobile/banner/Banner",
-    "totalInstances": 176
+    "totalInstances": 177
   },
   {
     "name": "FullscreenModal",
     "importPaths": "@cbhq/cds-web/overlays/FullscreenModal, @cbhq/cds-web/overlays/Modal/FullscreenModal",
-    "totalInstances": 33
+    "totalInstances": 35
   },
   { "name": "GridColumn", "importPaths": "@cbhq/cds-web/layout/GridColumn", "totalInstances": 14 },
   {
     "name": "Avatar",
     "importPaths": "@cbhq/cds-web/media/Avatar, @cbhq/cds-mobile/media/Avatar",
-    "totalInstances": 76
+    "totalInstances": 68
   },
   {
     "name": "NavigationIconButton",
     "importPaths": "@cbhq/cds-web/buttons/NavigationIconButton",
-    "totalInstances": 6
+    "totalInstances": 5
   },
   {
     "name": "AvatarButton",
@@ -273,16 +268,20 @@
     "totalInstances": 20
   },
   {
+    "name": "CellMedia",
+    "importPaths": "@cbhq/cds-web/cells/CellMedia, @cbhq/cds-mobile/cells/CellMedia",
+    "totalInstances": 171
+  },
+  {
     "name": "LottieStatusAnimation",
     "importPaths": "@cbhq/cds-web/animation/LottieStatusAnimation, @cbhq/cds-mobile/animation/LottieStatusAnimation",
-    "totalInstances": 130
+    "totalInstances": 133
   },
   {
     "name": "FeatureEntryCard",
     "importPaths": "@cbhq/cds-web/cards/FeatureEntryCard, @cbhq/cds-mobile/alpha/FeatureEntryCard, @cbhq/cds-mobile/cards/FeatureEntryCard",
-    "totalInstances": 33
+    "totalInstances": 32
   },
-  { "name": "TileButton", "importPaths": "@cbhq/cds-web/buttons/TileButton", "totalInstances": 1 },
   {
     "name": "SegmentedControl",
     "importPaths": "@cbhq/cds-web/controls/SegmentedControl",
@@ -296,7 +295,7 @@
   {
     "name": "ContentCell",
     "importPaths": "@cbhq/cds-web/cells/ContentCell, @cbhq/cds-mobile/cells/ContentCell",
-    "totalInstances": 109
+    "totalInstances": 110
   },
   {
     "name": "CardGroup",
@@ -306,7 +305,7 @@
   {
     "name": "ProgressCircle",
     "importPaths": "@cbhq/cds-web/visualizations/ProgressCircle, @cbhq/cds-mobile/visualizations/ProgressCircle",
-    "totalInstances": 17
+    "totalInstances": 18
   },
   {
     "name": "Drawer",
@@ -314,16 +313,16 @@
     "totalInstances": 10
   },
   {
-    "name": "CardBody",
-    "importPaths": "@cbhq/cds-web/cards/CardBody, @cbhq/cds-mobile/cards/CardBody",
-    "totalInstances": 17
-  },
-  {
     "name": "AnnouncementCard",
     "importPaths": "@cbhq/cds-mobile/alpha/AnnouncementCard, :rn/cds-wallet/components/AnnouncementCard/AnnouncementCard",
     "totalInstances": 7
   },
   { "name": "CardHeader", "importPaths": "@cbhq/cds-mobile/cards/CardHeader", "totalInstances": 1 },
+  {
+    "name": "CardBody",
+    "importPaths": "@cbhq/cds-mobile/cards/CardBody, @cbhq/cds-web/cards/CardBody",
+    "totalInstances": 17
+  },
   {
     "name": "RemoteImageGroup",
     "importPaths": "@cbhq/cds-mobile/media/RemoteImageGroup, @cbhq/cds-web/media/RemoteImageGroup",
@@ -341,8 +340,13 @@
   },
   {
     "name": "SparklineInteractiveHeader",
-    "importPaths": "@cbhq/cds-mobile-visualization/SparklineInteractiveHeader, @cbhq/cds-web/visualizations/SparklineInteractiveHeader, @cbhq/cds-web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader, @cbhq/cds-mobile/visualizations/sparkline-interactive-header/SparklineInteractiveHeader",
+    "importPaths": "@cbhq/cds-mobile-visualization/SparklineInteractiveHeader, @cbhq/cds-web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader, @cbhq/cds-web/visualizations/SparklineInteractiveHeader, @cbhq/cds-mobile/visualizations/sparkline-interactive-header/SparklineInteractiveHeader",
     "totalInstances": 6
+  },
+  {
+    "name": "SparklineGradient",
+    "importPaths": "@cbhq/cds-web/visualizations/SparklineGradient",
+    "totalInstances": 1
   },
   {
     "name": "TabLabel",
@@ -351,13 +355,8 @@
   },
   {
     "name": "MenuItem",
-    "importPaths": "@cbhq/cds-web/dropdown/MenuItem, @cbhq/cds-web-overlays/dropdown/MenuItem",
+    "importPaths": "@cbhq/cds-web/dropdown/MenuItem, @cbhq/cds-web/overlays/PopoverMenu/MenuItem",
     "totalInstances": 3
-  },
-  {
-    "name": "SparklineGradient",
-    "importPaths": "@cbhq/cds-web/visualizations/SparklineGradient",
-    "totalInstances": 1
   },
   {
     "name": "TabIndicator",
