@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.28 (11/30/2023 PST)
+
+#### 🐞 Fixes
+
+- Merge Q3 and Q4 deprecations in v6. [[#2495](https://github.cbhq.net/frontend/cds/pull/2495)] [[DX-2657](https://jira.coinbase-corp.com/browse/DX-2657)]
+
 ## 0.1.27 (11/1/2023 PST)
 
 #### 🚀 Updates

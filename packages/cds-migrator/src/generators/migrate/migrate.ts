@@ -1,8 +1,8 @@
 import { Tree } from '@nrwl/devkit';
 
-import migrateToQ42023Deprecations from '../../migrations/q42023';
 import migrateTo4_0_0 from '../../migrations/update-4-0-0';
 import migrateTo5_0_0 from '../../migrations/update-5-0-0';
+import migrateTo6_0_0 from '../../migrations/update-6-0-0';
 import migrateToDecompedPackages from '../../migrations/update-decomp';
 
 type MigrateOptions = {
@@ -25,8 +25,8 @@ async function migrate(tree: Tree, options: MigrateOptions) {
       await migrateToDecompedPackages(tree);
       break;
 
-    case 'q42023-deprecations':
-      await migrateToQ42023Deprecations(tree);
+    case '6.0.0':
+      await migrateTo6_0_0(tree);
       break;
 
     default:

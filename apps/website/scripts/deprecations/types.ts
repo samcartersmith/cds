@@ -30,7 +30,7 @@ export type Component = Expand<
   } & SharedProps
 >;
 
-type Prop = Expand<
+export type Prop = Expand<
   {
     components?: string[];
   } & Pick<SharedProps, 'package' | 'name' | 'type' | 'migrationMap'>
@@ -49,7 +49,7 @@ type Param = {
 
 export type Deprecation = {
   /** Which quarter all these deprecations will be deleted */
-  endOfLife: `Q${number}202${number}`;
+  endOfLife: `Q${number}202${number}` | `V${number}`;
   /**
    * This is the branch of the latest major release before the deprecations will be deleted
    * this will be used to populate the github URL's for deprecations prior to deletion
