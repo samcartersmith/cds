@@ -12,7 +12,7 @@ type Scope = {
 export type MigrationType = 'renamed' | 'replaced' | 'path' | 'api' | 'removed' | 'propValue';
 export type MigrationMap = Expand<
   Record<Extract<MigrationType, 'api' | 'propValue'>, Record<string, string | null>> &
-    Record<Extract<MigrationType, 'replaced' | 'path' | 'rename'>, string | string[]>
+    Record<Extract<MigrationType, 'replaced' | 'path' | 'renamed'>, string | string[]>
 >;
 
 type SharedProps = {

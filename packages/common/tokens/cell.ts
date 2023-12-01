@@ -34,12 +34,12 @@ export const compactListHeight: CellScaleDensity = {
 
 /** Default spacing config */
 export const defaultSpacingConfig = {
-  innerSpacing: {
+  innerPadding: {
     spacingHorizontal: 2,
     spacingVertical: 1,
     offsetHorizontal: 2,
   },
-  outerSpacing: {
+  outerPadding: {
     spacingHorizontal: gutter,
     spacingVertical: 1,
     offsetHorizontal: 0,

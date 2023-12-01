@@ -21,6 +21,8 @@ export const ListCellFallback = memo(function ListCellFallback({
   rectWidthVariant,
   innerSpacing,
   outerSpacing,
+  innerPadding,
+  outerPadding,
 }: ListCellFallbackProps) {
   // We cant use ListCell here as we need to account for percentage based widths.
   // Flexbox collides with percentages also, so we need to wrap in normal divs.
@@ -60,9 +62,9 @@ export const ListCellFallback = memo(function ListCellFallback({
           </div>
         )
       }
-      innerSpacing={innerSpacing}
+      innerPadding={innerSpacing || innerPadding}
       media={media && <MediaFallback testID="list-cell-fallback-media" type={media} />}
-      outerSpacing={outerSpacing}
+      outerPadding={outerSpacing || outerPadding}
       testID={testID}
     >
       <div style={{ width: '100%' }}>

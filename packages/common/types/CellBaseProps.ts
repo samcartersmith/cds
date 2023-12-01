@@ -9,7 +9,10 @@ import { SharedProps } from './SharedProps';
 import { OffsetProps, SpacingProps } from './SpacingProps';
 
 export type CellSpacing = SpacingProps & OffsetProps;
-export type CellSpacingConfig = Pick<CellBaseProps, 'innerSpacing' | 'outerSpacing'>;
+export type CellSpacingConfig = Pick<
+  CellBaseProps,
+  'innerSpacing' | 'outerSpacing' | 'innerPadding' | 'outerPadding'
+>;
 export type CellPriority = (typeof cellPriorities)[number];
 
 export type CellCommonProps = {
@@ -24,10 +27,20 @@ export type CellCommonProps = {
   priority?: CellPriority | CellPriority[];
   /** Is the cell selected? Will apply a background and selected accessory. */
   selected?: boolean;
-  /** The spacing to use on the parent wrapper of Cell */
+  /**
+   * @deprecated Q42023 Please use outerPadding instead
+   * The spacing to use on the parent wrapper of Cell
+   * */
   outerSpacing?: CellSpacing;
-  /** The spacing to use on the inner content of Cell */
+  /**
+   * @deprecated Q42023 Please use innerPadding instead
+   * The spacing to use on the inner content of Cell
+   * */
   innerSpacing?: CellSpacing;
+  /** The padding to use on the parent wrapper of Cell */
+  outerPadding?: CellSpacing;
+  /** The padding to use on the inner content of Cell */
+  innerPadding?: CellSpacing;
 } & SharedProps;
 
 export type CellBaseProps = {
@@ -162,5 +175,8 @@ export type ListCellFallbackProps = {
   /** Display title shimmer. */
   title?: boolean;
 } & FallbackRectWidthProps &
-  Pick<CellCommonProps, 'compact' | 'innerSpacing' | 'outerSpacing'> &
+  Pick<
+    CellCommonProps,
+    'compact' | 'innerSpacing' | 'outerSpacing' | 'innerPadding' | 'outerPadding'
+  > &
   SharedProps;

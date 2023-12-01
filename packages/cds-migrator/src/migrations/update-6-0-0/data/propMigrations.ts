@@ -1,13 +1,12 @@
 import {
   AttributeRenameMapShape,
   AttributeValueToBooleanType,
-  ManualPropMigrationType,
   objectKeys,
   PropToAttributeValueMigrationShape,
   RenameAttributeMapShape,
 } from '../../../helpers';
 
-const spacingComponents = ['Box', 'HStack', 'VStack', 'Card', 'Group', 'ListCell', 'Grid'];
+const spacingComponents = ['Box', 'HStack', 'VStack', 'Card', 'Group', 'Grid'];
 export const offsetRenameMap = {
   offsetTop: 'marginTop',
   offsetStart: 'marginLeft',
@@ -39,6 +38,36 @@ const spacingConfigs: AttributeRenameMapShape = spacingComponents.reduce((acc, c
   acc[component] = objectKeys(spacingRenameMap).map((oldAttribute) => ({
     oldAttribute,
     newAttribute: spacingRenameMap[oldAttribute],
+  }));
+  return acc;
+}, {} as AttributeRenameMapShape);
+
+const webCellComponents = ['TableCell', 'TableCellFallback', 'TableCaption', 'TableRow'];
+const cellComponents = [
+  'ListCell',
+  'Cell',
+  'ListCellFallback',
+  'ContentCell',
+  ...webCellComponents,
+];
+
+export const cellRenameMap = {
+  innerSpacing: 'innerPadding',
+  outerSpacing: 'outerPadding',
+};
+
+const cellConfigs: AttributeRenameMapShape = cellComponents.reduce((acc, component) => {
+  const corePackageDependency = webCellComponents.includes(component)
+    ? { corePackageDependency: ['@cbhq/cds-web'] }
+    : {};
+  const renameMap =
+    component === 'ListCell'
+      ? { ...offsetRenameMap, ...spacingRenameMap, ...cellRenameMap }
+      : cellRenameMap;
+  acc[component] = objectKeys(renameMap).map((oldAttribute) => ({
+    oldAttribute,
+    newAttribute: renameMap[oldAttribute],
+    ...corePackageDependency,
   }));
   return acc;
 }, {} as AttributeRenameMapShape);
@@ -106,6 +135,7 @@ export const renamedProps: AttributeRenameMapShape = {
   ],
   ...offsetConfigs,
   ...spacingConfigs,
+  ...cellConfigs,
 };
 
 export const catchAllPropMigrations: RenameAttributeMapShape[] = [
@@ -161,17 +191,6 @@ export const removedProps: Record<string, RemovedProp> = {
     path: ['web/system', 'mobile/system'],
   },
 };
-
-// cell components use (inner|outer)Spacing with keys of offset*
-const cellSpacingComponents = ['Cell', 'ContentCell', 'ListCell'];
-
-export const manualPropMigrations = cellSpacingComponents.reduce((acc, component) => {
-  acc[component] = {
-    props: ['innerSpacing', 'outerSpacing'],
-    valueKeys: [...Object.keys(offsetRenameMap)],
-  };
-  return acc;
-}, {} as ManualPropMigrationType);
 
 export const attributeValueToBooleanMigrations: AttributeValueToBooleanType = {
   LinearGradient: {

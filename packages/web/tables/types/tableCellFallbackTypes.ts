@@ -13,4 +13,13 @@ export type TableCellFallbackProps = {
   end?: CellMediaType;
 } & SharedProps &
   FallbackRectWidthProps &
-  Pick<TableCellProps, 'width' | 'outerSpacing' | 'innerSpacing' | 'responsiveConfig' | 'as'>;
+  Pick<
+    TableCellProps,
+    | 'width'
+    | 'outerSpacing'
+    | 'innerSpacing'
+    | 'outerPadding'
+    | 'innerPadding'
+    | 'responsiveConfig'
+    | 'as'
+  >;

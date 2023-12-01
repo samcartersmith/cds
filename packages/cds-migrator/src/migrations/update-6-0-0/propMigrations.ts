@@ -6,8 +6,10 @@ import {
   checkFileIncludesRenamedValue,
   checkHasCdsDependency,
   createJsxMigration,
+  generateManualMigrationOutput,
   getComponentFromJsx,
   logDebug,
+  logWarning,
   ParseJsxElementsCbParams,
   RenameAttributeMapShape,
   renameJsxAttribute,
@@ -37,7 +39,7 @@ const checkSourceFile = (sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, sourceFile, tree, projectConfig } = args;
+  const { jsx, sourceFile, tree, projectConfig, path } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(renamedProps),
@@ -73,10 +75,19 @@ const callback = (args: ParseJsxElementsCbParams) => {
     return false;
   };
 
+  const manualMigrations = ['innerSpacing', 'outerSpacing'];
+
   const renameAttribute = (config: RenameAttributeMapShape) => {
-    const componentHasAttribute = jsx.getAttribute(config.oldAttribute);
-    if (componentHasAttribute && shouldApplyRename(config.corePackageDependency || [])) {
-      const { oldAttribute, newAttribute } = config;
+    const { oldAttribute, newAttribute, corePackageDependency } = config;
+    const componentHasAttribute = jsx.getAttribute(oldAttribute);
+    if (componentHasAttribute && manualMigrations.includes(oldAttribute)) {
+      const warning = `## Warning: ${
+        actualComponentName ?? component
+      } is potentially using a deprecated spacing and/or offset style in the ${newAttribute} prop at ${path}. \n  - You will need to manually migrate to using styles prefixed with margin > offset, and padding > spacing.  \n  - Refer to the migration guide for details: https://cds.cbhq.net/guides/migration/`;
+      generateManualMigrationOutput(warning);
+      logWarning(warning);
+    }
+    if (componentHasAttribute && shouldApplyRename(corePackageDependency || [])) {
       renameJsxAttribute({ oldAttribute, newAttribute, jsx });
       writeMigrationToFile({ oldValue: oldAttribute, newValue: newAttribute, jsx, sourceFile });
     }

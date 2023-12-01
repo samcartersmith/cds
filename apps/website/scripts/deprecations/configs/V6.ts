@@ -718,6 +718,42 @@ const Q4PropDeprecations: Prop[] = [
       },
     },
   },
+  {
+    name: 'innerSpacing',
+    components: [
+      'ListCell',
+      'Cell',
+      'ListCellFallback',
+      'ContentCell',
+      'TableCell',
+      'TableCellFallback',
+      'TableCaption',
+      'TableRow',
+    ],
+    package: 'common',
+    type: 'api',
+    migrationMap: {
+      api: { innerSpacing: 'innerPadding' },
+    },
+  },
+  {
+    name: 'outerSpacing',
+    components: [
+      'ListCell',
+      'Cell',
+      'ListCellFallback',
+      'ContentCell',
+      'TableCell',
+      'TableCellFallback',
+      'TableCaption',
+      'TableRow',
+    ],
+    package: 'common',
+    type: 'api',
+    migrationMap: {
+      api: { outerSpacing: 'outerPadding' },
+    },
+  },
 ];
 
 export const V6: Deprecation = {

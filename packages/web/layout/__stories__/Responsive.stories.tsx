@@ -216,18 +216,18 @@ export const ResponsiveCard = () => {
 
 const responsiveCellSpacing: ResponsiveCellSpacingProps = {
   phone: {
-    innerSpacing: {
+    innerPadding: {
       spacingHorizontal: 2,
     },
-    outerSpacing: {
+    outerPadding: {
       spacingVertical: 1,
     },
   },
   tablet: {
-    innerSpacing: {
+    innerPadding: {
       spacingHorizontal: 4,
     },
-    outerSpacing: {
+    outerPadding: {
       spacingVertical: 2,
     },
   },

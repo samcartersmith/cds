@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.29 (12/1/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] update: add inner/outerPadding props to cell component and add deprecation scripts for inner/outerSpacing props. [[#2483](https://github.cbhq.net/frontend/cds/pull/2483)]
+
 ## 0.1.28 (11/30/2023 PST)
 
 #### 🐞 Fixes

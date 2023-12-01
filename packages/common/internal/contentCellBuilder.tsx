@@ -41,7 +41,7 @@ export function contentCellBuilder(
     </>
   );
 
-  const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+  const innerPaddingConfig: CellSpacing = { spacingHorizontal: 1 };
 
   const PressableContent = () => (
     <>
@@ -51,7 +51,7 @@ export function contentCellBuilder(
 
       <ContentCell
         description="Description"
-        innerSpacing={innerSpacingConfig}
+        innerPadding={innerPaddingConfig}
         meta="Meta"
         onPress={onPressConsole}
         subtitle="Subtitle"
@@ -64,7 +64,7 @@ export function contentCellBuilder(
       <ContentCell
         selected
         description="Description"
-        innerSpacing={innerSpacingConfig}
+        innerPadding={innerPaddingConfig}
         meta="Meta"
         onPress={onPressConsole}
         title="Title"

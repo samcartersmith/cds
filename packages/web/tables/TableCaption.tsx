@@ -22,22 +22,24 @@ export const TableCaption = memo(
     backgroundColor,
     outerSpacing,
     innerSpacing,
+    outerPadding,
+    innerPadding,
     responsiveConfig,
     testID,
     ...rest
   }: TableCaptionProps) => {
     const { outer, inner } = useTableCellSpacing({
-      outer: outerSpacing,
-      inner: innerSpacing,
+      outer: outerSpacing || outerPadding,
+      inner: innerSpacing || innerPadding,
       skipAsValidation: true,
     });
 
     const { outer: outerCaptionSpacing, inner: innerCaptionSpacing } = useCellSpacing({
-      outerSpacing: outer,
-      innerSpacing: inner,
+      outerPadding: outer,
+      innerPadding: inner,
     });
 
-    const { responsiveInnerSpacing, responsiveOuterSpacing } =
+    const { responsiveInnerPadding, responsiveOuterPadding } =
       useResponsiveCellSpacingStyles(responsiveConfig);
 
     const inlineStyles = useMemo(
@@ -53,7 +55,7 @@ export const TableCaption = memo(
         <Box
           {...outerCaptionSpacing}
           dangerouslySetClassName={cx(
-            responsiveOuterSpacing,
+            responsiveOuterPadding,
             responsiveConfig && responsiveClassName,
           )}
         >
@@ -63,7 +65,7 @@ export const TableCaption = memo(
             flexGrow={1}
             {...innerCaptionSpacing}
             dangerouslySetClassName={cx(
-              responsiveInnerSpacing,
+              responsiveInnerPadding,
               responsiveConfig && responsiveClassName,
             )}
           >

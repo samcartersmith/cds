@@ -6,8 +6,8 @@ Please note, there are no default responsive styles for `TableCell`. This is an 
 
 ### Supported Properties
 
-- innerSpacing
-- outerSpacing
+- innerPadding
+- outerPadding
 
 ### Usage
 
@@ -18,18 +18,18 @@ function ResponsiveTableCell() {
   const responsiveConfig = useMemo(
     () => ({
       phone: {
-        innerSpacing: {
+        innerPadding: {
           spacingHorizontal: 2,
         },
-        outerSpacing: {
+        outerPadding: {
           spacingVertical: 1,
         },
       },
       desktop: {
-        innerSpacing: {
+        innerPadding: {
           spacingHorizontal: 4,
         },
-        outerSpacing: {
+        outerPadding: {
           spacingVertical: 2,
         },
       },

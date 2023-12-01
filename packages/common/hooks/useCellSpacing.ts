@@ -4,33 +4,42 @@ import { emptyObject } from '@cbhq/cds-utils';
 import { defaultSpacingConfig } from '../tokens/cell';
 import { CellBaseProps } from '../types';
 
-export const innerDefaults = defaultSpacingConfig.innerSpacing;
-export const outerDefaults = defaultSpacingConfig.outerSpacing;
+export const innerDefaults = defaultSpacingConfig.innerPadding;
+export const outerDefaults = defaultSpacingConfig.outerPadding;
 
-export type UseCellSpacingParams = Pick<CellBaseProps, 'innerSpacing' | 'outerSpacing'>;
+export type UseCellSpacingParams = Pick<
+  CellBaseProps,
+  'innerSpacing' | 'outerSpacing' | 'innerPadding' | 'outerPadding'
+>;
 /**
- * Takes the inner and outerSpacing props from the Cell component and merges with their default values.
+ * Takes the inner and outerPadding props from the Cell component and merges with their default values.
  */
 export function useCellSpacing({
   innerSpacing,
   outerSpacing,
+  innerPadding,
+  outerPadding,
 }: UseCellSpacingParams | undefined = emptyObject) {
   return useMemo(
     () =>
       ({
         inner: {
           ...innerDefaults,
-          spacingHorizontal: innerSpacing?.spacing ?? innerDefaults.spacingHorizontal,
-          spacingVertical: innerSpacing?.spacing ?? innerDefaults.spacingVertical,
-          ...innerSpacing,
+          spacingHorizontal:
+            (innerSpacing?.spacing || innerPadding?.spacing) ?? innerDefaults.spacingHorizontal,
+          spacingVertical:
+            (innerSpacing?.spacing || innerPadding?.spacing) ?? innerDefaults.spacingVertical,
+          ...(innerSpacing || innerPadding),
         },
         outer: {
           ...outerDefaults,
-          spacingHorizontal: outerSpacing?.spacing ?? outerDefaults.spacingHorizontal,
-          spacingVertical: outerSpacing?.spacing ?? outerDefaults.spacingVertical,
-          ...outerSpacing,
+          spacingHorizontal:
+            (outerSpacing?.spacing || outerPadding?.spacing) ?? outerDefaults.spacingHorizontal,
+          spacingVertical:
+            (outerSpacing?.spacing || outerPadding?.spacing) ?? outerDefaults.spacingVertical,
+          ...(outerSpacing || outerPadding),
         },
       } as const),
-    [innerSpacing, outerSpacing],
+    [innerSpacing, outerSpacing, innerPadding, outerPadding],
   );
 }

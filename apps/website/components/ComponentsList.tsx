@@ -57,9 +57,9 @@ const ComponentListCell = memo(
           accessory={isActive ? 'selected' : 'arrow'}
           description={`${totalCallSites} files`}
           detail={`${totalInstances} instances`}
-          innerSpacing={innerCellSpacing}
+          innerPadding={innerCellSpacing}
           onPress={setActiveComponent}
-          outerSpacing={outerCellSpacing}
+          outerPadding={outerCellSpacing}
           selected={isActive}
           title={name}
         />

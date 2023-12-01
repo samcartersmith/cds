@@ -56,7 +56,7 @@ export type CreateCardProps = {
   ThemeProvider: React.ComponentType<React.PropsWithChildren<unknown>>;
 };
 
-const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+const innerPaddingConfig: CellSpacing = { spacingHorizontal: 1 };
 
 export function cardBuilder({
   Box,
@@ -84,7 +84,7 @@ export function cardBuilder({
                 description="Description"
                 detail="$942,103"
                 detailWidth={95}
-                innerSpacing={innerSpacingConfig}
+                innerPadding={innerPaddingConfig}
                 intermediary={<CellMedia name="chartLine" type="icon" />}
                 media={<CellMedia source={assets.eth.imageUrl} type="image" />}
                 onPress={onPressConsole}

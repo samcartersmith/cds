@@ -45,15 +45,27 @@ export type TableRowProps = {
    */
   onPress?: MouseEventHandler<Element> | (() => void);
   /**
+   * @deprecated Q42023 Please use outerPadding instead
    * The spacing to use on the parent wrapper of Cell.
    * Will only take effect when fullWidth is set to true
    */
   outerSpacing?: TableCellProps['outerSpacing'];
   /**
+   * @deprecated Q42023 Please use innerPadding instead
    * The spacing to use on the inner content of Cell.
    * Will only take effect when fullWidth is set to true
    */
   innerSpacing?: TableCellProps['innerSpacing'];
+  /**
+   * The padding to use on the parent wrapper of Cell.
+   * Will only take effect when fullWidth is set to true
+   */
+  outerPadding?: TableCellProps['outerPadding'];
+  /**
+   * The padding to use on the inner content of Cell.
+   * Will only take effect when fullWidth is set to true
+   */
+  innerPadding?: TableCellProps['innerPadding'];
   /**
    * Specify props by device breakpoint.
    * Can only be used when TableRow is fullWidth

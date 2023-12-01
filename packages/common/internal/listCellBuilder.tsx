@@ -118,7 +118,7 @@ export function listCellBuilder(
     );
   };
 
-  const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+  const innerPaddingConfig: CellSpacing = { spacingHorizontal: 1 };
 
   const PressableContent = () => (
     <>
@@ -156,7 +156,7 @@ export function listCellBuilder(
       <ListCell
         description="Description"
         detail="Detail"
-        innerSpacing={innerSpacingConfig}
+        innerPadding={innerPaddingConfig}
         onPress={onPressConsole}
         subdetail="Neutral"
         title="Title"
@@ -175,7 +175,7 @@ export function listCellBuilder(
         disabled
         description="Description"
         detail="Detail"
-        innerSpacing={innerSpacingConfig}
+        innerPadding={innerPaddingConfig}
         onPress={onPressConsole}
         subdetail="Neutral"
         title="Title"
@@ -246,7 +246,7 @@ export function listCellBuilder(
         compact
         description="Description"
         detail="Detail"
-        innerSpacing={innerSpacingConfig}
+        innerPadding={innerPaddingConfig}
         onPress={onPressConsole}
         subdetail="Neutral"
         title="Title"
@@ -267,7 +267,7 @@ export function listCellBuilder(
         disabled
         description="Description"
         detail="Detail"
-        innerSpacing={innerSpacingConfig}
+        innerPadding={innerPaddingConfig}
         onPress={onPressConsole}
         subdetail="Neutral"
         title="Title"

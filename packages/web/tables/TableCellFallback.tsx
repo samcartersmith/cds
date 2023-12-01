@@ -21,6 +21,8 @@ export const TableCellFallback = memo(
     as,
     outerSpacing,
     innerSpacing,
+    outerPadding,
+    innerPadding,
     responsiveConfig,
     disableRandomRectWidth,
     rectWidthVariant,
@@ -35,12 +37,12 @@ export const TableCellFallback = memo(
     // Depends on tableSpacing value
     const tableCellSpacing = useTableCellSpacing();
     const cellOuterSpacing = useMemo(
-      () => outerSpacing ?? tableCellSpacing?.outer,
-      [outerSpacing, tableCellSpacing?.outer],
+      () => (outerSpacing || outerPadding) ?? tableCellSpacing?.outer,
+      [outerSpacing, outerPadding, tableCellSpacing?.outer],
     );
     const cellInnerSpacing = useMemo(
-      () => innerSpacing ?? tableCellSpacing?.inner,
-      [innerSpacing, tableCellSpacing?.inner],
+      () => (innerSpacing || innerPadding) ?? tableCellSpacing?.inner,
+      [innerSpacing, innerPadding, tableCellSpacing?.inner],
     );
 
     return (
@@ -48,9 +50,9 @@ export const TableCellFallback = memo(
         <Cell
           accessory={end && <MediaFallback testID="table-cell-fallback-accessory" type={end} />}
           gap={cellGap}
-          innerSpacing={cellInnerSpacing}
+          innerPadding={cellInnerSpacing}
           media={start && <MediaFallback testID="table-cell-fallback-media" type={start} />}
-          outerSpacing={cellOuterSpacing}
+          outerPadding={cellOuterSpacing}
           responsiveConfig={responsiveConfig}
         >
           {title && (

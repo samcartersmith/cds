@@ -119,7 +119,7 @@ export const Cell = memo(
   ) {
     const spacing = useCellSpacing(spacingProps);
     const offsetClassName = useOffsetStyles({ offsetHorizontal: spacing.inner.offsetHorizontal });
-    const { responsiveInnerSpacing, responsiveOuterSpacing } =
+    const { responsiveInnerPadding, responsiveOuterPadding } =
       useResponsiveCellSpacingStyles(responsiveConfig);
     const linkable = Boolean(onPress ?? onKeyDown ?? onKeyPress ?? to ?? href);
     const maybeTruncateClassName = cx(
@@ -139,7 +139,7 @@ export const Cell = memo(
         width="100%"
         {...spacing.inner}
         dangerouslySetClassName={cx(
-          responsiveInnerSpacing,
+          responsiveInnerPadding,
           responsiveConfig && responsiveClassName,
         )}
         offsetHorizontal={linkable ? undefined : spacing.inner.offsetHorizontal}
@@ -231,7 +231,7 @@ export const Cell = memo(
         {...spacing.outer}
         ref={ref}
         dangerouslySetClassName={cx(
-          responsiveOuterSpacing,
+          responsiveOuterPadding,
           responsiveConfig && responsiveClassName,
         )}
       >
