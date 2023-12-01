@@ -66,7 +66,9 @@ async function runAudit({
   a11yLogger.logTotalNumberOfToBeAccessibleTests();
   a11yLogger.logTestFilesWithToBeAccessible();
   a11yLogger.logTestFilesWithoutToBeAccessible();
+
   a11yLogger.logCoverageSummaryTotal();
+  a11yLogger.logFilteredCoverageSummaryTotal(a11yLogger.codeOwnerEntry);
 
   await a11yLogger.logComponents();
   await a11yLogger.logTotalNumberOfComponents();
@@ -85,7 +87,11 @@ async function runAudit({
   a11yLogger.logTotalNumberOfPassingToBeAccessibleTests(skipAccessibleTest);
 
   await a11yLogger.logCodeOwner();
-  await a11yLogger.logAutomatedA11yScore();
+  if (a11yLogger.codeOwnerEntry) {
+    await a11yLogger.logAutomatedA11yScore(a11yLogger.codeOwnerEntry);
+  } else {
+    await a11yLogger.logAutomatedA11yScore();
+  }
 }
 
 async function sleep(ms: number): Promise<void> {
@@ -117,6 +123,7 @@ async function sendScores(
     totalNumberOfComponentsWithTest,
     totalNumberOfPassingToBeAccessibleTests,
     codeOwner,
+    filteredJestScore,
   }: A11yLogType,
 ) {
   logVerbose({
@@ -131,6 +138,7 @@ async function sendScores(
       totalNumberOfComponentsWithTest,
       totalNumberOfPassingToBeAccessibleTests,
       codeOwner,
+      filteredJestScore,
     },
   });
 
@@ -145,6 +153,7 @@ async function sendScores(
       totalNumberOfComponentsWithTest,
       totalNumberOfPassingToBeAccessibleTests,
       codeOwner: codeOwner ?? null,
+      filteredJestScore: filteredJestScore ?? null,
     },
     AnalyticsEventImportance.high,
   );

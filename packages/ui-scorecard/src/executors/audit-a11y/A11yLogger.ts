@@ -3,12 +3,13 @@ import { color, logDebug, logError, logSuccess } from '@cbhq/mono-tasks';
 
 import { A11yAuditor } from './A11yAuditor';
 import { ASTParser } from './ASTParser';
+import { leadingWordsToRemove } from './constants';
 import { FilesParser } from './FilesParser';
 import { ansiToHumanText } from './FormatUtils';
 import { JestCoverageLogger } from './JestCoverageLogger';
 import { TestRunner } from './TestRunner';
 import { Task, TestTask } from './TestTask';
-import { A11yLogType, CodeOwnerEntry } from './types';
+import { A11yLogType, CodeOwnerEntry, CoverageAreas } from './types';
 
 /**
  * Use these option to enable verbose console logging
@@ -29,11 +30,11 @@ type DebugOptions = {
  */
 
 export class A11yLogger extends TestTask {
+  public codeOwnerEntry?: CodeOwnerEntry;
+
   private log: A11yLogType;
 
   private filePaths: string[];
-
-  private codeOwnerEntry?: CodeOwnerEntry;
 
   private jestCoverageLogger: JestCoverageLogger;
 
@@ -111,6 +112,7 @@ export class A11yLogger extends TestTask {
     printComponentsWithTests = false,
   }: Pick<DebugOptions, 'printComponentsWithTests'> = {}) {
     const start = performance.now();
+
     let componentsWithTest = [];
 
     if (this.log.components.length > 0) {
@@ -120,6 +122,8 @@ export class A11yLogger extends TestTask {
     } else {
       componentsWithTest = await this.a11yAuditor.getComponentsWithTestList();
     }
+
+    componentsWithTest = this.filterAllComponentsByPath(componentsWithTest);
 
     if (printComponentsWithTests) {
       console.log(componentsWithTest);
@@ -177,10 +181,7 @@ export class A11yLogger extends TestTask {
     const start = performance.now();
     let components = await this.a11yAuditor.getComponentsList();
 
-    const { codeOwnerEntry } = this;
-    if (codeOwnerEntry) {
-      components = A11yLogger.filterComponentsByPath(components, codeOwnerEntry);
-    }
+    components = this.filterAllComponentsByPath(components);
 
     if (printComponents) {
       console.log(components);
@@ -205,10 +206,26 @@ export class A11yLogger extends TestTask {
     codeOwnerEntry: CodeOwnerEntry,
   ): string[] {
     const { paths: pathsToFilterBy } = codeOwnerEntry;
-    if (pathsToFilterBy && pathsToFilterBy.length > 0) {
-      return components.filter((component) =>
-        pathsToFilterBy.some((path) => component.includes(path)),
-      );
+
+    // Remove leading slash from paths and specific leading words if present
+    // The reason is because for some repo configurations, the component paths don't have the workspace folder
+    const alteredPathsToFilterBy: string[] = pathsToFilterBy.map((path) => {
+      let normalizedPath = path.startsWith('/') ? path.substring(1) : path;
+
+      // Remove specified leading words from path
+      leadingWordsToRemove.forEach((word) => {
+        if (normalizedPath.startsWith(`${word}/`)) {
+          normalizedPath = normalizedPath.substring(word.length + 1);
+        }
+      });
+      return normalizedPath;
+    });
+
+    if (pathsToFilterBy && alteredPathsToFilterBy.length > 0) {
+      const newComponent = components.filter((component) => {
+        return alteredPathsToFilterBy.some((path) => component.includes(path));
+      });
+      return newComponent;
     }
     return components;
   }
@@ -217,16 +234,21 @@ export class A11yLogger extends TestTask {
     const start = new Date().getTime();
     let components = await this.a11yAuditor.getComponentsList();
 
-    const { codeOwnerEntry } = this;
-    if (codeOwnerEntry) {
-      components = A11yLogger.filterComponentsByPath(components, codeOwnerEntry);
-    }
+    components = this.filterAllComponentsByPath(components);
 
     this.log.totalNumberOfComponents = components.length;
 
     const elapsed = new Date().getTime() - start;
 
     A11yLogger.logFunctionAndDuration('totalNumberOfComponents', elapsed);
+  }
+
+  private filterAllComponentsByPath(components: string[]) {
+    const { codeOwnerEntry } = this;
+    if (codeOwnerEntry) {
+      return A11yLogger.filterComponentsByPath(components, codeOwnerEntry);
+    }
+    return components;
   }
 
   public logTotalNumberOfComponentTests({
@@ -418,6 +440,7 @@ export class A11yLogger extends TestTask {
     this.logFunctionCall('logAccessibleTestsJestOutput');
   }
 
+  // Coverage Summary Total for full repo wide level
   public logCoverageSummaryTotal() {
     const start = new Date().getTime();
 
@@ -432,6 +455,36 @@ export class A11yLogger extends TestTask {
     const elapsed = new Date().getTime() - start;
 
     A11yLogger.logFunctionAndDuration('coverageSummaryTotal', elapsed);
+  }
+
+  // Create Fitlered Coverage Summary Total and log
+  public logFilteredCoverageSummaryTotal(codeOwnerEntry?: CodeOwnerEntry) {
+    const start = new Date().getTime();
+    const initialSummary: CoverageAreas = {
+      lines: { total: 0, covered: 0, skipped: 0, pct: 0 },
+      statements: { total: 0, covered: 0, skipped: 0, pct: 0 },
+      functions: { total: 0, covered: 0, skipped: 0, pct: 0 },
+      branches: { total: 0, covered: 0, skipped: 0, pct: 0 },
+    };
+
+    if (codeOwnerEntry) {
+      const filteredCoverageSummaryJSON =
+        this.jestCoverageLogger.getFilteredCoverageSummaryJSON(codeOwnerEntry);
+
+      if (Object.keys(filteredCoverageSummaryJSON).length > 0) {
+        const filteredJestCoverageObject = this.jestCoverageLogger.calculateCoverageSummary(
+          filteredCoverageSummaryJSON,
+        );
+        this.log.filteredJestCoverage = filteredJestCoverageObject.total;
+      } else {
+        logError('Filtered Coverage summary is empty. Nothing to log to jestCoverageSymmary');
+      }
+    } else {
+      this.log.filteredJestCoverage = initialSummary;
+    }
+    const elapsed = new Date().getTime() - start;
+
+    A11yLogger.logFunctionAndDuration('filteredCoverageSummaryTotal', elapsed);
   }
 
   public logComponentsWithZeroCoverage() {
@@ -506,6 +559,7 @@ export class A11yLogger extends TestTask {
     return a11yScore;
   }
 
+  // Repo wide jestScore
   private logJestScore() {
     if (this.log.jestCoverage === undefined) {
       this.logCoverageSummaryTotal();
@@ -516,11 +570,39 @@ export class A11yLogger extends TestTask {
     return this.log.jestScore;
   }
 
-  public async logAutomatedA11yScore() {
-    const a11yScore = this.log.a11yScore ?? (await this.logA11yScore());
-    const jestScore = this.log.jestScore ?? this.logJestScore();
+  // Filtered jestScore if codeOwnerEntry is provided
+  private logFilteredJestScore(codeOwnerEntry?: CodeOwnerEntry) {
+    if (codeOwnerEntry) {
+      if (this.log.filteredJestCoverage === undefined) {
+        this.logFilteredCoverageSummaryTotal(codeOwnerEntry);
+      }
 
-    const automatedA11yScore = (a11yScore + jestScore * 2) / 3;
+      this.log.filteredJestScore = this.log.filteredJestCoverage
+        ? parseFloat(this.log.filteredJestCoverage.lines.pct.toFixed(2))
+        : 0;
+    } else {
+      this.log.filteredJestScore = 0;
+    }
+
+    return this.log.filteredJestScore;
+  }
+
+  //  Calculate automated a11y score
+  public async logAutomatedA11yScore(codeOwnerEntry?: CodeOwnerEntry) {
+    const a11yScore = this.log.a11yScore ?? (await this.logA11yScore());
+    let jestScore = 0;
+
+    // Handle jest logging
+    if (codeOwnerEntry) {
+      jestScore = this.log.filteredJestScore ?? this.logFilteredJestScore(codeOwnerEntry);
+      await this.logJestScore();
+    } else {
+      jestScore = this.log.jestScore ?? this.logJestScore();
+      await this.logFilteredJestScore();
+    }
+
+    // automatedA11yScore = (a11yScore/100) * jestScore where a11yScore is 0-100.
+    const automatedA11yScore = (a11yScore / 100) * jestScore;
 
     // rounding to one decimal place
     this.log.automatedA11yScore = Math.round(automatedA11yScore * 10) / 10;

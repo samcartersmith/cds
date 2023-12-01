@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.11 (11/29/2023 PST)
+
+#### 🐞 Fixes
+
+- Handle filtering edgecases for total component calculations. [[#2490](https://github.cbhq.net/frontend/cds/pull/2490)]
+
 ## 0.1.10 (11/10/2023 PST)
 
 #### 🐞 Fixes

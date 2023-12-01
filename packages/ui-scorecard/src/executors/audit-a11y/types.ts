@@ -120,6 +120,11 @@ export type A11yLogType = {
    */
   jestCoverage?: CoverageAreas;
   /**
+   * Jest Coverage Summary total report for the repo this
+   * executor is ran on
+   */
+  filteredJestCoverage?: CoverageAreas;
+  /**
    * A list of components in project
    */
   components: string[];
@@ -143,6 +148,10 @@ export type A11yLogType = {
    * Jest code coverage percentage (by line)
    */
   jestScore?: number;
+  /**
+   * Filtered Jest code coverage percentage (by line)
+   */
+  filteredJestScore?: number;
   /**
    * Metric representing accessibility, based solely on the results of automated accessibility testing
    */
