@@ -22,12 +22,9 @@
       ]
     },
     "debug": {
-      "executor": "nx:run-commands",
+      "executor": "@cbhq/mono-tasks:run-script",
       "options": {
-        "cwd": "libs/docusaurus-plugin-docgen",
-        "commands": [
-          "node /lib/scripts/debug.js"
-        ]
+        "script": "./src/scripts/debug.ts"
       }
     },
     "format": {

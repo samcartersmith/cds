@@ -26,7 +26,10 @@ type DocgenRunnerParams = PluginOptions & {
 };
 
 function getTempDirForDoc({ projectDir, doc }: { projectDir: string; doc: ProcessedDoc }) {
-  const relativeFilePath = doc.filePath.replace(`${path.dirname(projectDir)}/`, '');
+  const relativeFilePath = doc.filePath
+    .replace(`${path.dirname(projectDir)}/`, '')
+    .replace('src/', '');
+
   return relativeFilePath.replace(path.extname(relativeFilePath), '');
 }
 
@@ -71,27 +74,30 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
   const projects = await Promise.all(
     entryPoints.map(async (tsconfigPath) => {
       const projectDir = path.dirname(tsconfigPath);
-      const files = await glob('**/*.(ts|tsx|js|jsx)', {
+      const files = await glob('**/*.(ts|tsx|jsx)', {
         onlyFiles: true,
         cwd: projectDir,
         absolute: false,
         ignore: [
+          '**/__mocks__',
           '**/__tests__',
           '**/__stories__',
           '**/*-test.*',
           '**/*.fixture.*',
+          '**/*.mock.*',
           '**/*.test.*',
           '**/*.spec.*',
           '**/*.d.ts',
           '**/*.stories.*',
           '**/index.ts',
+          'lib',
           'node_modules',
         ],
       });
-      const filteredFiles = files.filter((file) => {
-        const fileWithoutExt = file.replace(path.extname(file), '');
-        return sourceFiles.includes(fileWithoutExt);
-      });
+      const filteredFiles = files.filter((file) =>
+        sourceFiles.some((sourceFile) => file.includes(sourceFile)),
+      );
+
       return {
         tsconfigPath,
         projectDir,
@@ -142,7 +148,7 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
         /**
          * Turn absolute path of parsed doc into path relative to project.
          * This should match what was provided in config.
-         * i.e. `Users/katherinemartinez/cds/packages/web/accordions/Accordion.tsx` into `web/accordions/Accordion.tsx`.
+         * i.e. `Users/katherinemartinez/cds/packages/web/src/accordions/Accordion.tsx` into `web/accordions/Accordion.tsx`.
          */
         const destDir = getTempDirForDoc({ projectDir, doc });
         const [, ...destDirWithoutProjectArray] = destDir.split('/');

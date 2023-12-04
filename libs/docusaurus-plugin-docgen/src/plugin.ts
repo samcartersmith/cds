@@ -33,7 +33,7 @@ export default function plugin(
 ): Plugin<PluginContent | undefined> {
   /**
    * The directory where we want to output docgen data and components.
-   * If running on website, this will be in .docusaurus/docusaurus-plugin-docgen/default
+   * If running on website, this will be in .docusaurus/@cbhq/docusaurus-plugin-docgen/default
    */
   const pluginDir = path.join(generatedFilesDir, PLUGIN_ID, options.id ?? DEFAULT_PLUGIN_ID);
 

@@ -24,18 +24,17 @@ const sourceFiles = [
   'controls/Checkbox',
 ];
 
+const rootPath = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT ?? '';
+
 async function debug() {
-  const pluginDir = path.join(__dirname, '../..');
-  const testsDir = path.join(pluginDir, '__tests__');
-  const webDir = path.join(pluginDir, '../web');
-  const mobileDir = path.join(pluginDir, '../mobile');
-  const webTsconfig = path.join(webDir, 'tsconfig.json');
-  const mobileTsconfig = path.join(mobileDir, 'tsconfig.json');
+  const testsDir = path.resolve(__dirname, '../../__tests__');
+  const webTsconfig = path.resolve(rootPath, 'packages/web/tsconfig.json');
+  const mobileTsconfig = path.resolve(rootPath, 'packages/mobile/tsconfig.json');
   const docs = await docgenRunner({
     entryPoints: [webTsconfig, mobileTsconfig],
     sourceFiles,
-    docsDir: path.join(testsDir, 'docs'),
-    pluginDir: path.join(testsDir, '.docusaurus'),
+    docsDir: path.resolve(testsDir, 'docs'),
+    pluginDir: path.resolve(testsDir, '.docusaurus'),
   });
   console.log(docs);
 }
