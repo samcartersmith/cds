@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { css } from '@linaria/core';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
@@ -7,11 +8,11 @@ import {
   IllustrationVariant,
   PictogramDimension,
   SpotIconDimension,
+  useToggler,
 } from '@cbhq/cds-common';
 import {
   illustrationDimensionDefaults,
   illustrationDimensions,
-  illustrationSizes,
 } from '@cbhq/cds-common/tokens/illustrations';
 import heroSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/descriptionMap';
 import heroSquareNames from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
@@ -36,7 +37,11 @@ import {
   SpotSquare,
   SpotSquareName,
 } from '@cbhq/cds-web/illustrations';
-import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { Grid, VStack } from '@cbhq/cds-web/layout';
+import { useToast } from '@cbhq/cds-web/overlays/useToast';
+import { PressableOpacity } from '@cbhq/cds-web/system';
+import { TextLegal } from '@cbhq/cds-web/typography';
+import { getOverflowTextStyles } from '@cbhq/cds-web/utils/overflow';
 
 const variantToNamesMap = {
   heroSquare: heroSquareNames,
@@ -110,6 +115,79 @@ const queryHasMatchingDescription = (type: IllustrationVariant, query: string, n
   return false;
 };
 
+const tileStyles = css`
+  cursor: pointer;
+  position: relative;
+`;
+
+const IllustrationTile = ({
+  name,
+  variant,
+  width,
+  dimension,
+  idx,
+}: {
+  name: string;
+  variant: IllustrationVariant;
+  width: number;
+  dimension: string;
+  idx: number;
+}) => {
+  const [shouldOverflow, { toggleOn, toggleOff }] = useToggler(false);
+  const overflowStyles = getOverflowTextStyles(shouldOverflow);
+  const widthString = `${width}px`;
+  const heightString = `${width + 20}px`;
+  const zIndex = variantToNamesMap[variant].length - idx + 2;
+  const toast = useToast();
+
+  const handleCopyToClipboard = useCallback(() => {
+    if (navigator) {
+      void navigator.clipboard.writeText(name).then(() => {
+        toast.show('Copied to clipboard');
+      });
+    }
+  }, [name, toast]);
+
+  return (
+    <PressableOpacity
+      className={tileStyles}
+      height={heightString}
+      onPress={handleCopyToClipboard}
+      width={widthString}
+    >
+      <VStack
+        key={name}
+        alignItems="center"
+        background="background"
+        height={heightString}
+        left={0}
+        onMouseEnter={toggleOn}
+        onMouseLeave={toggleOff}
+        position="absolute"
+        top={0}
+        width={widthString}
+        zIndex={zIndex}
+      >
+        {variant === 'heroSquare' && (
+          <HeroSquare dimension={dimension as HeroSquareDimension} name={name as HeroSquareName} />
+        )}
+        {variant === 'spotSquare' && <SpotSquare name={name as SpotSquareName} />}
+        {variant === 'spotRectangle' && <SpotRectangle name={name as SpotRectangleName} />}
+        {variant === 'pictogram' && (
+          <Pictogram dimension={dimension as PictogramDimension} name={name as PictogramName} />
+        )}
+        {variant === 'spotIcon' && (
+          <SpotIcon dimension={dimension as SpotIconDimension} name={name as SpotIconName} />
+        )}
+
+        <TextLegal align="center" as="p" dangerouslySetClassName={overflowStyles}>
+          {name}
+        </TextLegal>
+      </VStack>
+    </PressableOpacity>
+  );
+};
+
 export const IllustrationSheet = function IllustrationSheet({
   variant,
 }: {
@@ -137,42 +215,31 @@ export const IllustrationSheet = function IllustrationSheet({
   }, 1000);
 
   return (
-    <>
-      <HStack gap={2} spacingVertical={2}>
+    <VStack spacingBottom={4}>
+      <Grid gap={2} spacingTop={2} templateColumns="3fr 1fr">
         <SearchInput
           onChangeText={searchOnChange}
           placeholder="Illustration name"
           type="text"
           value={query}
-          width="70%"
         />
         <Select
           onChange={setSelectedCategory}
           placeholder="Choose something..."
           value={selectedCategory}
-          width="30%"
         >
           {options.map((option) => (
             <SelectOption key={option} title={option} value={option} />
           ))}
         </Select>
-      </HStack>
+      </Grid>
 
       <Tabs
         defaultValue={defaultVal}
         values={dimensions.map((dim) => ({ label: dim, value: dim }))}
       >
         {dimensions.map((dim) => {
-          const [originalWidth] = illustrationSizes[dim];
-          const width = originalWidth <= 96 ? originalWidth + 60 : originalWidth;
-          const illustrationLabelStyles = {
-            fontSize: 12,
-            width,
-            textAlign: 'center',
-            whiteSpace: 'normal',
-            overflowWrap: 'break-word',
-          } as const;
-
+          const width = parseInt(dim.split('x')[0]);
           const filteredNames = names
             .map((item) => item)
             .filter((name) => {
@@ -186,42 +253,21 @@ export const IllustrationSheet = function IllustrationSheet({
 
           return (
             <TabItem key={dim} value={dim}>
-              <HStack flexWrap="wrap" gap={2}>
-                {filteredNames.map((filteredName) => (
-                  <VStack key={filteredName} alignItems="center" overflow="auto" width={width}>
-                    {variant === 'heroSquare' && (
-                      <HeroSquare
-                        dimension={dim as HeroSquareDimension}
-                        name={filteredName as HeroSquareName}
-                      />
-                    )}
-                    {variant === 'spotSquare' && (
-                      <SpotSquare name={filteredName as SpotSquareName} />
-                    )}
-                    {variant === 'spotRectangle' && (
-                      <SpotRectangle name={filteredName as SpotRectangleName} />
-                    )}
-                    {variant === 'pictogram' && (
-                      <Pictogram
-                        dimension={dim as PictogramDimension}
-                        name={filteredName as PictogramName}
-                      />
-                    )}
-                    {variant === 'spotIcon' && (
-                      <SpotIcon
-                        dimension={dim as SpotIconDimension}
-                        name={filteredName as SpotIconName}
-                      />
-                    )}
-
-                    <p style={illustrationLabelStyles}>{filteredName}</p>
-                  </VStack>
+              <Grid columnMin={`${width}px`} gap={2} maxHeight={700} overflow="scroll">
+                {filteredNames.map((filteredName, idx) => (
+                  <IllustrationTile
+                    dimension={dim}
+                    idx={idx}
+                    name={filteredName}
+                    variant={variant}
+                    width={width}
+                  />
                 ))}
-              </HStack>
+              </Grid>
             </TabItem>
           );
         })}
       </Tabs>
-    </>
+    </VStack>
   );
 };

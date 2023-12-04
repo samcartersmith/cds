@@ -204,6 +204,11 @@ const sidebars = {
               id: 'components/illustrations/SpotSquare/spot-square',
               label: 'Spot Square',
             },
+            {
+              type: 'doc',
+              id: 'components/illustrations/SpotIcon/spot-icon',
+              label: 'Spot Icon',
+            },
           ],
         },
         {

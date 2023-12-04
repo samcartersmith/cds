@@ -19,6 +19,7 @@ type DocgenProps = {
 export type CMSProps = {
   propsTable?: DocgenProps;
   metadata?: DocgenProps;
+  intro?: DocgenProps;
   /**
    * Fallback component when CMS response is not available
    */

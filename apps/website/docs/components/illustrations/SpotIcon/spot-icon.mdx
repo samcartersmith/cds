@@ -5,4 +5,12 @@ keywords:
   - illustration
 ---
 
-<Page />
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Intro, { toc as introToc } from './_intro.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
+
+<Page
+  propsTable={{ element: <Implementation />, toc: implementationToc }}
+  metadata={{ element: <Metadata />, toc: metadataToc }}
+  intro={{ element: <Intro />, toc: introToc }}
+/>

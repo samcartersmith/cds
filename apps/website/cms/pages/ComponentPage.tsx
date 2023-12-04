@@ -24,6 +24,7 @@ type DocgenProps = {
 export type ComponentPageProps = {
   propsTable?: DocgenProps;
   metadata?: DocgenProps;
+  intro?: DocgenProps;
   staticExamples?: DocgenProps;
   content: ComponentPageFields;
 };
@@ -51,6 +52,7 @@ export const ComponentPage = memo(function ComponentPage({
   content: contentData,
   metadata,
   propsTable,
+  intro,
   staticExamples,
 }: ComponentPageProps) {
   const {
@@ -77,7 +79,7 @@ export const ComponentPage = memo(function ComponentPage({
       <TabItemOriginal
         key="examples"
         label="Examples"
-        toc={populateExamplesToc({ metadata, propsTable, codeExamples, staticExamples })}
+        toc={populateExamplesToc({ metadata, propsTable, codeExamples, staticExamples, intro })}
         value="examples"
       >
         <Section title="Examples">
@@ -87,6 +89,7 @@ export const ComponentPage = memo(function ComponentPage({
             ))}
             {staticExamples?.element && <VStack gap={2}>{staticExamples?.element}</VStack>}
             {metadata?.element}
+            {intro?.element}
             {propsTable?.element}
           </Group>
         </Section>

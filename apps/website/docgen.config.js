@@ -105,6 +105,7 @@ module.exports = {
     'illustrations/HeroSquare',
     'illustrations/Pictogram',
     'illustrations/SpotSquare',
+    'illustrations/SpotIcon',
     'illustrations/SpotRectangle',
     'layout/Box',
     'layout/Divider',

@@ -98,6 +98,7 @@ import { SparklineInteractive } from '@cbhq/cds-web/visualizations/sparkline-int
 import { SparklineInteractiveHeader } from '@cbhq/cds-web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
 
+import { Banner } from ':cds-website/components/Banner';
 import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleBox } from ':cds-website/components/ExampleBox';
@@ -221,6 +222,7 @@ const ReactLiveScope: unknown = {
   mocks,
   gutter,
   // Example components
+  Banner,
   ButtonSheet,
   ColorTile,
   ExampleWithThemeToggles,

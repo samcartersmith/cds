@@ -1,17 +1,20 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
+import { UiIconName } from '@cbhq/cds-icons';
 import descriptionMap from '@cbhq/cds-icons/__generated__/ui/data/descriptionMap';
 import names from '@cbhq/cds-icons/__generated__/ui/data/names';
+import { TileButton } from '@cbhq/cds-web/buttons';
 import { TextInput } from '@cbhq/cds-web/controls/TextInput';
-import { Icon } from '@cbhq/cds-web/icons';
-import { HStack } from '@cbhq/cds-web/layout';
+import { Icon, IconSize } from '@cbhq/cds-web/icons';
+import { Grid } from '@cbhq/cds-web/layout';
 import { Box } from '@cbhq/cds-web/layout/Box';
-import { VStack } from '@cbhq/cds-web/layout/VStack';
-import { TextLabel1 } from '@cbhq/cds-web/typography/TextLabel1';
+import { useToast } from '@cbhq/cds-web/overlays/useToast';
 
 import { sortByAlphabet } from '../../../../utils/sortByAlphabet';
 
-const alhpabeticallySortedNames = names.sort(sortByAlphabet);
+const alphabeticallySortedNames = names.sort(sortByAlphabet);
 
 const queryMatchesName = (query: string, name: string) => {
   const queryRe = new RegExp(query.trim().toLowerCase(), 'gi');
@@ -26,29 +29,31 @@ const queryMatchesName = (query: string, name: string) => {
   return name.match(queryRe) !== null || matchedIconNames.join(' ').match(nameRe) !== null;
 };
 
+const iconSizes: IconSize[] = ['xs', 's', 'm', 'l'];
+
+const IconTile = ({ name, size }: { name: UiIconName; size: IconSize }) => {
+  const toast = useToast();
+  const handleIconPress = useCallback(() => {
+    if (navigator) {
+      void navigator.clipboard.writeText(name).then(() => {
+        toast.show('Copied to clipboard');
+      });
+    }
+  }, [name, toast]);
+
+  return (
+    <TileButton onPress={handleIconPress} title={name}>
+      <Icon color="foreground" name={name} size={size} />
+    </TileButton>
+  );
+};
+
 export const IconSheet = () => {
   const [query, setQuery] = useState('');
 
   const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   }, 1000);
-
-  const icons = useMemo(() => {
-    return alhpabeticallySortedNames
-      .filter((name) => {
-        return queryMatchesName(query, name);
-      })
-      .map((name) => {
-        return (
-          <VStack key={name} alignItems="center" spacing={3} width={120}>
-            <Icon color="foreground" name={name} size="m" />
-            <TextLabel1 align="center" as="p" spacing={2}>
-              {name}
-            </TextLabel1>
-          </VStack>
-        );
-      });
-  }, [query]);
 
   return (
     <>
@@ -60,10 +65,23 @@ export const IconSheet = () => {
           type="text"
         />
       </Box>
-
-      <HStack alignItems="center" flexWrap="wrap" justifyContent="flex-start" spacingVertical={1}>
-        {icons}
-      </HStack>
+      <Tabs defaultValue="m" values={iconSizes.map((sz) => ({ label: sz, value: sz }))}>
+        {iconSizes.map((sz) => {
+          return (
+            <TabItem key={sz} value={sz}>
+              <Grid columnMin="106px" gap={1} maxHeight={700} overflow="scroll" spacingVertical={1}>
+                {alphabeticallySortedNames
+                  .filter((name) => {
+                    return queryMatchesName(query, name);
+                  })
+                  .map((name) => (
+                    <IconTile name={name} size={sz} />
+                  ))}
+              </Grid>
+            </TabItem>
+          );
+        })}
+      </Tabs>
     </>
   );
 };

@@ -53,13 +53,17 @@ export function populateGuidelinesToc(fields: ComponentPageFields) {
 export function populateExamplesToc({
   metadata,
   propsTable,
+  intro,
   codeExamples,
   staticExamples,
-}: Pick<ComponentPageProps, 'metadata' | 'propsTable' | 'staticExamples'> &
+}: Pick<ComponentPageProps, 'metadata' | 'propsTable' | 'intro' | 'staticExamples'> &
   Pick<ComponentPageFields, 'codeExamples'>) {
   let temp = [] as TOCItem[];
   if (metadata?.toc) {
     temp = [...metadata.toc, ...temp];
+  }
+  if (intro?.toc) {
+    temp = [...intro.toc, ...temp];
   }
 
   if (propsTable?.toc) {
