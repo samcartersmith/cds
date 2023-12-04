@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.21.1 (12/4/2023 PST)
+
+#### 🐞 Fixes
+
+- **[Collapsible]** Avoid animating content with height set to zero, fixes Reanimated issue. [[#2500](https://github.cbhq.net/frontend/cds/pull/2500)]
+
 ## 5.21.0 (12/1/2023 PST)
 
 #### 🚀 Updates

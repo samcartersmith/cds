@@ -7,6 +7,10 @@ import { Button } from '../../buttons';
 import { TextBody } from '../../typography';
 import { Collapsible } from '../Collapsible';
 
+jest.mock('../../hooks/useContentSize', () => ({
+  useContentSize: () => [{ width: 300, height: 700 }, () => null],
+}));
+
 const MockCollapsible = ({ defaultCollapsed = true }: { defaultCollapsed?: boolean }) => {
   const [collapsed, { toggle }] = useToggler(defaultCollapsed);
   const collapsibleId = useId();

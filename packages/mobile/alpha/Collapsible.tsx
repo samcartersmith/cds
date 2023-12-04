@@ -103,7 +103,7 @@ export const Collapsible = memo(
       useAnimatedReaction(
         () => collapsed,
         (_collapsed) => {
-          if (contentHeight === null) {
+          if (contentHeight === null || contentHeight === 0) {
             return;
           }
 
