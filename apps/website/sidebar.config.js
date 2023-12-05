@@ -350,13 +350,8 @@ const sidebars = {
             },
             {
               type: 'doc',
-              id: 'components/chips/grouped-chip',
-              label: 'Grouped Chip 🚧',
-            },
-            {
-              type: 'doc',
-              id: 'components/chips/tabbed-chip',
-              label: 'Tabbed Chip 🚧',
+              id: 'components/chips/tabbed-chips',
+              label: 'Tabbed Chips 🚧',
             },
           ],
         },
@@ -366,13 +361,13 @@ const sidebars = {
           type: 'category',
           label: 'Dot',
           items: [
-            { type: 'doc', id: 'components/dots/DotCount/dot-count', label: 'Count' },
+            { type: 'doc', id: 'components/dots/DotCount/dot-count', label: 'Dot Count' },
             {
               type: 'doc',
               id: 'components/dots/DotStatusColor/dot-status-color',
-              label: 'Status Color',
+              label: 'Dot Status Color',
             },
-            { type: 'doc', id: 'components/dots/DotSymbol/dot-symbol', label: 'Symbol' },
+            { type: 'doc', id: 'components/dots/DotSymbol/dot-symbol', label: 'Dot Symbol' },
           ],
         },
         { type: 'doc', id: 'components/overlays/Drawer/drawer', label: 'Drawer' },
