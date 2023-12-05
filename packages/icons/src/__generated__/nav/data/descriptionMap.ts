@@ -132,7 +132,7 @@ const descriptionMap: Record<string, string[]> = {
   mean: ['trading'],
   median: ['trading'],
   midpoint: ['trading'],
-  center: ['trading', 'helpCenterProduct'],
+  center: ['trading', 'helpCenterProduct', 'helpCenterQuestionMark'],
   norm: ['trading'],
   standard: ['trading'],
   specialty: [
@@ -334,7 +334,7 @@ const descriptionMap: Record<string, string[]> = {
   '🎊': ['giftBox'],
   '🥳': ['giftBox'],
   support: ['support'],
-  help: ['support', 'helpCenterProduct'],
+  help: ['support', 'helpCenterProduct', 'helpCenterQuestionMark'],
   communication: ['support'],
   chat: ['support', 'comment'],
   assist: ['support'],
@@ -602,6 +602,7 @@ const descriptionMap: Record<string, string[]> = {
     'dataMarketplaceProduct',
     'derivativesProduct',
     'proProduct',
+    'helpCenterQuestionMark',
   ],
   key: ['key', 'securityKey'],
   secure: ['key', 'securityKey'],
@@ -652,6 +653,13 @@ const descriptionMap: Record<string, string[]> = {
   marketplace: ['dataMarketplaceProduct'],
   derivative: ['derivativesProduct'],
   pro: ['proProduct'],
+  question: ['helpCenterQuestionMark'],
+  mark: ['helpCenterQuestionMark'],
+  FAQ: ['helpCenterQuestionMark'],
+  find: ['helpCenterQuestionMark'],
+  customer: ['helpCenterQuestionMark'],
+  service: ['helpCenterQuestionMark'],
+  CEX: ['helpCenterQuestionMark'],
 };
 
 export default descriptionMap;

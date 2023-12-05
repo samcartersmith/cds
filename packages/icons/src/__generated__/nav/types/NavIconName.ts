@@ -60,6 +60,7 @@ export type NavIconName =
   | 'hammer'
   | 'heart'
   | 'helpCenterProduct'
+  | 'helpCenterQuestionMark'
   | 'hiddenEye'
   | 'home'
   | 'institutionalProduct'

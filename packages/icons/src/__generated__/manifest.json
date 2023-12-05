@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-10-31T20:32:23.520Z",
-  "metadata": { "lastUnicode": 61942 },
+  "lastUpdated": "2023-12-05T08:01:18.816Z",
+  "metadata": { "lastUnicode": 61948 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -6186,7 +6186,7 @@
     "1287:170": {
       "type": "nav",
       "name": "folder",
-      "hash": "e0gvosq6f1hxdbWErfsXWscleK3Ny8cGWzxGE9VTWqw=",
+      "hash": "Q4ezkgnt0A+bqIpW9NeAtbqbLHv66tERHHnb30h0GS8=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61690 } },
@@ -6197,7 +6197,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61685 } }
       ],
       "createdAt": "2023-08-10T14:36:54.726Z",
-      "lastUpdated": "2023-10-25T16:54:59.319Z",
+      "lastUpdated": "2023-12-04T18:09:57.427Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-folder-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-folder-12-inactive.svg",
@@ -6210,7 +6210,7 @@
     "1287:181": {
       "type": "nav",
       "name": "folderArrow",
-      "hash": "kpVupdeZRm68fQzVrxof+64RQc+HBRtxpBIPM/pna9M=",
+      "hash": "szUb/bv/Juz18P1r7yB6vuLNoagiClP/L/g44Dt9+sk=",
       "description": "",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61696 } },
@@ -6221,7 +6221,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61691 } }
       ],
       "createdAt": "2023-08-10T14:36:54.717Z",
-      "lastUpdated": "2023-10-25T16:54:56.279Z",
+      "lastUpdated": "2023-12-04T18:09:57.407Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-folderArrow-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-folderArrow-12-inactive.svg",
@@ -6245,7 +6245,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61715 } }
       ],
       "createdAt": "2023-08-10T14:36:54.741Z",
-      "lastUpdated": "2023-10-05T21:13:36.330Z",
+      "lastUpdated": "2023-12-04T18:09:57.414Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-regulatedFutures-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-regulatedFutures-12-inactive.svg",
@@ -6269,7 +6269,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61721 } }
       ],
       "createdAt": "2023-08-10T14:36:54.709Z",
-      "lastUpdated": "2023-10-05T21:13:36.342Z",
+      "lastUpdated": "2023-12-04T18:09:57.421Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-rollingSpot-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-rollingSpot-12-inactive.svg",
@@ -6341,7 +6341,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61679 } }
       ],
       "createdAt": "2023-08-10T14:36:54.693Z",
-      "lastUpdated": "2023-10-05T21:13:36.359Z",
+      "lastUpdated": "2023-11-15T15:01:15.076Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-eventContracts-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-eventContracts-12-inactive.svg",
@@ -6389,7 +6389,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61667 } }
       ],
       "createdAt": "2023-08-10T14:36:54.683Z",
-      "lastUpdated": "2023-10-05T21:13:36.320Z",
+      "lastUpdated": "2023-12-01T17:42:13.684Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-base-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-base-12-inactive.svg",
@@ -6516,7 +6516,7 @@
     "1349:78": {
       "type": "nav",
       "name": "gasFees",
-      "hash": "q/CIe4aK/oH0ef/J6HDWfLGIeZG6M0H/R8gwP8eVmJw=",
+      "hash": "2/uiCVSJqUNQof5SR/F6yzY5PseEMdCY+9ZKtqX8iHk=",
       "description": "gas, fees, gas fees, eth, ethereum, low, high, cost, pump, handle, gasoline, car, ⛽️",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61738 } },
@@ -6527,7 +6527,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61733 } }
       ],
       "createdAt": "2023-09-14T22:57:49.341Z",
-      "lastUpdated": "2023-10-05T21:13:36.289Z",
+      "lastUpdated": "2023-12-04T18:09:57.397Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gasFees-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gasFees-12-inactive.svg",
@@ -7297,6 +7297,30 @@
         "svg12": "./ui/svg/ui-support-12.svg",
         "svg16": "./ui/svg/ui-support-16.svg",
         "svg24": "./ui/svg/ui-support-24.svg"
+      }
+    },
+    "1495:40": {
+      "type": "nav",
+      "name": "helpCenterQuestionMark",
+      "hash": "J4hbVIaCy9imnE0D9hG4ant45fQfxqqHdZTEQZ4+3wI=",
+      "description": "help, center, product, question, mark, FAQ, find, customer, service, CEX",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61948 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61947 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61946 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61945 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61944 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61943 } }
+      ],
+      "createdAt": "2023-12-01T22:33:05.247Z",
+      "lastUpdated": "2023-12-01T22:34:45.598Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-helpCenterQuestionMark-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-helpCenterQuestionMark-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-helpCenterQuestionMark-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-helpCenterQuestionMark-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-helpCenterQuestionMark-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-helpCenterQuestionMark-24-inactive.svg"
       }
     }
   }

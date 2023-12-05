@@ -1447,6 +1447,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-support-12': '',
   'ui-support-16': '',
   'ui-support-24': '',
+  'nav-helpCenterQuestionMark-12-active': '',
+  'nav-helpCenterQuestionMark-12-inactive': '',
+  'nav-helpCenterQuestionMark-16-active': '',
+  'nav-helpCenterQuestionMark-16-inactive': '',
+  'nav-helpCenterQuestionMark-24-active': '',
+  'nav-helpCenterQuestionMark-24-inactive': '',
 };
 
 export default glyphMap;

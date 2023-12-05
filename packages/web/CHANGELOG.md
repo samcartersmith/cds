@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Regenerate icons and illustrations stories. [[#2510](https://github.cbhq.net/frontend/cds/pull/2510)]
+
 ## 5.21.1 ((12/4/2023, 03:14 PM PST))
 
 This is an artificial version bump with no new change.

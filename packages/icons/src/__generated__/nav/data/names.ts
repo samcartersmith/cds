@@ -119,6 +119,7 @@ const names: NavIconName[] = [
   'dataMarketplaceProduct',
   'derivativesProduct',
   'proProduct',
+  'helpCenterQuestionMark',
 ];
 
 export default names;

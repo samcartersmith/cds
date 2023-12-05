@@ -8,6 +8,30 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.3.0 (12/5/2023 PST)
+
+#### 🚀 Updates
+
+- Publish icons 12/5/2023. [[#2510](https://github.cbhq.net/frontend/cds/pull/2510)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- helpCenterQuestionMark
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- folder
+- folderArrow
+- gasFees
+
 ## 2.2.0 (10/31/2023 PST)
 
 #### 🚀 Updates

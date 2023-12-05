@@ -8,6 +8,50 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.5.0 (12/5/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 12/5/2023. [[#2510](https://github.cbhq.net/frontend/cds/pull/2510)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- 2fa
+- authenticator
+- bank
+- chat
+- creditCard
+- delegate
+- done
+- email
+- error
+- fast
+- idVerification
+- multiCoin
+- noFees
+- pieChart
+- recurringPurchases
+- send
+- shield
+- warning
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Square
+
+- cryptoAndMore
+- ethStakeOrWrap
+
+#### Spot Icon
+
+- wallet
+
 ## 2.4.0 (11/1/2023 PST)
 
 #### 🚀 Updates

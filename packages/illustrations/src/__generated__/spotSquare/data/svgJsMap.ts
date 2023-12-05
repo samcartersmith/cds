@@ -226,8 +226,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/crossBorderPayments-4').content,
   },
   cryptoAndMore: {
-    light: () => require('../svgJs/light/cryptoAndMore-2').content,
-    dark: () => require('../svgJs/dark/cryptoAndMore-2').content,
+    light: () => require('../svgJs/light/cryptoAndMore-3').content,
+    dark: () => require('../svgJs/dark/cryptoAndMore-3').content,
   },
   cryptoApps: {
     light: () => require('../svgJs/light/cryptoApps-6').content,
@@ -346,8 +346,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/eth2SendSell-3').content,
   },
   ethStakeOrWrap: {
-    light: () => require('../svgJs/light/ethStakeOrWrap-2').content,
-    dark: () => require('../svgJs/dark/ethStakeOrWrap-2').content,
+    light: () => require('../svgJs/light/ethStakeOrWrap-3').content,
+    dark: () => require('../svgJs/dark/ethStakeOrWrap-3').content,
   },
   ethStakeOrWrapTwo: {
     light: () => require('../svgJs/light/ethStakeOrWrapTwo-2').content,
