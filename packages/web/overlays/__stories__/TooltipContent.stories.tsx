@@ -12,7 +12,7 @@ import { TooltipContent } from '../Tooltip/TooltipContent';
 import { PopperTooltipProps } from '../Tooltip/TooltipProps';
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export default {
   title: 'Core Components/TooltipContent (deprecated - moved to cds-web-overlays)',
@@ -47,7 +47,7 @@ const Template: ComponentStory<typeof BasicTooltipContent> = (args: PopperToolti
 );
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const Default = Template.bind({});
 
@@ -56,7 +56,7 @@ Default.args = {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const TooltipLongContent = Template.bind({});
 
@@ -68,7 +68,7 @@ TooltipLongContent.args = {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const TooltipLongWordContent = Template.bind({});
 
@@ -80,7 +80,7 @@ TooltipLongWordContent.args = {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const VStackNodeContent = Template.bind({});
 
@@ -97,7 +97,7 @@ VStackNodeContent.args = {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const HStackNodeContent = Template.bind({});
 

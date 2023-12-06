@@ -19,7 +19,7 @@ import { createText } from '../../typography/createText';
 export * from '@cbhq/cds-common/types/SparklineInteractiveHeaderBaseProps';
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ * @deprecated this component will be removed from CDS in v6.0.0. It has been moved to cds-web-sparkline.
  */
 const SparklineInteractiveHeaderStable = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(

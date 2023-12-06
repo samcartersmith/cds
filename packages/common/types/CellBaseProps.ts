@@ -28,12 +28,12 @@ export type CellCommonProps = {
   /** Is the cell selected? Will apply a background and selected accessory. */
   selected?: boolean;
   /**
-   * @deprecated Q42023 Please use outerPadding instead
+   * @deprecated v6.0.0 Please use outerPadding instead
    * The spacing to use on the parent wrapper of Cell
    * */
   outerSpacing?: CellSpacing;
   /**
-   * @deprecated Q42023 Please use innerPadding instead
+   * @deprecated v6.0.0 Please use innerPadding instead
    * The spacing to use on the inner content of Cell
    * */
   innerSpacing?: CellSpacing;
@@ -104,7 +104,7 @@ export type CellMediaPictogramProps<T> = {
 export type CellMediaOtherProps = {
   type: Exclude<CellMediaType, 'icon' | 'pictogram'>;
   /**
-   * @deprecated This prop will be removed at the end of Q32023.
+   * @deprecated This prop will be removed in v6.0.0
    * If required, use `accessibilityLabel` and `accessibilityHint` instead to set accessible labels.
    * Refer to https://cds.cbhq.net/components/cell-media/ for updated accessibility guidance.
    */

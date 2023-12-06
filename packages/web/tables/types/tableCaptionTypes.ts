@@ -37,13 +37,13 @@ export type TableCaptionProps = {
    */
   backgroundColor?: PaletteBackground;
   /**
-   * @deprecated Q42023 Please use outerPadding instead
+   * @deprecated will be removed in v6.0.0 Please use outerPadding instead
    * The spacing to use on the parent wrapper of the caption.
    * Overrides table cell spacing defaults.
    */
   outerSpacing?: TableCellProps['outerSpacing'];
   /**
-   * @deprecated Q42023 Please use innerPadding instead
+   * @deprecated will be removed in v6.0.0 Please use innerPadding instead
    * The spacing to use on the inner content of the caption.
    * Overrides table cell spacing defaults.
    */

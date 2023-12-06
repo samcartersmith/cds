@@ -23,7 +23,7 @@ import { SelectOption } from '../../select/SelectOption';
 import { SidebarMoreMenu, SidebarMoreMenuProps } from '../../sidebarMoreMenu/SidebarMoreMenu';
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
@@ -33,7 +33,7 @@ export const StoryMap = {
 // Helpers
 type Items = { title: string; icon: SidebarItemProps['icon'] }[];
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const items: Items = [
   { title: 'Assets', icon: 'chartPie' },

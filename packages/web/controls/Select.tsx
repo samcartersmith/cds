@@ -26,7 +26,7 @@ import { TextInputFocusVariantContext } from './context';
 import { SelectTrigger } from './SelectTrigger';
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export type SelectProps = {
   children: ReactNode;
@@ -34,7 +34,7 @@ export type SelectProps = {
   Pick<DropdownProps, 'disablePortal'>;
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const Select = memo(
   forwardRef(function Select(

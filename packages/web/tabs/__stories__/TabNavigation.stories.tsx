@@ -74,7 +74,7 @@ const longTabs: TabProps[] = [
 const tabs = longTabs.slice(0, 5);
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export default {
   title: 'Core Components/Tabs/TabNavigation (deprecated - moved to cds-web-overlays)',
@@ -82,7 +82,7 @@ export default {
 } as Meta;
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const Default: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
@@ -125,7 +125,7 @@ Default.parameters = {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const WithPaddles: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
@@ -135,7 +135,7 @@ export const WithPaddles: Story = () => {
 WithPaddles.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const WithDotCountChange: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
@@ -190,7 +190,7 @@ export const WithDotCountChange: Story = () => {
 WithDotCountChange.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const Secondary: Story = () => {
   const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>();
@@ -243,7 +243,7 @@ export const Secondary: Story = () => {
 Secondary.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const AccessibilityTest: Story = () => {
   const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>(tabs[0].id);

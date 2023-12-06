@@ -47,7 +47,7 @@ export type ButtonGroupBaseProps = {
   block?: boolean;
   /** Buttons to render as a group. */
   children: ElementChildren<ButtonBaseProps>;
-  /** @deprecated Q4 2023 Use direction='vertical' instead */
+  /** @deprecated will be removed in v6.0.0 Use direction='vertical' instead */
   vertical?: boolean;
   /**
    * @default horizontal

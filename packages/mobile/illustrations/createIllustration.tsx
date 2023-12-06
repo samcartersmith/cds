@@ -16,7 +16,7 @@ export type IllustrationA11yProps = Pick<
 > & {
   /** Alt tag to apply to the img
    * @default "" will identify the image as decorative
-   * @deprecated Use accessibilityLabel and accessibilityHint instead
+   * @deprecated will be removed in v6.0.0 Use accessibilityLabel and accessibilityHint instead
    */
   alt?: string;
 };

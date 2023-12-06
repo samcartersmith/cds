@@ -54,7 +54,7 @@ export const SparklineInteractiveScrubProvider = memo(
 );
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ * @deprecated this component will be removed from CDS in v6.0.0. It has been moved to cds-web-sparkline.
  */
 export function useSparklineInteractiveScrubContext() {
   return useContext(SparklineInteractiveScrubContext);

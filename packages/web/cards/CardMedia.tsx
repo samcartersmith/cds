@@ -8,7 +8,7 @@ import {
 import { Pictogram, SpotRectangle, SpotSquare } from '../illustrations';
 import { VStack } from '../layout/VStack';
 
-/** @deprecated Please use CardMedia moving forward */
+/** @deprecated will be removed in v6.0.0 Please use CardMedia moving forward */
 export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNames }) => {
   return (
     <VStack alignItems="center" height="auto" justifyContent="center" spacingTop={2} width="100%">
@@ -17,7 +17,7 @@ export const CardSpotRectangle = ({ name }: { name: IllustrationSpotRectangleNam
   );
 };
 
-/** @deprecated Please use CardMedia moving forward */
+/** @deprecated will be removed in v6.0.0 Please use CardMedia moving forward */
 export const CardSpotSquare = ({ name }: { name: IllustrationSpotSquareNames }) => {
   return (
     <VStack alignItems="center" height="auto" justifyContent="center" spacingTop={2} width="100%">
@@ -26,7 +26,7 @@ export const CardSpotSquare = ({ name }: { name: IllustrationSpotSquareNames }) 
   );
 };
 
-/** @deprecated Please use CardMedia moving forward */
+/** @deprecated will be removed in v6.0.0 Please use CardMedia moving forward */
 export const CardPictogram = ({ name }: { name: IllustrationPictogramNames }) => {
   return (
     <VStack alignItems="center" height="auto" justifyContent="center" spacingTop={2} width="100%">

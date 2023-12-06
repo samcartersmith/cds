@@ -3,7 +3,7 @@ import { Placement } from '@popperjs/core';
 import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common/types';
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export type PopoverContentPositionConfig = {
   /**
@@ -23,7 +23,7 @@ export type PopoverContentPositionConfig = {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export type PopoverProps = {
   content: ReactNode;

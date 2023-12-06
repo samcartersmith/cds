@@ -30,7 +30,7 @@ const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => 
 });
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const AppSwitcher = () => {
   return (
@@ -43,7 +43,7 @@ export const AppSwitcher = () => {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const AppSwitcherWithDot = () => {
   return (
@@ -58,7 +58,7 @@ export const AppSwitcherWithDot = () => {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export default {
   title: 'Core Components/Switchers/AppSwitcher (deprecated - moved to cds-web-overlays)',

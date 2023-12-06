@@ -21,7 +21,7 @@ type IllustrationProps<Type extends IllustrationVariant> = IllustrationBaseProps
 };
 
 /**
- * @deprecated This component will be deleted in Q42023. Please use HeroSquare, SpotSquare, SpotRectangle, or Pictogram components instead.
+ * @deprecated This component will be deleted in v6.0.0. Please use HeroSquare, SpotSquare, SpotRectangle, or Pictogram components instead.
  */
 export const Illustration = memo(function Illustration<Type extends IllustrationVariant>({
   type,

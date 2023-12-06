@@ -80,7 +80,7 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
 }
 
 /**
- * @deprecated this component will be removed from CDS Q22023. It has been moved to cds-web-sparkline.
+ * @deprecated this component will be removed from CDS in v6.0.0. It has been moved to cds-web-sparkline.
  */
 export const SparklineInteractiveMarkerDates = memo(
   SparklineInteractiveMarkerDatesWithGeneric,

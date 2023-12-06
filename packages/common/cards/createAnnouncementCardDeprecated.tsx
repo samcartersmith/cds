@@ -20,7 +20,7 @@ type CreateAnnouncementCardParams<T> = {
   Pictogram: React.ComponentType<React.PropsWithChildren<PictogramProps>>;
 };
 
-/** @deprecated */
+/** @deprecated will be removed in v6.0.0 */
 export type AnnouncementCardProps<T> = {
   title: CardBodyBaseProps['title'];
   description: CardBodyBaseProps['description'];
@@ -34,7 +34,7 @@ export type AnnouncementCardProps<T> = {
   onFooterActionPress: T;
 };
 
-/** @deprecated Please use createAnnouncementCard instead. This version uses pre-frontier styling */
+/** @deprecated will be removed in v6.0.0 Please use createAnnouncementCard instead. This version uses pre-frontier styling */
 export function createAnnouncementCardDeprecated<T>({
   Button,
   Card,

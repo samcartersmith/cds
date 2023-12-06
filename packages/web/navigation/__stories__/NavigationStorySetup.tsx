@@ -29,7 +29,7 @@ import { navLinkClassName } from '../NavLink';
 import { SidebarMoreMenu, SidebarMoreMenuProps } from '../SidebarMoreMenu';
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
@@ -39,7 +39,7 @@ export const StoryMap = {
 // Helpers
 type Items = { title: string; icon: SidebarItemProps['icon'] }[];
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const items: Items = [
   { title: 'Assets', icon: 'chartPie' },
@@ -88,7 +88,7 @@ type NavigationBarFullExampleProps = {
   onBackPress?: () => void;
 };
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export function NavigationBarFullExample({
   pageTitle,
@@ -147,7 +147,7 @@ export function NavigationBarFullExample({
 }
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const NavigationBarTitle = () => {
   return (
@@ -169,7 +169,7 @@ export const NavigationBarTitle = () => {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const ComposedSystem = () => {
   const [activeSidebarIndex, setActiveSidebarIndex] = useState(0);
@@ -234,7 +234,7 @@ const testOverrideClass = css`
 `;
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const NavLinkExample = () => {
   const [activeItem, setActiveItem] = useState('assets');
@@ -287,7 +287,7 @@ type SidebarExampleProps = {
 } & Omit<SidebarMoreMenuProps, 'children'>;
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
   const [activeIndex, setActiveIndex] = useState(0);

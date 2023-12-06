@@ -82,12 +82,12 @@ type TableCellBaseProps = {
    */
   width?: TableCellSharedProps['width'];
   /**
-   * @deprecated Q42023 Please use outerPadding instead
+   * @deprecated will be removed in v6.0.0 Please use outerPadding instead
    * The spacing to use on the parent wrapper of Cell
    */
   outerSpacing?: CellProps['outerSpacing'];
   /**
-   * @deprecated Q42023 Please use innerPadding instead
+   * @deprecated will be removed in v6.0.0 Please use innerPadding instead
    * The spacing to use on the inner content of Cell
    * @default { spacingHorizontal: 0 }
    */

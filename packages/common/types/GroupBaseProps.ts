@@ -18,7 +18,7 @@ export type GroupBaseProps<BoxProps> = {
   gap?: SpacingScale;
   /**
    * Stack items horizontally instead of vertically.
-   * @deprecated Please use direction=vertical | horizontal moving forward. This will be sunset in Q2.
+   * @deprecated will be removed in v6.0.0 Please use direction=vertical | horizontal moving forward. This will be sunset in Q2.
    * @default false
    * */
   horizontal?: boolean;

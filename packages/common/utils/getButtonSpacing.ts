@@ -27,7 +27,7 @@ const getCacheKey = ({
   return `${compact}-${flush}-${hasFrontier}-${startIcon}-${endIcon}`;
 };
 
-/** @deprecated Please use getButtonSpacingProps moving forward */
+/** @deprecated will be removed in v6.0.0 Please use getButtonSpacingProps moving forward */
 export const getButtonSpacing = memoize(function getButtonSpacing({
   compact,
   flush,

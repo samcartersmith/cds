@@ -9,7 +9,7 @@ import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSqua
 import { createIllustration, IllustrationBasePropsWithA11y } from './createIllustration';
 
 /**
- * @deprecated This token will be deleted in Q42023. Please use versionMaps from @cbhq/cds-illustrations/__generated__/ instead.
+ * @deprecated This token will be deleted in v6.0.0. Please use versionMaps from @cbhq/cds-illustrations/__generated__/ instead.
  */
 export const versionMaps: Record<IllustrationVariant, Record<string, number>> = {
   heroSquare: heroSquareVersionMap,
@@ -24,7 +24,7 @@ type IllustrationProps<Type extends IllustrationVariant> = IllustrationBaseProps
 };
 
 /**
- * @deprecated This component will be deleted in Q42023. Please use HeroSquare, SpotSquare, SpotRectangle, or Pictogram components instead.
+ * @deprecated This component will be deleted in v6.0.0. Please use HeroSquare, SpotSquare, SpotRectangle, or Pictogram components instead.
  */
 export const Illustration = memo(function Illustration<Type extends IllustrationVariant>({
   type,

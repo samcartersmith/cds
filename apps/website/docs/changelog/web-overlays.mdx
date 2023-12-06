@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- [trivial] chore: changed quarterly deprecations to v6.
+
 ## 0.0.15 (12/1/2023 PST)
 
 #### 🚀 Updates

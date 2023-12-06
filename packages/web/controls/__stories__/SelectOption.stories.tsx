@@ -4,7 +4,7 @@ import { defaultContext, SelectProvider } from '../selectContext';
 import { SelectOption } from '../SelectOption';
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export default {
   title: 'Core Components/Inputs/SelectOption (deprecated - moved to cds-web-overlays)',
@@ -12,7 +12,7 @@ export default {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const Stories = () => {
   return (

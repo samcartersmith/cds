@@ -13,7 +13,7 @@ import { DropdownProps, DropdownRefProps } from '../DropdownProps';
 import { MenuItem } from '../MenuItem';
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export default {
   title: 'Core Components/Dropdown (deprecated - moved to cds-web-overlays)',
@@ -44,7 +44,7 @@ type MockDropdownProps = {
 >;
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const Default = ({
   options = defaultOptions,
@@ -120,12 +120,12 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const Wrapped = () => <BaseWrapped />;
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const WrappedMobileModal = () => <BaseWrapped enableMobileModal />;
 
@@ -135,7 +135,7 @@ const subMenuPosition: PopoverContentPositionConfig = {
 };
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const SubMenu = () => {
   const [menuValue, setMenuValue] = useState<string>();
@@ -246,16 +246,16 @@ const emojiMap = [
 ];
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const ShowOverlay = () => <Default showOverlay />;
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const MobileModal = () => <Default enableMobileModal />;
 
 /**
- * @deprecated this component will be removed from cds-web Q22023. It has been moved to cds-web-overlays.
+ * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
 export const CustomOptions = () => {
   const [value, onChange] = useState<string | undefined>();
