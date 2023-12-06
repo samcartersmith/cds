@@ -211,8 +211,10 @@ This score acts as a gauge for the accessibility of a mobile app, but it only co
 The `automatedA11yScore` is a metric representing the accessibility of a mobile app, based solely on the results of automated accessibility testing. It provides a limited assessment of overall compliance.
 
 $$
-automatedA11yScore = \frac{a11yScore + jestScore\times 2}{3}
+automatedA11yScore = \frac{a11yScore}{100} \times jestScore
 $$
+
+- Note: The jestScore used in the calculation of `automatedA11yScore` is the `filteredJestScore` which is the total jest code coverage percentage of files specificed in codeowners file. By default it is the entire repo unless codeowners are specified.
 
 #### What is a11yScore?
 
@@ -238,7 +240,7 @@ $$
 
 ![jestCoverage Score](images/jestCoverage_score.png)
 
-The `jestScore` carries a weight of 2 in the `automatedA11yScore` calculation as it is considered more important than the `a11yScore`. A high `a11yScore` is less meaningful if your overall Jest test coverage is poor.
+The `jestScore` carries a weight of 1 in the `automatedA11yScore` calculation as it is considered important to take into consideration with the `a11yScore`. A high `a11yScore` is less meaningful if your overall Jest test coverage is poor.
 
 To illustrate this, imagine you have 500 components. Of these, only half (250) have matching test files. If all 250 test files contain a passing `toBeAccessible` test, your resulting `a11yScore` would be 100%. However, your app is not truly 100% accessibile since only half of your components were tested and audited.
 
@@ -255,11 +257,11 @@ Here are the key metrics from the [report](https://drive.google.com/drive/folder
 | totalNumberOfComponentsWithTest         | Total number of components and screens that have a matching test file | 810   |
 | totalNumberOfComponents                 | Total number of components and screens                                | 2447  |
 
-| Score              | Calculation              | Result |
-| ------------------ | ------------------------ | ------ |
-| a11yScore          | (441 / 810) \* 100       | 54.44  |
-| jestScore          | 66.14                    | 66.14  |
-| automatedA11yScore | (54.44 + 66.14 \* 2) / 3 | 62.2   |
+| Score              | Calculation           | Result |
+| ------------------ | --------------------- | ------ |
+| a11yScore          | (441 / 810) \* 100    | 54.44  |
+| jestScore          | 66.14                 | 66.14  |
+| automatedA11yScore | (54.44/100 \* 66.14 ) | 36.01  |
 
 ### Other Metrics and Info
 
