@@ -30,6 +30,6 @@ yarn nx run storybook:build
 
 ### Storybook Deployment
 
-Storybook is deployed to https://cdsstorybook.cbhq.net/ on every commit. This is configured in [codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) through the `development::cds-storybook` task
+Storybook is deployed to our production instance at https://cds-storybook.cbhq.net/ on every commit. This is configured in [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits) through the `infra-shared-prod::cds-storybook` task. If you wish to deploy to our development instance at https://cds-storybook-dev.cbhq.net/ for testing purposes, manually deploy to the `development::cds-storybook` target in Codeflow.
 
 ![storybook.png](storybook.png)
