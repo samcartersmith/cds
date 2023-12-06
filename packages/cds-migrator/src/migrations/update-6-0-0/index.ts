@@ -3,6 +3,7 @@ import { Tree } from '@nrwl/devkit';
 import attributeValueToBooleanMigrations from './attributeValueToBooleanMigrations';
 import catchAllPropMigrations from './catchAllPropMigrations';
 import componentMigrations from './componentMigrations';
+import pathMigrations from './pathMigrations';
 import propMigrations from './propMigrations';
 import propToAttributeValueMigrations from './propToAttributeValueMigrations';
 import removedComponents from './removedComponents';
@@ -16,4 +17,5 @@ export default async function main(tree: Tree) {
   await removedPropMigrations(tree);
   await attributeValueToBooleanMigrations(tree);
   await propToAttributeValueMigrations(tree);
+  await pathMigrations(tree);
 }

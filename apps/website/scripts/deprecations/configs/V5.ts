@@ -1,8 +1,7 @@
 import { Deprecation } from '../types';
 
-export const Q22023: Deprecation = {
-  endOfLife: 'Q22023',
-  prevMajorVersion: 'v4.1.3',
+export const V5: Deprecation = {
+  prevMajorVersion: 'v4.0.0',
   breakingRelease: 'v5.0.0',
   components: [
     {

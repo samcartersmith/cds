@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.30 (12/5/2023 PST)
+
+#### 🚀 Updates
+
+- Deprecated selectContext in web package.
+
 ## 0.1.29 (12/1/2023 PST)
 
 #### 🚀 Updates

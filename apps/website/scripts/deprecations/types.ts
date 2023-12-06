@@ -48,8 +48,6 @@ type Param = {
 } & Omit<SharedProps, 'name'>;
 
 export type Deprecation = {
-  /** Which quarter all these deprecations will be deleted */
-  endOfLife: `Q${number}202${number}` | `V${number}`;
   /**
    * This is the branch of the latest major release before the deprecations will be deleted
    * this will be used to populate the github URL's for deprecations prior to deletion
@@ -57,9 +55,9 @@ export type Deprecation = {
    */
   prevMajorVersion: string;
   /**
-   * Major release where the deprecations will be deleted
+   * Major version where the deprecations will be deleted
    */
-  breakingRelease?: string;
+  breakingRelease: string;
   components?: Partial<Component>[];
   types?: Type[];
   props?: Prop[];
@@ -69,7 +67,4 @@ export type Deprecation = {
   params?: Param[];
 };
 
-export type DeprecationGroups = keyof Omit<
-  Deprecation,
-  'endOfLife' | 'prevMajorVersion' | 'breakingRelease'
->;
+export type DeprecationGroups = keyof Omit<Deprecation, 'prevMajorVersion' | 'breakingRelease'>;

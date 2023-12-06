@@ -276,13 +276,10 @@ const sparklineMobileDeprecations = [
   },
 ];
 
-const Q32023ComponentDeprecations = [
+const componentDeprecations: Partial<Component>[] = [
   ...overlayWebDeprecations,
   ...sparklineWebDeprecations,
   ...sparklineMobileDeprecations,
-];
-
-const Q42023ComponentsDeprecations: Partial<Component>[] = [
   {
     package: 'mobile',
     name: 'FiatIcon',
@@ -393,7 +390,7 @@ const Q42023ComponentsDeprecations: Partial<Component>[] = [
   },
 ];
 
-const Q3PropDeprecations: Prop[] = [
+const propDeprecations: Prop[] = [
   {
     name: 'title',
     components: ['CellMedia'],
@@ -427,9 +424,6 @@ const Q3PropDeprecations: Prop[] = [
       },
     },
   },
-];
-
-const Q4PropDeprecations: Prop[] = [
   {
     name: 'frontier',
     components: ['FeatureFlagProvider', 'Card', 'Button', 'Sparkline', 'Typography'],
@@ -757,11 +751,10 @@ const Q4PropDeprecations: Prop[] = [
 ];
 
 export const V6: Deprecation = {
-  endOfLife: 'V6',
   prevMajorVersion: 'v5.0.0',
   breakingRelease: 'v6.0.0',
-  components: [...Q32023ComponentDeprecations, ...Q42023ComponentsDeprecations],
-  props: [...Q3PropDeprecations, ...Q4PropDeprecations],
+  components: componentDeprecations,
+  props: propDeprecations,
   tokens: [
     {
       path: 'packages/web/illustrations/Illustration.tsx',
@@ -772,6 +765,18 @@ export const V6: Deprecation = {
       migrationMap: {
         replaced: '@cbhq/cds-illustrations/generated/**illustration type**/data/versionMap',
       },
+    },
+  ],
+  functions: [
+    {
+      name: 'selectContext',
+      path: 'packages/web/controls/selectContext.ts',
+      package: 'web',
+      type: ['replaced', 'path'],
+      migrationMap: {
+        path: 'packages/web-overlays/select/selectContext.ts',
+      },
+      exportNames: ['selectContext', 'SelectContextType', 'SelectContext', 'SelectProvider'],
     },
   ],
 };

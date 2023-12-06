@@ -209,7 +209,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     params: ['### 🏗️ Params {#params}', ''],
   };
 
-  const { prevMajorVersion, endOfLife, breakingRelease, ...groupsInUse } = deprecationObj;
+  const { prevMajorVersion, breakingRelease, ...groupsInUse } = deprecationObj;
 
   objectKeys(deprecationObj).forEach((key) => {
     if (key === 'props') {
@@ -301,11 +301,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
   });
 
   const block: string[] = [
-    `## ${endOfLife} Deprecations`,
-    '',
-    `The following items will be deleted at the end of ${endOfLife} in ${
-      breakingRelease ?? 'a breaking release.'
-    }`,
+    `The following items will be deleted in ${breakingRelease}. Please use the <code>cds-migrator</code> package and respective [migration guide](../../../guides/migration) to update your codebase.`,
   ];
 
   Object.values(groups).forEach((group) => {
@@ -329,20 +325,22 @@ async function updateDeprecations() {
 
       deprecationsSidebar.push({
         type: 'doc',
-        id: `${MDX_PATHNAME}/${obj.endOfLife}`,
-        label: obj.endOfLife,
+        id: `${MDX_PATHNAME}/${obj.breakingRelease}`,
+        label: obj.breakingRelease,
       });
 
-      const filePathName = `${fullDeprecationPath}/${obj.endOfLife}.mdx`;
+      const filePathName = `${fullDeprecationPath}/${obj.breakingRelease}.mdx`;
 
       if (content === null) {
-        throw new Error(`Unexpected: Updated content for ${obj.endOfLife} is null.`);
+        throw new Error(`Unexpected: Updated content for ${obj.breakingRelease} is null.`);
       }
       try {
         // For each deprecation, create a new file in the deprecations folder with formatted content
         await generateDeprecationMDXFile(filePathName, content);
         console.log(
-          chalk.green(`Success! The Deprecations page for ${obj.endOfLife} has been updated.`),
+          chalk.green(
+            `Success! The Deprecations page for ${obj.breakingRelease} has been updated.`,
+          ),
         );
       } catch (error) {
         console.error(chalk.red(`FAILED: ${error}`));

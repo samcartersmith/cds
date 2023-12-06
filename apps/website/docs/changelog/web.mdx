@@ -14,6 +14,10 @@ This is an artificial version bump with no new change.
 
 #### 📘 Misc
 
+- Deprecated selectContext.
+
+#### 📘 Misc
+
 - Regenerate icons and illustrations stories. [[#2510](https://github.cbhq.net/frontend/cds/pull/2510)]
 
 ## 5.21.1 ((12/4/2023, 03:14 PM PST))
