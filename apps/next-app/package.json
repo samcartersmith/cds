@@ -12,7 +12,8 @@
     "@cbhq/cds-illustrations": "workspace:^",
     "@cbhq/cds-web": "workspace:^",
     "@linaria/react": "^4.3.3",
-    "next": "^13.0.0",
+    "@next/bundle-analyzer": "^14.0.3",
+    "next": "^14.0.3",
     "next-linaria": "1.0.1-beta",
     "react": "18.2.0",
     "react-dom": "^18.2.0"

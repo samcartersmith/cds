@@ -7,6 +7,12 @@
     "build": {
       "executor": "@cbhq/mono-tasks:build-next"
     },
+    "analyze": {
+      "executor": "@cbhq/mono-tasks:build-next",
+      "env": {
+        "ANALYZE": true
+      }
+    },
     "start": {
       "executor": "@cbhq/mono-tasks:start-next"
     },
