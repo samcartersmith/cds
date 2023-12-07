@@ -48,14 +48,20 @@ const server = createServer((request, response) => {
         status = STATUS.FINISHED(result.message);
         bot.logger.info(`WorkerPool task completed successfully: ${result}`);
       }
+
+      bot.logger.info('Status scheduled for reset to STATUS.WAITING in 5 minutes');
+
+      setTimeout(() => {
+        if (running) bot.logger.info('Scheduled status reset cancelled because bot is running');
+        else {
+          status = STATUS.WAITING;
+          bot.logger.info('Status was reset to STATUS.WAITING as scheduled');
+        }
+      }, 5 * 60 * 1000);
     });
   }
 
   if (request.url === '/status') data = status;
-  if (request.url === '/reset-status') {
-    status = STATUS.WAITING;
-    data = 'Status successfully reset';
-  }
 
   if (request.url === '/logs') data = bot.getCombinedLogs() || 'No logs';
   if (request.url === '/errors') data = bot.getErrorLogs() || 'No errors';
