@@ -152,7 +152,7 @@
     "url-loader": "4.1.1",
     "webfont": "9.0.0",
     "webpack": "^5.63.0",
-    "webpack-bundle-analyzer": "4.4.2",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.0",
     "yargs": "^17.5.1"

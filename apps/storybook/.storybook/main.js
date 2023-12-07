@@ -1,5 +1,7 @@
 // @ts-check
 const path = require('path');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 const BABEL_OPTIONS = { configFile: true, rootMode: 'upward' };
 
 /**
@@ -118,6 +120,20 @@ const config = {
       '@cbhq/cds-icons': path.resolve(__dirname, '../../../packages/icons/src'),
       '@cbhq/cds-illustrations': path.resolve(__dirname, '../../../packages/illustrations/src'),
     };
+
+    if (!config.plugins) config.plugins = [];
+
+    if (process.env.ANALYZE === 'true') {
+      console.log('Bundle analyzer enabled because process.env.ANALYZE === "true"');
+      config.plugins.push(
+        // @ts-expect-error
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'json',
+          excludeAssets: (assetName) => !assetName.startsWith('main'),
+        }),
+      );
+    }
+
     return config;
   },
 };

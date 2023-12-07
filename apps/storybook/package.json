@@ -36,7 +36,8 @@
     "storybook-addon-performance": "^0.16.1",
     "storybook-addon-pseudo-states": "^1.15.1",
     "storybook-dark-mode": "^1.1.2",
-    "wait-on": "^6.0.1"
+    "wait-on": "^6.0.1",
+    "webpack-bundle-analyzer": "^4.10.1"
   },
   "main": "./index.js",
   "typings": "./index.d.ts"

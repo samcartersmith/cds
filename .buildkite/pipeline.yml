@@ -167,7 +167,16 @@ steps:
     <<: *k8s_medium_chrome
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --targets=storybook-e2e-test --allOnMaster
+      - yarn mono-pipeline run-ci other --projects=storybook --targets=storybook-e2e-test --allOnMaster
+    retry:
+      automatic:
+        limit: 1
+
+  - label: 'Bundle Size'
+    <<: *k8s_medium_chrome
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci other --projects=storybook --targets=analyze-bundle --allOnMaster
     retry:
       automatic:
         limit: 1

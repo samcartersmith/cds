@@ -26,6 +26,15 @@
         "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
       ]
     },
+    "build-for-analyze": {
+      "executor": "@cbhq/mono-tasks:build-storybook",
+      "outputs": [
+        "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
+      ],
+      "env": {
+        "ANALYZE": true
+      }
+    },
     "build-for-tests": {
       "executor": "@cbhq/mono-tasks:build-storybook",
       "dependsOn": [
@@ -74,6 +83,15 @@
       },
       "dependsOn": [
         "build-for-tests"
+      ]
+    },
+    "analyze-bundle": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./scripts/analyze-bundle.ts"
+      },
+      "dependsOn": [
+        "build-for-analyze"
       ]
     }
   }
