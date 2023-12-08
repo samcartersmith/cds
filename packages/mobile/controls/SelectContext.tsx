@@ -6,6 +6,7 @@ import { SelectContextType } from './useSelect';
 const defaultContext = {
   value: '',
   onChange: () => null,
+  handleClose: () => null,
 };
 
 const errorMessage =

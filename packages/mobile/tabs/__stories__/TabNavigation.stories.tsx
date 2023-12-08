@@ -1,42 +1,50 @@
 import React, { useCallback, useState } from 'react';
 import sample from 'lodash/sample';
-import { TabNavigationProps, TabProps } from '@cbhq/cds-common';
+import { CustomTabProps, TabNavigationProps } from '@cbhq/cds-common';
+import { sampleTabs } from '@cbhq/cds-common/internal/data/tabs';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { Button } from '../../buttons';
+import { Chip } from '../../chips/Chip';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { HStack } from '../../layout';
+import { TextHeadline } from '../../typography';
 import { TabNavigation } from '../TabNavigation';
 
-const tabs: TabProps[] = [
+const renderCustomTab = ({ label, ...props }: CustomTabProps) => (
+  <HStack
+    bordered
+    background="background"
+    borderRadius="roundedSmall"
+    spacingHorizontal={2}
+    spacingVertical={1}
+    {...props}
+  >
+    <TextHeadline>{label}</TextHeadline>
+  </HStack>
+);
+
+const renderAnotherCustomTab = ({ label, ...props }: CustomTabProps) => (
+  <Chip {...props}>{label}</Chip>
+);
+
+const someCustomTabs = [
+  ...sampleTabs.slice(0, 3),
   {
-    id: 'first_item',
-    label: 'First item',
-  },
-  {
-    id: 'second_item',
-    label: 'Second item',
-    count: 0,
-  },
-  {
-    id: 'third_item',
-    label: 'Third item',
-  },
-  {
-    id: 'fourth_item',
-    label: 'Fourth item',
-  },
-  {
-    id: 'fifth_item',
-    label: 'Fifth item',
+    id: 'custom_tab',
+    label: 'Custom',
+    testID: 'custom_tab',
+    Component: renderCustomTab,
   },
 ];
 
 const TabNavigationScreen = () => {
   const [currentTabOne, setCurrentTabOne] = useState<TabNavigationProps['value']>();
-  const [currentTabTwo, setCurrentTabTwo] = useState<TabNavigationProps['value']>(tabs[3].id);
+  const [currentTabTwo, setCurrentTabTwo] = useState<TabNavigationProps['value']>(sampleTabs[3].id);
   const [currentTabThree, setCurrentTabThree] = useState<TabNavigationProps['value']>();
+  const [currentTabFour, setCurrentTabFour] = useState<TabNavigationProps['value']>();
   const randomizeCurrentTabOne = useCallback(() => {
-    const randomTabItem = sample(tabs);
+    const randomTabItem = sample(sampleTabs);
 
     setCurrentTabOne(randomTabItem?.id);
   }, []);
@@ -44,18 +52,37 @@ const TabNavigationScreen = () => {
   return (
     <ExampleScreen>
       <Example overflow="visible" spacing={gutter} title="Tab Navigation">
-        <TabNavigation onChange={setCurrentTabOne} tabs={tabs} value={currentTabOne} />
+        <TabNavigation onChange={setCurrentTabOne} tabs={sampleTabs} value={currentTabOne} />
         <Button onPress={randomizeCurrentTabOne}>Select random item</Button>
       </Example>
       <Example overflow="visible" spacing={gutter} title="Tab Navigation (with Default Tab)">
-        <TabNavigation onChange={setCurrentTabTwo} tabs={tabs} value={currentTabTwo} />
+        <TabNavigation onChange={setCurrentTabTwo} tabs={sampleTabs} value={currentTabTwo} />
       </Example>
       <Example overflow="visible" spacing={gutter} title="Tab Navigation (Secondary)">
         <TabNavigation
           onChange={setCurrentTabThree}
-          tabs={tabs}
+          tabs={sampleTabs}
           value={currentTabThree}
           variant="secondary"
+        />
+      </Example>
+      <Example title="Custom Tab">
+        <TabNavigation onChange={setCurrentTabFour} tabs={someCustomTabs} value={currentTabFour} />
+      </Example>
+      <Example title="Custom Tabs">
+        <TabNavigation
+          Component={renderCustomTab}
+          onChange={setCurrentTabFour}
+          tabs={sampleTabs}
+          value={currentTabFour}
+        />
+      </Example>
+      <Example title="Custom Tabs with one override">
+        <TabNavigation
+          Component={renderAnotherCustomTab}
+          onChange={setCurrentTabFour}
+          tabs={someCustomTabs}
+          value={currentTabFour}
         />
       </Example>
     </ExampleScreen>

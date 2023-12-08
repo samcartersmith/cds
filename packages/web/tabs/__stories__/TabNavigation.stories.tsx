@@ -1,12 +1,15 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import sample from 'lodash/sample';
+import { sampleTabs } from '@cbhq/cds-common/internal/data/tabs';
 import { loremIpsum } from '@cbhq/cds-common/internal/loremIpsumBuilder';
-import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
+import { CustomTabProps, TabNavigationProps } from '@cbhq/cds-common/types';
 
 import { VStack } from '../../alpha/VStack';
 import { Button } from '../../buttons/Button';
+import { Chip } from '../../chips/Chip';
 import { Select, SelectOption } from '../../controls';
+import { HStack } from '../../layout';
 import { ThemeProvider } from '../../system';
 import { Link, TextBody, TextHeadline, TextTitle1 } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
@@ -24,66 +27,18 @@ const a11ySkipConfig = {
     rules: [
       { id: 'aria-valid-attr-value', enabled: false },
       { id: 'duplicate-id-active', enabled: false },
+      { id: 'duplicate-id', enabled: false },
     ],
   },
 };
 
-const longTabs: TabProps[] = [
-  {
-    id: 'first_primary_tab',
-    label: 'Tab one',
-    testID: 'customTestId',
-  },
-  {
-    id: 'second_primary_tab',
-    label: 'Tab two',
-  },
-  {
-    id: 'third_primary_tab',
-    label: 'Tab three',
-  },
-  {
-    id: 'fourth_primary_tab',
-    label: 'Tab four',
-  },
-  {
-    id: 'fifth_primary_tab',
-    label: 'Tab five',
-  },
-  {
-    id: 'sixth_primary_tab',
-    label: 'Tab six',
-  },
-  {
-    id: 'seventh_primary_tab',
-    label: 'Tab seven',
-  },
-  {
-    id: 'eighth_primary_tab',
-    label: 'Tab eight',
-  },
-  {
-    id: 'ninth_primary_tab',
-    label: 'Tab nine',
-  },
-  {
-    id: 'tenth_primary_tab',
-    label: 'Tab ten',
-  },
-];
-const tabs = longTabs.slice(0, 5);
+const tabs = sampleTabs.slice(0, 5);
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Tabs/TabNavigation (deprecated - moved to cds-web-overlays)',
+  title: 'Core Components/Tabs/TabNavigation',
   component: TabNavigation,
 } as Meta;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Default: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
 
@@ -124,19 +79,77 @@ Default.parameters = {
   a11y: a11ySkipConfig,
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
+const renderCustomTab = ({ label, ...props }: CustomTabProps) => (
+  <HStack
+    bordered
+    background="background"
+    borderRadius="roundedSmall"
+    spacingHorizontal={2}
+    spacingVertical={1}
+    {...props}
+  >
+    <TextHeadline as="p">{label}</TextHeadline>
+  </HStack>
+);
+
+const renderAnotherCustomTab = ({ label, ...props }: CustomTabProps) => (
+  <Chip {...props}>{label}</Chip>
+);
+
+const someCustomTabs = [
+  ...tabs.slice(0, 3),
+  {
+    id: 'custom_tab',
+    label: 'Custom',
+    testID: 'custom_tab',
+    Component: renderCustomTab,
+  },
+];
+
+export const CustomTab: Story = () => {
+  const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
+
+  return (
+    <VStack gap={2}>
+      <TextHeadline as="p">Custom tab</TextHeadline>
+      <TabNavigation
+        Component={renderCustomTab}
+        gap={1}
+        onChange={setValue}
+        tabs={tabs}
+        value={value}
+      />
+      <TextHeadline as="p">Custom tab with paddles</TextHeadline>
+      <TabNavigation
+        Component={renderCustomTab}
+        gap={1}
+        onChange={setValue}
+        tabs={sampleTabs}
+        value={value}
+      />
+      <TextHeadline as="p">Only one custom tab</TextHeadline>
+      <TabNavigation gap={1} onChange={setValue} tabs={someCustomTabs} value={value} />
+      <TextHeadline as="p">All the custom things</TextHeadline>
+      <TabNavigation
+        Component={renderAnotherCustomTab}
+        gap={1}
+        onChange={setValue}
+        tabs={someCustomTabs}
+        value={value}
+      />
+    </VStack>
+  );
+};
+
+CustomTab.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
+
 export const WithPaddles: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
 
-  return <TabNavigation onChange={setValue} tabs={longTabs} value={value} />;
+  return <TabNavigation onChange={setValue} tabs={sampleTabs} value={value} />;
 };
 WithPaddles.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const WithDotCountChange: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
   const [count, setCount] = useState(0);
@@ -189,9 +202,6 @@ export const WithDotCountChange: Story = () => {
 };
 WithDotCountChange.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Secondary: Story = () => {
   const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>();
 
@@ -242,9 +252,6 @@ export const Secondary: Story = () => {
 };
 Secondary.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const AccessibilityTest: Story = () => {
   const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>(tabs[0].id);
 

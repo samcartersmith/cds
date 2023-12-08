@@ -9,16 +9,31 @@ import { TextLabel2 } from '../typography/TextLabel2';
 export type CardBodyProps = CardBodyBaseProps & CardBodyOrientationProps;
 
 export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
-  ({ title, description, media, children, orientation = 'vertical', testID }) => {
+  ({
+    title,
+    description,
+    media,
+    children,
+    orientation = 'vertical',
+    testID,
+    numberOfLines = 3,
+    compact,
+    ...props
+  }) => {
+    const cardSpacing = compact ? 2 : 3;
     const verticalContent = (
-      <VStack testID={testID}>
+      <VStack testID={testID} {...props}>
         {media}
-        <VStack spacingHorizontal={3} spacingTop={2}>
+        <VStack spacingHorizontal={cardSpacing} spacingTop={2}>
           <VStack gap={1} spacingBottom={3}>
-            <TextHeadline as="h3">{title}</TextHeadline>
-            <TextLabel2 as="p" color="foregroundMuted">
-              {description}
-            </TextLabel2>
+            {typeof title === 'string' ? <TextHeadline as="h3">{title}</TextHeadline> : title}
+            {typeof description === 'string' ? (
+              <TextLabel2 as="p" color="foregroundMuted" numberOfLines={numberOfLines}>
+                {description}
+              </TextLabel2>
+            ) : (
+              description
+            )}
           </VStack>
           {children}
         </VStack>
@@ -28,16 +43,20 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
     const horizontalContent = (
       <HStack
         alignItems="center"
+        flexGrow={1}
         gap={1}
         justifyContent="space-between"
-        spacingHorizontal={3}
-        spacingVertical={3}
+        maxWidth="100%"
+        spacingBottom={children && compact ? 1 : cardSpacing}
+        spacingHorizontal={cardSpacing}
+        spacingTop={cardSpacing}
         testID={testID}
+        {...props}
       >
         <VStack alignItems="flex-start" gap={2} width="70%">
-          <VStack gap={1} spacingTop={media ? 0 : 2}>
+          <VStack gap={1} maxWidth="100%" spacingTop={media ? 0 : 2}>
             <TextHeadline as="h3">{title}</TextHeadline>
-            <TextLabel2 as="p" color="foregroundMuted">
+            <TextLabel2 as="p" color="foreground" numberOfLines={numberOfLines}>
               {description}
             </TextLabel2>
           </VStack>

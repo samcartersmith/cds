@@ -103,6 +103,7 @@ module.exports = {
     '@typescript-eslint/await-thenable': 'off',
     '@typescript-eslint/consistent-indexed-object-style': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/no-shadow': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'class-methods-use-this': 'off',

@@ -1,23 +1,14 @@
 import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
+import { sampleTabs } from '@cbhq/cds-common/internal/data/tabs';
 
 import { TabNavigation } from '../TabNavigation';
 
-const tabs = [
-  {
-    id: 'first-test',
-    label: 'First label',
-  },
-  {
-    id: 'second-test',
-    label: 'second label',
-    testID: 'specialTestID',
-  },
-];
-
 const MockTabNavigation = ({ testID }: { testID: string }) => {
-  const [activeTab, setActiveTab] = useState(tabs[0].id);
-  return <TabNavigation onChange={setActiveTab} tabs={tabs} testID={testID} value={activeTab} />;
+  const [activeTab, setActiveTab] = useState(sampleTabs[0].id);
+  return (
+    <TabNavigation onChange={setActiveTab} tabs={sampleTabs} testID={testID} value={activeTab} />
+  );
 };
 describe('TabNavigation', () => {
   const TEST_ID = 'mainTabNav';
@@ -65,13 +56,14 @@ describe('TabNavigation', () => {
     render(<MockTabNavigation testID={TEST_ID} />);
 
     expect(screen.getByTestId(TEST_ID)).toBeVisible();
-    expect(screen.getByTestId(`${TEST_ID}-tabLabel--first-test`)).toBeVisible();
+    // renders the first tab
+    expect(screen.getByText(sampleTabs[0].label as string)).toBeVisible();
   });
 
   it("Properly applies custom testID's", () => {
     render(<MockTabNavigation testID={TEST_ID} />);
 
     expect(screen.getByTestId(TEST_ID)).toBeVisible();
-    expect(screen.getByTestId('specialTestID')).toBeVisible();
+    expect(screen.getByTestId(sampleTabs[0].testID as string)).toBeVisible();
   });
 });

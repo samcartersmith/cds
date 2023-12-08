@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import type { BorderedStyles, FlexStyles, PinningDirection, StackBaseProps } from './BoxBaseProps';
 import type { DimensionStyles } from './DimensionStyles';
 import type { ElevationLevels } from './ElevationLevels';
@@ -50,20 +52,24 @@ export type CardFooterBaseProps = {
 } & SharedProps;
 
 export type CardBodyBaseProps = {
-  /** Text to be displayed in TextHeadline */
-  title?: string;
-  /** Text to be displayed in TextBody */
-  description?: string;
+  /** Text to be displayed in TextHeadline when it's a string, unless you pass a ReactNode */
+  title?: ReactNode;
+  /** Text to be displayed in TextBody when it's a string, unless you pass a ReactNode */
+  description?: ReactNode;
   /** Remote Image or other Image React Node */
   media?: React.ReactNode;
   /** Vertical places media above text content, Horizontal places media to the side of text content */
   orientation?: CardBodyOrientationProps['orientation'];
   /**
    * Maximum number of lines shown. Text that exceeds will be truncated.
+   * Only applies to description
    * @default 3
    */
   numberOfLines?: number;
-} & SharedProps;
+  /** Enables compact spacing around CardBody content */
+  compact?: boolean;
+} & SharedProps &
+  DimensionStyles;
 
 export type CardBodyOrientationProps = {
   /** Vertical places media above text content, Horizontal places media to the side of text content */

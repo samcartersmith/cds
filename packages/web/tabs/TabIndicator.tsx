@@ -17,15 +17,15 @@ export const TabIndicator = memo(
       const { widthMotionProps, xMotionProps } = useAnimateTabIndicator({ width, x });
 
       return (
-        <Box ref={forwardedRef} testID={testID} {...props} overflow="hidden">
+        <Box ref={forwardedRef} testID={testID} {...props}>
           <MotionBox
             animate={xMotionProps.animate}
             background="primary"
-            flexGrow={1}
             height={2}
             overflow="hidden"
             testID="cds-tab-indicator-inner-bar-container"
             transition={xMotionProps.transition}
+            width={width}
           >
             <MotionBox
               animate={widthMotionProps.animate}

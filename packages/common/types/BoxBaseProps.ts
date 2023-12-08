@@ -2,6 +2,7 @@ import { BorderRadius } from './BorderRadius';
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { ElevationLevels } from './ElevationLevels';
 import { PaletteBackground, PaletteBorder } from './Palette';
+import { Position } from './Position';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { OffsetProps, SpacingProps } from './SpacingProps';
 import { SpacingScale } from './SpacingScale';
@@ -59,7 +60,7 @@ export type PositionStyles = {
   /** Position the box to the left edge. */
   left?: DimensionValue;
   /** How to position the box within its parent. */
-  position?: 'absolute' | 'relative';
+  position?: Position;
   /** Position the box to the right edge. */
   right?: DimensionValue;
   /** Position the box to the top edge. */

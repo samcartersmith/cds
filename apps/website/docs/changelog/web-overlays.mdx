@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.16 (12/8/2023 PST)
+
+#### 🚀 Updates
+
+- Feat(Gondolin Components): Added Gondolin Cards, Chips, and StickyFooter. [[#2491](https://github.cbhq.net/frontend/cds/pull/2491)]
 
 #### 📘 Misc
 

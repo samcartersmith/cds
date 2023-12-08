@@ -1,0 +1,23 @@
+import { AriaRole, ReactNode } from 'react';
+
+import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { SharedProps } from './SharedProps';
+import { SpacingProps } from './SpacingProps';
+
+export type StickyFooterProps = {
+  /**
+   * React children to be rendered inside the StickyFooter.
+   */
+  children?: ReactNode;
+  /**
+   * Whether to apply a top border and shadow to the StickyFooter.
+   */
+  elevated?: boolean;
+  /**
+   * The WAI-ARIA role for the StickyFooter element.
+   * @see https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+   */
+  role?: AriaRole;
+} & SharedProps &
+  SpacingProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'>;

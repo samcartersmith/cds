@@ -8,3 +8,8 @@ export * from './CardMedia';
 export * from './AnnouncementCard';
 export * from './FeatureEntryCard';
 export * from './FeedCard';
+// Gondolin cards
+export * from './ContainedAssetCard';
+export * from './FloatingAssetCard';
+export * from './NudgeCard';
+export * from './UpsellCard';

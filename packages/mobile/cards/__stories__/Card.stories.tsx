@@ -4,7 +4,6 @@ import { announcementCards } from '@cbhq/cds-common/internal/data/announcementCa
 import { dataCards } from '@cbhq/cds-common/internal/data/dataCards';
 import { featureEntryCards } from '@cbhq/cds-common/internal/data/featureEntryCards';
 import { feedCards } from '@cbhq/cds-common/internal/data/feedCards';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { AnnouncementCard } from '../../alpha/AnnouncementCard';
 import { CardGroup } from '../../alpha/CardGroup';
@@ -19,7 +18,6 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
-import { TextHeadline } from '../../typography/TextHeadline';
 import { Card } from '../Card';
 
 const {
@@ -47,29 +45,34 @@ const {
 const CardScreen = () => {
   return (
     <ExampleScreen>
-      <CardGroup spacingHorizontal={gutter}>
-        <Box background="backgroundAlternate" spacingHorizontal={gutter} spacingVertical={2}>
-          <TextHeadline>Data Cards</TextHeadline>
-        </Box>
-        {dataCards.map((item) => (
-          <DataCard {...item} />
-        ))}
-        {feedCards.map(({ like: getLikeProps, ...item }) => (
-          <FeedCard {...item} like={getLikeProps()} />
-        ))}
-        <Box background="backgroundAlternate" spacingHorizontal={gutter} spacingVertical={2}>
-          <TextHeadline>Announcement Cards</TextHeadline>
-        </Box>
-        {announcementCards.map((item) => (
-          <AnnouncementCard key={item.title} {...item} />
-        ))}
-        <Box background="backgroundAlternate" spacingHorizontal={gutter} spacingVertical={2}>
-          <TextHeadline>Feature Entry Cards</TextHeadline>
-        </Box>
-        {featureEntryCards.map((item) => (
-          <FeatureEntryCard {...item} />
-        ))}
-      </CardGroup>
+      <Example title="Data Card">
+        <CardGroup>
+          {dataCards.map((item) => (
+            <DataCard {...item} />
+          ))}
+        </CardGroup>
+      </Example>
+      <Example title="Feed Card">
+        <CardGroup>
+          {feedCards.map(({ like: getLikeProps, ...item }) => (
+            <FeedCard {...item} like={getLikeProps()} />
+          ))}
+        </CardGroup>
+      </Example>
+      <Example title="Announcement Card">
+        <CardGroup>
+          {announcementCards.map((item) => (
+            <AnnouncementCard key={item.title} {...item} />
+          ))}
+        </CardGroup>
+      </Example>
+      <Example title="Feature Entry Card">
+        <CardGroup>
+          {featureEntryCards.map((item) => (
+            <FeatureEntryCard {...item} />
+          ))}
+        </CardGroup>
+      </Example>
       <Example title="Card with ListCells">
         <ListCellCard />
       </Example>

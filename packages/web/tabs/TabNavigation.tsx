@@ -1,13 +1,10 @@
 import React, {
-  createElement,
   createRef,
   ForwardedRef,
   forwardRef,
-  ForwardRefExoticComponent,
   KeyboardEvent,
   memo,
   Ref,
-  RefAttributes,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -26,7 +23,7 @@ import { HStack } from '../alpha/HStack';
 import { VStack } from '../alpha/VStack';
 import { useDimensions } from '../hooks/useDimensions';
 import { insetFocusRing } from '../styles/focus';
-import { PressableOpacity, PressableOpacityProps } from '../system/PressableOpacity';
+import { PressableOpacity } from '../system/PressableOpacity';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { cx } from '../utils/linaria';
 
@@ -63,12 +60,15 @@ const pressableClass = css`
     white-space: nowrap;
   }
 `;
+const pressableClassWithCustomTab = css`
+  &.${tabNavigationStaticClassName} {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+  }
+`;
 
-const PressableOpacityWithoutChildren = PressableOpacity as ForwardRefExoticComponent<
-  Omit<PressableOpacityProps, 'children'> & RefAttributes<HTMLElement>
->;
 type LayoutProps = { width: number; x: number };
-type TabsLayoutsMap = Map<string, LayoutProps>;
 type TabRefs = Ref<{ id: string; ref: React.RefObject<HTMLElement> }[]>;
 const fallbackLayout: LayoutProps = { width: 0, x: 0 };
 
@@ -84,6 +84,9 @@ export const TabNavigation = memo(
         background,
         accessibilityLabelledBy,
         accessibilityLabel,
+        Component,
+        gap = 4,
+        role = 'tablist',
         ...rest
       }: TabNavigationProps,
       forwardedRef: ForwardedRef<HTMLElement | null>,
@@ -94,7 +97,6 @@ export const TabNavigation = memo(
       const isPrimary = useMemo(() => variant === 'primary', [variant]);
       const shouldOverrideScale = useMemo(() => isDense && isPrimary, [isDense, isPrimary]);
       const offsetRef = useRef(0);
-      const tabsLayoutsMap = useRef<TabsLayoutsMap>(new Map());
       const tabsRefs: TabRefs = useRef(tabs.map(({ id }) => ({ id, ref: createRef() })));
       const scrollRef = useRef<HTMLElement>(null);
       useImperativeHandle(forwardedRef, () => scrollRef.current as HTMLDivElement);
@@ -102,6 +104,13 @@ export const TabNavigation = memo(
       const canScrollRight = Number(scrollRef.current?.scrollLeft) < end;
       const [leftPaddle, toggleLeftPaddle] = useToggler(false);
       const [rightPaddle, toggleRightPaddle] = useToggler(canScrollRight);
+      const descendantAriaRole = role === 'tablist' ? 'tab' : 'radio';
+      const roleBasedA11yProps =
+        role === 'radiogroup'
+          ? {
+              'aria-activedescendant': `tab--${value}`,
+            }
+          : undefined;
 
       const handleOnScroll = useCallback(() => {
         const scrollDistance = Number(scrollRef.current?.scrollLeft);
@@ -130,27 +139,21 @@ export const TabNavigation = memo(
         handleOnScroll();
       }, [handleOnScroll, width]);
 
-      /** 🛼
-       *  We need to keep an eye on the value because
-       *  we'll have to calculate everything and handle
-       *  scroll and layout events whenever it updates
-       */
-      useEffect(() => {
-        const layout = tabsLayoutsMap.current.get(value) ?? fallbackLayout;
-        /** Set the active tab and _maybe_ scroll to it */
-        setActiveTabLayout({ width: layout.width, x: layout.x - offsetRef.current });
-      }, [value]);
-
       const handleScrollLeft = useCallback(() => {
         scrollRef?.current?.scrollTo({ left: 0, behavior: 'smooth' });
       }, [scrollRef]);
       const handleScrollRight = useCallback(() => {
         scrollRef?.current?.scrollTo({ left: end, behavior: 'smooth' });
       }, [end]);
+
+      /** 🛼
+       *  Recreating handleLayout every time value changes will
+       *  cause the active TabLabel to call setActiveTabLayout
+       *  with its layout values, updating the TabIndicator.
+       */
       const handleLayout = useCallback(
         (id: string, layout: TabIndicatorProps) => {
           // Track offset
-          tabsLayoutsMap.current.set(id, layout);
           if (id === tabs[0].id) offsetRef.current = layout.x;
           if (id === value) {
             setActiveTabLayout({
@@ -227,12 +230,10 @@ export const TabNavigation = memo(
       );
 
       const getChildren = useCallback(
-        ({ id, count, max, label }: TabProps) => (
+        ({ label, ...props }: Pick<TabProps, 'id' | 'count' | 'label' | 'Component'>) => (
           <TabLabel
-            active={id === value}
-            count={count}
-            id={id}
-            max={max}
+            active={props.id === value}
+            {...props}
             onLayout={handleLayout}
             variant={variant}
           >
@@ -252,42 +253,63 @@ export const TabNavigation = memo(
                 id,
                 onPress,
                 label,
-                accessibilityLabel: tabA11yLabel = label,
+                accessibilityLabel = label,
                 count,
                 testID: tabLabelTestID = `${testID}-tabLabel--${id}`,
+                Component: TabComponent,
               }) => {
-                const refs = tabsRefs.current;
+                const isActiveTab = id === value;
+                const roleBasedTabA11yProps =
+                  role === 'radiogroup'
+                    ? { 'aria-checked': isActiveTab }
+                    : { 'aria-selected': isActiveTab };
                 const currentRef =
-                  refs?.find(({ id: currentId }) => id === currentId)?.ref ?? createRef();
+                  tabsRefs.current?.find((tab) => tab.id === id)?.ref ?? createRef();
 
-                return createElement(
-                  PressableOpacityWithoutChildren,
-                  {
-                    key: `${id}--button`,
-                    ref: currentRef,
-                    role: 'tab',
-                    'aria-selected': id === value,
-                    id: `tab--${id}`,
-                    'aria-controls': `tabpanel--${id}`,
-                    accessibilityLabel: tabA11yLabel,
-                    onPress: getTabPressHandler(id, onPress as (id: string) => void),
-                    onKeyDown: getTabKeydownHandler(id),
-                    onFocus: getScrollIntoViewHandler(currentRef),
-                    className: cx(tabNavigationStaticClassName, pressableClass, insetFocusRing),
-                    testID: tabLabelTestID,
-                    tabIndex: id === value ? undefined : -1,
-                  },
-                  getChildren({ id, count, label }),
+                const CustomTabComponent = TabComponent ?? Component;
+
+                return (
+                  <PressableOpacity
+                    key={`${id}--button`}
+                    ref={currentRef}
+                    accessibilityLabel={
+                      typeof accessibilityLabel === 'string' ? accessibilityLabel : undefined
+                    }
+                    aria-controls={`tabpanel--${id}`}
+                    {...roleBasedTabA11yProps}
+                    className={cx(
+                      tabNavigationStaticClassName,
+                      CustomTabComponent ? pressableClassWithCustomTab : pressableClass,
+                      insetFocusRing,
+                    )}
+                    id={`tab--${id}`}
+                    onFocus={getScrollIntoViewHandler(currentRef)}
+                    onKeyDown={getTabKeydownHandler(id)}
+                    onPress={getTabPressHandler(id, onPress as (id: string) => void)}
+                    role={descendantAriaRole}
+                    tabIndex={isActiveTab ? undefined : -1}
+                    testID={tabLabelTestID}
+                  >
+                    {CustomTabComponent && variant !== 'primary' ? (
+                      <CustomTabComponent active={isActiveTab} id={id} label={label} />
+                    ) : (
+                      getChildren({ id, count, label, Component: CustomTabComponent })
+                    )}
+                  </PressableOpacity>
                 );
               },
             ),
         [
           tabs,
           testID,
-          getTabPressHandler,
-          getTabKeydownHandler,
-          getScrollIntoViewHandler,
           value,
+          role,
+          Component,
+          getScrollIntoViewHandler,
+          getTabKeydownHandler,
+          getTabPressHandler,
+          descendantAriaRole,
+          variant,
           getChildren,
         ],
       );
@@ -318,8 +340,9 @@ export const TabNavigation = memo(
                       accessibilityLabel={accessibilityLabel}
                       accessibilityLabelledBy={accessibilityLabelledBy}
                       flexShrink={0}
-                      gap={4}
-                      role="tablist"
+                      gap={gap}
+                      role={role}
+                      {...roleBasedA11yProps}
                     >
                       {tabLabels}
                     </HStack>
@@ -330,9 +353,10 @@ export const TabNavigation = memo(
                   accessibilityLabel={accessibilityLabel}
                   accessibilityLabelledBy={accessibilityLabelledBy}
                   flexShrink={0}
-                  gap={4}
-                  role="tablist"
+                  gap={gap}
+                  role={role}
                   zIndex={zIndex.navigation}
+                  {...roleBasedA11yProps}
                 >
                   {tabLabels}
                 </HStack>

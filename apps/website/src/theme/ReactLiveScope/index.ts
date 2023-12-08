@@ -16,6 +16,7 @@ import {
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 import { product } from '@cbhq/cds-common/internal/data/product';
+import { sampleTabs } from '@cbhq/cds-common/internal/data/tabs';
 import { users } from '@cbhq/cds-common/internal/data/users';
 import {
   sparklineInteractiveBuilder,
@@ -48,6 +49,7 @@ import * as CDSButtons from '@cbhq/cds-web/buttons';
 import * as CDSCardElements from '@cbhq/cds-web/cards';
 import * as CDSCells from '@cbhq/cds-web/cells';
 import { Cell } from '@cbhq/cds-web/cells/Cell';
+import * as CDSChips from '@cbhq/cds-web/chips';
 import * as CDSCollapsible from '@cbhq/cds-web/collapsible';
 import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
@@ -97,6 +99,7 @@ import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/Progr
 import { SparklineInteractive } from '@cbhq/cds-web/visualizations/sparkline-interactive/SparklineInteractive';
 import { SparklineInteractiveHeader } from '@cbhq/cds-web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
+import * as CDSWebOverlays from '@cbhq/cds-web-overlays';
 
 import { Banner } from ':cds-website/components/Banner';
 import { ButtonSheet } from ':cds-website/components/ButtonSheet';
@@ -187,6 +190,8 @@ const ReactLiveScope: unknown = {
   ...CDSButtons,
   ...CDSCardElements,
   ...CDSCells,
+  ...CDSChips,
+  ...CDSWebOverlays,
   ...CDSCollapsible,
   ...CDSControls,
   ...CDSDots,
@@ -221,6 +226,7 @@ const ReactLiveScope: unknown = {
   prices,
   mocks,
   gutter,
+  sampleTabs,
   // Example components
   Banner,
   ButtonSheet,

@@ -1,0 +1,73 @@
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { NoopFn } from '@cbhq/cds-common/types/Helpers';
+import { NudgeCardBaseProps } from '@cbhq/cds-common/types/NudgeCardBaseProps';
+import { NoopFn as noopFn } from '@cbhq/cds-common/utils/mockUtils';
+import { PictogramName } from '@cbhq/cds-illustrations';
+import { renderA11y } from '@cbhq/cds-web-utils';
+
+import { NudgeCard as BaseNudgeCard } from '../NudgeCard';
+
+const exampleProps = {
+  title: "It's Onchain Summer!",
+  description: 'Stand with crypto and mint your NFT.',
+  pictogram: 'ethStaking' as PictogramName,
+  action: 'Join the movement',
+  onActionPress: noopFn,
+};
+
+const NudgeCard = (
+  props: Partial<Pick<NudgeCardBaseProps<NoopFn>, 'onDismissPress' | 'onActionPress'>>,
+) => <BaseNudgeCard {...exampleProps} {...props} />;
+
+describe('createNudgeCard', () => {
+  it('passes accessibility', async () => {
+    expect(await renderA11y(<NudgeCard />)).toHaveNoViolations();
+  });
+
+  it('passes accessibility when dismissable', async () => {
+    expect(await renderA11y(<NudgeCard onDismissPress={noopFn} />)).toHaveNoViolations();
+  });
+
+  it('renders the card with the correct title', () => {
+    render(<NudgeCard />);
+
+    expect(screen.getByText(exampleProps.title)).toBeDefined();
+  });
+
+  it('renders the card with the correct description', () => {
+    render(<NudgeCard />);
+
+    expect(screen.getByText(exampleProps.description)).toBeDefined();
+  });
+
+  it('renders the card with the correct action', () => {
+    render(<NudgeCard />);
+
+    expect(screen.getByText(exampleProps.action)).toBeDefined();
+  });
+
+  it('calls the onActionPress function when the action button is pressed', () => {
+    const onActionPress = jest.fn();
+    render(<NudgeCard onActionPress={onActionPress} />);
+
+    fireEvent.click(screen.getByText(exampleProps.action));
+
+    expect(onActionPress).toHaveBeenCalled();
+  });
+
+  it('renders the dismiss button when onDismissPress is provided', () => {
+    render(<NudgeCard onDismissPress={noopFn} />);
+
+    expect(screen.getByTestId('nudge-card-dismiss-button')).toBeVisible();
+  });
+
+  it('calls the onDismissPress function when the dismiss button is pressed', () => {
+    const onDismissPress = jest.fn();
+    render(<NudgeCard onDismissPress={onDismissPress} />);
+
+    fireEvent.click(screen.getByTestId('nudge-card-dismiss-button'));
+
+    expect(onDismissPress).toHaveBeenCalled();
+  });
+});

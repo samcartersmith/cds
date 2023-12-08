@@ -44,6 +44,10 @@ export type DrawerBaseProps = {
    * @example This is a handlebar, double tap to dismiss the tray.
    */
   handleBarAccessibilityLabel?: string;
+  /**
+   * StickyFooter to be rendered at bottom of Drawer
+   */
+  stickyFooter?: DrawerRenderChildren | ReactNode;
 } & SharedProps;
 
 export type DrawerRefBaseProps = {

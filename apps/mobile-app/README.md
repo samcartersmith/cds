@@ -40,6 +40,14 @@ Press 'i' or 'a' to open iOS or Android simulator respectively.
 2. Scan the QR code from the terminal using the Expo Go app on your phone.
 3. Make sure your device and metro server are connected to the same network. You might need to disconnect VPN.
 
+## Creating a new route
+
+Whenever you want to add a new screen to the mobile-app, you'll need to run this codegen script to generate the new route(s).
+
+```zsh
+yarn nx run codegen:mobile-routes
+```
+
 ## Advanced
 
 <!-- - [How to share your builds with others](./docs/share-builds.md) -->

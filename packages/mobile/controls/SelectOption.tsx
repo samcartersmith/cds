@@ -43,7 +43,7 @@ export const SelectOption = memo(function SelectOption({
 }: SelectOptionProps) {
   const minHeight = useScaleConditional(selectOptionMinHeight);
   const maxHeight = useScaleConditional(selectOptionMaxHeight);
-  const { value: selectedValue, onChange } = useSelectContext();
+  const { value: selectedValue, onChange, handleClose } = useSelectContext();
 
   const selected = value === selectedValue;
 
@@ -51,8 +51,9 @@ export const SelectOption = memo(function SelectOption({
     (event: GestureResponderEvent) => {
       onPress?.(event);
       onChange?.(value);
+      handleClose?.();
     },
-    [onPress, onChange, value],
+    [onPress, onChange, value, handleClose],
   );
 
   const accessibilityProps = useMemo(

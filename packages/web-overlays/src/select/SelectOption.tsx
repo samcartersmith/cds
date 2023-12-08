@@ -24,14 +24,14 @@ const pressableStyles = css`
   border: none;
   &:first-child {
     &:before {
-      border-top-right-radius: ${borderRadius.roundedLarge};
-      border-top-left-radius: ${borderRadius.roundedLarge};
+      border-top-right-radius: ${borderRadius.roundedXLarge};
+      border-top-left-radius: ${borderRadius.roundedXLarge};
     }
   }
   &:last-child {
     &:before {
-      border-bottom-right-radius: ${borderRadius.roundedLarge};
-      border-bottom-left-radius: ${borderRadius.roundedLarge};
+      border-bottom-right-radius: ${borderRadius.roundedXLarge};
+      border-bottom-left-radius: ${borderRadius.roundedXLarge};
     }
   }
 `;

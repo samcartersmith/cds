@@ -17,19 +17,20 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
     orientation = 'vertical',
     testID,
     numberOfLines = 3,
+    ...props
   }) => {
     const textContent = (
       <>
         <TextHeadline ellipsizeMode="tail" numberOfLines={numberOfLines}>
           {title}
         </TextHeadline>
-        <TextBody color="foregroundMuted" ellipsizeMode="tail" numberOfLines={numberOfLines}>
+        <TextBody color="foreground" ellipsizeMode="tail" numberOfLines={numberOfLines}>
           {description}
         </TextBody>
       </>
     );
     const verticalContent = (
-      <VStack testID={`${testID}-vertical`}>
+      <VStack testID={`${testID}-vertical`} {...props}>
         {media}
         <VStack spacingHorizontal={3} spacingTop={2}>
           <VStack gap={1} spacingBottom={2}>
@@ -45,10 +46,11 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
         alignItems="center"
         gap={1}
         justifyContent="space-between"
-        spacingBottom={media ? 2 : 0}
+        spacingBottom={media ? 1 : 0}
         spacingHorizontal={3}
         spacingTop={2}
         testID={`${testID}-horizontal`}
+        {...props}
       >
         <VStack gap={2} width="70%">
           <VStack gap={1} spacingTop={media ? 0 : 2}>

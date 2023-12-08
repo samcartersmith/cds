@@ -1,28 +1,31 @@
-import { PropsWithChildren, ReactElement } from 'react';
-
-import { BoxBaseProps } from './BoxBaseProps';
-import { DotCountBaseProps } from './DotCountBaseProps';
-import { PaletteBackground } from './Palette';
-import { SetState } from './React';
-import { SharedProps } from './SharedProps';
+import { type BoxBaseProps } from './BoxBaseProps';
+import { type DotCountBaseProps } from './DotCountBaseProps';
+import { type PaletteBackground } from './Palette';
+import { type SetState } from './React';
+import { type SharedProps } from './SharedProps';
+import { type SpacingScale } from './SpacingScale';
 
 type OnChange<T extends string | undefined = string> = ((tabId: T) => void) | SetState<T>;
+
+/**
+ * This is only used on the apps/website, not used by consumers as of Nov 29, 2023
+ */
 export type TabsProps<T extends string | undefined = string> = {
   /** The active tabId */
   value?: T;
   /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
   onChange?: OnChange<T>;
   /** Children should only be Tab's. If you only have one child, don't use tabs 🤪 */
-  children: ReactElement[];
+  children: React.ReactElement[];
   /** Use the disableSwipe prop to prevent swiping to change tabs */
   disableSwipe?: boolean;
 } & SharedProps;
 
-export type TabProps<T extends string | undefined = string> = PropsWithChildren<{
+export type TabProps<T extends string | undefined = string> = {
   /** The id should be a meaningful and useful identifier like "watchlist" or "forSale" */
   id: T;
   /** Define a label for this Tab */
-  label: string;
+  label: React.ReactNode;
   /** See the Tabs TDD to understand which variant should be used.
    *  @default 'primary'
    */
@@ -31,18 +34,19 @@ export type TabProps<T extends string | undefined = string> = PropsWithChildren<
   accessibilityLabel?: string;
   /** Callback to fire when pressed */
   onPress?: (id: T) => void;
-}> &
-  Partial<Pick<DotCountBaseProps, 'count' | 'max'>> &
+  /** Render a custom Component for the Tab */
+  Component?: (props: CustomTabProps) => React.ReactElement;
+} & Partial<Pick<DotCountBaseProps, 'count' | 'max'>> &
   SharedProps;
 
 export type TabLabelProps = {
   /** Identify the active tab */
   active?: boolean;
   /** Display title to render as the TabLabel. */
-  children: string;
+  children: React.ReactNode;
   /** Callback to fire when pressed */
   onPress?: () => void;
-} & Pick<TabProps, 'variant' | 'count' | 'accessibilityLabel' | 'max'> &
+} & Pick<TabProps, 'variant' | 'count' | 'accessibilityLabel' | 'max' | 'Component'> &
   SharedProps;
 
 export type TabIndicatorProps = {
@@ -56,19 +60,39 @@ export type TabIndicatorProps = {
   background?: PaletteBackground;
 } & SharedProps;
 
+export type CustomTabProps = {
+  /**
+   * @default false
+   * When true, used to surface an active state for the currently selected tab
+   */
+  active?: boolean;
+} & Pick<TabProps, 'label' | 'id'>;
+
 export type TabNavigationProps<T extends string | undefined = string> = {
   /** The active tabId
    *  @default tabs[0].id
    */
   value?: T;
   /** Children should be TabLabels. If you only have one child, don't use tabs 🤪 */
-  tabs: Omit<TabProps, 'children'>[];
+  tabs: TabProps[];
   /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
   onChange: OnChange<T>;
   /** This should always match the background color of the parent container
    * @default: 'background'
    */
   background?: PaletteBackground;
-} & Pick<TabProps, 'variant'> &
+  /**
+   * The spacing between Tabs
+   * @default 4
+   */
+  gap?: SpacingScale;
+  /**
+   * Used to generate a11y attributes for the Tabs
+   * If TabNavigation is used to display options that will filter data, use `radiogroup`
+   * If TabNavigation is used to display a list of pages or views, use `tablist`
+   * @default tablist
+   */
+  role?: 'radiogroup' | 'tablist';
+} & Pick<TabProps, 'variant' | 'Component'> &
   BoxBaseProps &
   SharedProps;

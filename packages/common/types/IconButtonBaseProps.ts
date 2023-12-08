@@ -1,5 +1,6 @@
 import { ButtonBaseProps } from './ButtonBaseProps';
 import { IconName } from './IconName';
+import { SharedProps } from './SharedProps';
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'foregroundMuted';
 export type IconButtonBaseProps = {
@@ -12,4 +13,5 @@ export type IconButtonBaseProps = {
    * @default primary
    */
   variant?: IconButtonVariant;
-} & Pick<ButtonBaseProps, 'accessibilityLabel' | 'disabled' | 'transparent'>;
+} & Pick<ButtonBaseProps, 'accessibilityLabel' | 'disabled' | 'transparent'> &
+  SharedProps;

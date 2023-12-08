@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import { Animated, Modal, ModalProps, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { Animated, Modal, ModalProps, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSpectrum } from '@cbhq/cds-common';
 import { drawerAnimationDefaultDuration, MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import {
@@ -16,6 +16,7 @@ import {
 } from '@cbhq/cds-common/tokens/drawer';
 import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common/types';
 
+import { VStack } from '../../layout';
 import { Box } from '../../layout/Box';
 import { HandleBar } from '../HandleBar/HandleBar';
 import { Overlay } from '../Overlay/Overlay';
@@ -40,6 +41,7 @@ export const Drawer = memo(
       onBlur,
       verticalDrawerPercentageOfView = defaultVerticalDrawerPercentageOfView,
       handleBarAccessibilityLabel,
+      stickyFooter,
       ...props
     },
     ref,
@@ -135,7 +137,11 @@ export const Drawer = memo(
       },
     });
 
-    const combinedStyles = [cardStyles.spacing, drawerAnimationStyles];
+    const combinedStyles = [
+      cardStyles.spacing,
+      drawerAnimationStyles,
+      !!stickyFooter && { paddingBottom: MAX_OVER_DRAG },
+    ];
 
     useImperativeHandle(
       ref,
@@ -149,23 +155,43 @@ export const Drawer = memo(
     const content = useMemo(() => {
       if (shouldShowHandleBar) {
         return (
-          <View>
+          <Box
+            maxHeight={
+              !isPinHorizontal
+                ? verticalDrawerMaxHeight * defaultVerticalDrawerPercentageOfView
+                : '100%'
+            }
+          >
             <HandleBar
               accessibilityLabel={handleBarAccessibilityLabel}
               accessibilityRole="button"
               onAccessibilityTap={handleClose}
             />
-            <Box
-              borderRadius="roundedLarge"
-              dangerouslySetStyle={shouldShowHandleBar && cardStyles.overflowStyles}
-            >
+            <Box borderRadius="roundedLarge" dangerouslySetStyle={cardStyles.overflowStyles}>
               {typeof children === 'function' ? children({ handleClose }) : children}
             </Box>
-          </View>
+          </Box>
         );
       }
-      return <View>{typeof children === 'function' ? children({ handleClose }) : children}</View>;
-    }, [shouldShowHandleBar, cardStyles, children, handleClose, handleBarAccessibilityLabel]);
+      return (
+        <Box maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}>
+          {typeof children === 'function' ? children({ handleClose }) : children}
+        </Box>
+      );
+    }, [
+      shouldShowHandleBar,
+      children,
+      handleClose,
+      isPinHorizontal,
+      verticalDrawerMaxHeight,
+      handleBarAccessibilityLabel,
+      cardStyles.overflowStyles,
+    ]);
+
+    const renderStickyFooter = useMemo(() => {
+      if (pin !== 'bottom') return null;
+      return typeof stickyFooter === 'function' ? stickyFooter({ handleClose }) : stickyFooter;
+    }, [handleClose, pin, stickyFooter]);
 
     return (
       <Modal
@@ -191,14 +217,16 @@ export const Drawer = memo(
           bordered={scheme === 'dark'}
           dangerouslySetStyle={combinedStyles}
           elevation={scheme === 'dark' ? 2 : 0}
-          maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
           onAccessibilityEscape={handleClose}
           pin={pin}
           // close modal when user performs the "escape" accessibility gesture
           // https://reactnative.dev/docs/accessibility#onaccessibilityescape-ios
           width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
         >
-          {content}
+          <VStack>
+            {content}
+            {renderStickyFooter}
+          </VStack>
         </Box>
       </Modal>
     );

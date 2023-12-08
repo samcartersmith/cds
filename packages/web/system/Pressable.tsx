@@ -78,7 +78,7 @@ export type PressableInternalProps = {
   /** Dont scale element on press. */
   noScaleOnPress?: boolean;
 } & PressableProps &
-  Omit<InteractableProps, 'as' | 'onClick' | 'onClickCapture' | 'pressed'>;
+  Omit<InteractableProps, 'as' | 'onClick' | 'onClickCapture' | 'pressed' | 'start'>;
 
 export const Pressable = forwardRef(function Pressable(
   {

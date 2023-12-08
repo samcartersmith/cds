@@ -20,11 +20,11 @@ const disabledRoutes = {
     'Tray', // pointless
     'LottieStatusAnimation' /** Animation */,
     'Modal' /** Modal is displayed over expected screen */,
-    'PatternTagDisclosureHighFrictionBenefit' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
-    'PatternTagDisclosureHighFrictionRisk' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
-    'PatternTagDisclosureLowFriction' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
-    'PatternTagDisclosureMedFriction' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
-    'PatternTagError' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
+    'PatternDisclosureHighFrictionBenefit' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
+    'PatternDisclosureHighFrictionRisk' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
+    'PatternDisclosureLowFriction' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
+    'PatternDisclosureMedFriction' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
+    'PatternError' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
   ],
   iosDisabledRoutes: [],
   androidDisabledRoutes: [

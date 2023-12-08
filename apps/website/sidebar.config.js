@@ -295,7 +295,7 @@ const sidebars = {
             {
               type: 'doc',
               id: 'components/cards/Card/card',
-              label: 'Card 🚧',
+              label: 'Card',
             },
             { type: 'doc', id: 'components/cards/CardBody/card-body', label: 'Card Body' },
             { type: 'doc', id: 'components/cards/CardFooter/card-footer', label: 'Card Footer' },
@@ -312,6 +312,18 @@ const sidebars = {
               label: 'Feature Entry Card',
             },
             { type: 'doc', id: 'components/cards/FeedCard/feed-card', label: 'Feed Card' },
+            { type: 'doc', id: 'components/cards/NudgeCard/nudge-card', label: 'Nudge Card' },
+            {
+              type: 'doc',
+              id: 'components/cards/FloatingAssetCard/floating-asset-card',
+              label: 'Floating Asset Card',
+            },
+            {
+              type: 'doc',
+              id: 'components/cards/ContainedAssetCard/contained-asset-card',
+              label: 'Contained Asset Card',
+            },
+            { type: 'doc', id: 'components/cards/UpsellCard/upsell-card', label: 'Upsell Card' },
           ],
         },
         {
@@ -340,18 +352,23 @@ const sidebars = {
           items: [
             {
               type: 'doc',
-              id: 'components/chips/input-chip',
-              label: 'Input Chip 🚧',
+              id: 'components/chips/Chip/chip',
+              label: 'Chip',
             },
             {
               type: 'doc',
-              id: 'components/chips/select-chip',
-              label: 'Select Chip 🚧',
+              id: 'components/chips/InputChip/input-chip',
+              label: 'Input Chip',
             },
             {
               type: 'doc',
-              id: 'components/chips/tabbed-chips',
-              label: 'Tabbed Chips 🚧',
+              id: 'components/chips/SelectChip/select-chip',
+              label: 'Select Chip',
+            },
+            {
+              type: 'doc',
+              id: 'components/chips/TabbedChips/tabbed-chips',
+              label: 'Tabbed Chips',
             },
           ],
         },
@@ -563,6 +580,7 @@ const sidebars = {
           ],
         },
         { type: 'doc', id: 'components/loaders/Spinner/spinner', label: 'Spinner' },
+        { type: 'doc', id: 'components/sticky-footer/sticky-footer', label: 'StickyFooter' },
         { type: 'doc', id: 'components/controls/Switch/switch', label: 'Switch' },
         {
           type: 'category',

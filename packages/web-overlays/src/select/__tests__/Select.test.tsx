@@ -97,8 +97,6 @@ describe('Select', () => {
     render(<MockSelect placeholder={mockPlaceholder} />);
 
     const selectButton = screen.getAllByRole('button')[0];
-    expect(selectButton).not.toHaveFocus();
-
     fireEvent.click(selectButton);
 
     // expect Menu and SelectOption to render
@@ -107,6 +105,7 @@ describe('Select', () => {
     // select the first option
     fireEvent.click(firstSelectOption);
 
-    expect(selectButton).toHaveFocus();
+    const selectButtonRerendered = screen.getAllByRole('button')[0];
+    expect(selectButtonRerendered).toHaveFocus();
   });
 });

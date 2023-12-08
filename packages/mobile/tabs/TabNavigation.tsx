@@ -23,6 +23,9 @@ export const TabNavigation = memo(
         testID = 'tabNavigation',
         background = 'background',
         onChange,
+        Component,
+        gap = 4,
+        role = 'tablist',
         ...rest
       },
       forwardedRef,
@@ -42,6 +45,7 @@ export const TabNavigation = memo(
       } = useHorizontallyScrollingPressables(value, {
         setActivePressableLayout: setActiveTabLayout,
       });
+      const descendantAriaRole = role === 'tablist' ? 'tab' : 'radio';
 
       const getTabPressHandler = useCallback(
         ({ id, onPress }: Pick<TabProps, 'id' | 'onPress'>) => {
@@ -67,27 +71,50 @@ export const TabNavigation = memo(
                 count,
                 max,
                 testID: tabLabelTestID = `${testID}-tabLabel--${id}`,
+                Component: TabComponent,
               }) => {
+                const isActiveTab = id === value;
+                const a11yLabelToString =
+                  typeof accessibilityLabel === 'string' ? accessibilityLabel : undefined;
+                const a11yState =
+                  role === 'radiogroup' ? { checked: isActiveTab } : { selected: isActiveTab };
+
+                const CustomTabComponent = TabComponent ?? Component;
+
                 return (
                   <View key={id} onLayout={getPressableLayoutHandler(id)}>
                     <PressableOpacity
                       transparentWhilePressed
-                      accessibilityHint={accessibilityLabel}
-                      accessibilityLabel={accessibilityLabel}
-                      accessibilityRole="tab"
-                      accessibilityState={{ selected: id === value }}
+                      accessibilityHint={a11yLabelToString}
+                      accessibilityLabel={a11yLabelToString}
+                      accessibilityRole={descendantAriaRole}
+                      accessibilityState={a11yState}
                       onPress={getTabPressHandler({ id, onPress })}
                       testID={tabLabelTestID}
                     >
-                      <TabLabel active={id === value} count={count} max={max} variant={variant}>
-                        {label}
-                      </TabLabel>
+                      {CustomTabComponent ? (
+                        <CustomTabComponent active={isActiveTab} id={id} label={label} />
+                      ) : (
+                        <TabLabel active={id === value} count={count} max={max} variant={variant}>
+                          {label}
+                        </TabLabel>
+                      )}
                     </PressableOpacity>
                   </View>
                 );
               },
             ),
-        [tabs, testID, getPressableLayoutHandler, getTabPressHandler, value, variant],
+        [
+          tabs,
+          testID,
+          value,
+          role,
+          Component,
+          getPressableLayoutHandler,
+          descendantAriaRole,
+          getTabPressHandler,
+          variant,
+        ],
       );
 
       return (
@@ -103,7 +130,7 @@ export const TabNavigation = memo(
           <ScrollView
             ref={scrollRef}
             horizontal
-            accessibilityRole="tablist"
+            accessibilityRole={role}
             onContentSizeChange={handleScrollContentSizeChange}
             onLayout={handleScrollContainerLayout}
             onScroll={handleScroll}
@@ -113,10 +140,10 @@ export const TabNavigation = memo(
             <VStack>
               {shouldOverrideScale ? (
                 <ScaleProvider value="large">
-                  <HStack gap={4}>{tabLabels}</HStack>
+                  <HStack gap={gap}>{tabLabels}</HStack>
                 </ScaleProvider>
               ) : (
-                <HStack gap={4}>{tabLabels}</HStack>
+                <HStack gap={gap}>{tabLabels}</HStack>
               )}
               {isPrimary && (
                 <TabIndicator

@@ -63,8 +63,7 @@ export const Popover = memo(
     disableTypeFocus = false,
     disabled,
   }: PopoverProps) => {
-    const { subject, setSubject, setPopper, popperStyles, popperAttributes } =
-      usePopper(contentPosition);
+    const { setSubject, setPopper, popperStyles, popperAttributes } = usePopper(contentPosition);
     const scale = useScale();
     const invertedSpectrum = useSpectrumConditional(inverseConfig);
 
@@ -79,10 +78,9 @@ export const Popover = memo(
     const shouldShowContent = visible && !disabled;
 
     const handleClose = useCallback(async () => {
-      subject?.focus(); // P3: get to refocus on subject upon close.
       onClose?.();
       onBlur?.();
-    }, [onBlur, onClose, subject]);
+    }, [onBlur, onClose]);
 
     // swallow click events inside the Popover content so the overlay doesn't consider it a blur event
     const handleCaptureEvents = useCallback((event: MouseEvent<HTMLDivElement>) => {

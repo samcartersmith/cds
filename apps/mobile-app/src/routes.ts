@@ -57,9 +57,18 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/controls/__stories__/Checkbox.stories').default,
   },
   {
+    key: 'Chip',
+    getComponent: () => require('@cbhq/cds-mobile/chips/__stories__/Chip.stories').default,
+  },
+  {
     key: 'Collapsible',
     getComponent: () =>
       require('@cbhq/cds-mobile/collapsible/__stories__/Collapsible.stories').default,
+  },
+  {
+    key: 'ContainedAssetCard',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/cards/__stories__/ContainedAssetCard.stories').default,
   },
   {
     key: 'ContentCell',
@@ -88,6 +97,11 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Drawer.stories').default,
   },
   {
+    key: 'FloatingAssetCard',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/cards/__stories__/FloatingAssetCard.stories').default,
+  },
+  {
     key: 'Group',
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Group.stories').default,
   },
@@ -107,6 +121,10 @@ export const routes = [
   {
     key: 'IconButton',
     getComponent: () => require('@cbhq/cds-mobile/buttons/__stories__/IconButton.stories').default,
+  },
+  {
+    key: 'InputChip',
+    getComponent: () => require('@cbhq/cds-mobile/chips/__stories__/InputChip.stories').default,
   },
   {
     key: 'InputIcon',
@@ -162,8 +180,38 @@ export const routes = [
       require('@cbhq/cds-mobile/icons/__stories__/NavigationIcon.stories').default,
   },
   {
+    key: 'NudgeCard',
+    getComponent: () => require('@cbhq/cds-mobile/cards/__stories__/NudgeCard.stories').default,
+  },
+  {
     key: 'Overlay',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Overlay.stories').default,
+  },
+  {
+    key: 'PatternDisclosureHighFrictionBenefit',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/system/__stories__/PatternDisclosureHighFrictionBenefit.stories')
+        .default,
+  },
+  {
+    key: 'PatternDisclosureHighFrictionRisk',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/system/__stories__/PatternDisclosureHighFrictionRisk.stories')
+        .default,
+  },
+  {
+    key: 'PatternDisclosureLowFriction',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/system/__stories__/PatternDisclosureLowFriction.stories').default,
+  },
+  {
+    key: 'PatternDisclosureMedFriction',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/system/__stories__/PatternDisclosureMedFriction.stories').default,
+  },
+  {
+    key: 'PatternError',
+    getComponent: () => require('@cbhq/cds-mobile/system/__stories__/PatternError.stories').default,
   },
   {
     key: 'Pictogram',
@@ -210,6 +258,10 @@ export const routes = [
   {
     key: 'Select',
     getComponent: () => require('@cbhq/cds-mobile/controls/__stories__/Select.stories').default,
+  },
+  {
+    key: 'SelectChip',
+    getComponent: () => require('@cbhq/cds-mobile/chips/__stories__/SelectChip.stories').default,
   },
   {
     key: 'SelectOption',
@@ -268,8 +320,17 @@ export const routes = [
       require('@cbhq/cds-mobile/illustrations/__stories__/SpotSquare.stories').default,
   },
   {
+    key: 'StickyFooter',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/sticky-footer/__stories__/StickyFooter.stories').default,
+  },
+  {
     key: 'Switch',
     getComponent: () => require('@cbhq/cds-mobile/controls/__stories__/Switch.stories').default,
+  },
+  {
+    key: 'TabbedChips',
+    getComponent: () => require('@cbhq/cds-mobile/chips/__stories__/TabbedChips.stories').default,
   },
   {
     key: 'TabIndicator',
@@ -374,5 +435,9 @@ export const routes = [
   {
     key: 'Tray',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Tray.stories').default,
+  },
+  {
+    key: 'UpsellCard',
+    getComponent: () => require('@cbhq/cds-mobile/cards/__stories__/UpsellCard.stories').default,
   },
 ];

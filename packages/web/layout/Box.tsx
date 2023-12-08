@@ -16,7 +16,6 @@ import {
   Display,
   ElevationLevels,
   ForwardedRef,
-  Position,
   ResponsiveProps,
   SharedProps,
 } from '@cbhq/cds-common/types';
@@ -87,8 +86,6 @@ export type BoxProps<As extends BoxElement = 'div'> = {
   display?: Display;
   /** Semantic role while using a non-semantic element. */
   role?: InferBoxRole<As>;
-  /** How to position the box within its parent. */
-  position?: Position;
   /** Sets the opacity of the element */
   opacity?: number;
   /**
@@ -106,7 +103,7 @@ export type BoxProps<As extends BoxElement = 'div'> = {
    * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
    * */
   tabIndex?: number;
-} & Omit<BoxBaseProps, 'position'> &
+} & BoxBaseProps &
   SharedProps &
   React.AriaAttributes &
   React.DOMAttributes<Element> &
