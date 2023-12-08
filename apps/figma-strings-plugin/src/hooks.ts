@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import * as contentful from 'contentful';
 
+import { DEFAULT_LOCALE } from './configs';
 import { Content } from './types';
 
 const client = contentful.createClient({
   space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
   accessToken: import.meta.env.VITE_CONTENTFUL_TOKEN,
   environment: import.meta.env.VITE_CONTENTFUL_ENV,
+  host: !import.meta.env.PROD ? 'preview.contentful.com' : undefined, // use preview API for non-prod environment
 });
 
 export const useStrings = () => {
@@ -14,7 +16,7 @@ export const useStrings = () => {
 
   const fetchStrings = useCallback(async () => {
     const response = await client.getEntries({
-      content_type: 'localizedContent',
+      content_type: 'string',
       limit: 1000,
       locale: '*',
     });
@@ -59,7 +61,7 @@ export const useFilteredStrings = (strings?: Content[], localeOption?: string) =
         const lowerCaseSearchTerm = searchTerm.toLowerCase();
 
         // Filter by text only when locale is English
-        if (localeOption === 'en') {
+        if (localeOption === DEFAULT_LOCALE) {
           filteredStrings = strings?.filter(
             (str) =>
               str.text[localeOption].toLowerCase().includes(lowerCaseSearchTerm) ||

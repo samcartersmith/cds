@@ -10,6 +10,7 @@
   "networkAccess": {
     "allowedDomains": [
       "https://cdn.contentful.com",
+      "https://preview.contentful.com",
       "https://analytics-service-dev.cbhq.net",
       "https://as.coinbase.com/amp"
     ]

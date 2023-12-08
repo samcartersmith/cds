@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+import { DEFAULT_LOCALE } from './configs';
 import type { Content, FigmaMessage } from './types';
 
 figma.showUI(__html__, { width: 300, height: 300 });
@@ -29,7 +30,7 @@ function findByType(arr: readonly SceneNode[], type: NodeType) {
 function createStringsMap(strings: FigmaMessage['strings']) {
   const map = new Map<string, Content>();
   strings?.forEach((string) => {
-    map.set(string.key.en, string);
+    map.set(string.key[DEFAULT_LOCALE], string);
   });
   return map;
 }
@@ -49,7 +50,7 @@ async function handleMatchedNodes(params: FigmaMessage, matchedNodes: TextNode[]
       const characters =
         params.type === 'toggle-display-mode' && params.displayMode === 'text'
           ? matchedData.text[params.locale]
-          : matchedData.key.en;
+          : matchedData.key[DEFAULT_LOCALE];
       if (characters) {
         node.characters = characters;
       }

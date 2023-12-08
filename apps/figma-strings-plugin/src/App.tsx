@@ -105,7 +105,10 @@ function App() {
 
   const toggleStringsVisibility = useCallback(() => {
     setIsStringsVisible(!isStringsVisible);
-  }, [isStringsVisible]);
+    if (searchTerm) {
+      handleSearchChange(''); // clear search text
+    }
+  }, [isStringsVisible, handleSearchChange, searchTerm]);
 
   const stringList = searchTerm ? filteredStrings : strings;
 
@@ -128,7 +131,9 @@ function App() {
       <div className="strings-list-container">
         <div className="strings-toggle" onClick={toggleStringsVisibility}>
           <Icon name={isStringsVisible ? 'caret-down' : 'caret-right'} />
-          <Text weight="bold">{isStringsVisible ? 'Hide' : 'Show'} strings</Text>
+          <Text weight="bold">
+            {isStringsVisible ? 'Hide' : 'Show'} strings ({stringList?.length})
+          </Text>
         </div>
         {isStringsVisible && (
           <>
