@@ -891,10 +891,16 @@ const sidebars = {
             ...adopters,
           ],
         },
-        { type: 'doc', id: 'a11y-report', label: 'Accessibility Tracker' },
         {
           type: 'category',
-
+          label: 'Accessibility Tracker',
+          items: [
+            { type: 'doc', id: 'a11y-tracker/a11y-report', label: 'Web Report' },
+            { type: 'doc', id: 'a11y-tracker/a11y-scorecards', label: 'Scorecards' },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Changelog',
           items: [
             { type: 'doc', id: 'changelog/cds-migrator', label: '@cbhq/cds-migrator' },
