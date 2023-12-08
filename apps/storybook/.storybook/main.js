@@ -128,7 +128,7 @@ const config = {
       config.plugins.push(
         // @ts-expect-error
         new BundleAnalyzerPlugin({
-          analyzerMode: 'json',
+          analyzerMode: process.env.ANALYZE_MODE_JSON === 'true' ? 'json' : 'server',
           excludeAssets: (assetName) => !assetName.startsWith('main'),
         }),
       );

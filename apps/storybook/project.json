@@ -26,13 +26,20 @@
         "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
       ]
     },
+    "analyze": {
+      "executor": "@cbhq/mono-tasks:build-storybook",
+      "env": {
+        "ANALYZE": true
+      }
+    },
     "build-for-analyze": {
       "executor": "@cbhq/mono-tasks:build-storybook",
       "outputs": [
         "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
       ],
       "env": {
-        "ANALYZE": true
+        "ANALYZE": true,
+        "ANALYZE_MODE_JSON": true
       }
     },
     "build-for-tests": {
