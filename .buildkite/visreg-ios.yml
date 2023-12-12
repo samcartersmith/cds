@@ -11,6 +11,9 @@ steps:
   - label: 'Visreg Test (iOS) %N'
     key: 'visreg_ios'
     parallelism: 5
+    env:
+      # Fixes issues with git-mirrors on mac agents
+      BUILDKITE_CLEAN_CHECKOUT: true
     agents:
       queue: macos-metal-xcode15
     commands:
@@ -26,6 +29,9 @@ steps:
   - label: 'Finish Visreg Tests (iOS)'
     depends_on: 'visreg_ios'
     allow_dependency_failure: true
+    env:
+      # Fixes issues with git-mirrors on mac agents
+      BUILDKITE_CLEAN_CHECKOUT: true
     agents:
       queue: macos-metal-xcode15
     commands:
