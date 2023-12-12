@@ -24,11 +24,19 @@ _docker_shared: &docker_shared
           - 'AWS_ACCESS_KEY_ID'
           - 'AWS_SECRET_ACCESS_KEY'
           - 'AWS_SESSION_TOKEN'
-    - file:///buildkite/plugins/cache: &cache_plugin
+    - file:///buildkite/plugins/cache: &cache_plugin_yarn
         key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
         paths:
           - ./.yarn/cache
           - ./.yarn/install-state.gz
+    # Buildkite cache config for bundle-stats https://github.cbhq.net/infra/buildkite/pull/126
+    - file:///buildkite/plugins/cache:
+        key: bundle-stats-v1
+        path: bundle-stats.json
+        download_blocklist_keys:
+          - bundle-size-master
+        upload_allowlist_keys:
+          - bundle-size-master
 
 _k8s_medium: &k8s_medium
   <<: *docker_shared
@@ -65,7 +73,7 @@ _docker_chrome: &docker_chrome
           - 'AWS_ACCESS_KEY_ID'
           - 'AWS_SECRET_ACCESS_KEY'
           - 'AWS_SESSION_TOKEN'
-    - file:///buildkite/plugins/cache: *cache_plugin
+    - file:///buildkite/plugins/cache: *cache_plugin_yarn
 
 _k8s_medium_chrome: &k8s_medium_chrome
   <<: *docker_chrome
@@ -174,14 +182,11 @@ steps:
 
   - label: 'Bundle Size (Master)'
     <<: *k8s_large
+    key: bundle-size-master
     if: build.branch == 'master'
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --projects=storybook --targets=build-for-analyze --allOnMaster
-    plugins:
-      - file:///buildkite/plugins/cache:
-          key: bundle-stats-v1
-          path: bundle-stats.json
 
   - label: 'Bundle Size'
     <<: *k8s_large
@@ -191,7 +196,3 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --projects=storybook --targets=analyze-bundle --allOnMaster || echo 'Failed to analyze bundle'
-    # plugins:
-    #   - file:///buildkite/plugins/cache:
-    #       key: bundle-stats-v1
-    #       path: bundle-stats.json
