@@ -100,6 +100,12 @@
       "dependsOn": [
         "build-for-analyze"
       ]
+    },
+    "test-artifact": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./scripts/test-artifact.ts"
+      }
     }
   }
 }

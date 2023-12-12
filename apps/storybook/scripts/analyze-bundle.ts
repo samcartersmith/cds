@@ -4,7 +4,8 @@ import path from 'node:path';
 /** Start configuration */
 
 const PACKAGES_RELATIVE_PATH = './../packages';
-const STATS_FILENAME = '.nx/outs/projects/apps/storybook/storybook/report.json';
+const STATS_FILENAME = 'bundle-stats.json';
+const COMPARISON_STATS_FILENAME = `apps/storybook/${STATS_FILENAME}`;
 
 /**
  * Bundle groups whose `label` value is in this array, or whose `label` value
@@ -48,9 +49,15 @@ const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT was undefined');
 
 const bundleStatsPath = path.resolve(MONOREPO_ROOT, STATS_FILENAME);
+const comparisonBundleStatsPath = path.resolve(MONOREPO_ROOT, COMPARISON_STATS_FILENAME);
 
 if (!fs.existsSync(bundleStatsPath))
-  throw Error(`No bundle stats report.json found at path "${bundleStatsPath}"`);
+  throw Error(`No bundle stats ${STATS_FILENAME} found at path "${bundleStatsPath}"`);
+
+if (!fs.existsSync(comparisonBundleStatsPath))
+  throw Error(
+    `No comparison bundle stats ${STATS_FILENAME} found at path "${comparisonBundleStatsPath}"`,
+  );
 
 type BundleStats = {
   id?: string;
@@ -135,3 +142,6 @@ for (const [packageName, detailedMessage] of Object.entries(detailedMessages))
 
 // eslint-disable-next-line no-console
 console.log(message);
+
+fs.rmSync(bundleStatsPath, { recursive: true });
+fs.rmSync(comparisonBundleStatsPath, { recursive: true });

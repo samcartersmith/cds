@@ -4,6 +4,10 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const BABEL_OPTIONS = { configFile: true, rootMode: 'upward' };
 
+const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
+
+if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
+
 /**
  * @type {import('@storybook/core-common').StorybookConfig}
  */
@@ -129,6 +133,10 @@ const config = {
         // @ts-expect-error
         new BundleAnalyzerPlugin({
           analyzerMode: process.env.ANALYZE_MODE_JSON === 'true' ? 'json' : 'server',
+          reportFilename: path.resolve(
+            MONOREPO_ROOT,
+            process.env.ANALYZE_REPORT_PATH || 'bundle-stats.json',
+          ),
           excludeAssets: (assetName) => !assetName.startsWith('main'),
         }),
       );

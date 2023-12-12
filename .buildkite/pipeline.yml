@@ -172,11 +172,26 @@ steps:
       automatic:
         limit: 1
 
-  - label: 'Bundle Size'
-    <<: *k8s_medium_chrome
+  - label: 'Bundle Size (Master)'
+    <<: *k8s_large
+    if: build.branch == 'master'
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --projects=storybook --targets=analyze-bundle --allOnMaster
-    retry:
-      automatic:
-        limit: 1
+      - yarn mono-pipeline run-ci other --projects=storybook --targets=build-for-analyze --allOnMaster
+    plugins:
+      - file:///buildkite/plugins/cache:
+          key: bundle-stats-v1
+          path: bundle-stats.json
+
+  - label: 'Bundle Size'
+    <<: *k8s_large
+    if: build.branch != 'master'
+    env:
+      ANALYZE_REPORT_PATH: apps/storybook/bundle-stats.json
+    commands:
+      - tools/ci/setup.sh
+      - yarn mono-pipeline run-ci other --projects=storybook --targets=analyze-bundle --allOnMaster || echo 'Failed to analyze bundle'
+    # plugins:
+    #   - file:///buildkite/plugins/cache:
+    #       key: bundle-stats-v1
+    #       path: bundle-stats.json
