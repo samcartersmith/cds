@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.6.0 (12/12/2023 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 12/12/2023. [[#2537](https://github.cbhq.net/frontend/cds/pull/2537)]
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- bank
+- idVerification
+- pieChart
+- recurringPurchases
+- send
+
+#### Pictogram
+
+- target
+
+#### Hero Square
+
+- tradeGeneral
+
 ## 2.5.0 (12/5/2023 PST)
 
 #### 🚀 Updates

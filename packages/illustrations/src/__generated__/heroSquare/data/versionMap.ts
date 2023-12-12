@@ -321,7 +321,7 @@ const versionMap: Record<HeroSquareName, number> = {
   scalable: 0,
   minting: 0,
   protocol: 0,
-  tradeGeneral: 0,
+  tradeGeneral: 1,
 };
 
 export default versionMap;

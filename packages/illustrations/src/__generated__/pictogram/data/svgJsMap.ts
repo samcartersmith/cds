@@ -962,8 +962,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/takeQuiz-2').content,
   },
   target: {
-    light: () => require('../svgJs/light/target-2').content,
-    dark: () => require('../svgJs/dark/target-2').content,
+    light: () => require('../svgJs/light/target-3').content,
+    dark: () => require('../svgJs/dark/target-3').content,
   },
   taxBeta: {
     light: () => require('../svgJs/light/taxBeta-2').content,

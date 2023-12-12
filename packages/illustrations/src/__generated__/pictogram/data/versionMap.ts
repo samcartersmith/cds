@@ -138,7 +138,7 @@ const versionMap: Record<PictogramName, number> = {
   multiAccountsAndCards: 3,
   warning: 2,
   decentralizedIdentity: 2,
-  target: 2,
+  target: 3,
   selfServe: 2,
   assetEncryption: 3,
   noNftFound: 2,

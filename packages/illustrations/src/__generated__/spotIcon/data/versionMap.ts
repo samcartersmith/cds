@@ -52,11 +52,11 @@ const versionMap: Record<SpotIconName, number> = {
   delegateProduct: 1,
   exchangeProduct: 1,
   commerceProduct: 1,
-  idVerification: 0,
+  idVerification: 1,
   email: 0,
   delegate: 0,
   warning: 0,
-  send: 0,
+  send: 1,
   chat: 0,
   '2fa': 0,
   shield: 0,
@@ -67,9 +67,9 @@ const versionMap: Record<SpotIconName, number> = {
   done: 0,
   error: 0,
   authenticator: 0,
-  pieChart: 0,
-  recurringPurchases: 0,
-  bank: 0,
+  pieChart: 1,
+  recurringPurchases: 1,
+  bank: 1,
 };
 
 export default versionMap;

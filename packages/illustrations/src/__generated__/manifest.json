@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-12-05T08:01:52.291Z",
+  "lastUpdated": "2023-12-12T08:02:23.815Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -70,7 +70,7 @@
       "height": 240,
       "description": "nft, cat, empty state, distinguished, artwork, gallery, painting, moment, notice me, mona lisa, mona cat, cat in a hat, 🎩, 🖼, 🎨, 🖌,  ✨, ❇️,  🐈‍⬛, 🙀, 🐱, 😹, 😽, 😸, 😺, 😾, 😼",
       "createdAt": "2022-08-05T05:36:58.707Z",
-      "lastUpdated": "2023-08-23T00:00:47.143Z",
+      "lastUpdated": "2023-12-11T17:17:00.192Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/emptyStateNftSoldOut-3.svg",
         "svgDark": "./heroSquare/svg/dark/emptyStateNftSoldOut-3.svg",
@@ -210,7 +210,7 @@
       "height": 240,
       "description": "restricted, country, warning, map, pin, point, location, warning state",
       "createdAt": "2022-08-05T05:36:48.405Z",
-      "lastUpdated": "2023-08-23T00:01:04.075Z",
+      "lastUpdated": "2023-12-07T17:24:05.366Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/restrictedCountry-4.svg",
         "svgDark": "./heroSquare/svg/dark/restrictedCountry-4.svg",
@@ -370,7 +370,7 @@
       "height": 240,
       "description": "user, check, circles, blue, yellow",
       "createdAt": "2022-08-05T05:36:58.799Z",
-      "lastUpdated": "2023-08-23T00:01:03.647Z",
+      "lastUpdated": "2023-12-06T22:15:48.594Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/didDecentralizedIdentity-3.svg",
         "svgDark": "./heroSquare/svg/dark/didDecentralizedIdentity-3.svg",
@@ -6830,7 +6830,7 @@
       "height": 48,
       "description": "",
       "createdAt": "2022-08-05T05:37:09.765Z",
-      "lastUpdated": "2023-09-05T22:05:31.236Z",
+      "lastUpdated": "2023-12-08T16:13:31.863Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/miningCoins-2.svg",
         "svgDark": "./pictogram/svg/dark/miningCoins-2.svg",
@@ -7050,7 +7050,7 @@
       "height": 48,
       "description": "",
       "createdAt": "2022-08-05T05:37:09.794Z",
-      "lastUpdated": "2023-09-05T22:05:53.300Z",
+      "lastUpdated": "2023-12-06T22:26:45.542Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/borrowingLending-2.svg",
         "svgDark": "./pictogram/svg/dark/borrowingLending-2.svg",
@@ -8670,7 +8670,7 @@
       "height": 48,
       "description": "trust, true, genuine, actual, verification, phone, device, mobile, support, 2fa, authenticate,  📱, 🤳, 📳",
       "createdAt": "2022-08-05T05:37:08.897Z",
-      "lastUpdated": "2023-09-05T22:05:53.582Z",
+      "lastUpdated": "2023-12-06T22:11:51.145Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/authenticationApp-2.svg",
         "svgDark": "./pictogram/svg/dark/authenticationApp-2.svg",
@@ -8870,7 +8870,7 @@
       "height": 48,
       "description": "lock, circle, square, blue",
       "createdAt": "2022-08-05T05:37:13.669Z",
-      "lastUpdated": "2023-09-05T22:05:31.026Z",
+      "lastUpdated": "2023-12-06T22:13:53.094Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/passwordWalletLocked-2.svg",
         "svgDark": "./pictogram/svg/dark/passwordWalletLocked-2.svg",
@@ -9145,22 +9145,22 @@
     "2:41574": {
       "type": "pictogram",
       "name": "target",
-      "hash": "pj+u18DichTUCR1MIbfT//pcrltzYjE8+YAhSLQRCzw=",
+      "hash": "E5Nan0aG6FAGg53dy5H0lgblUFtK1BW0p1q+Zp70qFA=",
       "width": 48,
       "height": 48,
       "description": "diamond, reward, sparkle, earn, crystal, 💎, 💍, ✨,  ❇️",
       "createdAt": "2022-08-05T05:36:58.363Z",
-      "lastUpdated": "2023-09-05T22:05:30.676Z",
+      "lastUpdated": "2023-12-11T22:49:03.924Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/target-2.svg",
-        "svgDark": "./pictogram/svg/dark/target-2.svg",
-        "svgThemed": "./pictogram/svg/themeable/target-2.svg",
-        "svgJsLight": "./pictogram/svgJs/light/target-2.js",
-        "svgJsDark": "./pictogram/svgJs/dark/target-2.js",
-        "pngLight": "./pictogram/png/light/target-2.png",
-        "pngDark": "./pictogram/png/dark/target-2.png"
+        "svgLight": "./pictogram/svg/light/target-3.svg",
+        "svgDark": "./pictogram/svg/dark/target-3.svg",
+        "svgThemed": "./pictogram/svg/themeable/target-3.svg",
+        "svgJsLight": "./pictogram/svgJs/light/target-3.js",
+        "svgJsDark": "./pictogram/svgJs/dark/target-3.js",
+        "pngLight": "./pictogram/png/light/target-3.png",
+        "pngDark": "./pictogram/png/dark/target-3.png"
       },
-      "version": 2
+      "version": 3
     },
     "2:41575": {
       "type": "pictogram",
@@ -9690,7 +9690,7 @@
       "height": 48,
       "description": "circles, blue, yellow, coins, USA, Dollar",
       "createdAt": "2022-08-05T05:37:13.821Z",
-      "lastUpdated": "2023-09-05T22:05:31.007Z",
+      "lastUpdated": "2023-12-06T15:23:37.971Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/dollarShowcase-3.svg",
         "svgDark": "./pictogram/svg/dark/dollarShowcase-3.svg",
@@ -11270,7 +11270,7 @@
       "height": 240,
       "description": "USDC, rewards, incentives, crystalBall, reward, returns, 🔮",
       "createdAt": "2022-11-23T13:41:30.914Z",
-      "lastUpdated": "2023-08-23T00:00:32.871Z",
+      "lastUpdated": "2023-12-07T14:44:03.789Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/coinbaseOneUSDCIncentives-2.svg",
         "svgDark": "./heroSquare/svg/dark/coinbaseOneUSDCIncentives-2.svg",
@@ -12710,7 +12710,7 @@
       "height": 96,
       "description": "peer, to, peer, payments, P2P, send, money, receive, fast, quick, value",
       "createdAt": "2022-11-23T13:41:31.096Z",
-      "lastUpdated": "2023-09-05T22:05:44.060Z",
+      "lastUpdated": "2023-12-05T15:10:38.040Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/p2pPayments-3.svg",
         "svgDark": "./spotSquare/svg/dark/p2pPayments-3.svg",
@@ -13650,7 +13650,7 @@
       "height": 96,
       "description": "PIX, Deposits, bank, coin, brazil, south, america, latam, arrow",
       "createdAt": "2022-11-23T13:41:30.871Z",
-      "lastUpdated": "2023-09-05T22:05:30.999Z",
+      "lastUpdated": "2023-12-08T09:42:54.317Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/pixBankDeposits-4.svg",
         "svgDark": "./spotSquare/svg/dark/pixBankDeposits-4.svg",
@@ -14310,7 +14310,7 @@
       "height": 120,
       "description": "eth, staking, send, transfer, circles, movement, forward, exciting, 🟣, 🟢, 🔵",
       "createdAt": "2023-01-13T21:03:23.720Z",
-      "lastUpdated": "2023-08-23T00:00:47.638Z",
+      "lastUpdated": "2023-12-11T22:24:37.790Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/ethStakingMovement-2.svg",
         "svgDark": "./spotRectangle/svg/dark/ethStakingMovement-2.svg",
@@ -14330,7 +14330,7 @@
       "height": 120,
       "description": "transfer, send, receive, wallet, eth, crypto, coin, 🪙",
       "createdAt": "2023-01-13T21:03:23.678Z",
-      "lastUpdated": "2023-08-23T00:00:48.200Z",
+      "lastUpdated": "2023-12-11T22:23:02.760Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/transferEth-2.svg",
         "svgDark": "./spotRectangle/svg/dark/transferEth-2.svg",
@@ -15510,7 +15510,7 @@
       "height": 240,
       "description": "coin, yellow, circle, blue, mining",
       "createdAt": "2023-01-20T04:23:08.525Z",
-      "lastUpdated": "2023-11-29T21:11:22.554Z",
+      "lastUpdated": "2023-12-11T22:49:03.896Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/mining-3.svg",
         "svgDark": "./heroSquare/svg/dark/mining-3.svg",
@@ -16350,7 +16350,7 @@
       "height": 48,
       "description": "phone, id, person, human, check, security, protection, 📱, ✅, 🆔, 🪪",
       "createdAt": "2023-02-28T17:49:43.930Z",
-      "lastUpdated": "2023-09-05T22:05:31.048Z",
+      "lastUpdated": "2023-12-05T19:53:10.591Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/manageWeb3SignersAcct-0.svg",
         "svgDark": "./pictogram/svg/dark/manageWeb3SignersAcct-0.svg",
@@ -17830,7 +17830,7 @@
       "height": 96,
       "description": "coin, coins, moon, more, empty state",
       "createdAt": "2023-05-03T19:12:53.003Z",
-      "lastUpdated": "2023-11-07T19:19:47.220Z",
+      "lastUpdated": "2023-12-11T22:49:03.986Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/cryptoAndMore-3.svg",
         "svgDark": "./spotSquare/svg/dark/cryptoAndMore-3.svg",
@@ -18745,22 +18745,22 @@
     "4157:2410": {
       "type": "heroSquare",
       "name": "tradeGeneral",
-      "hash": "ZooLfr6KaESYBV2Shf92hZ7iZWaO6J1j0XgVBPPvi74=",
+      "hash": "fXuCymQizk38pPvbQFgVBetDKJsjuPLMyTsbYEVsyEM=",
       "width": 240,
       "height": 240,
       "description": "trade, trading, swap, coin, coins, assets, switch, arrows",
       "createdAt": "2023-10-21T00:32:36.130Z",
-      "lastUpdated": "2023-10-21T00:32:36.130Z",
+      "lastUpdated": "2023-12-11T22:49:03.858Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/tradeGeneral-0.svg",
-        "svgDark": "./heroSquare/svg/dark/tradeGeneral-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/tradeGeneral-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/tradeGeneral-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/tradeGeneral-0.js",
-        "pngLight": "./heroSquare/png/light/tradeGeneral-0.png",
-        "pngDark": "./heroSquare/png/dark/tradeGeneral-0.png"
+        "svgLight": "./heroSquare/svg/light/tradeGeneral-1.svg",
+        "svgDark": "./heroSquare/svg/dark/tradeGeneral-1.svg",
+        "svgThemed": "./heroSquare/svg/themeable/tradeGeneral-1.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/tradeGeneral-1.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/tradeGeneral-1.js",
+        "pngLight": "./heroSquare/png/light/tradeGeneral-1.png",
+        "pngDark": "./heroSquare/png/dark/tradeGeneral-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "4157:2411": {
       "type": "heroSquare",
@@ -19390,7 +19390,7 @@
       "height": 32,
       "description": "product, icons, insto, institutional",
       "createdAt": "2023-10-21T00:32:35.937Z",
-      "lastUpdated": "2023-11-01T14:35:55.785Z",
+      "lastUpdated": "2023-12-11T22:49:03.873Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/institutionalProduct-1.svg",
         "svgDark": "./spotIcon/svg/dark/institutionalProduct-1.svg",
@@ -19650,7 +19650,7 @@
       "height": 32,
       "description": "envelope, letter, online, send, message, 💌, ✉️, 📨, 📩, 📧",
       "createdAt": "2023-11-07T19:19:47.031Z",
-      "lastUpdated": "2023-11-07T19:19:47.031Z",
+      "lastUpdated": "2023-12-11T22:49:04.007Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/email-0.svg",
         "svgDark": "./spotIcon/svg/dark/email-0.svg",
@@ -19670,7 +19670,7 @@
       "height": 32,
       "description": "wallet, storage, crypto transactions, pay, retrieve, digital assets, 💰, 💵, 💸",
       "createdAt": "2023-10-21T00:32:35.808Z",
-      "lastUpdated": "2023-11-07T19:19:47.044Z",
+      "lastUpdated": "2023-12-11T22:49:03.917Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/wallet-1.svg",
         "svgDark": "./spotIcon/svg/dark/wallet-1.svg",
@@ -19690,7 +19690,7 @@
       "height": 32,
       "description": "represent, envoy, agent, assign, entrust, give, person, check, checkmark, ✅, ✔️, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️",
       "createdAt": "2023-11-07T19:19:47.038Z",
-      "lastUpdated": "2023-11-07T19:19:47.038Z",
+      "lastUpdated": "2023-12-11T22:49:03.842Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/delegate-0.svg",
         "svgDark": "./spotIcon/svg/dark/delegate-0.svg",
@@ -19705,22 +19705,22 @@
     "4390:692": {
       "type": "spotIcon",
       "name": "bank",
-      "hash": "0exC4S/NCI4Nyuuqi2jHkMCOZJQ9PIAjqcvo5cB0I10=",
+      "hash": "0vbKAT6YpK2xe05VZA5UhJI2HAGpP2zR/Blyi9KYsQo=",
       "width": 32,
       "height": 32,
       "description": "bank, fund, stock, currency, money, building, institution, 💵, 💸, 🏦, 🏧, 💴, 💶, 💷",
       "createdAt": "2023-11-07T19:19:47.149Z",
-      "lastUpdated": "2023-11-07T19:19:47.149Z",
+      "lastUpdated": "2023-12-11T22:49:03.960Z",
       "outputs": {
-        "svgLight": "./spotIcon/svg/light/bank-0.svg",
-        "svgDark": "./spotIcon/svg/dark/bank-0.svg",
-        "svgThemed": "./spotIcon/svg/themeable/bank-0.svg",
-        "svgJsLight": "./spotIcon/svgJs/light/bank-0.js",
-        "svgJsDark": "./spotIcon/svgJs/dark/bank-0.js",
-        "pngLight": "./spotIcon/png/light/bank-0.png",
-        "pngDark": "./spotIcon/png/dark/bank-0.png"
+        "svgLight": "./spotIcon/svg/light/bank-1.svg",
+        "svgDark": "./spotIcon/svg/dark/bank-1.svg",
+        "svgThemed": "./spotIcon/svg/themeable/bank-1.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/bank-1.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/bank-1.js",
+        "pngLight": "./spotIcon/png/light/bank-1.png",
+        "pngDark": "./spotIcon/png/dark/bank-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "4390:693": {
       "type": "spotIcon",
@@ -19730,7 +19730,7 @@
       "height": 32,
       "description": "warning, yellow, triangle, error, warn, yield",
       "createdAt": "2023-11-07T19:19:47.052Z",
-      "lastUpdated": "2023-11-07T19:19:47.052Z",
+      "lastUpdated": "2023-12-11T22:49:03.993Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/warning-0.svg",
         "svgDark": "./spotIcon/svg/dark/warning-0.svg",
@@ -19750,7 +19750,7 @@
       "height": 32,
       "description": "chat bubble, speech, communication, social, interaction, message, 💬",
       "createdAt": "2023-11-07T19:19:47.066Z",
-      "lastUpdated": "2023-11-07T19:19:47.066Z",
+      "lastUpdated": "2023-12-11T22:49:03.940Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/chat-0.svg",
         "svgDark": "./spotIcon/svg/dark/chat-0.svg",
@@ -19770,7 +19770,7 @@
       "height": 32,
       "description": "trust, true, genuine, actual, verification, 2fa, authenticate, device",
       "createdAt": "2023-11-07T19:19:47.073Z",
-      "lastUpdated": "2023-11-07T19:19:47.073Z",
+      "lastUpdated": "2023-12-11T22:49:03.903Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/2fa-0.svg",
         "svgDark": "./spotIcon/svg/dark/2fa-0.svg",
@@ -19790,7 +19790,7 @@
       "height": 32,
       "description": "",
       "createdAt": "2023-11-07T19:19:47.086Z",
-      "lastUpdated": "2023-11-07T19:19:47.086Z",
+      "lastUpdated": "2023-12-11T22:49:04.000Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/multiCoin-0.svg",
         "svgDark": "./spotIcon/svg/dark/multiCoin-0.svg",
@@ -19810,7 +19810,7 @@
       "height": 32,
       "description": "quick, time, clock, speed, lightning, 🕦, 🕐, 🕚, 🕥, 🕧, 🕙, 🕣, 🕠, 🕝, 🕢, 🕟, 🕜, 🕤, 🕡, 🕞, 🕘, 🕒, 🕗, 🕔, 🕑, 🕖, 🕓, 🕛, ⏰, ⏱, 🕰, 🔄, ⏳, ⌛️",
       "createdAt": "2023-11-07T19:19:47.093Z",
-      "lastUpdated": "2023-11-07T19:19:47.093Z",
+      "lastUpdated": "2023-12-11T22:49:03.947Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/fast-0.svg",
         "svgDark": "./spotIcon/svg/dark/fast-0.svg",
@@ -19830,7 +19830,7 @@
       "height": 32,
       "description": "circle, checkmark, check, tick, confirmation, success, positive, done, green, circle, ✅, ✔️, success state",
       "createdAt": "2023-11-07T19:19:47.113Z",
-      "lastUpdated": "2023-11-07T19:19:47.113Z",
+      "lastUpdated": "2023-12-11T22:49:03.851Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/done-0.svg",
         "svgDark": "./spotIcon/svg/dark/done-0.svg",
@@ -19850,7 +19850,7 @@
       "height": 32,
       "description": "",
       "createdAt": "2023-11-07T19:19:47.100Z",
-      "lastUpdated": "2023-11-07T19:19:47.100Z",
+      "lastUpdated": "2023-12-11T22:49:03.979Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/noFees-0.svg",
         "svgDark": "./spotIcon/svg/dark/noFees-0.svg",
@@ -19870,7 +19870,7 @@
       "height": 32,
       "description": "card, pay, credit, debit, money, 💳, 🏦, 🏧",
       "createdAt": "2023-11-07T19:19:47.106Z",
-      "lastUpdated": "2023-11-07T19:19:47.106Z",
+      "lastUpdated": "2023-12-11T22:49:03.880Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/creditCard-0.svg",
         "svgDark": "./spotIcon/svg/dark/creditCard-0.svg",
@@ -19885,62 +19885,62 @@
     "4390:701": {
       "type": "spotIcon",
       "name": "recurringPurchases",
-      "hash": "7UZaqRKIXDY18to5dIFaxzBJPDn3k1WLQ+b1jvfIgO0=",
+      "hash": "GTaVmKT+nmeYL8BhN9ZkLxeCdEDf/z8vBxnK2LGHH9Q=",
       "width": 32,
       "height": 32,
       "description": "reoccur, regular, schedule, calendar, organize, date, year, month, week, book, refresh, 📆, 📅, 🗓",
       "createdAt": "2023-11-07T19:19:47.143Z",
-      "lastUpdated": "2023-11-07T19:19:47.143Z",
+      "lastUpdated": "2023-12-11T22:49:03.910Z",
       "outputs": {
-        "svgLight": "./spotIcon/svg/light/recurringPurchases-0.svg",
-        "svgDark": "./spotIcon/svg/dark/recurringPurchases-0.svg",
-        "svgThemed": "./spotIcon/svg/themeable/recurringPurchases-0.svg",
-        "svgJsLight": "./spotIcon/svgJs/light/recurringPurchases-0.js",
-        "svgJsDark": "./spotIcon/svgJs/dark/recurringPurchases-0.js",
-        "pngLight": "./spotIcon/png/light/recurringPurchases-0.png",
-        "pngDark": "./spotIcon/png/dark/recurringPurchases-0.png"
+        "svgLight": "./spotIcon/svg/light/recurringPurchases-1.svg",
+        "svgDark": "./spotIcon/svg/dark/recurringPurchases-1.svg",
+        "svgThemed": "./spotIcon/svg/themeable/recurringPurchases-1.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/recurringPurchases-1.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/recurringPurchases-1.js",
+        "pngLight": "./spotIcon/png/light/recurringPurchases-1.png",
+        "pngDark": "./spotIcon/png/dark/recurringPurchases-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "4390:702": {
       "type": "spotIcon",
       "name": "pieChart",
-      "hash": "J6AOFtHRgLrXKPN44AMIBiordJDXx4GBJ11EYPLWAds=",
+      "hash": "gVzYLGInSk9J7k5lKjR8jKMAkRgj46kscckcoqlM0WA=",
       "width": 32,
       "height": 32,
       "description": "chart pie, data, visualization, numbers, graph, 📊, 📉, 📈, 🥧",
       "createdAt": "2023-11-07T19:19:47.136Z",
-      "lastUpdated": "2023-11-07T19:19:47.136Z",
+      "lastUpdated": "2023-12-11T22:49:03.966Z",
       "outputs": {
-        "svgLight": "./spotIcon/svg/light/pieChart-0.svg",
-        "svgDark": "./spotIcon/svg/dark/pieChart-0.svg",
-        "svgThemed": "./spotIcon/svg/themeable/pieChart-0.svg",
-        "svgJsLight": "./spotIcon/svgJs/light/pieChart-0.js",
-        "svgJsDark": "./spotIcon/svgJs/dark/pieChart-0.js",
-        "pngLight": "./spotIcon/png/light/pieChart-0.png",
-        "pngDark": "./spotIcon/png/dark/pieChart-0.png"
+        "svgLight": "./spotIcon/svg/light/pieChart-1.svg",
+        "svgDark": "./spotIcon/svg/dark/pieChart-1.svg",
+        "svgThemed": "./spotIcon/svg/themeable/pieChart-1.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/pieChart-1.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/pieChart-1.js",
+        "pngLight": "./spotIcon/png/light/pieChart-1.png",
+        "pngDark": "./spotIcon/png/dark/pieChart-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "4390:703": {
       "type": "spotIcon",
       "name": "idVerification",
-      "hash": "IEPgDz+Y6h2Q4ZDnk6+/27+u3S2tXk+UCtE1pC+ZX3I=",
+      "hash": "ukhRXBLWNUupH8ajXvgZNT4ZGnEDThKKkMBNPZdTg+U=",
       "width": 32,
       "height": 32,
       "description": "check, checkmark, secure, 2fa, protection, identity card, profile, personal, ID, human, card, 🆔, ✅, ✔️, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, success state",
       "createdAt": "2023-11-07T19:19:47.021Z",
-      "lastUpdated": "2023-11-07T19:19:47.021Z",
+      "lastUpdated": "2023-12-11T22:49:03.865Z",
       "outputs": {
-        "svgLight": "./spotIcon/svg/light/idVerification-0.svg",
-        "svgDark": "./spotIcon/svg/dark/idVerification-0.svg",
-        "svgThemed": "./spotIcon/svg/themeable/idVerification-0.svg",
-        "svgJsLight": "./spotIcon/svgJs/light/idVerification-0.js",
-        "svgJsDark": "./spotIcon/svgJs/dark/idVerification-0.js",
-        "pngLight": "./spotIcon/png/light/idVerification-0.png",
-        "pngDark": "./spotIcon/png/dark/idVerification-0.png"
+        "svgLight": "./spotIcon/svg/light/idVerification-1.svg",
+        "svgDark": "./spotIcon/svg/dark/idVerification-1.svg",
+        "svgThemed": "./spotIcon/svg/themeable/idVerification-1.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/idVerification-1.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/idVerification-1.js",
+        "pngLight": "./spotIcon/png/light/idVerification-1.png",
+        "pngDark": "./spotIcon/png/dark/idVerification-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "4390:704": {
       "type": "spotIcon",
@@ -19950,7 +19950,7 @@
       "height": 32,
       "description": "close, cross, circle, decline, reject, no, cancel, x, ❌, 🙅, 🙅‍♂️, 🙅‍♀️, 🚫, ❎",
       "createdAt": "2023-11-07T19:19:47.121Z",
-      "lastUpdated": "2023-11-07T19:19:47.121Z",
+      "lastUpdated": "2023-12-11T22:49:03.932Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/error-0.svg",
         "svgDark": "./spotIcon/svg/dark/error-0.svg",
@@ -19970,7 +19970,7 @@
       "height": 32,
       "description": "shield, protection, guard, defense, cover, safety, security",
       "createdAt": "2023-11-07T19:19:47.080Z",
-      "lastUpdated": "2023-11-07T19:19:47.080Z",
+      "lastUpdated": "2023-12-11T22:49:03.973Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/shield-0.svg",
         "svgDark": "./spotIcon/svg/dark/shield-0.svg",
@@ -19985,22 +19985,22 @@
     "4390:706": {
       "type": "spotIcon",
       "name": "send",
-      "hash": "zRHgrpEsvnQHyfeaxd4hI2/WPJoZIEDcbGjFE4f0rg4=",
+      "hash": "O0ebOotpLdydz+A6c2Fo/+a1X1qdIx1uiwmkj8zz4FQ=",
       "width": 32,
       "height": 32,
       "description": "",
       "createdAt": "2023-11-07T19:19:47.059Z",
-      "lastUpdated": "2023-11-07T19:19:47.059Z",
+      "lastUpdated": "2023-12-11T22:49:03.953Z",
       "outputs": {
-        "svgLight": "./spotIcon/svg/light/send-0.svg",
-        "svgDark": "./spotIcon/svg/dark/send-0.svg",
-        "svgThemed": "./spotIcon/svg/themeable/send-0.svg",
-        "svgJsLight": "./spotIcon/svgJs/light/send-0.js",
-        "svgJsDark": "./spotIcon/svgJs/dark/send-0.js",
-        "pngLight": "./spotIcon/png/light/send-0.png",
-        "pngDark": "./spotIcon/png/dark/send-0.png"
+        "svgLight": "./spotIcon/svg/light/send-1.svg",
+        "svgDark": "./spotIcon/svg/dark/send-1.svg",
+        "svgThemed": "./spotIcon/svg/themeable/send-1.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/send-1.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/send-1.js",
+        "pngLight": "./spotIcon/png/light/send-1.png",
+        "pngDark": "./spotIcon/png/dark/send-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "4390:707": {
       "type": "spotIcon",
@@ -20010,7 +20010,7 @@
       "height": 32,
       "description": "trust, true, genuine, actual, verification",
       "createdAt": "2023-11-07T19:19:47.128Z",
-      "lastUpdated": "2023-11-07T19:19:47.128Z",
+      "lastUpdated": "2023-12-11T22:49:03.889Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/authenticator-0.svg",
         "svgDark": "./spotIcon/svg/dark/authenticator-0.svg",

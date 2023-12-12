@@ -30,8 +30,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/authenticator-0').content,
   },
   bank: {
-    light: () => require('../svgJs/light/bank-0').content,
-    dark: () => require('../svgJs/dark/bank-0').content,
+    light: () => require('../svgJs/light/bank-1').content,
+    dark: () => require('../svgJs/dark/bank-1').content,
   },
   base: {
     light: () => require('../svgJs/light/base-0').content,
@@ -110,8 +110,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/helpCenterProduct-1').content,
   },
   idVerification: {
-    light: () => require('../svgJs/light/idVerification-0').content,
-    dark: () => require('../svgJs/dark/idVerification-0').content,
+    light: () => require('../svgJs/light/idVerification-1').content,
+    dark: () => require('../svgJs/dark/idVerification-1').content,
   },
   institutionalProduct: {
     light: () => require('../svgJs/light/institutionalProduct-1').content,
@@ -150,8 +150,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/paySDKProduct-0').content,
   },
   pieChart: {
-    light: () => require('../svgJs/light/pieChart-0').content,
-    dark: () => require('../svgJs/dark/pieChart-0').content,
+    light: () => require('../svgJs/light/pieChart-1').content,
+    dark: () => require('../svgJs/dark/pieChart-1').content,
   },
   primeProduct: {
     light: () => require('../svgJs/light/primeProduct-1').content,
@@ -182,8 +182,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/productWallet-1').content,
   },
   recurringPurchases: {
-    light: () => require('../svgJs/light/recurringPurchases-0').content,
-    dark: () => require('../svgJs/dark/recurringPurchases-0').content,
+    light: () => require('../svgJs/light/recurringPurchases-1').content,
+    dark: () => require('../svgJs/dark/recurringPurchases-1').content,
   },
   rewardsProduct: {
     light: () => require('../svgJs/light/rewardsProduct-1').content,
@@ -194,8 +194,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/rosettaProduct-1').content,
   },
   send: {
-    light: () => require('../svgJs/light/send-0').content,
-    dark: () => require('../svgJs/dark/send-0').content,
+    light: () => require('../svgJs/light/send-1').content,
+    dark: () => require('../svgJs/dark/send-1').content,
   },
   shield: {
     light: () => require('../svgJs/light/shield-0').content,

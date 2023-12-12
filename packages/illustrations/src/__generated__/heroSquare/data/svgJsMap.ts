@@ -1110,8 +1110,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/taxesDetails-2').content,
   },
   tradeGeneral: {
-    light: () => require('../svgJs/light/tradeGeneral-0').content,
-    dark: () => require('../svgJs/dark/tradeGeneral-0').content,
+    light: () => require('../svgJs/light/tradeGeneral-1').content,
+    dark: () => require('../svgJs/dark/tradeGeneral-1').content,
   },
   tradeHistory: {
     light: () => require('../svgJs/light/tradeHistory-3').content,
