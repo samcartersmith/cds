@@ -2,15 +2,16 @@ import { memo, useCallback, useState } from 'react';
 import { Story } from '@storybook/react';
 import { Button, IconButton, NavigationIconButton } from '@cbhq/cds-web/buttons';
 import { SearchInput } from '@cbhq/cds-web/controls';
-import { HStack, Spacer } from '@cbhq/cds-web/layout';
+import { HStack, Spacer, VStack } from '@cbhq/cds-web/layout';
 import { NavigationBar, NavigationBarProps } from '@cbhq/cds-web/navigation';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
-import { FeatureFlagProvider } from '@cbhq/cds-web/system';
+import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { TabNavigation } from '@cbhq/cds-web/tabs';
 import { TextTitle1 } from '@cbhq/cds-web/typography';
 import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
 import { AppSwitcher } from '../../__stories__/AppSwitcher.stories';
+import { HelpMenu } from '../../__stories__/HelpMenu.stories';
 import { ProfileMenu } from '../../__stories__/ProfileMenu.stories';
 
 import { tabs } from './NavigationStorySetup';
@@ -29,7 +30,7 @@ const IdentityNavigationBar = memo(({ start, end, bottom, children }: Navigation
         <HStack alignItems="center" gap={1}>
           {end}
           <AppSwitcher />
-          <ProfileMenu title="Brian" />
+          <ProfileMenu isOpen={false} title="Brian" />
         </HStack>
       }
       start={start}
@@ -57,6 +58,7 @@ const IdentityNavigationBarConsumer = () => {
             </Button>
           </HStack>
           <HStack alignItems="center" gap={1}>
+            <HelpMenu />
             <NavigationIconButton accessibilityLabel="Language" active={false} name="globe" />
             <NavigationIconButton accessibilityLabel="Notifications" active={false} name="bell" />
           </HStack>
@@ -69,13 +71,15 @@ const IdentityNavigationBarConsumer = () => {
       }
     >
       <HStack alignItems="center" flexGrow={1} gap={1}>
-        <SearchInput
-          compact
-          accessibilityLabel="Search"
-          onChangeText={setSearch}
-          placeholder="Search"
-          value={search}
-        />
+        <VStack width="100%">
+          <SearchInput
+            compact
+            accessibilityLabel="Search"
+            onChangeText={setSearch}
+            placeholder="Search"
+            value={search}
+          />
+        </VStack>
       </HStack>
     </IdentityNavigationBar>
   );
@@ -85,9 +89,11 @@ export const IdentityNavigationBarExampleDefault: Story = () => {
   return (
     <PortalProvider>
       <FeatureFlagProvider frontierButton frontierColor>
-        <TextTitle1 as="h1">NavigationBar example for Identity Team</TextTitle1>
-        <Spacer />
-        <IdentityNavigationBarConsumer />
+        <ThemeProvider>
+          <TextTitle1 as="h1">NavigationBar example for Identity Team</TextTitle1>
+          <Spacer />
+          <IdentityNavigationBarConsumer />
+        </ThemeProvider>
       </FeatureFlagProvider>
     </PortalProvider>
   );

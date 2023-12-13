@@ -85,6 +85,7 @@ export const TileButton = memo(
         }}
       >
         <Pressable
+          transparentWhileInactive
           {...props}
           ref={ref}
           noScaleOnPress

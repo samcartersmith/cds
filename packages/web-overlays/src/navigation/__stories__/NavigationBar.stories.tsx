@@ -2,6 +2,7 @@ import React from 'react';
 import { Story } from '@storybook/react';
 import { Spacer, VStack } from '@cbhq/cds-web/layout';
 import { NavigationBar } from '@cbhq/cds-web/navigation';
+import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { TextTitle1 } from '@cbhq/cds-web/typography';
 
 import { NavigationBarFullExample, NavigationBarTitle } from './NavigationStorySetup';
@@ -23,11 +24,15 @@ const a11ySkipConfig = {
 
 export const NavigationBarFullExampleDefault: Story = () => {
   return (
-    <VStack alignItems="flex-start">
-      <TextTitle1 as="h1">Navigation full example</TextTitle1>
-      <Spacer />
-      <NavigationBarFullExample />
-    </VStack>
+    <FeatureFlagProvider frontierButton frontierColor>
+      <ThemeProvider>
+        <VStack alignItems="flex-start">
+          <TextTitle1 as="h1">Navigation full example</TextTitle1>
+          <Spacer />
+          <NavigationBarFullExample />
+        </VStack>
+      </ThemeProvider>
+    </FeatureFlagProvider>
   );
 };
 

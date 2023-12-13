@@ -14,18 +14,25 @@ const profileMenuWidth = 375;
 const profileMenuHeight = 359;
 
 const switcherPositionConfig: PopoverContentPositionConfig = {
-  placement: 'bottom',
+  placement: 'bottom-end',
   gap: 1,
 };
 
-export const ProfileMenu = ({ title = 'Brian' }: { title: string }) => {
+export const ProfileMenu = ({
+  title = 'Brian',
+  isOpen = true,
+}: {
+  title: string;
+  isOpen?: boolean;
+}) => {
   const avatarColorScheme = getAvatarFallbackColor(title);
   const dropdownRef = useRef<DropdownRefProps>(null);
   const pressableRef = useRef<HTMLButtonElement>(null);
   // open dropdown on mount for demo purpose only
   useEffect(() => {
+    if (!isOpen) return;
     dropdownRef.current?.openMenu();
-  }, []);
+  }, [isOpen]);
   const onCloseMenu = useCallback(() => {
     pressableRef?.current?.focus();
   }, []);

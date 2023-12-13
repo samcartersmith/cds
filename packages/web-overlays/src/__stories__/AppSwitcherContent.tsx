@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo, ReactNode, useMemo } from 'react';
 import { useSpectrum } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { densePictogramSize, pictogramSize } from '@cbhq/cds-common/tokens/tile';
@@ -7,10 +7,10 @@ import { TileButton, TileButtonProps } from '@cbhq/cds-web/buttons/TileButton';
 import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
 import { RemoteImage } from '@cbhq/cds-web/media';
 import { ThemeProvider } from '@cbhq/cds-web/system';
-import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
+import { TextLabel1 } from '@cbhq/cds-web/typography';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
 
-const appSwitcherData: AppSwitcherData = {
+export const appSwitcherData: AppSwitcherData = {
   sections: [
     {
       sectionTitle: 'For Individuals',
@@ -72,9 +72,9 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
   return (
     <VStack spacingHorizontal={2}>
       <HStack spacingHorizontal={2} spacingVertical={2}>
-        <TextCaption as="h2" color="foregroundMuted">
+        <TextLabel1 as="p" color="foregroundMuted">
           {data.sectionTitle}
-        </TextCaption>
+        </TextLabel1>
       </HStack>
       {rowsArr.map((_, row) => {
         return (
@@ -110,13 +110,20 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
 type AppSwitcherContentProps = {
   columns?: number;
   data?: AppSwitcherData;
+  header?: ReactNode;
 };
 
 export const AppSwitcherContent = memo(
-  ({ columns = 3, data = appSwitcherData }: AppSwitcherContentProps) => {
+  ({ columns = 3, data = appSwitcherData, header }: AppSwitcherContentProps) => {
     return (
       <ThemeProvider>
-        <VStack spacingVertical={2}>
+        <VStack gap={1} spacingVertical={2}>
+          {header != null && (
+            <VStack alignContent="center" alignItems="center" gap={2}>
+              {header}
+              <Divider />
+            </VStack>
+          )}
           {data.sections.map((section, idx) => {
             return (
               <>

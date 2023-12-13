@@ -40,7 +40,6 @@ import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePa
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import { nux } from '@cbhq/cds-lottie-files';
 import { generateRandomId } from '@cbhq/cds-utils/string';
-import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent';
 import { UserSwitcherContent } from '@cbhq/cds-web/__stories__/UserSwitcherContent';
 import * as CDSAccordion from '@cbhq/cds-web/accordion';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
@@ -100,6 +99,11 @@ import { SparklineInteractive } from '@cbhq/cds-web/visualizations/sparkline-int
 import { SparklineInteractiveHeader } from '@cbhq/cds-web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
 import * as CDSWebOverlays from '@cbhq/cds-web-overlays';
+import { AppSwitcher } from '@cbhq/cds-web-overlays/__stories__/AppSwitcher.stories';
+import { AppSwitcherContent } from '@cbhq/cds-web-overlays/__stories__/AppSwitcherContent';
+import { HelpMenu } from '@cbhq/cds-web-overlays/__stories__/HelpMenu.stories';
+import { ProfileMenu } from '@cbhq/cds-web-overlays/__stories__/ProfileMenu.stories';
+import { ProfileMenuContent } from '@cbhq/cds-web-overlays/__stories__/ProfileMenuContent';
 
 import { Banner } from ':cds-website/components/Banner';
 import { ButtonSheet } from ':cds-website/components/ButtonSheet';
@@ -246,7 +250,11 @@ const ReactLiveScope: unknown = {
   SparklineInteractivePriceWithHeader,
   sparklineInteractiveData,
   sparklineInteractiveHoverData,
+  AppSwitcher,
   AppSwitcherContent,
+  ProfileMenu,
+  ProfileMenuContent,
+  HelpMenu,
   UserSwitcherContent,
   insetFocusRing,
   BrowserOnly,

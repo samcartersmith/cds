@@ -269,6 +269,7 @@ const sidebars = {
             },
           ],
         },
+        { type: 'doc', id: 'components/app-switcher/app-switcher', label: 'App Switcher' },
         { type: 'doc', id: 'components/layout/Box/box', label: 'Box' },
         {
           type: 'doc',
@@ -471,6 +472,7 @@ const sidebars = {
               type: 'doc',
               id: 'components/navigation/NavigationBar/navigation-bar',
               label: 'Navigation Bar',
+              customProps: { tag: 'new' },
             },
             {
               type: 'ref',
@@ -489,6 +491,7 @@ const sidebars = {
               label: 'Navigation Title',
             },
           ],
+          customProps: { tag: 'new' },
         },
         {
           type: 'category',
@@ -503,6 +506,7 @@ const sidebars = {
           ],
         },
         { type: 'doc', id: 'components/controls/RadioGroup/radio-group', label: 'Radio Group' },
+        { type: 'doc', id: 'components/profile-menu/profile-menu', label: 'Profile Menu' },
         {
           type: 'category',
           label: 'Remote Image',
@@ -542,7 +546,12 @@ const sidebars = {
           type: 'category',
           label: 'Sidebar',
           items: [
-            { type: 'doc', id: 'components/navigation/Sidebar/sidebar', label: 'Sidebar' },
+            {
+              type: 'doc',
+              id: 'components/navigation/Sidebar/sidebar',
+              label: 'Sidebar',
+              customProps: { tag: 'new' },
+            },
             {
               type: 'doc',
               id: 'components/navigation/SidebarItem/sidebar-item',
@@ -554,6 +563,7 @@ const sidebars = {
               label: 'Sidebar More Menu',
             },
           ],
+          customProps: { tag: 'new' },
         },
         { type: 'doc', id: 'components/layout/Spacer/spacer', label: 'Spacer' },
         {
@@ -577,6 +587,7 @@ const sidebars = {
               label: 'Sparkline Interactive Header',
             },
             { type: 'doc', id: 'hooks/useSparklinePath', label: 'useSparklinePath' },
+            { type: 'doc', id: 'recipes/sparkline-interactive', label: 'Asset Chart' },
           ],
         },
         { type: 'doc', id: 'components/loaders/Spinner/spinner', label: 'Spinner' },
@@ -727,6 +738,14 @@ const sidebars = {
           id: 'patterns/disclosures',
           label: 'Disclosures',
         },
+        {
+          type: 'doc',
+          id: 'patterns/navigation',
+          label: 'Navigation',
+          customProps: {
+            tag: 'new',
+          },
+        },
       ],
       customProps: {
         kbar: {
@@ -734,31 +753,6 @@ const sidebars = {
           description: 'How pieces work together in your experiences.',
         },
       },
-    },
-    {
-      type: 'category',
-      label: 'Recipes',
-      customProps: {
-        kbar: {
-          pictogram: 'earnNavigation',
-          description: 'Examples of complex CDS compositions to build off of.',
-        },
-      },
-      items: [
-        { type: 'doc', id: 'recipes/sparkline-interactive', label: 'Asset Chart' },
-        { type: 'doc', id: 'partnerships/AppSwitcher/app-switcher', label: 'App Switcher' },
-        { type: 'doc', id: 'partnerships/UserSwitcher/user-switcher', label: 'User Switcher' },
-        {
-          type: 'doc',
-          id: 'recipes/navigation',
-          label: 'Navigation',
-          customProps: {
-            kbar: {
-              description: 'Compose a system of Navigation components.',
-            },
-          },
-        },
-      ],
     },
     {
       type: 'category',

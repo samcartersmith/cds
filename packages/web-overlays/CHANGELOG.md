@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.17 (12/13/2023 PST)
+
+#### 🚀 Updates
+
+- Added new MPF patterns. [[#2515](https://github.cbhq.net/frontend/cds/pull/2515)]
+
 ## 0.0.16 (12/8/2023 PST)
 
 #### 🚀 Updates

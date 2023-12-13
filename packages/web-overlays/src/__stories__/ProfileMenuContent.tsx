@@ -1,14 +1,14 @@
-import { memo, useCallback, useMemo } from 'react';
-import { useSpectrum, useToggler } from '@cbhq/cds-common';
+import React, { memo, useCallback, useMemo } from 'react';
+import { SpacingScale, useSpectrum, useToggler } from '@cbhq/cds-common';
 import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
+import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
+import { ListCell } from '@cbhq/cds-web/cells/ListCell';
 import { Switch } from '@cbhq/cds-web/controls';
 import { Icon, NavigationIcon } from '@cbhq/cds-web/icons';
-import { Box, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Box, Divider, VStack } from '@cbhq/cds-web/layout';
 import { Avatar } from '@cbhq/cds-web/media';
 import { palette } from '@cbhq/cds-web/tokens';
 import { TextHeadline, TextLegal } from '@cbhq/cds-web/typography';
-
-import { MenuItem } from '../dropdown';
 
 type ProfileMenuData = {
   name: string;
@@ -23,6 +23,12 @@ type ProfileMenuContentProps = {
 };
 
 const profileMenuData: ProfileMenuData[] = [
+  {
+    name: 'Abby Smith',
+    email: 'abby.smith@ventures.com',
+    selected: true,
+    authenticated: true,
+  },
   {
     name: 'Brian Armstrong',
     email: 'brian.armstrong@coinbase.com',
@@ -51,24 +57,25 @@ const profileMenuData: ProfileMenuData[] = [
 
 type ProfileMenuItemData = {
   name: string;
-  label?: React.ReactNode;
   icon?: React.ReactNode;
   action?: React.ReactNode;
+  text?: React.ReactNode;
 };
 
-const ProfileMenuItem = memo(({ name, label, icon, action }: ProfileMenuItemData) => {
+const ProfileMenuItem = memo(({ name, icon, action }: ProfileMenuItemData) => {
+  const outerSpacing = useMemo(() => {
+    return {
+      offsetVertical: 1 as SpacingScale,
+    };
+  }, []);
   return (
-    <MenuItem value={name}>
-      <HStack alignItems="center" flexGrow={1} gap={2} spacingHorizontal={1} spacingVertical={2}>
-        <Box spacingEnd={0.5} spacingStart={0.5}>
-          {icon}
-        </Box>
-        <HStack alignItems="center" flexGrow={1} justifyContent="space-between">
-          {label || <TextHeadline as="p">{name}</TextHeadline>}
-          {action}
-        </HStack>
-      </HStack>
-    </MenuItem>
+    <ListCell
+      action={action}
+      media={<Box spacingHorizontal={0.5}>{icon}</Box>}
+      onPress={NoopFn}
+      outerSpacing={outerSpacing}
+      title={name}
+    />
   );
 });
 
@@ -77,6 +84,7 @@ export const ProfileMenuContent = memo(({ data = profileMenuData }: ProfileMenuC
   const avatarColorScheme = getAvatarFallbackColor(name);
   const theme = useSpectrum();
   const [darkModeEnabled, { toggle: toggleDarkMode }] = useToggler(theme === 'dark');
+
   const handleThemeChange = useCallback(() => {
     toggleDarkMode();
   }, [toggleDarkMode]);
@@ -92,16 +100,22 @@ export const ProfileMenuContent = memo(({ data = profileMenuData }: ProfileMenuC
       },
       {
         name: 'Dark Mode',
+        icon: <NavigationIcon name="moon" size="m" />,
+        action: (
+          <Switch
+            aria-label={`${theme} mode`}
+            checked={darkModeEnabled}
+            onChange={handleThemeChange}
+          />
+        ),
+      },
+      {
+        name: 'Sign out',
         text: (
           <TextHeadline as="p" dangerouslySetColor={palette.negative}>
             Sign out
           </TextHeadline>
         ),
-        icon: <NavigationIcon name="moon" size="m" />,
-        action: <Switch checked={darkModeEnabled} onChange={handleThemeChange} />,
-      },
-      {
-        name: 'Sign out',
         icon: (
           <Icon
             dangerouslySetColor={palette.negative}
@@ -112,23 +126,30 @@ export const ProfileMenuContent = memo(({ data = profileMenuData }: ProfileMenuC
         ),
       },
     ];
-  }, [darkModeEnabled, handleThemeChange]);
+  }, [darkModeEnabled, handleThemeChange, theme]);
+  const outerSpacing = useMemo(() => {
+    return {
+      offsetBottom: 1 as SpacingScale,
+    };
+  }, []);
   return (
-    <VStack alignItems="stretch" gap={0} overflow="hidden" spacing={1}>
-      <HStack alignItems="center" flexGrow={1} gap={2} spacing={2}>
-        <Avatar
-          selected
-          alt={name}
-          colorScheme={avatarColorScheme}
-          name={name}
-          size="l"
-          src={avatarUri}
-        />
-        <VStack>
-          <TextHeadline as="p">{name}</TextHeadline>
-          <TextLegal as="p">{email}</TextLegal>
-        </VStack>
-      </HStack>
+    <VStack alignItems="stretch" gap={0} overflow="hidden" spacing={0}>
+      <ListCell
+        description={<TextLegal as="p">{email}</TextLegal>}
+        media={
+          <Avatar
+            selected
+            alt={name}
+            colorScheme={avatarColorScheme}
+            name={name}
+            size="l"
+            src={avatarUri}
+          />
+        }
+        onPress={NoopFn}
+        outerSpacing={outerSpacing}
+        title={name}
+      />
       <Divider spacingVertical={1} />
       {profileMenuItemsData.map((menuItem) => (
         <ProfileMenuItem key={menuItem.name} {...menuItem} />

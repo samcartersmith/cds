@@ -16,7 +16,7 @@ import { PopoverContentPositionConfig } from '../popover/PopoverProps';
 import { AppSwitcherContent } from './AppSwitcherContent';
 
 const switcherPositionConfig: PopoverContentPositionConfig = {
-  placement: 'bottom',
+  placement: 'bottom-end',
   gap: 1,
 };
 

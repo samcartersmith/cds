@@ -3,11 +3,10 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { css } from 'linaria';
 import { HStack } from '@cbhq/cds-web/alpha/HStack';
 import { VStack } from '@cbhq/cds-web/alpha/VStack';
-import { AvatarButton, IconButton } from '@cbhq/cds-web/buttons/index';
+import { AvatarButton, IconButton, NavigationIconButton } from '@cbhq/cds-web/buttons/index';
 import { LogoMark, NavigationIcon } from '@cbhq/cds-web/icons';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { LoremIpsum } from '@cbhq/cds-web/layout/__stories__/LoremIpsum';
-import { Avatar } from '@cbhq/cds-web/media';
 import { NavigationBar, NavigationTitle, NavLink, Sidebar } from '@cbhq/cds-web/navigation/index';
 import { navLinkClassName } from '@cbhq/cds-web/navigation/NavLink';
 import { SidebarItem, SidebarItemProps } from '@cbhq/cds-web/navigation/SidebarItem';
@@ -19,6 +18,9 @@ import { palette } from '@cbhq/cds-web/tokens';
 import { TextDisplay2, TextHeadline, TextLegal } from '@cbhq/cds-web/typography';
 import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
+import { AppSwitcher } from '../../__stories__/AppSwitcher.stories';
+import { HelpMenu } from '../../__stories__/HelpMenu.stories';
+import { ProfileMenu } from '../../__stories__/ProfileMenu.stories';
 import { SelectOption } from '../../select/SelectOption';
 import { SidebarMoreMenu, SidebarMoreMenuProps } from '../../sidebarMoreMenu/SidebarMoreMenu';
 
@@ -46,6 +48,7 @@ export const items: Items = [
 ];
 
 const handlePress = (name: string) => console.log(`Pressed ${name}`);
+
 export const tabs = [
   {
     id: 'all',
@@ -114,22 +117,25 @@ export function NavigationBarFullExample({
       bottom={<TabNavigation onChange={handleTabChange} tabs={tabs} value={value} />}
       end={
         <HStack alignItems="center" gap={1}>
-          <IconButton
+          <HelpMenu />
+          <NavigationIconButton
             accessibilityLabel="Notifications"
             name="bell"
             onPress={() => handlePress('Notifications')}
           />
-          <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
-            <HStack alignItems="center" gap={1}>
-              <Avatar alt="" size="xl" />
-              <TextHeadline as="h2">Andy</TextHeadline>
-            </HStack>
-          </Pressable>
+          <AppSwitcher />
+          <ProfileMenu isOpen={false} title="Brian" />
         </HStack>
       }
       start={
         showBackButton && (
-          <IconButton accessibilityLabel="Back" name="backArrow" onPress={handleBackPress} />
+          <IconButton
+            compact
+            accessibilityLabel="Back"
+            name="backArrow"
+            onPress={handleBackPress}
+            variant="secondary"
+          />
         )
       }
     >

@@ -1,6 +1,6 @@
 import React, { memo, ReactNode, useMemo } from 'react';
+import { SpacingScale } from '@cbhq/cds-common';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
-import { navigationBarMinHeight } from '@cbhq/cds-common/tokens/navigation';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { HStack } from '../alpha/HStack';
@@ -33,6 +33,14 @@ export type NavigationBarProps = {
    * Accessibility label for the nav bar
    */
   accessibilityLabel?: string;
+  /**
+   * @default 2
+   * */
+  spacingTop?: SpacingScale;
+  /**
+   * @default 2
+   * */
+  spacingBottom?: SpacingScale | undefined;
 };
 
 export const NavigationBar = memo(
@@ -42,6 +50,8 @@ export const NavigationBar = memo(
     end,
     bottom,
     accessibilityLabel = 'main navigation',
+    spacingTop = 2,
+    spacingBottom = bottom ? undefined : 2,
   }: NavigationBarProps) => {
     const prevStart = usePreviousValue<NavigationBarProps['start']>(start);
     const startNode = useMemo(() => (!start ? prevStart : start), [start, prevStart]);
@@ -54,12 +64,11 @@ export const NavigationBar = memo(
         as="nav"
         gap={2}
         left={0}
-        minHeight={navigationBarMinHeight}
         position="sticky"
         right={0}
-        spacingBottom={bottom ? undefined : 2}
+        spacingBottom={spacingBottom}
         spacingHorizontal={2}
-        spacingTop={2}
+        spacingTop={spacingTop}
         top={0}
         width="100%"
         zIndex={zIndex.navigation}

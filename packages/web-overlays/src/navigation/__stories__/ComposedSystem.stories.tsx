@@ -1,6 +1,8 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { Spacer, VStack } from '@cbhq/cds-web/layout';
+import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
+import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { TextTitle1 } from '@cbhq/cds-web/typography';
 
 import { ComposedSystem } from './NavigationStorySetup';
@@ -12,11 +14,17 @@ export default {
 
 const FullSystemExample: Story = () => {
   return (
-    <VStack alignItems="flex-start">
-      <TextTitle1 as="h1">A full system example</TextTitle1>
-      <Spacer />
-      <ComposedSystem />
-    </VStack>
+    <PortalProvider>
+      <FeatureFlagProvider frontier>
+        <ThemeProvider>
+          <VStack alignItems="flex-start">
+            <TextTitle1 as="h1">A full system example</TextTitle1>
+            <Spacer />
+            <ComposedSystem />
+          </VStack>
+        </ThemeProvider>
+      </FeatureFlagProvider>
+    </PortalProvider>
   );
 };
 
