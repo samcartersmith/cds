@@ -269,7 +269,12 @@ const sidebars = {
             },
           ],
         },
-        { type: 'doc', id: 'components/app-switcher/app-switcher', label: 'App Switcher' },
+        {
+          type: 'doc',
+          id: 'components/app-switcher/app-switcher',
+          label: 'App Switcher',
+          customProps: { tag: 'new' },
+        },
         { type: 'doc', id: 'components/layout/Box/box', label: 'Box' },
         {
           type: 'doc',
@@ -292,6 +297,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Card',
+          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
@@ -313,18 +319,30 @@ const sidebars = {
               label: 'Feature Entry Card',
             },
             { type: 'doc', id: 'components/cards/FeedCard/feed-card', label: 'Feed Card' },
-            { type: 'doc', id: 'components/cards/NudgeCard/nudge-card', label: 'Nudge Card' },
+            {
+              type: 'doc',
+              id: 'components/cards/NudgeCard/nudge-card',
+              label: 'Nudge Card',
+              customProps: { tag: 'new' },
+            },
             {
               type: 'doc',
               id: 'components/cards/FloatingAssetCard/floating-asset-card',
               label: 'Floating Asset Card',
+              customProps: { tag: 'new' },
             },
             {
               type: 'doc',
               id: 'components/cards/ContainedAssetCard/contained-asset-card',
               label: 'Contained Asset Card',
+              customProps: { tag: 'new' },
             },
-            { type: 'doc', id: 'components/cards/UpsellCard/upsell-card', label: 'Upsell Card' },
+            {
+              type: 'doc',
+              id: 'components/cards/UpsellCard/upsell-card',
+              label: 'Upsell Card',
+              customProps: { tag: 'new' },
+            },
           ],
         },
         {
@@ -350,6 +368,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Chips',
+          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
@@ -506,7 +525,12 @@ const sidebars = {
           ],
         },
         { type: 'doc', id: 'components/controls/RadioGroup/radio-group', label: 'Radio Group' },
-        { type: 'doc', id: 'components/profile-menu/profile-menu', label: 'Profile Menu' },
+        {
+          type: 'doc',
+          id: 'components/profile-menu/profile-menu',
+          label: 'Profile Menu',
+          customProps: { tag: 'new' },
+        },
         {
           type: 'category',
           label: 'Remote Image',
@@ -591,7 +615,12 @@ const sidebars = {
           ],
         },
         { type: 'doc', id: 'components/loaders/Spinner/spinner', label: 'Spinner' },
-        { type: 'doc', id: 'components/sticky-footer/sticky-footer', label: 'StickyFooter' },
+        {
+          type: 'doc',
+          id: 'components/sticky-footer/sticky-footer',
+          label: 'StickyFooter',
+          customProps: { tag: 'new' },
+        },
         { type: 'doc', id: 'components/controls/Switch/switch', label: 'Switch' },
         {
           type: 'category',
