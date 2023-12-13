@@ -42,13 +42,6 @@ export default {
       actionLabel: 'Explore patterns',
       href: '/concepts/messaging/errors',
     },
-    {
-      title: 'Recipes',
-      description: 'Examples of complex CDS compositions to build off of',
-      illustration: 'earnNavigation',
-      actionLabel: 'Explore recipes',
-      href: '/recipes/app-switcher',
-    },
   ],
   focusAreas: [
     {
