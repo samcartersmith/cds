@@ -52,8 +52,7 @@ async function getRoutes() {
 
         return {
           name: path.basename(file, '.stories.tsx'),
-          path: hotReloadPath,
-          consumerPath,
+          path: consumerPath,
         };
       })
       .sort((prev, next) => prev.name.localeCompare(next.name));
@@ -67,14 +66,9 @@ async function getRoutes() {
 export async function prepare() {
   try {
     const routes = await getRoutes();
-
-    const hotReloadRoutes = routes.map((route) => ({
-      name: route.name,
-      path: route.path,
-    }));
     const consumerRoutes = routes.map((route) => ({
       name: route.name,
-      path: route.consumerPath,
+      path: route.path,
     }));
 
     // Write to ui-mobile-playground package. This includes the route paths that consumers would use.
@@ -93,7 +87,7 @@ export async function prepare() {
 
     // Write to mobile-app. This is required for hot reload - internal packages need src in path for hot reload, while consumers do not.
     await writeFile({
-      data: { routes: hotReloadRoutes },
+      data: { routes: consumerRoutes },
       template: 'mobileRoutes.ejs',
       dest: `apps/mobile-app/src/routes.ts`,
     });

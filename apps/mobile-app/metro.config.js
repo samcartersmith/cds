@@ -19,6 +19,10 @@ const aliases = {
   '@cbhq/cds-illustrations': path.resolve(__dirname, '../../packages/illustrations/src'),
   '@cbhq/ui-mobile-playground': path.resolve(__dirname, '../../packages/ui-mobile-playground/src'),
   '@cbhq/ui-mobile-visreg': path.resolve(__dirname, '../../packages/ui-mobile-visreg/src'),
+  '@cbhq/cds-mobile-visualization': path.resolve(
+    __dirname,
+    '../../packages/mobile-visualization/src',
+  ),
 };
 
 // This custom Metro resolver will try to use the aliases defined above.
