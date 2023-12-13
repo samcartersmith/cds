@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.22.1 (12/12/2023 PST)
+
+#### 🐞 Fixes
+
+- UpsellCard - fix dense mode height.
+
 ## 5.22.0 (12/8/2023 PST)
 
 #### 🚀 Updates

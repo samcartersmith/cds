@@ -20,6 +20,7 @@ export const defaultPictogramMediaDimension = '64x64';
 export const defaultMediaSize = convertDimensionToSize(defaultMediaDimension);
 export const defaultSpacingBottom = 2;
 
+export const upsellCardMinHeightDense = 120;
 export const upsellCardMinHeight = 158;
 export const upsellCardDefaultWidth = 327;
 

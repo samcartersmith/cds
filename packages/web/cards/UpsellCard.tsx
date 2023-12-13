@@ -1,6 +1,11 @@
 import React, { isValidElement, memo } from 'react';
 import { UpsellCardBaseProps } from '@cbhq/cds-common';
-import { upsellCardDefaultWidth, upsellCardMinHeight } from '@cbhq/cds-common/tokens/card';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import {
+  upsellCardDefaultWidth,
+  upsellCardMinHeight,
+  upsellCardMinHeightDense,
+} from '@cbhq/cds-common/tokens/card';
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
@@ -20,6 +25,7 @@ export const UpsellCard = memo(
     accessibilityLabel,
     width = upsellCardDefaultWidth,
   }: UpsellCardBaseProps) => {
+    const density = useScaleDensity();
     return (
       <HStack
         accessibilityLabel={accessibilityLabel}
@@ -27,7 +33,7 @@ export const UpsellCard = memo(
         background={background}
         borderColor="transparent"
         borderRadius="roundedXLarge"
-        minHeight={upsellCardMinHeight}
+        minHeight={density === 'dense' ? upsellCardMinHeightDense : upsellCardMinHeight}
         testID={testID}
         width={width}
         // eslint-disable-next-line react/jsx-sort-props
