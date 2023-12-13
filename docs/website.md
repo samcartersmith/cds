@@ -61,11 +61,13 @@ You can delete files from AWS UI for dev environment
 4. Select s3 card from dashboard
 5. Search for coinbase-design-system-website-development for dev. For next + other dev envs you can search for `cds`.
 
-# Docs
+# How to Add Docs
 
-## Step 1. Add to docgen.config.js
+## Step 1. Populate the API data
 
-Add the path to the component's source code (without package prefix or file extension) to the `sourceFiles` array in [website/docgen.config.js](../apps/website/docgen.config.js)
+We use a specialized form of codegen (our [docgen plugin](../libs/docusaurus-plugin-docgen/README.md)) to generate API data for our components. This data is used to generate the API tables in the component docs.
+
+In [website/docgen.config.js](../apps/website/docgen.config.js) add the path to the component's source code (without package prefix or file extension) to the `sourceFiles` array.
 
 ```js
 module.exports = {
@@ -77,36 +79,51 @@ module.exports = {
 };
 ```
 
+You can verify the docgen worked correctly by checking the generated output `apps/website/.docusaurus/@cbhq/docusaurus-plugin-docgen/default/<platform>/<your-component>/data.js`.
+
 ## Step 2. Start website
 
-- Run `yarn nx run website:start` to start the website and watch plugins.
-- You will now have access to the API data for components in docgen.config.js.
+Run `yarn nx run website:start` to build and start the website. You will now have access to the API data for components in docgen.config.js.
 
 ## Step 3. Create mdx files
 
 ### Root file
 
-- Create a root mdx file in [docs/components](../apps/website/docs/components/)
-  - The location of this file should mirror the structure of where it lives in sidebar.
-    - Most component docs are at the root of the "Components" category, however, there are some components where it makes more sense to bucket it under a family or some base component. For example, Remote Image Group is a child doc of the Remote Image category.
-    - As our library grows, going completely flat is going to get too overwhelming.
-    - You should work with your design partner to align on naming/api proposals and where component will live in sidebar.
+Create a new directory for your component in [docs/components](../apps/website/docs/components/), eg: `apps/website/docs/my-component`
+
+- You should work with your design partner to align on where your component will live in sidebar.
+- Most component docs are at the root of the "Components" category, however, there are some components where it makes more sense to bucket it under a family or some base component. For example, NudgeCard is a descendant of Cards, so the directory structure would look like `apps/website/docs/components/cards/nudge-card`.
+- Whatever you decide, make sure the `sidebar.config` reflects this directory structure
+
+With a parent directory:
 
 ```shell
-touch apps/website/docs/components/button/button.mdx
+mkdir apps/website/docs/components/<parent-directory>/<YourComponent>
+touch apps/website/docs/components/<parent-directory>/<YourComponent>/<your-component>.mdx
+```
+
+Without a parent directory:
+
+```shell
+mkdir apps/website/docs/components/<your-component>
+touch apps/website/docs/components/<your-component>/<your-component>.mdx
 ```
 
 ### Partials
 
-- `_implementation.mdx` partial for API data
+You'll need to create "partials" for each section on the page. Partials are just mdx files that are imported into the root mdx file. We'll need one for the API props table, and another showing how the component should be imported. The rest will be populated by Contentful.
+
+#### Implementation
+
+Create an `_implementation.mdx` partial for API data
 
 ```shell
-touch apps/website/docs/components/button/_implementation.mdx
+touch apps/website/docs/components/<your-component>/_implementation.mdx
 ```
 
 ```js
-import WebPropsTable from ':docgen/web/buttons/Button/api.mdx';
-import MobilePropsTable from ':docgen/mobile/buttons/Button/api.mdx';
+import WebPropsTable from ':docgen/web/<your-component>/api.mdx';
+import MobilePropsTable from ':docgen/mobile/<your-component>/api.mdx';
 
 ## Props
 
@@ -120,17 +137,15 @@ import MobilePropsTable from ':docgen/mobile/buttons/Button/api.mdx';
 </Tabs>
 ```
 
-- `_design.mdx` partial for design guidelines
+#### MetaData
+
+Created a `_metadata.mdx` partial for showing how to import your component.
 
 ```shell
-touch apps/website/docs/components/button/_design.mdx
+touch apps/website/docs/components/<your-component>/_metadata.mdx
 ```
 
-- `_metadata.mdx` partial for showing import xyz from '@cbhq/cds-xyz` info
-
-```shell
-touch apps/website/docs/components/button/_metadata.mdx
-```
+Replace "Button" with your component's exported module name, and the path to your component's source code. Ideally use shallow imports whenever possible.
 
 ```js
 <Tabs groupId="platform" variant="secondary">
@@ -143,70 +158,46 @@ touch apps/website/docs/components/button/_metadata.mdx
 </Tabs>
 ```
 
-- `_usage.mdx` for any examples you want to include above API tables
-
-```shell
-touch apps/website/docs/components/button/_usage.mdx
-```
-
-````js
-Buttons must have a visual label (passed as a child), and can use variants to denote intent and importance.
-
-```jsx live
-<HStack gap={2}>
-  <Button onPress={console.log}>Save</Button>
-  <Button onPress={console.log} variant="secondary">
-    Cancel
-  </Button>
-</HStack>
-```
-
-````
-
 ### Update root file
 
-Depending on the partials you add above, update the root mdx file (button.mdx) with the following
+Update the root mdx file (button.mdx) with the following, and replace "Button" with your component's name. Note: the `slug` must match what you use in the next step when you add the component to the `sidebar.config.js`.
+
+The `Page` component is a custom Contentful component. The `fallback` prop should be used to render the fragments you created in the previous step, which will make the docs still usable even if Contentful is not responsive.
 
 ```js
 ---
 title: Button
-slug: /components/button
+slug: /components/buttons/button
 ---
-import Design, { toc as designToc } from './_design.mdx';
+
 import Metadata, { toc as metadataToc } from './_metadata.mdx';
-import Usage, { toc as usageToc } from './_usage.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page">
-  <TabItem value="design" label="Guidelines" toc={designToc}>
-    <Design />
-  </TabItem>
-  <TabItem
-    value="implementation"
-    label="Implementation"
-    toc={[...metadataToc, ...usageToc, ...implementationToc]}
-  >
-    <Metadata />
-    <Usage />
-    <Implementation />
-  </TabItem>
-</Tabs>
+<Page
+  propsTable={{ element: <Implementation />, toc: implementationToc }}
+  metadata={{ element: <Metadata />, toc: metadataToc }}
+  fallback={
+    <Tabs groupId="page">
+      <TabItem
+        value="implementation"
+        label="Implementation"
+        toc={[...metadataToc, ...implementationToc]}
+      >
+        <Metadata />
+        <Implementation />
+      </TabItem>
+    </Tabs>
+  }
+/>
 
 ```
 
-### Adding additional partials
+## Step 4. Update the Sidebar
 
-Partials at tab level - If you compose your design or implementation tab content using additional partials, don't forget to import in the `toc` from the partial and spread into the TabItem's `toc` prop. The order matters here so the order the items are spread should reflect the order the partials are rendered on the page.
-
-Partials within partials - There's really no good way to handle this at the moment, but one workaround would be to export a toc const with a new name, like `export const customToc = [...toc, ...someOtherPartialToc];`. Unfortunately, since the toc within a partial is a const, you can't override that value and would have to choose a new const name which does not collide with `toc` when exporting.
-
-The Table of Contents section below has more details about why this is necessary.
-
-## Step 4. Update sidebar
-
-Add doc to [sidebar.config.js](../apps/website/sidebar.config.js)
+Add your component to the sidebar config: [sidebar.config.js](../apps/website/sidebar.config.js)
 
 See example PRs for updating sidebar:
+
 - [Update CDS Website Sidebar for Contentful Release](https://github.cbhq.net/frontend/cds/pull/2300)
 - [Contentful Release - Add SectionTitle to CDS Sidebar](https://github.cbhq.net/frontend/cds/pull/2322)
 
@@ -229,7 +220,9 @@ import Partial2, { toc2 } from './_partial2.mdx'
 <Partial1 />
 <Partial2 />
 ```
+
 Example PRs of adding to right sidebar / toc:
+
 - [Add others section to numpad on contentful](https://github.cbhq.net/frontend/cds/pull/2313)
 - [Change "Others" to "Research" for CDS Website](https://github.cbhq.net/frontend/cds/pull/2314)
 
