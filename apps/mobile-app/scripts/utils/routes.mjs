@@ -2,8 +2,6 @@
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable global-require */
 
 export const routes = [
   {
