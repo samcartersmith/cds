@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
-import { ChartData } from '@cbhq/cds-web-visualization/src/sparkline/sparkline-interactive/SparklineInteractive';
+import { ChartData } from '@cbhq/cds-web-visualization';
 
 import { StatsTextStack } from ':cds-website/components/StatsTextStack';
 import { Tabs } from ':cds-website/components/Tabs';

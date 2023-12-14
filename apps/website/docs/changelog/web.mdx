@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Internal: added missing jsdoc comment to deprecated component.
+
 ## 5.23.0 (12/13/2023 PST)
 
 #### 🚀 Updates

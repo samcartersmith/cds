@@ -27,6 +27,10 @@ function configureForDocusaurus(config) {
     __dirname,
     '../../packages/web-overlays/src',
   );
+  config.resolve.alias['@cbhq/cds-web-visualization'] = path.resolve(
+    __dirname,
+    '../../packages/web-visualization/src',
+  );
 
   return {};
 }

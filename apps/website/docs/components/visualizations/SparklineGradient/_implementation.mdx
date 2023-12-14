@@ -1,9 +1,17 @@
 import WebPropsTable from ':docgen/web/visualizations/SparklineGradient/api.mdx';
+import WebVisPropsTable from ':docgen/web-visualization/sparkline/SparklineGradient/api.mdx';
 import MobilePropsTable from ':docgen/mobile/visualizations/SparklineGradient/api.mdx';
 
 ## Props
 
+:::danger
+This component will no longer be available in `v6.0.0` in the `@cbhq/cds-web` package. It will only be available in the `@cbhq/cds-web-visualization` package.
+:::
+
 <Tabs groupId="platform" variant="secondary">
+  <TabItem value="web-visualization" label="Web Visualization">
+    <WebVisPropsTable />
+  </TabItem>
   <TabItem value="web" label="Web">
     <WebPropsTable />
   </TabItem>

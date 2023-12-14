@@ -194,6 +194,8 @@ const SparklineInteractiveHeaderStable = memo(
     },
   ),
 );
+
+/** @deprecated will be removed in v6. use @cbhq/cds-web-visualization instead */
 export const SparklineInteractiveHeader = memo(
   forwardRef<SparklineInteractiveHeaderRef, SparklineInteractiveHeaderProps>(
     ({ defaultLabel, defaultTitle, defaultSubHead, testID, labelNode, compact }, ref) => {

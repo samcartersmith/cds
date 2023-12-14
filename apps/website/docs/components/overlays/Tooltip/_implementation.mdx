@@ -1,9 +1,17 @@
 import WebPropsTable from ':docgen/web/overlays/Tooltip/Tooltip/api.mdx';
+import WebVisPropsTable from ':docgen/web-overlays/tooltip/Tooltip/api.mdx';
 import MobilePropsTable from ':docgen/mobile/overlays/Tooltip/Tooltip/api.mdx';
 
 ## Props
 
+:::danger
+This component will no longer be available in `v6.0.0` in the `@cbhq/cds-web` package. It will only be available in the `@cbhq/cds-web-overlays` package.
+:::
+
 <Tabs groupId="platform" variant="secondary">
+  <TabItem value="web-overlays" label="Web Overlays">
+    <WebVisPropsTable />
+  </TabItem>
   <TabItem value="web" label="Web">
     <WebPropsTable />
   </TabItem>

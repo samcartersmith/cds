@@ -4,12 +4,10 @@ import {
   ChartData,
   ChartScrubParams,
   SparklineInteractive,
-} from '@cbhq/cds-web-visualization/src/sparkline/sparkline-interactive/SparklineInteractive';
-import {
   SparklineInteractiveHeader,
   SparklineInteractiveHeaderRef,
   SparklineInteractiveSubHead,
-} from '@cbhq/cds-web-visualization/src/sparkline/sparkline-interactive-header/SparklineInteractiveHeader';
+} from '@cbhq/cds-web-visualization';
 
 const periods = [{ label: 'Week', value: 'week' }];
 

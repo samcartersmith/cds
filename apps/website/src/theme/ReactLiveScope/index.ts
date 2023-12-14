@@ -40,7 +40,6 @@ import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePa
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import { nux } from '@cbhq/cds-lottie-files';
 import { generateRandomId } from '@cbhq/cds-utils/string';
-import { UserSwitcherContent } from '@cbhq/cds-web/__stories__/UserSwitcherContent';
 import * as CDSAccordion from '@cbhq/cds-web/accordion';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSBanner from '@cbhq/cds-web/banner/Banner';
@@ -54,8 +53,6 @@ import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForegr
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
 import * as CDSControls from '@cbhq/cds-web/controls';
 import * as CDSDots from '@cbhq/cds-web/dots';
-import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
-import { MenuItem } from '@cbhq/cds-web/dropdown/MenuItem';
 import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
 import { useBreakpoints } from '@cbhq/cds-web/hooks/useBreakpoints';
 import { useCheckboxGroupState } from '@cbhq/cds-web/hooks/useCheckboxGroupState';
@@ -93,19 +90,16 @@ import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
-import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
-import { SparklineInteractive } from '@cbhq/cds-web/visualizations/sparkline-interactive/SparklineInteractive';
-import { SparklineInteractiveHeader } from '@cbhq/cds-web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader';
-import { SparklineArea } from '@cbhq/cds-web/visualizations/SparklineArea';
 import * as CDSWebOverlays from '@cbhq/cds-web-overlays';
 import { AppSwitcher } from '@cbhq/cds-web-overlays/__stories__/AppSwitcher.stories';
 import { AppSwitcherContent } from '@cbhq/cds-web-overlays/__stories__/AppSwitcherContent';
 import { HelpMenu } from '@cbhq/cds-web-overlays/__stories__/HelpMenu.stories';
 import { ProfileMenu } from '@cbhq/cds-web-overlays/__stories__/ProfileMenu.stories';
 import { ProfileMenuContent } from '@cbhq/cds-web-overlays/__stories__/ProfileMenuContent';
+import * as CDSVisualizations from '@cbhq/cds-web-visualization';
+import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
 
-import { Banner } from ':cds-website/components/Banner';
 import { ButtonSheet } from ':cds-website/components/ButtonSheet';
 import { ColorTile } from ':cds-website/components/ColorTile';
 import { ExampleBox } from ':cds-website/components/ExampleBox';
@@ -215,8 +209,6 @@ const ReactLiveScope: unknown = {
   Pulse,
   ColorSurge,
   Cell,
-  Dropdown,
-  MenuItem,
   Tag,
   AnimatedCaret,
   // context
@@ -232,7 +224,6 @@ const ReactLiveScope: unknown = {
   gutter,
   sampleTabs,
   // Example components
-  Banner,
   ButtonSheet,
   ColorTile,
   ExampleWithThemeToggles,
@@ -245,7 +236,6 @@ const ReactLiveScope: unknown = {
   LottieExample,
   nux,
   ProgressContainerWithButtons,
-  SparklineArea,
   SparklineInteractivePrice,
   SparklineInteractivePriceWithHeader,
   sparklineInteractiveData,
@@ -255,7 +245,6 @@ const ReactLiveScope: unknown = {
   ProfileMenu,
   ProfileMenuContent,
   HelpMenu,
-  UserSwitcherContent,
   insetFocusRing,
   BrowserOnly,
   nftData,

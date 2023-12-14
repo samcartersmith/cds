@@ -90,7 +90,10 @@
         "libs/web-utils/src/*"
       ],
       "@cbhq/cds-web-visualization": [
-        "packages/web-visualization"
+        "packages/web-visualization/src"
+      ],
+      "@cbhq/cds-web-visualization/*": [
+        "packages/web-visualization/src/*"
       ],
       "@cbhq/cds-web/*": [
         "packages/web/*"
