@@ -1,4 +1,5 @@
-import React, { memo } from 'react';
+import React, { Children, memo, useCallback } from 'react';
+import { useToggler } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import {
   appSwitcherMaxSize,
@@ -12,6 +13,7 @@ import { ThemeProvider } from '@cbhq/cds-web/system';
 
 import { Dropdown } from '../dropdown';
 import { PopoverContentPositionConfig } from '../popover/PopoverProps';
+import { useRefocusTrigger } from '../select/useRefocusTrigger';
 
 import { AppSwitcherContent } from './AppSwitcherContent';
 
@@ -23,6 +25,26 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
 /** This is the component that Identity will likely encapsulate themselves. */
 const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
   const isDense = useScaleDensity() === 'dense';
+
+  const [menuHasClosed, toggleMenuHasClosed] = useToggler(false);
+  const triggerRef = useRefocusTrigger(menuHasClosed);
+
+  const onOpenMenu = useCallback(() => {
+    if (menuHasClosed) {
+      toggleMenuHasClosed.toggleOff();
+    }
+  }, [menuHasClosed, toggleMenuHasClosed]);
+
+  const onCloseMenu = useCallback(() => {
+    toggleMenuHasClosed.toggleOn();
+  }, [toggleMenuHasClosed]);
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  const childWithRef = React.cloneElement(Children.only(children), {
+    ref: triggerRef,
+  });
+
   return (
     <Dropdown
       enableMobileModal
@@ -30,9 +52,11 @@ const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => 
       content={<AppSwitcherContent />}
       contentPosition={switcherPositionConfig}
       maxHeight={appSwitcherMaxSize}
+      onCloseMenu={onCloseMenu}
+      onOpenMenu={onOpenMenu}
       width={isDense ? denseAppSwitcherWidth : appSwitcherWidth}
     >
-      {children}
+      {childWithRef}
     </Dropdown>
   );
 });

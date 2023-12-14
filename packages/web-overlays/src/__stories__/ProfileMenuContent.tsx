@@ -60,9 +60,10 @@ type ProfileMenuItemData = {
   icon?: React.ReactNode;
   action?: React.ReactNode;
   text?: React.ReactNode;
+  accessibilityLabel?: string;
 };
 
-const ProfileMenuItem = memo(({ name, icon, action }: ProfileMenuItemData) => {
+const ProfileMenuItem = memo(({ name, icon, action, accessibilityLabel }: ProfileMenuItemData) => {
   const outerSpacing = useMemo(() => {
     return {
       offsetVertical: 1 as SpacingScale,
@@ -70,6 +71,7 @@ const ProfileMenuItem = memo(({ name, icon, action }: ProfileMenuItemData) => {
   }, []);
   return (
     <ListCell
+      accessibilityLabel={accessibilityLabel}
       action={action}
       media={<Box spacingHorizontal={0.5}>{icon}</Box>}
       onPress={NoopFn}
@@ -103,11 +105,12 @@ export const ProfileMenuContent = memo(({ data = profileMenuData }: ProfileMenuC
         icon: <NavigationIcon name="moon" size="m" />,
         action: (
           <Switch
-            aria-label={`${theme} mode`}
+            aria-label={`Dark mode ${darkModeEnabled ? 'on' : 'off'}`}
             checked={darkModeEnabled}
             onChange={handleThemeChange}
           />
         ),
+        accessibilityLabel: 'Dark Mode',
       },
       {
         name: 'Sign out',
@@ -126,7 +129,7 @@ export const ProfileMenuContent = memo(({ data = profileMenuData }: ProfileMenuC
         ),
       },
     ];
-  }, [darkModeEnabled, handleThemeChange, theme]);
+  }, [darkModeEnabled, handleThemeChange]);
   const outerSpacing = useMemo(() => {
     return {
       offsetBottom: 1 as SpacingScale,

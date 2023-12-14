@@ -55,10 +55,10 @@ export const ProfileMenu = ({
             <Pressable
               ref={pressableRef}
               noScaleOnPress
+              accessibilityLabel="profile menu"
               as="button"
               backgroundColor="transparent"
               borderRadius="roundedFull"
-              label="profile menu"
             >
               <HStack alignItems="center" gap={1}>
                 <Avatar alt={title} colorScheme={avatarColorScheme} name={title} size="xl" />
