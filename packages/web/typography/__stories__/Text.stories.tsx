@@ -271,6 +271,12 @@ export const DescriptionDlDd = () => (
   </dl>
 );
 
+export const Time = () => (
+  <TextBody as="time" dateTime="2020-10-10">
+    2020-10-10
+  </TextBody>
+);
+
 export default {
   title: 'Core Components/Text (tsx)',
   component: TextDisplay1,

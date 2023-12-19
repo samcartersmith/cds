@@ -46,120 +46,140 @@ export const createText = <
   name: Typography,
   overrides?: Overrides,
 ) => {
-  const TextComponent = memo(
-    forwardRef(
-      <T extends E>(
-        {
-          as,
-          children = overrides?.children,
-          color = overrides?.color ?? 'foreground',
-          align = overrides?.align ?? 'start',
-          display = overrides?.display,
-          tabularNumbers = overrides?.tabularNumbers,
-          slashedZero = overrides?.slashedZero,
-          selectable = overrides?.selectable,
-          underline = overrides?.underline,
-          mono = overrides?.mono,
-          noWrap = overrides?.noWrap,
-          numberOfLines = overrides?.numberOfLines,
-          overflow = overrides?.overflow,
-          testID = overrides?.testID,
-          transform = overrides?.transform,
-          dangerouslySetClassName = overrides?.dangerouslySetClassName,
-          inherit = overrides?.inherit,
-          // Spacing
-          spacing = overrides?.spacing,
-          spacingTop = overrides?.spacingTop,
-          spacingBottom = overrides?.spacingBottom,
-          spacingStart = overrides?.spacingStart,
-          spacingEnd = overrides?.spacingEnd,
-          spacingVertical = overrides?.spacingVertical,
-          spacingHorizontal = overrides?.spacingHorizontal,
-          // interactable ex. label
-          disabled = overrides?.disabled,
-          dangerouslySetColor = overrides?.dangerouslySetColor,
-          accessibilityLabel = overrides?.accessibilityLabel,
-          accessibilityLabelledBy = overrides?.accessibilityLabelledBy,
-          id = overrides?.id,
-          responsiveConfig,
-          ...props
-        }: DynamicElement<
-          TextProps,
-          T,
-          Overrides extends { as: E } ? false : true /* as prop is required */
-        >,
-        ref: ForwardedRef<HTMLElement>,
-      ) => {
-        const typographyStyles = useTypographyStyles(name);
-        const textTransform = useTextTransform(name, transform);
+  const TextComponent = <T extends E>(
+    {
+      as,
+      children = overrides?.children,
+      color = overrides?.color ?? 'foreground',
+      align = overrides?.align ?? 'start',
+      display = overrides?.display,
+      tabularNumbers = overrides?.tabularNumbers,
+      slashedZero = overrides?.slashedZero,
+      selectable = overrides?.selectable,
+      underline = overrides?.underline,
+      mono = overrides?.mono,
+      noWrap = overrides?.noWrap,
+      numberOfLines = overrides?.numberOfLines,
+      overflow = overrides?.overflow,
+      testID = overrides?.testID,
+      transform = overrides?.transform,
+      dangerouslySetClassName = overrides?.dangerouslySetClassName,
+      inherit = overrides?.inherit,
+      // Spacing
+      spacing = overrides?.spacing,
+      spacingTop = overrides?.spacingTop,
+      spacingBottom = overrides?.spacingBottom,
+      spacingStart = overrides?.spacingStart,
+      spacingEnd = overrides?.spacingEnd,
+      spacingVertical = overrides?.spacingVertical,
+      spacingHorizontal = overrides?.spacingHorizontal,
+      // interactable ex. label
+      disabled = overrides?.disabled,
+      dangerouslySetColor = overrides?.dangerouslySetColor,
+      accessibilityLabel = overrides?.accessibilityLabel,
+      accessibilityLabelledBy = overrides?.accessibilityLabelledBy,
+      id = overrides?.id,
+      responsiveConfig,
+      ...props
+    }: DynamicElement<
+      TextProps,
+      T,
+      Overrides extends { as: E } ? false : true /* as prop is required */
+    >,
+    ref: ForwardedRef<HTMLElement>,
+  ) => {
+    const typographyStyles = useTypographyStyles(name);
+    const textTransform = useTextTransform(name, transform);
 
-        const spacingStyles = useSpacingStyles({
-          spacing,
-          spacingTop,
-          spacingBottom,
-          spacingStart,
-          spacingEnd,
-          spacingVertical,
-          spacingHorizontal,
-        });
+    const spacingStyles = useSpacingStyles({
+      spacing,
+      spacingTop,
+      spacingBottom,
+      spacingStart,
+      spacingEnd,
+      spacingVertical,
+      spacingHorizontal,
+    });
 
-        const responsiveStyleClassNames = useResponsiveConfig(responsiveConfig);
+    const responsiveStyleClassNames = useResponsiveConfig(responsiveConfig);
 
-        const textStyles = useMemo(() => {
-          const style: React.CSSProperties = {};
-          if (dangerouslySetColor) {
-            style.color = dangerouslySetColor;
-          }
-          if (numberOfLines) {
-            style['--typography-number-of-lines'] = numberOfLines;
-          }
-          return style;
-        }, [dangerouslySetColor, numberOfLines]);
+    const textStyles = useMemo(() => {
+      const style: React.CSSProperties = {};
+      if (dangerouslySetColor) {
+        style.color = dangerouslySetColor;
+      }
+      if (numberOfLines) {
+        style['--typography-number-of-lines'] = numberOfLines;
+      }
+      return style;
+    }, [dangerouslySetColor, numberOfLines]);
 
-        if (isChildrenFalsy(children)) {
-          return null;
-        }
+    if (isChildrenFalsy(children)) {
+      return null;
+    }
 
-        return createElement(
-          overrides?.as ?? as,
-          {
-            ...props,
-            'data-testid': testID,
-            'aria-label': accessibilityLabel,
-            'aria-labelledby': accessibilityLabelledBy,
-            id,
-            ref,
-            ...(mono ? { 'data-variant': 'mono' } : emptyObject),
-            style: textStyles,
-            className: cx(
-              typographyResets,
-              inherit ? textInherit : typographyStyles,
-              color === 'currentColor' ? currentColor : foregroundStyles[color],
-              disabled && disabledState,
-              ...getTypographyStyles({
-                align,
-                display,
-                tabularNumbers,
-                slashedZero,
-                selectable,
-                underline,
-                noWrap,
-                numberOfLines,
-                overflow,
-                transform: textTransform,
-              }),
-              spacingStyles,
-              responsiveStyleClassNames,
-              responsiveConfig && responsiveClassName,
-              dangerouslySetClassName,
-            ),
-          },
-          children,
-        );
+    return createElement(
+      overrides?.as ?? as,
+      {
+        ...props,
+        'data-testid': testID,
+        'aria-label': accessibilityLabel,
+        'aria-labelledby': accessibilityLabelledBy,
+        id,
+        ref,
+        ...(mono ? { 'data-variant': 'mono' } : emptyObject),
+        style: textStyles,
+        className: cx(
+          typographyResets,
+          inherit ? textInherit : typographyStyles,
+          color === 'currentColor' ? currentColor : foregroundStyles[color],
+          disabled && disabledState,
+          ...getTypographyStyles({
+            align,
+            display,
+            tabularNumbers,
+            slashedZero,
+            selectable,
+            underline,
+            noWrap,
+            numberOfLines,
+            overflow,
+            transform: textTransform,
+          }),
+          spacingStyles,
+          responsiveStyleClassNames,
+          responsiveConfig && responsiveClassName,
+          dangerouslySetClassName,
+        ),
       },
-    ),
-  );
+      children,
+    );
+  };
 
-  TextComponent.displayName = `Text${pascalCase(name)}`;
-  return TextComponent;
+  /**
+   * Works around issue DX-2953, an unintentional breaking type change introduced
+   * in v5.16.4 here https://github.cbhq.net/frontend/cds/pull/2366 which caused
+   * components created by createText to stop inheriting prop types when using
+   * polymorphic `as` prop. For example, <TextBody as="time" /> was not inheriting
+   * types for the `dateTime` prop.
+   * Read more about forwardRef generic types here
+   * https://www.benmvp.com/blog/forwarding-refs-polymorphic-react-component-typescript/
+   */
+  type PolymorphicTextComponentWithRef = (<T extends E>(
+    props: DynamicElement<
+      TextProps,
+      T,
+      Overrides extends { as: E } ? false : true /* as prop is required */
+    >,
+    ref: ForwardedRef<E>,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ) => React.DetailedReactHTMLElement<any, any>) & { displayName?: string };
+
+  const TextComponentWithRef = memo(
+    forwardRef(TextComponent),
+  ) as unknown as PolymorphicTextComponentWithRef;
+
+  TextComponentWithRef.displayName = `Text${pascalCase(name)}`;
+
+  return TextComponentWithRef;
 };
