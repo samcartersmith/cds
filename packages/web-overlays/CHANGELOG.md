@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.19 (12/19/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: web-overlays package didn't compile css properly. [[#2571](https://github.cbhq.net/frontend/cds/pull/2571)] [[DX-2794](https://jira.coinbase-corp.com/browse/DX-2794)]
+
 ## 0.0.18 (12/13/2023 PST)
 
 #### 🐞 Fixes
