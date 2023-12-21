@@ -4414,7 +4414,9 @@ __metadata:
     "@storybook/manager-webpack5": "npm:^6.5.12"
     "@storybook/react": "npm:^6.5.17-alpha.0"
     "@storybook/test-runner": "npm:^0.9.0"
+    "@types/diff": "npm:^5.0.9"
     concurrently: "npm:^7.2.1"
+    diff: "npm:^5.1.0"
     http-server: "npm:^14.1.1"
     storybook-addon-designs: "npm:^6.3.1"
     storybook-addon-performance: "npm:^0.16.1"
@@ -11703,6 +11705,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/diff@npm:^5.0.9":
+  version: 5.0.9
+  resolution: "@types/diff@npm:5.0.9::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fdiff%2F-%2Fdiff-5.0.9.tgz"
+  checksum: 6924740cb67a49771ea3753ee9b15c676860a6227b2bf0200ed9cef4111ff0f59fec8c51c1170bd30a8c7370b32673b308a9cd2da28525130f842194a822ef42
+  languageName: node
+  linkType: hard
+
 "@types/dotenv-webpack@npm:^7.0.3":
   version: 7.0.3
   resolution: "@types/dotenv-webpack@npm:7.0.3"
@@ -18798,6 +18807,13 @@ __metadata:
   version: 4.0.2
   resolution: "diff@npm:4.0.2"
   checksum: ec09ec2101934ca5966355a229d77afcad5911c92e2a77413efda5455636c4cf2ce84057e2d7715227a2eeeda04255b849bd3ae3a4dd22eb22e86e76456df069
+  languageName: node
+  linkType: hard
+
+"diff@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "diff@npm:5.1.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fdiff%2F-%2Fdiff-5.1.0.tgz"
+  checksum: f4557032a98b2967fe27b1a91dfcf8ebb6b9a24b1afe616b5c2312465100b861e9b8d4da374be535f2d6b967ce2f53826d7f6edc2a0d32b2ab55abc96acc2f9d
   languageName: node
   linkType: hard
 

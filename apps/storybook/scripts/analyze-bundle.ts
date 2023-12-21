@@ -1,11 +1,13 @@
+/* eslint-disable no-console */
+import { diffLines } from 'diff';
 import fs from 'node:fs';
 import path from 'node:path';
 
 /** Start configuration */
 
 const PACKAGES_RELATIVE_PATH = './../packages';
-const STATS_FILENAME = 'bundle-stats.json';
-const COMPARISON_STATS_FILENAME = `apps/storybook/${STATS_FILENAME}`;
+const MASTER_STATS_FILENAME = 'bundle-stats.json';
+const COMPARISON_STATS_FILENAME = `apps/storybook/${MASTER_STATS_FILENAME}`;
 
 /**
  * Bundle groups whose `label` value is in this array, or whose `label` value
@@ -48,15 +50,17 @@ const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 
 if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT was undefined');
 
-const bundleStatsPath = path.resolve(MONOREPO_ROOT, STATS_FILENAME);
+const masterBundleStatsPath = path.resolve(MONOREPO_ROOT, MASTER_STATS_FILENAME);
 const comparisonBundleStatsPath = path.resolve(MONOREPO_ROOT, COMPARISON_STATS_FILENAME);
 
-if (!fs.existsSync(bundleStatsPath))
-  throw Error(`No bundle stats ${STATS_FILENAME} found at path "${bundleStatsPath}"`);
+if (!fs.existsSync(masterBundleStatsPath))
+  throw Error(
+    `No master bundle stats ${MASTER_STATS_FILENAME} found at path "${masterBundleStatsPath}"`,
+  );
 
 if (!fs.existsSync(comparisonBundleStatsPath))
   throw Error(
-    `No comparison bundle stats ${STATS_FILENAME} found at path "${comparisonBundleStatsPath}"`,
+    `No comparison bundle stats ${MASTER_STATS_FILENAME} found at path "${comparisonBundleStatsPath}"`,
   );
 
 type BundleStats = {
@@ -70,12 +74,27 @@ type BundleStats = {
   statSize: number;
 };
 
-const bundleStats = JSON.parse(fs.readFileSync(bundleStatsPath, 'utf-8')) as BundleStats[];
+const masterBundleStats = JSON.parse(
+  fs.readFileSync(masterBundleStatsPath, 'utf-8'),
+) as BundleStats[];
 
-const packagesStats = bundleStats[0].groups.find((group) => group.path === PACKAGES_RELATIVE_PATH);
+const comparisonBundleStats = JSON.parse(
+  fs.readFileSync(comparisonBundleStatsPath, 'utf-8'),
+) as BundleStats[];
 
-if (!packagesStats)
-  throw Error(`Could not find bundle stats group with path "${PACKAGES_RELATIVE_PATH}"`);
+const masterPackageStats = masterBundleStats[0].groups.find(
+  (group) => group.path === PACKAGES_RELATIVE_PATH,
+);
+
+const comparisonPackageStats = comparisonBundleStats[0].groups.find(
+  (group) => group.path === PACKAGES_RELATIVE_PATH,
+);
+
+if (!masterPackageStats)
+  throw Error(`Could not find master bundle stats group with path "${PACKAGES_RELATIVE_PATH}"`);
+
+if (!comparisonPackageStats)
+  throw Error(`Could not find comparison bundle stats group with path "${PACKAGES_RELATIVE_PATH}"`);
 
 const readableFileSize = (size: number): string => {
   const i = size === 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
@@ -119,29 +138,60 @@ const recursivelyPrintSizeInfo = (
   return result;
 };
 
-for (const packageStats of packagesStats.groups) {
-  const packageName = packageStats.label;
-  const title = `${packageName} `;
-  const fileSize = readableFileSize(packageStats.gzipSize);
-
-  simpleMessages[packageName] = `${title.padEnd(60, '.')} ${fileSize}`;
-
-  if (packageName in detailedMessages)
-    detailedMessages[packageName] = recursivelyPrintSizeInfo(packageStats, 3);
-}
-
-let message = `${process.env.CI === 'true' ? '+++ ' : '\n'}Bundle size results:\n`;
-
-for (const simpleMessage of Object.values(simpleMessages)) message += `\n${simpleMessage}`;
-
 // https://buildkite.com/docs/pipelines/managing-log-output
-const CI_PREFIX = (packageName: string) => (process.env.CI === 'true' ? `+++ ${packageName}` : '');
+// We want to collapse the CI logs in Buildkite, but we can't use +++ before diffing
+// or it will mess with the diff. So we use ~~~ first, then replace with +++ later.
+const BUILDKITE_COLLAPSE_PLACEHOLDER = '~~~';
+const BUILDKITE_COLLAPSE_PREFIX = '---';
+const BUILDKITE_EXPAND_PLACEHOLDER = '!!!';
+const BUILDKITE_EXPAND_PREFIX = '+++';
 
-for (const [packageName, detailedMessage] of Object.entries(detailedMessages))
-  message += `\n\n${CI_PREFIX(packageName)}${detailedMessage}`;
+const getPackageTitle = (packageName: string) =>
+  process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PLACEHOLDER} ${packageName}` : '';
 
-// eslint-disable-next-line no-console
-console.log(message);
+const getPackageStatsMessage = (packageStatsGroups: BundleStats[]) => {
+  for (const packageStats of packageStatsGroups) {
+    const packageName = packageStats.label;
+    const title = `${packageName} `;
+    const fileSize = readableFileSize(packageStats.gzipSize);
 
-fs.rmSync(bundleStatsPath, { recursive: true });
+    simpleMessages[packageName] = `${title.padEnd(60, '.')} ${fileSize}`;
+
+    if (packageName in detailedMessages)
+      detailedMessages[packageName] = recursivelyPrintSizeInfo(packageStats, 3);
+  }
+
+  let message = `${
+    process.env.CI === 'true' ? `${BUILDKITE_EXPAND_PLACEHOLDER} ` : '\n'
+  }Bundle size results:\n`;
+
+  for (const simpleMessage of Object.values(simpleMessages)) message += `\n${simpleMessage}`;
+
+  for (const [packageName, detailedMessage] of Object.entries(detailedMessages))
+    message += `\n\n${getPackageTitle(packageName)}${detailedMessage}`;
+
+  return message
+    .replaceAll(BUILDKITE_COLLAPSE_PLACEHOLDER, BUILDKITE_COLLAPSE_PREFIX)
+    .replaceAll(BUILDKITE_EXPAND_PLACEHOLDER, BUILDKITE_EXPAND_PREFIX);
+};
+
+const masterPackageStatsMessage = getPackageStatsMessage(masterPackageStats.groups);
+
+const comparisonPackageStatsMessage = getPackageStatsMessage(comparisonPackageStats.groups);
+
+const diff = diffLines(masterPackageStatsMessage, comparisonPackageStatsMessage);
+
+const green = (message: string) => `\x1b[32m${message}\x1b[0m`;
+const red = (message: string) => `\x1b[31m${message}\x1b[0m`;
+
+diff.forEach(({ value, added, removed }, index) => {
+  const nextDiff = diff[index + 1];
+  const nextChanged = Boolean(nextDiff?.added || nextDiff?.removed);
+  const message = added || nextChanged ? value.slice(0, -1) : value;
+  if (added) return console.log(green(message));
+  if (removed) return console.log(red(message));
+  return console.log(message);
+});
+
+fs.rmSync(masterBundleStatsPath, { recursive: true });
 fs.rmSync(comparisonBundleStatsPath, { recursive: true });

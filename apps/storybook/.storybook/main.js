@@ -129,14 +129,19 @@ const config = {
 
     if (process.env.ANALYZE === 'true') {
       console.log('Bundle analyzer enabled because process.env.ANALYZE === "true"');
+      const analyzerMode = process.env.ANALYZE_MODE_JSON === 'true' ? 'json' : 'server';
+      const reportFilename = path.resolve(
+        MONOREPO_ROOT,
+        process.env.ANALYZE_REPORT_PATH || 'bundle-stats.json',
+      );
+      console.log(`Bundle analyzer running in ${analyzerMode} mode`);
+      if (analyzerMode === 'json')
+        console.log(`Bundle analyzer writing report to ${reportFilename}`);
       config.plugins.push(
         // @ts-expect-error
         new BundleAnalyzerPlugin({
-          analyzerMode: process.env.ANALYZE_MODE_JSON === 'true' ? 'json' : 'server',
-          reportFilename: path.resolve(
-            MONOREPO_ROOT,
-            process.env.ANALYZE_REPORT_PATH || 'bundle-stats.json',
-          ),
+          analyzerMode,
+          reportFilename,
           excludeAssets: (assetName) => !assetName.startsWith('main'),
         }),
       );
