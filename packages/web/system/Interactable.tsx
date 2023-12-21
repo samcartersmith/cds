@@ -24,7 +24,6 @@ import {
   interactableDisabledBackground,
   interactableHoveredBackground,
   interactableHoveredOpacity,
-  interactableOpacity,
   interactablePressedBackground,
   interactablePressedOpacity,
 } from './interactableCSSProperties';
@@ -56,13 +55,6 @@ const interactable = css`
     > * {
       opacity: var(${interactablePressedOpacity});
     }
-  }
-`;
-
-// Apply opacity to children as well
-const transparentChildren = css`
-  & > * {
-    opacity: var(${interactableOpacity}, 1);
   }
 `;
 
@@ -148,7 +140,6 @@ export const InteractableContent = forwardRef(function InteractableContent(
 
   const className = cx(
     interactable,
-    transparentChildren,
     disabled ? disabledState : focusRing,
     disabled && borderColor === 'transparent' ? disabledBorder : null,
     transparentWhileInactive ? borderColors.transparent : borderColors[borderColor],

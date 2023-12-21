@@ -8,7 +8,17 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.23.2 (12/20/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix: remove transparentChild class from interactable to fix regression in controls. [[#2570](https://github.cbhq.net/frontend/cds/pull/2570)] [[DX-2753](https://jira.coinbase-corp.com/browse/DX-2753)]
+
 ## 5.23.1 (12/18/2023 PST)
+
+:::danger
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
+:::
 
 #### 🐞 Fixes
 
@@ -21,7 +31,7 @@ All notable changes to this project will be documented in this file!
 ## 5.23.0 (12/13/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🚀 Updates
@@ -31,7 +41,7 @@ All notable changes to this project will be documented in this file!
 ## 5.22.1 (12/12/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🐞 Fixes
@@ -41,7 +51,7 @@ All notable changes to this project will be documented in this file!
 ## 5.22.0 (12/8/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🚀 Updates
@@ -55,7 +65,7 @@ All notable changes to this project will be documented in this file!
 ## 5.21.2 ((12/5/2023, 05:40 PM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -71,7 +81,7 @@ This is an artificial version bump with no new change.
 ## 5.21.1 ((12/4/2023, 03:14 PM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -79,7 +89,7 @@ This is an artificial version bump with no new change.
 ## 5.21.0 (12/1/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🚀 Updates
@@ -89,7 +99,7 @@ This is an artificial version bump with no new change.
 ## 5.20.0 (11/29/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🚀 Updates
@@ -99,7 +109,7 @@ This is an artificial version bump with no new change.
 ## 5.19.2 ((11/28/2023, 10:13 AM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -107,7 +117,7 @@ This is an artificial version bump with no new change.
 ## 5.19.1 (11/28/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🐞 Fixes
@@ -117,7 +127,7 @@ This is an artificial version bump with no new change.
 ## 5.19.0 (11/21/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🚀 Updates
@@ -127,7 +137,7 @@ This is an artificial version bump with no new change.
 ## 5.18.0 (11/20/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🚀 Updates
@@ -137,7 +147,7 @@ This is an artificial version bump with no new change.
 ## 5.17.1 (11/17/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🐞 Fixes
@@ -147,7 +157,7 @@ This is an artificial version bump with no new change.
 ## 5.17.0 ((11/13/2023, 11:02 AM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -155,7 +165,7 @@ This is an artificial version bump with no new change.
 ## 5.16.11 ((11/9/2023, 02:27 PM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -163,7 +173,7 @@ This is an artificial version bump with no new change.
 ## 5.16.10 ((11/7/2023, 07:31 PM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -171,7 +181,7 @@ This is an artificial version bump with no new change.
 ## 5.16.9 ((11/6/2023, 03:07 PM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -183,7 +193,7 @@ This is an artificial version bump with no new change.
 ## 5.16.8 (11/1/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🐞 Fixes
@@ -193,7 +203,7 @@ This is an artificial version bump with no new change.
 ## 5.16.7 ((10/31/2023, 05:44 PM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -201,7 +211,7 @@ This is an artificial version bump with no new change.
 ## 5.16.6 (10/31/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🐞 Fixes
@@ -215,7 +225,7 @@ This is an artificial version bump with no new change.
 ## 5.16.5 ((10/26/2023, 07:13 PM PST))
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 This is an artificial version bump with no new change.
@@ -223,7 +233,7 @@ This is an artificial version bump with no new change.
 ## 5.16.4 (10/25/2023 PST)
 
 :::danger
-🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.1` or higher.
+🚫 This release includes a regression, please use `@cbhq/cds-web@5.23.2` or higher.
 :::
 
 #### 🐞 Fixes

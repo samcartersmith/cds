@@ -1,4 +1,3 @@
-export const interactableOpacity = '--interactable-opacity';
 export const interactableBorderRadius = '--interactable-border-radius';
 export const interactableBackground = '--interactable-background';
 // Pressed:
