@@ -6,21 +6,25 @@ import path from 'node:path';
 /** Start configuration */
 
 const PACKAGES_RELATIVE_PATH = './../packages';
+const NODE_MODULES_RELATIVE_PATH = './../node_modules';
+
 const MASTER_STATS_FILENAME = 'bundle-stats.json';
 const COMPARISON_STATS_FILENAME = `apps/storybook/${MASTER_STATS_FILENAME}`;
 
 /**
  * Bundle groups whose `label` value is in this array, or whose `label` value
  * ends with a path seperator followed by a value in this array, will not be
- * included in the logged results
+ * included in the logged results for package stats
  */
-const FILTERED_LABELS = ['__mocks__', '__stories__'];
+const PACKAGES_FILTERED_LABELS = ['__mocks__', '__stories__'];
+
+const NODE_MODULES_FILTERED_LABELS = ['@storybook'];
 
 /**
  * The order of the keys in this object conrols the order that the
  * detailed console log messages are printed for each package
  */
-const detailedMessages: { [key: string]: string } = {
+const packageDetailedMessages: { [key: string]: string } = {
   common: '',
   web: '',
   'web-overlays': '',
@@ -31,7 +35,7 @@ const detailedMessages: { [key: string]: string } = {
  * The order of the keys in this object conrols the order that the
  * simple console log messages are printed for each package
  */
-const simpleMessages: { [key: string]: string } = {
+const packageSimpleMessages: { [key: string]: string } = {
   common: '',
   web: '',
   'web-overlays': '',
@@ -43,6 +47,9 @@ const simpleMessages: { [key: string]: string } = {
   utils: '',
   d3: '',
 };
+
+const nodeModuleSimpleMessages: { [key: string]: string } = {};
+const nodeModuleDetailedMessages: { [key: string]: string } = {};
 
 /** End configuration */
 
@@ -74,20 +81,32 @@ type BundleStats = {
   statSize: number;
 };
 
-const masterBundleStats = JSON.parse(
-  fs.readFileSync(masterBundleStatsPath, 'utf-8'),
-) as BundleStats[];
+const masterBundleStats = JSON.parse(fs.readFileSync(masterBundleStatsPath, 'utf-8')) as Omit<
+  BundleStats,
+  'path'
+>[];
 
 const comparisonBundleStats = JSON.parse(
   fs.readFileSync(comparisonBundleStatsPath, 'utf-8'),
-) as BundleStats[];
+) as Omit<BundleStats, 'path'>[];
 
-const masterPackageStats = masterBundleStats[0].groups.find(
-  (group) => group.path === PACKAGES_RELATIVE_PATH,
+/**
+ * "Package stats" represent stats for our code in the local "packages" directory in the repo root.
+ * "Node Module stats" represent stats for our dependencies in the node_modules directory.
+ */
+
+const masterStatsGroups = masterBundleStats.flatMap((stats) => stats.groups);
+const masterPackageStats = masterStatsGroups.find((group) => group.path === PACKAGES_RELATIVE_PATH);
+const masterNodeModuleStats = masterStatsGroups.find(
+  (group) => group.path === NODE_MODULES_RELATIVE_PATH,
 );
 
-const comparisonPackageStats = comparisonBundleStats[0].groups.find(
+const comparisonStatsGroups = comparisonBundleStats.flatMap((stats) => stats.groups);
+const comparisonPackageStats = comparisonStatsGroups.find(
   (group) => group.path === PACKAGES_RELATIVE_PATH,
+);
+const comparisonNodeModuleStats = comparisonStatsGroups.find(
+  (group) => group.path === NODE_MODULES_RELATIVE_PATH,
 );
 
 if (!masterPackageStats)
@@ -95,6 +114,14 @@ if (!masterPackageStats)
 
 if (!comparisonPackageStats)
   throw Error(`Could not find comparison bundle stats group with path "${PACKAGES_RELATIVE_PATH}"`);
+
+if (!masterNodeModuleStats)
+  throw Error(`Could not find master bundle stats group with path "${NODE_MODULES_RELATIVE_PATH}"`);
+
+if (!comparisonNodeModuleStats)
+  throw Error(
+    `Could not find comparison bundle stats group with path "${NODE_MODULES_RELATIVE_PATH}"`,
+  );
 
 const readableFileSize = (size: number): string => {
   const i = size === 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
@@ -104,36 +131,42 @@ const readableFileSize = (size: number): string => {
   return `${simpleSizeString} ${unit}`;
 };
 
-const recursivelyPrintSizeInfo = (
-  stats: BundleStats,
-  maxDepth: number,
+const recursivelyPrintSizeInfo = ({
+  stats,
+  maxDepth,
+  filterLabels = [],
   depth = 0,
   messagePrefix = '',
   currentResult = '',
-): string => {
+}: {
+  stats: BundleStats;
+  maxDepth: number;
+  filterLabels?: string[];
+  depth?: number;
+  messagePrefix?: string;
+  currentResult?: string;
+}): string => {
   let result = currentResult;
 
   if (
-    FILTERED_LABELS.includes(stats.label) ||
-    FILTERED_LABELS.some((label) => stats.label.endsWith(`${path.sep}${label}`))
+    filterLabels.includes(stats.label) ||
+    filterLabels.some((filterLabel) => stats.label.endsWith(`${path.sep}${filterLabel}`))
   )
     return result;
 
   const title = `${messagePrefix}${stats.label} `;
-  const fileSize = readableFileSize(stats.gzipSize);
-
-  result += `\n${title.padEnd(90, '.')} ${fileSize}`;
+  result += `\n${title.padEnd(90, '.')} ${readableFileSize(stats.gzipSize)}`;
 
   if (depth >= maxDepth) return result;
 
   for (const groupStats of stats.groups || [])
-    result = recursivelyPrintSizeInfo(
-      groupStats,
+    result = recursivelyPrintSizeInfo({
+      stats: groupStats,
       maxDepth,
-      depth + 1,
-      `${messagePrefix}  `,
-      result,
-    );
+      depth: depth + 1,
+      messagePrefix: `${messagePrefix}  `,
+      currentResult: result,
+    });
 
   return result;
 };
@@ -149,25 +182,62 @@ const BUILDKITE_EXPAND_PREFIX = '+++';
 const getPackageTitle = (packageName: string) =>
   process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PLACEHOLDER} ${packageName}` : '';
 
+const getNodeModulesStatsMessage = (nodeModulesStatsGroups: BundleStats[]) => {
+  for (const nodeModuleStats of nodeModulesStatsGroups) {
+    const moduleName = nodeModuleStats.label;
+    const title = `${moduleName} `;
+    const fileSize = readableFileSize(nodeModuleStats.gzipSize);
+
+    nodeModuleSimpleMessages[moduleName] = `${title.padEnd(60, '.')} ${fileSize}`;
+
+    nodeModuleDetailedMessages[moduleName] = recursivelyPrintSizeInfo({
+      stats: nodeModuleStats,
+      maxDepth: 3,
+      filterLabels: NODE_MODULES_FILTERED_LABELS,
+    });
+  }
+
+  const totalSize = nodeModulesStatsGroups.reduce((acc, group) => acc + group.gzipSize, 0);
+  const sizeString = `${'Total size '.padEnd(60, '.')} ${readableFileSize(totalSize)}`;
+
+  let message = `${
+    process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PLACEHOLDER} ` : '\n'
+  }Node module size results:\n\n${sizeString}\n`;
+
+  for (const simpleMessage of Object.values(nodeModuleSimpleMessages))
+    message += `\n${simpleMessage}`;
+
+  message += '\n';
+
+  for (const detailedMessage of Object.values(nodeModuleDetailedMessages))
+    message += `\n${detailedMessage}`;
+
+  return message.replaceAll(BUILDKITE_COLLAPSE_PLACEHOLDER, BUILDKITE_COLLAPSE_PREFIX);
+};
+
 const getPackageStatsMessage = (packageStatsGroups: BundleStats[]) => {
   for (const packageStats of packageStatsGroups) {
     const packageName = packageStats.label;
     const title = `${packageName} `;
     const fileSize = readableFileSize(packageStats.gzipSize);
 
-    simpleMessages[packageName] = `${title.padEnd(60, '.')} ${fileSize}`;
+    packageSimpleMessages[packageName] = `${title.padEnd(60, '.')} ${fileSize}`;
 
-    if (packageName in detailedMessages)
-      detailedMessages[packageName] = recursivelyPrintSizeInfo(packageStats, 3);
+    if (packageName in packageDetailedMessages)
+      packageDetailedMessages[packageName] = recursivelyPrintSizeInfo({
+        stats: packageStats,
+        maxDepth: 3,
+        filterLabels: PACKAGES_FILTERED_LABELS,
+      });
   }
 
   let message = `${
     process.env.CI === 'true' ? `${BUILDKITE_EXPAND_PLACEHOLDER} ` : '\n'
   }Bundle size results:\n`;
 
-  for (const simpleMessage of Object.values(simpleMessages)) message += `\n${simpleMessage}`;
+  for (const simpleMessage of Object.values(packageSimpleMessages)) message += `\n${simpleMessage}`;
 
-  for (const [packageName, detailedMessage] of Object.entries(detailedMessages))
+  for (const [packageName, detailedMessage] of Object.entries(packageDetailedMessages))
     message += `\n\n${getPackageTitle(packageName)}${detailedMessage}`;
 
   return message
@@ -175,17 +245,20 @@ const getPackageStatsMessage = (packageStatsGroups: BundleStats[]) => {
     .replaceAll(BUILDKITE_EXPAND_PLACEHOLDER, BUILDKITE_EXPAND_PREFIX);
 };
 
-const masterPackageStatsMessage = getPackageStatsMessage(masterPackageStats.groups);
-
-const comparisonPackageStatsMessage = getPackageStatsMessage(comparisonPackageStats.groups);
-
-const diff = diffLines(masterPackageStatsMessage, comparisonPackageStatsMessage);
-
 const green = (message: string) => `\x1b[32m${message}\x1b[0m`;
 const red = (message: string) => `\x1b[31m${message}\x1b[0m`;
 
-diff.forEach(({ value, added, removed }, index) => {
-  const nextDiff = diff[index + 1];
+// Diff node modules bundle stats
+const masterNodeModulesStatsMessage = getNodeModulesStatsMessage(masterNodeModuleStats.groups);
+
+const comparisonNodeModulesStatsMessage = getNodeModulesStatsMessage(
+  comparisonNodeModuleStats.groups,
+);
+
+const nodeModulesDiff = diffLines(masterNodeModulesStatsMessage, comparisonNodeModulesStatsMessage);
+
+nodeModulesDiff.forEach(({ value, added, removed }, index) => {
+  const nextDiff = nodeModulesDiff[index + 1];
   const nextChanged = Boolean(nextDiff?.added || nextDiff?.removed);
   const message = added || nextChanged ? value.slice(0, -1) : value;
   if (added) return console.log(green(message));
@@ -193,5 +266,22 @@ diff.forEach(({ value, added, removed }, index) => {
   return console.log(message);
 });
 
+// Diff our local packages bundle stats
+const masterPackageStatsMessage = getPackageStatsMessage(masterPackageStats.groups);
+
+const comparisonPackageStatsMessage = getPackageStatsMessage(comparisonPackageStats.groups);
+
+const packagesDiff = diffLines(masterPackageStatsMessage, comparisonPackageStatsMessage);
+
+packagesDiff.forEach(({ value, added, removed }, index) => {
+  const nextDiff = packagesDiff[index + 1];
+  const nextChanged = Boolean(nextDiff?.added || nextDiff?.removed);
+  const message = added || nextChanged ? value.slice(0, -1) : value;
+  if (added) return console.log(green(message));
+  if (removed) return console.log(red(message));
+  return console.log(message);
+});
+
+// Delete all stats files to prevent accidental misuse of buildkite cache plugin
 fs.rmSync(masterBundleStatsPath, { recursive: true });
 fs.rmSync(comparisonBundleStatsPath, { recursive: true });

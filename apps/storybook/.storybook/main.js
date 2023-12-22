@@ -142,7 +142,6 @@ const config = {
         new BundleAnalyzerPlugin({
           analyzerMode,
           reportFilename,
-          excludeAssets: (assetName) => !assetName.startsWith('main'),
         }),
       );
     }
