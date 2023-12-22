@@ -117,6 +117,18 @@ const RemoteImageScreen = () => {
           ))}
         </HStack>
       </Example>
+      <Example title="darkModeEnhancementsApplide">
+        <HStack gap={2}>
+          {images.map((item) => (
+            <RemoteImage
+              key={item}
+              source={getSource(item)}
+              {...sharedProps}
+              darkModeEnhancementsApplied
+            />
+          ))}
+        </HStack>
+      </Example>
       <Example title="Avatar Sizes with Circle">
         <AvatarSizesWithCircle />
       </Example>

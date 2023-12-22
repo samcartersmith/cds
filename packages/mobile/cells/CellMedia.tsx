@@ -41,7 +41,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   if (props.type === 'asset' || props.type === 'avatar') {
     content = (
       <RemoteImage
-        shouldApplyDarkModeEnhacements
+        darkModeEnhancementsApplied
         accessibilityHint={props.accessibilityHint}
         accessibilityLabel={props.accessibilityLabel ?? props.title}
         height={size}

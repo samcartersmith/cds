@@ -68,7 +68,7 @@ export const DotSymbol = memo(
           <View style={pinStyles} testID="dotsymbol-inner-container">
             {source !== undefined && (
               <RemoteImage
-                shouldApplyDarkModeEnhacements
+                darkModeEnhancementsApplied
                 dangerouslySetStyle={imageBorderStyle}
                 height={iconSize}
                 resizeMode="cover"

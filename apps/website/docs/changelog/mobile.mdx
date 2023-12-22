@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.24.0 (12/22/2023 PST)
+
+#### 🚀 Updates
+
+- Feat: shimmed replacement props for v5 deprecations. [[#2577](https://github.cbhq.net/frontend/cds/pull/2577)]
+
 ## 5.23.2 ((12/20/2023, 02:22 PM PST))
 
 This is an artificial version bump with no new change.

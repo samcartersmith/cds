@@ -46,12 +46,18 @@ type LinearGradientProps = {
    */
   colors: NonNullable<string>[];
   /**
+   * @deprecated will be removed in v6.0.0. Please use the elevated prop instead.
    * Sets layout position between SVG and children. Set it to false when gradient should overlay children content.
    * @default true
    */
   // TODO: will be fixed during API Alignment Q3 2022
   // eslint-disable-next-line react/boolean-prop-naming
   isBelowChildren?: boolean;
+  /**
+   * @default false
+   * Linear gradient will overlay the children content when true
+   */
+  elevated?: boolean;
   /**
    * Sets gradient angle.
    * @default 180
@@ -68,6 +74,7 @@ export function LinearGradient({
   stops = defaultStops,
   colors,
   isBelowChildren = true,
+  elevated,
   angle = 180,
   style,
   pointerEvents,
@@ -101,7 +108,7 @@ export function LinearGradient({
     );
   }, [colors, start, end, angle, stops]);
 
-  const items = isBelowChildren ? [svg, children] : [children, svg];
+  const items = isBelowChildren || !elevated ? [svg, children] : [children, svg];
   return (
     <View pointerEvents={pointerEvents} style={style} testID={testID}>
       {items}

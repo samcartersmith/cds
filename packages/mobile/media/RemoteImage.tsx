@@ -24,8 +24,15 @@ type SourceProp = string | ImageProps['source'];
 type XmlReturnType = { content: string };
 
 type BaseRemoteImageProps = {
-  /** Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.  */
+  /**
+   * @deprecated will be removed in v6.0.0 - use darkModeEnhancementsApplied instead
+   * Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.
+   */
   shouldApplyDarkModeEnhacements?: boolean;
+  /**
+   * Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.
+   */
+  darkModeEnhancementsApplied?: boolean;
   source?: SourceProp;
   fallbackAccessibilityLabel?: AccessibilityProps['accessibilityLabel'];
   fallbackAccessibilityHint?: AccessibilityProps['accessibilityHint'];
@@ -100,6 +107,7 @@ export const RemoteImage = memo(function RemoteImage({
   aspectRatio,
   shape = 'square',
   shouldApplyDarkModeEnhacements,
+  darkModeEnhancementsApplied,
   source,
   size = 'm',
   dangerouslySetStyle,
@@ -130,7 +138,8 @@ export const RemoteImage = memo(function RemoteImage({
   const palette = usePalette();
   const backgroundColor = useInvertedPaletteColor('background');
 
-  const applyDarkModeEnhancement = spectrum === 'dark' && shouldApplyDarkModeEnhacements;
+  const applyDarkModeEnhancement =
+    spectrum === 'dark' && (shouldApplyDarkModeEnhacements || darkModeEnhancementsApplied);
 
   const darkModeStyles = useMemo(() => {
     if (applyDarkModeEnhancement) {

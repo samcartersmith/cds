@@ -37,6 +37,28 @@ describe('RemoteImage', () => {
       borderColor: paletteAliasToRgbaString('lineHeavy', spectrum, false),
     });
   });
+  it('darkModeEnhancementsApplied border styles takes precedence over custom borderColor and passes a11y', () => {
+    const spectrum = 'dark';
+    render(
+      <ThemeProvider name="remoteimage-test-theme-provider" spectrum={spectrum}>
+        <RemoteImage
+          darkModeEnhancementsApplied
+          borderColor="primary"
+          source="https://images.coinbase.com/avatar?s=56"
+          testID="remoteimage"
+        />
+      </ThemeProvider>,
+    );
+    const image = screen.queryByTestId('remoteimage');
+    expect(image).toBeTruthy();
+
+    expect(image).toBeAccessible();
+
+    expect(image).toHaveStyle({
+      borderWidth: 1,
+      borderColor: paletteAliasToRgbaString('lineHeavy', spectrum, false),
+    });
+  });
 
   it('has a default shape of square and passes a11y', () => {
     render(<RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />);
