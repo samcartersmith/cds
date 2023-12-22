@@ -8,6 +8,7 @@ import propMigrations from './propMigrations';
 import propToAttributeValueMigrations from './propToAttributeValueMigrations';
 import removedComponents from './removedComponents';
 import removedPropMigrations from './removedPropMigrations';
+import updateCdsPackages from './updateCDSPackages';
 
 export default async function main(tree: Tree) {
   await componentMigrations(tree);
@@ -18,4 +19,5 @@ export default async function main(tree: Tree) {
   await attributeValueToBooleanMigrations(tree);
   await propToAttributeValueMigrations(tree);
   await pathMigrations(tree);
+  await updateCdsPackages(tree);
 }

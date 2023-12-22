@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.31 (12/22/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: upgradeCDSPackages works for peer dependencies. [[DX-2983](https://jira.coinbase-corp.com/browse/DX-2983)]
+
 ## 0.1.30 (12/5/2023 PST)
 
 #### 🚀 Updates

@@ -167,7 +167,7 @@ export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap)
             packageJsonPath,
           );
           if (peerDepsToAdd) {
-            updatePeerDependencies(tree, peerDepsToAdd, project.root);
+            updatePeerDependencies(tree, peerDepsToAdd, packageJsonPath);
           }
           if (!packageJsonsWithUpdates.includes(packageJsonPath)) {
             packageJsonsWithUpdates.push(packageJsonPath);
