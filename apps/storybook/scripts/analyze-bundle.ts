@@ -24,7 +24,7 @@ const NODE_MODULES_FILTERED_LABELS = ['@storybook'];
  * The order of the keys in this object conrols the order that the
  * detailed console log messages are printed for each package
  */
-const packageDetailedMessages: { [key: string]: string } = {
+const packageDetailedMessagesOrder: { [key: string]: string } = {
   common: '',
   web: '',
   'web-overlays': '',
@@ -35,7 +35,7 @@ const packageDetailedMessages: { [key: string]: string } = {
  * The order of the keys in this object conrols the order that the
  * simple console log messages are printed for each package
  */
-const packageSimpleMessages: { [key: string]: string } = {
+const packageSimpleMessagesOrder: { [key: string]: string } = {
   common: '',
   web: '',
   'web-overlays': '',
@@ -47,9 +47,6 @@ const packageSimpleMessages: { [key: string]: string } = {
   utils: '',
   d3: '',
 };
-
-const nodeModuleSimpleMessages: { [key: string]: string } = {};
-const nodeModuleDetailedMessages: { [key: string]: string } = {};
 
 /** End configuration */
 
@@ -183,6 +180,9 @@ const getPackageTitle = (packageName: string) =>
   process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PLACEHOLDER} ${packageName}` : '';
 
 const getNodeModulesStatsMessage = (nodeModulesStatsGroups: BundleStats[]) => {
+  const nodeModuleSimpleMessages: { [key: string]: string } = {};
+  const nodeModuleDetailedMessages: { [key: string]: string } = {};
+
   for (const nodeModuleStats of nodeModulesStatsGroups) {
     const moduleName = nodeModuleStats.label;
     const title = `${moduleName} `;
@@ -216,6 +216,9 @@ const getNodeModulesStatsMessage = (nodeModulesStatsGroups: BundleStats[]) => {
 };
 
 const getPackageStatsMessage = (packageStatsGroups: BundleStats[]) => {
+  const packageSimpleMessages = { ...packageSimpleMessagesOrder };
+  const packageDetailedMessages = { ...packageDetailedMessagesOrder };
+
   for (const packageStats of packageStatsGroups) {
     const packageName = packageStats.label;
     const title = `${packageName} `;
