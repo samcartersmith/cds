@@ -67,6 +67,24 @@ if (!fs.existsSync(comparisonBundleStatsPath))
     `No comparison bundle stats ${MASTER_STATS_FILENAME} found at path "${comparisonBundleStatsPath}"`,
   );
 
+// Delete all stats files on exit to prevent accidental misuse of buildkite cache plugin
+const cleanup = () => {
+  if (fs.existsSync(masterBundleStatsPath)) fs.rmSync(masterBundleStatsPath, { recursive: true });
+  if (fs.existsSync(comparisonBundleStatsPath))
+    fs.rmSync(comparisonBundleStatsPath, { recursive: true });
+};
+
+process.on('exit', (message) => {
+  console.log(message);
+  cleanup();
+});
+
+process.on('uncaughtException', (error) => {
+  console.log(error);
+  cleanup();
+  throw error;
+});
+
 type BundleStats = {
   id?: string;
   label: string;
@@ -177,7 +195,7 @@ const BUILDKITE_EXPAND_PLACEHOLDER = '!!!';
 const BUILDKITE_EXPAND_PREFIX = '+++';
 
 const getPackageTitle = (packageName: string) =>
-  process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PLACEHOLDER} ${packageName}` : '';
+  process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PLACEHOLDER} 📌 ${packageName}` : '';
 
 const getNodeModulesStatsMessage = (nodeModulesStatsGroups: BundleStats[]) => {
   const nodeModuleSimpleMessages: { [key: string]: string } = {};
@@ -202,7 +220,7 @@ const getNodeModulesStatsMessage = (nodeModulesStatsGroups: BundleStats[]) => {
 
   let message = `${
     process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PLACEHOLDER} ` : '\n'
-  }Node module size results:\n\n${sizeString}\n`;
+  }🐳 Node module size results:\n\n${sizeString}\n`;
 
   for (const simpleMessage of Object.values(nodeModuleSimpleMessages))
     message += `\n${simpleMessage}`;
@@ -236,7 +254,7 @@ const getPackageStatsMessage = (packageStatsGroups: BundleStats[]) => {
 
   let message = `${
     process.env.CI === 'true' ? `${BUILDKITE_EXPAND_PLACEHOLDER} ` : '\n'
-  }Bundle size results:\n`;
+  }🐙 Bundle size results:\n`;
 
   for (const simpleMessage of Object.values(packageSimpleMessages)) message += `\n${simpleMessage}`;
 
@@ -269,6 +287,8 @@ nodeModulesDiff.forEach(({ value, added, removed }, index) => {
   return console.log(message);
 });
 
+console.log('\n');
+
 // Diff our local packages bundle stats
 const masterPackageStatsMessage = getPackageStatsMessage(masterPackageStats.groups);
 
@@ -285,6 +305,6 @@ packagesDiff.forEach(({ value, added, removed }, index) => {
   return console.log(message);
 });
 
-// Delete all stats files to prevent accidental misuse of buildkite cache plugin
-fs.rmSync(masterBundleStatsPath, { recursive: true });
-fs.rmSync(comparisonBundleStatsPath, { recursive: true });
+console.log('\n');
+
+cleanup();

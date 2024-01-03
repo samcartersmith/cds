@@ -106,6 +106,15 @@
       "options": {
         "script": "./scripts/test-artifact.ts"
       }
+    },
+    "profile-exports": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./scripts/profile-exports.js"
+      },
+      "dependsOn": [
+        "^build"
+      ]
     }
   }
 }

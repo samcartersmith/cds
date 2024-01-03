@@ -34,9 +34,9 @@ _docker_shared: &docker_shared
         key: bundle-stats-v1
         path: bundle-stats.json
         download_blocklist_keys:
-          - bundle-size-master
+          - bundle-stats-master
         upload_allowlist_keys:
-          - bundle-size-master
+          - bundle-stats-master
 
 _k8s_medium: &k8s_medium
   <<: *docker_shared
@@ -150,7 +150,7 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-percy storybook
-      - yarn mono-pipeline run-ci other --targets=a11y-web --allOnMaster
+      - yarn nx affected --target=a11y-web
     retry:
       automatic:
         limit: 1
@@ -162,37 +162,39 @@ steps:
       DETOX_RUN_ALL: true
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --targets=visreg --allOnMaster
+      - yarn nx affected --target=visreg
 
   - label: 'Percy (Mobile - Affected)'
     <<: *k8s_medium
     if: build.branch != 'master' && !(build.pull_request.labels	includes 'visreg')
     commands:
       - tools/ci/setup.sh
-      - (yarn workspace mobile-app should-run-visreg && yarn mono-pipeline run-ci other --targets=visreg --allOnMaster) || echo 'Skipping Percy (Mobile)'
+      - (yarn workspace mobile-app should-run-visreg && yarn nx affected --target=visreg) || echo 'Skipping Percy (Mobile)'
 
   - label: 'Storybook E2E Test'
     <<: *k8s_medium_chrome
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --projects=storybook --targets=storybook-e2e-test --allOnMaster
+      - yarn nx affected --target=storybook-e2e-test
     retry:
       automatic:
         limit: 1
 
-  - label: 'Bundle Size (Master)'
+  - label: 'Bundle Stats (Master)'
     <<: *k8s_large
-    key: bundle-size-master
+    key: bundle-stats-master
     if: build.branch == 'master'
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --projects=storybook --targets=build-for-analyze --allOnMaster
+      - yarn nx run storybook:build-for-analyze
+      - yarn nx run storybook:profile-exports
 
-  - label: 'Bundle Size'
+  - label: 'Bundle Stats'
     <<: *k8s_large
     if: build.branch != 'master'
     env:
       ANALYZE_REPORT_PATH: apps/storybook/bundle-stats.json
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --projects=storybook --targets=analyze-bundle --allOnMaster || echo 'Failed to analyze bundle'
+      - yarn nx run storybook:analyze-bundle || echo 'Failed to analyze bundle'
+      - yarn nx run storybook:profile-exports
