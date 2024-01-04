@@ -1,12 +1,15 @@
 /* eslint-disable no-console */
 const path = require('node:path');
 const fs = require('node:fs');
+const { fork } = require('node:child_process');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { globSync } = require('glob');
 
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 
 if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT was undefined');
+
+const FORK_FILE = path.resolve(__dirname, 'profile-export.js');
 
 const BUILD_DIR = path.resolve(MONOREPO_ROOT, '.nx/dist/packages');
 
@@ -196,26 +199,55 @@ const removeCssRequires = (jsFilePath) => {
 // Remove .css file require() from all .js files
 jsFilePaths.forEach(removeCssRequires);
 
+const median = (numbers) => {
+  const sorted = [...numbers].sort((a, b) => a - b);
+  const half = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[half] : (sorted[half - 1] + sorted[half]) / 2;
+};
+
 // Evaluate import runtime costs (e.g. the duration of any side effects)
-const profileExport = (exportPath) => {
+const profileExport = async (exportPath) => {
   const exportName = exportPath.replace('./', '');
   const moduleName = `@cbhq/cds-web/${exportName}`;
-  const before = Date.now();
-  // eslint-disable-next-line global-require, import/no-dynamic-require, no-unused-vars, @typescript-eslint/no-unused-vars
-  const importedModule = require(moduleName);
-  const after = Date.now();
-  const message = `${`${moduleName} `.padEnd(90, '.')} ${after - before} ms`;
+
+  const times = [];
+
+  for (let i = 0; i < 5; i++) {
+    const childProcess = fork(FORK_FILE, [moduleName]);
+    // eslint-disable-next-line no-await-in-loop
+    await new Promise((resolve) => {
+      childProcess.on('message', (elapsedTimeInMs) => {
+        times.push(elapsedTimeInMs);
+        resolve();
+      });
+    });
+  }
+
+  const message = `${`${moduleName} `.padEnd(90, '.')} ${Math.floor(median(times))} ms`;
   return message;
 };
 
-const exportStatsMessage = WEB_EXPORTS.map(profileExport).join('\n');
+const main = async () => {
+  const exportStatsMessages = [];
 
-// https://buildkite.com/docs/pipelines/managing-log-output
-const BUILDKITE_COLLAPSE_PREFIX = '---';
+  for (const webExport of WEB_EXPORTS) {
+    // eslint-disable-next-line no-await-in-loop
+    const message = await profileExport(webExport);
+    exportStatsMessages.push(message);
+  }
 
-console.log(
-  `${process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PREFIX} ` : '\n'}🐝 Export runtime costs:\n`,
-);
-console.log(exportStatsMessage, '\n');
+  const exportStatsMessage = await exportStatsMessages.join('\n');
 
-cleanup();
+  // https://buildkite.com/docs/pipelines/managing-log-output
+  const BUILDKITE_COLLAPSE_PREFIX = '---';
+
+  console.log(
+    `${
+      process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PREFIX} ` : '\n'
+    }🐝 Export runtime costs:\n`,
+  );
+  console.log(exportStatsMessage, '\n');
+  cleanup();
+};
+
+main();
