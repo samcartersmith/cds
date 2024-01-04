@@ -29,7 +29,7 @@ _docker_shared: &docker_shared
         paths:
           - ./.yarn/cache
           - ./.yarn/install-state.gz
-    # Buildkite cache config for bundle-stats https://github.cbhq.net/infra/buildkite/pull/126
+    # Buildkite cache config for bundle-stats and export-stats https://github.cbhq.net/infra/buildkite/pull/126
     - file:///buildkite/plugins/cache:
         key: bundle-stats-v1
         path: bundle-stats.json
@@ -37,6 +37,13 @@ _docker_shared: &docker_shared
           - bundle-stats-master
         upload_allowlist_keys:
           - bundle-stats-master
+    - file:///buildkite/plugins/cache:
+        key: export-stats-v1
+        path: export-stats.md
+        download_blocklist_keys:
+          - export-stats-master
+        upload_allowlist_keys:
+          - export-stats-master
 
 _k8s_medium: &k8s_medium
   <<: *docker_shared
@@ -198,3 +205,20 @@ steps:
       - tools/ci/setup.sh
       - yarn nx run storybook:analyze-bundle || echo 'Failed to analyze bundle'
       - yarn nx run storybook:profile-exports
+
+  - label: 'Profile Exports (Master)'
+    <<: *k8s_large
+    key: export-stats-master
+    if: build.branch == 'master'
+    commands:
+      - tools/ci/setup.sh
+      - yarn nx run storybook:profile-exports
+
+  - label: 'Profile Exports'
+    <<: *k8s_large
+    if: build.branch != 'master'
+    env:
+      PROFILE_EXPORTS_DIFF: true
+    commands:
+      - tools/ci/setup.sh
+      - yarn nx run storybook:profile-exports || echo 'Failed to profile exports'

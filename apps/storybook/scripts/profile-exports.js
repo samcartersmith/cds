@@ -4,12 +4,18 @@ const fs = require('node:fs');
 const { fork } = require('node:child_process');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { globSync } = require('glob');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { diffLines } = require('diff');
+
+const isDiffReport = process.env.PROFILE_EXPORTS_DIFF === 'true';
 
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 
 if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT was undefined');
 
 const FORK_FILE = path.resolve(__dirname, 'profile-export.js');
+
+const STATS_BASELINE_FILENAME = 'export-stats.md';
 
 const BUILD_DIR = path.resolve(MONOREPO_ROOT, '.nx/dist/packages');
 
@@ -210,24 +216,36 @@ const profileExport = async (exportPath) => {
   const exportName = exportPath.replace('./', '');
   const moduleName = `@cbhq/cds-web/${exportName}`;
 
-  const times = [];
+  const timesInMs = [];
 
   for (let i = 0; i < 5; i++) {
     const childProcess = fork(FORK_FILE, [moduleName]);
     // eslint-disable-next-line no-await-in-loop
     await new Promise((resolve) => {
       childProcess.on('message', (elapsedTimeInMs) => {
-        times.push(elapsedTimeInMs);
+        timesInMs.push(elapsedTimeInMs);
         resolve();
       });
     });
   }
 
-  const message = `${`${moduleName} `.padEnd(90, '.')} ${Math.floor(median(times))} ms`;
+  const title = `${moduleName} `.padEnd(90, '.');
+  const medianElapsedTime = Math.floor(median(timesInMs));
+  const message = `${title} ${medianElapsedTime} ms`;
   return message;
 };
 
+const green = (message) => `\x1b[32m${message}\x1b[0m`;
+const red = (message) => `\x1b[31m${message}\x1b[0m`;
+
 const main = async () => {
+  const statsBaselineFilePath = path.resolve(MONOREPO_ROOT, STATS_BASELINE_FILENAME);
+
+  if (isDiffReport && !fs.existsSync(statsBaselineFilePath))
+    throw Error(
+      `No export baseline stats ${STATS_BASELINE_FILENAME} found at path "${statsBaselineFilePath}"`,
+    );
+
   const exportStatsMessages = [];
 
   for (const webExport of WEB_EXPORTS) {
@@ -236,17 +254,38 @@ const main = async () => {
     exportStatsMessages.push(message);
   }
 
-  const exportStatsMessage = await exportStatsMessages.join('\n');
+  const exportStatsMessage = exportStatsMessages.join('\n');
+
+  // If this isn't a diff report we'll just use the exportStatsMessage for both the baseline and comparison
+  const baselineStatsMessage = isDiffReport
+    ? fs.readFileSync(statsBaselineFilePath, 'utf-8')
+    : exportStatsMessage;
+
+  const statsMessageDiff = diffLines(baselineStatsMessage, exportStatsMessage);
 
   // https://buildkite.com/docs/pipelines/managing-log-output
-  const BUILDKITE_COLLAPSE_PREFIX = '---';
+  const BUILDKITE_EXPAND_PREFIX = '+++';
 
   console.log(
-    `${
-      process.env.CI === 'true' ? `${BUILDKITE_COLLAPSE_PREFIX} ` : '\n'
-    }🐝 Export runtime costs:\n`,
+    `${process.env.CI === 'true' ? `${BUILDKITE_EXPAND_PREFIX} ` : '\n'}🐝 Export runtime costs:\n`,
   );
-  console.log(exportStatsMessage, '\n');
+
+  statsMessageDiff.forEach(({ value, added, removed }, index) => {
+    const nextDiff = statsMessageDiff[index + 1];
+    const nextChanged = Boolean(nextDiff?.added || nextDiff?.removed);
+    const message = added || nextChanged ? value.slice(0, -1) : value;
+    if (added) return console.log(green(message));
+    if (removed) return console.log(red(message));
+    return console.log(message);
+  });
+
+  console.log('\n');
+
+  if (!isDiffReport) {
+    if (fs.existsSync(statsBaselineFilePath)) fs.rmSync(statsBaselineFilePath);
+    fs.writeFileSync(statsBaselineFilePath, exportStatsMessage);
+  }
+
   cleanup();
 };
 
