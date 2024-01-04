@@ -82,7 +82,7 @@ export const SearchInput = memo(
 
     return (
       <FeatureFlagProvider frontier>
-        <ThemeProvider>
+        <ThemeProvider display="contents">
           <TextInput
             ref={refs}
             borderRadius="roundedFull"

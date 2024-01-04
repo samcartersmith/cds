@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.24.2 (1/4/2024 PST)
+
+#### 🐞 Fixes
+
+- Resolve regression in search input web component where width not default to 100. [[#2592](https://github.cbhq.net/frontend/cds/pull/2592)] [[DX-2997](https://jira.coinbase-corp.com/browse/DX-2997)]
+
 ## 5.24.1 (1/2/2024 PST)
 
 #### 🐞 Fixes
