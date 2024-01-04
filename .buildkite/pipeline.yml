@@ -162,14 +162,14 @@ steps:
       DETOX_RUN_ALL: true
     commands:
       - tools/ci/setup.sh
-      - yarn nx affected --target=visreg
+      - yarn mono-pipeline run-ci other --targets=visreg --allOnMaster
 
   - label: 'Percy (Mobile - Affected)'
     <<: *k8s_medium
     if: build.branch != 'master' && !(build.pull_request.labels	includes 'visreg')
     commands:
       - tools/ci/setup.sh
-      - (yarn workspace mobile-app should-run-visreg && yarn nx affected --target=visreg) || echo 'Skipping Percy (Mobile)'
+      - (yarn workspace mobile-app should-run-visreg && yarn mono-pipeline run-ci other --targets=visreg --allOnMaster) || echo 'Skipping Percy (Mobile)'
 
   - label: 'Storybook E2E Test'
     <<: *k8s_medium_chrome
