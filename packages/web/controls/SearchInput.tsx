@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useCallback, useRef } from 'react';
+import React, { forwardRef, memo, useCallback, useMemo, useRef } from 'react';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
@@ -76,6 +76,10 @@ export const SearchInput = memo(
       [onClear, onChangeText, onSearch],
     );
 
+    const boxStyle = useMemo(() => {
+      return compact ? { transform: 'scale(0.75)' } : undefined;
+    }, [compact]);
+
     return (
       <FeatureFlagProvider frontier>
         <ThemeProvider>
@@ -84,7 +88,11 @@ export const SearchInput = memo(
             borderRadius="roundedFull"
             end={
               !!value && (
-                <Box spacingEnd={0.5}>
+                <Box
+                  dangerouslySetStyle={boxStyle}
+                  offsetEnd={compact ? 0.5 : 0}
+                  spacingEnd={compact ? 0 : 0.5}
+                >
                   <InputIconButton
                     accessibilityLabel="Clear search query"
                     name="close"

@@ -185,6 +185,8 @@ export const TextInput = memo(
         <InputStack
           borderRadius={borderRadius}
           borderWidth={bordered ? 'input' : 'none'}
+          // If bordered is true, we want disableFocusedStyle = false
+          // If bordered is false, we want disableFocusedStyle = true
           disableFocusedStyle={!bordered}
           disabled={disabled}
           enableColorSurge={enableColorSurge}
@@ -207,8 +209,6 @@ export const TextInput = memo(
             )
           }
           focused={focused}
-          // If bordered is true, we want disableFocusedStyle = false
-          // If bordered is false, we want disableFocusedStyle = true
           height={height}
           helperTextNode={
             !!helperText && (
