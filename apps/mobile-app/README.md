@@ -25,7 +25,7 @@ Expo prebuilds generate full native iOS and Android binaries with embedded JS bu
 2. Start the [expo development server](https://docs.expo.dev/more/expo-cli/#develop) by running:
 
 ```
-yarn workspace mobile-app expo start --go
+yarn nx run mobile-app:go
 ```
 
 ### Run the app in the iOS/Android simulator
