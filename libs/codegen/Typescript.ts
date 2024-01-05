@@ -1,4 +1,4 @@
-import { avatarPixelSizes, avatarSizes } from './configs/avatarConfig';
+import { avatarDensePixelSizes, avatarPixelSizes, avatarSizes } from './configs/avatarConfig';
 import { RootScalePreference, scales } from './configs/scaleConfig';
 import { spacingScale } from './configs/spacingConfig';
 import { typographyConfig } from './configs/typographyConfig';
@@ -37,6 +37,7 @@ const templates = {
     types: {
       AvatarSize: avatarSizes,
       AvatarPixelSize: avatarPixelSizes,
+      AvatarDensePixelSize: avatarDensePixelSizes,
     },
   },
 };

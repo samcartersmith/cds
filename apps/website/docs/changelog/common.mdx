@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.24.4 (1/5/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix dense avatar and avatar button size for xl and xxl. [[#2581](https://github.cbhq.net/frontend/cds/pull/2581)] [[DX-2973](https://jira.coinbase-corp.com/browse/DX-2973)]
+
 ## 5.24.3 ((1/5/2024, 09:19 AM PST))
 
 This is an artificial version bump with no new change.
