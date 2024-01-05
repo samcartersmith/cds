@@ -1,8 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Yield Mobile
-sidebar_label: Yield Mobile
+title: Wallet Dapp
+sidebar_label: Wallet Dapp
 ---
 
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
@@ -11,13 +11,13 @@ import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTrac
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
 <AdopterStatsProvider
-  {...require(':cds-website/static/data/__generated__/adoption/yield-mobile/stats.json')}
+  {...require(':cds-website/static/data/__generated__/adoption/wallet-dapp/stats.json')}
 >
   <AdopterProjectInfoProvider
-    {...require(':cds-website/static/data/__generated__/adoption/yield-mobile/info.json')}
+    {...require(':cds-website/static/data/__generated__/adoption/wallet-dapp/info.json')}
   >
     <AdopterComponentsProvider
-      {...require(':cds-website/static/data/__generated__/adoption/yield-mobile/components.json')}
+      {...require(':cds-website/static/data/__generated__/adoption/wallet-dapp/components.json')}
     >
       <AdopterDetails />
     </AdopterComponentsProvider>

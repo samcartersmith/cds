@@ -2,7 +2,4 @@
  * DO NOT MODIFY
  * Generated from yarn nx run website:adoption
  */
-export const hiddenAdopters = [
-  { id: 'commerce-merchant', pillar: 'Retail' },
-  { id: 'commerce-payer', pillar: 'Retail' },
-] as const;
+export const hiddenAdopters = [{ id: 'commerce-merchant-mono', pillar: 'Consumer' }] as const;

@@ -1,8 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Yield Web
-sidebar_label: Yield Web
+title: Commerce Frontend
+sidebar_label: Commerce Frontend
 ---
 
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
@@ -11,13 +11,13 @@ import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTrac
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
 <AdopterStatsProvider
-  {...require(':cds-website/static/data/__generated__/adoption/yield-web/stats.json')}
+  {...require(':cds-website/static/data/__generated__/adoption/commerce-frontend/stats.json')}
 >
   <AdopterProjectInfoProvider
-    {...require(':cds-website/static/data/__generated__/adoption/yield-web/info.json')}
+    {...require(':cds-website/static/data/__generated__/adoption/commerce-frontend/info.json')}
   >
     <AdopterComponentsProvider
-      {...require(':cds-website/static/data/__generated__/adoption/yield-web/components.json')}
+      {...require(':cds-website/static/data/__generated__/adoption/commerce-frontend/components.json')}
     >
       <AdopterDetails />
     </AdopterComponentsProvider>

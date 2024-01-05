@@ -1,0 +1,25 @@
+---
+hide_title: true
+hide_table_of_contents: true
+title: Payments On Ramp Widget
+sidebar_label: Payments On Ramp Widget
+---
+
+import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
+import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTracker/context/AdopterProjectInfoProvider';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
+
+<AdopterStatsProvider
+  {...require(':cds-website/static/data/__generated__/adoption/payments-onramp-widget/stats.json')}
+>
+  <AdopterProjectInfoProvider
+    {...require(':cds-website/static/data/__generated__/adoption/payments-onramp-widget/info.json')}
+  >
+    <AdopterComponentsProvider
+      {...require(':cds-website/static/data/__generated__/adoption/payments-onramp-widget/components.json')}
+    >
+      <AdopterDetails />
+    </AdopterComponentsProvider>
+  </AdopterProjectInfoProvider>
+</AdopterStatsProvider>

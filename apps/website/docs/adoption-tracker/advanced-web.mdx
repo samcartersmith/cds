@@ -1,8 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Commerce Merchant
-sidebar_label: Commerce Merchant
+title: Advanced Trade Web Components
+sidebar_label: Advanced Trade Web Components
 ---
 
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
@@ -11,13 +11,13 @@ import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTrac
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
 <AdopterStatsProvider
-  {...require(':cds-website/static/data/__generated__/adoption/commerce-merchant/stats.json')}
+  {...require(':cds-website/static/data/__generated__/adoption/advanced-web/stats.json')}
 >
   <AdopterProjectInfoProvider
-    {...require(':cds-website/static/data/__generated__/adoption/commerce-merchant/info.json')}
+    {...require(':cds-website/static/data/__generated__/adoption/advanced-web/info.json')}
   >
     <AdopterComponentsProvider
-      {...require(':cds-website/static/data/__generated__/adoption/commerce-merchant/components.json')}
+      {...require(':cds-website/static/data/__generated__/adoption/advanced-web/components.json')}
     >
       <AdopterDetails />
     </AdopterComponentsProvider>

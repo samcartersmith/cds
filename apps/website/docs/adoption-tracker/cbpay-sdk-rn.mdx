@@ -1,8 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Commerce Payer
-sidebar_label: Commerce Payer
+title: Payments CBPay SDK RN
+sidebar_label: Payments CBPay SDK RN
 ---
 
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
@@ -11,13 +11,13 @@ import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTrac
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
 <AdopterStatsProvider
-  {...require(':cds-website/static/data/__generated__/adoption/commerce-payer/stats.json')}
+  {...require(':cds-website/static/data/__generated__/adoption/cbpay-sdk-rn/stats.json')}
 >
   <AdopterProjectInfoProvider
-    {...require(':cds-website/static/data/__generated__/adoption/commerce-payer/info.json')}
+    {...require(':cds-website/static/data/__generated__/adoption/cbpay-sdk-rn/info.json')}
   >
     <AdopterComponentsProvider
-      {...require(':cds-website/static/data/__generated__/adoption/commerce-payer/components.json')}
+      {...require(':cds-website/static/data/__generated__/adoption/cbpay-sdk-rn/components.json')}
     >
       <AdopterDetails />
     </AdopterComponentsProvider>

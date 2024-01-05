@@ -173,6 +173,12 @@ const getPercentageChange = (pillar?: string) => {
 const getSortedProjectPairs = (adoptersJson: Adopters) =>
   toPairs(groupBy(adoptersJson, 'pillar'))
     .sort(([pillarA], [pillarB]) => {
+      // Check if either pillar is 'Other', and sort accordingly
+
+      // Force 'Other' to be at the bottom
+      if (pillarA === 'Other') return 1;
+      if (pillarB === 'Other') return -1;
+
       // Sort projects by their total adoption percentage
       const { percentage: percentageA } = getPercentage(pillarA);
       const { percentage: percentageB } = getPercentage(pillarB);
