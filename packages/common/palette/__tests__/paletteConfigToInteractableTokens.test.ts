@@ -21,6 +21,7 @@ const config: PaletteConfig = {
   secondary: 'gray0',
   secondaryForeground: 'gray100',
   transparent: ['gray0', 0],
+  warning: 'yellow50',
 };
 
 const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
@@ -262,6 +263,20 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
       backgroundColor: 'transparent',
     },
   },
+  warning: {
+    disabled: {
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(102, 80, 23)',
+    },
+    hovered: {
+      contentOpacity: 0.93,
+      backgroundColor: 'rgb(198, 156, 49)',
+    },
+    pressed: {
+      contentOpacity: 0.87,
+      backgroundColor: 'rgb(202, 163, 62)',
+    },
+  },
 };
 
 const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
@@ -501,6 +516,20 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
     pressed: {
       contentOpacity: 0.82,
       backgroundColor: 'transparent',
+    },
+  },
+  warning: {
+    disabled: {
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(222, 198, 141)',
+    },
+    hovered: {
+      contentOpacity: 0.93,
+      backgroundColor: 'rgb(176, 132, 26)',
+    },
+    pressed: {
+      contentOpacity: 0.87,
+      backgroundColor: 'rgb(165, 124, 25)',
     },
   },
 };

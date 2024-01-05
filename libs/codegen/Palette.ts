@@ -20,6 +20,7 @@ export const defaultPalette = {
   secondary: 'gray0',
   secondaryForeground: 'gray100',
   transparent: ['gray0', 0],
+  warning: 'yellow50',
 } as const;
 
 const switchPalette = {
@@ -74,6 +75,7 @@ export const paletteForegrounds = [
   'positiveForeground',
   'negative',
   'negativeForeground',
+  'warning',
 ] as const;
 
 export const paletteBackgrounds = [
@@ -86,6 +88,7 @@ export const paletteBackgrounds = [
   'positive',
   'negative',
   'transparent',
+  'warning',
 ] as const;
 
 export const paletteBorders = [
@@ -97,6 +100,7 @@ export const paletteBorders = [
   'line',
   'lineHeavy',
   'transparent',
+  'warning',
 ];
 
 const foregroundMap = arrayToObject(paletteForegrounds);

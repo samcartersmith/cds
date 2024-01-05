@@ -159,4 +159,13 @@ export const lottieStyles = css`
       fill: ${palette.transparent};
     }
   }
+
+  .palette_warning {
+    &_stroke {
+      stroke: ${palette.warning};
+    }
+    &_fill {
+      fill: ${palette.warning};
+    }
+  }
 `;

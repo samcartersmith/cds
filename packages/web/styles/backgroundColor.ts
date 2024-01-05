@@ -39,3 +39,7 @@ export const negative = css`
 export const transparent = css`
   background-color: var(--transparent);
 `;
+
+export const warning = css`
+  background-color: var(--warning);
+`;

@@ -59,6 +59,7 @@ export const palette = {
   secondary: 'var(--secondary)',
   secondaryForeground: 'var(--secondary-foreground)',
   transparent: 'var(--transparent)',
+  warning: 'var(--warning)',
 } as const;
 
 export const control = {

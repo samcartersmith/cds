@@ -242,6 +242,7 @@ export const lightVariables = {
   '--secondary': 'rgb(var(--gray5))',
   '--secondary-foreground': 'rgb(var(--gray100))',
   '--transparent': 'rgba(var(--gray0),0)',
+  '--warning': 'rgb(var(--yellow50))',
 };
 
 export const darkVariables = {
@@ -392,4 +393,5 @@ export const darkVariables = {
   '--secondary': 'rgb(var(--gray20))',
   '--secondary-foreground': 'rgb(var(--gray100))',
   '--transparent': 'rgba(var(--gray0),0)',
+  '--warning': 'rgb(var(--yellow50))',
 };

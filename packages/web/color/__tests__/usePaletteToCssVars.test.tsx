@@ -26,6 +26,7 @@ const defaultPaletteMock = {
   '--secondary': 'rgb(var(--gray0))',
   '--secondary-foreground': 'rgb(var(--gray100))',
   '--transparent': 'rgba(var(--gray0),0)',
+  '--warning': 'rgb(var(--yellow50))',
 };
 
 describe('usePaletteToCssVars', () => {

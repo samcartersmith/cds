@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.25.0 (1/5/2024 PST)
+
+#### 🚀 Updates
+
+- Add warning yellow50 color token. [[#2583](https://github.cbhq.net/frontend/cds/pull/2583)] [[DX-2972](https://jira.coinbase-corp.com/browse/DX-2972)]
+
 ## 5.24.4 (1/5/2024 PST)
 
 #### 🐞 Fixes
