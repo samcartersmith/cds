@@ -194,7 +194,6 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn nx run storybook:build-for-analyze
-      - yarn nx run storybook:profile-exports
 
   - label: 'Bundle Stats'
     <<: *k8s_large
@@ -204,7 +203,6 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn nx run storybook:analyze-bundle || echo 'Failed to analyze bundle'
-      - yarn nx run storybook:profile-exports
 
   - label: 'Profile Exports (Master)'
     <<: *k8s_large
