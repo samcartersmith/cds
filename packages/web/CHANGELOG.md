@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.24.3 (1/5/2024 PST)
+
+#### 🐞 Fixes
+
+- Allow NavigationBar to disable overflow hidden style on child Collapsible component. [[#2594](https://github.cbhq.net/frontend/cds/pull/2594)]
+
 ## 5.24.2 (1/4/2024 PST)
 
 #### 🐞 Fixes

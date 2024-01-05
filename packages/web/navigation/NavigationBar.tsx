@@ -41,6 +41,11 @@ export type NavigationBarProps = {
    * @default 2
    * */
   spacingBottom?: SpacingScale | undefined;
+  /**
+   * Disable the `overflow: hidden` style from being injected to the child Collapsible component
+   * @default undefined
+   * */
+  dangerouslyDisableOverflowHidden?: boolean;
 };
 
 export const NavigationBar = memo(
@@ -52,6 +57,7 @@ export const NavigationBar = memo(
     accessibilityLabel = 'main navigation',
     spacingTop = 2,
     spacingBottom = bottom ? undefined : 2,
+    dangerouslyDisableOverflowHidden,
   }: NavigationBarProps) => {
     const prevStart = usePreviousValue<NavigationBarProps['start']>(start);
     const startNode = useMemo(() => (!start ? prevStart : start), [start, prevStart]);
@@ -75,7 +81,11 @@ export const NavigationBar = memo(
       >
         <HStack alignItems="center" gap={2} justifyContent="space-between">
           <HStack alignItems="center" flexGrow={1} gap={0} justifyContent="flex-start">
-            <Collapsible collapsed={!start} direction="horizontal">
+            <Collapsible
+              collapsed={!start}
+              dangerouslyDisableOverflowHidden={dangerouslyDisableOverflowHidden}
+              direction="horizontal"
+            >
               <Box spacingEnd={2}>{startNode}</Box>
             </Collapsible>
             <HStack alignItems="center" flexGrow={1} gap={1}>
