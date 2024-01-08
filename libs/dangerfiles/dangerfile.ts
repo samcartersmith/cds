@@ -16,6 +16,12 @@ const MOCK_PR = {
   deletions: 5,
 };
 
+// ignore feature branches
+const targetBranch = danger.github.pr.base.ref;
+if (targetBranch !== 'master') {
+  process.exit(0);
+}
+
 danger.git.fileMatch = chainsmoker({
   created: danger.git.created_files,
   modified: danger.git.modified_files,
