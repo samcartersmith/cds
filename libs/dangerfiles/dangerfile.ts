@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { danger, fail, message, warn } from 'danger';
+import { danger, fail, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
 
 import checkForBreakingChanges from './breakingChanges/checkForBreakingChanges';
 import checkFilesForRemovedExports from './breakingChanges/exports';
 import checkFilesForRemovedParams from './breakingChanges/params';
-import { cdsPackagesPatterns, componentPatterns, fileIgnorePatterns } from './patterns';
+import { cdsPackagesPatterns, fileIgnorePatterns } from './patterns';
 import { findAssociatedFilesWithoutSuffix, findPatternInGitDiffs, getModifiedFiles } from './utils';
 
 // Useful for running locally with yarn danger local --dangerfile libs/dangerfiles/dangerfile.ts
@@ -48,7 +48,6 @@ const storyFiles = danger.git.fileMatch(
   `packages/${process.env.NX_PROJECT_NAME}/__stories__/**.(ts|tsx)`,
 );
 
-const componentFiles = danger.git.fileMatch(...componentPatterns);
 const cdsPackagesFiles = danger.git.fileMatch(...cdsPackagesPatterns);
 
 // Encourage stories
@@ -85,47 +84,6 @@ if (nonTestTsFiles.edited && !testTsFiles.edited && !acceptedNoTests) {
   );
 }
 
-// Acceptance criteria for a new component
-if (nonTestTsxFiles.created) {
-  message(
-    [
-      '## ✨ Did you make a new component?',
-      '### _Please complete the follow acceptance criteria before asking for a review_',
-      'New components are subject to a specific review process. Please complete the following steps: ',
-      '1. Schedule a Bug Bash with the entire UI Systems team. Here is a sample [bug bash template](https://github.cbhq.net/frontend/cds/blob/master/docs/contributing/go/cds-bugbash-template) to get you started. ',
-      '2. Ask #ask-ui-systems for a PR review',
-      '3. New components must meet the following acceptance criteria. Copy and paste the following checklist into the PR description and check off each item as you complete it:',
-      '- [ ] Component meets WCAG accessibility standards (can be used with a screen reader, voice or keyboard navigation, etc.)',
-      '- [ ] Storybook stories for visual regression',
-      '- [ ] Interactive stories if component is interactable',
-      '- [ ] Unit tests for all props and states',
-      '- [ ] Expected behavior on all devices (Android and IOS) and browsers (Chrome, Safari, Firefox), no runtime errors/warnings, performant in SSR environment, etc.',
-      '- [ ] Motion sign off (if applicable)',
-    ].join('\n'),
-  );
-}
-
-// Acceptance criteria for a component modifications
-if (componentFiles.edited) {
-  message(
-    [
-      '## 🛠️ Did you make a change to a CDS component?',
-      '### _Please complete the follow acceptance criteria before asking for a review_',
-      'Component modifications are subject to a specific review process. Please complete the following steps: ',
-      '1. Ask #ask-ui-systems for a PR review',
-      '2. Use the [CDS Eng Contribution Scope Framework](https://docs.google.com/spreadsheets/u/0/d/1uf6IzEzZst4WvhlLQ-EV5rWQkwHen9lOw9oKMut6PVg/edit) to size the effort, generate acceptance criteria, and required reviewers.',
-      '3. Bug bash your change with your PR reviewer. Here is a sample [bug bash template](https://github.cbhq.net/frontend/cds/blob/master/docs/contributing/go/cds-bugbash-template) to get you started. ',
-      '4. Component modifications must meet the following acceptance criteria. Copy and paste the following checklist into the PR description and check off each item as you complete it:',
-      '- [ ] Component meets WCAG accessibility standards (can be used with a screen reader, voice or keyboard navigation, etc.)',
-      '- [ ] Storybook stories for visual regression',
-      '- [ ] Interactive stories if component is interactable',
-      '- [ ] Unit tests for all props and states',
-      '- [ ] Expected behavior on all devices (Android and IOS) and browsers (Chrome, Safari, Firefox), no runtime errors/warnings, performant in SSR environment, etc.',
-      '- [ ] Motion sign off (if applicable)',
-    ].join('\n'),
-  );
-}
-
 // Look for deprecated in each file that has been touched
 void (async () => {
   const deprecations = await findPatternInGitDiffs({
@@ -141,17 +99,6 @@ void (async () => {
         '## 🤨 Did you modify a deprecated component?',
         `You have edited file(s) that contain a deprecation. Make sure the modification you made is not to a deprecated component, token, hook, parameter, prop, or function. Please refer to [go/cds-deprecations](https://cds.cbhq.net/resources/deprecations) for the full list of deprecations.`,
         deprecations.modified.map((file) => `- ${file}`).join('\n'),
-      ].join('\n'),
-    );
-  }
-
-  // Warn when adding deprecations to follow best practices
-  if (deprecations.created.length && !acceptedOverrideDeprecation) {
-    warn(
-      [
-        '## 🛑 Looks like you marked something as Deprecated! Did you add a migrator script for it? ',
-        `Deprecations are future breaking changes! You'll need to follow the [CDS Deprecation Process](https://github.cbhq.net/frontend/cds/blob/master/docs/conventions/deprecations.md) and write migration scripts in for your deprecation in the next major release. `,
-        deprecations.created.map((file) => `- ${file}`).join('\n'),
       ].join('\n'),
     );
   }
