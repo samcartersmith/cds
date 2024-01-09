@@ -49,9 +49,17 @@ const svgJsMap = {
     light: () => require('../svgJs/light/advancedTradingUi-1').content,
     dark: () => require('../svgJs/dark/advancedTradingUi-1').content,
   },
+  airdrop: {
+    light: () => require('../svgJs/light/airdrop-0').content,
+    dark: () => require('../svgJs/dark/airdrop-0').content,
+  },
   alienDonutSystemError: {
     light: () => require('../svgJs/light/alienDonutSystemError-2').content,
     dark: () => require('../svgJs/dark/alienDonutSystemError-2').content,
+  },
+  anonymous: {
+    light: () => require('../svgJs/light/anonymous-0').content,
+    dark: () => require('../svgJs/dark/anonymous-0').content,
   },
   appTrackingTransparency: {
     light: () => require('../svgJs/light/appTrackingTransparency-3').content,
@@ -101,6 +109,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/borrow-3').content,
     dark: () => require('../svgJs/dark/borrow-3').content,
   },
+  borrowCoins: {
+    light: () => require('../svgJs/light/borrowCoins-0').content,
+    dark: () => require('../svgJs/dark/borrowCoins-0').content,
+  },
   borrowWallet: {
     light: () => require('../svgJs/light/borrowWallet-3').content,
     dark: () => require('../svgJs/dark/borrowWallet-3').content,
@@ -120,6 +132,10 @@ const svgJsMap = {
   browserExtension: {
     light: () => require('../svgJs/light/browserExtension-3').content,
     dark: () => require('../svgJs/dark/browserExtension-3').content,
+  },
+  buy: {
+    light: () => require('../svgJs/light/buy-0').content,
+    dark: () => require('../svgJs/dark/buy-0').content,
   },
   buyFirstCrypto: {
     light: () => require('../svgJs/light/buyFirstCrypto-2').content,
@@ -164,6 +180,10 @@ const svgJsMap = {
   claimCryptoUsername: {
     light: () => require('../svgJs/light/claimCryptoUsername-0').content,
     dark: () => require('../svgJs/dark/claimCryptoUsername-0').content,
+  },
+  cloud: {
+    light: () => require('../svgJs/light/cloud-0').content,
+    dark: () => require('../svgJs/dark/cloud-0').content,
   },
   cloudBacking: {
     light: () => require('../svgJs/light/cloudBacking-2').content,
@@ -301,6 +321,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/commerceInvoices-2').content,
     dark: () => require('../svgJs/dark/commerceInvoices-2').content,
   },
+  communication: {
+    light: () => require('../svgJs/light/communication-0').content,
+    dark: () => require('../svgJs/dark/communication-0').content,
+  },
   completeAQuiz: {
     light: () => require('../svgJs/light/completeAQuiz-3').content,
     dark: () => require('../svgJs/dark/completeAQuiz-3').content,
@@ -437,6 +461,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/digitalCollectibles-3').content,
     dark: () => require('../svgJs/dark/digitalCollectibles-3').content,
   },
+  digitalGold: {
+    light: () => require('../svgJs/light/digitalGold-0').content,
+    dark: () => require('../svgJs/dark/digitalGold-0').content,
+  },
   directDepositPhone: {
     light: () => require('../svgJs/light/directDepositPhone-3').content,
     dark: () => require('../svgJs/dark/directDepositPhone-3').content,
@@ -472,6 +500,10 @@ const svgJsMap = {
   earnCryptoInterest: {
     light: () => require('../svgJs/light/earnCryptoInterest-3').content,
     dark: () => require('../svgJs/dark/earnCryptoInterest-3').content,
+  },
+  earnGlobe: {
+    light: () => require('../svgJs/light/earnGlobe-0').content,
+    dark: () => require('../svgJs/dark/earnGlobe-0').content,
   },
   earnGrowth: {
     light: () => require('../svgJs/light/earnGrowth-2').content,
@@ -577,6 +609,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/ethStakingUpsell-3').content,
     dark: () => require('../svgJs/dark/ethStakingUpsell-3').content,
   },
+  exchange: {
+    light: () => require('../svgJs/light/exchange-0').content,
+    dark: () => require('../svgJs/dark/exchange-0').content,
+  },
   exchangeEmptyState: {
     light: () => require('../svgJs/light/exchangeEmptyState-3').content,
     dark: () => require('../svgJs/dark/exchangeEmptyState-3').content,
@@ -592,6 +628,10 @@ const svgJsMap = {
   feeScale: {
     light: () => require('../svgJs/light/feeScale-3').content,
     dark: () => require('../svgJs/dark/feeScale-3').content,
+  },
+  fiat: {
+    light: () => require('../svgJs/light/fiat-0').content,
+    dark: () => require('../svgJs/dark/fiat-0').content,
   },
   fileYourCryptoTaxes: {
     light: () => require('../svgJs/light/fileYourCryptoTaxes-4').content,
@@ -617,9 +657,17 @@ const svgJsMap = {
     light: () => require('../svgJs/light/gainsAndLosses-2').content,
     dark: () => require('../svgJs/dark/gainsAndLosses-2').content,
   },
+  gamer: {
+    light: () => require('../svgJs/light/gamer-0').content,
+    dark: () => require('../svgJs/dark/gamer-0').content,
+  },
   gasFeesNetworkFees: {
     light: () => require('../svgJs/light/gasFeesNetworkFees-3').content,
     dark: () => require('../svgJs/dark/gasFeesNetworkFees-3').content,
+  },
+  generative: {
+    light: () => require('../svgJs/light/generative-0').content,
+    dark: () => require('../svgJs/dark/generative-0').content,
   },
   getStartedInMinutes: {
     light: () => require('../svgJs/light/getStartedInMinutes-3').content,
@@ -632,6 +680,10 @@ const svgJsMap = {
   governance: {
     light: () => require('../svgJs/light/governance-3').content,
     dark: () => require('../svgJs/dark/governance-3').content,
+  },
+  governanceMallet: {
+    light: () => require('../svgJs/light/governanceMallet-0').content,
+    dark: () => require('../svgJs/dark/governanceMallet-0').content,
   },
   hardwareWallets: {
     light: () => require('../svgJs/light/hardwareWallets-3').content,
@@ -729,6 +781,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/ledgerPlugin-3').content,
     dark: () => require('../svgJs/dark/ledgerPlugin-3').content,
   },
+  lend: {
+    light: () => require('../svgJs/light/lend-0').content,
+    dark: () => require('../svgJs/dark/lend-0').content,
+  },
   leverage: {
     light: () => require('../svgJs/light/leverage-2').content,
     dark: () => require('../svgJs/dark/leverage-2').content,
@@ -740,6 +796,10 @@ const svgJsMap = {
   linkingYourWalletToYourCoinbaseAccount: {
     light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-3').content,
     dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-3').content,
+  },
+  lowCost: {
+    light: () => require('../svgJs/light/lowCost-0').content,
+    dark: () => require('../svgJs/dark/lowCost-0').content,
   },
   margin: {
     light: () => require('../svgJs/light/margin-2').content,
@@ -813,6 +873,14 @@ const svgJsMap = {
     light: () => require('../svgJs/light/notificationsAndUpdates-2').content,
     dark: () => require('../svgJs/dark/notificationsAndUpdates-2').content,
   },
+  offChain: {
+    light: () => require('../svgJs/light/offChain-0').content,
+    dark: () => require('../svgJs/dark/offChain-0').content,
+  },
+  onChain: {
+    light: () => require('../svgJs/light/onChain-0').content,
+    dark: () => require('../svgJs/dark/onChain-0').content,
+  },
   onTheList: {
     light: () => require('../svgJs/light/onTheList-3').content,
     dark: () => require('../svgJs/dark/onTheList-3').content,
@@ -824,6 +892,10 @@ const svgJsMap = {
   optInPushNotificationsEmail: {
     light: () => require('../svgJs/light/optInPushNotificationsEmail-2').content,
     dark: () => require('../svgJs/dark/optInPushNotificationsEmail-2').content,
+  },
+  oracle: {
+    light: () => require('../svgJs/light/oracle-0').content,
+    dark: () => require('../svgJs/dark/oracle-0').content,
   },
   orderBooks: {
     light: () => require('../svgJs/light/orderBooks-1').content,
@@ -861,6 +933,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/phoneUnknown-2').content,
     dark: () => require('../svgJs/dark/phoneUnknown-2').content,
   },
+  platform: {
+    light: () => require('../svgJs/light/platform-0').content,
+    dark: () => require('../svgJs/dark/platform-0').content,
+  },
   polling: {
     light: () => require('../svgJs/light/polling-2').content,
     dark: () => require('../svgJs/dark/polling-2').content,
@@ -889,6 +965,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/primeStaking-3').content,
     dark: () => require('../svgJs/dark/primeStaking-3').content,
   },
+  private: {
+    light: () => require('../svgJs/light/private-0').content,
+    dark: () => require('../svgJs/dark/private-0').content,
+  },
   privateKey: {
     light: () => require('../svgJs/light/privateKey-0').content,
     dark: () => require('../svgJs/dark/privateKey-0').content,
@@ -900,6 +980,14 @@ const svgJsMap = {
   protocol: {
     light: () => require('../svgJs/light/protocol-0').content,
     dark: () => require('../svgJs/dark/protocol-0').content,
+  },
+  public: {
+    light: () => require('../svgJs/light/public-0').content,
+    dark: () => require('../svgJs/dark/public-0').content,
+  },
+  quest: {
+    light: () => require('../svgJs/light/quest-0').content,
+    dark: () => require('../svgJs/dark/quest-0').content,
   },
   quickAndSimple: {
     light: () => require('../svgJs/light/quickAndSimple-3').content,
@@ -1033,6 +1121,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/serverCatSystemError-2').content,
     dark: () => require('../svgJs/dark/serverCatSystemError-2').content,
   },
+  settlement: {
+    light: () => require('../svgJs/light/settlement-0').content,
+    dark: () => require('../svgJs/dark/settlement-0').content,
+  },
   shareOnSocialMedia: {
     light: () => require('../svgJs/light/shareOnSocialMedia-3').content,
     dark: () => require('../svgJs/dark/shareOnSocialMedia-3').content,
@@ -1045,9 +1137,13 @@ const svgJsMap = {
     light: () => require('../svgJs/light/slippageTolerance-2').content,
     dark: () => require('../svgJs/dark/slippageTolerance-2').content,
   },
+  smartContract: {
+    light: () => require('../svgJs/light/smartContract-0').content,
+    dark: () => require('../svgJs/dark/smartContract-0').content,
+  },
   spacedOutSystemError: {
-    light: () => require('../svgJs/light/spacedOutSystemError-2').content,
-    dark: () => require('../svgJs/dark/spacedOutSystemError-2').content,
+    light: () => require('../svgJs/light/spacedOutSystemError-3').content,
+    dark: () => require('../svgJs/dark/spacedOutSystemError-3').content,
   },
   squidEmptyState: {
     light: () => require('../svgJs/light/squidEmptyState-3').content,
@@ -1101,6 +1197,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/supportAndMore-3').content,
     dark: () => require('../svgJs/dark/supportAndMore-3').content,
   },
+  sustainable: {
+    light: () => require('../svgJs/light/sustainable-0').content,
+    dark: () => require('../svgJs/dark/sustainable-0').content,
+  },
   switchAdvancedToSimpleTrading: {
     light: () => require('../svgJs/light/switchAdvancedToSimpleTrading-2').content,
     dark: () => require('../svgJs/dark/switchAdvancedToSimpleTrading-2').content,
@@ -1108,6 +1208,10 @@ const svgJsMap = {
   taxesDetails: {
     light: () => require('../svgJs/light/taxesDetails-2').content,
     dark: () => require('../svgJs/dark/taxesDetails-2').content,
+  },
+  tools: {
+    light: () => require('../svgJs/light/tools-0').content,
+    dark: () => require('../svgJs/dark/tools-0').content,
   },
   tradeGeneral: {
     light: () => require('../svgJs/light/tradeGeneral-1').content,

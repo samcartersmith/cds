@@ -270,6 +270,9 @@ const names: UiIconName[] = [
   'passport',
   'sortDoubleArrow',
   'support',
+  'gaugeEmpty',
+  'gaugeLow',
+  'gaugeMedium',
 ];
 
 export default names;

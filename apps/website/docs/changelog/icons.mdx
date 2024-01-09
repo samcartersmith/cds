@@ -8,6 +8,38 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.4.0 (1/9/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 1/9/2024. [[#2623](https://github.cbhq.net/frontend/cds/pull/2623)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- gaugeEmpty
+- gaugeLow
+- gaugeMedium
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- add
+- cashRupee
+- chainLink
+
+#### Nav
+
+- menu
+- nftProduct
+- planet
+
 ## 2.3.0 (12/5/2023 PST)
 
 #### 🚀 Updates

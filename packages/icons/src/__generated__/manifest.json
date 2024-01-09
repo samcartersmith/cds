@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2023-12-05T08:01:18.816Z",
-  "metadata": { "lastUnicode": 61948 },
+  "lastUpdated": "2024-01-09T20:36:38.349Z",
+  "metadata": { "lastUnicode": 61957 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -17,7 +17,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60991 } }
       ],
       "createdAt": "2022-08-24T18:51:39.253Z",
-      "lastUpdated": "2023-10-25T17:34:15.903Z",
+      "lastUpdated": "2024-01-04T02:34:09.858Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-trophyCup-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-trophyCup-12-inactive.svg",
@@ -41,7 +41,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60521 } }
       ],
       "createdAt": "2022-08-24T18:51:39.160Z",
-      "lastUpdated": "2023-10-25T17:34:15.497Z",
+      "lastUpdated": "2024-01-05T00:02:49.917Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-trading-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-trading-12-inactive.svg",
@@ -294,7 +294,7 @@
     "2:235": {
       "type": "nav",
       "name": "planet",
-      "hash": "C55oe+EU7XvEkaVENVuMAPxgXlalRuzFsqoCpDXPlGI=",
+      "hash": "wvVh+ECn4pG6Es2IdfnfNEnuRP5AWQqMOBtvbAt6MlE=",
       "description": "navigation, speciality, planet, space, crypto, apps, adventure, stars, astronomy, orbit, gravity, 🪐, 🔭, 🛸, 👽, 🌎, 🌍, 🌏",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60818 } },
@@ -305,7 +305,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60821 } }
       ],
       "createdAt": "2022-08-24T18:51:39.235Z",
-      "lastUpdated": "2023-10-25T17:34:15.684Z",
+      "lastUpdated": "2024-01-08T17:52:09.443Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-planet-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-planet-12-inactive.svg",
@@ -329,7 +329,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61121 } }
       ],
       "createdAt": "2022-08-24T18:51:39.248Z",
-      "lastUpdated": "2023-10-25T17:34:15.989Z",
+      "lastUpdated": "2024-01-04T02:31:06.291Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-peopleGroup-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-peopleGroup-12-inactive.svg",
@@ -473,7 +473,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61001 } }
       ],
       "createdAt": "2022-08-24T18:51:39.257Z",
-      "lastUpdated": "2023-10-25T17:34:14.760Z",
+      "lastUpdated": "2024-01-03T19:40:17.585Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-moreVertical-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-moreVertical-12-inactive.svg",
@@ -737,7 +737,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60646 } }
       ],
       "createdAt": "2022-08-24T18:51:39.319Z",
-      "lastUpdated": "2023-10-25T17:34:16.246Z",
+      "lastUpdated": "2024-01-05T18:34:57.118Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gab-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gab-12-inactive.svg",
@@ -761,7 +761,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61071 } }
       ],
       "createdAt": "2022-08-24T18:51:40.021Z",
-      "lastUpdated": "2023-10-25T17:34:15.561Z",
+      "lastUpdated": "2024-01-04T02:34:23.854Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-faces-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-faces-12-inactive.svg",
@@ -953,7 +953,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60571 } }
       ],
       "createdAt": "2022-08-24T18:51:40.078Z",
-      "lastUpdated": "2023-10-25T17:34:15.550Z",
+      "lastUpdated": "2024-01-04T02:35:54.004Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-dashboard-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-dashboard-12-inactive.svg",
@@ -1001,7 +1001,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61196 } }
       ],
       "createdAt": "2022-08-24T18:51:39.563Z",
-      "lastUpdated": "2023-10-25T17:34:16.220Z",
+      "lastUpdated": "2024-01-04T02:29:30.274Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-comment-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-comment-12-inactive.svg",
@@ -1193,7 +1193,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61016 } }
       ],
       "createdAt": "2022-08-24T18:51:39.650Z",
-      "lastUpdated": "2023-10-25T17:34:14.801Z",
+      "lastUpdated": "2024-01-04T02:30:20.335Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-browser-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-browser-12-inactive.svg",
@@ -1361,7 +1361,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60931 } }
       ],
       "createdAt": "2022-08-24T18:51:39.357Z",
-      "lastUpdated": "2023-10-25T17:34:15.006Z",
+      "lastUpdated": "2024-01-05T15:14:35.675Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-account-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-account-12-inactive.svg",
@@ -1422,7 +1422,7 @@
     "242:1003": {
       "type": "nav",
       "name": "menu",
-      "hash": "BFrEWP8L0nKS3JRMtOGAUNlMESFVNSTMA3uXKtZ9XDs=",
+      "hash": "KuDLE7SEGfvqYl5RRlXeFrxIa1tIh3b40O5BCE1qt+M=",
       "description": "hamburger, menu, navigation, 🍔, 🥪",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61553 } },
@@ -1433,7 +1433,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61556 } }
       ],
       "createdAt": "2022-11-17T14:12:56.236Z",
-      "lastUpdated": "2023-10-25T17:34:15.777Z",
+      "lastUpdated": "2024-01-08T17:52:09.435Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-menu-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-menu-12-inactive.svg",
@@ -1494,7 +1494,7 @@
     "513:3091": {
       "type": "ui",
       "name": "add",
-      "hash": "msxvCovmSfus6A9faLDyTtFeCvQcUjD4oYOgW7ETCEs=",
+      "hash": "usYf9n0q1VnXgZUcxWGLVkKHUViYMfEtZLjgQbSdVn4=",
       "description": "",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60083 } },
@@ -1502,7 +1502,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60081 } }
       ],
       "createdAt": "2023-02-01T23:25:49.773Z",
-      "lastUpdated": "2023-10-25T17:34:15.514Z",
+      "lastUpdated": "2024-01-08T17:52:09.451Z",
       "outputs": {
         "svg12": "./ui/svg/ui-add-12.svg",
         "svg16": "./ui/svg/ui-add-16.svg",
@@ -1556,7 +1556,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60291 } }
       ],
       "createdAt": "2023-02-01T23:25:21.918Z",
-      "lastUpdated": "2023-10-25T17:34:14.819Z",
+      "lastUpdated": "2024-01-04T02:32:06.537Z",
       "outputs": {
         "svg12": "./ui/svg/ui-annotation-12.svg",
         "svg16": "./ui/svg/ui-annotation-16.svg",
@@ -1646,7 +1646,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60096 } }
       ],
       "createdAt": "2023-02-01T23:25:58.834Z",
-      "lastUpdated": "2023-10-25T17:34:15.033Z",
+      "lastUpdated": "2024-01-03T17:20:02.856Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowUp-12.svg",
         "svg16": "./ui/svg/ui-arrowUp-16.svg",
@@ -1718,7 +1718,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60421 } }
       ],
       "createdAt": "2023-02-01T23:25:58.729Z",
-      "lastUpdated": "2023-10-25T17:34:15.541Z",
+      "lastUpdated": "2024-01-05T15:16:22.543Z",
       "outputs": {
         "svg12": "./ui/svg/ui-avatar-12.svg",
         "svg16": "./ui/svg/ui-avatar-16.svg",
@@ -1754,7 +1754,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60446 } }
       ],
       "createdAt": "2023-02-01T23:25:49.892Z",
-      "lastUpdated": "2023-10-25T17:34:15.653Z",
+      "lastUpdated": "2024-01-09T01:42:37.091Z",
       "outputs": {
         "svg12": "./ui/svg/ui-backArrow-12.svg",
         "svg16": "./ui/svg/ui-backArrow-16.svg",
@@ -1952,7 +1952,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60491 } }
       ],
       "createdAt": "2023-02-01T23:25:49.871Z",
-      "lastUpdated": "2023-10-24T20:30:17.383Z",
+      "lastUpdated": "2024-01-04T00:21:54.914Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretDown-12.svg",
         "svg16": "./ui/svg/ui-caretDown-16.svg",
@@ -1970,7 +1970,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60481 } }
       ],
       "createdAt": "2023-02-01T23:26:07.587Z",
-      "lastUpdated": "2023-10-25T17:34:15.909Z",
+      "lastUpdated": "2024-01-09T01:43:48.845Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretLeft-12.svg",
         "svg16": "./ui/svg/ui-caretLeft-16.svg",
@@ -2178,7 +2178,7 @@
     "513:3509": {
       "type": "ui",
       "name": "cashRupee",
-      "hash": "lOMxVn3nfsW3d6LiOgqJdxhgFdbMFyDN45r8W5FBkiA=",
+      "hash": "eKdz8Z0Q9mORpAP1aRrKOgj1UAgeHlmJsx+JxsbL/Vk=",
       "description": "cash, money, ₹, currency, international, india, indonesia, the maldives, mauritius, nepal, pakistan, seychelles, sri lanka, 🇮🇳, 🇮🇩, 🇲🇻, 🇲🇺, 🇳🇵, 🇵🇰, 🇸🇨, 🇱🇰, 💰, 💵, 💸",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60863 } },
@@ -2186,7 +2186,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60861 } }
       ],
       "createdAt": "2023-02-01T23:25:02.075Z",
-      "lastUpdated": "2023-10-25T17:34:15.551Z",
+      "lastUpdated": "2024-01-08T17:52:09.428Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashRupee-12.svg",
         "svg16": "./ui/svg/ui-cashRupee-16.svg",
@@ -2258,7 +2258,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59751 } }
       ],
       "createdAt": "2023-02-01T23:25:40.760Z",
-      "lastUpdated": "2023-10-25T17:34:15.333Z",
+      "lastUpdated": "2024-01-05T21:28:08.572Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashUSD-12.svg",
         "svg16": "./ui/svg/ui-cashUSD-16.svg",
@@ -2304,7 +2304,7 @@
     "513:3586": {
       "type": "ui",
       "name": "chainLink",
-      "hash": "g6ufUYvnp5REZPH/7KfTJxH6G+kH5vAxBnRWOtl23f8=",
+      "hash": "EnYaAO7gRtv6yCVl7eCUJtbeXmgfEhBo+9ZqXb661Y8=",
       "description": "link, attach, linkage, connect, connection, ⛓, 🔗, 🖇",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 60868 } },
@@ -2312,7 +2312,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60866 } }
       ],
       "createdAt": "2023-02-01T23:25:49.843Z",
-      "lastUpdated": "2023-10-25T17:34:15.553Z",
+      "lastUpdated": "2024-01-08T17:52:09.458Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chainLink-12.svg",
         "svg16": "./ui/svg/ui-chainLink-16.svg",
@@ -2402,7 +2402,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60206 } }
       ],
       "createdAt": "2023-02-01T23:25:02.048Z",
-      "lastUpdated": "2023-10-25T18:34:34.646Z",
+      "lastUpdated": "2024-01-04T02:31:21.914Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartPieCircle-12.svg",
         "svg16": "./ui/svg/ui-chartPieCircle-16.svg",
@@ -2438,7 +2438,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61136 } }
       ],
       "createdAt": "2023-02-01T23:25:49.738Z",
-      "lastUpdated": "2023-10-25T17:34:14.856Z",
+      "lastUpdated": "2024-01-05T15:16:39.160Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chatBotAgent-12.svg",
         "svg16": "./ui/svg/ui-chatBotAgent-16.svg",
@@ -2456,7 +2456,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60471 } }
       ],
       "createdAt": "2023-02-01T23:25:49.730Z",
-      "lastUpdated": "2023-10-25T17:34:14.726Z",
+      "lastUpdated": "2024-01-03T23:28:08.229Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chatBubble-12.svg",
         "svg16": "./ui/svg/ui-chatBubble-16.svg",
@@ -2636,7 +2636,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60496 } }
       ],
       "createdAt": "2023-02-01T23:26:07.579Z",
-      "lastUpdated": "2023-10-25T17:34:15.835Z",
+      "lastUpdated": "2024-01-04T22:13:03.971Z",
       "outputs": {
         "svg12": "./ui/svg/ui-close-12.svg",
         "svg16": "./ui/svg/ui-close-16.svg",
@@ -3158,7 +3158,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61171 } }
       ],
       "createdAt": "2023-02-01T23:25:40.682Z",
-      "lastUpdated": "2023-10-25T17:34:15.913Z",
+      "lastUpdated": "2024-01-04T02:35:38.962Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dropsInactive-12.svg",
         "svg16": "./ui/svg/ui-dropsInactive-16.svg",
@@ -3320,7 +3320,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61566 } }
       ],
       "createdAt": "2023-02-01T23:25:30.991Z",
-      "lastUpdated": "2023-10-25T18:34:34.569Z",
+      "lastUpdated": "2024-01-05T15:16:57.701Z",
       "outputs": {
         "svg12": "./ui/svg/ui-faceScan-12.svg",
         "svg16": "./ui/svg/ui-faceScan-16.svg",
@@ -3500,7 +3500,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60451 } }
       ],
       "createdAt": "2023-02-01T23:25:31.021Z",
-      "lastUpdated": "2023-10-25T17:34:14.759Z",
+      "lastUpdated": "2024-01-05T18:34:57.121Z",
       "outputs": {
         "svg12": "./ui/svg/ui-forwardArrow-12.svg",
         "svg16": "./ui/svg/ui-forwardArrow-16.svg",
@@ -3860,7 +3860,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60101 } }
       ],
       "createdAt": "2023-02-01T23:25:40.711Z",
-      "lastUpdated": "2023-10-25T17:34:14.828Z",
+      "lastUpdated": "2024-01-04T19:28:14.059Z",
       "outputs": {
         "svg12": "./ui/svg/ui-info-12.svg",
         "svg16": "./ui/svg/ui-info-16.svg",
@@ -4004,7 +4004,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60226 } }
       ],
       "createdAt": "2023-02-01T23:25:21.903Z",
-      "lastUpdated": "2023-10-25T17:34:14.870Z",
+      "lastUpdated": "2024-01-04T02:30:23.377Z",
       "outputs": {
         "svg12": "./ui/svg/ui-marketCap-12.svg",
         "svg16": "./ui/svg/ui-marketCap-16.svg",
@@ -4148,7 +4148,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61336 } }
       ],
       "createdAt": "2023-02-01T23:25:58.694Z",
-      "lastUpdated": "2023-10-25T17:34:15.541Z",
+      "lastUpdated": "2024-01-04T02:32:46.258Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftBuyInactive-12.svg",
         "svg16": "./ui/svg/ui-nftBuyInactive-16.svg",
@@ -5066,7 +5066,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59961 } }
       ],
       "createdAt": "2023-02-01T23:25:12.807Z",
-      "lastUpdated": "2023-10-25T17:34:14.888Z",
+      "lastUpdated": "2024-01-02T22:29:12.976Z",
       "outputs": {
         "svg12": "./ui/svg/ui-starActive-12.svg",
         "svg16": "./ui/svg/ui-starActive-16.svg",
@@ -5138,7 +5138,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59801 } }
       ],
       "createdAt": "2023-02-01T23:25:12.795Z",
-      "lastUpdated": "2023-10-25T17:34:14.792Z",
+      "lastUpdated": "2024-01-08T23:40:01.405Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step1-12.svg",
         "svg16": "./ui/svg/ui-step1-16.svg",
@@ -5156,7 +5156,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59806 } }
       ],
       "createdAt": "2023-02-01T23:25:12.784Z",
-      "lastUpdated": "2023-10-25T17:34:15.809Z",
+      "lastUpdated": "2024-01-08T23:33:14.453Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step2-12.svg",
         "svg16": "./ui/svg/ui-step2-16.svg",
@@ -5174,7 +5174,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59811 } }
       ],
       "createdAt": "2023-02-01T23:25:12.777Z",
-      "lastUpdated": "2023-10-25T17:34:15.763Z",
+      "lastUpdated": "2024-01-08T17:45:10.563Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step3-12.svg",
         "svg16": "./ui/svg/ui-step3-16.svg",
@@ -5930,7 +5930,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61521 } }
       ],
       "createdAt": "2023-02-01T23:25:02.160Z",
-      "lastUpdated": "2023-10-25T17:34:16.204Z",
+      "lastUpdated": "2024-01-04T02:33:12.898Z",
       "outputs": {
         "svg12": "./ui/svg/ui-megaphone-12.svg",
         "svg16": "./ui/svg/ui-megaphone-16.svg",
@@ -5966,7 +5966,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61511 } }
       ],
       "createdAt": "2023-02-01T23:25:21.843Z",
-      "lastUpdated": "2023-10-25T17:34:16.230Z",
+      "lastUpdated": "2024-01-04T02:33:18.683Z",
       "outputs": {
         "svg12": "./ui/svg/ui-affiliates-12.svg",
         "svg16": "./ui/svg/ui-affiliates-16.svg",
@@ -6743,7 +6743,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61826 } }
       ],
       "createdAt": "2023-10-16T20:13:41.050Z",
-      "lastUpdated": "2023-10-20T17:19:06.534Z",
+      "lastUpdated": "2024-01-05T15:08:38.146Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-coinbase-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-coinbase-12-inactive.svg",
@@ -6972,7 +6972,7 @@
     "1439:520": {
       "type": "nav",
       "name": "nftProduct",
-      "hash": "bzWgaNP0GZd/mdqbPejhj3l5SjBZCvjkZ3TXA1zQJKI=",
+      "hash": "eCtbnt4C6N5c+2a91wpY8caK5CcEZC5T5uw3YtA5Eu0=",
       "description": "nft, product, nav",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61897 } },
@@ -6983,7 +6983,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61892 } }
       ],
       "createdAt": "2023-10-20T17:19:06.485Z",
-      "lastUpdated": "2023-10-20T17:19:06.485Z",
+      "lastUpdated": "2024-01-08T17:52:09.464Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-nftProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-nftProduct-12-inactive.svg",
@@ -7079,7 +7079,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61844 } }
       ],
       "createdAt": "2023-10-20T17:19:06.402Z",
-      "lastUpdated": "2023-10-20T17:19:06.402Z",
+      "lastUpdated": "2024-01-05T15:15:27.895Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-custodyProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-custodyProduct-12-inactive.svg",
@@ -7199,7 +7199,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61874 } }
       ],
       "createdAt": "2023-10-20T17:19:06.430Z",
-      "lastUpdated": "2023-10-20T17:19:06.430Z",
+      "lastUpdated": "2024-01-08T15:54:05.053Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-helpCenterProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-helpCenterProduct-12-inactive.svg",
@@ -7321,6 +7321,60 @@
         "svg16Inactive": "./nav/svg/nav-helpCenterQuestionMark-16-inactive.svg",
         "svg24Active": "./nav/svg/nav-helpCenterQuestionMark-24-active.svg",
         "svg24Inactive": "./nav/svg/nav-helpCenterQuestionMark-24-inactive.svg"
+      }
+    },
+    "1540:22": {
+      "type": "ui",
+      "name": "gaugeMedium",
+      "hash": "CbXqT5/kn0Mtfc1r9ea6HQTG8eoyGbMlfLKT57sYbuU=",
+      "description": "gauge, measure, size, scope, calculate, machine",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61957 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61956 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61955 } }
+      ],
+      "createdAt": "2024-01-08T17:52:09.394Z",
+      "lastUpdated": "2024-01-08T17:52:09.394Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-gaugeMedium-12.svg",
+        "svg16": "./ui/svg/ui-gaugeMedium-16.svg",
+        "svg24": "./ui/svg/ui-gaugeMedium-24.svg"
+      }
+    },
+    "1540:29": {
+      "type": "ui",
+      "name": "gaugeLow",
+      "hash": "CnfOTro3J7gs5QFbQMy10PgDZOqBAsBj38MTRpiJGpE=",
+      "description": "gauge, measure, size, scope, calculate, machine",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61954 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61953 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61952 } }
+      ],
+      "createdAt": "2024-01-08T17:52:09.388Z",
+      "lastUpdated": "2024-01-08T17:52:09.388Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-gaugeLow-12.svg",
+        "svg16": "./ui/svg/ui-gaugeLow-16.svg",
+        "svg24": "./ui/svg/ui-gaugeLow-24.svg"
+      }
+    },
+    "1540:55": {
+      "type": "ui",
+      "name": "gaugeEmpty",
+      "hash": "RLxqO/MTabY3YrEPKcawf2+q7qf/IqO5zjkLidTtFfM=",
+      "description": "gauge, measure, size, scope, calculate, machine",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61951 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61950 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61949 } }
+      ],
+      "createdAt": "2024-01-08T17:52:09.382Z",
+      "lastUpdated": "2024-01-08T17:52:09.382Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-gaugeEmpty-12.svg",
+        "svg16": "./ui/svg/ui-gaugeEmpty-16.svg",
+        "svg24": "./ui/svg/ui-gaugeEmpty-24.svg"
       }
     }
   }

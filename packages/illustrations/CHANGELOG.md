@@ -8,6 +8,53 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.7.0 (1/9/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 1/9/2024. [[#2623](https://github.cbhq.net/frontend/cds/pull/2623)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- airdrop
+- anonymous
+- borrowCoins
+- buy
+- cloud
+- communication
+- digitalGold
+- earnGlobe
+- exchange
+- fiat
+- gamer
+- generative
+- governanceMallet
+- lend
+- lowCost
+- offChain
+- onChain
+- oracle
+- platform
+- private
+- public
+- quest
+- settlement
+- smartContract
+- sustainable
+- tools
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- spacedOutSystemError
+
 ## 2.6.0 (12/12/2023 PST)
 
 #### 🚀 Updates
