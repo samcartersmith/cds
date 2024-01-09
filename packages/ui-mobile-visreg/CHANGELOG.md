@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.1 (1/8/2024 PST)
+
+#### 🐞 Fixes
+
+- **[Visreg]** Upgrade Detox and detox-utils. [[#2610](https://github.cbhq.net/frontend/cds/pull/2610)] [[DX-3012](https://jira.coinbase-corp.com/browse/DX-3012)]
+
 ## 1.2.0 (12/8/2023 PST)
 
 #### 🚀 Updates

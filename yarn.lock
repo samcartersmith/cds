@@ -3933,7 +3933,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/detox-utils@npm:^0.5.0":
+"@cbhq/detox-utils@npm:^0.5.1":
   version: 0.5.1
   resolution: "@cbhq/detox-utils@npm:0.5.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fdetox-utils%2F-%2F%40cbhq%2Fdetox-utils-0.5.1.tgz"
   dependencies:
@@ -4317,7 +4317,7 @@ __metadata:
     "@react-navigation/native": "npm:^6.1.6"
     "@react-navigation/stack": "npm:^6.3.16"
     "@types/react": "npm:18.0.28"
-    detox: "npm:^20.5.0"
+    detox: "npm:^20.14.8"
     lodash: "npm:^4.17.21"
   peerDependencies:
     "@cbhq/cds-common": "workspace:^"
@@ -4335,17 +4335,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/ui-mobile-visreg@workspace:packages/ui-mobile-visreg"
   dependencies:
-    "@cbhq/detox-utils": "npm:^0.5.0"
+    "@cbhq/detox-utils": "npm:^0.5.1"
     "@percy/cli": "npm:^1.26.1"
     "@percy/client": "npm:^1.26.1"
     "@percy/sdk-utils": "npm:^1.26.1"
     "@percy/storybook": "npm:^4.3.6"
-    detox: "npm:^20.5.0"
+    detox: "npm:^20.14.8"
     lodash: "npm:^4.17.21"
   peerDependencies:
     "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/cds-mobile-visualization": "workspace:^"
-    detox: ^20.5.0
+    detox: ^20.14.8
   languageName: unknown
   linkType: soft
 
@@ -4483,14 +4483,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@config-plugins/detox@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@config-plugins/detox@npm:5.0.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40config-plugins%2Fdetox%2F-%2Fdetox-5.0.1.tgz"
+"@config-plugins/detox@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@config-plugins/detox@npm:6.0.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40config-plugins%2Fdetox%2F-%2Fdetox-6.0.0.tgz"
   dependencies:
-    expo-build-properties: "npm:^0.5.1"
+    expo-build-properties: "npm:~0.8.3"
   peerDependencies:
-    expo: ^48
-  checksum: 7f310dbf62fe9b40610dad17b5d75cb84fd549c2cfc9a507916668ee0aef30d1b2638ebfdfbad8bf8a76557d271ed6ed07672b1484dd820be1e4f571f87387ad
+    expo: ^49
+  checksum: 5771984974cdebe067810739b650a2d5af11135a934049faba9998ce00455742885a60cd61905e1c3fc405a5f01022a44e6970a6651454cbced9c525745c90fa
   languageName: node
   linkType: hard
 
@@ -5829,6 +5829,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@flatten-js/interval-tree@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@flatten-js/interval-tree@npm:1.1.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40flatten-js%2Finterval-tree%2F-%2Finterval-tree-1.1.2.tgz"
+  checksum: 621fde63fbf6cd5c712df8c77a1cc1082b6c7274a68cba0430af7caf49d9ab17b3a63644336885a2e04d784b4dd1ebc286c0caa6d439e96ac02a0154daec15b1
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.2
   resolution: "@gar/promisify@npm:1.1.2"
@@ -6327,7 +6334,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/console@npm:^29.5.0, @jest/console@npm:^29.7.0":
+"@jest/console@npm:^29.7.0":
   version: 29.7.0
   resolution: "@jest/console@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Fconsole%2F-%2Fconsole-29.7.0.tgz"
   dependencies:
@@ -6383,36 +6390,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/core@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "@jest/core@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Fcore%2F-%2Fcore-29.5.0.tgz"
+"@jest/core@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "@jest/core@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Fcore%2F-%2Fcore-29.7.0.tgz"
   dependencies:
-    "@jest/console": "npm:^29.5.0"
-    "@jest/reporters": "npm:^29.5.0"
-    "@jest/test-result": "npm:^29.5.0"
-    "@jest/transform": "npm:^29.5.0"
-    "@jest/types": "npm:^29.5.0"
+    "@jest/console": "npm:^29.7.0"
+    "@jest/reporters": "npm:^29.7.0"
+    "@jest/test-result": "npm:^29.7.0"
+    "@jest/transform": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
     "@types/node": "npm:*"
     ansi-escapes: "npm:^4.2.1"
     chalk: "npm:^4.0.0"
     ci-info: "npm:^3.2.0"
     exit: "npm:^0.1.2"
     graceful-fs: "npm:^4.2.9"
-    jest-changed-files: "npm:^29.5.0"
-    jest-config: "npm:^29.5.0"
-    jest-haste-map: "npm:^29.5.0"
-    jest-message-util: "npm:^29.5.0"
-    jest-regex-util: "npm:^29.4.3"
-    jest-resolve: "npm:^29.5.0"
-    jest-resolve-dependencies: "npm:^29.5.0"
-    jest-runner: "npm:^29.5.0"
-    jest-runtime: "npm:^29.5.0"
-    jest-snapshot: "npm:^29.5.0"
-    jest-util: "npm:^29.5.0"
-    jest-validate: "npm:^29.5.0"
-    jest-watcher: "npm:^29.5.0"
+    jest-changed-files: "npm:^29.7.0"
+    jest-config: "npm:^29.7.0"
+    jest-haste-map: "npm:^29.7.0"
+    jest-message-util: "npm:^29.7.0"
+    jest-regex-util: "npm:^29.6.3"
+    jest-resolve: "npm:^29.7.0"
+    jest-resolve-dependencies: "npm:^29.7.0"
+    jest-runner: "npm:^29.7.0"
+    jest-runtime: "npm:^29.7.0"
+    jest-snapshot: "npm:^29.7.0"
+    jest-util: "npm:^29.7.0"
+    jest-validate: "npm:^29.7.0"
+    jest-watcher: "npm:^29.7.0"
     micromatch: "npm:^4.0.4"
-    pretty-format: "npm:^29.5.0"
+    pretty-format: "npm:^29.7.0"
     slash: "npm:^3.0.0"
     strip-ansi: "npm:^6.0.0"
   peerDependencies:
@@ -6420,7 +6427,7 @@ __metadata:
   peerDependenciesMeta:
     node-notifier:
       optional: true
-  checksum: 6c26610e65e61017347ae11e90f05cac8419607fcd15b50aeb6b6a1908aa0999e6d97ac0a33dc1108b507b80dae3cd8ad64d9f9c85bd457f8580e289c29c88b0
+  checksum: ab6ac2e562d083faac7d8152ec1cc4eccc80f62e9579b69ed40aedf7211a6b2d57024a6cd53c4e35fd051c39a236e86257d1d99ebdb122291969a0a04563b51e
   languageName: node
   linkType: hard
 
@@ -6584,16 +6591,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/reporters@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "@jest/reporters@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Freporters%2F-%2Freporters-29.5.0.tgz"
+"@jest/reporters@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "@jest/reporters@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Freporters%2F-%2Freporters-29.7.0.tgz"
   dependencies:
     "@bcoe/v8-coverage": "npm:^0.2.3"
-    "@jest/console": "npm:^29.5.0"
-    "@jest/test-result": "npm:^29.5.0"
-    "@jest/transform": "npm:^29.5.0"
-    "@jest/types": "npm:^29.5.0"
-    "@jridgewell/trace-mapping": "npm:^0.3.15"
+    "@jest/console": "npm:^29.7.0"
+    "@jest/test-result": "npm:^29.7.0"
+    "@jest/transform": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
+    "@jridgewell/trace-mapping": "npm:^0.3.18"
     "@types/node": "npm:*"
     chalk: "npm:^4.0.0"
     collect-v8-coverage: "npm:^1.0.0"
@@ -6601,13 +6608,13 @@ __metadata:
     glob: "npm:^7.1.3"
     graceful-fs: "npm:^4.2.9"
     istanbul-lib-coverage: "npm:^3.0.0"
-    istanbul-lib-instrument: "npm:^5.1.0"
+    istanbul-lib-instrument: "npm:^6.0.0"
     istanbul-lib-report: "npm:^3.0.0"
     istanbul-lib-source-maps: "npm:^4.0.0"
     istanbul-reports: "npm:^3.1.3"
-    jest-message-util: "npm:^29.5.0"
-    jest-util: "npm:^29.5.0"
-    jest-worker: "npm:^29.5.0"
+    jest-message-util: "npm:^29.7.0"
+    jest-util: "npm:^29.7.0"
+    jest-worker: "npm:^29.7.0"
     slash: "npm:^3.0.0"
     string-length: "npm:^4.0.1"
     strip-ansi: "npm:^6.0.0"
@@ -6617,7 +6624,7 @@ __metadata:
   peerDependenciesMeta:
     node-notifier:
       optional: true
-  checksum: bf9a13434e0d623a66de80b835fec37227fbef0de7cf73545d8a8a3c80b2d96a8ffd3d077378da0a0c7565772ca6cd3641a5d6c282d9490400d2ce39dbf47525
+  checksum: a17d1644b26dea14445cedd45567f4ba7834f980be2ef74447204e14238f121b50d8b858fde648083d2cd8f305f81ba434ba49e37a5f4237a6f2a61180cc73dc
   languageName: node
   linkType: hard
 
@@ -6673,7 +6680,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/test-result@npm:^29.2.1, @jest/test-result@npm:^29.5.0, @jest/test-result@npm:^29.7.0":
+"@jest/test-result@npm:^29.2.1, @jest/test-result@npm:^29.7.0":
   version: 29.7.0
   resolution: "@jest/test-result@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Ftest-result%2F-%2Ftest-result-29.7.0.tgz"
   dependencies:
@@ -6697,15 +6704,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/test-sequencer@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "@jest/test-sequencer@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Ftest-sequencer%2F-%2Ftest-sequencer-29.5.0.tgz"
+"@jest/test-sequencer@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "@jest/test-sequencer@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Ftest-sequencer%2F-%2Ftest-sequencer-29.7.0.tgz"
   dependencies:
-    "@jest/test-result": "npm:^29.5.0"
+    "@jest/test-result": "npm:^29.7.0"
     graceful-fs: "npm:^4.2.9"
-    jest-haste-map: "npm:^29.5.0"
+    jest-haste-map: "npm:^29.7.0"
     slash: "npm:^3.0.0"
-  checksum: 5328f9abea50edadb325c27b8ac8ef6499d0710329fb5c85ca995b45bdaed94bb5e257ccc368d6c6fcf907700108c711b63690aac38f214d92314601c102bc22
+  checksum: 4420c26a0baa7035c5419b0892ff8ffe9a41b1583ec54a10db3037cd46a7e29dd3d7202f8aa9d376e9e53be5f8b1bc0d16e1de6880a6d319b033b01dc4c8f639
   languageName: node
   linkType: hard
 
@@ -6755,7 +6762,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/transform@npm:^29.0.0, @jest/transform@npm:^29.5.0, @jest/transform@npm:^29.7.0":
+"@jest/transform@npm:^29.0.0, @jest/transform@npm:^29.7.0":
   version: 29.7.0
   resolution: "@jest/transform@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jest%2Ftransform%2F-%2Ftransform-29.7.0.tgz"
   dependencies:
@@ -6917,7 +6924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/trace-mapping@npm:^0.3.12, @jridgewell/trace-mapping@npm:^0.3.13, @jridgewell/trace-mapping@npm:^0.3.15, @jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.18, @jridgewell/trace-mapping@npm:^0.3.8, @jridgewell/trace-mapping@npm:^0.3.9":
+"@jridgewell/trace-mapping@npm:^0.3.12, @jridgewell/trace-mapping@npm:^0.3.13, @jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.18, @jridgewell/trace-mapping@npm:^0.3.8, @jridgewell/trace-mapping@npm:^0.3.9":
   version: 0.3.19
   resolution: "@jridgewell/trace-mapping@npm:0.3.19::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40jridgewell%2Ftrace-mapping%2F-%2Ftrace-mapping-0.3.19.tgz"
   dependencies:
@@ -14440,20 +14447,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-jest@npm:^29.3.0, babel-jest@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "babel-jest@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbabel-jest%2F-%2Fbabel-jest-29.5.0.tgz"
+"babel-jest@npm:^29.3.0, babel-jest@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "babel-jest@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbabel-jest%2F-%2Fbabel-jest-29.7.0.tgz"
   dependencies:
-    "@jest/transform": "npm:^29.5.0"
+    "@jest/transform": "npm:^29.7.0"
     "@types/babel__core": "npm:^7.1.14"
     babel-plugin-istanbul: "npm:^6.1.1"
-    babel-preset-jest: "npm:^29.5.0"
+    babel-preset-jest: "npm:^29.6.3"
     chalk: "npm:^4.0.0"
     graceful-fs: "npm:^4.2.9"
     slash: "npm:^3.0.0"
   peerDependencies:
     "@babel/core": ^7.8.0
-  checksum: 33bad2c4e567f0db04c9e5575371b98422994d6047ebc855926fe05e48c7fd580f89fa67708c11b2d41c1ddb02f420ba51483b36eac909490488056ade683474
+  checksum: 8a0953bd813b3a8926008f7351611055548869e9a53dd36d6e7e96679001f71e65fd7dbfe253265c3ba6a4e630dc7c845cf3e78b17d758ef1880313ce8fba258
   languageName: node
   linkType: hard
 
@@ -14597,15 +14604,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-jest-hoist@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "babel-plugin-jest-hoist@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbabel-plugin-jest-hoist%2F-%2Fbabel-plugin-jest-hoist-29.5.0.tgz"
+"babel-plugin-jest-hoist@npm:^29.6.3":
+  version: 29.6.3
+  resolution: "babel-plugin-jest-hoist@npm:29.6.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbabel-plugin-jest-hoist%2F-%2Fbabel-plugin-jest-hoist-29.6.3.tgz"
   dependencies:
     "@babel/template": "npm:^7.3.3"
     "@babel/types": "npm:^7.3.3"
     "@types/babel__core": "npm:^7.1.14"
     "@types/babel__traverse": "npm:^7.0.6"
-  checksum: 18066c177da855f478178bd2a48fa1c131d31f15c04af8c732bb4c7eb5c952fde8ac9b11133e5ddd5b74aed92c6a833fbfde51cc5dec1f7169bf865b548da680
+  checksum: 9bfa86ec4170bd805ab8ca5001ae50d8afcb30554d236ba4a7ffc156c1a92452e220e4acbd98daefc12bf0216fccd092d0a2efed49e7e384ec59e0597a926d65
   languageName: node
   linkType: hard
 
@@ -14879,15 +14886,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-jest@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "babel-preset-jest@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbabel-preset-jest%2F-%2Fbabel-preset-jest-29.5.0.tgz"
+"babel-preset-jest@npm:^29.6.3":
+  version: 29.6.3
+  resolution: "babel-preset-jest@npm:29.6.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbabel-preset-jest%2F-%2Fbabel-preset-jest-29.6.3.tgz"
   dependencies:
-    babel-plugin-jest-hoist: "npm:^29.5.0"
+    babel-plugin-jest-hoist: "npm:^29.6.3"
     babel-preset-current-node-syntax: "npm:^1.0.0"
   peerDependencies:
     "@babel/core": ^7.0.0
-  checksum: 5566ca2762766c9319b4973d018d2fa08c0fcf6415c72cc54f4c8e7199e851ea8f5e6c6730f03ed7ed44fc8beefa959dd15911f2647dee47c615ff4faeddb1ad
+  checksum: aa4ff2a8a728d9d698ed521e3461a109a1e66202b13d3494e41eea30729a5e7cc03b3a2d56c594423a135429c37bf63a9fa8b0b9ce275298be3095a88c69f6fb
   languageName: node
   linkType: hard
 
@@ -15569,6 +15576,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bunyamin@npm:^1.5.0":
+  version: 1.5.1
+  resolution: "bunyamin@npm:1.5.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbunyamin%2F-%2Fbunyamin-1.5.1.tgz"
+  dependencies:
+    "@flatten-js/interval-tree": "npm:^1.1.2"
+    multi-sort-stream: "npm:^1.0.4"
+    stream-json: "npm:^1.7.5"
+    trace-event-lib: "npm:^1.3.1"
+  peerDependencies:
+    "@types/bunyan": ^1.8.8
+    bunyan: ^1.8.15 || ^2.0.0
+  peerDependenciesMeta:
+    "@types/bunyan":
+      optional: true
+    bunyan:
+      optional: true
+  checksum: d6f21f62850cbcbfe7ef1ffd5488eab64654526dde01cfcb88295042154afdba88babe4d2fde28576fbf18d4433bbf87532f1f53847dfe4484b5593e109d7bed
+  languageName: node
+  linkType: hard
+
 "bunyan-debug-stream@npm:^3.1.0":
   version: 3.1.0
   resolution: "bunyan-debug-stream@npm:3.1.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbunyan-debug-stream%2F-%2Fbunyan-debug-stream-3.1.0.tgz"
@@ -15600,6 +15627,30 @@ __metadata:
   bin:
     bunyan: ./bin/bunyan
   checksum: 676f4beca08b8a53c99773664abea325c54bb51bf78f6290980f082ae08d9792e04c78e354e56d50fe683bdc0afd612dd42baf45b41d9f7ab15dc38baaa1567d
+  languageName: node
+  linkType: hard
+
+"bunyan@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "bunyan@npm:2.0.5::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fbunyan%2F-%2Fbunyan-2.0.5.tgz"
+  dependencies:
+    dtrace-provider: "npm:~0.8"
+    exeunt: "npm:1.1.0"
+    moment: "npm:^2.19.3"
+    mv: "npm:~2"
+    safe-json-stringify: "npm:~1"
+  dependenciesMeta:
+    dtrace-provider:
+      optional: true
+    moment:
+      optional: true
+    mv:
+      optional: true
+    safe-json-stringify:
+      optional: true
+  bin:
+    bunyan: bin/bunyan
+  checksum: f6a8030dddf0c780b58eb0ab316054081714483ba9a56f7032c253009d589c7fa1f91d2dd26c5d740d6cc943cde7ac2803b805900375dd8442c1183d480dd51c
   languageName: node
   linkType: hard
 
@@ -17352,6 +17403,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"create-jest@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "create-jest@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcreate-jest%2F-%2Fcreate-jest-29.7.0.tgz"
+  dependencies:
+    "@jest/types": "npm:^29.6.3"
+    chalk: "npm:^4.0.0"
+    exit: "npm:^0.1.2"
+    graceful-fs: "npm:^4.2.9"
+    jest-config: "npm:^29.7.0"
+    jest-util: "npm:^29.7.0"
+    prompts: "npm:^2.0.1"
+  bin:
+    create-jest: bin/create-jest.js
+  checksum: 847b4764451672b4174be4d5c6d7d63442ec3aa5f3de52af924e4d996d87d7801c18e125504f25232fc75840f6625b3ac85860fac6ce799b5efae7bdcaf4a2b7
+  languageName: node
+  linkType: hard
+
 "create-require@npm:^1.1.0":
   version: 1.1.1
   resolution: "create-require@npm:1.1.1"
@@ -18598,14 +18666,14 @@ __metadata:
     babel-plugin-replace-ts-export-assignment: "npm:^0.0.2"
     chalk: "npm:^4.1.2"
     danger: "npm:^11.1.4"
-    detox: "npm:^20.5.0"
+    detox: "npm:^20.14.8"
     dotenv-webpack: "npm:7.0.3"
     eslint: "npm:^8.32.0"
     eslint-plugin-codegen: "npm:^0.16.1"
     eslint-plugin-testing-library: "npm:^5.10.0"
     execa: "npm:^5.1.1"
     fast-glob: "npm:^3.2.11"
-    jest: "npm:^29.5.0"
+    jest: "npm:^29.7.0"
     jest-axe: "npm:^4.1.0"
     jest-environment-jsdom: "npm:^29.5.0"
     nx: "npm:15.7.2"
@@ -18727,27 +18795,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detox@npm:^20.5.0":
-  version: 20.5.0
-  resolution: "detox@npm:20.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fdetox%2F-%2Fdetox-20.5.0.tgz"
+"detox@npm:^20.14.8":
+  version: 20.14.8
+  resolution: "detox@npm:20.14.8::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fdetox%2F-%2Fdetox-20.14.8.tgz"
   dependencies:
     ajv: "npm:^8.6.3"
     bunyan: "npm:^1.8.12"
     bunyan-debug-stream: "npm:^3.1.0"
     caf: "npm:^15.0.1"
-    chalk: "npm:^2.4.2"
+    chalk: "npm:^4.0.0"
     child-process-promise: "npm:^2.2.0"
     execa: "npm:^5.1.1"
-    find-up: "npm:^4.1.0"
-    fs-extra: "npm:^4.0.2"
+    find-up: "npm:^5.0.0"
+    fs-extra: "npm:^11.0.0"
     funpermaproxy: "npm:^1.1.0"
     glob: "npm:^8.0.3"
     ini: "npm:^1.3.4"
+    jest-environment-emit: "npm:^1.0.5"
     json-cycle: "npm:^1.3.0"
     lodash: "npm:^4.17.11"
     multi-sort-stream: "npm:^1.0.3"
     multipipe: "npm:^4.0.0"
-    node-ipc: "npm:^9.2.1"
+    node-ipc: "npm:9.2.1"
     proper-lockfile: "npm:^3.0.2"
     resolve-from: "npm:^5.0.0"
     sanitize-filename: "npm:^1.6.1"
@@ -18762,8 +18831,8 @@ __metadata:
     trace-event-lib: "npm:^1.3.1"
     which: "npm:^1.3.1"
     ws: "npm:^7.0.0"
-    yargs: "npm:^16.0.3"
-    yargs-parser: "npm:^20.2.9"
+    yargs: "npm:^17.0.0"
+    yargs-parser: "npm:^21.0.0"
     yargs-unparser: "npm:^2.0.0"
   peerDependencies:
     jest: 29.x.x || 28.x.x || ^27.2.5
@@ -18772,7 +18841,7 @@ __metadata:
       optional: true
   bin:
     detox: local-cli/cli.js
-  checksum: a72f5c07d8cd2cf820ca5f94120bd3882b4410a6763fabf7c571e15e529a8b05a4a7a233739e1497ae9bd938f9d6c23c2a5a667379803d442923854d3582bb21
+  checksum: 602a2ad0f54e66568bd1c8f221a5abbbbbfefa98c63618597e25783a31ada4344b66d35760d922bd3c78c4a936f8e1ae76fc08b56ba196ded164f7ab8fbd9070
   languageName: node
   linkType: hard
 
@@ -20738,6 +20807,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"exeunt@npm:1.1.0":
+  version: 1.1.0
+  resolution: "exeunt@npm:1.1.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexeunt%2F-%2Fexeunt-1.1.0.tgz"
+  checksum: 16c4c7e0ce6aa71df407322678b070e12bd14fb2fd736f355fbfa9017f72923194d7d5eb2022089dfab3a88247393c590bf30fc3b101b5b8219332316f37fa9c
+  languageName: node
+  linkType: hard
+
 "exit@npm:^0.1.2":
   version: 0.1.2
   resolution: "exit@npm:0.1.2"
@@ -20853,18 +20929,6 @@ __metadata:
     path-browserify: "npm:^1.0.0"
     url-parse: "npm:^1.5.9"
   checksum: 2b6ac86e16b3a05c9afb3435e86cc27edb4ede81b1eb1e9e09b2575c90c2def87184617ef410f1cf5602d08dd1fa5ccc39bff837f8fe2278a004cdaa44575850
-  languageName: node
-  linkType: hard
-
-"expo-build-properties@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "expo-build-properties@npm:0.5.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fexpo-build-properties%2F-%2Fexpo-build-properties-0.5.1.tgz"
-  dependencies:
-    ajv: "npm:^8.11.0"
-    semver: "npm:^7.3.5"
-  peerDependencies:
-    expo: "*"
-  checksum: 6279d3d214851084b3ed2e409d8c367fb3b7053c2bb69af816a15b5538caaf177774efe0e859f0e2fa1ff77e13b8ff1c1d77ff84faf75893dc237220cd4c2ef8
   languageName: node
   linkType: hard
 
@@ -22068,25 +22132,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^11.1.0, fs-extra@npm:^11.1.1":
-  version: 11.1.1
-  resolution: "fs-extra@npm:11.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ffs-extra%2F-%2Ffs-extra-11.1.1.tgz"
+"fs-extra@npm:^11.0.0, fs-extra@npm:^11.1.0, fs-extra@npm:^11.1.1":
+  version: 11.2.0
+  resolution: "fs-extra@npm:11.2.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ffs-extra%2F-%2Ffs-extra-11.2.0.tgz"
   dependencies:
     graceful-fs: "npm:^4.2.0"
     jsonfile: "npm:^6.0.1"
     universalify: "npm:^2.0.0"
-  checksum: c4e9fabf9762a70d1403316b7faa899f3d3303c8afa765b891c2210fdeba368461e04ae1203920b64ef6a7d066a39ab8cef2160b5ce8d1011bb4368688cd9bb7
-  languageName: node
-  linkType: hard
-
-"fs-extra@npm:^4.0.2":
-  version: 4.0.3
-  resolution: "fs-extra@npm:4.0.3"
-  dependencies:
-    graceful-fs: "npm:^4.1.2"
-    jsonfile: "npm:^4.0.0"
-    universalify: "npm:^0.1.0"
-  checksum: c1ab28ac6b19a1e37f9c0fb3a233b7333bd4d12ea2a514b5469ba956f022fa0e2aefa3b351d1117b80ed45495bb779427c8f64727c150bb1599c2ce9ab3b42ac
+  checksum: 0579bf6726a4cd054d4aa308f10b483f52478bb16284f32cf60b4ce0542063d551fca1a08a2af365e35db21a3fa5a06cf2a6ed614004b4368982bc754cb816b3
   languageName: node
   linkType: hard
 
@@ -25260,6 +25313,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"istanbul-lib-instrument@npm:^6.0.0":
+  version: 6.0.1
+  resolution: "istanbul-lib-instrument@npm:6.0.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fistanbul-lib-instrument%2F-%2Fistanbul-lib-instrument-6.0.1.tgz"
+  dependencies:
+    "@babel/core": "npm:^7.12.3"
+    "@babel/parser": "npm:^7.14.7"
+    "@istanbuljs/schema": "npm:^0.1.2"
+    istanbul-lib-coverage: "npm:^3.2.0"
+    semver: "npm:^7.5.4"
+  checksum: 95fd8c66e586840989cb3c7819c6da66c4742a6fedbf16b51a5c7f1898941ad07b79ddff020f479d3a1d76743ecdbf255d93c35221875687477d4b118026e7e7
+  languageName: node
+  linkType: hard
+
 "istanbul-lib-processinfo@npm:^2.0.2":
   version: 2.0.3
   resolution: "istanbul-lib-processinfo@npm:2.0.3"
@@ -25389,13 +25455,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-changed-files@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest-changed-files@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-changed-files%2F-%2Fjest-changed-files-29.5.0.tgz"
+"jest-changed-files@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-changed-files@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-changed-files%2F-%2Fjest-changed-files-29.7.0.tgz"
   dependencies:
     execa: "npm:^5.0.0"
+    jest-util: "npm:^29.7.0"
     p-limit: "npm:^3.1.0"
-  checksum: 6e337b09dca173dc60d53a1c880817ef31f91c6ddc23d93fabb7e714d4388857332c76e7a7fc627bf150e3fba0b70ba968912f86934bd176ca0dc66883303122
+  checksum: 3d93742e56b1a73a145d55b66e96711fbf87ef89b96c2fab7cfdfba8ec06612591a982111ca2b712bb853dbc16831ec8b43585a2a96b83862d6767de59cbf83d
   languageName: node
   linkType: hard
 
@@ -25453,7 +25520,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-circus@npm:^29.3.0, jest-circus@npm:^29.5.0":
+"jest-circus@npm:^29.3.0, jest-circus@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-circus@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-circus%2F-%2Fjest-circus-29.7.0.tgz"
   dependencies:
@@ -25508,21 +25575,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-cli@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest-cli@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-cli%2F-%2Fjest-cli-29.5.0.tgz"
+"jest-cli@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-cli@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-cli%2F-%2Fjest-cli-29.7.0.tgz"
   dependencies:
-    "@jest/core": "npm:^29.5.0"
-    "@jest/test-result": "npm:^29.5.0"
-    "@jest/types": "npm:^29.5.0"
+    "@jest/core": "npm:^29.7.0"
+    "@jest/test-result": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
     chalk: "npm:^4.0.0"
+    create-jest: "npm:^29.7.0"
     exit: "npm:^0.1.2"
-    graceful-fs: "npm:^4.2.9"
     import-local: "npm:^3.0.2"
-    jest-config: "npm:^29.5.0"
-    jest-util: "npm:^29.5.0"
-    jest-validate: "npm:^29.5.0"
-    prompts: "npm:^2.0.1"
+    jest-config: "npm:^29.7.0"
+    jest-util: "npm:^29.7.0"
+    jest-validate: "npm:^29.7.0"
     yargs: "npm:^17.3.1"
   peerDependencies:
     node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
@@ -25530,8 +25596,8 @@ __metadata:
     node-notifier:
       optional: true
   bin:
-    jest: ./bin/jest.js
-  checksum: a187b91096efbdeea3a2529f4dff610a7d93a61ddb71dce46ddd314ab6ccb82b9e11936d5ca057441e5e5e0a87b30a7c7c1b18df2dad8ff13d10e5f8ab52c695
+    jest: bin/jest.js
+  checksum: 6cc62b34d002c034203065a31e5e9a19e7c76d9e8ef447a6f70f759c0714cb212c6245f75e270ba458620f9c7b26063cd8cf6cd1f7e3afd659a7cc08add17307
   languageName: node
   linkType: hard
 
@@ -25573,30 +25639,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-config@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest-config@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-config%2F-%2Fjest-config-29.5.0.tgz"
+"jest-config@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-config@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-config%2F-%2Fjest-config-29.7.0.tgz"
   dependencies:
     "@babel/core": "npm:^7.11.6"
-    "@jest/test-sequencer": "npm:^29.5.0"
-    "@jest/types": "npm:^29.5.0"
-    babel-jest: "npm:^29.5.0"
+    "@jest/test-sequencer": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
+    babel-jest: "npm:^29.7.0"
     chalk: "npm:^4.0.0"
     ci-info: "npm:^3.2.0"
     deepmerge: "npm:^4.2.2"
     glob: "npm:^7.1.3"
     graceful-fs: "npm:^4.2.9"
-    jest-circus: "npm:^29.5.0"
-    jest-environment-node: "npm:^29.5.0"
-    jest-get-type: "npm:^29.4.3"
-    jest-regex-util: "npm:^29.4.3"
-    jest-resolve: "npm:^29.5.0"
-    jest-runner: "npm:^29.5.0"
-    jest-util: "npm:^29.5.0"
-    jest-validate: "npm:^29.5.0"
+    jest-circus: "npm:^29.7.0"
+    jest-environment-node: "npm:^29.7.0"
+    jest-get-type: "npm:^29.6.3"
+    jest-regex-util: "npm:^29.6.3"
+    jest-resolve: "npm:^29.7.0"
+    jest-runner: "npm:^29.7.0"
+    jest-util: "npm:^29.7.0"
+    jest-validate: "npm:^29.7.0"
     micromatch: "npm:^4.0.4"
     parse-json: "npm:^5.2.0"
-    pretty-format: "npm:^29.5.0"
+    pretty-format: "npm:^29.7.0"
     slash: "npm:^3.0.0"
     strip-json-comments: "npm:^3.1.1"
   peerDependencies:
@@ -25607,7 +25673,7 @@ __metadata:
       optional: true
     ts-node:
       optional: true
-  checksum: f161fe2cd9e54884a19a8acd82cdb4cd5078174bc5a1a210fe587b8761d14941b15834ce7486b6b46d14b63394657656a258b01e4d07801641d1c8b38168d6a9
+  checksum: 6bdf570e9592e7d7dd5124fc0e21f5fe92bd15033513632431b211797e3ab57eaa312f83cc6481b3094b72324e369e876f163579d60016677c117ec4853cf02b
   languageName: node
   linkType: hard
 
@@ -25663,12 +25729,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-docblock@npm:^29.4.3":
-  version: 29.4.3
-  resolution: "jest-docblock@npm:29.4.3::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-docblock%2F-%2Fjest-docblock-29.4.3.tgz"
+"jest-docblock@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-docblock@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-docblock%2F-%2Fjest-docblock-29.7.0.tgz"
   dependencies:
     detect-newline: "npm:^3.0.0"
-  checksum: fd6bb0b6c60a1d87ade37b8bd8404c64518dc42357f256eeb8cb3f313eb00c138645d602ba7c57059a3de4a6570f12ab1234cb3d2d7a9b948d9dfa255e85b1d2
+  checksum: 8d48818055bc96c9e4ec2e217a5a375623c0d0bfae8d22c26e011074940c202aa2534a3362294c81d981046885c05d304376afba9f2874143025981148f3e96d
   languageName: node
   linkType: hard
 
@@ -25695,6 +25761,39 @@ __metadata:
     jest-util: "npm:^29.7.0"
     pretty-format: "npm:^29.7.0"
   checksum: bd1a077654bdaa013b590deb5f7e7ade68f2e3289180a8c8f53bc8a49f3b40740c0ec2d3a3c1aee906f682775be2bebbac37491d80b634d15276b0aa0f2e3fda
+  languageName: node
+  linkType: hard
+
+"jest-environment-emit@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "jest-environment-emit@npm:1.0.5::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-environment-emit%2F-%2Fjest-environment-emit-1.0.5.tgz"
+  dependencies:
+    bunyamin: "npm:^1.5.0"
+    bunyan: "npm:^2.0.5"
+    bunyan-debug-stream: "npm:^3.1.0"
+    funpermaproxy: "npm:^1.1.0"
+    lodash.merge: "npm:^4.6.2"
+    node-ipc: "npm:9.2.1"
+    strip-ansi: "npm:^6.0.0"
+    tslib: "npm:^2.5.3"
+  peerDependencies:
+    "@jest/environment": ">=27.2.5"
+    "@jest/types": ">=27.2.5"
+    jest: ">=27.2.5"
+    jest-environment-jsdom: ">=27.2.5"
+    jest-environment-node: ">=27.2.5"
+  peerDependenciesMeta:
+    "@jest/environment":
+      optional: true
+    "@jest/types":
+      optional: true
+    jest:
+      optional: true
+    jest-environment-jsdom:
+      optional: true
+    jest-environment-node:
+      optional: true
+  checksum: bfa55533a56c55c033a8ed86304587550317042efc4832b22f8b3a192908ba88ed5ffefb45fdb533a85489b29c692202ef9eee6ee311c24360ef979146c966cf
   languageName: node
   linkType: hard
 
@@ -25733,17 +25832,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-node@npm:^29.2.1, jest-environment-node@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest-environment-node@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-environment-node%2F-%2Fjest-environment-node-29.5.0.tgz"
+"jest-environment-node@npm:^29.2.1, jest-environment-node@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-environment-node@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-environment-node%2F-%2Fjest-environment-node-29.7.0.tgz"
   dependencies:
-    "@jest/environment": "npm:^29.5.0"
-    "@jest/fake-timers": "npm:^29.5.0"
-    "@jest/types": "npm:^29.5.0"
+    "@jest/environment": "npm:^29.7.0"
+    "@jest/fake-timers": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
     "@types/node": "npm:*"
-    jest-mock: "npm:^29.5.0"
-    jest-util: "npm:^29.5.0"
-  checksum: 87248747bc988468ab973020b34e668d63331853f84e137e9d8538db9e931c6d506a81fa1abfb0e4bf89a7ee9c325a417a6081e9f795d21cbf793ae4afb96643
+    jest-mock: "npm:^29.7.0"
+    jest-util: "npm:^29.7.0"
+  checksum: 9cf7045adf2307cc93aed2f8488942e39388bff47ec1df149a997c6f714bfc66b2056768973770d3f8b1bf47396c19aa564877eb10ec978b952c6018ed1bd637
   languageName: node
   linkType: hard
 
@@ -25773,7 +25872,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-get-type@npm:^29.0.0, jest-get-type@npm:^29.4.3, jest-get-type@npm:^29.6.3":
+"jest-get-type@npm:^29.0.0, jest-get-type@npm:^29.6.3":
   version: 29.6.3
   resolution: "jest-get-type@npm:29.6.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-get-type%2F-%2Fjest-get-type-29.6.3.tgz"
   checksum: 88ac9102d4679d768accae29f1e75f592b760b44277df288ad76ce5bf038c3f5ce3719dea8aa0f035dac30e9eb034b848ce716b9183ad7cc222d029f03e92205
@@ -25828,7 +25927,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-haste-map@npm:^29.5.0, jest-haste-map@npm:^29.7.0":
+"jest-haste-map@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-haste-map@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-haste-map%2F-%2Fjest-haste-map-29.7.0.tgz"
   dependencies:
@@ -25873,13 +25972,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-leak-detector@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest-leak-detector@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-leak-detector%2F-%2Fjest-leak-detector-29.5.0.tgz"
+"jest-leak-detector@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-leak-detector@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-leak-detector%2F-%2Fjest-leak-detector-29.7.0.tgz"
   dependencies:
-    jest-get-type: "npm:^29.4.3"
-    pretty-format: "npm:^29.5.0"
-  checksum: 0fb845da7ac9cdfc9b3b2e35f6f623a41c547d7dc0103ceb0349013459d00de5870b5689a625e7e37f9644934b40e8f1dcdd5422d14d57470600350364676313
+    jest-get-type: "npm:^29.6.3"
+    pretty-format: "npm:^29.7.0"
+  checksum: e3950e3ddd71e1d0c22924c51a300a1c2db6cf69ec1e51f95ccf424bcc070f78664813bef7aed4b16b96dfbdeea53fe358f8aeaaea84346ae15c3735758f1605
   languageName: node
   linkType: hard
 
@@ -25953,7 +26052,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-message-util@npm:^29.2.1, jest-message-util@npm:^29.5.0, jest-message-util@npm:^29.7.0":
+"jest-message-util@npm:^29.2.1, jest-message-util@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-message-util@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-message-util%2F-%2Fjest-message-util-29.7.0.tgz"
   dependencies:
@@ -26071,7 +26170,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-regex-util@npm:^29.0.0, jest-regex-util@npm:^29.4.3, jest-regex-util@npm:^29.6.3":
+"jest-regex-util@npm:^29.0.0, jest-regex-util@npm:^29.6.3":
   version: 29.6.3
   resolution: "jest-regex-util@npm:29.6.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-regex-util%2F-%2Fjest-regex-util-29.6.3.tgz"
   checksum: 0518beeb9bf1228261695e54f0feaad3606df26a19764bc19541e0fc6e2a3737191904607fb72f3f2ce85d9c16b28df79b7b1ec9443aa08c3ef0e9efda6f8f2a
@@ -26088,13 +26187,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-resolve-dependencies@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest-resolve-dependencies@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-resolve-dependencies%2F-%2Fjest-resolve-dependencies-29.5.0.tgz"
+"jest-resolve-dependencies@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-resolve-dependencies@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-resolve-dependencies%2F-%2Fjest-resolve-dependencies-29.7.0.tgz"
   dependencies:
-    jest-regex-util: "npm:^29.4.3"
-    jest-snapshot: "npm:^29.5.0"
-  checksum: d2b94f78deeee217e16853eb0a0a59ef70d1173eb104e5a801ea8045d18bc405ef8d65e8d4b74cc33d0649a16c7cd4118a5641f86c26c2ab43beadad52649e95
+    jest-regex-util: "npm:^29.6.3"
+    jest-snapshot: "npm:^29.7.0"
+  checksum: 1e206f94a660d81e977bcfb1baae6450cb4a81c92e06fad376cc5ea16b8e8c6ea78c383f39e95591a9eb7f925b6a1021086c38941aa7c1b8a6a813c2f6e93675
   languageName: node
   linkType: hard
 
@@ -26115,7 +26214,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-resolve@npm:^29.5.0, jest-resolve@npm:^29.7.0":
+"jest-resolve@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-resolve@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-resolve%2F-%2Fjest-resolve-29.7.0.tgz"
   dependencies:
@@ -26161,32 +26260,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-runner@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest-runner@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-runner%2F-%2Fjest-runner-29.5.0.tgz"
+"jest-runner@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-runner@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-runner%2F-%2Fjest-runner-29.7.0.tgz"
   dependencies:
-    "@jest/console": "npm:^29.5.0"
-    "@jest/environment": "npm:^29.5.0"
-    "@jest/test-result": "npm:^29.5.0"
-    "@jest/transform": "npm:^29.5.0"
-    "@jest/types": "npm:^29.5.0"
+    "@jest/console": "npm:^29.7.0"
+    "@jest/environment": "npm:^29.7.0"
+    "@jest/test-result": "npm:^29.7.0"
+    "@jest/transform": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
     "@types/node": "npm:*"
     chalk: "npm:^4.0.0"
     emittery: "npm:^0.13.1"
     graceful-fs: "npm:^4.2.9"
-    jest-docblock: "npm:^29.4.3"
-    jest-environment-node: "npm:^29.5.0"
-    jest-haste-map: "npm:^29.5.0"
-    jest-leak-detector: "npm:^29.5.0"
-    jest-message-util: "npm:^29.5.0"
-    jest-resolve: "npm:^29.5.0"
-    jest-runtime: "npm:^29.5.0"
-    jest-util: "npm:^29.5.0"
-    jest-watcher: "npm:^29.5.0"
-    jest-worker: "npm:^29.5.0"
+    jest-docblock: "npm:^29.7.0"
+    jest-environment-node: "npm:^29.7.0"
+    jest-haste-map: "npm:^29.7.0"
+    jest-leak-detector: "npm:^29.7.0"
+    jest-message-util: "npm:^29.7.0"
+    jest-resolve: "npm:^29.7.0"
+    jest-runtime: "npm:^29.7.0"
+    jest-util: "npm:^29.7.0"
+    jest-watcher: "npm:^29.7.0"
+    jest-worker: "npm:^29.7.0"
     p-limit: "npm:^3.1.0"
     source-map-support: "npm:0.5.13"
-  checksum: f54327a4d5510910eb5b07d75532e44c326d97eaedf24d2b59994818f8c25d564f1bcb4f34cc38c1393d45e29c78604cd97ce052721d9c5bb402e92cdd729528
+  checksum: 9d8748a494bd90f5c82acea99be9e99f21358263ce6feae44d3f1b0cd90991b5df5d18d607e73c07be95861ee86d1cbab2a3fc6ca4b21805f07ac29d47c1da1e
   languageName: node
   linkType: hard
 
@@ -26220,7 +26319,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-runtime@npm:^29.2.1, jest-runtime@npm:^29.5.0, jest-runtime@npm:^29.7.0":
+"jest-runtime@npm:^29.2.1, jest-runtime@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-runtime@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-runtime%2F-%2Fjest-runtime-29.7.0.tgz"
   dependencies:
@@ -26307,7 +26406,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-snapshot@npm:^29.2.1, jest-snapshot@npm:^29.5.0, jest-snapshot@npm:^29.7.0":
+"jest-snapshot@npm:^29.2.1, jest-snapshot@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-snapshot@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-snapshot%2F-%2Fjest-snapshot-29.7.0.tgz"
   dependencies:
@@ -26405,7 +26504,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-validate@npm:^29.2.1, jest-validate@npm:^29.5.0, jest-validate@npm:^29.7.0":
+"jest-validate@npm:^29.2.1, jest-validate@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-validate@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-validate%2F-%2Fjest-validate-29.7.0.tgz"
   dependencies:
@@ -26452,19 +26551,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-watcher@npm:^29.0.0, jest-watcher@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest-watcher@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-watcher%2F-%2Fjest-watcher-29.5.0.tgz"
+"jest-watcher@npm:^29.0.0, jest-watcher@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-watcher@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-watcher%2F-%2Fjest-watcher-29.7.0.tgz"
   dependencies:
-    "@jest/test-result": "npm:^29.5.0"
-    "@jest/types": "npm:^29.5.0"
+    "@jest/test-result": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
     "@types/node": "npm:*"
     ansi-escapes: "npm:^4.2.1"
     chalk: "npm:^4.0.0"
     emittery: "npm:^0.13.1"
-    jest-util: "npm:^29.5.0"
+    jest-util: "npm:^29.7.0"
     string-length: "npm:^4.0.1"
-  checksum: accd79e95dbe27106500fcc6814c4690438dda54f3bae2e5373b341e398a7ee3be64c07ff0e1e26c675e699025a4d0dd7822466f0273a17a0613d5157f3941ad
+  checksum: 4f616e0345676631a7034b1d94971aaa719f0cd4a6041be2aa299be437ea047afd4fe05c48873b7963f5687a2f6c7cbf51244be8b14e313b97bfe32b1e127e55
   languageName: node
   linkType: hard
 
@@ -26501,7 +26600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-worker@npm:^29.5.0, jest-worker@npm:^29.7.0":
+"jest-worker@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-worker@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-worker%2F-%2Fjest-worker-29.7.0.tgz"
   dependencies:
@@ -26532,22 +26631,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^29.5.0":
-  version: 29.5.0
-  resolution: "jest@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest%2F-%2Fjest-29.5.0.tgz"
+"jest@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest%2F-%2Fjest-29.7.0.tgz"
   dependencies:
-    "@jest/core": "npm:^29.5.0"
-    "@jest/types": "npm:^29.5.0"
+    "@jest/core": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
     import-local: "npm:^3.0.2"
-    jest-cli: "npm:^29.5.0"
+    jest-cli: "npm:^29.7.0"
   peerDependencies:
     node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
   peerDependenciesMeta:
     node-notifier:
       optional: true
   bin:
-    jest: ./bin/jest.js
-  checksum: 08c9b31f1d37deeb11fefd84fcc81b466c02d76f50056633d8c36951205ab7e220cd26efb49312849a2e08b43ce9f632f8a5b4f69717d9a91d8e069c0534115f
+    jest: bin/jest.js
+  checksum: 97023d78446098c586faaa467fbf2c6b07ff06e2c85a19e3926adb5b0effe9ac60c4913ae03e2719f9c01ae8ffd8d92f6b262cedb9555ceeb5d19263d8c6362a
   languageName: node
   linkType: hard
 
@@ -29630,14 +29729,14 @@ __metadata:
     "@cbhq/metro-config": "npm:^0.1.2"
     "@cbhq/ui-mobile-playground": "workspace:^"
     "@cbhq/ui-mobile-visreg": "workspace:^"
-    "@config-plugins/detox": "npm:^5.0.1"
+    "@config-plugins/detox": "npm:^6.0.0"
     "@expo/config": "npm:*"
     "@react-native/metro-config": "npm:^0.72.9"
     "@react-navigation/native": "npm:^6.1.6"
     "@react-navigation/native-stack": "npm:^6.9.12"
     "@react-navigation/stack": "npm:^6.3.16"
     babel-plugin-transform-inline-environment-variables: "npm:^0.4.4"
-    detox: "npm:^20.5.0"
+    detox: "npm:^20.14.8"
     expo: "npm:^49.0.16"
     expo-application: "npm:~5.3.0"
     expo-build-properties: "npm:~0.8.3"
@@ -29648,7 +29747,7 @@ __metadata:
     expo-status-bar: "npm:~1.6.0"
     expo-system-ui: "npm:~2.4.0"
     intl: "npm:^1.2.5"
-    jest: "npm:^29.5.0"
+    jest: "npm:^29.7.0"
     lottie-react-native: "npm:^5.1.5"
     react: "npm:18.2.0"
     react-native: "npm:0.72.6"
@@ -29729,7 +29828,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"multi-sort-stream@npm:^1.0.3":
+"multi-sort-stream@npm:^1.0.3, multi-sort-stream@npm:^1.0.4":
   version: 1.0.4
   resolution: "multi-sort-stream@npm:1.0.4::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmulti-sort-stream%2F-%2Fmulti-sort-stream-1.0.4.tgz"
   checksum: c8ca1d3837e54b2710994bdf1c07992e3a2deb5dc2e10910fca027f9552edcd5ecee54c360c7b452525cc943e32badf9e47965836a0fcfc5bc6369c42331d9a7
@@ -30248,9 +30347,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-ipc@npm:^9.2.1":
+"node-ipc@npm:9.2.1":
   version: 9.2.1
-  resolution: "node-ipc@npm:9.2.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fnode-ipc%2F-%2Fnode-ipc-9.2.1.tgz"
+  resolution: "node-ipc@npm:9.2.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fnode-ipc%2F-%2Fnode-ipc-9.2.1.tgz"
   dependencies:
     event-pubsub: "npm:4.3.0"
     js-message: "npm:1.0.7"
@@ -33220,7 +33319,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^29.0.0, pretty-format@npm:^29.0.3, pretty-format@npm:^29.2.1, pretty-format@npm:^29.3.1, pretty-format@npm:^29.5.0, pretty-format@npm:^29.7.0":
+"pretty-format@npm:^29.0.0, pretty-format@npm:^29.0.3, pretty-format@npm:^29.2.1, pretty-format@npm:^29.3.1, pretty-format@npm:^29.7.0":
   version: 29.7.0
   resolution: "pretty-format@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fpretty-format%2F-%2Fpretty-format-29.7.0.tgz"
   dependencies:
@@ -37168,12 +37267,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stream-json@npm:^1.7.4":
-  version: 1.7.5
-  resolution: "stream-json@npm:1.7.5::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fstream-json%2F-%2Fstream-json-1.7.5.tgz"
+"stream-json@npm:^1.7.4, stream-json@npm:^1.7.5":
+  version: 1.8.0
+  resolution: "stream-json@npm:1.8.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fstream-json%2F-%2Fstream-json-1.8.0.tgz"
   dependencies:
     stream-chain: "npm:^2.2.5"
-  checksum: f54aea2f116ab54ec9e6baa30bf0cbff928a4ac131779522ef919a6d0a26834e3f9b07b454f0ba6d25701bacf029334fdc1078e7ee97a4e9c68b1bebfbd93275
+  checksum: a1cc448dd71267e1e44bfae4a2b0590690213c97dd6d273cc93e345aa2442b0f959e7a3da6cfa5386a6718e0f8afee0774be5b13126a6e79943499fbc4479f6c
   languageName: node
   linkType: hard
 
@@ -38826,10 +38925,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.4.1, tslib@npm:^2.5.0":
-  version: 2.5.3
-  resolution: "tslib@npm:2.5.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftslib%2F-%2Ftslib-2.5.3.tgz"
-  checksum: d507e60ebe2480af4efc1655dfdb2762bb6ca57d76c4ba680375af801493648c2e97808bbd7e54691eb40e33a7e2e793cdef9c24ce6a8539b03cac8b26e09a61
+"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.4.1, tslib@npm:^2.5.0, tslib@npm:^2.5.3":
+  version: 2.6.2
+  resolution: "tslib@npm:2.6.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftslib%2F-%2Ftslib-2.6.2.tgz"
+  checksum: bd26c22d36736513980091a1e356378e8b662ded04204453d353a7f34a4c21ed0afc59b5f90719d4ba756e581a162ecbf93118dc9c6be5acf70aa309188166ca
   languageName: node
   linkType: hard
 
@@ -41298,7 +41397,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^16.0.3, yargs@npm:^16.2.0":
+"yargs@npm:^16.2.0":
   version: 16.2.0
   resolution: "yargs@npm:16.2.0"
   dependencies:

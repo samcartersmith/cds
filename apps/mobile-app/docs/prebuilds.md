@@ -9,7 +9,7 @@ Use Expo Go for normal dev workflow and testing simple JS code. Only use prebuil
 
 1. Setup your dependencies - fastlane, and eas-cli
 
-Get the eas version in [eas.json](./eas.json) at `cli.version`.
+Get the eas version in [eas.json](/apps/mobile-app/eas.json) at `cli.version`.
 
 ```shell
 brew install fastlane
@@ -24,9 +24,9 @@ npm install -g eas-cli@<insert version>
 
 1. Build the application you wish to develop on with `build`
 
-**Note: you should only need to build if you're missing your desired build in [prebuilds](./prebuilds/) or if there's been a recent native dependency upgrade.**
+**Note: you should only need to build if you're missing your desired build in [prebuilds](/apps/mobile-app/prebuilds) or if there's been a recent native dependency upgrade.**
 
-See more info about mobile builds [here](./docs/building-mobile.md).
+See more info about mobile builds [here](/apps/mobile-app/docs/building-mobile.md).
 
 | Platform | Profile - engine type | Command                                        |
 | -------- | --------------------- | ---------------------------------------------- |
@@ -35,11 +35,11 @@ See more info about mobile builds [here](./docs/building-mobile.md).
 | android  | debug - hermes        | `yarn nx run mobile-app:build:android-debug`   |
 | android  | release - hermes      | `yarn nx run mobile-app:build:android-release` |
 
-**Note: If you run into errors when trying to prebuild, check out our [Help](./docs/help.md) page to debug.**
+**Note: If you run into errors when trying to prebuild, check out our [Help](/apps/mobile-app/docs/help.md) page to debug.**
 
 2. Install app in your simulator with `launch` configuration.
 
-**Note: You can skip this if you've already launched the build in your [prebuilds](./prebuilds/) in your simulator.**
+**Note: You can skip this if you've already launched the build in your [prebuilds](/apps/mobile-app/prebuilds) in your simulator.**
 
 | Platform | Profile - engine type | Command                                         |
 | -------- | --------------------- | ----------------------------------------------- |
@@ -55,7 +55,7 @@ See more info about mobile builds [here](./docs/building-mobile.md).
 | ios      | debug - hermes        | `yarn nx run mobile-app:start:ios-debug`     |
 | android  | debug - hermes        | `yarn nx run mobile-app:start:android-debug` |
 
-**Note: If you see `CommandError: No development build (com.ui-systems.debug-ios-hermes) for this project is installed. Please make and install a development build on the device first.` run `yarn clean-expo` and rerun the `start` script. See more debug gotchas [here](./docs/help.md)**
+**Note: If you see `CommandError: No development build (com.ui-systems.debug-ios-hermes) for this project is installed. Please make and install a development build on the device first.` run `yarn clean-expo` and rerun the `start` script. See more debug gotchas [here](/apps/mobile-app/docs/help.md)**
 
 When running the debug app after a rebuild or restart, you'll most likely need to close out the Debug app and reopen it to trigger the bundler to recompile.
 
@@ -79,7 +79,7 @@ The four NX Targets (also declared in `/apps/mobile-app/project.json`):
 3. build
 4. detox
 
-These targets call node scripts that live in the [scripts directory of mobile-app](/apps//mobile-app/scripts/). These scripts are intuitively named the same as their respective nx targets.
+These targets call node scripts that live in the [scripts directory of mobile-app](/apps/mobile-app/scripts/). These scripts are intuitively named the same as their respective nx targets.
 
 ## Expo Debug vs Release Builds
 

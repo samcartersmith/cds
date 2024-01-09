@@ -45,4 +45,4 @@ yarn nx run mobile-app:build:android-release
 
 ## Having trouble?
 
-[See our help docs](./help.md)
+[See our help docs](/apps/mobile-app/docs/help.md)

@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-mobile-visreg",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Visreg Helpers",
   "keywords": [
     "visreg",
@@ -14,7 +14,7 @@
     "platform": "node"
   },
   "dependencies": {
-    "@cbhq/detox-utils": "^0.5.0",
+    "@cbhq/detox-utils": "^0.5.1",
     "@percy/cli": "^1.26.1",
     "@percy/client": "^1.26.1",
     "@percy/sdk-utils": "^1.26.1",
@@ -24,10 +24,10 @@
   "peerDependencies": {
     "@cbhq/cds-mobile": "workspace:^",
     "@cbhq/cds-mobile-visualization": "workspace:^",
-    "detox": "^20.5.0"
+    "detox": "^20.14.8"
   },
   "devDependencies": {
-    "detox": "^20.5.0"
+    "detox": "^20.14.8"
   },
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",

@@ -1,1 +1,1 @@
-export const isCI = !!process.env.CI || !!process.env.BUILDKITE;
+export const isCI = process.env.CI === 'true' || process.env.BUILDKITE === 'true';

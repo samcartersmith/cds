@@ -2,7 +2,7 @@
 
 Expo handles react native upgrades through their [SDK](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/). Their SDK will handle updating native modules, as well as recommend native package versions that are compatible with the new react native version. **The only native config that isn't managed by expo is @cbhq/metro-config, which App Infra manages**.
 
-Check out this doc [for more about mobile builds in general](./building-mobile.md)
+Check out this doc [for more about mobile builds in general](/apps/mobile-app/docs/building-mobile.md)
 
 **We can stray from their recommendations, but with caution.**
 
@@ -21,7 +21,7 @@ yarn
 yarn nx run mobile:test
 ```
 
-3. Test that your applications work locally as expected. You will need to build a new debug build & likely uninstall the previous application and reinstall your new build, following [setup instructions](../README.md).
+3. Test that your applications work locally as expected. You will need to build a new debug build & likely uninstall the previous application and reinstall your new build, following [setup instructions](/apps/mobile-app/README.md).
 
 4. Generate the new shared, native module builds for everyone to use in visreg. Be sure to commit all 3 outputs. This step is vital since visreg uses these builds to compare UI changes. android-debug build is too large to be committed locally, but should be tested.
 

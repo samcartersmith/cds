@@ -117,6 +117,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
+          "buildkite-agent pipeline upload .buildkite/visreg-ios.yml",
           "buildkite-agent pipeline upload .buildkite/visreg-android.yml"
         ],
         "parallel": true

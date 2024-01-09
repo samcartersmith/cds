@@ -64,11 +64,11 @@ yarn nx run mobile-app:build:android-release
 
 ### Creating new build configurations
 
-You can create other build types using [app.config.js](./../app.config.js) and [project.json](./../project.json).
+You can create other build types using [app.config.js](/apps/mobile-app/app.config.ts) and [project.json](/apps/mobile-app/project.json).
 
-Create a new config in [project.json](./../project.json) `targets.build.configurations`. The key will be come your new command for `yarn nx run mobile-app:build:<your key>`.
+Create a new config in [project.json](/apps/mobile-app/project.json) `targets.build.configurations`. The key will be come your new command for `yarn nx run mobile-app:build:<your key>`.
 
-Pass ENVs to configure your build. See [setEnvVars](../scripts/utils/setEnvVars.mjs) for options and [project.json](./../project.json) for examples.
+Pass ENVs to configure your build. See [setEnvVars](/apps/mobile-app/scripts/utils/setEnvVars.mjs) for options and [project.json](/apps/mobile-app/project.json) for examples.
 
 [Here is the reference guide on app configurations from Expo](https://docs.expo.dev/versions/latest/config/app/).
 

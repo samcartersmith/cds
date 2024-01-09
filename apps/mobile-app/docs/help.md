@@ -9,7 +9,7 @@ To generate a local android directory to run `gradle`:
 
 - `yarn workspace mobile-app expo prebuild --platform android`
 - `cd apps/mobile-app/android`
-- Run gradle command. You can always find the gradle commands executed for debug and release builds in [eas.json](../eas.json). For debug, you can run `./gradlew :app:assembleDebug :app:assembleAndroidTest -DtestBuildType=debug`. For release, you can run `./gradlew :app:assembleRelease :app:assembleAndroidTest -DtestBuildType=release`
+- Run gradle command. You can always find the gradle commands executed for debug and release builds in [eas.json](/apps/mobile-app/eas.json). For debug, you can run `./gradlew :app:assembleDebug :app:assembleAndroidTest -DtestBuildType=debug`. For release, you can run `./gradlew :app:assembleRelease :app:assembleAndroidTest -DtestBuildType=release`
 - `yarn clean-expo` from root when you're done! Leaving the `android` directory will impact future builds.
 
 2. How do I run `pod` locally for iOS debugging?
@@ -24,7 +24,7 @@ To generate a local ios directory to run `pod`, you can run the prebuild command
 
 Our expo builds are 'managed', and therefore are built in a temp directory outside of our repo that is cleaned at the end of an `eas` command. In order to see the build output or logs generated from the `yarn nx run mobile-app:build:<config>`, you need to skip expo cleanup. This can also be used for `launch`
 
-- Go to our [build script](../scripts/build.mjs)
+- Go to our [build script](/apps/mobile-app/scripts/build.mjs)
 - Prepend `export EAS_LOCAL_BUILD_SKIP_CLEANUP=1 && ` prior to `eas build`...
 - Run build like normal
 - At the end of the build, you'll see an output `Skipping cleanup, /var/folders/.... won't be removed.`

@@ -18,6 +18,7 @@ if (!runAll && !commonChanged && !affectedRouteKeys.length) {
   console.log('No relevant changes to test, skipping detox');
   process.exit(0);
 }
+
 // Set the affected route keys for playgroundRoutes.e2e.ts, and flag as Percy partial build
 if (!runAll && !commonChanged) {
   console.log('Only testing routes affected by changes:', affectedRouteKeys);
@@ -56,11 +57,18 @@ if (profile === 'release') {
   if (platform === 'ios') await ios.patchBundle();
 }
 
+// Rebuild Detox cache on MacOS to mitigate errors from Xcode updates
+if (platform === 'ios') {
+  await $`yarn workspace mobile-app detox rebuild-framework-cache`;
+}
+
 // Clear Jest cache
 await $`yarn workspace mobile-app detox test --configuration ${platform}-${profile} --clearCache`;
 
-if (platform === 'android' && isCI) {
-  await $`yarn workspace mobile-app detox test --configuration ${platform}-${profile} --headless --cleanup --force-adb-install`;
+const platformOptions = platform === 'android' ? '--force-adb-install' : '';
+
+if (isCI) {
+  await $`yarn workspace mobile-app detox test --configuration ${platform}-${profile} --headless --cleanup ${platformOptions}`;
 } else {
-  await $`yarn workspace mobile-app detox test --loglevel verbose --configuration ${platform}-${profile} --cleanup --force-adb-install`;
+  await $`yarn workspace mobile-app detox test --loglevel verbose --configuration ${platform}-${profile} --cleanup ${platformOptions}`;
 }
