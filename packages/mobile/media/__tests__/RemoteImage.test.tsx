@@ -152,7 +152,8 @@ describe('RemoteImage', () => {
       />,
     );
 
-    expect(screen.getByRole('image')).toHaveProp('accessible', true);
+    expect(screen.getByRole('image')).toHaveProp('accessibilityElementsHidden', false);
+    expect(screen.getByRole('image')).toHaveProp('importantForAccessibility', 'auto');
     expect(screen.getByLabelText('A label')).toBeTruthy();
     expect(screen.getByHintText('A hint')).toBeTruthy();
   });

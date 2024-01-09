@@ -8,6 +8,7 @@ import {
 } from '@cbhq/cds-common/tokens/card';
 
 import { Button, IconButton } from '../buttons';
+import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { HStack, VStack } from '../layout';
 import { TextHeadline, TextLabel2 } from '../typography';
 
@@ -26,6 +27,8 @@ export const UpsellCard = memo(
     width = upsellCardDefaultWidth,
   }: UpsellCardBaseProps) => {
     const density = useScaleDensity();
+    const largeTextStyle = useLargeTextStyles();
+
     return (
       <HStack
         accessibilityLabel={accessibilityLabel}
@@ -49,9 +52,15 @@ export const UpsellCard = memo(
         >
           <VStack gap={3} justifyContent="space-between" spacing={2} width="70%" zIndex={2}>
             <VStack gap={1}>
-              {typeof title === 'string' ? <TextHeadline>{title}</TextHeadline> : title}
+              {typeof title === 'string' ? (
+                <TextHeadline dangerouslySetStyle={largeTextStyle}>{title}</TextHeadline>
+              ) : (
+                title
+              )}
               {typeof description === 'string' ? (
-                <TextLabel2 numberOfLines={3}>{description}</TextLabel2>
+                <TextLabel2 dangerouslySetStyle={largeTextStyle} numberOfLines={3}>
+                  {description}
+                </TextLabel2>
               ) : (
                 description
               )}

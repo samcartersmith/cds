@@ -26,6 +26,7 @@ export function likeCounter({
         liked,
         count,
         onPress: handleOnPress,
+        accessibilityLabel: `${count} likes, ${liked ? 'unlike' : 'like'}`,
       }),
       [liked, count, handleOnPress],
     );

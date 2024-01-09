@@ -1,8 +1,10 @@
+import type { SharedAccessibilityProps } from '../SharedAccessibilityProps';
 import type { SharedProps } from '../SharedProps';
 
 export type LikeButtonBaseProps<
   OnPress,
-  PressableProps extends { onPress?: OnPress } & SharedProps = { onPress?: OnPress } & SharedProps,
+  PressableProps extends { onPress?: OnPress } & SharedProps = { onPress?: OnPress } & SharedProps &
+    Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>,
 > = PressableProps & {
   liked?: boolean;
   count?: number;

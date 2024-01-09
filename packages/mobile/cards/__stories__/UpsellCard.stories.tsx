@@ -6,6 +6,7 @@ import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { Button } from '../../buttons/Button';
 import { usePaletteValueToRgbaString } from '../../color/usePaletteValueToRgbaString';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useLargeTextStyles } from '../../hooks/useLargeTextStyles';
 import { Carousel } from '../../media';
 import { FeatureFlagProvider } from '../../system';
 import { TextHeadline, TextLabel2 } from '../../typography';
@@ -42,6 +43,8 @@ const UpsellCardScreen = () => {
   const customBackgroundColor = usePaletteValueToRgbaString('purple70');
 
   const defaultBackground = usePaletteValueToRgbaString('teal20');
+  const largeTextStyle = useLargeTextStyles();
+
   return (
     <FeatureFlagProvider frontier>
       <ExampleScreen>
@@ -67,12 +70,20 @@ const UpsellCardScreen = () => {
             }
             dangerouslySetBackground={customTextNodeBackgroundColor}
             description={
-              <TextLabel2 dangerouslySetColor={customTextNodeColor}>
+              <TextLabel2
+                dangerouslySetColor={customTextNodeColor}
+                dangerouslySetStyle={largeTextStyle}
+              >
                 Start your free 30 day trial of Coinbase One
               </TextLabel2>
             }
             title={
-              <TextHeadline dangerouslySetColor={customTextNodeColor}>Coinbase One</TextHeadline>
+              <TextHeadline
+                dangerouslySetColor={customTextNodeColor}
+                dangerouslySetStyle={largeTextStyle}
+              >
+                Coinbase One
+              </TextHeadline>
             }
           />
         </Example>
@@ -81,12 +92,20 @@ const UpsellCardScreen = () => {
             {...exampleProps}
             dangerouslySetBackground={customBackgroundColor}
             description={
-              <TextLabel2 dangerouslySetColor={customTextNodeColor}>
+              <TextLabel2
+                dangerouslySetColor={customTextNodeColor}
+                dangerouslySetStyle={largeTextStyle}
+              >
                 Start your free 30 day trial of Coinbase One
               </TextLabel2>
             }
             title={
-              <TextHeadline dangerouslySetColor={customTextNodeColor}>Coinbase One</TextHeadline>
+              <TextHeadline
+                dangerouslySetColor={customTextNodeColor}
+                dangerouslySetStyle={largeTextStyle}
+              >
+                Coinbase One
+              </TextHeadline>
             }
           />
         </Example>

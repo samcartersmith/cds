@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.26.1 (1/9/2024 PST)
+
+#### 🐞 Fixes
+
+- A11y label and text overlapping on large scale. [[#2616](https://github.cbhq.net/frontend/cds/pull/2616)]
+
 ## 5.26.0 ((1/8/2024, 01:57 PM PST))
 
 This is an artificial version bump with no new change.

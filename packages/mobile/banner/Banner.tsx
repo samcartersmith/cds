@@ -173,6 +173,7 @@ export const Banner = memo(
         >
           {/** Start */}
           <Icon
+            accessibilityLabel={startIcon}
             color={iconColor}
             dangerouslySetStyle={customSpacing}
             name={startIcon}

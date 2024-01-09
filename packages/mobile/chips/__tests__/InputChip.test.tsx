@@ -11,6 +11,7 @@ const assetIconProps = {
   height: 16,
   shape: 'circle' as Shape,
   source: assets.eth.imageUrl,
+  accessibilityLabel: 'ethereum',
   width: 16,
 };
 

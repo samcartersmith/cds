@@ -57,6 +57,7 @@ export function ProgressBarsExample() {
       <Carousel
         showDismiss
         showProgress
+        dismissButtonAccessibilityLabel="Close"
         items={[
           <CarouselItem key="item1" spotSquare="sparkleToken" />,
           <CarouselItem key="item2" pictogram="addressBook" />,
@@ -70,6 +71,7 @@ export function ProgressBarsExample() {
       <Carousel
         showDismiss
         showProgress
+        dismissButtonAccessibilityLabel="Close"
         items={feedImages.map((item) => (
           <CarouselItemImage key={item} image={item} />
         ))}

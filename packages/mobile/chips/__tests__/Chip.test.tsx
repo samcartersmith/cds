@@ -12,6 +12,7 @@ const assetIconProps = {
   height: 16,
   shape: 'circle' as Shape,
   source: assets.eth.imageUrl,
+  accessibilityLabel: 'ethereum',
   width: 16,
 };
 
@@ -19,8 +20,8 @@ const chipTestID = 'chip-test';
 
 const TestChip = (props: Omit<ChipProps, 'children'>) => (
   <Chip
-    end={<Icon color="foreground" name="caretDown" size="s" testID="start-test" />}
-    start={<RemoteImage {...assetIconProps} testID="end-test" />}
+    end={<Icon color="foreground" name="caretDown" size="s" testID="end-test" />}
+    start={<RemoteImage {...assetIconProps} testID="start-test" />}
     testID={chipTestID}
     {...props}
   >

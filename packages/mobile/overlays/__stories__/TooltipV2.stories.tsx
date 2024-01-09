@@ -35,6 +35,7 @@ const ToolTipWithA11y = ({ tooltipText, yShiftByStatusBarHeight }: Omit<ContentT
 
   return (
     <Tooltip
+      accessibilityLabel="Info"
       content={tooltipText}
       onCloseTooltip={handleClose}
       yShiftByStatusBarHeight={yShiftByStatusBarHeight}
@@ -100,6 +101,7 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
         </HStack>
         <HStack justifyContent="space-evenly">
           <Tooltip
+            accessibilityLabel="Info"
             content={tooltipText}
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
@@ -107,6 +109,7 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
             <Icon name="info" size="s" />
           </Tooltip>
           <Tooltip
+            accessibilityLabel="Info"
             content={tooltipText}
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
@@ -114,6 +117,7 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
             <Icon name="info" size="s" />
           </Tooltip>
           <Tooltip
+            accessibilityLabel="Info"
             content={tooltipText}
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}

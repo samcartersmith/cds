@@ -5,6 +5,7 @@ import {
   floatingAssetCardSmallDimension,
 } from '@cbhq/cds-common/tokens/card';
 
+import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { HStack, VStack } from '../layout';
 import { Pressable } from '../system';
 import { TextHeadline, TextLabel2, TextLegal } from '../typography';
@@ -29,6 +30,8 @@ export const FloatingAssetCard = memo(
         maxWidth: width,
       };
     }, [width]);
+    const largeTextStyle = useLargeTextStyles();
+
     const content = (
       <VStack gap={1} maxWidth={width} testID={testID}>
         <HStack
@@ -43,19 +46,29 @@ export const FloatingAssetCard = memo(
         </HStack>
         <VStack gap={0.5} maxWidth={width}>
           {typeof subtitle === 'string' ? (
-            <TextLegal color="foregroundMuted" numberOfLines={1}>
+            <TextLegal
+              color="foregroundMuted"
+              dangerouslySetStyle={largeTextStyle}
+              numberOfLines={1}
+            >
               {subtitle}
             </TextLegal>
           ) : (
             subtitle
           )}
           {typeof title === 'string' ? (
-            <TextHeadline numberOfLines={3}>{title}</TextHeadline>
+            <TextHeadline dangerouslySetStyle={largeTextStyle} numberOfLines={3}>
+              {title}
+            </TextHeadline>
           ) : (
             title
           )}
           {typeof description === 'string' ? (
-            <TextLabel2 color="foregroundMuted" numberOfLines={2}>
+            <TextLabel2
+              color="foregroundMuted"
+              dangerouslySetStyle={largeTextStyle}
+              numberOfLines={2}
+            >
               {description}
             </TextLabel2>
           ) : (

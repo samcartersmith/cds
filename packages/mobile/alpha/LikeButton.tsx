@@ -29,6 +29,8 @@ export const LikeButton = memo(function LikeButton({
   flush,
   liked = false,
   onPress,
+  accessibilityHint,
+  accessibilityLabel = 'Like',
   ...props
 }: LikeButtonProps) {
   const iconScale = useRef(new Animated.Value(1));
@@ -79,8 +81,8 @@ export const LikeButton = memo(function LikeButton({
 
   return (
     <Pressable
-      accessibilityHint="Click to like"
-      accessibilityLabel="Like button"
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
       backgroundColor="transparent"
       feedback="light"
       onPress={handleOnPress}

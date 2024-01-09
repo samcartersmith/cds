@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { CellDetailProps as CellDetailBaseProps } from '@cbhq/cds-common';
 
+import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
 
@@ -14,11 +15,16 @@ export const CellDetail = memo(function CellDetail({
   subdetail,
   variant = 'foregroundMuted',
 }: CellDetailProps) {
+  const largeTextStyle = useLargeTextStyles();
   return (
     <VStack alignContent="flex-end" alignItems="flex-end" justifyContent="center">
       {!!detail && (
-        // eslint-disable-next-line react/forbid-component-props
-        <TextBody adjustsFontSizeToFit={adjustsFontSizeToFit} numberOfLines={1}>
+        <TextBody
+          // eslint-disable-next-line react/forbid-component-props
+          adjustsFontSizeToFit={adjustsFontSizeToFit}
+          dangerouslySetStyle={largeTextStyle}
+          numberOfLines={1}
+        >
           {detail}
         </TextBody>
       )}
@@ -28,6 +34,7 @@ export const CellDetail = memo(function CellDetail({
           // eslint-disable-next-line react/forbid-component-props
           adjustsFontSizeToFit={adjustsFontSizeToFit}
           color={variant}
+          dangerouslySetStyle={largeTextStyle}
           numberOfLines={1}
         >
           {subdetail}

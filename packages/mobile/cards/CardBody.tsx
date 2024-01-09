@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { CardBodyBaseProps, CardBodyOrientationProps } from '@cbhq/cds-common/types/CardBaseProps';
 
+import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { TextBody } from '../typography/TextBody';
@@ -19,12 +20,22 @@ export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
     numberOfLines = 3,
     ...props
   }) => {
+    const largeTextStyle = useLargeTextStyles();
     const textContent = (
       <>
-        <TextHeadline ellipsizeMode="tail" numberOfLines={numberOfLines}>
+        <TextHeadline
+          dangerouslySetStyle={largeTextStyle}
+          ellipsizeMode="tail"
+          numberOfLines={numberOfLines}
+        >
           {title}
         </TextHeadline>
-        <TextBody color="foreground" ellipsizeMode="tail" numberOfLines={numberOfLines}>
+        <TextBody
+          color="foreground"
+          dangerouslySetStyle={largeTextStyle}
+          ellipsizeMode="tail"
+          numberOfLines={numberOfLines}
+        >
           {description}
         </TextBody>
       </>

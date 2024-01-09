@@ -3,6 +3,7 @@ import { ListCellBaseProps } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { compactListHeight, listHeight } from '@cbhq/cds-common/tokens/cell';
 
+import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { VStack } from '../layout/VStack';
 import { TextBody, TextHeadline } from '../typography';
 
@@ -40,6 +41,7 @@ export const ListCell = memo(function ListCell({
   const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
   const accessoryType = selected ? 'selected' : accessory;
   const hasDetails = Boolean(detail || subdetail);
+  const largeTextStyle = useLargeTextStyles();
 
   return (
     <Cell
@@ -68,6 +70,7 @@ export const ListCell = memo(function ListCell({
       <VStack justifyContent="center">
         {!!title && (
           <TextHeadline
+            dangerouslySetStyle={largeTextStyle}
             ellipsize="tail"
             numberOfLines={description || disableMultilineTitle ? 1 : 2}
           >
@@ -78,6 +81,7 @@ export const ListCell = memo(function ListCell({
         {!!description && (
           <TextBody
             color="foregroundMuted"
+            dangerouslySetStyle={largeTextStyle}
             ellipsize={multiline ? undefined : 'tail'}
             // eslint-disable-next-line no-nested-ternary
             numberOfLines={multiline ? undefined : title ? 1 : 2}
