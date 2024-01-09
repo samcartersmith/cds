@@ -1,8 +1,8 @@
 /* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import { fireEvent, render, screen } from '@testing-library/react';
-import { SelectProvider } from '@cbhq/cds-web/controls/selectContext';
 import { TextTitle2 } from '@cbhq/cds-web/typography';
 
+import { SelectProvider } from '../../select/context';
 import { MenuItem } from '../MenuItem';
 
 describe('MenuItem', () => {

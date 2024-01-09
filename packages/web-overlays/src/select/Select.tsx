@@ -5,7 +5,6 @@ import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { helperTextHeight, inputStackGap } from '@cbhq/cds-common/tokens/input';
 import { SelectBaseProps } from '@cbhq/cds-common/types';
 import { TextInputFocusVariantContext } from '@cbhq/cds-web/controls/context';
-import { SelectTrigger } from '@cbhq/cds-web/controls/SelectTrigger';
 import { useSpacingValue } from '@cbhq/cds-web/hooks/useSpacingValue';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
 
@@ -13,6 +12,7 @@ import { Dropdown } from '../dropdown/Dropdown';
 import { DropdownProps } from '../dropdown/DropdownProps';
 import { PopoverContentPositionConfig } from '../popover/PopoverProps';
 
+import { SelectTrigger } from './SelectTrigger';
 import { useRefocusTrigger } from './useRefocusTrigger';
 
 export type SelectProps = {

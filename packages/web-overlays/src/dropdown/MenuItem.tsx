@@ -1,9 +1,9 @@
 import React, { forwardRef, memo, ReactNode, useCallback } from 'react';
 import { ForwardedRef, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
-import { useSelectContext } from '@cbhq/cds-web/controls/selectContext';
 import { insetFocusRing } from '@cbhq/cds-web/styles/focus';
 import { Pressable } from '@cbhq/cds-web/system';
 
+import { useSelectContext } from '../select/context';
 import { SelectOptionProps } from '../select/SelectOption';
 
 export type MenuItemProps = {

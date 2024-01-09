@@ -13,7 +13,6 @@ import React, {
 import { NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { dropdownMaxHeight } from '@cbhq/cds-common/tokens/menu';
-import { SelectProvider } from '@cbhq/cds-web/controls/selectContext';
 import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
 import { useBoundingClientRect } from '@cbhq/cds-web/hooks/useBoundingClientRect';
 import { useBreakpoints } from '@cbhq/cds-web/hooks/useBreakpoints';
@@ -25,6 +24,7 @@ import { getBrowserGlobals, isSSR } from '@cbhq/cds-web/utils/browser';
 
 import { Popover } from '../popover/Popover';
 import { PopoverContentPositionConfig } from '../popover/PopoverProps';
+import { SelectProvider } from '../select/context';
 
 import { DropdownContent } from './DropdownContent';
 import { DropdownProps, DropdownRefProps } from './DropdownProps';

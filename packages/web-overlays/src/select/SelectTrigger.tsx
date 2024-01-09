@@ -9,19 +9,15 @@ import {
   selectTriggerCompactMinHeight,
   selectTriggerMinHeight,
 } from '@cbhq/cds-common/tokens/select';
+import { TextInputFocusVariantContext } from '@cbhq/cds-web/controls/context';
+import { InputLabel } from '@cbhq/cds-web/controls/InputLabel';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { AnimatedCaret } from '@cbhq/cds-web/motion/AnimatedCaret';
+import { PressableOpacity } from '@cbhq/cds-web/system';
+import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 
-import { HStack } from '../layout/HStack';
-import { AnimatedCaret } from '../motion/AnimatedCaret';
-import { PressableOpacity } from '../system';
-import { TextBody } from '../typography/TextBody';
-
-import { TextInputFocusVariantContext } from './context';
-import { InputLabel } from './InputLabel';
 import { SelectStack } from './SelectStack';
 
-/**
- * @deprecated this will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type SelectTriggerProps = {
   triggerHasFocus: boolean;
   /** Select Dropdown menu is opened */
@@ -39,9 +35,6 @@ const pressableOverrides = css`
   /* stylelint-enable a11y/content-property-no-static-value */
 `;
 
-/**
- * @deprecated this will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SelectTrigger = memo(
   forwardRef(function SelectTrigger(
     {

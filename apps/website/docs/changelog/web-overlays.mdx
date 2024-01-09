@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.20 (1/8/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] chore: migrated remaining decomped files. [[#2609](https://github.cbhq.net/frontend/cds/pull/2609)]
+
 ## 0.0.19 (12/19/2023 PST)
 
 #### 🐞 Fixes

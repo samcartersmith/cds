@@ -1,8 +1,8 @@
 import React from 'react';
-import { defaultContext, SelectProvider } from '@cbhq/cds-web/controls/selectContext';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextLabel1 } from '@cbhq/cds-web/typography';
 
+import { defaultContext, SelectProvider } from '../context';
 import { SelectOption } from '../SelectOption';
 
 export default {

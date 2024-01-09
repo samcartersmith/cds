@@ -5,7 +5,6 @@ import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/select';
 import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';
 import { Cell, overflowClassName } from '@cbhq/cds-web/cells/Cell';
 import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
-import { useSelectContext } from '@cbhq/cds-web/controls/selectContext';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { insetFocusRing } from '@cbhq/cds-web/styles/focus';
 import { visibility } from '@cbhq/cds-web/styles/visibility';
@@ -13,6 +12,8 @@ import { Pressable, PressableProps } from '@cbhq/cds-web/system';
 import { borderRadius } from '@cbhq/cds-web/tokens';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
 import { cx } from '@cbhq/cds-web/utils/linaria';
+
+import { useSelectContext } from './context';
 
 export const selectOptionStaticClassName = 'cds-select-option';
 

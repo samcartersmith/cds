@@ -2,24 +2,16 @@ import React, { forwardRef, memo, ReactElement } from 'react';
 import { labelTextColor } from '@cbhq/cds-common/tokens/select';
 import { ForwardedRef, SelectBaseProps } from '@cbhq/cds-common/types';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
+import { HelperText } from '@cbhq/cds-web/controls/HelperText';
+import { InputLabel } from '@cbhq/cds-web/controls/InputLabel';
+import { InputStack } from '@cbhq/cds-web/controls/InputStack';
+import { handlePreventPropagation } from '@cbhq/cds-web/utils/eventHandlers';
 
-import { handlePreventPropagation } from '../utils/eventHandlers';
-
-import { HelperText } from './HelperText';
-import { InputLabel } from './InputLabel';
-import { InputStack } from './InputStack';
-
-/**
- * @deprecated this will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type SelectStackProps = {
   children: ReactElement;
 } & Pick<SelectBaseProps, 'compact' | 'label' | 'disabled' | 'helperText' | 'variant' | 'focused'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabelId' | 'accessibilityDescriptionId'>;
 
-/**
- * @deprecated this will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SelectStack = memo(
   forwardRef(function SelectStack(
     {
