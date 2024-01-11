@@ -1,0 +1,25 @@
+services:
+  app:
+    containers:
+      app:
+        resources:
+          limits:
+            memory: 500M
+          requests:
+            cpu: 50m
+            memory: 500M
+        image: frontend/cds/cds-adoption
+      envmapper:
+        resources:
+          limits:
+            memory: 500M
+          requests:
+            cpu: 50m
+            memory: 500M
+        image: ""
+    target_group_bindings:
+      http: frontend-cds-app-cds-adoptio-k8s
+    scaling:
+      min: 1
+      max: 1
+      targetcpu: 80
