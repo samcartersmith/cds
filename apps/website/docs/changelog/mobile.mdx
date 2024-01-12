@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.27.0 (1/12/2024 PST)
+
+#### 🚀 Updates
+
+- Pressable - add debounceTime prop. [[#2636](https://github.cbhq.net/frontend/cds/pull/2636)] [[DX-3041](https://jira.coinbase-corp.com/browse/DX-3041)]
+
 ## 5.26.1 (1/9/2024 PST)
 
 #### 🐞 Fixes

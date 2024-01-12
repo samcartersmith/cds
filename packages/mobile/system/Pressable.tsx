@@ -32,6 +32,14 @@ export type PressableProps = {
   /** Is the element currenty loading. */
   loading?: boolean;
   /**
+   * The amount of time to wait (in milliseconds) before invoking the debounced function.
+   * This prop is used in conjunction with the `disableDebounce` prop.
+   * The debounce function is configured to be invoked as soon as it's called, but subsequent calls
+   * within the `debounceTime` period will be ignored.
+   * @default 500
+   */
+  debounceTime?: number;
+  /**
    * React Native is historically trash at debouncing touch events. This can cause a lot of
    * unwanted behavior such as double navigations where we push a screen onto the stack 2 times.
    * Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and
@@ -84,6 +92,7 @@ export const Pressable = memo(
       transparentWhileInactive,
       transparentWhilePressed,
       eventConfig,
+      debounceTime,
       ...props
     }: PressableInternalProps,
     forwardedRef: ForwardedRef<View>,
@@ -109,7 +118,10 @@ export const Pressable = memo(
       [feedback, onEventHandler, onPress],
     );
 
-    const debouncedOnPressHandler = useMemo(() => debounce(onPressHandler), [onPressHandler]);
+    const debouncedOnPressHandler = useMemo(
+      () => debounce(onPressHandler, debounceTime),
+      [debounceTime, onPressHandler],
+    );
 
     const handlePress = useCallback(
       (event: GestureResponderEvent) => {
