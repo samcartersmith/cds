@@ -966,7 +966,11 @@ const sidebars = {
               id: 'changelog/mobile-visualization',
               label: '@cbhq/mobile-visualization',
             },
-            { type: 'doc', id: 'changelog/web-visualization', label: '@cbhq/web-visualization' },
+            {
+              type: 'doc',
+              id: 'changelog/web-visualization',
+              label: '@cbhq/cds-web-visualization',
+            },
             {
               type: 'doc',
               id: 'changelog/ui-mobile-playground',

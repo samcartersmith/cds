@@ -36,7 +36,7 @@ export const migrations: DecompedMigration[] = [
       'SparklineInteractiveHeaderRef',
     ],
     oldDir: '@cbhq/cds-web/overlays',
-    newDir: '@cbhq/web-visualization',
+    newDir: '@cbhq/cds-web-visualization',
   },
   {
     exports: [
@@ -51,7 +51,7 @@ export const migrations: DecompedMigration[] = [
       'ChartData',
     ],
     oldDir: '@cbhq/cds-web/visualizations',
-    newDir: '@cbhq/web-visualization',
+    newDir: '@cbhq/cds-web-visualization',
   },
   {
     exports: [

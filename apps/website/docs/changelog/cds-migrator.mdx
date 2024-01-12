@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.32 (1/11/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix @cbhq/cds-web-visualization package name. [[#2631](https://github.cbhq.net/frontend/cds/pull/2631)]
+
 ## 0.1.31 (12/22/2023 PST)
 
 #### 🐞 Fixes
