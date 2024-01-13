@@ -16,7 +16,7 @@ export const runNxTarget = async (nxTarget: string, options?: SpawnOptions) =>
       `Successfully ran target ${targetName} for project ${projectName}`,
     );
 
-    if (isFailedRun) throw new Error(`Failed to run Nx target ${nxTarget}`);
+    if (isFailedRun) throw new Error(`Failed to run Nx target ${nxTarget}: ${nxTargetResult}`);
 
     return nxTargetResult;
   });
