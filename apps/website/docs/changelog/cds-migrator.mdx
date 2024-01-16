@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.33 (1/16/2024 PST)
+
+#### 🚀 Updates
+
+- Added more checks for manual migrations. [[#2640](https://github.cbhq.net/frontend/cds/pull/2640)]
+
 ## 0.1.32 (1/11/2024 PST)
 
 #### 🐞 Fixes

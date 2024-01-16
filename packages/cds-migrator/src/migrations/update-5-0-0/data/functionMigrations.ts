@@ -15,13 +15,6 @@ export const functionMigrations: FunctionMigration[] = [
     replacement: 'buttonBuilder',
   },
   {
-    name: 'getButtonSpacing',
-    path: {
-      '@cbhq/cds-common/utils/getButtonSpacing': '@cbhq/cds-common/utils/getButtonSpacingProps',
-    },
-    replacement: 'getButtonSpacingProps',
-  },
-  {
     name: 'createAnnouncementCardDeprecated',
     path: {
       '@cbhq/cds-common/cards/createAnnouncementCardDeprecated':

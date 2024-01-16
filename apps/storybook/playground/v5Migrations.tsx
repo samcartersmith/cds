@@ -53,10 +53,12 @@ export const V5MigrationsTest = () => {
   return (
     <VStack>
       {/* prop value migrations */}
-      {/* @ts-expect-error testing */}
+      {/* @ts-expect-error this should not be automatically migratable */}
       <SpotSquare dimension={testVar} name="addCard" />
-      {/* @ts-expect-error testing */}
+      {/* @ts-expect-error but this is */}
       <Pictogram dimension={isMobile ? '96x96' : '64x64'} name="2fa" />
+      {/* @ts-expect-error this should not be automatically migratable */}
+      <Pictogram dimension={isMobile ? testVar : '64x64'} name="2fa" />
       {/* @ts-expect-error testing */}
       <CDSPictogram dimension="96x96" name="2fa" />
       {/* @ts-expect-error testing */}

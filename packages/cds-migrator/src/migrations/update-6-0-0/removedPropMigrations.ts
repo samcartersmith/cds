@@ -1,6 +1,7 @@
 import { output, Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
+import { checkForSpreadProps } from '../../helpers';
 import { createJsxMigration } from '../../helpers/createJsxMigration';
 import { generateManualMigrationOutput } from '../../helpers/generateManualMigrationOutput';
 import { getComponentFromJsx } from '../../helpers/getComponentFromJsx';
@@ -38,6 +39,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
   const removedPropConfig = removedProps[actualComponentName ?? component];
   if (!removedPropConfig) return;
   const { props, replacement } = removedPropConfig;
+  checkForSpreadProps(jsx);
 
   searchAndProcessComponent({
     jsx,

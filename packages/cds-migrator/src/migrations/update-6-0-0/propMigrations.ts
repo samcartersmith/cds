@@ -4,7 +4,6 @@ import { SourceFile } from 'ts-morph';
 import {
   checkFileIncludesImport,
   checkFileIncludesRenamedValue,
-  checkHasCdsDependency,
   createJsxMigration,
   generateManualMigrationOutput,
   getComponentFromJsx,
@@ -39,7 +38,7 @@ const checkSourceFile = (sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, sourceFile, tree, projectConfig, path } = args;
+  const { jsx, sourceFile, path } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(renamedProps),
@@ -58,27 +57,10 @@ const callback = (args: ParseJsxElementsCbParams) => {
     });
   }
 
-  const shouldApplyRename = (corePackageDependency: string[]) => {
-    // If corePackageDependency is empty, apply to all
-    if (corePackageDependency.length === 0) {
-      return true;
-    }
-
-    // Check if any project has a matching CDS dependency
-    if (corePackageDependency?.length) {
-      const { hasCoreCdsDependency } = checkHasCdsDependency({
-        tree,
-        project: projectConfig,
-      });
-      return corePackageDependency.some(() => hasCoreCdsDependency);
-    }
-    return false;
-  };
-
   const manualMigrations = ['innerSpacing', 'outerSpacing'];
 
   const renameAttribute = (config: RenameAttributeMapShape) => {
-    const { oldAttribute, newAttribute, corePackageDependency } = config;
+    const { oldAttribute, newAttribute } = config;
     const componentHasAttribute = jsx.getAttribute(oldAttribute);
     if (componentHasAttribute && manualMigrations.includes(oldAttribute)) {
       const warning = `## Warning: ${
@@ -87,7 +69,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
       generateManualMigrationOutput(warning);
       logWarning(warning);
     }
-    if (componentHasAttribute && shouldApplyRename(corePackageDependency || [])) {
+    if (componentHasAttribute) {
       renameJsxAttribute({ oldAttribute, newAttribute, jsx });
       writeMigrationToFile({ oldValue: oldAttribute, newValue: newAttribute, jsx, sourceFile });
     }

@@ -115,22 +115,10 @@ export const renamedProps: AttributeRenameMapShape = {
     oldAttribute: 'selectedValue',
     newAttribute: 'value',
   },
-  Avatar: {
-    oldAttribute: 'src',
-    newAttribute: 'source',
-  },
-  TabIndicator: {
-    oldAttribute: 'x',
-    newAttribute: 'xPosition',
-  },
   Accordion: [
     {
       oldAttribute: 'onItemPress',
       newAttribute: 'onChange',
-    },
-    {
-      oldAttribute: 'defaultActiveKey',
-      newAttribute: 'value',
     },
   ],
   ...offsetConfigs,
@@ -211,6 +199,6 @@ export const booleanToAttributeValueMigrations: PropToAttributeValueMigrationSha
     oldAttribute: 'vertical',
     newAttribute: 'direction',
     value: 'vertical',
-    paths: ['@cbhq/cds-web/overlays', '@cbhq/cds-mobile/overlays'],
+    paths: ['@cbhq/cds-mobile/overlays'],
   },
 };

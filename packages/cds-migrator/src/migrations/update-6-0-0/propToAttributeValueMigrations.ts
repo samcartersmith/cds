@@ -4,6 +4,7 @@ import { SourceFile } from 'ts-morph';
 import {
   checkFileIncludesImport,
   checkFileIncludesRenamedValue,
+  checkForSpreadProps,
   createJsxMigration,
   getComponentFromJsx,
   logDebug,
@@ -50,6 +51,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
   // gate for components that are not migratable
   let isMigratable = false;
   if (updateMap) {
+    checkForSpreadProps(jsx);
     const attributeToMigrate = updateMap.oldAttribute;
     searchAndProcessComponent({
       jsx,

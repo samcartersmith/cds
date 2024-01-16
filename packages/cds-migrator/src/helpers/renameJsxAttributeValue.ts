@@ -1,7 +1,6 @@
-import { SyntaxKind } from 'ts-morph';
+import { JsxAttribute, SyntaxKind } from 'ts-morph';
 
-import { generateManualMigrationOutput } from './generateManualMigrationOutput';
-import { logWarning } from './loggingHelpers';
+import { checkIsDynamicAttributeValue } from './checkIsDynamicAttributeValue';
 import { FindReplaceCallbackParams, FindReplaceCallbackReturnType } from './types';
 
 /**
@@ -21,20 +20,15 @@ export function renameJsxAttributeValue({
   let newValue: string | undefined;
 
   /** The `name="cbOnePercentOff"` in <HeroSquare name="cbOnePercentOff" /> */
-  const attributeToUpdate = jsx.getAttribute(attribute);
+  const attributeToUpdate = jsx.getAttribute(attribute) as JsxAttribute;
   /** The `cbOnePercentOff` in <HeroSquare name="cbOnePercentOff" /> or <HeroSquare name={isMobile ? "cbOnePercentOff" : "cbCard"} /> */
   const stringLiteral = attributeToUpdate?.getDescendantsOfKind(SyntaxKind.StringLiteral);
-  let valueIsTernary = false;
-
-  const jsxExpressionIdentifier = attributeToUpdate
-    ?.getFirstDescendantByKind(SyntaxKind.JsxExpression)
-    ?.getFirstDescendantByKind(SyntaxKind.Identifier);
+  const hasDynamicValue = checkIsDynamicAttributeValue(attribute, jsx);
 
   if (stringLiteral) {
     stringLiteral.forEach((node) => {
       const stringLiteralText = node?.getLiteralText();
       if (stringLiteralText && updateMap[stringLiteralText]) {
-        valueIsTernary = true;
         oldValue = stringLiteralText;
         newValue = updateMap[oldValue];
         if (newValue !== undefined) {
@@ -44,17 +38,7 @@ export function renameJsxAttributeValue({
     });
   }
 
-  const jsxLocation = jsx.getStartLineNumber();
-  const path = jsx.getSourceFile().getFilePath();
-  const manualMigrationWarning = `- Manual migration required at line ${jsxLocation} in ${path}.`;
-  const potentialTernaryWarning = `- The value for this prop is potentially a ternary and some values were migrated automatically, but requires a manual review.`;
-  const warning = `## Warning: ${attribute} is using a dynamic prop value and cannot be automatically migrated. \n - Refer to the relevant migration guide at go/cds-migrations for guidance on how to manually migrate. \n ${
-    valueIsTernary ? potentialTernaryWarning : manualMigrationWarning
-  }`;
-
-  if (jsxExpressionIdentifier) {
-    generateManualMigrationOutput(warning);
-    logWarning(warning);
+  if (hasDynamicValue) {
     oldValue = undefined;
     newValue = undefined;
   }

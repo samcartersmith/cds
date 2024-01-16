@@ -1,5 +1,7 @@
 import { Tree } from '@nrwl/devkit';
 
+import packageDecompMigrations from '../update-decomp';
+
 import attributeValueToBooleanMigrations from './attributeValueToBooleanMigrations';
 import catchAllPropMigrations from './catchAllPropMigrations';
 import componentMigrations from './componentMigrations';
@@ -19,5 +21,6 @@ export default async function main(tree: Tree) {
   await attributeValueToBooleanMigrations(tree);
   await propToAttributeValueMigrations(tree);
   await pathMigrations(tree);
+  await packageDecompMigrations(tree);
   await updateCdsPackages(tree);
 }

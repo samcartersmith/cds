@@ -5,6 +5,7 @@ import { SourceFile } from 'ts-morph';
 import {
   checkFileIncludesImport,
   checkFileIncludesRenamedValue,
+  checkForSpreadProps,
   checkIsComponentWithMigrations,
   createJsxMigration,
   logDebug,
@@ -38,6 +39,7 @@ function callback(args: ParseJsxElementsCbParams) {
   });
 
   if (isMigratable) {
+    checkForSpreadProps(jsx);
     const { oldValue, newValue } = renameJsxAttributeValue({
       attribute: updateMap.attribute,
       updateMap: updateMap.valueMap,
