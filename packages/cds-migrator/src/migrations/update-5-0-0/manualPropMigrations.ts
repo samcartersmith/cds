@@ -66,7 +66,7 @@ const callback = (args: ParseJsxElementsCbParams) => {
         },
       });
       if (isMigratable) {
-        const warning = `## Warning: ${component} has deprecated prop ${oldAttribute} at ${path}. \n  - Please use ${newAttribute} with a value of ${value} instead.`;
+        const warning = `## Warning: The ${oldAttribute} prop has been removed from ${component} and needs to be manually migrated at ${path}. \n  - Please replace ${oldAttribute} with ${newAttribute} with a value of ${value} instead.`;
         generateManualMigrationOutput(warning);
         logWarning(warning);
       }

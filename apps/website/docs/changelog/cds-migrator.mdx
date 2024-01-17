@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.34 (1/16/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: cleaned up phrasing for v5 migrations.
+
 ## 0.1.33 (1/16/2024 PST)
 
 #### 🚀 Updates
