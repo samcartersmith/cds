@@ -15,7 +15,7 @@ type CreateFeatureEntryCardParams<T> = {
   SpotSquare: React.ComponentType<React.PropsWithChildren<SpotSquareProps>>;
 };
 
-/** @deprecated will be removed in v6.0.0 */
+/** @deprecated will be removed in v7.0.0 Please use UpsellCard or NudgeCard instead */
 export type FeatureEntryCardProps<T> = {
   title: CardBodyBaseProps['title'];
   description: CardBodyBaseProps['description'];
@@ -24,7 +24,7 @@ export type FeatureEntryCardProps<T> = {
   onActionPress: T;
 };
 
-/** @deprecated will be removed in v6.0.0 Please use createFeatureEntryCard moving forward. */
+/** @deprecated will be removed in v7.0.0 Please use UpsellCard or NudgeCard moving forward. */
 export function createFeatureEntryCardDeprecated<T>({
   Button,
   Card,

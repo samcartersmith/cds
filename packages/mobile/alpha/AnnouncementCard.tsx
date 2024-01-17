@@ -3,8 +3,10 @@ import { createAnnouncementCard } from '@cbhq/cds-common/cards/createAnnouncemen
 import { Card } from './Card';
 import { CardBody } from './CardBody';
 
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export type AnnouncementCardProps = React.ComponentProps<typeof AnnouncementCard>;
 
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export const AnnouncementCard = createAnnouncementCard({
   Card,
   CardBody,

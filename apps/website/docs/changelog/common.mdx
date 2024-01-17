@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- [trivial] chore: deprecated cards that will be replaced with gondolin cards in v7.
+
 ## 5.27.0 ((1/12/2024, 08:09 AM PST))
 
 This is an artificial version bump with no new change.

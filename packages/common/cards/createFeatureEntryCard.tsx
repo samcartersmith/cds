@@ -7,6 +7,7 @@ type CreateFeatureEntryCardParams<OnPressFn> = {
   CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps<OnPressFn>>>;
 };
 
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export function createFeatureEntryCard<OnPressFn>({
   Card,
   CardBody,

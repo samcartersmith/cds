@@ -8,6 +8,7 @@ import { Card } from './Card';
 import { CardBody } from './CardBody';
 import { CardHeader } from './CardHeader';
 
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export const AnnouncementCard = createAnnouncementCardDeprecated({
   Button,
   Card,

@@ -34,7 +34,7 @@ export type AnnouncementCardProps<T> = {
   onFooterActionPress: T;
 };
 
-/** @deprecated will be removed in v6.0.0 Please use createAnnouncementCard instead. This version uses pre-frontier styling */
+/** @deprecated will be removed in v7.0.0 Please use NudgeCard or UpsellCard instead. */
 export function createAnnouncementCardDeprecated<T>({
   Button,
   Card,

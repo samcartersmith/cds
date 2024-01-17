@@ -7,6 +7,7 @@ type CreateAnnouncementCardParams<T> = {
   CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps<T>>>;
 };
 
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export function createAnnouncementCard<OnPressFn>({
   Card,
   CardBody,
