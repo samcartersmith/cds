@@ -1,0 +1,39 @@
+1. From your root NX workspace install the `cds-migrator`. If you are not using an NX workspace, you'll need to run `npx nx@latest init` first ([full installation guide](https://nx.dev/getting-started/installation#installing-nx-into-an-existing-repository)).
+
+```shell
+yarn add @cbhq/cds-migrator --dev
+```
+
+2. From your root NX workspace run the following command:
+
+```tsx
+yarn nx generate @cbhq/cds-migrator:migrate
+```
+
+And use the CLI to select the major version you are migrating to.
+
+3. Run yarn install to capture any updates to package.json
+
+```shell
+yarn install
+```
+
+and
+
+```shell
+lint --fix
+```
+
+to automatically sort imports that may have changed during the migration.
+
+4. If you are a mobile app, you will need to re-link native assets. This looks different depending on your setup, but after linking assets you will need to run a fresh native build.
+
+5. Run typecheck to identify any issues not caught with migrator
+
+6. Remove `@cbhq/cds-migrator` from dev dependencies if you want to avoid having to install unused dependencies. If you removed you will need to re-run install to capture changes in yarn.lock.
+
+Most deprecations are automatically migratable using `cds-migrator`, however there are a few known issues which require manual review for all migrations:
+
+- Deprecations that require manual migration will be outputted to `cds-migrator-output.md` at the root of the repo
+- Dynamic, conditional, and spread props (`...props`) are not automatically migratable, eg: `<Button variant={variant} />` where variant is a dynamic prop. The migrator will output a message to manually migrate these instances. Make sure you run all affected applications to check for runtime errors after migrating.
+- Some function migrations were not automatically migratable if a variable was destructured from the function. For example, `const { foo } = bar()` would not be automatically migratable. The migrator will output a message to manually migrate these instances. The inverse is also true, if you assigned a function to a variable and the replacement requires that you destructure a variable, it will be broken, eg: `const { isMobile } = useBreakpoints()` which replaces `const isMobile = useIsMobile()`.

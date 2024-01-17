@@ -1,0 +1,72 @@
+---
+title: CDS Web & Mobile v6 Migration Guide
+slug: /guides/migration/web-and-mobile/6-0-0
+---
+
+import Migrator from '../_migrator.mdx';
+
+In this major release we eliminated a lot of tech debt, realigned our component API's to newly accepted conventions, and enabled Frontier styling globally. Almost all breaking changes are automatically migratable with the `cds-migrator`. See [full list of changes](/resources/deprecations/v6.0.0).
+
+:::info
+v6.0.0 of CDS core packages (`common`, `web`, and `mobile`) are only compatible with the following major package versions (or higher):
+:::
+
+- `@cbhq/cds-web-overlays` v1.0.0
+- `@cbhq/cds-web-visualization` v1.0.0
+- `@cbhq/cds-mobile-visualization` v1.0.0
+- `@cbhq/cds-illustrations` v2.1.0
+- `@cbhq/cds-icons` v2.1.0
+
+## Using the Migrator
+
+<Migrator />
+
+## API Changes
+
+We renamed some of our component's property names to better align them to accepted [conventions](https://github.cbhq.net/frontend/cds/blob/master/docs/conventions/overview.md) and make our API&apos;s more intuitive and consistent. All migrations are automated with the `cds-migrator`. You can view the full list [here](/resources/deprecations/v6.0.0).
+
+## New Packages
+
+Complex components have been moved into their own standalone packages. Migration was previously optional but is now required in v6. Use the `cds-migrator` to automatically migrate instances and update package dependencies. The migrator will also bump these packages to `v1.0.0`.
+
+- `cds-web-overlays`: Dropdown, Select, Popover, Tooltip, SidebarMoreMenu, and SelectChip
+- `cds-web-visualization`: Sparkline components
+- `cds-mobile-visualization`: Sparkline components
+
+## Visual Changes
+
+Frontier feature flags have been removed and Frontier styling is now enabled by default. See [side by side comparison](https://www.figma.com/file/fm0tnNjeyaJLp0EpbCIlYd/CDS-Frontier-Updates?type=design&node-id=0-1&mode=design&t=84oqxDfNCP7qCni0-0). You will no longer be able to opt-out of Frontier. Use the `cds-migrator` to automatically remove instances of Frontier flags and styles will be enabled automatically.
+
+:::note
+Visually breaking changes should always be reviewed/QAed manually.
+:::
+
+### Typography
+
+Display2 has a new font size
+
+### Palette
+
+The following palette values have been modified:
+
+- Primary (dark)
+- Secondary
+- Yellow
+
+### Cards
+
+Cards have a completely new visual treatment which need to be manually QAed since the border has been removed and the background color changed, and may appear "transparent" depending on how they are used.
+
+- Removed border
+- Background color from `background` -> `secondary`
+
+We also introduced new cards in `v5.22.0` which will replace old cards in `v7.0.0`. Migrations will have to be completed manually, and will be optional until `v7.0.0`. See `cds-migrator-output.md` for migration guidance.
+
+### Buttons
+
+- Border radius is rounder
+- Removed border on secondary variant
+
+### Sparkline
+
+- Area is filled

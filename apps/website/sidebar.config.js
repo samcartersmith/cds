@@ -993,6 +993,7 @@ const sidebars = {
               type: 'category',
               label: 'Web and Mobile',
               items: [
+                { type: 'doc', id: 'guides/migration/web-and-mobile/6-0-0', label: '6.0.0' },
                 { type: 'doc', id: 'guides/migration/web-and-mobile/5-0-0', label: '5.0.0' },
                 { type: 'doc', id: 'guides/migration/web-and-mobile/4-0-0', label: '4.0.0' },
                 { type: 'doc', id: 'guides/migration/web-and-mobile/3-0-0', label: '3.0.0' },

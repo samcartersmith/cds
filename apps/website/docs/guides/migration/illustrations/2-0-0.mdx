@@ -1,13 +1,41 @@
 ---
-title: v2.0.0 Migration Guide
+title: CDS Illustrations v2 Migration Guide
 slug: /guides/migration/illustrations/2-0-0
 ---
 
-## 2.0.0
+import Migrator from '../_migrator.mdx';
 
-Howdy folks! Here are the breaking changes in this update. Happy coding!
+:::warning
+Please only use v2.1.0 and higher as v2.0.0 is incompatible with v5.0.0 and higher of web and mobile packages.
+:::
 
-### Pictogram renames {#pictogram-renames}
+This release introduces breaking changes to some illustration dimensions and names. You can use the `cds-migrator` to update all instances, however since dimensions were altered this will require manual review, since it could cause visual layout shift.
+
+You can optionally use the `scaleMultiplier` prop to scale the illustration back to the original size, however please note this goes against most recent design guidance.
+
+## Automatically Migrate
+
+<Migrator />
+
+## Changes
+
+### SpotSquare
+
+#### dimension
+
+| Old Value | New Value |
+| --------- | --------- |
+| 120x120   | 96x96     |
+
+### Pictogram
+
+#### dimension
+
+| Old Value | New Value |
+| --------- | --------- |
+| 96x96     | 64x64     |
+
+#### name
 
 | Old name          | New name              |
 | ----------------- | --------------------- |
@@ -16,8 +44,13 @@ Howdy folks! Here are the breaking changes in this update. Happy coding!
 <TOCUpdater
   toc={[
     {
-      value: 'Pictogram Renames',
-      id: 'pictogram-renames',
+      value: 'SpotSquare',
+      id: 'spotsquare',
+      level: 2,
+    },
+    {
+      value: 'Pictogram',
+      id: 'pictogram',
       level: 2,
     },
   ]}

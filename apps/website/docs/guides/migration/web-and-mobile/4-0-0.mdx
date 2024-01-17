@@ -1,51 +1,21 @@
 ---
-title: v4.0.0 Migration Guide
+title: CDS Web & Mobile v4 Migration Guide
 slug: /guides/migration/web-and-mobile/4-0-0
 ---
 
-## 4.0.0
+import Migrator from '../_migrator.mdx';
 
-Today we’re releasing cds-web and cds-mobile version 4.0.0! This is a feature-packed release including:
+This is a feature-packed release including:
 
 - @cbhq/cds-icons and @cbhq/cds-illustrations: Pave the way for more targeted and reliable updates, allowing teams to stay up-to-date with the latest design assets with stress free upgrades.
 - @cbhq/cds-migrator: Codemod transformations to help upgrade your CDS codebase easier and faster.
 - Changes to address accessibility issues in our icon, cell, and pressable components, including API updates to align with our current standards.
 
-### Happy path upgrade steps {#migrator}
+## Automatically Migrate
 
-1. From your root NX workspace install the new cds-migrator tool
+<Migrator />
 
-```shell
-yarn add @cbhq/cds-migrator --dev
-```
-
-2. From your root NX workspace run the following command:
-
-```tsx
-yarn nx generate @cbhq/cds-migrator:migrate 4.0.0
-```
-
-3. Run yarn install to capture any updates to package.json
-
-```shell
-yarn install
-```
-
-and
-
-```shell
-lint --fix
-```
-
-to automatically sort imports that may have changed during the migration.
-
-4. If you are a mobile app, you will need to re-link native assets. This looks different depending on your setup, but after linking assets you will need to run a fresh native build.
-
-5. Run typecheck to identify any issues not caught with migrator
-
-6. Remove @cbhq/cds-migrator from dev dependencies if you want to avoid having to install unused dependencies. If you removed you will need to re-run install to capture changes in yarn.lock.
-
-## In-depth overview of breaking changes {#in-depth}
+## In-depth overview of breaking changes
 
 ### Icon renames
 
@@ -426,18 +396,3 @@ This occurs because icons are now `aria-hidden` by default and no longer count a
   /** Used to associate descriptive text to an input for accessibility */
   accessibilityDescriptionId?: string;
 ```
-
-<TOCUpdater
-  toc={[
-    {
-      value: 'Happy Path Upgrades',
-      id: 'migrator',
-      level: 2,
-    },
-    {
-      value: 'Deep Dive',
-      id: 'in-depth',
-      level: 2,
-    },
-  ]}
-/>
