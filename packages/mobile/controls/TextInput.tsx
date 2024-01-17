@@ -71,6 +71,7 @@ export const TextInput = memo(
         accessibilityLabel,
         borderRadius,
         enableColorSurge = false,
+        helperTextErrorIconAccessibilityLabel = 'error',
         ...editableInputProps
       }: TextInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -170,11 +171,20 @@ export const TextInput = memo(
           }
           focused={focused}
           helperTextNode={
-            !!helperText && (
-              <HelperText align={align} color={variant} testID={testIDMap?.helperText ?? ''}>
+            !!helperText &&
+            (typeof helperText === 'string' ? (
+              <HelperText
+                align={align}
+                color={variant}
+                errorIconAccessibilityLabel={helperTextErrorIconAccessibilityLabel}
+                errorIconTestID={`${testIDMap?.helperText}-error-icon`}
+                testID={testIDMap?.helperText ?? ''}
+              >
                 {helperText}
               </HelperText>
-            )
+            ) : (
+              helperText
+            ))
           }
           inputNode={
             <NativeInput

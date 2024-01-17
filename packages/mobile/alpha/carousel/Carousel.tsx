@@ -84,7 +84,7 @@ export const Carousel = memo(
       const { width: screenWidth } = useSafeAreaFrame();
       const itemWidth = itemWidthProp ?? screenWidth;
       const [scrollRef, { scrollTo, scrollToEnd }] = useScrollTo(forwardedRef);
-      const { onScroll, xOffset } = useScrollOffset();
+      const { onScroll, xOffset, currentIndex } = useScrollOffset();
       const [dismissedItems, setDismissedItems] = useState<Set<CarouselId>>(new Set());
       const indicatorsOpacity = useRef(new Animated.Value(1));
       const [mountedItemsInfo, setMountedItemsInfo] = useState<CarouselMountedItemsInfo>({});
@@ -192,8 +192,17 @@ export const Carousel = memo(
           scrollToId,
           scrollTo,
           scrollToEnd,
+          currentIndex,
         }),
-        [childrenLength, dismissedItems, resetDismissedItems, scrollToId, scrollTo, scrollToEnd],
+        [
+          childrenLength,
+          dismissedItems,
+          resetDismissedItems,
+          scrollToId,
+          scrollTo,
+          scrollToEnd,
+          currentIndex,
+        ],
       );
 
       /**

@@ -70,6 +70,7 @@ export const createText = (name: Typography, overrides?: TextProps) => {
         transform = overrides?.transform,
         disabled = overrides?.disabled,
         inherit = overrides?.inherit,
+        accessibilityRole = overrides?.accessibilityRole,
         // Spacing
         spacing = overrides?.spacing,
         spacingTop = overrides?.spacingTop,
@@ -150,6 +151,7 @@ export const createText = (name: Typography, overrides?: TextProps) => {
 
       return (
         <TextComp
+          accessibilityRole={accessibilityRole}
           numberOfLines={numberOfLines}
           {...ellipsizeProps}
           {...props}

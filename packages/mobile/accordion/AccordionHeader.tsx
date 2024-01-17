@@ -50,6 +50,7 @@ export const AccordionHeader = memo(
       const { onItemPress } = useAccordionParent();
       const spacing = useCellSpacing();
       const minHeight = useScaleConditional(listHeight);
+      const accessibilityLabel = subtitle ? `${title}, ${subtitle}` : title;
 
       const handlePress = useCallback(() => {
         onPress?.(itemKey);
@@ -61,7 +62,7 @@ export const AccordionHeader = memo(
           ref={forwardedRef}
           noScaleOnPress
           transparentWhileInactive
-          accessibilityLabel={title}
+          accessibilityLabel={accessibilityLabel}
           accessibilityRole="togglebutton"
           accessibilityState={{ expanded: !collapsed }}
           backgroundColor="background"

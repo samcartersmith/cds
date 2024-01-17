@@ -7,6 +7,7 @@ import { DotSymbol } from '../../dots';
 import { Box, HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
 import { Tray } from '../../overlays/Tray/Tray';
+import { TextBody } from '../../typography';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
 import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
@@ -56,5 +57,28 @@ describe('Select Input', () => {
     fireEvent.press(screen.getByText(placeholderText));
 
     expect(onPressSpy).not.toHaveBeenCalled();
+  });
+  it('renders error icon in helper text when variant is negative', async () => {
+    render(
+      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+        <DefaultSelect helperText="helper text" placeholder={placeholderText} variant="negative" />
+      </SafeAreaProvider>,
+    );
+
+    expect(screen.getByTestId('select-error-icon')).toBeTruthy();
+    expect(screen.getByTestId('select-error-icon')).toBeAccessible();
+  });
+  it('should not render error icon when passing helper text node', async () => {
+    render(
+      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+        <DefaultSelect
+          helperText={<TextBody>helper text</TextBody>}
+          placeholder={placeholderText}
+          variant="negative"
+        />
+      </SafeAreaProvider>,
+    );
+
+    expect(screen.queryByTestId('select-error-icon')).toBeFalsy();
   });
 });

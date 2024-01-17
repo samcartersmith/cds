@@ -30,6 +30,16 @@ export type TextProps = {
   id?: string;
   /** Specify props by device breakpoint */
   responsiveConfig?: ResponsiveProps;
+  /**
+   * accessibility label before strikethrough element
+   * @default '[start of stricken text]'
+   * */
+  strikethroughStartAccessibilityLabel?: string;
+  /**
+   * accessibility label after strikethrough element
+   * @default '[end of stricken text]'
+   */
+  strikethroughEndAccessibilityLabel?: string;
 } & TextBaseProps &
   SharedProps &
   RefAttributes<HTMLElement> &

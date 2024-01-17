@@ -26,6 +26,11 @@ export type TextInputBaseProps = {
     label?: string;
     helperText?: string;
   };
+  /**
+   * Accessibility label for helper text error icon when variant='negative'
+   * @default 'error'
+   */
+  helperTextErrorIconAccessibilityLabel?: string;
 } & SharedProps &
   Pick<
     SharedAccessibilityProps,

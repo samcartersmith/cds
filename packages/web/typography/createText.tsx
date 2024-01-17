@@ -39,6 +39,29 @@ const textInherit = css`
   font-family: inherit;
 `;
 
+/** Strikesthrough element accessibility implementation
+ * @link: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s#accessibility_concerns
+ */
+const strikethrough = css`
+  &::before,
+  &::after {
+    clip-path: inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  &::before {
+    content: attr(data-strikethrough-start);
+  }
+
+  &::after {
+    content: attr(data-strikethrough-end);
+  }
+`;
+
 export const createText = <
   E extends HTMLTextTags,
   Overrides extends TextProps & { as?: E } = TextProps & { as?: E },
@@ -80,6 +103,10 @@ export const createText = <
       accessibilityLabelledBy = overrides?.accessibilityLabelledBy,
       id = overrides?.id,
       responsiveConfig,
+      strikethroughStartAccessibilityLabel = overrides?.strikethroughStartAccessibilityLabel ??
+        '[start of stricken text]',
+      strikethroughEndAccessibilityLabel = overrides?.strikethroughEndAccessibilityLabel ??
+        '[end of stricken text]',
       ...props
     }: DynamicElement<
       TextProps,
@@ -102,6 +129,7 @@ export const createText = <
     });
 
     const responsiveStyleClassNames = useResponsiveConfig(responsiveConfig);
+    const elementType = overrides?.as ?? as;
 
     const textStyles = useMemo(() => {
       const style: React.CSSProperties = {};
@@ -119,7 +147,7 @@ export const createText = <
     }
 
     return createElement(
-      overrides?.as ?? as,
+      elementType,
       {
         ...props,
         'data-testid': testID,
@@ -128,12 +156,19 @@ export const createText = <
         id,
         ref,
         ...(mono ? { 'data-variant': 'mono' } : emptyObject),
+        ...(elementType === 's'
+          ? {
+              'data-strikethrough-start': strikethroughStartAccessibilityLabel,
+              'data-strikethrough-end': strikethroughEndAccessibilityLabel,
+            }
+          : emptyObject),
         style: textStyles,
         className: cx(
           typographyResets,
           inherit ? textInherit : typographyStyles,
           color === 'currentColor' ? currentColor : foregroundStyles[color],
           disabled && disabledState,
+          elementType === 's' && strikethrough,
           ...getTypographyStyles({
             align,
             display,

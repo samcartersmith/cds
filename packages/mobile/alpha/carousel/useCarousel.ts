@@ -23,5 +23,6 @@ export const useCarousel = () => {
     scrollToId: noop,
     scrollTo: noop,
     scrollToEnd: noop,
+    currentIndex: 0,
   });
 };

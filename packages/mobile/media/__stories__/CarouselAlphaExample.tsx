@@ -1,18 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { feedImages } from '@cbhq/cds-common/internal/data/feedImages';
 
 import { AnnouncementCard, AnnouncementCardProps } from '../../alpha/AnnouncementCard';
 import { Carousel, CarouselId } from '../../alpha/carousel/Carousel';
+import { useCarousel } from '../../alpha/carousel/useCarousel';
 import { Divider } from '../../layout/Divider';
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 
-export function CarouselItem({
-  pictogram,
-  spotSquare,
-}: {
-  pictogram?: AnnouncementCardProps['pictogram'];
-  spotSquare?: AnnouncementCardProps['spotSquare'];
-}) {
+export function CarouselItem({ pictogram, spotSquare, ...props }: AnnouncementCardProps) {
   const handleOnPress = useCallback(() => {
     console.log('pressed card');
   }, []);
@@ -24,11 +19,12 @@ export function CarouselItem({
       pictogram={pictogram}
       spotSquare={spotSquare}
       title="Title/Headline"
+      {...props}
     />
   );
 }
 
-export function CarouselItemImage({ image }: { image: string }) {
+export function CarouselItemImage({ image, ...props }: { image: string } & AnnouncementCardProps) {
   const handleOnPress = useCallback(() => {
     console.log('pressed card');
   }, []);
@@ -39,41 +35,80 @@ export function CarouselItemImage({ image }: { image: string }) {
       image={image}
       onPress={handleOnPress}
       title="Title/Headline"
+      {...props}
     />
   );
 }
 
 export function ProgressBarsExample() {
-  const onDismissItem = useCallback((id: CarouselId) => {
-    console.log('onDismissItem', id);
-  }, []);
+  const carouselRef = useCarousel();
+  const [currentCarouselRef, setCurrentCarouselRef] = useState(carouselRef.current);
+  const onDismissItem = useCallback(
+    (id: CarouselId) => {
+      setCurrentCarouselRef(carouselRef.current);
+      console.log('onDismissItem', id);
+    },
+    [carouselRef],
+  );
 
   const onDismissLastItem = useCallback(() => {
     console.log('onDismissLastItem');
   }, []);
+
+  useEffect(() => {
+    setCurrentCarouselRef(carouselRef.current);
+  }, [carouselRef]);
+
+  const handleOnMomentumScrollEnd = useCallback(() => {
+    setCurrentCarouselRef(carouselRef.current);
+  }, [carouselRef]);
+
+  const accessibilityLabel = `${currentCarouselRef.currentIndex + 1} of ${
+    currentCarouselRef.length
+  }, Title/Headline`;
 
   return (
     <FeatureFlagProvider frontierButton frontierCard>
       <Carousel
         showDismiss
         showProgress
+        carouselRef={carouselRef}
         dismissButtonAccessibilityLabel="Close"
         items={[
-          <CarouselItem key="item1" spotSquare="sparkleToken" />,
-          <CarouselItem key="item2" pictogram="addressBook" />,
-          <CarouselItem key="item3" spotSquare="announcementAdvancedTrading" />,
-          <CarouselItem key="item4" pictogram="worldwide" />,
+          <CarouselItem
+            key="item1"
+            accessibilityLabel={accessibilityLabel}
+            spotSquare="sparkleToken"
+          />,
+          <CarouselItem
+            key="item2"
+            accessibilityLabel={accessibilityLabel}
+            pictogram="addressBook"
+          />,
+          <CarouselItem
+            key="item3"
+            accessibilityLabel={accessibilityLabel}
+            spotSquare="announcementAdvancedTrading"
+          />,
+          <CarouselItem
+            key="item4"
+            accessibilityLabel={accessibilityLabel}
+            pictogram="worldwide"
+          />,
         ]}
         onDismissItem={onDismissItem}
         onDismissLastItem={onDismissLastItem}
+        onMomentumScrollEnd={handleOnMomentumScrollEnd}
       />
       <Divider />
       <Carousel
-        showDismiss
         showProgress
-        dismissButtonAccessibilityLabel="Close"
-        items={feedImages.map((item) => (
-          <CarouselItemImage key={item} image={item} />
+        items={feedImages.map((item, index) => (
+          <CarouselItemImage
+            key={item}
+            accessibilityLabel={`${index + 1} of ${feedImages.length}, Title/Headline`}
+            image={item}
+          />
         ))}
         onDismissItem={onDismissItem}
         onDismissLastItem={onDismissLastItem}

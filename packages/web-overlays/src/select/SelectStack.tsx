@@ -9,6 +9,7 @@ import { handlePreventPropagation } from '@cbhq/cds-web/utils/eventHandlers';
 
 export type SelectStackProps = {
   children: ReactElement;
+  helperTextErrorIconAccessibilityLabel?: string;
 } & Pick<SelectBaseProps, 'compact' | 'label' | 'disabled' | 'helperText' | 'variant' | 'focused'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabelId' | 'accessibilityDescriptionId'>;
 
@@ -24,6 +25,7 @@ export const SelectStack = memo(
       focused,
       accessibilityLabelId,
       accessibilityDescriptionId,
+      helperTextErrorIconAccessibilityLabel = 'error',
     }: SelectStackProps,
     ref: ForwardedRef<HTMLElement>,
   ) {
@@ -33,18 +35,23 @@ export const SelectStack = memo(
         disabled={disabled}
         focused={focused}
         helperTextNode={
-          Boolean(helperText) && (
+          Boolean(helperText) &&
+          (typeof helperText === 'string' ? (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={handlePreventPropagation}>
               <HelperText
                 color={variant ?? 'foregroundMuted'}
+                errorIconAccessibilityLabel={helperTextErrorIconAccessibilityLabel}
+                errorIconTestID="select-error-icon"
                 id={accessibilityDescriptionId}
                 overflow="truncate"
               >
                 {helperText}
               </HelperText>
             </div>
-          )
+          ) : (
+            helperText
+          ))
         }
         inputNode={children}
         labelNode={

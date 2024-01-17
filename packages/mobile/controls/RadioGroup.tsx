@@ -61,10 +61,7 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
         typeof children === 'string' && accessibilityLabel === undefined
           ? children
           : accessibilityLabel,
-      accessibilityHint:
-        typeof children === 'string' && accessibilityHint === undefined
-          ? children
-          : accessibilityHint,
+      accessibilityHint,
     }),
     [children, accessibilityLabel, accessibilityHint],
   );
@@ -112,8 +109,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
     () => ({
       accessibilityLabel:
         typeof label === 'string' && accessibilityLabel === undefined ? label : accessibilityLabel,
-      accessibilityHint:
-        typeof label === 'string' && accessibilityHint === undefined ? label : accessibilityHint,
+      accessibilityHint,
     }),
     [label, accessibilityLabel, accessibilityHint],
   );
@@ -130,7 +126,6 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
       {entries<Record<T, string | ReactNode>>(options).map(([value, option]) => (
         <Radio<T>
           key={value}
-          accessibilityHint={typeof option === 'string' ? option : undefined}
           accessibilityLabel={typeof option === 'string' ? option : undefined}
           checked={selectedValue === value}
           onChange={onChange}

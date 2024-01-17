@@ -84,5 +84,5 @@ export type SharedInputProps = {
    * to describe what the text input is for. Can also be used for
    * showing positive/negative messages
    */
-  helperText?: string;
+  helperText?: string | ReactNode;
 };

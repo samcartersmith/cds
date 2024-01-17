@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.21 (1/17/2024 PST)
+
+#### 🚀 Updates
+
+- Select component negative state helper text default UI. [[#2639](https://github.cbhq.net/frontend/cds/pull/2639)]
+
 ## 0.0.20 (1/8/2024 PST)
 
 #### 🚀 Updates

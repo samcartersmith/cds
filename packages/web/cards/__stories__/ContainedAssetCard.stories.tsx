@@ -109,7 +109,7 @@ export const Custom = (): JSX.Element => {
       <ContainedAssetCard
         {...exampleProps}
         description={
-          <TextLabel2 as="p" color="positive">
+          <TextLabel2 accessibilityLabel="Up 6.37%" as="p" color="positive">
             {subheadIconSignMap.upwardTrend}6.37%
           </TextLabel2>
         }

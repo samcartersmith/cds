@@ -169,6 +169,21 @@ describe('Text', () => {
       expect(ref.current).toBeInstanceOf(HTMLElement);
     });
   });
+  it('sets start and end a11y labels to strikethrough text', () => {
+    textTestRunner((TextComponent) => {
+      render(<TextComponent as="s">Strikethrough</TextComponent>);
+
+      expect(screen.getAllByText('Strikethrough')[0]).toHaveClass('strikethrough');
+      expect(screen.getAllByText('Strikethrough')[0]).toHaveAttribute(
+        'data-strikethrough-start',
+        '[start of stricken text]',
+      );
+      expect(screen.getAllByText('Strikethrough')[0]).toHaveAttribute(
+        'data-strikethrough-end',
+        '[end of stricken text]',
+      );
+    });
+  });
 
   describe('overflow', () => {
     textTestRunner((TextComponent) => {

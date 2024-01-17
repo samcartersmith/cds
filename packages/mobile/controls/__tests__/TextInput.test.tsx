@@ -86,6 +86,43 @@ describe('TextInput', () => {
     expect(screen.getByTestId(testID)).toHaveTextContent(helperText);
   });
 
+  it('renders error icon in helper text when variant is negative', () => {
+    const testID = 'helpertext-testid';
+    const helperText = 'Example helper text';
+    render(
+      <TextInput
+        compact
+        accessibilityHint="Text input field"
+        accessibilityLabel="Text input field"
+        helperText={helperText}
+        testIDMap={{
+          helperText: testID,
+        }}
+        variant="negative"
+      />,
+    );
+    expect(screen.getByTestId(`${testID}-error-icon`)).toBeTruthy();
+    expect(screen.getByTestId(`${testID}-error-icon`)).toBeAccessible();
+  });
+
+  it('should not render error icon when passing helper text node', () => {
+    const testID = 'helpertext-testid';
+    const helperText = 'Example helper text';
+    render(
+      <TextInput
+        compact
+        accessibilityHint="Text input field"
+        accessibilityLabel="Text input field"
+        helperText={<TextTitle1>{helperText}</TextTitle1>}
+        testIDMap={{
+          helperText: testID,
+        }}
+        variant="negative"
+      />,
+    );
+    expect(screen.queryByTestId(`${testID}-error-icon`)).toBeFalsy();
+  });
+
   it('renders placeholder text', () => {
     const placeholderText = 'Example placeholder text';
     render(

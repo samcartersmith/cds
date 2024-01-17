@@ -71,6 +71,7 @@ export const TextInput = memo(
       inputNode,
       bordered = true,
       enableColorSurge = false,
+      helperTextErrorIconAccessibilityLabel = 'error',
       ...htmlInputElmProps
     }: TextInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -211,17 +212,22 @@ export const TextInput = memo(
           focused={focused}
           height={height}
           helperTextNode={
-            !!helperText && (
+            !!helperText &&
+            (typeof helperText === 'string' ? (
               <HelperText
                 accessibilityLabel={helperText}
                 align={align}
                 color={variant}
+                errorIconAccessibilityLabel={helperTextErrorIconAccessibilityLabel}
+                errorIconTestID={`${testIDMap?.helperText}-error-icon`}
                 id={shouldSetHelperTextId ? helperTextId : undefined}
                 testID={testIDMap?.helperText ?? ''}
               >
                 {helperText}
               </HelperText>
-            )
+            ) : (
+              helperText
+            ))
           }
           inputNode={inputNodeCloned}
           labelNode={

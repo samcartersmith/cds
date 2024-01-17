@@ -84,7 +84,7 @@ const ContainedAssetCardScreen = () => {
         <ContainedAssetCard
           {...exampleProps}
           description={
-            <TextLabel2 dangerouslySetColor={customUpwardTrendColor}>
+            <TextLabel2 accessibilityLabel="Up 6.37%" dangerouslySetColor={customUpwardTrendColor}>
               {subheadIconSignMap.upwardTrend}6.37%
             </TextLabel2>
           }

@@ -108,4 +108,15 @@ describe('Select', () => {
     const selectButtonRerendered = screen.getAllByRole('button')[0];
     expect(selectButtonRerendered).toHaveFocus();
   });
+  it('renders error icon in helper text when variant is negative', async () => {
+    render(<MockSelect helperText="helper text" variant="negative" />);
+
+    expect(screen.getByTestId('select-error-icon')).toBeTruthy();
+    expect(screen.getByText('helper text')).toBeTruthy();
+  });
+  it('should not render error icon when passing in helper text node', async () => {
+    render(<MockSelect helperText={<span>helper text</span>} variant="negative" />);
+
+    expect(screen.queryByTestId('select-error-icon')).toBeFalsy();
+  });
 });

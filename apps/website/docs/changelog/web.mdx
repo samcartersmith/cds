@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.28.0 (1/17/2024 PST)
+
+#### 🚀 Updates
+
+- TextInput and Select component negative state helper text default UI and fixed a11y issues. [[#2639](https://github.cbhq.net/frontend/cds/pull/2639)]
 
 #### 📘 Misc
 

@@ -116,7 +116,10 @@ export const Select = memo(
       const accessibilityState = useMemo(() => ({ disabled: !!disabled }), [disabled]);
 
       const defaultAccessibilityLabel =
-        (label ?? ',') + (value ?? placeholder ?? ',') + (helperText ?? '');
+        (variant === 'negative' ? 'error, ' : '') +
+        (label ? `${label}, ` : '') +
+        (value ?? placeholder ? `${value ?? placeholder}, ` : '') +
+        (typeof helperText === 'string' ? helperText : '');
 
       return (
         <TextInputFocusVariantContext.Provider value={focusedVariant}>
@@ -148,7 +151,14 @@ export const Select = memo(
                 }
                 focused={isSelectTrayOpen}
                 helperTextNode={
-                  Boolean(helperText) && <HelperText color={variant}>{helperText}</HelperText>
+                  Boolean(helperText) &&
+                  (typeof helperText === 'string' ? (
+                    <HelperText color={variant} errorIconTestID="select-error-icon">
+                      {helperText}
+                    </HelperText>
+                  ) : (
+                    helperText
+                  ))
                 }
                 inputNode={
                   <HStack

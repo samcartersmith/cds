@@ -72,7 +72,8 @@ export type BoxElement =
   | 'nav'
   | 'ul'
   | 'ol'
-  | 'li';
+  | 'li'
+  | 'span';
 
 export type BoxProps<As extends BoxElement = 'div'> = {
   /**

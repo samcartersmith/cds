@@ -11,6 +11,7 @@ import {
   TextLabel1,
   TextLabel2,
   TextLegal,
+  TextProps,
   TextTitle1,
   TextTitle2,
   TextTitle3,
@@ -18,11 +19,6 @@ import {
 } from '../index';
 
 const textComponents = [
-  TextDisplay1,
-  TextDisplay2,
-  TextDisplay3,
-  TextTitle1,
-  TextTitle2,
   TextTitle3,
   TextTitle4,
   TextHeadline,
@@ -33,8 +29,29 @@ const textComponents = [
   TextLegal,
 ];
 
+const renderHeaderComponents = (props?: TextProps) => (
+  <>
+    <TextDisplay1 as="h1" {...props}>
+      Display1
+    </TextDisplay1>
+    <TextDisplay2 as="h2" {...props}>
+      Display2
+    </TextDisplay2>
+    <TextDisplay3 as="h3" {...props}>
+      Display3
+    </TextDisplay3>
+    <TextTitle1 as="h3" {...props}>
+      Title1
+    </TextTitle1>
+    <TextTitle2 as="h4" {...props}>
+      Title2
+    </TextTitle2>
+  </>
+);
+
 export const Normal = () => (
   <>
+    {renderHeaderComponents()}
     {textComponents.map((Component) => {
       const name = Component.displayName?.slice(4);
       return (
@@ -48,33 +65,8 @@ export const Normal = () => (
 
 export const Dense = () => (
   <ThemeProvider scale="xSmall">
-    {textComponents.map((Component) => {
-      const name = Component.displayName?.slice(4);
-      return (
-        <Component key={name} as="p" display="block">
-          {name}
-        </Component>
-      );
-    })}
-  </ThemeProvider>
-);
-
-export const FrontierNormal = () => (
-  <FeatureFlagProvider frontierTypography>
-    {textComponents.map((Component) => {
-      const name = Component.displayName?.slice(4);
-      return (
-        <Component key={name} as="p" display="block">
-          {name}
-        </Component>
-      );
-    })}
-  </FeatureFlagProvider>
-);
-
-export const FrontierDense = () => (
-  <FeatureFlagProvider frontierTypography>
-    <ThemeProvider scale="xSmall">
+    <>
+      {renderHeaderComponents({ display: 'block' })}
       {textComponents.map((Component) => {
         const name = Component.displayName?.slice(4);
         return (
@@ -83,12 +75,47 @@ export const FrontierDense = () => (
           </Component>
         );
       })}
+    </>
+  </ThemeProvider>
+);
+
+export const FrontierNormal = () => (
+  <FeatureFlagProvider frontierTypography>
+    <>
+      {renderHeaderComponents({ display: 'block' })}
+      {textComponents.map((Component) => {
+        const name = Component.displayName?.slice(4);
+        return (
+          <Component key={name} as="p" display="block">
+            {name}
+          </Component>
+        );
+      })}
+    </>
+  </FeatureFlagProvider>
+);
+
+export const FrontierDense = () => (
+  <FeatureFlagProvider frontierTypography>
+    <ThemeProvider scale="xSmall">
+      <>
+        {renderHeaderComponents({ display: 'block' })}
+        {textComponents.map((Component) => {
+          const name = Component.displayName?.slice(4);
+          return (
+            <Component key={name} as="p" display="block">
+              {name}
+            </Component>
+          );
+        })}
+      </>
     </ThemeProvider>
   </FeatureFlagProvider>
 );
 
 export const MonoFont = () => (
   <>
+    {renderHeaderComponents({ mono: true })}
     {textComponents.map((Component) => {
       const name = Component.displayName?.slice(4);
       return (
@@ -142,6 +169,16 @@ export const Underline = () => (
 );
 
 export const Strikethrough = () => <TextBody as="s">Manual verification</TextBody>;
+
+export const StrikethroughWithCustomLabels = () => (
+  <TextBody
+    as="s"
+    strikethroughEndAccessibilityLabel="[custom end of stricken text]"
+    strikethroughStartAccessibilityLabel="[custom start of stricken text]"
+  >
+    Manual verification
+  </TextBody>
+);
 
 const MediumContainer = ({ children }: { children?: React.ReactNode }) => (
   <div style={{ width: '35%', height: '50px', backgroundColor: 'var(--background-alternate)' }}>

@@ -13,6 +13,7 @@ export type CarouselRef = {
   scrollToId: CarouselScrollToId;
   scrollTo: ScrollToFn;
   scrollToEnd: ScrollToEndFn;
+  currentIndex: number;
 };
 
 export type CarouselItemAnimatedStyles = {
