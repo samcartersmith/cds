@@ -68,7 +68,7 @@ export type CellAccessoryProps = {
 
 export type CellDetailVariant = Extract<
   PaletteForeground,
-  'foregroundMuted' | 'negative' | 'positive'
+  'foregroundMuted' | 'negative' | 'positive' | 'warning'
 >;
 
 export type CellDetailProps = {

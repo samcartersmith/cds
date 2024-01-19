@@ -68,6 +68,8 @@ export function listCellBuilder(
         />
 
         <ListCell detail="Detail" subdetail="-Negative" title="Title" variant="negative" />
+
+        <ListCell detail="Detail" subdetail="Warning" title="Title" variant="warning" />
       </>
     );
   };
@@ -114,6 +116,8 @@ export function listCellBuilder(
         />
 
         <ListCell compact detail="Detail" subdetail="-Negative" title="Title" variant="negative" />
+
+        <ListCell compact detail="Detail" subdetail="Warning" title="Title" variant="warning" />
       </>
     );
   };
@@ -190,6 +194,17 @@ export function listCellBuilder(
         subdetail="+Postive"
         title="Title"
         variant="positive"
+      />
+
+      <ListCell
+        disabled
+        selected
+        description="Description"
+        detail="Detail"
+        onPress={onPressConsole}
+        subdetail="Warning"
+        title="Title"
+        variant="warning"
       />
     </>
   );
@@ -284,6 +299,18 @@ export function listCellBuilder(
         title="Title"
         variant="positive"
       />
+
+      <ListCell
+        compact
+        disabled
+        selected
+        description="Description"
+        detail="Detail"
+        onPress={onPressConsole}
+        subdetail="Warning"
+        title="Title"
+        variant="warning"
+      />
     </>
   );
 
@@ -357,6 +384,15 @@ export function listCellBuilder(
         title="Asset with a really long name"
         variant="positive"
       />
+      <ListCell
+        description="Some description of the asset"
+        detail="$334,239.03"
+        intermediary={<CellMedia name="chartLine" type="icon" />}
+        priority={cellPriorities}
+        subdetail="+4.06%"
+        title="Asset with a really long name"
+        variant="warning"
+      />
     </>
   );
 
@@ -394,6 +430,15 @@ export function listCellBuilder(
         subdetail="-Negative"
         title="Title"
         variant="negative"
+      />
+
+      <ListCell
+        accessory="arrow"
+        description="Description"
+        detail="Detail"
+        subdetail="Warning"
+        title="Title"
+        variant="warning"
       />
     </>
   );

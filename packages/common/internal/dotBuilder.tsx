@@ -17,7 +17,7 @@ import { assets } from './data/assets';
 import { avatarSizes } from './data/avatars';
 import { iconSizes } from './data/iconData';
 
-export const VARIANTS = ['positive', 'negative', 'primary', 'foregroundMuted'] as const;
+export const VARIANTS = ['positive', 'negative', 'primary', 'foregroundMuted', 'warning'] as const;
 export const PIN_DIRECTIONS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'] as const;
 export const SIZES = ['s', 'm', 'l'] as const;
 

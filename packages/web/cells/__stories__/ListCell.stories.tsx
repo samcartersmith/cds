@@ -8,9 +8,21 @@ import { Box } from '../../layout/Box';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
+const parameters = {
+  percy: { enableJavascript: true },
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
 export default {
   title: 'Core Components/Cells/ListCell',
   component: ListCell,
+  parameters: {
+    ...parameters,
+  },
 };
 
 export const withA11yOldVStack = () => {

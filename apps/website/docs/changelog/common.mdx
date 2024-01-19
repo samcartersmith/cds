@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.28.1 (1/18/2024 PST)
+
+#### 🐞 Fixes
+
+- Add warning variants for ListCell & DotStatusColor. [[#2648](https://github.cbhq.net/frontend/cds/pull/2648)] [[DX-3072](https://jira.coinbase-corp.com/browse/DX-3072)]
+
 ## 5.28.0 (1/17/2024 PST)
 
 #### 🚀 Updates

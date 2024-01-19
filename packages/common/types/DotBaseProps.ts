@@ -8,7 +8,7 @@ import { SharedProps } from './SharedProps';
 
 export type DotVariant = Extract<
   PaletteForeground,
-  'positive' | 'negative' | 'primary' | 'foregroundMuted'
+  'positive' | 'negative' | 'primary' | 'foregroundMuted' | 'warning'
 >;
 
 // There is only one type of overlap right now,
