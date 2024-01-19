@@ -44,6 +44,7 @@ for sub_directory in "$base_directory"/*; do
             )
             FILE_FORMAT = (TYPE = 'JSON');
         "
+        echo " "
+        echo " "
     fi
 done
-"
