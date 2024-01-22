@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.4.0 (1/22/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] chore: added stories for palette aliases.
+
 ## 1.3.1 (1/8/2024 PST)
 
 #### 🐞 Fixes

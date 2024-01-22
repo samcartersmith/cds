@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- [trivial] chore: added stories for palette aliases.
+
 ## 5.28.1 ((1/18/2024, 11:01 AM PST))
 
 This is an artificial version bump with no new change.

@@ -188,6 +188,10 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Overlay.stories').default,
   },
   {
+    key: 'Palette',
+    getComponent: () => require('@cbhq/cds-mobile/system/__stories__/Palette.stories').default,
+  },
+  {
     key: 'PatternDisclosureHighFrictionBenefit',
     getComponent: () =>
       require('@cbhq/cds-mobile/system/__stories__/PatternDisclosureHighFrictionBenefit.stories')

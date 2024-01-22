@@ -2,6 +2,8 @@
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable global-require */
 
 export const routes = [
   {
@@ -184,6 +186,10 @@ export const routes = [
   {
     key: 'Overlay',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Overlay.stories').default,
+  },
+  {
+    key: 'Palette',
+    getComponent: () => require('@cbhq/cds-mobile/system/__stories__/Palette.stories').default,
   },
   {
     key: 'PatternDisclosureHighFrictionBenefit',
