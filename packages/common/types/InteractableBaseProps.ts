@@ -4,6 +4,7 @@ import { ElevationLevels } from './ElevationLevels';
 import { PaletteAlias, PaletteBorder } from './Palette';
 
 export type InteractableBaseProps = {
+  /** @deprecated This prop will be replaced in v6.0.0 with background. */
   /** Background color of the overlay (element being interacted with). */
   backgroundColor: PaletteAlias | 'transparent';
   /** Set element to block and expand to 100% width. */

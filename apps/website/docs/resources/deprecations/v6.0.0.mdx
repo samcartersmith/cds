@@ -2305,6 +2305,60 @@ The following items will be deleted in v6.0.0. Please use the <code>cds-migrator
       </ul>
     </VStack>
   </AccordionItem>
+  <AccordionItem
+    itemKey="aria-labelledby.web"
+    title={
+      <HStack gap={1}>
+        aria-labelledby <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-web"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>aria-labelledby</code> has been replaced with <code>accessibilityLabelledBy</code>
+          </li>
+        </ul>
+      </p>
+      <TextHeadline spacingTop="2" as="h4">
+        Impacted Components:{' '}
+      </TextHeadline>
+      <ul>
+        <li>RadioGroup</li>
+      </ul>
+    </VStack>
+  </AccordionItem>
+  <AccordionItem
+    itemKey="backgroundColor.common"
+    title={
+      <HStack gap={1}>
+        backgroundColor <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>backgroundColor</code> has been replaced with <code>background</code>
+          </li>
+        </ul>
+      </p>
+      <TextHeadline spacingTop="2" as="h4">
+        Impacted Components:{' '}
+      </TextHeadline>
+      <ul>
+        <li>Interactable</li>
+        <li>Pressable</li>
+        <li>Control</li>
+      </ul>
+    </VStack>
+  </AccordionItem>
 </Accordion>
 
 ### 🪙 Tokens {#tokens}

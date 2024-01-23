@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.28.2 (1/23/2024 PST)
+
+#### 🐞 Fixes
+
+- Deprecate props in RadioGroup and Pressable. [[#2652](https://github.cbhq.net/frontend/cds/pull/2652)]
+
 ## 5.28.1 (1/18/2024 PST)
 
 #### 🐞 Fixes

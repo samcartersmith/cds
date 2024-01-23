@@ -570,6 +570,24 @@ const propDeprecations: Prop[] = [
     },
     components: ['Alert', 'Modal'],
   },
+  {
+    name: 'aria-labelledby',
+    type: 'api',
+    package: 'web',
+    migrationMap: {
+      api: { 'aria-labelledby': 'accessibilityLabelledBy' },
+    },
+    components: ['RadioGroup'],
+  },
+  {
+    name: 'backgroundColor',
+    type: 'api',
+    package: 'common',
+    migrationMap: {
+      api: { backgroundColor: 'background' },
+    },
+    components: ['Interactable', 'Pressable', 'Control'],
+  },
 ];
 
 export const V6: Deprecation = {

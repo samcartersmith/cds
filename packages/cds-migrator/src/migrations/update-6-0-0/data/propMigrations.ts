@@ -111,16 +111,36 @@ export const renamedProps: AttributeRenameMapShape = {
     oldAttribute: 'shouldApplyDarkModeEnhacements',
     newAttribute: 'darkModeEnhancementsApplied',
   },
-  RadioGroup: {
-    oldAttribute: 'selectedValue',
-    newAttribute: 'value',
-  },
+  RadioGroup: [
+    {
+      oldAttribute: 'selectedValue',
+      newAttribute: 'value',
+    },
+    {
+      oldAttribute: 'aria-labelledby',
+      newAttribute: 'accessibilityLabelledBy',
+      corePackageDependency: ['@cbhq/cds-web'],
+    },
+  ],
   Accordion: [
     {
       oldAttribute: 'onItemPress',
       newAttribute: 'onChange',
     },
   ],
+  Interactable: {
+    oldAttribute: 'backgroundColor',
+    newAttribute: 'background',
+  },
+  Pressable: {
+    oldAttribute: 'backgroundColor',
+    newAttribute: 'background',
+  },
+  Control: {
+    oldAttribute: 'backgroundColor',
+    newAttribute: 'background',
+    corePackageDependency: ['@cbhq/cds-web'],
+  },
   ...offsetConfigs,
   ...spacingConfigs,
   ...cellConfigs,
