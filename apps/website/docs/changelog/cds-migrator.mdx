@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.35 (1/23/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] chore: added missing migration scripts.
+
 ## 0.1.34 (1/16/2024 PST)
 
 #### 🐞 Fixes

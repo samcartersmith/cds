@@ -98,11 +98,6 @@ const sparklineWebDeprecations = [
   },
   {
     ...baseWebDeprecation,
-    name: 'VisualizationContainer',
-    path: 'packages/web/visualizations/VisualizationContainer.tsx',
-  },
-  {
-    ...baseWebDeprecation,
     name: 'SparklineInteractiveHeader',
     path: 'packages/web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx',
   },

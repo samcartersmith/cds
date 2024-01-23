@@ -17,6 +17,21 @@ export const migrations: DecompedMigration[] = [
     newDir: '@cbhq/cds-web-overlays',
   },
   {
+    exports: ['SelectStackProps', 'SelectStack'],
+    oldDir: '@cbhq/cds-web/controls',
+    newDir: '@cbhq/cds-web-overlays',
+  },
+  {
+    exports: ['SelectTriggerProps', 'SelectTrigger'],
+    oldDir: '@cbhq/cds-web/controls',
+    newDir: '@cbhq/cds-web-overlays',
+  },
+  {
+    exports: ['SelectContext', 'SelectContextType', 'SelectProvider', 'useSelectContext'],
+    oldDir: '@cbhq/cds-web/controls/selectContext',
+    newDir: '@cbhq/cds-web-overlays/select/context',
+  },
+  {
     exports: ['SidebarMoreMenu'],
     oldDir: '@cbhq/cds-web/navigation',
     newDir: '@cbhq/cds-web-overlays',

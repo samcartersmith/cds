@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.0.7 (1/23/2024 PST)
+
+#### 🐞 Fixes
+
+- Chore: deprecated VisualizationContainer which was incorrectly decomped.
 
 #### 📘 Misc
 

@@ -19,8 +19,7 @@ import { Box } from '@cbhq/cds-web/layout/Box';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 import { cx } from '@cbhq/cds-web/utils/linaria';
-
-import { VisualizationContainer } from '../VisualizationContainer';
+import { VisualizationContainer } from '@cbhq/cds-web/visualizations/VisualizationContainer';
 
 import { baseSimpleFadeClassName, simpleFadeInClassName, simpleFadeOutClassName } from './fade';
 import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
@@ -213,7 +212,6 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           </Box>
         )}
         <VisualizationContainer height={innerSparklineInteractiveHeight} width="100%">
-          {/* @ts-expect-error this error does not make sense */}
           {({ width, height }: VisualizationContainerDimension) => (
             <InnerSparklineInteractiveProvider height={height} width={width}>
               <SparklineInteractiveScrubHandler
