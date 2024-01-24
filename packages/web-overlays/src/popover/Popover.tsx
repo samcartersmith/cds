@@ -41,6 +41,7 @@ const inverseConfig = { light: 'dark', dark: 'light' } as const;
  * Popover is the internal recommended base component used for any overlay that is laid out with respect to a subject.
  * It is purposely a flexible component and is reserved for CDS internal usage.
  */
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Popover = memo(
   ({
     content,

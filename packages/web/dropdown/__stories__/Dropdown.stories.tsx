@@ -1,22 +1,23 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Button, IconButton } from '../../buttons';
 import { SelectOption } from '../../controls/SelectOption';
 import { DotCount } from '../../dots';
-import { Icon } from '../../icons';
-import { HStack } from '../../layout';
+import { Icon } from '../../icons/Icon';
+import { HStack } from '../../layout/HStack';
 import { PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
-import { Pressable, PressableOpacity } from '../../system';
-import { TextBody, TextCaption, TextHeadline, TextTitle2 } from '../../typography';
+import { Pressable } from '../../system/Pressable';
+import { PressableOpacity } from '../../system/PressableOpacity';
+import { TextBody } from '../../typography/TextBody';
+import { TextCaption } from '../../typography/TextCaption';
+import { TextHeadline } from '../../typography/TextHeadline';
+import { TextTitle2 } from '../../typography/TextTitle2';
 import { Dropdown } from '../Dropdown';
 import { DropdownProps, DropdownRefProps } from '../DropdownProps';
 import { MenuItem } from '../MenuItem';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Dropdown (deprecated - moved to cds-web-overlays)',
+  title: 'Core Components/Dropdown/Dropdown',
   component: Dropdown,
 };
 
@@ -40,15 +41,20 @@ type MockDropdownProps = {
   containerHeight?: number | string;
 } & Pick<
   DropdownProps,
-  'enableMobileModal' | 'showOverlay' | 'testID' | 'onBlur' | 'onCloseMenu' | 'disablePortal'
+  | 'enableMobileModal'
+  | 'showOverlay'
+  | 'testID'
+  | 'onBlur'
+  | 'onCloseMenu'
+  | 'disablePortal'
+  | 'disabled'
 >;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Default = ({
   options = defaultOptions,
   containerHeight,
+  disabled,
+  subjectTestID,
   ...props
 }: MockDropdownProps) => {
   const [value, setValue] = useState('');
@@ -73,12 +79,20 @@ export const Default = ({
 
   return (
     <HStack gap={3} height={containerHeight} spacing={4}>
-      <Dropdown ref={dropdownRef} content={content} onChange={setValue} value={value} {...props}>
+      <Dropdown
+        ref={dropdownRef}
+        content={content}
+        disabled={disabled}
+        onChange={setValue}
+        value={value}
+        {...props}
+      >
         <IconButton
           transparent
           accessibilityLabel="More"
+          disabled={disabled}
           name="more"
-          testID={props.subjectTestID}
+          testID={subjectTestID}
           variant="secondary"
         />
       </Dropdown>
@@ -119,14 +133,8 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Wrapped = () => <BaseWrapped />;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const WrappedMobileModal = () => <BaseWrapped enableMobileModal />;
 
 const subMenuPosition: PopoverContentPositionConfig = {
@@ -134,9 +142,6 @@ const subMenuPosition: PopoverContentPositionConfig = {
   placement: 'right-start',
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SubMenu = () => {
   const [menuValue, setMenuValue] = useState<string>();
   const [subMenuValue, setSubMenuValue] = useState<string>();
@@ -245,18 +250,9 @@ const emojiMap = [
   { label: 'coder', glyph: '👩🏼‍💻' },
 ];
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const ShowOverlay = () => <Default showOverlay />;
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const MobileModal = () => <Default enableMobileModal />;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const CustomOptions = () => {
   const [value, onChange] = useState<string | undefined>();
   const currentGlyph = useMemo(
@@ -292,3 +288,10 @@ export const CustomOptions = () => {
     </Dropdown>
   );
 };
+
+export const Disabled = () => (
+  <>
+    <Default />
+    <Default disabled enableMobileModal />
+  </>
+);

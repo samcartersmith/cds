@@ -19,9 +19,6 @@ import { TextInputFocusVariantContext } from './context';
 import { InputLabel } from './InputLabel';
 import { SelectStack } from './SelectStack';
 
-/**
- * @deprecated this will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type SelectTriggerProps = {
   triggerHasFocus: boolean;
   /** Select Dropdown menu is opened */
@@ -39,9 +36,6 @@ const pressableOverrides = css`
   /* stylelint-enable a11y/content-property-no-static-value */
 `;
 
-/**
- * @deprecated this will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SelectTrigger = memo(
   forwardRef(function SelectTrigger(
     {

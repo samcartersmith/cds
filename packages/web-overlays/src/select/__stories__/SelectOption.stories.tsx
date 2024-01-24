@@ -6,10 +6,11 @@ import { defaultContext, SelectProvider } from '../context';
 import { SelectOption } from '../SelectOption';
 
 export default {
-  title: 'Overlays/Select/SelectOption',
+  title: 'Deprecated/SelectOption',
   component: SelectOption,
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Stories = () => {
   return (
     <SelectProvider value={defaultContext}>

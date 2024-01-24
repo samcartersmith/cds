@@ -3,7 +3,7 @@ import { Shape } from '@cbhq/cds-common';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { Icon } from '../../icons';
+import { Icon } from '../../icons/Icon';
 import { RemoteImage } from '../../media';
 import { TextHeadline } from '../../typography';
 import { Chip } from '../Chip';

@@ -11,6 +11,7 @@ const preventMouseDown = (event: React.MouseEvent) => {
   event.stopPropagation();
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Tooltip = ({
   children,
   content,

@@ -18,6 +18,7 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
   gap: 1,
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const ProfileMenu = ({
   title = 'Brian',
   isOpen = true,
@@ -72,7 +73,7 @@ export const ProfileMenu = ({
 };
 
 export default {
-  title: 'Overlays/Recipes/ProfileMenu',
+  title: 'Deprecated/ProfileMenu',
   component: ProfileMenu,
 };
 

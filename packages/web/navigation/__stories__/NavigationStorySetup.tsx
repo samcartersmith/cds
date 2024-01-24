@@ -2,14 +2,15 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { css } from 'linaria';
 
-import { HStack } from '../../alpha/HStack';
-import { VStack } from '../../alpha/VStack';
-import { AvatarButton, IconButton } from '../../buttons/index';
-import { SelectOption } from '../../controls/SelectOption';
+import { AppSwitcher } from '../../__stories__/AppSwitcher.stories';
+import { HelpMenu } from '../../__stories__/HelpMenu.stories';
+import { ProfileMenu } from '../../__stories__/ProfileMenu.stories';
+import { AvatarButton, IconButton, NavigationIconButton } from '../../buttons';
+import { SelectOption } from '../../controls';
 import { LogoMark, NavigationIcon } from '../../icons';
 import { Pictogram } from '../../illustrations';
+import { HStack, VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
-import { Avatar } from '../../media';
 import { PortalProvider } from '../../overlays/PortalProvider';
 import { Pressable } from '../../system';
 import { TabNavigation } from '../../tabs';
@@ -17,20 +18,17 @@ import { MockTabPanel } from '../../tabs/__stories__/MockTabPanel';
 import { palette } from '../../tokens';
 import { TextDisplay2, TextHeadline, TextLegal } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
+import { navLinkClassName } from '../NavLink';
+import { SidebarItem, SidebarItemProps } from '../SidebarItem';
 import {
   NavigationBar,
   NavigationTitle,
   NavLink,
   Sidebar,
-  SidebarItem,
-  SidebarItemProps,
-} from '../index';
-import { navLinkClassName } from '../NavLink';
-import { SidebarMoreMenu, SidebarMoreMenuProps } from '../SidebarMoreMenu';
+  SidebarMoreMenu,
+  SidebarMoreMenuProps,
+} from '..';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
   TabsAndTitle: 'With Tabs and displayTitle',
@@ -38,9 +36,6 @@ export const StoryMap = {
 
 // Helpers
 type Items = { title: string; icon: SidebarItemProps['icon'] }[];
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const items: Items = [
   { title: 'Assets', icon: 'chartPie' },
   { title: 'Trade', icon: 'trading' },
@@ -52,7 +47,8 @@ export const items: Items = [
 ];
 
 const handlePress = (name: string) => console.log(`Pressed ${name}`);
-const tabs = [
+
+export const tabs = [
   {
     id: 'all',
     label: 'All',
@@ -87,9 +83,7 @@ type NavigationBarFullExampleProps = {
   onTabChange?: (id: string) => void;
   onBackPress?: () => void;
 };
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
+
 export function NavigationBarFullExample({
   pageTitle,
   onTabChange,
@@ -122,22 +116,25 @@ export function NavigationBarFullExample({
       bottom={<TabNavigation onChange={handleTabChange} tabs={tabs} value={value} />}
       end={
         <HStack alignItems="center" gap={1}>
-          <IconButton
+          <HelpMenu />
+          <NavigationIconButton
             accessibilityLabel="Notifications"
             name="bell"
             onPress={() => handlePress('Notifications')}
           />
-          <Pressable backgroundColor="transparent" onPress={() => handlePress('Avatar group')}>
-            <HStack alignItems="center" gap={1}>
-              <Avatar alt="" size="xl" />
-              <TextHeadline as="h2">Andy</TextHeadline>
-            </HStack>
-          </Pressable>
+          <AppSwitcher />
+          <ProfileMenu isOpen={false} title="Brian" />
         </HStack>
       }
       start={
         showBackButton && (
-          <IconButton accessibilityLabel="Back" name="backArrow" onPress={handleBackPress} />
+          <IconButton
+            compact
+            accessibilityLabel="Back"
+            name="backArrow"
+            onPress={handleBackPress}
+            variant="secondary"
+          />
         )
       }
     >
@@ -146,9 +143,6 @@ export function NavigationBarFullExample({
   );
 }
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const NavigationBarTitle = () => {
   return (
     <NavigationBar
@@ -168,9 +162,6 @@ export const NavigationBarTitle = () => {
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const ComposedSystem = () => {
   const [activeSidebarIndex, setActiveSidebarIndex] = useState(0);
   const [activeTabId, setActiveTabId] = useState('all');
@@ -233,9 +224,6 @@ const testOverrideClass = css`
   }
 `;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const NavLinkExample = () => {
   const [activeItem, setActiveItem] = useState('assets');
   const getProps = (name: string) => ({
@@ -286,9 +274,6 @@ type SidebarExampleProps = {
   children?: React.ReactNode;
 } & Omit<SidebarMoreMenuProps, 'children'>;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);

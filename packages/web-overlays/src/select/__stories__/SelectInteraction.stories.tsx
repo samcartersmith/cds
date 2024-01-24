@@ -22,10 +22,11 @@ const SelectForm = (props: SelectProps) => {
 };
 
 export default {
-  title: 'Overlays/Select Interactive',
+  title: 'Deprecated/Select Interactive',
   component: SelectForm,
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SimpleSelect: ComponentStoryObj<typeof SelectForm> = {
   args: {
     placeholder,
@@ -63,6 +64,7 @@ export const SimpleSelect: ComponentStoryObj<typeof SelectForm> = {
   },
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SmallSelect: ComponentStoryObj<typeof SelectForm> = {
   args: {
     placeholder,

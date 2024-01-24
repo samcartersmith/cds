@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { expect } from '@storybook/jest';
 import { ComponentStoryObj } from '@storybook/react';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
@@ -21,17 +21,11 @@ const SelectForm = (props: SelectProps) => {
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Interactive/Select (deprecated - moved to cds-web-overlays)',
+  title: 'Interactive/Select',
   component: SelectForm,
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SimpleSelect: ComponentStoryObj<typeof SelectForm> = {
   args: {
     placeholder,
@@ -69,9 +63,6 @@ export const SimpleSelect: ComponentStoryObj<typeof SelectForm> = {
   },
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SmallSelect: ComponentStoryObj<typeof SelectForm> = {
   args: {
     placeholder,

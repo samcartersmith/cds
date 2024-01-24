@@ -6,6 +6,7 @@ import { Pressable } from '@cbhq/cds-web/system';
 import { useSelectContext } from '../select/context';
 import { SelectOptionProps } from '../select/SelectOption';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type MenuItemProps = {
   children: NonNullable<ReactNode>;
 } & Pick<
@@ -15,6 +16,7 @@ export type MenuItemProps = {
   SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const MenuItem = memo(
   forwardRef(
     (

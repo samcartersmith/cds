@@ -7,9 +7,10 @@ import { NavLinkExample } from './NavigationStorySetup';
 
 export default {
   component: NavLink,
-  title: 'Core Components/Navigation/NavLink',
+  title: 'Deprecated/NavLink',
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const NavLinkExampleDefault = () => {
   return (
     <VStack alignItems="flex-start">

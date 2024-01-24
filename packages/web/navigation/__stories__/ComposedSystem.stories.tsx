@@ -8,7 +8,7 @@ import { ComposedSystem } from './NavigationStorySetup';
 
 export default {
   component: ComposedSystem,
-  title: 'Core Components/Navigation/System',
+  title: 'Recipes/System',
 };
 
 const FullSystemExample: Story = () => {

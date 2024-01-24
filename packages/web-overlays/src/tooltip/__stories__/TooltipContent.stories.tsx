@@ -13,7 +13,7 @@ import { TooltipContent } from '../TooltipContent';
 import { PopperTooltipProps } from '../TooltipProps';
 
 export default {
-  title: 'Overlays/Tooltip/TooltipContent',
+  title: 'Deprecated/TooltipContent',
   component: TooltipContent,
   parameters: {
     layout: 'padded',
@@ -44,12 +44,14 @@ const Template: ComponentStory<typeof BasicTooltipContent> = (args: PopperToolti
   <BasicTooltipContent {...args} />
 );
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Default = Template.bind({});
 
 Default.args = {
   content: 'This is the tooltip Content',
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const TooltipLongContent = Template.bind({});
 
 const longContent =
@@ -59,6 +61,7 @@ TooltipLongContent.args = {
   content: longContent,
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const TooltipLongWordContent = Template.bind({});
 
 const longWordContent =
@@ -68,6 +71,7 @@ TooltipLongWordContent.args = {
   content: longWordContent,
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const VStackNodeContent = Template.bind({});
 
 const VStackNode = (
@@ -82,6 +86,7 @@ VStackNodeContent.args = {
   content: VStackNode,
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const HStackNodeContent = Template.bind({});
 
 const HStackNode = (

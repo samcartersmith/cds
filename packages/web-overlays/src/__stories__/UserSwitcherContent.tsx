@@ -104,6 +104,7 @@ type UserSwitcherContentProps = {
   data?: UserSwitcherData[];
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitcherContentProps) => {
   const { name, email, avatarUri } = data.find((user) => user.selected) as UserSwitcherData;
   const otherAccountsData = data.filter((user) => !user.selected);

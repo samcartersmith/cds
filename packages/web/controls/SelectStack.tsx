@@ -9,17 +9,12 @@ import { HelperText } from './HelperText';
 import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
 
-/**
- * @deprecated this will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type SelectStackProps = {
   children: ReactElement;
+  helperTextErrorIconAccessibilityLabel?: string;
 } & Pick<SelectBaseProps, 'compact' | 'label' | 'disabled' | 'helperText' | 'variant' | 'focused'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabelId' | 'accessibilityDescriptionId'>;
 
-/**
- * @deprecated this will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SelectStack = memo(
   forwardRef(function SelectStack(
     {
@@ -32,6 +27,7 @@ export const SelectStack = memo(
       focused,
       accessibilityLabelId,
       accessibilityDescriptionId,
+      helperTextErrorIconAccessibilityLabel = 'error',
     }: SelectStackProps,
     ref: ForwardedRef<HTMLElement>,
   ) {
@@ -41,18 +37,23 @@ export const SelectStack = memo(
         disabled={disabled}
         focused={focused}
         helperTextNode={
-          Boolean(helperText) && (
+          Boolean(helperText) &&
+          (typeof helperText === 'string' ? (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={handlePreventPropagation}>
               <HelperText
                 color={variant ?? 'foregroundMuted'}
+                errorIconAccessibilityLabel={helperTextErrorIconAccessibilityLabel}
+                errorIconTestID="select-error-icon"
                 id={accessibilityDescriptionId}
                 overflow="truncate"
               >
                 {helperText}
               </HelperText>
             </div>
-          )
+          ) : (
+            helperText
+          ))
         }
         inputNode={children}
         labelNode={

@@ -19,6 +19,7 @@ import { useWindowDimensions } from './utils';
 /**
  * @internal
  */
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const PrimaryNav = () => {
   const [primaryTab, setPrimaryTab] = useState(primaryTabs[0]?.id);
   const [isMenuOpen, setIsMenuOpen] = useState(false);

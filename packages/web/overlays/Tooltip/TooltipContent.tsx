@@ -11,13 +11,10 @@ import { zIndex as cdsZIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { Box } from '../../layout/Box';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { spacing } from '../../tokens';
-import { TextLabel2 } from '../../typography';
+import { TextLabel2 } from '../../typography/TextLabel2';
 
 import { PopperTooltipProps } from './TooltipProps';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const TooltipContent = memo(
   forwardRef(
     (

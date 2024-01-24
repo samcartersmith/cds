@@ -13,7 +13,7 @@ import { DropdownProps, DropdownRefProps } from '../DropdownProps';
 import { MenuItem } from '../MenuItem';
 
 export default {
-  title: 'Overlays/Dropdown/Dropdown Basic Story',
+  title: 'Deprecated/Dropdown',
   component: Dropdown,
 };
 
@@ -46,6 +46,7 @@ type MockDropdownProps = {
   | 'disabled'
 >;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Default = ({
   options = defaultOptions,
   containerHeight,
@@ -129,8 +130,10 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Wrapped = () => <BaseWrapped />;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const WrappedMobileModal = () => <BaseWrapped enableMobileModal />;
 
 const subMenuPosition: PopoverContentPositionConfig = {
@@ -138,6 +141,7 @@ const subMenuPosition: PopoverContentPositionConfig = {
   placement: 'right-start',
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SubMenu = () => {
   const [menuValue, setMenuValue] = useState<string>();
   const [subMenuValue, setSubMenuValue] = useState<string>();
@@ -246,9 +250,12 @@ const emojiMap = [
   { label: 'coder', glyph: '👩🏼‍💻' },
 ];
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const ShowOverlay = () => <Default showOverlay />;
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const MobileModal = () => <Default enableMobileModal />;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const CustomOptions = () => {
   const [value, onChange] = useState<string | undefined>();
   const currentGlyph = useMemo(
@@ -285,6 +292,7 @@ export const CustomOptions = () => {
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Disabled = () => (
   <>
     <Default />

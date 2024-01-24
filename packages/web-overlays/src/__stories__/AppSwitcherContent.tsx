@@ -10,6 +10,7 @@ import { ThemeProvider } from '@cbhq/cds-web/system';
 import { TextLabel1 } from '@cbhq/cds-web/typography';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const appSwitcherData: AppSwitcherData = {
   sections: [
     {
@@ -113,6 +114,7 @@ type AppSwitcherContentProps = {
   header?: ReactNode;
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const AppSwitcherContent = memo(
   ({ columns = 3, data = appSwitcherData, header }: AppSwitcherContentProps) => {
     return (

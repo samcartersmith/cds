@@ -1,7 +1,8 @@
+import React from 'react';
 import { dropdownMaxHeight } from '@cbhq/cds-common/tokens/menu';
 
-import { SelectOption } from '../../controls';
-import { VStack } from '../../layout';
+import { SelectOption } from '../../controls/SelectOption';
+import { VStack } from '../../layout/VStack';
 import { DropdownContent, DropdownContentProps } from '../DropdownContent';
 
 const defaultOptions = [
@@ -51,6 +52,6 @@ export const DropdownContentExamples = () => {
 };
 
 export default {
-  title: 'Core Components/Dropdown/DropdownContent (deprecated - moved to cds-web-overlays)',
+  title: 'Core Components/Dropdown/DropdownContent',
   component: DropdownExample,
 };

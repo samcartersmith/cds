@@ -1,17 +1,12 @@
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { Button } from '../buttons';
-import { SelectOption } from '../controls/SelectOption';
+import { SelectOption } from '../controls';
 import { LogoMark, NavigationIcon } from '../icons';
 import { HStack, VStack } from '../layout';
-import {
-  NavigationBar,
-  NavigationTitle,
-  Sidebar,
-  SidebarItem,
-  SidebarMoreMenu,
-} from '../navigation';
+import { NavigationBar, NavigationTitle, Sidebar, SidebarMoreMenu } from '../navigation';
 import { items } from '../navigation/__stories__/NavigationStorySetup';
+import { SidebarItem } from '../navigation/SidebarItem';
 import { PortalProvider } from '../overlays/PortalProvider';
 import { FeatureFlagProvider } from '../system';
 import { useToggler } from '..';
@@ -21,10 +16,6 @@ import { UserSwitcher } from './UserSwitcher.stories';
 
 const sidebarItems = items.slice(0, 4);
 const moreMenuOptions = items.slice(4);
-
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const NavigationRecipe = () => {
   const [isCollapsed, handleToggleCollapsed] = useToggler(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -116,10 +107,7 @@ export const NavigationRecipe = () => {
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Recipes/Navigation  (deprecated - moved to cds-web-overlays)',
+  title: 'Recipes/Navigation',
   component: NavigationRecipe,
 };

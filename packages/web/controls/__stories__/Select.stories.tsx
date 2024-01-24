@@ -1,8 +1,9 @@
+import React from 'react';
 import { performanceBenchmarkBuilder } from '@cbhq/cds-common/internal/performanceBenchmarkBuilder';
 import { CreateSelectStoriesProps, selectBuilder } from '@cbhq/cds-common/internal/selectBuilder';
 
 import { DotSymbol } from '../../dots';
-import { Box } from '../../layout';
+import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 import { RemoteImage } from '../../media';
 import { ThemeProvider } from '../../system/ThemeProvider';
@@ -10,11 +11,8 @@ import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Inputs/Select',
+  title: 'Core Components/Select/Select',
   component: Select,
   excludeStories: [
     'HundredCDSSelectComponents',
@@ -35,12 +33,8 @@ const components = {
   Box,
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
-export const { Default, InputStackOptions, Disabled, Compact, Variants } = selectBuilder(
-  components as unknown as CreateSelectStoriesProps,
-);
+export const { Default, AssetSelect, InputStackOptions, Disabled, Compact, Variants } =
+  selectBuilder(components as unknown as CreateSelectStoriesProps);
 
 Disabled.bind({});
 /** TODO: convert to CSF (Component Story Format v3) */
@@ -57,16 +51,11 @@ Disabled.parameters = {
   },
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SmallSelect = () => <Default width={80} />;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const {
   Default: DarkMode,
+  AssetSelect: DarkAssetSelect,
   InputStackOptions: DarkInputStackOptions,
   Disabled: DarkDisabled,
   Compact: DarkCompact,
@@ -91,11 +80,9 @@ DarkDisabled.parameters = {
   },
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const {
   Default: Dense,
+  AssetSelect: DenseAssetSelect,
   InputStackOptions: DenseInputStackOptions,
   Disabled: DenseDisabled,
   Compact: DenseCompact,
@@ -131,9 +118,6 @@ const NativeSelect = () => {
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const {
   HundredCDSComponents: HundredCDSSelectComponents,
   HundredHTMLComponent: HundredNativeSelectComponents,

@@ -5,6 +5,7 @@ type Tab = {
   tabs?: Tab[];
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const primaryTabs: Tab[] = [
   {
     id: 'explore',
@@ -47,6 +48,7 @@ export const primaryTabs: Tab[] = [
   { id: 'company', label: 'Company' },
 ];
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const secondaryTabs = [
   { id: 'product', label: 'Product' },
   { id: 'company', label: 'Company' },

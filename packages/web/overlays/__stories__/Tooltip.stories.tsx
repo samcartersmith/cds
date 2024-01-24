@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   ComponentMeta,
   ComponentStory,
@@ -9,16 +10,13 @@ import { IconButton } from '../../buttons/IconButton';
 import { DotSymbol } from '../../dots/DotSymbol';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { TextLabel1 } from '../../typography';
+import { TextLabel1 } from '../../typography/TextLabel1';
 import { PortalProvider } from '../PortalProvider';
 import { Tooltip } from '../Tooltip/Tooltip';
 import { TooltipProps } from '../Tooltip/TooltipProps';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Tooltip (deprecated - moved to cds-web-overlays)',
+  title: 'Core Components/Tooltip/Tooltip',
   component: Tooltip,
   parameters: {
     layout: 'padded',
@@ -48,6 +46,9 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
           </Tooltip>
           <Tooltip content={content} placement="bottom">
             <Button>Bottom</Button>
+          </Tooltip>
+          <Tooltip content={content} placement="bottom" visible={false}>
+            <Button disabled>Disabled</Button>
           </Tooltip>
         </VStack>
 
@@ -119,18 +120,12 @@ const Template: ComponentStory<typeof BasicTooltip> = (args: BasicTooltipProps) 
   <BasicTooltip {...args} />
 );
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Default = Template.bind({});
 
 Default.args = {
   content: 'This is the tooltip Content',
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const TooltipLongContent = Template.bind({});
 
 const longContent =

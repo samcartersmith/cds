@@ -2,9 +2,6 @@ import React, { ReactNode } from 'react';
 import { Placement } from '@popperjs/core';
 import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common/types';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type PopoverContentPositionConfig = {
   /**
    * Custom placement config
@@ -22,9 +19,6 @@ export type PopoverContentPositionConfig = {
   offsetGap?: number;
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type PopoverProps = {
   content: ReactNode;
   /** Subject of the Popover that when interacted with will toggle the visibility of the content */
@@ -65,5 +59,10 @@ export type PopoverProps = {
    * Use for editable Search Input components to ensure focus is correctly applied
    */
   disableTypeFocus?: boolean;
+  /**
+   * Prevents the Popover content from showing.
+   * You'll need to surface disabled state on the trigger manually.
+   */
+  disabled?: boolean;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
   SharedProps;

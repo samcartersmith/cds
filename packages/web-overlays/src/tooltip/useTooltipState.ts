@@ -2,6 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const useTooltipState = (id?: string) => {
   const [isHovered, { toggleOn: handleOnMouseEnter, toggleOff: toggleOffIsHovered }] =
     useToggler(false);

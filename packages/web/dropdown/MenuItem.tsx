@@ -1,14 +1,11 @@
 import React, { forwardRef, memo, ReactNode, useCallback } from 'react';
 import { ForwardedRef, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
 
-import { SelectOptionProps } from '../controls';
 import { useSelectContext } from '../controls/selectContext';
+import { SelectOptionProps } from '../controls/SelectOption';
 import { insetFocusRing } from '../styles/focus';
 import { Pressable } from '../system';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type MenuItemProps = {
   children: NonNullable<ReactNode>;
 } & Pick<
@@ -18,9 +15,6 @@ export type MenuItemProps = {
   SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const MenuItem = memo(
   forwardRef(
     (

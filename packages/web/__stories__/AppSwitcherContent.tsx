@@ -1,13 +1,17 @@
-import { memo } from 'react';
-import { IllustrationPictogramNames, NoopFn as NoopFnType } from '@cbhq/cds-common';
+import React, { memo, ReactNode, useMemo } from 'react';
+import { useSpectrum } from '@cbhq/cds-common';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import { densePictogramSize, pictogramSize } from '@cbhq/cds-common/tokens/tile';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
-import { TileButton } from '../buttons/TileButton';
+import { TileButton, TileButtonProps } from '../buttons/TileButton';
 import { Divider, HStack, VStack } from '../layout';
-import { TextCaption } from '../typography/TextCaption';
+import { RemoteImage } from '../media';
+import { ThemeProvider } from '../system';
+import { TextLabel1 } from '../typography';
 import { getZIndexFromRow } from '../utils/overflow';
 
-const appSwitcherData: AppSwitcherData = {
+export const appSwitcherData: AppSwitcherData = {
   sections: [
     {
       sectionTitle: 'For Individuals',
@@ -44,12 +48,7 @@ const appSwitcherData: AppSwitcherData = {
 
 type AppSwitcherSection = {
   sectionTitle: string;
-  tiles: {
-    pictogram: IllustrationPictogramNames;
-    title: string;
-    onPress: NoopFnType;
-    count?: number;
-  }[];
+  tiles: TileButtonProps[];
 };
 
 type AppSwitcherData = {
@@ -62,15 +61,21 @@ type AppSwitcherContentSectionProps = {
 };
 
 const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSectionProps) => {
+  const theme = useSpectrum();
+  const isDense = useScaleDensity() === 'dense';
   const rows = Math.ceil(data.tiles.length / columns);
   // this creates a key for each row
   const rowsArr = Array.from(Array(rows), (_, i) => i + 1);
+  const computedPictogramSize = useMemo(
+    () => (isDense ? densePictogramSize : pictogramSize),
+    [isDense],
+  );
   return (
     <VStack spacingHorizontal={2}>
       <HStack spacingHorizontal={2} spacingVertical={2}>
-        <TextCaption as="h2" color="foregroundMuted">
+        <TextLabel1 as="p" color="foregroundMuted">
           {data.sectionTitle}
-        </TextCaption>
+        </TextLabel1>
       </HStack>
       {rowsArr.map((_, row) => {
         return (
@@ -86,7 +91,13 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
                     spacingBottom={0.5}
                     zIndex={getZIndexFromRow(row, rows)}
                   >
-                    <TileButton {...props} />
+                    <TileButton {...props}>
+                      <RemoteImage
+                        height={computedPictogramSize}
+                        source={`https://static-assets.coinbase.com/ui-infra/illustration/v1/pictogram/svg/${theme}/${props.pictogram}-2.svg`}
+                        width={computedPictogramSize}
+                      />
+                    </TileButton>
                   </HStack>
                 );
               })}
@@ -100,28 +111,34 @@ const AppSwitcherContentSection = memo(({ columns, data }: AppSwitcherContentSec
 type AppSwitcherContentProps = {
   columns?: number;
   data?: AppSwitcherData;
+  header?: ReactNode;
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const AppSwitcherContent = memo(
-  ({ columns = 3, data = appSwitcherData }: AppSwitcherContentProps) => {
+  ({ columns = 3, data = appSwitcherData, header }: AppSwitcherContentProps) => {
     return (
-      <VStack spacingVertical={2}>
-        {data.sections.map((section, idx) => {
-          return (
-            <>
-              <AppSwitcherContentSection
-                key={section.sectionTitle}
-                columns={columns}
-                data={section}
-              />
-              {data.sections.length - 1 !== idx && <Divider spacingVertical={1} />}
-            </>
-          );
-        })}
-      </VStack>
+      <ThemeProvider>
+        <VStack gap={1} spacingVertical={2}>
+          {header != null && (
+            <VStack alignContent="center" alignItems="center" gap={2}>
+              {header}
+              <Divider />
+            </VStack>
+          )}
+          {data.sections.map((section, idx) => {
+            return (
+              <>
+                <AppSwitcherContentSection
+                  key={section.sectionTitle}
+                  columns={columns}
+                  data={section}
+                />
+                {data.sections.length - 1 !== idx && <Divider spacingVertical={1} />}
+              </>
+            );
+          })}
+        </VStack>
+      </ThemeProvider>
     );
   },
 );

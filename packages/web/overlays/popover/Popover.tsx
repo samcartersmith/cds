@@ -42,9 +42,6 @@ const inverseConfig = { light: 'dark', dark: 'light' } as const;
  * Popover is the internal recommended base component used for any overlay that is laid out with respect to a subject.
  * It is purposely a flexible component and is reserved for CDS internal usage.
  */
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Popover = memo(
   ({
     content,
@@ -65,9 +62,9 @@ export const Popover = memo(
     contentPosition = defaultContentPosition,
     block = false,
     disableTypeFocus = false,
+    disabled,
   }: PopoverProps) => {
-    const { subject, setSubject, setPopper, popperStyles, popperAttributes } =
-      usePopper(contentPosition);
+    const { setSubject, setPopper, popperStyles, popperAttributes } = usePopper(contentPosition);
     const scale = useScale();
     const invertedSpectrum = useSpectrumConditional(inverseConfig);
 
@@ -79,12 +76,12 @@ export const Popover = memo(
 
     // We use this to infer that hover events are triggering the mounting/dismounting of the content
     const hasHoverInteractions = !!onMouseEnter && !!onMouseLeave && !onPressSubject;
+    const shouldShowContent = visible && !disabled;
 
     const handleClose = useCallback(async () => {
-      subject?.focus(); // P3: get to refocus on subject upon close.
       onClose?.();
       onBlur?.();
-    }, [onBlur, onClose, subject]);
+    }, [onBlur, onClose]);
 
     // swallow click events inside the Popover content so the overlay doesn't consider it a blur event
     const handleCaptureEvents = useCallback((event: MouseEvent<HTMLDivElement>) => {
@@ -146,22 +143,22 @@ export const Popover = memo(
     return (
       <div
         className={block ? blockStyles : undefined}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onMouseEnter={disabled ? undefined : onMouseEnter}
+        onMouseLeave={disabled ? undefined : onMouseLeave}
       >
         <div
           ref={setSubject}
           className={cx(subjectStyle, block ? blockStyles : undefined)}
           onBlur={onBlur}
-          onClick={onPressSubject}
-          onFocus={onFocus}
-          onMouseDown={onMouseDown}
+          onClick={disabled ? undefined : onPressSubject}
+          onFocus={disabled ? undefined : onFocus}
+          onMouseDown={disabled ? undefined : onMouseDown}
           {...subjectAccessibilityProps}
         >
           {children}
         </div>
         <NewAnimatePresence>
-          {visible ? (
+          {shouldShowContent ? (
             <Portal containerId={tooltipContainerId} disablePortal={disablePortal}>
               <ThemeProvider
                 scale={scale}

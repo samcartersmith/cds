@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.22 (1/24/2024 PST)
+
+#### 🚀 Updates
+
+- Feature parity web-overlays -> web, deprecated web-overlays exports. [[#2669](https://github.cbhq.net/frontend/cds/pull/2669)]
+
 ## 0.0.21 (1/17/2024 PST)
 
 #### 🚀 Updates

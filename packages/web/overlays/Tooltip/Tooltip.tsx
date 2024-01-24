@@ -11,9 +11,6 @@ const preventMouseDown = (event: React.MouseEvent) => {
   event.stopPropagation();
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Tooltip = ({
   children,
   content,
@@ -23,6 +20,7 @@ export const Tooltip = ({
   testID,
   zIndex,
   tooltipId: tooltipIdDefault,
+  visible,
 }: TooltipProps) => {
   const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur, tooltipId } =
     useTooltipState(tooltipIdDefault);
@@ -39,6 +37,8 @@ export const Tooltip = ({
     }),
     [placement],
   );
+
+  const isVisible = useMemo(() => visible !== false && isOpen, [visible, isOpen]);
 
   return (
     <Popover
@@ -60,7 +60,7 @@ export const Tooltip = ({
       onMouseDown={preventMouseDown}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}
-      visible={isOpen}
+      visible={isVisible}
     >
       {clonedChild}
     </Popover>

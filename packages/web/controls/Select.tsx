@@ -1,18 +1,8 @@
-import React, {
-  ForwardedRef,
-  forwardRef,
-  memo,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-} from 'react';
+import React, { ForwardedRef, forwardRef, memo, ReactNode, useCallback, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { helperTextHeight, inputStackGap } from '@cbhq/cds-common/tokens/input';
-import { FOCUSABLE_ELEMENTS } from '@cbhq/cds-common/tokens/overlays';
 import { SelectBaseProps } from '@cbhq/cds-common/types';
 
 import { Dropdown } from '../dropdown/Dropdown';
@@ -20,22 +10,16 @@ import { DropdownProps } from '../dropdown/DropdownProps';
 import { useSpacingValue } from '../hooks/useSpacingValue';
 import { HStack } from '../layout/HStack';
 import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
-import { isBrowser } from '../utils/browser';
 
 import { TextInputFocusVariantContext } from './context';
 import { SelectTrigger } from './SelectTrigger';
+import { useRefocusTrigger } from './useRefocusTrigger';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type SelectProps = {
   children: ReactNode;
 } & SelectBaseProps &
   Pick<DropdownProps, 'disablePortal'>;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Select = memo(
   forwardRef(function Select(
     {
@@ -54,13 +38,14 @@ export const Select = memo(
     ref: ForwardedRef<HTMLButtonElement>,
   ) {
     const [visible, toggleDropdownVisibility] = useToggler(false);
-    const [hasBeenInFocus, toggleHasBeenInFocus] = useToggler(false);
+    const [menuHasClosed, toggleMenuHasClosed] = useToggler(false);
     const focusedVariant = useInputVariant(visible, variant);
     /** prevents animation from firing on mount */
     const [animationsEnabled, toggleAnimations] = useToggler(false);
     /** If the spacer height in InputStack between the helper text and the input changes, this value will need to change */
     const calculateInputStackGap = useSpacingValue(inputStackGap);
     const menuOffset = calculateInputStackGap + helperTextHeight;
+    const triggerRef = useRefocusTrigger(menuHasClosed);
 
     const handleOnSelectPress = useCallback(() => {
       onPress?.();
@@ -68,17 +53,18 @@ export const Select = memo(
     }, [onPress, toggleAnimations]);
 
     const onOpenMenu = useCallback(() => {
-      if (!hasBeenInFocus) {
-        toggleHasBeenInFocus.toggleOn();
-      }
       toggleDropdownVisibility.toggleOn();
-    }, [toggleDropdownVisibility, hasBeenInFocus, toggleHasBeenInFocus]);
+      // this makes sure if you open/close the menu more than once it'll work as expected
+      if (menuHasClosed) {
+        toggleMenuHasClosed.toggleOff();
+      }
+    }, [menuHasClosed, toggleDropdownVisibility, toggleMenuHasClosed]);
     const onCloseMenu = useCallback(() => {
       toggleDropdownVisibility.toggleOff();
-    }, [toggleDropdownVisibility]);
+      toggleMenuHasClosed.toggleOn();
+    }, [toggleDropdownVisibility, toggleMenuHasClosed]);
 
-    const internalRef = useRef<HTMLButtonElement>(null);
-    const refs = useMergedRef(ref, internalRef);
+    const refs = useMergedRef(ref, triggerRef);
 
     const trigger = useMemo(
       () => (
@@ -118,23 +104,6 @@ export const Select = memo(
       }),
       [helperText, menuOffset],
     );
-
-    useEffect(() => {
-      //  focuses the element after the menu opens & closes at least once
-      if (
-        hasBeenInFocus &&
-        !visible &&
-        isBrowser() &&
-        internalRef &&
-        typeof internalRef !== 'function'
-      ) {
-        const focusableElements = internalRef.current?.querySelectorAll(FOCUSABLE_ELEMENTS);
-
-        if (focusableElements?.length && focusableElements[0]) {
-          (focusableElements[0] as HTMLElement).focus();
-        }
-      }
-    }, [visible, hasBeenInFocus, internalRef]);
 
     return (
       <HStack width={width}>

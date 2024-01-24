@@ -13,6 +13,7 @@ import { TOP_OFFSET, useWindowDimensions } from './utils';
 /**
  * @internal
  */
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const MobileMenu = () => {
   const { height } = useWindowDimensions();
   const [currentTab, setCurrentTab] = React.useState<string>();

@@ -125,9 +125,10 @@ const SearchInputMenuRecipe = () => {
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SearchInputMenu = () => <SearchInputMenuRecipe />;
 
 export default {
-  title: 'Core Components/Recipes/SearchInputMenu',
+  title: 'Deprecated/SearchInputMenu',
   component: SearchInputMenu,
 };

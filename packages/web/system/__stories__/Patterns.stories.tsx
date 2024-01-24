@@ -5,7 +5,7 @@ import { HStack } from '../../alpha/HStack';
 import { VStack } from '../../alpha/VStack';
 import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
-import { Icon } from '../../icons';
+import { Icon } from '../../icons/Icon';
 import { SpotRectangle } from '../../illustrations';
 import { Box } from '../../layout';
 import { FullscreenAlert, Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';

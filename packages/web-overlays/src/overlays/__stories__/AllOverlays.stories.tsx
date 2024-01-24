@@ -93,6 +93,7 @@ const CompositeOverlays = ({ disablePortal = false }: Pick<DropdownProps, 'disab
 };
 CompositeOverlays.parameters = { percy: enableJavascript };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const CompositeOverlaysWithPortal = () => (
   <PortalProvider>
     <CompositeOverlays />
@@ -100,10 +101,11 @@ export const CompositeOverlaysWithPortal = () => (
 );
 CompositeOverlaysWithPortal.parameters = { percy: enableJavascript };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const CompositeOverlaysWithoutPortal = () => <CompositeOverlays disablePortal />;
 CompositeOverlaysWithoutPortal.parameters = { percy: enableJavascript };
 
 export default {
-  title: 'Overlays/Overlays/All Overlays',
+  title: 'Deprecated/All Overlays',
   component: CompositeOverlays,
 };

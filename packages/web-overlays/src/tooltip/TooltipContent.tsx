@@ -14,6 +14,7 @@ import { TextLabel2 } from '@cbhq/cds-web/typography';
 
 import { PopperTooltipProps } from './TooltipProps';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const TooltipContent = memo(
   forwardRef(
     (

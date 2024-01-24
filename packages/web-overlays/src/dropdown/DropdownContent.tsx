@@ -24,6 +24,7 @@ const dropdownStyleOverrides = css`
 
 const dropdownStaticClassName = 'cds-dropdown';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type DropdownContentProps = {
   height?: DimensionValue;
   onOpen?: NoopFn;
@@ -32,6 +33,7 @@ export type DropdownContentProps = {
 
 const MotionVStack = motion(VStack);
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const DropdownContent = memo(
   forwardRef(
     (

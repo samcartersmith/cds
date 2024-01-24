@@ -6,7 +6,7 @@ import { pauseStory } from '@cbhq/cds-web/utils/storybook';
 import { Default } from './Dropdown.stories';
 
 export default {
-  title: 'Overlays/Dropdown/Interactive',
+  title: 'Deprecated/Dropdown Interactive',
   component: Default,
 };
 
@@ -24,6 +24,7 @@ const defaultOptions = [
   'Option 11',
 ];
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SimpleDropdown: ComponentStoryObj<typeof Default> = {
   args: {
     disablePortal: true,
@@ -55,6 +56,7 @@ export const SimpleDropdown: ComponentStoryObj<typeof Default> = {
 };
 
 // Make sure opening dropdown doesn't scroll the page. This will be captured in percy.
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const ScrollContainer: ComponentStoryObj<typeof Default> = {
   args: {
     containerHeight: '200vh',

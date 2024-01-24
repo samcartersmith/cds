@@ -1,13 +1,12 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 
-import { Dropdown } from '../dropdown';
-import { HStack, VStack } from '../layout';
+import { Dropdown } from '../dropdown/Dropdown';
+import { HStack } from '../layout';
 import { Avatar } from '../media/Avatar';
-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+import { PopoverContentPositionConfig } from '../overlays';
 import { FeatureFlagProvider } from '../system';
 import { Pressable } from '../system/Pressable';
-import { TextHeadline, TextLabel1, TextLabel2 } from '../typography';
 
 import { UserSwitcherContent } from './UserSwitcherContent';
 
@@ -19,28 +18,12 @@ type SwitcherSubjectProps = {
 const userSwitcherWidth = 416;
 const userSwitcherHeight = 674;
 
-const Subject = ({ title, description }: SwitcherSubjectProps) => {
+const Subject = ({ title }: SwitcherSubjectProps) => {
   const avatarColorScheme = getAvatarFallbackColor(title);
   return (
     <Pressable noScaleOnPress as="button" backgroundColor="transparent" borderRadius="rounded">
       <HStack alignItems="center" gap={1}>
         <Avatar alt={title} colorScheme={avatarColorScheme} name={title} size="xl" />
-        <VStack maxWidth={172} minWidth={0}>
-          {description ? (
-            <TextLabel1 as="p" overflow="truncate">
-              {title}
-            </TextLabel1>
-          ) : (
-            <TextHeadline as="span" overflow="truncate">
-              {title}
-            </TextHeadline>
-          )}
-          {description ? (
-            <TextLabel2 as="p" overflow="truncate">
-              {description}
-            </TextLabel2>
-          ) : null}
-        </VStack>
       </HStack>
     </Pressable>
   );
@@ -71,9 +54,6 @@ const UserSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) =>
   );
 });
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectProps) => {
   return (
     <UserSwitcherRecipe>
@@ -82,10 +62,7 @@ export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectPr
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Switchers/UserSwitcher  (deprecated - moved to cds-web-overlays)',
+  title: 'Recipes/UserSwitcher',
   component: UserSwitcher,
 };

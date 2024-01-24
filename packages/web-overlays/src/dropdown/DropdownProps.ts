@@ -7,6 +7,7 @@ import {
 
 import { PopoverProps } from '../popover/PopoverProps';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type DropdownProps = {
   /** Display a Modal on mobile web instead of a relatively positioned Dropdown */
   enableMobileModal?: boolean;
@@ -53,6 +54,7 @@ export type DropdownProps = {
   > &
   Pick<SelectBaseProps, 'onChange'>;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type DropdownRefProps = {
   openMenu: NoopFn;
   closeMenu: NoopFn;

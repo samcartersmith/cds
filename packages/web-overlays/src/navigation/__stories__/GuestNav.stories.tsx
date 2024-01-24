@@ -4,6 +4,7 @@ import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 
 import { Content, PrimaryNav, SecondaryNav } from './GuestNav';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const GuestNav = () => (
   <VStack gap={0} offset={0} spacing={0} zIndex={0}>
     <VStack background="background" elevation={0} position="sticky" top={0}>
@@ -24,11 +25,12 @@ const Template: Story<unknown> = () => (
   </FeatureFlagProvider>
 );
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Default = Template.bind({});
 
 Default.args = {};
 
 export default {
-  title: 'Core Components/Navigation/GuestNav',
+  title: 'Deprecated/GuestNav',
   component: GuestNav,
 } as Meta;

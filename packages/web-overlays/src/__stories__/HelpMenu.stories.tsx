@@ -54,6 +54,7 @@ const HelpMenuContent = () => {
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const HelpMenu = () => {
   const dropdownRef = useRef<DropdownRefProps>(null);
 
@@ -85,7 +86,7 @@ export const HelpMenu = () => {
 };
 
 export default {
-  title: 'Overlays/Recipes/HelpMenu',
+  title: 'Deprecated/HelpMenu',
   component: HelpMenu,
 };
 

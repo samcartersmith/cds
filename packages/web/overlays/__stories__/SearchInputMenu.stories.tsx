@@ -2,11 +2,13 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { SearchInput } from '../../controls/SearchInput';
 import { SelectOption } from '../../controls/SelectOption';
-import { Dropdown, DropdownRefProps } from '../../dropdown';
-import { Icon } from '../../icons';
+import { Dropdown } from '../../dropdown/Dropdown';
+import { DropdownRefProps } from '../../dropdown/DropdownProps';
+import { Icon } from '../../icons/Icon';
 import { HStack } from '../../layout/HStack';
 import { Pressable } from '../../system/Pressable';
-import { TextCaption, TextLabel1 } from '../../typography';
+import { TextCaption } from '../../typography/TextCaption';
+import { TextLabel1 } from '../../typography/TextLabel1';
 
 const options = [
   'Option 1',
@@ -124,15 +126,9 @@ const SearchInputMenuRecipe = () => {
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SearchInputMenu = () => <SearchInputMenuRecipe />;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Recipes/SearchInputMenu (deprecated - moved to cds-web-overlays)',
+  title: 'Core Components/Recipes/SearchInputMenu',
   component: SearchInputMenu,
 };

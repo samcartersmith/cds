@@ -8,7 +8,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { DotSymbol } from '../../dots';
 import { Icon } from '../../icons/Icon';
-import { Box } from '../../layout';
+import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 import { RemoteImage } from '../../media';
 import { ThemeProvider } from '../../system/ThemeProvider';
@@ -97,8 +97,6 @@ describe('Select', () => {
     render(<MockSelect placeholder={mockPlaceholder} />);
 
     const selectButton = screen.getAllByRole('button')[0];
-    expect(selectButton).not.toHaveFocus();
-
     fireEvent.click(selectButton);
 
     // expect Menu and SelectOption to render
@@ -107,6 +105,18 @@ describe('Select', () => {
     // select the first option
     fireEvent.click(firstSelectOption);
 
-    expect(selectButton).toHaveFocus();
+    const selectButtonRerendered = screen.getAllByRole('button')[0];
+    expect(selectButtonRerendered).toHaveFocus();
+  });
+  it('renders error icon in helper text when variant is negative', async () => {
+    render(<MockSelect helperText="helper text" variant="negative" />);
+
+    expect(screen.getByTestId('select-error-icon')).toBeTruthy();
+    expect(screen.getByText('helper text')).toBeTruthy();
+  });
+  it('should not render error icon when passing in helper text node', async () => {
+    render(<MockSelect helperText={<span>helper text</span>} variant="negative" />);
+
+    expect(screen.queryByTestId('select-error-icon')).toBeFalsy();
   });
 });

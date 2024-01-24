@@ -7,12 +7,14 @@ import { InputLabel } from '@cbhq/cds-web/controls/InputLabel';
 import { InputStack } from '@cbhq/cds-web/controls/InputStack';
 import { handlePreventPropagation } from '@cbhq/cds-web/utils/eventHandlers';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type SelectStackProps = {
   children: ReactElement;
   helperTextErrorIconAccessibilityLabel?: string;
 } & Pick<SelectBaseProps, 'compact' | 'label' | 'disabled' | 'helperText' | 'variant' | 'focused'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabelId' | 'accessibilityDescriptionId'>;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SelectStack = memo(
   forwardRef(function SelectStack(
     {

@@ -2,14 +2,19 @@ import React, { useCallback, useState } from 'react';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 
 import { Button } from '../../buttons';
-import { Select, SelectOption } from '../../controls';
-import { DropdownProps } from '../../dropdown';
+import { Select } from '../../controls/Select';
+import { SelectOption } from '../../controls/SelectOption';
 import { Default as DropdownExample } from '../../dropdown/__stories__/Dropdown.stories';
+import { DropdownProps } from '../../dropdown/DropdownProps';
 import { VStack } from '../../layout';
 import { SidebarExample } from '../../navigation/__stories__/NavigationStorySetup';
-import { TextBody } from '../../typography';
+import { TextBody } from '../../typography/TextBody';
 import { enableJavascript } from '../../utils/storybookParams/percy';
-import { Alert, Modal, ModalBody, ModalFooter, ModalHeader } from '../index';
+import { Alert } from '../Alert';
+import { Modal } from '../Modal/Modal';
+import { ModalBody } from '../Modal/ModalBody';
+import { ModalFooter } from '../Modal/ModalFooter';
+import { ModalHeader } from '../Modal/ModalHeader';
 import { PortalProvider } from '../PortalProvider';
 import { Tooltip } from '../Tooltip/Tooltip';
 import { useAlert } from '../useAlert';
@@ -92,9 +97,6 @@ const CompositeOverlays = ({ disablePortal = false }: Pick<DropdownProps, 'disab
 };
 CompositeOverlays.parameters = { percy: enableJavascript };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const CompositeOverlaysWithPortal = () => (
   <PortalProvider>
     <CompositeOverlays />
@@ -102,16 +104,10 @@ export const CompositeOverlaysWithPortal = () => (
 );
 CompositeOverlaysWithPortal.parameters = { percy: enableJavascript };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const CompositeOverlaysWithoutPortal = () => <CompositeOverlays disablePortal />;
 CompositeOverlaysWithoutPortal.parameters = { percy: enableJavascript };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Overlays (deprecated - moved to cds-web-overlays)',
+  title: 'Recipes/All Overlays',
   component: CompositeOverlays,
 };

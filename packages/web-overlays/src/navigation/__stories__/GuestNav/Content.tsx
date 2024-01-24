@@ -6,6 +6,7 @@ import { TextDisplay2 } from '@cbhq/cds-web/typography';
 /**
  * @internal
  */
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Content = () => {
   return (
     <VStack spacing={2}>

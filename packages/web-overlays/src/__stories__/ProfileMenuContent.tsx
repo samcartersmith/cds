@@ -81,6 +81,7 @@ const ProfileMenuItem = memo(({ name, icon, action, accessibilityLabel }: Profil
   );
 });
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const ProfileMenuContent = memo(({ data = profileMenuData }: ProfileMenuContentProps) => {
   const { name, email, avatarUri } = data.find((user) => user.selected) as ProfileMenuData;
   const avatarColorScheme = getAvatarFallbackColor(name);

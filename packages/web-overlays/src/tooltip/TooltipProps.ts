@@ -7,6 +7,7 @@ import {
 
 type TooltipPlacement = BaseTooltipPlacement;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type TooltipProps = {
   /** Position of tooltip in relation to the subject. */
   placement?: TooltipPlacement;
@@ -27,6 +28,7 @@ export type TooltipProps = {
   tooltipId?: string;
 } & TooltipBaseProps;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type PopperTooltipProps = {
   gap: GapSpacing;
   /**

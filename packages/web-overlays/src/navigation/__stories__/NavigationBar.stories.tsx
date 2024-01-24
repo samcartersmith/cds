@@ -9,7 +9,7 @@ import { NavigationBarFullExample, NavigationBarTitle } from './NavigationStoryS
 
 export default {
   component: NavigationBar,
-  title: 'Core Components/Navigation/NavigationBar',
+  title: 'Deprecated/NavigationBar',
 };
 
 const a11ySkipConfig = {
@@ -22,6 +22,7 @@ const a11ySkipConfig = {
   },
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const NavigationBarFullExampleDefault: Story = () => {
   return (
     <FeatureFlagProvider frontierButton frontierColor>
@@ -40,6 +41,7 @@ NavigationBarFullExampleDefault.parameters = {
   a11y: a11ySkipConfig,
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const NavigationBarTitleExample = () => {
   return (
     <VStack alignItems="flex-start">

@@ -16,9 +16,6 @@ import { cx } from '../utils/linaria';
 
 import { useSelectContext } from './selectContext';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const selectOptionStaticClassName = 'cds-select-option';
 
 const pressableStyles = css`
@@ -29,21 +26,18 @@ const pressableStyles = css`
   border: none;
   &:first-child {
     &:before {
-      border-top-right-radius: ${borderRadius.roundedLarge};
-      border-top-left-radius: ${borderRadius.roundedLarge};
+      border-top-right-radius: ${borderRadius.roundedXLarge};
+      border-top-left-radius: ${borderRadius.roundedXLarge};
     }
   }
   &:last-child {
     &:before {
-      border-bottom-right-radius: ${borderRadius.roundedLarge};
-      border-bottom-left-radius: ${borderRadius.roundedLarge};
+      border-bottom-right-radius: ${borderRadius.roundedXLarge};
+      border-bottom-left-radius: ${borderRadius.roundedXLarge};
     }
   }
 `;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type SelectOptionProps = {
   /** Prevent menu from closing when an option is selected */
   disableCloseOnOptionChange?: boolean;
@@ -73,9 +67,6 @@ const selectOptionCompactMaxHeight: Record<ScaleDensity, number> = {
   dense: 48,
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SelectOption = memo(
   ({
     title,

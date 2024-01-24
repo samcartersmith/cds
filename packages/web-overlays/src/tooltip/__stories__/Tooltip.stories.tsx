@@ -16,7 +16,7 @@ import { Tooltip } from '../Tooltip';
 import { TooltipProps } from '../TooltipProps';
 
 export default {
-  title: 'Overlays/Tooltip/Tooltip',
+  title: 'Deprecated/Tooltip',
   component: Tooltip,
   parameters: {
     layout: 'padded',
@@ -120,12 +120,14 @@ const Template: ComponentStory<typeof BasicTooltip> = (args: BasicTooltipProps) 
   <BasicTooltip {...args} />
 );
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Default = Template.bind({});
 
 Default.args = {
   content: 'This is the tooltip Content',
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const TooltipLongContent = Template.bind({});
 
 const longContent =

@@ -12,6 +12,7 @@ import { borderWidth } from '@cbhq/cds-web/tokens';
 import { Dropdown, DropdownProps } from '../dropdown';
 import { useRefocusTrigger } from '../select/useRefocusTrigger';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type SelectChipProps = {
   /** Indicates that the control is being used to manipulate data elsewhere */
   active?: boolean;
@@ -43,6 +44,7 @@ const persistedFocusStyles = css`
   }
 `;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SelectChip = memo(
   forwardRef(function SelectChip(
     {

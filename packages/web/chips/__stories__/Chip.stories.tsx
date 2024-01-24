@@ -2,7 +2,7 @@ import { ChipBaseProps, Shape } from '@cbhq/cds-common';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
-import { Icon } from '../../icons';
+import { Icon } from '../../icons/Icon';
 import { HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
 import { FeatureFlagProvider } from '../../system';

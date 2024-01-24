@@ -18,6 +18,7 @@ import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 
 import { SelectStack } from './SelectStack';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type SelectTriggerProps = {
   triggerHasFocus: boolean;
   /** Select Dropdown menu is opened */
@@ -35,6 +36,7 @@ const pressableOverrides = css`
   /* stylelint-enable a11y/content-property-no-static-value */
 `;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SelectTrigger = memo(
   forwardRef(function SelectTrigger(
     {

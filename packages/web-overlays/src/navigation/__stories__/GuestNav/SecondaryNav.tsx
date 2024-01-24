@@ -11,6 +11,7 @@ import { useWindowDimensions } from './utils';
 /**
  * @internal
  */
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SecondaryNav = () => {
   const [text, setText] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);

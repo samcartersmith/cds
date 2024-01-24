@@ -17,6 +17,7 @@ import { UserSwitcher } from './UserSwitcher.stories';
 
 const sidebarItems = items.slice(0, 4);
 const moreMenuOptions = items.slice(4);
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const NavigationRecipe = () => {
   const [isCollapsed, handleToggleCollapsed] = useToggler(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -109,6 +110,6 @@ export const NavigationRecipe = () => {
 };
 
 export default {
-  title: 'Overlays/Recipes/Navigation',
+  title: 'Deprecated/Navigation',
   component: NavigationRecipe,
 };

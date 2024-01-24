@@ -61,6 +61,7 @@ const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => 
   );
 });
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const AppSwitcher = () => {
   return (
     <HStack>
@@ -71,6 +72,7 @@ export const AppSwitcher = () => {
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const AppSwitcherWithDot = () => {
   return (
     <HStack>
@@ -83,6 +85,7 @@ export const AppSwitcherWithDot = () => {
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const DenseAppSwitcher = () => {
   return (
     <ThemeProvider scale="xSmall">
@@ -96,6 +99,6 @@ export const DenseAppSwitcher = () => {
 };
 
 export default {
-  title: 'Overlays/Switchers/AppSwitcher',
+  title: 'Deprecated/AppSwitcher',
   component: AppSwitcher,
 };

@@ -7,9 +7,6 @@ import {
 
 import { PopoverProps } from '../overlays/popover/PopoverProps';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type DropdownProps = {
   /** Display a Modal on mobile web instead of a relatively positioned Dropdown */
   enableMobileModal?: boolean;
@@ -40,6 +37,11 @@ export type DropdownProps = {
    * Portal is automatically disabled for SSR
    * */
   disablePortal?: boolean;
+  /**
+   * Prevents the Dropdown menu from opening.
+   * You'll need to surface disabled state on the trigger manually.
+   */
+  disabled?: boolean;
 } & Pick<
   PopoverProps,
   'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block' | 'disableTypeFocus'
@@ -51,9 +53,6 @@ export type DropdownProps = {
   > &
   Pick<SelectBaseProps, 'onChange'>;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type DropdownRefProps = {
   openMenu: NoopFn;
   closeMenu: NoopFn;

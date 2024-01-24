@@ -6,5 +6,8 @@ export * from './Modal/ModalBody';
 export * from './Modal/ModalFooter';
 export * from './Modal/ModalHeader';
 export * from './Overlay/Overlay';
+export * from './popover/Popover';
+export * from './popover/PopoverProps';
+export * from './popover/usePopper';
 export * from './Toast';
 export * from './Tooltip/Tooltip';

@@ -15,11 +15,13 @@ import { PopoverContentPositionConfig } from '../popover/PopoverProps';
 import { SelectTrigger } from './SelectTrigger';
 import { useRefocusTrigger } from './useRefocusTrigger';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type SelectProps = {
   children: ReactNode;
 } & SelectBaseProps &
   Pick<DropdownProps, 'disablePortal'>;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Select = memo(
   forwardRef(function Select(
     {

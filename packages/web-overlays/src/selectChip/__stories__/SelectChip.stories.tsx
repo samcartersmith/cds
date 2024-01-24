@@ -39,6 +39,7 @@ const ExampleSelectChip = ({
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const Default = () => (
   <HStack gap={2}>
     <ExampleSelectChip value="Balance" />
@@ -46,6 +47,7 @@ export const Default = () => (
   </HStack>
 );
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const CustomEndNode = () => (
   <HStack gap={2}>
     <ExampleSelectChip
@@ -67,6 +69,7 @@ type ValueObject = {
   iconName: UiIconName;
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const ObjectValueModel = () => {
   const options: ValueObject[] = [
     {
@@ -117,6 +120,6 @@ export const ObjectValueModel = () => {
 };
 
 export default {
-  title: 'Core Components/Chips/SelectChip',
+  title: 'Deprecated/SelectChip',
   component: SelectChip,
 };

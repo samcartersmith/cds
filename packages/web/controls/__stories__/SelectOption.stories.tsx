@@ -1,19 +1,15 @@
-import { VStack } from '../../layout';
-import { TextLabel1 } from '../../typography';
+import React from 'react';
+
+import { VStack } from '../../layout/VStack';
+import { TextLabel1 } from '../../typography/TextLabel1';
 import { defaultContext, SelectProvider } from '../selectContext';
 import { SelectOption } from '../SelectOption';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export default {
-  title: 'Core Components/Inputs/SelectOption (deprecated - moved to cds-web-overlays)',
+  title: 'Core Components/Select/SelectOption',
   component: SelectOption,
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Stories = () => {
   return (
     <SelectProvider value={defaultContext}>

@@ -100,8 +100,10 @@ export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps;
 export type RadioGroupProps<T extends string> = {
   /** Field name of the multiple choice radio group. */
   name: string;
-  /** @deprecated This prop will be replaced in v6.0.0 with accessibilityLabelledBy. */
-  /** id of the element that labels the radio group */
+  /**
+   * @deprecated This prop will be replaced in v6.0.0 with accessibilityLabelledBy.
+   * id of the element that labels the radio group
+   */
   'aria-labelledby'?: string;
   /** Handle change event when pressing on a radio option. */
   onChange?: (value: T) => void;

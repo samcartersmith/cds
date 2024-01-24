@@ -3,7 +3,7 @@ import { ForwardedRef, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-c
 
 import { NavigationIcon, NavigationIconProps } from '../icons';
 import { HStack } from '../layout';
-import { Tooltip } from '../overlays/Tooltip/Tooltip';
+import { Tooltip } from '../overlays';
 import { TooltipProps } from '../overlays/Tooltip/TooltipProps';
 import { Pressable } from '../system';
 import { LinkProps, TextHeadline } from '../typography';

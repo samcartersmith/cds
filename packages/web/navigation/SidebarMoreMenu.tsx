@@ -4,15 +4,12 @@ import { sidebarMenuMaxWidth, sidebarMenuMinWidth } from '@cbhq/cds-common/token
 import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 
 import { Dropdown, DropdownProps } from '../dropdown';
-import { Tooltip } from '../overlays';
 import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+import { Tooltip } from '../overlays/Tooltip/Tooltip';
 
 import { useSidebarContext } from './SidebarContext';
 import { SidebarItem, SidebarItemProps } from './SidebarItem';
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export type SidebarMoreMenuProps = {
   children: ReactNode;
   /**
@@ -24,9 +21,6 @@ export type SidebarMoreMenuProps = {
   Pick<SidebarItemProps, 'active' | 'tooltipContent' | 'onPress'> &
   SharedProps;
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   children,
   active,

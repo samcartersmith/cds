@@ -12,7 +12,7 @@ import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 
 export default {
-  title: 'Overlays/Select',
+  title: 'Deprecated/Select',
   component: Select,
   excludeStories: [
     'HundredCDSSelectComponents',
@@ -33,6 +33,7 @@ const components = {
   Box,
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const { Default, AssetSelect, InputStackOptions, Disabled, Compact, Variants } =
   selectBuilder(components as unknown as CreateSelectStoriesProps);
 
@@ -51,8 +52,10 @@ Disabled.parameters = {
   },
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SmallSelect = () => <Default width={80} />;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const {
   Default: DarkMode,
   AssetSelect: DarkAssetSelect,
@@ -80,6 +83,7 @@ DarkDisabled.parameters = {
   },
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const {
   Default: Dense,
   AssetSelect: DenseAssetSelect,
@@ -118,6 +122,7 @@ const NativeSelect = () => {
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const {
   HundredCDSComponents: HundredCDSSelectComponents,
   HundredHTMLComponent: HundredNativeSelectComponents,

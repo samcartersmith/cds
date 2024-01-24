@@ -50,6 +50,7 @@ const ModalDropdown = memo(
         visible,
         onChange,
         width,
+        disabled,
         ...props
       }: Omit<DropdownProps, 'controlledElementAccessibilityProps' | 'onOpenMenu' | 'onCloseMenu'> &
         DropdownVisibilityProps,
@@ -82,6 +83,7 @@ const ModalDropdown = memo(
             dangerouslyDisableResponsiveness
             disablePortal={disablePortal}
             onOverlayPress={onCloseMenu}
+            testID="dropdown-modal"
             visible={visible}
             {...controlledElementAccessibilityProps}
           >
@@ -92,7 +94,7 @@ const ModalDropdown = memo(
           {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
           <div
             {...triggerAccessibilityProps}
-            onClick={onOpenMenu}
+            onClick={disabled ? undefined : onOpenMenu}
             onKeyDown={onOpenMenu}
             style={{ width }}
           >
@@ -188,6 +190,7 @@ const PopoverDropdown = memo(
         onBlur,
         contentPosition = defaultPopoverContentPositionConfig,
         block,
+        disabled,
         ...props
       }: Omit<DropdownProps, 'enableMobileModal' | 'onOpenMenu' | 'onCloseMenu'> &
         DropdownVisibilityProps,
@@ -255,15 +258,16 @@ const PopoverDropdown = memo(
           <Popover
             // DropdownContent will handle exit animation on menu blur, including pressing the subject again to close
             block={block}
-            content={memoizedContent}
+            content={disabled ? undefined : memoizedContent}
             contentPosition={contentPosition ?? defaultPopoverContentPositionConfig}
             disablePortal={disablePortal}
+            disabled={disabled}
             onBlur={onBlur}
             onClose={onCloseMenu}
             onPressSubject={!visible ? onOpenMenu : undefined}
             showOverlay={showOverlay}
             testID={testID}
-            visible={visible}
+            visible={disabled ? false : visible}
             {...props}
           >
             <div ref={subjectRef} style={{ width: '100%' }}>
@@ -276,9 +280,6 @@ const PopoverDropdown = memo(
   ),
 );
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const Dropdown = memo(
   forwardRef(
     (
@@ -292,7 +293,7 @@ export const Dropdown = memo(
       }: DropdownProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
-      const { isMobile } = useBreakpoints();
+      const { isPhone } = useBreakpoints();
       const [visible, { toggleOn, toggleOff }] = useToggler();
 
       const handleOpenMenu = useCallback(() => {
@@ -305,7 +306,7 @@ export const Dropdown = memo(
         onCloseMenu?.();
       }, [onCloseMenu, toggleOff]);
 
-      return isMobile && enableMobileModal ? (
+      return isPhone && enableMobileModal ? (
         <ModalDropdown
           ref={ref}
           maxHeight={maxHeight}

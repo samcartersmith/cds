@@ -1,37 +1,66 @@
-import { memo } from 'react';
+import React, { Children, memo, useCallback } from 'react';
+import { useToggler } from '@cbhq/cds-common';
+import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
+import {
+  appSwitcherMaxSize,
+  appSwitcherWidth,
+  denseAppSwitcherWidth,
+} from '@cbhq/cds-common/tokens/appSwitcher';
 
 import { NavigationIconButton } from '../buttons/NavigationIconButton';
+import { useRefocusTrigger } from '../controls/useRefocusTrigger';
 import { DotCount } from '../dots/DotCount';
 import { Dropdown } from '../dropdown';
 import { HStack } from '../layout';
-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+import { PopoverContentPositionConfig } from '../overlays';
+import { ThemeProvider } from '../system';
 
 import { AppSwitcherContent } from './AppSwitcherContent';
 
 const switcherPositionConfig: PopoverContentPositionConfig = {
-  placement: 'bottom',
+  placement: 'bottom-end',
   gap: 1,
 };
 
 /** This is the component that Identity will likely encapsulate themselves. */
 const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
+  const isDense = useScaleDensity() === 'dense';
+
+  const [menuHasClosed, toggleMenuHasClosed] = useToggler(false);
+  const triggerRef = useRefocusTrigger(menuHasClosed);
+
+  const onOpenMenu = useCallback(() => {
+    if (menuHasClosed) {
+      toggleMenuHasClosed.toggleOff();
+    }
+  }, [menuHasClosed, toggleMenuHasClosed]);
+
+  const onCloseMenu = useCallback(() => {
+    toggleMenuHasClosed.toggleOn();
+  }, [toggleMenuHasClosed]);
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  const childWithRef = React.cloneElement(Children.only(children), {
+    ref: triggerRef,
+  });
+
   return (
     <Dropdown
       enableMobileModal
       showOverlay
       content={<AppSwitcherContent />}
       contentPosition={switcherPositionConfig}
-      maxHeight={600}
-      width={359}
+      maxHeight={appSwitcherMaxSize}
+      onCloseMenu={onCloseMenu}
+      onOpenMenu={onOpenMenu}
+      width={isDense ? denseAppSwitcherWidth : appSwitcherWidth}
     >
-      {children}
+      {childWithRef}
     </Dropdown>
   );
 });
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const AppSwitcher = () => {
   return (
     <HStack>
@@ -42,9 +71,6 @@ export const AppSwitcher = () => {
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const AppSwitcherWithDot = () => {
   return (
     <HStack>
@@ -57,10 +83,19 @@ export const AppSwitcherWithDot = () => {
   );
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
+export const DenseAppSwitcher = () => {
+  return (
+    <ThemeProvider scale="xSmall">
+      <HStack>
+        <AppSwitcherRecipe>
+          <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+        </AppSwitcherRecipe>
+      </HStack>
+    </ThemeProvider>
+  );
+};
+
 export default {
-  title: 'Core Components/Switchers/AppSwitcher (deprecated - moved to cds-web-overlays)',
+  title: 'Recipes/AppSwitcher',
   component: AppSwitcher,
 };

@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { Placement } from '@popperjs/core';
 import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common/types';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type PopoverContentPositionConfig = {
   /**
    * Custom placement config
@@ -19,6 +20,7 @@ export type PopoverContentPositionConfig = {
   offsetGap?: number;
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type PopoverProps = {
   content: ReactNode;
   /** Subject of the Popover that when interacted with will toggle the visibility of the content */

@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
@@ -105,9 +105,6 @@ type UserSwitcherContentProps = {
   data?: UserSwitcherData[];
 };
 
-/**
- * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
- */
 export const UserSwitcherContent = memo(({ data = userSwitcherData }: UserSwitcherContentProps) => {
   const { name, email, avatarUri } = data.find((user) => user.selected) as UserSwitcherData;
   const otherAccountsData = data.filter((user) => !user.selected);

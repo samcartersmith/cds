@@ -5,6 +5,7 @@ import { useSpacingValue } from '@cbhq/cds-web/hooks/useSpacingValue';
 
 import { PopoverContentPositionConfig } from './PopoverProps';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const usePopper = ({ placement, skid, gap, offsetGap }: PopoverContentPositionConfig) => {
   const [subject, setSubject] = useState<HTMLDivElement | null>(null);
   const [popper, setPopper] = useState<HTMLDivElement | null>(null);

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.29.0 (1/24/2024 PST)
+
+#### 🚀 Updates
+
+- Feature parity web-overlays -> web, deprecated web-overlays exports. [[#2669](https://github.cbhq.net/frontend/cds/pull/2669)]
+
 ## 5.28.3 ((1/24/2024, 01:16 PM PST))
 
 This is an artificial version bump with no new change.

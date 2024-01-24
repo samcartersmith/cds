@@ -40,6 +40,7 @@ const DropdownExample = (props: Pick<DropdownContentProps, 'placement'>) => (
   </div>
 );
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const DropdownContentExamples = () => {
   return (
     <VStack gap={3}>
@@ -52,6 +53,6 @@ export const DropdownContentExamples = () => {
 };
 
 export default {
-  title: 'Overlays/Dropdown/DropdownContent',
+  title: 'Deprecated/DropdownContent',
   component: DropdownExample,
 };

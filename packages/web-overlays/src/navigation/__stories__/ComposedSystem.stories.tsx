@@ -9,7 +9,7 @@ import { ComposedSystem } from './NavigationStorySetup';
 
 export default {
   component: ComposedSystem,
-  title: 'Core Components/Navigation/System',
+  title: 'Deprecated/System',
 };
 
 const FullSystemExample: Story = () => {

@@ -9,6 +9,7 @@ import { Dropdown, DropdownProps } from '../dropdown';
 import { PopoverContentPositionConfig } from '../popover/PopoverProps';
 import { Tooltip } from '../tooltip/Tooltip';
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export type SidebarMoreMenuProps = {
   children: ReactNode;
   /**
@@ -20,6 +21,7 @@ export type SidebarMoreMenuProps = {
   Pick<SidebarItemProps, 'active' | 'tooltipContent' | 'onPress'> &
   SharedProps;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   children,
   active,

@@ -27,6 +27,7 @@ import { SidebarMoreMenu, SidebarMoreMenuProps } from '../../sidebarMoreMenu/Sid
 /**
  * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const StoryMap = {
   NoTabsNoTitle: 'No Tabs no displayTitle',
   TabsAndTitle: 'With Tabs and displayTitle',
@@ -37,6 +38,7 @@ type Items = { title: string; icon: SidebarItemProps['icon'] }[];
 /**
  * @deprecated this component will be removed from cds-web in v6.0.0. It has been moved to cds-web-overlays.
  */
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const items: Items = [
   { title: 'Assets', icon: 'chartPie' },
   { title: 'Trade', icon: 'trading' },
@@ -49,6 +51,7 @@ export const items: Items = [
 
 const handlePress = (name: string) => console.log(`Pressed ${name}`);
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const tabs = [
   {
     id: 'all',
@@ -144,6 +147,7 @@ export function NavigationBarFullExample({
   );
 }
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const NavigationBarTitle = () => {
   return (
     <NavigationBar
@@ -163,6 +167,7 @@ export const NavigationBarTitle = () => {
   );
 };
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const ComposedSystem = () => {
   const [activeSidebarIndex, setActiveSidebarIndex] = useState(0);
   const [activeTabId, setActiveTabId] = useState('all');
@@ -225,6 +230,7 @@ const testOverrideClass = css`
   }
 `;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const NavLinkExample = () => {
   const [activeItem, setActiveItem] = useState('assets');
   const getProps = (name: string) => ({
@@ -275,6 +281,7 @@ type SidebarExampleProps = {
   children?: React.ReactNode;
 } & Omit<SidebarMoreMenuProps, 'children'>;
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);

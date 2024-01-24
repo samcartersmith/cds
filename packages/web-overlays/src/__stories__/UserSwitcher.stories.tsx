@@ -54,6 +54,7 @@ const UserSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) =>
   );
 });
 
+/** @deprecated @cbhq/cds-web-overlays will be removed in CDS v6.0.0. Please use cds-web instead */
 export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectProps) => {
   return (
     <UserSwitcherRecipe>
@@ -63,6 +64,6 @@ export const UserSwitcher = ({ title = 'Brian', description }: SwitcherSubjectPr
 };
 
 export default {
-  title: 'Overlays/Switchers/UserSwitcher',
+  title: 'Deprecated/UserSwitcher',
   component: UserSwitcher,
 };
