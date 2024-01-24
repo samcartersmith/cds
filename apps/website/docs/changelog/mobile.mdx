@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.28.3 (1/24/2024 PST)
+
+#### 🐞 Fixes
+
+- Drawer - revert to v5.21.1. [[#2667](https://github.cbhq.net/frontend/cds/pull/2667)]
+
 ## 5.28.2 ((1/23/2024, 03:03 PM PST))
 
 This is an artificial version bump with no new change.
