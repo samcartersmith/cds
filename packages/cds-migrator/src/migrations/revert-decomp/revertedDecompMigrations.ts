@@ -1,23 +1,19 @@
-import { addDependenciesToPackageJson, Tree } from '@nrwl/devkit';
+import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
 import {
   checkFileIncludesImport,
-  checkHasCdsDependency,
   createMigration,
   CreateMigrationParams,
   logDebug,
-  logSuccess,
   replaceImport,
-  updatePeerDependencies,
   writeMigrationToFile,
 } from '../../helpers';
-import { checkHasDependency } from '../../helpers/checkHasDependency';
 
-import { migrationsWithNewPackages as migrations } from './data/packageDecompMigrations';
+import { revertedMigrations } from './data/migrations';
 
-const oldDirectories = migrations.map(({ oldDir }) => oldDir);
-const decompedExports = migrations.flatMap(({ exports }) => exports);
+const oldDirectories = revertedMigrations.map(({ oldDir }) => oldDir);
+const decompedExports = revertedMigrations.flatMap(({ exports }) => exports);
 
 const filterSourceFiles = (path: string) => {
   const sourceContent = fs.readFileSync(path, 'utf-8');
@@ -31,8 +27,8 @@ const filterSourceFiles = (path: string) => {
 };
 
 const callback = (args: CreateMigrationParams) => {
-  const { sourceFile, tree, projectConfig: project } = args;
-  const packagesToAdd: string[] = [];
+  const { sourceFile } = args;
+  const packagesToRemove: string[] = [];
 
   oldDirectories.forEach((oldDirectory) => {
     if (checkFileIncludesImport(sourceFile, oldDirectory)) {
@@ -51,14 +47,15 @@ const callback = (args: CreateMigrationParams) => {
             if (decompedModules) {
               decompedModules.forEach((decompedExport) => {
                 // get the migration config for the found export
-                const migConfig = migrations.find(
+                const migConfig = revertedMigrations.find(
                   (mig) =>
                     mig.exports.includes(decompedExport) && declarationPath.startsWith(mig.oldDir),
                 );
                 if (migConfig) {
                   const { newDir, oldDir } = migConfig;
-                  // we'll need to add the newly decomped package to the project's package.json
-                  packagesToAdd.push(newDir);
+                  if (!packagesToRemove.includes(oldDir)) {
+                    packagesToRemove.push(oldDir);
+                  }
                   replaceImport({
                     sourceFile,
                     oldPath: oldDir,
@@ -81,47 +78,6 @@ const callback = (args: CreateMigrationParams) => {
       }
     }
   });
-  if (packagesToAdd.length) {
-    // we're basically checking where CDS core dependencies are installed so we can add decomped packages to the same place
-    const { peerDependencies, dependencies, devDependencies, packageJsonPath } =
-      checkHasCdsDependency({ tree, project });
-
-    packagesToAdd.forEach((packageName) => {
-      if (dependencies) {
-        // check if the decomped package is already installed
-        const hasDecompedPackageDep = checkHasDependency({ packageName, tree, project });
-        // if not, install it
-        if (!hasDecompedPackageDep) {
-          addDependenciesToPackageJson(tree, { [packageName]: 'latest' }, {}, packageJsonPath);
-          logSuccess(`Added ${packageName} to ${packageJsonPath}`);
-        }
-      }
-      if (peerDependencies) {
-        const hasDecompedPackageDep = checkHasDependency({
-          packageName,
-          tree,
-          project,
-          type: 'peerDependencies',
-        });
-        if (!hasDecompedPackageDep) {
-          updatePeerDependencies(tree, { [packageName]: 'latest' }, packageJsonPath);
-          logSuccess(`Added ${packageName} to ${packageJsonPath}`);
-        }
-      }
-      if (devDependencies) {
-        const hasDecompedPackageDep = checkHasDependency({
-          packageName,
-          tree,
-          project,
-          type: 'devDependencies',
-        });
-        if (!hasDecompedPackageDep) {
-          addDependenciesToPackageJson(tree, {}, { [packageName]: 'latest' }, packageJsonPath);
-          logSuccess(`Added ${packageName} to ${packageJsonPath}`);
-        }
-      }
-    });
-  }
 };
 
 export default async function migration(tree: Tree) {
@@ -129,5 +85,6 @@ export default async function migration(tree: Tree) {
     tree,
     callback,
     filterSourceFiles,
+    packageNames: ['@cbhq/cds-web-overlays'],
   });
 }

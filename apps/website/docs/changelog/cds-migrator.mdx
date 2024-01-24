@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.37 (1/24/2024 PST)
+
+#### 🚀 Updates
+
+- Feat: added script for reverting web-overlays decomp. [[#2665](https://github.cbhq.net/frontend/cds/pull/2665)]
+
 ## 0.1.36 (1/23/2024 PST)
 
 #### 🐞 Fixes

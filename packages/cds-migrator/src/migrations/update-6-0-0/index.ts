@@ -1,5 +1,6 @@
 import { Tree } from '@nrwl/devkit';
 
+import revertDecomp from '../revert-decomp';
 import packageDecompMigrations from '../update-decomp';
 
 import attributeValueToBooleanMigrations from './attributeValueToBooleanMigrations';
@@ -23,4 +24,6 @@ export default async function main(tree: Tree) {
   await pathMigrations(tree);
   await packageDecompMigrations(tree);
   await updateCdsPackages(tree);
+  // migrates usages of decomped components back to web package
+  await revertDecomp(tree);
 }

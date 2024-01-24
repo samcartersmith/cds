@@ -4,7 +4,7 @@ import { SyntaxKind } from 'ts-morph';
 
 import { createMigration, CreateMigrationParams, writeMigrationToFile } from '../../helpers';
 
-import { migrations } from './data/packageDecompMigrations';
+import { migrationsWithNewPackages as migrations } from './data/packageDecompMigrations';
 
 const oldDirectories = migrations.map(({ oldDir }) => oldDir);
 

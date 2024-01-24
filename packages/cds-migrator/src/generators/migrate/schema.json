@@ -13,7 +13,8 @@
         "4.0.0",
         "5.0.0",
         "package-decomp",
-        "6.0.0"
+        "6.0.0",
+        "revert-decomp"
       ],
       "description": "Version to migrate to",
       "$default": {
