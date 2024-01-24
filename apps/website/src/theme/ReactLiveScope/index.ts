@@ -90,6 +90,12 @@ import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { palette } from '@cbhq/cds-web/tokens';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
+import {
+  ProgressBar,
+  ProgressBarWithFixedLabels,
+  ProgressBarWithFloatLabel,
+  ProgressCircle,
+} from '@cbhq/cds-web/visualizations';
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
 import * as CDSWebOverlays from '@cbhq/cds-web-overlays';
 import { AppSwitcher } from '@cbhq/cds-web-overlays/__stories__/AppSwitcher.stories';
@@ -205,6 +211,10 @@ const ReactLiveScope: unknown = {
   ...CDSTypography,
   ...CDSIllustrations,
   ...CDSVisualizations,
+  ProgressBar,
+  ProgressBarWithFixedLabels,
+  ProgressBarWithFloatLabel,
+  ProgressCircle,
   Shake,
   Pulse,
   ColorSurge,
