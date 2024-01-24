@@ -37,11 +37,11 @@ export function getPackageVersion({
   // Check if version exists and is not '*'
   const isValidVersion = (version: string) => version && version !== '*';
 
-  // Return the first valid version found in the order of dependencies -> peerDependencies -> resolutions -> devDependencies
+  // Return the first valid version found in the order of dependencies -> devDepVersion -> peerDepVersion -> resolutionVersion
   if (isValidVersion(depVersion)) return depVersion;
+  if (isValidVersion(devDepVersion)) return devDepVersion;
   if (isValidVersion(peerDepVersion)) return peerDepVersion;
-  if (isValidVersion(resolutionVersion)) return resolutionVersion;
-  return devDepVersion || '';
+  return resolutionVersion || '';
 }
 
 export function getStats({
