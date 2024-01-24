@@ -51,6 +51,8 @@ export type AdopterConfig = {
   type: 'doc';
   pillar?: string;
   period?: string;
+  /** Absolute path string for project's dependencies package.json */
+  dependencyPath?: string;
 };
 
 export type AdoptersConfig = {

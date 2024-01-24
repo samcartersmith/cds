@@ -6,7 +6,7 @@ import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { TextBody, TextTitle1 } from '@cbhq/cds-web/typography';
 import { ChartData } from '@cbhq/cds-web-visualization';
 
-import { StatsTextStack } from ':cds-website/components/StatsTextStack';
+import { StatsTextStack, StatsVersionStatusStack } from ':cds-website/components/StatsTextStack';
 import { Tabs } from ':cds-website/components/Tabs';
 
 import { AdopterComponentsList } from '../ComponentsList';
@@ -21,6 +21,7 @@ import { AdopterSearchProvider } from './search/AdopterSearchProvider';
 import { downloadCSV } from './utils/downloadCSV';
 import { getCdsRecs } from './utils/getCdsRecs';
 import { AdopterStatsBreakdown } from './AdopterStatsBreakdown';
+import { getLowestVersion } from './AdopterVersionCell';
 import { AdoptionChart } from './AdoptionChart';
 import { ComponentData } from './types';
 
@@ -129,6 +130,12 @@ export const AdopterDetails = memo(() => {
   const okrPlanning = useOkrPlanningComponents();
   const [sparklineData, setSparklineData] = useState<Record<string, ChartData> | undefined>();
 
+  const { lowestVersion } = getLowestVersion(
+    latest.cdsCommonVersion,
+    latest.cdsWebVersion,
+    latest.cdsMobileVersion,
+  );
+
   useEffect(() => {
     setSparklineData({
       week: formatWeekData(id),
@@ -146,19 +153,21 @@ export const AdopterDetails = memo(() => {
     <VStack>
       <VStack gap={3} spacingBottom={6}>
         <HStack alignItems="flex-start" justifyContent="space-between" spacingBottom={2}>
-          <VStack gap={1}>
-            <HStack alignItems="center" gap={2}>
+          <VStack gap={1} width="40%">
+            <HStack alignItems="center" gap={1}>
               <IconButton transparent as={RouterLink} name="backArrow" />
               <TextTitle1 as="h1">{label}</TextTitle1>
-              <TextBody as="p">{`Last updated ${latest.date}`}</TextBody>
+              <TextBody align="end" as="p">{`Last updated ${latest.date}`}</TextBody>
             </HStack>
             <Button onPress={handleDownload} variant="secondary">
               Download OKR Planning
             </Button>
           </VStack>
-          <HStack gap={6} width={240}>
+          <HStack gap={6} width={550}>
             <StatsTextStack label="CDS" stat={useAdoptionPercent('cds')} />
             <StatsTextStack label="Product" stat={useAdoptionPercent('presentational')} />
+            <StatsTextStack label="Project Version" stat={lowestVersion || 'No Data'} />
+            <StatsVersionStatusStack label="Status" updated={latest.upToDate} />
           </HStack>
         </HStack>
         <AdopterStatsBreakdown />

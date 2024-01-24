@@ -10,6 +10,12 @@ export const statsFallback = {
     presentational: 0,
     totalCdsAndPresentational: 0,
     totalOther: 0,
+    cdsCommonVersion: '',
+    cdsWebVersion: '',
+    cdsMobileVersion: '',
+    cdsLatestVersion: '',
+    latestCdsVersionPublished3MonthsAgo: '',
+    upToDate: false,
   } as AdopterStatsItem,
   previous: [] as AdopterStatsItem[],
 };

@@ -1,8 +1,8 @@
 ---
 hide_title: true
 hide_table_of_contents: true
-title: Commerce Frontend
-sidebar_label: Commerce Frontend
+title: Commerce Payer
+sidebar_label: Commerce Payer
 ---
 
 import { AdopterDetails } from ':cds-website/components/AdoptionTracker/AdopterDetails';
@@ -11,13 +11,13 @@ import { AdopterProjectInfoProvider } from ':cds-website/components/AdoptionTrac
 import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
 
 <AdopterStatsProvider
-  {...require(':cds-website/static/data/__generated__/adoption/commerce-frontend/stats.json')}
+  {...require(':cds-website/static/data/__generated__/adoption/commerce-payer/stats.json')}
 >
   <AdopterProjectInfoProvider
-    {...require(':cds-website/static/data/__generated__/adoption/commerce-frontend/info.json')}
+    {...require(':cds-website/static/data/__generated__/adoption/commerce-payer/info.json')}
   >
     <AdopterComponentsProvider
-      {...require(':cds-website/static/data/__generated__/adoption/commerce-frontend/components.json')}
+      {...require(':cds-website/static/data/__generated__/adoption/commerce-payer/components.json')}
     >
       <AdopterDetails />
     </AdopterComponentsProvider>

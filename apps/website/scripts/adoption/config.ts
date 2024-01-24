@@ -77,6 +77,7 @@ export const config: AdoptersConfig[] = [
         label: 'Retail Mobile',
         projectTsAliases: ['@app'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
       },
       {
         root: path.join(tempDir, retailWebGit, 'app'),
@@ -86,13 +87,19 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
+        //  note: react-native-core has * in it's package.json (https://github.cbhq.net/consumer/react-native/blob/master/libs/react-native-core/package.json)
+        // we will use the app package.json
+
         root: path.join(tempDir, retailMobileGit, 'libs/react-native-core'),
         github: retailMobileGit,
         id: 'react-native-core',
         label: 'React Native Core',
         type: 'doc',
+        dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
       },
       {
+        //  note: react-native/src/packages/onboarding has * in it's package.json (https://github.cbhq.net/consumer/react-native/blob/master/src/packages/onboarding/package.json)
+        // we will use the dev dependency
         root: path.join(tempDir, retailMobileGit),
         github: retailMobileGit,
         tsconfigFileName: 'tsconfig.base.json',
@@ -100,6 +107,7 @@ export const config: AdoptersConfig[] = [
         label: 'Unified Mobile Onboarding',
         projectTsAliases: ['@onboarding'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/onboarding'),
       },
       {
         root: path.join(tempDir, retailWebGit, 'marketing'),
@@ -182,6 +190,7 @@ export const config: AdoptersConfig[] = [
           'screens/YieldCenter/**/*.(ts|tsx)',
           'screens/YieldMigrationNotice/**/*.(ts|tsx)',
         ],
+        dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
       },
       {
         root: path.join(tempDir, retailWebGit, 'app'),
@@ -226,6 +235,7 @@ export const config: AdoptersConfig[] = [
          */
         ignoreDirs: ['debug/**'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, walletGit, 'workspaces/apps/extension'),
       },
       {
         root: path.join(tempDir, walletGit, 'workspaces'),
@@ -235,6 +245,7 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: [':rn'],
         cdsAliases: [':rn/cds-wallet'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, walletGit, 'workspaces/apps/rn'),
       },
       {
         root: path.join(tempDir, walletGit, 'workspaces'),
@@ -244,6 +255,7 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: [':dapp'],
         cdsAliases: [':apps/dapp'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, walletGit, 'workspaces/apps/dapp'),
       },
       {
         root: path.join(tempDir, frontendWebGit, 'apps/stand-with-crypto'),
@@ -274,6 +286,7 @@ export const config: AdoptersConfig[] = [
         label: 'Prime Web',
         projectTsAliases: ['@prime-ui'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, primeWebGit, 'apps/prime'),
       },
       {
         ...primeWebConfig,
@@ -281,6 +294,7 @@ export const config: AdoptersConfig[] = [
         label: 'Prime Admin',
         projectTsAliases: ['@prime-admin', ':prime/admin', '@prime-ui'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, primeWebGit, 'apps/prime-admin'),
       },
       {
         root: path.join(tempDir, unifiedAccountsGit),
@@ -377,19 +391,30 @@ export const config: AdoptersConfig[] = [
         type: 'doc',
       },
       {
-        root: path.join(tempDir, commerceWeb),
-        github: commerceWeb,
+        root: path.join(tempDir, commerceFE, 'apps/commerce-merchant'),
+        github: commerceFE,
         tsconfigFileName: 'tsconfig.json',
-        id: 'commerce-web',
-        label: 'Commerce Web',
+        id: 'commerce-merchant',
+        label: 'Commerce Merchant',
+        sourceGlob: ['apps/commerce-merchant/**/*.(ts|tsx)'],
         type: 'doc',
       },
       {
-        root: path.join(tempDir, commerceFE),
+        root: path.join(tempDir, commerceFE, 'apps/commerce-payer'),
         github: commerceFE,
         tsconfigFileName: 'tsconfig.json',
-        id: 'commerce-frontend',
-        label: 'Commerce Frontend',
+        id: 'commerce-payer',
+        label: 'Commerce Payer',
+        sourceGlob: ['apps/commerce-payer/**/*.(ts|tsx)'],
+        type: 'doc',
+      },
+      {
+        root: path.join(tempDir, commerceFE, 'apps/donations'),
+        github: commerceFE,
+        tsconfigFileName: 'tsconfig.json',
+        id: 'commerce-donations',
+        label: 'Commerce Donations',
+        sourceGlob: ['apps/donations/**/*.(ts|tsx)'],
         type: 'doc',
       },
       {
@@ -421,6 +446,7 @@ export const config: AdoptersConfig[] = [
         label: 'AssetHub Issuer',
         projectTsAliases: [':www', ':shared'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, assethubGit, 'apps/www'),
       },
       {
         ...assethubConfig,
@@ -428,6 +454,7 @@ export const config: AdoptersConfig[] = [
         label: 'AssetHub Admin',
         projectTsAliases: [':admin', ':shared'],
         type: 'doc',
+        dependencyPath: path.join(tempDir, assethubGit, 'apps/admin'),
       },
       {
         root: path.join(tempDir, frontendWebGit, 'apps/abor'),
@@ -435,6 +462,15 @@ export const config: AdoptersConfig[] = [
         id: 'abor',
         label: 'Abor',
         projectTsAliases: [':abor'],
+        type: 'doc',
+      },
+      // Commerce Web is deprecated so moving to other.
+      {
+        root: path.join(tempDir, commerceWeb),
+        github: commerceWeb,
+        tsconfigFileName: 'tsconfig.json',
+        id: 'commerce-web',
+        label: 'Commerce Web',
         type: 'doc',
       },
     ],

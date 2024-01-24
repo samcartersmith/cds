@@ -3,6 +3,8 @@ import { writePrettyFile } from '@cbhq/script-utils';
 
 import { ProjectParser } from './parsers/ProjectParser';
 import { getListOfComponentsAndImports } from './utils/getListOfComponentsAndImports';
+import { getCDSCommonPackageJsonFromThreeMonthsAgo } from './utils/getOldCDSVersion';
+import { getCDSVersion } from './utils/getPackageJson';
 import { getPreviousStats } from './utils/getPreviousStats';
 import { cleanup, getTempRepos } from './utils/getTempRepos';
 import { preGenerateCleanup } from './utils/preGenerateCleanup';
@@ -114,7 +116,18 @@ async function generateAdoptionFiles() {
   return Promise.all(
     adopters.map(async (config) => {
       const previousStats = await getPreviousStats(config.id);
-      const project = await new ProjectParser(config, previousStats).parse();
+      const currentCDSVersion = (await getCDSVersion()) || '';
+
+      // get @cbhq/cds-common version from 3 months ago using git show
+      const cdsCommonsPackageFrom3MonthsAgo = await getCDSCommonPackageJsonFromThreeMonthsAgo();
+      const cdsCommonsVersionFrom3MonthsAgo = cdsCommonsPackageFrom3MonthsAgo.version;
+
+      const project = await new ProjectParser(
+        config,
+        currentCDSVersion,
+        cdsCommonsVersionFrom3MonthsAgo,
+        previousStats,
+      ).parse();
       await Promise.all([
         generateMdxFiles(project),
         generateAdoptersData(),

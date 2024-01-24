@@ -4,6 +4,26 @@ import { hiddenAdopters } from ':cds-website/data/__generated__/adoption/adopter
 export type Adopters = typeof adopters | typeof hiddenAdopters;
 export type Adopter = (typeof adopters)[number]['id'] | (typeof hiddenAdopters)[number]['id'];
 
+export type AdopterProjectVersionSummary = {
+  id: string;
+  version: string;
+  pillar?: string;
+  upToDate: boolean;
+  adopterStatsItem: AdopterStatsItem;
+};
+
+export type PillarProjectData = {
+  pillar: string;
+  allProjectVersions: AdopterProjectVersionSummary[];
+  totalProjectsCount: number;
+};
+
+export type PillarAdoptionData = {
+  pillar: string;
+  cdsPercentAdoption: string;
+  cdsPercentAdoptionWithinLatest3Months: string;
+};
+
 export type AdopterProjectInfo = {
   github: string;
   githubUrl: string;
@@ -16,6 +36,28 @@ export type AdopterProjectInfo = {
   dependencies: Record<string, string>;
 };
 
+/** Stores version stats for an adopter project */
+export type VersionStatsProps = {
+  cdsCommonVersion: string;
+  cdsWebVersion: string;
+  cdsMobileVersion: string;
+  cdsLatestVersion: string;
+  latestCdsVersionPublished3MonthsAgo: string;
+  upToDate: boolean;
+};
+
+export type VersionMap = {
+  common: string;
+  web: string;
+  mobile: string;
+};
+
+export type VersionInfoProps = {
+  name: string;
+  version: string | null;
+  tagLabel?: string;
+};
+
 export type AdopterStatsItem = {
   date: string;
   cdsPercent: number;
@@ -24,7 +66,7 @@ export type AdopterStatsItem = {
   totalCdsAndPresentational: number;
   totalOther: number;
   period?: `Q${number}:${number}`;
-};
+} & VersionStatsProps;
 
 export type AdopterStats = {
   latest: AdopterStatsItem;

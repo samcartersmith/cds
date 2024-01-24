@@ -65,8 +65,9 @@ module.exports.adopters = [
     collapsed: true,
     items: [
       { type: 'doc', id: 'adoption-tracker/cloud-console', label: 'Cloud Console' },
-      { type: 'doc', id: 'adoption-tracker/commerce-web', label: 'Commerce Web' },
-      { type: 'doc', id: 'adoption-tracker/commerce-frontend', label: 'Commerce Frontend' },
+      { type: 'doc', id: 'adoption-tracker/commerce-merchant', label: 'Commerce Merchant' },
+      { type: 'doc', id: 'adoption-tracker/commerce-payer', label: 'Commerce Payer' },
+      { type: 'doc', id: 'adoption-tracker/commerce-donations', label: 'Commerce Donations' },
       {
         type: 'doc',
         id: 'adoption-tracker/payments-onramp-widget',
@@ -83,6 +84,7 @@ module.exports.adopters = [
       { type: 'doc', id: 'adoption-tracker/assethub-web', label: 'AssetHub Issuer' },
       { type: 'doc', id: 'adoption-tracker/assethub-admin', label: 'AssetHub Admin' },
       { type: 'doc', id: 'adoption-tracker/abor', label: 'Abor' },
+      { type: 'doc', id: 'adoption-tracker/commerce-web', label: 'Commerce Web' },
     ],
   },
 ];

@@ -102,6 +102,9 @@ export class ProjectParser {
   /** The absolute path for the source files to parse. */
   public root: string;
 
+  /** The dependency path for the source files to parse. */
+  public dependencyPath?: string;
+
   public spinner!: ora.Ora;
 
   /** All styled-components generated via tagged template literal in a project. Helps determine presentational components key is the id and value is the styled tag. */
@@ -110,8 +113,17 @@ export class ProjectParser {
   /** All styled-components extended off some other component key is the id and value is an array of call sites. */
   public extendedStyledComponents: Map<string, string[]> = new Map();
 
-  /** Dependencies object from package.json of project. Not being used currently, but useful if we want to track versioning of Coinbase packages or what external libraries teams are using. */
+  /** Dependencies object from package.json of project. */
   public dependencies!: Record<string, string>;
+
+  /** Peer Dependencies object from package.json of project. */
+  public peerDependencies!: Record<string, string>;
+
+  /** Resolutions object from package.json of project. */
+  public resolutionsForDependencies!: Record<string, string>;
+
+  /** Dev Dependencies object from package.json of project. */
+  public devDependencies!: Record<string, string>;
 
   /** A unique identifier for the project.  */
   public id: string;
@@ -167,11 +179,18 @@ export class ProjectParser {
 
   private previousStats: AdoptionStats[] = [];
 
+  /** current @cbhq/cds-common version */
+  private cdsVersion: string;
+
+  /** @cbhq/cds-common Version From 3 Months Ago using git show */
+  private cdsCommonsVersionFrom3MonthsAgo: string;
+
   private pillar: string;
 
   constructor(
     {
       root,
+      dependencyPath,
       github,
       id,
       label,
@@ -185,6 +204,8 @@ export class ProjectParser {
       tsconfigFileName,
       pillar = '',
     }: AdopterConfig,
+    cdsVersion: string,
+    cdsCommonsVersionFrom3MonthsAgo: string,
     previousStats?: PreviousAdoptionStats,
   ) {
     const [org, repo] = github.split('/');
@@ -196,6 +217,7 @@ export class ProjectParser {
     this.sourceGlob = sourceGlob;
     this.label = label;
     this.projectTsAliases = projectTsAliases;
+    this.dependencyPath = dependencyPath;
     this.cdsAliases = ['@cbhq/cds-', ...DEFAULT_CDS_ALIASES, ...cdsAliases];
     this.presentationalAttributes = [
       ...DEFAULT_PRESENTATIONAL_ATTRIBUTES,
@@ -208,6 +230,8 @@ export class ProjectParser {
     ];
     this.root = root;
     this.tsconfigFileName = tsconfigFileName ?? 'tsconfig.json';
+    this.cdsVersion = cdsVersion;
+    this.cdsCommonsVersionFrom3MonthsAgo = cdsCommonsVersionFrom3MonthsAgo;
     if (previousStats) {
       this.previousStats = [...previousStats.previous, previousStats.latest];
     }
@@ -238,6 +262,9 @@ export class ProjectParser {
         return result;
       }),
       dependencies: this.dependencies,
+      peerDependencies: this.peerDependencies,
+      resolutionsForDependencies: this.resolutionsForDependencies,
+      devDependencies: this.devDependencies,
       presentationalElements: this.presentationalElements,
       presentationalLibraries: this.presentationalLibraries,
       presentationalAttributes: this.presentationalAttributes,
@@ -328,9 +355,19 @@ export class ProjectParser {
     const lastPeriod = getPeriodInfo(new Date(previousStatsDate));
     const currentPeriod = getPeriodInfo(new Date());
     const period = currentPeriod !== lastPeriod ? lastPeriod : undefined;
+    const { dependencies, peerDependencies, resolutionsForDependencies, devDependencies } = this;
 
     return {
-      latest: getStats(this.components, period),
+      latest: getStats({
+        data: this.components,
+        latestCdsVersionPublished3MonthsAgo: this.cdsCommonsVersionFrom3MonthsAgo,
+        period,
+        dependencies,
+        peerDependencies,
+        resolutions: resolutionsForDependencies,
+        devDependencies,
+        cdsVersion: this.cdsVersion,
+      }),
       previous: this.previousStats,
     };
   }
@@ -495,7 +532,15 @@ export class ProjectParser {
         `Running CDS Adoption Tracker for ${chalk.bold.blueBright(this.id)}...`,
       ).start();
       const tsconfig = parseTsconfig(path.join(this.root, this.tsconfigFileName));
-      this.dependencies = (await getPackageJson(this.root)).dependencies;
+
+      this.dependencies =
+        (await getPackageJson(this.dependencyPath || this.root)).dependencies || {};
+      this.peerDependencies =
+        (await getPackageJson(this.dependencyPath || this.root)).peerDependencies || {};
+      this.resolutionsForDependencies =
+        (await getPackageJson(this.dependencyPath || this.root)).resolutions || {};
+      this.devDependencies =
+        (await getPackageJson(this.dependencyPath || this.root)).devDependencies || {};
       this.root = path.resolve(this.root, tsconfig.compilerOptions?.baseUrl ?? '.');
 
       const { absoluteAliases, relativeAliases } = getTypescriptAliases(this.root, tsconfig);
