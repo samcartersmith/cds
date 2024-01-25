@@ -68,7 +68,6 @@ export function OverallStatsSummaryModal({
   totalProjectVersionsList,
   pillarCDSAdoptionList,
   companyWideAdoptionPercentage,
-  statForLatestCdsVersionPublished3MonthsAgo,
 }: OverallStatsSummaryModalProps) {
   return (
     <>
@@ -79,9 +78,7 @@ export function OverallStatsSummaryModal({
           <TableRow>
             <TableCell title="PG" />
             <TableCell title="% CDS Adoption" />
-            <TableCell
-              title={`% Products within Latest CDS (${statForLatestCdsVersionPublished3MonthsAgo} or higher)`}
-            />
+            <TableCell title="% Products Using Latest CDS" />
           </TableRow>
         </TableHeader>
         <TableBody>

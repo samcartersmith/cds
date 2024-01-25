@@ -802,7 +802,7 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
           backAccessibilityLabel="Back"
           closeAccessibilityLabel="Close"
           onBackButtonPress={closeOverallStatModal}
-          title="Project Overall Stats Summary"
+          title="Product Overall Stats Summary"
         />
         <ModalBody>
           <OverallStatsSummaryModal
