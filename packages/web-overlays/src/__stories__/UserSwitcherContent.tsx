@@ -56,7 +56,7 @@ const cellPriority: CellPriority[] = ['middle', 'end'];
 const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwitcherData) => {
   const [collapsed, { toggle }] = useToggler(true);
 
-  const userCellOuterPaddingConfig: CellSpacing = useMemo(
+  const userCellOuterSpacingConfig: CellSpacing = useMemo(
     () => ({
       spacingHorizontal: 2,
       spacingVertical: 0,
@@ -83,7 +83,7 @@ const UserAccountListCell = ({ name, email, authenticated, avatarUri }: UserSwit
               src={avatarUri}
             />
           }
-          outerPadding={userCellOuterPaddingConfig}
+          outerSpacing={userCellOuterSpacingConfig}
           priority={cellPriority}
           title={name}
         />

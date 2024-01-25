@@ -16,12 +16,12 @@ export const selectTriggerCompactMinHeight: Record<ScaleDensity, number> = {
 
 /** Spacing config for Select Option (web) */
 export const selectCellSpacingConfig: CellSpacingConfig = {
-  outerPadding: { spacingHorizontal: 0, spacingVertical: 0 },
-  innerPadding: { offsetHorizontal: 0, spacingHorizontal: 2 },
+  outerSpacing: { spacingHorizontal: 0, spacingVertical: 0 },
+  innerSpacing: { offsetHorizontal: 0, spacingHorizontal: 2 },
 };
 
 /** Spacing config for Select Option (mobile) */
 export const selectCellMobileSpacingConfig: CellSpacingConfig = {
-  outerPadding: { spacingHorizontal: 0, spacingVertical: 0 },
-  innerPadding: { offsetHorizontal: 0, spacingHorizontal: gutter },
+  outerSpacing: { spacingHorizontal: 0, spacingVertical: 0 },
+  innerSpacing: { offsetHorizontal: 0, spacingHorizontal: gutter },
 };

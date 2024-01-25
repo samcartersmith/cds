@@ -23,8 +23,6 @@ export const TableRow = memo(
     onPress,
     outerSpacing,
     innerSpacing,
-    outerPadding,
-    innerPadding,
     responsiveConfig,
     ...rest
   }: TableRowProps) => {
@@ -62,8 +60,8 @@ export const TableRow = memo(
           <TableCell
             colSpan={1000}
             direction="horizontal"
-            innerPadding={innerSpacing || innerPadding}
-            outerPadding={outerSpacing || outerPadding}
+            innerSpacing={innerSpacing}
+            outerSpacing={outerSpacing}
             responsiveConfig={responsiveConfig}
           >
             {innerChildren}

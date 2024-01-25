@@ -5,10 +5,8 @@ import {
   checkFileIncludesImport,
   checkFileIncludesRenamedValue,
   createJsxMigration,
-  generateManualMigrationOutput,
   getComponentFromJsx,
   logDebug,
-  logWarning,
   ParseJsxElementsCbParams,
   RenameAttributeMapShape,
   renameJsxAttribute,
@@ -38,7 +36,7 @@ const checkSourceFile = (sourceFile: SourceFile) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, sourceFile, path } = args;
+  const { jsx, sourceFile } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(renamedProps),
@@ -57,18 +55,9 @@ const callback = (args: ParseJsxElementsCbParams) => {
     });
   }
 
-  const manualMigrations = ['innerSpacing', 'outerSpacing'];
-
   const renameAttribute = (config: RenameAttributeMapShape) => {
     const { oldAttribute, newAttribute } = config;
     const componentHasAttribute = jsx.getAttribute(oldAttribute);
-    if (componentHasAttribute && manualMigrations.includes(oldAttribute)) {
-      const warning = `## Warning: ${
-        actualComponentName ?? component
-      } is potentially using a deprecated spacing and/or offset style in the ${newAttribute} prop at ${path}. \n  - You will need to manually migrate to using styles prefixed with margin > offset, and padding > spacing.  \n  - Refer to the migration guide for details: https://cds.cbhq.net/guides/migration/`;
-      generateManualMigrationOutput(warning);
-      logWarning(warning);
-    }
     if (componentHasAttribute) {
       renameJsxAttribute({ oldAttribute, newAttribute, jsx });
       writeMigrationToFile({ oldValue: oldAttribute, newValue: newAttribute, jsx, sourceFile });

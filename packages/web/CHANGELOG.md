@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.29.1 (1/24/2024 PST)
+
+#### 🐞 Fixes
+
+- Revert "Deprecate inner/outerSpacing props (#2483)". [[#2673](https://github.cbhq.net/frontend/cds/pull/2673)]
+
 ## 5.29.0 (1/24/2024 PST)
 
 #### 🚀 Updates

@@ -6,8 +6,8 @@ Please note, there are no default responsive styles for `TableCaption`. This is 
 
 ### Supported Properties
 
-- innerPadding
-- outerPadding
+- innerSpacing
+- outerSpacing
 
 ### Usage
 
@@ -18,18 +18,18 @@ function ResponsiveCaption() {
   const responsiveConfig = useMemo(
     () => ({
       phone: {
-        innerPadding: {
+        innerSpacing: {
           spacingHorizontal: 2,
         },
-        outerPadding: {
+        outerSpacing: {
           spacingVertical: 1,
         },
       },
       desktop: {
-        innerPadding: {
+        innerSpacing: {
           spacingHorizontal: 4,
         },
-        outerPadding: {
+        outerSpacing: {
           spacingVertical: 2,
         },
       },

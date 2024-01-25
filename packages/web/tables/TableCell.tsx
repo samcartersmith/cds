@@ -42,8 +42,6 @@ export const TableCell = memo(
     width,
     innerSpacing,
     outerSpacing,
-    innerPadding,
-    outerPadding,
     responsiveConfig,
     as,
     dangerouslySetClassName,
@@ -93,10 +91,7 @@ export const TableCell = memo(
     );
 
     // Spacing defined on the TableCell will override cellSpacing defined on the Table
-    const { outer, inner } = useTableCellSpacing({
-      outer: outerSpacing || outerPadding,
-      inner: innerSpacing || innerPadding,
-    });
+    const { outer, inner } = useTableCellSpacing({ outer: outerSpacing, inner: innerSpacing });
 
     // Depends on prop infered variables
     const smartAlignItems = useMemo(
@@ -153,10 +148,10 @@ export const TableCell = memo(
           accessory={end}
           alignItems={alignItems}
           gap={cellGap}
-          innerPadding={inner}
+          innerSpacing={inner}
           media={start}
           onPress={onPress}
-          outerPadding={outer}
+          outerSpacing={outer}
           responsiveConfig={responsiveConfig}
           shouldOverflow={!overflow}
         >

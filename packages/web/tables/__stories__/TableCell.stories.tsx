@@ -90,64 +90,64 @@ export const ComplexSpacingOverride: Story = () => {
         <TableBody>
           <TableRow>
             <TableCell
-              innerPadding={spacingConfig.normal}
+              innerSpacing={spacingConfig.normal}
               onPress={console.log}
-              subtitle={`innerPadding ${JSON.stringify(spacingConfig.normal)}`}
-              title="TableCell with defined innerPadding"
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.normal)}`}
+              title="TableCell with defined innerSpacing"
             />
             <TableCell
-              innerPadding={spacingConfig.big}
+              innerSpacing={spacingConfig.big}
               onPress={console.log}
-              subtitle={`innerPadding ${JSON.stringify(spacingConfig.big)}`}
-              title="TableCell with defined innerPadding"
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.big)}`}
+              title="TableCell with defined innerSpacing"
             />
             <TableCell
-              innerPadding={spacingConfig.huge}
+              innerSpacing={spacingConfig.huge}
               onPress={console.log}
-              subtitle={`innerPadding ${JSON.stringify(spacingConfig.huge)}`}
-              title="TableCell with defined innerPadding"
+              subtitle={`innerSpacing ${JSON.stringify(spacingConfig.huge)}`}
+              title="TableCell with defined innerSpacing"
             />
           </TableRow>
           <TableRow backgroundColor="backgroundAlternate">
             <TableCell
               onPress={console.log}
-              outerPadding={spacingConfig.normal}
-              subtitle={`outerPadding ${JSON.stringify(spacingConfig.normal)}`}
-              title="TableCell with defined innerPadding"
+              outerSpacing={spacingConfig.normal}
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.normal)}`}
+              title="TableCell with defined innerSpacing"
             />
             <TableCell
               onPress={console.log}
-              outerPadding={spacingConfig.big}
-              subtitle={`outerPadding ${JSON.stringify(spacingConfig.big)}`}
-              title="TableCell with defined outerPadding"
+              outerSpacing={spacingConfig.big}
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.big)}`}
+              title="TableCell with defined outerSpacing"
             />
             <TableCell
               onPress={console.log}
-              outerPadding={spacingConfig.huge}
-              subtitle={`outerPadding ${JSON.stringify(spacingConfig.huge)}`}
-              title="TableCell with defined outerPadding"
+              outerSpacing={spacingConfig.huge}
+              subtitle={`outerSpacing ${JSON.stringify(spacingConfig.huge)}`}
+              title="TableCell with defined outerSpacing"
             />
           </TableRow>
           <TableRow>
             <TableCell
-              innerPadding={spacingConfig.normal}
+              innerSpacing={spacingConfig.normal}
               onPress={console.log}
-              outerPadding={spacingConfig.normal}
-              subtitle={`innerPadding/outerPadding ${JSON.stringify(spacingConfig.normal)}`}
+              outerSpacing={spacingConfig.normal}
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.normal)}`}
               title="TableCell with defined spacing"
             />
             <TableCell
-              innerPadding={spacingConfig.big}
+              innerSpacing={spacingConfig.big}
               onPress={console.log}
-              outerPadding={spacingConfig.big}
-              subtitle={`innerPadding/outerPadding ${JSON.stringify(spacingConfig.big)}`}
+              outerSpacing={spacingConfig.big}
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.big)}`}
               title="TableCell with defined spacing"
             />
             <TableCell
-              innerPadding={spacingConfig.huge}
+              innerSpacing={spacingConfig.huge}
               onPress={console.log}
-              outerPadding={spacingConfig.huge}
-              subtitle={`innerPadding/outerPadding ${JSON.stringify(spacingConfig.huge)}`}
+              outerSpacing={spacingConfig.huge}
+              subtitle={`innerSpacing/outerSpacing ${JSON.stringify(spacingConfig.huge)}`}
               title="TableCell with defined spacing"
             />
           </TableRow>

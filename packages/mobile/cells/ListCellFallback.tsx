@@ -22,8 +22,6 @@ export const ListCellFallback = memo(function ListCellFallback({
   testID,
   innerSpacing,
   outerSpacing,
-  innerPadding,
-  outerPadding,
 }: ListCellFallbackProps) {
   const lineHeight = useLineHeightMap();
 
@@ -53,9 +51,9 @@ export const ListCellFallback = memo(function ListCellFallback({
           />
         )
       }
-      innerPadding={innerSpacing || innerPadding}
+      innerSpacing={innerSpacing}
       media={media ? <MediaFallback testID="list-cell-fallback-media" type={media} /> : undefined}
-      outerPadding={outerSpacing || outerPadding}
+      outerSpacing={outerSpacing}
       subdetail={
         subdetail && (
           <Fallback

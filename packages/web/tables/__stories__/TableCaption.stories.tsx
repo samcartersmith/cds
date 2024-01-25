@@ -18,18 +18,18 @@ export const SpacingExamples = () => {
         <TableCaption>Default Spacing</TableCaption>
       </Table>
       <Table bordered cellSpacing={TABLE_SPACING} variant="ruled">
-        <TableCaption outerPadding={CAPTION_SPACING}>
-          {'Outer Padding: { spacing: 3 }'}
+        <TableCaption outerSpacing={CAPTION_SPACING}>
+          {'Outer Spacing: { spacing: 3 }'}
         </TableCaption>
       </Table>
       <Table bordered cellSpacing={TABLE_SPACING} variant="ruled">
-        <TableCaption innerPadding={CAPTION_SPACING}>
-          {'Inner Padding: { spacing: 3 }'}
+        <TableCaption innerSpacing={CAPTION_SPACING}>
+          {'Inner Spacing: { spacing: 3 }'}
         </TableCaption>
       </Table>
       <Table bordered cellSpacing={TABLE_SPACING} variant="ruled">
-        <TableCaption innerPadding={CAPTION_SPACING} outerPadding={CAPTION_SPACING}>
-          {'Outer Padding: { spacing: 3 } + Inner Padding: { spacing: 3 }'}
+        <TableCaption innerSpacing={CAPTION_SPACING} outerSpacing={CAPTION_SPACING}>
+          {'Outer Spacing: { spacing: 3 } + Inner Spacing: { spacing: 3 }'}
         </TableCaption>
       </Table>
     </VStack>

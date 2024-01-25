@@ -11,7 +11,7 @@ What qualifies as a deprecation? If you can answer yes to any of the following q
 - Are you moving something to a different directory?
 - Are you deleting something? A parameter, prop, component, or function?
 - Are you replacing something?
-- Is the [cds-migrator](../../packages/cds-migrator/README.md) incapable of fully handling the change?
+- Is the [cds-migrator](../packages/cds-migrator/README.md) incapable of fully handling the change?
 
 When we deprecate something, we need to indicate a replacement or workaround for the user on our docs site at [go/cds-deprecations](http://go/cds-deprecations).
 

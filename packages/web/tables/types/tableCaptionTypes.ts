@@ -37,25 +37,15 @@ export type TableCaptionProps = {
    */
   backgroundColor?: PaletteBackground;
   /**
-   * @deprecated will be removed in v6.0.0 Please use outerPadding instead
    * The spacing to use on the parent wrapper of the caption.
    * Overrides table cell spacing defaults.
    */
   outerSpacing?: TableCellProps['outerSpacing'];
   /**
-   * @deprecated will be removed in v6.0.0 Please use innerPadding instead
    * The spacing to use on the inner content of the caption.
    * Overrides table cell spacing defaults.
    */
   innerSpacing?: TableCellProps['innerSpacing'];
-  /** The padding to use on the parent wrapper of the caption.
-   * Overrides table cell spacing defaults.
-   */
-  outerPadding?: TableCellProps['outerPadding'];
-  /** The padding to use on the inner content of the caption.
-   * Overrides table cell spacing defaults.
-   */
-  innerPadding?: TableCellProps['innerPadding'];
   /**
    * Specify props by device breakpoint.
    */

@@ -2,11 +2,11 @@ import React from 'react';
 
 import type { CellSpacing, ListCellFallbackProps } from '../types';
 
-const innerPadding: CellSpacing = {
+const innerSpacing: CellSpacing = {
   spacingHorizontal: 2,
   spacingVertical: 4,
 };
-const outerPadding: CellSpacing = {
+const outerSpacing: CellSpacing = {
   spacingHorizontal: 10,
   spacingVertical: 8,
 };
@@ -78,7 +78,7 @@ export function listCellFallbackBuilder(
           media="asset"
           rectWidthVariant={2}
         />
-        <ListCellFallback title innerPadding={innerPadding} outerPadding={outerPadding} />
+        <ListCellFallback title innerSpacing={innerSpacing} outerSpacing={outerSpacing} />
       </>
     );
   };

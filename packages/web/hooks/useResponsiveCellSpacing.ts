@@ -10,7 +10,7 @@ import {
 
 import { getResponsiveSpacingStyles } from '../utils/getResponsiveSpacingStyles';
 import { cx } from '../utils/linaria';
-import { KeysOfUnion, objectKeys } from '../utils/types';
+import { KeysOfUnion } from '../utils/types';
 
 type OffsetKeys = keyof OffsetProps;
 type SpacingKeys = keyof SpacingProps;
@@ -20,10 +20,10 @@ export const getDeviceStyles = (
   deviceConfig: CellSpacingConfig,
   device: ResponsivePropsDevices,
 ) => {
-  const innerPaddingClassNames: string[] = [];
-  const outerPaddingClassNames: string[] = [];
+  const innerSpacingClassNames: string[] = [];
+  const outerSpacingClassNames: string[] = [];
 
-  const { innerSpacing, outerSpacing, innerPadding, outerPadding } = deviceConfig;
+  const { innerSpacing, outerSpacing } = deviceConfig;
 
   if (innerSpacing) {
     const styleKeys = Object.keys(innerSpacing) as CellSpacingKeys[];
@@ -32,10 +32,10 @@ export const getDeviceStyles = (
       const value = innerSpacing[style];
       if (style.toString().startsWith('spacing') && value) {
         const deviceSpacingClasses = getResponsiveSpacingStyles(device, style, value);
-        innerPaddingClassNames.push(deviceSpacingClasses);
+        innerSpacingClassNames.push(deviceSpacingClasses);
       } else if (style.toString().startsWith('offset') && value) {
         const deviceOffsetClasses = getResponsiveSpacingStyles(device, style, value, true);
-        innerPaddingClassNames.push(deviceOffsetClasses);
+        innerSpacingClassNames.push(deviceOffsetClasses);
       }
     });
   }
@@ -47,77 +47,40 @@ export const getDeviceStyles = (
       const value = outerSpacing[style];
       if (style.toString().startsWith('spacing') && value) {
         const deviceSpacingClasses = getResponsiveSpacingStyles(device, style, value);
-        outerPaddingClassNames.push(deviceSpacingClasses);
+        outerSpacingClassNames.push(deviceSpacingClasses);
       } else if (style.toString().startsWith('offset') && value) {
         const deviceOffsetClasses = getResponsiveSpacingStyles(device, style, value, true);
-        outerPaddingClassNames.push(deviceOffsetClasses);
+        outerSpacingClassNames.push(deviceOffsetClasses);
       }
     });
   }
 
-  if (innerPadding) {
-    const styleKeys = objectKeys(innerPadding);
-
-    styleKeys.forEach((style: SpacingKeys | OffsetKeys) => {
-      const value = innerPadding[style];
-      if (style.toString().startsWith('padding') && value) {
-        const deviceSpacingClasses = getResponsiveSpacingStyles(device, style, value);
-        innerPaddingClassNames.push(deviceSpacingClasses);
-      } else if (style.toString().startsWith('margin') && value) {
-        const deviceOffsetClasses = getResponsiveSpacingStyles(device, style, value, true);
-        innerPaddingClassNames.push(deviceOffsetClasses);
-      }
-    });
-  }
-
-  if (outerPadding) {
-    const styleKeys = objectKeys(outerPadding);
-
-    styleKeys.forEach((style: SpacingKeys | OffsetKeys) => {
-      const value = outerPadding[style];
-      if (style.toString().startsWith('padding') && value) {
-        const deviceSpacingClasses = getResponsiveSpacingStyles(device, style, value);
-        outerPaddingClassNames.push(deviceSpacingClasses);
-      } else if (style.toString().startsWith('margin') && value) {
-        const deviceOffsetClasses = getResponsiveSpacingStyles(device, style, value, true);
-        outerPaddingClassNames.push(deviceOffsetClasses);
-      }
-    });
-  }
-
-  return {
-    innerSpacingClassNames: innerPaddingClassNames,
-    outerSpacingClassNames: outerPaddingClassNames,
-    innerPaddingClassNames,
-    outerPaddingClassNames,
-  };
+  return { innerSpacingClassNames, outerSpacingClassNames };
 };
 
 export const useResponsiveCellSpacingStyles = (
   responsiveConfig: ResponsiveCellSpacingProps | undefined,
 ) => {
-  const innerPaddingDeviceClassNames: string[] = useMemo(() => [], []);
-  const outerPaddingDeviceClassNames: string[] = useMemo(() => [], []);
+  const innerSpacingDeviceClassNames: string[] = useMemo(() => [], []);
+  const outerSpacingDeviceClassNames: string[] = useMemo(() => [], []);
 
   if (responsiveConfig) {
     const deviceKeys = Object.keys(responsiveConfig) as ResponsivePropsDevices[];
 
     deviceKeys?.forEach((device) => {
-      const { innerPaddingClassNames, outerPaddingClassNames } = getDeviceStyles(
+      const { innerSpacingClassNames, outerSpacingClassNames } = getDeviceStyles(
         responsiveConfig[device] as CellSpacingConfig,
         device,
       );
-      innerPaddingDeviceClassNames.push(...innerPaddingClassNames);
-      outerPaddingDeviceClassNames.push(...outerPaddingClassNames);
+      innerSpacingDeviceClassNames.push(...innerSpacingClassNames);
+      outerSpacingDeviceClassNames.push(...outerSpacingClassNames);
     });
   }
   return useMemo(
     () => ({
-      responsiveInnerSpacing: cx(...innerPaddingDeviceClassNames),
-      responsiveOuterSpacing: cx(...outerPaddingDeviceClassNames),
-      responsiveInnerPadding: cx(...innerPaddingDeviceClassNames),
-      responsiveOuterPadding: cx(...outerPaddingDeviceClassNames),
+      responsiveInnerSpacing: cx(...innerSpacingDeviceClassNames),
+      responsiveOuterSpacing: cx(...outerSpacingDeviceClassNames),
     }),
-    [innerPaddingDeviceClassNames, outerPaddingDeviceClassNames],
+    [innerSpacingDeviceClassNames, outerSpacingDeviceClassNames],
   );
 };
