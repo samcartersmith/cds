@@ -1,168 +1,188 @@
 import { Component, Deprecation, Prop } from '../types';
 
-const baseWebDeprecation: Partial<Component> = {
-  package: 'web',
+const baseWebOverlaysDeprecation: Partial<Component> = {
+  package: 'web-overlays',
+  type: ['path'],
+};
+const baseWebVisualizationDeprecation: Partial<Component> = {
+  package: 'web-visualization',
   type: ['path'],
 };
 
-const baseMobileDeprecation: Partial<Component> = {
-  package: 'mobile',
+const baseMobileVisualizationDeprecation: Partial<Component> = {
+  package: 'mobile-visualization',
   type: ['path'],
 };
 
 const overlayWebDeprecations = [
-  { ...baseWebDeprecation, name: 'Dropdown', path: 'packages/web/dropdown/Dropdown.tsx' },
+  { ...baseWebOverlaysDeprecation, name: 'Dropdown', path: 'packages/web-overlays/src/dropdown' },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'DropdownContent',
-    path: 'packages/web/dropdown/DropdownContent.tsx',
+    path: 'packages/web-overlays/src/dropdown',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'DropdownProps',
-    path: 'packages/web/dropdown/DropdownProps.ts',
+    path: 'packages/web-overlays/src/dropdown',
   },
-  { ...baseWebDeprecation, name: 'MenuItem', path: 'packages/web/dropdown/MenuItem.tsx' },
-  { ...baseWebDeprecation, name: 'index', path: 'packages/web/dropdown/index.ts' },
-  { ...baseWebDeprecation, name: 'index', path: 'packages/web/index.ts' },
+  { ...baseWebOverlaysDeprecation, name: 'MenuItem', path: 'packages/web-overlays/src/dropdown' },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'Popover',
-    path: 'packages/web/overlays/popover/Popover.tsx',
+    path: 'packages/web-overlays/src/popover',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'PopoverProps',
-    path: 'packages/web/overlays/popover/PopoverProps.ts',
+    path: 'packages/web-overlays/src/popover',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'usePopper',
-    path: 'packages/web/overlays/popover/usePopper.ts',
+    path: 'packages/web-overlays/src/popover',
   },
-  { ...baseWebDeprecation, name: 'Select', path: 'packages/web/controls/Select.tsx' },
+  { ...baseWebOverlaysDeprecation, name: 'Select', path: 'packages/web-overlays/src/select' },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'SelectOption',
-    path: 'packages/web/controls/SelectOption.tsx',
+    path: 'packages/web-overlays/src/select',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'SidebarMoreMenu',
-    path: 'packages/web/navigation/SidebarMoreMenu.tsx',
+    path: 'packages/web-overlays/src/sidebarMoreMenu',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'Tooltip',
-    path: 'packages/web/overlays/Tooltip/Tooltip.tsx',
+    path: 'packages/web-overlays/src/tooltip',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'TooltipContent',
-    path: 'packages/web/overlays/Tooltip/TooltipContent.tsx',
+    path: 'packages/web-overlays/src/tooltip',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'TooltipProps',
-    path: 'packages/web/overlays/Tooltip/TooltipProps.ts',
+    path: 'packages/web-overlays/src/tooltip',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebOverlaysDeprecation,
     name: 'useTooltipState',
-    path: 'packages/web/overlays/Tooltip/useTooltipState.ts',
+    path: 'packages/web-overlays/src/tooltip',
+  },
+  {
+    ...baseWebOverlaysDeprecation,
+    name: 'SelectChip',
+    path: 'packages/web-overlays/src/selectchip',
+  },
+  {
+    ...baseWebOverlaysDeprecation,
+    name: 'SelectChip',
+    path: 'packages/web-overlays/src/selectchip',
   },
 ];
 
 const sparklineWebDeprecations = [
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineGradient',
     path: 'packages/web/visualizations/SparklineGradient.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineAreaPattern',
     path: 'packages/web/visualizations/SparklineAreaPattern.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineArea',
     path: 'packages/web/visualizations/SparklineArea.tsx',
   },
-  { ...baseWebDeprecation, name: 'Sparkline', path: 'packages/web/visualizations/Sparkline.tsx' },
-  { ...baseWebDeprecation, name: 'Counter', path: 'packages/web/visualizations/Counter.tsx' },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
+    name: 'Sparkline',
+    path: 'packages/web/visualizations/Sparkline.tsx',
+  },
+  {
+    ...baseWebVisualizationDeprecation,
+    name: 'Counter',
+    path: 'packages/web/visualizations/Counter.tsx',
+  },
+  {
+    ...baseWebVisualizationDeprecation,
     name: 'SparklinePath',
     path: 'packages/web/visualizations/SparklinePath.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveHeader',
     path: 'packages/web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'InnerSparklineInteractiveProvider',
     path: 'packages/web/visualizations/sparkline-interactive/InnerSparklineInteractiveProvider.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractive',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractive.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveAnimatedPath',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveHoverDate',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveLineVertical',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveMarkerDates',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractivePaths',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractivePeriodSelector',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveProvider',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveScrubHandler',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubHandler.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveScrubProvider',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubProvider.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'SparklineInteractiveTimeseriesPaths',
     path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
   },
   {
-    ...baseWebDeprecation,
+    ...baseWebVisualizationDeprecation,
     name: 'useSparklineInteractiveConstants',
     path: 'packages/web/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
   },
@@ -170,102 +190,102 @@ const sparklineWebDeprecations = [
 
 const sparklineMobileDeprecations = [
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'newRoutes',
     path: 'packages/mobile/examples/newRoutes.ts',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'Sparkline',
     path: 'packages/mobile/visualizations/Sparkline.ts',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractive',
     path: 'packages/mobile/visualizations/SparklineInteractive.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractiveHeader',
     path: 'packages/mobile/visualizations/SparklineInteractiveHeader.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineGradient',
     path: 'packages/mobile/visualizations/SparklineGradient.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractiveAnimatedPath',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractiveHoverDate',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractiveLineVertical',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractiveMarkerDates',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractiveMinMax',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMinMax.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractivePanGestureHandler',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePanGestureHandler.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractivePaths',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractivePeriodSelector',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractiveProvider',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'SparklineInteractiveTimeseriesPaths',
     path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'useInterruptiblePathAnimation',
     path: 'packages/mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation.ts',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'useMinMaxTransform',
     path: 'packages/mobile/visualizations/sparkline-interactive/useMinMaxTransform.ts',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'useOpacityAnimation',
     path: 'packages/mobile/visualizations/sparkline-interactive/useOpacityAnimation.ts',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'useSparklineInteractiveConstants',
     path: 'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
   },
   {
-    ...baseMobileDeprecation,
+    ...baseMobileVisualizationDeprecation,
     name: 'useSparklineInteractiveLineStyles',
     path: 'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveLineStyles.ts',
   },

@@ -17,7 +17,15 @@ export type MigrationMap = Expand<
 
 type SharedProps = {
   name: string;
-  package: 'common' | 'mobile' | 'web';
+  package:
+    | 'common'
+    | 'mobile'
+    | 'web'
+    | 'web-overlays'
+    | 'illustrations'
+    | 'icons'
+    | 'web-visualization'
+    | 'mobile-visualization';
   path: string;
   type: MigrationType[] | MigrationType;
   migrationMap?: Partial<MigrationMap>;

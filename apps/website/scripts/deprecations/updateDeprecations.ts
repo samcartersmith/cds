@@ -5,7 +5,6 @@ import { objectKeys, writePrettyFile } from '@cbhq/script-utils';
 import { deprecations } from './deprecations';
 import { Deprecation, DeprecationGroups, MigrationMap, MigrationType } from './types';
 
-const githubBaseUrl = 'https://github.cbhq.net/frontend/cds/blob/';
 const DEPRECATION_DIR = 'apps/website/docs/resources/deprecations';
 const MDX_PATHNAME = 'resources/deprecations';
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
@@ -134,16 +133,13 @@ const getMigrationValue = (migrationMap: Partial<MigrationMap>, key: keyof Migra
 const getMigrationRecommendation = (
   migrationMap: Partial<MigrationMap> | undefined,
   deprecation: string,
-  version: string,
 ) => {
   const migrationRec: string[] = [];
 
   if (migrationMap) {
     objectKeys(migrationMap).forEach((key) => {
       if (key === 'path') {
-        migrationRec.push(
-          `<p>${deprecation} ${migrationRecMap[key]} <a href="${githubBaseUrl}${version}/${migrationMap[key]}" target="_blank">${migrationMap[key]}</a></p>`,
-        );
+        migrationRec.push(`<p>${deprecation} ${migrationRecMap[key]} ${migrationMap[key]}</p>`);
       } else {
         migrationRec.push(
           `<p>${key === 'replaced' ? deprecation : ''} ${migrationRecMap[key]} ${getMigrationValue(
@@ -209,7 +205,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     params: ['### 🏗️ Params {#params}', ''],
   };
 
-  const { prevMajorVersion, breakingRelease, ...groupsInUse } = deprecationObj;
+  const { breakingRelease, ...groupsInUse } = deprecationObj;
 
   objectKeys(deprecationObj).forEach((key) => {
     if (key === 'props') {
@@ -223,7 +219,7 @@ function formatDeprecations(deprecationObj: Deprecation): string {
               type,
               // @ts-expect-error Not sure why this thinks it's a partial
               migrationMap,
-              guidance: `${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}`,
+              guidance: `${getMigrationRecommendation(migrationMap, name)}`,
               components,
             }),
           );
@@ -244,8 +240,8 @@ function formatDeprecations(deprecationObj: Deprecation): string {
                 type,
                 // @ts-expect-error Not sure why this thinks it's a partial
                 migrationMap,
-                guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
-      <p>${getMigrationRecommendation(migrationMap, param, prevMajorVersion)}</p>`,
+                guidance: `<p>Original Path: ${path}</p>
+      <p>${getMigrationRecommendation(migrationMap, param)}</p>`,
               }),
             );
           });
@@ -268,8 +264,8 @@ function formatDeprecations(deprecationObj: Deprecation): string {
               name,
               pkgName,
               type,
-              guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
-                <p>${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}</p>`,
+              guidance: `<p>Original Path: ${path}</p>
+                <p>${getMigrationRecommendation(migrationMap, name)}</p>`,
             }),
           );
         }
@@ -289,8 +285,8 @@ function formatDeprecations(deprecationObj: Deprecation): string {
                 pkgName,
                 type,
                 exportNames,
-                guidance: `<p>Original Path: <a href="${githubBaseUrl}${prevMajorVersion}/${path}" target="_blank">${path}</a></p>
-                <p>${getMigrationRecommendation(migrationMap, name, prevMajorVersion)}</p>`,
+                guidance: `<p>Original Path: ${path}</p>
+                <p>${getMigrationRecommendation(migrationMap, name)}</p>`,
               }),
             );
           }

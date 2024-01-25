@@ -15,7 +15,6 @@ In this major release we eliminated a lot of tech debt, realigned our component 
 v6 of CDS core packages (`common`, `web`, and `mobile`) are only compatible with the following major package versions (or higher):
 :::
 
-- `@cbhq/cds-web-overlays` v1.0.0
 - `@cbhq/cds-web-visualization` v1.0.0
 - `@cbhq/cds-mobile-visualization` v1.0.0
 - `@cbhq/cds-illustrations` v2.1.0
@@ -33,9 +32,22 @@ We renamed some of our component's property names to better align them to accept
 
 Complex components have been moved into their own standalone packages. Migration was previously optional but is now required in v6. Use the `cds-migrator` to automatically migrate instances and update package dependencies. The migrator will also bump these packages to `v1.0.0`.
 
-- `cds-web-overlays`: Dropdown, Select, Popover, Tooltip, SidebarMoreMenu, and SelectChip
 - `cds-web-visualization`: Sparkline components
 - `cds-mobile-visualization`: Sparkline components
+
+## Removed Packages
+
+We previously isolated some overlay components out of the `@cbhq/cds-web` package into their own `@cbhq/cds-web-overlays` package, however we shifted our strategy and will be reintegrating these components back into the core web package. These migrations were optional in v5, however if you already migrated you can use the cds-migrator to migrate instances back to their original locations. You will need to manually remove `@cbhq/cds-web-overlays` as a dependency for your project after running the script.
+
+For more information on this decision visit [go/web-overlays-strategy](http://go/web-overlays-strategy)
+
+```shell
+yarn nx generate @cbhq/cds-migrator:migrate revert-decomp
+```
+
+Affected components in `@cbhq/cds-web-overlays`:
+
+- Dropdown, Select, Popover, Tooltip, SidebarMoreMenu, and SelectChip
 
 ## Visual Changes
 
