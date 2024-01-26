@@ -11,6 +11,7 @@ import { AccordionPanel, AccordionPanelProps } from './AccordionPanel';
 export type AccordionItemProps = {
   headerRef?: RefObject<HTMLButtonElement>;
   panelRef?: RefObject<HTMLDivElement>;
+  style?: React.CSSProperties;
 } & AccordionItemBaseProps &
   Pick<AccordionPanelProps, 'maxHeight'>;
 
@@ -26,12 +27,13 @@ export const AccordionItem = memo(
     headerRef,
     panelRef,
     maxHeight,
+    style,
   }: AccordionItemProps) => {
     const { activeKey } = useAccordionParent();
     const collapsed = activeKey !== itemKey;
 
     return (
-      <VStack minWidth={accordionMinWidth} testID={testID}>
+      <VStack dangerouslySetStyle={style} minWidth={accordionMinWidth} testID={testID}>
         <AccordionHeader
           ref={headerRef}
           collapsed={collapsed}

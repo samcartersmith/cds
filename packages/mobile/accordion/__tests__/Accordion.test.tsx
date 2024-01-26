@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { accordionBuilder } from '@cbhq/cds-common/internal/accordionBuilder';
+import { noop } from '@cbhq/cds-utils';
 
 import { CellMedia } from '../../cells/CellMedia';
 import { TextInput } from '../../controls';
@@ -67,5 +68,39 @@ describe('Accordion', () => {
 
     expect(screen.getByText('Accordion Content1')).toBeTruthy();
     expect(screen.getByText('Accordion Content2')).toBeTruthy();
+  });
+
+  it('can override styles', () => {
+    render(
+      <Accordion
+        defaultActiveKey="2"
+        onItemPress={noop}
+        style={{ padding: 20 }}
+        testID="mock-accordion"
+      >
+        <AccordionItem
+          itemKey="1"
+          onPress={noop}
+          style={{ padding: 30 }}
+          subtitle="subtitle1"
+          testID="mock-accordion-item1"
+          title="Accordion #1"
+        >
+          <TextBody>Accordion Content1</TextBody>
+        </AccordionItem>
+        <AccordionItem
+          itemKey="2"
+          onPress={noop}
+          subtitle="subtitle2"
+          testID="mock-accordion-item2"
+          title="Accordion #2"
+        >
+          <TextBody>Accordion Content2</TextBody>
+        </AccordionItem>
+      </Accordion>,
+    );
+
+    expect(screen.getByTestId('mock-accordion')).toHaveStyle('padding: 20');
+    expect(screen.getByTestId('mock-accordion-item1')).toHaveStyle('padding: 30');
   });
 });

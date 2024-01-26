@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.30.0 (1/25/2024 PST)
+
+#### 🚀 Updates
+
+- Add style prop to Accordion and AccordionItem. [[#2670](https://github.cbhq.net/frontend/cds/pull/2670)] [[DX-3000](https://jira.coinbase-corp.com/browse/DX-3000)]
+
 ## 5.29.1 (1/24/2024 PST)
 
 #### 🐞 Fixes

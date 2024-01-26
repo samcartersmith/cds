@@ -5,14 +5,20 @@ import { useAccordionDividerColor } from '@cbhq/cds-common/hooks/useAccordionDiv
 
 import { Divider, VStack } from '../layout';
 
-export type AccordionProps = AccordionBaseProps;
+export type AccordionProps = AccordionBaseProps & { style?: React.CSSProperties };
 
-export const Accordion = ({ children, defaultActiveKey, onItemPress, testID }: AccordionProps) => {
+export const Accordion = ({
+  children,
+  defaultActiveKey,
+  onItemPress,
+  testID,
+  style,
+}: AccordionProps) => {
   const dividerColor = useAccordionDividerColor();
 
   return (
     <AccordionParentProvider defaultActiveKey={defaultActiveKey} onItemPress={onItemPress}>
-      <VStack testID={testID} width="100%">
+      <VStack dangerouslySetStyle={style} testID={testID} width="100%">
         {join(Children.toArray(children), <Divider color={dividerColor} />)}
       </VStack>
     </AccordionParentProvider>

@@ -1,5 +1,5 @@
 import React, { memo, RefObject } from 'react';
-import { View } from 'react-native';
+import { View, ViewProps } from 'react-native';
 import { useAccordionParent } from '@cbhq/cds-common/accordion/AccordionParentContext';
 import { accordionMinWidth } from '@cbhq/cds-common/tokens/accordion';
 import type { AccordionItemBaseProps } from '@cbhq/cds-common/types';
@@ -12,7 +12,8 @@ import { AccordionPanel } from './AccordionPanel';
 export type AccordionItemProps = {
   headerRef?: RefObject<View>;
   panelRef?: RefObject<View>;
-} & AccordionItemBaseProps;
+} & AccordionItemBaseProps &
+  Pick<ViewProps, 'style'>;
 
 export const AccordionItem = memo(
   ({
@@ -25,12 +26,13 @@ export const AccordionItem = memo(
     testID,
     headerRef,
     panelRef,
+    style,
   }: AccordionItemProps) => {
     const { activeKey } = useAccordionParent();
     const collapsed = activeKey !== itemKey;
 
     return (
-      <VStack minWidth={accordionMinWidth}>
+      <VStack dangerouslySetStyle={style} minWidth={accordionMinWidth} testID={testID}>
         <AccordionHeader
           ref={headerRef}
           collapsed={collapsed}

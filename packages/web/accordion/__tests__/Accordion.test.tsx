@@ -1,5 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { accordionBuilder, CreateAccordionProps } from '@cbhq/cds-common/internal/accordionBuilder';
+import { noop } from '@cbhq/cds-utils';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { CellMedia } from '../../cells/CellMedia';
@@ -16,6 +17,8 @@ const { MockAccordion } = accordionBuilder({
   TextBody,
   TextInput,
 } as CreateAccordionProps);
+const customAccordionStyle = { padding: '20px' };
+const customAccordionItemStyle = { padding: '30px' };
 
 describe('Accordion', () => {
   it('passes accessibility', async () => {
@@ -117,5 +120,39 @@ describe('Accordion', () => {
     await waitFor(() => {
       expect(screen.getByText('Accordion Content2')).not.toBeVisible();
     });
+  });
+
+  it('can override styles', () => {
+    render(
+      <Accordion
+        defaultActiveKey="2"
+        onItemPress={noop}
+        style={customAccordionStyle}
+        testID="mock-accordion"
+      >
+        <AccordionItem
+          itemKey="1"
+          onPress={noop}
+          style={customAccordionItemStyle}
+          subtitle="subtitle1"
+          testID="mock-accordion-item1"
+          title="Accordion #1"
+        >
+          <TextBody as="p">Accordion Content1</TextBody>
+        </AccordionItem>
+        <AccordionItem
+          itemKey="2"
+          onPress={noop}
+          subtitle="subtitle2"
+          testID="mock-accordion-item2"
+          title="Accordion #2"
+        >
+          <TextBody as="p">Accordion Content2</TextBody>
+        </AccordionItem>
+      </Accordion>,
+    );
+
+    expect(screen.getByTestId('mock-accordion')).toHaveStyle('padding: 20px');
+    expect(screen.getByTestId('mock-accordion-item1')).toHaveStyle('padding: 30px');
   });
 });
