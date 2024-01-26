@@ -5,7 +5,11 @@ slug: /guides/migration/web-and-mobile/5-0-0
 
 import Migrator from '../_migrator.mdx';
 
-Howdy folks! Here is a list of what's new with this migration. Please use the cds-migrator and go through each following section to ensure your codebase is ready for launch. Happy coding!
+Howdy folks! Here is a list of what's new with this migration. Please use the `cds-migrator` and go through each following section to ensure your codebase is ready for launch. Happy coding!
+
+:::warning
+If you upgrade to `@cbhq/cds-web` or `@cbhq/cds-mobile` version `5.10.0` or higher you will also need to upgrade the `@cbhq/cds-illustrations` package to version `2.1.0` or higher.
+:::
 
 Major changes include:
 
@@ -17,9 +21,25 @@ Major changes include:
 - Update A11y styling for VStack 'ul' components
 - [v5 Deprecations](/resources/deprecations/v5.0.0) were deleted. Use the `cds-migrator` script for `5.0.0` to automatically migrate most deprecations or output migration guidance for manual migrations.
 
-:::info
-If you upgrade to `@cbhq/cds-web` or `@cbhq/cds-mobile` version `5.10.0` or higher you will also need to upgrade the `@cbhq/cds-illustrations` package to version `2.1.0` or higher. See [v2.0.0 migration guide](guides/migration/illustrations/2-0-0) for details.
-:::
+This release also removed some illustration dimensions. The `cds-migrator` will update all instances to the nearest smaller supported value. However, this will require manual review, as it could result in visual layout shifts.
+
+You can optionally use the `scaleMultiplier` prop to scale the illustration back to the original size. However, please note that this goes against our most recent design guidance.
+
+### SpotSquare
+
+#### dimension
+
+| Old Value | New Value |
+| --------- | --------- |
+| 120x120   | 96x96     |
+
+### Pictogram
+
+#### dimension
+
+| Old Value | New Value |
+| --------- | --------- |
+| 96x96     | 64x64     |
 
 ## Automatically Migrate
 
@@ -78,4 +98,4 @@ We now support these major versions and have them listed as peer dependencies. P
 
 ## Handle A11y styling automatically for VStack components that use as="ul"
 
-We removed web api styling (margin-top, margin-bottom, padding-left) for `<Vstack as=ul >` components. The cds-migrator will flag usages of VStack that may be impacted. Please verify that they look as expected.
+We removed web api styling (margin-top, margin-bottom, padding-left) for `<Vstack as=ul >` components. The `cds-migrator` will flag usages of VStack that may be impacted. Please verify that they look as expected.
