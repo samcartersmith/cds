@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { Select, SelectOption } from '@cbhq/cds-web/controls';
 import { HStack } from '@cbhq/cds-web/layout';
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-web/tables';
 import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { TextBody, TextTitle4 } from '@cbhq/cds-web/typography';
-import { Select, SelectOption } from '@cbhq/cds-web-overlays';
 
 import { PillarProjectData } from './types';
 

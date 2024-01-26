@@ -87,7 +87,9 @@ module.exports = {
     'cells/ListCell',
     'cells/ListCellFallback',
     'chips/Chip',
+    // @deprecated in v6
     'selectChip/SelectChip',
+    'chips/SelectChip',
     'chips/InputChip',
     'chips/TabbedChips',
     'motion/AnimatedCaret',

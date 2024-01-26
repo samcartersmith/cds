@@ -1,8 +1,8 @@
 import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { Tooltip } from '@cbhq/cds-web/overlays';
 import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { TextLabel1, TextTitle2 } from '@cbhq/cds-web/typography';
 import { Link } from '@cbhq/cds-web/typography/Link';
-import { Tooltip } from '@cbhq/cds-web-overlays';
 
 type StatsTextStackProps = { label: string; stat: string };
 type StatsComponentStackProps = { label: string; updated: boolean };

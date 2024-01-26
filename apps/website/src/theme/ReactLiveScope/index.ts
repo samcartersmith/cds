@@ -40,6 +40,11 @@ import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePa
 import * as lottieFiles from '@cbhq/cds-lottie-files';
 import { nux } from '@cbhq/cds-lottie-files';
 import { generateRandomId } from '@cbhq/cds-utils/string';
+import { AppSwitcher } from '@cbhq/cds-web/__stories__/AppSwitcher.stories';
+import { AppSwitcherContent } from '@cbhq/cds-web/__stories__/AppSwitcherContent';
+import { HelpMenu } from '@cbhq/cds-web/__stories__/HelpMenu.stories';
+import { ProfileMenu } from '@cbhq/cds-web/__stories__/ProfileMenu.stories';
+import { ProfileMenuContent } from '@cbhq/cds-web/__stories__/ProfileMenuContent';
 import * as CDSAccordion from '@cbhq/cds-web/accordion';
 import * as CDSAnimation from '@cbhq/cds-web/animation';
 import * as CDSBanner from '@cbhq/cds-web/banner/Banner';
@@ -97,12 +102,6 @@ import {
   ProgressCircle,
 } from '@cbhq/cds-web/visualizations';
 import { ProgressContainerWithButtons } from '@cbhq/cds-web/visualizations/ProgressContainerWithButtons';
-import * as CDSWebOverlays from '@cbhq/cds-web-overlays';
-import { AppSwitcher } from '@cbhq/cds-web-overlays/__stories__/AppSwitcher.stories';
-import { AppSwitcherContent } from '@cbhq/cds-web-overlays/__stories__/AppSwitcherContent';
-import { HelpMenu } from '@cbhq/cds-web-overlays/__stories__/HelpMenu.stories';
-import { ProfileMenu } from '@cbhq/cds-web-overlays/__stories__/ProfileMenu.stories';
-import { ProfileMenuContent } from '@cbhq/cds-web-overlays/__stories__/ProfileMenuContent';
 import * as CDSVisualizations from '@cbhq/cds-web-visualization';
 import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
 
@@ -195,7 +194,6 @@ const ReactLiveScope: unknown = {
   ...CDSCardElements,
   ...CDSCells,
   ...CDSChips,
-  ...CDSWebOverlays,
   ...CDSCollapsible,
   ...CDSControls,
   ...CDSDots,

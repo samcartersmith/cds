@@ -1,4 +1,6 @@
-import WebPropsTable from ':docgen/web-overlays/selectChip/SelectChip/api.mdx';
+import WebPropsTable from ':docgen/web/chips/SelectChip/api.mdx';
+import MobilePropsTable from ':docgen/mobile/chips/SelectChip/api.mdx';
+import WebOverlaysPropsTable from ':docgen/web-overlays/selectChip/SelectChip/api.mdx';
 
 ## Props
 
@@ -6,5 +8,10 @@ import WebPropsTable from ':docgen/web-overlays/selectChip/SelectChip/api.mdx';
   <TabItem value="web" label="Web">
     <WebPropsTable />
   </TabItem>
-
+  <TabItem value="mobile" label="Mobile">
+    <MobilePropsTable />
+  </TabItem>
+  <TabItem value="web-overlays" label="Web Overlays (Deprecated)">
+    <WebOverlaysPropsTable />
+  </TabItem>
 </Tabs>
