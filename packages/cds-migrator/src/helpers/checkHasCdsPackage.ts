@@ -1,15 +1,10 @@
 import { joinPathFragments, ProjectConfiguration, readJson, Tree } from '@nrwl/devkit';
 import type { PackageJson } from 'type-fest';
 
-const mobilePackage = '@cbhq/cds-mobile';
-const webPackage = '@cbhq/cds-web';
-const commonPackage = '@cbhq/cds-common';
-const lottieFilesPackage = '@cbhq/cds-lottie-files';
-const depsToCheck = [webPackage, mobilePackage, commonPackage, lottieFilesPackage];
-export type CdsPackages = (typeof depsToCheck)[number];
+import { PackageName } from './types';
 
 type Params = {
-  packageName: CdsPackages;
+  packageName: PackageName;
   tree: Tree;
   project?: ProjectConfiguration;
   checkRoot?: boolean;
@@ -34,7 +29,7 @@ export function checkHasCdsPackage({ packageName, tree, project, checkRoot }: Pa
       if (pkg.peerDependencies) {
         deps.push(...Object.keys(pkg.peerDependencies));
       }
-      return deps ? deps.some((key: CdsPackages) => key === packageName) : false;
+      return deps ? deps.some((key) => key === packageName) : false;
     }
   }
   return false;

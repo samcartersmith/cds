@@ -1,49 +1,88 @@
 import {
   AttributeRenameMapShape,
   AttributeValueToBooleanType,
-  ManualPropMigrationType,
-  objectKeys,
+  deepMerge,
+  mobilePackage,
   PropToAttributeValueMigrationShape,
-  RenameAttributeMapShape,
 } from '../../../helpers';
 
-const spacingComponents = ['Box', 'HStack', 'VStack', 'Card', 'Group', 'ListCell', 'Grid'];
-export const offsetRenameMap = {
-  offsetTop: 'marginTop',
-  offsetStart: 'marginLeft',
-  offsetBottom: 'marginBottom',
-  offsetEnd: 'marginRight',
-  offsetHorizontal: 'marginHorizontal',
-  offsetVertical: 'marginVertical',
-  offset: 'margin',
+const classNameConfig = {
+  oldAttribute: 'dangerouslySetClassName',
+  newAttribute: 'className',
 };
-export const spacingRenameMap = {
-  spacingTop: 'paddingTop',
-  spacingStart: 'paddingLeft',
-  spacingBottom: 'paddingBottom',
-  spacingEnd: 'paddingRight',
-  spacingHorizontal: 'paddingHorizontal',
-  spacingVertical: 'paddingVertical',
-  spacing: 'padding',
+const styleConfig = {
+  oldAttribute: 'dangerouslySetStyle',
+  newAttribute: 'style',
 };
 
-const offsetConfigs: AttributeRenameMapShape = spacingComponents.reduce((acc, component) => {
-  acc[component] = objectKeys(offsetRenameMap).map((oldAttribute) => ({
-    oldAttribute,
-    newAttribute: offsetRenameMap[oldAttribute],
-  }));
+const textComponents = [
+  'TextDisplay1',
+  'TextDisplay2',
+  'TextDisplay3',
+  'TextTitle1',
+  'TextTitle2',
+  'TextTitle3',
+  'TextTitle4',
+  'TextHeadline',
+  'TextBody',
+  'TextLabel1',
+  'TextLabel2',
+  'TextCaption',
+  'TextLegal',
+];
+
+const commonComponents = [
+  'Box',
+  'VStack',
+  'HStack',
+  'Group',
+  'Card',
+  'Banner',
+  'RemoteImage',
+  'Avatar',
+  'Grid',
+  'GridColumn',
+];
+
+const classNameComponents = [
+  ...textComponents,
+  ...commonComponents,
+  'NavLink',
+  'CellAccessory',
+  'Cell',
+  'InputLabel',
+  'Modal',
+  'ModalWrapper',
+  'Table',
+  'TableCell',
+  'TableSection',
+  'Link',
+];
+
+const styleComponents = [
+  ...textComponents,
+  ...commonComponents,
+  'Icon',
+  'TextIcon',
+  'ProgressIndicator',
+  'CarouselControlsWrapper',
+  'Collapsible',
+  'OverflowGradient',
+  'AnimatedCaret',
+  'Tag',
+];
+
+const classNameConfigs: AttributeRenameMapShape = classNameComponents.reduce((acc, component) => {
+  acc[component] = classNameConfig;
+  return acc;
+}, {} as AttributeRenameMapShape);
+const styleConfigs: AttributeRenameMapShape = styleComponents.reduce((acc, component) => {
+  acc[component] = styleConfig;
+
   return acc;
 }, {} as AttributeRenameMapShape);
 
-const spacingConfigs: AttributeRenameMapShape = spacingComponents.reduce((acc, component) => {
-  acc[component] = objectKeys(spacingRenameMap).map((oldAttribute) => ({
-    oldAttribute,
-    newAttribute: spacingRenameMap[oldAttribute],
-  }));
-  return acc;
-}, {} as AttributeRenameMapShape);
-
-export const renamedProps: AttributeRenameMapShape = {
+const renamedPropConfigs: AttributeRenameMapShape = {
   CellMedia: [
     {
       oldAttribute: 'shouldApplyDarkModeEnhacements',
@@ -57,22 +96,22 @@ export const renamedProps: AttributeRenameMapShape = {
   HeroSquare: {
     oldAttribute: 'alt',
     newAttribute: 'accessibilityLabel',
-    corePackageDependency: ['@cbhq/cds-mobile'],
+    corePackageDependency: [mobilePackage],
   },
   Pictogram: {
     oldAttribute: 'alt',
     newAttribute: 'accessibilityLabel',
-    corePackageDependency: ['@cbhq/cds-mobile'],
+    corePackageDependency: [mobilePackage],
   },
   SpotSquare: {
     oldAttribute: 'alt',
     newAttribute: 'accessibilityLabel',
-    corePackageDependency: ['@cbhq/cds-mobile'],
+    corePackageDependency: [mobilePackage],
   },
   SpotRectangle: {
     oldAttribute: 'alt',
     newAttribute: 'accessibilityLabel',
-    corePackageDependency: ['@cbhq/cds-mobile'],
+    corePackageDependency: [mobilePackage],
   },
   DotSymbol: {
     oldAttribute: 'shouldApplyDarkModeEnhacements',
@@ -99,6 +138,28 @@ export const renamedProps: AttributeRenameMapShape = {
       newAttribute: 'onChange',
     },
   ],
+  Tag: [
+    {
+      oldAttribute: 'dangerouslySetColor',
+      newAttribute: 'color',
+    },
+    {
+      oldAttribute: 'dangerouslySetBackground',
+      newAttribute: 'background',
+    },
+  ],
+  Modal: {
+    oldAttribute: 'dangerouslySetWidth',
+    newAttribute: 'width',
+  },
+  Alert: {
+    oldAttribute: 'dangerouslySetWidth',
+    newAttribute: 'width',
+  },
+  Toast: {
+    oldAttribute: 'dangerouslySetDuration',
+    newAttribute: 'duration',
+  },
   Interactable: {
     oldAttribute: 'backgroundColor',
     newAttribute: 'background',
@@ -112,40 +173,10 @@ export const renamedProps: AttributeRenameMapShape = {
     newAttribute: 'background',
     corePackageDependency: ['@cbhq/cds-web'],
   },
-  ...offsetConfigs,
-  ...spacingConfigs,
 };
 
-export const catchAllPropMigrations: RenameAttributeMapShape[] = [
-  {
-    oldAttribute: 'dangerouslySetClassName',
-    newAttribute: 'className',
-  },
-  {
-    oldAttribute: 'dangerouslySetStyle',
-    newAttribute: 'style',
-  },
-  {
-    oldAttribute: 'dangerouslySetColor',
-    newAttribute: 'color',
-  },
-  {
-    oldAttribute: 'dangerouslySetBackground',
-    newAttribute: 'background',
-  },
-  {
-    oldAttribute: 'dangerouslySetDuration',
-    newAttribute: 'duration',
-  },
-  {
-    oldAttribute: 'dangerouslySetSize',
-    newAttribute: 'size',
-  },
-  {
-    oldAttribute: 'dangerouslySetWidth',
-    newAttribute: 'width',
-  },
-];
+// merging in case of duplicate keys
+export const renamedProps = deepMerge(renamedPropConfigs, classNameConfigs, styleConfigs);
 
 type RemovedProp = {
   props: string | string[];
@@ -169,17 +200,6 @@ export const removedProps: Record<string, RemovedProp> = {
     path: ['web/system', 'mobile/system'],
   },
 };
-
-// cell components use (inner|outer)Spacing with keys of offset*
-const cellSpacingComponents = ['Cell', 'ContentCell', 'ListCell'];
-
-export const manualPropMigrations = cellSpacingComponents.reduce((acc, component) => {
-  acc[component] = {
-    props: ['innerSpacing', 'outerSpacing'],
-    valueKeys: [...Object.keys(offsetRenameMap)],
-  };
-  return acc;
-}, {} as ManualPropMigrationType);
 
 export const attributeValueToBooleanMigrations: AttributeValueToBooleanType = {
   LinearGradient: {

@@ -13,6 +13,7 @@ export * from './checkIsComponentWithMigrations';
 export * from './checkIsDynamicAttributeValue';
 export * from './createJsxMigration';
 export * from './createMigration';
+export * from './deepMerge';
 export * from './findReplaceInFile';
 export * from './generateManualMigrationOutput';
 export * from './getAttributeValue';

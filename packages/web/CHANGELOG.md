@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Undeprecated something that should not have been deprecated.
+
 ## 5.30.0 (1/25/2024 PST)
 
 #### 🚀 Updates

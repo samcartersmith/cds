@@ -1,24 +1,24 @@
 import { Tree } from '@nrwl/devkit';
 
+import {
+  commonPackage,
+  iconsPackage,
+  illustrationsPackage,
+  lottieFilesPackage,
+  mobilePackage,
+  webPackage,
+} from '../../helpers';
 import { upgradeCdsPackages as upgrader } from '../../helpers/upgradeCDSPackages';
 
 const depsToAddMap = {
-  mobile: {
-    '@cbhq/cds-mobile': '^5.0.0',
-    '@cbhq/cds-icons': '^1.3.0',
-    '@cbhq/cds-illustrations': '^2.1.0',
-  },
-  web: {
-    '@cbhq/cds-web': '^5.0.0',
-    '@cbhq/cds-icons': '^1.3.0',
-    '@cbhq/cds-illustrations': '^2.1.0',
-  },
-  common: {
-    '@cbhq/cds-common': '^5.0.0',
-  },
-  'lottie-files': {
-    '@cbhq/cds-lottie-files': '^1.0.2',
-  },
+  [iconsPackage]: '^2.1.0',
+  [lottieFilesPackage]: '^1.0.2',
+  // this includes the spoticon break
+  [illustrationsPackage]: '^2.1.0',
+  // this includes the spoticon break
+  [webPackage]: '^5.10.0',
+  [commonPackage]: '^5.10.0',
+  [mobilePackage]: '^5.10.0',
 };
 
 export default async function upgradeCdsPackages(tree: Tree) {

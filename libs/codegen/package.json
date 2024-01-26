@@ -12,7 +12,7 @@
     "enquirer": "^2.3.6",
     "fast-glob": "^3.2.11",
     "hygen": "patch:hygen@^6.2.0#./patches/hygen.patch",
-    "semver": "^7.3.7",
+    "semver": "^7.5.4",
     "ts-node": "^10.7.0",
     "yargs": "^17.5.1",
     "yargs-parser": "^21.0.1"

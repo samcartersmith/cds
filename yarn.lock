@@ -3680,9 +3680,11 @@ __metadata:
   resolution: "@cbhq/cds-migrator@workspace:packages/cds-migrator"
   dependencies:
     "@types/cli-progress": "npm:^3.11.0"
+    "@types/semver": "npm:^7"
     chalk: "npm:^4.1.2"
     cli-progress: "npm:^3.12.0"
     fast-glob: "npm:^3.2.11"
+    semver: "npm:^7.5.4"
     ts-morph: "npm:^19.0.0"
     update-notifier: "npm:^5.1.0"
   peerDependencies:
@@ -4385,7 +4387,7 @@ __metadata:
     enquirer: "npm:^2.3.6"
     fast-glob: "npm:^3.2.11"
     hygen: "patch:hygen@^6.2.0#./patches/hygen.patch"
-    semver: "npm:^7.3.7"
+    semver: "npm:^7.5.4"
     ts-node: "npm:^10.7.0"
     yargs: "npm:^17.5.1"
     yargs-parser: "npm:^21.0.1"
@@ -12299,17 +12301,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/semver@npm:7.3.4":
-  version: 7.3.4
-  resolution: "@types/semver@npm:7.3.4"
-  checksum: 4a8d0f92866511e448e5f5f277db9e21581b99ea69b809577534cdd36e1efa0d9cebd8cfe5b565ca4a1689140daca55f0759ac9834c960ce394a4785c9a28b04
-  languageName: node
-  linkType: hard
-
-"@types/semver@npm:^7.3.12, @types/semver@npm:^7.5.0":
-  version: 7.5.0
-  resolution: "@types/semver@npm:7.5.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fsemver%2F-%2Fsemver-7.5.0.tgz"
-  checksum: 8fbfbf79e9c14c3c20160a42145a146cba44d9763d0fac78358b394dc36e41bc2590bc4f0129c6fcbbc9b30f12ea1ba821bfe84b29dc80897f315cc7dd251393
+"@types/semver@npm:^7, @types/semver@npm:^7.3.12, @types/semver@npm:^7.5.0":
+  version: 7.5.6
+  resolution: "@types/semver@npm:7.5.6::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fsemver%2F-%2Fsemver-7.5.6.tgz"
+  checksum: e77282b17f74354e17e771c0035cccb54b94cc53d0433fa7e9ba9d23fd5d7edcd14b6c8b7327d58bbd89e83b1c5eda71dfe408e06b929007e2b89586e9b63459
   languageName: node
   linkType: hard
 
@@ -18655,7 +18650,7 @@ __metadata:
     "@types/react-router-dom": "npm:^5.2.0"
     "@types/react-test-renderer": "npm:^18.0.0"
     "@types/react-virtualized": "npm:^9.21.13"
-    "@types/semver": "npm:7.3.4"
+    "@types/semver": "npm:^7"
     "@types/url-parse": "npm:^1.4.3"
     "@types/yargs": "npm:^17.0.11"
     autoprefixer: "npm:^10.4.7"

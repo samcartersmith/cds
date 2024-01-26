@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.39 (1/26/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix: cleaned up scripts for v6 migrations. [[#2646](https://github.cbhq.net/frontend/cds/pull/2646)]
+
 ## 0.1.38 (1/24/2024 PST)
 
 #### 🐞 Fixes

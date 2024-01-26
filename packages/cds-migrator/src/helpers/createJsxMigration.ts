@@ -1,10 +1,9 @@
 import { Tree } from '@nrwl/devkit';
 import { SourceFile } from 'ts-morph';
 
-import { CdsPackages } from './checkHasCdsPackage';
 import parseJsxElements, { ParseJsxElementsCbParams } from './parseJsxElements';
 import { parseSourceFiles } from './parseSourceFiles';
-import { CreateMigrationParams } from './types';
+import { CreateMigrationParams, PackageName } from './types';
 
 type CreateJsxMigrationParams = {
   /** The NX Tree */
@@ -26,7 +25,7 @@ type CreateJsxMigrationParams = {
   /** @param excludeOpeningElements - If true, will only parse self enclosed JSX elements */
   excludeOpeningElements?: boolean;
   /** Checks if a project has specific CDS package(s) as a dependency */
-  packageNames?: CdsPackages[];
+  packageNames?: PackageName[];
 };
 
 /**

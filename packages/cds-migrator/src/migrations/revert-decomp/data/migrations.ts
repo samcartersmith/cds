@@ -1,6 +1,8 @@
-import { DecompedMigration } from '../../../helpers';
+import { DecompedMigration, PackageName } from '../../../helpers';
 
-export const revertedMigrations: DecompedMigration[] = [
+type RevertedMigration = Omit<DecompedMigration, 'newDir'> & { newDir: `${PackageName}/${string}` };
+
+export const revertedMigrations: RevertedMigration[] = [
   {
     exports: ['Dropdown', 'DropdownProps', 'MenuItem'],
     newDir: '@cbhq/cds-web/dropdown',

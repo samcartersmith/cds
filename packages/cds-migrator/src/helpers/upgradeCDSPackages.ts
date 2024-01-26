@@ -1,32 +1,39 @@
-import { addDependenciesToPackageJson, getProjects, output, Tree, updateJson } from '@nrwl/devkit';
+import { getProjects, output, Tree, updateJson } from '@nrwl/devkit';
+import semver from 'semver';
 
 import { CdsDependencyCheck, checkHasCdsDependency } from './checkHasCdsDependency';
 import { logDebug } from './loggingHelpers';
+import { DepsToAddMap, PackageName, packageNames, PackageWithVersion } from './types';
 
-const packageNames = [
-  'mobile',
-  'web',
-  'common',
-  'lottie-files',
-  'cds-web-overlays',
-  'cds-mobile-visualization',
-  'cds-web-visualization',
-] as const;
-type PackageName = (typeof packageNames)[number];
-type PackageVersionType = Record<string, string>;
-type DepsToAddMap = Partial<Record<PackageName, PackageVersionType>>;
-type DepType = 'deps' | 'devDeps' | 'peerDeps';
+function checkRequiresUpgrade(currVersion: string, newVersion: string) {
+  // Skip update if the installed version is '*'
+  if (currVersion === '*') return;
 
-export function updatePeerDependencies(
+  // parse the current version and compare to the incoming version to see if we need to update
+  // Remove any non-numeric version prefixes (like '^' or '~')
+  const cleanCurrentVersion = currVersion.replace(/^[^0-9]+/, '');
+  const cleanIncomingVersion = newVersion.replace(/^[^0-9]+/, '');
+
+  return semver.gt(cleanIncomingVersion, cleanCurrentVersion);
+}
+
+/** the version from NX devkit does not work in some consumers, so recreated */
+export function addDependenciesToPackageJson(
   tree: Tree,
   depsToAdd: Partial<DepsToAddMap>,
   pathToPackageJson?: string,
+  type: 'dependencies' | 'devDependencies' | 'peerDependencies' = 'dependencies',
 ) {
   const packageJsonPath = pathToPackageJson || 'package.json';
   updateJson(tree, packageJsonPath, (json) => {
     Object.entries(depsToAdd).forEach(([pkg, version]) => {
-      // eslint-disable-next-line no-param-reassign
-      json.peerDependencies[pkg] = version;
+      const currVersion = json[type][pkg] as string;
+      if (currVersion && version) {
+        if (checkRequiresUpgrade(currVersion, version)) {
+          // eslint-disable-next-line no-param-reassign
+          json[type][pkg] = version;
+        }
+      }
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -41,24 +48,27 @@ type DepCheckReturnType = {
   hasUpdates: boolean;
 };
 
+type DepType = 'deps' | 'devDeps' | 'peerDeps';
+
 function updateDeps(
   depCheck: CdsDependencyCheck,
-  pkg: keyof DepsToAddMap,
-  onComplete: (type: DepType, val?: Record<string, string>) => DepCheckReturnType,
+  pkg: PackageName,
+  onComplete: (type: DepType, val?: Partial<PackageWithVersion>) => DepCheckReturnType,
   depsToAddMap: DepsToAddMap,
 ) {
   const { dependencies, devDependencies, peerDependencies } = depCheck;
+  const val: Partial<PackageWithVersion> = { [pkg]: depsToAddMap[pkg] };
 
   if (dependencies?.[pkg]) {
-    return onComplete('deps', depsToAddMap[pkg]);
+    return onComplete('deps', val);
   }
 
   if (devDependencies?.[pkg]) {
-    return onComplete('devDeps', depsToAddMap[pkg]);
+    return onComplete('devDeps', val);
   }
 
   if (peerDependencies?.[pkg]) {
-    return onComplete('peerDeps', depsToAddMap[pkg]);
+    return onComplete('peerDeps', val);
   }
 
   return {
@@ -69,7 +79,7 @@ function updateDeps(
   };
 }
 
-function onDepCheckComplete(type: DepType, val?: Record<string, string>): DepCheckReturnType {
+function onDepCheckComplete(type: DepType, val?: Partial<PackageWithVersion>): DepCheckReturnType {
   let depsToAdd: Partial<DepsToAddMap> = {};
   let devDepsToAdd: Partial<DepsToAddMap> = {};
   let peerDepsToAdd: Partial<DepsToAddMap> = {};
@@ -109,6 +119,11 @@ function onDepCheckComplete(type: DepType, val?: Record<string, string>): DepChe
   };
 }
 
+/**
+ * Given a map of packages + versions this script will check all projects in the workspace for the packages (regardless of type of dependency) and upgrade them in place if found.
+ * @param tree
+ * @param depsToAddMap
+ */
 export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap) {
   logDebug('Upgrading necessary CDS dependencies');
 
@@ -129,19 +144,24 @@ export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap)
         depsToAddMap,
       );
       if (hasUpdates) {
-        const { packageJsonPath } = rootDepCheck;
-        // casting because addDependenciesToPackageJson expects a less specific type
-        addDependenciesToPackageJson(
-          tree,
-          depsToAdd as Record<string, string>,
-          devDepsToAdd as Record<string, string>,
-          packageJsonPath,
-        );
-        if (peerDepsToAdd) {
-          updatePeerDependencies(tree, peerDepsToAdd);
+        const { packageJsonPath: rootPackageJsonPath } = rootDepCheck;
+        console.log({ rootPackageJsonPath });
+        if (depsToAdd) {
+          addDependenciesToPackageJson(tree, depsToAdd, rootPackageJsonPath);
         }
-        if (!packageJsonsWithUpdates.includes(packageJsonPath)) {
-          packageJsonsWithUpdates.push(packageJsonPath);
+        if (devDepsToAdd) {
+          addDependenciesToPackageJson(tree, devDepsToAdd, rootPackageJsonPath, 'devDependencies');
+        }
+        if (peerDepsToAdd) {
+          addDependenciesToPackageJson(
+            tree,
+            peerDepsToAdd,
+            rootPackageJsonPath,
+            'peerDependencies',
+          );
+        }
+        if (!packageJsonsWithUpdates.includes(rootPackageJsonPath)) {
+          packageJsonsWithUpdates.push(rootPackageJsonPath);
         }
       }
     });
@@ -159,15 +179,15 @@ export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap)
         );
         if (hasUpdates) {
           const { packageJsonPath } = depCheck;
-          // casting because addDependenciesToPackageJson expects a less specific type
-          addDependenciesToPackageJson(
-            tree,
-            depsToAdd as Record<string, string>,
-            devDepsToAdd as Record<string, string>,
-            packageJsonPath,
-          );
+          console.log({ packageJsonPath });
+          if (depsToAdd) {
+            addDependenciesToPackageJson(tree, depsToAdd, packageJsonPath);
+          }
+          if (devDepsToAdd) {
+            addDependenciesToPackageJson(tree, devDepsToAdd, packageJsonPath, 'devDependencies');
+          }
           if (peerDepsToAdd) {
-            updatePeerDependencies(tree, peerDepsToAdd, packageJsonPath);
+            addDependenciesToPackageJson(tree, peerDepsToAdd, packageJsonPath, 'peerDependencies');
           }
           if (!packageJsonsWithUpdates.includes(packageJsonPath)) {
             packageJsonsWithUpdates.push(packageJsonPath);

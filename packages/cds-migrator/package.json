@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-migrator",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "description": "Codemod transformations to help upgrade your CDS codebase",
   "repository": {
     "type": "git",
@@ -27,7 +27,9 @@
     "@nrwl/devkit": ">=15.0.0"
   },
   "devDependencies": {
-    "@types/cli-progress": "^3.11.0"
+    "@types/cli-progress": "^3.11.0",
+    "@types/semver": "^7",
+    "semver": "^7.5.4"
   },
   "generators": "./generators.json",
   "types": "./lib/index.d.ts",

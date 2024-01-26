@@ -1,4 +1,8 @@
-import { DecompedMigration } from '../../../helpers';
+import {
+  DecompedMigration,
+  mobileVisualizationPackage,
+  webVisualizationPackage,
+} from '../../../helpers';
 
 export const migrationsWithNewPackages: DecompedMigration[] = [
   {
@@ -11,7 +15,7 @@ export const migrationsWithNewPackages: DecompedMigration[] = [
       'SparklineInteractiveHeaderRef',
     ],
     oldDir: '@cbhq/cds-web/overlays',
-    newDir: '@cbhq/cds-web-visualization',
+    newDir: webVisualizationPackage,
   },
   {
     exports: [
@@ -26,7 +30,7 @@ export const migrationsWithNewPackages: DecompedMigration[] = [
       'ChartData',
     ],
     oldDir: '@cbhq/cds-web/visualizations',
-    newDir: '@cbhq/cds-web-visualization',
+    newDir: webVisualizationPackage,
   },
   {
     exports: [
@@ -40,6 +44,6 @@ export const migrationsWithNewPackages: DecompedMigration[] = [
       'ChartScrubParams',
     ],
     oldDir: '@cbhq/cds-mobile/visualizations',
-    newDir: '@cbhq/cds-mobile-visualization',
+    newDir: mobileVisualizationPackage,
   },
 ];

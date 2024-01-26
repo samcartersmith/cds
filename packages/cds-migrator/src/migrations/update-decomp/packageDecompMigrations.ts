@@ -1,18 +1,19 @@
-import { addDependenciesToPackageJson, Tree } from '@nrwl/devkit';
+import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
 import {
+  addDependenciesToPackageJson,
   checkFileIncludesImport,
   checkHasCdsDependency,
+  checkHasDependency,
   createMigration,
   CreateMigrationParams,
   logDebug,
   logSuccess,
+  PackageName,
   replaceImport,
-  updatePeerDependencies,
   writeMigrationToFile,
 } from '../../helpers';
-import { checkHasDependency } from '../../helpers/checkHasDependency';
 
 import { migrationsWithNewPackages as migrations } from './data/packageDecompMigrations';
 
@@ -32,7 +33,7 @@ const filterSourceFiles = (path: string) => {
 
 const callback = (args: CreateMigrationParams) => {
   const { sourceFile, tree, projectConfig: project } = args;
-  const packagesToAdd: string[] = [];
+  const packagesToAdd: PackageName[] = [];
 
   oldDirectories.forEach((oldDirectory) => {
     if (checkFileIncludesImport(sourceFile, oldDirectory)) {
@@ -92,10 +93,11 @@ const callback = (args: CreateMigrationParams) => {
         const hasDecompedPackageDep = checkHasDependency({ packageName, tree, project });
         // if not, install it
         if (!hasDecompedPackageDep) {
-          addDependenciesToPackageJson(tree, { [packageName]: 'latest' }, {}, packageJsonPath);
+          addDependenciesToPackageJson(tree, { [packageName]: 'latest' }, packageJsonPath);
           logSuccess(`Added ${packageName} to ${packageJsonPath}`);
         }
       }
+      // rinse and repeat for peer and dev deps
       if (peerDependencies) {
         const hasDecompedPackageDep = checkHasDependency({
           packageName,
@@ -104,7 +106,12 @@ const callback = (args: CreateMigrationParams) => {
           type: 'peerDependencies',
         });
         if (!hasDecompedPackageDep) {
-          updatePeerDependencies(tree, { [packageName]: 'latest' }, packageJsonPath);
+          addDependenciesToPackageJson(
+            tree,
+            { [packageName]: 'latest' },
+            packageJsonPath,
+            'peerDependencies',
+          );
           logSuccess(`Added ${packageName} to ${packageJsonPath}`);
         }
       }
@@ -116,7 +123,12 @@ const callback = (args: CreateMigrationParams) => {
           type: 'devDependencies',
         });
         if (!hasDecompedPackageDep) {
-          addDependenciesToPackageJson(tree, {}, { [packageName]: 'latest' }, packageJsonPath);
+          addDependenciesToPackageJson(
+            tree,
+            { [packageName]: 'latest' },
+            packageJsonPath,
+            'devDependencies',
+          );
           logSuccess(`Added ${packageName} to ${packageJsonPath}`);
         }
       }

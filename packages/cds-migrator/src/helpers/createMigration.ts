@@ -1,8 +1,7 @@
 import { Tree } from '@nrwl/devkit';
 
-import { CdsPackages } from './checkHasCdsPackage';
 import { parseSourceFiles } from './parseSourceFiles';
-import { CreateMigrationParams } from './types';
+import { CreateMigrationParams, PackageName } from './types';
 
 /**
  * Helper script that makes it easy to write new cds-migrator scripts
@@ -31,7 +30,7 @@ export const createMigration = async ({
    */
   filterSourceFiles?: (path: string) => boolean;
   /** Checks if a project has specific CDS package(s) as a dependency */
-  packageNames?: CdsPackages[];
+  packageNames?: PackageName[];
   /** Only include test files */
   onlyTestFiles?: boolean;
 }) => {

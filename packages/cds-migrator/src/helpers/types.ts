@@ -123,5 +123,30 @@ export type DecompedMigration = {
   /** shallow directory, will check that import source includes this string */
   oldDir: string;
   /** shallow directory */
-  newDir: string;
+  newDir: PackageName;
 };
+
+export const mobilePackage = '@cbhq/cds-mobile';
+export const webPackage = '@cbhq/cds-web';
+export const commonPackage = '@cbhq/cds-common';
+export const lottieFilesPackage = '@cbhq/cds-lottie-files';
+export const webVisualizationPackage = '@cbhq/cds-web-visualization';
+export const mobileVisualizationPackage = '@cbhq/cds-mobile-visualization';
+export const webOverlaysPackage = '@cbhq/cds-web-overlays';
+export const iconsPackage = '@cbhq/cds-icons';
+export const illustrationsPackage = '@cbhq/cds-illustrations';
+
+export const packageNames = [
+  mobilePackage,
+  webPackage,
+  commonPackage,
+  lottieFilesPackage,
+  webVisualizationPackage,
+  mobileVisualizationPackage,
+  webOverlaysPackage,
+  iconsPackage,
+  illustrationsPackage,
+] as const;
+export type PackageName = (typeof packageNames)[number];
+export type PackageWithVersion = Record<PackageName, string>;
+export type DepsToAddMap = Partial<PackageWithVersion>;

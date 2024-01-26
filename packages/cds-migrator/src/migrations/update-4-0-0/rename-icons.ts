@@ -9,8 +9,10 @@ import {
   checkIsComponentWithMigrations,
   createJsxMigration,
   logDebug,
+  mobilePackage,
   ParseJsxElementsCbParams,
   renameJsxAttributeValue,
+  webPackage,
   writeMigrationToFile,
 } from '../../helpers';
 
@@ -58,6 +60,6 @@ export default async function migrations(tree: Tree) {
     checkSourceFile,
     callback,
     excludeOpeningElements: true,
-    packageNames: ['@cbhq/cds-web', '@cbhq/cds-mobile'],
+    packageNames: [webPackage, mobilePackage],
   });
 }

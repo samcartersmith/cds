@@ -6,8 +6,8 @@ import fs from 'node:fs';
 import { Project } from 'ts-morph';
 
 import { checkHasCdsDependency } from './checkHasCdsDependency';
-import { CdsPackages, checkHasCdsPackage } from './checkHasCdsPackage';
-import { CreateMigrationParams } from './types';
+import { checkHasCdsPackage } from './checkHasCdsPackage';
+import { CreateMigrationParams, PackageName } from './types';
 
 /**
  * This is a faster way of getting project `sourceFiles` using fast-glob and nx devkit utils
@@ -23,7 +23,7 @@ export async function parseSourceFiles(
   tree: Tree,
   transformFn: (params: CreateMigrationParams) => void,
   filterSourceFiles?: (path: string) => boolean,
-  packageNames?: CdsPackages[],
+  packageNames?: PackageName[],
   onlyTestFiles?: boolean,
 ) {
   const projects = getProjects(tree);

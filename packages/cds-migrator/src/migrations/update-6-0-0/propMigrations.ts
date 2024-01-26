@@ -7,16 +7,18 @@ import {
   createJsxMigration,
   getComponentFromJsx,
   logDebug,
+  mobilePackage,
   ParseJsxElementsCbParams,
   RenameAttributeMapShape,
   renameJsxAttribute,
   replaceKey,
+  webPackage,
   writeMigrationToFile,
 } from '../../helpers';
 
 import { renamedProps } from './data/propMigrations';
 
-const importPaths = ['@cbhq/cds-web', '@cbhq/cds-mobile'];
+const importPaths = [webPackage, mobilePackage];
 const oldProps: string[] = [];
 
 Object.values(renamedProps).map((val) =>

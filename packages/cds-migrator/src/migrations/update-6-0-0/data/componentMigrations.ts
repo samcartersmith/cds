@@ -21,7 +21,8 @@ export const oneToOneMigrations: ComponentMigration[] = [
   },
 ];
 
-const oldCardWarning = 'use UpsellCard or NudgeCard instead';
+const oldCardWarning =
+  'This component is getting removed in v7.0.0. Please use UpsellCard or NudgeCard instead. ';
 
 export const removedComponents: RemovedComponent[] = [
   {
