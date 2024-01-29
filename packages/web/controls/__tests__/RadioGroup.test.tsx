@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { TextHeadline, TextLabel1 } from '../../typography';
 import { Radio, RadioGroup } from '../RadioGroup';
@@ -66,5 +67,25 @@ describe('RadioGroup.test', () => {
 
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange).toHaveBeenCalledWith('eth');
+  });
+
+  it('passes accessibility', async () => {
+    expect(
+      await renderA11y(
+        <RadioGroup
+          aria-labelledby="choose-a-currency"
+          label={
+            <TextHeadline as="span" id="choose-a-currency">
+              Choose a currency
+            </TextHeadline>
+          }
+          name="radio-group"
+          onChange={onChange}
+          options={options}
+          selectedValue="btc"
+          testID="test-radio-group"
+        />,
+      ),
+    ).toHaveNoViolations();
   });
 });

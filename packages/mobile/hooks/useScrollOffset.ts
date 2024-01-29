@@ -7,7 +7,9 @@ export function useScrollOffset() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const { contentOffset, layoutMeasurement } = event.nativeEvent;
-    const index = Math.floor(contentOffset.x / layoutMeasurement.width);
+    // Prevent negative offsets on android
+    const normalizedXOffset = contentOffset.x < 0 ? 0 : contentOffset.x;
+    const index = Math.floor(normalizedXOffset / layoutMeasurement.width);
     setCurrentIndex(index);
   };
 

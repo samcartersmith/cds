@@ -53,6 +53,7 @@ describe('SidebarMoreMenu', () => {
 
     expect(screen.getByTestId(TRIGGER_TEST_ID)).toBeInTheDocument();
     expect(screen.queryByTestId(MENU_TEST_ID)).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { expanded: false })).toBeInTheDocument();
   });
 
   it('opens menu when trigger is clicked', async () => {
@@ -62,6 +63,7 @@ describe('SidebarMoreMenu', () => {
 
     expect(screen.getByTestId(MENU_TEST_ID)).toBeInTheDocument();
     expect(await screen.findByText(items[4].title)).toBeDefined();
+    expect(screen.getByRole('button', { expanded: true })).toBeInTheDocument();
   });
 
   it('opens menu and focuses first menu item when trigger is focused and enter is pressed', async () => {

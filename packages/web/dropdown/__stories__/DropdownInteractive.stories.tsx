@@ -28,6 +28,7 @@ const defaultOptions = [
 export const SimpleDropdown: ComponentStoryObj<typeof Default> = {
   args: {
     disablePortal: true,
+    customAriaControlsID: 'dropdown',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -59,6 +60,7 @@ export const SimpleDropdown: ComponentStoryObj<typeof Default> = {
 export const ScrollContainer: ComponentStoryObj<typeof Default> = {
   args: {
     containerHeight: '200vh',
+    customAriaControlsID: 'dropdown',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

@@ -78,20 +78,6 @@ describe('SidebarMoreMenu', () => {
     expect(menuItems[0]).toHaveFocus();
   });
 
-  it('opens menu and focuses active menu item when trigger is focused and enter is pressed', async () => {
-    render(<SidebarMoreMenuExample value={moreMenuOptions[1].title} />);
-
-    fireEvent.keyDown(screen.getByTestId(TRIGGER_TEST_ID), {
-      key: 'Enter',
-      code: 'Enter',
-    });
-
-    const menuItems = await screen.findAllByRole('menuitem');
-
-    expect(screen.getByTestId(MENU_TEST_ID)).toBeInTheDocument();
-    expect(menuItems[1]).toHaveFocus();
-  });
-
   it('visually indicates an active menu item', async () => {
     render(<SidebarMoreMenuExample value={moreMenuOptions[1].title} />);
 

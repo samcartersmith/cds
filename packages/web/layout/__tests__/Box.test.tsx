@@ -42,6 +42,26 @@ describe('Box', () => {
     ).toHaveNoViolations();
   });
 
+  it('only overrides aria-label if accessibilityLabel is provided', () => {
+    render(
+      <Box accessibilityLabel="custom label" aria-label="label" as="main" role="main">
+        Child
+      </Box>,
+    );
+
+    expect(screen.getByLabelText('custom label')).toBeTruthy();
+  });
+
+  it('only aria-labelledby if accessibilityLabelledBy provided', () => {
+    render(
+      <Box accessibilityLabelledBy="custom-id" aria-labelledby="id" as="main" role="main">
+        <Box id="custom-id">custom label</Box>
+      </Box>,
+    );
+
+    expect(screen.getByLabelText('custom label')).toBeTruthy();
+  });
+
   (['article', 'aside', 'div', 'footer', 'header', 'main', 'section'] as const).forEach((tag) => {
     it(`can render as a "${tag}" element using the \`as\` prop`, () => {
       const { container } = render(<Box as={tag}>Child</Box>);

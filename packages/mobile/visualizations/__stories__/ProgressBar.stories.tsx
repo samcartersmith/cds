@@ -28,8 +28,14 @@ const ProgressBarScreen = () => {
         <ProgressContainerWithButtons>
           {({ calculateProgress }) => (
             <VStack gap={2}>
-              <ProgressBar progress={calculateProgress(0)} />
-              <ProgressBar progress={calculateProgress(0.2)} />
+              <ProgressBar
+                accessibilityLabel="default progressbar"
+                progress={calculateProgress(0)}
+              />
+              <ProgressBar
+                accessibilityLabel="default progressbar"
+                progress={calculateProgress(0.2)}
+              />
             </VStack>
           )}
         </ProgressContainerWithButtons>

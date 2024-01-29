@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 import { Placement } from '@popperjs/core';
 import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common/types';
 
+import { AccessibleControlledReturnType } from '../../hooks/useA11yControlledVisibility';
+
 export type PopoverContentPositionConfig = {
   /**
    * Custom placement config
@@ -64,5 +66,11 @@ export type PopoverProps = {
    * You'll need to surface disabled state on the trigger manually.
    */
   disabled?: boolean;
+  /** If `true`, the focus trap will not automatically shift focus to itself when it opens, and
+   * replace it to the last focused element when it closes.
+   * @default false
+   */
+  disableAutoFocus?: boolean;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
-  SharedProps;
+  SharedProps &
+  Partial<Pick<AccessibleControlledReturnType, 'controlledElementAccessibilityProps'>>;

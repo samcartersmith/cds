@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   SetStateAction,
   useEffect,
+  useMemo,
   useState,
 } from 'react';
 import {
@@ -210,6 +211,17 @@ const BoxInner = forwardRef(
 
     const [elevationStyles, setElevationStyles] = useState(emptyObject);
 
+    const accessibilityProps = useMemo(() => {
+      const ariaLabel = accessibilityLabel ? { 'aria-label': accessibilityLabel } : emptyObject;
+      const ariaLabelledBy = accessibilityLabelledBy
+        ? { 'aria-labelledby': accessibilityLabelledBy }
+        : emptyObject;
+      return {
+        ...ariaLabel,
+        ...ariaLabelledBy,
+      };
+    }, [accessibilityLabel, accessibilityLabelledBy]);
+
     const childNodes = elevation ? (
       <>
         <ElevationStylesContainer elevation={elevation} setElevationStyles={setElevationStyles} />
@@ -274,8 +286,7 @@ const BoxInner = forwardRef(
           dangerouslySetClassName,
         ),
         role,
-        'aria-label': accessibilityLabel,
-        'aria-labelledby': accessibilityLabelledBy,
+        ...accessibilityProps,
         style: {
           ...(dangerouslySetBackground
             ? { backgroundColor: dangerouslySetBackground }

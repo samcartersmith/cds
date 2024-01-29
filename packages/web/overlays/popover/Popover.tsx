@@ -7,7 +7,6 @@ import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumCondit
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
-import { usePopoverA11y } from '../../hooks/usePopoverA11y';
 import { Box } from '../../layout/Box';
 import { ThemeProvider } from '../../system';
 import { cx } from '../../utils/linaria';
@@ -63,16 +62,12 @@ export const Popover = memo(
     block = false,
     disableTypeFocus = false,
     disabled,
+    disableAutoFocus = false,
+    controlledElementAccessibilityProps,
   }: PopoverProps) => {
     const { setSubject, setPopper, popperStyles, popperAttributes } = usePopper(contentPosition);
     const scale = useScale();
     const invertedSpectrum = useSpectrumConditional(inverseConfig);
-
-    const { subjectAccessibilityProps, contentAccessibilityProps } = usePopoverA11y(
-      visible,
-      false,
-      accessibilityLabel,
-    );
 
     // We use this to infer that hover events are triggering the mounting/dismounting of the content
     const hasHoverInteractions = !!onMouseEnter && !!onMouseLeave && !onPressSubject;
@@ -99,12 +94,16 @@ export const Popover = memo(
           {...popperAttributes.popper}
           onClick={handleCaptureEvents}
         >
-          <FocusTrap disableTypeFocus={disableTypeFocus} onEscPress={handleClose}>
+          <FocusTrap
+            disableAutoFocus={disableAutoFocus}
+            disableTypeFocus={disableTypeFocus}
+            onEscPress={handleClose}
+          >
             {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
             <Box
               dangerouslySetBackground="transparent"
-              {...contentAccessibilityProps}
               testID={testID}
+              {...controlledElementAccessibilityProps}
             >
               {content}
             </Box>
@@ -118,9 +117,10 @@ export const Popover = memo(
         handleCaptureEvents,
         handleClose,
         disableTypeFocus,
-        contentAccessibilityProps,
         testID,
         content,
+        disableAutoFocus,
+        controlledElementAccessibilityProps,
       ],
     );
 
@@ -153,7 +153,6 @@ export const Popover = memo(
           onClick={disabled ? undefined : onPressSubject}
           onFocus={disabled ? undefined : onFocus}
           onMouseDown={disabled ? undefined : onMouseDown}
-          {...subjectAccessibilityProps}
         >
           {children}
         </div>

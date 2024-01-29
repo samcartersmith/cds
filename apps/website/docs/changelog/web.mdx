@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.31.0 (1/26/2024 PST)
+
+#### 🚀 Updates
+
+- Add default a11y label to progress bar and fix dropdown interactive story. [[#2677](https://github.cbhq.net/frontend/cds/pull/2677)]
 
 #### 📘 Misc
 

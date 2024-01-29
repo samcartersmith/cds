@@ -69,8 +69,13 @@ export const Group = () => {
   return (
     <>
       <RadioGroup
+        aria-labelledby="choose-a-currency"
         id="currency-radio-group"
-        label={<TextHeadline as="h1">Choose a currency</TextHeadline>}
+        label={
+          <TextHeadline as="h1" id="choose-a-currency">
+            Choose a currency
+          </TextHeadline>
+        }
         name="radio-group1"
         onChange={setGroup1}
         options={options1}
@@ -88,17 +93,25 @@ export const Group = () => {
         selectedValue={group2}
       />
       <RadioGroup
+        aria-labelledby="choose-a-currency2"
         direction="horizontal"
         gap={2}
         id="horizontal-radio-group"
-        label={<TextHeadline as="h1">Choose a currency</TextHeadline>}
+        label={
+          <TextHeadline as="h1" id="choose-a-currency2">
+            Choose a currency
+          </TextHeadline>
+        }
         name="radio-group3"
         onChange={setGroup3}
         options={options1}
         selectedValue={group3}
       />
-      <TextHeadline as="h1">Select a dish to order</TextHeadline>
+      <TextHeadline as="h1" id="select-dish-to-order">
+        Select a dish to order
+      </TextHeadline>
       <RadioGroup
+        aria-labelledby="select-dish-to-order"
         direction="horizontal"
         gap={2}
         name="radio-group4"

@@ -21,8 +21,13 @@ function RadioGroupDemo() {
   return (
     <>
       <RadioGroup
+        aria-labelledby="choose-a-currency"
         id="currency-radio-group"
-        label={<TextHeadline as="span">Choose a currency</TextHeadline>}
+        label={
+          <TextHeadline as="span" id="choose-a-currency">
+            Choose a currency
+          </TextHeadline>
+        }
         name="radio-group1"
         selectedValue={group1}
         onChange={setGroup1}
@@ -40,8 +45,13 @@ function RadioGroupDemo() {
         options={options2}
       />
       <RadioGroup
+        aria-labelledby="choose-a-currency2"
         id="horizontal-radio-group"
-        label={<TextHeadline as="h1">Choose a currency</TextHeadline>}
+        label={
+          <TextHeadline as="h1" id="choose-a-currency2">
+            Choose a currency
+          </TextHeadline>
+        }
         name="radio-group3"
         selectedValue={group3}
         onChange={setGroup3}

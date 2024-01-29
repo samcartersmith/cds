@@ -20,6 +20,7 @@ describe('Dropdown', () => {
     render(<DropdownExample subjectTestID={subjectTestID} />);
 
     expect(screen.getByTestId(subjectTestID)).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { expanded: false })[0]).toBeInTheDocument();
   });
   it('passes accessibility', async () => {
     expect(await renderA11y(<DropdownExample />)).toHaveNoViolations();
@@ -31,6 +32,7 @@ describe('Dropdown', () => {
 
     // expect to see first menu item
     expect(await screen.findByText(options[0])).toBeDefined();
+    expect(screen.getAllByRole('button', { expanded: true })[0]).toBeInTheDocument();
   });
   it('does not open the menu when disabled', () => {
     render(<DropdownExample disabled options={options} subjectTestID={subjectTestID} />);

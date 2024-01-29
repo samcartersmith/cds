@@ -15,7 +15,6 @@ import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { dropdownMaxHeight } from '@cbhq/cds-common/tokens/menu';
 
 import { SelectProvider } from '../controls/selectContext';
-import { useA11yControlledVisibility } from '../hooks/useA11yControlledVisibility';
 import { useBoundingClientRect } from '../hooks/useBoundingClientRect';
 import { useBreakpoints } from '../hooks/useBreakpoints';
 import { useIsoEffect } from '../hooks/useIsoEffect';
@@ -51,14 +50,11 @@ const ModalDropdown = memo(
         onChange,
         width,
         disabled,
+        controlledElementAccessibilityProps,
         ...props
-      }: Omit<DropdownProps, 'controlledElementAccessibilityProps' | 'onOpenMenu' | 'onCloseMenu'> &
-        DropdownVisibilityProps,
+      }: Omit<DropdownProps, 'onOpenMenu' | 'onCloseMenu'> & DropdownVisibilityProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
-      const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
-        useA11yControlledVisibility(visible, { accessibilityLabel });
-
       const context = useMemo(
         () => ({
           onChange,
@@ -87,17 +83,12 @@ const ModalDropdown = memo(
             visible={visible}
             {...controlledElementAccessibilityProps}
           >
-            <FocusTrap onEscPress={onCloseMenu}>
+            <FocusTrap disableAutoFocus={!!value} onEscPress={onCloseMenu}>
               <DropdownContent {...props}>{content}</DropdownContent>
             </FocusTrap>
           </ModalWrapper>
           {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-          <div
-            {...triggerAccessibilityProps}
-            onClick={disabled ? undefined : onOpenMenu}
-            onKeyDown={onOpenMenu}
-            style={{ width }}
-          >
+          <div onClick={disabled ? undefined : onOpenMenu} onKeyDown={onOpenMenu} style={{ width }}>
             {children}
           </div>
         </SelectProvider>
@@ -260,6 +251,7 @@ const PopoverDropdown = memo(
             block={block}
             content={disabled ? undefined : memoizedContent}
             contentPosition={contentPosition ?? defaultPopoverContentPositionConfig}
+            disableAutoFocus={!!value}
             disablePortal={disablePortal}
             disabled={disabled}
             onBlur={onBlur}

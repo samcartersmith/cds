@@ -28,6 +28,7 @@ export const ProgressBar = memo(
         disabled = false,
         disableAnimateOnMount = false,
         testID,
+        accessibilityLabel = 'progress bar',
       }: ProgressBaseProps,
       forwardedRef: ForwardedRef<HTMLElement>,
     ) => {
@@ -54,7 +55,15 @@ export const ProgressBar = memo(
       });
 
       return (
-        <VStack ref={forwardedRef} flexGrow={1} flexShrink={0} testID={testID}>
+        <VStack
+          ref={forwardedRef}
+          accessibilityLabel={accessibilityLabel}
+          aria-valuenow={progress * 100}
+          flexGrow={1}
+          flexShrink={0}
+          role="progressbar"
+          testID={testID}
+        >
           <HStack alignItems="center">
             <Box
               alignItems="center"

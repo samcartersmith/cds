@@ -1,9 +1,10 @@
-import React, { memo, ReactNode, useCallback, useMemo, useRef } from 'react';
+import React, { memo, ReactNode, useCallback, useMemo, useRef, useState } from 'react';
 import { SharedProps, SpacingScale } from '@cbhq/cds-common';
 import { sidebarMenuMaxWidth, sidebarMenuMinWidth } from '@cbhq/cds-common/tokens/menu';
 import { sidebarGutter, sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 
 import { Dropdown, DropdownProps } from '../dropdown';
+import { useA11yControlledVisibility } from '../hooks/useA11yControlledVisibility';
 import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 import { Tooltip } from '../overlays/Tooltip/Tooltip';
 
@@ -31,6 +32,7 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   triggerTitle = 'More',
   ...props
 }: SidebarMoreMenuProps) {
+  const [visible, setVisible] = useState(false);
   const { collapsed } = useSidebarContext();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const sidebarGap = (sidebarHorizontalSpacing + sidebarGutter) as SpacingScale;
@@ -41,6 +43,11 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
     }),
     [sidebarGap],
   );
+  const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
+    useA11yControlledVisibility(visible, {
+      accessibilityLabel: triggerTitle,
+      hasPopupType: 'menu',
+    });
 
   const baseTrigger = useMemo(
     () => (
@@ -51,9 +58,10 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
         onPress={onPress}
         testID="sidebar-more-menu-trigger"
         title={triggerTitle}
+        {...triggerAccessibilityProps}
       />
     ),
-    [onPress, active, triggerTitle],
+    [onPress, active, triggerTitle, triggerAccessibilityProps],
   );
 
   const trigger = useMemo(() => {
@@ -68,16 +76,22 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
 
   const handleCloseMenu = useCallback(() => {
     triggerRef.current?.focus();
+    setVisible(false);
+  }, []);
+  const handleOpenMenu = useCallback(() => {
+    setVisible(true);
   }, []);
 
   return (
     <Dropdown
       content={children}
       contentPosition={defaultContentPosition}
+      controlledElementAccessibilityProps={controlledElementAccessibilityProps}
       disablePortal={disablePortal}
       maxWidth={sidebarMenuMaxWidth}
       minWidth={sidebarMenuMinWidth}
       onCloseMenu={handleCloseMenu}
+      onOpenMenu={handleOpenMenu}
       value={value}
       {...props}
     >

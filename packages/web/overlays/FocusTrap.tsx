@@ -17,6 +17,7 @@ export type FocusTrapProps = {
   onEscPress?: () => void;
   disableTypeFocus?: boolean;
   disableFocusTrap?: boolean;
+  disableAutoFocus?: boolean;
 };
 
 const DEBOUNCE_MS = 50;
@@ -57,6 +58,7 @@ export const FocusTrap = memo(function FocusTrap({
   onEscPress,
   disableTypeFocus,
   disableFocusTrap,
+  disableAutoFocus,
 }: FocusTrapProps) {
   const isFocused = useRef(false);
   const childrenRef = useRef<HTMLElement>(null);
@@ -283,6 +285,21 @@ export const FocusTrap = memo(function FocusTrap({
       getBrowserGlobals()?.window.removeEventListener('keyup', handleKeyUp);
     };
   }, [handleKeyDown, handleKeyUp]);
+
+  useEffect(() => {
+    const document = getBrowserGlobals()?.document;
+    const elements = childrenRef.current;
+
+    if (!document || !elements || disableAutoFocus) {
+      return;
+    }
+
+    const focusableElements = elements.querySelectorAll(FOCUSABLE_ELEMENTS);
+
+    if (focusableElements?.length) {
+      (focusableElements[0] as HTMLElement).focus();
+    }
+  }, [disableAutoFocus]);
 
   // only works for single child
   const onlyChild = React.Children.only(children);

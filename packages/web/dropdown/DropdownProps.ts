@@ -44,7 +44,13 @@ export type DropdownProps = {
   disabled?: boolean;
 } & Pick<
   PopoverProps,
-  'content' | 'children' | 'showOverlay' | 'contentPosition' | 'block' | 'disableTypeFocus'
+  | 'content'
+  | 'children'
+  | 'showOverlay'
+  | 'contentPosition'
+  | 'block'
+  | 'disableTypeFocus'
+  | 'controlledElementAccessibilityProps'
 > &
   SharedProps &
   Pick<

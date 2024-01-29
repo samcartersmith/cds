@@ -3,8 +3,9 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Button, IconButton } from '../../buttons';
 import { SelectOption } from '../../controls/SelectOption';
 import { DotCount } from '../../dots';
-import { Icon } from '../../icons/Icon';
-import { HStack } from '../../layout/HStack';
+import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
+import { Icon } from '../../icons';
+import { HStack } from '../../layout';
 import { PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
 import { Pressable } from '../../system/Pressable';
 import { PressableOpacity } from '../../system/PressableOpacity';
@@ -39,6 +40,7 @@ type MockDropdownProps = {
   subjectTestID?: string;
   options?: string[];
   containerHeight?: number | string;
+  customAriaControlsID?: string;
 } & Pick<
   DropdownProps,
   | 'enableMobileModal'
@@ -48,6 +50,7 @@ type MockDropdownProps = {
   | 'onCloseMenu'
   | 'disablePortal'
   | 'disabled'
+  | 'value'
 >;
 
 export const Default = ({
@@ -55,10 +58,30 @@ export const Default = ({
   containerHeight,
   disabled,
   subjectTestID,
+  customAriaControlsID,
   ...props
 }: MockDropdownProps) => {
   const [value, setValue] = useState('');
   const dropdownRef = useRef<DropdownRefProps>(null);
+  const [visible, setVisible] = useState(false);
+  const { triggerAccessibilityProps, controlledElementAccessibilityProps } =
+    useA11yControlledVisibility(visible, {
+      accessibilityLabel: 'Default Dropdown',
+      hasPopupType: 'menu',
+    });
+
+  // Passing static value to aria-controls for testing dropdown interactive story
+  if (customAriaControlsID) {
+    triggerAccessibilityProps['aria-controls'] = customAriaControlsID;
+    controlledElementAccessibilityProps.id = customAriaControlsID;
+  }
+
+  const handleCloseMenu = useCallback(() => {
+    setVisible(false);
+  }, []);
+  const handleOpenMenu = useCallback(() => {
+    setVisible(true);
+  }, []);
 
   const content = (
     <>
@@ -82,8 +105,11 @@ export const Default = ({
       <Dropdown
         ref={dropdownRef}
         content={content}
+        controlledElementAccessibilityProps={controlledElementAccessibilityProps}
         disabled={disabled}
         onChange={setValue}
+        onCloseMenu={handleCloseMenu}
+        onOpenMenu={handleOpenMenu}
         value={value}
         {...props}
       >
@@ -94,9 +120,12 @@ export const Default = ({
           name="more"
           testID={subjectTestID}
           variant="secondary"
+          {...triggerAccessibilityProps}
         />
       </Dropdown>
-      <Button onPress={handleButtonPress}>Open Menu</Button>
+      <Button onPress={handleButtonPress} {...triggerAccessibilityProps}>
+        Open Menu
+      </Button>
     </HStack>
   );
 };

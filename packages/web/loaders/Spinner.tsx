@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { SharedProps } from '@cbhq/cds-common';
+import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
 import { PaletteForeground } from '@cbhq/cds-common/types/Palette';
 
 import { usePalette } from '../hooks/usePalette';
@@ -18,12 +18,14 @@ export type SpinnerProps = {
    * @default foregroundMuted
    */
   color?: PaletteForeground;
-} & SharedProps;
+} & SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
 
 export const Spinner = memo(function Spinner({
   size,
   color = 'foregroundMuted',
   testID,
+  accessibilityLabel,
 }: SpinnerProps) {
   const palette = usePalette();
 
@@ -39,14 +41,18 @@ export const Spinner = memo(function Spinner({
   );
 
   return (
-    <div
-      aria-busy
-      aria-live="polite"
-      className={cx(styles.spinner.base, styles.spinnerAnimation)}
-      data-testid={testID}
-      role="status"
-      style={spinnerStyle}
-    />
+    <>
+      <div
+        aria-describedby="spinnerStatus"
+        className={cx(styles.spinner.base, styles.spinnerAnimation)}
+        data-testid={testID}
+        role="status"
+        style={spinnerStyle}
+      />
+      <div aria-live="polite" className={styles.spinnerStatus} id="spinnerStatus">
+        {accessibilityLabel}
+      </div>
+    </>
   );
 });
 

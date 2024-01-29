@@ -160,6 +160,30 @@ describe('FocusTrap', () => {
     expect(firstOption).toHaveFocus();
   });
 
+  it('focuses on the first option when the menu is opened', async () => {
+    render(<Dropdown subjectTestID={subjectTestID} />);
+
+    // open the menu
+    fireEvent.click(screen.getByTestId(subjectTestID));
+
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+
+    // expect first option to be focused
+    expect(firstOption).toHaveFocus();
+  });
+
+  it('does not auto focus on the first option when disableAutoFocus is true', async () => {
+    render(<Dropdown subjectTestID={subjectTestID} value="Option 2" />);
+
+    // open the menu
+    fireEvent.click(screen.getByTestId(subjectTestID));
+
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+
+    // expect first option to be focused
+    expect(firstOption).not.toHaveFocus();
+  });
+
   it('when the first option is focused and ArrowUp is typed it focuses on the last option', async () => {
     render(<Dropdown subjectTestID={subjectTestID} />);
 

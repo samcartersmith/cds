@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.31.0 (1/26/2024 PST)
+
+#### 🚀 Updates
+
+- Add a11y props to Dropdown, Popover, Progressbar and enable auto focus on FocusTrap. [[#2677](https://github.cbhq.net/frontend/cds/pull/2677)]
+
 ## 5.30.0 (1/25/2024 PST)
 
 #### 🚀 Updates

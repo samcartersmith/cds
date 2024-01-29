@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, memo, useEffect } from 'react';
+import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { Placement } from '@popperjs/core';
 import { AnimationProps, m as motion } from 'framer-motion';
 import { css } from 'linaria';
@@ -8,13 +8,11 @@ import {
   animateDropdownTransformInConfig,
   animateDropdownTransformOutConfig,
 } from '@cbhq/cds-common/animation/dropdown';
-import { FOCUSABLE_ELEMENTS } from '@cbhq/cds-common/tokens/overlays';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { DimensionValue, NoopFn } from '@cbhq/cds-common/types';
 
 import { VStack } from '../layout/VStack';
 import { useMotionProps } from '../motion/useMotionProps';
-import { isBrowser } from '../utils/browser';
 import { cx } from '../utils/linaria';
 
 import { DropdownProps } from './DropdownProps';
@@ -53,17 +51,6 @@ export const DropdownContent = memo(
         ],
         exit: 'exit',
       });
-
-      // on mount focus the first option (unless there is an already selected value, then select option will focus it)
-      useEffect(() => {
-        onOpen?.();
-        if (!value && isBrowser() && ref && typeof ref !== 'function') {
-          const focusableElements = ref.current?.querySelectorAll(FOCUSABLE_ELEMENTS);
-          if (focusableElements?.length && focusableElements[0]) {
-            (focusableElements[0] as HTMLElement).focus();
-          }
-        }
-      }, [ref, value, onOpen]);
 
       return (
         <MotionVStack

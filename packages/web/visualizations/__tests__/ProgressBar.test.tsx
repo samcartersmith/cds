@@ -48,7 +48,9 @@ describe('ProgressBar test', () => {
   });
 
   it('passes accessibility', async () => {
-    expect(await renderA11y(<ProgressBar progress={0} />)).toHaveNoViolations();
+    expect(
+      await renderA11y(<ProgressBar accessibilityLabel="progressbar" progress={0} />),
+    ).toHaveNoViolations();
   });
 
   it('places bar label in correct position if it flows off the left container', async () => {
