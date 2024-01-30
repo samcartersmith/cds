@@ -72,7 +72,7 @@ export const Group = () => {
         aria-labelledby="choose-a-currency"
         id="currency-radio-group"
         label={
-          <TextHeadline as="h1" id="choose-a-currency">
+          <TextHeadline as="span" id="choose-a-currency">
             Choose a currency
           </TextHeadline>
         }
@@ -81,7 +81,7 @@ export const Group = () => {
         options={options1}
         selectedValue={group1}
       />
-      <TextHeadline as="h1" id="choose-a-mascot">
+      <TextHeadline as="span" id="choose-a-mascot">
         Choose a mascot
       </TextHeadline>
       <RadioGroup
@@ -98,7 +98,7 @@ export const Group = () => {
         gap={2}
         id="horizontal-radio-group"
         label={
-          <TextHeadline as="h1" id="choose-a-currency2">
+          <TextHeadline as="span" id="choose-a-currency2">
             Choose a currency
           </TextHeadline>
         }
@@ -107,7 +107,7 @@ export const Group = () => {
         options={options1}
         selectedValue={group3}
       />
-      <TextHeadline as="h1" id="select-dish-to-order">
+      <TextHeadline as="span" id="select-dish-to-order">
         Select a dish to order
       </TextHeadline>
       <RadioGroup

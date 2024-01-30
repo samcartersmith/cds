@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.31.1 (1/29/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: fixed RadioGroup story. [[#2690](https://github.cbhq.net/frontend/cds/pull/2690)]
+
 ## 5.31.0 (1/26/2024 PST)
 
 #### 🚀 Updates
