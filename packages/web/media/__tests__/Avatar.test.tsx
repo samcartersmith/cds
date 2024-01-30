@@ -112,4 +112,12 @@ describe('Avatar', () => {
     expect(box).toHaveClass(staticClassName);
     expect(box?.className).not.toContain('borderStyles');
   });
+
+  it('capitalizes first letter of avatar name', () => {
+    const name = 'testName';
+    render(<Avatar alt="" colorScheme="pink" name={name} testID="avatar-component" />);
+    const { firstChild: childElement } = screen.getByTestId('avatar-component-fallback');
+    expect(childElement instanceof HTMLElement && childElement.className).toContain('uppercase');
+    expect(childElement).not.toBeNull();
+  });
 });

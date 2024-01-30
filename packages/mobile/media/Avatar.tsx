@@ -60,21 +60,21 @@ export const Avatar = memo(
     const avatarText = useMemo(() => {
       if (isLargestSize || isNormalAvatarButton) {
         return (
-          <TextTitle2 align="center" dangerouslySetColor={fallbackTextColor}>
+          <TextTitle2 align="center" dangerouslySetColor={fallbackTextColor} transform="uppercase">
             {placeholderLetter}
           </TextTitle2>
         );
       }
       if (size === 'm' || isCompactAvatarButton) {
         return (
-          <TextCaption align="center" dangerouslySetColor={fallbackTextColor}>
+          <TextCaption align="center" dangerouslySetColor={fallbackTextColor} transform="uppercase">
             {placeholderLetter}
           </TextCaption>
         );
       }
 
       return (
-        <TextBody align="center" dangerouslySetColor={fallbackTextColor}>
+        <TextBody align="center" dangerouslySetColor={fallbackTextColor} transform="uppercase">
           {placeholderLetter}
         </TextBody>
       );

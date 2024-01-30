@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.31.2 (1/29/2024 PST)
+
+#### 🐞 Fixes
+
+- [DX-2935] Avatar - apply uppercase transform on name. [[#2565](https://github.cbhq.net/frontend/cds/pull/2565)] [[DX-2934](https://jira.coinbase-corp.com/browse/DX-2934)]
+
 ## 5.31.1 ((1/29/2024, 05:05 PM PST))
 
 This is an artificial version bump with no new change.
