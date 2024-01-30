@@ -132,7 +132,6 @@ export const commonPackage = '@cbhq/cds-common';
 export const lottieFilesPackage = '@cbhq/cds-lottie-files';
 export const webVisualizationPackage = '@cbhq/cds-web-visualization';
 export const mobileVisualizationPackage = '@cbhq/cds-mobile-visualization';
-export const webOverlaysPackage = '@cbhq/cds-web-overlays';
 export const iconsPackage = '@cbhq/cds-icons';
 export const illustrationsPackage = '@cbhq/cds-illustrations';
 
@@ -143,7 +142,6 @@ export const packageNames = [
   lottieFilesPackage,
   webVisualizationPackage,
   mobileVisualizationPackage,
-  webOverlaysPackage,
   iconsPackage,
   illustrationsPackage,
 ] as const;

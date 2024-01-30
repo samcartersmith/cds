@@ -85,6 +85,5 @@ export default async function migration(tree: Tree) {
     tree,
     callback,
     filterSourceFiles,
-    packageNames: ['@cbhq/cds-web-overlays'],
   });
 }

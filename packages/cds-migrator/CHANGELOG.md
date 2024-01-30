@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.40 (1/30/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] chore: removed web-overlays.
+
 ## 0.1.39 (1/26/2024 PST)
 
 #### 🐞 Fixes

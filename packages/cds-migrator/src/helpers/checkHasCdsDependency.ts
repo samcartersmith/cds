@@ -11,7 +11,6 @@ import {
   objectKeys,
   PackageName,
   packageNames,
-  webOverlaysPackage,
   webPackage,
   webVisualizationPackage,
 } from './types';
@@ -100,7 +99,6 @@ export function checkHasCdsDependency({ tree, project, checkRoot }: Params): {
           [lottieFilesPackage]: dependencies[lottieFilesPackage],
           [webVisualizationPackage]: dependencies[webVisualizationPackage],
           [mobileVisualizationPackage]: dependencies[mobileVisualizationPackage],
-          [webOverlaysPackage]: dependencies[webOverlaysPackage],
           [illustrationsPackage]: dependencies[illustrationsPackage],
           [iconsPackage]: dependencies[iconsPackage],
         }
@@ -113,7 +111,6 @@ export function checkHasCdsDependency({ tree, project, checkRoot }: Params): {
           [lottieFilesPackage]: devDependencies[lottieFilesPackage],
           [webVisualizationPackage]: devDependencies[webVisualizationPackage],
           [mobileVisualizationPackage]: devDependencies[mobileVisualizationPackage],
-          [webOverlaysPackage]: devDependencies[webOverlaysPackage],
           [illustrationsPackage]: devDependencies[illustrationsPackage],
           [iconsPackage]: devDependencies[iconsPackage],
         }
@@ -126,7 +123,6 @@ export function checkHasCdsDependency({ tree, project, checkRoot }: Params): {
           [lottieFilesPackage]: peerDependencies[lottieFilesPackage],
           [webVisualizationPackage]: peerDependencies[webVisualizationPackage],
           [mobileVisualizationPackage]: peerDependencies[mobileVisualizationPackage],
-          [webOverlaysPackage]: peerDependencies[webOverlaysPackage],
           [illustrationsPackage]: peerDependencies[illustrationsPackage],
           [iconsPackage]: peerDependencies[iconsPackage],
         }
