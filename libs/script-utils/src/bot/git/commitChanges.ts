@@ -10,7 +10,7 @@ export const commitChanges = async ({
   userName: string;
   userEmail: string;
 }) =>
-  execute<string>(`Git committing changes with message "${message}"`, async () => {
+  execute(`Git committing changes with message "${message}"`, async () => {
     return spawn(
       `git config user.name "${userName}" && git config user.email "${userEmail}" && git commit -m "${message}"`,
     );

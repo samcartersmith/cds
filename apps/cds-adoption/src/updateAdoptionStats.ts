@@ -7,6 +7,7 @@ import { getConfigServiceValue } from './configService.js';
 const COMMIT_MSG_PREFIX = 'Publish CDS adoption stats';
 const PR_DESCRIPTION =
   'This PR was created by the CDS Bot. It automatically syncs and publishes CDS adoption stats regularly.';
+const WARNING_MSG_PREFIX = 'Adoption percentage for these projects is zero, please confirm';
 const GITHUB_BOT_LOGIN = 'cds-bot[bot]';
 
 export const updateAdoptionStats = async () => {
@@ -52,7 +53,7 @@ export const updateAdoptionStats = async () => {
     await bot.yarnInstall();
 
     // Gather adoption stats
-    await bot.runNxTarget('website:adoption');
+    const { stderr: updateAdoptionWarnings } = await bot.runNxTarget('website:adoption');
 
     const changedFiles = await bot.git.checkStatus();
 
@@ -77,9 +78,23 @@ export const updateAdoptionStats = async () => {
     });
     await bot.git.pushBranch(newBranchName);
 
+    // Capture projects with zero adoption percentage from adoption update warning message
+    const warningMsgPattern = new RegExp(`^${WARNING_MSG_PREFIX}: (.*)`, 'm');
+    const warningMsgMatch = updateAdoptionWarnings.match(warningMsgPattern);
+    let prBody = PR_DESCRIPTION;
+
+    if (warningMsgMatch?.[1]) {
+      const projectsWithZeroAdoptionList = warningMsgMatch[1]
+        .split(', ')
+        .map((project) => `- ${project}`)
+        .join('\n');
+
+      prBody = `${prBody}\n\n### NOTE TO REVIEWER\n\n**${WARNING_MSG_PREFIX}:**\n\n${projectsWithZeroAdoptionList}`;
+    }
+
     const newPR = await bot.octokit.createPR({
       title: commitMessage,
-      body: PR_DESCRIPTION,
+      body: prBody,
       head: newBranchName,
     });
 
@@ -98,6 +113,7 @@ export const updateAdoptionStats = async () => {
     if (botPRs.length > 0)
       await Promise.all(botPRs.map(async (pr) => bot.octokit.closePR(pr.number)));
 
+    // TODO: figure out how to do this only after adoption update PR lands to avoid uploading bad data to snowflake (e.g. Github Actions)
     await bot.runNxTarget('website:adoption-snowflake-upload');
 
     bot.logger.info(

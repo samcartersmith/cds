@@ -10,7 +10,7 @@ export const cloneRepo = async ({
   repo: string;
   accessToken: string;
 }) =>
-  execute<string>(`Git cloning repo "${owner}/${repo}"`, async () => {
+  execute(`Git cloning repo "${owner}/${repo}"`, async () => {
     return spawn(
       `git clone https://x-access-token:${accessToken}@github.cbhq.net/${owner}/${repo}.git --progress`,
     );

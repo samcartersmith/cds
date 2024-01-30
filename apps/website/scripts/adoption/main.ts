@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import fs from 'node:fs';
 import { writePrettyFile } from '@cbhq/script-utils';
 
@@ -113,7 +114,9 @@ async function generateAdopterProjectInfoData(project: ProjectParser) {
 }
 
 async function generateAdoptionFiles() {
-  return Promise.all(
+  const trackedProjectsWithZeroAdoption: string[] = [];
+
+  await Promise.all(
     adopters.map(async (config) => {
       const previousStats = await getPreviousStats(config.id);
       const currentCDSVersion = (await getCDSVersion()) || '';
@@ -128,6 +131,15 @@ async function generateAdoptionFiles() {
         cdsCommonsVersionFrom3MonthsAgo,
         previousStats,
       ).parse();
+
+      const isTrackedWithZeroAdoption =
+        !hiddenAdoptersWithPillar.some((hiddenAdopter) => hiddenAdopter.id === project.id) &&
+        Number.isNaN(project.stats.latest.cdsPercent);
+
+      if (isTrackedWithZeroAdoption) {
+        trackedProjectsWithZeroAdoption.push(project.id);
+      }
+
       await Promise.all([
         generateMdxFiles(project),
         generateAdoptersData(),
@@ -140,6 +152,8 @@ async function generateAdoptionFiles() {
       ]);
     }),
   );
+
+  return trackedProjectsWithZeroAdoption;
 }
 
 async function main() {
@@ -147,10 +161,18 @@ async function main() {
     await preGenerateCleanup();
     await getTempRepos();
     // Required to associate adopters with their stats.json file for Adoption Overview page.
-    await generateAdoptionFiles();
+    const trackedProjectsWithZeroAdoption = await generateAdoptionFiles();
     await getListOfComponentsAndImports();
     await generateAdoptionAndImpactReports();
     cleanup();
+
+    if (trackedProjectsWithZeroAdoption.length > 0) {
+      console.warn(
+        `${chalk.bold.yellowBright(
+          'Adoption percentage for these projects is zero, please confirm:',
+        )} ${chalk.bold.blueBright(trackedProjectsWithZeroAdoption.join(', '))}`,
+      );
+    }
   } catch (err) {
     if (err instanceof Error) {
       console.log(err.message);

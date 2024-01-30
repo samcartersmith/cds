@@ -65,7 +65,7 @@ export const syncAssets = async () => {
     // Sync illustrations
     await bot.runNxTarget('illustrations:sync --exitOnBreakingChanges');
 
-    const changedFiles = await bot.git.checkStatus();
+    const { stdout: changedFiles } = await bot.git.checkStatus();
 
     const hasIconsChanges = changedFiles.includes(config.repo.generatedIconsPath);
     const hasIllustrationsChanges = changedFiles.includes(config.repo.generatedIllustrationsPath);
@@ -79,7 +79,7 @@ export const syncAssets = async () => {
     if (hasIconsChanges) await bot.runNxTarget('icons:generate-stories');
     if (hasIllustrationsChanges) await bot.runNxTarget('illustrations:generate-stories');
 
-    const newerChangedFiles = await bot.git.checkStatus();
+    const { stdout: newerChangedFiles } = await bot.git.checkStatus();
 
     const hasWebChanges = newerChangedFiles.includes(config.repo.webPackagePath);
     const dateString = new Date().toISOString().replace(/\..*/, '').replaceAll(':', '-');

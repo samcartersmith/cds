@@ -28,6 +28,8 @@ export default async function checkForBreakingChanges({
     useInMemoryFileSystem: true,
   });
 
+  if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT was undefined');
+
   // add the file to the ts-morph project instance
   files.forEach((file) => {
     const sourceContent = fs.readFileSync(`${MONOREPO_ROOT}/${file}`, 'utf-8');

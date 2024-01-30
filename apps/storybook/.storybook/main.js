@@ -138,7 +138,6 @@ const config = {
       if (analyzerMode === 'json')
         console.log(`Bundle analyzer writing report to ${reportFilename}`);
       config.plugins.push(
-        // @ts-expect-error
         new BundleAnalyzerPlugin({
           analyzerMode,
           reportFilename,

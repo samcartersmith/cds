@@ -34,5 +34,5 @@ export const spawn = (
     logger.info(result.stdout);
   if (result.error) throw result.error;
   if (result.stderr && customOptions?.throwOnStderr) throw new Error(result.stderr);
-  return result.stdout;
+  return result;
 };

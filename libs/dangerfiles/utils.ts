@@ -144,6 +144,7 @@ export async function getFileContentsOnMaster(filePath: string): Promise<string 
     throw new Error(`Unable to get file contents for ${filePath} on master branch`);
   }
 }
+
 export async function fetchOriginMaster() {
   try {
     await git.fetch(['origin', 'master']);
@@ -154,7 +155,7 @@ export async function fetchOriginMaster() {
   }
 }
 
-export const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT ?? '';
+export const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 
 export function getParamsFromExportedDeclaration(declaration: ExportedDeclarations) {
   const name =

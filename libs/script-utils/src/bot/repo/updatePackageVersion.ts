@@ -22,22 +22,19 @@ export const updatePackageVersion = async ({
   prNumber,
   jiraTicket,
 }: UpdatePackageVersionOptions) =>
-  execute<string>(
-    `Bumping package version and updating changelog for project ${project}`,
-    async () => {
-      const prFlag = prNumber ? ` --pr=${prNumber}` : '';
-      const jiraFlag = jiraTicket ? ` --jira=${jiraTicket}` : '';
+  execute(`Bumping package version and updating changelog for project ${project}`, async () => {
+    const prFlag = prNumber ? ` --pr=${prNumber}` : '';
+    const jiraFlag = jiraTicket ? ` --jira=${jiraTicket}` : '';
 
-      const changelogUpdateResult = await spawn(
-        `yarn mono-pipeline version ${project} -b "${versionBump}" -m "${message}"${prFlag}${jiraFlag}`,
-      );
+    const changelogUpdateResult = await spawn(
+      `yarn mono-pipeline version ${project} -b "${versionBump}" -m "${message}"${prFlag}${jiraFlag}`,
+    );
 
-      const fullChangelogPath = resolveWorkingDirectoryPath(changelogPath);
-      // Remove x-access-token from github remote URL in changelog
-      const changelogText = readFileSync(fullChangelogPath, 'utf8');
-      const newChangelogText = changelogText.replaceAll(/x-access-token.*@/g, '');
-      writeFileSync(fullChangelogPath, newChangelogText);
+    const fullChangelogPath = resolveWorkingDirectoryPath(changelogPath);
+    // Remove x-access-token from github remote URL in changelog
+    const changelogText = readFileSync(fullChangelogPath, 'utf8');
+    const newChangelogText = changelogText.replaceAll(/x-access-token.*@/g, '');
+    writeFileSync(fullChangelogPath, newChangelogText);
 
-      return changelogUpdateResult;
-    },
-  );
+    return changelogUpdateResult;
+  });
