@@ -2,6 +2,8 @@
 
 **Web only** You can create responsive layouts by passing a configuration object to a Typography component and specify unique styles for phones, tablets, or desktops.
 
+If you're looking to apply spacing properties together with `numberOfLines`, and `numberOfLines` exceeds one, consider using a wrapper (such as `Box`) to encase the text component. This will help prevent any overflow issues.
+
 Please note, there are no default responsive styles for Typography components. This is an additive feature that you will need to configure yourself.
 
 ### Supported Properties
@@ -42,6 +44,12 @@ function ResponsiveTypography() {
       <TextBody responsiveConfig={responsiveConfig} as="p">
         Body
       </TextBody>
+      <Box as="span" width="400px" responsiveConfig={responsiveConfig}>
+        <TextBody as="p" numberOfLines={2}>
+          This is an example of long text. Crypto address
+          0xf847047c69726b4049a5b866c8fa37cfe4ed614f.
+        </TextBody>
+      </Box>
     </VStack>
   );
 }

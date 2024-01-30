@@ -1,3 +1,7 @@
+import { useMemo } from 'react';
+import { ResponsiveProps } from '@cbhq/cds-common/types';
+
+import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import { ThemeProvider } from '../../system/ThemeProvider';
@@ -272,6 +276,49 @@ export const TextNumberOfLinesNested = () => (
     </TextBody>
   </VStack>
 );
+
+export const TextNumberOfLinesCustomSpacing = () => {
+  const responsiveConfig = useMemo(
+    () =>
+      ({
+        phone: {
+          spacing: 4,
+        },
+        tablet: {
+          spacing: 3,
+        },
+        desktop: {
+          spacing: 2,
+        },
+      } as ResponsiveProps),
+    [],
+  );
+
+  return (
+    <VStack gap={3} maxWidth={300}>
+      <Box as="span" spacing={2}>
+        <TextBody as="p" numberOfLines={2}>
+          Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
+          Digital Currencies can go up or down and there can be a substantial risk that you lose
+          money buying, selling, holding, or investing in digital currencies. You should carefully
+          consider whether trading or holding Digital Currencies is suitable for you in light of
+          your financial condition. Coinbase is not registered with the U.S. Securities and Exchange
+          Commission and does not offer securities services in the United States or to U.S. persons.
+        </TextBody>
+      </Box>
+      <Box as="span" responsiveConfig={responsiveConfig}>
+        <TextBody as="p" numberOfLines={2}>
+          Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
+          Digital Currencies can go up or down and there can be a substantial risk that you lose
+          money buying, selling, holding, or investing in digital currencies. You should carefully
+          consider whether trading or holding Digital Currencies is suitable for you in light of
+          your financial condition. Coinbase is not registered with the U.S. Securities and Exchange
+          Commission and does not offer securities services in the United States or to U.S. persons.
+        </TextBody>
+      </Box>
+    </VStack>
+  );
+};
 
 export const Uppercase = () => (
   <TextBody as="p" transform="uppercase">

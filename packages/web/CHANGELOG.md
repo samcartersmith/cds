@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.31.3 (1/30/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] chore: add story and update website doc for truncated long text with spacing properties. [[DX-2756](https://jira.coinbase-corp.com/browse/DX-2756)]
+
 ## 5.31.2 (1/29/2024 PST)
 
 #### 🐞 Fixes
