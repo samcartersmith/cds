@@ -23,17 +23,49 @@ export const oneToOneMigrations: ComponentMigration[] = [
 
 const oldCardWarning =
   'This component is getting removed in v7.0.0. Please use UpsellCard or NudgeCard instead. ';
+const illoWarning = 'use Pictogram, HeroSquare, SpotSquare, or SpotRectangle instead';
+const cardMediaWarning = 'use CardMedia instead';
 
 export const removedComponents: RemovedComponent[] = [
   {
     name: 'Illustration',
     path: '@cbhq/cds-web/illustrations/Illustration',
-    replacement: 'use Pictogram, HeroSquare, SpotSquare, or SpotRectangle instead',
+    replacement: illoWarning,
   },
   {
     name: 'Illustration',
     path: '@cbhq/cds-mobile/illustrations/Illustration',
-    replacement: 'use Pictogram, HeroSquare, SpotSquare, or SpotRectangle instead',
+    replacement: illoWarning,
+  },
+  {
+    name: 'CardSpotRectangle',
+    path: '@cbhq/cds-mobile/cards/CardMedia',
+    replacement: cardMediaWarning,
+  },
+  {
+    name: 'CardSpotSquare',
+    path: '@cbhq/cds-mobile/cards/CardMedia',
+    replacement: cardMediaWarning,
+  },
+  {
+    name: 'CardPictogram',
+    path: '@cbhq/cds-mobile/cards/CardMedia',
+    replacement: cardMediaWarning,
+  },
+  {
+    name: 'CardSpotRectangle',
+    path: '@cbhq/cds-web/cards/CardMedia',
+    replacement: cardMediaWarning,
+  },
+  {
+    name: 'CardSpotSquare',
+    path: '@cbhq/cds-web/cards/CardMedia',
+    replacement: cardMediaWarning,
+  },
+  {
+    name: 'CardPictogram',
+    path: '@cbhq/cds-web/cards/CardMedia',
+    replacement: cardMediaWarning,
   },
   {
     name: 'FeatureEntryCard',

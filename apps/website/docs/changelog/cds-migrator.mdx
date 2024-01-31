@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.41 (1/31/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] chore: added card illustration migration scripts.
+
 ## 0.1.40 (1/30/2024 PST)
 
 #### 🐞 Fixes

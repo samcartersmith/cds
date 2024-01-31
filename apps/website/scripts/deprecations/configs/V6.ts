@@ -403,6 +403,78 @@ const componentDeprecations: Partial<Component>[] = [
       replaced: ['NudgeCard', 'UpsellCard'],
     },
   },
+  {
+    package: 'web',
+    name: 'CardSpotRectangle',
+    type: ['replaced'],
+    path: 'packages/web/cards/CardMedia.tsx',
+    scope: {
+      exportNames: ['CardSpotRectangle'],
+    },
+    migrationMap: {
+      replaced: ['CardMedia'],
+    },
+  },
+  {
+    package: 'web',
+    name: 'CardSpotSquare',
+    type: ['replaced'],
+    path: 'packages/web/cards/CardMedia.tsx',
+    scope: {
+      exportNames: ['CardSpotSquare'],
+    },
+    migrationMap: {
+      replaced: ['CardMedia'],
+    },
+  },
+  {
+    package: 'web',
+    name: 'CardPictogram',
+    type: ['replaced'],
+    path: 'packages/web/cards/CardMedia.tsx',
+    scope: {
+      exportNames: ['CardPictogram'],
+    },
+    migrationMap: {
+      replaced: ['CardMedia'],
+    },
+  },
+  {
+    package: 'mobile',
+    name: 'CardSpotRectangle',
+    type: ['replaced'],
+    path: 'packages/mobile/cards/CardMedia.tsx',
+    scope: {
+      exportNames: ['CardSpotRectangle'],
+    },
+    migrationMap: {
+      replaced: ['CardMedia'],
+    },
+  },
+  {
+    package: 'mobile',
+    name: 'CardSpotSquare',
+    type: ['replaced'],
+    path: 'packages/mobile/cards/CardMedia.tsx',
+    scope: {
+      exportNames: ['CardSpotSquare'],
+    },
+    migrationMap: {
+      replaced: ['CardMedia'],
+    },
+  },
+  {
+    package: 'mobile',
+    name: 'CardPictogram',
+    type: ['replaced'],
+    path: 'packages/mobile/cards/CardMedia.tsx',
+    scope: {
+      exportNames: ['CardPictogram'],
+    },
+    migrationMap: {
+      replaced: ['CardMedia'],
+    },
+  },
 ];
 
 const propDeprecations: Prop[] = [
