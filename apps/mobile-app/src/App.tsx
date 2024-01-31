@@ -52,7 +52,7 @@ const App = memo(() => {
   }
 
   return (
-    <FeatureFlagProvider>
+    <FeatureFlagProvider frontier>
       <DevicePreferencesProvider>
         <ThemeProvider name="playground-root">
           <CdsSafeAreaProvider>

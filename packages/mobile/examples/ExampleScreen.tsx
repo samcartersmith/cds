@@ -5,7 +5,6 @@ import { useRootScale } from '@cbhq/cds-common/scale/useRootScale';
 import { useRootScalePreferenceUpdater } from '@cbhq/cds-common/scale/useRootScalePreferenceUpdater';
 import { useRootSpectrum } from '@cbhq/cds-common/spectrum/useRootSpectrum';
 import { useRootSpectrumPreferenceUpdater } from '@cbhq/cds-common/spectrum/useRootSpectrumPreferenceUpdater';
-import { useFeatureFlagToggler } from '@cbhq/cds-common/system/useFeatureFlagToggler';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import type { SpacingProps } from '@cbhq/cds-common/types';
 
@@ -14,7 +13,6 @@ import { usePalette } from '../hooks/usePalette';
 import { Box, BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
-import { useFeatureFlags } from '../system/useFeatureFlags';
 import { TextTitle3 } from '../typography/TextTitle3';
 
 type ExampleRenderChildren = () => NonNullable<JSX.Element>;
@@ -77,8 +75,6 @@ const Screen: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
 export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const rootScale = useRootScale();
   const rootSpectrum = useRootSpectrum();
-  const toggleFeatureFlag = useFeatureFlagToggler();
-  const { frontier } = useFeatureFlags();
 
   const isDarkEnabled = rootSpectrum === 'dark';
   const isDenseEnabled = rootScale === 'xSmall';
@@ -95,10 +91,6 @@ export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ chil
     rootScalePreferenceUpdater(newScale);
   }, [rootScalePreferenceUpdater, rootScale]);
 
-  const toggleFrontier = useCallback(() => {
-    toggleFeatureFlag('frontier');
-  }, [toggleFeatureFlag]);
-
   return (
     <VStack testID="mobile-playground-screen">
       <Screen>
@@ -110,9 +102,6 @@ export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ chil
               </Switch>
               <Switch checked={isDenseEnabled} onChange={toggleDense}>
                 Dense Scale
-              </Switch>
-              <Switch checked={frontier} onChange={toggleFrontier}>
-                Frontier
               </Switch>
             </VStack>
             <Divider />

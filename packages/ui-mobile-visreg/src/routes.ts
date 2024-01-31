@@ -80,11 +80,6 @@ export const routes = [
       require('@cbhq/cds-mobile/cells/__stories__/ContentCellFallback.stories').default,
   },
   {
-    key: 'DebugFrontier',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/system/__stories__/DebugFrontier.stories').default,
-  },
-  {
     key: 'Divider',
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Divider.stories').default,
   },

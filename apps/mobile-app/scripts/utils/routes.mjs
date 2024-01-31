@@ -2,8 +2,6 @@
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable global-require */
 
 export const routes = [
   {
@@ -78,11 +76,6 @@ export const routes = [
     key: 'ContentCellFallback',
     getComponent: () =>
       require('@cbhq/cds-mobile/cells/__stories__/ContentCellFallback.stories').default,
-  },
-  {
-    key: 'DebugFrontier',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/system/__stories__/DebugFrontier.stories').default,
   },
   {
     key: 'Divider',

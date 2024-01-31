@@ -34,7 +34,6 @@ const disabledRoutes = {
     'SparklineInteractiveHeader',
     'Card' /** Not sure */,
     'Carousel' /** Uses random images so order changes */,
-    'DebugFrontier' /** Not in main route list UI */,
     'ContentCell' /** Main Queue jammed - looked like image networking */,
     'Dots' /** Main Queue jammed - looked like image networking */,
     'RemoteImage' /**  Main Queue jammed - looked like image networking */,

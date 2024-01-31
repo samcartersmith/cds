@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.5.0 (1/31/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] chore: removed frontier toggle from mobile-app example to reduce CLS.
+
 ## 1.4.0 (1/22/2024 PST)
 
 #### 🚀 Updates
