@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { Button, ButtonGroup } from '@cbhq/cds-web/buttons';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 
@@ -10,15 +10,17 @@ import { ImpactChart } from './ImpactChart';
 type AdoptionImpactReports = {
   adoptionTrackerCSVData: string;
   collectiveProjectReportCSVData: string;
+  adoptionTrackerCSVDataExcludeOther: string;
 };
 
 const ADOPTION_AND_PROJECT_IMPACT_REPORT_DATA =
   require(`@site/static/data/__generated__/adoption/adoption_and_impact_reports.json`) as AdoptionImpactReports;
 
-function formatWeekData(): { value: number; date: Date }[] {
-  const { adoptionTrackerCSVData } = ADOPTION_AND_PROJECT_IMPACT_REPORT_DATA;
+const { adoptionTrackerCSVDataExcludeOther, collectiveProjectReportCSVData } =
+  ADOPTION_AND_PROJECT_IMPACT_REPORT_DATA;
 
-  return adoptionTrackerCSVData
+function formatWeekData(): { value: number; date: Date }[] {
+  return adoptionTrackerCSVDataExcludeOther
     .split('\n') // split into array of lines
     .slice(1) // remove csv header, just keep the data
     .filter((line) => line !== '') // remove any empty lines
@@ -35,7 +37,6 @@ function formatWeekData(): { value: number; date: Date }[] {
 }
 
 function formatAggregateImpactData(): { value: number; date: Date }[] {
-  const { collectiveProjectReportCSVData } = ADOPTION_AND_PROJECT_IMPACT_REPORT_DATA;
   const adoptionTrackerCSVDataArray = collectiveProjectReportCSVData
     .split('\n') // split into array of lines
     .slice(1) // remove csv header, just keep the data
@@ -68,7 +69,7 @@ const sparklineDataWithTime = {
   week: formatWeekData(),
 };
 
-const sparklineDataForAggregateImapct = {
+const sparklineDataForAggregateImpact = {
   week: formatAggregateImpactData(),
 };
 
@@ -76,13 +77,14 @@ export const HistoricalCharts = () => {
   const handleAdoptionDataDownload = useCallback(async () => {
     const fileName = `adoption_rate.csv`;
 
-    downloadCSV(ADOPTION_AND_PROJECT_IMPACT_REPORT_DATA.adoptionTrackerCSVData, fileName);
+    // We use the adoptionTrackerCSVDataExcludeOther to exclude all entries under the "Other" pillar
+    downloadCSV(adoptionTrackerCSVDataExcludeOther, fileName);
   }, []);
 
   const handleImpactReportDownload = useCallback(async () => {
     const fileName = `project_impact_reports.csv`;
 
-    downloadCSV(ADOPTION_AND_PROJECT_IMPACT_REPORT_DATA.collectiveProjectReportCSVData, fileName);
+    downloadCSV(collectiveProjectReportCSVData, fileName);
   }, []);
 
   return (
@@ -98,7 +100,7 @@ export const HistoricalCharts = () => {
         </ButtonGroup>
       </HStack>
       <AdoptionChart chartData={sparklineDataWithTime} />
-      <ImpactChart chartData={sparklineDataForAggregateImapct} />
+      <ImpactChart chartData={sparklineDataForAggregateImpact} />
     </VStack>
   );
 };

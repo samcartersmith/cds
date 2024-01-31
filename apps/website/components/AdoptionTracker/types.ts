@@ -27,6 +27,7 @@ export type PillarAdoptionData = {
 export type AdopterProjectInfo = {
   github: string;
   githubUrl: string;
+  projectGitPath: string;
   id: Adopter;
   label: string;
   baseUrl: string;
@@ -114,3 +115,64 @@ export type AdopterSearchResult = {
 
 export type DetailsObject = { title: string; details: Details };
 export type Details = string | string[] | DetailsObject | DetailsObject[];
+
+export type SummaryReport = {
+  companyWide: {
+    cdsAdoption: string;
+    latestCDSAdoption: string;
+    getPercentageChangeAll?: string;
+    getPercentageChangeLatest?: string;
+  };
+  [pillar: string]:
+    | {
+        cdsAdoption: string;
+        latestCDSAdoption: string;
+        getPercentageChangeAll?: string;
+        getPercentageChangeLatest?: string;
+      }
+    | undefined;
+};
+
+export type OverallSummaryStats = {
+  date: string;
+  summaryReport: SummaryReport;
+  totalProjectVersionsList: PillarProjectData[];
+};
+
+/** Aggregated Summary for Pattern Component  */
+export type PatternComponentSummary = {
+  totalInstances: number;
+  totalCallSites: number;
+  components: AggregatedPatternComponent[];
+  config: PatternComponentConfig;
+  cdsVersion?: CDSVersionsResult;
+};
+
+/** Structure for Aggregated Pattern Component Entry */
+export type AggregatedPatternComponent = {
+  name: string;
+  sourceFile: string;
+  totalInstances: number;
+  totalCallSites: number;
+  propsWithCallSites: ComponentPropsWithCallSites;
+  callSites?: Record<string, number>;
+};
+
+/** Config for specific Pattern Components */
+export type PatternComponentConfig = {
+  patternComponentName: string;
+  owningTeam: string;
+  packageImportPath: string;
+  doc?: string;
+  packagePath: string;
+};
+
+export type ComponentPropsWithCallSites = Record<string, Record<string, number>>;
+
+export type CDSVersionsResult = {
+  cdsWeb: string;
+  cdsMobile: string;
+  cdsCommon: string;
+  lowestVersion: string;
+  sanitizedLowestVersion: string;
+};

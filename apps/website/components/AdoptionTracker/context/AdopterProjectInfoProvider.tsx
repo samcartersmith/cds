@@ -6,6 +6,7 @@ export const AdopterProjectInfoContextFallback: AdopterProjectInfo = {
   baseUrl: '',
   githubUrl: '',
   github: '',
+  projectGitPath: '',
   id: '' as AdopterProjectInfo['id'],
   label: '',
   tsAlias: '',

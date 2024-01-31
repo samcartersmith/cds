@@ -99,6 +99,9 @@ export class ProjectParser {
   /** The github org and repo for the project. */
   public github: string;
 
+  /** Rest of github project path to specific project folder. */
+  public projectGitPath: string;
+
   /** The absolute path for the source files to parse. */
   public root: string;
 
@@ -192,6 +195,7 @@ export class ProjectParser {
       root,
       dependencyPath,
       github,
+      projectGitPath,
       id,
       label,
       projectTsAliases,
@@ -212,6 +216,7 @@ export class ProjectParser {
     this.pillar = pillar;
     this.github = github;
     this.githubUrl = `https://github.cbhq.net/${org}/${repo}/tree/master`;
+    this.projectGitPath = projectGitPath;
     this.id = id;
     this.ignoreDirs = ignoreDirs;
     this.sourceGlob = sourceGlob;
@@ -241,6 +246,7 @@ export class ProjectParser {
     return {
       pillar: this.pillar,
       github: this.github,
+      projectGitPath: this.projectGitPath,
       githubUrl: this.githubUrl,
       id: this.id,
       label: this.label,

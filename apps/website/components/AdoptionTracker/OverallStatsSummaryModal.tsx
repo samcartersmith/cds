@@ -1,74 +1,25 @@
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-web/tables';
 import { TextTitle4 } from '@cbhq/cds-web/typography';
 
-import { type PillarAdoptionData, type PillarProjectData } from './types';
+import { COMPANY_WIDE_ADOPTION } from './constants';
+import { type OverallSummaryStats } from './types';
 
 type OverallStatsSummaryModalProps = {
-  totalProjectVersionsList: PillarProjectData[];
-  pillarCDSAdoptionList: PillarAdoptionData[];
-  companyWideAdoptionPercentage: string;
-  companyWideAdoptionPercentageUpToDate: string;
+  latestOverallStatsSummary: OverallSummaryStats;
   statForLatestCdsVersionPublished3MonthsAgo: string;
 };
-
-const excludedPillars = ['Other'];
-
-/**
- * Calculates the percentage of projects that are up-to-date with the latest CDS guidance.
- * It can calculate this percentage either for a specific pillar or across all pillars.
- *
- * @param totalProjectVersionsList - An array of objects, each representing a pillar with its associated project versions.
- * @param pillar - Optional string parameter to specify a pillar for which to calculate the percentage. If omitted, calculates for all pillars.
- * @returns The percentage of projects that are up-to-date, either within the specified pillar or across all pillars.
- */
-export function getPercentProductsWithinCDS({
-  totalProjectVersionsList,
-  pillar,
-  excludedPillars,
-}: {
-  totalProjectVersionsList: PillarProjectData[];
-  pillar?: string;
-  excludedPillars?: string[];
-}) {
-  const percentPGProjectsUpToDate = totalProjectVersionsList
-    .filter((project) => !(excludedPillars && excludedPillars.includes(project.pillar)))
-    .reduce(
-      (count, entry) =>
-        count +
-        entry.allProjectVersions.filter(
-          (projectEntry) => (!pillar || projectEntry.pillar === pillar) && projectEntry.upToDate,
-        ).length,
-      0,
-    );
-
-  const percentPGProjectsAll = totalProjectVersionsList
-    .filter(
-      (project) =>
-        // Exclude the projects that belong to the excluded pillars, if any are specified
-        !(excludedPillars && excludedPillars.includes(project.pillar)),
-    )
-    .reduce(
-      (count, entry) =>
-        count +
-        entry.allProjectVersions.filter((projectEntry) => !pillar || projectEntry.pillar === pillar)
-          .length,
-      0,
-    );
-
-  // Check to prevent division by zero when calculating percentage
-  if (percentPGProjectsAll === 0) return 0;
-  return (percentPGProjectsUpToDate / percentPGProjectsAll) * 100;
-}
 
 const cellSpacing = {
   inner: { spacingHorizontal: 3 },
 } as const;
 
 export function OverallStatsSummaryModal({
-  totalProjectVersionsList,
-  pillarCDSAdoptionList,
-  companyWideAdoptionPercentage,
+  latestOverallStatsSummary,
 }: OverallStatsSummaryModalProps) {
+  const { summaryReport } = latestOverallStatsSummary;
+  const {
+    companyWide: { cdsAdoption, latestCDSAdoption },
+  } = summaryReport;
   return (
     <>
       <TextTitle4 as="sub">Overall Adoption Stats</TextTitle4>
@@ -84,28 +35,17 @@ export function OverallStatsSummaryModal({
         <TableBody>
           <TableRow>
             <TableCell>Company Wide</TableCell>
-            <TableCell>{companyWideAdoptionPercentage}</TableCell>
-            <TableCell>
-              {getPercentProductsWithinCDS({ totalProjectVersionsList, excludedPillars }).toFixed(
-                2,
-              )}
-              %
-            </TableCell>
+            <TableCell>{cdsAdoption}</TableCell>
+            <TableCell>{latestCDSAdoption} %</TableCell>
           </TableRow>
 
-          {pillarCDSAdoptionList
-            .filter((entry) => entry.pillar !== 'Other')
+          {Object.keys(summaryReport)
+            .filter((key) => key !== COMPANY_WIDE_ADOPTION)
             .map((entry) => (
-              <TableRow>
-                <TableCell>{entry.pillar}</TableCell>
-                <TableCell>{entry.cdsPercentAdoption}</TableCell>
-                <TableCell>
-                  {`${getPercentProductsWithinCDS({
-                    totalProjectVersionsList,
-                    pillar: entry.pillar,
-                    excludedPillars,
-                  }).toFixed(2)}%`}
-                </TableCell>
+              <TableRow key={entry}>
+                <TableCell>{entry}</TableCell>
+                <TableCell>{summaryReport[entry]?.cdsAdoption || ''}</TableCell>
+                <TableCell>{summaryReport[entry]?.latestCDSAdoption || ''}</TableCell>
               </TableRow>
             ))}
         </TableBody>

@@ -1,10 +1,21 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import chalk from 'chalk';
+import { glob } from 'glob';
 import fs from 'node:fs';
+import path from 'path';
 import { writePrettyFile } from '@cbhq/script-utils';
+
+import {
+  PatternComponentConfig,
+  PatternComponentSummary,
+} from '../../components/AdoptionTracker/types';
 
 import { ProjectParser } from './parsers/ProjectParser';
 import { getListOfComponentsAndImports } from './utils/getListOfComponentsAndImports';
-import { getCDSCommonPackageJsonFromThreeMonthsAgo } from './utils/getOldCDSVersion';
+import {
+  getCDSCommonPackageJsonFromThreeMonthsAgo,
+  getCDSVersionFromComponentPatternPackage,
+} from './utils/getOldCDSVersion';
 import { getCDSVersion } from './utils/getPackageJson';
 import { getPreviousStats } from './utils/getPreviousStats';
 import { cleanup, getTempRepos } from './utils/getTempRepos';
@@ -17,8 +28,10 @@ import {
   generatedDataDir,
   generatedStaticDataDir,
   hiddenAdoptersWithPillar,
+  patternComponentConfig,
 } from './config';
 import { generateAdoptionAndImpactReports } from './generateAdoptionAndImpactReports';
+import { ComponentPatternJSONFile, PatternComponentData, PatternComponentInfo } from './types';
 
 async function generateMdxFiles(project: ProjectParser) {
   return writePrettyFile(
@@ -86,6 +99,152 @@ module.exports.adopters = ${JSON.stringify(adoptersSidebar)};
   );
 }
 
+function matchDependencies(
+  dependencies: Record<string, string>,
+  config: PatternComponentConfig[],
+): Record<string, string> {
+  if (!dependencies || !Object.keys(dependencies).length) return {};
+  return Object.keys(dependencies)
+    .filter((key) => config.some((c) => key === c.packageImportPath))
+    .reduce((acc: Record<string, string>, key) => {
+      acc[key] = dependencies[key];
+      return acc;
+    }, {} as Record<string, string>);
+}
+
+async function generateComponentPatternsData(
+  project: ProjectParser,
+  config: PatternComponentConfig[],
+): Promise<void> {
+  const projectPath = path.join(generatedStaticDataDir.absolutePath, project.id);
+  const infoPath = path.join(projectPath, 'info.json');
+  const componentsPath = path.join(projectPath, 'components.json');
+
+  try {
+    const infoDataRaw = await fs.promises.readFile(infoPath, 'utf8');
+    const componentsDataRaw = await fs.promises.readFile(componentsPath, 'utf8');
+
+    const infoData: PatternComponentInfo = JSON.parse(infoDataRaw);
+    const componentsData: PatternComponentData = JSON.parse(componentsDataRaw);
+
+    const matchedComponents = patternComponentConfig
+      .map(
+        (config) =>
+          Object.values(componentsData)
+            // eslint-disable-next-line array-callback-return
+            .map((components) => {
+              const component = components.find(
+                (component) =>
+                  component.name === config.patternComponentName &&
+                  component.sourceFile.startsWith(config.packageImportPath),
+              );
+              if (component) return { component, config };
+            })
+            .filter(Boolean) || [],
+      )
+      .flat();
+
+    const matchedDependencies = {
+      dependencies: matchDependencies(infoData.dependencies, config),
+      devDependencies: matchDependencies(infoData.devDependencies, config),
+      peerDependencies: matchDependencies(infoData.peerDependencies, config),
+      resolutions: matchDependencies(infoData.resolutions, config),
+    };
+
+    const patternsData = {
+      components: matchedComponents,
+      dependencies: matchedDependencies,
+    };
+
+    await fs.promises.writeFile(
+      path.join(projectPath, 'componentPatterns.json'),
+      JSON.stringify(patternsData, null, 2),
+    );
+  } catch (error) {
+    console.error(`Error generating component patterns data for ${project.id}:`, error);
+  }
+}
+
+async function generateComponentPatternsSummary(): Promise<void> {
+  const patternFilePaths = await glob(
+    `${generatedStaticDataDir.absolutePath}/*/componentPatterns.json`,
+  );
+
+  const componentSummary: Record<string, PatternComponentSummary> = {};
+
+  patternFilePaths.forEach(async (filePath) => {
+    const content = fs.readFileSync(filePath, 'utf8');
+    const json: ComponentPatternJSONFile = JSON.parse(content);
+
+    if (!json?.components || json.components.length === 0) return;
+    json.components.forEach(async ({ component, config }) => {
+      const { name } = component;
+
+      if (!componentSummary[name]) {
+        componentSummary[name] = {
+          totalInstances: 0,
+          totalCallSites: 0,
+          components: [],
+          config: {
+            owningTeam: config.owningTeam,
+            doc: config.doc,
+            packageImportPath: config.packageImportPath,
+            patternComponentName: config.patternComponentName,
+            packagePath: config.packagePath,
+          },
+          cdsVersion: {
+            cdsWeb: '',
+            cdsMobile: '',
+            cdsCommon: '',
+            lowestVersion: '',
+            sanitizedLowestVersion: '',
+          },
+        };
+      }
+
+      componentSummary[name].totalInstances += component.totalInstances;
+      componentSummary[name].totalCallSites += component.totalCallSites;
+      componentSummary[name].components.push(component);
+    });
+  });
+
+  await fs.promises.writeFile(
+    path.join(generatedStaticDataDir.absolutePath, 'componentPatternsSummary.json'),
+    JSON.stringify(componentSummary, null, 2),
+  );
+}
+
+async function addCDSVersionToComponentPatternData(): Promise<void> {
+  const summaryFilePath = path.join(
+    generatedStaticDataDir.absolutePath,
+    'componentPatternsSummary.json',
+  );
+
+  try {
+    // Load the component patterns summary data
+    const dataRaw = await fs.promises.readFile(summaryFilePath, 'utf8');
+    const summaryData: Record<string, PatternComponentSummary> = JSON.parse(dataRaw);
+
+    // Iterate over each component in the summary data
+    for (const [, componentData] of Object.entries(summaryData)) {
+      const { config } = componentData;
+      const { packagePath } = config;
+
+      // Fetch CDS version information for the component's package
+      // eslint-disable-next-line no-await-in-loop
+      const cdsVersionResult = await getCDSVersionFromComponentPatternPackage(packagePath);
+
+      // Add CDS version info to the component's data
+      componentData.cdsVersion = cdsVersionResult;
+    }
+
+    // Write the updated data back to the file
+    await fs.promises.writeFile(summaryFilePath, JSON.stringify(summaryData, null, 2));
+    console.log('Successfully updated component pattern data with CDS versions.');
+  } catch (error) {
+    console.error('Error adding CDS version to component pattern data:', error);
+  }
+}
 async function generateAdoptionDirectory(project: ProjectParser) {
   return fs.promises.mkdir(`${generatedStaticDataDir.absolutePath}/${project.id}`, {
     recursive: true,
@@ -150,6 +309,7 @@ async function generateAdoptionFiles() {
         generateAdopterStatsData(project),
         generateAdopterProjectInfoData(project),
       ]);
+      await generateComponentPatternsData(project, patternComponentConfig);
     }),
   );
 
@@ -164,6 +324,9 @@ async function main() {
     const trackedProjectsWithZeroAdoption = await generateAdoptionFiles();
     await getListOfComponentsAndImports();
     await generateAdoptionAndImpactReports();
+    await generateComponentPatternsSummary();
+    await addCDSVersionToComponentPatternData();
+
     cleanup();
 
     if (trackedProjectsWithZeroAdoption.length > 0) {

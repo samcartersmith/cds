@@ -929,6 +929,7 @@ const sidebars = {
           items: [
             { type: 'doc', id: 'adoption-tracker-overview', label: 'Overview' },
             { type: 'doc', id: 'historical-adoption', label: 'Historical Tracker Data' },
+            { type: 'doc', id: 'component-pattern-adoption', label: 'Pattern Component Data' },
             ...adopters,
           ],
         },

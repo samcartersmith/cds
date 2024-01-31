@@ -1,0 +1,73 @@
+{
+  "components": [
+    {
+      "component": {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "action": {
+            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "target": {
+            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "config": {
+            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "patternComponentName": "AppSwitcher",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/app-switcher",
+        "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      }
+    },
+    {
+      "component": {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "appSwitcherOptions": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "projectId": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "target": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "start": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "patternComponentName": "NavigationBar",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/identity-navigation",
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      }
+    }
+  ],
+  "dependencies": {
+    "dependencies": {
+      "@cbhq/app-switcher": "^0.3.1",
+      "@cbhq/identity-navigation": "^0.2.1"
+    },
+    "devDependencies": {},
+    "peerDependencies": {},
+    "resolutions": {}
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "components": [
+    {
+      "component": {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "start": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "end": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "bottom": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "action": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "projectId": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "appSwitcherOptions": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "target": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "patternComponentName": "NavigationBar",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/identity-navigation",
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      }
+    }
+  ],
+  "dependencies": {
+    "dependencies": {
+      "@cbhq/app-switcher": "^0.3.2",
+      "@cbhq/identity-navigation": "^0.2.2"
+    },
+    "devDependencies": {},
+    "peerDependencies": {},
+    "resolutions": {}
+  }
+}

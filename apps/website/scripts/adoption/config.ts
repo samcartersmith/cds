@@ -1,6 +1,8 @@
 import path from 'node:path';
 import { getPath } from '@cbhq/script-utils';
 
+import { PatternComponentConfig } from '../../components/AdoptionTracker/types';
+
 import { flattenConfig } from './utils/flattenConfig';
 import { formatSidebar } from './utils/formatSidebar';
 import type { AdoptersConfig, FeaturedComponentsConfig } from './types';
@@ -68,6 +70,7 @@ export const config: AdoptersConfig[] = [
         label: 'Commerce Merchant',
         projectTsAliases: ['@commerce/frontend'],
         type: 'doc',
+        projectGitPath: 'apps/commerce-merchant',
       },
       {
         root: path.join(tempDir, retailMobileGit),
@@ -78,6 +81,7 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: ['@app'],
         type: 'doc',
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
+        projectGitPath: 'src/packages/app',
       },
       {
         root: path.join(tempDir, retailWebGit, 'app'),
@@ -85,6 +89,7 @@ export const config: AdoptersConfig[] = [
         id: 'retail-web-logged-in',
         label: 'Retail Web Logged In',
         type: 'doc',
+        projectGitPath: 'app',
       },
       {
         //  note: react-native-core has * in it's package.json (https://github.cbhq.net/consumer/react-native/blob/master/libs/react-native-core/package.json)
@@ -96,6 +101,7 @@ export const config: AdoptersConfig[] = [
         label: 'React Native Core',
         type: 'doc',
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
+        projectGitPath: 'libs/react-native-core',
       },
       {
         //  note: react-native/src/packages/onboarding has * in it's package.json (https://github.cbhq.net/consumer/react-native/blob/master/src/packages/onboarding/package.json)
@@ -108,6 +114,7 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: ['@onboarding'],
         type: 'doc',
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/onboarding'),
+        projectGitPath: 'src/packages/onboarding',
       },
       {
         root: path.join(tempDir, retailWebGit, 'marketing'),
@@ -115,6 +122,7 @@ export const config: AdoptersConfig[] = [
         id: 'retail-web-logged-out',
         label: 'Retail Web Logged Out',
         type: 'doc',
+        projectGitPath: 'marketing',
       },
       {
         root: path.join(tempDir, retailWebGit, 'onboarding'),
@@ -123,6 +131,7 @@ export const config: AdoptersConfig[] = [
         label: 'Retail Onboarding',
         type: 'doc',
         sourceGlob: ['(components|steps)/**/*.(ts|tsx)'],
+        projectGitPath: 'onboarding',
       },
       {
         root: path.join(tempDir, retailWebGit, 'packages/advanced-trade-web'),
@@ -130,6 +139,7 @@ export const config: AdoptersConfig[] = [
         id: 'advanced-trade-web',
         label: 'Advanced Trade Web Package',
         type: 'doc',
+        projectGitPath: 'packages/advanced-trade-web',
       },
       {
         root: path.join(tempDir, retailWebGit, 'app'),
@@ -152,6 +162,7 @@ export const config: AdoptersConfig[] = [
           'views/AdvancedTradeManagement/**/*.(ts|tsx)',
           'views/AdvancedTradeSpot/**/*.(ts|tsx)',
         ],
+        projectGitPath: 'app/src/views',
       },
       {
         root: path.join(tempDir, retailMobileGit),
@@ -191,6 +202,7 @@ export const config: AdoptersConfig[] = [
           'screens/YieldMigrationNotice/**/*.(ts|tsx)',
         ],
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
+        projectGitPath: 'src/packages/app/src/screens',
       },
       {
         root: path.join(tempDir, retailWebGit, 'app'),
@@ -209,6 +221,7 @@ export const config: AdoptersConfig[] = [
           'views/Web3/**/*.(ts|tsx)',
           'views/YieldCenter/**/*.(ts|tsx)',
         ],
+        projectGitPath: 'app/src/views',
       },
       {
         root: path.join(tempDir, mauiGit, 'maui-frontend'),
@@ -216,6 +229,7 @@ export const config: AdoptersConfig[] = [
         id: 'maui',
         label: 'Coinbase NFT',
         type: 'doc',
+        projectGitPath: '',
       },
       {
         root: path.join(tempDir, walletGit, 'workspaces'),
@@ -236,6 +250,7 @@ export const config: AdoptersConfig[] = [
         ignoreDirs: ['debug/**'],
         type: 'doc',
         dependencyPath: path.join(tempDir, walletGit, 'workspaces/apps/extension'),
+        projectGitPath: 'workspaces/apps/extension',
       },
       {
         root: path.join(tempDir, walletGit, 'workspaces'),
@@ -246,6 +261,7 @@ export const config: AdoptersConfig[] = [
         cdsAliases: [':rn/cds-wallet'],
         type: 'doc',
         dependencyPath: path.join(tempDir, walletGit, 'workspaces/apps/rn'),
+        projectGitPath: 'workspaces/apps/rn',
       },
       {
         root: path.join(tempDir, walletGit, 'workspaces'),
@@ -256,6 +272,7 @@ export const config: AdoptersConfig[] = [
         cdsAliases: [':apps/dapp'],
         type: 'doc',
         dependencyPath: path.join(tempDir, walletGit, 'workspaces/apps/dapp'),
+        projectGitPath: 'workspaces/apps/dapp',
       },
       {
         root: path.join(tempDir, frontendWebGit, 'apps/stand-with-crypto'),
@@ -264,6 +281,7 @@ export const config: AdoptersConfig[] = [
         label: 'Stand With Crypto',
         projectTsAliases: [':stand-with-crypto'],
         type: 'doc',
+        projectGitPath: 'apps/stand-with-crypto',
       },
     ],
   },
@@ -279,6 +297,7 @@ export const config: AdoptersConfig[] = [
         label: 'Prime Mobile',
         projectTsAliases: ['@prime-mobile'],
         type: 'doc',
+        projectGitPath: '',
       },
       {
         ...primeWebConfig,
@@ -287,6 +306,7 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: ['@prime-ui'],
         type: 'doc',
         dependencyPath: path.join(tempDir, primeWebGit, 'apps/prime'),
+        projectGitPath: 'apps/prime',
       },
       {
         ...primeWebConfig,
@@ -295,6 +315,7 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: ['@prime-admin', ':prime/admin', '@prime-ui'],
         type: 'doc',
         dependencyPath: path.join(tempDir, primeWebGit, 'apps/prime-admin'),
+        projectGitPath: 'apps/prime-admin',
       },
       {
         root: path.join(tempDir, unifiedAccountsGit),
@@ -303,6 +324,7 @@ export const config: AdoptersConfig[] = [
         label: 'Unified Business Onboarding',
         projectTsAliases: ['@ubo'],
         type: 'doc',
+        projectGitPath: '',
       },
       {
         root: path.join(tempDir, frontendWebGit, 'apps/neptune'),
@@ -311,6 +333,7 @@ export const config: AdoptersConfig[] = [
         label: 'Neptune',
         projectTsAliases: [':neptune/app', ':neptune/feature'],
         type: 'doc',
+        projectGitPath: 'apps/neptune',
       },
     ],
   },
@@ -326,6 +349,7 @@ export const config: AdoptersConfig[] = [
         label: 'Unified Accounts',
         projectTsAliases: ['@acc'],
         type: 'doc',
+        projectGitPath: '',
       },
       {
         root: path.join(tempDir, identityGit, 'apps/unified-login'),
@@ -334,6 +358,7 @@ export const config: AdoptersConfig[] = [
         label: 'Unified Login Web',
         sourceGlob: ['apps/unified-login/**/*.(ts|tsx)'],
         type: 'doc',
+        projectGitPath: 'apps/unified-login',
       },
       {
         root: path.join(tempDir, identityGit, 'packages/two-factor-web'),
@@ -342,6 +367,7 @@ export const config: AdoptersConfig[] = [
         label: 'Two Factor Web',
         sourceGlob: ['packages/two-factor-web/**/*.(ts|tsx)'],
         type: 'doc',
+        projectGitPath: 'packages/two-factor-web',
       },
       {
         root: path.join(tempDir, identityGit, 'packages/two-factor-mobile'),
@@ -350,6 +376,7 @@ export const config: AdoptersConfig[] = [
         label: 'Two Factor Mobile',
         sourceGlob: ['packages/two-factor-mobile/**/*.(ts|tsx)'],
         type: 'doc',
+        projectGitPath: 'packages/two-factor-mobile',
       },
       {
         root: path.join(tempDir, unifiedAccountsGit),
@@ -358,6 +385,7 @@ export const config: AdoptersConfig[] = [
         label: 'Tax Center',
         projectTsAliases: ['@taxcenter'],
         type: 'doc',
+        projectGitPath: 'src/settings/TaxCenter',
       },
       {
         root: path.join(tempDir, frontendWebGit, 'packages/cb-chat'),
@@ -366,6 +394,7 @@ export const config: AdoptersConfig[] = [
         label: 'Coinbase Chat Web',
         sourceGlob: ['packages/cb-chat/**/*.(ts|tsx)'],
         type: 'doc',
+        projectGitPath: 'packages/cb-chat',
       },
       {
         root: path.join(tempDir, frontendWebGit, 'packages/cb-chat-mobile'),
@@ -374,6 +403,7 @@ export const config: AdoptersConfig[] = [
         label: 'Coinbase Chat Mobile',
         sourceGlob: ['packages/cb-chat-mobile/**/*.(ts|tsx)'],
         type: 'doc',
+        projectGitPath: 'packages/cb-chat-mobile',
       },
     ],
   },
@@ -389,6 +419,7 @@ export const config: AdoptersConfig[] = [
         label: 'Cloud Console',
         projectTsAliases: [':cloud'],
         type: 'doc',
+        projectGitPath: 'apps/cloud-console',
       },
       {
         root: path.join(tempDir, commerceFE, 'apps/commerce-merchant'),
@@ -398,6 +429,7 @@ export const config: AdoptersConfig[] = [
         label: 'Commerce Merchant',
         sourceGlob: ['apps/commerce-merchant/**/*.(ts|tsx)'],
         type: 'doc',
+        projectGitPath: 'apps/commerce-merchant',
       },
       {
         root: path.join(tempDir, commerceFE, 'apps/commerce-payer'),
@@ -407,6 +439,7 @@ export const config: AdoptersConfig[] = [
         label: 'Commerce Payer',
         sourceGlob: ['apps/commerce-payer/**/*.(ts|tsx)'],
         type: 'doc',
+        projectGitPath: 'apps/commerce-payer',
       },
       {
         root: path.join(tempDir, commerceFE, 'apps/donations'),
@@ -416,6 +449,7 @@ export const config: AdoptersConfig[] = [
         label: 'Commerce Donations',
         sourceGlob: ['apps/donations/**/*.(ts|tsx)'],
         type: 'doc',
+        projectGitPath: 'apps/donations',
       },
       {
         root: path.join(tempDir, paymentsOnRampGit),
@@ -424,6 +458,7 @@ export const config: AdoptersConfig[] = [
         id: 'payments-onramp-widget',
         label: 'Payments On Ramp Widget',
         type: 'doc',
+        projectGitPath: '',
       },
       {
         root: path.join(tempDir, paymentsCbPayGit, 'workspaces/cbpay-sdk-rn'),
@@ -432,6 +467,7 @@ export const config: AdoptersConfig[] = [
         id: 'cbpay-sdk-rn',
         label: 'Payments CBPay SDK RN',
         type: 'doc',
+        projectGitPath: 'workspaces/cbpay-sdk-rn',
       },
     ],
   },
@@ -447,6 +483,7 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: [':www', ':shared'],
         type: 'doc',
         dependencyPath: path.join(tempDir, assethubGit, 'apps/www'),
+        projectGitPath: 'apps/www',
       },
       {
         ...assethubConfig,
@@ -455,6 +492,7 @@ export const config: AdoptersConfig[] = [
         projectTsAliases: [':admin', ':shared'],
         type: 'doc',
         dependencyPath: path.join(tempDir, assethubGit, 'apps/admin'),
+        projectGitPath: 'apps/admin',
       },
       {
         root: path.join(tempDir, frontendWebGit, 'apps/abor'),
@@ -463,6 +501,7 @@ export const config: AdoptersConfig[] = [
         label: 'Abor',
         projectTsAliases: [':abor'],
         type: 'doc',
+        projectGitPath: 'apps/abor',
       },
       // Commerce Web is deprecated so moving to other.
       {
@@ -472,8 +511,25 @@ export const config: AdoptersConfig[] = [
         id: 'commerce-web',
         label: 'Commerce Web',
         type: 'doc',
+        projectGitPath: '',
       },
     ],
+  },
+];
+
+export const patternComponentConfig: PatternComponentConfig[] = [
+  {
+    patternComponentName: 'AppSwitcher',
+    owningTeam: 'Identity',
+    packageImportPath: '@cbhq/app-switcher',
+    doc: 'https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide',
+    packagePath: path.join(tempDir, identityGit, 'packages/app-switcher/package.json'),
+  },
+  {
+    patternComponentName: 'NavigationBar',
+    owningTeam: 'Identity',
+    packageImportPath: '@cbhq/identity-navigation',
+    packagePath: path.join(tempDir, identityGit, 'packages/identity-navigation/package.json'),
   },
 ];
 

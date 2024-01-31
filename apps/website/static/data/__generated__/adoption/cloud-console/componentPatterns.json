@@ -1,0 +1,91 @@
+{
+  "components": [
+    {
+      "component": {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            ":cloud/widgets/navigation/TopNav.tsx": 1
+          },
+          "action": {
+            ":cloud/widgets/navigation/TopNav.tsx": 1
+          },
+          "target": {
+            ":cloud/widgets/navigation/TopNav.tsx": 1
+          },
+          "config": {
+            ":cloud/widgets/navigation/TopNav.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "patternComponentName": "AppSwitcher",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/app-switcher",
+        "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      }
+    },
+    {
+      "component": {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "start": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "end": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "bottom": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "action": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "projectId": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "appSwitcherOptions": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "target": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "onThemeToggle": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "activeThemeLabel": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "themeToggleValue": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "onBeforeNavigate": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "patternComponentName": "NavigationBar",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/identity-navigation",
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      }
+    }
+  ],
+  "dependencies": {
+    "dependencies": {
+      "@cbhq/app-switcher": "^0.3.2",
+      "@cbhq/identity-navigation": "^0.2.2"
+    },
+    "devDependencies": {},
+    "peerDependencies": {},
+    "resolutions": {}
+  }
+}

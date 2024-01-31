@@ -1,5 +1,13 @@
 import * as ts from 'typescript';
 
+import { adopters } from ':cds-website/data/__generated__/adoption/adopters';
+import { hiddenAdopters } from ':cds-website/data/__generated__/adoption/adopters-hidden';
+
+import {
+  AggregatedPatternComponent,
+  PatternComponentConfig,
+} from '../../components/AdoptionTracker/types';
+
 import type { AdoptionStats } from './utils/getStats';
 
 export type ObjectString = Record<string, string>;
@@ -24,11 +32,48 @@ export type ParsedFile = {
   // components: Record<string, TsJsxNode[]>;
 };
 
+/** Config for the data obtained from the info.json for specific project and pattern component */
+export type PatternComponentInfo = {
+  dependencies: Record<string, string>;
+  devDependencies: Record<string, string>;
+  peerDependencies: Record<string, string>;
+  resolutions: Record<string, string>;
+};
+
+/** Config for the data obtained from the component.json for specific project and pattern component */
+export type PatternComponentData = {
+  cds: PatternComponent[];
+};
+
+export type PatternComponent = {
+  name: string;
+  sourceFile: string;
+} & PatternComponentConfig;
+
+/** Component Structure for component entry from parsed json */
+export type ComponentDataFromJSON = {
+  component: AggregatedPatternComponent;
+  config: PatternComponentConfig;
+};
+
+/** JSON file format for componentPatterns.json */
+export type ComponentPatternJSONFile = {
+  components: ComponentDataFromJSON[];
+  dependencies: {
+    dependencies: Record<string, string>;
+    devDependencies: Record<string, string>;
+    peerDependencies: Record<string, string>;
+    resolutions: Record<string, string>;
+  };
+};
+
 export type AdopterConfig = {
   /** The absolute path for the source files to parse. */
   root: string;
   /** The github url for the projects repo. This will be used to link to source files. */
   github: string;
+  /** Rest of github project path to specific project folder */
+  projectGitPath: string;
   /** A unique identifier for the project.  */
   id: string;
   /** A label to use when displaying metrics on website. */
@@ -91,4 +136,99 @@ export type FeaturedComponentsConfig = {
   cds: string[];
   presentational: string[];
   other: string[];
+};
+
+export type Adopters = typeof adopters | typeof hiddenAdopters;
+export type Adopter = (typeof adopters)[number]['id'] | (typeof hiddenAdopters)[number]['id'];
+
+export type AdopterProjectVersionSummary = {
+  id: string;
+  version: string;
+  pillar?: string;
+  upToDate: boolean;
+  adopterStatsItem: AdopterStatsItem;
+};
+
+export type PillarProjectData = {
+  pillar: string;
+  allProjectVersions: AdopterProjectVersionSummary[];
+  totalProjectsCount: number;
+};
+
+export type PillarAdoptionData = {
+  pillar: string;
+  cdsPercentAdoption: string;
+  cdsPercentAdoptionWithinLatest3Months: string;
+};
+
+/** Stores version stats for an adopter project */
+export type VersionStatsProps = {
+  cdsCommonVersion: string;
+  cdsWebVersion: string;
+  cdsMobileVersion: string;
+  cdsLatestVersion: string;
+  latestCdsVersionPublished3MonthsAgo: string;
+  upToDate: boolean;
+};
+
+export type VersionMap = {
+  common: string;
+  web: string;
+  mobile: string;
+};
+
+export type AdopterStatsItem = {
+  date: string;
+  cdsPercent: number;
+  cds: number;
+  presentational: number;
+  totalCdsAndPresentational: number;
+  totalOther: number;
+  period?: `Q${number}:${number}`;
+} & VersionStatsProps;
+
+export type AdopterStats = {
+  latest: AdopterStatsItem;
+  previous: AdopterStatsItem[];
+};
+
+export type ComponentData = {
+  name: string;
+  sourceFile: string;
+  totalInstances: number;
+  totalCallSites: number;
+  props?: Record<string, number>;
+  propsWithCallSites?: Record<string, Record<string, number>>;
+  callSites?: Record<string, number>;
+  cds?: string;
+  presentationalElement?: string;
+  presentationalProps?: { prop: string; callSite: string }[];
+  styledComponent?: string;
+  extendedStyledComponents?: {
+    alias: string;
+    callSite: string;
+  }[];
+  aliasedCdsComponents?: {
+    aliasPath: string;
+    callSites: string[];
+  }[];
+  isFeatured?: true;
+};
+
+export const statsFallback = {
+  latest: {
+    date: '',
+    cdsPercent: 0,
+    cds: 0,
+    presentational: 0,
+    totalCdsAndPresentational: 0,
+    totalOther: 0,
+    cdsCommonVersion: '',
+    cdsWebVersion: '',
+    cdsMobileVersion: '',
+    cdsLatestVersion: '',
+    latestCdsVersionPublished3MonthsAgo: '',
+    upToDate: false,
+  } as AdopterStatsItem,
+  previous: [] as AdopterStatsItem[],
 };

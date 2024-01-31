@@ -1,9 +1,23 @@
 import { parse } from 'date-fns';
 import glob from 'fast-glob';
 import fs from 'fs';
+import getFirst from 'lodash/first';
 import path from 'path';
 
+import { OverallSummaryStats, SummaryReport } from '../../components/AdoptionTracker/types';
+import { adopters } from '../../data/__generated__/adoption/adopters';
 import { hiddenAdopters } from '../../data/__generated__/adoption/adopters-hidden';
+
+import { formatDate } from './utils/formatDate';
+import {
+  EXCLUDED_PILLARS,
+  getAllProjectCDSVersionsForPillar,
+  getPercentage,
+  getPercentageChange,
+  getPercentProductsWithinCDS,
+  getSortedProjectPairs,
+} from './utils/getOverallSummaryStats';
+import { PillarAdoptionData, PillarProjectData } from './types';
 
 type Entry = {
   date: string;
@@ -29,6 +43,36 @@ type HistoricalProjectData = {
   sortedDates: string[];
 };
 
+const totalProjectVersionsList: PillarProjectData[] = [];
+const scopedAdopters = getSortedProjectPairs(adopters);
+scopedAdopters.forEach(([pillar, projectsInPillar]) => {
+  totalProjectVersionsList.push({
+    pillar,
+    allProjectVersions: getAllProjectCDSVersionsForPillar(pillar),
+    totalProjectsCount: projectsInPillar.length,
+  });
+});
+let cdsAdoptionByPillar: PillarAdoptionData[] = [];
+
+function populateCDSAdoptionPercentageListByPillar() {
+  const uniquePillars = new Set(adopters.map(({ pillar }) => pillar));
+  cdsAdoptionByPillar = [];
+  uniquePillars.forEach((pillar: string) => {
+    const { percentageText } = getPercentage({ pillar, excludedPillars: EXCLUDED_PILLARS });
+    const adoptionPercentageForPillarObj = getPercentage({
+      pillar,
+      isUpToDateOnly: true,
+      excludedPillars: EXCLUDED_PILLARS,
+    });
+
+    cdsAdoptionByPillar.push({
+      pillar,
+      cdsPercentAdoption: percentageText,
+      cdsPercentAdoptionWithinLatest3Months: adoptionPercentageForPillarObj.percentageText,
+    });
+  });
+}
+
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT ?? '';
 const ADOPTION_REPORTS_DIR = path.join(
   MONOREPO_ROOT,
@@ -38,6 +82,26 @@ const ADOPTION_REPORTS_DIR = path.join(
 function saveToFile(data: string, fileName: string): void {
   fs.writeFileSync(fileName, data);
   console.log(`File "${fileName}" saved successfully.`);
+}
+
+function getExcludedProjects() {
+  const excludedProjects: string[] = [];
+  const overallSummaryStatsObj =
+    require(`${ADOPTION_REPORTS_DIR}/adoption_overall_stats_summary.json`) as OverallSummaryStats[];
+
+  const overallStatsSummary: OverallSummaryStats | undefined =
+    getFirst(overallSummaryStatsObj) || undefined;
+
+  if (overallStatsSummary?.totalProjectVersionsList) {
+    overallStatsSummary.totalProjectVersionsList.forEach((entry) => {
+      entry.allProjectVersions.forEach((project) => {
+        if (project.pillar === 'Other') {
+          excludedProjects.push(project.id);
+        }
+      });
+    });
+  }
+  return excludedProjects;
 }
 
 async function getHistoricalData(statsPaths: string[]): Promise<HistoricalProjectData> {
@@ -131,6 +195,40 @@ function getLastDateInPeriod(allHistoricalProjectData: HistoricalProjectData): s
   return lastDates;
 }
 
+function generateAdoptionTrackerCSVDataExcludingOther(
+  allHistoricalProjectData: HistoricalProjectData,
+  excludedProjects: string[],
+) {
+  const adoptionTrackerCSVDataExcludingOther: string[] = [];
+
+  allHistoricalProjectData.sortedDates.forEach((date) => {
+    const projects = allHistoricalProjectData.data[date];
+    let sumCdsCmpts = 0;
+    let sumTotalCmpts = 0;
+    let projectCount = 0;
+
+    Object.entries(projects).forEach(([projectPath, stats]) => {
+      const projectName = path.basename(path.dirname(projectPath));
+      if (!excludedProjects.includes(projectName)) {
+        sumCdsCmpts += stats.cds;
+        sumTotalCmpts += stats.totalCdsAndPresentational;
+        projectCount++;
+      }
+    });
+    const averageCdsPercent = sumCdsCmpts / sumTotalCmpts;
+
+    if (projectCount >= 15) {
+      adoptionTrackerCSVDataExcludingOther.push(
+        `${date},${getPeriodString(date)},${averageCdsPercent}`,
+      );
+    }
+  });
+
+  return `Date,Period,Company-wide Adoption Rate\n${adoptionTrackerCSVDataExcludingOther.join(
+    '\n',
+  )}`;
+}
+
 function generateAdoptionTrackerCSVData(allHistoricalProjectData: HistoricalProjectData) {
   const adoptionTrackerCSVData: string[] = [];
 
@@ -152,6 +250,84 @@ function generateAdoptionTrackerCSVData(allHistoricalProjectData: HistoricalProj
   });
 
   return `Date,Period,Company-wide Adoption Rate\n${adoptionTrackerCSVData.join('\n')}`;
+}
+
+function generateOverallStatsSummaryReport() {
+  populateCDSAdoptionPercentageListByPillar();
+
+  const summaryReport: SummaryReport = {
+    companyWide: {
+      cdsAdoption: '0',
+      latestCDSAdoption: '0',
+      getPercentageChangeAll: '0',
+      getPercentageChangeLatest: '0',
+    },
+  };
+
+  const { diff, changePercentageText: changePercentageTextAll } = getPercentageChange({
+    excludedPillars: EXCLUDED_PILLARS,
+  });
+
+  const { diff: diffLatest, changePercentageText: changePercentageTextLatest } =
+    getPercentageChange({
+      excludedPillars: EXCLUDED_PILLARS,
+      upToDate: true,
+    });
+
+  summaryReport.companyWide.cdsAdoption = getPercentage({
+    excludedPillars: EXCLUDED_PILLARS,
+  }).percentageText;
+
+  summaryReport.companyWide.latestCDSAdoption = getPercentProductsWithinCDS({
+    totalProjectVersionsList,
+    excludedPillars: EXCLUDED_PILLARS,
+  }).toFixed(2);
+
+  summaryReport.companyWide.getPercentageChangeAll =
+    diff !== '' ? changePercentageTextAll : 'No change';
+  summaryReport.companyWide.getPercentageChangeLatest =
+    diffLatest !== '' ? changePercentageTextLatest : 'No change';
+
+  cdsAdoptionByPillar.forEach((entry) => {
+    if (entry.pillar !== 'Other') {
+      const { pillar, cdsPercentAdoption } = entry;
+      const latestCDSAdoptionPercentage = getPercentProductsWithinCDS({
+        totalProjectVersionsList,
+        pillar,
+        excludedPillars: EXCLUDED_PILLARS,
+      });
+
+      summaryReport[pillar] = {
+        cdsAdoption: cdsPercentAdoption,
+        latestCDSAdoption: `${latestCDSAdoptionPercentage.toFixed(2)}%`,
+      };
+    }
+  });
+
+  const fullSummaryReport = {
+    date: formatDate(new Date(), {
+      hour: undefined,
+      minute: undefined,
+    }),
+    summaryReport,
+    totalProjectVersionsList,
+  };
+
+  const filePath = `${ADOPTION_REPORTS_DIR}/adoption_overall_stats_summary.json`;
+  let existingData: OverallSummaryStats[] = [];
+
+  // Check if the file exists
+  if (fs.existsSync(filePath)) {
+    // Read and parse existing data
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    existingData = JSON.parse(fileContent) as OverallSummaryStats[];
+  }
+
+  // Append new data to the existing data
+  existingData.unshift(fullSummaryReport);
+
+  // Write the updated data back to the file
+  fs.writeFileSync(filePath, JSON.stringify(existingData, null, 2));
 }
 
 function generateCollectiveProjectCSVData(allHistoricalProjectData: HistoricalProjectData) {
@@ -201,9 +377,17 @@ export async function generateAdoptionAndImpactReports() {
   // Generate collection of all data to easily parse for reports
   const allHistoricalProjectData = await getHistoricalData(statsPaths);
 
+  // Create Report for Overall Version % and PG Version %
+  generateOverallStatsSummaryReport();
+
   // Create Adoption Rate CSV String
   const adoptionTrackerCSVData = generateAdoptionTrackerCSVData(allHistoricalProjectData);
 
+  // Create Adoption Rate CSV String without excluded projects
+  const adoptionTrackerCSVDataExcludeOther = generateAdoptionTrackerCSVDataExcludingOther(
+    allHistoricalProjectData,
+    getExcludedProjects(),
+  );
   // Create Collective Project Report CSV String
   const collectiveProjectReportCSVData = generateCollectiveProjectCSVData(allHistoricalProjectData);
 
@@ -211,6 +395,7 @@ export async function generateAdoptionAndImpactReports() {
   const adoptionAndImpactReports = {
     adoptionTrackerCSVData,
     collectiveProjectReportCSVData,
+    adoptionTrackerCSVDataExcludeOther,
   };
   saveToFile(
     JSON.stringify(adoptionAndImpactReports, null, 2),

@@ -1,0 +1,426 @@
+{
+  "AppSwitcher": {
+    "totalInstances": 6,
+    "totalCallSites": 6,
+    "components": [
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "action": {
+            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "target": {
+            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "config": {
+            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            "@acc/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "action": {
+            "@acc/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "target": {
+            "@acc/components/Layout/Header/HeaderLegacy.tsx": 1
+          },
+          "config": {
+            "@acc/components/Layout/Header/HeaderLegacy.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
+          },
+          "action": {
+            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
+          },
+          "target": {
+            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
+          },
+          "action": {
+            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
+          },
+          "target": {
+            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
+          "config": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
+          "projectId": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
+          "target": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            ":cloud/widgets/navigation/TopNav.tsx": 1
+          },
+          "action": {
+            ":cloud/widgets/navigation/TopNav.tsx": 1
+          },
+          "target": {
+            ":cloud/widgets/navigation/TopNav.tsx": 1
+          },
+          "config": {
+            ":cloud/widgets/navigation/TopNav.tsx": 1
+          }
+        }
+      }
+    ],
+    "config": {
+      "owningTeam": "Identity",
+      "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
+      "packageImportPath": "@cbhq/app-switcher",
+      "patternComponentName": "AppSwitcher",
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+    },
+    "cdsVersion": {
+      "cdsWeb": "^5.16.0",
+      "cdsMobile": "Not Found",
+      "cdsCommon": "Not Found",
+      "lowestVersion": "^5.16.0",
+      "sanitizedLowestVersion": "5.16.0"
+    }
+  },
+  "NavigationBar": {
+    "totalInstances": 9,
+    "totalCallSites": 9,
+    "components": [
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "appSwitcherOptions": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "projectId": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "target": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "start": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            "@acc/components/Layout/Header/Header.tsx": 1
+          },
+          "appSwitcherOptions": {
+            "@acc/components/Layout/Header/Header.tsx": 1
+          },
+          "projectId": {
+            "@acc/components/Layout/Header/Header.tsx": 1
+          },
+          "target": {
+            "@acc/components/Layout/Header/Header.tsx": 1
+          },
+          "start": {
+            "@acc/components/Layout/Header/Header.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 2,
+        "totalCallSites": 2,
+        "callSites": {
+          "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+          "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+        },
+        "propsWithCallSites": {
+          "dangerouslyDisableOverflowHidden": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "target": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "action": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "projectId": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "onThemeToggle": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "activeThemeLabel": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "themeToggleValue": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "appSwitcherOptions": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "start": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "end": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "bottom": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "profileMenuRef": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "profileMenuFlexibleArea": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "onCloseProfileMenu": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "activeThemeLabel": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "onCloseProfileMenu": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "onOpenProfileMenu": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "onThemeToggle": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "projectId": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "start": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "target": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "themeToggleValue": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "activeThemeLabel": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "onCloseProfileMenu": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "onOpenProfileMenu": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "onThemeToggle": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "projectId": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "start": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "target": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "themeToggleValue": {
+            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
+          "projectId": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
+          "onBeforeNavigate": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
+          "target": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "start": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "end": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "bottom": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "action": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "projectId": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "appSwitcherOptions": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "target": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "start": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "end": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "bottom": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "action": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "projectId": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "appSwitcherOptions": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "target": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "onThemeToggle": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "activeThemeLabel": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "themeToggleValue": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "onBeforeNavigate": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          }
+        }
+      }
+    ],
+    "config": {
+      "owningTeam": "Identity",
+      "packageImportPath": "@cbhq/identity-navigation",
+      "patternComponentName": "NavigationBar",
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+    },
+    "cdsVersion": {
+      "cdsWeb": "^5.16.0",
+      "cdsMobile": "Not Found",
+      "cdsCommon": "Not Found",
+      "lowestVersion": "^5.16.0",
+      "sanitizedLowestVersion": "5.16.0"
+    }
+  }
+}

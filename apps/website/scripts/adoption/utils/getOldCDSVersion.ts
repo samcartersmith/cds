@@ -1,5 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { exec } from 'child_process';
+import fs from 'fs';
 import { promisify } from 'util';
+
+import { CDSVersionsResult } from '../../../components/AdoptionTracker/types';
+import { type PatternComponentInfo } from '../types';
+
+import { extractVersion } from './getPackageJson';
+import { sanitizeVersion } from './getStats';
 
 const sh = promisify(exec);
 
@@ -28,6 +37,54 @@ export async function getCDSCommonPackageJsonFromThreeMonthsAgo() {
     return packageJson;
   } catch (error) {
     console.error('Error fetching package.json from 3 months ago:', error);
+    throw error;
+  }
+}
+
+function findCDSVersion(packageJson: PatternComponentInfo, packageName: string): string {
+  const possibleLocations = [
+    packageJson.dependencies,
+    packageJson.devDependencies,
+    packageJson.peerDependencies,
+    packageJson.resolutions,
+  ];
+
+  for (const location of possibleLocations) {
+    if (location?.[packageName]) {
+      return extractVersion(location[packageName]);
+    }
+  }
+
+  return 'Not Found';
+}
+
+export async function getCDSVersionFromComponentPatternPackage(
+  filePath: string,
+): Promise<CDSVersionsResult> {
+  try {
+    const fileContents = await fs.promises.readFile(filePath, 'utf8');
+    const packageJson = JSON.parse(fileContents);
+
+    const cdsWebVersion = findCDSVersion(packageJson, '@cbhq/cds-web');
+    const cdsMobileVersion = findCDSVersion(packageJson, '@cbhq/cds-mobile');
+    const cdsCommonVersion = findCDSVersion(packageJson, '@cbhq/cds-common');
+
+    // Find the lowest version among the three, ignoring 'Not Found'
+    const versions = [cdsWebVersion, cdsMobileVersion, cdsCommonVersion].filter(
+      (v) => v !== 'Not Found',
+    );
+    const lowestVersion = versions.sort()[0] || 'Not Found';
+    const sanitizedLowestVersion = sanitizeVersion(lowestVersion);
+
+    return {
+      cdsWeb: cdsWebVersion,
+      cdsMobile: cdsMobileVersion,
+      cdsCommon: cdsCommonVersion,
+      lowestVersion,
+      sanitizedLowestVersion,
+    };
+  } catch (error) {
+    console.error('Error reading or parsing package.json:', error);
     throw error;
   }
 }

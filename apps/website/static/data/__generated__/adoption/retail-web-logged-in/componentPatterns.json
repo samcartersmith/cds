@@ -1,0 +1,83 @@
+{
+  "components": [
+    {
+      "component": {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 2,
+        "totalCallSites": 2,
+        "callSites": {
+          "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+          "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+        },
+        "propsWithCallSites": {
+          "dangerouslyDisableOverflowHidden": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "target": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "action": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "projectId": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "onThemeToggle": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "activeThemeLabel": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "themeToggleValue": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "appSwitcherOptions": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "start": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "end": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "bottom": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "profileMenuRef": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "profileMenuFlexibleArea": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "onCloseProfileMenu": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "patternComponentName": "NavigationBar",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/identity-navigation",
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      }
+    }
+  ],
+  "dependencies": {
+    "dependencies": {},
+    "devDependencies": {},
+    "peerDependencies": {},
+    "resolutions": {}
+  }
+}

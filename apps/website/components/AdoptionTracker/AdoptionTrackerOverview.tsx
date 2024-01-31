@@ -5,8 +5,7 @@ import { css } from 'linaria';
 import getFirst from 'lodash/first';
 import groupBy from 'lodash/groupBy';
 import toPairs from 'lodash/toPairs';
-import semver from 'semver';
-import { CellDetailVariant, join, SetState, useToggler } from '@cbhq/cds-common';
+import { CellDetailVariant, join, PaletteForeground, SetState, useToggler } from '@cbhq/cds-common';
 import { Card } from '@cbhq/cds-web/alpha/Card';
 import { Button } from '@cbhq/cds-web/buttons';
 import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
@@ -24,6 +23,7 @@ import {
   TextDisplay3,
   TextHeadline,
   TextLabel1,
+  TextLabel2,
   TextTitle2,
 } from '@cbhq/cds-web/typography';
 
@@ -31,7 +31,6 @@ import { BetaCell } from ':cds-website/components/BetaCell';
 import { adopters } from ':cds-website/data/__generated__/adoption/adopters';
 import { hiddenAdopters } from ':cds-website/data/__generated__/adoption/adopters-hidden';
 
-import { sanitizeVersion } from '../../scripts/adoption/utils/getStats';
 import { SplitScreenStack } from '../SplitScreenStack';
 
 import { AdopterProjectInfoProvider } from './context/AdopterProjectInfoProvider';
@@ -40,29 +39,32 @@ import { useAdopterProjectInfo } from './hooks/useAdopterProjectInfo';
 import { useAdopterStats } from './hooks/useAdopterStats';
 import { getPercentageText } from './utils/getPercentageText';
 import { AdopterStatsBreakdownCell } from './AdopterStatsBreakdown';
-import { AdopterVersionCell, getLowestVersion } from './AdopterVersionCell';
+import { AdopterVersionCell } from './AdopterVersionCell';
 import { ComponentUsageTable } from './ComponentUsageTable';
-import { getPercentProductsWithinCDS, OverallStatsSummaryModal } from './OverallStatsSummaryModal';
+import {
+  EXCLUDED_PILLARS,
+  NEGATIVE_VARIANT,
+  NO_CHANGE_ADOPTION_TEXT,
+  POSITIVE_VARIANT,
+  TARGET_ADOPTION_PERCENTAGE,
+  TARGET_PERCENT_PRODUCTS_WITHIN_CDS,
+} from './constants';
+import { OverallStatsSummaryModal } from './OverallStatsSummaryModal';
 import type {
   Adopter,
-  AdopterProjectVersionSummary,
+  AdopterProjectInfo,
   Adopters,
+  AdopterStats,
   AdopterStatsItem,
-  PillarAdoptionData,
+  OverallSummaryStats,
   PillarProjectData,
+  SummaryReport,
 } from './types';
-import { type AdopterProjectInfo, type AdopterStats } from './types';
 import { VersionListModal } from './VersionListModal';
-
-const TARGET_ADOPTION_PERCENTAGE = 0.8;
-const TARGET_PERCENT_PRODUCTS_WITHIN_CDS = 0.8;
-const EXCLUDED_PILLARS = ['Other'];
 
 type SetActiveProject = SetState<Adopter>;
 type ProjectProps = { id: Adopter };
 type ProjectCellProps = { active: boolean; setActiveProject: SetActiveProject };
-
-let statForLatestCdsVersionPublished3MonthsAgo = '';
 
 const titleClass = css`
   && {
@@ -76,13 +78,6 @@ function useProject(id: Adopter) {
   const stats =
     require(`@site/static/data/__generated__/adoption/${id}/stats.json`) as AdopterStats;
   return useMemo(() => ({ projectInfo, stats }), [projectInfo, stats]);
-}
-
-let totalProjectVersionsList: PillarProjectData[] = [];
-let cdsAdoptionByPillar: PillarAdoptionData[] = [];
-
-function getUniquePillars() {
-  return new Set(adopters.map(({ pillar }) => pillar));
 }
 
 // Get the last period marker or the first entry recorded
@@ -107,60 +102,8 @@ const getStats = (project: ProjectProps) => {
   return require(`@site/static/data/__generated__/adoption/${project.id}/stats.json`) as AdopterStats;
 };
 
-// Get list of projects which are within latest CDS version range (last 3 months) for a pillar
-const getAllProjectCDSVersionsForPillar = (pillar?: string): AdopterProjectVersionSummary[] => {
-  const projects = getProjects(pillar);
-
-  return projects.reduce((acc: AdopterProjectVersionSummary[], project) => {
-    const stats = getStats(project);
-    const latestStat = stats.latest;
-
-    const { lowestVersion } = getLowestVersion(
-      latestStat.cdsCommonVersion,
-      latestStat.cdsWebVersion,
-      latestStat.cdsMobileVersion,
-    );
-
-    statForLatestCdsVersionPublished3MonthsAgo = latestStat.latestCdsVersionPublished3MonthsAgo;
-
-    const sanitizedVersion = sanitizeVersion(lowestVersion || '');
-    const version3MonthsAgo = sanitizeVersion(statForLatestCdsVersionPublished3MonthsAgo);
-
-    if (
-      sanitizedVersion &&
-      version3MonthsAgo &&
-      semver.valid(sanitizedVersion) &&
-      semver.valid(version3MonthsAgo) &&
-      semver.gte(sanitizedVersion, version3MonthsAgo)
-    ) {
-      acc.push({
-        id: project.id,
-        version: lowestVersion || '',
-        pillar,
-        upToDate: true,
-        adopterStatsItem: latestStat,
-      });
-      return acc;
-    }
-
-    if (
-      sanitizedVersion &&
-      version3MonthsAgo &&
-      semver.valid(sanitizedVersion) &&
-      semver.valid(version3MonthsAgo)
-    ) {
-      acc.push({
-        id: project.id,
-        version: lowestVersion || '',
-        pillar,
-        upToDate: false,
-        adopterStatsItem: latestStat,
-      });
-      return acc;
-    }
-
-    return acc;
-  }, []);
+const getOverallStatsSummary = () => {
+  return require(`@site/static/data/__generated__/adoption/adoption_overall_stats_summary.json`) as OverallSummaryStats[];
 };
 
 // Get total number of component instances across all projects
@@ -253,25 +196,6 @@ const getPercentage = ({
   return { variant, percentageText, percentage } as const;
 };
 
-function populateCDSAdoptionPercentageListByPillar() {
-  const uniquePillars = getUniquePillars();
-  cdsAdoptionByPillar = [];
-  uniquePillars.forEach((pillar: string) => {
-    const { percentageText } = getPercentage({ pillar, excludedPillars: EXCLUDED_PILLARS });
-    const adoptionPercentageForPillarObj = getPercentage({
-      pillar,
-      isUpToDateOnly: true,
-      excludedPillars: EXCLUDED_PILLARS,
-    });
-
-    cdsAdoptionByPillar.push({
-      pillar,
-      cdsPercentAdoption: percentageText,
-      cdsPercentAdoptionWithinLatest3Months: adoptionPercentageForPillarObj.percentageText,
-    });
-  });
-}
-
 /**
  * Calculates the percentage change for a given pillar from the adoption stats.
  * Returns overall percentage change if no pillar provided.
@@ -308,15 +232,15 @@ const getPercentageChange = ({
   let changePercentageText = getPercentageText(change);
 
   if (change > 0) {
-    variant = 'positive';
+    variant = POSITIVE_VARIANT;
     changePercentageText = `+${getPercentageText(change)}`;
   }
   if (change < 0) {
-    variant = 'negative';
+    variant = NEGATIVE_VARIANT;
     changePercentageText = getPercentageText(change);
   }
   if (change === 0) {
-    changePercentageText = 'No change';
+    changePercentageText = NO_CHANGE_ADOPTION_TEXT;
   }
 
   return { variant, changePercentageText } as const;
@@ -362,15 +286,15 @@ function usePercentChange() {
     const percentChange = latest.cdsPercent - statToCompare.cdsPercent;
 
     if (percentChange > 0) {
-      changeVariant = 'positive';
+      changeVariant = POSITIVE_VARIANT;
       change = `+${getPercentageText(percentChange)}`;
     }
     if (percentChange < 0) {
-      changeVariant = 'negative';
+      changeVariant = NEGATIVE_VARIANT;
       change = getPercentageText(percentChange);
     }
     if (percentChange === 0) {
-      change = 'No change';
+      change = NO_CHANGE_ADOPTION_TEXT;
     }
 
     return { change, changeVariant };
@@ -418,7 +342,7 @@ const PercentChange = memo(
 PercentChange.displayName = 'PercentChange';
 
 export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps) => {
-  const { label, id } = useAdopterProjectInfo();
+  const { label, id, githubUrl, projectGitPath } = useAdopterProjectInfo();
   const { latest } = useAdopterStats();
 
   const start = (
@@ -426,6 +350,10 @@ export const ProjectCell = memo(({ active, setActiveProject }: ProjectCellProps)
       <TextHeadline as="p" overflow="truncate">
         {label}
       </TextHeadline>
+
+      <TextLabel2 as="p">
+        <Link href={`${githubUrl}/${projectGitPath}`}>(Repo)</Link>
+      </TextLabel2>
     </VStack>
   );
 
@@ -556,7 +484,7 @@ const DetailStatCell = memo(
 DetailStatCell.displayName = 'DetailStatCell';
 
 export const ActiveProject = memo(() => {
-  const { label, id } = useAdopterProjectInfo();
+  const { label, id, githubUrl, projectGitPath } = useAdopterProjectInfo();
   const { latest, previous } = useAdopterStats();
   const [allExpanded, { toggle: setAllExpanded }] = useToggler(false);
   const previousStats = useMemo(() => {
@@ -573,9 +501,12 @@ export const ActiveProject = memo(() => {
           <TextDisplay3 as="h4">{label}</TextDisplay3>
           <Pictogram name="analyticsNavigation" />
         </HStack>
-        <TextBody as="p" color="foregroundMuted" spacingBottom={2}>
+        <TextBody as="p" color="foregroundMuted">
           You’re viewing adoption metrics captured over the past week. For a more in-depth analysis,
           view all instances.
+        </TextBody>
+        <TextBody as="p" color="foregroundMuted" spacingBottom={2}>
+          See <Link href={`${githubUrl}/${projectGitPath}`}>{label} Repo</Link>
         </TextBody>
         <HStack gap={1}>
           <Button
@@ -612,7 +543,7 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
         </a>
       </TextCaption>
       <TextDisplay3 as="span">{percentageText}</TextDisplay3>
-      {changePercentageText !== 'No change' && (
+      {changePercentageText !== NO_CHANGE_ADOPTION_TEXT && (
         <TextLabel1 as="span" color={changedVariant}>
           <HStack alignItems="center" gap={1}>
             <Icon
@@ -628,39 +559,71 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
   );
 };
 
+const getVariantForPercentageDiff = (percent: string) => {
+  const variant: PaletteForeground =
+    parseFloat(percent) >= TARGET_PERCENT_PRODUCTS_WITHIN_CDS * 100
+      ? POSITIVE_VARIANT
+      : NEGATIVE_VARIANT;
+  return { variant };
+};
+
+const emptySummaryReport: SummaryReport = {
+  companyWide: {
+    cdsAdoption: '',
+    latestCDSAdoption: '',
+    getPercentageChangeAll: '',
+    getPercentageChangeLatest: '',
+  },
+};
+
+const emptyOverallStatsSummary: OverallSummaryStats = {
+  date: '',
+  summaryReport: emptySummaryReport,
+  totalProjectVersionsList: [],
+};
+
+const latestOverallStatsSummary = getFirst(getOverallStatsSummary()) || emptyOverallStatsSummary;
+
 export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) => {
   const [usageModalIsVisible, { toggleOff, toggleOn }] = useToggler(false);
   const [versionModalVisible, setVersionModalVisible] = useState(false);
   const [overallStatModalVisible, setOverallStatModalVisible] = useState(false);
 
-  const scopedAdopters = getSortedProjectPairs(hidden ? hiddenAdopters : adopters);
   // Sort projects by pillar adoption, and make sure projects are also sorted
-  const { variant, percentageText } = getPercentage({ excludedPillars: EXCLUDED_PILLARS });
+  const scopedAdopters = getSortedProjectPairs(hidden ? hiddenAdopters : adopters);
 
-  // Calling getPercentage with isUpToDateOnly set to true
-  const percentProductsWithinCDS = getPercentProductsWithinCDS({
-    totalProjectVersionsList,
-    excludedPillars: EXCLUDED_PILLARS,
-  });
-  const variantForUpToDateVersionsOnly =
-    percentProductsWithinCDS >= TARGET_PERCENT_PRODUCTS_WITHIN_CDS ? 'positive' : 'negative';
+  const pillarProjectDataEntry: PillarProjectData =
+    latestOverallStatsSummary.totalProjectVersionsList[0];
+  const statForLatestCdsVersionPublished3MonthsAgo: string =
+    pillarProjectDataEntry.allProjectVersions[0].adopterStatsItem
+      .latestCdsVersionPublished3MonthsAgo;
 
-  const { variant: changedVariant, changePercentageText } = getPercentageChange({
-    excludedPillars: EXCLUDED_PILLARS,
-  });
-  const direction = changedVariant === 'negative' ? 'Down' : 'Up';
+  const percentCDSAdoption =
+    latestOverallStatsSummary?.summaryReport.companyWide.cdsAdoption || '0';
 
+  const percentProductsWithinCDS =
+    latestOverallStatsSummary?.summaryReport.companyWide.latestCDSAdoption || '0';
+
+  const { variant } = getVariantForPercentageDiff(percentCDSAdoption);
+  const { variant: variantForUpToDateVersionsOnly } =
+    getVariantForPercentageDiff(percentProductsWithinCDS);
+
+  const { variant: changedVariant, changePercentageText: changePercentageTextAll } =
+    getPercentageChange({
+      excludedPillars: EXCLUDED_PILLARS,
+    });
+  const { variant: changedVariantLatest, changePercentageText: changePercentageTextLatest } =
+    getPercentageChange({
+      excludedPillars: EXCLUDED_PILLARS,
+      upToDate: true,
+    });
+
+  const directionAll = changedVariant === NEGATIVE_VARIANT ? 'Down' : 'Up';
+  const directionLatest = changedVariantLatest === NEGATIVE_VARIANT ? 'Down' : 'Up';
   const [activeProjectId, setActiveProject] = useState<Adopter>(scopedAdopters[0][1][0].id);
-
-  totalProjectVersionsList = [];
 
   const projects = useMemo(() => {
     return scopedAdopters.map(([pillar, projectsInPillar]) => {
-      totalProjectVersionsList.push({
-        pillar,
-        allProjectVersions: getAllProjectCDSVersionsForPillar(pillar),
-        totalProjectsCount: projectsInPillar.length,
-      });
       return (
         <VStack key={pillar} gap={1} spacingBottom={5}>
           <ProjectTitle pillar={pillar} />
@@ -674,8 +637,6 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
       );
     });
   }, [activeProjectId, scopedAdopters]);
-
-  populateCDSAdoptionPercentageListByPillar();
 
   const start = (
     <VStack gap={2} spacingEnd={3}>
@@ -735,26 +696,31 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
         </TextTitle2>{' '}
         <TextTitle2 as="span" color="foregroundMuted">
           <TextTitle2 as="span" color={variant}>
-            {percentageText}{' '}
-          </TextTitle2>
+            {latestOverallStatsSummary?.summaryReport.companyWide.cdsAdoption}
+          </TextTitle2>{' '}
           of our Product UI surface area is using CDS (
-          {changePercentageText !== 'No change' && (
+          {changePercentageTextAll !== NO_CHANGE_ADOPTION_TEXT && (
             <TextTitle2 as="span" color="foregroundMuted">
-              {direction}{' '}
+              {directionAll}{' '}
               <TextTitle2 as="span" color={changedVariant}>
-                {changePercentageText}{' '}
+                {changePercentageTextAll}{' '}
               </TextTitle2>
             </TextTitle2>
           )}
           for the quarter). However only{' '}
           <TextTitle2 as="span" color={variantForUpToDateVersionsOnly}>
-            {getPercentProductsWithinCDS({
-              totalProjectVersionsList,
-              excludedPillars: EXCLUDED_PILLARS,
-            }).toFixed(2)}
-            %
+            {latestOverallStatsSummary?.summaryReport.companyWide.latestCDSAdoption}%
           </TextTitle2>{' '}
-          of our product UI surface area is using the latest version (
+          (
+          {changePercentageTextLatest !== NO_CHANGE_ADOPTION_TEXT && (
+            <TextTitle2 as="span" color="foregroundMuted">
+              {directionLatest}{' '}
+              <TextTitle2 as="span" color={changedVariantLatest}>
+                {changePercentageTextLatest}{' '}
+              </TextTitle2>
+            </TextTitle2>
+          )}
+          for the quarter) of our product UI surface area is using the latest version (
           <TextTitle2 as="span" color="positive">
             {statForLatestCdsVersionPublished3MonthsAgo}
           </TextTitle2>{' '}
@@ -794,7 +760,9 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
           title="Project Version Summary"
         />
         <ModalBody>
-          <VersionListModal totalProjectVersionsList={totalProjectVersionsList} />
+          <VersionListModal
+            totalProjectVersionsList={latestOverallStatsSummary.totalProjectVersionsList}
+          />
         </ModalBody>
       </Modal>
       <Modal onRequestClose={closeOverallStatModal} visible={overallStatModalVisible}>
@@ -806,16 +774,8 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
         />
         <ModalBody>
           <OverallStatsSummaryModal
-            companyWideAdoptionPercentage={
-              getPercentage({ excludedPillars: EXCLUDED_PILLARS }).percentageText
-            }
-            companyWideAdoptionPercentageUpToDate={
-              getPercentage({ isUpToDateOnly: true, excludedPillars: EXCLUDED_PILLARS })
-                .percentageText
-            }
-            pillarCDSAdoptionList={cdsAdoptionByPillar}
+            latestOverallStatsSummary={latestOverallStatsSummary}
             statForLatestCdsVersionPublished3MonthsAgo={statForLatestCdsVersionPublished3MonthsAgo}
-            totalProjectVersionsList={totalProjectVersionsList}
           />
         </ModalBody>
       </Modal>

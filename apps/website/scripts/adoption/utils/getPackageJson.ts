@@ -10,7 +10,7 @@ export type PackageJson = {
 };
 
 // Function to extract version number from a complex dependency string
-function extractVersion(dependencyString: string) {
+export function extractVersion(dependencyString: string) {
   const versionRegex = /(\d+\.\d+\.\d+)(?=-[a-z0-9]+\.patch)/i; // Extract the version before '-[hash].patch'
 
   if (dependencyString.startsWith('patch:')) {
