@@ -25,7 +25,6 @@ const getCacheKey = ({ compact, flush, startIcon, endIcon }: GetButtonSpacingPar
   return key;
 };
 
-/** TODO: pull into common once web alpha Button is ready */
 export const getButtonSpacingProps = memoize(function getButtonSpacingProps({
   compact,
   flush,

@@ -2003,6 +2003,33 @@ The following items will be deleted in v6.0.0. Please use the <code>cds-migrator
       </ul>
     </VStack>
   </AccordionItem>
+  <AccordionItem
+    itemKey="horizontal.common"
+    title={
+      <HStack gap={1}>
+        horizontal <Tag colorScheme="blue">api</Tag>
+      </HStack>
+    }
+    subtitle="@cbhq/cds-common"
+  >
+    <VStack>
+      <p>
+        {' '}
+        The API has changed: <ul>
+          <li>
+            <code>horizontal</code> has been replaced with <code>direction</code>
+          </li>
+        </ul>
+      </p>
+      <TextHeadline spacingTop="2" as="h4">
+        Impacted Components:{' '}
+      </TextHeadline>
+      <ul>
+        <li>ButtonGroup</li>
+        <li>ModalFooter</li>
+      </ul>
+    </VStack>
+  </AccordionItem>
 </Accordion>
 
 ### 🪙 Tokens {#tokens}

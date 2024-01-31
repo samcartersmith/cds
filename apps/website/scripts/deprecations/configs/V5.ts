@@ -619,16 +619,6 @@ export const V5: Deprecation = {
       },
     },
     {
-      path: 'packages/common/utils/getButtonSpacing.ts',
-      name: 'getButtonSpacing',
-      package: 'common',
-      type: ['replaced', 'path'],
-      migrationMap: {
-        path: 'packages/common/utils/getButtonSpacingProps.ts',
-        replaced: 'getButtonSpacingProps',
-      },
-    },
-    {
       path: 'packages/common/utils/getIllustrationScaledDimension.ts',
       name: 'getIllustrationScaledDimension',
       package: 'common',

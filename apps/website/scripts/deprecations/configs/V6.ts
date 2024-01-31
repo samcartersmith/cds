@@ -680,6 +680,17 @@ const propDeprecations: Prop[] = [
     },
     components: ['Interactable', 'Pressable', 'Control'],
   },
+  {
+    name: 'horizontal',
+    components: ['ButtonGroup', 'ModalFooter'],
+    package: 'common',
+    type: 'api',
+    migrationMap: {
+      api: {
+        horizontal: 'direction',
+      },
+    },
+  },
 ];
 
 export const V6: Deprecation = {
