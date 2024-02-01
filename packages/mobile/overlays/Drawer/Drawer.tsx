@@ -39,7 +39,7 @@ export const Drawer = memo(
       disableCapturePanGestureToDismiss = false,
       onBlur,
       verticalDrawerPercentageOfView = defaultVerticalDrawerPercentageOfView,
-      handleBarAccessibilityLabel,
+      handleBarAccessibilityLabel = 'Dismiss',
       ...props
     },
     ref,

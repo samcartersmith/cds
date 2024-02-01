@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.31.4 (1/31/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: add default a11y label to handle bar on Drawer and Tray. [[DX-3154](https://jira.coinbase-corp.com/browse/DX-3154)]
 
 #### 📘 Misc
 
