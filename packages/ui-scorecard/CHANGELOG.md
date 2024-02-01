@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.12 (2/1/2024 PST)
+
+#### 🚀 Updates
+
+- Added web a11y support with jest-axe. [[#2663](https://github.cbhq.net/frontend/cds/pull/2663)] [[DX-3034](https://jira.coinbase-corp.com/browse/DX-3034)]
+
 ## 0.1.11 (11/29/2023 PST)
 
 #### 🐞 Fixes

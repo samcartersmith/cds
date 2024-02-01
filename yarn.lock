@@ -3848,6 +3848,7 @@ __metadata:
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/cds-web-utils": "workspace:^"
     "@cbhq/d3": "workspace:^"
+    "@cbhq/ui-scorecard": "workspace:^"
     "@popperjs/core": "npm:^2.9.0"
     "@storybook/testing-library": "npm:^0.0.13"
     d3-interpolate-path: "npm:^2.2.2"

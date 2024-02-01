@@ -47,7 +47,7 @@ export class JestCoverageLogger extends TestTask {
     return coverageSummaryJSON;
   }
 
-  //  Return coveage summary filtered by paths of codeOwnerEntry
+  //  Return coverage summary filtered by paths of codeOwnerEntry
   public getFilteredCoverageSummaryJSON(
     codeOwnerEntry: CodeOwnerEntry,
   ): Record<string, CoverageAreas> {

@@ -20,6 +20,8 @@ export type MetadataType = {
   githubURL: string | undefined;
 };
 
+export type PlatformType = 'web' | 'mobile';
+
 export type TestOptions = {
   affected?: boolean;
   cache?: boolean;
@@ -34,6 +36,7 @@ export type TestOptions = {
   skipAccessibleTest?: boolean;
   codeOwnerFilePath?: string;
   targetPath?: string;
+  platform: PlatformType;
 };
 
 export type CoverageAreas = {
@@ -77,18 +80,19 @@ export type A11yLogType = {
    * */
   totalNumberOfComponentTests: number;
   /**
-   * Number of test files with toBeAccessible tests
+   * Number of test files with Accessible tests (includes toBeAccessible and toHaveNoViolations)
    */
-  totalNumberOfToBeAccessibleTests: number;
+  totalNumberAccessibleTests: number;
   /**
-   * Number of test files with passing toBeAccessible tests
+   * Number of test files with passing accessible tests (includes toBeAccessible and toHaveNoViolations)
    */
-  totalNumberOfPassingToBeAccessibleTests: number;
+  totalNumberOfPassingAccessibleTests: number;
   /**
    * Capturing the file path for components that have test
    * but does not have toBeAccessible
    */
   testFilesWithoutToBeAccessibleTest: string[];
+  testFilesWithoutToHaveNoViolationsTest: string[];
   /**
    * Capturing test status.
    * If it fails or fails on a warning, it will capture the failure/warning
@@ -110,6 +114,10 @@ export type A11yLogType = {
    * Test files that have toBeAccessible test
    */
   testFilesWithToBeAccessibleTest: string[];
+  /**
+   * Test files that have toHaveNoViolations test
+   */
+  testFilesWithToHaveNoViolations: string[];
   /**
    * Components missing a11y coverage
    */
@@ -164,10 +172,14 @@ export type A11yLogType = {
    * Code Owner Entry object
    */
   codeOwnerEntry?: CodeOwnerEntry;
+  /** Platform script is run on : mobile / web */
+  platform: PlatformType;
   // track if functions have been called
   functionsCalled: {
     logTestFilesWithoutToBeAccessible: boolean;
     logAccessibleTestsJestOutput: boolean;
     logTestFilesWithToBeAccessible: boolean;
+    logTestFilesWithToHaveNoViolations: boolean;
+    logTestFilesWithoutToHaveNoViolations: boolean;
   };
 };

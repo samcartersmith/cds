@@ -114,6 +114,16 @@
         "^build",
         "perf-test-clean"
       ]
+    },
+    "audit-a11y": {
+      "executor": "@cbhq/ui-scorecard:audit-a11y",
+      "dependsOn": [
+        "test"
+      ],
+      "options": {
+        "eventProjectName": "cds_web",
+        "platform": "web"
+      }
     }
   }
 }

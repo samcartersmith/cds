@@ -65,6 +65,14 @@
     "codeOwnerFilePath": {
       "type": "string",
       "description": "Path to a file containing code owners."
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "web",
+        "mobile"
+      ],
+      "description": "Platform must be mobile or web."
     }
   }
 }

@@ -2,6 +2,7 @@ import { mkdirSync, writeFileSync } from 'fs';
 
 import { FileWriter } from '../FileWriter';
 import { Task } from '../TestTask';
+import { PlatformType } from '../types';
 
 jest.mock('fs');
 
@@ -50,9 +51,12 @@ describe('FileWriter', () => {
     const mockLog = {
       timestamp: new Date(),
       totalNumberOfComponentTests: 5,
-      totalNumberOfToBeAccessibleTests: 4,
-      totalNumberOfPassingToBeAccessibleTests: 3,
+      totalNumberAccessibleTests: 4,
+      totalNumberOfPassingAccessibleTests: 3,
       testFilesWithoutToBeAccessibleTest: ['path1', 'path2'],
+      testFilesWithToBeAccessibleTest: ['path3'],
+      testFilesWithToHaveNoViolations: [],
+      testFilesWithoutToHaveNoViolationsTest: [],
       testDetails: {},
       projectMetadata: {
         projectName: 'test',
@@ -60,7 +64,6 @@ describe('FileWriter', () => {
         githubURL: 'http://github.com',
       },
       componentsWithZeroCoverage: ['comp1'],
-      testFilesWithToBeAccessibleTest: ['path3'],
       componentsWithoutToBeAccessibleTest: ['comp2'],
       components: ['comp1', 'comp2'],
       totalNumberOfComponents: 2,
@@ -69,9 +72,12 @@ describe('FileWriter', () => {
       automatedA11yScore: 90,
       functionsCalled: {
         logTestFilesWithoutToBeAccessible: true,
-        logAccessibleTestsJestOutput: true,
         logTestFilesWithToBeAccessible: true,
+        logAccessibleTestsJestOutput: true,
+        logTestFilesWithToHaveNoViolations: true,
+        logTestFilesWithoutToHaveNoViolations: true,
       },
+      platform: 'mobile' as PlatformType,
     };
 
     fileWriter.writeA11yLogToOutDir({ log: mockLog });

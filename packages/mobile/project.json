@@ -94,7 +94,8 @@
         "test"
       ],
       "options": {
-        "eventProjectName": "cds_mobile"
+        "eventProjectName": "cds_mobile",
+        "platform": "mobile"
       }
     }
   }

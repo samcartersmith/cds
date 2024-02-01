@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Added ui-scorecard package to devdep. [[#2663](https://github.cbhq.net/frontend/cds/pull/2663)] [[X-3034](https://jira.coinbase-corp.com/browse/X-3034)]
+
 ## 5.31.4 ((1/31/2024, 05:09 PM PST))
 
 This is an artificial version bump with no new change.

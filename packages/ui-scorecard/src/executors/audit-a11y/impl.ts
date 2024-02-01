@@ -52,20 +52,31 @@ async function runAudit({
   a11yLogger,
   jestArgs,
   task,
+  options,
   skipAccessibleTest = true,
 }: {
   a11yLogger: A11yLogger;
   jestArgs: string[];
   task: Task;
+  options: TestOptions;
   skipAccessibleTest?: boolean;
 }) {
   console.log(color.project(`Start populating a11y log for project:${task.projectName}`));
 
+  const { platform } = options;
   // await a11yLogger.logComponentsMissingA11yCoverage(jestArgs);
+
+  if (platform === 'web') {
+    a11yLogger.logTestFilesWithToHaveNoViolations();
+    a11yLogger.logTestFilesWithoutToHaveNoViolations();
+  } else if (platform === 'mobile') {
+    a11yLogger.logTestFilesWithToBeAccessible();
+    a11yLogger.logTestFilesWithoutToBeAccessible();
+  } else {
+    throw new Error('Missing platform - platform must be web or mobile.');
+  }
   a11yLogger.logTotalNumberOfComponentTests();
-  a11yLogger.logTotalNumberOfToBeAccessibleTests();
-  a11yLogger.logTestFilesWithToBeAccessible();
-  a11yLogger.logTestFilesWithoutToBeAccessible();
+  a11yLogger.logTotalNumberOfAccessibleTests();
 
   a11yLogger.logCoverageSummaryTotal();
   a11yLogger.logFilteredCoverageSummaryTotal(a11yLogger.codeOwnerEntry);
@@ -84,7 +95,7 @@ async function runAudit({
     await a11yLogger.logAccessibleTestsJestOutput(jestArgs);
   }
 
-  a11yLogger.logTotalNumberOfPassingToBeAccessibleTests(skipAccessibleTest);
+  a11yLogger.logTotalNumberOfPassingAccessibleTests(skipAccessibleTest);
 
   await a11yLogger.logCodeOwner();
   if (a11yLogger.codeOwnerEntry) {
@@ -121,7 +132,7 @@ async function sendScores(
     a11yScore,
     jestScore,
     totalNumberOfComponentsWithTest,
-    totalNumberOfPassingToBeAccessibleTests,
+    totalNumberOfPassingAccessibleTests,
     codeOwner,
     filteredJestScore,
   }: A11yLogType,
@@ -136,9 +147,10 @@ async function sendScores(
       a11yScore,
       jestScore,
       totalNumberOfComponentsWithTest,
-      totalNumberOfPassingToBeAccessibleTests,
+      totalNumberOfPassingAccessibleTests,
       codeOwner,
       filteredJestScore,
+      platform: options.platform,
     },
   });
 
@@ -151,9 +163,10 @@ async function sendScores(
       a11yScore: a11yScore ?? null,
       jestScore: jestScore ?? null,
       totalNumberOfComponentsWithTest,
-      totalNumberOfPassingToBeAccessibleTests,
+      totalNumberOfPassingAccessibleTests,
       codeOwner: codeOwner ?? null,
       filteredJestScore: filteredJestScore ?? null,
+      platform: options.platform,
     },
     AnalyticsEventImportance.high,
   );
@@ -216,6 +229,7 @@ async function processAudit(
     a11yLogger,
     jestArgs: args,
     task,
+    options,
     skipAccessibleTest: options.skipAccessibleTest,
   });
 
@@ -238,7 +252,7 @@ async function processWithTargetPath(
     await Promise.all(
       filteredCodeOwnersObject.codeOwners.map(async (codeOwnerObjEntry) => {
         const testFilePaths = await getTestFilePathsForAudit(filesParser, codeOwnerObjEntry.paths);
-        const a11yLogger = new A11yLogger(task, testFilePaths, codeOwnerObjEntry);
+        const a11yLogger = new A11yLogger(task, options.platform, testFilePaths, codeOwnerObjEntry);
         await processAudit(a11yLogger, options, args, task);
         await processLoggingAndScoring(options, a11yLogger, fileWriter);
       }),
@@ -254,7 +268,7 @@ async function processWithoutTargetPath(
   filesParser: FilesParser,
 ) {
   const testFilePaths = await getTestFilePathsForAudit(filesParser);
-  const a11yLogger = new A11yLogger(task, testFilePaths);
+  const a11yLogger = new A11yLogger(task, options.platform, testFilePaths);
   await processAudit(a11yLogger, options, args, task);
   await processLoggingAndScoring(options, a11yLogger, fileWriter);
 }
@@ -267,6 +281,7 @@ const audit = createTask<TestOptions>('audit', async (task, options) => {
     await initializeAnalytics(options);
 
     const { targetPath, codeOwnerFilePath } = options;
+
     const fileWriter = new FileWriter(task);
     const filesParser = new FilesParser(task);
 

@@ -42,13 +42,13 @@ describe('A11yAuditor', () => {
     });
   });
 
-  describe('getTotalNumberOfPassingToBeAccessibleTests', () => {
+  describe('getTotalNumberOfPassingAccessibleTests', () => {
     it('should return the number of passing accessibility tests', () => {
       const testDetails: TestDetail = {
         test1: { status: 'passed', message: 'Test passed successfully' },
         test2: { status: 'failed', message: 'Test failed due to XYZ' },
       };
-      const result = A11yAuditor.getTotalNumberOfPassingToBeAccessibleTests(testDetails);
+      const result = A11yAuditor.getTotalNumberOfPassingAccessibleTests(testDetails);
       expect(result).toBe(1);
     });
   });

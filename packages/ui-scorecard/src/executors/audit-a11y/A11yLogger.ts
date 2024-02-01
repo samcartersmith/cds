@@ -9,7 +9,7 @@ import { ansiToHumanText } from './FormatUtils';
 import { JestCoverageLogger } from './JestCoverageLogger';
 import { TestRunner } from './TestRunner';
 import { Task, TestTask } from './TestTask';
-import { A11yLogType, CodeOwnerEntry, CoverageAreas } from './types';
+import type { A11yLogType, CodeOwnerEntry, CoverageAreas, PlatformType } from './types';
 
 /**
  * Use these option to enable verbose console logging
@@ -40,15 +40,26 @@ export class A11yLogger extends TestTask {
 
   private a11yAuditor: A11yAuditor;
 
-  constructor(task: Task, filePaths: string[] = [], codeOwnerEntry?: CodeOwnerEntry) {
+  private platform: PlatformType;
+
+  constructor(
+    task: Task,
+    platform: PlatformType,
+    filePaths: string[] = [],
+    codeOwnerEntry?: CodeOwnerEntry,
+  ) {
     super(task);
 
     this.log = {
       timestamp: new Date(),
       totalNumberOfComponentTests: 0,
-      totalNumberOfToBeAccessibleTests: 0,
-      totalNumberOfPassingToBeAccessibleTests: 0,
+      totalNumberAccessibleTests: 0,
+      totalNumberOfPassingAccessibleTests: 0,
+
       testFilesWithoutToBeAccessibleTest: [],
+      testFilesWithoutToHaveNoViolationsTest: [],
+      testFilesWithToBeAccessibleTest: [],
+      testFilesWithToHaveNoViolations: [],
       testDetails: {},
       projectMetadata: {
         projectName: task.projectName,
@@ -56,7 +67,6 @@ export class A11yLogger extends TestTask {
         githubURL: process.env.BUILDKITE_REPO,
       },
       componentsWithZeroCoverage: 'unknown',
-      testFilesWithToBeAccessibleTest: [],
       componentsWithoutToBeAccessibleTest: [],
       components: [],
       totalNumberOfComponents: 0,
@@ -66,10 +76,15 @@ export class A11yLogger extends TestTask {
       // track if functions have been called
       functionsCalled: {
         logTestFilesWithoutToBeAccessible: false,
-        logAccessibleTestsJestOutput: false,
         logTestFilesWithToBeAccessible: false,
+        logAccessibleTestsJestOutput: false,
+        logTestFilesWithToHaveNoViolations: false,
+        logTestFilesWithoutToHaveNoViolations: false,
       },
+      platform,
     };
+
+    this.platform = platform;
 
     this.filePaths = filePaths;
 
@@ -151,28 +166,33 @@ export class A11yLogger extends TestTask {
     A11yLogger.logFunctionAndDuration('totalNumberOfComponentsWithTest', elapsed);
   }
 
-  public logTotalNumberOfPassingToBeAccessibleTests(skipAccessibleTest = true) {
+  public logTotalNumberOfPassingAccessibleTests(skipAccessibleTest = true) {
     const start = performance.now();
 
     if (!this.getFunctionsCalled.logAccessibleTestsJestOutput && !skipAccessibleTest) {
       throw new Error(
-        'Due to the how expensive it is to run jest tests, please first run logAccessibleTestsJestOutput before running logTotalNumberOfPassingToBeAccessibleTests.',
+        'Due to the how expensive it is to run jest tests, please first run logAccessibleTestsJestOutput before running logTotalNumberOfPassingAccessibleTests.',
       );
     }
 
-    if (!this.getFunctionsCalled.logTestFilesWithoutToBeAccessible && skipAccessibleTest) {
+    if (
+      !this.getFunctionsCalled.logTestFilesWithoutToBeAccessible &&
+      skipAccessibleTest &&
+      !this.getFunctionsCalled.logTestFilesWithoutToHaveNoViolations
+    ) {
       throw new Error(
-        'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessible() to obtain the a list of test files with toBeAccessible before running this command',
+        'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessible() or logTestFilesWithToHaveNoViolations() to obtain the a list of test files with toBeAccessible / toHaveNoViolations before running this command',
       );
     }
 
-    this.log.totalNumberOfPassingToBeAccessibleTests = skipAccessibleTest
-      ? this.log.testFilesWithToBeAccessibleTest.length
-      : A11yAuditor.getTotalNumberOfPassingToBeAccessibleTests(this.log.testDetails);
+    this.log.totalNumberOfPassingAccessibleTests = skipAccessibleTest
+      ? this.log.testFilesWithToBeAccessibleTest.length ||
+        this.log.testFilesWithToHaveNoViolations.length
+      : A11yAuditor.getTotalNumberOfPassingAccessibleTests(this.log.testDetails);
 
     const elapsed = performance.now() - start;
 
-    A11yLogger.logFunctionAndDuration('totalNumberOfPassingToBeAccessibleTests', elapsed);
+    A11yLogger.logFunctionAndDuration('totalNumberOfPassingAccessibleTests', elapsed);
   }
 
   public async logComponents({
@@ -276,7 +296,7 @@ export class A11yLogger extends TestTask {
     A11yLogger.logFunctionAndDuration('totalNumberOfComponentTests', elapsed);
   }
 
-  public logTotalNumberOfToBeAccessibleTests() {
+  public logTotalNumberOfAccessibleTests() {
     const start = new Date().getTime();
 
     const astParser = new ASTParser(this.filePaths);
@@ -285,14 +305,40 @@ export class A11yLogger extends TestTask {
       // Heuristically speaking. If the AST contains a
       // render Identifier, it is very likely that it is a Component
       // because Hooks will use renderHook instead
-      if (astParser.hasToBeAccessible(filePath)) {
-        this.log.totalNumberOfToBeAccessibleTests += 1;
+      if (astParser.hasToBeAccessible(filePath) || astParser.hasToHaveNoViolations(filePath)) {
+        this.log.totalNumberAccessibleTests += 1;
       }
     });
 
     const elapsed = new Date().getTime() - start;
 
-    A11yLogger.logFunctionAndDuration('totalNumberOfToBeAccessibleTests', elapsed);
+    A11yLogger.logFunctionAndDuration('totalNumberOfAccessibleTests', elapsed);
+  }
+
+  public logTestFilesWithToHaveNoViolations({
+    printTestFilesWithToBeAccessible,
+  }: Pick<DebugOptions, 'printTestFilesWithToBeAccessible'> = {}) {
+    const start = new Date().getTime();
+
+    const astParser = new ASTParser(this.filePaths);
+
+    this.filePaths.forEach((filePath) => {
+      // Heuristically speaking. If the AST contains a
+      // render Identifier, it is very likely that it is a Component
+      // because Hooks will use renderHook instead
+      if (astParser.hasToHaveNoViolations(filePath)) {
+        this.log.testFilesWithToHaveNoViolations.push(filePath);
+
+        if (printTestFilesWithToBeAccessible) {
+          logDebug(`${filePath} is a test file that contains  toHaveNoViolations test matcher`);
+        }
+      }
+    });
+
+    const elapsed = new Date().getTime() - start;
+
+    A11yLogger.logFunctionAndDuration('testFilesWithToHaveNoViolations', elapsed);
+    this.logFunctionCall('logTestFilesWithToHaveNoViolations');
   }
 
   public logTestFilesWithToBeAccessible({
@@ -319,6 +365,34 @@ export class A11yLogger extends TestTask {
 
     A11yLogger.logFunctionAndDuration('testFilesWithToBeAccessibleTest', elapsed);
     this.logFunctionCall('logTestFilesWithToBeAccessible');
+  }
+
+  public logTestFilesWithoutToHaveNoViolations({
+    printTestFilesWithoutToBeAccessibleTest = false,
+  }: Pick<DebugOptions, 'printTestFilesWithoutToBeAccessibleTest'> = {}) {
+    const start = new Date().getTime();
+
+    const astParser = new ASTParser(this.filePaths);
+
+    this.filePaths.forEach((filePath) => {
+      // Heuristically speaking. If the AST contains a
+      // render Identifier, it is very likely that it is a Component
+      // because Hooks will use renderHook instead
+      if (!astParser.hasToHaveNoViolations(filePath)) {
+        this.log.testFilesWithoutToHaveNoViolationsTest.push(filePath);
+
+        if (printTestFilesWithoutToBeAccessibleTest) {
+          logDebug(
+            `${filePath} is a test file that does not contain toHaveNoViolations test matcher`,
+          );
+        }
+      }
+    });
+
+    const elapsed = new Date().getTime() - start;
+
+    A11yLogger.logFunctionAndDuration('testFilesWithoutToHaveNoViolationsTest', elapsed);
+    this.logFunctionCall('logTestFilesWithoutToHaveNoViolations');
   }
 
   public logTestFilesWithoutToBeAccessible({
@@ -427,7 +501,10 @@ export class A11yLogger extends TestTask {
      * means it was skipped. It could be because it does not have toBeAccessible
      */
 
-    if (!this.getFunctionsCalled.logTestFilesWithToBeAccessible) {
+    if (
+      !this.getFunctionsCalled.logTestFilesWithToBeAccessible &&
+      !this.getFunctionsCalled.logTestFilesWithoutToHaveNoViolations
+    ) {
       throw new Error(
         'To reduce computational time, please run A11yLogger.logTestFilesWithToBeAccessible() to obtain the a list of test files with toBeAccessible before running this command',
       );
@@ -457,7 +534,7 @@ export class A11yLogger extends TestTask {
     A11yLogger.logFunctionAndDuration('coverageSummaryTotal', elapsed);
   }
 
-  // Create Fitlered Coverage Summary Total and log
+  // Create filtered Coverage Summary Total and log
   public logFilteredCoverageSummaryTotal(codeOwnerEntry?: CodeOwnerEntry) {
     const start = new Date().getTime();
     const initialSummary: CoverageAreas = {
@@ -477,7 +554,7 @@ export class A11yLogger extends TestTask {
         );
         this.log.filteredJestCoverage = filteredJestCoverageObject.total;
       } else {
-        logError('Filtered Coverage summary is empty. Nothing to log to jestCoverageSymmary');
+        logError('Filtered Coverage summary is empty. Nothing to log to jestCoverageSummary');
       }
     } else {
       this.log.filteredJestCoverage = initialSummary;
@@ -540,12 +617,12 @@ export class A11yLogger extends TestTask {
       await this.logTotalNumberOfComponentsWithTest();
     }
 
-    if (this.log.totalNumberOfPassingToBeAccessibleTests === 0) {
-      this.logTotalNumberOfPassingToBeAccessibleTests();
+    if (this.log.totalNumberOfPassingAccessibleTests === 0) {
+      this.logTotalNumberOfPassingAccessibleTests();
     }
 
     let a11yScore =
-      this.log.totalNumberOfPassingToBeAccessibleTests / this.log.totalNumberOfComponentsWithTest;
+      this.log.totalNumberOfPassingAccessibleTests / this.log.totalNumberOfComponentsWithTest;
 
     if (Number.isNaN(a11yScore) || a11yScore === Infinity) {
       a11yScore = 0;

@@ -39,6 +39,7 @@
   "devDependencies": {
     "@cbhq/cds-tasks": "workspace:^",
     "@cbhq/cds-web-utils": "workspace:^",
+    "@cbhq/ui-scorecard": "workspace:^",
     "@storybook/testing-library": "^0.0.13",
     "linaria": "^2.3.1"
   },

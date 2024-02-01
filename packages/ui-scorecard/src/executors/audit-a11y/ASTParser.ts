@@ -60,4 +60,11 @@ export class ASTParser {
       identifier: 'toBeAccessible',
     });
   }
+
+  public hasToHaveNoViolations(fileName: string) {
+    return this.findIdentifier({
+      fileName,
+      identifier: 'toHaveNoViolations',
+    });
+  }
 }
