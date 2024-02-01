@@ -170,7 +170,6 @@ build:
     - BaldurNode:
         name: package-ui-scorecard
         path: ./packages/ui-scorecard/publish.Dockerfile
-        autobuild: false # Not ready yet
         autobuild_files:
           - packages/ui-scorecard/package.json
         expire_keep_tags_after_days: 1
