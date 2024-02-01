@@ -2,6 +2,8 @@
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable global-require */
 
 export const routes = [
   {
@@ -93,6 +95,10 @@ export const routes = [
     key: 'FloatingAssetCard',
     getComponent: () =>
       require('@cbhq/cds-mobile/cards/__stories__/FloatingAssetCard.stories').default,
+  },
+  {
+    key: 'Frontier',
+    getComponent: () => require('@cbhq/cds-mobile/system/__stories__/Frontier.stories').default,
   },
   {
     key: 'Group',

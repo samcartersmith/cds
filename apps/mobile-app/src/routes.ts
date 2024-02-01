@@ -97,6 +97,10 @@ export const routes = [
       require('@cbhq/cds-mobile/cards/__stories__/FloatingAssetCard.stories').default,
   },
   {
+    key: 'Frontier',
+    getComponent: () => require('@cbhq/cds-mobile/system/__stories__/Frontier.stories').default,
+  },
+  {
     key: 'Group',
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Group.stories').default,
   },

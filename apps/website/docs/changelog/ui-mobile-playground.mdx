@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.6.0 (2/1/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] internal: added story for visregging Frontier changes.
+
 ## 1.5.0 (1/31/2024 PST)
 
 #### 🚀 Updates
