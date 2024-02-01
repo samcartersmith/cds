@@ -3,4 +3,5 @@ module.exports = {
   rules: {
     'compat/compat': 'off',
   },
+  ignorePatterns: ['*.d.ts', 'cjs/', 'dts/', 'node_modules/'],
 };
