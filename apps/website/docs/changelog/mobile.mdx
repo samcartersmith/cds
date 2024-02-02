@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.31.5 (2/2/2024 PST)
+
+#### 🐞 Fixes
+
+- UpsellCard - refactor to conditionally render action. [[#2707](https://github.cbhq.net/frontend/cds/pull/2707)] [[DX-3114](https://jira.coinbase-corp.com/browse/DX-3114)]
 
 #### 📘 Misc
 

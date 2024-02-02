@@ -88,4 +88,10 @@ describe('UpsellCard', () => {
     );
     expect(screen.getByTestId('custom-action-button')).toBeVisible();
   });
+  it('does not render action button if action prop is not passed', () => {
+    const { action, ...propsWithoutAction } = exampleProps;
+    render(<UpsellCard {...propsWithoutAction} />);
+    const actionButton = screen.queryByRole('button', { name: 'Test Action' });
+    expect(actionButton).toBeNull();
+  });
 });

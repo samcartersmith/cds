@@ -65,4 +65,10 @@ describe('UpsellCard', () => {
     );
     expect(screen.getByTestId('custom-action-button')).toBeInTheDocument();
   });
+  it('does not render action button if action prop is not passed', () => {
+    const { action, ...propsWithoutAction } = exampleProps;
+    render(<UpsellCard {...propsWithoutAction} />);
+    const actionButton = screen.queryByText('Test Action');
+    expect(actionButton).not.toBeInTheDocument();
+  });
 });

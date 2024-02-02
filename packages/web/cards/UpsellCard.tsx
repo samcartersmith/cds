@@ -51,7 +51,14 @@ export const UpsellCard = memo(
           position="relative"
           width="100%"
         >
-          <VStack gap={3} justifyContent="space-between" spacing={2} width="70%" zIndex={2}>
+          <VStack
+            gap={3}
+            justifyContent="space-between"
+            minHeight={density === 'dense' ? upsellCardMinHeightDense : upsellCardMinHeight}
+            spacing={2}
+            width="70%"
+            zIndex={2}
+          >
             <VStack gap={1}>
               {typeof title === 'string' ? <TextHeadline as="h3">{title}</TextHeadline> : title}
               {typeof description === 'string' ? (
@@ -62,21 +69,23 @@ export const UpsellCard = memo(
                 description
               )}
             </VStack>
-            <HStack spacingStart={2}>
-              {isValidElement(action) ? (
-                action
-              ) : (
-                <Button
-                  compact
-                  flush="start"
-                  numberOfLines={1}
-                  onPress={onActionPress}
-                  variant="secondary"
-                >
-                  {action as string}
-                </Button>
-              )}
-            </HStack>
+            {!!action && (
+              <HStack spacingStart={2}>
+                {isValidElement(action) ? (
+                  action
+                ) : (
+                  <Button
+                    compact
+                    flush="start"
+                    numberOfLines={1}
+                    onPress={onActionPress}
+                    variant="secondary"
+                  >
+                    {action as string}
+                  </Button>
+                )}
+              </HStack>
+            )}
           </VStack>
           {!!media && (
             <HStack position="absolute" right={0} zIndex={0}>
