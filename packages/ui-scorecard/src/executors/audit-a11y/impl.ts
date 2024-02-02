@@ -150,7 +150,7 @@ async function sendScores(
       totalNumberOfPassingAccessibleTests,
       codeOwner,
       filteredJestScore,
-      platform: options.platform,
+      platformType: options.platform,
     },
   });
 
@@ -166,7 +166,7 @@ async function sendScores(
       totalNumberOfPassingAccessibleTests,
       codeOwner: codeOwner ?? null,
       filteredJestScore: filteredJestScore ?? null,
-      platform: options.platform,
+      platformType: options.platform,
     },
     AnalyticsEventImportance.high,
   );

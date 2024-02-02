@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.13 (2/2/2024 PST)
+
+#### 🐞 Fixes
+
+- Rename duplicate platform property to platformType. [[#2708](https://github.cbhq.net/frontend/cds/pull/2708)]
+
 ## 0.1.12 (2/1/2024 PST)
 
 #### 🚀 Updates
