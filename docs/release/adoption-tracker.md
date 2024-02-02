@@ -1,6 +1,8 @@
 # Adoption Tracker
 
-The Adoption Tracker allows us to view component level insight into CDS adoption.
+> The Adoption Tracker allows us to view component level insight into CDS adoption.
+
+For details regarding Adoption Tracker Development: See [Adoption Tracker Development Docs](../adoption-tracker-development.md)
 
 ## Overview
 
@@ -8,7 +10,7 @@ config - `apps/website/scripts/adoption/config.ts`
 
 script - `apps/website/scripts/adoption/main.ts`
 
-parsers - `apps/website/scripts/adoption/parsers/`
+parsers - `apps/website/scripts/adoption/parsers`
 
 ## Updating the Adoption Tracker
 
