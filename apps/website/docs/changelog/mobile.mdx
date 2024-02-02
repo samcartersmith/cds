@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.31.6 (2/2/2024 PST)
+
+#### 🐞 Fixes
+
+- Tray - add TrayStickyFooter wrapper. [[#2696](https://github.cbhq.net/frontend/cds/pull/2696)] [[DX-3115](https://jira.coinbase-corp.com/browse/DX-3115)]
+
 ## 5.31.5 (2/2/2024 PST)
 
 #### 🐞 Fixes

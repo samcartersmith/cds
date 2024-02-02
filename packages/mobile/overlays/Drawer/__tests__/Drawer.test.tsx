@@ -1,4 +1,3 @@
-/* eslint-disable jest/no-commented-out-tests */
 import { Modal } from 'react-native';
 import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
@@ -31,7 +30,6 @@ const MockDrawer = ({
   onCloseComplete,
   pin = 'bottom',
   preventDismissGestures,
-  stickyFooter,
 }: Partial<DrawerBaseProps>) => {
   const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
 
@@ -51,7 +49,6 @@ const MockDrawer = ({
           onCloseComplete={handleRequestClose}
           pin={pin}
           preventDismissGestures={preventDismissGestures}
-          stickyFooter={stickyFooter}
           visible={isVisible}
         >
           {({ handleClose }) => (
@@ -125,34 +122,4 @@ describe('Drawer', () => {
     await delay(DURATION);
     expect(onCloseComplete).not.toHaveBeenCalled();
   });
-  // it('renders a StickyFooter when passed and pin is bottom', () => {
-  //   render(
-  //     <MockDrawerWithSafeArea
-  //       pin="bottom"
-  //       stickyFooter={
-  //         <StickyFooter testID="sticky-footer">
-  //           <Text>StickyFooter</Text>
-  //         </StickyFooter>
-  //       }
-  //     />,
-  //   );
-  //   fireEvent.press(screen.getByText('Open Drawer'));
-  //   expect(screen.getByText('StickyFooter')).toBeTruthy();
-  //   expect(screen.getByTestId('sticky-footer')).toBeTruthy();
-  // });
-  // it('does not render a StickyFooter when passed and pin is not bottom', () => {
-  //   render(
-  //     <MockDrawerWithSafeArea
-  //       pin="left"
-  //       stickyFooter={
-  //         <StickyFooter testID="sticky-footer">
-  //           <Text>StickyFooter</Text>
-  //         </StickyFooter>
-  //       }
-  //     />,
-  //   );
-  //   fireEvent.press(screen.getByText('Open Drawer'));
-  //   expect(screen.queryByText('StickyFooter')).toBeFalsy();
-  //   expect(screen.queryByTestId('sticky-footer')).toBeFalsy();
-  // });
 });

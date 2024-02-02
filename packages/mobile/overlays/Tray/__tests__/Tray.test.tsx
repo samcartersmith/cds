@@ -1,10 +1,12 @@
+import { useContext } from 'react';
+import { Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { render, screen } from '@testing-library/react-native';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 
 import { TextBody } from '../../../typography';
 import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
-import { Tray } from '../Tray';
+import { Tray, TrayContext } from '../Tray';
 
 const titleText = 'Test Title';
 
@@ -59,5 +61,28 @@ describe('Tray', () => {
     unmount();
 
     expect(onVisibilityChangeSpy).toHaveBeenCalledWith('hidden');
+  });
+
+  it('renders correctly and provides the correct context value', () => {
+    const verticalDrawerPercentageOfView = 0.75;
+
+    // Create a test component that will consume the context value and render it
+    const TestComponent = () => {
+      const contextValue = useContext(TrayContext);
+      return <Text testID="context-value">{JSON.stringify(contextValue)}</Text>;
+    };
+
+    render(
+      <TrayContext.Provider value={{ verticalDrawerPercentageOfView }}>
+        <TestComponent />
+      </TrayContext.Provider>,
+    );
+
+    const contextValueElement = screen.getByTestId('context-value');
+
+    // eslint-disable-next-line testing-library/no-node-access
+    expect(contextValueElement.props.children).toBe(
+      JSON.stringify({ verticalDrawerPercentageOfView }),
+    );
   });
 });

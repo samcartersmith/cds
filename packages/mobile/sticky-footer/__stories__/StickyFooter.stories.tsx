@@ -1,5 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, ScrollView, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { DrawerRefBaseProps, useToggler } from '@cbhq/cds-common';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
 
@@ -8,10 +9,10 @@ import { Menu } from '../../controls/Menu';
 import { SelectOption } from '../../controls/SelectOption';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box, HStack, VStack } from '../../layout';
-import { Tray } from '../../overlays';
+import { Tray, TrayStickyFooter } from '../../overlays';
 import { StickyFooter } from '../StickyFooter';
 
-const options: string[] = prices.slice(0, 8);
+const options: string[] = prices.slice(0, 20);
 
 const StickyFooterWithTray = ({ title }: { title?: string }) => {
   const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
@@ -38,31 +39,6 @@ const StickyFooterWithTray = ({ title }: { title?: string }) => {
     [handleTrayClose],
   );
 
-  const stickyFooter = useCallback(({ handleClose }: { handleClose: () => void }) => {
-    return (
-      <StickyFooter elevated>
-        <HStack
-          alignContent="center"
-          alignItems="center"
-          gap={1}
-          justifyContent="center"
-          width="100%"
-        >
-          <Box flexGrow={1}>
-            <Button block onPress={handleClose} variant="secondary">
-              Secondary
-            </Button>
-          </Box>
-          <Box flexGrow={1}>
-            <Button block onPress={handleClose}>
-              Primary
-            </Button>
-          </Box>
-        </HStack>
-      </StickyFooter>
-    );
-  }, []);
-
   return (
     <>
       <Button onPress={handleOpenTray}>Open</Button>
@@ -71,12 +47,38 @@ const StickyFooterWithTray = ({ title }: { title?: string }) => {
           ref={trayRef}
           disableCapturePanGestureToDismiss
           onCloseComplete={handleCloseTray}
-          stickyFooter={stickyFooter}
           title={title}
+          verticalDrawerPercentageOfView={0.75}
         >
-          <Menu onChange={setValue} value={value}>
-            <FlatList data={options} renderItem={renderItem} />
-          </Menu>
+          {({ handleClose }) => (
+            <TrayStickyFooter>
+              <ScrollView>
+                <Menu onChange={setValue} value={value}>
+                  <FlatList data={options} renderItem={renderItem} scrollEnabled={false} />
+                </Menu>
+              </ScrollView>
+              <StickyFooter elevated>
+                <HStack
+                  alignContent="center"
+                  alignItems="center"
+                  gap={1}
+                  justifyContent="center"
+                  width="100%"
+                >
+                  <Box flexGrow={1}>
+                    <Button block variant="secondary">
+                      Secondary
+                    </Button>
+                  </Box>
+                  <Box flexGrow={1}>
+                    <Button block onPress={handleClose}>
+                      Primary
+                    </Button>
+                  </Box>
+                </HStack>
+              </StickyFooter>
+            </TrayStickyFooter>
+          )}
         </Tray>
       )}
     </>
@@ -88,6 +90,7 @@ const StickyFooterScreen = () => {
   const handleButtonPress = useCallback(() => {
     setShowStickyFooter(!showStickyFooter);
   }, [showStickyFooter]);
+  const inset = useSafeAreaInsets();
   return (
     <View>
       <ExampleScreen>
@@ -99,7 +102,7 @@ const StickyFooterScreen = () => {
         </Example>
       </ExampleScreen>
       {showStickyFooter && (
-        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+        <View style={{ position: 'absolute', bottom: inset.bottom / 2, left: 0, right: 0 }}>
           <StickyFooter>
             <VStack
               alignContent="center"

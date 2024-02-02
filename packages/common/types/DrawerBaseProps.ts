@@ -46,6 +46,7 @@ export type DrawerBaseProps = {
   handleBarAccessibilityLabel?: string;
   /**
    * StickyFooter to be rendered at bottom of Drawer
+   * @deprecated Use TrayStickyFooter as a Tray child instead.
    */
   stickyFooter?: DrawerRenderChildren | ReactNode;
 } & SharedProps;
