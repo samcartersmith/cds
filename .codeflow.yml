@@ -3,7 +3,7 @@ secure:
   codeowners_enabled: true
   branches:
     - master
-    - 6.0.0-rc-1
+    - 6.0.0-rc.1
   auto_assign_reviewers: true
 build:
   engines:
