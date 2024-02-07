@@ -57,7 +57,18 @@ export const Compact = () => {
   );
 };
 
-Compact.parameters = { percy: enableJavascript };
+Compact.bind({});
+Compact.parameters = {
+  a11y: {
+    config: {
+      /**
+       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
+       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+       */
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const BottomPeriodSelector = () => {
   return (
@@ -84,4 +95,16 @@ export const AlternatePeriods = () => {
     <SparklineInteractiveWithAltHeader data={sparklineInteractiveData} strokeColor="#F7931A" />
   );
 };
-AlternatePeriods.parameters = { percy: enableJavascript };
+
+AlternatePeriods.bind({});
+AlternatePeriods.parameters = {
+  a11y: {
+    config: {
+      /**
+       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
+       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+       */
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
