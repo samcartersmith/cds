@@ -36,6 +36,10 @@ export type NavigationBarProps = {
   /**
    * @default 2
    * */
+  spacingHorizontal?: SpacingScale;
+  /**
+   * @default 2
+   * */
   spacingTop?: SpacingScale;
   /**
    * @default 2
@@ -55,6 +59,7 @@ export const NavigationBar = memo(
     end,
     bottom,
     accessibilityLabel = 'main navigation',
+    spacingHorizontal = 2,
     spacingTop = 2,
     spacingBottom = bottom ? undefined : 2,
     dangerouslyDisableOverflowHidden,
@@ -73,7 +78,7 @@ export const NavigationBar = memo(
         position="sticky"
         right={0}
         spacingBottom={spacingBottom}
-        spacingHorizontal={2}
+        spacingHorizontal={spacingHorizontal}
         spacingTop={spacingTop}
         top={0}
         width="100%"

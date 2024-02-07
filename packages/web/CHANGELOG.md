@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.32.0 (2/6/2024 PST)
+
+#### 🚀 Updates
+
+- NavigationBar: add spacingHorizontal prop. [[#2730](https://github.cbhq.net/frontend/cds/pull/2730)] [[DX-3183](https://jira.coinbase-corp.com/browse/DX-3183)]
+
 ## 5.31.6 ((2/2/2024, 11:43 AM PST))
 
 This is an artificial version bump with no new change.
