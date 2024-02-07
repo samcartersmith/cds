@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.33.0 (2/7/2024 PST)
+
+#### 🚀 Updates
+
+- Add prop to Pulse component for number of iterations. [[#2731](https://github.cbhq.net/frontend/cds/pull/2731)] [[DX-3107](https://jira.coinbase-corp.com/browse/DX-3107)]
+
 ## 5.32.0 ((2/6/2024, 07:00 PM PST))
 
 This is an artificial version bump with no new change.

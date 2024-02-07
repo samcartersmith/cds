@@ -11,6 +11,14 @@ export type PulseBaseProps = {
    */
   variant?: PulseVariant;
   children: ReactNode;
+  /**
+   * Specifies the number of times the pulse animation should loop.
+   * Provide a positive integer to define an exact number of loops.
+   * To enable infinite looping, omit this property or leave it undefined.
+   * By default, the animation loops infinitely if this property is not specified.
+   * @default Infinity
+   */
+  iterations?: number;
 } & HintMotionBaseProps;
 
 export type PulseRefBaseProps = {

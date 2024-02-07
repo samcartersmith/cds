@@ -3,7 +3,7 @@ import { act, render, screen } from '@testing-library/react';
 import { useAnimation } from 'framer-motion';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Pulse } from '../Pulse';
+import { calculateRepeatValue, Pulse } from '../Pulse';
 
 jest.mock('framer-motion', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -83,5 +83,25 @@ describe('Pulse', () => {
     expect(start).not.toHaveBeenCalled();
     act(() => void ref.current?.play());
     expect(start).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('calculateRepeatValue', () => {
+  it('returns Infinity for undefined iterations', () => {
+    expect(calculateRepeatValue(undefined)).toBe(Infinity);
+  });
+
+  it('returns 0 for 1 iteration (adjusting for zero-index)', () => {
+    expect(calculateRepeatValue(1)).toBe(0);
+  });
+
+  it('returns correct adjusted value for multiple iterations', () => {
+    // Expecting 3 iterations to be adjusted to 2 for zero-indexed loops
+    expect(calculateRepeatValue(3)).toBe(2);
+  });
+
+  it('returns 0 for non-positive iterations', () => {
+    expect(calculateRepeatValue(0)).toBe(0);
+    expect(calculateRepeatValue(-1)).toBe(0);
   });
 });
