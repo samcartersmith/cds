@@ -47,6 +47,7 @@ HexagonAvatarClipPath.displayName = 'HexagonAvatarClipPath';
  */
 export const hexagonSvgTransformStyles = {
   standard: {
+    s: { transform: `scale(1.1) translateX(-0.3px)` },
     m: { transform: `scale(1.075) translateX(-0.25px)` },
     l: { transform: `scaleY(1.075) translateX(-0.25px)` },
     xl: { transform: `scaleY(1.075) translateX(-0.25px)` },
@@ -54,6 +55,7 @@ export const hexagonSvgTransformStyles = {
     xxxl: { transform: `scaleX(1.05) scaleY(1.075) translateX(-0.55px)` },
   },
   offset: {
+    s: { transform: `scaleX(1.3) scaleY(1.325)` },
     m: { transform: `scaleX(1.25) scaleY(1.275)` },
     l: { transform: `scaleX(1.2) scaleY(1.25)` },
     xl: { transform: `scaleX(1.175) scaleY(1.215)` },

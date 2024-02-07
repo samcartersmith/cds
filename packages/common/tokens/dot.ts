@@ -10,6 +10,7 @@ export const avatarIconSizeMap: Record<AvatarSize, DotSize> = {
   xl: 's',
   l: 'xs',
   m: 'xs',
+  s: 'xs',
 } as const;
 
 export const avatarDotSizeMap: Record<AvatarSize, DotSize> = {
@@ -18,6 +19,7 @@ export const avatarDotSizeMap: Record<AvatarSize, DotSize> = {
   xl: 'm',
   l: 's',
   m: 'xs',
+  s: 'xs',
 } as const;
 
 export const dotOuterContainerStyles = {

@@ -3,8 +3,8 @@
  * Generated from scripts/codegen/main.ts
  */
 
-export type AvatarSize = 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
+export type AvatarSize = 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
 
 export type AvatarPixelSize = 16 | 24 | 32 | 40 | 48 | 56;
 
-export type AvatarDensePixelSize = 16 | 24 | 36 | 44 | 48 | 56;
+export type AvatarDensePixelSize = 16 | 20 | 24 | 36 | 44 | 48;

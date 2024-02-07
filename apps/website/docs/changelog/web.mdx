@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.34.0 (2/7/2024 PST)
+
+#### 🚀 Updates
+
+- Add avatar small size and modify dense medium size. [[#2729](https://github.cbhq.net/frontend/cds/pull/2729)] [[DX-3174](https://jira.coinbase-corp.com/browse/DX-3174)]
+
 ## 5.33.0 (2/7/2024 PST)
 
 #### 🚀 Updates
