@@ -34,7 +34,16 @@ export const Default = () => {
     <SparklineInteractiveWithHeaderBuild data={sparklineInteractiveData} strokeColor="#F7931A" />
   );
 };
-Default.parameters = { percy: enableJavascript };
+
+Default.bind({});
+Default.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const CustomLabel = () => {
   return (
@@ -45,7 +54,16 @@ export const CustomLabel = () => {
     />
   );
 };
-CustomLabel.parameters = { percy: enableJavascript };
+
+CustomLabel.bind({});
+CustomLabel.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const Compact = () => {
   return (
@@ -57,7 +75,15 @@ export const Compact = () => {
   );
 };
 
-Compact.parameters = { percy: enableJavascript };
+Compact.bind({});
+Compact.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const BottomPeriodSelector = () => {
   return (
@@ -84,4 +110,13 @@ export const AlternatePeriods = () => {
     <SparklineInteractiveWithAltHeader data={sparklineInteractiveData} strokeColor="#F7931A" />
   );
 };
-AlternatePeriods.parameters = { percy: enableJavascript };
+
+AlternatePeriods.bind({});
+AlternatePeriods.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};

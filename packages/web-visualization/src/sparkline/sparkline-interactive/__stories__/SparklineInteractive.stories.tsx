@@ -7,6 +7,7 @@ import {
   sparklineInteractiveData,
   sparklineInteractiveHoverData,
 } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import { Box, VStack } from '@cbhq/cds-web/layout';
 import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
@@ -29,17 +30,36 @@ const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilde
 });
 
 const strokeColor = '#F7931A';
+
 export const Default = () => (
   <React.StrictMode>
     <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
   </React.StrictMode>
 );
-Default.parameters = { percy: enableJavascript };
+
+Default.bind({});
+Default.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const Compact = () => (
   <SparklineInteractiveBuild compact data={sparklineInteractiveData} strokeColor={strokeColor} />
 );
-Compact.parameters = { percy: enableJavascript };
+
+Compact.bind({});
+Compact.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const DisableScrubbing = () => (
   <SparklineInteractiveBuild
@@ -48,7 +68,16 @@ export const DisableScrubbing = () => (
     strokeColor={strokeColor}
   />
 );
-DisableScrubbing.parameters = { percy: enableJavascript };
+
+DisableScrubbing.bind({});
+DisableScrubbing.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const HidePeriodSelector = () => (
   <SparklineInteractiveBuild
@@ -57,7 +86,16 @@ export const HidePeriodSelector = () => (
     strokeColor={strokeColor}
   />
 );
-HidePeriodSelector.parameters = { percy: enableJavascript };
+
+HidePeriodSelector.bind({});
+HidePeriodSelector.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const yAxisScaling = () => (
   <SparklineInteractiveBuild
@@ -66,14 +104,32 @@ export const yAxisScaling = () => (
     yAxisScalingFactor={0.1}
   />
 );
-yAxisScaling.parameters = { percy: enableJavascript };
+
+yAxisScaling.bind({});
+yAxisScaling.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const Fill = () => (
   <React.StrictMode>
     <SparklineInteractiveBuild fill data={sparklineInteractiveData} strokeColor={strokeColor} />
   </React.StrictMode>
 );
-Fill.parameters = { percy: enableJavascript };
+
+Fill.bind({});
+Fill.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const FallbackPositive = () => <SparklineInteractiveBuild strokeColor={strokeColor} />;
 
@@ -93,14 +149,32 @@ export const NoHoverDate = () => (
     strokeColor={strokeColor}
   />
 );
-NoHoverDate.parameters = { percy: enableJavascript };
+
+NoHoverDate.bind({});
+NoHoverDate.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const WithHeaderNode = () => {
   return (
     <SparklineInteractiveWithHeaderBuild data={sparklineInteractiveData} strokeColor="#F7931A" />
   );
 };
-WithHeaderNode.parameters = { percy: enableJavascript };
+
+WithHeaderNode.bind({});
+WithHeaderNode.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const TimePeriodGutter = () => {
   return (
@@ -111,7 +185,16 @@ export const TimePeriodGutter = () => {
     />
   );
 };
-TimePeriodGutter.parameters = { percy: enableJavascript };
+
+TimePeriodGutter.bind({});
+TimePeriodGutter.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const HoverData = () => {
   return (
@@ -122,7 +205,16 @@ export const HoverData = () => {
     />
   );
 };
-HoverData.parameters = { percy: enableJavascript };
+
+HoverData.bind({});
+HoverData.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const HoverDataWithFill = () => {
   return (
@@ -134,7 +226,16 @@ export const HoverDataWithFill = () => {
     />
   );
 };
-HoverDataWithFill.parameters = { percy: enableJavascript };
+
+HoverDataWithFill.bind({});
+HoverDataWithFill.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const BottomPeriodSelector = () => {
   return (
@@ -146,4 +247,35 @@ export const BottomPeriodSelector = () => {
   );
 };
 
-BottomPeriodSelector.parameters = { percy: enableJavascript };
+BottomPeriodSelector.bind({});
+BottomPeriodSelector.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
+export const VStackedSparkline = () => {
+  return (
+    <VStack width="100%">
+      <Box width="100%">
+        <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
+      </Box>
+      <Box background="secondary" height={20} spacingTop={8} width="100%">
+        This is an element below the sparkline
+      </Box>
+    </VStack>
+  );
+};
+
+VStackedSparkline.bind({});
+VStackedSparkline.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Revert [#2734](https://github.cbhq.net/frontend/cds/pull/2734) "Disable broken a11y color contrast test for sparkline". [[#2736](https://github.cbhq.net/frontend/cds/pull/2736)]
+
 ## 5.34.1 ((2/7/2024, 03:21 PM PST))
 
 This is an artificial version bump with no new change.

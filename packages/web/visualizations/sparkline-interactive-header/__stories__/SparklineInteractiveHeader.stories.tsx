@@ -34,6 +34,7 @@ export const Default = () => {
     <SparklineInteractiveWithHeaderBuild data={sparklineInteractiveData} strokeColor="#F7931A" />
   );
 };
+
 Default.parameters = { percy: enableJavascript };
 
 export const CustomLabel = () => {
@@ -45,6 +46,7 @@ export const CustomLabel = () => {
     />
   );
 };
+
 CustomLabel.parameters = { percy: enableJavascript };
 
 export const Compact = () => {
@@ -57,18 +59,7 @@ export const Compact = () => {
   );
 };
 
-Compact.bind({});
-Compact.parameters = {
-  a11y: {
-    config: {
-      /**
-       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
-       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
-       */
-      rules: [{ id: 'color-contrast', enabled: false }],
-    },
-  },
-};
+Compact.parameters = { percy: enableJavascript };
 
 export const BottomPeriodSelector = () => {
   return (
@@ -96,15 +87,4 @@ export const AlternatePeriods = () => {
   );
 };
 
-AlternatePeriods.bind({});
-AlternatePeriods.parameters = {
-  a11y: {
-    config: {
-      /**
-       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled
-       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
-       */
-      rules: [{ id: 'color-contrast', enabled: false }],
-    },
-  },
-};
+AlternatePeriods.parameters = { percy: enableJavascript };

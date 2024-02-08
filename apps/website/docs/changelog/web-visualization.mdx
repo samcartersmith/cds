@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- **[Sparkline]** Suppress web a11y color contrast errors in web-visualization stories. [[#2736](https://github.cbhq.net/frontend/cds/pull/2736)]
+
 ## 0.0.7 (1/23/2024 PST)
 
 #### 🐞 Fixes
