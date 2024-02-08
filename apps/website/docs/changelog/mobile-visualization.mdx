@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.0.17 (2/8/2024 PST)
+
+#### 🐞 Fixes
+
+- Chore: removed v2 suffix from sparkline stories.
+
 ## 0.0.16 (1/23/2024 PST)
 
 #### 🐞 Fixes

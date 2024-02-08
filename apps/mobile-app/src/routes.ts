@@ -276,27 +276,26 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Spacer.stories').default,
   },
   {
-    key: 'SparklineGradientV2',
+    key: 'Sparkline',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline/__stories__/SparklineGradientV2.stories')
+      require('@cbhq/cds-mobile-visualization/src/sparkline/__stories__/Sparkline.stories').default,
+  },
+  {
+    key: 'SparklineGradient',
+    getComponent: () =>
+      require('@cbhq/cds-mobile-visualization/src/sparkline/__stories__/SparklineGradient.stories')
         .default,
   },
   {
-    key: 'SparklineInteractiveHeaderV2',
+    key: 'SparklineInteractive',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline/sparkline-interactive-header/__stories__/SparklineInteractiveHeaderV2.stories')
+      require('@cbhq/cds-mobile-visualization/src/sparkline/sparkline-interactive/__stories__/SparklineInteractive.stories')
         .default,
   },
   {
-    key: 'SparklineInteractiveV2',
+    key: 'SparklineInteractiveHeader',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline/sparkline-interactive/__stories__/SparklineInteractiveV2.stories')
-        .default,
-  },
-  {
-    key: 'SparklineV2',
-    getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline/__stories__/SparklineV2.stories')
+      require('@cbhq/cds-mobile-visualization/src/sparkline/sparkline-interactive-header/__stories__/SparklineInteractiveHeader.stories')
         .default,
   },
   {
