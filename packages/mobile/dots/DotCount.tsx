@@ -148,12 +148,15 @@ export const DotCount = memo(
       [innerContainerStyles, animatedStyles],
     );
 
+    // only check childrenSize when children is defined
+    const shouldShow = children !== undefined ? childrenSize !== null : true;
+
     return (
       <View {...props}>
         <View onLayout={onChildrenLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
-        {!shouldUnmount && childrenSize !== null && (
+        {!shouldUnmount && shouldShow && (
           <Animated.View style={dotCountInnerContainerStyle} testID="dotcount-inner-container">
             <TextCaption
               color="primaryForeground"

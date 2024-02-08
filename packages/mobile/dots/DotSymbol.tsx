@@ -59,12 +59,15 @@ export const DotSymbol = memo(
       };
     }, []);
 
+    // only check childrenSize when children is defined
+    const shouldShow = children !== undefined ? childrenSize !== null : true;
+
     return (
       <View {...props}>
         <View onLayout={onChildrenLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
-        {childrenSize !== null && (
+        {shouldShow && (
           <View style={pinStyles} testID="dotsymbol-inner-container">
             {source !== undefined && (
               <RemoteImage

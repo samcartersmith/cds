@@ -42,14 +42,15 @@ export const DotStatusColor = memo(
       };
     }, [iconSize, palette, pinStyles, variant]);
 
+    // only check childrenSize when children is defined
+    const shouldShow = children !== undefined ? childrenSize !== null : true;
+
     return (
       <View {...props}>
         <View onLayout={onLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
-        {childrenSize !== null && (
-          <View style={dotContentStyles} testID="dotstatuscolor-inner-container" />
-        )}
+        {shouldShow && <View style={dotContentStyles} testID="dotstatuscolor-inner-container" />}
       </View>
     );
   },

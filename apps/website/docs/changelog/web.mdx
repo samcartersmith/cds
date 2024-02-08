@@ -8,7 +8,9 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 5.34.1 ((2/7/2024, 03:21 PM PST))
+
+This is an artificial version bump with no new change.
 
 #### 📘 Misc
 

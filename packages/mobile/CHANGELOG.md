@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.34.1 (2/7/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix dots on android. [[#2733](https://github.cbhq.net/frontend/cds/pull/2733)]
+
 ## 5.34.0 ((2/7/2024, 12:34 PM PST))
 
 This is an artificial version bump with no new change.
