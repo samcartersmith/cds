@@ -26,7 +26,7 @@ export const ModalFooter = ({
 
   return (
     <Box borderedTop={!hideDividers} spacingHorizontal={3} spacingVertical={2} testID={testID}>
-      <ButtonGroup block={!isVertical} direction={direction}>
+      <ButtonGroup block={!isVertical} direction={vertical ? 'vertical' : direction}>
         {actions.map((action, i) => (
           // actions are stable so should be fine to use index as key
           // eslint-disable-next-line react/no-array-index-key

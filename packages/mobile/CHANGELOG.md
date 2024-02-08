@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.34.2 (2/7/2024 PST)
+
+#### 🐞 Fixes
+
+- **[ModalFooter]** Action buttons do not stack when vertical prop is true. [[#2732](https://github.cbhq.net/frontend/cds/pull/2732)] [[DX-3192](https://jira.coinbase-corp.com/browse/DX-3192)]
+
 ## 5.34.1 (2/7/2024 PST)
 
 #### 🐞 Fixes
