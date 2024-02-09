@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.34.3 (2/8/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: TextInput tests when passing negative helper text. [[#2742](https://github.cbhq.net/frontend/cds/pull/2742)] [[DX-3205](https://jira.coinbase-corp.com/browse/DX-3205)]
+
 ## 5.34.2 ((2/7/2024, 05:53 PM PST))
 
 This is an artificial version bump with no new change.

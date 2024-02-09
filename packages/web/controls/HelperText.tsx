@@ -39,7 +39,7 @@ export const HelperText = memo(function HelperText({
 
   if (density === 'dense') {
     return (
-      <TextBody as="p" color={color} {...props}>
+      <TextBody as="span" color={color} display="block" {...props}>
         {color === 'negative' && renderErrorIcon()}
         {children}
       </TextBody>
@@ -47,7 +47,7 @@ export const HelperText = memo(function HelperText({
   }
 
   return (
-    <TextLabel2 as="p" color={color} {...props}>
+    <TextLabel2 as="span" color={color} display="block" {...props}>
       {color === 'negative' && renderErrorIcon()}
       {children}
     </TextLabel2>
