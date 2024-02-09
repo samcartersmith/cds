@@ -50,10 +50,13 @@ type Type = Expand<
   } & SharedProps
 >;
 
-type Param = {
+export type Param = {
   function: string;
-  params: string[];
-} & Omit<SharedProps, 'name'>;
+  param: string[];
+  replacement?: string;
+} & Pick<SharedProps, 'package' | 'path' | 'type' | 'migrationMap'>;
+
+export type FunctionDeprecation = SharedProps & Pick<Scope, 'exportNames'>;
 
 export type Deprecation = {
   /**
@@ -70,7 +73,7 @@ export type Deprecation = {
   types?: Type[];
   props?: Prop[];
   hooks?: (SharedProps & Pick<Scope, 'exportNames'>)[];
-  functions?: (SharedProps & Pick<Scope, 'exportNames'>)[];
+  functions?: FunctionDeprecation[];
   tokens?: (SharedProps & Pick<Scope, 'exportNames'>)[];
   params?: Param[];
 };

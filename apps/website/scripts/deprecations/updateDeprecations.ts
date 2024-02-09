@@ -231,17 +231,15 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     if (key === 'params') {
       groups.params.push('<Accordion>');
       deprecationObj.params?.forEach(
-        ({ function: func, params, package: pkgName, path, type, migrationMap }) => {
-          params.forEach((param) => {
+        ({ function: func, param, package: pkgName, path, type, migrationMap }) => {
+          param.forEach((p) => {
             groups.params.push(
               formatDeprecationGuide({
                 name: `${func}: ${param}`,
                 pkgName,
                 type,
-                // @ts-expect-error Not sure why this thinks it's a partial
-                migrationMap,
                 guidance: `<p>Original Path: ${path}</p>
-      <p>${getMigrationRecommendation(migrationMap, param)}</p>`,
+      <p>${getMigrationRecommendation(migrationMap, p)}</p>`,
               }),
             );
           });

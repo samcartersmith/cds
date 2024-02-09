@@ -1,4 +1,4 @@
-import { Component, Deprecation, Prop } from '../types';
+import { Component, Deprecation, FunctionDeprecation, Param, Prop } from '../types';
 
 const baseWebOverlaysDeprecation: Partial<Component> = {
   package: 'web-overlays',
@@ -693,6 +693,226 @@ const propDeprecations: Prop[] = [
   },
 ];
 
+const functionDeprecations: FunctionDeprecation[] = [
+  {
+    name: 'selectContext',
+    path: 'packages/web/controls/selectContext.ts',
+    package: 'web',
+    type: ['replaced', 'path'],
+    migrationMap: {
+      path: 'packages/web-overlays/select/selectContext.ts',
+    },
+    exportNames: ['selectContext', 'SelectContextType', 'SelectContext', 'SelectProvider'],
+  },
+  {
+    name: 'createAnnouncementCard',
+    path: 'packages/common/cards/createAnnouncementCard.tsx',
+    package: 'common',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['createAnnouncementCard'],
+  },
+  {
+    name: 'createAnnouncementCardDeprecated',
+    path: 'packages/common/cards/createAnnouncementCardDeprecated.tsx',
+    package: 'common',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['createAnnouncementCardDeprecated'],
+  },
+  {
+    name: 'createFeatureEntryCard',
+    path: 'packages/common/cards/createFeatureEntryCard.tsx',
+    package: 'common',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['createFeatureEntryCard', 'FeatureEntryCardProps'],
+  },
+  {
+    name: 'AnnouncementCard',
+    path: 'packages/mobile/alpha/AnnouncementCard.tsx',
+    package: 'mobile',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['AnnouncementCard', 'AnnouncementCardProps'],
+  },
+  {
+    name: 'AnnouncementCard',
+    path: 'packages/web/alpha/AnnouncementCard.tsx',
+    package: 'web',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['AnnouncementCard', 'AnnouncementCardProps'],
+  },
+  {
+    name: 'AnnouncementCard',
+    path: 'packages/mobile/cards/AnnouncementCard.tsx',
+    package: 'mobile',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['AnnouncementCard'],
+  },
+  {
+    name: 'AnnouncementCard',
+    path: 'packages/web/cards/AnnouncementCard.tsx',
+    package: 'web',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['AnnouncementCard'],
+  },
+  {
+    name: 'FeatureEntryCard',
+    path: 'packages/mobile/alpha/FeatureEntryCard.tsx',
+    package: 'mobile',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['FeatureEntryCard', 'FeatureEntryCardProps'],
+  },
+  {
+    name: 'FeatureEntryCard',
+    path: 'packages/web/alpha/FeatureEntryCard.tsx',
+    package: 'web',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['FeatureEntryCard', 'FeatureEntryCardProps'],
+  },
+  {
+    name: 'FeatureEntryCard',
+    path: 'packages/mobile/cards/FeatureEntryCard.tsx',
+    package: 'mobile',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['FeatureEntryCard'],
+  },
+  {
+    name: 'FeatureEntryCard',
+    path: 'packages/web/cards/FeatureEntryCard.tsx',
+    package: 'web',
+    type: 'replaced',
+    migrationMap: {
+      replaced: ['NudgeCard', 'UpsellCard'],
+    },
+    exportNames: ['FeatureEntryCard'],
+  },
+];
+
+export const parameterMigrations: Param[] = [
+  {
+    function: 'useToast',
+    param: ['dangerouslySetDuration'],
+    replacement: 'duration',
+    package: 'common',
+    path: 'packages/common/overlays',
+    type: 'replaced',
+  },
+  {
+    function: 'useToast',
+    param: ['dangerouslySetDuration'],
+    replacement: 'duration',
+    package: 'mobile',
+    path: 'packages/mobile/overlays',
+    type: 'replaced',
+  },
+  {
+    function: 'useToast',
+    param: ['dangerouslySetDuration'],
+    replacement: 'duration',
+    package: 'web',
+    path: 'packages/web/overlays',
+    type: 'replaced',
+  },
+  {
+    function: 'paletteConfigToRgbaStrings',
+    param: ['hasFrontier'],
+    package: 'common',
+    path: 'packages/common/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteConfigToRgbaStrings',
+    param: ['hasFrontier'],
+    package: 'mobile',
+    path: 'packages/mobile/utils/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteValueToHex',
+    param: ['hasFrontier'],
+    package: 'common',
+    path: 'packages/common/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteValueToHex',
+    param: ['hasFrontier'],
+    package: 'mobile',
+    path: 'packages/mobile/utils/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteValueToRgbaArray',
+    param: ['hasFrontier'],
+    package: 'common',
+    path: 'packages/common/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteValueToRgbaArray',
+    param: ['hasFrontier'],
+    package: 'mobile',
+    path: 'packages/mobile/utils/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteValueToRgbaString',
+    param: ['hasFrontier'],
+    package: 'common',
+    path: 'packages/common/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteValueToRgbaString',
+    param: ['hasFrontier'],
+    package: 'mobile',
+    path: 'packages/mobile/utils/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteAliasToRgbaString',
+    param: ['hasFrontier'],
+    package: 'common',
+    path: 'packages/common/palette',
+    type: 'removed',
+  },
+  {
+    function: 'paletteAliasToRgbaString',
+    param: ['hasFrontier'],
+    package: 'mobile',
+    path: 'packages/mobile/utils/palette',
+    type: 'removed',
+  },
+];
+
 export const V6: Deprecation = {
   prevMajorVersion: 'v5.0.0',
   breakingRelease: 'v6.0.0',
@@ -710,126 +930,6 @@ export const V6: Deprecation = {
       },
     },
   ],
-  functions: [
-    {
-      name: 'selectContext',
-      path: 'packages/web/controls/selectContext.ts',
-      package: 'web',
-      type: ['replaced', 'path'],
-      migrationMap: {
-        path: 'packages/web-overlays/select/selectContext.ts',
-      },
-      exportNames: ['selectContext', 'SelectContextType', 'SelectContext', 'SelectProvider'],
-    },
-    {
-      name: 'createAnnouncementCard',
-      path: 'packages/common/cards/createAnnouncementCard.tsx',
-      package: 'common',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['createAnnouncementCard'],
-    },
-    {
-      name: 'createAnnouncementCardDeprecated',
-      path: 'packages/common/cards/createAnnouncementCardDeprecated.tsx',
-      package: 'common',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['createAnnouncementCardDeprecated'],
-    },
-    {
-      name: 'createFeatureEntryCard',
-      path: 'packages/common/cards/createFeatureEntryCard.tsx',
-      package: 'common',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['createFeatureEntryCard', 'FeatureEntryCardProps'],
-    },
-    {
-      name: 'AnnouncementCard',
-      path: 'packages/mobile/alpha/AnnouncementCard.tsx',
-      package: 'mobile',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['AnnouncementCard', 'AnnouncementCardProps'],
-    },
-    {
-      name: 'AnnouncementCard',
-      path: 'packages/web/alpha/AnnouncementCard.tsx',
-      package: 'web',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['AnnouncementCard', 'AnnouncementCardProps'],
-    },
-    {
-      name: 'AnnouncementCard',
-      path: 'packages/mobile/cards/AnnouncementCard.tsx',
-      package: 'mobile',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['AnnouncementCard'],
-    },
-    {
-      name: 'AnnouncementCard',
-      path: 'packages/web/cards/AnnouncementCard.tsx',
-      package: 'web',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['AnnouncementCard'],
-    },
-    {
-      name: 'FeatureEntryCard',
-      path: 'packages/mobile/alpha/FeatureEntryCard.tsx',
-      package: 'mobile',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['FeatureEntryCard', 'FeatureEntryCardProps'],
-    },
-    {
-      name: 'FeatureEntryCard',
-      path: 'packages/web/alpha/FeatureEntryCard.tsx',
-      package: 'web',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['FeatureEntryCard', 'FeatureEntryCardProps'],
-    },
-    {
-      name: 'FeatureEntryCard',
-      path: 'packages/mobile/cards/FeatureEntryCard.tsx',
-      package: 'mobile',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['FeatureEntryCard'],
-    },
-    {
-      name: 'FeatureEntryCard',
-      path: 'packages/web/cards/FeatureEntryCard.tsx',
-      package: 'web',
-      type: 'replaced',
-      migrationMap: {
-        replaced: ['NudgeCard', 'UpsellCard'],
-      },
-      exportNames: ['FeatureEntryCard'],
-    },
-  ],
+  functions: functionDeprecations,
+  params: parameterMigrations,
 };

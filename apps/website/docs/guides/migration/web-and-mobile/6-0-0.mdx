@@ -19,6 +19,8 @@ v6 of CDS core packages (`common`, `web`, and `mobile`) are only compatible with
 - `@cbhq/cds-mobile-visualization` v1.0.0
 - `@cbhq/cds-illustrations` v2.1.0
 - `@cbhq/cds-icons` v2.1.0
+- `@cbhq/ui-mobile-playground` v2.0.0
+- `@cbhq/ui-mobile-visreg` v2.0.0
 
 ## Using the Migrator
 
@@ -27,6 +29,11 @@ v6 of CDS core packages (`common`, `web`, and `mobile`) are only compatible with
 ## API Changes
 
 We renamed some of our component's property names to better align them to accepted [conventions](https://github.cbhq.net/frontend/cds/blob/master/docs/conventions/overview.md) and make our API&apos;s more intuitive and consistent. All migrations are automated with the `cds-migrator`. You can view the full list [here](/resources/deprecations/v6.0.0).
+
+We're also phasing our `dangerouslySet` prefixed prop names and removing that prefix when there is not conflicting styles, eg:
+
+- if a component has `background` and `dangerouslySetBackground` we'll support both properties with `dangerouslySetBackground` having higher priority.
+- if a component has `dangerouslySetBackground` and no competing `background` props, we've removed the `dangerouslySet` prefix in CDS 6.
 
 ## New Packages
 

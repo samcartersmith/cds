@@ -651,7 +651,7 @@ export const V5: Deprecation = {
   params: [
     {
       function: 'useCellSpacing',
-      params: ['reduceHorizontalSpacing', 'offsetHorizontal'],
+      param: ['reduceHorizontalSpacing', 'offsetHorizontal'],
       path: 'packages/common/hooks/useCellSpacing.ts',
       package: 'common',
       type: 'api',
