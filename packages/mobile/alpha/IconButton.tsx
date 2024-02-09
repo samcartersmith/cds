@@ -1,6 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { Scale } from '@cbhq/cds-common/types';
 import { IconButtonBaseProps } from '@cbhq/cds-common/types/alpha';
 import { getButtonSizeProps } from '@cbhq/cds-common/utils/getButtonSizeProps';
@@ -15,6 +16,7 @@ export type IconButtonProps = IconButtonBaseProps<OnPress> & PressableProps;
 
 type GetIconStylesParams = Pick<IconButtonProps, 'compact' | 'flush'> & {
   scale: Scale;
+  compactSize: string;
 };
 
 function getCacheKey({ compact, flush, scale }: GetIconStylesParams) {
@@ -25,8 +27,9 @@ const getIconStyles = memoize(function getIconStyles({
   compact,
   scale,
   flush,
+  compactSize,
 }: GetIconStylesParams) {
-  const { minHeight, iconSize } = getButtonSizeProps({ compact, scale });
+  const { minHeight, iconSize } = getButtonSizeProps({ compact, scale, compactSize });
   const { offsetEnd, offsetStart } = getButtonSpacingProps({
     compact,
     flush,
@@ -65,10 +68,12 @@ export const IconButton = memo(function IconButton({
   ...props
 }: IconButtonProps) {
   const scale = useScale();
+  const compactSize = useScaleConditional({ dense: 'm', normal: 's' });
+
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
   const { pressableStyles, iconSize, iconStyles } = useMemo(
-    () => getIconStyles({ compact, flush, scale }),
-    [compact, flush, scale],
+    () => getIconStyles({ compact, flush, scale, compactSize }),
+    [compact, compactSize, flush, scale],
   );
 
   return (

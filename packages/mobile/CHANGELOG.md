@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.35.0 (2/9/2024 PST)
+
+#### 🚀 Updates
+
+- Add conditional for dense compact iconbutton size. [[#2726](https://github.cbhq.net/frontend/cds/pull/2726)] [[DX-3111](https://jira.coinbase-corp.com/browse/DX-3111)]
+
 ## 5.34.3 ((2/8/2024, 05:30 PM PST))
 
 This is an artificial version bump with no new change.
