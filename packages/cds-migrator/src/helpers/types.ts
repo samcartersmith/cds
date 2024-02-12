@@ -19,7 +19,7 @@ export type RenameValueMapShape = {
 export type RenameAttributeMapShape = {
   oldAttribute: string;
   newAttribute: string;
-  corePackageDependency?: string[];
+  corePackageDependency?: string;
 };
 
 export type AttributeValueRenameMapShape = Record<string, RenameValueMapShape>;
@@ -79,6 +79,7 @@ export type ComponentMigration = {
   replacement?: string;
   /** custom warning message to show in console and cds-migrator-output.md */
   warning?: string;
+  attributeRenameMap?: RenameAttributeMapShape;
 };
 
 export type RemovedComponent = {

@@ -67,11 +67,22 @@ const callback = (args: ParseJsxElementsCbParams) => {
   };
 
   const componentMap = renameMap[actualComponentName ?? component];
+
   if (Array.isArray(componentMap)) {
     componentMap.forEach((comp) => {
-      renameAttribute(comp);
+      if (
+        !comp.corePackageDependency ||
+        (comp.corePackageDependency &&
+          checkFileIncludesImport(sourceFile, comp.corePackageDependency))
+      ) {
+        renameAttribute(comp);
+      }
     });
-  } else {
+  } else if (
+    !componentMap.corePackageDependency ||
+    (componentMap.corePackageDependency &&
+      checkFileIncludesImport(sourceFile, componentMap.corePackageDependency))
+  ) {
     renameAttribute(componentMap);
   }
 };

@@ -5,7 +5,7 @@ import packageDecompMigrations from '../update-decomp';
 
 import attributeValueToBooleanMigrations from './attributeValueToBooleanMigrations';
 import componentMigrations from './componentMigrations';
-import pathMigrations from './pathMigrations';
+import hasFrontierMigrations from './hasFrontierMigrations';
 import propMigrations from './propMigrations';
 import propToAttributeValueMigrations from './propToAttributeValueMigrations';
 import removedComponents from './removedComponents';
@@ -19,7 +19,7 @@ export default async function main(tree: Tree) {
   await removedPropMigrations(tree);
   await attributeValueToBooleanMigrations(tree);
   await propToAttributeValueMigrations(tree);
-  await pathMigrations(tree);
+  await hasFrontierMigrations(tree);
   // decomp needs to happen first so the new dependencies are added
   await packageDecompMigrations(tree);
   // then decomped packages can be upgraded to v1 (if they're not already)

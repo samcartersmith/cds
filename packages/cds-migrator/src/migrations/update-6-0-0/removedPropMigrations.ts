@@ -1,13 +1,17 @@
-import { output, Tree } from '@nrwl/devkit';
+import { Tree } from '@nrwl/devkit';
 import fs from 'node:fs';
 
-import { checkForSpreadProps } from '../../helpers';
-import { createJsxMigration } from '../../helpers/createJsxMigration';
-import { generateManualMigrationOutput } from '../../helpers/generateManualMigrationOutput';
-import { getComponentFromJsx } from '../../helpers/getComponentFromJsx';
-import { logDebug, logWarning } from '../../helpers/loggingHelpers';
-import { ParseJsxElementsCbParams } from '../../helpers/parseJsxElements';
-import { searchAndProcessComponent } from '../../helpers/searchAndProcessComponent';
+import {
+  checkForSpreadProps,
+  createJsxMigration,
+  generateManualMigrationOutput,
+  getComponentFromJsx,
+  logDebug,
+  ParseJsxElementsCbParams,
+  removeJsxAttribute,
+  saveChangesToFile,
+  searchAndProcessComponent,
+} from '../../helpers';
 
 import { removedProps } from './data/propMigrations';
 
@@ -31,7 +35,7 @@ const filterSourceFiles = (path: string) => {
 };
 
 const callback = (args: ParseJsxElementsCbParams) => {
-  const { jsx, path } = args;
+  const { jsx, sourceFile } = args;
   const { component, actualComponentName } = getComponentFromJsx({
     jsx,
     componentNames: Object.keys(removedProps),
@@ -45,23 +49,27 @@ const callback = (args: ParseJsxElementsCbParams) => {
     jsx,
     componentName: component,
     callback: (propName) => {
-      if (props.includes(propName)) {
-        const title = `The ${propName} prop has been removed from the ${
-          actualComponentName ?? component
-        } component. ${replacement}.`;
-        const outputMessage =
-          'All manual migrations are output to the root of the repo in a file called:';
-        const outputPath = output.underline(`${args.tree.root}/cds-migrator-output.md`);
-        logWarning('Manual migration required!', [
-          title,
-          `Located at: ${output.underline(path)}`,
-          outputMessage,
-          outputPath,
-        ]);
-        generateManualMigrationOutput(`## ${title}\n  - Located at ${path}`);
+      if (Array.isArray(props)) {
+        props.forEach((prop) => {
+          if (prop === propName) {
+            removeJsxAttribute(propName, jsx);
+          }
+        });
+      } else if (props === propName) {
+        removeJsxAttribute(propName, jsx);
       }
     },
   });
+
+  if (jsx.getAttributes().length === 0) {
+    generateManualMigrationOutput(
+      `## Manual Migration Recommended \n- All props have been removed from ${
+        actualComponentName ?? component
+      }. We recommend that you remove usage of this component manually.\n- at ${sourceFile.getFilePath()}`,
+    );
+  }
+
+  saveChangesToFile(sourceFile, replacement);
 };
 
 export default async function migration(tree: Tree) {

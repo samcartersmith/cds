@@ -43,33 +43,41 @@ export const replaceImport = ({
   newNamedImport?: string;
 }) => {
   const declarations = sourceFile.getImportDeclarations();
+  const existingNewImportDeclaration = declarations.find(
+    (imp) => imp.getModuleSpecifierValue() === newPath,
+  );
 
   declarations.forEach((declaration) => {
     const currentPath = declaration.getModuleSpecifierValue();
     // Check if the file imports from an old path
     if (currentPath.startsWith(oldPath)) {
       const namedImports = declaration.getNamedImports();
-      // check if the file imports the desired namedImport from the old path. this makes this work for shallow imports
+      // check if the file imports the old namedImport from the old path. this makes this work for shallow imports
       if (namedImport) {
-        if (namedImports.map((imp) => imp.getText()).includes(namedImport)) {
-          // check if there's already an import from the new path
-          const existingImport = declarations.find(
-            (imp) => imp.getModuleSpecifierValue() === newPath,
-          );
+        const oldNamedImport = namedImports?.find((imp) => imp.getText() === namedImport);
+        if (oldNamedImport) {
+          // check if there's already an import declaration from the new path
           //   if there is, add the new namedImport
-          if (existingImport) {
-            existingImport.addNamedImport(newNamedImport ?? namedImport);
+          if (existingNewImportDeclaration) {
+            // if the namedImport is already there, don't add it again
+            const hasNewNamedImportAlready = existingNewImportDeclaration
+              .getNamedImports()
+              ?.find((imp) => imp.getText() === newNamedImport);
+            if (!hasNewNamedImportAlready && newNamedImport) {
+              // add the new import to the existing import declaration
+              existingNewImportDeclaration.addNamedImport(newNamedImport);
+            }
           } else {
             // add a new import declaration with the new path
             addNewModuleImport(sourceFile, newNamedImport ?? namedImport, newPath);
           }
-          //   now we need to clean up our old import statement
+          // now we need to clean up our old import statement
           // if there are multiple namedImports, remove the one we're replacing
           if (namedImports.length > 1) {
             namedImports.find((imp) => imp.getText() === namedImport)?.remove();
           }
-          //   if there's only one namedImport, remove the whole import statement
-          else {
+          //   if there's only one namedImport, and the new import doesn't have the same path, remove the whole import statement
+          else if (currentPath !== newPath) {
             declaration.remove();
           }
         }

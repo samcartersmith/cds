@@ -6,10 +6,6 @@ type RemovedComponent = {
   replacement?: string;
 };
 
-const warningText =
-  'This component has been replaced by a component with a different API. Please migrate props manually. Refer to go/cds-deprecations for API migration guidance.';
-
-/** Component was replaced with another, API could potentially be different and requires manual migration */
 export const oneToOneMigrations: ComponentMigration[] = [
   {
     name: 'FiatIcon',
@@ -17,7 +13,10 @@ export const oneToOneMigrations: ComponentMigration[] = [
       '@cbhq/cds-mobile/icons': '@cbhq/cds-mobile/icons',
     },
     replacement: 'Icon',
-    warning: warningText,
+    attributeRenameMap: {
+      oldAttribute: 'currencyCode',
+      newAttribute: 'name',
+    },
   },
 ];
 

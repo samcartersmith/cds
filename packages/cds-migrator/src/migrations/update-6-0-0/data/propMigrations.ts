@@ -4,6 +4,7 @@ import {
   deepMerge,
   mobilePackage,
   PropToAttributeValueMigrationShape,
+  webPackage,
 } from '../../../helpers';
 
 const classNameConfig = {
@@ -42,6 +43,7 @@ const commonComponents = [
   'Avatar',
   'Grid',
   'GridColumn',
+  'Divider',
 ];
 
 const classNameComponents = [
@@ -96,22 +98,22 @@ const renamedPropConfigs: AttributeRenameMapShape = {
   HeroSquare: {
     oldAttribute: 'alt',
     newAttribute: 'accessibilityLabel',
-    corePackageDependency: [mobilePackage],
+    corePackageDependency: mobilePackage,
   },
   Pictogram: {
     oldAttribute: 'alt',
     newAttribute: 'accessibilityLabel',
-    corePackageDependency: [mobilePackage],
+    corePackageDependency: mobilePackage,
   },
   SpotSquare: {
     oldAttribute: 'alt',
     newAttribute: 'accessibilityLabel',
-    corePackageDependency: [mobilePackage],
+    corePackageDependency: mobilePackage,
   },
   SpotRectangle: {
     oldAttribute: 'alt',
     newAttribute: 'accessibilityLabel',
-    corePackageDependency: [mobilePackage],
+    corePackageDependency: mobilePackage,
   },
   DotSymbol: {
     oldAttribute: 'shouldApplyDarkModeEnhacements',
@@ -129,7 +131,7 @@ const renamedPropConfigs: AttributeRenameMapShape = {
     {
       oldAttribute: 'aria-labelledby',
       newAttribute: 'accessibilityLabelledBy',
-      corePackageDependency: ['@cbhq/cds-web'],
+      corePackageDependency: webPackage,
     },
   ],
   Accordion: [
@@ -171,7 +173,7 @@ const renamedPropConfigs: AttributeRenameMapShape = {
   Control: {
     oldAttribute: 'backgroundColor',
     newAttribute: 'background',
-    corePackageDependency: ['@cbhq/cds-web'],
+    corePackageDependency: webPackage,
   },
 };
 
@@ -196,8 +198,8 @@ export const removedProps: Record<string, RemovedProp> = {
       'frontierSparkline',
     ],
     replacement:
-      'All frontier styles have been adopted with CDS components. Please delete the usage of this flag & resolve and visual regressions',
-    path: ['web/system', 'mobile/system'],
+      'All frontier styles have been enabled by default within CDS libraries. Manually QA affected surfaces. See go/cds6-breaking-changes for details.',
+    path: ['web/system', 'mobile/system', 'common/system'],
   },
 };
 

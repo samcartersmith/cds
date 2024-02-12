@@ -77,9 +77,11 @@ export function writeMigrationToFile({ oldValue, newValue, jsx, sourceFile }: Wr
   fs.writeFileSync(path, updatedSourceFileContent, 'utf-8');
 }
 
-export function saveChangesToFile(sourceFile: SourceFile, logMessage: string) {
+export function saveChangesToFile(sourceFile: SourceFile, logMessage?: string) {
   const path = sourceFile.getFilePath();
   const updatedSourceFileContent = sourceFile.getFullText();
   fs.writeFileSync(path, updatedSourceFileContent, 'utf-8');
-  logSuccess(`${logMessage} (File: ${path})`);
+  if (logMessage) {
+    logSuccess(`${logMessage} (File: ${path})`);
+  }
 }

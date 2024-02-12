@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.42 (2/8/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: fixes found during CDS 6 release candidate testing.
+
 ## 0.1.41 (1/31/2024 PST)
 
 #### 🚀 Updates

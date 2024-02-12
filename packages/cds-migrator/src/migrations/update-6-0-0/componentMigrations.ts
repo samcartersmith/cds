@@ -1,14 +1,13 @@
-import { output, Tree } from '@nrwl/devkit';
+import { Tree } from '@nrwl/devkit';
 import { SourceFile } from 'ts-morph';
 
 import {
   checkFileIncludesImportedModule,
   createJsxMigration,
-  generateManualMigrationOutput,
   getComponentFromJsx,
   logDebug,
-  logWarning,
   ParseJsxElementsCbParams,
+  renameJsxAttribute,
   renameJsxTag,
   replaceImport,
   writeMigrationToFile,
@@ -18,9 +17,8 @@ import { oneToOneMigrations } from './data/componentMigrations';
 
 const checkSourceFile = (sourceFile: SourceFile): boolean => {
   let checkSourceFileHasDeprecatedComponent = false;
-  const path = sourceFile.getFilePath();
 
-  Object.values(oneToOneMigrations).forEach(({ path: componentPath, name, replacement }) => {
+  Object.values(oneToOneMigrations).forEach(({ path: componentPath, name }) => {
     const oldPath = Object.keys(componentPath)[0];
     const hasImportForDeprecatedComponent = checkFileIncludesImportedModule({
       sourceFile,
@@ -29,11 +27,6 @@ const checkSourceFile = (sourceFile: SourceFile): boolean => {
     });
     if (hasImportForDeprecatedComponent) {
       checkSourceFileHasDeprecatedComponent = true;
-      generateManualMigrationOutput(
-        `## The ${name} component was replaced with ${replacement} at ${output.underline(
-          path,
-        )}. \n - Manual migration is required since the API has changed. Refer to go/cds-deprecations for API migration guidance.`,
-      );
     }
   });
   return checkSourceFileHasDeprecatedComponent;
@@ -42,7 +35,7 @@ const checkSourceFile = (sourceFile: SourceFile): boolean => {
 const callback = (args: ParseJsxElementsCbParams) => {
   const { jsx, sourceFile } = args;
 
-  oneToOneMigrations?.forEach(({ name, path: componentPath, replacement, warning }) => {
+  oneToOneMigrations?.forEach(({ name, path: componentPath, replacement, attributeRenameMap }) => {
     const oldPath = Object.keys(componentPath)[0];
     const newPath = Object.values(componentPath)[0];
 
@@ -58,13 +51,16 @@ const callback = (args: ParseJsxElementsCbParams) => {
     // some components were replaced by ones with the same name, but new path and API
     // so we only want to find/replace usage if there is a replacement
     if (replacement) {
+      if (attributeRenameMap) {
+        renameJsxAttribute({
+          oldAttribute: attributeRenameMap?.oldAttribute,
+          newAttribute: attributeRenameMap?.newAttribute,
+          jsx,
+        });
+      }
       renameJsxTag({ jsx, value: replacement });
     }
     writeMigrationToFile({ sourceFile, oldValue: name, newValue: replacement });
-
-    if (warning) {
-      logWarning(`Please check all instances of ${name}. ${warning}`);
-    }
   });
 };
 
