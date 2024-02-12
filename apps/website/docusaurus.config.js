@@ -59,13 +59,8 @@ module.exports = {
       links: [
         {
           type: 'link',
-          label: 'Coda',
-          href: 'https://coda.io/d/CDS-Team_dFaC-pktuzN',
-        },
-        {
-          type: 'link',
           label: 'Jira',
-          href: 'https://jira.coinbase-corp.com/projects/CDS/summary',
+          href: 'https://jira.coinbase-corp.com/secure/RapidBoard.jspa?rapidView=3161&projectKey=DX&view=planning.nodetail&issueLimit=100#',
         },
         {
           type: 'link',
@@ -75,7 +70,7 @@ module.exports = {
         {
           type: 'link',
           label: 'Figma Libraries',
-          href: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=1%3A9',
+          href: 'https://www.figma.com/files/657352101224507447/project/62154462',
         },
         {
           type: 'link',

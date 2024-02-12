@@ -40,7 +40,7 @@ export default {
       description: 'How pieces work together in your experiences',
       illustration: 'participateNavigation',
       actionLabel: 'Explore patterns',
-      href: '/concepts/messaging/errors',
+      href: '/patterns/overview/',
     },
   ],
   focusAreas: [
