@@ -47,8 +47,8 @@ export function formatCodeOwner(codeowner: string | undefined) {
 }
 
 export function getPercentChange(scores: A11yData[]) {
-  const current = scores[0].automatedA11yScore;
-  const previous = scores[1].automatedA11yScore;
+  const current = scores[0] ? scores[0].automatedA11yScore : 0;
+  const previous = scores[1] ? scores[1].automatedA11yScore : 0;
   let change = ((current - previous) / previous) * 100;
 
   // Check if change is a valid number
