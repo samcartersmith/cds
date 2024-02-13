@@ -63,6 +63,7 @@ const names: SpotIconName[] = [
   'venturesProduct',
   'wallet',
   'walletAsAServiceProduct',
+  'walletLogo',
   'warning',
 ];
 

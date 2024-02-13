@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-01-09T20:36:38.349Z",
-  "metadata": { "lastUnicode": 61957 },
+  "lastUpdated": "2024-02-13T17:49:26.807Z",
+  "metadata": { "lastUnicode": 61969 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -137,7 +137,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61096 } }
       ],
       "createdAt": "2022-08-24T18:51:39.703Z",
-      "lastUpdated": "2023-10-25T17:34:16.141Z",
+      "lastUpdated": "2024-01-30T04:51:58.164Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-sun-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-sun-12-inactive.svg",
@@ -185,7 +185,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60691 } }
       ],
       "createdAt": "2022-08-24T18:51:39.658Z",
-      "lastUpdated": "2023-10-24T19:36:07.861Z",
+      "lastUpdated": "2024-01-25T16:44:59.853Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-settings-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-settings-12-inactive.svg",
@@ -209,7 +209,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60936 } }
       ],
       "createdAt": "2022-08-24T18:51:39.282Z",
-      "lastUpdated": "2023-10-25T17:34:16.171Z",
+      "lastUpdated": "2024-01-10T23:27:02.791Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-securityShield-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-securityShield-12-inactive.svg",
@@ -353,7 +353,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61231 } }
       ],
       "createdAt": "2022-08-24T18:51:39.775Z",
-      "lastUpdated": "2023-10-25T17:34:15.618Z",
+      "lastUpdated": "2024-02-08T23:16:42.611Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-pencil-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-pencil-12-inactive.svg",
@@ -401,7 +401,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60551 } }
       ],
       "createdAt": "2022-08-24T18:51:39.715Z",
-      "lastUpdated": "2023-10-25T17:34:16.174Z",
+      "lastUpdated": "2024-01-19T21:17:38.009Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-pay-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-pay-12-inactive.svg",
@@ -425,7 +425,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61301 } }
       ],
       "createdAt": "2022-08-24T18:51:39.269Z",
-      "lastUpdated": "2023-10-25T14:56:24.419Z",
+      "lastUpdated": "2024-01-12T04:34:53.104Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-participate-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-participate-12-inactive.svg",
@@ -449,7 +449,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60561 } }
       ],
       "createdAt": "2022-08-24T18:51:39.674Z",
-      "lastUpdated": "2023-10-25T14:56:24.435Z",
+      "lastUpdated": "2024-01-25T17:42:03.694Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-newsfeed-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-newsfeed-12-inactive.svg",
@@ -497,7 +497,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61081 } }
       ],
       "createdAt": "2022-08-24T18:51:39.278Z",
-      "lastUpdated": "2023-10-25T17:34:15.553Z",
+      "lastUpdated": "2024-01-23T17:14:07.453Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-moon-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-moon-12-inactive.svg",
@@ -521,7 +521,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61101 } }
       ],
       "createdAt": "2022-08-24T18:51:39.214Z",
-      "lastUpdated": "2023-10-24T19:35:50.799Z",
+      "lastUpdated": "2024-01-30T04:52:00.493Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-light-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-light-12-inactive.svg",
@@ -569,7 +569,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61026 } }
       ],
       "createdAt": "2022-08-24T18:51:39.935Z",
-      "lastUpdated": "2023-10-25T17:34:14.850Z",
+      "lastUpdated": "2024-01-22T16:59:00.462Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-interest-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-interest-12-inactive.svg",
@@ -593,7 +593,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60651 } }
       ],
       "createdAt": "2022-08-24T18:51:39.691Z",
-      "lastUpdated": "2023-10-25T17:34:15.935Z",
+      "lastUpdated": "2024-01-30T21:00:21.007Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-home-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-home-12-inactive.svg",
@@ -881,7 +881,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60801 } }
       ],
       "createdAt": "2022-08-24T18:51:39.521Z",
-      "lastUpdated": "2023-10-25T17:34:16.214Z",
+      "lastUpdated": "2024-02-08T20:17:40.273Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-directDeposit-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-directDeposit-12-inactive.svg",
@@ -905,7 +905,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61625 } }
       ],
       "createdAt": "2022-08-24T18:51:39.542Z",
-      "lastUpdated": "2023-10-25T17:34:14.799Z",
+      "lastUpdated": "2024-02-05T14:41:00.676Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-diamond-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-diamond-12-inactive.svg",
@@ -1073,7 +1073,7 @@
         { "props": { "size": 12, "active": false }, "metadata": { "unicode": 60536 } }
       ],
       "createdAt": "2022-08-24T18:51:39.575Z",
-      "lastUpdated": "2023-10-25T17:34:15.596Z",
+      "lastUpdated": "2024-01-10T15:54:17.957Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-chartPie-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-chartPie-12-inactive.svg",
@@ -1097,7 +1097,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60546 } }
       ],
       "createdAt": "2022-08-24T18:51:39.584Z",
-      "lastUpdated": "2023-10-25T17:34:16.127Z",
+      "lastUpdated": "2024-01-17T22:50:40.492Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-chartCandles-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-chartCandles-12-inactive.svg",
@@ -1145,7 +1145,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60661 } }
       ],
       "createdAt": "2022-08-24T18:51:39.638Z",
-      "lastUpdated": "2023-10-25T17:34:16.232Z",
+      "lastUpdated": "2024-01-17T22:50:16.489Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-cash-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-cash-12-inactive.svg",
@@ -1169,7 +1169,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60606 } }
       ],
       "createdAt": "2022-08-24T18:51:39.646Z",
-      "lastUpdated": "2023-10-25T17:34:16.197Z",
+      "lastUpdated": "2024-01-31T18:35:33.103Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-caret-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-caret-12-inactive.svg",
@@ -1217,7 +1217,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60526 } }
       ],
       "createdAt": "2022-08-24T18:51:39.828Z",
-      "lastUpdated": "2023-10-25T17:34:14.744Z",
+      "lastUpdated": "2024-01-24T00:16:53.239Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-bell-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-bell-12-inactive.svg",
@@ -1241,7 +1241,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61111 } }
       ],
       "createdAt": "2022-08-24T18:51:39.670Z",
-      "lastUpdated": "2023-10-25T17:34:14.759Z",
+      "lastUpdated": "2024-01-12T17:25:48.553Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-astronautHelmet-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-astronautHelmet-12-inactive.svg",
@@ -1313,7 +1313,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60656 } }
       ],
       "createdAt": "2022-08-24T18:52:02.960Z",
-      "lastUpdated": "2023-10-24T20:30:17.291Z",
+      "lastUpdated": "2024-01-18T20:11:47.084Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-addPeople-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-addPeople-12-inactive.svg",
@@ -1337,7 +1337,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61421 } }
       ],
       "createdAt": "2022-08-24T18:52:03.018Z",
-      "lastUpdated": "2023-10-25T17:34:16.413Z",
+      "lastUpdated": "2024-01-17T22:51:44.106Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-activity-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-activity-12-inactive.svg",
@@ -1385,7 +1385,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61436 } }
       ],
       "createdAt": "2022-11-17T14:12:47.352Z",
-      "lastUpdated": "2023-10-25T17:34:15.025Z",
+      "lastUpdated": "2024-01-11T17:51:04.946Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-magnifyingGlass-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-magnifyingGlass-12-inactive.svg",
@@ -1409,7 +1409,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61506 } }
       ],
       "createdAt": "2022-11-17T14:12:47.245Z",
-      "lastUpdated": "2023-10-25T17:34:14.677Z",
+      "lastUpdated": "2024-01-25T16:45:34.392Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-copy-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-copy-12-inactive.svg",
@@ -1457,7 +1457,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61606 } }
       ],
       "createdAt": "2023-02-01T18:32:06.575Z",
-      "lastUpdated": "2023-10-25T17:34:14.735Z",
+      "lastUpdated": "2024-01-21T21:19:03.885Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-rocketShip-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-rocketShip-12-inactive.svg",
@@ -1574,7 +1574,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60156 } }
       ],
       "createdAt": "2023-02-01T23:25:58.666Z",
-      "lastUpdated": "2023-10-25T17:34:16.033Z",
+      "lastUpdated": "2024-02-07T21:50:23.408Z",
       "outputs": {
         "svg12": "./ui/svg/ui-api-12.svg",
         "svg16": "./ui/svg/ui-api-16.svg",
@@ -1592,7 +1592,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60091 } }
       ],
       "createdAt": "2023-02-01T23:25:02.061Z",
-      "lastUpdated": "2023-10-25T17:34:15.733Z",
+      "lastUpdated": "2024-01-16T16:46:23.654Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowDown-12.svg",
         "svg16": "./ui/svg/ui-arrowDown-16.svg",
@@ -1610,7 +1610,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59791 } }
       ],
       "createdAt": "2023-02-01T23:25:58.758Z",
-      "lastUpdated": "2023-10-25T17:34:15.091Z",
+      "lastUpdated": "2024-02-08T21:16:03.504Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowLeft-12.svg",
         "svg16": "./ui/svg/ui-arrowLeft-16.svg",
@@ -1736,7 +1736,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60321 } }
       ],
       "createdAt": "2023-02-01T23:25:49.899Z",
-      "lastUpdated": "2023-10-25T17:34:14.863Z",
+      "lastUpdated": "2024-02-13T03:09:48.949Z",
       "outputs": {
         "svg12": "./ui/svg/ui-average-12.svg",
         "svg16": "./ui/svg/ui-average-16.svg",
@@ -1772,7 +1772,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59931 } }
       ],
       "createdAt": "2023-02-01T23:25:58.700Z",
-      "lastUpdated": "2023-10-25T17:34:15.630Z",
+      "lastUpdated": "2024-01-17T18:05:10.130Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bank-12.svg",
         "svg16": "./ui/svg/ui-bank-16.svg",
@@ -1898,7 +1898,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60121 } }
       ],
       "createdAt": "2023-02-01T23:25:02.023Z",
-      "lastUpdated": "2023-10-25T17:34:14.816Z",
+      "lastUpdated": "2024-01-19T09:28:40.826Z",
       "outputs": {
         "svg12": "./ui/svg/ui-calendar-12.svg",
         "svg16": "./ui/svg/ui-calendar-16.svg",
@@ -1934,7 +1934,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59936 } }
       ],
       "createdAt": "2023-02-01T23:25:58.687Z",
-      "lastUpdated": "2023-10-25T17:34:14.849Z",
+      "lastUpdated": "2024-01-09T22:49:40.803Z",
       "outputs": {
         "svg12": "./ui/svg/ui-card-12.svg",
         "svg16": "./ui/svg/ui-card-16.svg",
@@ -1988,7 +1988,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60476 } }
       ],
       "createdAt": "2023-02-01T23:26:07.638Z",
-      "lastUpdated": "2023-10-24T22:10:10.790Z",
+      "lastUpdated": "2024-01-25T13:31:16.023Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretRight-12.svg",
         "svg16": "./ui/svg/ui-caretRight-16.svg",
@@ -2006,7 +2006,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60486 } }
       ],
       "createdAt": "2023-02-01T23:25:58.819Z",
-      "lastUpdated": "2023-10-25T17:34:14.885Z",
+      "lastUpdated": "2024-01-25T16:40:08.626Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretUp-12.svg",
         "svg16": "./ui/svg/ui-caretUp-16.svg",
@@ -2024,7 +2024,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60006 } }
       ],
       "createdAt": "2023-02-01T23:25:49.706Z",
-      "lastUpdated": "2023-10-25T17:34:15.279Z",
+      "lastUpdated": "2024-01-10T15:56:05.315Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cash-12.svg",
         "svg16": "./ui/svg/ui-cash-16.svg",
@@ -2330,7 +2330,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59976 } }
       ],
       "createdAt": "2023-02-01T23:25:49.766Z",
-      "lastUpdated": "2023-10-25T17:34:15.743Z",
+      "lastUpdated": "2024-01-19T09:28:40.640Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartBar-12.svg",
         "svg16": "./ui/svg/ui-chartBar-16.svg",
@@ -2348,7 +2348,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60271 } }
       ],
       "createdAt": "2023-02-01T23:25:49.752Z",
-      "lastUpdated": "2023-10-25T17:34:14.726Z",
+      "lastUpdated": "2024-01-16T16:46:43.695Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartCandles-12.svg",
         "svg16": "./ui/svg/ui-chartCandles-16.svg",
@@ -2366,7 +2366,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60266 } }
       ],
       "createdAt": "2023-02-01T23:26:07.705Z",
-      "lastUpdated": "2023-10-25T17:34:14.836Z",
+      "lastUpdated": "2024-02-09T06:19:38.878Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartLine-12.svg",
         "svg16": "./ui/svg/ui-chartLine-16.svg",
@@ -2420,7 +2420,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60026 } }
       ],
       "createdAt": "2023-02-01T23:25:21.951Z",
-      "lastUpdated": "2023-10-25T17:34:15.649Z",
+      "lastUpdated": "2024-01-19T21:44:31.250Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartVolume-12.svg",
         "svg16": "./ui/svg/ui-chartVolume-16.svg",
@@ -2474,7 +2474,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60231 } }
       ],
       "createdAt": "2023-02-01T23:25:49.715Z",
-      "lastUpdated": "2023-10-25T17:34:15.663Z",
+      "lastUpdated": "2024-01-19T21:24:11.562Z",
       "outputs": {
         "svg12": "./ui/svg/ui-checkboxChecked-12.svg",
         "svg16": "./ui/svg/ui-checkboxChecked-16.svg",
@@ -2510,7 +2510,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59776 } }
       ],
       "createdAt": "2023-02-01T23:25:49.686Z",
-      "lastUpdated": "2023-10-25T17:34:14.921Z",
+      "lastUpdated": "2024-01-11T17:28:20.045Z",
       "outputs": {
         "svg12": "./ui/svg/ui-checkmark-12.svg",
         "svg16": "./ui/svg/ui-checkmark-16.svg",
@@ -2528,7 +2528,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60346 } }
       ],
       "createdAt": "2023-02-01T23:25:49.679Z",
-      "lastUpdated": "2023-10-25T17:34:14.749Z",
+      "lastUpdated": "2024-01-19T04:34:07.150Z",
       "outputs": {
         "svg12": "./ui/svg/ui-circleCheckmark-12.svg",
         "svg16": "./ui/svg/ui-circleCheckmark-16.svg",
@@ -2546,7 +2546,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60256 } }
       ],
       "createdAt": "2023-02-01T23:25:49.672Z",
-      "lastUpdated": "2023-10-25T17:34:14.713Z",
+      "lastUpdated": "2024-01-19T04:30:07.015Z",
       "outputs": {
         "svg12": "./ui/svg/ui-circleCross-12.svg",
         "svg16": "./ui/svg/ui-circleCross-16.svg",
@@ -2600,7 +2600,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60281 } }
       ],
       "createdAt": "2023-02-01T23:25:58.766Z",
-      "lastUpdated": "2023-10-25T17:34:14.845Z",
+      "lastUpdated": "2024-01-19T09:28:40.647Z",
       "outputs": {
         "svg12": "./ui/svg/ui-clock-12.svg",
         "svg16": "./ui/svg/ui-clock-16.svg",
@@ -2708,7 +2708,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61031 } }
       ],
       "createdAt": "2023-02-01T23:26:07.744Z",
-      "lastUpdated": "2023-10-25T17:34:15.718Z",
+      "lastUpdated": "2024-02-08T20:15:03.256Z",
       "outputs": {
         "svg12": "./ui/svg/ui-comment-12.svg",
         "svg16": "./ui/svg/ui-comment-16.svg",
@@ -2816,7 +2816,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59996 } }
       ],
       "createdAt": "2023-02-01T23:25:40.803Z",
-      "lastUpdated": "2023-10-25T17:34:15.539Z",
+      "lastUpdated": "2024-01-22T23:03:22.905Z",
       "outputs": {
         "svg12": "./ui/svg/ui-currencies-12.svg",
         "svg16": "./ui/svg/ui-currencies-16.svg",
@@ -2870,7 +2870,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60726 } }
       ],
       "createdAt": "2023-02-01T23:26:07.594Z",
-      "lastUpdated": "2023-10-25T17:34:15.307Z",
+      "lastUpdated": "2024-01-22T19:08:43.831Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dex-12.svg",
         "svg16": "./ui/svg/ui-dex-16.svg",
@@ -2888,7 +2888,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60911 } }
       ],
       "createdAt": "2023-02-01T23:25:58.804Z",
-      "lastUpdated": "2023-10-25T17:34:14.870Z",
+      "lastUpdated": "2024-01-24T21:48:17.091Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diagonalDownArrow-12.svg",
         "svg16": "./ui/svg/ui-diagonalDownArrow-16.svg",
@@ -2906,7 +2906,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60316 } }
       ],
       "createdAt": "2023-02-01T23:25:40.746Z",
-      "lastUpdated": "2023-10-25T17:34:15.268Z",
+      "lastUpdated": "2024-01-19T19:36:20.424Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diagonalRightArrow-12.svg",
         "svg16": "./ui/svg/ui-diagonalRightArrow-16.svg",
@@ -2924,7 +2924,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60906 } }
       ],
       "createdAt": "2023-02-01T23:25:40.767Z",
-      "lastUpdated": "2023-10-25T17:34:15.975Z",
+      "lastUpdated": "2024-01-09T21:28:25.770Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diagonalUpArrow-12.svg",
         "svg16": "./ui/svg/ui-diagonalUpArrow-16.svg",
@@ -2960,7 +2960,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61181 } }
       ],
       "createdAt": "2023-02-01T23:25:40.739Z",
-      "lastUpdated": "2023-10-25T17:34:14.840Z",
+      "lastUpdated": "2024-02-08T17:40:36.761Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diamondInactive-12.svg",
         "svg16": "./ui/svg/ui-diamondInactive-16.svg",
@@ -2978,7 +2978,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61406 } }
       ],
       "createdAt": "2023-02-01T23:25:58.653Z",
-      "lastUpdated": "2023-10-25T17:34:14.750Z",
+      "lastUpdated": "2024-01-31T19:42:25.764Z",
       "outputs": {
         "svg12": "./ui/svg/ui-directDepositIconActive-12.svg",
         "svg16": "./ui/svg/ui-directDepositIconActive-16.svg",
@@ -2996,7 +2996,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61411 } }
       ],
       "createdAt": "2023-02-01T23:25:49.699Z",
-      "lastUpdated": "2023-10-25T17:34:15.327Z",
+      "lastUpdated": "2024-02-12T06:53:35.040Z",
       "outputs": {
         "svg12": "./ui/svg/ui-directDepositIconInactive-12.svg",
         "svg16": "./ui/svg/ui-directDepositIconInactive-16.svg",
@@ -3050,7 +3050,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60106 } }
       ],
       "createdAt": "2023-02-01T23:25:40.725Z",
-      "lastUpdated": "2023-10-25T17:34:15.379Z",
+      "lastUpdated": "2024-02-08T19:22:04.633Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dot-12.svg",
         "svg16": "./ui/svg/ui-dot-16.svg",
@@ -3194,7 +3194,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60356 } }
       ],
       "createdAt": "2023-02-01T23:25:21.972Z",
-      "lastUpdated": "2023-10-25T17:34:15.508Z",
+      "lastUpdated": "2024-01-26T05:19:55.188Z",
       "outputs": {
         "svg12": "./ui/svg/ui-error-12.svg",
         "svg16": "./ui/svg/ui-error-16.svg",
@@ -3230,7 +3230,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59856 } }
       ],
       "createdAt": "2023-02-01T23:25:31.066Z",
-      "lastUpdated": "2023-10-25T17:34:15.437Z",
+      "lastUpdated": "2024-01-18T14:23:06.906Z",
       "outputs": {
         "svg12": "./ui/svg/ui-exclamationMark-12.svg",
         "svg16": "./ui/svg/ui-exclamationMark-16.svg",
@@ -3266,7 +3266,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60341 } }
       ],
       "createdAt": "2023-02-01T23:25:31.044Z",
-      "lastUpdated": "2023-10-25T17:34:15.688Z",
+      "lastUpdated": "2024-02-12T06:54:08.097Z",
       "outputs": {
         "svg12": "./ui/svg/ui-expandAddress-12.svg",
         "svg16": "./ui/svg/ui-expandAddress-16.svg",
@@ -3284,7 +3284,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60336 } }
       ],
       "createdAt": "2023-02-01T23:25:40.698Z",
-      "lastUpdated": "2023-10-24T20:30:17.259Z",
+      "lastUpdated": "2024-01-23T20:36:53.070Z",
       "outputs": {
         "svg12": "./ui/svg/ui-expandAll-12.svg",
         "svg16": "./ui/svg/ui-expandAll-16.svg",
@@ -3302,7 +3302,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60276 } }
       ],
       "createdAt": "2023-02-01T23:25:21.873Z",
-      "lastUpdated": "2023-10-24T20:30:17.237Z",
+      "lastUpdated": "2024-01-11T19:14:49.064Z",
       "outputs": {
         "svg12": "./ui/svg/ui-externalLink-12.svg",
         "svg16": "./ui/svg/ui-externalLink-16.svg",
@@ -3392,7 +3392,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60411 } }
       ],
       "createdAt": "2023-02-01T23:26:07.564Z",
-      "lastUpdated": "2023-10-25T17:34:15.533Z",
+      "lastUpdated": "2024-01-12T16:19:39.548Z",
       "outputs": {
         "svg12": "./ui/svg/ui-filter-12.svg",
         "svg16": "./ui/svg/ui-filter-16.svg",
@@ -3446,7 +3446,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60676 } }
       ],
       "createdAt": "2023-02-01T23:25:30.901Z",
-      "lastUpdated": "2023-10-25T17:34:14.845Z",
+      "lastUpdated": "2024-01-17T18:23:07.565Z",
       "outputs": {
         "svg12": "./ui/svg/ui-followActive-12.svg",
         "svg16": "./ui/svg/ui-followActive-16.svg",
@@ -3662,7 +3662,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60041 } }
       ],
       "createdAt": "2023-02-01T23:25:12.901Z",
-      "lastUpdated": "2023-10-25T17:34:15.539Z",
+      "lastUpdated": "2024-02-05T14:40:44.697Z",
       "outputs": {
         "svg12": "./ui/svg/ui-globe-12.svg",
         "svg16": "./ui/svg/ui-globe-16.svg",
@@ -3752,7 +3752,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60136 } }
       ],
       "createdAt": "2023-02-01T23:25:40.826Z",
-      "lastUpdated": "2023-10-25T17:34:15.720Z",
+      "lastUpdated": "2024-01-19T20:05:38.052Z",
       "outputs": {
         "svg12": "./ui/svg/ui-heartActive-12.svg",
         "svg16": "./ui/svg/ui-heartActive-16.svg",
@@ -3770,7 +3770,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60141 } }
       ],
       "createdAt": "2023-02-01T23:25:49.786Z",
-      "lastUpdated": "2023-10-25T17:34:14.925Z",
+      "lastUpdated": "2024-01-12T23:19:08.928Z",
       "outputs": {
         "svg12": "./ui/svg/ui-heartInactive-12.svg",
         "svg16": "./ui/svg/ui-heartInactive-16.svg",
@@ -3842,7 +3842,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59901 } }
       ],
       "createdAt": "2023-02-01T23:25:40.705Z",
-      "lastUpdated": "2023-10-25T17:34:15.534Z",
+      "lastUpdated": "2024-01-17T18:04:57.601Z",
       "outputs": {
         "svg12": "./ui/svg/ui-identityCard-12.svg",
         "svg16": "./ui/svg/ui-identityCard-16.svg",
@@ -3950,7 +3950,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60501 } }
       ],
       "createdAt": "2023-02-01T23:25:58.660Z",
-      "lastUpdated": "2023-10-25T17:34:15.338Z",
+      "lastUpdated": "2024-01-22T23:02:29.215Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lightningBolt-12.svg",
         "svg16": "./ui/svg/ui-lightningBolt-16.svg",
@@ -3968,7 +3968,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60021 } }
       ],
       "createdAt": "2023-02-01T23:25:21.925Z",
-      "lastUpdated": "2023-10-25T17:34:15.597Z",
+      "lastUpdated": "2024-01-16T17:53:59.251Z",
       "outputs": {
         "svg12": "./ui/svg/ui-list-12.svg",
         "svg16": "./ui/svg/ui-list-16.svg",
@@ -4058,7 +4058,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59866 } }
       ],
       "createdAt": "2023-02-01T23:25:31.029Z",
-      "lastUpdated": "2023-10-25T17:34:15.973Z",
+      "lastUpdated": "2024-02-08T15:24:30.553Z",
       "outputs": {
         "svg12": "./ui/svg/ui-more-12.svg",
         "svg16": "./ui/svg/ui-more-16.svg",
@@ -4112,7 +4112,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60001 } }
       ],
       "createdAt": "2023-02-01T23:25:30.945Z",
-      "lastUpdated": "2023-10-25T17:34:15.823Z",
+      "lastUpdated": "2024-01-31T20:22:47.908Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nft-12.svg",
         "svg16": "./ui/svg/ui-nft-16.svg",
@@ -4310,7 +4310,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59956 } }
       ],
       "createdAt": "2023-02-01T23:25:21.791Z",
-      "lastUpdated": "2023-10-25T17:34:14.760Z",
+      "lastUpdated": "2024-02-05T07:01:55.483Z",
       "outputs": {
         "svg12": "./ui/svg/ui-paperAirplane-12.svg",
         "svg16": "./ui/svg/ui-paperAirplane-16.svg",
@@ -4364,7 +4364,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60391 } }
       ],
       "createdAt": "2023-02-01T23:25:21.774Z",
-      "lastUpdated": "2023-10-25T17:34:14.778Z",
+      "lastUpdated": "2024-02-03T18:16:38.752Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pay-12.svg",
         "svg16": "./ui/svg/ui-pay-16.svg",
@@ -4400,7 +4400,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60191 } }
       ],
       "createdAt": "2023-02-01T23:25:21.759Z",
-      "lastUpdated": "2023-10-25T17:34:14.848Z",
+      "lastUpdated": "2024-01-18T15:02:23.948Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pencil-12.svg",
         "svg16": "./ui/svg/ui-pencil-16.svg",
@@ -4490,7 +4490,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59981 } }
       ],
       "createdAt": "2023-02-01T23:25:40.840Z",
-      "lastUpdated": "2023-10-25T17:34:15.096Z",
+      "lastUpdated": "2024-01-17T18:23:20.148Z",
       "outputs": {
         "svg12": "./ui/svg/ui-profile-12.svg",
         "svg16": "./ui/svg/ui-profile-16.svg",
@@ -4562,7 +4562,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59946 } }
       ],
       "createdAt": "2023-02-01T23:25:12.960Z",
-      "lastUpdated": "2023-10-25T17:34:14.788Z",
+      "lastUpdated": "2024-01-23T18:02:36.740Z",
       "outputs": {
         "svg12": "./ui/svg/ui-qrCode-12.svg",
         "svg16": "./ui/svg/ui-qrCode-16.svg",
@@ -4742,7 +4742,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60176 } }
       ],
       "createdAt": "2023-02-01T23:25:12.921Z",
-      "lastUpdated": "2023-10-25T17:34:15.614Z",
+      "lastUpdated": "2024-01-25T16:18:22.443Z",
       "outputs": {
         "svg12": "./ui/svg/ui-safe-12.svg",
         "svg16": "./ui/svg/ui-safe-16.svg",
@@ -4778,7 +4778,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59951 } }
       ],
       "createdAt": "2023-02-01T23:25:02.229Z",
-      "lastUpdated": "2023-10-25T17:34:14.763Z",
+      "lastUpdated": "2024-01-11T17:51:19.506Z",
       "outputs": {
         "svg12": "./ui/svg/ui-search-12.svg",
         "svg16": "./ui/svg/ui-search-16.svg",
@@ -4832,7 +4832,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60396 } }
       ],
       "createdAt": "2023-02-01T23:25:12.894Z",
-      "lastUpdated": "2023-10-25T17:34:15.556Z",
+      "lastUpdated": "2024-01-19T21:13:32.967Z",
       "outputs": {
         "svg12": "./ui/svg/ui-share-12.svg",
         "svg16": "./ui/svg/ui-share-16.svg",
@@ -5012,7 +5012,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60061 } }
       ],
       "createdAt": "2023-02-01T23:25:12.813Z",
-      "lastUpdated": "2023-10-25T01:40:16.765Z",
+      "lastUpdated": "2024-01-12T22:00:28.770Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sparkle-12.svg",
         "svg16": "./ui/svg/ui-sparkle-16.svg",
@@ -5048,7 +5048,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60166 } }
       ],
       "createdAt": "2023-02-01T23:25:40.817Z",
-      "lastUpdated": "2023-10-25T17:34:14.836Z",
+      "lastUpdated": "2024-02-05T16:41:13.171Z",
       "outputs": {
         "svg12": "./ui/svg/ui-stake-12.svg",
         "svg16": "./ui/svg/ui-stake-16.svg",
@@ -5084,7 +5084,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59966 } }
       ],
       "createdAt": "2023-02-01T23:25:58.812Z",
-      "lastUpdated": "2023-10-25T17:34:14.717Z",
+      "lastUpdated": "2024-01-22T23:17:06.508Z",
       "outputs": {
         "svg12": "./ui/svg/ui-starInactive-12.svg",
         "svg16": "./ui/svg/ui-starInactive-16.svg",
@@ -5192,7 +5192,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59816 } }
       ],
       "createdAt": "2023-02-01T23:25:02.399Z",
-      "lastUpdated": "2023-10-25T17:34:14.964Z",
+      "lastUpdated": "2024-01-19T21:38:53.083Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step4-12.svg",
         "svg16": "./ui/svg/ui-step4-16.svg",
@@ -5210,7 +5210,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59821 } }
       ],
       "createdAt": "2023-02-01T23:25:02.386Z",
-      "lastUpdated": "2023-10-25T17:34:15.738Z",
+      "lastUpdated": "2024-01-19T21:45:05.216Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step5-12.svg",
         "svg16": "./ui/svg/ui-step5-16.svg",
@@ -5228,7 +5228,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59826 } }
       ],
       "createdAt": "2023-02-01T23:25:21.889Z",
-      "lastUpdated": "2023-10-25T17:34:15.747Z",
+      "lastUpdated": "2024-01-19T21:45:57.723Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step6-12.svg",
         "svg16": "./ui/svg/ui-step6-16.svg",
@@ -5246,7 +5246,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59831 } }
       ],
       "createdAt": "2023-02-01T23:25:02.375Z",
-      "lastUpdated": "2023-10-25T17:34:14.602Z",
+      "lastUpdated": "2024-01-19T21:46:37.293Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step7-12.svg",
         "svg16": "./ui/svg/ui-step7-16.svg",
@@ -5336,7 +5336,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60846 } }
       ],
       "createdAt": "2023-02-01T23:25:58.789Z",
-      "lastUpdated": "2023-10-25T17:34:14.710Z",
+      "lastUpdated": "2024-01-17T15:27:44.010Z",
       "outputs": {
         "svg12": "./ui/svg/ui-telephone-12.svg",
         "svg16": "./ui/svg/ui-telephone-16.svg",
@@ -5354,7 +5354,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60786 } }
       ],
       "createdAt": "2023-02-01T23:25:02.354Z",
-      "lastUpdated": "2023-10-25T17:34:15.675Z",
+      "lastUpdated": "2024-01-24T18:46:17.144Z",
       "outputs": {
         "svg12": "./ui/svg/ui-thumbsDown-12.svg",
         "svg16": "./ui/svg/ui-thumbsDown-16.svg",
@@ -5390,7 +5390,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60791 } }
       ],
       "createdAt": "2023-02-01T23:25:58.736Z",
-      "lastUpdated": "2023-10-25T17:34:14.801Z",
+      "lastUpdated": "2024-01-24T18:46:08.714Z",
       "outputs": {
         "svg12": "./ui/svg/ui-thumbsUp-12.svg",
         "svg16": "./ui/svg/ui-thumbsUp-16.svg",
@@ -5534,7 +5534,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61036 } }
       ],
       "createdAt": "2023-02-01T23:26:07.713Z",
-      "lastUpdated": "2023-10-25T17:34:15.502Z",
+      "lastUpdated": "2024-01-18T15:01:14.925Z",
       "outputs": {
         "svg12": "./ui/svg/ui-unlock-12.svg",
         "svg16": "./ui/svg/ui-unlock-16.svg",
@@ -5606,7 +5606,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60186 } }
       ],
       "createdAt": "2023-02-01T23:25:02.290Z",
-      "lastUpdated": "2023-10-25T17:34:14.651Z",
+      "lastUpdated": "2024-02-08T19:24:27.211Z",
       "outputs": {
         "svg12": "./ui/svg/ui-visibleActive-12.svg",
         "svg16": "./ui/svg/ui-visibleActive-16.svg",
@@ -5624,7 +5624,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61056 } }
       ],
       "createdAt": "2023-02-01T23:25:49.864Z",
-      "lastUpdated": "2023-10-25T17:34:14.796Z",
+      "lastUpdated": "2024-02-08T19:24:02.045Z",
       "outputs": {
         "svg12": "./ui/svg/ui-visibleFilled-12.svg",
         "svg16": "./ui/svg/ui-visibleFilled-16.svg",
@@ -5678,7 +5678,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60466 } }
       ],
       "createdAt": "2023-02-01T23:25:58.841Z",
-      "lastUpdated": "2023-10-25T17:34:14.771Z",
+      "lastUpdated": "2024-01-30T18:28:18.338Z",
       "outputs": {
         "svg12": "./ui/svg/ui-warning-12.svg",
         "svg16": "./ui/svg/ui-warning-16.svg",
@@ -5714,7 +5714,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60116 } }
       ],
       "createdAt": "2023-02-01T23:25:02.258Z",
-      "lastUpdated": "2023-10-25T17:34:15.687Z",
+      "lastUpdated": "2024-01-31T19:43:12.788Z",
       "outputs": {
         "svg12": "./ui/svg/ui-wireTransfer-12.svg",
         "svg16": "./ui/svg/ui-wireTransfer-16.svg",
@@ -5750,7 +5750,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61596 } }
       ],
       "createdAt": "2023-02-01T19:07:47.054Z",
-      "lastUpdated": "2023-10-25T17:34:15.534Z",
+      "lastUpdated": "2024-02-12T06:54:29.692Z",
       "outputs": {
         "svg12": "./ui/svg/ui-wrapToken-12.svg",
         "svg16": "./ui/svg/ui-wrapToken-16.svg",
@@ -5768,7 +5768,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61601 } }
       ],
       "createdAt": "2023-02-01T23:25:58.797Z",
-      "lastUpdated": "2023-10-25T17:34:15.714Z",
+      "lastUpdated": "2024-01-10T15:28:54.955Z",
       "outputs": {
         "svg12": "./ui/svg/ui-transactions-12.svg",
         "svg16": "./ui/svg/ui-transactions-16.svg",
@@ -5822,7 +5822,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61586 } }
       ],
       "createdAt": "2023-02-01T23:25:02.213Z",
-      "lastUpdated": "2023-10-25T17:34:15.548Z",
+      "lastUpdated": "2024-02-07T06:15:55.494Z",
       "outputs": {
         "svg12": "./ui/svg/ui-refresh-12.svg",
         "svg16": "./ui/svg/ui-refresh-16.svg",
@@ -5840,7 +5840,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61491 } }
       ],
       "createdAt": "2023-02-01T23:25:40.775Z",
-      "lastUpdated": "2023-10-25T17:34:15.593Z",
+      "lastUpdated": "2024-01-29T20:11:11.955Z",
       "outputs": {
         "svg12": "./ui/svg/ui-rocket-12.svg",
         "svg16": "./ui/svg/ui-rocket-16.svg",
@@ -5984,7 +5984,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61536 } }
       ],
       "createdAt": "2023-02-01T23:25:02.121Z",
-      "lastUpdated": "2023-10-25T17:34:16.122Z",
+      "lastUpdated": "2024-02-01T00:02:47.916Z",
       "outputs": {
         "svg12": "./ui/svg/ui-blog-12.svg",
         "svg16": "./ui/svg/ui-blog-16.svg",
@@ -6038,7 +6038,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61640 } }
       ],
       "createdAt": "2023-02-07T14:43:55.826Z",
-      "lastUpdated": "2023-10-25T17:34:14.817Z",
+      "lastUpdated": "2024-02-13T04:07:25.553Z",
       "outputs": {
         "svg12": "./ui/svg/ui-planetInactive-12.svg",
         "svg16": "./ui/svg/ui-planetInactive-16.svg",
@@ -6056,7 +6056,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61637 } }
       ],
       "createdAt": "2023-02-07T14:44:09.948Z",
-      "lastUpdated": "2023-10-24T20:30:17.436Z",
+      "lastUpdated": "2024-02-05T16:41:58.102Z",
       "outputs": {
         "svg12": "./ui/svg/ui-planetActive-12.svg",
         "svg16": "./ui/svg/ui-planetActive-16.svg",
@@ -6074,7 +6074,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61643 } }
       ],
       "createdAt": "2023-02-14T17:51:53.021Z",
-      "lastUpdated": "2023-10-15T15:06:23.519Z",
+      "lastUpdated": "2024-01-10T20:12:57.864Z",
       "outputs": {
         "svg12": "./ui/svg/ui-coinbaseOne-12.svg",
         "svg16": "./ui/svg/ui-coinbaseOne-16.svg",
@@ -6152,7 +6152,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61658 } }
       ],
       "createdAt": "2023-05-03T19:13:18.814Z",
-      "lastUpdated": "2023-09-14T16:13:58.820Z",
+      "lastUpdated": "2024-01-19T02:51:36.737Z",
       "outputs": {
         "svg12": "./ui/svg/ui-passport-12.svg",
         "svg16": "./ui/svg/ui-passport-16.svg",
@@ -6173,7 +6173,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61661 } }
       ],
       "createdAt": "2023-06-20T18:06:21.233Z",
-      "lastUpdated": "2023-09-14T16:13:41.528Z",
+      "lastUpdated": "2024-01-22T16:58:43.002Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-derivatives-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-derivatives-12-inactive.svg",
@@ -6365,7 +6365,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61697 } }
       ],
       "createdAt": "2023-08-10T14:36:54.734Z",
-      "lastUpdated": "2023-10-05T21:13:36.337Z",
+      "lastUpdated": "2024-01-22T23:04:37.880Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-globe-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-globe-12-inactive.svg",
@@ -6389,7 +6389,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61667 } }
       ],
       "createdAt": "2023-08-10T14:36:54.683Z",
-      "lastUpdated": "2023-12-01T17:42:13.684Z",
+      "lastUpdated": "2024-01-24T18:31:05.338Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-base-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-base-12-inactive.svg",
@@ -6551,7 +6551,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61796 } }
       ],
       "createdAt": "2023-10-05T21:13:36.226Z",
-      "lastUpdated": "2023-10-20T17:19:06.541Z",
+      "lastUpdated": "2024-02-02T23:15:48.827Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-staking-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-staking-12-inactive.svg",
@@ -6671,7 +6671,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61802 } }
       ],
       "createdAt": "2023-10-05T21:13:36.179Z",
-      "lastUpdated": "2023-10-31T14:34:26.022Z",
+      "lastUpdated": "2024-01-25T20:07:57.915Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-waasProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-waasProduct-12-inactive.svg",
@@ -6695,7 +6695,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61772 } }
       ],
       "createdAt": "2023-10-05T21:13:36.220Z",
-      "lastUpdated": "2023-10-20T17:19:06.528Z",
+      "lastUpdated": "2024-01-24T18:32:40.009Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-payProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-payProduct-12-inactive.svg",
@@ -6719,7 +6719,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61760 } }
       ],
       "createdAt": "2023-10-05T21:13:36.213Z",
-      "lastUpdated": "2023-10-20T17:19:06.547Z",
+      "lastUpdated": "2024-01-17T16:28:52.561Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-advancedTradeProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-advancedTradeProduct-12-inactive.svg",
@@ -7017,6 +7017,30 @@
         "svg24Inactive": "./nav/svg/nav-learningRewardsProduct-24-inactive.svg"
       }
     },
+    "1439:534": {
+      "type": "nav",
+      "name": "borrowProduct",
+      "hash": "CnjpkjC05I8V6/85N6RNAz6jP8nEhs1nOoyZ3rKX2F4=",
+      "description": "nav, borrow, product",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61963 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61962 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61961 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61960 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61959 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61958 } }
+      ],
+      "createdAt": "2024-02-13T17:39:00.048Z",
+      "lastUpdated": "2024-02-13T17:39:00.048Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-borrowProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-borrowProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-borrowProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-borrowProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-borrowProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-borrowProduct-24-inactive.svg"
+      }
+    },
     "1439:541": {
       "type": "nav",
       "name": "commerceProduct",
@@ -7175,7 +7199,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61916 } }
       ],
       "createdAt": "2023-10-20T17:19:06.503Z",
-      "lastUpdated": "2023-10-20T17:19:06.503Z",
+      "lastUpdated": "2024-02-03T18:15:29.337Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-proProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-proProduct-12-inactive.svg",
@@ -7247,7 +7271,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61898 } }
       ],
       "createdAt": "2023-10-20T17:19:06.382Z",
-      "lastUpdated": "2023-10-20T17:19:06.382Z",
+      "lastUpdated": "2024-01-24T18:34:05.475Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-nodeProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-nodeProduct-12-inactive.svg",
@@ -7292,7 +7316,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61940 } }
       ],
       "createdAt": "2023-10-31T14:34:26.007Z",
-      "lastUpdated": "2023-10-31T19:41:16.820Z",
+      "lastUpdated": "2024-01-10T15:16:26.046Z",
       "outputs": {
         "svg12": "./ui/svg/ui-support-12.svg",
         "svg16": "./ui/svg/ui-support-16.svg",
@@ -7313,7 +7337,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61943 } }
       ],
       "createdAt": "2023-12-01T22:33:05.247Z",
-      "lastUpdated": "2023-12-01T22:34:45.598Z",
+      "lastUpdated": "2024-02-13T17:39:00.059Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-helpCenterQuestionMark-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-helpCenterQuestionMark-12-inactive.svg",
@@ -7375,6 +7399,30 @@
         "svg12": "./ui/svg/ui-gaugeEmpty-12.svg",
         "svg16": "./ui/svg/ui-gaugeEmpty-16.svg",
         "svg24": "./ui/svg/ui-gaugeEmpty-24.svg"
+      }
+    },
+    "1738:73": {
+      "type": "nav",
+      "name": "cluster",
+      "hash": "QQ3XMXc5ukPS00RgmQCpeUEThORQ5Ee6H3JI0z2e+Y8=",
+      "description": "cluster, circle, pizza, pie, clusters, clustering, app, engineering",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61969 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61968 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61967 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61966 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61965 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61964 } }
+      ],
+      "createdAt": "2024-02-13T17:39:00.040Z",
+      "lastUpdated": "2024-02-13T17:39:00.040Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-cluster-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-cluster-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-cluster-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-cluster-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-cluster-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-cluster-24-inactive.svg"
       }
     }
   }

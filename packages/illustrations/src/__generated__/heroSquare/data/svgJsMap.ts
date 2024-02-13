@@ -1222,8 +1222,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/tradeHistory-3').content,
   },
   tradeImmediately: {
-    light: () => require('../svgJs/light/tradeImmediately-2').content,
-    dark: () => require('../svgJs/dark/tradeImmediately-2').content,
+    light: () => require('../svgJs/light/tradeImmediately-3').content,
+    dark: () => require('../svgJs/dark/tradeImmediately-3').content,
   },
   transactionLimit: {
     light: () => require('../svgJs/light/transactionLimit-3').content,

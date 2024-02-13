@@ -120,6 +120,8 @@ const names: NavIconName[] = [
   'derivativesProduct',
   'proProduct',
   'helpCenterQuestionMark',
+  'cluster',
+  'borrowProduct',
 ];
 
 export default names;

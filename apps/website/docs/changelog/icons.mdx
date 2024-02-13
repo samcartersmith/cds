@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.5.0 (2/13/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 2/13/2024. [[#2755](https://github.cbhq.net/frontend/cds/pull/2755)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- borrowProduct
+- cluster
+
 ## 2.4.0 (1/9/2024 PST)
 
 #### 🚀 Updates

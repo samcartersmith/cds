@@ -572,6 +572,7 @@ const descriptionMap: Record<string, string[]> = {
     'privateClientProduct',
     'earnProduct',
     'nftProduct',
+    'borrowProduct',
   ],
   icon: ['base', 'walletLogo', 'key', 'securityKey', 'payProduct', 'venturesProduct'],
   logo: ['base', 'walletLogo', 'coinbase'],
@@ -603,6 +604,7 @@ const descriptionMap: Record<string, string[]> = {
     'derivativesProduct',
     'proProduct',
     'helpCenterQuestionMark',
+    'borrowProduct',
   ],
   key: ['key', 'securityKey'],
   secure: ['key', 'securityKey'],
@@ -660,6 +662,15 @@ const descriptionMap: Record<string, string[]> = {
   customer: ['helpCenterQuestionMark'],
   service: ['helpCenterQuestionMark'],
   CEX: ['helpCenterQuestionMark'],
+  cluster: ['cluster'],
+  circle: ['cluster'],
+  pizza: ['cluster'],
+  pie: ['cluster'],
+  clusters: ['cluster'],
+  clustering: ['cluster'],
+  app: ['cluster'],
+  engineering: ['cluster'],
+  borrow: ['borrowProduct'],
 };
 
 export default descriptionMap;

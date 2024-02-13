@@ -22,6 +22,7 @@ const versionMap: Record<SpotIconName, number> = {
   productCoinbaseCard: 2,
   productWallet: 1,
   wallet: 1,
+  walletLogo: 0,
   helpCenterProduct: 1,
   assetHubProduct: 0,
   assetManagementProduct: 1,

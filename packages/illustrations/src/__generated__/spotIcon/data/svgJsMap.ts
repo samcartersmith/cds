@@ -221,6 +221,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/walletAsAServiceProduct-1').content,
     dark: () => require('../svgJs/dark/walletAsAServiceProduct-1').content,
   },
+  walletLogo: {
+    light: () => require('../svgJs/light/walletLogo-0').content,
+    dark: () => require('../svgJs/dark/walletLogo-0').content,
+  },
   warning: {
     light: () => require('../svgJs/light/warning-0').content,
     dark: () => require('../svgJs/dark/warning-0').content,

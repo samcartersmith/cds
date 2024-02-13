@@ -1462,6 +1462,18 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-gaugeMedium-12': '',
   'ui-gaugeMedium-16': '',
   'ui-gaugeMedium-24': '',
+  'nav-cluster-12-active': '',
+  'nav-cluster-12-inactive': '',
+  'nav-cluster-16-active': '',
+  'nav-cluster-16-inactive': '',
+  'nav-cluster-24-active': '',
+  'nav-cluster-24-inactive': '',
+  'nav-borrowProduct-12-active': '',
+  'nav-borrowProduct-12-inactive': '',
+  'nav-borrowProduct-16-active': '',
+  'nav-borrowProduct-16-inactive': '',
+  'nav-borrowProduct-24-active': '',
+  'nav-borrowProduct-24-inactive': '',
 };
 
 export default glyphMap;

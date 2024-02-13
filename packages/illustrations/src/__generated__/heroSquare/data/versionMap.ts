@@ -42,7 +42,7 @@ const versionMap: Record<HeroSquareName, number> = {
   downloadCoinbaseWallet: 2,
   accessToAdvancedCharts: 3,
   errorRefresh: 2,
-  tradeImmediately: 2,
+  tradeImmediately: 3,
   coinbaseOneProtectedCrypto: 2,
   coinbaseOneDocWarning: 2,
   errorWeb400: 2,

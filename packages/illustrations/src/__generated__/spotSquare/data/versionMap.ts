@@ -163,7 +163,7 @@ const versionMap: Record<SpotSquareName, number> = {
   cardBlocked: 4,
   primeDeFi: 4,
   primeStaking: 4,
-  swapEth: 2,
+  swapEth: 3,
   ethStakeOrWrapTwo: 2,
   coinbaseOneSavingFunds: 2,
   documentCertified: 2,

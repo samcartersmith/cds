@@ -57,4 +57,5 @@ export type SpotIconName =
   | 'venturesProduct'
   | 'wallet'
   | 'walletAsAServiceProduct'
+  | 'walletLogo'
   | 'warning';

@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.8.0 (2/13/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 2/13/2024. [[#2755](https://github.cbhq.net/frontend/cds/pull/2755)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- walletLogo
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- tradeImmediately
+
+#### Spot Square
+
+- swapEth
+
 ## 2.7.0 (1/9/2024 PST)
 
 #### 🚀 Updates
