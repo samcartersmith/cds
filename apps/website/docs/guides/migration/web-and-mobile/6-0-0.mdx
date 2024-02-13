@@ -9,11 +9,9 @@ import Migrator from '../_migrator.mdx';
 v6 is unreleased and is currently being tested. This guide is a work in progress and will be updated as we get closer to release.
 :::
 
-In this major release we eliminated a lot of tech debt, realigned our component API's to newly accepted conventions, and enabled Frontier styling globally. Almost all breaking changes are automatically migratable with the `cds-migrator`. See [full list of changes](/resources/deprecations/v6.0.0).
+### In this major release we eliminated a lot of tech debt, realigned our component API's to newly accepted conventions, and enabled Frontier styling globally. Almost all breaking changes are automatically migratable with the `cds-migrator` (see [Using the Migrator](#using-the-migrator)).
 
-:::info
-v6 of CDS core packages (`common`, `web`, and `mobile`) are only compatible with the following major package versions (or higher):
-:::
+CDS 6 core packages (`common`, `web`, and `mobile`) are only compatible with the following major package versions (or higher):
 
 - `@cbhq/cds-web-visualization` v1.0.0
 - `@cbhq/cds-mobile-visualization` v1.0.0
@@ -22,11 +20,9 @@ v6 of CDS core packages (`common`, `web`, and `mobile`) are only compatible with
 - `@cbhq/ui-mobile-playground` v2.0.0
 - `@cbhq/ui-mobile-visreg` v2.0.0
 
-## Using the Migrator
+## Breaking Changes
 
-<Migrator />
-
-## API Changes
+### Prop Names
 
 We renamed some of our component's property names to better align them to accepted [conventions](https://github.cbhq.net/frontend/cds/blob/master/docs/conventions/overview.md) and make our API&apos;s more intuitive and consistent. All migrations are automated with the `cds-migrator`. You can view the full list [here](/resources/deprecations/v6.0.0).
 
@@ -35,14 +31,14 @@ We're also phasing our `dangerouslySet` prefixed prop names and removing that pr
 - if a component has `background` and `dangerouslySetBackground` we'll support both properties with `dangerouslySetBackground` having higher priority.
 - if a component has `dangerouslySetBackground` and no competing `background` props, we've removed the `dangerouslySet` prefix in CDS 6.
 
-## New Packages
+### New Packages
 
 Complex components have been moved into their own standalone packages. Migration was previously optional but is now required in v6. Use the `cds-migrator` to automatically migrate instances and update package dependencies. The migrator will also bump these packages to `v1.0.0`.
 
 - `cds-web-visualization`: Sparkline components
 - `cds-mobile-visualization`: Sparkline components
 
-## Removed Packages
+### Removed Packages
 
 We previously isolated some overlay components out of the `@cbhq/cds-web` package into their own `@cbhq/cds-web-overlays` package, however we shifted our strategy and will be reintegrating these components back into the core web package. These migrations were optional in v5, however if you already migrated you can use the cds-migrator to migrate instances back to their original locations. You will need to manually remove `@cbhq/cds-web-overlays` as a dependency for your project after running the script.
 
@@ -58,38 +54,64 @@ Affected components in `@cbhq/cds-web-overlays`:
 
 ## Visual Changes
 
-Frontier feature flags have been removed and Frontier styling is now enabled by default. See [side by side comparison](https://www.figma.com/file/fm0tnNjeyaJLp0EpbCIlYd/CDS-Frontier-Updates?type=design&node-id=0-1&mode=design&t=84oqxDfNCP7qCni0-0). You will no longer be able to opt-out of Frontier. Use the `cds-migrator` to automatically remove instances of Frontier flags and styles will be enabled automatically.
+CDS 6 enables frontier styling by default, which introduces visually breaking changes. Anticipated changes are listed below, please review before bashing. Figma with [side by side comparison](https://www.figma.com/file/fm0tnNjeyaJLp0EpbCIlYd/CDS-Frontier-Updates?type=design&node-id=0-1&mode=design&t=84oqxDfNCP7qCni0-0).
 
 :::note
-Visually breaking changes should always be reviewed/QAed manually.
+Visual changes include CLS (cumulative layout shift) and changes that could affect accessibility (eg: color contrast).
 :::
-
-### Typography
-
-Display2 has a new font size
 
 ### Palette
 
-The following palette values have been modified:
+#### Secondary
 
-- Primary (dark)
-- Secondary
-- Yellow
+- Light spectrum: `gray0` to `gray5`
+- Dark spectrum: `gray0` to `gray20`
+
+<Image
+  srcLight="/img/guides/v6/secondary_update.png"
+  srcDark="/img/guides/v6/secondary_update_dark.png"
+/>
+
+#### Yellow
+
+- New [palette](https://www.figma.com/file/fm0tnNjeyaJLp0EpbCIlYd/CDS-Frontier-Updates?type=design&node-id=6-266&mode=design&t=kBfeyQgIeD2EHkcw-0) added. Noticeable in `warning` variants.
+
+<img src="/img/guides/v6/new_warning_token.png" alt="New warning token" width="50%" />
+
+#### Primary (dark)
+
+Changed from `blue60` to `blue70`
+
+<img src="/img/guides/v6/primary_color_update.png" alt="Primary token update" width="100%" />
 
 ### Cards
-
-Cards have a completely new visual treatment which need to be manually QAed since the border has been removed and the background color changed, and may appear "transparent" depending on how they are used.
 
 - Removed border
 - Background color from `background` -> `secondary`
 
-We also introduced new cards in `v5.22.0` which will replace old cards in `v7.0.0`. Migrations will have to be completed manually, and will be optional until `v7.0.0`. See `cds-migrator-output.md` for migration guidance.
+New cards were introduced in `v5.22.0` which will replace FeatureEntryCard and AnnouncementCard in `v7.0.0`. Migration is optional in CDS 6, but strongly recommended.
+
+<Image srcLight="/img/guides/v6/cards.png" srcDark="/img/guides/v6/cards_dark.png" />
 
 ### Buttons
 
 - Border radius is rounder
 - Removed border on secondary variant
 
+<Image srcLight="/img/guides/v6/buttons.png" srcDark="/img/guides/v6/buttons_dark.png" />
+
 ### Sparkline
 
 - Area is filled
+
+<Image srcLight="/img/guides/v6/sparkline.png" srcDark="/img/guides/v6/sparkline_dark.png" />
+
+### Typography
+
+- Display2 has a larger font size and line height. This will cause cumulative layout shift.
+
+<Image srcLight="/img/guides/v6/display2.png" srcDark="/img/guides/v6/display2_dark.png" />
+
+## Using the Migrator
+
+<Migrator />
