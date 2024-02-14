@@ -149,3 +149,10 @@ export const packageNames = [
 export type PackageName = (typeof packageNames)[number];
 export type PackageWithVersion = Record<PackageName, string>;
 export type DepsToAddMap = Partial<PackageWithVersion>;
+
+export type RemovedProp = {
+  props: string | string[];
+  replacement: string;
+  /** component path */
+  path: string | string[];
+};

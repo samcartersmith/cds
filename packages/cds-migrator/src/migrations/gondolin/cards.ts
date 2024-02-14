@@ -1,0 +1,102 @@
+import { Tree } from '@nrwl/devkit';
+import { SourceFile } from 'ts-morph';
+
+import {
+  checkFileIncludesImportedModule,
+  createJsxMigration,
+  generateManualMigrationOutput,
+  getComponentFromJsx,
+  logDebug,
+  logWarning,
+  ParseJsxElementsCbParams,
+  renameJsxAttribute,
+  renameJsxTag,
+  replaceImport,
+  searchAndProcessComponent,
+  writeMigrationToFile,
+} from '../../helpers';
+
+import { cardMigrations, removedProps } from './data/cards';
+
+const checkSourceFile = (sourceFile: SourceFile): boolean => {
+  let checkSourceFileHasDeprecatedComponent = false;
+
+  Object.values(cardMigrations).forEach(({ path: componentPath, name }) => {
+    const oldPath = Object.keys(componentPath)[0];
+    const hasImportForDeprecatedComponent = checkFileIncludesImportedModule({
+      sourceFile,
+      path: oldPath,
+      module: name,
+    });
+    if (hasImportForDeprecatedComponent) {
+      checkSourceFileHasDeprecatedComponent = true;
+    }
+  });
+  return checkSourceFileHasDeprecatedComponent;
+};
+
+const componentNames = cardMigrations.map(({ name: componentName }) => componentName);
+
+const callback = (args: ParseJsxElementsCbParams) => {
+  const { jsx, sourceFile } = args;
+
+  cardMigrations?.forEach(({ name, path: componentPath, replacement, attributeRenameMap }) => {
+    const oldPath = Object.keys(componentPath)[0];
+    const newPath = Object.values(componentPath)[0];
+
+    const { component, actualComponentName } = getComponentFromJsx({
+      jsx,
+      componentNames,
+    });
+    if (actualComponentName ?? component !== name) {
+      return;
+    }
+
+    replaceImport({
+      sourceFile,
+      oldPath,
+      newPath,
+      namedImport: component,
+      newNamedImport: replacement,
+    });
+    // some components were replaced by ones with the same name, but new path and API
+    // so we only want to find/replace usage if there is a replacement
+    if (attributeRenameMap) {
+      searchAndProcessComponent({
+        jsx,
+        componentName: actualComponentName ?? component,
+        callback: (propName) => {
+          if (propName === attributeRenameMap.oldAttribute) {
+            renameJsxAttribute({
+              oldAttribute: attributeRenameMap.oldAttribute,
+              newAttribute: attributeRenameMap.newAttribute,
+              jsx,
+            });
+          }
+          if (removedProps.includes(propName)) {
+            const manualMigrationWarning = `The prop ${propName} has been removed from ${
+              actualComponentName ?? component
+            }. Use pictogram instead.`;
+            logWarning(manualMigrationWarning);
+            generateManualMigrationOutput(
+              `## ${manualMigrationWarning} \n - at ${sourceFile.getFilePath()}`,
+            );
+          }
+        },
+      });
+    }
+    if (replacement) {
+      renameJsxTag({ jsx, value: replacement });
+    }
+    writeMigrationToFile({ sourceFile, oldValue: name, newValue: replacement });
+  });
+};
+
+export default async function migration(tree: Tree) {
+  logDebug('Migrating deprecated components');
+  await createJsxMigration({
+    tree,
+    callback,
+    checkSourceFile,
+  });
+}

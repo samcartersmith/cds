@@ -4,6 +4,7 @@ import {
   deepMerge,
   mobilePackage,
   PropToAttributeValueMigrationShape,
+  RemovedProp,
   webPackage,
 } from '../../../helpers';
 
@@ -179,13 +180,6 @@ const renamedPropConfigs: AttributeRenameMapShape = {
 
 // merging in case of duplicate keys
 export const renamedProps = deepMerge(renamedPropConfigs, classNameConfigs, styleConfigs);
-
-type RemovedProp = {
-  props: string | string[];
-  replacement: string;
-  /** component path */
-  path: string | string[];
-};
 
 export const removedProps: Record<string, RemovedProp> = {
   FeatureFlagProvider: {

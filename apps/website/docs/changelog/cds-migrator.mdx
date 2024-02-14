@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.43 (2/13/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: added gondolin card migrations scripts.
+
 ## 0.1.42 (2/8/2024 PST)
 
 #### 🐞 Fixes

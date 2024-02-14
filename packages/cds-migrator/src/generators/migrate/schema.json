@@ -14,7 +14,8 @@
         "5.0.0",
         "package-decomp",
         "6.0.0",
-        "revert-decomp"
+        "revert-decomp",
+        "gondolin"
       ],
       "description": "Version to migrate to",
       "$default": {
