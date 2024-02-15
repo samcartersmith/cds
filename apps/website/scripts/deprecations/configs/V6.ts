@@ -14,6 +14,42 @@ const baseMobileVisualizationDeprecation: Partial<Component> = {
   type: ['path'],
 };
 
+const alphaComponents = [
+  { name: 'AnnouncementCard', newPath: 'cards' },
+  { name: 'FeatureEntryCard', newPath: 'cards' },
+  { name: 'Button', newPath: 'buttons' },
+  { name: 'IconButton', newPath: 'buttons' },
+  { name: 'CardGroup', newPath: 'cards' },
+  { name: 'CardMedia', newPath: 'cards' },
+  { name: 'FeedCard', newPath: 'cards' },
+  { name: 'CardFooter', newPath: 'cards' },
+  { name: 'CardBody', newPath: 'cards' },
+  { name: 'DataCard', newPath: 'cards' },
+];
+
+const alphaComponentWebMigrations: Partial<Component>[] = alphaComponents.map(
+  ({ name, newPath }) => ({
+    name,
+    package: 'web',
+    type: 'path',
+    path: `packages/web/alpha/${name}.tsx`,
+    migrationMap: {
+      path: `packages/web/${newPath}/${name}.tsx`,
+    },
+  }),
+);
+const alphaComponentMobileMigrations: Partial<Component>[] = alphaComponents.map(
+  ({ name, newPath }) => ({
+    name,
+    package: 'web',
+    type: 'path',
+    path: `packages/web/alpha/${name}.tsx`,
+    migrationMap: {
+      path: `packages/web/${newPath}/${name}.tsx`,
+    },
+  }),
+);
+
 const overlayWebDeprecations = [
   { ...baseWebOverlaysDeprecation, name: 'Dropdown', path: 'packages/web-overlays/src/dropdown' },
   {
@@ -295,6 +331,8 @@ const componentDeprecations: Partial<Component>[] = [
   ...overlayWebDeprecations,
   ...sparklineWebDeprecations,
   ...sparklineMobileDeprecations,
+  ...alphaComponentWebMigrations,
+  ...alphaComponentMobileMigrations,
   {
     package: 'mobile',
     name: 'FiatIcon',
@@ -473,6 +511,31 @@ const componentDeprecations: Partial<Component>[] = [
     },
     migrationMap: {
       replaced: ['CardMedia'],
+    },
+  },
+  {
+    package: 'mobile',
+    name: 'Collapsible',
+    type: 'path',
+    path: 'packages/mobile/alpha/Collapsible.tsx',
+    migrationMap: {
+      path: 'packages/mobile/collapsible',
+    },
+  },
+  {
+    package: 'web',
+    name: 'VStack',
+    path: 'packages/web/alpha/VStack.tsx',
+    migrationMap: {
+      path: 'packages/web/layout',
+    },
+  },
+  {
+    package: 'web',
+    name: 'HStack',
+    path: 'packages/web/alpha/HStack.tsx',
+    migrationMap: {
+      path: 'packages/web/layout',
     },
   },
 ];
@@ -932,4 +995,15 @@ export const V6: Deprecation = {
   ],
   functions: functionDeprecations,
   params: parameterMigrations,
+  types: [
+    {
+      name: 'common/types/alpha',
+      package: 'common',
+      path: 'packages/common/types/alpha',
+      type: 'path',
+      migrationMap: {
+        path: 'packages/common/types',
+      },
+    },
+  ],
 };

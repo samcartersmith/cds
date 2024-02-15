@@ -9,7 +9,7 @@ import Migrator from '../_migrator.mdx';
 v6 is unreleased and is currently being tested. This guide is a work in progress and will be updated as we get closer to release.
 :::
 
-### In this major release we eliminated a lot of tech debt, realigned our component API's to newly accepted conventions, and enabled Frontier styling globally. Almost all breaking changes are automatically migratable with the `cds-migrator` (see [Using the Migrator](#using-the-migrator)).
+### In this major release we eliminated a lot of tech debt, realigned our component API's to newly accepted conventions, enabled Frontier styling globally, and exited almost all alpha components. Almost all breaking changes are automatically migratable with the `cds-migrator` (see [Using the Migrator](#using-the-migrator)).
 
 CDS 6 core packages (`common`, `web`, and `mobile`) are only compatible with the following major package versions (or higher):
 
@@ -52,6 +52,10 @@ Affected components in `@cbhq/cds-web-overlays`:
 
 - Dropdown, Select, Popover, Tooltip, SidebarMoreMenu, and SelectChip
 
+### Alpha Components Exited
+
+Almost all components and types located in `/alpha` directories have been reintegrated into core packages. All migrations are automated with the `cds-migrator`. See [go/cds-alpha-tdd](http://go/cds-alpha-tdd) for more information on this strategy.
+
 ## Visual Changes
 
 CDS 6 enables frontier styling by default, which introduces visually breaking changes. Anticipated changes are listed below, please review before bashing. Figma with [side by side comparison](https://www.figma.com/file/fm0tnNjeyaJLp0EpbCIlYd/CDS-Frontier-Updates?type=design&node-id=0-1&mode=design&t=84oqxDfNCP7qCni0-0).
@@ -90,6 +94,10 @@ Changed from `blue60` to `blue70`
 - Background color from `background` -> `secondary`
 
 New cards were introduced in `v5.22.0` which will replace FeatureEntryCard and AnnouncementCard in `v7.0.0`. Migration is optional in CDS 6, but strongly recommended.
+
+:::info
+You can use the `cds-migrator` to automatically migrate to the new card suite using `yarn nx generate @cbhq/cds-migrator:migrate gondolin`.
+:::
 
 <Image srcLight="/img/guides/v6/cards.png" srcDark="/img/guides/v6/cards_dark.png" />
 

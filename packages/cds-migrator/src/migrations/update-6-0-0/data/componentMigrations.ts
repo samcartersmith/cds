@@ -1,4 +1,4 @@
-import { ComponentMigration } from '../../../helpers';
+import { ComponentMigration, mobilePackage, webPackage } from '../../../helpers';
 
 type RemovedComponent = {
   name: string;
@@ -10,7 +10,7 @@ export const oneToOneMigrations: ComponentMigration[] = [
   {
     name: 'FiatIcon',
     path: {
-      '@cbhq/cds-mobile/icons': '@cbhq/cds-mobile/icons',
+      [`${mobilePackage}/icons`]: `${mobilePackage}/icons`,
     },
     replacement: 'Icon',
     attributeRenameMap: {
@@ -18,7 +18,43 @@ export const oneToOneMigrations: ComponentMigration[] = [
       newAttribute: 'name',
     },
   },
+  {
+    name: 'CardHeader',
+    path: {
+      [`${webPackage}/alpha/CardHeader`]: `${webPackage}/cards`,
+    },
+    attributeRenameMap: {
+      oldAttribute: 'author',
+      newAttribute: 'description',
+    },
+  },
+  {
+    name: 'CardHeader',
+    path: {
+      [`${mobilePackage}/alpha/CardHeader`]: `${mobilePackage}/cards`,
+    },
+    attributeRenameMap: {
+      oldAttribute: 'author',
+      newAttribute: 'description',
+    },
+  },
+  {
+    name: 'Card',
+    path: {
+      [`${mobilePackage}/alpha/Card`]: `${mobilePackage}/layout`,
+    },
+    replacement: 'VStack',
+  },
+  {
+    name: 'Card',
+    path: {
+      [`${webPackage}/alpha/Card`]: `${webPackage}/layout`,
+    },
+    replacement: 'VStack',
+  },
 ];
+
+export const removedCardProps = ['onPress', 'pressableProps'];
 
 const oldCardWarning =
   'This component is getting removed in v7.0.0. Please use UpsellCard or NudgeCard instead. ';

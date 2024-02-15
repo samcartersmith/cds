@@ -4,16 +4,18 @@ import { SourceFile } from 'ts-morph';
 import {
   checkFileIncludesImportedModule,
   createJsxMigration,
+  generateManualMigrationOutput,
   getComponentFromJsx,
   logDebug,
   ParseJsxElementsCbParams,
   renameJsxAttribute,
   renameJsxTag,
   replaceImport,
+  searchAndProcessComponent,
   writeMigrationToFile,
 } from '../../helpers';
 
-import { oneToOneMigrations } from './data/componentMigrations';
+import { oneToOneMigrations, removedCardProps } from './data/componentMigrations';
 
 const checkSourceFile = (sourceFile: SourceFile): boolean => {
   let checkSourceFileHasDeprecatedComponent = false;
@@ -47,7 +49,36 @@ const callback = (args: ParseJsxElementsCbParams) => {
       return;
     }
 
-    replaceImport({ sourceFile, oldPath, newPath, namedImport: component });
+    let requiresManualClosingTagMigration = false;
+
+    if (actualComponentName === 'Card' || component === 'Card') {
+      searchAndProcessComponent({
+        jsx,
+        componentName: actualComponentName ?? component,
+        callback: (propName) => {
+          // check if it is a pressable card and require manual migration
+          if (removedCardProps.includes(propName)) {
+            const pressablePropsMessage =
+              ' and spread in the value for pressableProps into the PressableOpacity';
+            generateManualMigrationOutput(
+              `## Manual Migration Required! \n - The Card component has been removed and replaced with VStack. \n - This Card uses an onPress which is not automatically migrateable. We've converted this into a VStack, but you will need to wrap it with a PressableOpacity${
+                propName === 'pressableProps' ? pressablePropsMessage : ''
+              }. \n - at ${sourceFile.getFilePath()}`,
+            );
+          } else {
+            requiresManualClosingTagMigration = true;
+          }
+        },
+      });
+    }
+
+    replaceImport({
+      sourceFile,
+      oldPath,
+      newPath,
+      namedImport: component,
+      newNamedImport: replacement,
+    });
     // some components were replaced by ones with the same name, but new path and API
     // so we only want to find/replace usage if there is a replacement
     if (replacement) {
@@ -61,6 +92,11 @@ const callback = (args: ParseJsxElementsCbParams) => {
       renameJsxTag({ jsx, value: replacement });
     }
     writeMigrationToFile({ sourceFile, oldValue: name, newValue: replacement });
+    if (requiresManualClosingTagMigration) {
+      generateManualMigrationOutput(
+        `## Manual Migration Required! \n - The Card component has been removed and replaced with VStack. \n - We migrated this instance for you but you will need to update the closing tag manually. \n - at ${sourceFile.getFilePath()}`,
+      );
+    }
   });
 };
 

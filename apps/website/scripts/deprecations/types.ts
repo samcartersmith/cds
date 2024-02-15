@@ -46,7 +46,7 @@ export type Prop = Expand<
 
 type Type = Expand<
   {
-    scope: Pick<Scope, 'exportNames'>;
+    scope?: Pick<Scope, 'exportNames'>;
   } & SharedProps
 >;
 
