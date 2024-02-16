@@ -8,8 +8,9 @@ For installation steps, follow [A11y_Executor_README](./A11y_Executor_README.md#
 
 For specific file path setup and categorization of a11y score by CODEOWNER, add the following to your `project.json`:
 
-- targetPath: the specific path that you want to parse within your CODEOWNERS file
-- codeOwnerFilePath: path to your CODEOWNERS file
+- **targetPath** [optional]: the specific path that you want to parse within your CODEOWNERS file
+- **codeOwnerFilePath** [optional]: path to your CODEOWNERS file
+- **platform** [required]: the platform type of your repo: web or mobile
 
 Sample CODEOWNERS file:
 
@@ -34,7 +35,8 @@ packages/mobile/banner/ @test/bannertest
       "options": {
         "eventProjectName": "consumer_onboarding",
         "targetPath": "/src/packages/onboarding/",
-        "codeOwnerFilePath": ".github/CODEOWNERS"
+        "codeOwnerFilePath": ".github/CODEOWNERS",
+        "platform": "mobile"
       },
       "dependsOn": [
         "^build",
@@ -45,7 +47,7 @@ packages/mobile/banner/ @test/bannertest
 }
 ```
 
-#### Examples:
+#### Project.json Examples:
 
 - Examples in retail: ([snippet](https://github.cbhq.net/consumer/react-native/blob/master/src/packages/app/project.json#L400-L408))
 - Example in wallet: ([snippet](https://github.cbhq.net/wallet/wallet-mobile/blob/master/workspaces/apps/rn/project.json#L487-L496))
@@ -85,3 +87,25 @@ We can also run entirely on command line.
 ```
 yarn nx run <targetProject>:audit-a11y --targetPath=<path-string-to-filter-by> --codeOwnerFilePath=<path-to-codeowner-file>x
 ```
+
+### Testing: Writing a11y tests
+
+Depending on the repo type, there are different ways to test accessibility and write a11y unit tests.
+
+- For `web`, we use jest-axe and write unit tests with `toHaveNoViolations`.
+- For `mobile`, we use RNAE and write unit tests with `toBeAccessible`.
+
+#### Examples:
+
+**Mobile**
+
+- [RNAE example](https://github.com/aryella-lacerda/react-native-accessibility-engine?tab=readme-ov-file#with-react-elements)
+- [CDS Example for mobile](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/buttons/__tests__/IconButton.test.tsx#L17)
+- [consumer/react-native example](https://github.cbhq.net/consumer/react-native/blob/master/libs/react-native-core/components/cells/ConfirmationCell.test.tsx#L34)
+
+**Web**
+
+- [jest-axe example](https://github.com/NickColley/jest-axe?tab=readme-ov-file#usage)
+- [CDS Example for web](https://github.cbhq.net/frontend/cds/blob/master/packages/web/buttons/__tests__/AvatarButton.test.tsx#L8)
+- [frontend/coinbase-www example](https://github.cbhq.net/frontend/coinbase-www/blob/master/app/src/views/Home/components/TopOfFeed/components/TradeItem.test.tsx#L53-L57)
+- [wallet/wallet-mobile example](https://github.cbhq.net/wallet/wallet-mobile/blob/master/workspaces/apps/extension/src/screens/CollectibleDetail/CollectibleButton.test.tsx#L41-L50)

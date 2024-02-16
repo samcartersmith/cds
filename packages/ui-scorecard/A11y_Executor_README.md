@@ -25,7 +25,14 @@
 
 ## Overview
 
-A11y Executor is an automated solution for assessing the accessibility of Coinbase React Native apps and is intended to be used in conjunction with [React Native Accessibility Engine](https://www.npmjs.com/package/react-native-accessibility-engine) (RNAE). RNAE is an open-source library that facilitates developers in evaluating and enhancing the accessibility of their React Native apps by employing predefined rules and custom Jest matchers.
+A11y Executor is an automated solution for assessing the accessibility of Coinbase React Native / React apps and is intended to be used in conjunction with [React Native Accessibility Engine](https://www.npmjs.com/package/react-native-accessibility-engine) (RNAE) and [jest-axe](https://github.com/nickcolley/jest-axe#readme).
+
+- **RNAE** is an open-source library that facilitates developers in evaluating and enhancing the accessibility of their React Native apps by employing predefined rules and custom Jest matchers.
+
+  - For testing on mobile repos, we use the `toBeAccessible` tests.
+
+- **jest-axe** is a custom Jest matcher for axe for testing accessibility
+  - For testing on web repos, we use the `toHaveNoViolations` tests.
 
 A11y Executor is one of several executors included in the `@cbhq/ui-scorecard` package. After installing the package and integrating the executor into your project, you can use it to generate an accessibility report for your app.
 
@@ -36,6 +43,7 @@ This short [video](https://drive.google.com/file/d/1nAwEi4hYJZCSowbUQWIyc1BcOttI
 We have extended the A11y Executor with some additional features:
 
 - File path targetting and CODEOWNERS mapping.
+- Support for both web and mobile repositories.
 
 #### File path targetting and CODEOWNERS mapping.
 
@@ -99,7 +107,7 @@ Options for configuing the executor are listed in the `properties` of [schema.js
       "executor": "@cbhq/ui-scorecard:audit-a11y",
       "options": {
         "cache": false,
-        "debug": true
+        "debug": true,
       },
       "dependsOn": [
         "^build",
@@ -111,6 +119,7 @@ Options for configuing the executor are listed in the `properties` of [schema.js
 ```
 
 To configure specific file paths to run a11y engine on, we can add the targetPath and codeOwnerFilePath:
+Note: You must specify the platform (web / mobile).
 
 ```json
 {
@@ -122,7 +131,8 @@ To configure specific file paths to run a11y engine on, we can add the targetPat
       "options": {
         "eventProjectName": "consumer_onboarding",
         "targetPath": "/src/packages/onboarding/",
-        "codeOwnerFilePath": ".github/CODEOWNERS"
+        "codeOwnerFilePath": ".github/CODEOWNERS",
+        "platform": "mobile",
       },
       "dependsOn": [
         "^build",
@@ -204,31 +214,37 @@ steps:
 
 The primary objective behind establishing this score is to promote the resolution of accessibility issues.
 
-This score acts as a gauge for the accessibility of a mobile app, but it only covers a specific set of metrics and doesn't offer a complete assessment. We utilize a `toBeAccessible` test to evaluate the app according to these [RNAE rules](https://github.com/aryella-lacerda/react-native-accessibility-engine#current-rules), which are not comprehensive. Over time, we plan to incrementally expand the rule set. However, it's important to note that some accessibility guidelines cannot be assessed through automation alone. As a result, this score is limited in scope, which is why we refer to it as the `automatedA11yScore`.
+This score acts as a gauge for the accessibility of a mobile app, but it only covers a specific set of metrics and doesn't offer a complete assessment.
+
+- For mobile: We utilize a `toBeAccessible` test to evaluate the mobile app according to these [RNAE rules](https://github.com/aryella-lacerda/react-native-accessibility-engine#current-rules), which are not comprehensive.
+
+- For web: We utilize a `toHaveNoViolations` test to evaluate the web app according to these [a11y rules](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md).
+
+Over time, we plan to incrementally expand the rule set. However, it's important to note that some accessibility guidelines cannot be assessed through automation alone. As a result, this score is limited in scope, which is why we refer to it as the `automatedA11yScore`.
 
 ### What is automatedA11yScore?
 
-The `automatedA11yScore` is a metric representing the accessibility of a mobile app, based solely on the results of automated accessibility testing. It provides a limited assessment of overall compliance.
+The `automatedA11yScore` is a metric representing the accessibility of a the mobile/web app, based solely on the results of automated accessibility testing. It provides a limited assessment of overall compliance.
 
 $$
 automatedA11yScore = \frac{a11yScore}{100} \times jestScore
 $$
 
-- Note: The jestScore used in the calculation of `automatedA11yScore` is the `filteredJestScore` which is the total jest code coverage percentage of files specificed in codeowners file. By default it is the entire repo unless codeowners are specified.
+- Note: The jestScore used in the calculation of `automatedA11yScore` is the `filteredJestScore` which is the total jest code coverage percentage of files specified in the codeowners file. By default it is the entire repo unless codeowners are specified.
 
 #### What is a11yScore?
 
 $$
-a11yScore = \frac{\text{components and screens with passing }toBeAccessible\text{ tests}}{\text{components and screens with tests}}\times 100
+a11yScore = \frac{\text{components and screens with passing }Accessibility\text{ tests}}{\text{components and screens with tests}}\times 100
 $$
 
 ##### Components and Screens with Tests
 
 These are the components and screens that have a corresponding test file with a matching name. For instance, if a component is named `ComponentName`, a test file named `ComponentName.test.tsx` is expected. If the test file for `ComponentName` has a different name, it will not be captured.
 
-##### Components and Screens with Passing toBeAccessible Tests
+##### Components and Screens with Passing Accessibility Tests
 
-These are the components and screens that have a corresponding test file (see [Components and screens with tests](#components-and-screens-with-tests) above) with passing `toBeAccessible` tests. A `toBeAccessible` test will fail when an a11y violation is detected:
+These are the components and screens that have a corresponding test file (see [Components and screens with tests](#components-and-screens-with-tests) above) with passing `toBeAccessible`(mobile) or `toHaveNoViolations` (web) tests. A `toBeAccessible` or `toHaveNoViolations` test will fail when an a11y violation is detected:
 
 ![a11yTestFailing Example](images/a11yTestFailing_example.png)
 
@@ -250,12 +266,12 @@ We performed a test of this executor on the [Consumer - React Native repository]
 
 Here are the key metrics from the [report](https://drive.google.com/drive/folders/1rjkC0fxuA4VTdPz9gFI5ju0y47xarXpm) that was generated from this test run:
 
-| Metric                                  | Description                                                           | Value |
-| --------------------------------------- | --------------------------------------------------------------------- | ----- |
-| totalNumberOfToBeAccessibleTests        | Total number of test files with toBeAccessible tests                  | 753   |
-| totalNumberOfPassingToBeAccessibleTests | Total number of test files with passing toBeAccessible tests          | 441   |
-| totalNumberOfComponentsWithTest         | Total number of components and screens that have a matching test file | 810   |
-| totalNumberOfComponents                 | Total number of components and screens                                | 2447  |
+| Metric                              | Description                                                                                       | Value |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------- | ----- |
+| logTotalNumberOfAccessibleTests     | Total number of test files with accessibility (toBeAccessible / toHaveNoViolations) tests         | 753   |
+| totalNumberOfPassingAccessibleTests | Total number of test files with passing accessibility (toBeAccessible / toHaveNoViolations) tests | 441   |
+| totalNumberOfComponentsWithTest     | Total number of components and screens that have a matching test file                             | 810   |
+| totalNumberOfComponents             | Total number of components and screens                                                            | 2447  |
 
 | Score              | Calculation           | Result |
 | ------------------ | --------------------- | ------ |
@@ -265,13 +281,13 @@ Here are the key metrics from the [report](https://drive.google.com/drive/folder
 
 ### Other Metrics and Info
 
-The report includes a `testFilesWithoutToBeAccessibleTest` field, which highlights test files lacking `toBeAccessible` tests:
+The report includes a `testFilesWithoutToBeAccessibleTest` and `testFilesWithoutToHaveNoViolations` field, which highlights test files lacking `toBeAccessible` or `toHaveNoViolations` tests:
 
 ![retailMobileApp Sample Output](images/retail_mobile_app_output.png)
 
-Adding missing `toBeAccessible` tests will increase your `a11yScore`, leading to an improved `automatedA11yScore`.
+Adding missing `toBeAccessible` or `toHaveNoViolations` tests will increase your `a11yScore`, leading to an improved `automatedA11yScore`.
 
-Under the `testDetails` field, a list of test files containing toBeAccessible tests is also captured, along with their pass or fail status and the corresponding test message details. At present, messages are output in ANSI format. To view the output in a more readable format, you'll need to process the messages with another tool capable of parsing ANSI (e.g. `console.log`). Alternatively, you can run the test locally to view any errors.
+Under the `testDetails` field, a list of test files containing accesibility tests is also captured, along with their pass or fail status and the corresponding test message details. At present, messages are output in ANSI format. To view the output in a more readable format, you'll need to process the messages with another tool capable of parsing ANSI (e.g. `console.log`). Alternatively, you can run the test locally to view any errors.
 
 PASSING `toBeAccessible`:
 
@@ -281,7 +297,7 @@ FAILING `toBeAccessible`:
 
 ![failingToBeAccessible on log](images/failingToBeAccessible_on_log.png)
 
-Fixing failing tests will naturally improve your `a11yScore`. Using our previous [example](#example-scores), remediating all of the failures would increase `totalNumberOfPassingToBeAccessibleTests` from 441 to 753, resulting in an `a11yScore` of ~93% (753/810). If we were to also add missing `toBeAccessible` tests to the remaining test files, we would raise our `a11yScore` to a perfect 100%.
+Fixing failing tests will naturally improve your `a11yScore`. Using our previous [example](#example-scores), remediating all of the failures would increase `totalNumberOfAccessibleTests` from 441 to 753, resulting in an `a11yScore` of ~93% (753/810). If we were to also add missing `toBeAccessible` tests to the remaining test files, we would raise our `a11yScore` to a perfect 100%.
 
 #### Terminology
 
@@ -289,9 +305,9 @@ Fixing failing tests will naturally improve your `a11yScore`. Using our previous
 
 - `totalNumberOfComponentTests`: Number tests that are testing a Component. Discovered that components with render is likely to be a component
 
-- `totalNumberOfToBeAccessibleTests`: Number of test files with toBeAccessible tests
+- `totalNumberOfAccessibleTests`: Number of test files with toBeAccessible tests
 
-- `totalNumberOfPassingToBeAccessibleTests`: Number of test files with passing toBeAccessible tests
+- `totalNumberOfPassingAccessibleTests`: Number of test files with passing Accessible tests (`toBeAccessible` (mobile) or `toHaveNoViolations` (web))
 
 - `totalNumberOfComponentsWithTest`: Total number of components and screens that have a matching test file
 
@@ -321,12 +337,16 @@ yarn nx run ui-scorecard:build
 
 ### Feature Testing
 
-A11y Executor is integrated into the `@cbhq/cds-mobile` package. You can manually test any features or modifications related to the executor with this package.
+A11y Executor is integrated into the `@cbhq/cds-mobile` and the `cbhq/cds-web` packages. You can manually test any features or modifications related to the executor with this package.
 
 To run the a11y audit and generate an accessibility report for this package:
 
 ```sh
+# mobile
 yarn nx run mobile:audit-a11y
+
+# web
+yarn nx run web:audit-a11y
 ```
 
 ### Architecture
@@ -354,3 +374,7 @@ The [impl.ts](./src/executors/audit-a11y/impl.ts) file serves as the entry point
 2. `Coverage Summary does not exist at ...`
 
 - Jest coverage may not be enabled by default. Make sure your jest config has `coverageReporters: ['json-summary']` which generates coverage summary after tests run. The report will be picked up by the executor.
+
+3. External testing: Ensure to build the package before running the script in external repository.
+
+- `yarn nx run ui-scorecard:build`
