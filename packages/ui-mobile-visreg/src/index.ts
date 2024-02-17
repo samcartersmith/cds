@@ -4,65 +4,42 @@ import processScreenshots, { PercyScreenshotOptions } from './percy/processScree
 import { baseDir, playgroundDir } from './constants';
 import {
   getDevicePlatform,
-  isExpectedAndroidDevice,
-  isExpectedIosDevice,
-  launchApp,
-  navigateToRoute,
+  takeElementScreenshot,
   takeRouteScreenshots as takeDetoxRouteScreenshots,
-  takeScreenshot as takeDetoxScreenshot,
 } from './detox';
-import { DetoxConfig } from './detoxConfig';
 import { ensureDirExists, removeAllFilesFromDir } from './utils';
-
-/**
- * Ensures the test environment is properly set up for visual regression (Visreg) tests. This primarily includes
- *    launching the simulator/emulator and configuring and verifying settings.
- *
- * @param {Object} [options] Options to configure initialization.
- * @param {Object} [options.launchOptions] Options to configure underlying app launcher.
- */
-export async function initializeVisregTests(
-  detoxConfig: DetoxConfig,
-  options: { launchOptions?: Detox.DevicePermissions } = {},
-) {
-  await launchApp(options.launchOptions);
-
-  if (!isExpectedIosDevice(detoxConfig)) {
-    throw Error(
-      'The wrong iOS simulator is being used. This is important to ensure properly sized screenshots are taken.',
-    );
-  }
-
-  if (!isExpectedAndroidDevice(detoxConfig)) {
-    throw Error(
-      'The wrong Android emulator is being used. This is important to ensure properly sized screenshots are taken.',
-    );
-  }
-}
 
 async function takeScreenshot(
   dirPath: string,
   testName: string,
-  elementId: string,
   options: {
+    elementId?: string;
     filenamePrefix?: string | number;
   } = {},
 ) {
-  const { filenamePrefix } = options;
+  const { elementId, filenamePrefix } = options;
   const prefix = filenamePrefix !== undefined ? `${filenamePrefix}_` : '';
-  const filename = `${prefix}${testName}-${getDevicePlatform()}.png`;
-  const filePath = `${dirPath}/${filename}`;
+  const filename = `${prefix}${testName}-${getDevicePlatform()}`;
+  const filenameWithExtension = `${filename}.png`;
+  const filePath = `${dirPath}/${filenameWithExtension}`;
 
-  const tempFilePath = await takeDetoxScreenshot(elementId);
+  // if elementId provided, take an element level screenshot, otherwise take a device level screenshot
+  const tempFilePath = elementId
+    ? await takeElementScreenshot(elementId)
+    : await device.takeScreenshot(filename);
 
   ensureDirExists(filePath);
   execSync(`mv ${tempFilePath} ${filePath}`);
 }
 
-async function takeRouteScreenshots(dirPath: string, routeName: string) {
+async function takeRouteScreenshots(
+  dirPath: string,
+  routeName: string,
+  options: { takeScreenLevelScreenshots?: boolean } = {},
+) {
   const fullDirPath = `${dirPath}/${routeName}`;
 
-  await takeDetoxRouteScreenshots(fullDirPath, routeName, takeScreenshot);
+  await takeDetoxRouteScreenshots(fullDirPath, routeName, takeScreenshot, options);
   return fullDirPath;
 }
 
@@ -72,30 +49,26 @@ async function takeRouteScreenshots(dirPath: string, routeName: string) {
  *
  * @param {string} routeName Name of the route that will be included in the screenshot file name (e.g. 0_<routeName>-ios.png).
  *    The sdk will generate a set of route names leveraging the routes in the Mobile Playground.
+ * @param {Object} [options] Options to configure screenshot captures.
+ * @param {boolean} [options.takeScreenLevelScreenshots] If true, takes screenshots of the screen component and its children
+ *    instead of the entire device. This can be useful to avoid capturing external noise like the device status or navigation
+ *    bars, but cannot reliably capture modals as they operate outside the regular view hierarchy of the app.
  */
-export async function uploadScreenshotsToPercyForRoute(routeName: string) {
+export async function uploadScreenshotsToPercyForRoute(
+  routeName: string,
+  options: { takeScreenLevelScreenshots?: boolean } = {},
+) {
   const parentDir = `${baseDir}/${playgroundDir}`;
-  const screenshotsDir = await takeRouteScreenshots(parentDir, routeName);
+  const screenshotsDir = await takeRouteScreenshots(parentDir, routeName, options);
 
   processScreenshots(screenshotsDir, { parallelPercy: true });
 }
 
 /**
- * Navigates to the provided route in the Mobile Playground and asserts all visual diffs
- *    on the set of associated screenshots. This is what CDS uses and is a convenience method for those who choose
- *    to leverage the Mobile Playground format.
- *
- * @param {string} routeName Name of the route that will be included in the screenshot file name (e.g. 0_<routeName>-ios.png).
- *    The sdk will generate a set of route names leveraging the routes in the Mobile Playground.
- */
-export async function assertVisualDiffsForPlayground(routeName: string) {
-  await navigateToRoute(routeName);
-  await uploadScreenshotsToPercyForRoute(routeName);
-}
-
-/**
  * Takes one screenshot of a single component and its children on the current screen. This can take a full-screen
- *    screenshot if the provided componentId is associated to a component that wraps the entire app or screen.
+ *    screenshot if the provided componentId is associated to a component that wraps the entire app or screen and
+ *    can be useful to avoid capturing external noise like the device status or navigation bars. Howevever,
+ *    this method cannot reliably capture modals as they often operate outside the regular view hierarchy of the app.
  *
  * @param {string} testName Name of the test that will be included in the screenshot file name (e.g. <testName>-ios.png).
  * @param {string} componentId The React Native testID for the component to be screenshot.
@@ -115,7 +88,8 @@ export async function takeComponentScreenshot(
   const screenshotDir = options.screenshotDir ? `/${options.screenshotDir}` : '';
   const fullDirPath = `${baseDir}${screenshotDir}`;
 
-  await takeScreenshot(fullDirPath, testName, componentId, {
+  await takeScreenshot(fullDirPath, testName, {
+    elementId: componentId,
     filenamePrefix: options.filenamePrefix,
   });
 }

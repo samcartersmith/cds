@@ -1,5 +1,9 @@
 import React, { memo, useCallback, useMemo } from 'react';
-import { Platform, StatusBar as RNStatusBar, StatusBarStyle } from 'react-native';
+import {
+  Platform,
+  StatusBar as RNStatusBar,
+  StatusBarProps as RNStatusBarProps,
+} from 'react-native';
 import { isLightOrDarkColor } from '@cbhq/cds-common/color/isLightOrDarkColor';
 import { emptyObject } from '@cbhq/cds-utils';
 
@@ -8,9 +12,8 @@ import { paletteConfigToRgbaStrings } from '../utils/palette';
 
 import { ThemeProviderProps } from './ThemeProvider';
 
-export type StatusBarProps = Omit<ThemeProviderProps, 'scale' | 'name'> & {
-  barStyle?: StatusBarStyle;
-};
+export type StatusBarProps = RNStatusBarProps & Omit<ThemeProviderProps, 'scale' | 'name'>;
+
 /**
  * If bar-style is 'dark-content' that means app has a light background with dark text and icons.
  * If bar-style is 'light-content' that means app has a dark background with light text and icons.
@@ -44,16 +47,31 @@ export const useStatusBarUpdater = ({
   }, [barStyle]);
 };
 
-export const StatusBar = memo((props: StatusBarProps) => {
-  const barStyle = useStatusBarStyle(props);
-  return (
-    <RNStatusBar
-      animated
-      translucent
-      backgroundColor="transparent"
-      barStyle={props?.barStyle ?? barStyle}
-    />
-  );
-});
+export const StatusBar = memo(
+  ({
+    animated,
+    backgroundColor,
+    barStyle,
+    hidden,
+    networkActivityIndicatorVisible,
+    palette,
+    showHideTransition,
+    spectrum,
+    translucent,
+  }: StatusBarProps) => {
+    const defaultBarStyle = useStatusBarStyle({ palette, spectrum });
+    return (
+      <RNStatusBar
+        animated={animated ?? true}
+        backgroundColor={backgroundColor ?? 'transparent'}
+        barStyle={barStyle ?? defaultBarStyle}
+        hidden={hidden}
+        networkActivityIndicatorVisible={networkActivityIndicatorVisible}
+        showHideTransition={showHideTransition}
+        translucent={translucent ?? true}
+      />
+    );
+  },
+);
 
 StatusBar.displayName = 'StatusBar';

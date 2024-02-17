@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.36.0 ((2/15/2024, 06:13 PM PST))
+
+#### 📘 Misc
+
+- **[Alert, ListCellFallback, Modal, SparklineInteractive]** Update story builders for better Visreg compatibility. [[#2759](https://github.cbhq.net/frontend/cds/pull/2759)] [[DX-3119](https://jira.coinbase-corp.com/browse/DX-3119)]
+
 ## 5.35.0 (2/9/2024 PST)
 
 #### 🚀 Updates

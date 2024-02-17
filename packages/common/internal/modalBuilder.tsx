@@ -1,4 +1,4 @@
-import React, { RefObject, useCallback } from 'react';
+import React, { RefObject, useCallback, useEffect } from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import { useModal } from '../overlays/useModal';
@@ -23,7 +23,7 @@ type ModalA11yProps = {
 } & ModalAccessibilityProps;
 
 type ModalOptions = {
-  disablePortal?: boolean;
+  disablePortal?: boolean; // web only
   visible?: boolean;
   hideDividers?: boolean;
   enableBackButton?: boolean;
@@ -57,7 +57,7 @@ export function modalBuilder({
 }: CreateModalProps) {
   const BasicModalExample: React.FC<React.PropsWithChildren<ModalA11yProps & ModalOptions>> = ({
     children,
-    disablePortal,
+    disablePortal, // web only
     visible: defaultVisible,
     hideDividers,
     triggerRef,
@@ -123,6 +123,12 @@ export function modalBuilder({
         ),
       [openModal, closeModal, focusTrigger, children],
     );
+
+    useEffect(() => {
+      handlePress();
+
+      return () => closeModal();
+    }, [closeModal, handlePress]);
 
     return (
       <Button ref={triggerRef} onPress={handlePress}>
@@ -214,12 +220,7 @@ export function modalBuilder({
     </BasicModalExample>
   );
 
-  const VisibleModal = (props: ModalA11yProps) => (
-    <BasicModalExample {...props} visible>
-      <LoremIpsum />
-    </BasicModalExample>
-  );
-
+  // web only
   const ModalWithoutPortal = (props: ModalA11yProps) => (
     <BasicModalExample {...props} disablePortal>
       <LoremIpsum />
@@ -244,7 +245,6 @@ export function modalBuilder({
   return {
     BasicModal,
     BackButtonModal,
-    VisibleModal,
     ModalWithoutPortal,
     LongModal,
     PortalModal,

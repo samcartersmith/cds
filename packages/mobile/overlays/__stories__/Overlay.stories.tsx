@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Modal } from 'react-native';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
@@ -22,10 +22,16 @@ const OverlayScreen = () => {
     });
   }, [animateOverlayOut, toggleOff]);
 
+  useEffect(() => {
+    openModal();
+
+    return () => closeModal();
+  }, [closeModal, openModal]);
+
   return (
     <ExampleScreen>
       <Example>
-        <Button onPress={openModal}>Open Modal</Button>
+        <Button onPress={openModal}>Open Overlay</Button>
         <Modal
           hardwareAccelerated
           statusBarTranslucent

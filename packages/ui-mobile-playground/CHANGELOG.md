@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.7.0 (2/15/2024 PST)
+
+#### 🚀 Updates
+
+- Split up overlay component stories into separate routes. [[#2759](https://github.cbhq.net/frontend/cds/pull/2759)] [[DX-3119](https://jira.coinbase-corp.com/browse/DX-3119)]
+
 ## 1.6.1 (2/8/2024 PST)
 
 #### 🐞 Fixes

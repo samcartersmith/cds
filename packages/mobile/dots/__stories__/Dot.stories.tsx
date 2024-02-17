@@ -8,7 +8,6 @@ import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Avatar } from '../../media/Avatar';
-import { TextLegal } from '../../typography';
 import { TextLabel1 } from '../../typography/TextLabel1';
 import { DotCount } from '../DotCount';
 import { DotStatusColor } from '../DotStatusColor';
@@ -16,7 +15,6 @@ import { DotSymbol } from '../DotSymbol';
 
 const {
   DotCountBasic,
-  DotCountDynamic,
   DotCountVariant,
   DotCountPlacements,
   DotCountOverlap,
@@ -31,27 +29,13 @@ const {
   DotSymbolOverlap,
   DotSymbolSizes,
   DotSymbolComplex,
-} = dotBuilder(
-  DotCount,
-  DotStatusColor,
-  DotSymbol,
-  Box,
-  Avatar,
-  TextLabel1,
-  TextLegal,
-  Icon,
-  VStack,
-  HStack,
-);
+} = dotBuilder(DotCount, DotStatusColor, DotSymbol, Box, Avatar, TextLabel1, Icon, VStack, HStack);
 
 const DotScreen = () => {
   return (
     <ExampleScreen>
       <Example inline title="DotCount Basic">
         <DotCountBasic />
-      </Example>
-      <Example inline title="DotCount Dynamic">
-        <DotCountDynamic />
       </Example>
       <Example inline title="DotCount Placements">
         <DotCountPlacements />

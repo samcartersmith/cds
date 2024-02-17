@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.0.0 (2/15/2024 PST)
+
+#### 💥 Breaking
+
+- **[Visreg]** Take device level screenshots by default, update route navigation, and remove legacy methods. [[#2759](https://github.cbhq.net/frontend/cds/pull/2759)] [[DX-3119](https://jira.coinbase-corp.com/browse/DX-3119)]
+
 ## 1.5.1 (2/8/2024 PST)
 
 #### 🐞 Fixes

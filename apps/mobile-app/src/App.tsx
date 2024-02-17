@@ -1,5 +1,4 @@
 /* eslint-disable global-require */
-
 import React, { memo, useCallback, useMemo } from 'react';
 import { Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -57,7 +56,7 @@ const App = memo(() => {
         <ThemeProvider name="playground-root">
           <CdsSafeAreaProvider>
             <PortalProvider>
-              <StatusBar />
+              <StatusBar hidden={!__DEV__} />
               <NavigationContainer linking={linking} onReady={handleOnReady}>
                 <Playground routes={codegenRoutes} />
               </NavigationContainer>

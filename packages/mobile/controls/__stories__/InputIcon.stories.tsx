@@ -6,7 +6,7 @@ import { Box } from '../../layout/Box';
 import { InputIcon } from '../InputIcon';
 import { TextInput } from '../TextInput';
 
-export const {
+const {
   Basic,
   AccessibleInputIcon,
   DefaultsToForeground,
@@ -15,9 +15,11 @@ export const {
   AddCustomColor,
   AddCustomColorEnd,
   InvalidPlacement,
-} = inputIconBuilder(TextInput, InputIcon, (props) => (
-  <Box {...props} background="backgroundAlternate" />
-));
+} = inputIconBuilder(
+  (props) => <TextInput editable={__DEV__} {...props} />,
+  InputIcon,
+  (props) => <Box {...props} background="backgroundAlternate" />,
+);
 
 const InputIconScreen = () => {
   return (

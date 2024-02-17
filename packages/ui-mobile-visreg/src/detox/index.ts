@@ -1,9 +1,5 @@
 export { default as getDevicePlatform } from './getDevicePlatform';
-export { default as getSimulatorType } from './getSimulatorType';
-export { default as isExpectedAndroidDevice } from './isExpectedAndroidDevice';
-export { default as isExpectedIosDevice } from './isExpectedIosDevice';
-export { default as launchApp } from './launchApp';
+export { default as navigateToHome } from './navigateToHome';
 export { default as navigateToRoute } from './navigateToRoute';
-export { default as reloadApp } from './reloadApp';
+export { default as takeElementScreenshot } from './takeElementScreenshot';
 export { default as takeRouteScreenshots } from './takeRouteScreenshots';
-export { default as takeScreenshot } from './takeScreenshot';

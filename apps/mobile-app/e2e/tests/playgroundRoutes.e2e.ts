@@ -1,5 +1,7 @@
+import { keyToRouteName } from '@cbhq/ui-mobile-playground/components/keyToRouteName';
 import {
   getPlaygroundRoutes,
+  navigateToRoute,
   routes,
   uploadScreenshotsToPercyForRoute,
 } from '@cbhq/ui-mobile-visreg';
@@ -12,41 +14,46 @@ const filteredRoutes = !affectedRouteKeys
 
 const disabledRoutes = {
   disabledRoutes: [
-    'Alert', // pointless
-    'AnimatedCaret', // pointless
-    'ContentCellFallback' /** Animation */,
-    'ListCellFallback' /** Animation */,
-    'TooltipV2', // pointless
-    'Tray', // pointless
-    'LottieStatusAnimation' /** Animation */,
-    'Modal' /** Modal is displayed over expected screen */,
-    'PatternDisclosureHighFrictionBenefit' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
-    'PatternDisclosureHighFrictionRisk' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
-    'PatternDisclosureLowFriction' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
-    'PatternDisclosureMedFriction' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
-    'PatternError' /** Modal is displayed over expected screen, and also Android specific issue preventing navigation to screen */,
+    'AnimatedCaret', // Animations not relevant for Visreg
+    'DotMisc', // Contains a11y, animations, flows, or other stories not relevant for Visreg
+    'DrawerMisc', // Contains a11y, animations, flows, or other stories not relevant for Visreg
+    'HintMotion', // Animations not relevant for Visreg
+    'LottieStatusAnimation', // Animations not relevant for Visreg
+    'TooltipV2', // Stories need to be adjusted to make them useful for Visreg
+    'Toast', // Stories need to be adjusted to make them useful for Visreg
+    'TrayMisc', // Contains a11y, animations, flows, or other stories not relevant for Visreg
   ],
   iosDisabledRoutes: [],
   androidDisabledRoutes: [
-    'Accordion',
-    'Select',
-    'SparklineInteractive',
-    'SparklineInteractiveHeader',
-    'Card' /** Not sure */,
-    'Carousel' /** Uses random images so order changes */,
-    'ContentCell' /** Main Queue jammed - looked like image networking */,
-    'Dots' /** Main Queue jammed - looked like image networking */,
-    'RemoteImage' /**  Main Queue jammed - looked like image networking */,
-    'RemoteImageGroup' /**  Main Queue jammed - looked like image networking */,
-    'Sparkline' /**  Main Queue jammed - looked like image networking */,
-    'Tabs' /** Non-deterministic animation */,
-    'Text' /** Not sure */,
-    'TextCaption' /** Not sure */,
-    'Icon',
-    'InputIcon' /** Scroll selects the input text box */,
-    'InputIconButton' /** Scroll selects the input text box */,
-    'SearchInput' /** Scroll selects the input text box */,
-    'TextInput' /** Scroll selects the input text box */,
+    'AlertBasic', // Modal displays status bar, resulting in false positive
+    'AlertLongTitle', // Modal displays status bar, resulting in false positive
+    'AlertOverModal', // Modal displays status bar, resulting in false positive
+    'AlertPortal', // Modal displays status bar, resulting in false positive
+    'AlertSingleAction', // Modal displays status bar, resulting in false positive
+    'DrawerBottom', // Modal displays status bar, resulting in false positive
+    'DrawerFallback', // Modal displays status bar, resulting in false positive
+    'DrawerLeft', // Modal displays status bar, resulting in false positive
+    'DrawerRight', // Modal displays status bar, resulting in false positive
+    'DrawerScrollable', // Modal displays status bar, resulting in false positive
+    'DrawerTop', // Modal displays status bar, resulting in false positive
+    'ModalBackButton', // Modal displays status bar, resulting in false positive
+    'ModalBasic', // Modal displays status bar, resulting in false positive
+    'ModalLong', // Modal displays status bar, resulting in false positive
+    'ModalPortal', // Modal displays status bar, resulting in false positive
+    'Overlay', // Modal displays status bar, resulting in false positive
+    'PatternDisclosureHighFrictionBenefit', // Modal displays status bar, resulting in false positive
+    'PatternDisclosureHighFrictionRisk', // Modal displays status bar, resulting in false positive
+    'PatternDisclosureLowFriction', // Modal displays status bar, resulting in false positive
+    'PatternDisclosureMedFriction', // Modal displays status bar, resulting in false positive
+    'PatternError', // Modal displays status bar, resulting in false positive
+    'StickyFooterWithTray', // Modal displays status bar, resulting in false positive
+    'TrayBasic', // Modal displays status bar, resulting in false positive
+    'TrayFallback', // Modal displays status bar, resulting in false positive
+    'TrayFeedCard', // Modal displays status bar, resulting in false positive
+    'TrayNavigation', // Modal displays status bar, resulting in false positive
+    'TrayScrollable', // Modal displays status bar, resulting in false positive
+    'TrayTall', // Modal displays status bar, resulting in false positive
+    'TrayWithTitle', // Modal displays status bar, resulting in false positive
   ],
 };
 
@@ -56,10 +63,7 @@ if (!testRoutes.length) process.exit(0);
 
 describe('All Playground Routes', () => {
   it.each(testRoutes)('%p Visual Diff Test.', async (routeName) => {
-    await device.openURL({
-      url: `cds://Debug${routeName}`,
-    });
-
+    await navigateToRoute(`cds://${keyToRouteName(routeName)}`);
     await uploadScreenshotsToPercyForRoute(routeName);
   });
 });

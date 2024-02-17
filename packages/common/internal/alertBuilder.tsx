@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import { useAlert } from '../overlays/useAlert';
@@ -27,8 +27,8 @@ export type CreateAlertProps = {
 };
 
 export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps) {
-  const BasicAlert = ({ singleAction }: { singleAction?: boolean }) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler();
+  const BasicAlert = ({ singleAction = false }) => {
+    const [visible, { toggleOn, toggleOff }] = useToggler(true);
 
     return (
       <>
@@ -47,8 +47,8 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
     );
   };
 
-  const LongTitleAlert = ({ singleAction }: { singleAction?: boolean }) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler();
+  const LongTitleAlert = ({ singleAction = false }) => {
+    const [visible, { toggleOn, toggleOff }] = useToggler(true);
 
     return (
       <>
@@ -64,23 +64,6 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
           visible={visible}
         />
       </>
-    );
-  };
-
-  const VisibleAlert = ({ singleAction }: { singleAction?: boolean }) => {
-    const [visible, { toggleOff }] = useToggler(true);
-
-    return (
-      <Alert
-        body="Alert body type that can run over multiple lines, but should be kept short."
-        dismissActionLabel={singleAction ? undefined : 'Cancel'}
-        onPreferredActionPress={onPressConsole}
-        onRequestClose={toggleOff}
-        pictogram="warning"
-        preferredActionLabel="Primary"
-        title="Alert title"
-        visible={visible}
-      />
     );
   };
 
@@ -106,6 +89,12 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
           ),
         [open, close],
       );
+
+      useEffect(() => {
+        showAlert();
+
+        return () => close();
+      }, [close, showAlert]);
 
       return <Button onPress={showAlert}>Show Alert</Button>;
     }
@@ -159,7 +148,6 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   return {
     BasicAlert,
     LongTitleAlert,
-    VisibleAlert,
     SingleActionAlert: () => <BasicAlert singleAction />,
     PortalAlert,
     MockAlert,

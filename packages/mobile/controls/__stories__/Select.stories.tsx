@@ -12,21 +12,21 @@ import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 import { TextInput } from '../TextInput';
 
-export default function SelectScreen() {
-  const { DefaultSelect, AssetSelect, ScrollableSelect, SelectFilter, SelectForm } =
-    selectBuilderMobile({
-      Tray,
-      Select,
-      SelectOption,
-      ScrollView,
-      HStack,
-      TextInput,
-      VStack,
-      Box,
-      RemoteImage,
-      DotSymbol,
-    } as CreateSelectProps);
+const { DefaultSelect, AssetSelect, ScrollableSelect, SelectFilter, SelectForm } =
+  selectBuilderMobile({
+    Tray,
+    Select,
+    SelectOption,
+    ScrollView,
+    HStack,
+    TextInput: (props) => <TextInput editable={__DEV__} {...props} />,
+    VStack,
+    Box,
+    RemoteImage,
+    DotSymbol,
+  } as CreateSelectProps);
 
+const SelectScreen = () => {
   return (
     <ExampleScreen>
       <Example title="Default with Tray">
@@ -94,4 +94,6 @@ export default function SelectScreen() {
       </Example>
     </ExampleScreen>
   );
-}
+};
+
+export default SelectScreen;

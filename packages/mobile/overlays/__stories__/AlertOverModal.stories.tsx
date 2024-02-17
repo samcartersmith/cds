@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react';
-import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common/internal/alertBuilder';
+import React, { useCallback, useEffect } from 'react';
 import { useAlert } from '@cbhq/cds-common/overlays/useAlert';
 import { useModal } from '@cbhq/cds-common/overlays/useModal';
 
@@ -10,13 +9,6 @@ import { Alert } from '../Alert';
 import { Modal } from '../Modal/Modal';
 import { ModalBody } from '../Modal/ModalBody';
 import { ModalFooter } from '../Modal/ModalFooter';
-import { PortalProvider } from '../PortalProvider';
-
-const { BasicAlert, LongTitleAlert, SingleActionAlert, PortalAlert } = alertBuilder({
-  Alert,
-  Button,
-  PortalProvider,
-} as CreateAlertProps);
 
 const AlertOnModal = () => {
   const { openModal, closeModal } = useModal();
@@ -52,25 +44,22 @@ const AlertOnModal = () => {
     );
   }, [closeModal, openModal, showAlert]);
 
+  useEffect(() => {
+    handlePress();
+    showAlert();
+
+    return () => {
+      close();
+      closeModal();
+    };
+  }, [close, closeModal, handlePress, showAlert]);
+
   return <Button onPress={handlePress}>Open Modal</Button>;
 };
 
-const AlertScreen = () => {
-  // demo multiple modals inside portal provider, mobile only
+const AlertOverModalScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="Basic Alert">
-        <BasicAlert />
-      </Example>
-      <Example title="Long Title Alert">
-        <LongTitleAlert />
-      </Example>
-      <Example title="Single Action Alert">
-        <SingleActionAlert />
-      </Example>
-      <Example title="Portal Alert">
-        <PortalAlert />
-      </Example>
       <Example title="Alert over Modal (Multiple Modals)">
         <AlertOnModal />
       </Example>
@@ -78,4 +67,4 @@ const AlertScreen = () => {
   );
 };
 
-export default AlertScreen;
+export default AlertOverModalScreen;

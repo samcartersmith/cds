@@ -14,6 +14,7 @@ const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilde
   SparklineInteractive,
   SparklineInteractiveHeader,
   isMobile: true,
+  disableScrubbing: !__DEV__,
 });
 
 const SparklineInteractiveWithAltHeader = sparklineInteractiveWithHeaderBuilder({
@@ -21,6 +22,7 @@ const SparklineInteractiveWithAltHeader = sparklineInteractiveWithHeaderBuilder(
   SparklineInteractiveHeader,
   isMobile: true,
   alternatePeriods: true,
+  disableScrubbing: !__DEV__,
 });
 
 const SparklineInteractiveWithSmallerPeriodSet = sparklineInteractiveWithHeaderBuilder({
@@ -28,6 +30,7 @@ const SparklineInteractiveWithSmallerPeriodSet = sparklineInteractiveWithHeaderB
   SparklineInteractiveHeader,
   isMobile: true,
   smallerPeriodSet: true,
+  disableScrubbing: !__DEV__,
 });
 
 function handlePress() {

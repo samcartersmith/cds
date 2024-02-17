@@ -11,8 +11,28 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/accordion/__stories__/Accordion.stories').default,
   },
   {
-    key: 'Alert',
-    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Alert.stories').default,
+    key: 'AlertBasic',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/AlertBasic.stories').default,
+  },
+  {
+    key: 'AlertLongTitle',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/AlertLongTitle.stories').default,
+  },
+  {
+    key: 'AlertOverModal',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/AlertOverModal.stories').default,
+  },
+  {
+    key: 'AlertPortal',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/AlertPortal.stories').default,
+  },
+  {
+    key: 'AlertSingleAction',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/AlertSingleAction.stories').default,
   },
   {
     key: 'AnimatedCaret',
@@ -84,12 +104,44 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Divider.stories').default,
   },
   {
-    key: 'Dots',
-    getComponent: () => require('@cbhq/cds-mobile/dots/__stories__/Dots.stories').default,
+    key: 'Dot',
+    getComponent: () => require('@cbhq/cds-mobile/dots/__stories__/Dot.stories').default,
   },
   {
-    key: 'Drawer',
-    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Drawer.stories').default,
+    key: 'DotMisc',
+    getComponent: () => require('@cbhq/cds-mobile/dots/__stories__/DotMisc.stories').default,
+  },
+  {
+    key: 'DrawerBottom',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/DrawerBottom.stories').default,
+  },
+  {
+    key: 'DrawerFallback',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/DrawerFallback.stories').default,
+  },
+  {
+    key: 'DrawerLeft',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/DrawerLeft.stories').default,
+  },
+  {
+    key: 'DrawerMisc',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/DrawerMisc.stories').default,
+  },
+  {
+    key: 'DrawerRight',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/DrawerRight.stories').default,
+  },
+  {
+    key: 'DrawerScrollable',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/DrawerScrollable.stories').default,
+  },
+  {
+    key: 'DrawerTop',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/DrawerTop.stories').default,
   },
   {
     key: 'FloatingAssetCard',
@@ -170,8 +222,22 @@ export const routes = [
       require('@cbhq/cds-mobile/animation/__stories__/LottieStatusAnimation.stories').default,
   },
   {
-    key: 'Modal',
-    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Modal.stories').default,
+    key: 'ModalBackButton',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/ModalBackButton.stories').default,
+  },
+  {
+    key: 'ModalBasic',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/ModalBasic.stories').default,
+  },
+  {
+    key: 'ModalLong',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/ModalLong.stories').default,
+  },
+  {
+    key: 'ModalPortal',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/ModalPortal.stories').default,
   },
   {
     key: 'NavigationIcon',
@@ -327,6 +393,11 @@ export const routes = [
       require('@cbhq/cds-mobile/sticky-footer/__stories__/StickyFooter.stories').default,
   },
   {
+    key: 'StickyFooterWithTray',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/sticky-footer/__stories__/StickyFooterWithTray.stories').default,
+  },
+  {
     key: 'Switch',
     getComponent: () => require('@cbhq/cds-mobile/controls/__stories__/Switch.stories').default,
   },
@@ -435,8 +506,41 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TooltipV2.stories').default,
   },
   {
-    key: 'Tray',
-    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Tray.stories').default,
+    key: 'TrayBasic',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TrayBasic.stories').default,
+  },
+  {
+    key: 'TrayFallback',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/TrayFallback.stories').default,
+  },
+  {
+    key: 'TrayFeedCard',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/TrayFeedCard.stories').default,
+  },
+  {
+    key: 'TrayMisc',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TrayMisc.stories').default,
+  },
+  {
+    key: 'TrayNavigation',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/TrayNavigation.stories').default,
+  },
+  {
+    key: 'TrayScrollable',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/TrayScrollable.stories').default,
+  },
+  {
+    key: 'TrayTall',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TrayTall.stories').default,
+  },
+  {
+    key: 'TrayWithTitle',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/TrayWithTitle.stories').default,
   },
   {
     key: 'UpsellCard',

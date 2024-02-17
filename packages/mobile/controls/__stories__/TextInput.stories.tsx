@@ -13,13 +13,15 @@ import { TextInput, TextInputProps } from '../TextInput';
 const MockTextInput = ({ ...props }: TextInputProps) => {
   const [text, onChangeText] = useState('');
 
-  return <TextInput onChangeText={onChangeText} value={text} {...props} />;
+  return <TextInput editable={__DEV__} onChangeText={onChangeText} value={text} {...props} />;
 };
 
 const MockCompactTextInput = ({ ...props }: TextInputProps) => {
   const [text, onChangeText] = useState('');
 
-  return <TextInput compact onChangeText={onChangeText} value={text} {...props} />;
+  return (
+    <TextInput compact editable={__DEV__} onChangeText={onChangeText} value={text} {...props} />
+  );
 };
 
 const MockComplexInput = () => {
@@ -30,6 +32,7 @@ const MockComplexInput = () => {
       <TextInput
         accessibilityHint="Text Input field"
         accessibilityLabel="Text input field"
+        editable={__DEV__}
         label="Test"
         onChangeText={onChangeText}
         value={text}
@@ -44,7 +47,7 @@ const MockComplexInput = () => {
   );
 };
 
-export default function InputScreen() {
+const InputScreen = () => {
   return (
     <ExampleScreen>
       <Example inline title="TextInput ForegroundMuted">
@@ -233,6 +236,7 @@ export default function InputScreen() {
       <Example inline title="TextInput Disabled">
         <MockTextInput
           disabled
+          editable={false}
           end={
             <TextBody
               accessibilityHint="Cancel"
@@ -320,7 +324,7 @@ export default function InputScreen() {
         <MockCompactTextInput />
       </Example>
       <Example inline title="CompactTextInput Disabled">
-        <MockCompactTextInput disabled label="Bitcoin" />
+        <MockCompactTextInput disabled editable={false} label="Bitcoin" />
       </Example>
       <Example inline title="Accessibility Test">
         <MockCompactTextInput
@@ -334,4 +338,6 @@ export default function InputScreen() {
       </Example>
     </ExampleScreen>
   );
-}
+};
+
+export default InputScreen;

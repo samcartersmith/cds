@@ -34,7 +34,6 @@ export function dotBuilder(
   Box: ComponentType<React.PropsWithChildren<BoxBaseProps>>,
   Avatar: ComponentType<React.PropsWithChildren<AvatarBaseProps>>,
   TextLabel1: ComponentType<React.PropsWithChildren<TextBaseProps>>,
-  TextLegal: ComponentType<React.PropsWithChildren<TextBaseProps>>,
   Icon: ComponentType<React.PropsWithChildren<IconBaseProps & { name: IconName }>>,
   VStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>,
   HStack: ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>,

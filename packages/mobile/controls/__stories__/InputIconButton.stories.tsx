@@ -6,17 +6,18 @@ import { Box } from '../../layout/Box';
 import { InputIconButton } from '../InputIconButton';
 import { TextInput } from '../TextInput';
 
-export const {
+const {
   Basic,
   SetColorAndInheritFocusStyle,
   DefaultsToPrimary,
   BasicEnd,
   AddCustomColor,
   AddCustomColorEnd,
-  InvalidPlacement,
-} = inputIconButtonBuilder(TextInput, InputIconButton, (props) => (
-  <Box {...props} background="backgroundAlternate" />
-));
+} = inputIconButtonBuilder(
+  (props) => <TextInput editable={__DEV__} {...props} />,
+  InputIconButton,
+  (props) => <Box {...props} background="backgroundAlternate" />,
+);
 
 const InputIconButtonScreen = () => {
   return (

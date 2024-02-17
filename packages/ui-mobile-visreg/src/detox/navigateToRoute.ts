@@ -1,9 +1,9 @@
-import { pressButton, screenShouldAppear } from '@cbhq/detox-utils';
+import { screenShouldExist } from '@cbhq/detox-utils';
 
-import { homeFlatList, homeScreen, screen } from '../constants';
+import { screen } from '../constants';
 
 export default async function navigateToRoute(routeName: string) {
-  await screenShouldAppear(homeScreen);
-  await pressButton(routeName, homeFlatList);
-  await screenShouldAppear(screen);
+  await device.openURL({ url: routeName });
+  // can't rely on screenShouldAppear (expect.toBeVisible()) because modals overlay the screen
+  await screenShouldExist(screen);
 }

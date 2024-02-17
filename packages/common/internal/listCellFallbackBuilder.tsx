@@ -78,7 +78,12 @@ export function listCellFallbackBuilder(
           media="asset"
           rectWidthVariant={2}
         />
-        <ListCellFallback title innerSpacing={innerSpacing} outerSpacing={outerSpacing} />
+        <ListCellFallback
+          disableRandomRectWidth
+          title
+          innerSpacing={innerSpacing}
+          outerSpacing={outerSpacing}
+        />
       </>
     );
   };

@@ -165,6 +165,7 @@ type SparklineInteractiveBuilderProps = {
   isMobile?: boolean;
   alternatePeriods?: boolean;
   smallerPeriodSet?: boolean;
+  disableScrubbing?: boolean;
 };
 
 function numToLocaleString(num: number) {
@@ -178,6 +179,7 @@ export const sparklineInteractiveBuilder = ({
   isMobile,
   alternatePeriods,
   smallerPeriodSet,
+  disableScrubbing,
 }: SparklineInteractiveBuilderProps) => {
   return memo(({ defaultPeriod, hideHoverDate, ...props }: SparklineInteractivePriceProps) => {
     // not supported onAndroid
@@ -230,6 +232,7 @@ export const sparklineInteractiveBuilder = ({
 
     return (
       <SparklineInteractive
+        disableScrubbing={disableScrubbing}
         {...props}
         defaultPeriod={defaultPeriod ?? DEFAULT_PERIOD}
         formatDate={formatDateWithConfig}
@@ -282,12 +285,14 @@ export const sparklineInteractiveWithHeaderBuilder = ({
   isMobile,
   alternatePeriods,
   smallerPeriodSet,
+  disableScrubbing,
 }: SparklineInteractiveWithHeaderBuilderProps) => {
   const SparklineInteractiveBuild = sparklineInteractiveBuilder({
     SparklineInteractive,
     isMobile,
     alternatePeriods,
     smallerPeriodSet,
+    disableScrubbing,
   });
 
   return memo((props: SparklineInteractivePriceProps) => {

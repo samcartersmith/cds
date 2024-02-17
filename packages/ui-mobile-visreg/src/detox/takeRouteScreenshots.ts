@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-import { findElementById } from '@cbhq/detox-utils';
+import { findElementById, sleep } from '@cbhq/detox-utils';
 
 import {
   androidDeviceSwipeOffset,
@@ -35,17 +35,20 @@ export default async function takeRouteScreenshots(
   takeScreenshotCb: (
     dirPath: string,
     testName: string,
-    elementId: string,
     options?: {
+      elementId?: string;
       filenamePrefix?: string | number;
     },
   ) => Promise<void>,
+  options: { takeScreenLevelScreenshots?: boolean } = {},
 ) {
   let atEnd = false;
   let count = 0;
 
   while (!atEnd) {
-    await takeScreenshotCb(fullDirPath, routeName, screen, {
+    await sleep(1000);
+    await takeScreenshotCb(fullDirPath, routeName, {
+      elementId: options.takeScreenLevelScreenshots ? screen : undefined,
       filenamePrefix: count,
     });
     atEnd = await scrollToEnd();

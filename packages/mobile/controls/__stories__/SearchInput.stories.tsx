@@ -6,21 +6,30 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextLabel1 } from '../../typography/TextLabel1';
 import { SearchInput } from '../SearchInput';
 
-const { Basic, Disabled, Compact, HideStartIcon } = searchInputBuilder(SearchInput);
+const { Basic, Compact, HideStartIcon } = searchInputBuilder((props) => (
+  <SearchInput editable={__DEV__} {...props} />
+));
 
-const CustomRef = () => {
-  const ref = useRef(null);
-
+// can't use `Disabled` variant from searchInputBuilder because we can't set mobile specifc props,
+// and we want `editable` to always be `false` or `undefined` here
+const Disabled = () => {
   const [text, setText] = useState('');
 
-  return <SearchInput ref={ref} onChangeText={setText} value={text} />;
+  return <SearchInput disabled accessibilityLabel="Search" onChangeText={setText} value={text} />;
+};
+
+const CustomRef = () => {
+  const [text, setText] = useState('');
+  const ref = useRef(null);
+
+  return <SearchInput ref={ref} editable={__DEV__} onChangeText={setText} value={text} />;
 };
 
 /**
  * This tests how the SearchInput will work when
  * onChange and onChangeText are used together
  */
-export const OnChangeExample = () => {
+const OnChangeExample = () => {
   const [text, setText] = useState('');
 
   const handleOnChange = useCallback((e: NativeSyntheticEvent<TextInputChangeEventData>) => {
@@ -34,6 +43,7 @@ export const OnChangeExample = () => {
   return (
     <>
       <SearchInput
+        editable={__DEV__}
         onBack={handleOnBack}
         onChange={handleOnChange}
         onChangeText={setText}
@@ -44,7 +54,7 @@ export const OnChangeExample = () => {
   );
 };
 
-export const DisableBackArrow = () => {
+const DisableBackArrow = () => {
   const [text, setText] = useState('');
 
   const handleOnSearch = useCallback((str: string) => {
@@ -53,7 +63,13 @@ export const DisableBackArrow = () => {
 
   return (
     <>
-      <SearchInput disableBackArrow onChangeText={setText} onSearch={handleOnSearch} value={text} />
+      <SearchInput
+        disableBackArrow
+        editable={__DEV__}
+        onChangeText={setText}
+        onSearch={handleOnSearch}
+        value={text}
+      />
       <TextLabel1>{text}</TextLabel1>
     </>
   );
@@ -69,6 +85,7 @@ const SetCustomSearchStartIcon = () => {
   return (
     <>
       <SearchInput
+        editable={__DEV__}
         onChangeText={setText}
         onSearch={handleOnSearch}
         startIcon="search"
@@ -89,6 +106,7 @@ const SetCustomBackArrowStartIcon = () => {
   return (
     <>
       <SearchInput
+        editable={__DEV__}
         onChangeText={setText}
         onSearch={handleOnSearch}
         startIcon="backArrow"
@@ -102,13 +120,13 @@ const SetCustomBackArrowStartIcon = () => {
 const SearchInputScreen = () => {
   return (
     <ExampleScreen>
-      <Example title="OnChangeExample">
+      <Example title="OnChange Example">
         <OnChangeExample />
       </Example>
-      <Example title="hideStartIcon">
+      <Example title="Hidden Start Icon">
         <HideStartIcon />
       </Example>
-      <Example title="Set disableBackArrow=true">
+      <Example title="Disabled Back Arrow">
         <DisableBackArrow />
       </Example>
       <Example title="Basic">

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- **[SparklineInteractive, SparklineInteractiveHeader]** Disable chart scrubbing in stories during Visreg testing. [[#2759](https://github.cbhq.net/frontend/cds/pull/2759)] [[DX-3119](https://jira.coinbase-corp.com/browse/DX-3119)]
+
 ## 0.0.17 (2/8/2024 PST)
 
 #### 🐞 Fixes
