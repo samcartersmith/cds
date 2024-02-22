@@ -2,6 +2,32 @@
   "components": [
     {
       "component": {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+          },
+          "action": {
+            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+          },
+          "target": {
+            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "patternComponentName": "AppSwitcher",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/app-switcher",
+        "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
+        "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      }
+    },
+    {
+      "component": {
         "name": "NavigationBar",
         "sourceFile": "@cbhq/identity-navigation/NavigationBar",
         "totalInstances": 1,
