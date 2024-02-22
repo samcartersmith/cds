@@ -25,6 +25,7 @@ export const NudgeCard = memo(
     width = '100%',
     testID = 'nudge-card',
     accessibilityLabel,
+    onPress,
     ...props
   }: NudgeCardBaseProps<OnPress>) => {
     const renderAction = isValidElement(action) ? (
@@ -36,7 +37,7 @@ export const NudgeCard = memo(
         </TextHeadline>
       </PressableOpacity>
     );
-    return (
+    const content = (
       <Box
         accessibilityLabel={accessibilityLabel}
         background="backgroundAlternate"
@@ -75,5 +76,6 @@ export const NudgeCard = memo(
         </CardBody>
       </Box>
     );
+    return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;
   },
 );

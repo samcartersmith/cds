@@ -17,6 +17,8 @@ export type UpsellCardBaseProps = {
   onActionPress?: NoopFn;
   /** Callback fired when the dismiss button is pressed */
   onDismissPress?: NoopFn;
+  /** Callback fired when the entire card is pressed. Cannot be used if there is an action or is dismissable. */
+  onPress?: NoopFn;
   /**
    * Remote Image or other node with media content.
    */

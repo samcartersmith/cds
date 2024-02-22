@@ -10,6 +10,7 @@ import {
 import { Button, IconButton } from '../buttons';
 import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { HStack, VStack } from '../layout';
+import { PressableOpacity } from '../system';
 import { TextHeadline, TextLabel2 } from '../typography';
 
 export const UpsellCard = memo(
@@ -25,11 +26,12 @@ export const UpsellCard = memo(
     testID = 'upsell-card',
     accessibilityLabel,
     width = upsellCardDefaultWidth,
+    onPress,
   }: UpsellCardBaseProps) => {
     const density = useScaleDensity();
     const largeTextStyle = useLargeTextStyles();
 
-    return (
+    const content = (
       <HStack
         accessibilityLabel={accessibilityLabel}
         alignContent="space-between"
@@ -109,5 +111,6 @@ export const UpsellCard = memo(
         </HStack>
       </HStack>
     );
+    return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;
   },
 );

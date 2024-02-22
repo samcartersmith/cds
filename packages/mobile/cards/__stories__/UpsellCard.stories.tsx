@@ -37,6 +37,20 @@ const exampleProps = {
   onDismissPress: NoopFn,
 };
 
+const compactProps = {
+  title: "It's Onchain Summer!",
+  description: 'Stand with crypto and mint your NFT. ',
+  media: (
+    <Image
+      accessibilityIgnoresInvertColors
+      alt="Send a crypto gift illustration"
+      source={{ uri: coinbaseOneLogo }}
+      style={styles.image}
+    />
+  ),
+  onPress: NoopFn,
+};
+
 const UpsellCardScreen = () => {
   const customTextNodeColor = usePaletteValueToRgbaString('gray0');
   const customTextNodeBackgroundColor = usePaletteValueToRgbaString('blue80');
@@ -50,6 +64,9 @@ const UpsellCardScreen = () => {
       <ExampleScreen>
         <Example title="Upsell Card">
           <UpsellCard {...exampleProps} dangerouslySetBackground={defaultBackground} />
+        </Example>
+        <Example title="Upsell Card Compact">
+          <UpsellCard {...compactProps} dangerouslySetBackground={defaultBackground} />
         </Example>
         <Example title="Long action button text">
           <UpsellCard

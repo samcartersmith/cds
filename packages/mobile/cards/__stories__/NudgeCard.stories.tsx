@@ -23,6 +23,7 @@ const compactProps = {
   title: 'Try this new thing',
   description: 'It will take you to the moon, I promise.',
   pictogram: 'wrapEth' as PictogramName,
+  onPress: NoopFn,
 };
 
 const longProps = {

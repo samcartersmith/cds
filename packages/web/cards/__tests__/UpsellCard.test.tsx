@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { UpsellCardBaseProps } from '@cbhq/cds-common';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { renderA11y } from '@cbhq/cds-web-utils';
@@ -13,6 +13,12 @@ const exampleProps: UpsellCardBaseProps = {
   action: 'Test Action',
   onActionPress: NoopFn,
   onDismissPress: NoopFn,
+  testID: 'upsell-card-test',
+};
+
+const compactProps: UpsellCardBaseProps = {
+  title: "It's Onchain Summer!",
+  description: 'Stand with crypto and mint your NFT.',
   testID: 'upsell-card-test',
 };
 
@@ -70,5 +76,13 @@ describe('UpsellCard', () => {
     render(<UpsellCard {...propsWithoutAction} />);
     const actionButton = screen.queryByText('Test Action');
     expect(actionButton).not.toBeInTheDocument();
+  });
+  it('calls onPress when the card is pressed', () => {
+    const onPressFn = jest.fn();
+    render(<UpsellCard onPress={onPressFn} {...compactProps} />);
+
+    fireEvent.click(screen.getByText(`${compactProps.title}`));
+
+    expect(onPressFn).toHaveBeenCalled();
   });
 });

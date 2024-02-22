@@ -41,6 +41,22 @@ const exampleProps: UpsellCardBaseProps = {
   ),
 };
 
+const compactProps = {
+  title: "It's Onchain Summer!",
+  description: 'Stand with crypto and mint your NFT.',
+  testID: 'upsell-card-test',
+  media: (
+    <Image
+      accessibilityIgnoresInvertColors
+      data-testid="media"
+      source={{
+        uri: assets.btc.imageUrl,
+      }}
+      style={styles.media}
+    />
+  ),
+};
+
 describe('UpsellCard', () => {
   it('passes accessibility', async () => {
     render(<UpsellCard {...exampleProps} />);
@@ -93,5 +109,13 @@ describe('UpsellCard', () => {
     render(<UpsellCard {...propsWithoutAction} />);
     const actionButton = screen.queryByRole('button', { name: 'Test Action' });
     expect(actionButton).toBeNull();
+  });
+  it('calls onPress when the card is pressed', () => {
+    const onPressFn = jest.fn();
+    render(<UpsellCard onPress={onPressFn} {...compactProps} />);
+
+    fireEvent.press(screen.getByText(`${compactProps.title}`));
+
+    expect(onPressFn).toHaveBeenCalled();
   });
 });

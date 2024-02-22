@@ -9,6 +9,7 @@ import {
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
+import { PressableOpacity } from '../system';
 import { TextHeadline, TextLabel2 } from '../typography';
 
 export const UpsellCard = memo(
@@ -24,9 +25,10 @@ export const UpsellCard = memo(
     testID = 'upsell-card',
     accessibilityLabel,
     width = upsellCardDefaultWidth,
+    onPress,
   }: UpsellCardBaseProps) => {
     const density = useScaleDensity();
-    return (
+    const content = (
       <HStack
         accessibilityLabel={accessibilityLabel}
         alignContent="space-between"
@@ -106,5 +108,6 @@ export const UpsellCard = memo(
         </HStack>
       </HStack>
     );
+    return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;
   },
 );

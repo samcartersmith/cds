@@ -5,7 +5,7 @@ import { IllustrationPictogramNames } from './IllustrationNames';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
-export type NudgeCardBaseProps<T> = {
+export type NudgeCardBaseProps<OnPressFn> = {
   /** Text or ReactNode to be displayed above the description in a TextHeadline */
   title?: ReactNode;
   /** Text or ReactNode to be displayed below the title in a TextBody */
@@ -17,9 +17,11 @@ export type NudgeCardBaseProps<T> = {
    * Callback fired when the action button is pressed
    * Cannot be used when `action` is a React Element, only when `action` is a string
    */
-  onActionPress?: T;
+  onActionPress?: OnPressFn;
   /** Callback fired when the dismiss button is pressed */
-  onDismissPress?: T;
+  onDismissPress?: OnPressFn;
+  /** Callback fired when the entire card is pressed. Cannot be used if there is an action or is dismissable. */
+  onPress?: OnPressFn;
   /**
    * Maximum number of lines shown for the description text. Text that exceeds will be truncated.
    * @default 3

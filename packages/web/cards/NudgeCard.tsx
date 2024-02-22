@@ -5,7 +5,7 @@ import { NudgeCardBaseProps } from '@cbhq/cds-common/types';
 import { IconButton } from '../buttons';
 import { Pictogram } from '../illustrations/Pictogram';
 import { Box, HStack } from '../layout';
-import { PressableOpacity } from '../system';
+import { OnPress, PressableOpacity } from '../system';
 import { TextHeadline } from '../typography';
 
 import { CardBody } from './CardBody';
@@ -27,8 +27,9 @@ export const NudgeCard = memo(
     accessibilityLabel,
     maxHeight,
     maxWidth,
+    onPress,
     ...props
-  }: NudgeCardBaseProps<React.MouseEventHandler>) => {
+  }: NudgeCardBaseProps<OnPress>) => {
     const renderAction = isValidElement(action) ? (
       action
     ) : (
@@ -40,7 +41,7 @@ export const NudgeCard = memo(
         </HStack>
       </PressableOpacity>
     );
-    return (
+    const content = (
       <Box
         accessibilityLabel={accessibilityLabel}
         background="backgroundAlternate"
@@ -79,5 +80,6 @@ export const NudgeCard = memo(
         </CardBody>
       </Box>
     );
+    return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;
   },
 );

@@ -6,7 +6,6 @@ import { PictogramName } from '@cbhq/cds-illustrations';
 
 import { Button } from '../../buttons';
 import { HStack, VStack } from '../../layout';
-import { FeatureFlagProvider } from '../../system';
 import { TextBody, TextHeadline } from '../../typography';
 import { NudgeCard } from '../NudgeCard';
 
@@ -36,12 +35,10 @@ const longProps = {
 };
 
 export const Default = (overrides: Partial<NudgeCardBaseProps<NoopFn>>) => (
-  <FeatureFlagProvider frontier>
-    <VStack gap={2}>
-      <NudgeCard {...exampleProps} {...overrides} />
-      <NudgeCard {...exampleProps} {...overrides} onDismissPress={noopFn} />
-    </VStack>
-  </FeatureFlagProvider>
+  <VStack gap={2}>
+    <NudgeCard {...exampleProps} {...overrides} />
+    <NudgeCard {...exampleProps} {...overrides} onDismissPress={noopFn} />
+  </VStack>
 );
 
 export const Compact = () => (
@@ -97,29 +94,27 @@ export const CustomDimensions = () => (
 );
 
 export const CustomTextNodes = () => (
-  <FeatureFlagProvider frontier>
-    <NudgeCard
-      {...exampleProps}
-      // spacingBottom cancels out the negative margin on buttons
-      action={
-        <HStack spacingBottom={1}>
-          <Button compact onPress={noopFn}>
-            Custom action
-          </Button>
-        </HStack>
-      }
-      description={
-        <TextBody as="p" color="foregroundMuted">
-          Custom description
-        </TextBody>
-      }
-      title={
-        <TextHeadline as="h3" color="primary">
-          Custom title
-        </TextHeadline>
-      }
-    />
-  </FeatureFlagProvider>
+  <NudgeCard
+    {...exampleProps}
+    // spacingBottom cancels out the negative margin on buttons
+    action={
+      <HStack spacingBottom={1}>
+        <Button compact onPress={noopFn}>
+          Custom action
+        </Button>
+      </HStack>
+    }
+    description={
+      <TextBody as="p" color="foregroundMuted">
+        Custom description
+      </TextBody>
+    }
+    title={
+      <TextHeadline as="h3" color="primary">
+        Custom title
+      </TextHeadline>
+    }
+  />
 );
 
 export default {

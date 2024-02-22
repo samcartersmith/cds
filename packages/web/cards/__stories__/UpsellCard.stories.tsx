@@ -19,11 +19,21 @@ const exampleProps = {
   onDismissPress: onPressConsole,
 } as const;
 
+const compactProps = {
+  title: 'Headline',
+  description: 'Check out the most popular assets',
+  media: <img alt="" data-testid="media" src={coinbaseOneLogo as string} width={120} />,
+  background: 'primaryWash',
+  onPress: onPressConsole,
+} as const;
+
 export const Default = (): JSX.Element => (
   <FeatureFlagProvider frontier>
     <UpsellCard {...exampleProps} />
   </FeatureFlagProvider>
 );
+
+export const Compact = (): JSX.Element => <UpsellCard {...compactProps} />;
 
 export const Vertical = (): JSX.Element => (
   <FeatureFlagProvider frontier>

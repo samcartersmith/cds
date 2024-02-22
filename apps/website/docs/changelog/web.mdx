@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 5.37.0 (2/21/2024 PST)
+
+#### 🚀 Updates
+
+- [DX-3274] feat: made Gondolin cards pressable when onPress is passed. [[#2768](https://github.cbhq.net/frontend/cds/pull/2768)]
+
 ## 5.36.0 ((2/15/2024, 06:13 PM PST))
 
 #### 📘 Misc
