@@ -21,6 +21,7 @@
   - [Setup](#setup)
   - [Feature Testing](#feature-testing)
   - [Architecture](#architecture)
+  - [A11y Scorecards](#a11y-scorecards)
 - [Related Links](#related-links)
 
 ## Overview
@@ -67,6 +68,8 @@ packages/mobile/banner/ @test/bannertest
 Having some context around [Nx task executors](https://nx.dev/plugin-features/use-task-executors) will make the following setup easier to understand.
 
 ### Installation
+
+Documentation for [library installation and setup](https://docs.google.com/document/d/1fCmteNp_ZEWoMxi74YZnbvhGV3CnZjUlWzAeF-9_1Sk/edit?usp=sharing)
 
 ```sh
 yarn add --dev @cbhq/ui-scorecard
@@ -352,6 +355,17 @@ yarn nx run web:audit-a11y
 ### Architecture
 
 The [impl.ts](./src/executors/audit-a11y/impl.ts) file serves as the entry point for this project and is executed when running `nx run <project-name>:audit-a11y`. The entry point is determined by the `implementation` field in the [executor.json](./executors.json) file.
+
+### A11y Scorecards
+
+Yuo can see the aggregated results on our [A11y Scorecards](https://cds.cbhq.net/a11y-scorecards/) page.
+
+Upon every run with the ui-scorecard a11y engine, we send our data to Snowflake. This allows us to track scores over time. From Snowflake, we create a derived table which is then moved into a TRS data system with an exposed data endpoint. Our [go/cds a11y page](https://cds.cbhq.net/a11y-scorecards/) uses this endpoint to fetch the TRS data.
+
+If you need information on how to modify the endpoint, or modify values in the Snowflake schema see the development guide:
+
+- [Development Guide (Pynest - Snowflake Schema, Scorecard Go Endpoint)](https://docs.google.com/document/d/1pYk3BjmZeSjIqSLuzY5VRCCnzY0moo2RhIKq_tw3jpA/edit?usp=sharing)
+- [A11yScorecardsOverview (Main source file for a11y web page)](https://github.cbhq.net/frontend/cds/blob/master/apps/website/components/A11yScorecards/A11yScorecardsOverview.tsx)
 
 ## Related Links
 

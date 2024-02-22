@@ -4,7 +4,7 @@
 
 ### Installation and Configuration
 
-For installation steps, follow [A11y_Executor_README](./A11y_Executor_README.md#installation).
+For installation steps, follow [A11y_Executor_README](./A11y_Executor_README.md#installation) and this [setup testing documentation](https://docs.google.com/document/d/1fCmteNp_ZEWoMxi74YZnbvhGV3CnZjUlWzAeF-9_1Sk/edit?usp=sharing).
 
 For specific file path setup and categorization of a11y score by CODEOWNER, add the following to your `project.json`:
 
@@ -95,6 +95,10 @@ Depending on the repo type, there are different ways to test accessibility and w
 - For `web`, we use jest-axe and write unit tests with `toHaveNoViolations`.
 - For `mobile`, we use RNAE and write unit tests with `toBeAccessible`.
 
+#### Testing Strategies
+
+We recommend writing component unit tests first before writing tests for pages.
+
 #### Examples:
 
 **Mobile**
@@ -102,6 +106,7 @@ Depending on the repo type, there are different ways to test accessibility and w
 - [RNAE example](https://github.com/aryella-lacerda/react-native-accessibility-engine?tab=readme-ov-file#with-react-elements)
 - [CDS Example for mobile](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/buttons/__tests__/IconButton.test.tsx#L17)
 - [consumer/react-native example](https://github.cbhq.net/consumer/react-native/blob/master/libs/react-native-core/components/cells/ConfirmationCell.test.tsx#L34)
+- [wallet/wallet-mobile example](https://github.cbhq.net/wallet/wallet-mobile/pull/18495/commits/d6027f675e6210c3b62f1982083c95ac77dcf47c)
 
 **Web**
 
