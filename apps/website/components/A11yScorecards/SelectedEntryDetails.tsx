@@ -4,12 +4,18 @@ import { Card } from '@cbhq/cds-web/cards';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { PressableOpacity } from '@cbhq/cds-web/system';
-import { TextBody, TextDisplay3, TextHeadline } from '@cbhq/cds-web/typography';
+import { TextBody, TextCaption, TextDisplay3, TextHeadline } from '@cbhq/cds-web/typography';
 
 import { A11yStatsBreakdownCell } from './A11yStatsBreakdownCell';
 import { PercentDisplayWithA11yScore } from './PercentDisplay';
 import { SelectedEntryDetailsProps } from './types';
-import { formatCodeOwner, formatTimestamp, getPercentChange, groupAndFilterEntries } from './utils';
+import {
+  a11yProjectNameMap,
+  formatCodeOwner,
+  formatTimestamp,
+  getPercentChange,
+  getUniqueA11yValuesByDate,
+} from './utils';
 
 export const SelectedEntryDetails = ({ selectedEntry }: SelectedEntryDetailsProps) => {
   const [collapsedStates, setCollapsedStates] = useState<{ [key: string]: boolean }>({});
@@ -56,7 +62,10 @@ export const SelectedEntryDetails = ({ selectedEntry }: SelectedEntryDetailsProp
     return null;
   }
 
-  const filteredEntries = groupAndFilterEntries(selectedEntry);
+  const readableProjectName =
+    a11yProjectNameMap[selectedEntry[0].projectName] || selectedEntry[0].projectName;
+
+  const filteredEntries = getUniqueA11yValuesByDate(selectedEntry);
   const percentChange = getPercentChange(filteredEntries);
 
   const expandedDetailsNode = filteredEntries.map((entry, index) => {
@@ -69,7 +78,7 @@ export const SelectedEntryDetails = ({ selectedEntry }: SelectedEntryDetailsProp
         offsetHorizontal={2}
         spacing={2}
       >
-        <PressableOpacity onPress={handlePress(key)}>
+        <PressableOpacity id={key + entry.timestamp} onPress={handlePress(key)}>
           <HStack
             alignItems="center"
             borderRadius="roundedLarge"
@@ -101,11 +110,9 @@ export const SelectedEntryDetails = ({ selectedEntry }: SelectedEntryDetailsProp
                   detail={entry.automatedA11yScore}
                   title="automatedA11yScore"
                 />
-
                 <A11yStatsBreakdownCell
                   detail={formatTimestamp(entry.timestamp)}
-                  title="  timestamp: string;
-  "
+                  title="timestamp"
                 />
                 <A11yStatsBreakdownCell detail={entry.jestScore} title="jestScore" />
                 <A11yStatsBreakdownCell
@@ -120,6 +127,7 @@ export const SelectedEntryDetails = ({ selectedEntry }: SelectedEntryDetailsProp
                   detail={entry.totalNumberOfComponentsWithTests}
                   title="totalNumberOfComponentsWithTests"
                 />
+                <A11yStatsBreakdownCell detail={entry.platformType} title="platform" />
               </VStack>
             )}
           </VStack>
@@ -132,16 +140,12 @@ export const SelectedEntryDetails = ({ selectedEntry }: SelectedEntryDetailsProp
     <VStack gap={3}>
       <VStack gap={2} spacingTop={7} spacingVertical={2}>
         <HStack alignItems="center" gap={2} justifyContent="space-between">
-          <TextDisplay3 as="h4">{selectedEntry[0].projectName}</TextDisplay3>
+          <TextDisplay3 as="h4">{readableProjectName}</TextDisplay3>
           <Pictogram name="analyticsNavigation" />
         </HStack>
+        <TextCaption as="h1">{formatCodeOwner(selectedEntry[0].codeowner)}</TextCaption>
         <TextBody as="p" color="foregroundMuted" spacingBottom={2}>
-          You’re viewing accessibility metrics captured.
-          <br />
-          <br />
-          Project: {selectedEntry[0].projectName}
-          <br />
-          codeowner: {formatCodeOwner(selectedEntry[0].codeowner)}
+          You’re viewing accessibility metrics captured for {selectedEntry[0].projectName}
         </TextBody>
         <HStack gap={1}>
           <Button compact onPress={handleToggleAllCollapse} variant="primary">

@@ -8,20 +8,21 @@ export type A11yData = {
   totalNumberOfComponentsWithTests: number;
   jestScore: number;
   filteredJestScore: number;
+  platformType: string;
 };
 
 export type ProjectCellProps = {
   score: A11yData;
   active: boolean;
-  scores: A11yData[];
-  setActiveComponent: (componentId: string) => void;
-  setSelectedEntry: (entries: A11yData[]) => void;
+
   percentChange: string;
+  onPress: () => void;
 };
 
 export type GroupedScoreByProjectEntry = {
   projectName: string;
   scores: A11yData[];
+  platformType: string;
 };
 
 export type SelectedEntryDetailsProps = {

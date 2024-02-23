@@ -10,7 +10,7 @@ export const A11yStatsBreakdownCell = memo(
           {title}
         </TextLabel1>
         <TextLabel2 align="end" as="p">
-          {`${detail}`}
+          {`${detail || 'Data Not Found'}`}
         </TextLabel2>
       </HStack>
     );
