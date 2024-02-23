@@ -23,20 +23,40 @@ export const oneToOneMigrations: ComponentMigration[] = [
     path: {
       [`${webPackage}/alpha/CardHeader`]: `${webPackage}/cards`,
     },
-    attributeRenameMap: {
-      oldAttribute: 'author',
-      newAttribute: 'description',
-    },
+    attributeRenameMap: [
+      {
+        oldAttribute: 'author',
+        newAttribute: 'description',
+      },
+      {
+        oldAttribute: 'avatarUrl',
+        newAttribute: 'avatar',
+      },
+      {
+        oldAttribute: 'metadata',
+        newAttribute: 'metaData',
+      },
+    ],
   },
   {
     name: 'CardHeader',
     path: {
       [`${mobilePackage}/alpha/CardHeader`]: `${mobilePackage}/cards`,
     },
-    attributeRenameMap: {
-      oldAttribute: 'author',
-      newAttribute: 'description',
-    },
+    attributeRenameMap: [
+      {
+        oldAttribute: 'author',
+        newAttribute: 'description',
+      },
+      {
+        oldAttribute: 'avatarUrl',
+        newAttribute: 'avatar',
+      },
+      {
+        oldAttribute: 'metadata',
+        newAttribute: 'metaData',
+      },
+    ],
   },
   {
     name: 'Card',

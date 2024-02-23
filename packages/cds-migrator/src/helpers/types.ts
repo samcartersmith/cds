@@ -21,11 +21,20 @@ export type RenameAttributeMapShape = {
   newAttribute: string;
   corePackageDependency?: string;
 };
+export type RenameAttributeAndValueMapShape = {
+  oldAttribute: string;
+  newAttribute: string;
+  valueMap: RenameMap;
+};
 
 export type AttributeValueRenameMapShape = Record<string, RenameValueMapShape>;
 export type AttributeRenameMapShape = Record<
   string,
   RenameAttributeMapShape | RenameAttributeMapShape[]
+>;
+export type RenameAttributeAndValueShape = Record<
+  string,
+  RenameAttributeAndValueMapShape | RenameAttributeAndValueMapShape[]
 >;
 
 export type JsxElementType = JsxSelfClosingElement | JsxOpeningElement;
@@ -79,7 +88,7 @@ export type ComponentMigration = {
   replacement?: string;
   /** custom warning message to show in console and cds-migrator-output.md */
   warning?: string;
-  attributeRenameMap?: RenameAttributeMapShape;
+  attributeRenameMap?: RenameAttributeMapShape | RenameAttributeMapShape[];
 };
 
 export type RemovedComponent = {

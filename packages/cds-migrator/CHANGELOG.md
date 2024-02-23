@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.45 (2/22/2024 PST)
+
+#### 🚀 Updates
+
+- Added migrator scripts for removed alpha components.
+
 ## 0.1.44 (2/14/2024 PST)
 
 #### 🚀 Updates

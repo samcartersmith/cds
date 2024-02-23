@@ -3,6 +3,7 @@ import { Tree } from '@nrwl/devkit';
 import revertDecomp from '../revert-decomp';
 import packageDecompMigrations from '../update-decomp';
 
+import renamedAttributeAndValueMigrations from './attributeAndValueMigrations';
 import attributeValueToBooleanMigrations from './attributeValueToBooleanMigrations';
 import componentMigrations from './componentMigrations';
 import hasFrontierMigrations from './hasFrontierMigrations';
@@ -22,6 +23,7 @@ export default async function main(tree: Tree) {
   await propToAttributeValueMigrations(tree);
   await hasFrontierMigrations(tree);
   await pathMigrations(tree);
+  await renamedAttributeAndValueMigrations(tree);
   // decomp needs to happen first so the new dependencies are added
   await packageDecompMigrations(tree);
   // then decomped packages can be upgraded to v1 (if they're not already)

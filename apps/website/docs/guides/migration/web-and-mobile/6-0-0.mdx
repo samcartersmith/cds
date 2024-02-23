@@ -9,7 +9,7 @@ import Migrator from '../_migrator.mdx';
 v6 is unreleased and is currently being tested. This guide is a work in progress and will be updated as we get closer to release.
 :::
 
-### In this major release we eliminated a lot of tech debt, realigned our component API's to newly accepted conventions, enabled Frontier styling globally, and exited almost all alpha components. Almost all breaking changes are automatically migratable with the `cds-migrator` (see [Using the Migrator](#using-the-migrator)).
+### In this major release we eliminated a lot of tech debt, realigned our component API's to newly accepted conventions, enabled Frontier styling globally, exited alpha components, and improved pressable typing. Almost all breaking changes are automatically migratable with the `cds-migrator` (see [Using the Migrator](#using-the-migrator)).
 
 CDS 6 core packages (`common`, `web`, and `mobile`) are only compatible with the following major package versions (or higher):
 
@@ -55,6 +55,10 @@ Affected components in `@cbhq/cds-web-overlays`:
 ### Alpha Components Exited
 
 Almost all components and types located in `/alpha` directories have been reintegrated into core packages. All migrations are automated with the `cds-migrator`. See [go/cds-alpha-tdd](http://go/cds-alpha-tdd) for more information on this strategy.
+
+### Stronger Types
+
+We revamped many of the types in our `common`, `web`, and `mobile` packages to use stronger platform-specific type values for event handlers. If you are using any component types from the `common` package, manually migrate to use the type exported from that component's file in either the `web` or `mobile` package.
 
 ## Visual Changes
 

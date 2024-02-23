@@ -83,11 +83,21 @@ const callback = (args: ParseJsxElementsCbParams) => {
     // so we only want to find/replace usage if there is a replacement
     if (replacement) {
       if (attributeRenameMap) {
-        renameJsxAttribute({
-          oldAttribute: attributeRenameMap?.oldAttribute,
-          newAttribute: attributeRenameMap?.newAttribute,
-          jsx,
-        });
+        if (Array.isArray(attributeRenameMap)) {
+          attributeRenameMap.forEach((config) => {
+            renameJsxAttribute({
+              oldAttribute: config?.oldAttribute,
+              newAttribute: config?.newAttribute,
+              jsx,
+            });
+          });
+        } else {
+          renameJsxAttribute({
+            oldAttribute: attributeRenameMap?.oldAttribute,
+            newAttribute: attributeRenameMap?.newAttribute,
+            jsx,
+          });
+        }
       }
       renameJsxTag({ jsx, value: replacement });
     }

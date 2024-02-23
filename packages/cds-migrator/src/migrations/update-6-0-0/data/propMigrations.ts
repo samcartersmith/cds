@@ -5,6 +5,7 @@ import {
   mobilePackage,
   PropToAttributeValueMigrationShape,
   RemovedProp,
+  RenameAttributeAndValueShape,
   webPackage,
 } from '../../../helpers';
 
@@ -217,5 +218,16 @@ export const booleanToAttributeValueMigrations: PropToAttributeValueMigrationSha
     newAttribute: 'direction',
     value: 'vertical',
     paths: ['@cbhq/cds-mobile/overlays'],
+  },
+};
+
+export const renamedAttributeAndValueMigrations: RenameAttributeAndValueShape = {
+  CardBody: {
+    oldAttribute: 'orientation',
+    newAttribute: 'mediaPlacement',
+    valueMap: {
+      horizontal: 'end',
+      vertical: 'above',
+    },
   },
 };

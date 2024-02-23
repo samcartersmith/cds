@@ -65,6 +65,21 @@ export const cardMigrations: ComponentMigration[] = [
     },
     ...sharedConfig,
   },
+  {
+    name: 'Card',
+    path: {
+      '@cbhq/cds-mobile/alpha/Card': '@cbhq/cds-mobile/layout/VStack',
+    },
+    replacement: 'VStack',
+  },
+  {
+    name: 'Card',
+    path: {
+      '@cbhq/cds-web/alpha/Card': '@cbhq/cds-web/layout/VStack',
+    },
+    replacement: 'VStack',
+  },
 ];
 
 export const removedProps = ['spotSquare', 'image', 'media', 'mediaPlacement'];
+export const removedCardProps = ['onPress', 'pressableProps'];

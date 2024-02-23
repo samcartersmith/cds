@@ -145,7 +145,6 @@ export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap)
       );
       if (hasUpdates) {
         const { packageJsonPath: rootPackageJsonPath } = rootDepCheck;
-        console.log({ rootPackageJsonPath });
         if (depsToAdd) {
           addDependenciesToPackageJson(tree, depsToAdd, rootPackageJsonPath);
         }
@@ -179,7 +178,6 @@ export async function upgradeCdsPackages(tree: Tree, depsToAddMap: DepsToAddMap)
         );
         if (hasUpdates) {
           const { packageJsonPath } = depCheck;
-          console.log({ packageJsonPath });
           if (depsToAdd) {
             addDependenciesToPackageJson(tree, depsToAdd, packageJsonPath);
           }
