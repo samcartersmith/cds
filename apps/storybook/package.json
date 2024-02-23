@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "should-run-visreg": "node ./scripts/shouldRunVisreg.mjs"
   },
   "dependencies": {
     "@cbhq/cds-common": "workspace:^",

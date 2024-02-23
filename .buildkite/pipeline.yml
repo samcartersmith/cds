@@ -151,13 +151,24 @@ steps:
       - yarn mono-pipeline run-ci danger --allOnMaster
     soft_fail: true
 
-  - label: 'Percy (Web)'
+  - label: 'Percy (Web - All)'
     <<: *k8s_large_chrome
+    if: build.branch == 'master' || build.pull_request.labels includes 'visreg'
     cancel_on_build_failing: true
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-percy storybook
-      - yarn nx affected --target=a11y-web
+      - yarn mono-pipeline run-percy storybook && yarn nx affected --target=a11y-web
+    retry:
+      automatic:
+        limit: 1
+
+  - label: 'Percy (Web - Affected)'
+    <<: *k8s_large_chrome
+    if: build.branch != 'master' && !(build.pull_request.labels	includes 'visreg')
+    cancel_on_build_failing: true
+    commands:
+      - tools/ci/setup.sh
+      - (yarn workspace @cds/storybook should-run-visreg && yarn mono-pipeline run-percy storybook && yarn nx affected --target=a11y-web) || echo 'Skipping Percy (Web)'
     retry:
       automatic:
         limit: 1
