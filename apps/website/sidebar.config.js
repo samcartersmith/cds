@@ -996,7 +996,7 @@ const sidebars = {
                 {
                   type: 'doc',
                   id: 'guides/migration/web-and-mobile/6-0-0',
-                  label: '6.0.0 (coming soon)',
+                  label: '6.0.0',
                 },
                 { type: 'doc', id: 'guides/migration/web-and-mobile/5-0-0', label: '5.0.0' },
                 { type: 'doc', id: 'guides/migration/web-and-mobile/4-0-0', label: '4.0.0' },
