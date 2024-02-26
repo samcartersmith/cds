@@ -31,6 +31,7 @@ import {
   patternComponentConfig,
 } from './config';
 import { generateAdoptionAndImpactReports } from './generateAdoptionAndImpactReports';
+import { generateOverallStatsReport } from './generateOverallStatsSummaryReport';
 import { ComponentPatternJSONFile, PatternComponentData, PatternComponentInfo } from './types';
 
 async function generateMdxFiles(project: ProjectParser) {
@@ -326,6 +327,7 @@ async function main() {
     await generateAdoptionAndImpactReports();
     await generateComponentPatternsSummary();
     await addCDSVersionToComponentPatternData();
+    await generateOverallStatsReport();
 
     cleanup();
 

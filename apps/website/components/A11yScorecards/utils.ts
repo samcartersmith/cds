@@ -1,5 +1,6 @@
 import groupBy from 'lodash/groupBy';
 import orderBy from 'lodash/orderBy';
+import sortBy from 'lodash/orderBy';
 
 import { A11yData, GroupedScoreByProjectEntry } from './types';
 
@@ -12,6 +13,8 @@ export const a11yProjectNameMap: { [key: string]: string } = {
   wallet_app_ext: 'Wallet Extension (Web)',
   'retail-web': 'Retail Web',
   wallet_app: 'Wallet Mobile',
+  cds_mobile: 'CDS Mobile',
+  cds_web: 'CDS Web',
 };
 
 /**
@@ -20,17 +23,18 @@ export const a11yProjectNameMap: { [key: string]: string } = {
  * @returns A11yData[]
  */
 export function getLatestScores(scores: A11yData[]) {
-  const sortedScores = scores.sort((a, b) => {
-    return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
-  });
+  const sortedScores = sortBy(scores, (score) => -new Date(score.timestamp).getTime());
 
-  const groupedByCodeowner = groupBy(sortedScores, 'codeowner');
+  // Group by a composite key of codeowner and projectName
+  // Group entries without a codeowner by projectName
+  const groupedByCompositeKey = groupBy(
+    sortedScores,
+    (score) => `${score.codeowner || 'no-codeowner'}:${score.projectName}`,
+  );
 
-  return Object.values(groupedByCodeowner).map((group) => {
-    return group[0];
-  });
+  const latestScores = Object.values(groupedByCompositeKey).map((groups) => groups[0]);
+  return latestScores;
 }
-
 /**
  * Utility function to group and sort scores by project
  * @param scores A11yData[]
@@ -112,17 +116,17 @@ export function formatDate(timestamp: string) {
   return new Intl.DateTimeFormat('en-US', options).format(new Date(timestamp));
 }
 
-export const getUniqueA11yValuesByDate = (a11yValues: A11yData[]) => {
-  let currentDate = null;
-  const results = [];
-
-  for (const a11yValue of a11yValues) {
-    const date = a11yValue.timestamp.substring(0, 10);
-    if (date !== currentDate) {
-      results.push(a11yValue);
-      currentDate = date;
+export const getUniqueA11yValuesByDate = (a11yValues: A11yData[]): A11yData[] => {
+  const uniqueValues = a11yValues.reduce<{ [date: string]: A11yData }>((acc, currentValue) => {
+    const date = currentValue.timestamp.substring(0, 10);
+    if (!acc[date]) {
+      acc[date] = currentValue;
     }
-  }
+
+    return acc;
+  }, {});
+
+  const results = Object.values(uniqueValues);
 
   return results.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 };

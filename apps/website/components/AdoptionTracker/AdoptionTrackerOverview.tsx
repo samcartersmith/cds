@@ -712,12 +712,17 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
             {latestOverallStatsSummary?.summaryReport.companyWide.latestCDSAdoption}%
           </TextTitle2>{' '}
           (
-          {changePercentageTextLatest !== NO_CHANGE_ADOPTION_TEXT && (
+          {changePercentageTextLatest !== NO_CHANGE_ADOPTION_TEXT &&
+          !Number.isNaN(parseFloat(changePercentageTextLatest)) ? (
             <TextTitle2 as="span" color="foregroundMuted">
               {directionLatest}{' '}
               <TextTitle2 as="span" color={changedVariantLatest}>
                 {changePercentageTextLatest}{' '}
               </TextTitle2>
+            </TextTitle2>
+          ) : (
+            <TextTitle2 as="span" color="foregroundMuted">
+              {NO_CHANGE_ADOPTION_TEXT}{' '}
             </TextTitle2>
           )}
           for the quarter) of our product UI surface area is using the latest version (

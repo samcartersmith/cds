@@ -4,20 +4,8 @@ import fs from 'fs';
 import getFirst from 'lodash/first';
 import path from 'path';
 
-import { OverallSummaryStats, SummaryReport } from '../../components/AdoptionTracker/types';
-import { adopters } from '../../data/__generated__/adoption/adopters';
+import { OverallSummaryStats } from '../../components/AdoptionTracker/types';
 import { hiddenAdopters } from '../../data/__generated__/adoption/adopters-hidden';
-
-import { formatDate } from './utils/formatDate';
-import {
-  EXCLUDED_PILLARS,
-  getAllProjectCDSVersionsForPillar,
-  getPercentage,
-  getPercentageChange,
-  getPercentProductsWithinCDS,
-  getSortedProjectPairs,
-} from './utils/getOverallSummaryStats';
-import { PillarAdoptionData, PillarProjectData } from './types';
 
 type Entry = {
   date: string;
@@ -42,36 +30,6 @@ type HistoricalProjectData = {
   data: Record<string, Record<string, StatsData>>;
   sortedDates: string[];
 };
-
-const totalProjectVersionsList: PillarProjectData[] = [];
-const scopedAdopters = getSortedProjectPairs(adopters);
-scopedAdopters.forEach(([pillar, projectsInPillar]) => {
-  totalProjectVersionsList.push({
-    pillar,
-    allProjectVersions: getAllProjectCDSVersionsForPillar(pillar),
-    totalProjectsCount: projectsInPillar.length,
-  });
-});
-let cdsAdoptionByPillar: PillarAdoptionData[] = [];
-
-function populateCDSAdoptionPercentageListByPillar() {
-  const uniquePillars = new Set(adopters.map(({ pillar }) => pillar));
-  cdsAdoptionByPillar = [];
-  uniquePillars.forEach((pillar: string) => {
-    const { percentageText } = getPercentage({ pillar, excludedPillars: EXCLUDED_PILLARS });
-    const adoptionPercentageForPillarObj = getPercentage({
-      pillar,
-      isUpToDateOnly: true,
-      excludedPillars: EXCLUDED_PILLARS,
-    });
-
-    cdsAdoptionByPillar.push({
-      pillar,
-      cdsPercentAdoption: percentageText,
-      cdsPercentAdoptionWithinLatest3Months: adoptionPercentageForPillarObj.percentageText,
-    });
-  });
-}
 
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT ?? '';
 const ADOPTION_REPORTS_DIR = path.join(
@@ -252,84 +210,6 @@ function generateAdoptionTrackerCSVData(allHistoricalProjectData: HistoricalProj
   return `Date,Period,Company-wide Adoption Rate\n${adoptionTrackerCSVData.join('\n')}`;
 }
 
-function generateOverallStatsSummaryReport() {
-  populateCDSAdoptionPercentageListByPillar();
-
-  const summaryReport: SummaryReport = {
-    companyWide: {
-      cdsAdoption: '0',
-      latestCDSAdoption: '0',
-      getPercentageChangeAll: '0',
-      getPercentageChangeLatest: '0',
-    },
-  };
-
-  const { diff, changePercentageText: changePercentageTextAll } = getPercentageChange({
-    excludedPillars: EXCLUDED_PILLARS,
-  });
-
-  const { diff: diffLatest, changePercentageText: changePercentageTextLatest } =
-    getPercentageChange({
-      excludedPillars: EXCLUDED_PILLARS,
-      upToDate: true,
-    });
-
-  summaryReport.companyWide.cdsAdoption = getPercentage({
-    excludedPillars: EXCLUDED_PILLARS,
-  }).percentageText;
-
-  summaryReport.companyWide.latestCDSAdoption = getPercentProductsWithinCDS({
-    totalProjectVersionsList,
-    excludedPillars: EXCLUDED_PILLARS,
-  }).toFixed(2);
-
-  summaryReport.companyWide.getPercentageChangeAll =
-    diff !== '' ? changePercentageTextAll : 'No change';
-  summaryReport.companyWide.getPercentageChangeLatest =
-    diffLatest !== '' ? changePercentageTextLatest : 'No change';
-
-  cdsAdoptionByPillar.forEach((entry) => {
-    if (entry.pillar !== 'Other') {
-      const { pillar, cdsPercentAdoption } = entry;
-      const latestCDSAdoptionPercentage = getPercentProductsWithinCDS({
-        totalProjectVersionsList,
-        pillar,
-        excludedPillars: EXCLUDED_PILLARS,
-      });
-
-      summaryReport[pillar] = {
-        cdsAdoption: cdsPercentAdoption,
-        latestCDSAdoption: `${latestCDSAdoptionPercentage.toFixed(2)}%`,
-      };
-    }
-  });
-
-  const fullSummaryReport = {
-    date: formatDate(new Date(), {
-      hour: undefined,
-      minute: undefined,
-    }),
-    summaryReport,
-    totalProjectVersionsList,
-  };
-
-  const filePath = `${ADOPTION_REPORTS_DIR}/adoption_overall_stats_summary.json`;
-  let existingData: OverallSummaryStats[] = [];
-
-  // Check if the file exists
-  if (fs.existsSync(filePath)) {
-    // Read and parse existing data
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    existingData = JSON.parse(fileContent) as OverallSummaryStats[];
-  }
-
-  // Append new data to the existing data
-  existingData.unshift(fullSummaryReport);
-
-  // Write the updated data back to the file
-  fs.writeFileSync(filePath, JSON.stringify(existingData, null, 2));
-}
-
 function generateCollectiveProjectCSVData(allHistoricalProjectData: HistoricalProjectData) {
   // Date, Period, Project, CDS Adoption, Num of CDS components Used , Design Impact, Engineering Impact, Total Impact
   // get the last date in a period, then get the projects for that date. for each project, get cds cmpt data
@@ -376,9 +256,6 @@ export async function generateAdoptionAndImpactReports() {
 
   // Generate collection of all data to easily parse for reports
   const allHistoricalProjectData = await getHistoricalData(statsPaths);
-
-  // Create Report for Overall Version % and PG Version %
-  generateOverallStatsSummaryReport();
 
   // Create Adoption Rate CSV String
   const adoptionTrackerCSVData = generateAdoptionTrackerCSVData(allHistoricalProjectData);

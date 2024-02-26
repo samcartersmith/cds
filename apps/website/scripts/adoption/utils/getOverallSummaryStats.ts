@@ -21,7 +21,6 @@ import { sanitizeVersion } from './getStats';
 export const EXCLUDED_PILLARS = ['Other'];
 
 type ProjectProps = { id: Adopter };
-let statForLatestCdsVersionPublished3MonthsAgo = '';
 
 // Get projects by pillar
 export const getProjects = (pillar?: string) => {
@@ -179,13 +178,19 @@ export function getLowestVersion(
 
 // Get list of projects which are within latest CDS version range (last 3 months) for a pillar
 export const getAllProjectCDSVersionsForPillar = (
+  statsPaths: string[],
+  cdsCommonsVersionFrom3MonthsAgo: string,
   pillar?: string,
 ): AdopterProjectVersionSummary[] => {
   const projects = getProjects(pillar);
 
   return projects.reduce((acc: AdopterProjectVersionSummary[], project) => {
-    const stats = getStats(project);
-    const latestStat = stats.latest;
+    const specificPath = statsPaths.find((path) =>
+      path.includes(`adoption/${project.id}/stats.json`),
+    );
+    const jsonData = JSON.parse(fs.readFileSync(specificPath || '', 'utf8')) as AdopterStats;
+    const { latest } = jsonData;
+    const latestStat = latest;
 
     const { lowestVersion } = getLowestVersion(
       latestStat.cdsCommonVersion,
@@ -193,10 +198,8 @@ export const getAllProjectCDSVersionsForPillar = (
       latestStat.cdsMobileVersion,
     );
 
-    statForLatestCdsVersionPublished3MonthsAgo = latestStat.latestCdsVersionPublished3MonthsAgo;
-
     const sanitizedVersion = sanitizeVersion(lowestVersion || '');
-    const version3MonthsAgo = sanitizeVersion(statForLatestCdsVersionPublished3MonthsAgo);
+    const version3MonthsAgo = sanitizeVersion(cdsCommonsVersionFrom3MonthsAgo);
 
     if (
       sanitizedVersion &&
