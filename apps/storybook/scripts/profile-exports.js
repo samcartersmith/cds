@@ -37,7 +37,6 @@ const WEB_EXPORTS = [
   './color/usePaletteToCssVars',
   './color/usePaletteValueToRgbaString',
   './color/useSpectrumClassName',
-  './color/useSpectrumClassNameForFrontier',
   './controls',
   './dots',
   './dots/dotStyles',
