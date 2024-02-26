@@ -2,7 +2,6 @@ import { useToggler } from '@cbhq/cds-common';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 
 import { Accordion, AccordionItem } from '../../accordion';
-import { IconButton } from '../../buttons';
 import { Button } from '../../buttons/Button';
 import { FeedCard } from '../../cards/FeedCard';
 import { ListCell } from '../../cells';
@@ -122,26 +121,18 @@ export const Example = () => {
 
   const feedCard = (
     <FeedCard
-      avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-      bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-      bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-      bodyOrientation="vertical"
-      bodyTitle="Learn AMP. Earn $3 in AMP."
-      footerActions={
-        <Button compact variant="secondary">
-          Earn AMP
-        </Button>
-      }
-      headerActionNode={
-        <IconButton
-          transparent
-          accessibilityLabel="More actions"
-          name="more"
-          variant="foregroundMuted"
-        />
-      }
-      headerDescription="Earn crypto"
-      headerMetaData="Dec 18"
+      author="Earn crypto"
+      avatar="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+      description="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+      // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+      headerAction={{
+        name: 'more',
+        variant: 'foregroundMuted',
+      }}
+      image="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+      mediaPlacement="above"
+      metadata="Dec 18"
+      title="Learn AMP. Earn $3 in AMP."
     />
   );
 

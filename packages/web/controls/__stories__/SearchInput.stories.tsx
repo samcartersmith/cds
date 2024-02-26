@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
 
 import { VStack } from '../../layout';
-import { FeatureFlagProvider, ThemeProvider } from '../../system';
+import { ThemeProvider } from '../../system';
 import { SearchInput } from '../SearchInput';
 
 export default {
@@ -13,16 +13,14 @@ export default {
 const { Basic, Disabled, Compact, HideStartIcon } = searchInputBuilder(SearchInput);
 
 export const Default = () => (
-  <FeatureFlagProvider frontier>
-    <ThemeProvider>
-      <VStack gap={2}>
-        <Basic />
-        <Disabled />
-        <Compact />
-        <HideStartIcon />
-      </VStack>
-    </ThemeProvider>
-  </FeatureFlagProvider>
+  <ThemeProvider>
+    <VStack gap={2}>
+      <Basic />
+      <Disabled />
+      <Compact />
+      <HideStartIcon />
+    </VStack>
+  </ThemeProvider>
 );
 
 /**
@@ -40,16 +38,14 @@ export const OnChangeExample = () => {
   );
 
   return (
-    <FeatureFlagProvider frontier>
-      <ThemeProvider>
-        <SearchInput
-          accessibilityLabel="Search"
-          onChange={handleOnChange}
-          onChangeText={setText}
-          value={text}
-        />
-        <p>{text}</p>
-      </ThemeProvider>
-    </FeatureFlagProvider>
+    <ThemeProvider>
+      <SearchInput
+        accessibilityLabel="Search"
+        onChange={handleOnChange}
+        onChangeText={setText}
+        value={text}
+      />
+      <p>{text}</p>
+    </ThemeProvider>
   );
 };

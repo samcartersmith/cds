@@ -31,7 +31,7 @@ export const Icon = memo(function Icon({
   bordered = false,
   color = 'primary',
   dangerouslySetColor,
-  dangerouslySetStyle,
+  style,
   fallback = null,
   name,
   size,
@@ -72,10 +72,7 @@ export const Icon = memo(function Icon({
     spacingHorizontal,
   });
 
-  const boxStyles = useMemo(
-    () => [space, dangerouslySetStyle].filter(Boolean),
-    [dangerouslySetStyle, space],
-  );
+  const boxStyles = useMemo(() => [space, style].filter(Boolean), [style, space]);
 
   const glyphKey = `ui-${name}-${sourceSize}` as const;
   const glyph = glyphMap[glyphKey];
@@ -91,7 +88,7 @@ export const Icon = memo(function Icon({
   }
 
   return (
-    <Box animated={animated} dangerouslySetStyle={boxStyles} testID={testID}>
+    <Box animated={animated} style={boxStyles} testID={testID}>
       <Box alignItems="center" height={wrapperSize} justifyContent="center" width={wrapperSize}>
         <TextComponent
           accessibilityHint={accessibilityHint}

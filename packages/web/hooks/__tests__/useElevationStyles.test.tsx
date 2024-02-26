@@ -24,7 +24,7 @@ const paletteAsCssVars = {
   '--negative-foreground': 'rgb(var(--gray0))',
   '--positive': 'rgb(var(--green60))',
   '--positive-foreground': 'rgb(var(--gray0))',
-  '--secondary': 'rgb(var(--gray0))',
+  '--secondary': 'rgb(var(--gray20))',
   '--secondary-foreground': 'rgb(var(--gray100))',
   '--transparent': 'rgba(var(--gray0),0)',
   '--warning': 'rgb(var(--yellow50))',
@@ -123,6 +123,7 @@ describe('useElevationStyles', () => {
       ...paletteAsCssVars,
       '--background': paletteValueToCssVar('gray5'),
       '--transparent': paletteValueToCssVar('gray5'),
+      '--primary': paletteValueToCssVar('blue70'),
       boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.02)',
     });
   });
@@ -143,6 +144,7 @@ describe('useElevationStyles', () => {
       ...paletteAsCssVars,
       '--background': paletteValueToCssVar('gray10'),
       '--transparent': paletteValueToCssVar('gray10'),
+      '--primary': paletteValueToCssVar('blue70'),
       boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.12)',
     });
   });
@@ -164,6 +166,7 @@ describe('useElevationStyles', () => {
       ...paletteAsCssVars,
       '--background': paletteValueToCssVar('gray5'),
       '--transparent': paletteValueToCssVar('gray5'),
+      '--primary': paletteValueToCssVar('blue70'),
       // @ts-expect-error - secondary exists on elevationChildrenPalette level 1
       '--secondary': paletteValueToCssVar(elevationChildrenPalette[1].secondary),
     });
@@ -186,6 +189,7 @@ describe('useElevationStyles', () => {
       ...paletteAsCssVars,
       '--background': paletteValueToCssVar('gray10'),
       '--transparent': paletteValueToCssVar('gray10'),
+      '--primary': paletteValueToCssVar('blue70'),
       // @ts-expect-error - secondary exists on elevationChildrenPalette level 2
       '--secondary': paletteValueToCssVar(elevationChildrenPalette[2].secondary),
       // @ts-expect-error - line exists on elevationChildrenPalette level 2

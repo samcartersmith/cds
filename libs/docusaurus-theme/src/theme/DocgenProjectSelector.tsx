@@ -39,7 +39,7 @@ const DocgenProjectSelector = memo(function DocgenProjectSelector() {
   return (
     <HStack
       borderRadius="roundedLarge"
-      dangerouslySetClassName="docgen-project-selector-wrapper"
+      className="docgen-project-selector-wrapper"
       justifyContent="space-between"
       minWidth={175}
       overflow="hidden"
@@ -49,7 +49,7 @@ const DocgenProjectSelector = memo(function DocgenProjectSelector() {
         return (
           <Pressable
             key={project.label}
-            backgroundColor={isActive ? 'foreground' : 'background'}
+            background={isActive ? 'foreground' : 'background'}
             className={spacingStyles}
             onPress={getOnPressHandler(project)}
           >

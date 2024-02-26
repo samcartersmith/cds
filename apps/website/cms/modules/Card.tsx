@@ -3,10 +3,10 @@ import { Document } from '@contentful/rich-text-types';
 import { Entry } from 'contentful';
 import { CMSContent } from '@cb/cms';
 import { IllustrationPictogramNames } from '@cbhq/cds-common';
-import { Card as CDSCard } from '@cbhq/cds-web/alpha/Card';
-import { HStack } from '@cbhq/cds-web/alpha/HStack';
 import { Button } from '@cbhq/cds-web/buttons';
+import { Card as CDSCard } from '@cbhq/cds-web/cards/Card';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
 import { TextTitle2 } from '@cbhq/cds-web/typography';
 import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
 

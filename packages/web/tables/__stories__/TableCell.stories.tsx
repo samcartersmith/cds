@@ -3,8 +3,8 @@ import { Meta, Story } from '@storybook/react';
 import { css } from 'linaria';
 
 import { Accordion, AccordionItem } from '../../accordion';
-import { VStack } from '../../alpha/VStack';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
+import { VStack } from '../../layout/VStack';
 import { Avatar } from '../../media';
 import { ThemeProvider } from '../../system';
 import { TextBody, TextHeadline, TextLabel2 } from '../../typography';
@@ -53,7 +53,7 @@ export const VerticallyAlignedTableCell: Story = () => {
         <TableRow>
           <TableCell
             alignItems="flex-start"
-            dangerouslySetClassName={flex}
+            className={flex}
             title="This TableCell will be aligned to the top of its parent"
             width={300}
           />

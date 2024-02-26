@@ -1,16 +1,19 @@
 import React, { isValidElement, memo } from 'react';
-import { GestureResponderEvent } from 'react-native';
+import { PressableProps } from 'react-native';
 import { NudgeCardBaseProps } from '@cbhq/cds-common/types';
 
 import { IconButton } from '../buttons';
 import { Pictogram } from '../illustrations/Pictogram';
-import { Box, Spacer } from '../layout';
+import { Box } from '../layout';
 import { PressableOpacity } from '../system';
 import { TextHeadline } from '../typography';
 
 import { CardBody } from './CardBody';
 
-type OnPress = ((event: GestureResponderEvent) => void) | null;
+export type NudgeCardProps = NudgeCardBaseProps & {
+  onDismissPress?: PressableProps['onPress'];
+  onActionPress?: PressableProps['onPress'];
+} & Pick<PressableProps, 'onPress'>;
 
 export const NudgeCard = memo(
   ({
@@ -27,7 +30,7 @@ export const NudgeCard = memo(
     accessibilityLabel,
     onPress,
     ...props
-  }: NudgeCardBaseProps<OnPress>) => {
+  }: NudgeCardProps) => {
     const renderAction = isValidElement(action) ? (
       action
     ) : (
@@ -64,16 +67,13 @@ export const NudgeCard = memo(
         ) : null}
         <CardBody
           compact
+          action={action ? renderAction : null}
           description={description}
           media={<Pictogram dimension="64x64" name={pictogram} testID={`${testID}-spot-square`} />}
           numberOfLines={numberOfLines}
-          orientation="horizontal"
           title={title}
           {...props}
-        >
-          <Spacer flexGrow={1} />
-          {action ? renderAction : null}
-        </CardBody>
+        />
       </Box>
     );
     return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;

@@ -3,13 +3,7 @@ import { KebabCase } from 'type-fest';
 import { PaletteAlias, PaletteValue, PartialPaletteConfig } from './Palette';
 import { Spectrum } from './Spectrum';
 
-/** TODO: Remove `hasFrontier` arg when frontierColor is sunset */
-type HasFrontier = boolean;
-export type PaletteFn<InputType, ReturnType> = (
-  input: InputType,
-  spectrum: Spectrum,
-  hasFrontier?: HasFrontier,
-) => ReturnType;
+export type PaletteFn<InputType, ReturnType> = (input: InputType, spectrum: Spectrum) => ReturnType;
 
 type PaletteCssVariableValue = `var(--${KebabCase<PaletteAlias>})`;
 export type GradientArray = { offset: string; color: string }[];

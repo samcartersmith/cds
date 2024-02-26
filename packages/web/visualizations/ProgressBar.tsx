@@ -52,6 +52,7 @@ export const ProgressBar = memo(
           opacity: 1,
         },
         transition: animateProgressBaseSpec,
+        initial: !progress ? false : { x: `${translateXStart}%` }, // skip initial animation if no progress
       });
 
       return (
@@ -68,8 +69,8 @@ export const ProgressBar = memo(
             <Box
               alignItems="center"
               borderRadius="rounded"
+              className={boxClassName}
               dangerouslySetBackground={palette.line}
-              dangerouslySetClassName={boxClassName}
               flexGrow={1}
               flexShrink={1}
               height={height}
@@ -85,6 +86,7 @@ export const ProgressBar = memo(
                 flexGrow={0}
                 flexShrink={0}
                 height={height}
+                initial={motionProps.initial}
                 justifyContent="flex-start"
                 opacity={disableAnimateOnMount ? 1 : 0}
                 style={motionProps.style}

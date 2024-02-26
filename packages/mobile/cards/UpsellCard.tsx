@@ -1,4 +1,5 @@
 import React, { isValidElement, memo } from 'react';
+import { PressableProps } from 'react-native';
 import { UpsellCardBaseProps } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import {
@@ -12,6 +13,13 @@ import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { HStack, VStack } from '../layout';
 import { PressableOpacity } from '../system';
 import { TextHeadline, TextLabel2 } from '../typography';
+
+export type UpsellCardProps = UpsellCardBaseProps & {
+  /** Callback fired when the action button is pressed */
+  onActionPress?: PressableProps['onPress'];
+  /** Callback fired when the dismiss button is pressed */
+  onDismissPress?: PressableProps['onPress'];
+} & Pick<PressableProps, 'onPress'>;
 
 export const UpsellCard = memo(
   ({
@@ -27,7 +35,7 @@ export const UpsellCard = memo(
     accessibilityLabel,
     width = upsellCardDefaultWidth,
     onPress,
-  }: UpsellCardBaseProps) => {
+  }: UpsellCardProps) => {
     const density = useScaleDensity();
     const largeTextStyle = useLargeTextStyles();
 
@@ -62,12 +70,12 @@ export const UpsellCard = memo(
           >
             <VStack gap={1}>
               {typeof title === 'string' ? (
-                <TextHeadline dangerouslySetStyle={largeTextStyle}>{title}</TextHeadline>
+                <TextHeadline style={largeTextStyle}>{title}</TextHeadline>
               ) : (
                 title
               )}
               {typeof description === 'string' ? (
-                <TextLabel2 dangerouslySetStyle={largeTextStyle} numberOfLines={3}>
+                <TextLabel2 numberOfLines={3} style={largeTextStyle}>
                   {description}
                 </TextLabel2>
               ) : (

@@ -1,4 +1,4 @@
-import type { CollapseProps } from './Collapsible';
+import type { CollapsibleProps } from './Collapsible';
 
 export type UseCollapsibleDirectionReturn = ReturnType<typeof useCollapsibleDirection>;
 
@@ -8,7 +8,7 @@ export const useCollapsibleDirection = ({
   maxWidth,
   contentWidth,
   contentHeight,
-}: Pick<CollapseProps, 'direction' | 'maxHeight' | 'maxWidth'> & {
+}: Pick<CollapsibleProps, 'direction' | 'maxHeight' | 'maxWidth'> & {
   contentWidth: number;
   contentHeight: number;
 }) => {

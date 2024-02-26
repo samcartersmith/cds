@@ -1,11 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { feedImages } from '@cbhq/cds-common/internal/data/feedImages';
 
-import { AnnouncementCard, AnnouncementCardProps } from '../../alpha/AnnouncementCard';
 import { Carousel, CarouselId } from '../../alpha/carousel/Carousel';
 import { useCarousel } from '../../alpha/carousel/useCarousel';
+import { AnnouncementCard, AnnouncementCardProps } from '../../cards/AnnouncementCard';
 import { Divider } from '../../layout/Divider';
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 
 export function CarouselItem({ pictogram, spotSquare, ...props }: AnnouncementCardProps) {
   const handleOnPress = useCallback(() => {
@@ -68,7 +67,7 @@ export function ProgressBarsExample() {
   }, Title/Headline`;
 
   return (
-    <FeatureFlagProvider frontierButton frontierCard>
+    <>
       <Carousel
         showDismiss
         showProgress
@@ -114,6 +113,6 @@ export function ProgressBarsExample() {
         onDismissLastItem={onDismissLastItem}
       />
       <Divider />
-    </FeatureFlagProvider>
+    </>
   );
 }

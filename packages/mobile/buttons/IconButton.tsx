@@ -1,53 +1,94 @@
-import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { IconButtonBaseProps } from '@cbhq/cds-common';
+import React, { memo, useMemo } from 'react';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useScale } from '@cbhq/cds-common/scale/useScale';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import { IconButtonBaseProps, Scale } from '@cbhq/cds-common/types';
+import { getButtonSizeProps } from '@cbhq/cds-common/utils/getButtonSizeProps';
+import { getButtonSpacingProps } from '@cbhq/cds-common/utils/getButtonSpacingProps';
+import { memoize } from '@cbhq/cds-common/utils/memoize';
 
-import { IconButton as FrontierIconButton } from '../alpha/IconButton';
 import { Icon } from '../icons/Icon';
+import { getSpacingStyles } from '../styles/getSpacingStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
-import { useFeatureFlag } from '../system/useFeatureFlag';
 
 export type IconButtonProps = IconButtonBaseProps & PressableProps;
 
-export const PreFrontierIconButton = memo(function PreFrontierIconButton({
+type GetIconStylesParams = Pick<IconButtonProps, 'compact' | 'flush'> & {
+  scale: Scale;
+  compactSize: string;
+};
+
+function getCacheKey({ compact, flush, scale }: GetIconStylesParams) {
+  return `${compact}-${flush}-${scale}`;
+}
+
+const getIconStyles = memoize(function getIconStyles({
+  compact,
+  scale,
+  flush,
+  compactSize,
+}: GetIconStylesParams) {
+  const { minHeight, iconSize } = getButtonSizeProps({ compact, scale, compactSize });
+  const { offsetEnd, offsetStart } = getButtonSpacingProps({
+    compact,
+    flush,
+  });
+  const spacingStyles = getSpacingStyles({
+    isInverted: true,
+    end: offsetEnd,
+    start: offsetStart,
+    scale,
+  });
+  const sizingStyles = {
+    height: minHeight,
+    width: minHeight,
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  } as const;
+  return {
+    pressableStyles: {
+      ...spacingStyles,
+      ...sizingStyles,
+    },
+    iconStyles: sizingStyles,
+    iconSize,
+  } as const;
+},
+getCacheKey);
+
+export const IconButton = memo(function IconButton({
   compact = true,
-  feedback = 'light',
+  feedback = compact ? 'light' : 'normal',
   name,
   transparent,
   variant = 'secondary',
+  flush,
   ...props
 }: IconButtonProps) {
+  const scale = useScale();
+  const compactSize = useScaleConditional({ dense: 'm', normal: 's' });
+
   const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-  const height = useInteractableHeight(compact);
+  const { pressableStyles, iconSize, iconStyles } = useMemo(
+    () => getIconStyles({ compact, flush, scale, compactSize }),
+    [compact, compactSize, flush, scale],
+  );
 
   return (
     <Pressable
-      backgroundColor={backgroundColor}
+      background={backgroundColor}
       borderColor={borderColor}
       borderRadius="roundedFull"
       borderWidth="button"
       feedback={feedback}
+      style={pressableStyles}
       transparentWhileInactive={transparent}
       {...props}
     >
-      <View style={[styles.iconButton, { height, width: height }]}>
-        <Icon color={color} name={name} size="s" />
-      </View>
+      <Icon color={color} name={name} size={iconSize} style={iconStyles} />
     </Pressable>
   );
 });
 
-const styles = StyleSheet.create({
-  iconButton: {
-    alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
-});
-
-export const IconButton = memo(function IconButton(props: IconButtonProps) {
-  const hasFrontier = useFeatureFlag('frontierButton');
-  return hasFrontier ? <FrontierIconButton {...props} /> : <PreFrontierIconButton {...props} />;
-});
+IconButton.displayName = 'IconButton';

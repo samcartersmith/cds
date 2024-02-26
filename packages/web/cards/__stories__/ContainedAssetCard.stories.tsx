@@ -1,12 +1,10 @@
-import { ContainedAssetCardBaseProps } from '@cbhq/cds-common';
 import { assets, ethBackground } from '@cbhq/cds-common/internal/data/assets';
 import { subheadIconSignMap } from '@cbhq/cds-common/tokens/sparkline';
 
 import { HStack, VStack } from '../../layout';
-import { FeatureFlagProvider } from '../../system';
 import { TextLabel2 } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
-import { ContainedAssetCard } from '../ContainedAssetCard';
+import { ContainedAssetCard, ContainedAssetCardProps } from '../ContainedAssetCard';
 
 const a11ySkipConfig = {
   config: {
@@ -16,7 +14,7 @@ const a11ySkipConfig = {
 
 const onPressConsole = console.log;
 
-const exampleProps: ContainedAssetCardBaseProps = {
+const exampleProps: ContainedAssetCardProps = {
   title: 'Title',
   description: 'Description',
   subtitle: 'Subtitle',
@@ -33,7 +31,7 @@ const exampleProps: ContainedAssetCardBaseProps = {
   onPress: onPressConsole,
 } as const;
 
-const examplePropsWithChildren: ContainedAssetCardBaseProps = {
+const examplePropsWithChildren: ContainedAssetCardProps = {
   ...exampleProps,
   children: (
     <img
@@ -49,84 +47,74 @@ const examplePropsWithChildren: ContainedAssetCardBaseProps = {
 
 export const Default = (): JSX.Element => {
   return (
-    <FeatureFlagProvider frontier>
-      <VStack>
-        <ContainedAssetCard {...exampleProps} />
-      </VStack>
-    </FeatureFlagProvider>
+    <VStack>
+      <ContainedAssetCard {...exampleProps} />
+    </VStack>
   );
 };
 
 export const LongText = (): JSX.Element => {
   return (
-    <FeatureFlagProvider frontier>
-      <VStack>
-        <ContainedAssetCard
-          {...exampleProps}
-          description="This is a very long description text that will get truncated"
-          subtitle="This is a very long subtitle text that will get truncated"
-          title="This is a very long title text that will get truncated"
-        />
-        <ContainedAssetCard
-          {...examplePropsWithChildren}
-          description="This is a very long description text that will get truncated"
-          size="l"
-          subtitle="This is a very long subtitle text that will get truncated"
-          title="This is a very long title text that will get truncated"
-        />
-      </VStack>
-    </FeatureFlagProvider>
+    <VStack>
+      <ContainedAssetCard
+        {...exampleProps}
+        description="This is a very long description text that will get truncated"
+        subtitle="This is a very long subtitle text that will get truncated"
+        title="This is a very long title text that will get truncated"
+      />
+      <ContainedAssetCard
+        {...examplePropsWithChildren}
+        description="This is a very long description text that will get truncated"
+        size="l"
+        subtitle="This is a very long subtitle text that will get truncated"
+        title="This is a very long title text that will get truncated"
+      />
+    </VStack>
   );
 };
 
 export const Vertical = (): JSX.Element => {
   return (
-    <FeatureFlagProvider frontier>
-      <VStack gap={1}>
-        <ContainedAssetCard {...exampleProps} />
-        <ContainedAssetCard {...exampleProps} size="l" />
-        <ContainedAssetCard {...examplePropsWithChildren} size="l" />
-      </VStack>
-    </FeatureFlagProvider>
+    <VStack gap={1}>
+      <ContainedAssetCard {...exampleProps} />
+      <ContainedAssetCard {...exampleProps} size="l" />
+      <ContainedAssetCard {...examplePropsWithChildren} size="l" />
+    </VStack>
   );
 };
 
 export const Horizontal = (): JSX.Element => {
   return (
-    <FeatureFlagProvider frontier>
-      <HStack gap={1}>
-        <ContainedAssetCard {...exampleProps} />
-        <ContainedAssetCard {...exampleProps} size="l" />
-        <ContainedAssetCard {...examplePropsWithChildren} size="l" />
-      </HStack>
-    </FeatureFlagProvider>
+    <HStack gap={1}>
+      <ContainedAssetCard {...exampleProps} />
+      <ContainedAssetCard {...exampleProps} size="l" />
+      <ContainedAssetCard {...examplePropsWithChildren} size="l" />
+    </HStack>
   );
 };
 
 export const Custom = (): JSX.Element => {
   return (
-    <FeatureFlagProvider frontier>
-      <ContainedAssetCard
-        {...exampleProps}
-        description={
-          <TextLabel2 accessibilityLabel="Up 6.37%" as="p" color="positive">
-            {subheadIconSignMap.upwardTrend}6.37%
-          </TextLabel2>
-        }
-        header={
-          <img
-            alt="Image Alt"
-            aria-hidden="true"
-            height="32px"
-            src={assets.uni.imageUrl}
-            style={{ objectFit: 'cover', cursor: 'pointer', borderRadius: '100%' }}
-            width="32px"
-          />
-        }
-        subtitle="UNI"
-        title="$0.87"
-      />
-    </FeatureFlagProvider>
+    <ContainedAssetCard
+      {...exampleProps}
+      description={
+        <TextLabel2 accessibilityLabel="Up 6.37%" as="p" color="positive">
+          {subheadIconSignMap.upwardTrend}6.37%
+        </TextLabel2>
+      }
+      header={
+        <img
+          alt="Image Alt"
+          aria-hidden="true"
+          height="32px"
+          src={assets.uni.imageUrl}
+          style={{ objectFit: 'cover', cursor: 'pointer', borderRadius: '100%' }}
+          width="32px"
+        />
+      }
+      subtitle="UNI"
+      title="$0.87"
+    />
   );
 };
 
@@ -136,13 +124,11 @@ Custom.parameters = {
 };
 
 export const Carousel = (): JSX.Element => (
-  <FeatureFlagProvider frontier>
-    <HStack gap={2} overflow="scroll">
-      <ContainedAssetCard {...exampleProps} />
-      <ContainedAssetCard {...exampleProps} size="l" />
-      <ContainedAssetCard {...examplePropsWithChildren} size="l" />
-    </HStack>
-  </FeatureFlagProvider>
+  <HStack gap={2} overflow="scroll">
+    <ContainedAssetCard {...exampleProps} />
+    <ContainedAssetCard {...exampleProps} size="l" />
+    <ContainedAssetCard {...examplePropsWithChildren} size="l" />
+  </HStack>
 );
 
 export default {

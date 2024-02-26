@@ -11,13 +11,13 @@ const PressableScreen = () => {
     <ExampleScreen>
       <Example title="Pressable">
         <Box spacing={1}>
-          <Pressable accessibilityRole="button" backgroundColor="background">
+          <Pressable accessibilityRole="button" background="background">
             <TextBody>Default background</TextBody>
           </Pressable>
         </Box>
 
         <Box background="backgroundOverlay" spacing={1}>
-          <Pressable accessibilityRole="button" backgroundColor="backgroundAlternate">
+          <Pressable accessibilityRole="button" background="backgroundAlternate">
             <TextBody>Other background</TextBody>
           </Pressable>
         </Box>
@@ -25,7 +25,7 @@ const PressableScreen = () => {
         <Box spacing={1}>
           <Pressable
             accessibilityRole="button"
-            backgroundColor="background"
+            background="background"
             borderColor="primary"
             borderRadius="roundedLarge"
             borderWidth="button"
@@ -36,7 +36,7 @@ const PressableScreen = () => {
         <Box spacing={1}>
           <Pressable
             accessibilityRole="button"
-            backgroundColor="primary"
+            background="primary"
             borderRadius="roundedLarge"
             borderWidth="button"
           >
@@ -47,7 +47,7 @@ const PressableScreen = () => {
           <Pressable
             loading
             accessibilityRole="button"
-            backgroundColor="primary"
+            background="primary"
             borderRadius="roundedLarge"
             borderWidth="button"
           >
@@ -71,13 +71,13 @@ const PressableScreen = () => {
       </Example>
       <Example title="Pressable transparentWhileInactive">
         <Box spacing={1}>
-          <Pressable transparentWhileInactive accessibilityRole="button" backgroundColor="primary">
+          <Pressable transparentWhileInactive accessibilityRole="button" background="primary">
             <TextBody>Default background</TextBody>
           </Pressable>
         </Box>
 
         <Box background="backgroundOverlay" spacing={1}>
-          <Pressable transparentWhileInactive accessibilityRole="button" backgroundColor="primary">
+          <Pressable transparentWhileInactive accessibilityRole="button" background="primary">
             <TextBody>Other background</TextBody>
           </Pressable>
         </Box>

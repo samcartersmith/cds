@@ -5,10 +5,21 @@ import { NudgeCardBaseProps } from '@cbhq/cds-common/types';
 import { IconButton } from '../buttons';
 import { Pictogram } from '../illustrations/Pictogram';
 import { Box, HStack } from '../layout';
-import { OnPress, PressableOpacity } from '../system';
+import { PressableOpacity, PressableProps } from '../system';
 import { TextHeadline } from '../typography';
 
 import { CardBody } from './CardBody';
+
+export type NudgeCardProps = {
+  /**
+   * Callback fired when the action button is pressed
+   * Cannot be used when `action` is a React Element, only when `action` is a string
+   */
+  onActionPress?: PressableProps['onPress'];
+  /** Callback fired when the dismiss button is pressed */
+  onDismissPress?: PressableProps['onPress'];
+} & NudgeCardBaseProps &
+  Pick<PressableProps, 'onPress'>;
 
 export const NudgeCard = memo(
   ({
@@ -29,7 +40,7 @@ export const NudgeCard = memo(
     maxWidth,
     onPress,
     ...props
-  }: NudgeCardBaseProps<OnPress>) => {
+  }: NudgeCardProps) => {
     const renderAction = isValidElement(action) ? (
       action
     ) : (
@@ -69,15 +80,13 @@ export const NudgeCard = memo(
         ) : null}
         <CardBody
           compact
+          action={action ? renderAction : null}
           description={description}
           media={<Pictogram dimension="64x64" name={pictogram} testID={`${testID}-spot-square`} />}
           numberOfLines={numberOfLines}
-          orientation="horizontal"
           title={title}
           {...props}
-        >
-          {action ? renderAction : null}
-        </CardBody>
+        />
       </Box>
     );
     return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;

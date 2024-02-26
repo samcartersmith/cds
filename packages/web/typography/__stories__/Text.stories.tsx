@@ -3,7 +3,6 @@ import { ResponsiveProps } from '@cbhq/cds-common/types';
 
 import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import {
   TextBody,
@@ -59,7 +58,7 @@ export const Normal = () => (
     {textComponents.map((Component) => {
       const name = Component.displayName?.slice(4);
       return (
-        <Component key={name} as="p">
+        <Component key={name} as="p" display="block">
           {name}
         </Component>
       );
@@ -81,40 +80,6 @@ export const Dense = () => (
       })}
     </>
   </ThemeProvider>
-);
-
-export const FrontierNormal = () => (
-  <FeatureFlagProvider frontierTypography>
-    <>
-      {renderHeaderComponents({ display: 'block' })}
-      {textComponents.map((Component) => {
-        const name = Component.displayName?.slice(4);
-        return (
-          <Component key={name} as="p" display="block">
-            {name}
-          </Component>
-        );
-      })}
-    </>
-  </FeatureFlagProvider>
-);
-
-export const FrontierDense = () => (
-  <FeatureFlagProvider frontierTypography>
-    <ThemeProvider scale="xSmall">
-      <>
-        {renderHeaderComponents({ display: 'block' })}
-        {textComponents.map((Component) => {
-          const name = Component.displayName?.slice(4);
-          return (
-            <Component key={name} as="p" display="block">
-              {name}
-            </Component>
-          );
-        })}
-      </>
-    </ThemeProvider>
-  </FeatureFlagProvider>
 );
 
 export const MonoFont = () => (

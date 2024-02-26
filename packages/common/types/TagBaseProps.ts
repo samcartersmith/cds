@@ -17,9 +17,9 @@ type TagThemedProps = {
    */
   colorScheme: ColorScheme;
   /** @danger Custom background color */
-  dangerouslySetBackground?: never;
+  background?: never;
   /** @danger Custom text color */
-  dangerouslySetColor?: never;
+  color?: never;
 };
 
 type TagWildcardProps = {
@@ -29,9 +29,9 @@ type TagWildcardProps = {
    */
   colorScheme?: never;
   /** @danger Custom background color */
-  dangerouslySetBackground: PaletteValue;
+  background?: PaletteValue;
   /** @danger Custom text color */
-  dangerouslySetColor: PaletteValue;
+  color?: PaletteValue;
 };
 
 export type TagBaseProps = {

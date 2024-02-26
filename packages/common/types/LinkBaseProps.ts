@@ -1,9 +1,7 @@
 import { PaletteForeground } from './Palette';
 import { Typography } from './Typography';
 
-export type LinkTypography =
-  | Exclude<Typography, 'display1' | 'display2' | 'display2Frontier' | 'display3'>
-  | 'inherit';
+export type LinkTypography = Exclude<Typography, 'display1' | 'display2' | 'display3'> | 'inherit';
 
 export type LinkBaseProps = {
   /** URL that this link goes to when pressed. */

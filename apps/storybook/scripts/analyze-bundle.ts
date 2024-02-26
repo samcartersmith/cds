@@ -27,7 +27,6 @@ const NODE_MODULES_FILTERED_LABELS = ['@storybook'];
 const packageDetailedMessagesOrder: { [key: string]: string } = {
   common: '',
   web: '',
-  'web-overlays': '',
   'web-visualization': '',
 };
 
@@ -38,7 +37,6 @@ const packageDetailedMessagesOrder: { [key: string]: string } = {
 const packageSimpleMessagesOrder: { [key: string]: string } = {
   common: '',
   web: '',
-  'web-overlays': '',
   'web-visualization': '',
   fonts: '',
   icons: '',

@@ -96,7 +96,7 @@ export const FullscreenAlert = memo(function FullscreenAlert({
           {body}
         </TextBody>
       </VStack>
-      <Box dangerouslySetClassName={actionsContainerClassName}>
+      <Box className={actionsContainerClassName}>
         {!!dismissActionLabel && (
           <Button onPress={onDismissActionPress} variant="secondary">
             {dismissActionLabel}

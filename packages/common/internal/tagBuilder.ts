@@ -14,7 +14,6 @@ const config = {
     },
   },
   args: {
-    frontier: true,
     scale: 'large',
     spectrum: 'light',
   },
@@ -52,14 +51,14 @@ export const tagStories = {
   wildcard: [
     {
       children: 'Atlanta',
-      dangerouslySetBackground: 'blue100',
-      dangerouslySetColor: 'red10',
+      background: 'blue100',
+      color: 'red10',
     },
     {
       children: 'Los Angeles',
       intent: 'promotional',
-      dangerouslySetBackground: 'yellow30',
-      dangerouslySetColor: 'purple80',
+      background: 'yellow30',
+      color: 'purple80',
     },
   ],
   truncated: [

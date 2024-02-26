@@ -1,30 +1,28 @@
-import React, { memo } from 'react';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import React, { forwardRef, memo } from 'react';
 
 import { Divider } from '../layout/Divider';
 import { Group, GroupProps, RenderGroupItem } from '../layout/Group';
-import { useFeatureFlag } from '../system/useFeatureFlag';
 
-export type CardGroupProps = GroupProps;
+export type CardGroupProps = Omit<GroupProps, 'horizontal'>;
 export type CardGroupRenderItem = RenderGroupItem;
 
-export const CardGroup = memo(function CardGroup({
-  children,
-  direction = 'vertical',
-  horizontal = false,
-  ...props
-}: CardGroupProps) {
-  const isFrontier = useFeatureFlag('frontierCard');
-  const isHorizontal = horizontal || direction === 'horizontal';
-  return (
-    <Group
-      direction={isHorizontal ? 'horizontal' : 'vertical'}
-      divider={isFrontier ? Divider : null}
-      gap={isFrontier ? 0 : gutter}
-      offsetHorizontal={isFrontier && !isHorizontal ? gutter : 0}
-      {...props}
-    >
-      {children}
-    </Group>
-  );
-});
+export const CardGroup = memo(
+  forwardRef<HTMLElement, CardGroupProps>(function CardGroup(
+    { accessibilityLabel, children, direction = 'vertical', divider = Divider, ...props },
+    ref,
+  ) {
+    return (
+      <Group
+        ref={ref}
+        accessibilityLabel={accessibilityLabel}
+        direction={direction}
+        divider={divider}
+        {...props}
+      >
+        {children}
+      </Group>
+    );
+  }),
+);
+
+CardGroup.displayName = 'CardGroup';

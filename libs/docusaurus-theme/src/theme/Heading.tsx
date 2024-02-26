@@ -31,10 +31,10 @@ const TextHeading = ({
   ...rest
 }: TextProps & { originalAs: HeadingType; className?: string }) => {
   const Text = headingMap[originalAs] as React.ComponentType<
-    React.PropsWithChildren<{ as?: HeadingType } & SpacingProps>
+    React.PropsWithChildren<{ as?: HeadingType; className?: string } & SpacingProps>
   >;
   return (
-    <Text as={originalAs} dangerouslySetClassName={className} {...rest}>
+    <Text as={originalAs} className={className} {...rest}>
       {children}
     </Text>
   );

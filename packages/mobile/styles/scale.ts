@@ -7,8 +7,7 @@ export const xSmall = {
   name: 'xSmall',
   typography: {
     display1: { fontSize: 61, lineHeight: 68, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2: { fontSize: 31, lineHeight: 40, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2Frontier: { fontSize: 45, lineHeight: 52, fontFamily: 'CoinbaseDisplay-Regular' },
+    display2: { fontSize: 45, lineHeight: 52, fontFamily: 'CoinbaseDisplay-Regular' },
     display3: { fontSize: 37, lineHeight: 44, fontFamily: 'CoinbaseDisplay-Regular' },
     title1: { fontSize: 25, lineHeight: 32, fontFamily: 'CoinbaseDisplay-Medium' },
     title2: { fontSize: 25, lineHeight: 32, fontFamily: 'CoinbaseDisplay-Regular' },
@@ -49,8 +48,7 @@ export const small = {
   name: 'small',
   typography: {
     display1: { fontSize: 62, lineHeight: 72, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2: { fontSize: 32, lineHeight: 40, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2Frontier: { fontSize: 46, lineHeight: 56, fontFamily: 'CoinbaseDisplay-Regular' },
+    display2: { fontSize: 46, lineHeight: 56, fontFamily: 'CoinbaseDisplay-Regular' },
     display3: { fontSize: 38, lineHeight: 48, fontFamily: 'CoinbaseDisplay-Regular' },
     title1: { fontSize: 26, lineHeight: 32, fontFamily: 'CoinbaseDisplay-Medium' },
     title2: { fontSize: 26, lineHeight: 32, fontFamily: 'CoinbaseDisplay-Regular' },
@@ -91,8 +89,7 @@ export const medium = {
   name: 'medium',
   typography: {
     display1: { fontSize: 63, lineHeight: 72, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2: { fontSize: 33, lineHeight: 40, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2Frontier: { fontSize: 47, lineHeight: 56, fontFamily: 'CoinbaseDisplay-Regular' },
+    display2: { fontSize: 47, lineHeight: 56, fontFamily: 'CoinbaseDisplay-Regular' },
     display3: { fontSize: 39, lineHeight: 48, fontFamily: 'CoinbaseDisplay-Regular' },
     title1: { fontSize: 27, lineHeight: 36, fontFamily: 'CoinbaseDisplay-Medium' },
     title2: { fontSize: 27, lineHeight: 36, fontFamily: 'CoinbaseDisplay-Regular' },
@@ -133,8 +130,7 @@ export const large = {
   name: 'large',
   typography: {
     display1: { fontSize: 64, lineHeight: 72, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2: { fontSize: 34, lineHeight: 44, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2Frontier: { fontSize: 48, lineHeight: 56, fontFamily: 'CoinbaseDisplay-Regular' },
+    display2: { fontSize: 48, lineHeight: 56, fontFamily: 'CoinbaseDisplay-Regular' },
     display3: { fontSize: 40, lineHeight: 48, fontFamily: 'CoinbaseDisplay-Regular' },
     title1: { fontSize: 28, lineHeight: 36, fontFamily: 'CoinbaseDisplay-Medium' },
     title2: { fontSize: 28, lineHeight: 36, fontFamily: 'CoinbaseDisplay-Regular' },
@@ -175,8 +171,7 @@ export const xLarge = {
   name: 'xLarge',
   typography: {
     display1: { fontSize: 66, lineHeight: 76, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2: { fontSize: 36, lineHeight: 44, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2Frontier: { fontSize: 50, lineHeight: 60, fontFamily: 'CoinbaseDisplay-Regular' },
+    display2: { fontSize: 50, lineHeight: 60, fontFamily: 'CoinbaseDisplay-Regular' },
     display3: { fontSize: 42, lineHeight: 52, fontFamily: 'CoinbaseDisplay-Regular' },
     title1: { fontSize: 30, lineHeight: 36, fontFamily: 'CoinbaseDisplay-Medium' },
     title2: { fontSize: 30, lineHeight: 36, fontFamily: 'CoinbaseDisplay-Regular' },
@@ -217,8 +212,7 @@ export const xxLarge = {
   name: 'xxLarge',
   typography: {
     display1: { fontSize: 68, lineHeight: 76, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2: { fontSize: 38, lineHeight: 48, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2Frontier: { fontSize: 52, lineHeight: 60, fontFamily: 'CoinbaseDisplay-Regular' },
+    display2: { fontSize: 52, lineHeight: 60, fontFamily: 'CoinbaseDisplay-Regular' },
     display3: { fontSize: 44, lineHeight: 52, fontFamily: 'CoinbaseDisplay-Regular' },
     title1: { fontSize: 32, lineHeight: 40, fontFamily: 'CoinbaseDisplay-Medium' },
     title2: { fontSize: 32, lineHeight: 40, fontFamily: 'CoinbaseDisplay-Regular' },
@@ -259,8 +253,7 @@ export const xxxLarge = {
   name: 'xxxLarge',
   typography: {
     display1: { fontSize: 70, lineHeight: 80, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2: { fontSize: 40, lineHeight: 48, fontFamily: 'CoinbaseDisplay-Regular' },
-    display2Frontier: { fontSize: 54, lineHeight: 64, fontFamily: 'CoinbaseDisplay-Regular' },
+    display2: { fontSize: 54, lineHeight: 64, fontFamily: 'CoinbaseDisplay-Regular' },
     display3: { fontSize: 46, lineHeight: 56, fontFamily: 'CoinbaseDisplay-Regular' },
     title1: { fontSize: 34, lineHeight: 40, fontFamily: 'CoinbaseDisplay-Medium' },
     title2: { fontSize: 34, lineHeight: 40, fontFamily: 'CoinbaseDisplay-Regular' },

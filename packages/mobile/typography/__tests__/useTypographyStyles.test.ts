@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { large, xSmall } from '../../styles/scale';
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import { DenseScaleProvider } from '../../system/ThemeProvider';
 import { useTypographyStyles } from '../useTypographyStyles';
 
@@ -16,22 +15,8 @@ describe('useTypographyStyles', () => {
     });
     expect(result.current).toEqual(xSmall.typography.body);
   });
-  it('returns the correct value for display2 if frontierTypography is true', () => {
-    const { result } = renderHook(() => useTypographyStyles('display2'), {
-      wrapper: FeatureFlagProvider,
-      initialProps: {
-        frontierTypography: true,
-      },
-    });
-    expect(result.current).toEqual(large.typography.display2Frontier);
-  });
-  it('returns the correct value for display2 if frontierTypography is false', () => {
-    const { result } = renderHook(() => useTypographyStyles('display2'), {
-      wrapper: FeatureFlagProvider,
-      initialProps: {
-        frontierTypography: false,
-      },
-    });
+  it('returns the correct value for display2', () => {
+    const { result } = renderHook(() => useTypographyStyles('display2'));
     expect(result.current).toEqual(large.typography.display2);
   });
   it('returns the correct mono font-family if mono arg is true', () => {

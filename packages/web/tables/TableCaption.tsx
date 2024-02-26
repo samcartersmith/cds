@@ -52,20 +52,14 @@ export const TableCaption = memo(
       <caption data-testid={testID} style={inlineStyles} {...rest}>
         <Box
           {...outerCaptionSpacing}
-          dangerouslySetClassName={cx(
-            responsiveOuterSpacing,
-            responsiveConfig && responsiveClassName,
-          )}
+          className={cx(responsiveOuterSpacing, responsiveConfig && responsiveClassName)}
         >
           <Box
             alignContent="stretch"
             flexDirection="column"
             flexGrow={1}
             {...innerCaptionSpacing}
-            dangerouslySetClassName={cx(
-              responsiveInnerSpacing,
-              responsiveConfig && responsiveClassName,
-            )}
+            className={cx(responsiveInnerSpacing, responsiveConfig && responsiveClassName)}
           >
             {typeof children === 'string' ? (
               <TextTitle3 align={align} as={as} color="currentColor">

@@ -1,7 +1,7 @@
 import { spectrumConfigs } from '../../spectrum/spectrumConfigs';
 import { dark, light } from '../../spectrum/spectrumRgbArray';
 import { PaletteAlias } from '../../types';
-import { defaultPalette } from '../constants';
+import { darkDefaultPalette, defaultPalette } from '../constants';
 import { paletteAliasToRgbaString } from '../paletteAliasToRgbaString';
 
 describe('paletteAliasToRgbaString', () => {
@@ -24,7 +24,7 @@ describe('paletteAliasToRgbaString', () => {
   });
 
   it('gets the correct rgb value for spectrum alias in dark mode', () => {
-    for (const [palette, paletteValue] of Object.entries(defaultPalette)) {
+    for (const [palette, paletteValue] of Object.entries(darkDefaultPalette)) {
       let expectedRgbaVal = '';
       if (typeof paletteValue !== 'string') {
         const [color, alpha] = paletteValue;

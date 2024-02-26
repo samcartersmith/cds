@@ -12,11 +12,11 @@ export type TextIconProps = Pick<IconProps, 'color' | 'size' | 'name' | 'testID'
   (
     | {
         animated: true;
-        dangerouslySetStyle: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
+        style: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
       }
     | {
         animated?: false | undefined;
-        dangerouslySetStyle?: StyleProp<TextStyle>;
+        style?: StyleProp<TextStyle>;
       }
   );
 
@@ -32,7 +32,7 @@ export const TextIcon = memo(function TextIcon({
   size,
   name,
   testID,
-  dangerouslySetStyle,
+  style,
 }: TextIconProps) {
   const Component = animated ? Animated.Text : Text;
   const { iconSize, sourceSize } = useIconSize(size, false);
@@ -46,9 +46,9 @@ export const TextIcon = memo(function TextIcon({
           fontSize: iconSize,
           color: iconColor,
         },
-        dangerouslySetStyle,
+        style,
       ] as TextStyle,
-    [dangerouslySetStyle, iconColor, iconSize],
+    [style, iconColor, iconSize],
   );
 
   const glyphKey = `ui-${name}-${sourceSize}` as const;

@@ -13,16 +13,7 @@ export type GridColumnProps<As extends BoxElement = 'div'> = {
   /** The semantic element your component will render as. Is necessary for accessibility support and assistive technologies. */
   as?: As;
 } & GridColumnBaseProps &
-  Pick<
-    BoxProps,
-    | 'role'
-    | 'overflow'
-    | 'opacity'
-    | 'dangerouslySetClassName'
-    | 'dangerouslySetStyle'
-    | 'tabIndex'
-    | 'display'
-  > &
+  Pick<BoxProps, 'role' | 'overflow' | 'opacity' | 'className' | 'style' | 'tabIndex' | 'display'> &
   React.AriaAttributes &
   React.DOMAttributes<Element>;
 
@@ -31,8 +22,8 @@ export const GridColumn = memo(
     {
       children,
       responsiveConfig,
-      dangerouslySetClassName,
-      dangerouslySetStyle,
+      style,
+      className,
       gap,
       gridColumn,
       colSpan,
@@ -46,25 +37,25 @@ export const GridColumn = memo(
 
     const styles = useMemo(
       () => ({
-        ...dangerouslySetStyle,
+        ...style,
         ...(colSpan && { gridColumn: `${colStart} / span ${colSpan}` }),
         ...(gridColumn && { gridColumn }),
       }),
-      [colSpan, colStart, dangerouslySetStyle, gridColumn],
+      [colSpan, colStart, style, gridColumn],
     );
 
     return (
       <Box
         ref={forwardedRef}
-        dangerouslySetClassName={cx(
+        className={cx(
           gap && gapStyles[gap],
           responsiveConfig && responsiveClassName,
           responsiveStyleClassNames,
           colStartStyles[`colStart-${colStart}`],
           colEndStyles[`colEnd-${colEnd}`],
-          dangerouslySetClassName,
+          className,
         )}
-        dangerouslySetStyle={styles}
+        style={styles}
         {...props}
       >
         {children}

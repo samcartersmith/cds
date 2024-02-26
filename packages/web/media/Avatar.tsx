@@ -31,7 +31,7 @@ export type AvatarWebProps = {
   /**
    * @danger Adds a className to the Avatar. If you pass in a className make sure your styles override the Avatar using the avatar class .cds-avatar like this: .my-class.cds-avatar
    */
-  dangerouslySetClassName?: string;
+  className?: string;
   /** Adds treatment that indicates that the Avatar is currently selected */
   selected?: boolean;
 } & AvatarBaseProps;
@@ -43,7 +43,7 @@ export const Avatar = memo(
     shape = 'circle',
     size = 'l',
     borderColor,
-    dangerouslySetClassName,
+    className,
     testID,
     dangerouslySetSize,
     selected,
@@ -153,11 +153,11 @@ export const Avatar = memo(
         <Box
           alignItems="center"
           borderRadius={borderRadius}
-          dangerouslySetClassName={avatarColoredFallbackClassName}
-          dangerouslySetStyle={styleOverrides}
+          className={avatarColoredFallbackClassName}
           flexGrow={1}
           height="100%"
           justifyContent="center"
+          style={styleOverrides}
           testID={`${testID}-fallback`}
         >
           {avatarText}
@@ -181,20 +181,20 @@ export const Avatar = memo(
           alignItems="center"
           borderColor={hasBorder ? borderColor : 'transparent'}
           borderRadius={borderRadius}
-          dangerouslySetBackground={dangerouslySetBackground}
-          dangerouslySetClassName={cx(
+          className={cx(
             staticClassName,
-            dangerouslySetClassName as string,
+            className as string,
             hasBorder ? borderStyles : undefined,
             hexagonClassName,
           )}
-          dangerouslySetStyle={selected && !isHexagon ? ringStyles : undefined}
+          dangerouslySetBackground={dangerouslySetBackground}
           flexGrow={0}
           flexShrink={0}
           height={computedSize}
           justifyContent="center"
           overflow={boxOverflow}
           position="relative"
+          style={selected && !isHexagon ? ringStyles : undefined}
           testID={testID}
           width={computedSize}
         >

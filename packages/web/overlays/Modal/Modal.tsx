@@ -57,11 +57,11 @@ export const Modal = memo(
       accessibilityLabelledBy,
       accessibilityLabel,
       zIndex: customZIndex,
-      dangerouslySetWidth,
+      width,
       dangerouslyDisableResponsiveness = false,
       dangerouslySetPosition,
       shouldCloseOnEscPress = true,
-      dangerouslySetClassName,
+      className,
       id,
       testID,
       role,
@@ -117,8 +117,8 @@ export const Modal = memo(
       <ModalWrapper
         accessibilityLabel={label}
         accessibilityLabelledBy={labelledBy}
+        className={className}
         dangerouslyDisableResponsiveness={dangerouslyDisableResponsiveness}
-        dangerouslySetClassName={dangerouslySetClassName}
         disableOverlayPress={disableOverlayPress}
         disablePortal={disablePortal}
         id={id}
@@ -144,13 +144,13 @@ export const Modal = memo(
           >
             <VStack
               background="background"
-              dangerouslySetClassName={cx(
+              className={cx(
                 modalDialogClassName,
                 !dangerouslyDisableResponsiveness && modalDialogResponsiveClassName,
               )}
               elevation={2}
               overflow="hidden"
-              width={dangerouslySetWidth ?? '100%'}
+              width={width ?? '100%'}
             >
               <ModalParentContext.Provider value={modalData}>
                 {typeof children === 'function' ? children(renderChildrenProps) : children}

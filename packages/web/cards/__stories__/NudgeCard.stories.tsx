@@ -1,13 +1,11 @@
 import React from 'react';
-import { NoopFn } from '@cbhq/cds-common';
-import { NudgeCardBaseProps } from '@cbhq/cds-common/types/NudgeCardBaseProps';
 import { NoopFn as noopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { PictogramName } from '@cbhq/cds-illustrations';
 
 import { Button } from '../../buttons';
 import { HStack, VStack } from '../../layout';
 import { TextBody, TextHeadline } from '../../typography';
-import { NudgeCard } from '../NudgeCard';
+import { NudgeCard, NudgeCardProps } from '../NudgeCard';
 
 const exampleProps = {
   title: "It's Onchain Summer!",
@@ -34,7 +32,7 @@ const longProps = {
   pictogram: 'addWallet' as PictogramName,
 };
 
-export const Default = (overrides: Partial<NudgeCardBaseProps<NoopFn>>) => (
+export const Default = (overrides: Partial<NudgeCardProps>) => (
   <VStack gap={2}>
     <NudgeCard {...exampleProps} {...overrides} />
     <NudgeCard {...exampleProps} {...overrides} onDismissPress={noopFn} />

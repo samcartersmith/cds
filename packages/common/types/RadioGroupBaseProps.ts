@@ -10,5 +10,5 @@ export type RadioGroupBaseProps<T extends string> = {
   /** Set a label summary for the group of radios. */
   label?: React.ReactNode;
   /** Currently selected value. */
-  selectedValue?: T;
+  value?: T;
 } & Pick<GroupBaseProps<BoxBaseProps>, 'direction' | 'gap'>;

@@ -1,6 +1,6 @@
 import { PropsWithChildren, useMemo } from 'react';
 
-import { VStack } from '../../alpha/VStack';
+import { VStack } from '../../layout/VStack';
 
 export const MockTabPanel = ({
   id,

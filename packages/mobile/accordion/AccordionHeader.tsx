@@ -47,15 +47,15 @@ export const AccordionHeader = memo(
       { itemKey, title, subtitle, onPress, media, collapsed, testID }: AccordionHeaderProps,
       forwardedRef: ForwardedRef<View>,
     ) => {
-      const { onItemPress } = useAccordionParent();
+      const { onChange } = useAccordionParent();
       const spacing = useCellSpacing();
       const minHeight = useScaleConditional(listHeight);
       const accessibilityLabel = subtitle ? `${title}, ${subtitle}` : title;
 
       const handlePress = useCallback(() => {
         onPress?.(itemKey);
-        onItemPress?.(itemKey);
-      }, [onPress, onItemPress, itemKey]);
+        onChange?.(itemKey);
+      }, [onPress, onChange, itemKey]);
 
       return (
         <Pressable
@@ -65,7 +65,7 @@ export const AccordionHeader = memo(
           accessibilityLabel={accessibilityLabel}
           accessibilityRole="togglebutton"
           accessibilityState={{ expanded: !collapsed }}
-          backgroundColor="background"
+          background="background"
           onPress={handlePress}
           testID={testID}
         >

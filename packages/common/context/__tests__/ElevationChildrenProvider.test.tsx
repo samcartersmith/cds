@@ -1,6 +1,11 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { defaultPalette } from '../../palette/constants';
+import {
+  darkDefaultPalette,
+  defaultPalette,
+  elevation1ChildrenPalette,
+  elevation2ChildrenPalette,
+} from '../../palette/constants';
 import { usePaletteConfig } from '../../palette/usePaletteConfig';
 import { SystemProvider } from '../../SystemProvider';
 import { ElevationChildrenProvider, ElevationProvider } from '../ElevationProvider';
@@ -57,8 +62,8 @@ describe('ElevationChildrenProvider', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
       wrapper: Wrapper,
     });
-    expect(result.current.secondary).toEqual(defaultPalette.secondary);
-    expect(result.current.line).toEqual(defaultPalette.line);
+    expect(result.current.secondary).toEqual(darkDefaultPalette.secondary);
+    expect(result.current.line).toEqual(darkDefaultPalette.line);
   });
 
   it('overrides palette variables if spectrum is dark and parent has elevation of 1', () => {
@@ -76,8 +81,7 @@ describe('ElevationChildrenProvider', () => {
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
     expect(result.current.background).toBe('gray5');
-    // secondary should match background
-    expect(result.current.secondary).toEqual(['gray5', 1]);
+    expect(result.current.secondary).toStrictEqual(elevation1ChildrenPalette.dark.secondary);
     // should not override line unless level 2
     expect(result.current.line).toEqual(defaultPalette.line);
   });
@@ -96,10 +100,8 @@ describe('ElevationChildrenProvider', () => {
       wrapper: Wrapper,
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
-    expect(result.current.background).toBe('gray10');
-    // secondary should match background
-    expect(result.current.secondary).toEqual(['gray10', 1]);
+    expect(result.current.secondary).toStrictEqual(elevation2ChildrenPalette.dark.secondary);
     // line should be brighter
-    expect(result.current.line).toEqual(defaultPalette.lineHeavy);
+    expect(result.current.line).toStrictEqual(elevation2ChildrenPalette.dark.line);
   });
 });

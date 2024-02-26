@@ -53,7 +53,7 @@ export type TableProps = {
   /**
    * @danger This is an escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetClassName?: string;
+  className?: string;
 } & SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabelledBy' | 'accessibilityLabel'> &
   Omit<React.HTMLAttributes<HTMLTableElement>, 'dangerouslySetInnerHTML'>;

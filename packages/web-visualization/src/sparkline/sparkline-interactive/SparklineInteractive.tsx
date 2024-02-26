@@ -69,7 +69,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   fallback = null,
   hidePeriodSelector = false,
   disableScrubbing = false,
-  fill,
+  fill = true,
   yAxisScalingFactor = 1.0,
   compact,
   formatHoverDate,
@@ -258,7 +258,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
       </SparklineInteractiveScrubProvider>
       <Box position="relative">
         {showBottomMarkerDates && (
-          <Box background dangerouslySetStyle={stylesToPreventInteraction} pin="top" width="100%">
+          <Box background pin="top" style={stylesToPreventInteraction} width="100%">
             <SparklineInteractiveMarkerDates
               formatDate={formatDate}
               getMarker={getMarker}
@@ -270,7 +270,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
         {/* Must always be mounted so we can tab directly to it */}
         <Box
           background
-          dangerouslySetClassName={animatedPeriodSelectorClassName}
+          className={animatedPeriodSelectorClassName}
           pin="top"
           spacingTop={1}
           width="100%"

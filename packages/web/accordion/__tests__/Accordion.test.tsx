@@ -43,24 +43,24 @@ describe('Accordion', () => {
   });
 
   it('triggers on press', () => {
-    const onItemPress = jest.fn();
+    const onChange = jest.fn();
     const onPress1 = jest.fn();
     const onPress2 = jest.fn();
 
-    render(<MockAccordion onItemPress={onItemPress} onPress1={onPress1} onPress2={onPress2} />);
+    render(<MockAccordion onChange={onChange} onPress1={onPress1} onPress2={onPress2} />);
 
     fireEvent.click(screen.getByTestId('mock-accordion-item1-header'));
 
-    expect(onItemPress).toHaveBeenCalledTimes(1);
-    expect(onItemPress).toHaveBeenCalledWith('1');
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith('1');
 
     expect(onPress1).toHaveBeenCalledTimes(1);
     expect(onPress1).toHaveBeenCalledWith('1');
 
     fireEvent.click(screen.getByTestId('mock-accordion-item2-header'));
 
-    expect(onItemPress).toHaveBeenCalledTimes(2);
-    expect(onItemPress).toHaveBeenCalledWith('2');
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(onChange).toHaveBeenCalledWith('2');
 
     expect(onPress2).toHaveBeenCalledTimes(1);
     expect(onPress2).toHaveBeenCalledWith('2');
@@ -126,7 +126,7 @@ describe('Accordion', () => {
     render(
       <Accordion
         defaultActiveKey="2"
-        onItemPress={noop}
+        onChange={noop}
         style={customAccordionStyle}
         testID="mock-accordion"
       >

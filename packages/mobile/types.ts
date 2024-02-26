@@ -19,9 +19,7 @@ export type DangerouslySetStyle<T, IsAnimated extends boolean = boolean> = {
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetStyle?: IsAnimated extends true
-    ? Animated.WithAnimatedValue<StyleProp<T>>
-    : StyleProp<T>;
+  style?: IsAnimated extends true ? Animated.WithAnimatedValue<StyleProp<T>> : StyleProp<T>;
   /** Opacity of element */
   opacity?: IsAnimated extends true ? Animated.WithAnimatedValue<StyleProp<T>> : number;
 };

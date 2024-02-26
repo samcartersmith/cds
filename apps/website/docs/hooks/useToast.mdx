@@ -21,7 +21,7 @@ const toast = useToast();
 
 toast.show('Toast copy', {
   action: { label: 'Action', onPress: () => console.log('action pressed') },
-  dangerouslySetDuration: 5000,
+  duration: 5000,
   hideCloseButton: true,
   onWillHide: () => {
     console.log('toast hiding');

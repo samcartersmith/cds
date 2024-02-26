@@ -16,8 +16,6 @@ import { CollapseArrow } from '@cbhq/cds-web/collapsible/CollapseArrow';
 // should update to '@cbhq-web/navigation/Sidebar'
 // @ts-expect-error testing
 import { Sidebar } from '@cbhq/cds-web/deprecated/navigation/Sidebar';
-// the import path should change to the decomped package
-import { Dropdown } from '@cbhq/cds-web/dropdown';
 // @ts-expect-error testing
 import { useIsMobile } from '@cbhq/cds-web/hooks/useIsMobile';
 // Badge import should throw warning that component was removed
@@ -68,6 +66,7 @@ export const V5MigrationsTest = () => {
       {/* @ts-expect-error testing */}
       <Box borderRadius="tooltip" />
       {/* boolean prop -> attribute value migrations */}
+      {/* @ts-expect-error testing */}
       <Group horizontal>
         <Box />
         <Box />
@@ -85,10 +84,6 @@ export const V5MigrationsTest = () => {
       </Sidebar>
       {/* This should get swapped out with AnimatedCaret */}
       <CollapseArrow />
-      {/* this should not be deprecated after package decomp migrations run */}
-      <Dropdown content="test">
-        <IconButton name="caretDown" />
-      </Dropdown>
       <PopoverMenu>
         <PopoverTrigger />
       </PopoverMenu>

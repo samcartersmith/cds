@@ -79,18 +79,18 @@ export const Group = () => {
         name="radio-group1"
         onChange={setGroup1}
         options={options1}
-        selectedValue={group1}
+        value={group1}
       />
       <TextHeadline as="span" id="choose-a-mascot">
         Choose a mascot
       </TextHeadline>
       <RadioGroup
-        aria-labelledby="choose-a-mascot"
+        accessibilityLabelledBy="choose-a-mascot"
         id="mascot-radio-group"
         name="radio-group2"
         onChange={setGroup2}
         options={options2}
-        selectedValue={group2}
+        value={group2}
       />
       <RadioGroup
         aria-labelledby="choose-a-currency2"
@@ -105,7 +105,7 @@ export const Group = () => {
         name="radio-group3"
         onChange={setGroup3}
         options={options1}
-        selectedValue={group3}
+        value={group3}
       />
       <TextHeadline as="span" id="select-dish-to-order">
         Select a dish to order
@@ -117,7 +117,7 @@ export const Group = () => {
         name="radio-group4"
         onChange={setGroup4}
         options={options3}
-        selectedValue={group4}
+        value={group4}
       />
     </>
   );

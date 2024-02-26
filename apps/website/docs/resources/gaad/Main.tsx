@@ -1,12 +1,12 @@
 import { useCallback, useState } from 'react';
 import Link from '@docusaurus/Link';
 import { noop } from 'lodash';
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
 import { Button } from '@cbhq/cds-web/buttons';
 import { Collapsible } from '@cbhq/cds-web/collapsible';
 import { Icon } from '@cbhq/cds-web/icons';
 import { HStack } from '@cbhq/cds-web/layout';
 import { Box } from '@cbhq/cds-web/layout/Box';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { RemoteImage } from '@cbhq/cds-web/media';
 import { Tooltip } from '@cbhq/cds-web/overlays';
 import { PressableOpacity } from '@cbhq/cds-web/system';

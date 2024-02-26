@@ -5,7 +5,7 @@ import { Dropdown, DropdownRefProps } from '../dropdown';
 import { HStack } from '../layout';
 import { Avatar } from '../media';
 import { PopoverContentPositionConfig } from '../overlays';
-import { FeatureFlagProvider, Pressable, ThemeProvider } from '../system';
+import { Pressable } from '../system';
 import { enableJavascript } from '../utils/storybookParams/percy';
 
 import { ProfileMenuContent } from './ProfileMenuContent';
@@ -37,37 +37,32 @@ export const ProfileMenu = ({
     pressableRef?.current?.focus();
   }, []);
   return (
-    <FeatureFlagProvider frontierButton frontierColor>
-      <ThemeProvider>
-        {/* below HStack is for demo purpose only */}
-        <HStack>
-          <Dropdown
-            ref={dropdownRef}
-            enableMobileModal
-            showOverlay
-            content={<ProfileMenuContent />}
-            contentPosition={switcherPositionConfig}
-            maxHeight={profileMenuHeight}
-            minWidth={0} // this forces truncation, otherwise minWidth default is min-content
-            onCloseMenu={onCloseMenu}
-            width={profileMenuWidth}
-          >
-            <Pressable
-              ref={pressableRef}
-              noScaleOnPress
-              accessibilityLabel="profile menu"
-              as="button"
-              backgroundColor="transparent"
-              borderRadius="roundedFull"
-            >
-              <HStack alignItems="center" gap={1}>
-                <Avatar alt={title} colorScheme={avatarColorScheme} name={title} size="xl" />
-              </HStack>
-            </Pressable>
-          </Dropdown>
-        </HStack>
-      </ThemeProvider>
-    </FeatureFlagProvider>
+    <HStack>
+      <Dropdown
+        ref={dropdownRef}
+        enableMobileModal
+        showOverlay
+        content={<ProfileMenuContent />}
+        contentPosition={switcherPositionConfig}
+        maxHeight={profileMenuHeight}
+        minWidth={0} // this forces truncation, otherwise minWidth default is min-content
+        onCloseMenu={onCloseMenu}
+        width={profileMenuWidth}
+      >
+        <Pressable
+          ref={pressableRef}
+          noScaleOnPress
+          accessibilityLabel="profile menu"
+          as="button"
+          background="transparent"
+          borderRadius="roundedFull"
+        >
+          <HStack alignItems="center" gap={1}>
+            <Avatar alt={title} colorScheme={avatarColorScheme} name={title} size="xl" />
+          </HStack>
+        </Pressable>
+      </Dropdown>
+    </HStack>
   );
 };
 

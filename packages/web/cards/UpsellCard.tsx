@@ -9,8 +9,15 @@ import {
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
-import { PressableOpacity } from '../system';
+import { type PressableProps, PressableOpacity } from '../system';
 import { TextHeadline, TextLabel2 } from '../typography';
+
+export type UpsellCardProps = UpsellCardBaseProps & {
+  /** Callback fired when the action button is pressed */
+  onActionPress?: PressableProps['onPress'];
+  /** Callback fired when the dismiss button is pressed */
+  onDismissPress?: PressableProps['onPress'];
+} & Pick<PressableProps, 'onPress'>;
 
 export const UpsellCard = memo(
   ({
@@ -26,7 +33,7 @@ export const UpsellCard = memo(
     accessibilityLabel,
     width = upsellCardDefaultWidth,
     onPress,
-  }: UpsellCardBaseProps) => {
+  }: UpsellCardProps) => {
     const density = useScaleDensity();
     const content = (
       <HStack
@@ -41,7 +48,7 @@ export const UpsellCard = memo(
         // eslint-disable-next-line react/jsx-sort-props
         dangerouslySetBackground={dangerouslySetBackground}
         // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop, react/jsx-sort-props
-        dangerouslySetStyle={{ border: 'none' }}
+        style={{ border: 'none' }}
       >
         <HStack
           alignContent="space-between"

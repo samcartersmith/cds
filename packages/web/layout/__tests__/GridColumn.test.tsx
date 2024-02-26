@@ -56,7 +56,7 @@ describe('GridColumn', () => {
   it('can set custom styles', () => {
     render(
       <GridColumn
-        dangerouslySetStyle={{
+        style={{
           backgroundColor: 'red',
         }}
         testID={TEST_ID}

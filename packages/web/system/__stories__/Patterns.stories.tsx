@@ -1,13 +1,11 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useToggler } from '@cbhq/cds-common';
 
-import { HStack } from '../../alpha/HStack';
-import { VStack } from '../../alpha/VStack';
 import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
 import { Icon } from '../../icons/Icon';
 import { SpotRectangle } from '../../illustrations';
-import { Box } from '../../layout';
+import { Box, HStack, VStack } from '../../layout';
 import { FullscreenAlert, Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';
 import { Link, TextBody, TextHeadline, TextLabel2, TextTitle3 } from '../../typography';
 
@@ -290,12 +288,7 @@ export const DisclosureHighFrictionRisk = () => {
             {data.map(({ id, headline, checkboxLabel, linkText, linkUrl }, index) => (
               <VStack key={id} as="li" gap={1}>
                 <TextHeadline as="h3">{headline}</TextHeadline>
-                <HStack
-                  alignItems="center"
-                  as="label"
-                  dangerouslySetStyle={checkboxLabelStyles}
-                  gap={1}
-                >
+                <HStack alignItems="center" as="label" gap={1} style={checkboxLabelStyles}>
                   <Checkbox checked={checkboxes[index]} onChange={handleCheckboxChange(index)} />
                   <TextLabel2 as="span">
                     {checkboxLabel}{' '}

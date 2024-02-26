@@ -58,7 +58,7 @@ const SwitchIcon = ({
 
   return (
     <Interactable
-      backgroundColor={checked ? 'primary' : 'backgroundAlternate'}
+      background={checked ? 'primary' : 'backgroundAlternate'}
       borderRadius="roundedLarge"
       disabled={disabled}
       pressed={pressed}
@@ -66,7 +66,7 @@ const SwitchIcon = ({
       testID={testID}
     >
       <Interactable
-        backgroundColor="background"
+        background="background"
         borderColor="line"
         borderRadius="roundedFull"
         borderWidth="card"

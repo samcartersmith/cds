@@ -32,23 +32,13 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => (
 ));
 
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
-  <Box
-    dangerouslySetClassName={truncateClassName}
-    flexGrow={1}
-    flexShrink={1}
-    justifyContent="flex-start"
-  >
+  <Box className={truncateClassName} flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
       <TextHeadline as="div" overflow="wrap">
         {title}
       </TextHeadline>
       {!!subtitle && (
-        <TextBody
-          as="div"
-          color="foregroundMuted"
-          dangerouslySetClassName={overflowClassName}
-          overflow="wrap"
-        >
+        <TextBody as="div" className={overflowClassName} color="foregroundMuted" overflow="wrap">
           {subtitle}
         </TextBody>
       )}
@@ -70,14 +60,14 @@ export const AccordionHeader = memo(
       { itemKey, title, subtitle, onPress, media, collapsed = false, testID }: AccordionHeaderProps,
       forwardedRef: ForwardedRef<HTMLButtonElement>,
     ) => {
-      const { onItemPress } = useAccordionParent();
+      const { onChange } = useAccordionParent();
       const spacing = useCellSpacing();
       const minHeight = useScaleConditional(listHeight);
 
       const handlePress = useCallback(() => {
         onPress?.(itemKey);
-        onItemPress?.(itemKey);
-      }, [onPress, onItemPress, itemKey]);
+        onChange?.(itemKey);
+      }, [onPress, onChange, itemKey]);
 
       return (
         <h2 className={typographyResets}>
@@ -87,7 +77,7 @@ export const AccordionHeader = memo(
             transparentWhileInactive
             aria-controls={getAccordionPanelId(itemKey)}
             aria-expanded={!collapsed} // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
-            backgroundColor="background"
+            background="background"
             id={getAccordionHeaderId(itemKey)}
             onPress={handlePress}
             testID={testID}

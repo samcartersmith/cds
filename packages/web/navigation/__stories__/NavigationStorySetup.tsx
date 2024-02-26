@@ -233,7 +233,7 @@ export const NavLinkExample = () => {
 
   return (
     <HStack gap={3}>
-      <NavLink {...getProps('test')} dangerouslySetClassName={testOverrideClass}>
+      <NavLink {...getProps('test')} className={testOverrideClass}>
         Override Test
       </NavLink>
       <NavLink {...getProps('assets')}>Assets</NavLink>
@@ -251,7 +251,7 @@ const renderCB1 = (isCollapsed: boolean) => {
   return (
     <Pressable
       as="button"
-      backgroundColor="primaryWash"
+      background="primaryWash"
       borderRadius="roundedLarge"
       onPress={() => handlePress('Notifications')}
     >

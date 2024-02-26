@@ -13,10 +13,7 @@ export type GridProps<As extends BoxElement = 'div'> = {
   /** The semantic element your component will render as. Is necessary for accessibility support and assistive technologies. */
   as?: As;
 } & GridBaseProps &
-  Pick<
-    BoxProps,
-    'role' | 'overflow' | 'opacity' | 'dangerouslySetClassName' | 'dangerouslySetStyle' | 'tabIndex'
-  > &
+  Pick<BoxProps, 'role' | 'overflow' | 'opacity' | 'className' | 'style' | 'tabIndex'> &
   React.AriaAttributes &
   React.DOMAttributes<Element>;
 
@@ -31,8 +28,8 @@ export const Grid = memo(
       templateColumns,
       columnMin,
       columnMax = '1fr',
-      dangerouslySetClassName,
-      dangerouslySetStyle,
+      style,
+      className,
       gap,
       ...props
     }: GridProps<As>,
@@ -54,21 +51,21 @@ export const Grid = memo(
           gridTemplateColumns: `repeat(auto-fill, minmax(${columnMin}, ${columnMax}))`,
         };
       }
-      return dangerouslySetStyle;
-    }, [columnMax, columnMin, dangerouslySetStyle, isImplicit, templateColumns]);
+      return style;
+    }, [columnMax, columnMin, style, isImplicit, templateColumns]);
 
     return (
       <Box
         ref={forwardedRef}
-        dangerouslySetClassName={cx(
+        className={cx(
           columnsProp && columnsClassName,
           gap && gapStyles[gap],
           responsiveConfig && responsiveClassName,
           responsiveStyleClassNames,
-          dangerouslySetClassName,
+          className,
         )}
-        dangerouslySetStyle={styles}
         display="grid"
+        style={styles}
         {...props}
       >
         {children}

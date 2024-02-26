@@ -14,7 +14,7 @@ export type AccordionBaseProps = {
   /**
    * Callback function fired when any of accordion items is pressed
    */
-  onItemPress?: (key: string) => void;
+  onChange?: (key: string) => void;
   children: ReactElement<AccordionItemBaseProps>[] | ReactElement<AccordionItemBaseProps>;
 } & SharedProps;
 

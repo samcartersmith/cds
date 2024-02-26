@@ -2,7 +2,7 @@ import { ElevationLevels } from '@cbhq/cds-common';
 
 import { usePalette } from '../hooks/usePalette';
 import { Box, Grid, VStack } from '../layout';
-import { FeatureFlagProvider, ThemeProvider } from '../system';
+import { ThemeProvider } from '../system';
 import { TextCaption } from '../typography';
 import { objectKeys } from '../utils/types';
 
@@ -15,35 +15,33 @@ const Palette = ({
 }) => {
   const palette = usePalette();
   return (
-    <FeatureFlagProvider frontier>
-      <ThemeProvider spectrum={spectrum}>
-        <Grid background="background" columnMax="200px" columnMin="min-content">
-          {objectKeys(palette).map((color) => {
-            return (
-              <Box
-                alignItems="center"
-                dangerouslySetBackground={palette[color]}
-                elevation={elevation}
-                height={200}
-                justifyContent="center"
-                width={200}
-              >
-                <VStack background="background">
+    <ThemeProvider spectrum={spectrum}>
+      <Grid background="background" columnMax="200px" columnMin="min-content">
+        {objectKeys(palette).map((color) => {
+          return (
+            <Box
+              alignItems="center"
+              dangerouslySetBackground={palette[color]}
+              elevation={elevation}
+              height={200}
+              justifyContent="center"
+              width={200}
+            >
+              <VStack background="background">
+                <TextCaption align="center" as="p">
+                  {color}
+                </TextCaption>
+                {!!elevation && (
                   <TextCaption align="center" as="p">
-                    {color}
+                    Elevation: {elevation}
                   </TextCaption>
-                  {!!elevation && (
-                    <TextCaption align="center" as="p">
-                      Elevation: {elevation}
-                    </TextCaption>
-                  )}
-                </VStack>
-              </Box>
-            );
-          })}
-        </Grid>
-      </ThemeProvider>
-    </FeatureFlagProvider>
+                )}
+              </VStack>
+            </Box>
+          );
+        })}
+      </Grid>
+    </ThemeProvider>
   );
 };
 

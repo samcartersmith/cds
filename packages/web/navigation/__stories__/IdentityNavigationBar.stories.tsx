@@ -8,7 +8,6 @@ import { Button, IconButton, NavigationIconButton } from '../../buttons';
 import { SearchInput } from '../../controls';
 import { HStack, Spacer, VStack } from '../../layout';
 import { PortalProvider } from '../../overlays/PortalProvider';
-import { FeatureFlagProvider, ThemeProvider } from '../../system';
 import { TabNavigation } from '../../tabs';
 import { TextTitle1 } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
@@ -88,13 +87,9 @@ const IdentityNavigationBarConsumer = () => {
 export const IdentityNavigationBarExampleDefault: Story = () => {
   return (
     <PortalProvider>
-      <FeatureFlagProvider frontierButton frontierColor>
-        <ThemeProvider>
-          <TextTitle1 as="h1">NavigationBar example for Identity Team</TextTitle1>
-          <Spacer />
-          <IdentityNavigationBarConsumer />
-        </ThemeProvider>
-      </FeatureFlagProvider>
+      <TextTitle1 as="h1">NavigationBar example for Identity Team</TextTitle1>
+      <Spacer />
+      <IdentityNavigationBarConsumer />
     </PortalProvider>
   );
 };

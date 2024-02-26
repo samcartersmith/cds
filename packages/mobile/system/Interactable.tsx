@@ -19,7 +19,7 @@ export type InteractableProps = {
   SharedProps;
 
 export const Interactable = memo(function Interactable({
-  backgroundColor,
+  background,
   borderColor,
   borderRadius,
   borderWidth,
@@ -42,13 +42,13 @@ export const Interactable = memo(function Interactable({
     return getInteractableStyles({
       themeConfig,
       elevationConfig,
-      backgroundColor: transparentWhileInactive && !pressed ? 'transparent' : backgroundColor,
+      background: transparentWhileInactive && !pressed ? 'transparent' : background,
       borderColor: transparentWhileInactive && !pressed ? 'transparent' : borderColor,
       borderRadius,
       borderWidth,
     });
   }, [
-    backgroundColor,
+    background,
     borderColor,
     borderRadius,
     borderWidth,

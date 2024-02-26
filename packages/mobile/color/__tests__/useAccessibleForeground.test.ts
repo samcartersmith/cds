@@ -47,9 +47,9 @@ describe('useAccessibleForeground', () => {
 
   it('returns the closest spectrum color if it does not meet accessibility requirements', () => {
     const { normalText, largeText, graphic } = checkAllUsages('#fff000');
-    expect(normalText).toBe('rgba(159,106,9,1)');
-    expect(largeText).toBe('rgba(159,106,9,1)');
-    expect(graphic).toBe('rgba(188,141,27,1)');
+    expect(normalText).toBe('rgba(154,96,0,1)');
+    expect(largeText).toBe('rgba(154,96,0,1)');
+    expect(graphic).toBe('rgba(188,131,0,1)');
   });
 
   it('returns the correct color spectrum color if trying to render a light gray color on a light background', () => {

@@ -70,9 +70,9 @@ export const ListCell = memo(function ListCell({
       <VStack justifyContent="center">
         {!!title && (
           <TextHeadline
-            dangerouslySetStyle={largeTextStyle}
             ellipsize="tail"
             numberOfLines={description || disableMultilineTitle ? 1 : 2}
+            style={largeTextStyle}
           >
             {title}
           </TextHeadline>
@@ -81,10 +81,10 @@ export const ListCell = memo(function ListCell({
         {!!description && (
           <TextBody
             color="foregroundMuted"
-            dangerouslySetStyle={largeTextStyle}
             ellipsize={multiline ? undefined : 'tail'}
             // eslint-disable-next-line no-nested-ternary
             numberOfLines={multiline ? undefined : title ? 1 : 2}
+            style={largeTextStyle}
           >
             {description}
           </TextBody>

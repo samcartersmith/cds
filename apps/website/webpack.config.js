@@ -23,10 +23,6 @@ function configureForDocusaurus(config) {
 
   config.resolve.alias.linaria$ = '@linaria/core';
   config.resolve.alias[':cds-website'] = path.resolve(__dirname, './');
-  config.resolve.alias['@cbhq/cds-web-overlays'] = path.resolve(
-    __dirname,
-    '../../packages/web-overlays/src',
-  );
   config.resolve.alias['@cbhq/cds-web-visualization'] = path.resolve(
     __dirname,
     '../../packages/web-visualization/src',

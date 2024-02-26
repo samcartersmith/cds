@@ -26,8 +26,8 @@ export const TabIndicator = memo(
             <Box
               animated
               background={background}
-              dangerouslySetStyle={widthStyle}
               height={2}
+              style={widthStyle}
               testID="cds-tab-indicator-inner-bar"
               width="100%"
             />

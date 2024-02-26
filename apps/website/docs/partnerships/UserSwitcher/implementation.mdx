@@ -37,40 +37,38 @@ function UserSwitcherRecipe({
   const avatarColorScheme = getAvatarFallbackColor(title);
   return (
     <PortalProvider>
-      <FeatureFlagProvider frontierColor frontierButton>
-        <HStack spacing={4}>
-          <Dropdown
-            content={<UserSwitcherContent />}
-            width={416}
-            maxHeight={674}
-            showOverlay
-            contentPosition={switcherPositionConfig}
-            showMobileModal
-          >
-            <Pressable backgroundColor="transparent" as="button" borderRadius="rounded">
-              <HStack gap={1} alignItems="center">
-                <Avatar size="xl" alt={title} name={title} colorScheme={avatarColorScheme} />
-                <VStack maxWidth={172} minWidth={0}>
-                  {description ? (
-                    <TextLabel1 overflow="truncate" as="p">
-                      {title}
-                    </TextLabel1>
-                  ) : (
-                    <TextHeadline overflow="truncate" as="h3">
-                      {title}
-                    </TextHeadline>
-                  )}
-                  {description ? (
-                    <TextLabel2 overflow="truncate" as="p">
-                      {description}
-                    </TextLabel2>
-                  ) : null}
-                </VStack>
-              </HStack>
-            </Pressable>
-          </Dropdown>
-        </HStack>
-      </FeatureFlagProvider>
+      <HStack spacing={4}>
+        <Dropdown
+          content={<UserSwitcherContent />}
+          width={416}
+          maxHeight={674}
+          showOverlay
+          contentPosition={switcherPositionConfig}
+          showMobileModal
+        >
+          <Pressable background="transparent" as="button" borderRadius="rounded">
+            <HStack gap={1} alignItems="center">
+              <Avatar size="xl" alt={title} name={title} colorScheme={avatarColorScheme} />
+              <VStack maxWidth={172} minWidth={0}>
+                {description ? (
+                  <TextLabel1 overflow="truncate" as="p">
+                    {title}
+                  </TextLabel1>
+                ) : (
+                  <TextHeadline overflow="truncate" as="h3">
+                    {title}
+                  </TextHeadline>
+                )}
+                {description ? (
+                  <TextLabel2 overflow="truncate" as="p">
+                    {description}
+                  </TextLabel2>
+                ) : null}
+              </VStack>
+            </HStack>
+          </Pressable>
+        </Dropdown>
+      </HStack>
     </PortalProvider>
   );
 }
@@ -165,7 +163,6 @@ function UserSwitcherContentExample() {
   }
 
   return (
-    <FeatureFlagProvider frontierColor frontierButton>
       <VStack gap={1} alignItems="center" spacingTop={1} spacingHorizontal={1}>
         {/* selected Avatar should always use the blue colorScheme */}
         <Avatar
@@ -214,7 +211,6 @@ function UserSwitcherContentExample() {
           Sign out of all accounts
         </Button>
       </VStack>
-    </FeatureFlagProvider>
   );
 }
 ```

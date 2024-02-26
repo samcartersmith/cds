@@ -2,7 +2,7 @@
 import React, { forwardRef, memo, ReactNode, useCallback } from 'react';
 import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
-import { SharedProps } from '@cbhq/cds-common';
+import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
 import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
 import { RadioGroupBaseProps } from '@cbhq/cds-common/types/RadioGroupBaseProps';
@@ -29,7 +29,7 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
   return (
     <Control
       ref={ref}
-      backgroundColor="background"
+      background="background"
       borderRadius="roundedFull"
       label={children}
       type="radio"
@@ -64,7 +64,7 @@ function useHandleRadioSelect<T extends string>(onChange?: (value: T) => void) {
 }
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
-  { label, selectedValue, onChange, options, name, testID, ...restProps }: RadioGroupProps<T>,
+  { label, value, onChange, options, name, testID, ...restProps }: RadioGroupProps<T>,
   ref: React.ForwardedRef<HTMLDivElement>,
 ) {
   const handleSelect = useHandleRadioSelect<T>(onChange);
@@ -72,15 +72,15 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   return (
     <Group ref={ref} role="radiogroup" testID={testID} {...restProps}>
       {label}
-      {Object.entries<string | ReactNode>(options).map(([value, option]) => (
+      {Object.entries<string | ReactNode>(options).map(([optionValue, option]) => (
         <Radio
-          key={value}
-          checked={selectedValue === value}
-          id={`${name}-${value}`}
+          key={optionValue}
+          checked={value === optionValue}
+          id={`${name}-${optionValue}`}
           name={name}
           onChange={handleSelect}
-          testID={testID ? `${testID}-${value}` : undefined}
-          value={value}
+          testID={testID ? `${testID}-${optionValue}` : undefined}
+          value={optionValue}
         >
           {option}
         </Radio>
@@ -109,7 +109,8 @@ export type RadioGroupProps<T extends string> = {
   onChange?: (value: T) => void;
 } & FilteredHTMLAttributes<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &
   RadioGroupBaseProps<T> &
-  SharedProps;
+  SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabelledBy'>;
 
 const FOCUS_PADDING = `calc(-1 * (4px + ${borderWidth.checkbox}))`;
 

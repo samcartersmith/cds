@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { defaultPalette } from '../../palette/constants';
+import { defaultPalette, elevation1Palette, elevation2Palette } from '../../palette/constants';
 import { usePaletteConfig } from '../../palette/usePaletteConfig';
 import { SystemProvider } from '../../SystemProvider';
 import { ElevationProvider, ElevationProviderProps } from '../ElevationProvider';
@@ -48,7 +48,7 @@ describe('ElevationProvider', () => {
       wrapper: Wrapper,
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
-    expect(result.current.background).toBe('gray5');
+    expect(result.current.background).toBe(elevation1Palette.dark.background);
   });
 
   it('overrides palette variables if spectrum is dark and elevation of 2 is set', () => {
@@ -64,6 +64,6 @@ describe('ElevationProvider', () => {
       wrapper: Wrapper,
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
-    expect(result.current.background).toBe('gray10');
+    expect(result.current.background).toEqual(elevation2Palette.dark.background);
   });
 });

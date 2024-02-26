@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { LiveProviderProps } from 'react-live';
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 import { Document } from '@contentful/rich-text-types';
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 import Playground from '@cbhq/docusaurus-theme/src/theme/Playground';
 
 import ReactLiveScope from '../../src/theme/ReactLiveScope';

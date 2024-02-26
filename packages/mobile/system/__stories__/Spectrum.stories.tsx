@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 
 import { useAccessibleForeground } from '../../color/useAccessibleForeground';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -24,7 +23,6 @@ export const hueSteps = [0, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100] as c
 
 const SpectrumScreen = () => {
   const spectrum = useSpectrum();
-  const hasFrontier = useFeatureFlag('frontierColor');
   const getAccessibleForeground = useAccessibleForeground();
 
   return (
@@ -35,7 +33,7 @@ const SpectrumScreen = () => {
             <VStack key={hue}>
               {hueSteps.map((step) => {
                 const paletteValue = `${hue}${step}` as const;
-                const background = paletteValueToRgbaString(paletteValue, spectrum, hasFrontier);
+                const background = paletteValueToRgbaString(paletteValue, spectrum);
                 const foreground = getAccessibleForeground({
                   background,
                   color: 'auto',

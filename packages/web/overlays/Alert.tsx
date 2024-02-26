@@ -102,14 +102,14 @@ export const Alert = memo(
             hideDividers
             accessibilityLabel={label}
             accessibilityLabelledBy={labelledBy}
-            dangerouslySetClassName={stacked ? alertOverModalClassName : undefined}
+            className={stacked ? alertOverModalClassName : undefined}
             dangerouslySetPosition={!stacked ? 'static' : undefined} // center alert vertically
-            dangerouslySetWidth={318} // from design
             onRequestClose={onRequestClose}
             role="alertdialog"
             shouldCloseOnEscPress={!!dismissActionLabel} // disable esc close when no dismiss action
             testID={testID}
             visible={visible}
+            width={318} // from design
             {...props}
           >
             <Box

@@ -10,6 +10,7 @@ import {
   FeedCardBaseProps,
   IconButtonBaseProps,
   ListCellBaseProps,
+  NoopFn,
   PaletteForeground,
   SpotSquareProps,
   StackBaseProps,
@@ -37,7 +38,7 @@ export type CreateCardProps = {
   Card: React.ComponentType<React.PropsWithChildren<CardBaseProps & BoxBaseProps>>;
   CardBody?: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps>>;
   SpotSquare?: React.ComponentType<React.PropsWithChildren<SpotSquareProps & BoxBaseProps>>;
-  FeedCard?: React.ComponentType<React.PropsWithChildren<FeedCardBaseProps>>;
+  FeedCard?: React.ComponentType<React.PropsWithChildren<FeedCardBaseProps<NoopFn>>>;
   IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps>>;
   VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
   LoremIpsum: React.ComponentType<
@@ -62,10 +63,6 @@ export function cardBuilder({
   Box,
   Button,
   Card,
-  CardBody,
-  SpotSquare,
-  FeedCard,
-  IconButton,
   VStack,
   ListCell,
   CellMedia,
@@ -213,55 +210,6 @@ export function cardBuilder({
     </ThemeProvider>
   );
 
-  const FeedCardExample = () => {
-    if (FeedCard) {
-      return (
-        <ThemeProvider>
-          <FeedCard
-            avatarUrl="https://images.coinbase.com/avatar?s=350"
-            bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-            bodyMediaUrl="https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png"
-            bodyOrientation="vertical"
-            bodyTitle="LEARN AMP. EARN $3 IN AMP."
-            footerActions={
-              <Button compact variant="secondary">
-                Actions
-              </Button>
-            }
-            headerActionNode={
-              <IconButton
-                transparent
-                accessibilityLabel="More actions"
-                name="more"
-                variant="foregroundMuted"
-              />
-            }
-            headerDescription="Earn crypto"
-          />
-        </ThemeProvider>
-      );
-    }
-    return null;
-  };
-
-  const SpotSquareExample = () => {
-    if (CardBody && SpotSquare) {
-      return (
-        <ThemeProvider>
-          <Card>
-            <CardBody
-              description="You can fit up to fifty two chararcters on 2 lines"
-              media={<SpotSquare name="addMultipleCrypto" />}
-              orientation="horizontal"
-              title="Title/Headline"
-            />
-          </Card>
-        </ThemeProvider>
-      );
-    }
-    return null;
-  };
-
   return {
     ListCellCard,
     PressableCards,
@@ -272,7 +220,5 @@ export function cardBuilder({
     PinnedRightCard,
     PinnedBottomCard,
     PinnedLeftCard,
-    FeedCardExample,
-    SpotSquareExample,
   };
 }

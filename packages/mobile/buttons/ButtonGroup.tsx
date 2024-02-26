@@ -11,10 +11,9 @@ export const ButtonGroup = memo(function ButtonGroup({
   block,
   children,
   testID,
-  vertical,
   direction,
 }: ButtonGroupProps) {
-  const isVertical = direction === 'vertical' || vertical;
+  const isVertical = direction === 'vertical';
   const Stack = isVertical ? VStack : HStack;
 
   return (

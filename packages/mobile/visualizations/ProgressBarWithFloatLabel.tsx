@@ -71,10 +71,10 @@ const ProgressBarFloatLabel = memo(
         <Box
           animated
           alignSelf="flex-start"
-          dangerouslySetStyle={progressStyle}
           flexGrow={0}
           flexShrink={0}
           onLayout={handleTextLayout}
+          style={progressStyle}
           testID="cds-progress-bar-float-label"
         >
           <ProgressTextLabel

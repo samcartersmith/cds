@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.0.0 (2/23/2024 PST)
+
+#### 💥 Breaking
+
+- CDS 6 release. [[#2779](https://github.cbhq.net/frontend/cds/pull/2779)]
+
 ## 5.37.0 (2/21/2024 PST)
 
 #### 🚀 Updates

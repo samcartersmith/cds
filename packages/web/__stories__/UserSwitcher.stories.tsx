@@ -5,7 +5,6 @@ import { Dropdown } from '../dropdown/Dropdown';
 import { HStack } from '../layout';
 import { Avatar } from '../media/Avatar';
 import { PopoverContentPositionConfig } from '../overlays';
-import { FeatureFlagProvider } from '../system';
 import { Pressable } from '../system/Pressable';
 
 import { UserSwitcherContent } from './UserSwitcherContent';
@@ -21,7 +20,7 @@ const userSwitcherHeight = 674;
 const Subject = ({ title }: SwitcherSubjectProps) => {
   const avatarColorScheme = getAvatarFallbackColor(title);
   return (
-    <Pressable noScaleOnPress as="button" backgroundColor="transparent" borderRadius="rounded">
+    <Pressable noScaleOnPress as="button" background="transparent" borderRadius="rounded">
       <HStack alignItems="center" gap={1}>
         <Avatar alt={title} colorScheme={avatarColorScheme} name={title} size="xl" />
       </HStack>
@@ -36,21 +35,19 @@ const switcherPositionConfig: PopoverContentPositionConfig = {
 
 const UserSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => {
   return (
-    <FeatureFlagProvider frontierButton frontierColor>
-      <HStack>
-        <Dropdown
-          enableMobileModal
-          showOverlay
-          content={<UserSwitcherContent />}
-          contentPosition={switcherPositionConfig}
-          maxHeight={userSwitcherHeight}
-          minWidth={0} // this forces truncation, otherwise minWidth default is min-content
-          width={userSwitcherWidth}
-        >
-          {children}
-        </Dropdown>
-      </HStack>
-    </FeatureFlagProvider>
+    <HStack>
+      <Dropdown
+        enableMobileModal
+        showOverlay
+        content={<UserSwitcherContent />}
+        contentPosition={switcherPositionConfig}
+        maxHeight={userSwitcherHeight}
+        minWidth={0} // this forces truncation, otherwise minWidth default is min-content
+        width={userSwitcherWidth}
+      >
+        {children}
+      </Dropdown>
+    </HStack>
   );
 });
 

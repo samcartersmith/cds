@@ -1,7 +1,7 @@
-import { HStack } from '@cbhq/cds-web/alpha/HStack';
 import { Collapsible } from '@cbhq/cds-web/collapsible';
 import { Icon } from '@cbhq/cds-web/icons';
 import { VStack } from '@cbhq/cds-web/layout';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
 import { TextLabel1 } from '@cbhq/cds-web/typography';
 import { ProgressBar } from '@cbhq/cds-web/visualizations';
 

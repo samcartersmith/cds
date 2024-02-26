@@ -115,14 +115,16 @@ yAxisScaling.parameters = {
   },
 };
 
-export const Fill = () => (
+export const FillDisabled = () => (
   <React.StrictMode>
-    <SparklineInteractiveBuild fill data={sparklineInteractiveData} strokeColor={strokeColor} />
+    <SparklineInteractiveBuild
+      data={sparklineInteractiveData}
+      fill={false}
+      strokeColor={strokeColor}
+    />
   </React.StrictMode>
 );
-
-Fill.bind({});
-Fill.parameters = {
+FillDisabled.parameters = {
   percy: enableJavascript,
   a11y: {
     config: {
@@ -133,13 +135,43 @@ Fill.parameters = {
 
 export const FallbackPositive = () => <SparklineInteractiveBuild strokeColor={strokeColor} />;
 
+FallbackPositive.bind({});
+FallbackPositive.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
 export const FallbackNegative = () => (
   <SparklineInteractiveBuild fallbackType="negative" strokeColor={strokeColor} />
 );
 
+FallbackNegative.bind({});
+FallbackNegative.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
 export const FallbackCompact = () => (
   <SparklineInteractiveBuild compact strokeColor={strokeColor} />
 );
+
+FallbackCompact.bind({});
+FallbackCompact.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
 
 export const NoHoverDate = () => (
   <SparklineInteractiveBuild

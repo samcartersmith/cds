@@ -5,14 +5,12 @@ import { paletteValueToInteractableToken } from './paletteValueToInteractableTok
 type PaletteConfigToInteractableTokensParams = {
   paletteConfig: PaletteConfig;
   spectrum: Spectrum;
-  hasFrontier?: boolean;
   isWeb?: boolean;
 };
 
 export function paletteConfigToInteractableTokens({
   paletteConfig,
   spectrum,
-  hasFrontier,
   isWeb,
 }: PaletteConfigToInteractableTokensParams) {
   // Object.keys + reduce is more performant than for/of loop https://jsbench.me/uhkyu88ggg/1
@@ -24,7 +22,6 @@ export function paletteConfigToInteractableTokens({
         options: {
           paletteConfig,
           spectrum,
-          hasFrontier,
           isWeb,
         },
       });

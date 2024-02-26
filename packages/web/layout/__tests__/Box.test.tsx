@@ -299,7 +299,7 @@ describe('Box', () => {
   describe('styles', () => {
     const style = { opacity: 0.4, padding: '2px 4px' };
     it('can be set _dangerously_', () => {
-      render(<Box dangerouslySetStyle={style}>Child</Box>);
+      render(<Box style={style}>Child</Box>);
 
       expect(screen.getByText('Child')).toHaveAttribute('style', 'opacity: 0.4; padding: 2px 4px;');
     });

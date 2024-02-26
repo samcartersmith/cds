@@ -16,7 +16,7 @@ export const baseVariables = {
 };
 
 export const lightVariables = {
-  <% Object.entries({...styles.spectrum.light, ...styles.spectrum.frontierLight}).map(([key, value]) => { _%>
+  <% Object.entries(styles.spectrum.light).map(([key, value]) => { _%>
     '<%- key %>': '<%- value %>',
   <% }) _%>
   <% Object.entries(configs.palette.light).map(([key, value]) => { _%>
@@ -25,7 +25,7 @@ export const lightVariables = {
 };
 
 export const darkVariables = {
-  <% Object.entries({...styles.spectrum.dark, ...styles.spectrum.frontierDark}).map(([key, value]) => { _%>
+  <% Object.entries(styles.spectrum.dark).map(([key, value]) => { _%>
     '<%- key %>': '<%- value %>',
   <% }) _%>
   <% Object.entries(configs.palette.dark).map(([key, value]) => { _%>

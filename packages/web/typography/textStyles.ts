@@ -16,12 +16,6 @@ export const display2Styles = {
   fontWeight: 'var(--display2-font-weight)',
   fontFamily: 'var(--display2-font-family)',
 };
-export const display2FrontierStyles = {
-  fontSize: 'var(--display2-frontier-font-size)',
-  lineHeight: 'var(--display2-frontier-line-height)',
-  fontWeight: 'var(--display2-frontier-font-weight)',
-  fontFamily: 'var(--display2-frontier-font-family)',
-};
 export const display3Styles = {
   fontSize: 'var(--display3-font-size)',
   lineHeight: 'var(--display3-line-height)',
@@ -94,9 +88,6 @@ export const display1 = css`
 `;
 export const display2 = css`
   ${display2Styles}
-`;
-export const display2Frontier = css`
-  ${display2FrontierStyles}
 `;
 export const display3 = css`
   ${display3Styles}

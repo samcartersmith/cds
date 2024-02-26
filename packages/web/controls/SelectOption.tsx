@@ -130,7 +130,7 @@ export const SelectOption = memo(
         ref={selectOptionRef}
         noScaleOnPress
         accessibilityLabel={accessibilityLabel}
-        backgroundColor="background"
+        background="background"
         className={cx(selectOptionStaticClassName, insetFocusRing, pressableStyles)}
         disabled={disabled}
         onKeyPress={handleKeyPress}
@@ -143,7 +143,7 @@ export const SelectOption = memo(
           {...selectCellSpacingConfig}
           accessory={
             <CellAccessory
-              dangerouslySetClassName={selected ? visibility.visible : visibility.hidden}
+              className={selected ? visibility.visible : visibility.hidden}
               type="selected"
             />
           }
@@ -163,8 +163,8 @@ export const SelectOption = memo(
             {!!description && (
               <TextBody
                 as="div"
+                className={multiline ? overflowClassName : undefined}
                 color="foregroundMuted"
-                dangerouslySetClassName={multiline ? overflowClassName : undefined}
                 overflow={multiline ? undefined : 'truncate'}
               >
                 {description}

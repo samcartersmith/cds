@@ -24,7 +24,7 @@ const SearchBar = memo(function SearchBar() {
   }, [query]);
 
   return (
-    <HStack alignItems="center" dangerouslySetClassName="search" gap={3}>
+    <HStack alignItems="center" className="search" gap={3}>
       <TextInput
         bordered
         compact

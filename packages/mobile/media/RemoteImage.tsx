@@ -110,7 +110,7 @@ export const RemoteImage = memo(function RemoteImage({
   darkModeEnhancementsApplied,
   source,
   size = 'm',
-  dangerouslySetStyle,
+  style,
   borderColor,
   onError,
   onLoad,
@@ -171,11 +171,11 @@ export const RemoteImage = memo(function RemoteImage({
           aspectRatio: aspectRatio ? aspectRatio[0] / aspectRatio[1] : undefined,
           borderRadius,
         } as const,
-        dangerouslySetStyle,
+        style,
         darkModeStyles,
         borderStyles,
       ].filter(Boolean),
-    [aspectRatio, borderRadius, borderStyles, dangerouslySetStyle, darkModeStyles],
+    [aspectRatio, borderRadius, borderStyles, style, darkModeStyles],
   );
 
   const stylesWithDimensions = useMemo(

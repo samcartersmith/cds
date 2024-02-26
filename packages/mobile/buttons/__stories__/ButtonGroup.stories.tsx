@@ -104,7 +104,7 @@ const ButtonGroupScreen = () => {
       </Example>
 
       <Example title="Vertical">
-        <ButtonGroup vertical accessibilityLabel="Group">
+        <ButtonGroup accessibilityLabel="Group" direction="vertical">
           <Button onPress={onPress}>Save</Button>
           <Button onPress={onPress} variant="negative">
             Cancel

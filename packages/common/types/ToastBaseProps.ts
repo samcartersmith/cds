@@ -12,7 +12,7 @@ export type ToastDuration = {
    * Duration is automatically calculated based on this formula https://docs.google.com/document/d/1s1u9CGb37HCeuMo2ZcVz7Zxo13HH6F10J7Z5W-8ks48
    * @danger This will override default calculated value.
    */
-  dangerouslySetDuration?: number;
+  duration?: number;
 };
 
 export type ToastAction = {

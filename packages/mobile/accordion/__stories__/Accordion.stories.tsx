@@ -45,7 +45,7 @@ const AccordionScreen = () => {
       <AccordionExample inline title="Custom Style">
         <Accordion
           defaultActiveKey="2"
-          onItemPress={noop}
+          onChange={noop}
           style={{
             paddingHorizontal: 20,
           }}

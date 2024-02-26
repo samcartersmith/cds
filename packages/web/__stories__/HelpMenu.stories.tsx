@@ -5,7 +5,6 @@ import { Dropdown, DropdownRefProps, MenuItem } from '../dropdown';
 import { Icon } from '../icons';
 import { Box, HStack, VStack } from '../layout';
 import { PopoverContentPositionConfig } from '../overlays';
-import { FeatureFlagProvider, ThemeProvider } from '../system';
 import { TextHeadline } from '../typography';
 import { enableJavascript } from '../utils/storybookParams/percy';
 
@@ -58,29 +57,24 @@ export const HelpMenu = () => {
   const dropdownRef = useRef<DropdownRefProps>(null);
 
   return (
-    <FeatureFlagProvider frontierButton frontierColor>
-      <ThemeProvider>
-        {/* below HStack is for demo purpose only */}
-        <HStack>
-          <Dropdown
-            ref={dropdownRef}
-            enableMobileModal
-            content={<HelpMenuContent />}
-            contentPosition={switcherPositionConfig}
-            minWidth={0} // this forces truncation, otherwise minWidth default is min-content
-            width={300}
-          >
-            <HStack alignItems="center" gap={1}>
-              <NavigationIconButton
-                aria-label="Help"
-                name="helpCenterQuestionMark"
-                variant="secondary"
-              />
-            </HStack>
-          </Dropdown>
+    <HStack>
+      <Dropdown
+        ref={dropdownRef}
+        enableMobileModal
+        content={<HelpMenuContent />}
+        contentPosition={switcherPositionConfig}
+        minWidth={0} // this forces truncation, otherwise minWidth default is min-content
+        width={300}
+      >
+        <HStack alignItems="center" gap={1}>
+          <NavigationIconButton
+            aria-label="Help"
+            name="helpCenterQuestionMark"
+            variant="secondary"
+          />
         </HStack>
-      </ThemeProvider>
-    </FeatureFlagProvider>
+      </Dropdown>
+    </HStack>
   );
 };
 

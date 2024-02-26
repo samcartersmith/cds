@@ -4,7 +4,6 @@ import {
   SparklineInteractivePathsProps,
   TimeseriesPathOnRenderParams,
 } from '@cbhq/cds-common';
-import { useFeatureFlag } from '@cbhq/cds-common/system/useFeatureFlag';
 
 import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
 import { SparklineInteractiveTimeseriesPaths } from './SparklineInteractiveTimeseriesPaths';
@@ -23,8 +22,7 @@ function SparklineInteractivePathsWithGeneric<Period extends string>({
 }: SparklineInteractivePathsProps<Period>) {
   const hoverPathRef = useRef<string | undefined>(undefined);
   const hoverAreaRef = useRef<string | undefined>(undefined);
-  const hasFrontier = useFeatureFlag('frontierSparkline');
-  const shouldShowFill = typeof fill !== 'undefined' ? fill : hasFrontier;
+  const shouldShowFill = !!fill;
 
   const { chartWidth, chartHeight } = useSparklineInteractiveConstants({ compact });
 

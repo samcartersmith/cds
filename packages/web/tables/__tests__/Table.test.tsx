@@ -68,8 +68,8 @@ describe('Table', () => {
 
   const testClassName = 'test-class-name';
   const exampleTestId = 'table-test-id';
-  it('passes dangerouslySetClassName', () => {
-    render(<TableMock dangerouslySetClassName={testClassName} testID={exampleTestId} />);
+  it('passes className', () => {
+    render(<TableMock className={testClassName} testID={exampleTestId} />);
 
     expect(screen.getByTestId(exampleTestId)).toHaveClass(testClassName);
   });

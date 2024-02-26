@@ -67,7 +67,7 @@ export const DotSymbol = memo(
           {source && (
             <RemoteImage
               aspectRatio={aspectRatio}
-              dangerouslySetClassName={imageBorderClassName}
+              className={imageBorderClassName}
               shape="circle"
               source={source}
               width={iconSize}
@@ -78,7 +78,7 @@ export const DotSymbol = memo(
               background="primary"
               borderColor="secondary"
               borderRadius="roundedFull"
-              dangerouslySetClassName={iconBorderClassName}
+              className={iconBorderClassName}
               spacing={0.5}
             >
               <Icon color="primaryForeground" name={iconName} size={size} />

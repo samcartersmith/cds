@@ -66,7 +66,7 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
       key={selectedPeriod}
       ref={setupRef}
       background="background"
-      dangerouslySetClassName={fadeInClassName}
+      className={fadeInClassName}
       justifyContent="space-between"
       position="relative"
       spacingHorizontal={timePeriodGutter}

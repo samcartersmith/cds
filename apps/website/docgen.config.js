@@ -22,7 +22,6 @@ module.exports = {
    */
   entryPoints: [
     path.join(__dirname, '../../packages/web/tsconfig.json'),
-    path.join(__dirname, '../../packages/web-overlays/tsconfig.json'),
     path.join(__dirname, '../../packages/web-visualization/tsconfig.json'),
     path.join(__dirname, '../../packages/mobile-visualization/tsconfig.json'),
     path.join(__dirname, '../../packages/mobile/tsconfig.json'),
@@ -87,8 +86,6 @@ module.exports = {
     'cells/ListCell',
     'cells/ListCellFallback',
     'chips/Chip',
-    // @deprecated in v6
-    'selectChip/SelectChip',
     'chips/SelectChip',
     'chips/InputChip',
     'chips/TabbedChips',
@@ -194,10 +191,6 @@ module.exports = {
     'visualizations/ProgressBarWithFixedLabels',
     'visualizations/ProgressBarWithFloatLabel',
     'visualizations/ProgressCircle',
-    'visualizations/Sparkline',
-    'visualizations/SparklineGradient',
-    'visualizations/sparkline-interactive/SparklineInteractive',
-    'visualizations/sparkline-interactive-header/SparklineInteractiveHeader',
     'sparkline/Sparkline',
     'sparkline/SparklineGradient',
     'sparkline/sparkline-interactive/SparklineInteractive',

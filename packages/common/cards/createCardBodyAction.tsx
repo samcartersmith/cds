@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 
-import type { ButtonBaseProps } from '../types/alpha';
+import type { ButtonBaseProps } from '../types';
 
 type CreateCardBodyParams<OnPressFn> = {
-  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps<OnPressFn>>>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: OnPressFn }>>;
 };
 
 export function createCardBodyAction<OnPressFn>({ Button }: CreateCardBodyParams<OnPressFn>) {
@@ -15,7 +15,7 @@ export function createCardBodyAction<OnPressFn>({ Button }: CreateCardBodyParams
     variant = 'primary',
     numberOfLines = 3,
     ...props
-  }: ButtonBaseProps<OnPressFn>) {
+  }: ButtonBaseProps) {
     return (
       <Button
         noScaleOnPress

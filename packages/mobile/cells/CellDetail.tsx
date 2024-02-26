@@ -22,8 +22,8 @@ export const CellDetail = memo(function CellDetail({
         <TextBody
           // eslint-disable-next-line react/forbid-component-props
           adjustsFontSizeToFit={adjustsFontSizeToFit}
-          dangerouslySetStyle={largeTextStyle}
           numberOfLines={1}
+          style={largeTextStyle}
         >
           {detail}
         </TextBody>
@@ -34,8 +34,8 @@ export const CellDetail = memo(function CellDetail({
           // eslint-disable-next-line react/forbid-component-props
           adjustsFontSizeToFit={adjustsFontSizeToFit}
           color={variant}
-          dangerouslySetStyle={largeTextStyle}
           numberOfLines={1}
+          style={largeTextStyle}
         >
           {subdetail}
         </TextBody>

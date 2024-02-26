@@ -7,8 +7,7 @@ import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/d
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
-import { HStack } from '../../alpha/HStack';
-import { VStack } from '../../alpha/VStack';
+import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextLegal } from '../../typography';
 

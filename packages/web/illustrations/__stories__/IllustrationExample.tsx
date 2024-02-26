@@ -1,7 +1,6 @@
 import { memo, PropsWithChildren } from 'react';
 
-import { VStack } from '../../alpha/VStack';
-import { Box } from '../../layout';
+import { Box, VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
 
 export const IllustrationExample = memo(function IllustrationExample({

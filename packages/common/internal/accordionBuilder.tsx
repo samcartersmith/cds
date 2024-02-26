@@ -20,7 +20,7 @@ export type CreateAccordionProps = {
 
 type OnPress = (key: string) => void;
 type MockAccordionProps = {
-  onItemPress?: OnPress;
+  onChange?: OnPress;
   onPress1?: OnPress;
   onPress2?: OnPress;
 };
@@ -36,7 +36,7 @@ export function accordionBuilder({
 
   const BasicAccordion = () => {
     return (
-      <Accordion defaultActiveKey="2" onItemPress={handlePress}>
+      <Accordion defaultActiveKey="2" onChange={handlePress}>
         <AccordionItem
           itemKey="1"
           media={<CellMedia name="wallet" type="icon" />}
@@ -60,7 +60,7 @@ export function accordionBuilder({
 
   const NoMedia = () => {
     return (
-      <Accordion onItemPress={handlePress}>
+      <Accordion onChange={handlePress}>
         <AccordionItem itemKey="1" subtitle="subtitle1" title="Accordion #1">
           <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
         </AccordionItem>
@@ -73,7 +73,7 @@ export function accordionBuilder({
 
   const NoSubtitle = () => {
     return (
-      <Accordion defaultActiveKey="1" onItemPress={handlePress}>
+      <Accordion defaultActiveKey="1" onChange={handlePress}>
         <AccordionItem
           itemKey="1"
           media={<CellMedia name="wallet" type="icon" />}
@@ -95,7 +95,7 @@ export function accordionBuilder({
 
   const TitleOnly = () => {
     return (
-      <Accordion defaultActiveKey="2" onItemPress={handlePress}>
+      <Accordion defaultActiveKey="2" onChange={handlePress}>
         <AccordionItem itemKey="1" title="Accordion #1">
           <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
         </AccordionItem>
@@ -108,7 +108,7 @@ export function accordionBuilder({
 
   const LongContent = () => {
     return (
-      <Accordion defaultActiveKey="2" onItemPress={handlePress}>
+      <Accordion defaultActiveKey="2" onChange={handlePress}>
         <AccordionItem itemKey="1" title="Accordion #1">
           <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
         </AccordionItem>
@@ -119,9 +119,9 @@ export function accordionBuilder({
     );
   };
 
-  const MockAccordion = ({ onItemPress, onPress1, onPress2 }: MockAccordionProps) => {
+  const MockAccordion = ({ onChange, onPress1, onPress2 }: MockAccordionProps) => {
     return (
-      <Accordion defaultActiveKey="2" onItemPress={onItemPress} testID="mock-accordion">
+      <Accordion defaultActiveKey="2" onChange={onChange} testID="mock-accordion">
         <AccordionItem
           itemKey="1"
           media={<CellMedia name="wallet" testID="mock-accordion-item1-media" type="icon" />}

@@ -63,7 +63,7 @@ const ExampleContainer = memo(({ children }: PropsWithChildren<unknown>) => {
       alignItems="center"
       background="backgroundAlternate"
       borderRadius="rounded"
-      dangerouslySetClassName={exampleClassName}
+      className={exampleClassName}
       justifyContent="center"
       spacingHorizontal={4}
       spacingVertical={7}

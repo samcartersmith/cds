@@ -49,14 +49,14 @@ describe('Banner Actions', () => {
 });
 
 describe('Banner', () => {
-  it('can set dangerouslySetClassName', () => {
+  it('can set className', () => {
     const customClassName = css`
       padding: 5px;
     `;
 
     render(
       <Banner
-        dangerouslySetClassName={customClassName}
+        className={customClassName}
         startIcon="cashUSD"
         testID={TEST_ID}
         title=""
@@ -71,15 +71,15 @@ describe('Banner', () => {
     });
   });
 
-  it('can set dangerouslySetStyle', () => {
+  it('can set style', () => {
     const customClassName = {
       position: 'sticky',
     } as const;
 
     render(
       <Banner
-        dangerouslySetStyle={customClassName}
         startIcon="cashUSD"
+        style={customClassName}
         testID={TEST_ID}
         title=""
         variant="warning"

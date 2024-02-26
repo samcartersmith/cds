@@ -1,47 +1,33 @@
 import React, { memo, useContext, useMemo } from 'react';
-import {
-  frontierSpectrumPalette,
-  NewPartialPaletteConfig,
-  SystemProviderProps,
-} from '@cbhq/cds-common';
+import { NewPartialPaletteConfig, SystemProviderProps } from '@cbhq/cds-common';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { ThemeConfigProvider } from '@cbhq/cds-common/system/ThemeConfigProvider';
 
-import { createFallbackThemeConfig, createThemeConfig } from './createThemeConfig';
+import { createThemeConfig, useFallbackThemeConfig } from './createThemeConfig';
 import { ElevationConfigsProvider } from './ElevationConfigsProvider';
-import { FeatureFlagContext } from './FeatureFlagContext';
 
 export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = memo(
   function ThemeProvider({ children, palette, name, scale, spectrum }) {
-    const hasFrontier = useContext(FeatureFlagContext)?.frontierColor;
     const parentThemeConfigContext = useContext(ThemeConfigContext)?.config;
+    const fallbackTheme = useFallbackThemeConfig();
     const config = useMemo(() => {
-      const parentThemeConfig = parentThemeConfigContext ?? createFallbackThemeConfig(hasFrontier);
+      const parentThemeConfig = parentThemeConfigContext ?? fallbackTheme;
       if (palette) {
         return createThemeConfig({
           parentThemeConfig,
           palette,
-          hasFrontier,
-          name: hasFrontier ? `${name}-frontier` : name,
+          name,
         });
       }
       // This means this is the root ThemeProvider
       if (parentThemeConfigContext === undefined) return parentThemeConfig;
-      // If frontier was updated we need ThemeConfigContext to update activeConfig
-      if (hasFrontier)
-        return createThemeConfig({
-          parentThemeConfig,
-          palette: frontierSpectrumPalette,
-          hasFrontier,
-          name: `${name}-frontier`,
-        });
       // If only spectrum was overwritten we need ThemeConfigContext to update activeConfig
       if (spectrum) return parentThemeConfig;
       // Skip rendering ThemeConfigProvider if there are no changes
       return undefined;
-    }, [hasFrontier, name, palette, parentThemeConfigContext, spectrum]);
+    }, [fallbackTheme, name, palette, parentThemeConfigContext, spectrum]);
     const skipThemeConfig = config === undefined;
     return (
       <ScaleProvider value={scale}>
@@ -50,7 +36,7 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
             children
           ) : (
             <ThemeConfigProvider value={config}>
-              <ElevationConfigsProvider hasFrontier={hasFrontier} parentThemeConfig={config}>
+              <ElevationConfigsProvider parentThemeConfig={config}>
                 {children}
               </ElevationConfigsProvider>
             </ThemeConfigProvider>

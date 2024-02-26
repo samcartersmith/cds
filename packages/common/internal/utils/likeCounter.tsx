@@ -1,13 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 
 import { useToggler } from '../../hooks/useToggler';
-import type { NoopFn } from '../../types';
-import type { LikeButtonBaseProps } from '../../types/alpha';
+import type { LikeButtonBaseProps } from '../../types';
 
-export function likeCounter({
-  count: countProp = 0,
-  liked: likedProp,
-}: LikeButtonBaseProps<NoopFn>) {
+export function likeCounter({ count: countProp = 0, liked: likedProp }: LikeButtonBaseProps) {
   return function useLikeButtonProps() {
     const [count, setCount] = useState(countProp);
     const [liked, { toggleOn, toggleOff }] = useToggler(likedProp);

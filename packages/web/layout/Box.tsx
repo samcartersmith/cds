@@ -7,6 +7,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
+import { MotionStyle } from 'framer-motion';
 import {
   ElevationChildrenProvider,
   ElevationProvider,
@@ -93,11 +94,11 @@ export type BoxProps<As extends BoxElement = 'div'> = {
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetClassName?: string;
+  className?: string;
   /**
    * @danger There may be times when you need to dynamically set styles. This comes at a performance cost, so use with caution.
    */
-  dangerouslySetStyle?: React.CSSProperties;
+  style?: React.CSSProperties | MotionStyle;
   /** Specify props by device breakpoint */
   responsiveConfig?: ResponsiveProps;
   /**
@@ -198,8 +199,8 @@ const BoxInner = forwardRef(
       offsetTop,
       offsetVertical,
       dangerouslySetBackground,
-      dangerouslySetClassName,
-      dangerouslySetStyle = emptyObject,
+      style = emptyObject,
+      className,
       responsiveConfig,
       // A11y
       ...restProps
@@ -283,7 +284,7 @@ const BoxInner = forwardRef(
           visibility && visibilityStyles[visibility],
           responsiveStyleClassNames,
           responsiveConfig && responsiveClassName,
-          dangerouslySetClassName,
+          className,
         ),
         role,
         ...accessibilityProps,
@@ -310,7 +311,7 @@ const BoxInner = forwardRef(
           borderColor,
           ...borderRadiusStyles,
           ...elevationStyles,
-          ...dangerouslySetStyle,
+          ...style,
         },
       },
       childNodes,

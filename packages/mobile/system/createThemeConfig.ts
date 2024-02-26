@@ -1,4 +1,5 @@
-import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common/palette/constants';
+import { useSpectrum } from '@cbhq/cds-common';
+import { darkDefaultPalette, defaultPalette } from '@cbhq/cds-common/palette/constants';
 import { memoize } from '@cbhq/cds-common/utils/memoize';
 
 import { createThemeConfigForSpectrum } from './createThemeConfigForSpectrum';
@@ -16,7 +17,6 @@ export const createThemeConfig = memoize(function createThemeConfig({
   palette,
   parentThemeConfig,
   name: nameProp,
-  hasFrontier,
 }: CreateThemeConfigParams) {
   const name = getCacheKey({ name: nameProp, parentThemeConfig });
   return {
@@ -26,29 +26,21 @@ export const createThemeConfig = memoize(function createThemeConfig({
       palette,
       parentThemeConfig,
       spectrum: 'light',
-      hasFrontier,
     }),
     dark: createThemeConfigForSpectrum({
       name,
       palette,
       parentThemeConfig,
       spectrum: 'dark',
-      hasFrontier,
     }),
   };
 },
 getCacheKey);
 
-export function createFallbackThemeConfig(hasFrontier?: boolean) {
-  if (hasFrontier) {
-    return createThemeConfig({
-      palette: frontierSpectrumPalette,
-      hasFrontier: true,
-      name: 'frontier',
-    });
-  }
+export function useFallbackThemeConfig() {
+  const spectrum = useSpectrum();
   return createThemeConfig({
-    palette: defaultPalette,
+    palette: spectrum === 'dark' ? darkDefaultPalette : defaultPalette,
     name: 'default',
   });
 }

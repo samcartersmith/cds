@@ -1,4 +1,3 @@
-import { useFeatureFlag } from '../system/useFeatureFlag';
 import { ButtonBaseProps, IconName, InternalSpacingProps } from '../types';
 import { getButtonSpacing } from '../utils/getButtonSpacing';
 
@@ -18,6 +17,5 @@ export function useButtonSpacing({
   endIcon,
   flush,
 }: UseButtonSpacingParams): InternalSpacingProps {
-  const hasFrontier = useFeatureFlag('frontierButton');
-  return getButtonSpacing({ compact, startIcon, endIcon, flush, hasFrontier });
+  return getButtonSpacing({ compact, startIcon, endIcon, flush });
 }

@@ -83,32 +83,6 @@ export const dark = [
     properties: {
       steps: 11,
       hue: {
-        start: 20,
-        end: 50,
-        curve: 'easeOutQuad',
-      },
-      saturation: {
-        start: 1,
-        end: 0.04,
-        rate: 1.1,
-        curve: 'easeInQuad',
-      },
-      brightness: {
-        start: 0.1,
-        end: 1,
-        curve: 'easeOutSine',
-      },
-    },
-    options: {
-      minorSteps: [0, 1],
-      name: 'yellow',
-      rotation: 'clockwise',
-    },
-  },
-  {
-    properties: {
-      steps: 11,
-      hue: {
         start: 221,
         end: 221,
         curve: 'easeOutQuad',
@@ -261,9 +235,6 @@ export const dark = [
       rotation: 'counterclockwise',
     },
   },
-];
-
-export const frontierDark = [
   {
     properties: {
       steps: 11,

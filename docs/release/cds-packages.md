@@ -40,7 +40,6 @@ Any commit can be deployed because we version every change. Locate your release 
 - corporate::cds-common
 - corporate::cds-mobile
 - corporate::cds-web-visualization
-- corporate::cds-web-overlays
 - corporate::cds-mobile-visualization
 - production::upload-css
 - production::upload-css-sw-cache

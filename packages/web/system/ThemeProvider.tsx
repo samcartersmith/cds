@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { css } from 'linaria';
 import { SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 
-import { FramerMotionProvider } from '../animation/FramerMotionProvider';
+import { FramerMotionProvider, FramerMotionProviderProps } from '../animation/FramerMotionProvider';
 import { cx } from '../utils/linaria';
 
 import { useThemeProviderStyles } from './useThemeProviderStyles';
@@ -19,7 +19,9 @@ type ThemeManagerProps = {
   display?: 'contents';
 };
 
-export type ThemeProviderProps = SystemProviderProps & ThemeManagerProps;
+export type ThemeProviderProps = SystemProviderProps &
+  ThemeManagerProps &
+  FramerMotionProviderProps;
 
 const ThemeManager: React.FC<React.PropsWithChildren<ThemeManagerProps>> = ({
   children,
@@ -34,9 +36,9 @@ const ThemeManager: React.FC<React.PropsWithChildren<ThemeManagerProps>> = ({
 };
 
 export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = memo(
-  ({ children, display, ...props }) => {
+  ({ children, display, motionFeatures, ...props }) => {
     return (
-      <FramerMotionProvider>
+      <FramerMotionProvider motionFeatures={motionFeatures}>
         <SystemProvider {...props}>
           <ThemeManager display={display}>{children}</ThemeManager>
         </SystemProvider>

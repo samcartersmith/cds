@@ -90,3 +90,17 @@ You can nest ThemeProviders to override a palette alias
   </div>
 </ThemeProvider>
 ```
+
+### Framer motion
+
+By default, ThemeProvider loads the **domAnimation** feature from framer-motion to reduce bundle size.
+If your app needs to support more motion features such as layout animation or drag gestures,
+you can load the **domMax** feature into ThemeProvider like this:
+
+```jsx
+import { domMax } from 'framer-motion';
+
+<ThemeProvider motionFeatures={domMax}>...your code</ThemeProvider>;
+```
+
+Checkout more about reducing framer-motion bundle size [here](https://www.framer.com/motion/guide-reduce-bundle-size/)

@@ -1,63 +1,21 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
-import { useButtonSpacing, UseButtonSpacingParams } from '../useButtonSpacing';
+import { useButtonSpacing } from '../useButtonSpacing';
 
 describe('useButtonSpacing', () => {
-  it('returns correct size if compact: false and frontier: false', () => {
-    const { result } = renderHook(() => {
-      return useButtonSpacing({ compact: false });
-    });
-
-    expect(result.current).toEqual({ horizontal: 3, vertical: 2 });
+  it('there is expected change for compact: true or compact:false', () => {
+    const { result } = renderHook(() => useButtonSpacing({ compact: true }));
+    expect(result.current).toEqual({ start: 2, end: 2 });
+    const { result: defaultValue } = renderHook(() => useButtonSpacing({ compact: false }));
+    expect(defaultValue.current).toEqual({ start: 4, end: 4 });
   });
 
-  it('returns correct size if compact: true and frontier: false', () => {
-    const { result } = renderHook(() => {
-      return useButtonSpacing({ compact: true });
-    });
-
-    expect(result.current).toEqual({ horizontal: 2, vertical: 1 });
-  });
-
-  it('returns correct size if compact: true and frontier: false and is flush', () => {
-    const { result: startResults } = renderHook(() => {
-      return useButtonSpacing({ compact: true, flush: 'start' });
-    });
-    expect(startResults.current).toEqual({ horizontal: 2, vertical: 1, start: 2 });
-
-    const { result: endResults } = renderHook(() => {
-      return useButtonSpacing({ compact: true, flush: 'end' });
-    });
-    expect(endResults.current).toEqual({ horizontal: 2, vertical: 1, end: 2 });
-  });
-
-  // Frontier tests
-  function createFrontierHook(params: UseButtonSpacingParams) {
-    return renderHook(
-      () => {
-        return useButtonSpacing(params);
-      },
-      {
-        wrapper: FeatureFlagProvider,
-        initialProps: {
-          frontierButton: true,
-        },
-      },
-    ).result.current;
-  }
-
-  it('there is expected change for compact: true or compact:false for frontier', () => {
-    const compactValue = createFrontierHook({ compact: true });
-    expect(compactValue).toEqual({ start: 2, end: 2 });
-    const defaultValue = createFrontierHook({ compact: false });
-    expect(defaultValue).toEqual({ start: 4, end: 4 });
-  });
-
-  it('returns correct size if flush for frontier', () => {
-    const startValue = createFrontierHook({ compact: true, flush: 'start' });
-    expect(startValue).toEqual({ end: 2, start: 2 });
-    const endValue = createFrontierHook({ compact: true, flush: 'end' });
-    expect(endValue).toEqual({ end: 2, start: 2 });
+  it('returns correct size if flush', () => {
+    const { result } = renderHook(() => useButtonSpacing({ compact: true, flush: 'start' }));
+    expect(result.current).toEqual({ end: 2, start: 2 });
+    const { result: defaultValue } = renderHook(() =>
+      useButtonSpacing({ compact: true, flush: 'end' }),
+    );
+    expect(defaultValue.current).toEqual({ end: 2, start: 2 });
   });
 });

@@ -1,8 +1,7 @@
 import React, { memo, TdHTMLAttributes } from 'react';
 
-import { VStack } from '../alpha/VStack';
 import { Icon } from '../icons';
-import { Box } from '../layout';
+import { Box, VStack } from '../layout';
 
 import { TableCell } from './TableCell';
 

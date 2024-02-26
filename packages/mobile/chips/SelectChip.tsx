@@ -120,9 +120,9 @@ export const SelectChip = memo(
                 <Icon
                   animated
                   color="foreground"
-                  dangerouslySetStyle={rotateAnimationStyles}
                   name="caretDown"
                   size="s"
+                  style={rotateAnimationStyles}
                 />
               )
             }

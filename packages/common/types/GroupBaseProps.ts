@@ -16,12 +16,6 @@ export type GroupBaseProps<BoxProps> = {
   divider?: React.ComponentType<React.PropsWithChildren<unknown>> | null;
   /** Gap to insert between siblings. */
   gap?: SpacingScale;
-  /**
-   * Stack items horizontally instead of vertically.
-   * @deprecated will be removed in v6.0.0 Please use direction=vertical | horizontal moving forward. This will be sunset in Q2.
-   * @default false
-   * */
-  horizontal?: boolean;
   /** Control the layout of each item in a group.
    * @default Box component for given platform
    * @example

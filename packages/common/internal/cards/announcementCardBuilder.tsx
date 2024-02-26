@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { GroupBaseProps, RenderGroupItem } from '../../types';
-import { assets } from '../data/assets';
 import { storyBuilder } from '../utils/storyBuilder';
 
 type Params<WrapperProps> = {
@@ -19,13 +18,8 @@ export function createConfigs<WrapperProps>({
     title: 'Introducing SHIB',
     description: 'Shiba Inu (SHIB) is now on Coinbase',
     pictogram: 'worldwide',
-    headerDescription: 'Actor name',
-    headerMetaData: 'Metadata',
-    headerAvatarUrl: assets.btc.imageUrl,
-    headerAction: 'more',
-    footerAction: 'View asset',
-    onHeaderActionPress: onPressConsole,
-    onFooterActionPress: onPressConsole,
+    action: 'View asset',
+    onActionPress: onPressConsole,
   } as const;
 
   const VerticalGroup = CardGroup;

@@ -85,21 +85,19 @@ function AppSwitcherRecipeExample() {
   }
 
   return (
-    <FeatureFlagProvider frontierButton frontierColor>
-      <PortalProvider>
-        <HStack height={200}>
-          <NavigationBar
-            end={
-              <HStack alignItems="center" justifyContent="flex-end" gap={1}>
-                <AppSwitcherRecipe />
-              </HStack>
-            }
-          >
-            <NavigationTitle>Example on NavBar</NavigationTitle>
-          </NavigationBar>
-        </HStack>
-      </PortalProvider>
-    </FeatureFlagProvider>
+    <PortalProvider>
+      <HStack height={200}>
+        <NavigationBar
+          end={
+            <HStack alignItems="center" justifyContent="flex-end" gap={1}>
+              <AppSwitcherRecipe />
+            </HStack>
+          }
+        >
+          <NavigationTitle>Example on NavBar</NavigationTitle>
+        </NavigationBar>
+      </HStack>
+    </PortalProvider>
   );
 }
 ```

@@ -219,7 +219,7 @@ describe('styles', () => {
   const style = { opacity: 0.4, padding: '2px 4px' };
   it('can be set _dangerously_', () => {
     render(
-      <Grid columns={12} dangerouslySetStyle={style}>
+      <Grid columns={12} style={style}>
         Child
       </Grid>,
     );

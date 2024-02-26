@@ -95,9 +95,9 @@ export const Modal = memo(
       >
         <VStack
           animated
-          dangerouslySetStyle={{ transform: [{ scale }], opacity, borderWidth: 0 }}
           elevation={2}
           pin="all"
+          style={{ transform: [{ scale }], opacity, borderWidth: 0 }}
         >
           <SafeAreaView style={styles.safeAreaContainer}>
             <ModalParentContext.Provider value={modalData}>

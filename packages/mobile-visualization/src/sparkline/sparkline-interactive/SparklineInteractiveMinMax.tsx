@@ -70,12 +70,7 @@ const SparklineInteractiveMinMaxContent: FunctionComponent<
 
   return (
     <Animated.View pointerEvents="none" style={rootStyle}>
-      <TextLabel2
-        color="foregroundMuted"
-        dangerouslySetStyle={textLabelStyle}
-        onLayout={onLayout}
-        spacing={0}
-      >
+      <TextLabel2 color="foregroundMuted" onLayout={onLayout} spacing={0} style={textLabelStyle}>
         {children}
       </TextLabel2>
     </Animated.View>

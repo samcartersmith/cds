@@ -124,11 +124,11 @@ export const FullscreenModal = memo(function FullscreenModal({
     <HStack
       alignItems="center"
       borderedBottom={!hideDivider}
-      dangerouslySetClassName={headerClassName}
+      className={headerClassName}
       spacingHorizontal={4}
       spacingVertical={2}
     >
-      <Box dangerouslySetClassName={headerLogoClassName} spacingEnd={3}>
+      <Box className={headerLogoClassName} spacingEnd={3}>
         {logo ?? <LogoMark size={32} />}
       </Box>
       <Box flexGrow={1}>
@@ -183,7 +183,7 @@ export const FullscreenModal = memo(function FullscreenModal({
       {overlay}
       <motion.div {...dialogMotionProps} className={pinStyles}>
         <FocusTrap onEscPress={onRequestClose}>
-          <VStack background="background" dangerouslySetClassName={containerClassName}>
+          <VStack background="background" className={containerClassName}>
             {header}
             {content}
           </VStack>

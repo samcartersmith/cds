@@ -88,13 +88,13 @@ export const Toast = memo(
             <Box
               alignSelf="center"
               bottom={bottomOffset ?? spacing[2]}
-              dangerouslySetStyle={{
-                // display on android
-                elevation: zIndex.overlays.portal,
-              }}
               maxWidth="100%"
               position="absolute"
               spacing={2}
+              style={{
+                // display on android
+                elevation: zIndex.overlays.portal,
+              }}
               zIndex={zIndex.overlays.portal}
               {...rest}
               accessibilityRole="alert"
@@ -104,15 +104,15 @@ export const Toast = memo(
                 background
                 alignItems="center"
                 borderRadius="rounded"
-                dangerouslySetStyle={{
-                  opacity,
-                  transform: [{ translateY: bottom }, ...panResponderAnimation],
-                }}
                 elevation={2}
                 overflow="hidden"
                 spacingEnd={1}
                 spacingStart={3}
                 spacingVertical={1}
+                style={{
+                  opacity,
+                  transform: [{ translateY: bottom }, ...panResponderAnimation],
+                }}
                 {...panHandlers}
               >
                 <ColorSurge background={variant} />

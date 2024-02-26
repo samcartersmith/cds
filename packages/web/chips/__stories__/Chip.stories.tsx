@@ -5,7 +5,6 @@ import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { Icon } from '../../icons/Icon';
 import { HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
-import { FeatureFlagProvider } from '../../system';
 import { TextHeadline } from '../../typography';
 import { Chip } from '../Chip';
 
@@ -61,20 +60,18 @@ const ChipExamples = ({
 );
 
 export const Default = () => (
-  <FeatureFlagProvider frontier>
-    <VStack gap={2}>
-      <TextHeadline as="h3">Default</TextHeadline>
-      <ChipExamples />
-      <TextHeadline as="h3" spacingTop={3}>
-        Inverted
-      </TextHeadline>
-      <ChipExamples inverted />
-      <TextHeadline as="h3">Compact</TextHeadline>
-      <ChipExamples compact />
-      <TextHeadline as="h3" spacingTop={3}>
-        Long text
-      </TextHeadline>
-      <ChipExamples label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget" />
-    </VStack>
-  </FeatureFlagProvider>
+  <VStack gap={2}>
+    <TextHeadline as="h3">Default</TextHeadline>
+    <ChipExamples />
+    <TextHeadline as="h3" spacingTop={3}>
+      Inverted
+    </TextHeadline>
+    <ChipExamples inverted />
+    <TextHeadline as="h3">Compact</TextHeadline>
+    <ChipExamples compact />
+    <TextHeadline as="h3" spacingTop={3}>
+      Long text
+    </TextHeadline>
+    <ChipExamples label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget" />
+  </VStack>
 );

@@ -90,7 +90,7 @@ const SearchInputMenuRecipe = () => {
           </HStack>
         )}
         {shouldShowAllResultsButton ? (
-          <Pressable block noScaleOnPress backgroundColor="background" onPress={handleClear}>
+          <Pressable block noScaleOnPress background="background" onPress={handleClear}>
             <HStack alignItems="center" gap={1} spacingHorizontal={2} spacingVertical={2}>
               <TextLabel1 as="p">View all results</TextLabel1>
               <Icon color="foreground" name="forwardArrow" size="xs" />

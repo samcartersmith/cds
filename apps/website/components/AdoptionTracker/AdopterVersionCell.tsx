@@ -1,6 +1,6 @@
 import semver from 'semver';
-import { HStack } from '@cbhq/cds-web/alpha/HStack';
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 

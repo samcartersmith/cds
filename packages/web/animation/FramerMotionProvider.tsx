@@ -1,13 +1,17 @@
 import React, { memo } from 'react';
-import { domMax, LazyMotion } from 'framer-motion';
+import { domAnimation, LazyMotion, LazyProps } from 'framer-motion';
+
+export type FramerMotionProviderProps = {
+  motionFeatures?: LazyProps['features'];
+  children: LazyProps['children'];
+};
 
 export const FramerMotionProvider = memo(function FramerMotionProvider({
   children,
-}: {
-  children: React.ReactElement;
-}) {
+  motionFeatures = domAnimation,
+}: FramerMotionProviderProps) {
   return (
-    <LazyMotion strict features={domMax}>
+    <LazyMotion strict features={motionFeatures}>
       {children}
     </LazyMotion>
   );

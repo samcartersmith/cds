@@ -19,14 +19,14 @@ export type InteractableStyles = {
 
 export type GetInteractableStylesParams = Pick<
   InteractableBaseProps,
-  'backgroundColor' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'elevation'
+  'background' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'elevation'
 > & {
   elevationConfig?: ElevationConfigForSpectrum;
   themeConfig: ThemeConfigForSpectrum;
 };
 
 function getCacheKey({
-  backgroundColor,
+  background,
   borderColor,
   borderRadius,
   borderWidth,
@@ -36,11 +36,11 @@ function getCacheKey({
   const elevationName = elevationConfig
     ? `${elevationConfig.themeConfig.activeConfig.name}`
     : 'no-elevation';
-  return `${themeConfig.name}-${elevationName}-${backgroundColor}-${borderColor}-${borderRadius}-${borderWidth}`;
+  return `${themeConfig.name}-${elevationName}-${background}-${borderColor}-${borderRadius}-${borderWidth}`;
 }
 
 export const getInteractableStyles = memoize(function getInteractableStyles({
-  backgroundColor,
+  background,
   borderColor,
   borderRadius,
   borderWidth,
@@ -60,20 +60,20 @@ export const getInteractableStyles = memoize(function getInteractableStyles({
     static: {
       ...elevationConfig?.styles,
       ...borderStyles,
-      backgroundColor: themeConfig.rgbaStrings[backgroundColor],
+      backgroundColor: themeConfig.rgbaStrings[background],
     },
     pressed: {
-      backgroundColor: themeConfig.interactableTokens[backgroundColor].pressed.backgroundColor,
+      backgroundColor: themeConfig.interactableTokens[background].pressed.backgroundColor,
     },
     disabled: {
-      backgroundColor: themeConfig.interactableTokens[backgroundColor].disabled.backgroundColor,
+      backgroundColor: themeConfig.interactableTokens[background].disabled.backgroundColor,
     },
   };
 
   const contentStyles = {
-    pressed: { opacity: themeConfig.interactableTokens[backgroundColor].pressed.contentOpacity },
+    pressed: { opacity: themeConfig.interactableTokens[background].pressed.contentOpacity },
     disabled: {
-      opacity: themeConfig.interactableTokens[backgroundColor].disabled.contentOpacity,
+      opacity: themeConfig.interactableTokens[background].disabled.contentOpacity,
     },
   };
   return {

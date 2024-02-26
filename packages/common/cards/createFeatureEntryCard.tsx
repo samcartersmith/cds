@@ -1,10 +1,10 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 
-import { CardBaseProps, CardBodyBaseProps, FeatureEntryCardBaseProps } from '../types/alpha';
+import { CardBaseProps, CardBodyBaseProps, FeatureEntryCardBaseProps } from '../types';
 
 type CreateFeatureEntryCardParams<OnPressFn> = {
-  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps<OnPressFn>>>;
-  CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps<OnPressFn>>>;
+  Card: React.ComponentType<CardBaseProps & { onPress?: OnPressFn }>;
+  CardBody: React.ComponentType<CardBodyBaseProps & { onPress?: OnPressFn }>;
 };
 
 /** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
@@ -15,19 +15,25 @@ export function createFeatureEntryCard<OnPressFn>({
   const FeatureEntryCard = memo(function FeatureEntryCard({
     onPress,
     testID = 'feature-entry-card',
+    accessibilityHint,
+    accessibilityLabel,
+    description,
+    title,
     ...props
-  }: FeatureEntryCardBaseProps<OnPressFn>) {
-    const accessibilityProps = useMemo(
-      () => ({
-        accessibilityLabel: props.accessibilityLabel ?? props.title,
-        accessibilityHint: props.accessibilityHint ?? props.description,
-      }),
-      [props.accessibilityHint, props.accessibilityLabel, props.title, props.description],
-    );
-
+  }: FeatureEntryCardBaseProps & { onPress?: OnPressFn }) {
     return (
-      <Card {...accessibilityProps} flexShrink={0} onPress={onPress} testID={testID}>
-        <CardBody mediaPlacement="end" testID={`${testID}-body`} {...props} />
+      <Card
+        accessibilityHint={
+          accessibilityHint ?? typeof description === 'string' ? (description as string) : undefined
+        }
+        accessibilityLabel={
+          accessibilityLabel ?? typeof title === 'string' ? (title as string) : undefined
+        }
+        flexShrink={0}
+        onPress={onPress}
+        testID={testID}
+      >
+        <CardBody description={description} testID={`${testID}-body`} title={title} {...props} />
       </Card>
     );
   });

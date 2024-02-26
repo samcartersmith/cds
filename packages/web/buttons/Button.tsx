@@ -13,7 +13,6 @@ import { Icon } from '../icons/Icon';
 import { MaterialSpinner } from '../loaders/MaterialSpinner';
 import * as foregroundColors from '../styles/foregroundColor';
 import { Pressable, PressableProps } from '../system/Pressable';
-import { useFeatureFlag } from '../system/useFeatureFlag';
 import { TextHeadline } from '../typography/TextHeadline';
 import { cx } from '../utils/linaria';
 
@@ -57,7 +56,6 @@ const BaseButton = forwardRef(function Button(
   ref: React.Ref<HTMLButtonElement>,
 ) {
   const hasIcon = Boolean(startIcon ?? endIcon);
-  const hasFrontier = useFeatureFlag('frontierButton');
   const iconSize = useButtonIconSize(compact);
   const spacing = useSharedButtonSpacing({ flush, compact, startIcon, endIcon });
   const flushStyles = useFlushStyles({ flush, spacing });
@@ -75,7 +73,7 @@ const BaseButton = forwardRef(function Button(
       aria-label={accessibilityLabel ?? (loading ? 'Loading' : undefined)}
       {...props}
       ref={ref}
-      backgroundColor={backgroundColor}
+      background={backgroundColor}
       block={block}
       borderColor={borderColor}
       borderRadius={borderRadius}
@@ -84,7 +82,7 @@ const BaseButton = forwardRef(function Button(
         foregroundColors[color],
         buttonStyles.button,
         numberOfLines && buttonStyles.unsetNoWrap,
-        hasFrontier && hasIcon && buttonStyles.frontierButtonWithIcon,
+        hasIcon && buttonStyles.buttonWithIcon,
         compact && buttonStyles.buttonCompact,
         block && buttonStyles.buttonBlock,
         spacingClass,
@@ -99,7 +97,7 @@ const BaseButton = forwardRef(function Button(
       type={type}
     >
       {startIcon && (
-        <span className={hasFrontier ? buttonStyles.frontierStartIcon : buttonStyles.startIcon}>
+        <span className={buttonStyles.startIcon}>
           <Icon color={color} name={startIcon} size={iconSize} />
         </span>
       )}
@@ -110,13 +108,13 @@ const BaseButton = forwardRef(function Button(
             <MaterialSpinner color={color} size={buttonStyles.LOADERSIZE} />
           </span>
         )}
-        <TextHeadline as="span" color={color} noWrap={!hasFrontier} numberOfLines={numberOfLines}>
+        <TextHeadline as="span" color={color} numberOfLines={numberOfLines}>
           <span className={cx(loading && buttonStyles.visibilityHidden)}>{children}</span>
         </TextHeadline>
       </span>
 
       {endIcon && (
-        <span className={hasFrontier ? buttonStyles.frontierEndIcon : buttonStyles.endIcon}>
+        <span className={buttonStyles.endIcon}>
           <Icon color={color} name={endIcon} size={iconSize} />
         </span>
       )}

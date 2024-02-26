@@ -104,12 +104,12 @@ export const Alert = memo(
             <Box
               animated
               borderRadius="rounded"
-              dangerouslySetStyle={{
+              elevation={2}
+              style={{
                 transform: [{ scale: modalScale }],
                 opacity: modalOpacity,
                 borderWidth: 0,
               }}
-              elevation={2}
               width={318}
             >
               <Box

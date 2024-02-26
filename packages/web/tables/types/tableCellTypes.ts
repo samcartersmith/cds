@@ -1,10 +1,4 @@
-import {
-  MouseEventHandler,
-  ReactElement,
-  ReactNode,
-  TdHTMLAttributes,
-  ThHTMLAttributes,
-} from 'react';
+import { ReactElement, ReactNode, TdHTMLAttributes, ThHTMLAttributes } from 'react';
 import {
   CellBaseProps,
   FlexAxisValue,
@@ -14,6 +8,7 @@ import {
 } from '@cbhq/cds-common';
 
 import { CellProps, CellSharedProps } from '../../cells/Cell';
+import { OnPress } from '../../system';
 import { TextProps } from '../../typography';
 
 export type TableCellTag = 'td' | 'th' | 'div';
@@ -57,7 +52,7 @@ type TableCellBaseProps = {
    * Callback to fire when pressed
    * @default noop
    */
-  onPress?: MouseEventHandler;
+  onPress?: OnPress;
   /**
    * Should the title/subtitle text truncate
    * @default false
@@ -101,7 +96,7 @@ type TableCellBaseProps = {
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetClassName?: string;
+  className?: string;
 } & TableCellSharedProps;
 
 type TableCellPropsWithInputs = {

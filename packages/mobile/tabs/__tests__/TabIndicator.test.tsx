@@ -28,7 +28,7 @@ describe('TabIndicator', () => {
   it('renders background', () => {
     render(<TabIndicator background="secondary" width={100} x={0} />);
     expect(screen.getByTestId('cds-tab-indicator-inner-bar')).toHaveStyle({
-      backgroundColor: 'rgba(255,255,255,1)',
+      backgroundColor: 'rgba(238,240,243,1)',
     });
   });
 

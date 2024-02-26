@@ -1,13 +1,12 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { UpsellCardBaseProps } from '@cbhq/cds-common';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { Button } from '../../buttons/Button';
-import { UpsellCard } from '../UpsellCard';
+import { type UpsellCardProps, UpsellCard } from '../UpsellCard';
 
-const exampleProps: UpsellCardBaseProps = {
+const exampleProps: UpsellCardProps = {
   title: 'Test Title',
   description: 'Test Description',
   action: 'Test Action',
@@ -16,7 +15,7 @@ const exampleProps: UpsellCardBaseProps = {
   testID: 'upsell-card-test',
 };
 
-const compactProps: UpsellCardBaseProps = {
+const compactProps: UpsellCardProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT.',
   testID: 'upsell-card-test',

@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 
-import { VStack } from '../../alpha/VStack';
+import { VStack } from '../../layout/VStack';
 import { Table, TableCaption } from '..';
 
 export default {

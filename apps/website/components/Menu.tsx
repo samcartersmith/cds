@@ -43,7 +43,7 @@ export const Menu = ({
     <VStack
       background
       borderRadius="roundedLarge"
-      dangerouslySetClassName={popoverStyleOverrides}
+      className={popoverStyleOverrides}
       elevation={2}
       maxHeight={300}
       width={275}

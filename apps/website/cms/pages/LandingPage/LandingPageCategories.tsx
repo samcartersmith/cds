@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { CardGroup } from '@cbhq/cds-web/alpha/CardGroup';
+import { CardGroup } from '@cbhq/cds-web/cards/CardGroup';
 import { Divider } from '@cbhq/cds-web/layout/Divider';
 
 import LandingPageCategoryItem, { LandingPageCategoryItemProps } from './LandingPageCategoryItem';

@@ -5,11 +5,11 @@ import { sampleTabs } from '@cbhq/cds-common/internal/data/tabs';
 import { loremIpsum } from '@cbhq/cds-common/internal/loremIpsumBuilder';
 import { CustomTabProps, TabNavigationProps } from '@cbhq/cds-common/types';
 
-import { VStack } from '../../alpha/VStack';
 import { Button } from '../../buttons/Button';
 import { Chip } from '../../chips/Chip';
 import { Select, SelectOption } from '../../controls';
 import { HStack } from '../../layout';
+import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system';
 import { Link, TextBody, TextHeadline, TextTitle1 } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';

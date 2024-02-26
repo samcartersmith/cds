@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 import { ComponentStoryObj } from '@storybook/react';
 
-import { VStack } from '../../alpha/VStack';
 import { Button } from '../../buttons';
+import { VStack } from '../../layout/VStack';
 import { TextBody, TextHeadline } from '../../typography';
 import { AccessibilityAnnouncer, AccessibilityAnnouncerProps } from '../AccessibilityAnnouncer';
 

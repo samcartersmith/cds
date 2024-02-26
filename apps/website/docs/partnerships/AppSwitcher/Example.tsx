@@ -5,7 +5,6 @@ import { Dropdown } from '@cbhq/cds-web/dropdown';
 import { VStack } from '@cbhq/cds-web/layout';
 import { PopoverContentPositionConfig } from '@cbhq/cds-web/overlays/popover/PopoverProps';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
-import { FeatureFlagProvider } from '@cbhq/cds-web/system/FeatureFlagProvider';
 
 const switcherPositionConfig: PopoverContentPositionConfig = {
   placement: 'bottom',
@@ -29,20 +28,18 @@ const AppSwitcherRecipe = memo(({ children }: { children: React.ReactNode }) => 
 
 export const AppSwitcherExample = () => {
   return (
-    <FeatureFlagProvider frontierButton frontierColor>
-      <PortalProvider>
-        <VStack
-          bordered
-          alignItems="center"
-          borderRadius="rounded"
-          justifyContent="center"
-          spacingVertical={4}
-        >
-          <AppSwitcherRecipe>
-            <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
-          </AppSwitcherRecipe>
-        </VStack>
-      </PortalProvider>
-    </FeatureFlagProvider>
+    <PortalProvider>
+      <VStack
+        bordered
+        alignItems="center"
+        borderRadius="rounded"
+        justifyContent="center"
+        spacingVertical={4}
+      >
+        <AppSwitcherRecipe>
+          <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+        </AppSwitcherRecipe>
+      </VStack>
+    </PortalProvider>
   );
 };

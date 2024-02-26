@@ -31,7 +31,7 @@ const LandingPageQuickLink = memo(function LandingPageQuickLink({
   return (
     <Pressable
       noScaleOnPress
-      backgroundColor="background"
+      background="background"
       onPress={onPress ?? handleOnPress}
       width="50%"
     >

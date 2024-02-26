@@ -80,7 +80,7 @@ export const Pressable = memo(
       onPressOut,
       noScaleOnPress,
       // Interactable
-      backgroundColor,
+      background,
       block,
       borderColor,
       borderRadius,
@@ -172,7 +172,7 @@ export const Pressable = memo(
         {...props}
       >
         <Interactable
-          backgroundColor={backgroundColor}
+          background={background}
           block={block}
           borderColor={borderColor}
           borderRadius={borderRadius}

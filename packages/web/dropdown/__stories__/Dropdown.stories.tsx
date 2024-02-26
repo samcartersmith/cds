@@ -217,7 +217,7 @@ export const SubMenu = () => {
           width="100%"
         >
           {/* Note: you can't use a SelectOption as the trigger or else SelectProvider will think this is a menu option */}
-          <Pressable backgroundColor="background" width="100%">
+          <Pressable background="background" width="100%">
             <HStack
               alignItems="center"
               justifyContent="space-between"

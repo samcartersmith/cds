@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { withTimeTravel } from '@cbhq/cds-common/jest/timeTravel';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { Button } from '../../buttons';
 import { VStack } from '../../layout';
@@ -21,18 +20,16 @@ const MockAnimatedCaret = () => {
 };
 
 describe('AnimatedCaret', () => {
-  it('rotates', () => {
-    withTimeTravel((timeTravel) => {
-      render(<MockAnimatedCaret />);
+  it('rotates', async () => {
+    render(<MockAnimatedCaret />);
+    for await (const rotate of rotates.slice(1)) {
+      fireEvent.click(screen.getByText('Rotate'));
 
-      for (let i = 0; i < rotates.length - 1; i += 1) {
-        fireEvent.click(screen.getByText('Rotate'));
-        timeTravel(500);
-
+      await waitFor(() => {
         expect(screen.getByTestId('mock-animated-caret-motion')).toHaveStyle({
-          transform: `rotate(${rotates[i + 1]}deg) translateZ(0)`,
+          transform: `rotate(${rotate}deg) translateZ(0)`,
         });
-      }
-    });
+      });
+    }
   });
 });

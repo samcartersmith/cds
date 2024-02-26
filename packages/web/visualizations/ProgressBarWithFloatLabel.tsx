@@ -119,9 +119,7 @@ export const ProgressBarWithFloatLabel: React.FC<
   return (
     <VStack testID={testID}>
       {labelPlacement === 'above' && progressBarFloatLabel}
-
       {children}
-
       {labelPlacement === 'below' && progressBarFloatLabel}
     </VStack>
   );

@@ -17,8 +17,8 @@ export const Tag = memo(
         children,
         intent = 'informational',
         colorScheme = 'blue',
-        dangerouslySetBackground,
-        dangerouslySetColor,
+        background: customBackground,
+        color: customColor,
         display = 'inline-flex',
         alignItems = 'center',
         justifyContent = 'center',
@@ -40,10 +40,10 @@ export const Tag = memo(
       const styleOverride = useMemo(
         () =>
           setPaletteConfigToCssVars({
-            foreground: dangerouslySetColor ?? foreground,
-            background: dangerouslySetBackground ?? background,
+            foreground: customColor ?? foreground,
+            background: customBackground ?? background,
           }),
-        [background, foreground, dangerouslySetBackground, dangerouslySetColor],
+        [background, foreground, customBackground, customColor],
       );
 
       return (
@@ -52,11 +52,11 @@ export const Tag = memo(
           alignItems={alignItems}
           background="background"
           borderRadius={borderRadius}
-          dangerouslySetClassName={cx(tagStaticClassName, spacingClassName)}
-          dangerouslySetStyle={styleOverride}
+          className={cx(tagStaticClassName, spacingClassName)}
           data-testid={testID}
           display={display}
           justifyContent={justifyContent}
+          style={styleOverride}
           testID={testID}
           {...props}
         >

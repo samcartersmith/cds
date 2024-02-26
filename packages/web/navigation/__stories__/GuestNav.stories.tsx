@@ -1,7 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 
 import { VStack } from '../../layout';
-import { FeatureFlagProvider, ThemeProvider } from '../../system';
 
 import { Content, PrimaryNav, SecondaryNav } from './GuestNav';
 
@@ -16,13 +15,9 @@ export const GuestNav = () => (
 );
 
 const Template: Story<unknown> = () => (
-  <FeatureFlagProvider frontier>
-    <ThemeProvider>
-      <VStack left={0} overflow="clip" position="absolute" top={0}>
-        <GuestNav />
-      </VStack>
-    </ThemeProvider>
-  </FeatureFlagProvider>
+  <VStack left={0} overflow="clip" position="absolute" top={0}>
+    <GuestNav />
+  </VStack>
 );
 
 export const Default = Template.bind({});

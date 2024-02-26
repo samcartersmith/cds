@@ -41,7 +41,7 @@ export const AnimatedCaret = memo(function AnimatedCaret({
   rotate,
   size = 's',
   color = 'foregroundMuted',
-  dangerouslySetStyle,
+  style,
   ...rest
 }: AnimatedCaretProps) {
   const { animatedStyles, animate } = useAnimatedCaretAnimation();
@@ -59,9 +59,9 @@ export const AnimatedCaret = memo(function AnimatedCaret({
       <Icon
         animated
         color={color}
-        dangerouslySetStyle={[dangerouslySetStyle, animatedStyles]}
         name="caretUp"
         size={size}
+        style={[style, animatedStyles]}
         {...rest}
       />
     </HStack>

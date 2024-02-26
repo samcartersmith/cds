@@ -1,12 +1,10 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { NoopFn } from '@cbhq/cds-common/types/Helpers';
-import { NudgeCardBaseProps } from '@cbhq/cds-common/types/NudgeCardBaseProps';
 import { NoopFn as noopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { PictogramName } from '@cbhq/cds-illustrations';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { NudgeCard as BaseNudgeCard } from '../NudgeCard';
+import { NudgeCard as BaseNudgeCard, NudgeCardProps } from '../NudgeCard';
 
 const exampleProps = {
   title: "It's Onchain Summer!",
@@ -16,9 +14,9 @@ const exampleProps = {
   onActionPress: noopFn,
 };
 
-const NudgeCard = (
-  props: Partial<Pick<NudgeCardBaseProps<NoopFn>, 'onDismissPress' | 'onActionPress'>>,
-) => <BaseNudgeCard {...exampleProps} {...props} />;
+const NudgeCard = (props: Partial<Pick<NudgeCardProps, 'onDismissPress' | 'onActionPress'>>) => (
+  <BaseNudgeCard {...exampleProps} {...props} />
+);
 
 describe('createNudgeCard', () => {
   it('passes accessibility', async () => {

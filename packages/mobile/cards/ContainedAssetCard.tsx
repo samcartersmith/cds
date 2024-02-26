@@ -1,4 +1,5 @@
 import React, { memo, useMemo } from 'react';
+import { PressableProps } from 'react-native';
 import { ContainedAssetCardBaseProps } from '@cbhq/cds-common';
 import {
   containedAssetCardLargeDimension,
@@ -10,6 +11,8 @@ import { HStack, VStack } from '../layout';
 import { Pressable } from '../system';
 import { TextHeadline, TextLabel2, TextLegal } from '../typography';
 
+export type ContainedAssetCardProps = ContainedAssetCardBaseProps & Pick<PressableProps, 'onPress'>;
+
 export const ContainedAssetCard = memo(
   ({
     title,
@@ -20,7 +23,7 @@ export const ContainedAssetCard = memo(
     size = 's',
     children,
     onPress,
-  }: ContainedAssetCardBaseProps) => {
+  }: ContainedAssetCardProps) => {
     const width = useMemo(
       () => (size === 'l' ? containedAssetCardLargeWidth : containedAssetCardSmallDimension),
       [size],
@@ -83,7 +86,7 @@ export const ContainedAssetCard = memo(
     return onPress ? (
       <Pressable
         accessibilityRole="button"
-        backgroundColor="transparent"
+        background="transparent"
         borderRadius="roundedXLarge"
         onPress={onPress}
         style={pressableStyles}

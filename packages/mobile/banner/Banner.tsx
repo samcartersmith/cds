@@ -8,7 +8,7 @@ import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SpacingScale } from '@cbhq/cds-common/types/SpacingScale';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { Collapsible } from '../alpha/Collapsible';
+import { Collapsible } from '../collapsible/Collapsible';
 import { Icon } from '../icons';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
@@ -28,20 +28,20 @@ const customSpacing = { paddingTop: 4 };
 const stylesForVariant = {
   warning: {
     light: {
-      backgroundColor: paletteValueToRgbaString('red0', 'light', true),
-      borderColor: paletteValueToRgbaString('red10', 'light', true),
+      backgroundColor: paletteValueToRgbaString('red0', 'light'),
+      borderColor: paletteValueToRgbaString('red10', 'light'),
     },
     dark: {
-      backgroundColor: paletteValueToRgbaString('red0', 'dark', true),
-      borderColor: paletteValueToRgbaString('red10', 'dark', true),
+      backgroundColor: paletteValueToRgbaString('red0', 'dark'),
+      borderColor: paletteValueToRgbaString('red10', 'dark'),
     },
   },
   promotional: {
     light: {
-      borderColor: paletteValueToRgbaString('blue10', 'light', true),
+      borderColor: paletteValueToRgbaString('blue10', 'light'),
     },
     dark: {
-      borderColor: paletteValueToRgbaString('blue10', 'dark', true),
+      borderColor: paletteValueToRgbaString('blue10', 'dark'),
     },
   },
 } as const;
@@ -61,8 +61,8 @@ export const Banner = memo(
       borderRadius = 'rounded',
       testID,
       numberOfLines = 3,
-      dangerouslySetStyle,
-    }: BannerBaseProps & Pick<DangerouslySetStyle<ViewStyle>, 'dangerouslySetStyle'>,
+      style,
+    }: BannerBaseProps & Pick<DangerouslySetStyle<ViewStyle>, 'style'>,
     forwardedRef: ForwardedRef<View>,
   ) {
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -149,12 +149,12 @@ export const Banner = memo(
       if (shouldOverride) {
         return {
           ...stylesForVariant[variant][spectrum],
-          ...(dangerouslySetStyle as ViewStyle),
+          ...(style as ViewStyle),
         };
       }
 
-      return dangerouslySetStyle;
-    }, [spectrum, variant, dangerouslySetStyle]);
+      return style;
+    }, [spectrum, variant, style]);
 
     return (
       <Collapsible ref={forwardedRef} collapsed={isCollapsed} testID={`${testID}-collapsible`}>
@@ -164,20 +164,20 @@ export const Banner = memo(
           borderColor={borderColor}
           borderRadius={borderRadius}
           bordered={bordered}
-          dangerouslySetStyle={rootStyle}
           flexShrink={1}
           gap={2}
           spacing={2}
           spacingBottom={spacingBottom}
+          style={rootStyle}
           testID={testID}
         >
           {/** Start */}
           <Icon
             accessibilityLabel={startIcon}
             color={iconColor}
-            dangerouslySetStyle={customSpacing}
             name={startIcon}
             size="s"
+            style={customSpacing}
             testID={`${testID}-icon`}
           />
           <Stack
@@ -207,12 +207,12 @@ export const Banner = memo(
           </Stack>
           {/** Dismissable action */}
           {showDismiss && (
-            <Box alignItems="flex-start" dangerouslySetStyle={customSpacing}>
+            <Box alignItems="flex-start" style={customSpacing}>
               <Pressable
                 accessibilityHint="close banner"
                 accessibilityLabel="close"
                 accessibilityRole="button"
-                backgroundColor="transparent"
+                background="transparent"
                 borderRadius="roundedFull"
                 hitSlop={{ top: 15, left: 15, bottom: 15, right: 15 }}
                 onPress={handleOnDismiss}

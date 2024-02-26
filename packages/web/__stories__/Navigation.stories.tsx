@@ -8,7 +8,6 @@ import { NavigationBar, NavigationTitle, Sidebar, SidebarMoreMenu } from '../nav
 import { items } from '../navigation/__stories__/NavigationStorySetup';
 import { SidebarItem } from '../navigation/SidebarItem';
 import { PortalProvider } from '../overlays/PortalProvider';
-import { FeatureFlagProvider } from '../system';
 import { useToggler } from '..';
 
 import { AppSwitcher } from './AppSwitcher.stories';
@@ -41,46 +40,52 @@ export const NavigationRecipe = () => {
 
   return (
     <PortalProvider>
-      <FeatureFlagProvider frontierButton frontierColor>
-        <HStack>
-          <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
-            {sidebarItems.map((props, index) => (
-              <SidebarItem
-                key={`sidebar-item--${props.title}`}
-                active={index === activeIndex}
-                // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-                onPress={() => handleItemPress(index)}
-                tooltipContent={props.title}
-                {...props}
+      <HStack>
+        <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
+          {sidebarItems.map((props, index) => (
+            <SidebarItem
+              key={`sidebar-item--${props.title}`}
+              active={index === activeIndex}
+              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+              onPress={() => handleItemPress(index)}
+              tooltipContent={props.title}
+              {...props}
+            />
+          ))}
+          <SidebarMoreMenu
+            active={activeIndex >= sidebarItems.length}
+            onChange={handleMoreMenuChange}
+            tooltipContent="More"
+            value={moreMenuValue}
+          >
+            {moreMenuOptions.map((item) => (
+              <SelectOption
+                key={`sidebar-more-menu-item--${item.title}`}
+                description={item.title}
+                media={<NavigationIcon name={item.icon} />}
+                value={item.title}
               />
             ))}
-            <SidebarMoreMenu
-              active={activeIndex >= sidebarItems.length}
-              onChange={handleMoreMenuChange}
-              tooltipContent="More"
-              value={moreMenuValue}
-            >
-              {moreMenuOptions.map((item) => (
-                <SelectOption
-                  key={`sidebar-more-menu-item--${item.title}`}
-                  description={item.title}
-                  media={<NavigationIcon name={item.icon} />}
-                  value={item.title}
-                />
-              ))}
-            </SidebarMoreMenu>
-          </Sidebar>
-          <VStack width="100%">
-            <NavigationBar
-              end={
-                <HStack alignItems="center" gap={1} justifyContent="flex-end">
-                  <AppSwitcher />
-                  <UserSwitcher title="Brian" />
-                </HStack>
-              }
-            >
-              <NavigationTitle>{[...items, ...moreMenuOptions][activeIndex].title}</NavigationTitle>
-            </NavigationBar>
+          </SidebarMoreMenu>
+        </Sidebar>
+        <VStack width="100%">
+          <NavigationBar
+            end={
+              <HStack alignItems="center" gap={1} justifyContent="flex-end">
+                <AppSwitcher />
+                <UserSwitcher title="Brian" />
+              </HStack>
+            }
+          >
+            <NavigationTitle>{[...items, ...moreMenuOptions][activeIndex].title}</NavigationTitle>
+          </NavigationBar>
+          <HStack
+            alignItems="flex-start"
+            background="backgroundAlternate"
+            flexGrow={1}
+            justifyContent="center"
+            spacing={4}
+          >
             <HStack
               alignItems="flex-start"
               background="backgroundAlternate"
@@ -88,21 +93,13 @@ export const NavigationRecipe = () => {
               justifyContent="center"
               spacing={4}
             >
-              <HStack
-                alignItems="flex-start"
-                background="backgroundAlternate"
-                flexGrow={1}
-                justifyContent="center"
-                spacing={4}
-              >
-                <Button compact onPress={handleToggleCollapsed.toggle} variant="primary">
-                  {isCollapsed ? 'Expand' : 'Collapse'} Sidebar
-                </Button>
-              </HStack>
+              <Button compact onPress={handleToggleCollapsed.toggle} variant="primary">
+                {isCollapsed ? 'Expand' : 'Collapse'} Sidebar
+              </Button>
             </HStack>
-          </VStack>
-        </HStack>
-      </FeatureFlagProvider>
+          </HStack>
+        </VStack>
+      </HStack>
     </PortalProvider>
   );
 };

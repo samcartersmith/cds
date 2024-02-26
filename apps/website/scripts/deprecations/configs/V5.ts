@@ -3,6 +3,7 @@ import { Deprecation } from '../types';
 export const V5: Deprecation = {
   prevMajorVersion: 'v4.0.0',
   breakingRelease: 'v5.0.0',
+  migrationGuideLink: '/guides/migration/web-and-mobile/5-0-0/',
   components: [
     {
       name: 'Badge',

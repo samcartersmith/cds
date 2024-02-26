@@ -4,17 +4,17 @@ import {
   ThemeConfigContextValue,
 } from '@cbhq/cds-common/system/ThemeConfigContext';
 
-import { createFallbackThemeConfig } from './createThemeConfig';
+import { useFallbackThemeConfig } from './createThemeConfig';
 
 export const useThemeConfig = (): ThemeConfigContextValue => {
   const context = useContext(ThemeConfigContext);
+  const fallbackConfig = useFallbackThemeConfig();
 
   return useMemo(() => {
     if (context) return context;
-    const fallbackConfig = createFallbackThemeConfig();
     return {
       config: fallbackConfig,
       activeConfig: fallbackConfig.light,
     };
-  }, [context]);
+  }, [context, fallbackConfig]);
 };

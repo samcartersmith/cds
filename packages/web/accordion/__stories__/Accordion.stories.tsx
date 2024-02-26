@@ -29,7 +29,7 @@ export const CustomStyle = () => {
     [],
   );
   return (
-    <Accordion defaultActiveKey="2" onItemPress={noop} style={customStyle}>
+    <Accordion defaultActiveKey="2" onChange={noop} style={customStyle}>
       <AccordionItem
         itemKey="1"
         media={<CellMedia name="wallet" type="icon" />}

@@ -27,7 +27,7 @@ const MockBanner = ({
   variant = 'warning',
   testID = TEST_ID,
   ...props
-}: Partial<BannerBaseProps> & Pick<DangerouslySetStyle<ViewStyle>, 'dangerouslySetStyle'>) => (
+}: Partial<BannerBaseProps> & Pick<DangerouslySetStyle<ViewStyle>, 'style'>) => (
   <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
     <TextBody>Banner content</TextBody>
   </Banner>
@@ -100,12 +100,12 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
     });
   });
 
-  it('can set dangerouslySetStyle', () => {
+  it('can set style', () => {
     const bannerCustomStyle = {
       paddingTop: 40,
     };
 
-    render(<MockBanner dangerouslySetStyle={bannerCustomStyle} />);
+    render(<MockBanner style={bannerCustomStyle} />);
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle(bannerCustomStyle);
   });

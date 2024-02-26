@@ -3,7 +3,7 @@ import { ColorScheme } from '@cbhq/cds-common';
 import { objectKeys, writePrettyFile } from '@cbhq/script-utils';
 
 import { deprecations } from './deprecations';
-import { Deprecation, DeprecationGroups, MigrationMap, MigrationType } from './types';
+import { Deprecation, MigrationMap, MigrationType } from './types';
 
 const DEPRECATION_DIR = 'apps/website/docs/resources/deprecations';
 const MDX_PATHNAME = 'resources/deprecations';
@@ -62,14 +62,17 @@ ${content}
  * @returns string
  */
 function generateTOCUpdater(groupsUsed: string[]) {
-  const tocObjects = groupsUsed.map((group) => {
-    const capitalizedGroup = group.charAt(0).toUpperCase() + group.slice(1);
-    return {
-      value: capitalizedGroup,
-      id: group.toLowerCase(),
-      level: 2,
-    };
-  });
+  const tocObjects = groupsUsed
+    .map((group) => {
+      if (group === 'prevMajorVersion' || group === 'migrationGuideLink') return null;
+      const capitalizedGroup = group.charAt(0).toUpperCase() + group.slice(1);
+      return {
+        value: capitalizedGroup,
+        id: group.toLowerCase(),
+        level: 2,
+      };
+    })
+    .filter(Boolean);
 
   return `<TOCUpdater toc={${JSON.stringify(tocObjects)}} />`;
 }
@@ -81,20 +84,27 @@ const typeColorMap: Record<MigrationType, ColorScheme> = {
   path: 'gray',
   removed: 'red',
   propValue: 'purple',
+  alpha: 'purple',
+};
+
+const typeTextMap: { [key in MigrationType]?: string } = {
+  path: 'moved',
 };
 
 const getTypes = (types: MigrationType | MigrationType[]) => {
   const typeTags = [];
-  if (Array.isArray(types) && types.length > 1) {
+  if (Array.isArray(types)) {
     typeTags.push('<>');
-    types.forEach((type: MigrationType) =>
-      typeTags.push(`  <Tag colorScheme="${typeColorMap[type]}">${type}</Tag>`),
+    types.forEach((type: MigrationType, index) =>
+      typeTags.push(
+        `${index !== 0 ? '  ' : ''}<Tag colorScheme="${typeColorMap[type]}">${
+          typeTextMap[type] || type
+        }</Tag>`,
+      ),
     );
     typeTags.push('</>');
   } else {
-    typeTags.push(
-      `<Tag colorScheme="${typeColorMap[Array.isArray(types) ? types[0] : types]}">${types}</Tag>`,
-    );
+    typeTags.push(`<Tag colorScheme="${typeColorMap[types]}">${typeTextMap[types] || types}</Tag>`);
   }
   return typeTags.join('');
 };
@@ -105,6 +115,7 @@ const migrationRecMap: Record<Exclude<MigrationType, 'removed'>, string> = {
   replaced: 'has been replaced with',
   path: 'can now be imported from',
   propValue: 'the value of this prop has been changed: ',
+  alpha: '',
 };
 
 const getMigrationValue = (migrationMap: Partial<MigrationMap>, key: keyof MigrationMap) => {
@@ -156,6 +167,8 @@ const getMigrationRecommendation = (
   return migrationRec.join('\n');
 };
 
+let accordionItemIndex = 0;
+
 const formatDeprecationGuide = ({
   name,
   pkgName,
@@ -172,7 +185,7 @@ const formatDeprecationGuide = ({
   exportNames?: string[];
 }) => {
   return `<AccordionItem
-    itemKey="${name}.${pkgName}"
+    itemKey="${name}.${pkgName}-${++accordionItemIndex}"
     title={<HStack gap={1}>${name} ${getTypes(type)}</HStack>}
     subtitle="@cbhq/cds-${pkgName}"
   >
@@ -195,7 +208,7 @@ const formatDeprecationGuide = ({
 };
 
 function formatDeprecations(deprecationObj: Deprecation): string {
-  const groups: Record<DeprecationGroups, string[]> = {
+  const groups = {
     components: ['### 🧱 Components {#components}', ''],
     types: ['### 🔐 Types {#types}', ''],
     props: ['### 🎭 Props {#props}', ''],
@@ -294,9 +307,13 @@ function formatDeprecations(deprecationObj: Deprecation): string {
     }
   });
 
+  const migrationGuideLink = deprecationObj?.migrationGuideLink || '/guides/migration';
+
   const block: string[] = [
-    `The following items will be deleted in ${breakingRelease}. Please use the <code>cds-migrator</code> package and respective [migration guide](../../../guides/migration) to update your codebase.`,
+    `This is a list of changes in CDS ${breakingRelease}. Please use the <code>cds-migrator</code> package and respective [migration guide](${migrationGuideLink}) to update your codebase.`,
   ];
+
+  if (deprecationObj?.intro) block.push('', deprecationObj.intro);
 
   Object.values(groups).forEach((group) => {
     if (group.length > 2) {

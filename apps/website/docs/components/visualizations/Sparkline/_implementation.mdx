@@ -1,21 +1,17 @@
-import WebPropsTable from ':docgen/web/visualizations/Sparkline/api.mdx';
 import WebVisPropsTable from ':docgen/web-visualization/sparkline/Sparkline/api.mdx';
-import MobilePropsTable from ':docgen/mobile/visualizations/Sparkline/api.mdx';
+import MobileVisPropsTable from ':docgen/mobile-visualization/sparkline/Sparkline/api.mdx';
 
 ## Props
 
-:::danger
-This component will no longer be available in `v6.0.0` in the `@cbhq/cds-web` package. It will only be available in the `@cbhq/cds-web-visualization` package.
+:::info
+As of `v6.0.0` this component has moved from `@cbhq/cds-web` and `@cbhq/cds-mobile` packages to `@cbhq/cds-web-visualization` and `@cbhq/cds-mobile-visualization` packages respectively.
 :::
 
 <Tabs groupId="platform" variant="secondary">
-  <TabItem value="web-visualization" label="Web Visualization">
+  <TabItem value="web-visualization" label="Web V6">
     <WebVisPropsTable />
   </TabItem>
-  <TabItem value="web" label="Web">
-    <WebPropsTable />
-  </TabItem>
-  <TabItem value="mobile" label="Mobile">
-    <MobilePropsTable />
+  <TabItem value="mobile-visualization" label="Mobile V6">
+    <MobileVisPropsTable />
   </TabItem>
 </Tabs>

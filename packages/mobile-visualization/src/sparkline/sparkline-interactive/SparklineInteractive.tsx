@@ -126,7 +126,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   hideMinMaxLabel = false,
   hidePeriodSelector = false,
   disableScrubbing = false,
-  fill,
+  fill = true,
   yAxisScalingFactor = 1.0,
   formatHoverDate,
   headerNode,

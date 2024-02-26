@@ -28,8 +28,8 @@ const Footer = memo(function Footer() {
                 <Link
                   key={item.label}
                   openInNewWindow
+                  className="footer-link"
                   color="foreground"
-                  dangerouslySetClassName="footer-link"
                   to={item.href}
                   variant="title4"
                 >

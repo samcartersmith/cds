@@ -1,78 +1,27 @@
-import React, { memo } from 'react';
-import { CardBodyBaseProps, CardBodyOrientationProps } from '@cbhq/cds-common/types/CardBaseProps';
+import { createCardBody } from '@cbhq/cds-common/cards/createCardBody';
+import { createCardBodyAction } from '@cbhq/cds-common/cards/createCardBodyAction';
 
-import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
+import { Button } from '../buttons/Button';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { TextBody } from '../typography/TextBody';
 import { TextHeadline } from '../typography/TextHeadline';
+import { TextLabel2 } from '../typography/TextLabel2';
 
-export type CardBodyProps = CardBodyBaseProps & CardBodyOrientationProps;
+import { CardMedia } from './CardMedia';
 
-export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
-  ({
-    title,
-    description,
-    media,
-    children,
-    orientation = 'vertical',
-    testID,
-    numberOfLines = 3,
-    ...props
-  }) => {
-    const largeTextStyle = useLargeTextStyles();
-    const textContent = (
-      <>
-        <TextHeadline
-          dangerouslySetStyle={largeTextStyle}
-          ellipsizeMode="tail"
-          numberOfLines={numberOfLines}
-        >
-          {title}
-        </TextHeadline>
-        <TextBody
-          color="foreground"
-          dangerouslySetStyle={largeTextStyle}
-          ellipsizeMode="tail"
-          numberOfLines={numberOfLines}
-        >
-          {description}
-        </TextBody>
-      </>
-    );
-    const verticalContent = (
-      <VStack testID={`${testID}-vertical`} {...props}>
-        {media}
-        <VStack spacingHorizontal={3} spacingTop={2}>
-          <VStack gap={1} spacingBottom={2}>
-            {textContent}
-          </VStack>
-          {children}
-        </VStack>
-      </VStack>
-    );
+export type CardBodyProps = React.ComponentProps<typeof CardBody>;
+export type CardBodyActionProps = React.ComponentProps<typeof CardBodyAction>;
 
-    const horizontalContent = (
-      <HStack
-        alignItems="center"
-        gap={1}
-        justifyContent="space-between"
-        spacingBottom={media ? 1 : 0}
-        spacingHorizontal={3}
-        spacingTop={2}
-        testID={`${testID}-horizontal`}
-        {...props}
-      >
-        <VStack gap={2} width="70%">
-          <VStack gap={1} spacingTop={media ? 0 : 2}>
-            {textContent}
-          </VStack>
-          {children}
-        </VStack>
-        {media}
-      </HStack>
-    );
+export const CardBodyAction = createCardBodyAction({
+  Button,
+});
 
-    return orientation === 'vertical' ? verticalContent : horizontalContent;
-  },
-);
+export const CardBody = createCardBody({
+  HStack,
+  VStack,
+  TextHeadline,
+  TextLabel2,
+  CardMedia,
+  CardBodyAction,
+  platform: 'mobile',
+});

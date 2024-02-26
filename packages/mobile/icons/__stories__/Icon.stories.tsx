@@ -9,7 +9,6 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { PressableOpacity } from '../../system/PressableOpacity';
 import { TextBody } from '../../typography';
-import { FiatIcon } from '../FiatIcon';
 import { Icon } from '../Icon';
 import { TextIcon } from '../TextIcon';
 
@@ -77,15 +76,6 @@ const IconScreen = () => {
             </TextBody>
           </TextBody>
         </VStack>
-      </Example>
-      <Example title="Fiat Icons">
-        <HStack gap={2}>
-          <FiatIcon currencyCode="USD" />
-          <FiatIcon currencyCode="EUR" />
-          <FiatIcon currencyCode="GBP" />
-          <FiatIcon currencyCode="JPY" />
-          <FiatIcon currencyCode="BRL" />
-        </HStack>
       </Example>
       <Example title="Animated Icon">
         <PressableOpacity

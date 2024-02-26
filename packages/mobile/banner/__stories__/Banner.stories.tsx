@@ -15,8 +15,8 @@ const BannerScreen = () => {
     () => ({
       paddingTop: 32,
       paddingBottom: 32,
-      backgroundColor: paletteValueToRgbaString('orange0', 'light', true),
-      borderColor: paletteValueToRgbaString('orange10', 'light', true),
+      backgroundColor: paletteValueToRgbaString('orange0', 'light'),
+      borderColor: paletteValueToRgbaString('orange10', 'light'),
     }),
     [],
   );
@@ -29,8 +29,8 @@ const BannerScreen = () => {
           <TextTitle1>BannerWithCustomStyle</TextTitle1>
           <Banner
             showDismiss
-            dangerouslySetStyle={customStyle}
             startIcon="pencil"
+            style={customStyle}
             title="Banner with custom Style"
             variant="informational"
           >

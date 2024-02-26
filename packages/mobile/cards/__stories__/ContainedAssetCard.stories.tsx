@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
-import { ContainedAssetCardBaseProps } from '@cbhq/cds-common';
 import { assets, ethBackground } from '@cbhq/cds-common/internal/data/assets';
 import { subheadIconSignMap } from '@cbhq/cds-common/tokens/sparkline';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
@@ -9,7 +8,7 @@ import { usePaletteValueToRgbaString } from '../../color/usePaletteValueToRgbaSt
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Carousel } from '../../media';
 import { TextLabel2 } from '../../typography';
-import { ContainedAssetCard } from '../ContainedAssetCard';
+import { ContainedAssetCard, ContainedAssetCardProps } from '../ContainedAssetCard';
 
 const styles = StyleSheet.create({
   media: {
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const exampleProps: ContainedAssetCardBaseProps = {
+const exampleProps: ContainedAssetCardProps = {
   title: '$0.87',
   description: '10%',
   subtitle: 'UNI',

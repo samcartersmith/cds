@@ -70,17 +70,17 @@ export const InternalTooltip = memo(function InternalTooltip({
         animated
         borderRadius="rounded"
         dangerouslySetBackground={backgroundColor}
-        dangerouslySetStyle={{
+        maxWidth={maxWidth}
+        opacity={opacity}
+        spacingHorizontal={spacingHorizontal}
+        spacingVertical={spacingVertical}
+        style={{
           transform: [
             {
               translateY,
             },
           ],
         }}
-        maxWidth={maxWidth}
-        opacity={opacity}
-        spacingHorizontal={spacingHorizontal}
-        spacingVertical={spacingVertical}
         testID={testID}
         {...props}
       >

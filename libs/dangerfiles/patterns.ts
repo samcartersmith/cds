@@ -16,7 +16,6 @@ export const componentPatterns = [
   'packages/mobile/**/*.tsx',
   'packages/web-visualization/**/*.tsx',
   'packages/mobile-visualization/**/*.tsx',
-  'packages/web-overlays/**/*.tsx',
 ];
 
 // publicly facing packages that are related to CDS components
@@ -26,5 +25,4 @@ export const cdsPackagesPatterns = [
   'packages/common/**/*.(tsx|ts)',
   'packages/web-visualization/**/*.(tsx|ts)',
   'packages/mobile-visualization/**/*.(tsx|ts)',
-  'packages/web-overlays/**/*.(tsx|ts)',
 ];

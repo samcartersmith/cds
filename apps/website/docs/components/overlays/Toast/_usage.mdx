@@ -21,7 +21,6 @@ function ToastExample() {
     const handleShowToast = useCallback(() => {
       toast.show(toastText, {
         action: { label: 'Action', onPress: () => console.log('action pressed') },
-        // dangerouslySetDuration: 10000,
         onWillHide: () => {
           console.log('toast hiding');
         },

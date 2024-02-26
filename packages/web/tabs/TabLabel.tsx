@@ -100,7 +100,7 @@ export const TabLabel = memo(
                   color={color}
                   {...props}
                   aria-hidden="true"
-                  dangerouslySetClassName={hiddenClassName}
+                  className={hiddenClassName}
                 />
               </>
             )}
@@ -115,7 +115,7 @@ export const TabLabel = memo(
               color={color}
               id={accessibilityLabelId}
               {...props}
-              dangerouslySetClassName={variant === 'primary' ? tabLabelSpacingClassName : undefined}
+              className={variant === 'primary' ? tabLabelSpacingClassName : undefined}
             />
           ))}
         <Collapsible collapsed={!count} direction="horizontal" role="status" spacingStart={0.5}>

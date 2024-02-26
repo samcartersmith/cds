@@ -1,13 +1,12 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
-import { FloatingAssetCardBaseProps } from '@cbhq/cds-common';
 import { ethBackground, floatingAssetCardCustomImage } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Carousel } from '../../media';
 import { TextHeadline, TextLabel2 } from '../../typography';
-import { FloatingAssetCard } from '../FloatingAssetCard';
+import { FloatingAssetCard, FloatingAssetCardProps } from '../FloatingAssetCard';
 
 const styles = StyleSheet.create({
   image: {
@@ -17,7 +16,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const exampleProps: FloatingAssetCardBaseProps = {
+const exampleProps: FloatingAssetCardProps = {
   title: 'Title',
   description: 'Description',
   subtitle: 'Subtitle',

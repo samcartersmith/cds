@@ -1,15 +1,13 @@
-import { createFeatureEntryCardDeprecated } from '@cbhq/cds-common/cards/createFeatureEntryCardDeprecated';
-
-import { Button } from '../buttons/Button';
-import { SpotSquare } from '../illustrations/SpotSquare';
+import { createFeatureEntryCard } from '@cbhq/cds-common/cards/createFeatureEntryCard';
 
 import { Card } from './Card';
 import { CardBody } from './CardBody';
 
 /** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
-export const FeatureEntryCard = createFeatureEntryCardDeprecated({
-  Button,
+export type FeatureEntryCardProps = React.ComponentProps<typeof FeatureEntryCard>;
+
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
+export const FeatureEntryCard = createFeatureEntryCard({
   Card,
   CardBody,
-  SpotSquare,
 });

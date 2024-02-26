@@ -5,11 +5,6 @@ import { dataCards } from '@cbhq/cds-common/internal/data/dataCards';
 import { featureEntryCards } from '@cbhq/cds-common/internal/data/featureEntryCards';
 import { feedCards } from '@cbhq/cds-common/internal/data/feedCards';
 
-import { AnnouncementCard } from '../../alpha/AnnouncementCard';
-import { CardGroup } from '../../alpha/CardGroup';
-import { DataCard } from '../../alpha/DataCard';
-import { FeatureEntryCard } from '../../alpha/FeatureEntryCard';
-import { FeedCard } from '../../alpha/FeedCard';
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';
 import { CellMedia } from '../../cells/CellMedia';
@@ -18,7 +13,12 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
+import { AnnouncementCard, AnnouncementCardProps } from '../AnnouncementCard';
 import { Card } from '../Card';
+import { CardGroup } from '../CardGroup';
+import { DataCard } from '../DataCard';
+import { FeatureEntryCard, FeatureEntryCardProps } from '../FeatureEntryCard';
+import { FeedCard } from '../FeedCard';
 
 const {
   ListCellCard,
@@ -55,21 +55,23 @@ const CardScreen = () => {
       <Example title="Feed Card">
         <CardGroup>
           {feedCards.map(({ like: getLikeProps, ...item }) => (
+            // @ts-expect-error common onPress not typed
             <FeedCard {...item} like={getLikeProps()} />
           ))}
         </CardGroup>
       </Example>
       <Example title="Announcement Card">
         <CardGroup>
-          {announcementCards.map((item) => (
-            <AnnouncementCard key={item.title} {...item} />
+          {announcementCards.map((item, idx) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <AnnouncementCard key={idx} {...(item as AnnouncementCardProps)} />
           ))}
         </CardGroup>
       </Example>
       <Example title="Feature Entry Card">
         <CardGroup>
           {featureEntryCards.map((item) => (
-            <FeatureEntryCard {...item} />
+            <FeatureEntryCard {...(item as FeatureEntryCardProps)} />
           ))}
         </CardGroup>
       </Example>

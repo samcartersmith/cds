@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 
-import { NoopFn } from './Helpers';
 import { SharedProps } from './SharedProps';
 
 export type FloatingAssetCardBaseProps = {
@@ -19,8 +18,4 @@ export type FloatingAssetCardBaseProps = {
    * @default 's'
    */
   size?: 's' | 'l';
-  /**
-   * Callback when card is pressed
-   * */
-  onPress?: NoopFn;
 } & SharedProps;

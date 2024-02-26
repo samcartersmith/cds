@@ -37,7 +37,7 @@ export const MenuItem = memo(
         <Pressable
           ref={ref}
           noScaleOnPress
-          backgroundColor="transparent"
+          background="transparent"
           className={insetFocusRing}
           onPress={handlePress}
           role="menuitem"

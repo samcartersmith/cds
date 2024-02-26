@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { gutter } from '../tokens/sizing';
 import type { AvatarBaseProps, PaletteForeground, TextBaseProps } from '../types';
-import type { CardBoxProps, CardHeaderProps } from '../types/alpha';
+import type { CardBoxProps, CardHeaderProps } from '../types';
 
 type CreateCardHeaderParams<T> = {
   HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
@@ -26,8 +26,8 @@ export function createCardHeader<T>({
 }: CreateCardHeaderParams<T>) {
   const CardHeader = memo(function CardHeader({
     avatar,
-    metadata,
-    author,
+    metaData,
+    description,
     action,
     testID,
   }: CardHeaderProps) {
@@ -40,10 +40,12 @@ export function createCardHeader<T>({
         testID={testID}
       >
         <HStack alignItems="center" flexGrow={1} gap={1}>
-          {avatar ? <Avatar alt={author ?? avatar} shape="circle" size="xl" src={avatar} /> : null}
+          {avatar ? (
+            <Avatar alt={description ?? avatar} shape="circle" size="xl" src={avatar} />
+          ) : null}
           <VStack>
-            {author ? <TextLabel1>{author}</TextLabel1> : null}
-            {metadata ? <TextLegal color="foregroundMuted">{metadata}</TextLegal> : null}
+            {description ? <TextLabel1>{description}</TextLabel1> : null}
+            {metaData ? <TextLegal color="foregroundMuted">{metaData}</TextLegal> : null}
           </VStack>
         </HStack>
         {action}

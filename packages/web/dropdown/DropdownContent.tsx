@@ -57,10 +57,7 @@ export const DropdownContent = memo(
           ref={ref}
           background
           borderRadius="roundedLarge"
-          dangerouslySetClassName={cx(
-            dropdownStaticClassName,
-            !minWidth ? dropdownStyleOverrides : undefined,
-          )} // if there's a custom minWidth, we don't want to override that
+          className={cx(dropdownStaticClassName, !minWidth ? dropdownStyleOverrides : undefined)} // if there's a custom minWidth, we don't want to override that
           elevation={2}
           minWidth={minWidth}
           overflow="auto"

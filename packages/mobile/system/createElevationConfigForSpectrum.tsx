@@ -13,7 +13,6 @@ import {
   elevation1Palette,
   elevation2ChildrenPalette,
   elevation2Palette,
-  frontierSpectrumPalette,
 } from '@cbhq/cds-common/palette/constants';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
 import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
@@ -33,7 +32,6 @@ export type CreateElevationConfigForSpectrumParams = {
   name: keyof typeof elevations;
   parentThemeConfig: ThemeConfig;
   spectrum: Spectrum;
-  hasFrontier?: boolean;
 };
 const elevations = {
   elevation1: {
@@ -65,11 +63,9 @@ export const createElevationConfigForSpectrum = ({
   name,
   spectrum,
   parentThemeConfig,
-  hasFrontier,
 }: CreateElevationConfigForSpectrumParams): ElevationConfigForSpectrum => {
   const { level, palette, childrenName, childrenPalette, styles } = elevations[name];
   const config = createThemeConfig({
-    hasFrontier,
     name,
     palette: {
       light: { transparent: parentThemeConfig.light.palette.background },
@@ -81,14 +77,10 @@ export const createElevationConfigForSpectrum = ({
   // Only update childrenConfig in dark mode
   if (spectrum === 'dark') {
     childrenConfig = createThemeConfig({
-      hasFrontier,
       name: childrenName,
       parentThemeConfig: config,
       palette: {
-        // frontier buttons don't have border color like old ones. This makes it so frontier buttons are visible on elevated surfaces.
-        dark: hasFrontier
-          ? { ...childrenPalette.dark, secondary: frontierSpectrumPalette.dark.secondary }
-          : childrenPalette.dark,
+        dark: childrenPalette.dark,
       },
     });
   }

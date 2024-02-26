@@ -45,8 +45,6 @@ export const NavigationIconButton = memo(
       variant as IconButtonVariant,
       // disable transparency
       false,
-      // enable frontier colors
-      true,
     );
     const iconSize = compact ? 's' : 'm';
 
@@ -72,7 +70,7 @@ export const NavigationIconButton = memo(
         {...props}
         ref={ref}
         as={as}
-        backgroundColor={backgroundColor}
+        background={backgroundColor}
         className={cx(flexStyles, iconButton, isActive ? focusVisibleClassName : null)}
         disabled={disabled}
         onBlur={handleBlur}

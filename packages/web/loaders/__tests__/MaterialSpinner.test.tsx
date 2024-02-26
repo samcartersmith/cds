@@ -9,13 +9,13 @@ describe('MaterialSpinner', () => {
     expect(await renderA11y(<MaterialSpinner color="primary" size={60} />)).toHaveNoViolations();
   });
 
-  it('size and color are correctly set', async () => {
+  it('size and color are correctly set', () => {
     render(<MaterialSpinner color="primary" size={60} testID="material-spinner-svg" />);
 
     expect(screen.getByTestId('material-spinner-svg')).toHaveAttribute('height', `${60}px`);
     expect(screen.getByTestId('material-spinner-svg')).toHaveAttribute(
-      'style',
-      `stroke: ${usePalette().primary}; transform-origin: center center;`,
+      'stroke',
+      `${usePalette().primary}`,
     );
   });
 

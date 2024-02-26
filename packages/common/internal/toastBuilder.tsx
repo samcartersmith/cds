@@ -30,7 +30,6 @@ export function toastBuilder({ Toast, Button, PortalProvider, Stack }: CreateToa
         action: { label: 'Action', onPress: onActionPressConsole },
         hideCloseButton: true,
         disablePortal: true,
-        // dangerouslySetDuration: 10000,
         onWillHide: onWillHideConsole,
         onDidHide: onDidHideConsole,
       });

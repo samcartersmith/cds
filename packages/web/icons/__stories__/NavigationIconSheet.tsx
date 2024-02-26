@@ -4,8 +4,7 @@ import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import names from '@cbhq/cds-icons/__generated__/nav/data/names';
 
-import { HStack } from '../../alpha/HStack';
-import { VStack } from '../../alpha/VStack';
+import { HStack, VStack } from '../../layout';
 import { palette } from '../../tokens';
 import { TextLegal } from '../../typography';
 import { NavigationIcon, NavigationIconName, NavigationIconSize } from '../NavigationIcon';
@@ -51,7 +50,7 @@ export const NavigationIconSheet = memo(function NavigationIconSheet({
           return (
             <HStack key={`nav-icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
               <VStack gap={2}>
-                <HStack alignItems="center" dangerouslySetClassName={iconFontOverride} gap={2}>
+                <HStack alignItems="center" className={iconFontOverride} gap={2}>
                   <ScaleProvider value="xSmall">
                     <NavigationIcon name={name} size="s" />
                     <NavigationIcon active name={name} size="s" />

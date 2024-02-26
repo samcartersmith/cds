@@ -5,7 +5,7 @@ import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { chipMaxWidth } from '@cbhq/cds-common/tokens/chip';
 
 import { HStack } from '../layout';
-import { FeatureFlagProvider, PressableOpacity, ThemeProvider } from '../system';
+import { PressableOpacity, ThemeProvider } from '../system';
 import { TextHeadline } from '../typography';
 
 import { ChipProps } from './ChipProps';
@@ -43,7 +43,7 @@ export const Chip = memo(
         alignItems="center"
         background="secondary"
         borderRadius="roundedXLarge"
-        dangerouslySetClassName={motionStyles}
+        className={motionStyles}
         gap={1}
         maxWidth={maxWidth}
         spacingHorizontal={compact ? 1 : 2}
@@ -62,25 +62,22 @@ export const Chip = memo(
       </HStack>
     );
 
-    // forcing frontier because secondary is same as background without frontier
     return (
-      <FeatureFlagProvider frontier>
-        <ThemeProvider spectrum={inverted ? invertedTheme : theme}>
-          {onPress ? (
-            <PressableOpacity
-              ref={ref}
-              borderRadius="roundedXLarge"
-              onPress={onPress}
-              testID={testID}
-              {...props}
-            >
-              {content}
-            </PressableOpacity>
-          ) : (
-            content
-          )}
-        </ThemeProvider>
-      </FeatureFlagProvider>
+      <ThemeProvider spectrum={inverted ? invertedTheme : theme}>
+        {onPress ? (
+          <PressableOpacity
+            ref={ref}
+            borderRadius="roundedXLarge"
+            onPress={onPress}
+            testID={testID}
+            {...props}
+          >
+            {content}
+          </PressableOpacity>
+        ) : (
+          content
+        )}
+      </ThemeProvider>
     );
   }),
 );

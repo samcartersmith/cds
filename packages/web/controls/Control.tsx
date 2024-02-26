@@ -54,9 +54,7 @@ type ControlInternalProps<T extends string> = {
   label?: TextProps['children'];
   children: React.ReactChild;
 } & ControlProps &
-  Partial<
-    Pick<InteractableProps, 'backgroundColor' | 'borderColor' | 'borderRadius' | 'borderWidth'>
-  >;
+  Partial<Pick<InteractableProps, 'background' | 'borderColor' | 'borderRadius' | 'borderWidth'>>;
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   {
@@ -69,7 +67,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     children,
     label,
     'aria-labelledby': ariaLabelledby,
-    backgroundColor,
+    background,
     borderColor,
     borderRadius,
     borderWidth,
@@ -128,7 +126,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       <Interactable
         transparentWhileInactive
         as="div"
-        backgroundColor={backgroundColor ?? (checked ? 'primary' : 'background')}
+        background={background ?? (checked ? 'primary' : 'background')}
         borderColor={borderColor}
         borderRadius={borderRadius}
         borderWidth={borderWidth}
@@ -143,7 +141,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       </Interactable>
     ),
     [
-      backgroundColor,
+      background,
       borderColor,
       borderRadius,
       borderWidth,

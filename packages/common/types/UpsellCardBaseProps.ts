@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 
 import { DimensionStyles } from './DimensionStyles';
-import { NoopFn } from './Helpers';
 import { PaletteBackground } from './Palette';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
@@ -13,12 +12,6 @@ export type UpsellCardBaseProps = {
   description?: ReactNode;
   /** Node to display for the card action */
   action?: ReactNode;
-  /** Callback fired when the action button is pressed */
-  onActionPress?: NoopFn;
-  /** Callback fired when the dismiss button is pressed */
-  onDismissPress?: NoopFn;
-  /** Callback fired when the entire card is pressed. Cannot be used if there is an action or is dismissable. */
-  onPress?: NoopFn;
   /**
    * Remote Image or other node with media content.
    */

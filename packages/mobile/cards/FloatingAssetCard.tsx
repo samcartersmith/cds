@@ -1,4 +1,5 @@
 import React, { memo, useMemo } from 'react';
+import { PressableProps } from 'react-native';
 import { FloatingAssetCardBaseProps } from '@cbhq/cds-common';
 import {
   floatingAssetCardLargeWidth,
@@ -10,6 +11,8 @@ import { HStack, VStack } from '../layout';
 import { Pressable } from '../system';
 import { TextHeadline, TextLabel2, TextLegal } from '../typography';
 
+export type FloatingAssetCardProps = FloatingAssetCardBaseProps & Pick<PressableProps, 'onPress'>;
+
 export const FloatingAssetCard = memo(
   ({
     title,
@@ -19,7 +22,7 @@ export const FloatingAssetCard = memo(
     testID = 'floating-asset-card',
     size = 's',
     onPress,
-  }: FloatingAssetCardBaseProps) => {
+  }: FloatingAssetCardProps) => {
     const width = useMemo(
       () => (size === 'l' ? floatingAssetCardLargeWidth : floatingAssetCardSmallDimension),
       [size],
@@ -46,29 +49,21 @@ export const FloatingAssetCard = memo(
         </HStack>
         <VStack gap={0.5} maxWidth={width}>
           {typeof subtitle === 'string' ? (
-            <TextLegal
-              color="foregroundMuted"
-              dangerouslySetStyle={largeTextStyle}
-              numberOfLines={1}
-            >
+            <TextLegal color="foregroundMuted" numberOfLines={1} style={largeTextStyle}>
               {subtitle}
             </TextLegal>
           ) : (
             subtitle
           )}
           {typeof title === 'string' ? (
-            <TextHeadline dangerouslySetStyle={largeTextStyle} numberOfLines={3}>
+            <TextHeadline numberOfLines={3} style={largeTextStyle}>
               {title}
             </TextHeadline>
           ) : (
             title
           )}
           {typeof description === 'string' ? (
-            <TextLabel2
-              color="foregroundMuted"
-              dangerouslySetStyle={largeTextStyle}
-              numberOfLines={2}
-            >
+            <TextLabel2 color="foregroundMuted" numberOfLines={2} style={largeTextStyle}>
               {description}
             </TextLabel2>
           ) : (
@@ -80,7 +75,7 @@ export const FloatingAssetCard = memo(
     return onPress ? (
       <Pressable
         accessibilityRole="button"
-        backgroundColor="transparent"
+        background="transparent"
         borderRadius="roundedXLarge"
         onPress={onPress}
         style={pressableStyles}

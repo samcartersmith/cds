@@ -7,8 +7,10 @@ import {
 } from '@cbhq/cds-common/tokens/card';
 
 import { HStack, VStack } from '../layout';
-import { Pressable } from '../system';
+import { Pressable, PressableProps } from '../system';
 import { TextHeadline, TextLabel2, TextLegal } from '../typography';
+
+export type ContainedAssetCardProps = ContainedAssetCardBaseProps & Pick<PressableProps, 'onPress'>;
 
 export const ContainedAssetCard = memo(
   ({
@@ -20,7 +22,7 @@ export const ContainedAssetCard = memo(
     size = 's',
     children,
     onPress,
-  }: ContainedAssetCardBaseProps) => {
+  }: ContainedAssetCardProps) => {
     const width = useMemo(
       () => (size === 'l' ? containedAssetCardLargeWidth : containedAssetCardSmallDimension),
       [size],
@@ -84,7 +86,7 @@ export const ContainedAssetCard = memo(
     return onPress ? (
       <Pressable
         as="button"
-        backgroundColor="transparent"
+        background="transparent"
         borderRadius="roundedXLarge"
         onPress={onPress}
         style={pressableStyles}

@@ -8,7 +8,6 @@ import * as SplashScreen from 'expo-splash-screen';
 import { usePalette } from '@cbhq/cds-mobile/hooks/usePalette';
 import { PortalProvider } from '@cbhq/cds-mobile/overlays/PortalProvider';
 import { DevicePreferencesProvider } from '@cbhq/cds-mobile/system/DevicePreferencesProvider';
-import { FeatureFlagProvider } from '@cbhq/cds-mobile/system/FeatureFlagProvider';
 import { StatusBar } from '@cbhq/cds-mobile/system/StatusBar';
 import { ThemeProvider } from '@cbhq/cds-mobile/system/ThemeProvider';
 import { Playground } from '@cbhq/ui-mobile-playground';
@@ -51,20 +50,18 @@ const App = memo(() => {
   }
 
   return (
-    <FeatureFlagProvider frontier>
-      <DevicePreferencesProvider>
-        <ThemeProvider name="playground-root">
-          <CdsSafeAreaProvider>
-            <PortalProvider>
-              <StatusBar hidden={!__DEV__} />
-              <NavigationContainer linking={linking} onReady={handleOnReady}>
-                <Playground routes={codegenRoutes} />
-              </NavigationContainer>
-            </PortalProvider>
-          </CdsSafeAreaProvider>
-        </ThemeProvider>
-      </DevicePreferencesProvider>
-    </FeatureFlagProvider>
+    <DevicePreferencesProvider>
+      <ThemeProvider name="playground-root">
+        <CdsSafeAreaProvider>
+          <PortalProvider>
+            <StatusBar hidden={!__DEV__} />
+            <NavigationContainer linking={linking} onReady={handleOnReady}>
+              <Playground routes={codegenRoutes} />
+            </NavigationContainer>
+          </PortalProvider>
+        </CdsSafeAreaProvider>
+      </ThemeProvider>
+    </DevicePreferencesProvider>
   );
 });
 

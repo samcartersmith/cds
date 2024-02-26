@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, forwardRef, memo, useRef } from 'react';
+import React, { AnchorHTMLAttributes, forwardRef, memo, MouseEventHandler, useRef } from 'react';
 import { css } from 'linaria';
 import { ForwardedRef, SharedProps } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
@@ -6,7 +6,6 @@ import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBasePr
 
 import { ButtonOrLink } from '../system/ButtonOrLink';
 import type { DynamicElement } from '../types';
-import { OnPress } from '../types';
 import { cx } from '../utils/linaria';
 
 import { TextBody } from './TextBody';
@@ -74,13 +73,13 @@ export type LinkProps = {
    */
   openInNewWindow?: boolean;
   /** Callback fired when the element is clicked. */
-  onPress?: OnPress<HTMLAnchorElement>;
+  onPress?: MouseEventHandler<HTMLAnchorElement>;
   /** Callback for custom Link component */
   renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
   /**
    * @danger Adds a className to the Link. If you pass in a className make sure your styles override the Link styles using the Link class .cds-link like this: .my-class.cds-link
    */
-  dangerouslySetClassName?: string;
+  className?: string;
 } & Omit<LinkBaseProps, 'color'> &
   SharedProps &
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'color'>;
@@ -100,7 +99,7 @@ export const Link = memo(
       // text props
       color = 'primary',
       mono,
-      dangerouslySetClassName,
+      className,
       underline,
       ...props
     }: LinkProps,
@@ -113,7 +112,7 @@ export const Link = memo(
     const enhancedProps = {
       'aria-label': accessibilityLabel,
       'data-testid': testID,
-      className: cx(linkClassName, link, dangerouslySetClassName),
+      className: cx(linkClassName, link, className),
       onClick: onPress,
       ref: mergedRef,
       href: to,
@@ -122,8 +121,8 @@ export const Link = memo(
       children: (
         <TextComponent
           as="span"
+          className={linkContainerClassName}
           color={color}
-          dangerouslySetClassName={linkContainerClassName}
           mono={mono}
           underline={underline}
         >

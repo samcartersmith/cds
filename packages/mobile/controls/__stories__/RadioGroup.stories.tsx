@@ -67,14 +67,14 @@ const RadioGroupScreen = () => {
                 accessibilityLabel="Select a currency to trade"
                 onChange={setGroup1}
                 options={options1}
-                selectedValue={group1}
+                value={group1}
               />
               <RadioGroup<keyof typeof options2>
                 accessibilityLabel="Choose as mascot for your team"
                 label={<TextHeadline>Choose a Mascot</TextHeadline>}
                 onChange={setGroup2}
                 options={options2}
-                selectedValue={group2}
+                value={group2}
               />
               <TextHeadline>Select a Currency</TextHeadline>
               <RadioGroup<keyof typeof options1>
@@ -83,7 +83,7 @@ const RadioGroupScreen = () => {
                 gap={2}
                 onChange={setGroup3}
                 options={options1}
-                selectedValue={group3}
+                value={group3}
               />
               <TextHeadline>Select a dish to order</TextHeadline>
               <RadioGroup<keyof typeof options3>
@@ -92,7 +92,7 @@ const RadioGroupScreen = () => {
                 gap={2}
                 onChange={setGroup4}
                 options={options3}
-                selectedValue={group4}
+                value={group4}
               />
             </>
           );

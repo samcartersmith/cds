@@ -2,8 +2,6 @@ import React, { useCallback, useRef, useState } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { DrawerRefBaseProps } from '@cbhq/cds-common/types';
 
-import { Button } from '../../buttons/Button';
-import { IconButton } from '../../buttons/IconButton';
 import { FeedCard } from '../../cards/FeedCard';
 import { Menu } from '../../controls/Menu';
 import { SelectOption } from '../../controls/SelectOption';
@@ -29,26 +27,16 @@ const FeedCardTray = () => {
   return (
     <>
       <FeedCard
-        avatarUrl="https://images.coinbase.com/avatar?s=350"
-        bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-        bodyMediaUrl="https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png"
-        bodyOrientation="vertical"
-        bodyTitle="LEARN AMP. EARN $3 IN AMP."
-        footerActions={
-          <Button compact variant="secondary">
-            Actions
-          </Button>
-        }
-        headerActionNode={
-          <IconButton
-            transparent
-            accessibilityLabel="More actions"
-            name="more"
-            onPress={handleFeedCardHeaderButtonPress}
-            variant="foregroundMuted"
-          />
-        }
-        headerDescription="Earn crypto"
+        author="Earn crypto"
+        avatar="https://images.coinbase.com/avatar?s=350"
+        description="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+        headerAction={{
+          name: 'more',
+          onPress: handleFeedCardHeaderButtonPress,
+        }}
+        image="https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png"
+        mediaPlacement="above"
+        title="LEARN AMP. EARN $3 IN AMP."
       />
       {isTrayVisible && (
         <Tray ref={trayRef} onCloseComplete={handleCloseTray}>

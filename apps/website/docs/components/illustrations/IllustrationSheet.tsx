@@ -180,7 +180,7 @@ const IllustrationTile = ({
           <SpotIcon dimension={dimension as SpotIconDimension} name={name as SpotIconName} />
         )}
 
-        <TextLegal align="center" as="p" dangerouslySetClassName={overflowStyles}>
+        <TextLegal align="center" as="p" className={overflowStyles}>
           {name}
         </TextLegal>
       </VStack>

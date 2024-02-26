@@ -264,14 +264,14 @@ export const Carousel = memo(
             return (
               <ProgressIndicator
                 key={`progress-indicator-${id}`}
-                dangerouslySetStyle={{
+                progress={progress}
+                style={{
                   opacity: animatedStyles.opacity,
                   width: animatedStyles.opacity.interpolate({
                     inputRange: [0, 1],
                     outputRange: [0, PROGRESS_INDICATOR_WIDTH + progressSpacingEnd],
                   }),
                 }}
-                progress={progress}
               />
             );
           }

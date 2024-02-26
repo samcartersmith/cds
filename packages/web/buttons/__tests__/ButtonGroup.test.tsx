@@ -16,19 +16,6 @@ describe('ButtonGroup.test', () => {
     expect(screen.getAllByRole('listitem')).toBeTruthy();
     expect(screen.getAllByRole('button')).toBeTruthy();
   });
-
-  it('renders vertical list', () => {
-    render(
-      <ButtonGroup vertical accessibilityLabel="Group">
-        <Button>Save</Button>
-        <Button variant="secondary">Cancel</Button>
-      </ButtonGroup>,
-    );
-
-    expect(screen.getByRole('list')).toBeTruthy();
-    expect(screen.getAllByRole('listitem')).toBeTruthy();
-    expect(screen.getAllByRole('button')).toBeTruthy();
-  });
   it('renders vertical when direction is vertical list', () => {
     render(
       <ButtonGroup accessibilityLabel="Group" direction="vertical">

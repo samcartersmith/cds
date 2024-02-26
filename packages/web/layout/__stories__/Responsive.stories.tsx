@@ -73,7 +73,7 @@ export const ResponsiveBox = ({
       <TextDisplay2 as="h2">Responsive Flex Props</TextDisplay2>
       <Box
         borderColor="line"
-        dangerouslySetClassName={animationStyles}
+        className={animationStyles}
         minHeight={200}
         responsiveConfig={responsiveConfig}
       >
@@ -206,7 +206,7 @@ export const ResponsiveCard = () => {
         action={
           <IconButton transparent accessibilityLabel="More" name="more" variant="foregroundMuted" />
         }
-        avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        avatar="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
         description="Earn crypto"
         metaData="Dec 18"
       />

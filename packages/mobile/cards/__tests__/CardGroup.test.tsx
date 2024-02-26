@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react-native';
 
-import { AnnouncementCard } from '../../alpha/AnnouncementCard';
-import { FeatureFlagProvider } from '../../system';
+import { AnnouncementCard } from '../AnnouncementCard';
 import { CardGroup } from '../CardGroup';
 
 describe('CardGroup.test', () => {
@@ -35,22 +34,6 @@ describe('CardGroup.test', () => {
         <AnnouncementCard description="Item1 description" title="Item1 title" />
         <AnnouncementCard description="Item2 description" title="Item2 title" />
       </CardGroup>,
-    );
-
-    expect(screen.getByText('Item1 title')).toBeTruthy();
-    expect(screen.getByText('Item1 description')).toBeTruthy();
-    expect(screen.getByText('Item2 title')).toBeTruthy();
-    expect(screen.getByText('Item2 description')).toBeTruthy();
-  });
-
-  it('renders frontier', () => {
-    render(
-      <FeatureFlagProvider frontierCard>
-        <CardGroup>
-          <AnnouncementCard description="Item1 description" title="Item1 title" />
-          <AnnouncementCard description="Item2 description" title="Item2 title" />
-        </CardGroup>
-      </FeatureFlagProvider>,
     );
 
     expect(screen.getByText('Item1 title')).toBeTruthy();

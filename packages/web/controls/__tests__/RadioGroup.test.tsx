@@ -29,9 +29,7 @@ describe('RadioGroup.test', () => {
   });
 
   it('renders options', () => {
-    render(
-      <RadioGroup name="radio-group" onChange={onChange} options={options} selectedValue="btc" />,
-    );
+    render(<RadioGroup name="radio-group" onChange={onChange} options={options} value="btc" />);
 
     expect(screen.getByRole('radiogroup')).toBeTruthy();
     expect(screen.getByRole('radiogroup').childNodes).toHaveLength(4);
@@ -44,7 +42,7 @@ describe('RadioGroup.test', () => {
         name="radio-group"
         onChange={onChange}
         options={options}
-        selectedValue="btc"
+        value="btc"
       />,
     );
 
@@ -58,8 +56,8 @@ describe('RadioGroup.test', () => {
         name="radio-group"
         onChange={onChange}
         options={options}
-        selectedValue="btc"
         testID="test-radio-group"
+        value="btc"
       />,
     );
 
@@ -82,8 +80,8 @@ describe('RadioGroup.test', () => {
           name="radio-group"
           onChange={onChange}
           options={options}
-          selectedValue="btc"
           testID="test-radio-group"
+          value="btc"
         />,
       ),
     ).toHaveNoViolations();

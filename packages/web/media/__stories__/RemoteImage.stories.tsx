@@ -92,7 +92,7 @@ export const Default = () => {
             return (
               <RemoteImage
                 key={key}
-                dangerouslySetClassName={whiteBorder}
+                className={whiteBorder}
                 source={imgURL}
                 {...sharedProps}
                 shape="squircle"

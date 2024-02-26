@@ -8,7 +8,7 @@ export type ChipProps = ChipBaseProps &
     | 'as'
     | 'children'
     | 'loading'
-    | 'backgroundColor'
+    | 'background'
     | 'start'
     | 'numberOfLines'
     | 'accessibilityHint'

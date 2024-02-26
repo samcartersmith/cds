@@ -3,16 +3,19 @@ import { AccordionItem } from '@cbhq/cds-web/accordion/AccordionItem';
 import { Accordion } from '@cbhq/cds-web/accordion/Accordion';
 import { VStack, HStack } from '@cbhq/cds-web/layout';
 
-The following items will be deleted in v5.0.0. Please use the <code>cds-migrator</code> package and respective [migration guide](../../../guides/migration) to update your codebase.
+This is a list of changes in CDS v5.0.0. Please use the <code>cds-migrator</code> package and respective [migration guide](/guides/migration/web-and-mobile/5-0-0/) to update your codebase.
 
 ### 🧱 Components {#components}
 
 <Accordion>
   <AccordionItem
-    itemKey="Badge.web"
+    itemKey="Badge.web-93"
     title={
       <HStack gap={1}>
-        Badge <Tag colorScheme="yellow">replaced</Tag>
+        Badge{' '}
+        <>
+          <Tag colorScheme="yellow">replaced</Tag>
+        </>
       </HStack>
     }
     subtitle="@cbhq/cds-web"
@@ -25,10 +28,13 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="Badge.mobile"
+    itemKey="Badge.mobile-94"
     title={
       <HStack gap={1}>
-        Badge <Tag colorScheme="yellow">replaced</Tag>
+        Badge{' '}
+        <>
+          <Tag colorScheme="yellow">replaced</Tag>
+        </>
       </HStack>
     }
     subtitle="@cbhq/cds-mobile"
@@ -41,10 +47,10 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="Tooltip V1.web"
+    itemKey="Tooltip V1.web-95"
     title={
       <HStack gap={1}>
-        Tooltip V1 <Tag colorScheme="gray">path</Tag>
+        Tooltip V1 <Tag colorScheme="gray">moved</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-web"
@@ -57,10 +63,10 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="Card.web"
+    itemKey="Card.web-96"
     title={
       <HStack gap={1}>
-        Card <Tag colorScheme="gray">path</Tag>
+        Card <Tag colorScheme="gray">moved</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-web"
@@ -73,10 +79,10 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="Card.mobile"
+    itemKey="Card.mobile-97"
     title={
       <HStack gap={1}>
-        Card <Tag colorScheme="gray">path</Tag>
+        Card <Tag colorScheme="gray">moved</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-mobile"
@@ -89,12 +95,11 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="CollapseArrow.web"
+    itemKey="CollapseArrow.web-98"
     title={
       <HStack gap={1}>
         CollapseArrow{' '}
         <>
-          {' '}
           <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="blue">api</Tag>
         </>
       </HStack>
@@ -121,7 +126,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="BetaProvider.common"
+    itemKey="BetaProvider.common-99"
     title={
       <HStack gap={1}>
         BetaProvider <Tag colorScheme="yellow">replaced</Tag>
@@ -138,7 +143,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="BetaContext.common"
+    itemKey="BetaContext.common-100"
     title={
       <HStack gap={1}>
         BetaContext <Tag colorScheme="yellow">replaced</Tag>
@@ -155,7 +160,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="MobileMenu.web"
+    itemKey="MobileMenu.web-101"
     title={
       <HStack gap={1}>
         MobileMenu <Tag colorScheme="red">removed</Tag>
@@ -173,7 +178,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="MobileMenuChildrenContext.web"
+    itemKey="MobileMenuChildrenContext.web-102"
     title={
       <HStack gap={1}>
         MobileMenuChildrenContext <Tag colorScheme="red">removed</Tag>
@@ -191,7 +196,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="Navigation.web"
+    itemKey="Navigation.web-103"
     title={
       <HStack gap={1}>
         Navigation <Tag colorScheme="red">removed</Tag>
@@ -209,13 +214,12 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="NavigationBar.web"
+    itemKey="NavigationBar.web-104"
     title={
       <HStack gap={1}>
         NavigationBar{' '}
         <>
-          {' '}
-          <Tag colorScheme="gray">path</Tag> <Tag colorScheme="blue">api</Tag>
+          <Tag colorScheme="gray">moved</Tag> <Tag colorScheme="blue">api</Tag>
         </>
       </HStack>
     }
@@ -249,7 +253,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="NavigationBarActions.web"
+    itemKey="NavigationBarActions.web-105"
     title={
       <HStack gap={1}>
         NavigationBarActions <Tag colorScheme="red">removed</Tag>
@@ -267,7 +271,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="NavigationBarControls.web"
+    itemKey="NavigationBarControls.web-106"
     title={
       <HStack gap={1}>
         NavigationBarControls <Tag colorScheme="red">removed</Tag>
@@ -285,7 +289,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="NavigationBarCtas.web"
+    itemKey="NavigationBarCtas.web-107"
     title={
       <HStack gap={1}>
         NavigationBarCtas <Tag colorScheme="red">removed</Tag>
@@ -303,7 +307,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="NavigationBarTitles.web"
+    itemKey="NavigationBarTitles.web-108"
     title={
       <HStack gap={1}>
         NavigationBarTitles <Tag colorScheme="red">removed</Tag>
@@ -321,7 +325,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="NavigationDisplayTitle.web"
+    itemKey="NavigationDisplayTitle.web-109"
     title={
       <HStack gap={1}>
         NavigationDisplayTitle <Tag colorScheme="red">removed</Tag>
@@ -339,13 +343,12 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="NavigationIconButton.web"
+    itemKey="NavigationIconButton.web-110"
     title={
       <HStack gap={1}>
         NavigationIconButton{' '}
         <>
-          {' '}
-          <Tag colorScheme="gray">path</Tag> <Tag colorScheme="blue">api</Tag>
+          <Tag colorScheme="gray">moved</Tag> <Tag colorScheme="blue">api</Tag>
         </>
       </HStack>
     }
@@ -370,7 +373,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="NavigationListItem.web"
+    itemKey="NavigationListItem.web-111"
     title={
       <HStack gap={1}>
         NavigationListItem <Tag colorScheme="red">removed</Tag>
@@ -388,10 +391,10 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="Sidebar.web"
+    itemKey="Sidebar.web-112"
     title={
       <HStack gap={1}>
-        Sidebar <Tag colorScheme="gray">path</Tag>
+        Sidebar <Tag colorScheme="gray">moved</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-web"
@@ -404,7 +407,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="SidebarSection.web"
+    itemKey="SidebarSection.web-113"
     title={
       <HStack gap={1}>
         SidebarSection <Tag colorScheme="red">removed</Tag>
@@ -422,7 +425,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="TabItem.web"
+    itemKey="TabItem.web-114"
     title={
       <HStack gap={1}>
         TabItem <Tag colorScheme="red">removed</Tag>
@@ -440,7 +443,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="Tabs.web"
+    itemKey="Tabs.web-115"
     title={
       <HStack gap={1}>
         Tabs <Tag colorScheme="yellow">replaced</Tag>
@@ -457,10 +460,10 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="MenuItem.web"
+    itemKey="MenuItem.web-116"
     title={
       <HStack gap={1}>
-        MenuItem <Tag colorScheme="gray">path</Tag>
+        MenuItem <Tag colorScheme="gray">moved</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-web"
@@ -473,7 +476,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="PopoverContent.web"
+    itemKey="PopoverContent.web-117"
     title={
       <HStack gap={1}>
         PopoverContent <Tag colorScheme="red">removed</Tag>
@@ -491,7 +494,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="PopoverContext.web"
+    itemKey="PopoverContext.web-118"
     title={
       <HStack gap={1}>
         PopoverContext <Tag colorScheme="red">removed</Tag>
@@ -509,7 +512,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="PopoverMenu.web"
+    itemKey="PopoverMenu.web-119"
     title={
       <HStack gap={1}>
         PopoverMenu <Tag colorScheme="yellow">replaced</Tag>
@@ -549,7 +552,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="PopoverTrigger.web"
+    itemKey="PopoverTrigger.web-120"
     title={
       <HStack gap={1}>
         PopoverTrigger <Tag colorScheme="red">removed</Tag>
@@ -567,7 +570,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="PopoverTriggerWrapper.web"
+    itemKey="PopoverTriggerWrapper.web-121"
     title={
       <HStack gap={1}>
         PopoverTriggerWrapper <Tag colorScheme="red">removed</Tag>
@@ -585,7 +588,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="SectionTitle.web"
+    itemKey="SectionTitle.web-122"
     title={
       <HStack gap={1}>
         SectionTitle <Tag colorScheme="yellow">replaced</Tag>
@@ -605,7 +608,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="usePopoverChildren.web"
+    itemKey="usePopoverChildren.web-123"
     title={
       <HStack gap={1}>
         usePopoverChildren <Tag colorScheme="red">removed</Tag>
@@ -623,7 +626,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="usePopoverMenu.web"
+    itemKey="usePopoverMenu.web-124"
     title={
       <HStack gap={1}>
         usePopoverMenu <Tag colorScheme="red">removed</Tag>
@@ -641,7 +644,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="usePopoverMenuAnimation.web"
+    itemKey="usePopoverMenuAnimation.web-125"
     title={
       <HStack gap={1}>
         usePopoverMenuAnimation <Tag colorScheme="red">removed</Tag>
@@ -659,7 +662,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="usePopoverPosition.web"
+    itemKey="usePopoverPosition.web-126"
     title={
       <HStack gap={1}>
         usePopoverPosition <Tag colorScheme="red">removed</Tag>
@@ -682,7 +685,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
 
 <Accordion>
   <AccordionItem
-    itemKey="BadgeBaseProps.common"
+    itemKey="BadgeBaseProps.common-127"
     title={
       <HStack gap={1}>
         BadgeBaseProps <Tag colorScheme="red">removed</Tag>
@@ -700,7 +703,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="BadgeDotBaseProps.common"
+    itemKey="BadgeDotBaseProps.common-128"
     title={
       <HStack gap={1}>
         BadgeDotBaseProps <Tag colorScheme="red">removed</Tag>
@@ -723,7 +726,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
 
 <Accordion>
   <AccordionItem
-    itemKey="badge.mobile"
+    itemKey="badge.mobile-129"
     title={
       <HStack gap={1}>
         badge <Tag colorScheme="red">removed</Tag>
@@ -745,7 +748,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="badge.web"
+    itemKey="badge.web-130"
     title={
       <HStack gap={1}>
         badge <Tag colorScheme="red">removed</Tag>
@@ -767,7 +770,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="deprecatedLineHeight.mobile"
+    itemKey="deprecatedLineHeight.mobile-131"
     title={
       <HStack gap={1}>
         deprecatedLineHeight <Tag colorScheme="red">removed</Tag>
@@ -788,7 +791,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="dangerouslySetHtmlWidth.web"
+    itemKey="dangerouslySetHtmlWidth.web-132"
     title={
       <HStack gap={1}>
         dangerouslySetHtmlWidth <Tag colorScheme="red">removed</Tag>
@@ -809,7 +812,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="horizontal.web"
+    itemKey="horizontal.web-133"
     title={
       <HStack gap={1}>
         horizontal <Tag colorScheme="blue">api</Tag>
@@ -835,7 +838,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="horizontal.mobile"
+    itemKey="horizontal.mobile-134"
     title={
       <HStack gap={1}>
         horizontal <Tag colorScheme="blue">api</Tag>
@@ -861,7 +864,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="horizontal.common"
+    itemKey="horizontal.common-135"
     title={
       <HStack gap={1}>
         horizontal <Tag colorScheme="blue">api</Tag>
@@ -890,7 +893,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="dimension.web"
+    itemKey="dimension.web-136"
     title={
       <HStack gap={1}>
         dimension <Tag colorScheme="purple">propValue</Tag>
@@ -916,7 +919,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="dimension.web"
+    itemKey="dimension.web-137"
     title={
       <HStack gap={1}>
         dimension <Tag colorScheme="purple">propValue</Tag>
@@ -942,7 +945,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="dimension.mobile"
+    itemKey="dimension.mobile-138"
     title={
       <HStack gap={1}>
         dimension <Tag colorScheme="purple">propValue</Tag>
@@ -968,7 +971,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="dimension.mobile"
+    itemKey="dimension.mobile-139"
     title={
       <HStack gap={1}>
         dimension <Tag colorScheme="purple">propValue</Tag>
@@ -999,7 +1002,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
 
 <Accordion>
   <AccordionItem
-    itemKey="useBadge.common"
+    itemKey="useBadge.common-140"
     title={
       <HStack gap={1}>
         useBadge <Tag colorScheme="red">removed</Tag>
@@ -1017,7 +1020,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="useBeta.common"
+    itemKey="useBeta.common-141"
     title={
       <HStack gap={1}>
         useBeta <Tag colorScheme="red">removed</Tag>
@@ -1035,7 +1038,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="useIsMobile.web"
+    itemKey="useIsMobile.web-142"
     title={
       <HStack gap={1}>
         useIsMobile <Tag colorScheme="yellow">replaced</Tag>
@@ -1052,7 +1055,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="useRotateAnimation.web"
+    itemKey="useRotateAnimation.web-143"
     title={
       <HStack gap={1}>
         useRotateAnimation <Tag colorScheme="yellow">replaced</Tag>
@@ -1074,10 +1077,10 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
 
 <Accordion>
   <AccordionItem
-    itemKey="motion.common"
+    itemKey="motion.common-144"
     title={
       <HStack gap={1}>
-        motion <Tag colorScheme="gray">path</Tag>
+        motion <Tag colorScheme="gray">moved</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-common"
@@ -1098,7 +1101,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="navigationStyles.web"
+    itemKey="navigationStyles.web-145"
     title={
       <HStack gap={1}>
         navigationStyles <Tag colorScheme="red">removed</Tag>
@@ -1133,7 +1136,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="navigationTokens.web"
+    itemKey="navigationTokens.web-146"
     title={
       <HStack gap={1}>
         navigationTokens <Tag colorScheme="red">removed</Tag>
@@ -1164,7 +1167,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="borderRadius.web"
+    itemKey="borderRadius.web-147"
     title={
       <HStack gap={1}>
         borderRadius <Tag colorScheme="yellow">replaced</Tag>
@@ -1180,13 +1183,12 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="responsive.web"
+    itemKey="responsive.web-148"
     title={
       <HStack gap={1}>
         responsive{' '}
         <>
-          {' '}
-          <Tag colorScheme="gray">path</Tag> <Tag colorScheme="yellow">replaced</Tag>
+          <Tag colorScheme="gray">moved</Tag> <Tag colorScheme="yellow">replaced</Tag>
         </>
       </HStack>
     }
@@ -1211,7 +1213,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="elevation.web"
+    itemKey="elevation.web-149"
     title={
       <HStack gap={1}>
         elevation <Tag colorScheme="red">removed</Tag>
@@ -1229,10 +1231,10 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="border.common"
+    itemKey="border.common-150"
     title={
       <HStack gap={1}>
-        border <Tag colorScheme="gray">path</Tag>
+        border <Tag colorScheme="gray">moved</Tag>
       </HStack>
     }
     subtitle="@cbhq/cds-common"
@@ -1248,7 +1250,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="interactable.common"
+    itemKey="interactable.common-151"
     title={
       <HStack gap={1}>
         interactable <Tag colorScheme="yellow">replaced</Tag>
@@ -1281,13 +1283,12 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
 
 <Accordion>
   <AccordionItem
-    itemKey="buttonBuilderDeprecated.common"
+    itemKey="buttonBuilderDeprecated.common-152"
     title={
       <HStack gap={1}>
         buttonBuilderDeprecated{' '}
         <>
-          {' '}
-          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">path</Tag>
+          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">moved</Tag>
         </>
       </HStack>
     }
@@ -1303,7 +1304,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="Animated.web"
+    itemKey="Animated.web-153"
     title={
       <HStack gap={1}>
         Animated <Tag colorScheme="red">removed</Tag>
@@ -1319,7 +1320,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="getIllustrationScaledDimension.common"
+    itemKey="getIllustrationScaledDimension.common-154"
     title={
       <HStack gap={1}>
         getIllustrationScaledDimension <Tag colorScheme="red">removed</Tag>
@@ -1338,13 +1339,12 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="createAnnouncementCardDeprecated.common"
+    itemKey="createAnnouncementCardDeprecated.common-155"
     title={
       <HStack gap={1}>
         createAnnouncementCardDeprecated{' '}
         <>
-          {' '}
-          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">path</Tag>
+          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">moved</Tag>
         </>
       </HStack>
     }
@@ -1362,13 +1362,12 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="createFeatureEntryCardDeprecated.common"
+    itemKey="createFeatureEntryCardDeprecated.common-156"
     title={
       <HStack gap={1}>
         createFeatureEntryCardDeprecated{' '}
         <>
-          {' '}
-          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">path</Tag>
+          <Tag colorScheme="yellow">replaced</Tag> <Tag colorScheme="gray">moved</Tag>
         </>
       </HStack>
     }
@@ -1391,7 +1390,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
 
 <Accordion>
   <AccordionItem
-    itemKey="useCellSpacing: reduceHorizontalSpacing,offsetHorizontal.common"
+    itemKey="useCellSpacing: reduceHorizontalSpacing,offsetHorizontal.common-157"
     title={
       <HStack gap={1}>
         useCellSpacing: reduceHorizontalSpacing,offsetHorizontal <Tag colorScheme="blue">api</Tag>
@@ -1419,7 +1418,7 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
     </VStack>
   </AccordionItem>
   <AccordionItem
-    itemKey="useCellSpacing: reduceHorizontalSpacing,offsetHorizontal.common"
+    itemKey="useCellSpacing: reduceHorizontalSpacing,offsetHorizontal.common-158"
     title={
       <HStack gap={1}>
         useCellSpacing: reduceHorizontalSpacing,offsetHorizontal <Tag colorScheme="blue">api</Tag>
@@ -1450,7 +1449,6 @@ The following items will be deleted in v5.0.0. Please use the <code>cds-migrator
 
 <TOCUpdater
   toc={[
-    { value: 'PrevMajorVersion', id: 'prevmajorversion', level: 2 },
     { value: 'Components', id: 'components', level: 2 },
     { value: 'Types', id: 'types', level: 2 },
     { value: 'Props', id: 'props', level: 2 },

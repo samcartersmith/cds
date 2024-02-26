@@ -104,10 +104,6 @@ export type SectionAccessibilityRole =
   | 'status'
   | 'tabpanel';
 
-// EVENTS
-
-export type OnPress<T> = React.MouseEventHandler<T>;
-
 export type Overflow = {
   /**
    * Control how the content should overflow.

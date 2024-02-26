@@ -8,9 +8,9 @@ import { Spacer } from './Spacer';
 export type RenderGroupItem = GroupBaseProps<BoxProps>['renderItem'];
 export type GroupProps = GroupBaseProps<BoxProps>;
 
-const ItemWrapper: React.FC<React.PropsWithChildren<BoxProps>> = memo(
-  ({ dangerouslySetClassName, ...props }) => <Box display="contents" {...props} />,
-);
+const ItemWrapper: React.FC<React.PropsWithChildren<BoxProps>> = memo(({ className, ...props }) => (
+  <Box display="contents" {...props} />
+));
 
 const fallbackRenderItem: RenderGroupItem = ({ item }: { item: React.ReactChild }) => {
   return <ItemWrapper>{item}</ItemWrapper>;

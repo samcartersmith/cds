@@ -6,7 +6,6 @@ import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { Icon } from '../icons/Icon';
 import { getFlexStyles } from '../layout/getFlexStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
-import { useFeatureFlag } from '../system/useFeatureFlag';
 import { cx } from '../utils/linaria';
 
 import { iconButton } from './buttonStyles';
@@ -41,7 +40,6 @@ export const IconButton = forwardRef(
   ) => {
     const styles = useIconButtonStyles(compact);
     const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-    const hasFrontier = useFeatureFlag('frontierButton');
     const iconSize = useButtonIconSize(compact);
 
     return (
@@ -49,7 +47,7 @@ export const IconButton = forwardRef(
         {...props}
         ref={ref}
         as={as}
-        backgroundColor={backgroundColor}
+        background={backgroundColor}
         borderColor={borderColor}
         borderRadius="roundedFull"
         borderWidth="button"
@@ -60,7 +58,7 @@ export const IconButton = forwardRef(
         to={to}
         transparentWhileInactive={transparent}
       >
-        <Icon color={color} name={name} size={hasFrontier ? iconSize : 's'} />
+        <Icon color={color} name={name} size={iconSize} />
       </Pressable>
     );
   },

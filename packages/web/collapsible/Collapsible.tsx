@@ -91,7 +91,7 @@ export const Collapsible = memo(
             <Stack
               overflow={maxWidth || maxHeight ? 'auto' : undefined}
               {...sizeProps}
-              dangerouslySetClassName={innerSpacing}
+              className={innerSpacing}
             >
               {children}
             </Stack>

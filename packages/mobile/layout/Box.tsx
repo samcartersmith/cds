@@ -41,7 +41,7 @@ export const Box = memo(
       background,
       children,
       dangerouslySetBackground,
-      dangerouslySetStyle,
+      style,
       elevation,
       overflow = 'visible',
       opacity,
@@ -164,28 +164,28 @@ export const Box = memo(
       [bottom, left, position, right, top, zIndex],
     );
     const boxStyles = useMemo(() => {
-      const style: ViewStyle = {};
+      const styles: ViewStyle = {};
 
       if (dangerouslySetBackground) {
-        style.backgroundColor = dangerouslySetBackground;
+        styles.backgroundColor = dangerouslySetBackground;
       } else if (background) {
-        style.backgroundColor = palette[background === true ? 'background' : background];
+        styles.backgroundColor = palette[background === true ? 'background' : background];
       } else if (elevation) {
         // Shadows will not render without a background color
-        style.backgroundColor = palette.background;
+        styles.backgroundColor = palette.background;
       }
 
       if (opacity) {
-        style.opacity = opacity as number;
+        styles.opacity = opacity as number;
       }
 
       if (overflow !== 'gradient') {
-        style.overflow = overflow;
+        styles.overflow = overflow;
       }
 
-      return style;
+      return styles;
     }, [background, dangerouslySetBackground, elevation, opacity, overflow, palette]);
-    const style = useMemo(
+    const styles = useMemo(
       () =>
         [
           getBorderStyles({
@@ -209,7 +209,7 @@ export const Box = memo(
           positionStyles,
           pinStyles,
           boxStyles,
-          dangerouslySetStyle as ViewStyle,
+          style as ViewStyle,
         ].filter(Boolean),
       [
         activeConfig,
@@ -230,14 +230,14 @@ export const Box = memo(
         positionStyles,
         pinStyles,
         boxStyles,
-        dangerouslySetStyle,
+        style,
       ],
     );
 
     const ViewComponent = animated ? Animated.View : View;
 
     return (
-      <ViewComponent style={style as ViewStyle} {...props} ref={forwardedRef}>
+      <ViewComponent style={styles as ViewStyle} {...props} ref={forwardedRef}>
         {ElevationWrapperForChildren ? (
           <ElevationWrapperForChildren>{children}</ElevationWrapperForChildren>
         ) : (

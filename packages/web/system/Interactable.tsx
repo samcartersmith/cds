@@ -95,7 +95,7 @@ export type InteractableProps = {
 export const InteractableContent = forwardRef(function InteractableContent(
   {
     as: Container,
-    backgroundColor,
+    background,
     block,
     borderColor = 'transparent',
     borderRadius,
@@ -130,7 +130,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     paletteConfig,
     spectrum,
     isWeb: true,
-  })[backgroundColor];
+  })[background];
   const borderRadiusValue = useInteractableBorderRadius(borderRadius);
 
   /**
@@ -152,7 +152,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     () => ({
       ...customStyle,
       [interactableBorderRadius]: `${borderRadiusValue}px`,
-      [interactableBackground]: transparentWhileInactive ? 'transparent' : palette[backgroundColor],
+      [interactableBackground]: transparentWhileInactive ? 'transparent' : palette[background],
       // Hover:
       [interactableHoveredBackground]: hoveredToken ? hoveredToken.backgroundColor : undefined,
       [interactableHoveredOpacity]: hoveredToken ? hoveredToken.contentOpacity : undefined,
@@ -166,7 +166,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
       ...elevationStyles,
     }),
     [
-      backgroundColor,
+      background,
       borderRadiusValue,
       customStyle,
       disabledToken.backgroundColor,

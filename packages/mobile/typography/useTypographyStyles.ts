@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { Split } from 'type-fest';
 import { Typography } from '@cbhq/cds-common';
 
-import { useFeatureFlag } from '../system/useFeatureFlag';
 import { fontFamily as fontFamilyTokens } from '../tokens';
 
 import { useTypographyStylesMap } from './useTypographyStylesMap';
@@ -18,11 +17,9 @@ function getMonoFont(fontFamily: FontFamily) {
 
 export const useTypographyStyles = (name: Typography, mono?: boolean) => {
   const typographyStyles = useTypographyStylesMap();
-  const isFrontier = useFeatureFlag('frontierTypography');
   return useMemo(() => {
-    const finalName = name === 'display2' && isFrontier ? 'display2Frontier' : name;
-    const styles = typographyStyles[finalName];
+    const styles = typographyStyles[name];
     const fontFamily = mono ? getMonoFont(styles.fontFamily) : styles.fontFamily;
-    return { ...typographyStyles[finalName], fontFamily };
-  }, [name, isFrontier, typographyStyles, mono]);
+    return { ...typographyStyles[name], fontFamily };
+  }, [name, typographyStyles, mono]);
 };

@@ -1,23 +1,30 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactElement } from 'react';
+import { PressableProps } from 'react-native';
+import { ButtonBaseProps, SharedProps } from '@cbhq/cds-common';
 import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
-import { ModalFooterBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
 import { ButtonGroup, ButtonGroupProps } from '../../buttons';
 import { Box } from '../../layout';
 
-export type ModalFooterProps = Pick<ButtonGroupProps, 'vertical' | 'direction'> &
-  ModalFooterBaseProps;
+export type ModalFooterProps = {
+  /** Primary action button */
+  primaryAction: NonNullable<
+    ReactElement<ButtonBaseProps & { onPress?: PressableProps['onPress'] }>
+  >;
+  /** Secondary action button */
+  secondaryAction?: ReactElement<ButtonBaseProps & { onPress?: PressableProps['onPress'] }>;
+} & Pick<ButtonGroupProps, 'direction'> &
+  SharedProps;
 
 export const ModalFooter = ({
   primaryAction,
   secondaryAction,
-  vertical,
   direction = 'horizontal',
   testID,
 }: ModalFooterProps) => {
   const { hideDividers = false } = useModalParent();
   const actions = [secondaryAction, primaryAction].filter(Boolean);
-  const isVertical = direction === 'vertical' || vertical;
+  const isVertical = direction === 'vertical';
 
   // reverse actions order when stacked
   if (isVertical) {
@@ -26,7 +33,7 @@ export const ModalFooter = ({
 
   return (
     <Box borderedTop={!hideDividers} spacingHorizontal={3} spacingVertical={2} testID={testID}>
-      <ButtonGroup block={!isVertical} direction={vertical ? 'vertical' : direction}>
+      <ButtonGroup block={!isVertical} direction={direction}>
         {actions.map((action, i) => (
           // actions are stable so should be fine to use index as key
           // eslint-disable-next-line react/no-array-index-key

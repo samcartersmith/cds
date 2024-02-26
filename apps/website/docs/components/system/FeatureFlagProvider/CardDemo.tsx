@@ -1,6 +1,4 @@
 import { useMemo } from 'react';
-import { Button } from '@cbhq/cds-web/buttons/Button';
-import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
 import { CardGroup, FeedCard } from '@cbhq/cds-web/cards';
 
 import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
@@ -12,25 +10,18 @@ export function CardDemo() {
   const demoCard = useMemo(() => {
     return (
       <FeedCard
-        avatarUrl="https://images.coinbase.com/avatar?s=350"
-        bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-        bodyMediaUrl="https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png"
-        bodyOrientation="vertical"
-        bodyTitle="LEARN AMP. EARN $3 IN AMP."
-        footerActions={
-          <Button compact onPress={onPressConsole} variant="secondary">
-            Actions
-          </Button>
-        }
-        headerActionNode={
-          <IconButton
-            transparent
-            accessibilityLabel="More actions"
-            name="more"
-            variant="foregroundMuted"
-          />
-        }
-        headerDescription="Earn crypto"
+        author="Earn crypto"
+        avatar="https://images.coinbase.com/avatar?s=350"
+        description="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+        // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+        headerAction={{
+          name: 'more',
+          variant: 'foregroundMuted',
+          onPress: onPressConsole,
+        }}
+        image="https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png"
+        mediaPlacement="above"
+        title="LEARN AMP. EARN $3 IN AMP."
       />
     );
   }, []);

@@ -16,6 +16,7 @@ import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
 
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { HStack } from '../layout/HStack';
+import { OnPress } from '../system';
 import { TextLabel1 } from '../typography';
 
 import { TextInputFocusVariantContext } from './context';
@@ -28,7 +29,7 @@ export type TextInputProps = {
   /**
    * Callback fired when pressed/clicked
    */
-  onPress?: React.MouseEventHandler;
+  onPress?: OnPress;
   /**
    * Customize the element which the input area will be rendered as. Adds ability to render the input area
    * as a `<textarea />`, `<input />` etc...

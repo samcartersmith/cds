@@ -38,26 +38,18 @@ function DefaultModal() {
       <TextTitle1 as="h1">Fullscreen Modal</TextTitle1>
       <TextBody as="p">This is a test Fullscreen Modal with components composition.</TextBody>
       <FeedCard
-        avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-        headerMetaData="Dec 18"
-        headerDescription="Earn crypto"
-        headerActionNode={
-          <IconButton
-            accessibilityLabel="More actions"
-            name="more"
-            variant="foregroundMuted"
-            transparent
-          />
-        }
-        bodyTitle="Learn AMP. Earn $3 in AMP."
-        bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-        bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-        bodyOrientation="vertical"
-        footerActions={
-          <Button compact variant="secondary">
-            Earn AMP
-          </Button>
-        }
+        author="Earn crypto"
+        metadata="Dec 18"
+        avatar="https://images.coinbase.com/avatar?s=350"
+        description="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+        headerAction={{
+          name: 'more',
+          variant: 'foregroundMuted',
+          onPress: onPressConsole,
+        }}
+        image="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        mediaPlacement="above"
+        title="LEARN AMP. EARN $3 IN AMP."
       />
       <ListCell
         title="Bitcoin"

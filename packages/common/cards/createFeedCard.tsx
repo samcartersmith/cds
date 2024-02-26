@@ -11,17 +11,17 @@ import type {
   FeedCardBaseProps,
   IconButtonBaseProps,
   LikeButtonBaseProps,
-} from '../types/alpha';
+} from '../types';
 
 type CreateFeedCardParams<OnPressFn> = {
-  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps<OnPressFn>>>;
-  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps<OnPressFn>>>;
-  CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps<OnPressFn>>>;
-  CardHeader: React.ComponentType<React.PropsWithChildren<CardHeaderProps>>;
-  CardFooter: React.ComponentType<React.PropsWithChildren<CardFooterProps>>;
+  Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: OnPressFn }>>;
+  Card: React.ComponentType<CardBaseProps & { onPress?: OnPressFn }>;
+  CardBody: React.ComponentType<CardBodyBaseProps & { onPress?: OnPressFn }>;
+  CardHeader: React.ComponentType<CardHeaderProps>;
+  CardFooter: React.ComponentType<CardFooterProps>;
   HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
-  IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps<OnPressFn>>>;
-  LikeButton: React.ComponentType<React.PropsWithChildren<LikeButtonBaseProps<OnPressFn>>>;
+  IconButton: React.ComponentType<IconButtonBaseProps>;
+  LikeButton: React.ComponentType<LikeButtonBaseProps & { onPress?: OnPressFn }>;
   platform: CdsPlatform;
 };
 
@@ -36,7 +36,7 @@ export function createFeedCard<OnPressFn>({
   LikeButton,
   platform,
 }: CreateFeedCardParams<OnPressFn>) {
-  const FeedCard = memo(function FeedCard({
+  const FeedCard = memo(function FeedCard<OnPressFn>({
     testID = 'feed-card',
     avatar,
     author,
@@ -98,9 +98,9 @@ export function createFeedCard<OnPressFn>({
               <IconButton transparent accessibilityLabel="More" flush="end" {...headerAction} />
             )
           }
-          author={author}
           avatar={avatar}
-          metadata={metadata}
+          description={author}
+          metaData={metadata}
           testID={`${testID}-header`}
         />
         <CardBody

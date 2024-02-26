@@ -8,7 +8,7 @@ import { usePinStyles } from '../hooks/usePinStyles';
 
 export type OverflowGradientProps = {
   pin?: Exclude<PinningDirection, 'all'>;
-  dangerouslySetStyle?: ViewStyle;
+  style?: ViewStyle;
 } & SharedProps;
 
 const gradient = {
@@ -32,7 +32,7 @@ const gradient = {
 
 export const OverflowGradient = memo(function OverflowGradient({
   pin = 'right',
-  dangerouslySetStyle,
+  style,
   testID,
 }: OverflowGradientProps) {
   const palette = usePalette();
@@ -52,7 +52,7 @@ export const OverflowGradient = memo(function OverflowGradient({
       end={gradient[pin].end}
       pointerEvents="none"
       start={gradient[pin].start}
-      style={[styles.gradient, pinStyles, dangerouslySetStyle]}
+      style={[styles.gradient, pinStyles, style]}
       testID={testID}
     />
   );

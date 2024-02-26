@@ -21,11 +21,11 @@ describe('useFeatureFlagUpdater', () => {
       },
     );
 
-    expect(result.current.featureFlags.frontierTypography).toBe(false);
+    expect(result.current.featureFlags.flexGap).toBe(false);
     void act(() => {
-      result.current.update({ frontierTypography: true });
+      result.current.update({ flexGap: true });
     });
-    expect(result.current.featureFlags.frontierTypography).toBe(true);
+    expect(result.current.featureFlags.flexGap).toBe(true);
   });
 
   it('merges updates', () => {
@@ -44,55 +44,14 @@ describe('useFeatureFlagUpdater', () => {
       },
     );
 
-    expect(result.current.featureFlags.frontierTypography).toBe(false);
+    expect(result.current.featureFlags.flexGap).toBe(false);
     void act(() => {
-      result.current.update({ frontierTypography: true, frontierCard: true });
-      result.current.update({ frontierButton: true });
+      result.current.update({ flexGap: true });
+      result.current.update({ fabric: true });
     });
     expect(result.current.featureFlags).toMatchObject({
-      frontierTypography: true,
-      frontierCard: true,
-      frontierButton: true,
-    });
-  });
-
-  it('correctly handles toggling frontier on and off', () => {
-    function Wrapper(props: FeatureFlagProviderProps) {
-      return <FeatureFlagProvider {...props} />;
-    }
-    const { result } = renderHook(
-      () => {
-        return {
-          update: useFeatureFlagUpdater(),
-          featureFlags: useFeatureFlags(),
-        };
-      },
-      {
-        wrapper: Wrapper,
-      },
-    );
-
-    void act(() => {
-      result.current.update({ frontier: true });
-    });
-    expect(result.current.featureFlags).toMatchObject({
-      frontier: true,
-      frontierButton: true,
-      frontierCard: true,
-      frontierColor: true,
-      frontierSparkline: true,
-      frontierTypography: true,
-    });
-    void act(() => {
-      result.current.update({ frontier: false });
-    });
-    expect(result.current.featureFlags).toMatchObject({
-      frontier: false,
-      frontierButton: false,
-      frontierCard: false,
-      frontierColor: false,
-      frontierSparkline: false,
-      frontierTypography: false,
+      flexGap: true,
+      fabric: true,
     });
   });
 });

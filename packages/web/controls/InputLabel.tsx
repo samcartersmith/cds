@@ -21,8 +21,8 @@ export const InputLabel = memo(function InputLabel({
   return (
     <TextLabel1
       as="label"
+      className={labelStyle}
       color={color}
-      dangerouslySetClassName={labelStyle}
       disabled={disabled}
       spacingVertical={0.5}
       {...props}

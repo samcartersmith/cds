@@ -2,8 +2,7 @@ import { useMemo } from 'react';
 import { bannerBuilder } from '@cbhq/cds-common/internal/bannerBuilder';
 import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
 
-import { VStack } from '../../alpha/VStack';
-import { Spacer } from '../../layout/Spacer';
+import { Spacer, VStack } from '../../layout';
 import { Link } from '../../typography';
 import { TextBody } from '../../typography/TextBody';
 import { TextTitle1 } from '../../typography/TextTitle1';
@@ -27,16 +26,16 @@ export const CustomStyle = () => {
     () => ({
       paddingTop: 32,
       paddingBottom: 32,
-      backgroundColor: paletteValueToRgbaString('orange0', 'light', true),
-      borderColor: paletteValueToRgbaString('orange10', 'light', true),
+      backgroundColor: paletteValueToRgbaString('orange0', 'light'),
+      borderColor: paletteValueToRgbaString('orange10', 'light'),
     }),
     [],
   );
   return (
     <Banner
       showDismiss
-      dangerouslySetStyle={customStyle}
       startIcon="pencil"
+      style={customStyle}
       title="Banner with custom Style"
       variant="informational"
     >

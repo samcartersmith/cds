@@ -3,7 +3,7 @@ import { buttonBuilder } from '@cbhq/cds-common/internal/buttonBuilder';
 import { NavigationIconButton } from '../NavigationIconButton';
 
 const { build, buildSheet } = buttonBuilder(NavigationIconButton, {
-  args: { frontier: true, name: 'appSwitcher', accessibilityLabel: 'App switcher' },
+  args: { name: 'appSwitcher', accessibilityLabel: 'App switcher' },
 });
 
 export const Default = build();
@@ -16,6 +16,6 @@ export const All = buildSheet([
 ]);
 
 export default {
-  title: 'Core Components/Buttons/NavigationIconButton (Frontier)',
+  title: 'Core Components/Buttons/NavigationIconButton',
   component: NavigationIconButton,
 };

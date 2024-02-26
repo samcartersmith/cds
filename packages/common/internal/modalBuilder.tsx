@@ -1,12 +1,12 @@
-import React, { RefObject, useCallback, useEffect } from 'react';
+import React, { ReactElement, RefObject, useCallback, useEffect } from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import { useModal } from '../overlays/useModal';
 import type {
   ButtonBaseProps,
   ModalBaseProps,
-  ModalFooterBaseProps,
   ModalHeaderBaseProps,
+  NoopFn,
   SharedAccessibilityProps,
   SharedProps,
   TextInputBaseProps,
@@ -34,13 +34,22 @@ export type CreateModalProps = {
     React.PropsWithChildren<ModalBaseProps & ModalAccessibilityProps & { disablePortal?: boolean }>
   >;
   ModalBody: React.ComponentType<React.PropsWithChildren<unknown>>;
-  ModalHeader: React.ComponentType<React.PropsWithChildren<ModalHeaderBaseProps>>;
-  ModalFooter: React.ComponentType<React.PropsWithChildren<ModalFooterBaseProps>>;
+  ModalHeader: React.ComponentType<
+    React.PropsWithChildren<ModalHeaderBaseProps & { onBackButtonPress?: NoopFn }>
+  >;
+  ModalFooter: React.ComponentType<
+    React.PropsWithChildren<
+      {
+        primaryAction: NonNullable<ReactElement<ButtonBaseProps & { onPress?: NoopFn }>> &
+          SharedProps;
+        secondaryAction?: ReactElement<ButtonBaseProps & { onPress?: NoopFn }>;
+      } & SharedProps
+    >
+  >;
   LoremIpsum: React.ComponentType<React.PropsWithChildren<Record<string, unknown>>>;
   Button: React.ComponentType<
     React.PropsWithChildren<
-      ButtonBaseProps &
-        SharedProps & { onPress?: () => void } & { ref?: RefObject<HTMLButtonElement> }
+      ButtonBaseProps & { onPress?: NoopFn } & SharedProps & { ref?: RefObject<HTMLButtonElement> }
     >
   >;
   TextInput?: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>;
@@ -152,7 +161,8 @@ export function modalBuilder({
     backAccessibilityHint,
     closeAccessibilityLabel,
     closeAccessibilityHint,
-  }: Partial<ModalBaseProps & ModalHeaderBaseProps> & ModalA11yProps) => {
+  }: Partial<ModalBaseProps & ModalHeaderBaseProps & { onBackButtonPress?: NoopFn }> &
+    ModalA11yProps) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(externalVisible);
 
     const handleClose = useCallback(() => {

@@ -2,6 +2,7 @@ import { GroupDirection } from './GroupBaseProps';
 import { IconName } from './IconName';
 import { ElementChildren } from './React';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
+import { SharedProps } from './SharedProps';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative' | 'foregroundMuted';
 
@@ -38,17 +39,17 @@ export type ButtonBaseProps = {
   noScaleOnPress?: boolean;
   /**
    * Truncates text after wrapping to a defined number of lines.
+   * @default 1
    */
   numberOfLines?: number;
-} & Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
+} & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
+  SharedProps;
 
 export type ButtonGroupBaseProps = {
   /** Expand buttons to fill available space within the group. */
   block?: boolean;
   /** Buttons to render as a group. */
   children: ElementChildren<ButtonBaseProps>;
-  /** @deprecated will be removed in v6.0.0 Use direction='vertical' instead */
-  vertical?: boolean;
   /**
    * @default horizontal
    * Stack buttons vertically or horizontally.

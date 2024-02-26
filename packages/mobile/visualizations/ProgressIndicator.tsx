@@ -13,13 +13,13 @@ export type ProgressIndicatorProps = {
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
+  style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
 } & BoxProps &
   SharedProps;
 
 export const ProgressIndicator = memo(
   forwardRef<View, ProgressIndicatorProps>(function ProgressIndicator(
-    { progress, dangerouslySetStyle, testID, ...boxProps },
+    { progress, style, testID, ...boxProps },
     ref,
   ) {
     const { line, foreground } = usePalette();
@@ -47,8 +47,8 @@ export const ProgressIndicator = memo(
         ref={ref}
         animated
         alignItems="center"
-        dangerouslySetStyle={dangerouslySetStyle}
         justifyContent="center"
+        style={style}
         testID={testID}
         {...boxProps}
       >

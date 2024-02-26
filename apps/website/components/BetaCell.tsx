@@ -95,7 +95,7 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
       <Pressable
         noScaleOnPress
         transparentWhileInactive
-        backgroundColor="background"
+        background="background"
         borderRadius="rounded"
         className={`${pressClassName} ${offsetClassName}`}
         disabled={disabled}
@@ -115,7 +115,7 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
         >
           {!!start && (
             <Box
-              dangerouslySetClassName={truncateClassName}
+              className={truncateClassName}
               flexGrow={getFlexGrow(startWidth, priority === 'start')}
               flexShrink={getFlexShrink(startWidth, priority === 'start')}
               justifyContent="flex-start"
@@ -126,7 +126,7 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
 
           {!!middle && (
             <Box
-              dangerouslySetClassName={truncateClassName}
+              className={truncateClassName}
               flexGrow={getFlexGrow(middleWidth, priority === 'middle')}
               flexShrink={getFlexShrink(middleWidth, priority === 'middle')}
               justifyContent="center"
@@ -138,7 +138,7 @@ export const BetaCell: React.FC<React.PropsWithChildren<BetaCellProps>> = memo(
           {!!end && (
             <Box
               alignItems="flex-end"
-              dangerouslySetClassName={truncateClassName}
+              className={truncateClassName}
               flexDirection="column"
               flexGrow={getFlexGrow(endWidth, priority === 'end')}
               flexShrink={getFlexShrink(endWidth, priority === 'end')}

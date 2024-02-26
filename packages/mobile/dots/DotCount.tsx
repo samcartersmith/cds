@@ -160,7 +160,7 @@ export const DotCount = memo(
           <Animated.View style={dotCountInnerContainerStyle} testID="dotcount-inner-container">
             <TextCaption
               color="primaryForeground"
-              dangerouslySetStyle={{ paddingHorizontal: dotTextPaddingHorizontal }}
+              style={{ paddingHorizontal: dotTextPaddingHorizontal }}
             >
               {parseDotCountMaxOverflow(countInternal, max)}
             </TextCaption>

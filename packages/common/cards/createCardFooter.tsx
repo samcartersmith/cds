@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import { gutter } from '../tokens/sizing';
-import type { CardBoxProps, CardFooterProps } from '../types/alpha';
+import type { CardBoxProps, CardFooterProps } from '../types';
 
 type CreateCardFooterParams = {
   HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;

@@ -1,52 +1,25 @@
-import React, { memo } from 'react';
-import { FeedCardBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
+import { PressableProps } from 'react-native';
+import { createFeedCard } from '@cbhq/cds-common/cards/createFeedCard';
 
-import { RemoteImage } from '../media/RemoteImage';
+import { Button, IconButton } from '../buttons';
+import { HStack } from '../layout/HStack';
 
 import { Card } from './Card';
 import { CardBody } from './CardBody';
 import { CardFooter } from './CardFooter';
 import { CardHeader } from './CardHeader';
+import { LikeButton } from './LikeButton';
 
-const aspectRatio = [240, 120] as [number, number];
+export type FeedCardProps = React.ComponentProps<typeof FeedCard>;
 
-export const FeedCard: React.FC<React.PropsWithChildren<FeedCardBaseProps>> = memo(
-  ({
-    avatarUrl,
-    headerMetaData,
-    headerDescription,
-    headerActionNode,
-    bodyTitle,
-    bodyDescription,
-    bodyMediaUrl,
-    bodyOrientation,
-    footerActions,
-    testID,
-  }) => {
-    return (
-      <Card testID={testID}>
-        <CardHeader
-          action={headerActionNode}
-          avatarUrl={avatarUrl}
-          description={headerDescription}
-          metaData={headerMetaData}
-        />
-        <CardBody
-          description={bodyDescription}
-          media={
-            <RemoteImage
-              aspectRatio={aspectRatio}
-              height="auto"
-              resizeMode="cover"
-              source={{ uri: bodyMediaUrl }}
-              width="100%"
-            />
-          }
-          orientation={bodyOrientation}
-          title={bodyTitle}
-        />
-        <CardFooter>{footerActions}</CardFooter>
-      </Card>
-    );
-  },
-);
+export const FeedCard = createFeedCard<PressableProps['onPress']>({
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  CardFooter,
+  HStack,
+  IconButton,
+  LikeButton,
+  platform: 'mobile',
+});

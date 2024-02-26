@@ -353,7 +353,7 @@ If you're using `title` and `labeledBy` to set an accessible label for your stan
 If you're using `labeledBy` to reference the id of another text element as an accessible label, this is no longer supported. We're not maintaining support for this use case because any visible label that is presented with the icon should already provide the necessary context, and the icon should remain purely decorative (i.e. an accessibility label should not be set; refer to the accessibility tips for [Icon](/components/icon/) and [NavigationIcon](/components/navigation-icon/)). However, if the icon is referencing an invisible text element, use `accessibilityLabel` to directly set the label instead:
 
 ```diff
-- <TextBody id="plus-icon-label" as="span" dangerouslySetClassName="visuallyHidden">
+- <TextBody id="plus-icon-label" as="span" className="visuallyHidden">
 -   Plus icon
 - </TextBody>
 

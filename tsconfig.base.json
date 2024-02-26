@@ -77,12 +77,6 @@
       "@cbhq/cds-web": [
         "packages/web"
       ],
-      "@cbhq/cds-web-overlays": [
-        "packages/web-overlays/src"
-      ],
-      "@cbhq/cds-web-overlays/*": [
-        "packages/web-overlays/src/*"
-      ],
       "@cbhq/cds-web-utils": [
         "libs/web-utils/src"
       ],

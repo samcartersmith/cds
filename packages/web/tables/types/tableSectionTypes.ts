@@ -16,6 +16,6 @@ export type TableSectionProps = PropsWithChildren<{
   /**
    * @danger This is an escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetClassName?: string;
+  className?: string;
 }> &
   SharedProps;

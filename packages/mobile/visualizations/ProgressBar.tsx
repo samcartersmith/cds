@@ -95,11 +95,11 @@ export const ProgressBar = memo(
                 alignItems="flex-start"
                 borderRadius="rounded"
                 dangerouslySetBackground={!disabled ? palette[color] : palette.lineHeavy}
-                dangerouslySetStyle={progressStyle}
                 flexGrow={0}
                 flexShrink={0}
                 height={height}
                 justifyContent="center"
+                style={progressStyle}
                 testID="cds-progress-bar-inner-bar"
                 width="100%"
               />

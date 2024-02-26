@@ -1,38 +1,28 @@
 import React, { ForwardedRef, forwardRef, isValidElement, memo, useMemo } from 'react';
-import { ActivityIndicator, StyleSheet, View, ViewStyle } from 'react-native';
-import { ButtonBaseProps } from '@cbhq/cds-common';
-import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
-import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
-import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHeight';
+import { useScale } from '@cbhq/cds-common/scale/useScale';
+import type { ButtonBaseProps, ComponentEventHandlerProps } from '@cbhq/cds-common/types';
+import { getButtonSizeProps } from '@cbhq/cds-common/utils/getButtonSizeProps';
+import { getButtonSpacingProps } from '@cbhq/cds-common/utils/getButtonSpacingProps';
 
-import { Button as FrontierButton } from '../alpha/Button';
-import { useButtonSpacing } from '../hooks/useButtonSpacing';
+import { useInternalSpacingStyles } from '../hooks/internal/useInternalSpacingStyles';
 import { usePalette } from '../hooks/usePalette';
-import { useSpacingStyles } from '../hooks/useSpacingStyles';
 import { Icon } from '../icons/Icon';
-import { getFlushStyles } from '../styles/getFlushStyles';
+import { HStack } from '../layout/HStack';
 import { Pressable, PressableProps } from '../system/Pressable';
-import { useFeatureFlag } from '../system/useFeatureFlag';
 import { TextHeadline } from '../typography/TextHeadline';
 
-export type ButtonProps = ButtonBaseProps &
-  PressableProps & {
-    /**
-     * When provided the Button text will not truncate and will wrap until the number of lines provided is met.
-     * @default 1
-     */
-    numberOfLines?: number;
-  };
+export type ButtonProps = ButtonBaseProps & PressableProps & ComponentEventHandlerProps;
 
-export const DeprecatedButton = memo(
-  forwardRef(function DeprecatedButton(
+export const Button = memo(
+  forwardRef(function Button(
     {
       block,
       children,
       compact,
       endIcon,
-      feedback,
+      feedback = compact ? 'light' : 'normal',
       loading,
       startIcon,
       transparent,
@@ -40,30 +30,46 @@ export const DeprecatedButton = memo(
       variant = 'primary',
       numberOfLines = 1,
       noScaleOnPress,
-      accessibilityHint,
       accessibilityLabel,
+      accessibilityHint,
       ...props
     }: ButtonProps,
     ref: ForwardedRef<View>,
   ) {
     const palette = usePalette();
-    const height = useInteractableHeight(compact);
-    const borderRadius = useButtonBorderRadius(compact);
+    const scale = useScale();
     const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
-    const iconSize = useButtonIconSize(compact);
-    const spacingStyles = useButtonSpacing({ flush, compact, startIcon, endIcon });
-    const flushStyles = getFlushStyles({ flush, spacing: spacingStyles });
-    const layoutStyles = block ? styles.block : styles.inline;
-    const pressableStyles = useMemo(() => [layoutStyles, flushStyles], [layoutStyles, flushStyles]);
-    const justifyContent: ViewStyle['justifyContent'] = flush
-      ? 'flex-start'
-      : styles.button.justifyContent;
-    const buttonStyles = useMemo(
-      () => [styles.button, { minHeight: height }, { justifyContent }, spacingStyles],
-      [height, spacingStyles, justifyContent],
+    const { borderRadius, minHeight, iconSize } = useMemo(
+      () => getButtonSizeProps({ compact, scale }),
+      [compact, scale],
     );
-    const startIconStyles = useSpacingStyles({ spacingEnd: 1 });
-    const endIconStyles = useSpacingStyles({ spacingStart: 1 });
+
+    const { spacingStart, spacingEnd, offsetStart, offsetEnd } = useMemo(
+      () => getButtonSpacingProps({ compact, flush, startIcon, endIcon }),
+      [compact, endIcon, flush, startIcon],
+    );
+    const spacingStyles = useInternalSpacingStyles({
+      isInverted: true,
+      start: offsetStart,
+      end: offsetEnd,
+    });
+    const pressableStyles = useMemo(
+      () => ({
+        ...(block ? styles.block : styles.inline),
+        ...spacingStyles,
+      }),
+      [block, spacingStyles],
+    );
+
+    const justifyContent = useMemo(() => {
+      if (flush) {
+        return 'flex-start';
+      }
+      if (startIcon || endIcon) {
+        return 'space-between';
+      }
+      return 'center';
+    }, [endIcon, flush, startIcon]);
 
     const childrenNode = useMemo(
       () =>
@@ -71,9 +77,11 @@ export const DeprecatedButton = memo(
           children
         ) : (
           <TextHeadline
+            align="center"
             color={color}
             numberOfLines={numberOfLines}
             selectable="none"
+            style={styles.text}
             testID="text-headline"
           >
             {children}
@@ -87,57 +95,59 @@ export const DeprecatedButton = memo(
         ref={ref}
         accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
         accessibilityLabel={loading ? 'loading' : accessibilityLabel}
-        backgroundColor={backgroundColor}
+        background={backgroundColor}
         block={block}
         borderColor={borderColor}
         borderRadius={borderRadius}
         borderWidth="button"
-        feedback={feedback ?? (compact ? 'light' : 'normal')}
+        feedback={feedback}
         loading={loading}
         noScaleOnPress={noScaleOnPress}
         style={pressableStyles}
         transparentWhileInactive={transparent}
         {...props}
       >
-        <View style={buttonStyles}>
+        <HStack
+          alignItems="center"
+          flexWrap="nowrap"
+          justifyContent={justifyContent}
+          minHeight={minHeight}
+          spacingEnd={spacingEnd}
+          spacingStart={spacingStart}
+          style={block ? styles.block : styles.inline}
+        >
           {loading ? (
             <ActivityIndicator color={palette[color]} size="small" />
           ) : (
             <>
               {!!startIcon && (
-                <View style={startIconStyles}>
-                  <Icon color={color} name={startIcon} size={iconSize} />
-                </View>
+                <Icon
+                  color={color}
+                  name={startIcon}
+                  size={iconSize}
+                  spacingEnd={1}
+                  style={styles.icon}
+                />
               )}
               {childrenNode}
               {!!endIcon && (
-                <View style={endIconStyles}>
-                  <Icon color={color} name={endIcon} size={iconSize} />
-                </View>
+                <Icon
+                  color={color}
+                  name={endIcon}
+                  size={iconSize}
+                  spacingStart={1}
+                  style={styles.icon}
+                />
               )}
             </>
           )}
-        </View>
+        </HStack>
       </Pressable>
     );
   }),
 );
 
-export const Button = memo(
-  forwardRef(function Button(props: ButtonProps, ref: ForwardedRef<View>) {
-    const hasFrontier = useFeatureFlag('frontierButton');
-    return hasFrontier ? <FrontierButton {...props} /> : <DeprecatedButton {...props} ref={ref} />;
-  }),
-);
-
 export const styles = StyleSheet.create({
-  button: {
-    flexDirection: 'row',
-    flexWrap: 'nowrap',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
   inline: {
     width: 'auto',
     minWidth: 64,
@@ -146,4 +156,10 @@ export const styles = StyleSheet.create({
     width: '100%',
     maxWidth: '100%',
   },
+  text: { flexShrink: 1 },
+  icon: {
+    flexShrink: 0,
+  },
 });
+
+Button.displayName = 'Button';

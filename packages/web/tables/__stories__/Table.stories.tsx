@@ -6,10 +6,10 @@ import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { CellMediaType } from '@cbhq/cds-common/types';
 
-import { HStack } from '../../alpha/HStack';
 import { Button } from '../../buttons';
 import { CellMedia } from '../../cells';
 import { Switch } from '../../controls/Switch';
+import { HStack } from '../../layout/HStack';
 import { assetHubMock } from '../__mocks__';
 import { useSortableCell, UseSortableCellProps } from '../hooks/useSortableCell';
 import { Table, TableBody, TableCaption, TableCell, TableHeader, TableRow, TableVariant } from '..';

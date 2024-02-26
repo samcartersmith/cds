@@ -88,12 +88,12 @@ describe('Table Cell', () => {
     expect(screen.getByText('test end element')).toBeTruthy();
   });
 
-  it('passes a className to dangerouslySetClassName', () => {
+  it('passes a className to className', () => {
     render(
       <Table>
         <TableBody>
           <TableRow fullWidth>
-            <TableCell dangerouslySetClassName={testClassName} testID={exampleTestId}>
+            <TableCell className={testClassName} testID={exampleTestId}>
               Cell
             </TableCell>
           </TableRow>

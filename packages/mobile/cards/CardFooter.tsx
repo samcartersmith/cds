@@ -1,19 +1,9 @@
-import React, { memo } from 'react';
-import { SharedProps } from '@cbhq/cds-common';
+import { createCardFooter } from '@cbhq/cds-common/cards/createCardFooter';
 
 import { HStack } from '../layout/HStack';
 
-export type CardFooterProps = {
-  /** CardFooter takes one or many actions as children */
-  children: React.ReactNode;
-} & SharedProps;
+export type CardFooterProps = React.ComponentProps<typeof CardFooter>;
 
-export const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = memo(
-  ({ children, testID }) => {
-    return (
-      <HStack spacingBottom={2} spacingHorizontal={3} testID={testID}>
-        {children}
-      </HStack>
-    );
-  },
-);
+export const CardFooter = createCardFooter({
+  HStack,
+});

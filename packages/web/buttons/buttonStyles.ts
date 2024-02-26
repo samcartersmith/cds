@@ -46,16 +46,6 @@ export const iconButton = css`
 
 export const avatarButton = iconButton;
 
-export const startIcon = css`
-  display: inline-block;
-  margin-right: ${spacing[1]};
-`;
-
-export const endIcon = css`
-  display: inline-block;
-  margin-left: ${spacing[1]};
-`;
-
 // Need to add height here to contain the icon size or
 // it will render 30px height making it look off center
 export const centerLoader = css`
@@ -78,13 +68,13 @@ export const unsetNoWrap = css`
   white-space: unset;
 `;
 
-export const frontierButtonWithIcon = css`
+export const buttonWithIcon = css`
   && {
     justify-content: space-between;
   }
 `;
 
-export const frontierIcon = `
+export const icon = `
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -92,13 +82,13 @@ export const frontierIcon = `
   flex-shrink: 0;
 `;
 
-export const frontierStartIcon = css`
-  ${frontierIcon};
+export const startIcon = css`
+  ${icon};
   justify-content: flex-start;
   margin-right: ${spacing[1]};
 `;
-export const frontierEndIcon = css`
-  ${frontierIcon};
+export const endIcon = css`
+  ${icon};
   justify-content: flex-end;
   margin-left: ${spacing[1]};
 `;

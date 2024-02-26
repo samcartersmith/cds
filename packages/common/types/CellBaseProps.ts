@@ -50,7 +50,7 @@ export type CellAccessoryProps = {
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetClassName?: string;
+  className?: string;
 } & SpacingProps;
 
 export type CellDetailVariant = Extract<

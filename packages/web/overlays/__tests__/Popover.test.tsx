@@ -31,7 +31,7 @@ const PopoverExample = ({
       visible={visible}
       {...props}
     >
-      <Pressable backgroundColor="primary" disabled={disabled} testID={SUBJECT_TEST_ID}>
+      <Pressable background="primary" disabled={disabled} testID={SUBJECT_TEST_ID}>
         Button
       </Pressable>
     </Popover>

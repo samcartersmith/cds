@@ -11,7 +11,7 @@ import type {
   CardMediaPlacement,
   CardMediaProps,
   CardRemoteImageProps,
-} from '../types/alpha';
+} from '../types';
 
 type CreateCardMediaParams = {
   SpotSquare: React.ComponentType<React.PropsWithChildren<SpotSquareProps>>;
@@ -32,7 +32,7 @@ export function createCardMedia({ SpotSquare, Pictogram, CardRemoteImage }: Crea
     end: defaultMediaSize,
   };
 
-  const CardMedia = memo(function CardMedia(props: CardMediaProps) {
+  const CardMedia = memo(function CardMedia({ placement = 'end', ...props }: CardMediaProps) {
     if (props.type === 'spotSquare') {
       return (
         <SpotSquare
@@ -60,7 +60,7 @@ export function createCardMedia({ SpotSquare, Pictogram, CardRemoteImage }: Crea
           alt={props.alt ?? ''}
           src={props.src}
           testID={props.testID}
-          {...imageProps[props.placement]}
+          {...imageProps[placement]}
         />
       );
     }

@@ -7,10 +7,11 @@ import {
 
 import { BoxElement, VStack, VStackProps } from '../../layout';
 import { useMotionProps } from '../../motion/useMotionProps';
+import { OnPress } from '../../system';
 import { useThemeProviderStyles } from '../../system/useThemeProviderStyles';
 
 export type OverlayProps = {
-  onPress?: React.MouseEventHandler;
+  onPress?: OnPress;
   /** Animate overlay
    * @default false
    */

@@ -18,7 +18,28 @@ export const defaultPalette = {
   negativeForeground: 'gray0',
   positive: 'green60',
   positiveForeground: 'gray0',
-  secondary: 'gray0',
+  secondary: 'gray5',
+  secondaryForeground: 'gray100',
+  transparent: ['gray0', 0],
+  warning: 'yellow50',
+} as const;
+
+export const darkDefaultPalette = {
+  foreground: 'gray100',
+  foregroundMuted: 'gray60',
+  background: 'gray0',
+  backgroundAlternate: 'gray5',
+  backgroundOverlay: ['gray80', 0.33],
+  line: ['gray60', 0.2],
+  lineHeavy: ['gray60', 0.66],
+  primary: 'blue70',
+  primaryWash: 'blue0',
+  primaryForeground: 'gray0',
+  negative: 'red60',
+  negativeForeground: 'gray0',
+  positive: 'green60',
+  positiveForeground: 'gray0',
+  secondary: 'gray20',
   secondaryForeground: 'gray100',
   transparent: ['gray0', 0],
   warning: 'yellow50',
@@ -26,9 +47,9 @@ export const defaultPalette = {
 
 export const switchPalette = { backgroundAlternate: 'gray20' } as const;
 
-export const frontierSpectrumPalette = {
-  light: { secondary: 'gray5' },
-  dark: { secondary: 'gray20' },
+export const defaultPaletteOverrides = {
+  light: {},
+  dark: { secondary: 'gray20', primary: 'blue70' },
 } as const;
 
 export const elevation1Palette = { dark: { background: 'gray5', transparent: 'gray5' } } as const;

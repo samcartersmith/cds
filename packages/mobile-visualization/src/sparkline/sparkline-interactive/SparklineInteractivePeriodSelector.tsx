@@ -67,12 +67,12 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
         accessibilityHint={periodHint}
         accessibilityLabel={periodLabel}
         accessibilityState={accessibilityState}
-        backgroundColor={isSelected ? 'primaryWash' : 'background'}
+        background={isSelected ? 'primaryWash' : 'background'}
         borderColor="transparent"
         borderRadius="roundedFull"
         onPress={handleOnPress}
       >
-        <TextLabel1 dangerouslySetStyle={textStyle} spacingHorizontal={2} spacingVertical={1}>
+        <TextLabel1 spacingHorizontal={2} spacingVertical={1} style={textStyle}>
           {period.label}
         </TextLabel1>
       </Pressable>
@@ -139,9 +139,9 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
         showsHorizontalScrollIndicator={false}
       >
         <HStack
-          dangerouslySetStyle={periodSelectorStyles.hStackContainer}
           justifyContent="space-between"
           spacing={0}
+          style={periodSelectorStyles.hStackContainer}
         >
           {periods.map((period) => (
             <SparklineInteractivePeriod

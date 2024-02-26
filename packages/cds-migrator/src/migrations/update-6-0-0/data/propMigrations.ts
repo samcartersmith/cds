@@ -187,7 +187,7 @@ export const removedProps: Record<string, RemovedProp> = {
     props: [
       'frontier',
       'frontierTypography',
-      'frontierColors',
+      'frontierColor',
       'frontierCard',
       'frontierButton',
       'frontierSparkline',

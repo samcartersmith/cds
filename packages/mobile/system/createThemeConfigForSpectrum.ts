@@ -1,4 +1,4 @@
-import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common';
+import { defaultPalette } from '@cbhq/cds-common';
 import { paletteConfigToInteractableTokens } from '@cbhq/cds-common/palette/paletteConfigToInteractableTokens';
 import { paletteConfigToRgbaStrings } from '@cbhq/cds-common/palette/paletteConfigToRgbaStrings';
 import {
@@ -15,9 +15,6 @@ import {
   PartialPaletteConfigDark,
   PartialPaletteConfigLight,
 } from './ThemeConfig';
-
-const frontierLight = { ...defaultPalette, ...frontierSpectrumPalette.light } as const;
-const frontierDark = { ...defaultPalette, ...frontierSpectrumPalette.dark } as const;
 
 const isLightConfig = (palette: NewPartialPaletteConfig): palette is PartialPaletteConfigLight => {
   if ('light' in palette) {
@@ -37,36 +34,26 @@ const isNormalConfig = (palette: NewPartialPaletteConfig): palette is PartialPal
   return !isLightConfig(palette) && !isDarkConfig(palette);
 };
 
-function getFallbackParentPalette(spectrum: Spectrum, hasFrontier: boolean) {
-  const fallbackLight = hasFrontier ? frontierLight : defaultPalette;
-  const fallbackDark = hasFrontier ? frontierDark : defaultPalette;
+function getFallbackParentPalette(spectrum: Spectrum) {
+  const fallbackLight = defaultPalette;
+  const fallbackDark = defaultPalette;
   return spectrum === 'light' ? fallbackLight : fallbackDark;
 }
 
-function getParentPalette(
-  spectrum: Spectrum,
-  hasFrontier: boolean,
-  parentThemeConfig?: ThemeConfig,
-) {
+function getParentPalette(spectrum: Spectrum, parentThemeConfig?: ThemeConfig) {
   if (parentThemeConfig) {
-    return spectrum === 'light'
-      ? {
-          ...parentThemeConfig.light.palette,
-          ...(hasFrontier ? frontierSpectrumPalette.light : {}),
-        }
-      : { ...parentThemeConfig.dark.palette, ...(hasFrontier ? frontierSpectrumPalette.dark : {}) };
+    return spectrum === 'light' ? parentThemeConfig.light.palette : parentThemeConfig.dark.palette;
   }
-  return getFallbackParentPalette(spectrum, hasFrontier);
+  return getFallbackParentPalette(spectrum);
 }
 
 export const createThemeConfigForSpectrum = ({
-  hasFrontier = false,
   name,
   palette,
   parentThemeConfig,
   spectrum,
 }: CreateThemeConfigForSpectrumParams): ThemeConfigForSpectrum => {
-  const parentPalette: PaletteConfig = getParentPalette(spectrum, hasFrontier, parentThemeConfig);
+  const parentPalette: PaletteConfig = getParentPalette(spectrum, parentThemeConfig);
   const fallbackPalette = isNormalConfig(palette) ? palette : parentPalette;
   const lightPalette = isLightConfig(palette) ? palette.light : fallbackPalette;
   const darkPalette = isDarkConfig(palette) ? palette.dark : fallbackPalette;
@@ -75,11 +62,10 @@ export const createThemeConfigForSpectrum = ({
 
   return {
     palette: mergedPalette,
-    rgbaStrings: paletteConfigToRgbaStrings(mergedPalette, spectrum, hasFrontier),
+    rgbaStrings: paletteConfigToRgbaStrings(mergedPalette, spectrum),
     interactableTokens: paletteConfigToInteractableTokens({
       paletteConfig: mergedPalette,
       spectrum,
-      hasFrontier,
     }),
     name: `${name}-${spectrum}`,
   };

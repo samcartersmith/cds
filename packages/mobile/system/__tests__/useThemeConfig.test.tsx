@@ -1,10 +1,6 @@
 import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
-import { defaultPalette, frontierSpectrumPalette } from '@cbhq/cds-common';
-import {
-  defaultFeatureFlags,
-  FeatureFlagContext,
-} from '@cbhq/cds-common/system/FeatureFlagContext';
+import { defaultPalette } from '@cbhq/cds-common';
 
 import { Box } from '../../layout/Box';
 import { createThemeConfig } from '../createThemeConfig';
@@ -100,90 +96,6 @@ describe('ThemeProvider', () => {
       'default-elevation1',
       'default-elevation2',
     ]);
-  });
-
-  it('merges frontier overrides in children where frontierColor=true', () => {
-    const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }: { children: React.ReactNode }) => (
-        <ThemeProvider name="example1">
-          <ThemeProvider name="example2" spectrum="light">
-            <ThemeProvider name="example3" spectrum="dark">
-              <ThemeProvider name="example4" spectrum="light">
-                <FeatureFlagContext.Provider
-                  value={{ ...defaultFeatureFlags, frontierColor: true }}
-                >
-                  <ThemeProvider name="example5" spectrum="dark">
-                    <ThemeProvider name="example6" spectrum="light">
-                      {children}
-                    </ThemeProvider>
-                  </ThemeProvider>
-                </FeatureFlagContext.Provider>
-              </ThemeProvider>
-            </ThemeProvider>
-          </ThemeProvider>
-        </ThemeProvider>
-      ),
-    });
-    expect(Array.from(createThemeConfig.cache.keys())).toEqual([
-      'default',
-      'default-elevation1',
-      'default-elevation2',
-      'default-elevation1-elevation1Children',
-      'default-elevation2-elevation2Children',
-      'default-example5-frontier',
-      'default-example5-frontier-elevation1',
-      'default-example5-frontier-elevation1-elevation1Children',
-      'default-example5-frontier-elevation2',
-      'default-example5-frontier-elevation2-elevation2Children',
-      'default-example5-frontier-example6-frontier',
-      'default-example5-frontier-example6-frontier-elevation1',
-      'default-example5-frontier-example6-frontier-elevation2',
-    ]);
-
-    expect(result.current.activeConfig.palette).toEqual({
-      ...defaultPalette,
-      ...frontierSpectrumPalette.light,
-    });
-  });
-
-  it('merges frontier overrides in children where frontierColor=true + custom palette', () => {
-    const { result } = renderHook(() => useThemeConfig(), {
-      wrapper: ({ children }: { children: React.ReactNode }) => (
-        <ThemeProvider name="example1">
-          <ThemeProvider name="example2" spectrum="light">
-            <ThemeProvider name="example3" spectrum="dark">
-              <ThemeProvider name="example4" spectrum="light">
-                <FeatureFlagContext.Provider
-                  value={{ ...defaultFeatureFlags, frontierColor: true }}
-                >
-                  <ThemeProvider name="example5" palette={{ primary: 'indigo40' }} spectrum="dark">
-                    {children}
-                  </ThemeProvider>
-                </FeatureFlagContext.Provider>
-              </ThemeProvider>
-            </ThemeProvider>
-          </ThemeProvider>
-        </ThemeProvider>
-      ),
-    });
-    expect(Array.from(createThemeConfig.cache.keys())).toEqual([
-      'default',
-      'default-elevation1',
-      'default-elevation2',
-      'default-elevation1-elevation1Children',
-      'default-elevation2-elevation2Children',
-      'default-example5-frontier',
-      'default-example5-frontier-elevation1',
-      'default-example5-frontier-elevation1-elevation1Children',
-      'default-example5-frontier-elevation2',
-      'default-example5-frontier-elevation2-elevation2Children',
-    ]);
-
-    expect(result.current.activeConfig.palette).toEqual({
-      ...defaultPalette,
-      ...frontierSpectrumPalette.dark,
-      primary: 'indigo40',
-    });
   });
 
   it('works with nested spectrums', () => {

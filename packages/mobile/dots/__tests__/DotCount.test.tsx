@@ -3,8 +3,6 @@ import { normalScaleMap } from '@cbhq/cds-common';
 import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 
 import { Icon } from '../../icons/Icon';
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { paletteAliasToRgbaString } from '../../utils/palette';
 import { DotCount } from '../DotCount';
 
@@ -41,44 +39,6 @@ describe('DotCount', () => {
 
     expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
       borderColor: paletteAliasToRgbaString('secondary', 'light'),
-      borderWidth: borderWidth.button,
-    });
-  });
-
-  it('renders a secondary border in dark mode', () => {
-    render(
-      <ThemeProvider name="dotcount-theme-provider" spectrum="dark">
-        <DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />
-      </ThemeProvider>,
-    );
-
-    // Trigger onLayout for the icon
-    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
-    });
-
-    expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
-      borderColor: paletteAliasToRgbaString('secondary', 'dark', false),
-      borderWidth: borderWidth.button,
-    });
-  });
-
-  it('renders a secondary border in dark and frontier mode', () => {
-    render(
-      <FeatureFlagProvider frontier>
-        <ThemeProvider name="dotcount-theme-provider" spectrum="dark">
-          <DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />
-        </ThemeProvider>
-      </FeatureFlagProvider>,
-    );
-
-    // Trigger onLayout for the icon
-    fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
-    });
-
-    expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
-      borderColor: paletteAliasToRgbaString('secondary', 'dark', true),
       borderWidth: borderWidth.button,
     });
   });

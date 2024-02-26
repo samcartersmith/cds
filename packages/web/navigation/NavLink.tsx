@@ -47,13 +47,13 @@ const navLinkStyles = css`
   }
 `;
 
-export const NavLink = memo(({ active, dangerouslySetClassName, ...rest }: NavLinkProps) => {
-  const className = cx(navLinkClassName, navLinkStyles, focusRing, active && 'current');
+export const NavLink = memo(({ active, className: customClassName, ...rest }: NavLinkProps) => {
+  const classNames = cx(navLinkClassName, navLinkStyles, focusRing, active && 'current');
 
   return (
     <Link
+      className={cx(classNames, customClassName)}
       color="currentColor"
-      dangerouslySetClassName={cx(className, dangerouslySetClassName)}
       variant="label1"
       {...rest}
     />

@@ -31,7 +31,7 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
       <Pressable
         accessibilityLabel={periodLabel}
         aria-pressed={isSelected}
-        backgroundColor={background}
+        background={background}
         borderRadius="rounded"
         onPress={handleOnPress}
       >

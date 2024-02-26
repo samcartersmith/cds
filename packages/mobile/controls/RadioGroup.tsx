@@ -27,7 +27,7 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
 
   return (
     <Interactable
-      backgroundColor="background"
+      background="background"
       borderColor={checked ? 'primary' : 'lineHeavy'}
       borderRadius="roundedFull"
       borderWidth="radio"
@@ -95,7 +95,7 @@ export type RadioGroupProps<T extends string> = {
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   {
     label,
-    selectedValue,
+    value,
     onChange,
     options,
     testID,
@@ -123,14 +123,14 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
       {...restProps}
     >
       {label}
-      {entries<Record<T, string | ReactNode>>(options).map(([value, option]) => (
+      {entries<Record<T, string | ReactNode>>(options).map(([optionValue, option]) => (
         <Radio<T>
-          key={value}
+          key={optionValue}
           accessibilityLabel={typeof option === 'string' ? option : undefined}
-          checked={selectedValue === value}
+          checked={value === optionValue}
           onChange={onChange}
-          testID={testID ? `${testID}-${value}` : undefined}
-          value={value}
+          testID={testID ? `${testID}-${optionValue}` : undefined}
+          value={optionValue}
         >
           {option}
         </Radio>

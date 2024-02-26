@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
-import { CardHeaderBaseProps } from '@cbhq/cds-common/types/CardBaseProps';
+import { CardHeaderProps as CardHeaderBaseProps } from '@cbhq/cds-common/types';
 
 import { HStack } from '../layout/HStack';
 import { RemoteImage } from '../media/RemoteImage';
 import { TextLabel1, TextLegal } from '../typography';
 
-type CardHeaderProps = CardHeaderBaseProps;
+export type CardHeaderProps = CardHeaderBaseProps;
 
 export const CardHeader = memo(
-  ({ avatarUrl, metaData, description, action, testID }: CardHeaderProps) => {
+  ({ avatar, metaData, description, action, testID }: CardHeaderProps) => {
     return (
       <HStack
         alignItems="center"
@@ -18,8 +18,8 @@ export const CardHeader = memo(
         testID={testID}
       >
         <HStack alignItems="center" flexGrow={1} gap={1}>
-          {avatarUrl ? (
-            <RemoteImage height={32} resizeMode="center" source={{ uri: avatarUrl }} width={32} />
+          {avatar ? (
+            <RemoteImage height={32} resizeMode="center" source={{ uri: avatar }} width={32} />
           ) : null}
           {!!description && <TextLabel1>{description}</TextLabel1>}
           {!!metaData && <TextLegal>{metaData}</TextLegal>}

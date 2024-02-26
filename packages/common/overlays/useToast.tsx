@@ -35,7 +35,7 @@ export const useToast = <T,>(Toast: ComponentType<React.PropsWithChildren<ToastB
 
       addToast(
         <Toast text={text} {...options} onDidHide={onDidHide} />,
-        options?.dangerouslySetDuration ?? calculateDuration(),
+        options?.duration ?? calculateDuration(),
       );
     },
     [addToast, removeToast, Toast],

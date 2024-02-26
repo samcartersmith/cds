@@ -13,13 +13,7 @@ type IllustrationConfigShape = Record<string, { light: () => string; dark: () =>
 export type IllustrationA11yProps = Pick<
   AccessibilityProps,
   'accessibilityLabel' | 'accessibilityHint'
-> & {
-  /** Alt tag to apply to the img
-   * @default "" will identify the image as decorative
-   * @deprecated will be removed in v6.0.0 Use accessibilityLabel and accessibilityHint instead
-   */
-  alt?: string;
-};
+>;
 
 export type IllustrationBasePropsWithA11y<Type extends IllustrationVariant> =
   IllustrationBaseProps<Type> & IllustrationA11yProps;

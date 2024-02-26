@@ -109,7 +109,7 @@ export const Cell = memo(function Cell({
         transparentWhileInactive
         accessibilityHint={accessibilityHint}
         accessibilityLabel={accessibilityLabel}
-        backgroundColor="background"
+        background="background"
         borderRadius={borderRadius}
         contentStyle={pressStyles}
         disabled={disabled}

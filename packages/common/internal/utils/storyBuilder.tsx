@@ -105,7 +105,6 @@ export type Story<Props, WrapperProps, ExampleFnReturnType = React.ReactElement<
 
 export type StoryBuilderConfig<Props, WrapperProps> = {
   args?: {
-    frontier?: boolean;
     spectrum?: Spectrum;
     scale?: Scale;
   } & Props;
@@ -119,16 +118,11 @@ export type StoryBuilderConfig<Props, WrapperProps> = {
 
 export const baseConfig = {
   args: {
-    frontier: false,
     scale: 'large',
     spectrum: 'light',
   },
   argTypes: {
     // Global args for all stories built with storyBuilder
-    frontier: {
-      control: 'boolean',
-      description: 'Toggle all Frontier feature flags at once',
-    },
     scale: {
       options: ['xSmall', 'small', 'medium', 'large', 'xLarge', 'xxLarge', 'xxxLarge'],
       control: 'radio',
@@ -163,7 +157,7 @@ function isArray<Props>(
 
 export function sanitizeProps<Props>(props: Props) {
   if (isObject(props)) {
-    return omit(props, ['frontier', 'scale', 'spectrum']) as Props;
+    return omit(props, ['scale', 'spectrum']) as Props;
   }
   return emptyObject as Props;
 }

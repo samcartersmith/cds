@@ -109,13 +109,13 @@ export const Avatar = memo(
         borderColor={borderColor}
         borderRadius={borderRadius}
         dangerouslySetBackground={src}
-        dangerouslySetStyle={hasBorder ? styles.border : undefined}
         flexGrow={0}
         flexShrink={0}
         height={computedSize}
         justifyContent="center"
         overflow="hidden"
         position="relative"
+        style={hasBorder ? styles.border : undefined}
         testID={testID}
         width={computedSize}
       >

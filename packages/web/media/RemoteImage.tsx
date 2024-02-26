@@ -49,7 +49,7 @@ const imageRatio = css`
 type BaseRemoteImageProps = {
   /** Absolute url to the image that should be shown in the RemoteImage. If no source is provided then a generic fallback image is used. */
   source?: string;
-  dangerouslySetClassName?: string;
+  className?: string;
   resizeMode?: keyof typeof resizeModes;
 } & Omit<
   React.ImgHTMLAttributes<HTMLImageElement>,
@@ -90,7 +90,7 @@ export const RemoteImage = memo(function RemoteImage({
   shape = 'square',
   source,
   alt = '',
-  dangerouslySetClassName,
+  className,
   resizeMode = 'cover',
   testID,
   size,
@@ -130,7 +130,7 @@ export const RemoteImage = memo(function RemoteImage({
         imageOverflow,
         aspectRatio && imageRatio,
         resizeModes[resizeMode],
-        dangerouslySetClassName,
+        className,
       )}
       height={finalHeight}
       src={imageSrc}

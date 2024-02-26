@@ -3,24 +3,22 @@ import React, { memo, useMemo } from 'react';
 import { defaultMediaSize } from '../tokens/card';
 import { gutter } from '../tokens/sizing';
 import type {
+  CardBaseProps,
+  CardBodyBaseProps,
+  CardBoxProps,
+  DataCardBaseProps,
   PaletteForeground,
   ProgressBaseProps,
   ProgressCircleBaseProps,
   TextBaseProps,
 } from '../types';
-import type {
-  CardBaseProps,
-  CardBodyBaseProps,
-  CardBoxProps,
-  DataCardBaseProps,
-} from '../types/alpha';
 
 type CreateFeatureEntryCardParams<OnPressFn> = {
-  Card: React.ComponentType<React.PropsWithChildren<CardBaseProps<OnPressFn>>>;
-  CardBody: React.ComponentType<React.PropsWithChildren<CardBodyBaseProps<OnPressFn>>>;
+  Card: React.ComponentType<CardBaseProps & { onPress?: OnPressFn }>;
+  CardBody: React.ComponentType<CardBodyBaseProps & { onPress?: OnPressFn }>;
   HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
-  ProgressCircle: React.ComponentType<React.PropsWithChildren<ProgressCircleBaseProps>>;
-  ProgressBar: React.ComponentType<React.PropsWithChildren<ProgressBaseProps>>;
+  ProgressCircle: React.ComponentType<ProgressCircleBaseProps>;
+  ProgressBar: React.ComponentType<ProgressBaseProps>;
   TextBody: React.ComponentType<
     React.PropsWithChildren<TextBaseProps & { color?: PaletteForeground }>
   >;
@@ -51,7 +49,7 @@ export function createDataCard<OnPressFn>({
     endLabel: endLabelProp,
     testID = 'data-card',
     ...cardProps
-  }: DataCardBaseProps<OnPressFn>) {
+  }: DataCardBaseProps & { onPress?: OnPressFn }) {
     const content = useMemo(() => {
       const TextEndLabel = progressVariant === 'bar' ? TextLabel2 : TextBody;
       return (
@@ -68,32 +66,24 @@ export function createDataCard<OnPressFn>({
       );
     }, [endLabelProp, progressVariant, startLabelProp, testID]);
 
-    if (progressVariant === 'circle') {
-      return (
-        <Card onPress={onPress} testID={testID} {...cardProps}>
-          <CardBody
-            description={description}
-            media={
-              !!progress && (
-                <ProgressCircle
-                  color={progressColor}
-                  progress={progress}
-                  size={defaultMediaSize.width}
-                />
-              )
-            }
-            testID={`${testID}-body`}
-            title={title}
-          >
-            {content}
-          </CardBody>
-        </Card>
-      );
-    }
-
     return (
       <Card gap={2} onPress={onPress} spacing={gutter} testID={testID} {...cardProps}>
-        <CardBody description={description} spacing={0} testID={`${testID}-body`} title={title} />
+        <CardBody
+          description={description}
+          media={
+            progressVariant === 'circle' &&
+            !!progress && (
+              <ProgressCircle
+                color={progressColor}
+                progress={progress}
+                size={defaultMediaSize.width}
+              />
+            )
+          }
+          spacing={0}
+          testID={`${testID}-body`}
+          title={title}
+        />
         {content}
         {progressVariant === 'bar' && !!progress && (
           <ProgressBar color={progressColor} progress={progress} />

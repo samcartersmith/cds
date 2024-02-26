@@ -26,10 +26,9 @@ export const ButtonGroup = memo(function ButtonGroup({
   block,
   children,
   testID,
-  vertical,
   direction,
 }: ButtonGroupProps) {
-  const isVertical = direction === 'vertical' || vertical;
+  const isVertical = direction === 'vertical';
   const Stack = isVertical ? VStack : HStack;
 
   return (
@@ -37,7 +36,7 @@ export const ButtonGroup = memo(function ButtonGroup({
       alignItems="stretch"
       aria-label={accessibilityLabel}
       as="ul"
-      dangerouslySetClassName={list}
+      className={list}
       flexWrap="nowrap"
       gap={1}
       testID={testID}

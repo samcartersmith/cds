@@ -1,15 +1,27 @@
 import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
-import { Animated, ScrollView, ScrollViewProps, View, ViewStyle } from 'react-native';
-import type { CollapsibleBaseProps } from '@cbhq/cds-common/types';
+import { ScrollView, ScrollViewProps, StyleSheet, View } from 'react-native';
+import Animated, {
+  useAnimatedReaction,
+  useAnimatedStyle,
+  useSharedValue,
+} from 'react-native-reanimated';
+import { CollapsibleBaseProps } from '@cbhq/cds-common';
+import {
+  animateInMaxSizeConfig,
+  animateInOpacityConfig,
+  animateOutMaxSizeConfig,
+  animateOutOpacityConfig,
+} from '@cbhq/cds-common/animation/collapsible';
+import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 
 import { useContentSize } from '../hooks/useContentSize';
 import { useSpacingStyles } from '../hooks/useSpacingStyles';
+import { convertMotionConfigs } from '../motion/convertMotionConfig';
+import { withMotionTiming } from '../motion/withMotionTiming';
 
-import { useCollapsibleAnimation } from './useCollapsibleAnimation';
-import { useCollapsibleDirection } from './useCollapsibleDirection';
-import { useToggleAnimation } from './useToggleAnimation';
+const ReanimatedView = Animated.createAnimatedComponent(View);
 
-export type CollapseProps = CollapsibleBaseProps & {
+export type CollapsibleProps = CollapsibleBaseProps & {
   /**
    * RN ScrollView props. Use with caution as it might break default settings.
    */
@@ -30,9 +42,9 @@ export const Collapsible = memo(
       {
         children,
         collapsed = true,
+        direction = 'vertical',
         maxHeight,
         maxWidth,
-        direction = 'vertical',
         testID,
         // Spacing
         spacing,
@@ -43,12 +55,23 @@ export const Collapsible = memo(
         spacingTop,
         spacingVertical,
         scrollViewProps,
-      }: CollapseProps,
+      }: CollapsibleProps,
       forwardedRef: ForwardedRef<View>,
     ) => {
       const [{ height: contentHeight, width: contentWidth }, handleContentSizeChange] =
         useContentSize();
-      const { paddingTop, ...restPadding } = useSpacingStyles({
+      const [animateInMaxSize, animateOutMaxSize, animateInOpacity, animateOutOpacity] =
+        convertMotionConfigs([
+          animateInMaxSizeConfig[direction],
+          animateOutMaxSizeConfig[direction],
+          animateInOpacityConfig[direction],
+          animateOutOpacityConfig[direction],
+        ]);
+
+      const heightAnimatedValue = useSharedValue(animateInMaxSize.fromValue);
+      const opacityAnimatedValue = useSharedValue(animateInOpacity.fromValue);
+
+      const spacingStyles = useSpacingStyles({
         spacing,
         spacingBottom,
         spacingEnd,
@@ -58,56 +81,96 @@ export const Collapsible = memo(
         spacingVertical,
       });
 
-      const { shouldEnableScroll, animateTo, animateProperty, horizontal } =
-        useCollapsibleDirection({
-          direction,
-          maxHeight,
-          contentHeight,
-          maxWidth,
-          contentWidth,
-        });
+      const prevCollapsed = usePreviousValue(collapsed);
 
-      const { animatedStyles, animateIn, animateOut } = useCollapsibleAnimation({
-        collapsed,
-        animateTo,
-        animateProperty,
-        direction,
-      });
-      useToggleAnimation({ on: !collapsed, animateIn, animateOut });
+      // build props base on direction
+      const { shouldEnableScroll, animateToSize, horizontal } = useMemo(() => {
+        if (direction === 'vertical') {
+          return {
+            shouldEnableScroll: maxHeight ? contentHeight > maxHeight : false,
+            animateToSize: maxHeight && maxHeight < contentHeight ? maxHeight : contentHeight,
+            horizontal: false,
+          };
+        }
 
-      const scrollViewStyles = useMemo(
-        () => ({
-          marginTop: paddingTop,
-        }),
-        [paddingTop],
+        return {
+          shouldEnableScroll: maxWidth ? contentWidth > maxWidth : false,
+          animateToSize: maxWidth && maxWidth < contentWidth ? maxWidth : contentWidth,
+          horizontal: true,
+        };
+      }, [contentHeight, contentWidth, direction, maxHeight, maxWidth]);
+
+      useAnimatedReaction(
+        () => collapsed,
+        (_collapsed) => {
+          if (contentHeight === null || contentHeight === 0) {
+            return;
+          }
+
+          // skip initial animation if initial expanded
+          const shouldSkipAnimation = !_collapsed && !prevCollapsed;
+
+          heightAnimatedValue.value = shouldSkipAnimation
+            ? animateToSize
+            : withMotionTiming(
+                _collapsed ? animateOutMaxSize : { ...animateInMaxSize, toValue: animateToSize },
+              );
+
+          opacityAnimatedValue.value = shouldSkipAnimation
+            ? animateInOpacity.toValue
+            : withMotionTiming(_collapsed ? animateOutOpacity : animateInOpacity);
+        },
+        [collapsed, contentHeight],
       );
+
+      /*
+       * The following code is to avoid doing computed property names inside the
+       * useAnimatedStyle because it crashes:
+       *
+       * [animateInMaxSize.property]: heightAnimatedValue.value  // this crashes
+       *
+       * We created an issue in Reanimated about this.
+       * https://github.com/software-mansion/react-native-reanimated/issues/4162
+       * */
+      const animatedInMaxSizeHeight = useAnimatedStyle(() => ({
+        height: heightAnimatedValue.value as number,
+      }));
+      const animatedInMaxSizeWidth = useAnimatedStyle(() => ({
+        width: heightAnimatedValue.value as number,
+      }));
+      const animatedInMaxSize =
+        animateInMaxSize.property === 'height' ? animatedInMaxSizeHeight : animatedInMaxSizeWidth;
+      const animatedStyles = useAnimatedStyle(() => ({
+        opacity: Number(opacityAnimatedValue.value),
+      }));
 
       const containerStyles = useMemo(
-        () =>
-          [animatedStyles, { flexDirection: horizontal ? 'row' : 'column', flex: 1 }] as ViewStyle,
-        [animatedStyles, horizontal],
+        () => [styles.container, animatedStyles, animatedInMaxSize],
+        [animatedStyles, animatedInMaxSize],
       );
-
       return (
-        <Animated.View
+        <ReanimatedView
           ref={forwardedRef}
           aria-expanded={!collapsed}
           style={containerStyles}
           testID={testID}
         >
           <ScrollView
-            nestedScrollEnabled
-            contentContainerStyle={restPadding}
+            nestedScrollEnabled // for Android
+            contentContainerStyle={spacingStyles}
             horizontal={horizontal}
             onContentSizeChange={handleContentSizeChange}
             scrollEnabled={shouldEnableScroll}
-            style={scrollViewStyles}
             {...scrollViewProps}
           >
             {children}
           </ScrollView>
-        </Animated.View>
+        </ReanimatedView>
       );
     },
   ),
 );
+
+const styles = StyleSheet.create({
+  container: { overflow: 'hidden' },
+});

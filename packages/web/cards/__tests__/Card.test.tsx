@@ -4,7 +4,6 @@ import { noop } from '@cbhq/cds-utils';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { responsiveClassName } from '../../styles/responsive';
-import { FeatureFlagProvider } from '../../system';
 import { Card } from '../Card';
 
 const CARD_TEXT = 'Some cell text';
@@ -66,16 +65,6 @@ describe('Card', () => {
 
   it('renders children', () => {
     render(<Card>{CARD_TEXT}</Card>);
-
-    expect(screen.getByText(CARD_TEXT)).toBeVisible();
-  });
-
-  it('renders frontier', () => {
-    render(
-      <FeatureFlagProvider frontierCard>
-        <Card onPress={noop}>{CARD_TEXT}</Card>
-      </FeatureFlagProvider>,
-    );
 
     expect(screen.getByText(CARD_TEXT)).toBeVisible();
   });

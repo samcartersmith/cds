@@ -1,4 +1,9 @@
-import { defaultPalette } from '../palette/constants';
+import {
+  elevation1ChildrenPalette,
+  elevation1Palette,
+  elevation2ChildrenPalette,
+  elevation2Palette,
+} from '../palette/constants';
 import type { ElevationLevels, PartialPaletteConfig, SpectrumAlias } from '../types';
 
 type ElevationPalette = Record<
@@ -16,27 +21,16 @@ type ElevationToken = {
 
 /** Dark mode palette overrides for an elevated surface */
 export const elevationPalette: ElevationPalette = {
-  1: {
-    background: 'gray5',
-    transparent: 'gray5',
-  },
-  2: {
-    background: 'gray10',
-    transparent: 'gray10',
-  },
+  1: elevation1Palette.dark,
+  2: elevation2Palette.dark,
 };
 
 /** Dark mode palette overrides for the children of an elevated surface */
 /** secondary - Match elevated surface background so pressable cards with secondary buttons appear as a single surface. */
 /** line - Increase brightness of lines in level2 so they appear closer to light source. */
 export const elevationChildrenPalette: ElevationChildrenPalette = {
-  1: {
-    secondary: [elevationPalette[1].background, 1],
-  },
-  2: {
-    line: defaultPalette.lineHeavy,
-    secondary: [elevationPalette[2].background, 1],
-  },
+  1: elevation1ChildrenPalette.dark,
+  2: elevation2ChildrenPalette.dark,
 };
 
 const sharedStyles = {

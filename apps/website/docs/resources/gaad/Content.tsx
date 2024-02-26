@@ -5,17 +5,17 @@ import { noop } from 'lodash';
 import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
-import { HStack } from '@cbhq/cds-web/alpha/HStack';
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
 import { Button, ButtonGroup, IconButton } from '@cbhq/cds-web/buttons';
 import { Collapsible } from '@cbhq/cds-web/collapsible';
 import { Icon } from '@cbhq/cds-web/icons';
 import { Box } from '@cbhq/cds-web/layout';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { RemoteImage } from '@cbhq/cds-web/media';
 import { Modal, ModalBody, ModalHeader, Tooltip } from '@cbhq/cds-web/overlays';
 import { PressableOpacity } from '@cbhq/cds-web/system';
 import { TextBody, TextDisplay1, TextLabel1, TextTitle2 } from '@cbhq/cds-web/typography';
-import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web/visualizations';
+import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
 import TabItem from '@cbhq/docusaurus-theme/src/theme/TabItem';
 import Tabs from '@cbhq/docusaurus-theme/src/theme/Tabs';
 
@@ -84,7 +84,7 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
     <>
       {/* CHALLENGE ONE */}
       {currentStep === 1 && (
-        <VStack dangerouslySetClassName={visuallyHidden} gap={1} width="100%">
+        <VStack className={visuallyHidden} gap={1} width="100%">
           <TextDisplay1 as="h1">Beginning of the hunt</TextDisplay1>
           <Box>
             <Tooltip
@@ -138,7 +138,7 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
 
       {/* CHALLENGE TWO */}
       {currentStep === 2 && (
-        <VStack dangerouslySetClassName={visuallyHidden} gap={1} width="100%">
+        <VStack className={visuallyHidden} gap={1} width="100%">
           <TextDisplay1 as="h1">Middle of the hunt</TextDisplay1>
           <Button ref={startStepRef} compact transparent onPress={noop}>
             Let the fun begin
@@ -191,7 +191,7 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
 
       {/* CHALLENGE THREE */}
       {currentStep === 3 && (
-        <VStack dangerouslySetClassName={visuallyHidden} gap={1} width="100%">
+        <VStack className={visuallyHidden} gap={1} width="100%">
           <TextDisplay1 as="h1">End of the hunt</TextDisplay1>
           <IconButton ref={startStepRef} name="close" onPress={noop} />
           <IconButton name="bookmarkActive" onPress={noop} />

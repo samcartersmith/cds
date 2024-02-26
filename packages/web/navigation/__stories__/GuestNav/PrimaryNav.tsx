@@ -113,7 +113,7 @@ export const PrimaryNav = () => {
           </HStack>
         ) : (
           // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
-          <Box dangerouslySetStyle={{ marginBottom: '40px' }}>&nbsp;</Box>
+          <Box style={{ marginBottom: '40px' }}>&nbsp;</Box>
         )}
       </NavigationBar>
       {isMenuOpen && <MobileMenu />}

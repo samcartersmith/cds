@@ -84,32 +84,6 @@ export const light = [
     properties: {
       steps: 11,
       hue: {
-        start: 50,
-        end: 20,
-        curve: 'easeInQuad',
-      },
-      saturation: {
-        start: 0.04,
-        end: 1,
-        rate: 1.1,
-        curve: 'easeOutQuad',
-      },
-      brightness: {
-        start: 1,
-        end: 0.1,
-        curve: 'easeInSine',
-      },
-    },
-    options: {
-      minorSteps: [0, 1],
-      name: 'yellow',
-      rotation: 'counterclockwise',
-    },
-  },
-  {
-    properties: {
-      steps: 11,
-      hue: {
         start: 221,
         end: 221,
         curve: 'easeInQuad',
@@ -262,9 +236,6 @@ export const light = [
       rotation: 'clockwise',
     },
   },
-];
-
-export const frontierLight = [
   {
     properties: {
       steps: 11,

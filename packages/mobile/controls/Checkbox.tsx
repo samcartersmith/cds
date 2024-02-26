@@ -37,7 +37,7 @@ const CheckboxIcon = memo(
 
     return (
       <Interactable
-        backgroundColor={backgroundColor}
+        background={backgroundColor}
         borderColor={borderColor}
         borderWidth="checkbox"
         disabled={disabled}

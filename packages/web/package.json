@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-web",
-  "version": "5.37.0",
+  "version": "6.0.0",
   "description": "Coinbase Design System - Web",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -24,7 +24,6 @@
     "d3-interpolate-path": "^2.2.2",
     "d3-selection": "^1.4.2",
     "focus-visible": "^5.2.0",
-    "framer-motion": "^6.2.8",
     "lodash": "^4.17.21",
     "lottie-web": "^5.7.6",
     "react-popper": "^2.2.4",
@@ -33,6 +32,7 @@
   "peerDependencies": {
     "@cbhq/cds-icons": "workspace:^",
     "@cbhq/cds-illustrations": "workspace:^",
+    "framer-motion": "^10.18.0",
     "react": "18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -41,6 +41,7 @@
     "@cbhq/cds-web-utils": "workspace:^",
     "@cbhq/ui-scorecard": "workspace:^",
     "@storybook/testing-library": "^0.0.13",
+    "framer-motion": "^10.18.0",
     "linaria": "^2.3.1"
   },
   "main": "index",

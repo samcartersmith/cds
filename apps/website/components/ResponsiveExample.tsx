@@ -45,12 +45,11 @@ export function ResponsiveExample({
 } & FeatureFlagProviderProps) {
   const [selectedId, setValue] = useState<ResponsiveId>('largeMobile');
   const [selectedScale, setScale] = useState<Scale>('large');
-  const [frontierEnabled, { toggle: toggleFrontier }] = useToggler(true);
   const [darkModeEnabled, { toggle: toggleDarkMode }] = useToggler(false);
   const selected = options[selectedId];
   const ControlsWrapper = notInLiveEditor ? VStack : HStack;
   return (
-    <FeatureFlagProvider {...featureFlags} frontier={frontierEnabled}>
+    <FeatureFlagProvider {...featureFlags}>
       <Box
         alignItems="flex-start"
         background="backgroundAlternate"
@@ -99,12 +98,6 @@ export function ResponsiveExample({
               <SelectOption key={scale} title={scale} value={scale} />
             ))}
           </Select>
-          <HStack alignItems="center" flexShrink={0} gap={1}>
-            <Switch checked={frontierEnabled} onChange={toggleFrontier} />
-            <TextLabel1 as="p" color="foregroundMuted">
-              Frontier
-            </TextLabel1>
-          </HStack>
           <HStack alignItems="center" flexShrink={0} gap={1}>
             <Switch checked={darkModeEnabled} onChange={toggleDarkMode} />
             <TextLabel1 as="p" color="foregroundMuted">

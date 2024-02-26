@@ -153,7 +153,7 @@ export const InputStack = memo(
             <Interactable
               ref={ref}
               as="span"
-              backgroundColor={variant === 'secondary' ? 'secondary' : 'background'}
+              background={variant === 'secondary' ? 'secondary' : 'background'}
               borderRadius={borderRadius}
               borderWidth={borderWidth}
               className={cx(inputBaseAreaStyles, focused && persistedFocusStyles)}

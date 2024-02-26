@@ -40,8 +40,8 @@ describe('useAccessibleForegroundGradient', () => {
   it('returns the closest spectrum color if it does not meet accessibility requirements', () => {
     const output = mockUseAccessibleForegroundGradient('#fff000');
     expect(output).toEqual([
-      { color: 'rgba(188,141,27,1)', offset: '0%' },
-      { color: 'rgba(159,106,9,1)', offset: '100%' },
+      { color: 'rgba(188,131,0,1)', offset: '0%' },
+      { color: 'rgba(154,96,0,1)', offset: '100%' },
     ]);
   });
 

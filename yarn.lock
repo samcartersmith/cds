@@ -186,6 +186,7 @@ __metadata:
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
+    "@cbhq/cds-web-visualization": "workspace:^"
     "@cbhq/next-config": "npm:^2.2.0"
     "@linaria/react": "npm:^4.3.3"
     "@next/bundle-analyzer": "npm:^14.0.3"
@@ -3728,7 +3729,6 @@ __metadata:
     "@testing-library/react-native": "npm:^11.3.0"
     "@types/react-native": "npm:^0.71.3"
     "@types/react-test-renderer": "npm:^18.0.0"
-    d3-interpolate-path: "npm:^2.2.2"
     eslint-plugin-reanimated: "npm:^2.0.0"
     lodash: "npm:^4.17.21"
     react-native-accessibility-engine: "npm:^3.2.0"
@@ -3780,25 +3780,6 @@ __metadata:
     "@cbhq/cds-tasks": "workspace:^"
     humps: "npm:^2.0.1"
     type-fest: "npm:^2.19.0"
-  languageName: unknown
-  linkType: soft
-
-"@cbhq/cds-web-overlays@workspace:^, @cbhq/cds-web-overlays@workspace:packages/web-overlays":
-  version: 0.0.0-use.local
-  resolution: "@cbhq/cds-web-overlays@workspace:packages/web-overlays"
-  dependencies:
-    "@cbhq/cds-tasks": "workspace:^"
-    "@popperjs/core": "npm:^2.9.0"
-    framer-motion: "npm:^6.2.8"
-    linaria: "npm:^2.3.1"
-    lodash: "npm:^4.17.21"
-    react-popper: "npm:^2.2.4"
-  peerDependencies:
-    "@cbhq/cds-common": "workspace:^"
-    "@cbhq/cds-utils": "workspace:^"
-    "@cbhq/cds-web": "workspace:^"
-    react: 18.2.0
-    react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
@@ -3854,7 +3835,7 @@ __metadata:
     d3-interpolate-path: "npm:^2.2.2"
     d3-selection: "npm:^1.4.2"
     focus-visible: "npm:^5.2.0"
-    framer-motion: "npm:^6.2.8"
+    framer-motion: "npm:^10.18.0"
     linaria: "npm:^2.3.1"
     lodash: "npm:^4.17.21"
     lottie-web: "npm:^5.7.6"
@@ -3863,6 +3844,7 @@ __metadata:
   peerDependencies:
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
+    framer-motion: ^10.18.0
     react: 18.2.0
     react-dom: ^18.2.0
   languageName: unknown
@@ -4404,7 +4386,6 @@ __metadata:
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
-    "@cbhq/cds-web-overlays": "workspace:^"
     "@cbhq/cds-web-visualization": "workspace:^"
     "@juggle/resize-observer": "npm:^3.4.0"
     "@percy/cli": "npm:^1.26.1"
@@ -4443,7 +4424,6 @@ __metadata:
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-web": "workspace:^"
-    "@cbhq/cds-web-overlays": "workspace:^"
     "@cbhq/cds-web-visualization": "workspace:^"
     "@cbhq/docusaurus-preset": "workspace:^"
     "@cbhq/script-utils": "workspace:^"
@@ -21982,52 +21962,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:6.2.8":
-  version: 6.2.8
-  resolution: "framer-motion@npm:6.2.8"
+"framer-motion@npm:10.18.0":
+  version: 10.18.0
+  resolution: "framer-motion@npm:10.18.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fframer-motion%2F-%2Fframer-motion-10.18.0.tgz"
   dependencies:
     "@emotion/is-prop-valid": "npm:^0.8.2"
-    framesync: "npm:6.0.1"
-    hey-listen: "npm:^1.0.8"
-    popmotion: "npm:11.0.3"
-    style-value-types: "npm:5.0.0"
-    tslib: "npm:^2.1.0"
+    tslib: "npm:^2.4.0"
   peerDependencies:
-    react: ">=16.8 || ^17.0.0 || ^18.0.0"
-    react-dom: ">=16.8 || ^17.0.0 || ^18.0.0"
+    react: ^18.0.0
+    react-dom: ^18.0.0
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 612749bcf4dc5cd502198a5a3fd508609dc80dac5bb33496e2ad221290951e40f3810834db85a064da3596b9e071087150a34ca61faf6e2945b32321e126902e
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 8dc61e16af34ea7c7e830e03f588c54b7a186a767787eb6373ac692bbffa219959d50b7cf983f54305951e121ea7d50ebd4819920290fc6ad58b03fc5eb2bdde
   languageName: node
   linkType: hard
 
-"framer-motion@patch:framer-motion@npm:6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad::locator=design-system%40workspace%3A.":
-  version: 6.2.8
-  resolution: "framer-motion@patch:framer-motion@npm%3A6.2.8#.yarn/patches/framer-motion-npm-6.2.8-db4a5dedad::version=6.2.8&hash=da9212&locator=design-system%40workspace%3A."
+"framer-motion@patch:framer-motion@npm:10.18.0#.yarn/patches/framer-motion-npm-10.18.0-ae9ea02138::locator=design-system%40workspace%3A.":
+  version: 10.18.0
+  resolution: "framer-motion@patch:framer-motion@npm%3A10.18.0%3A%3A__archiveUrl=https%253A%252F%252Fartifactory.cbhq.net%253A8081%252Fartifactory%252Fapi%252Fnpm%252Fcb-npm-master%252Fframer-motion%252F-%252Fframer-motion-10.18.0.tgz#.yarn/patches/framer-motion-npm-10.18.0-ae9ea02138::version=10.18.0&hash=1b828d&locator=design-system%40workspace%3A."
   dependencies:
     "@emotion/is-prop-valid": "npm:^0.8.2"
-    framesync: "npm:6.0.1"
-    hey-listen: "npm:^1.0.8"
-    popmotion: "npm:11.0.3"
-    style-value-types: "npm:5.0.0"
-    tslib: "npm:^2.1.0"
+    tslib: "npm:^2.4.0"
   peerDependencies:
-    react: ">=16.8 || ^17.0.0 || ^18.0.0"
-    react-dom: ">=16.8 || ^17.0.0 || ^18.0.0"
+    react: ^18.0.0
+    react-dom: ^18.0.0
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 3c33efe3724f40107f94314419838520a2ac90065231fa0e5f1b40772e16b2ff90e53a0b28ee9d3538449a21d6fd7635d80660b8c1886200bb15de744e8d1d28
-  languageName: node
-  linkType: hard
-
-"framesync@npm:6.0.1":
-  version: 6.0.1
-  resolution: "framesync@npm:6.0.1"
-  dependencies:
-    tslib: "npm:^2.1.0"
-  checksum: 38a985189c90867a969e9acc1d31bfcab8184bccc0f1ad41a12dbd573e3ec0ba74259d12f3fcabaccd914330601cabd686f47b543798cf6e8c4ad23ea3c0a581
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: efa730a23274a5361b6302ea880aa89ea1b0eaf7d635d5b851a39a86d9e6053084f5d71e86435d73a695ef44797ae3cb51ec8e5a69ea57e4bc24829d55b527c2
   languageName: node
   linkType: hard
 
@@ -23360,13 +23333,6 @@ __metadata:
   dependencies:
     source-map: "npm:^0.7.3"
   checksum: 92ffe2ad1baa7c6d6ed3f62dc33a1ac579dac408fece35ce82c25ca2844cbd48e8d3e425558bd3f76e20065af787033032ae23c881e5084c5855056389e8cfe1
-  languageName: node
-  linkType: hard
-
-"hey-listen@npm:^1.0.8":
-  version: 1.0.8
-  resolution: "hey-listen@npm:1.0.8"
-  checksum: 744b5f4c18c7cfb82b22bd22e1d300a9ac4eafe05a22e58fb87e48addfca8be00604d9aa006434ea02f9530990eb4b393ddb28659e2ab7f833ce873e32eb809c
   languageName: node
   linkType: hard
 
@@ -32136,18 +32102,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"popmotion@npm:11.0.3":
-  version: 11.0.3
-  resolution: "popmotion@npm:11.0.3"
-  dependencies:
-    framesync: "npm:6.0.1"
-    hey-listen: "npm:^1.0.8"
-    style-value-types: "npm:5.0.0"
-    tslib: "npm:^2.1.0"
-  checksum: d2b6f16536b093d6106ab4caff105b1b4a8bb260e1deb316ca4fe81997c2ca1fc9e2d7747cee08dc2ce34d23ef7be8fd096efa7bc7f6908479da9d16343e1f63
-  languageName: node
-  linkType: hard
-
 "portfinder@npm:^1.0.26, portfinder@npm:^1.0.28":
   version: 1.0.32
   resolution: "portfinder@npm:1.0.32::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fportfinder%2F-%2Fportfinder-1.0.32.tgz"
@@ -37655,16 +37609,6 @@ __metadata:
   dependencies:
     inline-style-parser: "npm:0.1.1"
   checksum: 7de13d6428719e6757e68b4788714c2b0eef189ac002697d961ce5357f03ab618f9b73562e7565c2fdd79c7594431602638462851d47046c6b925d722e0b3166
-  languageName: node
-  linkType: hard
-
-"style-value-types@npm:5.0.0":
-  version: 5.0.0
-  resolution: "style-value-types@npm:5.0.0"
-  dependencies:
-    hey-listen: "npm:^1.0.8"
-    tslib: "npm:^2.1.0"
-  checksum: a4043bcc8e9f73e393c48f3f3d26f0ed42ac518cf623b1966737a17dc07ef9a4bcefaa81bfb91037c38b160a7683e139132c87fe747aebe6527b785a04262dd8
   languageName: node
   linkType: hard
 

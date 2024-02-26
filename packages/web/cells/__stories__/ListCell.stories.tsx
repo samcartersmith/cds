@@ -1,6 +1,5 @@
 import { listCellBuilder } from '@cbhq/cds-common/internal/listCellBuilder';
 
-import { VStack as AlphaVStack } from '../../alpha/VStack';
 import { Button, IconButton } from '../../buttons';
 import { Checkbox } from '../../controls';
 import { VStack } from '../../layout';
@@ -25,21 +24,12 @@ export default {
   },
 };
 
-export const withA11yOldVStack = () => {
+export const withA11yVStack = () => {
   return (
     <VStack as="ul">
       <ListCell as="li" description="Description" title="Title" />
       <ListCell as="li" description="Description" title="Title" />
     </VStack>
-  );
-};
-
-export const withA11yVStack = () => {
-  return (
-    <AlphaVStack as="ul">
-      <ListCell as="li" description="Description" title="Title" />
-      <ListCell as="li" description="Description" title="Title" />
-    </AlphaVStack>
   );
 };
 

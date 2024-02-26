@@ -157,7 +157,7 @@ export const Drawer = memo(
             />
             <Box
               borderRadius="roundedLarge"
-              dangerouslySetStyle={shouldShowHandleBar && cardStyles.overflowStyles}
+              style={shouldShowHandleBar && cardStyles.overflowStyles}
             >
               {typeof children === 'function' ? children({ handleClose }) : children}
             </Box>
@@ -189,11 +189,11 @@ export const Drawer = memo(
           background="background"
           borderRadius={isPinHorizontal ? 'roundedNone' : 'roundedLarge'}
           bordered={scheme === 'dark'}
-          dangerouslySetStyle={combinedStyles}
           elevation={scheme === 'dark' ? 2 : 0}
           maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
           onAccessibilityEscape={handleClose}
           pin={pin}
+          style={combinedStyles}
           // close modal when user performs the "escape" accessibility gesture
           // https://reactnative.dev/docs/accessibility#onaccessibilityescape-ios
           width={isPinHorizontal ? horizontalDrawerWidth : '100%'}

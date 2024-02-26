@@ -65,7 +65,7 @@ const Playground = memo(function Playground({
   );
 
   return (
-    <VStack dangerouslySetClassName="code-playground" gap={1} spacingBottom={3}>
+    <VStack className="code-playground" gap={1} spacingBottom={3}>
       {/* @ts-expect-error - issue with LiveProvider props */}
       <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
         {!hidePreview && (
@@ -83,7 +83,7 @@ const Playground = memo(function Playground({
             <Pressable
               noScaleOnPress
               transparentWhileInactive
-              backgroundColor="background"
+              background="background"
               borderRadius="roundedLarge"
               onPress={toggle}
             >
@@ -97,7 +97,7 @@ const Playground = memo(function Playground({
             <Pressable
               noScaleOnPress
               transparentWhileInactive
-              backgroundColor="background"
+              background="background"
               borderRadius="roundedFull"
               onPress={handleCopyToClipboard}
             >

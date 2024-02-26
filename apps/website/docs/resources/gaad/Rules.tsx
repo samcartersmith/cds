@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from '@docusaurus/Link';
-import { HStack } from '@cbhq/cds-web/alpha/HStack';
 import { Button } from '@cbhq/cds-web/buttons';
 import { VStack } from '@cbhq/cds-web/layout';
 import { Box } from '@cbhq/cds-web/layout/Box';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
 import { Modal, ModalBody, ModalHeader } from '@cbhq/cds-web/overlays';
 import { TextBody, TextTitle2 } from '@cbhq/cds-web/typography';
 

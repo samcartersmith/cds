@@ -20,10 +20,9 @@
       title="Title/Headline"
       description={loremIpsum}
       media={
-        <RemoteImage
-          source="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-          width="100%"
-          height="100%"
+        <CardMedia
+          type="image"
+          src="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
         />
       }
     />
@@ -31,15 +30,15 @@
 </ResponsiveExample>
 ```
 
-## CardBody with SpotRectangle
+## CardBody with Pictogram
 
 ```jsx live
 <ResponsiveExample>
   <Card>
-    <CardSpotRectangle name="portfolioOverview" />
     <CardBody
       title="Title/Headline"
       description="You can fit up to fifty two characters on 2 lines"
+      media={<CardMedia type="pictogram" name="advancedTradingDesktop" />}
     />
   </Card>
 </ResponsiveExample>
@@ -53,8 +52,7 @@
     <CardBody
       title="Title/Headline"
       description="You can fit up to fifty two characters on 2 lines"
-      media={<SpotSquare name="gifting" />}
-      orientation="horizontal"
+      media={<CardMedia type="spotSquare" name="gifting" />}
     />
   </Card>
 </ResponsiveExample>

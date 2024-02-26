@@ -11,34 +11,34 @@ const Default = () => {
   return (
     <VStack gap={2}>
       <Box>
-        <Pressable as="button" backgroundColor="background">
+        <Pressable as="button" background="background">
           Pressable
         </Pressable>
       </Box>
       <Box>
-        <Pressable noScaleOnPress as="button" backgroundColor="background">
+        <Pressable noScaleOnPress as="button" background="background">
           Without scaling
         </Pressable>
       </Box>
       <Box>
-        <Pressable disabled as="button" backgroundColor="background">
+        <Pressable disabled as="button" background="background">
           Pressable
         </Pressable>
       </Box>
       <Box>
-        <Pressable disabled noScaleOnPress as="button" backgroundColor="background">
+        <Pressable disabled noScaleOnPress as="button" background="background">
           Without scaling
         </Pressable>
       </Box>
       <Box>
-        <Pressable block as="button" backgroundColor="primary">
+        <Pressable block as="button" background="primary">
           <TextBody as="p" color="negativeForeground">
             Pressable full-width
           </TextBody>
         </Pressable>
       </Box>
       <Box>
-        <Pressable loading as="button" backgroundColor="primary">
+        <Pressable loading as="button" background="primary">
           <TextBody as="p" color="negativeForeground">
             loading
           </TextBody>
@@ -51,22 +51,22 @@ const Default = () => {
 const Transparent = () => {
   return (
     <Grid columnMin={200} gap={2}>
-      <Pressable as="button" backgroundColor="transparent">
+      <Pressable as="button" background="transparent">
         <TextBody as="p" spacing={1}>
           transparent
         </TextBody>
       </Pressable>
-      <Pressable transparentWhileInactive as="button" backgroundColor="primary">
+      <Pressable transparentWhileInactive as="button" background="primary">
         <TextBody as="p" color="primaryForeground" spacing={1}>
           transparentWhileInactive
         </TextBody>
       </Pressable>
-      <Pressable disabled as="button" backgroundColor="transparent">
+      <Pressable disabled as="button" background="transparent">
         <TextBody as="p" spacing={1}>
           transparent
         </TextBody>
       </Pressable>
-      <Pressable disabled transparentWhileInactive as="button" backgroundColor="primary">
+      <Pressable disabled transparentWhileInactive as="button" background="primary">
         <TextBody as="p" color="primaryForeground" spacing={1}>
           transparentWhileInactive
         </TextBody>
@@ -78,22 +78,17 @@ const Transparent = () => {
 const Borders = () => {
   return (
     <Grid columnMin={200} gap={2}>
-      <Pressable as="button" backgroundColor="transparent" borderColor="positive">
+      <Pressable as="button" background="transparent" borderColor="positive">
         <TextBody as="p" spacing={1}>
           transparent with borders
         </TextBody>
       </Pressable>
-      <Pressable
-        transparentWhileInactive
-        as="button"
-        backgroundColor="primary"
-        borderColor="positive"
-      >
+      <Pressable transparentWhileInactive as="button" background="primary" borderColor="positive">
         <TextBody as="p" spacing={1}>
           transparentWhileInactive with borders
         </TextBody>
       </Pressable>
-      <Pressable disabled as="button" backgroundColor="transparent" borderColor="positive">
+      <Pressable disabled as="button" background="transparent" borderColor="positive">
         <TextBody as="p" spacing={1}>
           transparent with borders
         </TextBody>
@@ -102,7 +97,7 @@ const Borders = () => {
         disabled
         transparentWhileInactive
         as="button"
-        backgroundColor="primary"
+        background="primary"
         borderColor="positive"
       >
         <TextBody as="p" spacing={1}>
@@ -111,7 +106,7 @@ const Borders = () => {
       </Pressable>
       <Pressable
         as="button"
-        backgroundColor="background"
+        background="background"
         borderColor="primary"
         borderRadius="roundedSmall"
       >
@@ -119,44 +114,29 @@ const Borders = () => {
           primary + compact
         </TextBody>
       </Pressable>
-      <Pressable as="button" backgroundColor="backgroundAlternate" borderColor="negative">
+      <Pressable as="button" background="backgroundAlternate" borderColor="negative">
         <TextBody as="p" spacing={1}>
           negative
         </TextBody>
       </Pressable>
-      <Pressable
-        as="button"
-        backgroundColor="primary"
-        borderColor="positive"
-        borderRadius="rounded"
-      >
+      <Pressable as="button" background="primary" borderColor="positive" borderRadius="rounded">
         <TextBody as="p" color="primaryForeground" spacing={1}>
           positive + standard
         </TextBody>
       </Pressable>
-      <Pressable
-        as="button"
-        backgroundColor="secondary"
-        borderColor="lineHeavy"
-        borderRadius="rounded"
-      >
+      <Pressable as="button" background="secondary" borderColor="lineHeavy" borderRadius="rounded">
         <TextBody as="p" color="secondaryForeground" spacing={1}>
           lineHeavy + tooltip
         </TextBody>
       </Pressable>
-      <Pressable
-        as="button"
-        backgroundColor="positive"
-        borderColor="line"
-        borderRadius="roundedLarge"
-      >
+      <Pressable as="button" background="positive" borderColor="line" borderRadius="roundedLarge">
         <TextBody as="p" color="positiveForeground" spacing={1}>
           line + pill
         </TextBody>
       </Pressable>
       <Pressable
         as="button"
-        backgroundColor="negative"
+        background="negative"
         borderColor="primaryWash"
         borderRadius="roundedFull"
       >

@@ -60,7 +60,7 @@ export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProp
       <VStack alignItems="center" justifyContent="center">
         {renderContent}
       </VStack>
-      <TextLabel2 align="center" as="p" dangerouslySetClassName={overflowTextStyles}>
+      <TextLabel2 align="center" as="p" className={overflowTextStyles}>
         {title}
       </TextLabel2>
     </VStack>

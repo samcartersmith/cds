@@ -11,7 +11,6 @@ const TagScreen = () => {
       {Object.entries(tagStories).map(([key, story]) => (
         <Example key={key} inline title={startCase(key)}>
           {story.map((props, idx) => {
-            // @ts-expect-error the type union is confusing when mapping over all possible options
             // eslint-disable-next-line react/no-array-index-key
             return <Tag key={`${props.children}-${idx}`} {...props} />;
           })}

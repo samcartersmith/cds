@@ -54,9 +54,8 @@ import {
   ProgressBar,
   ProgressBarWithFloatLabel,
   ProgressCircle,
-  SparklineInteractive,
-  SparklineInteractiveHeader,
 } from '@cbhq/cds-web/visualizations';
+import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
 
 const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
   SparklineInteractive,
@@ -146,16 +145,9 @@ function Popover({ trigger }: { trigger: () => React.ReactElement }) {
   );
 }
 
-/** Triggers */
-function MoreTrigger() {
-  return (
-    <IconButton transparent accessibilityLabel="More actions" name="more" variant="secondary" />
-  );
-}
-
 function AvatarTrigger() {
   return (
-    <Pressable backgroundColor="transparent">
+    <Pressable background="transparent">
       <HStack alignItems="center" gap={1}>
         <Avatar alt="Kat" src={avatar} />
         <TextHeadline as="h2">{name}</TextHeadline>
@@ -190,21 +182,19 @@ function FeedCardWithPopover() {
   );
 
   const feedCardProps = {
-    avatarUrl: assets.eth.imageUrl,
-    headerMetaData: 'Dec 18',
-    headerDescription: 'Earn crypto',
-    headerActionNode: <Popover trigger={MoreTrigger} />,
-    bodyTitle: 'Learn AMP. Earn $3 in AMP.',
-    bodyDescription:
+    avatar: assets.eth.imageUrl,
+    metadata: 'Dec 18',
+    author: 'Earn crypto',
+    title: 'Learn AMP. Earn $3 in AMP.',
+    description:
       'Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred.',
-    bodyMediaUrl:
+    image:
       'https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png',
-    bodyOrientation: 'vertical',
-    footerActions: (
-      <Button compact onPress={showAlert} variant="secondary">
-        Earn AMP
-      </Button>
-    ),
+    mediaPlacement: 'above',
+    headerAction: {
+      onPress: showAlert,
+      name: 'more',
+    },
   } as const;
 
   return <FeedCard {...feedCardProps} />;
@@ -222,7 +212,6 @@ function DataCardWithCircle() {
       <CardBody
         description="Earn $40 more by learning about new assets"
         media={<ProgressCircle progress={0.5} size={100} />}
-        orientation="horizontal"
         title="Crypto earned"
       />
       <CardFooter>
@@ -306,26 +295,18 @@ function FullScreenModalAmp() {
       <TextTitle1 as="h1">Fullscreen Modal</TextTitle1>
       <TextBody as="p">This is a test Fullscreen Modal with components composition.</TextBody>
       <FeedCard
-        avatarUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-        bodyDescription="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-        bodyMediaUrl="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
-        bodyOrientation="vertical"
-        bodyTitle="Learn AMP. Earn $3 in AMP."
-        footerActions={
-          <Button compact variant="secondary">
-            Earn AMP
-          </Button>
-        }
-        headerActionNode={
-          <IconButton
-            transparent
-            accessibilityLabel="More actions"
-            name="more"
-            variant="foregroundMuted"
-          />
-        }
-        headerDescription="Earn crypto"
-        headerMetaData="Dec 18"
+        author="Earn crypto"
+        avatar="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        description="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
+        // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+        headerAction={{
+          name: 'more',
+          variant: 'foregroundMuted',
+        }}
+        image="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+        mediaPlacement="above"
+        metadata="Dec 18"
+        title="Learn AMP. Earn $3 in AMP."
       />
       <ListCell
         description="BTC"
@@ -377,7 +358,6 @@ function DataCardWithFullScreenModal() {
       <CardBody
         description="Earn $40 more by learning about new assets"
         media={<ProgressCircle progress={0.5} size={100} />}
-        orientation="horizontal"
         title="Crypto earned"
       />
       <CardFooter>
@@ -414,7 +394,6 @@ function DataCardWithFullScreenAlert() {
       <CardBody
         description="Earn $40 more by learning about new assets"
         media={<ProgressCircle progress={0.5} size={100} />}
-        orientation="horizontal"
         title="Crypto earned"
       />
       <CardFooter>

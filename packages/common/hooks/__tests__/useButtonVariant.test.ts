@@ -1,40 +1,20 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { FeatureFlagProvider } from '../../system/FeatureFlagProvider';
 import { ButtonVariant } from '../../types';
 import { useButtonVariant } from '../useButtonVariant';
 
-function createHook({
-  variant,
-  transparent,
-  enableFrontier,
-}: {
-  variant: ButtonVariant;
-  transparent?: boolean;
-  enableFrontier?: boolean;
-}) {
-  return renderHook(
-    () => {
-      return useButtonVariant(variant, transparent, enableFrontier);
-    },
-    enableFrontier
-      ? {
-          wrapper: FeatureFlagProvider,
-          initialProps: {
-            frontierButton: true,
-          },
-        }
-      : {},
-  ).result.current;
+function createHook({ variant, transparent }: { variant: ButtonVariant; transparent?: boolean }) {
+  return renderHook(() => {
+    return useButtonVariant(variant, transparent);
+  }).result.current;
 }
 
 describe('useButtonVariant', () => {
   // nonTransparentVariants
-  it('returns correct styles for variant: primary, transparent: false, enableFrontier: false', () => {
+  it('returns correct styles for variant: primary, transparent: false', () => {
     const value = createHook({
       variant: 'primary',
       transparent: false,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'primaryForeground',
@@ -42,23 +22,21 @@ describe('useButtonVariant', () => {
       borderColor: 'transparent',
     });
   });
-  it('returns correct styles for variant: secondary, transparent: false, enableFrontier: false', () => {
+  it('returns correct styles for variant: secondary, transparent: false', () => {
     const value = createHook({
       variant: 'secondary',
       transparent: false,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'secondaryForeground',
       backgroundColor: 'secondary',
-      borderColor: 'line',
+      borderColor: 'transparent',
     });
   });
-  it('returns correct styles for variant: foregroundMuted, transparent: false, enableFrontier: false', () => {
+  it('returns correct styles for variant: foregroundMuted, transparent: false', () => {
     const value = createHook({
       variant: 'foregroundMuted',
       transparent: false,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'foregroundMuted',
@@ -66,11 +44,10 @@ describe('useButtonVariant', () => {
       borderColor: 'line',
     });
   });
-  it('returns correct styles for variant: positive, transparent: false, enableFrontier: false', () => {
+  it('returns correct styles for variant: positive, transparent: false', () => {
     const value = createHook({
       variant: 'positive',
       transparent: false,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'positiveForeground',
@@ -78,11 +55,10 @@ describe('useButtonVariant', () => {
       borderColor: 'transparent',
     });
   });
-  it('returns correct styles for variant: negative, transparent: false, enableFrontier: false', () => {
+  it('returns correct styles for variant: negative, transparent: false', () => {
     const value = createHook({
       variant: 'negative',
       transparent: false,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'negativeForeground',
@@ -91,26 +67,11 @@ describe('useButtonVariant', () => {
     });
   });
 
-  // frontierVariants
-  it('returns correct styles for variant: secondary, transparent: false, enableFrontier: true', () => {
-    const value = createHook({
-      variant: 'secondary',
-      transparent: false,
-      enableFrontier: true,
-    });
-    expect(value).toStrictEqual({
-      color: 'secondaryForeground',
-      backgroundColor: 'secondary',
-      borderColor: 'transparent',
-    });
-  });
-
   // transparentVariants
-  it('returns correct styles for variant: primary, transparent: true, enableFrontier: false', () => {
+  it('returns correct styles for variant: primary, transparent: true', () => {
     const value = createHook({
       variant: 'primary',
       transparent: true,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'primary',
@@ -118,11 +79,10 @@ describe('useButtonVariant', () => {
       borderColor: 'transparent',
     });
   });
-  it('returns correct styles for variant: secondary, transparent: true, enableFrontier: false', () => {
+  it('returns correct styles for variant: secondary, transparent: true', () => {
     const value = createHook({
       variant: 'secondary',
       transparent: true,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'secondaryForeground',
@@ -130,11 +90,10 @@ describe('useButtonVariant', () => {
       borderColor: 'transparent',
     });
   });
-  it('returns correct styles for variant: foregroundMuted, transparent: true, enableFrontier: false', () => {
+  it('returns correct styles for variant: foregroundMuted, transparent: true', () => {
     const value = createHook({
       variant: 'foregroundMuted',
       transparent: true,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'foregroundMuted',
@@ -142,11 +101,10 @@ describe('useButtonVariant', () => {
       borderColor: 'transparent',
     });
   });
-  it('returns correct styles for variant: positive, transparent: true, enableFrontier: false', () => {
+  it('returns correct styles for variant: positive, transparent: true', () => {
     const value = createHook({
       variant: 'positive',
       transparent: true,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'positive',
@@ -154,11 +112,10 @@ describe('useButtonVariant', () => {
       borderColor: 'transparent',
     });
   });
-  it('returns correct styles for variant: negative, transparent: true, enableFrontier: false', () => {
+  it('returns correct styles for variant: negative, transparent: true', () => {
     const value = createHook({
       variant: 'negative',
       transparent: true,
-      enableFrontier: false,
     });
     expect(value).toStrictEqual({
       color: 'negative',

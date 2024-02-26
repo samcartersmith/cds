@@ -95,7 +95,7 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
   /**
    * Adds an area fill to the Sparkline
    *
-   * @default true for frontier false otherwise
+   * @default true
    */
   fill?: boolean;
 

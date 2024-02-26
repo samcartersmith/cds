@@ -64,7 +64,6 @@ export type ThemeConfigContextValue = {
 export type CreateThemeConfigParams = {
   palette: NewPartialPaletteConfig;
   parentThemeConfig?: ThemeConfig;
-  hasFrontier?: boolean;
   name: string;
 };
 

@@ -102,11 +102,11 @@ const SparklineInteractiveScreen = () => {
       <Example spacing={0}>
         <Box>
           <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
-            Fill
+            Fill Disabled
           </TextTitle3>
           <SparklineInteractiveBuild
-            fill
             data={sparklineInteractiveData}
+            fill={false}
             strokeColor={strokeColor}
           />
         </Box>

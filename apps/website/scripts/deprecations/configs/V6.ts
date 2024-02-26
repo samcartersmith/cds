@@ -1,19 +1,5 @@
 import { Component, Deprecation, FunctionDeprecation, Param, Prop } from '../types';
 
-const baseWebOverlaysDeprecation: Partial<Component> = {
-  package: 'web-overlays',
-  type: ['path'],
-};
-const baseWebVisualizationDeprecation: Partial<Component> = {
-  package: 'web-visualization',
-  type: ['path'],
-};
-
-const baseMobileVisualizationDeprecation: Partial<Component> = {
-  package: 'mobile-visualization',
-  type: ['path'],
-};
-
 const alphaComponents = [
   { name: 'AnnouncementCard', newPath: 'cards' },
   { name: 'FeatureEntryCard', newPath: 'cards' },
@@ -31,7 +17,7 @@ const alphaComponentWebMigrations: Partial<Component>[] = alphaComponents.map(
   ({ name, newPath }) => ({
     name,
     package: 'web',
-    type: 'path',
+    type: ['alpha', 'path'],
     path: `packages/web/alpha/${name}.tsx`,
     migrationMap: {
       path: `packages/web/${newPath}/${name}.tsx`,
@@ -42,7 +28,7 @@ const alphaComponentMobileMigrations: Partial<Component>[] = alphaComponents.map
   ({ name, newPath }) => ({
     name,
     package: 'web',
-    type: 'path',
+    type: ['alpha', 'path'],
     path: `packages/web/alpha/${name}.tsx`,
     migrationMap: {
       path: `packages/web/${newPath}/${name}.tsx`,
@@ -50,287 +36,7 @@ const alphaComponentMobileMigrations: Partial<Component>[] = alphaComponents.map
   }),
 );
 
-const overlayWebDeprecations = [
-  { ...baseWebOverlaysDeprecation, name: 'Dropdown', path: 'packages/web-overlays/src/dropdown' },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'DropdownContent',
-    path: 'packages/web-overlays/src/dropdown',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'DropdownProps',
-    path: 'packages/web-overlays/src/dropdown',
-  },
-  { ...baseWebOverlaysDeprecation, name: 'MenuItem', path: 'packages/web-overlays/src/dropdown' },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'Popover',
-    path: 'packages/web-overlays/src/popover',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'PopoverProps',
-    path: 'packages/web-overlays/src/popover',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'usePopper',
-    path: 'packages/web-overlays/src/popover',
-  },
-  { ...baseWebOverlaysDeprecation, name: 'Select', path: 'packages/web-overlays/src/select' },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'SelectOption',
-    path: 'packages/web-overlays/src/select',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'SidebarMoreMenu',
-    path: 'packages/web-overlays/src/sidebarMoreMenu',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'Tooltip',
-    path: 'packages/web-overlays/src/tooltip',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'TooltipContent',
-    path: 'packages/web-overlays/src/tooltip',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'TooltipProps',
-    path: 'packages/web-overlays/src/tooltip',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'useTooltipState',
-    path: 'packages/web-overlays/src/tooltip',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'SelectChip',
-    path: 'packages/web-overlays/src/selectchip',
-  },
-  {
-    ...baseWebOverlaysDeprecation,
-    name: 'SelectChip',
-    path: 'packages/web-overlays/src/selectchip',
-  },
-];
-
-const sparklineWebDeprecations = [
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineGradient',
-    path: 'packages/web/visualizations/SparklineGradient.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineAreaPattern',
-    path: 'packages/web/visualizations/SparklineAreaPattern.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineArea',
-    path: 'packages/web/visualizations/SparklineArea.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'Sparkline',
-    path: 'packages/web/visualizations/Sparkline.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'Counter',
-    path: 'packages/web/visualizations/Counter.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklinePath',
-    path: 'packages/web/visualizations/SparklinePath.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveHeader',
-    path: 'packages/web/visualizations/sparkline-interactive-header/SparklineInteractiveHeader.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'InnerSparklineInteractiveProvider',
-    path: 'packages/web/visualizations/sparkline-interactive/InnerSparklineInteractiveProvider.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractive',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractive.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveAnimatedPath',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveHoverDate',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveLineVertical',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveMarkerDates',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractivePaths',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractivePeriodSelector',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveProvider',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveScrubHandler',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubHandler.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveScrubProvider',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveScrubProvider.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'SparklineInteractiveTimeseriesPaths',
-    path: 'packages/web/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
-  },
-  {
-    ...baseWebVisualizationDeprecation,
-    name: 'useSparklineInteractiveConstants',
-    path: 'packages/web/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
-  },
-];
-
-const sparklineMobileDeprecations = [
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'newRoutes',
-    path: 'packages/mobile/examples/newRoutes.ts',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'Sparkline',
-    path: 'packages/mobile/visualizations/Sparkline.ts',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractive',
-    path: 'packages/mobile/visualizations/SparklineInteractive.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractiveHeader',
-    path: 'packages/mobile/visualizations/SparklineInteractiveHeader.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineGradient',
-    path: 'packages/mobile/visualizations/SparklineGradient.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractiveAnimatedPath',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveAnimatedPath.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractiveHoverDate',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveHoverDate.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractiveLineVertical',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveLineVertical.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractiveMarkerDates',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMarkerDates.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractiveMinMax',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveMinMax.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractivePanGestureHandler',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePanGestureHandler.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractivePaths',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePaths.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractivePeriodSelector',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractivePeriodSelector.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractiveProvider',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveProvider.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'SparklineInteractiveTimeseriesPaths',
-    path: 'packages/mobile/visualizations/sparkline-interactive/SparklineInteractiveTimeseriesPaths.tsx',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'useInterruptiblePathAnimation',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useInterruptiblePathAnimation.ts',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'useMinMaxTransform',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useMinMaxTransform.ts',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'useOpacityAnimation',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useOpacityAnimation.ts',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'useSparklineInteractiveConstants',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveConstants.ts',
-  },
-  {
-    ...baseMobileVisualizationDeprecation,
-    name: 'useSparklineInteractiveLineStyles',
-    path: 'packages/mobile/visualizations/sparkline-interactive/useSparklineInteractiveLineStyles.ts',
-  },
-];
-
 const componentDeprecations: Partial<Component>[] = [
-  ...overlayWebDeprecations,
-  ...sparklineWebDeprecations,
-  ...sparklineMobileDeprecations,
   ...alphaComponentWebMigrations,
   ...alphaComponentMobileMigrations,
   {
@@ -408,7 +114,7 @@ const componentDeprecations: Partial<Component>[] = [
   {
     name: 'FeatureEntryCard',
     package: 'mobile',
-    type: 'replaced',
+    type: ['alpha', 'replaced'],
     path: 'packages/mobile/alpha/FeatureEntryCard.tsx',
     migrationMap: {
       replaced: ['NudgeCard', 'UpsellCard'],
@@ -418,7 +124,7 @@ const componentDeprecations: Partial<Component>[] = [
     name: 'AnnouncementCard',
     package: 'mobile',
     path: 'packages/mobile/alpha/FeatureEntryCard.tsx',
-    type: 'replaced',
+    type: ['alpha', 'replaced'],
     migrationMap: {
       replaced: ['NudgeCard', 'UpsellCard'],
     },
@@ -426,7 +132,7 @@ const componentDeprecations: Partial<Component>[] = [
   {
     name: 'FeatureEntryCard',
     package: 'web',
-    type: 'replaced',
+    type: ['alpha', 'replaced'],
     path: 'packages/web/alpha/FeatureEntryCard.tsx',
     migrationMap: {
       replaced: ['NudgeCard', 'UpsellCard'],
@@ -436,7 +142,7 @@ const componentDeprecations: Partial<Component>[] = [
     name: 'AnnouncementCard',
     package: 'web',
     path: 'packages/web/alpha/FeatureEntryCard.tsx',
-    type: 'replaced',
+    type: ['alpha', 'replaced'],
     migrationMap: {
       replaced: ['NudgeCard', 'UpsellCard'],
     },
@@ -516,7 +222,7 @@ const componentDeprecations: Partial<Component>[] = [
   {
     package: 'mobile',
     name: 'Collapsible',
-    type: 'path',
+    type: ['alpha', 'path'],
     path: 'packages/mobile/alpha/Collapsible.tsx',
     migrationMap: {
       path: 'packages/mobile/collapsible',
@@ -525,6 +231,7 @@ const componentDeprecations: Partial<Component>[] = [
   {
     package: 'web',
     name: 'VStack',
+    type: ['alpha', 'path'],
     path: 'packages/web/alpha/VStack.tsx',
     migrationMap: {
       path: 'packages/web/layout',
@@ -533,6 +240,7 @@ const componentDeprecations: Partial<Component>[] = [
   {
     package: 'web',
     name: 'HStack',
+    type: ['alpha', 'path'],
     path: 'packages/web/alpha/HStack.tsx',
     migrationMap: {
       path: 'packages/web/layout',
@@ -541,39 +249,6 @@ const componentDeprecations: Partial<Component>[] = [
 ];
 
 const propDeprecations: Prop[] = [
-  {
-    name: 'title',
-    components: ['CellMedia'],
-    package: 'web',
-    type: 'replaced',
-    migrationMap: {
-      api: {
-        title: 'accessibilityLabel',
-      },
-    },
-  },
-  {
-    name: 'title',
-    components: ['CellMedia'],
-    package: 'mobile',
-    type: 'replaced',
-    migrationMap: {
-      api: {
-        title: 'accessibilityLabel and accessibilityHint',
-      },
-    },
-  },
-  {
-    name: 'alt',
-    components: ['HeroSquare', 'Pictogram', 'SpotSquare', 'SpotRectangle'],
-    package: 'mobile',
-    type: 'replaced',
-    migrationMap: {
-      api: {
-        alt: 'accessibilityLabel and accessibilityHint',
-      },
-    },
-  },
   {
     name: 'frontier',
     components: ['FeatureFlagProvider', 'Card', 'Button', 'Sparkline', 'Typography'],
@@ -610,6 +285,40 @@ const propDeprecations: Prop[] = [
     type: 'removed',
     package: 'common',
   },
+  {
+    name: 'title',
+    components: ['CellMedia'],
+    package: 'web',
+    type: 'api',
+    migrationMap: {
+      api: {
+        title: 'accessibilityLabel',
+      },
+    },
+  },
+  {
+    name: 'title',
+    components: ['CellMedia'],
+    package: 'mobile',
+    type: 'api',
+    migrationMap: {
+      api: {
+        title: 'accessibilityLabel and accessibilityHint',
+      },
+    },
+  },
+  {
+    name: 'alt',
+    components: ['HeroSquare', 'Pictogram', 'SpotSquare', 'SpotRectangle'],
+    package: 'mobile',
+    type: 'api',
+    migrationMap: {
+      api: {
+        alt: 'accessibilityLabel and accessibilityHint',
+      },
+    },
+  },
+
   {
     name: 'shouldApplyDarkModeEnhacements',
     components: ['CellMedia', 'DotSymbol', 'RemoteImage'],
@@ -737,7 +446,7 @@ const propDeprecations: Prop[] = [
   {
     name: 'backgroundColor',
     type: 'api',
-    package: 'common',
+    package: 'web',
     migrationMap: {
       api: { backgroundColor: 'background' },
     },
@@ -801,7 +510,7 @@ const functionDeprecations: FunctionDeprecation[] = [
     name: 'AnnouncementCard',
     path: 'packages/mobile/alpha/AnnouncementCard.tsx',
     package: 'mobile',
-    type: 'replaced',
+    type: ['alpha', 'replaced'],
     migrationMap: {
       replaced: ['NudgeCard', 'UpsellCard'],
     },
@@ -811,7 +520,7 @@ const functionDeprecations: FunctionDeprecation[] = [
     name: 'AnnouncementCard',
     path: 'packages/web/alpha/AnnouncementCard.tsx',
     package: 'web',
-    type: 'replaced',
+    type: ['alpha', 'replaced'],
     migrationMap: {
       replaced: ['NudgeCard', 'UpsellCard'],
     },
@@ -841,7 +550,7 @@ const functionDeprecations: FunctionDeprecation[] = [
     name: 'FeatureEntryCard',
     path: 'packages/mobile/alpha/FeatureEntryCard.tsx',
     package: 'mobile',
-    type: 'replaced',
+    type: ['alpha', 'replaced'],
     migrationMap: {
       replaced: ['NudgeCard', 'UpsellCard'],
     },
@@ -851,7 +560,7 @@ const functionDeprecations: FunctionDeprecation[] = [
     name: 'FeatureEntryCard',
     path: 'packages/web/alpha/FeatureEntryCard.tsx',
     package: 'web',
-    type: 'replaced',
+    type: ['alpha', 'replaced'],
     migrationMap: {
       replaced: ['NudgeCard', 'UpsellCard'],
     },
@@ -979,6 +688,8 @@ export const parameterMigrations: Param[] = [
 export const V6: Deprecation = {
   prevMajorVersion: 'v5.0.0',
   breakingRelease: 'v6.0.0',
+  intro: `The Sparkline components have moved to the <code>@cbhq/cds-web-visualization</code> and <code>@cbhq/cds-mobile-visualization</code> packages. \n\nThe <code>@cbhq/cds-web-overlay</code> package is deprecated and all components should be imported from <code>@cbhq/cds-web</code> instead.`,
+  migrationGuideLink: '/guides/migration/web-and-mobile/6-0-0/',
   components: componentDeprecations,
   props: propDeprecations,
   tokens: [
@@ -1000,7 +711,7 @@ export const V6: Deprecation = {
       name: 'common/types/alpha',
       package: 'common',
       path: 'packages/common/types/alpha',
-      type: 'path',
+      type: ['alpha', 'path'],
       migrationMap: {
         path: 'packages/common/types',
       },

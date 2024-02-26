@@ -4,10 +4,10 @@ import { AccordionBaseProps } from '../types';
 
 export const AccordionParentContext = createContext<{
   activeKey: AccordionBaseProps['defaultActiveKey'];
-  onItemPress: (key: string) => void;
+  onChange: (key: string) => void;
 }>({
   activeKey: undefined,
-  onItemPress: () => {},
+  onChange: () => {},
 });
 
 export const useAccordionParent = () => {
@@ -17,24 +17,24 @@ export const useAccordionParent = () => {
 export const AccordionParentProvider = ({
   children,
   defaultActiveKey,
-  onItemPress,
+  onChange,
 }: AccordionBaseProps) => {
   const [activeKey, setActiveKey] =
     useState<AccordionBaseProps['defaultActiveKey']>(defaultActiveKey);
 
   const handleItemPress = useCallback(
     (key: string) => {
-      onItemPress?.(key);
+      onChange?.(key);
       // close itself if it's expanded
       setActiveKey(key === activeKey ? undefined : key);
     },
-    [onItemPress, activeKey],
+    [onChange, activeKey],
   );
 
   const contextValue = useMemo(
     () => ({
       activeKey,
-      onItemPress: handleItemPress,
+      onChange: handleItemPress,
     }),
     [activeKey, handleItemPress],
   );

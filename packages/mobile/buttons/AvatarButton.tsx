@@ -29,7 +29,6 @@ export const AvatarButton = memo(function AvatarButton({
     <PressableOpacity
       accessibilityHint={accessibilityLabel ?? alt}
       accessibilityLabel={accessibilityLabel ?? alt}
-      aria-label={accessibilityLabel}
       feedback={feedback}
       {...props}
     >

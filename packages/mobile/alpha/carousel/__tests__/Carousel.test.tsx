@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
-import { AnnouncementCard } from '../../AnnouncementCard';
+import { AnnouncementCard } from '../../../cards/AnnouncementCard';
 import { Carousel, CarouselRef } from '../Carousel';
 
 jest.mock('react-native-safe-area-context', () => {

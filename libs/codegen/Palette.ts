@@ -17,7 +17,7 @@ export const defaultPalette = {
   negativeForeground: 'gray0',
   positive: 'green60',
   positiveForeground: 'gray0',
-  secondary: 'gray0',
+  secondary: 'gray5',
   secondaryForeground: 'gray100',
   transparent: ['gray0', 0],
   warning: 'yellow50',
@@ -27,14 +27,15 @@ const switchPalette = {
   backgroundAlternate: 'gray20',
 } as const;
 
-const frontierSpectrumPalette = {
-  light: {
-    secondary: 'gray5',
-  },
+const defaultPaletteOverrides = {
+  light: {},
   dark: {
     secondary: 'gray20',
+    primary: 'blue70',
   },
 } as const;
+
+const darkDefaultPalette = { ...defaultPalette, ...defaultPaletteOverrides.dark } as const;
 
 const elevation1Palette = {
   dark: { background: 'gray5', transparent: 'gray5' },
@@ -149,19 +150,14 @@ export const Palette = {
   cssColor,
   cssVariables,
   setCssVariables: {
-    light: setPaletteConfigToCssVars({
-      ...defaultPalette,
-      ...frontierSpectrumPalette.light,
-    }),
-    dark: setPaletteConfigToCssVars({
-      ...defaultPalette,
-      ...frontierSpectrumPalette.dark,
-    }),
+    light: setPaletteConfigToCssVars(defaultPalette),
+    dark: setPaletteConfigToCssVars(darkDefaultPalette),
   },
   palettes: {
     defaultPalette,
+    darkDefaultPalette,
     switchPalette,
-    frontierSpectrumPalette,
+    defaultPaletteOverrides,
     elevation1Palette,
     elevation1ChildrenPalette,
     elevation2Palette,

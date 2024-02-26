@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import { HStack } from '@cbhq/cds-web/alpha/HStack';
-import { VStack } from '@cbhq/cds-web/alpha/VStack';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 
 import { useAdopterComponents } from ':cds-website/components/AdoptionTracker/hooks/useAdopterComponents';

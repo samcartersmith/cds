@@ -40,7 +40,7 @@ export const MobileMenu = () => {
                   </Button>
                 }
                 media={
-                  <Pressable backgroundColor="background" onPress={handleBackButtonPress}>
+                  <Pressable background="background" onPress={handleBackButtonPress}>
                     <Icon name="caretLeft" size="s" />
                   </Pressable>
                 }

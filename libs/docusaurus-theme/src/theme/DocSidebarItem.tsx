@@ -67,7 +67,7 @@ function SidebarItemLink({
         noScaleOnPress
         transparentWhileInactive
         as={Link}
-        backgroundColor="background"
+        background="background"
         borderRadius="roundedLarge"
         to={item.href}
       >
@@ -105,7 +105,7 @@ function CollapsibleCategory({
       <Pressable
         noScaleOnPress
         transparentWhileInactive
-        backgroundColor="background"
+        background="background"
         borderRadius="roundedLarge"
         onPress={toggle}
       >

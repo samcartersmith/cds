@@ -44,7 +44,7 @@ export const TableCell = memo(
     outerSpacing,
     responsiveConfig,
     as,
-    dangerouslySetClassName,
+    className,
     ...props
   }: TableCellProps) => {
     // THROW WANRING IN DEVELOPMENT
@@ -137,7 +137,7 @@ export const TableCell = memo(
 
     return (
       <TableCellComponent
-        className={cx(tableCellClass, dangerouslySetClassName)}
+        className={cx(tableCellClass, className)}
         colSpan={colSpan}
         data-testid={testID}
         scope={cellScope}
@@ -170,7 +170,7 @@ export const TableCell = memo(
           ) : (
             <Stack
               alignItems={smartAlignItems}
-              dangerouslySetClassName={stackClassName}
+              className={stackClassName}
               flexGrow={1}
               flexShrink={1}
               justifyContent={smartJustifyContent}

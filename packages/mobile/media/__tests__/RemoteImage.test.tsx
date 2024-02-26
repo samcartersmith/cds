@@ -34,7 +34,7 @@ describe('RemoteImage', () => {
 
     expect(image).toHaveStyle({
       borderWidth: 1,
-      borderColor: paletteAliasToRgbaString('lineHeavy', spectrum, false),
+      borderColor: paletteAliasToRgbaString('lineHeavy', spectrum),
     });
   });
   it('darkModeEnhancementsApplied border styles takes precedence over custom borderColor and passes a11y', () => {
@@ -56,7 +56,7 @@ describe('RemoteImage', () => {
 
     expect(image).toHaveStyle({
       borderWidth: 1,
-      borderColor: paletteAliasToRgbaString('lineHeavy', spectrum, false),
+      borderColor: paletteAliasToRgbaString('lineHeavy', spectrum),
     });
   });
 
@@ -88,7 +88,7 @@ describe('RemoteImage', () => {
 
   paletteBorders.forEach((color) => {
     const castedColor = color as PaletteBorder;
-    const rgbaString = paletteAliasToRgbaString(castedColor, 'light', false);
+    const rgbaString = paletteAliasToRgbaString(castedColor, 'light');
 
     it(`renders correct border color of ${color} - ${rgbaString} and passes a11y`, () => {
       render(

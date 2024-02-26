@@ -5,9 +5,8 @@ import { sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
-import { VStack } from '../alpha/VStack';
 import { useDimensions } from '../hooks/useDimensions';
-import { Box } from '../layout';
+import { Box, VStack } from '../layout';
 import { deviceBreakpoints } from '../layout/breakpoints';
 import { ThemeProvider } from '../system/ThemeProvider';
 
@@ -129,7 +128,7 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
                   {logo}
                 </VStack>
               )}
-              <VStack as="ul" dangerouslySetClassName={ulClassName} gap={0.5} offsetStart={0.5}>
+              <VStack as="ul" className={ulClassName} gap={0.5} offsetStart={0.5}>
                 {liWrappedChildren}
               </VStack>
             </VStack>

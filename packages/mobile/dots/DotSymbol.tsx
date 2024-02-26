@@ -72,11 +72,11 @@ export const DotSymbol = memo(
             {source !== undefined && (
               <RemoteImage
                 darkModeEnhancementsApplied
-                dangerouslySetStyle={imageBorderStyle}
                 height={iconSize}
                 resizeMode="cover"
                 shape="circle"
                 source={typeof source === 'string' ? { uri: source } : source}
+                style={imageBorderStyle}
                 testID="dotsymbol-remote-image"
                 width={iconSize}
               />
@@ -86,8 +86,8 @@ export const DotSymbol = memo(
                 background="primary"
                 borderColor="secondary"
                 borderRadius="roundedFull"
-                dangerouslySetStyle={iconBorderStyle}
                 spacing={0.5}
+                style={iconBorderStyle}
               >
                 <Icon color="primaryForeground" name={iconName} size={size} />
               </Box>

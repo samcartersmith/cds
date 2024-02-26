@@ -7,12 +7,11 @@ import { ElevationConfigsContext } from './ElevationConfigsContext';
 
 export type ElevationConfigsProviderProps = {
   parentThemeConfig: ThemeConfig;
-  hasFrontier?: boolean;
   children: React.ReactNode;
 };
 
 export const ElevationConfigsProvider = memo(
-  ({ children, parentThemeConfig, hasFrontier }: ElevationConfigsProviderProps) => {
+  ({ children, parentThemeConfig }: ElevationConfigsProviderProps) => {
     const spectrum = useSpectrum();
     const contextValue = useMemo(() => {
       return {
@@ -20,16 +19,14 @@ export const ElevationConfigsProvider = memo(
           name: 'elevation1',
           spectrum,
           parentThemeConfig,
-          hasFrontier,
         }),
         elevation2: createElevationConfigForSpectrum({
           name: 'elevation2',
           spectrum,
           parentThemeConfig,
-          hasFrontier,
         }),
       };
-    }, [spectrum, parentThemeConfig, hasFrontier]);
+    }, [spectrum, parentThemeConfig]);
 
     return (
       <ElevationConfigsContext.Provider value={contextValue}>

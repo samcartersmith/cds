@@ -73,7 +73,7 @@ export function useExampleNavigatorProps() {
       );
 
       return (
-        <Box animated background dangerouslySetStyle={style} onLayout={onLayout}>
+        <Box animated background onLayout={onLayout} style={style}>
           <HStack
             alignItems="center"
             justifyContent="center"
@@ -98,7 +98,7 @@ export function useExampleNavigatorProps() {
                   start={<IconButton transparent name="backArrow" onPress={goBack} />}
                 />
               ) : (
-                <TextHeadline animated align="center" dangerouslySetStyle={titleStyle}>
+                <TextHeadline animated align="center" style={titleStyle}>
                   {titleForScene}
                 </TextHeadline>
               )}

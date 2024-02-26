@@ -144,8 +144,8 @@ export const Select = memo(
                     <InputIcon
                       animated
                       compact={compact}
-                      dangerouslySetStyle={rotateAnimationStyles}
                       name="caretDown"
+                      style={rotateAnimationStyles}
                     />
                   </HStack>
                 }

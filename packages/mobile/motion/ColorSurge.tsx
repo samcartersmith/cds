@@ -64,8 +64,6 @@ export const ColorSurge = memo(
       }
     }, [playAnimation, disableAnimateOnMount]);
 
-    return (
-      <Box animated background={backgroundState} dangerouslySetStyle={{ opacity }} pin="all" />
-    );
+    return <Box animated background={backgroundState} pin="all" style={{ opacity }} />;
   }),
 );

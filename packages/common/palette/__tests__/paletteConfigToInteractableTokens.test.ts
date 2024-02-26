@@ -1,28 +1,6 @@
-import { Spectrum } from '../../types';
-import { PaletteConfig } from '../../types/Palette';
 import { PaletteConfigWithInteractableTokens } from '../../types/ThemeConfig';
+import { darkDefaultPalette, defaultPalette } from '../constants';
 import { paletteConfigToInteractableTokens } from '../paletteConfigToInteractableTokens';
-
-const config: PaletteConfig = {
-  foreground: 'gray100',
-  foregroundMuted: 'gray60',
-  background: 'gray0',
-  backgroundAlternate: 'gray5',
-  backgroundOverlay: ['gray80', 0.33],
-  line: ['gray60', 0.2],
-  lineHeavy: ['gray60', 0.66],
-  primary: 'blue60',
-  primaryWash: 'blue0',
-  primaryForeground: 'gray0',
-  negative: 'red60',
-  negativeForeground: 'gray0',
-  positive: 'green60',
-  positiveForeground: 'gray0',
-  secondary: 'gray0',
-  secondaryForeground: 'gray100',
-  transparent: ['gray0', 0],
-  warning: 'yellow50',
-};
 
 const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   foreground: {
@@ -126,15 +104,15 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   primary: {
     disabled: {
       contentOpacity: 0.5,
-      backgroundColor: 'rgb(33, 63, 129)',
+      backgroundColor: 'rgb(49, 75, 132)',
     },
     hovered: {
-      contentOpacity: 0.92,
-      backgroundColor: 'rgb(71, 126, 246)',
+      contentOpacity: 0.91,
+      backgroundColor: 'rgb(80, 127, 229)',
     },
     pressed: {
-      contentOpacity: 0.86,
-      backgroundColor: 'rgb(83, 135, 246)',
+      contentOpacity: 0.85,
+      backgroundColor: 'rgb(75, 120, 214)',
     },
   },
   primaryWash: {
@@ -224,15 +202,17 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   secondary: {
     disabled: {
       contentOpacity: 0.5,
-      backgroundColor: 'rgb(10, 11, 13)',
+      backgroundColor: 'rgb(30, 32, 37)',
     },
     hovered: {
-      contentOpacity: 0.98,
-      backgroundColor: 'rgb(15, 16, 18)',
+      // confirmed opacity is correct
+      contentOpacity: 0.96,
+      backgroundColor: 'rgb(58, 61, 69)',
     },
     pressed: {
-      contentOpacity: 0.92,
-      backgroundColor: 'rgb(30, 31, 32)',
+      // confirmed opacity is correct
+      contentOpacity: 0.9,
+      backgroundColor: 'rgb(71, 73, 80)',
     },
   },
   secondaryForeground: {
@@ -266,15 +246,15 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
   warning: {
     disabled: {
       contentOpacity: 0.5,
-      backgroundColor: 'rgb(102, 80, 23)',
+      backgroundColor: 'rgb(107, 79, 7)',
     },
     hovered: {
       contentOpacity: 0.93,
-      backgroundColor: 'rgb(198, 156, 49)',
+      backgroundColor: 'rgb(208, 154, 18)',
     },
     pressed: {
       contentOpacity: 0.87,
-      backgroundColor: 'rgb(202, 163, 62)',
+      backgroundColor: 'rgb(211, 160, 33)',
     },
   },
 };
@@ -479,15 +459,15 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   secondary: {
     disabled: {
       contentOpacity: 0.5,
-      backgroundColor: 'rgb(255, 255, 255)',
+      backgroundColor: 'rgb(247, 248, 249)',
     },
     hovered: {
       contentOpacity: 0.98,
-      backgroundColor: 'rgb(250, 250, 250)',
+      backgroundColor: 'rgb(233, 235, 238)',
     },
     pressed: {
       contentOpacity: 0.92,
-      backgroundColor: 'rgb(235, 235, 236)',
+      backgroundColor: 'rgb(220, 222, 225)',
     },
   },
   secondaryForeground: {
@@ -521,15 +501,15 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
   warning: {
     disabled: {
       contentOpacity: 0.5,
-      backgroundColor: 'rgb(222, 198, 141)',
+      backgroundColor: 'rgb(222, 193, 128)',
     },
     hovered: {
       contentOpacity: 0.93,
-      backgroundColor: 'rgb(176, 132, 26)',
+      backgroundColor: 'rgb(176, 123, 1)',
     },
     pressed: {
       contentOpacity: 0.87,
-      backgroundColor: 'rgb(165, 124, 25)',
+      backgroundColor: 'rgb(165, 115, 2)',
     },
   },
 };
@@ -551,69 +531,43 @@ const convertInteractableTokensToMobile = (
 const expectedMobileDarkTokens = convertInteractableTokensToMobile(expectedWebDarkTokens);
 const expectedMobileLightTokens = convertInteractableTokensToMobile(expectedWebLightTokens);
 
-type BaseArgs = { paletteConfig: PaletteConfig; isWeb: boolean };
-
-const darkTests = (baseArgs: BaseArgs) => {
-  describe('When dark spectrum', () => {
-    const darkArgs: BaseArgs & { spectrum: Spectrum } = {
-      ...baseArgs,
-      spectrum: 'dark',
-    };
-
-    it('When frontier is false', () => {
-      const expected = baseArgs.isWeb ? expectedWebDarkTokens : expectedMobileDarkTokens;
-      expect(paletteConfigToInteractableTokens({ ...darkArgs, hasFrontier: false })).toEqual(
-        expected,
-      );
-    });
-
-    it('When frontier is true', () => {
-      const expected = baseArgs.isWeb ? expectedWebDarkTokens : expectedMobileDarkTokens;
-      expect(paletteConfigToInteractableTokens({ ...darkArgs, hasFrontier: true })).toEqual(
-        expected,
-      );
-    });
+describe('paletteConfigToInteractableTokens', () => {
+  it('works for web - dark', () => {
+    expect(
+      paletteConfigToInteractableTokens({
+        paletteConfig: darkDefaultPalette,
+        isWeb: true,
+        spectrum: 'dark',
+      }),
+    ).toEqual(expectedWebDarkTokens);
   });
-};
 
-const lightTests = (baseArgs: BaseArgs) => {
-  describe('When light spectrum', () => {
-    const lightArgs: BaseArgs & { spectrum: Spectrum } = {
-      ...baseArgs,
-      spectrum: 'light',
-    };
-    it('When frontier is false', () => {
-      const expected = baseArgs.isWeb ? expectedWebLightTokens : expectedMobileLightTokens;
-      expect(paletteConfigToInteractableTokens({ ...lightArgs, hasFrontier: false })).toEqual(
-        expected,
-      );
-    });
-
-    it('When frontier is true', () => {
-      const expected = baseArgs.isWeb ? expectedWebLightTokens : expectedMobileLightTokens;
-      expect(paletteConfigToInteractableTokens({ ...lightArgs, hasFrontier: true })).toEqual(
-        expected,
-      );
-    });
+  it('works for web - light', () => {
+    expect(
+      paletteConfigToInteractableTokens({
+        paletteConfig: defaultPalette,
+        isWeb: true,
+        spectrum: 'light',
+      }),
+    ).toEqual(expectedWebLightTokens);
   });
-};
+  it('works for mobile - dark', () => {
+    expect(
+      paletteConfigToInteractableTokens({
+        paletteConfig: darkDefaultPalette,
+        isWeb: false,
+        spectrum: 'dark',
+      }),
+    ).toEqual(expectedMobileDarkTokens);
+  });
 
-describe('paletteConfigToInteractableTokens on web', () => {
-  const baseArgs: BaseArgs = {
-    paletteConfig: config,
-    isWeb: true,
-  };
-
-  darkTests(baseArgs);
-  lightTests(baseArgs);
-});
-
-describe('paletteConfigToInteractableTokens on mobile', () => {
-  const baseArgs: BaseArgs = {
-    paletteConfig: config,
-    isWeb: false,
-  };
-
-  darkTests(baseArgs);
-  lightTests(baseArgs);
+  it('works for mobile - light', () => {
+    expect(
+      paletteConfigToInteractableTokens({
+        paletteConfig: defaultPalette,
+        isWeb: false,
+        spectrum: 'light',
+      }),
+    ).toEqual(expectedMobileLightTokens);
+  });
 });

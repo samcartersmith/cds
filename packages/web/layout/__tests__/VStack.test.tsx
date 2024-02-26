@@ -17,9 +17,9 @@ describe('VStack', () => {
     expect(screen.getByRole('list')).toHaveStyle({ marginTop: 0, marginBottom: 0 });
   });
 
-  it('can override a11y styles when VStack is ul with dangerouslySetStyle', () => {
+  it('can override a11y styles when VStack is ul with style', () => {
     render(
-      <VStack as="ul" dangerouslySetStyle={overrideStyle}>
+      <VStack as="ul" style={overrideStyle}>
         Child
       </VStack>,
     );

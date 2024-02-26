@@ -41,9 +41,9 @@ const SparklineInteractiveMarkerDate: FunctionComponent<
     <TextLabel2
       align="center"
       color="foregroundMuted"
-      dangerouslySetStyle={styles.label}
       onLayout={onLayout}
       spacingTop={3}
+      style={styles.label}
     >
       {getFormattedDate(x)}
     </TextLabel2>

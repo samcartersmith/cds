@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 
-import { useFeatureFlag } from '../system/useFeatureFlag';
 import { ButtonVariant, PaletteBackground, PaletteBorder, PaletteForeground } from '../types';
 
 export type ButtonVariantStyles = {
@@ -20,7 +19,7 @@ const variants: ButtonVariantConfig = {
   secondary: {
     color: 'secondaryForeground',
     backgroundColor: 'secondary',
-    borderColor: 'line',
+    borderColor: 'transparent',
   },
   foregroundMuted: {
     color: 'foregroundMuted',
@@ -67,24 +66,12 @@ const transparentVariants: ButtonVariantConfig = {
   },
 };
 
-const frontierVariants: ButtonVariantConfig = {
-  ...variants,
-  secondary: {
-    color: 'secondaryForeground',
-    backgroundColor: 'secondary',
-    borderColor: 'transparent',
-  },
-};
-
 export const useButtonVariant = (
   variant: ButtonVariant,
   transparent?: boolean,
-  enableFrontier?: boolean,
 ): ButtonVariantStyles => {
-  const hasFrontier = useFeatureFlag('frontierColor') || enableFrontier;
-  const nonTransparentVariants = hasFrontier ? frontierVariants : variants;
   return useMemo(
-    () => (transparent ? transparentVariants : nonTransparentVariants)[variant],
-    [transparent, nonTransparentVariants, variant],
+    () => (transparent ? transparentVariants : variants)[variant],
+    [transparent, variant],
   );
 };

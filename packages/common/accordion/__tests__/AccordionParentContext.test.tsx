@@ -21,10 +21,10 @@ describe('AccordionParentProvider', () => {
     });
 
     // sets to undefined if active item is pressed
-    result.current.onItemPress('2');
+    result.current.onChange('2');
     expect(result.current.activeKey).toBeUndefined();
 
-    result.current.onItemPress('1');
+    result.current.onChange('1');
     expect(result.current.activeKey).toBe('1');
   });
 });

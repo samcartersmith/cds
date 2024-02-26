@@ -23,7 +23,7 @@ const defaultPaletteMock = {
   '--negative-foreground': 'rgb(var(--gray0))',
   '--positive': 'rgb(var(--green60))',
   '--positive-foreground': 'rgb(var(--gray0))',
-  '--secondary': 'rgb(var(--gray0))',
+  '--secondary': 'rgb(var(--gray5))',
   '--secondary-foreground': 'rgb(var(--gray100))',
   '--transparent': 'rgba(var(--gray0),0)',
   '--warning': 'rgb(var(--yellow50))',

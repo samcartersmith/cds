@@ -1,12 +1,11 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { UpsellCardBaseProps } from '@cbhq/cds-common';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Button } from '../../buttons';
-import { UpsellCard } from '../UpsellCard';
+import { UpsellCard, UpsellCardProps } from '../UpsellCard';
 
 const styles = StyleSheet.create({
   media: {
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const exampleProps: UpsellCardBaseProps = {
+const exampleProps: UpsellCardProps = {
   title: 'Test Title',
   description: 'Test Description',
   action: 'Test Action' as string,

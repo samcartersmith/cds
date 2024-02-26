@@ -20,7 +20,7 @@ const TableWithRef = forwardRef<HTMLTableElement, TableProps>(function TableWith
     height,
     accessibilityLabelledBy,
     accessibilityLabel,
-    dangerouslySetClassName,
+    className,
     ...rest
   },
   ref,
@@ -44,7 +44,7 @@ const TableWithRef = forwardRef<HTMLTableElement, TableProps>(function TableWith
           ref={ref}
           aria-label={accessibilityLabel}
           aria-labelledby={accessibilityLabelledBy}
-          className={cx(tableStyles, dangerouslySetClassName)}
+          className={cx(tableStyles, className)}
           data-testid={testID}
           {...rest}
         >

@@ -160,7 +160,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
             <TextBody
               animated
               color={checked || indeterminate ? 'foreground' : 'foregroundMuted'}
-              dangerouslySetStyle={{
+              style={{
                 color: animatedBoxValue.interpolate({
                   inputRange: [0, 1],
                   outputRange: [palette.foregroundMuted, palette.foreground],

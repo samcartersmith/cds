@@ -9,7 +9,7 @@ describe('useFeatureFlag', () => {
       return <FeatureFlagProvider {...props} />;
     }
 
-    const { result } = renderHook(() => useFeatureFlag('frontierTypography'), {
+    const { result } = renderHook(() => useFeatureFlag('flexGap'), {
       wrapper: Wrapper,
     });
     expect(result.current).toBe(false);
@@ -17,10 +17,10 @@ describe('useFeatureFlag', () => {
 
   it('returns true if feature flag was provided', () => {
     function Wrapper(props: FeatureFlagProviderProps) {
-      return <FeatureFlagProvider frontierTypography {...props} />;
+      return <FeatureFlagProvider flexGap {...props} />;
     }
 
-    const { result } = renderHook(() => useFeatureFlag('frontierTypography'), {
+    const { result } = renderHook(() => useFeatureFlag('flexGap'), {
       wrapper: Wrapper,
     });
     expect(result.current).toBe(true);

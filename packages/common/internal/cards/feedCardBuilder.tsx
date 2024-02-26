@@ -1,54 +1,29 @@
 import React from 'react';
 
-import {
-  ButtonBaseProps,
-  GroupBaseProps,
-  IconButtonBaseProps,
-  NoopFn,
-  RenderGroupItem,
-} from '../../types';
+import { GroupBaseProps, RenderGroupItem } from '../../types';
 import { storyBuilder } from '../utils/storyBuilder';
 
-type CreateFeedCardSheetParams<WrapperProps, PressFn> = {
-  Button: React.ComponentType<
-    React.PropsWithChildren<ButtonBaseProps & { onPress?: NoopFn | PressFn }>
-  >;
+type CreateFeedCardSheetParams<WrapperProps> = {
   CardGroup: React.ComponentType<React.PropsWithChildren<GroupBaseProps<WrapperProps>>>;
-  IconButton: React.ComponentType<
-    React.PropsWithChildren<IconButtonBaseProps & { onPress?: NoopFn | PressFn }>
-  >;
   renderHorizontalItem: RenderGroupItem<WrapperProps>;
 };
 
-const onPressConsole = () => console.log('pressed');
-
-export function createConfigs<WrapperProps, PressFn>({
-  Button,
+export function createConfigs<WrapperProps>({
   CardGroup,
-  IconButton,
   renderHorizontalItem,
-}: CreateFeedCardSheetParams<WrapperProps, PressFn>) {
+}: CreateFeedCardSheetParams<WrapperProps>) {
   const exampleProps = {
-    avatarUrl: 'https://images.coinbase.com/avatar?s=350',
-    headerDescription: 'Earn crypto',
-    headerActionNode: (
-      <IconButton
-        transparent
-        accessibilityLabel="More actions"
-        name="more"
-        variant="foregroundMuted"
-      />
-    ),
-    bodyTitle: 'LEARN AMP. EARN $3 IN AMP.',
-    bodyDescription:
+    avatar: 'https://images.coinbase.com/avatar?s=350',
+    author: 'Earn crypto',
+    headerAction: {
+      name: 'more',
+      variant: 'foregroundMuted',
+    },
+    title: 'LEARN AMP. EARN $3 IN AMP.',
+    description:
       'Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred.',
-    bodyMediaUrl: 'https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png',
-    bodyOrientation: 'vertical',
-    footerActions: (
-      <Button compact onPress={onPressConsole} variant="secondary">
-        Actions
-      </Button>
-    ),
+    image: 'https://static-assets.coinbase.com/card/introduction/v2/initial_funding.png',
+    mediaPlacement: 'above',
   } as const;
 
   const VerticalGroup = CardGroup;

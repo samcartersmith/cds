@@ -44,19 +44,6 @@ export const darkVariables = {
   '--orange80': '252,185,131',
   '--orange90': '254,219,185',
   '--orange100': '255,250,245',
-  '--yellow0': '26,8,0',
-  '--yellow5': '43,16,0',
-  '--yellow10': '60,26,0',
-  '--yellow15': '78,37,0',
-  '--yellow20': '96,50,0',
-  '--yellow30': '131,79,1',
-  '--yellow40': '165,114,12',
-  '--yellow50': '194,149,33',
-  '--yellow60': '218,181,64',
-  '--yellow70': '236,208,105',
-  '--yellow80': '247,229,153',
-  '--yellow90': '253,244,201',
-  '--yellow100': '255,253,244',
   '--gray0': '10,11,13',
   '--gray5': '20,21,25',
   '--gray10': '30,32,37',
@@ -135,6 +122,19 @@ export const darkVariables = {
   '--teal80': '69,217,245',
   '--teal90': '149,239,251',
   '--teal100': '240,254,255',
+  '--yellow0': '0,0,0',
+  '--yellow5': '22,7,0',
+  '--yellow10': '43,15,0',
+  '--yellow15': '65,27,0',
+  '--yellow20': '88,41,0',
+  '--yellow30': '129,73,0',
+  '--yellow40': '169,109,0',
+  '--yellow50': '204,146,0',
+  '--yellow60': '233,179,0',
+  '--yellow70': '255,210,0',
+  '--yellow80': '255,223,68',
+  '--yellow90': '255,237,150',
+  '--yellow100': '255,252,241',
 };
 
 export const lightVariables = {
@@ -177,19 +177,6 @@ export const lightVariables = {
   '--orange80': '145,39,2',
   '--orange90': '100,26,0',
   '--orange100': '51,13,0',
-  '--yellow0': '255,253,244',
-  '--yellow5': '254,248,217',
-  '--yellow10': '252,242,191',
-  '--yellow15': '249,233,165',
-  '--yellow20': '245,224,139',
-  '--yellow30': '231,201,91',
-  '--yellow40': '213,173,54',
-  '--yellow50': '188,141,27',
-  '--yellow60': '159,106,9',
-  '--yellow70': '125,72,0',
-  '--yellow80': '90,44,0',
-  '--yellow90': '55,23,0',
-  '--yellow100': '25,8,0',
   '--gray0': '255,255,255',
   '--gray5': '238,240,243',
   '--gray10': '222,225,231',
@@ -268,25 +255,6 @@ export const lightVariables = {
   '--teal80': '0,71,116',
   '--teal90': '0,47,83',
   '--teal100': '0,27,51',
-};
-
-export const frontierDarkVariables = {
-  '--yellow0': '0,0,0',
-  '--yellow5': '22,7,0',
-  '--yellow10': '43,15,0',
-  '--yellow15': '65,27,0',
-  '--yellow20': '88,41,0',
-  '--yellow30': '129,73,0',
-  '--yellow40': '169,109,0',
-  '--yellow50': '204,146,0',
-  '--yellow60': '233,179,0',
-  '--yellow70': '255,210,0',
-  '--yellow80': '255,223,68',
-  '--yellow90': '255,237,150',
-  '--yellow100': '255,252,241',
-};
-
-export const frontierLightVariables = {
   '--yellow0': '255,252,241',
   '--yellow5': '255,242,178',
   '--yellow10': '255,233,114',
@@ -308,12 +276,4 @@ export const dark = css`
 
 export const light = css`
   ${lightVariables}
-`;
-
-export const frontierDark = css`
-  ${frontierDarkVariables}
-`;
-
-export const frontierLight = css`
-  ${frontierLightVariables}
 `;

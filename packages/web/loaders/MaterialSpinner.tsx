@@ -19,16 +19,6 @@ export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerPro
   const palette = usePalette();
 
   const svgMotionProps = useMotionProps({
-    style: {
-      /**
-       * FM has a bug where SVG components forced to have a transform-origin
-       * Need to setup transformOrigin explicitly to get around this
-       * @link https://github.com/framer/motion/issues/255
-       */
-      originX: 'center',
-      originY: 'center',
-      stroke: palette[color],
-    },
     animate: {
       rotate: [0, 360],
     },
@@ -53,6 +43,7 @@ export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerPro
     <motion.svg
       data-testid={testID}
       height={`${size}px`}
+      stroke={palette[color]}
       viewBox="0 0 66 66"
       xmlns="http://www.w3.org/2000/svg"
       {...svgMotionProps}

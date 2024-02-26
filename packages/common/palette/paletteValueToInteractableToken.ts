@@ -24,14 +24,13 @@ type PaletteValueToInteractableTokenParams = {
   options: {
     paletteConfig: PaletteConfig;
     spectrum: Spectrum;
-    hasFrontier?: boolean;
     isWeb?: boolean;
   };
 };
 
 function getCacheKey({
   paletteValue,
-  options: { paletteConfig, spectrum, hasFrontier, isWeb },
+  options: { paletteConfig, spectrum, isWeb },
 }: PaletteValueToInteractableTokenParams) {
   const { background, foreground } = paletteConfig;
   const [backgroundAlias, backgroundOpacity] = paletteValueToTuple(background);
@@ -39,14 +38,13 @@ function getCacheKey({
   return `${paletteValueToCacheName(
     paletteValue,
     spectrum,
-    hasFrontier,
   )}-background-${backgroundAlias}-${backgroundOpacity}-foreground-${foregroundAlias}-${foregroundOpacity}-isWeb-${isWeb}`;
 }
 
 export const paletteValueToInteractableToken = memoize(
   ({
     paletteValue,
-    options: { paletteConfig, spectrum, hasFrontier, isWeb },
+    options: { paletteConfig, spectrum, isWeb },
   }: PaletteValueToInteractableTokenParams) => {
     const { background, foreground } = paletteConfig;
     const [overlayAlias, overlayOpacity] = paletteValueToTuple(paletteValue);
@@ -59,11 +57,11 @@ export const paletteValueToInteractableToken = memoize(
     const hueStep = paletteValueToHueStep(paletteValue);
     const underlayAlias = hueStep > 60 ? 'background' : 'foreground';
 
-    const backgroundRgbaArray = paletteValueToRgbaArray(background, spectrum, hasFrontier);
+    const backgroundRgbaArray = paletteValueToRgbaArray(background, spectrum);
     const foregroundRgbaArray =
       underlayAlias === 'background'
         ? backgroundRgbaArray
-        : paletteValueToRgbaArray(foreground, spectrum, hasFrontier);
+        : paletteValueToRgbaArray(foreground, spectrum);
 
     const opacity = {
       disabled: accessibleOpacityDisabled,

@@ -38,7 +38,7 @@ export const InputLabelDangerouslySetClassName = () => {
   `;
 
   return (
-    <InputLabel color="foregroundMuted" dangerouslySetClassName={fontWeight}>
+    <InputLabel className={fontWeight} color="foregroundMuted">
       Label
     </InputLabel>
   );

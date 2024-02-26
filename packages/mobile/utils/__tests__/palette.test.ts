@@ -1,5 +1,5 @@
 import { PaletteAlias } from '@cbhq/cds-common';
-import { defaultPalette } from '@cbhq/cds-common/palette/constants';
+import { darkDefaultPalette, defaultPalette } from '@cbhq/cds-common/palette/constants';
 
 import { dark, light } from '../../styles/spectrum';
 import * as spectrumColors from '../../styles/spectrum';
@@ -48,7 +48,7 @@ describe('paletteAliasToRgbaString', () => {
   });
 
   it('gets the correct rgb value for spectrum alias in dark mode', () => {
-    for (const [palette, paletteValue] of Object.entries(defaultPalette)) {
+    for (const [palette, paletteValue] of Object.entries(darkDefaultPalette)) {
       let expectedRgbaVal = '';
       if (typeof paletteValue !== 'string') {
         const [color, alpha] = paletteValue;

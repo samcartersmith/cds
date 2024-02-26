@@ -1,9 +1,5 @@
-import { FeatureEntryCardBaseProps } from '../../types/alpha';
-
-type FeatureEntryProps = FeatureEntryCardBaseProps<typeof onPress> & { key: string };
-
 const onPress = () => console.log('pressed');
-export const featureEntryCards: FeatureEntryProps[] = [
+export const featureEntryCards = [
   {
     key: 'card1',
     title: 'Recurring buys',

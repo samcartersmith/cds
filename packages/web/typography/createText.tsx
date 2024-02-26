@@ -86,7 +86,7 @@ export const createText = <
       overflow = overrides?.overflow,
       testID = overrides?.testID,
       transform = overrides?.transform,
-      dangerouslySetClassName = overrides?.dangerouslySetClassName,
+      className = overrides?.className,
       inherit = overrides?.inherit,
       // Spacing
       spacing = overrides?.spacing,
@@ -184,7 +184,7 @@ export const createText = <
           spacingStyles,
           responsiveStyleClassNames,
           responsiveConfig && responsiveClassName,
-          dangerouslySetClassName,
+          className,
         ),
       },
       children,

@@ -3,10 +3,8 @@ import { SpacingScale } from '@cbhq/cds-common';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
-import { HStack } from '../alpha/HStack';
-import { VStack } from '../alpha/VStack';
 import { Collapsible } from '../collapsible/Collapsible';
-import { Box } from '../layout';
+import { Box, HStack, VStack } from '../layout';
 
 export type NavigationBarProps = {
   /**

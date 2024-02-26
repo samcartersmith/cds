@@ -1,71 +1,32 @@
-import React, { memo } from 'react';
-import { CardBodyBaseProps, CardBodyOrientationProps } from '@cbhq/cds-common/types/CardBaseProps';
+import React from 'react';
+import { CardBodyBaseProps } from '@cbhq/cds-common';
+import { createCardBody } from '@cbhq/cds-common/cards/createCardBody';
+import { createCardBodyAction } from '@cbhq/cds-common/cards/createCardBodyAction';
 
+import { Button } from '../buttons/Button';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { TextHeadline } from '../typography/TextHeadline';
-import { TextLabel2 } from '../typography/TextLabel2';
+import { OnPress } from '../system';
+import { createText } from '../typography/createText';
 
-export type CardBodyProps = CardBodyBaseProps & CardBodyOrientationProps;
+import { CardMedia } from './CardMedia';
 
-export const CardBody: React.FC<React.PropsWithChildren<CardBodyProps>> = memo(
-  ({
-    title,
-    description,
-    media,
-    children,
-    orientation = 'vertical',
-    testID,
-    numberOfLines = 3,
-    compact,
-    ...props
-  }) => {
-    const cardSpacing = compact ? 2 : 3;
-    const verticalContent = (
-      <VStack testID={testID} {...props}>
-        {media}
-        <VStack spacingHorizontal={cardSpacing} spacingTop={2}>
-          <VStack gap={1} spacingBottom={3}>
-            {typeof title === 'string' ? <TextHeadline as="h3">{title}</TextHeadline> : title}
-            {typeof description === 'string' ? (
-              <TextLabel2 as="p" color="foregroundMuted" numberOfLines={numberOfLines}>
-                {description}
-              </TextLabel2>
-            ) : (
-              description
-            )}
-          </VStack>
-          {children}
-        </VStack>
-      </VStack>
-    );
+export type CardBodyProps = CardBodyBaseProps;
+export type CardBodyActionProps = React.ComponentProps<typeof CardBodyAction>;
 
-    const horizontalContent = (
-      <HStack
-        alignItems="center"
-        flexGrow={1}
-        gap={1}
-        justifyContent="space-between"
-        maxWidth="100%"
-        spacingBottom={children && compact ? 1 : cardSpacing}
-        spacingHorizontal={cardSpacing}
-        spacingTop={cardSpacing}
-        testID={testID}
-        {...props}
-      >
-        <VStack alignItems="flex-start" gap={2} width="70%">
-          <VStack gap={1} maxWidth="100%" spacingTop={media ? 0 : 2}>
-            <TextHeadline as="h3">{title}</TextHeadline>
-            <TextLabel2 as="p" color="foreground" numberOfLines={numberOfLines}>
-              {description}
-            </TextLabel2>
-          </VStack>
-          {children}
-        </VStack>
-        {media}
-      </HStack>
-    );
+export const CardBodyAction = createCardBodyAction<OnPress>({
+  Button,
+});
 
-    return orientation === 'vertical' ? verticalContent : horizontalContent;
-  },
-);
+const TextHeadline = createText('headline', { as: 'h3' });
+const TextLabel2 = createText('label2', { as: 'p' });
+
+export const CardBody = createCardBody({
+  HStack,
+  VStack,
+  TextHeadline,
+  TextLabel2,
+  CardMedia,
+  CardBodyAction,
+  platform: 'web',
+});

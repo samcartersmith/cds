@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.46 (2/23/2024 PST)
+
+#### 🚀 Updates
+
+- Fixed a typo with frontier migrations.
+
 ## 0.1.45 (2/22/2024 PST)
 
 #### 🚀 Updates

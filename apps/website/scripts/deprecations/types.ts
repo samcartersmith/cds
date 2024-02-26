@@ -9,7 +9,14 @@ type Scope = {
   propNames?: string[];
 };
 
-export type MigrationType = 'renamed' | 'replaced' | 'path' | 'api' | 'removed' | 'propValue';
+export type MigrationType =
+  | 'renamed'
+  | 'replaced'
+  | 'path'
+  | 'api'
+  | 'removed'
+  | 'propValue'
+  | 'alpha';
 export type MigrationMap = Expand<
   Record<Extract<MigrationType, 'api' | 'propValue'>, Record<string, string | null>> &
     Record<Extract<MigrationType, 'replaced' | 'path' | 'rename'>, string | string[]>
@@ -69,6 +76,8 @@ export type Deprecation = {
    * Major version where the deprecations will be deleted
    */
   breakingRelease: string;
+  intro?: string;
+  migrationGuideLink?: string;
   components?: Partial<Component>[];
   types?: Type[];
   props?: Prop[];

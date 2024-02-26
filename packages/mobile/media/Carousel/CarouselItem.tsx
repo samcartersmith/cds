@@ -63,8 +63,8 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
       <CarouselItemContext.Provider value={contextValue}>
         <Box
           animated
-          dangerouslySetStyle={animatedStyles}
           onLayout={onWrapperLayout}
+          style={animatedStyles}
           testID={`CarouselItemWrapper-${id}`}
         >
           <Box

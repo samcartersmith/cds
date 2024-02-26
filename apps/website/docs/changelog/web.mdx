@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.0.0 (2/23/2024 PST)
+
+#### 💥 Breaking
+
+- CDS 6 release. [[#2779](https://github.cbhq.net/frontend/cds/pull/2779)]
+
 ## 5.37.0 (2/21/2024 PST)
 
 #### 🚀 Updates
@@ -618,7 +624,7 @@ This is an artificial version bump with no new change.
 
 #### 🚀 Updates
 
-- [DX-2164] feat: added dangerouslySetClassName to Table web. [[#2196](https://github.cbhq.net/frontend/cds/pull/2196)] [[DX-2164](https://jira.coinbase-corp.com/browse/DX-2164)]
+- [DX-2164] feat: added className to Table web. [[#2196](https://github.cbhq.net/frontend/cds/pull/2196)] [[DX-2164](https://jira.coinbase-corp.com/browse/DX-2164)]
 
 ## 5.5.1 (8/23/2023 PST)
 
@@ -822,7 +828,7 @@ This is an artificial version bump with no new change.
 
 #### 🐞 Fixes
 
-- [trivial] fix: added dangerouslySetClassName to TableCell. [[#1991](https://github.cbhq.net/frontend/cds/pull/1991)] [[DX-1401](https://jira.coinbase-corp.com/browse/DX-1401)]
+- [trivial] fix: added className to TableCell. [[#1991](https://github.cbhq.net/frontend/cds/pull/1991)] [[DX-1401](https://jira.coinbase-corp.com/browse/DX-1401)]
 
 ## 4.2.8 (5/16/2023 PST)
 
@@ -3531,7 +3537,7 @@ This is an artificial version bump with no new change.
 - Implement spacing props in `Box` component @hannah-jin [#11916](https://github.cbhq.net/mono/repo/pull/11916)
 - Add `Text` component @hannah-jin [#11435](https://github.cbhq.net/mono/repo/pull/11435)
 - Add `Box` component @miles-johnson [#11436](https://github.cbhq.net/mono/repo/pull/11436)
-- Add `dangerouslySetClassName` in `Text` component for migration purpose by @hannah-jin [#9700](https://github.cbhq.net/mono/repo/pull/9700)
+- Add `className` in `Text` component for migration purpose by @hannah-jin [#9700](https://github.cbhq.net/mono/repo/pull/9700)
 - Add new icons from figma e.g., speaker, news feed, trading remove, gift box by @maureen-durnin [#8081](https://github.cbhq.net/mono/repo/pull/8081)
 - Change typography children prop type by @iuliasoimaru [#7566](https://github.cbhq.net/mono/repo/pull/7566)
 - Change typography to use css variables by @hannah-jin [#6535](https://github.cbhq.net/mono/repo/pull/6535)

@@ -46,7 +46,7 @@ export const ContentCell = memo(function ContentCell({
     >
       {hasTitles && (
         <HStack alignItems="flex-start" justifyContent="space-between">
-          <VStack dangerouslySetClassName={truncateClassName} flexGrow={1} flexShrink={1}>
+          <VStack className={truncateClassName} flexGrow={1} flexShrink={1}>
             {!!title && (
               <TextHeadline as="div" overflow="truncate">
                 {title}
@@ -67,7 +67,7 @@ export const ContentCell = memo(function ContentCell({
 
           {!!meta && (
             <Box
-              dangerouslySetClassName={truncateClassName}
+              className={truncateClassName}
               flexGrow={0}
               flexShrink={0}
               justifyContent="flex-end"

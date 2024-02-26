@@ -40,7 +40,7 @@ export type ModalWrapperProps = {
   role?: Extract<AriaRole, 'dialog' | 'alertdialog'>;
 } & Pick<PortalProps, 'disablePortal'> &
   Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children' | 'onDidClose' | 'testID'> &
-  Pick<BoxProps, 'dangerouslySetClassName'> &
+  Pick<BoxProps, 'className'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy' | 'id'>;
 
 export const ModalWrapper = memo(
@@ -52,7 +52,7 @@ export const ModalWrapper = memo(
       accessibilityLabelledBy,
       accessibilityLabel,
       zIndex: customZIndex,
-      dangerouslySetClassName,
+      className,
       id,
       disableOverlayPress = false,
       dangerouslyDisableResponsiveness = false,
@@ -84,7 +84,7 @@ export const ModalWrapper = memo(
               accessibilityLabelledBy={accessibilityLabelledBy}
               alignItems="center"
               aria-modal="true"
-              dangerouslySetClassName={dangerouslySetClassName}
+              className={className}
               height="100vh"
               id={id}
               justifyContent="center"
@@ -99,7 +99,7 @@ export const ModalWrapper = memo(
                 {!hideOverlay && (
                   <Overlay
                     animated
-                    dangerouslySetClassName={
+                    className={
                       !dangerouslyDisableResponsiveness
                         ? modalOverlayResponsiveClassName
                         : undefined

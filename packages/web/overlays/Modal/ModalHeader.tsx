@@ -5,12 +5,13 @@ import { ModalHeaderBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
 import { IconButton } from '../../buttons';
 import { Box, HStack } from '../../layout';
+import { OnPress } from '../../system';
 import { TextHeadline } from '../../typography';
 
 export type ModalHeaderProps = {
   /** Handles back button press */
-  onBackButtonPress?: React.MouseEventHandler;
-} & Omit<ModalHeaderBaseProps, 'onRequestClose' | 'onBackButtonPress'>;
+  onBackButtonPress?: OnPress;
+} & Omit<ModalHeaderBaseProps, 'onRequestClose'>;
 
 export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = ({
   title,

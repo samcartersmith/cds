@@ -6,7 +6,8 @@ function Example() {
     title: 'Send a crypto gift',
     description: 'Share the gift of crypto this holiday season',
     spotSquare: 'coinbaseCardSparkle',
-    action: 'Start gifting',
+    actionLabel: 'Start gifting',
+    onActionPress: () => console.log('pressed'),
   };
   return (
     <ResponsiveExample>
@@ -21,7 +22,7 @@ function Example() {
 
 ### With divider
 
-In Frontier a CardGroup will include a Divider component between each item.
+By default a CardGroup will include a Divider component between each item.
 You can override this by passing in `divider={null}`
 
 ```jsx live
@@ -30,7 +31,8 @@ function Example() {
     title: 'Send a crypto gift',
     description: 'Share the gift of crypto this holiday season',
     spotSquare: 'coinbaseCardSparkle',
-    action: 'Start gifting',
+    actionLabel: 'Start gifting',
+    onActionPress: () => console.log('pressed'),
   };
   return (
     <ResponsiveExample>
@@ -51,7 +53,8 @@ function Example() {
     title: 'Send a crypto gift',
     description: 'Share the gift of crypto this holiday season',
     spotSquare: 'coinbaseCardSparkle',
-    action: 'Start gifting',
+    actionLabel: 'Start gifting',
+    onActionPress: () => console.log('pressed'),
   };
 
   const CustomDivider = useCallback(
@@ -80,7 +83,8 @@ function Example() {
     title: 'Send a crypto gift',
     description: 'Share the gift of crypto this holiday season',
     spotSquare: 'coinbaseCardSparkle',
-    action: 'Start gifting',
+    actionLabel: 'Start gifting',
+    onActionPress: () => console.log('pressed'),
   };
 
   const customRenderItem = useCallback(({ item, Wrapper, isFirst, isLast }) => {

@@ -45,11 +45,6 @@ export const typographyConfig = {
     fontWeight: 'Regular' as const,
   },
   display2: {
-    baseFontSize: 34,
-    leading: 7,
-    fontWeight: 'Regular' as const,
-  },
-  display2Frontier: {
     baseFontSize: 48,
     leading: 7,
     fontWeight: 'Regular' as const,

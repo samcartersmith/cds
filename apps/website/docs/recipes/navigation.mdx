@@ -70,13 +70,7 @@ function NavigationRecipe() {
   // NOTE: This is for example purposes only. Identity will create a UserSwitcher component.
   const UserSwitcherSubject = ({ title, description }) => {
     return (
-      <Pressable
-        as="button"
-        backgroundColor="transparent"
-        block
-        borderRadius="rounded"
-        noScaleOnPress
-      >
+      <Pressable as="button" background="transparent" block borderRadius="rounded" noScaleOnPress>
         <HStack gap={1} alignItems="center">
           <Avatar size="xl" alt="Test" />
           <VStack maxWidth={172} minWidth={0}>
@@ -119,84 +113,79 @@ function NavigationRecipe() {
 
   return (
     <PortalProvider>
-      <FeatureFlagProvider frontierColor frontierButton>
-        <HStack>
-          <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
-            {navItems.map((props, index) => (
-              <SidebarItem
-                key={`sidebar-item--${props.title}`}
-                active={index === activeIndex}
-                onPress={() => handleItemPress(index)}
-                tooltipContent={props.title}
-                {...props}
+      <HStack>
+        <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
+          {navItems.map((props, index) => (
+            <SidebarItem
+              key={`sidebar-item--${props.title}`}
+              active={index === activeIndex}
+              onPress={() => handleItemPress(index)}
+              tooltipContent={props.title}
+              {...props}
+            />
+          ))}
+          <SidebarMoreMenu
+            onChange={handleMoreMenuChange}
+            value={moreMenuValue}
+            active={activeIndex >= navItems.length}
+            tooltipContent="More"
+          >
+            {moreMenuOptions.map((item) => (
+              <SelectOption
+                key={`sidebar-more-menu-item--${item.title}`}
+                value={item.title}
+                description={item.title}
+                media={<NavigationIcon name={item.icon} />}
               />
             ))}
-            <SidebarMoreMenu
-              onChange={handleMoreMenuChange}
-              value={moreMenuValue}
-              active={activeIndex >= navItems.length}
-              tooltipContent="More"
-            >
-              {moreMenuOptions.map((item) => (
-                <SelectOption
-                  key={`sidebar-more-menu-item--${item.title}`}
-                  value={item.title}
-                  description={item.title}
-                  media={<NavigationIcon name={item.icon} />}
-                />
-              ))}
-            </SidebarMoreMenu>
-          </Sidebar>
-          <VStack overflow="clip">
-            <NavigationBar
-              start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
-              end={
-                <HStack alignItems="center" justifyContent="flex-end" gap={1}>
-                  {/* NOTE: this is for example purposes only. Identity will create the AppSwitcher components and own them. */}
-                  <Dropdown
-                    width={359}
-                    maxHeight={600}
-                    showOverlay
-                    enableMobileModal
-                    contentPosition={switcherPositionConfig}
-                    content={<AppSwitcherContent />}
-                  >
-                    <NavigationIconButton
-                      accessibilityLabel="App Switcher Menu"
-                      name="appSwitcher"
-                    />
-                  </Dropdown>
-                  {/* NOTE: this is for example purposes only. Identity will create the UserSwitcher components and own them. */}
-                  <Dropdown
-                    content={<UserSwitcherContent />}
-                    width={400}
-                    maxHeight={600}
-                    showOverlay
-                    contentPosition={switcherPositionConfig}
-                    showMobileModal
-                  >
-                    <UserSwitcherSubject title="Brian Armstrong" />
-                  </Dropdown>
-                </HStack>
-              }
-              bottom={<TabNavigation tabs={tabs} value={value} onChange={setValue} />}
-            >
-              <NavigationTitle>{sidebarItems[activeIndex].title}</NavigationTitle>
-            </NavigationBar>
-            <HStack
-              justifyContent="center"
-              alignItems="flex-start"
-              background="backgroundAlternate"
-              flexGrow={1}
-              spacing={4}
-            >
-              <Button compact variant="primary" onPress={toggleCollapsed.toggle}>
-                {isCollapsed ? 'Expand' : 'Collapse'} Sidebar
-              </Button>
-            </HStack>
-          </VStack>
-        </HStack>
-      </FeatureFlagProvider>
+          </SidebarMoreMenu>
+        </Sidebar>
+        <VStack overflow="clip">
+          <NavigationBar
+            start={showBackButton && <IconButton name="backArrow" onPress={handleBackPress} />}
+            end={
+              <HStack alignItems="center" justifyContent="flex-end" gap={1}>
+                {/* NOTE: this is for example purposes only. Identity will create the AppSwitcher components and own them. */}
+                <Dropdown
+                  width={359}
+                  maxHeight={600}
+                  showOverlay
+                  enableMobileModal
+                  contentPosition={switcherPositionConfig}
+                  content={<AppSwitcherContent />}
+                >
+                  <NavigationIconButton accessibilityLabel="App Switcher Menu" name="appSwitcher" />
+                </Dropdown>
+                {/* NOTE: this is for example purposes only. Identity will create the UserSwitcher components and own them. */}
+                <Dropdown
+                  content={<UserSwitcherContent />}
+                  width={400}
+                  maxHeight={600}
+                  showOverlay
+                  contentPosition={switcherPositionConfig}
+                  showMobileModal
+                >
+                  <UserSwitcherSubject title="Brian Armstrong" />
+                </Dropdown>
+              </HStack>
+            }
+            bottom={<TabNavigation tabs={tabs} value={value} onChange={setValue} />}
+          >
+            <NavigationTitle>{sidebarItems[activeIndex].title}</NavigationTitle>
+          </NavigationBar>
+          <HStack
+            justifyContent="center"
+            alignItems="flex-start"
+            background="backgroundAlternate"
+            flexGrow={1}
+            spacing={4}
+          >
+            <Button compact variant="primary" onPress={toggleCollapsed.toggle}>
+              {isCollapsed ? 'Expand' : 'Collapse'} Sidebar
+            </Button>
+          </HStack>
+        </VStack>
+      </HStack>
     </PortalProvider>
   );
 }

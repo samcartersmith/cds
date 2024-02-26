@@ -32,7 +32,7 @@ export const AccordionItem = memo(
     const collapsed = activeKey !== itemKey;
 
     return (
-      <VStack dangerouslySetStyle={style} minWidth={accordionMinWidth} testID={testID}>
+      <VStack minWidth={accordionMinWidth} style={style} testID={testID}>
         <AccordionHeader
           ref={headerRef}
           collapsed={collapsed}

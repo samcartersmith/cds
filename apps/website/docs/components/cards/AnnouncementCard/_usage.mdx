@@ -4,11 +4,8 @@ function Example() {
     title: 'Introducing SHIB',
     description: 'Shiba Inu (SHIB) is now on Coinbase',
     pictogram: 'worldwide',
-    headerDescription: 'Actor name',
-    headerMetaData: 'Metadata',
-    headerAvatarUrl: assets.btc.imageUrl,
-    headerAction: 'more',
-    footerAction: 'View asset',
+    actionLabel: 'View asset',
+    onActionPress: () => console.log('pressed'),
   };
   return (
     <ResponsiveExample>

@@ -9,12 +9,12 @@ import { Divider, VStack } from '../layout';
 export type AccordionProps = AccordionBaseProps & Pick<ViewProps, 'style'>;
 
 export const Accordion = memo(
-  ({ children, defaultActiveKey, onItemPress, testID, style }: AccordionProps) => {
+  ({ children, defaultActiveKey, onChange, testID, style }: AccordionProps) => {
     const dividerColor = useAccordionDividerColor();
 
     return (
-      <AccordionParentProvider defaultActiveKey={defaultActiveKey} onItemPress={onItemPress}>
-        <VStack dangerouslySetStyle={style} testID={testID} width="100%">
+      <AccordionParentProvider defaultActiveKey={defaultActiveKey} onChange={onChange}>
+        <VStack style={style} testID={testID} width="100%">
           {join(Children.toArray(children), <Divider color={dividerColor} />)}
         </VStack>
       </AccordionParentProvider>

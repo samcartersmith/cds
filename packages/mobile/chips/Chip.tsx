@@ -4,7 +4,7 @@ import { useSpectrum } from '@cbhq/cds-common';
 import { chipMaxWidth } from '@cbhq/cds-common/tokens/chip';
 
 import { HStack } from '../layout';
-import { FeatureFlagProvider, Pressable, ThemeProvider } from '../system';
+import { Pressable, ThemeProvider } from '../system';
 import { TextHeadline } from '../typography';
 
 import { ChipProps } from './ChipProps';
@@ -56,26 +56,24 @@ export const Chip = memo(
     );
 
     return (
-      <FeatureFlagProvider frontier>
-        <ThemeProvider name="chip-theme" spectrum={inverted ? invertedTheme : theme}>
-          {/* this ensures that when a Chip is wrapped in a VStack it won't fill the entire width of the parent */}
-          <HStack>
-            {onPress ? (
-              <Pressable
-                ref={ref}
-                backgroundColor="transparent"
-                onPress={onPress}
-                testID={testID}
-                {...props}
-              >
-                {content}
-              </Pressable>
-            ) : (
-              content
-            )}
-          </HStack>
-        </ThemeProvider>
-      </FeatureFlagProvider>
+      <ThemeProvider name="chip-theme" spectrum={inverted ? invertedTheme : theme}>
+        {/* this ensures that when a Chip is wrapped in a VStack it won't fill the entire width of the parent */}
+        <HStack>
+          {onPress ? (
+            <Pressable
+              ref={ref}
+              background="transparent"
+              onPress={onPress}
+              testID={testID}
+              {...props}
+            >
+              {content}
+            </Pressable>
+          ) : (
+            content
+          )}
+        </HStack>
+      </ThemeProvider>
     );
   }),
 );

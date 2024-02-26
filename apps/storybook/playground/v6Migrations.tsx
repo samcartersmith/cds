@@ -3,6 +3,7 @@ import { CellMedia } from 'packages/web/cells/CellMedia';
 import { Button, ButtonGroup } from '@cbhq/cds-web/buttons';
 import { ListCell } from '@cbhq/cds-web/cells';
 import { HeroSquare, Pictogram, SpotRectangle, SpotSquare } from '@cbhq/cds-web/illustrations';
+// @ts-expect-error testing
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';
 import { Box } from '@cbhq/cds-web/layout';
 import { FeatureFlagProvider } from '@cbhq/cds-web/system';
@@ -10,6 +11,7 @@ import { FeatureFlagProvider } from '@cbhq/cds-web/system';
 export const Q4Migrations = () => {
   return (
     <FeatureFlagProvider
+      // @ts-expect-error this is for testing
       frontier
       frontierButton
       frontierCard
@@ -17,8 +19,10 @@ export const Q4Migrations = () => {
       frontierSparkline
       frontierTypography
     >
+      {/* @ts-expect-error testing */}
       <Box dangerouslySetBackground="red" dangerouslySetClassName="test">
         <Illustration name="2fa" type="pictogram" />
+        {/* @ts-expect-error testing */}
         <ButtonGroup vertical>
           <Button>First</Button>
           <Button>Second</Button>

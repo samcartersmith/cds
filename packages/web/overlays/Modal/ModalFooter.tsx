@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import { ButtonBaseProps, SharedProps } from '@cbhq/cds-common';
 import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
-import { ModalFooterBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
 import { Button } from '../../buttons';
 import { HStack } from '../../layout';
+import { OnPress } from '../../system';
 
 import { modalFooterClassName } from './modalStyles';
 
-export type ModalFooterProps = ModalFooterBaseProps;
+export type ModalFooterProps = {
+  /** Primary action button */
+  primaryAction: NonNullable<ReactElement<ButtonBaseProps & { onPress?: OnPress }>>;
+  /** Secondary action button */
+  secondaryAction?: ReactElement<ButtonBaseProps & { onPress?: OnPress }>;
+} & SharedProps;
 
 export const ModalFooter = ({ primaryAction, secondaryAction, testID }: ModalFooterProps) => {
   const { hideDividers } = useModalParent();
@@ -22,7 +28,7 @@ export const ModalFooter = ({ primaryAction, secondaryAction, testID }: ModalFoo
   return (
     <HStack
       borderedTop={!hideDividers}
-      dangerouslySetClassName={modalFooterClassName}
+      className={modalFooterClassName}
       gap={2}
       justifyContent="flex-end"
       spacingHorizontal={3}

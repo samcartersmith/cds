@@ -59,7 +59,7 @@ function SegmentedControlInternal(
           />
           <Interactable
             as="label"
-            backgroundColor="backgroundAlternate"
+            background="backgroundAlternate"
             className={labelStyle}
             disabled={disabled}
             htmlFor={`${name}-${value}`}

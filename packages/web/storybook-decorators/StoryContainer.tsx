@@ -6,7 +6,6 @@ import merge from 'lodash/merge';
 import { useDarkMode } from 'storybook-dark-mode';
 import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common/internal/utils/storyBuilder';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
-import { FeatureFlagProvider } from '@cbhq/cds-common/system/FeatureFlagProvider';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
 import { Group } from '../layout/Group';
@@ -17,7 +16,7 @@ import { palette } from '../tokens';
 import type { GetStory } from './types';
 
 const oldWrapperProps = {
-  dangerouslySetClassName: css`
+  className: css`
     padding: 20px;
     display: block;
   `,
@@ -54,25 +53,22 @@ export function StoryContainer<Props>(
     }, []);
 
     const InnerWrapper = context.parameters?.wrapper ?? React.Fragment;
-    const isNewStory = context.args?.frontier !== undefined ?? stories;
-    const wrapperProps = isNewStory
+    const wrapperProps = stories
       ? context.parameters?.wrapperProps ?? newWrapperProps
       : oldWrapperProps;
 
     return (
-      <FeatureFlagProvider frontier={context.args?.frontier}>
-        <ThemeProvider
-          display="contents"
-          scale={context.args?.scale}
-          spectrum={context.args?.spectrum ?? (isDarkMode ? 'dark' : 'light')}
-        >
-          <PortalProvider>
-            <Group {...wrapperProps}>
-              <InnerWrapper>{contents}</InnerWrapper>
-            </Group>
-          </PortalProvider>
-        </ThemeProvider>
-      </FeatureFlagProvider>
+      <ThemeProvider
+        display="contents"
+        scale={context.args?.scale}
+        spectrum={context.args?.spectrum ?? (isDarkMode ? 'dark' : 'light')}
+      >
+        <PortalProvider>
+          <Group {...wrapperProps}>
+            <InnerWrapper>{contents}</InnerWrapper>
+          </Group>
+        </PortalProvider>
+      </ThemeProvider>
     );
   });
 

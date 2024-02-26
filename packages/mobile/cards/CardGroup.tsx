@@ -1,35 +1,39 @@
-import React, { memo } from 'react';
+import React, { forwardRef, memo } from 'react';
+import { View } from 'react-native';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 
-import { CardGroup as FrontierCardGroup } from '../alpha/CardGroup';
+import { Divider } from '../layout/Divider';
 import { Group, GroupProps, RenderGroupItem } from '../layout/Group';
-import { useFeatureFlag } from '../system/useFeatureFlag';
 
-export type CardGroupProps = GroupProps;
 export type CardGroupRenderItem = RenderGroupItem;
 
-export const PreFrontierCardGroup = memo(function PreFrontierCardGroup({
-  accessibilityLabel,
-  children,
-  direction = 'vertical',
-  horizontal = false,
-  ...props
-}: CardGroupProps) {
-  const isHorizontal = horizontal || direction === 'horizontal';
-  return (
-    <Group
-      accessibilityHint={accessibilityLabel}
-      accessibilityLabel={accessibilityLabel}
-      direction={isHorizontal ? 'horizontal' : 'vertical'}
-      gap={gutter}
-      {...props}
-    >
-      {children}
-    </Group>
-  );
-});
+export const CardGroup = memo(
+  forwardRef<View, GroupProps>(function CardGroup(
+    {
+      accessibilityLabel,
+      accessibilityHint = accessibilityLabel,
+      children,
+      direction = 'vertical',
+      divider = Divider,
+      offsetHorizontal = direction === 'horizontal' ? 0 : gutter,
+      ...props
+    },
+    ref,
+  ) {
+    return (
+      <Group
+        ref={ref}
+        accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
+        direction={direction}
+        divider={divider}
+        offsetHorizontal={offsetHorizontal}
+        {...props}
+      >
+        {children}
+      </Group>
+    );
+  }),
+);
 
-export const CardGroup = memo(function CardGroup(props: CardGroupProps) {
-  const isFrontier = useFeatureFlag('frontierCard');
-  return isFrontier ? <FrontierCardGroup {...props} /> : <PreFrontierCardGroup {...props} />;
-});
+CardGroup.displayName = 'CardGroup';

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import type { PictogramName, SpotSquareName } from '@cbhq/cds-common';
-import { CardBody } from '@cbhq/cds-web/alpha/CardBody';
+import { CardBody } from '@cbhq/cds-web/cards/CardBody';
 import { Pictogram, SpotSquare } from '@cbhq/cds-web/illustrations';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import useGoToLinkHandler from '@cbhq/docusaurus-theme/src/theme/useGoToLinkHandler';

@@ -150,8 +150,8 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
       <CarouselItemContext.Provider value={contextValue}>
         <Box
           animated
-          dangerouslySetStyle={animatedStyles}
           onLayout={onWrapperLayout}
+          style={animatedStyles}
           testID={`CarouselItemWrapper-${id}`}
         >
           <Box
@@ -166,9 +166,9 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
             {showDismiss ? (
               <CarouselControlsWrapper
                 animated
-                dangerouslySetStyle={dismissButtonStyles}
                 justifyContent="flex-end"
                 spacingEnd={0.5}
+                style={dismissButtonStyles}
               >
                 <IconButton
                   transparent

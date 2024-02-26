@@ -5,7 +5,7 @@ import { useAccordionSpacing } from '@cbhq/cds-common/hooks/useAccordionSpacing'
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import type { AccordionPanelBaseProps } from '@cbhq/cds-common/types';
 
-import { Collapsible } from '../alpha/Collapsible';
+import { Collapsible } from '../collapsible/Collapsible';
 
 export type AccordionPanelProps = AccordionPanelBaseProps;
 

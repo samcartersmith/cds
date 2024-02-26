@@ -26,7 +26,7 @@ const pressableStyles = css`
 `;
 
 export type TileButtonProps = TileBaseProps &
-  Omit<PressableInternalProps, 'noScaleOnPress' | 'loading' | 'children' | 'backgroundColor'> &
+  Omit<PressableInternalProps, 'noScaleOnPress' | 'loading' | 'children' | 'background'> &
   SharedProps & {
     /** Name of illustration as defined in Figma */
     pictogram?: IllustrationPictogramNames;
@@ -89,7 +89,7 @@ export const TileButton = memo(
           {...props}
           ref={ref}
           noScaleOnPress
-          backgroundColor="background"
+          background="background"
           borderRadius="roundedLarge"
           className={cx(insetFocusRing, pressableStyles)}
           onBlur={handleHideOverflow}

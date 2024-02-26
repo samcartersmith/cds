@@ -22,6 +22,15 @@ export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>
 
 const MotionBox = motion(Box);
 
+const thumbMotionVariants = {
+  checked: {
+    x: `calc(${control.switchWidth} - ${control.switchThumbSize} - 2px)`,
+  },
+  unchecked: {
+    x: 0,
+  },
+};
+
 const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchWithRef(
   { children, checked, ...props },
   ref,
@@ -40,7 +49,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
   const switchNode = (
     <Control
       ref={ref}
-      backgroundColor={checked ? 'primary' : 'backgroundAlternate'}
+      background={checked ? 'primary' : 'backgroundAlternate'}
       borderRadius="roundedLarge"
       checked={checked}
       label={children}
@@ -54,14 +63,12 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
         {...outerContainerMotionProps}
       >
         <MotionBox
-          /**
-           * Framer layout animation has better performance than CSS transforms
-           * more about layout animation https://www.framer.com/docs/layout-animations/
-           */
-          layout
-          dangerouslySetClassName={cx(thumb, roundedFull, thumbColor)}
+          animate={checked ? 'checked' : 'unchecked'}
+          className={cx(thumb, roundedFull, thumbColor)}
           elevation={1}
+          initial={false}
           transition={convertTransition(switchTransitionConfig)}
+          variants={thumbMotionVariants}
         />
       </motion.div>
     </Control>
@@ -108,6 +115,10 @@ const thumb = css`
   height: ${control.switchThumbSize};
   background-color: ${palette.primaryForeground};
   border: 0.5 solid ${palette.line};
+
+  position: absolute;
+  top: 1px;
+  left: 1px;
 `;
 
 const primaryForegroundThumb = css`

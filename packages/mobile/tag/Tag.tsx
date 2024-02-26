@@ -15,8 +15,8 @@ export const Tag = memo(
         children,
         intent = 'informational',
         colorScheme = 'blue',
-        dangerouslySetBackground,
-        dangerouslySetColor,
+        background: customBackground,
+        color: customColor,
         alignItems = 'center',
         justifyContent = 'center',
         testID = 'cds-tag',
@@ -33,8 +33,8 @@ export const Tag = memo(
         () => (intent === 'informational' ? 'roundedSmall' : 'roundedFull'),
         [intent],
       );
-      const backgroundColor = usePaletteValueToRgbaString(dangerouslySetBackground ?? background);
-      const color = usePaletteValueToRgbaString(dangerouslySetColor ?? foreground);
+      const backgroundColor = usePaletteValueToRgbaString(customBackground ?? background);
+      const color = usePaletteValueToRgbaString(customColor ?? foreground);
       const spacingStyles = useSpacingStyles({ spacingHorizontal: horizontalSpacing[intent] });
       const style = useMemo(() => ({ paddingVertical: 2, ...spacingStyles }), [spacingStyles]);
 
@@ -45,8 +45,8 @@ export const Tag = memo(
           background="background"
           borderRadius={borderRadius}
           dangerouslySetBackground={backgroundColor}
-          dangerouslySetStyle={style}
           justifyContent={justifyContent}
+          style={style}
           testID={testID}
           {...props}
         >

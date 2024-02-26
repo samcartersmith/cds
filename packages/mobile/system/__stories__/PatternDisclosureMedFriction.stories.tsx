@@ -57,7 +57,7 @@ const PatternDisclosureMedFrictionScreen = () => {
                 <VStack key={id} gap={1}>
                   <HStack alignItems="center" gap={2}>
                     <Icon color="foreground" name="checkmark" size="s" />
-                    <TextHeadline dangerouslySetStyle={{ flex: 1 }}>{headline}</TextHeadline>
+                    <TextHeadline style={{ flex: 1 }}>{headline}</TextHeadline>
                   </HStack>
                   <TextBody spacingStart={4}>{body}</TextBody>
                 </VStack>
@@ -65,7 +65,7 @@ const PatternDisclosureMedFrictionScreen = () => {
             </VStack>
           </ModalBody>
           <ModalFooter
-            vertical
+            direction="vertical"
             primaryAction={<Button onPress={toggleOff}>[Affirmative CTA]</Button>}
             secondaryAction={
               <Button onPress={handleSecondaryPress} variant="secondary">

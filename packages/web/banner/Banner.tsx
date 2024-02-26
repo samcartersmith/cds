@@ -14,11 +14,10 @@ import { BannerBaseProps } from '@cbhq/cds-common/types/BannerBaseProps';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { HStack } from '../alpha/HStack';
-import { VStack } from '../alpha/VStack';
 import { Collapsible } from '../collapsible';
 import { useDimensions } from '../hooks/useDimensions';
 import { Icon } from '../icons';
+import { HStack, VStack } from '../layout';
 import { Box } from '../layout/Box';
 import { deviceBreakpoints } from '../layout/breakpoints';
 import { Pressable } from '../system/Pressable';
@@ -59,11 +58,11 @@ export type WebBannerProps = {
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetClassName?: string;
+  className?: string;
   /**
    * @danger There may be times when you need to dynamically set styles. This comes at a performance cost, so use with caution.
    */
-  dangerouslySetStyle?: React.CSSProperties;
+  style?: React.CSSProperties;
 } & BannerBaseProps;
 
 const breakpointConfig = {
@@ -89,8 +88,8 @@ export const Banner = memo(
         children,
         showDismiss = false,
         testID,
-        dangerouslySetClassName,
-        dangerouslySetStyle,
+        style,
+        className,
         numberOfLines = 3,
       }: WebBannerProps,
       forwardedRef: ForwardedRef<HTMLDivElement>,
@@ -114,9 +113,9 @@ export const Banner = memo(
           cx(
             variant === 'warning' ? warningClassName : undefined,
             variant === 'promotional' ? promotionalClassName : undefined,
-            dangerouslySetClassName,
+            className,
           ),
-        [dangerouslySetClassName, variant],
+        [className, variant],
       );
       const stackAlignment = useMemo(
         () => (shouldUseVStack ? 'flex-start' : 'center'),
@@ -197,22 +196,18 @@ export const Banner = memo(
             borderColor={borderColor}
             borderRadius={borderRadius}
             bordered={bordered}
-            dangerouslySetClassName={stackClassName}
-            dangerouslySetStyle={dangerouslySetStyle}
+            className={stackClassName}
             gap={2}
             spacingBottom={spacingBottom}
             spacingEnd={3}
             spacingStart={spacingStart}
             spacingTop={2}
+            style={style}
             testID={testID}
             width="100%"
           >
             {/** Start */}
-            <Box
-              dangerouslySetClassName={
-                isChildrenFalsy(children) && isWide ? undefined : customSpacing
-              }
-            >
+            <Box className={isChildrenFalsy(children) && isWide ? undefined : customSpacing}>
               <Icon color={iconColor} name={startIcon} size="s" testID={`${testID}-icon`} />
             </Box>
             <Stack
@@ -235,7 +230,7 @@ export const Banner = memo(
               {(!!clonedPrimaryAction || !!clonedSecondaryAction) && (
                 <HStack
                   alignItems="center"
-                  dangerouslySetClassName={actionContainerStyle}
+                  className={actionContainerStyle}
                   gap={4}
                   spacingVertical={1}
                   testID={`${testID}-action`}
@@ -247,11 +242,11 @@ export const Banner = memo(
             </Stack>
             {/** Dismissable action */}
             {showDismiss && (
-              <Box alignItems="flex-start" dangerouslySetClassName={customSpacing}>
+              <Box alignItems="flex-start" className={customSpacing}>
                 <Pressable
                   accessibilityHint="close banner"
                   accessibilityLabel="close"
-                  backgroundColor="transparent"
+                  background="transparent"
                   borderRadius="roundedFull"
                   onPress={handleOnDismiss}
                   role="button"

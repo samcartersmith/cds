@@ -138,10 +138,7 @@ export const Cell = memo(
         testID={testID}
         width="100%"
         {...spacing.inner}
-        dangerouslySetClassName={cx(
-          responsiveInnerSpacing,
-          responsiveConfig && responsiveClassName,
-        )}
+        className={cx(responsiveInnerSpacing, responsiveConfig && responsiveClassName)}
         offsetHorizontal={linkable ? undefined : spacing.inner.offsetHorizontal}
       >
         {media && (
@@ -151,7 +148,7 @@ export const Cell = memo(
         )}
 
         <Box
-          dangerouslySetClassName={maybeTruncateClassName}
+          className={maybeTruncateClassName}
           flexGrow={1}
           flexShrink={hasCellPriority('start', priority) ? 0 : 1}
           justifyContent="flex-start"
@@ -161,7 +158,7 @@ export const Cell = memo(
 
         {!!intermediary && (
           <Box
-            dangerouslySetClassName={maybeTruncateClassName}
+            className={maybeTruncateClassName}
             flexGrow={0}
             flexShrink={hasCellPriority('middle', priority) ? 0 : 1}
             justifyContent="center"
@@ -173,7 +170,7 @@ export const Cell = memo(
         {!!detail && (
           <Box
             alignItems="flex-end"
-            dangerouslySetClassName={maybeTruncateClassName}
+            className={maybeTruncateClassName}
             flexDirection="column"
             flexGrow={detailWidth ? undefined : 1}
             flexShrink={
@@ -203,7 +200,7 @@ export const Cell = memo(
           accessibilityHint={accessibilityHint}
           accessibilityLabel={accessibilityLabel}
           accessibilityLabelledBy={accessibilityLabelledBy}
-          backgroundColor="background"
+          background="background"
           borderRadius={borderRadius}
           className={cx(pressClassName, offsetClassName, insetFocusRing)}
           disabled={disabled}
@@ -230,10 +227,7 @@ export const Cell = memo(
         width="100%"
         {...spacing.outer}
         ref={ref}
-        dangerouslySetClassName={cx(
-          responsiveOuterSpacing,
-          responsiveConfig && responsiveClassName,
-        )}
+        className={cx(responsiveOuterSpacing, responsiveConfig && responsiveClassName)}
       >
         {content}
       </Box>

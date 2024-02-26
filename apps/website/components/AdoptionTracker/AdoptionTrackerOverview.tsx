@@ -6,8 +6,8 @@ import getFirst from 'lodash/first';
 import groupBy from 'lodash/groupBy';
 import toPairs from 'lodash/toPairs';
 import { CellDetailVariant, join, PaletteForeground, SetState, useToggler } from '@cbhq/cds-common';
-import { Card } from '@cbhq/cds-web/alpha/Card';
 import { Button } from '@cbhq/cds-web/buttons';
+import { Card } from '@cbhq/cds-web/cards/Card';
 import { CellAccessory } from '@cbhq/cds-web/cells/CellAccessory';
 import { Collapsible } from '@cbhq/cds-web/collapsible';
 import { Icon } from '@cbhq/cds-web/icons';
@@ -688,7 +688,7 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
   return (
     <ThemeProvider>
       <VStack alignItems="baseline" gap={5} maxWidth={900} spacingBottom={4}>
-        <TextDisplay1 as="h1" dangerouslySetClassName={titleClass} spacingBottom={0}>
+        <TextDisplay1 as="h1" className={titleClass} spacingBottom={0}>
           Adoption
         </TextDisplay1>
         <TextTitle2 as="span" color="foregroundMuted">

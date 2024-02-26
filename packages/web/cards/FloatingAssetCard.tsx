@@ -6,8 +6,10 @@ import {
 } from '@cbhq/cds-common/tokens/card';
 
 import { HStack, VStack } from '../layout';
-import { Pressable } from '../system';
+import { Pressable, PressableProps } from '../system';
 import { TextHeadline, TextLabel2, TextLegal } from '../typography';
+
+export type FloatingAssetCardProps = FloatingAssetCardBaseProps & Pick<PressableProps, 'onPress'>;
 
 export const FloatingAssetCard = memo(
   ({
@@ -18,7 +20,7 @@ export const FloatingAssetCard = memo(
     testID = 'floating-asset-card',
     size = 's',
     onPress,
-  }: FloatingAssetCardBaseProps) => {
+  }: FloatingAssetCardProps) => {
     const width = useMemo(
       () => (size === 'l' ? floatingAssetCardLargeWidth : floatingAssetCardSmallDimension),
       [size],
@@ -69,7 +71,7 @@ export const FloatingAssetCard = memo(
     return onPress ? (
       <Pressable
         as="button"
-        backgroundColor="transparent"
+        background="transparent"
         borderRadius="roundedXLarge"
         onPress={onPress}
         style={pressableStyles}

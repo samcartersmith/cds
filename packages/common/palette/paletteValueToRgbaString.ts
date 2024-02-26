@@ -10,15 +10,13 @@ import { paletteValueToTuple } from './paletteValueToTuple';
  * Takes a palette value and returns the rgba string
  * @param paletteValue - gray0
  * @param spectrum  - light or dark
- * @param hasFrontier - boolean returned from useFeatureFlag('frontierColor')
  * @returns rgba string - rgba(255,255,255,1)
  */
 export const paletteValueToRgbaString = memoize(
-  (paletteValue: PaletteValue, spectrum: Spectrum, hasFrontier?: boolean) => {
+  (paletteValue: PaletteValue, spectrum: Spectrum) => {
     const [alias, opacity] = paletteValueToTuple(paletteValue);
-    const spectrumConfig = hasFrontier ? spectrumConfigs.frontier : spectrumConfigs.base;
-    const colors = spectrum === 'light' ? spectrumConfig.light : spectrumConfig.dark;
-    const [red, green, blue] = colors[alias];
+    const spectrumConfig = spectrumConfigs.base[spectrum];
+    const [red, green, blue] = spectrumConfig[alias];
     return `rgba(${red},${green},${blue},${opacity})`;
   },
   paletteValueToCacheName,

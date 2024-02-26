@@ -1,7 +1,5 @@
-import { AnnouncementCardBaseProps } from '../../types/alpha/AnnouncementCardBaseProps';
-
 const onPress = () => console.log('pressed');
-export const announcementCards: AnnouncementCardBaseProps<typeof onPress>[] = [
+export const announcementCards = [
   {
     title: 'Crypto gifts',
     description: 'Give crypto to your family and friends',

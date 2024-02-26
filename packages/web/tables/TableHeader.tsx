@@ -19,7 +19,7 @@ export const TableHeader = memo(({ children, sticky, testID, ...rest }: TableHea
   return (
     <TableSection
       as="thead"
-      dangerouslySetClassName={cx(tableHeaderStaticClassName, sticky && tableStickyClassName)}
+      className={cx(tableHeaderStaticClassName, sticky && tableStickyClassName)}
       data-testid={testID}
       {...rest}
     >

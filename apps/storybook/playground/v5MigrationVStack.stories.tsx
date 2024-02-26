@@ -1,23 +1,13 @@
 import React from 'react';
-import { VStack as AlphaVStack } from '@cbhq/cds-web/alpha/VStack';
 import { ListCell } from '@cbhq/cds-web/cells/ListCell';
-import { VStack } from '@cbhq/cds-web/layout';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
 
-export const withA11yOldVStack = () => {
+export const withA11yVStack = () => {
   return (
     <VStack as="ul">
       <ListCell as="li" description="Description" title="Title" />
       <ListCell as="li" description="Description" title="Title" />
     </VStack>
-  );
-};
-
-export const withA11yVStack = () => {
-  return (
-    <AlphaVStack as="ul">
-      <ListCell as="li" description="Description" title="Title" />
-      <ListCell as="li" description="Description" title="Title" />
-    </AlphaVStack>
   );
 };
 

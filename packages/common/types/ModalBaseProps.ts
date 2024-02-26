@@ -1,7 +1,6 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { PositionStyles } from './BoxBaseProps';
-import { ButtonBaseProps } from './ButtonBaseProps';
 import { NoopFn } from './Helpers';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
@@ -31,7 +30,7 @@ export type ModalBaseProps = {
    */
   hideCloseButton?: boolean;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-  dangerouslySetWidth?: number;
+  width?: number;
   /**
    * Callback fired after the component is closed.
    */
@@ -42,8 +41,6 @@ export type ModalBaseProps = {
 export type ModalRefBaseProps = Pick<ModalBaseProps, 'onRequestClose'>;
 
 export type ModalHeaderBaseProps = {
-  /** Handles back action */
-  onBackButtonPress?: NoopFn;
   /** Title of the Modal */
   title?: string;
   /**
@@ -80,11 +77,4 @@ export type ModalHeaderBaseProps = {
    * @link https://reactnative.dev/docs/accessibility#accessibilityhint
    */
   closeAccessibilityHint?: SharedAccessibilityProps['accessibilityHint'];
-} & SharedProps;
-
-export type ModalFooterBaseProps = {
-  /** Primary action button */
-  primaryAction: NonNullable<ReactElement<ButtonBaseProps>>;
-  /** Secondary action button */
-  secondaryAction?: ReactElement<ButtonBaseProps>;
 } & SharedProps;

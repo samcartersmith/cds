@@ -1,7 +1,6 @@
 import React, { memo, useMemo } from 'react';
 
 import { defaultMediaSize } from '../tokens/card';
-import { gutter } from '../tokens/sizing';
 import type { PaletteForeground, SharedProps, TextBaseProps } from '../types';
 import type {
   ButtonBaseProps,
@@ -9,7 +8,9 @@ import type {
   CardBoxProps,
   CardMediaProps,
   CdsPlatform,
-} from '../types/alpha';
+} from '../types';
+
+import { getCardBodySpacingProps } from './getCardBodySpacingProps';
 
 type TextProps = TextBaseProps & {
   color?: PaletteForeground;
@@ -22,7 +23,9 @@ type CreateCardBodyParams<OnPressFn> = {
   VStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
   TextHeadline: React.ComponentType<React.PropsWithChildren<TextProps>>;
   TextLabel2: React.ComponentType<React.PropsWithChildren<TextProps>>;
-  CardBodyAction: React.ComponentType<React.PropsWithChildren<ButtonBaseProps<OnPressFn>>>;
+  CardBodyAction: React.ComponentType<
+    React.PropsWithChildren<ButtonBaseProps & { onPress?: OnPressFn }>
+  >;
   CardMedia: React.ComponentType<React.PropsWithChildren<CardMediaProps>>;
   platform: CdsPlatform;
 };
@@ -48,17 +51,30 @@ export function createCardBody<OnPressFn>({
     spotSquare,
     image,
     media: mediaProp,
-    spacing = gutter,
-    spacingVertical = spacing,
-    spacingHorizontal = spacing,
-    spacingTop = spacingVertical,
-    spacingBottom = spacingVertical,
-    spacingStart = spacingHorizontal,
-    spacingEnd = spacingHorizontal,
+    spacing,
+    spacingVertical,
+    spacingHorizontal,
+    spacingTop,
+    spacingBottom,
+    spacingStart,
+    spacingEnd,
     numberOfLines = 3,
     accessibilityLabel,
+    children,
+    compact,
     ...props
-  }: CardBodyBaseProps<OnPressFn>) {
+  }: CardBodyBaseProps & { onActionPress?: OnPressFn }) {
+    const spacingProps = getCardBodySpacingProps({
+      spacing,
+      spacingVertical,
+      spacingHorizontal,
+      spacingStart,
+      spacingBottom,
+      spacingEnd,
+      spacingTop,
+      compact,
+    });
+
     let mediaContent: React.ReactNode = mediaProp;
 
     if (spotSquare) {
@@ -105,13 +121,17 @@ export function createCardBody<OnPressFn>({
       return (
         <VStack
           gap={2}
-          spacingBottom={spacingBottom}
-          spacingTop={spacingTop}
+          spacingBottom={spacingProps.spacingBottom}
+          spacingTop={spacingProps.spacingTop}
           testID={testID}
           {...props}
         >
           {mediaContent}
-          <VStack gap={1} spacingEnd={spacingEnd} spacingStart={spacingStart}>
+          <VStack
+            gap={1}
+            spacingEnd={spacingProps.spacingEnd}
+            spacingStart={spacingProps.spacingStart}
+          >
             <TextHeadline {...textProps} testID={`${testID}-title`}>
               {title}
             </TextHeadline>
@@ -127,23 +147,24 @@ export function createCardBody<OnPressFn>({
     return (
       <HStack
         alignItems="center"
+        flexGrow={1}
         gap={1}
         justifyContent="space-between"
         minHeight={minHeight}
-        spacingBottom={spacingBottom}
-        spacingEnd={spacingEnd}
-        spacingStart={spacingStart}
-        spacingTop={spacingTop}
+        {...spacingProps}
         testID={testID}
         {...props}
       >
-        <VStack alignItems="flex-start" flexShrink={1} gap={1} maxWidth={maxWidth}>
-          <TextHeadline {...textProps} testID={`${testID}-title`}>
-            {title}
-          </TextHeadline>
-          <TextLabel2 color="foregroundMuted" {...textProps} testID={`${testID}-description`}>
-            {description}
-          </TextLabel2>
+        <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
+          <VStack gap={1} maxWidth="100%" spacingTop={mediaContent ? 0 : 2}>
+            <TextHeadline {...textProps} testID={`${testID}-title`}>
+              {title}
+            </TextHeadline>
+            <TextLabel2 color="foregroundMuted" {...textProps} testID={`${testID}-description`}>
+              {description}
+            </TextLabel2>
+          </VStack>
+          {children}
           {action}
         </VStack>
         {mediaContent}

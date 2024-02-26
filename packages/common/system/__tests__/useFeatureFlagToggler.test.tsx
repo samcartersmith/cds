@@ -20,10 +20,10 @@ describe('useFeatureFlagToggler', () => {
         wrapper: Wrapper,
       },
     );
-    expect(result.current.featureFlags.frontierTypography).toBe(false);
+    expect(result.current.featureFlags.flexGap).toBe(false);
     void act(() => {
-      result.current.toggle('frontierTypography');
+      result.current.toggle('flexGap');
     });
-    expect(result.current.featureFlags.frontierTypography).toBe(true);
+    expect(result.current.featureFlags.flexGap).toBe(true);
   });
 });

@@ -4,7 +4,7 @@ import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
-import { FeatureFlagProvider, ThemeProvider } from '../../system';
+import { ThemeProvider } from '../../system';
 import { TextDisplay2, TextHeadline } from '../../typography';
 import { InputChip } from '../InputChip';
 
@@ -21,10 +21,40 @@ const assetIconProps = {
 };
 
 export const Default = () => (
-  <FeatureFlagProvider frontier>
-    <VStack gap={3}>
+  <VStack gap={3}>
+    <VStack gap={2}>
+      <TextDisplay2 as="h2">Default</TextDisplay2>
+      <HStack gap={2}>
+        <InputChip onPress={NoopFn} value="USD" />
+        <InputChip onPress={NoopFn} start={<RemoteImage {...assetIconProps} />} value="USD" />
+        <InputChip
+          disabled
+          onPress={NoopFn}
+          start={<RemoteImage {...assetIconProps} />}
+          value="USD"
+        />
+      </HStack>
+      <TextHeadline as="h3" spacingTop={3}>
+        Long text
+      </TextHeadline>
+      <HStack gap={2}>
+        <InputChip onPress={NoopFn} value="Lorem ipsum sit dolar" />
+        <InputChip
+          onPress={NoopFn}
+          start={<RemoteImage {...assetIconProps} />}
+          value="Lorem ipsum sit dolar"
+        />
+        <InputChip
+          disabled
+          onPress={NoopFn}
+          start={<RemoteImage {...assetIconProps} />}
+          value="Lorem ipsum sit dolar"
+        />
+      </HStack>
+    </VStack>
+    <ThemeProvider scale="xSmall">
       <VStack gap={2}>
-        <TextDisplay2 as="h2">Default</TextDisplay2>
+        <TextDisplay2 as="h2">Dense</TextDisplay2>
         <HStack gap={2}>
           <InputChip onPress={NoopFn} value="USD" />
           <InputChip onPress={NoopFn} start={<RemoteImage {...assetIconProps} />} value="USD" />
@@ -53,38 +83,6 @@ export const Default = () => (
           />
         </HStack>
       </VStack>
-      <ThemeProvider scale="xSmall">
-        <VStack gap={2}>
-          <TextDisplay2 as="h2">Dense</TextDisplay2>
-          <HStack gap={2}>
-            <InputChip onPress={NoopFn} value="USD" />
-            <InputChip onPress={NoopFn} start={<RemoteImage {...assetIconProps} />} value="USD" />
-            <InputChip
-              disabled
-              onPress={NoopFn}
-              start={<RemoteImage {...assetIconProps} />}
-              value="USD"
-            />
-          </HStack>
-          <TextHeadline as="h3" spacingTop={3}>
-            Long text
-          </TextHeadline>
-          <HStack gap={2}>
-            <InputChip onPress={NoopFn} value="Lorem ipsum sit dolar" />
-            <InputChip
-              onPress={NoopFn}
-              start={<RemoteImage {...assetIconProps} />}
-              value="Lorem ipsum sit dolar"
-            />
-            <InputChip
-              disabled
-              onPress={NoopFn}
-              start={<RemoteImage {...assetIconProps} />}
-              value="Lorem ipsum sit dolar"
-            />
-          </HStack>
-        </VStack>
-      </ThemeProvider>
-    </VStack>
-  </FeatureFlagProvider>
+    </ThemeProvider>
+  </VStack>
 );

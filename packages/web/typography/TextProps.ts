@@ -25,7 +25,7 @@ export type TextProps = {
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
-  dangerouslySetClassName?: string;
+  className?: string;
   /** Used to associate a label with a control */
   id?: string;
   /** Specify props by device breakpoint */

@@ -134,7 +134,7 @@ const ScrollSnapCarousel = memo(function ScrollSnapCarousel({
       )}
       <HStack
         ref={carouselRef}
-        dangerouslySetClassName="scroll-snap-carousel"
+        className="scroll-snap-carousel"
         onScroll={handleScroll}
         overflow="scroll"
       >
