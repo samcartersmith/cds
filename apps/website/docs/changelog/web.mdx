@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.0.1 (2/27/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix disableCapturePanGestureToDismiss in useDrawerPanResponder. [[#2780](https://github.cbhq.net/frontend/cds/pull/2780)]
+
 ## 6.0.0 (2/23/2024 PST)
 
 #### 💥 Breaking
