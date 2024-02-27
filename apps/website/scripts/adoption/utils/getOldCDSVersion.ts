@@ -29,7 +29,9 @@ export async function getCDSCommonPackageJsonFromThreeMonthsAgo() {
     process.chdir(rootDir);
 
     // Get @cbhq/cds-common version from 3 months ago from the root directory
-    const { stdout } = await sh(`git show 'master@{3 months ago}:packages/common/package.json'`);
+    const { stdout } = await sh(
+      `git show $(git log master --before="3 months ago" -1 --format="%H"):packages/common/package.json`,
+    );
 
     // Parse the output as JSON
     const packageJson = JSON.parse(stdout) as PackageType;
