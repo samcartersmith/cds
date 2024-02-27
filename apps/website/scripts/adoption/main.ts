@@ -173,12 +173,12 @@ async function generateComponentPatternsSummary(): Promise<void> {
 
   const componentSummary: Record<string, PatternComponentSummary> = {};
 
-  patternFilePaths.forEach(async (filePath) => {
+  patternFilePaths.forEach((filePath) => {
     const content = fs.readFileSync(filePath, 'utf8');
     const json: ComponentPatternJSONFile = JSON.parse(content);
 
     if (!json?.components || json.components.length === 0) return;
-    json.components.forEach(async ({ component, config }) => {
+    json.components.forEach(({ component, config }) => {
       const { name } = component;
 
       if (!componentSummary[name]) {
