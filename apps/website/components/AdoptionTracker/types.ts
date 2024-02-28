@@ -139,17 +139,17 @@ export type OverallSummaryStats = {
   totalProjectVersionsList: PillarProjectData[];
 };
 
-/** Aggregated Summary for Pattern Component  */
-export type PatternComponentSummary = {
+/** Aggregated Summary for Product Component  */
+export type ProductComponentSummary = {
   totalInstances: number;
   totalCallSites: number;
-  components: AggregatedPatternComponent[];
-  config: PatternComponentConfig;
+  components: AggregatedProductComponent[];
+  config: ProductComponentConfig;
   cdsVersion?: CDSVersionsResult;
 };
 
-/** Structure for Aggregated Pattern Component Entry */
-export type AggregatedPatternComponent = {
+/** Structure for Aggregated Product Component Entry */
+export type AggregatedProductComponent = {
   name: string;
   sourceFile: string;
   totalInstances: number;
@@ -158,9 +158,9 @@ export type AggregatedPatternComponent = {
   callSites?: Record<string, number>;
 };
 
-/** Config for specific Pattern Components */
-export type PatternComponentConfig = {
-  patternComponentName: string;
+/** Config for specific Product Components */
+export type ProductComponentConfig = {
+  productComponentName: string;
   owningTeam: string;
   packageImportPath: string;
   doc?: string;

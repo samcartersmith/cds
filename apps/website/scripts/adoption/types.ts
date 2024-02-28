@@ -4,8 +4,8 @@ import { adopters } from ':cds-website/data/__generated__/adoption/adopters';
 import { hiddenAdopters } from ':cds-website/data/__generated__/adoption/adopters-hidden';
 
 import {
-  AggregatedPatternComponent,
-  PatternComponentConfig,
+  AggregatedProductComponent,
+  ProductComponentConfig,
 } from '../../components/AdoptionTracker/types';
 
 import type { AdoptionStats } from './utils/getStats';
@@ -32,32 +32,32 @@ export type ParsedFile = {
   // components: Record<string, TsJsxNode[]>;
 };
 
-/** Config for the data obtained from the info.json for specific project and pattern component */
-export type PatternComponentInfo = {
+/** Config for the data obtained from the info.json for specific project and product component */
+export type ProductComponentInfo = {
   dependencies: Record<string, string>;
   devDependencies: Record<string, string>;
   peerDependencies: Record<string, string>;
   resolutions: Record<string, string>;
 };
 
-/** Config for the data obtained from the component.json for specific project and pattern component */
-export type PatternComponentData = {
-  cds: PatternComponent[];
+/** Config for the data obtained from the component.json for specific project and product component */
+export type ProductComponentData = {
+  cds: ProductComponent[];
 };
 
-export type PatternComponent = {
+export type ProductComponent = {
   name: string;
   sourceFile: string;
-} & PatternComponentConfig;
+} & ProductComponentConfig;
 
 /** Component Structure for component entry from parsed json */
 export type ComponentDataFromJSON = {
-  component: AggregatedPatternComponent;
-  config: PatternComponentConfig;
+  component: AggregatedProductComponent;
+  config: ProductComponentConfig;
 };
 
 /** JSON file format for componentPatterns.json */
-export type ComponentPatternJSONFile = {
+export type ComponentProductJSONFile = {
   components: ComponentDataFromJSON[];
   dependencies: {
     dependencies: Record<string, string>;

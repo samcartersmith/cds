@@ -22,7 +22,7 @@
         }
       },
       "config": {
-        "patternComponentName": "AppSwitcher",
+        "productComponentName": "AppSwitcher",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/app-switcher",
         "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
@@ -54,7 +54,7 @@
         }
       },
       "config": {
-        "patternComponentName": "NavigationBar",
+        "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
         "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"

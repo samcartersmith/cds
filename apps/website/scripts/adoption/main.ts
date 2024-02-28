@@ -6,8 +6,8 @@ import path from 'path';
 import { writePrettyFile } from '@cbhq/script-utils';
 
 import {
-  PatternComponentConfig,
-  PatternComponentSummary,
+  ProductComponentConfig,
+  ProductComponentSummary,
 } from '../../components/AdoptionTracker/types';
 
 import { ProjectParser } from './parsers/ProjectParser';
@@ -28,11 +28,11 @@ import {
   generatedDataDir,
   generatedStaticDataDir,
   hiddenAdoptersWithPillar,
-  patternComponentConfig,
+  productComponentConfig,
 } from './config';
 import { generateAdoptionAndImpactReports } from './generateAdoptionAndImpactReports';
 import { generateOverallStatsReport } from './generateOverallStatsSummaryReport';
-import { ComponentPatternJSONFile, PatternComponentData, PatternComponentInfo } from './types';
+import { ComponentProductJSONFile, ProductComponentData, ProductComponentInfo } from './types';
 
 async function generateMdxFiles(project: ProjectParser) {
   return writePrettyFile(
@@ -102,7 +102,7 @@ module.exports.adopters = ${JSON.stringify(adoptersSidebar)};
 
 function matchDependencies(
   dependencies: Record<string, string>,
-  config: PatternComponentConfig[],
+  config: ProductComponentConfig[],
 ): Record<string, string> {
   if (!dependencies || !Object.keys(dependencies).length) return {};
   return Object.keys(dependencies)
@@ -113,9 +113,9 @@ function matchDependencies(
     }, {} as Record<string, string>);
 }
 
-async function generateComponentPatternsData(
+async function generateProductComponentData(
   project: ProjectParser,
-  config: PatternComponentConfig[],
+  config: ProductComponentConfig[],
 ): Promise<void> {
   const projectPath = path.join(generatedStaticDataDir.absolutePath, project.id);
   const infoPath = path.join(projectPath, 'info.json');
@@ -125,10 +125,10 @@ async function generateComponentPatternsData(
     const infoDataRaw = await fs.promises.readFile(infoPath, 'utf8');
     const componentsDataRaw = await fs.promises.readFile(componentsPath, 'utf8');
 
-    const infoData: PatternComponentInfo = JSON.parse(infoDataRaw);
-    const componentsData: PatternComponentData = JSON.parse(componentsDataRaw);
+    const infoData: ProductComponentInfo = JSON.parse(infoDataRaw);
+    const componentsData: ProductComponentData = JSON.parse(componentsDataRaw);
 
-    const matchedComponents = patternComponentConfig
+    const matchedComponents = productComponentConfig
       .map(
         (config) =>
           Object.values(componentsData)
@@ -136,7 +136,7 @@ async function generateComponentPatternsData(
             .map((components) => {
               const component = components.find(
                 (component) =>
-                  component.name === config.patternComponentName &&
+                  component.name === config.productComponentName &&
                   component.sourceFile.startsWith(config.packageImportPath),
               );
               if (component) return { component, config };
@@ -166,16 +166,16 @@ async function generateComponentPatternsData(
   }
 }
 
-async function generateComponentPatternsSummary(): Promise<void> {
+async function generateProductComponentsSummary(): Promise<void> {
   const patternFilePaths = await glob(
     `${generatedStaticDataDir.absolutePath}/*/componentPatterns.json`,
   );
 
-  const componentSummary: Record<string, PatternComponentSummary> = {};
+  const componentSummary: Record<string, ProductComponentSummary> = {};
 
   patternFilePaths.forEach((filePath) => {
     const content = fs.readFileSync(filePath, 'utf8');
-    const json: ComponentPatternJSONFile = JSON.parse(content);
+    const json: ComponentProductJSONFile = JSON.parse(content);
 
     if (!json?.components || json.components.length === 0) return;
     json.components.forEach(({ component, config }) => {
@@ -190,7 +190,7 @@ async function generateComponentPatternsSummary(): Promise<void> {
             owningTeam: config.owningTeam,
             doc: config.doc,
             packageImportPath: config.packageImportPath,
-            patternComponentName: config.patternComponentName,
+            productComponentName: config.productComponentName,
             packagePath: config.packagePath,
           },
           cdsVersion: {
@@ -215,7 +215,7 @@ async function generateComponentPatternsSummary(): Promise<void> {
   );
 }
 
-async function addCDSVersionToComponentPatternData(): Promise<void> {
+async function addCDSVersionToProductComponentsData(): Promise<void> {
   const summaryFilePath = path.join(
     generatedStaticDataDir.absolutePath,
     'componentPatternsSummary.json',
@@ -224,7 +224,7 @@ async function addCDSVersionToComponentPatternData(): Promise<void> {
   try {
     // Load the component patterns summary data
     const dataRaw = await fs.promises.readFile(summaryFilePath, 'utf8');
-    const summaryData: Record<string, PatternComponentSummary> = JSON.parse(dataRaw);
+    const summaryData: Record<string, ProductComponentSummary> = JSON.parse(dataRaw);
 
     // Iterate over each component in the summary data
     for (const [, componentData] of Object.entries(summaryData)) {
@@ -241,9 +241,9 @@ async function addCDSVersionToComponentPatternData(): Promise<void> {
 
     // Write the updated data back to the file
     await fs.promises.writeFile(summaryFilePath, JSON.stringify(summaryData, null, 2));
-    console.log('Successfully updated component pattern data with CDS versions.');
+    console.log('Successfully updated product component data with CDS versions.');
   } catch (error) {
-    console.error('Error adding CDS version to component pattern data:', error);
+    console.error('Error adding CDS version to product component data:', error);
   }
 }
 async function generateAdoptionDirectory(project: ProjectParser) {
@@ -310,7 +310,7 @@ async function generateAdoptionFiles() {
         generateAdopterStatsData(project),
         generateAdopterProjectInfoData(project),
       ]);
-      await generateComponentPatternsData(project, patternComponentConfig);
+      await generateProductComponentData(project, productComponentConfig);
     }),
   );
 
@@ -325,8 +325,8 @@ async function main() {
     const trackedProjectsWithZeroAdoption = await generateAdoptionFiles();
     await getListOfComponentsAndImports();
     await generateAdoptionAndImpactReports();
-    await generateComponentPatternsSummary();
-    await addCDSVersionToComponentPatternData();
+    await generateProductComponentsSummary();
+    await addCDSVersionToProductComponentsData();
     await generateOverallStatsReport();
 
     cleanup();

@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { getPath } from '@cbhq/script-utils';
 
-import { PatternComponentConfig } from '../../components/AdoptionTracker/types';
+import { ProductComponentConfig } from '../../components/AdoptionTracker/types';
 
 import { flattenConfig } from './utils/flattenConfig';
 import { formatSidebar } from './utils/formatSidebar';
@@ -517,16 +517,16 @@ export const config: AdoptersConfig[] = [
   },
 ];
 
-export const patternComponentConfig: PatternComponentConfig[] = [
+export const productComponentConfig: ProductComponentConfig[] = [
   {
-    patternComponentName: 'AppSwitcher',
+    productComponentName: 'AppSwitcher',
     owningTeam: 'Identity',
     packageImportPath: '@cbhq/app-switcher',
     doc: 'https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide',
     packagePath: path.join(tempDir, identityGit, 'packages/app-switcher/package.json'),
   },
   {
-    patternComponentName: 'NavigationBar',
+    productComponentName: 'NavigationBar',
     owningTeam: 'Identity',
     packageImportPath: '@cbhq/identity-navigation',
     packagePath: path.join(tempDir, identityGit, 'packages/identity-navigation/package.json'),

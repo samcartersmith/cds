@@ -16,26 +16,26 @@ import {
 import { BetaCell } from '../BetaCell';
 import { SplitScreenStack } from '../SplitScreenStack';
 
-import type { PatternComponentSummary } from './types';
+import type { ProductComponentSummary } from './types';
 
-type AdoptionPatternComponentReport = Record<string, PatternComponentSummary>;
+type AdoptionProductComponentReport = Record<string, ProductComponentSummary>;
 
-type AdoptionPatternComponentsListCell = {
+type AdoptionProductComponentsListCell = {
   id: string;
   isActive: boolean;
-  componentDetails: PatternComponentSummary;
+  componentDetails: ProductComponentSummary;
   onPress: (id: string) => void;
   index: number;
   style?: React.CSSProperties;
 };
 
-const OVERALL_COMPONENT_PATTERN_SUMMARY =
-  require(`@site/static/data/__generated__/adoption/componentPatternsSummary.json`) as AdoptionPatternComponentReport;
+const OVERALL_PRODUCT_COMPONENT_SUMMARY =
+  require(`@site/static/data/__generated__/adoption/componentPatternsSummary.json`) as AdoptionProductComponentReport;
 
 const innerCellSpacing = { spacingHorizontal: 1 } as const;
 const outerCellSpacing = { spacingHorizontal: 2, spacingEnd: 4 } as const;
 
-export const PatternComponentStatsBreakdownCell = memo(
+export const ProductComponentStatsBreakdownCell = memo(
   ({
     title,
     detail,
@@ -90,38 +90,49 @@ const truncatePath = (path: string) => {
   return parts[parts.length - 1];
 };
 
-const PatternComponentSummaryInfo = memo(
-  ({ component }: { component: PatternComponentSummary }) => {
+const ProductComponentSummaryInfo = memo(
+  ({
+    component,
+    totalProductComponentInstances,
+  }: {
+    component: ProductComponentSummary;
+    totalProductComponentInstances: number;
+  }) => {
+    const relativeUsageOfProductComponent =
+      (component.totalInstances / totalProductComponentInstances) * 100;
     return (
       <VStack>
-        <PatternComponentStatsBreakdownCell
+        <ProductComponentStatsBreakdownCell
           detail={component.totalInstances}
           title="Total instances"
         />
-        <PatternComponentStatsBreakdownCell
+        <ProductComponentStatsBreakdownCell
           detail={component.totalCallSites}
           title="Total call sites"
+        />{' '}
+        <ProductComponentStatsBreakdownCell
+          detail={`${relativeUsageOfProductComponent.toFixed(2)}%`}
+          title="Relative Usage"
         />
-        <PatternComponentStatsBreakdownCell
+        <ProductComponentStatsBreakdownCell
           detail={component.config.owningTeam}
           title="Owning team"
         />
-
-        <PatternComponentStatsBreakdownCell
+        <ProductComponentStatsBreakdownCell
           detail={component.cdsVersion?.lowestVersion}
           title="CDS version"
         />
-        <PatternComponentStatsBreakdownCell
+        <ProductComponentStatsBreakdownCell
           detail={processPackagePath(component.config.packagePath)}
           title="Full path"
         />
-        <PatternComponentStatsBreakdownCell
+        <ProductComponentStatsBreakdownCell
           detail="See Repo"
           title="Repo"
           url={processGithubURL(processPackagePath(component.config.packagePath))}
         />
         {component.config.doc !== undefined ? (
-          <PatternComponentStatsBreakdownCell
+          <ProductComponentStatsBreakdownCell
             detail="See Documentation"
             title="Docs"
             url={component.config.doc}
@@ -132,8 +143,8 @@ const PatternComponentSummaryInfo = memo(
   },
 );
 
-const DetailedPatternComponentBreakdown = memo(
-  ({ component }: { component: PatternComponentSummary }) => {
+const DetailedProductComponentBreakdown = memo(
+  ({ component }: { component: ProductComponentSummary }) => {
     const { components } = component;
 
     const [activeFile, setActiveFile] = useState<string | null>(null);
@@ -211,7 +222,7 @@ const DetailedPatternComponentBreakdown = memo(
               <VStack key={`props-${fileDataIndex}`} spacingVertical={1}>
                 <TextLabel2 as="p">File Path: {file}</TextLabel2>
                 {props.map(({ propKey, count }) => (
-                  <PatternComponentStatsBreakdownCell
+                  <ProductComponentStatsBreakdownCell
                     key={`prop-${fileDataIndex}`}
                     detail={`${count} instance(s)`}
                     title={propKey}
@@ -226,36 +237,47 @@ const DetailedPatternComponentBreakdown = memo(
   },
 );
 
-const PatternComponentDetails = memo(({ component }: { component: PatternComponentSummary }) => {
-  return (
-    <VStack width="100%">
-      <VStack gap={2}>
-        <VStack gap={1}>
-          <TextTitle3 as="h3">{component.config.patternComponentName}</TextTitle3>
-          <HStack justifyContent="space-between">
-            <TextLabel1 as="p">Source file</TextLabel1>
-            <TextLabel2 as="p">{component.config.packageImportPath}</TextLabel2>
-          </HStack>
+const ProductComponentDetails = memo(
+  ({
+    component,
+    totalProductComponentInstances,
+  }: {
+    component: ProductComponentSummary;
+    totalProductComponentInstances: number;
+  }) => {
+    return (
+      <VStack width="100%">
+        <VStack gap={2}>
+          <VStack gap={1}>
+            <TextTitle3 as="h3">{component.config.productComponentName}</TextTitle3>
+            <HStack justifyContent="space-between">
+              <TextLabel1 as="p">Source file</TextLabel1>
+              <TextLabel2 as="p">{component.config.packageImportPath}</TextLabel2>
+            </HStack>
+          </VStack>
+          <ProductComponentSummaryInfo
+            component={component}
+            totalProductComponentInstances={totalProductComponentInstances}
+          />
+          <DetailedProductComponentBreakdown component={component} />
         </VStack>
-        <PatternComponentSummaryInfo component={component} />
-        <DetailedPatternComponentBreakdown component={component} />
       </VStack>
-    </VStack>
-  );
-});
+    );
+  },
+);
 
-const EmptyPatternComponentDetails = () => {
+const EmptyProductComponentDetails = () => {
   return (
     <VStack width="100%">
       <VStack gap={2}>
-        <TextTitle3 as="h3">Select a Pattern Component</TextTitle3>
-        <TextBody as="p">Select any pattern component on the left.</TextBody>
+        <TextTitle3 as="h3">Select a Product Component</TextTitle3>
+        <TextBody as="p">Select any product component on the left.</TextBody>
       </VStack>
     </VStack>
   );
 };
 
-const PatternComponentListCell = memo(
+const ProductComponentListCell = memo(
   ({
     id,
     isActive,
@@ -263,7 +285,7 @@ const PatternComponentListCell = memo(
     onPress,
     index,
     style,
-  }: AdoptionPatternComponentsListCell) => {
+  }: AdoptionProductComponentsListCell) => {
     return (
       <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
         <ListCell
@@ -274,20 +296,25 @@ const PatternComponentListCell = memo(
           onPress={() => onPress(id)}
           outerSpacing={outerCellSpacing}
           selected={isActive}
-          title={componentDetails?.config.patternComponentName ?? ''}
+          title={componentDetails?.config.productComponentName ?? ''}
         />
       </div>
     );
   },
 );
-PatternComponentListCell.displayName = 'PatternComponentListCell';
+ProductComponentListCell.displayName = 'ProductComponentListCell';
 
-const componentsWithIds = Object.entries(OVERALL_COMPONENT_PATTERN_SUMMARY).map(([id, value]) => ({
+const componentsWithIds = Object.entries(OVERALL_PRODUCT_COMPONENT_SUMMARY).map(([id, value]) => ({
   id,
   ...value,
 }));
 
-export const PatternComponentsList = () => {
+const totalProductComponentInstances = Object.values(OVERALL_PRODUCT_COMPONENT_SUMMARY).reduce(
+  (acc, { totalInstances }) => acc + totalInstances,
+  0,
+);
+
+export const ProductComponentsList = () => {
   const [activeComponentId, setActiveComponentId] = useState<string>(componentsWithIds[0].id);
 
   const handlePress = useCallback((id: string) => {
@@ -299,7 +326,7 @@ export const PatternComponentsList = () => {
   const start = (
     <>
       {componentsWithIds.map((component, index) => (
-        <PatternComponentListCell
+        <ProductComponentListCell
           key={component.id}
           componentDetails={component}
           id={component.id}
@@ -312,19 +339,23 @@ export const PatternComponentsList = () => {
   );
 
   const end = activeComponent ? (
-    <PatternComponentDetails component={activeComponent} />
+    <ProductComponentDetails
+      component={activeComponent}
+      totalProductComponentInstances={totalProductComponentInstances}
+    />
   ) : (
-    <EmptyPatternComponentDetails />
+    <EmptyProductComponentDetails />
   );
 
   return <SplitScreenStack end={end} start={start} />;
 };
 
-export const AdoptionPatternComponents = () => {
+export const AdoptionProductComponents = () => {
   return (
     <VStack width="100%">
-      <TextHeadline as="p">Pattern Component Quick View</TextHeadline>
-      <PatternComponentsList />
+      <TextHeadline as="p">Total Instances: {totalProductComponentInstances}</TextHeadline>
+
+      <ProductComponentsList />
     </VStack>
   );
 };

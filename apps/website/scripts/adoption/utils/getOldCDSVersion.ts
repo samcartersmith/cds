@@ -5,7 +5,7 @@ import fs from 'fs';
 import { promisify } from 'util';
 
 import { CDSVersionsResult } from '../../../components/AdoptionTracker/types';
-import { type PatternComponentInfo } from '../types';
+import { type ProductComponentInfo } from '../types';
 
 import { extractVersion } from './getPackageJson';
 import { sanitizeVersion } from './getStats';
@@ -43,7 +43,7 @@ export async function getCDSCommonPackageJsonFromThreeMonthsAgo() {
   }
 }
 
-function findCDSVersion(packageJson: PatternComponentInfo, packageName: string): string {
+function findCDSVersion(packageJson: ProductComponentInfo, packageName: string): string {
   const possibleLocations = [
     packageJson.dependencies,
     packageJson.devDependencies,

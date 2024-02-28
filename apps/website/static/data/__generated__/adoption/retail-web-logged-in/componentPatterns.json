@@ -67,7 +67,7 @@
         }
       },
       "config": {
-        "patternComponentName": "NavigationBar",
+        "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
         "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"

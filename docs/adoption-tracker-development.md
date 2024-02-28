@@ -8,7 +8,7 @@ The Adoption Tracker is a tool designed to:
 
 - Provide insights at the component level for CDS adoption.
 - Monitor project and product group adherence to the latest CDS versions.
-- Analyze pattern component usage across projects.
+- Analyze product component usage across projects.
 - Track specific project adoption trends over time.
 - Measure historical adoption rates.
 
@@ -16,7 +16,7 @@ The Adoption Tracker is a tool designed to:
 
 The adoption tracker has three key components:
 
-- **Script**: Automates the collection of component and pattern data, clones projects to a temporary directory, parses repository data, and generates JSON files containing adoption statistics for each project.
+- **Script**: Automates the collection of component and product component data, clones projects to a temporary directory, parses repository data, and generates JSON files containing adoption statistics for each project.
 
 - **Parsers**: Extract and compile project data from cloned repositories.
 
@@ -64,7 +64,7 @@ yarn nx run website:start
 
   - `projectInfo()` returns the data such as pg/pillar, github, and other config file properties.
 
-- `generateComponentPatternsData()`: Compiles pattern component data for display on the website.
+- `generateComponentPatternsData()`: Compiles product component data for display on the website.
 
   - Uses the previously generated files to aggregate component data based on config.
 
@@ -72,7 +72,7 @@ yarn nx run website:start
 
     - `generateAdoptionAndImpactReports()` contains a summary of CDS/Historical Adoption Over Time and Impact over Time
 
-    - `generateComponentPatternsSummary()` contains an aggregate of totalInstances, totalCallSites, and other pattern component data / versioning across all project.
+    - `generateComponentPatternsSummary()` contains an aggregate of totalInstances, totalCallSites, and other product component data / versioning across all project.
 
 ### Website
 
@@ -86,4 +86,4 @@ yarn nx run website:start
 
   - Note: We use the `adoptionTrackerCSVDataExcludeOther` entry from our report data as we want to exclude the "Other" pillar from the config in our overall calculation. For data that includes the "Other" pillar, you can see `adoptionTrackerCSVData`.
 
-- `AdoptionPatternComponents`: Details on pattern components usage, utilizing `componentPatternsSummary` data.
+- `AdoptionProductComponents`: Details on product components usage, utilizing `componentPatternsSummary` data.
