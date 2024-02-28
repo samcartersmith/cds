@@ -3,6 +3,7 @@ secure:
   codeowners_enabled: true
   branches:
     - master
+    - cds5-master
   auto_assign_reviewers: true
 build:
   engines:
