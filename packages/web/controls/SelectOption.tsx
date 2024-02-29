@@ -36,6 +36,8 @@ const pressableStyles = css`
       border-bottom-left-radius: ${borderRadius.roundedXLarge};
     }
   }
+  /* restrict text from overflow viewport, 95 to leave space for scrollbar */
+  max-width: 95vw;
 `;
 
 export type SelectOptionProps = {

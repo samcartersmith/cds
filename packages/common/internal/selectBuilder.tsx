@@ -1,4 +1,11 @@
-import React, { ComponentType, ReactNode, RefAttributes, useState } from 'react';
+import React, {
+  ComponentType,
+  ForwardedRef,
+  ReactNode,
+  RefAttributes,
+  useRef,
+  useState,
+} from 'react';
 
 import { useToggler } from '../hooks/useToggler';
 import type {
@@ -18,6 +25,7 @@ import type {
 } from '../types';
 
 import { AssetKey, assets } from './data/assets';
+import { loremIpsum } from './data/loremIpsum';
 
 type LinkableProps = {
   onPress?: null | ((event: unknown) => void) | undefined;
@@ -34,6 +42,7 @@ export type SelectOptionProps = {
 export type SelectProps = {
   children: ReactNode;
   onBlur?: NoopFn;
+  ref?: ForwardedRef<HTMLButtonElement>;
 } & SelectBaseProps;
 
 export type CreateSelectStoriesProps = {
@@ -287,6 +296,20 @@ export const selectBuilder = ({
       </VStack>
     );
   };
+  const LongText = () => {
+    const [value, setValue] = useState<string | undefined>('');
+    const selectRef = useRef<HTMLButtonElement>(null);
+
+    return (
+      <ThemeProvider scale={scale} spectrum={spectrum}>
+        <VStack background minHeight={100} spacing={2}>
+          <Select ref={selectRef} onChange={setValue} placeholder="Choose an amount" value={value}>
+            <SelectOption compact description="BTC" title={loremIpsum} value={loremIpsum} />
+          </Select>
+        </VStack>
+      </ThemeProvider>
+    );
+  };
   return {
     Default,
     AssetSelect,
@@ -294,6 +317,7 @@ export const selectBuilder = ({
     Compact,
     Variants,
     Disabled,
+    LongText,
   };
 };
 

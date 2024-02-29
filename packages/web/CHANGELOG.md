@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.0.2 (2/29/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix: Add maxWidth to SelectOption to prevent overflow viewport. [[#2806](https://github.cbhq.net/frontend/cds/pull/2806)] [[IM-12596](https://jira.coinbase-corp.com/browse/IM-12596)]
+
 ## 6.0.1 (2/27/2024 PST)
 
 #### 🐞 Fixes
@@ -19,6 +25,12 @@ All notable changes to this project will be documented in this file!
 #### 💥 Breaking
 
 - CDS 6 release. [[#2779](https://github.cbhq.net/frontend/cds/pull/2779)]
+
+## 5.37.1 (2/28/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix: Add maxWidth to SelectOption to prevent overflow viewport. [[#2800](https://github.cbhq.net/frontend/cds/pull/2800)]
 
 ## 5.37.0 (2/21/2024 PST)
 

@@ -33,7 +33,7 @@ const components = {
   Box,
 };
 
-export const { Default, AssetSelect, InputStackOptions, Disabled, Compact, Variants } =
+export const { Default, AssetSelect, InputStackOptions, Disabled, Compact, Variants, LongText } =
   selectBuilder(components as unknown as CreateSelectStoriesProps);
 
 Disabled.bind({});

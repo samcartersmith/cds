@@ -1,4 +1,5 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 
 import { Button, IconButton } from '../../buttons';
 import { SelectOption } from '../../controls/SelectOption';
@@ -324,3 +325,26 @@ export const Disabled = () => (
     <Default disabled enableMobileModal />
   </>
 );
+
+export const LongText = () => {
+  const [value, setValue] = useState('');
+  const dropdownRef = useRef<DropdownRefProps>(null);
+
+  useEffect(() => {
+    dropdownRef.current?.openMenu();
+  }, []);
+
+  const content = (
+    <HStack maxWidth="95vw" role="separator" spacingHorizontal={2} spacingVertical={2}>
+      <TextCaption as="h2" color="foregroundMuted" overflow="truncate">
+        {loremIpsum}
+      </TextCaption>
+    </HStack>
+  );
+
+  return (
+    <Dropdown ref={dropdownRef} content={content} onChange={setValue} value={value}>
+      <IconButton transparent accessibilityLabel="More" name="more" variant="secondary" />
+    </Dropdown>
+  );
+};
