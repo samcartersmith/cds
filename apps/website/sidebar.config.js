@@ -937,8 +937,12 @@ const sidebars = {
           type: 'category',
           label: 'Accessibility Tracker',
           items: [
-            { type: 'doc', id: 'a11y-tracker/a11y-report', label: 'Web Report' },
-            { type: 'doc', id: 'a11y-tracker/a11y-scorecards', label: 'Scorecards' },
+            {
+              type: 'doc',
+              id: 'a11y-tracker/a11y-report',
+              label: 'CDS Web Components A11y Report',
+            },
+            { type: 'doc', id: 'a11y-tracker/a11y-scorecards', label: 'A11y Scorecards' },
           ],
         },
         {
