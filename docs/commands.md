@@ -57,6 +57,7 @@ nx run common:lint
 | yarn nx run mobile:test                             | Test the `mobile` package.                                   |
 | yarn nx run mobile:test --collect-coverage          | Test the `mobile` package with coverage report               |
 | yarn nx run mobile:typecheck                        | Typecheck the `mobile` package.                              |
+| yarn nx run mobile-app:go                           | Run the `mobile` app.                                        |
 | ----                                                | ----                                                         |
 | yarn nx run utils:build                             | Build the `utils` package.                                   |
 | yarn nx run utils:format                            | Format the `utils` package.                                  |
