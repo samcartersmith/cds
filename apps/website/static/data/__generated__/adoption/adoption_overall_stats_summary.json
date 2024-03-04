@@ -1,5 +1,1603 @@
 [
   {
+    "date": "3/4/2024",
+    "summaryReport": {
+      "companyWide": {
+        "cdsAdoption": "91.45%",
+        "latestCDSAdoption": "72.73",
+        "getPercentageChangeAll": "+3.79%",
+        "getPercentageChangeLatest": "+0.81%"
+      },
+      "Consumer": {
+        "cdsAdoption": "88.91%",
+        "latestCDSAdoption": "73.33%"
+      },
+      "Institutional": {
+        "cdsAdoption": "95.74%",
+        "latestCDSAdoption": "100.00%"
+      },
+      "Platform": {
+        "cdsAdoption": "94.11%",
+        "latestCDSAdoption": "57.14%"
+      },
+      "Developer": {
+        "cdsAdoption": "96.90%",
+        "latestCDSAdoption": "66.67%"
+      }
+    },
+    "totalProjectVersionsList": [
+      {
+        "pillar": "Consumer",
+        "allProjectVersions": [
+          {
+            "id": "retail-mobile",
+            "version": "5.34.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9377026689947617,
+              "cds": 15037,
+              "presentational": 999,
+              "totalCdsAndPresentational": 16036,
+              "totalOther": 10693,
+              "cdsCommonVersion": "5.34.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.34.2",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "retail-web-logged-in",
+            "version": "5.37.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.816968159668914,
+              "cds": 12239,
+              "presentational": 2742,
+              "totalCdsAndPresentational": 14981,
+              "totalOther": 10570,
+              "cdsCommonVersion": "^5.37.1",
+              "cdsWebVersion": "^5.37.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "react-native-core",
+            "version": "5.34.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9379126671475337,
+              "cds": 16904,
+              "presentational": 1119,
+              "totalCdsAndPresentational": 18023,
+              "totalOther": 11582,
+              "cdsCommonVersion": "5.34.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.34.2",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "umo",
+            "version": "5.34.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9065902578796562,
+              "cds": 1582,
+              "presentational": 163,
+              "totalCdsAndPresentational": 1745,
+              "totalOther": 612,
+              "cdsCommonVersion": "5.34.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.34.2",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "retail-web-logged-out",
+            "version": "5.37.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.7344007534730398,
+              "cds": 3119,
+              "presentational": 1128,
+              "totalCdsAndPresentational": 4247,
+              "totalOther": 2537,
+              "cdsCommonVersion": "^5.37.1",
+              "cdsWebVersion": "^5.37.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "retail-web-identity",
+            "version": "5.37.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.8353697749196142,
+              "cds": 1299,
+              "presentational": 256,
+              "totalCdsAndPresentational": 1555,
+              "totalOther": 855,
+              "cdsCommonVersion": "^5.37.1",
+              "cdsWebVersion": "^5.37.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "advanced-trade-web",
+            "version": "5.37.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.8273244781783681,
+              "cds": 436,
+              "presentational": 91,
+              "totalCdsAndPresentational": 527,
+              "totalOther": 304,
+              "cdsCommonVersion": "^5.37.1",
+              "cdsWebVersion": "^5.37.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "advanced-web",
+            "version": "5.37.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9399837793998378,
+              "cds": 2318,
+              "presentational": 148,
+              "totalCdsAndPresentational": 2466,
+              "totalOther": 1936,
+              "cdsCommonVersion": "^5.37.1",
+              "cdsWebVersion": "^5.37.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "cs3-mobile",
+            "version": "5.34.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9489649518343923,
+              "cds": 4630,
+              "presentational": 249,
+              "totalCdsAndPresentational": 4879,
+              "totalOther": 2800,
+              "cdsCommonVersion": "5.34.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.34.2",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "cs3-web",
+            "version": "5.37.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.8819444444444444,
+              "cds": 2159,
+              "presentational": 289,
+              "totalCdsAndPresentational": 2448,
+              "totalOther": 1841,
+              "cdsCommonVersion": "^5.37.1",
+              "cdsWebVersion": "^5.37.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "maui",
+            "version": "1.10.0",
+            "pillar": "Consumer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.2884518406454866,
+              "cds": 572,
+              "presentational": 1411,
+              "totalCdsAndPresentational": 1983,
+              "totalOther": 1211,
+              "cdsCommonVersion": "",
+              "cdsWebVersion": "1.10.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "wallet-extension",
+            "version": "5.1.4",
+            "pillar": "Consumer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9352692075015124,
+              "cds": 3092,
+              "presentational": 214,
+              "totalCdsAndPresentational": 3306,
+              "totalOther": 1893,
+              "cdsCommonVersion": "5.1.4",
+              "cdsWebVersion": "5.1.4",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "wallet-react-native",
+            "version": "5.1.4",
+            "pillar": "Consumer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9704081632653061,
+              "cds": 9510,
+              "presentational": 290,
+              "totalCdsAndPresentational": 9800,
+              "totalOther": 3635,
+              "cdsCommonVersion": "5.1.4",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.1.4",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "wallet-dapp",
+            "version": "5.1.4",
+            "pillar": "Consumer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9712918660287081,
+              "cds": 609,
+              "presentational": 18,
+              "totalCdsAndPresentational": 627,
+              "totalOther": 367,
+              "cdsCommonVersion": "5.1.4",
+              "cdsWebVersion": "5.1.4",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "stand-with-crypto",
+            "version": "5.24.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9342756183745583,
+              "cds": 1322,
+              "presentational": 93,
+              "totalCdsAndPresentational": 1415,
+              "totalOther": 636,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          }
+        ],
+        "totalProjectsCount": 15
+      },
+      {
+        "pillar": "Platform",
+        "allProjectVersions": [
+          {
+            "id": "unified-accounts",
+            "version": "5.27.0",
+            "pillar": "Platform",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9228979727484214,
+              "cds": 2777,
+              "presentational": 232,
+              "totalCdsAndPresentational": 3009,
+              "totalOther": 1776,
+              "cdsCommonVersion": "^5.27.0",
+              "cdsWebVersion": "^5.27.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "unified-login",
+            "version": "5.16.0",
+            "pillar": "Platform",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9925,
+              "cds": 397,
+              "presentational": 3,
+              "totalCdsAndPresentational": 400,
+              "totalOther": 303,
+              "cdsCommonVersion": "^5.16.0",
+              "cdsWebVersion": "^5.31.4",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "two-factor-web",
+            "version": "5.16.0",
+            "pillar": "Platform",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9918367346938776,
+              "cds": 243,
+              "presentational": 2,
+              "totalCdsAndPresentational": 245,
+              "totalOther": 158,
+              "cdsCommonVersion": "^5.16.0",
+              "cdsWebVersion": "^5.31.4",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "two-factor-mobile",
+            "version": "5.2.0",
+            "pillar": "Platform",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 1,
+              "cds": 16,
+              "presentational": 0,
+              "totalCdsAndPresentational": 16,
+              "totalOther": 15,
+              "cdsCommonVersion": "^5.16.0",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "^5.2.0",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "tax-center",
+            "version": "5.27.0",
+            "pillar": "Platform",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9466209598432909,
+              "cds": 1933,
+              "presentational": 109,
+              "totalCdsAndPresentational": 2042,
+              "totalOther": 1281,
+              "cdsCommonVersion": "^5.27.0",
+              "cdsWebVersion": "^5.27.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "cb-chat",
+            "version": "5.24.2",
+            "pillar": "Platform",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9858490566037735,
+              "cds": 209,
+              "presentational": 3,
+              "totalCdsAndPresentational": 212,
+              "totalOther": 176,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "cb-chat-mobile",
+            "version": "5.24.2",
+            "pillar": "Platform",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9538461538461539,
+              "cds": 124,
+              "presentational": 6,
+              "totalCdsAndPresentational": 130,
+              "totalOther": 65,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "^5.24.2",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          }
+        ],
+        "totalProjectsCount": 7
+      },
+      {
+        "pillar": "Institutional",
+        "allProjectVersions": [
+          {
+            "id": "prime-mobile",
+            "version": "5.31.6",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9121522693997072,
+              "cds": 623,
+              "presentational": 60,
+              "totalCdsAndPresentational": 683,
+              "totalOther": 392,
+              "cdsCommonVersion": "^5.31.6",
+              "cdsWebVersion": "^5.31.6",
+              "cdsMobileVersion": "^5.31.6",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "prime-web",
+            "version": "5.29.0",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.956833738132038,
+              "cds": 8667,
+              "presentational": 391,
+              "totalCdsAndPresentational": 9058,
+              "totalOther": 4267,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "prime-admin",
+            "version": "5.29.0",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9668876951485648,
+              "cds": 23039,
+              "presentational": 789,
+              "totalCdsAndPresentational": 23828,
+              "totalOther": 13343,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "unified-business-onboarding",
+            "version": "5.27.0",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.897797131147541,
+              "cds": 3505,
+              "presentational": 399,
+              "totalCdsAndPresentational": 3904,
+              "totalOther": 2173,
+              "cdsCommonVersion": "^5.27.0",
+              "cdsWebVersion": "^5.27.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "neptune",
+            "version": "5.24.2",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9868189806678384,
+              "cds": 1123,
+              "presentational": 15,
+              "totalCdsAndPresentational": 1138,
+              "totalOther": 430,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          }
+        ],
+        "totalProjectsCount": 5
+      },
+      {
+        "pillar": "Developer",
+        "allProjectVersions": [
+          {
+            "id": "cloud-console",
+            "version": "5.24.2",
+            "pillar": "Developer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.981079833871712,
+              "cds": 2126,
+              "presentational": 41,
+              "totalCdsAndPresentational": 2167,
+              "totalOther": 813,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "commerce-merchant",
+            "version": "5.29.0",
+            "pillar": "Developer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9416666666666667,
+              "cds": 1582,
+              "presentational": 98,
+              "totalCdsAndPresentational": 1680,
+              "totalOther": 977,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "^5.29.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "commerce-payer",
+            "version": "5.29.0",
+            "pillar": "Developer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 1,
+              "cds": 486,
+              "presentational": 0,
+              "totalCdsAndPresentational": 486,
+              "totalOther": 211,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "^5.29.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "commerce-donations",
+            "version": "5.29.0",
+            "pillar": "Developer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 1,
+              "cds": 79,
+              "presentational": 0,
+              "totalCdsAndPresentational": 79,
+              "totalOther": 47,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "^5.29.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "payments-onramp-widget",
+            "version": "4.2.14",
+            "pillar": "Developer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9745977984758679,
+              "cds": 1151,
+              "presentational": 30,
+              "totalCdsAndPresentational": 1181,
+              "totalOther": 564,
+              "cdsCommonVersion": "4.2.14",
+              "cdsWebVersion": "4.2.14",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "cbpay-sdk-rn",
+            "version": "5.3.3",
+            "pillar": "Developer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.8,
+              "cds": 4,
+              "presentational": 1,
+              "totalCdsAndPresentational": 5,
+              "totalOther": 5,
+              "cdsCommonVersion": "",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "^5.3.3",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          }
+        ],
+        "totalProjectsCount": 6
+      },
+      {
+        "pillar": "Other",
+        "allProjectVersions": [
+          {
+            "id": "assethub-web",
+            "version": "1.4.0",
+            "pillar": "Other",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.8452380952380952,
+              "cds": 994,
+              "presentational": 182,
+              "totalCdsAndPresentational": 1176,
+              "totalOther": 696,
+              "cdsCommonVersion": "^1.4.0",
+              "cdsWebVersion": "^1.4.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "assethub-admin",
+            "version": "1.4.0",
+            "pillar": "Other",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.8849144634525661,
+              "cds": 1138,
+              "presentational": 148,
+              "totalCdsAndPresentational": 1286,
+              "totalOther": 805,
+              "cdsCommonVersion": "^1.4.0",
+              "cdsWebVersion": "^1.4.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "abor",
+            "version": "5.24.2",
+            "pillar": "Other",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.9063063063063063,
+              "cds": 503,
+              "presentational": 52,
+              "totalCdsAndPresentational": 555,
+              "totalOther": 407,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "commerce-web",
+            "version": "1.1.0",
+            "pillar": "Other",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "3/4/2024",
+              "cdsPercent": 0.15006150061500614,
+              "cds": 244,
+              "presentational": 1382,
+              "totalCdsAndPresentational": 1626,
+              "totalOther": 2524,
+              "cdsCommonVersion": "",
+              "cdsWebVersion": "^1.1.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.2",
+              "latestCdsVersionPublished3MonthsAgo": "5.21.0",
+              "upToDate": false
+            }
+          }
+        ],
+        "totalProjectsCount": 4
+      }
+    ]
+  },
+  {
+    "date": "3/4/2024",
+    "summaryReport": {
+      "companyWide": {
+        "cdsAdoption": "91.45%",
+        "latestCDSAdoption": "72.73",
+        "getPercentageChangeAll": "+3.79%",
+        "getPercentageChangeLatest": "+0.81%"
+      },
+      "Consumer": {
+        "cdsAdoption": "88.91%",
+        "latestCDSAdoption": "73.33%"
+      },
+      "Institutional": {
+        "cdsAdoption": "95.74%",
+        "latestCDSAdoption": "100.00%"
+      },
+      "Platform": {
+        "cdsAdoption": "94.11%",
+        "latestCDSAdoption": "57.14%"
+      },
+      "Developer": {
+        "cdsAdoption": "96.90%",
+        "latestCDSAdoption": "66.67%"
+      }
+    },
+    "totalProjectVersionsList": [
+      {
+        "pillar": "Consumer",
+        "allProjectVersions": [
+          {
+            "id": "retail-mobile",
+            "version": "5.34.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.937417860942487,
+              "cds": 14979,
+              "presentational": 1000,
+              "totalCdsAndPresentational": 15979,
+              "totalOther": 10654,
+              "cdsCommonVersion": "^5.34.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.34.2",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "retail-web-logged-in",
+            "version": "5.26.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.8154889844169801,
+              "cds": 12141,
+              "presentational": 2747,
+              "totalCdsAndPresentational": 14888,
+              "totalOther": 10560,
+              "cdsCommonVersion": "^5.26.1",
+              "cdsWebVersion": "^5.26.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "react-native-core",
+            "version": "5.34.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9379003063213589,
+              "cds": 16840,
+              "presentational": 1115,
+              "totalCdsAndPresentational": 17955,
+              "totalOther": 11538,
+              "cdsCommonVersion": "^5.34.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.34.2",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "umo",
+            "version": "5.31.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9083044982698962,
+              "cds": 1575,
+              "presentational": 159,
+              "totalCdsAndPresentational": 1734,
+              "totalOther": 608,
+              "cdsCommonVersion": "^5.31.1",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.34.2",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "retail-web-logged-out",
+            "version": "5.26.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.7206808113779436,
+              "cds": 3091,
+              "presentational": 1198,
+              "totalCdsAndPresentational": 4289,
+              "totalOther": 2552,
+              "cdsCommonVersion": "^5.26.1",
+              "cdsWebVersion": "^5.26.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "retail-web-identity",
+            "version": "5.26.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.8370464672183323,
+              "cds": 1315,
+              "presentational": 256,
+              "totalCdsAndPresentational": 1571,
+              "totalOther": 856,
+              "cdsCommonVersion": "^5.26.1",
+              "cdsWebVersion": "^5.26.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "advanced-trade-web",
+            "version": "5.26.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.8269961977186312,
+              "cds": 435,
+              "presentational": 91,
+              "totalCdsAndPresentational": 526,
+              "totalOther": 304,
+              "cdsCommonVersion": "^5.26.1",
+              "cdsWebVersion": "^5.26.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "advanced-web",
+            "version": "5.26.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.938841636289996,
+              "cds": 2318,
+              "presentational": 151,
+              "totalCdsAndPresentational": 2469,
+              "totalOther": 1970,
+              "cdsCommonVersion": "^5.26.1",
+              "cdsWebVersion": "^5.26.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "cs3-mobile",
+            "version": "5.34.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9484425349087003,
+              "cds": 4415,
+              "presentational": 240,
+              "totalCdsAndPresentational": 4655,
+              "totalOther": 2686,
+              "cdsCommonVersion": "^5.34.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.34.2",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "cs3-web",
+            "version": "5.26.1",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.8819444444444444,
+              "cds": 2159,
+              "presentational": 289,
+              "totalCdsAndPresentational": 2448,
+              "totalOther": 1841,
+              "cdsCommonVersion": "^5.26.1",
+              "cdsWebVersion": "^5.26.1",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "maui",
+            "version": "1.10.0",
+            "pillar": "Consumer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.2884518406454866,
+              "cds": 572,
+              "presentational": 1411,
+              "totalCdsAndPresentational": 1983,
+              "totalOther": 1211,
+              "cdsCommonVersion": "",
+              "cdsWebVersion": "1.10.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "wallet-extension",
+            "version": "5.1.4",
+            "pillar": "Consumer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9352692075015124,
+              "cds": 3092,
+              "presentational": 214,
+              "totalCdsAndPresentational": 3306,
+              "totalOther": 1893,
+              "cdsCommonVersion": "5.1.4",
+              "cdsWebVersion": "5.1.4",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "wallet-react-native",
+            "version": "5.1.4",
+            "pillar": "Consumer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9704347826086956,
+              "cds": 9486,
+              "presentational": 289,
+              "totalCdsAndPresentational": 9775,
+              "totalOther": 3616,
+              "cdsCommonVersion": "5.1.4",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "5.1.4",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "wallet-dapp",
+            "version": "5.1.4",
+            "pillar": "Consumer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9712918660287081,
+              "cds": 609,
+              "presentational": 18,
+              "totalCdsAndPresentational": 627,
+              "totalOther": 359,
+              "cdsCommonVersion": "5.1.4",
+              "cdsWebVersion": "5.1.4",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "stand-with-crypto",
+            "version": "5.24.2",
+            "pillar": "Consumer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9342756183745583,
+              "cds": 1322,
+              "presentational": 93,
+              "totalCdsAndPresentational": 1415,
+              "totalOther": 636,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          }
+        ],
+        "totalProjectsCount": 15
+      },
+      {
+        "pillar": "Platform",
+        "allProjectVersions": [
+          {
+            "id": "unified-accounts",
+            "version": "5.27.0",
+            "pillar": "Platform",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9222780569514237,
+              "cds": 2753,
+              "presentational": 232,
+              "totalCdsAndPresentational": 2985,
+              "totalOther": 1774,
+              "cdsCommonVersion": "^5.27.0",
+              "cdsWebVersion": "^5.27.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "unified-login",
+            "version": "5.16.0",
+            "pillar": "Platform",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9925,
+              "cds": 397,
+              "presentational": 3,
+              "totalCdsAndPresentational": 400,
+              "totalOther": 301,
+              "cdsCommonVersion": "^5.16.0",
+              "cdsWebVersion": "^5.31.4",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "two-factor-web",
+            "version": "5.16.0",
+            "pillar": "Platform",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9918367346938776,
+              "cds": 243,
+              "presentational": 2,
+              "totalCdsAndPresentational": 245,
+              "totalOther": 158,
+              "cdsCommonVersion": "^5.16.0",
+              "cdsWebVersion": "^5.31.4",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "two-factor-mobile",
+            "version": "5.2.0",
+            "pillar": "Platform",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 1,
+              "cds": 16,
+              "presentational": 0,
+              "totalCdsAndPresentational": 16,
+              "totalOther": 15,
+              "cdsCommonVersion": "^5.16.0",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "^5.2.0",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "tax-center",
+            "version": "5.27.0",
+            "pillar": "Platform",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9464373464373464,
+              "cds": 1926,
+              "presentational": 109,
+              "totalCdsAndPresentational": 2035,
+              "totalOther": 1280,
+              "cdsCommonVersion": "^5.27.0",
+              "cdsWebVersion": "^5.27.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "cb-chat",
+            "version": "5.24.2",
+            "pillar": "Platform",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9858490566037735,
+              "cds": 209,
+              "presentational": 3,
+              "totalCdsAndPresentational": 212,
+              "totalOther": 176,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "cb-chat-mobile",
+            "version": "5.24.2",
+            "pillar": "Platform",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9538461538461539,
+              "cds": 124,
+              "presentational": 6,
+              "totalCdsAndPresentational": 130,
+              "totalOther": 65,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "^5.24.2",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          }
+        ],
+        "totalProjectsCount": 7
+      },
+      {
+        "pillar": "Institutional",
+        "allProjectVersions": [
+          {
+            "id": "prime-mobile",
+            "version": "5.31.6",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9145161290322581,
+              "cds": 567,
+              "presentational": 53,
+              "totalCdsAndPresentational": 620,
+              "totalOther": 369,
+              "cdsCommonVersion": "^5.31.6",
+              "cdsWebVersion": "^5.31.6",
+              "cdsMobileVersion": "^5.31.6",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "prime-web",
+            "version": "5.29.0",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9566666666666667,
+              "cds": 8610,
+              "presentational": 390,
+              "totalCdsAndPresentational": 9000,
+              "totalOther": 4245,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "prime-admin",
+            "version": "5.29.0",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9671694025497876,
+              "cds": 23214,
+              "presentational": 788,
+              "totalCdsAndPresentational": 24002,
+              "totalOther": 13301,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "unified-business-onboarding",
+            "version": "5.27.0",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.8971649484536083,
+              "cds": 3481,
+              "presentational": 399,
+              "totalCdsAndPresentational": 3880,
+              "totalOther": 2167,
+              "cdsCommonVersion": "^5.27.0",
+              "cdsWebVersion": "^5.27.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "neptune",
+            "version": "5.24.2",
+            "pillar": "Institutional",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9868189806678384,
+              "cds": 1123,
+              "presentational": 15,
+              "totalCdsAndPresentational": 1138,
+              "totalOther": 430,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          }
+        ],
+        "totalProjectsCount": 5
+      },
+      {
+        "pillar": "Developer",
+        "allProjectVersions": [
+          {
+            "id": "cloud-console",
+            "version": "5.24.2",
+            "pillar": "Developer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9799511002444988,
+              "cds": 2004,
+              "presentational": 41,
+              "totalCdsAndPresentational": 2045,
+              "totalOther": 804,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "commerce-merchant",
+            "version": "5.29.0",
+            "pillar": "Developer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.941354292623942,
+              "cds": 1557,
+              "presentational": 97,
+              "totalCdsAndPresentational": 1654,
+              "totalOther": 971,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "^5.29.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "commerce-payer",
+            "version": "5.29.0",
+            "pillar": "Developer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 1,
+              "cds": 486,
+              "presentational": 0,
+              "totalCdsAndPresentational": 486,
+              "totalOther": 213,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "^5.29.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "commerce-donations",
+            "version": "5.29.0",
+            "pillar": "Developer",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 1,
+              "cds": 79,
+              "presentational": 0,
+              "totalCdsAndPresentational": 79,
+              "totalOther": 47,
+              "cdsCommonVersion": "^5.29.0",
+              "cdsWebVersion": "^5.29.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "payments-onramp-widget",
+            "version": "4.2.14",
+            "pillar": "Developer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9745977984758679,
+              "cds": 1151,
+              "presentational": 30,
+              "totalCdsAndPresentational": 1181,
+              "totalOther": 561,
+              "cdsCommonVersion": "4.2.14",
+              "cdsWebVersion": "4.2.14",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "cbpay-sdk-rn",
+            "version": "5.3.3",
+            "pillar": "Developer",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.8,
+              "cds": 4,
+              "presentational": 1,
+              "totalCdsAndPresentational": 5,
+              "totalOther": 5,
+              "cdsCommonVersion": "",
+              "cdsWebVersion": "",
+              "cdsMobileVersion": "^5.3.3",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          }
+        ],
+        "totalProjectsCount": 6
+      },
+      {
+        "pillar": "Other",
+        "allProjectVersions": [
+          {
+            "id": "assethub-web",
+            "version": "1.4.0",
+            "pillar": "Other",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.8452380952380952,
+              "cds": 994,
+              "presentational": 182,
+              "totalCdsAndPresentational": 1176,
+              "totalOther": 696,
+              "cdsCommonVersion": "^1.4.0",
+              "cdsWebVersion": "^1.4.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "assethub-admin",
+            "version": "1.4.0",
+            "pillar": "Other",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.8849144634525661,
+              "cds": 1138,
+              "presentational": 148,
+              "totalCdsAndPresentational": 1286,
+              "totalOther": 805,
+              "cdsCommonVersion": "^1.4.0",
+              "cdsWebVersion": "^1.4.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          },
+          {
+            "id": "abor",
+            "version": "5.24.2",
+            "pillar": "Other",
+            "upToDate": true,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.9063063063063063,
+              "cds": 503,
+              "presentational": 52,
+              "totalCdsAndPresentational": 555,
+              "totalOther": 407,
+              "cdsCommonVersion": "^5.24.2",
+              "cdsWebVersion": "^5.24.2",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": true
+            }
+          },
+          {
+            "id": "commerce-web",
+            "version": "1.1.0",
+            "pillar": "Other",
+            "upToDate": false,
+            "adopterStatsItem": {
+              "date": "2/27/2024",
+              "cdsPercent": 0.15006150061500614,
+              "cds": 244,
+              "presentational": 1382,
+              "totalCdsAndPresentational": 1626,
+              "totalOther": 2524,
+              "cdsCommonVersion": "",
+              "cdsWebVersion": "^1.1.0",
+              "cdsMobileVersion": "",
+              "cdsLatestVersion": "6.0.1",
+              "latestCdsVersionPublished3MonthsAgo": "5.19.0",
+              "upToDate": false
+            }
+          }
+        ],
+        "totalProjectsCount": 4
+      }
+    ]
+  },
+  {
     "date": "2/27/2024",
     "summaryReport": {
       "companyWide": {
