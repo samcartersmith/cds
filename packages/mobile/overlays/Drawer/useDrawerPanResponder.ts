@@ -192,7 +192,7 @@ export const useDrawerPanResponder = ({
 
   const panGestureHandlers = useMemo(() => {
     return PanResponder.create({
-      onStartShouldSetPanResponder: () => !disableCapturePanGestureToDismiss,
+      onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: shouldCaptureGestures,
       onMoveShouldSetPanResponderCapture: shouldCaptureGestures,
       onPanResponderMove: (_, gestureState) => {
@@ -243,7 +243,6 @@ export const useDrawerPanResponder = ({
       },
     });
   }, [
-    disableCapturePanGestureToDismiss,
     drawerAnimation,
     animateDrawerIn,
     parseGestureState,

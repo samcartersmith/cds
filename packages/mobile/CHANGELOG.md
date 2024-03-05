@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.0.3 (3/4/2024 PST)
+
+#### 🐞 Fixes
+
+- Revert change to onStartShouldSetPanResponder in useDrawerPanResponder.
+
 ## 6.0.2 ((2/29/2024, 02:51 PM PST))
 
 This is an artificial version bump with no new change.
