@@ -147,6 +147,7 @@ export type PictogramName =
   | 'layerNetworks'
   | 'learn'
   | 'learningRewardsNavigation'
+  | 'learningRewardsProduct'
   | 'lightbulbLearn'
   | 'linkYourAccount'
   | 'listingFees'

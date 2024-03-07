@@ -105,6 +105,7 @@ export type SpotRectangleName =
   | 'ledgerFailed'
   | 'ledgerSignatureRejected'
   | 'leverage'
+  | 'lightingnetworkSend'
   | 'linkCoinbaseWallet'
   | 'linkingYourWalletToYourCoinbaseAccount'
   | 'login'

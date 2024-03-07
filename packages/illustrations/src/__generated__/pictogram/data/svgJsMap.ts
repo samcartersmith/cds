@@ -581,6 +581,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/learningRewardsNavigation-3').content,
     dark: () => require('../svgJs/dark/learningRewardsNavigation-3').content,
   },
+  learningRewardsProduct: {
+    light: () => require('../svgJs/light/learningRewardsProduct-0').content,
+    dark: () => require('../svgJs/dark/learningRewardsProduct-0').content,
+  },
   lightbulbLearn: {
     light: () => require('../svgJs/light/lightbulbLearn-3').content,
     dark: () => require('../svgJs/dark/lightbulbLearn-3').content,

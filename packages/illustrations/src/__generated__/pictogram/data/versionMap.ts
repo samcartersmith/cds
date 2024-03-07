@@ -290,6 +290,7 @@ const versionMap: Record<PictogramName, number> = {
   baseLogoNavigation: 2,
   passport: 1,
   standWithCryptoLogoNavigation: 0,
+  learningRewardsProduct: 0,
 };
 
 export default versionMap;

@@ -153,6 +153,7 @@ const names: PictogramName[] = [
   'layerNetworks',
   'learn',
   'learningRewardsNavigation',
+  'learningRewardsProduct',
   'lightbulbLearn',
   'linkYourAccount',
   'listingFees',

@@ -348,6 +348,11 @@ const versionMap: Record<HeroSquareName, number> = {
   sustainable: 0,
   gamer: 0,
   private: 0,
+  lightingnetworkTransfer: 0,
+  lightingnetworkInvoice: 0,
+  realToUSDC: 0,
+  lightingnetwork: 0,
+  lightingnetworkSend: 0,
 };
 
 export default versionMap;

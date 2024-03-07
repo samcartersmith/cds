@@ -158,8 +158,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/coinbaseOneRewards-3').content,
   },
   coinbaseOneSavingFunds: {
-    light: () => require('../svgJs/light/coinbaseOneSavingFunds-2').content,
-    dark: () => require('../svgJs/dark/coinbaseOneSavingFunds-2').content,
+    light: () => require('../svgJs/light/coinbaseOneSavingFunds-3').content,
+    dark: () => require('../svgJs/dark/coinbaseOneSavingFunds-3').content,
   },
   coinbaseOneStakeOrWrap: {
     light: () => require('../svgJs/light/coinbaseOneStakeOrWrap-2').content,
@@ -350,8 +350,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/ethStakeOrWrap-3').content,
   },
   ethStakeOrWrapTwo: {
-    light: () => require('../svgJs/light/ethStakeOrWrapTwo-2').content,
-    dark: () => require('../svgJs/dark/ethStakeOrWrapTwo-2').content,
+    light: () => require('../svgJs/light/ethStakeOrWrapTwo-3').content,
+    dark: () => require('../svgJs/dark/ethStakeOrWrapTwo-3').content,
   },
   ethStaking: {
     light: () => require('../svgJs/light/ethStaking-3').content,
@@ -398,8 +398,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/getStartedInMinutes-4').content,
   },
   giftBoxCrypto: {
-    light: () => require('../svgJs/light/giftBoxCrypto-5').content,
-    dark: () => require('../svgJs/dark/giftBoxCrypto-5').content,
+    light: () => require('../svgJs/light/giftBoxCrypto-6').content,
+    dark: () => require('../svgJs/dark/giftBoxCrypto-6').content,
   },
   gifting: {
     light: () => require('../svgJs/light/gifting-5').content,

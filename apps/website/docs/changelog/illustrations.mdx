@@ -8,6 +8,42 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.9.0 (3/7/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 3/7/2024. [[#2821](https://github.cbhq.net/frontend/cds/pull/2821)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- lightingnetwork
+- lightingnetworkInvoice
+- lightingnetworkSend
+- lightingnetworkTransfer
+- realToUSDC
+
+#### Pictogram
+
+- learningRewardsProduct
+
+#### Spot Rectangle
+
+- lightingnetworkSend
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Square
+
+- coinbaseOneSavingFunds
+- ethStakeOrWrapTwo
+- giftBoxCrypto
+
 ## 2.8.0 (2/13/2024 PST)
 
 #### 🚀 Updates

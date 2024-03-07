@@ -413,6 +413,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/leverage-3').content,
     dark: () => require('../svgJs/dark/leverage-3').content,
   },
+  lightingnetworkSend: {
+    light: () => require('../svgJs/light/lightingnetworkSend-0').content,
+    dark: () => require('../svgJs/dark/lightingnetworkSend-0').content,
+  },
   linkCoinbaseWallet: {
     light: () => require('../svgJs/light/linkCoinbaseWallet-3').content,
     dark: () => require('../svgJs/dark/linkCoinbaseWallet-3').content,

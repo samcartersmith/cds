@@ -111,6 +111,7 @@ const names: SpotRectangleName[] = [
   'ledgerFailed',
   'ledgerSignatureRejected',
   'leverage',
+  'lightingnetworkSend',
   'linkCoinbaseWallet',
   'linkingYourWalletToYourCoinbaseAccount',
   'login',

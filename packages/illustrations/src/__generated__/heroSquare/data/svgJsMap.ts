@@ -789,6 +789,22 @@ const svgJsMap = {
     light: () => require('../svgJs/light/leverage-2').content,
     dark: () => require('../svgJs/dark/leverage-2').content,
   },
+  lightingnetwork: {
+    light: () => require('../svgJs/light/lightingnetwork-0').content,
+    dark: () => require('../svgJs/dark/lightingnetwork-0').content,
+  },
+  lightingnetworkInvoice: {
+    light: () => require('../svgJs/light/lightingnetworkInvoice-0').content,
+    dark: () => require('../svgJs/dark/lightingnetworkInvoice-0').content,
+  },
+  lightingnetworkSend: {
+    light: () => require('../svgJs/light/lightingnetworkSend-0').content,
+    dark: () => require('../svgJs/dark/lightingnetworkSend-0').content,
+  },
+  lightingnetworkTransfer: {
+    light: () => require('../svgJs/light/lightingnetworkTransfer-0').content,
+    dark: () => require('../svgJs/dark/lightingnetworkTransfer-0').content,
+  },
   limitOrders: {
     light: () => require('../svgJs/light/limitOrders-3').content,
     dark: () => require('../svgJs/dark/limitOrders-3').content,
@@ -1004,6 +1020,10 @@ const svgJsMap = {
   readyToTrade: {
     light: () => require('../svgJs/light/readyToTrade-2').content,
     dark: () => require('../svgJs/dark/readyToTrade-2').content,
+  },
+  realToUSDC: {
+    light: () => require('../svgJs/light/realToUSDC-0').content,
+    dark: () => require('../svgJs/dark/realToUSDC-0').content,
   },
   receivedCard: {
     light: () => require('../svgJs/light/receivedCard-2').content,
