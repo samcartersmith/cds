@@ -82,6 +82,7 @@ import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
 import { useModal } from '@cbhq/cds-web/overlays/useModal';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
+import { SectionHeader } from '@cbhq/cds-web/section-header/SectionHeader';
 import { insetFocusRing } from '@cbhq/cds-web/styles/focus';
 import * as CDSSystem from '@cbhq/cds-web/system';
 import { BrowserOnly } from '@cbhq/cds-web/system/BrowserOnly';
@@ -260,6 +261,7 @@ const ReactLiveScope: unknown = {
   nftData,
   NFTTile,
   nftTagNames,
+  SectionHeader,
 };
 
 export default ReactLiveScope;

@@ -114,7 +114,18 @@ function NavigationRecipe() {
   return (
     <PortalProvider>
       <HStack>
-        <Sidebar collapsed={isCollapsed} logo={<LogoMark />}>
+        <Sidebar
+          collapsed={isCollapsed}
+          logo={
+            isCollapsed ? (
+              <LogoMark />
+            ) : (
+              <Box height={32}>
+                <SubBrandLogoMark type="wallet" />
+              </Box>
+            )
+          }
+        >
           {navItems.map((props, index) => (
             <SidebarItem
               key={`sidebar-item--${props.title}`}

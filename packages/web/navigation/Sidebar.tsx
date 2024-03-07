@@ -6,7 +6,7 @@ import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { useDimensions } from '../hooks/useDimensions';
-import { Box, VStack } from '../layout';
+import { Box, BoxProps, VStack } from '../layout';
 import { deviceBreakpoints } from '../layout/breakpoints';
 import { ThemeProvider } from '../system/ThemeProvider';
 
@@ -29,8 +29,14 @@ const ulClassName = css`
   padding: 0;
 `;
 
-type BreakpointProps = { collapsed: number; expanded: number };
-const WIDTH: BreakpointProps = { collapsed: 87, expanded: 240 };
+type BreakpointProps = {
+  default: { collapsed: number; expanded: number };
+  condensed: number;
+};
+const WIDTH: BreakpointProps = {
+  default: { collapsed: 87, expanded: 240 },
+  condensed: 88,
+};
 const BREAKPOINT_CONFIG = {
   breakpoints: { collapsed: 0, expanded: deviceBreakpoints.tablet },
   updateOnBreakpointChange: true,
@@ -41,7 +47,7 @@ export type SidebarProps = {
    * The logo to display
    * @default undefined
    */
-  logo?: ReactElement;
+  logo?: ReactElement | ((isCollapsed: boolean) => ReactNode);
   /**
    * Children are expected to be an array of SidebarItems
    * @default undefined
@@ -63,8 +69,10 @@ export type SidebarProps = {
    * @default undefined
    */
   renderEnd?: (isCollapsed: boolean) => ReactNode;
+  variant?: 'default' | 'condensed';
 } & SharedProps &
-  SharedAccessibilityProps;
+  SharedAccessibilityProps &
+  Pick<BoxProps, 'width'>;
 
 export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
   ({
@@ -75,6 +83,8 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
     testID,
     renderEnd,
     accessibilityLabel = 'Sidebar',
+    width,
+    variant = 'default',
     ...rest
   }) => {
     const { ref, currentBreakpoint } = useDimensions(BREAKPOINT_CONFIG);
@@ -88,19 +98,42 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
       () => collapsed || (autoCollapse && currentBreakpoint === 'collapsed'),
       [autoCollapse, collapsed, currentBreakpoint],
     );
-    const computedWidth = useMemo(
-      () => (computedCollapse ? WIDTH.collapsed : WIDTH.expanded),
-      [computedCollapse],
+    const computedWidth = useMemo(() => {
+      if (variant === 'default')
+        return computedCollapse ? WIDTH.default.collapsed : WIDTH.default.expanded;
+      return WIDTH.condensed;
+    }, [computedCollapse, variant]);
+    const sidebarContext = useMemo(
+      () => ({ collapsed: computedCollapse, variant }),
+      [computedCollapse, variant],
     );
-    const sidebarContext = useMemo(() => ({ collapsed: computedCollapse }), [computedCollapse]);
 
     const liWrappedChildren = useMemo(
       () => Children.map(children, (child) => <li className={liClassName}>{child}</li>),
       [children],
     );
 
+    // only center logo and end content on condensed sidebar
+    const logoStyles = useMemo(
+      () =>
+        (variant === 'default'
+          ? { spacingStart: 1, spacingBottom: 4 }
+          : { alignItems: 'center', spacingStart: 0, spacingBottom: 7 }) as BoxProps,
+      [variant],
+    );
+
+    const renderEndStyles = useMemo(
+      () => (variant === 'default' ? {} : { justifyContent: 'center' }) as BoxProps,
+      [variant],
+    );
+
+    const listStyles = useMemo(
+      () => (variant === 'default' ? { offsetStart: 0.5 } : {}) as BoxProps,
+      [variant],
+    );
+
     return (
-      <ThemeProvider display="contents" scale={DEFAULT_SCALE}>
+      <ThemeProvider display="contents" scale={variant === 'default' ? DEFAULT_SCALE : 'xSmall'}>
         <SidebarProvider value={sidebarContext}>
           <VStack
             background
@@ -113,26 +146,30 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
             left="0"
             minWidth={computedWidth}
             position="sticky"
-            spacingBottom={2}
+            spacingBottom={variant === 'default' ? 2 : 3}
             spacingHorizontal={sidebarHorizontalSpacing}
-            spacingTop={2}
+            spacingTop={variant === 'default' ? 2 : 3}
             testID={testID}
             top="0"
-            width={computedWidth}
+            width={width ?? computedWidth}
             zIndex={zIndex.navigation}
             {...rest}
           >
             <VStack>
               {logo && (
-                <VStack spacingBottom={4} spacingStart={1} spacingTop={1}>
-                  {logo}
+                <VStack spacingTop={1} testID="sidebar-logo" {...logoStyles}>
+                  {typeof logo === 'function' ? logo(!!computedCollapse) : logo}
                 </VStack>
               )}
-              <VStack as="ul" className={ulClassName} gap={0.5} offsetStart={0.5}>
+              <VStack as="ul" className={ulClassName} gap={0.5} {...listStyles}>
                 {liWrappedChildren}
               </VStack>
             </VStack>
-            {!!renderEnd && <Box spacingTop={4}>{renderEnd(!!computedCollapse)}</Box>}
+            {!!renderEnd && (
+              <Box spacingTop={4} testID="sidebar-end" {...renderEndStyles}>
+                {renderEnd(!!computedCollapse)}
+              </Box>
+            )}
           </VStack>
           <span ref={ref} className={breakpointObserverClassName} />
         </SidebarProvider>

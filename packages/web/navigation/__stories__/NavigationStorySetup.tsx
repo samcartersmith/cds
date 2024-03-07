@@ -8,15 +8,17 @@ import { ProfileMenu } from '../../__stories__/ProfileMenu.stories';
 import { AvatarButton, IconButton, NavigationIconButton } from '../../buttons';
 import { SelectOption } from '../../controls';
 import { LogoMark, NavigationIcon } from '../../icons';
+import { SubBrandLogoMark } from '../../icons';
 import { Pictogram } from '../../illustrations';
 import { HStack, VStack } from '../../layout';
+import { Box } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { PortalProvider } from '../../overlays/PortalProvider';
 import { Pressable } from '../../system';
 import { TabNavigation } from '../../tabs';
 import { MockTabPanel } from '../../tabs/__stories__/MockTabPanel';
 import { palette } from '../../tokens';
-import { TextDisplay2, TextHeadline, TextLegal } from '../../typography';
+import { TextDisplay2, TextHeadline, TextLabel1, TextLegal } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
 import { navLinkClassName } from '../NavLink';
 import { SidebarItem, SidebarItemProps } from '../SidebarItem';
@@ -27,6 +29,7 @@ import {
   Sidebar,
   SidebarMoreMenu,
   SidebarMoreMenuProps,
+  SidebarProps,
 } from '..';
 
 export const StoryMap = {
@@ -35,7 +38,11 @@ export const StoryMap = {
 };
 
 // Helpers
-type Items = { title: string; icon: SidebarItemProps['icon'] }[];
+type Items = {
+  title: string;
+  icon: SidebarItemProps['icon'];
+  Component?: SidebarItemProps['Component'];
+}[];
 export const items: Items = [
   { title: 'Assets', icon: 'chartPie' },
   { title: 'Trade', icon: 'trading' },
@@ -244,7 +251,37 @@ export const NavLinkExample = () => {
   );
 };
 
+const renderCustomSidebarItem: SidebarItemProps['Component'] = ({
+  color,
+  title,
+  active,
+  icon,
+  isCollapsed,
+}) => (
+  <HStack alignItems="center" gap={2} justifyContent="center" spacing={2}>
+    {isCollapsed ? (
+      <NavigationIcon active={active} name={icon} />
+    ) : (
+      <TextHeadline as="span" color={color}>
+        {title}
+      </TextHeadline>
+    )}
+  </HStack>
+);
+
+const renderAnotherCustomItem: SidebarItemProps['Component'] = ({ color, title, active, icon }) => (
+  <VStack alignItems="center" gap={0.5} spacing={2}>
+    <NavigationIcon active={active} name={icon} />
+    <TextLabel1 as="span" color={color}>
+      {title}
+    </TextLabel1>
+  </VStack>
+);
+
 const navItems = items.slice(0, 4);
+const customNavItems = items
+  .slice(0, 4)
+  .map((item) => ({ ...item, Component: renderCustomSidebarItem }));
 const moreMenuOptions = items.slice(4);
 const renderCB1 = (isCollapsed: boolean) => {
   const spacing = isCollapsed ? 1 : 2;
@@ -274,7 +311,7 @@ type SidebarExampleProps = {
   children?: React.ReactNode;
 } & Omit<SidebarMoreMenuProps, 'children'>;
 
-export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
+export const DefaultSidebarExample = ({ children, ...props }: SidebarExampleProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
 
@@ -337,4 +374,179 @@ export const SidebarExample = ({ children, ...props }: SidebarExampleProps) => {
     </PortalProvider>
   );
 };
-SidebarExample.parameters = { percy: enableJavascript };
+
+export const CondensedSidebarExample = ({ children, ...props }: SidebarExampleProps) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
+
+  const handleMoreMenuChange = (newValue: string) => {
+    const moreIndex =
+      moreMenuOptions.findIndex((option) => option.title === newValue) + navItems.length;
+    setActiveIndex(moreIndex);
+    setMoreMenuValue(newValue);
+  };
+
+  const handleItemPress = (index: number) => {
+    setActiveIndex(index);
+    setMoreMenuValue(undefined);
+  };
+
+  return (
+    <PortalProvider>
+      <HStack
+        alignItems="flex-start"
+        background="backgroundAlternate"
+        justifyContent="center"
+        overflow="hidden"
+      >
+        <Sidebar logo={<LogoMark />} renderEnd={() => renderCB1(true)} variant="condensed">
+          {navItems.map((item, index) => {
+            const active = index === activeIndex;
+            return (
+              <SidebarItem
+                key={`sidebar-item--${item.title}`}
+                active={active}
+                onPress={() => handleItemPress(index)}
+                {...item}
+              />
+            );
+          })}
+          <SidebarMoreMenu
+            active={activeIndex >= navItems.length}
+            onChange={handleMoreMenuChange}
+            value={moreMenuValue}
+            {...props}
+          >
+            {moreMenuOptions.map((item) => (
+              <SelectOption
+                key={`sidebar-more-menu-item--${item.title}`}
+                description={item.title}
+                media={<NavigationIcon name={item.icon} />}
+                value={item.title}
+              />
+            ))}
+          </SidebarMoreMenu>
+        </Sidebar>
+        <VStack flexGrow={1} gap={1} justifyContent="space-between" spacing={2}>
+          <TextHeadline as="h2">
+            Active Page: {[...items, ...moreMenuOptions][activeIndex].title}
+          </TextHeadline>
+          <HStack alignItems="center" flexGrow={1} justifyContent="center" spacing={3}>
+            {children}
+          </HStack>
+        </VStack>
+      </HStack>
+    </PortalProvider>
+  );
+};
+
+export const CustomSidebarExample = ({ children, ...props }: SidebarExampleProps) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [moreMenuValue, setMoreMenuValue] = useState<string | undefined>(undefined);
+
+  const handleMoreMenuChange = (newValue: string) => {
+    const moreIndex =
+      moreMenuOptions.findIndex((option) => option.title === newValue) + navItems.length;
+    setActiveIndex(moreIndex);
+    setMoreMenuValue(newValue);
+  };
+
+  const handleItemPress = (index: number) => {
+    setActiveIndex(index);
+    setMoreMenuValue(undefined);
+  };
+
+  const renderLogo = (isCollapsed: boolean) => {
+    return isCollapsed ? (
+      <LogoMark />
+    ) : (
+      <Box height={32}>
+        <SubBrandLogoMark type="wallet" />
+      </Box>
+    );
+  };
+
+  return (
+    <PortalProvider>
+      <HStack
+        alignItems="flex-start"
+        background="backgroundAlternate"
+        justifyContent="center"
+        overflow="hidden"
+      >
+        <Sidebar autoCollapse logo={renderLogo} renderEnd={renderCB1}>
+          {customNavItems.map((item, index) => {
+            const active = index === activeIndex;
+            return (
+              <SidebarItem
+                key={`sidebar-item--${item.title}`}
+                active={active}
+                borderRadius="roundedSmall"
+                onPress={() => handleItemPress(index)}
+                tooltipContent={item.title}
+                {...item}
+              />
+            );
+          })}
+          <SidebarMoreMenu
+            Component={renderAnotherCustomItem}
+            active={activeIndex >= customNavItems.length}
+            borderRadius="roundedSmall"
+            onChange={handleMoreMenuChange}
+            value={moreMenuValue}
+            {...props}
+          >
+            {moreMenuOptions.map((item) => (
+              <SelectOption
+                key={`sidebar-more-menu-item--${item.title}`}
+                description={item.title}
+                media={<NavigationIcon name={item.icon} />}
+                value={item.title}
+              />
+            ))}
+          </SidebarMoreMenu>
+        </Sidebar>
+        <VStack flexGrow={1} gap={1} justifyContent="space-between" spacing={2}>
+          <TextHeadline as="h2">
+            Active Page: {[...items, ...moreMenuOptions][activeIndex].title}
+          </TextHeadline>
+          <HStack alignItems="center" flexGrow={1} justifyContent="center" spacing={3}>
+            {children}
+          </HStack>
+        </VStack>
+      </HStack>
+    </PortalProvider>
+  );
+};
+
+export const MockSidebar = ({ ...props }: Partial<SidebarProps>) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleItemPress = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  return (
+    <PortalProvider>
+      <HStack
+        alignItems="flex-start"
+        background="backgroundAlternate"
+        justifyContent="center"
+        overflow="hidden"
+      >
+        <Sidebar logo={<LogoMark />} renderEnd={renderCB1} testID="sidebar" {...props}>
+          {navItems.slice(0, 1).map((item, index) => (
+            <SidebarItem
+              key={`sidebar-item--${item.title}`}
+              active={index === activeIndex}
+              onPress={() => handleItemPress(index)}
+              tooltipContent={item.title}
+              {...item}
+            />
+          ))}
+        </Sidebar>
+      </HStack>
+    </PortalProvider>
+  );
+};
+DefaultSidebarExample.parameters = { percy: enableJavascript };

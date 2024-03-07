@@ -84,6 +84,7 @@ export * from './Responsive';
 export * from './ResponsiveProps';
 export * from './Scale';
 export * from './SearchInputBaseProps';
+export * from './SectionHeaderProps';
 export * from './SelectBaseProps';
 export * from './SelectOptionBaseProps';
 export * from './ShakeBaseProps';

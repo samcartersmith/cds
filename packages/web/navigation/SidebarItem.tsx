@@ -2,13 +2,21 @@ import React, { forwardRef, memo, ReactNode, useMemo } from 'react';
 import { ForwardedRef, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { NavigationIcon, NavigationIconProps } from '../icons';
-import { HStack } from '../layout';
+import { HStack, VStack } from '../layout';
 import { Tooltip } from '../overlays';
 import { TooltipProps } from '../overlays/Tooltip/TooltipProps';
-import { Pressable } from '../system';
-import { LinkProps, TextHeadline } from '../typography';
+import { Pressable, PressableInternalProps } from '../system';
+import { LinkProps, TextHeadline, TextLabel1 } from '../typography';
 
 import { useSidebarContext } from './SidebarContext';
+
+type CustomSidebarItemProps = {
+  isCollapsed?: boolean;
+  color: 'primary' | 'foreground';
+  title: string;
+  active?: boolean;
+  icon: NavigationIconProps['name'];
+};
 
 export type SidebarItemProps = {
   /**
@@ -48,11 +56,13 @@ export type SidebarItemProps = {
   active?: boolean;
   /** Label or content to display when Sidebar is collapsed and side bar more menu is hovered */
   tooltipContent?: ReactNode;
+  Component?: (props: CustomSidebarItemProps) => React.ReactElement;
 } & SharedProps &
   SharedAccessibilityProps &
   Pick<TooltipProps, 'disablePortal'> &
   Pick<React.AllHTMLAttributes<Element>, 'target'> &
-  Pick<LinkProps, 'openInNewWindow'>;
+  Pick<LinkProps, 'openInNewWindow'> &
+  Pick<PressableInternalProps, 'borderRadius'>;
 
 export const SidebarItem = memo(
   forwardRef(
@@ -68,13 +78,49 @@ export const SidebarItem = memo(
         tooltipContent,
         disablePortal,
         accessibilityLabel = title,
+        Component,
+        borderRadius,
         ...rest
       }: SidebarItemProps,
       ref: ForwardedRef<HTMLButtonElement>,
     ) => {
       const color = active ? 'primary' : 'foreground';
-      const { collapsed: computedCollapsed } = useSidebarContext();
+      const { collapsed: computedCollapsed, variant } = useSidebarContext();
       const isCollapsed = collapsed ?? computedCollapsed;
+
+      const defaultComponent = useMemo(
+        () =>
+          variant === 'default' ? (
+            <HStack
+              alignItems="center"
+              gap={2}
+              justifyContent="flex-start"
+              spacing={2}
+              testID="sidebar-item-primary"
+            >
+              <NavigationIcon active={active} name={icon} />
+              {!isCollapsed && (
+                <TextHeadline as="span" color={color}>
+                  {title}
+                </TextHeadline>
+              )}
+            </HStack>
+          ) : (
+            <VStack
+              alignItems="center"
+              gap={0.5}
+              spacingHorizontal={1}
+              spacingVertical={1.5}
+              testID="sidebar-item-condensed"
+            >
+              <NavigationIcon active={active} name={icon} size="l" />
+              <TextLabel1 align="center" as="span" color={color} numberOfLines={1} overflow="break">
+                {title}
+              </TextLabel1>
+            </VStack>
+          ),
+        [active, icon, title, color, variant, isCollapsed],
+      );
 
       const content = useMemo(
         () => (
@@ -83,7 +129,8 @@ export const SidebarItem = memo(
             accessibilityLabel={isCollapsed ? accessibilityLabel : undefined}
             aria-current={active ? 'page' : undefined}
             background="primaryWash"
-            borderRadius="roundedFull"
+            borderRadius={borderRadius ?? (variant === 'default' ? 'roundedFull' : 'roundedLarge')}
+            borderWidth={variant === 'condensed' ? 'none' : undefined}
             onPress={onPress}
             testID={testID}
             to={to}
@@ -91,14 +138,17 @@ export const SidebarItem = memo(
             width="100%"
             {...rest}
           >
-            <HStack alignItems="center" gap={2} justifyContent="flex-start" spacing={2}>
-              <NavigationIcon active={active} name={icon} />
-              {!isCollapsed && (
-                <TextHeadline as="span" color={color}>
-                  {title}
-                </TextHeadline>
-              )}
-            </HStack>
+            {Component ? (
+              <Component
+                active={active}
+                color={color}
+                icon={icon}
+                isCollapsed={isCollapsed}
+                title={title}
+              />
+            ) : (
+              defaultComponent
+            )}
           </Pressable>
         ),
         [
@@ -113,6 +163,10 @@ export const SidebarItem = memo(
           isCollapsed,
           color,
           title,
+          Component,
+          variant,
+          defaultComponent,
+          borderRadius,
         ],
       );
 

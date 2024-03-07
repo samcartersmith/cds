@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.1.0 (3/7/2024 PST)
+
+#### 🚀 Updates
+
+- Phoenix Q1 Rollout 1 - NumPad, SectionHeader, LogoWordMark, SideBarItem. [[#2817](https://github.cbhq.net/frontend/cds/pull/2817)] [[DX-3002](https://jira.coinbase-corp.com/browse/DX-3002)]
+
 ## 6.0.3 (3/4/2024 PST)
 
 #### 🐞 Fixes

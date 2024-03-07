@@ -249,6 +249,10 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/cards/__stories__/NudgeCard.stories').default,
   },
   {
+    key: 'Numpad',
+    getComponent: () => require('@cbhq/cds-mobile/numpad/__stories__/Numpad.stories').default,
+  },
+  {
     key: 'Overlay',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Overlay.stories').default,
   },
@@ -323,6 +327,11 @@ export const routes = [
     key: 'SearchInput',
     getComponent: () =>
       require('@cbhq/cds-mobile/controls/__stories__/SearchInput.stories').default,
+  },
+  {
+    key: 'SectionHeader',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/section-header/__stories__/SectionHeader.stories').default,
   },
   {
     key: 'Select',

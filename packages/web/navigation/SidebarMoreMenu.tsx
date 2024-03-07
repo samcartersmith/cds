@@ -19,7 +19,7 @@ export type SidebarMoreMenuProps = {
    */
   triggerTitle?: string;
 } & Pick<DropdownProps, 'value' | 'onBlur' | 'disablePortal' | 'onChange'> &
-  Pick<SidebarItemProps, 'active' | 'tooltipContent' | 'onPress'> &
+  Pick<SidebarItemProps, 'active' | 'tooltipContent' | 'onPress' | 'Component' | 'borderRadius'> &
   SharedProps;
 
 export const SidebarMoreMenu = memo(function SidebarMoreMenu({
@@ -30,6 +30,8 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
   tooltipContent,
   disablePortal,
   triggerTitle = 'More',
+  Component,
+  borderRadius,
   ...props
 }: SidebarMoreMenuProps) {
   const [visible, setVisible] = useState(false);
@@ -53,7 +55,9 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
     () => (
       <SidebarItem
         ref={triggerRef}
+        Component={Component}
         active={active}
+        borderRadius={borderRadius}
         icon="moreVertical"
         onPress={onPress}
         testID="sidebar-more-menu-trigger"
@@ -61,7 +65,7 @@ export const SidebarMoreMenu = memo(function SidebarMoreMenu({
         {...triggerAccessibilityProps}
       />
     ),
-    [onPress, active, triggerTitle, triggerAccessibilityProps],
+    [onPress, active, triggerTitle, triggerAccessibilityProps, Component, borderRadius],
   );
 
   const trigger = useMemo(() => {

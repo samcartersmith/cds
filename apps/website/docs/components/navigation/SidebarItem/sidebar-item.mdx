@@ -8,16 +8,20 @@ import Usage, { toc as usageToc } from './_usage.mdx';
 import Example, { toc as exampleToc } from './_example.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 
-<Tabs groupId="page">
-  <TabItem
-    value="implementation"
-    label="Implementation"
-    toc={[...metadataToc, ...usageToc, ...exampleToc, ...implementationToc]}
-  >
-    <Metadata />
-    <Usage />
-    <Example />
-    <Implementation />
-  </TabItem>
-
-</Tabs>
+<Page
+  propsTable={{ element: <Implementation />, toc: implementationToc }}
+  metadata={{ element: <Metadata />, toc: metadataToc }}
+  fallback={
+    <Tabs groupId="page">
+      <TabItem
+        value="implementation"
+        label="Implementation"
+        toc={[...metadataToc, ...usageToc, ...exampleToc, ...implementationToc]}
+      >
+        <Metadata />
+        <Usage />
+        <Implementation />
+      </TabItem>
+    </Tabs>
+  }
+/>

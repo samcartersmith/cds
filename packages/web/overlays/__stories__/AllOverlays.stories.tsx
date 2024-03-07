@@ -7,7 +7,7 @@ import { SelectOption } from '../../controls/SelectOption';
 import { Default as DropdownExample } from '../../dropdown/__stories__/Dropdown.stories';
 import { DropdownProps } from '../../dropdown/DropdownProps';
 import { VStack } from '../../layout';
-import { SidebarExample } from '../../navigation/__stories__/NavigationStorySetup';
+import { DefaultSidebarExample } from '../../navigation/__stories__/NavigationStorySetup';
 import { TextBody } from '../../typography/TextBody';
 import { enableJavascript } from '../../utils/storybookParams/percy';
 import { Alert } from '../Alert';
@@ -90,9 +90,9 @@ const CompositeOverlays = ({ disablePortal = false }: Pick<DropdownProps, 'disab
   ]);
 
   return (
-    <SidebarExample disablePortal={disablePortal}>
+    <DefaultSidebarExample disablePortal={disablePortal}>
       <Button onPress={handleModalTriggerPress}>Open Modal</Button>
-    </SidebarExample>
+    </DefaultSidebarExample>
   );
 };
 CompositeOverlays.parameters = { percy: enableJavascript };

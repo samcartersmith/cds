@@ -6,7 +6,7 @@ import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-we
 
 const PropsTable = memo(function PropsTable({ props, sharedTypeAliases }: PropsTableProps) {
   return (
-    <Box background offset={2} overflow="auto">
+    <Box background offsetHorizontal={2} overflow="auto">
       <Table tableLayout="fixed">
         <TableHeader>
           <TableRow>

@@ -67,6 +67,42 @@ export const LogoSheet = () => {
         <Box height={50} spacing={1}>
           <SubBrandLogoMark type="wallet" />
         </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="internationalExchange" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="account" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="card" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="cloud" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="nft" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="pay" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="help" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="tracer" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="exchange" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark type="one" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark foreground type="privateClient" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoMark foreground type="base" />
+        </Box>
       </VStack>
 
       <VStack>
@@ -80,10 +116,52 @@ export const LogoSheet = () => {
           <SubBrandLogoWordmark type="assetHub" />
         </Box>
         <Box height={50} spacing={1}>
-          <SubBrandLogoWordmark foreground type="commerce" />
+          <SubBrandLogoWordmark type="commerce" />
         </Box>
         <Box height={50} spacing={1}>
-          <SubBrandLogoWordmark foreground type="wallet" />
+          <SubBrandLogoWordmark type="wallet" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="internationalExchange" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="account" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="card" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="cloud" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="nft" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="derivativesExchange" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="pay" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="help" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="tracer" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="exchange" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark type="one" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark foreground type="privateClient" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark foreground type="advanced" />
+        </Box>
+        <Box height={50} spacing={1}>
+          <SubBrandLogoWordmark foreground type="prime" />
         </Box>
       </VStack>
     </VStack>

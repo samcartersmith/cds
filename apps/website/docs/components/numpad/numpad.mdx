@@ -1,6 +1,13 @@
 ---
 id: numpad
 title: Numpad
+slug: /components/numpad
 ---
 
-<Page />
+import Metadata, { toc as metadataToc } from './_metadata.mdx';
+import Implementation, { toc as implementationToc } from './_implementation.mdx';
+
+<Page
+  propsTable={{ element: <Implementation />, toc: implementationToc }}
+  metadata={{ element: <Metadata />, toc: metadataToc }}
+/>

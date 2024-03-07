@@ -78,20 +78,17 @@ const sidebars = {
               description:
                 'Guidelines for creating equally usable, relevant, and meaningful experiences globally.',
             },
-            tag: 'new',
           },
           items: [
             {
               type: 'doc',
               id: 'foundation/international/design',
               label: 'Design',
-              customProps: { tag: 'new' },
             },
             {
               type: 'doc',
               id: 'foundation/international/content',
               label: 'Content',
-              customProps: { tag: 'new' },
             },
           ],
         },
@@ -136,6 +133,7 @@ const sidebars = {
           pictogram: 'connectNavigation',
           description: 'Illustration, icons, and logos for building immersive experiences.',
         },
+        tag: 'new',
       },
       items: [
         {
@@ -214,11 +212,31 @@ const sidebars = {
         {
           type: 'category',
           label: 'Logos',
+          customProps: { tag: 'new' },
           items: [
-            'components/icons/LogoMark/logo-mark',
-            'components/icons/LogoWordmark/logo-wordmark',
-            'components/icons/SubBrandLogoMark/sub-brand-logo-mark',
-            'components/icons/SubBrandLogoWordmark/sub-brand-logo-wordmark',
+            {
+              type: 'doc',
+              id: 'components/icons/LogoMark/logo-mark',
+              label: 'LogoMark',
+            },
+            {
+              type: 'doc',
+              id: 'components/icons/LogoWordmark/logo-wordmark',
+              label: 'LogoWordmark',
+              customProps: { tag: 'new' },
+            },
+            {
+              type: 'doc',
+              id: 'components/icons/SubBrandLogoMark/sub-brand-logo-mark',
+              label: 'SubBrandLogoMark',
+              customProps: { tag: 'new' },
+            },
+            {
+              type: 'doc',
+              id: 'components/icons/SubBrandLogoWordmark/sub-brand-logo-wordmark',
+              label: 'SubBrandLogoWordmark',
+              customProps: { tag: 'new' },
+            },
           ],
         },
       ],
@@ -227,6 +245,7 @@ const sidebars = {
       type: 'category',
       label: 'Components',
       customProps: {
+        tag: 'new',
         kbar: {
           pictogram: 'rosettaNavigation',
           description: 'Design guidelines, figma resources and code components',
@@ -273,7 +292,6 @@ const sidebars = {
           type: 'doc',
           id: 'components/app-switcher/app-switcher',
           label: 'App Switcher',
-          customProps: { tag: 'new' },
         },
         { type: 'doc', id: 'components/layout/Box/box', label: 'Box' },
         {
@@ -297,7 +315,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'Card',
-          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
@@ -323,25 +340,21 @@ const sidebars = {
               type: 'doc',
               id: 'components/cards/NudgeCard/nudge-card',
               label: 'Nudge Card',
-              customProps: { tag: 'new' },
             },
             {
               type: 'doc',
               id: 'components/cards/FloatingAssetCard/floating-asset-card',
               label: 'Floating Asset Card',
-              customProps: { tag: 'new' },
             },
             {
               type: 'doc',
               id: 'components/cards/ContainedAssetCard/contained-asset-card',
               label: 'Contained Asset Card',
-              customProps: { tag: 'new' },
             },
             {
               type: 'doc',
               id: 'components/cards/UpsellCard/upsell-card',
               label: 'Upsell Card',
-              customProps: { tag: 'new' },
             },
           ],
         },
@@ -368,7 +381,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'Chips',
-          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
@@ -481,7 +493,8 @@ const sidebars = {
         {
           type: 'doc',
           id: 'components/numpad/numpad',
-          label: 'Numpad 🚧',
+          label: 'Numpad',
+          customProps: { tag: 'new' },
         },
         {
           type: 'category',
@@ -491,7 +504,6 @@ const sidebars = {
               type: 'doc',
               id: 'components/navigation/NavigationBar/navigation-bar',
               label: 'Navigation Bar',
-              customProps: { tag: 'new' },
             },
             {
               type: 'ref',
@@ -510,7 +522,6 @@ const sidebars = {
               label: 'Navigation Title',
             },
           ],
-          customProps: { tag: 'new' },
         },
         {
           type: 'category',
@@ -529,7 +540,6 @@ const sidebars = {
           type: 'doc',
           id: 'components/profile-menu/profile-menu',
           label: 'Profile Menu',
-          customProps: { tag: 'new' },
         },
         {
           type: 'category',
@@ -546,8 +556,9 @@ const sidebars = {
         { type: 'doc', id: 'components/controls/SearchInput/search-input', label: 'Search Input' },
         {
           type: 'doc',
-          id: 'components/section-title/section-title',
-          label: 'Section Title 🚧',
+          id: 'components/section-header/section-header',
+          label: 'Section Header',
+          customProps: { tag: 'new' },
         },
         {
           type: 'doc',
@@ -619,7 +630,6 @@ const sidebars = {
           type: 'doc',
           id: 'components/sticky-footer/sticky-footer',
           label: 'StickyFooter',
-          customProps: { tag: 'new' },
         },
         { type: 'doc', id: 'components/controls/Switch/switch', label: 'Switch' },
         {
@@ -642,13 +652,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'Table',
-          customProps: { tag: 'new' },
           items: [
             {
               type: 'doc',
               id: 'components/tables/Table/table',
               label: 'Table',
-              customProps: { tag: 'new' },
             },
             { type: 'doc', id: 'components/tables/TableBody/table-body', label: 'Table Body' },
             {
@@ -771,9 +779,7 @@ const sidebars = {
           type: 'doc',
           id: 'patterns/navigation',
           label: 'Navigation',
-          customProps: {
-            tag: 'new',
-          },
+          customProps: {},
         },
       ],
       customProps: {
