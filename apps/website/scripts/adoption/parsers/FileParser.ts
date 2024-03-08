@@ -129,6 +129,7 @@ export class FileParser {
     } catch (err) {
       if (err instanceof Error) {
         this.project.spinner.fail(`FilesParser failed ${err?.message}`);
+        process.exit(1); // Exit the process with an error code
       } else {
         throw err;
       }

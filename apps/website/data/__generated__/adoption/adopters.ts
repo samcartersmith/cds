@@ -17,7 +17,6 @@ export const adopters = [
   { id: 'wallet-extension', pillar: 'Consumer' },
   { id: 'wallet-react-native', pillar: 'Consumer' },
   { id: 'wallet-dapp', pillar: 'Consumer' },
-  { id: 'stand-with-crypto', pillar: 'Consumer' },
   { id: 'prime-mobile', pillar: 'Institutional' },
   { id: 'prime-web', pillar: 'Institutional' },
   { id: 'prime-admin', pillar: 'Institutional' },

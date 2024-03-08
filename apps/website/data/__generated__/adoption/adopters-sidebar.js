@@ -26,7 +26,6 @@ module.exports.adopters = [
       { type: 'doc', id: 'adoption-tracker/wallet-extension', label: 'Wallet Chrome Extension' },
       { type: 'doc', id: 'adoption-tracker/wallet-react-native', label: 'Wallet React Native' },
       { type: 'doc', id: 'adoption-tracker/wallet-dapp', label: 'Wallet Dapp' },
-      { type: 'doc', id: 'adoption-tracker/stand-with-crypto', label: 'Stand With Crypto' },
     ],
   },
   {

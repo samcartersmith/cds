@@ -274,15 +274,6 @@ export const config: AdoptersConfig[] = [
         dependencyPath: path.join(tempDir, walletGit, 'workspaces/apps/dapp'),
         projectGitPath: 'workspaces/apps/dapp',
       },
-      {
-        root: path.join(tempDir, frontendWebGit, 'apps/stand-with-crypto'),
-        github: frontendWebGit,
-        id: 'stand-with-crypto',
-        label: 'Stand With Crypto',
-        projectTsAliases: [':stand-with-crypto'],
-        type: 'doc',
-        projectGitPath: 'apps/stand-with-crypto',
-      },
     ],
   },
   {
