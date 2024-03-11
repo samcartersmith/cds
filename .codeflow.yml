@@ -4,6 +4,8 @@ secure:
   branches:
     - master
     - cds5-master
+    - v5
+    - 6.2.0-beta.0
   auto_assign_reviewers: true
 build:
   engines:
