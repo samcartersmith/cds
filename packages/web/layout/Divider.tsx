@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'linaria';
-import { Separator } from 'reakit';
 import { DividerBaseProps } from '@cbhq/cds-common';
 
 import { palette } from '../tokens';
@@ -34,10 +33,10 @@ export const Divider = ({
 }: DividerProps) => {
   return (
     <Box alignItems="stretch" alignSelf="stretch" {...boxProps}>
-      <Separator
-        as="div"
+      <div
+        aria-orientation={direction}
         className={cx(styles[direction], styles[color])}
-        orientation={direction}
+        role="separator"
       />
     </Box>
   );

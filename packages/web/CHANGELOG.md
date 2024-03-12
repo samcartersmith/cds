@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.2.0 (3/12/2024 PST)
+
+#### 🚀 Updates
+
+- Refactor to remove dependency on Reakit. [[#2573](https://github.cbhq.net/frontend/cds/pull/2573)] [[DX-2866](https://jira.coinbase-corp.com/browse/DX-2866)]
+
+## 6.2.0-beta.0 (3/11/2024 PST)
+
+#### 🚀 Updates
+
+- Refactor to remove dependency on Reakit. [[#2573](https://github.cbhq.net/frontend/cds/pull/2573)] [[DX-2866](https://jira.coinbase-corp.com/browse/DX-2866)]
+
 ## 6.1.0 (3/7/2024 PST)
 
 #### 🚀 Updates

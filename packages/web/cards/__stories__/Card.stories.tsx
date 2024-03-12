@@ -1,4 +1,3 @@
-import { Button } from 'reakit';
 import { cardBuilder, CreateCardProps } from '@cbhq/cds-common/internal/cardBuilder';
 import { announcementCards } from '@cbhq/cds-common/internal/data/announcementCards';
 import { dataCards } from '@cbhq/cds-common/internal/data/dataCards';
@@ -7,7 +6,7 @@ import { feedCards } from '@cbhq/cds-common/internal/data/feedCards';
 import { baseConfig, storyBuilder } from '@cbhq/cds-common/internal/utils/storyBuilder';
 import { getFigmaAccessToken } from '@cbhq/cds-utils/env';
 
-import { IconButton } from '../../buttons';
+import { Button, IconButton } from '../../buttons';
 import { CellMedia, ListCell } from '../../cells';
 import { SpotSquare } from '../../illustrations';
 import { Box, VStack } from '../../layout';

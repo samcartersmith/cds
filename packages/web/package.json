@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-web",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "description": "Coinbase Design System - Web",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -26,8 +26,7 @@
     "focus-visible": "^5.2.0",
     "lodash": "^4.17.21",
     "lottie-web": "^5.7.6",
-    "react-popper": "^2.2.4",
-    "reakit": "^1.3.11"
+    "react-popper": "^2.2.4"
   },
   "peerDependencies": {
     "@cbhq/cds-icons": "workspace:^",

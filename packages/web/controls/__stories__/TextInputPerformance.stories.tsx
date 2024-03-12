@@ -9,7 +9,6 @@ export default {
   component: TextInput,
   decorators: [withPerformance],
   excludeStories: [
-    'CDSTextInput',
     'HTMLInput',
     'HundredCDSComponents',
     'HundredHTMLComponent',

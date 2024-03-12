@@ -3840,7 +3840,6 @@ __metadata:
     lodash: "npm:^4.17.21"
     lottie-web: "npm:^5.7.6"
     react-popper: "npm:^2.2.4"
-    reakit: "npm:^1.3.11"
   peerDependencies:
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
@@ -8457,7 +8456,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.5.4, @popperjs/core@npm:^2.9.0":
+"@popperjs/core@npm:^2.9.0":
   version: 2.11.2
   resolution: "@popperjs/core@npm:2.11.2"
   checksum: 88796d399a2464cc7b8636326c5454f32114d47f3d50e31ec34c6ab9df82c9e345f9dd71e9a33516dcd196106272399cf6d77d319795687b09feb3a70241956d
@@ -15108,13 +15107,6 @@ __metadata:
     type-is: "npm:~1.6.18"
     unpipe: "npm:1.0.0"
   checksum: 3cf171b82190cf91495c262b073e425fc0d9e25cc2bf4540d43f7e7bbca27d6a9eae65ca367b6ef3993eea261159d9d2ab37ce444e8979323952e12eb3df319a
-  languageName: node
-  linkType: hard
-
-"body-scroll-lock@npm:^3.1.5":
-  version: 3.1.5
-  resolution: "body-scroll-lock@npm:3.1.5"
-  checksum: c86f149e5c593b4533cbd8b8ce34c4de9d9c63836d460ecc95d60aa89a141db48e08f17e5229eeb6a6155f0b183bb5be7e52e5b1d156bb48a23bcfa93e665d7e
   languageName: node
   linkType: hard
 
@@ -34752,55 +34744,6 @@ __metadata:
   version: 1.3.0
   resolution: "readline@npm:1.3.0"
   checksum: 2cb7c274333fe1ed55e1bd06c670a32bd9eae5324d8e1fafb9af5c128dfde85601d59defe47947788b0682d5e9efeae6b88ea5fe233d5236a02f382a0b0ad4c3
-  languageName: node
-  linkType: hard
-
-"reakit-system@npm:^0.15.2":
-  version: 0.15.2
-  resolution: "reakit-system@npm:0.15.2"
-  dependencies:
-    reakit-utils: "npm:^0.15.2"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-    react-dom: ^16.8.0 || ^17.0.0
-  checksum: 015ad92bef189f17c25d576682cf20e3b52e3eb9aa18208cb2dce2059de2b0bbdf5ba3b2c91850181aa704ed8a03ad267d0bb4f9370444a7a900f8cae62bf5b4
-  languageName: node
-  linkType: hard
-
-"reakit-utils@npm:^0.15.2":
-  version: 0.15.2
-  resolution: "reakit-utils@npm:0.15.2"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-    react-dom: ^16.8.0 || ^17.0.0
-  checksum: 3992c54baffee33b804b4e97a5d5edba4769e3e2b212a7676075d2a00c108924660d670e05bbddb43da1c3b9ef4254e9d71b48d486ba44692d921bf49249b7dc
-  languageName: node
-  linkType: hard
-
-"reakit-warning@npm:^0.6.2":
-  version: 0.6.2
-  resolution: "reakit-warning@npm:0.6.2"
-  dependencies:
-    reakit-utils: "npm:^0.15.2"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-  checksum: d729d5ef7bdcea3ef5f0695272e2f64651be81ffc92cb3c8867de2f0e2e68801fa920a423bdc18027eab587d12efd7c0ba7b0912212d27f5e18eb087348b045e
-  languageName: node
-  linkType: hard
-
-"reakit@npm:^1.3.11":
-  version: 1.3.11
-  resolution: "reakit@npm:1.3.11"
-  dependencies:
-    "@popperjs/core": "npm:^2.5.4"
-    body-scroll-lock: "npm:^3.1.5"
-    reakit-system: "npm:^0.15.2"
-    reakit-utils: "npm:^0.15.2"
-    reakit-warning: "npm:^0.6.2"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-    react-dom: ^16.8.0 || ^17.0.0
-  checksum: 9c45da6b2a5ee0a3f306912abbc0840aca6bd31c12c370c7cdfa64ed41559c9b6e9ea6e8a32f31805d04af6ab7c2e690fdc4b7e9231de6fe76a08be3413fef1f
   languageName: node
   linkType: hard
 

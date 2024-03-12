@@ -8,7 +8,6 @@ export default {
   title: 'Core Components/Box/Performance',
   decorators: [withPerformance],
   excludeStories: [
-    'CDSBox',
     'SingleDiv',
     'HundredCDSComponents',
     'HundredHTMLComponent',

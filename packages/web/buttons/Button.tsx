@@ -1,5 +1,4 @@
 import React, { forwardRef, useMemo } from 'react';
-import { ButtonProps as ReakitButtonProps } from 'reakit';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
@@ -18,20 +17,20 @@ import { cx } from '../utils/linaria';
 
 import * as buttonStyles from './buttonStyles';
 
+type ButtonA11yProps = {
+  disabled?: boolean;
+  focusable?: boolean;
+};
+
 export type ButtonProps = ButtonBaseProps &
+  ButtonA11yProps &
   PressableProps &
-  Omit<
-    ReakitButtonProps,
-    | 'children'
-    | 'className'
-    | 'onClick'
-    | 'onClickCapture'
-    | 'style'
-    | 'unstable_clickOnEnter'
-    | 'unstable_clickOnSpace'
-    | 'unstable_system'
-    | 'wrapElement'
-  >;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  React.ButtonHTMLAttributes<any> &
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  React.HTMLAttributes<any> &
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  React.RefAttributes<any>;
 
 const BaseButton = forwardRef(function Button(
   {
