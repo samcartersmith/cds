@@ -15,7 +15,7 @@ steps:
       # Fixes issues with git-mirrors on mac agents
       BUILDKITE_CLEAN_CHECKOUT: true
     agents:
-      queue: macos-metal-xcode15
+      queue: macos-metal-arm64-xcode15
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - tools/ci/setup.sh
@@ -33,7 +33,7 @@ steps:
       # Fixes issues with git-mirrors on mac agents
       BUILDKITE_CLEAN_CHECKOUT: true
     agents:
-      queue: macos-metal-xcode15
+      queue: macos-metal-arm64-xcode15
     commands:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - npm install -g @percy/cli
