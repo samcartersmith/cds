@@ -31,6 +31,7 @@ import {
   productComponentConfig,
 } from './config';
 import { generateAdoptionAndImpactReports } from './generateAdoptionAndImpactReports';
+import { generateJSONForProductComponentSummary } from './generateJsonFileForProductComponentSummary';
 import { generateOverallStatsReport } from './generateOverallStatsSummaryReport';
 import { ComponentProductJSONFile, ProductComponentData, ProductComponentInfo } from './types';
 
@@ -328,6 +329,7 @@ async function main() {
     await generateProductComponentsSummary();
     await addCDSVersionToProductComponentsData();
     await generateOverallStatsReport();
+    generateJSONForProductComponentSummary();
 
     cleanup();
 

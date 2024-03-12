@@ -75,10 +75,13 @@
     },
     "adoption-snowflake-upload": {
       "executor": "nx:run-commands",
+      "dependsOn": [
+        "adoption"
+      ],
       "options": {
         "cwd": "apps/website",
         "commands": [
-          "ADOPTION_DIRECTORY=./static/data/__generated__/adoption sh ./scripts/adoption/snowflake-upload.sh"
+          "ADOPTION_DIRECTORY=./static/data/__generated__ sh ./scripts/adoption/snowflake-upload.sh"
         ]
       }
     }

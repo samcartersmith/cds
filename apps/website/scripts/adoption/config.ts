@@ -23,6 +23,7 @@ export const generatedStaticDataDir = {
 };
 
 const frontendWebGit = 'frontend/web';
+const internationalUIGit = 'exchange/international-ui';
 const assethubGit = 'c3/assethub-frontend';
 const monorepoGit = 'mono/repo';
 const retailMobileGit = 'consumer/react-native';
@@ -318,8 +319,8 @@ export const config: AdoptersConfig[] = [
         projectGitPath: '',
       },
       {
-        root: path.join(tempDir, frontendWebGit, 'apps/neptune'),
-        github: frontendWebGit,
+        root: path.join(tempDir, internationalUIGit, 'apps/neptune'),
+        github: internationalUIGit,
         id: 'neptune',
         label: 'Neptune',
         projectTsAliases: [':neptune/app', ':neptune/feature'],

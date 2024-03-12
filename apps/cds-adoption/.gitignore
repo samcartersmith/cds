@@ -2,3 +2,6 @@ private-key.pem
 .env
 .env.*
 mjs
+
+apps/website/static/data/__generated__/adoption/snowflake_adoption_stats.json
+apps/website/static/data/__generated__/product-component/*/product_component_summary.json

@@ -124,6 +124,8 @@ async function generateOverallStatsSummaryReport(statsPaths: string[]) {
   };
 
   const filePath = `${ADOPTION_REPORTS_DIR}/adoption_overall_stats_summary.json`;
+  const extractedFilePath = `${ADOPTION_REPORTS_DIR}/snowflake_adoption_stats.json`;
+
   let existingData: OverallSummaryStats[] = [];
 
   // Check if the file exists
@@ -138,6 +140,10 @@ async function generateOverallStatsSummaryReport(statsPaths: string[]) {
 
   // Write the updated data back to the file
   fs.writeFileSync(filePath, JSON.stringify(existingData, null, 2));
+
+  // Write latest entry to new file for snowflake upload
+  const firstEntry = existingData[0];
+  fs.writeFileSync(extractedFilePath, JSON.stringify(firstEntry, null, 2));
 }
 
 export async function generateOverallStatsReport() {
