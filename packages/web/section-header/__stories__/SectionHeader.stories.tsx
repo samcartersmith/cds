@@ -130,8 +130,8 @@ export const Examples = () => {
         balance={null}
         end={
           <HStack gap={1}>
-            <IconButton name="caretLeft" />
-            <IconButton name="caretRight" />
+            <IconButton accessibilityLabel="Left caret" name="caretLeft" />
+            <IconButton accessibilityLabel="Right caret" name="caretRight" />
           </HStack>
         }
       />
@@ -148,7 +148,11 @@ export const Examples = () => {
         }
       />
       <Divider />
-      <SectionHeader {...exampleProps} balance={null} end={<IconButton name="upload" />} />
+      <SectionHeader
+        {...exampleProps}
+        balance={null}
+        end={<IconButton accessibilityLabel="Upload" name="upload" />}
+      />
       <Divider />
       <SectionHeader
         {...exampleProps}
@@ -191,8 +195,8 @@ export const Examples = () => {
         }
         end={
           <HStack gap={1}>
-            <IconButton name="caretLeft" />
-            <IconButton name="caretRight" />
+            <IconButton accessibilityLabel="Left caret" name="caretLeft" />
+            <IconButton accessibilityLabel="Right caret" name="caretRight" />
           </HStack>
         }
         icon={null}

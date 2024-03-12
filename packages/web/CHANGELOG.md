@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Fix CI percy web a11y failure. [[#2834](https://github.cbhq.net/frontend/cds/pull/2834)]
+
 ## 6.2.0 (3/12/2024 PST)
 
 #### 🚀 Updates

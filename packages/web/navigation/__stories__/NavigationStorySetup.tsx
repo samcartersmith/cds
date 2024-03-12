@@ -287,6 +287,7 @@ const renderCB1 = (isCollapsed: boolean) => {
   const spacing = isCollapsed ? 1 : 2;
   return (
     <Pressable
+      accessibilityLabel="Coinbase One"
       as="button"
       background="primaryWash"
       borderRadius="roundedLarge"
