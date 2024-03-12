@@ -1,5 +1,6 @@
 // codegen:start { preset: barrel, include: ./**/*.ts }
 export * from './addAttributeToJsx';
+export * from './addNewProp';
 export * from './checkFileIncludesImport';
 export * from './checkFileIncludesImportedModule';
 export * from './checkFileIncludesRenamedValue';

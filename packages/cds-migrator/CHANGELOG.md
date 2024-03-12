@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.47 (3/11/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: added default width to gondolin card migration script.
+
 ## 0.1.46 (2/23/2024 PST)
 
 #### 🚀 Updates

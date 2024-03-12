@@ -6,6 +6,12 @@ const sharedConfig = {
     oldAttribute: 'actionLabel',
     newAttribute: 'action',
   },
+  newProps: [
+    {
+      attribute: 'width',
+      value: '100%',
+    },
+  ],
 };
 
 export const cardMigrations: ComponentMigration[] = [

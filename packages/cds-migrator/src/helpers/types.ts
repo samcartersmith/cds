@@ -81,6 +81,11 @@ export type AttributeValueToBooleanType = Record<
 export const objectKeys = <Obj>(obj: { [key in keyof Obj]: Obj[key] }) =>
   Object.keys(obj) as Extract<keyof Obj, string>[];
 
+type NewPropShape = {
+  attribute: string;
+  value: string;
+};
+
 export type ComponentMigration = {
   name: string;
   path: Record<string, string>;
@@ -89,6 +94,7 @@ export type ComponentMigration = {
   /** custom warning message to show in console and cds-migrator-output.md */
   warning?: string;
   attributeRenameMap?: RenameAttributeMapShape | RenameAttributeMapShape[];
+  newProps?: NewPropShape[];
 };
 
 export type RemovedComponent = {
