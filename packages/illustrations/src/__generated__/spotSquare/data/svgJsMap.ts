@@ -457,6 +457,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/layeredNetworks-3').content,
     dark: () => require('../svgJs/dark/layeredNetworks-3').content,
   },
+  lightningNetworkSend: {
+    light: () => require('../svgJs/light/lightningNetworkSend-0').content,
+    dark: () => require('../svgJs/dark/lightningNetworkSend-0').content,
+  },
   linkCoinbaseWallet: {
     light: () => require('../svgJs/light/linkCoinbaseWallet-2').content,
     dark: () => require('../svgJs/dark/linkCoinbaseWallet-2').content,
@@ -748,6 +752,14 @@ const svgJsMap = {
   walletNotifications: {
     light: () => require('../svgJs/light/walletNotifications-2').content,
     dark: () => require('../svgJs/dark/walletNotifications-2').content,
+  },
+  walletQuestsChest: {
+    light: () => require('../svgJs/light/walletQuestsChest-0').content,
+    dark: () => require('../svgJs/dark/walletQuestsChest-0').content,
+  },
+  walletQuestsTrophy: {
+    light: () => require('../svgJs/light/walletQuestsTrophy-0').content,
+    dark: () => require('../svgJs/dark/walletQuestsTrophy-0').content,
   },
   walletSecurity: {
     light: () => require('../svgJs/light/walletSecurity-3').content,

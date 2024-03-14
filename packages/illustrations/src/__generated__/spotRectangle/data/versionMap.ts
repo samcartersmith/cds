@@ -193,7 +193,8 @@ const versionMap: Record<SpotRectangleName, number> = {
   scanCode: 1,
   uploadDocument: 0,
   referralsCoinbaseOne: 0,
-  lightingnetworkSend: 0,
+  lightningNetworkSend: 0,
+  referralsGenericCoin: 0,
 };
 
 export default versionMap;

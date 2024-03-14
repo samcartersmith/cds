@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-03-07T20:10:48.178Z",
+  "lastUpdated": "2024-03-14T16:52:26.341Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -13950,7 +13950,7 @@
       "height": 48,
       "description": "wallet, storage, alert, help, crucial, indication, red, 💰, 💵, 💸, ⚠️, error state",
       "createdAt": "2022-11-23T13:41:16.482Z",
-      "lastUpdated": "2024-03-07T19:48:01.747Z",
+      "lastUpdated": "2024-03-12T19:07:44.699Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/walletError-3.svg",
         "svgDark": "./pictogram/svg/dark/walletError-3.svg",
@@ -15648,9 +15648,9 @@
       "hash": "zCI4En5uxCfjmjIPYRFvvHeMKEqt9OiR63ahyaAgtQM=",
       "width": 240,
       "height": 120,
-      "description": "",
+      "description": "coinbase, referral, avatar, magic, network, share, heads, people, profile, pic, PFP, reward, Bitcoin, BTC",
       "createdAt": "2023-01-20T04:23:17.094Z",
-      "lastUpdated": "2024-03-07T19:48:44.298Z",
+      "lastUpdated": "2024-03-13T15:17:16.369Z",
       "outputs": {
         "svgLight": "./spotRectangle/svg/light/referralsBitcoin-3.svg",
         "svgDark": "./spotRectangle/svg/dark/referralsBitcoin-3.svg",
@@ -16930,7 +16930,7 @@
       "height": 96,
       "description": "Coin, Coins, Currency, Crypto, Bitcoin, BTC, store, value, money, asset, sparkles, stars, ✨, success state",
       "createdAt": "2023-05-03T19:12:53.338Z",
-      "lastUpdated": "2024-03-07T19:48:43.945Z",
+      "lastUpdated": "2024-03-13T15:17:16.351Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/bigBtc-3.svg",
         "svgDark": "./spotSquare/svg/dark/bigBtc-3.svg",
@@ -17970,7 +17970,7 @@
       "height": 96,
       "description": "add, credit, card, plastic, money, plus, payment, method, confirm, details, account",
       "createdAt": "2023-05-03T19:12:52.942Z",
-      "lastUpdated": "2024-03-07T19:50:24.491Z",
+      "lastUpdated": "2024-03-13T15:17:16.364Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/coinbaseCardLock-2.svg",
         "svgDark": "./spotSquare/svg/dark/coinbaseCardLock-2.svg",
@@ -19065,22 +19065,22 @@
     "4158:2430": {
       "type": "spotIcon",
       "name": "paySDKProduct",
-      "hash": "RUesHlLQ2B5qfRX+TKJZOFdZ0C+EcFKaFk5QezNgp4U=",
+      "hash": "3G1H51Vkj3ZYwT+xPb1AGt98YZAjGmCSGV12vkfh1dc=",
       "width": 32,
       "height": 32,
       "description": "product, icons, pay, SDK",
       "createdAt": "2023-10-21T00:32:35.850Z",
-      "lastUpdated": "2024-03-07T19:48:02.689Z",
+      "lastUpdated": "2024-03-13T15:17:16.340Z",
       "outputs": {
-        "svgLight": "./spotIcon/svg/light/paySDKProduct-0.svg",
-        "svgDark": "./spotIcon/svg/dark/paySDKProduct-0.svg",
-        "svgThemed": "./spotIcon/svg/themeable/paySDKProduct-0.svg",
-        "svgJsLight": "./spotIcon/svgJs/light/paySDKProduct-0.js",
-        "svgJsDark": "./spotIcon/svgJs/dark/paySDKProduct-0.js",
-        "pngLight": "./spotIcon/png/light/paySDKProduct-0.png",
-        "pngDark": "./spotIcon/png/dark/paySDKProduct-0.png"
+        "svgLight": "./spotIcon/svg/light/paySDKProduct-1.svg",
+        "svgDark": "./spotIcon/svg/dark/paySDKProduct-1.svg",
+        "svgThemed": "./spotIcon/svg/themeable/paySDKProduct-1.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/paySDKProduct-1.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/paySDKProduct-1.js",
+        "pngLight": "./spotIcon/png/light/paySDKProduct-1.png",
+        "pngDark": "./spotIcon/png/dark/paySDKProduct-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "4158:2431": {
       "type": "spotIcon",
@@ -19525,22 +19525,22 @@
     "4158:2454": {
       "type": "spotIcon",
       "name": "base",
-      "hash": "mo/kDJfa4hkrZe13oESlEBSNbLYQkW1DkGcQxIFFf24=",
+      "hash": "JW7OnPEielUmvwxmjCuZuQAu3AvdmLCGukexR69yp7g=",
       "width": 32,
       "height": 32,
       "description": "product, icons, base",
       "createdAt": "2023-10-21T00:32:35.945Z",
-      "lastUpdated": "2024-03-07T19:48:42.298Z",
+      "lastUpdated": "2024-03-13T15:17:16.315Z",
       "outputs": {
-        "svgLight": "./spotIcon/svg/light/base-0.svg",
-        "svgDark": "./spotIcon/svg/dark/base-0.svg",
-        "svgThemed": "./spotIcon/svg/themeable/base-0.svg",
-        "svgJsLight": "./spotIcon/svgJs/light/base-0.js",
-        "svgJsDark": "./spotIcon/svgJs/dark/base-0.js",
-        "pngLight": "./spotIcon/png/light/base-0.png",
-        "pngDark": "./spotIcon/png/dark/base-0.png"
+        "svgLight": "./spotIcon/svg/light/base-1.svg",
+        "svgDark": "./spotIcon/svg/dark/base-1.svg",
+        "svgThemed": "./spotIcon/svg/themeable/base-1.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/base-1.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/base-1.js",
+        "pngLight": "./spotIcon/png/light/base-1.png",
+        "pngDark": "./spotIcon/png/dark/base-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "4158:2455": {
       "type": "spotIcon",
@@ -19650,7 +19650,7 @@
       "height": 96,
       "description": "yield, center, usdc, earn, interest, growth, money, stake, reward, more, proof, assets",
       "createdAt": "2023-10-31T20:15:45.702Z",
-      "lastUpdated": "2024-03-07T19:48:02.312Z",
+      "lastUpdated": "2024-03-13T15:17:16.327Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/yieldCenterUSDC-0.svg",
         "svgDark": "./spotSquare/svg/dark/yieldCenterUSDC-0.svg",
@@ -20564,21 +20564,21 @@
     },
     "6677:2": {
       "type": "heroSquare",
-      "name": "lightingnetworkInvoice",
+      "name": "lightningNetworkInvoice",
       "hash": "xoTNrNwsNfehK41yu5pKrwRebYr5AAAItwdjLXiv/gM=",
       "width": 240,
       "height": 240,
       "description": "Lighting, Lightingnetwork, network, fast, speed, invoice, contract, QR, code, ⚡, Bitcoin",
       "createdAt": "2024-03-07T19:48:38.219Z",
-      "lastUpdated": "2024-03-07T19:48:38.219Z",
+      "lastUpdated": "2024-03-13T15:17:16.358Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/lightingnetworkInvoice-0.svg",
-        "svgDark": "./heroSquare/svg/dark/lightingnetworkInvoice-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/lightingnetworkInvoice-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/lightingnetworkInvoice-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/lightingnetworkInvoice-0.js",
-        "pngLight": "./heroSquare/png/light/lightingnetworkInvoice-0.png",
-        "pngDark": "./heroSquare/png/dark/lightingnetworkInvoice-0.png"
+        "svgLight": "./heroSquare/svg/light/lightningNetworkInvoice-0.svg",
+        "svgDark": "./heroSquare/svg/dark/lightningNetworkInvoice-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/lightningNetworkInvoice-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/lightningNetworkInvoice-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/lightningNetworkInvoice-0.js",
+        "pngLight": "./heroSquare/png/light/lightningNetworkInvoice-0.png",
+        "pngDark": "./heroSquare/png/dark/lightningNetworkInvoice-0.png"
       },
       "version": 0
     },
@@ -20604,81 +20604,81 @@
     },
     "6677:4": {
       "type": "heroSquare",
-      "name": "lightingnetworkSend",
+      "name": "lightningNetworkSend",
       "hash": "lsU2zTzv6pMx8ltP1ka2VJf8RTML1odYnpH06Atcfhc=",
       "width": 240,
       "height": 240,
       "description": "Lighting, Lightingnetwork, network, fast, speed, send, bolt, lightingbolt, ⚡, Bitcoin",
       "createdAt": "2024-03-07T19:50:22.664Z",
-      "lastUpdated": "2024-03-07T19:50:22.664Z",
+      "lastUpdated": "2024-03-13T15:17:16.321Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/lightingnetworkSend-0.svg",
-        "svgDark": "./heroSquare/svg/dark/lightingnetworkSend-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/lightingnetworkSend-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/lightingnetworkSend-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/lightingnetworkSend-0.js",
-        "pngLight": "./heroSquare/png/light/lightingnetworkSend-0.png",
-        "pngDark": "./heroSquare/png/dark/lightingnetworkSend-0.png"
+        "svgLight": "./heroSquare/svg/light/lightningNetworkSend-0.svg",
+        "svgDark": "./heroSquare/svg/dark/lightningNetworkSend-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/lightningNetworkSend-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/lightningNetworkSend-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/lightningNetworkSend-0.js",
+        "pngLight": "./heroSquare/png/light/lightningNetworkSend-0.png",
+        "pngDark": "./heroSquare/png/dark/lightningNetworkSend-0.png"
       },
       "version": 0
     },
     "6677:5": {
       "type": "spotRectangle",
-      "name": "lightingnetworkSend",
+      "name": "lightningNetworkSend",
       "hash": "Kvdjwy6qMeCvhMP8e8JZpN8X1c7lselUJl9fdeVTLSI=",
       "width": 240,
       "height": 120,
       "description": "Lighting, Lightingnetwork, network, fast, speed, send, bolt, lightingbolt, ⚡, Bitcoin",
       "createdAt": "2024-03-07T19:49:55.646Z",
-      "lastUpdated": "2024-03-07T19:49:55.646Z",
+      "lastUpdated": "2024-03-13T18:25:33.944Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/lightingnetworkSend-0.svg",
-        "svgDark": "./spotRectangle/svg/dark/lightingnetworkSend-0.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/lightingnetworkSend-0.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/lightingnetworkSend-0.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/lightingnetworkSend-0.js",
-        "pngLight": "./spotRectangle/png/light/lightingnetworkSend-0.png",
-        "pngDark": "./spotRectangle/png/dark/lightingnetworkSend-0.png"
+        "svgLight": "./spotRectangle/svg/light/lightningNetworkSend-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/lightningNetworkSend-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/lightningNetworkSend-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/lightningNetworkSend-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/lightningNetworkSend-0.js",
+        "pngLight": "./spotRectangle/png/light/lightningNetworkSend-0.png",
+        "pngDark": "./spotRectangle/png/dark/lightningNetworkSend-0.png"
       },
       "version": 0
     },
     "6677:6": {
       "type": "heroSquare",
-      "name": "lightingnetwork",
+      "name": "lightningNetwork",
       "hash": "2q7rJMchWH7S3vcaAWH5An5tR5F0GZGooP7GVFQ4WNs=",
       "width": 240,
       "height": 240,
       "description": "Lighting, Lightingnetwork, network, fast, speed, send, bolt, lightingbolt, QR, code, ⚡, Bitcoin, machine, factory,",
       "createdAt": "2024-03-07T19:49:16.677Z",
-      "lastUpdated": "2024-03-07T19:49:16.677Z",
+      "lastUpdated": "2024-03-13T15:17:16.334Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/lightingnetwork-0.svg",
-        "svgDark": "./heroSquare/svg/dark/lightingnetwork-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/lightingnetwork-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/lightingnetwork-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/lightingnetwork-0.js",
-        "pngLight": "./heroSquare/png/light/lightingnetwork-0.png",
-        "pngDark": "./heroSquare/png/dark/lightingnetwork-0.png"
+        "svgLight": "./heroSquare/svg/light/lightningNetwork-0.svg",
+        "svgDark": "./heroSquare/svg/dark/lightningNetwork-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/lightningNetwork-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/lightningNetwork-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/lightningNetwork-0.js",
+        "pngLight": "./heroSquare/png/light/lightningNetwork-0.png",
+        "pngDark": "./heroSquare/png/dark/lightningNetwork-0.png"
       },
       "version": 0
     },
     "6677:7": {
       "type": "heroSquare",
-      "name": "lightingnetworkTransfer",
+      "name": "lightningNetworkTransfer",
       "hash": "IkVT+ieo7h150+4OS7Fej8pFbOZYA9syWAQpG46iaTw=",
       "width": 240,
       "height": 240,
       "description": "Lighting, Lightingnetwork, network, fast, speed, send, bolt, lightingbolt, ⚡, Bitcoin",
       "createdAt": "2024-03-07T19:48:38.211Z",
-      "lastUpdated": "2024-03-07T19:48:38.211Z",
+      "lastUpdated": "2024-03-13T15:17:16.345Z",
       "outputs": {
-        "svgLight": "./heroSquare/svg/light/lightingnetworkTransfer-0.svg",
-        "svgDark": "./heroSquare/svg/dark/lightingnetworkTransfer-0.svg",
-        "svgThemed": "./heroSquare/svg/themeable/lightingnetworkTransfer-0.svg",
-        "svgJsLight": "./heroSquare/svgJs/light/lightingnetworkTransfer-0.js",
-        "svgJsDark": "./heroSquare/svgJs/dark/lightingnetworkTransfer-0.js",
-        "pngLight": "./heroSquare/png/light/lightingnetworkTransfer-0.png",
-        "pngDark": "./heroSquare/png/dark/lightingnetworkTransfer-0.png"
+        "svgLight": "./heroSquare/svg/light/lightningNetworkTransfer-0.svg",
+        "svgDark": "./heroSquare/svg/dark/lightningNetworkTransfer-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/lightningNetworkTransfer-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/lightningNetworkTransfer-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/lightningNetworkTransfer-0.js",
+        "pngLight": "./heroSquare/png/light/lightningNetworkTransfer-0.png",
+        "pngDark": "./heroSquare/png/dark/lightningNetworkTransfer-0.png"
       },
       "version": 0
     },
@@ -20699,6 +20699,106 @@
         "svgJsDark": "./pictogram/svgJs/dark/learningRewardsProduct-0.js",
         "pngLight": "./pictogram/png/light/learningRewardsProduct-0.png",
         "pngDark": "./pictogram/png/dark/learningRewardsProduct-0.png"
+      },
+      "version": 0
+    },
+    "6840:5": {
+      "type": "spotSquare",
+      "name": "lightningNetworkSend",
+      "hash": "mL8O5n0Rz/4Xjy8G4dAhIw2rDkX1w+3vro5a2PUOuaE=",
+      "width": 96,
+      "height": 96,
+      "description": "Lighting, Lightingnetwork, network, fast, speed, send, bolt, lightingbolt, ⚡, Bitcoin",
+      "createdAt": "2024-03-13T18:25:33.932Z",
+      "lastUpdated": "2024-03-13T18:25:33.932Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/lightningNetworkSend-0.svg",
+        "svgDark": "./spotSquare/svg/dark/lightningNetworkSend-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/lightningNetworkSend-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/lightningNetworkSend-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/lightningNetworkSend-0.js",
+        "pngLight": "./spotSquare/png/light/lightningNetworkSend-0.png",
+        "pngDark": "./spotSquare/png/dark/lightningNetworkSend-0.png"
+      },
+      "version": 0
+    },
+    "6843:16": {
+      "type": "spotSquare",
+      "name": "walletQuestsTrophy",
+      "hash": "cZ/nNy4RUU1A14TANyAKkFmdopXrdsv5eUt+sLsphJ8=",
+      "width": 96,
+      "height": 96,
+      "description": "wallet, wallet quests, trophy, star, coin, 🏆, ⭐",
+      "createdAt": "2024-03-13T18:25:33.924Z",
+      "lastUpdated": "2024-03-13T18:25:33.924Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/walletQuestsTrophy-0.svg",
+        "svgDark": "./spotSquare/svg/dark/walletQuestsTrophy-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/walletQuestsTrophy-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/walletQuestsTrophy-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/walletQuestsTrophy-0.js",
+        "pngLight": "./spotSquare/png/light/walletQuestsTrophy-0.png",
+        "pngDark": "./spotSquare/png/dark/walletQuestsTrophy-0.png"
+      },
+      "version": 0
+    },
+    "6886:86": {
+      "type": "heroSquare",
+      "name": "referralsGenericCoin",
+      "hash": "Afsw4PKHafVL8sYv6X0GUVfh4RG3ybjQ1Ujx3eqzp/4=",
+      "width": 240,
+      "height": 240,
+      "description": "coinbase, referral, avatar, magic, network, share, heads, people, profile, pic, PFP, reward",
+      "createdAt": "2024-03-13T15:17:16.257Z",
+      "lastUpdated": "2024-03-13T15:17:16.257Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/referralsGenericCoin-0.svg",
+        "svgDark": "./heroSquare/svg/dark/referralsGenericCoin-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/referralsGenericCoin-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/referralsGenericCoin-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/referralsGenericCoin-0.js",
+        "pngLight": "./heroSquare/png/light/referralsGenericCoin-0.png",
+        "pngDark": "./heroSquare/png/dark/referralsGenericCoin-0.png"
+      },
+      "version": 0
+    },
+    "6886:150": {
+      "type": "spotRectangle",
+      "name": "referralsGenericCoin",
+      "hash": "9ZEivv/r1ypNFG6B1B11sKG03E3W/qDmNrVlxQaxs2w=",
+      "width": 240,
+      "height": 120,
+      "description": "coinbase, referral, avatar, magic, network, share, heads, people, profile, pic, PFP, reward",
+      "createdAt": "2024-03-13T15:17:16.264Z",
+      "lastUpdated": "2024-03-13T15:17:16.264Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/referralsGenericCoin-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/referralsGenericCoin-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/referralsGenericCoin-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/referralsGenericCoin-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/referralsGenericCoin-0.js",
+        "pngLight": "./spotRectangle/png/light/referralsGenericCoin-0.png",
+        "pngDark": "./spotRectangle/png/dark/referralsGenericCoin-0.png"
+      },
+      "version": 0
+    },
+    "6891:2": {
+      "type": "spotSquare",
+      "name": "walletQuestsChest",
+      "hash": "q9604gidztIoSojf4kA85l3C9FFBPs5w2QSx6+gJ0Y8=",
+      "width": 96,
+      "height": 96,
+      "description": "wallet, wallet quests, chest, coins, coin, 🏆, ⭐",
+      "createdAt": "2024-03-13T18:25:33.917Z",
+      "lastUpdated": "2024-03-13T18:25:33.917Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/walletQuestsChest-0.svg",
+        "svgDark": "./spotSquare/svg/dark/walletQuestsChest-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/walletQuestsChest-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/walletQuestsChest-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/walletQuestsChest-0.js",
+        "pngLight": "./spotSquare/png/light/walletQuestsChest-0.png",
+        "pngDark": "./spotSquare/png/dark/walletQuestsChest-0.png"
       },
       "version": 0
     }

@@ -206,6 +206,9 @@ const versionMap: Record<SpotSquareName, number> = {
   coinbaseOneUSDC: 0,
   noPortfolio: 0,
   yieldCenterUSDC: 0,
+  walletQuestsChest: 0,
+  walletQuestsTrophy: 0,
+  lightningNetworkSend: 0,
 };
 
 export default versionMap;

@@ -8,6 +8,54 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.0 (3/14/2024 PST)
+
+#### 💥 Breaking
+
+- Publish Figma color styles, icons, and illustrations 3/14/2024. [[#2839](https://github.cbhq.net/frontend/cds/pull/2839)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- referralsGenericCoin
+
+#### Spot Square
+
+- lightningNetworkSend
+- walletQuestsChest
+- walletQuestsTrophy
+
+#### Hero Square
+
+- referralsGenericCoin
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- base
+- paySDKProduct
+
+### 🐞 Renames
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- lightingnetwork -> lightningNetwork
+- lightingnetworkInvoice -> lightningNetworkInvoice
+- lightingnetworkSend -> lightningNetworkSend
+- lightingnetworkTransfer -> lightningNetworkTransfer
+
+#### Spot Rectangle
+
+- lightingnetworkSend -> lightningNetworkSend
+
 ## 2.9.0 (3/7/2024 PST)
 
 #### 🚀 Updates

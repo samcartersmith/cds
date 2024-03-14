@@ -1022,7 +1022,10 @@ const sidebars = {
             {
               type: 'category',
               label: 'Illustrations',
-              items: [{ type: 'doc', id: 'guides/migration/illustrations/2-0-0', label: '2.0.0' }],
+              items: [
+                { type: 'doc', id: 'guides/migration/illustrations/2-0-0', label: '2.0.0' },
+                { type: 'doc', id: 'guides/migration/illustrations/3-0-0', label: '3.0.0' },
+              ],
             },
           ],
         },

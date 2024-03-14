@@ -789,21 +789,21 @@ const svgJsMap = {
     light: () => require('../svgJs/light/leverage-2').content,
     dark: () => require('../svgJs/dark/leverage-2').content,
   },
-  lightingnetwork: {
-    light: () => require('../svgJs/light/lightingnetwork-0').content,
-    dark: () => require('../svgJs/dark/lightingnetwork-0').content,
+  lightningNetwork: {
+    light: () => require('../svgJs/light/lightningNetwork-0').content,
+    dark: () => require('../svgJs/dark/lightningNetwork-0').content,
   },
-  lightingnetworkInvoice: {
-    light: () => require('../svgJs/light/lightingnetworkInvoice-0').content,
-    dark: () => require('../svgJs/dark/lightingnetworkInvoice-0').content,
+  lightningNetworkInvoice: {
+    light: () => require('../svgJs/light/lightningNetworkInvoice-0').content,
+    dark: () => require('../svgJs/dark/lightningNetworkInvoice-0').content,
   },
-  lightingnetworkSend: {
-    light: () => require('../svgJs/light/lightingnetworkSend-0').content,
-    dark: () => require('../svgJs/dark/lightingnetworkSend-0').content,
+  lightningNetworkSend: {
+    light: () => require('../svgJs/light/lightningNetworkSend-0').content,
+    dark: () => require('../svgJs/dark/lightningNetworkSend-0').content,
   },
-  lightingnetworkTransfer: {
-    light: () => require('../svgJs/light/lightingnetworkTransfer-0').content,
-    dark: () => require('../svgJs/dark/lightingnetworkTransfer-0').content,
+  lightningNetworkTransfer: {
+    light: () => require('../svgJs/light/lightningNetworkTransfer-0').content,
+    dark: () => require('../svgJs/dark/lightningNetworkTransfer-0').content,
   },
   limitOrders: {
     light: () => require('../svgJs/light/limitOrders-3').content,
@@ -1052,6 +1052,10 @@ const svgJsMap = {
   referralsCoinbaseOne: {
     light: () => require('../svgJs/light/referralsCoinbaseOne-0').content,
     dark: () => require('../svgJs/dark/referralsCoinbaseOne-0').content,
+  },
+  referralsGenericCoin: {
+    light: () => require('../svgJs/light/referralsGenericCoin-0').content,
+    dark: () => require('../svgJs/dark/referralsGenericCoin-0').content,
   },
   referralsWalletPhones: {
     light: () => require('../svgJs/light/referralsWalletPhones-2').content,

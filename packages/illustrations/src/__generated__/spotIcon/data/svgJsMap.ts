@@ -34,8 +34,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/bank-1').content,
   },
   base: {
-    light: () => require('../svgJs/light/base-0').content,
-    dark: () => require('../svgJs/dark/base-0').content,
+    light: () => require('../svgJs/light/base-1').content,
+    dark: () => require('../svgJs/dark/base-1').content,
   },
   borrowProduct: {
     light: () => require('../svgJs/light/borrowProduct-1').content,
@@ -146,8 +146,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/participateProduct-1').content,
   },
   paySDKProduct: {
-    light: () => require('../svgJs/light/paySDKProduct-0').content,
-    dark: () => require('../svgJs/dark/paySDKProduct-0').content,
+    light: () => require('../svgJs/light/paySDKProduct-1').content,
+    dark: () => require('../svgJs/dark/paySDKProduct-1').content,
   },
   pieChart: {
     light: () => require('../svgJs/light/pieChart-1').content,
