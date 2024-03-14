@@ -84,6 +84,7 @@ module.exports.adopters = [
       { type: 'doc', id: 'adoption-tracker/assethub-admin', label: 'AssetHub Admin' },
       { type: 'doc', id: 'adoption-tracker/abor', label: 'Abor' },
       { type: 'doc', id: 'adoption-tracker/commerce-web', label: 'Commerce Web' },
+      { type: 'doc', id: 'adoption-tracker/helpcenter-web', label: 'Help Center Web' },
     ],
   },
 ];

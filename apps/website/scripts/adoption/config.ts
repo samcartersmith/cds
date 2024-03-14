@@ -38,6 +38,7 @@ const commerceFE = 'commerce/frontend';
 const identityGit = 'identity/frontend';
 const paymentsOnRampGit = 'payments/onramp-widget';
 const paymentsCbPayGit = 'payments/cbpay-rn-sdk';
+const helpCenterGit = 'data/helpcenter-web';
 
 const assethubConfig = {
   root: path.join(tempDir, assethubGit),
@@ -504,6 +505,16 @@ export const config: AdoptersConfig[] = [
         label: 'Commerce Web',
         type: 'doc',
         projectGitPath: '',
+      },
+      {
+        root: path.join(tempDir, helpCenterGit),
+        github: helpCenterGit,
+        tsconfigFileName: 'tsconfig.json',
+        id: 'helpcenter-web',
+        label: 'Help Center Web',
+        type: 'doc',
+        dependencyPath: path.join(tempDir, helpCenterGit, 'apps/helpcenter'),
+        projectGitPath: 'apps/helpcenter',
       },
     ],
   },

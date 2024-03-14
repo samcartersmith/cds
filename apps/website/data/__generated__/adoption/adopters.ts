@@ -39,4 +39,5 @@ export const adopters = [
   { id: 'assethub-admin', pillar: 'Other' },
   { id: 'abor', pillar: 'Other' },
   { id: 'commerce-web', pillar: 'Other' },
+  { id: 'helpcenter-web', pillar: 'Other' },
 ] as const;

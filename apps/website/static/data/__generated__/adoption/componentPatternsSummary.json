@@ -1,7 +1,7 @@
 {
   "AppSwitcher": {
-    "totalInstances": 7,
-    "totalCallSites": 7,
+    "totalInstances": 9,
+    "totalCallSites": 8,
     "components": [
       {
         "name": "AppSwitcher",
@@ -100,6 +100,26 @@
       {
         "name": "AppSwitcher",
         "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 2,
+        "totalCallSites": 1,
+        "callSites": {
+          "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+        },
+        "propsWithCallSites": {
+          "projectId": {
+            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+          },
+          "action": {
+            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+          },
+          "target": {
+            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+          }
+        }
+      },
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
         "totalInstances": 1,
         "totalCallSites": 1,
         "propsWithCallSites": {
@@ -140,7 +160,7 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/Users/blairmckee/code/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^5.31.4",
@@ -353,9 +373,6 @@
           "projectId": {
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           },
-          "onBeforeNavigate": {
-            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
-          },
           "target": {
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           }
@@ -436,7 +453,7 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/Users/blairmckee/code/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^5.31.4",
