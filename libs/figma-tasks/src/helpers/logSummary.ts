@@ -16,6 +16,7 @@ export function logSummary(
 `);
     console.table(
       [...manifest.renames.entries()].map(([previous, next]) => ({
+        type: previous.type,
         previous: previous.name,
         new: next.name,
       })),
