@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.2.1 (3/18/2024 PST)
+
+#### 🐞 Fixes
+
+- Tray: Fix title pushes down StickyFooter with long content. [[#2849](https://github.cbhq.net/frontend/cds/pull/2849)] [[DX-3454](https://jira.coinbase-corp.com/browse/DX-3454)]
+
 ## 6.2.0 ((3/12/2024, 08:56 AM PST))
 
 This is an artificial version bump with no new change.

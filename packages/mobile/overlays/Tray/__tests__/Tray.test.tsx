@@ -65,6 +65,7 @@ describe('Tray', () => {
 
   it('renders correctly and provides the correct context value', () => {
     const verticalDrawerPercentageOfView = 0.75;
+    const titleHeight = 0;
 
     // Create a test component that will consume the context value and render it
     const TestComponent = () => {
@@ -73,7 +74,7 @@ describe('Tray', () => {
     };
 
     render(
-      <TrayContext.Provider value={{ verticalDrawerPercentageOfView }}>
+      <TrayContext.Provider value={{ verticalDrawerPercentageOfView, titleHeight }}>
         <TestComponent />
       </TrayContext.Provider>,
     );
@@ -82,7 +83,7 @@ describe('Tray', () => {
 
     // eslint-disable-next-line testing-library/no-node-access
     expect(contextValueElement.props.children).toBe(
-      JSON.stringify({ verticalDrawerPercentageOfView }),
+      JSON.stringify({ verticalDrawerPercentageOfView, titleHeight }),
     );
   });
 });

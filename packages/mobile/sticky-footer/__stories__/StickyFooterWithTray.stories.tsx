@@ -88,7 +88,7 @@ const StickyFooterWithTrayScreen = () => {
   return (
     <ExampleScreen>
       <Example title="StickyFooter with Tray">
-        <StickyFooterWithTray />
+        <StickyFooterWithTray title="StickyFooter with Tray" />
       </Example>
     </ExampleScreen>
   );

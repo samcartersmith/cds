@@ -7,8 +7,9 @@ import React, {
   useContext,
   useEffect,
   useMemo,
+  useState,
 } from 'react';
-import { useWindowDimensions } from 'react-native';
+import { LayoutChangeEvent, useWindowDimensions } from 'react-native';
 import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import { verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView } from '@cbhq/cds-common/tokens/drawer';
 import { DrawerRefBaseProps, NoopFn, TrayBaseProps } from '@cbhq/cds-common/types';
@@ -21,8 +22,12 @@ type RenderTrayProps = {
   handleClose: NoopFn;
 };
 
-export const TrayContext = createContext<{ verticalDrawerPercentageOfView: number }>({
+export const TrayContext = createContext<{
+  verticalDrawerPercentageOfView: number;
+  titleHeight: number;
+}>({
   verticalDrawerPercentageOfView: defaultVerticalDrawerPercentageOfView,
+  titleHeight: 0,
 });
 
 export const Tray = memo(
@@ -36,18 +41,34 @@ export const Tray = memo(
     },
     ref,
   ) {
+    const [titleHeight, setTitleHeight] = useState(0);
+
+    const onTitleLayout = useCallback(
+      (event: LayoutChangeEvent) => {
+        if (!title) return;
+        setTitleHeight(event.nativeEvent.layout.height);
+      },
+      [title],
+    );
+
     const renderChildren = useCallback(
       ({ handleClose }: RenderTrayProps) => (
         <VStack spacingTop={title ? 0 : 2}>
           {title ? (
-            <HStack alignItems="center" spacingBottom={2} spacingHorizontal={3} spacingTop={3}>
+            <HStack
+              alignItems="center"
+              onLayout={onTitleLayout}
+              spacingBottom={2}
+              spacingHorizontal={3}
+              spacingTop={3}
+            >
               <TextTitle3>{title}</TextTitle3>
             </HStack>
           ) : null}
           {typeof children === 'function' ? children({ handleClose }) : children}
         </VStack>
       ),
-      [children, title],
+      [children, onTitleLayout, title],
     );
 
     useEffect(() => {
@@ -58,8 +79,8 @@ export const Tray = memo(
     }, [onVisibilityChange]);
 
     const trayContextValue = useMemo(
-      () => ({ verticalDrawerPercentageOfView }),
-      [verticalDrawerPercentageOfView],
+      () => ({ verticalDrawerPercentageOfView, titleHeight }),
+      [verticalDrawerPercentageOfView, titleHeight],
     );
 
     return (
@@ -78,11 +99,11 @@ export const Tray = memo(
 );
 
 export const TrayStickyFooter = ({ children }: { children: ReactNode }) => {
-  const { verticalDrawerPercentageOfView } = useContext(TrayContext);
+  const { verticalDrawerPercentageOfView, titleHeight } = useContext(TrayContext);
   const { height } = useWindowDimensions();
   const verticalDrawerMaxHeight = useMemo(
-    () => height * verticalDrawerPercentageOfView - MAX_OVER_DRAG,
-    [height, verticalDrawerPercentageOfView],
+    () => (height - titleHeight) * verticalDrawerPercentageOfView - MAX_OVER_DRAG,
+    [height, titleHeight, verticalDrawerPercentageOfView],
   );
   return <VStack maxHeight={verticalDrawerMaxHeight}>{children}</VStack>;
 };
