@@ -23,7 +23,7 @@
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/app-switcher",
         "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
-        "packagePath": "/Users/blairmckee/code/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+        "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
       }
     },
     {
@@ -69,7 +69,7 @@
         "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/blairmckee/code/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+        "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],

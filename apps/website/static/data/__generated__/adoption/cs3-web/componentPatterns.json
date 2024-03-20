@@ -1,7 +1,9 @@
 {
   "components": [],
   "dependencies": {
-    "dependencies": {},
+    "dependencies": {
+      "@cbhq/identity-navigation": "^4.2.3"
+    },
     "devDependencies": {},
     "peerDependencies": {},
     "resolutions": {}

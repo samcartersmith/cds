@@ -160,14 +160,14 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/blairmckee/code/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^5.31.4",
       "cdsMobile": "Not Found",
-      "cdsCommon": "Not Found",
-      "lowestVersion": "^5.31.4",
-      "sanitizedLowestVersion": "5.31.4"
+      "cdsCommon": "^5.16.0",
+      "lowestVersion": "^5.16.0",
+      "sanitizedLowestVersion": "5.16.0"
     }
   },
   "NavigationBar": {
@@ -453,14 +453,14 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/Users/blairmckee/code/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^5.31.4",
       "cdsMobile": "Not Found",
-      "cdsCommon": "Not Found",
-      "lowestVersion": "^5.31.4",
-      "sanitizedLowestVersion": "5.31.4"
+      "cdsCommon": "^5.16.0",
+      "lowestVersion": "^5.16.0",
+      "sanitizedLowestVersion": "5.16.0"
     }
   }
 }
