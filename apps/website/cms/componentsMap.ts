@@ -3,6 +3,7 @@ import { Banner } from '@cbhq/cds-web/banner/Banner';
 
 import { Accordion } from './misc/Accordion';
 import { Admonition } from './misc/Admonition';
+import { Attribution } from './misc/Attribution';
 import { CodePlayground } from './misc/CodePlayground';
 import { Embedded } from './misc/Embedded';
 import { Link } from './misc/Link';
@@ -31,6 +32,7 @@ export const componentsMap = {
   miscAccordion: Accordion,
   miscEmbedded: Embedded,
   miscCodePlayground: CodePlayground,
+  miscAttribution: Attribution,
   moduleStaticReadme: StaticReadme,
   moduleTabs: Tabs,
   moduleTabItem: TabItem,
