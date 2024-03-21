@@ -122,6 +122,8 @@ const names: NavIconName[] = [
   'helpCenterQuestionMark',
   'cluster',
   'borrowProduct',
+  'coinbaseOneLogo',
+  'qrCode',
 ];
 
 export default names;

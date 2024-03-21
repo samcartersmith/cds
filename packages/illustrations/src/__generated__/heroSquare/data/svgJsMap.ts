@@ -1309,6 +1309,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/walletAsset-2').content,
     dark: () => require('../svgJs/dark/walletAsset-2').content,
   },
+  walletConfirmation: {
+    light: () => require('../svgJs/light/walletConfirmation-0').content,
+    dark: () => require('../svgJs/dark/walletConfirmation-0').content,
+  },
   walletFlyEmptyState: {
     light: () => require('../svgJs/light/walletFlyEmptyState-2').content,
     dark: () => require('../svgJs/dark/walletFlyEmptyState-2').content,
@@ -1328,6 +1332,10 @@ const svgJsMap = {
   walletUi: {
     light: () => require('../svgJs/light/walletUi-2').content,
     dark: () => require('../svgJs/dark/walletUi-2').content,
+  },
+  walletWarning: {
+    light: () => require('../svgJs/light/walletWarning-0').content,
+    dark: () => require('../svgJs/dark/walletWarning-0').content,
   },
   watchVideos: {
     light: () => require('../svgJs/light/watchVideos-2').content,

@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-02-13T17:49:26.807Z",
-  "metadata": { "lastUnicode": 61969 },
+  "lastUpdated": "2024-03-21T17:20:36.727Z",
+  "metadata": { "lastUnicode": 61990 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -65,7 +65,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60961 } }
       ],
       "createdAt": "2022-08-24T18:51:39.177Z",
-      "lastUpdated": "2023-10-25T17:34:15.647Z",
+      "lastUpdated": "2024-02-20T00:43:58.974Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-taxes-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-taxes-12-inactive.svg",
@@ -89,7 +89,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60581 } }
       ],
       "createdAt": "2022-08-24T18:51:39.383Z",
-      "lastUpdated": "2023-10-25T17:34:16.092Z",
+      "lastUpdated": "2024-02-27T20:18:24.720Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-tag-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-tag-12-inactive.svg",
@@ -113,7 +113,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60811 } }
       ],
       "createdAt": "2022-08-24T18:51:39.397Z",
-      "lastUpdated": "2023-10-25T17:34:14.876Z",
+      "lastUpdated": "2024-02-20T01:05:57.975Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-support-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-support-12-inactive.svg",
@@ -377,7 +377,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60981 } }
       ],
       "createdAt": "2022-08-24T18:51:39.745Z",
-      "lastUpdated": "2023-10-25T17:34:15.339Z",
+      "lastUpdated": "2024-02-14T18:02:21.101Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-paymentCard-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-paymentCard-12-inactive.svg",
@@ -545,7 +545,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60591 } }
       ],
       "createdAt": "2022-08-24T18:51:39.286Z",
-      "lastUpdated": "2023-10-24T20:57:37.441Z",
+      "lastUpdated": "2024-03-16T01:03:40.900Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-invoice-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-invoice-12-inactive.svg",
@@ -641,7 +641,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61146 } }
       ],
       "createdAt": "2022-08-24T18:51:39.324Z",
-      "lastUpdated": "2023-10-25T17:34:15.435Z",
+      "lastUpdated": "2024-02-22T21:26:35.860Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-heart-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-heart-12-inactive.svg",
@@ -857,7 +857,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60971 } }
       ],
       "createdAt": "2022-08-24T18:51:39.654Z",
-      "lastUpdated": "2023-10-25T17:34:14.751Z",
+      "lastUpdated": "2024-02-22T12:32:04.105Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-documentation-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-documentation-12-inactive.svg",
@@ -1049,7 +1049,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61291 } }
       ],
       "createdAt": "2022-08-24T18:51:39.784Z",
-      "lastUpdated": "2023-10-25T17:34:16.126Z",
+      "lastUpdated": "2024-02-14T16:51:04.660Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-cloud-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-cloud-12-inactive.svg",
@@ -1289,7 +1289,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60886 } }
       ],
       "createdAt": "2022-08-24T18:51:39.187Z",
-      "lastUpdated": "2023-10-25T17:34:15.541Z",
+      "lastUpdated": "2024-03-07T23:00:00.774Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-appSwitcher-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-appSwitcher-12-inactive.svg",
@@ -1664,7 +1664,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60031 } }
       ],
       "createdAt": "2023-02-01T23:26:07.645Z",
-      "lastUpdated": "2023-10-25T17:34:14.693Z",
+      "lastUpdated": "2024-03-05T21:21:51.872Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowsHorizontal-12.svg",
         "svg16": "./ui/svg/ui-arrowsHorizontal-16.svg",
@@ -1808,7 +1808,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60196 } }
       ],
       "createdAt": "2023-02-01T23:25:58.782Z",
-      "lastUpdated": "2023-10-25T17:34:16.043Z",
+      "lastUpdated": "2024-03-14T22:06:23.941Z",
       "outputs": {
         "svg12": "./ui/svg/ui-blockchain-12.svg",
         "svg16": "./ui/svg/ui-blockchain-16.svg",
@@ -1844,7 +1844,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60746 } }
       ],
       "createdAt": "2023-02-01T23:25:40.675Z",
-      "lastUpdated": "2023-10-25T18:34:34.491Z",
+      "lastUpdated": "2024-03-14T20:08:31.889Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bookmarkInactive-12.svg",
         "svg16": "./ui/svg/ui-bookmarkInactive-16.svg",
@@ -2384,7 +2384,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60066 } }
       ],
       "createdAt": "2023-02-01T23:25:49.745Z",
-      "lastUpdated": "2023-10-25T17:34:15.591Z",
+      "lastUpdated": "2024-02-22T21:27:33.033Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartPie-12.svg",
         "svg16": "./ui/svg/ui-chartPie-16.svg",
@@ -2618,7 +2618,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60856 } }
       ],
       "createdAt": "2023-02-01T23:25:40.876Z",
-      "lastUpdated": "2023-10-25T17:34:15.448Z",
+      "lastUpdated": "2024-03-14T05:02:57.832Z",
       "outputs": {
         "svg12": "./ui/svg/ui-clockOutline-12.svg",
         "svg16": "./ui/svg/ui-clockOutline-16.svg",
@@ -2744,7 +2744,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60306 } }
       ],
       "createdAt": "2023-02-01T23:25:58.849Z",
-      "lastUpdated": "2023-10-25T17:34:15.977Z",
+      "lastUpdated": "2024-02-13T19:18:34.327Z",
       "outputs": {
         "svg12": "./ui/svg/ui-continuous-12.svg",
         "svg16": "./ui/svg/ui-continuous-16.svg",
@@ -2762,7 +2762,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60076 } }
       ],
       "createdAt": "2023-02-01T23:25:40.847Z",
-      "lastUpdated": "2023-10-25T17:34:15.989Z",
+      "lastUpdated": "2024-02-14T18:12:04.390Z",
       "outputs": {
         "svg12": "./ui/svg/ui-convert-12.svg",
         "svg16": "./ui/svg/ui-convert-16.svg",
@@ -2834,7 +2834,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59991 } }
       ],
       "createdAt": "2023-02-01T23:25:40.796Z",
-      "lastUpdated": "2023-10-25T17:34:15.437Z",
+      "lastUpdated": "2024-03-21T05:49:32.083Z",
       "outputs": {
         "svg12": "./ui/svg/ui-defi-12.svg",
         "svg16": "./ui/svg/ui-defi-16.svg",
@@ -3014,7 +3014,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61581 } }
       ],
       "createdAt": "2023-02-01T23:25:58.636Z",
-      "lastUpdated": "2023-10-25T18:34:34.518Z",
+      "lastUpdated": "2024-02-14T18:12:16.112Z",
       "outputs": {
         "svg12": "./ui/svg/ui-discordLogo-12.svg",
         "svg16": "./ui/svg/ui-discordLogo-16.svg",
@@ -3248,7 +3248,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60381 } }
       ],
       "createdAt": "2023-02-01T23:25:31.059Z",
-      "lastUpdated": "2023-10-16T20:13:41.061Z",
+      "lastUpdated": "2024-03-10T20:24:38.044Z",
       "outputs": {
         "svg12": "./ui/svg/ui-expand-12.svg",
         "svg16": "./ui/svg/ui-expand-16.svg",
@@ -3536,7 +3536,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60376 } }
       ],
       "createdAt": "2023-02-01T23:25:30.968Z",
-      "lastUpdated": "2023-10-25T17:34:14.858Z",
+      "lastUpdated": "2024-03-14T04:58:48.304Z",
       "outputs": {
         "svg12": "./ui/svg/ui-gauge-12.svg",
         "svg16": "./ui/svg/ui-gauge-16.svg",
@@ -3626,7 +3626,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60216 } }
       ],
       "createdAt": "2023-02-01T23:25:21.965Z",
-      "lastUpdated": "2023-10-25T17:34:15.536Z",
+      "lastUpdated": "2024-02-26T06:21:33.205Z",
       "outputs": {
         "svg12": "./ui/svg/ui-giftBox-12.svg",
         "svg16": "./ui/svg/ui-giftBox-16.svg",
@@ -3644,7 +3644,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60416 } }
       ],
       "createdAt": "2023-02-01T23:25:30.892Z",
-      "lastUpdated": "2023-10-25T17:34:14.740Z",
+      "lastUpdated": "2024-02-27T20:10:48.899Z",
       "outputs": {
         "svg12": "./ui/svg/ui-giftCard-12.svg",
         "svg16": "./ui/svg/ui-giftCard-16.svg",
@@ -3680,7 +3680,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61126 } }
       ],
       "createdAt": "2023-02-01T23:25:40.753Z",
-      "lastUpdated": "2023-10-25T17:34:14.996Z",
+      "lastUpdated": "2024-02-27T20:15:26.110Z",
       "outputs": {
         "svg12": "./ui/svg/ui-group-12.svg",
         "svg16": "./ui/svg/ui-group-16.svg",
@@ -3986,7 +3986,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59781 } }
       ],
       "createdAt": "2023-02-01T23:25:58.751Z",
-      "lastUpdated": "2023-10-24T20:30:17.212Z",
+      "lastUpdated": "2024-02-22T21:28:39.431Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lock-12.svg",
         "svg16": "./ui/svg/ui-lock-16.svg",
@@ -4040,7 +4040,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60086 } }
       ],
       "createdAt": "2023-02-01T23:25:02.104Z",
-      "lastUpdated": "2023-10-25T17:34:15.551Z",
+      "lastUpdated": "2024-02-14T15:26:58.178Z",
       "outputs": {
         "svg12": "./ui/svg/ui-minus-12.svg",
         "svg16": "./ui/svg/ui-minus-16.svg",
@@ -4130,7 +4130,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61341 } }
       ],
       "createdAt": "2023-02-01T23:25:49.885Z",
-      "lastUpdated": "2023-10-25T17:34:15.961Z",
+      "lastUpdated": "2024-02-22T21:28:50.024Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftBuyActive-12.svg",
         "svg16": "./ui/svg/ui-nftBuyActive-16.svg",
@@ -4166,7 +4166,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61371 } }
       ],
       "createdAt": "2023-02-01T23:25:21.850Z",
-      "lastUpdated": "2023-10-25T17:34:15.730Z",
+      "lastUpdated": "2024-02-27T20:17:07.732Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftOfferActive-12.svg",
         "svg16": "./ui/svg/ui-nftOfferActive-16.svg",
@@ -4202,7 +4202,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61331 } }
       ],
       "createdAt": "2023-02-01T23:25:21.836Z",
-      "lastUpdated": "2023-10-25T17:34:15.529Z",
+      "lastUpdated": "2024-02-22T16:58:21.882Z",
       "outputs": {
         "svg12": "./ui/svg/ui-nftSaleActive-12.svg",
         "svg16": "./ui/svg/ui-nftSaleActive-16.svg",
@@ -4418,7 +4418,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60246 } }
       ],
       "createdAt": "2023-02-01T23:25:21.751Z",
-      "lastUpdated": "2023-10-25T17:34:14.767Z",
+      "lastUpdated": "2024-02-14T03:44:50.982Z",
       "outputs": {
         "svg12": "./ui/svg/ui-percentage-12.svg",
         "svg16": "./ui/svg/ui-percentage-16.svg",
@@ -4508,7 +4508,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60431 } }
       ],
       "createdAt": "2023-02-01T23:25:40.690Z",
-      "lastUpdated": "2023-10-25T17:34:14.785Z",
+      "lastUpdated": "2024-02-14T18:26:12.713Z",
       "outputs": {
         "svg12": "./ui/svg/ui-protection-12.svg",
         "svg16": "./ui/svg/ui-protection-16.svg",
@@ -4580,7 +4580,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60211 } }
       ],
       "createdAt": "2023-02-01T23:26:07.556Z",
-      "lastUpdated": "2023-10-25T17:34:15.042Z",
+      "lastUpdated": "2024-03-20T17:04:34.842Z",
       "outputs": {
         "svg12": "./ui/svg/ui-questionMark-12.svg",
         "svg16": "./ui/svg/ui-questionMark-16.svg",
@@ -4688,7 +4688,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60891 } }
       ],
       "createdAt": "2023-02-01T23:26:07.690Z",
-      "lastUpdated": "2023-10-25T17:34:16.318Z",
+      "lastUpdated": "2024-03-18T18:01:24.327Z",
       "outputs": {
         "svg12": "./ui/svg/ui-reportInactive-12.svg",
         "svg16": "./ui/svg/ui-reportInactive-16.svg",
@@ -4886,7 +4886,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59921 } }
       ],
       "createdAt": "2023-02-01T23:25:12.867Z",
-      "lastUpdated": "2023-10-25T17:34:15.536Z",
+      "lastUpdated": "2024-02-27T20:17:53.531Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sofort-12.svg",
         "svg16": "./ui/svg/ui-sofort-16.svg",
@@ -5300,7 +5300,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61041 } }
       ],
       "createdAt": "2023-02-01T23:25:02.364Z",
-      "lastUpdated": "2023-10-25T17:34:14.902Z",
+      "lastUpdated": "2024-02-29T04:57:26.994Z",
       "outputs": {
         "svg12": "./ui/svg/ui-taxesReceipt-12.svg",
         "svg16": "./ui/svg/ui-taxesReceipt-16.svg",
@@ -5372,7 +5372,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61131 } }
       ],
       "createdAt": "2023-02-01T23:25:40.782Z",
-      "lastUpdated": "2023-10-25T17:34:14.829Z",
+      "lastUpdated": "2024-03-08T19:19:15.259Z",
       "outputs": {
         "svg12": "./ui/svg/ui-thumbsDownOutline-12.svg",
         "svg16": "./ui/svg/ui-thumbsDownOutline-16.svg",
@@ -5408,7 +5408,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61061 } }
       ],
       "createdAt": "2023-02-01T23:25:02.343Z",
-      "lastUpdated": "2023-10-25T17:34:14.670Z",
+      "lastUpdated": "2024-02-21T21:37:49.349Z",
       "outputs": {
         "svg12": "./ui/svg/ui-thumbsUpOutline-12.svg",
         "svg16": "./ui/svg/ui-thumbsUpOutline-16.svg",
@@ -5444,7 +5444,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60406 } }
       ],
       "createdAt": "2023-02-01T23:25:21.813Z",
-      "lastUpdated": "2023-10-25T17:34:14.857Z",
+      "lastUpdated": "2024-02-27T20:16:00.498Z",
       "outputs": {
         "svg12": "./ui/svg/ui-trophy-12.svg",
         "svg16": "./ui/svg/ui-trophy-16.svg",
@@ -5498,7 +5498,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60261 } }
       ],
       "createdAt": "2023-02-01T23:25:30.975Z",
-      "lastUpdated": "2023-10-25T17:34:14.793Z",
+      "lastUpdated": "2024-02-22T21:41:30.198Z",
       "outputs": {
         "svg12": "./ui/svg/ui-undo-12.svg",
         "svg16": "./ui/svg/ui-undo-16.svg",
@@ -5660,7 +5660,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59906 } }
       ],
       "createdAt": "2023-02-01T23:25:02.268Z",
-      "lastUpdated": "2023-10-25T17:34:14.989Z",
+      "lastUpdated": "2024-02-21T22:52:13.682Z",
       "outputs": {
         "svg12": "./ui/svg/ui-wallet-12.svg",
         "svg16": "./ui/svg/ui-wallet-16.svg",
@@ -5732,7 +5732,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59851 } }
       ],
       "createdAt": "2023-02-01T23:25:02.036Z",
-      "lastUpdated": "2023-10-25T17:34:15.542Z",
+      "lastUpdated": "2024-02-22T21:41:40.966Z",
       "outputs": {
         "svg12": "./ui/svg/ui-withdraw-12.svg",
         "svg16": "./ui/svg/ui-withdraw-16.svg",
@@ -5786,7 +5786,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61591 } }
       ],
       "createdAt": "2023-02-01T23:25:12.888Z",
-      "lastUpdated": "2023-10-25T17:34:16.318Z",
+      "lastUpdated": "2024-03-14T14:39:12.481Z",
       "outputs": {
         "svg12": "./ui/svg/ui-payouts-12.svg",
         "svg16": "./ui/svg/ui-payouts-16.svg",
@@ -5833,14 +5833,14 @@
       "type": "ui",
       "name": "rocket",
       "hash": "mGyjOCfU1/0XryNilOib27yQzzrGe+wppkV3Q2VS9zg=",
-      "description": "",
+      "description": "rocket, 🚀, rocketship, space, travel",
       "components": [
         { "props": { "size": 24 }, "metadata": { "unicode": 61493 } },
         { "props": { "size": 16 }, "metadata": { "unicode": 61492 } },
         { "props": { "size": 12 }, "metadata": { "unicode": 61491 } }
       ],
       "createdAt": "2023-02-01T23:25:40.775Z",
-      "lastUpdated": "2024-01-29T20:11:11.955Z",
+      "lastUpdated": "2024-03-21T14:57:27.304Z",
       "outputs": {
         "svg12": "./ui/svg/ui-rocket-12.svg",
         "svg16": "./ui/svg/ui-rocket-16.svg",
@@ -5912,7 +5912,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61516 } }
       ],
       "createdAt": "2023-02-01T23:25:02.178Z",
-      "lastUpdated": "2023-10-25T17:34:16.260Z",
+      "lastUpdated": "2024-02-26T16:02:49.126Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lightbulb-12.svg",
         "svg16": "./ui/svg/ui-lightbulb-16.svg",
@@ -6293,7 +6293,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61709 } }
       ],
       "createdAt": "2023-08-10T14:36:54.701Z",
-      "lastUpdated": "2023-10-05T21:13:36.325Z",
+      "lastUpdated": "2024-02-22T21:26:50.537Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-perpetualSwap-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-perpetualSwap-12-inactive.svg",
@@ -6413,7 +6413,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61673 } }
       ],
       "createdAt": "2023-08-10T14:36:54.755Z",
-      "lastUpdated": "2023-10-25T14:21:00.043Z",
+      "lastUpdated": "2024-02-27T18:38:31.779Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-compass-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-compass-12-inactive.svg",
@@ -6421,6 +6421,30 @@
         "svg16Inactive": "./nav/svg/nav-compass-16-inactive.svg",
         "svg24Active": "./nav/svg/nav-compass-24-active.svg",
         "svg24Inactive": "./nav/svg/nav-compass-24-inactive.svg"
+      }
+    },
+    "1332:157": {
+      "type": "nav",
+      "name": "commerceProduct",
+      "hash": "lYxyTW3xsPKfLC3rkxB+e5J/k2HFlb9PeMe/a6cxkdQ=",
+      "description": "product, commerce, cart, shopping",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61732 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61731 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61730 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61729 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61728 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61727 } }
+      ],
+      "createdAt": "2023-09-14T16:15:55.911Z",
+      "lastUpdated": "2024-03-14T22:31:35.607Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-commerceProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-commerceProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-commerceProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-commerceProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-commerceProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-commerceProduct-24-inactive.svg"
       }
     },
     "1332:183": {
@@ -6437,7 +6461,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61751 } }
       ],
       "createdAt": "2023-09-14T16:13:58.476Z",
-      "lastUpdated": "2023-10-25T17:17:53.428Z",
+      "lastUpdated": "2024-02-21T14:01:34.295Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-walletLogo-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-walletLogo-12-inactive.svg",
@@ -6479,7 +6503,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61745 } }
       ],
       "createdAt": "2023-09-14T22:57:49.346Z",
-      "lastUpdated": "2023-10-05T21:13:36.308Z",
+      "lastUpdated": "2024-02-14T18:13:59.281Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-securityKey-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-securityKey-12-inactive.svg",
@@ -6503,7 +6527,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61739 } }
       ],
       "createdAt": "2023-09-14T22:57:49.335Z",
-      "lastUpdated": "2023-10-25T17:59:43.299Z",
+      "lastUpdated": "2024-02-13T20:36:36.682Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-key-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-key-12-inactive.svg",
@@ -6791,7 +6815,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61928 } }
       ],
       "createdAt": "2023-10-20T17:19:06.419Z",
-      "lastUpdated": "2023-10-20T17:19:06.419Z",
+      "lastUpdated": "2024-03-14T22:00:14.459Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-venturesProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-venturesProduct-12-inactive.svg",
@@ -6815,7 +6839,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61922 } }
       ],
       "createdAt": "2023-10-20T17:19:06.413Z",
-      "lastUpdated": "2023-10-20T17:19:06.413Z",
+      "lastUpdated": "2024-02-22T21:26:55.261Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-rewardsProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-rewardsProduct-12-inactive.svg",
@@ -6887,7 +6911,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61862 } }
       ],
       "createdAt": "2023-10-20T17:19:06.497Z",
-      "lastUpdated": "2023-10-20T17:19:06.497Z",
+      "lastUpdated": "2024-03-14T22:33:26.497Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-derivativesProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-derivativesProduct-12-inactive.svg",
@@ -7007,7 +7031,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61886 } }
       ],
       "createdAt": "2023-10-20T17:19:06.408Z",
-      "lastUpdated": "2023-10-20T17:19:06.408Z",
+      "lastUpdated": "2024-02-14T18:12:00.024Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-learningRewardsProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-learningRewardsProduct-12-inactive.svg",
@@ -7039,30 +7063,6 @@
         "svg16Inactive": "./nav/svg/nav-borrowProduct-16-inactive.svg",
         "svg24Active": "./nav/svg/nav-borrowProduct-24-active.svg",
         "svg24Inactive": "./nav/svg/nav-borrowProduct-24-inactive.svg"
-      }
-    },
-    "1439:541": {
-      "type": "nav",
-      "name": "commerceProduct",
-      "hash": "wqnEwj5AELkmVQLbutI3XbvUQe9ug3I4vwftlCmuaCw=",
-      "description": "nav, commerce, product",
-      "components": [
-        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61732 } },
-        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61731 } },
-        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61730 } },
-        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61729 } },
-        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61728 } },
-        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61727 } }
-      ],
-      "createdAt": "2023-09-14T16:15:55.911Z",
-      "lastUpdated": "2023-10-20T17:19:06.473Z",
-      "outputs": {
-        "svg12Active": "./nav/svg/nav-commerceProduct-12-active.svg",
-        "svg12Inactive": "./nav/svg/nav-commerceProduct-12-inactive.svg",
-        "svg16Active": "./nav/svg/nav-commerceProduct-16-active.svg",
-        "svg16Inactive": "./nav/svg/nav-commerceProduct-16-inactive.svg",
-        "svg24Active": "./nav/svg/nav-commerceProduct-24-active.svg",
-        "svg24Inactive": "./nav/svg/nav-commerceProduct-24-inactive.svg"
       }
     },
     "1439:548": {
@@ -7295,7 +7295,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61904 } }
       ],
       "createdAt": "2023-10-20T17:19:06.467Z",
-      "lastUpdated": "2023-10-20T17:19:06.467Z",
+      "lastUpdated": "2024-02-22T21:26:46.452Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-participateProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-participateProduct-12-inactive.svg",
@@ -7423,6 +7423,108 @@
         "svg16Inactive": "./nav/svg/nav-cluster-16-inactive.svg",
         "svg24Active": "./nav/svg/nav-cluster-24-active.svg",
         "svg24Inactive": "./nav/svg/nav-cluster-24-inactive.svg"
+      }
+    },
+    "1846:126": {
+      "type": "nav",
+      "name": "qrCode",
+      "hash": "vszZp88MlsGnaVIZKwWkApJYYIY15uH0KIfj+HsWh+o=",
+      "description": "QRcode, code, QR, nav,",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61981 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61980 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61979 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61978 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61977 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61976 } }
+      ],
+      "createdAt": "2024-03-21T14:57:27.293Z",
+      "lastUpdated": "2024-03-21T14:57:27.293Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-qrCode-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-qrCode-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-qrCode-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-qrCode-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-qrCode-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-qrCode-24-inactive.svg"
+      }
+    },
+    "1846:134": {
+      "type": "nav",
+      "name": "coinbaseOneLogo",
+      "hash": "ACcm5O5d06eQuTUMqWMqCa/Yr7T+p3Aib6/fuyfra0U=",
+      "description": "nav, navigation, brand, icon, logo, coinbase",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61975 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 61974 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 61973 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 61972 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 61971 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61970 } }
+      ],
+      "createdAt": "2024-03-21T14:57:27.281Z",
+      "lastUpdated": "2024-03-21T14:57:27.281Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-coinbaseOneLogo-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-coinbaseOneLogo-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-coinbaseOneLogo-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-coinbaseOneLogo-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-coinbaseOneLogo-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-coinbaseOneLogo-24-inactive.svg"
+      }
+    },
+    "1846:169": {
+      "type": "ui",
+      "name": "bellInactive",
+      "hash": "6pHi/LJTXGr67hzb6TYX86wPglCeQbGB9rumWg5Y3pk=",
+      "description": "notification, update, news, new, bell, 🔔, 🛎, inactive,",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61984 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61983 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61982 } }
+      ],
+      "createdAt": "2024-03-21T14:57:27.275Z",
+      "lastUpdated": "2024-03-21T14:57:27.275Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-bellInactive-12.svg",
+        "svg16": "./ui/svg/ui-bellInactive-16.svg",
+        "svg24": "./ui/svg/ui-bellInactive-24.svg"
+      }
+    },
+    "1846:173": {
+      "type": "ui",
+      "name": "rocketInactive",
+      "hash": "V1hbSs3Pglh5Bn16k9/XcCIW6625qJmQ0jxj9XnfurI=",
+      "description": "rocket, 🚀, rocketship, space, travel,",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61990 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61989 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61988 } }
+      ],
+      "createdAt": "2024-03-21T14:57:27.266Z",
+      "lastUpdated": "2024-03-21T14:57:27.266Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-rocketInactive-12.svg",
+        "svg16": "./ui/svg/ui-rocketInactive-16.svg",
+        "svg24": "./ui/svg/ui-rocketInactive-24.svg"
+      }
+    },
+    "1882:44": {
+      "type": "ui",
+      "name": "crypto",
+      "hash": "PRsF/mowYOX49ZVTppVNksad8HmBUwUjmh2HNXVUiiA=",
+      "description": "coin, ui, star, crypto,",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 61987 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 61986 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 61985 } }
+      ],
+      "createdAt": "2024-03-21T14:57:27.287Z",
+      "lastUpdated": "2024-03-21T14:57:27.287Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-crypto-12.svg",
+        "svg16": "./ui/svg/ui-crypto-16.svg",
+        "svg24": "./ui/svg/ui-crypto-24.svg"
       }
     }
   }

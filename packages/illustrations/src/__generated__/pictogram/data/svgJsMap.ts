@@ -469,6 +469,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/formDownload-1').content,
     dark: () => require('../svgJs/dark/formDownload-1').content,
   },
+  futures: {
+    light: () => require('../svgJs/light/futures-0').content,
+    dark: () => require('../svgJs/dark/futures-0').content,
+  },
   gasFees: {
     light: () => require('../svgJs/light/gasFees-3').content,
     dark: () => require('../svgJs/dark/gasFees-3').content,
@@ -588,6 +592,10 @@ const svgJsMap = {
   lightbulbLearn: {
     light: () => require('../svgJs/light/lightbulbLearn-3').content,
     dark: () => require('../svgJs/dark/lightbulbLearn-3').content,
+  },
+  lightningNetworkSend: {
+    light: () => require('../svgJs/light/lightningNetworkSend-0').content,
+    dark: () => require('../svgJs/dark/lightningNetworkSend-0').content,
   },
   linkYourAccount: {
     light: () => require('../svgJs/light/linkYourAccount-2').content,

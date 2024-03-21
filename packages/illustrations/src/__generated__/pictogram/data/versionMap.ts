@@ -291,6 +291,8 @@ const versionMap: Record<PictogramName, number> = {
   passport: 1,
   standWithCryptoLogoNavigation: 0,
   learningRewardsProduct: 0,
+  lightningNetworkSend: 0,
+  futures: 0,
 };
 
 export default versionMap;

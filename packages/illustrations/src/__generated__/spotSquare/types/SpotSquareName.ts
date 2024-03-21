@@ -112,6 +112,7 @@ export type SpotSquareName =
   | 'hardwareWallets'
   | 'holdCrypto'
   | 'holdingCrypto'
+  | 'idError'
   | 'insuranceProtection'
   | 'interestForYou'
   | 'invest'

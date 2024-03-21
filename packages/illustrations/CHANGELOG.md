@@ -8,6 +8,30 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.1.0 (3/21/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 3/21/2024. [[#2865](https://github.cbhq.net/frontend/cds/pull/2865)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- futures
+- lightningNetworkSend
+
+#### Hero Square
+
+- walletConfirmation
+- walletWarning
+
+#### Spot Square
+
+- idError
+
 ## 3.0.0 (3/14/2024 PST)
 
 #### 💥 Breaking

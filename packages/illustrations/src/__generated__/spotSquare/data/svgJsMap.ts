@@ -441,6 +441,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/holdingCrypto-2').content,
     dark: () => require('../svgJs/dark/holdingCrypto-2').content,
   },
+  idError: {
+    light: () => require('../svgJs/light/idError-0').content,
+    dark: () => require('../svgJs/dark/idError-0').content,
+  },
   insuranceProtection: {
     light: () => require('../svgJs/light/insuranceProtection-3').content,
     dark: () => require('../svgJs/dark/insuranceProtection-3').content,

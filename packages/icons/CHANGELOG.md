@@ -8,6 +8,35 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.6.0 (3/21/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 3/21/2024. [[#2865](https://github.cbhq.net/frontend/cds/pull/2865)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- bellInactive
+- crypto
+- rocketInactive
+
+#### Nav
+
+- coinbaseOneLogo
+- qrCode
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- commerceProduct
+
 ## 2.5.0 (2/13/2024 PST)
 
 #### 🚀 Updates

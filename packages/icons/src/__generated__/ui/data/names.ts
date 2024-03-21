@@ -273,6 +273,9 @@ const names: UiIconName[] = [
   'gaugeEmpty',
   'gaugeLow',
   'gaugeMedium',
+  'rocketInactive',
+  'bellInactive',
+  'crypto',
 ];
 
 export default names;

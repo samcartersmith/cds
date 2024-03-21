@@ -118,6 +118,7 @@ const names: SpotSquareName[] = [
   'hardwareWallets',
   'holdCrypto',
   'holdingCrypto',
+  'idError',
   'insuranceProtection',
   'interestForYou',
   'invest',

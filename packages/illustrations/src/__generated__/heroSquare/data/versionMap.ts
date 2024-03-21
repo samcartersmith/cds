@@ -354,6 +354,8 @@ const versionMap: Record<HeroSquareName, number> = {
   lightningNetwork: 0,
   lightningNetworkSend: 0,
   referralsGenericCoin: 0,
+  walletWarning: 0,
+  walletConfirmation: 0,
 };
 
 export default versionMap;
