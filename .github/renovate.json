@@ -1,7 +1,7 @@
 {
     "extends": ["local>infra/renovate-cron"],
     "labels": [""],
-    "assignees": ["emily-seibert", "cody-nova"],
+    "assignees": ["siddharth-kulkarni", "cody-nova"],
     "packageRules": [
         {
             "matchPackagePrefixes": ["^@cbhq/client-analytics", "@cbhq/client-analytics", "^@cbhq/error-vitals-mobile", "@cbhq/error-vitals-mobile", "^@cbhq/error-vitals-web", "@cbhq/error-vitals-web", "^@cbhq/client-kill-switch", "@cbhq/client-kill-switch", "^@cbhq/core-vitals-mobile", "@cbhq/core-vitals-mobile", "^@cbhq/experiments", "@cbhq/experiments" ],
