@@ -2,6 +2,8 @@
 
 > Release Instructions: For details on how to release, refer to the [Adoption Tracker Release Documentation](./release/adoption-tracker.md)
 
+> For details regarding Adoption Tracker Config Modification: See [Adoption Tracker Config Docs](../adoption-tracker-config.md)
+
 ## Summary
 
 The Adoption Tracker is a tool designed to:
@@ -64,15 +66,20 @@ yarn nx run website:start
 
   - `projectInfo()` returns the data such as pg/pillar, github, and other config file properties.
 
-- `generateComponentPatternsData()`: Compiles product component data for display on the website.
+- `generateProductComponentData()`: Compiles product component data for display on the website.
 
   - Uses the previously generated files to aggregate component data based on config.
 
-  - To aggregate overall summaries of the generated data, we use the `generateAdoptionAndImpactReports()` and `generateComponentPatternsSummary()` which are both individual files at the top level of the generated files folder.
+  - To aggregate overall summaries of the generated data, we use the `generateAdoptionAndImpactReports()` and `generateProductComponentsSummary()` which are both individual files at the top level of the generated files folder.
 
     - `generateAdoptionAndImpactReports()` contains a summary of CDS/Historical Adoption Over Time and Impact over Time
 
-    - `generateComponentPatternsSummary()` contains an aggregate of totalInstances, totalCallSites, and other product component data / versioning across all project.
+    - `generateProductComponentsSummary()` contains an aggregate of totalInstances, totalCallSites, and other product component data / versioning across all project.
+
+- `generateCUJFiles()`: Method for generating all core user journey files
+  - `generateMergedCUJStatsSummary`: Generates merged stats.json for CUJs
+  - `generateCUJAverageReport`: Generates average adoption stats across all CUJs
+  - `generateMergedCUJComponentSummary`: Generates merged components.json for CUJs
 
 ### Website
 
@@ -87,3 +94,5 @@ yarn nx run website:start
   - Note: We use the `adoptionTrackerCSVDataExcludeOther` entry from our report data as we want to exclude the "Other" pillar from the config in our overall calculation. For data that includes the "Other" pillar, you can see `adoptionTrackerCSVData`.
 
 - `AdoptionProductComponents`: Details on product components usage, utilizing `componentPatternsSummary` data.
+
+- `CUJOverview` and `CUJDetails` for all CUJ specific pages. Pulls data from /cuj/ and /cuj/summary/.

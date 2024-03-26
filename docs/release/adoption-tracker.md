@@ -4,6 +4,8 @@
 
 For details regarding Adoption Tracker Development: See [Adoption Tracker Development Docs](../adoption-tracker-development.md)
 
+For details regarding Adoption Tracker Config Modification: See [Adoption Tracker Config Docs](../adoption-tracker-config.md)
+
 ## Overview
 
 config - `apps/website/scripts/adoption/config.ts`
@@ -41,6 +43,8 @@ parsers - `apps/website/scripts/adoption/parsers`
 
 Note: Change the password below to the one in 1Password.
 Before running the command below, be sure to have already run `yarn nx run website:adoption`.
+
+Note: the `SNOWSQL_PWD` below is incorrect. Replace it with the correct one from 1Password.
 
 ```sh
 SNOWSQL_PWD=JDtdbe2mKSm13jDqlS yarn nx run website:adoption-snowflake-upload
