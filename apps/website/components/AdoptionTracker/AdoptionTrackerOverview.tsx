@@ -301,7 +301,7 @@ function usePercentChange() {
   }, [latest, statToCompare]);
 }
 
-const PercentChange = memo(
+export const PercentChange = memo(
   ({
     showParenthesis,
     showComparisonTime,
@@ -395,7 +395,7 @@ export const Project: React.FC<React.PropsWithChildren<ProjectProps>> = memo(({ 
 
 Project.displayName = 'Project';
 
-const DetailStatCell = memo(
+export const DetailStatCell = memo(
   ({
     allExpanded,
     cdsPercent,
@@ -434,6 +434,7 @@ const DetailStatCell = memo(
           cdsWebVersion={cdsWebVersion}
           latestCdsVersionPublished3MonthsAgo={latestCdsVersionPublished3MonthsAgo}
           upToDate={upToDate}
+          verInfoName="Project Version"
         />
         <AdopterStatsBreakdownCell detail={cds} title="CDS" />
         <AdopterStatsBreakdownCell detail={presentational} title="Presentational" />

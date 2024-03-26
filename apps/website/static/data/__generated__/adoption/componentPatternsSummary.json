@@ -160,19 +160,19 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^5.31.4",
+      "cdsWeb": "^6.0.0",
       "cdsMobile": "Not Found",
-      "cdsCommon": "^5.16.0",
-      "lowestVersion": "^5.16.0",
-      "sanitizedLowestVersion": "5.16.0"
+      "cdsCommon": "^6.0.0",
+      "lowestVersion": "^6.0.0",
+      "sanitizedLowestVersion": "6.0.0"
     }
   },
   "NavigationBar": {
-    "totalInstances": 9,
-    "totalCallSites": 9,
+    "totalInstances": 11,
+    "totalCallSites": 10,
     "components": [
       {
         "name": "NavigationBar",
@@ -381,6 +381,38 @@
       {
         "name": "NavigationBar",
         "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 2,
+        "totalCallSites": 1,
+        "callSites": {
+          "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+        },
+        "propsWithCallSites": {
+          "projectId": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "action": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "target": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "spacingBottom": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "spacingTop": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "start": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "end": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
         "totalInstances": 1,
         "totalCallSites": 1,
         "propsWithCallSites": {
@@ -453,14 +485,14 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^5.31.4",
+      "cdsWeb": "^6.0.0",
       "cdsMobile": "Not Found",
-      "cdsCommon": "^5.16.0",
-      "lowestVersion": "^5.16.0",
-      "sanitizedLowestVersion": "5.16.0"
+      "cdsCommon": "^6.0.0",
+      "lowestVersion": "^6.0.0",
+      "sanitizedLowestVersion": "6.0.0"
     }
   }
 }

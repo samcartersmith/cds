@@ -1,0 +1,1364 @@
+{
+  "cds": [
+    {
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-mobile/layout/VStack",
+      "totalInstances": 19,
+      "totalCallSites": 11,
+      "cds": "@cbhq/cds-mobile/layout/VStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx",
+          "callSites": [
+            "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx",
+            "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@app/screens/Support/components/ChatLoader.tsx",
+          "callSites": [
+            "@app/screens/Support/components/ContactUsOptions.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 2,
+        "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 2,
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
+        "@app/screens/Support/SupportScreen.tsx": 2,
+        "@app/screens/Support/SupportWebUrlsScreen.tsx": 2,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 2,
+        "@app/screens/Support/components/CaseHistory.tsx": 1,
+        "@app/screens/Support/components/ChatLoader.tsx": 1,
+        "@app/screens/Support/components/Footer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "pin": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "gap": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 2,
+          "@app/screens/Support/components/ChatLoader.tsx": 1
+        },
+        "spacing": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 2
+        },
+        "flexGrow": {
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 2,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 2,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 2
+        },
+        "justifyContent": {
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "background": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "bottom": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "alignContent": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "flexBasis": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1,
+          "@app/screens/Support/components/ChatLoader.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "alignItems": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "spacingStart": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "spacingVertical": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        },
+        "width": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/components/ChatLoader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "@cbhq/cds-mobile/layout/Fallback",
+      "totalInstances": 15,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/layout/Fallback",
+      "callSites": {
+        "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 13,
+        "@app/screens/Support/components/ChatLoader.tsx": 2
+      },
+      "propsWithCallSites": {
+        "disableRandomRectWidth": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 12
+        },
+        "width": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 13,
+          "@app/screens/Support/components/ChatLoader.tsx": 2
+        },
+        "height": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 13,
+          "@app/screens/Support/components/ChatLoader.tsx": 2
+        },
+        "shape": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-mobile/layout/Box",
+      "totalInstances": 29,
+      "totalCallSites": 9,
+      "cds": "@cbhq/cds-mobile/layout/Box",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@app/screens/Support/SupportClawBackIntelligentCard.tsx",
+          "callSites": [
+            "@app/screens/Support/SupportScreen.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@app/screens/Support/components/WblHoldCardListItem.tsx",
+          "callSites": [
+            "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx",
+            "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "@app/screens/Support/RequestedCallInfoCard.tsx": 3,
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 2,
+        "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 5,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
+        "@app/screens/Support/SupportScreen.tsx": 3,
+        "@app/screens/Support/components/ResumeChatCB.tsx": 3,
+        "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 4,
+        "@app/screens/Support/components/WblHoldCardListItem.tsx": 4
+      },
+      "propsWithCallSites": {
+        "flexDirection": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 3,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1,
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 2
+        },
+        "bordered": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "borderColor": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "spacingVertical": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "borderRadius": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "alignItems": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 2,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 2,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 2
+        },
+        "justifyContent": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 2
+        },
+        "maxWidth": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1
+        },
+        "spacingStart": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 2,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 2,
+          "@app/screens/Support/SupportScreen.tsx": 2,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 2
+        },
+        "spacingBottom": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 2,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 2,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 2,
+          "@app/screens/Support/SupportScreen.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 2
+        },
+        "spacing": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "height": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "width": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "background": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "spacingEnd": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1,
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "TextLabel1",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextLabel1",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/typography/TextLabel1",
+      "callSites": {
+        "@app/screens/Support/RequestedCallInfoCard.tsx": 2,
+        "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Pictogram",
+      "sourceFile": "@cbhq/cds-mobile/illustrations/Pictogram",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-mobile/illustrations/Pictogram",
+      "callSites": {
+        "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+        "@app/screens/Support/SupportScreen.tsx": 1,
+        "@app/screens/Support/components/CaseHistory.tsx": 1,
+        "@app/screens/Support/components/Footer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1,
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        },
+        "scaleMultiplier": {
+          "@app/screens/Support/RequestedCallInfoCard.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "dimension": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HeroSquare",
+      "sourceFile": "@cbhq/cds-mobile/illustrations/HeroSquare",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-mobile/illustrations/HeroSquare",
+      "callSites": {
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle3",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
+      "totalInstances": 9,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle3",
+      "callSites": {
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 2,
+        "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 3,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 2,
+        "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+      },
+      "propsWithCallSites": {
+        "align": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 2,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "spacing": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1
+        },
+        "spacingStart": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "TextBody",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
+      "totalInstances": 11,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-mobile/typography/TextBody",
+      "callSites": {
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+        "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 3,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 5,
+        "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+      },
+      "propsWithCallSites": {
+        "align": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "color": {
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 2,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 4,
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 2
+        },
+        "spacingStart": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "spacingVertical": {
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        },
+        "spacingEnd": {
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@components/interactables/Button",
+      "totalInstances": 8,
+      "totalCallSites": 5,
+      "cds": "@components/interactables/Button",
+      "presentationalLibrary": "@components/interactables/Button",
+      "callSites": {
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+        "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
+        "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+      },
+      "propsWithCallSites": {
+        "variant": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 2,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "spacing": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextHeadline",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
+      "totalInstances": 11,
+      "totalCallSites": 7,
+      "cds": "@cbhq/cds-mobile/typography/TextHeadline",
+      "callSites": {
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+        "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 4,
+        "@app/screens/Support/components/CaseHistory.tsx": 1,
+        "@app/screens/Support/components/Footer.tsx": 1,
+        "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-mobile/icons/Icon",
+      "totalInstances": 7,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-mobile/icons/Icon",
+      "callSites": {
+        "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 2,
+        "@app/screens/Support/components/ResumeChatCB.tsx": 3,
+        "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1,
+        "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 2,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 3,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        },
+        "size": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 2,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 3,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        },
+        "color": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 2,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 2,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "spacingEnd": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 2,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1,
+          "@app/screens/Support/components/WblHoldCardListItem.tsx": 1
+        },
+        "dangerouslySetColor": {
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1
+        },
+        "testID": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "Drawer",
+      "sourceFile": "@cbhq/cds-mobile/overlays/Drawer/Drawer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/overlays/Drawer/Drawer",
+      "propsWithCallSites": {
+        "pin": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        },
+        "onCloseComplete": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle1"
+    },
+    {
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-mobile/typography/TextLabel2",
+      "callSites": {
+        "@app/screens/Support/SupportScreen.tsx": 1,
+        "@app/screens/Support/components/CaseHistory.tsx": 1,
+        "@app/screens/Support/components/Footer.tsx": 1,
+        "@app/screens/Support/components/ResumeChatCB.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/Support/SupportScreen.tsx": 1,
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1,
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "spacingEnd": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-mobile/layout/Divider",
+      "totalInstances": 5,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/layout/Divider",
+      "callSites": {
+        "@app/screens/Support/SupportScreen.tsx": 4,
+        "@app/screens/Support/components/TopicListContainer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "direction": {
+          "@app/screens/Support/SupportScreen.tsx": 4,
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@cbhq/cds-mobile/layout/HStack",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/layout/HStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "@app/screens/Support/components/CaseHistory.tsx",
+          "callSites": [
+            "@app/screens/Support/SupportScreen.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@app/screens/Support/components/Footer.tsx",
+          "callSites": [
+            "@app/screens/Support/SupportScreen.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "@app/screens/Support/components/CaseHistory.tsx": 1,
+        "@app/screens/Support/components/Footer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "justifyContent": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        },
+        "alignItems": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Pressable",
+      "sourceFile": "@cbhq/cds-mobile/system/Pressable",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/system/Pressable",
+      "callSites": {
+        "@app/screens/Support/components/CaseHistory.tsx": 1,
+        "@app/screens/Support/components/Footer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "accessibilityRole": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        },
+        "backgroundColor": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Support/components/CaseHistory.tsx": 1,
+          "@app/screens/Support/components/Footer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DotCount",
+      "sourceFile": "@cbhq/cds-mobile/dots/DotCount",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/dots/DotCount",
+      "propsWithCallSites": {
+        "testID": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "count": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Collapsible",
+      "sourceFile": "@cbhq/cds-mobile/collapsible/Collapsible",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/collapsible/Collapsible",
+      "propsWithCallSites": {
+        "collapsed": {
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        }
+      }
+    }
+  ],
+  "presentational": [
+    {
+      "name": "FullScreenLoader",
+      "sourceFile": "@components/UI/FullScreenLoader",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "presentationalLibrary": "@components/UI/FullScreenLoader",
+      "callSites": {
+        "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+        "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+        "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+        "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "loading": {
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+          "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Svg",
+      "sourceFile": "react-native-svg/Svg",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Svg",
+      "propsWithCallSites": {
+        "viewBox": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "width": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "height": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CurrencyAndCashIcon",
+      "sourceFile": "@app/screens/Support/components/CurrencyAndCashIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Svg"
+    },
+    {
+      "name": "CurrencyIcon",
+      "sourceFile": "@app/screens/Support/components/CurrencyIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "Svg"
+    }
+  ],
+  "other": [
+    {
+      "name": "LightThemeProvider",
+      "sourceFile": "@components/ThemeProvider/LightThemeProvider",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@app/screens/CoinbaseHelp/CoinbaseHelpScreen.tsx": 1,
+        "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+        "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 1
+      }
+    },
+    {
+      "name": "ScreenBoundary",
+      "sourceFile": "@app/components/ScreenBoundary/ScreenBoundary",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "callSites": {
+        "@app/screens/CoinbaseHelp/CoinbaseHelpScreen.tsx": 1,
+        "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+        "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+        "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+        "@app/screens/Support/SupportScreen.tsx": 1,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "instrumentationId": {
+          "@app/screens/CoinbaseHelp/CoinbaseHelpScreen.tsx": 1,
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+          "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CoinbaseHelpScreenContent",
+      "sourceFile": "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CoinbaseHelpScreenContentFallback",
+      "sourceFile": "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContentFallback",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 2
+      },
+      "propsWithCallSites": {
+        "loading": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "Screen",
+      "sourceFile": "@app/components/Screen",
+      "totalInstances": 10,
+      "totalCallSites": 10,
+      "callSites": {
+        "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+        "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+        "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+        "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+        "@app/screens/Support/SupportScreen.tsx": 1,
+        "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "scrollable": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1
+        },
+        "noSpacing": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "navHeader": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+          "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+          "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+          "@app/screens/Support/SupportScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+          "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "header": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WebView",
+      "sourceFile": "react-native-webview/WebView",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+        "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+        "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "scalesPageToFit": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1
+        },
+        "allowFileAccess": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1
+        },
+        "ref": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "startInLoadingState": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "sharedCookiesEnabled": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1
+        },
+        "source": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "key": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "testID": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1
+        },
+        "renderLoading": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1
+        },
+        "webviewDebuggingEnabled": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1
+        },
+        "allowsBackForwardNavigationGestures": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "onNavigationStateChange": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1
+        },
+        "injectedJavaScriptBeforeContentLoaded": {
+          "@app/screens/CoinbaseHelp/components/CoinbaseHelpScreenContent.tsx": 1
+        },
+        "automaticallyAdjustContentInsets": {
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "onLoadEnd": {
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "onLoadProgress": {
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        },
+        "onShouldStartLoadWithRequest": {
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NetworkBoundary",
+      "sourceFile": "@app/components/NetworkBoundary",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+        "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "fallback": {
+          "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+          "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SupportDeepLinkIntermediateScreenContent",
+      "sourceFile": "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "supportDeepLinkIntermediateScreenQueryRef": {
+          "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SupportNavigateToChatScreenContent",
+      "sourceFile": "@app/screens/Support/SupportNavigateToChatScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "supportNavigateToChatScreenQueryRef": {
+          "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SupportUnbanReviewStatusCard",
+      "sourceFile": "@app/screens/SupportUnbanIntelligentCard/components/SupportUnbanReviewStatusCard",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isCollapsible": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "unbanCase": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SupportClawBackIntelligentCard",
+      "sourceFile": "@app/screens/Support/SupportClawBackIntelligentCard",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "showHeading": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "parentComponent": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SupportWblHoldIntelligentCard",
+      "sourceFile": "@app/screens/Support/components/SupportWblHoldIntelligentCard",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CaseList",
+      "sourceFile": "@app/screens/SupportCases/components/CaseList",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "caseList": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "showAccordion": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "logSectionViewAnalytics": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SupportUnbanReviewInitiationCard",
+      "sourceFile": "@app/screens/SupportUnbanIntelligentCard/components/SupportUnbanReviewInitiationCard",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "usageOptions": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RequestedCallInfoCard",
+      "sourceFile": "@app/screens/Support/RequestedCallInfoCard",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ContactUsOptions",
+      "sourceFile": "@app/screens/Support/components/ContactUsOptions",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "hasActiveConversation": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "topicList": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "isChatEnabledForUser": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "conversationCB": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "unreadMessagesCount": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "isCbChatOffline": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "isCbChatLoading": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "showCallMeNowFeature": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TopicListContainer",
+      "sourceFile": "@app/screens/Support/components/TopicListContainer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerRef": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CaseHistory",
+      "sourceFile": "@app/screens/Support/components/CaseHistory",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "previousCases": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        },
+        "recentCases": {
+          "@app/screens/Support/SupportScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Footer",
+      "sourceFile": "@app/screens/Support/components/Footer",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "SupportScreenContents",
+      "sourceFile": "@app/screens/Support/SupportScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Section",
+      "sourceFile": "@app/components/Section/Section",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Support/components/ContactUsOptions.tsx": 1,
+        "@app/screens/Support/components/TopicListContainer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1,
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1,
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "label": {
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ChatLoader",
+      "sourceFile": "@app/screens/Support/components/ChatLoader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SettingCell",
+      "sourceFile": "@components/cells/SettingCell",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Support/components/ContactUsOptions.tsx": 1,
+        "@app/screens/Support/components/TopicListContainer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "caret": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1,
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "title": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1,
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "icon": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        },
+        "subtitle": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1,
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "key": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1,
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "disabled": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        },
+        "disabledOpacity": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        },
+        "headlineColor": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        },
+        "iconSize": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        },
+        "weight": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OngoingChatButton",
+      "sourceFile": "@app/screens/Support/components/OngoingChatButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "conversationCB": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        },
+        "unreadMessagesCount": {
+          "@app/screens/Support/components/ContactUsOptions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ResumeChatCB",
+      "sourceFile": "@app/screens/Support/components/ResumeChatCB",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isChatWithBot": {
+          "@app/screens/Support/components/OngoingChatButton.tsx": 1
+        },
+        "agentName": {
+          "@app/screens/Support/components/OngoingChatButton.tsx": 1
+        },
+        "isLastMessageFromUser": {
+          "@app/screens/Support/components/OngoingChatButton.tsx": 1
+        },
+        "lastMessage": {
+          "@app/screens/Support/components/OngoingChatButton.tsx": 1
+        },
+        "numberOfUnreadMessage": {
+          "@app/screens/Support/components/OngoingChatButton.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Support/components/OngoingChatButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Path",
+      "sourceFile": "react-native-svg/Path",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "d": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "fill": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SettingCellWithCustomAccessory",
+      "sourceFile": "@components/cells/SettingCellWithCustomAccessory",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "icon": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "subtitle": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "headlineColor": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "iconSize": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "weight": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "accessory": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ChatEntryIcon",
+      "sourceFile": "@app/screens/Support/components/ResumeChatCB.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isBotIcon": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "iconSize": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        },
+        "iconWrapperSize": {
+          "@app/screens/Support/components/ResumeChatCB.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WblHoldCardListItem",
+      "sourceFile": "@app/screens/Support/components/WblHoldCardListItem",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 2
+      },
+      "propsWithCallSites": {
+        "key": {
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 2
+        },
+        "holdGroup": {
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 2
+        },
+        "showGenericMessage": {
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "Link",
+      "sourceFile": "@components/typography/Link",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "variant": {
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Fragment",
+      "sourceFile": "react/Fragment",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TopicList",
+      "sourceFile": "@app/screens/Support/components/TopicListContainer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": {
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "label": {
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "topicListOrder": {
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "topics": {
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        },
+        "countryCode": {
+          "@app/screens/Support/components/TopicListContainer.tsx": 1
+        }
+      }
+    }
+  ]
+}

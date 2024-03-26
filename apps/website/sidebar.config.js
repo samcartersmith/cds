@@ -1,4 +1,5 @@
 const { adopters } = require('./data/__generated__/adoption/adopters-sidebar');
+const { cujs } = require('./data/__generated__/adoption/cuj-sidebar');
 const { deprecations } = require('./data/__generated__/deprecations/deprecations-sidebar');
 
 /**
@@ -937,6 +938,11 @@ const sidebars = {
             { type: 'doc', id: 'historical-adoption', label: 'Historical Tracker Data' },
             { type: 'doc', id: 'product-component-adoption', label: 'Product Component Data' },
             ...adopters,
+            {
+              type: 'category',
+              label: 'CUJs',
+              items: [{ type: 'doc', id: 'cuj-overview', label: 'CUJ Overview' }, ...cujs],
+            },
           ],
         },
         {

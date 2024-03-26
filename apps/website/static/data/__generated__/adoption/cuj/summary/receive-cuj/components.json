@@ -1,0 +1,2198 @@
+{
+  "cds": [
+    {
+      "name": "IconButton",
+      "sourceFile": "@components/interactables/IconButton",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@components/interactables/IconButton",
+      "presentationalLibrary": "@components/interactables/IconButton",
+      "callSites": {
+        "@app/components/navigation/NavHeader.tsx": 1,
+        "@app/screens/Receive/ReceiveScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "transparent": {
+          "@app/components/navigation/NavHeader.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "name": {
+          "@app/components/navigation/NavHeader.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "testID": {
+          "@app/components/navigation/NavHeader.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "onPress": {
+          "@app/components/navigation/NavHeader.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "accessibilityLabel": {
+          "@app/components/navigation/NavHeader.tsx": 1
+        },
+        "accessibilityHint": {
+          "@app/components/navigation/NavHeader.tsx": 1
+        },
+        "hitSlop": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-mobile/layout/VStack",
+      "totalInstances": 18,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-mobile/layout/VStack",
+      "callSites": {
+        "@app/components/navigation/NavHeader.tsx": 1,
+        "@app/screens/Receive/ReceiveScreen.tsx": 4,
+        "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 3,
+        "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 4,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 6
+      },
+      "propsWithCallSites": {
+        "spacingTop": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "flexGrow": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "gap": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "spacingVertical": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+        },
+        "spacingHorizontal": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "height": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "alignItems": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 2,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "justifyContent": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "width": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "maxWidth": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextBody",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
+      "totalInstances": 11,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-mobile/typography/TextBody",
+      "callSites": {
+        "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+        "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
+        "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 7
+      },
+      "propsWithCallSites": {
+        "spacing": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "color": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 7
+        },
+        "align": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "spacingBottom": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "dangerouslySetStyle": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+        },
+        "ellipsize": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "numberOfLines": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "onPress": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "onLayout": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "accessibilityRole": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "suppressHighlighting": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-mobile/layout/Box",
+      "totalInstances": 13,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-mobile/layout/Box",
+      "callSites": {
+        "@app/screens/Receive/ReceiveScreen.tsx": 2,
+        "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 2,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 9
+      },
+      "propsWithCallSites": {
+        "offsetStart": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "offsetEnd": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "zIndex": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "spacingBottom": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+        },
+        "alignItems": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 2,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 4
+        },
+        "alignContent": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "spacingVertical": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "key": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+        },
+        "flexDirection": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+        },
+        "justifyContent": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+        },
+        "maxWidth": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "spacing": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Spacer",
+      "sourceFile": "@cbhq/cds-mobile/layout/Spacer",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/layout/Spacer",
+      "callSites": {
+        "@app/screens/Receive/ReceiveScreen.tsx": 4
+      },
+      "propsWithCallSites": {
+        "vertical": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "@cbhq/cds-mobile/layout/Fallback",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/layout/Fallback",
+      "callSites": {
+        "@app/screens/Receive/ReceiveScreen.tsx": 4
+      },
+      "propsWithCallSites": {
+        "shape": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 4
+        },
+        "width": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 4
+        },
+        "height": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 4
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@components/interactables/Button",
+      "totalInstances": 8,
+      "totalCallSites": 4,
+      "cds": "@components/interactables/Button",
+      "presentationalLibrary": "@components/interactables/Button",
+      "callSites": {
+        "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
+        "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 2,
+        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 2,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+        },
+        "variant": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "testID": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "disabled": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SpotSquare",
+      "sourceFile": "@cbhq/cds-mobile/illustrations/SpotSquare",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/illustrations/SpotSquare",
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1
+        },
+        "dimension": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextHeadline",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
+      "totalInstances": 6,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-mobile/typography/TextHeadline",
+      "callSites": {
+        "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+        "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 4
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HeroSquare",
+      "sourceFile": "@cbhq/cds-mobile/illustrations/HeroSquare",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/illustrations/HeroSquare",
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle1",
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextLabel2",
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "minimumFontScale": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "align": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PressableOpacity",
+      "sourceFile": "@cbhq/cds-mobile/system/PressableOpacity",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/system/PressableOpacity",
+      "propsWithCallSites": {
+        "onPress": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "hitSlop": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-mobile/icons/Icon",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/icons/Icon",
+      "callSites": {
+        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "color": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "size": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "dangerouslySetStyle": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@cbhq/cds-mobile/layout/HStack",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/layout/HStack",
+      "callSites": {
+        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+      },
+      "propsWithCallSites": {
+        "alignItems": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "gap": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "key": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "justifyContent": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLegal",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextLegal",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextLegal",
+      "callSites": {
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "align": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "TextTitle2",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle2",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle2",
+      "callSites": {
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+      },
+      "propsWithCallSites": {
+        "spacingBottom": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "dangerouslySetStyle": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-mobile/layout/Divider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/layout/Divider"
+    },
+    {
+      "name": "Tray",
+      "sourceFile": "@cbhq/cds-mobile/overlays/Tray",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/overlays/Tray",
+      "propsWithCallSites": {
+        "onCloseComplete": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle3",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle3"
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 9,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx",
+          "callSites": [
+            "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx",
+            "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx"
+          ]
+        },
+        {
+          "aliasPath": "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx",
+          "callSites": [
+            "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 4,
+        "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 2,
+        "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 3
+      },
+      "propsWithCallSites": {
+        "justifyContent": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "alignItems": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        },
+        "borderRadius": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "background": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "dangerouslySetBackground": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 2
+        },
+        "width": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "height": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "spacing": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 3
+        },
+        "flexGrow": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2
+        },
+        "flexShrink": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2
+        },
+        "flexBasis": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "position": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "top": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "right": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "spacingStart": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-web/icons/Icon",
+      "totalInstances": 5,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/icons/Icon",
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+        "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+      },
+      "propsWithCallSites": {
+        "size": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        },
+        "name": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        },
+        "dangerouslySetColor": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "spacingEnd": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "color": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CellMedia",
+      "sourceFile": "@cbhq/cds-web/cells/CellMedia",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/cells/CellMedia",
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+      },
+      "propsWithCallSites": {
+        "type": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "source": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-web/layout/VStack",
+      "totalInstances": 17,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-web/layout/VStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx",
+          "callSites": []
+        },
+        {
+          "aliasPath": "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx",
+          "callSites": []
+        },
+        {
+          "aliasPath": "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx",
+          "callSites": []
+        }
+      ],
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 7,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2,
+        "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 4,
+        "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1
+      },
+      "propsWithCallSites": {
+        "flexGrow": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 2
+        },
+        "flexShrink": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "flexBasis": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "spacingVertical": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "minHeight": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        },
+        "maxHeight": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "overflow": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "spacingHorizontal": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1,
+          "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1
+        },
+        "gap": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 4,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2
+        },
+        "width": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+        },
+        "height": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 2
+        },
+        "spacingBottom": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 2,
+          "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1
+        },
+        "justifyContent": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "alignItems": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "testID": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "spacingTop": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1,
+          "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1
+        },
+        "spacingStart": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextBody",
+      "sourceFile": "@cbhq/cds-web/typography/TextBody",
+      "totalInstances": 8,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/typography/TextBody",
+      "extendedStyledComponents": [
+        {
+          "alias": "AddressMemoText",
+          "callSite": "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx"
+        }
+      ],
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 2
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 2
+        },
+        "color": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 2
+        },
+        "spacingTop": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "align": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Link",
+      "sourceFile": "@cbhq/cds-web/typography/Link",
+      "totalInstances": 5,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/typography/Link",
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        },
+        "variant": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        },
+        "to": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+        },
+        "openInNewWindow": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+        },
+        "onPress": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "ListCell",
+      "sourceFile": "@cbhq/cds-web/cells/ListCell",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/cells/ListCell",
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+      },
+      "propsWithCallSites": {
+        "innerSpacing": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "borderRadius": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "disabled": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "key": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "testID": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "onPress": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "title": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "description": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "selected": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "action": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "media": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "detail": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "subdetail": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "variant": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "IconButton",
+      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/buttons/IconButton",
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+      },
+      "propsWithCallSites": {
+        "name": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+        },
+        "onPress": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+        },
+        "transparent": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "testID": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "compact": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "TextHeadline",
+      "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextHeadline",
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "color": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Pressable",
+      "sourceFile": "@cbhq/cds-web/system/Pressable",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/system/Pressable",
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "disabled": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "backgroundColor": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        },
+        "borderRadius": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        },
+        "onPress": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        },
+        "width": {
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HStack",
+      "sourceFile": "@cbhq/cds-web/layout/HStack",
+      "totalInstances": 8,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/layout/HStack",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx",
+          "callSites": [
+            "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 4,
+        "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 2
+      },
+      "propsWithCallSites": {
+        "alignItems": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 4,
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        },
+        "width": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        },
+        "height": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "borderRadius": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "background": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "justifyContent": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        },
+        "spacingHorizontal": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 2
+        },
+        "gap": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 3,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        },
+        "dangerouslySetStyle": {
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        },
+        "spacingVertical": {
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RemoteImage",
+      "sourceFile": "@cbhq/cds-web/media/RemoteImage",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/media/RemoteImage",
+      "propsWithCallSites": {
+        "size": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "source": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextLabel2",
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacingStart": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "spacingEnd": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "color": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "as": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "overflow": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLabel1",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextLabel1",
+      "propsWithCallSites": {
+        "as": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "color": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
+        "overflow": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Pictogram",
+      "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/illustrations/Pictogram",
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        },
+        "dimension": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        },
+        "scaleMultiplier": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle2",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle2",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/typography/TextTitle2",
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+        },
+        "color": {
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        },
+        "align": {
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@cbhq/cds-web/buttons/Button",
+      "totalInstances": 6,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/buttons/Button",
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 3,
+        "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 3,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2
+        },
+        "block": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 3,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
+        },
+        "testID": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "variant": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextTitle1",
+      "propsWithCallSites": {
+        "testID": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "as": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ThemeProvider",
+      "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/system/ThemeProvider",
+      "propsWithCallSites": {
+        "spectrum": {
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LogoMark",
+      "sourceFile": "@cbhq/cds-web/icons/LogoMark",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/icons/LogoMark",
+      "propsWithCallSites": {
+        "size": {
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLegal",
+      "sourceFile": "@cbhq/cds-web/typography/TextLegal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextLegal",
+      "propsWithCallSites": {
+        "as": {
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HeroSquare",
+      "sourceFile": "@cbhq/cds-web/illustrations/HeroSquare",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/illustrations/HeroSquare",
+      "propsWithCallSites": {
+        "name": {
+          "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SearchInput",
+      "sourceFile": "@cbhq/cds-web/controls/SearchInput",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/SearchInput",
+      "propsWithCallSites": {
+        "value": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "onChangeText": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "placeholder": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "onChange": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Banner",
+      "sourceFile": "@cbhq/cds-web/banner/Banner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/banner/Banner",
+      "propsWithCallSites": {
+        "title": {
+          "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1
+        },
+        "variant": {
+          "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1
+        },
+        "startIcon": {
+          "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1
+        },
+        "testID": {
+          "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1
+        }
+      }
+    }
+  ],
+  "presentational": [
+    {
+      "name": "Navbar",
+      "sourceFile": "@designSystem/navigation/navbar/Navbar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@designSystem/navigation/navbar/Navbar",
+      "propsWithCallSites": {
+        "leading": {
+          "@app/components/navigation/NavHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "FlatList",
+      "sourceFile": "@components/UI/FlatList",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@components/UI/FlatList",
+      "propsWithCallSites": {
+        "onScrollToIndexFailed": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "data": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "ref": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "renderItem": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "onScrollBeginDrag": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "contentContainerStyle": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "ListEmptyComponent": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "StyledListInner",
+      "sourceFile": "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "ListInner"
+    }
+  ],
+  "other": [
+    {
+      "name": "BackIconButton",
+      "sourceFile": "@app/components/IconButtons/BackIconButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "transparent": {
+          "@app/components/navigation/NavHeader.tsx": 1
+        },
+        "testID": {
+          "@app/components/navigation/NavHeader.tsx": 1
+        },
+        "onPress": {
+          "@app/components/navigation/NavHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NavFinPromDisclaimer",
+      "sourceFile": "@app/components/navigation/NavFinPromDisclaimer",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NetworkBoundary",
+      "sourceFile": "@app/components/NetworkBoundary",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/components/navigation/NavHeader.tsx": 1,
+        "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+      },
+      "propsWithCallSites": {
+        "fallback": {
+          "@app/components/navigation/NavHeader.tsx": 1,
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NavHeader",
+      "sourceFile": "@app/components/navigation/NavHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AccountSelector",
+      "sourceFile": "@app/screens/GlobalTrade/components/AccountSelectors/AccountSelector",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "accountRef": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "onSelect": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "tradeType": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "selectedAccountId": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "shouldDisplayAccountName": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EmptyState",
+      "sourceFile": "@app/screens/GlobalTrade/components/AccountSelectors/EmptyState",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "FallbackCell",
+      "sourceFile": "@components/cells/FallbackCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "icon": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "subtitle": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "detail": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "subdetail": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Screen",
+      "sourceFile": "@app/components/Screen",
+      "totalInstances": 7,
+      "totalCallSites": 6,
+      "callSites": {
+        "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+        "@app/screens/Receive/ReceiveScreen.tsx": 2,
+        "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+        "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "scrollable": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "navHeader": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "onScrollBeginDrag": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "testID": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "floatingFooter": {
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "noSpacing": {
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SearchBar",
+      "sourceFile": "@app/components/Search/SearchBar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "setSearchBarTextInput": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "scrollRef": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "scrollToTop": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AccountList",
+      "sourceFile": "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "searchQuery": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "onSelect": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "excludeAssetIds": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "hasCryptoRequests": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "isRequestsFlow": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ScreenBoundary",
+      "sourceFile": "@app/components/ScreenBoundary/ScreenBoundary",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "callSites": {
+        "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+        "@app/screens/Receive/ReceiveScreen.tsx": 1,
+        "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+        "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "instrumentationId": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
+        "fallback": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ReceiveAccountSelector",
+      "sourceFile": "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "excludeAssetIds": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "headerAction": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "isRequestsFlow": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SystemAlertSection",
+      "sourceFile": "@app/components/SystemAlert/SystemAlertSection",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Receive/ReceiveScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "view": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "currencies": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AccountSelector",
+      "sourceFile": "@app/screens/Receive/components/AccountSelector",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "subtitle": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NetworkSelector",
+      "sourceFile": "@app/screens/Receive/components/NetworkSelector",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "hidePill": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "selectedNetwork": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "networkSelectorRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "QRCodeComponent",
+      "sourceFile": "@app/screens/Receive/components/QRCodeComponent",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "accountRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "showBtcLightningInvoice": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AddressLabels",
+      "sourceFile": "@app/screens/Receive/components/AddressLabels",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "accountRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "handleGenerateAddressClick": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "fetchingNewAddress": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "showBtcLightningInvoice": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AddressInlineWarning",
+      "sourceFile": "@app/screens/Receive/components/AddressInlineWarning",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "inlineWarningRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "showLearnMore": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "showBtcLightningInvoice": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AddressLaunchWarning",
+      "sourceFile": "@app/screens/Receive/components/AddressLaunchWarning",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "handleDismiss": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "keyForWarningTimestamp": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "shouldSkipWarningOnMount": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "warningRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "assetSymbol": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "checkShouldSkipWarning": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NetworkSelectionFlow",
+      "sourceFile": "@app/screens/L2Multichain/components/NetworkSelectionFlow/NetworkSelectionFlow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "defaultNetwork": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "supportedNetworkRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "asset": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "assetTicker": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "isVisible": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "flow": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "dismissHandler": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "selectedNetwork": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "assetId": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "onTrayClose": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HeaderTitleBox",
+      "sourceFile": "@app/screens/Receive/components/HeaderTitleBox",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Receive/ReceiveScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "setSelectedIndex": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "selectedIndex": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "hasCryptoRequests": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "isCryptoRequestsEligible": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ReceiveErrorScreen",
+      "sourceFile": "@app/screens/Receive/ReceiveErrorScreen",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onRetryPress": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ErrorBoundary",
+      "sourceFile": "@app/components/ErrorBoundary",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "context": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "fallback": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "willErrorBlockUser": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RequestNuxModal",
+      "sourceFile": "@app/screens/Receive/components/RequestNuxModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onDismiss": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EmptyScreenPopBack",
+      "sourceFile": "@app/components/EmptyScreenPopBack",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Receive/ReceiveScreen.tsx": 2
+      },
+      "propsWithCallSites": {
+        "errorMessage": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "ReceiveContent",
+      "sourceFile": "@app/screens/Receive/ReceiveScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "accountId": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "accountRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "assetRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "headerAction": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "isVault": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "supportedNetworkRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "cryptoRequestEligibilityRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ReceiveScreenFallback",
+      "sourceFile": "@app/screens/Receive/ReceiveScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PolicyRestrictionEnforcer",
+      "sourceFile": "@app/components/PolicyRestrictionEnforcer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "action": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "nonBlocking": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ReceiveScreenContent",
+      "sourceFile": "@app/screens/Receive/ReceiveScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ReceiverRequestDeclinedScreenContent",
+      "sourceFile": "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ReceiverSendConfirmationScreenContent",
+      "sourceFile": "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "RequestAmountEntryHeader",
+      "sourceFile": "@app/screens/Receive/components/RequestAmountEntryHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "accountRef": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TransactionInputAmount",
+      "sourceFile": "@app/components/Trade/TransactionInputAmount",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "variant": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "amount": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "invalidAt": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "currency": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "numericOnly": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NotesButton",
+      "sourceFile": "@app/screens/Receive/components/RequestNoteButton/NotesButton",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "InputAmountNumPad",
+      "sourceFile": "@app/components/Form/InputAmountNumPad",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "allowEmptyInput": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "onUpdate": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "value": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "exponent": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "currencyCode": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AmountEntryScreenFallback",
+      "sourceFile": "@app/screens/Send/AmountEntryScreen/AmountEntryScreenFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AmountEntryScreenContent",
+      "sourceFile": "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerRef": {
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RequestDetailsScreenContent",
+      "sourceFile": "@app/screens/Receive/Requests/RequestDetailsScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Pill",
+      "sourceFile": "components/SendReceive/components/shared/Pill",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "label": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RedesignNetworkHeader",
+      "sourceFile": "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2
+      },
+      "propsWithCallSites": {
+        "handleBackPress": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2
+        },
+        "hideText": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WarningStep",
+      "sourceFile": "components/SendReceive/components/NetworkSelection/WarningStep/WarningStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "flow": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "hasSupportedNetworks": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "showHeader": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "showPolygonWarningBody": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "onAcknowledgeWarning": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Header",
+      "sourceFile": "components/BuySellComponents/Header",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "goBack": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AddressMemoText",
+      "sourceFile": "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "as": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "$color": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SystemAlert",
+      "sourceFile": "components/SystemAlert",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "view": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "currencies": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "spacing": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "borderRadius": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NetworkSelectionEntryButton",
+      "sourceFile": "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "shrink": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "onPress": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "source": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "currentNetwork": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SendReceiveQRCode",
+      "sourceFile": "components/SendReceive/SendRedesign/components/SendReceiveQRCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "showBtcLightningInvoice": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "accountRef": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "InfoCopyView",
+      "sourceFile": "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+      },
+      "propsWithCallSites": {
+        "title": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+        },
+        "content": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+        },
+        "regenAddressButton": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "copyButton": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "CopyButton",
+      "sourceFile": "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+      },
+      "propsWithCallSites": {
+        "copied": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+        },
+        "onPress": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "ReceiveRedesignInlineWarning",
+      "sourceFile": "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "addressRef": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "showBtcLightningInvoice": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "onPress": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiPortfolioDisclaimerV2",
+      "sourceFile": "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "transferType": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "spacingHorizontal": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "QRCode",
+      "sourceFile": "components/SendReceive/SendRedesign/components/qrcode.react/QRCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "value": {
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        },
+        "size": {
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        },
+        "imageSettings": {
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        }
+      }
+    }
+  ]
+}

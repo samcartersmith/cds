@@ -1,8 +1,26 @@
 import { adopters } from ':cds-website/data/__generated__/adoption/adopters';
 import { hiddenAdopters } from ':cds-website/data/__generated__/adoption/adopters-hidden';
+import { cujs } from ':cds-website/data/__generated__/adoption/cujs';
 
 export type Adopters = typeof adopters | typeof hiddenAdopters;
 export type Adopter = (typeof adopters)[number]['id'] | (typeof hiddenAdopters)[number]['id'];
+
+export type CUJs = typeof cujs;
+export type CUJ = (typeof cujs)[number]['id'];
+
+export type CUJReportContent = {
+  date: string;
+  overallCDSPercent: number;
+  overallLatestCDSPercent: number;
+  numUpToDate: number;
+  total: number;
+  latestCdsVersionPublished3MonthsAgo: string;
+};
+
+export type CUJSummaryReport = {
+  latest: CUJReportContent;
+  previous: CUJReportContent[];
+};
 
 export type AdopterProjectVersionSummary = {
   id: string;

@@ -19,3 +19,25 @@ export function flattenConfig(config: AdoptersConfig[]) {
   flatten(config);
   return flattened;
 }
+
+type SimplifiedAdopterConfig = {
+  id: string;
+  label: string;
+  pillar?: string;
+};
+
+export function flattenCategories(config: AdoptersConfig[]): SimplifiedAdopterConfig[] {
+  const flattenedCategories: SimplifiedAdopterConfig[] = [];
+
+  function flatten(items: AdoptersConfig[]) {
+    items.forEach((item) => {
+      if (item.type === 'category') {
+        // Push only category-level information
+        flattenedCategories.push({ id: item.id ?? 'default', label: item.label });
+      }
+    });
+  }
+
+  flatten(config);
+  return flattenedCategories;
+}

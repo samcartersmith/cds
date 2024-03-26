@@ -1,0 +1,20 @@
+---
+hide_title: true
+hide_table_of_contents: true
+title: Onchain Error States
+sidebar_label: Onchain Error States
+---
+
+import { CUJDetails } from ':cds-website/components/AdoptionTracker/CUJDetails';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
+import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+
+<AdopterStatsProvider
+  {...require(':cds-website/static/data/__generated__/adoption/cuj/summary/roc-cuj/stats.json')}
+>
+  <AdopterComponentsProvider
+    {...require(':cds-website/static/data/__generated__/adoption/cuj/summary/roc-cuj/components.json')}
+  >
+    <CUJDetails id={'roc-cuj'} title={'Onchain Error States'} />
+  </AdopterComponentsProvider>
+</AdopterStatsProvider>

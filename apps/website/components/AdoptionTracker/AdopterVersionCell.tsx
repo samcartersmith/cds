@@ -106,13 +106,16 @@ export function AdopterVersionCell({
   cdsLatestVersion,
   latestCdsVersionPublished3MonthsAgo,
   upToDate,
-}: VersionStatsProps) {
+  verInfoName,
+}: VersionStatsProps & {
+  verInfoName: string;
+}) {
   const { lowestVersion } = getLowestVersion(cdsCommonVersion, cdsWebVersion, cdsMobileVersion);
 
   return (
     <VStack>
       <VersionInfo
-        name="Project Version"
+        name={verInfoName}
         tagLabel={upToDate ? 'Up to Date' : 'Outdated'}
         version={lowestVersion}
       />

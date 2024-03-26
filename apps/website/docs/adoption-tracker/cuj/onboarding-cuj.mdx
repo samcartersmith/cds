@@ -1,0 +1,20 @@
+---
+hide_title: true
+hide_table_of_contents: true
+title: Onboarding
+sidebar_label: Onboarding
+---
+
+import { CUJDetails } from ':cds-website/components/AdoptionTracker/CUJDetails';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
+import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+
+<AdopterStatsProvider
+  {...require(':cds-website/static/data/__generated__/adoption/cuj/summary/onboarding-cuj/stats.json')}
+>
+  <AdopterComponentsProvider
+    {...require(':cds-website/static/data/__generated__/adoption/cuj/summary/onboarding-cuj/components.json')}
+  >
+    <CUJDetails id={'onboarding-cuj'} title={'Onboarding'} />
+  </AdopterComponentsProvider>
+</AdopterStatsProvider>

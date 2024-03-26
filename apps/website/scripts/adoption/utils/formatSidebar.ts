@@ -31,3 +31,19 @@ export function formatSidebar(config: AdoptersConfig[], hiddenProjects: string[]
     return [...prev, formatNext(next)];
   }, [] as AdoptersConfig[]);
 }
+
+export function formatCUJSidebar(config: AdoptersConfig[]) {
+  function formatNext(item: AdoptersConfig) {
+    const result: AdoptersConfig | AdopterConfigForSidebar = {
+      type: 'doc',
+      id: `adoption-tracker/cuj/${item.id}`,
+      label: item.label,
+    } as AdopterConfigForSidebar;
+
+    return result;
+  }
+
+  return config.reduce((prev, next) => {
+    return [...prev, formatNext(next)];
+  }, [] as AdoptersConfig[]);
+}

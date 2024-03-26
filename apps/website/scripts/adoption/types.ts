@@ -105,6 +105,7 @@ export type AdoptersConfig = {
   label: string;
   collapsed: boolean;
   items: (AdopterConfig | AdoptersConfig)[];
+  id?: string;
 };
 
 export type AdopterConfigForSidebar = Extract<AdopterConfig, 'type' | 'id' | 'label'>;

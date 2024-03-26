@@ -26,13 +26,54 @@
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/app-switcher",
         "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
-        "packagePath": "/repo/apps/cds-adoption/temp/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      }
+    },
+    {
+      "component": {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 2,
+        "totalCallSites": 1,
+        "callSites": {
+          "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+        },
+        "propsWithCallSites": {
+          "projectId": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "action": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "target": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "spacingBottom": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "spacingTop": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "start": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
+          "end": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "productComponentName": "NavigationBar",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/identity-navigation",
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/app-switcher": "^0.3.2"
+      "@cbhq/app-switcher": "^0.3.2",
+      "@cbhq/identity-navigation": "^4.0.3"
     },
     "devDependencies": {},
     "peerDependencies": {},

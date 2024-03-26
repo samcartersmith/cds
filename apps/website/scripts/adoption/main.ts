@@ -17,7 +17,7 @@ import {
   getCDSVersionFromComponentPatternPackage,
 } from './utils/getOldCDSVersion';
 import { getCDSVersion } from './utils/getPackageJson';
-import { getPreviousStats } from './utils/getPreviousStats';
+import { getCUJPreviousStats, getPreviousStats } from './utils/getPreviousStats';
 import { cleanup, getTempRepos } from './utils/getTempRepos';
 import { preGenerateCleanup } from './utils/preGenerateCleanup';
 import {
@@ -25,6 +25,11 @@ import {
   adoptersSidebar,
   adoptersWithPillar,
   adoptionDocsDir,
+  coreUserJourneyConfig,
+  cujs,
+  cujsSidebar,
+  cujSummaries,
+  cujsWithCategory,
   generatedDataDir,
   generatedStaticDataDir,
   hiddenAdoptersWithPillar,
@@ -32,8 +37,18 @@ import {
 } from './config';
 import { generateAdoptionAndImpactReports } from './generateAdoptionAndImpactReports';
 import { generateJSONForProductComponentSummary } from './generateJsonFileForProductComponentSummary';
+import {
+  generateCUJAverageReport,
+  generateMergedCUJComponentSummary,
+  generateMergedCUJStatsSummary,
+} from './generateOverallCUJSummary';
 import { generateOverallStatsReport } from './generateOverallStatsSummaryReport';
-import { ComponentProductJSONFile, ProductComponentData, ProductComponentInfo } from './types';
+import {
+  AdoptersConfig,
+  ComponentProductJSONFile,
+  ProductComponentData,
+  ProductComponentInfo,
+} from './types';
 
 async function generateMdxFiles(project: ProjectParser) {
   return writePrettyFile(
@@ -61,6 +76,42 @@ import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/co
     `.trimStart(),
   );
 }
+function cleanMdxContent(content: string) {
+  // This will remove the specific unwanted pattern `{' '}`
+  return content.replace(/{' '}/g, '');
+}
+
+async function generateMdxFilesForSpecificCUJ(project: AdoptersConfig) {
+  return writePrettyFile(
+    `${adoptionDocsDir}/cuj/${project.id}.mdx`,
+    cleanMdxContent(
+      `
+---
+hide_title: true
+hide_table_of_contents: true
+title: ${project.label}
+sidebar_label: ${project.label}
+---
+
+import { CUJDetails } from ':cds-website/components/AdoptionTracker/CUJDetails';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
+import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+
+<AdopterStatsProvider {...require(':cds-website/${generatedStaticDataDir.relativePath}/cuj/summary/${project.id}/stats.json')} >
+<AdopterComponentsProvider {...require(':cds-website/${generatedStaticDataDir.relativePath}/cuj/summary/${project.id}/components.json')}>
+<CUJDetails id={"${project.id}"} title={"${project.label}"} />
+</AdopterComponentsProvider>
+</AdopterStatsProvider>
+    `.trimStart(),
+    ),
+  );
+}
+
+async function generateMdxFilesForCUJ(coreUserJourneyConfig: AdoptersConfig[]) {
+  coreUserJourneyConfig.forEach(async (project) => {
+    void generateMdxFilesForSpecificCUJ(project);
+  });
+}
 
 async function generateAdoptersData() {
   return writePrettyFile(
@@ -75,6 +126,32 @@ export const adopters = ${JSON.stringify(adoptersWithPillar)} as const;
   );
 }
 
+async function generateCUJsData() {
+  return writePrettyFile(
+    `${generatedDataDir}/cujs.ts`,
+    `
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run website:adoption
+ */
+export const cujs = ${JSON.stringify(cujsWithCategory)} as const;
+`.trimStart(),
+  );
+}
+
+async function generateCUJSummaryData() {
+  return writePrettyFile(
+    `${generatedDataDir}/cujSummary.ts`,
+    `
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run website:adoption
+ */
+export const cujSummary = ${JSON.stringify(cujSummaries)} as const;
+`.trimStart(),
+  );
+}
+
 async function generateHiddenAdoptersData() {
   return writePrettyFile(
     `${generatedDataDir}/adopters-hidden.ts`,
@@ -84,6 +161,19 @@ async function generateHiddenAdoptersData() {
  * Generated from yarn nx run website:adoption
  */
 export const hiddenAdopters = ${JSON.stringify(hiddenAdoptersWithPillar)} as const;
+`.trimStart(),
+  );
+}
+
+async function generateCUJSidebarData() {
+  return writePrettyFile(
+    `${generatedDataDir}/cuj-sidebar.js`,
+    `
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run website:adoption
+ */
+module.exports.cujs = ${JSON.stringify(cujsSidebar)};
 `.trimStart(),
   );
 }
@@ -274,6 +364,33 @@ async function generateAdopterProjectInfoData(project: ProjectParser) {
   );
 }
 
+async function generateCUJDirectory(project: ProjectParser) {
+  return fs.promises.mkdir(`${generatedStaticDataDir.absolutePath}/cuj/${project.id}`, {
+    recursive: true,
+  });
+}
+
+async function generateCUJComponentsData(project: ProjectParser) {
+  return fs.promises.writeFile(
+    `${generatedStaticDataDir.absolutePath}/cuj/${project.id}/components.json`,
+    JSON.stringify(project.components),
+  );
+}
+
+async function generateCUJStatsData(project: ProjectParser) {
+  return fs.promises.writeFile(
+    `${generatedStaticDataDir.absolutePath}/cuj/${project.id}/stats.json`,
+    JSON.stringify(project.stats),
+  );
+}
+
+async function generateCUJProjectInfoData(project: ProjectParser) {
+  return fs.promises.writeFile(
+    `${generatedStaticDataDir.absolutePath}/cuj/${project.id}/info.json`,
+    JSON.stringify(project.projectInfo),
+  );
+}
+
 async function generateAdoptionFiles() {
   const trackedProjectsWithZeroAdoption: string[] = [];
 
@@ -318,18 +435,52 @@ async function generateAdoptionFiles() {
   return trackedProjectsWithZeroAdoption;
 }
 
+async function generateCUJFiles() {
+  await Promise.all(
+    cujs.map(async (config) => {
+      const previousStats = await getCUJPreviousStats(config.id);
+      const currentCDSVersion = (await getCDSVersion()) || '';
+
+      // get @cbhq/cds-common version from 3 months ago using git show
+      const cdsCommonsPackageFrom3MonthsAgo = await getCDSCommonPackageJsonFromThreeMonthsAgo();
+      const cdsCommonsVersionFrom3MonthsAgo = cdsCommonsPackageFrom3MonthsAgo.version;
+
+      const cujProject = await new ProjectParser(
+        config,
+        currentCDSVersion,
+        cdsCommonsVersionFrom3MonthsAgo,
+        previousStats,
+      ).parse();
+
+      await Promise.all([
+        generateCUJsData(),
+        generateCUJSummaryData(),
+        generateCUJDirectory(cujProject),
+        generateCUJComponentsData(cujProject),
+        generateCUJStatsData(cujProject),
+        generateCUJProjectInfoData(cujProject),
+      ]);
+    }),
+  );
+  await Promise.all([generateMdxFilesForCUJ(coreUserJourneyConfig), generateCUJSidebarData()]);
+}
+
 async function main() {
   try {
     await preGenerateCleanup();
     await getTempRepos();
     // Required to associate adopters with their stats.json file for Adoption Overview page.
     const trackedProjectsWithZeroAdoption = await generateAdoptionFiles();
+    await generateCUJFiles();
     await getListOfComponentsAndImports();
     await generateAdoptionAndImpactReports();
     await generateProductComponentsSummary();
     await addCDSVersionToProductComponentsData();
     await generateOverallStatsReport();
     generateJSONForProductComponentSummary();
+    generateMergedCUJStatsSummary(coreUserJourneyConfig);
+    generateCUJAverageReport(coreUserJourneyConfig);
+    generateMergedCUJComponentSummary(coreUserJourneyConfig);
 
     cleanup();
 
