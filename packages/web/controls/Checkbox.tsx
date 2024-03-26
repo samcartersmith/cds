@@ -16,10 +16,10 @@ import { useControlMotionProps } from './useControlMotionProps';
 export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps;
 
 const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
-  { children, ...props }: CheckboxProps<T>,
+  { children, indeterminate, ...props }: CheckboxProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
-  const { checked, indeterminate } = props;
+  const { checked } = props;
   const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
     checked: checked || indeterminate,
   });

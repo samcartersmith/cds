@@ -20,6 +20,9 @@ const { MockCollapsible } = collapsibleBuilder({
 } as CreateCollapsibleProps);
 
 describe('Collapsible', () => {
+  beforeEach(() => {
+    jest.spyOn(window, 'scrollTo').mockImplementation();
+  });
   it('passes accessibility', async () => {
     expect(await renderA11y(<MockCollapsible />)).toHaveNoViolations();
   });

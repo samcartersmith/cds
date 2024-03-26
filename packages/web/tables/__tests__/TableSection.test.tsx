@@ -11,8 +11,10 @@ describe('Table Sections', () => {
       await renderA11y(
         <Table>
           <TableHeader>
-            <th>Heading 1</th>
-            <th>Heading 2</th>
+            <tr>
+              <th>Heading 1</th>
+              <th>Heading 2</th>
+            </tr>
           </TableHeader>
         </Table>,
       ),
@@ -23,8 +25,10 @@ describe('Table Sections', () => {
       await renderA11y(
         <Table>
           <TableBody>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
+            <tr>
+              <td>Cell 1</td>
+              <td>Cell 2</td>
+            </tr>
           </TableBody>
         </Table>,
       ),
@@ -35,8 +39,10 @@ describe('Table Sections', () => {
       await renderA11y(
         <Table>
           <TableFooter>
-            <td>Foot Cell 1</td>
-            <td>Foot Cell 2</td>
+            <tr>
+              <td>Foot Cell 1</td>
+              <td>Foot Cell 2</td>
+            </tr>
           </TableFooter>
         </Table>,
       ),
@@ -47,16 +53,22 @@ describe('Table Sections', () => {
       await renderA11y(
         <Table>
           <TableHeader>
-            <th>Heading 1</th>
-            <th>Heading 2</th>
+            <tr>
+              <th>Heading 1</th>
+              <th>Heading 2</th>
+            </tr>
           </TableHeader>
           <TableBody>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
+            <tr>
+              <td>Cell 1</td>
+              <td>Cell 2</td>
+            </tr>
           </TableBody>
           <TableFooter>
-            <td>Foot Cell 1</td>
-            <td>Foot Cell 2</td>
+            <tr>
+              <td>Foot Cell 1</td>
+              <td>Foot Cell 2</td>
+            </tr>
           </TableFooter>
         </Table>,
       ),

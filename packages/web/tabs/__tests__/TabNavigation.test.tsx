@@ -4,6 +4,14 @@ import { sampleTabs } from '@cbhq/cds-common/internal/data/tabs';
 
 import { TabNavigation } from '../TabNavigation';
 
+jest.mock('../../hooks/useDimensions', () => ({
+  useDimensions: jest.fn(() => {
+    return {
+      observe: jest.fn(),
+    };
+  }),
+}));
+
 const MockTabNavigation = ({ testID }: { testID: string }) => {
   const [activeTab, setActiveTab] = useState(sampleTabs[0].id);
   return (

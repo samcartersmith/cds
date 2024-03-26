@@ -4,6 +4,8 @@ jest.mock('framer-motion', () => ({
   useReducedMotion: () => true,
   LazyMotion: ({ children = null }) => children,
   AnimatePresence: ({ children = null }) => children,
+  MotionConfig: ({ children = null }) => children,
+  MotionGlobalConfig: { skipAnimations: true },
 }));
 
 /* -------------------------------------------------------------------------- */

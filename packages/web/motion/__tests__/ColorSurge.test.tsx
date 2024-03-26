@@ -9,16 +9,20 @@ import { useMotionProps } from '../useMotionProps';
 const mockedSet = jest.fn();
 const mockedStart = jest.fn();
 
-jest.mock('../../layout', () => ({
-  Box: jest.fn((props) => {
-    return (
-      <div>
-        <div>MotionBox</div>
-        <div data-testid="box-props">{JSON.stringify(props)}</div>
-      </div>
-    );
-  }),
-}));
+jest.mock('../../layout', () => {
+  const { forwardRef }: { forwardRef: typeof React.forwardRef } = jest.requireActual('react');
+  return {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    Box: forwardRef((props, ref) => {
+      return (
+        <div>
+          <div>MotionBox</div>
+          <div data-testid="box-props">{JSON.stringify(props)}</div>
+        </div>
+      );
+    }),
+  };
+});
 
 jest.mock('framer-motion', () => ({
   ...jest.requireActual<object>('framer-motion'),

@@ -19,18 +19,20 @@ jest.mock('@cbhq/cds-common', () => ({
     }),
 }));
 
-jest.mock('../Lottie', () => ({
-  Lottie: jest
-    .fn()
-    .mockImplementation(
-      ({ onAnimationFinish, testID }: { onAnimationFinish?: () => void; testID?: string }) => {
+jest.mock('../Lottie', () => {
+  const { forwardRef }: { forwardRef: typeof React.forwardRef } = jest.requireActual('react');
+  return {
+    Lottie: forwardRef(
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      ({ onAnimationFinish, testID }: { onAnimationFinish?: () => void; testID?: string }, ref) => {
         if (onAnimationFinish) {
           setTimeout(onAnimationFinish, 1000);
         }
         return <div data-testid={testID} />;
       },
     ),
-}));
+  };
+});
 
 describe('LottieStatusAnimation', () => {
   it('renders LottieStatusAnimation', () => {

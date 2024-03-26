@@ -5,6 +5,14 @@ import { sampleTabs } from '@cbhq/cds-common/internal/data/tabs';
 
 import { TabbedChips } from '../TabbedChips';
 
+jest.mock('../../hooks/useDimensions', () => ({
+  useDimensions: jest.fn(() => {
+    return {
+      observe: jest.fn(),
+    };
+  }),
+}));
+
 const testID = 'tabbedChip';
 
 const Demo = () => {

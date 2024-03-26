@@ -21,6 +21,9 @@ const customAccordionStyle = { padding: '20px' };
 const customAccordionItemStyle = { padding: '30px' };
 
 describe('Accordion', () => {
+  beforeEach(() => {
+    jest.spyOn(window, 'scrollTo').mockImplementation();
+  });
   it('passes accessibility', async () => {
     expect(await renderA11y(<MockAccordion />)).toHaveNoViolations();
   });

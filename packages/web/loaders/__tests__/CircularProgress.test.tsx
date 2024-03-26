@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { act, render, screen, within } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { CircularProgress } from '../CircularProgress';
@@ -21,15 +21,17 @@ const normalizeRadius = (radius: number, strokeWidth: number): string => {
 
 describe('CircularProgress', () => {
   it('passes accessibility', async () => {
-    expect(
-      await renderA11y(
-        <CircularProgress
-          progress={testVals.progress}
-          radius={testVals.radius}
-          strokeWidth={testVals.strokeWidth}
-        />,
-      ),
-    ).toHaveNoViolations();
+    await act(async () => {
+      expect(
+        await renderA11y(
+          <CircularProgress
+            progress={testVals.progress}
+            radius={testVals.radius}
+            strokeWidth={testVals.strokeWidth}
+          />,
+        ),
+      ).toHaveNoViolations();
+    });
   });
 
   it('should render with a svg element', async () => {

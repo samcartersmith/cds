@@ -1,5 +1,5 @@
 import { ReactTestInstance } from 'react-test-renderer';
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { defaultPalette } from '@cbhq/cds-common';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 
@@ -87,7 +87,7 @@ describe('ProgressBar test', () => {
     fireTextContainerEvent(screen.getByTestId('cds-progress-bar-float-label-container'));
 
     // necessary for Animated.timing delay
-    jest.runAllTimers();
+    act(() => jest.runAllTimers());
     expect(floatLabel).toHaveStyle({
       transform: [{ translateX: 90 }], // (200/2) -10
     });
@@ -136,7 +136,7 @@ describe('ProgressBar test', () => {
 
     const bar = screen.getByTestId('cds-progress-bar-inner-bar');
     // necessary for Animated.timing delay
-    jest.runAllTimers();
+    act(() => jest.runAllTimers());
     expect(bar).toHaveStyle({
       backgroundColor: paletteValueToRgbaString(defaultPalette.positive, 'light'),
       transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))
@@ -171,7 +171,7 @@ describe('ProgressBar test', () => {
     const bar = screen.getByTestId('cds-progress-bar-inner-bar');
 
     // necessary for Animated.timing delay
-    jest.runAllTimers();
+    act(() => jest.runAllTimers());
     expect(bar).toHaveStyle({
       backgroundColor: paletteValueToRgbaString(defaultPalette.lineHeavy, 'light'),
       transform: [{ translateX: -46 }], // -1 * (200 - (200 * 0.77))

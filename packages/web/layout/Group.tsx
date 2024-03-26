@@ -12,8 +12,14 @@ const ItemWrapper: React.FC<React.PropsWithChildren<BoxProps>> = memo(({ classNa
   <Box display="contents" {...props} />
 ));
 
-const fallbackRenderItem: RenderGroupItem = ({ item }: { item: React.ReactChild }) => {
-  return <ItemWrapper>{item}</ItemWrapper>;
+const fallbackRenderItem: RenderGroupItem = ({
+  item,
+  index,
+}: {
+  item: React.ReactChild;
+  index: number;
+}) => {
+  return <ItemWrapper key={index}>{item}</ItemWrapper>;
 };
 
 export const Group = memo(

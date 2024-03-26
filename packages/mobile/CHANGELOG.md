@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.2.2 (3/26/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix Checkbox and Group component, catch console error and warning in unit tests and fixed all failed tests. [[#2774](https://github.cbhq.net/frontend/cds/pull/2774)]
+
 ## 6.2.1 (3/18/2024 PST)
 
 #### 🐞 Fixes

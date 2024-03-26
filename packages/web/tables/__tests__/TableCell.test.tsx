@@ -18,7 +18,7 @@ describe('Table Cell', () => {
       await renderA11y(
         <Table>
           <TableBody>
-            <TableRow fullWidth>
+            <TableRow>
               <TableCell>Cell</TableCell>
             </TableRow>
           </TableBody>
@@ -31,7 +31,7 @@ describe('Table Cell', () => {
     render(
       <Table>
         <TableBody>
-          <TableRow fullWidth>
+          <TableRow>
             <TableCell testID={exampleTestId}>children text</TableCell>
           </TableRow>
         </TableBody>
@@ -45,7 +45,7 @@ describe('Table Cell', () => {
     render(
       <Table>
         <TableBody>
-          <TableRow fullWidth>
+          <TableRow>
             <TableCell subtitle="test subtitle" testID={exampleTestId} title="test title" />
           </TableRow>
         </TableBody>
@@ -60,7 +60,7 @@ describe('Table Cell', () => {
     render(
       <Table>
         <TableBody>
-          <TableRow fullWidth>
+          <TableRow>
             <TableCell start={<div>test start element</div>} testID={exampleTestId}>
               Cell
             </TableCell>
@@ -76,7 +76,7 @@ describe('Table Cell', () => {
     render(
       <Table>
         <TableBody>
-          <TableRow fullWidth>
+          <TableRow>
             <TableCell end={<div>test end element</div>} testID={exampleTestId}>
               Cell
             </TableCell>
@@ -92,7 +92,7 @@ describe('Table Cell', () => {
     render(
       <Table>
         <TableBody>
-          <TableRow fullWidth>
+          <TableRow>
             <TableCell className={testClassName} testID={exampleTestId}>
               Cell
             </TableCell>

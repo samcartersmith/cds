@@ -41,9 +41,7 @@ describe('AccessibilityAnnouncer', () => {
   });
 
   it('Removes itself from the DOM to make room for the next message', async () => {
-    render(<AccessibilityAnnouncer message={TEST_MESSAGE} testID={TEST_ID} />, {
-      legacyRoot: true,
-    });
+    render(<AccessibilityAnnouncer message={TEST_MESSAGE} testID={TEST_ID} />);
 
     expect(screen.getByText(TEST_MESSAGE)).toBeVisible();
     await waitForElementToBeRemoved(screen.queryByText(TEST_MESSAGE), { timeout: 600 });

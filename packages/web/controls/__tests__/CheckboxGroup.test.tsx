@@ -63,7 +63,7 @@ describe('CheckboxGroup.test', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
 
     render(
-      <CheckboxGroup onChange={onChange} selectedValues={new Set('1')}>
+      <CheckboxGroup label="test label" onChange={onChange} selectedValues={new Set('1')}>
         <Checkbox>1</Checkbox>
         <Checkbox value="2">2</Checkbox>
       </CheckboxGroup>,

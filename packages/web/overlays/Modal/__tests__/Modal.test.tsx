@@ -1,14 +1,12 @@
 import { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { animateOutOpacityConfig } from '@cbhq/cds-common/animation/modal';
 import {
   CreateLoremIpsumProps,
   loremIpsum,
   loremIpsumBuilder,
 } from '@cbhq/cds-common/internal/loremIpsumBuilder';
 import { CreateModalProps, modalBuilder } from '@cbhq/cds-common/internal/modalBuilder';
-import { durations } from '@cbhq/cds-common/motion/tokens';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../../buttons';
@@ -24,8 +22,6 @@ const LABELLED_BY = 'some-id';
 const LABEL = 'A label';
 
 /** YUBIKEY EDGE CASE CONFIG */
-// Using the motion duration so make sure we wait the appropriate amount of time before our assertion
-const DURATION: number = Number(durations[animateOutOpacityConfig.duration ?? 'fast1']) + 10;
 const YUBIKEY_STRING = 'cccccbeurlitbgvnvidvttluefrcnnggvhnhcuuddjkn';
 const YUBIKEY_TITLE = 'Yubikey Test Title';
 const YUBIKEY_BUTTON = 'Open Yubikey Modal';
@@ -265,10 +261,6 @@ describe('Modal', () => {
 
     // Simulate yubikey tap
     await user.keyboard(`${YUBIKEY_STRING}{Enter}`);
-
-    // Make sure the modal is still visible after the expected animation duration
-    // eslint-disable-next-line no-promise-executor-return
-    await new Promise((r) => setTimeout(r, DURATION));
     await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
     expect(spy).not.toHaveBeenCalled();
   });
@@ -291,10 +283,6 @@ describe('Modal', () => {
 
     // Simulate yubikey tap
     await user.keyboard(`{Tab}{Tab}{Tab}{Tab}{Tab}{Enter}`);
-
-    // Make sure the modal is still visible after the expected animation duration
-    // eslint-disable-next-line no-promise-executor-return
-    await new Promise((r) => setTimeout(r, DURATION));
     await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
     expect(spy).not.toHaveBeenCalled();
   });

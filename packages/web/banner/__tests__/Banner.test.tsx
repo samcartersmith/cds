@@ -6,6 +6,14 @@ import { Spacer, VStack } from '../../layout';
 import { Link, TextTitle1 } from '../../typography';
 import { Banner } from '../Banner';
 
+jest.mock('../../hooks/useDimensions', () => ({
+  useDimensions: jest.fn(() => {
+    return {
+      observe: jest.fn(),
+    };
+  }),
+}));
+
 const { MockBanner } = bannerBuilder(
   Banner,
   Link,
@@ -17,6 +25,9 @@ const { MockBanner } = bannerBuilder(
 const TEST_ID = 'test-banner';
 
 describe('Banner Actions', () => {
+  beforeEach(() => {
+    jest.spyOn(window, 'scrollTo').mockImplementation();
+  });
   it('fires `onClose` when dismiss icon button is pressed', () => {
     const spy = jest.fn();
     render(<MockBanner showDismiss onClose={spy} testID={TEST_ID} />);

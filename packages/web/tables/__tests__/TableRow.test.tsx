@@ -162,7 +162,9 @@ describe('TableRow', () => {
       <table>
         <TableBody>
           <TableRow onPress={onPressSpy}>
-            <Button testID={TEST_ID}>Child</Button>
+            <td>
+              <Button testID={TEST_ID}>Child</Button>
+            </td>
           </TableRow>
         </TableBody>
       </table>,

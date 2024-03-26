@@ -11,8 +11,11 @@ type TableMockProps = Omit<TableProps, 'children'>;
 
 const TableMock = (props: TableMockProps) => (
   <Table {...props}>
-    {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-    <>Child</>
+    <tbody>
+      <tr>
+        <td>Child</td>
+      </tr>
+    </tbody>
   </Table>
 );
 

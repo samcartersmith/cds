@@ -164,7 +164,6 @@ export function collapsibleBuilder({
     return (
       <>
         <Button
-          disableDebounce
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}

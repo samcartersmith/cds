@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { normalScaleMap } from '@cbhq/cds-common';
 import { borderWidth } from '@cbhq/cds-common/tokens/borderWidth';
 
@@ -14,7 +14,7 @@ describe('DotCount', () => {
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers();
+    act(() => jest.runOnlyPendingTimers());
     jest.useRealTimers();
   });
 
