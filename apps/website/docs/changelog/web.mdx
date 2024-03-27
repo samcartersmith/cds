@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.2.3 (3/26/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: remove bottom padding in title in sectionHeader. [[#2871](https://github.cbhq.net/frontend/cds/pull/2871)]
+
 ## 6.2.2 (3/26/2024 PST)
 
 #### 🐞 Fixes

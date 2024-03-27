@@ -49,15 +49,25 @@ const SectionHeaderScreen = () => {
   return (
     <View>
       <ExampleScreen>
+        <SectionHeader title="SectionHeader" />
+        <Divider />
         <SectionHeader
           {...defaultProps}
-          end={<SearchInput compact onChangeText={NoopFn} placeholder="Placeholder" value="" />}
+          end={
+            <HStack spacingTop={1}>
+              <SearchInput compact onChangeText={NoopFn} placeholder="Placeholder" value="" />
+            </HStack>
+          }
         />
         <Divider />
         <SectionHeader {...defaultProps} end={<SelectChipDropdown />} />
         <Divider />
         <SectionHeader
-          end={<SearchInput compact onChangeText={NoopFn} placeholder="Placeholder" value="" />}
+          end={
+            <HStack spacingTop={1}>
+              <SearchInput compact onChangeText={NoopFn} placeholder="Placeholder" value="" />
+            </HStack>
+          }
           title={defaultProps.title}
         />
         <Divider />

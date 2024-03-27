@@ -57,7 +57,7 @@ export const SectionHeader = memo(
         testID={testID as string}
         {...spacingProps}
       >
-        <VStack gap={0.5} spacingBottom={0}>
+        <VStack gap={0.5}>
           <HStack alignItems="center" gap={1}>
             {!!start && start}
             {typeof title === 'string' ? <TextTitle3 as="h3">{title}</TextTitle3> : title}
