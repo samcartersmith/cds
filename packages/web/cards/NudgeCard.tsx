@@ -38,6 +38,7 @@ export const NudgeCard = memo(
     accessibilityLabel,
     maxHeight,
     maxWidth,
+    background = 'backgroundAlternate',
     onPress,
     ...props
   }: NudgeCardProps) => {
@@ -55,7 +56,7 @@ export const NudgeCard = memo(
     const content = (
       <Box
         accessibilityLabel={accessibilityLabel}
-        background="backgroundAlternate"
+        background={background}
         borderColor="transparent"
         borderRadius="roundedXLarge"
         maxHeight={maxHeight}

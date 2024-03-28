@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { IllustrationPictogramNames } from './IllustrationNames';
+import { PaletteBackground } from './Palette';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
@@ -26,6 +27,11 @@ export type NudgeCardBaseProps = {
    * @default 160
    */
   minHeight?: DimensionValue;
+  /**
+   * Background color for the card.
+   * @default backgroundAlternate
+   */
+  background?: PaletteBackground;
 } & Omit<DimensionStyles, 'minHeight' | 'width'> &
   SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
