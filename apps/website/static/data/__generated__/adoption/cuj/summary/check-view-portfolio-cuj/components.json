@@ -330,11 +330,11 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
-      "totalInstances": 7,
+      "totalInstances": 6,
       "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/typography/TextTitle3",
       "callSites": {
-        "@app/screens/AssetsTab/AssetsScreenContent.tsx": 6,
+        "@app/screens/AssetsTab/AssetsScreenContent.tsx": 5,
         "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1
       },
       "propsWithCallSites": {
@@ -1192,6 +1192,9 @@
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
           "@app/screens/Asset/components/AssetScreenBody.tsx": 1,
           "@app/screens/Account/AccountScreen.tsx": 1
+        },
+        "title": {
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 1
         }
       }
     },
@@ -1405,12 +1408,12 @@
     {
       "name": "ScreenBoundary",
       "sourceFile": "@app/components/ScreenBoundary/ScreenBoundary",
-      "totalInstances": 5,
+      "totalInstances": 6,
       "totalCallSites": 5,
       "callSites": {
         "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
         "@app/screens/AssetsTab/AssetsScreen.tsx": 1,
-        "@app/screens/Asset/AssetScreen.tsx": 1,
+        "@app/screens/Asset/AssetScreen.tsx": 2,
         "@app/screens/Asset/AssetScreenDeprecated.tsx": 1,
         "@app/screens/Account/AccountScreen.tsx": 1
       },
@@ -1426,7 +1429,7 @@
         "instrumentationId": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
           "@app/screens/AssetsTab/AssetsScreen.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1,
+          "@app/screens/Asset/AssetScreen.tsx": 2,
           "@app/screens/Asset/AssetScreenDeprecated.tsx": 1,
           "@app/screens/Account/AccountScreen.tsx": 1
         },
@@ -1867,6 +1870,20 @@
       }
     },
     {
+      "name": "AssetsBalancePerformance",
+      "sourceFile": "@app/screens/AssetsTab/components/AssetsBalancePerformance/AssetsBalancePerformance",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
+        },
+        "errorFallback": {
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
+        }
+      }
+    },
+    {
       "name": "SystemAlertSection",
       "sourceFile": "@app/components/SystemAlert/SystemAlertSection",
       "totalInstances": 3,
@@ -1957,6 +1974,9 @@
           "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1
         },
         "showLivePrices": {
+          "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1
+        },
+        "queryRef": {
           "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1
         }
       }
@@ -2125,6 +2145,9 @@
           "@app/screens/AssetsTab/components/AssetsQuickActions/AssetsQuickActions.tsx": 1
         },
         "warningType": {
+          "@app/screens/AssetsTab/components/AssetsQuickActions/AssetsQuickActions.tsx": 1
+        },
+        "queryRef": {
           "@app/screens/AssetsTab/components/AssetsQuickActions/AssetsQuickActions.tsx": 1
         }
       }
@@ -2428,6 +2451,12 @@
           "@app/screens/Asset/AssetScreenDeprecated.tsx": 1
         }
       }
+    },
+    {
+      "name": "AssetScreenRavContainer",
+      "sourceFile": "@app/screens/Asset/AssetScreenRav/AssetScreenRavContainer",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "AssetScreenContainer",
@@ -3951,6 +3980,14 @@
         "views/Home/HomeFeedContentMobile.tsx": 1
       },
       "propsWithCallSites": {
+        "owner": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "context": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
         "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 1,
           "views/Home/HomeFeedContentMobile.tsx": 1

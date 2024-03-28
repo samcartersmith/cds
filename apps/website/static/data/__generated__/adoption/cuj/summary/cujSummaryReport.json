@@ -1,13 +1,21 @@
 {
   "latest": {
-    "date": "3/26/2024",
-    "overallCDSPercent": 0.9020949702560029,
-    "overallLatestCDSPercent": 0.9020949702560029,
+    "date": "3/27/2024",
+    "overallCDSPercent": 0.9054243803509762,
+    "overallLatestCDSPercent": 0.9054243803509762,
     "numUpToDate": 16,
     "total": 16,
     "latestCdsVersionPublished3MonthsAgo": "5.24.0"
   },
   "previous": [
+    {
+      "date": "3/26/2024",
+      "overallCDSPercent": 0.9020949702560029,
+      "overallLatestCDSPercent": 0.9020949702560029,
+      "numUpToDate": 16,
+      "total": 16,
+      "latestCdsVersionPublished3MonthsAgo": "5.24.0"
+    },
     {
       "date": "3/20/2024",
       "overallCDSPercent": 0.9037874162357596,

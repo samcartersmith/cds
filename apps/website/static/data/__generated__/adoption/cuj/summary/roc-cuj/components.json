@@ -4593,6 +4593,9 @@
         },
         "hasPerformance": {
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
+        },
+        "queryRef": {
+          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
         }
       }
     },
@@ -4963,17 +4966,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "EmptyNavBar",
-      "sourceFile": "@app/components/navigation/EmptyNavBar",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@app/screens/Defi/CbPay/DappCbPayScreen.tsx": 1,
-        "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
-        "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1
-      }
-    },
-    {
       "name": "LoadingView",
       "sourceFile": "@app/screens/Defi/CbPay/DappCbPayScreen.tsx",
       "totalInstances": 1,
@@ -4989,6 +4981,9 @@
           "@app/screens/Defi/CbPay/DappCbPayScreen.tsx": 1
         },
         "defaultNetwork": {
+          "@app/screens/Defi/CbPay/DappCbPayScreen.tsx": 1
+        },
+        "defaultExperience": {
           "@app/screens/Defi/CbPay/DappCbPayScreen.tsx": 1
         },
         "presetFiatAmount": {
@@ -5079,6 +5074,16 @@
       "sourceFile": "@app/screens/Defi/Send/DAppWalletSendBurnAssetScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "EmptyNavBar",
+      "sourceFile": "@app/components/navigation/EmptyNavBar",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
+        "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1
+      }
     },
     {
       "name": "SendComplete",

@@ -1149,6 +1149,9 @@
         "assetUuid": {
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
           "@app/screens/Asset/components/AssetScreenBody.tsx": 1
+        },
+        "title": {
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 1
         }
       }
     },
@@ -1343,11 +1346,11 @@
     {
       "name": "ScreenBoundary",
       "sourceFile": "@app/components/ScreenBoundary/ScreenBoundary",
-      "totalInstances": 3,
+      "totalInstances": 4,
       "totalCallSites": 3,
       "callSites": {
         "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-        "@app/screens/Asset/AssetScreen.tsx": 1,
+        "@app/screens/Asset/AssetScreen.tsx": 2,
         "@app/screens/Asset/AssetScreenDeprecated.tsx": 1
       },
       "propsWithCallSites": {
@@ -1359,7 +1362,7 @@
         },
         "instrumentationId": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1,
+          "@app/screens/Asset/AssetScreen.tsx": 2,
           "@app/screens/Asset/AssetScreenDeprecated.tsx": 1
         },
         "errorFallback": {
@@ -2098,6 +2101,12 @@
           "@app/screens/Asset/AssetScreenDeprecated.tsx": 1
         }
       }
+    },
+    {
+      "name": "AssetScreenRavContainer",
+      "sourceFile": "@app/screens/Asset/AssetScreenRav/AssetScreenRavContainer",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "AssetScreenContainer",
@@ -3165,6 +3174,14 @@
         "views/Home/HomeFeedContentMobile.tsx": 1
       },
       "propsWithCallSites": {
+        "owner": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "context": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
         "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 1,
           "views/Home/HomeFeedContentMobile.tsx": 1

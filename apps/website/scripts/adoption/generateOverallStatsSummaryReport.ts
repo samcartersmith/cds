@@ -162,5 +162,3 @@ export async function generateOverallStatsReport() {
   // Create Report for Overall Version % and PG Version %
   await generateOverallStatsSummaryReport(statsPaths);
 }
-
-void generateOverallStatsReport();

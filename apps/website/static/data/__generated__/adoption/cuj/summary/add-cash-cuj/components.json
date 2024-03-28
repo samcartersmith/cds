@@ -226,7 +226,7 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
-      "totalInstances": 24,
+      "totalInstances": 23,
       "totalCallSites": 14,
       "cds": "@cbhq/cds-mobile/typography/TextBody",
       "aliasedCdsComponents": [
@@ -252,7 +252,7 @@
         "@app/screens/FiatTransfer/Deposit/DepositVerifyTransactionScreen.tsx": 2,
         "@app/screens/FiatTransfer/Deposit/components/DepositPaymentMethodCellDetail.tsx": 2,
         "@app/screens/FiatTransfer/Deposit/components/Preview/DepositPreviewDetailsArrivalTimeRow.tsx": 2,
-        "@app/screens/FiatTransfer/Deposit/components/Preview/DepositPreviewHeader.tsx": 3,
+        "@app/screens/FiatTransfer/Deposit/components/Preview/DepositPreviewHeader.tsx": 2,
         "@app/screens/FiatTransfer/components/PixPreviewHeaderDetail.tsx": 1,
         "@app/screens/FiatTransfer/components/TransactionFundsCell.tsx": 1,
         "@app/screens/FiatTransfer/FiatTransferPreviewScreen.tsx": 4
@@ -531,8 +531,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 20,
-      "totalCallSites": 12,
+      "totalInstances": 21,
+      "totalCallSites": 13,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -545,6 +545,12 @@
           "aliasPath": "@app/components/PaymentMethod/PaymentMethodNewBadge.tsx",
           "callSites": [
             "@app/screens/FiatTransfer/Deposit/components/DepositPaymentMethodCellDetail.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx",
+          "callSites": [
+            "@app/screens/FiatTransfer/Deposit/components/Preview/DepositPreviewHeaderIcons.tsx"
           ]
         },
         {
@@ -565,6 +571,7 @@
         "@app/screens/FiatTransfer/Deposit/DepositInputScreen.tsx": 2,
         "@app/screens/FiatTransfer/Deposit/DepositVerifyTransactionScreen.tsx": 2,
         "@app/screens/FiatTransfer/Deposit/components/PresetAmountsView.tsx": 1,
+        "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1,
         "@app/screens/FiatTransfer/components/PaymentMethodMessageCell.tsx": 1,
         "@app/screens/FiatTransfer/components/PixPreviewHeaderDetail.tsx": 1,
         "@app/screens/FiatTransfer/FiatTransferPreviewScreen.tsx": 2
@@ -573,24 +580,28 @@
         "width": {
           "@app/components/PaymentMethod/CardIcon.tsx": 1,
           "@app/components/PaymentMethod/PaymentMethodIcon.tsx": 4,
-          "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1
+          "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1,
+          "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1
         },
         "height": {
           "@app/components/PaymentMethod/CardIcon.tsx": 1,
           "@app/components/PaymentMethod/PaymentMethodIcon.tsx": 4,
           "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1,
-          "@app/screens/FiatTransfer/Deposit/DepositInputScreen.tsx": 1
+          "@app/screens/FiatTransfer/Deposit/DepositInputScreen.tsx": 1,
+          "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1
         },
         "justifyContent": {
           "@app/components/PaymentMethod/CardIcon.tsx": 1,
           "@app/components/PaymentMethod/PaymentMethodIcon.tsx": 4,
           "@app/components/PaymentMethod/PaymentMethodNewBadge.tsx": 1,
-          "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1
+          "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1,
+          "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1
         },
         "alignItems": {
           "@app/components/PaymentMethod/CardIcon.tsx": 1,
           "@app/components/PaymentMethod/PaymentMethodIcon.tsx": 4,
-          "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1
+          "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1,
+          "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1
         },
         "spacingTop": {
           "@app/components/PaymentMethod/PaymentMethodIcon.tsx": 1,
@@ -606,7 +617,8 @@
         },
         "borderRadius": {
           "@app/components/PaymentMethod/PaymentMethodNewBadge.tsx": 1,
-          "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1
+          "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1,
+          "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1
         },
         "spacingHorizontal": {
           "@app/components/PaymentMethod/PaymentMethodNewBadge.tsx": 1,
@@ -645,6 +657,9 @@
         },
         "flexShrink": {
           "@app/screens/FiatTransfer/Deposit/components/PresetAmountsView.tsx": 1
+        },
+        "dangerouslySetBackground": {
+          "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1
         },
         "position": {
           "@app/screens/FiatTransfer/components/PixPreviewHeaderDetail.tsx": 1
@@ -1126,16 +1141,16 @@
         "components/DepositModal/DepositModal.tsx": 2,
         "components/DepositModal/components/DepositFiatModal/DepositFiatModal.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/FedWire/FedWireSteps.tsx": 1,
-        "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/ActivePixAccount.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/BlockedPixAccount.tsx": 3,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/PendingPixAccount.tsx": 3,
+        "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountDIStep1.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/components/PixDIButtonGroupContainer.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/components/PixDITextMessageContainer.tsx": 1,
-        "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 3,
         "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositInput.tsx": 2,
         "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositPreview.tsx": 2,
+        "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 3,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewHeader.tsx": 2,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 5,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodList.tsx": 1,
@@ -1430,15 +1445,15 @@
         "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
         "components/DepositWithdraw/components/Withdraw/steps/PaymentSelectorStep.tsx": 1,
         "components/DepositWithdraw/components/Withdraw/steps/PreviewStep.tsx": 1,
-        "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/BlockedPixAccount.tsx": 2,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/PendingPixAccount.tsx": 1,
+        "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActiveAccountPaymentPendingStep3.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountCompletePaymentStep2.tsx": 2,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountDIStep1.tsx": 2,
-        "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 3,
         "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositInput.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositPreview.tsx": 1,
+        "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 3,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 3,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodList.tsx": 1
       },
@@ -1451,15 +1466,15 @@
           "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/PaymentSelectorStep.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/PreviewStep.tsx": 1,
-          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/BlockedPixAccount.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/PendingPixAccount.tsx": 1,
+          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActiveAccountPaymentPendingStep3.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountCompletePaymentStep2.tsx": 2,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountDIStep1.tsx": 2,
-          "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 3,
           "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositInput.tsx": 1,
-          "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositPreview.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositPreview.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 3
         },
         "block": {
           "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent.tsx": 2,
@@ -1473,9 +1488,9 @@
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActiveAccountPaymentPendingStep3.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountCompletePaymentStep2.tsx": 2,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountDIStep1.tsx": 2,
-          "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 3,
           "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositInput.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositPreview.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 3,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 3,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodList.tsx": 1
         },
@@ -1559,9 +1574,9 @@
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActiveAccountPaymentPendingStep3.tsx": 4,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountCompletePaymentStep2.tsx": 3,
         "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountDIStep1.tsx": 3,
-        "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositFedwireInstructions.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositInput.tsx": 3,
+        "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/CommitTransferErrorBanner.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/CreateTransferErrorBanner.tsx": 4,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/Tabs.tsx": 1,
@@ -1579,8 +1594,8 @@
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawInput/WithdrawInput.tsx": 2,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActiveAccountPaymentPendingStep3.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountCompletePaymentStep2.tsx": 1,
-          "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositInput.tsx": 2,
+          "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewHeader.tsx": 1
         },
         "justifyContent": {
@@ -1593,9 +1608,9 @@
         "spacingTop": {
           "components/DepositWithdraw/components/Withdraw/steps/components/InteracPreviewHeaderDetail.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountDIStep1.tsx": 2,
-          "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositFedwireInstructions.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositInput.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/Deposit/components/DepositStatusContent.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/CommitTransferErrorBanner.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 5,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodList.tsx": 1,
@@ -1735,6 +1750,33 @@
       }
     },
     {
+      "name": "LottieStatusAnimation",
+      "sourceFile": "@cbhq/cds-web/animation/LottieStatusAnimation",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/animation/LottieStatusAnimation",
+      "callSites": {
+        "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1,
+        "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
+        "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositStatus.tsx": 1
+      },
+      "propsWithCallSites": {
+        "status": {
+          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1,
+          "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositStatus.tsx": 1
+        },
+        "height": {
+          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1,
+          "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositStatus.tsx": 1
+        },
+        "width": {
+          "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-web/layout/Divider",
       "totalInstances": 1,
@@ -1743,33 +1785,6 @@
       "propsWithCallSites": {
         "direction": {
           "components/DepositWithdraw/components/Withdraw/steps/AccountSelectorStep.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "LottieStatusAnimation",
-      "sourceFile": "@cbhq/cds-web/animation/LottieStatusAnimation",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/animation/LottieStatusAnimation",
-      "callSites": {
-        "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
-        "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1,
-        "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositStatus.tsx": 1
-      },
-      "propsWithCallSites": {
-        "width": {
-          "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1
-        },
-        "height": {
-          "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
-          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1,
-          "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositStatus.tsx": 1
-        },
-        "status": {
-          "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
-          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1,
-          "components/DepositWithdraw/TransfersWidget/Deposit/screens/DepositStatus.tsx": 1
         }
       }
     },
@@ -2506,24 +2521,6 @@
       "styledComponent": "ListInner"
     },
     {
-      "name": "PIXIcon",
-      "sourceFile": "@cb/shared/assets/icons/pix/PIXIcon",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/assets/icons/pix/PIXIcon",
-      "propsWithCallSites": {
-        "data-testid": {
-          "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 1
-        },
-        "width": {
-          "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 1
-        },
-        "height": {
-          "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 1
-        }
-      }
-    },
-    {
       "name": "StyledLoadingContainer",
       "sourceFile": "components/DepositWithdraw/components/Withdraw/components/FolderTabFlow/components/LoadingFallback.tsx",
       "totalInstances": 2,
@@ -2548,6 +2545,24 @@
         },
         "zIndexOverride": {
           "components/DepositWithdraw/components/Withdraw/components/FolderTabFlow/components/Overlay.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PIXIcon",
+      "sourceFile": "@cb/shared/assets/icons/pix/PIXIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@cb/shared/assets/icons/pix/PIXIcon",
+      "propsWithCallSites": {
+        "data-testid": {
+          "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 1
+        },
+        "width": {
+          "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 1
+        },
+        "height": {
+          "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 1
         }
       }
     },
@@ -5064,6 +5079,9 @@
       "propsWithCallSites": {
         "fee": {
           "@app/screens/FiatTransfer/Deposit/components/Preview/DepositPreviewFeesTray.tsx": 3
+        },
+        "zeroOrFree": {
+          "@app/screens/FiatTransfer/Deposit/components/Preview/DepositPreviewFeesTray.tsx": 2
         }
       }
     },
@@ -5232,15 +5250,10 @@
       }
     },
     {
-      "name": "CoinbaseLogo",
-      "sourceFile": "@app/screens/SignedOut/components/CoinbaseLogo",
+      "name": "CoinbasePreviewIcon",
+      "sourceFile": "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "size": {
-          "@app/screens/FiatTransfer/Deposit/components/Preview/DepositPreviewHeaderIcons.tsx": 1
-        }
-      }
+      "totalCallSites": 1
     },
     {
       "name": "HeaderIconsFallback",
@@ -5285,6 +5298,20 @@
       "sourceFile": "@app/screens/FiatTransfer/Deposit/components/Preview/DepositPreviewWarnings.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "CoinbaseLogo",
+      "sourceFile": "@app/screens/SignedOut/components/CoinbaseLogo",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "size": {
+          "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1
+        },
+        "color": {
+          "@app/screens/FiatTransfer/Deposit/components/Preview/icons/CoinbasePreviewIcon.tsx": 1
+        }
+      }
     },
     {
       "name": "Fragment",
@@ -6270,8 +6297,8 @@
         "components/DepositModal/index.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/index.tsx": 1,
         "components/DepositModal/components/DepositRoute/DepositRoute.tsx": 1,
-        "components/DepositModal/components/VaultDepositModal/index.tsx": 1,
         "components/DepositModal/components/WithdrawRoute/WithdrawRoute.tsx": 1,
+        "components/DepositModal/components/VaultDepositModal/index.tsx": 1,
         "components/DepositModal/components/DepositFiatModal/components/FedWire/FedWireSteps.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/Deposit/Deposit.tsx": 7,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodWithdrawListCell.tsx": 1,
@@ -6286,8 +6313,8 @@
           "components/DepositModal/index.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/index.tsx": 1,
           "components/DepositModal/components/DepositRoute/DepositRoute.tsx": 1,
-          "components/DepositModal/components/VaultDepositModal/index.tsx": 1,
           "components/DepositModal/components/WithdrawRoute/WithdrawRoute.tsx": 1,
+          "components/DepositModal/components/VaultDepositModal/index.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/FedWire/FedWireSteps.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Deposit/Deposit.tsx": 7,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodWithdrawListCell.tsx": 1,
@@ -6301,8 +6328,8 @@
           "components/DepositModal/index.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/index.tsx": 1,
           "components/DepositModal/components/DepositRoute/DepositRoute.tsx": 1,
-          "components/DepositModal/components/VaultDepositModal/index.tsx": 1,
           "components/DepositModal/components/WithdrawRoute/WithdrawRoute.tsx": 1,
+          "components/DepositModal/components/VaultDepositModal/index.tsx": 1,
           "components/DepositModal/components/DepositFiatModal/components/FedWire/FedWireSteps.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Deposit/Deposit.tsx": 7,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodWithdrawListCell.tsx": 1,
@@ -6789,6 +6816,29 @@
         },
         "spacingBottom": {
           "components/DepositWithdraw/components/Withdraw/steps/EntryStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "WithdrawSuccessContent",
+      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawSuccessContent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "WithdrawPendingContent",
+      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawPendingContent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "WithdrawErrorContent",
+      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawErrorContent",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "userFriendlyErrorMessage": {
+          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1
         }
       }
     },
@@ -7281,29 +7331,6 @@
       }
     },
     {
-      "name": "WithdrawSuccessContent",
-      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawSuccessContent",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "WithdrawPendingContent",
-      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawPendingContent",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "WithdrawErrorContent",
-      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawErrorContent",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "userFriendlyErrorMessage": {
-          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1
-        }
-      }
-    },
-    {
       "name": "StepperProvider",
       "sourceFile": "components/Stepper/components/StepperProvider",
       "totalInstances": 1,
@@ -7383,12 +7410,6 @@
       }
     },
     {
-      "name": "i",
-      "sourceFile": "components/DepositWithdraw/components/Withdraw/steps/components/InteracPreviewHeaderDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "SharedHeader",
       "sourceFile": "components/BuySellComponents/Header/SharedHeader",
       "totalInstances": 1,
@@ -7429,6 +7450,12 @@
           "components/DepositWithdraw/components/Withdraw/components/FolderTabFlow/components/OverlayChildren.tsx": 1
         }
       }
+    },
+    {
+      "name": "i",
+      "sourceFile": "components/DepositWithdraw/components/Withdraw/steps/components/InteracPreviewHeaderDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "LazyRelinkPlaidModal",
@@ -7882,6 +7909,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "WithdrawRouteContent",
+      "sourceFile": "components/DepositModal/components/WithdrawRoute/WithdrawRoute.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "ErrorBoundary",
       "sourceFile": "@cbhq/common-web/ErrorBoundary",
       "totalInstances": 1,
@@ -8024,10 +8057,21 @@
       "totalCallSites": 1
     },
     {
-      "name": "WithdrawRouteContent",
-      "sourceFile": "components/DepositModal/components/WithdrawRoute/WithdrawRoute.tsx",
+      "name": "CompletionMask",
+      "sourceFile": "components/CompletionMask",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "hide": {
+          "components/DepositModal/components/DepositFiatModal/components/CompletionMessage/CompletionMessage.tsx": 1
+        },
+        "title": {
+          "components/DepositModal/components/DepositFiatModal/components/CompletionMessage/CompletionMessage.tsx": 1
+        },
+        "subtitle": {
+          "components/DepositModal/components/DepositFiatModal/components/CompletionMessage/CompletionMessage.tsx": 1
+        }
+      }
     },
     {
       "name": "OnlineDepositForm",
@@ -8199,23 +8243,6 @@
         },
         "refreshDepositMethod": {
           "components/DepositModal/components/DepositFiatModal/components/DepositMethod/DepositMethod.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CompletionMask",
-      "sourceFile": "components/CompletionMask",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "hide": {
-          "components/DepositModal/components/DepositFiatModal/components/CompletionMessage/CompletionMessage.tsx": 1
-        },
-        "title": {
-          "components/DepositModal/components/DepositFiatModal/components/CompletionMessage/CompletionMessage.tsx": 1
-        },
-        "subtitle": {
-          "components/DepositModal/components/DepositFiatModal/components/CompletionMessage/CompletionMessage.tsx": 1
         }
       }
     },
@@ -8457,94 +8484,6 @@
       }
     },
     {
-      "name": "ReferenceStep",
-      "sourceFile": "components/DepositModal/components/DepositFiatModal/components/ReferenceStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "stepName": {
-          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
-        },
-        "nextStep": {
-          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
-        },
-        "depositInformation": {
-          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DepositInfoStep",
-      "sourceFile": "components/DepositInfoStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "stepName": {
-          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
-        },
-        "type": {
-          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
-        },
-        "nextStep": {
-          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DepositConfirmation",
-      "sourceFile": "components/DepositConfirmation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "stepName": {
-          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
-        },
-        "onClick": {
-          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "FormLabel",
-      "sourceFile": "components/FormLabel",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "CopyOnlyInput",
-      "sourceFile": "components/CopyOnlyInput",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "value": {
-          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Checkbox",
-      "sourceFile": "components/Checkbox",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "puppeteerHandle": {
-          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
-        },
-        "checked": {
-          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
-        },
-        "label": {
-          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
-        },
-        "labelPosition": {
-          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
-        },
-        "onCheckToggle": {
-          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ActivePixStepContainer",
       "sourceFile": "components/DepositModal/components/DepositFiatModal/components/PixDeposit/ActivePixAccount.tsx",
       "totalInstances": 3,
@@ -8616,6 +8555,46 @@
       }
     },
     {
+      "name": "FormLabel",
+      "sourceFile": "components/FormLabel",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CopyOnlyInput",
+      "sourceFile": "components/CopyOnlyInput",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "value": {
+          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Checkbox",
+      "sourceFile": "components/Checkbox",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "puppeteerHandle": {
+          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
+        },
+        "checked": {
+          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
+        },
+        "label": {
+          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
+        },
+        "labelPosition": {
+          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
+        },
+        "onCheckToggle": {
+          "components/DepositModal/components/DepositFiatModal/components/ReferenceStep/ReferenceStep.tsx": 1
+        }
+      }
+    },
+    {
       "name": "DepositInformation",
       "sourceFile": "components/DepositInformation",
       "totalInstances": 3,
@@ -8638,6 +8617,54 @@
         },
         "onNext": {
           "components/DepositModal/components/DepositFiatModal/components/PixDeposit/steps/ActivePixAccountDIStep1.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ReferenceStep",
+      "sourceFile": "components/DepositModal/components/DepositFiatModal/components/ReferenceStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "stepName": {
+          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
+        },
+        "nextStep": {
+          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
+        },
+        "depositInformation": {
+          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DepositInfoStep",
+      "sourceFile": "components/DepositInfoStep",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "stepName": {
+          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
+        },
+        "type": {
+          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
+        },
+        "nextStep": {
+          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DepositConfirmation",
+      "sourceFile": "components/DepositConfirmation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "stepName": {
+          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
+        },
+        "onClick": {
+          "components/DepositModal/components/DepositFiatModal/components/SwiftDeposit/SwiftDeposit.tsx": 1
         }
       }
     },

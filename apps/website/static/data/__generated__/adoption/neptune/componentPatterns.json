@@ -10,9 +10,6 @@
           "action": {
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           },
-          "config": {
-            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
-          },
           "projectId": {
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           },
@@ -57,8 +54,8 @@
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/app-switcher": "^0.3.2",
-      "@cbhq/identity-navigation": "^0.2.2"
+      "@cbhq/app-switcher": "^2.0.0",
+      "@cbhq/identity-navigation": "^5.0.0"
     },
     "devDependencies": {},
     "peerDependencies": {},
