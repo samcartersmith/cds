@@ -109,7 +109,7 @@ export const SidebarItem = memo(
             <VStack
               alignItems="center"
               gap={0.5}
-              spacingHorizontal={1}
+              spacingHorizontal={0.5}
               spacingVertical={1.5}
               testID="sidebar-item-condensed"
             >

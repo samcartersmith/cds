@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.4.1 (3/28/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: DX-3491: fixed padding on condensed SidebarItem. [[DX-3491](https://jira.coinbase-corp.com/browse/DX-3491)]
+
 ## 6.4.0 (3/28/2024 PST)
 
 #### 🚀 Updates
