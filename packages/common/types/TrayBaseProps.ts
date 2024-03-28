@@ -13,6 +13,6 @@ export type TrayBaseProps = {
    * multiselect was toggled into or out of view
    */
   onVisibilityChange?: (context: 'visible' | 'hidden') => void;
-  /** Optional Tray title, text only */
-  title?: string;
+  /** Text or ReactNode for optional Tray title */
+  title?: ReactNode;
 } & Omit<DrawerBaseProps, 'pin' | 'ref' | 'children'>;

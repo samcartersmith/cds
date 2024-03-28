@@ -18,7 +18,7 @@ import { Tray } from '../Tray/Tray';
 
 import { options } from './Trays';
 
-const AccessibleTray = ({ title }: { title?: string }) => {
+const AccessibleTray = ({ title }: { title?: React.ReactNode }) => {
   const [isTrayVisible, { toggleOff, toggleOn: handleOpenTray }] = useToggler(false);
   const [value, setValue] = useState<string>();
   const trayRef = useRef<DrawerRefBaseProps>(null);
@@ -64,7 +64,7 @@ const AccessibleTray = ({ title }: { title?: string }) => {
   );
 };
 
-const TrayWithinTray = ({ title }: { title?: string }) => {
+const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
   const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
     useToggler(false);
   const [
@@ -119,7 +119,7 @@ const TrayWithinTray = ({ title }: { title?: string }) => {
   );
 };
 
-const TrayToModalFlow = ({ title }: { title?: string }) => {
+const TrayToModalFlow = ({ title }: { title?: React.ReactNode }) => {
   const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
     useToggler(false);
   const [isModalVisible, { toggleOff: handleCloseModal, toggleOn: handleOpenModal }] =

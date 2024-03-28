@@ -4,7 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { render, screen } from '@testing-library/react-native';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 
-import { TextBody } from '../../../typography';
+import { TextBody, TextTitle2 } from '../../../typography';
 import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
 import { Tray, TrayContext } from '../Tray';
 
@@ -34,6 +34,20 @@ describe('Tray', () => {
     );
 
     expect(screen.getByText(titleText)).toBeTruthy();
+  });
+
+  it('renders a custom node for title', () => {
+    const onCloseCompleteSpy = jest.fn();
+    const customTitle = <TextTitle2 testID="test-title">Test Title</TextTitle2>;
+    render(
+      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+        <Tray onCloseComplete={onCloseCompleteSpy} title={customTitle}>
+          {loremIpsum}
+        </Tray>
+      </SafeAreaProvider>,
+    );
+
+    expect(screen.getByTestId('test-title')).toBeTruthy();
   });
   it('renders a HandleBar', () => {
     const onCloseCompleteSpy = jest.fn();

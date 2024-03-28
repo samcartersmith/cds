@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.4.0 (3/28/2024 PST)
+
+#### 🚀 Updates
+
+- Phoenix Q1 Rollout 2 - ContentCard, IconCounterButton, MultiContentModule & BottomSheets. [[#2877](https://github.cbhq.net/frontend/cds/pull/2877)] [[DX-3002](https://jira.coinbase-corp.com/browse/DX-3002)]
+
 ## 6.3.0 (3/28/2024 PST)
 
 #### 🚀 Updates

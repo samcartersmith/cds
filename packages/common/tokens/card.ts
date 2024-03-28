@@ -32,3 +32,6 @@ export const floatingAssetCardLargeWidth = 359;
 export const floatingAssetCardSmallDimension = 156;
 
 export const defaultNudgeCardWidth = 327;
+
+export const contentCardMinWidth = 280;
+export const contentCardMaxWidth = 800;

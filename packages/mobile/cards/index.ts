@@ -8,3 +8,5 @@ export * from './CardMedia';
 export * from './AnnouncementCard';
 export * from './FeatureEntryCard';
 export * from './FeedCard';
+// Phoenix cards
+export * from './ContentCard';

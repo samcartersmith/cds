@@ -14,7 +14,7 @@ import { MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import { verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView } from '@cbhq/cds-common/tokens/drawer';
 import { DrawerRefBaseProps, NoopFn, TrayBaseProps } from '@cbhq/cds-common/types';
 
-import { HStack, VStack } from '../../layout';
+import { Box, HStack, VStack } from '../../layout';
 import { TextTitle3 } from '../../typography/TextTitle3';
 import { Drawer } from '../Drawer/Drawer';
 
@@ -54,17 +54,20 @@ export const Tray = memo(
     const renderChildren = useCallback(
       ({ handleClose }: RenderTrayProps) => (
         <VStack spacingTop={title ? 0 : 2}>
-          {title ? (
-            <HStack
-              alignItems="center"
-              onLayout={onTitleLayout}
-              spacingBottom={2}
-              spacingHorizontal={3}
-              spacingTop={3}
-            >
-              <TextTitle3>{title}</TextTitle3>
-            </HStack>
-          ) : null}
+          {title &&
+            (typeof title === 'string' ? (
+              <HStack
+                alignItems="center"
+                onLayout={onTitleLayout}
+                spacingBottom={2}
+                spacingHorizontal={3}
+                spacingTop={3}
+              >
+                <TextTitle3>{title}</TextTitle3>
+              </HStack>
+            ) : (
+              <Box onLayout={onTitleLayout}>{title}</Box>
+            ))}
           {typeof children === 'function' ? children({ handleClose }) : children}
         </VStack>
       ),

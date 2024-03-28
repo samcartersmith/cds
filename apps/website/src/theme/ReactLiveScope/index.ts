@@ -76,6 +76,7 @@ import { AnimatedCaret } from '@cbhq/cds-web/motion/AnimatedCaret';
 import { ColorSurge } from '@cbhq/cds-web/motion/ColorSurge';
 import { Pulse } from '@cbhq/cds-web/motion/Pulse';
 import { Shake } from '@cbhq/cds-web/motion/Shake';
+import { MultiContentModule } from '@cbhq/cds-web/multi-content-module/MultiContentModule';
 import * as CDSNavigation from '@cbhq/cds-web/navigation';
 import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
@@ -262,6 +263,7 @@ const ReactLiveScope: unknown = {
   NFTTile,
   nftTagNames,
   SectionHeader,
+  MultiContentModule,
 };
 
 export default ReactLiveScope;

@@ -91,6 +91,10 @@ export const routes = [
       require('@cbhq/cds-mobile/cards/__stories__/ContainedAssetCard.stories').default,
   },
   {
+    key: 'ContentCard',
+    getComponent: () => require('@cbhq/cds-mobile/cards/__stories__/ContentCard.stories').default,
+  },
+  {
     key: 'ContentCell',
     getComponent: () => require('@cbhq/cds-mobile/cells/__stories__/ContentCell.stories').default,
   },
@@ -174,6 +178,11 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/buttons/__stories__/IconButton.stories').default,
   },
   {
+    key: 'IconCounterButton',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/buttons/__stories__/IconCounterButton.stories').default,
+  },
+  {
     key: 'InputChip',
     getComponent: () => require('@cbhq/cds-mobile/chips/__stories__/InputChip.stories').default,
   },
@@ -238,6 +247,12 @@ export const routes = [
     key: 'ModalPortal',
     getComponent: () =>
       require('@cbhq/cds-mobile/overlays/__stories__/ModalPortal.stories').default,
+  },
+  {
+    key: 'MultiContentModule',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/multi-content-module/__stories__/MultiContentModule.stories')
+        .default,
   },
   {
     key: 'NavigationIcon',
@@ -515,6 +530,10 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TooltipV2.stories').default,
   },
   {
+    key: 'TrayAction',
+    getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TrayAction.stories').default,
+  },
+  {
     key: 'TrayBasic',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TrayBasic.stories').default,
   },
@@ -529,6 +548,16 @@ export const routes = [
       require('@cbhq/cds-mobile/overlays/__stories__/TrayFeedCard.stories').default,
   },
   {
+    key: 'TrayInformational',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/TrayInformational.stories').default,
+  },
+  {
+    key: 'TrayMessaging',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/TrayMessaging.stories').default,
+  },
+  {
     key: 'TrayMisc',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TrayMisc.stories').default,
   },
@@ -536,6 +565,11 @@ export const routes = [
     key: 'TrayNavigation',
     getComponent: () =>
       require('@cbhq/cds-mobile/overlays/__stories__/TrayNavigation.stories').default,
+  },
+  {
+    key: 'TrayPromotional',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/overlays/__stories__/TrayPromotional.stories').default,
   },
   {
     key: 'TrayScrollable',

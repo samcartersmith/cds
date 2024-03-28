@@ -357,6 +357,37 @@ const sidebars = {
               id: 'components/cards/UpsellCard/upsell-card',
               label: 'Upsell Card',
             },
+            {
+              type: 'category',
+              label: 'ContentCard',
+              customProps: { tag: 'new' },
+              items: [
+                {
+                  type: 'doc',
+                  id: 'components/cards/ContentCard/content-card',
+                  label: 'ContentCard',
+                  customProps: { tag: 'new' },
+                },
+                {
+                  type: 'doc',
+                  id: 'components/cards/ContentCardHeader/content-card-header',
+                  label: 'ContentCardHeader',
+                  customProps: { tag: 'new' },
+                },
+                {
+                  type: 'doc',
+                  id: 'components/cards/ContentCardBody/content-card-body',
+                  label: 'ContentCardBody',
+                  customProps: { tag: 'new' },
+                },
+                {
+                  type: 'doc',
+                  id: 'components/cards/ContentCardFooter/content-card-footer',
+                  label: 'ContentCardFooter',
+                  customProps: { tag: 'new' },
+                },
+              ],
+            },
           ],
         },
         {
@@ -442,7 +473,19 @@ const sidebars = {
         { type: 'doc', id: 'components/layout/Group/group', label: 'Group' },
         { type: 'doc', id: 'components/layout/HStack/h-stack', label: 'HStack' },
         { type: 'ref', id: 'components/icons/Icon/icon', label: 'Icon' },
-        { type: 'doc', id: 'components/buttons/IconButton/icon-button', label: 'Icon Button' },
+        {
+          type: 'doc',
+          id: 'components/buttons/IconButton/icon-button',
+          label: 'Icon Button',
+        },
+        {
+          type: 'doc',
+          id: 'components/buttons/IconCounterButton/icon-counter-button',
+          label: 'IconCounterButton',
+          customProps: {
+            tag: 'new',
+          },
+        },
         { type: 'doc', id: 'components/typography/Link/link', label: 'Link' },
         {
           type: 'category',
@@ -490,6 +533,12 @@ const sidebars = {
             'components/motion/Shake/shake',
             'components/motion/AnimatedCaret/animated-caret',
           ],
+        },
+        {
+          type: 'doc',
+          id: 'components/multi-content-module/multi-content-module',
+          label: 'Multi-Content Module',
+          customProps: { tag: 'new' },
         },
         {
           type: 'doc',
@@ -702,7 +751,12 @@ const sidebars = {
           items: ['components/overlays/Toast/toast', 'hooks/useToast'],
         },
         { type: 'doc', id: 'components/overlays/Tooltip/tooltip', label: 'Tooltip' },
-        { type: 'doc', id: 'components/overlays/Tray/tray', label: 'Tray' },
+        {
+          type: 'doc',
+          id: 'components/overlays/Tray/tray',
+          label: 'Tray',
+          customProps: { tag: 'new' },
+        },
         {
           type: 'category',
           label: 'ProgressBar',
