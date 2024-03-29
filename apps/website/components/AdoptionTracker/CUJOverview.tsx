@@ -308,7 +308,7 @@ export const CUJOverview = memo(() => {
             as="span"
             color={summaryReportLatest.overallLatestCDSPercent >= 0.9 ? 'positive' : 'negative'}
           >
-            {(summaryReportLatest.overallLatestCDSPercent * 100).toFixed(2)}%
+            {(summaryReportLatest.totalUpToDateProjectPercentage * 100).toFixed(2)}%
           </TextTitle2>{' '}
           of our CUJ surface area is using the latest version (
           <TextTitle2 as="span" color="positive">

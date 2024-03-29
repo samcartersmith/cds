@@ -1489,9 +1489,6 @@
         },
         "onLongPress": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
-        },
-        "showPercent": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
         }
       }
     },
@@ -3383,6 +3380,23 @@
         },
         "contentfulStableAssetInfo": {
           "views/AssetPage/components/AssetOverview.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AssetPriceSubscription",
+      "sourceFile": "components/AssetPriceSubscription",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "views/AssetPage/components/AssetOverview.tsx": 2
+      },
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/AssetPage/components/AssetOverview.tsx": 2
+        },
+        "assetRef": {
+          "views/AssetPage/components/AssetOverview.tsx": 2
         }
       }
     },

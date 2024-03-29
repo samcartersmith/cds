@@ -3669,6 +3669,9 @@
         },
         "currencies": {
           "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        },
+        "network": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
         }
       }
     },
@@ -4044,6 +4047,22 @@
         },
         "queryRef": {
           "components/SendReceive/SendRedesign/ReceiveRedesignSteps.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LightningNuxStep",
+      "sourceFile": "components/SendReceive/SendRedesign/steps/LightningNuxStep",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/SendReceive/SendRedesign/ReceiveRedesignSteps.tsx": 1,
+        "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
+      },
+      "propsWithCallSites": {
+        "entryPoint": {
+          "components/SendReceive/SendRedesign/ReceiveRedesignSteps.tsx": 1,
+          "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
         }
       }
     },
@@ -4519,17 +4538,6 @@
       "sourceFile": "components/SendReceive/SendRedesign/steps/TransactionDetailsStep/TransactionDetailsStep",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "LightningNuxStep",
-      "sourceFile": "components/SendReceive/SendRedesign/steps/LightningNuxStep",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onGotIt": {
-          "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
-        }
-      }
     },
     {
       "name": "InstrumentedSuspense",

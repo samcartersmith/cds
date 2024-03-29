@@ -234,6 +234,7 @@ export function generateCUJAverageReport(coreUserJourneyConfig: AdoptersConfig[]
     numUpToDate,
     total: totalProjects,
     latestCdsVersionPublished3MonthsAgo: latestCdsVerPublished3MonthsAgo,
+    totalUpToDateProjectPercentage: numUpToDate / totalProjects,
   };
 
   // Create the new data structure

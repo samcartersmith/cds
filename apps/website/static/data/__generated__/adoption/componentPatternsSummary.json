@@ -145,9 +145,6 @@
           },
           "target": {
             ":cloud/widgets/navigation/TopNav.tsx": 1
-          },
-          "config": {
-            ":cloud/widgets/navigation/TopNav.tsx": 1
           }
         }
       }
@@ -428,9 +425,6 @@
           "projectId": {
             "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
           },
-          "appSwitcherOptions": {
-            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
-          },
           "target": {
             "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
           }
@@ -455,9 +449,6 @@
             ":cloud/widgets/navigation/NavigationBar.tsx": 1
           },
           "projectId": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
-          },
-          "appSwitcherOptions": {
             ":cloud/widgets/navigation/NavigationBar.tsx": 1
           },
           "target": {

@@ -43,17 +43,17 @@
     {
       "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-mobile/typography/TextLabel1",
-      "totalInstances": 5,
+      "totalInstances": 4,
       "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/typography/TextLabel1",
       "callSites": {
         "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-        "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 4
+        "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 3
       },
       "propsWithCallSites": {
         "color": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 4
+          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 3
         },
         "spacingStart": {
           "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 2
@@ -169,6 +169,18 @@
       }
     },
     {
+      "name": "SparklineArea",
+      "sourceFile": "@cbhq/cds-mobile-visualization/SparklineArea",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile-visualization/SparklineArea",
+      "propsWithCallSites": {
+        "area": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        }
+      }
+    },
+    {
       "name": "PressableOpacity",
       "sourceFile": "@cbhq/cds-mobile/system/PressableOpacity",
       "totalInstances": 2,
@@ -233,24 +245,6 @@
         },
         "flexWrap": {
           "@app/components/LiveTicker/LiveTicker.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextTitle1",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextTitle1",
-      "callSites": {
-        "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 2
-      },
-      "propsWithCallSites": {
-        "tabularNumbers": {
-          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 2
-        },
-        "color": {
-          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
         }
       }
     },
@@ -543,12 +537,6 @@
         },
         "showTitleIcon": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
-        "defaultSubHead": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
-        "showPercent": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }
     },
@@ -682,9 +670,6 @@
         },
         "onLongPress": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
-        },
-        "showPercent": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
         }
       }
     },
@@ -806,6 +791,26 @@
       "totalCallSites": 1
     },
     {
+      "name": "TotalBalanceHeader",
+      "sourceFile": "@app/components/TotalBalanceHeader/TotalBalanceHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "formattedBalance": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "trailing": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "subHeader": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "showLiveTicker": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        }
+      }
+    },
+    {
       "name": "LiveBalanceHeader",
       "sourceFile": "@app/components/LiveBalanceHeader/LiveBalanceHeader",
       "totalInstances": 1,
@@ -819,12 +824,6 @@
         },
         "trailing": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
-        "subHeader": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
-        "showPercent": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }
     },
@@ -833,6 +832,17 @@
       "sourceFile": "@app/screens/HomeTab/components/HomeChartHeader.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "HeaderText",
+      "sourceFile": "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "color": {
+          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
+        }
+      }
     },
     {
       "name": "LiveTicker",
@@ -853,6 +863,23 @@
           "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
         },
         "fallback": {
+          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BalanceText",
+      "sourceFile": "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 2
+      },
+      "propsWithCallSites": {
+        "tabularNumbers": {
+          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 2
+        },
+        "color": {
           "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
         }
       }

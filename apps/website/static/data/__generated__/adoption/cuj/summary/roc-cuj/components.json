@@ -5653,7 +5653,7 @@
     },
     {
       "name": "AccountSelectorCell",
-      "sourceFile": "@app/components/AccountSelectorCell",
+      "sourceFile": "@app/components/Trade/AccountSelectorCell",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {

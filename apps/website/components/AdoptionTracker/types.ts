@@ -15,6 +15,7 @@ export type CUJReportContent = {
   numUpToDate: number;
   total: number;
   latestCdsVersionPublished3MonthsAgo: string;
+  totalUpToDateProjectPercentage: number;
 };
 
 export type CUJSummaryReport = {

@@ -42,12 +42,12 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 18,
+      "totalInstances": 17,
       "totalCallSites": 5,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "callSites": {
         "@app/components/navigation/NavHeader.tsx": 1,
-        "@app/screens/Receive/ReceiveScreen.tsx": 4,
+        "@app/screens/Receive/ReceiveScreen.tsx": 3,
         "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 3,
         "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 4,
         "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 6
@@ -71,10 +71,6 @@
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
         },
-        "spacingVertical": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1,
-          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
-        },
         "spacingHorizontal": {
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
@@ -93,6 +89,9 @@
         },
         "width": {
           "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
+        },
+        "spacingVertical": {
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
         },
         "maxWidth": {
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
@@ -214,38 +213,9 @@
     {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-mobile/layout/Spacer",
-      "totalInstances": 4,
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/layout/Spacer",
-      "callSites": {
-        "@app/screens/Receive/ReceiveScreen.tsx": 4
-      },
-      "propsWithCallSites": {
-        "vertical": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 3
-        }
-      }
-    },
-    {
-      "name": "Fallback",
-      "sourceFile": "@cbhq/cds-mobile/layout/Fallback",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/layout/Fallback",
-      "callSites": {
-        "@app/screens/Receive/ReceiveScreen.tsx": 4
-      },
-      "propsWithCallSites": {
-        "shape": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 4
-        },
-        "width": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 4
-        },
-        "height": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 4
-        }
-      }
+      "cds": "@cbhq/cds-mobile/layout/Spacer"
     },
     {
       "name": "Button",
@@ -1356,11 +1326,11 @@
     {
       "name": "Screen",
       "sourceFile": "@app/components/Screen",
-      "totalInstances": 7,
+      "totalInstances": 6,
       "totalCallSites": 6,
       "callSites": {
         "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
-        "@app/screens/Receive/ReceiveScreen.tsx": 2,
+        "@app/screens/Receive/ReceiveScreen.tsx": 1,
         "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
         "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
         "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
@@ -1456,11 +1426,10 @@
     {
       "name": "ScreenBoundary",
       "sourceFile": "@app/components/ScreenBoundary/ScreenBoundary",
-      "totalInstances": 6,
-      "totalCallSites": 6,
+      "totalInstances": 5,
+      "totalCallSites": 5,
       "callSites": {
         "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
-        "@app/screens/Receive/ReceiveScreen.tsx": 1,
         "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
         "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
         "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
@@ -1469,14 +1438,12 @@
       "propsWithCallSites": {
         "instrumentationId": {
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
-          "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
           "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
         },
         "fallback": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
         }
       }
@@ -1513,6 +1480,37 @@
           "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
         },
         "currencies": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "network": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "HeaderTitleBox",
+      "sourceFile": "@app/screens/Receive/components/HeaderTitleBox",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Receive/ReceiveScreen.tsx": 1,
+        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "setSelectedIndex": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "selectedIndex": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "hasCryptoRequests": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
+        },
+        "isCryptoRequestsEligible": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
         }
@@ -1671,62 +1669,6 @@
       }
     },
     {
-      "name": "HeaderTitleBox",
-      "sourceFile": "@app/screens/Receive/components/HeaderTitleBox",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/Receive/ReceiveScreen.tsx": 1,
-        "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "setSelectedIndex": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1,
-          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
-        },
-        "selectedIndex": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1,
-          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
-        },
-        "hasCryptoRequests": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1,
-          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
-        },
-        "isCryptoRequestsEligible": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1,
-          "@app/screens/Receive/Requests/RequestAmountEntryScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ReceiveErrorScreen",
-      "sourceFile": "@app/screens/Receive/ReceiveErrorScreen",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onRetryPress": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ErrorBoundary",
-      "sourceFile": "@app/components/ErrorBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "context": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1
-        },
-        "fallback": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1
-        },
-        "willErrorBlockUser": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "RequestNuxModal",
       "sourceFile": "@app/screens/Receive/components/RequestNuxModal",
       "totalInstances": 1,
@@ -1734,20 +1676,6 @@
       "propsWithCallSites": {
         "onDismiss": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EmptyScreenPopBack",
-      "sourceFile": "@app/components/EmptyScreenPopBack",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/Receive/ReceiveScreen.tsx": 2
-      },
-      "propsWithCallSites": {
-        "errorMessage": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 2
         }
       }
     },
@@ -1763,16 +1691,10 @@
         "accountRef": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         },
-        "assetRef": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1
-        },
         "headerAction": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         },
         "isVault": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1
-        },
-        "supportedNetworkRef": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         },
         "cryptoRequestEligibilityRef": {
@@ -1781,8 +1703,8 @@
       }
     },
     {
-      "name": "ReceiveScreenFallback",
-      "sourceFile": "@app/screens/Receive/ReceiveScreen.tsx",
+      "name": "ReceiveErrorBoundary",
+      "sourceFile": "@app/screens/Receive/components/ReceiveErrorBoundary",
       "totalInstances": 1,
       "totalCallSites": 1
     },

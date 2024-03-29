@@ -4337,6 +4337,9 @@
         },
         "activePeriod": {
           "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
+        },
+        "context": {
+          "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
         }
       }
     },
@@ -4354,6 +4357,12 @@
           "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
         },
         "onDismiss": {
+          "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
+        },
+        "averageRate": {
+          "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
+        },
+        "context": {
           "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
         }
       }
@@ -5573,6 +5582,9 @@
           "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
         },
         "totalEarnedThisPeriod": {
+          "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
+        },
+        "averageRate": {
           "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
         },
         "onViewInterestEarnedDisclaimerTray": {

@@ -48,9 +48,6 @@
           "projectId": {
             "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
           },
-          "appSwitcherOptions": {
-            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
-          },
           "target": {
             "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
           }
@@ -66,8 +63,8 @@
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/app-switcher": "^0.3.2",
-      "@cbhq/identity-navigation": "^4.2.4"
+      "@cbhq/app-switcher": "^2.1.2",
+      "@cbhq/identity-navigation": "^5.0.0"
     },
     "devDependencies": {},
     "peerDependencies": {},
