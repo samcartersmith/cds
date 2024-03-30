@@ -10,9 +10,8 @@ import { TextLabel2 } from '../typography/TextLabel2';
 import { CardMedia } from './CardMedia';
 
 export type CardBodyProps = React.ComponentProps<typeof CardBody>;
-export type CardBodyActionProps = React.ComponentProps<typeof CardBodyAction>;
 
-export const CardBodyAction = createCardBodyAction({
+const CardBodyAction = createCardBodyAction({
   Button,
 });
 
@@ -25,3 +24,7 @@ export const CardBody = createCardBody({
   CardBodyAction,
   platform: 'mobile',
 });
+
+// TODO: remove these exports (breaking change in Q32024)
+export type CardBodyActionProps = React.ComponentProps<typeof CardBodyAction>;
+export { CardBodyAction };

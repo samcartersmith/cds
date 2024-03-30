@@ -12,9 +12,8 @@ import { createText } from '../typography/createText';
 import { CardMedia } from './CardMedia';
 
 export type CardBodyProps = CardBodyBaseProps;
-export type CardBodyActionProps = React.ComponentProps<typeof CardBodyAction>;
 
-export const CardBodyAction = createCardBodyAction<OnPress>({
+const CardBodyAction = createCardBodyAction<OnPress>({
   Button,
 });
 
@@ -30,3 +29,7 @@ export const CardBody = createCardBody({
   CardBodyAction,
   platform: 'web',
 });
+
+// TODO: remove these exports (breaking change in Q32024)
+export type CardBodyActionProps = React.ComponentProps<typeof CardBodyAction>;
+export { CardBodyAction };
