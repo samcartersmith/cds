@@ -1,5 +1,7 @@
 import React from 'react';
+import { Image } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
+import { squareAssets } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn as noopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { PictogramName } from '@cbhq/cds-illustrations';
 
@@ -14,9 +16,9 @@ const exampleProps = {
   testID: 'nudge-card-test',
 };
 
-const NudgeCard = (props: Partial<Pick<NudgeCardProps, 'onDismissPress' | 'onActionPress'>>) => (
-  <BaseNudgeCard {...exampleProps} {...props} />
-);
+const NudgeCard = (
+  props: Partial<Pick<NudgeCardProps, 'onDismissPress' | 'onActionPress' | 'pictogram' | 'media'>>,
+) => <BaseNudgeCard {...exampleProps} {...props} />;
 
 describe('createNudgeCard', () => {
   it('passes accessibility', () => {
@@ -69,5 +71,23 @@ describe('createNudgeCard', () => {
     fireEvent.press(screen.getByTestId(`${exampleProps.testID}-dismiss-button`));
 
     expect(onDismissPress).toHaveBeenCalled();
+  });
+  it('renders the card with the correct pictogram', () => {
+    render(<NudgeCard />);
+
+    expect(screen.getByTestId(`${exampleProps.testID}-pictogram`)).toBeDefined();
+  });
+  it('renders a custom media when media is provided', () => {
+    const media = (
+      <Image
+        accessibilityIgnoresInvertColors
+        alt="placeholder"
+        source={{ uri: squareAssets.human3 }}
+        testID="custom-media"
+      />
+    );
+    render(<NudgeCard media={media} pictogram={undefined} />);
+
+    expect(screen.getByTestId('custom-media')).toBeDefined();
   });
 });

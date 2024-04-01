@@ -1,14 +1,13 @@
 import React, { isValidElement, memo } from 'react';
+import { getCardBodySpacingProps } from '@cbhq/cds-common/cards/getCardBodySpacingProps';
 import { defaultNudgeCardWidth } from '@cbhq/cds-common/tokens/card';
 import { NudgeCardBaseProps } from '@cbhq/cds-common/types';
 
 import { IconButton } from '../buttons';
 import { Pictogram } from '../illustrations/Pictogram';
-import { Box, HStack } from '../layout';
+import { Box, HStack, VStack } from '../layout';
 import { PressableOpacity, PressableProps } from '../system';
-import { TextHeadline } from '../typography';
-
-import { CardBody } from './CardBody';
+import { TextHeadline, TextLabel2 } from '../typography';
 
 export type NudgeCardProps = {
   /**
@@ -26,10 +25,10 @@ export const NudgeCard = memo(
     title,
     description,
     pictogram,
+    media,
     action,
     onActionPress,
-    // defaults to 3 in CardBody
-    numberOfLines,
+    numberOfLines = 3,
     onDismissPress,
     width = defaultNudgeCardWidth,
     // fixes bug when used in a Carousel
@@ -42,6 +41,10 @@ export const NudgeCard = memo(
     onPress,
     ...props
   }: NudgeCardProps) => {
+    const hasMedia = pictogram || media;
+    const spacingBottom = action ? 1 : 2;
+    const spacingProps = getCardBodySpacingProps({ spacingBottom, compact: true });
+
     const renderAction = isValidElement(action) ? (
       action
     ) : (
@@ -53,6 +56,21 @@ export const NudgeCard = memo(
         </HStack>
       </PressableOpacity>
     );
+
+    const renderMedia = (
+      <Box spacingEnd={onDismissPress ? 3 : 0}>
+        {pictogram ? (
+          <Pictogram
+            dimension={action ? '64x64' : '48x48'}
+            name={pictogram}
+            testID={`${testID}-pictogram`}
+          />
+        ) : (
+          media
+        )}
+      </Box>
+    );
+
     const content = (
       <Box
         accessibilityLabel={accessibilityLabel}
@@ -79,15 +97,39 @@ export const NudgeCard = memo(
             />
           </Box>
         ) : null}
-        <CardBody
-          compact
-          action={action ? renderAction : null}
-          description={description}
-          media={<Pictogram dimension="64x64" name={pictogram} testID={`${testID}-spot-square`} />}
-          numberOfLines={numberOfLines}
-          title={title}
+        {/* ported over from CardBody */}
+        <HStack
+          alignItems="center"
+          flexGrow={1}
+          gap={2}
+          justifyContent="space-between"
+          {...spacingProps}
           {...props}
-        />
+        >
+          <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
+            <VStack gap={1} maxWidth="100%" spacingTop={hasMedia ? 0 : 2}>
+              <TextHeadline
+                as="p"
+                numberOfLines={numberOfLines}
+                testID={`${testID}-title`}
+                transform="none"
+              >
+                {title}
+              </TextHeadline>
+              <TextLabel2
+                as="p"
+                color="foregroundMuted"
+                numberOfLines={numberOfLines}
+                testID={`${testID}-description`}
+                transform="none"
+              >
+                {description}
+              </TextLabel2>
+            </VStack>
+            {action ? renderAction : null}
+          </VStack>
+          {hasMedia ? renderMedia : null}
+        </HStack>
       </Box>
     );
     return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;

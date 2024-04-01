@@ -1,4 +1,5 @@
 import React from 'react';
+import { squareAssets } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn as noopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { PictogramName } from '@cbhq/cds-illustrations';
 
@@ -32,6 +33,22 @@ const longProps = {
   pictogram: 'addWallet' as PictogramName,
 };
 
+const exampleMediaProps = {
+  title: "It's Onchain Summer!",
+  description: 'Stand with crypto and mint your NFT. ',
+  action: 'Join the movement',
+  onActionPress: noopFn,
+  media: <img alt="placeholder" src={squareAssets.human2} width={60} />,
+};
+
+const compactMediaProps = {
+  title: 'Try this new thing',
+  description: 'It will take you to the moon, I promise. WAGMI!',
+  action: undefined,
+  onActionPress: undefined,
+  media: <img alt="placeholder" src={squareAssets.human3} width={60} />,
+};
+
 export const Default = (overrides: Partial<NudgeCardProps>) => (
   <VStack gap={2}>
     <NudgeCard {...exampleProps} {...overrides} />
@@ -43,6 +60,15 @@ export const Compact = () => (
   <VStack gap={2}>
     <NudgeCard {...compactProps} />
     <NudgeCard {...compactProps} onDismissPress={noopFn} />
+  </VStack>
+);
+
+export const CustomMedia = () => (
+  <VStack gap={2}>
+    <NudgeCard {...exampleMediaProps} />
+    <NudgeCard {...exampleMediaProps} onDismissPress={noopFn} />
+    <NudgeCard {...compactMediaProps} />
+    <NudgeCard {...compactMediaProps} onDismissPress={noopFn} />
   </VStack>
 );
 

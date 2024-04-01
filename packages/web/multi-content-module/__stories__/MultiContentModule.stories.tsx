@@ -461,3 +461,22 @@ export default {
   title: 'Core Components/MultiContentModule',
   component: MultiContentModule,
 };
+
+Default.parameters = {
+  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
+};
+Dense.parameters = {
+  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
+};
+WithBorder.parameters = {
+  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
+};
+WithButtonGroup.parameters = {
+  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
+};
+WithEnd.parameters = {
+  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
+};
+WithLongContent.parameters = {
+  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
+};

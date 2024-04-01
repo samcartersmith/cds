@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.4.2 (4/1/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: fixed requested NudgeCard spacing and additive media. [[#2882](https://github.cbhq.net/frontend/cds/pull/2882)]
+
 ## 6.4.1 ((3/28/2024, 01:27 PM PST))
 
 This is an artificial version bump with no new change.
@@ -75,6 +81,12 @@ This is an artificial version bump with no new change.
 #### 💥 Breaking
 
 - CDS 6 release. [[#2779](https://github.cbhq.net/frontend/cds/pull/2779)]
+
+## 5.37.2 (4/1/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: fixed requested NudgeCard spacing and additive media. [[#2881](https://github.cbhq.net/frontend/cds/pull/2881)]
 
 ## 5.37.1 (2/28/2024 PST)
 

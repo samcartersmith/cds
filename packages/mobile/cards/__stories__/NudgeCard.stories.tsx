@@ -1,5 +1,7 @@
 import React from 'react';
+import { Image, StyleSheet } from 'react-native';
 import { useToggler } from '@cbhq/cds-common';
+import { squareAssets } from '@cbhq/cds-common/internal/data/assets';
 import { defaultNudgeCardWidth } from '@cbhq/cds-common/tokens/card';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { PictogramName } from '@cbhq/cds-illustrations';
@@ -10,6 +12,13 @@ import { HStack, VStack } from '../../layout';
 import { Carousel } from '../../media/Carousel/Carousel';
 import { TextBody, TextHeadline } from '../../typography';
 import { NudgeCard } from '../NudgeCard';
+
+const styles = StyleSheet.create({
+  customMediaStyles: {
+    height: 60,
+    width: 60,
+  },
+});
 
 const exampleProps = {
   title: "It's Onchain Summer!",
@@ -35,6 +44,36 @@ const longProps = {
   pictogram: 'addWallet' as PictogramName,
 };
 
+const exampleMediaProps = {
+  title: "It's Onchain Summer!",
+  description: 'Stand with crypto and mint your NFT. ',
+  action: 'Join the movement',
+  onActionPress: NoopFn,
+  media: (
+    <Image
+      accessibilityIgnoresInvertColors
+      alt="placeholder"
+      source={{ uri: squareAssets.human2 }}
+      style={styles.customMediaStyles}
+    />
+  ),
+};
+
+const compactMediaProps = {
+  title: 'Try this new thing',
+  description: 'It will take you to the moon, I promise. WAGMI!',
+  action: undefined,
+  onActionPress: undefined,
+  media: (
+    <Image
+      accessibilityIgnoresInvertColors
+      alt="placeholder"
+      source={{ uri: squareAssets.human3 }}
+      style={styles.customMediaStyles}
+    />
+  ),
+};
+
 const handleDismiss = () => {
   console.log('dismissed');
 };
@@ -52,6 +91,14 @@ const NudgeCardScreen = () => {
       <Example title="Compact">
         <NudgeCard {...compactProps} />
         <NudgeCard {...compactProps} onDismissPress={handleDismiss} />
+      </Example>
+      <Example title="Nudge Card Custom Media">
+        <VStack gap={2}>
+          <NudgeCard {...exampleMediaProps} />
+          {!dismissed && <NudgeCard {...exampleMediaProps} onDismissPress={toggleOff} />}
+          <NudgeCard {...compactMediaProps} />
+          <NudgeCard {...compactMediaProps} onDismissPress={handleDismiss} />
+        </VStack>
       </Example>
       <Example title="Number of lines is 1">
         <NudgeCard {...exampleProps} numberOfLines={1} />
@@ -90,10 +137,8 @@ const NudgeCardScreen = () => {
         />
       </Example>
       <Example title="Custom dimensions">
-        <NudgeCard {...exampleProps} height={150} numberOfLines={1} width={250} />
-        <NudgeCard {...exampleProps} minHeight={200} minWidth={380} numberOfLines={5} />
-        <NudgeCard {...exampleProps} maxHeight={150} maxWidth={250} numberOfLines={1} />
-        <NudgeCard {...compactProps} minWidth={350} />
+        <NudgeCard {...exampleProps} maxHeight={150} numberOfLines={1} width={250} />
+        <NudgeCard {...compactProps} width={350} />
       </Example>
       <Example title="Custom nodes">
         <NudgeCard

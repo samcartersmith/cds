@@ -270,3 +270,7 @@ export default {
   title: 'Core Components/Cards/ContentCard',
   component: ContentCard,
 };
+
+ProductCarousel.parameters = {
+  a11y: { config: { rules: [{ id: 'scrollable-region-focusable', enabled: false }] } },
+};

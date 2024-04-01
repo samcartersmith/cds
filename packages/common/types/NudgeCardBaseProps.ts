@@ -11,7 +11,10 @@ export type NudgeCardBaseProps = {
   title?: ReactNode;
   /** Text or ReactNode to be displayed below the title in a TextBody */
   description?: ReactNode;
-  pictogram: IllustrationPictogramNames;
+  /** If you pass a Pictogram name it will render a Pictogram to the right of the text content */
+  pictogram?: IllustrationPictogramNames;
+  /** Pass any node to be rendered to the right of the text content */
+  media?: ReactNode;
   /** Text or ReactNode to display as the call to action */
   action?: ReactNode;
   /**

@@ -14,9 +14,9 @@ const exampleProps = {
   onActionPress: noopFn,
 };
 
-const NudgeCard = (props: Partial<Pick<NudgeCardProps, 'onDismissPress' | 'onActionPress'>>) => (
-  <BaseNudgeCard {...exampleProps} {...props} />
-);
+const NudgeCard = (
+  props: Partial<Pick<NudgeCardProps, 'onDismissPress' | 'onActionPress' | 'media' | 'pictogram'>>,
+) => <BaseNudgeCard {...exampleProps} {...props} />;
 
 describe('createNudgeCard', () => {
   it('passes accessibility', async () => {
@@ -67,5 +67,20 @@ describe('createNudgeCard', () => {
     fireEvent.click(screen.getByTestId('nudge-card-dismiss-button'));
 
     expect(onDismissPress).toHaveBeenCalled();
+  });
+  it('renders a Pictogram when passed a pictogram', () => {
+    render(<NudgeCard />);
+
+    expect(screen.getByTestId('nudge-card-pictogram')).toBeDefined();
+  });
+  it('renders custom media when passed media', () => {
+    render(
+      <NudgeCard
+        media={<img alt="test" data-testid="custom-media" src="https://example.com" />}
+        pictogram={undefined}
+      />,
+    );
+
+    expect(screen.getByRole('img')).toBeDefined();
   });
 });
