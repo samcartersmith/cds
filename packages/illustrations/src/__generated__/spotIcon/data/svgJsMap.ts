@@ -141,6 +141,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/noFees-0').content,
     dark: () => require('../svgJs/dark/noFees-0').content,
   },
+  outage: {
+    light: () => require('../svgJs/light/outage-0').content,
+    dark: () => require('../svgJs/dark/outage-0').content,
+  },
   participateProduct: {
     light: () => require('../svgJs/light/participateProduct-1').content,
     dark: () => require('../svgJs/dark/participateProduct-1').content,

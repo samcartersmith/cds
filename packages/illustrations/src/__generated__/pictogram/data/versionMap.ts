@@ -293,6 +293,7 @@ const versionMap: Record<PictogramName, number> = {
   learningRewardsProduct: 0,
   lightningNetworkSend: 0,
   futures: 0,
+  outage: 0,
 };
 
 export default versionMap;

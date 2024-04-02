@@ -37,6 +37,7 @@ export type SpotIconName =
   | 'nftProduct'
   | 'nodeProduct'
   | 'noFees'
+  | 'outage'
   | 'participateProduct'
   | 'paySDKProduct'
   | 'pieChart'

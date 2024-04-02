@@ -71,6 +71,7 @@ const versionMap: Record<SpotIconName, number> = {
   pieChart: 1,
   recurringPurchases: 1,
   bank: 1,
+  outage: 0,
 };
 
 export default versionMap;

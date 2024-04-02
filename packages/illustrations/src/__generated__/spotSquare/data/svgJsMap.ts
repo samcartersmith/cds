@@ -557,6 +557,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/optInPushNotificationsEmail-3').content,
     dark: () => require('../svgJs/dark/optInPushNotificationsEmail-3').content,
   },
+  outage: {
+    light: () => require('../svgJs/light/outage-0').content,
+    dark: () => require('../svgJs/dark/outage-0').content,
+  },
   p2pPayments: {
     light: () => require('../svgJs/light/p2pPayments-3').content,
     dark: () => require('../svgJs/dark/p2pPayments-3').content,

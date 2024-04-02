@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.2.0 (4/1/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 4/1/2024. [[#2892](https://github.cbhq.net/frontend/cds/pull/2892)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- outage
+
+#### Spot Icon
+
+- outage
+
+#### Pictogram
+
+- outage
+
+#### Spot Square
+
+- outage
+
 ## 3.1.0 (3/21/2024 PST)
 
 #### 🚀 Updates

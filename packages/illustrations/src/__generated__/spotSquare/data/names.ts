@@ -147,6 +147,7 @@ const names: SpotSquareName[] = [
   'onTheList',
   'openEmail',
   'optInPushNotificationsEmail',
+  'outage',
   'p2pPayments',
   'performance',
   'phoneNotifications',

@@ -43,6 +43,7 @@ const names: SpotIconName[] = [
   'nftProduct',
   'noFees',
   'nodeProduct',
+  'outage',
   'participateProduct',
   'paySDKProduct',
   'pieChart',

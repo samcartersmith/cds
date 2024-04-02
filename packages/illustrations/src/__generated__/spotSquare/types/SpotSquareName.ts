@@ -141,6 +141,7 @@ export type SpotSquareName =
   | 'onTheList'
   | 'openEmail'
   | 'optInPushNotificationsEmail'
+  | 'outage'
   | 'p2pPayments'
   | 'performance'
   | 'phoneNotifications'

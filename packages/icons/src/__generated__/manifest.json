@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-03-21T17:20:36.727Z",
+  "lastUpdated": "2024-04-01T23:37:52.722Z",
   "metadata": { "lastUnicode": 61990 },
   "items": {
     "2:27": {
@@ -486,7 +486,7 @@
     "2:371": {
       "type": "nav",
       "name": "moon",
-      "hash": "qxYbgFCn5Ql9LHNYDaLlq/saNwVfc/9RIg480MAkpYY=",
+      "hash": "Uh6uplGezdEo1z2fyHlQ7Ki8tFO8/a5g6h0hEd+gLbY=",
       "description": "navigation, speciality, moon, night, dark mode, star, 🌕, 🌖, 🌗, 🌘, 🌑, 🌒, 🌓, 🌔, 🌙, 🌛, 🌜, 🌝",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61078 } },
@@ -497,7 +497,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61081 } }
       ],
       "createdAt": "2022-08-24T18:51:39.278Z",
-      "lastUpdated": "2024-01-23T17:14:07.453Z",
+      "lastUpdated": "2024-04-01T23:16:42.612Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-moon-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-moon-12-inactive.svg",
@@ -1265,7 +1265,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60876 } }
       ],
       "createdAt": "2022-08-24T18:52:02.919Z",
-      "lastUpdated": "2023-10-25T17:34:14.758Z",
+      "lastUpdated": "2024-03-26T17:32:18.848Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-application-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-application-12-inactive.svg",
@@ -1481,7 +1481,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60696 } }
       ],
       "createdAt": "2023-02-01T18:32:06.565Z",
-      "lastUpdated": "2023-10-25T14:56:24.492Z",
+      "lastUpdated": "2024-03-27T17:59:34.937Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-wallet-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-wallet-12-inactive.svg",
@@ -4670,7 +4670,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60756 } }
       ],
       "createdAt": "2023-02-01T23:25:12.940Z",
-      "lastUpdated": "2023-10-25T17:34:14.810Z",
+      "lastUpdated": "2024-03-26T18:25:13.794Z",
       "outputs": {
         "svg12": "./ui/svg/ui-reportActive-12.svg",
         "svg16": "./ui/svg/ui-reportActive-16.svg",

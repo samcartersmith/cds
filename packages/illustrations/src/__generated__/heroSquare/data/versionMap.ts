@@ -356,6 +356,7 @@ const versionMap: Record<HeroSquareName, number> = {
   referralsGenericCoin: 0,
   walletWarning: 0,
   walletConfirmation: 0,
+  outage: 0,
 };
 
 export default versionMap;

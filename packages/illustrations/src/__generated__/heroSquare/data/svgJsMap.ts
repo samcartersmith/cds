@@ -917,6 +917,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/orderBooks-1').content,
     dark: () => require('../svgJs/dark/orderBooks-1').content,
   },
+  outage: {
+    light: () => require('../svgJs/light/outage-0').content,
+    dark: () => require('../svgJs/dark/outage-0').content,
+  },
   p2pGifting: {
     light: () => require('../svgJs/light/p2pGifting-2').content,
     dark: () => require('../svgJs/dark/p2pGifting-2').content,

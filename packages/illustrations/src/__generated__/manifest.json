@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-03-21T17:21:05.634Z",
+  "lastUpdated": "2024-04-01T23:38:06.414Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -14470,7 +14470,7 @@
       "height": 240,
       "description": "general, generic, error, warning, confirmation, negative, animation",
       "createdAt": "2023-01-18T02:30:49.620Z",
-      "lastUpdated": "2024-01-05T18:34:57.019Z",
+      "lastUpdated": "2024-04-01T20:10:05.810Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/bigWarning-4.svg",
         "svgDark": "./heroSquare/svg/dark/bigWarning-4.svg",
@@ -20899,6 +20899,86 @@
         "svgJsDark": "./spotSquare/svgJs/dark/idError-0.js",
         "pngLight": "./spotSquare/png/light/idError-0.png",
         "pngDark": "./spotSquare/png/dark/idError-0.png"
+      },
+      "version": 0
+    },
+    "7347:39": {
+      "type": "heroSquare",
+      "name": "outage",
+      "hash": "9jKKpmghRNrMFfZ8CIp7omGFcC4VP5RlXPPVBIwqxbo=",
+      "width": 240,
+      "height": 240,
+      "description": "general, generic, error, warning, confirmation, negative, animation",
+      "createdAt": "2024-04-01T20:10:05.791Z",
+      "lastUpdated": "2024-04-01T20:10:05.791Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/outage-0.svg",
+        "svgDark": "./heroSquare/svg/dark/outage-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/outage-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/outage-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/outage-0.js",
+        "pngLight": "./heroSquare/png/light/outage-0.png",
+        "pngDark": "./heroSquare/png/dark/outage-0.png"
+      },
+      "version": 0
+    },
+    "7347:53": {
+      "type": "spotSquare",
+      "name": "outage",
+      "hash": "Z+UG3PIWjbJmgd2r8jbh+EBFnHt8Ipe2+HC5uJVqqxE=",
+      "width": 96,
+      "height": 96,
+      "description": "warning, yellow, triangle, error, warn, yield",
+      "createdAt": "2024-04-01T20:10:05.797Z",
+      "lastUpdated": "2024-04-01T20:10:05.797Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/outage-0.svg",
+        "svgDark": "./spotSquare/svg/dark/outage-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/outage-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/outage-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/outage-0.js",
+        "pngLight": "./spotSquare/png/light/outage-0.png",
+        "pngDark": "./spotSquare/png/dark/outage-0.png"
+      },
+      "version": 0
+    },
+    "7347:64": {
+      "type": "pictogram",
+      "name": "outage",
+      "hash": "vBaz+Bs2sum/E5mOeOxhjV3HcHLyq2HQXlYvrt0qIB0=",
+      "width": 48,
+      "height": 48,
+      "description": "warning, yellow, triangle, error, warn, yield",
+      "createdAt": "2024-04-01T20:10:05.782Z",
+      "lastUpdated": "2024-04-01T20:10:05.782Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/outage-0.svg",
+        "svgDark": "./pictogram/svg/dark/outage-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/outage-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/outage-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/outage-0.js",
+        "pngLight": "./pictogram/png/light/outage-0.png",
+        "pngDark": "./pictogram/png/dark/outage-0.png"
+      },
+      "version": 0
+    },
+    "7347:71": {
+      "type": "spotIcon",
+      "name": "outage",
+      "hash": "7BK6MIx2PkjYOwGxtONOaARGNtYFVF+DAd78NLQIif4=",
+      "width": 32,
+      "height": 32,
+      "description": "warning, yellow, triangle, error, warn, yield",
+      "createdAt": "2024-04-01T20:10:05.772Z",
+      "lastUpdated": "2024-04-01T20:10:05.772Z",
+      "outputs": {
+        "svgLight": "./spotIcon/svg/light/outage-0.svg",
+        "svgDark": "./spotIcon/svg/dark/outage-0.svg",
+        "svgThemed": "./spotIcon/svg/themeable/outage-0.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/outage-0.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/outage-0.js",
+        "pngLight": "./spotIcon/png/light/outage-0.png",
+        "pngDark": "./spotIcon/png/dark/outage-0.png"
       },
       "version": 0
     }

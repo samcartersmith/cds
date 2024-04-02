@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.7.0 (4/1/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 4/1/2024. [[#2892](https://github.cbhq.net/frontend/cds/pull/2892)]
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- moon
+
 ## 2.6.0 (3/21/2024 PST)
 
 #### 🚀 Updates

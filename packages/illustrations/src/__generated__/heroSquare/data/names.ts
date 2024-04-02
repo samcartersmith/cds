@@ -237,6 +237,7 @@ const names: HeroSquareName[] = [
   'optInPushNotificationsEmail',
   'oracle',
   'orderBooks',
+  'outage',
   'p2pGifting',
   'p2pPayments',
   'paperHands',

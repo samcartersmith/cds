@@ -189,6 +189,7 @@ export type PictogramName =
   | 'noVisibility'
   | 'noWiFi'
   | 'orders'
+  | 'outage'
   | 'partialCoins'
   | 'participateNavigation'
   | 'passport'

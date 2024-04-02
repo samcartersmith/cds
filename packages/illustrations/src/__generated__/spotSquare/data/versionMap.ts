@@ -210,6 +210,7 @@ const versionMap: Record<SpotSquareName, number> = {
   walletQuestsTrophy: 0,
   lightningNetworkSend: 0,
   idError: 0,
+  outage: 0,
 };
 
 export default versionMap;
