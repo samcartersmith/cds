@@ -116,6 +116,24 @@ function DangerExample() {
 }
 ```
 
+```jsx live borderless hideControls
+function ErrorExample() {
+  return (
+    <ResponsiveExample>
+      <VStack gap={3}>
+        <Tag colorScheme="yellow">Error</Tag>
+        <Banner
+          title="Error occurred."
+          variant="error"
+          startIcon="warning"
+          primaryAction={<Link to="/components/banner">Update now</Link>}
+        />
+      </VStack>
+    </ResponsiveExample>
+  );
+}
+```
+
 ### When to use
 
 Use a Banner when a general notification or error has occurred for the system or product and a specific task isn’t necessary.

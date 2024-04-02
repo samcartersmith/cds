@@ -44,6 +44,16 @@ const stylesForVariant = {
       borderColor: paletteValueToRgbaString('blue10', 'dark'),
     },
   },
+  error: {
+    light: {
+      backgroundColor: paletteValueToRgbaString('yellow5', 'light'),
+      borderColor: paletteValueToRgbaString('yellow10', 'light'),
+    },
+    dark: {
+      backgroundColor: paletteValueToRgbaString('yellow15', 'dark'),
+      borderColor: paletteValueToRgbaString('yellow10', 'dark'),
+    },
+  },
 } as const;
 
 export const Banner = memo(
@@ -113,6 +123,7 @@ export const Banner = memo(
           variant: 'headline',
           color: primaryActionColor,
           testID: `${testID}-action--primary`,
+          underline: variant === 'error',
           ...(primaryAction.props as LinkProps),
         });
       }
@@ -124,7 +135,7 @@ export const Banner = memo(
       }
 
       return primaryAction;
-    }, [primaryAction, primaryActionColor, testID]);
+    }, [primaryAction, primaryActionColor, testID, variant]);
     const clonedSecondaryAction = useMemo(() => {
       if (isValidElement(secondaryAction) && secondaryAction.type === Link) {
         return React.cloneElement(secondaryAction, {
@@ -145,7 +156,8 @@ export const Banner = memo(
 
     // The first HStack is referred to as root
     const rootStyle = useMemo(() => {
-      const shouldOverride = variant === 'warning' || variant === 'promotional';
+      const shouldOverride =
+        variant === 'warning' || variant === 'promotional' || variant === 'error';
       if (shouldOverride) {
         return {
           ...stylesForVariant[variant][spectrum],
@@ -155,6 +167,20 @@ export const Banner = memo(
 
       return style;
     }, [spectrum, variant, style]);
+
+    // temporary fix for error banner
+    const customIconColor = useMemo(
+      () =>
+        variant === 'error'
+          ? {
+              dangerouslySetColor: paletteValueToRgbaString(
+                spectrum === 'light' ? 'orange40' : 'orange70',
+                spectrum,
+              ),
+            }
+          : {},
+      [variant, spectrum],
+    );
 
     return (
       <Collapsible ref={forwardedRef} collapsed={isCollapsed} testID={`${testID}-collapsible`}>
@@ -179,6 +205,7 @@ export const Banner = memo(
             size="s"
             style={customSpacing}
             testID={`${testID}-icon`}
+            {...customIconColor}
           />
           <Stack
             alignItems={stackAlignment}

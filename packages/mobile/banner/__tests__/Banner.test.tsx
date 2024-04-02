@@ -9,6 +9,7 @@ import { InternalSpacingProps } from '@cbhq/cds-common/types/SpacingProps';
 import { useInternalSpacingStyles } from '../../hooks/internal/useInternalSpacingStyles';
 import { useDimensions } from '../../hooks/useDimensions';
 import { galaxyScreenDimensions as narrowScreenDimensions } from '../../overlays/Tooltip/__tests__/UseTooltipPositionTestData';
+import { ThemeProvider } from '../../system';
 import { DangerouslySetStyle } from '../../types';
 import { Link, TextBody } from '../../typography';
 import { Banner } from '../Banner';
@@ -108,6 +109,24 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
     render(<MockBanner style={bannerCustomStyle} />);
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle(bannerCustomStyle);
+  });
+
+  it('renders error banner correctly on light mode', () => {
+    render(<MockBanner variant="error" />);
+
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgba(255,242,178,1)' });
+    expect(screen.getByRole('image')).toHaveStyle({ color: 'rgba(237,112,47,1)' });
+  });
+
+  it('renders error banner correctly on dark mode', () => {
+    render(
+      <ThemeProvider name="banner-test" spectrum="dark">
+        <MockBanner variant="error" />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgba(65,27,0,1)' });
+    expect(screen.getByRole('image')).toHaveStyle({ color: 'rgba(248,150,86,1)' });
   });
 
   checkSpacing({

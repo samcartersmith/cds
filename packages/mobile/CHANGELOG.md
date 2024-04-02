@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.5.0 (4/1/2024 PST)
+
+#### 🚀 Updates
+
+- Add error variant to Banner. [[#2889](https://github.cbhq.net/frontend/cds/pull/2889)]
+
 ## 6.4.2 (4/1/2024 PST)
 
 #### 🐞 Fixes
@@ -87,6 +93,12 @@ This is an artificial version bump with no new change.
 #### 💥 Breaking
 
 - CDS 6 release. [[#2779](https://github.cbhq.net/frontend/cds/pull/2779)]
+
+## 5.38.0 (4/1/2024 PST)
+
+#### 🚀 Updates
+
+- Add error variant to Banner. [[#2891](https://github.cbhq.net/frontend/cds/pull/2891)]
 
 ## 5.37.2 (4/1/2024 PST)
 

@@ -3,6 +3,7 @@ import { css } from 'linaria';
 import { bannerBuilder } from '@cbhq/cds-common/internal/bannerBuilder';
 
 import { Spacer, VStack } from '../../layout';
+import { ThemeProvider } from '../../system';
 import { Link, TextTitle1 } from '../../typography';
 import { Banner } from '../Banner';
 
@@ -100,5 +101,29 @@ describe('Banner', () => {
     );
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle(customClassName);
+  });
+
+  it('renders error banner correctly on light mode', () => {
+    render(
+      <Banner startIcon="cashUSD" testID={TEST_ID} title="error banner" variant="error">
+        Banner Content
+      </Banner>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgba(255, 242, 178)' });
+    expect(screen.getByTestId(`${TEST_ID}-icon-glyph`)).toHaveStyle({ color: 'rgb(237, 112, 47)' });
+  });
+
+  it('renders error banner correctly on dark mode', () => {
+    render(
+      <ThemeProvider spectrum="dark">
+        <Banner startIcon="cashUSD" testID={TEST_ID} title="error banner" variant="error">
+          Banner Content
+        </Banner>
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgba(65, 27, 0)' });
+    expect(screen.getByTestId(`${TEST_ID}-icon-glyph`)).toHaveStyle({ color: 'rgb(248, 150, 86)' });
   });
 });

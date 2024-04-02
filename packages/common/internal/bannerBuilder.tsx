@@ -38,6 +38,11 @@ const styleProps = [
     title: 'Promotional message',
     startIcon: 'pencil',
   },
+  {
+    variant: 'error',
+    title: 'Error message',
+    startIcon: 'warning',
+  },
 ] as const;
 
 export function bannerBuilder(

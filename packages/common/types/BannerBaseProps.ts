@@ -4,7 +4,7 @@ import { BorderRadius } from './BorderRadius';
 import { IconName } from './IconName';
 import { SharedProps } from './SharedProps';
 
-export type BannerVariant = 'danger' | 'warning' | 'promotional' | 'informational';
+export type BannerVariant = 'danger' | 'warning' | 'promotional' | 'informational' | 'error';
 
 export type BannerBaseProps = {
   /** Sets the variant of the banner - which is responsible for foreground and background color assignment */

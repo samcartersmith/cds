@@ -69,6 +69,19 @@ These are a handful of common patterns you'll use when composing Banners with CD
 
 ```jsx live borderless
 <Banner
+  title="This is an error banner. Somethings got to be broken, right?"
+  variant="error"
+  startIcon="warning"
+  primaryAction={<Link>Primary</Link>}
+  secondaryAction={<Link>Secondary</Link>}
+  showDismiss
+>
+  Banner body content that can run over up to three lines maximum.
+</Banner>
+```
+
+```jsx live borderless
+<Banner
   title="This banner is full-width, meaning it has no border or border-radius"
   variant="promotional"
   startIcon="pencil"

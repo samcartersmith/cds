@@ -50,4 +50,13 @@ export const variants: BannerVariantConfig = {
     iconButtonColor: 'foregroundMuted',
     borderColor: undefined,
   },
+  error: {
+    background: undefined,
+    iconColor: 'negative', // TODO: update to error icon color when available
+    textColor: 'foreground',
+    primaryActionColor: 'primary',
+    secondaryActionColor: 'foreground',
+    iconButtonColor: 'foreground',
+    borderColor: undefined,
+  },
 };

@@ -9,6 +9,8 @@ import React, {
 } from 'react';
 import { css } from 'linaria';
 import { ForwardedRef, SpacingScale } from '@cbhq/cds-common';
+import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
+import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { variants } from '@cbhq/cds-common/tokens/banner';
 import { BannerBaseProps } from '@cbhq/cds-common/types/BannerBaseProps';
 import { isChildrenFalsy } from '@cbhq/cds-common/utils/isChildrenFalsy';
@@ -36,6 +38,20 @@ const warningClassName = css`
 const promotionalClassName = css`
   && {
     border-color: rgb(var(--blue10));
+  }
+`;
+
+const errorClassNameLight = css`
+  && {
+    background-color: rgb(var(--yellow5));
+    border-color: rgb(var(--yellow10));
+  }
+`;
+
+const errorClassNameDark = css`
+  && {
+    background-color: rgb(var(--yellow15));
+    border-color: rgb(var(--yellow10));
   }
 `;
 
@@ -108,14 +124,21 @@ export const Banner = memo(
         () => (isWide && primaryAction && !showDismiss ? 3 : 1),
         [isWide, primaryAction, showDismiss],
       );
+      // temporary fix for error banner
+      const spectrum = useSpectrum();
+      const errorClassName = useMemo(
+        () => (spectrum === 'light' ? errorClassNameLight : errorClassNameDark),
+        [spectrum],
+      );
       const stackClassName = useMemo(
         () =>
           cx(
             variant === 'warning' ? warningClassName : undefined,
             variant === 'promotional' ? promotionalClassName : undefined,
+            variant === 'error' ? errorClassName : undefined,
             className,
           ),
-        [className, variant],
+        [className, variant, errorClassName],
       );
       const stackAlignment = useMemo(
         () => (shouldUseVStack ? 'flex-start' : 'center'),
@@ -152,6 +175,7 @@ export const Banner = memo(
             variant: 'headline',
             color: primaryActionColor,
             testID: `${testID}-action--primary`,
+            underline: variant === 'error',
             ...(primaryAction.props as LinkProps),
           });
         }
@@ -162,7 +186,7 @@ export const Banner = memo(
         }
 
         return primaryAction;
-      }, [primaryAction, primaryActionColor, testID]);
+      }, [primaryAction, primaryActionColor, testID, variant]);
       const clonedSecondaryAction = useMemo(() => {
         if (isValidElement(secondaryAction) && secondaryAction.type === Link) {
           return React.cloneElement(secondaryAction, {
@@ -180,6 +204,20 @@ export const Banner = memo(
 
         return secondaryAction;
       }, [secondaryAction, secondaryActionColor, testID]);
+
+      // temporary fix for error banner
+      const customIconColor = useMemo(
+        () =>
+          variant === 'error'
+            ? {
+                dangerouslySetColor: paletteValueToRgbaString(
+                  spectrum === 'light' ? 'orange40' : 'orange70',
+                  spectrum,
+                ),
+              }
+            : {},
+        [variant, spectrum],
+      );
 
       return (
         <Collapsible
@@ -208,7 +246,13 @@ export const Banner = memo(
           >
             {/** Start */}
             <Box className={isChildrenFalsy(children) && isWide ? undefined : customSpacing}>
-              <Icon color={iconColor} name={startIcon} size="s" testID={`${testID}-icon`} />
+              <Icon
+                color={iconColor}
+                name={startIcon}
+                size="s"
+                testID={`${testID}-icon`}
+                {...customIconColor}
+              />
             </Box>
             <Stack
               alignItems={stackAlignment}
