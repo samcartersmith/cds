@@ -1,8 +1,7 @@
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, useWindowDimensions } from 'react-native';
 import { useToggler } from '@cbhq/cds-common';
 import { squareAssets } from '@cbhq/cds-common/internal/data/assets';
-import { defaultNudgeCardWidth } from '@cbhq/cds-common/tokens/card';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { PictogramName } from '@cbhq/cds-illustrations';
 
@@ -10,7 +9,7 @@ import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';
 import { Carousel } from '../../media/Carousel/Carousel';
-import { TextBody, TextHeadline } from '../../typography';
+import { TextBody, TextHeadline, TextTitle3 } from '../../typography';
 import { NudgeCard } from '../NudgeCard';
 
 const styles = StyleSheet.create({
@@ -80,6 +79,8 @@ const handleDismiss = () => {
 
 const NudgeCardScreen = () => {
   const [dismissed, { toggleOff }] = useToggler(false);
+  const windowWidth = useWindowDimensions().width;
+  const carouselCardWidth = windowWidth - 48;
   return (
     <ExampleScreen>
       <Example title="Nudge Card">
@@ -106,36 +107,38 @@ const NudgeCardScreen = () => {
       <Example title="Long strings">
         <NudgeCard {...longProps} />
       </Example>
-      <Example title="Carousel">
+      <VStack gap={2} spacing={3}>
+        <TextTitle3>Carousel</TextTitle3>
         <Carousel
+          gap={1}
           items={[
             <NudgeCard
               key="carouselItem1"
-              width={defaultNudgeCardWidth}
+              width={carouselCardWidth}
               {...exampleProps}
               onDismissPress={handleDismiss}
             />,
             <NudgeCard
               key="carouselItem2"
-              width={defaultNudgeCardWidth}
+              width={carouselCardWidth}
               {...exampleProps}
               onDismissPress={handleDismiss}
             />,
             <NudgeCard
               key="carouselItem3"
-              width={defaultNudgeCardWidth}
+              width={carouselCardWidth}
               {...exampleProps}
               onDismissPress={handleDismiss}
             />,
             <NudgeCard
               key="carouselItem4"
-              width={defaultNudgeCardWidth}
+              width={carouselCardWidth}
               {...exampleProps}
               onDismissPress={handleDismiss}
             />,
           ]}
         />
-      </Example>
+      </VStack>
       <Example title="Custom dimensions">
         <NudgeCard {...exampleProps} maxHeight={150} numberOfLines={1} width={250} />
         <NudgeCard {...compactProps} width={350} />

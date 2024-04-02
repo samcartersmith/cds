@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, useWindowDimensions } from 'react-native';
 import { coinbaseOneLogo } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
@@ -7,8 +7,9 @@ import { Button } from '../../buttons/Button';
 import { usePaletteValueToRgbaString } from '../../color/usePaletteValueToRgbaString';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useLargeTextStyles } from '../../hooks/useLargeTextStyles';
+import { VStack } from '../../layout';
 import { Carousel } from '../../media';
-import { TextHeadline, TextLabel2 } from '../../typography';
+import { TextHeadline, TextLabel2, TextTitle3 } from '../../typography';
 import { UpsellCard } from '../UpsellCard';
 
 const styles = StyleSheet.create({
@@ -57,6 +58,9 @@ const UpsellCardScreen = () => {
 
   const defaultBackground = usePaletteValueToRgbaString('teal20');
   const largeTextStyle = useLargeTextStyles();
+
+  const windowWidth = useWindowDimensions().width;
+  const carouselCardWidth = windowWidth - 48;
 
   return (
     <ExampleScreen>
@@ -115,7 +119,8 @@ const UpsellCardScreen = () => {
       <Example title="Custom Width">
         <UpsellCard {...exampleProps} dangerouslySetBackground={defaultBackground} width="100%" />
       </Example>
-      <Example title="Carousel">
+      <VStack gap={2} spacing={3}>
+        <TextTitle3>Carousel</TextTitle3>
         <Carousel
           gap={2}
           items={[
@@ -123,20 +128,23 @@ const UpsellCardScreen = () => {
               key="carouselItem1"
               {...exampleProps}
               dangerouslySetBackground={defaultBackground}
+              width={carouselCardWidth}
             />,
             <UpsellCard
               key="carouselItem2"
               {...exampleProps}
               dangerouslySetBackground={defaultBackground}
+              width={carouselCardWidth}
             />,
             <UpsellCard
               key="carouselItem3"
               {...exampleProps}
               dangerouslySetBackground={defaultBackground}
+              width={carouselCardWidth}
             />,
           ]}
         />
-      </Example>
+      </VStack>
     </ExampleScreen>
   );
 };

@@ -22,6 +22,10 @@ All notable changes to this project will be documented in this file!
 
 #### 📘 Misc
 
+- [trivial] chore: updated Carousel stories with Gondolin cards.
+
+#### 📘 Misc
+
 - **[Website]** Fix Cardbody props. [[#2886](https://github.cbhq.net/frontend/cds/pull/2886)] [[DX-3501](https://jira.coinbase-corp.com/browse/DX-3501)]
 
 ## 6.4.1 ((3/28/2024, 01:27 PM PST))
