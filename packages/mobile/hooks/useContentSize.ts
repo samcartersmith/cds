@@ -6,6 +6,7 @@ export type ContentSize = {
   height: number;
 };
 
+// TO DO: Default `width` and `height` to null on initial render
 export const useContentSize = (): [ContentSize, OnContentSizeChange] => {
   const [size, setSize] = useState<ContentSize>({
     width: 0,

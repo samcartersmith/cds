@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.5.3 ((4/3/2024, 12:42 PM PST))
+
+This is an artificial version bump with no new change.
+
 ## 6.5.2 (4/3/2024 PST)
 
 #### 🐞 Fixes
@@ -99,6 +103,10 @@ This is an artificial version bump with no new change.
 #### 💥 Breaking
 
 - CDS 6 release. [[#2779](https://github.cbhq.net/frontend/cds/pull/2779)]
+
+## 5.38.1 ((4/3/2024, 12:30 PM PST))
+
+This is an artificial version bump with no new change.
 
 ## 5.38.0 (4/1/2024 PST)
 

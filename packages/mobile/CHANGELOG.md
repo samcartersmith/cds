@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.5.3 (4/3/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix Collapsible flicker animation issue. [[DX-3526](https://jira.coinbase-corp.com/browse/DX-3526)]
+
 ## 6.5.2 (4/3/2024 PST)
 
 #### 🐞 Fixes
@@ -109,6 +115,12 @@ This is an artificial version bump with no new change.
 #### 💥 Breaking
 
 - CDS 6 release. [[#2779](https://github.cbhq.net/frontend/cds/pull/2779)]
+
+## 5.38.1 (4/3/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: collapsible flickering. [[DX-3526](https://jira.coinbase-corp.com/browse/DX-3526)]
 
 ## 5.38.0 (4/1/2024 PST)
 

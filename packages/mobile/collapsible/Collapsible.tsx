@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
+import React, { ForwardedRef, forwardRef, memo, useEffect, useMemo, useRef } from 'react';
 import { ScrollView, ScrollViewProps, StyleSheet, View } from 'react-native';
 import Animated, {
   useAnimatedReaction,
@@ -58,8 +58,14 @@ export const Collapsible = memo(
       }: CollapsibleProps,
       forwardedRef: ForwardedRef<View>,
     ) => {
+      // TO DO: Remove this after refactoring useContentSize to default values to null on initial render
+      const hasMounted = useRef(false);
+      useEffect(() => void (hasMounted.current = true), []);
+      const isUnmountedExpanded = !collapsed && !hasMounted.current;
+
       const [{ height: contentHeight, width: contentWidth }, handleContentSizeChange] =
         useContentSize();
+
       const [animateInMaxSize, animateOutMaxSize, animateInOpacity, animateOutOpacity] =
         convertMotionConfigs([
           animateInMaxSizeConfig[direction],
@@ -103,7 +109,12 @@ export const Collapsible = memo(
       useAnimatedReaction(
         () => collapsed,
         (_collapsed) => {
-          if (contentHeight === null || contentHeight === 0) {
+          if (
+            contentHeight === null ||
+            contentHeight === 0 ||
+            contentWidth === null ||
+            contentWidth === 0
+          ) {
             return;
           }
 
@@ -120,7 +131,7 @@ export const Collapsible = memo(
             ? animateInOpacity.toValue
             : withMotionTiming(_collapsed ? animateOutOpacity : animateInOpacity);
         },
-        [collapsed, contentHeight],
+        [collapsed, contentHeight, contentWidth],
       );
 
       /*
@@ -140,14 +151,18 @@ export const Collapsible = memo(
       }));
       const animatedInMaxSize =
         animateInMaxSize.property === 'height' ? animatedInMaxSizeHeight : animatedInMaxSizeWidth;
+
       const animatedStyles = useAnimatedStyle(() => ({
         opacity: Number(opacityAnimatedValue.value),
       }));
 
-      const containerStyles = useMemo(
+      const animatedContainerStyles = useMemo(
         () => [styles.container, animatedStyles, animatedInMaxSize],
         [animatedStyles, animatedInMaxSize],
       );
+
+      const containerStyles = isUnmountedExpanded ? styles.container : animatedContainerStyles;
+
       return (
         <ReanimatedView
           ref={forwardedRef}

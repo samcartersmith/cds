@@ -89,7 +89,7 @@ describe('Collapsible', () => {
     const style = { opacity: 1 };
     const view = screen.getByTestId('mock-collapse');
     jest.advanceTimersByTime(0);
-    expect(view).toHaveAnimatedStyle(style);
+    expect(view).not.toHaveAnimatedStyle(style);
 
     // collapse
     fireEvent.press(screen.getByTestId('mock-collapse-trigger'));
