@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.48 (4/2/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: Added CardBody migration script & Framer motion dependency addition [[DX-3490](https://jira.coinbase-corp.com/browse/DX-3490)] [[DX-3452](https://jira.coinbase-corp.com/browse/DX-3452)]
+
 ## 0.1.47 (3/11/2024 PST)
 
 #### 🐞 Fixes

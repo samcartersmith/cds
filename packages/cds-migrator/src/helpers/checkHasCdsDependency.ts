@@ -34,6 +34,14 @@ type Params = {
 };
 
 type Dependencies = Partial<Record<PackageName, string>> | undefined;
+export type CheckHasCdsDependencyReturnType = {
+  hasCdsDependency: boolean;
+  hasCoreCdsDependency: boolean;
+  packageJsonPath: string;
+  dependencies?: Partial<Record<PackageName, string>>;
+  devDependencies?: Partial<Record<PackageName, string>>;
+  peerDependencies?: Partial<Record<PackageName, string>>;
+};
 
 /**
  * Checks if the project uses a CDS package as a dependency
@@ -41,14 +49,11 @@ type Dependencies = Partial<Record<PackageName, string>> | undefined;
  * @param project - The project configuration
  * @returns { hasCdsDependency: boolean, hasCoreCdsDependency: boolean, packageJsonPath: string, dependencies: Partial<Record<PackageName, string>>, devDependencies: Partial<Record<PackageName, string>>, peerDependencies: Partial<Record<PackageName, string>>}
  */
-export function checkHasCdsDependency({ tree, project, checkRoot }: Params): {
-  hasCdsDependency: boolean;
-  hasCoreCdsDependency: boolean;
-  packageJsonPath: string;
-  dependencies?: Partial<Record<PackageName, string>>;
-  devDependencies?: Partial<Record<PackageName, string>>;
-  peerDependencies?: Partial<Record<PackageName, string>>;
-} {
+export function checkHasCdsDependency({
+  tree,
+  project,
+  checkRoot,
+}: Params): CheckHasCdsDependencyReturnType {
   const packageJsonPath =
     !checkRoot && project ? joinPathFragments(project.root, `package.json`) : `package.json`;
 

@@ -5,7 +5,7 @@ import { CdsDependencyCheck, checkHasCdsDependency } from './checkHasCdsDependen
 import { logDebug } from './loggingHelpers';
 import { DepsToAddMap, PackageName, packageNames, PackageWithVersion } from './types';
 
-function checkRequiresUpgrade(currVersion: string, newVersion: string) {
+export function checkRequiresUpgrade(currVersion: string, newVersion: string) {
   // Skip update if the installed version is '*'
   if (currVersion === '*') return;
 

@@ -3,8 +3,10 @@ import { Tree } from '@nrwl/devkit';
 import revertDecomp from '../revert-decomp';
 import packageDecompMigrations from '../update-decomp';
 
+import addDependencies from './addDependencies';
 import renamedAttributeAndValueMigrations from './attributeAndValueMigrations';
 import attributeValueToBooleanMigrations from './attributeValueToBooleanMigrations';
+import cardBodyMigration from './cardBodyMigration';
 import componentMigrations from './componentMigrations';
 import hasFrontierMigrations from './hasFrontierMigrations';
 import pathMigrations from './pathMigrations';
@@ -15,6 +17,7 @@ import removedPropMigrations from './removedPropMigrations';
 import updateCDSPackagesToV6 from './updateCDSPackagesToV6';
 
 export default async function main(tree: Tree) {
+  await cardBodyMigration(tree);
   await componentMigrations(tree);
   await removedComponents(tree);
   await propMigrations(tree);
@@ -30,4 +33,5 @@ export default async function main(tree: Tree) {
   await updateCDSPackagesToV6(tree);
   // migrates usages of decomped components back to web package
   await revertDecomp(tree);
+  await addDependencies(tree);
 }
