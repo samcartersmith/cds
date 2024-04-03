@@ -130,7 +130,6 @@ const AppleIcon = () => {
 const exampleProps: MultiContentModuleProps = {
   title: 'Multi Content Module',
   description: 'The body copy can be up to 3 lines but shorter is always better.',
-  accessibilityLabel: 'Multi Content Module example',
   pictogram: 'waiting',
 };
 
@@ -205,6 +204,7 @@ export const Default = () => {
       </Button>
       <FullscreenModal
         hideDivider
+        accessibilityLabel="mcm-modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -247,6 +247,7 @@ export const Dense = () => {
       </Button>
       <FullscreenModal
         hideDivider
+        accessibilityLabel="mcm-modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -292,6 +293,7 @@ export const WithBorder = () => {
       </Button>
       <FullscreenModal
         hideDivider
+        accessibilityLabel="mcm-modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -337,6 +339,7 @@ export const WithButtonGroup = () => {
       </Button>
       <FullscreenModal
         hideDivider
+        accessibilityLabel="mcm-modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -404,6 +407,7 @@ export const WithEnd = () => {
       </Button>
       <FullscreenModal
         hideDivider
+        accessibilityLabel="mcm-modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -448,6 +452,7 @@ export const WithLongContent = () => {
       </Button>
       <FullscreenModal
         hideDivider
+        accessibilityLabel="mcm-modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -460,23 +465,4 @@ export const WithLongContent = () => {
 export default {
   title: 'Core Components/MultiContentModule',
   component: MultiContentModule,
-};
-
-Default.parameters = {
-  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
-};
-Dense.parameters = {
-  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
-};
-WithBorder.parameters = {
-  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
-};
-WithButtonGroup.parameters = {
-  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
-};
-WithEnd.parameters = {
-  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
-};
-WithLongContent.parameters = {
-  a11y: { config: { rules: [{ id: 'aria-dialog-name', enabled: false }] } },
 };

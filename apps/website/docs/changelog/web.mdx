@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Fix MultiContentModule story a11y issue. [[#2894](https://github.cbhq.net/frontend/cds/pull/2894)]
+
 ## 6.5.3 ((4/3/2024, 12:42 PM PST))
 
 This is an artificial version bump with no new change.
