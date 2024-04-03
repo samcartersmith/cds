@@ -4,7 +4,7 @@ import type { AnnouncementCardBaseProps, CardBaseProps, CardBodyBaseProps } from
 
 type CreateAnnouncementCardParams<OnPressFn> = {
   Card: React.ComponentType<CardBaseProps & { onPress?: OnPressFn }>;
-  CardBody: React.ComponentType<CardBodyBaseProps>;
+  CardBody: React.ComponentType<CardBodyBaseProps & { onActionPress?: OnPressFn }>;
 };
 
 /** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.5.1 (4/2/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: added back onActionPress to FeatureEntryCard AnnouncementCard and CardBody.
+
 ## 6.5.0 (4/1/2024 PST)
 
 #### 🚀 Updates

@@ -6,12 +6,14 @@ import { createCardBodyAction } from '@cbhq/cds-common/cards/createCardBodyActio
 import { Button } from '../buttons/Button';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { OnPress } from '../system';
+import { OnPress, PressableProps } from '../system';
 import { createText } from '../typography/createText';
 
 import { CardMedia } from './CardMedia';
 
-export type CardBodyProps = CardBodyBaseProps;
+export type CardBodyProps = CardBodyBaseProps & {
+  onActionPress?: PressableProps['onPress'];
+};
 
 const CardBodyAction = createCardBodyAction<OnPress>({
   Button,

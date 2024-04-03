@@ -1,3 +1,5 @@
+import { PressableProps } from 'react-native';
+import { CardBodyBaseProps } from '@cbhq/cds-common';
 import { createCardBody } from '@cbhq/cds-common/cards/createCardBody';
 import { createCardBodyAction } from '@cbhq/cds-common/cards/createCardBodyAction';
 
@@ -9,7 +11,9 @@ import { TextLabel2 } from '../typography/TextLabel2';
 
 import { CardMedia } from './CardMedia';
 
-export type CardBodyProps = React.ComponentProps<typeof CardBody>;
+export type CardBodyProps = CardBodyBaseProps & {
+  onActionPress?: PressableProps['onPress'];
+};
 
 const CardBodyAction = createCardBodyAction({
   Button,

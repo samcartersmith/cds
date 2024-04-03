@@ -4,7 +4,9 @@ import { CardBaseProps, CardBodyBaseProps, FeatureEntryCardBaseProps } from '../
 
 type CreateFeatureEntryCardParams<OnPressFn> = {
   Card: React.ComponentType<CardBaseProps & { onPress?: OnPressFn }>;
-  CardBody: React.ComponentType<CardBodyBaseProps & { onPress?: OnPressFn }>;
+  CardBody: React.ComponentType<
+    CardBodyBaseProps & { onPress?: OnPressFn; onActionPress?: OnPressFn }
+  >;
 };
 
 /** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
