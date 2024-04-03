@@ -23,6 +23,7 @@ export function createAnnouncementCard<OnPressFn>({
     ...props
   }: AnnouncementCardBaseProps & {
     onPress?: OnPressFn;
+    onActionPress?: OnPressFn;
   }) {
     const accessibilityProps = useMemo(
       () => ({

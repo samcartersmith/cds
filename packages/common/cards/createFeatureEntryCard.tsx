@@ -22,7 +22,7 @@ export function createFeatureEntryCard<OnPressFn>({
     description,
     title,
     ...props
-  }: FeatureEntryCardBaseProps & { onPress?: OnPressFn }) {
+  }: FeatureEntryCardBaseProps & { onPress?: OnPressFn; onActionPress?: OnPressFn }) {
     return (
       <Card
         accessibilityHint={

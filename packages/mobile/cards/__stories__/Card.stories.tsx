@@ -13,11 +13,11 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
-import { AnnouncementCard, AnnouncementCardProps } from '../AnnouncementCard';
+import { AnnouncementCard } from '../AnnouncementCard';
 import { Card } from '../Card';
 import { CardGroup } from '../CardGroup';
 import { DataCard } from '../DataCard';
-import { FeatureEntryCard, FeatureEntryCardProps } from '../FeatureEntryCard';
+import { FeatureEntryCard } from '../FeatureEntryCard';
 import { FeedCard } from '../FeedCard';
 
 const {
@@ -62,16 +62,15 @@ const CardScreen = () => {
       </Example>
       <Example title="Announcement Card">
         <CardGroup>
-          {announcementCards.map((item, idx) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <AnnouncementCard key={idx} {...(item as AnnouncementCardProps)} />
+          {announcementCards.map((item) => (
+            <AnnouncementCard {...item} />
           ))}
         </CardGroup>
       </Example>
       <Example title="Feature Entry Card">
         <CardGroup>
           {featureEntryCards.map((item) => (
-            <FeatureEntryCard {...(item as FeatureEntryCardProps)} />
+            <FeatureEntryCard {...item} />
           ))}
         </CardGroup>
       </Example>

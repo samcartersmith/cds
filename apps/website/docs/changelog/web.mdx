@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.5.2 (4/3/2024 PST)
+
+#### 🐞 Fixes
+
+- Fixed deprecated card types.
+
 ## 6.5.1 (4/2/2024 PST)
 
 #### 🐞 Fixes

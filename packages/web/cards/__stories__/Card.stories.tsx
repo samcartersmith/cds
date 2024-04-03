@@ -20,10 +20,7 @@ import { Card } from '../Card';
 import { CardBody } from '../CardBody';
 import { CardGroup } from '../CardGroup';
 import { DataCard as DataCardComponent } from '../DataCard';
-import {
-  FeatureEntryCard as FeatureEntryCardComponent,
-  FeatureEntryCardProps,
-} from '../FeatureEntryCard';
+import { FeatureEntryCard as FeatureEntryCardComponent } from '../FeatureEntryCard';
 import { FeedCard as FeedCardComponent, FeedCardProps } from '../FeedCard';
 
 const accessToken = getFigmaAccessToken();
@@ -85,12 +82,8 @@ const featureEntryCardBuilder = builder(FeatureEntryCardComponent, {
   },
 });
 
-export const FeatureEntryCard = featureEntryCardBuilder.build(
-  featureEntryCards[0] as FeatureEntryCardProps,
-);
-export const FeatureEntryCards = featureEntryCardBuilder.buildSheet(
-  featureEntryCards as FeatureEntryCardProps[],
-);
+export const FeatureEntryCard = featureEntryCardBuilder.build(featureEntryCards[0]);
+export const FeatureEntryCards = featureEntryCardBuilder.buildSheet(featureEntryCards);
 
 /* -------------------------------------------------------------------------- */
 /*                                 Feed Cards                                 */
