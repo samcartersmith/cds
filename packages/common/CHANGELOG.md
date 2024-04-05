@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.5.5 (4/5/2024 PST)
+
+#### 🐞 Fixes
+
+- 'removed border from card when pressable'.
+
 ## 6.5.4 (4/5/2024 PST)
 
 #### 🐞 Fixes

@@ -69,7 +69,6 @@ export const Card = memo(function OldCard({
       accessibilityRole="button"
       background={bg}
       borderRadius={borderRadius}
-      borderWidth="card"
       elevation={elevation}
       onPress={onPress}
       style={{ ...pinStyles, width: width as DimensionValue, height: height as DimensionValue }}
