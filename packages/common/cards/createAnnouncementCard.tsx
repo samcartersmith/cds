@@ -20,6 +20,8 @@ export function createAnnouncementCard<OnPressFn>({
     testID,
     accessibilityLabel,
     accessibilityHint,
+    elevation = 0,
+    borderRadius = 'roundedNone',
     ...props
   }: AnnouncementCardBaseProps & {
     onPress?: OnPressFn;
@@ -38,7 +40,15 @@ export function createAnnouncementCard<OnPressFn>({
     );
 
     return (
-      <Card {...accessibilityProps} flexShrink={0} onPress={onPress} testID={testID} width={width}>
+      <Card
+        {...accessibilityProps}
+        borderRadius={borderRadius}
+        elevation={elevation}
+        flexShrink={0}
+        onPress={onPress}
+        testID={testID}
+        width={width}
+      >
         <CardBody alignItems="flex-start" description={description} title={title} {...props} />
       </Card>
     );

@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 6.5.4 (4/5/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix: fixed mobile AnnouncementCard, FeatureEntryCard, DataCard, FeedCard. [[#2905](https://github.cbhq.net/frontend/cds/pull/2905)]
 
 #### 📘 Misc
 

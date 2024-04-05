@@ -52,6 +52,8 @@ export function createFeedCard<OnPressFn>({
     comment,
     share,
     cta,
+    borderRadius = 'roundedNone',
+    elevation = 0,
     ...cardProps
   }: FeedCardBaseProps<OnPressFn>) {
     const footer = useMemo(() => {
@@ -91,7 +93,13 @@ export function createFeedCard<OnPressFn>({
     }, [comment, cta, like, share, testID]);
 
     return (
-      <Card gap={2} testID={testID} {...cardProps}>
+      <Card
+        borderRadius={borderRadius}
+        elevation={elevation}
+        gap={2}
+        testID={testID}
+        {...cardProps}
+      >
         <CardHeader
           action={
             headerAction && (

@@ -33,6 +33,7 @@ export const Card = memo(function OldCard({
   accessibilityLabel,
   accessibilityHint,
   pressableProps,
+  borderRadius = 'rounded',
   ...props
 }: CardProps) {
   const width = widthProps ?? cardSizes[size].width;
@@ -44,8 +45,6 @@ export const Card = memo(function OldCard({
     () => [borderRadiusOverrides, style],
     [borderRadiusOverrides, style],
   );
-
-  const borderRadius = 'rounded';
 
   const content = (
     <VStack

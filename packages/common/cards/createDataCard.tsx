@@ -48,6 +48,8 @@ export function createDataCard<OnPressFn>({
     startLabel: startLabelProp,
     endLabel: endLabelProp,
     testID = 'data-card',
+    borderRadius = 'roundedNone',
+    elevation = 0,
     ...cardProps
   }: DataCardBaseProps & { onPress?: OnPressFn }) {
     const content = useMemo(() => {
@@ -67,7 +69,15 @@ export function createDataCard<OnPressFn>({
     }, [endLabelProp, progressVariant, startLabelProp, testID]);
 
     return (
-      <Card gap={2} onPress={onPress} spacing={gutter} testID={testID} {...cardProps}>
+      <Card
+        borderRadius={borderRadius}
+        elevation={elevation}
+        gap={2}
+        onPress={onPress}
+        spacing={gutter}
+        testID={testID}
+        {...cardProps}
+      >
         <CardBody
           description={description}
           media={
