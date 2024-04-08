@@ -1828,8 +1828,8 @@
         "components/SimpleTrade/BuySell/steps/OrderTypeSelectStep/OrderTypeSelectorCard.tsx": 1,
         "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseErrorSection/BaseErrorSection.tsx": 1,
         "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1,
-        "components/SimpleTrade/BuySell/steps/EntryStep/hooks/usePaymentSelector.tsx": 1,
         "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/BuyWaitTodoItem.tsx": 1,
+        "components/SimpleTrade/BuySell/steps/EntryStep/hooks/usePaymentSelector.tsx": 1,
         "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderAccountBalance.tsx": 3,
         "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderInputFieldSwapButton.tsx": 1,
         "components/SimpleTrade/BuySell/steps/LimitOrder/components/LimitOrderPreviewStep/LimitOrderPreviewStep.tsx": 1,
@@ -1843,8 +1843,8 @@
           "components/SimpleTrade/BuySell/steps/OrderTypeSelectStep/OrderTypeSelectorCard.tsx": 1,
           "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseErrorSection/BaseErrorSection.tsx": 1,
           "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1,
-          "components/SimpleTrade/BuySell/steps/EntryStep/hooks/usePaymentSelector.tsx": 1,
           "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/BuyWaitTodoItem.tsx": 1,
+          "components/SimpleTrade/BuySell/steps/EntryStep/hooks/usePaymentSelector.tsx": 1,
           "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderAccountBalance.tsx": 3,
           "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderInputFieldSwapButton.tsx": 1,
           "components/SimpleTrade/BuySell/steps/LimitOrder/components/LimitOrderPreviewStep/LimitOrderPreviewStep.tsx": 1,
@@ -1857,8 +1857,8 @@
           "components/SimpleTrade/BuySell/steps/OrderTypeSelectStep/OrderTypeSelectorCard.tsx": 1,
           "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseErrorSection/BaseErrorSection.tsx": 1,
           "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1,
-          "components/SimpleTrade/BuySell/steps/EntryStep/hooks/usePaymentSelector.tsx": 1,
           "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/BuyWaitTodoItem.tsx": 1,
+          "components/SimpleTrade/BuySell/steps/EntryStep/hooks/usePaymentSelector.tsx": 1,
           "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderAccountBalance.tsx": 3,
           "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderInputFieldSwapButton.tsx": 1,
           "components/SimpleTrade/BuySell/steps/LimitOrder/components/LimitOrderPreviewStep/LimitOrderPreviewStep.tsx": 1,
@@ -1870,8 +1870,8 @@
           "components/SimpleTrade/BuySell/steps/OrderTypeSelectStep/OrderTypeSelectorCard.tsx": 1,
           "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseErrorSection/BaseErrorSection.tsx": 1,
           "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1,
-          "components/SimpleTrade/BuySell/steps/EntryStep/hooks/usePaymentSelector.tsx": 1,
           "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/BuyWaitTodoItem.tsx": 1,
+          "components/SimpleTrade/BuySell/steps/EntryStep/hooks/usePaymentSelector.tsx": 1,
           "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderAccountBalance.tsx": 3,
           "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderInputFieldSwapButton.tsx": 1,
           "components/SimpleTrade/BuySell/steps/LimitOrder/components/LimitOrderPreviewStep/LimitOrderPreviewStep.tsx": 1,
@@ -2901,9 +2901,9 @@
         "components/SimpleTrade/BuySell/steps/OpenBankingQrCodeStep/Timeline.tsx": 1,
         "components/SimpleTrade/BuySell/steps/OrderTypeSelectStep/OrderTypeSelectorCard.tsx": 1,
         "components/SimpleTrade/Convert/steps/SelectSourceStep/SelectSourceStepWrapper.tsx": 1,
+        "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
         "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseErrorSection/BaseErrorSection.tsx": 1,
         "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1,
-        "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
         "components/SimpleTrade/BuySell/steps/BuyPreviewStep/OBRedirectionBanner/OBRedirectionBanner.tsx": 1,
         "components/SimpleTrade/BuySell/steps/BuyStatusStep/components/StakePromoBanner.tsx": 1,
         "components/SimpleTrade/BuySell/steps/BuyStatusStep/components/VerifySSNBanner.tsx": 1,
@@ -2984,18 +2984,18 @@
           "components/SimpleTrade/BuySell/steps/LimitOrder/components/LimitOrderPreviewStep/LimitOrderConfirmationStep.tsx": 1,
           "views/AssetPage/components/AssetOverview.tsx": 2
         },
+        "spacingBottom": {
+          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
+          "components/SimpleTrade/BuySell/steps/EntryStep/components/TradeInputHelper.tsx": 1,
+          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/BuyWaitTodoItem.tsx": 1,
+          "components/SimpleTrade/BuySell/steps/LimitOrder/components/LimitOrderPreviewStep/LimitOrderConfirmationStep.tsx": 1
+        },
         "testID": {
           "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseErrorSection/BaseErrorSection.tsx": 1,
           "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/TimeRemaining.tsx": 1
         },
         "accessibilityLabel": {
           "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseErrorSection/BaseErrorSection.tsx": 1
-        },
-        "spacingBottom": {
-          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
-          "components/SimpleTrade/BuySell/steps/EntryStep/components/TradeInputHelper.tsx": 1,
-          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/BuyWaitTodoItem.tsx": 1,
-          "components/SimpleTrade/BuySell/steps/LimitOrder/components/LimitOrderPreviewStep/LimitOrderConfirmationStep.tsx": 1
         },
         "borderRadius": {
           "components/SimpleTrade/BuySell/steps/BuyPreviewStep/OBRedirectionBanner/OBRedirectionBanner.tsx": 1
@@ -3452,6 +3452,39 @@
       }
     },
     {
+      "name": "IconButton",
+      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/buttons/IconButton",
+      "callSites": {
+        "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
+        "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "name": {
+          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
+          "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
+        },
+        "variant": {
+          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "transparent": {
+          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
+          "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
+        },
+        "testID": {
+          "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
+        },
+        "compact": {
+          "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Cell",
       "sourceFile": "@cbhq/cds-web/cells/Cell",
       "totalInstances": 1,
@@ -3556,39 +3589,6 @@
         },
         "borderRadius": {
           "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderSuggestionButtons.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "IconButton",
-      "sourceFile": "@cbhq/cds-web/buttons/IconButton",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/buttons/IconButton",
-      "callSites": {
-        "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
-        "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onPress": {
-          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "name": {
-          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
-          "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
-        },
-        "variant": {
-          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "transparent": {
-          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
-          "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
-        },
-        "testID": {
-          "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
-        },
-        "compact": {
-          "views/Assets/components/QuickActionsCard/InlineQuickActions.tsx": 1
         }
       }
     },
@@ -4936,7 +4936,7 @@
         "@app/screens/AssetsTab/components/AssetsCashEquivalents/AssetsCashEquivalents.tsx": 1
       },
       "propsWithCallSites": {
-        "fallback": {
+        "errorFallback": {
           "@app/screens/Stablecoin/components/CashOutPaymentCell.tsx": 2,
           "@app/screens/Stablecoin/components/CashSelectorTray.tsx": 1,
           "@app/screens/Stablecoin/components/UsdcStakeBanner.tsx": 1,
@@ -4959,11 +4959,21 @@
           "@app/screens/Asset/StableAssetScreen/components/StableAssetQuickActions.tsx": 1,
           "@app/screens/AssetsTab/components/AssetsCashEquivalents/AssetsCashEquivalents.tsx": 1
         },
-        "errorFallback": {
+        "fallback": {
+          "@app/screens/Stablecoin/components/CashOutPaymentCell.tsx": 2,
           "@app/screens/Stablecoin/components/CashSelectorTray.tsx": 1,
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
+          "@app/screens/Stablecoin/components/UsdcStakeBanner.tsx": 1,
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashOutFetcher.tsx": 1,
+          "@app/screens/SimpleTrade/Cash/components/WithdrawStableAssetContainer.tsx": 1,
+          "@app/screens/Stablecoin/components/CashTargetSelector.tsx": 1,
+          "@app/components/SimpleTrade/BaseInput/components/SimpleTradeInputKeyboard/SimpleTradeInputKeyboard.tsx": 1,
+          "@app/screens/SimpleTrade/components/SimpleTradePrimaryPaymentMethodFetcher/SimpleTradePrimaryPaymentMethodFetcher.tsx": 1,
+          "@app/components/Transfer/CryptoPayments/BuyUsdcPaymentMethod.tsx": 1,
+          "@app/components/Transfer/CryptoPayments/SellUsdcPaymentMethod.tsx": 1,
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 4,
+          "@app/screens/Asset/StableAssetScreen/components/StableAssetAnnouncementCards.tsx": 1,
           "@app/screens/Asset/StableAssetScreen/components/StableAssetCarousel.tsx": 1,
-          "@app/screens/Asset/StableAssetScreen/components/StableAssetHero.tsx": 1,
+          "@app/screens/Asset/StableAssetScreen/components/StableAssetHero.tsx": 2,
           "@app/screens/Asset/StableAssetScreen/components/StableAssetHighlights.tsx": 1,
           "@app/screens/Asset/StableAssetScreen/components/StableAssetInfoSections.tsx": 1,
           "@app/screens/Asset/StableAssetScreen/components/StableAssetRewardsCard.tsx": 1,
@@ -6092,8 +6102,8 @@
       }
     },
     {
-      "name": "PaymentMethodSelectorWithSuspense",
-      "sourceFile": "@app/components/Transfer/PaymentMethodSelector/PaymentMethodSelectorWithSuspense",
+      "name": "PaymentMethodSelectorWithNetworkBoundary",
+      "sourceFile": "@app/components/Transfer/PaymentMethodSelector/PaymentMethodSelectorWithNetworkBoundary",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -6342,8 +6352,8 @@
       }
     },
     {
-      "name": "SimpleTradeFixedAmounts",
-      "sourceFile": "@app/screens/SimpleTrade/components/SimpleTradeFixedAmounts",
+      "name": "SimpleTradeFixedAmountsDeprecated",
+      "sourceFile": "@app/screens/SimpleTrade/components/SimpleTradeFixedAmountsDeprecated",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
@@ -6352,85 +6362,59 @@
       },
       "propsWithCallSites": {
         "queryRef": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "fiatCurrency": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "displayedInputCurrency": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "setInputValue": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "transferSource": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "paymentMethod": {
           "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
         "triggerSubmit": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "tradeTypeUI": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "tradeTypeAPI": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "tradeSubType": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "setDisplayedInputCurrency": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "source": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "cryptoCurrency": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "disabled": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "target": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "generateQuoteMutation": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "isSubmitting": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         },
         "updateSubmittingState": {
-          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1,
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "experimentalAssetId": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "orderType": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "limitOrderTargetPrice": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+          "@app/screens/SimpleTrade/Cash/components/SimpleTradeCashInput.tsx": 1
         }
       }
     },
@@ -7493,6 +7477,12 @@
       }
     },
     {
+      "name": "SimpleTradeFixedAmounts",
+      "sourceFile": "@app/screens/SimpleTrade/components/SimpleTradeFixedAmounts",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "SimpleTradeInputHeader",
       "sourceFile": "@app/screens/SimpleTrade/components/SimpleTradeInputHeader",
       "totalInstances": 1,
@@ -7579,6 +7569,9 @@
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
         "source": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "paymentMethodCurrency": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
         "openAsModal": {
@@ -10457,6 +10450,36 @@
       }
     },
     {
+      "name": "PolicyRestrictionEnforcer",
+      "sourceFile": "components/PolicyRestrictionEnforcer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "components/SimpleTrade/SimpleTradeContentV2.tsx": 1,
+        "components/SimpleTrade/Convert/Convert.tsx": 1,
+        "components/SimpleTrade/Convert/ConvertV2.tsx": 1,
+        "components/SimpleTrade/BuySell/BuySell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "action": {
+          "components/SimpleTrade/SimpleTradeContentV2.tsx": 1,
+          "components/SimpleTrade/Convert/Convert.tsx": 1,
+          "components/SimpleTrade/Convert/ConvertV2.tsx": 1,
+          "components/SimpleTrade/BuySell/BuySell.tsx": 1
+        },
+        "policyRestrictionRefs": {
+          "components/SimpleTrade/SimpleTradeContentV2.tsx": 1,
+          "components/SimpleTrade/Convert/Convert.tsx": 1,
+          "components/SimpleTrade/Convert/ConvertV2.tsx": 1,
+          "components/SimpleTrade/BuySell/BuySell.tsx": 1
+        },
+        "onClose": {
+          "components/SimpleTrade/SimpleTradeContentV2.tsx": 1,
+          "components/SimpleTrade/BuySell/BuySell.tsx": 1
+        }
+      }
+    },
+    {
       "name": "BuySellProvider",
       "sourceFile": "components/SimpleTrade/BuySell/BuySellProvider",
       "totalInstances": 2,
@@ -10491,6 +10514,26 @@
           "components/SimpleTrade/BuySell/BuySell.tsx": 1
         },
         "variant": {
+          "components/SimpleTrade/SimpleTradeContentV2.tsx": 1,
+          "components/SimpleTrade/BuySell/BuySell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PaymentMethodsEnforcer",
+      "sourceFile": "components/SimpleTrade/BuySell/PaymentMethodsEnforcer",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/SimpleTrade/SimpleTradeContentV2.tsx": 1,
+        "components/SimpleTrade/BuySell/BuySell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "transferType": {
+          "components/SimpleTrade/SimpleTradeContentV2.tsx": 1,
+          "components/SimpleTrade/BuySell/BuySell.tsx": 1
+        },
+        "closeModal": {
           "components/SimpleTrade/SimpleTradeContentV2.tsx": 1,
           "components/SimpleTrade/BuySell/BuySell.tsx": 1
         }
@@ -10627,32 +10670,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "PolicyRestrictionEnforcer",
-      "sourceFile": "components/PolicyRestrictionEnforcer",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "components/SimpleTrade/Convert/Convert.tsx": 1,
-        "components/SimpleTrade/Convert/ConvertV2.tsx": 1,
-        "components/SimpleTrade/BuySell/BuySell.tsx": 1
-      },
-      "propsWithCallSites": {
-        "action": {
-          "components/SimpleTrade/Convert/Convert.tsx": 1,
-          "components/SimpleTrade/Convert/ConvertV2.tsx": 1,
-          "components/SimpleTrade/BuySell/BuySell.tsx": 1
-        },
-        "policyRestrictionRefs": {
-          "components/SimpleTrade/Convert/Convert.tsx": 1,
-          "components/SimpleTrade/Convert/ConvertV2.tsx": 1,
-          "components/SimpleTrade/BuySell/BuySell.tsx": 1
-        },
-        "onClose": {
-          "components/SimpleTrade/BuySell/BuySell.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ConvertProvider",
       "sourceFile": "components/SimpleTrade/Convert/ConvertProvider",
       "totalInstances": 2,
@@ -10726,6 +10743,9 @@
         "closeModal": {
           "components/SimpleTrade/Convert/ConvertStepperV2.tsx": 1,
           "components/SimpleTrade/SimpleTradeRedesign/SimpleTradeStepper/SimpleTradeStepper.tsx": 1
+        },
+        "shouldNotClearFormBuySellProxy": {
+          "components/SimpleTrade/Convert/ConvertStepperV2.tsx": 1
         },
         "tradeActions": {
           "components/SimpleTrade/SimpleTradeRedesign/SimpleTradeStepper/SimpleTradeStepper.tsx": 1
@@ -10928,6 +10948,9 @@
           "components/SimpleTrade/Convert/ConvertStepperV2.tsx": 1
         },
         "queryRef": {
+          "components/SimpleTrade/Convert/ConvertStepperV2.tsx": 1
+        },
+        "shouldNotClearForm": {
           "components/SimpleTrade/Convert/ConvertStepperV2.tsx": 1
         }
       }
@@ -11921,6 +11944,41 @@
       }
     },
     {
+      "name": "LazyLinkPayPal",
+      "sourceFile": "components/LinkPayPal/LazyLinkPayPal",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "BuyMaxTextLink",
+      "sourceFile": "components/IncreaseLimitModal/components/BuyMaxTextLink",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "IncreaseLimitTextLink",
+      "sourceFile": "components/IncreaseLimitModal/IncreaseLimitTextLink",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "errorText": {
+          "components/SimpleTrade/BuySell/hooks/useTransferQuoter/useTransferQuoteErrorHandler.tsx": 1
+        },
+        "eventNameOnView": {
+          "components/SimpleTrade/BuySell/hooks/useTransferQuoter/useTransferQuoteErrorHandler.tsx": 1
+        },
+        "eventNameOnClick": {
+          "components/SimpleTrade/BuySell/hooks/useTransferQuoter/useTransferQuoteErrorHandler.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PersonalDetailsModal",
+      "sourceFile": "components/PersonalDetailsModal",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "PreviewFooterNotice",
       "sourceFile": "components/BuySellComponents/PreviewStyles/PreviewStyles/PreviewFooterNotice",
       "totalInstances": 4,
@@ -12389,137 +12447,6 @@
       }
     },
     {
-      "name": "BuyWaitTodoItem",
-      "sourceFile": "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/BuyWaitTodoItem",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": {
-        "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 3
-      },
-      "propsWithCallSites": {
-        "icon": {
-          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 3
-        },
-        "message": {
-          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 3
-        }
-      }
-    },
-    {
-      "name": "TimeRemaining",
-      "sourceFile": "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/TimeRemaining",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 1,
-        "components/SimpleTrade/BuySell/steps/OpenBankingQrCodeStep/OpenBankingQrCodeStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "timeRemaining": {
-          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 1,
-          "components/SimpleTrade/BuySell/steps/OpenBankingQrCodeStep/OpenBankingQrCodeStep.tsx": 1
-        },
-        "testID": {
-          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 1
-        },
-        "showTitle": {
-          "components/SimpleTrade/BuySell/steps/OpenBankingQrCodeStep/OpenBankingQrCodeStep.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BuySellInputSecondaryButton",
-      "sourceFile": "components/SimpleTrade/BuySell/steps/EntryStep/components/BuySellInputSecondaryButton",
-      "totalInstances": 4,
-      "totalCallSites": 3,
-      "callSites": {
-        "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 2,
-        "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
-        "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderInputStep.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onPressMax": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "disabled": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 2,
-          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "showOrderTypeSelector": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1,
-          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
-          "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderInputStep.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "LimitOrderCalloutTooltip",
-      "sourceFile": "components/SimpleTrade/BuySell/steps/EntryStep/components/LimitOrderCalloutTooltip",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "BuySellEntrySelector",
-      "sourceFile": "components/SimpleTrade/components/TradeLimitsAndBalances/BuySellEntrySelector",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "row1": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "row2": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "onClickSwitcher": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "transferType": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "selectedViewerAssetDisplaySymbol": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "activePaymentMethodFiatCode": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "assetBalanceInFiat": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "activePaymentConciseDescription": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "activePaymentMethodType": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "fiatLimit": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "variant": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "queryRef": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "isNewDesign": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BuySellFooterPaymentDetails",
-      "sourceFile": "components/SimpleTrade/BuySell/BuySellFooter/BuySellFooterPaymentDetails",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "amount": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        },
-        "currency": {
-          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
-        }
-      }
-    },
-    {
       "name": "BuyUpsellBanner",
       "sourceFile": "components/SimpleTrade/BuySell/steps/BuyStatusStep/components/BuyUpsellBanner",
       "totalInstances": 1,
@@ -12736,6 +12663,151 @@
         },
         "buySellProxy": {
           "components/SimpleTrade/Convert/steps/StatusStep/StatusStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BuyWaitTodoItem",
+      "sourceFile": "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/BuyWaitTodoItem",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 3
+      },
+      "propsWithCallSites": {
+        "icon": {
+          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 3
+        },
+        "message": {
+          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "TimeRemaining",
+      "sourceFile": "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/components/TimeRemaining",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 1,
+        "components/SimpleTrade/BuySell/steps/OpenBankingQrCodeStep/OpenBankingQrCodeStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "timeRemaining": {
+          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 1,
+          "components/SimpleTrade/BuySell/steps/OpenBankingQrCodeStep/OpenBankingQrCodeStep.tsx": 1
+        },
+        "testID": {
+          "components/SimpleTrade/BuySell/steps/BuyWaitTimerStep/BuyWaitTimerStep.tsx": 1
+        },
+        "showTitle": {
+          "components/SimpleTrade/BuySell/steps/OpenBankingQrCodeStep/OpenBankingQrCodeStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BuySellInputSecondaryButton",
+      "sourceFile": "components/SimpleTrade/BuySell/steps/EntryStep/components/BuySellInputSecondaryButton",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 2,
+        "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
+        "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderInputStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPressMax": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "disabled": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 2,
+          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "showOrderTypeSelector": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1,
+          "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1,
+          "components/SimpleTrade/BuySell/steps/LimitOrder/LimitOrderInputStep/LimitOrderInputStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LimitOrderCalloutTooltip",
+      "sourceFile": "components/SimpleTrade/BuySell/steps/EntryStep/components/LimitOrderCalloutTooltip",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "BuySellEntrySelector",
+      "sourceFile": "components/SimpleTrade/components/TradeLimitsAndBalances/BuySellEntrySelector",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "row1": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "row2": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "onClickSwitcher": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "transferType": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "selectedViewerAssetDisplaySymbol": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "activePaymentMethodFiatCode": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "assetBalanceInFiat": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "activePaymentConciseDescription": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "activePaymentMethodType": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "fiatLimit": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "variant": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "queryRef": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "isNewDesign": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiPortfolioDisclaimerV2",
+      "sourceFile": "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "transferType": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "spacingTop": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BuySellFooterPaymentDetails",
+      "sourceFile": "components/SimpleTrade/BuySell/BuySellFooter/BuySellFooterPaymentDetails",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "amount": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
+        },
+        "currency": {
+          "components/SimpleTrade/BuySell/steps/EntryStep/EntryStep.tsx": 1
         }
       }
     },
@@ -13382,130 +13454,6 @@
       }
     },
     {
-      "name": "BuyMaxTextLink",
-      "sourceFile": "components/IncreaseLimitModal/components/BuyMaxTextLink",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "IncreaseLimitTextLink",
-      "sourceFile": "components/IncreaseLimitModal/IncreaseLimitTextLink",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "errorText": {
-          "components/SimpleTrade/BuySell/hooks/useTransferQuoter/useTransferQuoteErrorHandler.tsx": 1
-        },
-        "eventNameOnView": {
-          "components/SimpleTrade/BuySell/hooks/useTransferQuoter/useTransferQuoteErrorHandler.tsx": 1
-        },
-        "eventNameOnClick": {
-          "components/SimpleTrade/BuySell/hooks/useTransferQuoter/useTransferQuoteErrorHandler.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PersonalDetailsModal",
-      "sourceFile": "components/PersonalDetailsModal",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LazyLinkPayPal",
-      "sourceFile": "components/LinkPayPal/LazyLinkPayPal",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "AssetSelectRow",
-      "sourceFile": "components/BuySellComponents/AssetSelectRow/AssetSelectRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onSelect": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "isActive": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "title": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "showDetail": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "detail": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "subdetail": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "displaySymbol": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "testID": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "yieldCopy": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "assetRef": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        },
-        "variant": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BuyMaxAmount",
-      "sourceFile": "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/BuyMaxAmount/BuyMaxAmount",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
-        },
-        "target": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SellMaxAmount",
-      "sourceFile": "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SellMaxAmount/SellMaxAmount",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
-        },
-        "target": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
-        },
-        "accountRef": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SwapMaxAmount",
-      "sourceFile": "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SellMaxAmount/SwapMaxAmount",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "accountRef": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SimpleTradeFixedAmountsContent",
-      "sourceFile": "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "EntryStep",
       "sourceFile": "components/SimpleTrade/BuySell/steps/EntryStep",
       "totalInstances": 2,
@@ -13552,23 +13500,6 @@
         },
         "eventContext": {
           "components/SimpleTrade/BuySell/BuySell.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ConversionTicker",
-      "sourceFile": "components/RetailRedesignInput/components/ConversionTicker",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "fontWeight": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1
-        },
-        "value": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1
-        },
-        "color": {
-          "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1
         }
       }
     },
@@ -13679,6 +13610,112 @@
           "components/SimpleTrade/SimpleTradeRedesign/steps/EntryStep/EntryStep.tsx": 1
         }
       }
+    },
+    {
+      "name": "AssetSelectRow",
+      "sourceFile": "components/BuySellComponents/AssetSelectRow/AssetSelectRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onSelect": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "isActive": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "title": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "showDetail": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "detail": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "subdetail": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "displaySymbol": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "testID": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "yieldCopy": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "assetRef": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        },
+        "variant": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/AssetSelector/AssetSelectorCell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ConversionTicker",
+      "sourceFile": "components/RetailRedesignInput/components/ConversionTicker",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "fontWeight": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1
+        },
+        "value": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1
+        },
+        "color": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/BaseSwapCurrencyButton/BaseSwapCurrenciesButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BuyMaxAmount",
+      "sourceFile": "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/BuyMaxAmount/BuyMaxAmount",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
+        },
+        "target": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SellMaxAmount",
+      "sourceFile": "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SellMaxAmount/SellMaxAmount",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
+        },
+        "target": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
+        },
+        "accountRef": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SwapMaxAmount",
+      "sourceFile": "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SellMaxAmount/SwapMaxAmount",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "accountRef": {
+          "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SimpleTradeFixedAmountsContent",
+      "sourceFile": "components/SimpleTrade/SimpleTradeV2/BaseInput/MaxAmount/SimpleTradeFixedAmounts.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "ErrorBoundary",
@@ -14555,20 +14592,6 @@
       }
     },
     {
-      "name": "PaymentMethodsEnforcer",
-      "sourceFile": "components/SimpleTrade/BuySell/PaymentMethodsEnforcer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "transferType": {
-          "components/SimpleTrade/BuySell/BuySell.tsx": 1
-        },
-        "closeModal": {
-          "components/SimpleTrade/BuySell/BuySell.tsx": 1
-        }
-      }
-    },
-    {
       "name": "BuySellContent",
       "sourceFile": "components/SimpleTrade/BuySell/BuySell.tsx",
       "totalInstances": 1,
@@ -15035,6 +15058,20 @@
       "totalCallSites": 1
     },
     {
+      "name": "AppBoundaryFallback",
+      "sourceFile": "components/AppBoundaryFallback/AppBoundaryFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "error": {
+          "views/AssetPage/components/AssetOverview.tsx": 1
+        },
+        "errorMetadata": {
+          "views/AssetPage/components/AssetOverview.tsx": 1
+        }
+      }
+    },
+    {
       "name": "AssetOverviewContent",
       "sourceFile": "views/AssetPage/components/AssetOverview.tsx",
       "totalInstances": 1,
@@ -15087,6 +15124,9 @@
         "views/AssetPage/components/AssetOverview.tsx": 2
       },
       "propsWithCallSites": {
+        "assetUuid": {
+          "views/AssetPage/components/AssetOverview.tsx": 2
+        },
         "queryRef": {
           "views/AssetPage/components/AssetOverview.tsx": 2
         },
@@ -15252,6 +15292,12 @@
         },
         "isAssetTradable": {
           "views/AssetPage/components/AssetOverview.tsx": 2
+        },
+        "hideDescription": {
+          "views/AssetPage/components/AssetOverview.tsx": 2
+        },
+        "title": {
+          "views/AssetPage/components/AssetOverview.tsx": 1
         }
       }
     },
@@ -15347,6 +15393,12 @@
           "views/AssetPage/components/AssetOverview.tsx": 2
         }
       }
+    },
+    {
+      "name": "CAAssetDisclaimer",
+      "sourceFile": "views/AssetPage/components/CAAssetDisclaimer",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "AssetInfo",

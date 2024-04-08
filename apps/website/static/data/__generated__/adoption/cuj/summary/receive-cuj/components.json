@@ -1259,6 +1259,10 @@
         "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
       },
       "propsWithCallSites": {
+        "errorFallback": {
+          "@app/components/navigation/NavHeader.tsx": 1,
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
         "fallback": {
           "@app/components/navigation/NavHeader.tsx": 1,
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
@@ -1554,8 +1558,8 @@
       }
     },
     {
-      "name": "QRCodeComponent",
-      "sourceFile": "@app/screens/Receive/components/QRCodeComponent",
+      "name": "QRCodeComponentWithErrorBoundary",
+      "sourceFile": "@app/screens/Receive/components/QRCodeComponent/QRCodeComponentWithErrorBoundary",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -1568,8 +1572,8 @@
       }
     },
     {
-      "name": "AddressLabels",
-      "sourceFile": "@app/screens/Receive/components/AddressLabels",
+      "name": "AddressLabelsWithErrorBoundary",
+      "sourceFile": "@app/screens/Receive/components/AddressLabels/AddressLabelsWithErrorBoundary",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {

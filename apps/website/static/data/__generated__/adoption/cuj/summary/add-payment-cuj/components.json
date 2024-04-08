@@ -47,12 +47,12 @@
         "@app/screens/AddPaymentMethod/PIX/PIXProcessingPaymentScreen.tsx": 1,
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen.tsx": 2,
         "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 2,
-        "@app/screens/AddPaymentMethod/PIX/components/BlockedPixAccount.tsx": 5,
-        "@app/screens/AddPaymentMethod/PIX/components/PendingPixAccount.tsx": 3,
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 1,
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsFooter.tsx": 1,
-        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
+        "@app/screens/AddPaymentMethod/PIX/components/BlockedPixAccount.tsx": 5,
+        "@app/screens/AddPaymentMethod/PIX/components/PendingPixAccount.tsx": 3,
         "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
+        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 4,
         "@app/screens/AddPaymentMethod/components/PayPal/PayPal.tsx": 2,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 2,
@@ -70,15 +70,15 @@
         "@app/screens/PaymentMethods/BankAccount/BankAccountTypeScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 3,
         "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 3,
-        "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 2,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationForm.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
+        "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 3,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 3,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 2,
         "@app/screens/PaymentMethods/FedWire/FedWireValidateAccountNameTray.tsx": 2,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 2,
         "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 3,
         "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracProcessingScreen.tsx": 1,
@@ -160,9 +160,9 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountDetailsHelpScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 2,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 2,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 2,
           "@app/screens/PaymentMethods/Relink/RelinkBankAccountLandingScreen.tsx": 2
         },
         "alignItems": {
@@ -171,7 +171,6 @@
           "@app/screens/AddPaymentMethod/PIX/PIXProcessingPaymentScreen.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PendingPixAccount.tsx": 2,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
-          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/DepositProcessingScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/BankAccountCdvInstructionsScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/BankAccountDetailsHelpScreen.tsx": 1,
@@ -256,8 +255,8 @@
           "@app/screens/AddPaymentMethod/PIX/components/BlockedPixAccount.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/BankAccountCdvInstructionsScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/BankAccountTypeScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationForm.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireValidateAccountNameTray.tsx": 2,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingWaitingScreen.tsx": 1
         },
@@ -297,15 +296,14 @@
           "@app/screens/AddPaymentMethod/PIX/PIXBuyScreen.tsx": 2,
           "@app/screens/AddPaymentMethod/PIX/PIXCompletePaymentScreen.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/PIXProcessingPaymentScreen.tsx": 1,
+          "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsFooter.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/BlockedPixAccount.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PendingPixAccount.tsx": 1,
-          "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsFooter.tsx": 1,
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
           "@app/screens/PaymentMethods/Cards/AddCardScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationForm.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 3,
           "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracProcessingScreen.tsx": 1,
@@ -354,8 +352,8 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
-      "totalInstances": 52,
-      "totalCallSites": 49,
+      "totalInstances": 53,
+      "totalCallSites": 50,
       "cds": "@cbhq/cds-mobile/typography/TextTitle3",
       "callSites": {
         "@app/screens/AddPaymentMethod/AddPaymentMethodScreen.tsx": 2,
@@ -372,6 +370,7 @@
         "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
         "@app/screens/AddPaymentMethod/components/PayPal/PayPal.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationHeader.tsx": 1,
+        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 2,
         "@app/screens/PaymentMethods/Bancomat/DepositProcessingScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/BankAccountCdvInstructionsScreen.tsx": 1,
@@ -381,19 +380,19 @@
         "@app/screens/PaymentMethods/BankAccount/BankAccountTypeScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 2,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
@@ -426,15 +425,15 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountTypeScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
-          "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracProcessingScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/VerifyInteracTransferScreen.tsx": 1,
@@ -454,14 +453,14 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracProcessingScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracTransactionFailureScreen.tsx": 1,
@@ -526,8 +525,8 @@
         "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
+        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
         "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracProcessingScreen.tsx": 1,
@@ -557,8 +556,8 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
           "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracProcessingScreen.tsx": 1,
@@ -608,12 +607,6 @@
           ]
         },
         {
-          "aliasPath": "@app/screens/PaymentMethods/OpenBanking/components/OBDepositsTncCell/OBDepositsTncCell.tsx",
-          "callSites": [
-            "@app/screens/PaymentMethods/OpenBanking/OpenBankingPreviewScreen.tsx"
-          ]
-        },
-        {
           "aliasPath": "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/OBBankIcon.tsx",
           "callSites": [
             "@app/screens/PaymentMethods/OpenBanking/components/OBDepositsRedirectionBanner/OBDepositsRedirectionBanner.tsx",
@@ -627,6 +620,12 @@
           "callSites": [
             "@app/screens/PaymentMethods/OpenBanking/OpenBankingScreen.tsx"
           ]
+        },
+        {
+          "aliasPath": "@app/screens/PaymentMethods/OpenBanking/components/OBDepositsTncCell/OBDepositsTncCell.tsx",
+          "callSites": [
+            "@app/screens/PaymentMethods/OpenBanking/OpenBankingPreviewScreen.tsx"
+          ]
         }
       ],
       "callSites": {
@@ -638,8 +637,8 @@
         "@app/screens/AddPaymentMethod/PIX/PIXBuyScreen.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/PIXCompletePaymentScreen.tsx": 1,
         "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 5,
-        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 5,
         "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 5,
         "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 6,
         "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
@@ -659,10 +658,10 @@
         "@app/screens/PaymentMethods/PaymentsTypeHelp/PaymentsTypeHelpScreen.tsx": 1,
         "@app/screens/PaymentMethods/Bancomat/components/ConfirmNumber.tsx": 1,
         "@app/screens/PaymentMethods/Bancomat/components/WaitTimer.tsx": 4,
-        "@app/screens/PaymentMethods/OpenBanking/components/OBDepositsTncCell/OBDepositsTncCell.tsx": 1,
         "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/OBBankIcon.tsx": 1,
         "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/SelectBankDropdown.tsx": 1,
         "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/SelectBankDropdownTray.tsx": 1,
+        "@app/screens/PaymentMethods/OpenBanking/components/OBDepositsTncCell/OBDepositsTncCell.tsx": 1,
         "@app/screens/PaymentMethods/OpenBanking/components/TermsAndConditions/TermsAndConditionsTray.tsx": 1
       },
       "propsWithCallSites": {
@@ -692,8 +691,8 @@
         },
         "alignItems": {
           "@app/screens/AddPaymentMethod/ProcessPaypalScreen.tsx": 2,
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
           "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
@@ -721,7 +720,8 @@
         },
         "alignSelf": {
           "@app/screens/AddPaymentMethod/PIX/PIXAddAccountScreen.tsx": 1,
-          "@app/screens/AddPaymentMethod/PIX/PIXBuyScreen.tsx": 1
+          "@app/screens/AddPaymentMethod/PIX/PIXBuyScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1
         },
         "spacingBottom": {
           "@app/screens/AddPaymentMethod/PIX/PIXCompletePaymentScreen.tsx": 1,
@@ -732,8 +732,8 @@
         },
         "background": {
           "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 3,
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
@@ -754,8 +754,8 @@
         },
         "borderRadius": {
           "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 3,
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 3,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
@@ -782,9 +782,19 @@
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingWaitingScreen.tsx": 4,
           "@app/screens/PaymentMethods/Bancomat/components/WaitTimer.tsx": 2
         },
-        "justifyContent": {
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
+        "height": {
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+          "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
+          "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
+          "@app/screens/PaymentMethods/OpenBanking/OBBuyBankSelectionScreen.tsx": 1,
+          "@app/screens/PaymentMethods/OpenBanking/OpenBankingPreviewScreen.tsx": 2,
+          "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/OBBankIcon.tsx": 1,
+          "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/SelectBankDropdownTray.tsx": 1
+        },
+        "justifyContent": {
+          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
           "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
@@ -798,16 +808,6 @@
         "spacingVertical": {
           "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1
-        },
-        "height": {
-          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
-          "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
-          "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
-          "@app/screens/PaymentMethods/OpenBanking/OBBuyBankSelectionScreen.tsx": 1,
-          "@app/screens/PaymentMethods/OpenBanking/OpenBankingPreviewScreen.tsx": 2,
-          "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/OBBankIcon.tsx": 1,
-          "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/SelectBankDropdownTray.tsx": 1
         },
         "spacingHorizontal": {
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
@@ -845,14 +845,15 @@
           "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/SelectBankDropdownTray.tsx": 1
         },
         "testID": {
-          "@app/screens/PaymentMethods/OpenBanking/OpenBankingProcessingScreen.tsx": 1
+          "@app/screens/PaymentMethods/OpenBanking/OpenBankingProcessingScreen.tsx": 1,
+          "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/OBBankIcon.tsx": 1
         }
       }
     },
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
-      "totalInstances": 77,
+      "totalInstances": 78,
       "totalCallSites": 56,
       "cds": "@cbhq/cds-mobile/typography/TextBody",
       "callSites": {
@@ -867,13 +868,13 @@
         "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/BlockedPixAccount.tsx": 4,
         "@app/screens/AddPaymentMethod/PIX/components/PendingPixAccount.tsx": 1,
-        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
         "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
         "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 3,
         "@app/screens/AddPaymentMethod/components/PaymentMethodDetails/PaymentMethodDetailsTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/PayPal/PayPal.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
-        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
         "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 3,
         "@app/screens/PaymentMethods/Bancomat/DepositProcessingScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/BankAccountCdvInstructionsScreen.tsx": 1,
@@ -881,18 +882,18 @@
         "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 2,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 2,
         "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
@@ -922,7 +923,6 @@
           "@app/screens/AddPaymentMethod/PIX/PIXProcessingPaymentScreen.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PendingPixAccount.tsx": 1,
           "@app/screens/AddPaymentMethod/components/PaymentMethodDetails/PaymentMethodDetailsTray.tsx": 1,
-          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/DepositProcessingScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/BankAccountCdvInstructionsScreen.tsx": 1,
@@ -930,14 +930,14 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
-          "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+          "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
+          "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracLoadingScreen.tsx": 1,
@@ -966,6 +966,7 @@
           "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 3,
           "@app/screens/AddPaymentMethod/components/PaymentMethodDetails/PaymentMethodDetailsTray.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 3,
           "@app/screens/PaymentMethods/Bancomat/DepositProcessingScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/BankAccountCdvInstructionsScreen.tsx": 1,
@@ -973,18 +974,18 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
@@ -1014,14 +1015,14 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountCdvInstructionsScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/BankAccountDetailsHelpScreen.tsx": 3,
           "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
-          "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
+          "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/Relink/RelinkBankAccountLandingScreen.tsx": 1,
           "@app/screens/PaymentMethods/Requirements/Address/AddressFormFields.tsx": 1
         },
@@ -1041,13 +1042,13 @@
           "@app/screens/AddPaymentMethod/ProcessPaypalScreen.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 1
         },
-        "spacingVertical": {
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
-          "@app/screens/PaymentMethods/PaymentsTypeHelp/PaymentsTypeHelpScreen.tsx": 1
-        },
         "spacingStart": {
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingWaitingScreen.tsx": 3
+        },
+        "spacingVertical": {
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
+          "@app/screens/PaymentMethods/PaymentsTypeHelp/PaymentsTypeHelpScreen.tsx": 1
         },
         "dangerouslySetStyle": {
           "@app/screens/AddPaymentMethod/components/PaymentMethodDetails/PaymentMethodDetailsTray.tsx": 2
@@ -1079,8 +1080,8 @@
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen.tsx": 1,
         "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 3,
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 4,
-        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 3,
+        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/CPFMatchAlert.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
@@ -1195,14 +1196,12 @@
         "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 2,
         "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 2,
         "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 2,
-        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
-        "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 2,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationForm.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
+        "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireAccountNumberScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
@@ -1210,8 +1209,10 @@
         "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireValidateAccountNameTray.tsx": 4,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 2,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 2,
         "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 2,
         "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 2,
@@ -1273,14 +1274,12 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 2,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 2,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 2,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
-          "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 2,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationForm.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
+          "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireAccountNumberScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
@@ -1288,8 +1287,10 @@
           "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireValidateAccountNameTray.tsx": 4,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 2,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 2,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 2,
@@ -1337,13 +1338,13 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireAccountNumberScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireValidateAccountNameTray.tsx": 2,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracTransactionFailureScreen.tsx": 1,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingFailureScreen.tsx": 1,
@@ -1392,13 +1393,13 @@
         },
         "loading": {
           "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
-          "@app/screens/PaymentMethods/CdvVerification/CdvVerificationForm.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 2,
+          "@app/screens/PaymentMethods/CdvVerification/CdvVerificationForm.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 2,
           "@app/screens/PaymentMethods/OpenBanking/OBBuyBankSelectionScreen.tsx": 1,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingScreen.tsx": 1,
@@ -1416,12 +1417,12 @@
         },
         "disabled": {
           "@app/screens/PaymentMethods/BankAccount/BankAccountFullNameScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 2,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationForm.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 2,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 2,
           "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingScreen.tsx": 1
@@ -1468,14 +1469,14 @@
         "@app/screens/PaymentMethods/BankAccount/BankAccountLandingScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 2,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
+        "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
         "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 2,
         "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 3,
         "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 2,
         "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
-        "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
-        "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracTransactionFailureScreen.tsx": 1,
         "@app/screens/PaymentMethods/OpenBanking/OpenBankingFailureScreen.tsx": 1,
         "@app/screens/PaymentMethods/OpenBanking/OpenBankingPreAuthFailureScreen.tsx": 1,
@@ -1509,8 +1510,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-mobile/layout/HStack",
-      "totalInstances": 44,
-      "totalCallSites": 29,
+      "totalInstances": 46,
+      "totalCallSites": 30,
       "cds": "@cbhq/cds-mobile/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -1548,14 +1549,15 @@
         "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 2,
         "@app/screens/AddPaymentMethod/PIX/components/BlockedPixAccount.tsx": 1,
-        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 6,
+        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 3,
         "@app/screens/AddPaymentMethod/components/PaymentMethodDetails/PaymentMethodDetailsTray.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/CPFMatchAlert.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PoweredByEbanx.tsx": 1,
+        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
         "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 1,
         "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
@@ -1604,8 +1606,8 @@
           "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen.tsx": 1,
           "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1,
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 3,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/CPFMatchAlert.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
@@ -1630,6 +1632,7 @@
           "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/CPFMatchAlert.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/components/ConfirmNumber.tsx": 1,
@@ -1671,6 +1674,7 @@
         "spacingTop": {
           "@app/screens/AddPaymentMethod/components/PaymentMethodDetails/PaymentMethodDetailsTray.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PoweredByEbanx.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
@@ -1679,6 +1683,7 @@
         },
         "spacingEnd": {
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/CPFMatchAlert.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreenV2.tsx": 2,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingPreviewScreen.tsx": 1,
@@ -1734,7 +1739,7 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
-      "totalInstances": 25,
+      "totalInstances": 24,
       "totalCallSites": 18,
       "cds": "@cbhq/cds-mobile/typography/TextHeadline",
       "callSites": {
@@ -1742,11 +1747,11 @@
         "@app/screens/AddPaymentMethod/PIX/PIXProcessingPaymentScreen.tsx": 1,
         "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 3,
         "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1,
-        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
+        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 1,
-        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
+        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
         "@app/screens/PaymentMethods/FedWire/FedWireInfoRow.tsx": 1,
@@ -1772,7 +1777,6 @@
           "@app/screens/PaymentMethods/Bancomat/components/ConfirmNumber.tsx": 1
         },
         "align": {
-          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingProcessingScreen.tsx": 1,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingSuccessScreen.tsx": 1
@@ -1984,20 +1988,21 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-mobile/icons/Icon",
-      "totalInstances": 46,
-      "totalCallSites": 21,
+      "totalInstances": 48,
+      "totalCallSites": 22,
       "cds": "@cbhq/cds-mobile/icons/Icon",
       "callSites": {
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen.tsx": 3,
         "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1,
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 4,
-        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+        "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
         "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 3,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/CPFMatchAlert.tsx": 1,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 3,
         "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
+        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
         "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 2,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
@@ -2019,12 +2024,13 @@
           "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1,
           "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 4,
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 3,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/CPFMatchAlert.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 3,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 2,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
@@ -2042,12 +2048,13 @@
           "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1,
           "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 4,
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 3,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/CPFMatchAlert.tsx": 1,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 3,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 2,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
@@ -2064,11 +2071,12 @@
           "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen.tsx": 2,
           "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 4,
-          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 2,
+          "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx": 2,
           "@app/screens/AddPaymentMethod/components/OpenBanking/OpenBankingIntroModal.tsx": 3,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 2,
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 2,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 2,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
@@ -2082,6 +2090,9 @@
         },
         "testID": {
           "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation.tsx": 2
+        },
+        "spacingTop": {
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2
         },
         "spacing": {
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 2
@@ -2150,6 +2161,24 @@
       }
     },
     {
+      "name": "Pressable",
+      "sourceFile": "@cbhq/cds-mobile/system/Pressable",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/system/Pressable",
+      "propsWithCallSites": {
+        "accessibilityRole": {
+          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
+        },
+        "backgroundColor": {
+          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Tray",
       "sourceFile": "@cbhq/cds-mobile/overlays/Tray/Tray",
       "totalInstances": 6,
@@ -2179,24 +2208,6 @@
         },
         "disableCapturePanGestureToDismiss": {
           "@app/screens/PaymentMethods/OpenBanking/components/SelectBank/SelectBankDropdownTray.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Pressable",
-      "sourceFile": "@cbhq/cds-mobile/system/Pressable",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/system/Pressable",
-      "propsWithCallSites": {
-        "accessibilityRole": {
-          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
-        },
-        "onPress": {
-          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
-        },
-        "backgroundColor": {
-          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
         }
       }
     },
@@ -2571,48 +2582,6 @@
       }
     },
     {
-      "name": "TextDisplay1",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextDisplay1",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextDisplay1",
-      "propsWithCallSites": {
-        "dangerouslySetStyle": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
-        },
-        "testID": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
-        },
-        "align": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
-        },
-        "color": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Lottie",
-      "sourceFile": "@cbhq/cds-mobile/animation/Lottie",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/animation/Lottie",
-      "propsWithCallSites": {
-        "width": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
-        },
-        "source": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
-        },
-        "autoplay": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
-        },
-        "alignSelf": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "IconButton",
       "sourceFile": "@components/interactables/IconButton",
       "totalInstances": 3,
@@ -2690,6 +2659,48 @@
         },
         "startIcon": {
           "@app/screens/PaymentMethods/FedWire/FedWireDepositSentScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextDisplay1",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextDisplay1",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextDisplay1",
+      "propsWithCallSites": {
+        "dangerouslySetStyle": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
+        },
+        "testID": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
+        },
+        "align": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
+        },
+        "color": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Lottie",
+      "sourceFile": "@cbhq/cds-mobile/animation/Lottie",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/animation/Lottie",
+      "propsWithCallSites": {
+        "width": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
+        },
+        "source": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
+        },
+        "autoplay": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
+        },
+        "alignSelf": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
         }
       }
     },
@@ -2872,12 +2883,12 @@
       "callSites": {
         "components/AddLinkedAccountPickerModal/NoAvailablePaymentMethods.tsx": 1,
         "components/AddLinkedAccountPickerModal/Picker.tsx": 2,
+        "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
         "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1,
         "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3,
-        "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
+        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
         "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 5,
         "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
         "components/LinkAchBankAccount/components/PlaidFailed/PlaidFailed.tsx": 3,
         "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 3,
         "components/LinkCard/components/LinkCardForm/components/BillingAddressInput.tsx": 1,
@@ -2929,9 +2940,16 @@
         "testID": {
           "components/AddLinkedAccountPickerModal/Picker.tsx": 1,
           "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
           "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
           "components/LinkAchBankAccount/components/PlaidFailed/PlaidFailed.tsx": 1
+        },
+        "spacingStart": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
+        },
+        "flexGrow": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
+          "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 2
         },
         "spacingTop": {
           "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1,
@@ -2944,13 +2962,6 @@
           "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1,
           "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 5,
           "components/LinkAchBankAccount/components/PlaidFailed/PlaidFailed.tsx": 2,
-          "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 2
-        },
-        "spacingStart": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
-        },
-        "flexGrow": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1,
           "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 2
         },
         "height": {
@@ -3014,8 +3025,8 @@
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "components/AddLinkedAccountPickerModal/NoAvailablePaymentMethods.tsx": 1,
-        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
         "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
         "components/LinkAchBankAccount/components/PlaidFailed/PlaidFailed.tsx": 4,
         "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 1,
         "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1,
@@ -3029,8 +3040,8 @@
       "propsWithCallSites": {
         "block": {
           "components/AddLinkedAccountPickerModal/NoAvailablePaymentMethods.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
           "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
           "components/LinkAchBankAccount/components/PlaidFailed/PlaidFailed.tsx": 4,
           "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 1,
           "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1,
@@ -3050,25 +3061,25 @@
           "components/PlaidLink/components/PlaidErrorModal.tsx": 2,
           "components/DepositVerificationPreAsk/DepositVerificationPreAsk.tsx": 1
         },
-        "testID": {
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-          "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 1
-        },
-        "loading": {
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
-        },
-        "type": {
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1,
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
-        },
         "disabled": {
           "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
           "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 1,
           "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
+        },
+        "loading": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
+        },
+        "type": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1,
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
+        },
+        "testID": {
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+          "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 1
         },
         "data-testid": {
           "components/LinkAchBankAccount/components/PlaidFailed/PlaidFailed.tsx": 1
@@ -3090,8 +3101,8 @@
         {
           "aliasPath": "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx",
           "callSites": [
-            "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx",
-            "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx"
+            "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx",
+            "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx"
           ]
         }
       ],
@@ -3141,92 +3152,6 @@
         },
         "spacingBottom": {
           "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextTitle3",
-      "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/typography/TextTitle3",
-      "callSites": {
-        "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1,
-        "components/LinkPayPal/WithdrawOnlyWarning.tsx": 1,
-        "components/PlaidLink/components/PlaidErrorModal.tsx": 1,
-        "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
-        "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1,
-          "components/LinkPayPal/WithdrawOnlyWarning.tsx": 1,
-          "components/PlaidLink/components/PlaidErrorModal.tsx": 1,
-          "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
-          "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1
-        },
-        "spacingBottom": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
-        },
-        "align": {
-          "components/PlaidLink/components/PlaidErrorModal.tsx": 1
-        },
-        "spacingTop": {
-          "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
-          "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextLabel1",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/typography/TextLabel1",
-      "callSites": {
-        "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
-      },
-      "propsWithCallSites": {
-        "as": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
-        },
-        "color": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
-        },
-        "spacingBottom": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1
-        },
-        "spacingTop": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextLabel2",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 5,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/typography/TextLabel2",
-      "callSites": {
-        "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1,
-        "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 3,
-        "components/LinkCard/components/LinkCardForm/components/BillingAddressInput.tsx": 1
-      },
-      "propsWithCallSites": {
-        "color": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1,
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 3
-        },
-        "as": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1,
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 3,
-          "components/LinkCard/components/LinkCardForm/components/BillingAddressInput.tsx": 1
-        },
-        "spacingHorizontal": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
-        },
-        "spacingBottom": {
-          "components/LinkCard/components/LinkCardForm/components/BillingAddressInput.tsx": 1
         }
       }
     },
@@ -3421,6 +3346,92 @@
         },
         "spacingBottom": {
           "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
+      "totalInstances": 5,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/typography/TextLabel2",
+      "callSites": {
+        "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 3,
+        "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1,
+        "components/LinkCard/components/LinkCardForm/components/BillingAddressInput.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 3,
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1,
+          "components/LinkCard/components/LinkCardForm/components/BillingAddressInput.tsx": 1
+        },
+        "color": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 3,
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1
+        },
+        "spacingHorizontal": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
+        },
+        "spacingBottom": {
+          "components/LinkCard/components/LinkCardForm/components/BillingAddressInput.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle3",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/typography/TextTitle3",
+      "callSites": {
+        "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1,
+        "components/LinkPayPal/WithdrawOnlyWarning.tsx": 1,
+        "components/PlaidLink/components/PlaidErrorModal.tsx": 1,
+        "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
+        "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1,
+          "components/LinkPayPal/WithdrawOnlyWarning.tsx": 1,
+          "components/PlaidLink/components/PlaidErrorModal.tsx": 1,
+          "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
+          "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1
+        },
+        "spacingBottom": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
+        },
+        "align": {
+          "components/PlaidLink/components/PlaidErrorModal.tsx": 1
+        },
+        "spacingTop": {
+          "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
+          "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLabel1",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextLabel1",
+      "callSites": {
+        "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
+      },
+      "propsWithCallSites": {
+        "as": {
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
+        },
+        "color": {
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
+        },
+        "spacingBottom": {
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1
+        },
+        "spacingTop": {
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1
         }
       }
     },
@@ -3635,8 +3646,8 @@
       "presentationalLibrary": "@components/UI/HeroImage",
       "callSites": {
         "@app/screens/AddPaymentMethod/UnmetRequirementsScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1
       }
     },
     {
@@ -3795,9 +3806,9 @@
       "presentationalLibrary": "@components/interactables/TextInput",
       "callSites": {
         "@app/screens/PaymentMethods/BankAccount/BankAccountFullNameScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 2,
-        "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 3,
         "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
+        "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 3,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 2,
         "@app/screens/PaymentMethods/CdvVerification/components/CdvAmountInput.tsx": 1
       },
       "propsWithCallSites": {
@@ -3807,9 +3818,9 @@
         },
         "label": {
           "@app/screens/PaymentMethods/BankAccount/BankAccountFullNameScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 2,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 3,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 2
         },
         "placeholder": {
           "@app/screens/PaymentMethods/BankAccount/BankAccountFullNameScreen.tsx": 1,
@@ -3817,16 +3828,24 @@
         },
         "autoFocus": {
           "@app/screens/PaymentMethods/BankAccount/BankAccountFullNameScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1
         },
         "autoCapitalize": {
           "@app/screens/PaymentMethods/BankAccount/BankAccountFullNameScreen.tsx": 1
         },
         "returnKeyType": {
           "@app/screens/PaymentMethods/BankAccount/BankAccountFullNameScreen.tsx": 1,
-          "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1
+        },
+        "maxLength": {
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
+          "@app/screens/PaymentMethods/CdvVerification/components/CdvAmountInput.tsx": 1
+        },
+        "keyboardType": {
+          "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 2,
+          "@app/screens/PaymentMethods/CdvVerification/components/CdvAmountInput.tsx": 1
         },
         "variant": {
           "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 2
@@ -3851,14 +3870,6 @@
         },
         "onEndEditing": {
           "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 2
-        },
-        "keyboardType": {
-          "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 2,
-          "@app/screens/PaymentMethods/CdvVerification/components/CdvAmountInput.tsx": 1
-        },
-        "maxLength": {
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1,
-          "@app/screens/PaymentMethods/CdvVerification/components/CdvAmountInput.tsx": 1
         },
         "ref": {
           "@app/screens/PaymentMethods/CdvVerification/components/CdvAmountInput.tsx": 1
@@ -3945,6 +3956,13 @@
       }
     },
     {
+      "name": "CheckBox",
+      "sourceFile": "@components/interactables/CheckBox",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@components/interactables/CheckBox"
+    },
+    {
       "name": "Image",
       "sourceFile": "react-native/Image",
       "totalInstances": 1,
@@ -3966,13 +3984,6 @@
           "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1
         }
       }
-    },
-    {
-      "name": "CheckBox",
-      "sourceFile": "@components/interactables/CheckBox",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@components/interactables/CheckBox"
     },
     {
       "name": "InteracErrorTray",
@@ -4423,11 +4434,11 @@
       }
     },
     {
-      "name": "StyledFormGroup",
-      "sourceFile": "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx",
+      "name": "Section",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "styledComponent": "FormGroup"
+      "styledComponent": "div"
     },
     {
       "name": "Labeled",
@@ -4436,8 +4447,8 @@
       "totalCallSites": 7,
       "presentationalLibrary": "@cb/shared/components/Labeled",
       "callSites": {
-        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
         "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 4,
+        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
         "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
         "components/LinkFedWire/BankRouteSelection.tsx": 1,
         "components/LinkFedWire/ForFurtherCredit.tsx": 1,
@@ -4446,9 +4457,18 @@
       },
       "propsWithCallSites": {
         "auto": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
           "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 4,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
           "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 3,
+          "components/LinkFedWire/BankRouteSelection.tsx": 1,
+          "components/LinkFedWire/ForFurtherCredit.tsx": 1,
+          "components/LinkFedWire/IntermediaryChooser.tsx": 3,
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
+        },
+        "label": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 4,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
           "components/LinkFedWire/BankRouteSelection.tsx": 1,
           "components/LinkFedWire/ForFurtherCredit.tsx": 1,
           "components/LinkFedWire/IntermediaryChooser.tsx": 3,
@@ -4457,19 +4477,80 @@
         "bold": {
           "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1
         },
-        "label": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 4,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
-          "components/LinkFedWire/BankRouteSelection.tsx": 1,
-          "components/LinkFedWire/ForFurtherCredit.tsx": 1,
-          "components/LinkFedWire/IntermediaryChooser.tsx": 3,
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
-        },
         "stretch": {
           "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
         }
       }
+    },
+    {
+      "name": "CheckSection",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "CheckContainer",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "NumberBorder",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "focusedField": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PaddingContainer",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "callSites": {
+        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
+      },
+      "propsWithCallSites": {
+        "ref": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
+        },
+        "direction": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "NameField",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "FormGroup"
+    },
+    {
+      "name": "PlainContainer",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div",
+      "propsWithCallSites": {
+        "ref": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "StyledFormGroup",
+      "sourceFile": "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "FormGroup"
     },
     {
       "name": "Button",
@@ -4715,76 +4796,6 @@
       "presentationalElement": "Content"
     },
     {
-      "name": "Section",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CheckSection",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "CheckContainer",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "NumberBorder",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "focusedField": {
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PaddingContainer",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "callSites": {
-        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
-      },
-      "propsWithCallSites": {
-        "ref": {
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
-        },
-        "direction": {
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "NameField",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "FormGroup"
-    },
-    {
-      "name": "PlainContainer",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div",
-      "propsWithCallSites": {
-        "ref": {
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1
-        }
-      }
-    },
-    {
       "name": "IconContainer",
       "sourceFile": "components/LinkAchBankAccount/components/PlaidFailed/PlaidFailed.tsx",
       "totalInstances": 2,
@@ -4993,6 +5004,13 @@
       }
     },
     {
+      "name": "Container",
+      "sourceFile": "components/LinkCardComponents/CreditCardJumio/CreditCardJumio.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
       "name": "CountrySelect",
       "sourceFile": "@cb/shared/components/CountrySelect",
       "totalInstances": 1,
@@ -5050,13 +5068,6 @@
     {
       "name": "FallbackContainer",
       "sourceFile": "components/LinkCardComponents/CreditCardBillingAddress/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
-      "name": "Container",
-      "sourceFile": "components/LinkCardComponents/CreditCardJumio/CreditCardJumio.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
@@ -5585,15 +5596,14 @@
         "@app/screens/PaymentMethods/BankAccount/BankAccountTypeScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
         "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
-        "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvDeeplinkRouterScreen.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/StartBankAccountCdvVerificationScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
+        "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireAccountNumberScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
@@ -5602,9 +5612,10 @@
         "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireRoutingScreen.tsx": 1,
         "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
@@ -5648,14 +5659,13 @@
           "@app/screens/PaymentMethods/BankAccount/BankAccountTypeScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidErrorScreen.tsx": 1,
           "@app/screens/PaymentMethods/BankAccount/PlaidNameMismatchScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
-          "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/StartBankAccountCdvVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 2,
+          "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireAccountNumberScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireDepositInformationScreen.tsx": 1,
@@ -5664,9 +5674,10 @@
           "@app/screens/PaymentMethods/FedWire/FedWireFurtherCreditScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireRoutingScreen.tsx": 1,
           "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardErrorScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
@@ -5701,8 +5712,8 @@
         },
         "justifyContent": {
           "@app/screens/AddPaymentMethod/UnmetRequirementsScreen.tsx": 1,
-          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
           "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingDeeplinkRouterScreen.tsx": 1
         },
         "scrollable": {
@@ -5717,7 +5728,6 @@
           "@app/screens/PaymentMethods/OpenBanking/OpenBankingWebView.tsx": 1
         },
         "initialTitle": {
-          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1
         },
         "alignContent": {
@@ -6232,9 +6242,6 @@
         "isWithdrawalOnly": {
           "@app/screens/AddPaymentMethod/AvailablePaymentMethodItem.tsx": 1
         },
-        "isDeposit": {
-          "@app/screens/AddPaymentMethod/AvailablePaymentMethodItem.tsx": 1
-        },
         "accountId": {
           "@app/screens/AddPaymentMethod/AvailablePaymentMethodItem.tsx": 1
         },
@@ -6531,6 +6538,9 @@
         "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 1,
         "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1,
         "@app/screens/PaymentMethods/Bancomat/DepositProcessingScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
         "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
         "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1,
@@ -6538,9 +6548,6 @@
         "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
         "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
         "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
         "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
@@ -6573,6 +6580,9 @@
           "@app/screens/PaymentMethods/Bancomat/BancomatDepositStatusScreen.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/DepositProcessingScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Eft/EftAccountLinkingSuccess.tsx": 1,
           "@app/screens/PaymentMethods/Eft/EftAgreement.tsx": 1,
           "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1,
@@ -6580,9 +6590,6 @@
           "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx": 1,
           "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1,
           "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracContinueTransferScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracEmailConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Interac/InteracInputScreen.tsx": 1,
@@ -6947,13 +6954,13 @@
     {
       "name": "Link",
       "sourceFile": "@components/typography/Link",
-      "totalInstances": 13,
+      "totalInstances": 14,
       "totalCallSites": 10,
       "callSites": {
         "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 1,
         "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1,
         "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 3,
-        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
+        "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
         "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1,
         "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
         "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
@@ -6964,7 +6971,8 @@
       "propsWithCallSites": {
         "onPress": {
           "@app/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx": 1,
-          "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 2
+          "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 2,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2
         },
         "color": {
           "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1
@@ -6972,7 +6980,6 @@
         "to": {
           "@app/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx": 1,
           "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsExplainer.tsx": 2,
-          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1,
           "@app/screens/PaymentMethods/CdvVerification/CdvVerificationScreen.tsx": 1,
           "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1,
@@ -6981,29 +6988,12 @@
           "@app/screens/PaymentMethods/OpenBanking/components/OBDepositsTncCell/OBDepositsTncCell.tsx": 2
         },
         "underline": {
-          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 1,
+          "@app/screens/PaymentMethods/Bancomat/BancomatConfirmationScreen.tsx": 2,
           "@app/screens/PaymentMethods/Bancomat/BancomatWaitingScreen.tsx": 1,
           "@app/screens/PaymentMethods/Bancomat/components/ConfirmNumber.tsx": 1
         },
         "key": {
           "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PIXDepositInformation",
-      "sourceFile": "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "depositInformation": {
-          "@app/screens/AddPaymentMethod/PIX/components/ActivePixAccount.tsx": 1
-        },
-        "entryPoint": {
-          "@app/screens/AddPaymentMethod/PIX/components/ActivePixAccount.tsx": 1
-        },
-        "queryRef": {
-          "@app/screens/AddPaymentMethod/PIX/components/ActivePixAccount.tsx": 1
         }
       }
     },
@@ -7058,6 +7048,37 @@
       "propsWithCallSites": {
         "paymentMethodType": {
           "@app/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanPaymentDetailsFooter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PIXDepositInformation",
+      "sourceFile": "@app/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "depositInformation": {
+          "@app/screens/AddPaymentMethod/PIX/components/ActivePixAccount.tsx": 1
+        },
+        "entryPoint": {
+          "@app/screens/AddPaymentMethod/PIX/components/ActivePixAccount.tsx": 1
+        },
+        "queryRef": {
+          "@app/screens/AddPaymentMethod/PIX/components/ActivePixAccount.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TransactionSpeed",
+      "sourceFile": "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "buyTime": {
+          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
+        },
+        "offsetTop": {
+          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
         }
       }
     },
@@ -7117,20 +7138,6 @@
       "sourceFile": "@app/screens/AddPaymentMethod/components/EFT/EFTDisclaimerTray.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "TransactionSpeed",
-      "sourceFile": "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "buyTime": {
-          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
-        },
-        "offsetTop": {
-          "@app/screens/AddPaymentMethod/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
-        }
-      }
     },
     {
       "name": "OpenBankingIntroModal",
@@ -7243,9 +7250,6 @@
         "@app/screens/AddPaymentMethod/components/PayPal/PayPalCell.tsx": 1
       },
       "propsWithCallSites": {
-        "isDeposit": {
-          "@app/screens/AddPaymentMethod/components/PayPal/DepositPayPalCell.tsx": 1
-        },
         "accountId": {
           "@app/screens/AddPaymentMethod/components/PayPal/DepositPayPalCell.tsx": 1
         },
@@ -7718,24 +7722,82 @@
       "totalCallSites": 1
     },
     {
-      "name": "ErrorBoundary",
-      "sourceFile": "@app/components/ErrorBoundary",
+      "name": "SuccessScreenLayout",
+      "sourceFile": "@app/components/SuccessScreenLayout",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+        "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "top": {
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1
+        },
+        "bottom": {
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1
+        },
+        "buttonText": {
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1
+        },
+        "onButtonPress": {
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1,
+          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BankAccountEmailSuccess",
+      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AlertTray",
+      "sourceFile": "@app/components/Trays/AlertTray",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
+        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onDismiss": {
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BankAccountEmailVerificationCodeExpired",
+      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Fields",
+      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "context": {
-          "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1
-        },
-        "fallback": {
-          "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1
-        },
-        "willErrorBlockUser": {
-          "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1
-        },
-        "onCatch": {
-          "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1
+        "isFormLoading": {
+          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1
         }
       }
+    },
+    {
+      "name": "BankAccountEmailVerificationForm",
+      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "EmailVerification",
+      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "CdvDeeplinkRouter",
@@ -7851,54 +7913,22 @@
       "totalCallSites": 1
     },
     {
-      "name": "GiftCardPendingPayout",
-      "sourceFile": "@components/Images/GiftCardPendingPayout",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "GiftCardRedeemScreenContent",
-      "sourceFile": "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "GiftCardRedeemSuccessScreenContent",
-      "sourceFile": "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx",
+      "name": "ErrorBoundary",
+      "sourceFile": "@app/components/ErrorBoundary",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "accountRef": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "GiftCardRedeemSuccessScreenContainer",
-      "sourceFile": "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "GiftCardVerificationContent",
-      "sourceFile": "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isLoading": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        "context": {
+          "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1
         },
-        "error": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        "fallback": {
+          "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1
         },
-        "setError": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        "willErrorBlockUser": {
+          "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1
         },
-        "field": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
-        },
-        "setField": {
-          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        "onCatch": {
+          "@app/screens/PaymentMethods/Eft/EftWebView.tsx": 1
         }
       }
     },
@@ -8164,82 +8194,56 @@
       "totalCallSites": 1
     },
     {
-      "name": "SuccessScreenLayout",
-      "sourceFile": "@app/components/SuccessScreenLayout",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "top": {
-          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1
-        },
-        "bottom": {
-          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1
-        },
-        "buttonText": {
-          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1
-        },
-        "onButtonPress": {
-          "@app/screens/PaymentMethods/FedWire/FedWireSuccessScreen.tsx": 1,
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BankAccountEmailSuccess",
-      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailSuccessScreen.tsx",
+      "name": "GiftCardPendingPayout",
+      "sourceFile": "@components/Images/GiftCardPendingPayout",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "AlertTray",
-      "sourceFile": "@app/components/Trays/AlertTray",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1,
-        "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onDismiss": {
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BankAccountEmailVerificationCodeExpired",
-      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationCodeExpiredScreen.tsx",
+      "name": "GiftCardRedeemScreenContent",
+      "sourceFile": "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "Fields",
-      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx",
+      "name": "GiftCardRedeemSuccessScreenContent",
+      "sourceFile": "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "isFormLoading": {
-          "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm.tsx": 1
+        "accountRef": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx": 1
         }
       }
     },
     {
-      "name": "BankAccountEmailVerificationForm",
-      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationForm",
+      "name": "GiftCardRedeemSuccessScreenContainer",
+      "sourceFile": "@app/screens/PaymentMethods/GiftCard/GiftCardRedeemSuccessScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "EmailVerification",
-      "sourceFile": "@app/screens/PaymentMethods/BankAccountEmailVerification/BankAccountEmailVerificationScreen.tsx",
+      "name": "GiftCardVerificationContent",
+      "sourceFile": "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isLoading": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        },
+        "error": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        },
+        "setError": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        },
+        "field": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        },
+        "setField": {
+          "@app/screens/PaymentMethods/GiftCard/GiftCardVerificationScreen.tsx": 1
+        }
+      }
     },
     {
       "name": "ScrollView",
@@ -9688,63 +9692,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "AvailablePaymentMethodCellContentV2",
-      "sourceFile": "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "paymentMethod": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
-        },
-        "entryPoint": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
-        },
-        "dateOfBirth": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
-        },
-        "renderLinkedAccountModal": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
-        },
-        "autoTriggerChooseAccount": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
-        },
-        "handleChooseAccount": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
-        },
-        "transferTypes": {
-          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PaymentMethodDetailsRow",
-      "sourceFile": "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": {
-        "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
-      },
-      "propsWithCallSites": {
-        "label": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
-        },
-        "value": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
-        }
-      }
-    },
-    {
-      "name": "TransactionSpeed",
-      "sourceFile": "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2/TransactionSpeed",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "buyTime": {
-          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ModalTrigger",
       "sourceFile": "components/ModalTrigger",
       "totalInstances": 5,
@@ -9823,6 +9770,63 @@
       "propsWithCallSites": {
         "buyTime": {
           "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AvailablePaymentMethodCellContentV2",
+      "sourceFile": "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "paymentMethod": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
+        },
+        "entryPoint": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
+        },
+        "dateOfBirth": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
+        },
+        "renderLinkedAccountModal": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
+        },
+        "autoTriggerChooseAccount": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
+        },
+        "handleChooseAccount": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
+        },
+        "transferTypes": {
+          "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodSectionWiseList/AvailablePaymentMethodSectionWiseList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PaymentMethodDetailsRow",
+      "sourceFile": "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
+      },
+      "propsWithCallSites": {
+        "label": {
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
+        },
+        "value": {
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "TransactionSpeed",
+      "sourceFile": "components/AddLinkedAccountPickerModal/components/AvailablePaymentMethodCellContentV2/AvailablePaymentMethodCellContentV2/TransactionSpeed",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "buyTime": {
+          "components/AddLinkedAccountPickerModal/components/PaymentMethodDetails/PaymentMethodDetails.tsx": 1
         }
       }
     },
@@ -9941,265 +9945,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "ModalBody",
-      "sourceFile": "components/Modal/ModalBody",
-      "totalInstances": 15,
-      "totalCallSites": 15,
-      "callSites": {
-        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-        "components/LinkAchBankAccount/components/ManualLinkBankModal/ManualLinkBankModal.tsx": 1,
-        "components/LinkCheckoutAccount/LinkCheckoutAccount.tsx": 1,
-        "components/LinkFedWire/LinkFedWireModal.tsx": 1,
-        "components/LinkFedWire/SuccessModal.tsx": 1,
-        "components/LinkSepa/components/LinkSepaModal/LinkSepaModal.tsx": 1,
-        "components/LinkSwiftBankAccount/LinkSwiftBankAccount.tsx": 1,
-        "components/LinkUkBank/components/LinkUkBankModal/LinkUkBankModal.tsx": 1,
-        "components/PlaidLink/components/PlaidErrorModal.tsx": 1,
-        "components/DepositVerificationModal/DepositVerificationModal.tsx": 1,
-        "components/LinkSgFast/steps/LinkSgFastDepositInfo/LinkSgFastDepositInfo.tsx": 1,
-        "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
-        "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1,
-        "components/LinkSgPaynow/steps/LinkSgPaynowDepositInfo/LinkSgPaynowDepositInfo.tsx": 1,
-        "components/LinkSwiftBankAccountV2/steps/LinkSwiftBankAccountV2DepositInfo/LinkSwiftBankAccountV2DepositInfo.tsx": 1
-      },
-      "propsWithCallSites": {
-        "data-testid": {
-          "components/LinkCheckoutAccount/LinkCheckoutAccount.tsx": 1,
-          "components/LinkFedWire/LinkFedWireModal.tsx": 1,
-          "components/LinkUkBank/components/LinkUkBankModal/LinkUkBankModal.tsx": 1,
-          "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
-          "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1
-        },
-        "align": {
-          "components/LinkSwiftBankAccount/LinkSwiftBankAccount.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Form",
-      "sourceFile": "components/Form",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-        "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1,
-        "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onSubmit": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1,
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
-        },
-        "onValid": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        },
-        "onInvalid": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        },
-        "onChange": {
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
-        },
-        "initialValues": {
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 2
-      }
-    },
-    {
-      "name": "ValidatedInput",
-      "sourceFile": "components/ValidatedInput",
-      "totalInstances": 14,
-      "totalCallSites": 5,
-      "callSites": {
-        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
-        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3,
-        "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
-        "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
-      },
-      "propsWithCallSites": {
-        "autoFocus": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        },
-        "name": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
-        },
-        "placeholder": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
-        },
-        "validators": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
-        },
-        "maxLength": {
-          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        },
-        "size": {
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 3
-        },
-        "annotation": {
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2
-        },
-        "hideInlineErrorMessages": {
-          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 3
-        },
-        "onFocus": {
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3
-        },
-        "onBlur": {
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3
-        },
-        "onPaste": {
-          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
-        },
-        "autoComplete": {
-          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
-        }
-      }
-    },
-    {
-      "name": "Statement",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "FormGroup",
-      "sourceFile": "components/FormGroup",
-      "totalInstances": 12,
-      "totalCallSites": 6,
-      "callSites": {
-        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
-        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
-        "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 2,
-        "components/LinkCard/components/LinkCardForm/fields/CardDetailFields/CardDetailFields.tsx": 1,
-        "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
-        "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
-      },
-      "propsWithCallSites": {
-        "column": {
-          "components/LinkCard/components/LinkCardForm/fields/CardDetailFields/CardDetailFields.tsx": 1,
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        },
-        "fixed": {
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        },
-        "wrap": {
-          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "FormLabel",
-      "sourceFile": "components/FormLabel",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2
-      }
-    },
-    {
-      "name": "ManualLinkBank",
-      "sourceFile": "components/LinkAchBankAccount/components/ManualLinkBank",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "components/LinkAchBankAccount/components/ManualLinkBankModal/ManualLinkBankModal.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ManualLinkBankModalContent",
-      "sourceFile": "components/LinkAchBankAccount/components/ManualLinkBankModal/ManualLinkBankModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PlaidFailed",
-      "sourceFile": "components/LinkAchBankAccount/components/PlaidFailed",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        },
-        "onClick": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        },
-        "onDismiss": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        },
-        "onCreate": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        },
-        "onSuccess": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        },
-        "exitStatus": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        },
-        "errorCode": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AchBankAccountForm",
-      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        },
-        "onSubmit": {
-          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
-        }
-      }
-    },
-    {
       "name": "FormattedMessage",
       "sourceFile": "react-intl/FormattedMessage",
       "totalInstances": 13,
@@ -10262,6 +10007,75 @@
         },
         "testID": {
           "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Form",
+      "sourceFile": "components/Form",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "callSites": {
+        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+        "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1,
+        "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onChange": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
+        },
+        "onSubmit": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1,
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
+        },
+        "onValid": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
+        },
+        "onInvalid": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
+        },
+        "initialValues": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "FormGroup",
+      "sourceFile": "components/FormGroup",
+      "totalInstances": 12,
+      "totalCallSites": 6,
+      "callSites": {
+        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
+        "components/LinkCard/components/LinkCardForm/LinkCardForm.tsx": 2,
+        "components/LinkCard/components/LinkCardForm/fields/CardDetailFields/CardDetailFields.tsx": 1,
+        "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
+        "components/LinkSepa/components/SepaForm/SepaForm.tsx": 1
+      },
+      "propsWithCallSites": {
+        "column": {
+          "components/LinkCard/components/LinkCardForm/fields/CardDetailFields/CardDetailFields.tsx": 1,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
+        },
+        "fixed": {
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
+        },
+        "wrap": {
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
         }
       }
     },
@@ -10356,6 +10170,196 @@
           "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
         }
       }
+    },
+    {
+      "name": "ValidatedInput",
+      "sourceFile": "components/ValidatedInput",
+      "totalInstances": 14,
+      "totalCallSites": 5,
+      "callSites": {
+        "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3,
+        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
+        "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
+        "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
+      },
+      "propsWithCallSites": {
+        "autoFocus": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 1,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 1,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
+        },
+        "maxLength": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 1
+        },
+        "name": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
+        },
+        "placeholder": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
+        },
+        "onFocus": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3
+        },
+        "onBlur": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3
+        },
+        "onPaste": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 2
+        },
+        "validators": {
+          "components/LinkAchBankAccount/components/AchBankAccountForm/AchBankAccountForm.tsx": 3,
+          "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 5,
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
+        },
+        "size": {
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 3
+        },
+        "annotation": {
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2
+        },
+        "hideInlineErrorMessages": {
+          "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2,
+          "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx": 3
+        },
+        "autoComplete": {
+          "components/LinkSepa/components/SepaForm/SepaForm.tsx": 3
+        }
+      }
+    },
+    {
+      "name": "ModalBody",
+      "sourceFile": "components/Modal/ModalBody",
+      "totalInstances": 15,
+      "totalCallSites": 15,
+      "callSites": {
+        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 1,
+        "components/LinkAchBankAccount/components/ManualLinkBankModal/ManualLinkBankModal.tsx": 1,
+        "components/LinkCheckoutAccount/LinkCheckoutAccount.tsx": 1,
+        "components/LinkFedWire/LinkFedWireModal.tsx": 1,
+        "components/LinkFedWire/SuccessModal.tsx": 1,
+        "components/LinkSepa/components/LinkSepaModal/LinkSepaModal.tsx": 1,
+        "components/LinkSwiftBankAccount/LinkSwiftBankAccount.tsx": 1,
+        "components/LinkUkBank/components/LinkUkBankModal/LinkUkBankModal.tsx": 1,
+        "components/PlaidLink/components/PlaidErrorModal.tsx": 1,
+        "components/DepositVerificationModal/DepositVerificationModal.tsx": 1,
+        "components/LinkSgFast/steps/LinkSgFastDepositInfo/LinkSgFastDepositInfo.tsx": 1,
+        "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
+        "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1,
+        "components/LinkSgPaynow/steps/LinkSgPaynowDepositInfo/LinkSgPaynowDepositInfo.tsx": 1,
+        "components/LinkSwiftBankAccountV2/steps/LinkSwiftBankAccountV2DepositInfo/LinkSwiftBankAccountV2DepositInfo.tsx": 1
+      },
+      "propsWithCallSites": {
+        "data-testid": {
+          "components/LinkCheckoutAccount/LinkCheckoutAccount.tsx": 1,
+          "components/LinkFedWire/LinkFedWireModal.tsx": 1,
+          "components/LinkUkBank/components/LinkUkBankModal/LinkUkBankModal.tsx": 1,
+          "components/LinkPixDepositModal/PixDepositModalBody.tsx": 1,
+          "components/LinkPixWithdrawalModal/PixWithdrawalModalBody.tsx": 1
+        },
+        "align": {
+          "components/LinkSwiftBankAccount/LinkSwiftBankAccount.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/LinkAchBankAccount/components/EmailVerificationModal/EmailVerificationModal.tsx": 2
+      }
+    },
+    {
+      "name": "Statement",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "FormLabel",
+      "sourceFile": "components/FormLabel",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/LinkAchBankAccount/components/AchBankDepositVerificationForm/AchBankDepositVerificationForm.tsx": 2
+      }
+    },
+    {
+      "name": "PlaidFailed",
+      "sourceFile": "components/LinkAchBankAccount/components/PlaidFailed",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        },
+        "onClick": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        },
+        "onDismiss": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        },
+        "onCreate": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        },
+        "onSuccess": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        },
+        "exitStatus": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        },
+        "errorCode": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AchBankAccountForm",
+      "sourceFile": "components/LinkAchBankAccount/components/AchBankAccountForm",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        },
+        "onSubmit": {
+          "components/LinkAchBankAccount/components/ManualLinkBank/ManualLinkBank.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ManualLinkBank",
+      "sourceFile": "components/LinkAchBankAccount/components/ManualLinkBank",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "components/LinkAchBankAccount/components/ManualLinkBankModal/ManualLinkBankModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ManualLinkBankModalContent",
+      "sourceFile": "components/LinkAchBankAccount/components/ManualLinkBankModal/ManualLinkBankModal.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "PlaidFailedTryAgain",
@@ -10623,18 +10627,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "ContainerLocation",
-      "sourceFile": "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LazyCreditCardBillingAddressContent",
-      "sourceFile": "components/LinkCardComponents/CreditCardBillingAddress/index.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "CreditCardIntro",
       "sourceFile": "components/LinkCardComponents/CreditCardJumio/components/CreditCardIntro",
       "totalInstances": 1,
@@ -10661,6 +10653,18 @@
           "components/LinkCardComponents/CreditCardJumio/CreditCardJumio.tsx": 1
         }
       }
+    },
+    {
+      "name": "ContainerLocation",
+      "sourceFile": "components/LinkCardComponents/CreditCardBillingAddress/CreditCardBillingAddress.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LazyCreditCardBillingAddressContent",
+      "sourceFile": "components/LinkCardComponents/CreditCardBillingAddress/index.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "CoinIcon",
@@ -11827,6 +11831,9 @@
           "components/PaymentMethodSelect/PaymentMethodSelect.tsx": 1
         },
         "entryPoint": {
+          "components/PaymentMethodSelect/PaymentMethodSelect.tsx": 1
+        },
+        "isNewWebRefreshDesign": {
           "components/PaymentMethodSelect/PaymentMethodSelect.tsx": 1
         }
       }

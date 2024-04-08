@@ -45,6 +45,9 @@
           "action": {
             ":cloud/widgets/navigation/NavigationBar.tsx": 1
           },
+          "spacingHorizontal": {
+            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+          },
           "projectId": {
             ":cloud/widgets/navigation/NavigationBar.tsx": 1
           },
@@ -75,7 +78,7 @@
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/app-switcher": "^2.0.0",
+      "@cbhq/app-switcher": "^2.1.2",
       "@cbhq/identity-navigation": "^5.0.0"
     },
     "devDependencies": {},

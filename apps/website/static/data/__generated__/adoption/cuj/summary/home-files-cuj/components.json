@@ -71,17 +71,14 @@
         "@app/components/LiveTicker/LiveTicker.tsx": 1
       },
       "propsWithCallSites": {
-        "spacingVertical": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
-        },
-        "testID": {
+        "spacingTop": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2
         },
         "spacingBottom": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2
         },
-        "spacingTop": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+        "testID": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2
         },
         "width": {
           "@app/components/LiveTicker/LiveTicker.tsx": 1
@@ -109,44 +106,6 @@
         },
         "offsetTop": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Banner",
-      "sourceFile": "@cbhq/cds-mobile/banner/Banner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/banner/Banner",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx",
-          "callSites": [
-            "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx"
-          ]
-        }
-      ],
-      "propsWithCallSites": {
-        "title": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        },
-        "variant": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        },
-        "startIcon": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextBody",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextBody",
-      "propsWithCallSites": {
-        "color": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
         }
       }
     },
@@ -659,7 +618,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "viewerRef": {
+        "queryRef": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
         },
         "chartHeaderRef": {
@@ -669,6 +628,20 @@
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
         },
         "onLongPress": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BalanceBreakdown",
+      "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/components/BalanceBreakdown",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "cryptoBalance": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+        },
+        "cashBalance": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
         }
       }
@@ -697,6 +670,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "UserCefiBalancesSubscription",
+      "sourceFile": "@app/components/balance/UserCefiBalancesSubscription",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "View",
       "sourceFile": "react-native/View",
       "totalInstances": 1,
@@ -711,6 +690,12 @@
       }
     },
     {
+      "name": "BalanceBreakdownFallback",
+      "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/components/BalanceBreakdown/BalanceBreakdownFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "NetworkBoundary",
       "sourceFile": "@app/components/NetworkBoundary",
       "totalInstances": 2,
@@ -720,6 +705,10 @@
         "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
       },
       "propsWithCallSites": {
+        "errorFallback": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
         "fallback": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
@@ -749,12 +738,18 @@
       "totalCallSites": 1
     },
     {
-      "name": "Link",
-      "sourceFile": "@components/typography/Link",
+      "name": "SharedBannerEmptyStateUI",
+      "sourceFile": "@app/components/EmptyState/SharedBannerEmptyStateUI",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "to": {
+        "testID": {
+          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
+        },
+        "title": {
+          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
+        },
+        "inlineLink": {
           "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
         }
       }
@@ -779,7 +774,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "portfolioPerformanceRef": {
+        "balanceChartRef": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }
@@ -1056,6 +1051,23 @@
           "views/Home/HomeFeedBoundary.tsx": 1
         },
         "fallback": {
+          "views/Home/HomeFeedBoundary.tsx": 1
+        },
+        "errorFallbackComponent": {
+          "views/Home/HomeFeedBoundary.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AppBoundaryFallback",
+      "sourceFile": "components/AppBoundaryFallback/AppBoundaryFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "error": {
+          "views/Home/HomeFeedBoundary.tsx": 1
+        },
+        "errorMetadata": {
           "views/Home/HomeFeedBoundary.tsx": 1
         }
       }
