@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.5.7 (4/8/2024 PST)
+
+#### 🐞 Fixes
+
+- UpsellCard: remove zIndex property. [[#2907](https://github.cbhq.net/frontend/cds/pull/2907)] [[DX-3561](https://jira.coinbase-corp.com/browse/DX-3561)]
+
 ## 6.5.6 (4/5/2024 PST)
 
 #### 🐞 Fixes

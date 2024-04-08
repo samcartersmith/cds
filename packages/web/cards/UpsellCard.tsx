@@ -66,7 +66,6 @@ export const UpsellCard = memo(
             minHeight={density === 'dense' ? upsellCardMinHeightDense : upsellCardMinHeight}
             spacing={2}
             width="70%"
-            zIndex={2}
           >
             <VStack gap={1}>
               {typeof title === 'string' ? <TextHeadline as="h3">{title}</TextHeadline> : title}
@@ -97,12 +96,12 @@ export const UpsellCard = memo(
             )}
           </VStack>
           {!!media && (
-            <HStack position="absolute" right={0} zIndex={0}>
+            <HStack position="absolute" right={0}>
               {media}
             </HStack>
           )}
           {onDismissPress && (
-            <HStack position="absolute" right={0} spacing={1} top={0} zIndex={1}>
+            <HStack position="absolute" right={0} spacing={1} top={0}>
               <IconButton
                 accessibilityLabel={`Dismiss the ${accessibilityLabel ?? title} card`}
                 name="close"

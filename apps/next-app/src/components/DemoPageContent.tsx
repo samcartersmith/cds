@@ -9,10 +9,11 @@ import { users } from '@cbhq/cds-common/internal/data/users';
 import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { SetState } from '@cbhq/cds-web';
 import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
-import { Card, CardBody, CardFooter, CardGroup, FeedCard } from '@cbhq/cds-web/cards';
+import { Card, CardBody, CardFooter, CardGroup, FeedCard, UpsellCard } from '@cbhq/cds-web/cards';
 import { ListCell } from '@cbhq/cds-web/cells';
 import { Checkbox, Select, SelectOption, Switch } from '@cbhq/cds-web/controls';
 import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
@@ -570,6 +571,20 @@ function AppContent() {
             spacingTop={0}
           >
             <CardGroup>
+              <VStack gap={2} spacingVertical={2}>
+                <UpsellCard
+                  action="Get started"
+                  description="Want to add funds to your card every week or month?"
+                  media={
+                    <Box bottom={6} position="relative" right={24}>
+                      <Pictogram dimension="64x64" name="recurringPurchases" />
+                    </Box>
+                  }
+                  onActionPress={NoopFn}
+                  onDismissPress={NoopFn}
+                  title="Recurring Buy"
+                />
+              </VStack>
               <FeedCardWithPopover />
               <DataCardWithCircle />
               <DataCardWithBar />
