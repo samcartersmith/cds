@@ -3583,8 +3583,8 @@ __metadata:
     react-is: "npm:^17.0.2"
     type-fest: "npm:^2.19.0"
   peerDependencies:
-    "@cbhq/cds-icons": "workspace:^"
-    "@cbhq/cds-illustrations": "workspace:^"
+    "@cbhq/cds-icons": ">=1.0.0"
+    "@cbhq/cds-illustrations": ">=2.1.0"
     react: 18.2.0
     react-dom: ^18.2.0
   languageName: unknown
@@ -3742,8 +3742,8 @@ __metadata:
     react-test-renderer: "npm:^18.2.0"
     type-fest: "npm:^2.19.0"
   peerDependencies:
-    "@cbhq/cds-icons": "workspace:^"
-    "@cbhq/cds-illustrations": "workspace:^"
+    "@cbhq/cds-icons": ">=1.0.0"
+    "@cbhq/cds-illustrations": ">=2.1.0"
     "@react-navigation/native": ^6.1.6
     "@react-navigation/native-stack": ^6.9.12
     "@react-navigation/stack": ^6.3.16
@@ -3841,8 +3841,8 @@ __metadata:
     lottie-web: "npm:^5.7.6"
     react-popper: "npm:^2.2.4"
   peerDependencies:
-    "@cbhq/cds-icons": "workspace:^"
-    "@cbhq/cds-illustrations": "workspace:^"
+    "@cbhq/cds-icons": ">=1.0.0"
+    "@cbhq/cds-illustrations": ">=2.1.0"
     framer-motion: ^10.18.0
     react: 18.2.0
     react-dom: ^18.2.0

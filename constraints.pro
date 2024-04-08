@@ -10,9 +10,16 @@ gen_enforced_dependency(WorkspaceCwd, DependencyIdent, DependencyRange2, Depende
     workspace_has_dependency(WorkspaceCwd, DependencyIdent, DependencyRange, DependencyType),
   % Iterates over similarly-named dependencies from all workspaces (again)
     workspace_has_dependency(OtherWorkspaceCwd, DependencyIdent, DependencyRange2, DependencyType2),
-  % Ignore peer dependencies
-    DependencyType \= 'peerDependencies',
-    DependencyType2 \= 'peerDependencies',
+  % Check if it's not a peer dependency or if it is a peer dependency that is not a workspace
+    (
+        DependencyType \= 'peerDependencies',
+        DependencyType2 \= 'peerDependencies'
+    ;
+        DependencyType = 'peerDependencies',
+        DependencyType2 = 'peerDependencies',
+        % Check if the dependency is not a workspace dependency
+        \+ workspace_ident(_, DependencyIdent)
+    ),
   % Ignore devDependencies on other workspaces
     (
       (DependencyType = 'devDependencies'; DependencyType2 = 'devDependencies') ->
@@ -26,5 +33,6 @@ gen_enforced_dependency(WorkspaceCwd, DependencyIdent, 'workspace:^', Dependency
   % Iterates over all dependencies from all workspaces
     workspace_has_dependency(WorkspaceCwd, DependencyIdent, DependencyRange, DependencyType),
   % Only consider those that target something that could be a workspace
-    workspace_ident(DependencyCwd, DependencyIdent).
-
+    workspace_ident(DependencyCwd, DependencyIdent),
+  % Ignore peer dependencies
+    DependencyType \= 'peerDependencies'.

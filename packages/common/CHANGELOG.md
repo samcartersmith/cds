@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.5.6 (4/5/2024 PST)
+
+#### 🐞 Fixes
+
+- Expand cds-icons and cds-illustrations compatible version range in peer dependencies. [[#2900](https://github.cbhq.net/frontend/cds/pull/2900)]
+
 ## 6.5.5 (4/5/2024 PST)
 
 #### 🐞 Fixes
