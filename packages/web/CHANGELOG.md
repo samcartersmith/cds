@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.5.8 (4/8/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix Modal container with custom width. [[#2910](https://github.cbhq.net/frontend/cds/pull/2910)]
+
 ## 6.5.7 (4/8/2024 PST)
 
 #### 🐞 Fixes

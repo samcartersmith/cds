@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo } from 'react';
 import { m as motion } from 'framer-motion';
+import { CSSProperties } from 'linaria';
 import { Position } from '@cbhq/cds-common';
 import {
   animateInOpacityConfig,
@@ -106,12 +107,19 @@ export const Modal = memo(
     // TODO: remove render props as we no longer need the method to close modal
     const renderChildrenProps = useMemo(() => ({ closeModal: handleClose }), [handleClose]);
 
-    const dialogStyles = useMemo(
-      () => ({
-        position: dangerouslySetPosition,
-      }),
-      [dangerouslySetPosition],
-    );
+    const dialogStyles = useMemo(() => {
+      const styles: CSSProperties = {};
+
+      if (width) {
+        styles.width = width;
+      }
+
+      if (dangerouslySetPosition) {
+        styles.position = dangerouslySetPosition;
+      }
+
+      return styles;
+    }, [dangerouslySetPosition, width]);
 
     return (
       <ModalWrapper
@@ -150,7 +158,7 @@ export const Modal = memo(
               )}
               elevation={2}
               overflow="hidden"
-              width={width ?? '100%'}
+              width="100%"
             >
               <ModalParentContext.Provider value={modalData}>
                 {typeof children === 'function' ? children(renderChildrenProps) : children}

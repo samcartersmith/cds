@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.5.8 ((4/8/2024, 01:59 PM PST))
+
+This is an artificial version bump with no new change.
+
+#### 📘 Misc
+
+- Add Modal story with custom width. [[#2910](https://github.cbhq.net/frontend/cds/pull/2910)]
+
 ## 6.5.7 ((4/8/2024, 09:22 AM PST))
 
 This is an artificial version bump with no new change.

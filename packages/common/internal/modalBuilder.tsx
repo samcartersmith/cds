@@ -27,6 +27,7 @@ type ModalOptions = {
   visible?: boolean;
   hideDividers?: boolean;
   enableBackButton?: boolean;
+  width?: number;
 };
 
 export type CreateModalProps = {
@@ -72,6 +73,7 @@ export function modalBuilder({
     triggerRef,
     focusTrigger,
     enableBackButton,
+    width,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible ?? true);
 
@@ -86,6 +88,7 @@ export function modalBuilder({
           onDidClose={focusTrigger}
           onRequestClose={toggleOff}
           visible={visible}
+          width={width}
         >
           <ModalHeader
             backAccessibilityLabel="Back"
@@ -224,6 +227,12 @@ export function modalBuilder({
     </BasicModalExample>
   );
 
+  const CustomWidthModal = (props: ModalA11yProps & ModalOptions) => (
+    <BasicModalExample {...props} width={300}>
+      <LoremIpsum />
+    </BasicModalExample>
+  );
+
   const BackButtonModal = (props: ModalA11yProps) => (
     <BasicModalExample {...props} enableBackButton>
       <LoremIpsum />
@@ -254,6 +263,7 @@ export function modalBuilder({
 
   return {
     BasicModal,
+    CustomWidthModal,
     BackButtonModal,
     ModalWithoutPortal,
     LongModal,

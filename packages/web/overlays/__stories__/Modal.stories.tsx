@@ -12,6 +12,7 @@ export default {
 
 const {
   BasicModal: BasicModalExample,
+  CustomWidthModal: CustomWidthModalExample,
   BackButtonModal: BackButtonModalExample,
   ModalWithoutPortal: ModalWithoutPortalExample,
   LongModal: LongModalExample,
@@ -29,6 +30,12 @@ export const BasicModal = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   return <BasicModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
+};
+
+export const CustomWidthModal = () => {
+  const { triggerRef, focusTrigger } = useTriggerFocus();
+
+  return <CustomWidthModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
 };
 
 export const BackButtonModal = () => {
