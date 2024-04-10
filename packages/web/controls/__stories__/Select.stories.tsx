@@ -33,8 +33,16 @@ const components = {
   Box,
 };
 
-export const { Default, AssetSelect, InputStackOptions, Disabled, Compact, Variants, LongText } =
-  selectBuilder(components as unknown as CreateSelectStoriesProps);
+export const {
+  Default,
+  LongTextSelect,
+  AssetSelect,
+  InputStackOptions,
+  Disabled,
+  Compact,
+  Variants,
+  LongText,
+} = selectBuilder(components as unknown as CreateSelectStoriesProps);
 
 Disabled.bind({});
 /** TODO: convert to CSF (Component Story Format v3) */

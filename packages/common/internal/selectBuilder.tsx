@@ -84,6 +84,12 @@ export const exampleOptions = [
   'Option 6',
 ];
 
+export const exampleLongOptions = [
+  'This is a very long text. This is a very long text. This is a very long text. ',
+  'This is a long text. This is a very long text. This is a very long text. ',
+  'This is a text. This is a very long text. This is a very long text. ',
+];
+
 const assetKeys = Object.keys(assets) as AssetKey[];
 
 export const selectBuilder = ({
@@ -146,6 +152,61 @@ export const selectBuilder = ({
               value="disabled"
             />
             {exampleOptions.map((option) => (
+              <SelectOption
+                key={option}
+                description="BTC"
+                testID={`option-${option}`}
+                title={option}
+                value={option}
+              />
+            ))}
+          </Select>
+        </VStack>
+      </ThemeProvider>
+    );
+  };
+
+  const LongTextSelect = ({
+    variant,
+    placeholder = 'Choose something',
+    label,
+    accessibilityLabel,
+    testID,
+    onPress,
+    helperText,
+    onBlur,
+    width,
+  }: Pick<
+    SelectProps,
+    | 'variant'
+    | 'label'
+    | 'placeholder'
+    | 'accessibilityLabel'
+    | 'testID'
+    | 'onPress'
+    | 'helperText'
+    | 'onBlur'
+    | 'width'
+  >) => {
+    const [value, setValue] = useState<string | undefined>(exampleLongOptions[0]);
+
+    return (
+      <ThemeProvider scale={scale} spectrum={spectrum}>
+        <VStack background spacing={2}>
+          <Select
+            accessibilityLabel={accessibilityLabel}
+            helperText={helperText}
+            label={label}
+            onBlur={onBlur}
+            onChange={setValue}
+            onPress={onPress}
+            placeholder={placeholder}
+            testID={testID}
+            value={value}
+            variant={variant}
+            width={width}
+          >
+            {exampleLongOptions.map((option) => (
               <SelectOption
                 key={option}
                 description="BTC"
@@ -312,6 +373,7 @@ export const selectBuilder = ({
   };
   return {
     Default,
+    LongTextSelect,
     AssetSelect,
     InputStackOptions,
     Compact,
@@ -378,6 +440,42 @@ export const selectBuilderMobile = ({
           >
             {({ handleClose }) =>
               exampleOptions.map((option) => {
+                return (
+                  <SelectOption
+                    key={option}
+                    description={hasDescription && 'Description'}
+                    onPress={handleClose}
+                    title={option}
+                    value={option}
+                  />
+                );
+              })
+            }
+          </Tray>
+        )}
+      </Select>
+    );
+  };
+
+  const LongTextSelect = ({
+    trayTitle,
+    hasDescription,
+    hideHandleBar,
+    ...props
+  }: DefaultSelectTypes) => {
+    const [isTrayVisible, { toggleOff, toggleOn }] = useToggler(false);
+    const [selectedValue, setValue] = useState<string | undefined>(exampleLongOptions[0]);
+    return (
+      <Select onChange={setValue} onPress={toggleOn} value={selectedValue} {...props}>
+        {isTrayVisible && (
+          <Tray
+            hideHandleBar={hideHandleBar}
+            onCloseComplete={toggleOff}
+            testID="select-input-tray"
+            title={trayTitle}
+          >
+            {({ handleClose }) =>
+              exampleLongOptions.map((option) => {
                 return (
                   <SelectOption
                     key={option}
@@ -570,6 +668,7 @@ export const selectBuilderMobile = ({
 
   return {
     DefaultSelect,
+    LongTextSelect,
     AssetSelect,
     ScrollableSelect,
     SelectFilter,

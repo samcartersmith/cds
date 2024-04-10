@@ -12,7 +12,7 @@ import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 import { TextInput } from '../TextInput';
 
-const { DefaultSelect, AssetSelect, ScrollableSelect, SelectFilter, SelectForm } =
+const { DefaultSelect, LongTextSelect, AssetSelect, ScrollableSelect, SelectFilter, SelectForm } =
   selectBuilderMobile({
     Tray,
     Select,
@@ -31,6 +31,9 @@ const SelectScreen = () => {
     <ExampleScreen>
       <Example title="Default with Tray">
         <DefaultSelect placeholder="Select an option... " />
+      </Example>
+      <Example title="Long Text Select with Tray">
+        <LongTextSelect placeholder="Select an option... " />
       </Example>
       <Example title="Asset Select with Tray">
         <AssetSelect />

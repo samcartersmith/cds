@@ -165,6 +165,7 @@ export const Select = memo(
                     background
                     alignItems="center"
                     borderRadius="rounded"
+                    flexBasis={1}
                     flexGrow={1}
                     flexShrink={1}
                     justifyContent={compact ? 'flex-end' : 'flex-start'}
