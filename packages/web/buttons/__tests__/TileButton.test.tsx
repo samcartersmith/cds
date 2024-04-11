@@ -51,4 +51,40 @@ describe('TileButton.test', () => {
 
     expect(mockConsoleWarn).toHaveBeenCalledTimes(0);
   });
+
+  it('show overflow text', async () => {
+    const onPress = jest.fn();
+
+    const title = 'Private Client';
+    render(
+      <TileButton
+        showOverflow
+        onPress={onPress}
+        pictogram="add"
+        testID="test-tile-button"
+        title={title}
+      />,
+    );
+
+    const node = await screen.findByText(title);
+    expect(node).toHaveClass('overflowStyles');
+  });
+
+  it('show truncated text', async () => {
+    const onPress = jest.fn();
+
+    const title = 'Private Client';
+    render(
+      <TileButton
+        onPress={onPress}
+        pictogram="add"
+        showOverflow={false}
+        testID="test-tile-button"
+        title={title}
+      />,
+    );
+
+    const node = await screen.findByText(title);
+    expect(node).toHaveClass('truncatedStyles');
+  });
 });

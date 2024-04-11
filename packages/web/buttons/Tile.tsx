@@ -1,7 +1,7 @@
-import React, { memo, useCallback, useEffect, useMemo } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { useToggler } from '@cbhq/cds-common';
-import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
-import { denseTileSize, tileSize } from '@cbhq/cds-common/tokens/tile';
+import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
+import { denseTileSize, tileSize as normalTileSize } from '@cbhq/cds-common/tokens/tile';
 import { TileBaseProps } from '@cbhq/cds-common/types';
 
 import { DotCount } from '../dots/DotCount';
@@ -14,23 +14,22 @@ import { getOverflowTextStyles } from '../utils/overflow';
  */
 export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProps) => {
   const [shouldOverflow, toggleShouldOverflow] = useToggler(false);
-  const overflowTextStyles = getOverflowTextStyles(shouldOverflow);
-  const isDense = useScaleDensity() === 'dense';
+  const overflowTextStyles = getOverflowTextStyles(
+    showOverflow !== undefined ? showOverflow : shouldOverflow,
+  );
+  const tileSize = useScaleConditional({ dense: denseTileSize, normal: normalTileSize });
 
   const handleShowOverflow = useCallback(() => {
-    toggleShouldOverflow.toggleOn();
-  }, [toggleShouldOverflow]);
-  const handleHideOverflow = useCallback(() => {
-    toggleShouldOverflow.toggleOff();
-  }, [toggleShouldOverflow]);
-
-  useEffect(() => {
-    if (showOverflow) {
-      handleShowOverflow();
-    } else {
-      handleHideOverflow();
+    if (showOverflow === undefined) {
+      toggleShouldOverflow.toggleOn();
     }
-  }, [showOverflow, handleShowOverflow, handleHideOverflow]);
+  }, [toggleShouldOverflow, showOverflow]);
+
+  const handleHideOverflow = useCallback(() => {
+    if (showOverflow === undefined) {
+      toggleShouldOverflow.toggleOff();
+    }
+  }, [toggleShouldOverflow, showOverflow]);
 
   /* If count is provided, wrap the children in a DotCount */
   const renderContent = useMemo(() => {
@@ -43,10 +42,6 @@ export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProp
     );
   }, [children, count]);
 
-  const computedTileSize = useMemo(() => {
-    return isDense ? denseTileSize : tileSize;
-  }, [isDense]);
-
   return (
     <VStack
       alignItems="center"
@@ -55,7 +50,7 @@ export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProp
       onMouseEnter={handleShowOverflow}
       onMouseLeave={handleHideOverflow}
       spacing={1}
-      width={computedTileSize}
+      width={tileSize}
     >
       <VStack alignItems="center" justifyContent="center">
         {renderContent}

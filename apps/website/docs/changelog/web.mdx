@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 6.5.10 (4/11/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix TileButton showOverflow. [[#2919](https://github.cbhq.net/frontend/cds/pull/2919)]
 
 #### 📘 Misc
 

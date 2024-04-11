@@ -17,10 +17,16 @@ export const TileButtonPictogram = () => {
     <VStack gap={0.5}>
       <HStack zIndex={getZIndexFromRow(1, 3)}>
         <TileButton onPress={handleNoop} pictogram="2fa" title="Coinbase" />
-        <TileButton onPress={handleNoop} pictogram="addToWatchlist" title="Private Client" />
+        <TileButton
+          showOverflow
+          onPress={handleNoop}
+          pictogram="addToWatchlist"
+          title="Private Client"
+        />
         <TileButton
           onPress={handleNoop}
           pictogram="authenticatorProgress"
+          showOverflow={false}
           title="This Title Will Be Three Lines"
         />
       </HStack>
