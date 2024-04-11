@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Resolve incorrect casted prop types in stories. [[#2922](https://github.cbhq.net/frontend/cds/pull/2922)] [[DX-3535](https://jira.coinbase-corp.com/browse/DX-3535)]
+
 ## 6.5.9 ((4/9/2024, 01:13 PM PST))
 
 This is an artificial version bump with no new change.

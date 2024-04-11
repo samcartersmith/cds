@@ -1,18 +1,18 @@
 import React from 'react';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { ChipBaseProps, Shape } from '@cbhq/cds-common/types';
+import { ChipBaseProps } from '@cbhq/cds-common/types';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons';
 import { VStack } from '../../layout';
-import { RemoteImage } from '../../media';
+import { RemoteImage, RemoteImageProps } from '../../media';
 import { TextHeadline } from '../../typography';
 import { Chip } from '../Chip';
 
-const assetIconProps = {
+const assetIconProps: RemoteImageProps = {
   height: 16,
-  shape: 'circle' as Shape,
+  shape: 'circle',
   source: assets.eth.imageUrl,
   width: 16,
 };

@@ -7,13 +7,13 @@ import { HStack } from '../../layout/HStack';
 import { Spacer } from '../../layout/Spacer';
 import { LottieStatusAnimation } from '../LottieStatusAnimation';
 
-const statuses = [
+const statuses: LottieStatusAnimationType[] = [
   'loading',
   'success',
   'failure',
   'pending',
   'cardSuccess',
-] as LottieStatusAnimationType[];
+];
 
 const LottieStatusAnimationScreen = () => {
   const [status, setStatus] = useState<LottieStatusAnimationType>('loading');

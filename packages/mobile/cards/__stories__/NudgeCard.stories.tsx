@@ -3,14 +3,13 @@ import { Image, StyleSheet, useWindowDimensions } from 'react-native';
 import { useToggler } from '@cbhq/cds-common';
 import { squareAssets } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
-import { PictogramName } from '@cbhq/cds-illustrations';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';
 import { Carousel } from '../../media/Carousel/Carousel';
 import { TextBody, TextHeadline, TextTitle3 } from '../../typography';
-import { NudgeCard } from '../NudgeCard';
+import { NudgeCard, NudgeCardProps } from '../NudgeCard';
 
 const styles = StyleSheet.create({
   customMediaStyles: {
@@ -19,31 +18,31 @@ const styles = StyleSheet.create({
   },
 });
 
-const exampleProps = {
+const exampleProps: NudgeCardProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT. ',
-  pictogram: 'coinbaseOneLogo' as PictogramName,
+  pictogram: 'coinbaseOneLogo',
   action: 'Join the movement',
   onActionPress: NoopFn,
 };
 
-const compactProps = {
+const compactProps: NudgeCardProps = {
   title: 'Try this new thing',
   description: 'It will take you to the moon, I promise.',
-  pictogram: 'wrapEth' as PictogramName,
+  pictogram: 'wrapEth',
   onPress: NoopFn,
 };
 
-const longProps = {
+const longProps: NudgeCardProps = {
   action: 'Do the thing',
   title: 'Long title text that will overflow to the next line',
   description:
     'This is a super long description that will increase the height of the card to automagically fit the content.',
   numberOfLines: 4,
-  pictogram: 'addWallet' as PictogramName,
+  pictogram: 'addWallet',
 };
 
-const exampleMediaProps = {
+const exampleMediaProps: NudgeCardProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT. ',
   action: 'Join the movement',
@@ -58,7 +57,7 @@ const exampleMediaProps = {
   ),
 };
 
-const compactMediaProps = {
+const compactMediaProps: NudgeCardProps = {
   title: 'Try this new thing',
   description: 'It will take you to the moon, I promise. WAGMI!',
   action: undefined,

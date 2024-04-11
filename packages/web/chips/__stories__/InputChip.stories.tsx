@@ -1,9 +1,8 @@
-import { Shape } from '@cbhq/cds-common';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { HStack, VStack } from '../../layout';
-import { RemoteImage } from '../../media';
+import { RemoteImage, RemoteImageProps } from '../../media';
 import { ThemeProvider } from '../../system';
 import { TextDisplay2, TextHeadline } from '../../typography';
 import { InputChip } from '../InputChip';
@@ -13,9 +12,9 @@ export default {
   component: InputChip,
 };
 
-const assetIconProps = {
+const assetIconProps: RemoteImageProps = {
   height: 16,
-  shape: 'circle' as Shape,
+  shape: 'circle',
   source: assets.eth.imageUrl,
   width: 16,
 };

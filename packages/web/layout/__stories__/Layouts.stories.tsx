@@ -48,10 +48,16 @@ const Example: React.FC<
   );
 };
 
-const sharedWrapperProps = {
-  borderColor: 'line' as PaletteBorder,
-  spacing: 1 as SpacingScale,
-  gap: 1 as SpacingScale,
+type SharedWrapperType = {
+  borderColor: PaletteBorder;
+  spacing: SpacingScale;
+  gap: SpacingScale;
+};
+
+const sharedWrapperProps: SharedWrapperType = {
+  borderColor: 'line',
+  spacing: 1,
+  gap: 1,
 };
 
 const FlexLayout = () => {

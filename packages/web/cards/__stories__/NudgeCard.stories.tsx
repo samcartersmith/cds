@@ -1,39 +1,38 @@
 import React from 'react';
 import { squareAssets } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn as noopFn } from '@cbhq/cds-common/utils/mockUtils';
-import { PictogramName } from '@cbhq/cds-illustrations';
 
 import { Button } from '../../buttons';
 import { HStack, VStack } from '../../layout';
 import { TextBody, TextHeadline } from '../../typography';
 import { NudgeCard, NudgeCardProps } from '../NudgeCard';
 
-const exampleProps = {
+const exampleProps: NudgeCardProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT. ',
-  pictogram: 'key' as PictogramName,
+  pictogram: 'key',
   action: 'Join the movement',
   onActionPress: noopFn,
 };
 
-const compactProps = {
+const compactProps: NudgeCardProps = {
   title: 'Try this new thing',
   description: 'It will take you to the moon, I promise. WAGMI!',
-  pictogram: 'key' as PictogramName,
+  pictogram: 'key',
   action: undefined,
   onActionPress: undefined,
 };
 
-const longProps = {
+const longProps: NudgeCardProps = {
   action: 'Do the thing',
   title: 'Long title text that will overflow to the next line',
   description:
     'This is a super long description that will increase the height of the card to automagically fit the content.',
   numberOfLines: 4,
-  pictogram: 'addWallet' as PictogramName,
+  pictogram: 'addWallet',
 };
 
-const exampleMediaProps = {
+const exampleMediaProps: NudgeCardProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT. ',
   action: 'Join the movement',
@@ -41,7 +40,7 @@ const exampleMediaProps = {
   media: <img alt="placeholder" src={squareAssets.human2} width={60} />,
 };
 
-const compactMediaProps = {
+const compactMediaProps: NudgeCardProps = {
   title: 'Try this new thing',
   description: 'It will take you to the moon, I promise. WAGMI!',
   action: undefined,

@@ -243,19 +243,18 @@ export const TextNumberOfLinesNested = () => (
 );
 
 export const TextNumberOfLinesCustomSpacing = () => {
-  const responsiveConfig = useMemo(
-    () =>
-      ({
-        phone: {
-          spacing: 4,
-        },
-        tablet: {
-          spacing: 3,
-        },
-        desktop: {
-          spacing: 2,
-        },
-      } as ResponsiveProps),
+  const responsiveConfig: ResponsiveProps = useMemo(
+    () => ({
+      phone: {
+        spacing: 4,
+      },
+      tablet: {
+        spacing: 3,
+      },
+      desktop: {
+        spacing: 2,
+      },
+    }),
     [],
   );
 

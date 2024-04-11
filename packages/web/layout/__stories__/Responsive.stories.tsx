@@ -101,7 +101,8 @@ export const ResponsiveBox = ({
 };
 
 export const ResponsiveBoxUnmemoizedPerformance = () => {
-  const responsiveConfig = {
+  // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+  const responsiveConfig: ResponsiveProps = {
     phone: {
       spacing: 4,
       gap: 0.5,
@@ -121,11 +122,11 @@ export const ResponsiveBoxUnmemoizedPerformance = () => {
       alignItems: 'center',
     },
   };
-  return <ResponsiveBox responsiveConfig={responsiveConfig as ResponsiveProps} />;
+  return <ResponsiveBox responsiveConfig={responsiveConfig} />;
 };
 
 export const ResponsiveBoxMemoizedPerformance = () => {
-  const responsiveConfigMemoized = useMemo(
+  const responsiveConfigMemoized: ResponsiveProps = useMemo(
     () => ({
       phone: {
         spacing: 4,
@@ -148,7 +149,7 @@ export const ResponsiveBoxMemoizedPerformance = () => {
     }),
     [],
   );
-  return <ResponsiveBox responsiveConfig={responsiveConfigMemoized as ResponsiveProps} />;
+  return <ResponsiveBox responsiveConfig={responsiveConfigMemoized} />;
 };
 
 export const ResponsiveBoxHoistedPerformance = () => (
