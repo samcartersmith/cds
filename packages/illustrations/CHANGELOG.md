@@ -8,6 +8,86 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.3.0 (4/12/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 4/12/2024. [[#2932](https://github.cbhq.net/frontend/cds/pull/2932)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- errorMoblie
+- errorRefreshWeb
+- errorWeb
+- errorWeb404
+- errorWeb404Mobile
+
+#### Pictogram
+
+- assetManagementNavigation
+- coinbaseOneProductIcon
+- complianceNavigation
+- developerPlatformNavigation
+- internationalExchangeNavigation
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- accountsNavigation
+- advancedTradingNavigation
+- assetHubNavigation
+- borrowNavigation
+- cardNavigation
+- cloudNavigation
+- coinbaseLogoNavigation
+- commerceNavigation
+- connectNavigation
+- custodyNavigation
+- dataMarketplaceNavigation
+- delegateNavigation
+- derivativesNavigation
+- directDepositNavigation
+- earnNavigation
+- exchangeNavigation
+- faucetNavigation
+- helpCenterNavigation
+- institutionalNavigation
+- learningRewardsNavigation
+- nftNavigation
+- notificationHubNews
+- participateNavigation
+- payNavigation
+- primeNavigation
+- privateClientNavigation
+- proNavigation
+- queryTransactNavigation
+- rewardsNavigation
+- signInNavigation
+- standWithCryptoLogoNavigation
+- taxCenterNavigation
+- venturesNavigation
+- walletAsServiceNavigation
+- walletLogoNavigation
+- walletNavigation
+
+#### Hero Square
+
+- coinbaseIsDown
+- coinbaseIsDownMobile
+- error400
+- errorApp500
+- errorRefresh
+- errorWeb400
+- errorWeb404
+- errorWeb500
+
 ## 3.2.0 (4/1/2024 PST)
 
 #### 🚀 Updates

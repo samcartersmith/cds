@@ -218,12 +218,12 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/coinbaseFees-2').content,
   },
   coinbaseIsDown: {
-    light: () => require('../svgJs/light/coinbaseIsDown-3').content,
-    dark: () => require('../svgJs/dark/coinbaseIsDown-3').content,
+    light: () => require('../svgJs/light/coinbaseIsDown-4').content,
+    dark: () => require('../svgJs/dark/coinbaseIsDown-4').content,
   },
   coinbaseIsDownMobile: {
-    light: () => require('../svgJs/light/coinbaseIsDownMobile-2').content,
-    dark: () => require('../svgJs/dark/coinbaseIsDownMobile-2').content,
+    light: () => require('../svgJs/light/coinbaseIsDownMobile-3').content,
+    dark: () => require('../svgJs/dark/coinbaseIsDownMobile-3').content,
   },
   coinbaseOneCardWarning: {
     light: () => require('../svgJs/light/coinbaseOneCardWarning-2').content,
@@ -570,28 +570,44 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/ensProfilePic-0').content,
   },
   error400: {
-    light: () => require('../svgJs/light/error400-2').content,
-    dark: () => require('../svgJs/dark/error400-2').content,
+    light: () => require('../svgJs/light/error400-3').content,
+    dark: () => require('../svgJs/dark/error400-3').content,
   },
   errorApp500: {
-    light: () => require('../svgJs/light/errorApp500-3').content,
-    dark: () => require('../svgJs/dark/errorApp500-3').content,
+    light: () => require('../svgJs/light/errorApp500-4').content,
+    dark: () => require('../svgJs/dark/errorApp500-4').content,
+  },
+  errorMoblie: {
+    light: () => require('../svgJs/light/errorMoblie-0').content,
+    dark: () => require('../svgJs/dark/errorMoblie-0').content,
   },
   errorRefresh: {
-    light: () => require('../svgJs/light/errorRefresh-2').content,
-    dark: () => require('../svgJs/dark/errorRefresh-2').content,
+    light: () => require('../svgJs/light/errorRefresh-3').content,
+    dark: () => require('../svgJs/dark/errorRefresh-3').content,
+  },
+  errorRefreshWeb: {
+    light: () => require('../svgJs/light/errorRefreshWeb-0').content,
+    dark: () => require('../svgJs/dark/errorRefreshWeb-0').content,
+  },
+  errorWeb: {
+    light: () => require('../svgJs/light/errorWeb-0').content,
+    dark: () => require('../svgJs/dark/errorWeb-0').content,
   },
   errorWeb400: {
-    light: () => require('../svgJs/light/errorWeb400-2').content,
-    dark: () => require('../svgJs/dark/errorWeb400-2').content,
+    light: () => require('../svgJs/light/errorWeb400-3').content,
+    dark: () => require('../svgJs/dark/errorWeb400-3').content,
   },
   errorWeb404: {
-    light: () => require('../svgJs/light/errorWeb404-2').content,
-    dark: () => require('../svgJs/dark/errorWeb404-2').content,
+    light: () => require('../svgJs/light/errorWeb404-3').content,
+    dark: () => require('../svgJs/dark/errorWeb404-3').content,
+  },
+  errorWeb404Mobile: {
+    light: () => require('../svgJs/light/errorWeb404Mobile-0').content,
+    dark: () => require('../svgJs/dark/errorWeb404Mobile-0').content,
   },
   errorWeb500: {
-    light: () => require('../svgJs/light/errorWeb500-2').content,
-    dark: () => require('../svgJs/dark/errorWeb500-2').content,
+    light: () => require('../svgJs/light/errorWeb500-3').content,
+    dark: () => require('../svgJs/dark/errorWeb500-3').content,
   },
   estimatedAmount: {
     light: () => require('../svgJs/light/estimatedAmount-2').content,

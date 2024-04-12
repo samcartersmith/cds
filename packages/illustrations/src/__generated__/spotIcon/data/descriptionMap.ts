@@ -9,12 +9,6 @@
  * The search query filters the shown illustrations based on matches with name or description.
  */
 const descriptionMap: Record<string, string[]> = {
-  warning: ['outage', 'warning'],
-  yellow: ['outage', 'warning'],
-  triangle: ['outage', 'warning'],
-  error: ['outage', 'warning'],
-  warn: ['outage', 'warning'],
-  yield: ['outage', 'warning'],
   product: [
     'productCoinbaseCard',
     'productPro',
@@ -305,6 +299,12 @@ const descriptionMap: Record<string, string[]> = {
   '💴': ['bank'],
   '💶': ['bank'],
   '💷': ['bank'],
+  warning: ['warning', 'outage'],
+  yellow: ['warning', 'outage'],
+  triangle: ['warning', 'outage'],
+  error: ['warning', 'outage'],
+  warn: ['warning', 'outage'],
+  yield: ['warning', 'outage'],
   'chat bubble': ['chat'],
   speech: ['chat'],
   communication: ['chat'],

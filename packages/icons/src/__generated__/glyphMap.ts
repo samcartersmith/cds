@@ -1495,6 +1495,15 @@ const glyphMap: Record<InternalIconName, string> = {
   'nav-qrCode-16-inactive': '',
   'nav-qrCode-24-active': '',
   'nav-qrCode-24-inactive': '',
+  'ui-infoInactive-12': '',
+  'ui-infoInactive-16': '',
+  'ui-infoInactive-24': '',
+  'ui-logout-12': '',
+  'ui-logout-16': '',
+  'ui-logout-24': '',
+  'ui-login-12': '',
+  'ui-login-16': '',
+  'ui-login-24': '',
 };
 
 export default glyphMap;

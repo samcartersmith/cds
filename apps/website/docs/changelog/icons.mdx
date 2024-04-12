@@ -8,6 +8,31 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.8.0 (4/12/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 4/12/2024. [[#2932](https://github.cbhq.net/frontend/cds/pull/2932)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- infoInactive
+- login
+- logout
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- sortDownCenter
+- sortUpCenter
+
 ## 2.7.0 (4/1/2024 PST)
 
 #### 🚀 Updates
