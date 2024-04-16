@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.6.0 (4/16/2024 PST)
+
+#### 🚀 Updates
+
+- Fix ButtonOrLink and Link to render buttons when `href` or `to` props are empty strings. [[#2937](https://github.cbhq.net/frontend/cds/pull/2937)]
+
 ## 6.5.11 (4/11/2024 PST)
 
 #### 🐞 Fixes
