@@ -83,6 +83,13 @@ const InputScreen = () => {
           placeholder="john.doe@coinbase.com"
           variant="negative"
         />
+        <MockTextInput
+          align="end"
+          helperText="username must start with an @ symbol"
+          label="Username"
+          placeholder="john.doe@coinbase.com"
+          variant="negative"
+        />
       </Example>
       <Example inline title="TextInput ColorSurge">
         <MockTextInput

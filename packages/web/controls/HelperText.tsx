@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { InputVariant } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 
@@ -22,34 +22,33 @@ export const HelperText = memo(function HelperText({
   errorIconAccessibilityLabel,
   errorIconTestID,
   children,
+  dangerouslySetColor,
   ...props
 }: HelperTextProps) {
   const density = useScaleDensity();
-  const renderErrorIcon = () => (
-    <Box as="span" display="inline-block" spacingEnd={0.5}>
-      <Icon
-        accessibilityLabel={errorIconAccessibilityLabel}
-        color="negative"
-        name="info"
-        size="xs"
-        testID={errorIconTestID}
-      />
-    </Box>
-  );
-
-  if (density === 'dense') {
-    return (
-      <TextBody as="span" color={color} display="block" {...props}>
-        {color === 'negative' && renderErrorIcon()}
-        {children}
-      </TextBody>
-    );
-  }
+  const TextComponent = useMemo(() => (density === 'dense' ? TextBody : TextLabel2), [density]);
 
   return (
-    <TextLabel2 as="span" color={color} display="block" {...props}>
-      {color === 'negative' && renderErrorIcon()}
+    <TextComponent
+      as="span"
+      color={color}
+      dangerouslySetColor={dangerouslySetColor}
+      display="block"
+      {...props}
+    >
+      {color === 'negative' && (
+        <Box as="span" display="inline-block" spacingEnd={0.5}>
+          <Icon
+            accessibilityLabel={errorIconAccessibilityLabel}
+            color="negative"
+            dangerouslySetColor={dangerouslySetColor}
+            name="info"
+            size="xs"
+            testID={errorIconTestID}
+          />
+        </Box>
+      )}
       {children}
-    </TextLabel2>
+    </TextComponent>
   );
 });

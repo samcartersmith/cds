@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.5.11 (4/11/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: HelperText icon position bug on Andorid and refactored HelperText components. [[#2927](https://github.cbhq.net/frontend/cds/pull/2927)]
+
 ## 6.5.10 ((4/11/2024, 12:43 PM PST))
 
 This is an artificial version bump with no new change.

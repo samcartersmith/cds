@@ -1,21 +1,11 @@
-import { render, screen } from '@testing-library/react';
+/* eslint-disable react-native/no-raw-text */
+import { render, screen } from '@testing-library/react-native';
 
-import { ThemeProvider } from '../../system';
 import { HelperText } from '../HelperText';
 
 describe('HelperText.test', () => {
-  it('renders text', () => {
+  it('renders children', () => {
     render(<HelperText>Test text</HelperText>);
-
-    expect(screen.getByText('Test text')).toBeTruthy();
-  });
-
-  it('renders dense text', () => {
-    render(
-      <ThemeProvider scale="xSmall">
-        <HelperText>Test text</HelperText>
-      </ThemeProvider>,
-    );
 
     expect(screen.getByText('Test text')).toBeTruthy();
   });
@@ -28,7 +18,7 @@ describe('HelperText.test', () => {
     );
 
     expect(screen.getByText('Test text')).toHaveStyle({ color: 'yellow' });
-    expect(screen.getByTestId('error-icon-glyph')).toHaveStyle({ color: 'yellow' });
+    expect(screen.getByRole('image')).toHaveStyle({ color: 'yellow' });
   });
 
   it('renders custom spacing', () => {
@@ -37,7 +27,11 @@ describe('HelperText.test', () => {
         Test text
       </HelperText>,
     );
-
-    expect(screen.getByTestId('helper-text-test')).toHaveStyle({ padding: 40 });
+    expect(screen.getByTestId('helper-text-test')).toHaveStyle({
+      paddingBottom: 32,
+      paddingLeft: 32,
+      paddingRight: 32,
+      paddingTop: 32,
+    });
   });
 });

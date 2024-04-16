@@ -33,3 +33,13 @@ export const TextAlign = () => {
     </div>
   );
 };
+
+export const CustomColor = () => {
+  return (
+    <div>
+      <HelperText color="negative" dangerouslySetColor="orange">
+        Test message
+      </HelperText>
+    </div>
+  );
+};

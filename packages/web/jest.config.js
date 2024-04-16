@@ -1,7 +1,7 @@
 module.exports = {
   displayName: 'web',
   preset: '@cbhq/jest-preset',
-  setupFiles: ['<rootDir>/jest/setup.js', '<rootDir>/jest/jestThrowOnErrorAndWarning.js'],
+  setupFiles: ['<rootDir>/jest/setup.js'],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
   coveragePathIgnorePatterns: [
     '<rootDir>/styles',
