@@ -4,9 +4,13 @@
 
 <!-- A brief overview of the change. Include UI screenshots of new screens or if major modifications are made to existing ones. -->
 
-**JIRA Ticket**:
+**JIRA ticket**
 
 <!-- If there's a JIRA ticket for this, it's helpful to reviewers for you to link to it in the PR description, and link back to this PR from a comment on that JIRA ticket. -->
+
+**Root cause (required for bugfixes)**
+
+<!-- Detailed description of the problem this bugfix is addressing, why it occurred, and how the proposed changes address the issue. This section is critical for understanding the context of the changes. -->
 
 **UI changes**
 
