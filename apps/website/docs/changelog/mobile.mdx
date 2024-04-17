@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.7.0 ((4/17/2024, 12:55 PM PST))
+
+This is an artificial version bump with no new change.
+
 ## 6.6.0 ((4/16/2024, 10:19 AM PST))
 
 This is an artificial version bump with no new change.

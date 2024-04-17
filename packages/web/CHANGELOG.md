@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.7.0 (4/17/2024 PST)
+
+#### 🚀 Updates
+
+- Add support for spacer gaps in Stacks. [[#2940](https://github.cbhq.net/frontend/cds/pull/2940)]
+
 ## 6.6.0 (4/16/2024 PST)
 
 #### 🚀 Updates

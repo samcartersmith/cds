@@ -72,6 +72,30 @@ const FlexLayout = () => {
   );
 };
 
+const HStackWithSpacer = () => {
+  return (
+    <HStack bordered spacerGap={1} spacing={1}>
+      {Array.from({ length: 5 }).map((_, idx) => (
+        <Item key={idx}>
+          <TextBody as="p">{idx + 1}</TextBody>
+        </Item>
+      ))}
+    </HStack>
+  );
+};
+
+const VStackWithSpacer = () => {
+  return (
+    <VStack bordered spacerGap={1} spacing={1}>
+      {Array.from({ length: 5 }).map((_, idx) => (
+        <Item key={idx}>
+          <TextBody as="p">{idx + 1}</TextBody>
+        </Item>
+      ))}
+    </VStack>
+  );
+};
+
 const FlexGrow = () => {
   return (
     <HStack {...sharedWrapperProps}>
@@ -317,6 +341,10 @@ export const Examples = () => {
           title="The Holy Grail Layout"
         >
           <HolyGrailLayout />
+        </Example>
+        <Example title="Stacks with spacer gaps">
+          <HStackWithSpacer />
+          <VStackWithSpacer />
         </Example>
       </VStack>
       <Divider spacingVertical={4} />
