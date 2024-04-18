@@ -57,6 +57,8 @@ const descriptionMap: Record<string, string[]> = {
     'rocketInactive',
     'bellInactive',
     'crypto',
+    'sortDownCenterInactive',
+    'sortUpCenterInactive',
   ],
   spin: ['setPinCode'],
   password: ['setPinCode'],

@@ -38,6 +38,7 @@ export type SpotSquareName =
   | 'coinbaseCardPocket'
   | 'coinbaseCardSparkle'
   | 'coinbaseFees'
+  | 'coinbaseOneBoostedCard'
   | 'coinbaseOneDiscountedAmount'
   | 'coinbaseOneLogo'
   | 'coinbaseOneRewards'

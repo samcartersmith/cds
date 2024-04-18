@@ -211,6 +211,7 @@ const versionMap: Record<SpotSquareName, number> = {
   lightningNetworkSend: 0,
   idError: 0,
   outage: 0,
+  coinbaseOneBoostedCard: 0,
 };
 
 export default versionMap;

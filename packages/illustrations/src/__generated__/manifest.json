@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-04-12T20:18:45.352Z",
+  "lastUpdated": "2024-04-18T17:17:54.084Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -19730,7 +19730,7 @@
       "height": 32,
       "description": "warning, yellow, triangle, error, warn, yield",
       "createdAt": "2023-11-07T19:19:47.052Z",
-      "lastUpdated": "2023-12-11T22:49:03.993Z",
+      "lastUpdated": "2024-04-18T14:49:25.002Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/warning-0.svg",
         "svgDark": "./spotIcon/svg/dark/warning-0.svg",
@@ -20030,7 +20030,7 @@
       "height": 239.99951171875,
       "description": "earn, globe, coin, percent, staking, yield, assets, circle, international",
       "createdAt": "2024-01-08T22:09:29.365Z",
-      "lastUpdated": "2024-01-08T22:09:29.365Z",
+      "lastUpdated": "2024-04-15T18:15:11.660Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/earnGlobe-0.svg",
         "svgDark": "./heroSquare/svg/dark/earnGlobe-0.svg",
@@ -20110,7 +20110,7 @@
       "height": 240,
       "description": "",
       "createdAt": "2024-01-08T22:09:29.360Z",
-      "lastUpdated": "2024-01-09T20:32:11.474Z",
+      "lastUpdated": "2024-04-16T16:38:12.592Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/borrowCoins-0.svg",
         "svgDark": "./heroSquare/svg/dark/borrowCoins-0.svg",
@@ -20470,7 +20470,7 @@
       "height": 240,
       "description": "connecting dots, blue, circle, decentralization, green",
       "createdAt": "2024-01-08T22:09:29.472Z",
-      "lastUpdated": "2024-01-09T18:44:09.817Z",
+      "lastUpdated": "2024-04-17T09:20:57.072Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/sustainable-0.svg",
         "svgDark": "./heroSquare/svg/dark/sustainable-0.svg",
@@ -21159,6 +21159,26 @@
         "svgJsDark": "./heroSquare/svgJs/dark/errorRefreshWeb-0.js",
         "pngLight": "./heroSquare/png/light/errorRefreshWeb-0.png",
         "pngDark": "./heroSquare/png/dark/errorRefreshWeb-0.png"
+      },
+      "version": 0
+    },
+    "7808:2": {
+      "type": "spotSquare",
+      "name": "coinbaseOneBoostedCard",
+      "hash": "MyT9MahL0/JKisL6M5swFvfIVa2aRQ88GZ9D5SeJCo8=",
+      "width": 95.99951171875,
+      "height": 96,
+      "description": "CoinbaseOne, CoinbaseOneCard, card, coinbase, One, cb1, coin,",
+      "createdAt": "2024-04-16T19:15:59.555Z",
+      "lastUpdated": "2024-04-16T19:15:59.555Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/coinbaseOneBoostedCard-0.svg",
+        "svgDark": "./spotSquare/svg/dark/coinbaseOneBoostedCard-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/coinbaseOneBoostedCard-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/coinbaseOneBoostedCard-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneBoostedCard-0.js",
+        "pngLight": "./spotSquare/png/light/coinbaseOneBoostedCard-0.png",
+        "pngDark": "./spotSquare/png/dark/coinbaseOneBoostedCard-0.png"
       },
       "version": 0
     }

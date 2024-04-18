@@ -145,6 +145,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseFees-2').content,
     dark: () => require('../svgJs/dark/coinbaseFees-2').content,
   },
+  coinbaseOneBoostedCard: {
+    light: () => require('../svgJs/light/coinbaseOneBoostedCard-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneBoostedCard-0').content,
+  },
   coinbaseOneDiscountedAmount: {
     light: () => require('../svgJs/light/coinbaseOneDiscountedAmount-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneDiscountedAmount-2').content,

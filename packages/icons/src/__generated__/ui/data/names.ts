@@ -279,6 +279,8 @@ const names: UiIconName[] = [
   'infoInactive',
   'logout',
   'login',
+  'sortDownCenterInactive',
+  'sortUpCenterInactive',
 ];
 
 export default names;

@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.4.0 (4/18/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 4/18/2024. [[#2944](https://github.cbhq.net/frontend/cds/pull/2944)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Square
+
+- coinbaseOneBoostedCard
+
 ## 3.3.0 (4/12/2024 PST)
 
 #### 🚀 Updates
