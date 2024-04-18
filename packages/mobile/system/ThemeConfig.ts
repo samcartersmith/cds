@@ -44,6 +44,7 @@ export type CreateThemeConfigParams = {
   palette: NewPartialPaletteConfig;
   parentThemeConfig?: ThemeConfig;
   name: string;
+  spectrum?: Spectrum | null;
 };
 
 export type CreateThemeConfigForSpectrumParams = CreateThemeConfigParams & {

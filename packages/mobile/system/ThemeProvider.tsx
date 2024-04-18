@@ -19,6 +19,7 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
           parentThemeConfig,
           palette,
           name,
+          spectrum,
         });
       }
       // This means this is the root ThemeProvider

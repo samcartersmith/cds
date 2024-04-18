@@ -23,7 +23,7 @@ describe('ThemeProvider', () => {
     const { result } = renderHook(() => useThemeConfig(), {
       wrapper: ThemeProvider,
     });
-    expect(result.current.config.name).toBe('default');
+    expect(result.current.config.name).toBe('default-light');
   });
 
   it('has activeConfig = config.light by default', () => {
@@ -59,16 +59,16 @@ describe('ThemeProvider', () => {
     const { result } = renderHook(() => useThemeConfig(), {
       wrapper: Wrapper,
     });
-    expect(result.current.config.name).toBe('default-brand');
+    expect(result.current.config.name).toBe('default-light-brand');
     expect(result.current.activeConfig.palette).toEqual({
       ...defaultPalette,
       primary: 'orange50',
     });
     expect(Array.from(createThemeConfig.cache.keys())).toEqual([
-      'default',
-      'default-brand',
-      'default-brand-elevation1',
-      'default-brand-elevation2',
+      'default-light',
+      'default-light-brand',
+      'default-light-brand-elevation1',
+      'default-light-brand-elevation2',
     ]);
   });
 
@@ -81,11 +81,12 @@ describe('ThemeProvider', () => {
       ),
     });
     expect(Array.from(createThemeConfig.cache.keys())).toEqual([
-      'default',
-      'default-elevation1',
-      'default-elevation1-elevation1Children',
-      'default-elevation2',
-      'default-elevation2-elevation2Children',
+      'default-light',
+      'default-light-elevation1',
+      'default-light-elevation1-elevation1Children',
+      'default-light-elevation2',
+      'default-light-elevation2-elevation2Children',
+      'default-dark',
     ]);
   });
 
@@ -98,9 +99,9 @@ describe('ThemeProvider', () => {
       ),
     });
     expect(Array.from(createThemeConfig.cache.keys())).toEqual([
-      'default',
-      'default-elevation1',
-      'default-elevation2',
+      'default-light',
+      'default-light-elevation1',
+      'default-light-elevation2',
     ]);
   });
 
@@ -177,12 +178,13 @@ describe('ThemeProvider', () => {
     });
 
     expect(Array.from(createThemeConfig.cache.keys())).toEqual([
-      'default',
-      'default-custom-green',
-      'default-custom-green-elevation1',
-      'default-custom-green-elevation1-elevation1Children',
-      'default-custom-green-elevation2',
-      'default-custom-green-elevation2-elevation2Children',
+      'default-light',
+      'default-light-custom-green-dark',
+      'default-light-custom-green-dark-elevation1',
+      'default-light-custom-green-dark-elevation1-elevation1Children',
+      'default-light-custom-green-dark-elevation2',
+      'default-light-custom-green-dark-elevation2-elevation2Children',
+      'default-dark',
     ]);
 
     expect(result.current.activeConfig.palette).toEqual({
@@ -212,23 +214,24 @@ describe('ThemeProvider', () => {
     });
 
     expect(Array.from(createThemeConfig.cache.keys())).toEqual([
-      'default',
-      'default-palette1',
-      'default-palette1-elevation1',
-      'default-palette1-elevation1-elevation1Children',
-      'default-palette1-elevation2',
-      'default-palette1-elevation2-elevation2Children',
-      'default-palette1-palette2',
-      'default-palette1-palette2-elevation1',
-      'default-palette1-palette2-elevation2',
-      'default-palette1-palette2-palette3',
-      'default-palette1-palette2-palette3-elevation1',
-      'default-palette1-palette2-palette3-elevation1-elevation1Children',
-      'default-palette1-palette2-palette3-elevation2',
-      'default-palette1-palette2-palette3-elevation2-elevation2Children',
-      'default-palette1-palette2-palette3-palette4',
-      'default-palette1-palette2-palette3-palette4-elevation1',
-      'default-palette1-palette2-palette3-palette4-elevation2',
+      'default-light',
+      'default-light-palette1-dark',
+      'default-light-palette1-dark-elevation1',
+      'default-light-palette1-dark-elevation1-elevation1Children',
+      'default-light-palette1-dark-elevation2',
+      'default-light-palette1-dark-elevation2-elevation2Children',
+      'default-dark',
+      'default-light-palette1-dark-palette2-light',
+      'default-light-palette1-dark-palette2-light-elevation1',
+      'default-light-palette1-dark-palette2-light-elevation2',
+      'default-light-palette1-dark-palette2-light-palette3-dark',
+      'default-light-palette1-dark-palette2-light-palette3-dark-elevation1',
+      'default-light-palette1-dark-palette2-light-palette3-dark-elevation1-elevation1Children',
+      'default-light-palette1-dark-palette2-light-palette3-dark-elevation2',
+      'default-light-palette1-dark-palette2-light-palette3-dark-elevation2-elevation2Children',
+      'default-light-palette1-dark-palette2-light-palette3-dark-palette4-light',
+      'default-light-palette1-dark-palette2-light-palette3-dark-palette4-light-elevation1',
+      'default-light-palette1-dark-palette2-light-palette3-dark-palette4-light-elevation2',
     ]);
 
     expect(result.current.activeConfig.palette).toEqual({

@@ -54,13 +54,11 @@ export const defaultPaletteOverrides = {
 
 export const elevation1Palette = { dark: { background: 'gray5', transparent: 'gray5' } } as const;
 
-export const elevation1ChildrenPalette = { dark: { secondary: ['gray5', 1] } } as const;
+export const elevation1ChildrenPalette = { dark: { secondary: ['gray20', 1] } } as const;
 
 export const elevation2Palette = { dark: { background: 'gray10', transparent: 'gray10' } } as const;
 
-export const elevation2ChildrenPalette = {
-  dark: { line: ['gray60', 0.68], secondary: ['gray10', 1] },
-} as const;
+export const elevation2ChildrenPalette = { dark: { line: ['gray60', 0.68] } } as const;
 
 export const overlayPalette = {
   light: { backgroundOverlay: ['gray80', 0.33] },

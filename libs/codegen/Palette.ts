@@ -42,7 +42,7 @@ const elevation1Palette = {
 } as const;
 
 const elevation1ChildrenPalette = {
-  dark: { secondary: ['gray5', 1] },
+  dark: { secondary: ['gray20', 1] },
 } as const;
 
 const elevation2Palette = {
@@ -50,7 +50,7 @@ const elevation2Palette = {
 } as const;
 
 const elevation2ChildrenPalette = {
-  dark: { line: ['gray60', 0.68], secondary: ['gray10', 1] },
+  dark: { line: ['gray60', 0.68] },
 } as const;
 
 const overlayPalette = {

@@ -190,8 +190,7 @@ describe('useElevationStyles', () => {
       '--background': paletteValueToCssVar('gray10'),
       '--transparent': paletteValueToCssVar('gray10'),
       '--primary': paletteValueToCssVar('blue70'),
-      // @ts-expect-error - secondary exists on elevationChildrenPalette level 2
-      '--secondary': paletteValueToCssVar(elevationChildrenPalette[2].secondary),
+      '--secondary': paletteValueToCssVar('gray20'),
       // @ts-expect-error - line exists on elevationChildrenPalette level 2
       '--line': paletteValueToCssVar(elevationChildrenPalette[2].line),
     });

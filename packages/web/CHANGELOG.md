@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.8.0 (4/18/2024 PST)
+
+#### 🚀 Updates
+
+- Add frontier elevated stories. [[#2943](https://github.cbhq.net/frontend/cds/pull/2943)]
+
 ## 6.7.0 (4/17/2024 PST)
 
 #### 🚀 Updates

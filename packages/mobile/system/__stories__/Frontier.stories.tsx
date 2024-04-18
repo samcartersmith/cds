@@ -14,7 +14,19 @@ const FrontierExampleScreen = () => (
           The following components are intended to be used purely for visual regression testing when
           Frontier is enabled as the default treatment for CDS libraries.
         </TextHeadline>
-        <VStack bordered borderRadius="roundedLarge" gap={2} spacing={2}>
+        <VStack background borderRadius="roundedLarge" elevation={1} gap={2} spacing={2}>
+          <TextBody spacingBottom={3}>
+            Secondary palette is unchanged when the parent has an elevation of 1
+          </TextBody>
+          <Button variant="secondary">Secondary button</Button>
+        </VStack>
+        <VStack background borderRadius="roundedLarge" elevation={2} gap={2} spacing={2}>
+          <TextBody spacingBottom={3}>
+            Secondary palette is unchanged when the parent has an elevation of 2
+          </TextBody>
+          <Button variant="secondary">Secondary button</Button>
+        </VStack>
+        <VStack background bordered borderRadius="roundedLarge" gap={2} spacing={2}>
           <TextBody spacingBottom={3}>
             Secondary buttons have a filled grey background and no border.
           </TextBody>

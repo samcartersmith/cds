@@ -79,7 +79,7 @@ describe('ElevationChildrenProvider', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
       wrapper: Wrapper,
     });
-    expect(result.current.background).not.toEqual(defaultPalette.background);
+    expect(result.current.background).not.toEqual(darkDefaultPalette.background);
     expect(result.current.background).toBe('gray5');
     expect(result.current.secondary).toStrictEqual(elevation1ChildrenPalette.dark.secondary);
     // should not override line unless level 2
@@ -100,7 +100,7 @@ describe('ElevationChildrenProvider', () => {
       wrapper: Wrapper,
     });
     expect(result.current.background).not.toEqual(defaultPalette.background);
-    expect(result.current.secondary).toStrictEqual(elevation2ChildrenPalette.dark.secondary);
+    expect(result.current.secondary).toStrictEqual(darkDefaultPalette.secondary);
     // line should be brighter
     expect(result.current.line).toStrictEqual(elevation2ChildrenPalette.dark.line);
   });
