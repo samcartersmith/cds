@@ -463,6 +463,17 @@ const propDeprecations: Prop[] = [
       },
     },
   },
+  {
+    name: 'gap',
+    components: ['VStack', 'HStack'],
+    package: 'web',
+    type: 'api',
+    migrationMap: {
+      api: {
+        gap: 'spacerGap',
+      },
+    },
+  },
 ];
 
 const functionDeprecations: FunctionDeprecation[] = [

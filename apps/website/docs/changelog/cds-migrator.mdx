@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.49 (4/18/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: add gap migration script. [[#2941](https://github.cbhq.net/frontend/cds/pull/2941)]
+
 ## 0.1.48 (4/2/2024 PST)
 
 #### 🐞 Fixes

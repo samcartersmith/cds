@@ -29,6 +29,12 @@ We're also phasing out prefixing props with `dangerouslySet`. We've removed that
 - if a component has `background` and `dangerouslySetBackground` we'll support both props with `dangerouslySetBackground` having higher priority.
 - if a component has `dangerouslySetBackground` and no `background` props, we've removed the `dangerouslySet` prefix in CDS 6.
 
+We added a new prop `spacerGap` on `HStack` and `VStack` in web package on [v6.7.0](/changelog/web/#670-4172024-pst). The `spacerGap` mimics the original spacer component behavior by injecting a spacer componet, whereas `gap` prop utilize CSS gap property. If you do not have the `flexGap` feature flag enabled in your project, you will need to run the following scripts to migrate `gap` to `spacerGap` in order to have the same spacing behavior as in v5.
+
+```shell
+yarn nx generate @cbhq/cds-migrator:migrate gap
+```
+
 ### New Packages
 
 The Sparkline components have been moved into their own packages. Migration was previously optional but is now required in v6. Use the `cds-migrator` to automatically migrate instances and update package dependencies. The migrator will also bump these packages to `v1.0.0`.
