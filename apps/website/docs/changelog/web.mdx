@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.8.1 (4/19/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: pressable card background overflow issue. [[DX-3341](https://jira.coinbase-corp.com/browse/DX-3341)]
+
 ## 6.8.0 (4/18/2024 PST)
 
 #### 🚀 Updates

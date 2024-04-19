@@ -114,6 +114,9 @@ export function cardBuilder({
         <Card {...sharedPressProps} elevation={2} size="medium">
           <LoremIpsum title="Medium size" />
         </Card>
+        <Card {...sharedPressProps} borderRadius="roundedLarge" elevation={1}>
+          <LoremIpsum title="With Border Radius" />
+        </Card>
       </VStack>
     </ThemeProvider>
   );

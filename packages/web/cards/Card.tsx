@@ -35,6 +35,7 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
     accessibilityLabelledBy,
     accessibilityHint,
     testID,
+    borderRadius,
     ...props
   }) => {
     const width = widthProps ?? cardSizes[size].width;
@@ -46,6 +47,7 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
     const content = (
       <VStack
         background={linkable ? undefined : bg}
+        borderRadius={borderRadius}
         height={linkable ? undefined : height}
         overflow="hidden"
         pin={linkable ? undefined : pin}
@@ -63,6 +65,7 @@ export const Card: React.FC<React.PropsWithChildren<CardProps>> = memo(
         accessibilityLabel={accessibilityLabel}
         accessibilityLabelledBy={accessibilityLabelledBy}
         background={bg}
+        borderRadius={borderRadius}
         className={cx(cardPressableStyles, pinStyles)}
         height={height}
         href={href}
