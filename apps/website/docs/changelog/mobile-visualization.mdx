@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Add stories for SparklineInteractive with custom stroke color on mobile. [[#2947](https://github.cbhq.net/frontend/cds/pull/2947)] [[DX-3619](https://jira.coinbase-corp.com/browse/DX-3619)]
+
 ## 1.0.0 (2/23/2024 PST)
 
 #### 💥 Breaking

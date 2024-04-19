@@ -30,6 +30,8 @@ const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilde
 });
 
 const strokeColor = '#F7931A';
+const rgbaStrokeColor = 'rgba(123, 1, 1, 5)';
+const rgbStrokeColor = 'rgb(123, 1, 121)';
 
 export const Default = () => (
   <React.StrictMode>
@@ -107,6 +109,38 @@ export const yAxisScaling = () => (
 
 yAxisScaling.bind({});
 yAxisScaling.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
+export const CustomRGBStrokeColor = () => (
+  <React.StrictMode>
+    <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={rgbStrokeColor} />
+  </React.StrictMode>
+);
+
+CustomRGBStrokeColor.bind({});
+CustomRGBStrokeColor.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
+export const CustomRGBAStrokeColor = () => (
+  <React.StrictMode>
+    <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={rgbaStrokeColor} />
+  </React.StrictMode>
+);
+
+CustomRGBAStrokeColor.bind({});
+CustomRGBAStrokeColor.parameters = {
   percy: enableJavascript,
   a11y: {
     config: {

@@ -28,6 +28,9 @@ const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilde
   disableScrubbing: !__DEV__,
 });
 
+const rgbaStrokeColor = 'rgba(123, 1, 1, 5)';
+const rgbStrokeColor = 'rgb(123, 1, 121)';
+
 const SparklineInteractiveScreen = () => {
   return (
     <ExampleScreen>
@@ -215,6 +218,25 @@ const SparklineInteractiveScreen = () => {
             data={sparklineInteractiveData}
             hoverData={sparklineInteractiveHoverData}
             strokeColor={strokeColor}
+          />
+        </Box>
+      </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
+            Custom RGB Stoke Color
+          </TextTitle3>
+          <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={rgbStrokeColor} />
+        </Box>
+      </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
+            Custom RGBA Stoke Color
+          </TextTitle3>
+          <SparklineInteractiveBuild
+            data={sparklineInteractiveData}
+            strokeColor={rgbaStrokeColor}
           />
         </Box>
       </Example>

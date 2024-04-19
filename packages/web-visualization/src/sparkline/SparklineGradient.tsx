@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo, useRef } from 'react';
+import React, { forwardRef, memo, useId, useMemo, useRef } from 'react';
 import { SparklineBaseProps } from '@cbhq/cds-common/types';
 import { generateSparklineAreaWithId } from '@cbhq/cds-common/visualizations/generateSparklineAreaWithId';
 import { getSparklineTransform } from '@cbhq/cds-common/visualizations/getSparklineTransform';
@@ -15,17 +15,14 @@ export const SparklineGradient = memo(
       const patternId = useRef<string>(generateRandomId());
       const gradient = useAccessibleForegroundGradient({ background, color, usage: 'graphic' });
       const areaColor = useAccessibleForeground({ background, color, usage: 'graphic' });
-      const gradientId = background
-        ? `sparkline-gradient-${background}-${color}`
-        : `sparkline-gradient-${color}`;
-      const cleanId = gradientId.replace('#', '');
+      const gradientId = useId();
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
 
       const hasChildren = !!children;
       const linearGradient = useMemo(() => {
         return (
           <defs>
-            <linearGradient id={cleanId} x1="0%" x2="100%" y1="0%" y2="0%">
+            <linearGradient id={gradientId} x1="0%" x2="100%" y1="0%" y2="0%">
               {gradient.map((item, i) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
@@ -34,13 +31,13 @@ export const SparklineGradient = memo(
             {hasChildren && <SparklineAreaPattern color={areaColor} id={patternId.current} />}
           </defs>
         );
-      }, [cleanId, gradient, hasChildren, areaColor]);
+      }, [gradientId, gradient, hasChildren, areaColor]);
 
       return (
         <svg height={height} width={width}>
           {linearGradient}
           <g {...translateProps}>
-            <SparklinePath ref={forwardedRef} path={path} stroke={`url(#${cleanId})`} />
+            <SparklinePath ref={forwardedRef} path={path} stroke={`url(#${gradientId})`} />
             {generateSparklineAreaWithId(patternId.current, children)}
           </g>
         </svg>
