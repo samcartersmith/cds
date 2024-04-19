@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.8.2 (4/19/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: NudgeCard style inconsistency with design. [[DX-3640](https://jira.coinbase-corp.com/browse/DX-3640)]
+
 ## 6.8.1 (4/19/2024 PST)
 
 #### 🐞 Fixes

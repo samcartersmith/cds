@@ -18,7 +18,7 @@ export type NudgeCardBaseProps = {
   /** Text or ReactNode to display as the call to action */
   action?: ReactNode;
   /**
-   * Maximum number of lines shown for the description text. Text that exceeds will be truncated.
+   * Maximum number of lines shown for the title and description text. Text that exceeds will be truncated.
    * @default 3
    */
   numberOfLines?: number;

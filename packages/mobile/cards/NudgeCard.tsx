@@ -96,7 +96,7 @@ export const NudgeCard = memo(
           {...props}
         >
           <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
-            <VStack gap={1} maxWidth="100%" spacingTop={hasMedia ? 0 : 2}>
+            <VStack gap={0.5} maxWidth="100%" spacingTop={hasMedia ? 0 : 2}>
               <TextHeadline
                 ellipsize="tail"
                 numberOfLines={numberOfLines}
@@ -106,7 +106,7 @@ export const NudgeCard = memo(
                 {title}
               </TextHeadline>
               <TextLabel2
-                color="foregroundMuted"
+                color="foreground"
                 ellipsize="tail"
                 numberOfLines={numberOfLines}
                 testID={`${testID}-description`}
