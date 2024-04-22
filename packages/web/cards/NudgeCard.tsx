@@ -118,7 +118,6 @@ export const NudgeCard = memo(
               </TextHeadline>
               <TextLabel2
                 as="p"
-                color="foreground"
                 numberOfLines={numberOfLines}
                 testID={`${testID}-description`}
                 transform="none"

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.8.3 (4/19/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: remove unnecessary color prop set to foreground for text components. [[DX-3641](https://jira.coinbase-corp.com/browse/DX-3641)]
+
 ## 6.8.2 (4/19/2024 PST)
 
 #### 🐞 Fixes

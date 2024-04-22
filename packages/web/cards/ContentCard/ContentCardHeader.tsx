@@ -34,7 +34,7 @@ export const ContentCardHeader = memo(
             avatar
           )}
           {typeof title === 'string' ? (
-            <TextLabel1 as="p" color="foreground" numberOfLines={1}>
+            <TextLabel1 as="p" numberOfLines={1}>
               {title}
             </TextLabel1>
           ) : (

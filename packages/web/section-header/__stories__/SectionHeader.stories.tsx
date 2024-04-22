@@ -174,11 +174,7 @@ export const Examples = () => {
         }
         icon={null}
         start={null}
-        title={
-          <TextLabel1 as="p" color="foreground">
-            SectionHeader
-          </TextLabel1>
-        }
+        title={<TextLabel1 as="p">SectionHeader</TextLabel1>}
       />
       <Divider />
       <SectionHeader
@@ -201,11 +197,7 @@ export const Examples = () => {
         }
         icon={null}
         start={null}
-        title={
-          <TextLabel1 as="p" color="foreground">
-            SectionHeader
-          </TextLabel1>
-        }
+        title={<TextLabel1 as="p">SectionHeader</TextLabel1>}
       />
       <Divider />
       <SectionHeader

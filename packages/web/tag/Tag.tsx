@@ -60,7 +60,7 @@ export const Tag = memo(
           testID={testID}
           {...props}
         >
-          <Text as="span" color="foreground" data-testid={`${testID}--text`} overflow="truncate">
+          <Text as="span" data-testid={`${testID}--text`} overflow="truncate">
             {children}
           </Text>
         </Box>
