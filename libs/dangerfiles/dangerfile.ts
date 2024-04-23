@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { danger, fail, warn } from 'danger';
+import { danger, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
 
 import checkForBreakingChanges from './breakingChanges/checkForBreakingChanges';
@@ -33,6 +33,22 @@ const pr = danger.github?.pr || MOCK_PR;
 const bodyAndTitle = (pr.body + pr.title).toLowerCase();
 
 // Custom modifiers for people submitting PRs to be able to say "skip this"
+const skipDanger = bodyAndTitle.includes('#skip_danger');
+if (skipDanger) {
+  const changedFiles = danger.git.modified_files.concat(danger.git.created_files);
+  const changedProjects = changedFiles.map((file) => file.split('/')[1]);
+  const currentProject = process.env.NX_PROJECT_NAME as string;
+
+  if (changedProjects.includes(currentProject)) {
+    warn(
+      `Warning: You have chosen to skip danger checks for package/${process.env.NX_PROJECT_NAME} and acknowledge that you are responsible for any regressions introduced by this PR.\n\n` +
+        `**Why are you skipping danger checks?** Please provide a rationale in the PR description. For example:\n` +
+        `- "I believe it's a false positive and here's why..."\n` +
+        `- "I'm intentionally making a breaking change because..."`,
+    );
+    process.exit(0);
+  }
+}
 const acceptedNoTests = bodyAndTitle.includes('#skip_tests');
 const acceptedNoStories = bodyAndTitle.includes('#skip_stories');
 const acceptedOverrideDeprecation = bodyAndTitle.includes('#skip_deprecations');
@@ -54,7 +70,11 @@ const storyFiles = danger.git.fileMatch(
   `packages/${process.env.NX_PROJECT_NAME}/__stories__/**.(ts|tsx)`,
 );
 
-const cdsPackagesFiles = danger.git.fileMatch(...cdsPackagesPatterns);
+const cdsPackagesFiles = danger.git.fileMatch(
+  ...cdsPackagesPatterns.filter((pattern) =>
+    pattern.startsWith(`packages/${process.env.NX_PROJECT_NAME}`),
+  ),
+);
 
 // Encourage stories
 if (nonTestTsxFiles.created && !storyFiles.edited && !acceptedNoStories) {
@@ -100,7 +120,7 @@ void (async () => {
 
   // Ensure we're not increasing our deprecated footprint
   if (deprecations.modified.length && !acceptedOverrideDeprecation) {
-    fail(
+    warn(
       [
         '## 🤨 Did you modify a deprecated component?',
         `You have edited file(s) that contain a deprecation. Make sure the modification you made is not to a deprecated component, token, hook, parameter, prop, or function. Please refer to [go/cds-deprecations](https://cds.cbhq.net/resources/deprecations) for the full list of deprecations.`,

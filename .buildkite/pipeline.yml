@@ -149,7 +149,6 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci danger --allOnMaster --removePreviousComments
-    soft_fail: true
 
   - label: 'Percy (Web - All)'
     <<: *k8s_large_chrome
