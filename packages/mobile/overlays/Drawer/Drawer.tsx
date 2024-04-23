@@ -7,7 +7,15 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import { Animated, Modal, ModalProps, StyleSheet, useWindowDimensions, View } from 'react-native';
+import {
+  Animated,
+  Modal,
+  ModalProps,
+  Platform,
+  StyleSheet,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import { useSpectrum } from '@cbhq/cds-common';
 import { drawerAnimationDefaultDuration, MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import {
@@ -35,6 +43,7 @@ export const Drawer = memo(
       pin = 'bottom',
       onCloseComplete,
       preventDismissGestures = false,
+      preventHardwareBackBehaviorAndroid = false,
       hideHandleBar = false,
       disableCapturePanGestureToDismiss = false,
       onBlur,
@@ -45,6 +54,7 @@ export const Drawer = memo(
     ref,
   ) {
     const { width, height } = useWindowDimensions();
+    const isAndroid = Platform.OS === 'android';
 
     const {
       drawerAnimation,
@@ -68,6 +78,11 @@ export const Drawer = memo(
         }
       });
     }, [animateDrawerOut, animateOverlayOut, onCloseComplete]);
+
+    const handleRequestClose = useCallback(
+      () => (preventHardwareBackBehaviorAndroid && isAndroid ? undefined : handleClose()),
+      [preventHardwareBackBehaviorAndroid, handleClose, isAndroid],
+    );
 
     const handleSwipeToClose = useCallback(() => {
       if (!preventDismissGestures) {
@@ -173,7 +188,7 @@ export const Drawer = memo(
         transparent
         visible
         animationType="none"
-        onRequestClose={handleClose}
+        onRequestClose={handleRequestClose}
         {...props}
         accessibilityRole="alert"
       >

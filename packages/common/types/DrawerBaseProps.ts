@@ -20,6 +20,11 @@ export type DrawerBaseProps = {
    */
   preventDismissGestures?: boolean;
   /**
+   * Prevents a user from dismissing the drawer by pressing hardware back button on Android
+   * @default false
+   */
+  preventHardwareBackBehaviorAndroid?: boolean;
+  /**
    * The HandleBar by default only is used for a bottom pinned drawer. This removes it.
    * @default false
    * */

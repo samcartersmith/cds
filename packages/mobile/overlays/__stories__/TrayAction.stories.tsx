@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import { FlatList } from 'react-native';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { assets } from '@cbhq/cds-common/internal/data/assets';
-import { DrawerRefBaseProps } from '@cbhq/cds-common/types';
+import { DrawerRefBaseProps, TrayBaseProps } from '@cbhq/cds-common/types';
 
 import { Button } from '../../buttons/Button';
 import { ListCell, ListCellProps } from '../../cells';
@@ -43,7 +43,7 @@ const exampleOptions: ListCellProps[] = Array.from({ length: 10 }).map((_, idx) 
   selected: false,
 }));
 
-export const Default = () => {
+export const Default = (props: Partial<TrayBaseProps>) => {
   const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
     useToggler(false);
   const [items, setItems] = useState<Option[]>(defaultOptions);
@@ -89,6 +89,7 @@ export const Default = () => {
           title={
             <SectionHeader description={description} spacingHorizontal={3} title="Change network" />
           }
+          {...props}
         >
           {items?.map(({ media, ...item }, index) => (
             <ListCell
@@ -165,6 +166,10 @@ export const WithStickyFooter = () => {
   );
 };
 
+const NonDimissable = () => {
+  return <Default hideHandleBar preventDismissGestures preventHardwareBackBehaviorAndroid />;
+};
+
 export const ActionTrayScreen = () => {
   return (
     <ExampleScreen>
@@ -173,6 +178,9 @@ export const ActionTrayScreen = () => {
       </Example>
       <Example title="With Sticky Footer">
         <WithStickyFooter />
+      </Example>
+      <Example title="Non-dimissable">
+        <NonDimissable />
       </Example>
     </ExampleScreen>
   );

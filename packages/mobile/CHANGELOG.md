@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.9.0 (4/23/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: add prop to override default hardware back button behavior on Drawer. [[#2959](https://github.cbhq.net/frontend/cds/pull/2959)] [[DX-3214](https://jira.coinbase-corp.com/browse/DX-3214)]
+
 ## 6.8.4 (4/23/2024 PST)
 
 #### 🐞 Fixes
