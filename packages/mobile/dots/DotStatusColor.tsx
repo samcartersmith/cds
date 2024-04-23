@@ -38,6 +38,8 @@ export const DotStatusColor = memo(
         backgroundColor: palette[variant],
         alignItems: 'center',
         justifyContent: 'center',
+        borderColor: palette.secondary,
+        borderWidth: 1,
         ...pinStyles,
       };
     }, [iconSize, palette, pinStyles, variant]);

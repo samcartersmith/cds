@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.8.4 (4/23/2024 PST)
+
+#### 🐞 Fixes
+
+- Add border to dotstatuscolor. [[#2957](https://github.cbhq.net/frontend/cds/pull/2957)] [[DX-3503](https://jira.coinbase-corp.com/browse/DX-3503)]
+
 ## 6.8.3 (4/19/2024 PST)
 
 #### 🐞 Fixes

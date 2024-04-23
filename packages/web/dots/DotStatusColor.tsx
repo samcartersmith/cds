@@ -27,6 +27,8 @@ export const DotStatusColor = memo(
     const styles = useMemo(() => {
       return {
         borderRadius: borderRadius.roundedFull,
+        borderColor: palette.secondary,
+        borderWidth: '1px',
         width: iconSize,
         height: iconSize,
         backgroundColor: palette[variant],
