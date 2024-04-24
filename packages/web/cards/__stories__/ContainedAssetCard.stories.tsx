@@ -1,6 +1,7 @@
 import { assets, ethBackground } from '@cbhq/cds-common/internal/data/assets';
 import { subheadIconSignMap } from '@cbhq/cds-common/tokens/sparkline';
 
+import { DotStatusColor } from '../../dots';
 import { HStack, VStack } from '../../layout';
 import { TextLabel2 } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
@@ -130,6 +131,19 @@ export const Carousel = (): JSX.Element => (
     <ContainedAssetCard {...examplePropsWithChildren} size="l" />
   </HStack>
 );
+
+export const HeaderWithDotColorStatus = (): JSX.Element => {
+  return (
+    <ContainedAssetCard
+      {...exampleProps}
+      header={
+        <DotStatusColor overlap="circular" pin="top-end" size="xs" variant="negative">
+          {exampleProps.header}
+        </DotStatusColor>
+      }
+    />
+  );
+};
 
 export default {
   title: 'Core Components/Cards/ContainedAssetCard',

@@ -5,6 +5,7 @@ import { subheadIconSignMap } from '@cbhq/cds-common/tokens/sparkline';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { usePaletteValueToRgbaString } from '../../color/usePaletteValueToRgbaString';
+import { DotStatusColor } from '../../dots';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Carousel } from '../../media';
 import { TextLabel2 } from '../../typography';
@@ -116,6 +117,16 @@ const ContainedAssetCardScreen = () => {
               />
             </ContainedAssetCard>,
           ]}
+        />
+      </Example>
+      <Example title="Card with DotColorStatusHeader">
+        <ContainedAssetCard
+          {...exampleProps}
+          header={
+            <DotStatusColor overlap="circular" pin="top-end" size="xs" variant="negative">
+              {exampleProps.header}
+            </DotStatusColor>
+          }
         />
       </Example>
     </ExampleScreen>

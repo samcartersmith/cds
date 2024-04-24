@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.9.1 (4/23/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix: ContainedAssetCard header overflow. [[#2958](https://github.cbhq.net/frontend/cds/pull/2958)] [[DX-3655](https://jira.coinbase-corp.com/browse/DX-3655)]
+
 ## 6.9.0 ((4/23/2024, 01:21 PM PST))
 
 This is an artificial version bump with no new change.

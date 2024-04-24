@@ -57,7 +57,7 @@ export const ContainedAssetCard = memo(
           spacing={2}
           width={size === 'l' ? '50%' : '100%'}
         >
-          <HStack overflow="hidden">{header}</HStack>
+          <HStack>{header}</HStack>
           <VStack gap={0.5}>
             {typeof subtitle === 'string' ? (
               <TextLegal color="foregroundMuted" numberOfLines={1}>
