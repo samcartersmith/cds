@@ -38,8 +38,8 @@ export type PopoverProps = {
   onPressSubject?: () => void;
   /** Callback that is fired after the content animates out */
   onClose?: () => void;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
+  onMouseEnter?: (event: React.MouseEvent) => void;
+  onMouseLeave?: (event: React.MouseEvent) => void;
   /** Callback fired when the subject is focused */
   onFocus?: () => void;
   /** Callback fired when the subject or content is blurred */

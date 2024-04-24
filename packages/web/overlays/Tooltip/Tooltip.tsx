@@ -1,4 +1,4 @@
-import React, { cloneElement, useMemo } from 'react';
+import React, { cloneElement, useCallback, useMemo, useRef } from 'react';
 
 import { Popover } from '../popover/Popover';
 
@@ -24,6 +24,19 @@ export const Tooltip = ({
 }: TooltipProps) => {
   const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur, tooltipId } =
     useTooltipState(tooltipIdDefault);
+  const tooltipContentRef = useRef<HTMLDivElement | null>(null);
+
+  const handleMouseEnter = useCallback(
+    ({ target }: React.MouseEvent) => {
+      const node = tooltipContentRef.current;
+
+      // to prevent flicker, don't open tooltip if enter event originates from tooltip content
+      if (target instanceof Node && node?.parentNode !== target && !node?.contains(target)) {
+        handleOnMouseEnter();
+      }
+    },
+    [handleOnMouseEnter],
+  );
 
   const clonedChild = useMemo(() => {
     return cloneElement(children, {
@@ -45,6 +58,7 @@ export const Tooltip = ({
       invertPopoverSpectrum
       content={
         <TooltipContent
+          ref={tooltipContentRef}
           content={content}
           gap={gap}
           placement={placement}
@@ -58,7 +72,7 @@ export const Tooltip = ({
       onBlur={handleOnBlur}
       onFocus={handleOnFocus}
       onMouseDown={preventMouseDown}
-      onMouseEnter={handleOnMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleOnMouseLeave}
       visible={isVisible}
     >

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.9.2 (4/24/2024 PST)
+
+#### 🐞 Fixes
+
+- **[Tooltip]** Fix flicker on mouse out. [[#2964](https://github.cbhq.net/frontend/cds/pull/2964)] [[DX-3479](https://jira.coinbase-corp.com/browse/DX-3479)]
+
 ## 6.9.1 (4/23/2024 PST)
 
 #### 🐞 Fixes
