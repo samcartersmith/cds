@@ -299,6 +299,8 @@ const versionMap: Record<PictogramName, number> = {
   coinbaseOneProductIcon: 0,
   complianceNavigation: 0,
   assetManagementNavigation: 0,
+  verifiedPools: 0,
+  developerSDKNavigation: 0,
 };
 
 export default versionMap;

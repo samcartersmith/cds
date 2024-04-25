@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-04-18T17:17:39.106Z",
-  "metadata": { "lastUnicode": 62005 },
+  "lastUpdated": "2024-04-25T20:26:51.494Z",
+  "metadata": { "lastUnicode": 62011 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -473,7 +473,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61001 } }
       ],
       "createdAt": "2022-08-24T18:51:39.257Z",
-      "lastUpdated": "2024-01-03T19:40:17.585Z",
+      "lastUpdated": "2024-04-25T18:27:38.223Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-moreVertical-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-moreVertical-12-inactive.svg",
@@ -1592,7 +1592,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60091 } }
       ],
       "createdAt": "2023-02-01T23:25:02.061Z",
-      "lastUpdated": "2024-01-16T16:46:23.654Z",
+      "lastUpdated": "2024-04-24T20:14:02.065Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowDown-12.svg",
         "svg16": "./ui/svg/ui-arrowDown-16.svg",
@@ -1664,7 +1664,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60031 } }
       ],
       "createdAt": "2023-02-01T23:26:07.645Z",
-      "lastUpdated": "2024-03-05T21:21:51.872Z",
+      "lastUpdated": "2024-04-24T00:18:15.863Z",
       "outputs": {
         "svg12": "./ui/svg/ui-arrowsHorizontal-12.svg",
         "svg16": "./ui/svg/ui-arrowsHorizontal-16.svg",
@@ -2024,7 +2024,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60006 } }
       ],
       "createdAt": "2023-02-01T23:25:49.706Z",
-      "lastUpdated": "2024-01-10T15:56:05.315Z",
+      "lastUpdated": "2024-04-24T20:28:27.642Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cash-12.svg",
         "svg16": "./ui/svg/ui-cash-16.svg",
@@ -2384,7 +2384,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60066 } }
       ],
       "createdAt": "2023-02-01T23:25:49.745Z",
-      "lastUpdated": "2024-02-22T21:27:33.033Z",
+      "lastUpdated": "2024-04-22T22:21:26.941Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartPie-12.svg",
         "svg16": "./ui/svg/ui-chartPie-16.svg",
@@ -2708,7 +2708,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61031 } }
       ],
       "createdAt": "2023-02-01T23:26:07.744Z",
-      "lastUpdated": "2024-02-08T20:15:03.256Z",
+      "lastUpdated": "2024-04-24T05:45:49.396Z",
       "outputs": {
         "svg12": "./ui/svg/ui-comment-12.svg",
         "svg16": "./ui/svg/ui-comment-16.svg",
@@ -2762,7 +2762,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60076 } }
       ],
       "createdAt": "2023-02-01T23:25:40.847Z",
-      "lastUpdated": "2024-02-14T18:12:04.390Z",
+      "lastUpdated": "2024-04-24T19:31:15.459Z",
       "outputs": {
         "svg12": "./ui/svg/ui-convert-12.svg",
         "svg16": "./ui/svg/ui-convert-16.svg",
@@ -2780,7 +2780,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60241 } }
       ],
       "createdAt": "2023-02-01T23:25:40.833Z",
-      "lastUpdated": "2023-10-25T17:34:15.536Z",
+      "lastUpdated": "2024-04-21T05:19:35.557Z",
       "outputs": {
         "svg12": "./ui/svg/ui-copy-12.svg",
         "svg16": "./ui/svg/ui-copy-16.svg",
@@ -3230,7 +3230,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59856 } }
       ],
       "createdAt": "2023-02-01T23:25:31.066Z",
-      "lastUpdated": "2024-01-18T14:23:06.906Z",
+      "lastUpdated": "2024-04-22T20:40:15.795Z",
       "outputs": {
         "svg12": "./ui/svg/ui-exclamationMark-12.svg",
         "svg16": "./ui/svg/ui-exclamationMark-16.svg",
@@ -4040,7 +4040,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60086 } }
       ],
       "createdAt": "2023-02-01T23:25:02.104Z",
-      "lastUpdated": "2024-02-14T15:26:58.178Z",
+      "lastUpdated": "2024-04-24T19:31:08.195Z",
       "outputs": {
         "svg12": "./ui/svg/ui-minus-12.svg",
         "svg16": "./ui/svg/ui-minus-16.svg",
@@ -4058,7 +4058,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59866 } }
       ],
       "createdAt": "2023-02-01T23:25:31.029Z",
-      "lastUpdated": "2024-02-08T15:24:30.553Z",
+      "lastUpdated": "2024-04-24T00:03:33.738Z",
       "outputs": {
         "svg12": "./ui/svg/ui-more-12.svg",
         "svg16": "./ui/svg/ui-more-16.svg",
@@ -4400,7 +4400,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60191 } }
       ],
       "createdAt": "2023-02-01T23:25:21.759Z",
-      "lastUpdated": "2024-01-18T15:02:23.948Z",
+      "lastUpdated": "2024-04-22T20:32:29.447Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pencil-12.svg",
         "svg16": "./ui/svg/ui-pencil-16.svg",
@@ -4508,7 +4508,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60431 } }
       ],
       "createdAt": "2023-02-01T23:25:40.690Z",
-      "lastUpdated": "2024-02-14T18:26:12.713Z",
+      "lastUpdated": "2024-04-25T11:34:41.957Z",
       "outputs": {
         "svg12": "./ui/svg/ui-protection-12.svg",
         "svg16": "./ui/svg/ui-protection-16.svg",
@@ -6743,7 +6743,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61760 } }
       ],
       "createdAt": "2023-10-05T21:13:36.213Z",
-      "lastUpdated": "2024-01-17T16:28:52.561Z",
+      "lastUpdated": "2024-04-19T13:53:47.188Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-advancedTradeProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-advancedTradeProduct-12-inactive.svg",
@@ -7415,7 +7415,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61964 } }
       ],
       "createdAt": "2024-02-13T17:39:00.040Z",
-      "lastUpdated": "2024-02-13T17:39:00.040Z",
+      "lastUpdated": "2024-04-21T21:48:07.852Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-cluster-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-cluster-12-inactive.svg",
@@ -7615,6 +7615,42 @@
         "svg12": "./ui/svg/ui-sortUpCenterInactive-12.svg",
         "svg16": "./ui/svg/ui-sortUpCenterInactive-16.svg",
         "svg24": "./ui/svg/ui-sortUpCenterInactive-24.svg"
+      }
+    },
+    "2005:1749": {
+      "type": "ui",
+      "name": "cashCoins",
+      "hash": "hXhyGBMdvPYutHTz9ne/tWgeA4xRkwolkY6QEiwwHr0=",
+      "description": "Cash, coins",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62008 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62007 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62006 } }
+      ],
+      "createdAt": "2024-04-25T16:55:55.328Z",
+      "lastUpdated": "2024-04-25T20:24:22.613Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-cashCoins-12.svg",
+        "svg16": "./ui/svg/ui-cashCoins-16.svg",
+        "svg24": "./ui/svg/ui-cashCoins-24.svg"
+      }
+    },
+    "2005:1753": {
+      "type": "ui",
+      "name": "lineChartCrypto",
+      "hash": "9Orn3gPh9I/E7Awi22h0Wc6KnPLwIeGKSOipb/pBiMQ=",
+      "description": "line, chart, linechart",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62011 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62010 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62009 } }
+      ],
+      "createdAt": "2024-04-25T16:55:55.320Z",
+      "lastUpdated": "2024-04-25T16:55:55.320Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-lineChartCrypto-12.svg",
+        "svg16": "./ui/svg/ui-lineChartCrypto-16.svg",
+        "svg24": "./ui/svg/ui-lineChartCrypto-24.svg"
       }
     }
   }

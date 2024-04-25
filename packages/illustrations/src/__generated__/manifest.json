@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-04-18T17:17:54.084Z",
+  "lastUpdated": "2024-04-25T20:27:05.735Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -10530,7 +10530,7 @@
       "height": 40,
       "description": "",
       "createdAt": "2022-08-05T05:36:57.901Z",
-      "lastUpdated": "2024-04-12T19:18:31.018Z",
+      "lastUpdated": "2024-04-24T14:57:00.671Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/institutionalNavigation-4.svg",
         "svgDark": "./pictogram/svg/dark/institutionalNavigation-4.svg",
@@ -20190,7 +20190,7 @@
       "height": 240,
       "description": "platform, 👤, ✅, pillars, check, yellow, green, blue",
       "createdAt": "2024-01-08T22:09:29.424Z",
-      "lastUpdated": "2024-01-09T18:44:09.898Z",
+      "lastUpdated": "2024-04-21T06:37:23.810Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/platform-0.svg",
         "svgDark": "./heroSquare/svg/dark/platform-0.svg",
@@ -20390,7 +20390,7 @@
       "height": 240,
       "description": "generative, NFT, web3, web, 3, blue, yellow",
       "createdAt": "2024-01-08T22:09:29.370Z",
-      "lastUpdated": "2024-01-09T18:44:09.842Z",
+      "lastUpdated": "2024-04-21T06:38:41.740Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/generative-0.svg",
         "svgDark": "./heroSquare/svg/dark/generative-0.svg",
@@ -20450,7 +20450,7 @@
       "height": 240,
       "description": "Face, Match, KYC, Identity, ID, Person, Human, head, photo, checkmark, correct, positive",
       "createdAt": "2024-01-08T22:09:29.488Z",
-      "lastUpdated": "2024-01-09T18:44:09.886Z",
+      "lastUpdated": "2024-04-21T06:34:10.137Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/private-0.svg",
         "svgDark": "./heroSquare/svg/dark/private-0.svg",
@@ -21179,6 +21179,46 @@
         "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneBoostedCard-0.js",
         "pngLight": "./spotSquare/png/light/coinbaseOneBoostedCard-0.png",
         "pngDark": "./spotSquare/png/dark/coinbaseOneBoostedCard-0.png"
+      },
+      "version": 0
+    },
+    "7975:3": {
+      "type": "pictogram",
+      "name": "developerSDKNavigation",
+      "hash": "0u8gzTNt8I3GxjVp5ZFp3NkLNARHJ11l/I9qNJauNOo=",
+      "width": 40,
+      "height": 40,
+      "description": "developer, platform, navigation, pictogram, product, SDK",
+      "createdAt": "2024-04-24T14:57:00.661Z",
+      "lastUpdated": "2024-04-24T14:57:00.661Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/developerSDKNavigation-0.svg",
+        "svgDark": "./pictogram/svg/dark/developerSDKNavigation-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/developerSDKNavigation-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/developerSDKNavigation-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/developerSDKNavigation-0.js",
+        "pngLight": "./pictogram/png/light/developerSDKNavigation-0.png",
+        "pngDark": "./pictogram/png/dark/developerSDKNavigation-0.png"
+      },
+      "version": 0
+    },
+    "7976:49": {
+      "type": "pictogram",
+      "name": "verifiedPools",
+      "hash": "IPgYY7pGqM/CJhXJlugrwsVITWQVjDd37P8ciDnhMrM=",
+      "width": 40,
+      "height": 40,
+      "description": "verified, pools, developer, platform, navigation, pictogram, product, liquid, liquidity",
+      "createdAt": "2024-04-24T14:57:00.654Z",
+      "lastUpdated": "2024-04-24T14:57:00.654Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/verifiedPools-0.svg",
+        "svgDark": "./pictogram/svg/dark/verifiedPools-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/verifiedPools-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/verifiedPools-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/verifiedPools-0.js",
+        "pngLight": "./pictogram/png/light/verifiedPools-0.png",
+        "pngDark": "./pictogram/png/dark/verifiedPools-0.png"
       },
       "version": 0
     }

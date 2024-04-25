@@ -132,7 +132,7 @@ const descriptionMap: Record<string, string[]> = {
   ],
   lessen: ['collapse'],
   vertical: ['verticalLine'],
-  line: ['verticalLine', 'pulse', 'horizontalLine', 'chartLine'],
+  line: ['verticalLine', 'pulse', 'horizontalLine', 'chartLine', 'lineChartCrypto'],
   trading: [
     'verticalLine',
     'rectangle',
@@ -745,7 +745,7 @@ const descriptionMap: Record<string, string[]> = {
   fib: ['fib'],
   peak: ['fib'],
   trough: ['fib'],
-  chart: ['fib', 'pyramid', 'chartCandles', 'chartLine'],
+  chart: ['fib', 'pyramid', 'chartCandles', 'chartLine', 'lineChartCrypto'],
   '📊': ['fib', 'chartVolume', 'crossTrade', 'pyramid', 'chartPie', 'chartCandles', 'chartBar'],
   annotation: ['annotation'],
   comment: ['annotation'],
@@ -1271,7 +1271,7 @@ const descriptionMap: Record<string, string[]> = {
   'circulating supply': ['circulatingSupply'],
   remainder: ['circulatingSupply'],
   availability: ['circulatingSupply'],
-  coins: ['circulatingSupply'],
+  coins: ['circulatingSupply', 'cashCoins'],
   amount: ['circulatingSupply'],
   dollarydoos: ['cashAustralianDollar'],
   '🇦🇺': ['cashAustralianDollar'],
@@ -1336,6 +1336,8 @@ const descriptionMap: Record<string, string[]> = {
   account: ['logout', 'login'],
   exit: ['logout'],
   enter: ['login'],
+  linechart: ['lineChartCrypto'],
+  Cash: ['cashCoins'],
 };
 
 export default descriptionMap;

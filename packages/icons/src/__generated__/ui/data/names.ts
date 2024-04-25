@@ -281,6 +281,8 @@ const names: UiIconName[] = [
   'login',
   'sortDownCenterInactive',
   'sortUpCenterInactive',
+  'lineChartCrypto',
+  'cashCoins',
 ];
 
 export default names;

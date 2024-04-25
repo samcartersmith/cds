@@ -381,6 +381,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/developerPlatformNavigation-0').content,
     dark: () => require('../svgJs/dark/developerPlatformNavigation-0').content,
   },
+  developerSDKNavigation: {
+    light: () => require('../svgJs/light/developerSDKNavigation-0').content,
+    dark: () => require('../svgJs/dark/developerSDKNavigation-0').content,
+  },
   directDepositNavigation: {
     light: () => require('../svgJs/light/directDepositNavigation-4').content,
     dark: () => require('../svgJs/dark/directDepositNavigation-4').content,
@@ -1068,6 +1072,10 @@ const svgJsMap = {
   venturesNavigation: {
     light: () => require('../svgJs/light/venturesNavigation-3').content,
     dark: () => require('../svgJs/dark/venturesNavigation-3').content,
+  },
+  verifiedPools: {
+    light: () => require('../svgJs/light/verifiedPools-0').content,
+    dark: () => require('../svgJs/dark/verifiedPools-0').content,
   },
   videoCalendar: {
     light: () => require('../svgJs/light/videoCalendar-3').content,

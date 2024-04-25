@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.10.0 (4/25/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 4/25/2024. [[#2968](https://github.cbhq.net/frontend/cds/pull/2968)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- cashCoins
+- lineChartCrypto
+
 ## 2.9.0 (4/18/2024 PST)
 
 #### 🚀 Updates

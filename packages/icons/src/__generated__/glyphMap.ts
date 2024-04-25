@@ -1510,6 +1510,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-sortUpCenterInactive-12': '',
   'ui-sortUpCenterInactive-16': '',
   'ui-sortUpCenterInactive-24': '',
+  'ui-lineChartCrypto-12': '',
+  'ui-lineChartCrypto-16': '',
+  'ui-lineChartCrypto-24': '',
+  'ui-cashCoins-12': '',
+  'ui-cashCoins-16': '',
+  'ui-cashCoins-24': '',
 };
 
 export default glyphMap;
