@@ -44,6 +44,7 @@ export type CreateThemeConfigParams = {
   palette: NewPartialPaletteConfig;
   parentThemeConfig?: ThemeConfig;
   name: string;
+  /** @deprecated DO NOT USE. Pending removal in Q3 2024 */
   spectrum?: Spectrum | null;
 };
 

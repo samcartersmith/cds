@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.2.1 (4/25/2024 PST)
+
+#### 🐞 Fixes
+
+- Add ThemeProvider stories. [[#2946](https://github.cbhq.net/frontend/cds/pull/2946)] [[DX-3634](https://jira.coinbase-corp.com/browse/DX-3634)]
+
 ## 2.2.0 (3/28/2024 PST)
 
 #### 🚀 Updates

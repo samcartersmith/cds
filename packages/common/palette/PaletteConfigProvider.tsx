@@ -1,37 +1,47 @@
 import React, { memo, useMemo } from 'react';
-import { emptyObject } from '@cbhq/cds-utils';
 
-import { useSpectrum } from '../spectrum/useSpectrum';
+import { useSpectrumConditional } from '../hooks/useSpectrumConditional';
 import { PartialPaletteConfig } from '../types';
 
-import { darkDefaultPalette, defaultPalette as defaultLightPalette } from './constants';
-import { PaletteConfigContext } from './context';
-import { usePaletteConfig } from './usePaletteConfig';
+import { darkDefaultPalette, defaultPalette as lightDefaultPalette } from './constants';
+import { PaletteConfigContext, PaletteOverridesContext } from './context';
+import { usePaletteOverrides } from './usePaletteOverrides';
 
 export type PaletteConfigProviderProps = {
   value?: PartialPaletteConfig;
 };
 
+const defaultOverrides = {};
+
 export const PaletteConfigProvider: React.FC<React.PropsWithChildren<PaletteConfigProviderProps>> =
-  memo(({ value = emptyObject, children }) => {
-    const palette = usePaletteConfig();
-    const spectrum = useSpectrum();
-    const defaultPalette = spectrum === 'light' ? defaultLightPalette : darkDefaultPalette;
-    const memoizedPaletteConfig = useMemo(
+  memo(({ value: paletteOverrides = defaultOverrides, children }) => {
+    const parentPaletteOverrides = usePaletteOverrides();
+
+    // Construct the defaultPalette with color overrides based on the current spectrum
+    const defaultPalette = useSpectrumConditional({
+      light: lightDefaultPalette,
+      dark: darkDefaultPalette,
+    });
+
+    // merge with parent overrides
+    const overrides = useMemo(
+      () => ({ ...parentPaletteOverrides, ...paletteOverrides }),
+      [paletteOverrides, parentPaletteOverrides],
+    );
+
+    const palette = useMemo(
       () => ({
-        // Fallback to defaultPalette in case root context has partial palette config
         ...defaultPalette,
-        // Fallback to values from parent palette
-        ...palette,
-        // Custom palette overrides
-        ...value,
+        ...overrides,
       }),
-      [defaultPalette, palette, value],
+      [overrides, defaultPalette],
     );
 
     return (
-      <PaletteConfigContext.Provider value={memoizedPaletteConfig}>
-        {children}
+      <PaletteConfigContext.Provider value={palette}>
+        <PaletteOverridesContext.Provider value={overrides}>
+          {children}
+        </PaletteOverridesContext.Provider>
       </PaletteConfigContext.Provider>
     );
   });

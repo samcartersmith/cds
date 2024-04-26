@@ -9,7 +9,6 @@ import {
   ThemeConfigContextValue,
 } from '@cbhq/cds-common';
 import {
-  elevation1ChildrenPalette,
   elevation1Palette,
   elevation2ChildrenPalette,
   elevation2Palette,
@@ -37,7 +36,11 @@ const elevations = {
   elevation1: {
     level: 1,
     palette: elevation1Palette,
-    childrenPalette: elevation1ChildrenPalette,
+    /**
+     * we don't use elevation1 children palette anymore
+     * as the override is the same as palette color
+     */
+    childrenPalette: {},
     childrenName: 'elevation1Children',
     styles: {
       elevation: 2,
@@ -79,9 +82,7 @@ export const createElevationConfigForSpectrum = ({
     childrenConfig = createThemeConfig({
       name: childrenName,
       parentThemeConfig: config,
-      palette: {
-        dark: childrenPalette.dark,
-      },
+      palette: childrenPalette,
     });
   }
 

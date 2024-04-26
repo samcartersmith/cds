@@ -1,4 +1,4 @@
-import { defaultPalette } from '@cbhq/cds-common';
+import { darkDefaultPalette, defaultPalette } from '@cbhq/cds-common';
 import { paletteConfigToInteractableTokens } from '@cbhq/cds-common/palette/paletteConfigToInteractableTokens';
 import { paletteConfigToRgbaStrings } from '@cbhq/cds-common/palette/paletteConfigToRgbaStrings';
 import {
@@ -36,7 +36,7 @@ const isNormalConfig = (palette: NewPartialPaletteConfig): palette is PartialPal
 
 function getFallbackParentPalette(spectrum: Spectrum) {
   const fallbackLight = defaultPalette;
-  const fallbackDark = defaultPalette;
+  const fallbackDark = darkDefaultPalette;
   return spectrum === 'light' ? fallbackLight : fallbackDark;
 }
 

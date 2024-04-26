@@ -3,7 +3,6 @@ import { renderHook } from '@testing-library/react-hooks';
 import {
   darkDefaultPalette,
   defaultPalette,
-  elevation1ChildrenPalette,
   elevation2ChildrenPalette,
 } from '../../palette/constants';
 import { usePaletteConfig } from '../../palette/usePaletteConfig';
@@ -81,9 +80,9 @@ describe('ElevationChildrenProvider', () => {
     });
     expect(result.current.background).not.toEqual(darkDefaultPalette.background);
     expect(result.current.background).toBe('gray5');
-    expect(result.current.secondary).toStrictEqual(elevation1ChildrenPalette.dark.secondary);
+    expect(result.current.secondary).toStrictEqual(darkDefaultPalette.secondary);
     // should not override line unless level 2
-    expect(result.current.line).toEqual(defaultPalette.line);
+    expect(result.current.line).toEqual(darkDefaultPalette.line);
   });
 
   it('overrides palette variables if spectrum is dark and parent has elevation of 2', () => {
@@ -99,7 +98,7 @@ describe('ElevationChildrenProvider', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
       wrapper: Wrapper,
     });
-    expect(result.current.background).not.toEqual(defaultPalette.background);
+    expect(result.current.background).not.toEqual(darkDefaultPalette.background);
     expect(result.current.secondary).toStrictEqual(darkDefaultPalette.secondary);
     // line should be brighter
     expect(result.current.line).toStrictEqual(elevation2ChildrenPalette.dark.line);

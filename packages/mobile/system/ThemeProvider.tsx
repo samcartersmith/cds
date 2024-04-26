@@ -1,5 +1,7 @@
 import React, { memo, useContext, useMemo } from 'react';
-import { NewPartialPaletteConfig, SystemProviderProps } from '@cbhq/cds-common';
+import { NewPartialPaletteConfig, SystemProviderProps, useSpectrum } from '@cbhq/cds-common';
+import { PaletteOverridesContext } from '@cbhq/cds-common/palette/context';
+import { usePaletteOverrides } from '@cbhq/cds-common/palette/usePaletteOverrides';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { SpectrumProvider } from '@cbhq/cds-common/spectrum/SpectrumProvider';
 import { ThemeConfigContext } from '@cbhq/cds-common/system/ThemeConfigContext';
@@ -9,39 +11,67 @@ import { createThemeConfig, useFallbackThemeConfig } from './createThemeConfig';
 import { ElevationConfigsProvider } from './ElevationConfigsProvider';
 
 export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = memo(
-  function ThemeProvider({ children, palette, name, scale, spectrum }) {
+  function ThemeProvider({ children, palette: paletteOverrides, name, scale, spectrum }) {
+    // this is parent theme config
     const parentThemeConfigContext = useContext(ThemeConfigContext)?.config;
-    const fallbackTheme = useFallbackThemeConfig();
+    // this is the default theme config
+    const defaultThemeConfig = useFallbackThemeConfig();
+    const parentPaletteOverrides = usePaletteOverrides();
+
+    const parentSpectrum = useSpectrum();
+
+    const isSameSpectrumAsParent = parentSpectrum === spectrum;
+
+    // merge with parent overrides
+    const overrides = useMemo(
+      () => ({ ...parentPaletteOverrides, ...paletteOverrides }),
+      [paletteOverrides, parentPaletteOverrides],
+    );
+
     const config = useMemo(() => {
-      const parentThemeConfig = parentThemeConfigContext ?? fallbackTheme;
-      if (palette) {
+      // if current overrides, merge with parent overrides to create a new config
+      if (paletteOverrides) {
         return createThemeConfig({
-          parentThemeConfig,
-          palette,
+          parentThemeConfig: defaultThemeConfig,
+          palette: overrides,
           name,
-          spectrum,
         });
       }
+
       // This means this is the root ThemeProvider
-      if (parentThemeConfigContext === undefined) return parentThemeConfig;
-      // If only spectrum was overwritten we need ThemeConfigContext to update activeConfig
-      if (spectrum) return parentThemeConfig;
+      if (parentThemeConfigContext === undefined) return defaultThemeConfig;
+
+      // inherit parent palette if no current overrides and same as parent spectrum,
+      if (!paletteOverrides && isSameSpectrumAsParent) return parentThemeConfigContext;
+      // use default palette if no current overrides and different from parent spectrum,
+      if (!paletteOverrides && !isSameSpectrumAsParent) return defaultThemeConfig;
+
       // Skip rendering ThemeConfigProvider if there are no changes
       return undefined;
-    }, [fallbackTheme, name, palette, parentThemeConfigContext, spectrum]);
+    }, [
+      defaultThemeConfig,
+      name,
+      overrides,
+      parentThemeConfigContext,
+      isSameSpectrumAsParent,
+      paletteOverrides,
+    ]);
+
     const skipThemeConfig = config === undefined;
     return (
       <ScaleProvider value={scale}>
         <SpectrumProvider value={spectrum}>
-          {skipThemeConfig ? (
-            children
-          ) : (
-            <ThemeConfigProvider value={config}>
-              <ElevationConfigsProvider parentThemeConfig={config}>
-                {children}
-              </ElevationConfigsProvider>
-            </ThemeConfigProvider>
-          )}
+          <PaletteOverridesContext.Provider value={overrides}>
+            {skipThemeConfig ? (
+              children
+            ) : (
+              <ThemeConfigProvider value={config}>
+                <ElevationConfigsProvider parentThemeConfig={config}>
+                  {children}
+                </ElevationConfigsProvider>
+              </ThemeConfigProvider>
+            )}
+          </PaletteOverridesContext.Provider>
         </SpectrumProvider>
       </ScaleProvider>
     );

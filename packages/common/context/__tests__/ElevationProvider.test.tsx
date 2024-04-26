@@ -1,6 +1,11 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { defaultPalette, elevation1Palette, elevation2Palette } from '../../palette/constants';
+import {
+  darkDefaultPalette,
+  defaultPalette,
+  elevation1Palette,
+  elevation2Palette,
+} from '../../palette/constants';
 import { usePaletteConfig } from '../../palette/usePaletteConfig';
 import { SystemProvider } from '../../SystemProvider';
 import { ElevationProvider, ElevationProviderProps } from '../ElevationProvider';
@@ -47,7 +52,7 @@ describe('ElevationProvider', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
       wrapper: Wrapper,
     });
-    expect(result.current.background).not.toEqual(defaultPalette.background);
+    expect(result.current.background).not.toEqual(darkDefaultPalette.background);
     expect(result.current.background).toBe(elevation1Palette.dark.background);
   });
 

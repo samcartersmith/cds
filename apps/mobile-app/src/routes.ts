@@ -522,6 +522,11 @@ export const routes = [
       require('@cbhq/cds-mobile/typography/__stories__/TextTitle4.stories').default,
   },
   {
+    key: 'ThemeProvider',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/system/__stories__/ThemeProvider.stories').default,
+  },
+  {
     key: 'Toast',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Toast.stories').default,
   },

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.9.3 (4/25/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix palette overrides. [[#2946](https://github.cbhq.net/frontend/cds/pull/2946)] [[DX-3634](https://jira.coinbase-corp.com/browse/DX-3634)]
+
 ## 6.9.2 (4/24/2024 PST)
 
 #### 🐞 Fixes

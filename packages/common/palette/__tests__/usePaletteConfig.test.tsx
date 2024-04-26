@@ -27,7 +27,7 @@ describe('usePaletteConfig', () => {
     });
     expect(result.current).toEqual(defaultPalette);
   });
-  it('returns darkDefaultPalette when spectrum is dark', () => {
+  it('returns dark palette when spectrum is dark', () => {
     const { result } = renderHook(() => usePaletteConfig(), {
       wrapper: TestAppProvider,
       initialProps: {

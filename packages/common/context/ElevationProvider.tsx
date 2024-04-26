@@ -39,7 +39,9 @@ export const ElevationChildrenProvider: React.FC<React.PropsWithChildren<unknown
     const elevation = useContext(ElevationContext);
     /** Only apply overrides to children in dark mode */
     const spectrum = useSpectrum();
-    if (elevation && spectrum === 'dark') {
+
+    /** This overrides the palette value for line - Increase brightness of lines in level2 so they appear closer to light source. */
+    if (elevation === 2 && spectrum === 'dark') {
       return (
         <ElevationChildContext.Provider value>
           <PaletteConfigProvider value={elevationChildrenPalette[elevation]}>

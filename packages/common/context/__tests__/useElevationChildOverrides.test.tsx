@@ -73,7 +73,7 @@ describe('useElevationChildOverrides', () => {
     expect(result.current).toBe(false);
   });
 
-  it('dark mode - returns true if child is nested within an ElevationProvider and parent has an elevation of 1', () => {
+  it('dark mode - returns false if child is nested within an ElevationProvider and parent has an elevation of 1', () => {
     function Wrapper(props: React.PropsWithChildren<unknown>) {
       return (
         <SystemProvider spectrum="dark">
@@ -86,7 +86,7 @@ describe('useElevationChildOverrides', () => {
     const { result } = renderHook(() => useElevationChildOverrides(), {
       wrapper: Wrapper,
     });
-    expect(result.current).toBe(true);
+    expect(result.current).toBe(false);
   });
 
   it('dark mode - returns true if child is nested within an ElevationProvider and parent has an elevation of 2', () => {

@@ -162,14 +162,7 @@ describe('useElevationStyles', () => {
     const { result } = renderHook(() => useElevationStyles(), {
       wrapper: Wrapper,
     });
-    expect(result.current).toEqual({
-      ...paletteAsCssVars,
-      '--background': paletteValueToCssVar('gray5'),
-      '--transparent': paletteValueToCssVar('gray5'),
-      '--primary': paletteValueToCssVar('blue70'),
-      // @ts-expect-error - secondary exists on elevationChildrenPalette level 1
-      '--secondary': paletteValueToCssVar(elevationChildrenPalette[1].secondary),
-    });
+    expect(result.current).toEqual({});
   });
 
   it('dark mode - returns a style object for the child of an elevated surface with level 2', () => {

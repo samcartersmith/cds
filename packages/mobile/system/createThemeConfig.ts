@@ -1,5 +1,4 @@
-import { useSpectrum } from '@cbhq/cds-common';
-import { darkDefaultPalette, defaultPalette } from '@cbhq/cds-common/palette/constants';
+import { defaultPaletteOverrides } from '@cbhq/cds-common/palette/constants';
 import { memoize } from '@cbhq/cds-common/utils/memoize';
 
 import { createThemeConfigForSpectrum } from './createThemeConfigForSpectrum';
@@ -7,21 +6,18 @@ import { CreateThemeConfigParams } from './ThemeConfig';
 
 const getCacheKey = ({
   name,
-  spectrum,
   parentThemeConfig,
 }: Pick<CreateThemeConfigParams, 'name' | 'parentThemeConfig' | 'spectrum'>) => {
   const parent = parentThemeConfig ? `${parentThemeConfig.name}-` : '';
-  const spectrumKey = spectrum ? `-${spectrum}` : '';
-  return `${parent}${name}${spectrumKey}`;
+  return `${parent}${name}`;
 };
 
 export const createThemeConfig = memoize(function createThemeConfig({
   palette,
-  spectrum,
   parentThemeConfig,
   name: nameProp,
 }: CreateThemeConfigParams) {
-  const name = getCacheKey({ name: nameProp, parentThemeConfig, spectrum });
+  const name = getCacheKey({ name: nameProp, parentThemeConfig });
   return {
     name,
     light: createThemeConfigForSpectrum({
@@ -41,10 +37,8 @@ export const createThemeConfig = memoize(function createThemeConfig({
 getCacheKey);
 
 export function useFallbackThemeConfig() {
-  const spectrum = useSpectrum();
   return createThemeConfig({
-    palette: spectrum === 'dark' ? darkDefaultPalette : defaultPalette,
-    spectrum,
+    palette: defaultPaletteOverrides,
     name: 'default',
   });
 }

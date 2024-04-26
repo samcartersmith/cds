@@ -2,14 +2,13 @@ import React from 'react';
 import { PartialPaletteConfig, useSpectrum } from '@cbhq/cds-common';
 
 import { Button } from '../../buttons';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
 import { TextBody } from '../../typography';
 import { ThemeProvider } from '../ThemeProvider';
-import { useThemeProviderStyles } from '../useThemeProviderStyles';
 
 const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
   const spectrum = useSpectrum();
-  const { className } = useThemeProviderStyles();
 
   return (
     <VStack background>
@@ -17,45 +16,29 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
         <VStack>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
-          <TextBody as="p" color="secondary">
-            Secondary text
-          </TextBody>
+          <TextBody color="secondary">Secondary text</TextBody>
         </VStack>
         <VStack background bordered borderRadius="rounded" elevation={1} gap={1} spacing={2}>
-          <TextBody as="p">Elevation 1</TextBody>
+          <TextBody>Elevation 1</TextBody>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
         <VStack background bordered borderRadius="rounded" elevation={2} gap={1} spacing={2}>
-          <TextBody as="p">Elevation 2</TextBody>
+          <TextBody>Elevation 2</TextBody>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
-        <TextBody as="p">Spectrum value at parent level: {spectrum}</TextBody>
-        <TextBody as="p">
-          ClassName value at nested ThemeProvider parent level: {className}
-        </TextBody>
-        <TextBody as="p">Should be {expectedSpectrum}</TextBody>
+        <TextBody>Spectrum value at parent level: {spectrum}</TextBody>
+        <TextBody>Should be {expectedSpectrum}</TextBody>
       </VStack>
     </VStack>
   );
 };
 
-const StyledThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const props = useThemeProviderStyles();
-  return (
-    <div {...props} className={props.className}>
-      {children}
-    </div>
-  );
-};
-
 const ChildThemeProviderDark = () => {
   return (
-    <ThemeProvider spectrum="dark">
-      <StyledThemeProvider>
-        <Child expectedSpectrum="dark" />
-      </StyledThemeProvider>
+    <ThemeProvider name="child-dark" spectrum="dark">
+      <Child expectedSpectrum="dark" />
     </ThemeProvider>
   );
 };
@@ -68,8 +51,8 @@ const overrides: PartialPaletteConfig = {
 
 const ChildThemeWithOverrides = () => {
   return (
-    <ThemeProvider palette={overrides}>
-      <TextBody as="p">With theme overrides</TextBody>
+    <ThemeProvider name="child-overrides" palette={overrides}>
+      <TextBody>With theme overrides</TextBody>
       <Child expectedSpectrum="light" />
     </ThemeProvider>
   );
@@ -77,8 +60,8 @@ const ChildThemeWithOverrides = () => {
 
 const ChildThemeWithOverridesDark = () => {
   return (
-    <ThemeProvider palette={overrides} spectrum="dark">
-      <TextBody as="p">With theme overrides</TextBody>
+    <ThemeProvider name="child-overrides-dark" palette={overrides} spectrum="dark">
+      <TextBody>With theme overrides</TextBody>
       <Child expectedSpectrum="dark" />
     </ThemeProvider>
   );
@@ -86,9 +69,9 @@ const ChildThemeWithOverridesDark = () => {
 
 const ChildThemeWithNestedOverrides = () => {
   return (
-    <ThemeProvider palette={overrides}>
-      <ThemeProvider spectrum="light">
-        <TextBody as="p">With nested theme overrides</TextBody>
+    <ThemeProvider name="child-overrides" palette={overrides}>
+      <ThemeProvider name="child-overrides-1" spectrum="light">
+        <TextBody>With theme overrides</TextBody>
         <Child expectedSpectrum="light" />
       </ThemeProvider>
     </ThemeProvider>
@@ -97,30 +80,32 @@ const ChildThemeWithNestedOverrides = () => {
 
 const ChildThemeWithNestedOverridesDark = () => {
   return (
-    <ThemeProvider palette={overrides} spectrum="dark">
-      <ThemeProvider spectrum="dark">
-        <TextBody as="p">With nested theme overrides</TextBody>
+    <ThemeProvider name="child-overrides-dark" palette={overrides} spectrum="dark">
+      <ThemeProvider name="child-overrides-dark-1" spectrum="dark">
+        <TextBody>With theme overrides</TextBody>
         <Child expectedSpectrum="dark" />
       </ThemeProvider>
     </ThemeProvider>
   );
 };
 
-export const ThemeProviderTest = () => {
+const ThemeProviderTest = () => {
   return (
-    <ThemeProvider spectrum="light">
-      <VStack gap={3}>
-        <Child expectedSpectrum="light" />
-        <ChildThemeProviderDark />
-        <ChildThemeWithOverrides />
-        <ChildThemeWithOverridesDark />
-        <ChildThemeWithNestedOverrides />
-        <ChildThemeWithNestedOverridesDark />
-      </VStack>
-    </ThemeProvider>
+    <ExampleScreen>
+      <Example title="Nested ThemeProviders">
+        <ThemeProvider name="parent" spectrum="light">
+          <VStack gap={3}>
+            <Child expectedSpectrum="light" />
+            <ChildThemeProviderDark />
+            <ChildThemeWithOverrides />
+            <ChildThemeWithOverridesDark />
+            <ChildThemeWithNestedOverrides />
+            <ChildThemeWithNestedOverridesDark />
+          </VStack>
+        </ThemeProvider>
+      </Example>
+    </ExampleScreen>
   );
 };
 
-export default {
-  title: 'Core Components/ThemeProvider',
-};
+export default ThemeProviderTest;

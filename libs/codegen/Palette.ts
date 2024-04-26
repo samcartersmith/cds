@@ -23,10 +23,6 @@ export const defaultPalette = {
   warning: 'yellow50',
 } as const;
 
-const switchPalette = {
-  backgroundAlternate: 'gray20',
-} as const;
-
 const defaultPaletteOverrides = {
   light: {},
   dark: {
@@ -36,6 +32,10 @@ const defaultPaletteOverrides = {
 } as const;
 
 const darkDefaultPalette = { ...defaultPalette, ...defaultPaletteOverrides.dark } as const;
+
+const switchPalette = {
+  backgroundAlternate: 'gray20',
+} as const;
 
 const elevation1Palette = {
   dark: { background: 'gray5', transparent: 'gray5' },
