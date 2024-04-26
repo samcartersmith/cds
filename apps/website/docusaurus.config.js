@@ -32,6 +32,11 @@ module.exports = {
       },
       items: [
         {
+          href: '/cds/live-playground/',
+          label: 'UI Playground',
+          position: 'right',
+        },
+        {
           href: 'https://cds-storybook.cbhq.net/',
           label: 'Storybook',
           position: 'right',

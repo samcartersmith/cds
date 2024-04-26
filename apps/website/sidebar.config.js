@@ -1098,6 +1098,7 @@ const sidebars = {
             ...deprecations,
           ],
         },
+        'cds/live-playground',
       ],
     },
   ],
