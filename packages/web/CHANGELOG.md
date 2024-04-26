@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.10.0 (4/26/2024 PST)
+
+#### 🚀 Updates
+
+- ContentCardBody: add support for mediaPosition left. [[#2970](https://github.cbhq.net/frontend/cds/pull/2970)] [[DX-3680](https://jira.coinbase-corp.com/browse/DX-3680)]
+
 ## 6.9.3 (4/25/2024 PST)
 
 #### 🐞 Fixes

@@ -115,6 +115,15 @@ export const Default = (): JSX.Element => {
       </ContentCard>
       <Divider spacingBottom={2} spacingStart={3} />
       <TextHeadline as="h3" spacingStart={3}>
+        Full Example with mediaPosition left
+      </TextHeadline>
+      <ContentCard>
+        <ContentCardHeader {...exampleProps.contentHeaderProps} />
+        <ContentCardBody {...exampleProps.contentBodyProps} mediaPosition="left" />
+        <ContentCardFooter {...exampleProps.contentFooterProps} />
+      </ContentCard>
+      <Divider spacingBottom={2} spacingStart={3} />
+      <TextHeadline as="h3" spacingStart={3}>
         Full Example with no media
       </TextHeadline>
       <ContentCard>

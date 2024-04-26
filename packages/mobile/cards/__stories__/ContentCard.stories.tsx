@@ -152,6 +152,26 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example spacingHorizontal={0}>
+        <TextTitle3 spacingHorizontal={3}>Full Example with mediaPosition left</TextTitle3>
+        <ContentCard>
+          <ContentCardHeader {...exampleProps.contentHeaderProps} />
+          <ContentCardBody
+            {...exampleProps.contentBodyProps}
+            media={
+              <Image
+                accessibilityIgnoresInvertColors
+                source={{
+                  uri: ethBackground,
+                }}
+                style={{ ...styles.media, height: 96 }}
+              />
+            }
+            mediaPosition="left"
+          />
+          <ContentCardFooter {...exampleProps.contentFooterProps} />
+        </ContentCard>
+      </Example>
+      <Example spacingHorizontal={0}>
         <TextTitle3 spacingHorizontal={3}>Full Example with no media</TextTitle3>
         <ContentCard>
           <ContentCardHeader {...exampleProps.contentHeaderProps} />

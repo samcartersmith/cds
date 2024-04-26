@@ -22,9 +22,9 @@ type ContentCardBodyBaseProps = {
   media?: ReactNode;
   /**
    * The position of the media within the card.
-   * Can be one of: 'top', 'bottom', or 'right'.
+   * Can be one of: 'top', 'bottom', 'right' or 'left'.
    */
-  mediaPosition?: 'top' | 'bottom' | 'right';
+  mediaPosition?: 'top' | 'bottom' | 'right' | 'left';
   children?: ReactNode;
 } & SharedProps;
 
