@@ -47,6 +47,12 @@
     },
     "report-disabled-eslint-rules": {
       "executor": "@cbhq/prevent-eslint-disable:report"
+    },
+    "danger": {
+      "executor": "@cbhq/mono-tasks:danger",
+      "options": {
+        "dangerfile": "libs/dangerfiles/dangerfile.ts"
+      }
     }
   }
 }

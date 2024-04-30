@@ -6,7 +6,12 @@ import checkForBreakingChanges from './breakingChanges/checkForBreakingChanges';
 import checkFilesForRemovedExports from './breakingChanges/exports';
 import checkFilesForRemovedParams from './breakingChanges/params';
 import { cdsPackagesPatterns, fileIgnorePatterns } from './patterns';
-import { findAssociatedFilesWithoutSuffix, findPatternInGitDiffs, getModifiedFiles } from './utils';
+import {
+  escapeRegExp,
+  findAssociatedFilesWithoutSuffix,
+  findPatternInGitDiffs,
+  getModifiedFiles,
+} from './utils';
 
 // Useful for running locally with yarn danger local --dangerfile libs/dangerfiles/dangerfile.ts
 const MOCK_PR = {
@@ -140,3 +145,28 @@ void checkForBreakingChanges({
   files: getModifiedFiles(cdsPackagesFiles),
   checkFn: checkFilesForRemovedParams,
 });
+
+// Checks if any story files in the 'mobile' package have been deleted or renamed, and fails the check if they have.
+if (
+  process.env.NX_PROJECT_NAME === 'mobile' ||
+  process.env.NX_PROJECT_NAME === 'mobile-visualization'
+) {
+  void (async () => {
+    const storyFilesPattern = new RegExp(
+      `^packages/${escapeRegExp(process.env.NX_PROJECT_NAME || '')}/.*\\.stories\\.(ts|tsx)$`,
+    );
+    const deletedOrRenamedFiles = danger.git.deleted_files
+      .concat(danger.git.modified_files)
+      .filter((file) => storyFilesPattern.test(file) && !danger.git.created_files.includes(file));
+
+    if (deletedOrRenamedFiles.length) {
+      fail(
+        [
+          '## 📕 Story files deleted or renamed',
+          `You have deleted or renamed story files in the **${process.env.NX_PROJECT_NAME}** package. This is a breaking change. Only new additions are allowed. Renames and deletions are not.`,
+          deletedOrRenamedFiles.map((file) => `- ${file}`).join('\n'),
+        ].join('\n'),
+      );
+    }
+  })();
+}

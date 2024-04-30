@@ -141,7 +141,9 @@ export async function getFileContentsOnMaster(filePath: string): Promise<string 
     const showOutput = await git.show(`origin/master:${filePath}`);
     return showOutput;
   } catch (error) {
-    throw new Error(`Unable to get file contents for ${filePath} on master branch`);
+    // eslint-disable-next-line no-console
+    console.error(`Unable to get file contents for ${filePath} on master branch`);
+    return null;
   }
 }
 
@@ -176,4 +178,14 @@ export function getParamsFromExportedDeclaration(declaration: ExportedDeclaratio
     name,
     params,
   };
+}
+
+/**
+ * Escapes special characters in a string for use in a regular expression.
+ *
+ * @param {string} string - The string to be escaped.
+ * @returns {string} The escaped string.
+ */
+export function escapeRegExp(string: string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
