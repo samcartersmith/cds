@@ -1,7 +1,7 @@
 {
   "AppSwitcher": {
-    "totalInstances": 9,
-    "totalCallSites": 8,
+    "totalInstances": 7,
+    "totalCallSites": 6,
     "components": [
       {
         "name": "AppSwitcher",
@@ -17,9 +17,6 @@
           },
           "target": {
             "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
-          },
-          "config": {
-            "@ubo/settings/components/Layout/Header/HeaderLegacy.tsx": 1
           }
         }
       },
@@ -37,43 +34,6 @@
           },
           "target": {
             "@acc/components/Layout/Header/HeaderLegacy.tsx": 1
-          },
-          "config": {
-            "@acc/components/Layout/Header/HeaderLegacy.tsx": 1
-          }
-        }
-      },
-      {
-        "name": "AppSwitcher",
-        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "projectId": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
-          },
-          "action": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
-          },
-          "target": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
-          }
-        }
-      },
-      {
-        "name": "AppSwitcher",
-        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "projectId": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
-          },
-          "action": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
-          },
-          "target": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
           }
         }
       },
@@ -154,10 +114,10 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/Users/emilyseibert/src/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^6.0.0",
+      "cdsWeb": "^6.8.2",
       "cdsMobile": "Not Found",
       "cdsCommon": "^6.0.0",
       "lowestVersion": "^6.0.0",
@@ -175,9 +135,6 @@
         "totalCallSites": 1,
         "propsWithCallSites": {
           "action": {
-            "@ubo/settings/components/Layout/Header/Header.tsx": 1
-          },
-          "appSwitcherOptions": {
             "@ubo/settings/components/Layout/Header/Header.tsx": 1
           },
           "projectId": {
@@ -200,9 +157,6 @@
           "action": {
             "@acc/components/Layout/Header/Header.tsx": 1
           },
-          "appSwitcherOptions": {
-            "@acc/components/Layout/Header/Header.tsx": 1
-          },
           "projectId": {
             "@acc/components/Layout/Header/Header.tsx": 1
           },
@@ -211,6 +165,67 @@
           },
           "start": {
             "@acc/components/Layout/Header/Header.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 2,
+        "totalCallSites": 2,
+        "callSites": {
+          "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+          "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+        },
+        "propsWithCallSites": {
+          "dangerouslyDisableOverflowHidden": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "target": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "action": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "projectId": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "onThemeToggle": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "activeThemeLabel": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "themeToggleValue": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "start": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "end": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "bottom": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "profileMenuRef": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "profileMenuFlexibleArea": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "onCloseProfileMenu": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
           }
         }
       },
@@ -368,71 +383,6 @@
       {
         "name": "NavigationBar",
         "sourceFile": "@cbhq/identity-navigation/NavigationBar",
-        "totalInstances": 2,
-        "totalCallSites": 2,
-        "callSites": {
-          "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-          "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-        },
-        "propsWithCallSites": {
-          "dangerouslyDisableOverflowHidden": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
-          },
-          "target": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "action": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "projectId": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "onThemeToggle": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "activeThemeLabel": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "themeToggleValue": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "appSwitcherOptions": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "start": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "end": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "bottom": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "profileMenuRef": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
-          },
-          "profileMenuFlexibleArea": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
-          "onCloseProfileMenu": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
-          }
-        }
-      },
-      {
-        "name": "NavigationBar",
-        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
         "totalInstances": 1,
         "totalCallSites": 1,
         "propsWithCallSites": {
@@ -476,10 +426,10 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/Users/emilyseibert/src/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^6.0.0",
+      "cdsWeb": "^6.8.2",
       "cdsMobile": "Not Found",
       "cdsCommon": "^6.0.0",
       "lowestVersion": "^6.0.0",

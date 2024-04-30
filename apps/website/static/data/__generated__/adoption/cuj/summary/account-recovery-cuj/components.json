@@ -3,8 +3,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 61,
-      "totalCallSites": 25,
+      "totalInstances": 60,
+      "totalCallSites": 24,
       "cds": "@cbhq/cds-web/layout/Box",
       "callSites": {
         "IdCapture.tsx": 1,
@@ -14,7 +14,6 @@
         "components/FailureView/ReskinnedFailureView.tsx": 1,
         "components/ImageUpload/ImageUpload.tsx": 2,
         "components/Loader/Loader.tsx": 1,
-        "components/OnboardingGuidance/Guidance.tsx": 1,
         "components/Onfido/Onfido.tsx": 1,
         "components/SelectIDType/SelectIDType.tsx": 2,
         "components/SuccessView/SuccessView.tsx": 2,
@@ -30,22 +29,20 @@
         "packages/two-factor-web/src/flows/SecurityQuestions/pages/FlowResultsPages/FailedPageTwo.tsx": 6,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
+        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
+        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "flexGrow": {
           "IdCapture.tsx": 1,
           "context/StepperProvider.tsx": 1,
           "components/Capture/Capture.tsx": 1,
-          "components/Loader/Loader.tsx": 1,
-          "components/OnboardingGuidance/Guidance.tsx": 1
+          "components/Loader/Loader.tsx": 1
         },
         "alignItems": {
           "IdCapture.tsx": 1,
           "components/Capture/Capture.tsx": 3,
           "components/Loader/Loader.tsx": 1,
-          "components/OnboardingGuidance/Guidance.tsx": 1,
           "components/Verification/InlineErrorAlert.tsx": 1,
           "components/Capture/components/ExampleGuide/ExampleGuide.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 1,
@@ -58,25 +55,21 @@
           "components/ContentLayout/ContentLayout.tsx": 2,
           "components/ImageUpload/ImageUpload.tsx": 1,
           "components/Loader/Loader.tsx": 1,
-          "components/OnboardingGuidance/Guidance.tsx": 1,
           "components/SuccessView/SuccessView.tsx": 1,
           "components/Verification/InlineErrorAlert.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
         },
         "minWidth": {
-          "IdCapture.tsx": 1,
-          "components/OnboardingGuidance/Guidance.tsx": 1
+          "IdCapture.tsx": 1
         },
         "minHeight": {
           "IdCapture.tsx": 1,
-          "components/ContentLayout/ContentLayout.tsx": 1,
-          "components/OnboardingGuidance/Guidance.tsx": 1
+          "components/ContentLayout/ContentLayout.tsx": 1
         },
         "height": {
           "IdCapture.tsx": 1,
           "components/Capture/Capture.tsx": 2,
-          "components/OnboardingGuidance/Guidance.tsx": 1,
           "components/Onfido/Onfido.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
           "packages/two-factor-web/src/flows/SecurityQuestions/pages/Status.tsx": 1
@@ -216,8 +209,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 75,
-      "totalCallSites": 37,
+      "totalInstances": 71,
+      "totalCallSites": 36,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -228,15 +221,9 @@
           ]
         },
         {
-          "aliasPath": "components/OnboardingGuidance/ErrorView.tsx",
+          "aliasPath": "components/UploadProgressView/UploadProgressView.tsx",
           "callSites": [
-            "components/OnboardingGuidance/Guidance.tsx"
-          ]
-        },
-        {
-          "aliasPath": "components/OnboardingGuidance/InformativeView.tsx",
-          "callSites": [
-            "components/OnboardingGuidance/Guidance.tsx"
+            "IdCapture.tsx"
           ]
         },
         {
@@ -244,12 +231,6 @@
           "callSites": [
             "components/Tips/FacematchTips.tsx",
             "components/Tips/UploadIdTips.tsx"
-          ]
-        },
-        {
-          "aliasPath": "components/UploadProgressView/UploadProgressView.tsx",
-          "callSites": [
-            "IdCapture.tsx"
           ]
         },
         {
@@ -263,15 +244,15 @@
           "callSites": []
         },
         {
-          "aliasPath": "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
-          "callSites": [
-            "packages/two-factor-web/src/flows/idv/IDVFlow.tsx"
-          ]
-        },
-        {
           "aliasPath": "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx",
           "callSites": [
             "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveRecoveryCode.tsx"
+          ]
+        },
+        {
+          "aliasPath": "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx",
+          "callSites": [
+            "packages/two-factor-web/src/flows/idv/IDVFlow.tsx"
           ]
         },
         {
@@ -304,6 +285,12 @@
           "callSites": []
         },
         {
+          "aliasPath": "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx",
+          "callSites": [
+            "packages/two-factor-web/src/flows/email/EmailInputCode.tsx"
+          ]
+        },
+        {
           "aliasPath": "apps/unified-login/src/risk/components/Stepper/Stepper.tsx",
           "callSites": [
             "apps/unified-login/src/risk/components/ManualReviewProcessingStepper/ManualReviewProcessingStepper.tsx"
@@ -317,22 +304,20 @@
         "components/FailureView/FailureView.tsx": 1,
         "components/FailureView/ReskinnedFailureView.tsx": 7,
         "components/ImageUpload/ImageUpload.tsx": 10,
-        "components/OnboardingGuidance/ErrorView.tsx": 3,
-        "components/OnboardingGuidance/InformativeView.tsx": 2,
         "components/PendingVerification/Pending.tsx": 2,
         "components/PollingFailureView/PollingFailureView.tsx": 1,
         "components/SelectIDType/SelectIDType.tsx": 3,
         "components/SubmitFailureView/SubmitFailureView.tsx": 2,
-        "components/Tips/Tips.tsx": 4,
         "components/UploadProgressView/UploadProgressView.tsx": 2,
+        "components/Tips/Tips.tsx": 4,
         "packages/two-factor-web/src/flows/idv/IDVFlow.tsx": 1,
         "packages/two-factor-web/src/flows/idv/components/Footer.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/IDV/IdCapture.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/IDV/SameDeviceAcknowledgement.tsx": 1,
-        "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 4,
         "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 5,
         "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryStep.tsx": 1,
+        "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 2,
         "packages/two-factor-web/src/flows/idv/steps/Status/Pending.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
@@ -340,14 +325,15 @@
         "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 3,
         "packages/two-factor-web/src/flows/SecurityQuestions/pages/FlowResultsPages/Pending.tsx": 1,
         "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1,
+        "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1,
         "apps/unified-login/src/risk/components/ManualReviewProcessingStepper/ManualReviewProcessingStepper.tsx": 1,
-        "apps/unified-login/src/risk/components/Stepper/Stepper.tsx": 1,
         "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
         "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+        "apps/unified-login/src/risk/components/Stepper/Stepper.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 2,
-        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
+        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
+        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "minWidth": {
@@ -360,20 +346,15 @@
         "maxWidth": {
           "context/StepperProvider.tsx": 1
         },
-        "gap": {
+        "spacerGap": {
           "components/CameraFailureView/CameraFailureView.tsx": 1,
           "components/ContentLayout/ContentLayout.tsx": 1,
           "components/FailureView/ReskinnedFailureView.tsx": 6,
-          "components/OnboardingGuidance/ErrorView.tsx": 3,
-          "components/OnboardingGuidance/InformativeView.tsx": 1,
           "components/PendingVerification/Pending.tsx": 1,
           "components/PollingFailureView/PollingFailureView.tsx": 1,
           "components/SelectIDType/SelectIDType.tsx": 3,
           "components/SubmitFailureView/SubmitFailureView.tsx": 2,
-          "components/Tips/Tips.tsx": 2,
-          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
+          "components/Tips/Tips.tsx": 2
         },
         "spacingVertical": {
           "components/ContentLayout/ContentLayout.tsx": 1,
@@ -381,7 +362,8 @@
           "packages/two-factor-web/src/flows/idv/components/Footer.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1,
+          "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1
         },
         "alignItems": {
           "components/ContentLayout/ContentLayout.tsx": 1,
@@ -402,7 +384,8 @@
           "components/ImageUpload/ImageUpload.tsx": 3,
           "components/SelectIDType/SelectIDType.tsx": 1,
           "components/UploadProgressView/UploadProgressView.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/IDV/SameDeviceAcknowledgement.tsx": 1
+          "packages/two-factor-web/src/flows/idv/steps/IDV/SameDeviceAcknowledgement.tsx": 1,
+          "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1
         },
         "justifyContent": {
           "components/FailureView/FailureView.tsx": 1,
@@ -420,11 +403,12 @@
           "components/Tips/Tips.tsx": 1,
           "packages/two-factor-web/src/flows/idv/components/Footer.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/IDV/IdCapture.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/Pending.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
-          "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1
+          "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1,
+          "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1
         },
         "spacingBottom": {
           "components/FailureView/ReskinnedFailureView.tsx": 1,
@@ -432,12 +416,13 @@
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 1,
           "packages/two-factor-web/src/flows/SecurityQuestions/pages/FlowResultsPages/Pending.tsx": 1,
+          "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1,
           "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
           "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
+          "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "spacingHorizontal": {
           "components/ImageUpload/ImageUpload.tsx": 2,
@@ -449,23 +434,16 @@
           "components/ImageUpload/ImageUpload.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/IDV/SameDeviceAcknowledgement.tsx": 1
         },
-        "dangerouslySetStyle": {
-          "components/OnboardingGuidance/ErrorView.tsx": 1
-        },
-        "spacingTop": {
-          "components/OnboardingGuidance/InformativeView.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 1
-        },
         "flexWrap": {
           "components/PendingVerification/Pending.tsx": 1
+        },
+        "height": {
+          "components/UploadProgressView/UploadProgressView.tsx": 1
         },
         "spacingStart": {
           "components/Tips/Tips.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 1,
           "packages/two-factor-web/src/flows/SecurityQuestions/pages/FlowResultsPages/Pending.tsx": 1
-        },
-        "height": {
-          "components/UploadProgressView/UploadProgressView.tsx": 1
         },
         "background": {
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
@@ -481,6 +459,14 @@
         },
         "className": {
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
+        },
+        "gap": {
+          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
+        },
+        "spacingTop": {
+          "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 1
         },
         "as": {
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
@@ -515,157 +501,19 @@
       }
     },
     {
-      "name": "Button",
-      "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 29,
-      "totalCallSites": 21,
-      "cds": "@cbhq/cds-web/buttons/Button",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "components/OnboardingGuidance/common/ActionButton.tsx",
-          "callSites": [
-            "components/OnboardingGuidance/ErrorView.tsx",
-            "components/OnboardingGuidance/InformativeView.tsx"
-          ]
-        }
-      ],
-      "callSites": {
-        "components/Capture/Capture.tsx": 3,
-        "components/CameraFailureView/CameraFailureView.tsx": 2,
-        "components/FailureView/FailureView.tsx": 1,
-        "components/FailureView/ReskinnedFailureView.tsx": 2,
-        "components/ImageUpload/ImageUpload.tsx": 2,
-        "components/PollingFailureView/PollingFailureView.tsx": 2,
-        "components/SelectIDType/SelectIDType.tsx": 1,
-        "components/SubmitFailureView/SubmitFailureView.tsx": 2,
-        "components/SuccessView/SuccessView.tsx": 1,
-        "components/Tips/Tips.tsx": 1,
-        "components/OnboardingGuidance/common/ActionButton.tsx": 1,
-        "packages/two-factor-web/src/flows/idv/steps/IDV/SameDeviceAcknowledgement.tsx": 1,
-        "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
-        "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-        "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
-        "packages/two-factor-web/src/flows/SecurityQuestions/pages/IDCardPage.tsx": 1,
-        "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1,
-        "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
-        "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "compact": {
-          "components/Capture/Capture.tsx": 3
-        },
-        "onPress": {
-          "components/Capture/Capture.tsx": 3,
-          "components/CameraFailureView/CameraFailureView.tsx": 1,
-          "components/FailureView/FailureView.tsx": 1,
-          "components/FailureView/ReskinnedFailureView.tsx": 1,
-          "components/ImageUpload/ImageUpload.tsx": 2,
-          "components/PollingFailureView/PollingFailureView.tsx": 1,
-          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
-          "components/SuccessView/SuccessView.tsx": 1,
-          "components/Tips/Tips.tsx": 1,
-          "components/OnboardingGuidance/common/ActionButton.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/IDV/SameDeviceAcknowledgement.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/IDCardPage.tsx": 1,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1,
-          "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
-          "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
-        },
-        "testID": {
-          "components/Capture/Capture.tsx": 2,
-          "components/CameraFailureView/CameraFailureView.tsx": 1,
-          "components/ImageUpload/ImageUpload.tsx": 2,
-          "components/PollingFailureView/PollingFailureView.tsx": 1,
-          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
-          "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
-          "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
-        },
-        "disabled": {
-          "components/Capture/Capture.tsx": 2,
-          "components/ImageUpload/ImageUpload.tsx": 2,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/IDCardPage.tsx": 1,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
-        },
-        "block": {
-          "components/CameraFailureView/CameraFailureView.tsx": 2,
-          "components/FailureView/FailureView.tsx": 1,
-          "components/FailureView/ReskinnedFailureView.tsx": 1,
-          "components/ImageUpload/ImageUpload.tsx": 2,
-          "components/PollingFailureView/PollingFailureView.tsx": 2,
-          "components/SelectIDType/SelectIDType.tsx": 1,
-          "components/SubmitFailureView/SubmitFailureView.tsx": 2,
-          "components/SuccessView/SuccessView.tsx": 1,
-          "components/Tips/Tips.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/IDCardPage.tsx": 1,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
-        },
-        "variant": {
-          "components/CameraFailureView/CameraFailureView.tsx": 1,
-          "components/FailureView/ReskinnedFailureView.tsx": 1,
-          "components/PollingFailureView/PollingFailureView.tsx": 1,
-          "components/SelectIDType/SelectIDType.tsx": 1,
-          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
-          "components/OnboardingGuidance/common/ActionButton.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-          "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
-        },
-        "to": {
-          "components/CameraFailureView/CameraFailureView.tsx": 1,
-          "components/FailureView/ReskinnedFailureView.tsx": 1,
-          "components/PollingFailureView/PollingFailureView.tsx": 1,
-          "components/SelectIDType/SelectIDType.tsx": 1,
-          "components/SubmitFailureView/SubmitFailureView.tsx": 1
-        },
-        "target": {
-          "components/CameraFailureView/CameraFailureView.tsx": 1,
-          "components/FailureView/ReskinnedFailureView.tsx": 1,
-          "components/PollingFailureView/PollingFailureView.tsx": 1,
-          "components/SelectIDType/SelectIDType.tsx": 1,
-          "components/SubmitFailureView/SubmitFailureView.tsx": 1
-        },
-        "rel": {
-          "components/CameraFailureView/CameraFailureView.tsx": 1
-        },
-        "loading": {
-          "components/ImageUpload/ImageUpload.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 41,
-      "totalCallSites": 23,
+      "totalInstances": 39,
+      "totalCallSites": 21,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "components/CameraFailureView/CameraFailureView.tsx": 4,
         "components/ContentLayout/ContentLayout.tsx": 2,
         "components/FailureView/ReskinnedFailureView.tsx": 4,
-        "components/OnboardingGuidance/ErrorView.tsx": 1,
-        "components/OnboardingGuidance/InformativeView.tsx": 1,
         "components/PendingVerification/Pending.tsx": 1,
         "components/SelectIDType/SelectIDType.tsx": 2,
-        "components/Tips/Tips.tsx": 2,
         "components/UploadProgressView/UploadProgressView.tsx": 1,
+        "components/Tips/Tips.tsx": 2,
         "components/Capture/components/ExampleGuide/ExampleGuide.tsx": 3,
         "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 2,
         "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
@@ -678,20 +526,18 @@
         "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
-        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
+        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
+        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
           "components/CameraFailureView/CameraFailureView.tsx": 4,
           "components/ContentLayout/ContentLayout.tsx": 2,
           "components/FailureView/ReskinnedFailureView.tsx": 4,
-          "components/OnboardingGuidance/ErrorView.tsx": 1,
-          "components/OnboardingGuidance/InformativeView.tsx": 1,
           "components/PendingVerification/Pending.tsx": 1,
           "components/SelectIDType/SelectIDType.tsx": 2,
-          "components/Tips/Tips.tsx": 2,
           "components/UploadProgressView/UploadProgressView.tsx": 1,
+          "components/Tips/Tips.tsx": 2,
           "components/Capture/components/ExampleGuide/ExampleGuide.tsx": 3,
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 2,
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
@@ -704,17 +550,16 @@
           "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 3,
-          "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 2,
+          "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "color": {
           "components/ContentLayout/ContentLayout.tsx": 1,
           "components/FailureView/ReskinnedFailureView.tsx": 2,
-          "components/OnboardingGuidance/ErrorView.tsx": 1,
           "components/PendingVerification/Pending.tsx": 1,
           "components/SelectIDType/SelectIDType.tsx": 2,
-          "components/Tips/Tips.tsx": 2,
           "components/UploadProgressView/UploadProgressView.tsx": 1,
+          "components/Tips/Tips.tsx": 2,
           "components/Capture/components/ExampleGuide/ExampleGuide.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
@@ -731,7 +576,6 @@
         "align": {
           "components/ContentLayout/ContentLayout.tsx": 2,
           "components/FailureView/ReskinnedFailureView.tsx": 1,
-          "components/OnboardingGuidance/InformativeView.tsx": 1,
           "components/PendingVerification/Pending.tsx": 1,
           "components/UploadProgressView/UploadProgressView.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/Pending.tsx": 1,
@@ -793,25 +637,142 @@
       }
     },
     {
+      "name": "Button",
+      "sourceFile": "@cbhq/cds-web/buttons/Button",
+      "totalInstances": 28,
+      "totalCallSites": 20,
+      "cds": "@cbhq/cds-web/buttons/Button",
+      "callSites": {
+        "components/CameraFailureView/CameraFailureView.tsx": 2,
+        "components/Capture/Capture.tsx": 3,
+        "components/FailureView/FailureView.tsx": 1,
+        "components/FailureView/ReskinnedFailureView.tsx": 2,
+        "components/ImageUpload/ImageUpload.tsx": 2,
+        "components/PollingFailureView/PollingFailureView.tsx": 2,
+        "components/SelectIDType/SelectIDType.tsx": 1,
+        "components/SubmitFailureView/SubmitFailureView.tsx": 2,
+        "components/SuccessView/SuccessView.tsx": 1,
+        "components/Tips/Tips.tsx": 1,
+        "packages/two-factor-web/src/flows/idv/steps/IDV/SameDeviceAcknowledgement.tsx": 1,
+        "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+        "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
+        "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
+        "packages/two-factor-web/src/flows/SecurityQuestions/pages/IDCardPage.tsx": 1,
+        "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1,
+        "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
+        "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "components/CameraFailureView/CameraFailureView.tsx": 1,
+          "components/Capture/Capture.tsx": 3,
+          "components/FailureView/FailureView.tsx": 1,
+          "components/FailureView/ReskinnedFailureView.tsx": 1,
+          "components/ImageUpload/ImageUpload.tsx": 2,
+          "components/PollingFailureView/PollingFailureView.tsx": 1,
+          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
+          "components/SuccessView/SuccessView.tsx": 1,
+          "components/Tips/Tips.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/IDV/SameDeviceAcknowledgement.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/IDCardPage.tsx": 1,
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1,
+          "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
+          "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
+        },
+        "block": {
+          "components/CameraFailureView/CameraFailureView.tsx": 2,
+          "components/FailureView/FailureView.tsx": 1,
+          "components/FailureView/ReskinnedFailureView.tsx": 1,
+          "components/ImageUpload/ImageUpload.tsx": 2,
+          "components/PollingFailureView/PollingFailureView.tsx": 2,
+          "components/SelectIDType/SelectIDType.tsx": 1,
+          "components/SubmitFailureView/SubmitFailureView.tsx": 2,
+          "components/SuccessView/SuccessView.tsx": 1,
+          "components/Tips/Tips.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/IDCardPage.tsx": 1,
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1,
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1
+        },
+        "variant": {
+          "components/CameraFailureView/CameraFailureView.tsx": 1,
+          "components/FailureView/ReskinnedFailureView.tsx": 1,
+          "components/PollingFailureView/PollingFailureView.tsx": 1,
+          "components/SelectIDType/SelectIDType.tsx": 1,
+          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
+          "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1,
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
+        },
+        "to": {
+          "components/CameraFailureView/CameraFailureView.tsx": 1,
+          "components/FailureView/ReskinnedFailureView.tsx": 1,
+          "components/PollingFailureView/PollingFailureView.tsx": 1,
+          "components/SelectIDType/SelectIDType.tsx": 1,
+          "components/SubmitFailureView/SubmitFailureView.tsx": 1
+        },
+        "testID": {
+          "components/CameraFailureView/CameraFailureView.tsx": 1,
+          "components/Capture/Capture.tsx": 2,
+          "components/ImageUpload/ImageUpload.tsx": 2,
+          "components/PollingFailureView/PollingFailureView.tsx": 1,
+          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/Status/components/BaseStatus.tsx": 1,
+          "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 2,
+          "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1
+        },
+        "target": {
+          "components/CameraFailureView/CameraFailureView.tsx": 1,
+          "components/FailureView/ReskinnedFailureView.tsx": 1,
+          "components/PollingFailureView/PollingFailureView.tsx": 1,
+          "components/SelectIDType/SelectIDType.tsx": 1,
+          "components/SubmitFailureView/SubmitFailureView.tsx": 1
+        },
+        "rel": {
+          "components/CameraFailureView/CameraFailureView.tsx": 1
+        },
+        "compact": {
+          "components/Capture/Capture.tsx": 3
+        },
+        "disabled": {
+          "components/Capture/Capture.tsx": 2,
+          "components/ImageUpload/ImageUpload.tsx": 2,
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/IDCardPage.tsx": 1,
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
+        },
+        "loading": {
+          "components/ImageUpload/ImageUpload.tsx": 1
+        }
+      }
+    },
+    {
       "name": "TextDisplay3",
       "sourceFile": "@cbhq/cds-web/typography/TextDisplay3",
-      "totalInstances": 8,
-      "totalCallSites": 7,
+      "totalInstances": 7,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-web/typography/TextDisplay3",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "components/OnboardingGuidance/common/ViewTitle.tsx",
-          "callSites": []
-        }
-      ],
       "callSites": {
         "components/ContentLayout/ContentLayout.tsx": 1,
         "components/FailureView/ReskinnedFailureView.tsx": 2,
         "components/PendingVerification/Pending.tsx": 1,
         "components/SelectIDType/SelectIDType.tsx": 1,
-        "components/Tips/Tips.tsx": 1,
         "components/UploadProgressView/UploadProgressView.tsx": 1,
-        "components/OnboardingGuidance/common/ViewTitle.tsx": 1
+        "components/Tips/Tips.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -819,8 +780,8 @@
           "components/FailureView/ReskinnedFailureView.tsx": 2,
           "components/PendingVerification/Pending.tsx": 1,
           "components/SelectIDType/SelectIDType.tsx": 1,
-          "components/Tips/Tips.tsx": 1,
-          "components/UploadProgressView/UploadProgressView.tsx": 1
+          "components/UploadProgressView/UploadProgressView.tsx": 1,
+          "components/Tips/Tips.tsx": 1
         },
         "spacingBottom": {
           "components/ContentLayout/ContentLayout.tsx": 1,
@@ -937,15 +898,14 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 14,
-      "totalCallSites": 10,
+      "totalInstances": 12,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/layout/HStack",
       "callSites": {
         "components/FailureView/ReskinnedFailureView.tsx": 1,
         "components/ImageUpload/ImageUpload.tsx": 1,
-        "components/OnboardingGuidance/InformativeView.tsx": 2,
-        "components/Tips/Tips.tsx": 1,
         "components/Verification/InlineErrorAlert.tsx": 1,
+        "components/Tips/Tips.tsx": 1,
         "components/Webcam/Webcam.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 3,
         "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryStep.tsx": 2,
@@ -958,31 +918,22 @@
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryStep.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 1
         },
-        "gap": {
-          "components/FailureView/ReskinnedFailureView.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 1
+        "spacerGap": {
+          "components/FailureView/ReskinnedFailureView.tsx": 1
         },
         "alignItems": {
           "components/FailureView/ReskinnedFailureView.tsx": 1,
-          "components/Tips/Tips.tsx": 1,
           "components/Verification/InlineErrorAlert.tsx": 1,
+          "components/Tips/Tips.tsx": 1,
           "components/Webcam/Webcam.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryStep.tsx": 1
         },
         "justifyContent": {
           "components/ImageUpload/ImageUpload.tsx": 1,
-          "components/OnboardingGuidance/InformativeView.tsx": 2,
           "components/Webcam/Webcam.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 2,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
-        },
-        "spacingBottom": {
-          "components/OnboardingGuidance/InformativeView.tsx": 1
-        },
-        "responsiveConfig": {
-          "components/Tips/Tips.tsx": 1
         },
         "alignContent": {
           "components/Verification/InlineErrorAlert.tsx": 1
@@ -990,11 +941,18 @@
         "flexWrap": {
           "components/Verification/InlineErrorAlert.tsx": 1
         },
+        "responsiveConfig": {
+          "components/Tips/Tips.tsx": 1
+        },
         "width": {
           "components/Webcam/Webcam.tsx": 1
         },
         "height": {
           "components/Webcam/Webcam.tsx": 1
+        },
+        "gap": {
+          "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/Status/Failed.tsx": 1
         },
         "spacingVertical": {
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryStep.tsx": 1,
@@ -1079,8 +1037,8 @@
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
-      "totalInstances": 14,
-      "totalCallSites": 9,
+      "totalInstances": 15,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "callSites": {
         "components/ImageUpload/ImageUpload.tsx": 6,
@@ -1090,6 +1048,7 @@
         "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryStep.tsx": 1,
+        "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1,
         "apps/unified-login/src/risk/components/ManualReviewProcessingStepper/ManualReviewProcessingStepper.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
       },
@@ -1102,6 +1061,7 @@
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryStep.tsx": 1,
+          "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1,
           "apps/unified-login/src/risk/components/ManualReviewProcessingStepper/ManualReviewProcessingStepper.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
         },
@@ -1135,12 +1095,11 @@
     {
       "name": "LottieStatusAnimation",
       "sourceFile": "@cbhq/cds-web/animation/LottieStatusAnimation",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-web/animation/LottieStatusAnimation",
       "callSites": {
         "components/Loader/Loader.tsx": 1,
-        "components/OnboardingGuidance/InformativeView.tsx": 1,
         "components/UploadProgressView/UploadProgressView.tsx": 1
       },
       "propsWithCallSites": {
@@ -1149,27 +1108,13 @@
         },
         "status": {
           "components/Loader/Loader.tsx": 1,
-          "components/OnboardingGuidance/InformativeView.tsx": 1,
           "components/UploadProgressView/UploadProgressView.tsx": 1
         },
         "height": {
-          "components/OnboardingGuidance/InformativeView.tsx": 1,
           "components/UploadProgressView/UploadProgressView.tsx": 1
         },
         "testID": {
           "components/UploadProgressView/UploadProgressView.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SpotSquare",
-      "sourceFile": "@cbhq/cds-web/illustrations/SpotSquare",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/illustrations/SpotSquare",
-      "propsWithCallSites": {
-        "name": {
-          "components/OnboardingGuidance/ErrorView.tsx": 1
         }
       }
     },
@@ -1206,18 +1151,21 @@
     {
       "name": "Banner",
       "sourceFile": "@cbhq/cds-web/banner/Banner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "cds": "@cbhq/cds-web/banner/Banner",
       "propsWithCallSites": {
         "title": {
-          "components/SubmitFailureView/SubmitFailureView.tsx": 1
+          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
+          "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1
         },
         "variant": {
-          "components/SubmitFailureView/SubmitFailureView.tsx": 1
+          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
+          "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1
         },
         "startIcon": {
-          "components/SubmitFailureView/SubmitFailureView.tsx": 1
+          "components/SubmitFailureView/SubmitFailureView.tsx": 1,
+          "packages/two-factor-web/src/flows/email/EmailWarningBanner.tsx": 1
         }
       }
     },
@@ -1235,23 +1183,6 @@
         "color": {
           "components/Verification/InlineErrorAlert.tsx": 1
         }
-      }
-    },
-    {
-      "name": "TextTitle2",
-      "sourceFile": "@cbhq/cds-web/typography/TextTitle2",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/typography/TextTitle2",
-      "propsWithCallSites": {
-        "as": {
-          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
-        }
-      },
-      "callSites": {
-        "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
-        "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
       }
     },
     {
@@ -1353,8 +1284,8 @@
         "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
+        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -1365,8 +1296,8 @@
           "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
+          "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "color": {
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
@@ -1377,8 +1308,8 @@
           "apps/unified-login/src/risk/components/RiskWhyTheWaitModal/RiskWhyTheWaitModal.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
           "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+          "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
+          "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
         },
         "testID": {
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
@@ -1387,6 +1318,23 @@
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/Status/Pending.tsx": 1,
           "apps/unified-login/src/risk/components/RiskCancelIdVerificationModal/RiskCancelIdVerificationModal.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle2",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle2",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextTitle2",
+      "callSites": {
+        "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
+        "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/SecurityQuestions/pages/SecurityQuestionsPage.tsx": 1
         }
       }
     },
@@ -1949,13 +1897,6 @@
       }
     },
     {
-      "name": "Container",
-      "sourceFile": "components/VerificationError/VerificationError.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "styledComponent": "div"
-    },
-    {
       "name": "ErrorIconStyled",
       "sourceFile": "components/Verification/InlineErrorAlert.tsx",
       "totalInstances": 1,
@@ -1965,6 +1906,13 @@
     {
       "name": "WordBreak",
       "sourceFile": "components/Verification/InlineErrorAlert.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "styledComponent": "div"
+    },
+    {
+      "name": "Container",
+      "sourceFile": "components/VerificationError/VerificationError.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "styledComponent": "div"
@@ -2065,6 +2013,13 @@
       }
     },
     {
+      "name": "strong",
+      "sourceFile": "packages/two-factor-web/src/flows/email/EmailInputCode.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "strong"
+    },
+    {
       "name": "Step",
       "sourceFile": "apps/unified-login/src/risk/components/Stepper/Stepper",
       "totalInstances": 1,
@@ -2117,23 +2072,21 @@
     {
       "name": "ContentLayout",
       "sourceFile": "components/ContentLayout",
-      "totalInstances": 9,
-      "totalCallSites": 9,
+      "totalInstances": 8,
+      "totalCallSites": 8,
       "callSites": {
         "IdCapture.tsx": 1,
         "components/CameraFailureView/CameraFailureView.tsx": 1,
         "components/ImageUpload/ImageUpload.tsx": 1,
-        "components/OnboardingGuidance/Guidance.tsx": 1,
         "components/PollingFailureView/PollingFailureView.tsx": 1,
         "components/SubmitFailureView/SubmitFailureView.tsx": 1,
         "components/SuccessView/SuccessView.tsx": 1,
-        "components/VerificationError/VerificationError.tsx": 1,
-        "components/Verification/Verification.tsx": 1
+        "components/Verification/Verification.tsx": 1,
+        "components/VerificationError/VerificationError.tsx": 1
       },
       "propsWithCallSites": {
         "maintainHeight": {
-          "IdCapture.tsx": 1,
-          "components/OnboardingGuidance/Guidance.tsx": 1
+          "IdCapture.tsx": 1
         },
         "title": {
           "components/CameraFailureView/CameraFailureView.tsx": 1,
@@ -2141,16 +2094,16 @@
           "components/PollingFailureView/PollingFailureView.tsx": 1,
           "components/SubmitFailureView/SubmitFailureView.tsx": 1,
           "components/SuccessView/SuccessView.tsx": 1,
-          "components/VerificationError/VerificationError.tsx": 1,
-          "components/Verification/Verification.tsx": 1
+          "components/Verification/Verification.tsx": 1,
+          "components/VerificationError/VerificationError.tsx": 1
         },
         "subtitle": {
           "components/CameraFailureView/CameraFailureView.tsx": 1,
           "components/ImageUpload/ImageUpload.tsx": 1,
           "components/PollingFailureView/PollingFailureView.tsx": 1,
           "components/SuccessView/SuccessView.tsx": 1,
-          "components/VerificationError/VerificationError.tsx": 1,
-          "components/Verification/Verification.tsx": 1
+          "components/Verification/Verification.tsx": 1,
+          "components/VerificationError/VerificationError.tsx": 1
         },
         "image": {
           "components/CameraFailureView/CameraFailureView.tsx": 1,
@@ -2166,12 +2119,12 @@
         "onGoBack": {
           "components/ImageUpload/ImageUpload.tsx": 1
         },
-        "actionsSubtitle": {
+        "testID": {
+          "components/Verification/Verification.tsx": 1,
           "components/VerificationError/VerificationError.tsx": 1
         },
-        "testID": {
-          "components/VerificationError/VerificationError.tsx": 1,
-          "components/Verification/Verification.tsx": 1
+        "actionsSubtitle": {
+          "components/VerificationError/VerificationError.tsx": 1
         }
       }
     },
@@ -2341,20 +2294,6 @@
       }
     },
     {
-      "name": "OnboardingGuidance",
-      "sourceFile": "components/OnboardingGuidance",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "requestData": {
-          "IdCapture.tsx": 1
-        },
-        "onRetry": {
-          "IdCapture.tsx": 1
-        }
-      }
-    },
-    {
       "name": "div",
       "sourceFile": "IdCapture.tsx",
       "totalInstances": 1,
@@ -2487,6 +2426,21 @@
       }
     },
     {
+      "name": "ul",
+      "sourceFile": "components/CameraFailureView/CameraFailureView.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "li",
+      "sourceFile": "components/CameraFailureView/CameraFailureView.tsx",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": {
+        "components/CameraFailureView/CameraFailureView.tsx": 3
+      }
+    },
+    {
       "name": "ExampleGuide",
       "sourceFile": "components/Capture/components/ExampleGuide",
       "totalInstances": 1,
@@ -2516,21 +2470,6 @@
       "totalCallSites": 1,
       "callSites": {
         "components/Capture/Capture.tsx": 2
-      }
-    },
-    {
-      "name": "ul",
-      "sourceFile": "components/CameraFailureView/CameraFailureView.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "li",
-      "sourceFile": "components/CameraFailureView/CameraFailureView.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": {
-        "components/CameraFailureView/CameraFailureView.tsx": 3
       }
     },
     {
@@ -2829,75 +2768,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "Title",
-      "sourceFile": "components/OnboardingGuidance/common/ViewTitle",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/OnboardingGuidance/ErrorView.tsx": 1,
-        "components/OnboardingGuidance/InformativeView.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "components/OnboardingGuidance/ErrorView.tsx": 1,
-          "components/OnboardingGuidance/InformativeView.tsx": 1
-        },
-        "align": {
-          "components/OnboardingGuidance/InformativeView.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ActionButton",
-      "sourceFile": "components/OnboardingGuidance/common/ActionButton",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "components/OnboardingGuidance/ErrorView.tsx": 1,
-        "components/OnboardingGuidance/InformativeView.tsx": 1
-      },
-      "propsWithCallSites": {
-        "key": {
-          "components/OnboardingGuidance/ErrorView.tsx": 1,
-          "components/OnboardingGuidance/InformativeView.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ErrorView",
-      "sourceFile": "components/OnboardingGuidance/ErrorView",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "data": {
-          "components/OnboardingGuidance/Guidance.tsx": 1
-        },
-        "handleTryAgain": {
-          "components/OnboardingGuidance/Guidance.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "InformativeView",
-      "sourceFile": "components/OnboardingGuidance/InformativeView",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "data": {
-          "components/OnboardingGuidance/Guidance.tsx": 1
-        },
-        "fetchGuidanceScreen": {
-          "components/OnboardingGuidance/Guidance.tsx": 1
-        },
-        "onSuccessContinue": {
-          "components/OnboardingGuidance/Guidance.tsx": 1
-        },
-        "setScreen": {
-          "components/OnboardingGuidance/Guidance.tsx": 1
-        }
-      }
-    },
-    {
       "name": "FacematchTips",
       "sourceFile": "components/Tips/FacematchTips",
       "totalInstances": 1,
@@ -3045,6 +2915,23 @@
       }
     },
     {
+      "name": "EmailIcon",
+      "sourceFile": "components/Verification/Verification.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "InlineAlert",
+      "sourceFile": "components/Verification/InlineErrorAlert/InlineAlert",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "title": {
+          "components/Verification/Verification.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Tips",
       "sourceFile": "components/Tips/Tips",
       "totalInstances": 2,
@@ -3073,23 +2960,6 @@
         "onPressCta": {
           "components/Tips/FacematchTips.tsx": 1,
           "components/Tips/UploadIdTips.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EmailIcon",
-      "sourceFile": "components/Verification/Verification.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "InlineAlert",
-      "sourceFile": "components/Verification/InlineErrorAlert/InlineAlert",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "title": {
-          "components/Verification/Verification.tsx": 1
         }
       }
     },
@@ -3386,60 +3256,23 @@
       "totalInstances": 3,
       "totalCallSites": 3,
       "callSites": {
-        "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+        "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
         "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1
         },
         "description": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1,
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1,
           "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1
         },
         "spacingBottom": {
           "packages/two-factor-web/src/flows/idv/steps/SaveRecoveryCode/SaveCodePrompt.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BaseVerifyInputCode",
-      "sourceFile": "packages/two-factor-web/src/components/BaseVerifyInputCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "twoFactorType": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
-        },
-        "codeLength": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
-        },
-        "onSuccess": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
-        },
-        "onError": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
-        },
-        "errorTestID": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BaseInputRecoveryCode",
-      "sourceFile": "packages/two-factor-web/src/components/BaseInputRecoveryCode",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onError": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
-        },
-        "onSuccess": {
-          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
         }
       }
     },
@@ -3517,6 +3350,43 @@
         },
         "isLast": {
           "packages/two-factor-web/src/flows/idv/steps/SelfRecovery/SelfRecoveryPrompt.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BaseVerifyInputCode",
+      "sourceFile": "packages/two-factor-web/src/components/BaseVerifyInputCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "twoFactorType": {
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
+        },
+        "codeLength": {
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
+        },
+        "onSuccess": {
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
+        },
+        "onError": {
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
+        },
+        "errorTestID": {
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "BaseInputRecoveryCode",
+      "sourceFile": "packages/two-factor-web/src/components/BaseInputRecoveryCode",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onError": {
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
+        },
+        "onSuccess": {
+          "packages/two-factor-web/src/flows/idv/steps/InputRecoveryCode/InputRecoveryCode.tsx": 1
         }
       }
     },
@@ -3699,6 +3569,17 @@
       }
     },
     {
+      "name": "FormattedMessage",
+      "sourceFile": "react-intl/FormattedMessage",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "values": {
+          "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Warning",
       "sourceFile": "packages/two-factor-web/src/components/Warning",
       "totalInstances": 1,
@@ -3725,6 +3606,17 @@
           "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1
         },
         "errorTestID": {
+          "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EmailWarningBanner",
+      "sourceFile": "packages/two-factor-web/src/flows/email/EmailWarningBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "bannerId": {
           "packages/two-factor-web/src/flows/email/EmailInputCode.tsx": 1
         }
       }
@@ -3858,8 +3750,8 @@
       "callSites": {
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
+        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       },
       "propsWithCallSites": {
         "showCancelFlow": {
@@ -3875,8 +3767,8 @@
       "callSites": {
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewApproved/ManualReviewApprovedPage.tsx": 1,
         "apps/unified-login/src/risk/pages/ManualReview/ManualReviewFailed/ManualReviewFailedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1,
-        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1
+        "apps/unified-login/src/risk/pages/ManualReview/ManualReviewProcessing/ManualReviewProcessingPage.tsx": 1,
+        "apps/unified-login/src/risk/pages/RiskyDevice/RiskyDeviceBlocked/RiskyDeviceBlockedPage.tsx": 1
       }
     },
     {

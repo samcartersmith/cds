@@ -3,8 +3,8 @@
     {
       "name": "Tray",
       "sourceFile": "@cbhq/cds-mobile/overlays/Tray",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-mobile/overlays/Tray",
       "aliasedCdsComponents": [
         {
@@ -25,15 +25,13 @@
       "callSites": {
         "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
         "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-        "@app/screens/Defi/requirementScreens/Web3WalletIneligible.tsx": 1,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
+        "@app/screens/Defi/requirementScreens/Web3WalletIneligible.tsx": 1
       },
       "propsWithCallSites": {
         "onCloseComplete": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/requirementScreens/Web3WalletIneligible.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
+          "@app/screens/Defi/requirementScreens/Web3WalletIneligible.tsx": 1
         },
         "verticalDrawerPercentageOfView": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
@@ -41,9 +39,6 @@
         },
         "preventDismissGestures": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1
-        },
-        "title": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
         }
       }
     },
@@ -51,8 +46,14 @@
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
       "totalInstances": 59,
-      "totalCallSites": 31,
+      "totalCallSites": 30,
       "cds": "@cbhq/cds-mobile/layout/VStack",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@app/screens/Dex/DexPreviewScreen/DexPreviewScreen.tsx"
+        }
+      ],
       "aliasedCdsComponents": [
         {
           "aliasPath": "@app/screens/Defi/requirementScreens/nux/DappNuxTraySlide.tsx",
@@ -84,12 +85,6 @@
           "callSites": [
             "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx"
           ]
-        },
-        {
-          "aliasPath": "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx",
-          "callSites": [
-            "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx"
-          ]
         }
       ],
       "callSites": {
@@ -99,19 +94,18 @@
         "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 4,
         "@app/screens/Defi/requirementScreens/nux/Web3NuxSlide.tsx": 1,
         "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 2,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 5,
         "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 2,
         "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 3,
-        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 2,
-        "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 3,
+        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 3,
+        "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 4,
         "@app/screens/Defi/DAppWallet/components/DappWalletNoActivity.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletNoCrypto.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx": 2,
         "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 2,
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewDisclaimers.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/Web3WalletPreviewBalanceCells.tsx": 1,
-        "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
+        "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 2,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 3,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 2,
         "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 3,
@@ -129,7 +123,6 @@
         "alignItems": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 2,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
@@ -138,8 +131,8 @@
         },
         "spacingBottom": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
+          "@app/screens/Defi/DAppWallet/components/DappWalletNoActivity.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
           "@app/screens/SimpleTrade/Mgx/components/MgxPreview.tsx": 1
@@ -147,7 +140,6 @@
         "justifyContent": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTraySlide.tsx": 1,
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1
         },
@@ -167,8 +159,8 @@
         "gap": {
           "@app/screens/Defi/requirementScreens/nux/DisclosureWithToS.tsx": 1,
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2,
           "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx": 2,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
           "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 1,
           "@app/screens/SimpleTrade/Mgx/components/MgxPaymentMethodsTray.tsx": 1,
           "@app/screens/SimpleTrade/Mgx/components/MgxPreview.tsx": 1,
@@ -177,11 +169,11 @@
         "spacingHorizontal": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 1,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 3,
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
           "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
           "@app/screens/SimpleTrade/Mgx/components/MgxPaymentMethodsTray.tsx": 1,
           "@app/screens/SimpleTrade/Mgx/components/MgxPreview.tsx": 2,
@@ -189,8 +181,7 @@
         },
         "width": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 1,
-          "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+          "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1
         },
         "height": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
@@ -200,13 +191,9 @@
         },
         "spacingVertical": {
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 1
-        },
-        "key": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
         },
         "spacing": {
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
@@ -230,6 +217,8 @@
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
         },
         "spacingTop": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
+          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletNoActivity.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletNoCrypto.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
@@ -245,16 +234,13 @@
         "borderRadius": {
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewDisclaimers.tsx": 1
         },
-        "alignSelf": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
-        },
         "spacingEnd": {
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1
         },
         "pin": {
           "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1
         },
-        "dangerouslySetStyle": {
+        "style": {
           "@app/screens/Dex/DexPreviewScreen/DexPreviewScreen.tsx": 1
         }
       }
@@ -287,9 +273,35 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 40,
-      "totalCallSites": 24,
+      "totalInstances": 37,
+      "totalCallSites": 22,
       "cds": "@cbhq/cds-mobile/layout/Box",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx"
+        }
+      ],
       "aliasedCdsComponents": [
         {
           "aliasPath": "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewDisclaimers.tsx",
@@ -303,7 +315,6 @@
         "@app/screens/Defi/requirementScreens/nux/Web3NuxSlide.tsx": 1,
         "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 3,
         "@app/screens/Defi/requirementScreens/Web3WalletIneligible.tsx": 1,
-        "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletNoActivity.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletNoCrypto.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx": 4,
@@ -313,7 +324,6 @@
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewButton.tsx": 3,
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewDisclaimers.tsx": 1,
         "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 3,
         "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
@@ -337,12 +347,10 @@
         },
         "spacingTop": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxSlide.tsx": 1,
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewBottomContent.tsx": 2,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewButton.tsx": 3,
           "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1,
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
@@ -351,7 +359,6 @@
           "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewBottomContent.tsx": 1,
           "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
           "@app/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx": 1
         },
         "flexGrow": {
@@ -386,13 +393,12 @@
         },
         "spacingHorizontal": {
           "@app/screens/Defi/requirementScreens/Web3WalletIneligible.tsx": 1,
-          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
         },
         "animated": {
           "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx": 4
         },
-        "dangerouslySetStyle": {
+        "style": {
           "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx": 4,
           "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx": 2
         },
@@ -440,16 +446,18 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
-      "totalInstances": 13,
-      "totalCallSites": 10,
+      "totalInstances": 16,
+      "totalCallSites": 12,
       "cds": "@cbhq/cds-mobile/typography/TextTitle3",
       "callSites": {
         "@app/screens/Defi/requirementScreens/nux/DappNuxTraySlide.tsx": 1,
         "@app/screens/Defi/requirementScreens/nux/Web3NuxSlide.tsx": 1,
         "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 2,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2,
         "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
+        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
+        "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 2,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
         "@app/screens/Defi/Transfer/DAppWalletTransferAssetSelectorScreen/CeFiAssets.tsx": 1,
         "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1,
         "@app/screens/SimpleTrade/Mgx/components/MgxPaymentMethodsTray.tsx": 2,
@@ -468,6 +476,7 @@
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
+          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferAssetSelectorScreen/CeFiAssets.tsx": 1,
           "@app/screens/Dex/DexOrderStatusScreen/DexOrderSuccess.tsx": 1
         },
@@ -477,7 +486,8 @@
           "@app/screens/Defi/Transfer/DAppWalletTransferAssetSelectorScreen/CeFiAssets.tsx": 1
         },
         "color": {
-          "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1
+          "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
+          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
         },
         "spacingStart": {
           "@app/screens/Defi/Transfer/DAppWalletTransferAssetSelectorScreen/CeFiAssets.tsx": 1
@@ -497,9 +507,9 @@
         "@app/screens/Defi/requirementScreens/nux/DappNuxTraySlide.tsx": 1,
         "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
         "@app/screens/Defi/requirementScreens/nux/Web3NuxSlide.tsx": 1,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
         "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 2,
         "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 2,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
         "@app/screens/Defi/Transfer/DAppWalletTransferAssetSelectorScreen/CeFiAssets.tsx": 2,
@@ -517,6 +527,7 @@
           "@app/screens/Defi/requirementScreens/nux/DappNuxTraySlide.tsx": 1,
           "@app/screens/Defi/requirementScreens/nux/Web3NuxSlide.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferAssetSelectorScreen/CeFiAssets.tsx": 1,
@@ -586,12 +597,11 @@
     {
       "name": "Fallback",
       "sourceFile": "@cbhq/cds-mobile/layout/Fallback",
-      "totalInstances": 22,
-      "totalCallSites": 9,
+      "totalInstances": 21,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-mobile/layout/Fallback",
       "callSites": {
         "@app/screens/Defi/requirementScreens/nux/DisclosureWithToS.tsx": 3,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
         "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 3,
         "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 2,
         "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 2,
@@ -603,7 +613,6 @@
       "propsWithCallSites": {
         "height": {
           "@app/screens/Defi/requirementScreens/nux/DisclosureWithToS.tsx": 3,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 3,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 2,
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 2,
@@ -614,7 +623,6 @@
         },
         "width": {
           "@app/screens/Defi/requirementScreens/nux/DisclosureWithToS.tsx": 3,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 3,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 2,
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 2,
@@ -623,25 +631,21 @@
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewBottomContent.tsx": 1,
           "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx": 4
         },
-        "flexGrow": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
+        "spacingVertical": {
+          "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1
         },
         "shape": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletNFTCell.tsx": 3,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewBottomContent.tsx": 1,
           "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx": 4
-        },
-        "spacingVertical": {
-          "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1
         }
       }
     },
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-mobile/layout/HStack",
-      "totalInstances": 40,
+      "totalInstances": 33,
       "totalCallSites": 16,
       "cds": "@cbhq/cds-mobile/layout/HStack",
       "aliasedCdsComponents": [
@@ -653,13 +657,13 @@
       "callSites": {
         "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 4,
         "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 6,
         "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 2,
-        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
+        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 2,
         "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 2,
         "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx": 2,
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletNFTCell.tsx": 3,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 7,
+        "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 4,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1,
         "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
@@ -672,27 +676,26 @@
         "gap": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx": 2,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletNFTCell.tsx": 2,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
           "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 4
         },
         "alignItems": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 5,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletNFTCell.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
+          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 3,
           "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 4
         },
         "flexShrink": {
-          "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2
+          "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2
         },
         "flexWrap": {
-          "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
+          "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1
         },
         "accessibilityLabel": {
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1
@@ -702,80 +705,71 @@
         },
         "justifyContent": {
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2,
-          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 2,
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletNFTCell.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
+          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 3,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1
         },
-        "spacingVertical": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
-          "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletNFTCell.tsx": 1
-        },
         "spacingHorizontal": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 3,
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1
         },
         "spacingTop": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
           "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1
         },
         "spacingBottom": {
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 3,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx": 1
         },
         "offsetHorizontal": {
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
         },
-        "spacingEnd": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        "spacingVertical": {
+          "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletNFTCell.tsx": 1
+        },
+        "flexGrow": {
+          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
+        },
+        "testID": {
+          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
         },
         "spacing": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 2,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx": 1
         },
-        "flexGrow": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 3
+        "bordered": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        },
+        "borderRadius": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
+          "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx": 1
         },
         "background": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
           "@app/screens/Defi/Transfer/DAppWalletTransferAssetSelectorScreen/CeFiAssets.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx": 1
         },
-        "pin": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
-        },
-        "zIndex": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
-        },
         "minWidth": {
           "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 2
-        },
-        "borderRadius": {
-          "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx": 1
         }
       }
     },
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-mobile/icons/Icon",
-      "totalInstances": 8,
-      "totalCallSites": 6,
+      "totalInstances": 6,
+      "totalCallSites": 5,
       "cds": "@cbhq/cds-mobile/icons/Icon",
       "callSites": {
         "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2,
         "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
         "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
         "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1,
@@ -784,7 +778,6 @@
       "propsWithCallSites": {
         "name": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1,
@@ -792,21 +785,15 @@
         },
         "size": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx": 2,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 1
         },
-        "testID": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2
-        },
         "spacingStart": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
         },
         "color": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1,
@@ -910,8 +897,8 @@
     {
       "name": "Button",
       "sourceFile": "@components/interactables/Button",
-      "totalInstances": 45,
-      "totalCallSites": 30,
+      "totalInstances": 43,
+      "totalCallSites": 28,
       "cds": "@components/interactables/Button",
       "presentationalLibrary": "@components/interactables/Button",
       "aliasedCdsComponents": [
@@ -937,7 +924,6 @@
       "callSites": {
         "@app/screens/Defi/requirementScreens/nux/Web3NuxSlide.tsx": 2,
         "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 2,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
         "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
         "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletNoActivity.tsx": 1,
@@ -946,7 +932,6 @@
         "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewBottomContent.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewButton.tsx": 3,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendBurnAssetScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
@@ -989,7 +974,6 @@
         "onPress": {
           "@app/screens/Defi/requirementScreens/nux/Web3NuxSlide.tsx": 2,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 2,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletNoActivity.tsx": 1,
@@ -998,7 +982,6 @@
           "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewBottomContent.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewButton.tsx": 3,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendBurnAssetScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
@@ -1033,7 +1016,6 @@
           "@app/screens/Defi/DAppWallet/components/DappWalletNoCrypto.tsx": 1,
           "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions.tsx": 4,
           "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 1,
           "@app/screens/SimpleTrade/Mgx/components/MgxConfirmation.tsx": 2,
@@ -1045,7 +1027,6 @@
         },
         "block": {
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 2,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/SimpleTrade/Mgx/components/MgxConfirmation.tsx": 2,
           "@app/screens/Dex/DexOrderStatusScreen/DexOrderFailure.tsx": 2,
           "@app/screens/Dex/DexOrderStatusScreen/DexOrderPending.tsx": 2,
@@ -1157,7 +1138,7 @@
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
           "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
         },
-        "backgroundColor": {
+        "background": {
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
           "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
         },
@@ -1187,14 +1168,14 @@
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
-      "totalInstances": 13,
+      "totalInstances": 12,
       "totalCallSites": 8,
       "cds": "@cbhq/cds-mobile/typography/TextLabel2",
       "callSites": {
         "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
         "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 2,
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewDisclaimers.tsx": 2,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
         "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1,
         "@app/screens/Defi/Transfer/DAppWalletTransferInputScreen.tsx": 1,
@@ -1205,7 +1186,6 @@
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 2,
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewDisclaimers.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1,
           "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1,
           "@app/screens/Defi/Transfer/DAppWalletTransferInputScreen.tsx": 1,
@@ -1216,28 +1196,6 @@
         },
         "spacingStart": {
           "@app/screens/Dex/DexPreviewScreen/DexPreviewScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PressableOpacity",
-      "sourceFile": "@cbhq/cds-mobile/system/PressableOpacity",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-mobile/system/PressableOpacity",
-      "callSites": {
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
-        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onPress": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
-          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
-        },
-        "noScaleOnPress": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         }
       }
     },
@@ -1402,6 +1360,26 @@
       }
     },
     {
+      "name": "PressableOpacity",
+      "sourceFile": "@cbhq/cds-mobile/system/PressableOpacity",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/system/PressableOpacity",
+      "callSites": {
+        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onPress": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        },
+        "noScaleOnPress": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        }
+      }
+    },
+    {
       "name": "SpotRectangle",
       "sourceFile": "@cbhq/cds-mobile/illustrations/SpotRectangle",
       "totalInstances": 2,
@@ -1439,13 +1417,12 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
-      "totalInstances": 11,
-      "totalCallSites": 8,
+      "totalInstances": 10,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-mobile/typography/TextHeadline",
       "callSites": {
         "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
         "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewDisclaimers.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
         "@app/screens/Defi/Send/DAppWalletSendConfirmationScreen.tsx": 1,
         "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1,
@@ -1463,9 +1440,6 @@
         },
         "spacingBottom": {
           "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/components/DappWalletPreviewDisclaimers.tsx": 1
-        },
-        "numberOfLines": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         },
         "align": {
           "@app/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx": 1
@@ -1512,16 +1486,17 @@
       }
     },
     {
-      "name": "TextLabel1",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextLabel1",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextLabel1",
+      "name": "TextTitle2",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle2",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle2",
+      "callSites": {
+        "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+      },
       "propsWithCallSites": {
-        "color": {
-          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
-        },
-        "spacingBottom": {
+        "testID": {
           "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
         }
       }
@@ -1598,6 +1573,10 @@
         "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 1
       },
       "propsWithCallSites": {
+        "elevation": {
+          "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1,
+          "@app/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx": 1
+        },
         "spacing": {
           "@app/screens/Defi/Receive/DAppReceiveScreen.tsx": 1
         },
@@ -1660,13 +1639,14 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 49,
+      "totalInstances": 51,
       "totalCallSites": 24,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
           "aliasPath": "components/Collectible/CollectibleList.tsx",
           "callSites": [
+            "components/Collectible/CollectibleList.tsx",
             "components/Collectible/CollectibleSection.tsx"
           ]
         }
@@ -1674,9 +1654,9 @@
       "callSites": {
         "views/WalletsBalances/components/DappWalletPrimaryContent.tsx": 1,
         "components/Collectible/CollectibleGrid.tsx": 1,
-        "components/Collectible/CollectibleList.tsx": 1,
+        "components/Collectible/CollectibleList.tsx": 2,
         "components/Collectible/CollectibleSection.tsx": 1,
-        "views/DappWallet/DappWalletActivity.tsx": 3,
+        "views/DappWallet/DappWalletActivity.tsx": 4,
         "views/DappWallet/DappWalletContent.tsx": 3,
         "views/DappWallet/DappWalletCrypto.tsx": 1,
         "views/DappWallet/components/AboutSection.tsx": 1,
@@ -1700,7 +1680,7 @@
       "propsWithCallSites": {
         "flexGrow": {
           "components/Collectible/CollectibleGrid.tsx": 1,
-          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
           "views/Web3/Web3DiscoveryContent.tsx": 1,
           "components/Web3/components/DappDetailsLoading.tsx": 1,
           "components/Web3/components/DappDetailsSection.tsx": 1
@@ -1716,32 +1696,32 @@
           "components/Web3/components/DappDetailsSection.tsx": 2
         },
         "background": {
-          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
           "views/DappWallet/components/AboutSection.tsx": 1,
           "views/DappWallet/components/DappWalletBalance.tsx": 2,
           "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1,
           "components/Web3/components/DappDetailsSection.tsx": 2
         },
         "bordered": {
-          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
           "views/DappWallet/components/AboutSection.tsx": 1,
           "views/DappWallet/components/DappWalletBalance.tsx": 1,
           "views/DappWallet/components/WalletQRCodeSection.tsx": 1
         },
         "spacingVertical": {
-          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
           "views/DappWallet/components/DappWalletBalance.tsx": 1,
           "views/DappWallet/components/WalletQRCodeSection.tsx": 1
         },
         "spacingHorizontal": {
-          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
           "views/DappWallet/DappWalletContent.tsx": 1,
           "views/DappWallet/components/DappWalletBalance.tsx": 2,
           "pages/Web3/components/Web3Banner.tsx": 1,
           "components/Web3/components/DappDetailsSection.tsx": 2
         },
         "borderRadius": {
-          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
           "components/Collectible/CollectibleSection.tsx": 1,
           "views/DappWallet/components/AboutSection.tsx": 1,
           "views/DappWallet/components/DappWalletBalance.tsx": 2,
@@ -1775,8 +1755,8 @@
           "pages/Web3/Web3Page.tsx": 1,
           "components/Web3/components/DappDetailsSection.tsx": 2
         },
-        "gap": {
-          "views/DappWallet/DappWalletActivity.tsx": 1,
+        "spacerGap": {
+          "views/DappWallet/DappWalletActivity.tsx": 2,
           "views/DappWallet/DappWalletContent.tsx": 1,
           "views/DappWallet/components/DappWalletBalance.tsx": 1,
           "components/Web3/components/DappDetailsLoading.tsx": 1,
@@ -1893,13 +1873,13 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 18,
+      "totalInstances": 20,
       "totalCallSites": 9,
       "cds": "@cbhq/cds-web/layout/HStack",
       "callSites": {
         "components/Collectible/CollectibleGrid.tsx": 1,
-        "components/Collectible/CollectibleList.tsx": 1,
-        "views/DappWallet/DappWalletActivity.tsx": 1,
+        "components/Collectible/CollectibleList.tsx": 2,
+        "views/DappWallet/DappWalletActivity.tsx": 2,
         "views/DappWallet/components/DappWalletBalance.tsx": 2,
         "views/DappWallet/components/WalletQRCodeSection.tsx": 3,
         "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1,
@@ -1912,7 +1892,7 @@
           "components/Collectible/CollectibleGrid.tsx": 1,
           "components/Web3/components/DappDetailsSection.tsx": 1
         },
-        "gap": {
+        "spacerGap": {
           "components/Collectible/CollectibleGrid.tsx": 1,
           "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1,
           "components/Web3/components/DappDetailsLoading.tsx": 1,
@@ -1925,8 +1905,8 @@
         },
         "alignItems": {
           "components/Collectible/CollectibleGrid.tsx": 1,
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 2,
           "views/DappWallet/components/WalletQRCodeSection.tsx": 1,
           "components/Web3/components/DappDetailsSection.tsx": 3
         },
@@ -1935,17 +1915,17 @@
           "views/DappWallet/components/WalletQRCodeSection.tsx": 1
         },
         "justifyContent": {
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 2,
           "views/DappWallet/components/WalletQRCodeSection.tsx": 3,
           "components/Web3/components/DappDetailsSection.tsx": 1
         },
         "spacingBottom": {
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 1
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 2
         },
         "spacingHorizontal": {
-          "views/DappWallet/DappWalletActivity.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 2,
           "views/DappWallet/components/WalletQRCodeSection.tsx": 2,
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
@@ -2096,7 +2076,7 @@
           "components/Collectible/CollectibleItem.tsx": 1,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionRow.tsx": 1
         },
-        "backgroundColor": {
+        "background": {
           "components/Collectible/CollectibleItem.tsx": 1,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionRow.tsx": 1
         },
@@ -2175,12 +2155,12 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 10,
+      "totalInstances": 12,
       "totalCallSites": 8,
       "cds": "@cbhq/cds-web/typography/TextTitle3",
       "callSites": {
-        "components/Collectible/CollectibleList.tsx": 1,
-        "views/DappWallet/DappWalletActivity.tsx": 3,
+        "components/Collectible/CollectibleList.tsx": 2,
+        "views/DappWallet/DappWalletActivity.tsx": 4,
         "views/DappWallet/DappWalletContent.tsx": 1,
         "views/DappWallet/components/AboutSection.tsx": 1,
         "views/DappWallet/components/NoActivitySection.tsx": 1,
@@ -2189,8 +2169,8 @@
       },
       "propsWithCallSites": {
         "as": {
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 3,
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 4,
           "views/DappWallet/DappWalletContent.tsx": 1,
           "views/DappWallet/components/AboutSection.tsx": 1,
           "views/DappWallet/components/NoActivitySection.tsx": 1,
@@ -2336,7 +2316,7 @@
         "source": {
           "views/DappWallet/components/DappWalletBalance.tsx": 1
         },
-        "title": {
+        "accessibilityLabel": {
           "views/DappWallet/components/DappWalletBalance.tsx": 1
         }
       }
@@ -2945,8 +2925,7 @@
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
         },
         "ListHeaderComponent": {
-          "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
+          "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1
         },
         "renderItem": {
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
@@ -3004,30 +2983,6 @@
         },
         "isVisible": {
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ChartHeader",
-      "sourceFile": "@designSystem/core/chart/ChartHeader",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@designSystem/core/chart/ChartHeader",
-      "callSites": {
-        "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
-      },
-      "propsWithCallSites": {
-        "testID": {
-          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
-        },
-        "ref": {
-          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
-        },
-        "trailing": {
-          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         }
       }
     },
@@ -3132,38 +3087,38 @@
     {
       "name": "NetworkDropDown",
       "sourceFile": "@cb/shared/components/Web3/components/NetworkDropDown/NetworkDropDown",
-      "totalInstances": 3,
+      "totalInstances": 5,
       "totalCallSites": 3,
       "presentationalLibrary": "@cb/shared/components/Web3/components/NetworkDropDown/NetworkDropDown",
       "callSites": {
-        "components/Collectible/CollectibleList.tsx": 1,
-        "views/DappWallet/DappWalletActivity.tsx": 1,
+        "components/Collectible/CollectibleList.tsx": 2,
+        "views/DappWallet/DappWalletActivity.tsx": 2,
         "views/DappWallet/components/NoActivitySection.tsx": 1
       },
       "propsWithCallSites": {
         "chainId": {
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 2,
           "views/DappWallet/components/NoActivitySection.tsx": 1
         },
         "networkName": {
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 2,
           "views/DappWallet/components/NoActivitySection.tsx": 1
         },
         "networkOptions": {
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 2,
           "views/DappWallet/components/NoActivitySection.tsx": 1
         },
         "handleNetworkChange": {
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 1,
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 2,
           "views/DappWallet/components/NoActivitySection.tsx": 1
         },
         "supportAllNetworksOption": {
-          "components/Collectible/CollectibleList.tsx": 1,
-          "views/DappWallet/DappWalletActivity.tsx": 1
+          "components/Collectible/CollectibleList.tsx": 2,
+          "views/DappWallet/DappWalletActivity.tsx": 2
         }
       }
     },
@@ -3482,12 +3437,11 @@
     {
       "name": "NetworkBoundary",
       "sourceFile": "@app/components/NetworkBoundary",
-      "totalInstances": 16,
-      "totalCallSites": 16,
+      "totalInstances": 15,
+      "totalCallSites": 15,
       "callSites": {
         "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
         "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
         "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
         "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
         "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
@@ -3503,10 +3457,9 @@
         "@app/screens/Dex/DexPreviewScreen/DexPreviewHeader.tsx": 1
       },
       "propsWithCallSites": {
-        "fallback": {
+        "suspenseFallback": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
@@ -3524,7 +3477,6 @@
         "errorFallback": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
@@ -3542,7 +3494,6 @@
         "willErrorBlockUser": {
           "@app/screens/Defi/requirementScreens/nux/DappNuxTray.tsx": 1,
           "@app/screens/Defi/requirementScreens/DappWalletFunding.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
           "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
@@ -3961,186 +3912,6 @@
       }
     },
     {
-      "name": "MultiFilterPill",
-      "sourceFile": "@app/screens/ExploreTab/components/MultiFilterPill",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 3
-      },
-      "propsWithCallSites": {
-        "label": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 3
-        },
-        "isActive": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 3
-        },
-        "testID": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2
-        },
-        "onPress": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2
-        },
-        "isTrayShowing": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "Spinner",
-      "sourceFile": "@app/components/Spinner",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
-        "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx": 1,
-        "@app/screens/AccountRecovery/DAppWalletRecoveryScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "size": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
-          "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "LoadingNfts",
-      "sourceFile": "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 2
-      }
-    },
-    {
-      "name": "NftsList",
-      "sourceFile": "@app/components/NFT/NftsList/NftsList",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "data": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "ListEmptyComponent": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "ListHeaderComponent": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "onEndReached": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "onEndReachedThreshold": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "showsVerticalScrollIndicator": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "contentContainerStyle": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "ListFooterComponent": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "NFTFilterTray",
-      "sourceFile": "@app/screens/Defi/DAppWallet/components/NFTFilterTray",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isTrayVisible": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "onDismiss": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "onOptionSelected": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "NetworkTray",
-      "sourceFile": "@app/screens/Defi/DAppTransaction/NetworkTray/NetworkTray",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isTrayVisible": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "activeNetworkChainId": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "onDismiss": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "onNetworkSelected": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "allNetworksOption": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "allNetworksOnNetworkSelected": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        },
-        "queryRef": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "LoadingFallback",
-      "sourceFile": "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DappWalletNFTsContent",
-      "sourceFile": "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DappMarketplaceV2ErrorComponent",
-      "sourceFile": "@app/screens/Defi/DAppBrowser/DappMarketplaceV2/components/DappMarketplaceV2ErrorComponent",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
-        "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
-        "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
-        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
-        "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
-      },
-      "propsWithCallSites": {
-        "tab": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
-          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
-        },
-        "onClearError": {
-          "@app/screens/Defi/DAppWallet/DAppWalletNFTs.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
-          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
-        },
-        "illustration": {
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
-        },
-        "align": {
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
-        },
-        "spacingHorizontal": {
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "RestrictedAssetDescription",
       "sourceFile": "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx",
       "totalInstances": 1,
@@ -4211,6 +3982,24 @@
       "totalCallSites": 1
     },
     {
+      "name": "DefiEmptyState",
+      "sourceFile": "@app/screens/Defi/components/DefiEmptyState",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
+        "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
+        "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
+      },
+      "propsWithCallSites": {
+        "surface": {
+          "@app/screens/Defi/DAppWallet/DAppWalletRestrictedAssets.tsx": 1,
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1,
+          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Screen",
       "sourceFile": "@app/components/Screen",
       "totalInstances": 21,
@@ -4263,14 +4052,14 @@
           "@app/screens/Dex/DexPreviewScreen/DexPreviewScreen.tsx": 1
         },
         "scrollRefOverride": {
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         },
         "scrollableChild": {
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
         },
         "navHeader": {
           "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1,
           "@app/screens/Defi/CbPay/DappCbPayScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendBurnAssetScreen.tsx": 1,
           "@app/screens/Defi/Send/DAppWalletSendCompleteScreen.tsx": 1,
@@ -4399,28 +4188,58 @@
     {
       "name": "GlobalActionsContainer",
       "sourceFile": "@app/components/GlobalActions/useGlobalActions/GlobalActionsContainer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+      },
       "propsWithCallSites": {
         "animatedStyle": {
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         }
       }
     },
     {
       "name": "DappWalletQuickActions",
       "sourceFile": "@app/screens/Defi/DAppWallet/components/DappWalletQuickActions",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+      },
       "propsWithCallSites": {
         "animatedStyleLeft": {
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         },
         "animatedStyleRight": {
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         },
         "queryRef": {
-          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        },
+        "disableDex": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        },
+        "disableTransfer": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        },
+        "overrideHandleTransferPress": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        },
+        "overrideHandleDexPress": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+        },
+        "overrideHandleSendPress": {
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         }
       }
     },
@@ -4530,6 +4349,29 @@
       "totalCallSites": 1
     },
     {
+      "name": "DappMarketplaceV2ErrorComponent",
+      "sourceFile": "@app/screens/Defi/DAppBrowser/DappMarketplaceV2/components/DappMarketplaceV2ErrorComponent",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "tab": {
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+        },
+        "illustration": {
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+        },
+        "align": {
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+        },
+        "onClearError": {
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/Defi/DAppWallet/DAppWalletScreen.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Section",
       "sourceFile": "@app/components/Section/Section",
       "totalInstances": 1,
@@ -4539,6 +4381,29 @@
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
         },
         "title": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Web3TransactionList",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/Web3TransactionList",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "showNetworkSelector": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "assetContractAddress": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "selectedNetwork": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "setSelectedNetwork": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "showAllActivity": {
           "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
         }
       }
@@ -4590,6 +4455,43 @@
       "totalCallSites": 1
     },
     {
+      "name": "MultiFilterPill",
+      "sourceFile": "@app/screens/ExploreTab/components/MultiFilterPill",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "label": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "isActive": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "isTrayShowing": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NetworkTrayFallback",
+      "sourceFile": "@app/screens/Defi/DAppTransaction/NetworkTray/NetworkTray/NetworkTrayFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isTrayVisible": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "onDismiss": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        },
+        "outage": {
+          "@app/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ListFallback",
       "sourceFile": "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx",
       "totalInstances": 2,
@@ -4607,31 +4509,28 @@
         "balanceRef": {
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
         },
+        "outage": {
+          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
+        },
         "showBalance": {
           "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
         }
       }
     },
     {
-      "name": "AssetsPortfolioListHeader",
-      "sourceFile": "@app/screens/AssetsTab/components/AssetsPortfolioListHeader/AssetsPortfolioListHeader",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "name": "BalanceErrorBanner",
+      "sourceFile": "@app/components/BalanceErrorBanner/BalanceErrorBanner",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
+        "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1,
+        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
+      },
       "propsWithCallSites": {
-        "selected": {
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
-        },
-        "onOptionSelected": {
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
-        },
-        "surface": {
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
-        },
-        "hasPerformance": {
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
-        },
-        "queryRef": {
-          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1
+        "isPartialOutage": {
+          "@app/screens/Defi/DAppWallet/Web3WalletCryptoTab.tsx": 1,
+          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         }
       }
     },
@@ -4768,16 +4667,15 @@
       "totalCallSites": 1
     },
     {
-      "name": "DefiOutageBanner",
-      "sourceFile": "@app/screens/Defi/components/DefiOutageBanner",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1,
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
-      },
+      "name": "DefiErrorBanner",
+      "sourceFile": "@app/screens/Defi/components/DefiErrorBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "propsWithCallSites": {
-        "withBorderRadius": {
+        "surface": {
+          "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1
+        },
+        "outage": {
           "@app/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx": 1
         }
       }
@@ -4965,9 +4863,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "outage": {
-          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
-        },
         "headerLabel": {
           "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
         },
@@ -4983,20 +4878,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "headerLabel": {
-          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
-        },
-        "setOutage": {
-          "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "BalanceErrorBanner",
-      "sourceFile": "@app/components/BalanceErrorBanner/BalanceErrorBanner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isPartialOutage": {
           "@app/screens/Defi/components/Web3WalletBalanceHeader.tsx": 1
         }
       }
@@ -5022,41 +4903,12 @@
       }
     },
     {
-      "name": "QuickActionItem",
-      "sourceFile": "@app/components/QuickActions/QuickActionItem",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 5
-      },
-      "propsWithCallSites": {
-        "icon": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 5
-        },
-        "testID": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 5
-        },
-        "name": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 5
-        },
-        "onPress": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 5
-        },
-        "variant": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 5
-        },
-        "disabled": {
-          "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 2
-        }
-      }
-    },
-    {
       "name": "DAppTransactionHistoryList",
       "sourceFile": "@app/screens/Defi/DAppTransaction/DAppTransactionHistoryList",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "viewerRef": {
+        "queryRef": {
           "@app/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx": 1
         },
         "assetContractAddress": {
@@ -6089,6 +5941,21 @@
       "totalCallSites": 1
     },
     {
+      "name": "Spinner",
+      "sourceFile": "@app/components/Spinner",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx": 1,
+        "@app/screens/AccountRecovery/DAppWalletRecoveryScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "size": {
+          "@app/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ErrorTray",
       "sourceFile": "@app/components/Trays/ErrorTray",
       "totalInstances": 1,
@@ -6164,61 +6031,6 @@
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
         "isBuyAndStakePreselected": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SimpleTradeDepositButton",
-      "sourceFile": "@app/screens/SimpleTrade/components/SimpleTradeDepositButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "fiatCurrency": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "target": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "logSimpleTradeClickEvent": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MinimumPriceTargetError",
-      "sourceFile": "@app/screens/SimpleTrade/LimitOrder/MinimumPriceTargetError",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "action": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "queryRef": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "setInputValue": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "setAmount": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "targetPrice": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "setTargetPrice": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "setLimitPrice": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "displayedInputCurrency": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "setDisplayedInputCurrency": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "cryptoCurrency": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         }
       }
@@ -6423,6 +6235,9 @@
         },
         "isBuyAndStakePreselected": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "setHasSelectorThrown": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         }
       }
     },
@@ -6480,7 +6295,7 @@
         "tradeError": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
-        "tradeErrorComponent": {
+        "limitOrderInputError": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
         "previewButton": {
@@ -6514,6 +6329,21 @@
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
         "orderType": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "logSimpleTradeClickEvent": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "setLimitPrice": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "limitOrderTargetPrice": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "displayedInputCurrency": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "cryptoCurrency": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         }
       }
@@ -7928,6 +7758,85 @@
       }
     },
     {
+      "name": "ErrorFallback",
+      "sourceFile": "components/Collectible/CollectibleList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "networkSwitcherInfo": {
+          "components/Collectible/CollectibleList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ErrorBoundary",
+      "sourceFile": "@cbhq/common-web/ErrorBoundary",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "components/Collectible/CollectibleList.tsx": 1,
+        "views/DappWallet/DappWalletActivity.tsx": 1
+      },
+      "propsWithCallSites": {
+        "key": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        },
+        "owner": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        },
+        "context": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        },
+        "fallback": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CollectibleListContent",
+      "sourceFile": "components/Collectible/CollectibleList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CollectibleContainer",
+      "sourceFile": "components/Collectible/CollectibleList.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "networkSwitcherInfo": {
+          "components/Collectible/CollectibleList.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SharedEmptyStateUI",
+      "sourceFile": "components/EmptyState/SharedEmptyStateUI",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "callSites": {
+        "components/Collectible/CollectibleList.tsx": 1,
+        "components/Collectible/CollectibleSection.tsx": 1,
+        "views/DappWallet/DappWalletActivity.tsx": 2
+      },
+      "propsWithCallSites": {
+        "title": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleSection.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 2
+        },
+        "description": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleSection.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 2
+        }
+      }
+    },
+    {
       "name": "CollectibleList",
       "sourceFile": "components/Collectible/CollectibleList",
       "totalInstances": 1,
@@ -7959,8 +7868,23 @@
         },
         "networkSwitcherInfo": {
           "components/Collectible/CollectibleSection.tsx": 1
+        },
+        "queryRef": {
+          "components/Collectible/CollectibleSection.tsx": 1
         }
       }
+    },
+    {
+      "name": "CollectibleContainer",
+      "sourceFile": "components/Collectible/CollectibleList/CollectibleContainer",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ErrorFallback",
+      "sourceFile": "components/Collectible/CollectibleSection.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "CollectibleSectionLoading",
@@ -8107,6 +8031,29 @@
       }
     },
     {
+      "name": "TransactionList",
+      "sourceFile": "views/DappWallet/DappWalletActivity.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "pendingTransactionsToDisplay": {
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        },
+        "transactionsToDisplay": {
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        },
+        "isLoadingNext": {
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        },
+        "loadMoreItems": {
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        },
+        "hasOutageForCurrNetwork": {
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ActivityListCellFallback",
       "sourceFile": "components/ActivityListCellFallback",
       "totalInstances": 5,
@@ -8131,6 +8078,9 @@
           "views/DappWallet/DappWalletActivity.tsx": 1
         },
         "fallback": {
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        },
+        "errorFallback": {
           "views/DappWallet/DappWalletActivity.tsx": 1
         },
         "noHorizontalSpacing": {
@@ -8169,6 +8119,9 @@
           "views/DappWallet/DappWalletContent.tsx": 1
         },
         "hasErrorFallback": {
+          "views/DappWallet/DappWalletContent.tsx": 1
+        },
+        "hasFallback": {
           "views/DappWallet/DappWalletContent.tsx": 1
         },
         "onVisible": {
@@ -8419,6 +8372,9 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "viewerAssetRef": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
+        },
         "key": {
           "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
         },

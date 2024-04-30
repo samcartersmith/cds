@@ -38,10 +38,6 @@
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
             "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
           },
-          "appSwitcherOptions": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
           "start": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
             "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
@@ -70,13 +66,14 @@
         "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+        "packagePath": "/Users/emilyseibert/src/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/identity-navigation": "^4.2.3"
+      "@cbhq/app-switcher": "^2.0.0",
+      "@cbhq/identity-navigation": "^5.0.0"
     },
     "devDependencies": {},
     "peerDependencies": {},

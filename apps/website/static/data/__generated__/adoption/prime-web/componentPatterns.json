@@ -2,32 +2,6 @@
   "components": [
     {
       "component": {
-        "name": "AppSwitcher",
-        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "projectId": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
-          },
-          "action": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
-          },
-          "target": {
-            "@prime-ui/pages/layout/header/UserMenuV2.tsx": 1
-          }
-        }
-      },
-      "config": {
-        "productComponentName": "AppSwitcher",
-        "owningTeam": "Identity",
-        "packageImportPath": "@cbhq/app-switcher",
-        "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
-        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
-      }
-    },
-    {
-      "component": {
         "name": "NavigationBar",
         "sourceFile": "@cbhq/identity-navigation/NavigationBar",
         "totalInstances": 1,
@@ -69,13 +43,13 @@
         "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+        "packagePath": "/Users/emilyseibert/src/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/identity-navigation": "^5.0.0"
+      "@cbhq/identity-navigation": "5.0.4"
     },
     "devDependencies": {},
     "peerDependencies": {},
