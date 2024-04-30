@@ -2,7 +2,7 @@
 
 > Release Instructions: For details on how to release, refer to the [Adoption Tracker Release Documentation](./release/adoption-tracker.md)
 
-> For details regarding Adoption Tracker Config Modification: See [Adoption Tracker Config Docs](../adoption-tracker-config.md)
+> For details regarding Adoption Tracker Config Modification: See [Adoption Tracker Config Docs](../docs/adoption-tracker-config.md)
 
 ## Summary
 

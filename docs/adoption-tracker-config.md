@@ -2,13 +2,22 @@
 
 > A quick guide on how to modify the adoption tracker config.
 
-For details regarding Adoption Tracker Development: See [Adoption Tracker Development Docs](../adoption-tracker-development.md)
+For details regarding Adoption Tracker Development: See [Adoption Tracker Development Docs](../docs/adoption-tracker-development.md)
 
 ## Overview
 
 The adoption tracker config is the key source for our data. This guide covers how to modify it.
 
 config - `apps/website/scripts/adoption/config.ts`
+
+### Note
+
+After updating the configuration, ensure to execute the following commands:
+
+- `yarn nx run website:adoption` to refresh the adoption data
+- `yarn nx run website:start` to launch the website.
+
+Afterwards, navigate to the Adopters Overview, Adopters Details, CUJ Overview, or CUJ details page to verify that the data, including the version, is displayed correctly.
 
 ## Adding to Adoption Tracker (Adoption Overview) Data
 
