@@ -76,6 +76,8 @@ export type FullscreenModalProps = {
   | 'zIndex'
   | 'role'
   | 'onDidClose'
+  | 'shouldCloseOnEscPress'
+  | 'disableFocusTrap'
 >;
 
 export const FullscreenModal = memo(function FullscreenModal({
@@ -93,6 +95,8 @@ export const FullscreenModal = memo(function FullscreenModal({
   showSecondaryContentDivider = false,
   role,
   onDidClose,
+  shouldCloseOnEscPress = true,
+  disableFocusTrap,
   accessibilityLabelledBy,
   accessibilityLabel,
 }: FullscreenModalProps) {
@@ -182,7 +186,10 @@ export const FullscreenModal = memo(function FullscreenModal({
     >
       {overlay}
       <motion.div {...dialogMotionProps} className={pinStyles}>
-        <FocusTrap onEscPress={onRequestClose}>
+        <FocusTrap
+          disableFocusTrap={disableFocusTrap}
+          onEscPress={shouldCloseOnEscPress ? onRequestClose : undefined}
+        >
           <VStack background="background" className={containerClassName}>
             {header}
             {content}

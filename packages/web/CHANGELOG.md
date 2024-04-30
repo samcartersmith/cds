@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.11.0 (4/30/2024 PST)
+
+#### 🚀 Updates
+
+- **[FullscreenModal]** Add shouldCloseOnEscPress and disableFocusTrap props. [[#2983](https://github.cbhq.net/frontend/cds/pull/2983)] [[DX-3715](https://jira.coinbase-corp.com/browse/DX-3715)]
+
 ## 6.10.0 (4/26/2024 PST)
 
 #### 🚀 Updates

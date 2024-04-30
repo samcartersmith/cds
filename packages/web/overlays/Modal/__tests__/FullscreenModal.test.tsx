@@ -18,10 +18,15 @@ const onRequestCloseSpy = jest.fn();
 
 type Options = {
   visible?: boolean;
+  // eslint-disable-next-line react/boolean-prop-naming
+  shouldCloseOnEscPress?: boolean;
+  disableFocusTrap?: boolean;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabelledBy' | 'accessibilityLabel'>;
 
 const FullscreenModalExample = ({
   visible: externalVisible = true,
+  shouldCloseOnEscPress,
+  disableFocusTrap,
   accessibilityLabelledBy,
   accessibilityLabel,
 }: Options) => {
@@ -40,9 +45,11 @@ const FullscreenModalExample = ({
       disablePortal
       accessibilityLabel={accessibilityLabel}
       accessibilityLabelledBy={accessibilityLabelledBy}
+      disableFocusTrap={disableFocusTrap}
       onRequestClose={handleClose}
       primaryContent={primaryContent}
       secondaryContent={secondaryContent}
+      shouldCloseOnEscPress={shouldCloseOnEscPress}
       title={TITLE}
       visible={visible}
     />
@@ -151,5 +158,23 @@ describe('FullscreenModal', () => {
     await user.keyboard('{Escape}');
 
     expect(onRequestCloseSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not fire close method on ESC key press when `shouldCloseOnEscPress` is false', async () => {
+    render(<FullscreenModalExample shouldCloseOnEscPress={false} />);
+
+    const user = userEvent.setup();
+    await user.keyboard('{Escape}');
+
+    expect(onRequestCloseSpy).not.toHaveBeenCalled();
+  });
+
+  it('disables focus trap when `disableFocusTrap` is true', async () => {
+    render(<FullscreenModalExample disableFocusTrap />);
+
+    const user = userEvent.setup();
+    await user.keyboard(`{Tab}{Enter}`);
+
+    expect(onRequestCloseSpy).not.toHaveBeenCalled();
   });
 });

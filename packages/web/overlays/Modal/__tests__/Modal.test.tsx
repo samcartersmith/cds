@@ -25,7 +25,16 @@ const LABEL = 'A label';
 const YUBIKEY_STRING = 'cccccbeurlitbgvnvidvttluefrcnnggvhnhcuuddjkn';
 const YUBIKEY_TITLE = 'Yubikey Test Title';
 const YUBIKEY_BUTTON = 'Open Yubikey Modal';
-const ExampleModalScreen = ({ disableFocusTrap }: { disableFocusTrap?: boolean }) => {
+
+const ExampleModalScreen = ({
+  disableFocusTrap,
+  onRequestClose,
+  shouldCloseOnEscPress,
+}: {
+  disableFocusTrap?: boolean;
+  onRequestClose?: () => void;
+  shouldCloseOnEscPress?: boolean;
+}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleModalOpen = useCallback(() => {
@@ -34,13 +43,15 @@ const ExampleModalScreen = ({ disableFocusTrap }: { disableFocusTrap?: boolean }
 
   const handleOnRequestClose = useCallback(() => {
     console.log("We'll spy on this");
-  }, []);
+    onRequestClose?.();
+  }, [onRequestClose]);
 
   return (
     <>
       <Modal
         disableFocusTrap={disableFocusTrap}
         onRequestClose={handleOnRequestClose}
+        shouldCloseOnEscPress={shouldCloseOnEscPress}
         visible={isVisible}
       >
         <ModalHeader title={YUBIKEY_TITLE} />
@@ -180,6 +191,19 @@ describe('Modal', () => {
     await user.keyboard('{Escape}');
 
     expect(onRequestClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not close on ESC key press when `shouldCloseOnEscPress` is false', async () => {
+    const onRequestClose = jest.fn();
+    render(<ExampleModalScreen onRequestClose={onRequestClose} shouldCloseOnEscPress={false} />);
+
+    fireEvent.click(screen.getByRole('button'));
+
+    await screen.findByRole('dialog');
+    const user = userEvent.setup();
+    await user.keyboard('{Escape}');
+
+    expect(onRequestClose).not.toHaveBeenCalled();
   });
 
   it('triggers back action on back button click', async () => {
