@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.12.0 (5/1/2024 PST)
+
+#### 🚀 Updates
+
+- **[ListCell]** Add prop to disable selection accessory. [[#2989](https://github.cbhq.net/frontend/cds/pull/2989)] [[DX-3730](https://jira.coinbase-corp.com/browse/DX-3730)]
+
 ## 6.11.0 ((4/30/2024, 11:10 AM PST))
 
 This is an artificial version bump with no new change.

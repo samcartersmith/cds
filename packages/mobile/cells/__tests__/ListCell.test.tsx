@@ -125,6 +125,18 @@ describe('ListCell', () => {
     expect(screen.getByTestId('accessory')).toBeTruthy();
   });
 
+  it('renders a default accessory when selected', () => {
+    render(<ListCell selected />);
+
+    expect(screen.getByTestId('accessory')).toBeTruthy();
+  });
+
+  it('does not render a default accessory when selected and `disableSelectionAccessory` is true', () => {
+    render(<ListCell disableSelectionAccessory selected />);
+
+    expect(screen.queryByTestId('accessory')).toBeFalsy();
+  });
+
   it('passes a11y with accessory', () => {
     render(<ListCell accessory="arrow" testID="listcell-with-accessory" />);
 

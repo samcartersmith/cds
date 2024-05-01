@@ -111,7 +111,43 @@ describe('ListCell', () => {
   it('renders an accessory', () => {
     render(<ListCell accessory="arrow" />);
 
-    expect(screen.getByTestId('accessory')).toBeVisible();
+    const accessory = screen.getByTestId('icon-base-glyph');
+
+    expect(accessory).toBeVisible();
+    expect(accessory).toHaveAttribute('data-icon-name', 'caretRight');
+  });
+
+  it('renders a default accessory when selected', () => {
+    render(<ListCell selected />);
+
+    const accessory = screen.getByTestId('icon-base-glyph');
+
+    expect(accessory).toBeVisible();
+    expect(accessory).toHaveAttribute('data-icon-name', 'checkmark');
+  });
+
+  it('overrides the provided accessory with a default accessory when selected', () => {
+    render(<ListCell selected accessory="arrow" />);
+
+    const accessory = screen.getByTestId('icon-base-glyph');
+
+    expect(accessory).toBeVisible();
+    expect(accessory).toHaveAttribute('data-icon-name', 'checkmark');
+  });
+
+  it('does not override the provided accessory when selected and `disableSelectionAccessory` is true', () => {
+    render(<ListCell disableSelectionAccessory selected accessory="arrow" />);
+
+    const accessory = screen.getByTestId('icon-base-glyph');
+
+    expect(accessory).toBeVisible();
+    expect(accessory).toHaveAttribute('data-icon-name', 'caretRight');
+  });
+
+  it('does not render a default accessory when selected and `disableSelectionAccessory` is true', () => {
+    render(<ListCell disableSelectionAccessory selected />);
+
+    expect(screen.queryByTestId('icon-base-glyph')).not.toBeInTheDocument();
   });
 
   it('renders an action', () => {

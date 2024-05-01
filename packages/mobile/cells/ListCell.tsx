@@ -30,6 +30,7 @@ export const ListCell = memo(function ListCell({
   detail,
   detailWidth,
   disabled,
+  disableSelectionAccessory,
   media,
   multiline,
   selected,
@@ -39,7 +40,7 @@ export const ListCell = memo(function ListCell({
   ...props
 }: ListCellProps) {
   const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
-  const accessoryType = selected ? 'selected' : accessory;
+  const accessoryType = selected && !disableSelectionAccessory ? 'selected' : accessory;
   const hasDetails = Boolean(detail || subdetail);
   const largeTextStyle = useLargeTextStyles();
 

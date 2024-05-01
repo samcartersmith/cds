@@ -24,6 +24,7 @@ export const ListCell = memo(
       description,
       detail,
       disabled,
+      disableSelectionAccessory,
       media,
       multiline,
       selected,
@@ -34,8 +35,8 @@ export const ListCell = memo(
     ref: ForwardedRef<HTMLElement>,
   ) {
     const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
+    const accessoryType = selected && !disableSelectionAccessory ? 'selected' : accessory;
 
-    const accessoryType = selected ? 'selected' : accessory;
     let end;
 
     if (action) {

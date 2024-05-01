@@ -139,6 +139,11 @@ export type ListCellBaseProps = {
   action?: React.ReactNode;
   /** Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate. */
   description?: React.ReactNode;
+  /**
+   * Disable the default accessory that is displayed when the cell is selected.
+   * If `accessory` is provided, that will continue to be displayed, otherwise no accessory will be displayed when the cell is selected.
+   */
+  disableSelectionAccessory?: boolean;
   /** For internal use only. */
   intermediary?: React.ReactNode;
   /* Media (icon, asset, image, etc) to display at the start of the cell. */

@@ -141,6 +141,15 @@ export function listCellBuilder(
       />
 
       <ListCell
+        disableSelectionAccessory
+        multiline
+        selected
+        description="Multi-line description"
+        onPress={onPressConsole}
+        title="Title"
+      />
+
+      <ListCell
         multiline
         description="Multi-line description goes here with really long text"
         onPress={onPressConsole}
@@ -405,6 +414,23 @@ export function listCellBuilder(
       <ListCell accessory="selected" description="Description" title="Title" />
 
       <ListCell accessory="arrow" description="Description" detail="Detail" title="Title" />
+
+      <ListCell
+        selected
+        accessory="arrow"
+        description="Description"
+        detail="Detail"
+        title="Title"
+      />
+
+      <ListCell
+        disableSelectionAccessory
+        selected
+        accessory="arrow"
+        description="Description"
+        detail="Detail"
+        title="Title"
+      />
 
       <ListCell
         accessory="more"
