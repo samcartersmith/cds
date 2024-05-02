@@ -43,6 +43,15 @@ export const lottieStyles = css`
     }
   }
 
+  .palette_backgroundInverse {
+    &_stroke {
+      stroke: ${palette.backgroundInverse};
+    }
+    &_fill {
+      fill: ${palette.backgroundInverse};
+    }
+  }
+
   .palette_backgroundOverlay {
     &_stroke {
       stroke: ${palette.backgroundOverlay};
@@ -115,6 +124,15 @@ export const lottieStyles = css`
     }
   }
 
+  .palette_negativeWash {
+    &_stroke {
+      stroke: ${palette.negativeWash};
+    }
+    &_fill {
+      fill: ${palette.negativeWash};
+    }
+  }
+
   .palette_positive {
     &_stroke {
       stroke: ${palette.positive};
@@ -166,6 +184,15 @@ export const lottieStyles = css`
     }
     &_fill {
       fill: ${palette.warning};
+    }
+  }
+
+  .palette_warningForeground {
+    &_stroke {
+      stroke: ${palette.warningForeground};
+    }
+    &_fill {
+      fill: ${palette.warningForeground};
     }
   }
 `;

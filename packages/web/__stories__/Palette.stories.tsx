@@ -20,6 +20,7 @@ const Palette = ({
         {objectKeys(palette).map((color) => {
           return (
             <Box
+              key={color}
               alignItems="center"
               dangerouslySetBackground={palette[color]}
               elevation={elevation}

@@ -14,6 +14,7 @@ const paletteAsCssVars = {
   '--foreground-muted': 'rgb(var(--gray60))',
   '--background': 'rgb(var(--gray0))',
   '--background-alternate': 'rgb(var(--gray5))',
+  '--background-inverse': 'rgb(var(--gray100))',
   '--background-overlay': 'rgba(var(--gray80),0.33)',
   '--line': 'rgba(var(--gray60),0.2)',
   '--line-heavy': 'rgba(var(--gray60),0.66)',
@@ -22,12 +23,14 @@ const paletteAsCssVars = {
   '--primary-foreground': 'rgb(var(--gray0))',
   '--negative': 'rgb(var(--red60))',
   '--negative-foreground': 'rgb(var(--gray0))',
+  '--negative-wash': 'rgb(var(--red0))',
   '--positive': 'rgb(var(--green60))',
   '--positive-foreground': 'rgb(var(--gray0))',
-  '--secondary': 'rgb(var(--gray20))',
+  '--secondary': 'rgb(var(--gray5))',
   '--secondary-foreground': 'rgb(var(--gray100))',
   '--transparent': 'rgba(var(--gray0),0)',
   '--warning': 'rgb(var(--yellow50))',
+  '--warning-foreground': 'rgb(var(--orange40))',
 };
 
 describe('useElevationStyles', () => {
@@ -124,6 +127,8 @@ describe('useElevationStyles', () => {
       '--background': paletteValueToCssVar('gray5'),
       '--transparent': paletteValueToCssVar('gray5'),
       '--primary': paletteValueToCssVar('blue70'),
+      '--secondary': paletteValueToCssVar('gray20'),
+      '--warning-foreground': paletteValueToCssVar('orange70'),
       boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.02)',
     });
   });
@@ -145,6 +150,8 @@ describe('useElevationStyles', () => {
       '--background': paletteValueToCssVar('gray10'),
       '--transparent': paletteValueToCssVar('gray10'),
       '--primary': paletteValueToCssVar('blue70'),
+      '--secondary': paletteValueToCssVar('gray20'),
+      '--warning-foreground': paletteValueToCssVar('orange70'),
       boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.12)',
     });
   });
@@ -184,6 +191,7 @@ describe('useElevationStyles', () => {
       '--transparent': paletteValueToCssVar('gray10'),
       '--primary': paletteValueToCssVar('blue70'),
       '--secondary': paletteValueToCssVar('gray20'),
+      '--warning-foreground': paletteValueToCssVar('orange70'),
       // @ts-expect-error - line exists on elevationChildrenPalette level 2
       '--line': paletteValueToCssVar(elevationChildrenPalette[2].line),
     });

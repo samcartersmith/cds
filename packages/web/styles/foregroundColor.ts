@@ -47,3 +47,7 @@ export const negativeForeground = css`
 export const warning = css`
   color: var(--warning);
 `;
+
+export const warningForeground = css`
+  color: var(--warning-foreground);
+`;

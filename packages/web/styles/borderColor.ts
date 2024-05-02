@@ -39,3 +39,7 @@ export const transparent = css`
 export const warning = css`
   border: 1px solid var(--warning);
 `;
+
+export const warningForeground = css`
+  border: 1px solid var(--warning-foreground);
+`;

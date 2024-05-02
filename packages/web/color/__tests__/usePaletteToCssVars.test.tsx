@@ -13,6 +13,7 @@ const defaultPaletteMock = {
   '--foreground-muted': 'rgb(var(--gray60))',
   '--background': 'rgb(var(--gray0))',
   '--background-alternate': 'rgb(var(--gray5))',
+  '--background-inverse': 'rgb(var(--gray100))',
   '--background-overlay': 'rgba(var(--gray80),0.33)',
   '--line': 'rgba(var(--gray60),0.2)',
   '--line-heavy': 'rgba(var(--gray60),0.66)',
@@ -21,12 +22,14 @@ const defaultPaletteMock = {
   '--primary-foreground': 'rgb(var(--gray0))',
   '--negative': 'rgb(var(--red60))',
   '--negative-foreground': 'rgb(var(--gray0))',
+  '--negative-wash': 'rgb(var(--red0))',
   '--positive': 'rgb(var(--green60))',
   '--positive-foreground': 'rgb(var(--gray0))',
   '--secondary': 'rgb(var(--gray5))',
   '--secondary-foreground': 'rgb(var(--gray100))',
   '--transparent': 'rgba(var(--gray0),0)',
   '--warning': 'rgb(var(--yellow50))',
+  '--warning-foreground': 'rgb(var(--orange40))',
 };
 
 describe('usePaletteToCssVars', () => {

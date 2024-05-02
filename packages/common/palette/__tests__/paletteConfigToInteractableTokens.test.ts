@@ -59,6 +59,20 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
       backgroundColor: 'rgb(39, 40, 43)',
     },
   },
+  backgroundInverse: {
+    disabled: {
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(133, 133, 134)',
+    },
+    hovered: {
+      contentOpacity: 0.88,
+      backgroundColor: 'rgb(226, 226, 226)',
+    },
+    pressed: {
+      contentOpacity: 0.82,
+      backgroundColor: 'rgb(211, 211, 211)',
+    },
+  },
   backgroundOverlay: {
     disabled: {
       contentOpacity: 0.5,
@@ -157,6 +171,20 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
       backgroundColor: 'rgb(242, 119, 129)',
     },
   },
+  negativeWash: {
+    disabled: {
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(31, 6, 9)',
+    },
+    hovered: {
+      contentOpacity: 0.98,
+      backgroundColor: 'rgb(55, 5, 9)',
+    },
+    pressed: {
+      contentOpacity: 0.92,
+      backgroundColor: 'rgb(67, 20, 24)',
+    },
+  },
   negativeForeground: {
     disabled: {
       contentOpacity: 0.5,
@@ -205,12 +233,10 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
       backgroundColor: 'rgb(30, 32, 37)',
     },
     hovered: {
-      // confirmed opacity is correct
       contentOpacity: 0.96,
       backgroundColor: 'rgb(58, 61, 69)',
     },
     pressed: {
-      // confirmed opacity is correct
       contentOpacity: 0.9,
       backgroundColor: 'rgb(71, 73, 80)',
     },
@@ -255,6 +281,20 @@ const expectedWebDarkTokens: PaletteConfigWithInteractableTokens = {
     pressed: {
       contentOpacity: 0.87,
       backgroundColor: 'rgb(211, 160, 33)',
+    },
+  },
+  warningForeground: {
+    disabled: {
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(129, 81, 50)',
+    },
+    hovered: {
+      contentOpacity: 0.91,
+      backgroundColor: 'rgb(227, 137, 79)',
+    },
+    pressed: {
+      contentOpacity: 0.85,
+      backgroundColor: 'rgb(212, 129, 75)',
     },
   },
 };
@@ -314,6 +354,20 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
     pressed: {
       contentOpacity: 0.92,
       backgroundColor: 'rgb(220, 222, 225)',
+    },
+  },
+  backgroundInverse: {
+    disabled: {
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(133, 133, 134)',
+    },
+    hovered: {
+      contentOpacity: 0.88,
+      backgroundColor: 'rgb(39, 40, 42)',
+    },
+    pressed: {
+      contentOpacity: 0.82,
+      backgroundColor: 'rgb(54, 55, 57)',
     },
   },
   backgroundOverlay: {
@@ -428,6 +482,20 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
       backgroundColor: 'rgb(235, 235, 236)',
     },
   },
+  negativeWash: {
+    disabled: {
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(255, 250, 251)',
+    },
+    hovered: {
+      contentOpacity: 0.98,
+      backgroundColor: 'rgb(250, 240, 241)',
+    },
+    pressed: {
+      contentOpacity: 0.92,
+      backgroundColor: 'rgb(235, 226, 227)',
+    },
+  },
   positive: {
     disabled: {
       contentOpacity: 0.5,
@@ -510,6 +578,20 @@ const expectedWebLightTokens: PaletteConfigWithInteractableTokens = {
     pressed: {
       contentOpacity: 0.87,
       backgroundColor: 'rgb(165, 115, 2)',
+    },
+  },
+  warningForeground: {
+    disabled: {
+      contentOpacity: 0.5,
+      backgroundColor: 'rgb(246, 184, 151)',
+    },
+    hovered: {
+      contentOpacity: 0.94,
+      backgroundColor: 'rgb(223, 106, 45)',
+    },
+    pressed: {
+      contentOpacity: 0.88,
+      backgroundColor: 'rgb(210, 100, 43)',
     },
   },
 };

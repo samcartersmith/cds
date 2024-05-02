@@ -46,6 +46,7 @@ export const palette = {
   foregroundMuted: 'var(--foreground-muted)',
   background: 'var(--background)',
   backgroundAlternate: 'var(--background-alternate)',
+  backgroundInverse: 'var(--background-inverse)',
   backgroundOverlay: 'var(--background-overlay)',
   line: 'var(--line)',
   lineHeavy: 'var(--line-heavy)',
@@ -54,12 +55,14 @@ export const palette = {
   primaryForeground: 'var(--primary-foreground)',
   negative: 'var(--negative)',
   negativeForeground: 'var(--negative-foreground)',
+  negativeWash: 'var(--negative-wash)',
   positive: 'var(--positive)',
   positiveForeground: 'var(--positive-foreground)',
   secondary: 'var(--secondary)',
   secondaryForeground: 'var(--secondary-foreground)',
   transparent: 'var(--transparent)',
   warning: 'var(--warning)',
+  warningForeground: 'var(--warning-foreground)',
 } as const;
 
 export const control = {

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.13.0 (5/1/2024 PST)
+
+#### 🚀 Updates
+
+- **[Palette]** Add new colors for Phoenix and Code Red. [[#2988](https://github.cbhq.net/frontend/cds/pull/2988)] [[DX-3736](https://jira.coinbase-corp.com/browse/DX-3736)]
+
 ## 6.12.0 (5/1/2024 PST)
 
 #### 🚀 Updates

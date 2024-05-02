@@ -7,6 +7,7 @@ export const defaultPalette = {
   foregroundMuted: 'gray60',
   background: 'gray0',
   backgroundAlternate: 'gray5',
+  backgroundInverse: 'gray100',
   backgroundOverlay: ['gray80', 0.33],
   line: ['gray60', 0.2],
   lineHeavy: ['gray60', 0.66],
@@ -15,12 +16,14 @@ export const defaultPalette = {
   primaryForeground: 'gray0',
   negative: 'red60',
   negativeForeground: 'gray0',
+  negativeWash: 'red0',
   positive: 'green60',
   positiveForeground: 'gray0',
   secondary: 'gray5',
   secondaryForeground: 'gray100',
   transparent: ['gray0', 0],
   warning: 'yellow50',
+  warningForeground: 'orange40',
 } as const;
 
 const defaultPaletteOverrides = {
@@ -28,6 +31,7 @@ const defaultPaletteOverrides = {
   dark: {
     secondary: 'gray20',
     primary: 'blue70',
+    warningForeground: 'orange70',
   },
 } as const;
 
@@ -65,6 +69,7 @@ const switchControlPalette = {
   dark: { background: 'gray100', backgroundAlternate: 'gray20' },
 } as const;
 
+// NOTE: append any new colors to the end of the array to avoid a breaking change
 export const paletteForegrounds = [
   'foreground',
   'foregroundMuted',
@@ -77,8 +82,10 @@ export const paletteForegrounds = [
   'negative',
   'negativeForeground',
   'warning',
+  'warningForeground',
 ] as const;
 
+// NOTE: append any new colors to the end of the array to avoid a breaking change
 export const paletteBackgrounds = [
   'background',
   'backgroundAlternate',
@@ -90,8 +97,11 @@ export const paletteBackgrounds = [
   'negative',
   'transparent',
   'warning',
+  'backgroundInverse',
+  'negativeWash',
 ] as const;
 
+// NOTE: append any new colors to the end of the array to avoid a breaking change
 export const paletteBorders = [
   'primary',
   'primaryWash',
@@ -102,6 +112,7 @@ export const paletteBorders = [
   'lineHeavy',
   'transparent',
   'warning',
+  'warningForeground',
 ];
 
 const foregroundMap = arrayToObject(paletteForegrounds);

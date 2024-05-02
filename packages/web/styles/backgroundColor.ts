@@ -43,3 +43,11 @@ export const transparent = css`
 export const warning = css`
   background-color: var(--warning);
 `;
+
+export const backgroundInverse = css`
+  background-color: var(--background-inverse);
+`;
+
+export const negativeWash = css`
+  background-color: var(--negative-wash);
+`;
