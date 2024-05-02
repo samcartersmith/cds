@@ -1,11 +1,5 @@
 import React, { memo, useEffect, useMemo, useState } from 'react';
-import {
-  LayoutRectangle,
-  TranslateXTransform,
-  TranslateYTransform,
-  View,
-  ViewStyle,
-} from 'react-native';
+import { LayoutRectangle, View, ViewStyle } from 'react-native';
 import Animated, {
   runOnJS,
   useAnimatedReaction,
@@ -75,7 +69,6 @@ export const DotCount = memo(
 
     const innerContainerStyles = useMemo(() => {
       return [
-        pinStyles,
         dotCountContent,
         dotOuterContainerStyles,
         {
@@ -83,7 +76,7 @@ export const DotCount = memo(
           borderColor: palette.secondary,
         },
       ];
-    }, [palette, pinStyles, variant]);
+    }, [palette, variant]);
 
     // avoid displaying 0 during animations and preserve exit animation
     useEffect(() => {
@@ -114,29 +107,6 @@ export const DotCount = memo(
     );
 
     const animatedStyles = useAnimatedStyle(() => {
-      /*
-       * Avoiding computed property names to not get a crash with Reanimated v3.
-       *
-       * Bracket notation crashes:
-       *
-       * [opacityEnter.property]: opacityAnimatedValue.value,
-       *
-       * We created an issue in Reanimated about this.
-       * https://github.com/software-mansion/react-native-reanimated/issues/4162
-       * */
-      if (pinStyles.transform) {
-        return {
-          opacity: Number(opacityAnimatedValue.value),
-          transform: [
-            { scale: Number(scaleAnimatedValue.value) },
-            // Spreading an array causes this known issue in Reanimated:
-            // https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/troubleshooting#undefined-is-not-an-object-evaluating-_toconsumablearrayarraylengthmap
-            pinStyles.transform[0] as TranslateXTransform, // translateX
-            pinStyles.transform[1] as TranslateYTransform, // translateY
-          ],
-        };
-      }
-
       return {
         opacity: Number(opacityAnimatedValue.value),
         transform: [{ scale: Number(scaleAnimatedValue.value) }],
@@ -157,14 +127,16 @@ export const DotCount = memo(
           {children}
         </View>
         {!shouldUnmount && shouldShow && (
-          <Animated.View style={dotCountInnerContainerStyle} testID="dotcount-inner-container">
-            <TextCaption
-              color="primaryForeground"
-              style={{ paddingHorizontal: dotTextPaddingHorizontal }}
-            >
-              {parseDotCountMaxOverflow(countInternal, max)}
-            </TextCaption>
-          </Animated.View>
+          <View style={pinStyles}>
+            <Animated.View style={dotCountInnerContainerStyle} testID="dotcount-inner-container">
+              <TextCaption
+                color="primaryForeground"
+                style={{ paddingHorizontal: dotTextPaddingHorizontal }}
+              >
+                {parseDotCountMaxOverflow(countInternal, max)}
+              </TextCaption>
+            </Animated.View>
+          </View>
         )}
       </View>
     );

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.13.1 (5/2/2024 PST)
+
+#### 🐞 Fixes
+
+- DotCount: fix mobile overlay positioning flake. [[#2996](https://github.cbhq.net/frontend/cds/pull/2996)] [[DX-3741](https://jira.coinbase-corp.com/browse/DX-3741)]
+
 ## 6.13.0 ((5/1/2024, 05:00 PM PST))
 
 This is an artificial version bump with no new change.
