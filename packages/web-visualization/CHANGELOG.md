@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.0.2 (4/30/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix sparkline bottom overflow. [[#2982](https://github.cbhq.net/frontend/cds/pull/2982)] [[DX-3658](https://jira.coinbase-corp.com/browse/DX-3658)]
+
 ## 1.0.1 (4/19/2024 PST)
 
 #### 🐞 Fixes

@@ -63,6 +63,24 @@ Compact.parameters = {
   },
 };
 
+export const Contained = () => (
+  <React.StrictMode>
+    <VStack bordered borderColor="negative">
+      <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
+    </VStack>
+  </React.StrictMode>
+);
+
+Contained.bind({});
+Contained.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
 export const DisableScrubbing = () => (
   <SparklineInteractiveBuild
     disableScrubbing

@@ -18,10 +18,8 @@ import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
-import { cx } from '@cbhq/cds-web/utils/linaria';
 import { VisualizationContainer } from '@cbhq/cds-web/visualizations/VisualizationContainer';
 
-import { baseSimpleFadeClassName, simpleFadeInClassName, simpleFadeOutClassName } from './fade';
 import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
@@ -168,16 +166,6 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     () => periodSelectorPlacement === 'above' || isMarkerDateVisible,
     [isMarkerDateVisible, periodSelectorPlacement],
   );
-  const animatedPeriodSelectorClassName = useMemo(
-    () =>
-      cx(
-        baseSimpleFadeClassName,
-        periodSelectorPlacement === 'below' && !isMarkerDateVisible
-          ? simpleFadeInClassName
-          : simpleFadeOutClassName,
-      ),
-    [isMarkerDateVisible, periodSelectorPlacement],
-  );
 
   const periodSelector = (
     <SparklineInteractivePeriodSelector
@@ -256,29 +244,21 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           )}
         </VisualizationContainer>
       </SparklineInteractiveScrubProvider>
-      <Box position="relative">
-        {showBottomMarkerDates && (
-          <Box background pin="top" style={stylesToPreventInteraction} width="100%">
-            <SparklineInteractiveMarkerDates
-              formatDate={formatDate}
-              getMarker={getMarker}
-              selectedPeriod={selectedPeriod}
-              timePeriodGutter={timePeriodGutter}
-            />
-          </Box>
-        )}
-        {/* Must always be mounted so we can tab directly to it */}
-        <Box
-          background
-          className={animatedPeriodSelectorClassName}
-          pin="top"
-          spacingTop={1}
-          width="100%"
-          zIndex={1}
-        >
+      {showBottomMarkerDates && (
+        <Box background style={stylesToPreventInteraction} width="100%">
+          <SparklineInteractiveMarkerDates
+            formatDate={formatDate}
+            getMarker={getMarker}
+            selectedPeriod={selectedPeriod}
+            timePeriodGutter={timePeriodGutter}
+          />
+        </Box>
+      )}
+      {periodSelectorPlacement === 'below' && !isMarkerDateVisible && (
+        <Box background spacingTop={1} width="100%" zIndex={1}>
           {periodSelector}
         </Box>
-      </Box>
+      )}
     </div>
   );
 }
