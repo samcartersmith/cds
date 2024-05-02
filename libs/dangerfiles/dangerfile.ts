@@ -146,7 +146,7 @@ void checkForBreakingChanges({
   checkFn: checkFilesForRemovedParams,
 });
 
-// Checks if any story files in the 'mobile' package have been deleted or renamed, and fails the check if they have.
+// Checks if any story files in the 'mobile' package have been deleted, and fails the check if they have.
 if (
   process.env.NX_PROJECT_NAME === 'mobile' ||
   process.env.NX_PROJECT_NAME === 'mobile-visualization'
@@ -155,16 +155,15 @@ if (
     const storyFilesPattern = new RegExp(
       `^packages/${escapeRegExp(process.env.NX_PROJECT_NAME || '')}/.*\\.stories\\.(ts|tsx)$`,
     );
-    const deletedOrRenamedFiles = danger.git.deleted_files
-      .concat(danger.git.modified_files)
-      .filter((file) => storyFilesPattern.test(file) && !danger.git.created_files.includes(file));
 
-    if (deletedOrRenamedFiles.length) {
+    const deletedFiles = danger.git.deleted_files.filter((file) => storyFilesPattern.test(file));
+
+    if (deletedFiles.length) {
       fail(
         [
-          '## 📕 Story files deleted or renamed',
-          `You have deleted or renamed story files in the **${process.env.NX_PROJECT_NAME}** package. This is a breaking change. Only new additions are allowed. Renames and deletions are not.`,
-          deletedOrRenamedFiles.map((file) => `- ${file}`).join('\n'),
+          '## 📕 Story files deleted',
+          `You have deleted story files in the **${process.env.NX_PROJECT_NAME}** package. This is a breaking change. Only new additions are allowed. Deletions are not.`,
+          deletedFiles.map((file) => `- ${file}`).join('\n'),
         ].join('\n'),
       );
     }
