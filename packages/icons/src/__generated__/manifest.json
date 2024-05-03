@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-04-25T20:26:51.494Z",
-  "metadata": { "lastUnicode": 62011 },
+  "lastUpdated": "2024-05-03T19:19:56.721Z",
+  "metadata": { "lastUnicode": 62032 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -329,7 +329,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61121 } }
       ],
       "createdAt": "2022-08-24T18:51:39.248Z",
-      "lastUpdated": "2024-01-04T02:31:06.291Z",
+      "lastUpdated": "2024-04-26T14:37:04.142Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-peopleGroup-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-peopleGroup-12-inactive.svg",
@@ -545,7 +545,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60591 } }
       ],
       "createdAt": "2022-08-24T18:51:39.286Z",
-      "lastUpdated": "2024-03-16T01:03:40.900Z",
+      "lastUpdated": "2024-05-01T00:40:37.918Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-invoice-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-invoice-12-inactive.svg",
@@ -1313,7 +1313,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60656 } }
       ],
       "createdAt": "2022-08-24T18:52:02.960Z",
-      "lastUpdated": "2024-01-18T20:11:47.084Z",
+      "lastUpdated": "2024-05-01T19:00:18.158Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-addPeople-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-addPeople-12-inactive.svg",
@@ -1481,7 +1481,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60696 } }
       ],
       "createdAt": "2023-02-01T18:32:06.565Z",
-      "lastUpdated": "2024-03-27T17:59:34.937Z",
+      "lastUpdated": "2024-04-29T20:21:55.282Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-wallet-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-wallet-12-inactive.svg",
@@ -1718,7 +1718,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60421 } }
       ],
       "createdAt": "2023-02-01T23:25:58.729Z",
-      "lastUpdated": "2024-01-05T15:16:22.543Z",
+      "lastUpdated": "2024-04-30T14:47:54.353Z",
       "outputs": {
         "svg12": "./ui/svg/ui-avatar-12.svg",
         "svg16": "./ui/svg/ui-avatar-16.svg",
@@ -2006,7 +2006,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60486 } }
       ],
       "createdAt": "2023-02-01T23:25:58.819Z",
-      "lastUpdated": "2024-01-25T16:40:08.626Z",
+      "lastUpdated": "2024-04-25T20:50:33.299Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretUp-12.svg",
         "svg16": "./ui/svg/ui-caretUp-16.svg",
@@ -2402,7 +2402,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60206 } }
       ],
       "createdAt": "2023-02-01T23:25:02.048Z",
-      "lastUpdated": "2024-01-04T02:31:21.914Z",
+      "lastUpdated": "2024-04-30T21:37:34.777Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chartPieCircle-12.svg",
         "svg16": "./ui/svg/ui-chartPieCircle-16.svg",
@@ -2438,7 +2438,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61136 } }
       ],
       "createdAt": "2023-02-01T23:25:49.738Z",
-      "lastUpdated": "2024-01-05T15:16:39.160Z",
+      "lastUpdated": "2024-04-29T20:00:16.535Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chatBotAgent-12.svg",
         "svg16": "./ui/svg/ui-chatBotAgent-16.svg",
@@ -2600,7 +2600,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60281 } }
       ],
       "createdAt": "2023-02-01T23:25:58.766Z",
-      "lastUpdated": "2024-01-19T09:28:40.647Z",
+      "lastUpdated": "2024-04-30T23:21:13.366Z",
       "outputs": {
         "svg12": "./ui/svg/ui-clock-12.svg",
         "svg16": "./ui/svg/ui-clock-16.svg",
@@ -2636,7 +2636,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60496 } }
       ],
       "createdAt": "2023-02-01T23:26:07.579Z",
-      "lastUpdated": "2024-01-04T22:13:03.971Z",
+      "lastUpdated": "2024-04-28T18:46:18.110Z",
       "outputs": {
         "svg12": "./ui/svg/ui-close-12.svg",
         "svg16": "./ui/svg/ui-close-16.svg",
@@ -2960,7 +2960,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61181 } }
       ],
       "createdAt": "2023-02-01T23:25:40.739Z",
-      "lastUpdated": "2024-02-08T17:40:36.761Z",
+      "lastUpdated": "2024-05-02T23:19:45.940Z",
       "outputs": {
         "svg12": "./ui/svg/ui-diamondInactive-12.svg",
         "svg16": "./ui/svg/ui-diamondInactive-16.svg",
@@ -3194,7 +3194,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60356 } }
       ],
       "createdAt": "2023-02-01T23:25:21.972Z",
-      "lastUpdated": "2024-01-26T05:19:55.188Z",
+      "lastUpdated": "2024-04-27T00:02:35.445Z",
       "outputs": {
         "svg12": "./ui/svg/ui-error-12.svg",
         "svg16": "./ui/svg/ui-error-16.svg",
@@ -3464,7 +3464,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60671 } }
       ],
       "createdAt": "2023-02-01T23:25:21.986Z",
-      "lastUpdated": "2023-10-25T17:34:15.621Z",
+      "lastUpdated": "2024-05-01T17:33:24.318Z",
       "outputs": {
         "svg12": "./ui/svg/ui-followInactive-12.svg",
         "svg16": "./ui/svg/ui-followInactive-16.svg",
@@ -4526,7 +4526,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60056 } }
       ],
       "createdAt": "2023-02-01T23:25:12.967Z",
-      "lastUpdated": "2023-10-25T17:34:14.709Z",
+      "lastUpdated": "2024-04-29T23:09:59.793Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pulse-12.svg",
         "svg16": "./ui/svg/ui-pulse-16.svg",
@@ -5336,7 +5336,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60846 } }
       ],
       "createdAt": "2023-02-01T23:25:58.789Z",
-      "lastUpdated": "2024-01-17T15:27:44.010Z",
+      "lastUpdated": "2024-04-29T18:46:15.953Z",
       "outputs": {
         "svg12": "./ui/svg/ui-telephone-12.svg",
         "svg16": "./ui/svg/ui-telephone-16.svg",
@@ -5786,7 +5786,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61591 } }
       ],
       "createdAt": "2023-02-01T23:25:12.888Z",
-      "lastUpdated": "2024-03-14T14:39:12.481Z",
+      "lastUpdated": "2024-04-29T21:09:01.652Z",
       "outputs": {
         "svg12": "./ui/svg/ui-payouts-12.svg",
         "svg16": "./ui/svg/ui-payouts-16.svg",
@@ -5948,7 +5948,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61546 } }
       ],
       "createdAt": "2023-02-01T23:25:02.140Z",
-      "lastUpdated": "2023-10-25T17:34:15.531Z",
+      "lastUpdated": "2024-04-30T19:39:03.878Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cryptobasics-12.svg",
         "svg16": "./ui/svg/ui-cryptobasics-16.svg",
@@ -7439,7 +7439,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61976 } }
       ],
       "createdAt": "2024-03-21T14:57:27.293Z",
-      "lastUpdated": "2024-03-21T14:57:27.293Z",
+      "lastUpdated": "2024-05-03T19:13:24.001Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-qrCode-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-qrCode-12-inactive.svg",
@@ -7484,7 +7484,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61982 } }
       ],
       "createdAt": "2024-03-21T14:57:27.275Z",
-      "lastUpdated": "2024-03-21T14:57:27.275Z",
+      "lastUpdated": "2024-04-30T19:40:33.685Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bellInactive-12.svg",
         "svg16": "./ui/svg/ui-bellInactive-16.svg",
@@ -7628,7 +7628,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62006 } }
       ],
       "createdAt": "2024-04-25T16:55:55.328Z",
-      "lastUpdated": "2024-04-25T20:24:22.613Z",
+      "lastUpdated": "2024-05-03T19:13:24.009Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashCoins-12.svg",
         "svg16": "./ui/svg/ui-cashCoins-16.svg",
@@ -7651,6 +7651,96 @@
         "svg12": "./ui/svg/ui-lineChartCrypto-12.svg",
         "svg16": "./ui/svg/ui-lineChartCrypto-16.svg",
         "svg24": "./ui/svg/ui-lineChartCrypto-24.svg"
+      }
+    },
+    "2023:105": {
+      "type": "ui",
+      "name": "advancedMarketSelector",
+      "hash": "1j25SU+BydZC+855lVeoW0Vk55NNRdsvuUbsQXerbnk=",
+      "description": "advanced, market, selector, panel, side, slide, out, pop, out",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62032 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62031 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62030 } }
+      ],
+      "createdAt": "2024-05-03T19:13:23.982Z",
+      "lastUpdated": "2024-05-03T19:13:23.982Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-advancedMarketSelector-12.svg",
+        "svg16": "./ui/svg/ui-advancedMarketSelector-16.svg",
+        "svg24": "./ui/svg/ui-advancedMarketSelector-24.svg"
+      }
+    },
+    "2025:352": {
+      "type": "nav",
+      "name": "developerAPIProduct",
+      "hash": "xbGAG8iqLTmMgohabHJkqYLrifzk2cAAUVPmoFai0yo=",
+      "description": "developer, api, platform, product, icon, nav, squares",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62023 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62022 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62021 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62020 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62019 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62018 } }
+      ],
+      "createdAt": "2024-05-03T19:13:23.976Z",
+      "lastUpdated": "2024-05-03T19:13:23.976Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-developerAPIProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-developerAPIProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-developerAPIProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-developerAPIProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-developerAPIProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-developerAPIProduct-24-inactive.svg"
+      }
+    },
+    "2026:500": {
+      "type": "nav",
+      "name": "developerPlatformProduct",
+      "hash": "9NA+5oeWCXY5FuLl/CsLU6w0f+G87Z0vQkyuUxawEZU=",
+      "description": "Nav, dev, platform, product,",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62029 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62028 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62027 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62026 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62025 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62024 } }
+      ],
+      "createdAt": "2024-05-03T19:13:23.970Z",
+      "lastUpdated": "2024-05-03T19:13:23.970Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-developerPlatformProduct-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-developerPlatformProduct-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-developerPlatformProduct-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-developerPlatformProduct-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-developerPlatformProduct-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-developerPlatformProduct-24-inactive.svg"
+      }
+    },
+    "2026:12828": {
+      "type": "nav",
+      "name": "apiPlug",
+      "hash": "YdoyyniKJkuTjW6MHvUTF7roR4pBMJf26omsR8hpdvI=",
+      "description": "RAT, advanced, trade, API, plug, connect, plugin, connect",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62017 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62016 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62015 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62014 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62013 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62012 } }
+      ],
+      "createdAt": "2024-05-03T19:13:23.963Z",
+      "lastUpdated": "2024-05-03T19:13:23.963Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-apiPlug-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-apiPlug-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-apiPlug-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-apiPlug-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-apiPlug-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-apiPlug-24-inactive.svg"
       }
     }
   }

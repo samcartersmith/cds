@@ -8,6 +8,26 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.11.0 (5/3/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 5/3/2024. [[#2998](https://github.cbhq.net/frontend/cds/pull/2998)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- advancedMarketSelector
+
+#### Nav
+
+- apiPlug
+- developerAPIProduct
+- developerPlatformProduct
+
 ## 2.10.0 (4/25/2024 PST)
 
 #### 🚀 Updates

@@ -5,6 +5,7 @@
 
 export type UiIconName =
   | 'add'
+  | 'advancedMarketSelector'
   | 'affiliates'
   | 'airdrop'
   | 'allTimeHigh'

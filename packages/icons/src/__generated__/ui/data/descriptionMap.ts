@@ -702,7 +702,7 @@ const descriptionMap: Record<string, string[]> = {
   '🛎': ['bell', 'bellInactive'],
   sale: ['nftSaleActive', 'nftSaleInactive'],
   auction: ['nftSaleActive', 'nftSaleInactive'],
-  market: ['nftSaleActive', 'nftSaleInactive'],
+  market: ['nftSaleActive', 'nftSaleInactive', 'advancedMarketSelector'],
   selling: ['nftSaleActive', 'nftSaleInactive'],
   give: ['nftOfferActive', 'nftOfferInactive'],
   estimate: ['nftOfferActive', 'nftOfferInactive'],
@@ -961,7 +961,7 @@ const descriptionMap: Record<string, string[]> = {
   '🔖': ['bookmarkActive', 'bookmarkInactive'],
   keys: ['keyboard'],
   computing: ['keyboard'],
-  panel: ['keyboard'],
+  panel: ['keyboard', 'advancedMarketSelector'],
   '⌨️': ['keyboard'],
   '⌨': ['keyboard'],
   unbookmark: ['bookmarkInactive'],
@@ -1338,6 +1338,12 @@ const descriptionMap: Record<string, string[]> = {
   enter: ['login'],
   linechart: ['lineChartCrypto'],
   Cash: ['cashCoins'],
+  advanced: ['advancedMarketSelector'],
+  selector: ['advancedMarketSelector'],
+  side: ['advancedMarketSelector'],
+  slide: ['advancedMarketSelector'],
+  out: ['advancedMarketSelector'],
+  pop: ['advancedMarketSelector'],
 };
 
 export default descriptionMap;
