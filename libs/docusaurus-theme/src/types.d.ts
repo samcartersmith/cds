@@ -236,6 +236,11 @@ declare module '@theme/ChangelogListCell' {
 /*                                    Misc                                    */
 /* -------------------------------------------------------------------------- */
 
+declare module '@theme/Playground' {
+  const Playground: typeof import('./theme/Playground').default;
+  export default Playground;
+}
+
 declare module '@theme/Collection' {
   export type CollectionProps = import('./theme/Collection').CollectionProps;
   const Collection: typeof import('./theme/Collection').default;

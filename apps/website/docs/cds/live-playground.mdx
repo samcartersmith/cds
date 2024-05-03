@@ -3,6 +3,8 @@ id: live-playground
 title: UI Live Playground
 ---
 
+import { UIPlayground } from ':cds-website/components/UIPlayground/UIPlayground';
+
 ## Quick Resources
 
 1. [Bug Report Guide](https://github.cbhq.net/frontend/cds/blob/master/docs/bug-reports.md)
@@ -15,12 +17,4 @@ If you think you've discovered a bug please follow the [Bug Report Guide](https:
 
 ## Live Editor
 
-```jsx live
-function TestComponent() {
-  return (
-    <Box>
-      <TextBody as="p">You can edit this live editor.</TextBody>
-    </Box>
-  );
-}
-```
+<UIPlayground />
