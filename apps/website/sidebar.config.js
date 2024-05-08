@@ -289,11 +289,6 @@ const sidebars = {
             },
           ],
         },
-        {
-          type: 'doc',
-          id: 'components/app-switcher/app-switcher',
-          label: 'App Switcher',
-        },
         { type: 'doc', id: 'components/layout/Box/box', label: 'Box' },
         {
           type: 'doc',
@@ -780,6 +775,22 @@ const sidebars = {
           label: 'Progress Circle',
         },
         { type: 'doc', id: 'components/layout/VStack/v-stack', label: 'VStack' },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Product Components',
+      items: [
+        {
+          type: 'doc',
+          id: 'components/app-switcher/app-switcher',
+          label: 'App Switcher',
+        },
+        {
+          type: 'doc',
+          label: 'Navigation Bar',
+          id: 'partnerships/NavigationBar/navigation-bar',
+        },
       ],
     },
     {
