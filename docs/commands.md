@@ -96,6 +96,7 @@ nx run common:lint
 | ----                                                | ----                                                         |
 | yarn tools build                                    | Build tools.                                                 |
 | yarn tools start                                    | Build tools in watch mode.                                   |
+| yarn node ./tools/generateUpdates.mjs               | Run cds biweekly update script                               |
 | ----                                                | ----                                                         |
 | yarn nx run mobile-playground:setup                 | Setup local environment to run the `mobile-playground`       |
 | yarn nx run mobile-playground:format                | Format the `mobile-playground`                               |
