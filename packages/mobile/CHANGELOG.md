@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.13.2 (5/9/2024 PST)
+
+#### 🐞 Fixes
+
+- Add deprecation warning to secondary tabs. [[#3016](https://github.cbhq.net/frontend/cds/pull/3016)] [[DX-3093](https://jira.coinbase-corp.com/browse/DX-3093)]
+
 ## 6.13.1 (5/2/2024 PST)
 
 #### 🐞 Fixes

@@ -1,8 +1,9 @@
-import React, { forwardRef, memo, useCallback, useMemo, useState } from 'react';
+import React, { forwardRef, memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
+import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useHorizontallyScrollingPressables } from '../hooks/useHorizontallyScrollingPressables';
 import { Box } from '../layout/Box';
@@ -56,6 +57,15 @@ export const TabNavigation = memo(
         },
         [onChange],
       );
+
+      useEffect(() => {
+        if (isDevelopment() && variant === 'secondary') {
+          // eslint-disable-next-line no-console
+          console.warn(
+            'Deprecation Warning: Secondary tabs are deprecated, please migrate to primary tabs. In the case of nested tabs, consider using TabbedChips',
+          );
+        }
+      }, [variant]);
 
       // Iterate over the tabs and create Pressable TabLabels
       const tabLabels = useMemo(

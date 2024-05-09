@@ -17,7 +17,7 @@ import { TabIndicatorProps, TabNavigationProps, TabProps, useToggler } from '@cb
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { tabsPaddleWidth } from '@cbhq/cds-common/tokens/tabs';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import { noop } from '@cbhq/cds-utils';
+import { isDevelopment, noop } from '@cbhq/cds-utils';
 
 import { useDimensions } from '../hooks/useDimensions';
 import { HStack, VStack } from '../layout';
@@ -144,6 +144,15 @@ export const TabNavigation = memo(
       const handleScrollRight = useCallback(() => {
         scrollRef?.current?.scrollTo({ left: end, behavior: 'smooth' });
       }, [end]);
+
+      useEffect(() => {
+        if (isDevelopment() && variant === 'secondary') {
+          // eslint-disable-next-line no-console
+          console.warn(
+            'Deprecation Warning: Secondary tabs are deprecated, please migrate to primary tabs. In the case of nested tabs, consider using TabbedChips',
+          );
+        }
+      }, [variant]);
 
       /** 🛼
        *  Recreating handleLayout every time value changes will
