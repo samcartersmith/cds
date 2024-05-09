@@ -1,11 +1,10 @@
 import React, { memo } from 'react';
-import { LiveProviderProps } from 'react-live';
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 import { Document } from '@contentful/rich-text-types';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import Playground from '@cbhq/docusaurus-theme/src/theme/Playground';
 
-import ReactLiveScope from '../../src/theme/ReactLiveScope';
+import { usePageContext } from '../pages/PageContext';
 
 type CodePlaygroundProps = {
   code: Document;
@@ -15,6 +14,7 @@ type CodePlaygroundProps = {
 
 export const CodePlayground = memo(
   ({ code, readOnly, editorStartsExpanded }: CodePlaygroundProps) => {
+    const { scope } = usePageContext();
     return (
       // <Playground /> has spacing bottom 3 + gap 1, offset it to have consistent spacing
       <VStack offsetBottom={4}>
@@ -22,7 +22,7 @@ export const CodePlayground = memo(
           disabled={readOnly}
           editorStartsExpanded={editorStartsExpanded}
           hidePreview={readOnly}
-          scope={ReactLiveScope as LiveProviderProps['scope']}
+          scope={scope}
         >
           {documentToPlainTextString(code, '\n')}
         </Playground>

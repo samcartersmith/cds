@@ -1,5 +1,4 @@
 import { memo, useCallback, useEffect, useState } from 'react';
-import { LiveProviderProps } from 'react-live';
 import Playground from '@theme/Playground';
 import { Select, SelectOption } from '@cbhq/cds-web/controls';
 import { Box, VStack } from '@cbhq/cds-web/layout';
@@ -24,7 +23,7 @@ export const UICodePlayground = memo(
           disabled={readOnly}
           editorStartsExpanded={editorStartsExpanded}
           hidePreview={readOnly}
-          scope={ReactLiveScope as LiveProviderProps['scope']}
+          scope={ReactLiveScope}
         >
           {code}
         </Playground>

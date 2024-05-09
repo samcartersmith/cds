@@ -1,4 +1,5 @@
-import React, { memo, ReactElement } from 'react';
+import React, { memo, ReactElement, useMemo } from 'react';
+import { LiveProviderProps } from 'react-live';
 import { TOCItems } from '@theme/createTOCManager';
 import { CMSProvider } from '@cb/cms';
 import { Box } from '@cbhq/cds-web/layout';
@@ -10,6 +11,7 @@ import { useComposePage } from '../useComposePage';
 
 import { ComponentPage, ComponentPageFields } from './ComponentPage';
 import { FlexPage, FlexPageFields } from './FlexPage';
+import { PageContextProvider } from './PageContext';
 
 type DocgenProps = {
   element: ReactElement;
@@ -24,10 +26,12 @@ export type CMSProps = {
    * Fallback component when CMS response is not available
    */
   fallback?: ReactElement;
+  scope?: LiveProviderProps['scope'];
 };
 
-export const Page = memo(function CMS({ fallback, ...props }: CMSProps) {
+export const Page = memo(function CMS({ fallback, scope, ...props }: CMSProps) {
   const { pageData, isLoading, space, handleError } = useComposePage();
+  const pageContext = useMemo(() => ({ scope }), [scope]);
 
   if (isLoading) {
     return (
@@ -61,7 +65,7 @@ export const Page = memo(function CMS({ fallback, ...props }: CMSProps) {
 
   return (
     <CMSProvider components={componentsMap} locale="en" onError={handleError} spaceId={space}>
-      {renderPage()}
+      <PageContextProvider value={pageContext}>{renderPage()}</PageContextProvider>
     </CMSProvider>
   );
 });
