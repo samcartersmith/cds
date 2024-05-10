@@ -6,6 +6,7 @@ import { Box } from '@cbhq/cds-web/layout';
 import { Spinner } from '@cbhq/cds-web/loaders';
 import { TextTitle2 } from '@cbhq/cds-web/typography';
 
+import ReactLiveScope from '../../src/theme/ReactLiveScope';
 import { componentsMap } from '../componentsMap';
 import { useComposePage } from '../useComposePage';
 
@@ -31,7 +32,7 @@ export type CMSProps = {
 
 export const Page = memo(function CMS({ fallback, scope, ...props }: CMSProps) {
   const { pageData, isLoading, space, handleError } = useComposePage();
-  const pageContext = useMemo(() => ({ scope }), [scope]);
+  const pageContext = useMemo(() => ({ scope: scope ?? ReactLiveScope }), [scope]);
 
   if (isLoading) {
     return (
