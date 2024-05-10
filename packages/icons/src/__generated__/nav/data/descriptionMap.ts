@@ -152,7 +152,7 @@ const descriptionMap: Record<string, string[]> = {
   ],
   cloud: ['queryTransact', 'participate', 'cloud', 'cloudProduct'],
   query: ['queryTransact'],
-  transact: ['queryTransact'],
+  transact: ['queryTransact', 'sendReceive'],
   diamond: ['queryTransact', 'diamond'],
   vibes: ['queryTransact', 'participate'],
   percentage: ['taxes', 'royalty', 'interest'],
@@ -363,7 +363,7 @@ const descriptionMap: Record<string, string[]> = {
   direct: ['directDeposit'],
   deposit: ['directDeposit'],
   money: ['directDeposit', 'paymentCard'],
-  transfer: ['directDeposit'],
+  transfer: ['directDeposit', 'sendReceive'],
   payment: ['directDeposit', 'pay'],
   pay: ['directDeposit', 'cash', 'pay', 'paymentCard', 'payProduct'],
   '💰': ['directDeposit', 'cash'],
@@ -700,6 +700,14 @@ const descriptionMap: Record<string, string[]> = {
   platform: ['developerPlatformProduct', 'developerAPIProduct'],
   api: ['developerAPIProduct'],
   squares: ['developerAPIProduct'],
+  arrow: ['sendReceive'],
+  arrows: ['sendReceive'],
+  send: ['sendReceive'],
+  receive: ['sendReceive'],
+  up: ['sendReceive'],
+  down: ['sendReceive'],
+  point: ['sendReceive'],
+  guide: ['sendReceive'],
 };
 
 export default descriptionMap;

@@ -129,9 +129,17 @@ const svgJsMap = {
     light: () => require('../svgJs/light/baseLogoNavigation-2').content,
     dark: () => require('../svgJs/dark/baseLogoNavigation-2').content,
   },
+  bitcoin: {
+    light: () => require('../svgJs/light/bitcoin-0').content,
+    dark: () => require('../svgJs/dark/bitcoin-0').content,
+  },
   bitcoinPizza: {
     light: () => require('../svgJs/light/bitcoinPizza-2').content,
     dark: () => require('../svgJs/dark/bitcoinPizza-2').content,
+  },
+  bitcoinRewards: {
+    light: () => require('../svgJs/light/bitcoinRewards-0').content,
+    dark: () => require('../svgJs/dark/bitcoinRewards-0').content,
   },
   bitcoinWhitePaper: {
     light: () => require('../svgJs/light/bitcoinWhitePaper-1').content,
@@ -449,9 +457,25 @@ const svgJsMap = {
     light: () => require('../svgJs/light/ethereumFocus-3').content,
     dark: () => require('../svgJs/dark/ethereumFocus-3').content,
   },
+  ethRewards: {
+    light: () => require('../svgJs/light/ethRewards-0').content,
+    dark: () => require('../svgJs/dark/ethRewards-0').content,
+  },
   ethStaking: {
     light: () => require('../svgJs/light/ethStaking-2').content,
     dark: () => require('../svgJs/dark/ethStaking-2').content,
+  },
+  ethStakingChart: {
+    light: () => require('../svgJs/light/ethStakingChart-0').content,
+    dark: () => require('../svgJs/dark/ethStakingChart-0').content,
+  },
+  ethStakingRewards: {
+    light: () => require('../svgJs/light/ethStakingRewards-0').content,
+    dark: () => require('../svgJs/dark/ethStakingRewards-0').content,
+  },
+  ethToken: {
+    light: () => require('../svgJs/light/ethToken-0').content,
+    dark: () => require('../svgJs/dark/ethToken-0').content,
   },
   exchangeNavigation: {
     light: () => require('../svgJs/light/exchangeNavigation-5').content,
@@ -1140,6 +1164,10 @@ const svgJsMap = {
   warning: {
     light: () => require('../svgJs/light/warning-2').content,
     dark: () => require('../svgJs/dark/warning-2').content,
+  },
+  winBTC: {
+    light: () => require('../svgJs/light/winBTC-0').content,
+    dark: () => require('../svgJs/dark/winBTC-0').content,
   },
   worldwide: {
     light: () => require('../svgJs/light/worldwide-2').content,

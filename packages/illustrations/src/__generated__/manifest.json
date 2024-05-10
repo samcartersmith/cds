@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-04-25T20:27:05.735Z",
+  "lastUpdated": "2024-05-10T15:45:33.174Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -270,7 +270,7 @@
       "height": 240,
       "description": "chart, indicator, candles, green, red",
       "createdAt": "2022-08-05T05:36:58.777Z",
-      "lastUpdated": "2024-01-10T16:56:42.260Z",
+      "lastUpdated": "2024-04-30T17:25:50.229Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/advancedTradingChartsIndicatorsCandles-1.svg",
         "svgDark": "./heroSquare/svg/dark/advancedTradingChartsIndicatorsCandles-1.svg",
@@ -14430,7 +14430,7 @@
       "height": 240,
       "description": "failure, error, mistake, wrong, red, circle",
       "createdAt": "2023-01-18T02:30:49.627Z",
-      "lastUpdated": "2024-01-31T07:38:30.271Z",
+      "lastUpdated": "2024-04-30T15:10:00.114Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/bigError-3.svg",
         "svgDark": "./heroSquare/svg/dark/bigError-3.svg",
@@ -16605,22 +16605,22 @@
     "2162:1329": {
       "type": "spotRectangle",
       "name": "update",
-      "hash": "QzTy1IS/giIIMtSoA8PorUYmkJWdhA4RYRFqUNdlD/M=",
+      "hash": "1h2X6+qolMJVDarPQca9Bj7PhViUpWO4x2u+zMoE82k=",
       "width": 240,
       "height": 120,
       "description": "",
       "createdAt": "2023-04-27T22:07:04.153Z",
-      "lastUpdated": "2024-03-07T19:49:21.213Z",
+      "lastUpdated": "2024-05-10T15:12:13.278Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/update-2.svg",
-        "svgDark": "./spotRectangle/svg/dark/update-2.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/update-2.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/update-2.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/update-2.js",
-        "pngLight": "./spotRectangle/png/light/update-2.png",
-        "pngDark": "./spotRectangle/png/dark/update-2.png"
+        "svgLight": "./spotRectangle/svg/light/update-3.svg",
+        "svgDark": "./spotRectangle/svg/dark/update-3.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/update-3.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/update-3.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/update-3.js",
+        "pngLight": "./spotRectangle/png/light/update-3.png",
+        "pngDark": "./spotRectangle/png/dark/update-3.png"
       },
-      "version": 2
+      "version": 3
     },
     "2225:2524": {
       "type": "spotSquare",
@@ -19930,7 +19930,7 @@
       "height": 32,
       "description": "check, checkmark, secure, 2fa, protection, identity card, profile, personal, ID, human, card, 🆔, ✅, ✔️, 👶, 👧, 🧒, 👦, 👩, 🧑, 👨, 👩‍🦱, 🧑‍🦱, 👨‍🦱, 👩‍🦰, 🧑‍🦰, 👨‍🦰, 👱‍♀️, 👱, 👱‍♂️, 👩‍🦳, 🧑‍🦳, 👨‍🦳, 👩‍🦲, 🧑‍🦲, 👨‍🦲, 🧔, 👵,🧓, 👴, 👲, 👳‍♀️, 👳, 👳‍♂️, 🧕, 👮‍♀️, 👮, 👮‍♂️, 👷‍♀️, 👷, 👷‍♂️, 💂‍♀️, 💂, 💂‍♂️, 🕵️‍♀️, 🕵️, 🕵️‍♂️, 👩‍⚕️, 🧑‍⚕️, 👨‍⚕️, 👩‍🌾, 🧑‍🌾, 👨‍🌾, 👩‍🍳, 🧑‍🍳, 👨‍🍳, 👩‍🎓, 🧑‍🎓, 👨‍🎓, 👩‍🎤, 🧑‍🎤, 👨‍🎤, 👩‍🏫, 🧑‍🏫, 👨‍🏫, 👩‍🏭, 🧑‍🏭, 👨‍🏭, 👩‍💻, 🧑‍💻, 👨‍💻, 👩‍💼, 🧑‍💼, 👨‍💼, 👩‍🔧, 🧑‍🔧, 👨‍🔧, 👩‍🔬, 🧑‍🔬, 👨‍🔬, 👩‍🎨, 🧑‍🎨, 👨‍🎨, 👩‍🚒, 🧑‍🚒, 👨‍🚒, 👩‍✈️, 🧑‍✈️, 👨‍✈️, 👩‍🚀,🧑‍🚀, 👨‍🚀, 👩‍⚖️, 🤵‍♀️, 🤵, 🤵‍♂️, 👸, 🤴, 🥷, 🦸‍♀️, 🦸, 🦸‍♂️, 🦹‍♀️, 🦹, 🦹‍♂️, 🤶, 🧑‍🎄, 🎅, 🧙‍♀️, 🧙, 🧙‍♂️ ,🧝‍♀️ ,🧝, 🧝‍♂️, 🧛‍♀️, 🧛, 🧛‍♂️, success state",
       "createdAt": "2023-11-07T19:19:47.021Z",
-      "lastUpdated": "2023-12-11T22:49:03.865Z",
+      "lastUpdated": "2024-04-26T07:38:38.563Z",
       "outputs": {
         "svgLight": "./spotIcon/svg/light/idVerification-1.svg",
         "svgDark": "./spotIcon/svg/dark/idVerification-1.svg",
@@ -20490,7 +20490,7 @@
       "height": 240.7100067138672,
       "description": "Government, Policy, Legislation, Governance, yellow, blue, ⚖️, 🏛,",
       "createdAt": "2024-01-08T22:09:29.413Z",
-      "lastUpdated": "2024-01-09T18:44:09.917Z",
+      "lastUpdated": "2024-04-26T07:44:23.749Z",
       "outputs": {
         "svgLight": "./heroSquare/svg/light/governanceMallet-0.svg",
         "svgDark": "./heroSquare/svg/dark/governanceMallet-0.svg",
@@ -21219,6 +21219,166 @@
         "svgJsDark": "./pictogram/svgJs/dark/verifiedPools-0.js",
         "pngLight": "./pictogram/png/light/verifiedPools-0.png",
         "pngDark": "./pictogram/png/dark/verifiedPools-0.png"
+      },
+      "version": 0
+    },
+    "8374:67": {
+      "type": "spotRectangle",
+      "name": "appUpdate",
+      "hash": "B0aBh6pWRhHYGEwsVfWLQW07wNIO2VvXwNCxJONEgJ0=",
+      "width": 240,
+      "height": 120,
+      "description": "",
+      "createdAt": "2024-05-10T15:12:13.227Z",
+      "lastUpdated": "2024-05-10T15:12:13.227Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/appUpdate-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/appUpdate-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/appUpdate-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/appUpdate-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/appUpdate-0.js",
+        "pngLight": "./spotRectangle/png/light/appUpdate-0.png",
+        "pngDark": "./spotRectangle/png/dark/appUpdate-0.png"
+      },
+      "version": 0
+    },
+    "8405:181": {
+      "type": "pictogram",
+      "name": "ethStakingChart",
+      "hash": "VVHQ4mZDSYsbCvFGrfrZ6IzZAqS5jt8rZnxHylTzK9M=",
+      "width": 48,
+      "height": 48,
+      "description": "eth, ethereum, asset, staking, l2, returns, gains, interest",
+      "createdAt": "2024-05-10T15:12:13.233Z",
+      "lastUpdated": "2024-05-10T15:12:13.233Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/ethStakingChart-0.svg",
+        "svgDark": "./pictogram/svg/dark/ethStakingChart-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/ethStakingChart-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/ethStakingChart-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/ethStakingChart-0.js",
+        "pngLight": "./pictogram/png/light/ethStakingChart-0.png",
+        "pngDark": "./pictogram/png/dark/ethStakingChart-0.png"
+      },
+      "version": 0
+    },
+    "8405:182": {
+      "type": "pictogram",
+      "name": "ethRewards",
+      "hash": "/BWRVMdsrkZiyWbyCaeeNF6D5eJTpUwjwflkuC53KrA=",
+      "width": 48,
+      "height": 48,
+      "description": "pictogram, ribbon, star, learning, rewards, eth, ethereum, asset, staking, l2",
+      "createdAt": "2024-05-10T15:12:13.256Z",
+      "lastUpdated": "2024-05-10T15:12:13.256Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/ethRewards-0.svg",
+        "svgDark": "./pictogram/svg/dark/ethRewards-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/ethRewards-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/ethRewards-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/ethRewards-0.js",
+        "pngLight": "./pictogram/png/light/ethRewards-0.png",
+        "pngDark": "./pictogram/png/dark/ethRewards-0.png"
+      },
+      "version": 0
+    },
+    "8405:183": {
+      "type": "pictogram",
+      "name": "bitcoin",
+      "hash": "EZGZKdx7i/GK/YA5+/TVVNomuiHA+9S6+QXtH54w06g=",
+      "width": 48,
+      "height": 48,
+      "description": "pictogram, coin, crypto learning, rewards, bitcoin, btc, satoshi, giveaway, free, competition",
+      "createdAt": "2024-05-10T15:12:13.245Z",
+      "lastUpdated": "2024-05-10T15:12:13.245Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/bitcoin-0.svg",
+        "svgDark": "./pictogram/svg/dark/bitcoin-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/bitcoin-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/bitcoin-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/bitcoin-0.js",
+        "pngLight": "./pictogram/png/light/bitcoin-0.png",
+        "pngDark": "./pictogram/png/dark/bitcoin-0.png"
+      },
+      "version": 0
+    },
+    "8405:184": {
+      "type": "pictogram",
+      "name": "ethToken",
+      "hash": "KdY9L6pCaUX8TtzQUNXEztkWM3/Md6pETP4gIEhxaSY=",
+      "width": 48,
+      "height": 48,
+      "description": "stake, wrap, rush, movement, forward, exciting, eth, ethereum, asset, staking, l2",
+      "createdAt": "2024-05-10T15:12:13.239Z",
+      "lastUpdated": "2024-05-10T15:12:13.239Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/ethToken-0.svg",
+        "svgDark": "./pictogram/svg/dark/ethToken-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/ethToken-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/ethToken-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/ethToken-0.js",
+        "pngLight": "./pictogram/png/light/ethToken-0.png",
+        "pngDark": "./pictogram/png/dark/ethToken-0.png"
+      },
+      "version": 0
+    },
+    "8405:185": {
+      "type": "pictogram",
+      "name": "winBTC",
+      "hash": "XgWZzpgndd1ASHka57VldRWYS8W5fcrSoUleSoQh9rs=",
+      "width": 48,
+      "height": 48,
+      "description": "pictogram, coin, crypto learning, rewards, bitcoin, btc, satoshi, giveaway, free, competition",
+      "createdAt": "2024-05-10T15:12:13.250Z",
+      "lastUpdated": "2024-05-10T15:12:13.250Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/winBTC-0.svg",
+        "svgDark": "./pictogram/svg/dark/winBTC-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/winBTC-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/winBTC-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/winBTC-0.js",
+        "pngLight": "./pictogram/png/light/winBTC-0.png",
+        "pngDark": "./pictogram/png/dark/winBTC-0.png"
+      },
+      "version": 0
+    },
+    "8405:186": {
+      "type": "pictogram",
+      "name": "bitcoinRewards",
+      "hash": "KW1hIi5F/PGJZ0w6cKe5GFh0iHiHyLHB+cx8s95/Y/k=",
+      "width": 48,
+      "height": 48,
+      "description": "pictogram, ribbon, star, learning, rewards, bitcoin, btc, satoshi, sparkles, giveaway, free, competition",
+      "createdAt": "2024-05-10T15:12:13.262Z",
+      "lastUpdated": "2024-05-10T15:12:13.262Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/bitcoinRewards-0.svg",
+        "svgDark": "./pictogram/svg/dark/bitcoinRewards-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/bitcoinRewards-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/bitcoinRewards-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/bitcoinRewards-0.js",
+        "pngLight": "./pictogram/png/light/bitcoinRewards-0.png",
+        "pngDark": "./pictogram/png/dark/bitcoinRewards-0.png"
+      },
+      "version": 0
+    },
+    "8405:247": {
+      "type": "pictogram",
+      "name": "ethStakingRewards",
+      "hash": "erRJcnvTp9/mrRfqePPXJu6FbPkhfYeHWBfIjdEaRww=",
+      "width": 48,
+      "height": 48,
+      "description": "eth, staking, trade, coins, stars, eth2, stacks of coins, graph",
+      "createdAt": "2024-05-10T15:12:13.267Z",
+      "lastUpdated": "2024-05-10T15:12:13.267Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/ethStakingRewards-0.svg",
+        "svgDark": "./pictogram/svg/dark/ethStakingRewards-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/ethStakingRewards-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/ethStakingRewards-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/ethStakingRewards-0.js",
+        "pngLight": "./pictogram/png/light/ethStakingRewards-0.png",
+        "pngDark": "./pictogram/png/dark/ethStakingRewards-0.png"
       },
       "version": 0
     }

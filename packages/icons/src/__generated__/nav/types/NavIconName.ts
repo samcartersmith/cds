@@ -106,6 +106,7 @@ export type NavIconName =
   | 'scanQrCode'
   | 'securityKey'
   | 'securityShield'
+  | 'sendReceive'
   | 'settings'
   | 'shoppingCart'
   | 'signinProduct'

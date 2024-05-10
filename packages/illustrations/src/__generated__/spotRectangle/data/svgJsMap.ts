@@ -45,6 +45,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/appTrackingTransparency-2').content,
     dark: () => require('../svgJs/dark/appTrackingTransparency-2').content,
   },
+  appUpdate: {
+    light: () => require('../svgJs/light/appUpdate-0').content,
+    dark: () => require('../svgJs/dark/appUpdate-0').content,
+  },
   automaticPayments: {
     light: () => require('../svgJs/light/automaticPayments-2').content,
     dark: () => require('../svgJs/dark/automaticPayments-2').content,
@@ -678,8 +682,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/uob-3').content,
   },
   update: {
-    light: () => require('../svgJs/light/update-2').content,
-    dark: () => require('../svgJs/dark/update-2').content,
+    light: () => require('../svgJs/light/update-3').content,
+    dark: () => require('../svgJs/dark/update-3').content,
   },
   uploadDocument: {
     light: () => require('../svgJs/light/uploadDocument-0').content,

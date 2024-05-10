@@ -127,6 +127,7 @@ const names: NavIconName[] = [
   'apiPlug',
   'developerPlatformProduct',
   'developerAPIProduct',
+  'sendReceive',
 ];
 
 export default names;

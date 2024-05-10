@@ -301,6 +301,13 @@ const versionMap: Record<PictogramName, number> = {
   assetManagementNavigation: 0,
   verifiedPools: 0,
   developerSDKNavigation: 0,
+  ethStakingChart: 0,
+  ethToken: 0,
+  bitcoin: 0,
+  winBTC: 0,
+  ethRewards: 0,
+  bitcoinRewards: 0,
+  ethStakingRewards: 0,
 };
 
 export default versionMap;

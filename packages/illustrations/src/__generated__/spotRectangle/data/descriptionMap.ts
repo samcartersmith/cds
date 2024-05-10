@@ -11,6 +11,14 @@
 const descriptionMap: Record<string, string[]> = {
   '1': ['layeredNetworks'],
   '2': ['layeredNetworks'],
+  '': [
+    'appUpdate',
+    'update',
+    'fileYourCryptoTaxes',
+    'giftBoxRewards',
+    'basedInUsa',
+    'coinbaseFees',
+  ],
   leverage: ['leverage', 'browserExtension'],
   trading: [
     'leverage',
@@ -1011,7 +1019,6 @@ const descriptionMap: Record<string, string[]> = {
   '👋': ['diamond'],
   '✋': ['diamond'],
   '🤌': ['diamond'],
-  '': ['fileYourCryptoTaxes', 'giftBoxRewards', 'basedInUsa', 'update', 'coinbaseFees'],
   calculator: ['fileYourCryptoTaxesCheck'],
   charts: ['fileYourCryptoTaxesCheck', 'cryptoApps'],
   pie: ['fileYourCryptoTaxesCheck'],

@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-05-03T19:19:56.721Z",
-  "metadata": { "lastUnicode": 62032 },
+  "lastUpdated": "2024-05-10T15:45:17.783Z",
+  "metadata": { "lastUnicode": 62038 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -1169,7 +1169,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60606 } }
       ],
       "createdAt": "2022-08-24T18:51:39.646Z",
-      "lastUpdated": "2024-01-31T18:35:33.103Z",
+      "lastUpdated": "2024-05-07T01:32:52.579Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-caret-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-caret-12-inactive.svg",
@@ -1772,7 +1772,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59931 } }
       ],
       "createdAt": "2023-02-01T23:25:58.700Z",
-      "lastUpdated": "2024-01-17T18:05:10.130Z",
+      "lastUpdated": "2024-05-07T13:12:36.184Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bank-12.svg",
         "svg16": "./ui/svg/ui-bank-16.svg",
@@ -2510,7 +2510,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59776 } }
       ],
       "createdAt": "2023-02-01T23:25:49.686Z",
-      "lastUpdated": "2024-01-11T17:28:20.045Z",
+      "lastUpdated": "2024-05-07T18:05:25.407Z",
       "outputs": {
         "svg12": "./ui/svg/ui-checkmark-12.svg",
         "svg16": "./ui/svg/ui-checkmark-16.svg",
@@ -7685,7 +7685,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62018 } }
       ],
       "createdAt": "2024-05-03T19:13:23.976Z",
-      "lastUpdated": "2024-05-03T19:13:23.976Z",
+      "lastUpdated": "2024-05-07T14:48:15.518Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-developerAPIProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-developerAPIProduct-12-inactive.svg",
@@ -7733,7 +7733,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62012 } }
       ],
       "createdAt": "2024-05-03T19:13:23.963Z",
-      "lastUpdated": "2024-05-03T19:13:23.963Z",
+      "lastUpdated": "2024-05-07T14:48:15.526Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-apiPlug-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-apiPlug-12-inactive.svg",
@@ -7741,6 +7741,30 @@
         "svg16Inactive": "./nav/svg/nav-apiPlug-16-inactive.svg",
         "svg24Active": "./nav/svg/nav-apiPlug-24-active.svg",
         "svg24Inactive": "./nav/svg/nav-apiPlug-24-inactive.svg"
+      }
+    },
+    "2037:93": {
+      "type": "nav",
+      "name": "sendReceive",
+      "hash": "tTvxHmaRuEjpej3Av80zvsycB/cS2t3wjPiRQqTinbc=",
+      "description": "arrow, arrows, send, receive, transact, transfer, up, down, point, guide",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62038 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62037 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62036 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62035 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62034 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62033 } }
+      ],
+      "createdAt": "2024-05-10T15:10:12.066Z",
+      "lastUpdated": "2024-05-10T15:10:12.066Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-sendReceive-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-sendReceive-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-sendReceive-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-sendReceive-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-sendReceive-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-sendReceive-24-inactive.svg"
       }
     }
   }

@@ -19,6 +19,7 @@ const names: SpotRectangleName[] = [
   'advancedTradingUi',
   'apiKey',
   'appTrackingTransparency',
+  'appUpdate',
   'automaticPayments',
   'backedByUsDollar',
   'basedInUsa',

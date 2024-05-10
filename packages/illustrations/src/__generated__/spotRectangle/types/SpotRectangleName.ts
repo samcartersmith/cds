@@ -13,6 +13,7 @@ export type SpotRectangleName =
   | 'advancedTradingUi'
   | 'apiKey'
   | 'appTrackingTransparency'
+  | 'appUpdate'
   | 'automaticPayments'
   | 'backedByUsDollar'
   | 'basedInUsa'

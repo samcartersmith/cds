@@ -8,6 +8,38 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.6.0 (5/10/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 5/10/2024. [[#3018](https://github.cbhq.net/frontend/cds/pull/3018)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- bitcoin
+- bitcoinRewards
+- ethRewards
+- ethStakingChart
+- ethStakingRewards
+- ethToken
+- winBTC
+
+#### Spot Rectangle
+
+- appUpdate
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- update
+
 ## 3.5.0 (4/25/2024 PST)
 
 #### 🚀 Updates

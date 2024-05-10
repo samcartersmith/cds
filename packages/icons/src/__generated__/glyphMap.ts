@@ -1537,6 +1537,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-advancedMarketSelector-12': '',
   'ui-advancedMarketSelector-16': '',
   'ui-advancedMarketSelector-24': '',
+  'nav-sendReceive-12-active': '',
+  'nav-sendReceive-12-inactive': '',
+  'nav-sendReceive-16-active': '',
+  'nav-sendReceive-16-inactive': '',
+  'nav-sendReceive-24-active': '',
+  'nav-sendReceive-24-inactive': '',
 };
 
 export default glyphMap;
