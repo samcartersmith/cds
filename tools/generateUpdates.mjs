@@ -1,5 +1,9 @@
 /**
  * Run with `yarn node ./tools/generateUpdates.mjs`
+ * We can add a custom # of days to get history. To do so pass in a num arg like
+ *
+ * To get the commit history of previous 10 days. Note it defaults to 14 if no arg is provided.
+ * `yarn node ./tools/generateUpdates.mjs 10`
  */
 import fs from 'fs';
 import path from 'path';
@@ -16,15 +20,18 @@ if (!MONOREPO_ROOT)
 
 const outputFile = path.resolve(MONOREPO_ROOT, outputFilename);
 
+const numberOfDaysArg = parseInt(process.argv[2], 10);
+const numberOfDays = Number.isInteger(numberOfDaysArg) ? numberOfDaysArg : 14;
+
 const today = new Date();
-const twoWeeksAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 14);
+const dateInPast = new Date(today.getFullYear(), today.getMonth(), today.getDate() - numberOfDays);
 
 const getCommits = () => {
   const todayString = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-  const twoWeeksAgoString = `${twoWeeksAgo.getFullYear()}-${
-    twoWeeksAgo.getMonth() + 1
-  }-${twoWeeksAgo.getDate()}`;
-  const command = `git log --since='${twoWeeksAgoString}' --until='${todayString}' --pretty=format:"%s - %an" origin/master`;
+  const dateInPastString = `${dateInPast.getFullYear()}-${
+    dateInPast.getMonth() + 1
+  }-${dateInPast.getDate()}`;
+  const command = `git log --since='${dateInPastString}' --until='${todayString}' --pretty=format:"%s - %an" origin/master`;
   const commands = command.split(' ');
 
   const result = spawnSync(commands.shift(), commands, {
@@ -41,16 +48,30 @@ const getCommits = () => {
     return [];
   } else {
     const regexJira = /\[(DX-\d+)\]/g; // Regex to find Jira ticket numbers
+    const prRegex = /\(#(\d+)\)/; // Regex to find PR numbers
     const commits = result.stdout
       .trim()
       .split('\n')
       .map((line) => {
         const parts = line.split(' - ');
-        const commitMessage = parts[0].replace(regexJira, (match, ticket) => {
-          return `[${ticket}](https://jira.coinbase-corp.com/browse/${ticket})`;
-        });
+        const commitMessage = parts[0];
         const authorTime = parts[1];
-        return `- ${commitMessage} - ${authorTime}`;
+
+        // Check if JIRA is not present, insert [PR] link
+        if (!regexJira.test(commitMessage)) {
+          const prMatch = prRegex.exec(commitMessage);
+          if (prMatch) {
+            const prNumber = prMatch[1];
+            const prLink = `[[PR](https://github.cbhq.net/frontend/cds/pull/${prNumber})]`;
+            return `- ${prLink} - ${commitMessage.replace(prRegex, '')} - ${authorTime}`;
+          }
+        }
+
+        // If JIRA is present, format it as [DX-XXXX] link
+        return `- ${commitMessage.replace(
+          regexJira,
+          (match, ticket) => `[[${ticket}](https://jira.coinbase-corp.com/browse/${ticket})]`,
+        )} - ${authorTime}`;
       });
     return commits;
   }
@@ -76,7 +97,7 @@ const checkChangelogs = () => {
         const dateStr = match[2].split(' ')[0].replace(',', '');
         const date = new Date(dateStr);
 
-        if (date > twoWeeksAgo) {
+        if (date > dateInPast) {
           const versionForUrl = version.replace(/\./g, '');
           let dateForUrl = dateStr
             .replace(/\//g, '')
