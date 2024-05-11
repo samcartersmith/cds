@@ -847,8 +847,25 @@ const sidebars = {
           label: 'Navigation',
           customProps: {},
         },
+        {
+          type: 'doc',
+          id: 'patterns/balances',
+          label: 'Balances',
+          customProps: {
+            tag: 'new',
+          },
+        },
+        {
+          type: 'doc',
+          id: 'patterns/outages',
+          label: 'Outages',
+          customProps: {
+            tag: 'new',
+          },
+        },
       ],
       customProps: {
+        tag: 'new',
         kbar: {
           pictogram: 'participateNavigation',
           description: 'How pieces work together in your experiences.',
