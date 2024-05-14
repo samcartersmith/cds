@@ -7,11 +7,10 @@ const outputDirectory = 'prebuilds';
 const filePath = new URL(import.meta.url).pathname;
 const scriptUtilsDirectory = path.dirname(filePath);
 const { platform, profile, jsEngine, newArchEnabled = false } = argv;
-let androidBuildToolsVersion = process.env.ANDROID_TOOLS_VERSION;
 
 async function patchBundleForPlatform({ platform: platformParam, fileToPatch }) {
   await $`expo export --output-dir lib -p ${platformParam}`;
-  const matches = await glob([`lib/bundles/${platformParam}-*`]);
+  const matches = await glob([`lib/_expo/static/js/${platformParam}/index-*`]);
   if (matches.length) {
     const jsBundle = matches[0];
     await $`mv ${jsBundle} ${fileToPatch}`;
@@ -48,6 +47,11 @@ export function getBuildInfo() {
   };
 
   const android = {
+    sdkVersions: {
+      platform: '34',
+      buildTools: '35.0.0-rc1',
+      systemImage: '30',
+    },
     zipFile: `${outputName}.zip`,
     packageIdentifier: `com.ui_systems.${snakeCaseId}`,
     keystore: credentials.android.keystore,
@@ -64,19 +68,11 @@ export function getBuildInfo() {
       ubuntu: 'x86_64',
       m1: 'arm64-v8a',
     },
-    getBuildToolVersion: async function getBuildToolVersion() {
-      if (!androidBuildToolsVersion) {
-        const { stdout } = await $`cd ${process.env.ANDROID_HOME} && ls ./build-tools`;
-        const list = stdout.split('\n');
-        androidBuildToolsVersion = list.sort()[list.length - 1];
-      }
-      return androidBuildToolsVersion;
-    },
     getBuildTool: async function getBuildTool(name) {
       return path.join(
-        process.env.ANDROID_HOME,
+        process.env.ANDROID_SDK_ROOT,
         'build-tools',
-        await this.getBuildToolVersion(),
+        this.sdkVersions.buildTools,
         name,
       );
     },

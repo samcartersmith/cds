@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 1.1.0 (5/14/2024 PST)
+
+#### 🚀 Updates
+
+- Update(Expo): Upgrade to SDK 50. [[#2962](https://github.cbhq.net/frontend/cds/pull/2962)] [[DX-3277](https://jira.coinbase-corp.com/browse/DX-3277)]
 
 #### 📘 Misc
 

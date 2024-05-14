@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { DimensionValue } from 'react-native';
+import { Animated, DimensionValue } from 'react-native';
 import LottieView from 'lottie-react-native';
 import { ForwardedRef } from '@cbhq/cds-common';
 
@@ -9,6 +9,8 @@ import { LottieProps } from './LottieProps';
 import { useLottieColorFilters } from './useLottieColorFilters';
 
 export type LottieMobileRef = ForwardedRef<LottieView>;
+
+const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
 
 const LottieContent = memo(
   forwardRef(
@@ -20,6 +22,7 @@ const LottieContent = memo(
         progress,
         resizeMode = 'contain',
         source,
+        onAnimationFinish,
         ...boxProps
       }: LottieProps,
       forwardedRef: LottieMobileRef,
@@ -36,11 +39,12 @@ const LottieContent = memo(
 
       return (
         <Box aspectRatio={aspectRatio} {...boxProps}>
-          <LottieView
+          <AnimatedLottieView
             ref={forwardedRef}
             autoPlay={autoplay}
             colorFilters={colorFilters}
             loop={loop}
+            onAnimationFinish={onAnimationFinish}
             progress={progress}
             renderMode="AUTOMATIC" // TODO: If huawei device, force to use SOFTWARE renderMode
             resizeMode={resizeMode}

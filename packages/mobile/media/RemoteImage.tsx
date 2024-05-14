@@ -84,6 +84,10 @@ function isSvg(source: SourceProp): boolean {
   return typeof source === 'object' && 'headers' in source && source.headers?.format === 'svg';
 }
 
+function isImageURISource(source?: SourceProp): source is ImageURISource {
+  return typeof source === 'object' && 'uri' in source;
+}
+
 type HexagonClipPathProps = {
   image: React.ReactElement;
 } & AccessibilityProps;
@@ -194,7 +198,7 @@ export const RemoteImage = memo(function RemoteImage({
         accessibilityRole="image"
         accessible={!!props.accessibilityLabel}
         style={styles}
-        uri={Image.resolveAssetSource(transformedSource as ImageSourcePropType).uri}
+        uri={isImageURISource(transformedSource) ? transformedSource?.uri ?? null : null}
         {...props}
         height={finalHeight}
         width={finalWidth}

@@ -32,13 +32,27 @@ setEnvVars();
 
 if (platform === 'android') {
   const targetAvd = detoxConfig.devices.emulator.device.avdName;
+  const { stdout: platformsAsString } = await $`ls ${process.env.ANDROID_SDK_ROOT}/platforms`;
+  const { stdout: buildToolsAsString } = await $`ls ${process.env.ANDROID_SDK_ROOT}/build-tools`;
   const { stdout: emulatorsAsString } = await $`avdmanager list avd --compact`;
+  const platforms = platformsAsString.split('\n');
+  const buildTools = buildToolsAsString.split('\n');
   const emulators = emulatorsAsString.split('\n');
-  const doesNotHaveEmulator = emulators.findIndex((item) => item === targetAvd) === -1;
+  const doesNotHavePlatform = !platforms.includes(`android-${android.sdkVersions.platform}`);
+  const doesNotHaveBuildTools = !buildTools.includes(android.sdkVersions.buildTools);
+  const doesNotHaveEmulator = !emulators.includes(targetAvd);
+
+  if (doesNotHavePlatform) {
+    await $`sdkmanager "platforms;android-${android.sdkVersions.platform}"`;
+  }
+
+  if (doesNotHaveBuildTools) {
+    await $`sdkmanager "build-tools;${android.sdkVersions.buildTools}"`;
+  }
 
   if (doesNotHaveEmulator) {
     const architecture = isCI ? android.architectures.ubuntu : android.architectures.m1;
-    const androidSdk = `system-images;android-30;default;${architecture}`;
+    const androidSdk = `system-images;android-${android.sdkVersions.systemImage};default;${architecture}`;
 
     await $`sdkmanager ${androidSdk}`;
     await $`echo no | avdmanager create avd --force --name ${targetAvd} --package ${androidSdk}`;

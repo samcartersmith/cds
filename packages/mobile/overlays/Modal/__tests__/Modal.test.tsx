@@ -42,7 +42,7 @@ describe('Modal', () => {
   });
 
   it('passes a11y', () => {
-    render(<MockModal testID="mock-modal" />);
+    render(<MockModal visible testID="mock-modal" />);
     expect(screen.getByTestId('mock-modal')).toBeAccessible();
   });
 
