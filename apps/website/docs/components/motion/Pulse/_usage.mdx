@@ -78,6 +78,42 @@ function BasicPulse() {
 }
 ```
 
+### Custom transition
+
+You can customize default pulse transition including easing and durations.
+
+```jsx live
+function CustomPulse() {
+  const ref = useRef();
+
+  const handlePulseHeavy = useCallback(() => ref.current.play(), []);
+  const handlePulseModerate = useCallback(() => ref.current.play('moderate'), []);
+  const handlePulseSubtle = useCallback(() => ref.current.play('subtle'), []);
+  const handleStop = useCallback(() => ref.current.stop(), []);
+
+  return (
+    <VStack gap={3}>
+      <Pulse
+        variant="heavy"
+        ref={ref}
+        disableAnimateOnMount
+        motionConfig={{ oneOffDuration: 1000, easing: 'global' }}
+      >
+        <Box width={50} height={50} background="primary" />
+        <Box width={50} height={50} background="negative" />
+        <Box width={50} height={50} background="positive" />
+      </Pulse>
+      <HStack gap={3}>
+        <Button onPress={handlePulseHeavy}>Pulse - Heavy</Button>
+        <Button onPress={handlePulseModerate}>Pulse - Moderate</Button>
+        <Button onPress={handlePulseSubtle}>Pulse - Subtle</Button>
+        <Button onPress={handleStop}>Stop</Button>
+      </HStack>
+    </VStack>
+  );
+}
+```
+
 ### Usage Examples
 
 #### Live Auction Pulse

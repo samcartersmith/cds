@@ -21,7 +21,13 @@ export type PulseProps = PulseBaseProps;
  */
 export const Pulse = memo(
   forwardRef(function Pulse(
-    { children, variant = 'moderate', disableAnimateOnMount = false, iterations }: PulseProps,
+    {
+      children,
+      variant = 'moderate',
+      disableAnimateOnMount = false,
+      iterations,
+      motionConfig,
+    }: PulseProps,
     ref: ForwardedRef<PulseRefBaseProps>,
   ) {
     const [variantState, setVariantState] = useState(variant);
@@ -49,13 +55,14 @@ export const Pulse = memo(
             opacity,
             convertMotionConfig({
               ...pulseTransitionConfig,
+              ...(motionConfig || {}),
               toValue: 1,
             }),
           ),
           { iterations: iterations === 0 ? 1 : iterations },
         ).start();
       },
-      [iterations, opacity, stopAnimation],
+      [iterations, opacity, stopAnimation, motionConfig],
     );
 
     useEffect(() => {

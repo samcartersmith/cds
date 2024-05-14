@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import { MotionTransition } from './Motion';
 import { HintMotionBaseProps } from './MotionBaseProps';
 
 export type PulseVariant = 'moderate' | 'subtle' | 'heavy';
@@ -19,6 +20,10 @@ export type PulseBaseProps = {
    * @default Infinity
    */
   iterations?: number;
+  /**
+   * Custom motion transition to override default motion config
+   */
+  motionConfig?: Partial<MotionTransition>;
 } & HintMotionBaseProps;
 
 export type PulseRefBaseProps = {

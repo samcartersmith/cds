@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.16.0 (5/14/2024 PST)
+
+#### 🚀 Updates
+
+- Custom Pulse motion config. [[#3021](https://github.cbhq.net/frontend/cds/pull/3021)] [[DX-3806](https://jira.coinbase-corp.com/browse/DX-3806)]
+
 ## 6.15.0 ((5/14/2024, 09:22 AM PST))
 
 This is an artificial version bump with no new change.

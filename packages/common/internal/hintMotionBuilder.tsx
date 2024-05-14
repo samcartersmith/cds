@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 
 import {
   BoxBaseProps,
@@ -6,6 +6,7 @@ import {
   ColorSurgeBaseProps,
   ColorSurgeRefBaseProps,
   ForwardedRef,
+  MotionTransition,
   PulseBaseProps,
   PulseRefBaseProps,
   ShakeBaseProps,
@@ -77,11 +78,18 @@ export function hintMotionBuilder({
 
   const Pulse = () => {
     const ref = useRef<PulseRefBaseProps>(null);
-
+    const customRef = useRef<PulseRefBaseProps>(null);
     const handlePulseHeavy = useCallback(async () => ref.current?.play('heavy'), []);
     const handlePulseModerate = useCallback(async () => ref.current?.play('moderate'), []);
     const handlePulseSubtle = useCallback(async () => ref.current?.play('subtle'), []);
     const handleStop = useCallback(() => ref.current?.stop(), []);
+
+    const customTransition: MotionTransition = useMemo(
+      () => ({ oneOffDuration: 1000, easing: 'global' }),
+      [],
+    );
+    const handleCustom = useCallback(async () => customRef.current?.play(), []);
+    const handleCustomStop = useCallback(() => customRef.current?.stop(), []);
 
     return (
       <VStack gap={3}>
@@ -94,6 +102,14 @@ export function hintMotionBuilder({
         <Button onPress={handlePulseModerate}>Pulse - Moderate</Button>
         <Button onPress={handlePulseSubtle}>Pulse - Subtle</Button>
         <Button onPress={handleStop}>Stop</Button>
+        <TextBody as="p">Custom Transition</TextBody>
+        <PulseComponent ref={customRef} disableAnimateOnMount motionConfig={customTransition}>
+          <Box background="primary" height={50} width={50} />
+          <Box background="negative" height={50} width={50} />
+          <Box background="positive" height={50} width={50} />
+        </PulseComponent>
+        <Button onPress={handleCustom}>Pulse - Custom</Button>
+        <Button onPress={handleCustomStop}>Stop</Button>
       </VStack>
     );
   };

@@ -28,7 +28,13 @@ export const calculateRepeatValue = (iterations: number | undefined) => {
  */
 export const Pulse = memo(
   forwardRef(function Pulse(
-    { children, variant = 'moderate', disableAnimateOnMount = false, iterations }: PulseProps,
+    {
+      children,
+      variant = 'moderate',
+      disableAnimateOnMount = false,
+      iterations,
+      motionConfig,
+    }: PulseProps,
     ref: ForwardedRef<PulseRefBaseProps>,
   ) {
     const controls = useAnimation();
@@ -47,11 +53,12 @@ export const Pulse = memo(
           opacity: [1, pulseVariantOpacity[variantParam ?? variant], 1],
           transition: convertTransition({
             ...pulseTransitionConfig,
+            ...(motionConfig || {}),
             repeat: repeatValue,
           }),
         });
       },
-      [stopAnimation, controls, variant, repeatValue],
+      [stopAnimation, controls, variant, repeatValue, motionConfig],
     );
     useEffect(() => {
       if (!disableAnimateOnMount) {
