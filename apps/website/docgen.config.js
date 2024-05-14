@@ -46,6 +46,7 @@ module.exports = {
     'accordion/Accordion',
     'accordion/AccordionItem',
     'alpha/AnnouncementCard',
+    'alpha/banner/Banner',
     'alpha/Card',
     'alpha/CardBody',
     'alpha/CardFooter',

@@ -1,4 +1,4 @@
-// codegen:start {preset: barrel, include: ./*.ts}
+// codegen:start {preset: barrel, include: ./*.ts, exclude: ./AlphaBannerBaseProps.ts}
 export * from './AccordionBaseProps';
 export * from './AlertBaseProps';
 export * from './AnimatedCaretBaseProp';

@@ -291,9 +291,23 @@ const sidebars = {
         },
         { type: 'doc', id: 'components/layout/Box/box', label: 'Box' },
         {
-          type: 'doc',
-          id: 'components/banner/banner',
+          type: 'category',
           label: 'Banner',
+          customProps: { tag: 'new' },
+          items: [
+            {
+              type: 'doc',
+              id: 'components/banner/banner',
+              label: 'Banner',
+              customProps: { tag: 'deprecated' },
+            },
+            {
+              type: 'doc',
+              id: 'components/banner-alpha/banner',
+              label: 'Banner (Alpha)',
+              customProps: { tag: 'new' },
+            },
+          ],
         },
         {
           type: 'category',

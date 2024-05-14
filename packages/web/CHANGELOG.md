@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.14.0 (5/9/2024 PST)
+
+#### 🚀 Updates
+
+- Add alpha banner. [[#3000](https://github.cbhq.net/frontend/cds/pull/3000)] [[DX-3684](https://jira.coinbase-corp.com/browse/DX-3684)]
+
 ## 6.13.2 (5/9/2024 PST)
 
 #### 🐞 Fixes
