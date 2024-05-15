@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { m as motion } from 'framer-motion';
 import { css } from 'linaria';
-import { switchPalette } from '@cbhq/cds-common';
+import { PartialPaletteConfig, switchPalette } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { switchTransitionConfig } from '@cbhq/cds-common/motion/switch';
 import { curves, durations } from '@cbhq/cds-common/motion/tokens';
@@ -18,7 +18,10 @@ import { cx } from '../utils/linaria';
 import { Control, ControlProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
-export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>;
+export type SwitchProps = {
+  /** The palette to override default switch control palette. */
+  switchPaletteOverrides?: PartialPaletteConfig;
+} & Omit<ControlBaseProps<string> & ControlProps, 'value'>;
 
 const MotionBox = motion(Box);
 
@@ -32,7 +35,7 @@ const thumbMotionVariants = {
 };
 
 const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchWithRef(
-  { children, checked, ...props },
+  { children, checked, switchPaletteOverrides, ...props },
   ref,
 ) {
   // Switch thumb is a special case where it should always be white.
@@ -45,6 +48,11 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
     checked,
     initialBackground: palette.backgroundAlternate,
   });
+
+  const paletteConfig = useMemo(
+    () => switchPaletteOverrides ?? switchPalette,
+    [switchPaletteOverrides],
+  );
 
   const switchNode = (
     <Control
@@ -75,7 +83,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
   );
 
   return (
-    <ThemeProvider palette={switchPalette}>
+    <ThemeProvider palette={paletteConfig}>
       {children ? (
         <Box
           alignItems="center"

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.17.0 (5/14/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: add switchPaletteOverrides prop to Switch component. [[#3025](https://github.cbhq.net/frontend/cds/pull/3025)] [[DX-3812](https://jira.coinbase-corp.com/browse/DX-3812)]
+
 ## 6.16.0 (5/14/2024 PST)
 
 #### 🚀 Updates

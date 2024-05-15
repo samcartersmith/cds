@@ -100,4 +100,35 @@ describe('Switch.test', () => {
 
     expect(screen.getByTestId('test-test-id')).toBeTruthy();
   });
+
+  it('has default palette', () => {
+    render(<Switch onChange={jest.fn()} testID="test-test-id" />);
+
+    expect(screen.getByTestId('test-test-id')).toHaveStyle({
+      backgroundColor: 'rgba(191,196,207,1)',
+    });
+  });
+
+  it('has default palette when it is checked', () => {
+    render(<Switch checked onChange={jest.fn()} testID="test-test-id" />);
+
+    expect(screen.getByTestId('test-test-id')).toHaveStyle({
+      backgroundColor: 'rgba(0,82,255,1)',
+    });
+  });
+
+  it('can override default palette', () => {
+    render(
+      <Switch
+        checked
+        onChange={jest.fn()}
+        switchPaletteOverrides={{ primary: 'pink60' }}
+        testID="test-test-id"
+      />,
+    );
+
+    expect(screen.getByTestId('test-test-id')).toHaveStyle({
+      backgroundColor: 'rgba(179,58,162,1)',
+    });
+  });
 });
