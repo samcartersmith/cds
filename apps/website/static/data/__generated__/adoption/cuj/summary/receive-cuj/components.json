@@ -488,7 +488,7 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 9,
+      "totalInstances": 8,
       "totalCallSites": 3,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
@@ -498,17 +498,11 @@
             "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx",
             "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx"
           ]
-        },
-        {
-          "aliasPath": "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx",
-          "callSites": [
-            "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx"
-          ]
         }
       ],
       "callSites": {
         "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 4,
-        "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 2,
+        "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
         "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 3
       },
       "propsWithCallSites": {
@@ -558,7 +552,7 @@
         "right": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
         },
-        "spacingStart": {
+        "maxWidth": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
         }
       }
@@ -587,9 +581,6 @@
         },
         "dangerouslySetColor": {
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
-        },
-        "spacingEnd": {
-          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
         },
         "color": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
@@ -834,6 +825,10 @@
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
         },
+        "detail": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
         "description": {
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
@@ -847,9 +842,6 @@
         },
         "media": {
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
-        },
-        "detail": {
           "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
         },
         "subdetail": {
@@ -896,6 +888,12 @@
       "totalInstances": 2,
       "totalCallSites": 2,
       "cds": "@cbhq/cds-web/system/Pressable",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx"
+        }
+      ],
       "callSites": {
         "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
         "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
@@ -919,6 +917,9 @@
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
         },
+        "style": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
         "width": {
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
         }
@@ -931,6 +932,10 @@
       "totalCallSites": 3,
       "cds": "@cbhq/cds-web/layout/HStack",
       "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx"
+        },
         {
           "prop": "style",
           "callSite": "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx"
@@ -948,7 +953,18 @@
         "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 2
       },
       "propsWithCallSites": {
+        "spacingHorizontal": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 2
+        },
+        "gap": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
+        },
         "alignItems": {
+          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
+          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
+        },
+        "style": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
           "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
         },
@@ -959,12 +975,6 @@
         "justifyContent": {
           "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
-        },
-        "style": {
-          "components/SendReceive/SendRedesign/components/SendReceiveQRCode.tsx": 1
-        },
-        "spacingHorizontal": {
-          "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 2
         },
         "spacerGap": {
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
@@ -1000,12 +1010,6 @@
         "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
       },
       "propsWithCallSites": {
-        "spacingStart": {
-          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
-        },
-        "spacingEnd": {
-          "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1
-        },
         "color": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
@@ -1925,6 +1929,26 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "goBack": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NetworkCellDetailFee",
+      "sourceFile": "components/SendReceive/SendRedesign/steps/L2SelectionStep/NetworkCellDetailFee",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "networkSlug": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "accountId": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "currency": {
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
+        },
+        "ticker": {
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
         }
       }

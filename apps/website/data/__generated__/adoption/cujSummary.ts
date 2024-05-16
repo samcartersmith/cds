@@ -19,4 +19,7 @@ export const cujSummary = [
   { id: 'add-cash-cuj', label: 'Add Cash' },
   { id: 'withdraw-cuj', label: 'Withdraw' },
   { id: 'buy-sell-convert-cuj', label: 'Buy / Sell / Convert' },
+  { id: 'prime-transfer-funds-cuj', label: 'Prime - Transfer Funds' },
+  { id: 'prime-action-activity-cuj', label: 'Prime - Action Activity' },
+  { id: 'prime-initiate-order-cuj', label: 'Prime - Initiate Order' },
 ] as const;

@@ -85,4 +85,19 @@ export const cujs = [
     pillar: 'Buy / Sell / Convert',
     label: 'Web Buy Sell Convert CUJ',
   },
+  {
+    id: 'prime-web-transfer-funds-cuj',
+    pillar: 'Prime - Transfer Funds',
+    label: '[Web] Transfer Funds CUJ',
+  },
+  {
+    id: 'prime-web-action-activity-cuj',
+    pillar: 'Prime - Action Activity',
+    label: '[Web] Action Activity CUJ',
+  },
+  {
+    id: 'prime-web-initiate-order-cuj',
+    pillar: 'Prime - Initiate Order',
+    label: '[Web] Initiate Order CUJ',
+  },
 ] as const;

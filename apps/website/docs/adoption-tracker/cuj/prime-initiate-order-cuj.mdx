@@ -1,0 +1,20 @@
+---
+hide_title: true
+hide_table_of_contents: true
+title: Prime - Initiate Order
+sidebar_label: Prime - Initiate Order
+---
+
+import { CUJDetails } from ':cds-website/components/AdoptionTracker/CUJDetails';
+import { AdopterStatsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterStatsProvider';
+import { AdopterComponentsProvider } from ':cds-website/components/AdoptionTracker/context/AdopterComponentsProvider';
+
+<AdopterStatsProvider
+  {...require(':cds-website/static/data/__generated__/adoption/cuj/summary/prime-initiate-order-cuj/stats.json')}
+>
+  <AdopterComponentsProvider
+    {...require(':cds-website/static/data/__generated__/adoption/cuj/summary/prime-initiate-order-cuj/components.json')}
+  >
+    <CUJDetails id={'prime-initiate-order-cuj'} title={'Prime - Initiate Order'} />
+  </AdopterComponentsProvider>
+</AdopterStatsProvider>

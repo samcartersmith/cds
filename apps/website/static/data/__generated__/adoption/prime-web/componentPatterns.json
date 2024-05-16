@@ -8,34 +8,34 @@
         "totalCallSites": 1,
         "propsWithCallSites": {
           "action": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "activeThemeLabel": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onCloseProfileMenu": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onOpenProfileMenu": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onThemeToggle": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "projectId": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "start": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "target": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "themeToggleValue": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "navigate": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           }
         }
       },
@@ -43,7 +43,7 @@
         "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/emilyseibert/src/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+        "packagePath": "/Users/shreygupta/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],

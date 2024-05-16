@@ -532,6 +532,9 @@
       "propsWithCallSites": {
         "compact": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+        },
+        "defaultPeriod": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
         }
       }
     },
@@ -769,16 +772,15 @@
       }
     },
     {
-      "name": "UserCefiTotalBalanceSubscription",
-      "sourceFile": "@app/components/balance/UserCefiTotalBalanceSubscription",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "UserCefiBalancesSubscription",
       "sourceFile": "@app/components/balance/UserCefiBalancesSubscription",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "hasReducedRefreshRate": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+        }
+      }
     },
     {
       "name": "View",
@@ -843,6 +845,26 @@
       "totalCallSites": 1
     },
     {
+      "name": "InstrumentedSharedBannerEmptyStateUI",
+      "sourceFile": "@app/components/EmptyState/SharedBannerEmptyStateUI/InstrumentedSharedBannerEmptyStateUI",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "testID": {
+          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
+        },
+        "title": {
+          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
+        },
+        "variant": {
+          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
+        },
+        "offsetHorizontal": {
+          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
+        }
+      }
+    },
+    {
       "name": "SharedBannerEmptyStateUI",
       "sourceFile": "@app/components/EmptyState/SharedBannerEmptyStateUI",
       "totalInstances": 1,
@@ -855,6 +877,9 @@
           "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
         },
         "variant": {
+          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
+        },
+        "offsetHorizontal": {
           "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
         }
       }
@@ -915,7 +940,7 @@
     },
     {
       "name": "TotalBalanceHeader",
-      "sourceFile": "@app/dataComponents/PortfolioBalance/TotalBalanceHeader",
+      "sourceFile": "@app/dataComponents/PortfolioBalance/TotalBalance/HomeFeedAndAssets/TotalBalanceHeader",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -941,6 +966,15 @@
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         },
         "accessibilityHint": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "minHeight": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "staleBalanceTimeout": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "gracePeriodTimeout": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }
@@ -978,7 +1012,7 @@
         "accessibilityHint": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         },
-        "addSubheaderSpace": {
+        "minHeight": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }
@@ -1005,7 +1039,7 @@
     },
     {
       "name": "TotalBalanceHeaderDataComponentLegacy",
-      "sourceFile": "@app/dataComponents/PortfolioBalance/TotalBalanceHeaderLegacy/TotalBalanceHeaderDataComponentLegacy",
+      "sourceFile": "@app/dataComponents/PortfolioBalance/TotalBalance/HomeFeedAndAssets/TotalBalanceHeaderLegacy/TotalBalanceHeaderDataComponentLegacy",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -1030,10 +1064,16 @@
         "trailing": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         },
-        "defaultTitle": {
+        "ref": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         },
-        "ref": {
+        "staleBalanceTimeout": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "gracePeriodTimeout": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "showTitleIcon": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }

@@ -23,4 +23,19 @@ module.exports.cujs = [
   { type: 'doc', id: 'adoption-tracker/cuj/add-cash-cuj', label: 'Add Cash' },
   { type: 'doc', id: 'adoption-tracker/cuj/withdraw-cuj', label: 'Withdraw' },
   { type: 'doc', id: 'adoption-tracker/cuj/buy-sell-convert-cuj', label: 'Buy / Sell / Convert' },
+  {
+    type: 'doc',
+    id: 'adoption-tracker/cuj/prime-transfer-funds-cuj',
+    label: 'Prime - Transfer Funds',
+  },
+  {
+    type: 'doc',
+    id: 'adoption-tracker/cuj/prime-action-activity-cuj',
+    label: 'Prime - Action Activity',
+  },
+  {
+    type: 'doc',
+    id: 'adoption-tracker/cuj/prime-initiate-order-cuj',
+    label: 'Prime - Initiate Order',
+  },
 ];

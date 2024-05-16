@@ -114,10 +114,10 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/emilyseibert/src/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/Users/shreygupta/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^6.8.2",
+      "cdsWeb": "^6.0.0",
       "cdsMobile": "Not Found",
       "cdsCommon": "^6.0.0",
       "lowestVersion": "^6.0.0",
@@ -236,34 +236,34 @@
         "totalCallSites": 1,
         "propsWithCallSites": {
           "action": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "activeThemeLabel": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onCloseProfileMenu": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onOpenProfileMenu": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onThemeToggle": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "projectId": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "start": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "target": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "themeToggleValue": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "navigate": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           }
         }
       },
@@ -274,34 +274,34 @@
         "totalCallSites": 1,
         "propsWithCallSites": {
           "action": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "activeThemeLabel": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onCloseProfileMenu": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onOpenProfileMenu": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "onThemeToggle": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "projectId": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "start": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "target": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "themeToggleValue": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           },
           "navigate": {
-            "@prime-ui/pages/layout/TopNavigationBar.tsx": 1
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           }
         }
       },
@@ -426,10 +426,10 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/Users/emilyseibert/src/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/Users/shreygupta/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^6.8.2",
+      "cdsWeb": "^6.0.0",
       "cdsMobile": "Not Found",
       "cdsCommon": "^6.0.0",
       "lowestVersion": "^6.0.0",
