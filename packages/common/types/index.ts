@@ -71,6 +71,7 @@ export * from './MultiContentModuleBaseProps';
 export * from './NavigationBaseIconProps';
 export * from './NudgeCardBaseProps';
 export * from './OverlayLifecycleProps';
+export * from './PageBaseProps';
 export * from './Palette';
 export * from './Placement';
 export * from './Position';

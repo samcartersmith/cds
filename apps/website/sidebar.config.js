@@ -583,6 +583,18 @@ const sidebars = {
           ],
         },
         {
+          type: 'doc',
+          id: 'components/page/PageHeader/page-header',
+          label: 'PageHeader',
+          customProps: { tag: 'new' },
+        },
+        {
+          type: 'doc',
+          id: 'components/page/PageFooter/page-footer',
+          label: 'PageFooter',
+          customProps: { tag: 'new' },
+        },
+        {
           type: 'category',
           label: 'Pressable',
           items: [

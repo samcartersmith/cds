@@ -277,6 +277,29 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/Overlay.stories').default,
   },
   {
+    key: 'PageFooter',
+    getComponent: () => require('@cbhq/cds-mobile/page/__stories__/PageFooter.stories').default,
+  },
+  {
+    key: 'PageFooterInPage',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/page/__stories__/PageFooterInPage.stories').default,
+  },
+  {
+    key: 'PageHeader',
+    getComponent: () => require('@cbhq/cds-mobile/page/__stories__/PageHeader.stories').default,
+  },
+  {
+    key: 'PageHeaderInErrorEmptyState',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/page/__stories__/PageHeaderInErrorEmptyState.stories').default,
+  },
+  {
+    key: 'PageHeaderInPage',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/page/__stories__/PageHeaderInPage.stories').default,
+  },
+  {
     key: 'Palette',
     getComponent: () => require('@cbhq/cds-mobile/system/__stories__/Palette.stories').default,
   },

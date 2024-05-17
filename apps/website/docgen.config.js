@@ -161,6 +161,8 @@ module.exports = {
     'overlays/Modal/ModalFooter',
     'overlays/PortalProvider',
     'overlays/Tooltip/Tooltip',
+    'page/PageHeader',
+    'page/PageFooter',
     'tooltip/Tooltip',
     'overlays/Tray/Tray',
     'tables/Table',

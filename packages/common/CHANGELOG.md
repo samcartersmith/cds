@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.18.0 (5/16/2024 PST)
+
+#### 🚀 Updates
+
+- Page Header and Page Footer. [[#2936](https://github.cbhq.net/frontend/cds/pull/2936)] [[DX-3557](https://jira.coinbase-corp.com/browse/DX-3557)]
+
 ## 6.17.0 ((5/14/2024, 02:31 PM PST))
 
 This is an artificial version bump with no new change.

@@ -1,0 +1,375 @@
+import { Story } from '@storybook/react';
+import { PageHeaderBaseProps } from '@cbhq/cds-common';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
+import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
+
+import { Button, ButtonGroup, IconButton } from '../../buttons';
+import { useBreakpoints } from '../../hooks/useBreakpoints';
+import { LogoMark } from '../../icons';
+import { HeroSquare } from '../../illustrations';
+import { Box, Divider, HStack, VStack } from '../../layout';
+import { RemoteImage } from '../../media';
+import { Link, TextBody, TextHeadline, TextTitle1 } from '../../typography';
+import { PageFooter } from '../PageFooter';
+import { PageHeader } from '../PageHeader';
+
+function getCustomMarginForBox() {
+  return { marginLeft: -8 };
+}
+
+const exampleProps = {
+  logoMark1: (
+    <RemoteImage alt="btcLogoImage" shape="circle" size="m" source={assets.btc.imageUrl} />
+  ),
+  logoMark2: <LogoMark size={32} />,
+  start1: (
+    <Box style={getCustomMarginForBox()}>
+      <IconButton
+        transparent
+        accessibilityLabel="Go Back"
+        name="backArrow"
+        onPress={NoopFn}
+        testID="header-back-button"
+      />
+    </Box>
+  ),
+  start2: (
+    <Box style={getCustomMarginForBox()}>
+      <IconButton
+        accessibilityLabel="Go Back"
+        name="backArrow"
+        onPress={NoopFn}
+        testID="header-back-button"
+      />
+    </Box>
+  ),
+  title1: <TextTitle1 as="h1">Page Title</TextTitle1>,
+  title2: (
+    <Box flexGrow={1} flexShrink={1} justifyContent="center">
+      <TextTitle1 as="h1" numberOfLines={1}>
+        Centered Title
+      </TextTitle1>
+    </Box>
+  ),
+  title3: (
+    <TextTitle1 as="h3" numberOfLines={1}>
+      Title
+    </TextTitle1>
+  ),
+  intermediary1: <TextHeadline as="h1">Intermediary Content</TextHeadline>,
+  intermediary2: (
+    <Box dangerouslySetBackground="red">
+      <TextBody as="sub">
+        Hello there. This is a rather long text sentence since I do not have lorem ipsum handy.
+        Hello there. This is a rather long text sentence since I do not have lorem ipsum handy.
+      </TextBody>
+    </Box>
+  ),
+  end1: (
+    <IconButton
+      transparent
+      accessibilityLabel="Show info"
+      name="info"
+      onPress={NoopFn}
+      testID="header-info-button"
+    />
+  ),
+  end2: (
+    <HStack alignItems="center" gap={2}>
+      <Link to="https://cds.cbhq.net/components/link">
+        <TextHeadline as="p" color="primary">
+          Help
+        </TextHeadline>
+      </Link>
+      <HStack gap={1}>
+        <IconButton
+          transparent
+          accessibilityLabel="Share"
+          name="externalLink"
+          onPress={NoopFn}
+          testID="header-external-link-button"
+        />
+        <IconButton
+          transparent
+          accessibilityLabel="Close"
+          name="close"
+          onPress={NoopFn}
+          testID="header-close-button"
+        />
+      </HStack>
+    </HStack>
+  ),
+  end3: (
+    <IconButton
+      transparent
+      accessibilityLabel="Close"
+      name="close"
+      onPress={NoopFn}
+      testID="header-close-button"
+    />
+  ),
+  end4: (
+    <IconButton
+      accessibilityLabel="Close"
+      name="close"
+      onPress={NoopFn}
+      testID="header-close-button"
+    />
+  ),
+  endButtons2: (
+    <ButtonGroup accessibilityLabel="Group">
+      <Button accessibilityLabel="Go Back" variant="secondary">
+        Back
+      </Button>
+      <Button accessibilityLabel="Go Next" variant="primary">
+        Next
+      </Button>
+    </ButtonGroup>
+  ),
+  endButtons3: (
+    <ButtonGroup accessibilityLabel="Group">
+      <Button accessibilityLabel="Go Back" variant="secondary">
+        Button
+      </Button>
+      <Button accessibilityLabel="Go Next" variant="primary">
+        Button
+      </Button>
+    </ButtonGroup>
+  ),
+  endButtonsBlock3: (
+    <VStack flexGrow={1}>
+      <ButtonGroup block accessibilityLabel="Group">
+        <Button accessibilityLabel="Go Back" variant="secondary">
+          Button
+        </Button>
+        <Button accessibilityLabel="Go Next" variant="primary">
+          Button
+        </Button>
+      </ButtonGroup>
+    </VStack>
+  ),
+};
+
+const Template: Story<PageHeaderBaseProps> = (args) => <PageHeader {...args} />;
+
+export const InteractiveHeader = Template.bind({});
+
+InteractiveHeader.args = {
+  background: 'background',
+  start: 'logoMark2',
+  title: 'title1',
+  end: 'end2',
+};
+
+export const Examples = () => {
+  return (
+    <VStack gap={2} left={0} position="absolute" top={0} width="100%">
+      <PageHeader
+        background="primaryWash"
+        end={exampleProps.end2}
+        start={exampleProps.logoMark2}
+        title={exampleProps.title1}
+      />
+      <Divider />
+      <PageHeader background="primaryWash" end={exampleProps.end2} title={exampleProps.title1} />
+      <Divider />
+      <PageHeader
+        background="primaryWash"
+        start={exampleProps.logoMark2}
+        title={exampleProps.title1}
+      />
+      <Divider />
+      <PageHeader
+        background="primaryWash"
+        end={exampleProps.end2}
+        start={exampleProps.logoMark2}
+        title={exampleProps.intermediary1}
+      />
+      <Divider />
+      <PageHeader
+        background="primaryWash"
+        end={exampleProps.end2}
+        start={exampleProps.logoMark2}
+        title={exampleProps.title2}
+      />
+      <Divider />
+      <PageHeader
+        background="background"
+        end={exampleProps.end3}
+        start={exampleProps.start1}
+        title={exampleProps.intermediary1}
+      />
+      <Divider />
+      <PageHeader
+        background="background"
+        end={exampleProps.end3}
+        start={exampleProps.start1}
+        title={exampleProps.title1}
+      />
+      <Divider />
+      <PageHeader
+        background="background"
+        end={exampleProps.end3}
+        start={exampleProps.start1}
+        title={exampleProps.title2}
+      />
+      <Divider />
+      <PageHeader background="background" end={exampleProps.end3} start={exampleProps.start1} />
+      <Divider />
+      <PageHeader background="primaryWash" end={exampleProps.end3} title="Intermediary Node Text" />
+      <Divider />
+      <PageHeader
+        background="primaryWash"
+        end={exampleProps.end2}
+        start={exampleProps.logoMark2}
+        title={exampleProps.intermediary2}
+      />
+    </VStack>
+  );
+};
+
+export const PageHeaderInErrorEmptyState = () => {
+  return (
+    <VStack gap={0} left={0} position="absolute" top={0} width="100%">
+      <PageHeader
+        background="background"
+        position="sticky"
+        start={exampleProps.logoMark2}
+        top="0"
+      />
+      <Box background="primaryWash">
+        <VStack
+          alignContent="center"
+          alignItems="center"
+          flexGrow={1}
+          flexShrink={1}
+          justifyContent="center"
+          spacingHorizontal={4}
+          spacingVertical={10}
+        >
+          <HeroSquare name="bigWarning" />
+          <TextTitle1 as="h3">You need to X before you Y</TextTitle1>
+          <TextBody align="center" as="sub">
+            You&apos;ll need to [add funds] before you can [complete this transaction]
+          </TextBody>
+        </VStack>
+      </Box>
+    </VStack>
+  );
+};
+
+export const PageHeaderInPage = () => {
+  const { isPhone } = useBreakpoints();
+  const setEndButtonMobile = isPhone ? exampleProps.endButtonsBlock3 : exampleProps.endButtons3;
+
+  return (
+    <VStack gap={0} left={0} position="absolute" top={0} width="100%">
+      <PageHeader
+        background="background"
+        end={
+          <IconButton
+            transparent
+            accessibilityLabel="Close"
+            name="close"
+            testID="header-close-button"
+          />
+        }
+        position="sticky"
+        start={exampleProps.start1}
+        title={exampleProps.title3}
+        top="0"
+      />
+      <VStack
+        alignContent="center"
+        alignItems="center"
+        dangerouslySetBackground="#FADADD"
+        flexGrow={1}
+        flexShrink={1}
+        height="400px"
+        justifyContent="center"
+        spacing={3}
+      >
+        <TextTitle1 as="h3">Primary Content</TextTitle1>
+      </VStack>
+      <Box dangerouslySetBackground="gray" height="500px" />
+      <Box dangerouslySetBackground="orange" height="500px" />
+      <PageFooter action={setEndButtonMobile} />
+    </VStack>
+  );
+};
+
+export default {
+  title: 'Core Components/PageHeader',
+  component: PageHeader,
+  argTypes: {
+    position: {
+      table: {
+        disable: true,
+      },
+    },
+    top: {
+      table: {
+        disable: true,
+      },
+    },
+    left: {
+      table: {
+        disable: true,
+      },
+    },
+    bottom: {
+      table: {
+        disable: true,
+      },
+    },
+    right: {
+      table: {
+        disable: true,
+      },
+    },
+
+    background: {
+      control: 'text',
+    },
+    start: {
+      control: 'select',
+      options: ['None', 'logoMark1', 'logoMark2', 'start1', 'start2', 'startTitle'],
+      mapping: {
+        None: null,
+        logoMark1: exampleProps.logoMark1,
+        logoMark2: exampleProps.logoMark2,
+        start1: exampleProps.start1,
+        start2: exampleProps.start2,
+        startTitle: exampleProps.title1,
+      },
+    },
+    title: {
+      control: 'select',
+      options: ['None', 'title1', 'title2', 'title3', 'title4', 'intermediary1', 'intermediary2'],
+      mapping: {
+        None: null,
+        title1: exampleProps.title1,
+        title2: exampleProps.title2,
+        title3: exampleProps.title3,
+        title4: (
+          <TextTitle1 as="h3" numberOfLines={1}>
+            Very Very Very Very Very Very Very Very Long Long Long Long Long Long Long Long Title
+          </TextTitle1>
+        ),
+        intermediary1: exampleProps.intermediary1,
+        intermediary2: exampleProps.intermediary2,
+      },
+    },
+    end: {
+      control: 'select',
+      options: ['None', 'end1', 'end2', 'end3', 'end4'],
+      mapping: {
+        None: null,
+        end1: exampleProps.end1,
+        end2: exampleProps.end2,
+        end3: exampleProps.end3,
+        end4: exampleProps.end4,
+      },
+    },
+  },
+};
