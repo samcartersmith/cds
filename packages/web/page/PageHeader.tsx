@@ -6,19 +6,19 @@ import { pageHeaderHeight } from '@cbhq/cds-common/tokens/page';
 import { PageHeaderBaseProps } from '@cbhq/cds-common/types/PageBaseProps';
 
 import { Box } from '../layout/Box';
-import { deviceMqRanges } from '../layout/breakpoints';
+import { deviceMqs } from '../layout/breakpoints';
 import { Grid } from '../layout/Grid';
 import { TextTitle1 } from '../typography/TextTitle1';
 
 const gridStylesMobileTitleClassName = css`
-  @media only screen and ${deviceMqRanges.phone} {
+  @media only screen and (${deviceMqs.phoneLandscape}) {
     grid-column: 1 / 4; // Span all three columns
     grid-row: 2;
   }
 `;
 
 const gridStylesMobileEndClassName = css`
-  @media only screen and ${deviceMqRanges.phone} {
+  @media only screen and (${deviceMqs.phoneLandscape}) {
     grid-row: 1;
     grid-column: 3;
   }
