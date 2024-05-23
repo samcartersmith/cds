@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.1.50 (5/14/2024 PST)
+
+#### 🚀 Updates
+
+- Add banner migration script. [[#3027](https://github.cbhq.net/frontend/cds/pull/3027)] [[DX-3816](https://jira.coinbase-corp.com/browse/DX-3816)]
+
 ## 0.1.49 (4/18/2024 PST)
 
 #### 🚀 Updates

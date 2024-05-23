@@ -16,7 +16,8 @@
         "6.0.0",
         "revert-decomp",
         "gondolin",
-        "gap"
+        "gap",
+        "banner"
       ],
       "description": "Version to migrate to",
       "$default": {

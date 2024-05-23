@@ -56,9 +56,21 @@ Affected components in `@cbhq/cds-web-overlays` that should now be imported from
 
 - Dropdown, Select, Popover, Tooltip, SidebarMoreMenu, and SelectChip
 
-### Alpha Components Exited
+### Alpha Components Changes
 
 Almost all components and types located in `/alpha` directories have been reintegrated into core packages. All migrations are automated with the `cds-migrator`. See [go/cds-alpha-tdd](http://go/cds-alpha-tdd) for more information on this strategy.
+
+In [v6.14.0](/changelog/mobile/#6140-592024-pst), we introduced new alpha Banner component to better communicate important information. The `danger` variant is removed on the alpha Banner and should be replaced with `error` instead. We also swapped colors between `error` and `warning` variants. Please visit [alpha Banner](/components/banner-alpha/) component page for more details. You can migrate to the alpha Banner component with the script below.
+
+```shell
+yarn nx generate @cbhq/cds-migrator:migrate banner
+```
+
+If manual migration is required, the following are the changes for `variant` values:
+
+- `danger` -> `error`
+- `warning` -> `error`
+- `error` -> `warning`
 
 ### Stronger Types
 

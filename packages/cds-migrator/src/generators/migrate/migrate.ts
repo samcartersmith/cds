@@ -1,5 +1,6 @@
 import { Tree } from '@nrwl/devkit';
 
+import migrateBanner from '../../migrations/banner';
 import migrateGap from '../../migrations/gap';
 import migrateToDecompedPackages from '../../migrations/gondolin';
 import gondolin from '../../migrations/gondolin';
@@ -42,6 +43,10 @@ async function migrate(tree: Tree, options: MigrateOptions) {
 
     case 'gap':
       await migrateGap(tree);
+      break;
+
+    case 'banner':
+      await migrateBanner(tree);
       break;
 
     default:

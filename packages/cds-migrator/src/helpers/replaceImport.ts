@@ -50,7 +50,7 @@ export const replaceImport = ({
   declarations.forEach((declaration) => {
     const currentPath = declaration.getModuleSpecifierValue();
     // Check if the file imports from an old path
-    if (currentPath.startsWith(oldPath)) {
+    if (currentPath.startsWith(oldPath) && currentPath !== newPath) {
       const namedImports = declaration.getNamedImports();
       // check if the file imports the old namedImport from the old path. this makes this work for shallow imports
       if (namedImport) {
@@ -59,13 +59,20 @@ export const replaceImport = ({
           // check if there's already an import declaration from the new path
           //   if there is, add the new namedImport
           if (existingNewImportDeclaration) {
-            // if the namedImport is already there, don't add it again
+            // if the new namedImport is already there, don't add it again
             const hasNewNamedImportAlready = existingNewImportDeclaration
               .getNamedImports()
               ?.find((imp) => imp.getText() === newNamedImport);
+            // if the old namedImport is already there, don't add it again
+            const hasOldNamedImportAlready = existingNewImportDeclaration
+              .getNamedImports()
+              ?.find((imp) => imp.getText() === namedImport);
             if (!hasNewNamedImportAlready && newNamedImport) {
               // add the new import to the existing import declaration
               existingNewImportDeclaration.addNamedImport(newNamedImport);
+            } else if (!hasOldNamedImportAlready && namedImport) {
+              // add the old import to the existing import declaration
+              existingNewImportDeclaration.addNamedImport(namedImport);
             }
           } else {
             // add a new import declaration with the new path
