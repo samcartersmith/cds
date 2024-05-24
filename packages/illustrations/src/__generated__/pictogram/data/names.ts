@@ -75,6 +75,7 @@ const names: PictogramName[] = [
   'coinbaseOneProductIcon',
   'coinbaseOneRefreshed',
   'coinbaseOneShield',
+  'coinbaseOneTrade',
   'coinbaseOneTrusted',
   'coinbaseWalletApp',
   'coldStorageCheck',

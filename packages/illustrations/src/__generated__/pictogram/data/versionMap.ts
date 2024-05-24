@@ -308,6 +308,7 @@ const versionMap: Record<PictogramName, number> = {
   ethRewards: 0,
   bitcoinRewards: 0,
   ethStakingRewards: 0,
+  coinbaseOneTrade: 0,
 };
 
 export default versionMap;

@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.7.0 (5/24/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 5/24/2024. [[#3041](https://github.cbhq.net/frontend/cds/pull/3041)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- coinbaseOneTrade
+
+#### Hero Square
+
+- coinbaseOneAirdrop
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- fast
+
 ## 3.6.0 (5/10/2024 PST)
 
 #### 🚀 Updates

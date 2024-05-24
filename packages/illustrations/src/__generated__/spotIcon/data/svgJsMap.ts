@@ -102,8 +102,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/exchangeProduct-1').content,
   },
   fast: {
-    light: () => require('../svgJs/light/fast-0').content,
-    dark: () => require('../svgJs/dark/fast-0').content,
+    light: () => require('../svgJs/light/fast-1').content,
+    dark: () => require('../svgJs/dark/fast-1').content,
   },
   helpCenterProduct: {
     light: () => require('../svgJs/light/helpCenterProduct-1').content,

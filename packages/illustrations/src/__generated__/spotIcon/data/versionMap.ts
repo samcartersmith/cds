@@ -62,7 +62,7 @@ const versionMap: Record<SpotIconName, number> = {
   '2fa': 0,
   shield: 0,
   multiCoin: 0,
-  fast: 0,
+  fast: 1,
   noFees: 0,
   creditCard: 0,
   done: 0,

@@ -67,6 +67,7 @@ export type PictogramName =
   | 'coinbaseOneProductIcon'
   | 'coinbaseOneRefreshed'
   | 'coinbaseOneShield'
+  | 'coinbaseOneTrade'
   | 'coinbaseOneTrusted'
   | 'coinbaseWalletApp'
   | 'coinFocus'

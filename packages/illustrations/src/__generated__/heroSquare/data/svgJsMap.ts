@@ -225,6 +225,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseIsDownMobile-3').content,
     dark: () => require('../svgJs/dark/coinbaseIsDownMobile-3').content,
   },
+  coinbaseOneAirdrop: {
+    light: () => require('../svgJs/light/coinbaseOneAirdrop-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneAirdrop-0').content,
+  },
   coinbaseOneCardWarning: {
     light: () => require('../svgJs/light/coinbaseOneCardWarning-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneCardWarning-2').content,
