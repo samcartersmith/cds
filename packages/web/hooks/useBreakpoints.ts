@@ -6,9 +6,17 @@ import { useDefaultBreakpointContext } from '../system/BreakpointsProvider';
 import { getBrowserGlobals } from '../utils/browser';
 import { addMatchMediaListener, removeMatchMediaListener } from '../utils/globalMatchMediaListener';
 
-type BreakpointRecord = Record<string, boolean>;
+export type DeviceBreakpointValues =
+  | 'isPhone'
+  | 'isPhoneLandscape'
+  | 'isTablet'
+  | 'isTabletLandscape'
+  | 'isDesktop'
+  | 'isDesktopLarge'
+  | 'isExtraWide';
 
-const booleanDeviceNames: Record<DeviceBreakpoint, string> = {
+type BreakpointRecord = Partial<Record<DeviceBreakpointValues, boolean>>;
+const booleanDeviceNames: Record<DeviceBreakpoint, DeviceBreakpointValues> = {
   phone: 'isPhone',
   phoneLandscape: 'isPhoneLandscape',
   tablet: 'isTablet',

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.18.2 (5/28/2024 PST)
+
+#### 🐞 Fixes
+
+- Add type to BreakpointRecord in useBreakpoints. [[#3047](https://github.cbhq.net/frontend/cds/pull/3047)] [[DX-3702](https://jira.coinbase-corp.com/browse/DX-3702)]
+
 ## 6.18.1 (5/17/2024 PST)
 
 #### 🐞 Fixes

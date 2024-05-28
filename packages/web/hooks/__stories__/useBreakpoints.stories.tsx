@@ -5,7 +5,7 @@ import { VStack } from '../../layout/VStack';
 import { BreakpointsProvider } from '../../system/BreakpointsProvider';
 import { TextHeadline } from '../../typography';
 import { enableJavascript } from '../../utils/storybookParams/percy';
-import { useBreakpoints } from '../useBreakpoints';
+import { DeviceBreakpointValues, useBreakpoints } from '../useBreakpoints';
 
 const deviceMap: Record<string, string> = {
   isPhone: 'a phone',
@@ -23,7 +23,7 @@ const Example = (props: PlaygroundProps) => {
 
   const deviceName = () => {
     for (const device in result) {
-      if (result[device]) {
+      if (device in deviceMap && result[device as DeviceBreakpointValues]) {
         deviceArr.push(deviceMap[device]);
       }
     }
