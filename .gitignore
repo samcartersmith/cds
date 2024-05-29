@@ -175,5 +175,7 @@ version.ts
 libs/web-utils/jest.d.ts
 bundle-stats.json
 export-stats.md
+cds-archive-*.txt
+cds-archive-*.zip
 depcheck-results.md
 cds-biweekly-update.md

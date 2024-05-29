@@ -48,6 +48,12 @@
         ],
         "parallel": true
       }
+    },
+    "zip-packages": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "./athena/zipPackages.ts"
+      }
     }
   }
 }
