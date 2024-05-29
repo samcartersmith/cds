@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.18.3 (5/29/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix palette inheritance. [[#3034](https://github.cbhq.net/frontend/cds/pull/3034)]
+
 ## 6.18.2 ((5/28/2024, 02:17 PM PST))
 
 This is an artificial version bump with no new change.

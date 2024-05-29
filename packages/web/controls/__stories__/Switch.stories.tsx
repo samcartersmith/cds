@@ -1,5 +1,4 @@
 import { css } from 'linaria';
-import { PartialPaletteConfig } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 
@@ -7,11 +6,6 @@ import { Box } from '../../layout/Box';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { palette } from '../../tokens';
 import { Switch } from '../Switch';
-
-const customPalette: PartialPaletteConfig = {
-  primary: 'pink60',
-  backgroundAlternate: 'orange40',
-};
 
 const DarkModeWrapper = ({ children }: { children: React.ReactNode }) => (
   <ThemeProvider scale={DEFAULT_SCALE} spectrum="dark">
@@ -108,12 +102,16 @@ export const MultiLineLabel = () => (
   </Box>
 );
 
+const customPalette = { primary: 'pink50' } as const;
+
 export const CustomPalette = () => {
-  const [checked, { toggle }] = useToggler();
+  const [checked, { toggle }] = useToggler(true);
   return (
-    <Switch checked={checked} onChange={toggle} switchPaletteOverrides={customPalette}>
-      Custom Palette
-    </Switch>
+    <ThemeProvider palette={customPalette}>
+      <Switch checked={checked} onChange={toggle}>
+        Custom Palette
+      </Switch>
+    </ThemeProvider>
   );
 };
 

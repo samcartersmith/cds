@@ -1,15 +1,9 @@
 import React from 'react';
-import { NewPartialPaletteConfig } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { switchControlPalette } from '@cbhq/cds-common/palette/constants';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { ThemeProvider } from '../../system';
 import { Switch } from '../Switch';
-
-const customPalette: NewPartialPaletteConfig = {
-  light: { ...switchControlPalette.light, primary: 'pink60' },
-  dark: { ...switchControlPalette.dark, primary: 'pink60' },
-};
 
 const SwitchScreen = () => {
   return (
@@ -43,11 +37,13 @@ const SwitchScreen = () => {
       <Example inline title="Custom Palette">
         {() => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const [isChecked, { toggle }] = useToggler();
+          const [isChecked, { toggle }] = useToggler(true);
           return (
-            <Switch checked={isChecked} onChange={toggle} switchPaletteOverrides={customPalette}>
-              Default
-            </Switch>
+            <ThemeProvider name="switch-provider" palette={{ primary: 'pink50' }}>
+              <Switch checked={isChecked} onChange={toggle}>
+                Default
+              </Switch>
+            </ThemeProvider>
           );
         }}
       </Example>

@@ -12,7 +12,7 @@ export type ThemeConfigProviderProps = {
 };
 
 /** Most performant option for handling palette overrides.
- * Requies providing full config with all palette aliases defined,
+ * Requires providing full config with all palette aliases defined,
  * rgbaStrings and interactableTokens for light and dark mode.
  * */
 export const ThemeConfigProvider: React.FC<React.PropsWithChildren<ThemeConfigProviderProps>> =

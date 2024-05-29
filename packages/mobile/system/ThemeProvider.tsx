@@ -1,5 +1,5 @@
 import React, { memo, useContext, useMemo } from 'react';
-import { NewPartialPaletteConfig, SystemProviderProps, useSpectrum } from '@cbhq/cds-common';
+import { NewPartialPaletteConfig, SystemProviderProps } from '@cbhq/cds-common';
 import { PaletteOverridesContext } from '@cbhq/cds-common/palette/context';
 import { usePaletteOverrides } from '@cbhq/cds-common/palette/usePaletteOverrides';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
@@ -18,10 +18,6 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
     const defaultThemeConfig = useFallbackThemeConfig();
     const parentPaletteOverrides = usePaletteOverrides();
 
-    const parentSpectrum = useSpectrum();
-
-    const isSameSpectrumAsParent = parentSpectrum === spectrum;
-
     // merge with parent overrides
     const overrides = useMemo(
       () => ({ ...parentPaletteOverrides, ...paletteOverrides }),
@@ -29,10 +25,11 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
     );
 
     const config = useMemo(() => {
+      const parentThemeConfig = parentThemeConfigContext ?? defaultThemeConfig;
       // if current overrides, merge with parent overrides to create a new config
       if (paletteOverrides) {
         return createThemeConfig({
-          parentThemeConfig: defaultThemeConfig,
+          parentThemeConfig,
           palette: overrides,
           name,
         });
@@ -41,21 +38,12 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
       // This means this is the root ThemeProvider
       if (parentThemeConfigContext === undefined) return defaultThemeConfig;
 
-      // inherit parent palette if no current overrides and same as parent spectrum,
-      if (!paletteOverrides && isSameSpectrumAsParent) return parentThemeConfigContext;
-      // use default palette if no current overrides and different from parent spectrum,
-      if (!paletteOverrides && !isSameSpectrumAsParent) return defaultThemeConfig;
+      // If only spectrum was overwritten we need ThemeConfigContext to update activeConfig
+      if (spectrum) return parentThemeConfig;
 
       // Skip rendering ThemeConfigProvider if there are no changes
       return undefined;
-    }, [
-      defaultThemeConfig,
-      name,
-      overrides,
-      parentThemeConfigContext,
-      isSameSpectrumAsParent,
-      paletteOverrides,
-    ]);
+    }, [defaultThemeConfig, name, overrides, parentThemeConfigContext, paletteOverrides, spectrum]);
 
     const skipThemeConfig = config === undefined;
     return (

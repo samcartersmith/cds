@@ -215,17 +215,17 @@ describe('ThemeProvider', () => {
       'default-palette1-elevation1-elevation1Children',
       'default-palette1-elevation2',
       'default-palette1-elevation2-elevation2Children',
-      'default-palette2',
-      'default-palette2-elevation1',
-      'default-palette2-elevation2',
-      'default-palette3',
-      'default-palette3-elevation1',
-      'default-palette3-elevation1-elevation1Children',
-      'default-palette3-elevation2',
-      'default-palette3-elevation2-elevation2Children',
-      'default-palette4',
-      'default-palette4-elevation1',
-      'default-palette4-elevation2',
+      'default-palette1-palette2',
+      'default-palette1-palette2-elevation1',
+      'default-palette1-palette2-elevation2',
+      'default-palette1-palette2-palette3',
+      'default-palette1-palette2-palette3-elevation1',
+      'default-palette1-palette2-palette3-elevation1-elevation1Children',
+      'default-palette1-palette2-palette3-elevation2',
+      'default-palette1-palette2-palette3-elevation2-elevation2Children',
+      'default-palette1-palette2-palette3-palette4',
+      'default-palette1-palette2-palette3-palette4-elevation1',
+      'default-palette1-palette2-palette3-palette4-elevation2',
     ]);
 
     expect(result.current.activeConfig.palette).toEqual({
@@ -234,6 +234,52 @@ describe('ThemeProvider', () => {
       ...palette2,
       ...palette3,
       ...palette4,
+    });
+  });
+
+  it('handles merge of palettes in different format', () => {
+    const palette1 = { primary: 'pink50' } as const;
+    const palette2 = {
+      light: { background: 'blue60' },
+      dark: { background: 'blue70' },
+    } as const;
+    const palette3 = {
+      light: { backgroundAlternate: 'gray20' },
+      dark: { backgroundAlternate: 'gray60' },
+    } as const;
+
+    const { result } = renderHook(() => useThemeConfig(), {
+      wrapper: ({ children }: { children: React.ReactNode }) => (
+        <ThemeProvider name="palette1" palette={palette1}>
+          <ThemeProvider name="palette2" palette={palette2} spectrum="dark">
+            <ThemeProvider name="palette3" palette={palette3} spectrum="light">
+              {children}
+            </ThemeProvider>
+          </ThemeProvider>
+        </ThemeProvider>
+      ),
+    });
+
+    expect(Array.from(createThemeConfig.cache.keys())).toEqual([
+      'default',
+      'default-palette1',
+      'default-palette1-elevation1',
+      'default-palette1-elevation2',
+      'default-palette1-palette2',
+      'default-palette1-palette2-elevation1',
+      'default-palette1-palette2-elevation1-elevation1Children',
+      'default-palette1-palette2-elevation2',
+      'default-palette1-palette2-elevation2-elevation2Children',
+      'default-palette1-palette2-palette3',
+      'default-palette1-palette2-palette3-elevation1',
+      'default-palette1-palette2-palette3-elevation2',
+    ]);
+
+    expect(result.current.activeConfig.palette).toEqual({
+      ...defaultPalette,
+      ...palette1,
+      ...palette2.light,
+      ...palette3.light,
     });
   });
 });
