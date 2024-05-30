@@ -174,7 +174,8 @@ steps:
     cancel_on_build_failing: true
     commands:
       - tools/ci/setup.sh
-      - (yarn workspace @cds/storybook should-run-visreg && yarn mono-pipeline run-percy storybook && yarn nx affected --target=a11y-web) || echo 'Skipping Percy (Web)'
+      - (yarn workspace @cds/storybook should-run-visreg && yarn mono-pipeline run-percy storybook) || echo 'Skipping Percy (Web)'
+      - yarn nx affected --target=a11y-web
     retry:
       automatic:
         limit: 1

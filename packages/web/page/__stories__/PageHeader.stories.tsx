@@ -228,6 +228,21 @@ export const Examples = () => {
   );
 };
 
+Examples.parameters = {
+  a11y: {
+    config: {
+      /**
+       * It is expected to include multiple PageHeaders with same landmark in this story
+       * @link https://dequeuniversity.com/rules/axe/4.6/landmark-no-duplicate-banner?application=axeAPI
+       */
+      rules: [
+        { id: 'landmark-no-duplicate-banner', enabled: false },
+        { id: 'landmark-unique', enabled: false },
+      ],
+    },
+  },
+};
+
 export const PageHeaderInErrorEmptyState = () => {
   return (
     <VStack gap={0} left={0} position="absolute" top={0} width="100%">

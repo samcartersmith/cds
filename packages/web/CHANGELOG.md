@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Fixed a11y-web task in CI. [[#3034](https://github.cbhq.net/frontend/cds/pull/3034)] [[DX-3563](https://jira.coinbase-corp.com/browse/DX-3563)]
+
 ## 6.18.3 ((5/29/2024, 02:57 PM PST))
 
 This is an artificial version bump with no new change.
