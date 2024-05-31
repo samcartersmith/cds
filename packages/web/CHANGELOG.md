@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.19.0 (5/31/2024 PST)
+
+#### 🚀 Updates
+
+- Add prop to nudgecard for setting the media position. [[#3055](https://github.cbhq.net/frontend/cds/pull/3055)] [[DX-3869](https://jira.coinbase-corp.com/browse/DX-3869)]
+
 ## 6.18.4 (5/31/2024 PST)
 
 #### 🐞 Fixes

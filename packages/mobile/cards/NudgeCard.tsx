@@ -20,6 +20,7 @@ export const NudgeCard = memo(
     description,
     pictogram,
     media,
+    mediaPosition = 'right',
     action,
     onActionPress,
     numberOfLines = 3,
@@ -46,18 +47,14 @@ export const NudgeCard = memo(
       </PressableOpacity>
     );
 
-    const renderMedia = (
-      <Box spacingEnd={onDismissPress ? 3 : 0}>
-        {pictogram ? (
-          <Pictogram
-            dimension={action ? '64x64' : '48x48'}
-            name={pictogram}
-            testID={`${testID}-pictogram`}
-          />
-        ) : (
-          media
-        )}
-      </Box>
+    const renderMedia = pictogram ? (
+      <Pictogram
+        dimension={action ? '64x64' : '48x48'}
+        name={pictogram}
+        testID={`${testID}-pictogram`}
+      />
+    ) : (
+      media
     );
 
     const content = (
@@ -68,6 +65,7 @@ export const NudgeCard = memo(
         borderRadius="roundedXLarge"
         maxWidth={maxWidth}
         position="relative"
+        spacingEnd={onDismissPress ? 3 : 0}
         testID={testID}
         width={width}
       >
@@ -95,7 +93,8 @@ export const NudgeCard = memo(
           {...spacingProps}
           {...props}
         >
-          <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
+          {hasMedia && mediaPosition === 'left' ? renderMedia : null}
+          <VStack alignItems="flex-start" flexGrow={1} flexShrink={1} gap={2} maxWidth={maxWidth}>
             <VStack gap={0.5} maxWidth="100%" spacingTop={hasMedia ? 0 : 2}>
               <TextHeadline
                 ellipsize="tail"
@@ -116,7 +115,7 @@ export const NudgeCard = memo(
             </VStack>
             {action ? renderAction : null}
           </VStack>
-          {hasMedia ? renderMedia : null}
+          {hasMedia && mediaPosition === 'right' ? renderMedia : null}
         </HStack>
       </Box>
     );

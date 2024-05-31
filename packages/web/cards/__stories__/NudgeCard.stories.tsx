@@ -52,6 +52,8 @@ export const Default = (overrides: Partial<NudgeCardProps>) => (
   <VStack gap={2}>
     <NudgeCard {...exampleProps} {...overrides} />
     <NudgeCard {...exampleProps} {...overrides} onDismissPress={noopFn} />
+    <NudgeCard {...exampleProps} mediaPosition="left" {...overrides} />
+    <NudgeCard {...exampleProps} mediaPosition="left" {...overrides} onDismissPress={noopFn} />
   </VStack>
 );
 
@@ -59,6 +61,8 @@ export const Compact = () => (
   <VStack gap={2}>
     <NudgeCard {...compactProps} />
     <NudgeCard {...compactProps} onDismissPress={noopFn} />
+    <NudgeCard {...compactProps} mediaPosition="left" />{' '}
+    <NudgeCard {...compactProps} mediaPosition="left" onDismissPress={noopFn} />
   </VStack>
 );
 
@@ -68,6 +72,8 @@ export const CustomMedia = () => (
     <NudgeCard {...exampleMediaProps} onDismissPress={noopFn} />
     <NudgeCard {...compactMediaProps} />
     <NudgeCard {...compactMediaProps} onDismissPress={noopFn} />
+    <NudgeCard {...exampleMediaProps} mediaPosition="left" />
+    <NudgeCard {...exampleMediaProps} mediaPosition="left" onDismissPress={noopFn} />
   </VStack>
 );
 

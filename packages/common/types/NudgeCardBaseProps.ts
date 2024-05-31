@@ -35,6 +35,11 @@ export type NudgeCardBaseProps = {
    * @default backgroundAlternate
    */
   background?: PaletteBackground;
+  /**
+   * Set the media position for the pictogram or media.
+   * @default right
+   */
+  mediaPosition?: 'left' | 'right';
 } & Omit<DimensionStyles, 'minHeight' | 'width'> &
   SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
