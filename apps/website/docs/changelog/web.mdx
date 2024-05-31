@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 6.18.4 (5/31/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: global banner spacing. [[DX-3864](https://jira.coinbase-corp.com/browse/DX-3864)]
 
 #### 📘 Misc
 

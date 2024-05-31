@@ -3,14 +3,14 @@ import { View, ViewStyle } from 'react-native';
 import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 import { variants } from '@cbhq/cds-common/tokens/alphaBanner';
-import { BannerBaseProps } from '@cbhq/cds-common/types/AlphaBannerBaseProps';
+import { BannerBaseProps, BannerStyleVariant } from '@cbhq/cds-common/types/AlphaBannerBaseProps';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
-import { SpacingScale } from '@cbhq/cds-common/types/SpacingScale';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Collapsible } from '../../collapsible/Collapsible';
 import { Icon } from '../../icons';
 import { Box, HStack, HStackProps, VStack } from '../../layout';
+import { Spacer } from '../../layout';
 import { Pressable } from '../../system/Pressable';
 import { Link, LinkProps } from '../../typography';
 import { TextLabel1, TextLabel2, TextLegal } from '../../typography';
@@ -130,27 +130,28 @@ export const Banner = memo(
       };
     }, [spectrum, variant, style]);
 
-    const spacingHorizontal: SpacingScale = useMemo(
-      () => (styleVariant === 'contextual' ? 2 : 3),
-      [styleVariant],
+    const variantStyleProps: Record<BannerStyleVariant, HStackProps> = useMemo(
+      () => ({
+        contextual: {
+          spacingStart: 2,
+          spacingEnd: 2,
+          borderRadius: 'roundedLarge',
+        },
+        global: {
+          spacingStart: 2,
+          spacingEnd: 3,
+          borderRadius: undefined,
+          borderColor,
+          borderLeftWidth: 4,
+        },
+        inline: {
+          spacingStart: 3,
+          spacingEnd: 3,
+          borderRadius: undefined,
+        },
+      }),
+      [borderColor],
     );
-
-    const styleProps = useMemo(() => {
-      switch (styleVariant) {
-        case 'inline':
-          return {
-            borderRadius: undefined,
-          };
-        case 'global':
-          return {
-            borderRadius: undefined,
-            borderColor,
-            borderLeftWidth: 4,
-          };
-        default:
-          return {};
-      }
-    }, [styleVariant, borderColor]);
 
     const content = (
       <HStack
@@ -158,20 +159,20 @@ export const Banner = memo(
         background={background}
         borderRadius="roundedLarge"
         gap={1}
-        spacingHorizontal={spacingHorizontal}
         spacingVertical={2}
         style={rootStyle}
         testID={testID}
         {...(showDismiss ? {} : offsetStyles)}
-        {...styleProps}
+        {...variantStyleProps[styleVariant]}
         {...props}
       >
         {/** Start */}
-        <Box
+        <HStack
           accessibilityLabel={startIconAccessibilityLabel}
           accessibilityRole="image"
           accessible={!!startIconAccessibilityLabel}
         >
+          {styleVariant === 'global' && <Spacer horizontal={0.5} />}
           <Icon
             color={iconColor}
             name={startIcon}
@@ -179,7 +180,7 @@ export const Banner = memo(
             spacing={0.5}
             testID={`${testID}-icon`}
           />
-        </Box>
+        </HStack>
         <VStack
           flexGrow={1}
           flexShrink={1}

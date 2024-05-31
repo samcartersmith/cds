@@ -8,14 +8,14 @@ import React, {
   useState,
 } from 'react';
 import { css } from 'linaria';
-import { ForwardedRef, ResponsiveProps, SpacingScale } from '@cbhq/cds-common';
+import { ForwardedRef, ResponsiveProps } from '@cbhq/cds-common';
 import { bannerMinWidth, BannerVariantStyle, variants } from '@cbhq/cds-common/tokens/alphaBanner';
-import { BannerBaseProps } from '@cbhq/cds-common/types/AlphaBannerBaseProps';
+import { BannerBaseProps, BannerStyleVariant } from '@cbhq/cds-common/types/AlphaBannerBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Collapsible } from '../../collapsible';
 import { Icon } from '../../icons';
-import { Box, BoxElement, HStack, HStackProps, VStack } from '../../layout';
+import { Box, BoxElement, HStack, HStackProps, Spacer, VStack } from '../../layout';
 import { Pressable } from '../../system/Pressable';
 import { Link, LinkProps } from '../../typography';
 import { TextLabel1, TextLabel2, TextLegal } from '../../typography';
@@ -160,31 +160,32 @@ export const Banner = memo(
         [offset, offsetVertical, offsetHorizontal, offsetTop, offsetBottom, offsetStart, offsetEnd],
       );
 
-      const spacingHorizontal: SpacingScale = useMemo(
-        () => (styleVariant === 'contextual' ? 2 : 3),
-        [styleVariant],
+      const variantStyleProps: Record<BannerStyleVariant, HStackProps<BoxElement>> = useMemo(
+        () => ({
+          contextual: {
+            spacingStart: 2,
+            spacingEnd: 2,
+            borderRadius: 'roundedLarge',
+          },
+          global: {
+            spacingStart: 2,
+            spacingEnd: 3,
+            borderRadius: undefined,
+            borderColor,
+            style: {
+              borderWidth: 0,
+              borderLeftWidth: 4,
+              ...style,
+            },
+          },
+          inline: {
+            spacingStart: 3,
+            spacingEnd: 3,
+            borderRadius: undefined,
+          },
+        }),
+        [borderColor, style],
       );
-
-      const styleProps = useMemo(() => {
-        switch (styleVariant) {
-          case 'inline':
-            return {
-              borderRadius: undefined,
-            };
-          case 'global':
-            return {
-              borderRadius: undefined,
-              borderColor,
-              style: {
-                borderWidth: 0,
-                borderLeftWidth: 4,
-                ...style,
-              },
-            };
-          default:
-            return {};
-        }
-      }, [styleVariant, borderColor, style]);
 
       const content = (
         <Box flexGrow={1}>
@@ -197,16 +198,16 @@ export const Banner = memo(
             gap={1}
             minWidth={bannerMinWidth}
             responsiveConfig={responsiveConfig}
-            spacingHorizontal={spacingHorizontal}
             spacingVertical={2}
             style={style}
             testID={testID}
             {...(showDismiss ? {} : offsetStyles)}
-            {...styleProps}
+            {...variantStyleProps[styleVariant]}
             {...props}
           >
             {/** Start */}
-            <Box spacing={0.5}>
+            <HStack spacing={0.5}>
+              {styleVariant === 'global' && <Spacer horizontal={0.5} />}
               <Icon
                 accessibilityLabel={startIconAccessibilityLabel}
                 color={iconColor}
@@ -214,7 +215,7 @@ export const Banner = memo(
                 size="s"
                 testID={`${testID}-icon`}
               />
-            </Box>
+            </HStack>
             <VStack
               flexGrow={1}
               gap={2}
