@@ -490,13 +490,13 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 6,
+      "totalInstances": 7,
       "totalCallSites": 4,
       "cds": "@cbhq/cds-web/layout/VStack",
       "callSites": {
         "views/Home/HomeFeedContentDesktop.tsx": 2,
         "views/Assets/Assets.tsx": 2,
-        "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+        "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2,
         "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
       },
       "propsWithCallSites": {
@@ -519,7 +519,7 @@
           "views/Assets/Assets.tsx": 1
         },
         "offsetHorizontal": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2,
           "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
         }
       }
@@ -527,16 +527,16 @@
     {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
-      "totalInstances": 3,
+      "totalInstances": 2,
       "totalCallSites": 2,
       "cds": "@cbhq/cds-web/layout/Spacer",
       "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2,
+        "views/Home/HomeFeedContentDesktop.tsx": 1,
         "views/Assets/Assets.tsx": 1
       },
       "propsWithCallSites": {
         "vertical": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
           "views/Assets/Assets.tsx": 1
         }
       }
@@ -544,9 +544,15 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 5,
-      "totalCallSites": 3,
+      "totalInstances": 6,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-web/layout/Box",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "views/Home/HomeFeedContentDesktop.tsx"
+        }
+      ],
       "extendedStyledComponents": [
         {
           "alias": "BalancesSecondaryContentInternal",
@@ -554,11 +560,15 @@
         }
       ],
       "callSites": {
+        "views/Home/HomeFeedContentDesktop.tsx": 1,
         "views/Assets/Assets.tsx": 2,
         "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2,
         "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
       },
       "propsWithCallSites": {
+        "style": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
         "background": {
           "views/Assets/Assets.tsx": 1
         },
@@ -1270,6 +1280,9 @@
       "propsWithCallSites": {
         "scrollRef": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        },
+        "spacingStart": {
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         }
       }
     },
@@ -1331,6 +1344,17 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "continueToCoachmarks": {
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TieredRewardsUpsellTray",
+      "sourceFile": "@app/screens/Stablecoin/components/TieredRewardsUpsellTray",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClose": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
         }
       }
@@ -1958,6 +1982,15 @@
         },
         "isPageLevelError": {
           "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1
+        },
+        "component": {
+          "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1
+        },
+        "titlePreset": {
+          "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1
+        },
+        "spacingStart": {
+          "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1
         }
       }
     },
@@ -2416,7 +2449,15 @@
       "name": "StablecoinScreenRavContainer",
       "sourceFile": "@app/screens/Asset/StablecoinScreenRav/StablecoinScreenRavContainer",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "assetId": {
+          "@app/screens/Asset/AssetScreen.tsx": 1
+        },
+        "symbol": {
+          "@app/screens/Asset/AssetScreen.tsx": 1
+        }
+      }
     },
     {
       "name": "AssetScreenRavContainer",
@@ -2969,21 +3010,7 @@
         "showBalanceExplainerTray": {
           "@app/screens/Account/AccountScreen.tsx": 1
         },
-        "actions": {
-          "@app/screens/Account/AccountScreen.tsx": 1
-        },
         "accountType": {
-          "@app/screens/Account/AccountScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AccountActions",
-      "sourceFile": "@app/screens/Account/components/AccountActions",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
           "@app/screens/Account/AccountScreen.tsx": 1
         }
       }
@@ -3455,6 +3482,9 @@
       "propsWithCallSites": {
         "titlePreset": {
           "@app/screens/Account/components/TransactionList.tsx": 1
+        },
+        "component": {
+          "@app/screens/Account/components/TransactionList.tsx": 1
         }
       }
     },
@@ -3529,6 +3559,9 @@
       "propsWithCallSites": {
         "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 2
+        },
+        "borderedBottom": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
     },
@@ -3545,6 +3578,10 @@
         "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 2,
           "views/Home/HomeFeedContentMobile.tsx": 2
+        },
+        "borderedBottom": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
         }
       }
     },
@@ -3558,6 +3595,12 @@
       },
       "propsWithCallSites": {
         "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 2
+        },
+        "borderedBottom": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
+        "entryPoint": {
           "views/Home/HomeFeedContentDesktop.tsx": 2
         }
       }
@@ -3579,6 +3622,26 @@
       }
     },
     {
+      "name": "SimpleTradeWidgetQuickActions",
+      "sourceFile": "components/DesktopQuickActions/SimpleTradeWidgetQuickActions/SimpleTradeWidgetQuickActions",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
+        "tradeEventContext": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
+        "sendReceiveEntryPoint": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
+        "transferEntryPoint": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        }
+      }
+    },
+    {
       "name": "AnnouncementCards",
       "sourceFile": "views/Home/components/AnnouncementCards",
       "totalInstances": 5,
@@ -3591,6 +3654,10 @@
         "announcementCardPropertiesRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 3,
           "views/Home/HomeFeedContentMobile.tsx": 2
+        },
+        "borderedBottom": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
         }
       }
     },
@@ -3605,6 +3672,9 @@
       "propsWithCallSites": {
         "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 2
+        },
+        "borderedBottom": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
     },
@@ -3616,6 +3686,12 @@
       "callSites": {
         "views/Home/HomeFeedContentDesktop.tsx": 2,
         "views/Home/HomeFeedContentMobile.tsx": 2
+      },
+      "propsWithCallSites": {
+        "borderedBottom": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        }
       }
     },
     {
@@ -3691,6 +3767,9 @@
         "spacingEnd": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         },
+        "spacingBottom": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
         "flexDirection": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         },
@@ -3755,6 +3834,9 @@
         },
         "viewerAssetRef": {
           "views/Home/HomeFeedContentMobile.tsx": 2
+        },
+        "borderedBottom": {
+          "views/Home/HomeFeedContentMobile.tsx": 1
         }
       }
     },
@@ -4106,21 +4188,33 @@
       }
     },
     {
+      "name": "AssetsRAV4",
+      "sourceFile": "views/Assets/AssetsRAV4",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "Assets",
+      "sourceFile": "views/Assets/Assets.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "InstrumentedBalanceErrorBanner",
       "sourceFile": "components/ErrorBanner/BalanceErrorBanner/InstrumentedBalanceErrorBanner",
-      "totalInstances": 2,
+      "totalInstances": 3,
       "totalCallSites": 2,
       "callSites": {
-        "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+        "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2,
         "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
       },
       "propsWithCallSites": {
         "slim": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2,
           "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
         },
         "isPartialOutage": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2,
           "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
         }
       }
@@ -4156,6 +4250,9 @@
           "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
         },
         "customTableBanner": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "customTableRowBanner": {
           "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
         },
         "formattedTotalBalance": {

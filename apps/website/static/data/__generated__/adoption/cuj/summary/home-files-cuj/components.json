@@ -684,6 +684,9 @@
         "color": {
           "components/WatchListStar/WatchListStar.tsx": 1
         },
+        "transparent": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
         "name": {
           "components/WatchListStar/WatchListStar.tsx": 1
         }
@@ -855,12 +858,6 @@
         },
         "title": {
           "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        },
-        "variant": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        },
-        "offsetHorizontal": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
         }
       }
     },
@@ -874,12 +871,6 @@
           "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
         },
         "title": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        },
-        "variant": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        },
-        "offsetHorizontal": {
           "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
         }
       }
@@ -1645,6 +1636,9 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "queryRef": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
+        },
+        "borderedBottom": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         }
       }

@@ -3,8 +3,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 46,
-      "totalCallSites": 24,
+      "totalInstances": 45,
+      "totalCallSites": 23,
       "cds": "@cbhq/cds-web/layout/Box",
       "presentationalProps": [
         {
@@ -13,11 +13,11 @@
         },
         {
           "prop": "style",
-          "callSite": ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx"
+          "callSite": ":prime-ui/pages/activity/list/table/ActivitySelectColumn.tsx"
         },
         {
           "prop": "style",
-          "callSite": ":prime-ui/pages/activity/list/table/ActivitySelectColumn.tsx"
+          "callSite": ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx"
         }
       ],
       "aliasedCdsComponents": [
@@ -62,6 +62,8 @@
         ":prime-ui/modals/fidoSigningFlow/FidoSigningStatus.tsx": 1,
         ":prime-ui/pages/activity/ActivityListPage.tsx": 1,
         ":prime-ui/pages/activity/expandable/ExpandableDetailPanel.tsx": 1,
+        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 3,
+        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 4,
         ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 3,
         ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 3,
         ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 2,
@@ -71,18 +73,15 @@
         ":prime-ui/pages/activity/detail/ActivityUserDetail.tsx": 1,
         ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 1,
         ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 2,
-        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 3,
-        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 4,
         ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
         ":prime-ui/pages/activity/shared/BulkSelectAll.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 2,
-        ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 5,
-        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1,
         ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
         ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
         ":prime-ui/pages/activity/list/table/ActivitySelectColumn.tsx": 1,
-        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 2
+        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 2,
+        ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 2,
+        ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 5,
+        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
       },
       "propsWithCallSites": {
         "borderRadius": {
@@ -119,6 +118,44 @@
           ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
           ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 5
         },
+        "borderedBottom": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 2,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityLongDescription.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityUserDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 1
+        },
+        "spacingBottom": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 2,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
+          ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
+        },
+        "flexBasis": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 2,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2
+        },
+        "height": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 2,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "justifyContent": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 1,
+          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
+        },
+        "flexShrink": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
         "alignItems": {
           ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 2,
           ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 2,
@@ -139,31 +176,6 @@
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
           ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
         },
-        "justifyContent": {
-          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 1,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
-          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
-        },
-        "borderedBottom": {
-          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityLongDescription.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityUserDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 1,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 2,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2
-        },
-        "height": {
-          ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 1,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 2,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
         "spacingStart": {
           ":prime-ui/pages/activity/detail/ActivityDetailsLink.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1
@@ -183,31 +195,21 @@
           ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
           ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
         },
-        "spacingBottom": {
-          ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 2,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "flexBasis": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 2,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2
-        },
-        "flexShrink": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
         "minHeight": {
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1
         },
         "style": {
           ":prime-ui/pages/activity/shared/BulkSelectAll.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ActivitySelectColumn.tsx": 1
+          ":prime-ui/pages/activity/list/table/ActivitySelectColumn.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
         },
         "testID": {
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
+        },
+        "bordered": {
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
           ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
         },
@@ -225,10 +227,6 @@
         },
         "background": {
           ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "bordered": {
-          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
-          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
         }
       }
     },
@@ -366,6 +364,8 @@
         ":prime-ui/modals/fidoSigningFlow/FidoSigningStatus.tsx": 2,
         ":prime-ui/modals/fidoSigningFlow/FidoSigningStep.tsx": 2,
         ":prime-ui/pages/activity/expandable/Expandable.tsx": 1,
+        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
         ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 2,
         ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
         ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 2,
@@ -386,8 +386,6 @@
         ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
         ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 1,
         ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
-        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
         ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 8,
         ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 2,
         ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 5,
@@ -395,10 +393,10 @@
         ":prime-ui/pages/activity/detail/errors/ActivityDetailSectionErrorFallback.tsx": 2,
         ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 4,
         ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 2,
-        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 3,
-        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 2,
         ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 4,
-        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 3
+        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 3,
+        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 3,
+        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 2
       },
       "propsWithCallSites": {
         "height": {
@@ -424,9 +422,9 @@
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 2,
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 4,
           ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
-          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 2
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 2,
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
         },
         "alignItems": {
           ":prime-ui/modals/fidoSigningFlow/FidoSigningStatus.tsx": 2,
@@ -450,8 +448,8 @@
           ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 2,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1
+          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
         },
         "flexShrink": {
           ":prime-ui/modals/fidoSigningFlow/FidoSigningStatus.tsx": 1
@@ -477,6 +475,12 @@
         "minHeight": {
           ":prime-ui/modals/fidoSigningFlow/FidoSigningStep.tsx": 1
         },
+        "spacing": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1,
+          ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1
+        },
         "spacingTop": {
           ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 2,
@@ -498,23 +502,19 @@
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
           ":prime-ui/pages/activity/detail/errors/ActivityDetailSectionErrorFallback.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
         },
         "key": {
           ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
           ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1,
           ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
         },
-        "spacing": {
-          ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1,
-          ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1
-        },
         "spacingHorizontal": {
           ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 1,
-          ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 2
+          ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 2,
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
         },
         "flexGrow": {
           ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
@@ -675,8 +675,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 97,
-      "totalCallSites": 40,
+      "totalInstances": 98,
+      "totalCallSites": 41,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "presentationalProps": [
         {
@@ -726,6 +726,8 @@
       "callSites": {
         ":prime-ui/modals/fidoSigningFlow/FidoSigningStatus.tsx": 1,
         ":prime-ui/pages/activity/expandable/Expandable.tsx": 2,
+        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 3,
+        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 3,
         ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 2,
         ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
         ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 3,
@@ -751,24 +753,25 @@
         ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 4,
         ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
         ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
-        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 3,
-        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 3,
         ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
         ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 4,
         ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 4,
         ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
         ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-        ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 2,
         ":prime-ui/pages/activity/list/table/ActivityActionColumn.tsx": 3,
         ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
         ":prime-ui/pages/activity/list/table/ExecutionStatusColumn.tsx": 1,
-        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 3
+        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 3,
+        ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+        ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 2,
+        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
           ":prime-ui/modals/fidoSigningFlow/FidoSigningStatus.tsx": 1,
           ":prime-ui/pages/activity/expandable/Expandable.tsx": 2,
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 3,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 3,
           ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 2,
           ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 3,
@@ -794,22 +797,23 @@
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 4,
           ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
           ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 3,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 3,
           ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 4,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 4,
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
           ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 2,
           ":prime-ui/pages/activity/list/table/ActivityActionColumn.tsx": 3,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
           ":prime-ui/pages/activity/list/table/ExecutionStatusColumn.tsx": 1,
-          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 3
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 3,
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 2,
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
         },
         "color": {
           ":prime-ui/modals/fidoSigningFlow/FidoSigningStatus.tsx": 1,
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityAllocationPortfolio.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
@@ -824,12 +828,15 @@
           ":prime-ui/pages/activity/detail/AllocationReversed.tsx": 1,
           ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 5,
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 2,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 4,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 2,
           ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 2
+          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 2,
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "transform": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
         },
         "key": {
           ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
@@ -870,42 +877,45 @@
           ":prime-ui/pages/activity/detail/ActivityUserDetail.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1
         },
-        "transform": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
         "title": {
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1
         },
         "spacingEnd": {
           ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
+        },
+        "spacingHorizontal": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "spacingVertical": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
         }
       }
     },
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 22,
-      "totalCallSites": 17,
+      "totalInstances": 24,
+      "totalCallSites": 18,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         ":prime-ui/modals/fidoSigningFlow/FidoSigningStep.tsx": 2,
         ":prime-ui/pages/activity/ActivityActionButtons.tsx": 2,
         ":prime-ui/pages/activity/ActivityListPage.tsx": 1,
         ":prime-ui/pages/activity/expandable/ExpandableDetailPanel.tsx": 1,
+        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
         ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 3,
         ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
         ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
         ":prime-ui/pages/activity/detail/AllocationOut.tsx": 1,
-        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
         ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 2,
         ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 1,
         ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
+        ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
+        ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1,
+        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1,
         ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-        ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1,
-        ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
-        ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1
+        ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
       },
       "propsWithCallSites": {
         "testID": {
@@ -921,19 +931,19 @@
           ":prime-ui/pages/activity/ActivityActionButtons.tsx": 2,
           ":prime-ui/pages/activity/ActivityListPage.tsx": 1,
           ":prime-ui/pages/activity/expandable/ExpandableDetailPanel.tsx": 1,
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 3,
           ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
           ":prime-ui/pages/activity/detail/AllocationOut.tsx": 1,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 2,
           ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1
+          ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
         },
         "block": {
           ":prime-ui/modals/fidoSigningFlow/FidoSigningStep.tsx": 2,
@@ -948,8 +958,9 @@
           ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 2,
           ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1
+          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
+          ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1,
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
         },
         "data-semantic-name": {
           ":prime-ui/pages/activity/ActivityActionButtons.tsx": 2,
@@ -960,9 +971,9 @@
         },
         "disabled": {
           ":prime-ui/pages/activity/ActivityActionButtons.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1,
           ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1
         },
         "compact": {
           ":prime-ui/pages/activity/ActivityActionButtons.tsx": 2,
@@ -971,6 +982,8 @@
           ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
           ":prime-ui/pages/activity/detail/AllocationOut.tsx": 1,
+          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1,
           ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
           ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
         },
@@ -983,10 +996,14 @@
           ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
           ":prime-ui/pages/activity/detail/AllocationOut.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1
+          ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
+        },
+        "onClick": {
+          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
         },
         "loading": {
           ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
@@ -996,7 +1013,7 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 68,
+      "totalInstances": 69,
       "totalCallSites": 38,
       "cds": "@cbhq/cds-web/layout/HStack",
       "presentationalProps": [
@@ -1016,6 +1033,12 @@
             ":prime-ui/pages/activity/detail/ActivityDetailAction.tsx",
             ":prime-ui/pages/activity/shared/BulkAction.tsx",
             ":prime-ui/pages/activity/list/table/ActivityActionColumn.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx",
+          "callSites": [
+            ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx"
           ]
         },
         {
@@ -1078,21 +1101,9 @@
           ]
         },
         {
-          "aliasPath": ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx",
-          "callSites": [
-            ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx"
-          ]
-        },
-        {
           "aliasPath": ":prime-ui/pages/activity/shared/BulkAction.tsx",
           "callSites": [
             ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx"
-          ]
-        },
-        {
-          "aliasPath": ":prime-ui/pages/activity/list/header/ActivityFilters.tsx",
-          "callSites": [
-            ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx"
           ]
         },
         {
@@ -1100,12 +1111,20 @@
           "callSites": [
             ":prime-ui/pages/activity/list/table/ActivityActionColumn.tsx"
           ]
+        },
+        {
+          "aliasPath": ":prime-ui/pages/activity/list/header/ActivityFilters.tsx",
+          "callSites": [
+            ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx"
+          ]
         }
       ],
       "callSites": {
         ":prime-ui/pages/activity/ActivityActionButtons.tsx": 1,
         ":prime-ui/pages/activity/ActivityListPage.tsx": 1,
         ":prime-ui/pages/activity/expandable/Expandable.tsx": 1,
+        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
         ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 2,
         ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 1,
         ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 2,
@@ -1123,8 +1142,6 @@
         ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
         ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 1,
         ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
-        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
         ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
         ":prime-ui/pages/activity/shared/BulkAction.tsx": 3,
         ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 1,
@@ -1132,21 +1149,22 @@
         ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 4,
         ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
         ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
-        ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1,
         ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 4,
         ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
         ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1,
-        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1,
-        ":prime-ui/pages/activity/list/table/PendingApprovalsCount.tsx": 2
+        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 2,
+        ":prime-ui/pages/activity/list/table/PendingApprovalsCount.tsx": 2,
+        ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+        ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1,
+        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
+        ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
       },
       "propsWithCallSites": {
         "alignItems": {
           ":prime-ui/pages/activity/ActivityActionButtons.tsx": 1,
           ":prime-ui/pages/activity/ActivityListPage.tsx": 1,
           ":prime-ui/pages/activity/expandable/Expandable.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1,
@@ -1160,21 +1178,21 @@
           ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
           ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 4,
           ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 2,
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
           ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
-          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
           ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
           ":prime-ui/pages/activity/list/table/ApprovedActivityAction.tsx": 1,
-          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1,
-          ":prime-ui/pages/activity/list/table/PendingApprovalsCount.tsx": 2
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 2,
+          ":prime-ui/pages/activity/list/table/PendingApprovalsCount.tsx": 2,
+          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
         },
         "gap": {
           ":prime-ui/pages/activity/ActivityActionButtons.tsx": 1,
           ":prime-ui/pages/activity/ActivityListPage.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityAdvancedTransferDetails.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityAllocation.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1,
@@ -1188,15 +1206,15 @@
           ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 2,
           ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
           ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1
+          ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
         },
         "width": {
           ":prime-ui/pages/activity/ActivityActionButtons.tsx": 1,
           ":prime-ui/pages/activity/expandable/Expandable.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 2,
           ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
@@ -1204,23 +1222,36 @@
           ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
           ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 2,
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
         },
         "justifyContent": {
           ":prime-ui/pages/activity/expandable/Expandable.tsx": 1,
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 2,
           ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 2,
           ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
           ":prime-ui/pages/activity/detail/ActivityUserDetail.tsx": 1,
           ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 1,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 2,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 2,
+          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
+        },
+        "spacingTop": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailFooter.tsx": 1,
+          ":prime-ui/pages/activity/detail/AllocationOut.tsx": 1
+        },
+        "spacingBottom": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
+          ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
+          ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
           ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
         },
@@ -1256,12 +1287,6 @@
           ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 1
         },
-        "spacingTop": {
-          ":prime-ui/pages/activity/detail/ActivityDetailFooter.tsx": 1,
-          ":prime-ui/pages/activity/detail/AllocationOut.tsx": 1,
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
         "testID": {
           ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 1
         },
@@ -1275,25 +1300,17 @@
         "alignContent": {
           ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 1
         },
-        "spacingBottom": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 2,
-          ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
-          ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
-          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
-        },
         "alignSelf": {
           ":prime-ui/pages/activity/shared/BulkAction.tsx": 1
         },
         "spacingStart": {
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1
         },
-        "flexWrap": {
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
-        },
         "minHeight": {
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1
+        },
+        "flexWrap": {
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
         }
       }
     },
@@ -1463,6 +1480,148 @@
         },
         "spacing": {
           ":prime-ui/pages/activity/detail/ActivityDesignatedWeb3Assignee.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "Dropdown",
+      "sourceFile": "@cbhq/cds-web/dropdown/Dropdown",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/dropdown/Dropdown",
+      "propsWithCallSites": {
+        "content": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "showOverlay": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "maxHeight": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "ref": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "block": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextInput",
+      "sourceFile": "@cbhq/cds-web/controls/TextInput",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/TextInput",
+      "propsWithCallSites": {
+        "start": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "placeholder": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "value": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "width": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "readOnly": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-web/icons/Icon",
+      "totalInstances": 22,
+      "totalCallSites": 16,
+      "cds": "@cbhq/cds-web/icons/Icon",
+      "callSites": {
+        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 5,
+        ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityDetailsLink.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivitySecurityKeyEncryptionQuorumDetails.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
+        ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 3,
+        ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
+        ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
+        ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
+        ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+        ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
+      },
+      "propsWithCallSites": {
+        "name": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 5,
+          ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailsLink.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivitySecurityKeyEncryptionQuorumDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
+          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 3,
+          ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
+          ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+          ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
+        },
+        "color": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 5,
+          ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivitySecurityKeyEncryptionQuorumDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
+          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 3,
+          ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
+          ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+          ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
+        },
+        "size": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 5,
+          ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailsLink.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivitySecurityKeyEncryptionQuorumDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
+          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 3,
+          ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
+          ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
+          ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
+        },
+        "spacingHorizontal": {
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "spacingStart": {
+          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
+          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 1
+        },
+        "spacingBottom": {
+          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1
+        },
+        "spacingVertical": {
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
         }
       }
     },
@@ -1652,8 +1811,8 @@
     {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-web/layout/Divider",
-      "totalInstances": 11,
-      "totalCallSites": 8,
+      "totalInstances": 9,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-web/layout/Divider",
       "callSites": {
         ":prime-ui/pages/activity/detail/ActivityCancelTransactionActionButton.tsx": 1,
@@ -1662,8 +1821,7 @@
         ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
         ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 1,
         ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 1,
-        ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 3,
-        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 2
+        ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 3
       },
       "propsWithCallSites": {
         "spacingTop": {
@@ -1671,102 +1829,7 @@
         },
         "spacingBottom": {
           ":prime-ui/pages/activity/detail/ActivityDesignatedWeb3Assignee.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "spacingVertical": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Icon",
-      "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 22,
-      "totalCallSites": 16,
-      "cds": "@cbhq/cds-web/icons/Icon",
-      "callSites": {
-        ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 5,
-        ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityDetailsLink.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivitySecurityKeyEncryptionQuorumDetails.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
-        ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 3,
-        ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
-        ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
-        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
-        ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-        ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
-      },
-      "propsWithCallSites": {
-        "name": {
-          ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 5,
-          ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailsLink.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivitySecurityKeyEncryptionQuorumDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
-          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 3,
-          ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-          ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
-        },
-        "size": {
-          ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 5,
-          ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailsLink.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityKeyValuePair.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivitySecurityKeyEncryptionQuorumDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
-          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 3,
-          ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ReferenceActivity.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-          ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
-        },
-        "color": {
-          ":prime-ui/pages/activity/detail/ActivityDetailHeader.tsx": 5,
-          ":prime-ui/pages/activity/detail/ActivityDetailModalHeader.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailWeb3KeyExportAction.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivitySecurityKeyEncryptionQuorumDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWeb3ServiceAgreement.tsx": 1,
-          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 3,
-          ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
-          ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
-        },
-        "spacingStart": {
-          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1,
-          ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 1
-        },
-        "spacingBottom": {
-          ":prime-ui/pages/activity/detail/ActivityDetailTooltip.tsx": 1
-        },
-        "spacingHorizontal": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "spacingVertical": {
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
+          ":prime-ui/pages/activity/detail/ActivityDetailLayout.tsx": 1
         }
       }
     },
@@ -2115,57 +2178,6 @@
       }
     },
     {
-      "name": "Dropdown",
-      "sourceFile": "@cbhq/cds-web/dropdown/Dropdown",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/dropdown/Dropdown",
-      "propsWithCallSites": {
-        "content": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "showOverlay": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "testID": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "maxHeight": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "ref": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "block": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextInput",
-      "sourceFile": "@cbhq/cds-web/controls/TextInput",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/controls/TextInput",
-      "propsWithCallSites": {
-        "start": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "placeholder": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "value": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "width": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "readOnly": {
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
       "totalInstances": 3,
@@ -2283,55 +2295,6 @@
       }
     },
     {
-      "name": "SearchInput",
-      "sourceFile": "@cbhq/cds-web/controls/SearchInput",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/controls/SearchInput",
-      "callSites": {
-        ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-      },
-      "propsWithCallSites": {
-        "value": {
-          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "onSearch": {
-          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
-        },
-        "compact": {
-          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
-        },
-        "onChangeText": {
-          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "placeholder": {
-          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "width": {
-          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
-        },
-        "height": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Group",
-      "sourceFile": "@cbhq/cds-web/layout/Group",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/layout/Group",
-      "propsWithCallSites": {
-        "divider": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Tooltip",
       "sourceFile": "@cbhq/cds-web/overlays/Tooltip",
       "totalInstances": 1,
@@ -2355,6 +2318,33 @@
       "propsWithCallSites": {
         "variant": {
           ":prime-ui/pages/activity/list/table/PendingApprovalsCount.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SearchInput",
+      "sourceFile": "@cbhq/cds-web/controls/SearchInput",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/controls/SearchInput",
+      "propsWithCallSites": {
+        "value": {
+          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
+        },
+        "onSearch": {
+          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
+        },
+        "compact": {
+          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
+        },
+        "onChangeText": {
+          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
+        },
+        "placeholder": {
+          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
+        },
+        "width": {
+          ":prime-ui/pages/activity/list/header/ActivityListFilterBarSearchBar.tsx": 1
         }
       }
     }
@@ -2569,6 +2559,23 @@
     },
     {
       "name": "div",
+      "sourceFile": ":prime-ui/pages/activity/list/table/InitiatedByColumn.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": ":prime-ui/pages/activity/list/table/InitiatedByColumn.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "className": {
+          ":prime-ui/pages/activity/list/table/InitiatedByColumn.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
       "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
@@ -2661,23 +2668,6 @@
         },
         "className": {
           ":prime-ui/pages/activity/list/header/SearchBar.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": ":prime-ui/pages/activity/list/table/InitiatedByColumn.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": ":prime-ui/pages/activity/list/table/InitiatedByColumn.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "className": {
-          ":prime-ui/pages/activity/list/table/InitiatedByColumn.tsx": 1
         }
       }
     }
@@ -2868,6 +2858,148 @@
       }
     },
     {
+      "name": "ActivityKeyValuePair",
+      "sourceFile": ":prime-ui/pages/activity/detail/ActivityKeyValuePair",
+      "totalInstances": 30,
+      "totalCallSites": 20,
+      "callSites": {
+        ":prime-ui/pages/activity/ActivityOperatorStatus.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
+        ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityAdvancedTransferCounterpartyDetails.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 2,
+        ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 4,
+        ":prime-ui/pages/activity/detail/ActivityLongDescriptionViaKey.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityMatchTransferDetails.tsx": 4,
+        ":prime-ui/pages/activity/detail/ActivityRemainingRewards.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityWalletDetail.tsx": 1,
+        ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+        ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
+        ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 3,
+        ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
+        ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
+        ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+      },
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/pages/activity/ActivityOperatorStatus.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
+          ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 2,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "displayKey": {
+          ":prime-ui/pages/activity/ActivityOperatorStatus.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferCounterpartyDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 4,
+          ":prime-ui/pages/activity/detail/ActivityLongDescriptionViaKey.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityMatchTransferDetails.tsx": 4,
+          ":prime-ui/pages/activity/detail/ActivityRemainingRewards.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
+          ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 3,
+          ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
+          ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "value": {
+          ":prime-ui/pages/activity/ActivityOperatorStatus.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferCounterpartyDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 4,
+          ":prime-ui/pages/activity/detail/ActivityLongDescriptionViaKey.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityMatchTransferDetails.tsx": 4,
+          ":prime-ui/pages/activity/detail/ActivityRemainingRewards.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
+          ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 3,
+          ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
+          ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "link": {
+          ":prime-ui/pages/activity/ActivityOperatorStatus.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "truncateValue": {
+          ":prime-ui/pages/activity/ActivityOperatorStatus.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 2,
+          ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "subText": {
+          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferCounterpartyDetails.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityRemainingRewards.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
+          ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "expandableAddress": {
+          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1
+        },
+        "textAlign": {
+          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
+          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "labelIcon": {
+          ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 1,
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "tooltip": {
+          ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1
+        },
+        "showWhitespace": {
+          ":prime-ui/pages/activity/detail/ActivityMatchTransferDetails.tsx": 1
+        },
+        "addressName": {
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "description": {
+          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "routeTo": {
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ExpandableButton",
       "sourceFile": ":prime-ui/pages/activity/expandable/ExpandableButton",
       "totalInstances": 2,
@@ -2931,6 +3063,102 @@
       }
     },
     {
+      "name": "MultiSelectDropdownButton",
+      "sourceFile": ":prime-ui/pages/activity/filters/DateRangeFilter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "ariaLabel": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "label": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "data-semantic-name": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "ref": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "onClick": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "isOpen": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Popover",
+      "sourceFile": "@cbhq/prime-components/web/Popover",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "open": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "onClose": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "anchorEl": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "anchorOrigin": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "transformOrigin": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "invisibleBackdrop": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "backgroundColor": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "elevate": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        },
+        "hasBorder": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DateRangePicker",
+      "sourceFile": "@cbhq/prime-components/web/DateRangePicker",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+      },
+      "propsWithCallSites": {
+        "onChange": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "startDate": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "endDate": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "allowFutureDate": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        },
+        "selectedDate": {
+          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
+          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
+        }
+      }
+    },
+    {
       "name": "MultiKeyValuePanel",
       "sourceFile": ":prime-ui/pages/activity/detail/KeyValuePanel/MultiKeyValuePanel",
       "totalInstances": 10,
@@ -2962,142 +3190,6 @@
         },
         "subtitle": {
           ":prime-ui/pages/activity/detail/ActivityDesignatedWeb3Assignee.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ActivityKeyValuePair",
-      "sourceFile": ":prime-ui/pages/activity/detail/ActivityKeyValuePair",
-      "totalInstances": 29,
-      "totalCallSites": 19,
-      "callSites": {
-        ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
-        ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityAdvancedTransferCounterpartyDetails.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 2,
-        ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 4,
-        ":prime-ui/pages/activity/detail/ActivityLongDescriptionViaKey.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityMatchTransferDetails.tsx": 4,
-        ":prime-ui/pages/activity/detail/ActivityRemainingRewards.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityWalletDetail.tsx": 1,
-        ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-        ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
-        ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 3,
-        ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
-        ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
-        ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-      },
-      "propsWithCallSites": {
-        "displayKey": {
-          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferCounterpartyDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 4,
-          ":prime-ui/pages/activity/detail/ActivityLongDescriptionViaKey.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityMatchTransferDetails.tsx": 4,
-          ":prime-ui/pages/activity/detail/ActivityRemainingRewards.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
-          ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 3,
-          ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
-          ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "value": {
-          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityAddressList.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferCounterpartyDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 4,
-          ":prime-ui/pages/activity/detail/ActivityLongDescriptionViaKey.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityMatchTransferDetails.tsx": 4,
-          ":prime-ui/pages/activity/detail/ActivityRemainingRewards.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
-          ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 3,
-          ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
-          ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "subText": {
-          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityAdvancedTransferCounterpartyDetails.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityRemainingRewards.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/PolicyChangesSummary.tsx": 1,
-          ":prime-ui/pages/activity/detail/Web3PolicyChangeSummary.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "truncateValue": {
-          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 2,
-          ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "expandableAddress": {
-          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1
-        },
-        "textAlign": {
-          ":prime-ui/pages/activity/detail/ActivityAddressDetails.tsx": 2,
-          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "labelIcon": {
-          ":prime-ui/pages/activity/detail/ActivityAmount.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "tooltip": {
-          ":prime-ui/pages/activity/detail/ActivityBalance.tsx": 1
-        },
-        "showWhitespace": {
-          ":prime-ui/pages/activity/detail/ActivityMatchTransferDetails.tsx": 1
-        },
-        "key": {
-          ":prime-ui/pages/activity/detail/ActivityStakingDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
-          ":prime-ui/pages/activity/detail/Web3ContractCallData.tsx": 2,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "link": {
-          ":prime-ui/pages/activity/detail/ActivityTestTransactionDetail.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityValidators.tsx": 1,
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/WithdrawalActivityTestTransaction.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "addressName": {
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "description": {
-          ":prime-ui/pages/activity/detail/ActivityWalletNameAddress.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        },
-        "routeTo": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
         }
       }
     },
@@ -3600,9 +3692,9 @@
         ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
         ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
         ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 2,
         ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
-        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
+        ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1,
+        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 2
       },
       "propsWithCallSites": {
         "fallback": {
@@ -3610,9 +3702,9 @@
           ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 2,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
-          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1
+          ":prime-ui/pages/activity/list/table/PendingActivitiesTable.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 2
         },
         "key": {
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
@@ -3629,8 +3721,8 @@
         ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
         ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
         ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
-        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
-        ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1
+        ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
+        ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
@@ -3638,8 +3730,8 @@
           ":prime-ui/pages/activity/detail/ActivityDetailTransferPolicy.tsx": 1,
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 3,
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
-          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1
+          ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
         }
       }
     },
@@ -4077,102 +4169,6 @@
       }
     },
     {
-      "name": "MultiSelectDropdownButton",
-      "sourceFile": ":prime-ui/pages/activity/filters/DateRangeFilter.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "ariaLabel": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "label": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "data-semantic-name": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "ref": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "onClick": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "isOpen": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "testID": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Popover",
-      "sourceFile": "@cbhq/prime-components/web/Popover",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "open": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "onClose": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "anchorEl": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "anchorOrigin": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "transformOrigin": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "invisibleBackdrop": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "backgroundColor": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "elevate": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        },
-        "hasBorder": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DateRangePicker",
-      "sourceFile": "@cbhq/prime-components/web/DateRangePicker",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-        ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-      },
-      "propsWithCallSites": {
-        "onChange": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "startDate": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "endDate": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "allowFutureDate": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        },
-        "selectedDate": {
-          ":prime-ui/pages/activity/filters/DateRangeFilter.tsx": 1,
-          ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ActivityListSectionErrorFallback",
       "sourceFile": ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback",
       "totalInstances": 4,
@@ -4248,6 +4244,9 @@
         "columnLabels": {
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 2
         },
+        "canFilter": {
+          ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 2
+        },
         "setErrorOnPage": {
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 2
         }
@@ -4298,6 +4297,9 @@
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 1
         },
         "enabledFilters": {
+          ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 1
+        },
+        "canFilter": {
           ":prime-ui/pages/activity/list/ActivityListLayout.tsx": 1
         },
         "setErrorOnPage": {
@@ -4655,47 +4657,47 @@
     {
       "name": "ActivityWalletNameAddress",
       "sourceFile": ":prime-ui/pages/activity/detail/ActivityWalletNameAddress",
-      "totalInstances": 3,
+      "totalInstances": 4,
       "totalCallSites": 1,
       "callSites": {
-        ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+        ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
       },
       "propsWithCallSites": {
         "key": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "label": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "labelIcon": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "transactionData": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "name": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "address": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "addressNameType": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "currencySymbol": {
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 2
         },
         "portfolioId": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "description": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "addressName": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 3
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 4
         },
         "accountIdentifier": {
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 2
         },
         "isCTNTransfer": {
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
@@ -4862,6 +4864,26 @@
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
         },
         "walletId": {
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ActivityOperatorStatus",
+      "sourceFile": ":prime-ui/pages/activity/ActivityOperatorStatus",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "currencySymbol": {
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "label": {
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "text": {
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
+        },
+        "address": {
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
         }
       }
@@ -5152,330 +5174,6 @@
         },
         "currency": {
           ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MultiSelectGroup",
-      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilter.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "labelFormatter": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "group": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "key": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "labelElement": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "name": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "values": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MultiSelectOption",
-      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilter.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "label": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "name": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "key": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "labelElement": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MultiSelect",
-      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilter.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "displayValue": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "inputName": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "maxHeight": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "onChange": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "values": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        },
-        "testID": {
-          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Pill",
-      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "rightAccessory": {
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
-        },
-        "title": {
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ActiveFilterPill",
-      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
-        },
-        "filterName": {
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
-        },
-        "onRemoveFilter": {
-          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ActivityFilter",
-      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilter",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
-      },
-      "propsWithCallSites": {
-        "onToggleFilter": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
-        },
-        "filterOptions": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
-        },
-        "enabledFilters": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
-        },
-        "title": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
-        },
-        "labelFormatter": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 3
-        },
-        "testID": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
-        }
-      }
-    },
-    {
-      "name": "DateRangeFilter",
-      "sourceFile": ":prime-ui/pages/activity/filters/DateRangeFilter",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onDateRangeChange": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1
-        },
-        "startDate": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1
-        },
-        "endDate": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1
-        },
-        "testID": {
-          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ActivityFilters",
-      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilters",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "portfolioId": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "enabledFilters": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "onToggleFilter": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "activityStatuses": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "primeRef": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EntityForwardPortfolioSelector",
-      "sourceFile": ":prime-ui/pages/layout/EntityForwardPortfolioSelector",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "portfolioId": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "shouldShowAllPortfoliosOption": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "compact": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "onlyPortfoliosWithReadPermission": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ActivityFilterPills",
-      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilterPills",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "enabledFilters": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "onToggleFilter": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "searchTerm": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "clearSearchTerm": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        },
-        "clearSearch": {
-          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DownloadReportLinkContent",
-      "sourceFile": ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "resultCount": {
-          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
-        },
-        "downloadActivityReport": {
-          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ViewfinderFilterGroup",
-      "sourceFile": ":prime-ui/pages/layout/viewfinder/ViewfinderFilterGroup",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
-      },
-      "propsWithCallSites": {
-        "title": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
-        },
-        "showCaret": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "defaultOpen": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 4
-        }
-      }
-    },
-    {
-      "name": "ViewfinderDateRangeFilter",
-      "sourceFile": ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onDateRangeChange": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "startDate": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "endDate": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "testID": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ViewfinderFilterCheckbox",
-      "sourceFile": ":prime-ui/pages/layout/viewfinder/ViewfinderFilterCheckbox",
-      "totalInstances": 5,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
-      },
-      "propsWithCallSites": {
-        "key": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 4
-        },
-        "isActive": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
-        },
-        "title": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
-        },
-        "onPress": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
-        },
-        "isDisabled": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 4
-        }
-      }
-    },
-    {
-      "name": "ViewfinderFilterGroupWithCheckbox",
-      "sourceFile": ":prime-ui/pages/layout/viewfinder/ViewfinderFilterGroupWithCheckbox",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "title": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "indeterminate": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "isActive": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "isDisabled": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
-        },
-        "onPress": {
-          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
         }
       }
     },
@@ -6097,6 +5795,330 @@
       "propsWithCallSites": {
         "activities": {
           ":prime-ui/pages/activity/list/table/PendingApprovalsCount.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiSelectGroup",
+      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "labelFormatter": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "group": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "key": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "labelElement": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "name": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "values": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiSelectOption",
+      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "label": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "name": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "key": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "labelElement": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiSelect",
+      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "displayValue": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "inputName": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "maxHeight": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "onChange": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "values": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/activity/list/header/ActivityFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Pill",
+      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "rightAccessory": {
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
+        },
+        "title": {
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ActiveFilterPill",
+      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
+        },
+        "filterName": {
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
+        },
+        "onRemoveFilter": {
+          ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ActivityFilter",
+      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilter",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
+      },
+      "propsWithCallSites": {
+        "onToggleFilter": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
+        },
+        "filterOptions": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
+        },
+        "enabledFilters": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
+        },
+        "title": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
+        },
+        "labelFormatter": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 3
+        },
+        "testID": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 4
+        }
+      }
+    },
+    {
+      "name": "DateRangeFilter",
+      "sourceFile": ":prime-ui/pages/activity/filters/DateRangeFilter",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onDateRangeChange": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1
+        },
+        "startDate": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1
+        },
+        "endDate": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ActivityFilters",
+      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilters",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "portfolioId": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "enabledFilters": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "onToggleFilter": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "activityStatuses": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "primeRef": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EntityForwardPortfolioSelector",
+      "sourceFile": ":prime-ui/pages/layout/EntityForwardPortfolioSelector",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "portfolioId": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "shouldShowAllPortfoliosOption": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "compact": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "onlyPortfoliosWithReadPermission": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ActivityFilterPills",
+      "sourceFile": ":prime-ui/pages/activity/list/header/ActivityFilterPills",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "enabledFilters": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "onToggleFilter": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "searchTerm": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "clearSearchTerm": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        },
+        "clearSearch": {
+          ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DownloadReportLinkContent",
+      "sourceFile": ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "resultCount": {
+          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
+        },
+        "downloadActivityReport": {
+          ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ViewfinderFilterGroup",
+      "sourceFile": ":prime-ui/pages/layout/viewfinder/ViewfinderFilterGroup",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
+      },
+      "propsWithCallSites": {
+        "title": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
+        }
+      }
+    },
+    {
+      "name": "ViewfinderDateRangeFilter",
+      "sourceFile": ":prime-ui/pages/activity/filters/ViewfinderDateRangeFilter",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onDateRangeChange": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "startDate": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "endDate": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ViewfinderFilterCheckbox",
+      "sourceFile": ":prime-ui/pages/layout/viewfinder/ViewfinderFilterCheckbox",
+      "totalInstances": 5,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
+      },
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 4
+        },
+        "isActive": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
+        },
+        "title": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
+        },
+        "onPress": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 5
+        },
+        "isDisabled": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 4
+        },
+        "isGrouped": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ViewfinderFilterGroupWithCheckbox",
+      "sourceFile": ":prime-ui/pages/layout/viewfinder/ViewfinderFilterGroupWithCheckbox",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "title": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "indeterminate": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "isActive": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "isDisabled": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "forceOpen": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
+        },
+        "onPress": {
+          ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 1
         }
       }
     }

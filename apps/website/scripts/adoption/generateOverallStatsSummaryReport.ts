@@ -12,6 +12,7 @@ import {
   getAllProjectCDSVersionsForPillar,
   getPercentage,
   getPercentageChange,
+  getPercentageChangeOverview,
   getPercentProductsWithinCDS,
   getSortedProjectPairs,
 } from './utils/getOverallSummaryStats';
@@ -74,10 +75,6 @@ async function generateOverallStatsSummaryReport(statsPaths: string[]) {
     },
   };
 
-  const { diff, changePercentageText: changePercentageTextAll } = getPercentageChange({
-    excludedPillars: EXCLUDED_PILLARS,
-  });
-
   const { diff: diffLatest, changePercentageText: changePercentageTextLatest } =
     getPercentageChange({
       excludedPillars: EXCLUDED_PILLARS,
@@ -93,10 +90,34 @@ async function generateOverallStatsSummaryReport(statsPaths: string[]) {
     excludedPillars: EXCLUDED_PILLARS,
   }).toFixed(2);
 
-  summaryReport.companyWide.getPercentageChangeAll =
-    diff !== '' ? changePercentageTextAll : 'No change';
+  const percentChangeOverviewValue =
+    getPercentageChangeOverview() !== 0 ? getPercentageChangeOverview() : 0.0;
+
+  if (percentChangeOverviewValue !== 0) {
+    summaryReport.companyWide.getPercentageChangeAll =
+      percentChangeOverviewValue > 0
+        ? `+${percentChangeOverviewValue.toFixed(2).toString()}`
+        : `-${percentChangeOverviewValue.toFixed(2).toString()}`;
+  } else {
+    summaryReport.companyWide.getPercentageChangeAll = 'No change';
+  }
+
   summaryReport.companyWide.getPercentageChangeLatest =
     diffLatest !== '' ? changePercentageTextLatest : 'No change';
+
+  const percentChangeOverviewValueLatest =
+    getPercentageChangeOverview('adoptionTrackerCSVDataExcludeOtherLatest') !== 0
+      ? getPercentageChangeOverview('adoptionTrackerCSVDataExcludeOtherLatest')
+      : 0.0;
+
+  if (percentChangeOverviewValueLatest !== 0) {
+    summaryReport.companyWide.getPercentageChangeLatest =
+      percentChangeOverviewValueLatest > 0
+        ? `+${percentChangeOverviewValueLatest.toFixed(2).toString()}`
+        : `-${percentChangeOverviewValueLatest.toFixed(2).toString()}`;
+  } else {
+    summaryReport.companyWide.getPercentageChangeLatest = 'No change';
+  }
 
   cdsAdoptionByPillar.forEach((entry) => {
     if (entry.pillar !== 'Other') {

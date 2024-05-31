@@ -42,7 +42,6 @@ import { AdopterStatsBreakdownCell } from './AdopterStatsBreakdown';
 import { AdopterVersionCell } from './AdopterVersionCell';
 import { ComponentUsageTable } from './ComponentUsageTable';
 import {
-  EXCLUDED_PILLARS,
   NEGATIVE_VARIANT,
   NO_CHANGE_ADOPTION_TEXT,
   POSITIVE_VARIANT,
@@ -609,18 +608,15 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
   const { variant: variantForUpToDateVersionsOnly } =
     getVariantForPercentageDiff(percentProductsWithinCDS);
 
-  const { variant: changedVariant, changePercentageText: changePercentageTextAll } =
-    getPercentageChange({
-      excludedPillars: EXCLUDED_PILLARS,
-    });
-  const { variant: changedVariantLatest, changePercentageText: changePercentageTextLatest } =
-    getPercentageChange({
-      excludedPillars: EXCLUDED_PILLARS,
-      upToDate: true,
-    });
+  const changePercentageTextAll =
+    latestOverallStatsSummary?.summaryReport.companyWide.getPercentageChangeAll || ' No change';
 
-  const directionAll = changedVariant === NEGATIVE_VARIANT ? 'Down' : 'Up';
-  const directionLatest = changedVariantLatest === NEGATIVE_VARIANT ? 'Down' : 'Up';
+  const changePercentageTextLatest =
+    latestOverallStatsSummary?.summaryReport.companyWide.getPercentageChangeLatest || ' No change';
+
+  const directionAll = Number(changePercentageTextAll) < 0 ? 'Down' : 'Up';
+  const directionLatest = Number(changePercentageTextLatest) < 0 ? 'Down' : 'Up';
+
   const [activeProjectId, setActiveProject] = useState<Adopter>(scopedAdopters[0][1][0].id);
 
   const projects = useMemo(() => {
@@ -699,34 +695,57 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
           <TextTitle2 as="span" color={variant}>
             {latestOverallStatsSummary?.summaryReport.companyWide.cdsAdoption}
           </TextTitle2>{' '}
-          of our Product UI surface area is using CDS (
+          of our Product UI surface area is using CDS
           {changePercentageTextAll !== NO_CHANGE_ADOPTION_TEXT && (
-            <TextTitle2 as="span" color="foregroundMuted">
-              {directionAll}{' '}
-              <TextTitle2 as="span" color={changedVariant}>
-                {changePercentageTextAll}{' '}
+            <>
+              {' '}
+              (
+              <TextTitle2 as="span" color="foregroundMuted">
+                {directionAll}{' '}
+                <TextTitle2
+                  as="span"
+                  color={
+                    // eslint-disable-next-line no-nested-ternary
+                    Number(changePercentageTextAll) < 0
+                      ? Number(changePercentageTextAll) === 0
+                        ? 'foregroundMuted'
+                        : 'negative'
+                      : 'positive'
+                  }
+                >
+                  {changePercentageTextAll}{' '}
+                </TextTitle2>
               </TextTitle2>
-            </TextTitle2>
+              for the quarter)
+            </>
           )}
-          for the quarter). However only{' '}
+          .{' '}
           <TextTitle2 as="span" color={variantForUpToDateVersionsOnly}>
             {latestOverallStatsSummary?.summaryReport.companyWide.latestCDSAdoption}%
           </TextTitle2>{' '}
-          (
-          {changePercentageTextLatest !== NO_CHANGE_ADOPTION_TEXT &&
-          !Number.isNaN(parseFloat(changePercentageTextLatest)) ? (
-            <TextTitle2 as="span" color="foregroundMuted">
-              {directionLatest}{' '}
-              <TextTitle2 as="span" color={changedVariantLatest}>
-                {changePercentageTextLatest}{' '}
+          {changePercentageTextLatest !== NO_CHANGE_ADOPTION_TEXT && (
+            <>
+              (
+              <TextTitle2 as="span" color="foregroundMuted">
+                {directionLatest}{' '}
+                <TextTitle2
+                  as="span"
+                  color={
+                    // eslint-disable-next-line no-nested-ternary
+                    Number(changePercentageTextLatest) < 0
+                      ? Number(changePercentageTextLatest) === 0
+                        ? 'foregroundMuted'
+                        : 'negative'
+                      : 'positive'
+                  }
+                >
+                  {changePercentageTextLatest}{' '}
+                </TextTitle2>
               </TextTitle2>
-            </TextTitle2>
-          ) : (
-            <TextTitle2 as="span" color="foregroundMuted">
-              {NO_CHANGE_ADOPTION_TEXT}{' '}
-            </TextTitle2>
-          )}
-          for the quarter) of our product UI surface area is using the latest version (
+              for the quarter)
+            </>
+          )}{' '}
+          of our product UI surface area is using the latest version (
           <TextTitle2 as="span" color="positive">
             {statForLatestCdsVersionPublished3MonthsAgo}
           </TextTitle2>{' '}

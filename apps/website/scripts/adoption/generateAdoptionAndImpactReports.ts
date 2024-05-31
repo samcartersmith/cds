@@ -13,6 +13,7 @@ type Entry = {
   cdsPercent: number;
   cds: number;
   totalCdsAndPresentational: number;
+  upToDate: boolean;
 };
 
 type JSONData = {
@@ -62,7 +63,10 @@ function getExcludedProjects() {
   return excludedProjects;
 }
 
-async function getHistoricalData(statsPaths: string[]): Promise<HistoricalProjectData> {
+async function getHistoricalData(
+  statsPaths: string[],
+  upToDate?: boolean,
+): Promise<HistoricalProjectData> {
   const allHistoricalProjectData: HistoricalProjectData['data'] = {};
 
   await Promise.all(
@@ -76,6 +80,11 @@ async function getHistoricalData(statsPaths: string[]): Promise<HistoricalProjec
 
       // Read the stats.json file to get data
       const jsonData = JSON.parse(fs.readFileSync(statsPath, 'utf8')) as JSONData;
+
+      // If upToDate is true and jsonData.upToDate is false, skip this file
+      if (upToDate && !jsonData.latest?.upToDate) {
+        return;
+      }
 
       // Handles latest data
       // if date a key in historical data, then add project & cdsPercent to it.
@@ -187,6 +196,40 @@ function generateAdoptionTrackerCSVDataExcludingOther(
   )}`;
 }
 
+function generateAdoptionTrackerCSVDataExcludingOtherLatest(
+  allHistoricalProjectData: HistoricalProjectData,
+  excludedProjects: string[],
+) {
+  const adoptionTrackerCSVDataExcludingOther: string[] = [];
+
+  allHistoricalProjectData.sortedDates.forEach((date) => {
+    const projects = allHistoricalProjectData.data[date];
+    let sumCdsCmpts = 0;
+    let sumTotalCmpts = 0;
+    let projectCount = 0;
+
+    Object.entries(projects).forEach(([projectPath, stats]) => {
+      const projectName = path.basename(path.dirname(projectPath));
+      if (!excludedProjects.includes(projectName)) {
+        sumCdsCmpts += stats.cds;
+        sumTotalCmpts += stats.totalCdsAndPresentational;
+        projectCount++;
+      }
+    });
+    const averageCdsPercent = sumCdsCmpts / sumTotalCmpts;
+
+    if (projectCount >= 15) {
+      adoptionTrackerCSVDataExcludingOther.push(
+        `${date},${getPeriodString(date)},${averageCdsPercent}`,
+      );
+    }
+  });
+
+  return `Date,Period,Company-wide Adoption Rate\n${adoptionTrackerCSVDataExcludingOther.join(
+    '\n',
+  )}`;
+}
+
 function generateAdoptionTrackerCSVData(allHistoricalProjectData: HistoricalProjectData) {
   const adoptionTrackerCSVData: string[] = [];
 
@@ -265,6 +308,13 @@ export async function generateAdoptionAndImpactReports() {
     allHistoricalProjectData,
     getExcludedProjects(),
   );
+
+  const adoptionTrackerCSVDataExcludeOtherLatest =
+    generateAdoptionTrackerCSVDataExcludingOtherLatest(
+      await getHistoricalData(statsPaths, true),
+      getExcludedProjects(),
+    );
+
   // Create Collective Project Report CSV String
   const collectiveProjectReportCSVData = generateCollectiveProjectCSVData(allHistoricalProjectData);
 
@@ -273,6 +323,7 @@ export async function generateAdoptionAndImpactReports() {
     adoptionTrackerCSVData,
     collectiveProjectReportCSVData,
     adoptionTrackerCSVDataExcludeOther,
+    adoptionTrackerCSVDataExcludeOtherLatest,
   };
   saveToFile(
     JSON.stringify(adoptionAndImpactReports, null, 2),

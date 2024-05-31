@@ -42,17 +42,28 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 17,
-      "totalCallSites": 5,
+      "totalInstances": 18,
+      "totalCallSites": 6,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "callSites": {
         "@app/components/navigation/NavHeader.tsx": 1,
+        "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
         "@app/screens/Receive/ReceiveScreen.tsx": 3,
         "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 3,
         "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 4,
         "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 6
       },
       "propsWithCallSites": {
+        "spacingVertical": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
+        },
+        "gap": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+          "@app/screens/Receive/ReceiveScreen.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
         "spacingTop": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
@@ -65,11 +76,6 @@
         "spacingBottom": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
-        },
-        "gap": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1,
-          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
-          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
         },
         "spacingHorizontal": {
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
@@ -89,9 +95,6 @@
         },
         "width": {
           "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
-        },
-        "spacingVertical": {
-          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
         },
         "maxWidth": {
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
@@ -163,6 +166,13 @@
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
         }
       }
+    },
+    {
+      "name": "TextLabel1",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextLabel1",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextLabel1"
     },
     {
       "name": "Box",
@@ -1252,6 +1262,21 @@
         },
         "ListEmptyComponent": {
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "ListHeaderComponent": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "FullScreenLoader",
+      "sourceFile": "@components/UI/FullScreenLoader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@components/UI/FullScreenLoader",
+      "propsWithCallSites": {
+        "loading": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
         }
       }
     },
@@ -1335,6 +1360,17 @@
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
         },
         "shouldDisplayAccountName": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RecentReceivesSection",
+      "sourceFile": "@app/screens/Receive/components/RecentReceivesSection/RecentReceivesSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
         }
       }
@@ -1676,15 +1712,32 @@
       }
     },
     {
+      "name": "MultiPortfolioDisclaimer",
+      "sourceFile": "@advancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "type": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "queryRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "variant": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        }
+      }
+    },
+    {
       "name": "NetworkSelectionFlow",
       "sourceFile": "@app/screens/L2Multichain/components/NetworkSelectionFlow/NetworkSelectionFlow",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
         "defaultNetwork": {
-          "@app/screens/Receive/ReceiveScreen.tsx": 1
-        },
-        "supportedNetworkRef": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         },
         "asset": {
@@ -1709,6 +1762,9 @@
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         },
         "onTrayClose": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "accountRef": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         }
       }
@@ -1736,6 +1792,9 @@
         "accountRef": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         },
+        "queryRef": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
         "headerAction": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         },
@@ -1746,6 +1805,12 @@
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         }
       }
+    },
+    {
+      "name": "ReceiveScreenContent",
+      "sourceFile": "@app/screens/Receive/ReceiveScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "ReceiveErrorBoundary",
@@ -1768,7 +1833,7 @@
       }
     },
     {
-      "name": "ReceiveScreenContent",
+      "name": "ReceiveScreenIntermediaryContent",
       "sourceFile": "@app/screens/Receive/ReceiveScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1

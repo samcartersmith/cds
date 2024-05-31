@@ -317,6 +317,76 @@ export const getPercentageChange = ({
   return { diff, changePercentageText } as const;
 };
 
+type AdoptionData = {
+  Date: string;
+  Period: string;
+  'Company-wide Adoption Rate': string;
+};
+
+const parseCSV = (csv: string): AdoptionData[] => {
+  const lines = csv.split('\n');
+  const headers = lines[0].split(',');
+  return lines.slice(1).map((line) => {
+    const values = line.split(',');
+    const obj: AdoptionData = {
+      Date: '',
+      Period: '',
+      'Company-wide Adoption Rate': '',
+    };
+    headers.forEach((header, index) => {
+      obj[header as keyof AdoptionData] = values[index];
+    });
+    return obj;
+  });
+};
+
+type JsonDataKey =
+  | 'adoptionTrackerCSVData'
+  | 'collectiveProjectReportCSVData'
+  | 'adoptionTrackerCSVDataExcludeOther'
+  | 'adoptionTrackerCSVDataExcludeOtherLatest';
+
+// Calculates latest QoQ percentage change
+export const getPercentageChangeOverview = (
+  jsonDataKey: JsonDataKey = 'adoptionTrackerCSVDataExcludeOther',
+) => {
+  const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT ?? '';
+  const ADOPTION_REPORTS_DIR = path.join(
+    MONOREPO_ROOT,
+    'apps/website/static/data/__generated__/adoption',
+  );
+  const filePath = path.join(ADOPTION_REPORTS_DIR, 'adoption_and_impact_reports.json');
+
+  const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf8')) as {
+    adoptionTrackerCSVData: string;
+    collectiveProjectReportCSVData: string;
+    adoptionTrackerCSVDataExcludeOther: string;
+    adoptionTrackerCSVDataExcludeOtherLatest: string;
+  };
+
+  const records = parseCSV(jsonData[jsonDataKey]);
+
+  const groupedByQuarter = groupBy(records, 'Period');
+
+  const quarters = Object.keys(groupedByQuarter);
+  const latestQuarter = quarters[quarters.length - 1];
+  const previousQuarter = quarters[quarters.length - 2];
+
+  const latestQuarterData = groupedByQuarter[latestQuarter];
+  const previousQuarterData = groupedByQuarter[previousQuarter];
+
+  const latestRate = parseFloat(
+    latestQuarterData[latestQuarterData.length - 1]['Company-wide Adoption Rate'],
+  );
+  const previousRate = parseFloat(
+    previousQuarterData[previousQuarterData.length - 1]['Company-wide Adoption Rate'],
+  );
+
+  const qoqChange = ((latestRate - previousRate) / previousRate) * 100;
+
+  return qoqChange;
+};
+
 /**
  * Calculates the percentage of projects that are up-to-date with the latest CDS guidance.
  * It can calculate this percentage either for a specific pillar or across all pillars.
