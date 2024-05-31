@@ -333,6 +333,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/exploreDecentralizedApps-2').content,
     dark: () => require('../svgJs/dark/exploreDecentralizedApps-2').content,
   },
+  faceId: {
+    light: () => require('../svgJs/light/faceId-0').content,
+    dark: () => require('../svgJs/dark/faceId-0').content,
+  },
   fileYourCryptoTaxes: {
     light: () => require('../svgJs/light/fileYourCryptoTaxes-2').content,
     dark: () => require('../svgJs/dark/fileYourCryptoTaxes-2').content,

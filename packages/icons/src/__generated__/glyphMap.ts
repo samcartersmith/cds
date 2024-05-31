@@ -1543,6 +1543,18 @@ const glyphMap: Record<InternalIconName, string> = {
   'nav-sendReceive-16-inactive': '',
   'nav-sendReceive-24-active': '',
   'nav-sendReceive-24-inactive': '',
+  'nav-priceAlerts-12-active': '',
+  'nav-priceAlerts-12-inactive': '',
+  'nav-priceAlerts-16-active': '',
+  'nav-priceAlerts-16-inactive': '',
+  'nav-priceAlerts-24-active': '',
+  'nav-priceAlerts-24-inactive': '',
+  'nav-folderOpen-12-active': '',
+  'nav-folderOpen-12-inactive': '',
+  'nav-folderOpen-16-active': '',
+  'nav-folderOpen-16-inactive': '',
+  'nav-folderOpen-24-active': '',
+  'nav-folderOpen-24-inactive': '',
 };
 
 export default glyphMap;

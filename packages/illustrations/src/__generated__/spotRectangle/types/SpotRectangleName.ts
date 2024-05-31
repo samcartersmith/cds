@@ -85,6 +85,7 @@ export type SpotRectangleName =
   | 'ethTradingTwo'
   | 'ethWrappedStakingRewards'
   | 'exploreDecentralizedApps'
+  | 'faceId'
   | 'fileYourCryptoTaxes'
   | 'fileYourCryptoTaxesCheck'
   | 'focusLimitOrders'

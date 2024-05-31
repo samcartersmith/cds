@@ -128,6 +128,8 @@ const names: NavIconName[] = [
   'developerPlatformProduct',
   'developerAPIProduct',
   'sendReceive',
+  'priceAlerts',
+  'folderOpen',
 ];
 
 export default names;

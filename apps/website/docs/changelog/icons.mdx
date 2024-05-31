@@ -8,6 +8,29 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.13.0 (5/31/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 5/31/2024. [[#3061](https://github.cbhq.net/frontend/cds/pull/3061)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- folderOpen
+- priceAlerts
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- addPeople
+
 ## 2.12.0 (5/10/2024 PST)
 
 #### 🚀 Updates

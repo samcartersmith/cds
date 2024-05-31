@@ -212,6 +212,7 @@ const versionMap: Record<SpotSquareName, number> = {
   idError: 0,
   outage: 0,
   coinbaseOneBoostedCard: 0,
+  coinbaseLock: 0,
 };
 
 export default versionMap;

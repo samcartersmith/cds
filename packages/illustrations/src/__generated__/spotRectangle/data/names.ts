@@ -91,6 +91,7 @@ const names: SpotRectangleName[] = [
   'ethTradingTwo',
   'ethWrappedStakingRewards',
   'exploreDecentralizedApps',
+  'faceId',
   'fileYourCryptoTaxes',
   'fileYourCryptoTaxesCheck',
   'focusLimitOrders',

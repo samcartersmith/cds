@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.8.0 (5/31/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 5/31/2024. [[#3061](https://github.cbhq.net/frontend/cds/pull/3061)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Square
+
+- coinbaseLock
+
+#### Spot Rectangle
+
+- faceId
+
 ## 3.7.0 (5/24/2024 PST)
 
 #### 🚀 Updates

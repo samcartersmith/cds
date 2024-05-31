@@ -196,6 +196,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   lightningNetworkSend: 0,
   referralsGenericCoin: 0,
   appUpdate: 0,
+  faceId: 0,
 };
 
 export default versionMap;
