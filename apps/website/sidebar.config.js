@@ -1088,7 +1088,7 @@ const sidebars = {
             {
               type: 'doc',
               id: 'changelog/mobile-visualization',
-              label: '@cbhq/mobile-visualization',
+              label: '@cbhq/cds-mobile-visualization',
             },
             {
               type: 'doc',
