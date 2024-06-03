@@ -1153,6 +1153,7 @@ const sidebars = {
           ],
         },
         'cds/live-playground',
+        'cds/markdown-converter',
       ],
     },
   ],
