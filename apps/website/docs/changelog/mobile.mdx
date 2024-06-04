@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.19.1 (6/3/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: refactor global banner spacing. [[#3060](https://github.cbhq.net/frontend/cds/pull/3060)] [[DX-3864](https://jira.coinbase-corp.com/browse/DX-3864)]
+
 ## 6.19.0 (5/31/2024 PST)
 
 #### 🚀 Updates

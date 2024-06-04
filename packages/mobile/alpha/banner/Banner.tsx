@@ -8,12 +8,27 @@ import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Collapsible } from '../../collapsible/Collapsible';
+import { usePalette } from '../../hooks/usePalette';
 import { Icon } from '../../icons';
 import { Box, HStack, HStackProps, VStack } from '../../layout';
-import { Spacer } from '../../layout';
 import { Pressable } from '../../system/Pressable';
 import { Link, LinkProps } from '../../typography';
 import { TextLabel1, TextLabel2, TextLegal } from '../../typography';
+
+const variantStyleProps: Record<BannerStyleVariant, HStackProps> = {
+  contextual: {
+    spacingHorizontal: 2,
+    borderRadius: 'roundedLarge',
+  },
+  global: {
+    spacingHorizontal: 3,
+    borderRadius: undefined,
+  },
+  inline: {
+    spacingHorizontal: 3,
+    borderRadius: undefined,
+  },
+};
 
 export type MobileBannerProps = BannerBaseProps & Omit<HStackProps, 'children'>;
 
@@ -49,6 +64,7 @@ export const Banner = memo(
   ) {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const spectrum = useSpectrum();
+    const palette = usePalette();
 
     // Events
     const handleOnDismiss = useCallback(() => {
@@ -130,115 +146,95 @@ export const Banner = memo(
       };
     }, [spectrum, variant, style]);
 
-    const variantStyleProps: Record<BannerStyleVariant, HStackProps> = useMemo(
-      () => ({
-        contextual: {
-          spacingStart: 2,
-          spacingEnd: 2,
-          borderRadius: 'roundedLarge',
-        },
-        global: {
-          spacingStart: 2,
-          spacingEnd: 3,
-          borderRadius: undefined,
-          borderColor,
-          borderLeftWidth: 4,
-        },
-        inline: {
-          spacingStart: 3,
-          spacingEnd: 3,
-          borderRadius: undefined,
-        },
-      }),
-      [borderColor],
-    );
+    const borderBox = <Box dangerouslySetBackground={palette[borderColor]} pin="left" width={4} />;
 
     const content = (
-      <HStack
-        ref={forwardedRef}
-        background={background}
-        borderRadius="roundedLarge"
-        gap={1}
-        spacingVertical={2}
-        style={rootStyle}
-        testID={testID}
-        {...(showDismiss ? {} : offsetStyles)}
-        {...variantStyleProps[styleVariant]}
-        {...props}
-      >
-        {/** Start */}
+      <Box {...(showDismiss ? {} : offsetStyles)}>
         <HStack
-          accessibilityLabel={startIconAccessibilityLabel}
-          accessibilityRole="image"
-          accessible={!!startIconAccessibilityLabel}
+          ref={forwardedRef}
+          background={background}
+          borderRadius="roundedLarge"
+          gap={1}
+          spacingVertical={2}
+          style={rootStyle}
+          testID={testID}
+          {...variantStyleProps[styleVariant]}
+          {...props}
         >
-          {styleVariant === 'global' && <Spacer horizontal={0.5} />}
-          <Icon
-            color={iconColor}
-            name={startIcon}
-            size="s"
-            spacing={0.5}
-            testID={`${testID}-icon`}
-          />
-        </HStack>
-        <VStack
-          flexGrow={1}
-          flexShrink={1}
-          gap={2}
-          justifyContent="space-between"
-          testID={`${testID}-inner-end-box`}
-        >
-          {/** Middle */}
-          <VStack gap={2} testID={`${testID}-content-box`}>
-            <VStack gap={0.5}>
-              {typeof title === 'string' ? (
-                <TextLabel1 color={textColor} numberOfLines={2}>
-                  {title}
-                </TextLabel1>
+          {/** Start */}
+          <Box
+            accessibilityLabel={startIconAccessibilityLabel}
+            accessibilityRole="image"
+            accessible={!!startIconAccessibilityLabel}
+          >
+            <Icon
+              color={iconColor}
+              name={startIcon}
+              size="s"
+              spacing={0.5}
+              testID={`${testID}-icon`}
+            />
+          </Box>
+          <VStack
+            flexGrow={1}
+            flexShrink={1}
+            gap={2}
+            justifyContent="space-between"
+            testID={`${testID}-inner-end-box`}
+          >
+            {/** Middle */}
+            <VStack gap={2} testID={`${testID}-content-box`}>
+              <VStack gap={0.5}>
+                {typeof title === 'string' ? (
+                  <TextLabel1 color={textColor} numberOfLines={2}>
+                    {title}
+                  </TextLabel1>
+                ) : (
+                  title
+                )}
+                {typeof children === 'string' ? (
+                  <TextLabel2 color={textColor} numberOfLines={numberOfLines}>
+                    {children}
+                  </TextLabel2>
+                ) : (
+                  children
+                )}
+              </VStack>
+              {typeof label === 'string' ? (
+                <TextLegal color="foregroundMuted" numberOfLines={1}>
+                  {label}
+                </TextLegal>
               ) : (
-                title
-              )}
-              {typeof children === 'string' ? (
-                <TextLabel2 color={textColor} numberOfLines={numberOfLines}>
-                  {children}
-                </TextLabel2>
-              ) : (
-                children
+                label
               )}
             </VStack>
-            {typeof label === 'string' ? (
-              <TextLegal color="foregroundMuted" numberOfLines={1}>
-                {label}
-              </TextLegal>
-            ) : (
-              label
+            {/** Actions */}
+            {(!!clonedPrimaryAction || !!clonedSecondaryAction) && (
+              <HStack alignItems="center" gap={2} testID={`${testID}-action`}>
+                {clonedPrimaryAction}
+                {clonedSecondaryAction}
+              </HStack>
             )}
           </VStack>
-          {/** Actions */}
-          {(!!clonedPrimaryAction || !!clonedSecondaryAction) && (
-            <HStack alignItems="center" gap={2} testID={`${testID}-action`}>
-              {clonedPrimaryAction}
-              {clonedSecondaryAction}
-            </HStack>
+          {/** Dismissable action */}
+          {showDismiss && (
+            <Box alignItems="flex-start" spacing={0.5}>
+              <Pressable
+                accessibilityLabel={closeAccessibilityLabel}
+                accessibilityRole="button"
+                background="transparent"
+                borderRadius="roundedFull"
+                hitSlop={{ top: 15, left: 15, bottom: 15, right: 15 }}
+                onPress={handleOnDismiss}
+                testID={`${testID}-dimiss-btn`}
+              >
+                <Icon color={iconButtonColor} name="close" size="s" />
+              </Pressable>
+            </Box>
           )}
-        </VStack>
-        {/** Dismissable action */}
-        {showDismiss && (
-          <Box alignItems="flex-start" spacing={0.5}>
-            <Pressable
-              accessibilityLabel={closeAccessibilityLabel}
-              accessibilityRole="button"
-              background="transparent"
-              borderRadius="roundedFull"
-              hitSlop={{ top: 15, left: 15, bottom: 15, right: 15 }}
-              onPress={handleOnDismiss}
-              testID={`${testID}-dimiss-btn`}
-            >
-              <Icon color={iconButtonColor} name="close" size="s" />
-            </Pressable>
-          </Box>
-        )}
-      </HStack>
+        </HStack>
+        {styleVariant === 'global' && !showDismiss && borderBox}
+      </Box>
     );
 
     return showDismiss ? (
@@ -246,6 +242,7 @@ export const Banner = memo(
         <Collapsible collapsed={isCollapsed} testID={`${testID}-collapsible`}>
           {content}
         </Collapsible>
+        {styleVariant === 'global' && borderBox}
       </Box>
     ) : (
       content

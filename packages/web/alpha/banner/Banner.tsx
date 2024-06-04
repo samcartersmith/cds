@@ -14,8 +14,9 @@ import { BannerBaseProps, BannerStyleVariant } from '@cbhq/cds-common/types/Alph
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Collapsible } from '../../collapsible';
+import { usePalette } from '../../hooks/usePalette';
 import { Icon } from '../../icons';
-import { Box, BoxElement, HStack, HStackProps, Spacer, VStack } from '../../layout';
+import { Box, BoxElement, HStack, HStackProps, VStack } from '../../layout';
 import { Pressable } from '../../system/Pressable';
 import { Link, LinkProps } from '../../typography';
 import { TextLabel1, TextLabel2, TextLegal } from '../../typography';
@@ -36,6 +37,21 @@ const contentResponsiveConfig: ResponsiveProps = {
   },
   desktop: {
     flexDirection: 'row',
+  },
+};
+
+const variantStyleProps: Record<BannerStyleVariant, HStackProps<BoxElement>> = {
+  contextual: {
+    spacingHorizontal: 2,
+    borderRadius: 'roundedLarge',
+  },
+  global: {
+    spacingHorizontal: 3,
+    borderRadius: undefined,
+  },
+  inline: {
+    spacingHorizontal: 3,
+    borderRadius: undefined,
   },
 };
 
@@ -76,6 +92,7 @@ export const Banner = memo(
     ) => {
       const [isCollapsed, setIsCollapsed] = useState(false);
       const titleId = useId();
+      const palette = usePalette();
 
       const accessibilityLabelledBy = useMemo(
         () => (typeof title === 'string' ? titleId : undefined),
@@ -160,35 +177,12 @@ export const Banner = memo(
         [offset, offsetVertical, offsetHorizontal, offsetTop, offsetBottom, offsetStart, offsetEnd],
       );
 
-      const variantStyleProps: Record<BannerStyleVariant, HStackProps<BoxElement>> = useMemo(
-        () => ({
-          contextual: {
-            spacingStart: 2,
-            spacingEnd: 2,
-            borderRadius: 'roundedLarge',
-          },
-          global: {
-            spacingStart: 2,
-            spacingEnd: 3,
-            borderRadius: undefined,
-            borderColor,
-            style: {
-              borderWidth: 0,
-              borderLeftWidth: 4,
-              ...style,
-            },
-          },
-          inline: {
-            spacingStart: 3,
-            spacingEnd: 3,
-            borderRadius: undefined,
-          },
-        }),
-        [borderColor, style],
+      const borderBox = (
+        <Box dangerouslySetBackground={palette[borderColor]} pin="left" width={4} />
       );
 
       const content = (
-        <Box flexGrow={1}>
+        <Box flexGrow={1} position="relative" {...(showDismiss ? {} : offsetStyles)}>
           <HStack
             ref={forwardedRef}
             background={background}
@@ -201,13 +195,11 @@ export const Banner = memo(
             spacingVertical={2}
             style={style}
             testID={testID}
-            {...(showDismiss ? {} : offsetStyles)}
             {...variantStyleProps[styleVariant]}
             {...props}
           >
             {/** Start */}
-            <HStack spacing={0.5}>
-              {styleVariant === 'global' && <Spacer horizontal={0.5} />}
+            <Box spacing={0.5}>
               <Icon
                 accessibilityLabel={startIconAccessibilityLabel}
                 color={iconColor}
@@ -215,7 +207,7 @@ export const Banner = memo(
                 size="s"
                 testID={`${testID}-icon`}
               />
-            </HStack>
+            </Box>
             <VStack
               flexGrow={1}
               gap={2}
@@ -278,11 +270,12 @@ export const Banner = memo(
               </Box>
             )}
           </HStack>
+          {styleVariant === 'global' && !showDismiss && borderBox}
         </Box>
       );
 
       return showDismiss ? (
-        <Box display="block" {...offsetStyles}>
+        <Box display="block" position="relative" {...offsetStyles}>
           <Collapsible
             accessibilityLabelledBy={accessibilityLabelledBy}
             collapsed={isCollapsed}
@@ -291,6 +284,7 @@ export const Banner = memo(
           >
             {content}
           </Collapsible>
+          {styleVariant === 'global' && borderBox}
         </Box>
       ) : (
         content
