@@ -4,8 +4,9 @@ import { type SharedProps } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 
 import { Icon } from '../icons';
-import { HStack, VStack } from '../layout';
+import { HStack, VStack, VStackProps } from '../layout';
 import { Pressable } from '../system';
+import { HapticFeedbackType } from '../types';
 import { TextTitle2 } from '../typography';
 
 export const SEPARATOR = 'SEPARATOR';
@@ -24,6 +25,7 @@ export type NumpadButtonProps = {
   disabled?: boolean;
   separatorAccessibilityLabel?: string;
   deleteAccessibilityLabel?: string;
+  feedback?: HapticFeedbackType;
 };
 
 export type NumpadProps = {
@@ -35,7 +37,13 @@ export type NumpadProps = {
   action?: React.ReactNode;
   separatorAccessibilityLabel?: string;
   deleteAccessibilityLabel?: string;
-} & SharedProps;
+  /**
+   * Haptic feedback to trigger when being pressed.
+   * @default none
+   */
+  feedback?: HapticFeedbackType;
+} & SharedProps &
+  VStackProps;
 
 const buttonValues: NumpadValue[][] = [
   [1, 2, 3],
@@ -70,6 +78,12 @@ export const Numpad = memo(
       deleteAccessibilityLabel = 'delete',
       separatorAccessibilityLabel = 'period',
       testID,
+      background = 'background',
+      flexGrow = 0,
+      flexShrink = 0,
+      gap = 2,
+      feedback,
+      ...props
     }: NumpadProps,
     forwardedRef: ForwardedRef<View>,
   ) {
@@ -80,6 +94,7 @@ export const Numpad = memo(
             key={`num_pad_item_${i}`} // eslint-disable-line react/no-array-index-key
             background
             alignItems="stretch"
+            flexGrow={1}
             flexWrap="nowrap"
             justifyContent="space-between"
             spacingHorizontal={2}
@@ -89,6 +104,7 @@ export const Numpad = memo(
                 key={`value_${value}`}
                 deleteAccessibilityLabel={deleteAccessibilityLabel}
                 disabled={disabled}
+                feedback={feedback}
                 onLongPress={onLongPress}
                 onPress={onPress}
                 separator={separator}
@@ -102,6 +118,7 @@ export const Numpad = memo(
     }, [
       deleteAccessibilityLabel,
       disabled,
+      feedback,
       onLongPress,
       onPress,
       separator,
@@ -109,9 +126,19 @@ export const Numpad = memo(
     ]);
 
     return (
-      <VStack ref={forwardedRef} background flexGrow={0} flexShrink={0} gap={2} testID={testID}>
+      <VStack
+        ref={forwardedRef}
+        background={background}
+        flexGrow={flexGrow}
+        flexShrink={flexShrink}
+        gap={gap}
+        testID={testID}
+        {...props}
+      >
         {accessory}
-        {buttons}
+        <VStack flexGrow={1} flexShrink={1} justifyContent="space-between">
+          {buttons}
+        </VStack>
         {action}
       </VStack>
     );
@@ -126,6 +153,7 @@ const NumpadButton = memo(function NumpadButton({
   disabled,
   separatorAccessibilityLabel,
   deleteAccessibilityLabel,
+  feedback,
 }: NumpadButtonProps) {
   const isDense = useScaleDensity() === 'dense';
 
@@ -179,10 +207,11 @@ const NumpadButton = memo(function NumpadButton({
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="button"
       accessibilityState={{ disabled }}
-      background="transparent"
+      background="background"
       borderRadius="rounded"
       debounceTime={100}
       disabled={disabled}
+      feedback={feedback}
       onLongPress={handleLongPress}
       onPress={handleOnPress}
       style={pressableStyles}

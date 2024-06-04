@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.20.0 (6/4/2024 PST)
+
+#### 🚀 Updates
+
+- Numpad - extend VStack props and new hapticFeedback prop. [[#3030](https://github.cbhq.net/frontend/cds/pull/3030)] [[DX-3828](https://jira.coinbase-corp.com/browse/DX-3828)]
+
 ## 6.19.2 ((6/3/2024, 07:29 PM PST))
 
 This is an artificial version bump with no new change.
