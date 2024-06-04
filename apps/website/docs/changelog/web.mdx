@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.19.2 (6/3/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix FullscreenModal showSecondaryContentDivider prop to apply for mobile breakpoints. [[#3069](https://github.cbhq.net/frontend/cds/pull/3069)] [[DX-3746](https://jira.coinbase-corp.com/browse/DX-3746)]
+
 ## 6.19.1 (6/3/2024 PST)
 
 #### 🐞 Fixes

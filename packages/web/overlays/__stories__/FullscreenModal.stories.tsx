@@ -186,3 +186,37 @@ export const Example = () => {
     </>
   );
 };
+
+export const SecondaryContentDivider = () => {
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const { triggerRef, focusTrigger } = useTriggerFocus();
+
+  const primaryContent = (
+    <Box background="backgroundAlternate" height={800}>
+      <TextBody as="p">Primary Content {loremIpsum}</TextBody>
+    </Box>
+  );
+
+  const secondaryContent = (
+    <Box background="backgroundAlternate" height={800}>
+      <TextBody as="p">Secondary Content {loremIpsum}</TextBody>
+    </Box>
+  );
+
+  return (
+    <>
+      <Button ref={triggerRef} onPress={toggleOn}>
+        Open Modal
+      </Button>
+      <FullscreenModal
+        showSecondaryContentDivider
+        onDidClose={focusTrigger}
+        onRequestClose={toggleOff}
+        primaryContent={primaryContent}
+        secondaryContent={secondaryContent}
+        title="Modal title"
+        visible={visible}
+      />
+    </>
+  );
+};

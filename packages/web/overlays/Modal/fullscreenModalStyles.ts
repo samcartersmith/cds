@@ -38,6 +38,11 @@ export const contentClassName = css`
     width: 100%;
   }
 
+  .${secondaryContentDividerClassName} {
+    padding: ${gutter} 0 0 0;
+    border-top: 1px solid ${palette.line};
+  }
+
   @media only screen and (min-width: ${deviceBreakpoints.phoneLandscape}px) {
     margin-left: ${spacingStartSmall}px;
 
@@ -68,6 +73,7 @@ export const contentClassName = css`
       &.${secondaryContentDividerClassName} {
         width: calc(${secondaryContentWidth}px + ${gutter});
         padding: ${gutter} 0 0 ${gutter};
+        border-top: 0;
         border-left: 1px solid ${palette.line};
       }
     }
