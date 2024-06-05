@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.20.1 (6/5/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: added custom closeAccessibilityLabel to FullScreenModal. [[#3073](https://github.cbhq.net/frontend/cds/pull/3073)] [[DX-3747](https://jira.coinbase-corp.com/browse/DX-3747)]
+
 ## 6.20.0 ((6/4/2024, 12:09 PM PST))
 
 This is an artificial version bump with no new change.

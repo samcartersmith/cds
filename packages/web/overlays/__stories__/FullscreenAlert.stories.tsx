@@ -15,6 +15,7 @@ export const Basic = () => {
       <Button onPress={toggleOn}>Open Alert</Button>
       <FullscreenAlert
         body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
+        closeAccessibilityLabel="Close alert"
         dismissActionLabel="Cancel"
         heroSquare="errorApp500"
         onDismissActionPress={toggleOff}
@@ -36,6 +37,7 @@ export const SingleAction = () => {
       <Button onPress={toggleOn}>Open Alert</Button>
       <FullscreenAlert
         body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
+        closeAccessibilityLabel="Close alert"
         heroSquare="errorApp500"
         onPreferredActionPress={toggleOff}
         onRequestClose={toggleOff}

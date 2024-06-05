@@ -21,6 +21,7 @@ export const Error = () => {
       <Button onPress={toggleOn}>View Error</Button>
       <FullscreenAlert
         body="Sorry we couldn't find what you were looking for."
+        closeAccessibilityLabel="Close modal"
         heroSquare="errorWeb404"
         onPreferredActionPress={toggleOff}
         onRequestClose={toggleOff}

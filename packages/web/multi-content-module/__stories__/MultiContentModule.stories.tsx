@@ -205,6 +205,7 @@ export const Default = () => {
       <FullscreenModal
         hideDivider
         accessibilityLabel="mcm-modal"
+        closeAccessibilityLabel="Close Modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -248,6 +249,7 @@ export const Dense = () => {
       <FullscreenModal
         hideDivider
         accessibilityLabel="mcm-modal"
+        closeAccessibilityLabel="Close Modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -294,6 +296,7 @@ export const WithBorder = () => {
       <FullscreenModal
         hideDivider
         accessibilityLabel="mcm-modal"
+        closeAccessibilityLabel="Close Modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -340,6 +343,7 @@ export const WithButtonGroup = () => {
       <FullscreenModal
         hideDivider
         accessibilityLabel="mcm-modal"
+        closeAccessibilityLabel="Close Modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -408,6 +412,7 @@ export const WithEnd = () => {
       <FullscreenModal
         hideDivider
         accessibilityLabel="mcm-modal"
+        closeAccessibilityLabel="Close Modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -453,6 +458,7 @@ export const WithLongContent = () => {
       <FullscreenModal
         hideDivider
         accessibilityLabel="mcm-modal"
+        closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}

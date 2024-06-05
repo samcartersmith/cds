@@ -13,6 +13,7 @@ import { TextBody, TextTitle3 } from '../typography';
 import { FullscreenModal } from './Modal/FullscreenModal';
 import { primaryContentContainerClassName } from './Modal/fullscreenModalStyles';
 import { ModalProps } from './Modal/Modal';
+import { ModalHeaderProps } from './Modal/ModalHeader';
 import { AlertProps } from './Alert';
 
 export type FullscreenAlertProps = { heroSquare?: IllustrationHeroSquareNames } & Pick<
@@ -28,7 +29,8 @@ export type FullscreenAlertProps = { heroSquare?: IllustrationHeroSquareNames } 
     | 'accessibilityLabel'
     | 'accessibilityLabelledBy'
     | 'testID'
-  >;
+  > &
+  Pick<ModalHeaderProps, 'closeAccessibilityLabel'>;
 
 export const actionsContainerClassName = 'fsa-actions-container';
 
@@ -77,6 +79,7 @@ export const FullscreenAlert = memo(function FullscreenAlert({
   accessibilityLabel,
   accessibilityLabelledBy,
   testID,
+  closeAccessibilityLabel,
 }: FullscreenAlertProps) {
   const { labelledBySource, labelledBy, label } = useA11yLabels({
     accessibilityLabelledBy,
@@ -114,6 +117,7 @@ export const FullscreenAlert = memo(function FullscreenAlert({
       hideDivider
       accessibilityLabel={label}
       accessibilityLabelledBy={labelledBy}
+      closeAccessibilityLabel={closeAccessibilityLabel}
       dangerouslySetContentClassName={centerContentClassName}
       disablePortal={disablePortal}
       onRequestClose={onRequestClose}

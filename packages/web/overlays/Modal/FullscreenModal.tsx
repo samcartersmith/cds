@@ -32,6 +32,7 @@ import {
   secondaryContentDividerClassName,
 } from './fullscreenModalStyles';
 import { ModalProps } from './Modal';
+import { ModalHeaderProps } from './ModalHeader';
 import { ModalWrapper } from './ModalWrapper';
 
 export type FullscreenModalProps = {
@@ -78,7 +79,8 @@ export type FullscreenModalProps = {
   | 'onDidClose'
   | 'shouldCloseOnEscPress'
   | 'disableFocusTrap'
->;
+> &
+  Pick<ModalHeaderProps, 'closeAccessibilityLabel'>;
 
 export const FullscreenModal = memo(function FullscreenModal({
   logo,
@@ -99,6 +101,7 @@ export const FullscreenModal = memo(function FullscreenModal({
   disableFocusTrap,
   accessibilityLabelledBy,
   accessibilityLabel,
+  closeAccessibilityLabel,
 }: FullscreenModalProps) {
   const { labelledBySource, labelledBy, label } = useA11yLabels({
     accessibilityLabelledBy,
@@ -146,7 +149,12 @@ export const FullscreenModal = memo(function FullscreenModal({
           </div>
         )}
         <Box flexGrow={1} justifyContent="flex-end">
-          <IconButton transparent aria-label="Close button" name="close" onPress={onRequestClose} />
+          <IconButton
+            transparent
+            aria-label={closeAccessibilityLabel}
+            name="close"
+            onPress={onRequestClose}
+          />
         </Box>
       </Box>
     </HStack>

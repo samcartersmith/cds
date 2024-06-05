@@ -45,6 +45,7 @@ export const Basic = () => {
         Open Modal
       </Button>
       <FullscreenModal
+        closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -79,6 +80,7 @@ export const NoTitle = () => {
       </Button>
       <FullscreenModal
         accessibilityLabel="Modal context info"
+        closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -105,6 +107,7 @@ export const NoSecondary = () => {
         Open Modal
       </Button>
       <FullscreenModal
+        closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -176,6 +179,7 @@ export const Example = () => {
         Open Modal
       </Button>
       <FullscreenModal
+        closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
@@ -210,6 +214,7 @@ export const SecondaryContentDivider = () => {
       </Button>
       <FullscreenModal
         showSecondaryContentDivider
+        closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
         onRequestClose={toggleOff}
         primaryContent={primaryContent}

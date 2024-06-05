@@ -5,7 +5,7 @@ import { SharedAccessibilityProps, useToggler } from '@cbhq/cds-common';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { TextBody } from '../../../typography';
-import { FullscreenModal } from '../FullscreenModal';
+import { FullscreenModal, FullscreenModalProps } from '../FullscreenModal';
 
 const TITLE = 'Modal title';
 const PRIMARY_CONTENT = 'Primary content';
@@ -16,12 +16,13 @@ const LABEL = 'A label';
 
 const onRequestCloseSpy = jest.fn();
 
-type Options = {
-  visible?: boolean;
-  // eslint-disable-next-line react/boolean-prop-naming
-  shouldCloseOnEscPress?: boolean;
-  disableFocusTrap?: boolean;
-} & Pick<SharedAccessibilityProps, 'accessibilityLabelledBy' | 'accessibilityLabel'>;
+type Options = Pick<SharedAccessibilityProps, 'accessibilityLabelledBy' | 'accessibilityLabel'> &
+  Partial<
+    Pick<
+      FullscreenModalProps,
+      'closeAccessibilityLabel' | 'shouldCloseOnEscPress' | 'visible' | 'disableFocusTrap'
+    >
+  >;
 
 const FullscreenModalExample = ({
   visible: externalVisible = true,
@@ -29,6 +30,7 @@ const FullscreenModalExample = ({
   disableFocusTrap,
   accessibilityLabelledBy,
   accessibilityLabel,
+  closeAccessibilityLabel,
 }: Options) => {
   const [visible, { toggleOff }] = useToggler(externalVisible);
 
@@ -45,6 +47,7 @@ const FullscreenModalExample = ({
       disablePortal
       accessibilityLabel={accessibilityLabel}
       accessibilityLabelledBy={accessibilityLabelledBy}
+      closeAccessibilityLabel={closeAccessibilityLabel}
       disableFocusTrap={disableFocusTrap}
       onRequestClose={handleClose}
       primaryContent={primaryContent}
@@ -62,7 +65,9 @@ describe('FullscreenModal', () => {
   });
 
   it('passes a11y', async () => {
-    expect(await renderA11y(<FullscreenModalExample />)).toHaveNoViolations();
+    expect(
+      await renderA11y(<FullscreenModalExample closeAccessibilityLabel={CLOSE_BUTTON_LABEL} />),
+    ).toHaveNoViolations();
   });
 
   it('has expected default a11y attrs', () => {
@@ -144,7 +149,7 @@ describe('FullscreenModal', () => {
   });
 
   it('fires close method on close button click', () => {
-    render(<FullscreenModalExample />);
+    render(<FullscreenModalExample closeAccessibilityLabel={CLOSE_BUTTON_LABEL} />);
 
     fireEvent.click(screen.getByLabelText(CLOSE_BUTTON_LABEL));
 
@@ -176,5 +181,15 @@ describe('FullscreenModal', () => {
     await user.keyboard(`{Tab}{Enter}`);
 
     expect(onRequestCloseSpy).not.toHaveBeenCalled();
+  });
+  it('passes a custom closeAccessibilityLabel', () => {
+    render(<FullscreenModalExample closeAccessibilityLabel={CLOSE_BUTTON_LABEL} />);
+
+    expect(screen.getByLabelText(CLOSE_BUTTON_LABEL)).toBeInTheDocument();
+  });
+  it('does not have a default closeAccessibilityLabel', () => {
+    render(<FullscreenModalExample />);
+
+    expect(screen.queryByLabelText(CLOSE_BUTTON_LABEL)).not.toBeInTheDocument();
   });
 });

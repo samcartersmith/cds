@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { SharedAccessibilityProps, useToggler } from '@cbhq/cds-common';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { FullscreenAlert } from '../FullscreenAlert';
+import { FullscreenAlert, FullscreenAlertProps } from '../FullscreenAlert';
 
 const TITLE = 'Modal title';
 const BODY = 'Body content';
@@ -17,12 +17,14 @@ const onRequestCloseSpy = jest.fn();
 
 type Options = {
   visible?: boolean;
-} & Pick<SharedAccessibilityProps, 'accessibilityLabelledBy' | 'accessibilityLabel'>;
+} & Pick<SharedAccessibilityProps, 'accessibilityLabelledBy' | 'accessibilityLabel'> &
+  Pick<FullscreenAlertProps, 'closeAccessibilityLabel'>;
 
 const FullscreenAlertExample = ({
   visible: externalVisible = true,
   accessibilityLabelledBy,
   accessibilityLabel,
+  closeAccessibilityLabel,
 }: Options) => {
   const [visible, { toggleOff }] = useToggler(externalVisible);
 
@@ -37,6 +39,7 @@ const FullscreenAlertExample = ({
       accessibilityLabel={accessibilityLabel}
       accessibilityLabelledBy={accessibilityLabelledBy}
       body={BODY}
+      closeAccessibilityLabel={closeAccessibilityLabel}
       onRequestClose={handleClose}
       preferredActionLabel={PREFERRED_ACTION_LABEL}
       title={TITLE}
@@ -51,7 +54,9 @@ describe('FullscreenAlert', () => {
   });
 
   it('passes a11y', async () => {
-    expect(await renderA11y(<FullscreenAlertExample />)).toHaveNoViolations();
+    expect(
+      await renderA11y(<FullscreenAlertExample closeAccessibilityLabel={CLOSE_BUTTON_LABEL} />),
+    ).toHaveNoViolations();
   });
 
   it('has expected correct a11y attrs', () => {
@@ -137,7 +142,7 @@ describe('FullscreenAlert', () => {
   });
 
   it('fires close method on close button click', () => {
-    render(<FullscreenAlertExample />);
+    render(<FullscreenAlertExample closeAccessibilityLabel={CLOSE_BUTTON_LABEL} />);
 
     fireEvent.click(screen.getByLabelText(CLOSE_BUTTON_LABEL));
 
