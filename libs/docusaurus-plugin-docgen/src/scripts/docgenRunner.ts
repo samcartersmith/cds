@@ -111,6 +111,7 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
       name: packageNameWithScope = '',
       version,
       repository,
+      peerDependencies,
     } = getPackageJsonFromTsconfig(tsconfigPath);
     const [maybeScope, packageNameWithoutScope = maybeScope] = packageNameWithScope.split('/');
     const repoUrl = getRepoUrl(repository);
@@ -139,6 +140,7 @@ export async function docgenRunner(params: DocgenRunnerParams): Promise<PluginCo
       dest: path.join(projectData.cacheDirectory, `metadata.js`),
       data: {
         version,
+        peerDependencies,
       },
       template: 'shared/objectMap',
     });

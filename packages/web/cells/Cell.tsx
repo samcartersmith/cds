@@ -173,10 +173,7 @@ export const Cell = memo(
             className={maybeTruncateClassName}
             flexDirection="column"
             flexGrow={detailWidth ? undefined : 1}
-            flexShrink={
-              // eslint-disable-next-line no-nested-ternary
-              detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1
-            }
+            flexShrink={detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1}
             justifyContent="flex-end"
             width={detailWidth}
           >

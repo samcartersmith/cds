@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.5.0 (5/28/2024 PST)
+
+#### 🚀 Updates
+
+- Add DatePicker and relevant subcomponents. [[#2848](https://github.cbhq.net/frontend/cds/pull/2848)]
+
 ## 2.4.0 (5/16/2024 PST)
 
 #### 🚀 Updates

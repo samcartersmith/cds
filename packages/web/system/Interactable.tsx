@@ -84,6 +84,7 @@ export type InteractableProps = {
     | React.ComponentType<React.PropsWithChildren<any>>;
   /** Apply class names to the outer container. */
   className?: string;
+  focusable?: boolean;
 } & InteractableBaseProps &
   InteractableInheritedProps &
   SharedProps &

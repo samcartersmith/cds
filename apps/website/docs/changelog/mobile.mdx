@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.21.0 (6/5/2024 PST)
+
+#### 🚀 Updates
+
+- Add DatePicker and DateInput. [[#2848](https://github.cbhq.net/frontend/cds/pull/2848)] [[DX-3004](https://jira.coinbase-corp.com/browse/DX-3004)]
+
 ## 6.20.1 ((6/5/2024, 09:43 AM PST))
 
 This is an artificial version bump with no new change.

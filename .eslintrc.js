@@ -113,6 +113,7 @@ module.exports = {
     'import/no-duplicates': 'off',
     'import/no-relative-packages': 'off',
     'max-classes-per-file': 'off',
+    'no-nested-ternary': 'off',
     'no-plusplus': 'off',
     'no-return-assign': 'off',
     'no-underscore-dangle': 'off',

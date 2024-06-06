@@ -92,7 +92,6 @@ export const SelectOption = memo(function SelectOption({
           <TextBody
             color="foregroundMuted"
             ellipsize={multiline ? undefined : 'tail'}
-            // eslint-disable-next-line no-nested-ternary
             numberOfLines={multiline ? undefined : title ? 1 : 2}
           >
             {description}

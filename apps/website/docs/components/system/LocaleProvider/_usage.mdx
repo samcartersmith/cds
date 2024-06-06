@@ -1,0 +1,15 @@
+The LocaleProvider accepts a [JavaScript Intl locale](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) as the value. Defaults to en-US.
+
+Only the DatePicker component currently consumes the `LocaleContext` from the LocaleProvider.
+
+```jsx live
+<VStack gap={4}>
+  <DatePicker label="DatePicker with en-US locale" />
+  <LocaleProvider locale="es-ES">
+    <DatePicker label="DatePicker with es-ES locale" />
+  </LocaleProvider>
+  <LocaleProvider locale="fr-CA">
+    <DatePicker label="DatePicker with fr-CA locale" />
+  </LocaleProvider>
+</VStack>
+```

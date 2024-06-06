@@ -705,7 +705,6 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
                 <TextTitle2
                   as="span"
                   color={
-                    // eslint-disable-next-line no-nested-ternary
                     Number(changePercentageTextAll) < 0
                       ? Number(changePercentageTextAll) === 0
                         ? 'foregroundMuted'
@@ -731,7 +730,6 @@ export const AdoptionTrackerOverview = memo(({ hidden }: { hidden?: boolean }) =
                 <TextTitle2
                   as="span"
                   color={
-                    // eslint-disable-next-line no-nested-ternary
                     Number(changePercentageTextLatest) < 0
                       ? Number(changePercentageTextLatest) === 0
                         ? 'foregroundMuted'

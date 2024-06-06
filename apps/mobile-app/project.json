@@ -29,6 +29,7 @@
         "cwd": "apps/mobile-app",
         "command": "node ./scripts/launch.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
       },
+      "defaultConfiguration": "ios-debug",
       "configurations": {
         "ios-debug": {
           "args": "--profile debug --jsEngine hermes --platform ios"
@@ -50,6 +51,7 @@
         "cwd": "apps/mobile-app",
         "command": "node ./scripts/start.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
       },
+      "defaultConfiguration": "ios-debug",
       "configurations": {
         "ios-debug": {
           "args": "--profile debug --jsEngine hermes --platform ios"

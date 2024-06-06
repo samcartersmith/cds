@@ -9,7 +9,7 @@ type Config<T, K> = {
 
 /**
  * Conditionally return a value based on scale density.
- * @param config: An object with light and dark keys.
+ * @param config: An object with dense and normal keys.
  * @returns value: The value to return when it's key is active.
  */
 export const useScaleConditional = <T, K>({ dense, normal }: Config<T, K>) => {

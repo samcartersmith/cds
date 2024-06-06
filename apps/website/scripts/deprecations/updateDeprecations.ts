@@ -192,7 +192,6 @@ const formatDeprecationGuide = ({
     <VStack>
       ${guidance}
       ${
-        // eslint-disable-next-line no-nested-ternary
         components
           ? `<TextHeadline spacingTop="2" as="h4">Impacted Components: </TextHeadline><ul>${components
               .map((comp) => `<li>${comp}</li>`)

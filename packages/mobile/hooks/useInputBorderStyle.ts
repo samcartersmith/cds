@@ -24,7 +24,6 @@ export const useInputBorderStyle = (
   /** Border style for when input is not focused */
   const borderUnfocusedStyle = useMemo(() => {
     return {
-      // eslint-disable-next-line no-nested-ternary
       borderColor: focused
         ? focusedBorderRgba
         : initialVariant === 'secondary'

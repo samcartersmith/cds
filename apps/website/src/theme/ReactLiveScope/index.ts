@@ -5,6 +5,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
 import ThemeToggles from '@theme/ThemeToggles';
 import { join, useToggler } from '@cbhq/cds-common';
+import { DateInputValidationError } from '@cbhq/cds-common/dates/DateInputValidationError';
 import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
@@ -33,6 +34,7 @@ import { usePaletteConfig } from '@cbhq/cds-common/palette/usePaletteConfig';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
+import * as CDSLocaleContextComponents from '@cbhq/cds-common/system/LocaleProvider';
 import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
 import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common/tokens/dot';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
@@ -58,6 +60,9 @@ import * as CDSCollapsible from '@cbhq/cds-web/collapsible';
 import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
 import * as CDSControls from '@cbhq/cds-web/controls';
+import { Calendar } from '@cbhq/cds-web/dates/Calendar';
+import { DateInput } from '@cbhq/cds-web/dates/DateInput';
+import { DatePicker } from '@cbhq/cds-web/dates/DatePicker';
 import * as CDSDots from '@cbhq/cds-web/dots';
 import * as CDSDropdown from '@cbhq/cds-web/dropdown';
 import { useA11yControlledVisibility } from '@cbhq/cds-web/hooks/useA11yControlledVisibility';
@@ -202,10 +207,15 @@ const ReactLiveScope: LiveProviderProps['scope'] = {
   ...CDSChips,
   ...CDSCollapsible,
   ...CDSControls,
+  Calendar,
+  DateInput,
+  DatePicker,
+  DateInputValidationError,
   ...CDSDots,
   ...CDSIcons,
   ...CDSLayout,
   ...CDSLoaders,
+  ...CDSLocaleContextComponents,
   ...CDSMedia,
   ...CDSNavigation,
   ...CDSOverlays,

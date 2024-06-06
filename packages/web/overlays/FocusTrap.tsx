@@ -18,6 +18,7 @@ export type FocusTrapProps = {
   disableTypeFocus?: boolean;
   disableFocusTrap?: boolean;
   disableAutoFocus?: boolean;
+  respectNegativeTabIndex?: boolean;
 };
 
 const DEBOUNCE_MS = 50;
@@ -59,6 +60,7 @@ export const FocusTrap = memo(function FocusTrap({
   disableTypeFocus,
   disableFocusTrap,
   disableAutoFocus,
+  respectNegativeTabIndex,
 }: FocusTrapProps) {
   const isFocused = useRef(false);
   const childrenRef = useRef<HTMLElement>(null);
@@ -120,7 +122,14 @@ export const FocusTrap = memo(function FocusTrap({
 
       if (!element || !document) return;
 
-      const focusableElements = element.querySelectorAll(FOCUSABLE_ELEMENTS);
+      let focusableElements = Array.from(element.querySelectorAll(FOCUSABLE_ELEMENTS));
+
+      if (respectNegativeTabIndex) {
+        focusableElements = focusableElements.filter(
+          (element) => !((element as HTMLElement)?.tabIndex < 0),
+        );
+      }
+
       const menuItems = element.querySelectorAll('[role="menuitem"]');
       const isMenuItem = activeElement && Array.from(menuItems).includes(activeElement);
 
@@ -129,7 +138,7 @@ export const FocusTrap = memo(function FocusTrap({
       const firstElement = focusableElements[0] as HTMLElement;
       const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
       const activeElementIndex = activeElement
-        ? Array.from(focusableElements).indexOf(activeElement)
+        ? focusableElements.indexOf(activeElement)
         : undefined;
 
       /** BAIL ON ENTRIES THAT LOOK LIKE YUBIKEY STRINGS
@@ -144,7 +153,7 @@ export const FocusTrap = memo(function FocusTrap({
       if (
         !isFocused.current &&
         // check if focus is inside modal
-        !Array.from(focusableElements).includes(activeElement)
+        !focusableElements.includes(activeElement)
       ) {
         // don't focus if arrow keys are used, instead allow scroll via keyboard
         if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
@@ -207,9 +216,7 @@ export const FocusTrap = memo(function FocusTrap({
       if (!disableTypeFocus && isMenuItem && ALPHABET_KEYS.includes(event.key)) {
         event.preventDefault();
 
-        const arrFocusableElements = Array.from(focusableElements);
-
-        const elementWithMatchingFirstLetter = arrFocusableElements.find((el: Element) => {
+        const elementWithMatchingFirstLetter = focusableElements.find((el: Element) => {
           const textContentFirstLetter = el.textContent?.at(0)?.toLowerCase();
           const eventKeyLowerCase = event.key.toLowerCase();
 
@@ -246,7 +253,7 @@ export const FocusTrap = memo(function FocusTrap({
         focusPrevElement();
       }
     },
-    [disableTypeFocus, resetFocus],
+    [disableTypeFocus, resetFocus, respectNegativeTabIndex],
   );
 
   const handleKeyDown = useCallback(

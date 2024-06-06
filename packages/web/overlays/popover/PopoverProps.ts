@@ -71,6 +71,10 @@ export type PopoverProps = {
    * @default false
    */
   disableAutoFocus?: boolean;
+  /**
+   * If `true`, the focus trap will respect negative `tabIndex` values, removing them from the list of focusable elements.
+   */
+  respectNegativeTabIndex?: boolean;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
   SharedProps &
   Partial<Pick<AccessibleControlledReturnType, 'controlledElementAccessibilityProps'>>;

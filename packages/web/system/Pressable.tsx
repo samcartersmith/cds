@@ -66,7 +66,7 @@ export type PressableProps = {
   SharedProps &
   LinkableProps &
   ComponentEventHandlerProps &
-  Pick<InteractableProps, 'loading'>;
+  Pick<InteractableProps, 'loading' | 'focusable'>;
 
 export type PressableInternalProps = {
   /** Element or component to render the container as. */
@@ -91,6 +91,7 @@ export const Pressable = forwardRef(function Pressable(
     noScaleOnPress,
     tabIndex,
     eventConfig,
+    focusable,
     ...props
   }: PressableInternalProps,
   ref: React.Ref<Element>,
@@ -118,6 +119,7 @@ export const Pressable = forwardRef(function Pressable(
     <Interactable
       aria-busy={loading}
       as={as ?? ButtonOrLink}
+      focusable={focusable}
       onClick={onClick}
       onKeyPress={onKeyPress}
       {...props}

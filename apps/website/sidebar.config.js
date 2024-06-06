@@ -446,6 +446,19 @@ const sidebars = {
           ],
         },
         { type: 'doc', id: 'components/collapsible/Collapsible/collapsible', label: 'Collapsible' },
+        {
+          type: 'category',
+          label: 'Dates',
+          customProps: { tag: 'new' },
+          items: [
+            {
+              type: 'doc',
+              id: 'components/dates/DatePicker/date-picker',
+              label: 'DatePicker',
+              customProps: { tag: 'new' },
+            },
+          ],
+        },
         { type: 'doc', id: 'components/layout/Divider/divider', label: 'Divider' },
         {
           type: 'category',
@@ -963,6 +976,14 @@ const sidebars = {
           label: 'FeatureFlagProvider',
         },
         { type: 'doc', id: 'components/system/Interactable/interactable', label: 'Interactable' },
+        {
+          type: 'doc',
+          id: 'components/system/LocaleProvider/locale-provider',
+          label: 'LocaleProvider',
+          customProps: {
+            tag: 'new',
+          },
+        },
         {
           type: 'category',
           label: 'PortalProvider',

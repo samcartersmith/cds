@@ -109,6 +109,14 @@ export const routes = [
       require('@cbhq/cds-mobile/cells/__stories__/ContentCellFallback.stories').default,
   },
   {
+    key: 'DateInput',
+    getComponent: () => require('@cbhq/cds-mobile/dates/__stories__/DateInput.stories').default,
+  },
+  {
+    key: 'DatePicker',
+    getComponent: () => require('@cbhq/cds-mobile/dates/__stories__/DatePicker.stories').default,
+  },
+  {
     key: 'Divider',
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Divider.stories').default,
   },
