@@ -1253,29 +1253,6 @@
       }
     },
     {
-      "name": "LayoutConfiguration",
-      "sourceFile": "components/Layout/LayoutConfiguration",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "title": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "contentPaddingOverride": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "hideChecklistBanner": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "hideFloatingTradeButton": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "showStickyFooter": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        }
-      }
-    },
-    {
       "name": "PageBoundary",
       "sourceFile": "components/PageBoundary",
       "totalInstances": 1,

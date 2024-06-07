@@ -53,10 +53,6 @@
           "profileMenuRef": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
           },
-          "profileMenuFlexibleArea": {
-            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
-            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
-          },
           "onCloseProfileMenu": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
           }

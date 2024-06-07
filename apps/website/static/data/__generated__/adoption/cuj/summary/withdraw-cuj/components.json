@@ -5838,6 +5838,10 @@
         "error": {
           "components/DepositWithdraw/components/Withdraw/steps/EntryStep.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawInput/WithdrawInput.tsx": 1
+        },
+        "component": {
+          "components/DepositWithdraw/components/Withdraw/steps/EntryStep.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawInput/WithdrawInput.tsx": 1
         }
       }
     },

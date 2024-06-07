@@ -16,8 +16,8 @@
       ],
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/components/CircleIcon.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/USDFuturesBreakdown.tsx": 2,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
       },
       "propsWithCallSites": {
@@ -36,15 +36,15 @@
         "justifyContent": {
           "@app/screens/AdvancedTrade/Portfolio/components/CircleIcon.tsx": 1
         },
-        "spacingHorizontal": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
-        },
         "height": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/USDFuturesBreakdown.tsx": 2
         },
         "width": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/USDFuturesBreakdown.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
         },
         "testID": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
@@ -59,32 +59,32 @@
       "cds": "@cbhq/cds-mobile/icons/Icon",
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/components/CircleIcon.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
           "@app/screens/AdvancedTrade/Portfolio/components/CircleIcon.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
         },
         "size": {
           "@app/screens/AdvancedTrade/Portfolio/components/CircleIcon.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
         },
         "color": {
           "@app/screens/AdvancedTrade/Portfolio/components/CircleIcon.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
         },
         "testID": {
           "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
@@ -97,8 +97,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 36,
-      "totalCallSites": 22,
+      "totalInstances": 38,
+      "totalCallSites": 24,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -110,8 +110,8 @@
         {
           "aliasPath": "@app/screens/AdvancedTrade/Portfolio/components/DataCardFallback.tsx",
           "callSites": [
-            "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx",
-            "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx"
+            "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx",
+            "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx"
           ]
         },
         {
@@ -125,9 +125,10 @@
         {
           "aliasPath": "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx",
           "callSites": [
-            "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx",
             "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx",
-            "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx"
+            "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx",
+            "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx",
+            "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx"
           ]
         },
         {
@@ -144,31 +145,35 @@
         "@app/screens/AdvancedTrade/Portfolio/components/FinPromPerformanceDisclaimer.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/SectionInfo.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 2,
-        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 3,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 2,
         "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 3,
+        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 3,
         "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 2,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 4,
         "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTabs.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 3,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 2,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 4,
+        "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 2,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 2
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 2,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
       },
       "propsWithCallSites": {
         "testID": {
           "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1
         },
         "borderedTop": {
           "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection.tsx": 1,
@@ -181,8 +186,8 @@
         },
         "gap": {
           "@app/screens/AdvancedTrade/Portfolio/components/DataCardFallback.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
         },
@@ -194,47 +199,59 @@
         "spacingHorizontal": {
           "@app/screens/AdvancedTrade/Portfolio/components/FinPromFooter.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/FinPromPerformanceDisclaimer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 3,
           "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTabs.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 3
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1
         },
         "spacingTop": {
           "@app/screens/AdvancedTrade/Portfolio/components/FinPromFooter.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1
         },
         "spacingVertical": {
           "@app/screens/AdvancedTrade/Portfolio/components/FinPromPerformanceDisclaimer.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/SectionInfo.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 2
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 1
         },
         "width": {
           "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
         },
         "flexGrow": {
           "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2
         },
         "spacingBottom": {
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1
         },
         "borderedBottom": {
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTabs.tsx": 1
         },
         "offsetHorizontal": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1
+        },
+        "justifyContent": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1
+        },
+        "alignItems": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1
         }
       }
     },
@@ -246,29 +263,30 @@
       "cds": "@cbhq/cds-mobile/layout/HStack",
       "aliasedCdsComponents": [
         {
-          "aliasPath": "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx",
-          "callSites": [
-            "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx",
-            "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx",
-            "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx"
-          ]
-        },
-        {
           "aliasPath": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx",
           "callSites": [
             "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx",
             "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx"
+          ]
+        },
+        {
+          "aliasPath": "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx",
+          "callSites": [
+            "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx",
+            "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx",
+            "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx",
+            "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx"
           ]
         }
       ],
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection.tsx": 3,
         "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 2,
         "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 3,
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 2,
+        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 2,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1,
@@ -279,18 +297,18 @@
         "alignItems": {
           "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection.tsx": 3,
           "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
         },
         "justifyContent": {
           "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
         },
         "spacingHorizontal": {
@@ -309,24 +327,20 @@
         },
         "gap": {
           "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection.tsx": 2,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorFallback.tsx": 1
         },
         "width": {
           "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorFallback.tsx": 1
-        },
-        "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1
         },
         "spacingBottom": {
           "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 1
@@ -341,6 +355,10 @@
         "borderRadius": {
           "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        },
+        "testID": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1
         },
         "spacingEnd": {
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
@@ -431,14 +449,14 @@
       "cds": "@cbhq/cds-mobile/layout/Spacer",
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
       },
       "propsWithCallSites": {
         "vertical": {
           "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
         }
       }
     },
@@ -451,13 +469,13 @@
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/components/DataCardFallback.tsx": 2,
         "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 2,
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3,
         "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
-        "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 2,
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3,
+        "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 3,
+        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 2,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorFallback.tsx": 2
       },
@@ -465,26 +483,26 @@
         "width": {
           "@app/screens/AdvancedTrade/Portfolio/components/DataCardFallback.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 2,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3,
           "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
-          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 2,
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3,
+          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 3,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorFallback.tsx": 2
         },
         "height": {
           "@app/screens/AdvancedTrade/Portfolio/components/DataCardFallback.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/components/TableFallback.tsx": 2,
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3,
           "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
-          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 2,
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3,
+          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 3,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorFallback.tsx": 2
         },
@@ -498,15 +516,15 @@
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 2,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorFallback.tsx": 2
         },
+        "spacingTop": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1
+        },
         "spacingHorizontal": {
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 2
         },
         "spacingVertical": {
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback.tsx": 1
-        },
-        "spacingTop": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1
         }
       }
     },
@@ -536,35 +554,40 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-mobile/typography/TextBody",
-      "totalInstances": 10,
-      "totalCallSites": 7,
+      "totalInstances": 12,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-mobile/typography/TextBody",
       "aliasedCdsComponents": [
         {
           "aliasPath": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx",
           "callSites": [
-            "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx",
             "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx",
-            "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx"
+            "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx",
+            "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx",
+            "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx"
           ]
         }
       ],
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/components/SectionInfo.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/USDFuturesBreakdown.tsx": 4,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
       },
       "propsWithCallSites": {
         "color": {
           "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/USDFuturesBreakdown.tsx": 4,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
         },
         "numberOfLines": {
@@ -619,77 +642,58 @@
       }
     },
     {
-      "name": "TextHeadline",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
+      "name": "Button",
+      "sourceFile": "@components/interactables/Button",
       "totalInstances": 5,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-mobile/typography/TextHeadline",
+      "totalCallSites": 4,
+      "cds": "@components/interactables/Button",
+      "presentationalLibrary": "@components/interactables/Button",
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
+        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
       },
       "propsWithCallSites": {
-        "color": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextTitle1",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextTitle1",
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3
-      },
-      "propsWithCallSites": {
-        "tabularNumbers": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3
-        },
-        "disabled": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Pressable",
-      "sourceFile": "@cbhq/cds-mobile/system/Pressable",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-mobile/system/Pressable",
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
-      },
-      "propsWithCallSites": {
-        "accessibilityRole": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
-        },
-        "background": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
-        },
         "onPress": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
         },
-        "onLongPress": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        "compact": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2
+        },
+        "variant": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
         },
         "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        },
-        "borderRadius": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
         },
         "disabled": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ButtonGroup",
+      "sourceFile": "@cbhq/cds-mobile/buttons/ButtonGroup",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/buttons/ButtonGroup",
+      "propsWithCallSites": {
+        "block": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 1
         }
       }
     },
@@ -785,58 +789,45 @@
       }
     },
     {
-      "name": "Button",
-      "sourceFile": "@components/interactables/Button",
-      "totalInstances": 5,
-      "totalCallSites": 4,
-      "cds": "@components/interactables/Button",
-      "presentationalLibrary": "@components/interactables/Button",
+      "name": "Banner",
+      "sourceFile": "@cbhq/cds-mobile/banner/Banner",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/banner/Banner",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx"
+        },
+        {
+          "prop": "style",
+          "callSite": "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx"
+        }
+      ],
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1
       },
       "propsWithCallSites": {
-        "onPress": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
+        "title": {
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1
         },
         "variant": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1
         },
-        "spacingHorizontal": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        "startIcon": {
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1
         },
-        "spacingTop": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        "style": {
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1
         },
-        "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2
-        },
-        "compact": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 2,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1
-        },
-        "disabled": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ButtonGroup",
-      "sourceFile": "@cbhq/cds-mobile/buttons/ButtonGroup",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/buttons/ButtonGroup",
-      "propsWithCallSites": {
-        "block": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup.tsx": 1
+        "bordered": {
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1
         }
       }
     },
@@ -847,25 +838,25 @@
       "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/cards/Card",
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
       },
       "propsWithCallSites": {
         "elevation": {
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
         },
         "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
         },
         "borderedTop": {
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
         },
         "onPress": {
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
         }
       }
     },
@@ -876,21 +867,21 @@
       "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/cards/CardBody",
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
         },
         "description": {
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
         },
         "mediaPlacement": {
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
         }
       }
     },
@@ -901,8 +892,32 @@
       "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/cards/CardFooter",
       "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
+      }
+    },
+    {
+      "name": "TextHeadline",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "cds": "@cbhq/cds-mobile/typography/TextHeadline",
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "color": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1
+        }
       }
     },
     {
@@ -912,46 +927,16 @@
       "totalCallSites": 2,
       "cds": "@cbhq/cds-mobile/typography/TextLabel2",
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
       },
       "propsWithCallSites": {
         "color": {
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
         },
         "transform": {
           "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Banner",
-      "sourceFile": "@cbhq/cds-mobile/banner/Banner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/banner/Banner",
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "title": {
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
-        },
-        "variant": {
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
-        },
-        "startIcon": {
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
-        },
-        "style": {
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
-        },
-        "bordered": {
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
         }
       }
     },
@@ -966,6 +951,68 @@
           "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
         }
       }
+    },
+    {
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle1",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle1",
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3
+      },
+      "propsWithCallSites": {
+        "tabularNumbers": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 3
+        },
+        "disabled": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Pressable",
+      "sourceFile": "@cbhq/cds-mobile/system/Pressable",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/system/Pressable",
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+      },
+      "propsWithCallSites": {
+        "accessibilityRole": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+        },
+        "background": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+        },
+        "onLongPress": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        },
+        "testID": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        },
+        "borderRadius": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+        },
+        "disabled": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle2",
+      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/typography/TextTitle2"
     },
     {
       "name": "TabNavigation",
@@ -986,24 +1033,31 @@
       }
     },
     {
-      "name": "TextTitle2",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextTitle2",
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-mobile/layout/Divider",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextTitle2"
+      "cds": "@cbhq/cds-mobile/layout/Divider",
+      "propsWithCallSites": {
+        "spacingTop": {
+          "@app/screens/AdvancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner.tsx": 1
+        }
+      }
     },
     {
       "name": "TextTitle4",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle4",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 7,
+      "totalCallSites": 7,
       "cds": "@cbhq/cds-mobile/typography/TextTitle4",
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1
       }
     },
     {
@@ -1075,9 +1129,36 @@
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/RATFeatureEntryCard/RATFeatureEntryCard.tsx": 1
         }
       }
+    },
+    {
+      "name": "SpotSquare",
+      "sourceFile": "@cbhq/cds-mobile/illustrations/SpotSquare",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/illustrations/SpotSquare",
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets.tsx": 1
+        }
+      }
     }
   ],
   "presentational": [
+    {
+      "name": "Tray",
+      "sourceFile": "@designSystem/interactables/drawer/Tray",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalLibrary": "@designSystem/interactables/drawer/Tray",
+      "propsWithCallSites": {
+        "onDismiss": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
+        },
+        "isVisible": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
+        }
+      }
+    },
     {
       "name": "AnimatedFlatList",
       "sourceFile": "@components/UI/FlatList/AnimatedFlatList",
@@ -1102,21 +1183,6 @@
         },
         "scrollEnabled": {
           "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Tray",
-      "sourceFile": "@designSystem/interactables/drawer/Tray",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/interactables/drawer/Tray",
-      "propsWithCallSites": {
-        "onDismiss": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
-        },
-        "isVisible": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1
         }
       }
     }
@@ -1165,607 +1231,44 @@
       }
     },
     {
-      "name": "BalanceErrorBanner",
-      "sourceFile": "@app/components/BalanceErrorBanner/BalanceErrorBanner",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
-      },
-      "propsWithCallSites": {
-        "variant": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "isPageLevelError": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "offsetHorizontal": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "component": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1
-        },
-        "titlePreset": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "LiveTicker",
-      "sourceFile": "@app/components/LiveTicker/LiveTicker",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "value": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        },
-        "variant": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        },
-        "color": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        },
-        "enableColorChange": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        },
-        "fallback": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TimeRangedGainLossText",
-      "sourceFile": "@advancedTrade/components/TimeRangedGainLossText",
-      "totalInstances": 6,
-      "totalCallSites": 6,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
-      },
-      "propsWithCallSites": {
-        "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        },
-        "justifyContent": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
-        },
-        "gainLoss": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
-        },
-        "gainLossTimeRange": {
-          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
-        },
-        "textComponentType": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "showFallback": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MultiPortfolioDisclaimer",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "type": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
-        },
-        "queryRef": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
-        },
-        "spacingHorizontal": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
-        },
-        "spacingTop": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
-        },
-        "spacingBottom": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
-        },
-        "background": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
-        },
-        "bordered": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CircleIcon",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/CircleIcon",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 2
-      },
-      "propsWithCallSites": {
-        "iconName": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "NetworkBoundary",
-      "sourceFile": "@app/components/NetworkBoundary",
-      "totalInstances": 23,
-      "totalCallSites": 23,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1
-      },
-      "propsWithCallSites": {
-        "errorFallback": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1
-        },
-        "suspenseFallback": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1
-        },
-        "monitoringBoundary": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1
-        },
-        "instrumentationId": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1
-        },
-        "willErrorBlockUser": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DepositWithdrawDrawerContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "DepositWithdrawButtonGroup",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "handleDeposit": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
-        },
-        "handleWithdraw": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DepositWithdrawDrawer",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClose": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
-        },
-        "tradeType": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
-        },
-        "queryRef": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ButtonGroupFallback",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup/ButtonGroupFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PortfolioDepositWithdrawButtonGroupContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DataCardFallback",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DataCardFallback",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
-      }
-    },
-    {
-      "name": "OpenOrderCardContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "ReceiveVariant",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "message": {
-          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MultiPortfolioDisclaimerContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PositionsErrorBanner",
-      "sourceFile": "@app/components/EmptyState/PositionsErrorBanner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "variant": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "offsetHorizontal": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "isPageLevelError": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "component": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CollapsibleSection",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "label": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "header": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "accessory": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "defaultCollapsed": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "onToggle": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        },
-        "borderedTop": {
-          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "USDCConvertButtonContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "FeeTierCardRow",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
-      },
-      "propsWithCallSites": {
-        "label": {
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
-        },
-        "description": {
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
-        },
-        "tag": {
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PerpsFeeTierRow",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "FeeTierCardContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PerpsFeeTierRowContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "MultiFilterPill",
-      "sourceFile": "@app/screens/ExploreTab/components/MultiFilterPill",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
-        },
-        "onPress": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
-        },
-        "label": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
-        },
-        "isActive": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
-        },
-        "isTrayShowing": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
-        },
-        "TypographyComponent": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
-        },
-        "iconSize": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PrimaryWalletActivityCell",
-      "sourceFile": "@app/screens/AssetsTab/PrimaryWallet/components/PrimaryWalletActivityCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "transactionRef": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        },
-        "showVariant": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        },
-        "outerSpacing": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        },
-        "showDate": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TransactionTypeSelector",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "selectedValue": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        },
-        "handleSelect": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TransactionsList",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TransactionsErrorBanner",
-      "sourceFile": "@app/components/EmptyState/TransactionsErrorBanner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "isPageLevelError": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        },
-        "offsetHorizontal": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        },
-        "component": {
-          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TransactionsFallback",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TransactionsContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "RefreshControl",
       "sourceFile": "@app/components/RefreshControl",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 5,
+      "totalCallSites": 5,
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
       },
       "propsWithCallSites": {
         "onRefresh": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
         }
       }
     },
     {
       "name": "AdvancedScreen",
       "sourceFile": "@advancedTrade/components/ScreenContainer/AdvancedScreen",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
       },
       "propsWithCallSites": {
         "queryRef": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
         },
         "navHeader": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1
@@ -1775,13 +1278,15 @@
         },
         "refreshControl": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
         },
         "denseMode": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
         },
         "showLiquidationEntry": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1
@@ -1852,40 +1357,44 @@
     {
       "name": "FinPromFooter",
       "sourceFile": "@advancedTrade/Portfolio/components/FinPromFooter",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 5,
+      "totalCallSites": 5,
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
       },
       "propsWithCallSites": {
         "queryRef": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
         }
       }
     },
     {
       "name": "AdvancedTradeScreenBoundary",
       "sourceFile": "@advancedTrade/components/Boundaries/ScreenBoundary/AdvancedTradeScreenBoundary",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 5,
+      "totalCallSites": 5,
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
       },
       "propsWithCallSites": {
         "instrumentationId": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/AdvancedAssetDetailScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
         }
       }
     },
@@ -1898,123 +1407,25 @@
     {
       "name": "SharedGlobalErrorBanner",
       "sourceFile": "@app/components/EmptyState/SharedGlobalErrorBanner",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
       },
       "propsWithCallSites": {
-        "spacingStart": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
-        },
         "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "INTXBalanceHeader",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "INTXTransferCta",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "INTXCashTable",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "UserPerpsTable",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "FeeTierCard",
-      "sourceFile": "@advancedTrade/Portfolio/components/FeeTierCard/FeeTierCard",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "showPerpetualFeeTier": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
         },
-        "showSpotFeeTier": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
-        },
-        "queryRef": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+        "spacingStart": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
         }
       }
-    },
-    {
-      "name": "INTXPortfolioScreenContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "skipPerpsTradingQuery": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PageLevelErrorStateProvider",
-      "sourceFile": "@app/contexts/PageLevelErrorStateContext/PageLevelErrorStateProvider",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
-      }
-    },
-    {
-      "name": "INTXPortfolioScreenWrapper",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "DefaultBalanceHeader",
@@ -2129,6 +1540,44 @@
       }
     },
     {
+      "name": "FeeTierCard",
+      "sourceFile": "@advancedTrade/Portfolio/components/FeeTierCard/FeeTierCard",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "showPerpetualFeeTier": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
+        },
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
+        },
+        "showSpotFeeTier": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PageLevelErrorStateProvider",
+      "sourceFile": "@app/contexts/PageLevelErrorStateContext/PageLevelErrorStateProvider",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
+      }
+    },
+    {
       "name": "DefaultPortfolioScreenContent",
       "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/DefaultPortfolioScreen.tsx",
       "totalInstances": 1,
@@ -2153,6 +1602,22 @@
       "propsWithCallSites": {
         "queryRef": {
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "UserPerpsTable",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
         }
       }
     },
@@ -2297,6 +1762,537 @@
     {
       "name": "AdvancedPortfolioScreenContainer",
       "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/AdvancedPortfolioScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "INTXBalanceHeader",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "INTXTransferCta",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "INTXCashTable",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "INTXPortfolioScreenContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "skipPerpsTradingQuery": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "INTXPortfolioScreenWrapper",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/INTXPortfolioScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ViewOnlyBanner",
+      "sourceFile": "@advancedTrade/Portfolio/components/ViewOnlyBanner/ViewOnlyBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "divider": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ConsumerBalanceHeader",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ConsumerCashTable",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ConsumerCryptoTable",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ConsumerPortfolioScreenContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/ConsumerPortfolioScreen.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "DepositWithdrawButtonGroup",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "handleDeposit": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
+        },
+        "handleWithdraw": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DepositWithdrawDrawer",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClose": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
+        },
+        "tradeType": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
+        },
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "NetworkBoundary",
+      "sourceFile": "@app/components/NetworkBoundary",
+      "totalInstances": 26,
+      "totalCallSites": 26,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "errorFallback": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "suspenseFallback": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "monitoringBoundary": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "instrumentationId": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/ADPDepositWithdrawButtonGroup/ADPDepositWithdrawButtonGroup.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvancedAssetTransactionList/AdvancedAssetTransactionList.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelector.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "willErrorBlockUser": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ButtonGroupFallback",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup/ButtonGroupFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PortfolioDepositWithdrawButtonGroupContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawButtonGroup/PortfolioDepositWithdrawButtonGroup.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiPortfolioDisclaimer",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "type": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        },
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        },
+        "background": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        },
+        "bordered": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CircleIcon",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/CircleIcon",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 2
+      },
+      "propsWithCallSites": {
+        "iconName": {
+          "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "DepositWithdrawDrawerContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DepositWithdrawDrawer/DepositWithdrawDrawer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ReceiveVariant",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "message": {
+          "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiPortfolioDisclaimerContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "FeeTierCardRow",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCardRow",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+      },
+      "propsWithCallSites": {
+        "label": {
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+        },
+        "description": {
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+        },
+        "tag": {
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PerpsFeeTierRow",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DataCardFallback",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/DataCardFallback",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx": 1
+      }
+    },
+    {
+      "name": "FeeTierCardContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/FeeTierCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PerpsFeeTierRowContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/FeeTierCard/PerpsFeeTierRow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "BalanceErrorBanner",
+      "sourceFile": "@app/components/BalanceErrorBanner/BalanceErrorBanner",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "variant": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "isPageLevelError": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "offsetHorizontal": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "component": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AssetBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "titlePreset": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "LiveTicker",
+      "sourceFile": "@app/components/LiveTicker/LiveTicker",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "value": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        },
+        "variant": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        },
+        "color": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        },
+        "enableColorChange": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        },
+        "fallback": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TimeRangedGainLossText",
+      "sourceFile": "@advancedTrade/components/TimeRangedGainLossText",
+      "totalInstances": 6,
+      "totalCallSites": 6,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        },
+        "justifyContent": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1
+        },
+        "gainLoss": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "gainLossTimeRange": {
+          "@app/screens/AdvancedTrade/Portfolio/components/BalanceHeader/BalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
+        },
+        "textComponentType": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "showFallback": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OpenOrderCardContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/OpenOrderCard/OpenOrderCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "USDCConvertButtonContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/USDCConvertButton/USDCConvertButton.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -2448,204 +2444,211 @@
       "totalCallSites": 1
     },
     {
+      "name": "PositionsErrorBanner",
+      "sourceFile": "@app/components/EmptyState/PositionsErrorBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "variant": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "offsetHorizontal": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "isPageLevelError": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "component": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CollapsibleSection",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/CollapsibleSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "testID": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "label": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "header": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "accessory": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "defaultCollapsed": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "onToggle": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        },
+        "borderedTop": {
+          "@app/screens/AdvancedTrade/Portfolio/components/PortfolioTable/PortfolioTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiFilterPill",
+      "sourceFile": "@app/screens/ExploreTab/components/MultiFilterPill",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "testID": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
+        },
+        "label": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
+        },
+        "isActive": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
+        },
+        "isTrayShowing": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
+        },
+        "TypographyComponent": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
+        },
+        "iconSize": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PrimaryWalletActivityCell",
+      "sourceFile": "@app/screens/AssetsTab/PrimaryWallet/components/PrimaryWalletActivityCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "transactionRef": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        },
+        "showVariant": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        },
+        "outerSpacing": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        },
+        "showDate": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TransactionTypeSelector",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionTypeSelector",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "selectedValue": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        },
+        "handleSelect": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TransactionsList",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TransactionsErrorBanner",
+      "sourceFile": "@app/components/EmptyState/TransactionsErrorBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "isPageLevelError": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        },
+        "offsetHorizontal": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        },
+        "component": {
+          "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TransactionsFallback",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/Transactions/TransactionsFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TransactionsContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/Transactions/Transactions.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "BalanceHeader",
       "sourceFile": "@advancedTrade/Portfolio/components/BalanceHeader/BalanceHeader",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1
       },
       "propsWithCallSites": {
         "balance": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1
         },
         "label": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1
-        },
-        "gainLoss": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1
-        },
-        "gainLossTimeRange": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1
-        },
-        "onBalancePress": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1
         },
         "showErrorUI": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
           "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1
+        },
+        "gainLoss": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1
+        },
+        "gainLossTimeRange": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1
+        },
+        "onBalancePress": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1
         }
       }
     },
     {
       "name": "BalanceHeaderFallback",
       "sourceFile": "@advancedTrade/Portfolio/components/BalanceHeader/BalanceHeader/BalanceHeaderFallback",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1
-      }
-    },
-    {
-      "name": "INTXBalanceHeaderContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PortfolioTable",
-      "sourceFile": "@advancedTrade/Portfolio/components/PortfolioTable/PortfolioTable",
-      "totalInstances": 7,
-      "totalCallSites": 7,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "showErrorState": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "testID": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "label": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "header": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "defaultCollapsed": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "handleCollapse": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "errorType": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "accessory": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CashTableListCell",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable/CashTableListCell",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "key": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1
-        },
-        "node": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TableFallback",
-      "sourceFile": "@advancedTrade/Portfolio/components/TableFallback",
-      "totalInstances": 6,
-      "totalCallSites": 6,
-      "callSites": {
-        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1
-      }
-    },
-    {
-      "name": "INTXCashTableContent",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TransferEntryCta",
-      "sourceFile": "@advancedTrade/Transfers/components/TransferEntryCta/TransferEntryCta",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "variant": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
-        },
-        "fromSelector": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
-        },
-        "toSelector": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
-        },
-        "compact": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
-        }
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx": 1
       }
     },
     {
@@ -2653,6 +2656,156 @@
       "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultBalanceHeader.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "PortfolioTable",
+      "sourceFile": "@advancedTrade/Portfolio/components/PortfolioTable/PortfolioTable",
+      "totalInstances": 9,
+      "totalCallSites": 9,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "showErrorState": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "testID": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "label": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "header": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "accessory": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1
+        },
+        "defaultCollapsed": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "handleCollapse": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "errorType": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "component": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CashTableListCell",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable/CashTableListCell",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "key": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1
+        },
+        "node": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TableFallback",
+      "sourceFile": "@advancedTrade/Portfolio/components/TableFallback",
+      "totalInstances": 8,
+      "totalCallSites": 8,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserPerpsTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1
+      }
     },
     {
       "name": "DefaultCashTableContent",
@@ -2683,25 +2836,32 @@
     {
       "name": "CryptoListCell",
       "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable/CryptoListCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1
+      },
       "propsWithCallSites": {
         "key": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1
         },
         "data": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1
+          "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
+          "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1
         }
       }
     },
     {
       "name": "FinPromPerformanceDisclaimer",
       "sourceFile": "@advancedTrade/Portfolio/components/FinPromPerformanceDisclaimer",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "@app/screens/AdvancedTrade/Portfolio/screens/DefaultPortfolio/components/DefaultCryptoTable.tsx": 1,
-        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1
+        "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserCryptoTable.tsx": 1,
+        "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx": 1
       }
     },
     {
@@ -2834,6 +2994,62 @@
       "totalCallSites": 1
     },
     {
+      "name": "INTXBalanceHeaderContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXBalanceHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "INTXCashTableContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXCashTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TransferEntryCta",
+      "sourceFile": "@advancedTrade/Transfers/components/TransferEntryCta/TransferEntryCta",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "variant": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
+        },
+        "fromSelector": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
+        },
+        "toSelector": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
+        },
+        "compact": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/INTXPortfolio/components/INTXTransferCta.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ConsumerBalanceHeaderContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerBalanceHeader.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ConsumerCashTableContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCashTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NoAssets",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/NoAssets/NoAssets",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ConsumerCryptoTableContent",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/ConsumerPortfolio/components/ConsumerCryptoTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "DepositWithdrawButtonGroup",
       "sourceFile": "@advancedTrade/Portfolio/components/DepositWithdrawButtonGroup/DepositWithdrawButtonGroup",
       "totalInstances": 1,
@@ -2907,35 +3123,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "FuturesPosition",
-      "sourceFile": "@advancedTrade/Futures/Positions/FuturesPosition",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "position": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "onPress": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        },
-        "key": {
-          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TableFallback",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/TableFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "UserFuturesTable",
-      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "PortfolioSelectorCell",
       "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell",
       "totalInstances": 1,
@@ -2997,6 +3184,35 @@
           "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/PortfolioSelector/PortfolioSelectorCell.tsx": 1
         }
       }
+    },
+    {
+      "name": "FuturesPosition",
+      "sourceFile": "@advancedTrade/Futures/Positions/FuturesPosition",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "position": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        },
+        "key": {
+          "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TableFallback",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/components/TableFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "UserFuturesTable",
+      "sourceFile": "@app/screens/AdvancedTrade/Portfolio/screens/AdvancedPortfolio/components/UserFuturesTable/UserFuturesTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     }
   ]
 }
