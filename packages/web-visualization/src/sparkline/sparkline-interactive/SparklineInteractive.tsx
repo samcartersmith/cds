@@ -15,6 +15,7 @@ import { emptyArray, isStorybook, noop } from '@cbhq/cds-utils';
 import { Lottie } from '@cbhq/cds-web/animation';
 import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
+import { VStack } from '@cbhq/cds-web/layout';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
@@ -22,6 +23,7 @@ import { VisualizationContainer } from '@cbhq/cds-web/visualizations/Visualizati
 
 import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
+import { SparklineInteractiveHoverPrice } from './SparklineInteractiveHoverPrice';
 import { SparklineInteractiveLineVertical } from './SparklineInteractiveLineVertical';
 import { SparklineInteractiveMarkerDates } from './SparklineInteractiveMarkerDates';
 import { SparklineInteractivePaths } from './SparklineInteractivePaths';
@@ -71,6 +73,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   yAxisScalingFactor = 1.0,
   compact,
   formatHoverDate,
+  formatHoverPrice,
   headerNode,
   fallbackType = 'positive',
   timePeriodGutter,
@@ -194,17 +197,17 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
         </>
       )}
       <SparklineInteractiveScrubProvider>
-        {!!formatHoverDate && (
-          <Box spacingBottom={1}>
-            <SparklineInteractiveHoverDate />
-          </Box>
-        )}
+        <VStack spacingBottom={(formatHoverDate || formatHoverPrice) && 1}>
+          {!!formatHoverDate && <SparklineInteractiveHoverDate />}
+          {!!formatHoverPrice && <SparklineInteractiveHoverPrice />}
+        </VStack>
         <VisualizationContainer height={innerSparklineInteractiveHeight} width="100%">
           {({ width, height }: VisualizationContainerDimension) => (
             <InnerSparklineInteractiveProvider height={height} width={width}>
               <SparklineInteractiveScrubHandler
                 disabled={disableScrubbing}
                 formatHoverDate={formatHoverDate}
+                formatHoverPrice={formatHoverPrice}
                 getMarker={getMarker}
                 onScrub={onScrub}
                 onScrubEnd={handleScrubEnd}

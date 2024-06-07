@@ -11,22 +11,20 @@ const textClassName = css`
   align-items: center;
 `;
 
-export const SparklineInteractiveHoverDate = memo(() => {
-  const { setHoverDateDOMNode } = useSparklineInteractiveScrubContext();
-  const dateString = new Date().toLocaleString();
+export const SparklineInteractiveHoverPrice = memo(() => {
+  const { setHoverPriceDOMNode } = useSparklineInteractiveScrubContext();
 
-  const setupDateRef = useCallback(
+  const setupPriceRef = useCallback(
     (ref: HTMLSpanElement) => {
-      setHoverDateDOMNode(ref ?? null);
+      setHoverPriceDOMNode(ref ?? null);
     },
-    [setHoverDateDOMNode],
+    [setHoverPriceDOMNode],
   );
 
   return (
     <TextLabel2 tabularNumbers as="div">
-      <span ref={setupDateRef} className={cx(resetFadeClassName, textClassName)}>
-        {/* prevent the container vertical jump by stubbing out a date with no opacity */}
-        {dateString}
+      <span ref={setupPriceRef} className={cx(resetFadeClassName, textClassName)}>
+        {/* prevent the container vertical jump by stubbing out a price with no opacity */}
       </span>
     </TextLabel2>
   );

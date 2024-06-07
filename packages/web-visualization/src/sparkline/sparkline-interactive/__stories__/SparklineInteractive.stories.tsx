@@ -225,6 +225,31 @@ FallbackCompact.parameters = {
   },
 };
 
+const formatHoverPrice = (price: number) => {
+  return `$${price.toLocaleString('en-US')}`;
+};
+
+export const HoverPrice = () => {
+  return (
+    <SparklineInteractiveBuild
+      fill
+      data={sparklineInteractiveData}
+      formatHoverPrice={formatHoverPrice}
+      strokeColor={strokeColor}
+    />
+  );
+};
+
+HoverPrice.bind({});
+HoverPrice.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
 export const NoHoverDate = () => (
   <SparklineInteractiveBuild
     fill

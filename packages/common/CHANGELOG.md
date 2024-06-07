@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.21.1 (6/7/2024 PST)
+
+#### 🐞 Fixes
+
+- Add type for formatting. [[#2971](https://github.cbhq.net/frontend/cds/pull/2971)] [[DX-3674](https://jira.coinbase-corp.com/browse/DX-3674)]
+
 ## 6.21.0 (6/5/2024 PST)
 
 #### 🚀 Updates

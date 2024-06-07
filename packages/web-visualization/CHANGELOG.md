@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.1.0 (6/7/2024 PST)
+
+#### 🚀 Updates
+
+- Display hover price on scrubbing. [[#2971](https://github.cbhq.net/frontend/cds/pull/2971)] [[DX-3674](https://jira.coinbase-corp.com/browse/DX-3674)]
+
 ## 1.0.2 (4/30/2024 PST)
 
 #### 🐞 Fixes

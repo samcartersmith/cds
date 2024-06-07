@@ -103,6 +103,10 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
    Formats the date above the chart as you scrub. Omit this if you don't want to show the date as the user scrubs
    */
   formatHoverDate?: (date: Date, period: Period) => string;
+  /**
+   Formats the price above the chart as you scrub. Omit this if you don't want to show the price as the user scrubs
+   */
+  formatHoverPrice?: (price: number) => string;
 
   /**
    * Adds a header node above the chart. It will be placed next to the period selector on web.

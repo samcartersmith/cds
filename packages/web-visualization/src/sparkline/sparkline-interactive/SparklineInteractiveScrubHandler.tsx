@@ -94,7 +94,10 @@ type SparklineInteractiveScrubHandlerWebProps<Period extends string> =
   SparklineInteractiveScrubHandlerProps & {
     getMarker: ChartGetMarker;
     selectedPeriod: Period;
-  } & Pick<SparklineInteractiveBaseProps<Period>, 'onScrub' | 'formatHoverDate'>;
+  } & Pick<
+      SparklineInteractiveBaseProps<Period>,
+      'onScrub' | 'formatHoverDate' | 'formatHoverPrice'
+    >;
 
 const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
   onScrubEnd = noop,
@@ -105,9 +108,11 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
   getMarker,
   selectedPeriod,
   formatHoverDate,
+  formatHoverPrice,
 }: SparklineInteractiveScrubHandlerWebProps<Period>) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const { lineDOMNode, maskDOMNode, hoverDateDOMNode } = useSparklineInteractiveScrubContext();
+  const { lineDOMNode, maskDOMNode, hoverDateDOMNode, hoverPriceDOMNode } =
+    useSparklineInteractiveScrubContext();
   const { width: chartWidth } = useSparklineInteractiveContext();
   const padding = useScaleConditional({ dense: 4, normal: 8 });
   const scrubHandlerClassNameWithFocus = cx(
@@ -170,6 +175,19 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
 
           hoverDateDOMNode.style.transform = `translateX(${textPos}px)`;
         }
+
+        if (hoverPriceDOMNode && formatHoverPrice) {
+          fadeIn(hoverPriceDOMNode);
+          hoverPriceDOMNode.innerText = formatHoverPrice(dataPoint.value);
+
+          const textWidth = hoverPriceDOMNode.offsetWidth;
+          const halfTextWidth = textWidth / 2;
+          let textPos = position - halfTextWidth;
+          textPos = Math.max(padding, textPos);
+          textPos = Math.min(textPos, chartWidth - textWidth - padding);
+
+          hoverPriceDOMNode.style.transform = `translateX(${textPos}px)`;
+        }
       }
 
       /**
@@ -187,6 +205,8 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
       maskDOMNode,
       hoverDateDOMNode,
       formatHoverDate,
+      formatHoverPrice,
+      hoverPriceDOMNode,
       padding,
       chartWidth,
     ],
@@ -268,7 +288,8 @@ const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
     fadeOut(lineDOMNode);
     fadeOutMask(maskDOMNode);
     fadeOut(hoverDateDOMNode);
-  }, [hoverDateDOMNode, lineDOMNode, maskDOMNode, onScrubEnd]);
+    fadeOut(hoverPriceDOMNode);
+  }, [hoverDateDOMNode, lineDOMNode, maskDOMNode, hoverPriceDOMNode, onScrubEnd]);
 
   return (
     <div ref={containerRef} className={scrubHandlerContainerClassName}>
