@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@percy/cli": "^1.26.1",
+    "@percy/cli": "^1.28.1",
     "@percy/storybook": "^4.3.6",
     "@shopify/storybook-a11y-test": "^1.1.0",
     "@storybook/addon-a11y": "^6.5.12",

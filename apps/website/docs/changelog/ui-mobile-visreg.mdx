@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.5.1 (6/12/2024 PST)
+
+#### 🐞 Fixes
+
+- Minor bump percy dependencies. [[#3082](https://github.cbhq.net/frontend/cds/pull/3082)] [[DX-3395](https://jira.coinbase-corp.com/browse/DX-3395)]
+
 ## 2.5.0 (5/28/2024 PST)
 
 #### 🚀 Updates

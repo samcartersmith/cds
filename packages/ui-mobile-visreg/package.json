@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-mobile-visreg",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Visreg Helpers",
   "keywords": [
     "visreg",
@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@cbhq/detox-utils": "^0.5.1",
-    "@percy/cli": "^1.26.1",
-    "@percy/client": "^1.26.1",
-    "@percy/sdk-utils": "^1.26.1",
+    "@percy/cli": "^1.28.1",
+    "@percy/client": "^1.28.1",
+    "@percy/sdk-utils": "^1.28.1",
     "@percy/storybook": "^4.3.6",
     "lodash": "^4.17.21"
   },
