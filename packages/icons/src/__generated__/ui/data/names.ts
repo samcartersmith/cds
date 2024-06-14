@@ -284,6 +284,10 @@ const names: UiIconName[] = [
   'lineChartCrypto',
   'cashCoins',
   'advancedMarketSelector',
+  'verifiedBadge',
+  'staggeredList',
+  'candlesticks',
+  'orderBook',
 ];
 
 export default names;

@@ -130,6 +130,10 @@ const names: NavIconName[] = [
   'sendReceive',
   'priceAlerts',
   'folderOpen',
+  'gaugeHigh',
+  'gaugeEmpty',
+  'gaugeLow',
+  'gaugeMedium',
 ];
 
 export default names;

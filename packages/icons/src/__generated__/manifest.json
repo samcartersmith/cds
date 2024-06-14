@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-05-31T21:12:01.255Z",
-  "metadata": { "lastUnicode": 62050 },
+  "lastUpdated": "2024-06-14T15:02:19.002Z",
+  "metadata": { "lastUnicode": 62086 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -5444,7 +5444,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60406 } }
       ],
       "createdAt": "2023-02-01T23:25:21.813Z",
-      "lastUpdated": "2024-02-27T20:16:00.498Z",
+      "lastUpdated": "2024-06-11T06:04:00.126Z",
       "outputs": {
         "svg12": "./ui/svg/ui-trophy-12.svg",
         "svg16": "./ui/svg/ui-trophy-16.svg",
@@ -7813,6 +7813,174 @@
         "svg16Inactive": "./nav/svg/nav-priceAlerts-16-inactive.svg",
         "svg24Active": "./nav/svg/nav-priceAlerts-24-active.svg",
         "svg24Inactive": "./nav/svg/nav-priceAlerts-24-inactive.svg"
+      }
+    },
+    "2326:379": {
+      "type": "nav",
+      "name": "gaugeEmpty",
+      "hash": "lNfXtkxT+hYBEuVGE3Vlvte2iN/2+QdPO1WUkkLQXgE=",
+      "description": "gauge, measure, size, scope, calculate, machine, collateral, health, futures, derivatives, account, balance",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62056 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62055 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62054 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62053 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62052 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62051 } }
+      ],
+      "createdAt": "2024-06-13T18:26:42.622Z",
+      "lastUpdated": "2024-06-13T18:26:42.622Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-gaugeEmpty-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-gaugeEmpty-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-gaugeEmpty-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-gaugeEmpty-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-gaugeEmpty-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-gaugeEmpty-24-inactive.svg"
+      }
+    },
+    "2326:386": {
+      "type": "nav",
+      "name": "gaugeLow",
+      "hash": "ktTihvEUDhButFUL1xFIO/Rooks+ZRWjxtzeL0GW9pM=",
+      "description": "gauge, measure, size, scope, calculate, machine, collateral, health, futures, derivatives, account, balance",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62068 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62067 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62066 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62065 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62064 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62063 } }
+      ],
+      "createdAt": "2024-06-13T18:26:42.630Z",
+      "lastUpdated": "2024-06-13T18:26:42.630Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-gaugeLow-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-gaugeLow-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-gaugeLow-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-gaugeLow-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-gaugeLow-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-gaugeLow-24-inactive.svg"
+      }
+    },
+    "2326:393": {
+      "type": "nav",
+      "name": "gaugeMedium",
+      "hash": "cLJUzy2Y98A9BUGvLg9/2m0UPWZDJZoNtCrKaHqUlkY=",
+      "description": "gauge, measure, size, scope, calculate, machine, collateral, health, futures, derivatives, account, balance",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62074 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62073 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62072 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62071 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62070 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62069 } }
+      ],
+      "createdAt": "2024-06-13T18:26:42.638Z",
+      "lastUpdated": "2024-06-13T18:26:42.638Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-gaugeMedium-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-gaugeMedium-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-gaugeMedium-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-gaugeMedium-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-gaugeMedium-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-gaugeMedium-24-inactive.svg"
+      }
+    },
+    "2326:400": {
+      "type": "nav",
+      "name": "gaugeHigh",
+      "hash": "bM6f2O+4EZUCSIKSJ/C76e9ozOubSaXtnv/CEDqvyT8=",
+      "description": "gauge, measure, size, scope, calculate, machine, collateral, health, futures, derivatives, account, balance",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62062 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62061 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62060 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62059 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62058 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62057 } }
+      ],
+      "createdAt": "2024-06-13T18:26:42.614Z",
+      "lastUpdated": "2024-06-13T18:26:42.614Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-gaugeHigh-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-gaugeHigh-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-gaugeHigh-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-gaugeHigh-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-gaugeHigh-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-gaugeHigh-24-inactive.svg"
+      }
+    },
+    "2331:23": {
+      "type": "ui",
+      "name": "candlesticks",
+      "hash": "gqre4lW9CkgHxo24EL+SMToJYFB4HMlmKEisElbeIY0=",
+      "description": "candle, stick, sticks, candlesticks, chart, trade, trading, advanced, prime, up, down, green, red",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62077 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62076 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62075 } }
+      ],
+      "createdAt": "2024-06-14T14:17:44.885Z",
+      "lastUpdated": "2024-06-14T14:17:44.885Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-candlesticks-12.svg",
+        "svg16": "./ui/svg/ui-candlesticks-16.svg",
+        "svg24": "./ui/svg/ui-candlesticks-24.svg"
+      }
+    },
+    "2331:70": {
+      "type": "ui",
+      "name": "orderBook",
+      "hash": "o0afKUD6I2RGNautrWDOGrlq0N4djoBwc0najD0NJpo=",
+      "description": "advanced, trade, trading, prime, order, book, books, orders, list, review, open, closed, completed",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62080 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62079 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62078 } }
+      ],
+      "createdAt": "2024-06-14T14:17:44.892Z",
+      "lastUpdated": "2024-06-14T14:17:44.892Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-orderBook-12.svg",
+        "svg16": "./ui/svg/ui-orderBook-16.svg",
+        "svg24": "./ui/svg/ui-orderBook-24.svg"
+      }
+    },
+    "2332:81": {
+      "type": "ui",
+      "name": "verifiedBadge",
+      "hash": "wj2EkStwYSnDyPJdCyj6H2blgco7OLoKIFE/FijA/nU=",
+      "description": "verified, badge, ui, check, ui",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62086 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62085 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62084 } }
+      ],
+      "createdAt": "2024-06-13T18:26:42.604Z",
+      "lastUpdated": "2024-06-14T14:17:44.911Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-verifiedBadge-12.svg",
+        "svg16": "./ui/svg/ui-verifiedBadge-16.svg",
+        "svg24": "./ui/svg/ui-verifiedBadge-24.svg"
+      }
+    },
+    "2332:85": {
+      "type": "ui",
+      "name": "staggeredList",
+      "hash": "3KI7RZH+Y5gTAW9zEG48LPOQGf4PdeIHFfLjID+Igrk=",
+      "description": "staggered, list, lines, ui",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62083 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62082 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62081 } }
+      ],
+      "createdAt": "2024-06-13T18:26:42.647Z",
+      "lastUpdated": "2024-06-14T14:17:44.906Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-staggeredList-12.svg",
+        "svg16": "./ui/svg/ui-staggeredList-16.svg",
+        "svg24": "./ui/svg/ui-staggeredList-24.svg"
       }
     }
   }

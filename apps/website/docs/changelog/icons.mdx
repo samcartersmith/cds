@@ -8,6 +8,30 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.14.0 (6/14/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 06/14/2024. [[#3087](https://github.cbhq.net/frontend/cds/pull/3087)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- gaugeEmpty
+- gaugeHigh
+- gaugeLow
+- gaugeMedium
+
+#### Ui
+
+- candlesticks
+- orderBook
+- staggeredList
+- verifiedBadge
+
 ## 2.13.0 (5/31/2024 PST)
 
 #### 🚀 Updates
