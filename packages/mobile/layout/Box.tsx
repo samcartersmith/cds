@@ -20,16 +20,11 @@ export type BoxProps = {
    */
   overflow?: 'visible' | 'gradient' | 'hidden';
   /**
-   * Aspect ratio controls the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in React Native and not CSS.
-   *
-   * On a node with a set width/height, aspect ratio controls the size of the unset dimension.
-   * On a node with a set flex basis, aspect ratio controls the size of the node in the cross axis if unset.
-   * On a node with a measure function, aspect ratio works as though the measure function measures the flex basis.
-   * On a node with flex grow/shrink, aspect ratio controls the size of the node in the cross axis if unset.
-   * Aspect ratio takes min/max dimensions into account.
+   * The aspect-ratio CSS property allows you to define the desired width-to-height ratio of an element's box
+   * @link https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio
    */
-  aspectRatio?: number;
-} & BoxBaseProps &
+  aspectRatio?: React.CSSProperties['aspectRatio'] | number;
+} & Omit<BoxBaseProps, 'aspectRatio'> &
   SharedProps &
   OmitStyle<ViewProps> &
   DangerouslySetStyle<ViewStyle>;
@@ -96,6 +91,7 @@ export const Box = memo(
       offsetStart,
       offsetTop,
       offsetVertical,
+      aspectRatio,
       ...props
     }: BoxProps,
     forwardedRef: ForwardedRef<View>,
@@ -149,8 +145,8 @@ export const Box = memo(
       ],
     );
     const dimensionStyles = useMemo(
-      () => ({ height, maxHeight, maxWidth, minHeight, minWidth, width }),
-      [height, maxHeight, maxWidth, minHeight, minWidth, width],
+      () => ({ height, maxHeight, maxWidth, minHeight, minWidth, width, aspectRatio }),
+      [height, maxHeight, maxWidth, minHeight, minWidth, width, aspectRatio],
     );
     const positionStyles = useMemo(
       () => ({

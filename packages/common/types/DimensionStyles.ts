@@ -16,4 +16,9 @@ export type DimensionStyles = {
   minWidth?: DimensionValue;
   /** Set a fixed width. */
   width?: DimensionValue;
+  /**
+   * The aspect-ratio CSS property allows you to define the desired width-to-height ratio of an element's box
+   * @link https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio
+   */
+  aspectRatio?: React.CSSProperties['aspectRatio'];
 };

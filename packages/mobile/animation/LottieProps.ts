@@ -1,6 +1,7 @@
 import { Animated, ViewStyle } from 'react-native';
 import { LottieBaseProps, SharedProps } from '@cbhq/cds-common';
 
+import { BoxProps } from '../layout';
 import { DangerouslySetStyle } from '../types';
 
 export type LottieProps = {
@@ -15,6 +16,7 @@ export type LottieProps = {
    * An array of layers you want to override its color filter.
    */
   colorFilters?: { keypath: string; color: string }[];
-} & LottieBaseProps &
+} & Omit<LottieBaseProps, 'aspectRatio'> &
   SharedProps &
-  DangerouslySetStyle<ViewStyle>;
+  DangerouslySetStyle<ViewStyle> &
+  Pick<BoxProps, 'aspectRatio'>;

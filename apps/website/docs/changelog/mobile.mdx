@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.21.2 (6/14/2024 PST)
+
+#### 🐞 Fixes
+
+- Added aspectRatio to Card and Box on web and mobile. [[#3085](https://github.cbhq.net/frontend/cds/pull/3085)] [[DX-3792](https://jira.coinbase-corp.com/browse/DX-3792)].
+
 ## 6.21.1 ((6/7/2024, 12:04 PM PST))
 
 This is an artificial version bump with no new change.
