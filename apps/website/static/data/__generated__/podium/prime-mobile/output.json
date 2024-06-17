@@ -1,0 +1,1052 @@
+{
+  "components": {
+    "components": [
+      {
+        "name": "ActivityAccountInformation",
+        "path": "/prime/mobile/src/components/ActivityAccountInformation.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivityDesignatedWeb3Signer",
+        "path": "/prime/mobile/src/components/ActivityDesignatedWeb3Signer.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivityDetailsLink",
+        "path": "/prime/mobile/src/components/ActivityDetailsLink.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivityIndicator",
+        "path": "/prime/mobile/src/components/ActivityIndicator.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/loading/Loading.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivityLongDescriptionViaKey",
+        "path": "/prime/mobile/src/components/ActivityLongDescriptionViaKey.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivityProposedChange",
+        "path": "/prime/mobile/src/components/ActivityProposedChange.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivityRoleChange",
+        "path": "/prime/mobile/src/components/ActivityRoleChange.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivitySecurityKeyEncryptionQuorum",
+        "path": "/prime/mobile/src/components/ActivitySecurityKeyEncryptionQuorum.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivityTextBlock",
+        "path": "/prime/mobile/src/components/ActivityTextBlock.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ActivityTimeline",
+        "path": "/prime/mobile/src/components/ActivityTimeline.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityTimelineView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "Avatar",
+        "path": "/prime/mobile/src/components/Avatar.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/settings/SettingsScreen.tsx",
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "Badge",
+        "path": "/prime/mobile/src/components/Badge.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityStatusBanner.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ButtonToggle",
+        "path": "/prime/mobile/src/components/ButtonToggle.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetails.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "CoinbasePrimeLogoSvg",
+        "path": "/prime/mobile/src/components/CoinbasePrimeLogoSvg.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "CurrencyIcon",
+        "path": "/prime/mobile/src/components/CurrencyIcon.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "HiddenPassphrase",
+        "path": "/prime/mobile/src/components/HiddenPassphrase.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/backupKey/SaveBackupPassphraseStep.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "Icon",
+        "path": "/prime/mobile/src/components/Icon.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/CurrencyIcon.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "KeyValue",
+        "path": "/prime/mobile/src/components/KeyValue.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/ActivitySecurityKeyEncryptionQuorum.tsx",
+            "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "MnemonicRow",
+        "path": "/prime/mobile/src/components/MnemonicRow.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "OrgSwitcher",
+        "path": "/prime/mobile/src/components/OrgSwitcher.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/activity/ActivityListScreen.tsx",
+            "/prime/mobile/src/screens/developer/DeveloperScreen.tsx",
+            "/prime/mobile/src/screens/settings/SettingsScreen.tsx",
+            "/prime/mobile/src/screens/tasks/TasksScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 4
+        }
+      },
+      {
+        "name": "Overlay",
+        "path": "/prime/mobile/src/components/Overlay.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/video-statement/components/Countdown.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "Pill",
+        "path": "/prime/mobile/src/components/Pill.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/activity/ActivityFilters.tsx",
+            "/prime/mobile/src/screens/tasks/TasksFilters.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "ProfilePhotoPlaceholder",
+        "path": "/prime/mobile/src/components/ProfilePhotoPlaceholder.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/OrgSwitcher.tsx",
+            "/prime/mobile/src/screens/settings/SettingsScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "TableViewSwitcher",
+        "path": "/prime/mobile/src/components/TableViewSwitcher.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/activity/ActivityListScreen.tsx",
+            "/prime/mobile/src/screens/tasks/TasksScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "VerifyMnemonic",
+        "path": "/prime/mobile/src/components/VerifyMnemonic.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/backupKey/ConfirmBackupPassphraseStep.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ApiErrorFallback",
+        "path": "/prime/mobile/src/components/errors/ApiErrorFallback.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/error/ErrorBoundary.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "DifferentDeviceKeyErrorFallback",
+        "path": "/prime/mobile/src/components/errors/DifferentDeviceKeyErrorFallback.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/providers/device/DeviceProvider.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ErrorBanner",
+        "path": "/prime/mobile/src/components/errors/ErrorBanner.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/errors/ApiErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/LoadingErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/NetworkErrorFallback.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 3
+        }
+      },
+      {
+        "name": "ErrorTray",
+        "path": "/prime/mobile/src/components/errors/ErrorTray.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/errors/ApiErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/LoadingErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/NetworkErrorFallback.tsx",
+            "/prime/mobile/src/components/toast/Toaster.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 4
+        }
+      },
+      {
+        "name": "HeaderBackLogout",
+        "path": "/prime/mobile/src/components/errors/HeaderBackLogout.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "LoadingErrorFallback",
+        "path": "/prime/mobile/src/components/errors/LoadingErrorFallback.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/error/ErrorBoundary.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "MissingDeviceKeyErrorFallback",
+        "path": "/prime/mobile/src/components/errors/MissingDeviceKeyErrorFallback.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/providers/device/DeviceProvider.tsx",
+            "/prime/mobile/src/screens/developer/DeveloperScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "NetworkErrorFallback",
+        "path": "/prime/mobile/src/components/errors/NetworkErrorFallback.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/error/ErrorBoundary.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "NoHierarchyErrorFallback",
+        "path": "/prime/mobile/src/components/errors/NoHierarchyErrorFallback.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/providers/hierarchy/HierarchyProvider.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "NoPortfolioErrorFallback",
+        "path": "/prime/mobile/src/components/errors/NoPortfolioErrorFallback.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/providers/hierarchy/HierarchyProvider.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "NoReadAccessFallback",
+        "path": "/prime/mobile/src/components/errors/NoReadAccessFallback.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "Divider",
+        "path": "/prime/mobile/src/components/layout/Divider.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/OrgSwitcher.tsx",
+            "/prime/mobile/src/screens/developer/DeveloperScreen.tsx",
+            "/prime/mobile/src/screens/settings/SettingsScreen.tsx",
+            "/prime/mobile/src/screens/tos/TermsOfServiceScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 4
+        }
+      },
+      {
+        "name": "FlatList",
+        "path": "/prime/mobile/src/components/layout/FlatList.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/activity/ActivityListScreen.tsx",
+            "/prime/mobile/src/screens/tasks/TasksScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "Header",
+        "path": "/prime/mobile/src/components/layout/Header.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/errors/NoHierarchyErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/NoPortfolioErrorFallback.tsx",
+            "/prime/mobile/src/components/layout/ModalLayout.tsx",
+            "/prime/mobile/src/components/loading/LoadingApp.tsx",
+            "/prime/mobile/src/screens/hierarchy-switcher/HierarchyHeader.tsx",
+            "/prime/mobile/src/screens/login/PreLoginScreen.tsx",
+            "/prime/mobile/src/screens/prepare-web3-transaction/PrepareWeb3TransactionScreen.tsx",
+            "/prime/mobile/src/screens/settings/SettingsScreen.tsx",
+            "/prime/mobile/src/screens/tasks/ActivityDetails.tsx",
+            "/prime/mobile/src/screens/tos/TermsOfServiceScreen.tsx",
+            "/prime/mobile/src/screens/web3-key-access/Web3KeyAccessScreen.tsx",
+            "/prime/mobile/src/components/flows/keyExport/KeyExportScanStep.tsx",
+            "/prime/mobile/src/components/flows/shared/FlowStep.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 13
+        }
+      },
+      {
+        "name": "ModalLayout",
+        "path": "/prime/mobile/src/components/layout/ModalLayout.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/ActivityConfirmation.tsx",
+            "/prime/mobile/src/screens/video-statement/NeedDevicePermissions.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementRequest.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementReviewAndSubmit.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementSuccess.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementUpload.tsx",
+            "/prime/mobile/src/components/flows/keyExport/components/NeedCameraPermissions.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 7
+        }
+      },
+      {
+        "name": "SafeAreaView",
+        "path": "/prime/mobile/src/components/layout/SafeAreaView.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/errors/DifferentDeviceKeyErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/MissingDeviceKeyErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/NoHierarchyErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/NoPortfolioErrorFallback.tsx",
+            "/prime/mobile/src/components/loading/LoadingApp.tsx",
+            "/prime/mobile/src/screens/error/ErrorFallbackScreen.tsx",
+            "/prime/mobile/src/screens/login/PreLoginScreen.tsx",
+            "/prime/mobile/src/screens/permissions/PermissionErrorScreen.tsx",
+            "/prime/mobile/src/screens/prepare-web3-transaction/PrepareWeb3TransactionScreen.tsx",
+            "/prime/mobile/src/screens/tasks/ActivityConfirmation.tsx",
+            "/prime/mobile/src/screens/tasks/ActivityDetails.tsx",
+            "/prime/mobile/src/screens/tos/TermsOfServiceScreen.tsx",
+            "/prime/mobile/src/screens/web3-key-access/Web3KeyAccessScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 13
+        }
+      },
+      {
+        "name": "Screen",
+        "path": "/prime/mobile/src/components/layout/Screen.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/activity/ActivityListScreen.tsx",
+            "/prime/mobile/src/screens/developer/DeveloperScreen.tsx",
+            "/prime/mobile/src/screens/settings/SettingsScreen.tsx",
+            "/prime/mobile/src/screens/tasks/TasksScreen.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementRecord.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementRequest.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementReviewAndSubmit.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementSuccess.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementUpload.tsx",
+            "/prime/mobile/src/components/flows/keyExport/KeyExportScanStep.tsx",
+            "/prime/mobile/src/components/flows/shared/FlowStep.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 11
+        }
+      },
+      {
+        "name": "ScrollView",
+        "path": "/prime/mobile/src/components/layout/ScrollView.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/TableViewSwitcher.tsx",
+            "/prime/mobile/src/components/errors/DifferentDeviceKeyErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/MissingDeviceKeyErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/NoHierarchyErrorFallback.tsx",
+            "/prime/mobile/src/screens/developer/DeveloperScreen.tsx",
+            "/prime/mobile/src/screens/permissions/PermissionErrorScreen.tsx",
+            "/prime/mobile/src/screens/prepare-web3-transaction/PrepareWeb3TransactionScreen.tsx",
+            "/prime/mobile/src/screens/settings/SettingsScreen.tsx",
+            "/prime/mobile/src/screens/tos/TermsOfServiceScreen.tsx",
+            "/prime/mobile/src/screens/web3-key-access/Web3KeyAccessScreen.tsx",
+            "/prime/mobile/src/components/flows/shared/FlowStep.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 11
+        }
+      },
+      {
+        "name": "Loading",
+        "path": "/prime/mobile/src/components/loading/Loading.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx",
+            "/prime/mobile/src/screens/logout/LogoutScreen.tsx",
+            "/prime/mobile/src/screens/prepare-web3-transaction/PrepareWeb3TransactionScreen.tsx",
+            "/prime/mobile/src/screens/settings/SettingsScreen.tsx",
+            "/prime/mobile/src/screens/tasks/ActivityDetails.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementFlow.tsx",
+            "/prime/mobile/src/screens/video-statement/VideoStatementUpload.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 7
+        }
+      },
+      {
+        "name": "LoadingApp",
+        "path": "/prime/mobile/src/components/loading/LoadingApp.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx",
+            "/prime/mobile/src/providers/DataCacheProviders.tsx",
+            "/prime/mobile/src/components/errors/ApiErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/LoadingErrorFallback.tsx",
+            "/prime/mobile/src/components/errors/NetworkErrorFallback.tsx",
+            "/prime/mobile/src/providers/device/DeviceProvider.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 6
+        }
+      },
+      {
+        "name": "LoadingList",
+        "path": "/prime/mobile/src/components/loading/LoadingList.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/activity/ActivityListScreen.tsx",
+            "/prime/mobile/src/screens/tasks/TasksScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "LoadingTasks",
+        "path": "/prime/mobile/src/components/loading/LoadingTasks.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/loading/LoadingApp.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "SkeletonBox",
+        "path": "/prime/mobile/src/components/loading/SkeletonBox.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/loading/LoadingApp.tsx",
+            "/prime/mobile/src/components/loading/LoadingTasks.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "SkeletonCircle",
+        "path": "/prime/mobile/src/components/loading/SkeletonCircle.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/loading/LoadingApp.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "Toast",
+        "path": "/prime/mobile/src/components/toast/Toast.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "Toaster",
+        "path": "/prime/mobile/src/components/toast/Toaster.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/layout/Screen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ApprovePrivateKeyRequestCompleteStep",
+        "path": "/prime/mobile/src/components/flows/approvePrivateKeyRequest/ApprovePrivateKeyRequestCompleteStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "ApprovePrivateKeyRequestFlow",
+        "path": "/prime/mobile/src/components/flows/approvePrivateKeyRequest/ApprovePrivateKeyRequestFlow.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "ApprovePrivateKeyRequestStep",
+        "path": "/prime/mobile/src/components/flows/approvePrivateKeyRequest/ApprovePrivateKeyRequestStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "BackupKeyFlow",
+        "path": "/prime/mobile/src/components/flows/backupKey/BackupKeyFlow.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "BackupSuccessStep",
+        "path": "/prime/mobile/src/components/flows/backupKey/BackupSuccessStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "ConfirmBackupPassphraseStep",
+        "path": "/prime/mobile/src/components/flows/backupKey/ConfirmBackupPassphraseStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "CreateBackupStep",
+        "path": "/prime/mobile/src/components/flows/backupKey/CreateBackupStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "SaveBackupPassphraseStep",
+        "path": "/prime/mobile/src/components/flows/backupKey/SaveBackupPassphraseStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "KeyExportCompleteStep",
+        "path": "/prime/mobile/src/components/flows/keyExport/KeyExportCompleteStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "KeyExportFlow",
+        "path": "/prime/mobile/src/components/flows/keyExport/KeyExportFlow.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "KeyExportGenerateStep",
+        "path": "/prime/mobile/src/components/flows/keyExport/KeyExportGenerateStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "KeyExportInitiateStep",
+        "path": "/prime/mobile/src/components/flows/keyExport/KeyExportInitiateStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "KeyExportScanStep",
+        "path": "/prime/mobile/src/components/flows/keyExport/KeyExportScanStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "GenerateKeysStep",
+        "path": "/prime/mobile/src/components/flows/onboard/GenerateKeysStep.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/onboard/Web3OnboardingFlow.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "SetupStep",
+        "path": "/prime/mobile/src/components/flows/onboard/SetupStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "SuccessStep",
+        "path": "/prime/mobile/src/components/flows/onboard/SuccessStep.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/onboard/Web3OnboardingFlow.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "Web3OnboardingFlow",
+        "path": "/prime/mobile/src/components/flows/onboard/Web3OnboardingFlow.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "RecoverKeyFlow",
+        "path": "/prime/mobile/src/components/flows/recoverKey/RecoverKeyFlow.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "RecoverKeyInitiateStep",
+        "path": "/prime/mobile/src/components/flows/recoverKey/RecoverKeyInitiateStep.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/recoverKey/RecoverKeyFlow.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "RecoverKeySuccessStep",
+        "path": "/prime/mobile/src/components/flows/recoverKey/RecoverKeySuccessStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "RecoverKeyTypePhraseStep",
+        "path": "/prime/mobile/src/components/flows/recoverKey/RecoverKeyTypePhraseStep.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/recoverKey/RecoverKeyFlow.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "RequestPrivateKeyFlow",
+        "path": "/prime/mobile/src/components/flows/requestPrivateKey/RequestPrivateKeyFlow.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "RequestPrivateKeyIntroStep",
+        "path": "/prime/mobile/src/components/flows/requestPrivateKey/RequestPrivateKeyIntroStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "RequestPrivateKeySentStep",
+        "path": "/prime/mobile/src/components/flows/requestPrivateKey/RequestPrivateKeySentStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "RequestPrivateKeyStep",
+        "path": "/prime/mobile/src/components/flows/requestPrivateKey/RequestPrivateKeyStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "RetrievePrivateKeyFlow",
+        "path": "/prime/mobile/src/components/flows/retrievePrivateKey/RetrievePrivateKeyFlow.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/navigation/AuthedStackNavigator.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "RetrievePrivateKeyStep",
+        "path": "/prime/mobile/src/components/flows/retrievePrivateKey/RetrievePrivateKeyStep.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "BiometricsStep",
+        "path": "/prime/mobile/src/components/flows/shared/BiometricsStep.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/recoverKey/RecoverKeyFlow.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "FlowNavigator",
+        "path": "/prime/mobile/src/components/flows/shared/FlowNavigator.tsx",
+        "callSites": {
+          "src": []
+        },
+        "callSiteCount": {
+          "src": 0
+        }
+      },
+      {
+        "name": "FlowStep",
+        "path": "/prime/mobile/src/components/flows/shared/FlowStep.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/tasks/actions/SignActivityConfirmation.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "CertificateTray",
+        "path": "/prime/mobile/src/components/flows/keyExport/components/CertificateTray.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/keyExport/KeyExportScanStep.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "NeedCameraPermissions",
+        "path": "/prime/mobile/src/components/flows/keyExport/components/NeedCameraPermissions.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/keyExport/KeyExportScanStep.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      },
+      {
+        "name": "QRCodeBox",
+        "path": "/prime/mobile/src/components/flows/keyExport/components/QRCodeBox.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/components/flows/keyExport/KeyExportScanStep.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 1
+        }
+      }
+    ],
+    "componentCount": 85
+  }
+}

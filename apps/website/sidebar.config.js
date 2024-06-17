@@ -1074,6 +1074,38 @@ const sidebars = {
             },
           ],
         },
+        // This feature is still experimental and not ready for public consumption
+        // {
+        //   type: 'category',
+        //   label: 'Product Component Tracker',
+        //   items: [
+        //     {
+        //       type: 'doc',
+        //       id: 'product-components/wallet',
+        //       label: 'Wallet',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       id: 'product-components/retail-mobile',
+        //       label: 'Retail Mobile',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       id: 'product-components/retail-web',
+        //       label: 'Retail Web',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       id: 'product-components/prime-web',
+        //       label: 'Prime Web',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       id: 'product-components/prime-mobile',
+        //       label: 'Prime Mobile',
+        //     },
+        //   ],
+        // },
         {
           type: 'category',
           label: 'Accessibility Tracker',

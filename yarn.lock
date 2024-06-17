@@ -3768,6 +3768,7 @@ __metadata:
     execa: "npm:^5.1.1"
     fast-glob: "npm:^3.2.11"
     lodash: "npm:^4.17.21"
+    ts-morph: "npm:^19.0.0"
   languageName: unknown
   linkType: soft
 

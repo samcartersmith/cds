@@ -84,6 +84,12 @@
           "ADOPTION_DIRECTORY=./static/data/__generated__ sh ./scripts/adoption/snowflake-upload.sh"
         ]
       }
+    },
+    "podium": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "../../libs/cds-tasks/podium/impl.ts"
+      }
     }
   }
 }
