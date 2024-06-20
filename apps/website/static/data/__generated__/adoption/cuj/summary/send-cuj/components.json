@@ -163,7 +163,7 @@
     {
       "name": "Button",
       "sourceFile": "@components/interactables/Button",
-      "totalInstances": 14,
+      "totalInstances": 13,
       "totalCallSites": 8,
       "cds": "@components/interactables/Button",
       "presentationalLibrary": "@components/interactables/Button",
@@ -171,7 +171,7 @@
         "@app/screens/Send/ConnectWalletScreen.tsx": 1,
         "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
         "@app/screens/Send/SendBlockedScreen.tsx": 1,
-        "@app/screens/Send/SendCompleteScreen.tsx": 2,
+        "@app/screens/Send/SendCompleteScreen.tsx": 1,
         "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
         "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
         "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 5,
@@ -185,8 +185,7 @@
         },
         "block": {
           "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
-          "@app/screens/Send/SendCompleteScreen.tsx": 1
+          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1
         },
         "spacingTop": {
           "@app/screens/Send/ConnectWalletScreen.tsx": 1,
@@ -200,7 +199,7 @@
           "@app/screens/Send/ConnectWalletScreen.tsx": 1,
           "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
           "@app/screens/Send/SendBlockedScreen.tsx": 1,
-          "@app/screens/Send/SendCompleteScreen.tsx": 2,
+          "@app/screens/Send/SendCompleteScreen.tsx": 1,
           "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
           "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 3,
           "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
@@ -209,7 +208,7 @@
           "@app/screens/Send/ConnectWalletScreen.tsx": 1,
           "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
           "@app/screens/Send/SendBlockedScreen.tsx": 1,
-          "@app/screens/Send/SendCompleteScreen.tsx": 2,
+          "@app/screens/Send/SendCompleteScreen.tsx": 1,
           "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
           "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
           "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 5,
@@ -218,7 +217,7 @@
         "testID": {
           "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
           "@app/screens/Send/SendBlockedScreen.tsx": 1,
-          "@app/screens/Send/SendCompleteScreen.tsx": 2,
+          "@app/screens/Send/SendCompleteScreen.tsx": 1,
           "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
           "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1,
           "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
@@ -572,9 +571,6 @@
           "@app/screens/Send/L2Adoption/L2AdoptionSelection/L2AdoptionSelectionScreen.tsx": 1
         },
         "key": {
-          "@app/screens/Send/L2Adoption/L2AdoptionSelection/L2AdoptionSelectionScreen.tsx": 1
-        },
-        "onLayout": {
           "@app/screens/Send/L2Adoption/L2AdoptionSelection/L2AdoptionSelectionScreen.tsx": 1
         }
       }
@@ -1648,7 +1644,7 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 14,
+      "totalInstances": 15,
       "totalCallSites": 9,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
@@ -1658,7 +1654,7 @@
         "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionNuxStep.tsx": 1,
         "components/SendReceive/SendRedesign/steps/MemoInfoStep/MemoInfoStep.tsx": 1,
         "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2,
-        "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
+        "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
         "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1,
         "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
       },
@@ -1670,7 +1666,7 @@
           "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionNuxStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/MemoInfoStep/MemoInfoStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
         },
@@ -1680,7 +1676,7 @@
           "components/SendReceive/SendRedesign/steps/DestinationTagStep/DestinationTagStep.tsx": 2,
           "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionNuxStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/MemoInfoStep/MemoInfoStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
         },
@@ -1696,7 +1692,7 @@
           "components/SendReceive/SendRedesign/steps/AddNote/AddNote.tsx": 1,
           "components/SendReceive/SendRedesign/steps/DestinationTagStep/DestinationTagStep.tsx": 2,
           "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1
         },
         "disabled": {
@@ -2916,6 +2912,12 @@
       }
     },
     {
+      "name": "SendCompleteDoneButton",
+      "sourceFile": "@app/screens/Send/SendCompleteDoneButton",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "SendComplete",
       "sourceFile": "@app/screens/Send/SendCompleteScreen.tsx",
       "totalInstances": 1,
@@ -3079,7 +3081,7 @@
         "networkSlug": {
           "@app/screens/Send/L2Adoption/L2AdoptionSelection/L2AdoptionSelectionScreen.tsx": 1
         },
-        "accountId": {
+        "platformName": {
           "@app/screens/Send/L2Adoption/L2AdoptionSelection/L2AdoptionSelectionScreen.tsx": 1
         },
         "currency": {
@@ -3601,10 +3603,13 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "accountRef": {
+        "queryRef": {
           "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
         },
         "onTrayPress": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        },
+        "setMaxSend": {
           "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
         }
       }

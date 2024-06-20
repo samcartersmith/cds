@@ -327,10 +327,7 @@
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/layout/Box",
       "propsWithCallSites": {
-        "spacingTop": {
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
-        },
-        "spacingStart": {
+        "spacingHorizontal": {
           "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
         }
       }
@@ -349,6 +346,9 @@
           "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 2
         },
         "color": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 2
+        },
+        "spacingTop": {
           "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 2
         }
       }
@@ -1161,6 +1161,17 @@
       }
     },
     {
+      "name": "CustomPriceAlertsBell",
+      "sourceFile": "@app/components/Notifications/customPriceAlerts/CustomPriceAlertsBell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerAssetRef": {
+          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
+        }
+      }
+    },
+    {
       "name": "LiveTickerFallback",
       "sourceFile": "@app/components/LiveTicker/LiveTicker.tsx",
       "totalInstances": 1,
@@ -1726,6 +1737,9 @@
           "components/WatchlistTableContainer/WatchlistTableContainer.tsx": 1
         },
         "showExpandOption": {
+          "components/WatchlistTableContainer/WatchlistTableContainer.tsx": 1
+        },
+        "isSeeAllCompact": {
           "components/WatchlistTableContainer/WatchlistTableContainer.tsx": 1
         }
       }

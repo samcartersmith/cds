@@ -42,12 +42,12 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 18,
+      "totalInstances": 19,
       "totalCallSites": 6,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "callSites": {
         "@app/components/navigation/NavHeader.tsx": 1,
-        "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+        "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 2,
         "@app/screens/Receive/ReceiveScreen.tsx": 3,
         "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 3,
         "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 4,
@@ -63,6 +63,9 @@
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
+        },
+        "offsetHorizontal": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
         },
         "spacingTop": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
@@ -173,6 +176,30 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-mobile/typography/TextLabel1"
+    },
+    {
+      "name": "ListCellFallback",
+      "sourceFile": "@cbhq/cds-mobile/cells/ListCellFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile/cells/ListCellFallback",
+      "propsWithCallSites": {
+        "media": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "title": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "description": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "detail": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "subdetail": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
     },
     {
       "name": "Box",
@@ -1380,26 +1407,6 @@
       "sourceFile": "@app/screens/GlobalTrade/components/AccountSelectors/EmptyState",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "FallbackCell",
-      "sourceFile": "@components/cells/FallbackCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "icon": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "subtitle": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "detail": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "subdetail": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        }
-      }
     },
     {
       "name": "Screen",

@@ -4,7 +4,7 @@
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
       "totalInstances": 32,
-      "totalCallSites": 11,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "presentationalProps": [
         {
@@ -40,10 +40,9 @@
         "@app/screens/AssetsTab/AssetsScreenContent.tsx": 2,
         "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 5,
         "@app/screens/AssetsTab/components/AssetsQuickActions/AssetsQuickActions.tsx": 1,
-        "@app/screens/Asset/AssetScreen.tsx": 1,
         "@app/screens/Asset/components/AssetPriceChart.tsx": 2,
         "@app/screens/Asset/components/AssetScreenBody.tsx": 1,
-        "@app/screens/Account/components/TransactionList.tsx": 2
+        "@app/screens/Account/components/TransactionList.tsx": 3
       },
       "propsWithCallSites": {
         "spacingHorizontal": {
@@ -51,9 +50,8 @@
           "@app/screens/AssetsTab/AssetsScreenCell.tsx": 1,
           "@app/screens/AssetsTab/AssetsScreenContent.tsx": 2,
           "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 3,
-          "@app/screens/Asset/AssetScreen.tsx": 1,
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1,
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "testID": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
@@ -483,7 +481,7 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 8,
+      "totalInstances": 7,
       "totalCallSites": 4,
       "cds": "@cbhq/cds-web/layout/Box",
       "presentationalProps": [
@@ -500,7 +498,7 @@
       ],
       "callSites": {
         "views/Home/HomeFeedContentDesktop.tsx": 2,
-        "views/Assets/Assets.tsx": 3,
+        "views/Assets/Assets.tsx": 2,
         "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2,
         "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
       },
@@ -518,9 +516,6 @@
           "views/Assets/Assets.tsx": 1
         },
         "width": {
-          "views/Assets/Assets.tsx": 1
-        },
-        "testID": {
           "views/Assets/Assets.tsx": 1
         },
         "spacingTop": {
@@ -556,9 +551,6 @@
           "views/Assets/Assets.tsx": 1
         },
         "spacingTop": {
-          "views/Assets/Assets.tsx": 1
-        },
-        "testID": {
           "views/Assets/Assets.tsx": 1
         },
         "offsetHorizontal": {
@@ -698,43 +690,33 @@
     {
       "name": "AnimatedFlatList",
       "sourceFile": "@components/UI/FlatList/AnimatedFlatList",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "presentationalLibrary": "@components/UI/FlatList/AnimatedFlatList",
-      "callSites": {
-        "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-        "@app/screens/Asset/AssetScreen.tsx": 1
-      },
       "propsWithCallSites": {
         "testID": {
-          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         },
         "ref": {
           "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         },
         "data": {
-          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         },
         "onScroll": {
           "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         },
         "CellRendererComponent": {
-          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         },
         "renderItem": {
-          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         },
         "refreshControl": {
-          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         },
         "stickyHeaderIndices": {
-          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1
+          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         }
       }
     },
@@ -806,12 +788,15 @@
     {
       "name": "TabBar",
       "sourceFile": "@designSystem/navigation/tabs/TabBar",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalLibrary": "@designSystem/navigation/tabs/TabBar",
+      "callSites": {
+        "@app/screens/Account/components/TransactionList.tsx": 2
+      },
       "propsWithCallSites": {
         "TypographyComponent": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         }
       }
     },
@@ -1133,12 +1118,11 @@
     {
       "name": "RefreshControl",
       "sourceFile": "@app/components/RefreshControl",
-      "totalInstances": 5,
-      "totalCallSites": 5,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
         "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-        "@app/screens/Asset/AssetScreen.tsx": 1,
         "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
         "@app/screens/Account/AccountScreen.tsx": 1
       },
@@ -1146,7 +1130,6 @@
         "onRefresh": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
           "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 1,
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
           "@app/screens/Account/AccountScreen.tsx": 1
         }
@@ -1335,20 +1318,6 @@
       }
     },
     {
-      "name": "TieredRewardsUpsellTray",
-      "sourceFile": "@app/screens/Stablecoin/components/TieredRewardsUpsellTray",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClose": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
-        },
-        "currency": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
-        }
-      }
-    },
-    {
       "name": "HomeFeedScreenV2Content",
       "sourceFile": "@app/screens/HomeTab/HomeFeedScreenV2.tsx",
       "totalInstances": 1,
@@ -1506,7 +1475,7 @@
     {
       "name": "NetworkBoundary",
       "sourceFile": "@app/components/NetworkBoundary",
-      "totalInstances": 12,
+      "totalInstances": 13,
       "totalCallSites": 8,
       "callSites": {
         "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
@@ -1516,7 +1485,7 @@
         "@app/screens/Asset/components/AssetPriceChart.tsx": 1,
         "@app/screens/Asset/components/AssetScreenBody.tsx": 2,
         "@app/screens/Account/components/AccountQuickActions.tsx": 1,
-        "@app/screens/Account/components/TransactionList.tsx": 1
+        "@app/screens/Account/components/TransactionList.tsx": 2
       },
       "propsWithCallSites": {
         "errorFallback": {
@@ -1527,7 +1496,7 @@
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1,
           "@app/screens/Asset/components/AssetScreenBody.tsx": 2,
           "@app/screens/Account/components/AccountQuickActions.tsx": 1,
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "suspenseFallback": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
@@ -1537,7 +1506,7 @@
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1,
           "@app/screens/Asset/components/AssetScreenBody.tsx": 2,
           "@app/screens/Account/components/AccountQuickActions.tsx": 1,
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "instrumentationId": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
@@ -1551,11 +1520,11 @@
           "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 1,
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1,
           "@app/screens/Account/components/AccountQuickActions.tsx": 1,
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "monitoringBoundary": {
           "@app/screens/AssetsTab/components/AssetsQuickActions/AssetsQuickActions.tsx": 1,
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         }
       }
     },
@@ -2091,6 +2060,9 @@
         },
         "variant": {
           "@app/screens/AssetsTab/components/AssetsQuickActions/AssetsQuickActions.tsx": 1
+        },
+        "idvStatus": {
+          "@app/screens/AssetsTab/components/AssetsQuickActions/AssetsQuickActions.tsx": 1
         }
       }
     },
@@ -2181,220 +2153,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "AssetTopUpsellsSection",
-      "sourceFile": "@app/screens/Asset/components/AssetTopUpsellsSection/AssetTopUpsellsSection",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetSystemAlertSection",
-      "sourceFile": "@app/screens/Asset/components/AssetSystemAlertSection/AssetSystemAlertSection",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetBanner",
-      "sourceFile": "@app/screens/Asset/components/AssetBanner/AssetBanner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetChart",
-      "sourceFile": "@app/screens/Asset/components/AssetChart/AssetChart",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetQuickActions",
-      "sourceFile": "@app/screens/Asset/components/AssetQuickActions/AssetQuickActions",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetAccountsSection",
-      "sourceFile": "@app/screens/Asset/components/AssetAccountsSection/AssetAccountsSection",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetScreenBTFWrapper",
-      "sourceFile": "@app/screens/Asset/components/AssetScreenBTF/AssetScreenBTF/AssetScreenBTFWrapper",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetCBAssistTrayForStakingFlow",
-      "sourceFile": "@app/screens/Asset/components/AssetCBAssistTrayForStakingFlow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "FloatingAssetListingStateWrapper",
-      "sourceFile": "@app/screens/Asset/components/FloatingAssetListingStateWrapper",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetActionsWrapper",
-      "sourceFile": "@app/screens/Asset/components/AssetActions/AssetActionsWrapper",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetNavHeader",
-      "sourceFile": "@app/screens/Asset/components/AssetNavHeader/AssetNavHeader",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetScreenShareProvider",
-      "sourceFile": "@app/screens/Asset/AssetScreenShareContext/AssetScreenShareProvider",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/Asset/AssetScreen.tsx": 1,
-        "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
-      }
-    },
-    {
-      "name": "Screen",
-      "sourceFile": "@app/components/Screen",
-      "totalInstances": 4,
-      "totalCallSites": 3,
-      "callSites": {
-        "@app/screens/Asset/AssetScreen.tsx": 1,
-        "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 2,
-        "@app/screens/Account/AccountScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "navHeader": {
-          "@app/screens/Asset/AssetScreen.tsx": 1,
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 2,
-          "@app/screens/Account/AccountScreen.tsx": 1
-        },
-        "refreshControl": {
-          "@app/screens/Asset/AssetScreen.tsx": 1,
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
-          "@app/screens/Account/AccountScreen.tsx": 1
-        },
-        "scrollable": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        },
-        "useViewportTracker": {
-          "@app/screens/Asset/AssetScreen.tsx": 1,
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
-        },
-        "spacingBottom": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        },
-        "testID": {
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
-          "@app/screens/Account/AccountScreen.tsx": 1
-        },
-        "header": {
-          "@app/screens/Account/AccountScreen.tsx": 1
-        },
-        "staticHeader": {
-          "@app/screens/Account/AccountScreen.tsx": 1
-        },
-        "floatingFooter": {
-          "@app/screens/Account/AccountScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ErrorBoundary",
-      "sourceFile": "@app/components/ErrorBoundary",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/Asset/AssetScreen.tsx": 1,
-        "@app/screens/Asset/components/AssetPriceChart.tsx": 1
-      },
-      "propsWithCallSites": {
-        "fallback": {
-          "@app/screens/Asset/AssetScreen.tsx": 1,
-          "@app/screens/Asset/components/AssetPriceChart.tsx": 1
-        },
-        "willErrorBlockUser": {
-          "@app/screens/Asset/AssetScreen.tsx": 1,
-          "@app/screens/Asset/components/AssetPriceChart.tsx": 1
-        },
-        "instrumentationId": {
-          "@app/screens/Asset/components/AssetPriceChart.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetScreenContent",
-      "sourceFile": "@app/screens/Asset/AssetScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        },
-        "refreshControl": {
-          "@app/screens/Asset/AssetScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "StablecoinScreenRavContainer",
       "sourceFile": "@app/screens/Asset/StablecoinScreenRav/StablecoinScreenRavContainer",
       "totalInstances": 1,
@@ -2407,6 +2165,12 @@
           "@app/screens/Asset/AssetScreen.tsx": 1
         }
       }
+    },
+    {
+      "name": "AssetScreenRavV2Container",
+      "sourceFile": "@app/screens/Asset/AssetScreenRavV2/AssetScreenRavV2Container",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "AssetScreenRavContainer",
@@ -2435,10 +2199,40 @@
       "totalCallSites": 1
     },
     {
-      "name": "AssetScreenContainer",
-      "sourceFile": "@app/screens/Asset/AssetScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "name": "Screen",
+      "sourceFile": "@app/components/Screen",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 2,
+        "@app/screens/Account/AccountScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "navHeader": {
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 2,
+          "@app/screens/Account/AccountScreen.tsx": 1
+        },
+        "testID": {
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
+          "@app/screens/Account/AccountScreen.tsx": 1
+        },
+        "refreshControl": {
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
+          "@app/screens/Account/AccountScreen.tsx": 1
+        },
+        "useViewportTracker": {
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
+        },
+        "header": {
+          "@app/screens/Account/AccountScreen.tsx": 1
+        },
+        "staticHeader": {
+          "@app/screens/Account/AccountScreen.tsx": 1
+        },
+        "floatingFooter": {
+          "@app/screens/Account/AccountScreen.tsx": 1
+        }
+      }
     },
     {
       "name": "StableAssetHeroLoading",
@@ -2706,6 +2500,12 @@
       }
     },
     {
+      "name": "AssetScreenShareProvider",
+      "sourceFile": "@app/screens/Asset/AssetScreenShareContext/AssetScreenShareProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "StableAssetScreenContainer",
       "sourceFile": "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx",
       "totalInstances": 1,
@@ -2788,6 +2588,23 @@
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1
         },
         "fill": {
+          "@app/screens/Asset/components/AssetPriceChart.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ErrorBoundary",
+      "sourceFile": "@app/components/ErrorBoundary",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "instrumentationId": {
+          "@app/screens/Asset/components/AssetPriceChart.tsx": 1
+        },
+        "fallback": {
+          "@app/screens/Asset/components/AssetPriceChart.tsx": 1
+        },
+        "willErrorBlockUser": {
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1
         }
       }
@@ -3172,16 +2989,19 @@
     {
       "name": "InstrumentedSuspense",
       "sourceFile": "@cbhq/data-layer/InstrumentedSuspense",
-      "totalInstances": 2,
+      "totalInstances": 3,
       "totalCallSites": 2,
       "propsWithCallSites": {
         "instrumentationId": {
           "@app/screens/Account/components/TransactionList.tsx": 1,
-          "views/Home/HomeFeedContentDesktop.tsx": 1
+          "views/Home/HomeFeedContentDesktop.tsx": 2
         },
         "fallback": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1
+          "views/Home/HomeFeedContentDesktop.tsx": 2
         }
+      },
+      "callSites": {
+        "views/Home/HomeFeedContentDesktop.tsx": 2
       }
     },
     {
@@ -3225,46 +3045,46 @@
     {
       "name": "DeferredTransactionHistoryCell",
       "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
-      "totalInstances": 2,
+      "totalInstances": 3,
       "totalCallSites": 1,
       "callSites": {
-        "@app/screens/Account/components/TransactionList.tsx": 2
+        "@app/screens/Account/components/TransactionList.tsx": 3
       },
       "propsWithCallSites": {
         "key": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 3
         },
         "transactionRef": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 3
         },
         "index": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 3
         },
         "isFiat": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 3
         }
       }
     },
     {
       "name": "DeferredTransactionCell",
       "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
-      "totalInstances": 2,
+      "totalInstances": 3,
       "totalCallSites": 1,
       "callSites": {
-        "@app/screens/Account/components/TransactionList.tsx": 2
+        "@app/screens/Account/components/TransactionList.tsx": 3
       },
       "propsWithCallSites": {
         "key": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 3
         },
         "transactionRef": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 3
         },
         "viewerRef": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 3
         },
         "index": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 3
         },
         "outerSpacing": {
           "@app/screens/Account/components/TransactionList.tsx": 1
@@ -3297,128 +3117,152 @@
     {
       "name": "HistoryTransactionList",
       "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "historyTransactions": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "viewer": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "hasNext": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "onViewAllPress": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "outerSpacing": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "isFiat": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "IncompleteLimitOrderList",
-      "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "viewerRef": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AccountScreenSection",
-      "sourceFile": "@app/screens/Account/components/AccountScreenSection",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "showDivider": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TransactionListEmpty",
-      "sourceFile": "@app/screens/Account/components/TransactionListEmpty",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Section",
-      "sourceFile": "@app/components/Section/Section",
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": {
         "@app/screens/Account/components/TransactionList.tsx": 2
       },
       "propsWithCallSites": {
-        "title": {
+        "historyTransactions": {
           "@app/screens/Account/components/TransactionList.tsx": 2
+        },
+        "viewer": {
+          "@app/screens/Account/components/TransactionList.tsx": 2
+        },
+        "hasNext": {
+          "@app/screens/Account/components/TransactionList.tsx": 2
+        },
+        "onViewAllPress": {
+          "@app/screens/Account/components/TransactionList.tsx": 2
+        },
+        "outerSpacing": {
+          "@app/screens/Account/components/TransactionList.tsx": 2
+        },
+        "isFiat": {
+          "@app/screens/Account/components/TransactionList.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "IncompleteLimitOrderList",
+      "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Account/components/TransactionList.tsx": 2
+      },
+      "propsWithCallSites": {
+        "viewerRef": {
+          "@app/screens/Account/components/TransactionList.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "AccountScreenSection",
+      "sourceFile": "@app/screens/Account/components/AccountScreenSection",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Account/components/TransactionList.tsx": 2
+      },
+      "propsWithCallSites": {
+        "showDivider": {
+          "@app/screens/Account/components/TransactionList.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "TransactionListEmpty",
+      "sourceFile": "@app/screens/Account/components/TransactionListEmpty",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Account/components/TransactionList.tsx": 2
+      },
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/Account/components/TransactionList.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "Section",
+      "sourceFile": "@app/components/Section/Section",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Account/components/TransactionList.tsx": 4
+      },
+      "propsWithCallSites": {
+        "title": {
+          "@app/screens/Account/components/TransactionList.tsx": 4
         },
         "offsetContent": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 4
         },
         "info": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "iconSize": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "infoIcon": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "infoButtonText": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "showInfoButton": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         }
       }
     },
     {
       "name": "TabView",
       "sourceFile": "@app/components/TabView",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Account/components/TransactionList.tsx": 2
+      },
       "propsWithCallSites": {
         "lazy": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "index": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "onIndexChange": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "routes": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "renderTabBar": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "renderScene": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
+          "@app/screens/Account/components/TransactionList.tsx": 2
         }
       }
     },
     {
       "name": "TransactionListFallback",
       "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Account/components/TransactionList.tsx": 2
+      }
+    },
+    {
+      "name": "TransactionList",
+      "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
-      "name": "TransactionList",
+      "name": "TransactionListByAssetSymbol",
       "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
@@ -3498,18 +3342,15 @@
       "totalCallSites": 1
     },
     {
-      "name": "HeaderDesktop",
-      "sourceFile": "views/Home/components/Header/Header/HeaderDesktop",
-      "totalInstances": 2,
+      "name": "HomeBalanceSection",
+      "sourceFile": "views/Home/components/BalanceSection/HomeBalanceSection",
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2
-      },
       "propsWithCallSites": {
         "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2
+          "views/Home/HomeFeedContentDesktop.tsx": 1
         },
-        "borderedBottom": {
+        "hideBalanceSection": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
@@ -3590,20 +3431,12 @@
       }
     },
     {
-      "name": "AnnouncementCards",
-      "sourceFile": "views/Home/components/AnnouncementCards",
-      "totalInstances": 4,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 3,
-        "views/Home/HomeFeedContentMobile.tsx": 1
-      },
+      "name": "AnnouncementCardsSection",
+      "sourceFile": "views/Home/components/AnnouncementCardsRAV4/AnnouncementCardsSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "propsWithCallSites": {
-        "announcementCardPropertiesRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 3,
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        },
-        "borderedBottom": {
+        "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
@@ -3636,6 +3469,17 @@
       },
       "propsWithCallSites": {
         "borderedBottom": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DailyBriefingSection",
+      "sourceFile": "views/Home/components/DailyBriefingSection/DailyBriefingSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
@@ -3711,6 +3555,20 @@
       }
     },
     {
+      "name": "AdvancedTradeHomeRedirectWrapper",
+      "sourceFile": "views/Home/HomeFeedContentDesktop.tsx",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": {
+        "views/Home/HomeFeedContentDesktop.tsx": 4
+      },
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 4
+        }
+      }
+    },
+    {
       "name": "ResponsivePageLayout",
       "sourceFile": "components/ResponsivePageLayout",
       "totalInstances": 1,
@@ -3726,6 +3584,22 @@
       "sourceFile": "components/ResponsivePageLayout/SecondaryContent",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "AnnouncementCards",
+      "sourceFile": "views/Home/components/AnnouncementCards",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/Home/HomeFeedContentDesktop.tsx": 2,
+        "views/Home/HomeFeedContentMobile.tsx": 1
+      },
+      "propsWithCallSites": {
+        "announcementCardPropertiesRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        }
+      }
     },
     {
       "name": "PrimaryContent",
@@ -3751,16 +3625,13 @@
       }
     },
     {
-      "name": "AdvancedTradeHomeRedirectWrapper",
-      "sourceFile": "views/Home/HomeFeedContentDesktop.tsx",
-      "totalInstances": 2,
+      "name": "HeaderDesktop",
+      "sourceFile": "views/Home/components/Header/Header/HeaderDesktop",
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2
-      },
       "propsWithCallSites": {
         "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2
+          "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
     },
@@ -4107,6 +3978,18 @@
           "views/Assets/Assets.tsx": 1
         },
         "queryRef": {
+          "views/Assets/Assets.tsx": 1
+        },
+        "bordered": {
+          "views/Assets/Assets.tsx": 1
+        },
+        "background": {
+          "views/Assets/Assets.tsx": 1
+        },
+        "padding": {
+          "views/Assets/Assets.tsx": 1
+        },
+        "spacingBottom": {
           "views/Assets/Assets.tsx": 1
         }
       }

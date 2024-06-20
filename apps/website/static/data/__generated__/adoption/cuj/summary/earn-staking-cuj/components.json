@@ -550,8 +550,8 @@
     {
       "name": "TextTitle3",
       "sourceFile": "@cbhq/cds-mobile/typography/TextTitle3",
-      "totalInstances": 11,
-      "totalCallSites": 11,
+      "totalInstances": 10,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-mobile/typography/TextTitle3",
       "callSites": {
         "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
@@ -563,7 +563,6 @@
         "@app/screens/StakingV2/components/StakingPreviewUserWarnings.tsx": 1,
         "@app/screens/StakingV2/components/StakingV2Promotion.tsx": 1,
         "@app/screens/StakingV2/components/UnstakingOptionsTray.tsx": 1,
-        "@app/screens/WrappedAsset/components/WrappedAssetEntryPointTray.tsx": 1,
         "@app/screens/WrappedAsset/components/WrappedAssetGuide.tsx": 1
       },
       "propsWithCallSites": {
@@ -573,8 +572,7 @@
           "@app/screens/StakingGrowth/MissedEarnings/MissedEarningsStakingTrayScreen.tsx": 1,
           "@app/screens/StakingV2/StakePreviewAutopilotToggle.tsx": 1,
           "@app/screens/StakingV2/components/StakingPreviewUserWarnings.tsx": 1,
-          "@app/screens/StakingV2/components/StakingV2Promotion.tsx": 1,
-          "@app/screens/WrappedAsset/components/WrappedAssetEntryPointTray.tsx": 1
+          "@app/screens/StakingV2/components/StakingV2Promotion.tsx": 1
         },
         "align": {
           "@app/screens/YieldCenter/YieldCenterNuxScreen.tsx": 1,
@@ -1095,8 +1093,8 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
-      "totalInstances": 26,
-      "totalCallSites": 15,
+      "totalInstances": 27,
+      "totalCallSites": 16,
       "cds": "@cbhq/cds-mobile/typography/TextHeadline",
       "callSites": {
         "@app/screens/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
@@ -1113,7 +1111,8 @@
         "@app/screens/StakingV2/components/StakingV2PendingRequests.tsx": 3,
         "@app/screens/StakingV2/components/StakingV2Promotion.tsx": 1,
         "@app/screens/StakingV2/components/UnstakingOptionsTray.tsx": 1,
-        "@app/screens/WrappedAsset/WrapFlow/WrappedAssetCashValueScreen.tsx": 4
+        "@app/screens/WrappedAsset/WrapFlow/WrappedAssetCashValueScreen.tsx": 4,
+        "@app/screens/WrappedAsset/components/WrappedAssetEntryPointTray.tsx": 1
       },
       "propsWithCallSites": {
         "numberOfLines": {
@@ -1121,7 +1120,8 @@
         },
         "spacingBottom": {
           "@app/screens/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 1,
-          "@app/screens/StakingGrowth/MissedEarnings/MissedEarningsErrorScreen.tsx": 1
+          "@app/screens/StakingGrowth/MissedEarnings/MissedEarningsErrorScreen.tsx": 1,
+          "@app/screens/WrappedAsset/components/WrappedAssetEntryPointTray.tsx": 1
         },
         "color": {
           "@app/screens/YieldCenter/components/EarningSectionCell/EarningSectionCell.tsx": 1,
@@ -1874,8 +1874,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 104,
-      "totalCallSites": 45,
+      "totalInstances": 102,
+      "totalCallSites": 44,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
         {
@@ -1913,7 +1913,6 @@
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 4,
         "views/YieldCenter/components/NextForYou/NextForYou.tsx": 3,
         "views/YieldCenter/components/StakingActions/StakingActions.tsx": 2,
-        "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 2,
         "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 4,
         "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
         "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 2,
@@ -1953,7 +1952,6 @@
           "views/YieldCenter/components/ApyTooltip/ApyTooltip.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1
         },
@@ -2012,7 +2010,6 @@
         },
         "spacingHorizontal": {
           "views/YieldCenter/components/EarningSectionList/EarningSectionList.tsx": 1,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "components/StakingV2/Stake/StakingIntro.tsx": 1
         },
         "offsetHorizontal": {
@@ -2075,14 +2072,12 @@
         "bordered": {
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1
         },
         "borderRadius": {
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1
         },
@@ -2109,10 +2104,6 @@
           "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 1,
           "components/WrappedAsset/components/WrappedActions/WrappedActions.tsx": 2
         },
-        "spacingVertical": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
-          "components/StakingV2/Stake/StakingIntro.tsx": 1
-        },
         "offsetBottom": {
           "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1
@@ -2122,6 +2113,9 @@
         },
         "offset": {
           "views/YieldCenter/flows/MissedEarnings/steps/CustomizeAmountStep.tsx": 1
+        },
+        "spacingVertical": {
+          "components/StakingV2/Stake/StakingIntro.tsx": 1
         },
         "alignSelf": {
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
@@ -2273,14 +2267,13 @@
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
       "totalInstances": 18,
-      "totalCallSites": 12,
+      "totalCallSites": 11,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "callSites": {
         "views/YieldCenter/components/ApyTooltip/ApyTooltip.tsx": 3,
-        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+        "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 2,
         "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
         "views/YieldCenter/components/StakingProgressBar/StakingProgressBar.tsx": 2,
-        "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
         "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 1,
         "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1,
         "views/YieldCenter/flows/MissedEarnings/steps/CustomizeAmountStep.tsx": 1,
@@ -2292,10 +2285,9 @@
       "propsWithCallSites": {
         "as": {
           "views/YieldCenter/components/ApyTooltip/ApyTooltip.tsx": 3,
-          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 2,
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
           "views/YieldCenter/components/StakingProgressBar/StakingProgressBar.tsx": 2,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/CustomizeAmountStep.tsx": 1,
@@ -2305,10 +2297,9 @@
           "components/UnwrappedAsset/steps/UnwrapPreview/UnwrapPreviewV2.tsx": 2
         },
         "color": {
-          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 2,
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
           "views/YieldCenter/components/StakingProgressBar/StakingProgressBar.tsx": 2,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1,
           "components/StakingV2/Unstake/UnstakingFooter.tsx": 2,
@@ -2316,7 +2307,11 @@
           "components/UnwrappedAsset/steps/UnwrapPreview/UnwrapPreviewV2.tsx": 1
         },
         "inherit": {
-          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 2
+        },
+        "align": {
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingFooter.tsx": 1
         },
         "numberOfLines": {
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1
@@ -2329,9 +2324,6 @@
           "components/StakingV2/Stake/components/StakingPreviewAutoStakingToggle.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapPreview/UnwrapPreviewV2.tsx": 1
-        },
-        "align": {
-          "components/StakingV2/Unstake/UnstakingFooter.tsx": 1
         }
       }
     },
@@ -2345,7 +2337,6 @@
         {
           "aliasPath": "views/YieldCenter/components/ApyTooltip/ApyTooltip.tsx",
           "callSites": [
-            "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx",
             "views/YieldCenter/components/YieldSummary/YieldSummary.tsx"
           ]
         }
@@ -2864,6 +2855,12 @@
         "views/YieldCenter/components/EarningSectionList/EarningSectionList.tsx": 1
       },
       "propsWithCallSites": {
+        "innerSpacing": {
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1
+        },
+        "outerSpacing": {
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1
+        },
         "testID": {
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/EarningSectionList/EarningSectionList.tsx": 1
@@ -2892,6 +2889,9 @@
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1,
           "views/YieldCenter/components/EarningSectionCell/EarningSectionCell.tsx": 1,
           "views/YieldCenter/components/EarningSectionList/EarningSectionList.tsx": 1
+        },
+        "detail": {
+          "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1
         },
         "action": {
           "views/YieldCenter/components/AssetAPYCard/AssetAPYCard.tsx": 1
@@ -2937,8 +2937,8 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 36,
-      "totalCallSites": 23,
+      "totalInstances": 35,
+      "totalCallSites": 22,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
         "views/YieldCenter/components/AutoStakingAssetSetting/AutoStakingAssetSetting.tsx": 1,
@@ -2948,7 +2948,6 @@
         "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 2,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
         "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
-        "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
         "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 1,
         "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1,
         "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 2,
@@ -2974,7 +2973,6 @@
           "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 2,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 1,
           "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 2,
@@ -3011,9 +3009,6 @@
         "numberOfLines": {
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1
         },
-        "spacingEnd": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        },
         "align": {
           "views/YieldCenter/flows/MissedEarnings/steps/ErrorStep.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/SuccessStep.tsx": 1,
@@ -3031,8 +3026,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 51,
-      "totalCallSites": 22,
+      "totalInstances": 50,
+      "totalCallSites": 21,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -3051,7 +3046,6 @@
         "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 1,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
         "views/YieldCenter/components/NextForYou/NextForYou.tsx": 6,
-        "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
         "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 2,
         "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1,
         "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
@@ -3112,7 +3106,6 @@
           "views/YieldCenter/components/AutoStakingAssetSetting/AutoStakingAssetSetting.tsx": 1,
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 2,
@@ -3397,8 +3390,8 @@
     {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-web/layout/Divider",
-      "totalInstances": 9,
-      "totalCallSites": 9,
+      "totalInstances": 8,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/layout/Divider",
       "callSites": {
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
@@ -3407,7 +3400,6 @@
         "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 1,
         "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
         "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
-        "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
         "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1,
         "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1
       },
@@ -4309,7 +4301,7 @@
       "totalCallSites": 1,
       "presentationalElement": "@designSystem/interactables/drawer/Tray",
       "propsWithCallSites": {
-        "viewerRef": {
+        "queryRef": {
           "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
         },
         "isVisible": {
@@ -4336,7 +4328,7 @@
       "totalCallSites": 1,
       "presentationalElement": "@designSystem/interactables/drawer/Tray",
       "propsWithCallSites": {
-        "viewerRef": {
+        "queryRef": {
           "@app/screens/YieldCenter/components/YieldEarnedChart/YieldEarnedChart.tsx": 1
         },
         "isVisible": {
@@ -5101,7 +5093,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "viewerRef": {
+        "queryRef": {
           "@app/screens/YieldCenter/YieldCenterScreen.tsx": 1
         }
       }
@@ -9258,59 +9250,6 @@
       }
     },
     {
-      "name": "ApyTooltip",
-      "sourceFile": "views/YieldCenter/components/ApyTooltip/ApyTooltip",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1,
-        "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1
-      }
-    },
-    {
-      "name": "AssetAPYCard",
-      "sourceFile": "views/YieldCenter/components/AssetAPYCard",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onPressCta": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        },
-        "key": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        },
-        "earnProgramRef": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ComponentBoundary",
-      "sourceFile": "components/ComponentBoundary/ComponentBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "owner": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        },
-        "boundaryName": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        },
-        "loadingFallback": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        },
-        "errorFallbackComponent": {
-          "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "UnearnedRewardsSection",
-      "sourceFile": "views/YieldCenter/components/UnearnedRewardsSection/UnearnedRewardsSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "YieldChartForFragment",
       "sourceFile": "views/YieldCenter/components/YieldChart/YieldChart.tsx",
       "totalInstances": 1,
@@ -9406,6 +9345,12 @@
           "views/YieldCenter/components/YieldChart/YieldChart.tsx": 1
         }
       }
+    },
+    {
+      "name": "ApyTooltip",
+      "sourceFile": "views/YieldCenter/components/ApyTooltip/ApyTooltip",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "MissedEarningsBanner",

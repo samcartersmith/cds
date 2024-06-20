@@ -518,9 +518,8 @@
         "spacing": {
           "@app/components/PaymentMethod/WireTransferPaymentCell.tsx": 1
         },
-        "spacingBottom": {
+        "spacingVertical": {
           "@app/components/PaymentMethodsTray.tsx": 1,
-          "@app/screens/FiatTransfer/Withdraw/WithdrawStableAssetInput.tsx": 1,
           "@app/screens/FiatTransfer/FiatTransferPreviewScreen.tsx": 1
         },
         "offsetHorizontal": {
@@ -537,11 +536,12 @@
         "offsetTop": {
           "@app/screens/FiatTransfer/Withdraw/InteracWithdrawConfirmationScreen.tsx": 1
         },
+        "spacingBottom": {
+          "@app/screens/FiatTransfer/Withdraw/WithdrawStableAssetInput.tsx": 1,
+          "@app/screens/FiatTransfer/FiatTransferPreviewScreen.tsx": 1
+        },
         "alignContent": {
           "@app/screens/FiatTransfer/Withdraw/WithdrawStableAssetInput.tsx": 1
-        },
-        "spacingVertical": {
-          "@app/screens/FiatTransfer/FiatTransferPreviewScreen.tsx": 1
         }
       }
     },
@@ -1081,10 +1081,14 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 13,
-      "totalCallSites": 7,
+      "totalInstances": 14,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "aliasedCdsComponents": [
+        {
+          "aliasPath": "components/WithdrawablePaymentSelector/hooks/usePaymentDetails/useHeader.tsx",
+          "callSites": []
+        },
         {
           "aliasPath": "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx",
           "callSites": [
@@ -1096,6 +1100,7 @@
         "components/WithdrawablePaymentSelector/components/InteracRow.tsx": 3,
         "components/WithdrawablePaymentSelector/components/PaymentMethodRow.tsx": 1,
         "components/WithdrawablePaymentSelector/components/PixWithdrawalRow.tsx": 1,
+        "components/WithdrawablePaymentSelector/hooks/usePaymentDetails/useHeader.tsx": 1,
         "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewRow.tsx": 2,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
@@ -1106,6 +1111,7 @@
           "components/WithdrawablePaymentSelector/components/InteracRow.tsx": 3,
           "components/WithdrawablePaymentSelector/components/PaymentMethodRow.tsx": 1,
           "components/WithdrawablePaymentSelector/components/PixWithdrawalRow.tsx": 1,
+          "components/WithdrawablePaymentSelector/hooks/usePaymentDetails/useHeader.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewRow.tsx": 2,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
@@ -1115,6 +1121,7 @@
           "components/WithdrawablePaymentSelector/components/InteracRow.tsx": 3,
           "components/WithdrawablePaymentSelector/components/PaymentMethodRow.tsx": 1,
           "components/WithdrawablePaymentSelector/components/PixWithdrawalRow.tsx": 1,
+          "components/WithdrawablePaymentSelector/hooks/usePaymentDetails/useHeader.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewRow.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
@@ -2338,7 +2345,10 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "data": {
+        "bypassCapabilityCheckIfUnverified": {
+          "@app/components/PaymentMethodCellV2/PaymentMethodCellListV2.tsx": 1
+        },
+        "queryRef": {
           "@app/components/PaymentMethodCellV2/PaymentMethodCellListV2.tsx": 1
         },
         "onCellPress": {
@@ -2355,28 +2365,34 @@
         },
         "locale": {
           "@app/components/PaymentMethodCellV2/PaymentMethodCellListV2.tsx": 1
+        },
+        "screenName": {
+          "@app/components/PaymentMethodCellV2/PaymentMethodCellListV2.tsx": 1
         }
       }
     },
     {
       "name": "RetailPaymentMethodCell",
       "sourceFile": "@cbhq/unified-payment-methods-mobile/cell/RetailPaymentMethodCell",
-      "totalInstances": 3,
+      "totalInstances": 4,
       "totalCallSites": 3,
       "callSites": {
         "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1,
-        "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 1,
+        "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 2,
         "@app/components/PaymentMethodCellV2/trays/PaymentMethodOptionsTrayV2.tsx": 1
       },
       "propsWithCallSites": {
         "data": {
           "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1,
-          "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 1,
+          "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 2,
           "@app/components/PaymentMethodCellV2/trays/PaymentMethodOptionsTrayV2.tsx": 1
+        },
+        "onPress": {
+          "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1
         },
         "paymentActionButtonConfig": {
           "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1,
-          "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 1,
+          "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 2,
           "@app/components/PaymentMethodCellV2/trays/PaymentMethodOptionsTrayV2.tsx": 1
         },
         "countryCode": {
@@ -2388,14 +2404,19 @@
         },
         "locale": {
           "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1,
-          "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 1
-        },
-        "transferType": {
           "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 1,
           "@app/components/PaymentMethodCellV2/trays/PaymentMethodOptionsTrayV2.tsx": 1
         },
+        "screenName": {
+          "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1,
+          "@app/components/PaymentMethodCellV2/trays/PaymentMethodOptionsTrayV2.tsx": 1
+        },
+        "transferType": {
+          "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 2,
+          "@app/components/PaymentMethodCellV2/trays/PaymentMethodOptionsTrayV2.tsx": 1
+        },
         "titleOverride": {
-          "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 1
+          "@app/components/PaymentMethodCellV2/PaymentMissingDataCell.tsx": 2
         },
         "cellPlacement": {
           "@app/components/PaymentMethodCellV2/trays/PaymentMethodOptionsTrayV2.tsx": 1
@@ -2417,10 +2438,16 @@
         "queryRef": {
           "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1
         },
+        "onOpenPmTray": {
+          "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1
+        },
         "countryCode": {
           "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1
         },
         "locale": {
+          "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1
+        },
+        "screenName": {
           "@app/components/PaymentMethodCellV2/PaymentMethodCellV2.tsx": 1
         }
       }
@@ -3697,7 +3724,7 @@
         "cellPlacement": {
           "@app/components/Transfer/PaymentMethodSelector.tsx": 1
         },
-        "onPress": {
+        "onOpenPmTray": {
           "@app/components/Transfer/PaymentMethodSelector.tsx": 1
         },
         "paymentActionButtonConfigOverride": {
@@ -3725,6 +3752,9 @@
           "@app/components/Transfer/PaymentMethodSelector.tsx": 1
         },
         "accountCurrencyCode": {
+          "@app/components/Transfer/PaymentMethodSelector.tsx": 1
+        },
+        "testID": {
           "@app/components/Transfer/PaymentMethodSelector.tsx": 1
         }
       }
@@ -3942,7 +3972,7 @@
         "paymentTypesWhitelist": {
           "@app/screens/FiatTransfer/components/FiatTransferPaymentMethodsTray.tsx": 1
         },
-        "data": {
+        "queryRef": {
           "@app/screens/FiatTransfer/components/FiatTransferPaymentMethodsTray.tsx": 1
         },
         "cellOuterPadding": {
@@ -3958,6 +3988,9 @@
           "@app/screens/FiatTransfer/components/FiatTransferPaymentMethodsTray.tsx": 1
         },
         "currencyCode": {
+          "@app/screens/FiatTransfer/components/FiatTransferPaymentMethodsTray.tsx": 1
+        },
+        "hideCryptoCells": {
           "@app/screens/FiatTransfer/components/FiatTransferPaymentMethodsTray.tsx": 1
         }
       }
@@ -5382,6 +5415,17 @@
       }
     },
     {
+      "name": "PaymentMethodExpiration",
+      "sourceFile": "components/SimpleTrade/components/PaymentMethodExpiration",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "paymentMethodV2Ref": {
+          "components/WithdrawablePaymentSelector/hooks/usePaymentDetails/useHeader.tsx": 1
+        }
+      }
+    },
+    {
       "name": "PaymentMethodIcon",
       "sourceFile": "components/PaymentMethodIcon",
       "totalInstances": 1,
@@ -6338,6 +6382,10 @@
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersSelectedPaymentWithdrawCell.tsx": 1
       },
       "propsWithCallSites": {
+        "disabled": {
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodDepositListCell.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodWithdrawListCell.tsx": 1
+        },
         "title": {
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodDepositListCell.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodWithdrawListCell.tsx": 1,
@@ -6662,6 +6710,29 @@
       }
     },
     {
+      "name": "WithdrawSuccessContent",
+      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawSuccessContent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "WithdrawPendingContent",
+      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawPendingContent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "WithdrawErrorContent",
+      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawErrorContent",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "userFriendlyErrorMessage": {
+          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1
+        }
+      }
+    },
+    {
       "name": "TransferPreviewHeader",
       "sourceFile": "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewHeader",
       "totalInstances": 1,
@@ -6740,29 +6811,6 @@
         },
         "entryPoint": {
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawPreview/WithdrawPreview.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "WithdrawSuccessContent",
-      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawSuccessContent",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "WithdrawPendingContent",
-      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawPendingContent",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "WithdrawErrorContent",
-      "sourceFile": "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent/WithdrawErrorContent",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "userFriendlyErrorMessage": {
-          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawStatus/WithdrawStatus.tsx": 1
         }
       }
     },
