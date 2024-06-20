@@ -243,10 +243,10 @@ export class Manifest<
       if (!remoteIds.includes(item.id)) {
         // Delete outputs
         if (item.outputs) {
-          Object.values(item.outputs).map(async (output) => {
+          Object.values(item.outputs).forEach((output) => {
             const absoluteOutputPath = path.normalize(`${this.generatedDirectory}/${output}`);
             if (fs.existsSync(absoluteOutputPath)) {
-              promises.push(fs.promises.rm(absoluteOutputPath));
+              void promises.push(fs.promises.rm(absoluteOutputPath));
             }
           });
         }

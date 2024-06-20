@@ -13,7 +13,7 @@
       "path": "apps/figma-icons-plugin"
     },
     {
-      "path": "apps/figma-plugin"
+      "path": "apps/figma-strings-plugin"
     },
     {
       "path": "apps/mobile-app"
@@ -67,7 +67,7 @@
       "path": "packages/common"
     },
     {
-      "path": "packages/d3"
+      "path": "packages/eslint-plugin-cds"
     },
     {
       "path": "packages/fonts"

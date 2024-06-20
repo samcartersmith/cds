@@ -47,7 +47,9 @@ type TextComponent =
     >;
 
 const textTestRunner = (testFn: (type: TextComponent) => void) => {
-  textComponents.map(async (TextComponent) => testFn(TextComponent));
+  textComponents.forEach((TextComponent) => {
+    void testFn(TextComponent);
+  });
 };
 
 function expectClassName<K extends keyof TextProps>(
