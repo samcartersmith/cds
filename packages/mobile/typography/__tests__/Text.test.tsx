@@ -39,8 +39,8 @@ const Type = {
 const textTestRunner = (
   testFn: (type: React.ComponentType<React.PropsWithChildren<TextProps>>) => void,
 ) => {
-  entries<Record<string, React.FC<TextProps>>>(Type).forEach(
-    ([, TextComponent]) => void testFn(TextComponent),
+  entries<Record<string, React.FC<TextProps>>>(Type).forEach(async ([, TextComponent]) =>
+    testFn(TextComponent),
   );
 };
 

@@ -4,9 +4,9 @@ import { TSESLint } from '@typescript-eslint/utils';
 import { controlHasAssociatedLabelExtended } from './rules/control-has-associated-label-extended';
 import { hasValidA11yDescriptorsExtended } from './rules/has-valid-accessibility-descriptors-extended';
 
-export const rules: {
-  [key: string]: TSESLint.RuleModule<string, []>;
-} = {
+export const rules = {
   'control-has-associated-label-extended': controlHasAssociatedLabelExtended,
   'has-valid-accessibility-descriptors-extended': hasValidA11yDescriptorsExtended,
+} as const satisfies {
+  [key: string]: TSESLint.RuleModule<string, []>;
 };

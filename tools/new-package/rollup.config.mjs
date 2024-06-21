@@ -1,7 +1,8 @@
 import { babel } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
-import path from 'node:path';
+import terser from '@rollup/plugin-terser';
 import fs from 'node:fs';
+import path from 'node:path';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
@@ -14,12 +15,12 @@ export default {
     /react/,
   ],
   output: [
-    // {
-    //   format: 'esm',
-    //   entryFileNames: '[name].js',
-    //   dir: path.dirname(pkg.module),
-    //   preserveModules: true,
-    // },
+    {
+      format: 'esm',
+      entryFileNames: '[name].js',
+      dir: path.dirname(pkg.module),
+      preserveModules: true,
+    },
     {
       format: 'cjs',
       entryFileNames: '[name].js',
@@ -34,7 +35,9 @@ export default {
     }),
     babel({
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
-      babelHelpers: 'bundled',
+      babelHelpers: 'runtime',
     }),
+    // Add terser only if needed
+    // terser(),
   ],
 };

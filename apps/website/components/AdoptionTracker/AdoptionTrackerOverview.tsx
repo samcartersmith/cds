@@ -538,7 +538,12 @@ const ProjectTitle = ({ pillar }: { pillar: string }) => {
     <VStack gap={1} spacingBottom={2}>
       <TextCaption as="span" color="foregroundMuted" id={pillar}>
         {pillar}
-        <a className="hash-link" href={`#${pillar}`} title="Direct link to heading">
+        <a
+          aria-label="Direct link to heading"
+          className="hash-link"
+          href={`#${pillar}`}
+          title="Direct link to heading"
+        >
           &nbsp;
         </a>
       </TextCaption>

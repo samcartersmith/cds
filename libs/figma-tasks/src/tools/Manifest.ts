@@ -246,7 +246,7 @@ export class Manifest<
           Object.values(item.outputs).forEach((output) => {
             const absoluteOutputPath = path.normalize(`${this.generatedDirectory}/${output}`);
             if (fs.existsSync(absoluteOutputPath)) {
-              void promises.push(fs.promises.rm(absoluteOutputPath));
+              promises.push(fs.promises.rm(absoluteOutputPath));
             }
           });
         }

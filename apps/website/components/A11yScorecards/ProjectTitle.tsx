@@ -15,7 +15,12 @@ export const ProjectTitle = ({
     <VStack gap={1} spacingBottom={2}>
       <TextCaption as="span" color="foregroundMuted" id={projectName}>
         {projectName}
-        <a className="hash-link" href={`#${projectName}`} title="Direct link to heading">
+        <a
+          aria-label={`Link to ${projectName}`}
+          className="hash-link"
+          href={`#${projectName}`}
+          title="Direct link to heading"
+        >
           &nbsp;
         </a>
       </TextCaption>

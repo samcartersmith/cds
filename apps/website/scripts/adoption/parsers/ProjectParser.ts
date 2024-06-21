@@ -549,6 +549,7 @@ export class ProjectParser {
         (await getPackageJson(this.dependencyPath || this.root)).devDependencies || {};
       this.root = path.resolve(this.root, tsconfig.compilerOptions?.baseUrl ?? '.');
 
+      // @ts-expect-error - Error expected in tsconfig due to type-fest and get-tsconfig
       const { absoluteAliases, relativeAliases } = getTypescriptAliases(this.root, tsconfig);
       this.tsAliases = absoluteAliases;
       this.tsAliasesRelative = relativeAliases;

@@ -47,8 +47,8 @@ type TextComponent =
     >;
 
 const textTestRunner = (testFn: (type: TextComponent) => void) => {
-  textComponents.forEach((TextComponent) => {
-    void testFn(TextComponent);
+  textComponents.forEach(async (TextComponent) => {
+    testFn(TextComponent);
   });
 };
 
