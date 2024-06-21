@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.22.0 (6/20/2024 PST)
+
+#### 🚀 Updates
+
+- Add 'warning' color to ProgressColor. [[DAPP-6680](https://jira.coinbase-corp.com/browse/DAPP-6680)]
+
 ## 6.21.2 (6/14/2024 PST)
 
 #### 🐞 Fixes

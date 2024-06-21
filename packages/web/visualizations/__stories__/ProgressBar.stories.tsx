@@ -223,6 +223,7 @@ export const Colors = () => {
         <ProgressBar color="positive" progress={0.5} />
         <ProgressBar color="negative" progress={0.5} />
         <ProgressBar color="primary" progress={0.5} />
+        <ProgressBar color="warning" progress={0.5} />
         <ProgressBar color="foreground" progress={0.5} />
         <ProgressBar disabled color="foreground" progress={0.5} />
       </VStack>

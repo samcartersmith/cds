@@ -6,7 +6,7 @@ import type { Weight } from './Weight';
 
 export type ProgressColor = Extract<
   PaletteForeground,
-  'positive' | 'negative' | 'primary' | 'foreground'
+  'positive' | 'negative' | 'primary' | 'foreground' | 'warning'
 >;
 
 export type ProgressBaseProps = {
