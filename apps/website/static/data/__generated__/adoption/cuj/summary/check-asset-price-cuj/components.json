@@ -324,19 +324,19 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 17,
+      "totalInstances": 18,
       "totalCallSites": 3,
       "cds": "@cbhq/cds-web/layout/VStack",
       "callSites": {
         "views/Home/HomeFeedContentDesktop.tsx": 2,
         "views/AssetPage/components/AssetOverview.tsx": 13,
-        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 2
+        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 3
       },
       "propsWithCallSites": {
         "width": {
           "views/Home/HomeFeedContentDesktop.tsx": 2,
           "views/AssetPage/components/AssetOverview.tsx": 2,
-          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 2
         },
         "borderedEnd": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
@@ -367,6 +367,15 @@
         },
         "spacingStart": {
           "views/AssetPage/components/AssetOverview.tsx": 1
+        },
+        "height": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "alignItems": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "justifyContent": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }
     },
@@ -565,6 +574,21 @@
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
         "width": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Spinner",
+      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/loaders/Spinner",
+      "propsWithCallSites": {
+        "size": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "color": {
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }
@@ -2677,17 +2701,20 @@
     {
       "name": "InstrumentedSuspense",
       "sourceFile": "@cbhq/data-layer/InstrumentedSuspense",
-      "totalInstances": 2,
-      "totalCallSites": 1,
+      "totalInstances": 3,
+      "totalCallSites": 2,
       "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2
+        "views/Home/HomeFeedContentDesktop.tsx": 2,
+        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
       },
       "propsWithCallSites": {
         "fallback": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2
+          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
         "instrumentationId": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2
+          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }
     },
@@ -2831,37 +2858,51 @@
     {
       "name": "AppBoundaryFallback",
       "sourceFile": "components/AppBoundaryFallback/AppBoundaryFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AssetPage/components/AssetOverview.tsx": 1,
+        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+      },
       "propsWithCallSites": {
         "error": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
+          "views/AssetPage/components/AssetOverview.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
         "errorMetadata": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
+          "views/AssetPage/components/AssetOverview.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }
     },
     {
       "name": "NetworkErrorBoundary",
       "sourceFile": "components/NetworkErrorBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AssetPage/components/AssetOverview.tsx": 1,
+        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+      },
       "propsWithCallSites": {
         "owner": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
+          "views/AssetPage/components/AssetOverview.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
         "boundaryName": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
+          "views/AssetPage/components/AssetOverview.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
         "onCatch": {
           "views/AssetPage/components/AssetOverview.tsx": 1
         },
         "context": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
+          "views/AssetPage/components/AssetOverview.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
         "fallback": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
+          "views/AssetPage/components/AssetOverview.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }
     },
@@ -3623,6 +3664,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "KYCRefreshReviewPromptProvider",
+      "sourceFile": "components/KYCRefreshReviewPrompt/KYCRefreshReviewPromptProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "AssetPagePortfolioWalletContent",
       "sourceFile": "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx",
       "totalInstances": 1,
@@ -3877,6 +3924,18 @@
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }
+    },
+    {
+      "name": "AccountPageRavFallback",
+      "sourceFile": "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AssetPagePortfolioWallet",
+      "sourceFile": "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "SimpleInput",

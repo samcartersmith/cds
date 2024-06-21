@@ -103,7 +103,7 @@
       "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^6.0.0",
+      "cdsWeb": "^6.21.2",
       "cdsMobile": "Not Found",
       "cdsCommon": "^6.0.0",
       "lowestVersion": "^6.0.0",
@@ -208,6 +208,10 @@
           },
           "onCloseProfileMenu": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "navigate": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
           }
         }
       },
@@ -411,7 +415,7 @@
       "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^6.0.0",
+      "cdsWeb": "^6.21.2",
       "cdsMobile": "Not Found",
       "cdsCommon": "^6.0.0",
       "lowestVersion": "^6.0.0",

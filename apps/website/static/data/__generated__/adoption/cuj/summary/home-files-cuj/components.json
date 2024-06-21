@@ -1311,9 +1311,6 @@
         },
         "queryRef": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx": 1
-        },
-        "hasDragHandle": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx": 1
         }
       }
     },
@@ -1544,7 +1541,7 @@
         "isDragging": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         },
-        "showDragHandle": {
+        "hasDragHandle": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         }
       }

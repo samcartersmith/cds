@@ -1636,7 +1636,7 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 57,
+      "totalInstances": 58,
       "totalCallSites": 25,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
@@ -1665,7 +1665,7 @@
         "views/Web3/DappIntakeLoggedInPageContent.tsx": 1,
         "views/Web3/Web3DiscoveryContent.tsx": 1,
         "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 3,
-        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 2,
+        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 3,
         "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 1,
         "pages/DappIntake/LoggedOutDappIntake.tsx": 1,
         "pages/DappDetails/DappDetails.tsx": 4,
@@ -1735,7 +1735,7 @@
           "views/Web3/DappDetailsPageContent.tsx": 2,
           "views/Web3/DappIntakeLoggedInPageContent.tsx": 1,
           "views/Web3/Web3DiscoveryContent.tsx": 1,
-          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 2,
           "pages/DappIntake/LoggedOutDappIntake.tsx": 1,
           "pages/DappDetails/DappDetails.tsx": 3,
           "pages/Web3/components/Web3Banner.tsx": 1,
@@ -1789,6 +1789,7 @@
         "alignItems": {
           "views/DappWallet/components/NoActivitySection.tsx": 1,
           "views/DappWallet/components/WalletQRCodeSection.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 1,
           "pages/DappIntake/LoggedOutDappIntake.tsx": 1,
           "pages/DappDetails/DappDetails.tsx": 2,
@@ -1801,6 +1802,7 @@
         },
         "justifyContent": {
           "views/DappWallet/components/WalletQRCodeSection.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 1,
           "pages/DappIntake/LoggedOutDappIntake.tsx": 1,
           "pages/DappDetails/DappDetails.tsx": 2,
@@ -1821,6 +1823,7 @@
         },
         "height": {
           "views/Web3/DappDetailsPageContent.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1,
           "pages/Web3/components/Web3Banner.tsx": 1
         },
         "borderedEnd": {
@@ -2297,7 +2300,7 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 26,
+      "totalInstances": 28,
       "totalCallSites": 9,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
@@ -2305,7 +2308,7 @@
         "views/DappWallet/components/DappWalletBalance.tsx": 3,
         "views/DappWallet/components/NoActivitySection.tsx": 1,
         "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 5,
-        "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 5,
+        "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 7,
         "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionRow.tsx": 4,
         "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionStatusRow.tsx": 1,
         "components/Web3/components/DappDetailsSection.tsx": 5
@@ -2316,7 +2319,7 @@
           "views/DappWallet/components/DappWalletBalance.tsx": 3,
           "views/DappWallet/components/NoActivitySection.tsx": 1,
           "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 5,
-          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 5,
+          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 7,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionRow.tsx": 4,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionStatusRow.tsx": 1,
           "pages/Web3/components/Web3Banner.tsx": 1,
@@ -2326,7 +2329,7 @@
           "views/DappWallet/components/AboutSection.tsx": 1,
           "views/DappWallet/components/DappWalletBalance.tsx": 3,
           "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 5,
-          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 5,
+          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 7,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionRow.tsx": 4,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionStatusRow.tsx": 1,
           "pages/Web3/components/Web3Banner.tsx": 1
@@ -2355,14 +2358,13 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 8,
-      "totalCallSites": 6,
+      "totalInstances": 7,
+      "totalCallSites": 5,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
         "views/DappWallet/components/DappWalletBalance.tsx": 2,
         "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1,
         "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1,
-        "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 1,
         "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionRow.tsx": 1,
         "components/Web3/components/DappDetailsSection.tsx": 2
       },
@@ -2371,7 +2373,6 @@
           "views/DappWallet/components/DappWalletBalance.tsx": 2,
           "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1,
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1,
-          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 1,
           "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionRow.tsx": 1,
           "components/Web3/components/DappDetailsSection.tsx": 2
         },
@@ -2745,15 +2746,29 @@
       }
     },
     {
-      "name": "TextDisplay3",
-      "sourceFile": "@cbhq/cds-web/typography/TextDisplay3",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/typography/TextDisplay3",
+      "name": "Spinner",
+      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/loaders/Spinner",
+      "propsWithCallSites": {
+        "size": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "color": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle2",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextTitle2",
       "propsWithCallSites": {
         "as": {
-          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 1,
-          "pages/Web3/components/Web3Banner.tsx": 1
+          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 1
         }
       }
     },
@@ -2822,6 +2837,18 @@
         "pages/DappIntake/LoggedOutDappIntake.tsx": 1,
         "pages/DappDetails/DappDetails.tsx": 1,
         "pages/Web3/Web3Page.tsx": 1
+      }
+    },
+    {
+      "name": "TextDisplay3",
+      "sourceFile": "@cbhq/cds-web/typography/TextDisplay3",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextDisplay3",
+      "propsWithCallSites": {
+        "as": {
+          "pages/Web3/components/Web3Banner.tsx": 1
+        }
       }
     },
     {
@@ -8270,7 +8297,12 @@
       "name": "DappWalletActivityContainer",
       "sourceFile": "views/DappWallet/DappWalletActivity.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "dappWalletAddress": {
+          "views/DappWallet/DappWalletActivity.tsx": 1
+        }
+      }
     },
     {
       "name": "CollectibleSection",
@@ -8778,6 +8810,12 @@
       }
     },
     {
+      "name": "KYCRefreshReviewPromptProvider",
+      "sourceFile": "components/KYCRefreshReviewPrompt/KYCRefreshReviewPromptProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "AssetPagePortfolioWalletContent",
       "sourceFile": "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx",
       "totalInstances": 1,
@@ -9105,16 +9143,76 @@
       }
     },
     {
+      "name": "AppBoundaryFallback",
+      "sourceFile": "components/AppBoundaryFallback/AppBoundaryFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "error": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "errorMetadata": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "InstrumentedSuspense",
+      "sourceFile": "@cbhq/data-layer/InstrumentedSuspense",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "instrumentationId": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "fallback": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AccountPageRavFallback",
+      "sourceFile": "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NetworkErrorBoundary",
+      "sourceFile": "components/NetworkErrorBoundary",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "owner": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "boundaryName": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "context": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "fallback": {
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AssetPagePortfolioWallet",
+      "sourceFile": "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "DetailRow",
       "sourceFile": "views/Assets/components/DappWalletTransactionRow/DetailRow",
-      "totalInstances": 5,
+      "totalInstances": 6,
       "totalCallSites": 1,
       "callSites": {
-        "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 5
+        "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 6
       },
       "propsWithCallSites": {
         "label": {
-          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 5
+          "views/Assets/components/DappWalletTransactionRow/DappWalletTransactionDetailModal.tsx": 6
         }
       }
     },

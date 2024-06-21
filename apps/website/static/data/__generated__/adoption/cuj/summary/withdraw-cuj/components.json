@@ -6183,6 +6183,12 @@
       }
     },
     {
+      "name": "i",
+      "sourceFile": "components/DepositWithdraw/components/Withdraw/steps/components/InteracPreviewHeaderDetail.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "StepperProvider",
       "sourceFile": "components/Stepper/components/StepperProvider",
       "totalInstances": 1,
@@ -6226,12 +6232,6 @@
           "components/DepositWithdraw/components/Withdraw/components/FolderTabFlow/FolderTabFlow.tsx": 1
         }
       }
-    },
-    {
-      "name": "i",
-      "sourceFile": "components/DepositWithdraw/components/Withdraw/steps/components/InteracPreviewHeaderDetail.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "SharedHeader",

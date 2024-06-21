@@ -55,6 +55,10 @@
           },
           "onCloseProfileMenu": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "navigate": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
           }
         }
       },
