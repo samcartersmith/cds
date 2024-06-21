@@ -4,6 +4,12 @@ Consumes `useOverlay()`. Check more info about it in [useOverlay](/hooks/useOver
 
 ### Usage
 
+:::warning
+
+**Deprecated**: Inserting JSX into the DOM using a function in an event handler is an anti-pattern. This hook will be removed in future version. Use the `visible` and `onRequestClose` props instead
+
+:::
+
 ```
 const { openModal, closeModal } = useModal();
 

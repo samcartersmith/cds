@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.22.1 (6/21/2024 PST)
+
+#### 🐞 Fixes
+
+- Deprecate useModal and useAlert hook. [[#3066](https://github.cbhq.net/frontend/cds/pull/3066)] [[DX-3871](https://jira.coinbase-corp.com/browse/DX-3871)]
+
 ## 6.22.0 (6/20/2024 PST)
 
 #### 🚀 Updates

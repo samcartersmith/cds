@@ -33,6 +33,12 @@ function DefaultAlertExample() {
 
 Controlled programmatically using the `useAlert` hook.
 
+:::warning
+
+**Deprecated**: Inserting JSX into the DOM using a function in an event handler is an anti-pattern. This hook will be removed in future version. Use the `visible` and `onRequestClose` props instead
+
+:::
+
 ```jsx live
 function PortalAlertExample() {
   function PortalAlert() {

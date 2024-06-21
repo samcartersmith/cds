@@ -2,7 +2,9 @@ import { useMemo } from 'react';
 
 import { useOverlay } from './useOverlay';
 
-// TODO: change the API to open/close instead of openModal/closeModal
+/**
+ * @deprecated Use the visible and onRequestClose props as outlined in the docs here https://cds.cbhq.net/components/modal#get-started
+ */
 export const useModal = () => {
   const { open, close } = useOverlay('modal_');
 

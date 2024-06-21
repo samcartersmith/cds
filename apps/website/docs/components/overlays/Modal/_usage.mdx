@@ -85,6 +85,12 @@ function DefaultModalExample() {
 
 ### Programmatically Controlled Modal
 
+:::warning
+
+**Deprecated**: Inserting JSX into the DOM using a function in an event handler is an anti-pattern. This hook will be removed in future version. Use the `visible` and `onRequestClose` props instead
+
+:::
+
 `PortalProvider` is a convenient way for adding anything to the CDS portal. The CDS portal is what CDS uses to centralize all elements that need a portal and handles the zIndex of those pieces.
 You can control `Modal` visibility programmatically using `openModal()` and `closeModal()` from the `useModal()` hook which consumes `PortalProvider` under the hood.
 
