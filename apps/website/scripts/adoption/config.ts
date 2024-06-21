@@ -39,6 +39,7 @@ const identityGit = 'identity/frontend';
 const paymentsOnRampGit = 'payments/onramp-widget';
 const paymentsCbPayGit = 'payments/cbpay-rn-sdk';
 const helpCenterGit = 'data/helpcenter-web';
+const cbChatUIGit = 'data/cb-chat-ui';
 
 const assethubConfig = {
   root: path.join(tempDir, assethubGit),
@@ -1443,12 +1444,12 @@ export const config: AdoptersConfig[] = [
         projectGitPath: 'onboarding',
       },
       {
-        root: path.join(tempDir, retailWebGit, 'packages/advanced-trade-web'),
+        root: path.join(tempDir, retailWebGit, 'libs/advanced-trade-web'),
         github: retailWebGit,
         id: 'advanced-trade-web',
         label: 'Advanced Trade Web Package',
         type: 'doc',
-        projectGitPath: 'packages/advanced-trade-web',
+        projectGitPath: 'libs/advanced-trade-web',
       },
       {
         root: path.join(tempDir, retailWebGit, 'app'),
@@ -1688,8 +1689,8 @@ export const config: AdoptersConfig[] = [
         projectGitPath: 'src/settings/TaxCenter',
       },
       {
-        root: path.join(tempDir, frontendWebGit, 'packages/cb-chat'),
-        github: frontendWebGit,
+        root: path.join(tempDir, cbChatUIGit, 'packages/cb-chat'),
+        github: cbChatUIGit,
         id: 'cb-chat',
         label: 'Coinbase Chat Web',
         sourceGlob: ['packages/cb-chat/**/*.(ts|tsx)'],
@@ -1697,8 +1698,8 @@ export const config: AdoptersConfig[] = [
         projectGitPath: 'packages/cb-chat',
       },
       {
-        root: path.join(tempDir, frontendWebGit, 'packages/cb-chat-mobile'),
-        github: frontendWebGit,
+        root: path.join(tempDir, cbChatUIGit, 'packages/cb-chat-mobile'),
+        github: cbChatUIGit,
         id: 'cb-chat-mobile',
         label: 'Coinbase Chat Mobile',
         sourceGlob: ['packages/cb-chat-mobile/**/*.(ts|tsx)'],
