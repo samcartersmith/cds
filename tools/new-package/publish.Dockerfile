@@ -13,7 +13,7 @@ RUN yarn --immutable
 RUN yarn nx run {{NEW_PACKAGE}}:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/{{NEW_PACKAGE}} && npm pack
-RUN mv /repo/.nx/dist/packages/{{NEW_PACKAGE}} /shared
+RUN cd /repo/packages/{{NEW_PACKAGE}} && yarn pack
+RUN mv /repo/packages/{{NEW_PACKAGE}} /shared
 
 WORKDIR /shared

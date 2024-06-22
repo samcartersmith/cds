@@ -13,7 +13,7 @@ RUN yarn --immutable
 RUN yarn nx run eslint-plugin-cds:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/eslint-plugin-cds && npm pack
-RUN mv /repo/.nx/dist/packages/eslint-plugin-cds /shared
+RUN cd /repo/packages/eslint-plugin-cds && yarn pack
+RUN mv /repo/packages/eslint-plugin-cds /shared
 
 WORKDIR /shared
