@@ -1,7 +1,6 @@
 {
   "name": "@cbhq/eslint-plugin-cds",
   "version": "0.0.1",
-  "private": true,
   "description": "ESLint plugin for CDS",
   "main": "./lib/index.js",
   "scripts": {
