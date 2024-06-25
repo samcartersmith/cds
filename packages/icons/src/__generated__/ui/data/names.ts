@@ -288,6 +288,11 @@ const names: UiIconName[] = [
   'staggeredList',
   'candlesticks',
   'orderBook',
+  'microphone',
+  'calculator',
+  'gif',
+  'perpetualSwap',
+  'image',
 ];
 
 export default names;

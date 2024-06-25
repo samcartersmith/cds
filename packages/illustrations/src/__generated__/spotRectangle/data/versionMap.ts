@@ -195,7 +195,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   referralsCoinbaseOne: 0,
   lightningNetworkSend: 0,
   referralsGenericCoin: 0,
-  appUpdate: 0,
+  appUpdate: 1,
   faceId: 0,
 };
 

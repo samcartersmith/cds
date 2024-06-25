@@ -46,8 +46,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/appTrackingTransparency-2').content,
   },
   appUpdate: {
-    light: () => require('../svgJs/light/appUpdate-0').content,
-    dark: () => require('../svgJs/dark/appUpdate-0').content,
+    light: () => require('../svgJs/light/appUpdate-1').content,
+    dark: () => require('../svgJs/dark/appUpdate-1').content,
   },
   automaticPayments: {
     light: () => require('../svgJs/light/automaticPayments-2').content,

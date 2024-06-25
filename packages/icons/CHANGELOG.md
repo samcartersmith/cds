@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.15.0 (6/24/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 06/24/2024. [[#3109](https://github.cbhq.net/frontend/cds/pull/3109)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- calculator
+- gif
+- image
+- microphone
+- perpetualSwap
+
 ## 2.14.0 (6/14/2024 PST)
 
 #### 🚀 Updates

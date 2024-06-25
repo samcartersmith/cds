@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-06-14T15:02:19.002Z",
-  "metadata": { "lastUnicode": 62086 },
+  "lastUpdated": "2024-06-24T21:52:50.602Z",
+  "metadata": { "lastUnicode": 62101 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -7976,11 +7976,101 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62081 } }
       ],
       "createdAt": "2024-06-13T18:26:42.647Z",
-      "lastUpdated": "2024-06-14T14:17:44.906Z",
+      "lastUpdated": "2024-06-24T21:43:08.655Z",
       "outputs": {
         "svg12": "./ui/svg/ui-staggeredList-12.svg",
         "svg16": "./ui/svg/ui-staggeredList-16.svg",
         "svg24": "./ui/svg/ui-staggeredList-24.svg"
+      }
+    },
+    "2368:151": {
+      "type": "ui",
+      "name": "calculator",
+      "hash": "pWe74adqmUZDa0kn3uU3c4Z5vbkTCQCkjD1Nkwsy/mI=",
+      "description": "calculator, math, maths, numbers, calculate, add, subtract, multiply, divide, plus, minus",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62089 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62088 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62087 } }
+      ],
+      "createdAt": "2024-06-24T21:43:08.630Z",
+      "lastUpdated": "2024-06-24T21:43:08.630Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-calculator-12.svg",
+        "svg16": "./ui/svg/ui-calculator-16.svg",
+        "svg24": "./ui/svg/ui-calculator-24.svg"
+      }
+    },
+    "2368:155": {
+      "type": "ui",
+      "name": "microphone",
+      "hash": "xQfB+hkqEiw5Fa7WbRH+7rpkbsPBmPksu/7xRTCaO9A=",
+      "description": "microphone, mic, speak, speech, talk, into",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62098 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62097 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62096 } }
+      ],
+      "createdAt": "2024-06-24T21:43:08.624Z",
+      "lastUpdated": "2024-06-24T21:43:08.624Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-microphone-12.svg",
+        "svg16": "./ui/svg/ui-microphone-16.svg",
+        "svg24": "./ui/svg/ui-microphone-24.svg"
+      }
+    },
+    "2434:232": {
+      "type": "ui",
+      "name": "perpetualSwap",
+      "hash": "W8GlKQlIu/ZTboGJnwvmjDCqQHsDrPeNNYuo2qqHCuQ=",
+      "description": "swap, circle, perpetual, movement",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62101 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62100 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62099 } }
+      ],
+      "createdAt": "2024-06-24T21:43:08.641Z",
+      "lastUpdated": "2024-06-24T21:43:08.641Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-perpetualSwap-12.svg",
+        "svg16": "./ui/svg/ui-perpetualSwap-16.svg",
+        "svg24": "./ui/svg/ui-perpetualSwap-24.svg"
+      }
+    },
+    "2436:47": {
+      "type": "ui",
+      "name": "image",
+      "hash": "FmcsBcTwT/r6bSAvx1NOfYWvHyntHlNJ+MGqHuzL3OI=",
+      "description": "image, mountain, sun, picture",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62095 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62094 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62093 } }
+      ],
+      "createdAt": "2024-06-24T21:43:08.646Z",
+      "lastUpdated": "2024-06-24T21:43:08.646Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-image-12.svg",
+        "svg16": "./ui/svg/ui-image-16.svg",
+        "svg24": "./ui/svg/ui-image-24.svg"
+      }
+    },
+    "2441:57": {
+      "type": "ui",
+      "name": "gif",
+      "hash": "nQu+2/p/9/nvURfT+ZQVjxsoF1SM5gCDZ/34lU6SH/U=",
+      "description": "gif, box, GIF, G, JIFF",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62092 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62091 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62090 } }
+      ],
+      "createdAt": "2024-06-24T21:43:08.636Z",
+      "lastUpdated": "2024-06-24T21:43:08.636Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-gif-12.svg",
+        "svg16": "./ui/svg/ui-gif-16.svg",
+        "svg24": "./ui/svg/ui-gif-24.svg"
       }
     }
   }

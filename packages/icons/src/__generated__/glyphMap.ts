@@ -1591,6 +1591,21 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-orderBook-12': '',
   'ui-orderBook-16': '',
   'ui-orderBook-24': '',
+  'ui-microphone-12': '',
+  'ui-microphone-16': '',
+  'ui-microphone-24': '',
+  'ui-calculator-12': '',
+  'ui-calculator-16': '',
+  'ui-calculator-24': '',
+  'ui-gif-12': '',
+  'ui-gif-16': '',
+  'ui-gif-24': '',
+  'ui-perpetualSwap-12': '',
+  'ui-perpetualSwap-16': '',
+  'ui-perpetualSwap-24': '',
+  'ui-image-12': '',
+  'ui-image-16': '',
+  'ui-image-24': '',
 };
 
 export default glyphMap;
