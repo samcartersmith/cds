@@ -119,6 +119,7 @@ export const CustomDimensions = () => (
     <NudgeCard {...exampleProps} minWidth={380} numberOfLines={1} width={380} />
     <NudgeCard {...exampleProps} maxHeight={150} maxWidth={250} numberOfLines={1} />
     <NudgeCard {...exampleProps} width="100%" />
+    <NudgeCard {...exampleProps} mediaPosition="left" width="100%" />
   </VStack>
 );
 

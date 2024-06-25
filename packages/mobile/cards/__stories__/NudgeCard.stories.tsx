@@ -101,6 +101,7 @@ const NudgeCardScreen = () => {
       <Example title="Nudge Card Custom Media">
         <VStack gap={2}>
           <NudgeCard {...exampleMediaProps} />
+          <NudgeCard {...exampleMediaProps} mediaPosition="left" />
           {!dismissed && <NudgeCard {...exampleMediaProps} onDismissPress={toggleOff} />}
           <NudgeCard {...compactMediaProps} />
           <NudgeCard {...compactMediaProps} onDismissPress={handleDismiss} />

@@ -100,7 +100,7 @@ export const NudgeCard = memo(
           alignItems="center"
           flexGrow={1}
           gap={2}
-          justifyContent="space-between"
+          justifyContent={mediaPosition === 'right' ? 'space-between' : 'flex-start'}
           {...spacingProps}
           {...props}
         >

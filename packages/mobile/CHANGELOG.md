@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.22.2 (6/25/2024 PST)
+
+#### 🐞 Fixes
+
+- NudgeCard: fix mediaPosition left content spacing. [[#3108](https://github.cbhq.net/frontend/cds/pull/3108)] [[DX-3906](https://jira.coinbase-corp.com/browse/DX-3906)]
+
 ## 6.22.1 (6/21/2024 PST)
 
 #### 🐞 Fixes
