@@ -10,7 +10,6 @@
  */
 const descriptionMap: Record<string, string[]> = {
   product: [
-    'coinbaseOneProduct',
     'productCoinbaseCard',
     'productPro',
     'productCompliance',
@@ -37,6 +36,7 @@ const descriptionMap: Record<string, string[]> = {
     'dataMarketplace',
     'nftProduct',
     'venturesProduct',
+    'coinbaseOneProduct',
     'base',
     'participateProduct',
     'delegateProduct',
@@ -45,7 +45,6 @@ const descriptionMap: Record<string, string[]> = {
     'borrowProduct',
   ],
   icons: [
-    'coinbaseOneProduct',
     'productCoinbaseCard',
     'productPro',
     'productCompliance',
@@ -72,6 +71,7 @@ const descriptionMap: Record<string, string[]> = {
     'dataMarketplace',
     'nftProduct',
     'venturesProduct',
+    'coinbaseOneProduct',
     'base',
     'participateProduct',
     'delegateProduct',
@@ -79,8 +79,9 @@ const descriptionMap: Record<string, string[]> = {
     'internationalExchangeProduct',
     'borrowProduct',
   ],
+  icon: ['productCoinbaseCard', 'productPro', 'productCompliance', 'productEarn', 'productWallet'],
+  small: ['productCoinbaseCard', 'productPro', 'productCompliance', 'productEarn', 'productWallet'],
   coinbase: [
-    'coinbaseOneProduct',
     'productCoinbaseCard',
     'productPro',
     'productCompliance',
@@ -88,11 +89,8 @@ const descriptionMap: Record<string, string[]> = {
     'productWallet',
     'signInProduct',
     'coinbase',
+    'coinbaseOneProduct',
   ],
-  one: ['coinbaseOneProduct'],
-  cb1: ['coinbaseOneProduct'],
-  icon: ['productCoinbaseCard', 'productPro', 'productCompliance', 'productEarn', 'productWallet'],
-  small: ['productCoinbaseCard', 'productPro', 'productCompliance', 'productEarn', 'productWallet'],
   '32x32': [
     'productCoinbaseCard',
     'productPro',
@@ -138,6 +136,8 @@ const descriptionMap: Record<string, string[]> = {
   marketplace: ['dataMarketplace'],
   nft: ['nftProduct'],
   ventures: ['venturesProduct'],
+  one: ['coinbaseOneProduct'],
+  cb1: ['coinbaseOneProduct'],
   base: ['base'],
   participate: ['participateProduct'],
   delegate: ['delegateProduct'],

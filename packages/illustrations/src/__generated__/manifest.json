@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-06-24T22:00:02.554Z",
+  "lastUpdated": "2024-06-27T17:35:43.263Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -21459,6 +21459,26 @@
         "svgJsDark": "./spotSquare/svgJs/dark/coinbaseLock-0.js",
         "pngLight": "./spotSquare/png/light/coinbaseLock-0.png",
         "pngDark": "./spotSquare/png/dark/coinbaseLock-0.png"
+      },
+      "version": 0
+    },
+    "9552:43": {
+      "type": "heroSquare",
+      "name": "oilAndGold",
+      "hash": "GZ3Fg2vwUVSbD/ySTMxWnf5IYKwV3+Eh1Wh19Ww77Cg=",
+      "width": 240,
+      "height": 240,
+      "description": "oil, gold, coin, coins, moon, more,",
+      "createdAt": "2024-06-27T17:25:17.991Z",
+      "lastUpdated": "2024-06-27T17:25:17.991Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/oilAndGold-0.svg",
+        "svgDark": "./heroSquare/svg/dark/oilAndGold-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/oilAndGold-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/oilAndGold-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/oilAndGold-0.js",
+        "pngLight": "./heroSquare/png/light/oilAndGold-0.png",
+        "pngDark": "./heroSquare/png/dark/oilAndGold-0.png"
       },
       "version": 0
     }

@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.10.0 (6/27/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 06/27/24). [[#3113](https://github.cbhq.net/frontend/cds/pull/3113)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- oilAndGold
+
 ## 3.9.0 (6/24/2024 PST)
 
 #### 🚀 Updates

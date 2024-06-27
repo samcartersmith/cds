@@ -236,6 +236,7 @@ const names: HeroSquareName[] = [
   'notificationsAlt',
   'notificationsAndUpdates',
   'offChain',
+  'oilAndGold',
   'onChain',
   'onTheList',
   'openEmail',

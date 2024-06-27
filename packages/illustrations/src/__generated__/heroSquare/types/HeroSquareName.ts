@@ -230,6 +230,7 @@ export type HeroSquareName =
   | 'notificationsAlt'
   | 'notificationsAndUpdates'
   | 'offChain'
+  | 'oilAndGold'
   | 'onChain'
   | 'onTheList'
   | 'openEmail'

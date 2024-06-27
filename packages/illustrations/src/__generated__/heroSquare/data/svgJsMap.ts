@@ -913,6 +913,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/offChain-0').content,
     dark: () => require('../svgJs/dark/offChain-0').content,
   },
+  oilAndGold: {
+    light: () => require('../svgJs/light/oilAndGold-0').content,
+    dark: () => require('../svgJs/dark/oilAndGold-0').content,
+  },
   onChain: {
     light: () => require('../svgJs/light/onChain-0').content,
     dark: () => require('../svgJs/dark/onChain-0').content,
