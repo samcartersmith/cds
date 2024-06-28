@@ -31,7 +31,7 @@ const expo: ExpoConfig = {
   runtimeVersion: {
     policy: 'sdkVersion',
   },
-  orientation: 'portrait' as const,
+  orientation: 'default' as const,
   icon: `./assets/${iconName}.png`,
 
   sdkVersion: getExpoSDKVersion(__dirname),

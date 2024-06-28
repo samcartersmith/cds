@@ -82,6 +82,7 @@ export * from './ProgressContainerWithButtonsProps';
 export * from './PulseBaseProps';
 export * from './RadioGroupBaseProps';
 export * from './React';
+export * from './Rect';
 export * from './RemoteImageBaseProps';
 export * from './RemoteImageGroupBaseProps';
 export * from './Responsive';

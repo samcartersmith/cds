@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.7.0 (6/27/2024 PST)
+
+#### 🚀 Updates
+
+- Add SegmentedTabs component. [[#3080](https://github.cbhq.net/frontend/cds/pull/3080)] [[DX-3558](https://jira.coinbase-corp.com/browse/DX-3558)]
+
 ## 2.6.0 (5/28/2024 PST)
 
 #### 🚀 Updates

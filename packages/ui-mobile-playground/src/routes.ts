@@ -385,6 +385,10 @@ export const routes = [
       require('@cbhq/cds-mobile/section-header/__stories__/SectionHeader.stories').default,
   },
   {
+    key: 'SegmentedTabs',
+    getComponent: () => require('@cbhq/cds-mobile/tabs/__stories__/SegmentedTabs.stories').default,
+  },
+  {
     key: 'Select',
     getComponent: () => require('@cbhq/cds-mobile/controls/__stories__/Select.stories').default,
   },

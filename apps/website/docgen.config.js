@@ -175,6 +175,7 @@ module.exports = {
     'tables/TableHeader',
     'tables/TableRow',
     'tables/TableSection',
+    'tabs/SegmentedTabs',
     'tabs/TabIndicator',
     'tabs/TabLabel',
     'tabs/TabNavigation',

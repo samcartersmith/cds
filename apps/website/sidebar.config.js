@@ -645,9 +645,23 @@ const sidebars = {
           customProps: { tag: 'new' },
         },
         {
-          type: 'doc',
-          id: 'components/controls/SegmentedControl/segmented-control',
+          type: 'category',
           label: 'Segmented Control',
+          customProps: { tag: 'new' },
+          items: [
+            {
+              type: 'doc',
+              id: 'components/controls/SegmentedControl/segmented-control',
+              label: 'Segmented Control',
+              customProps: { tag: 'deprecated' },
+            },
+            {
+              type: 'doc',
+              id: 'components/tabs/SegmentedTabs/segmented-tabs',
+              label: 'Segmented Tabs (Alpha)',
+              customProps: { tag: 'new' },
+            },
+          ],
         },
         {
           type: 'category',
