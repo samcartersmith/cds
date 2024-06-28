@@ -16,3 +16,4 @@ Full documentation for the go/cds website can be found in our [docs](https://git
 | `yarn nx run website:generateAdoptionAndImpactReports` | Generate adoption and impact reports    |
 | `yarn nx run website:adoption-snowflake-upload`        | Upload adoption data to Snowflake       |
 | `yarn nx run website:podium`                           | Generate product component tracker data |
+| `yarn nx run website:a11y-lint-tracker`                | Generate a11y lint tracker data         |

@@ -1,0 +1,17 @@
+[
+  {
+    "filePath": "./shared/src/components/FlexibleCurrencyInput/FlexibleCurrencyInput.tsx",
+    "lineNumber": 357,
+    "rule": "eslint-disable-next-line jsx-a11y/no-autofocus"
+  },
+  {
+    "filePath": "./marketing/src/components/SearchableDropdown/SearchInputPill.tsx",
+    "lineNumber": 56,
+    "rule": "eslint-disable-next-line jsx-a11y/no-autofocus */"
+  },
+  {
+    "filePath": "./marketing/src/pages/AssetPage/components/AssetBuyPreview/components/CurrencyInput.tsx",
+    "lineNumber": 35,
+    "rule": "eslint-disable-next-line jsx-a11y/no-autofocus"
+  }
+]

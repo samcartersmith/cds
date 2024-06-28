@@ -90,6 +90,12 @@
       "options": {
         "script": "../../libs/cds-tasks/podium/impl.ts"
       }
+    },
+    "a11y-lint-tracker": {
+      "executor": "@cbhq/mono-tasks:run-script",
+      "options": {
+        "script": "../../libs/cds-tasks/a11y-lint-tracker/impl.ts"
+      }
     }
   }
 }

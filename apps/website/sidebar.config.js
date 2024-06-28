@@ -1116,6 +1116,11 @@ const sidebars = {
               label: 'CDS Web Components A11y Report',
             },
             { type: 'doc', id: 'a11y-tracker/a11y-scorecards', label: 'A11y Scorecards' },
+            {
+              type: 'doc',
+              label: 'A11y Lint Tracker',
+              id: 'a11y-tracker/a11y-lint-tracker',
+            },
           ],
         },
         {

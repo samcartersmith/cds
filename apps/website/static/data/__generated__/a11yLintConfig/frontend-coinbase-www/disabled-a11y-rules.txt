@@ -1,0 +1,3 @@
+./shared/src/components/FlexibleCurrencyInput/FlexibleCurrencyInput.tsx:357:          // eslint-disable-next-line jsx-a11y/no-autofocus
+./marketing/src/components/SearchableDropdown/SearchInputPill.tsx:56:          /* eslint-disable-next-line jsx-a11y/no-autofocus */
+./marketing/src/pages/AssetPage/components/AssetBuyPreview/components/CurrencyInput.tsx:35:          // eslint-disable-next-line jsx-a11y/no-autofocus

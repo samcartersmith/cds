@@ -1,0 +1,257 @@
+[
+  {
+    "filePath": "./libs/react-native-core/components/UI/AlertTray.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/utils/performance/components/Monitor.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable react-native-a11y/has-accessibility-hint */"
+  },
+  {
+    "filePath": "./src/packages/app/src/product/cb1/components/SubscriptionPaymentMethodsModal/AppliedPromoCode.tsx",
+    "lineNumber": 56,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Home/components/TopMovers/TopMoversList.tsx",
+    "lineNumber": 215,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Home/components/WatchList/WatchlistDisclaimer.tsx",
+    "lineNumber": 63,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Asset/StableAssetScreen/components/StableAssetHero.tsx",
+    "lineNumber": 167,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Trade/Sell/SellInput/components/SellNavHeader/SellOrderTypeTrigger/SellOrderTypeTrigger.tsx",
+    "lineNumber": 117,
+    "rule": "eslint-disable-next-line react-native-a11y/has-accessibility-hint"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Trade/Swap/SwapInput/components/SwapNavHeader/SwapOrderTypeTrigger/SwapOrderTypeTrigger.tsx",
+    "lineNumber": 182,
+    "rule": "eslint-disable-next-line react-native-a11y/has-accessibility-hint"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Trade/components/Input/InputCTAUtility/ErrorUtility/ErrorUtilityMessage/ErrorUtilityMessage.tsx",
+    "lineNumber": 37,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Trade/Buy/BuyInput/components/BuyNavHeader/BuyOrderTypeTrigger/BuyOrderTypeTrigger.tsx",
+    "lineNumber": 158,
+    "rule": "eslint-disable-next-line react-native-a11y/has-accessibility-hint"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/ExploreTab/screens/Explore/TabContent/Crypto/TopAssets.tsx",
+    "lineNumber": 195,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/ExploreTab/screens/Explore/TabContent/Crypto/TopMovers.tsx",
+    "lineNumber": 180,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/SimpleTrade/components/SimpleTradeInputError/SimpleTradeInputError.tsx",
+    "lineNumber": 45,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid */}"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/SimpleTrade/components/DustTransactionBanner.tsx",
+    "lineNumber": 118,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid */}"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/AdvancedTrade/Futures/FuturesOrderForm/IntradayLeverageIcon/components/IntradayLeverageDrawer.tsx",
+    "lineNumber": 135,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/AdvancedTrade/Futures/FuturesOrderForm/IntradayLeverageIcon/components/IntradayLeverageDrawer.tsx",
+    "lineNumber": 149,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/AdvancedTrade/Futures/Banners/FuturesAccountStatusErrorViewBanner/FuturesAccountStatusErrorViewBanner.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/AdvancedTrade/screens/Trade/components/TradeFormHeader.tsx",
+    "lineNumber": 74,
+    "rule": "eslint-disable-next-line react-native-a11y/has-accessibility-hint */}"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/AdvancedTrade/screens/Liquidation/components/IntradayLeverage/IntradayLeverageLiquidationDetails.tsx",
+    "lineNumber": 94,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/AdvancedTrade/screens/Liquidation/hooks/useStatusLiquidationDetailsContent.tsx",
+    "lineNumber": 50,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/AddPaymentMethod/PIX/components/PIXDepositInformation/PIXDepositInformationFooter.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable react-native-a11y/has-accessibility-hint */"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Send/SendBlockedScreen.tsx",
+    "lineNumber": 99,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Send/SendRecipientTypeScreen.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Defi/DAppWallet/components/DappWalletPreviewTray/PendingTxsBanner.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Defi/DAppDetail/Ratings.tsx",
+    "lineNumber": 344,
+    "rule": "eslint-disable-next-line react-native-a11y/has-valid-accessibility-actions"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/WatchlistRecommendations/WatchlistRecommendationsAssetList.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable react-native-a11y/has-accessibility-hint */"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/WatchlistRecommendations/WatchlistRecommendationsAssetList.tsx",
+    "lineNumber": 259,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid */}"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Notifications/components/actions/NotificationTradeTrayDeprecated.tsx",
+    "lineNumber": 132,
+    "rule": "eslint-disable-next-line react-native-a11y/has-accessibility-hint */}"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Notifications/components/actions/NotificationTradeTray.tsx",
+    "lineNumber": 161,
+    "rule": "eslint-disable-next-line react-native-a11y/has-accessibility-hint */}"
+  },
+  {
+    "filePath": "./src/packages/app/src/screens/Stablecoin/GenericCashUpsellScreen.tsx",
+    "lineNumber": 118,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/LocaleSwitchTray.tsx",
+    "lineNumber": 161,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid */}"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/Section/Section.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/StatusAlertCard.tsx",
+    "lineNumber": 81,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/StatusAlertCard.tsx",
+    "lineNumber": 87,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/RewardPromotion/RewardPromotionForSource.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/RewardsCard/RewardsStatus.tsx",
+    "lineNumber": 109,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/SystemAlert/components/SystemAlertBanner.tsx",
+    "lineNumber": 34,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/SystemAlert/components/SystemAlertBanner.tsx",
+    "lineNumber": 43,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/Trade/TradeBuyLimitInputError/components/SimpleTradeErrorMessage/SimpleTradeErrorMessage.tsx",
+    "lineNumber": 28,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid */}"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/Trade/TradeBuyMaximumError/TradeBuyMaximumError.tsx",
+    "lineNumber": 59,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/Trade/TradeErrorMessage.tsx",
+    "lineNumber": 107,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/Trade/TradeErrorMessage.tsx",
+    "lineNumber": 125,
+    "rule": "eslint-disable-next-line @cbhq/react-require-use-memo, jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/Bank/BankAccountHelpLink.tsx",
+    "lineNumber": 22,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/TradePromoCode/cells/components/ApplyTradePromoCodeButton.tsx",
+    "lineNumber": 25,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/ButtonsFooter.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable react-native-a11y/has-accessibility-hint */"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/Transfer/Upsells/FirstYieldUpsell.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/Transfer/DisclosureCell.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/SimpleTrade/BasePreview/components/PreviewBody/ActionableSection/PromoRow/PromoRow.tsx",
+    "lineNumber": 244,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/AssetCategories/AssetCategoryMoreInfo/AssetCategoryMoreInfo.tsx",
+    "lineNumber": 1,
+    "rule": "eslint-disable jsx-a11y/anchor-is-valid */"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/CloseAccountTray.tsx",
+    "lineNumber": 134,
+    "rule": "eslint-disable-next-line jsx-a11y/anchor-is-valid"
+  },
+  {
+    "filePath": "./src/packages/app/src/components/CurrencyIcon.tsx",
+    "lineNumber": 49,
+    "rule": "eslint-disable-next-line react-native-a11y/has-accessibility-hint"
+  }
+]
