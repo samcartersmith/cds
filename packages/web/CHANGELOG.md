@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.23.2 (7/9/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix testID on modal header. [[#3123](https://github.cbhq.net/frontend/cds/pull/3123)] [[DX-3313](https://jira.coinbase-corp.com/browse/DX-3313)]
+
 ## 6.23.1 (7/9/2024 PST)
 
 #### 🐞 Fixes

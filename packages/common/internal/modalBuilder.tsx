@@ -94,6 +94,7 @@ export function modalBuilder({
             backAccessibilityLabel="Back"
             closeAccessibilityLabel="Close"
             onBackButtonPress={enableBackButton ? toggleOff : undefined}
+            testID="Basic Modal Test ID"
             title="Basic Modal"
           />
           <ModalBody>{children}</ModalBody>

@@ -20,6 +20,7 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
   backAccessibilityHint,
   closeAccessibilityLabel,
   closeAccessibilityHint,
+  testID,
 }) => {
   const height = useInteractableHeight(true);
   const { onRequestClose, accessibilityLabelledBy, hideCloseButton, hideDividers } =
@@ -36,6 +37,7 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
       borderedBottom={!hideDividers}
       spacingHorizontal={3}
       spacingVertical={2}
+      testID={testID}
     >
       <Box>
         {onBackButtonPress ? (

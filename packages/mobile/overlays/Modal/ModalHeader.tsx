@@ -19,6 +19,7 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
   backAccessibilityHint,
   closeAccessibilityLabel,
   closeAccessibilityHint,
+  testID,
 }) => {
   const { onRequestClose, hideCloseButton, hideDividers } = useModalParent();
 
@@ -28,6 +29,7 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
       borderedBottom={!hideDividers}
       spacingHorizontal={3}
       spacingVertical={2}
+      testID={testID}
     >
       <Box flexBasis={0} flexGrow={1}>
         {!!onBackButtonPress && (
