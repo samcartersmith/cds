@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useCallback, useMemo } from 'react';
+import React, { forwardRef, memo, ReactNode, useCallback, useMemo } from 'react';
 import { css } from 'linaria';
 import { SelectBaseProps, useToggler } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
@@ -16,9 +16,13 @@ import { ChipProps } from './ChipProps';
 export type SelectChipProps = {
   /** Indicates that the control is being used to manipulate data elsewhere */
   active?: boolean;
-} & Omit<ChipProps, 'inverted' | 'children' | 'onBlur' | 'noScaleOnPress'> &
+  /**
+   * @deprecated The `children` prop is now deprecated and will be removed in the next major version (v7).
+   */
+  children?: ReactNode;
+} & Omit<ChipProps, 'inverted' | 'children' | 'onBlur' | 'noScaleOnPress' | 'content'> &
   Pick<SelectBaseProps, 'onChange' | 'valueLabel' | 'placeholder' | 'value'> &
-  Omit<DropdownProps, 'onChange'>;
+  Omit<DropdownProps, 'onChange' | 'children'>;
 
 const defaultStyles = css`
   border-color: var(--border-color-unfocused);

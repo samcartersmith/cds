@@ -82,7 +82,6 @@ const SelectChipDropdown = () => {
     <HStack justifyContent="flex-end" width="100%">
       <SelectChip
         active={value !== undefined}
-        // @ts-expect-error Existing error, tracked DX-3303
         content={content}
         minWidth={200}
         onChange={handleOnChange}

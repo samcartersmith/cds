@@ -40,7 +40,6 @@ const ExampleSelectChip = ({
   );
   return (
     <SelectChip
-      // @ts-expect-error TODO: why is this happening?!
       content={content}
       onChange={handleValueChange}
       placeholder="Select an option"

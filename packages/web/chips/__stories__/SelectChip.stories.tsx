@@ -31,7 +31,6 @@ const ExampleSelectChip = ({
   return (
     <SelectChip
       active={value !== undefined}
-      // @ts-expect-error TODO: why is this happening?!
       content={content}
       onChange={setValue}
       value={value}
@@ -106,7 +105,6 @@ export const ObjectValueModel = () => {
   return (
     <SelectChip
       active={value !== undefined}
-      // @ts-expect-error TODO: why is this happening?!
       content={content}
       end={<Icon color="foreground" name={value.iconName} size="s" />}
       // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop

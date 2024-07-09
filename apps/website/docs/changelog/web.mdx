@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.23.1 (7/9/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix: SelectChip content and children prop type. [[#3088](https://github.cbhq.net/frontend/cds/pull/3088)] [[DX-3303](https://jira.coinbase-corp.com/browse/DX-3303)]
+
 ## 6.23.0 (6/27/2024 PST)
 
 #### 🚀 Updates
