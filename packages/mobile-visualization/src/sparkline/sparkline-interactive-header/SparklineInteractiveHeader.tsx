@@ -66,10 +66,10 @@ const SparklineInteractiveHeaderStable = memo(
       }, []);
 
       const updateTitle = useCallback(
-        (title: string) => {
+        (title: React.ReactNode) => {
           const prevTitle = valuesRef.current?.title;
 
-          if (prevTitle !== title) {
+          if (prevTitle !== title && typeof title === 'string') {
             // BAD: We only disabled this lint rule to enable eslint upgrade after this component was implemented. These apis should never be used.
             // Usage in this component are known making this a high risk component. Contact team for more information.
 
@@ -159,15 +159,19 @@ const SparklineInteractiveHeaderStable = memo(
       const title = (
         <>
           <View>
-            <TextInput
-              ref={titleRef}
-              defaultValue={defaultTitle}
-              editable={false}
-              pointerEvents="none"
-              style={styles.title(defaultTitle)}
-              testID="SparklineInteractiveHeaderTitle"
-              {...fontScaleProps}
-            />
+            {typeof defaultTitle === 'string' ? (
+              <TextInput
+                ref={titleRef}
+                defaultValue={defaultTitle}
+                editable={false}
+                pointerEvents="none"
+                style={styles.title(defaultTitle)}
+                testID="SparklineInteractiveHeaderTitle"
+                {...fontScaleProps}
+              />
+            ) : (
+              defaultTitle
+            )}
           </View>
           {!!defaultSubHead && (
             <HStack accessible alignItems="center" spacing={0}>

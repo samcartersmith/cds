@@ -4,9 +4,9 @@ import { SharedProps } from './SharedProps';
 
 export type SparklineInteractiveHeaderProps = {
   /**
-   * Default title, changing this prop has no effect once the default is rendered.
+   * Default title, changing this prop has no effect once the default is rendered. If you use a ReactNode that is not a string, then you cannot use the text based label that supports updates.
    */
-  defaultTitle: string;
+  defaultTitle: ReactNode;
 
   /**
    * Default label, changing this prop has no effect once the default is rendered.
@@ -83,7 +83,7 @@ export type SparklineInteractiveHeaderValues = {
   /**
    * Main content of header, this is usually the price
    */
-  title?: string;
+  title?: ReactNode;
 
   /**
    * Provides additional information about the title, such as a price change

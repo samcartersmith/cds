@@ -168,7 +168,7 @@ type SparklineInteractiveBuilderProps = {
   disableScrubbing?: boolean;
 };
 
-function numToLocaleString(num: number) {
+export function numToLocaleString(num: number) {
   return num.toLocaleString('en-US', {
     maximumFractionDigits: 2,
   });
@@ -244,7 +244,7 @@ export const sparklineInteractiveBuilder = ({
   });
 };
 
-function generateSubHead(
+export function generateSubHead(
   point: ChartDataPoint,
   period: SparklinePeriod,
   sparklineInteractiveData: Record<SparklinePeriod, ChartData>,

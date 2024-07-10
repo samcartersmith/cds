@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.24.0 (7/10/2024 PST)
+
+#### 🚀 Updates
+
+- Update SparklineInteractiveHeader defaultTitle prop to ReactNode. [[#3112](https://github.cbhq.net/frontend/cds/pull/3112)] [[DX-3829](https://jira.coinbase-corp.com/browse/DX-3829)]
+
 ## 6.23.2 (7/9/2024 PST)
 
 #### 🐞 Fixes

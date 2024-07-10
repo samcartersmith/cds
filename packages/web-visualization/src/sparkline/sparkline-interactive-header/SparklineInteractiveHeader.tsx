@@ -46,10 +46,10 @@ const SparklineInteractiveHeaderStable = memo(
         }
       }, []);
 
-      const updateTitle = useCallback((title: string) => {
+      const updateTitle = useCallback((title: React.ReactNode) => {
         const prevTitle = valuesRef.current?.title;
 
-        if (prevTitle !== title) {
+        if (prevTitle !== title && typeof title === 'string') {
           if (titleRef.current) {
             titleRef.current.innerText = title;
           }
@@ -171,9 +171,13 @@ const SparklineInteractiveHeaderStable = memo(
       const TextTitle = createText(compact ? 'title1' : 'display3');
       const title = (
         <VStack alignItems="baseline" spacing={0}>
-          <TextTitle tabularNumbers as="div" color="foreground" spacingEnd={1}>
-            <span ref={titleRef}>{defaultTitle}</span>
-          </TextTitle>
+          {typeof defaultTitle === 'string' ? (
+            <TextTitle tabularNumbers as="div" color="foreground" spacingEnd={1}>
+              <span ref={titleRef}>{defaultTitle}</span>
+            </TextTitle>
+          ) : (
+            defaultTitle
+          )}
           {subHead}
         </VStack>
       );
