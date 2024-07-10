@@ -40,6 +40,7 @@ const paymentsOnRampGit = 'payments/onramp-widget';
 const paymentsCbPayGit = 'payments/cbpay-rn-sdk';
 const helpCenterGit = 'data/helpcenter-web';
 const cbChatUIGit = 'data/cb-chat-ui';
+const finHubUIGit = 'finhub/finhub-ui';
 
 const assethubConfig = {
   root: path.join(tempDir, assethubGit),
@@ -1796,11 +1797,10 @@ export const config: AdoptersConfig[] = [
         projectGitPath: 'apps/admin',
       },
       {
-        root: path.join(tempDir, frontendWebGit, 'apps/abor'),
-        github: frontendWebGit,
+        root: path.join(tempDir, finHubUIGit, 'apps/abor'),
+        github: finHubUIGit,
         id: 'abor',
         label: 'Abor',
-        projectTsAliases: [':abor'],
         type: 'doc',
         projectGitPath: 'apps/abor',
       },
