@@ -23,7 +23,7 @@
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/app-switcher",
         "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
-        "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
       }
     },
     {
@@ -44,6 +44,9 @@
           },
           "start": {
             "@acc/components/Layout/Header/Header.tsx": 1
+          },
+          "isUserSwitcher": {
+            "@acc/components/Layout/Header/Header.tsx": 1
           }
         }
       },
@@ -51,14 +54,14 @@
         "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],
   "dependencies": {
     "dependencies": {
       "@cbhq/app-switcher": "^2.0.0",
-      "@cbhq/identity-navigation": "^5.0.0"
+      "@cbhq/identity-navigation": "^7.1.1"
     },
     "devDependencies": {},
     "peerDependencies": {},

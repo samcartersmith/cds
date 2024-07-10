@@ -35,6 +35,8 @@ The adoption tracker has three key components:
 
 ### Quick Start Commands
 
+Note: Be sure to be on the full tunnel for VPN. Split tunnel may cause errors.
+
 ```bash
 # Generate project JSON and summary files
 yarn nx run website:adoption

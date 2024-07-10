@@ -3,12 +3,12 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 6,
+      "totalInstances": 5,
       "totalCallSites": 3,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "callSites": {
         "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
-        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 3,
+        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 2,
         "@app/components/LiveTicker/LiveTicker.tsx": 1
       },
       "propsWithCallSites": {
@@ -17,14 +17,13 @@
         },
         "spacingBottom": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 2
-        },
-        "testID": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         },
+        "testID": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2
+        },
         "spacingHorizontal": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 3
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 2
         },
         "width": {
           "@app/components/LiveTicker/LiveTicker.tsx": 1
@@ -122,18 +121,6 @@
         },
         "alignSelf": {
           "@app/components/LiveTicker/LiveTicker.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextLegal",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextLegal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextLegal",
-      "propsWithCallSites": {
-        "color": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }
     },
@@ -849,7 +836,7 @@
     },
     {
       "name": "InstrumentedSharedBannerEmptyStateUI",
-      "sourceFile": "@app/components/EmptyState/SharedBannerEmptyStateUI/InstrumentedSharedBannerEmptyStateUI",
+      "sourceFile": "@app/components/GracefulDegradation/SharedComponents/SharedBannerEmptyStateUI/InstrumentedSharedBannerEmptyStateUI",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -863,7 +850,7 @@
     },
     {
       "name": "SharedBannerEmptyStateUI",
-      "sourceFile": "@app/components/EmptyState/SharedBannerEmptyStateUI",
+      "sourceFile": "@app/components/GracefulDegradation/SharedComponents/SharedBannerEmptyStateUI",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -1290,12 +1277,15 @@
       }
     },
     {
-      "name": "SortableTableRow",
-      "sourceFile": "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx",
+      "name": "RowRAV4",
+      "sourceFile": "views/Home/components/HomeWatchlistTable/RowRAV4",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "index": {
+        "viewerAssetRef": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx": 1
+        },
+        "queryRef": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx": 1
         }
       }
@@ -1310,6 +1300,17 @@
           "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx": 1
         },
         "queryRef": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SortableTableRow",
+      "sourceFile": "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "index": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistRow.tsx": 1
         }
       }

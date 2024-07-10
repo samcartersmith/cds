@@ -100,7 +100,7 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^6.21.2",
@@ -131,6 +131,9 @@
           },
           "start": {
             "@ubo/settings/components/Layout/Header/Header.tsx": 1
+          },
+          "isUserSwitcher": {
+            "@ubo/settings/components/Layout/Header/Header.tsx": 1
           }
         }
       },
@@ -150,6 +153,9 @@
             "@acc/components/Layout/Header/Header.tsx": 1
           },
           "start": {
+            "@acc/components/Layout/Header/Header.tsx": 1
+          },
+          "isUserSwitcher": {
             "@acc/components/Layout/Header/Header.tsx": 1
           }
         }
@@ -212,6 +218,9 @@
           "navigate": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
             "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "spacingHorizontal": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
           }
         }
       },
@@ -412,7 +421,7 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^6.21.2",

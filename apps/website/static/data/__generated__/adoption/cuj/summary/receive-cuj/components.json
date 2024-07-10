@@ -58,6 +58,11 @@
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
         },
+        "spacingHorizontal": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
+        },
         "gap": {
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
@@ -78,10 +83,6 @@
         },
         "spacingBottom": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
-          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
-        },
-        "spacingHorizontal": {
-          "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 2,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
         },
         "height": {
@@ -659,10 +660,6 @@
         },
         {
           "aliasPath": "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx",
-          "callSites": []
-        },
-        {
-          "aliasPath": "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx",
           "callSites": []
         }
       ],
@@ -1263,39 +1260,6 @@
       }
     },
     {
-      "name": "FlatList",
-      "sourceFile": "@components/UI/FlatList",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@components/UI/FlatList",
-      "propsWithCallSites": {
-        "onScrollToIndexFailed": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "data": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "ref": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "renderItem": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "onScrollBeginDrag": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "contentContainerStyle": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "ListEmptyComponent": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
-        "ListHeaderComponent": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        }
-      }
-    },
-    {
       "name": "FullScreenLoader",
       "sourceFile": "@components/UI/FullScreenLoader",
       "totalInstances": 1,
@@ -1303,6 +1267,9 @@
       "presentationalLibrary": "@components/UI/FullScreenLoader",
       "propsWithCallSites": {
         "loading": {
+          "@app/screens/Receive/ReceiveScreen.tsx": 1
+        },
+        "instrumentationId": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1
         }
       }
@@ -1409,6 +1376,26 @@
       "totalCallSites": 1
     },
     {
+      "name": "List",
+      "sourceFile": "@app/components/List",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "ref": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "onScrollBeginDrag": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "ListEmptyComponent": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "ListHeaderComponent": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Screen",
       "sourceFile": "@app/components/Screen",
       "totalInstances": 6,
@@ -1427,8 +1414,10 @@
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1
         },
-        "spacingBottom": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        "noSpacing": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
+          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
+          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
         },
         "navHeader": {
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
@@ -1451,10 +1440,6 @@
         },
         "floatingFooter": {
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
-          "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
-        },
-        "noSpacing": {
-          "@app/screens/Receive/Requests/ReceiverSendConfirmationScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 1
         }
       }
@@ -2014,7 +1999,7 @@
         "networkSlug": {
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
         },
-        "accountId": {
+        "platformName": {
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
         },
         "currency": {

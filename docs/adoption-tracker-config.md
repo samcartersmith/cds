@@ -12,7 +12,8 @@ config - `apps/website/scripts/adoption/config.ts`
 
 ### Note
 
-After updating the configuration, ensure to execute the following commands:
+After updating the configuration, ensure to execute the following commands.
+Be sure to be on the full tunnel for VPN. Split tunnel may cause errors.
 
 - `yarn nx run website:adoption` to refresh the adoption data
 - `yarn nx run website:start` to launch the website.

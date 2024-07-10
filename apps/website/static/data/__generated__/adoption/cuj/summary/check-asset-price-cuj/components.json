@@ -67,7 +67,7 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 12,
+      "totalInstances": 11,
       "totalCallSites": 5,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "aliasedCdsComponents": [
@@ -79,21 +79,13 @@
         }
       ],
       "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 5,
+        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 4,
         "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
         "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchResults.tsx": 1,
         "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
         "@app/screens/Asset/components/AssetScreenBody.tsx": 4
       },
       "propsWithCallSites": {
-        "spacingHorizontal": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 1
-        },
-        "spacingTop": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 1
-        },
         "flexGrow": {
           "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
           "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchResults.tsx": 1
@@ -104,7 +96,13 @@
         "testID": {
           "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchResults.tsx": 1
         },
+        "spacingTop": {
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 1
+        },
         "spacingBottom": {
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 1
+        },
+        "spacingHorizontal": {
           "@app/screens/Asset/components/AssetScreenBody.tsx": 1
         },
         "gap": {
@@ -261,80 +259,22 @@
       }
     },
     {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 7,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "views/Home/HomeFeedContentDesktop.tsx"
-        }
-      ],
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-web/layout/VStack",
+      "totalInstances": 19,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/layout/VStack",
       "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2,
-        "views/AssetPage/components/AssetOverview.tsx": 1,
-        "views/AssetPage/components/AssetOverviewPriceChart.tsx": 2,
-        "views/AssetPage/components/TopAssets/TopAssets.tsx": 1,
-        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        "views/Home/HomeFeedContentDesktop.tsx": 3,
+        "views/AssetPage/components/AssetOverview.tsx": 13,
+        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 3
       },
       "propsWithCallSites": {
         "maxHeight": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         },
-        "style": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1
-        },
         "width": {
-          "views/AssetPage/components/AssetOverview.tsx": 1,
-          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
-        },
-        "flexShrink": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
-        },
-        "flexDirection": {
-          "views/AssetPage/components/AssetOverview.tsx": 1,
-          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
-        },
-        "borderRadius": {
-          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
-        },
-        "elevation": {
-          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
-        },
-        "overflow": {
-          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
-        },
-        "background": {
-          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
-        },
-        "borderedBottom": {
-          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
-        },
-        "spacingHorizontal": {
-          "views/AssetPage/components/TopAssets/TopAssets.tsx": 1
-        },
-        "spacingBottom": {
-          "views/AssetPage/components/TopAssets/TopAssets.tsx": 1,
-          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "VStack",
-      "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 18,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/layout/VStack",
-      "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2,
-        "views/AssetPage/components/AssetOverview.tsx": 13,
-        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 3
-      },
-      "propsWithCallSites": {
-        "width": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/Home/HomeFeedContentDesktop.tsx": 3,
           "views/AssetPage/components/AssetOverview.tsx": 2,
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 2
         },
@@ -393,6 +333,67 @@
         "vertical": {
           "views/Home/HomeFeedContentDesktop.tsx": 1,
           "views/AssetPage/components/AssetOverview.tsx": 9
+        }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 6,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "views/Home/HomeFeedContentDesktop.tsx"
+        }
+      ],
+      "callSites": {
+        "views/Home/HomeFeedContentDesktop.tsx": 1,
+        "views/AssetPage/components/AssetOverview.tsx": 1,
+        "views/AssetPage/components/AssetOverviewPriceChart.tsx": 2,
+        "views/AssetPage/components/TopAssets/TopAssets.tsx": 1,
+        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+      },
+      "propsWithCallSites": {
+        "style": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
+        "width": {
+          "views/AssetPage/components/AssetOverview.tsx": 1,
+          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
+        },
+        "flexShrink": {
+          "views/AssetPage/components/AssetOverview.tsx": 1
+        },
+        "flexDirection": {
+          "views/AssetPage/components/AssetOverview.tsx": 1,
+          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
+        },
+        "borderRadius": {
+          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
+        },
+        "elevation": {
+          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
+        },
+        "overflow": {
+          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
+        },
+        "background": {
+          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
+        },
+        "borderedBottom": {
+          "views/AssetPage/components/AssetOverviewPriceChart.tsx": 1
+        },
+        "spacingHorizontal": {
+          "views/AssetPage/components/TopAssets/TopAssets.tsx": 1
+        },
+        "spacingTop": {
+          "views/AssetPage/components/TopAssets/TopAssets.tsx": 1
+        },
+        "spacingBottom": {
+          "views/AssetPage/components/TopAssets/TopAssets.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }
     },
@@ -535,6 +536,9 @@
           "views/AssetPage/components/TopAssets/TopAssets.tsx": 1
         },
         "onPress": {
+          "views/AssetPage/components/TopAssets/TopAssets.tsx": 1
+        },
+        "compact": {
           "views/AssetPage/components/TopAssets/TopAssets.tsx": 1
         }
       }
@@ -995,43 +999,23 @@
       }
     },
     {
-      "name": "LegalDisclaimer",
-      "sourceFile": "@app/screens/Asset/components/LegalDisclaimer",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-        "@app/screens/Asset/components/AssetScreenBody.tsx": 2
-      },
-      "propsWithCallSites": {
-        "disclaimer": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 2
-        }
-      }
-    },
-    {
       "name": "FinPromFooter",
       "sourceFile": "@app/components/FinPromFooter/FinPromFooter",
-      "totalInstances": 4,
+      "totalInstances": 3,
       "totalCallSites": 3,
       "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 2,
+        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
         "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
         "@app/screens/Asset/components/AssetScreenBody.tsx": 1
       },
       "propsWithCallSites": {
         "surface": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 2,
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
           "@app/screens/Asset/components/AssetScreenBody.tsx": 1
         },
         "hasHorizontalSpacing": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
-        },
-        "isAssetTradable": {
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 1
         },
         "assetUuid": {
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
@@ -1186,7 +1170,7 @@
     },
     {
       "name": "SharedGlobalErrorBanner",
-      "sourceFile": "@app/components/EmptyState/SharedGlobalErrorBanner",
+      "sourceFile": "@app/components/GracefulDegradation/SharedComponents/SharedGlobalErrorBanner",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -1802,6 +1786,44 @@
       "totalCallSites": 1
     },
     {
+      "name": "List",
+      "sourceFile": "@app/components/List",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "scrollComponent": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "estimatedItemSize": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "drawDistance": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "refreshControl": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "ListEmptyComponent": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "onScroll": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "onScrollBeginDrag": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "onEndReached": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "ListHeaderComponent": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "ListFooterComponent": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        }
+      }
+    },
+    {
       "name": "UniversalSearchResultsFallback",
       "sourceFile": "@app/screens/UniversalSearch/components/UniversalSearchFallback/UniversalSearchResultsFallback",
       "totalInstances": 1,
@@ -2396,6 +2418,20 @@
       }
     },
     {
+      "name": "LegalDisclaimer",
+      "sourceFile": "@app/screens/Asset/components/LegalDisclaimer",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "@app/screens/Asset/components/AssetScreenBody.tsx": 2
+      },
+      "propsWithCallSites": {
+        "disclaimer": {
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 2
+        }
+      }
+    },
+    {
       "name": "DynamicAssetOverview",
       "sourceFile": "@app/screens/Asset/components/DynamicAssetOverview/DynamicAssetOverview",
       "totalInstances": 1,
@@ -2503,20 +2539,28 @@
     {
       "name": "TopMovers",
       "sourceFile": "views/Home/components/TopMovers",
-      "totalInstances": 2,
-      "totalCallSites": 1,
+      "totalInstances": 3,
+      "totalCallSites": 2,
       "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2
+        "views/Home/HomeFeedContentDesktop.tsx": 2,
+        "views/Home/HomeFeedContentMobile.tsx": 1
       },
       "propsWithCallSites": {
         "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2
+          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/Home/HomeFeedContentMobile.tsx": 1
         },
         "borderedBottom": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
         },
         "showCarousel": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2
+          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "entryPoint": {
+          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/Home/HomeFeedContentMobile.tsx": 1
         }
       }
     },
@@ -2629,7 +2673,7 @@
     },
     {
       "name": "SharedGlobalPageLevelErrorBanner",
-      "sourceFile": "components/ErrorBanner/SharedGlobalPageLevelErrorBanner",
+      "sourceFile": "components/GracefulDegradation/SharedComponents/SharedGlobalPageLevelErrorBanner",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
@@ -2694,6 +2738,9 @@
           "views/Home/HomeFeedContentDesktop.tsx": 1
         },
         "fallbackLayoutConfig": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
+        "spacingBottom": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
@@ -2846,7 +2893,7 @@
     },
     {
       "name": "InstrumentedAssetStatsErrorBanner",
-      "sourceFile": "components/ErrorBanner/AssetStatsErrorBanner/InstrumentedAssetStatsErrorBanner",
+      "sourceFile": "components/GracefulDegradation/ErrorBanner/AssetStatsErrorBanner/InstrumentedAssetStatsErrorBanner",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
