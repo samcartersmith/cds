@@ -19,6 +19,7 @@ export type FocusTrapProps = {
   disableFocusTrap?: boolean;
   disableAutoFocus?: boolean;
   respectNegativeTabIndex?: boolean;
+  focusTabIndexElements?: boolean;
 };
 
 const DEBOUNCE_MS = 50;
@@ -51,6 +52,7 @@ const ALPHABET_KEYS = [
   'y',
   'z',
 ];
+const FOCUSABLE_ELEMENTS_INCLUDING_TABINDEX = `${FOCUSABLE_ELEMENTS}, [tabindex]`;
 
 const maybeYubikeyString = (str: string) => /^(cc|vv)/.test(str);
 
@@ -61,6 +63,7 @@ export const FocusTrap = memo(function FocusTrap({
   disableFocusTrap,
   disableAutoFocus,
   respectNegativeTabIndex,
+  focusTabIndexElements,
 }: FocusTrapProps) {
   const isFocused = useRef(false);
   const childrenRef = useRef<HTMLElement>(null);
@@ -122,8 +125,11 @@ export const FocusTrap = memo(function FocusTrap({
 
       if (!element || !document) return;
 
-      let focusableElements = Array.from(element.querySelectorAll(FOCUSABLE_ELEMENTS));
-
+      let focusableElements = Array.from(
+        element.querySelectorAll(
+          focusTabIndexElements ? FOCUSABLE_ELEMENTS_INCLUDING_TABINDEX : FOCUSABLE_ELEMENTS,
+        ),
+      );
       if (respectNegativeTabIndex) {
         focusableElements = focusableElements.filter(
           (element) => !((element as HTMLElement)?.tabIndex < 0),
@@ -253,7 +259,7 @@ export const FocusTrap = memo(function FocusTrap({
         focusPrevElement();
       }
     },
-    [disableTypeFocus, resetFocus, respectNegativeTabIndex],
+    [focusTabIndexElements, disableTypeFocus, resetFocus, respectNegativeTabIndex],
   );
 
   const handleKeyDown = useCallback(

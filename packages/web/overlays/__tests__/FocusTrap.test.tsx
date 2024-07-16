@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { Default as Dropdown } from '../../dropdown/__stories__/Dropdown.stories';
+import { LongModal } from '../__stories__/Modal.stories';
 
 const subjectTestID = 'subject-test';
 
@@ -224,5 +225,14 @@ describe('FocusTrap', () => {
     });
 
     expect(firstOption).toHaveFocus();
+  });
+  it('focuses on the next interactive element in Modal when Tab is typed', async () => {
+    render(<LongModal />);
+    fireEvent.keyDown(screen.getByTestId('modal-dialog-motion'), {
+      key: 'Tab',
+      code: 'Tab',
+    });
+
+    expect(screen.getByTestId('modal-body')).toHaveFocus();
   });
 });

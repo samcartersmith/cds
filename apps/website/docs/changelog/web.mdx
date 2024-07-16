@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.25.0 (7/16/2024 PST)
+
+#### 🚀 Updates
+
+- Add focusTabIndexElements prop to Modal and FullscreenModal. [[#3132](https://github.cbhq.net/frontend/cds/pull/3132)] [[DX-3383](https://jira.coinbase-corp.com/browse/DX-3383)]
+
 ## 6.24.0 ((7/10/2024, 07:55 AM PST))
 
 This is an artificial version bump with no new change.

@@ -28,13 +28,18 @@ type ModalOptions = {
   hideDividers?: boolean;
   enableBackButton?: boolean;
   width?: number;
+  focusTabIndexElements?: boolean;
 };
 
 export type CreateModalProps = {
   Modal: React.ComponentType<
-    React.PropsWithChildren<ModalBaseProps & ModalAccessibilityProps & { disablePortal?: boolean }>
+    React.PropsWithChildren<
+      ModalBaseProps &
+        ModalAccessibilityProps &
+        Pick<ModalOptions, 'disablePortal' | 'focusTabIndexElements'>
+    >
   >;
-  ModalBody: React.ComponentType<React.PropsWithChildren<unknown>>;
+  ModalBody: React.ComponentType<React.PropsWithChildren<SharedProps>>;
   ModalHeader: React.ComponentType<
     React.PropsWithChildren<ModalHeaderBaseProps & { onBackButtonPress?: NoopFn }>
   >;
@@ -74,6 +79,7 @@ export function modalBuilder({
     focusTrigger,
     enableBackButton,
     width,
+    focusTabIndexElements,
   }) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible ?? true);
 
@@ -84,6 +90,7 @@ export function modalBuilder({
         </Button>
         <Modal
           disablePortal={disablePortal}
+          focusTabIndexElements={focusTabIndexElements}
           hideDividers={hideDividers}
           onDidClose={focusTrigger}
           onRequestClose={toggleOff}
@@ -97,7 +104,7 @@ export function modalBuilder({
             testID="Basic Modal Test ID"
             title="Basic Modal"
           />
-          <ModalBody>{children}</ModalBody>
+          <ModalBody testID="modal-body">{children}</ModalBody>
           <ModalFooter
             primaryAction={<Button onPress={toggleOff}>Save</Button>}
             secondaryAction={

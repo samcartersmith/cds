@@ -42,6 +42,12 @@ export type ModalProps = {
    * @default false
    */
   disableFocusTrap?: boolean;
+  /**
+   * Allow any element with `tabIndex` attribute to be focusable in FocusTrap, rather than only focusing specific interactive element types like button.
+   * This can be useful when having long content in a Modal.
+   * @default false
+   */
+  focusTabIndexElements?: boolean;
 } & ModalBaseProps &
   Omit<ModalWrapperProps, 'onOverlayPress'>;
 
@@ -57,6 +63,7 @@ export const Modal = memo(
       disableFocusTrap,
       accessibilityLabelledBy,
       accessibilityLabel,
+      focusTabIndexElements = false,
       zIndex: customZIndex,
       width,
       dangerouslyDisableResponsiveness = false,
@@ -148,6 +155,7 @@ export const Modal = memo(
         >
           <FocusTrap
             disableFocusTrap={disableFocusTrap}
+            focusTabIndexElements={focusTabIndexElements}
             onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
           >
             <VStack

@@ -53,7 +53,9 @@ export const ModalWithoutPortal = () => {
 export const LongModal = () => {
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
-  return <LongModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} />;
+  return (
+    <LongModalExample focusTabIndexElements focusTrigger={focusTrigger} triggerRef={triggerRef} />
+  );
 };
 
 export const PortalModal = () => {

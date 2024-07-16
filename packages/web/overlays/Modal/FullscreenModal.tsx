@@ -79,10 +79,12 @@ export type FullscreenModalProps = {
   | 'onDidClose'
   | 'shouldCloseOnEscPress'
   | 'disableFocusTrap'
+  | 'focusTabIndexElements'
 > &
   Pick<ModalHeaderProps, 'closeAccessibilityLabel'>;
 
 export const FullscreenModal = memo(function FullscreenModal({
+  focusTabIndexElements = false,
   logo,
   visible,
   onRequestClose,
@@ -196,6 +198,7 @@ export const FullscreenModal = memo(function FullscreenModal({
       <motion.div {...dialogMotionProps} className={pinStyles}>
         <FocusTrap
           disableFocusTrap={disableFocusTrap}
+          focusTabIndexElements={focusTabIndexElements}
           onEscPress={shouldCloseOnEscPress ? onRequestClose : undefined}
         >
           <VStack background="background" className={containerClassName}>
