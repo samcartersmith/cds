@@ -54,6 +54,9 @@
         "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 6
       },
       "propsWithCallSites": {
+        "testID": {
+          "@app/components/navigation/NavHeader.tsx": 1
+        },
         "spacingVertical": {
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 3
@@ -132,7 +135,10 @@
         "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 7
       },
       "propsWithCallSites": {
-        "spacing": {
+        "spacingVertical": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "spacingHorizontal": {
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
         },
         "color": {

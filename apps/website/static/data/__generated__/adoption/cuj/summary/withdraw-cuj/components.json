@@ -1008,8 +1008,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 17,
-      "totalCallSites": 10,
+      "totalInstances": 18,
+      "totalCallSites": 11,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
@@ -1041,6 +1041,7 @@
         "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 2,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewHeader.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewRow.tsx": 3,
+        "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersSelectedPaymentWithdrawCell.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/sharedUtils/useWithdrawInfo.tsx": 1
@@ -1048,13 +1049,15 @@
       "propsWithCallSites": {
         "overflow": {
           "components/WithdrawablePaymentSelector/components/PaymentMethodRow.tsx": 1,
-          "components/WithdrawablePaymentSelector/components/PixWithdrawalRow.tsx": 1
+          "components/WithdrawablePaymentSelector/components/PixWithdrawalRow.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
         },
         "justifyContent": {
           "components/WithdrawablePaymentSelector/components/PixWithdrawalRow.tsx": 2,
           "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewRow.tsx": 2,
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersSelectedPaymentWithdrawCell.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedUtils/useWithdrawInfo.tsx": 1
@@ -1063,6 +1066,7 @@
           "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/components/PixPreviewHeaderDetail.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewRow.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedUtils/useWithdrawInfo.tsx": 1
         },
         "spacingTop": {
@@ -1078,6 +1082,12 @@
         "spacingVertical": {
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransferPreviewRow.tsx": 2,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 1
+        },
+        "as": {
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+        },
+        "position": {
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
         },
         "width": {
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 1
@@ -1589,14 +1599,15 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 14,
-      "totalCallSites": 9,
+      "totalInstances": 15,
+      "totalCallSites": 10,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         "components/DepositWithdraw/components/Withdraw/steps/EntryStep.tsx": 2,
         "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
         "components/DepositWithdraw/components/Withdraw/steps/PaymentSelectorStep.tsx": 1,
         "components/DepositWithdraw/components/Withdraw/steps/PreviewStep.tsx": 1,
+        "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 3,
         "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodList.tsx": 1,
         "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent.tsx": 3,
@@ -1609,6 +1620,7 @@
           "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/PaymentSelectorStep.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/PreviewStep.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 3,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodList.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent.tsx": 2,
@@ -1627,6 +1639,7 @@
           "components/DepositWithdraw/components/Withdraw/steps/InteracWithdrawConfirmationStep.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/PaymentSelectorStep.tsx": 1,
           "components/DepositWithdraw/components/Withdraw/steps/PreviewStep.tsx": 1,
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Withdraw/components/WithdrawStatusContent.tsx": 3,
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawInput/WithdrawInput.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawPreview/WithdrawPreview.tsx": 1
@@ -1640,8 +1653,12 @@
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawPreview/WithdrawPreview.tsx": 1
         },
         "variant": {
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersLoadingState.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersPaymentMethodList.tsx": 1
+        },
+        "compact": {
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
         }
       }
     },
@@ -2241,48 +2258,57 @@
     {
       "name": "FlexibleCurrencyInput",
       "sourceFile": "@cb/shared/components/FlexibleCurrencyInput/FlexibleCurrencyInput",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
       "presentationalLibrary": "@cb/shared/components/FlexibleCurrencyInput/FlexibleCurrencyInput",
+      "callSites": {
+        "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
+      },
       "propsWithCallSites": {
         "symbol": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "symbolPosition": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "superscript": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "placeholder": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "align": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "color": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "symbolColor": {
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
+        },
+        "fontSize": {
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+        },
+        "minWidth": {
           "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
         },
         "autoFocus": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "value": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "onChange": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "updateInputCallback": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "clearFormattedValue": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         },
         "readOnly": {
-          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 1
+          "components/DepositWithdraw/TransfersWidget/sharedComponents/TransfersAmountInput.tsx": 2
         }
       }
     },
@@ -3678,9 +3704,6 @@
         "inputAmount": {
           "@app/components/Transfer/PaymentMethodSelector.tsx": 1
         },
-        "showCashTransferOptions": {
-          "@app/components/Transfer/PaymentMethodSelector.tsx": 1
-        },
         "queryRef": {
           "@app/components/Transfer/PaymentMethodSelector.tsx": 1
         },
@@ -4062,17 +4085,6 @@
       }
     },
     {
-      "name": "CashTransferPaymentMethods",
-      "sourceFile": "@app/screens/Cash/components/CashTransferPaymentMethods",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "dismissTray": {
-          "@app/screens/FiatTransfer/components/FiatTransferPaymentMethodsTray.tsx": 1
-        }
-      }
-    },
-    {
       "name": "WireTransferPaymentCell",
       "sourceFile": "@app/components/PaymentMethod/WireTransferPaymentCell",
       "totalInstances": 1,
@@ -4371,6 +4383,9 @@
           "@app/screens/FiatTransfer/Withdraw/WithdrawInputScreen.tsx": 1
         },
         "inputAmount": {
+          "@app/screens/FiatTransfer/Withdraw/WithdrawInputScreen.tsx": 1
+        },
+        "displayInputError": {
           "@app/screens/FiatTransfer/Withdraw/WithdrawInputScreen.tsx": 1
         },
         "handleWithdrawPreviewPressed": {
@@ -5827,6 +5842,9 @@
         "component": {
           "components/DepositWithdraw/components/Withdraw/steps/EntryStep.tsx": 1,
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawInput/WithdrawInput.tsx": 1
+        },
+        "testID": {
+          "components/DepositWithdraw/components/Withdraw/steps/EntryStep.tsx": 1
         }
       }
     },
@@ -6620,6 +6638,9 @@
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawInput/WithdrawInput.tsx": 1
         },
         "availableBalance": {
+          "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawInput/WithdrawInput.tsx": 1
+        },
+        "rawAvailableBalance": {
           "components/DepositWithdraw/TransfersWidget/Withdraw/screens/WithdrawInput/WithdrawInput.tsx": 1
         }
       }

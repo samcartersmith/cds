@@ -3,7 +3,7 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 17,
+      "totalInstances": 16,
       "totalCallSites": 5,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "presentationalProps": [
@@ -29,7 +29,7 @@
         }
       ],
       "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 11,
+        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 10,
         "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
         "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
         "@app/screens/Asset/components/AssetPriceChart.tsx": 2,
@@ -37,7 +37,7 @@
       },
       "propsWithCallSites": {
         "spacingHorizontal": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 8,
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 7,
           "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1
         },
@@ -849,21 +849,6 @@
     }
   ],
   "other": [
-    {
-      "name": "PendingCashTransferSection",
-      "sourceFile": "@app/screens/Cash/Moneygram/components/PendingCashTransferSection",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-        "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "hasTopDivider": {
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
-        }
-      }
-    },
     {
       "name": "StatusAlertSection",
       "sourceFile": "@app/screens/HomeTab/components/StatusAlertSection",
@@ -1797,9 +1782,6 @@
         "estimatedItemSize": {
           "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
         },
-        "drawDistance": {
-          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
-        },
         "refreshControl": {
           "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
         },
@@ -2607,6 +2589,9 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
+        "showAccountChecklist": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }

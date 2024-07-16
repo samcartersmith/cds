@@ -3,7 +3,7 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 32,
+      "totalInstances": 31,
       "totalCallSites": 10,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "presentationalProps": [
@@ -33,7 +33,7 @@
         }
       ],
       "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 11,
+        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 10,
         "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
         "@app/screens/AssetsTab/AssetsScreen.tsx": 4,
         "@app/screens/AssetsTab/AssetsScreenCell.tsx": 1,
@@ -46,7 +46,7 @@
       },
       "propsWithCallSites": {
         "spacingHorizontal": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 8,
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 7,
           "@app/screens/AssetsTab/AssetsScreenCell.tsx": 1,
           "@app/screens/AssetsTab/AssetsScreenContent.tsx": 2,
           "@app/screens/AssetsTab/components/AssetsNonCashEquivalents/AssetsNonCashEquivalents.tsx": 3,
@@ -872,23 +872,6 @@
     }
   ],
   "other": [
-    {
-      "name": "PendingCashTransferSection",
-      "sourceFile": "@app/screens/Cash/Moneygram/components/PendingCashTransferSection",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-        "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
-        "@app/screens/Account/AccountScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "hasTopDivider": {
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
-          "@app/screens/Account/AccountScreen.tsx": 1
-        }
-      }
-    },
     {
       "name": "StatusAlertSection",
       "sourceFile": "@app/screens/HomeTab/components/StatusAlertSection",
@@ -3426,6 +3409,9 @@
       "propsWithCallSites": {
         "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
+        "showAccountChecklist": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
     },
@@ -4090,67 +4076,6 @@
       }
     },
     {
-      "name": "AccountTableV2Header",
-      "sourceFile": "views/Assets/components/AccountTableV2/AccountTableV2Header",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-      },
-      "propsWithCallSites": {
-        "hideColumnHeaders": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
-        },
-        "hideAllocationColumn": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "showFilter": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "showPerformanceColumn": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "onHoldingColFilterChange": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "onPerfColFilterChange": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "customTableTitle": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "customTableRowBanner": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "formattedTotalBalance": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "hasPerDayGainLoss": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
-        },
-        "showSearchBar": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
-        },
-        "onSearchChange": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
-        },
-        "searchValue": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AccountTableV2Nux",
-      "sourceFile": "views/Assets/components/AccountTableV2/AccountTableV2Nux",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "hideDepositButton": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
-        }
-      }
-    },
-    {
       "name": "AccountTableV2Row",
       "sourceFile": "views/Assets/components/AccountTableV2/AccountTableV2Row",
       "totalInstances": 1,
@@ -4189,10 +4114,56 @@
       }
     },
     {
-      "name": "AccountTableEmptySearch",
-      "sourceFile": "views/Assets/components/AccountTableV2/AccountTableEmptySearch",
+      "name": "AccountTableV2Header",
+      "sourceFile": "views/Assets/components/AccountTableV2/AccountTableV2Header",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+      },
+      "propsWithCallSites": {
+        "hideColumnHeaders": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
+        },
+        "hideAllocationColumn": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "showFilter": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "showPerformanceColumn": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "onHoldingColFilterChange": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "onPerfColFilterChange": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "customTableTitle": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "customTableRowBanner": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "formattedTotalBalance": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        },
+        "hasPerDayGainLoss": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "AccountTableV2Nux",
+      "sourceFile": "views/Assets/components/AccountTableV2/AccountTableV2Nux",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "hideDepositButton": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1
+        }
+      }
     },
     {
       "name": "AccountTableV2Footer",

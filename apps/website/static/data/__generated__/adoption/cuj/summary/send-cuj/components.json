@@ -70,6 +70,9 @@
         },
         "justifyContent": {
           "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1
+        },
+        "testID": {
+          "@app/components/navigation/NavHeader.tsx": 1
         }
       }
     },
@@ -2674,6 +2677,12 @@
         },
         "onModalClose": {
           "@app/screens/Send/ConnectWalletScreen.tsx": 1
+        },
+        "onSuccess": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1
+        },
+        "address": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1
         }
       }
     },
@@ -4126,6 +4135,9 @@
           "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
         },
         "onActionButtonClick": {
+          "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
+        },
+        "onClose": {
           "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
         }
       }
