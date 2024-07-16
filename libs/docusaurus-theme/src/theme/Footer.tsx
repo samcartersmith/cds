@@ -37,7 +37,7 @@ const Footer = memo(function Footer() {
                 </Link>
               ))}
             </HStack>
-            <TextTitle4 as="p">{`© ${new Date().getFullYear()} Coinbase Design`}</TextTitle4>
+            <TextTitle4 as="p">{`© ${new Date().getFullYear()} UI Systems`}</TextTitle4>
           </HStack>
         </HStack>
       </ThemeProvider>

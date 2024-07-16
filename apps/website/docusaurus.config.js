@@ -87,11 +87,6 @@ module.exports = {
           label: '#ask-ui-systems',
           href: `slack://channel?team=${SLACK_TEAM}&id=C05H922EYP7`,
         },
-        {
-          type: 'link',
-          label: 'Feedback',
-          href: `https://docs.google.com/forms/d/1v9HbYPasSKxNG2m3UhiQObjDerLBeUQVgeykJ8AVhUA/edit`,
-        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Coinbase`,
     },
