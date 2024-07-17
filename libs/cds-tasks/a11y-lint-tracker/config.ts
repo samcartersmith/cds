@@ -10,11 +10,18 @@ export const a11yLintConfig: A11yLintConfig[] = [
       { name: 'ext', repoType: 'web', projectPath: 'apps/extension' },
     ],
     repoType: 'complex',
+    codeownersUrl: './CODEOWNERS',
   },
-  { name: 'React Mobile', repo: 'consumer/react-native', repoType: 'mobile' },
+  {
+    name: 'React Mobile',
+    repo: 'consumer/react-native',
+    repoType: 'mobile',
+    codeownersUrl: './.github/CODEOWNERS',
+  },
   {
     name: 'Retail Web',
     repo: 'frontend/coinbase-www',
     repoType: 'web',
+    codeownersUrl: './.github/CODEOWNERS',
   },
 ];

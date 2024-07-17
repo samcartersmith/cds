@@ -8,6 +8,15 @@ import { cleanup, getTempRepos, info, success } from '../podium/utils';
 import { a11yLintConfig } from './config';
 import { A11yLintConfig } from './types';
 
+/**
+ * To run this script:
+ * yarn nx run website:a11y-lint-tracker
+ */
+
+type CodeOwnersMap = {
+  [owner: string]: string[];
+};
+
 type EslintMessage = {
   ruleId: string | null;
   severity: number;
@@ -125,6 +134,7 @@ async function mergeJSONOutputs(sourceDir: string, outputFile: string) {
         file.endsWith('.json') &&
         !file.includes('--fullRepo') &&
         !file.includes('disabled') &&
+        !file.includes('-codeowners') &&
         !file.includes('a11yLintRepos'),
     );
 
@@ -144,6 +154,45 @@ async function mergeJSONOutputs(sourceDir: string, outputFile: string) {
     info(`Merged output saved to ${outputFile}`);
   } catch (error) {
     console.error(`Error merging JSON outputs`);
+  }
+}
+
+function parseCodeOwners(
+  repoPath: string,
+  outputDir: string,
+  repoNameKebab: string,
+  config: A11yLintConfig,
+) {
+  const codeOwnersPath = path.join(repoPath, config.codeownersUrl || 'CODEOWNERS');
+  try {
+    const codeOwnersContent = fs.readFileSync(codeOwnersPath, 'utf-8');
+    const lines = codeOwnersContent.split('\n');
+    const codeOwnersMap: CodeOwnersMap = {};
+
+    lines.forEach((line) => {
+      const trimmedLine = line.trim();
+      if (trimmedLine && !trimmedLine.startsWith('#')) {
+        // Ignore comments and empty lines
+        // Split the line into parts and assume last part is the owner, rest are path(s)
+        const parts = trimmedLine.split(/\s+/);
+        const owner = parts.pop(); // Last element is assumed to be the owner
+        if (owner) {
+          const path = parts.join(' ').trim(); // Join the rest back to form the complete path
+          if (codeOwnersMap[owner]) {
+            codeOwnersMap[owner].push(path);
+          } else {
+            codeOwnersMap[owner] = [path];
+          }
+        }
+      }
+    });
+
+    const outputPath = path.join(outputDir, `${repoNameKebab}/${repoNameKebab}-codeowners.json`);
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, JSON.stringify(codeOwnersMap, null, 2), 'utf-8');
+    console.log(`Codeowners parsed and saved for ${repoNameKebab}`);
+  } catch (error) {
+    console.error(`Error reading or parsing CODEOWNERS file for ${repoNameKebab}:`, error);
   }
 }
 
@@ -258,6 +307,7 @@ async function processRepos(outputDir: string, tempDir: string) {
     // make the repo name kebab case, no slashes
     const repoNameKebab = repo.replace(/\//g, '-');
     const repoDirectory = `${tempDir}/${repo}`;
+    parseCodeOwners(repoDirectory, outputDir, repoNameKebab, config);
 
     await runEslintAndSaveOutput(repoDirectory, outputDir, repoNameKebab, config);
     await runEslintDisablesAndSaveOutput(repoDirectory, outputDir, repoNameKebab);

@@ -20,18 +20,21 @@ export const a11yLintRepos = [
         "projectPath": "apps/extension"
       }
     ],
-    "repoType": "complex"
+    "repoType": "complex",
+    "codeownersUrl": "./CODEOWNERS"
   },
   {
     "id": "consumer-react-native",
     "name": "React Mobile",
     "repo": "consumer/react-native",
-    "repoType": "mobile"
+    "repoType": "mobile",
+    "codeownersUrl": "./.github/CODEOWNERS"
   },
   {
     "id": "frontend-coinbase-www",
     "name": "Retail Web",
     "repo": "frontend/coinbase-www",
-    "repoType": "web"
+    "repoType": "web",
+    "codeownersUrl": "./.github/CODEOWNERS"
   }
 ];

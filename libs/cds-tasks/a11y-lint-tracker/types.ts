@@ -35,4 +35,8 @@ export type A11yLintConfig = {
    *  @example workspaces
    */
   workspaceDir?: string;
+  /**
+   * URL to codeowners file
+   */
+  codeownersUrl: string;
 };

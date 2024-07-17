@@ -1,12 +1,16 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
+import { Button } from '@cbhq/cds-web/buttons';
 import { ListCell } from '@cbhq/cds-web/cells';
+import { SelectChip } from '@cbhq/cds-web/chips';
+import { SelectOption } from '@cbhq/cds-web/controls';
 import { Icon } from '@cbhq/cds-web/icons';
 import { Divider, HStack, VStack } from '@cbhq/cds-web/layout';
 import {
   Link,
   TextBody,
+  TextCaption,
   TextLabel1,
   TextLabel2,
   TextTitle2,
@@ -21,8 +25,10 @@ import {
   A11yLintConfig,
   A11yLintListCellType,
   DisabledRule,
+  filterGroupedData,
   formatFilePath,
   getA11yDisableLintDataByRepo,
+  getA11yLintCodeOwnersPerRepo,
   getA11yLintDataByRepo,
   getTotalDisabledRulesByRepo,
   getTotalWarningsByRepo,
@@ -177,7 +183,6 @@ const ShowA11yWarningsBreakDown = memo(
 );
 
 // Component to display complex repo breakdown by project when repoDataOverview.repoType is 'complex'
-
 const ComplexRepoSummaryInfoByProject = memo(
   ({ repoData, repoDataOverview }: { repoData: ProjectData; repoDataOverview: A11yLintConfig }) => {
     // handle complex repo breakdown
@@ -208,26 +213,60 @@ const ComplexRepoSummaryInfoByProject = memo(
   },
 );
 
-const RepoSummaryInfo = memo(({ repoDataOverview }: { repoDataOverview: A11yLintConfig }) => {
-  const repoData = getA11yLintDataByRepo(repoDataOverview.id);
+const RepoSummaryInfo = memo(
+  ({
+    repoDataOverview,
+    codeOwnersToFilterFor,
+  }: {
+    repoDataOverview: A11yLintConfig;
+    codeOwnersToFilterFor: string[];
+  }) => {
+    const repoData = getA11yLintDataByRepo(repoDataOverview.id);
 
-  const groupedData = groupMessagesByRuleId(repoData.fullRepo);
+    const groupedData: GroupedByRuleId = groupMessagesByRuleId(repoData.fullRepo);
 
-  return (
-    <VStack>
-      {showComplexRepoBreakdownByProject && repoDataOverview.repoType === 'complex' && (
-        <ComplexRepoSummaryInfoByProject repoData={repoData} repoDataOverview={repoDataOverview} />
-      )}
-      <ShowA11yWarningsBreakDown groupedData={groupedData} repoDataOverview={repoDataOverview} />
-    </VStack>
-  );
-});
+    const filteredGroupedDataParams = {
+      groupedData,
+      codeOwnersToFilterFor,
+    };
+    const filteredGroupedData = filterGroupedData(filteredGroupedDataParams);
+
+    return (
+      <VStack>
+        {showComplexRepoBreakdownByProject && repoDataOverview.repoType === 'complex' && (
+          <ComplexRepoSummaryInfoByProject
+            repoData={repoData}
+            repoDataOverview={repoDataOverview}
+          />
+        )}
+        <ShowA11yWarningsBreakDown
+          groupedData={filteredGroupedData}
+          repoDataOverview={repoDataOverview}
+        />
+      </VStack>
+    );
+  },
+);
 
 const DisablesBreakDownSummaryInfo = memo(
-  ({ repoDataOverview }: { repoDataOverview: A11yLintConfig }) => {
+  ({
+    repoDataOverview,
+    codeOwnersToFilterFor,
+  }: {
+    repoDataOverview: A11yLintConfig;
+    codeOwnersToFilterFor: string[];
+  }) => {
     const disablesData: DisabledRule[] = getA11yDisableLintDataByRepo(repoDataOverview.id);
     const groupedData = groupByRule(disablesData);
-    const groupDataEntries = Object.entries(groupedData);
+
+    const filteredGroupedDataParams = {
+      groupedData,
+      codeOwnersToFilterFor,
+    };
+
+    const filteredGroupedData = filterGroupedData(filteredGroupedDataParams);
+
+    const groupDataEntries = Object.entries(filteredGroupedData);
 
     return (
       <VStack gap={2}>
@@ -272,14 +311,83 @@ const DisablesBreakDownSummaryInfo = memo(
 );
 
 const A11yLintDetails = memo(({ repoId }: { repoId: string }) => {
+  const [value, setValue] = useState<string | undefined>(undefined);
+
+  const codeOwners = getA11yLintCodeOwnersPerRepo(repoId);
   const repoDataOverview = a11yLintRepos.find((repo) => repo.id === repoId);
+
+  useEffect(() => {
+    // This will reset the selected filter every time the repoId changes.
+    setValue(undefined);
+  }, [repoId]);
+
+  const handleClearSearch = () => {
+    setValue(undefined);
+  };
+
+  const handleChange = (selectedOption: string) => {
+    if (codeOwners[selectedOption]) {
+      setValue(selectedOption);
+    } else {
+      // Clearing the result will reset and show all.
+      setValue(undefined);
+    }
+  };
+  const content = (
+    <VStack>
+      <HStack spacing={2}>
+        <TextCaption as="p">CODEOWNERS</TextCaption>
+      </HStack>
+
+      {Object.keys(codeOwners) && Object.keys(codeOwners).length > 0 ? (
+        Object.keys(codeOwners).map((codeowner) => (
+          <SelectOption key={codeowner} title={codeowner} value={codeowner} />
+        ))
+      ) : (
+        <TextBody as="sub" spacing={2}>
+          No code owners available.
+        </TextBody>
+      )}
+    </VStack>
+  );
+
+  // Memoize the filtered code owners to prevent unnecessary re-renders
+  const codeOwnersToFilterFor = useMemo(() => {
+    return value ? codeOwners[value] : [];
+  }, [value, codeOwners]);
 
   return (
     <VStack width="100%">
+      <HStack gap={2} justifyContent="space-between" spacing={1}>
+        <TextTitle3 as="h3" spacingTop={1}>
+          {value || 'Showing All Warnings'}
+        </TextTitle3>
+        <HStack justifyContent="flex-end">
+          <SelectChip
+            active={value !== undefined}
+            content={content}
+            minWidth={500}
+            onChange={(selectedOption: string) => handleChange(selectedOption)}
+            placeholder="Filter"
+            value={value || undefined}
+            valueLabel={value || undefined}
+          />
+          <Button compact onPress={handleClearSearch} variant="secondary">
+            Clear
+          </Button>
+        </HStack>
+      </HStack>
+      <Divider />
       {repoDataOverview ? (
         <VStack gap={2} spacingVertical={2}>
-          <RepoSummaryInfo repoDataOverview={repoDataOverview} />
-          <DisablesBreakDownSummaryInfo repoDataOverview={repoDataOverview} />
+          <RepoSummaryInfo
+            codeOwnersToFilterFor={codeOwnersToFilterFor}
+            repoDataOverview={repoDataOverview}
+          />
+          <DisablesBreakDownSummaryInfo
+            codeOwnersToFilterFor={codeOwnersToFilterFor}
+            repoDataOverview={repoDataOverview}
+          />
         </VStack>
       ) : (
         <>Repo Data Not Found.</>
@@ -315,7 +423,7 @@ export const A11yLintTrackerOverview = memo(() => {
 
   return (
     <>
-      <VStack alignItems="baseline" gap={5} maxWidth={900} spacingBottom={4}>
+      <VStack alignItems="baseline" gap={5} maxWidth="100%" spacingBottom={4}>
         <TextTitle2 as="span" color="foregroundMuted">
           Track accessibility warnings, errors, and disabled ESLint rules. See the{' '}
           <Link to="https://docs.google.com/document/d/1zZvMw53YysvSuPd9Uph7Yr3JewpIfSVK_a9eeJ6Xktw/edit?usp=sharing">
@@ -323,12 +431,15 @@ export const A11yLintTrackerOverview = memo(() => {
           </Link>{' '}
           for more information on how CDS is driving accessibility remediation.
         </TextTitle2>
-        <TextBody as="p">
-          <Link to="https://docs.google.com/document/d/1vafx_gnf8VKF9Kc6O-HGIftymI0obnn0-HnriOnWCE0/edit?usp=sharing">
-            Fixing A11y Issues Guidebook
-          </Link>
-        </TextBody>
+        <HStack gap={1} justifyContent="space-between" width="100%">
+          <TextBody as="p">
+            <Link to="https://docs.google.com/document/d/1vafx_gnf8VKF9Kc6O-HGIftymI0obnn0-HnriOnWCE0/edit?usp=sharing">
+              Fixing A11y Issues Guidebook
+            </Link>
+          </TextBody>
+        </HStack>
       </VStack>
+
       <Divider direction="horizontal" />
       <SplitScreenStack end={end} start={start} />
     </>

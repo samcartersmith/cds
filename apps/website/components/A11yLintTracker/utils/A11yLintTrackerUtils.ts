@@ -6,6 +6,11 @@ import { a11yLintRepos } from ':cds-website/data/__generated__/a11yLintConfig/a1
 // flag for toggling module to show eslint warnings in complex repo by project
 export const showComplexRepoBreakdownByProject = false;
 
+export type FilteredDataMessage = {
+  filePath: string;
+  [key: string]: unknown;
+};
+
 export type DisabledRule = {
   filePath: string;
   lineNumber: number;
@@ -65,6 +70,10 @@ export type ProjectData = {
   [key: string]: LintResult[];
 };
 
+export type CodeOwnerMapData = {
+  [key: string]: string[];
+};
+
 export const getA11yLintDataByRepo = (id: string): ProjectData => {
   const projectData: ProjectData = {};
 
@@ -86,6 +95,10 @@ export const getA11yLintDataByRepo = (id: string): ProjectData => {
     require(`@site/static/data/__generated__/a11yLintConfig/${id}/${id}-fullRepo.json`) as LintResult[];
 
   return projectData;
+};
+
+export const getA11yLintCodeOwnersPerRepo = (id: string) => {
+  return require(`@site/static/data/__generated__/a11yLintConfig/${id}/${id}-codeowners.json`) as CodeOwnerMapData;
 };
 
 export const getA11yDisableLintDataByRepo = (id: string) => {
@@ -175,4 +188,38 @@ export const getTotalDisabledRulesByRepo = (id: string) => {
 
   // The total number of disabled rules is simply the length of the array
   return disabledRules.length;
+};
+
+export const convertToSimpleRegex = (pattern: string) => {
+  // Escapes all regex characters except asterisks
+  const escapedString = pattern.replace(/([.+?^=!:${}()|[\]/\\])/g, '\\$1');
+  // Replace asterisks with regex to match any characters
+  return new RegExp(escapedString.replace(/\*+/g, '.*'), 'i'); // 'i' for case-insensitive
+};
+
+// Applies filtering by codeowner to grouped data
+export const filterGroupedData = <T extends FilteredDataMessage>({
+  groupedData,
+  codeOwnersToFilterFor,
+}: {
+  groupedData: Record<string, T[]>;
+  codeOwnersToFilterFor: string[];
+}): Record<string, T[]> => {
+  if (!codeOwnersToFilterFor || codeOwnersToFilterFor.length === 0) {
+    return groupedData;
+  }
+
+  const regexPatterns = codeOwnersToFilterFor.map(convertToSimpleRegex);
+
+  return Object.keys(groupedData).reduce<Record<string, T[]>>((acc, key) => {
+    const filteredMessages = groupedData[key].filter((message) => {
+      return regexPatterns.some((regex) => regex.test(message.filePath));
+    });
+
+    if (filteredMessages.length > 0) {
+      acc[key] = filteredMessages;
+    }
+
+    return acc;
+  }, {});
 };
