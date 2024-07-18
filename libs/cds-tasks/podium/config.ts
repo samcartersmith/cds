@@ -21,8 +21,9 @@ const walletLibraries: PodiumLibraryConfig[] = [
 const retailMobileLibraries: PodiumLibraryConfig[] = [
   {
     name: 'React Native Core',
-    packageName: 'react-native-core',
-    directory: 'libs/react-native-core/components',
+    packageName: 'designSystem',
+    // they nest componenents in multiple directories, not just components
+    directory: 'libs/react-native-core',
   },
   {
     name: 'Retail Mobile App',

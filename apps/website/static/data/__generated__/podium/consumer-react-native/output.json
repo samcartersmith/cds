@@ -1,23 +1,51 @@
 {
-  "react-native-core": {
+  "designSystem": {
     "components": [
       {
         "name": "ThemeProvider",
         "path": "/consumer/react-native/libs/react-native-core/components/ThemeProvider.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ThemeProvider",
-        "path": "/consumer/react-native/libs/react-native-core/components/ThemeProvider.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "Experiments",
+        "path": "/consumer/react-native/libs/react-native-core/experiments/Experiments.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "IsBottomTabVisibleContext",
+        "path": "/consumer/react-native/libs/react-native-core/contexts/IsBottomTabVisibleContext.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "ScrollContext",
+        "path": "/consumer/react-native/libs/react-native-core/contexts/ScrollContext.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -25,19 +53,11 @@
         "name": "AuthenticatedWebView",
         "path": "/consumer/react-native/libs/react-native-core/components/AuthenticatedWebView/AuthenticatedWebView.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "AuthenticatedWebView",
-        "path": "/consumer/react-native/libs/react-native-core/components/AuthenticatedWebView/AuthenticatedWebView.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -45,19 +65,11 @@
         "name": "ConfirmationCell",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/ConfirmationCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ConfirmationCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/ConfirmationCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -65,19 +77,11 @@
         "name": "FallbackCell",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/FallbackCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "FallbackCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/FallbackCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -85,19 +89,11 @@
         "name": "InteracOptionCell",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/InteracOptionCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "InteracOptionCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/InteracOptionCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -105,19 +101,11 @@
         "name": "PaymentMethodCell",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/PaymentMethodCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "PaymentMethodCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/PaymentMethodCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -125,19 +113,11 @@
         "name": "ProgressCell",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/ProgressCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ProgressCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/ProgressCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -145,19 +125,11 @@
         "name": "RadioCell",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/RadioCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "RadioCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/RadioCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -165,19 +137,11 @@
         "name": "SelectBankDropdownCell",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/SelectBankDropdownCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "SelectBankDropdownCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/SelectBankDropdownCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -185,19 +149,11 @@
         "name": "SettingCell",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/SettingCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "SettingCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/SettingCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -205,19 +161,11 @@
         "name": "SettingCellWithCustomAccessory",
         "path": "/consumer/react-native/libs/react-native-core/components/cells/SettingCellWithCustomAccessory.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "SettingCellWithCustomAccessory",
-        "path": "/consumer/react-native/libs/react-native-core/components/cells/SettingCellWithCustomAccessory.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -225,19 +173,11 @@
         "name": "Button",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/Button.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "Button",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/Button.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -245,19 +185,11 @@
         "name": "CheckBox",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/CheckBox.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "CheckBox",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/CheckBox.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -265,19 +197,11 @@
         "name": "DateInput.android",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/DateInput.android.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DateInput.android",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/DateInput.android.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -285,19 +209,11 @@
         "name": "DateInput.ios",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/DateInput.ios.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DateInput.ios",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/DateInput.ios.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -305,19 +221,11 @@
         "name": "DateInputNumeric",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/DateInputNumeric.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DateInputNumeric",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/DateInputNumeric.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -325,19 +233,11 @@
         "name": "DatePicker.android",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/DatePicker.android.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DatePicker.android",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/DatePicker.android.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -345,19 +245,11 @@
         "name": "DatePicker.ios",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/DatePicker.ios.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DatePicker.ios",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/DatePicker.ios.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -365,19 +257,11 @@
         "name": "DeprecatedCircleButton",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/DeprecatedCircleButton.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DeprecatedCircleButton",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/DeprecatedCircleButton.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -385,19 +269,11 @@
         "name": "IconButton",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/IconButton.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "IconButton",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/IconButton.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -405,19 +281,11 @@
         "name": "PasswordInput",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/PasswordInput.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "PasswordInput",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/PasswordInput.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -425,19 +293,11 @@
         "name": "PhoneInput",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/PhoneInput.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "PhoneInput",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/PhoneInput.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -445,19 +305,11 @@
         "name": "SearchSelect",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/SearchSelect.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "SearchSelect",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/SearchSelect.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -465,19 +317,11 @@
         "name": "SmallButton",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/SmallButton.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "SmallButton",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/SmallButton.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -485,19 +329,11 @@
         "name": "Switch",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/Switch.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "Switch",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/Switch.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -505,19 +341,11 @@
         "name": "TextInput",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/TextInput.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "TextInput",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/TextInput.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -525,19 +353,11 @@
         "name": "TextInputIconButton",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/TextInputIconButton.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "TextInputIconButton",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/TextInputIconButton.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -545,19 +365,11 @@
         "name": "ToggleButton",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/ToggleButton.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ToggleButton",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/ToggleButton.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -565,19 +377,11 @@
         "name": "ToggleCell",
         "path": "/consumer/react-native/libs/react-native-core/components/interactables/ToggleCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ToggleCell",
-        "path": "/consumer/react-native/libs/react-native-core/components/interactables/ToggleCell.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -585,19 +389,11 @@
         "name": "DangerousAnimatedScrollView",
         "path": "/consumer/react-native/libs/react-native-core/components/Layout/DangerousAnimatedScrollView.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DangerousAnimatedScrollView",
-        "path": "/consumer/react-native/libs/react-native-core/components/Layout/DangerousAnimatedScrollView.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -605,19 +401,11 @@
         "name": "Screen",
         "path": "/consumer/react-native/libs/react-native-core/components/Layout/Screen.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "Screen",
-        "path": "/consumer/react-native/libs/react-native-core/components/Layout/Screen.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -625,19 +413,11 @@
         "name": "Link",
         "path": "/consumer/react-native/libs/react-native-core/components/typography/Link.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "Link",
-        "path": "/consumer/react-native/libs/react-native-core/components/typography/Link.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -645,19 +425,11 @@
         "name": "ActivityIndicator",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/ActivityIndicator.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ActivityIndicator",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/ActivityIndicator.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -665,19 +437,11 @@
         "name": "AlertTray",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/AlertTray.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "AlertTray",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/AlertTray.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -685,19 +449,11 @@
         "name": "Collapsible",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/Collapsible.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "Collapsible",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/Collapsible.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -705,19 +461,11 @@
         "name": "CopyableField",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/CopyableField.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "CopyableField",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/CopyableField.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -725,19 +473,11 @@
         "name": "DeferredRenderer",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/DeferredRenderer.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DeferredRenderer",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/DeferredRenderer.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -745,19 +485,11 @@
         "name": "DeferredRenderNavFocusManager",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/DeferredRenderNavFocusManager.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DeferredRenderNavFocusManager",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/DeferredRenderNavFocusManager.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -765,19 +497,11 @@
         "name": "DismissCardButton",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/DismissCardButton.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "DismissCardButton",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/DismissCardButton.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -785,19 +509,11 @@
         "name": "FlatList",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/FlatList.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "FlatList",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/FlatList.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -805,19 +521,11 @@
         "name": "FullScreenLoader",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/FullScreenLoader.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "FullScreenLoader",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/FullScreenLoader.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -825,19 +533,11 @@
         "name": "HeroImage",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/HeroImage.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "HeroImage",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/HeroImage.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -845,19 +545,11 @@
         "name": "Modal",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/Modal.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "Modal",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/Modal.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -865,19 +557,11 @@
         "name": "ModalLoader",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/ModalLoader.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ModalLoader",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/ModalLoader.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -885,19 +569,11 @@
         "name": "PersistentDisclaimerBanner",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/PersistentDisclaimerBanner.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "PersistentDisclaimerBanner",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/PersistentDisclaimerBanner.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -905,19 +581,11 @@
         "name": "PillLabel",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/PillLabel.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "PillLabel",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/PillLabel.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -925,19 +593,11 @@
         "name": "PunchOut",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/PunchOut.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "PunchOut",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/PunchOut.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -945,19 +605,11 @@
         "name": "SectionList",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/SectionList.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "SectionList",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/SectionList.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -965,19 +617,11 @@
         "name": "TimelineIndicator",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/TimelineIndicator.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "TimelineIndicator",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/TimelineIndicator.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -985,19 +629,11 @@
         "name": "ViewportAwareView",
         "path": "/consumer/react-native/libs/react-native-core/components/ViewportTracker/ViewportAwareView.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ViewportAwareView",
-        "path": "/consumer/react-native/libs/react-native-core/components/ViewportTracker/ViewportAwareView.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -1005,19 +641,11 @@
         "name": "ViewportContext",
         "path": "/consumer/react-native/libs/react-native-core/components/ViewportTracker/ViewportContext.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ViewportContext",
-        "path": "/consumer/react-native/libs/react-native-core/components/ViewportTracker/ViewportContext.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -1025,19 +653,47 @@
         "name": "ViewportTracker",
         "path": "/consumer/react-native/libs/react-native-core/components/ViewportTracker/ViewportTracker.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "ViewportTracker",
-        "path": "/consumer/react-native/libs/react-native-core/components/ViewportTracker/ViewportTracker.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "DeferredRenderContext",
+        "path": "/consumer/react-native/libs/react-native-core/contexts/DeferredRenderContext/DeferredRenderContext.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "MockCamera",
+        "path": "/consumer/react-native/libs/react-native-core/support/mocks/MockCamera.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "MockNavigator",
+        "path": "/consumer/react-native/libs/react-native-core/support/mocks/MockNavigator.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -1045,19 +701,11 @@
         "name": "Camera",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/Camera/Camera.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "Camera",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/Camera/Camera.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -1065,19 +713,11 @@
         "name": "CameraPermissionFallback",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/Camera/CameraPermissionFallback.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "CameraPermissionFallback",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/Camera/CameraPermissionFallback.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -1085,19 +725,11 @@
         "name": "InlineContent",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/InlineContent.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "InlineContent",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/InlineContent.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -1105,126 +737,652 @@
         "name": "RichText",
         "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/RichText.tsx",
         "callSites": {
-          "src/packages/onboarding/src": [
-            "/consumer/react-native/src/packages/onboarding/src/screens/consent/ConsentScreen.tsx"
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "TextContainerContent",
+        "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/TextContainerContent.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "TextContent",
+        "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/TextContent.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "VideoControls",
+        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoControls.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "VideoPlayer",
+        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoPlayer.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "VideoTextTrack",
+        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoTextTrack.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "Chart",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/core/chart/Chart.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/PriceChart/PriceChart.tsx"
           ]
         },
         "callSiteCount": {
-          "src/packages/onboarding/src": 1
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 1
         }
       },
       {
-        "name": "RichText",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/RichText.tsx",
+        "name": "ChartProvider",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/core/chart/ChartProvider.tsx",
         "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/AssetsTab/AssetsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AssetsTab/AssetsScreenRAV4.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AssetsTab/PrimaryWallet/PrimaryWalletScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Asset/components/AssetChart/AssetChart.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Notifications/components/actions/NotificationAssetChart.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Notifications/components/actions/NotificationAssetChartDeprecated.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 7
+        }
+      },
+      {
+        "name": "ActionableNavigationTitle",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/navbar/ActionableNavigationTitle.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/screens/Markets/MarketsScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 1
+        }
+      },
+      {
+        "name": "Navbar",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/navbar/Navbar.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/TabRootScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/components/navigation/NavHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/components/QRCodeScanner/QRCodeScanner.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Gamification/SpinTheWheelGameScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 4
+        }
+      },
+      {
+        "name": "Header",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/header/Header.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/Loyalty/LoyaltyEndCardsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Settings/SettingsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Account/components/AccountHeader.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 3
+        }
+      },
+      {
+        "name": "SubHead",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/header/SubHead.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
       {
-        "name": "TextContainerContent",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/TextContainerContent.tsx",
+        "name": "ListCell",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/core/cell/ListCell.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/TwoFactor/SmsOptions.tsx",
+            "/consumer/react-native/src/packages/app/src/components/TwoFactor/TotpOptions.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AppToApp/AppToAppScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/product/cb1/promosAndUpsells/UpsellCell/SubscriptionUpsellCell.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Settings/components/AddToAppleGooglePayCell.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Settings/PhoneNumbers/screens/PhoneNumberListScreen.tsx"
+          ]
         },
         "callSiteCount": {
-          "src/packages/onboarding/src": 0
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 7
         }
       },
       {
-        "name": "TextContainerContent",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/TextContainerContent.tsx",
+        "name": "TableCell",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/core/cell/TableCell.tsx",
         "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/Debug/DebugIntlScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/components/StatusWithTooltip.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Spot/components/AdvancedOrderDetailsCell.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/screens/TransactionHistoryCardDetailScreen/TransactionHistoryCardDetailScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/screens/TransactionHistoryReceivesDetailScreen/TransactionHistoryReceivesDetailScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/screens/TransactionHistorySendsDetailScreen/TransactionHistorySendsDetailScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Transactions/components/list/TransactionSectionList.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/components/Card/TransactionHistoryDetail/ChargeInfo.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/components/Card/TransactionHistoryDetail/DisputeInfo.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/components/Card/TransactionHistoryDetail/RefundInfo.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 10
+        }
+      },
+      {
+        "name": "TabBar",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/tabs/TabBar.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/SeeAllAssets/SeeAllAssetsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Account/components/TransactionList.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SignedOut/components/PricesAssetList.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/components/TransactionHistory.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 4
+        }
+      },
+      {
+        "name": "TabBarButton",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/tabs/TabBarButton.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/components/OrderForm/TabBarRadioGroup.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 1
+        }
+      },
+      {
+        "name": "TabBarDivider",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/tabs/TabBarDivider.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
       {
-        "name": "TextContent",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/TextContent.tsx",
+        "name": "SelectInput",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/interactables/inputs/SelectInput.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
+          "src/packages/onboarding/src": [
+            "/consumer/react-native/src/packages/onboarding/src/debugScreen/SelectExperience.tsx"
+          ],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/StatePicker/StatePicker.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/components/CoinbaseCardCountryPicker.tsx"
+          ]
         },
         "callSiteCount": {
-          "src/packages/onboarding/src": 0
+          "src/packages/onboarding/src": 1,
+          "src/packages/app/src": 2
         }
       },
       {
-        "name": "TextContent",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/RichText/TextContent.tsx",
+        "name": "StrengthIndicator",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/interactables/inputs/StrengthIndicator.tsx",
         "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
       {
-        "name": "VideoControls",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoControls.tsx",
+        "name": "AnimatedTabBar",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/tabBar/AnimatedTabBar.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "VideoControls",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoControls.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
       {
-        "name": "VideoPlayer",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoPlayer.tsx",
+        "name": "AnimatedTabHeader",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/tabBar/AnimatedTabHeader.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "VideoPlayer",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoPlayer.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
       {
-        "name": "VideoTextTrack",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoTextTrack.tsx",
+        "name": "AnimatedTabNavBar",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/tabBar/AnimatedTabNavBar.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "VideoTextTrack",
-        "path": "/consumer/react-native/libs/react-native-core/components/UI/VideoPlayer/VideoTextTrack.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "AnimatedTabScene",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/tabBar/AnimatedTabScene.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "Drawer",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/interactables/drawer/Drawer.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "HandleBar",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/interactables/drawer/HandleBar.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "Menu",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/interactables/drawer/Menu.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/MoreMenu/MoreMenuScreen.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 1
+        }
+      },
+      {
+        "name": "Tray",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/interactables/drawer/Tray.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [
+            "/consumer/react-native/src/packages/onboarding/src/components/UI/NavBar.tsx",
+            "/consumer/react-native/src/packages/onboarding/src/components/UI/SkipConfirmationPrompt.tsx"
+          ],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/CloseAccountTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/CloseFuturesAccountTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/PaymentMethodsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/AccessibilityProtection/AccessibilityConfirmationTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/navigation/JailBreakWarningTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/navigation/NoInternetNotificationTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/PaymentMethod/PaymentsPromoTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/QuickActions/QuickActionBuyAssetTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/QuickActions/QuickActionBuyTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/QuickActions/SelectSendMethodTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/Section/Section.tsx",
+            "/consumer/react-native/src/packages/app/src/components/StatusAlerts/SystemAlertTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/Transaction/TransactionDetailWithTrayCell.tsx",
+            "/consumer/react-native/src/packages/app/src/components/Transfer/UserWarningCell.tsx",
+            "/consumer/react-native/src/packages/app/src/components/Transfer/WithdrawalPushPaymentInstructionTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/TravelRules/TransactionOnHoldTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/Trays/CardStatusAlertTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/Trays/TooltipTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/TwoFactor/TwoFactorHelpTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/TwoFactor/TwoFactorTooltipTray.tsx",
+            "/consumer/react-native/src/packages/app/src/components/UpdateAddressTray/UpdateAddressTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Debug/DebugTwoFactorScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DappEarnUpsell.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DappWalletDexDisclaimer.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/WalletSecurityDisclaimer.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/GlobalTrade/GlobalTradeScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/MarqetaKYC/MarqetaSelectIdTypeScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Send/ConnectWalletScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Send/SendRecipientTypeScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/StakePreviewAutopilotToggle.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/StakingPreviewAutostakingPreferenceToggle.tsx",
+            "/consumer/react-native/src/packages/app/src/components/PaymentMethodCellV2/trays/CardStatusAlertTrayV2.tsx",
+            "/consumer/react-native/src/packages/app/src/components/PaymentMethodCellV2/trays/PaymentMethodOptionsTrayV2.tsx",
+            "/consumer/react-native/src/packages/app/src/components/PaymentMethodCellV2/trays/RemovePaymentMethodConfirmTrayV2.tsx",
+            "/consumer/react-native/src/packages/app/src/components/ShareTray/components/ShareDisabled.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AccountChecklist/components/ChecklistInformationTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AddPaymentMethod/components/PlaidDisclaimerTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AddPaymentMethod/components/PlaidSupportedBankTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/components/CancelAllOrdersConfirmationTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AppToApp/components/ScopeInfoTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CbNft/Buy/CbNftBuyFeesSection.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/components/CoinbaseCardTakeOverTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Debug/components/ExperimentGroupsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/components/DAppWalletActionTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DAppTransaction/DAppTransactionDetailsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DAppTransaction/DAppTransactionHistoryList.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DAppTransaction/DAppTransactionList.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DAppWallet/Web3WalletActivityTab.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/requirementScreens/DappWalletAssetOffboarding.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/DirectDeposit/AssetSelect/AssetSelectTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/DirectDeposit/MultiAssetSelect/MultiAssetSelect.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/ExploreTab/components/FilterTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/ExploreTab/components/SortingTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/FundedSend/components/FundedSendTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/HomeTab/homeFeedCard/HomeFeedCardTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Receive/components/AddressInlineWarning.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Receive/components/AddressLaunchWarning.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Recurring/components/RecurringDeleteTransactionTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Send/components/BTCLightningUpsellTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Send/components/NotesInfoTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Send/components/OpenWalletTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Send/components/WalletUpsellTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Settings/components/PaymentMethodOptionsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Settings/components/RemovePaymentMethodConfirmationAlert.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Settings/Notifications/CustomPriceAlertsList.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SimpleTrade/components/DepositAddPaymentPrimerTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SimpleTrade/LimitOrder/LimitOrderDetails.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Stablecoin/components/CashRewardsInfoTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/components/EducationInterstitialTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/components/StakingPreviewDetailsV2.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/components/StakingPreviewUserWarnings.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/components/StakingV2PendingRequests.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/components/UnstakingOptionsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/TravelRule/components/ReceiveTransactionDetailsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/WatchlistRecommendations/components/WatchlistRecommendationsUnsavedWarningTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Web3/components/Web3BrowserMoreActionsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Web3/Web3BrowserTabs/Web3BrowserTabsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/YieldCenter/Trays/InterestEarnedDisclaimerTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/YieldCenter/Trays/InterestRateDisclaimerTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AddPaymentMethod/components/PaymentMethodDetails/PaymentMethodDetailsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen/EuropeanAccountNumberInfoTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/components/ClosePositionTray/ClosePositionTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AssetsTab/components/AssetsHeader/AssetsHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AssetsTab/components/WalletExplainerTray/WalletExplainerTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Cash/Transfero/components/AddCashVerifyAccountTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Rewards/components/IssuerRewardStandardInfoTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Rewards/components/RotatingRewardsInfoTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Settings/components/LockCardInfoTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DAppTransaction/NetworkTray/NetworkTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DAppWallet/components/DefiNetworkSelectTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DAppWallet/components/NFTVerifiedFilterTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DefiBorrow/DefiBorrowLoanManagement/DefiBorrowLoanManagementScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/requirementScreens/DappWalletRecoveryTray/AccountRecoveryTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/requirementScreens/nux/NewDappWalletTermsOfService.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/DirectDeposit/AccountInformation/cells/AccountDistributionCell.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/DirectDeposit/AccountInformation/cells/AccountStatusCell.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/DirectDeposit/AccountInformation/components/AccountInfoHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/ETH2/Wrapping/components/Eth2PausedTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/FundedSend/components/TradePreviewContent/TradePreviewContent.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Notifications/components/WatchlistNotificationTray/WatchlistNotificationTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/PaymentMethods/Interac/components/InteracErrorTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Settings/Notifications/components/MutePreference.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingGrowth/EthStakingRebate/components/ETHRebateInterstitialTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingGrowth/MissedEarnings/components/MissedEarningsExitTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/components/benefitOverlays/SubscriptionManagementTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/components/ProductStatusTray/components/ProductStatusTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Spot/OrderFormV3/components/AdvancedOrderErrorTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Transactions/components/details/TransactionFeeTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DAppWallet/components/DappWalletPreviewTray/DappWalletPreviewTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/PaymentMethods/OpenBanking/components/BankRestrictionTray/BankRestrictionTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/PaymentMethods/OpenBanking/components/OpenBankingErrorTray/OpenBankingErrorTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/PaymentMethods/OpenBanking/components/TermsAndConditions/TermsAndConditionsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SimpleTrade/Buy/BuyPreview/components/OBBuyPollTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Futures/components/FuturesPositions/components/ClosePositionSubmittedTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Portfolio/screens/AdvancedAssetDetailScreen/components/AdvAccountsSection.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Spot/components/TradeTray/components/TradeTypeToggleTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Spot/OrderFormV3/components/Topup/AddPaymentMethodTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Spot/OrderFormV3/components/Topup/ReceiveAssetsTray.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Spot/OrderFormV3/components/USDCPaymentMethodSelector/UsdcDefaultInfoTray.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 2,
+          "src/packages/app/src": 119
+        }
+      },
+      {
+        "name": "AnimatedProgressDot",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/progress/ProgressCarousel/AnimatedProgressDot.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "ProgressCarousel",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/progress/ProgressCarousel/ProgressCarousel.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/ShareTray/components/ShareableContentContainer.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SignedOut/components/OnboardingSlider.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/L2Multichain/components/MultichainNuxModal/MultichainNuxModal.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 4
+        }
+      },
+      {
+        "name": "ProgressCarouselExample",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/progress/ProgressCarousel/ProgressCarouselExample.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": []
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 0
+        }
+      },
+      {
+        "name": "ProgressCarouselSlide",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/progress/ProgressCarousel/ProgressCarouselSlide.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/ShareTray/components/ShareableContentContainer.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SignedOut/components/OnboardingSlider.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/requirementScreens/nux/Web3NuxContent.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/L2Multichain/components/MultichainNuxModal/MultichainNuxModal.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 4
+        }
+      },
+      {
+        "name": "SolidProgressBar",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/progress/SolidProgressBar/SolidProgressBar.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/AccountChecklist/AccountChecklistCard/AccountChecklistCard.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AccountChecklist/components/ChecklistSummary/ChecklistSummaryProgress.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 2
+        }
+      },
+      {
+        "name": "ProgressBar",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/navigation/progress/ProgressBar/ProgressBar.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [
+            "/consumer/react-native/src/packages/onboarding/src/components/UI/ProgressBar/index.tsx"
+          ],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/Tutorial/ProgressBarHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/LightningUpsell/LightningScreenSlider.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Send/L2EducationSlide.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SignedOut/TradingSteps.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DappTutorials/DappTutorialNavHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/P2PEducationFlow/components/ProgressBarHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Risk/ScamQuiz/components/QuizProgress.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 1,
+          "src/packages/app/src": 7
+        }
+      },
+      {
+        "name": "ChartHeader",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/HomeTab/components/HomeChartHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx",
+            "/consumer/react-native/src/packages/app/src/dataComponents/PortfolioBalance/TotalBalance/HomeFeedAndAssets/TotalBalanceHeaderLegacy.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Asset/components/AssetChart/AssetChartFallback.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AssetsTab/components/AssetsPortfolioChart/AssetsPortfolioChart.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AssetsTab/components/Wallet/WalletBalanceHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Notifications/components/actions/NotificationAssetChart.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Notifications/components/actions/NotificationAssetChartDeprecated.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Asset/components/AssetChart/AssetChartHeader/AssetChartHeader.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 9
+        }
+      },
+      {
+        "name": "ChartNavBar",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/core/chart/ChartHeaderAndNavBar/ChartNavBar.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/screens/SignedOut/AssetScreen/components/PriceChart/ScreenWithAssetPriceChart.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 1
+        }
+      },
+      {
+        "name": "FabricTextInput",
+        "path": "/consumer/react-native/libs/react-native-core/designSystem/src/core/chart/ChartHeaderAndNavBar/FabricTextInput.tsx",
+        "callSites": {
+          "src/packages/onboarding/src": [],
+          "src/packages/app/src": [
+            "/consumer/react-native/src/packages/app/src/components/BalanceSubheader/BalanceSubheader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/YieldCenter/components/YieldEarnedChartHeader/YieldEarnedChartHeader.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/components/Charts/DepthChart/components/DepthChartLabel.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src/packages/onboarding/src": 0,
+          "src/packages/app/src": 3
         }
       }
     ],
-    "componentCount": 117
+    "componentCount": 163
   },
   "components": {
     "components": [
@@ -1236,16 +1394,7 @@
             "/consumer/react-native/src/packages/onboarding/src/navigation/Navigator.tsx",
             "/consumer/react-native/src/packages/onboarding/src/utils/ExperienceUtils/createExperience.tsx",
             "/consumer/react-native/src/packages/onboarding/src/utils/ScreenUtils/createScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 3
-        }
-      },
-      {
-        "name": "ErrorBoundary",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/ErrorBoundary/ErrorBoundary.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": [
             "/consumer/react-native/src/packages/app/src/components/NetworkBoundary.tsx",
             "/consumer/react-native/src/packages/app/src/components/Root.tsx",
@@ -1253,7 +1402,6 @@
             "/consumer/react-native/src/packages/app/src/components/NotificationLanding/NotificationLandingBanner.tsx",
             "/consumer/react-native/src/packages/app/src/components/Transfer/PaymentMethodSelector.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Account/AccountScreenRav.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Asset/AssetScreenRav.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Asset/AssetScreenRavV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Asset/AssetScreenV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Asset/StablecoinScreenRav.tsx",
@@ -1299,6 +1447,7 @@
             "/consumer/react-native/src/packages/app/src/screens/SignedOut/AssetScreen/components/PriceChart/ScreenWithAssetPriceChart.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SimpleTrade/Buy/BuyConfirmation/components/BuyUpsell.tsx",
             "/consumer/react-native/src/packages/app/src/screens/YieldCenter/components/EarningActionButtons/EarningActions/EarningActions.tsx",
+            "/consumer/react-native/src/packages/app/src/product/cb1/screens/MemberHome/sections/ManageMembership/ManageMembership.tsx",
             "/consumer/react-native/src/packages/app/src/screens/ExploreTab/screens/Explore/TabContent/Crypto/CryptoTab.tsx",
             "/consumer/react-native/src/packages/app/src/screens/ExploreTab/screens/Explore/TabContent/Dapps/DappsTab.tsx",
             "/consumer/react-native/src/packages/app/src/screens/ExploreTab/screens/Explore/TabContent/NFTs/NftsTab.tsx",
@@ -1306,6 +1455,7 @@
           ]
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 3,
           "src/packages/app/src": 56
         }
       },
@@ -1315,19 +1465,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/EnterAddressScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "AddressInput",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Form/AddressInput.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -1337,19 +1479,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/signup/SignUpScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "PromoCodeInput",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Form/PromoCodeInput.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -1359,19 +1493,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/kba/KBAInterviewScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "QuestionAnswerInputSelector",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Form/QuestionAnswerInputSelector.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -1381,19 +1507,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/EnterTaxIdScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "TaxIdInput",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Form/TaxIdInput.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -1403,19 +1521,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/rfiPep/MultiHitForm.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "YearPicker",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Form/YearPicker.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -1425,19 +1535,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/VendorVerificationScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "GermanyPrimingVendorVerification",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/GermanyPriming/GermanyPrimingVendorVerification.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -1447,19 +1549,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/ChooseVerificationMethod.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "PoweredBySolaris",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/GermanyPriming/PoweredBySolaris.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -1469,23 +1563,14 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/components/UI/PortraitCameraContent.tsx",
-            "/consumer/react-native/src/packages/onboarding/src/screens/attestations/AttestationsKYCIntroScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/EDPErrorScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/OAuthEDPErrorScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/VerifyIdentityScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 5
-        }
-      },
-      {
-        "name": "BulletItem",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Layout/BulletItem.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 4,
           "src/packages/app/src": 0
         }
       },
@@ -1499,19 +1584,11 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/IDFrontReviewScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/poaExperience/ReviewScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/rdv/RDVReviewScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 5
-        }
-      },
-      {
-        "name": "ImageView",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Layout/ImageView.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 5,
           "src/packages/app/src": 0
         }
       },
@@ -1523,19 +1600,11 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/SelectIdTypeScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/VerifyIdentityWithOAuthEDPScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/socialEngineeringQuestionnaire/SocialEngineeringQuestionScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 3
-        }
-      },
-      {
-        "name": "LinkableText",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Layout/LinkableText.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 3,
           "src/packages/app/src": 0
         }
       },
@@ -1553,9 +1622,6 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/appropriatenessAssessmentQuestionnaire/AppropriatenessAssessmentSuccess.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/appropriatenessAssessmentQuestionnaire/AppropriatenessAssessmentTryAgainScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/appropriatenessAssessmentQuestionnaire/AppropriatenessAssessmentWaitScreen.tsx",
-            "/consumer/react-native/src/packages/onboarding/src/screens/attestations/AttestationsKYCIntroScreen.tsx",
-            "/consumer/react-native/src/packages/onboarding/src/screens/attestations/AttestationsKYCTodoListScreen.tsx",
-            "/consumer/react-native/src/packages/onboarding/src/screens/attestations/AttestationsScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/blocked/BlockedOnboardingScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/caAppropriatenessAssessment/CAAIntroScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/caAppropriatenessAssessment/CAALimitScreen.tsx",
@@ -1713,22 +1779,12 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/futuresOnboarding/W9Screen/W9Certification/W9Certification.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/futuresOnboarding/W9Screen/W9Decline/W9Decline.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/futuresOnboarding/W9Screen/W9Form/W9Form.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 169
-        }
-      },
-      {
-        "name": "Screen",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Layout/Screen.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": [
             "/consumer/react-native/src/packages/app/src/components/ConfirmBackScreen.tsx",
             "/consumer/react-native/src/packages/app/src/components/EmptyScreenPopBack.tsx",
             "/consumer/react-native/src/packages/app/src/components/ListCellScreenFallback.tsx",
             "/consumer/react-native/src/packages/app/src/components/Screen.tsx",
-            "/consumer/react-native/src/packages/app/src/hooks/useTabRootScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/RequestEnterNoteScreen.tsx",
             "/consumer/react-native/src/packages/app/src/components/BaseDepositInformation/BaseDepositInformationStepsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/components/BaseDepositInformation/BaseDepositInformationWaitingScreen.tsx",
@@ -1752,11 +1808,9 @@
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/AdvocacyContentHubScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/AdvocacyContentScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/AdvocacySignupScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/AdvocacySWCRedirect.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/AdvocacyTakeoverSuccessScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AppToApp/AppToAppScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AppTrackingTransparencyPrompt/AppTrackingTransparencyPrompt.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Asset/AssetScreenRav.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Asset/AssetScreenRavV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Asset/AssetScreenV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Asset/StablecoinScreenRav.tsx",
@@ -1817,6 +1871,7 @@
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugMPCScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugNetworkScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugOfflineCacheScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Debug/DebugOnboardingMockerScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugOTAScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugPanGestureToggleScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugPasskeySignatureScreen.tsx",
@@ -1835,6 +1890,7 @@
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugSubscriptionMenuScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugSubscriptionScreenNavigatorScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugSubscriptionTradeEntryPoint.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Debug/DebugSuspenseInspectorScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugSuspenseTimingScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugSweepstakeDeeplinkScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugSwitchEnvScreen.tsx",
@@ -1842,12 +1898,13 @@
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugTextEncoderScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugTradeAnimationScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugTutorialsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Debug/DebugTwoFactorScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugUIModulesScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugUndoDismissAnnouncementCardsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugUpsellFrameworkScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Debug/DebugVirtualizedTabView.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/TVCachedWebViewL2Screen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/TVCachedWebviewScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Defi/Web3ActionComplete.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/Web3DeeplinkBase.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Dex/DexCompleteNFTRewardScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/EditAddress/EditAddressScreen.tsx",
@@ -1901,6 +1958,7 @@
             "/consumer/react-native/src/packages/app/src/screens/Recurring/EditableRecurringPurchaseScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Recurring/RecurringPurchaseScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SeeAllAssets/SeeAllAssetsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Send/ConnectWalletCBWalletScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Send/ConnectWalletScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Send/L2EducationScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Send/L2EducationScreenDefaultContent.tsx",
@@ -1917,6 +1975,7 @@
             "/consumer/react-native/src/packages/app/src/screens/Settings/DappConnectionsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Settings/SettingsApplePayScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Settings/SettingsGooglePayScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Settings/SettingsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SignedOut/SignedOutPrices.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SignedOut/SignedOutPricesSearch.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SignedOut/SignedOutSplashScreen.tsx",
@@ -1928,11 +1987,15 @@
             "/consumer/react-native/src/packages/app/src/screens/Stablecoin/RewardsBreakdownScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Stablecoin/RewardsInformationScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/StakingV2/BuyAndStakeWarningScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/StakingInputContentV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/StakingV2/StakingInputScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/StakingV2/StakingNuxScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/StakingPreviewContentV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/StakingV2/StakingPreviewScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/StakingV2/StakingStatusScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/UnstakingInputContentV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/StakingV2/UnstakingInputScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/StakingV2/UnstakingPreviewContentV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/StakingV2/UnstakingPreviewScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/StakingV2/UnstakingStatusScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionBoostedRatesScreen/SubscriptionBoostedRatesScreen.tsx",
@@ -1940,6 +2003,7 @@
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionEnableCryptoBackups/SubscriptionEnableCryptoBackupsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/AccountProtectionScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/AdvancedTaxBenefitsScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/BaseGasRebateBenefitScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/MessariLiteBenefitScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/SubscriptionBillingHistoryScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/SubscriptionBillingPaymentScreen.tsx",
@@ -1973,7 +2037,6 @@
             "/consumer/react-native/src/packages/app/src/screens/SupportUnbanIntelligentCard/SupportUnbanReviewResponseScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SupportUnbanIntelligentCard/SupportUnbanUsageOptionsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SupportWblHold/SupportWblHoldDetailScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Sweepstakes/SweepstakesOptedInScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Sweepstakes/SweepstakesRewardInfoScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/TermsApply/TermsApplyScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/TradeTab/TradeRedirectScreen.tsx",
@@ -1989,8 +2052,6 @@
             "/consumer/react-native/src/packages/app/src/screens/WalletDeeplink/WalletDeeplinkScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/WalletUpsell/WalletUpsellScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/WatchlistRecommendations/WatchlistRecommendationsScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Web3/MiniDappBrowserScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Web3/MiniDappDetailScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Web3/Web3BrowserScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/WrappedAsset/WrappedAssetFAQScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/YieldCenter/AllEarningAssetsScreen.tsx",
@@ -2000,7 +2061,7 @@
             "/consumer/react-native/src/packages/app/src/screens/YieldCenter/StakingDetailsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/YieldCenter/YieldCenterNuxScreen.tsx",
             "/consumer/react-native/src/packages/app/src/components/ChatSupport/screens/SupportChatScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/components/EmptyState/Payments/PaymentsErrorFallbackScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/components/GracefulDegradation/Payments/PaymentsErrorFallbackScreen.tsx",
             "/consumer/react-native/src/packages/app/src/components/SimpleTrade/BaseConfirmation/BaseConfirmation.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AccountChecklist/debug/DebugChecklistDeeplinkScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AddPaymentMethod/PIX/PIXAddAccountScreen.tsx",
@@ -2011,6 +2072,7 @@
             "/consumer/react-native/src/packages/app/src/screens/AddPaymentMethod/Sepa/EuropeanPaymentDetailsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/components/MarketDetailsScreenFallback.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/AdvocacySubscriberSignupScreen/AdvocacySubscriberSignupScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/AdvocacySWCRedirect/AdvocacySWCRedirect.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/StandWithCryptoHub/StandWithCryptoHubScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/StandWithCryptoHub/StandWithCryptoTeaser.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Asset/StableAssetScreen/StableAssetScreen.tsx",
@@ -2021,9 +2083,6 @@
             "/consumer/react-native/src/packages/app/src/screens/AssetCategories/AssetCategoryDetailsScreenV2/AssetCategoryDetailsScreenV2Loader.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AssetsTab/PrimaryWallet/PrimaryWalletScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AssetsTab/VaultWallet/VaultWalletScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Cash/Moneygram/Moneygram2FAScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Cash/Moneygram/MoneygramInitScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Cash/Moneygram/MoneygramMoreInfo.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Cash/Transfero/ArgentineAddAccountScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Cash/Transfero/IncomeConfirmationScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Cash/Transfero/MakeBankTransferScreen.tsx",
@@ -2072,7 +2131,6 @@
             "/consumer/react-native/src/packages/app/src/screens/Defi/DAppTransaction/Web3WalletAssetDetail.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/DappTutorials/DappTutorialScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/DAppWallet/DAppWalletScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Defi/MGX/MgxSendPrepareTxLoaderScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/Receive/DAppReceiveScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/Send/ConnectCBWalletScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/Send/DAppWalletSendBurnAssetScreen.tsx",
@@ -2081,9 +2139,6 @@
             "/consumer/react-native/src/packages/app/src/screens/Defi/Send/DAppWalletSendErrorScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/Send/DAppWalletSendInputScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/Send/DAppWalletSendSelectRecipient.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Defi/Transfer/DAppWalletTransferCompleteScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Defi/Transfer/DAppWalletTransferInputScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Defi/Transfer/DAppWalletTransferInputScreenFallback.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Dex/DexOrderStatusScreen/DexOrderStatusScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Dex/DexPreviewScreen/DetailPreviewScreenLoading.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Dex/DexPreviewScreen/DexPreviewScreen.tsx",
@@ -2189,6 +2244,7 @@
             "/consumer/react-native/src/packages/app/src/screens/Receive/Requests/RequestSelectRecipientScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Receive/Requests/SendRequestConfirmationScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Receive/Requests/SendRequestScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/RewardsHub/screens/RewardsHubScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Risk/ScamQuiz/ScamQuizScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Risk/UnbanSelfServe/IntentionsQuizScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Risk/UnbanSelfServe/UnbanAccountReviewPendingScreen.tsx",
@@ -2233,13 +2289,10 @@
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/cancelation/SubscriptionCancelledScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/cancelation/SubscriptionChurnIncentiveAcceptedScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SubscriptionManagement/optBackIn/SubscriptionOptBackInScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/SubscriptionSignup/SubscriptionSignupPreviewScreen/SubscriptionSignupPreviewScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/TransactionDetails/components/TransactionDetails.tsx",
             "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/screens/TransactionHistoryListScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/screens/TransactionHistoryListScreenV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/UniversalSearch/components/UniversalSearch.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/WalletLink/JoinWalletLinkSession/DebugJoinWalletLinkSessionScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/WalletLink/JoinWalletLinkSession/JoinWalletLinkSessionScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/WalletLink/WalletLinkConfirmation/WalletLinkConfirmation.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Wbl/TradeImmediately/TradeImmediatelyScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Web3/components/Web3BrowserSearchScreen.tsx",
@@ -2261,13 +2314,13 @@
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Spot/OrderFormV3/AdvancedOrderFormScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/LegislativePortalExperience/screens/LegislativePortal.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/LegislativePortalExperience/screens/PoliticianProfileScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Cash/Moneygram/components/MoneygramPendingTxnDetails.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CbNft/Buy/Mint/MintPreviewScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CbNft/Buy/Mint/MintSummaryScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Support/BannedCard/BannedCardScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Support/CardContact/CardContactScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Support/CardLimits/CardLimitsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Support/RenewExpiredCard/RenewCardConfirmAddressScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Support/RenewExpiredCard/RenewCardSuccessScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Support/RequestNewCard/RequestNewCardAddressScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Support/RequestNewCard/RequestNewCardIntroScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Support/RequestNewCard/RequestNewCardSuccessScreen.tsx",
@@ -2278,18 +2331,18 @@
             "/consumer/react-native/src/packages/app/src/screens/CoinbaseCard/Webviews/pin/CardPinScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/DAppBrowser/BrowserBookmark/DappBrowserBookmarkRenameScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/DAppBrowser/BrowserBookmark/DappBrowserBookmarkScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DefiBorrow/DefiBorrowFAQ/DefiBorrowFAQScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/DefiBorrow/DefiBorrowInput/DefiBorrowInputScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DefiBorrow/DefiBorrowLoanHealth/DefiBorrowLoanHealthScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/DefiBorrow/DefiBorrowLoanManagement/DefiBorrowLoanManagementScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Defi/Transfer/DAppWalletTransferAssetSelectorScreen/DAppWalletTransferAssetSelectorScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Defi/Transfer/DAppWalletTransferConfirmationScreen/DAppWalletTransferConfirmationScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/Defi/DefiRepay/DefiRepayInput/DefiRepayInputScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/ExploreTab/screens/SeeAll/SeeAllAssetsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Home/components/WatchList/WatchlistSeeAllScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/PaymentMethods/Requirements/Address/AddressRequirementScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Recurring/components/RecurringEditAmountInputScreen/RecurringEditAmountInputScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/ReferralHub/screens/InviteScreen/InviteScreenContentDeprecated.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/ReferralHub/screens/InviteScreen/InviteScreenContent.tsx",
             "/consumer/react-native/src/packages/app/src/screens/ReferralHub/screens/InviteScreen/InviteScreenTerms.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/ReferralHub/screens/ReferralActivityScreen/ReferralActivityScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Send/ContactManagement/ManageContacts/ManageContactsScreen.tsx",
@@ -2313,6 +2366,8 @@
             "/consumer/react-native/src/packages/app/src/screens/Trade/Sell/SellInput/SellInputScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Trade/Swap/SwapInput/SwapInputScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/TransactionHistory/components/TransactionHistoryDetailScreen/TransactionHistoryDetailScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/product/cb1/screens/MemeberBenefitDetail/ZeroTradingFees/CappedZTFDetails.tsx",
+            "/consumer/react-native/src/packages/app/src/product/cb1/screens/MemeberBenefitDetail/ZeroTradingFees/UnlimitedZTFDetails.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Futures/Details/PositionDetails/FuturesPositionsDetailsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Futures/FuturesContractOverview/components/FuturesContractOverviewContent.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Futures/FuturesOnboarding/AccountApprovalScreen/AccountApprovalScreen.tsx",
@@ -2321,9 +2376,6 @@
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Futures/FuturesOnboarding/ErrorScreen/ErrorScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/screens/OrderDetails/Fills/AdvancedOrderDetailsFillScreenV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/screens/TradeManagement/components/FuturesTermsScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Home/components/WatchList/CreateWatchlist/WatchlistAddAssetsScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Home/components/WatchList/CreateWatchlist/WatchlistCreateScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Home/components/WatchList/CreateWatchlist/WatchlistDeleteConfirmation.tsx",
             "/consumer/react-native/src/packages/app/src/screens/SignedOut/AssetScreen/components/PriceChart/ScreenWithAssetPriceChart.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Futures/FuturesOnboarding/EntryScreen/Intro/Intro.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/Spot/MarketDetailsV2/components/AssetLoader/MarketDetailsAssetLoader.tsx",
@@ -2333,7 +2385,8 @@
           ]
         },
         "callSiteCount": {
-          "src/packages/app/src": 606
+          "src/packages/onboarding/src": 166,
+          "src/packages/app/src": 601
         }
       },
       {
@@ -2342,7 +2395,6 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/ErrorMessageScreen.tsx",
-            "/consumer/react-native/src/packages/onboarding/src/screens/attestations/AttestationsKYCIntroScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/blocked/BlockedOnboardingScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/cdd/AnnualIncomeScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/cdd/BirthPlaceScreen.tsx",
@@ -2385,7 +2437,6 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/rfiPep/MultiHitScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/rfiPep/RfiPepSuccess.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/rfiPep/SingleHitScreen.tsx",
-            "/consumer/react-native/src/packages/onboarding/src/screens/riskDisclosure/RiskDisclosureScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/signup/PasswordScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/success/IDVSubmitSuccessScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/success/KycRefreshSuccessScreen.tsx",
@@ -2405,19 +2456,11 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/perpetualsOnboarding/ProofOfProfessionalTraderScreen/ProofOfProfessionalTraderScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/perpetualsOnboarding/RiskAckScreen/RiskAckScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/futuresOnboarding/W9Screen/W9Form/W9Form.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 64
-        }
-      },
-      {
-        "name": "ScreenTitle",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Layout/ScreenTitle.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 62,
           "src/packages/app/src": 0
         }
       },
@@ -2427,19 +2470,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/success/KycTierSuccessScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "TradingInfo",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/Success/TradingInfo.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -2450,19 +2485,11 @@
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/components/UI/PortraitCameraContent.tsx",
             "/consumer/react-native/src/packages/onboarding/src/components/UI/SimpleCaptureView.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 2
-        }
-      },
-      {
-        "name": "CameraFlipButton",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/CameraFlipButton.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 2,
           "src/packages/app/src": 0
         }
       },
@@ -2473,19 +2500,11 @@
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/components/UI/PortraitCameraContent.tsx",
             "/consumer/react-native/src/packages/onboarding/src/components/UI/SimpleCaptureView.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 2
-        }
-      },
-      {
-        "name": "CaptureButton",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/CaptureButton.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 2,
           "src/packages/app/src": 0
         }
       },
@@ -2498,22 +2517,14 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/IDBackCaptureScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/IDFrontCaptureScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/rdv/RDVCaptureScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 4
-        }
-      },
-      {
-        "name": "CaptureView",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/CaptureView.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": [
             "/consumer/react-native/src/packages/app/src/screens/MarqetaKYC/MarqetaIDBackCaptureScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/MarqetaKYC/MarqetaIDFrontCaptureScreen.tsx"
           ]
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 4,
           "src/packages/app/src": 2
         }
       },
@@ -2523,19 +2534,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/utils/ScreenUtils/createScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "ErrorHandler",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/ErrorHandler.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -2569,24 +2572,14 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/CustomerCategorization/components/QuestionInput.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/IdTypeAUScreen/SelectIdTypeAUScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/perpetualsOnboarding/ComplianceQuestionsScreen/ComplianceQuestionsScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 25
-        }
-      },
-      {
-        "name": "FlatList",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/FlatList.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": [
-            "/consumer/react-native/src/packages/app/src/screens/Debug/DebugDeFiScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugFieldLevelMockerScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Debug/DebugMenuScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Debug/DebugSubscriptionMenuScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/NativeCurrency/NativeCurrencyScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Send/ConnectWalletScreen.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Send/SendRecipientTypeScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/utils/suspenseInspector/SuspenseInspectorIgnoredList.tsx",
+            "/consumer/react-native/src/packages/app/src/utils/suspenseInspector/SuspenseInspectorObservedList.tsx",
+            "/consumer/react-native/src/packages/app/src/utils/suspenseInspector/SuspenseInspectorSuspendedList.tsx",
             "/consumer/react-native/src/packages/app/src/components/TransactionList/TransactionFilterTray/AssetFilterTrayState.tsx",
             "/consumer/react-native/src/packages/app/src/components/TransactionList/TransactionFilterTray/TransactionTypeTrayState.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/DAppBrowser/DappBrowserRecentDapps.tsx",
@@ -2599,14 +2592,15 @@
             "/consumer/react-native/src/packages/app/src/screens/Send/SendAccountSelectorScreen/SendAccountSelectorModal.tsx",
             "/consumer/react-native/src/packages/app/src/screens/YieldCenter/Trays/apyCalculationTray.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvocacyContentHub/LegislativePortalExperience/components/ExploreStatePoliticiansSection.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Risk/ScamQuizV2/screens/ScamQuestionScreen.tsx",
+            "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/screens/MarketSelector/components/RecentlyTradedMarkets.tsx",
             "/consumer/react-native/src/packages/app/src/screens/AdvancedTrade/screens/OrderDetails/Fills/AdvancedOrderDetailsFillScreenV2.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/DAppBrowser/DappMarketplaceV2/components/DappMarketplaceV2RecentDapps.tsx"
           ]
         },
         "callSiteCount": {
-          "src/packages/app/src": 23
+          "src/packages/onboarding/src": 25,
+          "src/packages/app/src": 22
         }
       },
       {
@@ -2617,7 +2611,6 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/ErrorMessageScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/components/GermanyPriming/GermanyPrimingVendorVerification.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/appropriatenessAssessmentQuestionnaire/AppropriatenessAssessmentSuccess.tsx",
-            "/consumer/react-native/src/packages/onboarding/src/screens/attestations/AttestationsKYCIntroScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/CustomerCategorization/CCSuccessScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/error/EDPMaxAttemptsReachedScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/error/GenericErrorScreen.tsx",
@@ -2643,20 +2636,10 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/success/TransferoSuccessScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/suitability/SuitabilityErrorScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/CustomerCategorization/components/RiskAgreement.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 29
-        }
-      },
-      {
-        "name": "HeroImage",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/HeroImage.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": [
             "/consumer/react-native/src/packages/app/src/screens/AddPaymentMethod/UnmetRequirementsScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Defi/WalletSecurityDisclaimer.tsx",
-            "/consumer/react-native/src/packages/app/src/screens/Defi/Web3ActionComplete.tsx",
             "/consumer/react-native/src/packages/app/src/screens/Dex/DexCompleteNFTRewardScreen.tsx",
             "/consumer/react-native/src/packages/app/src/screens/LimitsAndFeatures/Shared.tsx",
             "/consumer/react-native/src/packages/app/src/screens/MarqetaKYC/MarqetaIDVErrorScreen.tsx",
@@ -2677,7 +2660,8 @@
           ]
         },
         "callSiteCount": {
-          "src/packages/app/src": 20
+          "src/packages/onboarding/src": 28,
+          "src/packages/app/src": 19
         }
       },
       {
@@ -2686,19 +2670,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/navigation/Navigator.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "NavBar",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/NavBar.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -2708,19 +2684,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/utils/ScreenUtils/createScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "PasswordError",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/PasswordError.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -2732,19 +2700,11 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/FaceReviewScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/IDBackReviewScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/IDFrontReviewScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 3
-        }
-      },
-      {
-        "name": "PhotoReviewCard",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/PhotoReviewCard.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 3,
           "src/packages/app/src": 0
         }
       },
@@ -2754,19 +2714,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/components/UI/CaptureView.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "PortraitCameraContent",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/PortraitCameraContent.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -2776,19 +2728,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/poaExperience/CaptureScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "SimpleCaptureView",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/SimpleCaptureView.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -2796,19 +2740,11 @@
         "name": "SkipButton",
         "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/SkipButton.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "SkipButton",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/SkipButton.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -2816,19 +2752,11 @@
         "name": "SkipConfirmationPrompt",
         "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/SkipConfirmationPrompt.tsx",
         "callSites": {
-          "src/packages/onboarding/src": []
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 0
-        }
-      },
-      {
-        "name": "SkipConfirmationPrompt",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/SkipConfirmationPrompt.tsx",
-        "callSites": {
+          "src/packages/onboarding/src": [],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 0,
           "src/packages/app/src": 0
         }
       },
@@ -2840,19 +2768,11 @@
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/FaceReviewScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/IDBackReviewScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/idv/IDFrontReviewScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 3
-        }
-      },
-      {
-        "name": "TemporarilyHideFromVoiceOver",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/TemporarilyHideFromVoiceOver.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 3,
           "src/packages/app/src": 0
         }
       },
@@ -2862,19 +2782,11 @@
         "callSites": {
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/webview/components/LocalServerWebView.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 1
-        }
-      },
-      {
-        "name": "WebView",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/WebView.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 1,
           "src/packages/app/src": 0
         }
       },
@@ -2885,19 +2797,11 @@
           "src/packages/onboarding/src": [
             "/consumer/react-native/src/packages/onboarding/src/screens/remediation/RemediationAlertScreen.tsx",
             "/consumer/react-native/src/packages/onboarding/src/screens/kyc/KYCRefreshAlertScreen/KYCRefreshAlertScreen.tsx"
-          ]
-        },
-        "callSiteCount": {
-          "src/packages/onboarding/src": 2
-        }
-      },
-      {
-        "name": "AlertScreen",
-        "path": "/consumer/react-native/src/packages/onboarding/src/components/UI/AlertScreen/AlertScreen.tsx",
-        "callSites": {
+          ],
           "src/packages/app/src": []
         },
         "callSiteCount": {
+          "src/packages/onboarding/src": 2,
           "src/packages/app/src": 0
         }
       }

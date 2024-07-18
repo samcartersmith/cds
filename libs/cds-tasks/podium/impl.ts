@@ -29,6 +29,12 @@ export default async function getPodiumData(): Promise<{ success: boolean }> {
       throw new Error('Please provide a valid root directory');
     }
 
+    // output directory for product component data
+    const outputDir = path.join(rootDir, 'apps/website/static/data/__generated__/podium');
+    // wipe existing data
+    cleanup(outputDir);
+    info('Cleaned up existing product component data');
+
     // create a temp directory to store the cloned repos. we'll delete this at the end.
     const tempDir = path.join(rootDir, tempRepoDir);
     // slice out the rootDir from the path to make the path relative
@@ -87,6 +93,7 @@ export default async function getPodiumData(): Promise<{ success: boolean }> {
                   cleanPath,
                   sourceFile,
                 },
+                componentConfig: components,
               });
               components.push(...callSitesForComponentByApp);
             });
@@ -107,7 +114,6 @@ export default async function getPodiumData(): Promise<{ success: boolean }> {
           // write library data to a JSON file
           // make the repo name kebab case, no slashes
           const repoNameKebab = repo.replace(/\//g, '-');
-          const outputDir = path.join(rootDir, 'apps/website/static/data/__generated__/podium');
           const libraryDataPath = path.join(outputDir, repoNameKebab);
           const outputPath = path.join(libraryDataPath, 'output.json');
           const stringifiedData = JSON.stringify(libraryMap, null, 2);

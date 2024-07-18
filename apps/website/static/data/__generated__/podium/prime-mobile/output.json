@@ -173,7 +173,20 @@
         "path": "/prime/mobile/src/components/CurrencyIcon.tsx",
         "callSites": {
           "src": [
+            "/prime/mobile/src/components/DualIcon.tsx",
             "/prime/mobile/src/screens/tasks/ActivityDetailsView.tsx"
+          ]
+        },
+        "callSiteCount": {
+          "src": 2
+        }
+      },
+      {
+        "name": "DualIcon",
+        "path": "/prime/mobile/src/components/DualIcon.tsx",
+        "callSites": {
+          "src": [
+            "/prime/mobile/src/screens/prepare-web3-transaction/PrepareWeb3TransactionScreen.tsx"
           ]
         },
         "callSiteCount": {
@@ -1047,6 +1060,6 @@
         }
       }
     ],
-    "componentCount": 85
+    "componentCount": 86
   }
 }

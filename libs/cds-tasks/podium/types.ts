@@ -28,7 +28,7 @@ export type ComponentMetadata = {
   name: string;
   // where it's declared
   path: string;
-  // paths to all call sites grouuped by app
+  // paths to all call sites grouped by app
   callSites: Record<string, string[]>;
   // callSite count grouped by app
   callSiteCount: Record<string, number>;

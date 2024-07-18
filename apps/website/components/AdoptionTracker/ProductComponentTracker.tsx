@@ -1,12 +1,16 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 
-import { memo, useCallback, useEffect, useState } from 'react';
-import { ModalBaseProps } from '@cbhq/cds-common';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import { ModalBaseProps, useToggler } from '@cbhq/cds-common';
 import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
 import { Banner } from '@cbhq/cds-web/banner/Banner';
 import { Button } from '@cbhq/cds-web/buttons';
 import { ListCell } from '@cbhq/cds-web/cells';
+import { Chip, InputChip } from '@cbhq/cds-web/chips';
 import { TextInput } from '@cbhq/cds-web/controls';
+import { Dropdown } from '@cbhq/cds-web/dropdown';
+import { Icon } from '@cbhq/cds-web/icons';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { Modal, ModalBody } from '@cbhq/cds-web/overlays';
 import {
@@ -114,34 +118,32 @@ const DetailedProductComponentBreakdown = memo(({ component }: { component: Comp
     <VStack spacingVertical={1}>
       <TextHeadline as="p">Call sites</TextHeadline>
       <Accordion>
-        {Object.entries(component.callSites)
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          .filter(([appName, callSites]) => callSites.length)
-          .map(([appName, callSites]) => {
-            return (
-              <AccordionItem
-                key={appName}
-                itemKey={appName}
-                subtitle={`${callSites.length} total`}
-                title={appName}
-              >
-                <VStack gap={1}>
-                  {callSites.map((callSite) => {
-                    return (
-                      <Link
-                        key={callSite}
-                        color="primary"
-                        href={processGithubURL(callSite)}
-                        variant="body"
-                      >
-                        {callSite}
-                      </Link>
-                    );
-                  })}
-                </VStack>
-              </AccordionItem>
-            );
-          })}
+        {Object.entries(component.callSites).map(([appName, callSites], idx) => {
+          const key = `${component.name}-${appName}-${idx}`;
+          return (
+            <AccordionItem
+              key={key}
+              itemKey={key}
+              subtitle={`${callSites.length} total`}
+              title={appName}
+            >
+              <VStack gap={1}>
+                {callSites.map((callSite) => {
+                  return (
+                    <Link
+                      key={`${key}-${callSite}`}
+                      color="primary"
+                      href={processGithubURL(callSite)}
+                      variant="body"
+                    >
+                      {callSite}
+                    </Link>
+                  );
+                })}
+              </VStack>
+            </AccordionItem>
+          );
+        })}
       </Accordion>
     </VStack>
   );
@@ -224,7 +226,7 @@ export const ProductComponentsList = ({ data }: { data: ProductComponentData }) 
     <>
       {componentData.map((component, index) => (
         <ProductComponentListCell
-          key={component.path}
+          key={`${component.path}-${index}`}
           componentDetails={component}
           id={component.path}
           index={index}
@@ -241,7 +243,7 @@ export const ProductComponentsList = ({ data }: { data: ProductComponentData }) 
     <EmptyProductComponentDetails />
   );
 
-  return <SplitScreenStack end={end} start={start} />;
+  return data ? <SplitScreenStack end={end} start={start} /> : null;
 };
 
 // we want to gate this feature behind a password. If a user has correctly entered the password we set a localStorage key to allow them to view the feature
@@ -300,6 +302,24 @@ const PasswordValidation = ({
 export const ProductComponentTracker = ({ data }: { data: ProductComponentData }) => {
   const [hasAccess, setHasAccess] = useState(false);
   const [passwordModalIsVisible, setPasswordModalIsVisible] = useState(true);
+  const [selectedLibraries, setSelectedLibraries] = useState<string[] | undefined>(
+    Object.keys(data),
+  );
+  const [filterMenuOpened, { toggleOn: openFilterMenu, toggleOff: closeFilterMenu }] =
+    useToggler(false);
+
+  // filter data based on selected libraries
+  const filteredData: ProductComponentData = useMemo(() => {
+    if (!selectedLibraries) {
+      return data;
+    }
+    return Object.entries(data).reduce((acc, [library, libraryData]) => {
+      if (selectedLibraries.includes(library)) {
+        acc[library] = libraryData;
+      }
+      return acc;
+    }, {} as ProductComponentData);
+  }, [data, selectedLibraries]);
 
   useEffect(() => {
     // check local storage for password
@@ -316,9 +336,36 @@ export const ProductComponentTracker = ({ data }: { data: ProductComponentData }
     setPasswordModalIsVisible(false);
   };
 
-  const totalNumberOfProductComponents = Object.values(data).reduce(
+  const totalNumberOfProductComponents = Object.values(filteredData).reduce(
     (acc, { componentCount }) => acc + componentCount,
     0,
+  );
+
+  const handleLibraryChange = useCallback(
+    (value: string) => {
+      if (selectedLibraries?.includes(value)) {
+        setSelectedLibraries(selectedLibraries.filter((lib) => lib !== value));
+      } else {
+        setSelectedLibraries([...(selectedLibraries || []), value]);
+      }
+    },
+    [selectedLibraries],
+  );
+
+  const libraryOptions = useMemo(
+    () => (
+      <VStack>
+        {Object.keys(data).map((library) => (
+          <ListCell
+            compact
+            onPress={() => handleLibraryChange(library)}
+            selected={selectedLibraries?.includes(library)}
+            title={library}
+          />
+        ))}
+      </VStack>
+    ),
+    [data, handleLibraryChange, selectedLibraries],
   );
 
   return hasAccess ? (
@@ -328,8 +375,37 @@ export const ProductComponentTracker = ({ data }: { data: ProductComponentData }
           This feature is currently in development. Please use with caution.
         </TextBody>
       </Banner>
-      <TextHeadline as="p">Total components: {totalNumberOfProductComponents}</TextHeadline>
-      <ProductComponentsList data={data} />
+      <TextHeadline as="p" spacingStart={1}>
+        Total components: {totalNumberOfProductComponents}
+      </TextHeadline>
+      <HStack gap={1} justifyContent="space-between">
+        <HStack gap={1}>
+          {selectedLibraries?.map((library) => (
+            <InputChip onPress={() => handleLibraryChange(library)} value={library} />
+          ))}
+        </HStack>
+        <Dropdown
+          content={libraryOptions}
+          // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+          contentPosition={{ placement: 'bottom-end', gap: 1 }}
+          onCloseMenu={closeFilterMenu}
+          width={300}
+        >
+          <Chip
+            end={
+              <Icon
+                color="secondaryForeground"
+                name={filterMenuOpened ? 'caretDown' : 'caretRight'}
+                size="s"
+              />
+            }
+            onPress={openFilterMenu}
+          >
+            Filter Libraries
+          </Chip>
+        </Dropdown>
+      </HStack>
+      <ProductComponentsList data={filteredData} />
     </VStack>
   ) : (
     <PasswordValidation

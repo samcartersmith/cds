@@ -165,6 +165,7 @@ export async function createTsMorphProject(directory: string) {
 export const getCallSitesForComponentByApp = ({
   callSiteDirForApp,
   libraryConfig,
+  componentConfig,
 }: {
   callSiteDirForApp: string;
   libraryConfig: {
@@ -175,6 +176,7 @@ export const getCallSitesForComponentByApp = ({
     cleanPath: (path: string) => string;
     sourceFile: SourceFile;
   };
+  componentConfig: ComponentMetadata[];
 }) => {
   const { component, projectFiles, packageName, cleanPath, sourceFile, repoDirectory } =
     libraryConfig;
@@ -194,7 +196,7 @@ export const getCallSitesForComponentByApp = ({
   const components: ComponentMetadata[] = [];
 
   // check if the component is already in the components array
-  const existingComponent = components.find((c) => c.name === component);
+  const existingComponent = componentConfig.find((c) => c.name === component);
   if (!existingComponent) {
     components.push({
       name: component,
