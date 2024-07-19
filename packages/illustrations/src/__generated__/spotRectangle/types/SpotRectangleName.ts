@@ -128,6 +128,7 @@ export type SpotRectangleName =
   | 'p2pPayments'
   | 'phoneNumber'
   | 'portfolioOverview'
+  | 'portfolioOverviewRelaunch'
   | 'portfolioPerformance'
   | 'poweredByEthereum'
   | 'primeDeFi'

@@ -197,6 +197,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   referralsGenericCoin: 0,
   appUpdate: 1,
   faceId: 0,
+  portfolioOverviewRelaunch: 0,
 };
 
 export default versionMap;

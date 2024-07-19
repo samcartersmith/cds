@@ -505,6 +505,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/portfolioOverview-3').content,
     dark: () => require('../svgJs/dark/portfolioOverview-3').content,
   },
+  portfolioOverviewRelaunch: {
+    light: () => require('../svgJs/light/portfolioOverviewRelaunch-0').content,
+    dark: () => require('../svgJs/dark/portfolioOverviewRelaunch-0').content,
+  },
   portfolioPerformance: {
     light: () => require('../svgJs/light/portfolioPerformance-3').content,
     dark: () => require('../svgJs/dark/portfolioPerformance-3').content,

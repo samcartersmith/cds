@@ -8,6 +8,34 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.16.0 (7/19/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 7/19/2024. [[#3150](https://github.cbhq.net/frontend/cds/pull/3150)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- bellCheck
+- bellPlus
+
+#### Nav
+
+- priceAlertsCheck
+- verifiedPools
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- addPeople
+
 ## 2.15.0 (6/24/2024 PST)
 
 #### 🚀 Updates

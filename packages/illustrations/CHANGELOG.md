@@ -8,6 +8,24 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.11.0 (7/19/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 7/19/2024. [[#3150](https://github.cbhq.net/frontend/cds/pull/3150)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- calculator
+
+#### Spot Rectangle
+
+- portfolioOverviewRelaunch
+
 ## 3.10.0 (6/27/2024 PST)
 
 #### 🚀 Updates

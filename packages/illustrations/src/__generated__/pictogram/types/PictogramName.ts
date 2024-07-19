@@ -46,6 +46,7 @@ export type PictogramName =
   | 'browserMultiPlatform'
   | 'browserTransaction'
   | 'bundle'
+  | 'calculator'
   | 'calendar'
   | 'calendarCaution'
   | 'candleSticksGraph'

@@ -293,6 +293,8 @@ const names: UiIconName[] = [
   'gif',
   'perpetualSwap',
   'image',
+  'bellCheck',
+  'bellPlus',
 ];
 
 export default names;

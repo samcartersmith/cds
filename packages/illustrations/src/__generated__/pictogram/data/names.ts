@@ -52,6 +52,7 @@ const names: PictogramName[] = [
   'browserMultiPlatform',
   'browserTransaction',
   'bundle',
+  'calculator',
   'calendar',
   'calendarCaution',
   'candleSticksGraph',

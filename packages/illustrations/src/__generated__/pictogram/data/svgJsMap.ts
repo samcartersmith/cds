@@ -177,6 +177,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/bundle-2').content,
     dark: () => require('../svgJs/dark/bundle-2').content,
   },
+  calculator: {
+    light: () => require('../svgJs/light/calculator-0').content,
+    dark: () => require('../svgJs/dark/calculator-0').content,
+  },
   calendar: {
     light: () => require('../svgJs/light/calendar-2').content,
     dark: () => require('../svgJs/dark/calendar-2').content,

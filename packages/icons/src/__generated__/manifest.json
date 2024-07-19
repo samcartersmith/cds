@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-06-24T21:52:50.602Z",
-  "metadata": { "lastUnicode": 62101 },
+  "lastUpdated": "2024-07-19T15:19:59.139Z",
+  "metadata": { "lastUnicode": 62119 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -857,7 +857,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60971 } }
       ],
       "createdAt": "2022-08-24T18:51:39.654Z",
-      "lastUpdated": "2024-02-22T12:32:04.105Z",
+      "lastUpdated": "2024-07-17T01:47:41.521Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-documentation-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-documentation-12-inactive.svg",
@@ -1302,7 +1302,7 @@
     "2:949": {
       "type": "nav",
       "name": "addPeople",
-      "hash": "MtZLoQj/qIE3hyyYMkXQvs7Aelifxtm/DLONAgBZZgI=",
+      "hash": "PZ0VcpuQtuhF4oC4fb60FaDBwlL+rbREe1IF6Fudej4=",
       "description": "navigation, speciality, people, add, invite, refer, follow, ➕, 👯‍♀️, 👨‍👩‍👦‍👦, 👨‍👩‍👧‍👧, 👨‍👩‍👦‍👦",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 60623 } },
@@ -1313,7 +1313,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 60656 } }
       ],
       "createdAt": "2022-08-24T18:52:02.960Z",
-      "lastUpdated": "2024-05-31T17:47:07.180Z",
+      "lastUpdated": "2024-07-12T21:29:07.736Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-addPeople-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-addPeople-12-inactive.svg",
@@ -1952,7 +1952,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60491 } }
       ],
       "createdAt": "2023-02-01T23:25:49.871Z",
-      "lastUpdated": "2024-05-29T00:35:57.086Z",
+      "lastUpdated": "2024-07-17T15:45:37.491Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretDown-12.svg",
         "svg16": "./ui/svg/ui-caretDown-16.svg",
@@ -2006,7 +2006,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60486 } }
       ],
       "createdAt": "2023-02-01T23:25:58.819Z",
-      "lastUpdated": "2024-05-29T00:03:45.897Z",
+      "lastUpdated": "2024-07-17T15:43:27.625Z",
       "outputs": {
         "svg12": "./ui/svg/ui-caretUp-12.svg",
         "svg16": "./ui/svg/ui-caretUp-16.svg",
@@ -2816,7 +2816,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59996 } }
       ],
       "createdAt": "2023-02-01T23:25:40.803Z",
-      "lastUpdated": "2024-01-22T23:03:22.905Z",
+      "lastUpdated": "2024-07-18T19:42:50.567Z",
       "outputs": {
         "svg12": "./ui/svg/ui-currencies-12.svg",
         "svg16": "./ui/svg/ui-currencies-16.svg",
@@ -2852,7 +2852,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59786 } }
       ],
       "createdAt": "2023-02-01T23:25:31.036Z",
-      "lastUpdated": "2023-10-25T17:34:15.929Z",
+      "lastUpdated": "2024-07-18T18:56:28.832Z",
       "outputs": {
         "svg12": "./ui/svg/ui-deposit-12.svg",
         "svg16": "./ui/svg/ui-deposit-16.svg",
@@ -3140,7 +3140,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61176 } }
       ],
       "createdAt": "2023-02-01T23:26:07.616Z",
-      "lastUpdated": "2024-04-16T14:16:09.690Z",
+      "lastUpdated": "2024-07-17T14:21:50.047Z",
       "outputs": {
         "svg12": "./ui/svg/ui-dropsActive-12.svg",
         "svg16": "./ui/svg/ui-dropsActive-16.svg",
@@ -3194,7 +3194,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60356 } }
       ],
       "createdAt": "2023-02-01T23:25:21.972Z",
-      "lastUpdated": "2024-04-27T00:02:35.445Z",
+      "lastUpdated": "2024-07-17T01:09:49.555Z",
       "outputs": {
         "svg12": "./ui/svg/ui-error-12.svg",
         "svg16": "./ui/svg/ui-error-16.svg",
@@ -3626,7 +3626,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60216 } }
       ],
       "createdAt": "2023-02-01T23:25:21.965Z",
-      "lastUpdated": "2024-02-26T06:21:33.205Z",
+      "lastUpdated": "2024-07-18T20:40:22.855Z",
       "outputs": {
         "svg12": "./ui/svg/ui-giftBox-12.svg",
         "svg16": "./ui/svg/ui-giftBox-16.svg",
@@ -3860,7 +3860,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60101 } }
       ],
       "createdAt": "2023-02-01T23:25:40.711Z",
-      "lastUpdated": "2024-04-11T16:51:18.562Z",
+      "lastUpdated": "2024-07-17T21:25:51.092Z",
       "outputs": {
         "svg12": "./ui/svg/ui-info-12.svg",
         "svg16": "./ui/svg/ui-info-16.svg",
@@ -3950,7 +3950,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60501 } }
       ],
       "createdAt": "2023-02-01T23:25:58.660Z",
-      "lastUpdated": "2024-01-22T23:02:29.215Z",
+      "lastUpdated": "2024-07-17T14:22:21.512Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lightningBolt-12.svg",
         "svg16": "./ui/svg/ui-lightningBolt-16.svg",
@@ -4580,7 +4580,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60211 } }
       ],
       "createdAt": "2023-02-01T23:26:07.556Z",
-      "lastUpdated": "2024-03-20T17:04:34.842Z",
+      "lastUpdated": "2024-07-17T21:26:31.785Z",
       "outputs": {
         "svg12": "./ui/svg/ui-questionMark-12.svg",
         "svg16": "./ui/svg/ui-questionMark-16.svg",
@@ -4868,7 +4868,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59876 } }
       ],
       "createdAt": "2023-02-01T23:25:12.874Z",
-      "lastUpdated": "2023-10-25T17:34:15.685Z",
+      "lastUpdated": "2024-07-17T21:47:36.570Z",
       "outputs": {
         "svg12": "./ui/svg/ui-smartContract-12.svg",
         "svg16": "./ui/svg/ui-smartContract-16.svg",
@@ -6767,7 +6767,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61826 } }
       ],
       "createdAt": "2023-10-16T20:13:41.050Z",
-      "lastUpdated": "2024-01-05T15:08:38.146Z",
+      "lastUpdated": "2024-07-11T17:48:21.151Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-coinbase-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-coinbase-12-inactive.svg",
@@ -7520,7 +7520,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61985 } }
       ],
       "createdAt": "2024-03-21T14:57:27.287Z",
-      "lastUpdated": "2024-05-29T17:45:29.176Z",
+      "lastUpdated": "2024-07-18T19:41:29.978Z",
       "outputs": {
         "svg12": "./ui/svg/ui-crypto-12.svg",
         "svg16": "./ui/svg/ui-crypto-16.svg",
@@ -7994,7 +7994,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62087 } }
       ],
       "createdAt": "2024-06-24T21:43:08.630Z",
-      "lastUpdated": "2024-06-24T21:43:08.630Z",
+      "lastUpdated": "2024-06-28T16:12:21.810Z",
       "outputs": {
         "svg12": "./ui/svg/ui-calculator-12.svg",
         "svg16": "./ui/svg/ui-calculator-16.svg",
@@ -8012,7 +8012,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62096 } }
       ],
       "createdAt": "2024-06-24T21:43:08.624Z",
-      "lastUpdated": "2024-06-24T21:43:08.624Z",
+      "lastUpdated": "2024-06-28T16:12:21.755Z",
       "outputs": {
         "svg12": "./ui/svg/ui-microphone-12.svg",
         "svg16": "./ui/svg/ui-microphone-16.svg",
@@ -8071,6 +8071,90 @@
         "svg12": "./ui/svg/ui-gif-12.svg",
         "svg16": "./ui/svg/ui-gif-16.svg",
         "svg24": "./ui/svg/ui-gif-24.svg"
+      }
+    },
+    "2554:68": {
+      "type": "nav",
+      "name": "priceAlertsCheck",
+      "hash": "3LzNdZIrumVulXAwHrSnV8qpy12PU2ig93wksU3pZUk=",
+      "description": "Price, Price alerts, 🔔, 🔕, plus, check",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62107 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62106 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62105 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62104 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62103 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62102 } }
+      ],
+      "createdAt": "2024-07-12T21:29:07.715Z",
+      "lastUpdated": "2024-07-17T20:55:08.120Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-priceAlertsCheck-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-priceAlertsCheck-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-priceAlertsCheck-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-priceAlertsCheck-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-priceAlertsCheck-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-priceAlertsCheck-24-inactive.svg"
+      }
+    },
+    "2562:99": {
+      "type": "nav",
+      "name": "verifiedPools",
+      "hash": "wLTuuebJ0LVumR/oyARZ9U8lVNOZB6U6g+CpmNrDCuI=",
+      "description": "nav, pools, verified, circles,",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62113 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62112 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62111 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62110 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62109 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62108 } }
+      ],
+      "createdAt": "2024-07-12T21:29:07.723Z",
+      "lastUpdated": "2024-07-17T20:55:08.115Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-verifiedPools-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-verifiedPools-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-verifiedPools-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-verifiedPools-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-verifiedPools-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-verifiedPools-24-inactive.svg"
+      }
+    },
+    "2595:17": {
+      "type": "ui",
+      "name": "bellPlus",
+      "hash": "w7I9K70gtcjIIKLGuK2r+/4yaM323/lwPzVcvdFe+VA=",
+      "description": "Bell, plus, check, add, price, alert, 🛎️, 🔔, 🚨",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62119 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62118 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62117 } }
+      ],
+      "createdAt": "2024-07-17T20:55:08.102Z",
+      "lastUpdated": "2024-07-17T20:55:08.102Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-bellPlus-12.svg",
+        "svg16": "./ui/svg/ui-bellPlus-16.svg",
+        "svg24": "./ui/svg/ui-bellPlus-24.svg"
+      }
+    },
+    "2595:21": {
+      "type": "ui",
+      "name": "bellCheck",
+      "hash": "BLx4cw38dyaNRoplY7wTXDGsPPLA1mPeVydKHIhxOR8=",
+      "description": "Bell, plus, check, add, price, alert, 🛎️, 🔔, 🚨",
+      "components": [
+        { "props": { "size": 24 }, "metadata": { "unicode": 62116 } },
+        { "props": { "size": 16 }, "metadata": { "unicode": 62115 } },
+        { "props": { "size": 12 }, "metadata": { "unicode": 62114 } }
+      ],
+      "createdAt": "2024-07-17T20:55:08.097Z",
+      "lastUpdated": "2024-07-17T20:55:08.097Z",
+      "outputs": {
+        "svg12": "./ui/svg/ui-bellCheck-12.svg",
+        "svg16": "./ui/svg/ui-bellCheck-16.svg",
+        "svg24": "./ui/svg/ui-bellCheck-24.svg"
       }
     }
   }
