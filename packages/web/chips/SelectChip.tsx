@@ -9,6 +9,7 @@ import { Dropdown, DropdownProps } from '../dropdown';
 import { usePalette } from '../hooks/usePalette';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { borderWidth } from '../tokens';
+import { cx } from '../utils/linaria';
 
 import { Chip } from './Chip';
 import { ChipProps } from './ChipProps';
@@ -74,6 +75,7 @@ export const SelectChip = memo(
       onBlur,
       showOverlay,
       width,
+      className,
       ...props
     }: SelectChipProps,
     ref,
@@ -130,7 +132,7 @@ export const SelectChip = memo(
         <Chip
           ref={mergedRefs}
           noScaleOnPress
-          className={isOpen ? persistedFocusStyles : defaultStyles}
+          className={cx(isOpen ? persistedFocusStyles : defaultStyles, className)}
           disabled={disabled}
           end={end ?? <AnimatedCaret color="foreground" rotate={isOpen ? 0 : 180} />}
           inverted={active}

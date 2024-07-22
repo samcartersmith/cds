@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.25.1 (7/18/2024 PST)
+
+#### 🐞 Fixes
+
+- Pass className down to SelectChip underlying Chip. [[DX-4011](https://jira.coinbase-corp.com/browse/DX-4011)]
+
 ## 6.25.0 (7/16/2024 PST)
 
 #### 🚀 Updates

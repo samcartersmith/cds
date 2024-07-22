@@ -11,12 +11,13 @@ import { SelectChip } from '../SelectChip';
 
 const selectChipTestId = 'select-chip-test';
 const sortOptions = ['Balance', 'Name', 'Asset Value'];
+const chipClassName = 'custom-chip-class';
 
 const ExampleSelectChip = ({
   onChange,
   value: defaultValue,
   ...props
-}: Omit<SelectChipProps, 'content' | 'children'>) => {
+}: Omit<SelectChipProps, 'content' | 'children' | 'chipClassName'>) => {
   const [value, setValue] = React.useState<string | undefined>(defaultValue);
   const handleValueChange = useCallback(
     (val: string) => {
@@ -113,5 +114,10 @@ describe('SelectChip', () => {
 
     expect(screen.getByText('Some label')).toBeTruthy();
     expect(screen.queryByText('Example')).not.toBeInTheDocument();
+  });
+  it('renders a custom chipClassName', () => {
+    render(<ExampleSelectChip className={chipClassName} testID={selectChipTestId} />);
+
+    expect(screen.getByTestId(selectChipTestId)).toHaveClass(chipClassName);
   });
 });

@@ -75,4 +75,9 @@ describe('SelectChip', () => {
     expect(screen.getByText('test')).toBeTruthy();
     expect(screen.queryByText(options[1])).toBeNull();
   });
+  it('has a custom style when passed', () => {
+    render(<TestSelectChip style={{ paddingTop: 20 }} />);
+
+    expect(screen.getByTestId(chipTestID)).toHaveStyle({ paddingTop: 20 });
+  });
 });
