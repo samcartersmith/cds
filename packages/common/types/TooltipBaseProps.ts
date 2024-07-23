@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 
+import { ElevationProps } from './ElevationLevels';
 import { SharedProps } from './SharedProps';
 import { SpacingScale } from './SpacingScale';
 
@@ -22,4 +23,9 @@ export type TooltipBaseProps = {
    * @default true
    */
   visible?: boolean;
-} & SharedProps;
+  /** Invert the the color spectrum for the tooltip content
+   * @default true
+   */
+  invertSpectrum?: boolean;
+} & SharedProps &
+  ElevationProps;

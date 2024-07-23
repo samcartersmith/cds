@@ -19,6 +19,7 @@ type ContentTypes = {
 
 const topTextSubject = 'TOP';
 const bottomTextSubject = 'BOTTOM';
+const customTextSubject = 'CUSTOM';
 
 const shortText = 'This is the short text.';
 const longText =
@@ -123,6 +124,17 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
             <Icon name="info" size="s" />
+          </Tooltip>
+        </HStack>
+        <HStack justifyContent="space-evenly">
+          <Tooltip
+            content={tooltipText}
+            elevation={2}
+            invertSpectrum={false}
+            placement="top"
+            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
+          >
+            <TextLabel2>{customTextSubject}</TextLabel2>
           </Tooltip>
         </HStack>
       </VStack>

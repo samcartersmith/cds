@@ -33,4 +33,4 @@ export type PopperTooltipProps = {
    * A unique ID used to ensure tooltips are accessible
    */
   tooltipId?: string;
-} & Pick<TooltipProps, 'content' | 'testID' | 'zIndex' | 'placement'>;
+} & Pick<TooltipProps, 'content' | 'testID' | 'zIndex' | 'placement' | 'elevation'>;

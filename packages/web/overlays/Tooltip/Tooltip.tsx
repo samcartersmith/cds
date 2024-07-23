@@ -14,6 +14,7 @@ const preventMouseDown = (event: React.MouseEvent) => {
 export const Tooltip = ({
   children,
   content,
+  elevation,
   placement = 'top',
   gap = 1,
   disablePortal,
@@ -21,6 +22,7 @@ export const Tooltip = ({
   zIndex,
   tooltipId: tooltipIdDefault,
   visible,
+  invertSpectrum = true,
 }: TooltipProps) => {
   const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur, tooltipId } =
     useTooltipState(tooltipIdDefault);
@@ -55,11 +57,11 @@ export const Tooltip = ({
 
   return (
     <Popover
-      invertPopoverSpectrum
       content={
         <TooltipContent
           ref={tooltipContentRef}
           content={content}
+          elevation={elevation}
           gap={gap}
           placement={placement}
           testID={testID}
@@ -69,6 +71,7 @@ export const Tooltip = ({
       }
       contentPosition={contentPosition}
       disablePortal={disablePortal}
+      invertPopoverSpectrum={invertSpectrum}
       onBlur={handleOnBlur}
       onFocus={handleOnFocus}
       onMouseDown={preventMouseDown}

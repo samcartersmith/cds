@@ -4,6 +4,7 @@ import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/t
 
 import { useInvertedPaletteColor } from '../../color/useInvertedPaletteColor';
 import { useLayout } from '../../hooks/useLayout';
+import { usePalette } from '../../hooks/usePalette';
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Box } from '../../layout/Box';
 import { TextLabel2 } from '../../typography';
@@ -23,6 +24,8 @@ export const InternalTooltip = memo(function InternalTooltip({
   testID,
   onAccessibilityEscape,
   onAccessibilityTap,
+  invertSpectrum = true,
+  elevation,
   ...props
 }: InternalTooltipProps) {
   const didMount = useRef(false);
@@ -35,6 +38,7 @@ export const InternalTooltip = memo(function InternalTooltip({
     }
   }, [animateIn]);
 
+  const palette = usePalette();
   const backgroundColor = useInvertedPaletteColor('background');
   const foregroundColor = useInvertedPaletteColor('foreground');
 
@@ -69,7 +73,8 @@ export const InternalTooltip = memo(function InternalTooltip({
       <Box
         animated
         borderRadius="rounded"
-        dangerouslySetBackground={backgroundColor}
+        dangerouslySetBackground={invertSpectrum ? backgroundColor : palette.background}
+        elevation={elevation}
         maxWidth={maxWidth}
         opacity={opacity}
         spacingHorizontal={spacingHorizontal}
@@ -85,7 +90,9 @@ export const InternalTooltip = memo(function InternalTooltip({
         {...props}
       >
         {typeof content === 'string' ? (
-          <TextLabel2 dangerouslySetColor={foregroundColor}>{content}</TextLabel2>
+          <TextLabel2 dangerouslySetColor={invertSpectrum ? foregroundColor : palette.foreground}>
+            {content}
+          </TextLabel2>
         ) : (
           content
         )}

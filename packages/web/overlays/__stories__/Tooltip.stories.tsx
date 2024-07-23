@@ -50,6 +50,9 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
           <Tooltip content={content} placement="bottom" visible={false}>
             <Button disabled>Disabled</Button>
           </Tooltip>
+          <Tooltip content={content} elevation={2} invertSpectrum={false}>
+            <Button>Custom</Button>
+          </Tooltip>
         </VStack>
 
         <VStack gap={3} spacingHorizontal={2}>

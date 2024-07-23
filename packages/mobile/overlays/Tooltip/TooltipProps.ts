@@ -59,7 +59,16 @@ export type InternalTooltipProps = {
   translateY: Animated.Value;
   onAccessibilityEscape?: ViewProps['onAccessibilityEscape'];
   onAccessibilityTap?: ViewProps['onAccessibilityTap'];
-} & Pick<TooltipProps, 'content' | 'placement' | 'gap' | 'testID' | 'yShiftByStatusBarHeight'> &
+} & Pick<
+  TooltipProps,
+  | 'content'
+  | 'placement'
+  | 'gap'
+  | 'testID'
+  | 'yShiftByStatusBarHeight'
+  | 'invertSpectrum'
+  | 'elevation'
+> &
   SharedAccessibilityProps;
 
 export type UseTooltipPositionParams = {

@@ -18,7 +18,7 @@ import { PopperTooltipProps } from './TooltipProps';
 export const TooltipContent = memo(
   forwardRef(
     (
-      { content, gap, testID, zIndex, tooltipId, placement = 'top' }: PopperTooltipProps,
+      { content, elevation, gap, testID, zIndex, tooltipId, placement = 'top' }: PopperTooltipProps,
       ref: ForwardedRef<HTMLDivElement>,
     ) => {
       const outerStyle = useMemo(
@@ -45,6 +45,7 @@ export const TooltipContent = memo(
             ref={ref}
             background="background"
             borderRadius="rounded"
+            elevation={elevation}
             maxWidth={maxWidth}
             spacingHorizontal={spacingHorizontal}
             spacingVertical={spacingVertical}

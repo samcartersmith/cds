@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.26.0 (7/23/2024 PST)
+
+#### 🚀 Updates
+
+- Add invertSpectrum and elevation props to Tooltip. [[DX-3867](https://jira.coinbase-corp.com/browse/DX-3867)]
+
 ## 6.25.1 (7/18/2024 PST)
 
 #### 🐞 Fixes

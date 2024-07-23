@@ -20,6 +20,8 @@ export const Tooltip = memo(
     accessibilityLabelForContent,
     accessibilityHintForContent,
     visible,
+    invertSpectrum = true,
+    elevation,
   }: TooltipProps) => {
     const subjectRef = useRef<View | null>(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -109,7 +111,9 @@ export const Tooltip = memo(
           <InternalTooltip
             animateIn={animateIn}
             content={content}
+            elevation={elevation}
             gap={gap}
+            invertSpectrum={invertSpectrum}
             opacity={opacity}
             placement={placement}
             subjectLayout={subjectLayout}
