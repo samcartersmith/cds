@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.26.1 (7/23/2024 PST)
+
+#### 🐞 Fixes
+
+- Modify alpha banner to span to prevent p dom nesting. [[#3154](https://github.cbhq.net/frontend/cds/pull/3154)] [[DX-3900](https://jira.coinbase-corp.com/browse/DX-3900)]
+
 ## 6.26.0 (7/23/2024 PST)
 
 #### 🚀 Updates

@@ -219,14 +219,14 @@ export const Banner = memo(
               <VStack gap={2} testID={`${testID}-content-box`}>
                 <VStack gap={0.5}>
                   {typeof title === 'string' ? (
-                    <TextLabel1 as="p" color={textColor} id={titleId} numberOfLines={2}>
+                    <TextLabel1 as="span" color={textColor} id={titleId} numberOfLines={2}>
                       {title}
                     </TextLabel1>
                   ) : (
                     title
                   )}
                   {typeof children === 'string' ? (
-                    <TextLabel2 as="p" color={textColor} numberOfLines={numberOfLines}>
+                    <TextLabel2 as="span" color={textColor} numberOfLines={numberOfLines}>
                       {children}
                     </TextLabel2>
                   ) : (
@@ -234,7 +234,7 @@ export const Banner = memo(
                   )}
                 </VStack>
                 {typeof label === 'string' ? (
-                  <TextLegal as="p" color="foregroundMuted" numberOfLines={2}>
+                  <TextLegal as="span" color="foregroundMuted" numberOfLines={2}>
                     {label}
                   </TextLegal>
                 ) : (
