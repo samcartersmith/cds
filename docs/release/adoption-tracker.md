@@ -24,8 +24,19 @@ parsers - `apps/website/scripts/adoption/parsers`
 
 ## Uploading adoption stats to Snowflake
 
-1. Make sure you have [`snowsql` installed](https://docs.snowflake.com/en/user-guide/snowsql)
-2. After installation, verify the connection:
+1. Make sure you have [`snowsql` installed](https://docs.snowflake.com/en/user-guide/snowsql). You can install it via homebrew with:
+
+```sh
+$ brew install --cask snowflake-snowsql
+```
+
+2. Add the following zsh alias to your `.zshrc`:
+
+```sh
+alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
+```
+
+3. After installation, verify the connection:
 
    - open a new terminal window
    - execute the following command to test your connection: `snowsql -a <account_name> -u <login_name>`
@@ -38,8 +49,8 @@ parsers - `apps/website/scripts/adoption/parsers`
      - `export PATH="$PATH:$HOME/.snowsql/1.2.31"`
      - Usually, you can find your snowsql in `.snowsql/ver`. You should replace `1.2.31` with your version.
 
-3. Retrieve the CDS Snowflake service account password from the UI Systems account in 1Password
-4. Set the `SNOWSQL_PWD` environment variable and run the `adoption-snowflake-upload` script in your branch:
+4. Retrieve the CDS Snowflake service account password from the UI Systems account in 1Password
+5. Set the `SNOWSQL_PWD` environment variable and run the `adoption-snowflake-upload` script in your branch:
 
 Note: Change the password below to the one in 1Password.
 Before running the command below, be sure to have already run `yarn nx run website:adoption`.

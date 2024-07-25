@@ -1,12 +1,13 @@
 #!/usr/bin/env zsh
 
-# - snowsql must be installed to run this: https://docs.snowflake.com/en/user-guide/snowsql
-# - SNOWSQL_PWD for the cds_snowflake_user service account must be set in your environment
+# - snowsql must be installed to run this, see: `docs/release/adoption-tracker.md`
+# - SNOWSQL_PWD for the cds_snowflake_user service account must be set in your environment. You can find it in 1Password
 
-# - This script uploads to three tables: 
+# - This script uploads to four tables: 
 # - CDS_ADOPTION_SUMMARY
 # - CDS_PRODUCT_COMPONENT_STATS
 # - CDS_STATS
+# - CDS_CUJ_STATS
 
 base_directory=$ADOPTION_DIRECTORY
 adoption_stats_file_path=$ADOPTION_DIRECTORY/adoption/snowflake_adoption_stats.json
@@ -153,3 +154,59 @@ for sub_directory in "$base_directory/adoption"/*; do
 done
 
 echo "Data upload and table population for each adoption project stats is completed."
+
+# The following sql script is to upload the stats.json files from each cuj adoption repo into the CDS_CUJ_STATS Snowflake tableecho " "
+echo "Begin processing for each individual CUJ adoption stats."
+echo " "
+echo "Uploading CUJ adoption tracker project data to Snowflake"
+echo "https://app.us-east-1.privatelink.snowflakecomputing.com/mx78708/coinbase/#/data/databases/ANALYTICS/schemas/AD_HOC/table/CDS_CUJ_STATS"
+echo " "
+echo " "
+
+# Loop through each subdirectory
+for sub_directory in "$base_directory/adoption/cuj/summary"/*; do
+    # Check if the item is a directory
+    if [ -d "$sub_directory" ]; then
+
+        # Check for the presence of stats.json file and skip if missing
+        if [ ! -f "$sub_directory/stats.json" ]; then
+            echo "No stats.json found in $sub_directory, skipping..."
+            echo " "
+            continue # Skip the rest of the loop for this iteration
+        fi
+
+        # Set the variable to the subdirectory name
+        subdir_name=$(basename "$sub_directory")
+
+        echo "Processing CUJ adoption tracker data for \"$sub_directory\""
+        echo " "
+
+        # Create the staging table and upload the file there
+        snowsql \
+        -a coinbase.us-east-1.privatelink \
+        -u cds_snowflake_user@coinbase.com \
+        -d ANALYTICS \
+        -s AD_HOC \
+        -w ANALYSTS_WAREHOUSE \
+        -q "PUT file://$sub_directory/stats.json @~/stats.json OVERWRITE = TRUE;
+  
+        COPY INTO CDS_CUJ_STATS (_DT, NAME, DATE, CDSPERCENT, CDS, PRESENTATIONAL, TOTALCDSANDPRESENTATIONAL, TOTALOTHER)
+            FROM (
+                SELECT CURRENT_TIMESTAMP(),
+                '$subdir_name',
+                TO_DATE(\$1:latest.date),
+                \$1:latest.cdsPercent AS DOUBLE,
+                \$1:latest.cds,
+                \$1:latest.presentational,
+                \$1:latest.totalCdsAndPresentational,
+                \$1:latest.totalOther
+            FROM @~/stats.json
+            )
+            FILE_FORMAT = (TYPE = 'JSON');
+        "
+        echo " "
+        echo " "
+    fi
+done
+
+echo "Data upload and table population for each CUJ adoption stats is completed."
