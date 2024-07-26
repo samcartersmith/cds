@@ -1,32 +1,31 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
+
+export type RefMapOptions<RefValue> = {
+  initialRefMap?: Record<string, RefValue>;
+};
 
 export type RefMapItem = { id: string };
 
 export type RefMapApi<RefValue> = {
-  refs: WeakMap<RefMapItem, RefValue>;
+  refs: Record<string, RefValue>;
   getRef: (id: string) => RefValue | null;
   registerRef: (id: string, ref: RefValue) => void;
 };
 
-export const useRefMap = <RefValue>(items: RefMapItem[]): RefMapApi<RefValue> => {
-  const refs = useMemo(() => new WeakMap<RefMapItem, RefValue>(), []);
+export const useRefMap = <RefValue>({
+  initialRefMap = {},
+}: RefMapOptions<RefValue> = {}): RefMapApi<RefValue> => {
+  const refs = useRef<Record<string, RefValue>>(initialRefMap);
 
-  const getRef = useCallback(
-    (id: string) => {
-      const item = items.find((item) => item.id === id);
-      return item ? refs.get(item) || null : null;
-    },
-    [items, refs],
+  const getRef = useCallback((id: string) => (id in refs.current ? refs.current[id] : null), []);
+
+  const registerRef = useCallback((id: string, ref: RefValue) => {
+    refs.current[id] = ref;
+  }, []);
+
+  const api = useMemo(
+    () => ({ refs: refs.current, getRef, registerRef }),
+    [refs, getRef, registerRef],
   );
-
-  const registerRef = useCallback(
-    (id: string, ref: RefValue) => {
-      const item = items.find((item) => item.id === id);
-      if (item) refs.set(item, ref);
-    },
-    [items, refs],
-  );
-
-  const api = useMemo(() => ({ refs, getRef, registerRef }), [refs, getRef, registerRef]);
   return api;
 };

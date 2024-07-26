@@ -1,11 +1,11 @@
 import React from 'react';
+import useMeasure from 'react-use-measure';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { useRefMap } from '@cbhq/cds-common/hooks/useRefMap';
 import { TabsContext } from '@cbhq/cds-common/tabs/TabsContext';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { useDimensions } from '../../hooks/useDimensions';
 import { TextDisplay1 } from '../../typography';
 import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
 
@@ -17,26 +17,33 @@ const tabs = [
   { id: 'convert', label: 'Convert', testID: 'convert-tab' },
 ];
 
-jest.mock('../../hooks/useDimensions');
+jest.mock('react-use-measure');
 jest.mock('@cbhq/cds-common/hooks/useRefMap');
 
-const mockUseDimensions = (mocks: Partial<ReturnType<typeof useDimensions>>) => {
-  (useDimensions as jest.Mock).mockReturnValue(mocks);
+const mockUseMeasure = (mocks: Partial<ReturnType<typeof useMeasure>>) => {
+  (useMeasure as jest.Mock).mockReturnValue(mocks);
 };
 
 const mockUseRefMap = (mocks: ReturnType<typeof useRefMap>) => {
   (useRefMap as jest.Mock).mockReturnValue(mocks);
 };
 
-const mockDimensions: Partial<ReturnType<typeof useDimensions>> = {
-  width: 230,
-  x: 20,
-  y: 64,
-  height: 40,
-};
+const mockDimensions: Partial<ReturnType<typeof useMeasure>> = [
+  jest.fn(),
+  {
+    width: 230,
+    x: 20,
+    y: 64,
+    height: 40,
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+  },
+];
 
 const refMap: ReturnType<typeof useRefMap> = {
-  refs: new WeakMap(),
+  refs: { current: {} },
   registerRef: NoopFn,
   getRef: jest.fn(() => ({
     getBoundingClientRect: jest.fn(() => ({
@@ -65,7 +72,7 @@ const mockApi = {
 
 describe('SegmentedTabs', () => {
   beforeEach(() => {
-    mockUseDimensions(mockDimensions);
+    mockUseMeasure(mockDimensions);
     mockUseRefMap(refMap);
   });
 
@@ -95,7 +102,7 @@ describe('SegmentedTabs', () => {
   it('sets the second tab active when clicking on it', () => {
     const onChange = jest.fn();
     const mockData: ReturnType<typeof useRefMap> = {
-      refs: new WeakMap(),
+      refs: { current: {} },
       registerRef: NoopFn,
       getRef: jest.fn(() => ({
         getBoundingClientRect: jest.fn(() => ({

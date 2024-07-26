@@ -12,14 +12,14 @@ const mockElement1 = document.createElement('div');
 const mockElement2 = document.createElement('span');
 const mockElement3 = document.createElement('p');
 
-const EXPECTED = new WeakMap();
-EXPECTED.set(MOCKS[0], mockElement1);
-EXPECTED.set(MOCKS[1], mockElement2);
-EXPECTED.set(MOCKS[2], mockElement3);
+const EXPECTED: Record<string, HTMLElement> = {};
+EXPECTED[MOCKS[0].id] = mockElement1;
+EXPECTED[MOCKS[1].id] = mockElement2;
+EXPECTED[MOCKS[2].id] = mockElement3;
 
 describe('useRefMap', () => {
   it('should add elements to the refMap', () => {
-    const { result } = renderHook(() => useRefMap(MOCKS));
+    const { result } = renderHook(() => useRefMap());
     const { refs, getRef, registerRef } = result.current;
 
     act(() => {

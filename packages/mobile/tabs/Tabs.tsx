@@ -130,7 +130,7 @@ export const Tabs = memo(
       const tabsContainerRef = useRef<View>(null);
       useImperativeHandle(ref, () => tabsContainerRef.current as View, []); // merge internal ref to forwarded ref
 
-      const refMap = useRefMap<View>(tabs);
+      const refMap = useRefMap<View>();
       const api = useTabs({ tabs, activeTab, disabled, onChange });
 
       const [activeTabRect, setActiveTabRect] = useState<Rect>(defaultRect);

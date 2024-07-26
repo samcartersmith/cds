@@ -27,7 +27,7 @@ const mockUseRefMap = (mocks: ReturnType<typeof useRefMap>) => {
 };
 
 const refMap: ReturnType<typeof useRefMap> = {
-  refs: new WeakMap(),
+  refs: { current: {} },
   registerRef: NoopFn,
   getRef: jest.fn(() => ({
     measureLayout: jest.fn((_, callback: MeasureOnSuccessCallback) => {
@@ -94,7 +94,7 @@ describe('SegmentedTabs', () => {
   it('sets the second tab active when clicking on it', () => {
     const onChange = jest.fn();
     const mockData: ReturnType<typeof useRefMap> = {
-      refs: new WeakMap(),
+      refs: { current: {} },
       registerRef: NoopFn,
       getRef: jest.fn(() => ({
         measureLayout: jest.fn((_, callback: MeasureOnSuccessCallback) => {

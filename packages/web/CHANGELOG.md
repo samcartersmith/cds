@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.26.2 (7/26/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix SegmentedTabs and Tabs animation behavior. [[#3156](https://github.cbhq.net/frontend/cds/pull/3156)] [[DX-4042](https://jira.coinbase-corp.com/browse/DX-4042)]
+
 ## 6.26.1 (7/23/2024 PST)
 
 #### 🐞 Fixes

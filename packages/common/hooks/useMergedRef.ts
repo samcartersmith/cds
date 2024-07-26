@@ -25,6 +25,7 @@ const setRef = <T>(ref: AnyRef<T>, value: RefElementOrNull<T>) => {
  * Takes any number of refs.
  * Refs can be mutable refs or function refs.
  * @param refs
+ * @deprecated Use `@cbhq/cds-common/hooks/useMergeRefs` instead.
  */
 export function useMergedRef<T>(...refs: (AnyRef<T> | undefined)[]): CallbackRef<T> | null {
   return useMemo(() => {

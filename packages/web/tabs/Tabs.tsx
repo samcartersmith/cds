@@ -1,5 +1,7 @@
-import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo, useRef } from 'react';
+import React, { forwardRef, memo, useCallback, useMemo } from 'react';
+import useMeasure from 'react-use-measure';
 import { type Transition, m as motion } from 'framer-motion';
+import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
 import { useRefMap } from '@cbhq/cds-common/hooks/useRefMap';
 import { TabsContext } from '@cbhq/cds-common/tabs/TabsContext';
 import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common/tabs/useTabs';
@@ -7,7 +9,6 @@ import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable'
 import type { PaletteBackground } from '@cbhq/cds-common/types';
 import { type Rect, defaultRect } from '@cbhq/cds-common/types/Rect';
 
-import { useDimensions } from '../hooks/useDimensions';
 import { type HStackProps, Box, BoxElement, HStack } from '../layout';
 
 const MotionBox = motion(Box);
@@ -97,25 +98,23 @@ export const Tabs = memo(
       }: TabsProps,
       ref: React.ForwardedRef<HTMLElement>,
     ) => {
-      const tabsContainerRef = useRef<HTMLElement>(null);
-      useImperativeHandle(ref, () => tabsContainerRef.current as HTMLElement, []); // merge internal ref to forwarded ref
-
-      const refMap = useRefMap<HTMLElement>(tabs);
+      const refMap = useRefMap<HTMLElement>();
       const api = useTabs({ tabs, activeTab, disabled, onChange });
       const activeTabRef = activeTab ? refMap.getRef(activeTab.id) : null;
 
-      const parentContainerRect = useDimensions({ ref: tabsContainerRef });
+      const [tabsContainerRef, tabsContainerRect] = useMeasure({ debounce: 20 });
+      const mergedContainerRefs = useMergeRefs(ref, tabsContainerRef);
 
       const activeTabRect: Rect = useMemo(() => {
-        if (!activeTabRef || !parentContainerRect.width) return defaultRect;
+        if (!activeTabRef || !tabsContainerRect.width) return defaultRect;
         const { x, y, width, height } = activeTabRef.getBoundingClientRect();
         return {
-          x: x - (parentContainerRect?.x || 0),
-          y: y - (parentContainerRect?.y || 0),
+          x: x - (tabsContainerRect?.x || 0),
+          y: y - (tabsContainerRect?.y || 0),
           width,
           height,
         };
-      }, [activeTabRef, parentContainerRect]);
+      }, [activeTabRef, tabsContainerRect]);
 
       const tabComponents = useMemo(
         () =>
@@ -132,7 +131,7 @@ export const Tabs = memo(
 
       return (
         <HStack
-          ref={tabsContainerRef}
+          ref={mergedContainerRefs}
           opacity={opacity ?? disabled ? accessibleOpacityDisabled : 1}
           position={position}
           role={role}

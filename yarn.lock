@@ -3839,6 +3839,7 @@ __metadata:
     lodash: "npm:^4.17.21"
     lottie-web: "npm:^5.7.6"
     react-popper: "npm:^2.2.4"
+    react-use-measure: "npm:^2"
   peerDependencies:
     "@cbhq/cds-icons": ">=1.0.0"
     "@cbhq/cds-illustrations": ">=2.1.0"
@@ -35281,6 +35282,18 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0
   checksum: b185b2753651059c76391e9b190b91db4f0a9d809a5bd2faca29fdecbd55a2db21610eb2132801b8e8de5ee25e253ccbcff836b8757b37e17b95008d5dadfda6
+  languageName: node
+  linkType: hard
+
+"react-use-measure@npm:^2":
+  version: 2.1.1
+  resolution: "react-use-measure@npm:2.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Freact-use-measure%2F-%2Freact-use-measure-2.1.1.tgz"
+  dependencies:
+    debounce: "npm:^1.2.1"
+  peerDependencies:
+    react: ">=16.13"
+    react-dom: ">=16.13"
+  checksum: 2cf39b8c2a3b1fd5356ee27ce8697abb4223759383c7c1ff654ba2a4cd04cd985ddb98b548a0bb12d21d0cfb0c46ad6025154138ca699c9948b9a1707cfad255
   languageName: node
   linkType: hard
 
