@@ -51,6 +51,7 @@ type BaseRemoteImageProps = {
   source?: string;
   className?: string;
   resizeMode?: keyof typeof resizeModes;
+  style?: React.CSSProperties;
 } & Omit<
   React.ImgHTMLAttributes<HTMLImageElement>,
   'className' | 'style' | 'height' | 'width' | 'source'
@@ -95,6 +96,7 @@ export const RemoteImage = memo(function RemoteImage({
   testID,
   size,
   borderColor,
+  style,
   ...props
 }: BaseRemoteImageProps) {
   const borderRadius = useShapeToBorderRadiusSize(shape);
@@ -115,8 +117,9 @@ export const RemoteImage = memo(function RemoteImage({
         borderRadius,
         '--image-aspect-ratio': aspectRatio ? aspectRatio.join(' / ') : undefined,
         border: borderColor ? `2px solid ${palette[borderColor]}` : undefined,
+        ...style,
       } as const),
-    [aspectRatio, borderColor, borderRadius],
+    [aspectRatio, borderColor, borderRadius, style],
   );
   const imageOverflow = useMemo(() => shape === 'hexagon' && hexagonOverflowClass, [shape]);
 

@@ -1,10 +1,16 @@
 import React, { memo, useMemo } from 'react';
-import { ImageSourcePropType, View } from 'react-native';
+import {
+  type ImageStyle,
+  type StyleProp,
+  type ViewStyle,
+  ImageSourcePropType,
+  View,
+} from 'react-native';
 import { DotSymbolBaseProps, useIconSize } from '@cbhq/cds-common';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
 import { usePalette } from '../hooks/usePalette';
-import { Icon } from '../icons/Icon';
+import { type IconProps, Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
@@ -13,10 +19,29 @@ import { useDotsLayout } from './useDotsLayout';
 
 export type DotSymbolProps = DotSymbolBaseProps & {
   source?: ImageSourcePropType | string;
+  color?: IconProps['color'];
+  style?: StyleProp<ViewStyle>;
+  iconStyle?: StyleProp<ViewStyle>;
+  imageStyle?: StyleProp<ImageStyle>;
 };
 
 export const DotSymbol = memo(
-  ({ children, pin, source, overlap, iconName, size = 's', ...props }: DotSymbolProps) => {
+  ({
+    children,
+    symbol,
+    pin,
+    source,
+    overlap,
+    iconName,
+    size = 's',
+    color = 'primaryForeground',
+    background = 'primary',
+    borderColor = 'secondary',
+    style,
+    iconStyle,
+    imageStyle,
+    ...props
+  }: DotSymbolProps) => {
     const { iconSize } = useIconSize(size);
     const [childrenSize, onChildrenLayout] = useDotsLayout();
     const palette = usePalette();
@@ -46,10 +71,10 @@ export const DotSymbol = memo(
     // of the token will be called though. No design direction yet
     const imageBorderStyle = useMemo(() => {
       return {
-        borderColor: palette.secondary,
+        borderColor: palette[borderColor],
         borderWidth: 1,
       };
-    }, [palette.secondary]);
+    }, [palette, borderColor]);
 
     // TODO: These should be tokens, i don't know what the name
     // of the token will be called though. No design direction yet
@@ -63,7 +88,7 @@ export const DotSymbol = memo(
     const shouldShow = children !== undefined ? childrenSize !== null : true;
 
     return (
-      <View {...props}>
+      <View {...props} style={style}>
         <View onLayout={onChildrenLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
@@ -76,22 +101,23 @@ export const DotSymbol = memo(
                 resizeMode="cover"
                 shape="circle"
                 source={typeof source === 'string' ? { uri: source } : source}
-                style={imageBorderStyle}
+                style={[imageBorderStyle, imageStyle]}
                 testID="dotsymbol-remote-image"
                 width={iconSize}
               />
             )}
             {iconName !== undefined && (
               <Box
-                background="primary"
-                borderColor="secondary"
+                background={background}
+                borderColor={borderColor}
                 borderRadius="roundedFull"
                 spacing={0.5}
-                style={iconBorderStyle}
+                style={[iconBorderStyle, iconStyle]}
               >
-                <Icon color="primaryForeground" name={iconName} size={size} />
+                <Icon color={color} name={iconName} size={size} />
               </Box>
             )}
+            {symbol}
           </View>
         )}
       </View>

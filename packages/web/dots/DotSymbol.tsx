@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 import { DotSymbolBaseProps, useIconSize } from '@cbhq/cds-common';
 
-import { Icon } from '../icons';
+import { type IconProps, Icon } from '../icons';
 import { Box } from '../layout';
 import { RemoteImage } from '../media/RemoteImage';
 import { palette } from '../tokens';
@@ -31,6 +31,13 @@ const iconBorderClassName = css`
 export type DotSymbolProps = DotSymbolBaseProps & {
   /** a string path to image source */
   source?: string;
+  color?: IconProps['color'];
+  style?: React.CSSProperties;
+  className?: string;
+  iconStyle?: React.CSSProperties;
+  iconClassName?: string;
+  imageStyle?: React.CSSProperties;
+  imageClassName?: string;
 };
 
 const aspectRatio: [number, number] = [1, 1];
@@ -38,12 +45,22 @@ const aspectRatio: [number, number] = [1, 1];
 export const DotSymbol = memo(
   ({
     children,
+    symbol,
     pin,
     source,
     iconName,
     size = 's',
     testID,
     overlap,
+    color = 'primaryForeground',
+    background = 'primary',
+    borderColor = 'secondary',
+    style,
+    className,
+    iconStyle,
+    iconClassName,
+    imageStyle,
+    imageClassName,
     accessibilityLabel,
     ...props
   }: DotSymbolProps) => {
@@ -53,9 +70,10 @@ export const DotSymbol = memo(
     return (
       <div
         aria-label={accessibilityLabel}
-        className={dotRootContainerStyles}
+        className={cx(dotRootContainerStyles, className)}
         data-testid={testID}
         {...props}
+        style={style}
       >
         {children}
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
@@ -67,23 +85,26 @@ export const DotSymbol = memo(
           {source && (
             <RemoteImage
               aspectRatio={aspectRatio}
-              className={imageBorderClassName}
+              className={cx(imageBorderClassName, imageClassName)}
               shape="circle"
               source={source}
+              style={imageStyle}
               width={iconSize}
             />
           )}
           {iconName && (
             <Box
-              background="primary"
-              borderColor="secondary"
+              background={background}
+              borderColor={borderColor}
               borderRadius="roundedFull"
-              className={iconBorderClassName}
+              className={cx(iconBorderClassName, iconClassName)}
               spacing={0.5}
+              style={iconStyle}
             >
-              <Icon color="primaryForeground" name={iconName} size={size} />
+              <Icon color={color} name={iconName} size={size} />
             </Box>
           )}
+          {symbol}
         </div>
       </div>
     );

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.27.0 (7/26/2024 PST)
+
+#### 🚀 Updates
+
+- Add DotSymbol customization. [[#3160](https://github.cbhq.net/frontend/cds/pull/3160)] [[DX-4045](https://jira.coinbase-corp.com/browse/DX-4045)]
+
 ## 6.26.2 (7/26/2024 PST)
 
 #### 🐞 Fixes
