@@ -210,6 +210,7 @@ export type PictogramName =
   | 'passwordWalletLocked'
   | 'payNavigation'
   | 'paypal'
+  | 'peerToPeer'
   | 'phone'
   | 'pieChart'
   | 'pizza'

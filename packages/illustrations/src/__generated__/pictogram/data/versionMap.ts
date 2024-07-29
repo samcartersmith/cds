@@ -310,6 +310,7 @@ const versionMap: Record<PictogramName, number> = {
   ethStakingRewards: 0,
   coinbaseOneTrade: 0,
   calculator: 0,
+  peerToPeer: 0,
 };
 
 export default versionMap;

@@ -833,6 +833,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/paypal-2').content,
     dark: () => require('../svgJs/dark/paypal-2').content,
   },
+  peerToPeer: {
+    light: () => require('../svgJs/light/peerToPeer-0').content,
+    dark: () => require('../svgJs/dark/peerToPeer-0').content,
+  },
   phone: {
     light: () => require('../svgJs/light/phone-2').content,
     dark: () => require('../svgJs/dark/phone-2').content,
