@@ -45,6 +45,20 @@ export function searchInputBuilder(
     );
   };
 
+  const HideEndIcon = () => {
+    const [text, setText] = useState('');
+
+    return (
+      <SearchInput
+        hideEndIcon
+        accessibilityLabel="Search"
+        onChangeText={setText}
+        onClear={NoopFn}
+        value={text}
+      />
+    );
+  };
+
   const Compact = () => {
     const [text, setText] = useState('');
 
@@ -73,10 +87,26 @@ export function searchInputBuilder(
     );
   };
 
+  const CustomEndNode = ({ end }: { end: React.ReactNode }) => {
+    const [text, setText] = useState('');
+
+    return (
+      <SearchInput
+        accessibilityLabel="Search"
+        end={end}
+        onChangeText={setText}
+        onClear={NoopFn}
+        value={text}
+      />
+    );
+  };
+
   return {
     Basic,
     Disabled,
     Compact,
     HideStartIcon,
+    HideEndIcon,
+    CustomEndNode,
   };
 }

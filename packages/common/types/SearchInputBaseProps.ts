@@ -20,6 +20,16 @@ export type SearchInputBaseProps = {
    * @default search
    */
   startIcon?: 'search' | 'backArrow';
+  /**
+   * hide the end icon
+   * @default undefined
+   */
+  hideEndIcon?: boolean;
+  /**
+   * Set the end node
+   * @default undefined
+   */
+  end?: React.ReactNode;
 } & Omit<
   TextInputBaseProps,
   | 'helperText'

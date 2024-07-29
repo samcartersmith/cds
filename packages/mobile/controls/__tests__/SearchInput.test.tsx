@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { InputIconButton } from '../InputIconButton';
 import { SearchInput } from '../SearchInput';
 
 const TEST_ID = 'search';
@@ -74,6 +75,56 @@ describe('Search', () => {
     );
 
     expect(screen.queryByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeNull();
+  });
+
+  it('does not render a End IconButton when hideEndIcon=true', () => {
+    render(
+      <SearchInput
+        hideEndIcon
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
+      />,
+    );
+
+    expect(screen.queryByTestId(`${TEST_ID}-close-iconbtn`)).toBeNull();
+  });
+
+  it('renders a End IconButton when hideEndIcon is undefined', () => {
+    render(
+      <SearchInput
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
+      />,
+    );
+
+    expect(screen.getByTestId(`${TEST_ID}-close-iconbtn`)).toBeDefined();
+  });
+
+  it('renders a Custom End Node when endNode is defined', () => {
+    render(
+      <SearchInput
+        end={
+          <InputIconButton
+            accessibilityHint="Warning text"
+            accessibilityLabel="Warning text"
+            name="warning"
+            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+            onPress={() => console.log()}
+            testID="custom-end-iconbtn"
+          />
+        }
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
+      />,
+    );
+
+    expect(screen.getByTestId(`custom-end-iconbtn`)).toBeDefined();
   });
 
   it('announces a single search label (no-dupes test)', () => {

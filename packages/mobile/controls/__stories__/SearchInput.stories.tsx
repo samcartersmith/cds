@@ -4,11 +4,12 @@ import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextLabel1 } from '../../typography/TextLabel1';
+import { InputIconButton } from '../InputIconButton';
 import { SearchInput } from '../SearchInput';
 
-const { Basic, Compact, HideStartIcon } = searchInputBuilder((props) => (
-  <SearchInput editable={__DEV__} {...props} />
-));
+const { Basic, Compact, HideStartIcon, HideEndIcon, CustomEndNode } = searchInputBuilder(
+  (props) => <SearchInput editable={__DEV__} {...props} />,
+);
 
 // can't use `Disabled` variant from searchInputBuilder because we can't set mobile specifc props,
 // and we want `editable` to always be `false` or `undefined` here
@@ -126,6 +127,9 @@ const SearchInputScreen = () => {
       <Example title="Hidden Start Icon">
         <HideStartIcon />
       </Example>
+      <Example title="Hidden End Icon">
+        <HideEndIcon />
+      </Example>
       <Example title="Disabled Back Arrow">
         <DisableBackArrow />
       </Example>
@@ -146,6 +150,21 @@ const SearchInputScreen = () => {
       </Example>
       <Example title="Custom Start Icon - Back arrow">
         <SetCustomBackArrowStartIcon />
+      </Example>
+
+      <Example title="Custom End Node">
+        <CustomEndNode
+          end={
+            <InputIconButton
+              accessibilityHint="Warning text"
+              accessibilityLabel="Warning text"
+              name="warning"
+              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+              onPress={() => console.log()}
+              testID="custom-close-iconbtn"
+            />
+          }
+        />
       </Example>
     </ExampleScreen>
   );

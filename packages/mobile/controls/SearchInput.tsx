@@ -55,7 +55,9 @@ export const SearchInput = memo(
         disabled,
         disableBackArrow = false,
         hideStartIcon = false,
+        hideEndIcon,
         startIcon,
+        end,
         ...props
       }: SearchInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -130,7 +132,8 @@ export const SearchInput = memo(
           borderRadius="roundedFull"
           disabled={disabled}
           end={
-            !!value && (
+            end ??
+            (!!value && !hideEndIcon && (
               <Box spacingEnd={0.5}>
                 <InputIconButton
                   accessibilityHint="Clear text"
@@ -140,7 +143,7 @@ export const SearchInput = memo(
                   testID={testID && `${testID}-close-iconbtn`}
                 />
               </Box>
-            )
+            ))
           }
           keyboardType="web-search"
           onBlur={handleOnBlur}

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.28.0 (7/29/2024 PST)
+
+#### 🚀 Updates
+
+- Feat: add prop to hide close icon on search input and expose end prop. [[#3163](https://github.cbhq.net/frontend/cds/pull/3163)] [[DX-4056](https://jira.coinbase-corp.com/browse/DX-4056)]
+
 ## 6.27.1 (7/29/2024 PST)
 
 #### 🐞 Fixes

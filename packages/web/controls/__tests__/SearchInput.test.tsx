@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { InputIconButton } from '../InputIconButton';
 import { SearchInput } from '../SearchInput';
 
 const TEST_ID = 'searchinput';
@@ -71,6 +72,53 @@ describe('Search', () => {
       />,
     );
     expect(screen.queryByTestId(`${TEST_ID}-search-icon`)).toBeNull();
+  });
+
+  it('does not render a End IconButton when hideEndIcon=true', () => {
+    render(
+      <SearchInput
+        hideEndIcon
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
+      />,
+    );
+    expect(screen.queryByTestId(`${TEST_ID}-close-iconbtn`)).toBeNull();
+  });
+
+  it('renders a End IconButton when hideEndIcon is undefined', () => {
+    render(
+      <SearchInput
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
+      />,
+    );
+    expect(screen.getByTestId(`${TEST_ID}-close-iconbtn`)).toBeDefined();
+  });
+
+  it('renders a Custom End Node when endNode is defined', () => {
+    render(
+      <SearchInput
+        end={
+          <InputIconButton
+            accessibilityHint="Warning text"
+            accessibilityLabel="Warning text"
+            name="warning"
+            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+            onPress={() => console.log()}
+            testID="custom-end-iconbtn"
+          />
+        }
+        onChangeText={onChangeTextSpy}
+        placeholder="Placeholder"
+        testID={TEST_ID}
+        value="value"
+      />,
+    );
+    expect(screen.getByTestId(`custom-end-iconbtn`)).toBeDefined();
   });
 
   it('renders a Close IconButton at the end node when there is value', () => {

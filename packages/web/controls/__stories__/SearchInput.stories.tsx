@@ -3,6 +3,7 @@ import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder
 
 import { VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
+import { InputIconButton } from '../InputIconButton';
 import { SearchInput } from '../SearchInput';
 
 export default {
@@ -10,7 +11,8 @@ export default {
   component: SearchInput,
 };
 
-const { Basic, Disabled, Compact, HideStartIcon } = searchInputBuilder(SearchInput);
+const { Basic, Disabled, Compact, HideStartIcon, HideEndIcon, CustomEndNode } =
+  searchInputBuilder(SearchInput);
 
 export const Default = () => (
   <ThemeProvider>
@@ -19,6 +21,19 @@ export const Default = () => (
       <Disabled />
       <Compact />
       <HideStartIcon />
+      <HideEndIcon />
+      <CustomEndNode
+        end={
+          <InputIconButton
+            accessibilityHint="Warning text"
+            accessibilityLabel="Warning text"
+            name="warning"
+            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+            onPress={() => console.log()}
+            testID="custom-close-iconbtn"
+          />
+        }
+      />
     </VStack>
   </ThemeProvider>
 );
