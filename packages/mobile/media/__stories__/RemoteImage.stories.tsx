@@ -41,6 +41,8 @@ const {
   TextBody: (props) => <TextBody {...props} />,
 });
 
+const gapStyle = { gap: 16 };
+
 const RemoteImageScreen = () => {
   return (
     <ExampleScreen>
@@ -106,7 +108,7 @@ const RemoteImageScreen = () => {
         </HStack>
       </Example>
       <Example title="shouldApplyDarkModeEnhacements">
-        <HStack gap={2}>
+        <HStack flexWrap="wrap" style={gapStyle}>
           {images.map((item) => (
             <RemoteImage
               key={item}
@@ -118,7 +120,7 @@ const RemoteImageScreen = () => {
         </HStack>
       </Example>
       <Example title="darkModeEnhancementsApplide">
-        <HStack gap={2}>
+        <HStack flexWrap="wrap" style={gapStyle}>
           {images.map((item) => (
             <RemoteImage
               key={item}
@@ -127,6 +129,21 @@ const RemoteImageScreen = () => {
               darkModeEnhancementsApplied
             />
           ))}
+        </HStack>
+      </Example>
+      <Example title="Custom Border Radius">
+        <HStack flexWrap="wrap" style={gapStyle}>
+          {mockItems.map((_, idx) => {
+            const key = `square-${idx}`;
+            return (
+              <RemoteImage
+                key={key}
+                borderRadius={12}
+                source={squareAssets.human6}
+                {...sharedProps}
+              />
+            );
+          })}
         </HStack>
       </Example>
       <Example title="Avatar Sizes with Circle">

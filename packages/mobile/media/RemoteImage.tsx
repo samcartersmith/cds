@@ -116,13 +116,14 @@ export const RemoteImage = memo(function RemoteImage({
   size = 'm',
   style,
   borderColor,
+  borderRadius,
   onError,
   onLoad,
   fallbackAccessibilityLabel,
   fallbackAccessibilityHint,
   ...props
 }: RemoteImageProps) {
-  const borderRadius = useShapeToBorderRadiusSize(shape);
+  const shapeBorderRadius = useShapeToBorderRadiusSize(shape);
   const avatarSize = useAvatarSize(size);
   const spectrum = useSpectrum();
 
@@ -173,13 +174,13 @@ export const RemoteImage = memo(function RemoteImage({
       [
         {
           aspectRatio: aspectRatio ? aspectRatio[0] / aspectRatio[1] : undefined,
-          borderRadius,
+          borderRadius: borderRadius ?? shapeBorderRadius,
         } as const,
         style,
         darkModeStyles,
         borderStyles,
       ].filter(Boolean),
-    [aspectRatio, borderRadius, borderStyles, style, darkModeStyles],
+    [aspectRatio, shapeBorderRadius, borderRadius, borderStyles, style, darkModeStyles],
   );
 
   const stylesWithDimensions = useMemo(

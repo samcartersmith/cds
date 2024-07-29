@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.27.1 (7/29/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix mobile RemoteImage borderRadius prop. [[#3162](https://github.cbhq.net/frontend/cds/pull/3162)] [[DX-3704](https://jira.coinbase-corp.com/browse/DX-3704)]
+
 ## 6.27.0 (7/26/2024 PST)
 
 #### 🚀 Updates
