@@ -210,3 +210,33 @@ for sub_directory in "$base_directory/adoption/cuj/summary"/*; do
 done
 
 echo "Data upload and table population for each CUJ adoption stats is completed."
+
+# The following script is to upload the latest CUJ CDS Adoption stats 
+# from cujsummaryreport into the CDS_CUJ_ADOPTION_SUMMARY Snowflake table
+echo " "
+echo "Uploading overall cds adoption summary to Snowflake"
+echo "https://app.us-east-1.privatelink.snowflakecomputing.com/mx78708/coinbase/#/data/databases/ANALYTICS/schemas/AD_HOC/table/CDS_CUJ_ADOPTION_SUMMARY"
+echo " "
+echo " "
+echo "Processing overall adoption tracker summary file \"$cuj_adoption_stats_file_path\""
+echo " "
+# Upload the file and insert data into tables
+snowsql \
+        -a coinbase.us-east-1.privatelink \
+        -u cds_snowflake_user@coinbase.com \
+        -d ANALYTICS \
+        -s AD_HOC \
+        -w ANALYSTS_WAREHOUSE \
+        -q "PUT file://$cuj_adoption_stats_file_path @~/cujsummaryreport.json OVERWRITE = TRUE;
+        COPY INTO CDS_CUJ_ADOPTION_SUMMARY (DATE, LATEST_CDS_ADOPTION)
+            FROM (
+                SELECT
+                    \$1:latest.date AS DATE,
+                    \$1:latest.overallLatestCDSPercent AS LATEST_CDS_ADOPTION
+            FROM @~/cujsummaryreport.json
+            )
+            FILE_FORMAT = (TYPE = 'JSON');
+        "
+        echo " "
+        echo " "
+echo "Data upload and table population for company wide stats completed."

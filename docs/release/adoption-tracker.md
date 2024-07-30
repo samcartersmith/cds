@@ -66,3 +66,7 @@ SNOWSQL_PWD=JDtdbe2mKSm13jDqlS yarn nx run website:adoption-snowflake-upload
 ## Adding a Project
 
 Add the project config to `apps/website/scripts/adoption/config.ts` and follow the above [update steps](#updating-the-adoption-tracker)
+
+## Adding a Table
+
+To create a new table in Snowflake, refer to the Snowflake documentation for specifics. But the [easiest way](https://docs.snowflake.com/en/sql-reference/sql/create-table#create-table-like) is to create a table `LIKE` an existing one.
