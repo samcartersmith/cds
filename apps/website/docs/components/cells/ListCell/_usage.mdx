@@ -52,6 +52,14 @@ Cells are also versatile enough to be used for pages like settings, where they c
 </>
 ```
 
+:::note
+
+- When a `ListCell` contains multiple long strings, the most important data information should be given priority via our [priority prop](#priority).
+- If a `ListCell` contains too much truncation or wrapping, attempt to create a stacked experience by inserting data the description instead of the detail or sub detail sections.
+- Abbreviate numbers and data that matters when possible using our [dates, times, and number content guidelines](https://docs.google.com/document/d/1xAvSjKN92HG_25Y9C4PYvlHQbPJTijor6huRINVdBrU/edit?pli=1#heading=h.xiibpnellf8z).
+
+:::
+
 ### Vertical alignment
 
 Cells are designed with built-in padding on _all_ edges, and because of this, _must_ expand the full-width of their parent container. Any non-cell sibling content should vertically align their left-side content with the left-side content of the cell (title, description, media), not including the padding.
