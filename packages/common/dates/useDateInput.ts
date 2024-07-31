@@ -42,18 +42,18 @@ export const useDateInput = ({
   invalidDateError,
   disabledDateError,
 }: DateInputOptions): DateInputApi => {
-  const previousDateProp = useRef(date);
+  const [previousDateProp, setPreviousDateProp] = useState(date);
   const [inputValue, setInputValue] = useState(date ? intlDateFormat.format(date) : '');
   const hadCompleteDateString = useRef(Boolean(date));
 
   // Sync internal inputValue state with external date prop state
-  if (previousDateProp.current !== date) {
-    previousDateProp.current = date;
+  if (previousDateProp !== date) {
+    hadCompleteDateString.current = Boolean(date);
+    setPreviousDateProp(date);
     // Only resync the inputValue state if the new date prop is non-null.
     // This allows the user to backspace a completed date input, without
     // the inputValue being overridden by the date prop changing to null.
     if (date) setInputValue(intlDateFormat.format(date));
-    hadCompleteDateString.current = Boolean(date);
   }
 
   const placeholder = `   ${intlDateFormat.separator}   ${intlDateFormat.separator}`;

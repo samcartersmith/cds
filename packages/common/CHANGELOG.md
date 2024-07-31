@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.28.2 (7/31/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix DateInput and DatePicker rendering when date prop changes. [[#3174](https://github.cbhq.net/frontend/cds/pull/3174)] [[DX-4074](https://jira.coinbase-corp.com/browse/DX-4074)]
+
 ## 6.28.1 ((7/30/2024, 07:40 AM PST))
 
 This is an artificial version bump with no new change.
