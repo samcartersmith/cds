@@ -52,6 +52,7 @@ type MockDropdownProps = {
   | 'disablePortal'
   | 'disabled'
   | 'value'
+  | 'maxHeight'
 >;
 
 export const Default = ({
@@ -348,3 +349,10 @@ export const LongText = () => {
     </Dropdown>
   );
 };
+
+export const WithMaxHeightHigherThanContent = () => (
+  <Default maxHeight={400} options={defaultOptions.slice(0, 5)} />
+);
+export const WithPercentMaxHeight = () => (
+  <Default maxHeight="50%" options={defaultOptions.slice(0, 5)} />
+);

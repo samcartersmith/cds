@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.28.3 (7/31/2024 PST)
+
+#### 🐞 Fixes
+
+- [DX-4003] fix: Fixed Dropdown maxHeight bug on screen resize. [[DX-4003](https://jira.coinbase-corp.com/browse/DX-4003)]
+
 ## 6.28.2 ((7/31/2024, 10:28 AM PST))
 
 This is an artificial version bump with no new change.

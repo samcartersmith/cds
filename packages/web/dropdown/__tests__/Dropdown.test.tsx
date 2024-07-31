@@ -1,8 +1,27 @@
+import useMeasure from 'react-use-measure';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import * as useBreakpoints from '../../hooks/useBreakpoints';
 import { Default as DropdownExample } from '../__stories__/Dropdown.stories';
+
+jest.mock('react-use-measure');
+const mockUseMeasure = (mocks: Partial<ReturnType<typeof useMeasure>>) => {
+  (useMeasure as jest.Mock).mockReturnValue(mocks);
+};
+const mockDimensions: Partial<ReturnType<typeof useMeasure>> = [
+  jest.fn(),
+  {
+    width: 230,
+    x: 20,
+    y: 64,
+    height: 40,
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+  },
+];
 
 const subjectTestID = 'subject-test';
 const options = [
@@ -16,6 +35,9 @@ const options = [
 ];
 
 describe('Dropdown', () => {
+  beforeEach(() => {
+    mockUseMeasure(mockDimensions);
+  });
   it('renders a subject', () => {
     render(<DropdownExample subjectTestID={subjectTestID} />);
 

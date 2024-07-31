@@ -2,7 +2,6 @@ import React, {
   ForwardedRef,
   forwardRef,
   memo,
-  MutableRefObject,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -10,7 +9,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { NoopFn, SpacingScale } from '@cbhq/cds-common';
+import useMeasure, { RectReadOnly } from 'react-use-measure';
+import { DimensionValue, NoopFn, SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { dropdownMaxHeight } from '@cbhq/cds-common/tokens/menu';
 
@@ -104,22 +104,22 @@ const defaultPopoverContentPositionConfig: PopoverContentPositionConfig = {
 
 type UseResponsiveHeightParams = {
   gap?: SpacingScale;
-  dropdownRef: MutableRefObject<HTMLElement | null>;
+  dropdownBounds: RectReadOnly;
   maxHeight: number | `${number}%` | undefined;
   visible: boolean;
+  placement: PopoverContentPositionConfig['placement'];
 };
 
 const useResponsiveHeight = ({
   gap,
-  dropdownRef,
+  dropdownBounds,
   maxHeight,
   visible,
+  placement,
 }: UseResponsiveHeightParams) => {
-  const dropdownHeight = useRef<string | undefined>(undefined);
-  const dropdownRect = useBoundingClientRect(dropdownRef);
+  const [dropdownHeight, setDropdownHeight] = useState<DimensionValue | undefined>(maxHeight);
   const bottomGutter = useSpacingValue(2);
   const calculatedGap = useSpacingValue(gap ?? 0);
-  const calculatedMaxHeight = typeof maxHeight === 'number' ? maxHeight : 0;
   const [windowHeight, setWindowHeight] = useState<number | undefined>(
     !isSSR() ? getBrowserGlobals()?.window.innerHeight : undefined,
   );
@@ -135,28 +135,48 @@ const useResponsiveHeight = ({
     };
   }, [handleWindowSizeChange]);
 
-  const verticalBreakpoint = useMemo(
-    () =>
-      dropdownRect
-        ? dropdownRect.top + calculatedMaxHeight + bottomGutter + calculatedGap
-        : undefined,
-    [bottomGutter, calculatedGap, calculatedMaxHeight, dropdownRect],
-  );
-  const responsivePopoverMenuHeight = useMemo(
-    () => (dropdownRect ? `calc(100vh - ${dropdownRect.top}px - ${bottomGutter}px)` : undefined),
-    [dropdownRect, bottomGutter],
-  );
+  const calculatedMaxHeight = useMemo(() => {
+    if (typeof maxHeight === 'number') return maxHeight;
+    if (maxHeight === undefined) return 0;
+    const percentWindowHeight = ((windowHeight ?? 0) * parseInt(maxHeight, 10)) / 100;
+    return percentWindowHeight;
+  }, [maxHeight, windowHeight]);
+
+  const verticalBreakpoint = useMemo(() => {
+    if (dropdownBounds) {
+      if (placement?.includes('bottom')) {
+        return dropdownBounds.top + calculatedMaxHeight + bottomGutter + calculatedGap;
+      }
+      if (placement?.includes('top')) {
+        return dropdownBounds.bottom + calculatedMaxHeight + bottomGutter + calculatedGap;
+      }
+    }
+    return undefined;
+  }, [bottomGutter, calculatedGap, calculatedMaxHeight, dropdownBounds, placement]);
+
+  const responsivePopoverMenuHeight = useMemo(() => {
+    if (placement?.includes('bottom')) {
+      return dropdownBounds
+        ? `calc(100vh - ${dropdownBounds.top}px - ${bottomGutter}px)`
+        : undefined;
+    }
+    if (placement?.includes('top')) {
+      return dropdownBounds
+        ? `calc(100vh - ${dropdownBounds.bottom}px - ${bottomGutter}px)`
+        : undefined;
+    }
+  }, [placement, dropdownBounds, bottomGutter]);
 
   useIsoEffect(() => {
     if (windowHeight && verticalBreakpoint && visible && windowHeight <= verticalBreakpoint) {
       // only apply a responsive menu height if the viewport height encroaches on the menu
-      dropdownHeight.current = responsivePopoverMenuHeight;
+      setDropdownHeight(responsivePopoverMenuHeight);
     } else {
-      dropdownHeight.current = undefined;
+      setDropdownHeight(calculatedMaxHeight);
     }
   }, [windowHeight, verticalBreakpoint, responsivePopoverMenuHeight, visible]);
 
-  return { dropdownHeight: dropdownHeight.current };
+  return { dropdownHeight };
 };
 
 const PopoverDropdown = memo(
@@ -187,15 +207,21 @@ const PopoverDropdown = memo(
         DropdownVisibilityProps,
       ref: ForwardedRef<DropdownRefProps>,
     ) => {
-      const dropdownRef = useRef<HTMLElement | null>(null);
+      const [dropdownRef, dropdownBounds] = useMeasure();
       const subjectRef = useRef<HTMLDivElement | null>(null);
       const subjectRect = useBoundingClientRect(subjectRef);
+      // if consumer only customizes some of the contentPosition values, we want to merge them with the defaults
+      const combinedContentPosition = useMemo(
+        () => ({ ...defaultPopoverContentPositionConfig, ...contentPosition }),
+        [contentPosition],
+      );
 
       const { dropdownHeight } = useResponsiveHeight({
-        gap: contentPosition.gap,
-        dropdownRef,
+        gap: combinedContentPosition.gap,
+        dropdownBounds,
         maxHeight,
         visible,
+        placement: combinedContentPosition.placement,
       });
 
       const context = useMemo(
@@ -211,11 +237,11 @@ const PopoverDropdown = memo(
         return (
           <DropdownContent
             ref={dropdownRef}
-            height={dropdownHeight}
-            maxHeight={maxHeight}
+            // @ts-expect-error TODO: support string values for dimensions in layout components
+            maxHeight={dropdownHeight}
             maxWidth={maxWidth}
             minWidth={minWidth}
-            placement={contentPosition.placement}
+            placement={combinedContentPosition.placement}
             value={value}
             width={block ? subjectRect.width : width}
           >
@@ -223,16 +249,16 @@ const PopoverDropdown = memo(
           </DropdownContent>
         );
       }, [
-        block,
-        content,
+        dropdownRef,
         dropdownHeight,
-        maxHeight,
         maxWidth,
         minWidth,
-        subjectRect.width,
+        combinedContentPosition.placement,
         value,
+        block,
+        subjectRect.width,
         width,
-        contentPosition,
+        content,
       ]);
 
       useImperativeHandle(
@@ -250,7 +276,7 @@ const PopoverDropdown = memo(
             // DropdownContent will handle exit animation on menu blur, including pressing the subject again to close
             block={block}
             content={disabled ? undefined : memoizedContent}
-            contentPosition={contentPosition ?? defaultPopoverContentPositionConfig}
+            contentPosition={combinedContentPosition}
             disableAutoFocus={!!value}
             disablePortal={disablePortal}
             disabled={disabled}

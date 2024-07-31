@@ -1,3 +1,4 @@
+import useMeasure from 'react-use-measure';
 import { fireEvent, render, screen } from '@testing-library/react';
 import {
   CreateSelectStoriesProps,
@@ -16,6 +17,24 @@ import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 
+jest.mock('react-use-measure');
+const mockUseMeasure = (mocks: Partial<ReturnType<typeof useMeasure>>) => {
+  (useMeasure as jest.Mock).mockReturnValue(mocks);
+};
+const mockDimensions: Partial<ReturnType<typeof useMeasure>> = [
+  jest.fn(),
+  {
+    width: 230,
+    x: 20,
+    y: 64,
+    height: 40,
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+  },
+];
+
 const { Default: MockSelect } = selectBuilder({
   Select,
   VStack,
@@ -33,6 +52,9 @@ const accessibilityLabel = 'label';
 const mockTestID = 'select-input-test';
 
 describe('Select', () => {
+  beforeEach(() => {
+    mockUseMeasure(mockDimensions);
+  });
   it('passes accessibility', async () => {
     expect(
       await renderA11y(<MockSelect accessibilityLabel={accessibilityLabel} />),

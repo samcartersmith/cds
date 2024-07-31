@@ -1,13 +1,35 @@
+import useMeasure from 'react-use-measure';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { Default as Dropdown } from '../../dropdown/__stories__/Dropdown.stories';
 import { LongModal } from '../__stories__/Modal.stories';
+
+jest.mock('react-use-measure');
+const mockUseMeasure = (mocks: Partial<ReturnType<typeof useMeasure>>) => {
+  (useMeasure as jest.Mock).mockReturnValue(mocks);
+};
+const mockDimensions: Partial<ReturnType<typeof useMeasure>> = [
+  jest.fn(),
+  {
+    width: 230,
+    x: 20,
+    y: 64,
+    height: 40,
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+  },
+];
 
 const subjectTestID = 'subject-test';
 
 const fruitOptions = ['Blueberry', 'Tomato', 'Apple', 'Banana', 'Pear', 'Guava', 'Pomegranate'];
 
 describe('FocusTrap', () => {
+  beforeEach(() => {
+    mockUseMeasure(mockDimensions);
+  });
   // menu item interactions
   it('focuses on the next menu item when ArrowDown is typed', async () => {
     render(<Dropdown subjectTestID={subjectTestID} />);
