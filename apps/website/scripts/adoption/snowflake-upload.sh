@@ -232,7 +232,7 @@ snowsql \
             FROM (
                 SELECT
                     \$1:latest.date AS DATE,
-                    \$1:latest.overallLatestCDSPercent AS LATEST_CDS_ADOPTION
+                    \$1:latest.overallCDSPercent AS LATEST_CDS_ADOPTION
             FROM @~/cujsummaryreport.json
             )
             FILE_FORMAT = (TYPE = 'JSON');
