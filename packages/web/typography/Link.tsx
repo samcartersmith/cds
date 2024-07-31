@@ -5,6 +5,7 @@ import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common/types/LinkBaseProps';
 
 import { ButtonOrLink } from '../system/ButtonOrLink';
+import { borderRadius, borderWidth, palette } from '../tokens';
 import type { DynamicElement } from '../types';
 import { cx } from '../utils/linaria';
 
@@ -31,6 +32,12 @@ const link = css`
     margin: 0;
     padding: 0;
     border: 0;
+  }
+  &:focus-visible {
+    outline-width: ${borderWidth.focusRing};
+    outline-style: solid;
+    outline-color: ${palette.primary};
+    border-radius: ${borderRadius.roundedSmall};
   }
 `;
 
