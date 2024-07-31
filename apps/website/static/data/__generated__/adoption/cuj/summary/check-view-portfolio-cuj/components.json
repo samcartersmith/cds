@@ -309,12 +309,15 @@
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-mobile/typography/TextLabel2",
+      "callSites": {
+        "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 2
+      },
       "propsWithCallSites": {
         "color": {
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 2
         },
         "testID": {
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
@@ -753,33 +756,30 @@
     {
       "name": "DeferredRendererListItem",
       "sourceFile": "@components/UI/DeferredRenderer/DeferredRendererListItem",
-      "totalInstances": 2,
+      "totalInstances": 1,
       "totalCallSites": 1,
       "presentationalLibrary": "@components/UI/DeferredRenderer/DeferredRendererListItem",
-      "callSites": {
-        "@app/screens/Account/components/TransactionList.tsx": 2
-      },
       "propsWithCallSites": {
         "tag": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 1
         },
         "baseId": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 1
         },
         "index": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 1
         },
         "render": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 1
         },
         "renderProps": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 1
         },
         "initialRenderGroupSize": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 1
         },
         "renderGroupSize": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
+          "@app/screens/Account/components/TransactionList.tsx": 1
         }
       }
     },
@@ -990,6 +990,17 @@
       }
     },
     {
+      "name": "PopularFirstBuysSection",
+      "sourceFile": "@app/screens/HomeTab/components/PopularFirstBuysSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        }
+      }
+    },
+    {
       "name": "TopMoversSection",
       "sourceFile": "@app/screens/HomeTab/components/TopMoversSection",
       "totalInstances": 1,
@@ -1118,6 +1129,9 @@
         },
         "noSpacingHorizontal": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        },
+        "madeFirstBuy": {
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
         }
       }
     },
@@ -1142,12 +1156,6 @@
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
         }
       }
-    },
-    {
-      "name": "SWCUpsellSurface",
-      "sourceFile": "@app/screens/HomeFeedUpsells/SWCUpsellSurface",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "TabRootScreen",
@@ -1278,6 +1286,17 @@
       }
     },
     {
+      "name": "SocialSharingTray",
+      "sourceFile": "@app/screens/HomeTab/SocialSharingTray/SocialSharingTray",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        }
+      }
+    },
+    {
       "name": "HomeFeedScreenV2Content",
       "sourceFile": "@app/screens/HomeTab/HomeFeedScreenV2.tsx",
       "totalInstances": 1,
@@ -1303,12 +1322,12 @@
     {
       "name": "ScreenBoundary",
       "sourceFile": "@app/components/ScreenBoundary/ScreenBoundary",
-      "totalInstances": 8,
+      "totalInstances": 7,
       "totalCallSites": 4,
       "callSites": {
         "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
         "@app/screens/AssetsTab/AssetsScreen.tsx": 1,
-        "@app/screens/Asset/AssetScreen.tsx": 4,
+        "@app/screens/Asset/AssetScreen.tsx": 3,
         "@app/screens/Account/AccountScreen.tsx": 2
       },
       "propsWithCallSites": {
@@ -1323,7 +1342,7 @@
         "instrumentationId": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
           "@app/screens/AssetsTab/AssetsScreen.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 4,
+          "@app/screens/Asset/AssetScreen.tsx": 3,
           "@app/screens/Account/AccountScreen.tsx": 2
         }
       }
@@ -1698,9 +1717,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "queryRef": {
-          "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
-        },
-        "recurringBuyRefreshRef": {
           "@app/screens/AssetsTab/AssetsScreenContent.tsx": 1
         },
         "transactionsRefreshRef": {
@@ -2122,12 +2138,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "AssetScreenRavContainer",
-      "sourceFile": "@app/screens/Asset/AssetScreenRav/AssetScreenRavContainer",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "StableAssetScreen",
       "sourceFile": "@app/screens/Asset/StableAssetScreen/StableAssetScreen",
       "totalInstances": 1,
@@ -2313,6 +2323,9 @@
         },
         "withSpacingTop": {
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
+        },
+        "usdcRewardData": {
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
         }
       }
     },
@@ -2361,6 +2374,9 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "viewerRef": {
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
+        },
+        "usdcRewardData": {
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
         }
       }
@@ -2944,12 +2960,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "TransactionCell",
-      "sourceFile": "@app/screens/Account/components/TransactionCell",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "InstrumentedSuspense",
       "sourceFile": "@cbhq/data-layer/InstrumentedSuspense",
       "totalInstances": 3,
@@ -2980,32 +2990,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "TransactionCell",
-      "sourceFile": "@app/components/TransactionCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "onPress": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "title": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "description": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "detail": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        },
-        "subdetail": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
-        }
-      }
-    },
-    {
       "name": "DeferredTransactionHistoryCell",
       "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
       "totalInstances": 3,
@@ -3025,32 +3009,6 @@
         },
         "isFiat": {
           "@app/screens/Account/components/TransactionList.tsx": 3
-        }
-      }
-    },
-    {
-      "name": "DeferredTransactionCell",
-      "sourceFile": "@app/screens/Account/components/TransactionList.tsx",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/Account/components/TransactionList.tsx": 3
-      },
-      "propsWithCallSites": {
-        "key": {
-          "@app/screens/Account/components/TransactionList.tsx": 3
-        },
-        "transactionRef": {
-          "@app/screens/Account/components/TransactionList.tsx": 3
-        },
-        "viewerRef": {
-          "@app/screens/Account/components/TransactionList.tsx": 3
-        },
-        "index": {
-          "@app/screens/Account/components/TransactionList.tsx": 3
-        },
-        "outerSpacing": {
-          "@app/screens/Account/components/TransactionList.tsx": 1
         }
       }
     },
@@ -3089,16 +3047,10 @@
         "historyTransactions": {
           "@app/screens/Account/components/TransactionList.tsx": 2
         },
-        "viewer": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
-        },
         "hasNext": {
           "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "onViewAllPress": {
-          "@app/screens/Account/components/TransactionList.tsx": 2
-        },
-        "outerSpacing": {
           "@app/screens/Account/components/TransactionList.tsx": 2
         },
         "isFiat": {
@@ -3245,6 +3197,12 @@
       }
     },
     {
+      "name": "HomeTabContextProvider",
+      "sourceFile": "views/Home/HomeTabContextProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "HomeFeedContentMobile",
       "sourceFile": "views/Home/HomeFeedContentMobile",
       "totalInstances": 1,
@@ -3279,6 +3237,12 @@
     {
       "name": "HomeModalsUpsellSurface",
       "sourceFile": "views/Home/components/Upsells/HomeModalsUpsellSurface",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "RAV4NUXModal",
+      "sourceFile": "components/RAV4NUX/RAV4NUXModal",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -3334,6 +3298,26 @@
         },
         "borderedBottom": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PopularFirstBuys",
+      "sourceFile": "views/Home/components/TopMovers/PopularFirstBuys",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/Home/HomeFeedContentDesktop.tsx": 2,
+        "views/Home/HomeFeedContentMobile.tsx": 1
+      },
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "showSlider": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
         }
       }
     },
@@ -3450,6 +3434,17 @@
     {
       "name": "DailyBriefingSection",
       "sourceFile": "views/Home/components/DailyBriefingSection/DailyBriefingSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VideoFeedSection",
+      "sourceFile": "views/Home/components/VideoFeedSection/VideoFeedSection",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -3972,13 +3967,7 @@
         "queryRef": {
           "views/Assets/Assets.tsx": 1
         },
-        "bordered": {
-          "views/Assets/Assets.tsx": 1
-        },
-        "background": {
-          "views/Assets/Assets.tsx": 1
-        },
-        "padding": {
+        "asCard": {
           "views/Assets/Assets.tsx": 1
         },
         "spacingBottom": {

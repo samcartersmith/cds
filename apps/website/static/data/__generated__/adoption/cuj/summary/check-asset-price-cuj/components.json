@@ -185,12 +185,15 @@
     {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-mobile/typography/TextLabel2",
+      "callSites": {
+        "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 2
+      },
       "propsWithCallSites": {
         "color": {
-          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 2
         },
         "testID": {
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
@@ -967,6 +970,17 @@
       }
     },
     {
+      "name": "PopularFirstBuysSection",
+      "sourceFile": "@app/screens/HomeTab/components/PopularFirstBuysSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        }
+      }
+    },
+    {
       "name": "TopMoversSection",
       "sourceFile": "@app/screens/HomeTab/components/TopMoversSection",
       "totalInstances": 1,
@@ -1087,6 +1101,9 @@
         },
         "noSpacingHorizontal": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        },
+        "madeFirstBuy": {
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
         }
       }
     },
@@ -1111,12 +1128,6 @@
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
         }
       }
-    },
-    {
-      "name": "SWCUpsellSurface",
-      "sourceFile": "@app/screens/HomeFeedUpsells/SWCUpsellSurface",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "TabRootScreen",
@@ -1227,6 +1238,17 @@
       }
     },
     {
+      "name": "SocialSharingTray",
+      "sourceFile": "@app/screens/HomeTab/SocialSharingTray/SocialSharingTray",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        }
+      }
+    },
+    {
       "name": "HomeFeedScreenV2Content",
       "sourceFile": "@app/screens/HomeTab/HomeFeedScreenV2.tsx",
       "totalInstances": 1,
@@ -1252,11 +1274,11 @@
     {
       "name": "ScreenBoundary",
       "sourceFile": "@app/components/ScreenBoundary/ScreenBoundary",
-      "totalInstances": 5,
+      "totalInstances": 4,
       "totalCallSites": 2,
       "callSites": {
         "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-        "@app/screens/Asset/AssetScreen.tsx": 4
+        "@app/screens/Asset/AssetScreen.tsx": 3
       },
       "propsWithCallSites": {
         "fallback": {
@@ -1267,7 +1289,7 @@
         },
         "instrumentationId": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-          "@app/screens/Asset/AssetScreen.tsx": 4
+          "@app/screens/Asset/AssetScreen.tsx": 3
         }
       }
     },
@@ -1515,6 +1537,9 @@
         },
         "sectionType": {
           "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
+        },
+        "usdcRewardData": {
+          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
         }
       }
     },
@@ -1703,6 +1728,9 @@
         },
         "index": {
           "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
+        },
+        "usdcRewardData": {
+          "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1
         }
       }
     },
@@ -1839,12 +1867,6 @@
     {
       "name": "AssetScreenRavV2Container",
       "sourceFile": "@app/screens/Asset/AssetScreenRavV2/AssetScreenRavV2Container",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "AssetScreenRavContainer",
-      "sourceFile": "@app/screens/Asset/AssetScreenRav/AssetScreenRavContainer",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -2038,6 +2060,9 @@
         },
         "withSpacingTop": {
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
+        },
+        "usdcRewardData": {
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
         }
       }
     },
@@ -2086,6 +2111,9 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "viewerRef": {
+          "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
+        },
+        "usdcRewardData": {
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
         }
       }
@@ -2437,6 +2465,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "HomeTabContextProvider",
+      "sourceFile": "views/Home/HomeTabContextProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "HomeFeedContentMobile",
       "sourceFile": "views/Home/HomeFeedContentMobile",
       "totalInstances": 1,
@@ -2465,6 +2499,12 @@
     {
       "name": "HomeModalsUpsellSurface",
       "sourceFile": "views/Home/components/Upsells/HomeModalsUpsellSurface",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "RAV4NUXModal",
+      "sourceFile": "components/RAV4NUX/RAV4NUXModal",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -2515,6 +2555,26 @@
         },
         "borderedBottom": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PopularFirstBuys",
+      "sourceFile": "views/Home/components/TopMovers/PopularFirstBuys",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/Home/HomeFeedContentDesktop.tsx": 2,
+        "views/Home/HomeFeedContentMobile.tsx": 1
+      },
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 2,
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "showSlider": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/Home/HomeFeedContentMobile.tsx": 1
         }
       }
     },
@@ -2631,6 +2691,17 @@
     {
       "name": "DailyBriefingSection",
       "sourceFile": "views/Home/components/DailyBriefingSection/DailyBriefingSection",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VideoFeedSection",
+      "sourceFile": "views/Home/components/VideoFeedSection/VideoFeedSection",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -3136,9 +3207,6 @@
         },
         "hideDescription": {
           "views/AssetPage/components/AssetOverview.tsx": 2
-        },
-        "title": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
         }
       }
     },
@@ -3348,17 +3416,11 @@
         "queryRef": {
           "views/AssetPage/components/AssetOverview.tsx": 2
         },
-        "bordered": {
-          "views/AssetPage/components/AssetOverview.tsx": 2
-        },
-        "background": {
-          "views/AssetPage/components/AssetOverview.tsx": 2
-        },
-        "padding": {
+        "asCard": {
           "views/AssetPage/components/AssetOverview.tsx": 2
         },
         "spacingBottom": {
-          "views/AssetPage/components/AssetOverview.tsx": 2
+          "views/AssetPage/components/AssetOverview.tsx": 1
         }
       }
     },
@@ -3409,17 +3471,6 @@
       "propsWithCallSites": {
         "queryRef": {
           "views/AssetPage/components/AssetOverview.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "AssetArticles",
-      "sourceFile": "views/AssetPage/components/AssetArticles",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "assetRef": {
-          "views/AssetPage/components/AssetOverview.tsx": 1
         }
       }
     },

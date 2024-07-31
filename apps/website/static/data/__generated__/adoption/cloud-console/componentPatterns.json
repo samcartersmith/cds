@@ -8,13 +8,13 @@
         "totalCallSites": 1,
         "propsWithCallSites": {
           "projectId": {
-            ":cloud/widgets/navigation/TopNav.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
           },
           "action": {
-            ":cloud/widgets/navigation/TopNav.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
           },
           "target": {
-            ":cloud/widgets/navigation/TopNav.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
           }
         }
       },
@@ -23,7 +23,7 @@
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/app-switcher",
         "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
-        "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
       }
     },
     {
@@ -34,37 +34,40 @@
         "totalCallSites": 1,
         "propsWithCallSites": {
           "start": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "end": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "bottom": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "action": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "spacingHorizontal": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "projectId": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "target": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "onThemeToggle": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "activeThemeLabel": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "themeToggleValue": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
           "onBeforeNavigate": {
-            ":cloud/widgets/navigation/NavigationBar.tsx": 1
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
+          },
+          "isUserSwitcher": {
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           }
         }
       },
@@ -72,14 +75,14 @@
         "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/app-switcher": "^2.3.1",
-      "@cbhq/identity-navigation": "^5.0.4"
+      "@cbhq/app-switcher": "^3.0.7",
+      "@cbhq/identity-navigation": "^7.3.0"
     },
     "devDependencies": {},
     "peerDependencies": {},

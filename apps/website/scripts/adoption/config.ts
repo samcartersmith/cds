@@ -22,7 +22,7 @@ export const generatedStaticDataDir = {
   },
 };
 
-const frontendWebGit = 'frontend/web';
+const cdpFrontendGit = 'cloud/frontend';
 const internationalUIGit = 'exchange/international-ui';
 const assethubGit = 'c3/assethub-frontend';
 const monorepoGit = 'mono/repo';
@@ -1715,11 +1715,10 @@ export const config: AdoptersConfig[] = [
     collapsed: true,
     items: [
       {
-        root: path.join(tempDir, frontendWebGit, 'apps/cloud-console'),
-        github: frontendWebGit,
+        root: path.join(tempDir, cdpFrontendGit, 'apps/cloud-console'),
+        github: cdpFrontendGit,
         id: 'cloud-console',
         label: 'Cloud Console',
-        projectTsAliases: [':cloud'],
         type: 'doc',
         projectGitPath: 'apps/cloud-console',
       },

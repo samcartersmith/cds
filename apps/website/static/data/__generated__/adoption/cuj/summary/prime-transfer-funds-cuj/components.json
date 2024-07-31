@@ -129,7 +129,6 @@
         ":prime-ui/modals/transferFlow/TestTransactionStep.tsx": 1,
         ":prime-ui/modals/transferFlow/TransferReminderStep.tsx": 1,
         ":prime-ui/modals/transferFlow/WireTransferStep.tsx": 2,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
         ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 7,
         ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 4,
         ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 1,
@@ -145,7 +144,8 @@
         ":prime-ui/modals/transferFlow/components/HotWalletAddress.tsx": 1,
         ":prime-ui/modals/transferFlow/components/HotWalletAddressV2.tsx": 1,
         ":prime-ui/modals/transferFlow/components/InternalTransferAmountSection.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 2
+        ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 2,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
       },
       "propsWithCallSites": {
         "spacingHorizontal": {
@@ -154,8 +154,8 @@
         "spacingVertical": {
           ":prime-ui/modals/transferFlow/BankInfoStep.tsx": 2,
           ":prime-ui/modals/transferFlow/TransferReminderStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
+          ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
         },
         "gap": {
           ":prime-ui/modals/transferFlow/BankInfoStep.tsx": 1,
@@ -165,10 +165,10 @@
           ":prime-ui/modals/transferFlow/QRCodesStep.tsx": 4,
           ":prime-ui/modals/transferFlow/SenTransferStep.tsx": 5,
           ":prime-ui/modals/transferFlow/TestTransactionStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 2,
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1
+          ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
         },
         "alignItems": {
           ":prime-ui/modals/transferFlow/CounterpartyDepositStep.tsx": 1,
@@ -255,7 +255,7 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 99,
+      "totalInstances": 100,
       "totalCallSites": 34,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "aliasedCdsComponents": [
@@ -280,9 +280,6 @@
         ":prime-ui/modals/transferFlow/TestTransactionStep.tsx": 2,
         ":prime-ui/modals/transferFlow/TransferReminderStep.tsx": 1,
         ":prime-ui/modals/transferFlow/WireTransferStep.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 5,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
         ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 10,
         ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 9,
         ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 3,
@@ -298,10 +295,13 @@
         ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1,
         ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 3,
         ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 5,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 6,
         ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
         ":prime-ui/modals/transferFlow/components/SendTestTransactionButton.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1
+        ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 5,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
@@ -317,9 +317,6 @@
           ":prime-ui/modals/transferFlow/TestTransactionStep.tsx": 2,
           ":prime-ui/modals/transferFlow/TransferReminderStep.tsx": 1,
           ":prime-ui/modals/transferFlow/WireTransferStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 5,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 10,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 9,
           ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 3,
@@ -335,10 +332,13 @@
           ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 3,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 5,
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 6,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/SendTestTransactionButton.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1
+          ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 5,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
         },
         "spacingTop": {
           ":prime-ui/modals/transferFlow/BankInfoStep.tsx": 1,
@@ -368,7 +368,6 @@
           ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 3,
           ":prime-ui/modals/transferFlow/TestTransactionStep.tsx": 1,
           ":prime-ui/modals/transferFlow/TransferReminderStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 2,
           ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 10,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 9,
           ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 3,
@@ -384,15 +383,16 @@
           ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 2,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 2,
-          ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1
+          ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 2
         },
         "align": {
           ":prime-ui/modals/transferFlow/PreviewTransactionStep.tsx": 3,
           ":prime-ui/modals/transferFlow/TestTransactionStep.tsx": 1,
           ":prime-ui/modals/transferFlow/TransferReminderStep.tsx": 1,
           ":prime-ui/modals/transferFlow/WireTransferStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
         },
         "spacing": {
           ":prime-ui/modals/transferFlow/TransferReminderStep.tsx": 1
@@ -401,7 +401,6 @@
           ":prime-ui/modals/transferFlow/WireTransferStep.tsx": 1
         },
         "noWrap": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 2,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 3,
           ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 1,
@@ -413,8 +412,9 @@
           ":prime-ui/modals/transferFlow/components/InternalTransferAmountSection.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 5,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 6,
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
         },
         "spacingBottom": {
           ":prime-ui/modals/transferFlow/components/DepositWarningMessage.tsx": 1
@@ -455,9 +455,6 @@
         ":prime-ui/modals/transferFlow/QRCodesStep.tsx": 2,
         ":prime-ui/modals/transferFlow/SenTransferStep.tsx": 3,
         ":prime-ui/modals/transferFlow/WireTransferStep.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 4,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 5,
         ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 1,
         ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 2,
         ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 1,
@@ -471,7 +468,10 @@
         ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
         ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 1,
         ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 4,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 5
       },
       "propsWithCallSites": {
         "as": {
@@ -484,9 +484,6 @@
           ":prime-ui/modals/transferFlow/QRCodesStep.tsx": 2,
           ":prime-ui/modals/transferFlow/SenTransferStep.tsx": 3,
           ":prime-ui/modals/transferFlow/WireTransferStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 4,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 5,
           ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 2,
           ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 1,
@@ -500,7 +497,10 @@
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 4,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 5
         },
         "noWrap": {
           ":prime-ui/modals/transferFlow/CounterpartyDepositStep.tsx": 2,
@@ -510,9 +510,6 @@
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 3,
           ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 2,
           ":prime-ui/modals/transferFlow/WireTransferStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 3,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 4,
           ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 1,
@@ -524,7 +521,10 @@
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 3,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 4
         },
         "spacingTop": {
           ":prime-ui/modals/transferFlow/CounterpartyDepositStep.tsx": 2,
@@ -546,24 +546,24 @@
           ":prime-ui/modals/transferFlow/components/HotWalletAddress.tsx": 1,
           ":prime-ui/modals/transferFlow/components/HotWalletAddressV2.tsx": 1
         },
-        "transform": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
-        },
         "color": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 1,
           ":prime-ui/modals/transferFlow/components/BankDropdown.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/DepositAddressDropdown.tsx": 1
+          ":prime-ui/modals/transferFlow/components/DepositAddressDropdown.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
         },
         "spacingVertical": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 3,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 3,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "transform": {
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
         }
       }
     },
@@ -753,7 +753,6 @@
         ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 2,
         ":prime-ui/modals/transferFlow/SenTransferStep.tsx": 3,
         ":prime-ui/modals/transferFlow/TestTransactionStep.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
         ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 3,
         ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 3,
         ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 1,
@@ -765,7 +764,8 @@
         ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1,
         ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
         ":prime-ui/modals/transferFlow/components/SendTestTransactionButton.tsx": 2,
-        ":prime-ui/modals/transferFlow/components/TransferFooter.tsx": 1
+        ":prime-ui/modals/transferFlow/components/TransferFooter.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
       },
       "propsWithCallSites": {
         "gap": {
@@ -783,7 +783,6 @@
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 2,
           ":prime-ui/modals/transferFlow/SenTransferStep.tsx": 3,
           ":prime-ui/modals/transferFlow/TestTransactionStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 2,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 2,
           ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 1,
@@ -792,17 +791,15 @@
           ":prime-ui/modals/transferFlow/components/HotWalletAddressV2.tsx": 1,
           ":prime-ui/modals/transferFlow/components/InternalTransferAmountSection.tsx": 1,
           ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/SendTestTransactionButton.tsx": 1
-        },
-        "spacingVertical": {
+          ":prime-ui/modals/transferFlow/components/SendTestTransactionButton.tsx": 1,
           ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
         },
         "width": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 2,
           ":prime-ui/modals/transferFlow/components/AddressBookDropdown.tsx": 1,
           ":prime-ui/modals/transferFlow/components/AmountColumn.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/InternalTransferAmountSection.tsx": 1
+          ":prime-ui/modals/transferFlow/components/InternalTransferAmountSection.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
         },
         "justifyContent": {
           ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 1,
@@ -815,6 +812,9 @@
         },
         "position": {
           ":prime-ui/modals/transferFlow/components/SendTestTransactionButton.tsx": 1
+        },
+        "spacingVertical": {
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
         }
       }
     },
@@ -1137,176 +1137,6 @@
       }
     },
     {
-      "name": "TableRow",
-      "sourceFile": "@cbhq/cds-web/tables/TableRow",
-      "totalInstances": 14,
-      "totalCallSites": 9,
-      "cds": "@cbhq/cds-web/tables/TableRow",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx",
-          "callSites": [
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
-          ]
-        },
-        {
-          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx",
-          "callSites": [
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
-          ]
-        },
-        {
-          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx",
-          "callSites": [
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
-          ]
-        },
-        {
-          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx",
-          "callSites": [
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
-          ]
-        },
-        {
-          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx",
-          "callSites": [
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
-          ]
-        },
-        {
-          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx",
-          "callSites": [
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
-            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
-          ]
-        }
-      ],
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 3,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 4,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1
-      },
-      "propsWithCallSites": {
-        "disableHoverIndicator": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 3,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 4,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TableCell",
-      "sourceFile": "@cbhq/cds-web/tables/TableCell",
-      "totalInstances": 31,
-      "totalCallSites": 9,
-      "cds": "@cbhq/cds-web/tables/TableCell",
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 2,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 6,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 8,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx": 2,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 3,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 2,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 4,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 2,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 2
-      }
-    },
-    {
-      "name": "Table",
-      "sourceFile": "@cbhq/cds-web/tables/Table",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/tables/Table",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx",
-          "callSites": [
-            ":prime-ui/modals/transferFlow/BankInfoStep.tsx"
-          ]
-        },
-        {
-          "aliasPath": ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
-          "callSites": [
-            ":prime-ui/modals/transferFlow/PreviewTransactionStep.tsx"
-          ]
-        }
-      ],
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-      },
-      "propsWithCallSites": {
-        "variant": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "bordered": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TableBody",
-      "sourceFile": "@cbhq/cds-web/tables/TableBody",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/tables/TableBody",
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-      }
-    },
-    {
-      "name": "TableCaption",
-      "sourceFile": "@cbhq/cds-web/tables/TableCaption",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/tables/TableCaption",
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-      }
-    },
-    {
-      "name": "Fallback",
-      "sourceFile": "@cbhq/cds-web/layout/Fallback",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/layout/Fallback",
-      "propsWithCallSites": {
-        "height": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
-        },
-        "width": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
-        },
-        "percentage": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Checkbox",
       "sourceFile": "@cbhq/cds-web/controls/Checkbox",
       "totalInstances": 2,
@@ -1473,6 +1303,97 @@
       }
     },
     {
+      "name": "TableRow",
+      "sourceFile": "@cbhq/cds-web/tables/TableRow",
+      "totalInstances": 14,
+      "totalCallSites": 9,
+      "cds": "@cbhq/cds-web/tables/TableRow",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx",
+          "callSites": [
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx",
+          "callSites": [
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx",
+          "callSites": [
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx",
+          "callSites": [
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx",
+          "callSites": [
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx",
+          "callSites": [
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
+            ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 3,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 4
+      },
+      "propsWithCallSites": {
+        "disableHoverIndicator": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 3,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 4
+        }
+      }
+    },
+    {
+      "name": "TableCell",
+      "sourceFile": "@cbhq/cds-web/tables/TableCell",
+      "totalInstances": 32,
+      "totalCallSites": 9,
+      "cds": "@cbhq/cds-web/tables/TableCell",
+      "callSites": {
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow.tsx": 2,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 3,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 2,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow.tsx": 5,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow.tsx": 2,
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow.tsx": 2,
+        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 2,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 6,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 8
+      }
+    },
+    {
       "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
       "totalInstances": 1,
@@ -1502,6 +1423,85 @@
         },
         "placement": {
           ":prime-ui/modals/transferFlow/components/SendTestTransactionButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Table",
+      "sourceFile": "@cbhq/cds-web/tables/Table",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/tables/Table",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx",
+          "callSites": [
+            ":prime-ui/modals/transferFlow/BankInfoStep.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
+          "callSites": [
+            ":prime-ui/modals/transferFlow/PreviewTransactionStep.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "variant": {
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "bordered": {
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TableBody",
+      "sourceFile": "@cbhq/cds-web/tables/TableBody",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/tables/TableBody",
+      "callSites": {
+        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+      }
+    },
+    {
+      "name": "TableCaption",
+      "sourceFile": "@cbhq/cds-web/tables/TableCaption",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/tables/TableCaption",
+      "callSites": {
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "@cbhq/cds-web/layout/Fallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/layout/Fallback",
+      "propsWithCallSites": {
+        "height": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
+        },
+        "width": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
+        },
+        "percentage": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
         }
       }
     }
@@ -3556,321 +3556,6 @@
       }
     },
     {
-      "name": "CopyTextButton",
-      "sourceFile": "@cbhq/prime-components/web/CopyTextButton",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1
-      },
-      "propsWithCallSites": {
-        "value": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1
-        },
-        "message": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "InfoRow",
-      "sourceFile": ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
-        },
-        "name": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
-        },
-        "data": {
-          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Suspense",
-      "sourceFile": "react/Suspense",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/DepositAddressAutocomplete.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewInternalTransfer.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1
-      },
-      "propsWithCallSites": {
-        "fallback": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/DepositAddressAutocomplete.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewInternalTransfer.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SuspenseFallback",
-      "sourceFile": ":prime-ui/components/loading/SuspenseFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "name": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PreviewTransactionStepApprovalTableContent",
-      "sourceFile": ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "PreviewTransactionDisplayNetworkFeeRow",
-      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-      },
-      "propsWithCallSites": {
-        "feeEstimate": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        },
-        "currencySymbol": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        },
-        "localizedFee": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        },
-        "localizedOverallFee": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        },
-        "isCTNTransfer": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "isOutboundTransfer": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        },
-        "displayOverallFees": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "PreviewTransactionProcessingTimeRow",
-      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow",
-      "totalInstances": 3,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
-      },
-      "propsWithCallSites": {
-        "vehicleId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
-        },
-        "transactionType": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
-        },
-        "transferMethodType": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
-        },
-        "currencySymbol": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
-        },
-        "customProcessingTime": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "PreviewTransactionDestinationBankRow",
-      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "vehicleId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "selectedBankId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PreviewTransactionDestinationWalletRow",
-      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "vehicleId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "currencySymbol": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "destinationWallet": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "balance": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "portfolioId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "transferMethodType": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "externalAddressName": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PreviewTransactionDisplayAddressRow",
-      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-      },
-      "propsWithCallSites": {
-        "portfolioId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        },
-        "address": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        },
-        "currency": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
-        },
-        "isDestination": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PreviewTransactionDisplayNoteRow",
-      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "options": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "DisplayWallet",
-      "sourceFile": ":prime-ui/modals/transferFlow/components/DisplayWallet",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
-        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1
-      },
-      "propsWithCallSites": {
-        "vehicleId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1
-        },
-        "wallet": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1
-        },
-        "currencySymbol": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1
-        },
-        "balance": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1
-        },
-        "portfolioId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1
-        },
-        "displayWithPortfolio": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1,
-          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1
-        },
-        "isCTNTransfer": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PreviewTransactionTransferDataRows",
-      "sourceFile": ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "customProcessingTime": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "vehicleId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "destinationPortfolioId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "sourcePortfolioId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "transferMethodType": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "transactionType": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "currency": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "selectedBankId": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "displayAddress": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "destinationWallet": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "feeEstimate": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "localizedFee": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "localizedOverallFee": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "target": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "isAlgo": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "options": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "isCTNTransfer": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "isOutboundTransfer": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        },
-        "displayOverallFees": {
-          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
-        }
-      }
-    },
-    {
       "name": "AddressBookAutocompleteWithFetch",
       "sourceFile": ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx",
       "totalInstances": 2,
@@ -4007,6 +3692,28 @@
         },
         "disabled": {
           ":prime-ui/modals/transferFlow/components/DepositAddressAutocomplete.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Suspense",
+      "sourceFile": "react/Suspense",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "callSites": {
+        ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 1,
+        ":prime-ui/modals/transferFlow/components/DepositAddressAutocomplete.tsx": 1,
+        ":prime-ui/modals/transferFlow/components/PreviewInternalTransfer.tsx": 1,
+        ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "fallback": {
+          ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx": 1,
+          ":prime-ui/modals/transferFlow/components/DepositAddressAutocomplete.tsx": 1,
+          ":prime-ui/modals/transferFlow/components/PreviewInternalTransfer.tsx": 1,
+          ":prime-ui/modals/transferFlow/components/StakedWalletWarningMessage.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
         }
       }
     },
@@ -4278,13 +3985,13 @@
         "portfolioId": {
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
         },
-        "balance": {
-          ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
-        },
         "isCTNTransfer": {
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
         },
-        "hideBalance": {
+        "showWalletBalance": {
+          ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
+        },
+        "balanceKey": {
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
         }
       }
@@ -4304,10 +4011,10 @@
         "currencySymbol": {
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
         },
-        "balance": {
+        "showWalletBalance": {
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
         },
-        "hideBalance": {
+        "balanceKey": {
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 1
         }
       }
@@ -4550,12 +4257,74 @@
       }
     },
     {
+      "name": "DisplayWallet",
+      "sourceFile": ":prime-ui/modals/transferFlow/components/DisplayWallet",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "vehicleId": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "wallet": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "currencySymbol": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "portfolioId": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "displayWithPortfolio": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "balanceKey": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1
+        },
+        "showWalletBalance": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "isCTNTransfer": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        }
+      }
+    },
+    {
       "name": "em",
       "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx",
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": {
         ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow.tsx": 2
+      }
+    },
+    {
+      "name": "CopyTextButton",
+      "sourceFile": "@cbhq/prime-components/web/CopyTextButton",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
+        ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
+      },
+      "propsWithCallSites": {
+        "value": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
+        },
+        "message": {
+          ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow.tsx": 1,
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
+        }
       }
     },
     {
@@ -4609,6 +4378,237 @@
       "sourceFile": ":prime-ui/modals/transferFlow/components/Table.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "InfoRow",
+      "sourceFile": ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
+        },
+        "name": {
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
+        },
+        "data": {
+          ":prime-ui/modals/transferFlow/tables/BankInfoTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SuspenseFallback",
+      "sourceFile": ":prime-ui/components/loading/SuspenseFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "name": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PreviewTransactionStepApprovalTableContent",
+      "sourceFile": ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepApprovalTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PreviewTransactionDisplayNetworkFeeRow",
+      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNetworkFeeRow",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+      },
+      "propsWithCallSites": {
+        "feeEstimate": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "currencySymbol": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "localizedFee": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "localizedOverallFee": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "isCTNTransfer": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "isOutboundTransfer": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "displayOverallFees": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "PreviewTransactionProcessingTimeRow",
+      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionProcessingTimeRow",
+      "totalInstances": 3,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
+      },
+      "propsWithCallSites": {
+        "vehicleId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
+        },
+        "transactionType": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
+        },
+        "transferMethodType": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
+        },
+        "currencySymbol": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 3
+        },
+        "customProcessingTime": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "PreviewTransactionDestinationBankRow",
+      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationBankRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "vehicleId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "selectedBankId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PreviewTransactionDestinationWalletRow",
+      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDestinationWalletRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "vehicleId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "currencySymbol": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "destinationWallet": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "portfolioId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "transferMethodType": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "externalAddressName": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PreviewTransactionDisplayAddressRow",
+      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayAddressRow",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+      },
+      "propsWithCallSites": {
+        "portfolioId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "address": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "currency": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 2
+        },
+        "isDestination": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PreviewTransactionDisplayNoteRow",
+      "sourceFile": ":prime-ui/modals/transferFlow/components/PreviewTransactionDisplayNoteRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "options": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PreviewTransactionTransferDataRows",
+      "sourceFile": ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "customProcessingTime": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "vehicleId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "destinationPortfolioId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "sourcePortfolioId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "transferMethodType": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "transactionType": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "currency": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "selectedBankId": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "displayAddress": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "destinationWallet": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "feeEstimate": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "localizedFee": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "localizedOverallFee": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "target": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "isAlgo": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "options": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "isCTNTransfer": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "isOutboundTransfer": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        },
+        "displayOverallFees": {
+          ":prime-ui/modals/transferFlow/tables/PreviewTransactionStepTable.tsx": 1
+        }
+      }
     }
   ]
 }
