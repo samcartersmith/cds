@@ -1,9 +1,13 @@
+import { type StyleProp, type ViewStyle } from 'react-native';
 import { ChipBaseProps } from '@cbhq/cds-common/types';
 
 import { OnPress, PressableInternalProps } from '../system';
 
 export type ChipProps = ChipBaseProps &
-  Omit<PressableInternalProps, 'children' | 'background' | 'onChange'>;
+  Omit<PressableInternalProps, 'children' | 'background' | 'onChange'> & {
+    /** Apply styles to Chip content. */
+    contentStyle?: StyleProp<ViewStyle>;
+  };
 
 export type InputChipProps = {
   /** Value indicates what is currently selected */

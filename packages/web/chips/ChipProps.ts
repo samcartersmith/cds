@@ -14,7 +14,10 @@ export type ChipProps = ChipBaseProps &
     | 'accessibilityHint'
     | 'accessibilityLabelledBy'
     | 'onChange'
-  >;
+  > & {
+    /** Apply styles to Chip content. */
+    contentStyle?: React.CSSProperties;
+  };
 
 export type InputChipProps = {
   /** Value indicates what is currently selected */

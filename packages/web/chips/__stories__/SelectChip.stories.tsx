@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { UiIconName } from '@cbhq/cds-icons';
 
 import { SelectOption } from '../../controls/SelectOption';
@@ -8,12 +9,15 @@ import { VStack } from '../../layout/VStack';
 import { TextCaption } from '../../typography/TextCaption';
 import { SelectChip, SelectChipProps } from '../SelectChip';
 
-const sortOptions = ['Balance', 'Name', 'Asset Value'];
+const defaultSortOptions = ['Balance', 'Name', 'Asset Value'];
+const customSortOptions = [loremIpsum, ...defaultSortOptions];
+const customContentStyle = { maxWidth: 300 };
 
 const ExampleSelectChip = ({
   value: defaultValue,
+  sortOptions = defaultSortOptions,
   ...props
-}: Omit<SelectChipProps, 'onChange' | 'content' | 'children'>) => {
+}: Omit<SelectChipProps, 'onChange' | 'content' | 'children'> & { sortOptions?: string[] }) => {
   const [value, setValue] = React.useState<string | undefined>(defaultValue);
 
   const content = (
@@ -111,6 +115,16 @@ export const ObjectValueModel = () => {
       onChange={(newValue: string) => handleChange(newValue)}
       value={value.value}
       valueLabel={value.label}
+    />
+  );
+};
+
+export const CustomStyle = () => {
+  return (
+    <ExampleSelectChip
+      contentStyle={customContentStyle}
+      sortOptions={customSortOptions}
+      value={customSortOptions[0]}
     />
   );
 };

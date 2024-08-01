@@ -30,6 +30,7 @@ export const Chip = memo(
       onPress,
       testID,
       accessibilityLabel,
+      contentStyle,
       ...props
     }: ChipProps,
     ref: React.Ref<HTMLElement>,
@@ -48,6 +49,7 @@ export const Chip = memo(
         maxWidth={maxWidth}
         spacingHorizontal={compact ? 1 : 2}
         spacingVertical={compact ? 0.5 : 1}
+        style={contentStyle}
         testID={!onPress ? testID : undefined}
       >
         {start}

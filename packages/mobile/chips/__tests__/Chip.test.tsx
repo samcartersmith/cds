@@ -18,6 +18,8 @@ const assetIconProps = {
 
 const chipTestID = 'chip-test';
 
+const customContentStyle = { maxWidth: 300 };
+
 const TestChip = (props: Omit<ChipProps, 'children'>) => (
   <Chip
     end={<Icon color="foreground" name="caretDown" size="s" testID="end-test" />}
@@ -51,5 +53,11 @@ describe('Chip', () => {
     fireEvent.press(screen.getByTestId(chipTestID));
 
     expect(onPress).toHaveBeenCalled();
+  });
+
+  it('renders correctly when passing custom styles to contentStyle prop', () => {
+    render(<TestChip contentStyle={customContentStyle} />);
+
+    expect(screen.getByTestId(chipTestID)).toHaveStyle(customContentStyle);
   });
 });

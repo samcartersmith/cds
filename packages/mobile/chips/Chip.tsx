@@ -24,6 +24,7 @@ export const Chip = memo(
       numberOfLines = 1,
       onPress,
       testID,
+      contentStyle,
       ...props
     }: ChipProps,
     ref: ForwardedRef<View>,
@@ -41,6 +42,7 @@ export const Chip = memo(
         minWidth={0}
         spacingHorizontal={compact ? 1 : 2}
         spacingVertical={compact ? 0.5 : 1}
+        style={contentStyle}
         testID={!onPress ? testID : undefined}
       >
         {start}

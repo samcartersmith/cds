@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.29.0 (7/31/2024 PST)
+
+#### 🚀 Updates
+
+- Add hStackStyle to Chip component. [[DX-4012](https://jira.coinbase-corp.com/browse/DX-4012)]
+
 ## 6.28.3 ((7/31/2024, 11:52 AM PST))
 
 This is an artificial version bump with no new change.
