@@ -46,6 +46,7 @@ export const NativeInput = memo(
         textAlign,
         accessibilityLabel,
         compact,
+        style,
         ...editableInputAddonProps
       }: NativeInputProps,
       ref: ForwardedRef<TextInput>,
@@ -75,8 +76,9 @@ export const NativeInput = memo(
            * @link https://github.com/facebook/react-native/issues/29068
            */
           { textAlign: textAlign === 'unset' ? undefined : textAlignInputTransformed },
+          style,
         ];
-      }, [containerStyle, inputTextStyle, textAlignInputTransformed, textAlign]);
+      }, [inputTextStyle, containerStyle, textAlign, textAlignInputTransformed, style]);
 
       return (
         <RNTextInput

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
+import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -48,6 +50,10 @@ const MockComplexInput = () => {
 };
 
 const InputScreen = () => {
+  const spectrum = useSpectrum();
+  const customStyle = {
+    backgroundColor: paletteValueToRgbaString('gray10', spectrum),
+  };
   return (
     <ExampleScreen>
       <Example inline title="TextInput ForegroundMuted">
@@ -55,7 +61,6 @@ const InputScreen = () => {
           helperText="username must start with an @ symbol"
           label="Username"
           placeholder="john.doe@coinbase.com"
-          variant="foregroundMuted"
         />
       </Example>
       <Example inline title="TextInput ellipsis long text">
@@ -342,6 +347,9 @@ const InputScreen = () => {
       </Example>
       <Example>
         <MockComplexInput />
+      </Example>
+      <Example inline title="TextInput Custom Background">
+        <MockTextInput label="Username" placeholder="john.doe@coinbase.com" style={customStyle} />
       </Example>
     </ExampleScreen>
   );

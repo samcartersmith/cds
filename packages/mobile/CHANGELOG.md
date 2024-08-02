@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.29.1 (8/2/2024 PST)
+
+#### 🐞 Fixes
+
+- Destructure style and className props on NativeInput. [[DX-4085](https://jira.coinbase-corp.com/browse/DX-4085)]
+
 ## 6.29.0 (7/31/2024 PST)
 
 #### 🚀 Updates

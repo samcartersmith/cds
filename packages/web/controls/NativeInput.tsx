@@ -105,6 +105,8 @@ export const NativeInput = memo(
       accessibilityLabel,
       accessibilityHint,
       compact,
+      className,
+      style,
       ...props
     }: NativeInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -119,15 +121,21 @@ export const NativeInput = memo(
       return {
         textAlign: align,
         colorScheme: spectrum,
+        ...style,
       };
-    }, [align, spectrum]);
+    }, [align, spectrum, style]);
 
     return (
       <input
         ref={ref}
         aria-describedby={accessibilityHint}
         aria-label={accessibilityLabel}
-        className={cx(nativeInputBaseStyle, body, containerSpacing ?? defaultContainerSpacing)}
+        className={cx(
+          nativeInputBaseStyle,
+          body,
+          containerSpacing ?? defaultContainerSpacing,
+          className,
+        )}
         data-testid={testID}
         onBlur={onBlur}
         onChange={onChange}

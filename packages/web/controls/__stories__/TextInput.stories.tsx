@@ -1,6 +1,8 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { css } from 'linaria';
 import { InputStackBorderRadius, InputVariant } from '@cbhq/cds-common';
+import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
+import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
 import { Box, HStack } from '../../layout';
@@ -493,5 +495,22 @@ export const CopyTextInput = function CopyTextInput() {
         variant={variant}
       />
     </div>
+  );
+};
+
+export const CustomStyle = function Align() {
+  const spectrum = useSpectrum();
+  const customStyle = {
+    backgroundColor: paletteValueToRgbaString('gray10', spectrum),
+  } as const;
+
+  return (
+    <TextInput
+      align="end"
+      helperText="helperText"
+      label="Label"
+      placeholder="placeholder"
+      style={customStyle}
+    />
   );
 };
