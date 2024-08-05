@@ -32,6 +32,8 @@ export const Button = memo(
       noScaleOnPress,
       accessibilityLabel,
       accessibilityHint,
+      start,
+      end,
       ...props
     }: ButtonProps,
     ref: ForwardedRef<View>,
@@ -120,25 +122,28 @@ export const Button = memo(
             <ActivityIndicator color={palette[color]} size="small" />
           ) : (
             <>
-              {!!startIcon && (
-                <Icon
-                  color={color}
-                  name={startIcon}
-                  size={iconSize}
-                  spacingEnd={1}
-                  style={styles.icon}
-                />
-              )}
+              {start ??
+                (startIcon ? (
+                  <Icon
+                    color={color}
+                    name={startIcon}
+                    size={iconSize}
+                    spacingStart={1}
+                    style={styles.icon}
+                  />
+                ) : null)}
               {childrenNode}
-              {!!endIcon && (
-                <Icon
-                  color={color}
-                  name={endIcon}
-                  size={iconSize}
-                  spacingStart={1}
-                  style={styles.icon}
-                />
-              )}
+
+              {end ??
+                (endIcon ? (
+                  <Icon
+                    color={color}
+                    name={endIcon}
+                    size={iconSize}
+                    spacingStart={1}
+                    style={styles.icon}
+                  />
+                ) : null)}
             </>
           )}
         </HStack>

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.30.0 (8/5/2024 PST)
+
+#### 🚀 Updates
+
+- Add start and end props for ReactNode Button component support. [[#3180](https://github.cbhq.net/frontend/cds/pull/3180)] [[DX-3481](https://jira.coinbase-corp.com/browse/DX-3481)]
+
 ## 6.29.1 ((8/2/2024, 10:24 AM PST))
 
 This is an artificial version bump with no new change.

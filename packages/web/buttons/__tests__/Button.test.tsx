@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { Box } from '../../layout';
 import { Button } from '../Button';
 
 const testA11yLabel = 'test-a11y-label';
@@ -82,5 +83,13 @@ describe('Button', () => {
     render(<Button onPress={spy}>Child</Button>);
 
     expect(screen.getByRole('button')).not.toHaveAttribute('onPress');
+  });
+
+  it('renders a button with a ReactNode as endIcon', () => {
+    const CustomIcon = () => <Box testID="custom-react-node">Custom Icon</Box>;
+    render(<Button end={<CustomIcon />}>Child</Button>);
+    const button = screen.getByRole('button');
+    expect(button).toBeDefined();
+    expect(screen.getByTestId('custom-react-node')).toBeInTheDocument();
   });
 });

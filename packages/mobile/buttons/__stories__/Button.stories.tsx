@@ -2,10 +2,14 @@ import React from 'react';
 import { buttonStories } from '@cbhq/cds-common/internal/buttonBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Icon } from '../../icons';
 import { HStack } from '../../layout/HStack';
+import { VStack } from '../../layout/VStack';
 import { RemoteImage } from '../../media/RemoteImage';
+import { TextLabel1 } from '../../typography';
 import { TextLabel2 } from '../../typography/TextLabel2';
 import { Button } from '../Button';
+import { ButtonGroup } from '../ButtonGroup';
 
 const ButtonScreen = () => {
   return (
@@ -32,6 +36,26 @@ const ButtonScreen = () => {
           Some really really really long button text that should get truncated after wrapping two
           lines
         </Button>
+      </Example>
+
+      <Example title="Custom endIcon on Button">
+        <VStack gap={2}>
+          <ButtonGroup accessibilityLabel="Group">
+            <Button end={<Icon color="foreground" name="caretRight" size="s" />}>
+              <TextLabel1>Test</TextLabel1>
+            </Button>
+            <Button end={<Icon color="foreground" name="add" size="s" />} variant="secondary">
+              <TextLabel1>Test</TextLabel1>
+            </Button>
+            <Button
+              end={<Icon color="foreground" name="airdrop" size="s" />}
+              endIcon="airdrop"
+              variant="secondary"
+            >
+              <TextLabel1>Test</TextLabel1>
+            </Button>
+          </ButtonGroup>
+        </VStack>
       </Example>
     </ExampleScreen>
   );

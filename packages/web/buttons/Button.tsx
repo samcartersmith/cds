@@ -50,6 +50,8 @@ const BaseButton = forwardRef(function Button(
     variant = 'primary',
     noScaleOnPress,
     numberOfLines,
+    start,
+    end,
     ...props
   }: ButtonProps,
   ref: React.Ref<HTMLButtonElement>,
@@ -95,11 +97,13 @@ const BaseButton = forwardRef(function Button(
       transparentWhileInactive={transparent}
       type={type}
     >
-      {startIcon && (
+      {start ? (
+        <span className={buttonStyles.startIcon}>{start}</span>
+      ) : startIcon ? (
         <span className={buttonStyles.startIcon}>
           <Icon color={color} name={startIcon} size={iconSize} />
         </span>
-      )}
+      ) : null}
 
       <span className={buttonStyles.positionRelative}>
         {loading && (
@@ -112,11 +116,13 @@ const BaseButton = forwardRef(function Button(
         </TextHeadline>
       </span>
 
-      {endIcon && (
+      {end ? (
+        <span className={buttonStyles.endIcon}>{end}</span>
+      ) : endIcon ? (
         <span className={buttonStyles.endIcon}>
           <Icon color={color} name={endIcon} size={iconSize} />
         </span>
-      )}
+      ) : null}
     </Pressable>
   );
 });

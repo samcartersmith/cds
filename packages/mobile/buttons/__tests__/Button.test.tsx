@@ -1,6 +1,7 @@
 import { Animated, Pressable } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { Box } from '../../layout';
 import { HStack } from '../../layout/HStack';
 import { TextTitle1, TextTitle2 } from '../../typography';
 import { debounce } from '../../utils/debounce';
@@ -60,5 +61,21 @@ describe('Button', () => {
     );
 
     expect(screen.queryByTestId('text-headline')).toBeNull();
+  });
+
+  it('renders a button with a ReactNode as endIcon', () => {
+    const CustomIcon = () => (
+      <Box testID="custom-react-node">
+        <TextTitle1>Custom Icon</TextTitle1>
+      </Box>
+    );
+    render(
+      <Button end={<CustomIcon />}>
+        <TextTitle1>Child</TextTitle1>
+      </Button>,
+    );
+    const button = screen.getByRole('button');
+    expect(button).toBeDefined();
+    expect(screen.getByTestId('custom-react-node')).not.toBeNull();
   });
 });

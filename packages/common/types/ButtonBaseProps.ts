@@ -15,6 +15,10 @@ export type ButtonBaseProps = {
   compact?: boolean;
   /** Mark the button as disabled. */
   disabled?: boolean;
+  /**
+   * Set the end node
+   */
+  end?: React.ReactNode;
   /** Icon to render at the end of the button. */
   endIcon?: IconName;
   /** Ensure the button aligns flush on the left or right.
@@ -26,6 +30,10 @@ export type ButtonBaseProps = {
   loading?: boolean;
   /** Uniquely identify the button within a form. */
   name?: string;
+  /**
+   * Set the start node
+   */
+  start?: React.ReactNode;
   /** Icon to render at the start of the button. */
   startIcon?: IconName;
   /** Mark the background and border as transparent until interacted with. */
