@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.30.1 (8/5/2024 PST)
+
+#### 🐞 Fixes
+
+- Fixed UI issue on SidebarItem when passing `to` prop. [[#3181](https://github.cbhq.net/frontend/cds/pull/3181)] [[DX-4087](https://jira.coinbase-corp.com/browse/DX-4087)]
+
 ## 6.30.0 (8/5/2024 PST)
 
 #### 🚀 Updates

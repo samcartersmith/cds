@@ -1,4 +1,5 @@
 import React, { forwardRef, memo, ReactNode, useMemo } from 'react';
+import { css } from 'linaria';
 import { ForwardedRef, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { NavigationIcon, NavigationIconProps } from '../icons';
@@ -9,6 +10,11 @@ import { Pressable, PressableInternalProps } from '../system';
 import { LinkProps, TextHeadline, TextLabel1 } from '../typography';
 
 import { useSidebarContext } from './SidebarContext';
+
+const pressableStyle = css`
+  display: inline-block;
+  padding: 0;
+`;
 
 type CustomSidebarItemProps = {
   isCollapsed?: boolean;
@@ -131,6 +137,7 @@ export const SidebarItem = memo(
             background="primaryWash"
             borderRadius={borderRadius ?? (variant === 'default' ? 'roundedFull' : 'roundedLarge')}
             borderWidth={variant === 'condensed' ? 'none' : undefined}
+            className={pressableStyle}
             onPress={onPress}
             testID={testID}
             to={to}
