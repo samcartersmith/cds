@@ -339,11 +339,13 @@ const sidebars = {
               type: 'doc',
               id: 'components/cards/AnnouncementCard/announcement-card',
               label: 'Announcement Card',
+              customProps: { tag: 'deprecated' },
             },
             {
               type: 'doc',
               id: 'components/cards/FeatureEntryCard/feature-entry-card',
               label: 'Feature Entry Card',
+              customProps: { tag: 'deprecated' },
             },
             { type: 'doc', id: 'components/cards/FeedCard/feed-card', label: 'Feed Card' },
             {
