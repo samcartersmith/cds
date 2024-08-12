@@ -255,7 +255,7 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 100,
+      "totalInstances": 101,
       "totalCallSites": 34,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "aliasedCdsComponents": [
@@ -271,7 +271,7 @@
         ":prime-ui/modals/transferFlow/BankInfoStep.tsx": 2,
         ":prime-ui/modals/transferFlow/CounterpartyDepositStep.tsx": 1,
         ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 4,
-        ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
+        ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 2,
         ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 4,
         ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 4,
         ":prime-ui/modals/transferFlow/PreviewTransactionStep.tsx": 3,
@@ -308,7 +308,7 @@
           ":prime-ui/modals/transferFlow/BankInfoStep.tsx": 2,
           ":prime-ui/modals/transferFlow/CounterpartyDepositStep.tsx": 1,
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 4,
-          ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
+          ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 2,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 4,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 4,
           ":prime-ui/modals/transferFlow/PreviewTransactionStep.tsx": 3,
@@ -361,7 +361,7 @@
         },
         "color": {
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 4,
-          ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
+          ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 2,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 4,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 4,
           ":prime-ui/modals/transferFlow/PreviewTransactionStep.tsx": 2,
@@ -946,6 +946,31 @@
       }
     },
     {
+      "name": "Banner",
+      "sourceFile": "@cbhq/cds-web/banner/Banner",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/banner/Banner",
+      "callSites": {
+        ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
+        ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1
+      },
+      "propsWithCallSites": {
+        "title": {
+          ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
+          ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1
+        },
+        "variant": {
+          ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
+          ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1
+        },
+        "startIcon": {
+          ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
+          ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
       "totalInstances": 7,
@@ -1021,24 +1046,6 @@
         },
         "openInNewWindow": {
           ":prime-ui/modals/transferFlow/PreviewTransactionStep.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Banner",
-      "sourceFile": "@cbhq/cds-web/banner/Banner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/banner/Banner",
-      "propsWithCallSites": {
-        "title": {
-          ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1
-        },
-        "variant": {
-          ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1
-        },
-        "startIcon": {
-          ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1
         }
       }
     },
@@ -3527,6 +3534,34 @@
       }
     },
     {
+      "name": "SimpleErrorFallback",
+      "sourceFile": "@cbhq/prime-components/web/SimpleErrorFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "message": {
+          ":prime-ui/modals/transferFlow/TransfersDialog.tsx": 1
+        },
+        "componentName": {
+          ":prime-ui/modals/transferFlow/TransfersDialog.tsx": 1
+        },
+        "maxContentWidth": {
+          ":prime-ui/modals/transferFlow/TransfersDialog.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SimpleErrorFallbackContent",
+      "sourceFile": "@cbhq/prime-components/web/SimpleErrorFallbackContent",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "message": {
+          ":prime-ui/modals/transferFlow/TransfersDialog.tsx": 1
+        }
+      }
+    },
+    {
       "name": "WrappedDialog",
       "sourceFile": ":prime-ui/components/wrappedDialog/WrappedDialog",
       "totalInstances": 1,
@@ -3551,6 +3586,17 @@
           ":prime-ui/modals/transferFlow/TransfersDialog.tsx": 1
         },
         "width": {
+          ":prime-ui/modals/transferFlow/TransfersDialog.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TransfersErrorFallback",
+      "sourceFile": ":prime-ui/modals/transferFlow/TransfersDialog.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "errorFallbackMessage": {
           ":prime-ui/modals/transferFlow/TransfersDialog.tsx": 1
         }
       }

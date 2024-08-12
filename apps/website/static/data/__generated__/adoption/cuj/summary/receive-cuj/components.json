@@ -1497,6 +1497,9 @@
         },
         "scrollToTop": {
           "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
         }
       }
     },
@@ -2051,6 +2054,12 @@
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
         }
       }
+    },
+    {
+      "name": "ReceiveFallback",
+      "sourceFile": "components/Receive/ReceiveFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "LearnMoreLink",

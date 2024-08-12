@@ -5956,9 +5956,6 @@
       "propsWithCallSites": {
         "queryRef": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
-        "isRecurringBuy": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         }
       }
     },
@@ -6159,8 +6156,8 @@
       }
     },
     {
-      "name": "BuyCryptoPaymentMethods",
-      "sourceFile": "@app/components/Transfer/CryptoPayments/BuyCryptoPaymentMethods",
+      "name": "BuyCryptoPaymentMethodsLazy",
+      "sourceFile": "@app/components/Transfer/CryptoPayments/BuyCryptoPaymentMethods/BuyCryptoPaymentMethodsLazy",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -8255,17 +8252,6 @@
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
         "context": {
-          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ConvertUsdCard",
-      "sourceFile": "components/Stablecoin/ConvertUsdCard",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }

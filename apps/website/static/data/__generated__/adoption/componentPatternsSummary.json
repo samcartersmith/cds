@@ -1,8 +1,31 @@
 {
   "NavigationBar": {
-    "totalInstances": 11,
-    "totalCallSites": 10,
+    "totalInstances": 12,
+    "totalCallSites": 11,
     "components": [
+      {
+        "name": "NavigationBar",
+        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "projectId": {
+            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
+          },
+          "action": {
+            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
+          },
+          "target": {
+            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
+          },
+          "isUserSwitcher": {
+            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
+          },
+          "mfe": {
+            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
+          }
+        }
+      },
       {
         "name": "NavigationBar",
         "sourceFile": "@cbhq/identity-navigation/NavigationBar",
@@ -303,6 +326,9 @@
           "onBeforeNavigate": {
             "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
+          "config": {
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
+          },
           "isUserSwitcher": {
             "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           }
@@ -313,7 +339,7 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^6.21.2",
@@ -353,34 +379,24 @@
       {
         "name": "AppSwitcher",
         "sourceFile": "@cbhq/app-switcher/AppSwitcher",
-        "totalInstances": 1,
-        "totalCallSites": 1,
+        "totalInstances": 2,
+        "totalCallSites": 2,
+        "callSites": {
+          "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
+          "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+        },
         "propsWithCallSites": {
           "projectId": {
+            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
             "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
           },
           "action": {
+            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
             "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
           },
           "target": {
+            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
             "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
-          }
-        }
-      },
-      {
-        "name": "AppSwitcher",
-        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "projectId": {
-            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
-          },
-          "action": {
-            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
-          },
-          "target": {
-            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
           }
         }
       }
@@ -390,7 +406,7 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^6.21.2",

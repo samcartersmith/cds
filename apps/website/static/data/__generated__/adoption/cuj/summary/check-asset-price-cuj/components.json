@@ -3,14 +3,10 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-mobile/layout/Box",
-      "totalInstances": 16,
-      "totalCallSites": 5,
+      "totalInstances": 13,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-mobile/layout/Box",
       "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "@app/screens/HomeTab/HomeFeedScreenV2.tsx"
-        },
         {
           "prop": "style",
           "callSite": "@app/screens/HomeTab/HomeFeedScreenV2.tsx"
@@ -29,35 +25,31 @@
         }
       ],
       "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 10,
+        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 8,
         "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
-        "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
         "@app/screens/Asset/components/AssetPriceChart.tsx": 2,
         "@app/screens/Asset/components/AssetScreenBody.tsx": 1
       },
       "propsWithCallSites": {
         "spacingHorizontal": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 7,
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 6,
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1
         },
         "testID": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2
         },
         "spacingBottom": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 3,
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 2,
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
           "@app/screens/Asset/components/AssetScreenBody.tsx": 1
         },
         "spacingTop": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 2,
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2
         },
         "style": {
-          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 2
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
         },
         "spacingVertical": {
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1
@@ -67,27 +59,23 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 11,
-      "totalCallSites": 5,
+      "totalInstances": 9,
+      "totalCallSites": 4,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "aliasedCdsComponents": [
         {
           "aliasPath": "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchResults.tsx",
-          "callSites": [
-            "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearch.tsx"
-          ]
+          "callSites": []
         }
       ],
       "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 4,
-        "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
+        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 3,
         "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchResults.tsx": 1,
         "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
         "@app/screens/Asset/components/AssetScreenBody.tsx": 4
       },
       "propsWithCallSites": {
         "flexGrow": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
           "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchResults.tsx": 1
         },
         "height": {
@@ -122,11 +110,11 @@
     {
       "name": "Divider",
       "sourceFile": "@cbhq/cds-mobile/layout/Divider",
-      "totalInstances": 6,
+      "totalInstances": 5,
       "totalCallSites": 3,
       "cds": "@cbhq/cds-mobile/layout/Divider",
       "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 4,
+        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 3,
         "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1,
         "@app/screens/Asset/components/AssetScreenBody.tsx": 1
       },
@@ -164,21 +152,6 @@
         },
         "offsetTop": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextCaption",
-      "sourceFile": "@cbhq/cds-mobile/typography/TextCaption",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/typography/TextCaption",
-      "callSites": {
-        "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 2
-      },
-      "propsWithCallSites": {
-        "color": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 2
         }
       }
     },
@@ -683,27 +656,27 @@
     {
       "name": "DeferredRenderer",
       "sourceFile": "@components/UI/DeferredRenderer",
-      "totalInstances": 5,
+      "totalInstances": 4,
       "totalCallSites": 1,
       "presentationalLibrary": "@components/UI/DeferredRenderer",
       "callSites": {
-        "@app/screens/Asset/components/AssetScreenBody.tsx": 5
+        "@app/screens/Asset/components/AssetScreenBody.tsx": 4
       },
       "propsWithCallSites": {
         "tag": {
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 5
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 4
         },
         "delay": {
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 5
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 4
         },
         "render": {
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 5
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 4
         },
         "renderProps": {
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 5
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 4
         },
         "waitForTags": {
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 4
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 3
         }
       }
     },
@@ -884,12 +857,6 @@
       }
     },
     {
-      "name": "StaticQuickActions",
-      "sourceFile": "@app/screens/HomeTab/StaticQuickActions/StaticQuickActions",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "DynamicQuickActions",
       "sourceFile": "@app/screens/HomeTab/DynamicQuickActions/DynamicQuickActions",
       "totalInstances": 1,
@@ -1046,33 +1013,22 @@
     {
       "name": "ExtendedFinPromFooter",
       "sourceFile": "@app/screens/HomeTab/HomeFeedScreenV2.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 2
-      }
-    },
-    {
-      "name": "AllCaughtUp",
-      "sourceFile": "@app/screens/HomeTab/components/AllCaughtUp",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
       "name": "RefreshControl",
       "sourceFile": "@app/components/RefreshControl",
-      "totalInstances": 4,
-      "totalCallSites": 4,
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-        "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
         "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1,
         "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
       },
       "propsWithCallSites": {
         "onRefresh": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1,
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
           "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1,
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 1
         }
@@ -1262,6 +1218,9 @@
         },
         "isRefreshing": {
           "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
+        },
+        "isSocialSharingMvpEnabled": {
+          "@app/screens/HomeTab/HomeFeedScreenV2.tsx": 1
         }
       }
     },
@@ -1396,11 +1355,10 @@
     {
       "name": "NetworkBoundary",
       "sourceFile": "@app/components/NetworkBoundary",
-      "totalInstances": 10,
-      "totalCallSites": 6,
+      "totalInstances": 9,
+      "totalCallSites": 5,
       "callSites": {
         "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-        "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
         "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1,
         "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 4,
         "@app/screens/Asset/components/AssetPriceChart.tsx": 1,
@@ -1409,7 +1367,6 @@
       "propsWithCallSites": {
         "errorFallback": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
           "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1,
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 4,
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1,
@@ -1417,7 +1374,6 @@
         },
         "suspenseFallback": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1,
           "@app/screens/UniversalSearch/components/UniversalSearchResults.tsx": 1,
           "@app/screens/Asset/StableAssetScreen/StableAssetScreen.tsx": 4,
           "@app/screens/Asset/components/AssetPriceChart.tsx": 1,
@@ -1449,193 +1405,6 @@
     {
       "name": "PortfolioBalanceContent",
       "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "MultiCategorySearchNullState",
-      "sourceFile": "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "searchQuery": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearch.tsx": 1
-        },
-        "onScroll": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearch.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "UniversalSearchContent",
-      "sourceFile": "@app/screens/UniversalSearch/components/UniversalSearch/UniversalSearchContent",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "searchQuery": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearch.tsx": 1
-        },
-        "onScroll": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearch.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MultiCategorySearchResults",
-      "sourceFile": "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchResults",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "searchQuery": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearch.tsx": 1
-        },
-        "onScroll": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearch.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "RecentlyTapped",
-      "sourceFile": "@app/screens/UniversalSearch/components/RecentlyTapped",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "refresh": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "searchQuery": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "TitleComponent": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SearchAssetListCell",
-      "sourceFile": "@app/screens/UniversalSearch/MultiCategorySearch/components/SearchAssetListCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "viewerAssetRef": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "searchQuery": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "withTypeLabel": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "index": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "sectionType": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "usdcRewardData": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SearchDappListCell",
-      "sourceFile": "@app/screens/UniversalSearch/MultiCategorySearch/components/SearchDappListCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "dappRef": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "categoryId": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "searchQuery": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "withTypeLabel": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "index": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "sectionType": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SearchNFTCollectionListCell",
-      "sourceFile": "@app/screens/UniversalSearch/MultiCategorySearch/components/SearchNFTCollectionListCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "nftCollectionRef": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "searchQuery": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "withTypeLabel": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "index": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "sectionType": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SectionList",
-      "sourceFile": "react-native/SectionList",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "testID": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "key": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "ListHeaderComponent": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "renderSectionHeader": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "stickySectionHeadersEnabled": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "onScrollBeginDrag": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "sections": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "refreshControl": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        },
-        "keyboardShouldPersistTaps": {
-          "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MultiCategorySearchNullStateContent",
-      "sourceFile": "@app/screens/UniversalSearch/MultiCategorySearch/MultiCategorySearchNullState.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -2430,14 +2199,11 @@
     {
       "name": "LegalDisclaimer",
       "sourceFile": "@app/screens/Asset/components/LegalDisclaimer",
-      "totalInstances": 2,
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/Asset/components/AssetScreenBody.tsx": 2
-      },
       "propsWithCallSites": {
         "disclaimer": {
-          "@app/screens/Asset/components/AssetScreenBody.tsx": 2
+          "@app/screens/Asset/components/AssetScreenBody.tsx": 1
         }
       }
     },
@@ -2526,15 +2292,43 @@
       "totalCallSites": 1
     },
     {
+      "name": "InstrumentedSuspense",
+      "sourceFile": "@cbhq/data-layer/InstrumentedSuspense",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/Home/HomeFeedContentDesktop.tsx": 1,
+        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+      },
+      "propsWithCallSites": {
+        "fallback": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        },
+        "instrumentationId": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1,
+          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AdvancedTradeHomeRedirect",
+      "sourceFile": "views/Home/HomeFeedContentDesktop.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        }
+      }
+    },
+    {
       "name": "HomeBalanceSection",
       "sourceFile": "views/Home/components/BalanceSection/HomeBalanceSection",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
         "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1
-        },
-        "hideBalanceSection": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
@@ -2559,50 +2353,16 @@
       }
     },
     {
-      "name": "PopularFirstBuys",
-      "sourceFile": "views/Home/components/TopMovers/PopularFirstBuys",
-      "totalInstances": 3,
-      "totalCallSites": 2,
+      "name": "TopMoversWrapper",
+      "sourceFile": "views/Home/components/TopMovers/TopMoversWrapper",
+      "totalInstances": 2,
+      "totalCallSites": 1,
       "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2,
-        "views/Home/HomeFeedContentMobile.tsx": 1
+        "views/Home/HomeFeedContentDesktop.tsx": 2
       },
       "propsWithCallSites": {
         "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2,
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        },
-        "showSlider": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1,
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TopMovers",
-      "sourceFile": "views/Home/components/TopMovers",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2,
-        "views/Home/HomeFeedContentMobile.tsx": 1
-      },
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2,
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        },
-        "borderedBottom": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1,
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        },
-        "showCarousel": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2,
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        },
-        "entryPoint": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2,
-          "views/Home/HomeFeedContentMobile.tsx": 1
+          "views/Home/HomeFeedContentDesktop.tsx": 2
         }
       }
     },
@@ -2631,6 +2391,9 @@
         "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         },
+        "buySellQueryRef": {
+          "views/Home/HomeFeedContentDesktop.tsx": 1
+        },
         "tradeEventContext": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         },
@@ -2649,9 +2412,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1
-        },
-        "showAccountChecklist": {
           "views/Home/HomeFeedContentDesktop.tsx": 1
         }
       }
@@ -2802,36 +2562,16 @@
       }
     },
     {
-      "name": "InstrumentedSuspense",
-      "sourceFile": "@cbhq/data-layer/InstrumentedSuspense",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 2,
-        "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
-      },
-      "propsWithCallSites": {
-        "fallback": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2,
-          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
-        },
-        "instrumentationId": {
-          "views/Home/HomeFeedContentDesktop.tsx": 2,
-          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
-        }
-      }
-    },
-    {
       "name": "AdvancedTradeHomeRedirectWrapper",
       "sourceFile": "views/Home/HomeFeedContentDesktop.tsx",
-      "totalInstances": 4,
+      "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": {
-        "views/Home/HomeFeedContentDesktop.tsx": 4
+        "views/Home/HomeFeedContentDesktop.tsx": 2
       },
       "propsWithCallSites": {
         "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 4
+          "views/Home/HomeFeedContentDesktop.tsx": 2
         }
       }
     },
@@ -2862,7 +2602,7 @@
         "views/Home/HomeFeedContentMobile.tsx": 1
       },
       "propsWithCallSites": {
-        "announcementCardPropertiesRef": {
+        "queryRef": {
           "views/Home/HomeFeedContentDesktop.tsx": 2,
           "views/Home/HomeFeedContentMobile.tsx": 1
         }
@@ -2903,31 +2643,6 @@
       }
     },
     {
-      "name": "HomeFeedContentDesktop",
-      "sourceFile": "views/Home/HomeFeedContentDesktop.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "HomeFeedContentDesktopPreloadable",
-      "sourceFile": "views/Home/HomeFeedContentDesktop.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryVariables": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1
-        },
-        "options": {
-          "views/Home/HomeFeedContentDesktop.tsx": 1
-        }
-      }
-    },
-    {
       "name": "main",
       "sourceFile": "views/Home/HomeFeedContentMobile.tsx",
       "totalInstances": 1,
@@ -2943,6 +2658,40 @@
           "views/Home/HomeFeedContentMobile.tsx": 1
         },
         "viewerAssetRef": {
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PopularFirstBuys",
+      "sourceFile": "views/Home/components/TopMovers/PopularFirstBuys",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "showSlider": {
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TopMovers",
+      "sourceFile": "views/Home/components/TopMovers",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "borderedBottom": {
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "showCarousel": {
+          "views/Home/HomeFeedContentMobile.tsx": 1
+        },
+        "entryPoint": {
           "views/Home/HomeFeedContentMobile.tsx": 1
         }
       }
@@ -3929,17 +3678,6 @@
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         },
         "context": {
-          "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ConvertUsdCard",
-      "sourceFile": "components/Stablecoin/ConvertUsdCard",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
           "views/AssetPagePortfolio/AssetPagePortfolioWallet.tsx": 1
         }
       }

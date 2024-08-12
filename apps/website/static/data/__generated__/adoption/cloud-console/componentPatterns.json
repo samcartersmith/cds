@@ -2,32 +2,6 @@
   "components": [
     {
       "component": {
-        "name": "AppSwitcher",
-        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "projectId": {
-            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
-          },
-          "action": {
-            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
-          },
-          "target": {
-            "apps/cloud-console/src/widgets/navigation/TopNav.tsx": 1
-          }
-        }
-      },
-      "config": {
-        "productComponentName": "AppSwitcher",
-        "owningTeam": "Identity",
-        "packageImportPath": "@cbhq/app-switcher",
-        "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
-        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
-      }
-    },
-    {
-      "component": {
         "name": "NavigationBar",
         "sourceFile": "@cbhq/identity-navigation/NavigationBar",
         "totalInstances": 1,
@@ -66,6 +40,9 @@
           "onBeforeNavigate": {
             "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           },
+          "config": {
+            "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
+          },
           "isUserSwitcher": {
             "apps/cloud-console/src/widgets/navigation/NavigationBar.tsx": 1
           }
@@ -75,14 +52,14 @@
         "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+        "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],
   "dependencies": {
     "dependencies": {
       "@cbhq/app-switcher": "^3.0.7",
-      "@cbhq/identity-navigation": "^7.3.0"
+      "@cbhq/identity-navigation": "^7.3.1"
     },
     "devDependencies": {},
     "peerDependencies": {},
