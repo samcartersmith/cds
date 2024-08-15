@@ -9,6 +9,8 @@ import { VStack } from '../layout/VStack';
 export type DateInputProps = {
   /** Date format separator character, e.g. the / in "MM/DD/YYYY". Defaults to forward slash (/). */
   separator?: string;
+  className?: string;
+  style?: React.CSSProperties;
 } & Omit<DateInputOptions, 'intlDateFormat'> &
   Omit<TextInputProps, 'inputNode' | 'value' | 'defaultValue'>;
 
@@ -33,6 +35,8 @@ export const DateInput = memo(
         placeholder,
         helperText,
         variant,
+        className,
+        style,
         onPress,
         onChange,
         onBlur,
@@ -94,7 +98,7 @@ export const DateInput = memo(
       );
 
       return (
-        <VStack minWidth={164}>
+        <VStack className={className} minWidth={164} style={style}>
           <TextInput
             ref={ref}
             {...rest}

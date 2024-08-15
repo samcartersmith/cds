@@ -141,6 +141,8 @@ export type CalendarProps = {
   nextArrowAccessibilityLabel?: string;
   /** Accessibility label describing the Calendar previous month arrow. */
   previousArrowAccessibilityLabel?: string;
+  className?: string;
+  style?: React.CSSProperties;
 } & Omit<VStackProps<'div'>, 'children' | 'ref'>;
 
 // These could be dynamically generated, but our Calendar and DatePicker aren't localized so there's no point
@@ -160,6 +162,8 @@ export const Calendar = memo(
         minDate,
         maxDate,
         disabledDateError,
+        className,
+        style,
         nextArrowAccessibilityLabel,
         previousArrowAccessibilityLabel,
         ...rest
@@ -273,9 +277,11 @@ export const Calendar = memo(
           ref={calendarRef}
           background
           borderRadius="roundedLarge"
+          className={className}
           opacity={disabled ? accessibleOpacityDisabled : undefined}
           overflow="auto"
           spacing={2}
+          style={style}
           width={360}
           {...rest}
         >

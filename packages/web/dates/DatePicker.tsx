@@ -57,6 +57,10 @@ export type DatePickerProps = {
   onCancel?: () => void;
   /** Accessibility label describing the calendar IconButton, which opens the calendar when pressed. */
   calendarIconButtonAccessibilityLabel?: string;
+  calendarStyle?: React.CSSProperties;
+  calendarClassName?: string;
+  dateInputStyle?: React.CSSProperties;
+  dateInputClassName?: string;
 } & Omit<
   DateInputProps,
   | 'date'
@@ -66,6 +70,8 @@ export type DatePickerProps = {
   | 'minDate'
   | 'maxDate'
   | 'disabledDateError'
+  | 'className'
+  | 'style'
 > &
   Pick<
     CalendarProps,
@@ -73,6 +79,8 @@ export type DatePickerProps = {
     | 'highlightedDates'
     | 'nextArrowAccessibilityLabel'
     | 'previousArrowAccessibilityLabel'
+    | 'className'
+    | 'style'
   > &
   Pick<PopoverProps, 'showOverlay'>;
 
@@ -122,6 +130,10 @@ export const DatePicker = memo(
         helperText,
         showOverlay,
         defaultOpen = false,
+        calendarStyle,
+        calendarClassName,
+        dateInputStyle,
+        dateInputClassName,
         onOpen,
         onClose,
         onConfirm,
@@ -210,6 +222,7 @@ export const DatePicker = memo(
             {...rest}
             accessibilityLabel={accessibilityLabel}
             accessibilityLabelledBy={accessibilityLabelledBy}
+            className={dateInputClassName}
             compact={compact}
             date={date}
             disabled={disabled}
@@ -227,6 +240,7 @@ export const DatePicker = memo(
             onErrorDate={onErrorDate}
             required={required}
             requiredError={requiredError}
+            style={dateInputStyle}
             variant={variant}
           />
         ),
@@ -251,6 +265,8 @@ export const DatePicker = memo(
           accessibilityLabelledBy,
           helperText,
           variant,
+          dateInputClassName,
+          dateInputStyle,
           rest,
         ],
       );
@@ -269,6 +285,7 @@ export const DatePicker = memo(
           >
             <Calendar
               ref={calendarRef}
+              className={calendarClassName}
               disabled={disabled}
               disabledDateError={disabledDateError}
               disabledDates={disabledDates}
@@ -280,6 +297,7 @@ export const DatePicker = memo(
               previousArrowAccessibilityLabel={previousArrowAccessibilityLabel}
               seedDate={seedDate}
               selectedDate={date}
+              style={calendarStyle}
             />
           </MotionVStack>
         ),
@@ -294,6 +312,8 @@ export const DatePicker = memo(
           disabledDateError,
           handleConfirmCalendarDate,
           calendarRef,
+          calendarStyle,
+          calendarClassName,
           nextArrowAccessibilityLabel,
           previousArrowAccessibilityLabel,
         ],

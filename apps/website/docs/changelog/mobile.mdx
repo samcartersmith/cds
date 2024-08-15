@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.31.0 (8/15/2024 PST)
+
+#### 🚀 Updates
+
+- Expose style and className props on DatePicker, DateInput, and Calendar. [[#3193](https://github.cbhq.net/frontend/cds/pull/3193)] [[DX-4132](https://jira.coinbase-corp.com/browse/DX-4132)]
+
 ## 6.30.1 ((8/5/2024, 01:56 PM PST))
 
 This is an artificial version bump with no new change.

@@ -1,10 +1,12 @@
 import React, { forwardRef, memo, useCallback, useMemo, useRef } from 'react';
 import {
   type NativeSyntheticEvent,
+  type StyleProp,
   type TextInput as NativeTextInput,
   type TextInputChangeEventData,
   type TextInputEndEditingEventData,
   type TextInputFocusEventData,
+  type ViewStyle,
 } from 'react-native';
 import { IntlDateFormat } from '@cbhq/cds-common/dates/IntlDateFormat';
 import { type DateInputOptions, useDateInput } from '@cbhq/cds-common/dates/useDateInput';
@@ -16,8 +18,9 @@ import { VStack } from '../layout/VStack';
 export type DateInputProps = {
   /** Date format separator character, e.g. the / in "MM/DD/YYYY". Defaults to forward slash (/). */
   separator?: string;
+  style?: StyleProp<ViewStyle>;
 } & Omit<DateInputOptions, 'disabledDates' | 'intlDateFormat'> &
-  Omit<TextInputProps, 'inputNode' | 'value' | 'defaultValue'>;
+  Omit<TextInputProps, 'inputNode' | 'value' | 'defaultValue' | 'style'>;
 
 export const DateInput = memo(
   forwardRef<NativeTextInput, DateInputProps>(
@@ -43,6 +46,7 @@ export const DateInput = memo(
         onChange,
         onEndEditing,
         testIDMap,
+        style,
         ...rest
       },
       ref,
@@ -109,7 +113,7 @@ export const DateInput = memo(
       );
 
       return (
-        <VStack minWidth={164}>
+        <VStack minWidth={164} style={style}>
           <TextInput
             ref={ref}
             {...rest}
