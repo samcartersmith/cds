@@ -8,6 +8,9 @@ export const spinner = {
     border-radius: 50%;
     width: 10em;
     height: 10em;
+    border-top-color: var(--background-alternate);
+    border-right-color: var(--background-alternate);
+    border-left-color: var(--background-alternate);
   `,
 };
 

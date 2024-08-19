@@ -18,6 +18,14 @@ export type SpinnerProps = {
    * @default foregroundMuted
    */
   color?: PaletteForeground;
+  /**
+   * Optional custom styles to apply to the spinner component.
+   */
+  style?: React.CSSProperties;
+  /**
+   * Optional CSS class to apply to the spinner component.
+   */
+  className?: string;
 } & SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
 
@@ -26,25 +34,25 @@ export const Spinner = memo(function Spinner({
   color = 'foregroundMuted',
   testID,
   accessibilityLabel,
+  style,
+  className,
 }: SpinnerProps) {
   const palette = usePalette();
 
   const spinnerStyle = useMemo(
     () => ({
       fontSize: `${size}px`,
-      borderTopColor: palette.backgroundAlternate,
-      borderRightColor: palette.backgroundAlternate,
       borderBottomColor: palette[color],
-      borderLeftColor: palette.backgroundAlternate,
+      ...style,
     }),
-    [palette, size, color],
+    [size, palette, color, style],
   );
 
   return (
     <>
       <div
         aria-describedby="spinnerStatus"
-        className={cx(styles.spinner.base, styles.spinnerAnimation)}
+        className={cx(styles.spinner.base, styles.spinnerAnimation, className)}
         data-testid={testID}
         role="status"
         style={spinnerStyle}

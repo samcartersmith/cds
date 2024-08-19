@@ -2,7 +2,23 @@ import { css } from 'linaria';
 
 import { spacing } from '../tokens';
 
+/**
+ * @deprecated Use spinnerHeight instead when using Spinner component
+ */
 export const LOADERSIZE = 24;
+
+export const spinnerHeight = 2.5;
+
+export const spinnerLoader = css`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: ${spinnerHeight}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const button = css`
   text-decoration: none;

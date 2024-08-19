@@ -1,4 +1,5 @@
 import React, { forwardRef, useMemo } from 'react';
+import { css } from 'linaria';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
@@ -9,13 +10,21 @@ import { useInteractableHeight } from '@cbhq/cds-common/hooks/useInteractableHei
 import { useButtonSpacing } from '../hooks/useButtonSpacing';
 import { useFlushStyles } from '../hooks/useFlushStyles';
 import { Icon } from '../icons/Icon';
-import { MaterialSpinner } from '../loaders/MaterialSpinner';
+import { Spinner } from '../loaders';
 import * as foregroundColors from '../styles/foregroundColor';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 import { cx } from '../utils/linaria';
 
 import * as buttonStyles from './buttonStyles';
+
+const spinnerStyle = {
+  base: css`
+    border-top-color: var(--transparent);
+    border-right-color: var(--transparent);
+    border-left-color: var(--transparent);
+  `,
+};
 
 type ButtonA11yProps = {
   disabled?: boolean;
@@ -107,8 +116,12 @@ const BaseButton = forwardRef(function Button(
 
       <span className={buttonStyles.positionRelative}>
         {loading && (
-          <span className={cx(buttonStyles.centerLoader)}>
-            <MaterialSpinner color={color} size={buttonStyles.LOADERSIZE} />
+          <span className={cx(buttonStyles.spinnerLoader)}>
+            <Spinner
+              className={cx(spinnerStyle.base)}
+              color={color}
+              size={buttonStyles.spinnerHeight}
+            />
           </span>
         )}
         <TextHeadline as="span" color={color} numberOfLines={numberOfLines}>

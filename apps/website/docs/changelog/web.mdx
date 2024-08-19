@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.33.0 (8/19/2024 PST)
+
+#### 🚀 Updates
+
+- Button(web): updated to use Spinner instead of MaterialSpinner. [[#3182](https://github.cbhq.net/frontend/cds/pull/3182)] [[DX-4001](https://jira.coinbase-corp.com/browse/DX-4001)]
+
 ## 6.32.0 (8/19/2024 PST)
 
 #### 🚀 Updates

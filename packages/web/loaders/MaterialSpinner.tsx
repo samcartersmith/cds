@@ -15,6 +15,9 @@ export type MaterialSpinnerProp = {
   color: PaletteForeground;
 } & SharedProps;
 
+/**
+ * @deprecated Use Spinner component instead
+ */
 export const MaterialSpinner = memo(({ size, color, testID }: MaterialSpinnerProp) => {
   const palette = usePalette();
 
