@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.32.0 (8/19/2024 PST)
+
+#### 🚀 Updates
+
+- Support rendering Portal nodes outside PortalProvider. [[#3198](https://github.cbhq.net/frontend/cds/pull/3198)] [[DX-4134](https://jira.coinbase-corp.com/browse/DX-4134)]
+
 ## 6.31.0 (8/15/2024 PST)
 
 #### 🚀 Updates

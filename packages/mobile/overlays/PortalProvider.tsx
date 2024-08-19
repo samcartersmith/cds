@@ -2,13 +2,20 @@ import React, { memo } from 'react';
 import { Platform } from 'react-native';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
 import { ToastProvider, ToastProviderProps } from '@cbhq/cds-common/overlays/ToastProvider';
+import { usePortal } from '@cbhq/cds-common/overlays/usePortal';
 import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalState';
 
-export type PortalProviderProps = ToastProviderProps;
+export type PortalProviderProps = ToastProviderProps & {
+  /**
+   * By default the PortalProvider will render portal nodes. Disable this if you want to use the PortalNodes component to render the nodes instead.
+   * @default true
+   */
+  renderPortals?: boolean;
+};
 
 type PortalHostProps = { nodes: PortalNode[] };
 
-const PortalHost = memo(({ nodes }: PortalHostProps) => {
+export const PortalHost = memo(({ nodes }: PortalHostProps) => {
   if (!nodes.length) return null;
 
   const isAndroid = Platform.OS === 'android';
@@ -41,17 +48,21 @@ const PortalHost = memo(({ nodes }: PortalHostProps) => {
 export const PortalProvider: React.FC<React.PropsWithChildren<PortalProviderProps>> = ({
   children,
   toastBottomOffset = 0,
+  renderPortals = true,
 }) => {
   const portalState = usePortalState();
 
   return (
     <PortalContext.Provider value={portalState}>
       <ToastProvider toastBottomOffset={toastBottomOffset}>
-        <PortalHost nodes={portalState.nodes} />
+        {renderPortals && <PortalHost nodes={portalState.nodes} />}
         {children}
       </ToastProvider>
     </PortalContext.Provider>
   );
 };
 
-export { PortalHost };
+export const PortalNodes = () => {
+  const { nodes } = usePortal();
+  return <PortalHost nodes={nodes} />;
+};

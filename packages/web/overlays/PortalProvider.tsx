@@ -2,6 +2,7 @@ import React, { memo, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
 import { ToastProvider, ToastProviderProps } from '@cbhq/cds-common/overlays/ToastProvider';
+import { usePortal } from '@cbhq/cds-common/overlays/usePortal';
 import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalState';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
@@ -9,7 +10,13 @@ import { IsoHexagonClipPath } from '../media/Hexagon';
 import { BrowserOnly } from '../system/BrowserOnly';
 import { getBrowserGlobals } from '../utils/browser';
 
-export type PortalProviderProps = ToastProviderProps;
+export type PortalProviderProps = ToastProviderProps & {
+  /**
+   * By default the PortalProvider will render portal nodes. Disable this if you want to use the PortalNodes component to render the nodes instead.
+   * @default true
+   */
+  renderPortals?: boolean;
+};
 
 export const portalRootId = 'portalRoot';
 export const modalContainerId = 'modalsContainer';
@@ -19,7 +26,7 @@ export const tooltipContainerId = 'tooltipContainer';
 
 const safeDocument = getBrowserGlobals()?.document;
 
-const PortalHost = memo(() => {
+export const PortalHost = memo(() => {
   const portalRoot = useMemo(
     // prevent duplicate portal root
     () => safeDocument?.createElement('div'),
@@ -80,16 +87,20 @@ const PortalHost = memo(() => {
 });
 
 export const PortalProvider: React.FC<React.PropsWithChildren<PortalProviderProps>> = memo(
-  ({ children, toastBottomOffset = 0 }) => {
+  ({ children, toastBottomOffset = 0, renderPortals = true }) => {
     const portalState = usePortalState();
 
     return (
       <PortalContext.Provider value={portalState}>
         <ToastProvider toastBottomOffset={toastBottomOffset}>
-          <BrowserOnly>
-            <PortalHost />
-          </BrowserOnly>
-          {portalState.nodes.map((node: PortalNode) => node.element)}
+          {renderPortals && (
+            <>
+              <BrowserOnly>
+                <PortalHost />
+              </BrowserOnly>
+              {portalState.nodes.map((node: PortalNode) => node.element)}
+            </>
+          )}
           {children}
           <IsoHexagonClipPath />
         </ToastProvider>
@@ -98,4 +109,14 @@ export const PortalProvider: React.FC<React.PropsWithChildren<PortalProviderProp
   },
 );
 
-export { PortalHost };
+export const PortalNodes = () => {
+  const { nodes } = usePortal();
+  return (
+    <>
+      <BrowserOnly>
+        <PortalHost />
+      </BrowserOnly>
+      {nodes.map((node: PortalNode) => node.element)}
+    </>
+  );
+};
