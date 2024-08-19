@@ -60,10 +60,13 @@ export const Popover = memo(
     testID,
     contentPosition = defaultContentPosition,
     block = false,
-    disableTypeFocus = false,
     disabled,
+    disableFocusTrap,
     disableAutoFocus = false,
+    disableTypeFocus = false,
+    focusTabIndexElements,
     respectNegativeTabIndex,
+    autoFocusDelay,
     controlledElementAccessibilityProps,
   }: PopoverProps) => {
     const { setSubject, setPopper, popperStyles, popperAttributes } = usePopper(contentPosition);
@@ -96,8 +99,11 @@ export const Popover = memo(
           onClick={handleCaptureEvents}
         >
           <FocusTrap
+            autoFocusDelay={autoFocusDelay}
             disableAutoFocus={disableAutoFocus}
+            disableFocusTrap={disableFocusTrap}
             disableTypeFocus={disableTypeFocus}
+            focusTabIndexElements={focusTabIndexElements}
             onEscPress={handleClose}
             respectNegativeTabIndex={respectNegativeTabIndex}
           >
@@ -118,12 +124,15 @@ export const Popover = memo(
         popperAttributes.popper,
         handleCaptureEvents,
         handleClose,
-        disableTypeFocus,
-        respectNegativeTabIndex,
         testID,
         content,
-        disableAutoFocus,
         controlledElementAccessibilityProps,
+        disableFocusTrap,
+        disableAutoFocus,
+        disableTypeFocus,
+        focusTabIndexElements,
+        respectNegativeTabIndex,
+        autoFocusDelay,
       ],
     );
 

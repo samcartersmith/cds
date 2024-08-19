@@ -3,6 +3,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { Default as Dropdown } from '../../dropdown/__stories__/Dropdown.stories';
 import { LongModal } from '../__stories__/Modal.stories';
+import { FocusTrap } from '../FocusTrap';
 
 jest.mock('react-use-measure');
 const mockUseMeasure = (mocks: Partial<ReturnType<typeof useMeasure>>) => {
@@ -256,5 +257,38 @@ describe('FocusTrap', () => {
     });
 
     expect(screen.getByTestId('modal-body')).toHaveFocus();
+  });
+  it('focuses after a delay when using autoFocusDelay', async () => {
+    jest.useFakeTimers();
+
+    render(
+      <FocusTrap autoFocusDelay={500}>
+        <div>
+          <div>Hello world</div>
+          <a data-testid="focus-element" href="https://google.com">
+            Click me
+          </a>
+        </div>
+      </FocusTrap>,
+    );
+
+    const focusElement = screen.getByTestId('focus-element');
+
+    // Initially, the input should not be focused
+    expect(focusElement).not.toHaveFocus();
+
+    // Fast-forward time by 200ms
+    jest.advanceTimersByTime(200);
+
+    // The input should still not be focused
+    expect(focusElement).not.toHaveFocus();
+
+    // Fast-forward time by a further 300ms
+    jest.advanceTimersByTime(300);
+
+    // Now, the input should be focused
+    expect(focusElement).toHaveFocus();
+
+    jest.useRealTimers();
   });
 });

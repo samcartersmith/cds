@@ -3,6 +3,7 @@ import { Placement } from '@popperjs/core';
 import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common/types';
 
 import { AccessibleControlledReturnType } from '../../hooks/useA11yControlledVisibility';
+import { type FocusTrapProps } from '../FocusTrap';
 
 export type PopoverContentPositionConfig = {
   /**
@@ -58,23 +59,19 @@ export type PopoverProps = {
    */
   block?: boolean;
   /**
-   * Use for editable Search Input components to ensure focus is correctly applied
-   */
-  disableTypeFocus?: boolean;
-  /**
    * Prevents the Popover content from showing.
    * You'll need to surface disabled state on the trigger manually.
    */
   disabled?: boolean;
-  /** If `true`, the focus trap will not automatically shift focus to itself when it opens, and
-   * replace it to the last focused element when it closes.
-   * @default false
-   */
-  disableAutoFocus?: boolean;
-  /**
-   * If `true`, the focus trap will respect negative `tabIndex` values, removing them from the list of focusable elements.
-   */
-  respectNegativeTabIndex?: boolean;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
+  Pick<
+    FocusTrapProps,
+    | 'disableFocusTrap'
+    | 'disableAutoFocus'
+    | 'disableTypeFocus'
+    | 'respectNegativeTabIndex'
+    | 'focusTabIndexElements'
+    | 'autoFocusDelay'
+  > &
   SharedProps &
   Partial<Pick<AccessibleControlledReturnType, 'controlledElementAccessibilityProps'>>;

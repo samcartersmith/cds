@@ -23,6 +23,12 @@ export const Tooltip = ({
   tooltipId: tooltipIdDefault,
   visible,
   invertSpectrum = true,
+  disableFocusTrap,
+  disableAutoFocus,
+  disableTypeFocus,
+  focusTabIndexElements,
+  respectNegativeTabIndex,
+  autoFocusDelay = 20,
 }: TooltipProps) => {
   const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur, tooltipId } =
     useTooltipState(tooltipIdDefault);
@@ -57,6 +63,7 @@ export const Tooltip = ({
 
   return (
     <Popover
+      autoFocusDelay={autoFocusDelay}
       content={
         <TooltipContent
           ref={tooltipContentRef}
@@ -70,13 +77,18 @@ export const Tooltip = ({
         />
       }
       contentPosition={contentPosition}
+      disableAutoFocus={disableAutoFocus}
+      disableFocusTrap={disableFocusTrap}
       disablePortal={disablePortal}
+      disableTypeFocus={disableTypeFocus}
+      focusTabIndexElements={focusTabIndexElements}
       invertPopoverSpectrum={invertSpectrum}
       onBlur={handleOnBlur}
       onFocus={handleOnFocus}
       onMouseDown={preventMouseDown}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleOnMouseLeave}
+      respectNegativeTabIndex={respectNegativeTabIndex}
       visible={isVisible}
     >
       {clonedChild}

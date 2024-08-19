@@ -15,11 +15,35 @@ import { getBrowserGlobals } from '../utils/browser';
 export type FocusTrapProps = {
   children: ReactElement;
   onEscPress?: () => void;
+  /**
+   * Use for editable Search Input components to ensure focus is correctly applied
+   */
   disableTypeFocus?: boolean;
+  /**
+   * Disables the focus trap to allow normal keyboard navigation.
+   */
   disableFocusTrap?: boolean;
+  /**
+   * If `true`, the focus trap will not automatically shift focus to itself when it opens, and
+   * replace it to the last focused element when it closes.
+   * @default false
+   */
   disableAutoFocus?: boolean;
+  /**
+   * If `true`, the focus trap will respect negative `tabIndex` values, removing them from the list of focusable elements.
+   * @default false
+   */
   respectNegativeTabIndex?: boolean;
+  /**
+   * If `true`, the focus trap will include all elements with `tabIndex` values in the list of focusable elements.
+   * @default false
+   */
   focusTabIndexElements?: boolean;
+  /**
+   * The amount of time in milliseconds to wait before auto-focusing the first focusable element.
+   * @default undefined
+   */
+  autoFocusDelay?: number;
 };
 
 const DEBOUNCE_MS = 50;
@@ -64,6 +88,7 @@ export const FocusTrap = memo(function FocusTrap({
   disableAutoFocus,
   respectNegativeTabIndex,
   focusTabIndexElements,
+  autoFocusDelay,
 }: FocusTrapProps) {
   const isFocused = useRef(false);
   const childrenRef = useRef<HTMLElement>(null);
@@ -310,9 +335,11 @@ export const FocusTrap = memo(function FocusTrap({
     const focusableElements = elements.querySelectorAll(FOCUSABLE_ELEMENTS);
 
     if (focusableElements?.length) {
-      (focusableElements[0] as HTMLElement).focus();
+      const elementToAutoFocus = focusableElements[0] as HTMLElement;
+      if (typeof autoFocusDelay !== 'number') elementToAutoFocus.focus();
+      else setTimeout(() => elementToAutoFocus.focus(), autoFocusDelay);
     }
-  }, [disableAutoFocus]);
+  }, [disableAutoFocus, autoFocusDelay]);
 
   // only works for single child
   const onlyChild = React.Children.only(children);

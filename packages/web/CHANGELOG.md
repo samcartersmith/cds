@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.34.0 (8/19/2024 PST)
+
+#### 🚀 Updates
+
+- Add FocusTrap props to Popover and Tooltip, and add new autoFocusDelay prop. [[#3200](https://github.cbhq.net/frontend/cds/pull/3200)] [[DX-4006](https://jira.coinbase-corp.com/browse/DX-4006)]
+
 ## 6.33.0 (8/19/2024 PST)
 
 #### 🚀 Updates

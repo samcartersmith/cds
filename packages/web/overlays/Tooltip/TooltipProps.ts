@@ -5,6 +5,8 @@ import {
   TooltipBaseProps,
 } from '@cbhq/cds-common/types';
 
+import { type PopoverProps } from '../popover/PopoverProps';
+
 type TooltipPlacement = BaseTooltipPlacement;
 
 export type TooltipProps = {
@@ -25,7 +27,16 @@ export type TooltipProps = {
    * A unique ID used to ensure tooltips are accessible
    */
   tooltipId?: string;
-} & TooltipBaseProps;
+} & TooltipBaseProps &
+  Pick<
+    PopoverProps,
+    | 'disableFocusTrap'
+    | 'disableAutoFocus'
+    | 'disableTypeFocus'
+    | 'respectNegativeTabIndex'
+    | 'focusTabIndexElements'
+    | 'autoFocusDelay'
+  >;
 
 export type PopperTooltipProps = {
   gap: GapSpacing;

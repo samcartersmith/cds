@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { BaseTooltipPlacement } from '@cbhq/cds-common/types';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -60,5 +61,47 @@ describe('Tooltip', () => {
     fireEvent.mouseEnter(button as Element);
 
     expect(await screen.findByTestId(tooltipTestID)).toBeInTheDocument();
+  });
+
+  it('focuses after a delay when using autoFocusDelay', async () => {
+    jest.useFakeTimers();
+
+    render(
+      <Tooltip
+        autoFocusDelay={500}
+        content={
+          <div>
+            <a data-testid="focus-element" href="https://google.com">
+              Click me
+            </a>
+          </div>
+        }
+      >
+        <div data-testid="content-element">Hello world</div>
+      </Tooltip>,
+    );
+
+    const contentElement = screen.getByTestId('content-element');
+
+    await userEvent.hover(contentElement);
+
+    const focusElement = screen.getByTestId('focus-element');
+
+    // Initially, the input should not be focused
+    expect(focusElement).not.toHaveFocus();
+
+    // Fast-forward time by 200ms
+    jest.advanceTimersByTime(200);
+
+    // The input should still not be focused
+    expect(focusElement).not.toHaveFocus();
+
+    // Fast-forward time by a further 300ms
+    jest.advanceTimersByTime(300);
+
+    // Now, the input should be focused
+    expect(focusElement).toHaveFocus();
+
+    jest.useRealTimers();
   });
 });
