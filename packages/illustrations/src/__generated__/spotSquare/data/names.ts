@@ -40,6 +40,7 @@ const names: SpotSquareName[] = [
   'cardDeclined',
   'cardShipped',
   'cbEthWrappingUnavailable',
+  'coinFifty',
   'coinbaseCardLock',
   'coinbaseCardPocket',
   'coinbaseCardSparkle',

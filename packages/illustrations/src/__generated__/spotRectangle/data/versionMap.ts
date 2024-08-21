@@ -152,7 +152,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   eth2SendSellTwo: 2,
   ethStakeOrWrapTwo: 2,
   wrapEthTwo: 2,
-  update: 3,
+  update: 4,
   openEmail: 2,
   readyToTrade: 2,
   defiEarn: 2,
@@ -198,6 +198,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   appUpdate: 1,
   faceId: 0,
   portfolioOverviewRelaunch: 0,
+  cbbtc: 0,
 };
 
 export default versionMap;

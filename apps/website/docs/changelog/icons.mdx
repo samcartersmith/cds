@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.17.0 (8/21/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 8/21/2024. [[#3207](https://github.cbhq.net/frontend/cds/pull/3207)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- shieldOutline
+
 ## 2.16.0 (7/19/2024 PST)
 
 #### 🚀 Updates

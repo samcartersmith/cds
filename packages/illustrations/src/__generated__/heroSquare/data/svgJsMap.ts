@@ -173,6 +173,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/catLostSystemError-2').content,
     dark: () => require('../svgJs/dark/catLostSystemError-2').content,
   },
+  cbbtc: {
+    light: () => require('../svgJs/light/cbbtc-0').content,
+    dark: () => require('../svgJs/dark/cbbtc-0').content,
+  },
   chickenFishSystemError: {
     light: () => require('../svgJs/light/chickenFishSystemError-2').content,
     dark: () => require('../svgJs/dark/chickenFishSystemError-2').content,
@@ -304,6 +308,10 @@ const svgJsMap = {
   coinCheckmark: {
     light: () => require('../svgJs/light/coinCheckmark-2').content,
     dark: () => require('../svgJs/dark/coinCheckmark-2').content,
+  },
+  coinFifty: {
+    light: () => require('../svgJs/light/coinFifty-0').content,
+    dark: () => require('../svgJs/dark/coinFifty-0').content,
   },
   coinsInWallet: {
     light: () => require('../svgJs/light/coinsInWallet-2').content,

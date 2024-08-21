@@ -295,6 +295,7 @@ const names: UiIconName[] = [
   'image',
   'bellCheck',
   'bellPlus',
+  'shieldOutline',
 ];
 
 export default names;

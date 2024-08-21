@@ -232,6 +232,7 @@ export type UiIconName =
   | 'setPinCode'
   | 'share'
   | 'shield'
+  | 'shieldOutline'
   | 'smartContract'
   | 'sofort'
   | 'sortDoubleArrow'

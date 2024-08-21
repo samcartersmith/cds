@@ -189,6 +189,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseOneUSDC-0').content,
     dark: () => require('../svgJs/dark/coinbaseOneUSDC-0').content,
   },
+  coinFifty: {
+    light: () => require('../svgJs/light/coinFifty-0').content,
+    dark: () => require('../svgJs/dark/coinFifty-0').content,
+  },
   collectingNfts: {
     light: () => require('../svgJs/light/collectingNfts-3').content,
     dark: () => require('../svgJs/dark/collectingNfts-3').content,

@@ -32,6 +32,7 @@ const names: SpotRectangleName[] = [
   'cardBoosted',
   'cardWaitlist',
   'cbEth',
+  'cbbtc',
   'clawMachinePig',
   'coinbaseCardLock',
   'coinbaseCardPocket',

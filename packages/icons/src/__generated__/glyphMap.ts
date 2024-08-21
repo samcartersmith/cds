@@ -1624,6 +1624,9 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-bellPlus-12': '',
   'ui-bellPlus-16': '',
   'ui-bellPlus-24': '',
+  'ui-shieldOutline-12': '',
+  'ui-shieldOutline-16': '',
+  'ui-shieldOutline-24': '',
 };
 
 export default glyphMap;

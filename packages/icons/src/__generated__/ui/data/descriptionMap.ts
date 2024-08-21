@@ -67,7 +67,15 @@ const descriptionMap: Record<string, string[]> = {
   device: ['setPinCode', 'laptop', 'keyboard', 'telephone'],
   phone: ['setPinCode', 'phone', 'telephone'],
   laptop: ['setPinCode'],
-  security: ['setPinCode', 'shield', 'safe', 'fingerprint', 'faceScan', 'protection'],
+  security: [
+    'setPinCode',
+    'shield',
+    'safe',
+    'fingerprint',
+    'faceScan',
+    'protection',
+    'shieldOutline',
+  ],
   '🔐': ['setPinCode', 'lock', 'unlock'],
   order: [
     'orderHistory',
@@ -533,11 +541,11 @@ const descriptionMap: Record<string, string[]> = {
   '📃': ['smartContract', 'document'],
   '📜': ['smartContract', 'document'],
   '📑': ['smartContract', 'document'],
-  shield: ['shield', 'protection'],
+  shield: ['shield', 'protection', 'shieldOutline'],
   guard: ['shield', 'protection'],
   defense: ['shield', 'protection'],
   cover: ['shield', 'protection'],
-  safety: ['shield', 'safe', 'protection'],
+  safety: ['shield', 'safe', 'protection', 'shieldOutline'],
   share: ['share'],
   connect: ['share', 'chainLink', 'wifi'],
   globe: ['globe'],
@@ -1396,6 +1404,8 @@ const descriptionMap: Record<string, string[]> = {
   Bell: ['bellCheck', 'bellPlus'],
   price: ['bellCheck', 'bellPlus'],
   '🛎️': ['bellCheck', 'bellPlus'],
+  trust: ['shieldOutline'],
+  ouline: ['shieldOutline'],
 };
 
 export default descriptionMap;

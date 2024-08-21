@@ -49,6 +49,7 @@ export type SpotSquareName =
   | 'coinbaseOneStarToken'
   | 'coinbaseOneTokenRewards'
   | 'coinbaseOneUSDC'
+  | 'coinFifty'
   | 'collectingNfts'
   | 'commerceAccounting'
   | 'commerceInvoices'

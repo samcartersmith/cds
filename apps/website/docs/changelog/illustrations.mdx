@@ -8,6 +8,37 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.13.0 (8/21/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 8/21/2024. [[#3207](https://github.cbhq.net/frontend/cds/pull/3207)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- cbbtc
+- coinFifty
+
+#### Spot Square
+
+- coinFifty
+
+#### Spot Rectangle
+
+- cbbtc
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- update
+
 ## 3.12.0 (7/29/2024 PST)
 
 #### 🚀 Updates
