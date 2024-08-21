@@ -3591,6 +3591,8 @@ __metadata:
 "@cbhq/cds-dangerfiles@workspace:libs/dangerfiles":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-dangerfiles@workspace:libs/dangerfiles"
+  dependencies:
+    semver: "npm:^7.5.4"
   languageName: unknown
   linkType: soft
 

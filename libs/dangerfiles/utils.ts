@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { GitMatchResult, MatchResult, TextDiff } from 'danger';
+import * as semver from 'semver';
 import simpleGit, { SimpleGit } from 'simple-git';
 /* eslint-disable import/no-extraneous-dependencies */
 import { ExportedDeclarations, SourceFile, SyntaxKind } from 'ts-morph';
@@ -188,4 +189,65 @@ export function getParamsFromExportedDeclaration(declaration: ExportedDeclaratio
  */
 export function escapeRegExp(string: string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Checks if a given dependency version is valid.
+ * A valid version is defined as one that is not undefined and does not start with 'workspace:'.
+ *
+ * @param {string | undefined} version - The version string to check.
+ * @returns {boolean} - Returns true if the version is valid, false otherwise.
+ */
+export function isValidDependencyVersion(version: string | undefined): boolean {
+  return version !== undefined && !version.startsWith('workspace:');
+}
+
+/**
+ * Checks if the major version of a dependency has changed.
+ *
+ * @param {string} beforeVersion - The version of the dependency before the change.
+ * @param {string} afterVersion - The version of the dependency after the change.
+ * @returns {boolean} - Returns true if the major version has changed, false otherwise.
+ */
+export function hasMajorVersionChanged(
+  dependencyName: string,
+  beforeVersion: string,
+  afterVersion: string,
+): boolean {
+  const beforeSemVer = semver.coerce(beforeVersion);
+  const afterSemVer = semver.coerce(afterVersion);
+
+  if (!beforeSemVer || !afterSemVer)
+    throw new Error(
+      `Invalid version string for dependency ${dependencyName}: before="${beforeVersion}", after="${afterVersion}"`,
+    );
+
+  const beforeMajorVersion = semver.major(beforeSemVer);
+  const afterMajorVersion = semver.major(afterSemVer);
+
+  return beforeMajorVersion !== afterMajorVersion;
+}
+
+/**
+ * Filters modified dependencies by comparing before and after dependency versions.
+ *
+ * @param {Record<string, string>} beforeDependencies - The dependencies before the change.
+ * @param {Record<string, string>} afterDependencies - The dependencies after the change.
+ * @returns {string[]} - The list of modified dependency names.
+ */
+export function filterModifiedMajorDependencies(
+  beforeDependencies: Record<string, string>,
+  afterDependencies: Record<string, string>,
+): string[] {
+  return Object.keys(beforeDependencies).filter((dependencyName) => {
+    const beforeVersion = beforeDependencies[dependencyName];
+    const afterVersion = afterDependencies[dependencyName];
+
+    // Ignore dependencies that are not defined or start with 'workspace:'
+    if (!isValidDependencyVersion(beforeVersion) || !isValidDependencyVersion(afterVersion)) {
+      return false;
+    }
+
+    return hasMajorVersionChanged(dependencyName, beforeVersion, afterVersion);
+  });
 }

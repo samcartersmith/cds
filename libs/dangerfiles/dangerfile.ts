@@ -1,10 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { danger, warn } from 'danger';
+import { danger, fail, warn } from 'danger';
 import chainsmoker from 'danger/distribution/commands/utils/chainsmoker';
 
 import checkForBreakingChanges from './breakingChanges/checkForBreakingChanges';
 import checkFilesForRemovedExports from './breakingChanges/exports';
 import checkFilesForRemovedParams from './breakingChanges/params';
+import { checkMajorVersionChangesInPeerDeps } from './breakingChanges/peerDeps';
 import { cdsPackagesPatterns, fileIgnorePatterns } from './patterns';
 import {
   escapeRegExp,
@@ -169,3 +170,6 @@ if (
     }
   })();
 }
+
+// Check for changes in peer dependencies
+void checkMajorVersionChangesInPeerDeps(process.env.NX_PROJECT_NAME);

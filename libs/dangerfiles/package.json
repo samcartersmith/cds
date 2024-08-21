@@ -1,5 +1,9 @@
 {
   "name": "@cbhq/cds-dangerfiles",
   "version": "0.0.0",
-  "description": "Dangerfiles for CDS"
+  "private": true,
+  "description": "Dangerfiles for CDS",
+  "dependencies": {
+    "semver": "^7.5.4"
+  }
 }
