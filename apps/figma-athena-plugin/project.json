@@ -1,0 +1,76 @@
+{
+  "name": "figma-athena-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/figma-athena-plugin",
+  "projectType": "app",
+  "tags": [],
+  "targets": {
+    "dev": {
+      "command": "webpack serve --mode development",
+      "options": {
+        "cwd": "apps/figma-athena-plugin",
+        "color": true,
+        "env": {
+          "NODE_ENV": "development"
+        }
+      }
+    },
+    "start": {
+      "command": "webpack serve --mode production",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "cwd": "apps/figma-athena-plugin",
+        "color": true
+      }
+    },
+    "build": {
+      "command": "rm -rf dist && webpack --mode production",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/figma-athena-plugin",
+        "color": true
+      }
+    },
+    "watch": {
+      "command": "rm -rf dist && webpack --mode production --watch",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/figma-athena-plugin",
+        "color": true
+      }
+    },
+    "typecheck": {
+      "command": "tsc",
+      "dependsOn": [
+        "^typecheck"
+      ],
+      "options": {
+        "cwd": "apps/figma-athena-plugin",
+        "color": true
+      }
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "build-for-analyze": {
+      "command": "rm -rf dist && tsc && webpack --mode production",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/figma-athena-plugin",
+        "color": true
+      },
+      "env": {
+        "ANALYZE": true,
+        "ANALYZE_MODE_JSON": true
+      }
+    }
+  }
+}

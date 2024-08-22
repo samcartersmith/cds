@@ -1,0 +1,21 @@
+{
+  "name": "Athena",
+  "id": "000000000000000000",
+  "api": "1.0.0",
+  "main": "./dist/plugin.js",
+  "ui": "./dist/index.html",
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "dev",
+    "figma"
+  ],
+  "capabilities": [
+    "vscode",
+    "inspect"
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  }
+}

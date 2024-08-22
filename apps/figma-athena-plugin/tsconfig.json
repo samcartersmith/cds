@@ -1,16 +1,22 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
+    "rootDir": "./",
+    "module": "ES2015",
+    "moduleResolution": "Bundler",
+    "target": "ES2020",
+    "strict": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
     "jsx": "preserve",
-    "emitDeclarationOnly": false,
-    "noEmit": true,
-    "outDir": "../../.nx/dts/apps/next-app"
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "dts",
+    "typeRoots": [
+      "../../node_modules/@figma",
+    ],
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*",
-    "../../types/**/*"
-  ],
+  "include": ["src"],
   "exclude": ["node_modules"],
   "references": [
     {
@@ -27,9 +33,6 @@
     },
     {
       "path": "../../packages/fonts"
-    },
-    {
-      "path": "../../packages/web-visualization"
-    },
+    }
   ]
 }

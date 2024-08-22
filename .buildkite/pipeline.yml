@@ -120,7 +120,7 @@ steps:
     <<: *k8s_large
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci build --exclude=mobile-app --allOnMaster
+      - yarn mono-pipeline run-ci build --exclude=mobile-app --allOnMaster --verbose
 
   - label: Lint
     <<: *k8s_large
