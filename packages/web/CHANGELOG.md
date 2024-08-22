@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.34.1 (8/22/2024 PST)
+
+#### 🐞 Fixes
+
+- DropdownContent(web): fix borderRadius mismatch. [[#3213](https://github.cbhq.net/frontend/cds/pull/3213)] [[DX-4089](https://jira.coinbase-corp.com/browse/DX-4089)]
+
 ## 6.34.0 (8/19/2024 PST)
 
 #### 🚀 Updates

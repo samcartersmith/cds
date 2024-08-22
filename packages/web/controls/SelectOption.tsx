@@ -26,14 +26,14 @@ const pressableStyles = css`
   border: none;
   &:first-child {
     &:before {
-      border-top-right-radius: ${borderRadius.roundedXLarge};
-      border-top-left-radius: ${borderRadius.roundedXLarge};
+      border-top-right-radius: ${borderRadius.roundedLarge};
+      border-top-left-radius: ${borderRadius.roundedLarge};
     }
   }
   &:last-child {
     &:before {
-      border-bottom-right-radius: ${borderRadius.roundedXLarge};
-      border-bottom-left-radius: ${borderRadius.roundedXLarge};
+      border-bottom-right-radius: ${borderRadius.roundedLarge};
+      border-bottom-left-radius: ${borderRadius.roundedLarge};
     }
   }
   /* restrict text from overflow viewport, 95 to leave space for scrollbar */
