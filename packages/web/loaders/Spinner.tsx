@@ -9,8 +9,7 @@ import * as styles from './styles';
 
 export type SpinnerProps = {
   /**
-   * The pixel size of the spinner. Restricting spinner
-   * to have a n:n aspect ratio (square basically)
+   * The font size of the spinner in pixels - used to calculate the width, height, and borderWidth. Width and height are 10em while borderWidth is 1.1em.
    */
   size: number;
   /**

@@ -14,7 +14,6 @@ export const spinnerLoader = css`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: ${spinnerHeight}px;
   display: flex;
   justify-content: center;
   align-items: center;

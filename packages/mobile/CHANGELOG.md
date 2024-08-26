@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 6.34.2 (8/26/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix Button Spinner size to be 24px and update Spinner docs. [[#3219](https://github.cbhq.net/frontend/cds/pull/3219)] [[DX-4188](https://jira.coinbase-corp.com/browse/DX-4188)]
 
 #### 📘 Misc
 

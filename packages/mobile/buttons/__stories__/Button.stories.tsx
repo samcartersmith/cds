@@ -27,7 +27,7 @@ const ButtonScreen = () => {
       {buttonStories.map((props) => {
         return (
           <Example inline>
-            <Button {...props}>I am a button/</Button>
+            <Button {...props}>I am a button</Button>
           </Example>
         );
       })}

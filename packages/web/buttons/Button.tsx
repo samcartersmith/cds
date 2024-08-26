@@ -20,6 +20,9 @@ import * as buttonStyles from './buttonStyles';
 
 const spinnerStyle = {
   base: css`
+    width: 24px;
+    height: 24px;
+    border: 2px solid;
     border-top-color: var(--transparent);
     border-right-color: var(--transparent);
     border-left-color: var(--transparent);
@@ -116,9 +119,9 @@ const BaseButton = forwardRef(function Button(
 
       <span className={buttonStyles.positionRelative}>
         {loading && (
-          <span className={cx(buttonStyles.spinnerLoader)}>
+          <span className={buttonStyles.spinnerLoader}>
             <Spinner
-              className={cx(spinnerStyle.base)}
+              className={spinnerStyle.base}
               color={color}
               size={buttonStyles.spinnerHeight}
             />
