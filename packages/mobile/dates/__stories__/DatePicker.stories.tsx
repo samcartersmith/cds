@@ -4,7 +4,7 @@ import { type DateInputValidationError } from '@cbhq/cds-common/dates/DateInputV
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { DatePicker } from '../DatePicker';
 
-const today = new Date(new Date().setHours(0, 0, 0, 0));
+const today = new Date(new Date(2024, 7, 18).setHours(0, 0, 0, 0));
 const nextMonth15th = new Date(today.getFullYear(), today.getMonth() + 1, 15);
 const lastMonth15th = new Date(today.getFullYear(), today.getMonth() - 1, 15);
 

@@ -14,7 +14,7 @@ export default {
   component: Calendar,
 };
 
-const today = new Date(new Date().setHours(0, 0, 0, 0));
+const today = new Date(new Date(2024, 7, 18).setHours(0, 0, 0, 0));
 const twoDaysAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
 const oneWeekAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
 const oneWeekLater = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7);

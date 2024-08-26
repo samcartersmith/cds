@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities, react-perf/jsx-no-new-array-as-prop */
+/* eslint-disable react-perf/jsx-no-new-array-as-prop */
 import { useState } from 'react';
 import { type DateInputValidationError } from '@cbhq/cds-common/dates/DateInputValidationError';
 import { LocaleProvider } from '@cbhq/cds-common/system/LocaleProvider';
@@ -16,7 +16,7 @@ export default {
   component: DateInput,
 };
 
-const today = new Date(new Date().setHours(0, 0, 0, 0));
+const today = new Date(new Date(2024, 7, 18).setHours(0, 0, 0, 0));
 const oneDayAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
 
 const sharedProps = {
@@ -93,7 +93,7 @@ export const Props = () => {
           DateInput with disabledDates and disabledDateError
           <br />
           <br />
-          Enter today's date to see the result
+          Enter the date of Aug 18, 2024 to see the result
         </Note>
         <DateInput {...sharedProps} {...props} disabledDates={[today]} />
       </VStack>
@@ -102,7 +102,7 @@ export const Props = () => {
           DateInput with minDate, maxDate, and disabledDateError
           <br />
           <br />
-          Enter a date several days in the past or future to see the result
+          Enter a date several days before or after Aug 18, 2024 to see the result
         </Note>
         <DateInput {...sharedProps} {...props} maxDate={today} minDate={oneDayAgo} />
       </VStack>

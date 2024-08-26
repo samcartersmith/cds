@@ -8,7 +8,7 @@ import { Group } from '../../layout/Group';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { DateInput } from '../DateInput';
 
-const today = new Date(new Date().setHours(0, 0, 0, 0));
+const today = new Date(new Date(2024, 7, 18).setHours(0, 0, 0, 0));
 const oneDayAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
 
 const sharedProps = {

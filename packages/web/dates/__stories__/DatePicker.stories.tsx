@@ -17,7 +17,7 @@ export default {
   component: DatePicker,
 };
 
-const today = new Date(new Date().setHours(0, 0, 0, 0));
+const today = new Date(new Date(2024, 7, 18).setHours(0, 0, 0, 0));
 const twoDaysAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
 const fourDaysAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 4);
 const oneWeekAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
@@ -198,7 +198,7 @@ export const CustomErrors = () => {
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [endError, setEndError] = useState<DateInputValidationError | null>(null);
 
-  const today = new Date(new Date().setHours(0, 0, 0, 0));
+  const today = new Date(new Date(2024, 7, 18).setHours(0, 0, 0, 0));
   const firstDayThisMonth = new Date(today.getFullYear(), today.getMonth(), 1);
   const seventhDayThisMonth = new Date(today.getFullYear(), today.getMonth(), 7);
   const lastDayThisMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);

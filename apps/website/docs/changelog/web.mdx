@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Stabilize date component visreg tests. [[#3215](https://github.cbhq.net/frontend/cds/pull/3215)] [[DX-4173](https://jira.coinbase-corp.com/browse/DX-4173)]
+
 ## 6.34.1 (8/22/2024 PST)
 
 #### 🐞 Fixes
