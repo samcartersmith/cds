@@ -71,13 +71,14 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
     id: 'onboarding-cuj',
     items: [
       {
-        root: path.join(tempDir, retailWebGit, 'onboarding'),
+        root: path.join(tempDir, retailWebGit, 'libs/onboarding'),
         github: retailWebGit,
         id: 'retail-web-identity-cuj',
         label: 'Retail Onboarding',
         type: 'doc',
-        sourceGlob: ['(components|steps)/**/*.(ts|tsx)'],
-        projectGitPath: 'onboarding',
+        tsconfigFileName: 'tsconfig.json',
+        sourceGlob: ['src/components/**/*.(ts|tsx)', 'src/steps/**/*.(ts|tsx)'],
+        projectGitPath: 'libs/onboarding',
       },
       {
         //  note: react-native/src/packages/onboarding has * in it's package.json (https://github.cbhq.net/consumer/react-native/blob/master/src/packages/onboarding/package.json)
@@ -471,16 +472,17 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       },
       {
         // web / shared
-        root: path.join(tempDir, retailWebGit, 'shared'),
+        root: path.join(tempDir, retailWebGit, 'libs/shared'),
         github: retailWebGit,
         id: 'web-roc-shared-cuj',
         label: 'Web Onchain Error States CUJ (Shared)',
         type: 'doc',
+        tsconfigFileName: 'tsconfig.json',
         sourceGlob: [
-          'components/Web3/components/DappDetailsLoading.(ts|tsx)',
-          'components/Web3/components/DappDetailsSection.(ts|tsx)',
+          'src/components/Web3/components/DappDetailsLoading.(ts|tsx)',
+          'src/components/Web3/components/DappDetailsSection.(ts|tsx)',
         ],
-        projectGitPath: 'shared',
+        projectGitPath: 'libs/shared',
       },
     ],
   },
@@ -937,13 +939,14 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       },
       {
         // Check Asset CUJ Web (Shared)
-        root: path.join(tempDir, retailWebGit, 'shared'),
+        root: path.join(tempDir, retailWebGit, 'libs/shared'),
         github: retailWebGit,
         id: 'web-check-asset-price-shared-cuj',
         label: 'Web Check Asset Price CUJ (Shared)',
         type: 'doc',
-        sourceGlob: ['components/Search/SearchBar.(ts|tsx)'],
-        projectGitPath: 'shared/',
+        tsconfigFileName: 'tsconfig.json',
+        sourceGlob: ['src/components/Search/SearchBar.(ts|tsx)'],
+        projectGitPath: 'libs/shared',
       },
     ],
   },
@@ -1436,13 +1439,14 @@ export const config: AdoptersConfig[] = [
         projectGitPath: 'marketing',
       },
       {
-        root: path.join(tempDir, retailWebGit, 'onboarding'),
+        root: path.join(tempDir, retailWebGit, 'libs/onboarding'),
         github: retailWebGit,
         id: 'retail-web-identity',
         label: 'Retail Onboarding',
         type: 'doc',
-        sourceGlob: ['(components|steps)/**/*.(ts|tsx)'],
-        projectGitPath: 'onboarding',
+        sourceGlob: ['src/components/**/*.(ts|tsx)', 'src/steps/**/*.(ts|tsx)'],
+        tsconfigFileName: 'tsconfig.json',
+        projectGitPath: 'libs/onboarding',
       },
       {
         root: path.join(tempDir, retailWebGit, 'libs/advanced-trade-web'),

@@ -486,52 +486,6 @@
   ],
   "presentational": [
     {
-      "name": "ChartHeader",
-      "sourceFile": "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@designSystem/core/chart/ChartHeaderAndNavBar/ChartHeader",
-      "callSites": {
-        "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-      },
-      "propsWithCallSites": {
-        "trailing": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
-        "defaultLabel": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
-        "defaultTitle": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
-        "ref": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
-        "isTitleFirst": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ChartProvider",
-      "sourceFile": "@designSystem/core/chart/ChartProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/core/chart/ChartProvider",
-      "propsWithCallSites": {
-        "compact": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
-        },
-        "defaultPeriod": {
-          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TitleOne",
       "sourceFile": "@app/components/LiveTicker/LiveTicker.tsx",
       "totalInstances": 1,
@@ -600,33 +554,6 @@
       }
     },
     {
-      "name": "SuspenseWithTransition",
-      "sourceFile": "@cb/shared/components/SuspenseWithTransition",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/components/SuspenseWithTransition",
-      "propsWithCallSites": {
-        "instrumentationId": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "fallback": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "VisibilityTrigger",
-      "sourceFile": "@cb/shared/components/VisibilityTrigger",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/components/VisibilityTrigger",
-      "propsWithCallSites": {
-        "onVisibleOnce": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TableWrap",
       "sourceFile": "components/AssetTableContainer/AssetTableContainer.tsx",
       "totalInstances": 1,
@@ -661,57 +588,6 @@
         },
         "modal": {
           "components/TradeTrigger/TradeTrigger.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "WatchStar",
-      "sourceFile": "@cb/shared/components/WatchStar",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/components/WatchStar",
-      "propsWithCallSites": {
-        "testID": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "isCDSIcon": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "isIcon": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "isStretched": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "onClick": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "isWatched": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "color": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "transparent": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "name": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PlaceholderDiv",
-      "sourceFile": "@cb/shared/components/LoadingBlock/PlaceholderDiv",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/components/LoadingBlock/PlaceholderDiv",
-      "propsWithCallSites": {
-        "width": {
-          "components/WatchListStar/WatchListStar.tsx": 1
-        },
-        "height": {
-          "components/WatchListStar/WatchListStar.tsx": 1
         }
       }
     }
@@ -808,6 +684,36 @@
       }
     },
     {
+      "name": "ChartHeader",
+      "sourceFile": "@cbhq/react-native-core/designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
+        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+      },
+      "propsWithCallSites": {
+        "trailing": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "defaultLabel": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "defaultTitle": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1,
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "ref": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "isTitleFirst": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        }
+      }
+    },
+    {
       "name": "BalanceBreakdownFallback",
       "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/components/BalanceBreakdown/BalanceBreakdownFallback",
       "totalInstances": 1,
@@ -850,24 +756,24 @@
       "totalCallSites": 1
     },
     {
+      "name": "ChartProvider",
+      "sourceFile": "@cbhq/react-native-core/designSystem/src/core/chart/ChartProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "compact": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+        },
+        "defaultPeriod": {
+          "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+        }
+      }
+    },
+    {
       "name": "PortfolioBalanceContent",
       "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "InstrumentedSharedBannerEmptyStateUI",
-      "sourceFile": "@app/components/GracefulDegradation/SharedComponents/SharedBannerEmptyStateUI/InstrumentedSharedBannerEmptyStateUI",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "testID": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        },
-        "title": {
-          "@app/components/BalanceErrorBanner/BalanceErrorBanner.tsx": 1
-        }
-      }
     },
     {
       "name": "SharedBannerEmptyStateUI",
@@ -1203,46 +1109,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "AppBoundaryFallback",
-      "sourceFile": "components/AppBoundaryFallback/AppBoundaryFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "error": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "errorMetadata": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PageBoundary",
-      "sourceFile": "components/PageBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "owner": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "boundaryName": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "context": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "enableSuspenseInstrumentation": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "fallback": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        },
-        "errorFallbackComponent": {
-          "views/Home/HomeFeedBoundary.tsx": 1
-        }
-      }
-    },
-    {
       "name": "RowRAV4",
       "sourceFile": "views/Home/components/HomeWatchlistTable/RowRAV4",
       "totalInstances": 1,
@@ -1364,6 +1230,20 @@
       "sourceFile": "views/Home/components/HomeWatchlistTable/LoadingRows",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "SuspenseWithTransition",
+      "sourceFile": "@cbhq/shared/components/SuspenseWithTransition",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "instrumentationId": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
+        },
+        "fallback": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
+        }
+      }
     },
     {
       "name": "WatchlistLoadingFallback",
@@ -1523,6 +1403,17 @@
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         },
         "onTabsLoad": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VisibilityTrigger",
+      "sourceFile": "@cbhq/shared/components/VisibilityTrigger",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onVisibleOnce": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         }
       }
@@ -1790,6 +1681,41 @@
       }
     },
     {
+      "name": "WatchStar",
+      "sourceFile": "@cbhq/shared/components/WatchStar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "testID": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "isCDSIcon": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "isIcon": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "isStretched": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "onClick": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "isWatched": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "color": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "transparent": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "name": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Boundary",
       "sourceFile": "components/Boundary",
       "totalInstances": 1,
@@ -1805,6 +1731,20 @@
           "components/WatchListStar/WatchListStar.tsx": 1
         },
         "context": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PlaceholderDiv",
+      "sourceFile": "@cbhq/shared/components/LoadingBlock/PlaceholderDiv",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "width": {
+          "components/WatchListStar/WatchListStar.tsx": 1
+        },
+        "height": {
           "components/WatchListStar/WatchListStar.tsx": 1
         }
       }

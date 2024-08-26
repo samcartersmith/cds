@@ -145,6 +145,12 @@
           ]
         },
         {
+          "aliasPath": "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx",
+          "callSites": [
+            "@app/screens/Support/SupportScreen.tsx"
+          ]
+        },
+        {
           "aliasPath": "@app/screens/Support/components/WblHoldCardListItem.tsx",
           "callSites": [
             "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx",
@@ -395,50 +401,6 @@
       }
     },
     {
-      "name": "Button",
-      "sourceFile": "@components/interactables/Button",
-      "totalInstances": 8,
-      "totalCallSites": 5,
-      "cds": "@components/interactables/Button",
-      "presentationalLibrary": "@components/interactables/Button",
-      "callSites": {
-        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
-        "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
-        "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
-        "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
-        "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
-      },
-      "propsWithCallSites": {
-        "variant": {
-          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
-          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
-          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
-          "@app/screens/Support/SupportPriorityCallScreen.tsx": 2,
-          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
-        },
-        "onPress": {
-          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
-          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
-          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
-          "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
-          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
-        },
-        "spacingBottom": {
-          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
-          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
-          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
-        },
-        "spacingTop": {
-          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
-          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
-          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
-        },
-        "spacing": {
-          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-mobile/typography/TextHeadline",
       "totalInstances": 11,
@@ -681,29 +643,6 @@
   ],
   "presentational": [
     {
-      "name": "FullScreenLoader",
-      "sourceFile": "@components/UI/FullScreenLoader",
-      "totalInstances": 5,
-      "totalCallSites": 5,
-      "presentationalLibrary": "@components/UI/FullScreenLoader",
-      "callSites": {
-        "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
-        "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
-        "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
-        "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
-        "@app/screens/Support/SupportWebViewScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "loading": {
-          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
-          "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
-          "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
-          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
-          "@app/screens/Support/SupportWebViewScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Svg",
       "sourceFile": "react-native-svg/Svg",
       "totalInstances": 1,
@@ -739,7 +678,7 @@
   "other": [
     {
       "name": "LightThemeProvider",
-      "sourceFile": "@components/ThemeProvider/LightThemeProvider",
+      "sourceFile": "@cbhq/react-native-core/components/ThemeProvider/LightThemeProvider",
       "totalInstances": 4,
       "totalCallSites": 4,
       "callSites": {
@@ -923,6 +862,70 @@
         "onLoadProgress": {
           "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
           "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "FullScreenLoader",
+      "sourceFile": "@cbhq/react-native-core/components/UI/FullScreenLoader",
+      "totalInstances": 5,
+      "totalCallSites": 5,
+      "callSites": {
+        "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+        "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+        "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+        "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+        "@app/screens/Support/SupportWebViewScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "loading": {
+          "@app/screens/Support/CoinbaseHelpOldScreen.tsx": 1,
+          "@app/screens/Support/SupportDeepLinkIntermediateScreen.tsx": 1,
+          "@app/screens/Support/SupportNavigateToChatScreen.tsx": 1,
+          "@app/screens/Support/SupportWebUrlsScreen.tsx": 1,
+          "@app/screens/Support/SupportWebViewScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@cbhq/react-native-core/components/interactables/Button",
+      "totalInstances": 8,
+      "totalCallSites": 5,
+      "callSites": {
+        "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+        "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+        "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+        "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
+        "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+      },
+      "propsWithCallSites": {
+        "variant": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 2,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 2,
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportClawBackIntelligentCard.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 3,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Support/SupportCallRequestedErrorScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Support/SupportCallRequestedScreen.tsx": 1,
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1,
+          "@app/screens/Support/components/SupportWblHoldIntelligentCard.tsx": 1
+        },
+        "spacing": {
+          "@app/screens/Support/SupportPriorityCallScreen.tsx": 1
         }
       }
     },
@@ -1117,7 +1120,7 @@
     },
     {
       "name": "SettingCell",
-      "sourceFile": "@components/cells/SettingCell",
+      "sourceFile": "@cbhq/react-native-core/components/cells/SettingCell",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
@@ -1220,7 +1223,7 @@
     },
     {
       "name": "SettingCellWithCustomAccessory",
-      "sourceFile": "@components/cells/SettingCellWithCustomAccessory",
+      "sourceFile": "@cbhq/react-native-core/components/cells/SettingCellWithCustomAccessory",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -1289,7 +1292,7 @@
     },
     {
       "name": "Link",
-      "sourceFile": "@components/typography/Link",
+      "sourceFile": "@cbhq/react-native-core/components/typography/Link",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {

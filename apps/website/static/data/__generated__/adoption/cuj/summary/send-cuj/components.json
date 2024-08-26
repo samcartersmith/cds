@@ -367,104 +367,6 @@
       }
     },
     {
-      "name": "Button",
-      "sourceFile": "@components/interactables/Button",
-      "totalInstances": 13,
-      "totalCallSites": 8,
-      "cds": "@components/interactables/Button",
-      "presentationalLibrary": "@components/interactables/Button",
-      "callSites": {
-        "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-        "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
-        "@app/screens/Send/SendBlockedScreen.tsx": 1,
-        "@app/screens/Send/SendCompleteScreen.tsx": 1,
-        "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-        "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
-        "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 5,
-        "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-      },
-      "propsWithCallSites": {
-        "flexGrow": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 4
-        },
-        "block": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1
-        },
-        "spacingTop": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-        },
-        "spacingBottom": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-        },
-        "variant": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
-          "@app/screens/Send/SendBlockedScreen.tsx": 1,
-          "@app/screens/Send/SendCompleteScreen.tsx": 1,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 3,
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
-        },
-        "onPress": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
-          "@app/screens/Send/SendBlockedScreen.tsx": 1,
-          "@app/screens/Send/SendCompleteScreen.tsx": 1,
-          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 5,
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-        },
-        "testID": {
-          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
-          "@app/screens/Send/SendBlockedScreen.tsx": 1,
-          "@app/screens/Send/SendCompleteScreen.tsx": 1,
-          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1,
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-        },
-        "compact": {
-          "@app/screens/Send/SendCompleteScreen.tsx": 1,
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-        },
-        "disabled": {
-          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1,
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-        },
-        "flexBasis": {
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-        },
-        "loading": {
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1,
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
-        },
-        "spacingHorizontal": {
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1
-        },
-        "accessibilityState": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-        },
-        "accessibilityHint": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-        },
-        "accessibilityLabel": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-        },
-        "accessibilityRole": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
-        },
-        "accessible": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "HeroSquare",
       "sourceFile": "@cbhq/cds-mobile/illustrations/HeroSquare",
       "totalInstances": 2,
@@ -895,11 +797,10 @@
     },
     {
       "name": "IconButton",
-      "sourceFile": "@components/interactables/IconButton",
+      "sourceFile": "@cbhq/react-native-core/components/interactables/IconButton",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "cds": "@components/interactables/IconButton",
-      "presentationalLibrary": "@components/interactables/IconButton",
+      "cds": "@cbhq/react-native-core/components/interactables/IconButton",
       "propsWithCallSites": {
         "transparent": {
           "@app/components/navigation/NavHeader.tsx": 1
@@ -936,9 +837,15 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 40,
+      "totalInstances": 39,
       "totalCallSites": 17,
       "cds": "@cbhq/cds-web/layout/VStack",
+      "extendedStyledComponents": [
+        {
+          "alias": "VContainer",
+          "callSite": "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx"
+        }
+      ],
       "aliasedCdsComponents": [
         {
           "aliasPath": "components/SendReceive/SendRedesign/SendReceiveRedesign.tsx",
@@ -996,7 +903,7 @@
         "components/SendReceive/SendRedesign/steps/MemoInfoStep/MemoInfoStep.tsx": 1,
         "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2,
         "components/SendReceive/SendRedesign/steps/SendFavoriteContactsStep/FavoriteContacts.tsx": 2,
-        "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 5,
+        "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 4,
         "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 4,
         "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 4,
         "components/SendReceive/SendRedesign/steps/SendSelectRecipientStep/SendSelectRecipientStep.tsx": 3,
@@ -1031,7 +938,7 @@
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
           "components/SendReceive/SendRedesign/steps/AddNote/AddNote.tsx": 2,
           "components/SendReceive/SendRedesign/steps/SendFavoriteContactsStep/FavoriteContacts.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
         },
         "spacerGap": {
@@ -1067,7 +974,7 @@
           "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 2,
           "components/SendReceive/SendRedesign/steps/MemoInfoStep/MemoInfoStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendSelectRecipientStep/SendSelectRecipientStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendStatusStep/SendStatusStep.tsx": 1,
@@ -1108,7 +1015,6 @@
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
           "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendFavoriteContactsStep/FavoriteContacts.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendSelectRecipientStep/SendSelectRecipientStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendStatusStep/SendStatusStep.tsx": 1,
@@ -1116,7 +1022,6 @@
         },
         "spacingTop": {
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendSelectRecipientStep/SendSelectRecipientStep.tsx": 1
         },
@@ -1267,7 +1172,7 @@
     {
       "name": "Pressable",
       "sourceFile": "@cbhq/cds-web/system/Pressable",
-      "totalInstances": 10,
+      "totalInstances": 9,
       "totalCallSites": 6,
       "cds": "@cbhq/cds-web/system/Pressable",
       "presentationalProps": [
@@ -1280,7 +1185,7 @@
         "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
         "components/SendReceive/SendRedesign/steps/DestinationTagStep/DestinationTagStep.tsx": 1,
         "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
-        "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
+        "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
         "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 3,
         "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
       },
@@ -1291,26 +1196,26 @@
         },
         "disabled": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
         },
         "background": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
           "components/SendReceive/SendRedesign/steps/DestinationTagStep/DestinationTagStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 3,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
         },
         "borderRadius": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
         },
         "onPress": {
           "components/SendReceive/SendRedesign/components/NetworkSelectionEntryButton.tsx": 1,
           "components/SendReceive/SendRedesign/steps/DestinationTagStep/DestinationTagStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 3,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
         },
@@ -1320,11 +1225,8 @@
         "as": {
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
         },
-        "height": {
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
-        },
         "width": {
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignInlineWarning.tsx": 1
         }
       }
@@ -1754,7 +1656,7 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 15,
+      "totalInstances": 16,
       "totalCallSites": 9,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
@@ -1764,7 +1666,7 @@
         "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionNuxStep.tsx": 1,
         "components/SendReceive/SendRedesign/steps/MemoInfoStep/MemoInfoStep.tsx": 1,
         "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2,
-        "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
+        "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 4,
         "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1,
         "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
       },
@@ -1776,7 +1678,7 @@
           "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionNuxStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/MemoInfoStep/MemoInfoStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 4,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
         },
@@ -1794,7 +1696,7 @@
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
           "components/SendReceive/SendRedesign/steps/DestinationTagStep/DestinationTagStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionNuxStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1
         },
         "variant": {
@@ -1802,14 +1704,17 @@
           "components/SendReceive/SendRedesign/steps/AddNote/AddNote.tsx": 1,
           "components/SendReceive/SendRedesign/steps/DestinationTagStep/DestinationTagStep.tsx": 2,
           "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 3,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 4,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1
         },
         "disabled": {
           "components/SendReceive/SendRedesign/steps/AddNote/AddNote.tsx": 1,
           "components/SendReceive/SendRedesign/steps/DestinationTagStep/DestinationTagStep.tsx": 1,
-          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 2,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1
+        },
+        "compact": {
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
         },
         "endIcon": {
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
@@ -1817,6 +1722,49 @@
         "loading": {
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SearchInput",
+      "sourceFile": "@cbhq/cds-web/controls/SearchInput",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/controls/SearchInput",
+      "callSites": {
+        "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+      },
+      "propsWithCallSites": {
+        "ref": {
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1
+        },
+        "key": {
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1
+        },
+        "type": {
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1
+        },
+        "value": {
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "onChangeText": {
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "onClear": {
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1
+        },
+        "onSearch": {
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1
+        },
+        "placeholder": {
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "onChange": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
         }
       }
     },
@@ -2206,27 +2154,6 @@
       }
     },
     {
-      "name": "SearchInput",
-      "sourceFile": "@cbhq/cds-web/controls/SearchInput",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/controls/SearchInput",
-      "propsWithCallSites": {
-        "value": {
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
-        },
-        "onChangeText": {
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
-        },
-        "placeholder": {
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
-        },
-        "onChange": {
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Spacer",
       "sourceFile": "@cbhq/cds-web/layout/Spacer",
       "totalInstances": 2,
@@ -2270,90 +2197,6 @@
     }
   ],
   "presentational": [
-    {
-      "name": "FullScreenLoader",
-      "sourceFile": "@components/UI/FullScreenLoader",
-      "totalInstances": 3,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@components/UI/FullScreenLoader",
-      "callSites": {
-        "@app/screens/Send/ConnectWalletScreen.tsx": 2,
-        "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "loading": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 2,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-        },
-        "instrumentationId": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 2,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Tray",
-      "sourceFile": "@designSystem/interactables/drawer/Tray",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "presentationalLibrary": "@designSystem/interactables/drawer/Tray",
-      "callSites": {
-        "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-        "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-      },
-      "propsWithCallSites": {
-        "testID": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-        },
-        "onDismiss": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-        },
-        "isVisible": {
-          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
-          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextInputIconButton",
-      "sourceFile": "@components/interactables/TextInputIconButton",
-      "totalInstances": 4,
-      "totalCallSites": 3,
-      "presentationalLibrary": "@components/interactables/TextInputIconButton",
-      "callSites": {
-        "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-        "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
-        "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
-      },
-      "propsWithCallSites": {
-        "name": {
-          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
-        },
-        "size": {
-          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
-        },
-        "color": {
-          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
-        },
-        "onPress": {
-          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
-        },
-        "testID": {
-          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
-          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
-        }
-      }
-    },
     {
       "name": "TextInput",
       "sourceFile": "react-native/TextInput",
@@ -2408,33 +2251,6 @@
       }
     },
     {
-      "name": "Navbar",
-      "sourceFile": "@designSystem/navigation/navbar/Navbar",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@designSystem/navigation/navbar/Navbar",
-      "propsWithCallSites": {
-        "leading": {
-          "@app/components/navigation/NavHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "SmallButton",
-      "sourceFile": "@components/interactables/SmallButton",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@components/interactables/SmallButton",
-      "propsWithCallSites": {
-        "testID": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
-        },
-        "onPress": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "Component",
       "sourceFile": "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx",
       "totalInstances": 1,
@@ -2456,33 +2272,29 @@
           "components/SendReceive/SendRedesign/steps/SendRedesignPreview/SendRedesignPreview.tsx": 1
         }
       }
-    },
-    {
-      "name": "InfiniteScroll",
-      "sourceFile": "@cb/shared/components/InfiniteScroll",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalLibrary": "@cb/shared/components/InfiniteScroll",
-      "propsWithCallSites": {
-        "scrollable": {
-          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
-        },
-        "isLoading": {
-          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
-        },
-        "getMoreItems": {
-          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
-        },
-        "forceObserve": {
-          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
-        },
-        "spinner": {
-          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
-        }
-      }
     }
   ],
   "other": [
+    {
+      "name": "FullScreenLoader",
+      "sourceFile": "@cbhq/react-native-core/components/UI/FullScreenLoader",
+      "totalInstances": 3,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Send/ConnectWalletScreen.tsx": 2,
+        "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "loading": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 2,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+        },
+        "instrumentationId": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 2,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+        }
+      }
+    },
     {
       "name": "Screen",
       "sourceFile": "@app/components/Screen",
@@ -2594,7 +2406,7 @@
     },
     {
       "name": "Link",
-      "sourceFile": "@components/typography/Link",
+      "sourceFile": "@cbhq/react-native-core/components/typography/Link",
       "totalInstances": 5,
       "totalCallSites": 4,
       "callSites": {
@@ -2773,6 +2585,126 @@
       "totalCallSites": 1
     },
     {
+      "name": "Tray",
+      "sourceFile": "@cbhq/react-native-core/designSystem/src/interactables/drawer/Tray",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+        "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "testID": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+        },
+        "onDismiss": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+        },
+        "isVisible": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "sourceFile": "@cbhq/react-native-core/components/interactables/Button",
+      "totalInstances": 13,
+      "totalCallSites": 8,
+      "callSites": {
+        "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+        "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
+        "@app/screens/Send/SendBlockedScreen.tsx": 1,
+        "@app/screens/Send/SendCompleteScreen.tsx": 1,
+        "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+        "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
+        "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 5,
+        "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+      },
+      "propsWithCallSites": {
+        "flexGrow": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 4
+        },
+        "block": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1
+        },
+        "spacingTop": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+        },
+        "spacingBottom": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+        },
+        "variant": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
+          "@app/screens/Send/SendBlockedScreen.tsx": 1,
+          "@app/screens/Send/SendCompleteScreen.tsx": 1,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 3,
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        },
+        "onPress": {
+          "@app/screens/Send/ConnectWalletScreen.tsx": 1,
+          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
+          "@app/screens/Send/SendBlockedScreen.tsx": 1,
+          "@app/screens/Send/SendCompleteScreen.tsx": 1,
+          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 5,
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+        },
+        "testID": {
+          "@app/screens/Send/ProcessingTransactionScreen.tsx": 1,
+          "@app/screens/Send/SendBlockedScreen.tsx": 1,
+          "@app/screens/Send/SendCompleteScreen.tsx": 1,
+          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1,
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+        },
+        "compact": {
+          "@app/screens/Send/SendCompleteScreen.tsx": 1,
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+        },
+        "disabled": {
+          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1,
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+        },
+        "flexBasis": {
+          "@app/screens/Send/SendRecipientTypeScreen.tsx": 1
+        },
+        "loading": {
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1,
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 1
+        },
+        "accessibilityState": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+        },
+        "accessibilityHint": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+        },
+        "accessibilityLabel": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+        },
+        "accessibilityRole": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 2
+        },
+        "accessible": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
       "name": "L2EducationSreenErrorFallback",
       "sourceFile": "@app/screens/Send/L2EducationScreenDefaultContent/L2EducationSreenErrorFallback",
       "totalInstances": 1,
@@ -2910,26 +2842,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "TwoFactorLayout",
-      "sourceFile": "@app/components/TwoFactor/TwoFactorLayout",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onResend": {
-          "@app/screens/Send/Send2FAScreen.tsx": 1
-        },
-        "onSubmit": {
-          "@app/screens/Send/Send2FAScreen.tsx": 1
-        },
-        "isSubmitting": {
-          "@app/screens/Send/Send2FAScreen.tsx": 1
-        },
-        "twoFactorAuthMethod": {
-          "@app/screens/Send/Send2FAScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "ConfirmTwoFactor",
       "sourceFile": "@app/components/TwoFactor/ConfirmTwoFactor",
       "totalInstances": 2,
@@ -2960,17 +2872,6 @@
     },
     {
       "name": "UnifiedTwoFactor",
-      "sourceFile": "@app/screens/Send/Send2FAScreen.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "send": {
-          "@app/screens/Send/Send2FAScreen.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "LegacyTwoFactor",
       "sourceFile": "@app/screens/Send/Send2FAScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -3063,6 +2964,43 @@
       "sourceFile": "@app/screens/Send/SendCompleteScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "TextInputIconButton",
+      "sourceFile": "@cbhq/react-native-core/components/interactables/TextInputIconButton",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "callSites": {
+        "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+        "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
+        "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
+      },
+      "propsWithCallSites": {
+        "name": {
+          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
+        },
+        "size": {
+          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
+        },
+        "color": {
+          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
+        },
+        "onPress": {
+          "@app/screens/Send/SendEnterNoteScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
+        },
+        "testID": {
+          "@app/screens/Send/ContactManagement/Favorites/FavoritesScreen.tsx": 1,
+          "@app/screens/Send/ContactManagement/CreateOrEditContact/CreateOrEditContactScreen.tsx": 2
+        }
+      }
     },
     {
       "name": "KeyboardAvoidingView",
@@ -3252,6 +3190,29 @@
       "sourceFile": "@app/screens/Send/SendSelectRecipientScreen.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "SystemAlertSection",
+      "sourceFile": "@app/components/SystemAlert/SystemAlertSection",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "@app/screens/Send/L2Adoption/L2AdoptionSelection/L2AdoptionSelectionScreen.tsx": 1,
+        "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+      },
+      "propsWithCallSites": {
+        "view": {
+          "@app/screens/Send/L2Adoption/L2AdoptionSelection/L2AdoptionSelectionScreen.tsx": 1,
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        },
+        "currencies": {
+          "@app/screens/Send/L2Adoption/L2AdoptionSelection/L2AdoptionSelectionScreen.tsx": 1,
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        },
+        "network": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        }
+      }
     },
     {
       "name": "NetworkCellDetailFee",
@@ -3515,8 +3476,8 @@
       }
     },
     {
-      "name": "QRCodeScannerGql",
-      "sourceFile": "@app/components/QRCodeScanner/QRCodeScanner/QRCodeScannerGql",
+      "name": "QRCodeScanner",
+      "sourceFile": "@app/components/QRCodeScanner/QRCodeScanner",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -3564,6 +3525,17 @@
           "@app/components/navigation/NavHeader.tsx": 1
         },
         "onPress": {
+          "@app/components/navigation/NavHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Navbar",
+      "sourceFile": "@cbhq/react-native-core/designSystem/src/navigation/navbar/Navbar",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "leading": {
           "@app/components/navigation/NavHeader.tsx": 1
         }
       }
@@ -3629,23 +3601,6 @@
       }
     },
     {
-      "name": "SystemAlertSection",
-      "sourceFile": "@app/components/SystemAlert/SystemAlertSection",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "view": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
-        },
-        "currencies": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
-        },
-        "network": {
-          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
-        }
-      }
-    },
-    {
       "name": "MultiPortfolioDisclaimer",
       "sourceFile": "@advancedTrade/Portfolio/components/MultiPortfolioDisclaimer/MultiPortfolioDisclaimer",
       "totalInstances": 1,
@@ -3687,6 +3642,20 @@
           "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
         },
         "isSendFlow": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SmallButton",
+      "sourceFile": "@cbhq/react-native-core/components/interactables/SmallButton",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "testID": {
+          "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
+        },
+        "onPress": {
           "@app/screens/Send/AmountEntryScreen/AmountEntryScreen.tsx": 1
         }
       }
@@ -3950,7 +3919,7 @@
     },
     {
       "name": "ChangeNetworkStep",
-      "sourceFile": "components/SendReceive/components/NetworkSelection/ChangeNetworkStep",
+      "sourceFile": "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
@@ -4088,7 +4057,7 @@
     },
     {
       "name": "FormLoadingProvider",
-      "sourceFile": "components/SendReceive/components/Send/components/FormLoadingProvider/FormLoadingProvider",
+      "sourceFile": "components/SendReceive/components/Send/components/FormLoadingProvider",
       "totalInstances": 3,
       "totalCallSites": 1,
       "callSites": {
@@ -4224,6 +4193,28 @@
       }
     },
     {
+      "name": "SendHeader",
+      "sourceFile": "components/SendReceive/SendRedesign/SendReceiveRedesign.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "showOldHeader": {
+          "components/SendReceive/SendRedesign/SendReceiveRedesign.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SendModalHeader",
+      "sourceFile": "components/Send/components/SendModalHeader",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "showOldHeader": {
+          "components/SendReceive/SendRedesign/SendReceiveRedesign.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ReceiveHeader",
       "sourceFile": "components/SendReceive/SendRedesign/SendReceiveRedesign.tsx",
       "totalInstances": 1,
@@ -4281,6 +4272,20 @@
       }
     },
     {
+      "name": "SendAssetSelectorV2",
+      "sourceFile": "components/SendReceive/SendRedesign/steps/SendAssetSelectorV2/SendAssetSelectorV2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onAssetChange": {
+          "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
+        },
+        "queryRef": {
+          "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
+        }
+      }
+    },
+    {
       "name": "SendAmountEntryV2",
       "sourceFile": "components/SendReceive/SendRedesign/steps/SendAmountEntryV2/SendAmountEntryV2",
       "totalInstances": 1,
@@ -4313,6 +4318,17 @@
           "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
         },
         "showPortfolioDisclaimer": {
+          "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SendSelectRecipientV2Step",
+      "sourceFile": "components/SendReceive/SendRedesign/steps/SendSelectRecipientStep/SendSelectRecipientV2Step",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerRef": {
           "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
         }
       }
@@ -4654,34 +4670,47 @@
       }
     },
     {
-      "name": "SystemAlert",
-      "sourceFile": "components/SystemAlert",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "name": "SystemAlertWithWaterfall",
+      "sourceFile": "components/SystemAlert/SystemAlertWithWaterfall",
+      "totalInstances": 3,
+      "totalCallSites": 3,
       "callSites": {
         "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+        "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
         "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
       },
       "propsWithCallSites": {
         "view": {
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
         },
         "currencies": {
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
         },
         "network": {
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
         },
         "spacing": {
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
         },
+        "spacingHorizontal": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
+        },
         "borderRadius": {
           "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendRedesignAmountEntry/SendRedesignAmountEntry.tsx": 1
+        },
+        "spacingBottom": {
+          "components/SendReceive/SendRedesign/steps/L2SelectionStep/L2SelectionStep.tsx": 1
         }
       }
     },
@@ -5014,6 +5043,29 @@
       }
     },
     {
+      "name": "VContainer",
+      "sourceFile": "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "overflow": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "scrollBarColor": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "height": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "spacingTop": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "spacingBottom": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        }
+      }
+    },
+    {
       "name": "LazyBuySellModal",
       "sourceFile": "components/BuySellModal/LazyBuySellModal",
       "totalInstances": 1,
@@ -5215,8 +5267,8 @@
       }
     },
     {
-      "name": "StatusStepDeprecated",
-      "sourceFile": "components/BuySellComponents/StatusStep/StatusStepDeprecated",
+      "name": "SharedStatusStep",
+      "sourceFile": "components/BuySellComponents/StatusStep/StatusStepDeprecated/SharedStatusStep",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5285,6 +5337,29 @@
       "propsWithCallSites": {
         "queryVariables": {
           "components/SendReceive/SendRedesign/steps/TransactionDetailsStep/TransactionDetailsStep.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "InfiniteScroll",
+      "sourceFile": "@cbhq/shared/components/InfiniteScroll",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "scrollable": {
+          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
+        },
+        "isLoading": {
+          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
+        },
+        "getMoreItems": {
+          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
+        },
+        "forceObserve": {
+          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
+        },
+        "spinner": {
+          "components/SendReceive/SendRedesign/steps/ViewMoreRecentsStep/ViewMoreRecents.tsx": 1
         }
       }
     },

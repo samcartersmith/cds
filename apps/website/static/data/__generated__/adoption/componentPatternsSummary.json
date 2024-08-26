@@ -226,6 +226,9 @@
           },
           "target": {
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
+          "isUserSwitcher": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           }
         }
       },
@@ -339,14 +342,14 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^6.21.2",
+      "cdsWeb": "^6.34.0",
       "cdsMobile": "Not Found",
-      "cdsCommon": "^6.0.0",
-      "lowestVersion": "^6.0.0",
-      "sanitizedLowestVersion": "6.0.0"
+      "cdsCommon": "^6.34.0",
+      "lowestVersion": "^6.34.0",
+      "sanitizedLowestVersion": "6.34.0"
     }
   },
   "AppSwitcher": {
@@ -406,14 +409,14 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
-      "cdsWeb": "^6.21.2",
+      "cdsWeb": "^6.34.0",
       "cdsMobile": "Not Found",
-      "cdsCommon": "^6.0.0",
-      "lowestVersion": "^6.0.0",
-      "sanitizedLowestVersion": "6.0.0"
+      "cdsCommon": "^6.34.0",
+      "lowestVersion": "^6.34.0",
+      "sanitizedLowestVersion": "6.34.0"
     }
   }
 }
