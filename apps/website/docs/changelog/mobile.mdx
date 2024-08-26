@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.34.3 (8/26/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix toast not responsive on Android. [[#3211](https://github.cbhq.net/frontend/cds/pull/3211)] [[DX-4189](https://jira.coinbase-corp.com/browse/DX-4189)]
+
 ## 6.34.2 (8/26/2024 PST)
 
 #### 🐞 Fixes

@@ -46,8 +46,11 @@ export const useToastPanResponder = ({
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: (_, gestureState) => {
-        // return true if user is swiping, return false if it's a single click
-        return !(gestureState.dx === 0 && gestureState.dy === 0);
+        // return true if the movement is significant, return false if it's a single click
+        return (
+          Math.abs(gestureState.dx) > bottomPanThreshold ||
+          Math.abs(gestureState.dy) > bottomPanThreshold
+        );
       },
       onPanResponderMove: (_, gestureState) => {
         const isSwipingBottom = gestureState.dy > 0;
