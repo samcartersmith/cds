@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 1.2.1 (8/27/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix: Fallback for SparklineInteractive when no period selected. [[#3225](https://github.cbhq.net/frontend/cds/pull/3225)] [[DX-4201](https://jira.coinbase-corp.com/browse/DX-4201)]
+
 ## 1.2.0 (7/10/2024 PST)
 
 #### 🚀 Updates

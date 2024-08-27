@@ -38,7 +38,6 @@ export const Default = () => (
     <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
   </React.StrictMode>
 );
-
 Default.bind({});
 Default.parameters = {
   percy: enableJavascript,
@@ -381,6 +380,27 @@ export const VStackedSparkline = () => {
 
 VStackedSparkline.bind({});
 VStackedSparkline.parameters = {
+  percy: enableJavascript,
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
+export const NoDataInSelectedPeriod = () => {
+  return (
+    <React.StrictMode>
+      <SparklineInteractiveBuild
+        // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+        data={{ ...sparklineInteractiveData, hour: [] }}
+        strokeColor={strokeColor}
+      />
+    </React.StrictMode>
+  );
+};
+NoDataInSelectedPeriod.bind({});
+NoDataInSelectedPeriod.parameters = {
   percy: enableJavascript,
   a11y: {
     config: {

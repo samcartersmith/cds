@@ -164,7 +164,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
 
   useEffect(() => {
     // If there is no data for selected period show fallback loader
-    if (isObject(data) && !data[selectedPeriod] && !isFallbackVisible) {
+    if (isObject(data) && !data[selectedPeriod]?.length && !isFallbackVisible) {
       showFallback();
     }
   }, [data, isFallbackVisible, selectedPeriod, showFallback]);

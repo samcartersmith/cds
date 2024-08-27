@@ -240,6 +240,18 @@ const SparklineInteractiveScreen = () => {
           />
         </Box>
       </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
+            No Data In SelectedPeriod
+          </TextTitle3>
+          <SparklineInteractiveBuild
+            // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+            data={{ ...sparklineInteractiveData, hour: [] }}
+            strokeColor={rgbaStrokeColor}
+          />
+        </Box>
+      </Example>
     </ExampleScreen>
   );
 };
