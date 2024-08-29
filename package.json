@@ -101,7 +101,7 @@
     "@types/jest-axe": "^3.5.1",
     "@types/lodash": "^4.14.178",
     "@types/mini-css-extract-plugin": "^2.2.0",
-    "@types/node": "^18.14.6",
+    "@types/node": "^20",
     "@types/react": "18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-is": "^17.0.2",
@@ -166,7 +166,7 @@
     "yargs": "^17.5.1"
   },
   "engines": {
-    "node": "^18.14"
+    "node": "^20.17.0"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.4.1"
 }

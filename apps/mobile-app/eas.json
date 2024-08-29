@@ -1,7 +1,7 @@
 {
   "build": {
     "debug": {
-      "node": "18.14.2",
+      "node": "20.17.0",
       "distribution": "internal",
       "android": {
         "withoutCredentials": true,
@@ -14,7 +14,7 @@
       }
     },
     "release": {
-      "node": "18.14.2",
+      "node": "20.17.0",
       "distribution": "internal",
       "android": {
         "credentialsSource": "local",

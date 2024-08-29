@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Upgrade to Node 20. [[#3230](https://github.cbhq.net/frontend/cds/pull/3230)] [[DX-4205](https://jira.coinbase-corp.com/browse/DX-4205)]
+
+#### 📘 Misc
+
 - Remove unused s3 folder in ui-scorecard package. [[#2762](https://github.cbhq.net/frontend/cds/pull/2762)]
 
 ## 0.1.13 (2/2/2024 PST)

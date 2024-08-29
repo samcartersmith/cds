@@ -42,7 +42,7 @@
   },
   "types": "./cjs/index.d.ts",
   "engines": {
-    "node": ">=18.14.2"
+    "node": ">=20.17.0"
   },
   "exports": {
     "./package.json": "./package.json",

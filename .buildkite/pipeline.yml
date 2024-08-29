@@ -8,7 +8,7 @@ env:
 _docker_shared: &docker_shared
   plugins:
     - file:///buildkite/plugins/docker:
-        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v18
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-ub22
         always-pull: true
         propagate-environment: true
         propagate-uid-gid: true
@@ -70,7 +70,7 @@ _docker_chrome: &docker_chrome
     STORYBOOK_SKIP_ANIMATION: true
   plugins:
     - file:///buildkite/plugins/docker:
-        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v18-chrome
+        image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
         always-pull: true
         propagate-environment: true
         propagate-uid-gid: true

@@ -1,4 +1,4 @@
-FROM 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v18
+FROM 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-ub22
 
 # PROJECT should be the same as the package.json name
 ENV PROJECT=cds-figma-sync
