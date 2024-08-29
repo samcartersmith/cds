@@ -40,6 +40,7 @@ export type TextProps = {
    * @default '[end of stricken text]'
    */
   strikethroughEndAccessibilityLabel?: string;
+  style?: React.CSSProperties;
 } & TextBaseProps &
   SharedProps &
   RefAttributes<HTMLElement> &

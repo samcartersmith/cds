@@ -87,6 +87,7 @@ export const createText = <
       testID = overrides?.testID,
       transform = overrides?.transform,
       className = overrides?.className,
+      style = overrides?.style,
       inherit = overrides?.inherit,
       // Spacing
       spacing = overrides?.spacing,
@@ -131,16 +132,14 @@ export const createText = <
     const responsiveStyleClassNames = useResponsiveConfig(responsiveConfig);
     const elementType = overrides?.as ?? as;
 
-    const textStyles = useMemo(() => {
-      const style: React.CSSProperties = {};
-      if (dangerouslySetColor) {
-        style.color = dangerouslySetColor;
-      }
-      if (numberOfLines) {
-        style['--typography-number-of-lines'] = numberOfLines;
-      }
-      return style;
-    }, [dangerouslySetColor, numberOfLines]);
+    const textStyles = useMemo<React.CSSProperties>(
+      () => ({
+        color: dangerouslySetColor,
+        '--typography-number-of-lines': numberOfLines,
+        ...style,
+      }),
+      [dangerouslySetColor, numberOfLines, style],
+    );
 
     if (isChildrenFalsy(children)) {
       return null;

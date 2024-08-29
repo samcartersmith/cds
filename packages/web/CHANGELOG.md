@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.36.0 (8/29/2024 PST)
+
+#### 🚀 Updates
+
+- Add style prop to web Text components. [[#3229](https://github.cbhq.net/frontend/cds/pull/3229)] [[DX-4203](https://jira.coinbase-corp.com/browse/DX-4203)]
+
 ## 6.35.0 (8/27/2024 PST)
 
 #### 🚀 Updates

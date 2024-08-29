@@ -1,3 +1,4 @@
+/* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import { useMemo } from 'react';
 import { ResponsiveProps } from '@cbhq/cds-common/types';
 
@@ -323,6 +324,20 @@ export const Time = () => (
   <TextBody as="time" dateTime="2020-10-10">
     2020-10-10
   </TextBody>
+);
+
+export const CustomStyle = () => (
+  <>
+    {renderHeaderComponents({ style: { background: 'coral' } })}
+    {textComponents.map((Component) => {
+      const name = Component.displayName?.slice(4);
+      return (
+        <Component key={name} as="p" display="block" style={{ background: 'coral ' }}>
+          {name}
+        </Component>
+      );
+    })}
+  </>
 );
 
 export default {
