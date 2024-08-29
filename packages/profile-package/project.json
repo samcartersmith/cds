@@ -1,0 +1,27 @@
+{
+  "name": "profile-package",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/profile-package",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "rm -rf esm lib && rollup -c",
+      "dependsOn": [
+        "^build",
+        "typecheck"
+      ],
+      "options": {
+        "cwd": "packages/profile-package",
+        "color": true
+      }
+    },
+    "typecheck": {
+      "command": "rm -rf dts tsconfig.tsbuildinfo && tsc --build",
+      "options": {
+        "cwd": "packages/profile-package",
+        "color": true
+      }
+    }
+  }
+}
