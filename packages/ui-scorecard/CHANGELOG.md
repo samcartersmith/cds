@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Fix package.json node engine version. [[#3233](https://github.cbhq.net/frontend/cds/pull/3233)]
+
+#### 📘 Misc
+
 - Upgrade to Node 20. [[#3230](https://github.cbhq.net/frontend/cds/pull/3230)] [[DX-4205](https://jira.coinbase-corp.com/browse/DX-4205)]
 
 #### 📘 Misc
