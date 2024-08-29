@@ -8,6 +8,10 @@ import {
   animateOutOverlayOpacityConfig,
   animateOutTranslateYConfig,
 } from '@cbhq/cds-common/animation/fullscreenModal';
+import {
+  type OverlayContentContextValue,
+  OverlayContentContext,
+} from '@cbhq/cds-common/overlays/OverlayContentContext';
 
 import { IconButton } from '../../buttons';
 import { useA11yLabels } from '../../hooks/useA11yLabels';
@@ -34,6 +38,10 @@ import {
 import { ModalProps } from './Modal';
 import { ModalHeaderProps } from './ModalHeader';
 import { ModalWrapper } from './ModalWrapper';
+
+const overlayContentContextValue: OverlayContentContextValue = {
+  isModal: true,
+};
 
 export type FullscreenModalProps = {
   /**
@@ -183,30 +191,32 @@ export const FullscreenModal = memo(function FullscreenModal({
   );
 
   return (
-    <ModalWrapper
-      hideOverlay
-      accessibilityLabel={label}
-      accessibilityLabelledBy={labelledBy}
-      disablePortal={disablePortal}
-      onDidClose={onDidClose}
-      role={role}
-      testID={testID}
-      visible={visible}
-      zIndex={zIndex}
-    >
-      {overlay}
-      <motion.div {...dialogMotionProps} className={pinStyles}>
-        <FocusTrap
-          disableFocusTrap={disableFocusTrap}
-          focusTabIndexElements={focusTabIndexElements}
-          onEscPress={shouldCloseOnEscPress ? onRequestClose : undefined}
-        >
-          <VStack background="background" className={containerClassName}>
-            {header}
-            {content}
-          </VStack>
-        </FocusTrap>
-      </motion.div>
-    </ModalWrapper>
+    <OverlayContentContext.Provider value={overlayContentContextValue}>
+      <ModalWrapper
+        hideOverlay
+        accessibilityLabel={label}
+        accessibilityLabelledBy={labelledBy}
+        disablePortal={disablePortal}
+        onDidClose={onDidClose}
+        role={role}
+        testID={testID}
+        visible={visible}
+        zIndex={zIndex}
+      >
+        {overlay}
+        <motion.div {...dialogMotionProps} className={pinStyles}>
+          <FocusTrap
+            disableFocusTrap={disableFocusTrap}
+            focusTabIndexElements={focusTabIndexElements}
+            onEscPress={shouldCloseOnEscPress ? onRequestClose : undefined}
+          >
+            <VStack background="background" className={containerClassName}>
+              {header}
+              {content}
+            </VStack>
+          </FocusTrap>
+        </motion.div>
+      </ModalWrapper>
+    </OverlayContentContext.Provider>
   );
 });

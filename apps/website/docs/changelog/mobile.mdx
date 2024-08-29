@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.35.0 (8/27/2024 PST)
+
+#### 🚀 Updates
+
+- Create OverlayContentContext for Overlays, Modals, Drawers, and Trays. [[#3226](https://github.cbhq.net/frontend/cds/pull/3226)] [[DX-4186](https://jira.coinbase-corp.com/browse/DX-4186)]
+
 ## 6.34.3 (8/26/2024 PST)
 
 #### 🐞 Fixes

@@ -9,6 +9,10 @@ import {
   animateOutScaleConfig,
 } from '@cbhq/cds-common/animation/modal';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
+import {
+  type OverlayContentContextValue,
+  OverlayContentContext,
+} from '@cbhq/cds-common/overlays/OverlayContentContext';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
 import { useA11yLabels } from '../../hooks/useA11yLabels';
@@ -24,6 +28,10 @@ import {
   modalResponsiveClassName,
 } from './modalStyles';
 import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
+
+const overlayContentContextValue: OverlayContentContextValue = {
+  isModal: true,
+};
 
 export type ModalProps = {
   /**
@@ -129,52 +137,54 @@ export const Modal = memo(
     }, [dangerouslySetPosition, width]);
 
     return (
-      <ModalWrapper
-        accessibilityLabel={label}
-        accessibilityLabelledBy={labelledBy}
-        className={className}
-        dangerouslyDisableResponsiveness={dangerouslyDisableResponsiveness}
-        disableOverlayPress={disableOverlayPress}
-        disablePortal={disablePortal}
-        id={id}
-        onDidClose={onDidClose}
-        onOverlayPress={handleClose}
-        role={role}
-        testID={testID}
-        visible={visible}
-        zIndex={customZIndex}
-      >
-        <motion.div
-          {...motionProps}
-          className={cx(
-            modalDefaultClassName,
-            !dangerouslyDisableResponsiveness && modalResponsiveClassName,
-          )}
-          data-testid="modal-dialog-motion"
-          style={dialogStyles}
+      <OverlayContentContext.Provider value={overlayContentContextValue}>
+        <ModalWrapper
+          accessibilityLabel={label}
+          accessibilityLabelledBy={labelledBy}
+          className={className}
+          dangerouslyDisableResponsiveness={dangerouslyDisableResponsiveness}
+          disableOverlayPress={disableOverlayPress}
+          disablePortal={disablePortal}
+          id={id}
+          onDidClose={onDidClose}
+          onOverlayPress={handleClose}
+          role={role}
+          testID={testID}
+          visible={visible}
+          zIndex={customZIndex}
         >
-          <FocusTrap
-            disableFocusTrap={disableFocusTrap}
-            focusTabIndexElements={focusTabIndexElements}
-            onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
+          <motion.div
+            {...motionProps}
+            className={cx(
+              modalDefaultClassName,
+              !dangerouslyDisableResponsiveness && modalResponsiveClassName,
+            )}
+            data-testid="modal-dialog-motion"
+            style={dialogStyles}
           >
-            <VStack
-              background="background"
-              className={cx(
-                modalDialogClassName,
-                !dangerouslyDisableResponsiveness && modalDialogResponsiveClassName,
-              )}
-              elevation={2}
-              overflow="hidden"
-              width="100%"
+            <FocusTrap
+              disableFocusTrap={disableFocusTrap}
+              focusTabIndexElements={focusTabIndexElements}
+              onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
             >
-              <ModalParentContext.Provider value={modalData}>
-                {typeof children === 'function' ? children(renderChildrenProps) : children}
-              </ModalParentContext.Provider>
-            </VStack>
-          </FocusTrap>
-        </motion.div>
-      </ModalWrapper>
+              <VStack
+                background="background"
+                className={cx(
+                  modalDialogClassName,
+                  !dangerouslyDisableResponsiveness && modalDialogResponsiveClassName,
+                )}
+                elevation={2}
+                overflow="hidden"
+                width="100%"
+              >
+                <ModalParentContext.Provider value={modalData}>
+                  {typeof children === 'function' ? children(renderChildrenProps) : children}
+                </ModalParentContext.Provider>
+              </VStack>
+            </FocusTrap>
+          </motion.div>
+        </ModalWrapper>
+      </OverlayContentContext.Provider>
     );
   }),
 );

@@ -10,7 +10,7 @@ const MOCK_API: TabsContextValue = {
   goPreviousTab: jest.fn(),
 };
 
-const HOOK_ERROR = Error('useTabsContext must be used within a TabsProvider');
+const HOOK_ERROR = Error('useTabsContext must be used within a TabsContext.Provider');
 
 describe('useTabsContext', () => {
   it('returns correct API', () => {

@@ -8,6 +8,6 @@ export const TabsContext = createContext<TabsContextValue | undefined>(undefined
 
 export const useTabsContext = (): TabsContextValue => {
   const context = useContext(TabsContext);
-  if (!context) throw Error('useTabsContext must be used within a TabsProvider');
+  if (!context) throw Error('useTabsContext must be used within a TabsContext.Provider');
   return context;
 };

@@ -17,11 +17,19 @@ import {
 import { useToggler } from '@cbhq/cds-common';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
+import {
+  type OverlayContentContextValue,
+  OverlayContentContext,
+} from '@cbhq/cds-common/overlays/OverlayContentContext';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types';
 
 import { VStack } from '../../layout';
 
 import { useModalAnimation } from './useModalAnimation';
+
+const overlayContentContextValue: OverlayContentContextValue = {
+  isModal: true,
+};
 
 export type ModalProps = ModalBaseProps &
   Omit<RNModalProps, 'children' | 'visible' | 'onRequestClose' | 'animationType'>;
@@ -83,29 +91,31 @@ export const Modal = memo(
     );
 
     return (
-      <RNModal
-        hardwareAccelerated
-        statusBarTranslucent
-        transparent
-        onRequestClose={onRequestClose}
-        visible={internalVisible}
-        {...restProps}
-        // prevent animation from overridden
-        animationType="none"
-      >
-        <VStack
-          animated
-          elevation={2}
-          pin="all"
-          style={{ transform: [{ scale }], opacity, borderWidth: 0 }}
+      <OverlayContentContext.Provider value={overlayContentContextValue}>
+        <RNModal
+          hardwareAccelerated
+          statusBarTranslucent
+          transparent
+          onRequestClose={onRequestClose}
+          visible={internalVisible}
+          {...restProps}
+          // prevent animation from overridden
+          animationType="none"
         >
-          <SafeAreaView style={styles.safeAreaContainer}>
-            <ModalParentContext.Provider value={modalData}>
-              {typeof children === 'function' ? children(renderChildrenProps) : children}
-            </ModalParentContext.Provider>
-          </SafeAreaView>
-        </VStack>
-      </RNModal>
+          <VStack
+            animated
+            elevation={2}
+            pin="all"
+            style={{ transform: [{ scale }], opacity, borderWidth: 0 }}
+          >
+            <SafeAreaView style={styles.safeAreaContainer}>
+              <ModalParentContext.Provider value={modalData}>
+                {typeof children === 'function' ? children(renderChildrenProps) : children}
+              </ModalParentContext.Provider>
+            </SafeAreaView>
+          </VStack>
+        </RNModal>
+      </OverlayContentContext.Provider>
     );
   }),
 );

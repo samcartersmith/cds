@@ -19,6 +19,10 @@ import {
 import { useSpectrum } from '@cbhq/cds-common';
 import { drawerAnimationDefaultDuration, MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import {
+  type OverlayContentContextValue,
+  OverlayContentContext,
+} from '@cbhq/cds-common/overlays/OverlayContentContext';
+import {
   horizontalDrawerPercentageOfView,
   verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView,
 } from '@cbhq/cds-common/tokens/drawer';
@@ -35,6 +39,10 @@ import { useDrawerPanResponder } from './useDrawerPanResponder';
 import { useDrawerSpacing } from './useDrawerSpacing';
 
 export type DrawerProps = DrawerBaseProps & Omit<ModalProps, 'onRequestClose' | 'children'>;
+
+const overlayContentContextValue: OverlayContentContextValue = {
+  isDrawer: true,
+};
 
 export const Drawer = memo(
   forwardRef<DrawerRefBaseProps, DrawerProps>(function Drawer(
@@ -192,29 +200,31 @@ export const Drawer = memo(
         {...props}
         accessibilityRole="alert"
       >
-        <DrawerStatusBar visible pin={pin} />
-        <Overlay
-          onTouchStart={handleOverlayPress}
-          opacity={opacityAnimation}
-          testID="drawer-overlay"
-        />
-        <Box
-          {...getPanGestureHandlers}
-          animated
-          background="background"
-          borderRadius={isPinHorizontal ? 'roundedNone' : 'roundedLarge'}
-          bordered={scheme === 'dark'}
-          elevation={scheme === 'dark' ? 2 : 0}
-          maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
-          onAccessibilityEscape={handleClose}
-          pin={pin}
-          style={combinedStyles}
-          // close modal when user performs the "escape" accessibility gesture
-          // https://reactnative.dev/docs/accessibility#onaccessibilityescape-ios
-          width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
-        >
-          {content}
-        </Box>
+        <OverlayContentContext.Provider value={overlayContentContextValue}>
+          <DrawerStatusBar visible pin={pin} />
+          <Overlay
+            onTouchStart={handleOverlayPress}
+            opacity={opacityAnimation}
+            testID="drawer-overlay"
+          />
+          <Box
+            {...getPanGestureHandlers}
+            animated
+            background="background"
+            borderRadius={isPinHorizontal ? 'roundedNone' : 'roundedLarge'}
+            bordered={scheme === 'dark'}
+            elevation={scheme === 'dark' ? 2 : 0}
+            maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
+            onAccessibilityEscape={handleClose}
+            pin={pin}
+            style={combinedStyles}
+            // close modal when user performs the "escape" accessibility gesture
+            // https://reactnative.dev/docs/accessibility#onaccessibilityescape-ios
+            width={isPinHorizontal ? horizontalDrawerWidth : '100%'}
+          >
+            {content}
+          </Box>
+        </OverlayContentContext.Provider>
       </Modal>
     );
   }),
