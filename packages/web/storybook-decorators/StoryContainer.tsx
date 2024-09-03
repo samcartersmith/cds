@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo, StrictMode, useMemo } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { Story } from '@storybook/react';
 import { css } from 'linaria';
@@ -29,6 +29,12 @@ const newWrapperProps = {
   gap: 2,
 } as const;
 
+const LocalStrictMode = ({ children }: { children: React.ReactNode }) => {
+  const strict = process.env.CI !== 'true';
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  return strict ? <StrictMode>{children}</StrictMode> : <>{children}</>;
+};
+
 export function StoryContainer<Props>(
   StoryComponent: Story,
   context: StoryBuilderConfig<Props, { children?: React.ReactNode }>,
@@ -58,17 +64,19 @@ export function StoryContainer<Props>(
       : oldWrapperProps;
 
     return (
-      <ThemeProvider
-        display="contents"
-        scale={context.args?.scale}
-        spectrum={context.args?.spectrum ?? (isDarkMode ? 'dark' : 'light')}
-      >
-        <PortalProvider>
-          <Group {...wrapperProps}>
-            <InnerWrapper>{contents}</InnerWrapper>
-          </Group>
-        </PortalProvider>
-      </ThemeProvider>
+      <LocalStrictMode>
+        <ThemeProvider
+          display="contents"
+          scale={context.args?.scale}
+          spectrum={context.args?.spectrum ?? (isDarkMode ? 'dark' : 'light')}
+        >
+          <PortalProvider>
+            <Group {...wrapperProps}>
+              <InnerWrapper>{contents}</InnerWrapper>
+            </Group>
+          </PortalProvider>
+        </ThemeProvider>
+      </LocalStrictMode>
     );
   });
 

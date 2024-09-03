@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, StrictMode, useCallback, useMemo } from 'react';
 import { Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
@@ -31,6 +31,12 @@ const CdsSafeAreaProvider: React.FC<React.PropsWithChildren<unknown>> = memo(({ 
   return <SafeAreaProvider style={style}>{children}</SafeAreaProvider>;
 });
 
+const LocalStrictMode = ({ children }: { children: React.ReactNode }) => {
+  const strict = process.env.CI !== 'true';
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  return strict ? <StrictMode>{children}</StrictMode> : <>{children}</>;
+};
+
 const App = memo(() => {
   const [fontsLoaded] = useFonts();
 
@@ -50,18 +56,20 @@ const App = memo(() => {
   }
 
   return (
-    <DevicePreferencesProvider>
-      <ThemeProvider name="playground-root">
-        <CdsSafeAreaProvider>
-          <PortalProvider>
-            <StatusBar hidden={!__DEV__} />
-            <NavigationContainer linking={linking} onReady={handleOnReady}>
-              <Playground routes={codegenRoutes} />
-            </NavigationContainer>
-          </PortalProvider>
-        </CdsSafeAreaProvider>
-      </ThemeProvider>
-    </DevicePreferencesProvider>
+    <LocalStrictMode>
+      <DevicePreferencesProvider>
+        <ThemeProvider name="playground-root">
+          <CdsSafeAreaProvider>
+            <PortalProvider>
+              <StatusBar hidden={!__DEV__} />
+              <NavigationContainer linking={linking} onReady={handleOnReady}>
+                <Playground routes={codegenRoutes} />
+              </NavigationContainer>
+            </PortalProvider>
+          </CdsSafeAreaProvider>
+        </ThemeProvider>
+      </DevicePreferencesProvider>
+    </LocalStrictMode>
   );
 });
 

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Add StrictMode to mobile-app and Storybook when not in CI. [[#3236](https://github.cbhq.net/frontend/cds/pull/3236)] [[DX-4077](https://jira.coinbase-corp.com/browse/DX-4077)]
+
 ## 6.36.0 (8/29/2024 PST)
 
 #### 🚀 Updates
