@@ -1,0 +1,37 @@
+{
+  "name": "cds-vscode-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/cds-vscode-plugin",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "rm -rf dist && rollup -c",
+      "dependsOn": [
+        "^build",
+        "typecheck"
+      ],
+      "options": {
+        "cwd": "packages/cds-vscode-plugin",
+        "color": true
+      }
+    },
+    "watch": {
+      "command": "rollup -c -w",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "cwd": "packages/cds-vscode-plugin",
+        "color": true
+      }
+    },
+    "typecheck": {
+      "command": "rm -rf dts tsconfig.tsbuildinfo && tsc --build",
+      "options": {
+        "cwd": "packages/cds-vscode-plugin",
+        "color": true
+      }
+    }
+  }
+}

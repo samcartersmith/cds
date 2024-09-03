@@ -1,0 +1,45 @@
+{
+  "name": "@cbhq/cds-vscode-plugin",
+  "version": "0.0.0",
+  "private": true,
+  "displayName": "@cbhq/cds-vscode-plugin",
+  "description": "VSCode Plugin for building with the Coinbase Design System",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "watch": "rm -rf dist && rollup -c -w"
+  },
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "activationEvents": [
+    "onLanguage:typescriptreact",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:javascript",
+    "onLanguage:css",
+    "onLanguage:scss"
+  ],
+  "main": "./dist/client.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-babel": "^6",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15",
+    "@rollup/plugin-terser": "^0.4",
+    "@types/vscode": "^1.92",
+    "rollup": "^4",
+    "tslib": "^2",
+    "typescript": "~5.2.2"
+  }
+}
