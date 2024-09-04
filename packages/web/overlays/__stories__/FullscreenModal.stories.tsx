@@ -23,6 +23,8 @@ export default {
   },
 };
 
+const contentStyle = { justifyContent: 'center', marginLeft: 'auto' };
+
 export const Basic = () => {
   const [visible, { toggleOn, toggleOff }] = useToggler(true);
   const { triggerRef, focusTrigger } = useTriggerFocus();
@@ -219,6 +221,34 @@ export const SecondaryContentDivider = () => {
         onRequestClose={toggleOff}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
+        title="Modal title"
+        visible={visible}
+      />
+    </>
+  );
+};
+
+export const CenterPrimary = () => {
+  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const { triggerRef, focusTrigger } = useTriggerFocus();
+
+  const primaryContent = (
+    <Box background="backgroundAlternate" height={800}>
+      <TextBody as="p">Primary Content {loremIpsum}</TextBody>
+    </Box>
+  );
+
+  return (
+    <>
+      <Button ref={triggerRef} onPress={toggleOn}>
+        Open Modal
+      </Button>
+      <FullscreenModal
+        closeAccessibilityLabel="Close modal"
+        contentStyle={contentStyle}
+        onDidClose={focusTrigger}
+        onRequestClose={toggleOff}
+        primaryContent={primaryContent}
         title="Modal title"
         visible={visible}
       />

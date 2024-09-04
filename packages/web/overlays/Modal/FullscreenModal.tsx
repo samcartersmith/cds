@@ -74,6 +74,8 @@ export type FullscreenModalProps = {
    * @default false
    */
   showSecondaryContentDivider?: boolean;
+  /** Apply styles to content. */
+  contentStyle?: React.CSSProperties;
 } & Pick<
   ModalProps,
   | 'visible'
@@ -112,6 +114,7 @@ export const FullscreenModal = memo(function FullscreenModal({
   accessibilityLabelledBy,
   accessibilityLabel,
   closeAccessibilityLabel,
+  contentStyle,
 }: FullscreenModalProps) {
   const { labelledBySource, labelledBy, label } = useA11yLabels({
     accessibilityLabelledBy,
@@ -173,8 +176,12 @@ export const FullscreenModal = memo(function FullscreenModal({
   const content = (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
     <div className={contentScrollContainer} tabIndex={0}>
-      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
-      <div className={cx(contentClassName, dangerouslySetContentClassName)} tabIndex={0}>
+      <div
+        className={cx(contentClassName, dangerouslySetContentClassName)}
+        style={contentStyle}
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        tabIndex={0}
+      >
         <div className={primaryContentContainerClassName}>{primaryContent}</div>
         {!!secondaryContent && (
           <div

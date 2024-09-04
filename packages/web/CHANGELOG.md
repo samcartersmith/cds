@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.38.0 (9/4/2024 PST)
+
+#### 🚀 Updates
+
+- Add contentStyle to FullscreenModal. [[#3242](https://github.cbhq.net/frontend/cds/pull/3242)] [[DX-4222](https://jira.coinbase-corp.com/browse/DX-4222)]
+
 ## 6.37.0 (9/4/2024 PST)
 
 #### 🚀 Updates
