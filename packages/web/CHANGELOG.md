@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 6.37.0 (9/4/2024 PST)
+
+#### 🚀 Updates
+
+- Surface usePopper strategy props in Popover component. [[#3191](https://github.cbhq.net/frontend/cds/pull/3191)] [[DX-4053](https://jira.coinbase-corp.com/browse/DX-4053)]
 
 #### 📘 Misc
 

@@ -29,6 +29,7 @@ const defaultContentPosition: PopoverContentPositionConfig = {
   skid: 0,
   placement: 'bottom',
   offsetGap: undefined,
+  strategy: undefined,
 };
 
 const blockStyles = css`

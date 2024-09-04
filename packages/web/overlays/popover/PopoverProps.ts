@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Placement } from '@popperjs/core';
+import { Placement, PositioningStrategy } from '@popperjs/core';
 import { SharedAccessibilityProps, SharedProps, SpacingScale } from '@cbhq/cds-common/types';
 
 import { AccessibleControlledReturnType } from '../../hooks/useA11yControlledVisibility';
@@ -7,7 +7,7 @@ import { type FocusTrapProps } from '../FocusTrap';
 
 export type PopoverContentPositionConfig = {
   /**
-   * Custom placement config
+   * Custom placement config from Popper. See docs: https://popper.js.org/docs/v2/constructors/#placement
    * @default bottom
    */
   placement?: Placement;
@@ -20,6 +20,11 @@ export type PopoverContentPositionConfig = {
    * This value will be subtracted from the gap
    */
   offsetGap?: number;
+  /**
+   * Custom strategy config from Popper. See docs: https://popper.js.org/docs/v2/constructors/#strategy
+   * @default absolute
+   */
+  strategy?: PositioningStrategy;
 };
 
 export type PopoverProps = {
