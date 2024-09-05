@@ -291,7 +291,7 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 108,
+      "totalInstances": 107,
       "totalCallSites": 37,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "aliasedCdsComponents": [
@@ -328,7 +328,7 @@
         ":prime-ui/modals/transferFlow/components/DisplayNetworkFeeRow.tsx": 3,
         ":prime-ui/modals/transferFlow/components/DisplayOption.tsx": 2,
         ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 6,
-        ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalInfo.tsx": 2,
+        ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalInfo.tsx": 1,
         ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalWalletPreview.tsx": 3,
         ":prime-ui/modals/transferFlow/components/InternalTransferAmountSection.tsx": 3,
         ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1,
@@ -368,7 +368,7 @@
           ":prime-ui/modals/transferFlow/components/DisplayNetworkFeeRow.tsx": 3,
           ":prime-ui/modals/transferFlow/components/DisplayOption.tsx": 2,
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 6,
-          ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalInfo.tsx": 2,
+          ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalInfo.tsx": 1,
           ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalWalletPreview.tsx": 3,
           ":prime-ui/modals/transferFlow/components/InternalTransferAmountSection.tsx": 3,
           ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1,
@@ -423,7 +423,7 @@
           ":prime-ui/modals/transferFlow/components/DisplayNetworkFeeRow.tsx": 1,
           ":prime-ui/modals/transferFlow/components/DisplayOption.tsx": 1,
           ":prime-ui/modals/transferFlow/components/DisplayWallet.tsx": 2,
-          ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalInfo.tsx": 2,
+          ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalInfo.tsx": 1,
           ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalWalletPreview.tsx": 1,
           ":prime-ui/modals/transferFlow/components/InternalTransferAmountSection.tsx": 3,
           ":prime-ui/modals/transferFlow/components/NoTransferMethodsPlaceholder.tsx": 1,
@@ -1613,6 +1613,24 @@
       "presentationalElement": "strong"
     },
     {
+      "name": "SelectedWalletOption",
+      "sourceFile": ":prime-ui/modals/transferFlow/components/SelectedWalletOption",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "div",
+      "propsWithCallSites": {
+        "currency": {
+          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+        },
+        "wallet": {
+          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+        },
+        "direction": {
+          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+        }
+      }
+    },
+    {
       "name": "div",
       "sourceFile": ":prime-ui/modals/transferFlow/components/AddressBookAutocomplete.tsx",
       "totalInstances": 1,
@@ -2099,15 +2117,14 @@
     {
       "name": "SelectWalletAutocomplete",
       "sourceFile": ":prime-ui/modals/selectWalletFlow/SelectWalletAutocomplete",
-      "totalInstances": 7,
-      "totalCallSites": 6,
+      "totalInstances": 6,
+      "totalCallSites": 5,
       "callSites": {
         ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 1,
         ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
         ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
         ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-        ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1,
-        ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+        ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1
       },
       "propsWithCallSites": {
         "walletOptions": {
@@ -2121,62 +2138,54 @@
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1
         },
         "portfolioId": {
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 1,
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1
         },
         "vehicleId": {
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 1,
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1
         },
         "selectedWalletId": {
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 1,
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1
         },
         "disabled": {
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 1,
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1
         },
         "onSelectWallet": {
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 1,
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1
         },
         "error": {
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 1,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+          ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2
         },
         "transactionType": {
           ":prime-ui/modals/transferFlow/CounterpartyWithdrawalStep.tsx": 1,
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1,
           ":prime-ui/modals/transferFlow/ExternalTargetStep.tsx": 1,
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2,
-          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1,
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
+          ":prime-ui/modals/transferFlow/ProcessInfoStep.tsx": 1
         },
         "placeholder": {
           ":prime-ui/modals/transferFlow/CryptoDepositStep.tsx": 1
@@ -2197,9 +2206,6 @@
         },
         "onEnterSelectWallet": {
           ":prime-ui/modals/transferFlow/InternalTransferStep.tsx": 2
-        },
-        "showWithdrawPmExcessText": {
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
         }
       }
     },
@@ -3683,9 +3689,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "vehicleId": {
-          ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
-        },
         "portfolioId": {
           ":prime-ui/modals/transferFlow/WithdrawPmExcessTargetStep.tsx": 1
         },
@@ -4204,9 +4207,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "vehicleId": {
-          ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalInfo.tsx": 1
-        },
         "portfolioId": {
           ":prime-ui/modals/transferFlow/components/ExcessPmWithdrawalInfo.tsx": 1
         },

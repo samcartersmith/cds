@@ -1,31 +1,8 @@
 {
   "NavigationBar": {
-    "totalInstances": 12,
-    "totalCallSites": 11,
+    "totalInstances": 11,
+    "totalCallSites": 10,
     "components": [
-      {
-        "name": "NavigationBar",
-        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "projectId": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          },
-          "action": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          },
-          "target": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          },
-          "isUserSwitcher": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          },
-          "mfe": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          }
-        }
-      },
       {
         "name": "NavigationBar",
         "sourceFile": "@cbhq/identity-navigation/NavigationBar",
@@ -133,6 +110,10 @@
           },
           "spacingHorizontal": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
+          },
+          "isUserSwitcher": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
           }
         }
       },
@@ -259,6 +240,9 @@
           "start": {
             "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
           },
+          "isUserSwitcher": {
+            "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 2
+          },
           "end": {
             "apps/helpcenter/src/components/Structure/Header/IdentityNavigationBar.tsx": 1
           }
@@ -342,7 +326,7 @@
       "owningTeam": "Identity",
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+      "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^6.34.0",
@@ -409,7 +393,7 @@
       "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
       "packageImportPath": "@cbhq/app-switcher",
       "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      "packagePath": "/Users/siddharthkulkarni/Desktop/coinbase/frontend/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^6.34.0",

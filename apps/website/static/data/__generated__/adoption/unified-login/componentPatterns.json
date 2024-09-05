@@ -1,41 +1,7 @@
 {
-  "components": [
-    {
-      "component": {
-        "name": "NavigationBar",
-        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "projectId": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          },
-          "action": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          },
-          "target": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          },
-          "isUserSwitcher": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          },
-          "mfe": {
-            "apps/unified-login/src/pages/Dev/RegistrationTestPage.tsx": 1
-          }
-        }
-      },
-      "config": {
-        "productComponentName": "NavigationBar",
-        "owningTeam": "Identity",
-        "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
-      }
-    }
-  ],
+  "components": [],
   "dependencies": {
-    "dependencies": {
-      "@cbhq/identity-navigation": "workspace:^"
-    },
+    "dependencies": {},
     "devDependencies": {},
     "peerDependencies": {},
     "resolutions": {}
