@@ -19,7 +19,7 @@ const ThemeToggles = memo(function ThemeToggles() {
   }, [colorMode, setColorMode]);
 
   const toggleScale = useCallback(() => {
-    const newScale = scale === 'large' ? 'medium' : 'large';
+    const newScale = scale === 'large' ? 'xSmall' : 'large';
     scaleUpdate(newScale);
   }, [scale, scaleUpdate]);
 
@@ -28,7 +28,7 @@ const ThemeToggles = memo(function ThemeToggles() {
       <Switch checked={colorMode === 'dark'} onChange={toggleSpectrum}>
         Dark Spectrum
       </Switch>
-      <Switch checked={scale === 'medium'} onChange={toggleScale}>
+      <Switch checked={scale === 'xSmall'} onChange={toggleScale}>
         Dense Scale
       </Switch>
     </VStack>
