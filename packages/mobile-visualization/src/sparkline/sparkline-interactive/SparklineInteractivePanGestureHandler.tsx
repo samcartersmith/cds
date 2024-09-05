@@ -7,6 +7,7 @@ import { SparklineInteractiveScrubHandlerProps } from '@cbhq/cds-common/types/Sp
 import { Haptics } from '@cbhq/cds-mobile/utils/haptics';
 import { noop } from '@cbhq/cds-utils';
 
+import { type SparklineInteractiveMobileProps } from './SparklineInteractive';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
@@ -16,7 +17,8 @@ export type SparklineInteractivePanGestureHandlerProps<Period extends string> = 
   onScrub?: (params: ChartScrubParams<Period>) => void;
   getMarker: ChartGetMarker;
   selectedPeriod: Period;
-} & SparklineInteractiveScrubHandlerProps;
+} & SparklineInteractiveScrubHandlerProps &
+  Pick<SparklineInteractiveMobileProps<Period>, 'allowOverflowGestures'>;
 
 // Generics do not work with React.memo or forwardRef
 // https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref/58473012
@@ -30,6 +32,7 @@ export const SparklineInteractivePanGestureHandler = function SparklineInteracti
   selectedPeriod,
   children,
   disabled,
+  allowOverflowGestures,
 }: SparklineInteractivePanGestureHandlerProps<Period>) {
   const {
     markerXPosition,
@@ -81,7 +84,7 @@ export const SparklineInteractivePanGestureHandler = function SparklineInteracti
 
   const longPressGesture = Gesture.Pan()
     .activateAfterLongPress(110)
-    .shouldCancelWhenOutside(true)
+    .shouldCancelWhenOutside(!allowOverflowGestures)
     .onStart(function onStart() {
       runOnJS(handleOnStartJsThread)();
       markerGestureState.value = 1;

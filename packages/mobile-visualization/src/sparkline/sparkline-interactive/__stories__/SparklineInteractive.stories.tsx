@@ -252,6 +252,18 @@ const SparklineInteractiveScreen = () => {
           />
         </Box>
       </Example>
+      <Example spacing={0}>
+        <Box>
+          <TextTitle3 spacingHorizontal={3} spacingVertical={3}>
+            Enable Interaction When Outside
+          </TextTitle3>
+          <SparklineInteractiveBuild
+            allowOverflowGestures
+            data={sparklineInteractiveData}
+            strokeColor={strokeColor}
+          />
+        </Box>
+      </Example>
     </ExampleScreen>
   );
 };

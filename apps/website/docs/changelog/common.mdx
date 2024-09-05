@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.39.0 (9/5/2024 PST)
+
+#### 🚀 Updates
+
+- Add allowOverflowGestures prop to SparklineInteractive. [[#3244](https://github.cbhq.net/frontend/cds/pull/3244)] [[DX-4223](https://jira.coinbase-corp.com/browse/DX-4223)]
+
 ## 6.38.0 ((9/4/2024, 12:39 PM PST))
 
 This is an artificial version bump with no new change.

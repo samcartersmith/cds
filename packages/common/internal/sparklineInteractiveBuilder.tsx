@@ -22,6 +22,7 @@ type SparklineInteractivePriceProps = Omit<
     disableHorizontalPadding?: boolean;
     timePeriodGutter?: SpacingScale;
     labelNode?: ReactNode;
+    allowOverflowGestures?: boolean;
   };
 
 export const DEFAULT_PERIOD = 'day';

@@ -134,6 +134,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   disableHorizontalPadding = false,
   hoverData,
   timePeriodGutter,
+  allowOverflowGestures,
 }: SparklineInteractiveMobileProps<Period>) {
   const [isScrubbing, setIsScrubbing] = useState(false);
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
@@ -239,6 +240,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     <Animated.View style={style}>
       {header}
       <SparklineInteractivePanGestureHandler
+        allowOverflowGestures={allowOverflowGestures}
         disabled={disableScrubbing}
         getMarker={getMarker}
         onScrub={handleScrub}
@@ -318,7 +320,7 @@ const SparklineInteractiveContent = memo(
   SparklineInteractiveContentWithGeneric,
 ) as typeof SparklineInteractiveContentWithGeneric;
 
-type SparklineInteractiveMobileProps<Period extends string> =
+export type SparklineInteractiveMobileProps<Period extends string> =
   SparklineInteractiveBaseProps<Period> & {
     /**
      * Hides the min and max label
@@ -346,6 +348,10 @@ type SparklineInteractiveMobileProps<Period extends string> =
      *
      */
     disableHorizontalPadding?: boolean;
+    /**
+     * Allows continuous gestures on the Sparkline chart to continue outside the bounds of the chart element.
+     */
+    allowOverflowGestures?: boolean;
   };
 
 function SparklineInteractiveWithGeneric<Period extends string>({
