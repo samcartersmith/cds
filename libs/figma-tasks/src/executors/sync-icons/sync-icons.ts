@@ -1,4 +1,5 @@
 import camelCase from 'lodash/camelCase';
+import fs from 'node:fs';
 import path from 'node:path';
 import type { SyncedLibrary } from '@cbhq/figma-api';
 import { createTask } from '@cbhq/mono-tasks';
@@ -27,6 +28,9 @@ import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manife
 
 import svgoConfig from './svgoConfig';
 
+const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
+if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
+
 type IconComponentSetChildShape = {
   metadata: { unicode: number };
   props: { active?: boolean; size: number };
@@ -54,6 +58,29 @@ function getOutputKey(item: IconComponentSetChild) {
   const kebabCaseKey = `svg-${propsSuffix}`;
   return camelCase(kebabCaseKey);
 }
+
+/**
+ * Note: updateCoinbaseIconsFile is a script that updates Icon fonts (CoinbaseIcons) on CDS mobile playground.
+ * This is necessary to keep the CDS mobile playground Icon fonts up to date with our CDS Icons package.
+ * We copy the packages/icons/fonts/native/CoinbaseIcons.ttf file and Replace apps/mobile-app/assets/fonts/CoinbaseIcons.ttf
+ */
+
+const updateCoinbaseIconsFile = () => {
+  try {
+    console.info('Updating apps/mobile-app/assets/fonts/CoinbaseIcons.ttf...');
+
+    const sourcePath = path.resolve(MONOREPO_ROOT, 'packages/icons/fonts/native/CoinbaseIcons.ttf');
+    const destinationPath = path.resolve(
+      MONOREPO_ROOT,
+      'apps/mobile-app/assets/fonts/CoinbaseIcons.ttf',
+    );
+
+    fs.copyFileSync(sourcePath, destinationPath);
+    console.info('CoinbaseIcons.ttf file successfully updated!');
+  } catch (err) {
+    throw new Error(`Error updating CoinbaseIcons.ttf file in mobile-app/assets/fonts/: ${err}`);
+  }
+};
 
 async function getHashSourceItem(id: string, syncedLibrary: SyncedLibrary) {
   return getIdMappedSvg(id, syncedLibrary, svgoConfig);
@@ -241,6 +268,9 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
     codegenHeader,
     processor: fontProcessor,
   });
+
+  // Update CDS Mobile Playground with new Coinbase Icons ttf file.
+  updateCoinbaseIconsFile();
 
   await Promise.all([
     manifest.generateFile(task),
