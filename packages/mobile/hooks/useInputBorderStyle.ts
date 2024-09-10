@@ -7,11 +7,15 @@ import { useInputBorderAnimation } from './useInputBorderAnimation';
 /**
  *
  * @param focused
+ * @param initialVariant
+ * @param focusedVariant
+ * @param bordered
  */
 export const useInputBorderStyle = (
   focused: boolean,
   initialVariant: InputVariant,
   focusedVariant: InputVariant,
+  bordered = true,
 ) => {
   const {
     animateInputBorderIn,
@@ -29,17 +33,18 @@ export const useInputBorderStyle = (
         : initialVariant === 'secondary'
         ? 'transparent'
         : unFocusedBorderRgba,
-      borderWidth: inputBorderWidth,
+      borderWidth: bordered ? inputBorderWidth : 0,
     };
-  }, [focused, focusedBorderRgba, initialVariant, unFocusedBorderRgba]);
+  }, [focused, focusedBorderRgba, initialVariant, unFocusedBorderRgba, bordered]);
 
   /** Border style for when input is focused */
   const borderFocusedStyle = useMemo(() => {
     return {
       opacity: focusedBorderOpacity,
       borderColor: focusedBorderRgba,
+      borderWidth: bordered ? inputBorderWidth : 0,
     };
-  }, [focusedBorderOpacity, focusedBorderRgba]);
+  }, [focusedBorderOpacity, focusedBorderRgba, bordered]);
 
   useEffect(() => {
     if (focused) {

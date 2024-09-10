@@ -351,6 +351,9 @@ const InputScreen = () => {
       <Example inline title="TextInput Custom Background">
         <MockTextInput label="Username" placeholder="john.doe@coinbase.com" style={customStyle} />
       </Example>
+      <Example inline title="TextInput without border">
+        <MockTextInput bordered={false} label="Username" placeholder="john.doe@coinbase.com" />
+      </Example>
     </ExampleScreen>
   );
 };

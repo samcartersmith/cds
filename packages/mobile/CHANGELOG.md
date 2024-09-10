@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.40.0 (9/10/2024 PST)
+
+#### 🚀 Updates
+
+- TextInput: support for bordered prop. [[#3256](https://github.cbhq.net/frontend/cds/pull/3256)] [[DX-4166](https://jira.coinbase-corp.com/browse/DX-4166)]
+
 ## 6.39.0 ((9/5/2024, 07:40 AM PST))
 
 This is an artificial version bump with no new change.

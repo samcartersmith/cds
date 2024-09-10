@@ -49,6 +49,11 @@ export type TextInputProps = {
    * Use this to workaround the issue where long text does not ellipsis in TextInput
    */
   textAlign?: RNTextInputProps['textAlign'] | 'unset';
+  /**
+   * Determines if the input should have a border
+   * @default true
+   */
+  bordered?: boolean;
 } & TextInputBaseProps &
   Omit<RNTextInputProps, 'value' | 'onChange' | 'onChangeText' | 'textAlign'>;
 
@@ -72,6 +77,7 @@ export const TextInput = memo(
         borderRadius,
         enableColorSurge = false,
         helperTextErrorIconAccessibilityLabel = 'error',
+        bordered,
         ...editableInputProps
       }: TextInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -84,6 +90,7 @@ export const TextInput = memo(
         focused,
         variant,
         focusedVariant,
+        bordered,
       );
 
       const editableInputAddonProps = {
