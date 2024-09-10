@@ -348,7 +348,7 @@
     },
     {
       "name": "ErrorBoundary",
-      "sourceFile": "components/ErrorBoundary",
+      "sourceFile": "@cbhq/shared/components/ErrorBoundary",
       "totalInstances": 3,
       "totalCallSites": 2,
       "callSites": {

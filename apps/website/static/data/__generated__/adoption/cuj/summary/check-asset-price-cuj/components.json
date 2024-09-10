@@ -603,7 +603,7 @@
     },
     {
       "name": "ErrorBoundary",
-      "sourceFile": "components/ErrorBoundary",
+      "sourceFile": "@cbhq/shared/components/ErrorBoundary",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {

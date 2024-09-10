@@ -23,8 +23,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 65,
-      "totalCallSites": 41,
+      "totalInstances": 64,
+      "totalCallSites": 40,
       "cds": "@cbhq/cds-web/layout/VStack",
       "presentationalProps": [
         {
@@ -40,15 +40,15 @@
         {
           "aliasPath": "views/AdvancedPortfolio/components/layout.tsx",
           "callSites": [
-            "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx",
-            "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx"
+            "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx",
+            "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx"
           ]
         },
         {
           "aliasPath": "views/AdvancedPortfolio/components/layout.tsx",
           "callSites": [
-            "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx",
-            "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx"
+            "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx",
+            "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx"
           ]
         },
         {
@@ -76,12 +76,12 @@
         "views/AdvancedPortfolio/components/FinPromPerformanceDisclaimer.tsx": 1,
         "views/AdvancedPortfolio/components/denseLayout.tsx": 1,
         "views/AdvancedPortfolio/components/layout.tsx": 3,
-        "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 3,
         "views/AdvancedPortfolio/components/CollapsibleContainer/CollapsibleContainer.tsx": 1,
-        "views/AdvancedPortfolio/components/DataTable/DataTable.tsx": 1,
-        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
+        "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 3,
         "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 2,
         "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/DataTable.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
         "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1,
         "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable.tsx": 1,
         "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
@@ -90,7 +90,6 @@
         "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/components/AdvancedFiatAccountsSection.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/DefaultPortfolio.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 2,
@@ -101,10 +100,10 @@
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioSelector.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 4,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionTabs.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 3,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/UserPortfolio.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioDelete/components/PortfolioNonZeroBalanceModal.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 2,
@@ -121,7 +120,6 @@
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 2,
           "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 1,
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 3,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/OnboardingStep.tsx": 3,
@@ -154,7 +152,6 @@
         },
         "flexGrow": {
           "views/AdvancedPortfolio/components/layout.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioSelector.tsx": 1
         },
         "style": {
@@ -212,12 +209,6 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/components/FuturesTableNUX.tsx": 1
         },
-        "offsetHorizontal": {
-          "views/AdvancedPortfolio/components/DataTable/DataTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioSelector.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
-        },
         "testID": {
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/components/AdvancedFiatAccountsSection.tsx": 1,
@@ -229,6 +220,12 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTabs/IntxPortfolioTabs.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 2
+        },
+        "offsetHorizontal": {
+          "views/AdvancedPortfolio/components/DataTable/DataTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioSelector.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
         },
         "spacingBottom": {
           "views/AdvancedPortfolio/components/MultiPortfolioDisclaimerV2/MultiPortfolioDisclaimerV2.tsx": 1,
@@ -279,8 +276,8 @@
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "views/AdvancedPortfolio/components/FinPromPerformanceDisclaimer.tsx": 3,
-        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
         "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
         "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/components/AdvancedFiatAccountSectionRow.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 2,
@@ -302,8 +299,8 @@
       "propsWithCallSites": {
         "as": {
           "views/AdvancedPortfolio/components/FinPromPerformanceDisclaimer.tsx": 3,
-          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
           "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/components/AdvancedFiatAccountSectionRow.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 2,
@@ -369,8 +366,8 @@
     {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
-      "totalInstances": 6,
-      "totalCallSites": 4,
+      "totalInstances": 5,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-web/typography/Link",
       "aliasedCdsComponents": [
         {
@@ -380,7 +377,6 @@
       ],
       "callSites": {
         "views/AdvancedPortfolio/components/FinPromPerformanceDisclaimer.tsx": 2,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useUserFuturesTableData.tsx": 2
       },
@@ -391,17 +387,13 @@
         "openInNewWindow": {
           "views/AdvancedPortfolio/components/FinPromPerformanceDisclaimer.tsx": 2
         },
-        "to": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
-        },
-        "onClick": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1
-        },
         "testID": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
         },
         "variant": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
+        },
+        "to": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
         },
         "onPress": {
@@ -428,15 +420,15 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 54,
+      "totalInstances": 51,
       "totalCallSites": 34,
       "cds": "@cbhq/cds-web/layout/HStack",
       "aliasedCdsComponents": [
         {
           "aliasPath": "views/AdvancedPortfolio/components/layout.tsx",
           "callSites": [
-            "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx",
-            "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx"
+            "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx",
+            "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx"
           ]
         },
         {
@@ -449,37 +441,37 @@
       "callSites": {
         "views/AdvancedPortfolio/components/layout.tsx": 1,
         "views/AdvancedPortfolio/components/CollapsibleContainer/CollapsibleContainer.tsx": 4,
-        "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
         "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
         "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
         "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable.tsx": 1,
         "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
         "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 2,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 3,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/OnboardingStep.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioRenameModal/PortfolioRenameModal.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 3,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 3,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedAccountRow.tsx": 4,
         "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 2,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 2,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 2,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
       },
       "propsWithCallSites": {
@@ -493,15 +485,15 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
         },
         "justifyContent": {
           "views/AdvancedPortfolio/components/CollapsibleContainer/CollapsibleContainer.tsx": 4,
-          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
           "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable.tsx": 1,
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1,
@@ -515,13 +507,12 @@
         },
         "alignItems": {
           "views/AdvancedPortfolio/components/CollapsibleContainer/CollapsibleContainer.tsx": 4,
-          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
           "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
           "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1,
@@ -548,13 +539,10 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1
         },
-        "overflow": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1
-        },
         "width": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
           "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
@@ -562,6 +550,9 @@
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
+        },
+        "overflow": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1
         },
         "spacingVertical": {
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable.tsx": 1,
@@ -576,14 +567,13 @@
         },
         "spacing": {
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
         },
@@ -593,12 +583,8 @@
         },
         "gap": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
-        },
-        "spacingTop": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1
         },
         "offset": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 1,
@@ -623,51 +609,6 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextLabel1",
-      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
-      "totalInstances": 4,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/typography/TextLabel1",
-      "callSites": {
-        "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 2,
-        "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
-      },
-      "propsWithCallSites": {
-        "as": {
-          "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 2,
-          "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
-        },
-        "color": {
-          "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
-        },
-        "spacingHorizontal": {
-          "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1
-        },
-        "noWrap": {
-          "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1
-        },
-        "transform": {
-          "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "TextTitle1",
-      "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/typography/TextTitle1",
-      "propsWithCallSites": {
-        "as": {
-          "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 1
         }
       }
     },
@@ -735,96 +676,61 @@
       }
     },
     {
-      "name": "Tooltip",
-      "sourceFile": "@cbhq/cds-web/overlays/Tooltip",
+      "name": "TextLabel1",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel1",
       "totalInstances": 4,
-      "totalCallSites": 4,
-      "cds": "@cbhq/cds-web/overlays/Tooltip",
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/typography/TextLabel1",
       "callSites": {
-        "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
-        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
-        "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+        "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 2,
+        "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
       },
       "propsWithCallSites": {
-        "content": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
-          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+        "as": {
+          "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 2,
+          "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
         },
-        "placement": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+        "color": {
+          "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 2,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
+        },
+        "spacingHorizontal": {
+          "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1
+        },
+        "noWrap": {
+          "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1
+        },
+        "transform": {
+          "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
         }
       }
     },
     {
-      "name": "Icon",
-      "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 11,
-      "totalCallSites": 9,
-      "cds": "@cbhq/cds-web/icons/Icon",
-      "callSites": {
-        "views/AdvancedPortfolio/components/DataTable/DataTableCellSortIcon.tsx": 1,
-        "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
-      },
+      "name": "TextTitle1",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextTitle1",
       "propsWithCallSites": {
-        "size": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableCellSortIcon.tsx": 1,
-          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
-        },
-        "name": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableCellSortIcon.tsx": 1,
-          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
-        },
-        "color": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableCellSortIcon.tsx": 1,
-          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
-        },
-        "spacingStart": {
-          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1
+        "as": {
+          "views/AdvancedPortfolio/components/AdvancedBalancesCard/AdvancedBalancesCard.tsx": 1
         }
       }
     },
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 22,
-      "totalCallSites": 17,
+      "totalInstances": 20,
+      "totalCallSites": 16,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
       "callSites": {
-        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 2,
         "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 2,
+        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 2,
         "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 2,
@@ -833,22 +739,17 @@
         "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/InlineActionButton.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/TransferButton.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/components/FuturesTableNUX.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1
       },
       "propsWithCallSites": {
-        "spacingBottom": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
-          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1
-        },
         "as": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 2,
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 2,
+          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 2,
           "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 2,
@@ -857,10 +758,14 @@
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/InlineActionButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/TransferButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/components/FuturesTableNUX.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1
+        },
+        "spacingBottom": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
+          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1
         },
         "color": {
           "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
@@ -893,9 +798,9 @@
       "totalCallSites": 9,
       "cds": "@cbhq/cds-web/layout/Spacer",
       "callSites": {
-        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
         "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
         "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 1,
@@ -904,231 +809,15 @@
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1
       },
       "propsWithCallSites": {
-        "horizontal": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1
-        },
         "vertical": {
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
           "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Fallback",
-      "sourceFile": "@cbhq/cds-web/layout/Fallback",
-      "totalInstances": 14,
-      "totalCallSites": 5,
-      "cds": "@cbhq/cds-web/layout/Fallback",
-      "callSites": {
-        "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1,
-        "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 4,
-        "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 3,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 5,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1
         },
-        "height": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1,
-          "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 4,
-          "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 3,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 5,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1
-        },
-        "width": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1,
-          "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 4,
-          "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 3,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 5,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1
-        },
-        "percentage": {
-          "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1
-        },
-        "key": {
-          "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1
-        },
-        "shape": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "Popover",
-      "sourceFile": "@cbhq/cds-web/overlays/popover/Popover",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/overlays/popover/Popover",
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx",
-          "callSites": [
-            "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx",
-            "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx",
-            "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx",
-            "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx",
-            "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx"
-          ]
-        }
-      ],
-      "callSites": {
-        "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-        "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-      },
-      "propsWithCallSites": {
-        "contentPosition": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "onMouseEnter": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "onMouseLeave": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "onFocus": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
-        },
-        "onBlur": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "onMouseDown": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "invertPopoverSpectrum": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "visible": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "content": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "disablePortal": {
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Box",
-      "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 16,
-      "totalCallSites": 14,
-      "cds": "@cbhq/cds-web/layout/Box",
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx"
-        }
-      ],
-      "aliasedCdsComponents": [
-        {
-          "aliasPath": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx",
-          "callSites": []
-        }
-      ],
-      "callSites": {
-        "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-        "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 3,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedAccountRow.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1
-      },
-      "propsWithCallSites": {
-        "spacing": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
-        },
-        "borderRadius": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1
-        },
-        "flexDirection": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
-        },
-        "style": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
-        },
-        "background": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1
-        },
-        "elevation": {
-          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
-        },
-        "spacingHorizontal": {
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "spacingVertical": {
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "maxWidth": {
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "testID": {
-          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "display": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        },
-        "width": {
+        "horizontal": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1
-        },
-        "height": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1
-        },
-        "spacingBottom": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1
-        },
-        "spacingStart": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        },
-        "alignItems": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        },
-        "flexGrow": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1
-        },
-        "spacingTop": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 1
-        },
-        "justifyContent": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1
         }
       }
     },
@@ -1139,13 +828,21 @@
       "totalCallSites": 3,
       "cds": "@cbhq/cds-web/typography/TextLabel2",
       "callSites": {
-        "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
         "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
+          "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
           "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
+        },
+        "color": {
+          "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
+        },
+        "transform": {
           "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
         },
@@ -1157,14 +854,6 @@
         },
         "accessibilityLabel": {
           "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
-        },
-        "color": {
-          "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
-        },
-        "transform": {
-          "views/AdvancedPortfolio/components/InformationCard/InformationCard.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow.tsx": 1
         }
       }
     },
@@ -1234,6 +923,289 @@
       }
     },
     {
+      "name": "Fallback",
+      "sourceFile": "@cbhq/cds-web/layout/Fallback",
+      "totalInstances": 14,
+      "totalCallSites": 5,
+      "cds": "@cbhq/cds-web/layout/Fallback",
+      "callSites": {
+        "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 4,
+        "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1,
+        "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 3,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 5,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1
+      },
+      "propsWithCallSites": {
+        "height": {
+          "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 4,
+          "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1,
+          "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 3,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 5,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1
+        },
+        "width": {
+          "views/AdvancedPortfolio/components/InformationCard/InformationCardLoadingFallback.tsx": 4,
+          "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1,
+          "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 3,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 5,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1
+        },
+        "spacing": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1
+        },
+        "percentage": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableRowsFallback.tsx": 1
+        },
+        "key": {
+          "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTableLoadingFallback.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback.tsx": 1
+        },
+        "shape": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "Tooltip",
+      "sourceFile": "@cbhq/cds-web/overlays/Tooltip",
+      "totalInstances": 4,
+      "totalCallSites": 4,
+      "cds": "@cbhq/cds-web/overlays/Tooltip",
+      "callSites": {
+        "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
+        "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+      },
+      "propsWithCallSites": {
+        "content": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx": 1,
+          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+        },
+        "placement": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-web/icons/Icon",
+      "totalInstances": 10,
+      "totalCallSites": 8,
+      "cds": "@cbhq/cds-web/icons/Icon",
+      "callSites": {
+        "views/AdvancedPortfolio/components/DataTable/DataTableCellSortIcon.tsx": 1,
+        "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
+      },
+      "propsWithCallSites": {
+        "size": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableCellSortIcon.tsx": 1,
+          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
+        },
+        "name": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableCellSortIcon.tsx": 1,
+          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
+        },
+        "color": {
+          "views/AdvancedPortfolio/components/DataTable/DataTableCellSortIcon.tsx": 1,
+          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 2,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderUI.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxTransactionFilter.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
+        },
+        "spacingStart": {
+          "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Popover",
+      "sourceFile": "@cbhq/cds-web/overlays/popover/Popover",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/overlays/popover/Popover",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx",
+          "callSites": [
+            "views/AdvancedPortfolio/components/DataTable/DataTableBodyCell.tsx",
+            "views/AdvancedPortfolio/components/DataTable/DataTableHeaderCell.tsx",
+            "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx",
+            "views/AdvancedPortfolio/components/TableBalanceHeader/TableBalanceHeader.tsx",
+            "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx"
+          ]
+        }
+      ],
+      "callSites": {
+        "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+      },
+      "propsWithCallSites": {
+        "contentPosition": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "onMouseEnter": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "onMouseLeave": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "onFocus": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
+        },
+        "onBlur": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "onMouseDown": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "invertPopoverSpectrum": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "visible": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "content": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "disablePortal": {
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 13,
+      "totalCallSites": 13,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx"
+        }
+      ],
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx",
+          "callSites": []
+        }
+      ],
+      "callSites": {
+        "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+        "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedAccountRow.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1
+      },
+      "propsWithCallSites": {
+        "spacing": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
+        },
+        "borderRadius": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1
+        },
+        "flexDirection": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
+        },
+        "style": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
+        },
+        "background": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1,
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1
+        },
+        "elevation": {
+          "views/AdvancedPortfolio/components/DataTable/RowActionTooltip.tsx": 1
+        },
+        "spacingHorizontal": {
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "spacingVertical": {
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "maxWidth": {
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "testID": {
+          "views/AdvancedPortfolio/components/DataTable/TooltipNoAnimation.tsx": 1
+        },
+        "display": {
+          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1
+        },
+        "width": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1
+        },
+        "height": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1
+        },
+        "spacingTop": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/MultiPortfolioNudgeCard/MultiPortfolioNudgeCard.tsx": 1
+        },
+        "justifyContent": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1
+        },
+        "alignItems": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioItem.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        },
+        "spacingStart": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Banner",
       "sourceFile": "@cbhq/cds-web/banner/Banner",
       "totalInstances": 1,
@@ -1257,8 +1229,8 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 23,
-      "totalCallSites": 18,
+      "totalInstances": 24,
+      "totalCallSites": 17,
       "cds": "@cbhq/cds-web/buttons/Button",
       "aliasedCdsComponents": [
         {
@@ -1283,6 +1255,7 @@
         "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedTradeButton/AdvancedTradeButton.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetTransferButton/AssetTransferButton.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 3,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/ErrorStep.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/OnboardingStep.tsx": 1,
@@ -1294,15 +1267,14 @@
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioDelete/components/PortfolioNonZeroBalanceModal.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1
       },
       "propsWithCallSites": {
         "variant": {
           "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedTradeButton/AdvancedTradeButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetTransferButton/AssetTransferButton.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 3,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/ErrorStep.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 3,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/StablecoinBuySellButton/StablecoinBuySellButton.tsx": 1,
@@ -1310,15 +1282,14 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1
         },
         "compact": {
           "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedTradeButton/AdvancedTradeButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetTransferButton/AssetTransferButton.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 3,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/ErrorStep.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/OnboardingStep.tsx": 1,
@@ -1329,15 +1300,14 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/CryptoTableNUX.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX.tsx": 1
         },
         "onPress": {
           "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedTradeButton/AdvancedTradeButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetTransferButton/AssetTransferButton.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/ErrorStep.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/OnboardingStep.tsx": 1,
@@ -1352,14 +1322,13 @@
         },
         "testID": {
           "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/OnboardingStep.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioRenameModal/PortfolioRenameModal.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioDelete/components/PortfolioNonZeroBalanceModal.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioDelete/components/PortfolioNonZeroBalanceModal.tsx": 1
         },
         "transparent": {
           "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable.tsx": 2
@@ -1374,6 +1343,7 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 1
         },
         "loading": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/CreatePortfolioStep.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioRenameModal/PortfolioRenameModal.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 2
@@ -1514,6 +1484,26 @@
       }
     },
     {
+      "name": "Spinner",
+      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/loaders/Spinner",
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1
+      },
+      "propsWithCallSites": {
+        "size": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1
+        },
+        "color": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback.tsx": 1
+        }
+      }
+    },
+    {
       "name": "CellMedia",
       "sourceFile": "@cbhq/cds-web/cells/CellMedia",
       "totalInstances": 3,
@@ -1537,26 +1527,6 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn/AssetNameTableColumn.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedAccountRow.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Spinner",
-      "sourceFile": "@cbhq/cds-web/loaders/Spinner",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/loaders/Spinner",
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1
-      },
-      "propsWithCallSites": {
-        "size": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1
-        },
-        "color": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback.tsx": 1
         }
       }
     },
@@ -1586,14 +1556,14 @@
       "cds": "@cbhq/cds-web/tag/Tag",
       "callSites": {
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1
       },
       "propsWithCallSites": {
         "colorScheme": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/hooks/useFuturesTableProps.tsx": 1
         }
       }
     },
@@ -2533,15 +2503,15 @@
       "totalCallSites": 4,
       "callSites": {
         "views/AdvancedPortfolio/AdvancedPortfolio.tsx": 2,
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/AdvancedPortfolioView.tsx": 1
       },
       "propsWithCallSites": {
         "to": {
           "views/AdvancedPortfolio/AdvancedPortfolio.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/AdvancedPortfolioView.tsx": 1
         }
       }
@@ -2710,14 +2680,20 @@
     {
       "name": "LazyDepositReceiveModal",
       "sourceFile": "views/AdvancedTrade/components/DepositAndWithdrawalFlow/DepositReceiveModal/LazyDepositReceiveModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/utils/useShowUSDCModal.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1
+      },
       "propsWithCallSites": {
         "assetCode": {
-          "views/AdvancedPortfolio/utils/useShowUSDCModal.tsx": 1
+          "views/AdvancedPortfolio/utils/useShowUSDCModal.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1
         },
         "entryPoint": {
-          "views/AdvancedPortfolio/utils/useShowUSDCModal.tsx": 1
+          "views/AdvancedPortfolio/utils/useShowUSDCModal.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1
         }
       }
     },
@@ -3279,13 +3255,14 @@
     {
       "name": "AdvancedBoundaryWithSuspense",
       "sourceFile": "views/Advanced/components/AdvancedBoundary/AdvancedBoundaryWithSuspense",
-      "totalInstances": 29,
-      "totalCallSites": 28,
+      "totalInstances": 30,
+      "totalCallSites": 29,
       "callSites": {
         "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AvailableMarginCard/AvailableMarginCard.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/ConsumerPortfolio.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/DefaultPortfolio.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1,
@@ -3293,19 +3270,19 @@
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/INTXPortfolio.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/OpenOrderCard/OpenOrderCard.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/UserPortfolio.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxPortfolioTransactions.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1,
@@ -3314,9 +3291,10 @@
       "propsWithCallSites": {
         "owner": {
           "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AvailableMarginCard/AvailableMarginCard.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/ConsumerPortfolio.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/DefaultPortfolio.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1,
@@ -3324,19 +3302,19 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/INTXPortfolio.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/OpenOrderCard/OpenOrderCard.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/UserPortfolio.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxPortfolioTransactions.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1,
@@ -3344,9 +3322,10 @@
         },
         "name": {
           "views/AdvancedPortfolio/components/OpenOrdersADPTable/OpenOrdersADPTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AvailableMarginCard/AvailableMarginCard.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/ConsumerPortfolio.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/DefaultPortfolio.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1,
@@ -3354,19 +3333,44 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/INTXPortfolio.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/OpenOrderCard/OpenOrderCard.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 2,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/UserPortfolio.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxPortfolioTransactions.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
+        },
+        "suspenseFallback": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AvailableMarginCard/AvailableMarginCard.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/OpenOrderCard/OpenOrderCard.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxPortfolioTransactions.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1,
@@ -3374,31 +3378,8 @@
         },
         "hideFallback": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/AdvancedPortfolioHeaderBarActions.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 1
-        },
-        "suspenseFallback": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AvailableMarginCard/AvailableMarginCard.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCard.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/PerpsFeeTierRow.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/OpenOrderCard/OpenOrderCard.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioTransferButtonGroup/PortfolioTransferButtonGroup.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerTotalBalanceHeader/ConsumerTotalBalanceHeader.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxPortfolioTransactions.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
         },
         "errorFallback": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
@@ -3525,139 +3506,19 @@
       "totalInstances": 3,
       "totalCallSites": 3,
       "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/AdvancedPortfolioView.tsx": 1
       },
       "propsWithCallSites": {
         "title": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/AdvancedPortfolioView.tsx": 1
         },
         "showBackButton": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "LayoutStackContainer",
-      "sourceFile": "views/AdvancedPortfolio/components/layout/LayoutStackContainer",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-      }
-    },
-    {
-      "name": "LeftStack",
-      "sourceFile": "views/AdvancedPortfolio/components/layout/LeftStack",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-      }
-    },
-    {
-      "name": "AdvancedAssetBalances",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "assetSlug": {
+          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
-        },
-        "assetUuid": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
-        },
-        "viewerAssetRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetPerformance",
-      "sourceFile": "views/AssetPage/components/AssetPerformance",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "viewerAssetRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
-        },
-        "spacingTop": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "OpenOrdersADPTable",
-      "sourceFile": "views/AdvancedPortfolio/components/OpenOrdersADPTable",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-      },
-      "propsWithCallSites": {
-        "symbol": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-        },
-        "queryRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AccountActivity",
-      "sourceFile": "views/WalletsBalances/components/AccountActivity",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "accountId": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "RightStack",
-      "sourceFile": "views/AdvancedPortfolio/components/layout/RightStack",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-      }
-    },
-    {
-      "name": "SendOrDepositContent",
-      "sourceFile": "views/AssetPagePortfolio/components/SendOrDepositContent",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-      },
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-        },
-        "accountRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-        },
-        "allowRedirect": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
-        },
-        "entryPoint": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
         }
       }
     },
@@ -3670,6 +3531,26 @@
         "queryRef": {
           "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
         }
+      }
+    },
+    {
+      "name": "LayoutStackContainer",
+      "sourceFile": "views/AdvancedPortfolio/components/layout/LayoutStackContainer",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+      }
+    },
+    {
+      "name": "LeftStack",
+      "sourceFile": "views/AdvancedPortfolio/components/layout/LeftStack",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
       }
     },
     {
@@ -3736,6 +3617,26 @@
       }
     },
     {
+      "name": "OpenOrdersADPTable",
+      "sourceFile": "views/AdvancedPortfolio/components/OpenOrdersADPTable",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+      },
+      "propsWithCallSites": {
+        "symbol": {
+          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        },
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        }
+      }
+    },
+    {
       "name": "TransactionListRedesign",
       "sourceFile": "components/TransactionList/TransactionListRedesign",
       "totalInstances": 1,
@@ -3743,6 +3644,86 @@
       "propsWithCallSites": {
         "queryRef": {
           "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "RightStack",
+      "sourceFile": "views/AdvancedPortfolio/components/layout/RightStack",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+      }
+    },
+    {
+      "name": "SendOrDepositContent",
+      "sourceFile": "views/AssetPagePortfolio/components/SendOrDepositContent",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+      },
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        },
+        "accountRef": {
+          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        },
+        "allowRedirect": {
+          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        },
+        "entryPoint": {
+          "views/AdvancedPortfolio/views/AdvancedAccountDetailsView/AdvancedAccountDetailsView.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AdvancedAssetBalances",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "assetSlug": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        },
+        "assetUuid": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        },
+        "viewerAssetRef": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AssetPerformance",
+      "sourceFile": "views/AssetPage/components/AssetPerformance",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "viewerAssetRef": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        },
+        "spacingTop": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AccountActivity",
+      "sourceFile": "views/WalletsBalances/components/AccountActivity",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "accountId": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/AdvancedAssetDetailsView.tsx": 1
         }
       }
     },
@@ -3861,12 +3842,6 @@
       }
     },
     {
-      "name": "FuturesNonCryptoUpsell",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "OpenOrderCard",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/OpenOrderCard/OpenOrderCard",
       "totalInstances": 1,
@@ -3943,7 +3918,12 @@
       "name": "TradingCompetitionPromoCard",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/AdvancedPortfolioView.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/AdvancedPortfolioView.tsx": 1
+        }
+      }
     },
     {
       "name": "UserPortfolio",
@@ -4079,6 +4059,46 @@
       }
     },
     {
+      "name": "AdvancedAccountRow",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1
+        },
+        "accountRef": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AdvancedWeb3AccountRow",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1
+        },
+        "viewerAssetRef": {
+          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AdvancedAssetBalancesLoadingFallback",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "AdvancedAssetBalancesContent",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "AdvancedPortfolioDepositButton",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton",
       "totalInstances": 1,
@@ -4129,46 +4149,6 @@
           "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/TransferButton.tsx": 1
         }
       }
-    },
-    {
-      "name": "AdvancedAccountRow",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1
-        },
-        "accountRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AdvancedWeb3AccountRow",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/AdvancedWeb3AccountRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1
-        },
-        "viewerAssetRef": {
-          "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AdvancedAssetBalancesLoadingFallback",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalancesLoadingFallback",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "AdvancedAssetBalancesContent",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAssetBalances.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "LazyFuturesAvailableMarginModal",
@@ -4227,6 +4207,38 @@
     {
       "name": "AvailableMarginCardContent",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AvailableMarginCard/AvailableMarginCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LazyDepositTrigger",
+      "sourceFile": "components/DepositWithdraw/LazyDepositTrigger",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1
+        },
+        "entryPoint": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1
+        },
+        "accountRef": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1
+        },
+        "allowRedirect": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CashTableDepositButtonContent",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -4412,55 +4424,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "MarketSelectorV3Badge",
-      "sourceFile": "@cbhq/advanced-trade-web/components/MarketSelectorV3/MarketSelectorV3Badge",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "img",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "src": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1
-        },
-        "width": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1
-        },
-        "height": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "ErrorBoundary",
-      "sourceFile": "components/ErrorBoundary",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
-      },
-      "propsWithCallSites": {
-        "owner": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
-        },
-        "context": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "FuturesNonCryptoUpsellContent",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FuturesNonCryptoUpsell/FuturesNonCryptoUpsell.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "FeeTierCardRow",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/FeeTierCard/FeeTierCardRow",
       "totalInstances": 2,
@@ -4522,6 +4485,12 @@
       }
     },
     {
+      "name": "IntxPortfolioContainer",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioContainer/IntxPortfolioContainer",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "PortfolioCreationModal",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioCreationModal/PortfolioCreationModal",
       "totalInstances": 2,
@@ -4547,6 +4516,12 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioSelector/PortfolioSelector.tsx": 1
         }
       }
+    },
+    {
+      "name": "OpenOrderCardContent",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/OpenOrderCard/OpenOrderCard.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "Steps",
@@ -4657,16 +4632,15 @@
       }
     },
     {
-      "name": "IntxPortfolioContainer",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioContainer/IntxPortfolioContainer",
+      "name": "PortfolioRenameModal",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioRenameModal/PortfolioRenameModal.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "OpenOrderCardContent",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/OpenOrderCard/OpenOrderCard.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onRequestClose": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioRenameModal/PortfolioRenameModal.tsx": 1
+        }
+      }
     },
     {
       "name": "PortfolioRenameModal",
@@ -4705,14 +4679,20 @@
     {
       "name": "ErrorBoundary",
       "sourceFile": "@cbhq/shared/components/ErrorBoundary",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
+      },
       "propsWithCallSites": {
         "owner": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
         },
         "context": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
         }
       }
     },
@@ -4721,17 +4701,6 @@
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioEditMenu/PortfolioEditMenu.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "PortfolioRenameModal",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioRenameModal/PortfolioRenameModal.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onRequestClose": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/PortfolioRenameModal/PortfolioRenameModal.tsx": 1
-        }
-      }
     },
     {
       "name": "PortfolioItem",
@@ -4865,6 +4834,56 @@
       }
     },
     {
+      "name": "TransactionsLoadingFallback",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxPortfolioTransactions.tsx": 1
+      }
+    },
+    {
+      "name": "TransactionTable",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Transactions",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LazyTransactionModalRedesign",
+      "sourceFile": "components/Transaction/LazyTransactionModalRedesign",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "accountHistoryEntryRef": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
+        },
+        "transaction": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
+        },
+        "handleClose": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
+        },
+        "visible": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
+        },
+        "entryPoint": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
+        }
+      }
+    },
+    {
       "name": "PortfolioTable",
       "sourceFile": "views/AdvancedPortfolio/components/PortfolioTable/PortfolioTable",
       "totalInstances": 10,
@@ -4873,8 +4892,8 @@
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
@@ -4886,8 +4905,8 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
@@ -4898,8 +4917,8 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
@@ -4929,8 +4948,8 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
@@ -4941,8 +4960,8 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
@@ -5006,8 +5025,8 @@
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/UserCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/UserPerpsTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/INTXCryptoTable.tsx": 1,
@@ -5105,56 +5124,6 @@
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserFuturesTable/UserFuturesTable.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
-    },
-    {
-      "name": "TransactionsLoadingFallback",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/TransactionsLoadingFallback",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/IntxPortfolioTransactions/IntxPortfolioTransactions.tsx": 1
-      }
-    },
-    {
-      "name": "TransactionTable",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Transactions",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/Transactions.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LazyTransactionModalRedesign",
-      "sourceFile": "components/Transaction/LazyTransactionModalRedesign",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "accountHistoryEntryRef": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
-        },
-        "transaction": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
-        },
-        "handleClose": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
-        },
-        "visible": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
-        },
-        "entryPoint": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/Transactions/useTransactionTableProps.tsx": 1
-        }
-      }
     },
     {
       "name": "TradeButton",
@@ -5380,29 +5349,6 @@
       "totalCallSites": 1
     },
     {
-      "name": "AdvancedPortfolioDepositTrigger",
-      "sourceFile": "components/AdvancedPortfolioDepositTrigger/AdvancedPortfolioDepositTrigger",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "receiveEligible": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
-        },
-        "depositEligible": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
-        },
-        "hideFiatDeposit": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
-        },
-        "assetCode": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
-        },
-        "onClick": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TransferButton",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedAssetDetailsView/components/AdvancedAssetBalances/AdvancedAccountRow/TransferButton",
       "totalInstances": 1,
@@ -5549,6 +5495,35 @@
       }
     },
     {
+      "name": "AdvancedPortfolioDepositTrigger",
+      "sourceFile": "components/AdvancedPortfolioDepositTrigger/AdvancedPortfolioDepositTrigger",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "receiveEligible": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
+        },
+        "depositEligible": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
+        },
+        "hideFiatDeposit": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
+        },
+        "assetCode": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
+        },
+        "onClick": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AdvancedPortfolioHeaderBarActions/components/AdvancedPortfolioDepositButton.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ReactComponent",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/assets/nux.svg/ReactComponent",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "AssetNameTableColumn",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/AssetNameTableColumn",
       "totalInstances": 7,
@@ -5557,9 +5532,9 @@
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/hooks/useCryptoTableProps.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/hooks/useConsumerCashTableProps.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/hooks/useDefaultCashTableProps.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
         "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/hooks/useUserCashTableProps.tsx": 1
       },
       "propsWithCallSites": {
@@ -5567,42 +5542,42 @@
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/hooks/useCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/hooks/useConsumerCashTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/hooks/useDefaultCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/hooks/useUserCashTableProps.tsx": 1
         },
         "symbol": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/hooks/useCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/hooks/useConsumerCashTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/hooks/useDefaultCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/hooks/useUserCashTableProps.tsx": 1
         },
         "imageUrl": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/hooks/useCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/hooks/useConsumerCashTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/hooks/useDefaultCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/hooks/useUserCashTableProps.tsx": 1
         },
         "apy": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/hooks/useCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/hooks/useConsumerCashTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/hooks/useDefaultCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/hooks/useUserCashTableProps.tsx": 1
         },
         "onCellClick": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/hooks/useCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/hooks/useConsumerCashTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/hooks/useDefaultCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/hooks/useINTXCashTableProps.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCryptoTable/hooks/useINTXCryptoTableProps.tsx": 1,
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/hooks/useUserCashTableProps.tsx": 1
         },
         "accessory": {
@@ -5646,10 +5621,61 @@
       }
     },
     {
-      "name": "ReactComponent",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/assets/nux.svg/ReactComponent",
+      "name": "LiquidationDetailModal",
+      "sourceFile": "views/Advanced/surfaces/perpetual-futures/components/LiquidationDetailModal",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 2
+      },
+      "propsWithCallSites": {
+        "visible": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 2
+        },
+        "onClose": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 2
+        },
+        "selectedPosition": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "PerpsSocialPNLCardModal",
+      "sourceFile": "views/Advanced/surfaces/perpetual-futures/components/PerpsSocialPNLCardModal/PerpsSocialPNLCardModal",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "visible": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        },
+        "onClose": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        },
+        "position": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        },
+        "market": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        },
+        "showQRCode": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ClosePositionModal",
+      "sourceFile": "views/AdvancedPositions/ClosePositionModal/ClosePositionModal",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "onClose": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        },
+        "position": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        }
+      }
     },
     {
       "name": "PositionsDetailModal",
@@ -5738,61 +5764,81 @@
       }
     },
     {
-      "name": "LiquidationDetailModal",
-      "sourceFile": "views/Advanced/surfaces/perpetual-futures/components/LiquidationDetailModal",
-      "totalInstances": 2,
-      "totalCallSites": 1,
+      "name": "FinPromUkDisclaimer",
+      "sourceFile": "components/Stablecoin/Assets/FinPromUkDisclaimer",
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 2
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
+      }
+    },
+    {
+      "name": "CashTableContent",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ConsumerCryptoTableNUX",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "portfolioUuid": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CryptoTableContent",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "CashTableDepositButton",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/CashTableDepositButton/CashTableDepositButton",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
       },
       "propsWithCallSites": {
-        "visible": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 2
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
         },
-        "onClose": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 2
-        },
-        "selectedPosition": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 2
+        "sideButtons": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
         }
       }
     },
     {
-      "name": "PerpsSocialPNLCardModal",
-      "sourceFile": "views/Advanced/surfaces/perpetual-futures/components/PerpsSocialPNLCardModal/PerpsSocialPNLCardModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "name": "StablecoinBuySellButton",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/StablecoinBuySellButton/StablecoinBuySellButton",
+      "totalInstances": 4,
+      "totalCallSites": 2,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 2,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 2
+      },
       "propsWithCallSites": {
-        "visible": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        },
-        "onClose": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        },
-        "position": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        },
-        "market": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        },
-        "showQRCode": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
+        "queryRef": {
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 2,
+          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 2
         }
       }
     },
     {
-      "name": "ClosePositionModal",
-      "sourceFile": "views/AdvancedPositions/ClosePositionModal/ClosePositionModal",
+      "name": "CashTableContent",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "onClose": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        },
-        "position": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPerpsTable/hooks/usePerpsTableProps.tsx": 1
-        }
-      }
+      "totalCallSites": 1
     },
     {
       "name": "TotalBalanceHeaderUI",
@@ -5897,82 +5943,8 @@
       "totalCallSites": 1
     },
     {
-      "name": "ConsumerCryptoTableNUX",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTableNUX",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "portfolioUuid": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CryptoTableContent",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCryptoTable/ConsumerCryptoTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "FinPromUkDisclaimer",
-      "sourceFile": "components/Stablecoin/Assets/FinPromUkDisclaimer",
-      "totalInstances": 4,
-      "totalCallSites": 4,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 1
-      }
-    },
-    {
-      "name": "CashTableContent",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/ConsumerPortfolio/components/ConsumerCashTable/ConsumerCashTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "StablecoinBuySellButton",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/StablecoinBuySellButton/StablecoinBuySellButton",
-      "totalInstances": 4,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 2,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 2
-      },
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx": 2,
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserCashTable/UserCashTable.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "CashTableContent",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCashTable/DefaultCashTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "DefaultCryptoTableContent",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultCryptoTable/DefaultCryptoTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "TotalBalanceHeaderLoadingFallback",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback",
-      "totalInstances": 3,
-      "totalCallSites": 3,
-      "callSites": {
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
-        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
-      }
-    },
-    {
-      "name": "TotalBalanceHeaderContent",
-      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -6008,6 +5980,23 @@
     {
       "name": "CashTableContent",
       "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXCashTable/INTXCashTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "TotalBalanceHeaderLoadingFallback",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/TotalBalanceHeader/TotalBalanceHeaderLoadingFallback",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/INTXPortfolio/components/INTXTotalBalanceHeader/INTXTotalBalanceHeader.tsx": 1,
+        "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserPortfolio/components/UserTotalBalanceHeader/UserTotalBalanceHeader.tsx": 1
+      }
+    },
+    {
+      "name": "TotalBalanceHeaderContent",
+      "sourceFile": "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/DefaultPortfolio/components/DefaultTotalBalanceHeader/DefaultTotalBalanceHeader.tsx",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -6162,9 +6151,6 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "assetInfo": {
-          "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/SpotSocialPNLCardModal/SpotSocialPNLCardModal.tsx": 1
-        },
-        "shareableMessage": {
           "views/AdvancedPortfolio/views/AdvancedPortfolioViewV2/components/UserCryptoTable/components/SpotSocialPNLCardModal/SpotSocialPNLCardModal.tsx": 1
         },
         "shareableLink": {

@@ -3,7 +3,7 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 140,
+      "totalInstances": 152,
       "totalCallSites": 49,
       "cds": "@cbhq/cds-web/layout/VStack",
       "aliasedCdsComponents": [
@@ -56,15 +56,15 @@
         "views/YieldCenter/flows/MissedEarnings/steps/SuccessStep.tsx": 2,
         "components/StakingV2/Stake/StakingFlow.tsx": 1,
         "components/StakingV2/Stake/StakingInfo.tsx": 3,
-        "components/StakingV2/Stake/StakingInput.tsx": 4,
-        "components/StakingV2/Stake/StakingIntro.tsx": 8,
-        "components/StakingV2/Stake/StakingPreview.tsx": 7,
+        "components/StakingV2/Stake/StakingInput.tsx": 8,
+        "components/StakingV2/Stake/StakingIntro.tsx": 7,
+        "components/StakingV2/Stake/StakingPreview.tsx": 8,
         "components/StakingV2/Stake/components/StakingPreviewAutoStakingToggle.tsx": 1,
         "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 11,
         "components/StakingV2/Unstake/UnstakingFooter.tsx": 3,
         "components/StakingV2/Unstake/UnstakingInfo.tsx": 3,
-        "components/StakingV2/Unstake/UnstakingInput.tsx": 4,
-        "components/StakingV2/Unstake/UnstakingPreview.tsx": 5,
+        "components/StakingV2/Unstake/UnstakingInput.tsx": 8,
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 9,
         "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 3,
         "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 6,
         "components/WrappedAsset/steps/WrappedStatus/WrappedStatus.tsx": 3,
@@ -94,7 +94,7 @@
           "views/YieldCenter/components/MissedEarningsBanner/MissedEarningsBanner.tsx": 1,
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
-          "components/StakingV2/Stake/StakingIntro.tsx": 2,
+          "components/StakingV2/Stake/StakingIntro.tsx": 1,
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 3,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapPreview/UnwrapPreviewV2.tsx": 1,
@@ -124,12 +124,13 @@
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
           "views/YieldCenter/components/YieldCenterNuxCard/YieldCenterNuxCard.tsx": 1,
           "components/StakingV2/Stake/StakingInfo.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 3,
+          "components/StakingV2/Stake/StakingInput.tsx": 6,
+          "components/StakingV2/Stake/StakingIntro.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 4,
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 3,
+          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 4,
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 3,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 3
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 6,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 4
         },
         "borderedTop": {
           "views/YieldCenter/components/EarningSectionList/EarningSectionList.tsx": 1
@@ -140,14 +141,14 @@
           "views/YieldCenter/components/MissedEarningsBanner/MissedEarningsBanner.tsx": 1,
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 2,
           "components/StakingV2/Stake/StakingInfo.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Stake/StakingInput.tsx": 4,
           "components/StakingV2/Stake/StakingIntro.tsx": 2,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
           "components/StakingV2/Stake/components/StakingPreviewAutoStakingToggle.tsx": 1,
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 1,
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 4,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 3
         },
         "spacingBottom": {
           "views/YieldCenter/components/EarningSectionList/EarningSectionList.tsx": 1,
@@ -157,12 +158,14 @@
           "views/YieldCenter/flows/MissedEarnings/steps/CustomizeAmountStep.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/ExitConfirmationStep.tsx": 1,
           "components/StakingV2/Stake/StakingInfo.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
           "components/StakingV2/Stake/StakingIntro.tsx": 1,
-          "components/StakingV2/Stake/StakingPreview.tsx": 2,
+          "components/StakingV2/Stake/StakingPreview.tsx": 4,
           "components/StakingV2/Stake/components/StakingPreviewAutoStakingToggle.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
           "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
           "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 1,
           "components/WrappedAsset/components/WrappedAssetFAQ/WrappedAssetFAQ.tsx": 1,
@@ -171,11 +174,11 @@
         },
         "spacingHorizontal": {
           "views/YieldCenter/components/EarningSectionList/EarningSectionList.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Stake/StakingInput.tsx": 4,
           "components/StakingV2/Stake/StakingPreview.tsx": 2,
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 3,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 4,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 3
         },
         "gap": {
           "views/YieldCenter/components/EarningSummary/EarningSummary.tsx": 1,
@@ -186,8 +189,7 @@
         },
         "offsetHorizontal": {
           "views/YieldCenter/components/EarningSummary/EarningSummary.tsx": 1,
-          "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 1
+          "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1
         },
         "width": {
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 2,
@@ -202,6 +204,7 @@
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/IntroStep.tsx": 2,
           "views/YieldCenter/flows/MissedEarnings/steps/SuccessStep.tsx": 1,
+          "components/StakingV2/Stake/StakingIntro.tsx": 1,
           "components/StakingV2/Stake/components/StakingPreviewAutoStakingToggle.tsx": 1,
           "components/WrappedAsset/components/WrappedActions/WrappedActions.tsx": 2,
           "components/WrappedAsset/components/WrappedAssetFAQ/WrappedAssetFAQ.tsx": 1
@@ -225,8 +228,7 @@
         },
         "flexShrink": {
           "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 1,
-          "components/StakingV2/Stake/StakingIntro.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 1
+          "components/StakingV2/Stake/StakingIntro.tsx": 1
         },
         "bordered": {
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
@@ -246,12 +248,12 @@
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/CustomizeAmountStep.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 2,
-          "components/StakingV2/Stake/StakingIntro.tsx": 4,
+          "components/StakingV2/Stake/StakingInput.tsx": 4,
+          "components/StakingV2/Stake/StakingIntro.tsx": 3,
           "components/StakingV2/Stake/StakingPreview.tsx": 3,
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 4,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 3,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 4,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 3,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapPreview/UnwrapPreviewV2.tsx": 1
         },
@@ -261,11 +263,11 @@
         "justifyContent": {
           "views/YieldCenter/components/NextForYou/NextForYou.tsx": 1,
           "components/StakingV2/Stake/StakingInfo.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Stake/StakingPreview.tsx": 2,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Stake/StakingPreview.tsx": 3,
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 1,
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
           "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
           "components/WrappedAsset/components/WrapEntryPoint/WrapEntryPoint.tsx": 1,
@@ -282,18 +284,18 @@
         },
         "maxHeight": {
           "views/YieldCenter/flows/MissedEarnings/steps/CustomizeAmountStep.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 2,
-          "components/StakingV2/Stake/StakingIntro.tsx": 4,
+          "components/StakingV2/Stake/StakingInput.tsx": 4,
+          "components/StakingV2/Stake/StakingIntro.tsx": 3,
           "components/StakingV2/Stake/StakingPreview.tsx": 3,
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 4,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
+          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 3,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 4,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 3
         },
         "offset": {
           "views/YieldCenter/flows/MissedEarnings/steps/CustomizeAmountStep.tsx": 1,
-          "components/StakingV2/Stake/StakingIntro.tsx": 2,
+          "components/StakingV2/Stake/StakingIntro.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 1,
           "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
         },
         "height": {
@@ -301,16 +303,19 @@
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1
         },
         "offsetStart": {
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2
+        },
+        "offsetEnd": {
+          "components/StakingV2/Stake/StakingInput.tsx": 1
+        },
+        "display": {
+          "components/StakingV2/Stake/StakingIntro.tsx": 1
         },
         "spacingVertical": {
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
-        },
-        "offsetVertical": {
-          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 1
+          "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
         },
         "alignSelf": {
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
@@ -632,8 +637,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 65,
-      "totalCallSites": 25,
+      "totalInstances": 68,
+      "totalCallSites": 26,
       "cds": "@cbhq/cds-web/layout/Box",
       "aliasedCdsComponents": [
         {
@@ -659,10 +664,11 @@
         "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1,
         "components/StakingV2/Stake/StakingFooter.tsx": 1,
         "components/StakingV2/Stake/StakingInput.tsx": 1,
-        "components/StakingV2/Stake/StakingIntro.tsx": 4,
-        "components/StakingV2/Stake/StakingPreview.tsx": 3,
+        "components/StakingV2/Stake/StakingIntro.tsx": 5,
+        "components/StakingV2/Stake/StakingPreview.tsx": 4,
         "components/StakingV2/Unstake/UnstakingFooter.tsx": 1,
         "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
         "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 12,
         "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 2,
         "components/WrappedAsset/components/WrapEntryPoint/WrapEntryPoint.tsx": 1,
@@ -731,7 +737,9 @@
           "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 1,
           "views/YieldCenter/components/StakingProgressBar/StakingProgressBar.tsx": 2,
           "views/YieldCenter/flows/MissedEarnings/MissedEarningsFlow.tsx": 1,
+          "components/StakingV2/Stake/StakingIntro.tsx": 2,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 2,
           "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapPreview/UnwrapPreviewV2.tsx": 2,
@@ -741,6 +749,7 @@
           "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 2,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/MissedEarningsFlow.tsx": 1,
+          "components/StakingV2/Stake/StakingIntro.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
           "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapPreview/UnwrapPreviewV2.tsx": 1,
@@ -752,7 +761,7 @@
           "views/YieldCenter/components/YieldChart/YieldChart.tsx": 2,
           "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1,
           "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Stake/StakingIntro.tsx": 2,
+          "components/StakingV2/Stake/StakingIntro.tsx": 3,
           "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 3,
           "components/WrappedAsset/components/WrapEntryPoint/WrapEntryPoint.tsx": 1,
@@ -764,9 +773,13 @@
           "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1,
           "components/StakingV2/Stake/StakingIntro.tsx": 3,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 4,
           "components/WrappedAsset/components/WrapEntryPoint/WrapEntryPoint.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapPreview/UnwrapPreviewV2.tsx": 4
+        },
+        "offsetHorizontal": {
+          "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 1
         },
         "offsetBottom": {
           "views/YieldCenter/components/MissedEarningsPromoCard/MissedEarningsPromoCard.tsx": 1
@@ -800,6 +813,7 @@
         },
         "flexDirection": {
           "views/YieldCenter/components/YieldChart/YieldChart.tsx": 2,
+          "components/StakingV2/Stake/StakingIntro.tsx": 1,
           "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapUnavailable/UnwrapUnavailable.tsx": 1
         },
@@ -820,10 +834,17 @@
         "offsetStart": {
           "components/StakingV2/Stake/StakingInput.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
         },
         "alignSelf": {
-          "components/StakingV2/Stake/StakingIntro.tsx": 3
+          "components/StakingV2/Stake/StakingIntro.tsx": 2
+        },
+        "display": {
+          "components/StakingV2/Stake/StakingIntro.tsx": 1
+        },
+        "minHeight": {
+          "components/StakingV2/Stake/StakingPreview.tsx": 1
         },
         "key": {
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
@@ -894,7 +915,7 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 65,
+      "totalInstances": 70,
       "totalCallSites": 34,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
@@ -914,13 +935,13 @@
         "views/YieldCenter/flows/MissedEarnings/steps/IntroStep.tsx": 2,
         "views/YieldCenter/flows/MissedEarnings/steps/SuccessStep.tsx": 1,
         "components/StakingV2/Stake/StakingInfo.tsx": 1,
-        "components/StakingV2/Stake/StakingInput.tsx": 1,
+        "components/StakingV2/Stake/StakingInput.tsx": 3,
         "components/StakingV2/Stake/StakingIntro.tsx": 2,
         "components/StakingV2/Stake/StakingPreview.tsx": 2,
         "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 3,
         "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
+        "components/StakingV2/Unstake/UnstakingInput.tsx": 3,
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
         "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
         "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
         "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 4,
@@ -970,13 +991,13 @@
           "views/YieldCenter/flows/MissedEarnings/steps/IntroStep.tsx": 2,
           "views/YieldCenter/flows/MissedEarnings/steps/SuccessStep.tsx": 1,
           "components/StakingV2/Stake/StakingInfo.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 3,
           "components/StakingV2/Stake/StakingIntro.tsx": 2,
           "components/StakingV2/Stake/StakingPreview.tsx": 2,
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 3,
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 3,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 4,
@@ -999,8 +1020,10 @@
           "views/YieldCenter/flows/MissedEarnings/steps/FullyStakedStep.tsx": 2,
           "views/YieldCenter/flows/MissedEarnings/steps/IntroStep.tsx": 1,
           "components/StakingV2/Stake/StakingInfo.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 1,
           "components/StakingV2/Stake/StakingIntro.tsx": 2,
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
           "components/WrappedAsset/steps/WrappedStatus/WrappedStatus.tsx": 6,
           "components/WrappedAsset/steps/WrappedTradeOptions/WrappedTradeOptions.tsx": 2,
@@ -1013,10 +1036,10 @@
         "loading": {
           "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/ConfirmationStep.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
           "components/StakingV2/Stake/StakingPreview.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 3,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
         },
@@ -1028,7 +1051,7 @@
           "components/StakingV2/Stake/StakingInput.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 2,
           "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1,
@@ -1383,8 +1406,7 @@
           "views/YieldCenter/components/LearnAboutInterestListCell/LearnAboutInterestListCell.tsx": 1,
           "views/YieldCenter/components/MoreSection/MoreSection.tsx": 1,
           "views/YieldCenter/components/YieldSummary/YieldSummary.tsx": 1,
-          "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1,
-          "components/StakingV2/Stake/StakingPreview.tsx": 1
+          "views/YieldCenter/components/YieldUpsellSection/YieldUpsellSection.tsx": 1
         },
         "offsetBottom": {
           "views/YieldCenter/components/MissedEarningsBanner/MissedEarningsBanner.tsx": 1
@@ -1438,8 +1460,8 @@
     {
       "name": "TextBody",
       "sourceFile": "@cbhq/cds-web/typography/TextBody",
-      "totalInstances": 58,
-      "totalCallSites": 30,
+      "totalInstances": 59,
+      "totalCallSites": 31,
       "cds": "@cbhq/cds-web/typography/TextBody",
       "callSites": {
         "views/YieldCenter/components/AutoStakingAssetSetting/AutoStakingAssetSetting.tsx": 1,
@@ -1463,6 +1485,7 @@
         "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
         "components/StakingV2/Unstake/UnstakingFooter.tsx": 6,
         "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
         "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
         "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 5,
         "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 1,
@@ -1496,6 +1519,7 @@
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
           "components/StakingV2/Unstake/UnstakingFooter.tsx": 6,
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
           "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 5,
           "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 1,
@@ -1524,6 +1548,7 @@
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
           "components/StakingV2/Unstake/UnstakingFooter.tsx": 4,
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
           "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 5,
           "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 1,
@@ -1554,6 +1579,7 @@
           "views/YieldCenter/flows/MissedEarnings/steps/SuccessStep.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
           "components/WrappedAsset/steps/WrapUnavailable/WrapUnavailable.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapUnavailable/UnwrapUnavailable.tsx": 1
         },
@@ -1679,21 +1705,21 @@
     {
       "name": "ModalHeader",
       "sourceFile": "@cbhq/cds-web/overlays/ModalHeader",
-      "totalInstances": 25,
+      "totalInstances": 28,
       "totalCallSites": 18,
       "cds": "@cbhq/cds-web/overlays/ModalHeader",
       "callSites": {
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
         "components/StakingV2/Stake/StakingFlow.tsx": 1,
         "components/StakingV2/Stake/StakingInfo.tsx": 1,
-        "components/StakingV2/Stake/StakingInput.tsx": 1,
+        "components/StakingV2/Stake/StakingInput.tsx": 2,
         "components/StakingV2/Stake/StakingIntro.tsx": 2,
         "components/StakingV2/Stake/StakingPreview.tsx": 2,
         "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
         "components/StakingV2/Unstake/UnstakingFooter.tsx": 1,
         "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
+        "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
         "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
         "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
         "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 3,
@@ -1706,14 +1732,14 @@
         "title": {
           "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
           "components/StakingV2/Stake/StakingInfo.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
           "components/StakingV2/Stake/StakingIntro.tsx": 2,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
           "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
           "components/StakingV2/Unstake/UnstakingFooter.tsx": 1,
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 3,
@@ -1727,10 +1753,12 @@
         },
         "onBackButtonPress": {
           "components/StakingV2/Stake/StakingInfo.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Stake/StakingIntro.tsx": 2,
           "components/StakingV2/Stake/StakingPreview.tsx": 2,
           "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
           "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 3,
           "components/WrappedAsset/steps/WrappedTradeOptions/WrappedTradeOptions.tsx": 1,
           "components/WrappedAsset/components/WrapEntryPoint/WrapEntryPoint.tsx": 1,
@@ -1741,21 +1769,21 @@
     {
       "name": "ModalBody",
       "sourceFile": "@cbhq/cds-web/overlays/ModalBody",
-      "totalInstances": 29,
+      "totalInstances": 32,
       "totalCallSites": 22,
       "cds": "@cbhq/cds-web/overlays/ModalBody",
       "callSites": {
         "views/YieldCenter/components/EarningAssetModal/EarningAssetModalManageInterest.tsx": 1,
         "components/StakingV2/Stake/StakingFlow.tsx": 1,
         "components/StakingV2/Stake/StakingInfo.tsx": 1,
-        "components/StakingV2/Stake/StakingInput.tsx": 1,
+        "components/StakingV2/Stake/StakingInput.tsx": 2,
         "components/StakingV2/Stake/StakingIntro.tsx": 2,
         "components/StakingV2/Stake/StakingPreview.tsx": 2,
         "components/StakingV2/Unstake/UnstakingConfirmation.tsx": 2,
         "components/StakingV2/Unstake/UnstakingFooter.tsx": 1,
         "components/StakingV2/Unstake/UnstakingInfo.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingPreview.tsx": 1,
+        "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 2,
         "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
         "components/WrappedAsset/steps/WrappedNux/WrappedNux.tsx": 1,
         "components/WrappedAsset/steps/WrappedPreview/WrappedPreviewV2.tsx": 3,
@@ -1851,6 +1879,9 @@
         },
         "innerSpacing": {
           "components/StakingV2/Stake/StakingIntro.tsx": 2
+        },
+        "outerSpacing": {
+          "components/StakingV2/Stake/StakingIntro.tsx": 1
         }
       }
     },
@@ -2462,7 +2493,7 @@
     {
       "name": "TextTitle1",
       "sourceFile": "@cbhq/cds-web/typography/TextTitle1",
-      "totalInstances": 6,
+      "totalInstances": 7,
       "totalCallSites": 5,
       "cds": "@cbhq/cds-web/typography/TextTitle1",
       "callSites": {
@@ -2470,7 +2501,7 @@
         "views/YieldCenter/flows/MissedEarnings/steps/IntroStep.tsx": 1,
         "components/StakingV2/Stake/StakingIntro.tsx": 1,
         "components/StakingV2/Stake/StakingPreview.tsx": 2,
-        "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
       },
       "propsWithCallSites": {
         "as": {
@@ -2478,7 +2509,7 @@
           "views/YieldCenter/flows/MissedEarnings/steps/IntroStep.tsx": 1,
           "components/StakingV2/Stake/StakingIntro.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
         },
         "spacingBottom": {
           "views/YieldCenter/flows/MissedEarnings/steps/FullyStakedStep.tsx": 1,
@@ -2489,14 +2520,14 @@
           "views/YieldCenter/flows/MissedEarnings/steps/IntroStep.tsx": 1,
           "components/StakingV2/Stake/StakingIntro.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 2,
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
         },
         "spacingTop": {
           "views/YieldCenter/flows/MissedEarnings/steps/IntroStep.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
           "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
         },
-        "spacingStart": {
+        "spacingHorizontal": {
           "components/StakingV2/Stake/StakingIntro.tsx": 1
         },
         "color": {
@@ -3564,7 +3595,7 @@
     },
     {
       "name": "ErrorBoundary",
-      "sourceFile": "components/ErrorBoundary",
+      "sourceFile": "@cbhq/shared/components/ErrorBoundary",
       "totalInstances": 8,
       "totalCallSites": 8,
       "callSites": {
@@ -4406,54 +4437,54 @@
     {
       "name": "EntryInput",
       "sourceFile": "components/BuySellComponents/EntryInput",
-      "totalInstances": 5,
+      "totalInstances": 7,
       "totalCallSites": 5,
       "callSites": {
         "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
-        "components/StakingV2/Stake/StakingInput.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+        "components/StakingV2/Stake/StakingInput.tsx": 2,
+        "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
         "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
         "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
       },
       "propsWithCallSites": {
         "viewerAssetRef": {
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2
         },
         "error": {
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
         },
         "autoFocus": {
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2
         },
         "input": {
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
         },
         "switchActiveInput": {
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
         },
         "isNewDesign": {
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2
         },
         "secondaryButton": {
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
         },
@@ -4540,10 +4571,11 @@
     {
       "name": "WidgetLoadingFallback",
       "sourceFile": "components/WidgetComponents/WidgetLoadingFallback",
-      "totalInstances": 11,
-      "totalCallSites": 11,
+      "totalInstances": 12,
+      "totalCallSites": 12,
       "callSites": {
         "components/StakingV2/Stake/StakingFlow.tsx": 1,
+        "components/StakingV2/Stake/StakingPreview.tsx": 1,
         "components/StakingV2/Unstake/UnstakingFlow.tsx": 1,
         "components/WrappedAsset/WrapAssetModal.tsx": 1,
         "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
@@ -4564,6 +4596,37 @@
       "propsWithCallSites": {
         "queryRef": {
           "components/StakingV2/Stake/StakingFlow.tsx": 1
+        },
+        "closeModal": {
+          "components/StakingV2/Stake/StakingFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "StakingPreview",
+      "sourceFile": "components/StakingV2/Stake/StakingPreview",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "components/StakingV2/Stake/StakingFlow.tsx": 1
+        },
+        "isNuxSkipped": {
+          "components/StakingV2/Stake/StakingFlow.tsx": 1
+        },
+        "closeModal": {
+          "components/StakingV2/Stake/StakingFlow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "StakingEducation",
+      "sourceFile": "components/StakingV2/Stake/StakingEducation",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "components/StakingV2/Stake/StakingFlow.tsx": 1
         }
       }
     },
@@ -4578,16 +4641,8 @@
         },
         "isNuxSkipped": {
           "components/StakingV2/Stake/StakingFlow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "StakingPreview",
-      "sourceFile": "components/StakingV2/Stake/StakingPreview",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
+        },
+        "closeModal": {
           "components/StakingV2/Stake/StakingFlow.tsx": 1
         }
       }
@@ -4633,24 +4688,24 @@
     {
       "name": "EntryInputSecondaryButton",
       "sourceFile": "components/BuySellComponents/EntryInputSecondaryButton",
-      "totalInstances": 4,
+      "totalInstances": 6,
       "totalCallSites": 4,
       "callSites": {
-        "components/StakingV2/Stake/StakingInput.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+        "components/StakingV2/Stake/StakingInput.tsx": 2,
+        "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
         "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
         "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
       },
       "propsWithCallSites": {
         "disabled": {
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
         },
         "onPress": {
-          "components/StakingV2/Stake/StakingInput.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingInput.tsx": 2,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 2,
           "components/WrappedAsset/steps/WrappedInput/WrappedInput.tsx": 1,
           "components/UnwrappedAsset/steps/UnwrapInput/UnwrapInput.tsx": 1
         },
@@ -4663,31 +4718,42 @@
     {
       "name": "StakingAvailability",
       "sourceFile": "components/StakingV2/Stake/StakingAvailability",
-      "totalInstances": 3,
-      "totalCallSites": 3,
+      "totalInstances": 4,
+      "totalCallSites": 4,
       "callSites": {
         "components/StakingV2/Stake/StakingInput.tsx": 1,
         "components/StakingV2/Stake/StakingPreview.tsx": 1,
-        "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+        "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
       },
       "propsWithCallSites": {
+        "activeSymbol": {
+          "components/StakingV2/Stake/StakingInput.tsx": 1,
+          "components/StakingV2/Stake/StakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
+        },
         "amount": {
           "components/StakingV2/Stake/StakingInput.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
         },
         "queryRef": {
           "components/StakingV2/Stake/StakingInput.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
         },
         "type": {
           "components/StakingV2/Stake/StakingInput.tsx": 1,
           "components/StakingV2/Stake/StakingPreview.tsx": 1,
-          "components/StakingV2/Unstake/UnstakingInput.tsx": 1
+          "components/StakingV2/Unstake/UnstakingInput.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
         },
         "compact": {
-          "components/StakingV2/Stake/StakingPreview.tsx": 1
+          "components/StakingV2/Stake/StakingPreview.tsx": 1,
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
         }
       }
     },
@@ -4780,12 +4846,21 @@
       }
     },
     {
+      "name": "UnstakingInfo",
+      "sourceFile": "components/StakingV2/Unstake/UnstakingInfo",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "UnstakingInput",
       "sourceFile": "components/StakingV2/Unstake/UnstakingInput",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
         "queryRef": {
+          "components/StakingV2/Unstake/UnstakingFlow.tsx": 1
+        },
+        "closeModal": {
           "components/StakingV2/Unstake/UnstakingFlow.tsx": 1
         }
       }
@@ -4814,12 +4889,6 @@
           "components/StakingV2/Unstake/UnstakingFlow.tsx": 1
         }
       }
-    },
-    {
-      "name": "UnstakingInfo",
-      "sourceFile": "components/StakingV2/Unstake/UnstakingInfo",
-      "totalInstances": 1,
-      "totalCallSites": 1
     },
     {
       "name": "BaseFooter",
@@ -4878,28 +4947,34 @@
     {
       "name": "UnstakingPreviewDetails",
       "sourceFile": "components/StakingV2/Unstake/components/UnstakingPreviewDetails",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
+      "callSites": {
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
+      },
       "propsWithCallSites": {
         "details": {
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
         },
         "platformName": {
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
         }
       }
     },
     {
       "name": "UnstakingUserWarnings",
       "sourceFile": "components/StakingV2/Unstake/components/UnstakingUserWarnings",
-      "totalInstances": 1,
+      "totalInstances": 2,
       "totalCallSites": 1,
+      "callSites": {
+        "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
+      },
       "propsWithCallSites": {
         "userWarnings": {
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
         },
         "spacingTop": {
-          "components/StakingV2/Unstake/UnstakingPreview.tsx": 1
+          "components/StakingV2/Unstake/UnstakingPreview.tsx": 2
         }
       }
     },

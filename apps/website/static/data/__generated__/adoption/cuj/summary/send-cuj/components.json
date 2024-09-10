@@ -1163,6 +1163,9 @@
         "transparent": {
           "components/SendReceive/SendRedesign/components/SendRedesignHeader.tsx": 3
         },
+        "accessibilityLabel": {
+          "components/SendReceive/SendRedesign/components/SendRedesignHeader.tsx": 3
+        },
         "disabled": {
           "components/SendReceive/SendRedesign/components/SendRedesignHeader.tsx": 2
         }
@@ -1698,6 +1701,9 @@
         "components/SendReceive/SendRedesign/SendReceiveRedesign.tsx": 3
       },
       "propsWithCallSites": {
+        "embedded": {
+          "components/SendReceive/SendRedesign/SendReceiveRedesign.tsx": 1
+        },
         "showOldHeader": {
           "components/SendReceive/SendRedesign/SendReceiveRedesign.tsx": 2
         }
