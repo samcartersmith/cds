@@ -58,6 +58,8 @@ export const SearchInput = memo(
         hideEndIcon,
         startIcon,
         end,
+        startIconAccessibilityLabel = 'Back',
+        clearIconAccessibilityLabel = 'Clear text',
         ...props
       }: SearchInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -116,13 +118,9 @@ export const SearchInput = memo(
         [onBack],
       );
 
-      const startIconAccessabilityLabel = useMemo(
-        () => (startIconName === 'backArrow' ? 'Back' : undefined),
-        [startIconName],
-      );
-      const startIconAccessabilityHint = useMemo(
-        () => (startIconName === 'backArrow' ? 'Return to previous view' : undefined),
-        [startIconName],
+      const determineStartIconAccessibilityLabel = useMemo(
+        () => (startIconName === 'backArrow' ? startIconAccessibilityLabel : undefined),
+        [startIconAccessibilityLabel, startIconName],
       );
 
       return (
@@ -136,8 +134,7 @@ export const SearchInput = memo(
             (!!value && !hideEndIcon && (
               <Box spacingEnd={0.5}>
                 <InputIconButton
-                  accessibilityHint="Clear text"
-                  accessibilityLabel="Clear text"
+                  accessibilityLabel={clearIconAccessibilityLabel}
                   name="close"
                   onPress={handleOnClear}
                   testID={testID && `${testID}-close-iconbtn`}
@@ -154,8 +151,7 @@ export const SearchInput = memo(
             !hideStartIcon && (
               <InputIconButton
                 accessibilityElementsHidden // The pressable wrapper will be accessible, not the icon
-                accessibilityHint={startIconAccessabilityHint}
-                accessibilityLabel={startIconAccessabilityLabel} // A11y props will get passed to the pressable wrapper
+                accessibilityLabel={determineStartIconAccessibilityLabel} // A11y props will get passed to the pressable wrapper
                 disabled={disabled}
                 importantForAccessibility="no"
                 name={startIconName}

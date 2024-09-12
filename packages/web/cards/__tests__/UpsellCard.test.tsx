@@ -13,6 +13,7 @@ const exampleProps: UpsellCardProps = {
   onActionPress: NoopFn,
   onDismissPress: NoopFn,
   testID: 'upsell-card-test',
+  accessibilityLabel: 'Dismiss',
 };
 
 const compactProps: UpsellCardProps = {

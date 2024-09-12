@@ -15,7 +15,12 @@ const exampleProps = {
 };
 
 const NudgeCard = (
-  props: Partial<Pick<NudgeCardProps, 'onDismissPress' | 'onActionPress' | 'media' | 'pictogram'>>,
+  props: Partial<
+    Pick<
+      NudgeCardProps,
+      'onDismissPress' | 'onActionPress' | 'media' | 'pictogram' | 'accessibilityLabel'
+    >
+  >,
 ) => <BaseNudgeCard {...exampleProps} {...props} />;
 
 describe('createNudgeCard', () => {
@@ -24,7 +29,9 @@ describe('createNudgeCard', () => {
   });
 
   it('passes accessibility when dismissable', async () => {
-    expect(await renderA11y(<NudgeCard onDismissPress={noopFn} />)).toHaveNoViolations();
+    expect(
+      await renderA11y(<NudgeCard accessibilityLabel="Dismiss" onDismissPress={noopFn} />),
+    ).toHaveNoViolations();
   });
 
   it('renders the card with the correct title', () => {

@@ -17,7 +17,12 @@ const exampleProps = {
 };
 
 const NudgeCard = (
-  props: Partial<Pick<NudgeCardProps, 'onDismissPress' | 'onActionPress' | 'pictogram' | 'media'>>,
+  props: Partial<
+    Pick<
+      NudgeCardProps,
+      'onDismissPress' | 'onActionPress' | 'pictogram' | 'media' | 'accessibilityLabel'
+    >
+  >,
 ) => <BaseNudgeCard {...exampleProps} {...props} />;
 
 describe('createNudgeCard', () => {
@@ -27,7 +32,7 @@ describe('createNudgeCard', () => {
   });
 
   it('passes accessibility when dismissable', () => {
-    render(<NudgeCard />);
+    render(<NudgeCard accessibilityLabel="Dismiss" />);
     expect(screen.getByTestId(exampleProps.testID)).toBeAccessible();
   });
 

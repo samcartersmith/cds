@@ -15,10 +15,12 @@ describe('Search', () => {
   beforeAll(() => {
     SearchComponent = (
       <SearchInput
+        clearIconAccessibilityLabel="Clear text"
         onChangeText={onChangeTextSpy}
         onClear={onClearSpy}
         onSearch={onSearchSpy}
         placeholder="Placeholder"
+        startIconAccessibilityLabel="Back"
         testID={TEST_ID}
         value="value"
       />
@@ -50,11 +52,13 @@ describe('Search', () => {
   it('renders a backArrow icon button at the start node', () => {
     render(
       <SearchInput
+        clearIconAccessibilityLabel="Clear text"
         onChangeText={onChangeTextSpy}
         onClear={onClearSpy}
         onSearch={onSearchSpy}
         placeholder="Placeholder"
         startIcon="backArrow"
+        startIconAccessibilityLabel="Back"
         testID={TEST_ID}
         value="value"
       />,
@@ -142,6 +146,7 @@ describe('Search', () => {
         onSearch={onSearchSpy}
         placeholder="Placeholder"
         startIcon="backArrow"
+        startIconAccessibilityLabel="Back"
         testID={TEST_ID}
         value="value"
       />,

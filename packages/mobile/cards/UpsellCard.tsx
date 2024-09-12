@@ -41,7 +41,6 @@ export const UpsellCard = memo(
 
     const content = (
       <HStack
-        accessibilityLabel={accessibilityLabel}
         alignContent="space-between"
         background={background}
         borderRadius="roundedXLarge"
@@ -107,7 +106,7 @@ export const UpsellCard = memo(
           {onDismissPress ? (
             <HStack position="absolute" right={0} spacing={1} top={0}>
               <IconButton
-                accessibilityLabel={`Dismiss the ${accessibilityLabel ?? title} card`}
+                accessibilityLabel={accessibilityLabel ?? `Dismiss the ${title} card`}
                 name="close"
                 onPress={onDismissPress}
                 testID={`${testID}-dismiss-button`}

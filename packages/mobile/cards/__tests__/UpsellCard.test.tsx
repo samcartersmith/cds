@@ -38,6 +38,7 @@ const exampleProps: UpsellCardProps = {
       style={styles.media}
     />
   ),
+  accessibilityLabel: 'Dismiss',
 };
 
 const compactProps = {

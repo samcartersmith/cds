@@ -30,6 +30,14 @@ export type SearchInputBaseProps = {
    * @default undefined
    */
   end?: React.ReactNode;
+  /**
+   * Set the a11y label for the clear icon
+   */
+  clearIconAccessibilityLabel?: string | undefined;
+  /**
+   * Set the a11y label for the start icon
+   */
+  startIconAccessibilityLabel?: string | undefined;
 } & Omit<
   TextInputBaseProps,
   | 'helperText'

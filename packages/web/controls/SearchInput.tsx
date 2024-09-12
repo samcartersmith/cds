@@ -42,6 +42,8 @@ export const SearchInput = memo(
       hideEndIcon,
       startIcon,
       end,
+      startIconAccessibilityLabel = 'Back',
+      clearIconAccessibilityLabel = 'Clear search query',
       ...props
     }: SearchInputProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -83,6 +85,11 @@ export const SearchInput = memo(
       return compact ? { transform: 'scale(0.75)' } : undefined;
     }, [compact]);
 
+    const determineStartIconAccessibilityLabel = useMemo(
+      () => (startIcon === 'backArrow' ? startIconAccessibilityLabel : undefined),
+      [startIconAccessibilityLabel, startIcon],
+    );
+
     return (
       <TextInput
         ref={refs}
@@ -92,7 +99,7 @@ export const SearchInput = memo(
           (!!value && !hideEndIcon && (
             <Box offsetEnd={compact ? 0.5 : 0} spacingEnd={compact ? 0 : 0.5} style={boxStyle}>
               <InputIconButton
-                accessibilityLabel="Clear search query"
+                accessibilityLabel={clearIconAccessibilityLabel}
                 name="close"
                 onPress={handleOnClear}
                 testID={testID && `${testID}-close-iconbtn`}
@@ -106,7 +113,11 @@ export const SearchInput = memo(
         role="searchbox"
         start={
           !hideStartIcon && (
-            <InputIcon name={startIcon ?? 'search'} testID={testID && `${testID}-search-icon`} />
+            <InputIcon
+              accessibilityLabel={determineStartIconAccessibilityLabel}
+              name={startIcon ?? 'search'}
+              testID={testID && `${testID}-search-icon`}
+            />
           )
         }
         testID={testID}

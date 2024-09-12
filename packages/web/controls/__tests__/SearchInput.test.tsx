@@ -20,8 +20,10 @@ describe('Search', () => {
       await renderA11y(
         <SearchInput
           accessibilityLabel="Search Assets"
+          clearIconAccessibilityLabel="Clear text"
           onChangeText={onChangeTextSpy}
           placeholder="Placeholder"
+          startIconAccessibilityLabel="Back"
           value="value"
         />,
       ),

@@ -93,6 +93,14 @@ export type TabNavigationProps<T extends string | undefined = string> = {
    * @default tablist
    */
   role?: 'radiogroup' | 'tablist';
+  /**
+   * Web only. Accessibility label for the previous arrow paddle (skip to beginning).
+   */
+  previousArrowAccessibilityLabel?: string | undefined;
+  /**
+   * Web only. Accessibility label for the next arrow paddle (skip to end).
+   */
+  nextArrowAccessibilityLabel?: string | undefined;
 } & Pick<TabProps, 'variant' | 'Component'> &
   BoxBaseProps &
   SharedProps;

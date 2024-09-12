@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.41.0 (9/11/2024 PST)
+
+#### 🚀 Updates
+
+- A11y prop enhancements to hardcoded a11y labels. [[#3257](https://github.cbhq.net/frontend/cds/pull/3257)] [[DX-4157](https://jira.coinbase-corp.com/browse/DX-4157)]
+
 ## 6.40.0 ((9/10/2024, 10:03 AM PST))
 
 This is an artificial version bump with no new change.

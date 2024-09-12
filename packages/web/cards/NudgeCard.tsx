@@ -70,7 +70,6 @@ export const NudgeCard = memo(
 
     const content = (
       <Box
-        accessibilityLabel={accessibilityLabel}
         background={background}
         borderColor="transparent"
         borderRadius="roundedXLarge"
@@ -85,9 +84,9 @@ export const NudgeCard = memo(
           <Box alignSelf="flex-end" position="absolute" right={0} spacing={0.5} top={0}>
             <IconButton
               transparent
-              accessibilityLabel={`Dismiss the ${
-                accessibilityLabel ?? typeof title === 'string' ? title : ''
-              } card`}
+              accessibilityLabel={
+                accessibilityLabel ?? `Dismiss the ${typeof title === 'string' ? title : ''} card`
+              }
               name="close"
               onPress={onDismissPress}
               testID={`${testID}-dismiss-button`}

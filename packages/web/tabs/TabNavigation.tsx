@@ -83,6 +83,8 @@ export const TabNavigation = memo(
         background,
         accessibilityLabelledBy,
         accessibilityLabel,
+        previousArrowAccessibilityLabel = 'Skip to beginning',
+        nextArrowAccessibilityLabel = 'skip to end',
         Component,
         gap = 4,
         role = 'tablist',
@@ -325,7 +327,7 @@ export const TabNavigation = memo(
       return (
         <div ref={observe} className={cx(tabNavigationStaticClassName, containerClassName)}>
           <Paddle
-            accessibilityLabel="Skip to beginning"
+            accessibilityLabel={previousArrowAccessibilityLabel}
             background={background}
             onPress={handleScrollLeft}
             show={leftPaddle}
@@ -375,7 +377,7 @@ export const TabNavigation = memo(
             </VStack>
           </HStack>
           <Paddle
-            accessibilityLabel="skip to end"
+            accessibilityLabel={nextArrowAccessibilityLabel}
             background={background}
             direction="right"
             onPress={handleScrollRight}
