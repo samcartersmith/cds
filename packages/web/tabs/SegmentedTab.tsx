@@ -11,6 +11,7 @@ import { borderRadius, palette } from '../tokens';
 import { TextHeadline } from '../typography';
 import { cx } from '../utils/linaria';
 
+import { type TabComponent } from './Tabs';
 import { tabsTransitionConfig } from './Tabs';
 
 const buttonStyle = css`
@@ -123,6 +124,6 @@ export const SegmentedTab = memo(
       );
     },
   ),
-);
+) satisfies TabComponent;
 
 SegmentedTab.displayName = 'SegmentedTab';

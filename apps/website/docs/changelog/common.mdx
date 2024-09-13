@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.42.0 (9/13/2024 PST)
+
+#### 🚀 Updates
+
+- Phoenix: Tour and Coachmark components. [[#3251](https://github.cbhq.net/frontend/cds/pull/3251)] [[DX-3556](https://jira.coinbase-corp.com/browse/DX-3556)]
+
 ## 6.41.0 (9/11/2024 PST)
 
 #### 🚀 Updates

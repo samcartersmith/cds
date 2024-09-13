@@ -38,6 +38,7 @@ import * as CDSLocaleContextComponents from '@cbhq/cds-common/system/LocaleProvi
 import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
 import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common/tokens/dot';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import * as CDSUseTourContext from '@cbhq/cds-common/tour/TourContext';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
 import * as lottieFiles from '@cbhq/cds-lottie-files';
@@ -56,6 +57,7 @@ import * as CDSCardElements from '@cbhq/cds-web/cards';
 import * as CDSCells from '@cbhq/cds-web/cells';
 import { Cell } from '@cbhq/cds-web/cells/Cell';
 import * as CDSChips from '@cbhq/cds-web/chips';
+import * as CDSCoachmark from '@cbhq/cds-web/coachmark/Coachmark';
 import * as CDSCollapsible from '@cbhq/cds-web/collapsible';
 import { useAccessibleForeground } from '@cbhq/cds-web/color/useAccessibleForeground';
 import { usePaletteValueToRgbaString } from '@cbhq/cds-web/color/usePaletteValueToRgbaString';
@@ -104,6 +106,7 @@ import { useSortableCell } from '@cbhq/cds-web/tables/hooks/useSortableCell';
 import * as CDSTabs from '@cbhq/cds-web/tabs';
 import { Tag } from '@cbhq/cds-web/tag/Tag';
 import { palette } from '@cbhq/cds-web/tokens';
+import * as CDSTour from '@cbhq/cds-web/tour';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import { getZIndexFromRow } from '@cbhq/cds-web/utils/overflow';
 import {
@@ -216,6 +219,7 @@ const ReactLiveScope: LiveProviderProps['scope'] = {
   ...CDSLayout,
   ...CDSLoaders,
   ...CDSLocaleContextComponents,
+  ...CDSUseTourContext,
   ...CDSMedia,
   ...CDSNavigation,
   ...CDSOverlays,
@@ -226,6 +230,8 @@ const ReactLiveScope: LiveProviderProps['scope'] = {
   ...CDSTypography,
   ...CDSIllustrations,
   ...CDSVisualizations,
+  ...CDSCoachmark,
+  ...CDSTour,
   ProgressBar,
   ProgressBarWithFixedLabels,
   ProgressBarWithFloatLabel,

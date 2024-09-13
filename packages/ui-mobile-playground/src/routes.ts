@@ -86,6 +86,10 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/chips/__stories__/Chip.stories').default,
   },
   {
+    key: 'Coachmark',
+    getComponent: () => require('@cbhq/cds-mobile/coachmark/__stories__/Coachmark.stories').default,
+  },
+  {
     key: 'Collapsible',
     getComponent: () =>
       require('@cbhq/cds-mobile/collapsible/__stories__/Collapsible.stories').default,
@@ -573,6 +577,10 @@ export const routes = [
   {
     key: 'TooltipV2',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TooltipV2.stories').default,
+  },
+  {
+    key: 'Tour',
+    getComponent: () => require('@cbhq/cds-mobile/tour/__stories__/Tour.stories').default,
   },
   {
     key: 'TrayAction',

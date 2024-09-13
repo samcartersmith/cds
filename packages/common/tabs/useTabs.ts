@@ -1,11 +1,11 @@
 import { useCallback, useMemo } from 'react';
 
 export type TabValue = {
-  /** The tab id */
+  /** The tab id. */
   id: string;
-  /** The tab label */
+  /** The tab label. */
   label?: React.ReactNode;
-  /** Disable interactions on the tab */
+  /** Disable interactions on the tab. */
   disabled?: boolean;
 };
 
@@ -46,7 +46,7 @@ export const useTabs = ({ tabs, activeTab, disabled, onChange }: TabsOptions): T
   const goNextTab = useCallback(() => {
     if (!activeTab || activeTab === tabs.at(-1)) return;
     const activeTabIndex = tabs.indexOf(activeTab);
-    // find next enabled tab
+    // Find next tab that isn't disabled
     for (let i = activeTabIndex + 1; i < tabs.length; i++) {
       if (!tabs[i].disabled) return onChange(tabs[i]);
     }
@@ -55,7 +55,7 @@ export const useTabs = ({ tabs, activeTab, disabled, onChange }: TabsOptions): T
   const goPreviousTab = useCallback(() => {
     if (!activeTab || activeTab === tabs[0]) return;
     const activeTabIndex = tabs.indexOf(activeTab);
-    // find previous enabled tab
+    // Find previous tab that isn't disabled
     for (let i = activeTabIndex - 1; i > -1; i--) {
       if (!tabs[i].disabled) return onChange(tabs[i]);
     }

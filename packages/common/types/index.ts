@@ -22,6 +22,7 @@ export * from './CellBaseProps';
 export * from './Chart';
 export * from './CheckboxGroupBaseProps';
 export * from './ChipBaseProps';
+export * from './CoachmarkBaseProps';
 export * from './CollapsibleBaseProps';
 export * from './Color';
 export * from './ColorSurgeBaseProps';

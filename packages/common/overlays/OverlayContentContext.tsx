@@ -1,5 +1,7 @@
 import { createContext, useContext, useMemo } from 'react';
 
+// WARNING: If you add a new key to this type, you should also update the
+// useOverlayContentContext hook's `derivedContext.isOverlay` expression!
 export type OverlayContentContextValue = {
   /** True if we are inside any overlay component like Overlay, Modal, Tray, or Drawer. */
   isOverlay?: boolean;
@@ -7,6 +9,8 @@ export type OverlayContentContextValue = {
   isModal?: boolean;
   /** True if we are inside a Drawer or Tray component. */
   isDrawer?: boolean;
+  /** True if we are inside a Tour component. */
+  isTour?: boolean;
 };
 
 export const OverlayContentContext = createContext<OverlayContentContextValue>({});
@@ -19,7 +23,7 @@ export const useOverlayContentContext = () => {
 
   // If context.isOverlay was not explicitly defined then we derive it from the other values.
   const derivedContext = useMemo(
-    () => ({ ...context, isOverlay: context.isModal || context.isDrawer }),
+    () => ({ ...context, isOverlay: context.isModal || context.isDrawer || context.isTour }),
     [context],
   );
 

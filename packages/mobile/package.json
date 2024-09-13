@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-mobile",
-  "version": "6.41.0",
+  "version": "6.42.0",
   "description": "Coinbase Design System - Mobile Native",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -14,6 +14,8 @@
     "@cbhq/cds-fonts": "workspace:^",
     "@cbhq/cds-lottie-files": "workspace:^",
     "@cbhq/cds-utils": "workspace:^",
+    "@floating-ui/react-native": "^0.10.5",
+    "@react-spring/native": "^9.7.4",
     "lodash": "^4.17.21",
     "type-fest": "^2.19.0"
   },

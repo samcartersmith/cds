@@ -56,7 +56,6 @@ export const ModalWrapper = memo(
       id,
       disableOverlayPress = false,
       dangerouslyDisableResponsiveness = false,
-
       onOverlayPress,
       onDidClose,
       hideOverlay = false,

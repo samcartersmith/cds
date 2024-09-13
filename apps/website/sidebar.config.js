@@ -791,6 +791,25 @@ const sidebars = {
         { type: 'doc', id: 'components/typography/Text/text', label: 'Text' },
         { type: 'doc', id: 'components/controls/TextInput/text-input', label: 'Text Input' },
         {
+          type: 'category',
+          label: 'Tour',
+          customProps: { tag: 'new' },
+          items: [
+            {
+              type: 'doc',
+              id: 'components/tour/Coachmark/coachmark',
+              label: 'Coachmark',
+              customProps: { tag: 'new' },
+            },
+            {
+              type: 'doc',
+              id: 'components/tour/Tour/tour',
+              label: 'Tour',
+              customProps: { tag: 'new' },
+            },
+          ],
+        },
+        {
           type: 'doc',
           id: 'components/controls/NativeTextArea/native-text-area',
           label: 'Native Text Area',
