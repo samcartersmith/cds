@@ -392,3 +392,20 @@ If you need information on how to modify the endpoint, or modify values in the S
 3. External testing: Ensure to build the package before running the script in external repository.
 
 - `yarn nx run ui-scorecard:build`
+
+### FAQ
+
+Is there's a way to specifically check which files need the unit tests?
+
+- You can run the a11y engine locally on the frontend repo after changing the codeowner file to only `retail-financing-defi-frontend` (for example).
+- This will output a json report of all file paths owned by `retail-financing-defi-frontend` which are lacking tests.
+- Alternatively - a faster way would be, you can use the VSCode search all option and search only in file directories which are owned by `retail-financing-defi-frontend`.
+
+- Example: From the codeowners (web / coinbase-www) file, looks like it would be:
+
+  - src/views/YieldCenter
+  - src/components/YieldPromotions
+  - src/components/StakingV2
+  - src/components/WrappedAsset
+
+- Note to add unit tests to any components in it which is missing a toBeAccessible test (mobile) or toHaveNoViolations test (web).
