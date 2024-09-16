@@ -1,5 +1,4 @@
 import React, { forwardRef, useMemo } from 'react';
-import { css } from 'linaria';
 import { ButtonBaseProps } from '@cbhq/cds-common';
 import { useButtonBorderRadius } from '@cbhq/cds-common/hooks/useButtonBorderRadius';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
@@ -17,17 +16,6 @@ import { TextHeadline } from '../typography/TextHeadline';
 import { cx } from '../utils/linaria';
 
 import * as buttonStyles from './buttonStyles';
-
-const spinnerStyle = {
-  base: css`
-    width: 24px;
-    height: 24px;
-    border: 2px solid;
-    border-top-color: var(--transparent);
-    border-right-color: var(--transparent);
-    border-left-color: var(--transparent);
-  `,
-};
 
 type ButtonA11yProps = {
   disabled?: boolean;
@@ -81,6 +69,17 @@ const BaseButton = forwardRef(function Button(
     [height, flushStyles],
   );
 
+  const spinnerStyle = useMemo(() => {
+    return {
+      width: '24px',
+      height: '24px',
+      border: '2px solid',
+      borderTopColor: 'var(--transparent)',
+      borderRightColor: 'var(--transparent)',
+      borderLeftColor: 'var(--transparent)',
+    };
+  }, []);
+
   return (
     <Pressable
       aria-label={accessibilityLabel ?? (loading ? 'Loading' : undefined)}
@@ -120,11 +119,7 @@ const BaseButton = forwardRef(function Button(
       <span className={buttonStyles.positionRelative}>
         {loading && (
           <span className={buttonStyles.spinnerLoader}>
-            <Spinner
-              className={spinnerStyle.base}
-              color={color}
-              size={buttonStyles.spinnerHeight}
-            />
+            <Spinner color={color} size={buttonStyles.spinnerHeight} style={spinnerStyle} />
           </span>
         )}
         <TextHeadline as="span" color={color} numberOfLines={numberOfLines}>
