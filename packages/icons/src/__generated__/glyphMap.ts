@@ -1627,6 +1627,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-shieldOutline-12': '',
   'ui-shieldOutline-16': '',
   'ui-shieldOutline-24': '',
+  'nav-orderBook-12-active': '',
+  'nav-orderBook-12-inactive': '',
+  'nav-orderBook-16-active': '',
+  'nav-orderBook-16-inactive': '',
+  'nav-orderBook-24-active': '',
+  'nav-orderBook-24-inactive': '',
 };
 
 export default glyphMap;

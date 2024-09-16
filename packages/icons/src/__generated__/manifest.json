@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-08-21T18:30:41.637Z",
-  "metadata": { "lastUnicode": 62122 },
+  "lastUpdated": "2024-09-16T18:33:28.668Z",
+  "metadata": { "lastUnicode": 62128 },
   "items": {
     "2:27": {
       "type": "nav",
@@ -1700,7 +1700,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61451 } }
       ],
       "createdAt": "2023-02-01T23:25:58.644Z",
-      "lastUpdated": "2023-10-25T18:34:34.827Z",
+      "lastUpdated": "2024-08-26T16:45:12.950Z",
       "outputs": {
         "svg12": "./ui/svg/ui-artwork-12.svg",
         "svg16": "./ui/svg/ui-artwork-16.svg",
@@ -1772,7 +1772,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59931 } }
       ],
       "createdAt": "2023-02-01T23:25:58.700Z",
-      "lastUpdated": "2024-05-07T13:12:36.184Z",
+      "lastUpdated": "2024-08-27T21:23:17.911Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bank-12.svg",
         "svg16": "./ui/svg/ui-bank-16.svg",
@@ -1862,7 +1862,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61481 } }
       ],
       "createdAt": "2023-02-01T23:26:07.601Z",
-      "lastUpdated": "2023-10-25T17:34:16.185Z",
+      "lastUpdated": "2024-09-10T20:23:46.680Z",
       "outputs": {
         "svg12": "./ui/svg/ui-briefcase-12.svg",
         "svg16": "./ui/svg/ui-briefcase-16.svg",
@@ -1916,7 +1916,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60436 } }
       ],
       "createdAt": "2023-02-01T23:26:07.697Z",
-      "lastUpdated": "2023-10-25T17:34:15.536Z",
+      "lastUpdated": "2024-09-03T20:39:35.890Z",
       "outputs": {
         "svg12": "./ui/svg/ui-camera-12.svg",
         "svg16": "./ui/svg/ui-camera-16.svg",
@@ -2438,7 +2438,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61136 } }
       ],
       "createdAt": "2023-02-01T23:25:49.738Z",
-      "lastUpdated": "2024-04-29T20:00:16.535Z",
+      "lastUpdated": "2024-09-05T04:03:31.489Z",
       "outputs": {
         "svg12": "./ui/svg/ui-chatBotAgent-12.svg",
         "svg16": "./ui/svg/ui-chatBotAgent-16.svg",
@@ -2474,7 +2474,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60231 } }
       ],
       "createdAt": "2023-02-01T23:25:49.715Z",
-      "lastUpdated": "2024-01-19T21:24:11.562Z",
+      "lastUpdated": "2024-08-29T19:31:36.865Z",
       "outputs": {
         "svg12": "./ui/svg/ui-checkboxChecked-12.svg",
         "svg16": "./ui/svg/ui-checkboxChecked-16.svg",
@@ -2528,7 +2528,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60346 } }
       ],
       "createdAt": "2023-02-01T23:25:49.679Z",
-      "lastUpdated": "2024-01-19T04:34:07.150Z",
+      "lastUpdated": "2024-09-12T14:49:24.101Z",
       "outputs": {
         "svg12": "./ui/svg/ui-circleCheckmark-12.svg",
         "svg16": "./ui/svg/ui-circleCheckmark-16.svg",
@@ -2600,7 +2600,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60281 } }
       ],
       "createdAt": "2023-02-01T23:25:58.766Z",
-      "lastUpdated": "2024-04-30T23:21:13.366Z",
+      "lastUpdated": "2024-08-22T05:28:13.912Z",
       "outputs": {
         "svg12": "./ui/svg/ui-clock-12.svg",
         "svg16": "./ui/svg/ui-clock-16.svg",
@@ -2672,7 +2672,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60386 } }
       ],
       "createdAt": "2023-02-01T23:25:01.989Z",
-      "lastUpdated": "2023-10-25T17:34:14.825Z",
+      "lastUpdated": "2024-08-28T16:33:50.533Z",
       "outputs": {
         "svg12": "./ui/svg/ui-collapse-12.svg",
         "svg16": "./ui/svg/ui-collapse-16.svg",
@@ -2780,7 +2780,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60241 } }
       ],
       "createdAt": "2023-02-01T23:25:40.833Z",
-      "lastUpdated": "2024-05-30T23:32:37.403Z",
+      "lastUpdated": "2024-08-28T18:55:08.476Z",
       "outputs": {
         "svg12": "./ui/svg/ui-copy-12.svg",
         "svg16": "./ui/svg/ui-copy-16.svg",
@@ -3086,7 +3086,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60461 } }
       ],
       "createdAt": "2023-02-01T23:25:40.718Z",
-      "lastUpdated": "2023-10-25T17:34:14.796Z",
+      "lastUpdated": "2024-08-24T01:03:22.497Z",
       "outputs": {
         "svg12": "./ui/svg/ui-downArrow-12.svg",
         "svg16": "./ui/svg/ui-downArrow-16.svg",
@@ -3176,7 +3176,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59881 } }
       ],
       "createdAt": "2023-02-01T23:25:31.097Z",
-      "lastUpdated": "2023-10-25T17:34:15.845Z",
+      "lastUpdated": "2024-09-12T20:33:00.842Z",
       "outputs": {
         "svg12": "./ui/svg/ui-email-12.svg",
         "svg16": "./ui/svg/ui-email-16.svg",
@@ -3320,7 +3320,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61566 } }
       ],
       "createdAt": "2023-02-01T23:25:30.991Z",
-      "lastUpdated": "2024-01-05T15:16:57.701Z",
+      "lastUpdated": "2024-09-05T04:03:05.824Z",
       "outputs": {
         "svg12": "./ui/svg/ui-faceScan-12.svg",
         "svg16": "./ui/svg/ui-faceScan-16.svg",
@@ -3788,7 +3788,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59971 } }
       ],
       "createdAt": "2023-02-01T23:25:21.939Z",
-      "lastUpdated": "2023-10-25T14:56:24.605Z",
+      "lastUpdated": "2024-09-10T06:26:31.177Z",
       "outputs": {
         "svg12": "./ui/svg/ui-home-12.svg",
         "svg16": "./ui/svg/ui-home-16.svg",
@@ -4310,7 +4310,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59956 } }
       ],
       "createdAt": "2023-02-01T23:25:21.791Z",
-      "lastUpdated": "2024-02-05T07:01:55.483Z",
+      "lastUpdated": "2024-09-03T18:22:00.375Z",
       "outputs": {
         "svg12": "./ui/svg/ui-paperAirplane-12.svg",
         "svg16": "./ui/svg/ui-paperAirplane-16.svg",
@@ -4346,7 +4346,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60151 } }
       ],
       "createdAt": "2023-02-01T23:26:07.609Z",
-      "lastUpdated": "2023-10-25T17:34:14.951Z",
+      "lastUpdated": "2024-08-29T19:29:52.904Z",
       "outputs": {
         "svg12": "./ui/svg/ui-pause-12.svg",
         "svg16": "./ui/svg/ui-pause-16.svg",
@@ -4850,7 +4850,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60131 } }
       ],
       "createdAt": "2023-02-01T23:25:12.882Z",
-      "lastUpdated": "2023-10-25T17:34:14.961Z",
+      "lastUpdated": "2024-08-27T08:20:12.531Z",
       "outputs": {
         "svg12": "./ui/svg/ui-shield-12.svg",
         "svg16": "./ui/svg/ui-shield-16.svg",
@@ -5138,7 +5138,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59801 } }
       ],
       "createdAt": "2023-02-01T23:25:12.795Z",
-      "lastUpdated": "2024-01-08T23:40:01.405Z",
+      "lastUpdated": "2024-09-04T16:55:53.614Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step1-12.svg",
         "svg16": "./ui/svg/ui-step1-16.svg",
@@ -5192,7 +5192,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59816 } }
       ],
       "createdAt": "2023-02-01T23:25:02.399Z",
-      "lastUpdated": "2024-01-19T21:38:53.083Z",
+      "lastUpdated": "2024-08-22T20:05:44.252Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step4-12.svg",
         "svg16": "./ui/svg/ui-step4-16.svg",
@@ -5210,7 +5210,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59821 } }
       ],
       "createdAt": "2023-02-01T23:25:02.386Z",
-      "lastUpdated": "2024-01-19T21:45:05.216Z",
+      "lastUpdated": "2024-09-12T15:27:44.611Z",
       "outputs": {
         "svg12": "./ui/svg/ui-step5-12.svg",
         "svg16": "./ui/svg/ui-step5-16.svg",
@@ -5498,7 +5498,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60261 } }
       ],
       "createdAt": "2023-02-01T23:25:30.975Z",
-      "lastUpdated": "2024-02-22T21:41:30.198Z",
+      "lastUpdated": "2024-09-12T13:32:58.466Z",
       "outputs": {
         "svg12": "./ui/svg/ui-undo-12.svg",
         "svg16": "./ui/svg/ui-undo-16.svg",
@@ -5516,7 +5516,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 60781 } }
       ],
       "createdAt": "2023-02-01T23:25:02.322Z",
-      "lastUpdated": "2023-10-25T17:34:14.739Z",
+      "lastUpdated": "2024-09-10T17:05:33.083Z",
       "outputs": {
         "svg12": "./ui/svg/ui-unknown-12.svg",
         "svg16": "./ui/svg/ui-unknown-16.svg",
@@ -5534,7 +5534,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61036 } }
       ],
       "createdAt": "2023-02-01T23:26:07.713Z",
-      "lastUpdated": "2024-01-18T15:01:14.925Z",
+      "lastUpdated": "2024-09-04T18:39:45.567Z",
       "outputs": {
         "svg12": "./ui/svg/ui-unlock-12.svg",
         "svg16": "./ui/svg/ui-unlock-16.svg",
@@ -5732,7 +5732,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 59851 } }
       ],
       "createdAt": "2023-02-01T23:25:02.036Z",
-      "lastUpdated": "2024-02-22T21:41:40.966Z",
+      "lastUpdated": "2024-08-28T22:15:16.860Z",
       "outputs": {
         "svg12": "./ui/svg/ui-withdraw-12.svg",
         "svg16": "./ui/svg/ui-withdraw-16.svg",
@@ -6461,7 +6461,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61751 } }
       ],
       "createdAt": "2023-09-14T16:13:58.476Z",
-      "lastUpdated": "2024-05-29T18:51:48.208Z",
+      "lastUpdated": "2024-09-11T17:13:27.145Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-walletLogo-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-walletLogo-12-inactive.svg",
@@ -6767,7 +6767,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61826 } }
       ],
       "createdAt": "2023-10-16T20:13:41.050Z",
-      "lastUpdated": "2024-07-11T17:48:21.151Z",
+      "lastUpdated": "2024-09-02T22:21:26.735Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-coinbase-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-coinbase-12-inactive.svg",
@@ -7326,7 +7326,7 @@
     "1495:40": {
       "type": "nav",
       "name": "helpCenterQuestionMark",
-      "hash": "J4hbVIaCy9imnE0D9hG4ant45fQfxqqHdZTEQZ4+3wI=",
+      "hash": "dIkJwA4EyK6LUuCEpqBeW8wVhw16pth2SeLopJGI294=",
       "description": "help, center, product, question, mark, FAQ, find, customer, service, CEX",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 61948 } },
@@ -7337,7 +7337,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 61943 } }
       ],
       "createdAt": "2023-12-01T22:33:05.247Z",
-      "lastUpdated": "2024-08-14T17:57:17.694Z",
+      "lastUpdated": "2024-09-09T21:19:11.430Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-helpCenterQuestionMark-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-helpCenterQuestionMark-12-inactive.svg",
@@ -7538,7 +7538,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61997 } }
       ],
       "createdAt": "2024-04-12T19:17:54.457Z",
-      "lastUpdated": "2024-04-12T19:17:54.457Z",
+      "lastUpdated": "2024-09-09T21:19:11.495Z",
       "outputs": {
         "svg12": "./ui/svg/ui-logout-12.svg",
         "svg16": "./ui/svg/ui-logout-16.svg",
@@ -7556,7 +7556,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61994 } }
       ],
       "createdAt": "2024-04-12T19:17:54.463Z",
-      "lastUpdated": "2024-04-12T19:17:54.463Z",
+      "lastUpdated": "2024-09-09T21:19:11.356Z",
       "outputs": {
         "svg12": "./ui/svg/ui-login-12.svg",
         "svg16": "./ui/svg/ui-login-16.svg",
@@ -7574,7 +7574,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 61991 } }
       ],
       "createdAt": "2024-04-12T19:17:54.450Z",
-      "lastUpdated": "2024-04-12T19:17:54.450Z",
+      "lastUpdated": "2024-09-09T21:19:11.436Z",
       "outputs": {
         "svg12": "./ui/svg/ui-infoInactive-12.svg",
         "svg16": "./ui/svg/ui-infoInactive-16.svg",
@@ -7592,7 +7592,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62000 } }
       ],
       "createdAt": "2024-04-16T19:10:59.918Z",
-      "lastUpdated": "2024-08-20T19:34:25.215Z",
+      "lastUpdated": "2024-09-09T21:19:11.398Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sortDownCenterInactive-12.svg",
         "svg16": "./ui/svg/ui-sortDownCenterInactive-16.svg",
@@ -7610,7 +7610,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62003 } }
       ],
       "createdAt": "2024-04-16T19:10:59.927Z",
-      "lastUpdated": "2024-08-20T19:31:10.733Z",
+      "lastUpdated": "2024-09-09T21:19:11.547Z",
       "outputs": {
         "svg12": "./ui/svg/ui-sortUpCenterInactive-12.svg",
         "svg16": "./ui/svg/ui-sortUpCenterInactive-16.svg",
@@ -7628,7 +7628,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62006 } }
       ],
       "createdAt": "2024-04-25T16:55:55.328Z",
-      "lastUpdated": "2024-08-20T19:31:10.692Z",
+      "lastUpdated": "2024-09-09T21:19:11.510Z",
       "outputs": {
         "svg12": "./ui/svg/ui-cashCoins-12.svg",
         "svg16": "./ui/svg/ui-cashCoins-16.svg",
@@ -7646,7 +7646,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62009 } }
       ],
       "createdAt": "2024-04-25T16:55:55.320Z",
-      "lastUpdated": "2024-04-25T16:55:55.320Z",
+      "lastUpdated": "2024-09-09T21:19:11.524Z",
       "outputs": {
         "svg12": "./ui/svg/ui-lineChartCrypto-12.svg",
         "svg16": "./ui/svg/ui-lineChartCrypto-16.svg",
@@ -7664,7 +7664,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62030 } }
       ],
       "createdAt": "2024-05-03T19:13:23.982Z",
-      "lastUpdated": "2024-05-03T19:13:23.982Z",
+      "lastUpdated": "2024-09-09T21:19:11.407Z",
       "outputs": {
         "svg12": "./ui/svg/ui-advancedMarketSelector-12.svg",
         "svg16": "./ui/svg/ui-advancedMarketSelector-16.svg",
@@ -7685,7 +7685,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62018 } }
       ],
       "createdAt": "2024-05-03T19:13:23.976Z",
-      "lastUpdated": "2024-05-07T14:48:15.518Z",
+      "lastUpdated": "2024-09-09T21:19:11.402Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-developerAPIProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-developerAPIProduct-12-inactive.svg",
@@ -7709,7 +7709,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62024 } }
       ],
       "createdAt": "2024-05-03T19:13:23.970Z",
-      "lastUpdated": "2024-05-03T19:13:23.970Z",
+      "lastUpdated": "2024-09-09T21:19:11.426Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-developerPlatformProduct-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-developerPlatformProduct-12-inactive.svg",
@@ -7733,7 +7733,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62012 } }
       ],
       "createdAt": "2024-05-03T19:13:23.963Z",
-      "lastUpdated": "2024-05-31T17:47:07.175Z",
+      "lastUpdated": "2024-09-09T21:19:11.416Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-apiPlug-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-apiPlug-12-inactive.svg",
@@ -7757,7 +7757,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62033 } }
       ],
       "createdAt": "2024-05-10T15:10:12.066Z",
-      "lastUpdated": "2024-05-10T17:06:39.825Z",
+      "lastUpdated": "2024-09-09T21:19:11.542Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-sendReceive-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-sendReceive-12-inactive.svg",
@@ -7781,7 +7781,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62039 } }
       ],
       "createdAt": "2024-05-31T17:47:07.158Z",
-      "lastUpdated": "2024-08-20T19:34:25.290Z",
+      "lastUpdated": "2024-09-09T21:19:11.489Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-folderOpen-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-folderOpen-12-inactive.svg",
@@ -7805,7 +7805,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62045 } }
       ],
       "createdAt": "2024-05-31T17:47:07.152Z",
-      "lastUpdated": "2024-08-20T19:34:25.339Z",
+      "lastUpdated": "2024-09-09T21:19:11.505Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-priceAlerts-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-priceAlerts-12-inactive.svg",
@@ -7829,7 +7829,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62051 } }
       ],
       "createdAt": "2024-06-13T18:26:42.622Z",
-      "lastUpdated": "2024-08-20T19:34:25.211Z",
+      "lastUpdated": "2024-09-09T21:19:11.371Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gaugeEmpty-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gaugeEmpty-12-inactive.svg",
@@ -7853,7 +7853,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62063 } }
       ],
       "createdAt": "2024-06-13T18:26:42.630Z",
-      "lastUpdated": "2024-08-20T19:31:10.649Z",
+      "lastUpdated": "2024-09-09T21:19:11.470Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gaugeLow-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gaugeLow-12-inactive.svg",
@@ -7877,7 +7877,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62069 } }
       ],
       "createdAt": "2024-06-13T18:26:42.638Z",
-      "lastUpdated": "2024-08-20T19:31:10.631Z",
+      "lastUpdated": "2024-09-09T21:19:11.461Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gaugeMedium-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gaugeMedium-12-inactive.svg",
@@ -7901,7 +7901,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62057 } }
       ],
       "createdAt": "2024-06-13T18:26:42.614Z",
-      "lastUpdated": "2024-08-20T19:34:25.319Z",
+      "lastUpdated": "2024-09-09T21:19:11.500Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-gaugeHigh-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-gaugeHigh-12-inactive.svg",
@@ -7922,7 +7922,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62075 } }
       ],
       "createdAt": "2024-06-14T14:17:44.885Z",
-      "lastUpdated": "2024-07-22T15:12:11.215Z",
+      "lastUpdated": "2024-09-09T21:19:11.518Z",
       "outputs": {
         "svg12": "./ui/svg/ui-candlesticks-12.svg",
         "svg16": "./ui/svg/ui-candlesticks-16.svg",
@@ -7940,7 +7940,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62078 } }
       ],
       "createdAt": "2024-06-14T14:17:44.892Z",
-      "lastUpdated": "2024-07-22T15:12:11.222Z",
+      "lastUpdated": "2024-09-09T21:19:11.535Z",
       "outputs": {
         "svg12": "./ui/svg/ui-orderBook-12.svg",
         "svg16": "./ui/svg/ui-orderBook-16.svg",
@@ -7958,7 +7958,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62084 } }
       ],
       "createdAt": "2024-06-13T18:26:42.604Z",
-      "lastUpdated": "2024-08-20T19:34:25.275Z",
+      "lastUpdated": "2024-09-09T21:19:11.455Z",
       "outputs": {
         "svg12": "./ui/svg/ui-verifiedBadge-12.svg",
         "svg16": "./ui/svg/ui-verifiedBadge-16.svg",
@@ -7976,7 +7976,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62081 } }
       ],
       "createdAt": "2024-06-13T18:26:42.647Z",
-      "lastUpdated": "2024-08-20T19:31:10.621Z",
+      "lastUpdated": "2024-09-09T21:19:11.441Z",
       "outputs": {
         "svg12": "./ui/svg/ui-staggeredList-12.svg",
         "svg16": "./ui/svg/ui-staggeredList-16.svg",
@@ -7994,7 +7994,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62087 } }
       ],
       "createdAt": "2024-06-24T21:43:08.630Z",
-      "lastUpdated": "2024-06-28T16:12:21.810Z",
+      "lastUpdated": "2024-09-09T21:19:11.530Z",
       "outputs": {
         "svg12": "./ui/svg/ui-calculator-12.svg",
         "svg16": "./ui/svg/ui-calculator-16.svg",
@@ -8012,7 +8012,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62096 } }
       ],
       "createdAt": "2024-06-24T21:43:08.624Z",
-      "lastUpdated": "2024-06-28T16:12:21.755Z",
+      "lastUpdated": "2024-09-09T21:19:11.475Z",
       "outputs": {
         "svg12": "./ui/svg/ui-microphone-12.svg",
         "svg16": "./ui/svg/ui-microphone-16.svg",
@@ -8030,7 +8030,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62099 } }
       ],
       "createdAt": "2024-06-24T21:43:08.641Z",
-      "lastUpdated": "2024-06-24T21:43:08.641Z",
+      "lastUpdated": "2024-09-09T21:19:11.362Z",
       "outputs": {
         "svg12": "./ui/svg/ui-perpetualSwap-12.svg",
         "svg16": "./ui/svg/ui-perpetualSwap-16.svg",
@@ -8048,7 +8048,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62093 } }
       ],
       "createdAt": "2024-06-24T21:43:08.646Z",
-      "lastUpdated": "2024-06-24T21:43:08.646Z",
+      "lastUpdated": "2024-09-09T21:19:11.422Z",
       "outputs": {
         "svg12": "./ui/svg/ui-image-12.svg",
         "svg16": "./ui/svg/ui-image-16.svg",
@@ -8066,7 +8066,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62090 } }
       ],
       "createdAt": "2024-06-24T21:43:08.636Z",
-      "lastUpdated": "2024-06-24T21:43:08.636Z",
+      "lastUpdated": "2024-09-09T21:19:11.374Z",
       "outputs": {
         "svg12": "./ui/svg/ui-gif-12.svg",
         "svg16": "./ui/svg/ui-gif-16.svg",
@@ -8087,7 +8087,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62102 } }
       ],
       "createdAt": "2024-07-12T21:29:07.715Z",
-      "lastUpdated": "2024-07-17T20:55:08.120Z",
+      "lastUpdated": "2024-09-09T21:19:11.445Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-priceAlertsCheck-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-priceAlertsCheck-12-inactive.svg",
@@ -8111,7 +8111,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62108 } }
       ],
       "createdAt": "2024-07-12T21:29:07.723Z",
-      "lastUpdated": "2024-07-17T20:55:08.115Z",
+      "lastUpdated": "2024-09-09T21:19:11.366Z",
       "outputs": {
         "svg12Active": "./nav/svg/nav-verifiedPools-12-active.svg",
         "svg12Inactive": "./nav/svg/nav-verifiedPools-12-inactive.svg",
@@ -8132,7 +8132,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62117 } }
       ],
       "createdAt": "2024-07-17T20:55:08.102Z",
-      "lastUpdated": "2024-07-17T20:55:08.102Z",
+      "lastUpdated": "2024-09-09T21:19:11.466Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bellPlus-12.svg",
         "svg16": "./ui/svg/ui-bellPlus-16.svg",
@@ -8150,7 +8150,7 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62114 } }
       ],
       "createdAt": "2024-07-17T20:55:08.097Z",
-      "lastUpdated": "2024-07-17T20:55:08.097Z",
+      "lastUpdated": "2024-09-09T21:19:11.412Z",
       "outputs": {
         "svg12": "./ui/svg/ui-bellCheck-12.svg",
         "svg16": "./ui/svg/ui-bellCheck-16.svg",
@@ -8168,11 +8168,35 @@
         { "props": { "size": 12 }, "metadata": { "unicode": 62120 } }
       ],
       "createdAt": "2024-08-20T19:31:01.494Z",
-      "lastUpdated": "2024-08-21T16:44:16.914Z",
+      "lastUpdated": "2024-09-09T21:19:11.450Z",
       "outputs": {
         "svg12": "./ui/svg/ui-shieldOutline-12.svg",
         "svg16": "./ui/svg/ui-shieldOutline-16.svg",
         "svg24": "./ui/svg/ui-shieldOutline-24.svg"
+      }
+    },
+    "2844:3": {
+      "type": "nav",
+      "name": "orderBook",
+      "hash": "aJTdjqvSkufWbwpVM6BIY7FajnNdOXgDvBJBCewK8Cc=",
+      "description": "advanced, trade, trading, prime, order, book, books, orders, list, review, open, closed, completed",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62128 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 62127 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 62126 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 62125 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 62124 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62123 } }
+      ],
+      "createdAt": "2024-09-13T15:01:01.921Z",
+      "lastUpdated": "2024-09-13T15:01:01.921Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-orderBook-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-orderBook-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-orderBook-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-orderBook-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-orderBook-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-orderBook-24-inactive.svg"
       }
     }
   }

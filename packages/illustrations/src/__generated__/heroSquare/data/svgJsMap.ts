@@ -245,6 +245,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseOneDocWarning-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneDocWarning-2').content,
   },
+  coinbaseOneEarn: {
+    light: () => require('../svgJs/light/coinbaseOneEarn-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneEarn-0').content,
+  },
   coinbaseOneInsufficientWallet: {
     light: () => require('../svgJs/light/coinbaseOneInsufficientWallet-3').content,
     dark: () => require('../svgJs/dark/coinbaseOneInsufficientWallet-3').content,
@@ -566,8 +570,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/emptyStateNftSoldOut-3').content,
   },
   enableBiometrics: {
-    light: () => require('../svgJs/light/enableBiometrics-2').content,
-    dark: () => require('../svgJs/dark/enableBiometrics-2').content,
+    light: () => require('../svgJs/light/enableBiometrics-3').content,
+    dark: () => require('../svgJs/dark/enableBiometrics-3').content,
   },
   encryptedEverything: {
     light: () => require('../svgJs/light/encryptedEverything-3').content,
@@ -610,8 +614,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/errorWeb400-3').content,
   },
   errorWeb404: {
-    light: () => require('../svgJs/light/errorWeb404-3').content,
-    dark: () => require('../svgJs/dark/errorWeb404-3').content,
+    light: () => require('../svgJs/light/errorWeb404-4').content,
+    dark: () => require('../svgJs/dark/errorWeb404-4').content,
   },
   errorWeb404Mobile: {
     light: () => require('../svgJs/light/errorWeb404Mobile-0').content,
@@ -786,8 +790,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/japanVerifyId-2').content,
   },
   keyGeneration: {
-    light: () => require('../svgJs/light/keyGeneration-3').content,
-    dark: () => require('../svgJs/dark/keyGeneration-3').content,
+    light: () => require('../svgJs/light/keyGeneration-4').content,
+    dark: () => require('../svgJs/dark/keyGeneration-4').content,
   },
   layeredNetworks: {
     light: () => require('../svgJs/light/layeredNetworks-3').content,
@@ -1102,8 +1106,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/remittances-3').content,
   },
   requestSent: {
-    light: () => require('../svgJs/light/requestSent-2').content,
-    dark: () => require('../svgJs/dark/requestSent-2').content,
+    light: () => require('../svgJs/light/requestSent-3').content,
+    dark: () => require('../svgJs/dark/requestSent-3').content,
   },
   restrictedCountry: {
     light: () => require('../svgJs/light/restrictedCountry-4').content,
@@ -1386,8 +1390,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/web3ActivitySigned-3').content,
   },
   web3MobileSetupStart: {
-    light: () => require('../svgJs/light/web3MobileSetupStart-2').content,
-    dark: () => require('../svgJs/dark/web3MobileSetupStart-2').content,
+    light: () => require('../svgJs/light/web3MobileSetupStart-3').content,
+    dark: () => require('../svgJs/dark/web3MobileSetupStart-3').content,
   },
   web3MobileSetupSuccess: {
     light: () => require('../svgJs/light/web3MobileSetupSuccess-3').content,

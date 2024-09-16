@@ -8,6 +8,42 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.14.0 (9/16/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustratations 09/16/2024. [[#3270](https://github.cbhq.net/frontend/cds/pull/3270)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- coinbaseOneEarn
+- errorWeb404
+
+#### Pictogram
+
+- futures
+
+#### Spot Square
+
+- coinbaseOneConcierge
+- coinbaseOneEarn
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- enableBiometrics
+- errorWeb404
+- keyGeneration
+- requestSent
+- web3MobileSetupStart
+
 ## 3.13.0 (8/21/2024 PST)
 
 #### 🚀 Updates

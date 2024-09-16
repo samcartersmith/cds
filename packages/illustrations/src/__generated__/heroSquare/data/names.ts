@@ -71,6 +71,7 @@ const names: HeroSquareName[] = [
   'coinbaseOneCardWarning',
   'coinbaseOneDiscountedAmount',
   'coinbaseOneDocWarning',
+  'coinbaseOneEarn',
   'coinbaseOneInsufficientWallet',
   'coinbaseOneLogo',
   'coinbaseOnePercentOff',

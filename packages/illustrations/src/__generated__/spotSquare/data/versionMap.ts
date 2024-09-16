@@ -214,6 +214,8 @@ const versionMap: Record<SpotSquareName, number> = {
   coinbaseOneBoostedCard: 0,
   coinbaseLock: 0,
   coinFifty: 0,
+  coinbaseOneConcierge: 0,
+  coinbaseOneEarn: 0,
 };
 
 export default versionMap;

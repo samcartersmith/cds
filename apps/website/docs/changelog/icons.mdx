@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.18.0 (9/16/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 09/16/2024. [[#3270](https://github.cbhq.net/frontend/cds/pull/3270)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- orderBook
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- helpCenterQuestionMark
+
 ## 2.17.0 (8/21/2024 PST)
 
 #### 🚀 Updates

@@ -136,6 +136,7 @@ const names: NavIconName[] = [
   'gaugeMedium',
   'priceAlertsCheck',
   'verifiedPools',
+  'orderBook',
 ];
 
 export default names;

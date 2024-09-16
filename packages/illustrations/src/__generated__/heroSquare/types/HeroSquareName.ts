@@ -63,6 +63,7 @@ export type HeroSquareName =
   | 'coinbaseOneCardWarning'
   | 'coinbaseOneDiscountedAmount'
   | 'coinbaseOneDocWarning'
+  | 'coinbaseOneEarn'
   | 'coinbaseOneInsufficientWallet'
   | 'coinbaseOneLogo'
   | 'coinbaseOnePercentOff'

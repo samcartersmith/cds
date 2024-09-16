@@ -88,6 +88,7 @@ export type NavIconName =
   | 'nftProduct'
   | 'nodeProduct'
   | 'options'
+  | 'orderBook'
   | 'participate'
   | 'participateProduct'
   | 'pay'
