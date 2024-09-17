@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.42.3 (9/17/2024 PST)
+
+#### 🐞 Fixes
+
+- Add width=100% to date input component. [[#3272](https://github.cbhq.net/frontend/cds/pull/3272)] [[DX-4183](https://jira.coinbase-corp.com/browse/DX-4183)]
+
 ## 6.42.2 ((9/17/2024, 06:28 AM PST))
 
 This is an artificial version bump with no new change.

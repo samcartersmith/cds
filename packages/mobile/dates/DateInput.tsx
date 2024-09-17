@@ -113,7 +113,7 @@ export const DateInput = memo(
       );
 
       return (
-        <VStack minWidth={164} style={style}>
+        <VStack minWidth={164} style={style} width="100%">
           <TextInput
             ref={ref}
             {...rest}
