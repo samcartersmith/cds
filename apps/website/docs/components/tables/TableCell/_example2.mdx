@@ -1,0 +1,69 @@
+```jsx live
+<Table
+  variant="ruled"
+  bordered
+  cellSpacing={{
+    outer: { spacingHorizontal: 2, spacingVertical: 2 },
+    inner: { spacingHorizontal: 2, spacingVertical: 2 },
+  }}
+>
+  <TableHeader>
+    <TableRow>
+      <TableCell title="Name" />
+      <TableCell title="Email" />
+      <TableCell title="Role" />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell
+        innerSpacing={{ spacingHorizontal: 2, spacingVertical: 0 }}
+        outerSpacing={{ spacingHorizontal: 2, spacingVertical: 0 }}
+        start={<Avatar name="Bob Smith" />}
+        title="Bob Smith"
+        subtitle="Junior Developer"
+      />
+      <TableCell
+        innerSpacing={{ spacingHorizontal: 0, spacingVertical: 0 }}
+        outerSpacing={{ spacingHorizontal: 0, spacingVertical: 0 }}
+        title="example@example.com"
+      />
+      <TableCell
+        innerSpacing={{ spacingHorizontal: 0, spacingVertical: 0 }}
+        outerSpacing={{ spacingHorizontal: 0, spacingVertical: 0 }}
+        title="Engineering"
+        subtitle="Full-time"
+      />
+    </TableRow>
+    <TableRow>
+      <TableCell
+        start={<Avatar name="Alice Smith" />}
+        title="Alice Smith"
+        subtitle="Senior Developer"
+      />
+      <TableCell title="example@example.com" />
+      <TableCell title="Engineering" subtitle="Full-time" />
+    </TableRow>
+    <TableRow>
+      <TableCell
+        innerSpacing={{ spacingHorizontal: 5, spacingVertical: 5 }}
+        outerSpacing={{ spacingHorizontal: 5, spacingVertical: 5 }}
+        start={<Avatar name="Joel Smith" />}
+        title="Joel Smith"
+        subtitle="Developer"
+      />
+      <TableCell
+        innerSpacing={{ spacingHorizontal: 5, spacingVertical: 5 }}
+        outerSpacing={{ spacingHorizontal: 5, spacingVertical: 5 }}
+        title="example@example.com"
+      />
+      <TableCell
+        innerSpacing={{ spacingHorizontal: 5, spacingVertical: 5 }}
+        outerSpacing={{ spacingHorizontal: 5, spacingVertical: 5 }}
+        title="Engineering"
+        subtitle="Full-time"
+      />
+    </TableRow>
+  </TableBody>
+</Table>
+```

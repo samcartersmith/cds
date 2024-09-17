@@ -1,3 +1,10 @@
 import Example from './_example.mdx';
+import Example2 from './_example2.mdx';
 
 <Example />
+
+:::info
+Note: To customize a TableCell's `innerSpacing` or `outerSpacing` props, you must also provide the `cellSpacing` prop to the parent `Table`. If `cellSpacing` is not set on the `Table`, `TableCell` will default to using `defaultCellSpacing`, and any `innerSpacing` or `outerSpacing` props specified on `TableCell` will not take effect.
+:::
+
+<Example2 />
