@@ -73,7 +73,7 @@ export const cujs = [
   { id: 'rn-add-cash-lib-cuj', pillar: 'Add Cash', label: 'RN Add Cash CUJ (RN Core)' },
   { id: 'web-add-cash-cuj', pillar: 'Add Cash', label: 'Web Add Cash CUJ' },
   { id: 'rn-withdraw-cuj', pillar: 'Withdraw', label: 'RN Withdraw CUJ' },
-  { id: 'rn-withdraw-lib-cuj', pillar: 'Withdraw', label: 'RN Withdraw CUJ (RN core)' },
+  { id: 'rn-withdraw-lib-cuj', pillar: 'Withdraw', label: 'RN Withdraw CUJ (RN Core)' },
   { id: 'web-withdraw-cuj', pillar: 'Withdraw', label: 'Web Withdraw CUJ' },
   {
     id: 'rn-buy-sell-convert-cuj',

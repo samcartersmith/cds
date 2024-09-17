@@ -1,19 +1,33 @@
 {
   "latest": {
-    "date": "9/9/2024",
-    "cdsPercent": 0.9286412512218963,
-    "cds": 950,
-    "presentational": 73,
-    "totalCdsAndPresentational": 1023,
-    "totalOther": 1248,
+    "date": "9/16/2024",
+    "cdsPercent": 0.9515358361774744,
+    "cds": 1394,
+    "presentational": 71,
+    "totalCdsAndPresentational": 1465,
+    "totalOther": 1625,
     "cdsCommonVersion": "6.28.0",
     "cdsWebVersion": "6.28.0",
-    "cdsMobileVersion": "6.36.0",
-    "cdsLatestVersion": "6.39.0",
-    "latestCdsVersionPublished3MonthsAgo": "6.21.1",
+    "cdsMobileVersion": "6.39.0",
+    "cdsLatestVersion": "6.42.1",
+    "latestCdsVersionPublished3MonthsAgo": "6.21.2",
     "upToDate": true
   },
   "previous": [
+    {
+      "date": "9/9/2024",
+      "cdsPercent": 0.9286412512218963,
+      "cds": 950,
+      "presentational": 73,
+      "totalCdsAndPresentational": 1023,
+      "totalOther": 1248,
+      "cdsCommonVersion": "6.28.0",
+      "cdsWebVersion": "6.28.0",
+      "cdsMobileVersion": "6.36.0",
+      "cdsLatestVersion": "6.39.0",
+      "latestCdsVersionPublished3MonthsAgo": "6.21.1",
+      "upToDate": true
+    },
     {
       "date": "9/5/2024",
       "cdsPercent": 0.9286412512218963,

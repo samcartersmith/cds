@@ -88,7 +88,6 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
         tsconfigFileName: 'tsconfig.base.json',
         id: 'umo-cuj',
         label: 'Unified Mobile Onboarding',
-        projectTsAliases: ['@onboarding'],
         type: 'doc',
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/onboarding'),
         projectGitPath: 'src/packages/onboarding',
@@ -104,9 +103,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       // note send: https://docs.google.com/spreadsheets/d/1QMd8qx4-e9DkxJcM0KXlvyZ8M030hyAuTq8t0j228Is/edit#gid=1347070423
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-send-cuj',
         label: 'RN Send CUJ',
         type: 'doc',
@@ -185,9 +184,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       // note receive: https://docs.google.com/spreadsheets/d/1QMd8qx4-e9DkxJcM0KXlvyZ8M030hyAuTq8t0j228Is/edit#gid=1347070423
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-receive-cuj',
         label: 'RN Receive CUJ',
         type: 'doc',
@@ -291,9 +290,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       },
       {
         // RN Adv Portfolio
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-adv-portfolio-cuj',
         label: 'RN Adv Portfolio CUJ',
         type: 'doc',
@@ -315,9 +314,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
     items: [
       {
         // Get Support (Mobile)
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-adv-portfolio-cuj',
         label: 'RN Adv Portfolio CUJ',
         type: 'doc',
@@ -343,9 +342,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
     items: [
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-roc-cuj',
         label: 'RN Onchain Error States CUJ',
         type: 'doc',
@@ -496,9 +495,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
     items: [
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-stablecoin-cuj',
         label: 'RN USDC/Cash Surfaces CUJ',
         type: 'doc',
@@ -624,9 +623,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
     items: [
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-home-app-cuj',
         label: 'RN Home CUJ (App)',
         type: 'doc',
@@ -649,8 +648,8 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
         label: 'RN Home CUJ (RN Core)',
         type: 'doc',
         sourceGlob: [
-          'react-native-core/designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.(ts|tsx)',
-          'react-native-core/designSystem/src/core/chart/ChartHeaderAndNavBar/FabricTextInput.(ts|tsx)',
+          'designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.(ts|tsx)',
+          'designSystem/src/core/chart/ChartHeaderAndNavBar/FabricTextInput.(ts|tsx)',
         ],
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         projectGitPath: 'libs/react-native-core',
@@ -686,9 +685,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
     items: [
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-earn-staking-cuj',
         label: 'RN Earn and Staking CUJ',
         type: 'doc',
@@ -893,9 +892,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       // note check asset price: https://docs.google.com/spreadsheets/d/1MWZ8qq72b6xXr-g_Pmq3GErDKdTH-5re0jWJ3iS8W64/edit#gid=0
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-check-asset-price-cuj',
         label: 'RN Check Asset Price CUJ',
         type: 'doc',
@@ -959,9 +958,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       // note check/view portfolio: https://docs.google.com/spreadsheets/d/1MWZ8qq72b6xXr-g_Pmq3GErDKdTH-5re0jWJ3iS8W64/edit#gid=0
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-check-view-portfolio-cuj',
         label: 'RN Check View Portfolio CUJ',
         type: 'doc',
@@ -1015,9 +1014,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       // note add payment: https://docs.google.com/spreadsheets/d/1RQnqdhTPapDMnOkb4dnsoMPYybGtM8O8Ww_T7AMA3ok/edit#gid=0
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-add-payment-cuj',
         label: 'RN Add Payment CUJ',
         type: 'doc',
@@ -1079,9 +1078,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       // note add cash / deposit: https://docs.google.com/spreadsheets/d/1RQnqdhTPapDMnOkb4dnsoMPYybGtM8O8Ww_T7AMA3ok/edit#gid=0
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-add-cash-cuj',
         label: 'RN Add Cash CUJ',
         type: 'doc',
@@ -1129,8 +1128,7 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
         id: 'rn-add-cash-lib-cuj',
         label: 'RN Add Cash CUJ (RN Core)',
         type: 'doc',
-        projectTsAliases: ['@app'],
-        sourceGlob: ['react-native-core/components/cells/PaymentMethodCell.(ts|tsx)'],
+        sourceGlob: ['components/cells/PaymentMethodCell.(ts|tsx)'],
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         projectGitPath: 'libs/react-native-core',
       },
@@ -1175,9 +1173,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       // note Withdraw/ Cash out: https://docs.google.com/spreadsheets/d/1RQnqdhTPapDMnOkb4dnsoMPYybGtM8O8Ww_T7AMA3ok/edit#gid=0
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-withdraw-cuj',
         label: 'RN Withdraw CUJ',
         type: 'doc',
@@ -1220,10 +1218,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
         root: path.join(tempDir, retailMobileGit, 'libs/react-native-core'),
         github: retailMobileGit,
         id: 'rn-withdraw-lib-cuj',
-        label: 'RN Withdraw CUJ (RN core)',
+        label: 'RN Withdraw CUJ (RN Core)',
         type: 'doc',
-        projectTsAliases: ['@app'],
-        sourceGlob: ['react-native-core/components/cells/PaymentMethodCell.(ts|tsx)'],
+        sourceGlob: ['components/cells/PaymentMethodCell.(ts|tsx)'],
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         projectGitPath: 'libs/react-native-core',
       },
@@ -1268,9 +1265,9 @@ export const coreUserJourneyConfig: AdoptersConfig[] = [
       // note buy sell convert : https://docs.google.com/spreadsheets/d/1QMd8qx4-e9DkxJcM0KXlvyZ8M030hyAuTq8t0j228Is/edit#gid=1297953191
       {
         // mobile / react-native
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'rn-buy-sell-convert-cuj',
         label: 'RN Buy Sell Convert CUJ',
         type: 'doc',
@@ -1392,7 +1389,6 @@ export const config: AdoptersConfig[] = [
         tsconfigFileName: 'tsconfig.base.json',
         id: 'retail-mobile',
         label: 'Retail Mobile',
-        projectTsAliases: ['@app'],
         type: 'doc',
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         projectGitPath: 'src/packages/app',
@@ -1425,7 +1421,6 @@ export const config: AdoptersConfig[] = [
         tsconfigFileName: 'tsconfig.base.json',
         id: 'umo',
         label: 'Unified Mobile Onboarding',
-        projectTsAliases: ['@onboarding'],
         type: 'doc',
         dependencyPath: path.join(tempDir, retailMobileGit, 'src/packages/onboarding'),
         projectGitPath: 'src/packages/onboarding',
@@ -1480,9 +1475,9 @@ export const config: AdoptersConfig[] = [
         projectGitPath: 'app/src/views',
       },
       {
-        root: path.join(tempDir, retailMobileGit),
+        root: path.join(tempDir, retailMobileGit, 'src/packages/app'),
         github: retailMobileGit,
-        tsconfigFileName: 'tsconfig.base.json',
+        tsconfigFileName: 'tsconfig.json',
         id: 'cs3-mobile',
         label: 'Subscription & Services Mobile',
         type: 'doc',
