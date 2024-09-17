@@ -128,7 +128,7 @@ export const Button = memo(
                     color={color}
                     name={startIcon}
                     size={iconSize}
-                    spacingStart={1}
+                    spacingEnd={1}
                     style={styles.icon}
                   />
                 ) : null)}
