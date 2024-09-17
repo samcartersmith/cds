@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.2 (9/17/2024 PST)
+
+#### 🚀 Updates
+
+- A11y lint enhancements to CDS eslint-plugin. [[#3206](https://github.cbhq.net/frontend/cds/pull/3206)] [[DX-4157](https://jira.coinbase-corp.com/browse/DX-4157)]
+
 ## 0.0.1 (6/21/2024 PST)
 
 #### 🚀 Updates

@@ -1,18 +1,20 @@
 # @cbhq/eslint-plugin-cds
 
+## 🔗 Go link: [go/cds-a11y-rules](http://go/cds-a11y-rules)
+
 ## Overview
 
 The CDS ESLint Plugin targets gaps in existing accessibility linting and CDS Best Practices that were identified in our [CDS A11y linting rules audit](https://docs.google.com/spreadsheets/d/1qL_83p7iYsX81OzMjPtZc1xN7oaEbCCXh6hKqkB9otE/edit?usp=sharing).
 
 Currently, the [`cbhq` official plugin](https://github.cbhq.net/frontend/nx-tools/tree/master/packages/eslint-plugin) has two main configs:
 
-- [react.ts](https://github.cbhq.net/frontend/nx-tools/blob/master/packages/eslint-plugin/src/configs/react.ts): Used in web repositories and uses `airbnb/rules/react-a11y`. Airbnb react-a11y rules uses [`jsx-a11y` a11y rules](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main).
-- [react-native.ts](https://github.cbhq.net/frontend/nx-tools/blob/master/packages/eslint-plugin/src/configs/react-native.ts): Used in mobile repositories and uses `react-native-a11y` for accessibility.
+- 🌐 [react.ts](https://github.cbhq.net/frontend/nx-tools/blob/master/packages/eslint-plugin/src/configs/react.ts): Used in web repositories and uses `airbnb/rules/react-a11y`. Airbnb react-a11y rules uses [`jsx-a11y` a11y rules](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main).
+- 📱[react-native.ts](https://github.cbhq.net/frontend/nx-tools/blob/master/packages/eslint-plugin/src/configs/react-native.ts): Used in mobile repositories and uses `react-native-a11y` for accessibility.
 
 There is currently a gap in the existing ruleset that cannot target specific CDS components.
 More detail found in [P/PS: CDS ESLint Plugin For Accessibility Remediation](https://docs.google.com/document/d/1zZvMw53YysvSuPd9Uph7Yr3JewpIfSVK_a9eeJ6Xktw/edit?usp=sharing)
 
-Our goal with the `eslint-plugin-cds` package is to create new rules to address these gaps in accessibility and to enforce CDS Best Practices.
+🎯 Our goal with the `eslint-plugin-cds` package is to create new rules to address these gaps in accessibility and to enforce CDS Best Practices.
 
 ## Development
 
@@ -53,7 +55,7 @@ To test on consumer repos locally, you will need to build your `eslint-plugin-cd
    ```
 3. Add your plugin and extend your specific config in the `.eslintrc.js` file.
 
-   Note: There are differences between `extends` and `plugins`:
+   📝 Note: There are differences between `extends` and `plugins`:
 
    - `extends`: Allows you to use and build upon an existing set of ESLint rules defined in another configuration. Useful for adhering to standardized coding styles like Airbnb or Google.
      - By using the extends keyword, you're not just making rules available, but you are actively applying a set of predefined rules from another configuration. This means that the rules defined in the extended configurations are automatically enforced in your project, unless explicitly overridden.
@@ -68,50 +70,106 @@ To test on consumer repos locally, you will need to build your `eslint-plugin-cd
 
 4. Run `yarn` in root directory or `workspace`.
 5. Run `yarn nx run <target>:lint` or `npx eslint .` in root directory or `workspace`.
-   - A tip is to run `npx eslint . > eslint_output.txt` to be able to see all the output.
+   - 💡 Tip: Run `npx eslint . > eslint_output.txt` to be able to see all the output.
 
 ## CDS Rules
 
-### Accessibility Rules
+## ♿ Accessibility Rules
 
 We currently have two additional accessibility rules:
 
-- `controlHasAssociatedLabelExtended` (Web)
+### 🔍  controlHasAssociatedLabelExtended (Web)
 
-  - **Rule Description**: The `controlHasAssociatedLabelExtended` rule checks for the presence of an `accessibilityLabel` on designated Web CDS components listed under `componentsRequiringAccessibilityLabel`. It enforces that these components must have an `accessibilityLabel` attribute unless:
+**Rule Description**:
 
-    - They contain inner text, or
-    - They have props spread which might implicitly handle accessibility.
+The `controlHasAssociatedLabelExtended` rule checks for the presence of an `accessibilityLabel` or other specific a11yLabel props on designated Web CDS components.
 
-    - For components listed under `collapsibleCheckForControlledElementAccessibilityProps`, this rule ensures that `controlledElementAccessibilityProps` are provided to manage their accessibility state dynamically.
+The `accessibilityLabel` is required for components listed under `componentsRequiringAccessibilityLabel`. The rule enforces that these components must have an `accessibilityLabel` attribute unless:
 
-  - **Targeted Components** This rule specifically targets components such as:
-    - `Button`
-    - `Checkbox`
-    - `InputChip`
-    - `IconButton`
-    - `IconCounterButton`
-    - `Pressable`
-    - `Switch`
-    - `TextInput`
-    - `Collapsible` (for `controlledElementAccessibilityProps`)
+- They contain inner text, or
+- They have props spread which might implicitly handle accessibility.
 
-- `hasValidA11yDescriptorsExtended` (mobile)
+**Targeted Components** This rule specifically targets components such as:
 
-  - **Rule Description**: The `hasValidA11yDescriptorsExtended` rule verifies that mobile CDS components such as buttons and switches have an `accessibilityLabel`. It does not flag components if:
+- `Button`
+- `Checkbox`
+- `InputChip`
+- `IconButton`
+- `IconCounterButton`
+- `Pressable`
+- `Switch`
+- `TextInput`
+- `FeedCard`
+- `ProgressBar`
+- `Select`
+- `NavigationBar`
+- `Sidebar`
+- `Popover`
 
-    - They contain inner text that serves as an implicit label.
-    - They have properties spread that can implicitly provide accessibility attributes.
+**Extended A11y Lint Coverage**:
 
-  - **Targeted Components** This rule specifically targets components such as:
-    - `Button`
-    - `Checkbox`
-    - `InputChip`
-    - `IconButton`
-    - `IconCounterButton`
-    - `Pressable`
-    - `Switch`
-    - `TextInput`
+This rule also checks for other required a11y labels that need to be enforced outside of `accessibilityLabel`.
+
+For components listed under `collapsibleCheckForControlledElementAccessibilityProps`, this rule ensures that `controlledElementAccessibilityProps` are provided to manage their accessibility state dynamically.
+
+**Extended Targeted Components**
+
+- `Collapsible`, `Dropdown`
+  - Checks for presence of `controlledElementAccessibilityProps`
+- `TextInput`, `SelectStack`
+  - Checks for presence of `helperTextErrorIconAccessibilityLabel`
+- `DatePicker`
+  - Checks for presence of `calendarIconButtonAccessibilityLabel`
+- `DatePicker`, `Calendar`, `TabNavigation`
+  - Checks for presence of `nextArrowAccessibilityLabel` and `previousArrowAccessibilityLabel`
+- `NudgeCard`, `UpsellCard`
+  - Checks for presence of `accessibilityLabel` when `onDismissPress` is present
+- `SearchInput`
+  - Checks for presence of `startIconAccessibilityLabel` and `clearIconAccessibilityLabel`
+
+### 🔍  hasValidA11yDescriptorsExtended (mobile)
+
+**Rule Description**:
+
+The `hasValidA11yDescriptorsExtended` rule verifies that mobile CDS components such as buttons and switches have an `accessibilityLabel` or other specific a11yLabel props on designated Mobile CDS components. It does not flag components if:
+
+- They contain inner text that serves as an implicit label.
+- They have properties spread that can implicitly provide accessibility attributes.
+
+**Targeted Components** This rule specifically targets components such as:
+
+- `Button`
+- `Checkbox`
+- `InputChip`
+- `IconButton`
+- `IconCounterButton`
+- `Pressable`
+- `Switch`
+- `TextInput`
+- `FeedCard`
+- `StickyFooter`
+- `ProgressBar`
+- `Select`
+- `NavigationBar`
+- `Sidebar`
+- `Popover`
+
+**Extended A11y Lint Coverage**:
+
+This rule also checks for other required a11y labels that need to be enforced outside of `accessibilityLabel`.
+
+**Extended Targeted Components**
+
+- `Drawer`, `SelectChip`, `Tray`
+  - Checks for presence of `handleBarAccessibilityLabel`
+- `TextInput`
+  - Checks for presence of `helperTextErrorIconAccessibilityLabel`
+- `DatePicker`
+  - Checks for presence of `calendarIconButtonAccessibilityLabel`
+- `NudgeCard`, `UpsellCard`
+  - Checks for presence of `accessibilityLabel` when `onDismissPress` is present
+- `SearchInput`
+  - Checks for presence of `startIconAccessibilityLabel` and `clearIconAccessibilityLabel`
 
 ### Current CDS Best Practices Rules
 

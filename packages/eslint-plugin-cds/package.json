@@ -1,12 +1,15 @@
 {
   "name": "@cbhq/eslint-plugin-cds",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ESLint plugin for CDS",
   "main": "./lib/index.js",
   "scripts": {
     "build": "rm -rf esm lib dts && tsc && rollup -c"
   },
   "peerDependencies": {
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
     "@typescript-eslint/parser": "^6",
     "@typescript-eslint/utils": "^6",
     "eslint": "^8",
@@ -19,6 +22,9 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/types": "^7.20.7",
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
     "@rollup/plugin-babel": "^6",
     "@rollup/plugin-node-resolve": "^15",
     "@rollup/plugin-terser": "^0.4",
