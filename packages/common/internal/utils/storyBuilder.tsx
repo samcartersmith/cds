@@ -3,7 +3,7 @@ import isObject from 'lodash/isObject';
 import merge from 'lodash/merge';
 import omit from 'lodash/omit';
 
-import { Scale, Spectrum } from '../../types';
+import { Scale, ScaleDensity, Spectrum } from '../../types';
 
 const emptyObject = {};
 
@@ -104,6 +104,9 @@ export type Story<Props, WrapperProps, ExampleFnReturnType = React.ReactElement<
 };
 
 export type StoryBuilderConfig<Props, WrapperProps> = {
+  globals?: {
+    density: ScaleDensity;
+  };
   args?: {
     spectrum?: Spectrum;
     scale?: Scale;

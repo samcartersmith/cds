@@ -42,6 +42,8 @@ export function StoryContainer<Props>(
   const isDarkMode = useDarkMode();
   const stories = context.parameters?.stories;
 
+  const scale = context?.globals?.density === 'dense' ? 'xSmall' : 'large';
+
   // eslint-disable-next-line react/no-unstable-nested-components
   const Container = memo(() => {
     const contents = useMemo(() => {
@@ -67,7 +69,7 @@ export function StoryContainer<Props>(
       <LocalStrictMode>
         <ThemeProvider
           display="contents"
-          scale={context.args?.scale}
+          scale={context.args?.scale ?? scale}
           spectrum={context.args?.spectrum ?? (isDarkMode ? 'dark' : 'light')}
         >
           <PortalProvider>

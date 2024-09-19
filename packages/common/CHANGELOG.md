@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.42.4 (9/18/2024 PST)
+
+#### 🐞 Fixes
+
+- Feat: add storybook toggle for density. [[#3282](https://github.cbhq.net/frontend/cds/pull/3282)]
+
 ## 6.42.3 ((9/17/2024, 07:32 AM PST))
 
 This is an artificial version bump with no new change.

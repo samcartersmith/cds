@@ -72,4 +72,16 @@ export const globalTypes = {
       ],
     },
   },
+  density: {
+    name: 'Density',
+    description: 'Toggle between normal and dense modes',
+    defaultValue: 'normal',
+    toolbar: {
+      icon: 'expand',
+      items: [
+        { value: 'normal', title: 'Normal' },
+        { value: 'dense', title: 'Dense' },
+      ],
+    },
+  },
 };
