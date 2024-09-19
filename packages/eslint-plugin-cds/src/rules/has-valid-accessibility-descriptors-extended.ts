@@ -7,7 +7,7 @@
  * - have props spread.
  */
 
-import { type TSESLint } from '@typescript-eslint/utils';
+import { type TSESLint, TSESTree } from '@typescript-eslint/utils';
 
 import { extractA11yAttributesState } from '../utils/extractA11yAttributesState';
 
@@ -49,6 +49,8 @@ const config = {
   checkForCalendarIconButtonAccessibilityLabelProps: ['DatePicker'],
   checkForCardDismissAccessibilityLabelProps: ['NudgeCard', 'UpsellCard'],
   checkForSearchInputAccessibilityLabelProps: ['SearchInput'],
+
+  allowedPackages: ['@cbhq/cds-common', '@cbhq/cds-mobile', '@cbhq/cds-mobile-visualization'],
 };
 
 export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = {
@@ -72,7 +74,32 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
     schema: [],
   },
   create(context) {
+    const importedComponents: Record<string, string> = {};
+
     return {
+      ImportDeclaration(node: TSESTree.ImportDeclaration) {
+        const packageName = node.source.value as string;
+
+        if (
+          typeof packageName === 'string' &&
+          config.allowedPackages.some(
+            (pkg) => packageName === pkg || packageName.startsWith(`${pkg}/`),
+          )
+        ) {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+          node.specifiers.forEach((specifier) => {
+            switch (specifier.type) {
+              case 'ImportSpecifier':
+              case 'ImportDefaultSpecifier':
+              case 'ImportNamespaceSpecifier':
+                importedComponents[specifier.local.name] = packageName;
+                break;
+              default:
+                break;
+            }
+          });
+        }
+      },
       JSXElement(node) {
         const {
           hasAccessibilityLabel,
@@ -128,7 +155,11 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
         ];
 
         conditionalChecks.forEach(({ configArray, condition, messageId }) => {
-          if (configArray.includes(componentName) && condition) {
+          if (
+            importedComponents[componentName] &&
+            configArray.includes(componentName) &&
+            condition
+          ) {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-call
             context.report({
               // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
