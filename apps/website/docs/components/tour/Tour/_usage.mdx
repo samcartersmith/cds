@@ -1,3 +1,15 @@
+### Getting started
+
+The Tour component manages state and popover element positioning, as well as rendering the tour screen overlay. Place TourStep components anywhere in the Tour children component tree to highlight specific areas of the application UI.
+
+The Tour component renders a tooltip-style UI for each step of the tour. Pass the tour steps data via the `steps` prop, and define the UI for each step via the `Component` prop. When the Tour component has an `activeTourStep` it will render the `Component` for that step, as well as the TourMaskComponent.
+
+You can use the `useTourContext` hook to drive the Tour state from within the tour steps UI.
+
+:::info
+We recommend previewing this component in [the CDS Storybook](https://cds-storybook.cbhq.net/?path=/story/core-components-tour--tour-default). You may notice occasional glitchy positioning of the tour steps in this example due to the live code editor, but you should not see these issues in your application.
+:::
+
 ### Basic example
 
 ```jsx live

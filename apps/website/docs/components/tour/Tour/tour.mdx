@@ -6,21 +6,39 @@ slug: /components/tour
 import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Implementation, { toc as implementationToc } from './_implementation.mdx';
 import Usage, { toc as usageToc } from './_usage.mdx';
+import storybookIcon from '../../../../cms/static/images/storybook.png';
 
-<Page
-  propsTable={{ element: <Implementation />, toc: implementationToc }}
-  metadata={{ element: <Metadata />, toc: metadataToc }}
-  fallback={
-    <Tabs groupId="page">
-      <TabItem
-        value="implementation"
-        label="Implementation"
-        toc={[...metadataToc, ...implementationToc]}
-      >
-        <Metadata />
-        <Usage />
-        <Implementation />
-      </TabItem>
-    </Tabs>
-  }
-/>
+<TextTitle2 as="h2" color="foregroundMuted" spacingTop={2}>
+  The Tour component manages state and popover element positioning, as well as rendering the tour
+  screen overlay. Place TourStep components anywhere in the Tour children component tree to
+  highlight specific areas of the application UI.
+</TextTitle2>
+
+<HStack alignItems="center" gap={1}>
+  <img alt="storybook icon" src={storybookIcon} />
+  <Link
+    openInNewWindow
+    to={'https://cds-storybook.cbhq.net/?path=/story/core-components-tour--tour-default'}
+    variant="headline"
+  >
+    Storybook
+  </Link>
+</HStack>
+
+<HStack spacingTop={5}>
+  <TextBody as="p" color="foregroundMuted">
+    Related components: <Link to="/components/coachmark">Coachmark</Link>
+  </TextBody>
+</HStack>
+
+<Tabs groupId="page">
+  <TabItem
+    value="implementation"
+    label="Implementation"
+    toc={[...metadataToc, ...usageToc, ...implementationToc]}
+  >
+    <Metadata />
+    <Usage />
+    <Implementation />
+  </TabItem>
+</Tabs>
