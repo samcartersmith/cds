@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.43.0 (9/23/2024 PST)
+
+#### 🚀 Updates
+
+- Add 8px weight - semiheavy to ProgressBar and Progress Circle. [[#3285](https://github.cbhq.net/frontend/cds/pull/3285)] [[DX-4287](https://jira.coinbase-corp.com/browse/DX-4287)]
+
 ## 6.42.4 ((9/18/2024, 09:33 PM PST))
 
 This is an artificial version bump with no new change.

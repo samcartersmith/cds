@@ -50,6 +50,16 @@ const ProgressBarScreen = () => {
           )}
         </ProgressContainerWithButtons>
       </Example>
+      <Example title="Semiheavy">
+        <ProgressContainerWithButtons>
+          {({ calculateProgress }) => (
+            <VStack gap={2}>
+              <ProgressBar progress={calculateProgress(0)} weight="semiheavy" />
+              <ProgressBar progress={calculateProgress(0.2)} weight="semiheavy" />
+            </VStack>
+          )}
+        </ProgressContainerWithButtons>
+      </Example>
       <Example title="Heavy">
         <ProgressContainerWithButtons>
           {({ calculateProgress }) => (

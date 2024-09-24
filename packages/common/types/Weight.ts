@@ -1,1 +1,1 @@
-export type Weight = 'thin' | 'normal' | 'heavy';
+export type Weight = 'thin' | 'normal' | 'semiheavy' | 'heavy';
