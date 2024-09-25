@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import { sampleTabs } from '@cbhq/cds-common/internal/data/tabs';
+import { type TabProps } from '@cbhq/cds-common/types/TabsProps';
 
 import { TabNavigation } from '../TabNavigation';
 
@@ -12,12 +13,17 @@ jest.mock('../../hooks/useDimensions', () => ({
   }),
 }));
 
-const MockTabNavigation = ({ testID }: { testID: string }) => {
+const MockTabNavigation = ({
+  testID,
+  tabs = sampleTabs,
+}: {
+  testID: string;
+  tabs?: TabProps[];
+}) => {
   const [activeTab, setActiveTab] = useState(sampleTabs[0].id);
-  return (
-    <TabNavigation onChange={setActiveTab} tabs={sampleTabs} testID={testID} value={activeTab} />
-  );
+  return <TabNavigation onChange={setActiveTab} tabs={tabs} testID={testID} value={activeTab} />;
 };
+
 describe('TabNavigation', () => {
   const TEST_ID = 'mainTabNav';
 
@@ -73,5 +79,18 @@ describe('TabNavigation', () => {
 
     expect(screen.getByTestId(TEST_ID)).toBeVisible();
     expect(screen.getByTestId(sampleTabs[0].testID as string)).toBeVisible();
+  });
+
+  it('should allow tabs to be disabled', () => {
+    render(
+      <MockTabNavigation
+        tabs={sampleTabs.map((tab) => ({ ...tab, disabled: true }))}
+        testID={TEST_ID}
+      />,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toBeVisible();
+    expect(screen.getByTestId(sampleTabs[0].testID as string)).toBeVisible();
+    expect(screen.getByTestId(sampleTabs[0].testID as string)).toBeDisabled();
   });
 });

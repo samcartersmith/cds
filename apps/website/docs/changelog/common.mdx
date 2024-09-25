@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.44.0 (9/25/2024 PST)
+
+#### 🚀 Updates
+
+- Add support for disabled prop to TabNavigation tabs. [[#3297](https://github.cbhq.net/frontend/cds/pull/3297)] [[DX-4228](https://jira.coinbase-corp.com/browse/DX-4228)]
+
 ## 6.43.0 (9/23/2024 PST)
 
 #### 🚀 Updates

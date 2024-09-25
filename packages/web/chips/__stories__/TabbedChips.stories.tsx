@@ -28,6 +28,7 @@ export const Default = () => {
       <Demo tabs={sampleTabs} />
       <TextHeadline as="p">With long text</TextHeadline>
       <Demo tabs={longTextTabs} />
+      <Demo tabs={sampleTabs.map((tab, index) => ({ ...tab, disabled: index === 1 }))} />
     </VStack>
   );
 };

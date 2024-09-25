@@ -18,7 +18,7 @@ async function runA11yTests() {
 
       // Optional: maximum time in milliseconds to wait for the browser instance to start.
       // Defaults to 30000 (30 seconds). Pass 0 to disable timeout.
-      timeout: 60000,
+      timeout: 90000,
     });
 
     if (results.length) {

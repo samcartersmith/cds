@@ -299,3 +299,19 @@ export const AccessibilityTest: Story = () => {
     </VStack>
   );
 };
+
+export const Disabled: Story = () => {
+  const [currentTab, setCurrentTab] = useState<TabNavigationProps['value']>();
+
+  return (
+    <VStack background="background" gap={2} spacing={2}>
+      <TabNavigation
+        onChange={setCurrentTab}
+        tabs={tabs.map((tab, index) => ({ ...tab, disabled: index === 1 }))}
+        value={currentTab}
+        variant="secondary"
+      />
+    </VStack>
+  );
+};
+Disabled.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };

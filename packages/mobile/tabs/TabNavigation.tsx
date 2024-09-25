@@ -77,6 +77,7 @@ export const TabNavigation = memo(
                 id,
                 onPress,
                 label,
+                disabled,
                 accessibilityLabel = label,
                 count,
                 max,
@@ -99,6 +100,7 @@ export const TabNavigation = memo(
                       accessibilityLabel={a11yLabelToString}
                       accessibilityRole={descendantAriaRole}
                       accessibilityState={a11yState}
+                      disabled={disabled}
                       onPress={getTabPressHandler({ id, onPress })}
                       testID={tabLabelTestID}
                     >

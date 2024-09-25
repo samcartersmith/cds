@@ -24,6 +24,9 @@ const TabbedChipsScreen = () => {
       <Example title="Long text tabs">
         <Demo tabs={longTextTabs} />
       </Example>
+      <Example title="Disabled tab">
+        <Demo tabs={sampleTabs.map((tab, index) => ({ ...tab, disabled: index === 1 }))} />
+      </Example>
     </ExampleScreen>
   );
 };

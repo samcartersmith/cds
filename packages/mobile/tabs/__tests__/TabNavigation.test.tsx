@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { render, screen } from '@testing-library/react-native';
-import { CustomTabProps } from '@cbhq/cds-common';
 import { sampleTabs as tabs } from '@cbhq/cds-common/internal/data/tabs';
+import { type CustomTabProps, type TabProps } from '@cbhq/cds-common/types/TabsProps';
 
 import { HStack } from '../../layout';
 import { TextHeadline } from '../../typography';
@@ -9,11 +9,15 @@ import { TabNavigation } from '../TabNavigation';
 
 const sampleTabs = tabs.slice(0, 4);
 
-const MockTabNavigation = ({ testID }: { testID: string }) => {
+const MockTabNavigation = ({
+  testID,
+  tabs = sampleTabs,
+}: {
+  testID: string;
+  tabs?: TabProps[];
+}) => {
   const [activeTab, setActiveTab] = useState(sampleTabs[0].id);
-  return (
-    <TabNavigation onChange={setActiveTab} tabs={sampleTabs} testID={testID} value={activeTab} />
-  );
+  return <TabNavigation onChange={setActiveTab} tabs={tabs} testID={testID} value={activeTab} />;
 };
 
 const customTestID = 'custom-test-id';
@@ -56,5 +60,18 @@ describe('TabNavigation', () => {
 
     expect(screen.getByTestId(TEST_ID)).toBeVisible();
     expect(screen.getByTestId(`${customTestID}-${sampleTabs[0].id}`)).toBeVisible();
+  });
+
+  it('should allow tabs to be disabled', () => {
+    render(
+      <MockTabNavigation
+        tabs={sampleTabs.map((tab) => ({ ...tab, disabled: true }))}
+        testID={TEST_ID}
+      />,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toBeVisible();
+    expect(screen.getByTestId(sampleTabs[0].testID as string)).toBeVisible();
+    expect(screen.getByTestId(sampleTabs[0].testID as string)).toBeDisabled();
   });
 });

@@ -263,6 +263,7 @@ export const TabNavigation = memo(
                 id,
                 onPress,
                 label,
+                disabled,
                 accessibilityLabel = label,
                 count,
                 testID: tabLabelTestID = `${testID}-tabLabel--${id}`,
@@ -292,6 +293,7 @@ export const TabNavigation = memo(
                       CustomTabComponent ? pressableClassWithCustomTab : pressableClass,
                       insetFocusRing,
                     )}
+                    disabled={disabled}
                     id={`tab--${id}`}
                     onFocus={getScrollIntoViewHandler(currentRef)}
                     onKeyDown={getTabKeydownHandler(id)}

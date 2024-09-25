@@ -85,6 +85,14 @@ const TabNavigationScreen = () => {
           value={currentTabFour}
         />
       </Example>
+      <Example overflow="visible" spacing={gutter} title="Tab Navigation with disabled tab">
+        <TabNavigation
+          onChange={setCurrentTabOne}
+          tabs={sampleTabs.map((tab, index) => ({ ...tab, disabled: index === 1 }))}
+          value={currentTabOne}
+        />
+        <Button onPress={randomizeCurrentTabOne}>Select random item</Button>
+      </Example>
     </ExampleScreen>
   );
 };

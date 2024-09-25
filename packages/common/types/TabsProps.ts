@@ -30,6 +30,8 @@ export type TabProps<T extends string | undefined = string> = {
    *  @default 'primary'
    */
   variant?: 'primary' | 'secondary';
+  /** Disable interactions on the tab. */
+  disabled?: boolean;
   /** Full length accessibility label when the child text is not descriptive enough. */
   accessibilityLabel?: string;
   /** Callback to fire when pressed */
