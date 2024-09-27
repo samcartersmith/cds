@@ -21,6 +21,7 @@ const names: SpotIconName[] = [
   'chat',
   'cloudProduct',
   'coinbase',
+  'coinbaseOneChart',
   'coinbaseOneProduct',
   'commerceProduct',
   'creditCard',

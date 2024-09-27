@@ -53,6 +53,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbase-0').content,
     dark: () => require('../svgJs/dark/coinbase-0').content,
   },
+  coinbaseOneChart: {
+    light: () => require('../svgJs/light/coinbaseOneChart-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneChart-0').content,
+  },
   coinbaseOneProduct: {
     light: () => require('../svgJs/light/coinbaseOneProduct-0').content,
     dark: () => require('../svgJs/dark/coinbaseOneProduct-0').content,
@@ -82,8 +86,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/delegateProduct-1').content,
   },
   derivativesProduct: {
-    light: () => require('../svgJs/light/derivativesProduct-1').content,
-    dark: () => require('../svgJs/dark/derivativesProduct-1').content,
+    light: () => require('../svgJs/light/derivativesProduct-2').content,
+    dark: () => require('../svgJs/dark/derivativesProduct-2').content,
   },
   done: {
     light: () => require('../svgJs/light/done-0').content,

@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-09-16T18:41:06.844Z",
+  "lastUpdated": "2024-09-27T17:53:44.373Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -19322,26 +19322,6 @@
       },
       "version": 1
     },
-    "4158:2444": {
-      "type": "spotIcon",
-      "name": "derivativesProduct",
-      "hash": "ymDW+ttjElGzVnQOzCqUtU0xYI+xJqDJfKn5A8GPaz0=",
-      "width": 32,
-      "height": 32,
-      "description": "product, icons, derivatives",
-      "createdAt": "2023-10-21T00:32:35.959Z",
-      "lastUpdated": "2024-09-09T16:11:40.671Z",
-      "outputs": {
-        "svgLight": "./spotIcon/svg/light/derivativesProduct-1.svg",
-        "svgDark": "./spotIcon/svg/dark/derivativesProduct-1.svg",
-        "svgThemed": "./spotIcon/svg/themeable/derivativesProduct-1.svg",
-        "svgJsLight": "./spotIcon/svgJs/light/derivativesProduct-1.js",
-        "svgJsDark": "./spotIcon/svgJs/dark/derivativesProduct-1.js",
-        "pngLight": "./spotIcon/png/light/derivativesProduct-1.png",
-        "pngDark": "./spotIcon/png/dark/derivativesProduct-1.png"
-      },
-      "version": 1
-    },
     "4158:2445": {
       "type": "spotIcon",
       "name": "cloudProduct",
@@ -21245,22 +21225,22 @@
     "8405:181": {
       "type": "pictogram",
       "name": "ethStakingChart",
-      "hash": "VVHQ4mZDSYsbCvFGrfrZ6IzZAqS5jt8rZnxHylTzK9M=",
+      "hash": "gWDIIrx/nNZOKEp0tUa1QNqWeFdr6DGbxRwYP7nBsks=",
       "width": 48,
       "height": 48,
       "description": "eth, ethereum, asset, staking, l2, returns, gains, interest",
       "createdAt": "2024-05-10T15:12:13.233Z",
-      "lastUpdated": "2024-09-09T16:11:40.243Z",
+      "lastUpdated": "2024-09-27T17:51:39.560Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/ethStakingChart-0.svg",
-        "svgDark": "./pictogram/svg/dark/ethStakingChart-0.svg",
-        "svgThemed": "./pictogram/svg/themeable/ethStakingChart-0.svg",
-        "svgJsLight": "./pictogram/svgJs/light/ethStakingChart-0.js",
-        "svgJsDark": "./pictogram/svgJs/dark/ethStakingChart-0.js",
-        "pngLight": "./pictogram/png/light/ethStakingChart-0.png",
-        "pngDark": "./pictogram/png/dark/ethStakingChart-0.png"
+        "svgLight": "./pictogram/svg/light/ethStakingChart-1.svg",
+        "svgDark": "./pictogram/svg/dark/ethStakingChart-1.svg",
+        "svgThemed": "./pictogram/svg/themeable/ethStakingChart-1.svg",
+        "svgJsLight": "./pictogram/svgJs/light/ethStakingChart-1.js",
+        "svgJsDark": "./pictogram/svgJs/dark/ethStakingChart-1.js",
+        "pngLight": "./pictogram/png/light/ethStakingChart-1.png",
+        "pngDark": "./pictogram/png/dark/ethStakingChart-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "8405:182": {
       "type": "pictogram",
@@ -21325,22 +21305,22 @@
     "8405:185": {
       "type": "pictogram",
       "name": "winBTC",
-      "hash": "XgWZzpgndd1ASHka57VldRWYS8W5fcrSoUleSoQh9rs=",
+      "hash": "d3qPbo8N7xvhJNeSfPUgV8hePMvVNLK0lhd3AAg6VII=",
       "width": 48,
       "height": 48,
       "description": "pictogram, coin, crypto learning, rewards, bitcoin, btc, satoshi, giveaway, free, competition",
       "createdAt": "2024-05-10T15:12:13.250Z",
-      "lastUpdated": "2024-09-09T16:11:41.578Z",
+      "lastUpdated": "2024-09-27T17:51:39.571Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/winBTC-0.svg",
-        "svgDark": "./pictogram/svg/dark/winBTC-0.svg",
-        "svgThemed": "./pictogram/svg/themeable/winBTC-0.svg",
-        "svgJsLight": "./pictogram/svgJs/light/winBTC-0.js",
-        "svgJsDark": "./pictogram/svgJs/dark/winBTC-0.js",
-        "pngLight": "./pictogram/png/light/winBTC-0.png",
-        "pngDark": "./pictogram/png/dark/winBTC-0.png"
+        "svgLight": "./pictogram/svg/light/winBTC-1.svg",
+        "svgDark": "./pictogram/svg/dark/winBTC-1.svg",
+        "svgThemed": "./pictogram/svg/themeable/winBTC-1.svg",
+        "svgJsLight": "./pictogram/svgJs/light/winBTC-1.js",
+        "svgJsDark": "./pictogram/svgJs/dark/winBTC-1.js",
+        "pngLight": "./pictogram/png/light/winBTC-1.png",
+        "pngDark": "./pictogram/png/dark/winBTC-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "8405:186": {
       "type": "pictogram",
@@ -21665,20 +21645,180 @@
     "11489:86": {
       "type": "spotSquare",
       "name": "coinbaseOneEarn",
-      "hash": "FWSgj7Pat2tOYNGbl6EayLYKfvq7qIY3n1P8gHcxYs4=",
+      "hash": "BuBtXg6jzDnA1eE2zmxlec0J5DinbYzz5fi1/rWHVmo=",
       "width": 96.00390625,
       "height": 96.00390625,
       "description": "earn, chart, bar, graph, up, grow, invest, money, future",
       "createdAt": "2024-09-13T15:04:31.968Z",
-      "lastUpdated": "2024-09-16T18:20:46.328Z",
+      "lastUpdated": "2024-09-27T17:51:39.565Z",
       "outputs": {
-        "svgLight": "./spotSquare/svg/light/coinbaseOneEarn-0.svg",
-        "svgDark": "./spotSquare/svg/dark/coinbaseOneEarn-0.svg",
-        "svgThemed": "./spotSquare/svg/themeable/coinbaseOneEarn-0.svg",
-        "svgJsLight": "./spotSquare/svgJs/light/coinbaseOneEarn-0.js",
-        "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneEarn-0.js",
-        "pngLight": "./spotSquare/png/light/coinbaseOneEarn-0.png",
-        "pngDark": "./spotSquare/png/dark/coinbaseOneEarn-0.png"
+        "svgLight": "./spotSquare/svg/light/coinbaseOneEarn-1.svg",
+        "svgDark": "./spotSquare/svg/dark/coinbaseOneEarn-1.svg",
+        "svgThemed": "./spotSquare/svg/themeable/coinbaseOneEarn-1.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/coinbaseOneEarn-1.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneEarn-1.js",
+        "pngLight": "./spotSquare/png/light/coinbaseOneEarn-1.png",
+        "pngDark": "./spotSquare/png/dark/coinbaseOneEarn-1.png"
+      },
+      "version": 1
+    },
+    "11813:35": {
+      "type": "pictogram",
+      "name": "derivativesProduct",
+      "hash": "xRLW29gig4LzKet6C5p0l75pDqvz4cpIeXQsBJWNJcU=",
+      "width": 40,
+      "height": 40,
+      "description": "derivatives, pictogram, leverage, invest, prime, advanced, derive, arrow, triangles",
+      "createdAt": "2024-09-27T17:51:39.514Z",
+      "lastUpdated": "2024-09-27T17:51:39.514Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/derivativesProduct-0.svg",
+        "svgDark": "./pictogram/svg/dark/derivativesProduct-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/derivativesProduct-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/derivativesProduct-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/derivativesProduct-0.js",
+        "pngLight": "./pictogram/png/light/derivativesProduct-0.png",
+        "pngDark": "./pictogram/png/dark/derivativesProduct-0.png"
+      },
+      "version": 0
+    },
+    "11813:51": {
+      "type": "spotIcon",
+      "name": "derivativesProduct",
+      "hash": "/+Esboq2QL2vMNzbjkcAGpBhw1JWbWSeiwp00zPTgn4=",
+      "width": 32,
+      "height": 32,
+      "description": "derivatives, pictogram, leverage, invest, prime, advanced, derive, arrow, triangles",
+      "createdAt": "2023-10-21T00:32:35.959Z",
+      "lastUpdated": "2024-09-27T17:51:39.509Z",
+      "outputs": {
+        "svgLight": "./spotIcon/svg/light/derivativesProduct-2.svg",
+        "svgDark": "./spotIcon/svg/dark/derivativesProduct-2.svg",
+        "svgThemed": "./spotIcon/svg/themeable/derivativesProduct-2.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/derivativesProduct-2.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/derivativesProduct-2.js",
+        "pngLight": "./spotIcon/png/light/derivativesProduct-2.png",
+        "pngDark": "./spotIcon/png/dark/derivativesProduct-2.png"
+      },
+      "version": 2
+    },
+    "11824:127": {
+      "type": "pictogram",
+      "name": "usdcEarn",
+      "hash": "lMoSFvjcMf6CpFfC4zenu7nbpaQVB/r3ykG0Sc66amA=",
+      "width": 48,
+      "height": 48,
+      "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
+      "createdAt": "2024-09-27T17:51:39.529Z",
+      "lastUpdated": "2024-09-27T17:51:39.529Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/usdcEarn-0.svg",
+        "svgDark": "./pictogram/svg/dark/usdcEarn-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/usdcEarn-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/usdcEarn-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/usdcEarn-0.js",
+        "pngLight": "./pictogram/png/light/usdcEarn-0.png",
+        "pngDark": "./pictogram/png/dark/usdcEarn-0.png"
+      },
+      "version": 0
+    },
+    "11824:128": {
+      "type": "pictogram",
+      "name": "usdcInterest",
+      "hash": "w/yQvWHllW9wGJInOQS4MJQVMBDz3T6Jq71efLG4e4I=",
+      "width": 48,
+      "height": 48,
+      "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
+      "createdAt": "2024-09-27T17:51:39.520Z",
+      "lastUpdated": "2024-09-27T17:51:39.520Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/usdcInterest-0.svg",
+        "svgDark": "./pictogram/svg/dark/usdcInterest-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/usdcInterest-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/usdcInterest-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/usdcInterest-0.js",
+        "pngLight": "./pictogram/png/light/usdcInterest-0.png",
+        "pngDark": "./pictogram/png/dark/usdcInterest-0.png"
+      },
+      "version": 0
+    },
+    "11824:130": {
+      "type": "pictogram",
+      "name": "usdcToken",
+      "hash": "A4GReTjZWKvCFWWgHSZKTnpj8ITK9TFzRMtOtc8KdSY=",
+      "width": 48,
+      "height": 48,
+      "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
+      "createdAt": "2024-09-27T17:51:39.524Z",
+      "lastUpdated": "2024-09-27T17:51:39.524Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/usdcToken-0.svg",
+        "svgDark": "./pictogram/svg/dark/usdcToken-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/usdcToken-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/usdcToken-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/usdcToken-0.js",
+        "pngLight": "./pictogram/png/light/usdcToken-0.png",
+        "pngDark": "./pictogram/png/dark/usdcToken-0.png"
+      },
+      "version": 0
+    },
+    "11824:131": {
+      "type": "pictogram",
+      "name": "usdcLogo",
+      "hash": "2zRB40vG/mU3CIHLJ76ZzXovoQyeZLZGJIfVvcvttzo=",
+      "width": 48,
+      "height": 48,
+      "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
+      "createdAt": "2024-09-27T17:51:39.538Z",
+      "lastUpdated": "2024-09-27T17:51:39.538Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/usdcLogo-0.svg",
+        "svgDark": "./pictogram/svg/dark/usdcLogo-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/usdcLogo-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/usdcLogo-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/usdcLogo-0.js",
+        "pngLight": "./pictogram/png/light/usdcLogo-0.png",
+        "pngDark": "./pictogram/png/dark/usdcLogo-0.png"
+      },
+      "version": 0
+    },
+    "11824:132": {
+      "type": "pictogram",
+      "name": "usdcRewards",
+      "hash": "LAyHFafsHX1A2Z5FKzoGjMKDqipAFbQcVplGCO1ixjY=",
+      "width": 48,
+      "height": 48,
+      "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
+      "createdAt": "2024-09-27T17:51:39.543Z",
+      "lastUpdated": "2024-09-27T17:51:39.543Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/usdcRewards-0.svg",
+        "svgDark": "./pictogram/svg/dark/usdcRewards-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/usdcRewards-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/usdcRewards-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/usdcRewards-0.js",
+        "pngLight": "./pictogram/png/light/usdcRewards-0.png",
+        "pngDark": "./pictogram/png/dark/usdcRewards-0.png"
+      },
+      "version": 0
+    },
+    "11860:33": {
+      "type": "spotIcon",
+      "name": "coinbaseOneChart",
+      "hash": "J0Gs/80UdwZoIwWRAhgCjNwnx1y9a84DV4m7to8recI=",
+      "width": 32,
+      "height": 32,
+      "description": "product, icons, advanced, trade, coinbaseone, One,",
+      "createdAt": "2024-09-27T17:51:39.503Z",
+      "lastUpdated": "2024-09-27T17:51:39.503Z",
+      "outputs": {
+        "svgLight": "./spotIcon/svg/light/coinbaseOneChart-0.svg",
+        "svgDark": "./spotIcon/svg/dark/coinbaseOneChart-0.svg",
+        "svgThemed": "./spotIcon/svg/themeable/coinbaseOneChart-0.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/coinbaseOneChart-0.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/coinbaseOneChart-0.js",
+        "pngLight": "./spotIcon/png/light/coinbaseOneChart-0.png",
+        "pngDark": "./spotIcon/png/dark/coinbaseOneChart-0.png"
       },
       "version": 0
     }

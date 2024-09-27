@@ -8,6 +8,47 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.15.0 (9/27/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 09/27/2024. [[#3311](https://github.cbhq.net/frontend/cds/pull/3311)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- derivativesProduct
+- usdcEarn
+- usdcInterest
+- usdcLogo
+- usdcRewards
+- usdcRewards
+- usdcToken
+
+#### Spot Icon
+
+- coinbaseOneChart
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- derivativesProduct
+
+#### Spot Square
+
+- coinbaseOneEarn
+
+#### Pictogram
+
+- ethStakingChart
+- winBTC
+
 ## 3.14.0 (9/16/2024 PST)
 
 #### 🚀 Updates

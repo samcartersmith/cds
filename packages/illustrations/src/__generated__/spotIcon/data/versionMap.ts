@@ -34,7 +34,7 @@ const versionMap: Record<SpotIconName, number> = {
   institutionalProduct: 1,
   base: 1,
   coinbase: 0,
-  derivativesProduct: 1,
+  derivativesProduct: 2,
   learningRewardsProduct: 1,
   borrowProduct: 1,
   custodyProduct: 1,
@@ -72,6 +72,7 @@ const versionMap: Record<SpotIconName, number> = {
   recurringPurchases: 1,
   bank: 1,
   outage: 0,
+  coinbaseOneChart: 0,
 };
 
 export default versionMap;

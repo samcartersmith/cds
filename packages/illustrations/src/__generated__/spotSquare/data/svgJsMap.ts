@@ -162,8 +162,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/coinbaseOneDiscountedAmount-2').content,
   },
   coinbaseOneEarn: {
-    light: () => require('../svgJs/light/coinbaseOneEarn-0').content,
-    dark: () => require('../svgJs/dark/coinbaseOneEarn-0').content,
+    light: () => require('../svgJs/light/coinbaseOneEarn-1').content,
+    dark: () => require('../svgJs/dark/coinbaseOneEarn-1').content,
   },
   coinbaseOneLogo: {
     light: () => require('../svgJs/light/coinbaseOneLogo-3').content,

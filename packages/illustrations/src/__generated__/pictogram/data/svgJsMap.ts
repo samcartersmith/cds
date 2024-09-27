@@ -393,6 +393,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/derivativesNavigation-4').content,
     dark: () => require('../svgJs/dark/derivativesNavigation-4').content,
   },
+  derivativesProduct: {
+    light: () => require('../svgJs/light/derivativesProduct-0').content,
+    dark: () => require('../svgJs/dark/derivativesProduct-0').content,
+  },
   developerPlatformNavigation: {
     light: () => require('../svgJs/light/developerPlatformNavigation-0').content,
     dark: () => require('../svgJs/dark/developerPlatformNavigation-0').content,
@@ -474,8 +478,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/ethStaking-2').content,
   },
   ethStakingChart: {
-    light: () => require('../svgJs/light/ethStakingChart-0').content,
-    dark: () => require('../svgJs/dark/ethStakingChart-0').content,
+    light: () => require('../svgJs/light/ethStakingChart-1').content,
+    dark: () => require('../svgJs/dark/ethStakingChart-1').content,
   },
   ethStakingRewards: {
     light: () => require('../svgJs/light/ethStakingRewards-0').content,
@@ -1105,6 +1109,26 @@ const svgJsMap = {
     light: () => require('../svgJs/light/usaProduct-2').content,
     dark: () => require('../svgJs/dark/usaProduct-2').content,
   },
+  usdcEarn: {
+    light: () => require('../svgJs/light/usdcEarn-0').content,
+    dark: () => require('../svgJs/dark/usdcEarn-0').content,
+  },
+  usdcInterest: {
+    light: () => require('../svgJs/light/usdcInterest-0').content,
+    dark: () => require('../svgJs/dark/usdcInterest-0').content,
+  },
+  usdcLogo: {
+    light: () => require('../svgJs/light/usdcLogo-0').content,
+    dark: () => require('../svgJs/dark/usdcLogo-0').content,
+  },
+  usdcRewards: {
+    light: () => require('../svgJs/light/usdcRewards-0').content,
+    dark: () => require('../svgJs/dark/usdcRewards-0').content,
+  },
+  usdcToken: {
+    light: () => require('../svgJs/light/usdcToken-0').content,
+    dark: () => require('../svgJs/dark/usdcToken-0').content,
+  },
   venturesNavigation: {
     light: () => require('../svgJs/light/venturesNavigation-3').content,
     dark: () => require('../svgJs/dark/venturesNavigation-3').content,
@@ -1178,8 +1202,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/warning-2').content,
   },
   winBTC: {
-    light: () => require('../svgJs/light/winBTC-0').content,
-    dark: () => require('../svgJs/dark/winBTC-0').content,
+    light: () => require('../svgJs/light/winBTC-1').content,
+    dark: () => require('../svgJs/dark/winBTC-1').content,
   },
   worldwide: {
     light: () => require('../svgJs/light/worldwide-2').content,
