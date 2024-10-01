@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { PressableProps } from 'react-native';
+import { PressableProps, ViewStyle } from 'react-native';
 import { ContainedAssetCardBaseProps } from '@cbhq/cds-common';
 import {
   containedAssetCardLargeDimension,
@@ -7,11 +7,13 @@ import {
   containedAssetCardSmallDimension,
 } from '@cbhq/cds-common/tokens/card';
 
-import { HStack, VStack } from '../layout';
+import { HStack, HStackProps, VStack } from '../layout';
 import { Pressable } from '../system';
 import { TextHeadline, TextLabel2, TextLegal } from '../typography';
 
-export type ContainedAssetCardProps = ContainedAssetCardBaseProps & Pick<PressableProps, 'onPress'>;
+export type ContainedAssetCardProps = ContainedAssetCardBaseProps &
+  Pick<PressableProps, 'onPress'> &
+  Pick<HStackProps, 'minWidth' | 'maxWidth'>;
 
 export const ContainedAssetCard = memo(
   ({
@@ -23,27 +25,33 @@ export const ContainedAssetCard = memo(
     size = 's',
     children,
     onPress,
+    maxWidth: propMaxWidth,
+    minWidth: propMinWidth,
   }: ContainedAssetCardProps) => {
-    const width = useMemo(
-      () => (size === 'l' ? containedAssetCardLargeWidth : containedAssetCardSmallDimension),
-      [size],
+    const maxWidth = useMemo(
+      () =>
+        propMaxWidth ||
+        (size === 'l' ? containedAssetCardLargeWidth : containedAssetCardSmallDimension),
+      [size, propMaxWidth],
     );
     const minWidth = useMemo(
-      () => (size === 'l' ? containedAssetCardLargeDimension : containedAssetCardSmallDimension),
-      [size],
+      () =>
+        propMinWidth ||
+        (size === 'l' ? containedAssetCardLargeDimension : containedAssetCardSmallDimension),
+      [size, propMinWidth],
     );
     const pressableStyles = useMemo(() => {
       return {
         minWidth,
-        maxWidth: width,
-      };
-    }, [width, minWidth]);
+        maxWidth,
+      } as ViewStyle;
+    }, [maxWidth, minWidth]);
     const content = (
       <HStack
         background="backgroundAlternate"
         borderRadius="roundedXLarge"
         height={containedAssetCardSmallDimension}
-        maxWidth={width}
+        maxWidth={maxWidth}
         minWidth={minWidth}
         overflow="hidden"
         testID={onPress ? undefined : testID}

@@ -45,4 +45,34 @@ describe('ContainedAssetCard', () => {
       ),
     ).toHaveNoViolations();
   });
+
+  it('renders default width style', () => {
+    render(
+      <ContainedAssetCard
+        description="Description"
+        header={<DummyHeader />}
+        subtitle="Subtitle"
+        testID="card"
+        title="Title"
+      />,
+    );
+
+    expect(screen.getByTestId('card')).toHaveStyle({ maxWidth: '156px', minWidth: '156px' });
+  });
+
+  it('renders custom width correctly', () => {
+    render(
+      <ContainedAssetCard
+        description="Description"
+        header={<DummyHeader />}
+        maxWidth="none"
+        minWidth={120}
+        subtitle="Subtitle"
+        testID="card"
+        title="Title"
+      />,
+    );
+
+    expect(screen.getByTestId('card')).toHaveStyle({ maxWidth: 'none', minWidth: '120px' });
+  });
 });

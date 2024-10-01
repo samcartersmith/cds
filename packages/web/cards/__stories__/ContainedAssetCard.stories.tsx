@@ -145,6 +145,14 @@ export const HeaderWithDotColorStatus = (): JSX.Element => {
   );
 };
 
+export const CustomWidth = (): JSX.Element => {
+  return (
+    <VStack>
+      <ContainedAssetCard {...exampleProps} maxWidth="none" />
+    </VStack>
+  );
+};
+
 export default {
   title: 'Core Components/Cards/ContainedAssetCard',
   component: ContainedAssetCard,

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.45.0 (10/1/2024 PST)
+
+#### 🚀 Updates
+
+- Add minWidth and maxWidth props to ContainedAssetCard. [[DX-4296](https://jira.coinbase-corp.com/browse/DX-4296)]
+
 ## 6.44.1 ((10/1/2024, 08:40 AM PST))
 
 This is an artificial version bump with no new change.

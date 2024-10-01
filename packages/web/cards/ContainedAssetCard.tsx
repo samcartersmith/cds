@@ -6,11 +6,13 @@ import {
   containedAssetCardSmallDimension,
 } from '@cbhq/cds-common/tokens/card';
 
-import { HStack, VStack } from '../layout';
+import { BoxElement, HStack, HStackProps, VStack } from '../layout';
 import { Pressable, PressableProps } from '../system';
 import { TextHeadline, TextLabel2, TextLegal } from '../typography';
 
-export type ContainedAssetCardProps = ContainedAssetCardBaseProps & Pick<PressableProps, 'onPress'>;
+export type ContainedAssetCardProps = ContainedAssetCardBaseProps &
+  Pick<PressableProps, 'onPress'> &
+  Pick<HStackProps<BoxElement>, 'minWidth' | 'maxWidth'>;
 
 export const ContainedAssetCard = memo(
   ({
@@ -22,27 +24,33 @@ export const ContainedAssetCard = memo(
     size = 's',
     children,
     onPress,
+    maxWidth: propMaxWidth,
+    minWidth: propMinWidth,
   }: ContainedAssetCardProps) => {
-    const width = useMemo(
-      () => (size === 'l' ? containedAssetCardLargeWidth : containedAssetCardSmallDimension),
-      [size],
+    const maxWidth = useMemo(
+      () =>
+        propMaxWidth ||
+        (size === 'l' ? containedAssetCardLargeWidth : containedAssetCardSmallDimension),
+      [size, propMaxWidth],
     );
     const minWidth = useMemo(
-      () => (size === 'l' ? containedAssetCardLargeDimension : containedAssetCardSmallDimension),
-      [size],
+      () =>
+        propMinWidth ||
+        (size === 'l' ? containedAssetCardLargeDimension : containedAssetCardSmallDimension),
+      [size, propMinWidth],
     );
     const pressableStyles = useMemo(() => {
       return {
         minWidth,
-        maxWidth: width,
+        maxWidth,
       };
-    }, [width, minWidth]);
+    }, [maxWidth, minWidth]);
     const content = (
       <HStack
         background="backgroundAlternate"
         borderRadius="roundedXLarge"
         height={containedAssetCardSmallDimension}
-        maxWidth={width}
+        maxWidth={maxWidth}
         minWidth={minWidth}
         overflow="hidden"
         testID={onPress ? undefined : testID}
