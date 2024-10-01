@@ -65,6 +65,7 @@ export const Chip = memo(
             <Pressable
               ref={ref}
               background="transparent"
+              borderRadius="roundedXLarge"
               onPress={onPress}
               testID={testID}
               {...props}
