@@ -66,6 +66,10 @@
           "isUserSwitcher": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
             "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "showHelpMenu": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
           }
         }
       },
@@ -79,7 +83,7 @@
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/identity-navigation": "^7.3.16"
+      "@cbhq/identity-navigation": "^7.5.10"
     },
     "devDependencies": {},
     "peerDependencies": {},

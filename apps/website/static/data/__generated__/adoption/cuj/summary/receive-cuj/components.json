@@ -71,9 +71,6 @@
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
           "@app/screens/Receive/Requests/RequestDetailsScreen.tsx": 2
         },
-        "offsetHorizontal": {
-          "@app/screens/GlobalTrade/components/AccountSelectors/ReceiveAccountSelector.tsx": 1
-        },
         "spacingTop": {
           "@app/screens/Receive/ReceiveScreen.tsx": 1,
           "@app/screens/Receive/Requests/ReceiverRequestDeclinedScreen.tsx": 1,
@@ -797,10 +794,14 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 14,
+      "totalInstances": 13,
       "totalCallSites": 6,
       "cds": "@cbhq/cds-web/layout/VStack",
       "extendedStyledComponents": [
+        {
+          "alias": "Container",
+          "callSite": "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx"
+        },
         {
           "alias": "VContainer",
           "callSite": "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx"
@@ -808,17 +809,13 @@
       ],
       "aliasedCdsComponents": [
         {
-          "aliasPath": "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx",
-          "callSites": []
-        },
-        {
           "aliasPath": "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx",
           "callSites": []
         }
       ],
       "callSites": {
         "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
-        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 4,
+        "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 3,
         "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
         "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 2,
         "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 4,
@@ -838,7 +835,7 @@
         },
         "spacingBottom": {
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 2,
-          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 2,
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1,
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1,
           "components/SendReceive/SendRedesign/steps/RegenerateAddressStep/RegenerateAddressStep.tsx": 1,
           "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1,
@@ -849,12 +846,10 @@
           "components/SendReceive/SendRedesign/steps/ReceiveRedesignAssetInfo.tsx": 1
         },
         "maxHeight": {
-          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
-          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
         },
         "overflow": {
-          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
-          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+          "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1
         },
         "spacingHorizontal": {
           "components/SendReceive/components/NetworkSelection/ChangeNetworkStep/ChangeNetworkStep.tsx": 1,
@@ -1290,6 +1285,12 @@
     {
       "name": "NavFinPromDisclaimer",
       "sourceFile": "@app/components/navigation/NavFinPromDisclaimer",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NoInternetBanner",
+      "sourceFile": "@app/components/navigation/NoInternetBanner",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -2104,6 +2105,20 @@
       }
     },
     {
+      "name": "Container",
+      "sourceFile": "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "spacingBottom": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        },
+        "overflow": {
+          "components/SendReceive/SendRedesign/components/ReceiveRedesignAssetDisplay.tsx": 1
+        }
+      }
+    },
+    {
       "name": "SystemAlertWithWaterfall",
       "sourceFile": "components/SystemAlert/SystemAlertWithWaterfall",
       "totalInstances": 1,
@@ -2229,9 +2244,6 @@
           "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
         },
         "scrollBarColor": {
-          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
-        },
-        "height": {
           "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
         },
         "spacingTop": {

@@ -16,6 +16,9 @@
           "target": {
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           },
+          "end": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
           "isUserSwitcher": {
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           }
@@ -31,7 +34,7 @@
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/identity-navigation": "^7.3.13"
+      "@cbhq/identity-navigation": "^7.5.10"
     },
     "devDependencies": {},
     "peerDependencies": {},

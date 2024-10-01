@@ -57,6 +57,9 @@
           },
           "target": {
             "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
+          },
+          "isUserSwitcher": {
+            "apps/commerce-merchant/src/app/navigation/NavigationBarV2.tsx": 1
           }
         }
       },
@@ -70,7 +73,7 @@
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/identity-navigation": "^7.2.0"
+      "@cbhq/identity-navigation": "^7.5.10"
     },
     "devDependencies": {},
     "peerDependencies": {},

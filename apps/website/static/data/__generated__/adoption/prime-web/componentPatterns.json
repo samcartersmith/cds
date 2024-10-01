@@ -36,6 +36,12 @@
           },
           "navigate": {
             ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "config": {
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "isUserSwitcher": {
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           }
         }
       },
@@ -49,7 +55,7 @@
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/identity-navigation": "7.3.4"
+      "@cbhq/identity-navigation": "^7.5.10"
     },
     "devDependencies": {},
     "peerDependencies": {},

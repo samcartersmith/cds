@@ -22,10 +22,6 @@
         {
           "aliasPath": "@app/screens/AssetsTab/AssetsScreenCell.tsx",
           "callSites": []
-        },
-        {
-          "aliasPath": "@app/screens/Asset/components/AssetPriceChart.tsx",
-          "callSites": []
         }
       ],
       "callSites": {

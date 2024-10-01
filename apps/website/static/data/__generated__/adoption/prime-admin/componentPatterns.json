@@ -36,6 +36,12 @@
           },
           "navigate": {
             ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "config": {
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
+          },
+          "isUserSwitcher": {
+            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
           }
         }
       },

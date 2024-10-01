@@ -2815,12 +2815,6 @@
       }
     },
     {
-      "name": "CreateWeb3WalletUpdateApp",
-      "sourceFile": "@app/screens/Defi/requirementScreens/nux/CreateWeb3WalletUpdateApp",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "CreationStatus",
       "sourceFile": "@app/screens/Defi/requirementScreens/nux/CreationStatus",
       "totalInstances": 1,
@@ -4556,7 +4550,7 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "context": {
+        "instrumentationId": {
           "@app/screens/Defi/Send/DAppWalletSendInputScreen.tsx": 1
         },
         "fallback": {
@@ -5100,9 +5094,6 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "queryRef": {
-          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
-        },
         "onUpdate": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         },
@@ -5604,6 +5595,20 @@
     {
       "name": "TradeDropOffFetcher",
       "sourceFile": "@app/screens/SimpleTrade/components/TradeDropoffFetcher/TradeDropOffFetcher",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "queryRef": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "tradeType": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "PlaidBalanceFetcher",
+      "sourceFile": "@app/screens/Trade/Buy/BuyInput/components/BuyInputFetchers/PlaidBalanceFetcher/PlaidBalanceFetcher",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
