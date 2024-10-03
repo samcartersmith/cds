@@ -51,6 +51,7 @@ export type DropdownProps = {
   | 'block'
   | 'disableTypeFocus'
   | 'controlledElementAccessibilityProps'
+  | 'respectNegativeTabIndex'
 > &
   SharedProps &
   Pick<

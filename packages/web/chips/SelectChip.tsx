@@ -76,6 +76,7 @@ export const SelectChip = memo(
       showOverlay,
       width,
       className,
+      respectNegativeTabIndex,
       ...props
     }: SelectChipProps,
     ref,
@@ -124,6 +125,7 @@ export const SelectChip = memo(
         onChange={onChange}
         onCloseMenu={handleCloseMenu}
         onOpenMenu={onOpenMenu}
+        respectNegativeTabIndex={respectNegativeTabIndex}
         showOverlay={showOverlay}
         testID={`${testID}-dropdown`}
         value={value}

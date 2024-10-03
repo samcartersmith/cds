@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.46.0 (10/3/2024 PST)
+
+#### 🚀 Updates
+
+- Add respectNegativeTabIndex prop to SelectChip and Dropdown. [[DX-4207](https://jira.coinbase-corp.com/browse/DX-4207)]
+
 ## 6.45.0 (10/1/2024 PST)
 
 #### 🚀 Updates

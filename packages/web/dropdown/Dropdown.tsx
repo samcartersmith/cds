@@ -51,6 +51,7 @@ const ModalDropdown = memo(
         width,
         disabled,
         controlledElementAccessibilityProps,
+        respectNegativeTabIndex,
         ...props
       }: Omit<DropdownProps, 'onOpenMenu' | 'onCloseMenu'> & DropdownVisibilityProps,
       ref: ForwardedRef<DropdownRefProps>,
@@ -83,7 +84,11 @@ const ModalDropdown = memo(
             visible={visible}
             {...controlledElementAccessibilityProps}
           >
-            <FocusTrap disableAutoFocus={!!value} onEscPress={onCloseMenu}>
+            <FocusTrap
+              disableAutoFocus={!!value}
+              onEscPress={onCloseMenu}
+              respectNegativeTabIndex={respectNegativeTabIndex}
+            >
               <DropdownContent {...props}>{content}</DropdownContent>
             </FocusTrap>
           </ModalWrapper>
