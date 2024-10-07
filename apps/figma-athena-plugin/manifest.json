@@ -16,6 +16,11 @@
   "networkAccess": {
     "allowedDomains": [
       "none"
+    ],
+    "reasoning": "My plugin queries localhost for development purposes, and static-assets for illustrations",
+    "devAllowedDomains": [
+      "http://localhost:3000",
+      "https://static-assets.coinbase.com"
     ]
   }
 }

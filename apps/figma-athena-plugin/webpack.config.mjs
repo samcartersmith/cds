@@ -21,6 +21,7 @@ export default async (env, argv) =>
       //   usedExports: true,
       // },
       output: {
+        publicPath: '/',
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
       },

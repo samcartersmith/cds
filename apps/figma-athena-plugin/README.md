@@ -1,21 +1,25 @@
 # Athena Figma Plugin
 
-<!-- description here -->
-<!-- link to project doc? -->
+## Note on running the plugin
+
+To run the plugin in Figma you must have:
+
+- Edit access to the Figma file, OR
+- Figma developer mode enabled
 
 ## Testing locally
 
-1. Install Figma Desktop
-2. Create a new design file (command + n)
-3. Go to top menu, `Plugins` > `Development` > `Import plugin from manifest`
-4. Run `yarn nx run figma-athena-plugin:watch` to build and live reload plugin on changes
+1. Run `yarn nx run figma-athena-plugin:watch` to build and live reload plugin on changes
+2. Open Figma Desktop
+3. Create a new design file (Command + N)
+4. In the Figma top menu, `Plugins` > `Development` > `Import plugin from manifest`
 5. Select the `manifest.json` file in `cds/apps/figma-athena-plugin/manifest.json`
 
 ## Publish
 
 1. Run `yarn nx run figma-athena-plugin:build` to build plugin with changes you wish to publish
 2. Open Figma Desktop
-3. Go to top menu, `Plugins` > `Development` > `Import plugin from manifest`
+3. In the Figma top menu, `Plugins` > `Development` > `Import plugin from manifest`
 4. Select the `manifest.json` file in `cds/apps/figma-athena-plugin/manifest.json`
 5. The plugin UI should show CDS in development list
 6. Click the horizontal kebab icon (three dots) next to CDS and then click 'Publish'
@@ -27,12 +31,49 @@
 
 ## Architecture
 
-Figma plugin logic is split across two threads: the UI thread and the native thread. The UI thread is where the plugin's UI is rendered, user interactions are handled, and has access to browser API's. The native thread is where the plugin's native code runs and where the Figma API is accessed. See [How Plugins Run](https://www.figma.com/plugin-docs/how-plugins-run/) for more. The two threads communicate with each other via message events.
+[How Plugins Run](https://www.figma.com/plugin-docs/how-plugins-run/)
 
-- `athena-plugin/src/plugin.ts` is where all the native code lives and where you listen to messages from the UI context via `figma.ui.on('message', (message) => {...})` or post them via `figma.ui.postMessage({ type: 'some_custom_type' })`
-- `athena-plugin/src/App.tsx` is where all the UI code lives and where you listen to messages from native context via `window.onmessage = event => { const msg = event.data.pluginMessage; ... }` and post them via `parent.postMessage({ pluginMessage }, '*')`
+## Figma Resources
 
-## Resources
+- [Figma Plugin guide](https://www.figma.com/plugin-docs/)
+- [Figma Plugin API docs](https://www.figma.com/plugin-docs/api/api-reference)
+- [Figma Plugin sample code](https://github.com/figma/plugin-samples)
 
-- Plugin guide [here](https://www.figma.com/plugin-docs/)
-- API docs [here](https://www.figma.com/plugin-docs/api/api-reference)
+## CBGPT Resources
+
+- [CBGPT overview](https://docs.cbhq.net/app-services/cbgpt/overview)
+- [CBGPT Prompt engineering guide](https://confluence.coinbase-corp.com/display/PLAT/Prompt+Engineering+Guide)
+- [CBGPT LLM roadmap](https://confluence.coinbase-corp.com/pages/viewpage.action?spaceKey=PLAT&title=LLM+Roadmap)
+
+## CBGPT API Resources
+
+- [`cb-gpt-service` buf schema](https://buf.cbhq.net/data/cb-gpt-service/docs/main:coinbase.cb_gpt_service.api.v1)
+- [`cb-gpt-ml` buf schema](https://buf.cbhq.net/data/cb-gpt-ml/docs/main:coinbase.cb_gpt.engine_service.v1)
+
+## How to codegen APIs and types from buf schemas
+
+We codegen the CBGPT APIs and types from the [Coinbase protobuf registry](https://buf.cbhq.net/) using [connect-es](https://github.com/connectrpc/connect-es). This allows us to regenerate the latest types with a single command.
+
+```
+yarn nx run figma-athena-plugin:codegen
+```
+
+Which will install the latest versions of the necessary packages:
+
+```
+@bufteam/data_cb-gpt-ml.bufbuild_es@latest
+@bufteam/data_cb-gpt-ml.bufbuild_connect-es@latest
+@bufteam/data_cb-gpt-service.bufbuild_es@latest
+@bufteam/data_cb-gpt-service.bufbuild_connect-es@latest
+```
+
+Note that this requires a `bufteam` entry to be defined under `npmScopes` in `.yarnrc.yml` - which points to the Coinbase protobuf registry, and has an accompanying `npmAuthToken`. The Coinbase protobuf registry will walk you through these steps if you visit the SDKs tab under [`gb-gpt-ml`](https://buf.cbhq.net/data/cb-gpt-ml/sdks) or [`cp-gpt-service`](https://buf.cbhq.net/data/cb-gpt-service/sdks) and choose the `bufbuild/connect-es` option.
+
+This allows us to import APIs and types from the relevant package exports:
+
+```
+import * as CBGPT_ML_TYPES from '@bufteam/data_cb-gpt-ml.bufbuild_es/coinbase/cb_gpt/engine_service/v1/api_pb.js';
+import * as CBGPT_ML_CONNECT from '@bufteam/data_cb-gpt-ml.bufbuild_connect-es/coinbase/cb_gpt/engine_service/v1/api_connect.js';
+import * as CBGPT_SERVICE_TYPES from '@bufteam/data_cb-gpt-service.bufbuild_es/coinbase/cb_gpt_service/api/v1/api_pb.js';
+import * as CBGPT_SERVICE_CONNECT from '@bufteam/data_cb-gpt-service.bufbuild_connect-es/coinbase/cb_gpt_service/api/v1/api_connect.js';
+```

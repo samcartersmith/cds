@@ -5,7 +5,7 @@
   "projectType": "library",
   "targets": {
     "dev": {
-      "command": "ts-node-esm ./apps/cds-figma-sync/src/dev.ts",
+      "command": "node --loader ts-node/esm ./apps/cds-figma-sync/src/dev.ts",
       "dependsOn": [
         "^build"
       ]

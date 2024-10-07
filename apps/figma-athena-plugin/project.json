@@ -35,6 +35,21 @@
         "color": true
       }
     },
+    "codegen": {
+      "command": "yarn workspace figma-athena-plugin add @bufteam/data_cb-gpt-ml.bufbuild_es@latest @bufteam/data_cb-gpt-ml.bufbuild_connect-es@latest @bufteam/data_cb-gpt-service.bufbuild_es@latest @bufteam/data_cb-gpt-service.bufbuild_connect-es@latest"
+    },
+    "serve": {
+      "command": "node --loader ts-node/esm ./src/server/index.ts",
+      "options": {
+        "cwd": "apps/figma-athena-plugin"
+      }
+    },
+    "serve:watch": {
+      "command": "nodemon",
+      "options": {
+        "cwd": "apps/figma-athena-plugin"
+      }
+    },
     "watch": {
       "command": "rm -rf dist && webpack --mode production --watch",
       "dependsOn": [
