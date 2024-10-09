@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference types="../../node_modules/@figma/plugin-typings" />
 import type { FigmaNodeData } from '../shared/FigmaNodeData';
 
 import { broadcastToApp } from './util/broadcastToApp';

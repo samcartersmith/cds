@@ -1,0 +1,17 @@
+node_modules
+
+.buildkite
+.git
+.github
+.nx
+.vscode
+
+private-key.pem
+.env
+.env.*
+lib
+mjs
+esm
+dist
+temp
+*.log

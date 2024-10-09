@@ -11,10 +11,7 @@
     "jsx": "preserve",
     "emitDeclarationOnly": true,
     "declaration": true,
-    "declarationDir": "dts",
-    "typeRoots": [
-      "../../node_modules/@figma",
-    ],
+    "declarationDir": "dts"
   },
   "include": ["src"],
   "exclude": ["node_modules"],

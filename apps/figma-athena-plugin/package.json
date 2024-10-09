@@ -5,6 +5,10 @@
   "private": true,
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "type": "module",
+  "scripts": {
+    "server-dockerup": "docker-compose -f docker-compose.yml up -d",
+    "server-dockerdown": "docker-compose down"
+  },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
     "@cbhq/cds-common": "workspace:^",
@@ -36,6 +40,7 @@
     "nodemon": "^2.0.16",
     "react-dev-utils": "^12.0.1",
     "style-loader": "^4",
+    "tsx": "^4.19.1",
     "typescript": "~5.2.2",
     "webpack": "^5.63.0",
     "webpack-bundle-analyzer": "^4.10.1",

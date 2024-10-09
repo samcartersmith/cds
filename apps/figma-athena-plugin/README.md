@@ -10,10 +10,11 @@ To run the plugin in Figma you must have:
 ## Testing locally
 
 1. Run `yarn nx run figma-athena-plugin:watch` to build and live reload plugin on changes
-2. Open Figma Desktop
-3. Create a new design file (Command + N)
-4. In the Figma top menu, `Plugins` > `Development` > `Import plugin from manifest`
-5. Select the `manifest.json` file in `cds/apps/figma-athena-plugin/manifest.json`
+2. Start the server with `yarn nx run figma-athena-plugin:serve`
+3. Open Figma Desktop
+4. Create a new design file (Command + N)
+5. In the Figma top menu, `Plugins` > `Development` > `Import plugin from manifest`
+6. Select the `manifest.json` file in `cds/apps/figma-athena-plugin/manifest.json`
 
 ## Publish
 

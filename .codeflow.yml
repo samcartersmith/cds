@@ -51,6 +51,10 @@ build:
         name: cds-website-docs-development
         path: ./apps/website/development.Dockerfile
         autobuild: false
+    - BaldurECR:
+        name: figma-athena
+        path: ./apps/figma-athena-plugin/Dockerfile
+        autobuild: false
 
     # Packages
     - BaldurNode:

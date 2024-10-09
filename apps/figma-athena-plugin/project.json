@@ -35,11 +35,26 @@
         "color": true
       }
     },
+    "dockerup": {
+      "executor": "@cbhq/mono-tasks:run-package-script",
+      "defaultConfiguration": "app",
+      "configurations": {
+        "app": {
+          "script": "server-dockerup"
+        }
+      }
+    },
+    "dockerdown": {
+      "executor": "@cbhq/mono-tasks:run-package-script",
+      "options": {
+        "script": "server-dockerdown"
+      }
+    },
     "codegen": {
       "command": "yarn workspace figma-athena-plugin add @bufteam/data_cb-gpt-ml.bufbuild_es@latest @bufteam/data_cb-gpt-ml.bufbuild_connect-es@latest @bufteam/data_cb-gpt-service.bufbuild_es@latest @bufteam/data_cb-gpt-service.bufbuild_connect-es@latest"
     },
     "serve": {
-      "command": "node --loader ts-node/esm ./src/server/index.ts",
+      "command": "tsx ./src/server/index.ts",
       "options": {
         "cwd": "apps/figma-athena-plugin"
       }

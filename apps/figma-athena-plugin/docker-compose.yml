@@ -1,0 +1,11 @@
+version: '3'
+services:
+  figma-athena:
+    build:
+      context: ../../
+      dockerfile: ./apps/figma-athena-plugin/Dockerfile
+    volumes:
+      - ${HOME}/.ssh:/root/.ssh
+      - ${HOME}/.git:/root/.git
+    ports:
+      - 3001:3001

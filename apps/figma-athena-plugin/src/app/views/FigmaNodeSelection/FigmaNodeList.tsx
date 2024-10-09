@@ -34,7 +34,7 @@ export const FigmaNodeList = () => {
 
   // Handles updating the selection and checkedNodes state when the current selection changes in Figma
   useEffect(() => {
-    let loadingTimeoutId = 0;
+    let loadingTimeoutId: ReturnType<typeof setTimeout>;
 
     // Listen for selection change start, to set isPending if it takes a while to load
     const unsubscribeSelectionStart = subscribeFigma('selection-change-start', () => {

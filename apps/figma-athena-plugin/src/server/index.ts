@@ -20,7 +20,7 @@ const requestLogger: RequestHandler = (req, res, next) => {
 
 app.use(requestLogger);
 
-app.get('/', (req, res) => {
+app.get(['/', '/_health'], (req, res) => {
   res.send('ok');
 });
 
@@ -57,6 +57,6 @@ app.post('/generate', async (req: Request<unknown, unknown, GenerateBody>, res) 
   res.send({ data: result.response });
 });
 
-app.listen(3000);
+app.listen(3001);
 
-console.log('App is listening on localhost:3000');
+console.log('App is listening on localhost:3001');
