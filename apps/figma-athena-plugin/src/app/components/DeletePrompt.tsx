@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { TextTitle4 } from '@cbhq/cds-web/typography';

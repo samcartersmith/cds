@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { HeroSquare } from '@cbhq/cds-web/illustrations/HeroSquare';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { Spinner } from '@cbhq/cds-web/loaders/Spinner';

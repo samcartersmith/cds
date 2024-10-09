@@ -1,4 +1,4 @@
-import React, { FormEvent, useCallback } from 'react';
+import { FormEvent, useCallback } from 'react';
 import { Button } from '@cbhq/cds-web/buttons';
 import { NativeTextArea, TextInput } from '@cbhq/cds-web/controls';
 import { VStack } from '@cbhq/cds-web/layout';

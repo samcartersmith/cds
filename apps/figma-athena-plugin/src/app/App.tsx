@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import './styles.css';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 
 import { Chat } from './components/Chat';

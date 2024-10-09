@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import type { FigmaNodeData } from 'apps/figma-athena-plugin/src/shared/FigmaNodeData';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { Link, TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';

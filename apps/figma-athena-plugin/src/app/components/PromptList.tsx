@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { Icon } from '@cbhq/cds-web/icons/Icon';
 import { HeroSquare } from '@cbhq/cds-web/illustrations/HeroSquare';

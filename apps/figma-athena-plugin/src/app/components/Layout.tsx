@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import { VStack } from '@cbhq/cds-web/layout';
 

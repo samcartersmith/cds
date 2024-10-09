@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { ColorSurgeRefBaseProps } from '@cbhq/cds-common/types/ColorSurgeBaseProps';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { HStack } from '@cbhq/cds-web/layout/HStack';

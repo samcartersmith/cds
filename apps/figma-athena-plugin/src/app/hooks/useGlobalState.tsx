@@ -1,4 +1,6 @@
-import React, {
+import {
+  type Dispatch,
+  type SetStateAction,
   ComponentProps,
   createContext,
   memo,
@@ -22,7 +24,7 @@ export type GlobalStateContextValue = {
     setCredentials: (apiKey: string, secret: string) => void;
   };
   prompt: Prompt | null;
-  setPrompt: React.Dispatch<React.SetStateAction<Prompt | null>>;
+  setPrompt: Dispatch<SetStateAction<Prompt | null>>;
 };
 
 export const GlobalStateContext = createContext<GlobalStateContextValue | undefined>(undefined);

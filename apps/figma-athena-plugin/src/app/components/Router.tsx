@@ -1,4 +1,4 @@
-import React from 'react';
+import { type ReactNode } from 'react';
 
 import { useGlobalState } from '../hooks/useGlobalState';
 import { type Routes, useRouter } from '../hooks/useRouter';
@@ -6,7 +6,7 @@ import { SetCbGptCredentials } from '../views/SetCbGptCredentials';
 
 export type RouteProps = {
   path: Routes;
-  children: React.ReactNode;
+  children: ReactNode;
   requireCredentials?: boolean;
 };
 

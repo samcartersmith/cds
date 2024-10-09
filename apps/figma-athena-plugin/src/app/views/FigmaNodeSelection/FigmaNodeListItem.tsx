@@ -1,4 +1,4 @@
-import React from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import { Box, VStack } from '@cbhq/cds-web/layout';
 import { TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
 
@@ -8,7 +8,7 @@ import { fetchFigma } from '../../fetchFigma';
 type FigmaNodeListItemProps = FigmaNodeData & {
   depth: number;
   checkedNodes: string[];
-  setCheckedNodes: React.Dispatch<React.SetStateAction<string[]>>;
+  setCheckedNodes: Dispatch<SetStateAction<string[]>>;
 };
 
 /**

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { NativeTextArea } from '@cbhq/cds-web/controls/NativeTextArea';
 import { TextInput } from '@cbhq/cds-web/controls/TextInput';
