@@ -9,6 +9,16 @@ Install package with `yarn add @cbhq/cds-lottie-files`
 - `import { tradeStatus } from '@cbhq/cds-lottie-files/tradeStatus'` for mobile to prevent bundling all assets on build
 - `import { tradeStatus } from '@cbhq/cds-lottie-files'` for web if your project supports treeshaking
 
+### External contributions / adding lottie assets
+
+The CDS Lottie package contains files owned and managed by the UI Systems team. We recommend teams to host their Lottie files within their own repo or with the following alternatives below.
+
+Recommended ways to host Lottie files:
+
+- Add Lottie files to contentful and fetch them from contentful
+  - Example in `react-native`: [AdvocacyTransparentLottie.tsx](https://github.cbhq.net/consumer/react-native/blob/master/src/packages/app/src/screens/AdvocacyTransparentScreenTakeover/components/AdvocacyTransparentLottie.tsx), and [useContentfulAdvocacyFullScreenTakeover](https://github.cbhq.net/consumer/react-native/blob/master/src/packages/app/src/screens/AdvocacyTransparentScreenTakeover/hooks/useContentfulAdvocacyFullScreenTakeover.ts)
+- Add the Lottie file to [engineering/static-assets](https://github.cbhq.net/engineering/static-assets)
+
 ### Inside mono/repo
 
 - Use import convention above
@@ -21,7 +31,7 @@ Make sure `@cbhq:registry=https://registry-npm.cbhq.net` is in your `.npmrc`.
 yarn add @cbhq/cds-lottie
 ```
 
-### Updating lottie assets
+### (Internal) Updating lottie assets
 
 1. Replace or add the new json
 2. Run `make codegen` from `eng/shared/design-system` in go/repo
