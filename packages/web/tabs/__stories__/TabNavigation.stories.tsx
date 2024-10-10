@@ -150,6 +150,21 @@ export const WithPaddles: Story = () => {
 };
 WithPaddles.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
 
+export const WithCustomPaddles: Story = () => {
+  const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
+
+  return (
+    <TabNavigation
+      onChange={setValue}
+      // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+      paddleStyle={{ transform: 'scale(0.5)' }}
+      tabs={sampleTabs}
+      value={value}
+    />
+  );
+};
+WithCustomPaddles.parameters = { percy: enableJavascript, a11y: a11ySkipConfig };
+
 export const WithDotCountChange: Story = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
   const [count, setCount] = useState(0);

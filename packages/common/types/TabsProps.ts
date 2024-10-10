@@ -103,6 +103,10 @@ export type TabNavigationProps<T extends string | undefined = string> = {
    * Web only. Accessibility label for the next arrow paddle (skip to end).
    */
   nextArrowAccessibilityLabel?: string | undefined;
+  /**
+   * Web only. Styling for the paddle icon buttons. Mobile does not have paddles.
+   */
+  paddleStyle?: React.CSSProperties;
 } & Pick<TabProps, 'variant' | 'Component'> &
   BoxBaseProps &
   SharedProps;

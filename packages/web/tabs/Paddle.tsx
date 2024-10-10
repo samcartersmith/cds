@@ -34,6 +34,10 @@ export type PaddleProps = {
   variant: TabLabelProps['variant'];
   background?: PaletteBackground;
   onPress: () => void;
+  /**
+   * Web only. Styling for the paddle icon button. Mobile does not have paddles.
+   */
+  paddleStyle?: React.CSSProperties;
 } & SharedProps &
   SharedAccessibilityProps;
 
@@ -68,6 +72,7 @@ const paddleRightClassName = css`
   padding-left: ${spacing[tabsPaddleSpacing]};
   padding-right: ${spacing[tabsPaddleSpacing]};
 `;
+
 // TODO: come up with a better system for handling these custom px values
 // Using px are flakey, but I can't think of a more deterministic way to calculate this diff
 const tablabelOffset = '7px';
@@ -83,8 +88,10 @@ export const Paddle = ({
   onPress,
   testID = `${paddleStaticClassName}--${direction}`,
   accessibilityLabel,
+  paddleStyle,
 }: PaddleProps) => {
   const palette = usePalette();
+
   const className = cx(
     paddleClassName,
     paddleOffsetClassName,
@@ -124,6 +131,7 @@ export const Paddle = ({
               accessibilityLabel={accessibilityLabel}
               name={direction === 'left' ? 'caretLeft' : 'caretRight'}
               onPress={onPress}
+              style={paddleStyle}
               testID={testID}
               variant="secondary"
             />

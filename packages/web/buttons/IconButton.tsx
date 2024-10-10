@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import { IconButtonBaseProps, SharedProps } from '@cbhq/cds-common';
 import { useButtonIconSize } from '@cbhq/cds-common/hooks/useButtonIconSize';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
@@ -13,6 +13,7 @@ import { useIconButtonStyles } from './useIconButtonStyles';
 
 export type IconButtonProps = {
   as?: React.ComponentType<React.PropsWithChildren<React.HTMLAttributes<HTMLElement>>>;
+  style?: React.CSSProperties;
 } & IconButtonBaseProps &
   PressableProps &
   SharedProps &
@@ -34,6 +35,7 @@ export const IconButton = forwardRef(
       to,
       transparent,
       variant = 'secondary',
+      style,
       ...props
     }: IconButtonProps,
     ref: React.Ref<HTMLButtonElement>,
@@ -41,6 +43,8 @@ export const IconButton = forwardRef(
     const styles = useIconButtonStyles(compact);
     const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
     const iconSize = useButtonIconSize(compact);
+
+    const pressableStyle = useMemo(() => ({ ...styles, ...style }), [styles, style]);
 
     return (
       <Pressable
@@ -54,7 +58,7 @@ export const IconButton = forwardRef(
         className={cx(flexStyles, iconButton)}
         disabled={disabled}
         onPress={onPress}
-        style={styles}
+        style={pressableStyle}
         to={to}
         transparentWhileInactive={transparent}
       >

@@ -1,4 +1,5 @@
 import React, { memo, useMemo } from 'react';
+import { type StyleProp, type ViewStyle } from 'react-native';
 import { useButtonVariant } from '@cbhq/cds-common/hooks/useButtonVariant';
 import { useScale } from '@cbhq/cds-common/scale/useScale';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
@@ -11,7 +12,10 @@ import { Icon } from '../icons/Icon';
 import { getSpacingStyles } from '../styles/getSpacingStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 
-export type IconButtonProps = IconButtonBaseProps & PressableProps;
+export type IconButtonProps = IconButtonBaseProps &
+  PressableProps & {
+    style?: StyleProp<ViewStyle>;
+  };
 
 type GetIconStylesParams = Pick<IconButtonProps, 'compact' | 'flush'> & {
   scale: Scale;
@@ -64,6 +68,7 @@ export const IconButton = memo(function IconButton({
   transparent,
   variant = 'secondary',
   flush,
+  style,
   ...props
 }: IconButtonProps) {
   const scale = useScale();
@@ -75,6 +80,8 @@ export const IconButton = memo(function IconButton({
     [compact, compactSize, flush, scale],
   );
 
+  const pressableStyle = useMemo(() => [pressableStyles, style], [pressableStyles, style]);
+
   return (
     <Pressable
       background={backgroundColor}
@@ -82,7 +89,7 @@ export const IconButton = memo(function IconButton({
       borderRadius="roundedFull"
       borderWidth="button"
       feedback={feedback}
-      style={pressableStyles}
+      style={pressableStyle}
       transparentWhileInactive={transparent}
       {...props}
     >

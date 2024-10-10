@@ -41,6 +41,16 @@ const variants = [
   {
     component: (
       <IconButton
+        accessibilityLabel={iconName}
+        name={iconName}
+        style={{ padding: 10, borderRadius: 15, transform: 'scale(0.5)' }}
+      />
+    ),
+    title: <TextBody>Custom style</TextBody>,
+  },
+  {
+    component: (
+      <IconButton
         transparent
         accessibilityLabel={iconName}
         name={iconName}

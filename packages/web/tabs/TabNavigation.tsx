@@ -88,6 +88,7 @@ export const TabNavigation = memo(
         Component,
         gap = 4,
         role = 'tablist',
+        paddleStyle,
         ...rest
       }: TabNavigationProps,
       forwardedRef: ForwardedRef<HTMLElement | null>,
@@ -332,6 +333,7 @@ export const TabNavigation = memo(
             accessibilityLabel={previousArrowAccessibilityLabel}
             background={background}
             onPress={handleScrollLeft}
+            paddleStyle={paddleStyle}
             show={leftPaddle}
             testID={`${tabNavigationStaticClassName}--paddle-left`}
             variant={variant}
@@ -383,6 +385,7 @@ export const TabNavigation = memo(
             background={background}
             direction="right"
             onPress={handleScrollRight}
+            paddleStyle={paddleStyle}
             show={rightPaddle}
             testID={`${tabNavigationStaticClassName}--paddle-right`}
             variant={variant}
