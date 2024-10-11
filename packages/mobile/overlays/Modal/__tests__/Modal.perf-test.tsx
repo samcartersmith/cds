@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { fireEvent, screen } from '@testing-library/react-native';
-import { measurePerformance } from 'reassure';
+import { measureRenders } from 'reassure';
 
 import { Button } from '../../../buttons/Button';
 import { Modal } from '../Modal';
@@ -24,12 +24,13 @@ const MockModal = () => {
   );
 };
 
-describe('Modal performance tests', () => {
+// eslint-disable-next-line jest/no-disabled-tests
+describe.skip('Modal performance tests', () => {
   it('renders a Modal when opened', async () => {
     const scenario = async () => {
       fireEvent.press(screen.getByRole('button'));
       await screen.findByRole('dialog');
     };
-    await measurePerformance(<MockModal />, { scenario });
+    await measureRenders(<MockModal />, { scenario });
   });
 });

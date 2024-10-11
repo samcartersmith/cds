@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-mobile",
-  "version": "6.47.0",
+  "version": "6.47.1",
   "description": "Coinbase Design System - Mobile Native",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -54,7 +54,8 @@
     "react-native-reanimated": "~3.6.2",
     "react-native-safe-area-context": "4.8.2",
     "react-native-svg": "13.14.0",
-    "react-test-renderer": "^18.2.0"
+    "react-test-renderer": "^18.2.0",
+    "reassure": "^1.2.1"
   },
   "main": "index",
   "typings": "index.d.ts"

@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-web",
-  "version": "6.47.0",
+  "version": "6.47.1",
   "description": "Coinbase Design System - Web",
   "repository": "git@github.cbhq.net:frontend/cds.git",
   "keywords": [
@@ -44,7 +44,8 @@
     "@cbhq/ui-scorecard": "workspace:^",
     "@storybook/testing-library": "^0.0.13",
     "framer-motion": "^10.18.0",
-    "linaria": "^2.3.1"
+    "linaria": "^2.3.1",
+    "reassure": "^1.2.1"
   },
   "main": "index",
   "typings": "index.d.ts"

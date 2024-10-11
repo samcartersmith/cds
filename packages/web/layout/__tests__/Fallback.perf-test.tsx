@@ -1,4 +1,4 @@
-import { measurePerformance } from 'reassure';
+import { measureRenders } from 'reassure';
 
 import { Fallback } from '../Fallback';
 
@@ -9,9 +9,9 @@ const props = {
 
 describe('Fallback performance test', () => {
   it('renders', async () => {
-    await measurePerformance(<Fallback {...props} />);
+    await measureRenders(<Fallback {...props} />);
   });
   it('renders with disableRandomRectWidth', async () => {
-    await measurePerformance(<Fallback disableRandomRectWidth {...props} />);
+    await measureRenders(<Fallback disableRandomRectWidth {...props} />);
   });
 });

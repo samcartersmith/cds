@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { fireEvent, screen } from '@testing-library/react';
-import { measurePerformance } from 'reassure';
+import { measureRenders } from 'reassure';
 
 import { Button } from '../../../buttons/Button';
 import { Modal, ModalProps } from '../Modal';
@@ -30,20 +30,20 @@ describe('Modal performance tests', () => {
       fireEvent.click(screen.getByRole('button'));
       await screen.findByRole('dialog');
     };
-    await measurePerformance(<MockModal />, { scenario });
+    await measureRenders(<MockModal />, { scenario });
   });
   it('renders a Modal when opened without a FocusTrap', async () => {
     const scenario = async () => {
       fireEvent.click(screen.getByRole('button'));
       await screen.findByRole('dialog');
     };
-    await measurePerformance(<MockModal disableFocusTrap />, { scenario });
+    await measureRenders(<MockModal disableFocusTrap />, { scenario });
   });
   it('renders a Modal when opened with portal disabled', async () => {
     const scenario = async () => {
       fireEvent.click(screen.getByRole('button'));
       await screen.findByRole('dialog');
     };
-    await measurePerformance(<MockModal disablePortal />, { scenario });
+    await measureRenders(<MockModal disablePortal />, { scenario });
   });
 });

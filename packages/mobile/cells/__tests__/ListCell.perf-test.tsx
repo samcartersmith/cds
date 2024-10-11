@@ -1,4 +1,4 @@
-import { measurePerformance } from 'reassure';
+import { measureRenders } from 'reassure';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { CellMedia } from '../CellMedia';
@@ -6,7 +6,7 @@ import { ListCell } from '../ListCell';
 
 describe('ListCell performance test', () => {
   it('renders', async () => {
-    await measurePerformance(
+    await measureRenders(
       <ListCell
         selected
         description="Some description of the asset"

@@ -1,4 +1,4 @@
-import { measurePerformance } from 'reassure';
+import { measureRenders } from 'reassure';
 import { ElevationLevels, ResponsiveProps } from '@cbhq/cds-common';
 
 import { Box } from '../Box';
@@ -20,12 +20,12 @@ const responsiveConfig: ResponsiveProps = {
 
 describe('Box performance test', () => {
   it('renders', async () => {
-    await measurePerformance(<Box />);
+    await measureRenders(<Box />);
   });
   it('renders with elevation', async () => {
-    await measurePerformance(<Box elevation={5 as ElevationLevels} />);
+    await measureRenders(<Box elevation={2 as ElevationLevels} />);
   });
   it('renders with a responsive config', async () => {
-    await measurePerformance(<Box responsiveConfig={responsiveConfig} />);
+    await measureRenders(<Box responsiveConfig={responsiveConfig} />);
   });
 });

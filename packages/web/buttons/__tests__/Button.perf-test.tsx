@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { measurePerformance } from 'reassure';
+import { measureRenders } from 'reassure';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Button } from '../Button';
@@ -9,9 +9,9 @@ describe('Button performance tests', () => {
     const scenario = async () => {
       fireEvent.click(screen.getByRole('button'));
     };
-    await measurePerformance(<Button onPress={NoopFn}>Child</Button>, { scenario });
+    await measureRenders(<Button onPress={NoopFn}>Child</Button>, { scenario });
   });
   it('renders when loading', async () => {
-    await measurePerformance(<Button loading>Child</Button>);
+    await measureRenders(<Button loading>Child</Button>);
   });
 });

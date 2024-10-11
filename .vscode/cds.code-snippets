@@ -145,13 +145,13 @@
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
     "prefix": "perf-test",
     "body": [
-      "import { measurePerformance } from 'reassure';",
+      "import { measureRenders } from 'reassure';",
       "",
       "import { ${1:component} } from '../${TM_FILENAME_BASE/(.perf-test)//}';",
       "",
       "describe('${1:component} performance test', () => {",
       "  it('renders', async () => {",
-      "    await measurePerformance(<${1:component} />);",
+      "    await measureRenders(<${1:component} />);",
       "  });",
       "});",
       ""

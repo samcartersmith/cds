@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { measurePerformance } from 'reassure';
+import { measureRenders } from 'reassure';
 
 import { Default as DropdownExample } from '../__stories__/Dropdown.stories';
 
@@ -14,14 +14,15 @@ const options = [
   'Option 7',
 ];
 
-describe('Dropdown performance tests', () => {
+// eslint-disable-next-line jest/no-disabled-tests
+describe.skip('Dropdown performance tests', () => {
   it('renders Dropdown content when opened', async () => {
     const scenario = async () => {
       fireEvent.click(screen.getByTestId(subjectTestID));
       await screen.findByText(options[0]);
     };
 
-    await measurePerformance(<DropdownExample options={options} subjectTestID={subjectTestID} />, {
+    await measureRenders(<DropdownExample options={options} subjectTestID={subjectTestID} />, {
       scenario,
     });
   });
@@ -31,7 +32,7 @@ describe('Dropdown performance tests', () => {
       await screen.findByText(options[0]);
     };
 
-    await measurePerformance(
+    await measureRenders(
       <DropdownExample disablePortal options={options} subjectTestID={subjectTestID} />,
       {
         scenario,

@@ -63,7 +63,7 @@ module.exports = {
         'jest/expect-expect': [
           'error',
           {
-            assertFunctionNames: ['expect', 'measurePerformance'],
+            assertFunctionNames: ['expect', 'measureRenders'],
             additionalTestBlockFunctions: [],
           },
         ],

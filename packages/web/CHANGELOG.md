@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.47.1 (10/10/2024 PST)
+
+#### 🐞 Fixes
+
+- Chore: reassure cleanup.
+
 ## 6.47.0 (10/10/2024 PST)
 
 #### 🚀 Updates

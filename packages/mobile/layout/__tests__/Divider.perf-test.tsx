@@ -1,9 +1,9 @@
-import { measurePerformance } from 'reassure';
+import { measureRenders } from 'reassure';
 
 import { Divider } from '../Divider';
 
 describe('Divider performance test', () => {
   it('renders', async () => {
-    await measurePerformance(<Divider />);
+    await measureRenders(<Divider />);
   });
 });
