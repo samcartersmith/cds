@@ -98,23 +98,6 @@ appListener.listen('delete-prompt', async (req, res) => {
 });
 
 /**
- * Responds to the React app's request to generate message descriptors for the current
- * selection. Receives the relevant FigmaNodeData and checked node ids, and passes it
- * on to the NodeJS server with the relevant app context.
- */
-appListener.listen('generate-descriptors', async (req, res) => {
-  try {
-    const response = await fetch('http://localhost:3000/start-session');
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const json = await response.json();
-    console.log('result ===', json);
-  } catch (error) {
-    console.log('Fetch error === ', error);
-  }
-  res.send('yay');
-});
-
-/**
  * Responds to the React app's request to highlight a specific Figma node by its reference id.
  * TODO: In dev mode, Figma does not allow modifying the canvas which apparently highlighting does.
  * The only way for this to possibly work is to have the plugin run in normal/design mode.

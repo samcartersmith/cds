@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ColorSurgeRefBaseProps } from '@cbhq/cds-common/types/ColorSurgeBaseProps';
 import { Button } from '@cbhq/cds-web/buttons/Button';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
@@ -13,6 +13,7 @@ import { TextTitle4 } from '@cbhq/cds-web/typography/TextTitle4';
 
 import type { FigmaNodeData } from '../../shared/FigmaNodeData';
 import type { Prompt } from '../../shared/Prompt';
+import { AthenaServerClient } from '../AthenaServerClient';
 import { useGlobalState } from '../hooks/useGlobalState';
 import { useRouter } from '../hooks/useRouter';
 
@@ -50,14 +51,11 @@ const generateDescriptors = async ({
   apiKey: string;
   secret: string;
 }) => {
-  // TODO either hardcode prod/local URLs or use Env webpack plugin to inject env vars from host into build
-  const result = await fetch('http://localhost:3000/generate', {
-    method: 'post',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt, selection, checkedNodes, apiKey, secret }),
-  });
+  const { data } = await AthenaServerClient.post<{ data: string }>(
+    'generate',
+    JSON.stringify({ prompt, selection, checkedNodes, apiKey, secret }),
+  );
 
-  const { data } = (await result.json()) as { data: string };
   // get the first match which should be the generated typescript code block from the server
   const [, p1] = data.match(CODE_REGEX) ?? [];
   return p1 ?? '';
@@ -75,14 +73,7 @@ export const Chat = () => {
   const responseListRef = useRef<HTMLElement>(null);
   const colorSurgeRefs = useRef<Record<string, ColorSurgeRefBaseProps>>({});
 
-  // TODO do we need a effect here?
-  // useEffect(() => {
-  //   generate();
-  // }, []);
-
-  if (!prompt || !selection?.length || !checkedNodes?.length) return <Redirect to="select-nodes" />;
-
-  const handlePressGenerate = async () => {
+  const handleGenerate = useCallback(async () => {
     if (!prompt || !selection?.length || !checkedNodes?.length || !cbGPT.apiKey || !cbGPT.secret) {
       const error = new Error('Missing required data for CB-GPT codegen');
       return Promise.reject(error);
@@ -114,6 +105,14 @@ export const Chat = () => {
       .finally(() => {
         setIsPending(false);
       });
+  }, [cbGPT.apiKey, cbGPT.secret, checkedNodes, prompt, selection]);
+
+  useEffect(() => {
+    void handleGenerate();
+  }, [handleGenerate]);
+
+  const handlePressGenerate = async () => {
+    void handleGenerate();
   };
 
   const handlePressResponse = (response: string, index: number) => {
@@ -124,6 +123,8 @@ export const Chat = () => {
   const registerColorSurgeRef = (index: number, ref: ColorSurgeRefBaseProps | null) => {
     if (ref) colorSurgeRefs.current[index] = ref;
   };
+
+  if (!prompt || !selection?.length || !checkedNodes?.length) return <Redirect to="select-nodes" />;
 
   return (
     <VStack height="100vh" width="100%">

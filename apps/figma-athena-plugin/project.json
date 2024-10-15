@@ -15,6 +15,16 @@
         }
       }
     },
+    "dev-watch": {
+      "command": "rm -rf dist && webpack --mode development --watch",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/figma-athena-plugin",
+        "color": true
+      }
+    },
     "start": {
       "command": "webpack serve --mode production",
       "dependsOn": [
@@ -50,9 +60,6 @@
         "script": "server-dockerdown"
       }
     },
-    "codegen": {
-      "command": "yarn workspace figma-athena-plugin add @bufteam/data_cb-gpt-ml.bufbuild_es@latest @bufteam/data_cb-gpt-ml.bufbuild_connect-es@latest @bufteam/data_cb-gpt-service.bufbuild_es@latest @bufteam/data_cb-gpt-service.bufbuild_connect-es@latest"
-    },
     "serve": {
       "command": "tsx ./src/server/index.ts",
       "options": {
@@ -63,16 +70,6 @@
       "command": "nodemon",
       "options": {
         "cwd": "apps/figma-athena-plugin"
-      }
-    },
-    "watch": {
-      "command": "rm -rf dist && webpack --mode production --watch",
-      "dependsOn": [
-        "^build"
-      ],
-      "options": {
-        "cwd": "apps/figma-athena-plugin",
-        "color": true
       }
     },
     "typecheck": {

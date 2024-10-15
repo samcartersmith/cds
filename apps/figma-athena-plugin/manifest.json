@@ -1,5 +1,5 @@
 {
-  "name": "Athena",
+  "name": "UI Systems - Athena",
   "id": "000000000000000000",
   "api": "1.0.0",
   "main": "./dist/plugin.js",
@@ -17,9 +17,10 @@
     "allowedDomains": [
       "none"
     ],
-    "reasoning": "My plugin queries localhost for development purposes, and static-assets for illustrations",
+    "reasoning": "My plugin queries localhost for development purposes, static-assets for illustrations and figma-athena.cbhq.net in the production build.",
     "devAllowedDomains": [
-      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://figma-athena.cbhq.net",
       "https://static-assets.coinbase.com"
     ]
   }

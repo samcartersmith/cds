@@ -39,7 +39,6 @@ export type MessagesToPlugin =
   | Message<'update-prompt', Prompt | NewPrompt>
   | Message<'delete-prompt', string>
   | Message<'highlight-node', string>
-  | Message<'generate-descriptors', string>
   | Message<'set-credentials', CbGptCredentials>
   | Message<'check-credentials', undefined>;
 
@@ -48,6 +47,5 @@ export type ResponsesToApp =
   | Message<'update-prompt', Prompt>
   | Message<'delete-prompt', undefined>
   | Message<'highlight-node', undefined>
-  | Message<'generate-descriptors', string>
   | Message<'set-credentials', undefined>
   | Message<'check-credentials', CbGptCredentials | null>;
