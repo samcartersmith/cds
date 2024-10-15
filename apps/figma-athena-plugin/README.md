@@ -18,19 +18,20 @@ To run the plugin in Figma you must have:
 
 * to run the plugin in "production" mode use the `start` command as opposed to `dev-watch`.
 
-## Publish
+## Local Install
+In order to develop locally, you will need to install the plugin from source code.
 
-1. Run `yarn nx run figma-athena-plugin:build` to build plugin with changes you wish to publish
-2. Open Figma Desktop
-3. In the Figma top menu, `Plugins` > `Development` > `Import plugin from manifest`
-4. Select the `manifest.json` file in `cds/apps/figma-athena-plugin/manifest.json`
-5. The plugin UI should show CDS in development list
-6. Click the horizontal kebab icon (three dots) next to CDS and then click 'Publish'
-7. Add version notes with list of changes
-8. Press 'Update'
+1. Either build the plugin with `yarn nx run figma-athena-plugin:build` or start the dev-server with watch with `yarn nx run figma-athena-plugin:dev-watch`
+2. Open any Coinbase Figma file and then in the top menu select **Plugins > Development > Import plugin from manifest...**
+3. Find the manifest.json file in the app root directory. Selecting this file will install the plugin in your local Figma application.
 
-<!-- TODO: replace with published link -->
-<!-- The plugin is available for Coinbase Figma users to download [here](https://www.figma.com/community/plugin/1296966863774118588) -->
+## Deployments
+1. After merging changes to master, initiate the build process on [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits). This can be done by finding the artifact, `figma-athena` in the list which should have been skipped as no auto-build is set up at this time.
+2. Once the build completes, expand the `Deploy to infra-shared-dev` dropdown and select `infra-shared-dev::figma-athena`. This will deploy the Athena server to infra-shared-dev.
+3. To publish the latest plugin to Figma, first build the plugin and React app with: `yarn nx run figma-athena-plugin:build`
+4. Open any Coinbase Figma file, enter _Dev Mode_ and go to the _Plugins_ tab.
+5. From the list of plugins, find `UI Systems - Athena` and select the `Publish` command from the menu on the right side of the row.
+6. Make sure to deploy the plugin to _Coinbase_ rather than to _Community_. More details on private organization plugins are found [here](https://help.figma.com/hc/en-us/articles/4404228629655-Create-private-organization-plugins).
 
 ## Architecture
 
