@@ -18,6 +18,7 @@ const names: SpotIconName[] = [
   'bank',
   'base',
   'borrowProduct',
+  'cb1Cash',
   'chat',
   'cloudProduct',
   'coinbase',

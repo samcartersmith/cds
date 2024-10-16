@@ -8,6 +8,39 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.16.0 (10/16/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 10/16/2024. [[#3353](https://github.cbhq.net/frontend/cds/pull/3353)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- borrowLoan
+- leadingProtocol
+- loanValue
+- usdcLoan
+
+#### Spot Icon
+
+- cb1Cash
+
+#### Pictogram
+
+- usdcRewardsRibbon
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- holdCrypto
+
 ## 3.15.0 (9/27/2024 PST)
 
 #### 🚀 Updates

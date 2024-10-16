@@ -315,6 +315,7 @@ const versionMap: Record<PictogramName, number> = {
   usdcInterest: 0,
   usdcToken: 0,
   usdcEarn: 0,
+  usdcRewardsRibbon: 0,
   usdcLogo: 0,
   usdcRewards: 0,
 };

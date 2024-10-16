@@ -161,7 +161,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   freeBtc: 2,
   estimatedAmount: 2,
   coinbaseFees: 2,
-  holdCrypto: 2,
+  holdCrypto: 3,
   securityShield: 2,
   addPhoneNumber: 2,
   tradeImmediately: 2,
@@ -199,6 +199,10 @@ const versionMap: Record<SpotRectangleName, number> = {
   faceId: 0,
   portfolioOverviewRelaunch: 0,
   cbbtc: 0,
+  loanValue: 0,
+  usdcLoan: 0,
+  leadingProtocol: 0,
+  borrowLoan: 0,
 };
 
 export default versionMap;

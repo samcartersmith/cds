@@ -289,6 +289,7 @@ const names: PictogramName[] = [
   'usdcInterest',
   'usdcLogo',
   'usdcRewards',
+  'usdcRewardsRibbon',
   'usdcToken',
   'venturesNavigation',
   'verifiedPools',

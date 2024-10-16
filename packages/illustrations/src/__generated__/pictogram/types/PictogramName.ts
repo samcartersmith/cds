@@ -283,6 +283,7 @@ export type PictogramName =
   | 'usdcInterest'
   | 'usdcLogo'
   | 'usdcRewards'
+  | 'usdcRewardsRibbon'
   | 'usdcToken'
   | 'venturesNavigation'
   | 'verifiedPools'

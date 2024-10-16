@@ -12,6 +12,7 @@ export type SpotIconName =
   | 'bank'
   | 'base'
   | 'borrowProduct'
+  | 'cb1Cash'
   | 'chat'
   | 'cloudProduct'
   | 'coinbase'

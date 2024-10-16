@@ -73,6 +73,7 @@ const versionMap: Record<SpotIconName, number> = {
   bank: 1,
   outage: 0,
   coinbaseOneChart: 0,
+  cb1Cash: 0,
 };
 
 export default versionMap;

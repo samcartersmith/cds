@@ -69,6 +69,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/blockchain-3').content,
     dark: () => require('../svgJs/dark/blockchain-3').content,
   },
+  borrowLoan: {
+    light: () => require('../svgJs/light/borrowLoan-0').content,
+    dark: () => require('../svgJs/dark/borrowLoan-0').content,
+  },
   borrowWallet: {
     light: () => require('../svgJs/light/borrowWallet-2').content,
     dark: () => require('../svgJs/dark/borrowWallet-2').content,
@@ -394,8 +398,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/highFees-4').content,
   },
   holdCrypto: {
-    light: () => require('../svgJs/light/holdCrypto-2').content,
-    dark: () => require('../svgJs/dark/holdCrypto-2').content,
+    light: () => require('../svgJs/light/holdCrypto-3').content,
+    dark: () => require('../svgJs/dark/holdCrypto-3').content,
   },
   holdingCrypto: {
     light: () => require('../svgJs/light/holdingCrypto-2').content,
@@ -412,6 +416,10 @@ const svgJsMap = {
   layeredNetworks: {
     light: () => require('../svgJs/light/layeredNetworks-3').content,
     dark: () => require('../svgJs/dark/layeredNetworks-3').content,
+  },
+  leadingProtocol: {
+    light: () => require('../svgJs/light/leadingProtocol-0').content,
+    dark: () => require('../svgJs/dark/leadingProtocol-0').content,
   },
   ledgerFailed: {
     light: () => require('../svgJs/light/ledgerFailed-2').content,
@@ -436,6 +444,10 @@ const svgJsMap = {
   linkingYourWalletToYourCoinbaseAccount: {
     light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-4').content,
     dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-4').content,
+  },
+  loanValue: {
+    light: () => require('../svgJs/light/loanValue-0').content,
+    dark: () => require('../svgJs/dark/loanValue-0').content,
   },
   login: {
     light: () => require('../svgJs/light/login-3').content,
@@ -700,6 +712,10 @@ const svgJsMap = {
   uploadDocument: {
     light: () => require('../svgJs/light/uploadDocument-0').content,
     dark: () => require('../svgJs/dark/uploadDocument-0').content,
+  },
+  usdcLoan: {
+    light: () => require('../svgJs/light/usdcLoan-0').content,
+    dark: () => require('../svgJs/dark/usdcLoan-0').content,
   },
   verifyEmail: {
     light: () => require('../svgJs/light/verifyEmail-2').content,

@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-09-27T17:53:44.373Z",
+  "lastUpdated": "2024-10-16T20:31:10.211Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -17345,22 +17345,22 @@
     "2225:2559": {
       "type": "spotRectangle",
       "name": "holdCrypto",
-      "hash": "4XfCSdUAasy3JR/Kxlv9otOUUxb/zyw1hvFzbo8DqBg=",
+      "hash": "bRpcAzyL1cPryf4pzuayPNQ3lN7IrLict3BTyA7kobg=",
       "width": 240,
       "height": 120,
       "description": "yield, hold, crypto, coins, hodl, currency, basket, stake, store, bowl",
       "createdAt": "2023-05-03T19:12:53.058Z",
-      "lastUpdated": "2024-09-09T16:12:03.576Z",
+      "lastUpdated": "2024-10-09T13:38:26.521Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/holdCrypto-2.svg",
-        "svgDark": "./spotRectangle/svg/dark/holdCrypto-2.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/holdCrypto-2.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/holdCrypto-2.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/holdCrypto-2.js",
-        "pngLight": "./spotRectangle/png/light/holdCrypto-2.png",
-        "pngDark": "./spotRectangle/png/dark/holdCrypto-2.png"
+        "svgLight": "./spotRectangle/svg/light/holdCrypto-3.svg",
+        "svgDark": "./spotRectangle/svg/dark/holdCrypto-3.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/holdCrypto-3.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/holdCrypto-3.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/holdCrypto-3.js",
+        "pngLight": "./spotRectangle/png/light/holdCrypto-3.png",
+        "pngDark": "./spotRectangle/png/dark/holdCrypto-3.png"
       },
-      "version": 2
+      "version": 3
     },
     "2225:2560": {
       "type": "spotSquare",
@@ -21730,7 +21730,7 @@
       "height": 48,
       "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
       "createdAt": "2024-09-27T17:51:39.520Z",
-      "lastUpdated": "2024-09-27T17:51:39.520Z",
+      "lastUpdated": "2024-10-09T13:38:26.494Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/usdcInterest-0.svg",
         "svgDark": "./pictogram/svg/dark/usdcInterest-0.svg",
@@ -21742,6 +21742,26 @@
       },
       "version": 0
     },
+    "11824:129": {
+      "type": "pictogram",
+      "name": "usdcRewardsRibbon",
+      "hash": "3aDrpovMxXr7nYNxIKF8HTXcEgCOpURi2bUK6xZ2q6k=",
+      "width": 48,
+      "height": 48,
+      "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
+      "createdAt": "2024-09-27T17:51:39.534Z",
+      "lastUpdated": "2024-10-16T19:07:31.549Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/usdcRewardsRibbon-0.svg",
+        "svgDark": "./pictogram/svg/dark/usdcRewardsRibbon-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/usdcRewardsRibbon-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/usdcRewardsRibbon-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/usdcRewardsRibbon-0.js",
+        "pngLight": "./pictogram/png/light/usdcRewardsRibbon-0.png",
+        "pngDark": "./pictogram/png/dark/usdcRewardsRibbon-0.png"
+      },
+      "version": 0
+    },
     "11824:130": {
       "type": "pictogram",
       "name": "usdcToken",
@@ -21750,7 +21770,7 @@
       "height": 48,
       "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
       "createdAt": "2024-09-27T17:51:39.524Z",
-      "lastUpdated": "2024-09-27T17:51:39.524Z",
+      "lastUpdated": "2024-10-09T13:38:26.504Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/usdcToken-0.svg",
         "svgDark": "./pictogram/svg/dark/usdcToken-0.svg",
@@ -21790,7 +21810,7 @@
       "height": 48,
       "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
       "createdAt": "2024-09-27T17:51:39.543Z",
-      "lastUpdated": "2024-09-27T17:51:39.543Z",
+      "lastUpdated": "2024-10-09T13:38:26.511Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/usdcRewards-0.svg",
         "svgDark": "./pictogram/svg/dark/usdcRewards-0.svg",
@@ -21819,6 +21839,106 @@
         "svgJsDark": "./spotIcon/svgJs/dark/coinbaseOneChart-0.js",
         "pngLight": "./spotIcon/png/light/coinbaseOneChart-0.png",
         "pngDark": "./spotIcon/png/dark/coinbaseOneChart-0.png"
+      },
+      "version": 0
+    },
+    "12192:35": {
+      "type": "spotIcon",
+      "name": "cb1Cash",
+      "hash": "2Pg8jSNUSn4/eTyMYrPFHCrLz17oVLA1JvyTY1tArKs=",
+      "width": 32,
+      "height": 32,
+      "description": "product, icons, borrow",
+      "createdAt": "2024-10-16T17:02:31.032Z",
+      "lastUpdated": "2024-10-16T17:02:31.032Z",
+      "outputs": {
+        "svgLight": "./spotIcon/svg/light/cb1Cash-0.svg",
+        "svgDark": "./spotIcon/svg/dark/cb1Cash-0.svg",
+        "svgThemed": "./spotIcon/svg/themeable/cb1Cash-0.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/cb1Cash-0.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/cb1Cash-0.js",
+        "pngLight": "./spotIcon/png/light/cb1Cash-0.png",
+        "pngDark": "./spotIcon/png/dark/cb1Cash-0.png"
+      },
+      "version": 0
+    },
+    "12280:126": {
+      "type": "spotRectangle",
+      "name": "usdcLoan",
+      "hash": "I2rPTg0YbI0ITXv8XiYX1DXrFqOiOi83iV0VGyab45c=",
+      "width": 240,
+      "height": 120,
+      "description": "usdc, send, loan, coin, portal, stars",
+      "createdAt": "2024-10-16T17:02:31.045Z",
+      "lastUpdated": "2024-10-16T17:02:31.045Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/usdcLoan-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/usdcLoan-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/usdcLoan-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/usdcLoan-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/usdcLoan-0.js",
+        "pngLight": "./spotRectangle/png/light/usdcLoan-0.png",
+        "pngDark": "./spotRectangle/png/dark/usdcLoan-0.png"
+      },
+      "version": 0
+    },
+    "12280:127": {
+      "type": "spotRectangle",
+      "name": "borrowLoan",
+      "hash": "2fvqpeMSYuJTqqsWMYLIVNhlWuRMfx6sKBB5sXPh3Ig=",
+      "width": 240,
+      "height": 120,
+      "description": "borrow, loan, custodial, semi custodial, bank, user, avatar, coin",
+      "createdAt": "2024-10-16T17:02:31.057Z",
+      "lastUpdated": "2024-10-16T17:02:31.057Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/borrowLoan-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/borrowLoan-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/borrowLoan-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/borrowLoan-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/borrowLoan-0.js",
+        "pngLight": "./spotRectangle/png/light/borrowLoan-0.png",
+        "pngDark": "./spotRectangle/png/dark/borrowLoan-0.png"
+      },
+      "version": 0
+    },
+    "12288:210": {
+      "type": "spotRectangle",
+      "name": "leadingProtocol",
+      "hash": "dbHPHXM7HqhvCjiToryl8Yc+MucBvLCzL95lybugbXY=",
+      "width": 240,
+      "height": 120,
+      "description": "leading, protocol, send, crypto, faster, coins, lightning, bolt, move, money, quicker, currency, asset, ⚡️",
+      "createdAt": "2024-10-16T17:02:31.051Z",
+      "lastUpdated": "2024-10-16T17:02:31.051Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/leadingProtocol-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/leadingProtocol-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/leadingProtocol-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/leadingProtocol-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/leadingProtocol-0.js",
+        "pngLight": "./spotRectangle/png/light/leadingProtocol-0.png",
+        "pngDark": "./spotRectangle/png/dark/leadingProtocol-0.png"
+      },
+      "version": 0
+    },
+    "12288:211": {
+      "type": "spotRectangle",
+      "name": "loanValue",
+      "hash": "QmzjJjfWvO0j7BZupnm+V+4rLmddQ0Wo3HpzMIN81hE=",
+      "width": 240,
+      "height": 120,
+      "description": "margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, clock, error state",
+      "createdAt": "2024-10-16T17:02:31.039Z",
+      "lastUpdated": "2024-10-16T17:02:31.039Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/loanValue-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/loanValue-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/loanValue-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/loanValue-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/loanValue-0.js",
+        "pngLight": "./spotRectangle/png/light/loanValue-0.png",
+        "pngDark": "./spotRectangle/png/dark/loanValue-0.png"
       },
       "version": 0
     }

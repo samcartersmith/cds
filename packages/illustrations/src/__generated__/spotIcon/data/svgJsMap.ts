@@ -41,6 +41,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/borrowProduct-1').content,
     dark: () => require('../svgJs/dark/borrowProduct-1').content,
   },
+  cb1Cash: {
+    light: () => require('../svgJs/light/cb1Cash-0').content,
+    dark: () => require('../svgJs/dark/cb1Cash-0').content,
+  },
   chat: {
     light: () => require('../svgJs/light/chat-0').content,
     dark: () => require('../svgJs/dark/chat-0').content,

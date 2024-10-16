@@ -1125,6 +1125,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/usdcRewards-0').content,
     dark: () => require('../svgJs/dark/usdcRewards-0').content,
   },
+  usdcRewardsRibbon: {
+    light: () => require('../svgJs/light/usdcRewardsRibbon-0').content,
+    dark: () => require('../svgJs/dark/usdcRewardsRibbon-0').content,
+  },
   usdcToken: {
     light: () => require('../svgJs/light/usdcToken-0').content,
     dark: () => require('../svgJs/dark/usdcToken-0').content,
