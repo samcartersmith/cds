@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 6.47.2 (10/21/2024 PST)
+
+#### 🐞 Fixes
+
+- Fixed dot count being cutting off on TabNavigation. [[#3358](https://github.cbhq.net/frontend/cds/pull/3358)] [[DX-4316](https://jira.coinbase-corp.com/browse/DX-4316)]
+
 ## 6.47.1 ((10/10/2024, 06:12 PM PST))
 
 This is an artificial version bump with no new change.

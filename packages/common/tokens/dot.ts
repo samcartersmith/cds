@@ -46,7 +46,7 @@ export const dotCountPadding = {
 
 // This works for the purposes of TabNavigation, but it's not stable
 // TODO Update this with more stable values
-export const dotSizeTokens = { s: 24, m: 36, l: 42 } as const;
+export const dotSizeTokens = { s: 28, m: 36, l: 42 } as const;
 export const getDotSize = (count?: number) => {
   if (!count || count < 10) return dotSizeTokens.s;
   if (count >= 10) return dotSizeTokens.m;
