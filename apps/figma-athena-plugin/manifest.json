@@ -1,6 +1,6 @@
 {
   "name": "UI Systems - Athena",
-  "id": "000000000000000000",
+  "id": "1430200658434619700",
   "api": "1.0.0",
   "main": "./dist/plugin.js",
   "ui": "./dist/index.html",
@@ -15,7 +15,8 @@
   ],
   "networkAccess": {
     "allowedDomains": [
-      "none"
+      "https://figma-athena.cbhq.net",
+      "https://static-assets.coinbase.com"
     ],
     "reasoning": "My plugin queries localhost for development purposes, static-assets for illustrations and figma-athena.cbhq.net in the production build.",
     "devAllowedDomains": [
