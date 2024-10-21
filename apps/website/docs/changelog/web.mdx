@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.47.3 (10/21/2024 PST)
+
+#### 🐞 Fixes
+
+- Remove stopPropagation in DotCount web. [[#3354](https://github.cbhq.net/frontend/cds/pull/3354)] [[DX-4349](https://jira.coinbase-corp.com/browse/DX-4349)]
+
 ## 6.47.2 ((10/21/2024, 11:29 AM PST))
 
 This is an artificial version bump with no new change.

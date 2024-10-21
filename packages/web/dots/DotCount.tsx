@@ -19,7 +19,6 @@ import { NewAnimatePresence } from '../animation/NewAnimatePresence';
 import { usePalette } from '../hooks/usePalette';
 import { useMotionProps } from '../motion/useMotionProps';
 import { TextCaption } from '../typography/TextCaption';
-import { handlePreventPropagation } from '../utils/eventHandlers';
 
 import { dotRootContainerStyles, getTransform } from './dotStyles';
 
@@ -74,7 +73,6 @@ export const DotCount = memo(
               {...motionProps}
               className={dotCountContentLinaria}
               data-testid="dotcount-outer-container"
-              onClick={handlePreventPropagation}
               style={styles}
             >
               <TextCaption align="center" as="p" color="primaryForeground">
