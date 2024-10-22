@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 6.47.4 (10/22/2024 PST)
+
+#### 🐞 Fixes
+
+- Calendar: change day of the week Font component. [[#3362](https://github.cbhq.net/frontend/cds/pull/3362)] [[DX-4276](https://jira.coinbase-corp.com/browse/DX-4276)]
+
 ## 6.47.3 (10/21/2024 PST)
 
 #### 🐞 Fixes

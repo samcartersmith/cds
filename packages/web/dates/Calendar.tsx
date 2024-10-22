@@ -25,7 +25,6 @@ import { alignItems, justifyContent } from '../styles/flex';
 import { Pressable, PressableInternalProps } from '../system/Pressable';
 import { TextBody } from '../typography/TextBody';
 import { TextHeadline } from '../typography/TextHeadline';
-import { TextTitle4 } from '../typography/TextTitle4';
 import { cx } from '../utils/linaria';
 
 const CalendarPressable = memo(
@@ -321,9 +320,9 @@ export const Calendar = memo(
           <Grid gap={1} justifyContent="space-between" templateColumns="repeat(7, 40px)">
             {daysOfWeek.map((day) => (
               <VStack key={day} alignItems="center" height={40} justifyContent="center" width={40}>
-                <TextTitle4 as="span" selectable="none">
+                <TextBody as="span" selectable="none">
                   {day.charAt(0)}
-                </TextTitle4>
+                </TextBody>
               </VStack>
             ))}
             {calendarMonth.map((date) => {
