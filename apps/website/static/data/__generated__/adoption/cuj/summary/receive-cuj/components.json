@@ -1240,6 +1240,9 @@
         },
         "onChange": {
           "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
+        },
+        "testID": {
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
         }
       }
     }

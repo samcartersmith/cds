@@ -3,8 +3,8 @@
     {
       "name": "VStack",
       "sourceFile": "@cbhq/cds-web/layout/VStack",
-      "totalInstances": 80,
-      "totalCallSites": 45,
+      "totalInstances": 81,
+      "totalCallSites": 46,
       "cds": "@cbhq/cds-web/layout/VStack",
       "presentationalProps": [
         {
@@ -62,8 +62,8 @@
           "aliasPath": ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx",
           "callSites": [
             ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx",
-            ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx",
-            ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx"
+            ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx",
+            ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx"
           ]
         },
         {
@@ -151,21 +151,21 @@
         ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 3,
         ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
-        ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
         ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
         ":prime-ui/pages/trade/charts/depth/DepthSpreadTag.tsx": 1,
+        ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/metric/FallbackMetric.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 2,
         ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 4,
         ":prime-ui/pages/trade/ladder/LadderHeader/LadderHeader.tsx": 1,
         ":prime-ui/pages/trade/ladder/ladderPreferences/LadderDoubleClickOrderToggle.tsx": 1,
         ":prime-ui/pages/trade/ladder/ladderPreferences/LadderIcebergToggle.tsx": 1,
+        ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 2,
+        ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 4,
         ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 5,
         ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/TimeSelectInput.tsx": 1,
-        ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 2,
-        ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTableActionMenu.tsx": 1,
@@ -177,6 +177,7 @@
         ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormSizeWarningsToggle.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQBanner.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 3,
+        ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlay.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 5,
@@ -194,9 +195,9 @@
           ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 3,
           ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 1,
           ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 5,
           ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
           ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 5,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1
@@ -206,7 +207,8 @@
         },
         "flexGrow": {
           ":prime-ui/pages/trade/TradePage.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/PortfolioPercentageCell.tsx": 1
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/PortfolioPercentageCell.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1
         },
         "overflow": {
           ":prime-ui/pages/trade/TradePage.tsx": 1,
@@ -247,6 +249,7 @@
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 3,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1
         },
@@ -254,16 +257,16 @@
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 1,
           ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 1,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 1,
-          ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
           ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/charts/depth/DepthSpreadTag.tsx": 1,
+          ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/FallbackMetric.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 2,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 3,
           ":prime-ui/pages/trade/ladder/LadderHeader/LadderHeader.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 4,
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 3,
@@ -310,9 +313,9 @@
         },
         "alignItems": {
           ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 1,
-          ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
           ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/charts/depth/DepthSpreadTag.tsx": 1,
+          ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/FallbackMetric.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 2,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
@@ -320,6 +323,7 @@
           ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 5,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlay.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
@@ -381,10 +385,16 @@
     {
       "name": "ThemeProvider",
       "sourceFile": "@cbhq/cds-web/system/ThemeProvider",
-      "totalInstances": 6,
-      "totalCallSites": 6,
+      "totalInstances": 8,
+      "totalCallSites": 8,
       "cds": "@cbhq/cds-web/system/ThemeProvider",
       "aliasedCdsComponents": [
+        {
+          "aliasPath": ":prime-ui/pages/trade/components/tradeModeToggle/TradeModeToggle.tsx",
+          "callSites": [
+            ":prime-ui/pages/trade/TradePage.tsx"
+          ]
+        },
         {
           "aliasPath": ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx",
           "callSites": [
@@ -395,8 +405,10 @@
       ],
       "callSites": {
         ":prime-ui/pages/trade/TradePageErrorComponents.tsx": 1,
-        ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
+        ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+        ":prime-ui/pages/trade/components/tradeModeToggle/TradeModeToggle.tsx": 1,
         ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
+        ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1,
         ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTableRow.tsx": 1
@@ -404,8 +416,10 @@
       "propsWithCallSites": {
         "scale": {
           ":prime-ui/pages/trade/TradePageErrorComponents.tsx": 1,
-          ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
-          ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/components/tradeModeToggle/TradeModeToggle.tsx": 1,
+          ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
+          ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1
         },
         "spectrum": {
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1
@@ -422,8 +436,8 @@
     {
       "name": "Box",
       "sourceFile": "@cbhq/cds-web/layout/Box",
-      "totalInstances": 80,
-      "totalCallSites": 44,
+      "totalInstances": 82,
+      "totalCallSites": 45,
       "cds": "@cbhq/cds-web/layout/Box",
       "presentationalProps": [
         {
@@ -445,7 +459,13 @@
       ],
       "aliasedCdsComponents": [
         {
-          "aliasPath": ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
+          "aliasPath": ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+          "callSites": [
+            ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx",
           "callSites": [
             ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx"
           ]
@@ -463,13 +483,21 @@
             ":prime-ui/pages/trade/dataDiscovery/Balances.tsx",
             ":prime-ui/pages/trade/dataDiscovery/Balances.tsx",
             ":prime-ui/pages/trade/dataDiscovery/Balances.tsx",
-            ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
-            ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
-            ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
-            ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
-            ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
-            ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
-            ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx"
+            ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx"
           ]
         },
         {
@@ -545,7 +573,8 @@
       "callSites": {
         ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx": 2,
-        ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2,
+        ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 2,
+        ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 2,
         ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 1,
         ":prime-ui/pages/trade/infoBar/KeyBoardShortcuts.tsx": 2,
         ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 3,
@@ -555,15 +584,16 @@
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 6,
         ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
         ":prime-ui/pages/trade/components/denseToggle/DenseToggle.tsx": 1,
+        ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
         ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
         ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
-        ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/metric/FallbackMetric.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 2,
         ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 2,
         ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 2,
         ":prime-ui/pages/trade/ladder/LadderList/LadderListHeader.tsx": 3,
         ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 3,
+        ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 3,
         ":prime-ui/pages/trade/orderForm/components/ClearAllFormFieldsButton.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 2,
@@ -575,7 +605,6 @@
         ":prime-ui/pages/trade/orderForm/components/RaiseExactRow.tsx": 2,
         ":prime-ui/pages/trade/orderForm/components/TimeSelectInput.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
-        ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/TimeFilterControl.tsx": 2,
@@ -589,24 +618,6 @@
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 2
       },
       "propsWithCallSites": {
-        "width": {
-          ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 1,
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2,
-          ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
-          ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
-          ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
-          ":prime-ui/pages/trade/ladder/LadderList/LadderListHeader.tsx": 1,
-          ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 2,
-          ":prime-ui/pages/trade/orderForm/components/PlaceOrderButton.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 2,
-          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 2
-        },
         "ref": {
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 1
         },
@@ -619,8 +630,27 @@
           ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1
         },
+        "width": {
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2,
+          ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
+          ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
+          ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
+          ":prime-ui/pages/trade/ladder/LadderList/LadderListHeader.tsx": 1,
+          ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 2,
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/PlaceOrderButton.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 2
+        },
         "spacingStart": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/TimeFilterControl.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
@@ -769,6 +799,7 @@
         },
         "testID": {
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1
         },
         "className": {
@@ -818,8 +849,8 @@
     {
       "name": "HStack",
       "sourceFile": "@cbhq/cds-web/layout/HStack",
-      "totalInstances": 91,
-      "totalCallSites": 47,
+      "totalInstances": 95,
+      "totalCallSites": 50,
       "cds": "@cbhq/cds-web/layout/HStack",
       "presentationalProps": [
         {
@@ -836,6 +867,12 @@
         },
         {
           "aliasPath": ":prime-ui/pages/trade/infoBar/InfoBar.tsx",
+          "callSites": [
+            ":prime-ui/pages/trade/TradePage.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/pages/trade/components/perps/LegalMessage.tsx",
           "callSites": [
             ":prime-ui/pages/trade/TradePage.tsx"
           ]
@@ -919,6 +956,12 @@
           ]
         },
         {
+          "aliasPath": ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx",
+          "callSites": [
+            ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx"
+          ]
+        },
+        {
           "aliasPath": ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlayRow.tsx",
           "callSites": [
             ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx",
@@ -960,12 +1003,16 @@
         ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 4,
         ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
         ":prime-ui/pages/trade/components/denseToggle/DenseToggle.tsx": 1,
+        ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+        ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 2,
         ":prime-ui/pages/trade/charts/candles/ChartTags.tsx": 5,
         ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 2,
         ":prime-ui/pages/trade/dataDiscovery/metric/FallbackMetric.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1,
         ":prime-ui/pages/trade/ladder/ladderPreferences/LadderDoubleClickOrderToggle.tsx": 1,
         ":prime-ui/pages/trade/ladder/ladderPreferences/LadderIcebergToggle.tsx": 1,
+        ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1,
+        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/AveragePriceRow.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/BuyingPowerRowWithTooltip.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 7,
@@ -974,21 +1021,20 @@
         ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/SlippageRow.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
-        ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
-        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 5,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTableRow.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTableActionMenu.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/TimeFilterControl.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Currency.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderConfirmationWindowToggle.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormPersistToggle.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormSizeWarningsToggle.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 4,
+        ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 9,
         ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 4,
@@ -1009,23 +1055,26 @@
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 3,
           ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
           ":prime-ui/pages/trade/components/denseToggle/DenseToggle.tsx": 1,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
           ":prime-ui/pages/trade/charts/candles/ChartTags.tsx": 5,
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 2,
           ":prime-ui/pages/trade/dataDiscovery/metric/FallbackMetric.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1,
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/AveragePriceRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/FeeRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/GrandTotalRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/SlippageRow.tsx": 1,
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 5,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTableRow.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTableActionMenu.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/TimeFilterControl.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 4,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 7,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 4,
@@ -1041,9 +1090,10 @@
           ":prime-ui/pages/trade/infoBar/KeyBoardShortcuts.tsx": 3,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 1,
           ":prime-ui/pages/trade/components/denseToggle/DenseToggle.tsx": 1,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 1,
           ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 5,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 2,
@@ -1055,6 +1105,8 @@
         },
         "height": {
           ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx": 1,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
           ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 1,
@@ -1063,6 +1115,8 @@
         "width": {
           ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx": 4,
           ":prime-ui/pages/trade/infoBar/KeyBoardShortcuts.tsx": 1,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 2,
@@ -1086,18 +1140,21 @@
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 1,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
           ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTableRow.tsx": 1
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTableRow.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
         },
         "spacingHorizontal": {
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 2,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTableActionMenu.tsx": 2
         },
         "background": {
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 2,
-          ":prime-ui/pages/trade/infoBar/InfoBar.tsx": 1
+          ":prime-ui/pages/trade/infoBar/InfoBar.tsx": 1,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1
         },
         "borderRadius": {
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 2
@@ -1108,12 +1165,15 @@
         "spacingVertical": {
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 1,
           ":prime-ui/pages/trade/infoBar/KeyBoardShortcuts.tsx": 1,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTableActionMenu.tsx": 1
         },
         "gap": {
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 1,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 3,
           ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
           ":prime-ui/pages/trade/charts/candles/ChartTags.tsx": 5,
           ":prime-ui/pages/trade/ladder/ladderPreferences/LadderDoubleClickOrderToggle.tsx": 1,
           ":prime-ui/pages/trade/ladder/ladderPreferences/LadderIcebergToggle.tsx": 1,
@@ -1145,9 +1205,25 @@
         },
         "spacing": {
           ":prime-ui/pages/trade/ordersAssetsTable/TabularDataSkeleton.tsx": 1,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1
+        },
+        "display": {
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1
+        },
+        "borderedTop": {
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1
+        },
+        "borderedBottom": {
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1
+        },
+        "zIndex": {
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1
         },
         "spacingEnd": {
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
@@ -1166,10 +1242,8 @@
         "maxWidth": {
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx": 1
         },
-        "borderedBottom": {
-          ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1
+        "flexGrow": {
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1
         },
         "position": {
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
@@ -1185,8 +1259,8 @@
     {
       "name": "Icon",
       "sourceFile": "@cbhq/cds-web/icons/Icon",
-      "totalInstances": 34,
-      "totalCallSites": 27,
+      "totalInstances": 35,
+      "totalCallSites": 28,
       "cds": "@cbhq/cds-web/icons/Icon",
       "callSites": {
         ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx": 1,
@@ -1194,26 +1268,27 @@
         ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 2,
         ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 3,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2,
+        ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+        ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
         ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
         ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
-        ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderFooter/ZoomButton.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1,
+        ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter.tsx": 1,
+        ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 3,
         ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/RaiseExactRow.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
-        ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter.tsx": 1,
-        ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderFieldMultiSelect.tsx": 1,
+        ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
-        ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1
       },
@@ -1224,26 +1299,27 @@
           ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 2,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 3,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
-          ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderFooter/ZoomButton.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 3,
           ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/RaiseExactRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderFieldMultiSelect.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1
         },
@@ -1253,26 +1329,27 @@
           ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 2,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 3,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
-          ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderFooter/ZoomButton.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 3,
           ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/RaiseExactRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderFieldMultiSelect.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1
         },
@@ -1282,26 +1359,27 @@
           ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 2,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 3,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
+          ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartHeaderToggles.tsx": 1,
           ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1,
-          ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderFooter/ZoomButton.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 3,
           ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/RaiseExactRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/FilterAccordionItem.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderFieldMultiSelect.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1
         },
@@ -1315,12 +1393,12 @@
         "spacingStart": {
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
         },
+        "aria-label": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1
+        },
         "spacingEnd": {
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 1,
           ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2
-        },
-        "aria-label": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsSearchInput.tsx": 1
         },
         "spacing": {
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1,
@@ -1331,8 +1409,8 @@
     {
       "name": "TextLegal",
       "sourceFile": "@cbhq/cds-web/typography/TextLegal",
-      "totalInstances": 62,
-      "totalCallSites": 37,
+      "totalInstances": 64,
+      "totalCallSites": 38,
       "cds": "@cbhq/cds-web/typography/TextLegal",
       "aliasedCdsComponents": [
         {
@@ -1373,13 +1451,15 @@
         ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 5,
         ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 11,
         ":prime-ui/pages/trade/orderForm/MarketOrderForm.tsx": 1,
-        ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 2,
+        ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 3,
+        ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
         ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 2,
         ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
         ":prime-ui/pages/trade/ladder/ladderPreferences/LadderDoubleClickOrderToggle.tsx": 1,
         ":prime-ui/pages/trade/ladder/ladderPreferences/LadderIcebergToggle.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 2,
+        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2,
         ":prime-ui/pages/trade/orderForm/components/AveragePriceRow.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 4,
         ":prime-ui/pages/trade/orderForm/components/EstimateLabel.tsx": 1,
@@ -1388,22 +1468,21 @@
         ":prime-ui/pages/trade/orderForm/components/RaiseExactRow.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/SlippageRow.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
-        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderFieldMultiSelect.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTableRow.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderConfirmationWindowToggle.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormPersistToggle.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormSizeWarningsToggle.tsx": 1,
+        ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PercentChangeCell.tsx": 1,
+        ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1,
+        ":prime-ui/pages/trade/marketData/marketResults/cellComponents/VolumeCell.tsx": 2,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlayRow.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 4,
-        ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PercentChangeCell.tsx": 1,
-        ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1,
-        ":prime-ui/pages/trade/marketData/marketResults/cellComponents/VolumeCell.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1
       },
       "propsWithCallSites": {
@@ -1413,13 +1492,15 @@
           ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 5,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 11,
           ":prime-ui/pages/trade/orderForm/MarketOrderForm.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 3,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
           ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 2,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
           ":prime-ui/pages/trade/ladder/ladderPreferences/LadderDoubleClickOrderToggle.tsx": 1,
           ":prime-ui/pages/trade/ladder/ladderPreferences/LadderIcebergToggle.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 2,
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/AveragePriceRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 4,
           ":prime-ui/pages/trade/orderForm/components/EstimateLabel.tsx": 1,
@@ -1428,22 +1509,21 @@
           ":prime-ui/pages/trade/orderForm/components/RaiseExactRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/SlippageRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/TotalAmountRow.tsx": 1,
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderFieldMultiSelect.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTableRow.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderConfirmationWindowToggle.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormPersistToggle.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormSizeWarningsToggle.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PercentChangeCell.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/VolumeCell.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlayRow.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 4,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PercentChangeCell.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/VolumeCell.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1
         },
         "color": {
@@ -1451,7 +1531,8 @@
           ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 3,
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 8,
           ":prime-ui/pages/trade/orderForm/MarketOrderForm.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 3,
+          ":prime-ui/pages/trade/components/perps/LegalMessage.tsx": 1,
           ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
@@ -1468,15 +1549,15 @@
           ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderConfirmationWindowToggle.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormPersistToggle.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/orderFormPreferences/OrderFormSizeWarningsToggle.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PercentChangeCell.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1,
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/VolumeCell.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlayRow.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 4,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PercentChangeCell.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/VolumeCell.tsx": 2
+          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 4
         },
         "align": {
           ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx": 1,
@@ -1520,7 +1601,7 @@
         },
         "spacingBottom": {
           ":prime-ui/pages/trade/orderForm/LimitOrderForm.tsx": 2,
-          ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/RFQOrderForm.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1
         },
         "spacingEnd": {
@@ -1532,14 +1613,14 @@
           ":prime-ui/pages/trade/orderForm/components/EstimateLabel.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/SlippageRow.tsx": 1
         },
-        "testID": {
-          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1
-        },
         "tabularNumbers": {
           ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PercentChangeCell.tsx": 1,
           ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1,
           ":prime-ui/pages/trade/marketData/marketResults/cellComponents/VolumeCell.tsx": 2
+        },
+        "testID": {
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/PriceCell.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1
         }
       }
     },
@@ -1614,11 +1695,12 @@
     {
       "name": "TextCaption",
       "sourceFile": "@cbhq/cds-web/typography/TextCaption",
-      "totalInstances": 65,
-      "totalCallSites": 27,
+      "totalInstances": 68,
+      "totalCallSites": 28,
       "cds": "@cbhq/cds-web/typography/TextCaption",
       "callSites": {
-        ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+        ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 3,
+        ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1,
         ":prime-ui/pages/trade/infoBar/KeyBoardShortcuts.tsx": 3,
         ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 1,
         ":prime-ui/pages/trade/charts/candles/ChartTags.tsx": 12,
@@ -1626,13 +1708,13 @@
         ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 5,
         ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 2,
+        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2,
         ":prime-ui/pages/trade/orderForm/components/AveragePriceRow.tsx": 2,
         ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 10,
         ":prime-ui/pages/trade/orderForm/components/FeeRow.tsx": 2,
         ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/LimitPriceLabel.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/SlippageRow.tsx": 2,
-        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTableHeaderCell.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/TimeFilterControl.tsx": 1,
@@ -1641,14 +1723,15 @@
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/PriceCell.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/ProductAmount.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Text.tsx": 1,
-        ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
         ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 3,
+        ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TotalFeesRenderer.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
       },
       "propsWithCallSites": {
         "as": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 3,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1,
           ":prime-ui/pages/trade/infoBar/KeyBoardShortcuts.tsx": 3,
           ":prime-ui/pages/trade/orderForm/AwapOrderForm.tsx": 1,
           ":prime-ui/pages/trade/charts/candles/ChartTags.tsx": 12,
@@ -1656,13 +1739,13 @@
           ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 5,
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 2,
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/AveragePriceRow.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 10,
           ":prime-ui/pages/trade/orderForm/components/FeeRow.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/KycRestricted.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/LimitPriceLabel.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/SlippageRow.tsx": 2,
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTableHeaderCell.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/TimeFilterControl.tsx": 1,
@@ -1671,13 +1754,14 @@
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/PriceCell.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/ProductAmount.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Text.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
           ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 3,
+          ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/Warnings.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TotalFeesRenderer.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
         },
         "transform": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 3,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1,
           ":prime-ui/pages/trade/charts/candles/ChartTags.tsx": 3,
           ":prime-ui/pages/trade/charts/depth/DepthSpreadTag.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 5,
@@ -1687,11 +1771,13 @@
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Text.tsx": 1
         },
         "align": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 3,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1
         },
         "noWrap": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 3,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1,
           ":prime-ui/pages/trade/charts/depth/DepthSpreadTag.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/AveragePriceRow.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 9,
@@ -1708,12 +1794,12 @@
           ":prime-ui/pages/trade/ladder/LadderHeader/AmountFields.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 2,
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/AveragePriceRow.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip.tsx": 7,
           ":prime-ui/pages/trade/orderForm/components/FeeRow.tsx": 2,
           ":prime-ui/pages/trade/orderForm/components/LimitPriceLabel.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/SlippageRow.tsx": 2,
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTableHeaderCell.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Currency.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/PriceCell.tsx": 1,
@@ -1755,13 +1841,30 @@
     {
       "name": "TextHeadline",
       "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
-      "totalInstances": 30,
-      "totalCallSites": 16,
+      "totalInstances": 32,
+      "totalCallSites": 18,
       "cds": "@cbhq/cds-web/typography/TextHeadline",
+      "aliasedCdsComponents": [
+        {
+          "aliasPath": ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx",
+          "callSites": [
+            ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx"
+          ]
+        },
+        {
+          "aliasPath": ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx",
+          "callSites": [
+            ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx",
+            ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx"
+          ]
+        }
+      ],
       "callSites": {
-        ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2,
+        ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/PtcBalanceTooltipBody.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/SettlementDueTooltipBody.tsx": 1,
+        ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 2,
         ":prime-ui/pages/trade/infoBar/KeyBoardShortcuts.tsx": 1,
         ":prime-ui/pages/trade/charts/candles/StudyInputsSettings.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 3,
@@ -1772,15 +1875,17 @@
         ":prime-ui/pages/trade/orderForm/components/TimeSelectInput.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 4,
+        ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlay.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 4
       },
       "propsWithCallSites": {
         "as": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/PtcBalanceTooltipBody.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/SettlementDueTooltipBody.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 2,
           ":prime-ui/pages/trade/infoBar/KeyBoardShortcuts.tsx": 1,
           ":prime-ui/pages/trade/charts/candles/StudyInputsSettings.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 3,
@@ -1791,12 +1896,14 @@
           ":prime-ui/pages/trade/orderForm/components/TimeSelectInput.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQConfirmationOverlayContainer.tsx": 4,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlay.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderOverlayContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 4
         },
         "color": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 2,
           ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 3,
           ":prime-ui/pages/trade/orderForm/components/GrandTotalRow.tsx": 3,
           ":prime-ui/pages/trade/orderForm/components/PlaceOrderButton.tsx": 1,
@@ -2123,21 +2230,24 @@
     {
       "name": "Button",
       "sourceFile": "@cbhq/cds-web/buttons/Button",
-      "totalInstances": 9,
-      "totalCallSites": 7,
+      "totalInstances": 11,
+      "totalCallSites": 9,
       "cds": "@cbhq/cds-web/buttons/Button",
       "callSites": {
         ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 2,
+        ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/PlaceOrderButton.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/TimeSelectInput.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx": 2,
+        ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
         ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1
       },
       "propsWithCallSites": {
         "compact": {
-          ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 2
+          ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1
         },
         "onPress": {
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 2,
@@ -2149,12 +2259,17 @@
         },
         "variant": {
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 2,
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/PlaceOrderButton.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/TimeSelectInput.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1,
           ":prime-ui/pages/trade/orderForm/components/tradeConfirmation/OrderConfirmationOverlay.tsx": 1
+        },
+        "to": {
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1
         },
         "block": {
           ":prime-ui/pages/trade/orderForm/components/DisabledOrderForm.tsx": 1,
@@ -2173,7 +2288,14 @@
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 1
         },
         "transparent": {
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx": 2
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1
+        },
+        "onClick": {
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1
         }
       }
     },
@@ -2289,7 +2411,7 @@
         {
           "aliasPath": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx",
           "callSites": [
-            ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TwapStartEndTimeRenderer.tsx"
+            ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/StartEndTimeRenderer.tsx"
           ]
         },
         {
@@ -2522,6 +2644,68 @@
       "cds": "@cbhq/cds-web/controls/Switch"
     },
     {
+      "name": "TextTitle3",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-web/typography/TextTitle3",
+      "callSites": {
+        ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
+        ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
+      },
+      "propsWithCallSites": {
+        "as": {
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
+        },
+        "noWrap": {
+          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
+        },
+        "tabularNumbers": {
+          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
+        },
+        "transform": {
+          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextTitle4",
+      "sourceFile": "@cbhq/cds-web/typography/TextTitle4",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextTitle4",
+      "propsWithCallSites": {
+        "as": {
+          ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "SegmentedTabs",
+      "sourceFile": "@cbhq/cds-web/tabs/SegmentedTabs",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/tabs/SegmentedTabs",
+      "propsWithCallSites": {
+        "accessibilityLabel": {
+          ":prime-ui/pages/trade/components/tradeModeToggle/TradeModeToggle.tsx": 1
+        },
+        "activeTab": {
+          ":prime-ui/pages/trade/components/tradeModeToggle/TradeModeToggle.tsx": 1
+        },
+        "onChange": {
+          ":prime-ui/pages/trade/components/tradeModeToggle/TradeModeToggle.tsx": 1
+        },
+        "tabs": {
+          ":prime-ui/pages/trade/components/tradeModeToggle/TradeModeToggle.tsx": 1
+        }
+      }
+    },
+    {
       "name": "Link",
       "sourceFile": "@cbhq/cds-web/typography/Link",
       "totalInstances": 11,
@@ -2582,30 +2766,6 @@
       }
     },
     {
-      "name": "TextTitle3",
-      "sourceFile": "@cbhq/cds-web/typography/TextTitle3",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/typography/TextTitle3",
-      "propsWithCallSites": {
-        "testID": {
-          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
-        },
-        "as": {
-          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
-        },
-        "noWrap": {
-          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
-        },
-        "tabularNumbers": {
-          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
-        },
-        "transform": {
-          ":prime-ui/pages/trade/dataDiscovery/metric/Metric.tsx": 1
-        }
-      }
-    },
-    {
       "name": "PressableOpacity",
       "sourceFile": "@cbhq/cds-web/system/PressableOpacity",
       "totalInstances": 6,
@@ -2640,8 +2800,8 @@
       "callSites": {
         ":prime-ui/pages/trade/ladder/LadderFooter/ZoomButton.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1,
-        ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
         ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
+        ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1
       },
       "propsWithCallSites": {
@@ -2653,8 +2813,8 @@
         "onPress": {
           ":prime-ui/pages/trade/ladder/LadderFooter/ZoomButton.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderList/LadderOrderPill.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
           ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQOrderButton.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/PinRow.tsx": 1
         },
         "aria-label": {
@@ -2780,6 +2940,18 @@
         },
         "showDismiss": {
           ":prime-ui/pages/trade/orderForm/components/rfq/RFQBanner.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Pictogram",
+      "sourceFile": "@cbhq/cds-web/illustrations/Pictogram",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/illustrations/Pictogram",
+      "propsWithCallSites": {
+        "name": {
+          ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable.tsx": 1
         }
       }
     }
@@ -3119,6 +3291,21 @@
       }
     },
     {
+      "name": "TradeHistoryPanel",
+      "sourceFile": ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryPanel",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "div",
+      "propsWithCallSites": {
+        "productId": {
+          ":prime-ui/pages/trade/marketData/MarketData.tsx": 1
+        },
+        "portfolioId": {
+          ":prime-ui/pages/trade/marketData/MarketData.tsx": 1
+        }
+      }
+    },
+    {
       "name": "CurrencyInput",
       "sourceFile": "@cbhq/prime-components/web/CurrencyInput",
       "totalInstances": 12,
@@ -3378,21 +3565,6 @@
       }
     },
     {
-      "name": "TradeHistoryPanel",
-      "sourceFile": ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryPanel",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "div",
-      "propsWithCallSites": {
-        "productId": {
-          ":prime-ui/pages/trade/marketData/MarketData.tsx": 1
-        },
-        "portfolioId": {
-          ":prime-ui/pages/trade/marketData/MarketData.tsx": 1
-        }
-      }
-    },
-    {
       "name": "BlotterButton",
       "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/BlotterButton",
       "totalInstances": 4,
@@ -3600,24 +3772,6 @@
       }
     },
     {
-      "name": "DrawingToolsDropdown",
-      "sourceFile": ":prime-ui/pages/trade/charts/header/DrawingToolsDropdown",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalElement": "div",
-      "propsWithCallSites": {
-        "enabledDrawingTool": {
-          ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1
-        },
-        "onDrawingToolChange": {
-          ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1
-        },
-        "displayReduced": {
-          ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1
-        }
-      }
-    },
-    {
       "name": "div",
       "sourceFile": ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx",
       "totalInstances": 1,
@@ -3634,6 +3788,24 @@
         },
         "data-istooshallow": {
           ":prime-ui/pages/trade/charts/depth/ChartIQDepthChart.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "DrawingToolsDropdown",
+      "sourceFile": ":prime-ui/pages/trade/charts/header/DrawingToolsDropdown",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalElement": "div",
+      "propsWithCallSites": {
+        "enabledDrawingTool": {
+          ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1
+        },
+        "onDrawingToolChange": {
+          ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1
+        },
+        "displayReduced": {
+          ":prime-ui/pages/trade/charts/header/ChartsHeaderToolbar.tsx": 1
         }
       }
     },
@@ -4083,55 +4255,6 @@
       }
     },
     {
-      "name": "div",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "className": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetsTableRow",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "style",
-          "callSite": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "portfolioId": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
-        },
-        "vehicleId": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
-        },
-        "key": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
-        },
-        "asset": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
-        },
-        "style": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
-        },
-        "tableConfig": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
-        }
-      }
-    },
-    {
       "name": "tr",
       "sourceFile": ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryPanel.tsx",
       "totalInstances": 1,
@@ -4375,6 +4498,55 @@
     },
     {
       "name": "div",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "className": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AssetsTableRow",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "style",
+          "callSite": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "portfolioId": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
+        },
+        "vehicleId": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
+        },
+        "key": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
+        },
+        "asset": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
+        },
+        "style": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
+        },
+        "tableConfig": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
       "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -4424,6 +4596,40 @@
         },
         "className": {
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Text.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "span",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "className": {
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "presentationalProps": [
+        {
+          "prop": "className",
+          "callSite": ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx"
+        }
+      ],
+      "propsWithCallSites": {
+        "className": {
+          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 1
         }
       }
     },
@@ -4530,40 +4736,6 @@
     },
     {
       "name": "span",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "className": {
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "presentationalProps": [
-        {
-          "prop": "className",
-          "callSite": ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx"
-        }
-      ],
-      "propsWithCallSites": {
-        "className": {
-          ":prime-ui/pages/trade/marketData/marketResults/cellComponents/LabelCell.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "span",
       "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -4598,7 +4770,7 @@
         ":prime-ui/pages/trade/TradePage.tsx": 1,
         ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 2,
         ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 1,
-        ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+        ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
         ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1,
@@ -4611,7 +4783,7 @@
           ":prime-ui/pages/trade/TradePage.tsx": 1,
           ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 2,
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 1,
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/LadderHeader.tsx": 1
         },
@@ -4620,7 +4792,7 @@
           ":prime-ui/pages/trade/TradePage.tsx": 1,
           ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 2,
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 1,
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1,
@@ -4650,6 +4822,17 @@
       }
     },
     {
+      "name": "TradeModeToggle",
+      "sourceFile": ":prime-ui/pages/trade/components/tradeModeToggle/TradeModeToggle",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "portfolioId": {
+          ":prime-ui/pages/trade/TradePage.tsx": 1
+        }
+      }
+    },
+    {
       "name": "PageMaintenance",
       "sourceFile": ":prime-ui/pages/static/PageMaintenance",
       "totalInstances": 1,
@@ -4670,6 +4853,12 @@
     {
       "name": "RFQBanner",
       "sourceFile": ":prime-ui/pages/trade/orderForm/components/rfq/RFQBanner",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "ViewOnlyBanner",
+      "sourceFile": ":prime-ui/pages/trade/components/perpsBanner/ViewOnlyBanner",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -4711,14 +4900,14 @@
         ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 2,
         ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 1,
         ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx": 2,
-        ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+        ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
         ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 2,
         ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1
+        ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
       },
       "propsWithCallSites": {
         "fallback": {
@@ -4726,14 +4915,14 @@
           ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 2,
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/DataDiscovery.tsx": 2,
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
           ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 2,
           ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
         }
       }
     },
@@ -4751,9 +4940,9 @@
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 2,
         ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1,
         ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryPanel.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1
+        ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
       },
       "propsWithCallSites": {
         "name": {
@@ -4765,9 +4954,9 @@
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderHeader/BidAskSpread.tsx": 2,
           ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1,
           ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryPanel.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
         }
       }
     },
@@ -4853,6 +5042,12 @@
       "totalCallSites": 1
     },
     {
+      "name": "LegalMessage",
+      "sourceFile": ":prime-ui/pages/trade/components/perps/LegalMessage",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "SimpleErrorFallback",
       "sourceFile": "@cbhq/prime-components/web/SimpleErrorFallback",
       "totalInstances": 1,
@@ -4923,8 +5118,8 @@
       "callSites": {
         ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
-        ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
         ":prime-ui/pages/trade/marketData/MarketData.tsx": 1,
+        ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2
       },
       "propsWithCallSites": {
@@ -4935,21 +5130,21 @@
         "aria-label": {
           ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
           ":prime-ui/pages/trade/marketData/MarketData.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2
         },
         "testID": {
           ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1
         },
         "activeTab": {
-          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
           ":prime-ui/pages/trade/marketData/MarketData.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2
         },
         "onSelect": {
-          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
           ":prime-ui/pages/trade/marketData/MarketData.tsx": 1,
+          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 2
         },
         "stretch": {
@@ -4971,29 +5166,29 @@
       "callSites": {
         ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 1,
         ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
-        ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
         ":prime-ui/pages/trade/marketData/MarketData.tsx": 2,
+        ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 8
       },
       "propsWithCallSites": {
         "name": {
           ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
           ":prime-ui/pages/trade/marketData/MarketData.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 8
         },
         "label": {
           ":prime-ui/pages/trade/charts/ChartsContainer.tsx": 1,
           ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
           ":prime-ui/pages/trade/marketData/MarketData.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 8
         },
         "tabRef": {
           ":prime-ui/pages/trade/ladder/LadderContainer.tsx": 1,
-          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
           ":prime-ui/pages/trade/marketData/MarketData.tsx": 2,
+          ":prime-ui/pages/trade/orderForm/OrderForm.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 4
         },
         "activeTabColor": {
@@ -5081,18 +5276,20 @@
     {
       "name": "FallbackMetric",
       "sourceFile": ":prime-ui/pages/trade/dataDiscovery/metric/FallbackMetric",
-      "totalInstances": 11,
-      "totalCallSites": 2,
+      "totalInstances": 19,
+      "totalCallSites": 3,
       "callSites": {
         ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 4,
-        ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 7
+        ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 8,
+        ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 7
       },
       "propsWithCallSites": {
         "align": {
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 4
         },
         "isProductStat": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
         }
       }
     },
@@ -5128,31 +5325,35 @@
     {
       "name": "Metric",
       "sourceFile": ":prime-ui/pages/trade/dataDiscovery/metric/Metric",
-      "totalInstances": 13,
-      "totalCallSites": 4,
+      "totalInstances": 20,
+      "totalCallSites": 5,
       "callSites": {
         ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 2,
+        ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 7,
         ":prime-ui/pages/trade/dataDiscovery/PostTradeCreditBalances.tsx": 2,
-        ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 6,
+        ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 6,
         ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 3
       },
       "propsWithCallSites": {
         "label": {
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 2,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 7,
           ":prime-ui/pages/trade/dataDiscovery/PostTradeCreditBalances.tsx": 2,
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 6,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 6,
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 3
         },
         "value": {
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 2,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 7,
           ":prime-ui/pages/trade/dataDiscovery/PostTradeCreditBalances.tsx": 2,
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 6,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 6,
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 3
         },
         "postfix": {
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 2,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
           ":prime-ui/pages/trade/dataDiscovery/PostTradeCreditBalances.tsx": 2,
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 5,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 5,
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 3
         },
         "align": {
@@ -5162,15 +5363,18 @@
         },
         "valueTestId": {
           ":prime-ui/pages/trade/dataDiscovery/Balances.tsx": 2,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 7,
           ":prime-ui/pages/trade/dataDiscovery/PostTradeCreditBalances.tsx": 2,
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 4,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 4,
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 3
         },
         "postfixColor": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 2
         },
         "tooltipBody": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2,
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 4,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 2,
           ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary.tsx": 3
         },
         "spacingEnd": {
@@ -5203,8 +5407,14 @@
       "totalCallSites": 1
     },
     {
-      "name": "ProductStatsLoadingSkeleton",
-      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/ProductStats/ProductStatsLoadingSkeleton",
+      "name": "SpotProductStatsLoadingSkeleton",
+      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/SpotProductStats/SpotProductStatsLoadingSkeleton",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "PerpsProductStatsLoadingSkeleton",
+      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats/PerpsProductStatsLoadingSkeleton",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -5225,7 +5435,7 @@
     },
     {
       "name": "ProductStatsWrapper",
-      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/ProductStats/ProductStatsWrapper",
+      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5278,6 +5488,45 @@
       }
     },
     {
+      "name": "ProductStat",
+      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/metric/Metric/ProductStat",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "callSites": {
+        ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+        ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
+      },
+      "propsWithCallSites": {
+        "label": {
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
+        },
+        "value": {
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
+        },
+        "postfix": {
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
+        },
+        "postfixColor": {
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
+        },
+        "valueTestId": {
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
+        },
+        "baseCurrencySymbol": {
+          ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats.tsx": 1,
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
+        },
+        "quoteCurrencySymbol": {
+          ":prime-ui/pages/trade/dataDiscovery/SpotProductStats.tsx": 1
+        }
+      }
+    },
+    {
       "name": "TradeFinanceSummary",
       "sourceFile": ":prime-ui/pages/trade/dataDiscovery/TradeFinanceSummary",
       "totalInstances": 1,
@@ -5289,71 +5538,59 @@
       }
     },
     {
-      "name": "ProductStat",
-      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/metric/Metric/ProductStat",
-      "totalInstances": 1,
+      "name": "PerpsProductStats",
+      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/PerpsProductStats",
+      "totalInstances": 2,
       "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 2
+      },
       "propsWithCallSites": {
-        "label": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
+        "productId": {
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 2
         },
-        "value": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
-        },
-        "postfix": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
-        },
-        "postfixColor": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
-        },
-        "valueTestId": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
-        },
-        "baseCurrencySymbol": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
-        },
-        "quoteCurrencySymbol": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
+        "portfolioId": {
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 2
         }
       }
     },
     {
-      "name": "ProductStats",
-      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
+      "name": "SpotProductStats",
+      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/SpotProductStats",
       "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": {
-        ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2
+        ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 2
       },
       "propsWithCallSites": {
         "isPostTradeCreditEnabled": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1
         },
         "productId": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 2
         },
         "portfolioId": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 2
         },
         "quoteCurrency": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 2
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 2
         }
       }
     },
     {
       "name": "ProductStatsWithPostTradeCredit",
-      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx",
+      "sourceFile": ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
         "productId": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1
         },
         "portfolioId": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1
         },
         "quoteCurrency": {
-          ":prime-ui/pages/trade/dataDiscovery/ProductStats.tsx": 1
+          ":prime-ui/pages/trade/dataDiscovery/ProductStatsWrapper.tsx": 1
         }
       }
     },
@@ -5776,6 +6013,20 @@
       "sourceFile": ":prime-ui/pages/trade/ladder/ladderPreferences/LadderDoubleClickOrderToggle",
       "totalInstances": 1,
       "totalCallSites": 1
+    },
+    {
+      "name": "MarketsPanel",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "productId": {
+          ":prime-ui/pages/trade/marketData/MarketData.tsx": 1
+        },
+        "portfolioId": {
+          ":prime-ui/pages/trade/marketData/MarketData.tsx": 1
+        }
+      }
     },
     {
       "name": "PostOrderPreviewErrorBanner",
@@ -6482,18 +6733,10 @@
       "totalCallSites": 1
     },
     {
-      "name": "MarketsPanel",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel",
+      "name": "RFQMarketNotAvailable",
+      "sourceFile": ":prime-ui/pages/trade/orderForm/components/rfq/RFQMarketNotAvailable",
       "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "productId": {
-          ":prime-ui/pages/trade/marketData/MarketData.tsx": 1
-        },
-        "portfolioId": {
-          ":prime-ui/pages/trade/marketData/MarketData.tsx": 1
-        }
-      }
+      "totalCallSites": 1
     },
     {
       "name": "OrdersTable",
@@ -6595,6 +6838,18 @@
         "selectedOrderFilters": {
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1
         },
+        "selectedOrderTypes": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1
+        },
+        "setSelectedOrderTypes": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1
+        },
+        "selectedOrderSides": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1
+        },
+        "setSelectedOrderSides": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1
+        },
         "setSelectedOrderFilters": {
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1
         },
@@ -6667,8 +6922,8 @@
       "totalCallSites": 3,
       "callSites": {
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersAssetsTable.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1
+        ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersTable.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
       }
     },
     {
@@ -7192,6 +7447,209 @@
       "totalCallSites": 1
     },
     {
+      "name": "MarketsFilter",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "selectedMarketFilter": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        },
+        "onMarketFilterSelected": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        },
+        "portfolioId": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MarketsResults",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsResults",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "portfolioId": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        },
+        "productId": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        },
+        "selectedMarketFilter": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        },
+        "searchValue": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        },
+        "favoriteProducts": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MarketsPanelSkeleton",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "MarketsPanelContent",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "portfolioId": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        },
+        "productId": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "KeyboardTraversalTableProvider",
+      "sourceFile": "@cbhq/prime-hooks/context/KeyboardTraversalTableProvider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "virtualListProps": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "containerRef": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "div",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "role": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "ref": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "data-testid": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VirtualList",
+      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "titleText": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "emptyResultsText": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "width": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "height": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "rowData": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "rowCount": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        },
+        "onItemsRendered": {
+          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "EmptyResults",
+      "sourceFile": ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2
+      },
+      "propsWithCallSites": {
+        "emptyResultsText": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "TradeHistoryRow",
+      "sourceFile": ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "price": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "size": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "exchange": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "time": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "side": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "key": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "quotePrecision": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "basePrecision": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Cell",
+      "sourceFile": "@cbhq/prime-components/web/Cell",
+      "totalInstances": 4,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 4
+      },
+      "propsWithCallSites": {
+        "textAlign": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VenueIcon",
+      "sourceFile": "@cbhq/prime-components/web/VenueIcon",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "venueId": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "size": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "fill": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        },
+        "backgroundFill": {
+          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
+        }
+      }
+    },
+    {
       "name": "BuyingPowerTooltip",
       "sourceFile": ":prime-ui/pages/trade/orderForm/components/BuyingPowerTooltip",
       "totalInstances": 1,
@@ -7524,261 +7982,26 @@
       }
     },
     {
-      "name": "MarketsFilter",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsFilter",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "selectedMarketFilter": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        },
-        "onMarketFilterSelected": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MarketsResults",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsResults",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "portfolioId": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        },
-        "productId": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        },
-        "selectedMarketFilter": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        },
-        "searchValue": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        },
-        "favoriteProducts": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "MarketsPanelSkeleton",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "MarketsPanelContent",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "portfolioId": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        },
-        "productId": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsPanel.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "KeyboardTraversalTableProvider",
-      "sourceFile": "@cbhq/prime-hooks/context/KeyboardTraversalTableProvider",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "virtualListProps": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "containerRef": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "div",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "role": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "ref": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "data-testid": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "VirtualList",
-      "sourceFile": ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "titleText": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "emptyResultsText": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "width": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "height": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "rowData": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "rowCount": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        },
-        "onItemsRendered": {
-          ":prime-ui/pages/trade/marketData/marketResults/MarketsResults.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetsTableLoadingSkeleton",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "LoadedAssetsTable",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "key": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "CellComponent",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "portfolioId": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
-        },
-        "vehicleId": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
-        },
-        "asset": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
-        },
-        "textAlign": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
-        },
-        "value": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Text",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Text",
-      "totalInstances": 12,
-      "totalCallSites": 11,
-      "callSites": {
-        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 2,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/HistoricalPov.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Market.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/OrderId.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Side.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TimeRemaining.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Type.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
-      },
-      "propsWithCallSites": {
-        "uppercase": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Market.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/OrderId.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TimeRemaining.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
-        },
-        "textAlign": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 2,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/HistoricalPov.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Market.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/OrderId.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Side.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TimeRemaining.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Type.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
-        },
-        "color": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Side.tsx": 1
-        },
-        "testID": {
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Currency",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Currency",
-      "totalInstances": 7,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 7
-      },
-      "propsWithCallSites": {
-        "textAlign": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 7
-        },
-        "postfix": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 3
-        },
-        "value": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 7
-        },
-        "isNegative": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 4
-        }
-      }
-    },
-    {
       "name": "NullCell",
       "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/NullCell",
-      "totalInstances": 15,
-      "totalCallSites": 8,
+      "totalInstances": 14,
+      "totalCallSites": 7,
       "callSites": {
-        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 3,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 2,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/columnConfig.tsx": 5,
+        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 3,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/StartEndTimeRenderer.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TimeRemaining.tsx": 1,
-        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TwapStartEndTimeRenderer.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
       },
       "propsWithCallSites": {
         "textAlign": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 3,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 2,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/columnConfig.tsx": 5,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 3,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/StartEndTimeRenderer.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TimeRemaining.tsx": 1,
-          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TwapStartEndTimeRenderer.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
         }
       }
@@ -7789,8 +8012,8 @@
       "totalInstances": 9,
       "totalCallSites": 9,
       "callSites": {
-        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Currency.tsx": 1,
         ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/NullCell.tsx": 1,
@@ -7801,8 +8024,8 @@
       },
       "propsWithCallSites": {
         "textAlign": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Currency.tsx": 1,
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/NullCell.tsx": 1,
@@ -7813,120 +8036,6 @@
         },
         "key": {
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/AggregatedOrderRow.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "PortfolioPercentageCell",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/PortfolioPercentageCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "value": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "AssetsActionsCell",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "asset": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
-        },
-        "textAlign": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
-        },
-        "vehicleId": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
-        },
-        "portfolioId": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
-        },
-        "width": {
-          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "EmptyResults",
-      "sourceFile": ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2
-      },
-      "propsWithCallSites": {
-        "emptyResultsText": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 2
-        }
-      }
-    },
-    {
-      "name": "TradeHistoryRow",
-      "sourceFile": ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "price": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "size": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "exchange": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "time": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "side": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "key": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "quotePrecision": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "basePrecision": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "Cell",
-      "sourceFile": "@cbhq/prime-components/web/Cell",
-      "totalInstances": 4,
-      "totalCallSites": 1,
-      "callSites": {
-        ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 4
-      },
-      "propsWithCallSites": {
-        "textAlign": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "VenueIcon",
-      "sourceFile": "@cbhq/prime-components/web/VenueIcon",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "venueId": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "size": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "fill": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
-        },
-        "backgroundFill": {
-          ":prime-ui/pages/trade/marketData/tradeHistory/TradeHistoryRows.tsx": 1
         }
       }
     },
@@ -7981,6 +8090,61 @@
         },
         "closeOnChange": {
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/DateFilterControl.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiSelect",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "inputName": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "displayValue": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "minButtonWidth": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "values": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "onChange": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "maxHeight": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "onReset": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "defaultConfiguration": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiSelectOption",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "label": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "name": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter.tsx": 1
         }
       }
     },
@@ -8104,6 +8268,61 @@
       }
     },
     {
+      "name": "MultiSelect",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "inputName": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "displayValue": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "minButtonWidth": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "values": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "onChange": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "maxHeight": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "onReset": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "defaultConfiguration": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "MultiSelectOption",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "label": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "name": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter.tsx": 1
+        }
+      }
+    },
+    {
       "name": "MultiSelectOption",
       "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersManagementTab.tsx",
       "totalInstances": 3,
@@ -8126,6 +8345,34 @@
         },
         "control": {
           ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersManagementTab.tsx": 2
+        }
+      }
+    },
+    {
+      "name": "OrderTypeFilter",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderTypeFilter",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "selectedOrderTypes": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersManagementTab.tsx": 1
+        },
+        "setSelectedOrderTypes": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersManagementTab.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "OrderSideFilter",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrderSideFilter",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "selectedOrderSides": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersManagementTab.tsx": 1
+        },
+        "setSelectedOrderSides": {
+          ":prime-ui/pages/trade/ordersAssetsTable/OrdersTable/OrdersManagementTab.tsx": 1
         }
       }
     },
@@ -8480,6 +8727,153 @@
       }
     },
     {
+      "name": "AssetsTableLoadingSkeleton",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "LoadedAssetsTable",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "key": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "CellComponent",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "portfolioId": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
+        },
+        "vehicleId": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
+        },
+        "asset": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
+        },
+        "textAlign": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
+        },
+        "value": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/AssetsTableRow.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Text",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Text",
+      "totalInstances": 12,
+      "totalCallSites": 11,
+      "callSites": {
+        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 2,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/HistoricalPov.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Market.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/OrderId.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Side.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TimeRemaining.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Type.tsx": 1,
+        ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "uppercase": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Market.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/OrderId.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TimeRemaining.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
+        },
+        "textAlign": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 2,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/HistoricalPov.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Market.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/OrderId.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Side.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TimeRemaining.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Type.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/UserRenderer.tsx": 1
+        },
+        "color": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Progress.tsx": 1,
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Side.tsx": 1
+        },
+        "testID": {
+          ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Status.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Currency",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/Currency",
+      "totalInstances": 7,
+      "totalCallSites": 1,
+      "callSites": {
+        ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 7
+      },
+      "propsWithCallSites": {
+        "textAlign": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 7
+        },
+        "postfix": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 3
+        },
+        "value": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 7
+        },
+        "isNegative": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 4
+        }
+      }
+    },
+    {
+      "name": "PortfolioPercentageCell",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/PortfolioPercentageCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "value": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "AssetsActionsCell",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/AssetsActionsCell",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "asset": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
+        },
+        "textAlign": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
+        },
+        "vehicleId": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
+        },
+        "portfolioId": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
+        },
+        "width": {
+          ":prime-ui/pages/trade/ordersAssetsTable/AssetsTable/getTableConfig.tsx": 1
+        }
+      }
+    },
+    {
       "name": "ConvertOptions",
       "sourceFile": ":prime-ui/modals/convertFundsFlow/ConvertOptions",
       "totalInstances": 1,
@@ -8808,6 +9202,12 @@
       }
     },
     {
+      "name": "TimeRenderer",
+      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time/TimeRenderer",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
       "name": "FeeDetails",
       "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TotalFeesRenderer.tsx",
       "totalInstances": 1,
@@ -8849,12 +9249,6 @@
           ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/TradeAdjustCellWrapper.tsx": 1
         }
       }
-    },
-    {
-      "name": "TimeRenderer",
-      "sourceFile": ":prime-ui/pages/trade/ordersAssetsTable/cellComponents/order/Time/TimeRenderer",
-      "totalInstances": 1,
-      "totalCallSites": 1
     }
   ]
 }

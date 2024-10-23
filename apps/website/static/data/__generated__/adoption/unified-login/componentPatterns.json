@@ -1,7 +1,36 @@
 {
-  "components": [],
+  "components": [
+    {
+      "component": {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            "apps/unified-login/src/components/SignInHeader/SignInHeader.tsx": 1
+          },
+          "projectId": {
+            "apps/unified-login/src/components/SignInHeader/SignInHeader.tsx": 1
+          },
+          "target": {
+            "apps/unified-login/src/components/SignInHeader/SignInHeader.tsx": 1
+          }
+        }
+      },
+      "config": {
+        "productComponentName": "AppSwitcher",
+        "owningTeam": "Identity",
+        "packageImportPath": "@cbhq/app-switcher",
+        "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+      }
+    }
+  ],
   "dependencies": {
-    "dependencies": {},
+    "dependencies": {
+      "@cbhq/app-switcher": "workspace:^"
+    },
     "devDependencies": {},
     "peerDependencies": {},
     "resolutions": {}

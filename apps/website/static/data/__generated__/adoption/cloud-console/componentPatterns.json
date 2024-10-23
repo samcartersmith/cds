@@ -61,8 +61,8 @@
   ],
   "dependencies": {
     "dependencies": {
-      "@cbhq/app-switcher": "^3.1.1",
-      "@cbhq/identity-navigation": "^7.5.10"
+      "@cbhq/app-switcher": "^3.1.8",
+      "@cbhq/identity-navigation": "^7.5.26"
     },
     "devDependencies": {},
     "peerDependencies": {},

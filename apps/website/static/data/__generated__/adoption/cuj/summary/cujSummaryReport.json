@@ -1,14 +1,23 @@
 {
   "latest": {
-    "date": "10/1/2024",
-    "overallCDSPercent": 0.9472547903204019,
-    "overallLatestCDSPercent": 0.9469087321729105,
+    "date": "10/23/2024",
+    "overallCDSPercent": 0.9486095385760763,
+    "overallLatestCDSPercent": 0.9485830669429887,
     "numUpToDate": 15,
     "total": 19,
-    "latestCdsVersionPublished3MonthsAgo": "6.23.0",
+    "latestCdsVersionPublished3MonthsAgo": "6.25.1",
     "totalUpToDateProjectPercentage": 0.7894736842105263
   },
   "previous": [
+    {
+      "date": "10/1/2024",
+      "overallCDSPercent": 0.9472547903204019,
+      "overallLatestCDSPercent": 0.9469087321729105,
+      "numUpToDate": 15,
+      "total": 19,
+      "latestCdsVersionPublished3MonthsAgo": "6.23.0",
+      "totalUpToDateProjectPercentage": 0.7894736842105263
+    },
     {
       "date": "9/16/2024",
       "overallCDSPercent": 0.9467068696759263,

@@ -2278,8 +2278,8 @@
       }
     },
     {
-      "name": "InstrumentedAssetStatsErrorBanner",
-      "sourceFile": "components/GracefulDegradation/ErrorBanner/AssetStatsErrorBanner/InstrumentedAssetStatsErrorBanner",
+      "name": "AssetStatsErrorBanner",
+      "sourceFile": "components/GracefulDegradation/ErrorBanner/AssetStatsErrorBanner",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -2644,6 +2644,9 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "queryRef": {
+          "views/AssetPage/components/AssetOverview.tsx": 1
+        },
+        "viewerAssetRef": {
           "views/AssetPage/components/AssetOverview.tsx": 1
         }
       }

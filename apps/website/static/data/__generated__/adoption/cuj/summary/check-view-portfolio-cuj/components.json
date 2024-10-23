@@ -2855,7 +2855,7 @@
     },
     {
       "name": "TransactionHistoryCell",
-      "sourceFile": "@app/components/TransactionHistoryCell",
+      "sourceFile": "@app/components/TransactionHistoryCell/TransactionHistoryCell",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -3659,8 +3659,8 @@
       "totalCallSites": 1
     },
     {
-      "name": "InstrumentedBalanceErrorBanner",
-      "sourceFile": "components/GracefulDegradation/ErrorBanner/BalanceErrorBanner/InstrumentedBalanceErrorBanner",
+      "name": "BalanceErrorBanner",
+      "sourceFile": "components/GracefulDegradation/ErrorBanner/BalanceErrorBanner",
       "totalInstances": 2,
       "totalCallSites": 2,
       "callSites": {
@@ -3677,6 +3677,26 @@
           "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
         },
         "component": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
+        },
+        "isPageLevelError": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
+        },
+        "error": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
+        },
+        "context": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
+        },
+        "owner": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
+        },
+        "errorSeverity": {
           "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
           "views/Assets/components/StableAssetsTable/StableAssetsTable.tsx": 1
         }

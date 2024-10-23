@@ -1722,7 +1722,8 @@
           "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1
         },
         "testID": {
-          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1
+          "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1,
+          "components/SendReceive/SendRedesign/steps/SendReceiveRedesignAssetSelector/SendReceiveRedesignAssetSelector.tsx": 1
         },
         "type": {
           "components/SendReceive/SendRedesign/components/RecipientSearchInput.tsx": 1
@@ -4661,6 +4662,9 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "refetchQuery": {
+          "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
+        },
+        "recipientFirstHandleAssetChange": {
           "components/SendReceive/SendRedesign/SendRedesignSteps.tsx": 1
         }
       }

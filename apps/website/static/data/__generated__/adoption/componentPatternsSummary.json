@@ -1,4 +1,88 @@
 {
+  "AppSwitcher": {
+    "totalInstances": 5,
+    "totalCallSites": 4,
+    "components": [
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 1,
+        "totalCallSites": 1,
+        "propsWithCallSites": {
+          "action": {
+            "apps/unified-login/src/components/SignInHeader/SignInHeader.tsx": 1
+          },
+          "projectId": {
+            "apps/unified-login/src/components/SignInHeader/SignInHeader.tsx": 1
+          },
+          "target": {
+            "apps/unified-login/src/components/SignInHeader/SignInHeader.tsx": 1
+          }
+        }
+      },
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 2,
+        "totalCallSites": 1,
+        "callSites": {
+          "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+        },
+        "propsWithCallSites": {
+          "projectId": {
+            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+          },
+          "action": {
+            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+          },
+          "target": {
+            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+          },
+          "config": {
+            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
+          }
+        }
+      },
+      {
+        "name": "AppSwitcher",
+        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
+        "totalInstances": 2,
+        "totalCallSites": 2,
+        "callSites": {
+          "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
+          "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+        },
+        "propsWithCallSites": {
+          "projectId": {
+            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
+            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+          },
+          "action": {
+            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
+            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+          },
+          "target": {
+            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
+            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
+          }
+        }
+      }
+    ],
+    "config": {
+      "owningTeam": "Identity",
+      "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
+      "packageImportPath": "@cbhq/app-switcher",
+      "productComponentName": "AppSwitcher",
+      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
+    },
+    "cdsVersion": {
+      "cdsWeb": "^6.34.0",
+      "cdsMobile": "Not Found",
+      "cdsCommon": "^6.34.0",
+      "lowestVersion": "^6.34.0",
+      "sanitizedLowestVersion": "6.34.0"
+    }
+  },
   "NavigationBar": {
     "totalInstances": 11,
     "totalCallSites": 10,
@@ -74,6 +158,10 @@
           "dangerouslyDisableOverflowHidden": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1
           },
+          "config": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
           "target": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
             "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
@@ -130,6 +218,10 @@
           "showHelpMenu": {
             "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
             "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
+          },
+          "overrideLocale": {
+            "components/Layout/components/TopNavigationBar/TopNavigationBarDesktop.tsx": 1,
+            "components/Layout/components/TopNavigationBar/TopNavigationBarMobile.tsx": 1
           }
         }
       },
@@ -240,6 +332,9 @@
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           },
           "isUserSwitcher": {
+            ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
+          },
+          "showHelpMenu": {
             ":neptune/app/components/LayoutNavigationBar/LayoutNavigationBarLoggedIn.tsx": 1
           }
         }
@@ -364,73 +459,6 @@
       "packageImportPath": "@cbhq/identity-navigation",
       "productComponentName": "NavigationBar",
       "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
-    },
-    "cdsVersion": {
-      "cdsWeb": "^6.34.0",
-      "cdsMobile": "Not Found",
-      "cdsCommon": "^6.34.0",
-      "lowestVersion": "^6.34.0",
-      "sanitizedLowestVersion": "6.34.0"
-    }
-  },
-  "AppSwitcher": {
-    "totalInstances": 4,
-    "totalCallSites": 3,
-    "components": [
-      {
-        "name": "AppSwitcher",
-        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
-        "totalInstances": 2,
-        "totalCallSites": 1,
-        "callSites": {
-          "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
-        },
-        "propsWithCallSites": {
-          "projectId": {
-            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
-          },
-          "action": {
-            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
-          },
-          "target": {
-            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
-          },
-          "config": {
-            "apps/helpcenter/src/components/Structure/Header/Header.tsx": 2
-          }
-        }
-      },
-      {
-        "name": "AppSwitcher",
-        "sourceFile": "@cbhq/app-switcher/AppSwitcher",
-        "totalInstances": 2,
-        "totalCallSites": 2,
-        "callSites": {
-          "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
-          "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
-        },
-        "propsWithCallSites": {
-          "projectId": {
-            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
-            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
-          },
-          "action": {
-            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
-            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
-          },
-          "target": {
-            "apps/commerce-merchant/src/app/segments/coinbaseManaged/LegacyNavBar.tsx": 1,
-            "apps/commerce-merchant/src/app/segments/selfManaged/SelfManagedAppNavBar.tsx": 1
-          }
-        }
-      }
-    ],
-    "config": {
-      "owningTeam": "Identity",
-      "doc": "https://docs.cbhq.net/frontend/platform/identity/app-switcher/integration-guide",
-      "packageImportPath": "@cbhq/app-switcher",
-      "productComponentName": "AppSwitcher",
-      "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/app-switcher/package.json"
     },
     "cdsVersion": {
       "cdsWeb": "^6.34.0",

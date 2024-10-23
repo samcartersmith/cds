@@ -2803,7 +2803,7 @@
         },
         "disabled": {
           "views/YieldCenter/components/EarningAssetModal/InterestChangeConfirmation.tsx": 2,
-          "views/YieldCenter/components/StakingActions/StakingActions.tsx": 2,
+          "views/YieldCenter/components/StakingActions/StakingActions.tsx": 3,
           "views/YieldCenter/flows/MissedEarnings/steps/CustomizeAmountStep.tsx": 1,
           "views/YieldCenter/flows/MissedEarnings/steps/InputStep.tsx": 1,
           "components/StakingV2/Stake/StakingInput.tsx": 1,
@@ -5092,7 +5092,7 @@
           "@app/screens/StakingGrowth/MissedEarnings/MissedEarningsInputScreen.tsx": 1,
           "@app/screens/StakingV2/StakingInputScreen.tsx": 2,
           "@app/screens/StakingV2/UnstakingInputScreen.tsx": 1,
-          "@app/screens/StakingV2/components/StakingV2AccountActions.tsx": 2,
+          "@app/screens/StakingV2/components/StakingV2AccountActions.tsx": 3,
           "@app/screens/StakingV2/components/UnstakeButton.tsx": 1,
           "@app/screens/WrappedAsset/WrapFlow/WrappedAssetInputScreen.tsx": 1,
           "@app/screens/WrappedAsset/UnwrapFlow/UnwrapAssetInputScreen.tsx": 1
@@ -9259,6 +9259,9 @@
         },
         "component": {
           "views/YieldCenter/components/EarningSummary/EarningSummary.tsx": 1
+        },
+        "isErrorFallback": {
+          "views/YieldCenter/components/EarningSummary/EarningSummary.tsx": 1
         }
       }
     },
@@ -10121,7 +10124,21 @@
       "name": "DegradedStakingData",
       "sourceFile": "views/YieldCenter/components/DegradedFallbacks/DegradedStakingData",
       "totalInstances": 1,
-      "totalCallSites": 1
+      "totalCallSites": 1,
+      "propsWithCallSites": {
+        "context": {
+          "views/YieldCenter/flows/MissedEarnings/steps/FullyStakedStep.tsx": 1
+        },
+        "error": {
+          "views/YieldCenter/flows/MissedEarnings/steps/FullyStakedStep.tsx": 1
+        },
+        "errorSeverity": {
+          "views/YieldCenter/flows/MissedEarnings/steps/FullyStakedStep.tsx": 1
+        },
+        "owner": {
+          "views/YieldCenter/flows/MissedEarnings/steps/FullyStakedStep.tsx": 1
+        }
+      }
     },
     {
       "name": "EntryInput",

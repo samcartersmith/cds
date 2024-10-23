@@ -5651,13 +5651,13 @@
     },
     {
       "name": "DefaultDoneButton",
-      "sourceFile": "@app/components/SimpleTrade/BaseConfirmation/components/BaseCTAButtons/DefaultDoneButton/DefaultDoneButton",
+      "sourceFile": "@app/screens/Trade/components/Confirmation/BaseCTAButtons/DefaultDoneButton/DefaultDoneButton",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
       "name": "BaseConfirmation",
-      "sourceFile": "@app/components/SimpleTrade/BaseConfirmation/BaseConfirmation",
+      "sourceFile": "@app/screens/Trade/components/Confirmation/BaseConfirmation",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5860,7 +5860,7 @@
     },
     {
       "name": "TradeConfirmBackScreen",
-      "sourceFile": "@app/components/SimpleTrade/BasePreview/components/TradeConfirmBackScreen/TradeConfirmBackScreen",
+      "sourceFile": "@app/screens/Trade/components/Preview/TradeConfirmBackScreen/TradeConfirmBackScreen",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -6599,6 +6599,27 @@
           "components/Collectible/CollectibleList.tsx": 2,
           "components/Collectible/CollectibleSection.tsx": 1,
           "views/DappWallet/DappWalletActivity.tsx": 5
+        },
+        "context": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 2
+        },
+        "error": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 2
+        },
+        "errorSeverity": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 2
+        },
+        "owner": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 2
+        },
+        "isErrorFallback": {
+          "components/Collectible/CollectibleList.tsx": 1,
+          "components/Collectible/CollectibleSection.tsx": 1,
+          "views/DappWallet/DappWalletActivity.tsx": 3
         }
       }
     },
@@ -7388,14 +7409,50 @@
     {
       "name": "BalanceErrorBanner",
       "sourceFile": "components/GracefulDegradation/ErrorBanner/BalanceErrorBanner",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "callSites": {
+        "views/DappWallet/components/DappWalletBalance.tsx": 1,
+        "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+        "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
+      },
       "propsWithCallSites": {
         "slim": {
-          "views/DappWallet/components/DappWalletBalance.tsx": 1
+          "views/DappWallet/components/DappWalletBalance.tsx": 1,
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
         },
         "component": {
+          "views/DappWallet/components/DappWalletBalance.tsx": 1,
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
+        },
+        "isErrorFallback": {
           "views/DappWallet/components/DappWalletBalance.tsx": 1
+        },
+        "titlePreset": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
+        },
+        "isPageLevelError": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
+        },
+        "error": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
+        },
+        "context": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
+        },
+        "owner": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
+        },
+        "errorSeverity": {
+          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
+          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
         }
       }
     },
@@ -7455,30 +7512,6 @@
       "propsWithCallSites": {
         "queryRef": {
           "views/DappWallet/components/WalletQRCodeSection.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "InstrumentedBalanceErrorBanner",
-      "sourceFile": "components/GracefulDegradation/ErrorBanner/BalanceErrorBanner/InstrumentedBalanceErrorBanner",
-      "totalInstances": 2,
-      "totalCallSites": 2,
-      "callSites": {
-        "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
-        "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
-      },
-      "propsWithCallSites": {
-        "slim": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
-          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
-        },
-        "titlePreset": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
-          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
-        },
-        "component": {
-          "views/Assets/components/AccountTableV2/AccountTableV2.tsx": 1,
-          "views/AssetPage/components/AssetBalances/AssetBalances.tsx": 1
         }
       }
     },
