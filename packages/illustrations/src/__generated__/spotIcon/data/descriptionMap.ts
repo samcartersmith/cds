@@ -9,8 +9,12 @@
  * The search query filters the shown illustrations based on matches with name or description.
  */
 const descriptionMap: Record<string, string[]> = {
+  Coinbase: ['coinbaseOneEarn'],
+  One: ['coinbaseOneEarn', 'coinbaseOneChart'],
+  Concierge: ['coinbaseOneEarn'],
+  person: ['coinbaseOneEarn', 'delegate'],
+  attendant: ['coinbaseOneEarn'],
   product: [
-    'cb1Cash',
     'productCoinbaseCard',
     'productPro',
     'productCompliance',
@@ -44,9 +48,9 @@ const descriptionMap: Record<string, string[]> = {
     'internationalExchangeProduct',
     'borrowProduct',
     'coinbaseOneChart',
+    'cb1Cash',
   ],
   icons: [
-    'cb1Cash',
     'productCoinbaseCard',
     'productPro',
     'productCompliance',
@@ -80,8 +84,8 @@ const descriptionMap: Record<string, string[]> = {
     'internationalExchangeProduct',
     'borrowProduct',
     'coinbaseOneChart',
+    'cb1Cash',
   ],
-  borrow: ['cb1Cash', 'borrowProduct'],
   icon: ['productCoinbaseCard', 'productPro', 'productCompliance', 'productEarn', 'productWallet'],
   small: ['productCoinbaseCard', 'productPro', 'productCompliance', 'productEarn', 'productWallet'],
   coinbase: [
@@ -155,6 +159,7 @@ const descriptionMap: Record<string, string[]> = {
   rewards: ['learningRewardsProduct'],
   international: ['internationalExchangeProduct'],
   i18n: ['internationalExchangeProduct'],
+  borrow: ['borrowProduct', 'cb1Cash'],
   envelope: ['email'],
   letter: ['email'],
   online: ['email'],
@@ -178,7 +183,6 @@ const descriptionMap: Record<string, string[]> = {
   assign: ['delegate'],
   entrust: ['delegate'],
   give: ['delegate'],
-  person: ['delegate'],
   check: ['delegate', 'done', 'idVerification'],
   checkmark: ['delegate', 'done', 'idVerification'],
   '✅': ['delegate', 'done', 'idVerification'],
@@ -430,7 +434,6 @@ const descriptionMap: Record<string, string[]> = {
   arrow: ['derivativesProduct'],
   triangles: ['derivativesProduct'],
   coinbaseone: ['coinbaseOneChart'],
-  One: ['coinbaseOneChart'],
 };
 
 export default descriptionMap;

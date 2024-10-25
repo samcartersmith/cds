@@ -8,6 +8,29 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.17.0 (10/25/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 10/25/2024. [[#3369](https://github.cbhq.net/frontend/cds/pull/3369)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- coinbaseOneEarn
+
+#### Spot Rectangle
+
+- cb1BankTransfers
+
+#### Pictogram
+
+- cb1BankTransfers
+- coinbaseOneEarn
+
 ## 3.16.0 (10/16/2024 PST)
 
 #### 🚀 Updates

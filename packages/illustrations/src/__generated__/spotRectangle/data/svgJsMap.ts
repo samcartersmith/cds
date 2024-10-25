@@ -97,6 +97,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/cardWaitlist-2').content,
     dark: () => require('../svgJs/dark/cardWaitlist-2').content,
   },
+  cb1BankTransfers: {
+    light: () => require('../svgJs/light/cb1BankTransfers-0').content,
+    dark: () => require('../svgJs/dark/cb1BankTransfers-0').content,
+  },
   cbbtc: {
     light: () => require('../svgJs/light/cbbtc-0').content,
     dark: () => require('../svgJs/dark/cbbtc-0').content,

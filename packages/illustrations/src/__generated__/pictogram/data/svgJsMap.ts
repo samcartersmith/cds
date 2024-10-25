@@ -209,6 +209,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/cardSuccess-2').content,
     dark: () => require('../svgJs/dark/cardSuccess-2').content,
   },
+  cb1BankTransfers: {
+    light: () => require('../svgJs/light/cb1BankTransfers-0').content,
+    dark: () => require('../svgJs/dark/cb1BankTransfers-0').content,
+  },
   chart: {
     light: () => require('../svgJs/light/chart-1').content,
     dark: () => require('../svgJs/dark/chart-1').content,
@@ -240,6 +244,10 @@ const svgJsMap = {
   coinbaseOneChat: {
     light: () => require('../svgJs/light/coinbaseOneChat-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneChat-2').content,
+  },
+  coinbaseOneEarn: {
+    light: () => require('../svgJs/light/coinbaseOneEarn-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneEarn-0').content,
   },
   coinbaseOneEarnCoins: {
     light: () => require('../svgJs/light/coinbaseOneEarnCoins-2').content,

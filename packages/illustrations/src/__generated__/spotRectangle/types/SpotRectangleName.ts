@@ -26,6 +26,7 @@ export type SpotRectangleName =
   | 'browserHistory'
   | 'cardBoosted'
   | 'cardWaitlist'
+  | 'cb1BankTransfers'
   | 'cbbtc'
   | 'cbEth'
   | 'clawMachinePig'

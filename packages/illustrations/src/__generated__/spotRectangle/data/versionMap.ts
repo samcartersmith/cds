@@ -203,6 +203,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   usdcLoan: 0,
   leadingProtocol: 0,
   borrowLoan: 0,
+  cb1BankTransfers: 0,
 };
 
 export default versionMap;

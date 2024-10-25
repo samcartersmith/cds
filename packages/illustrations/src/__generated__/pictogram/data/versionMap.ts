@@ -318,6 +318,8 @@ const versionMap: Record<PictogramName, number> = {
   usdcRewardsRibbon: 0,
   usdcLogo: 0,
   usdcRewards: 0,
+  coinbaseOneEarn: 0,
+  cb1BankTransfers: 0,
 };
 
 export default versionMap;

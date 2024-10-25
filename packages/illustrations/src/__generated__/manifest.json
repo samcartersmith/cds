@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-10-16T20:31:10.211Z",
+  "lastUpdated": "2024-10-25T20:14:18.275Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -21939,6 +21939,86 @@
         "svgJsDark": "./spotRectangle/svgJs/dark/loanValue-0.js",
         "pngLight": "./spotRectangle/png/light/loanValue-0.png",
         "pngDark": "./spotRectangle/png/dark/loanValue-0.png"
+      },
+      "version": 0
+    },
+    "12459:12": {
+      "type": "spotIcon",
+      "name": "coinbaseOneEarn",
+      "hash": "cfcq92dGi0S/rH+5STXMOVkZd3/SJrmJNx9UvfxwSrY=",
+      "width": 32,
+      "height": 32,
+      "description": "Coinbase, One, Concierge, person, attendant",
+      "createdAt": "2024-10-24T16:08:29.995Z",
+      "lastUpdated": "2024-10-24T16:09:19.301Z",
+      "outputs": {
+        "svgLight": "./spotIcon/svg/light/coinbaseOneEarn-0.svg",
+        "svgDark": "./spotIcon/svg/dark/coinbaseOneEarn-0.svg",
+        "svgThemed": "./spotIcon/svg/themeable/coinbaseOneEarn-0.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/coinbaseOneEarn-0.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/coinbaseOneEarn-0.js",
+        "pngLight": "./spotIcon/png/light/coinbaseOneEarn-0.png",
+        "pngDark": "./spotIcon/png/dark/coinbaseOneEarn-0.png"
+      },
+      "version": 0
+    },
+    "12459:36": {
+      "type": "pictogram",
+      "name": "coinbaseOneEarn",
+      "hash": "etCfCgkCVT8s0I0BF1UxLlYsOwU86dufyq6zpiBn7WE=",
+      "width": 48,
+      "height": 48,
+      "description": "earn, chart, bar, graph, up, grow, invest, money, future",
+      "createdAt": "2024-10-24T16:08:29.988Z",
+      "lastUpdated": "2024-10-24T16:08:29.988Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/coinbaseOneEarn-0.svg",
+        "svgDark": "./pictogram/svg/dark/coinbaseOneEarn-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/coinbaseOneEarn-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/coinbaseOneEarn-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/coinbaseOneEarn-0.js",
+        "pngLight": "./pictogram/png/light/coinbaseOneEarn-0.png",
+        "pngDark": "./pictogram/png/dark/coinbaseOneEarn-0.png"
+      },
+      "version": 0
+    },
+    "12487:70": {
+      "type": "pictogram",
+      "name": "cb1BankTransfers",
+      "hash": "HIwNn3nniE1iJrbg0WilDrGG+Aimh1aww86pUtHdzAY=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2024-10-25T15:28:55.715Z",
+      "lastUpdated": "2024-10-25T15:28:55.715Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/cb1BankTransfers-0.svg",
+        "svgDark": "./pictogram/svg/dark/cb1BankTransfers-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/cb1BankTransfers-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/cb1BankTransfers-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/cb1BankTransfers-0.js",
+        "pngLight": "./pictogram/png/light/cb1BankTransfers-0.png",
+        "pngDark": "./pictogram/png/dark/cb1BankTransfers-0.png"
+      },
+      "version": 0
+    },
+    "12487:86": {
+      "type": "spotRectangle",
+      "name": "cb1BankTransfers",
+      "hash": "ZV8iJFVeETUMznZkdxpZUK3IwFXhF76WFulm1ASY2zk=",
+      "width": 240,
+      "height": 120,
+      "description": "semi, custodial, semi custodial, bank, user, avatar, coin",
+      "createdAt": "2024-10-25T15:28:55.722Z",
+      "lastUpdated": "2024-10-25T15:28:55.722Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/cb1BankTransfers-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/cb1BankTransfers-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/cb1BankTransfers-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/cb1BankTransfers-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/cb1BankTransfers-0.js",
+        "pngLight": "./spotRectangle/png/light/cb1BankTransfers-0.png",
+        "pngDark": "./spotRectangle/png/dark/cb1BankTransfers-0.png"
       },
       "version": 0
     }

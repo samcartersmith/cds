@@ -17,6 +17,7 @@ export type SpotIconName =
   | 'cloudProduct'
   | 'coinbase'
   | 'coinbaseOneChart'
+  | 'coinbaseOneEarn'
   | 'coinbaseOneProduct'
   | 'commerceProduct'
   | 'creditCard'
