@@ -74,6 +74,11 @@ wallet: run in /workspaces/
  yarn nx run rn:audit-a11y
 ```
 
+**Tip**:
+
+A recommendation to ensure a faster experience is to first run the test command: `yarn nx run <target>:test` then followed by the a11y command.
+Example a11y command: `yarn nx run <target>:a11y-audit`
+
 #### Getting results
 
 To get the output json results, go to the `.nx/outs` directory. Sample output found here: [sample output](https://drive.google.com/drive/folders/1e26_PJUnbTCFert06kUCfiYpQ_OwXp-X)

@@ -352,6 +352,13 @@ yarn nx run mobile:audit-a11y
 yarn nx run web:audit-a11y
 ```
 
+**Tip**:
+
+A recommendation to ensure a faster experience is to first run the test command: `yarn nx run <target>:test` then followed by the a11y command.
+Example a11y command: `yarn nx run <target>:a11y-audit`
+
+You can check the `project.json` entry to check if the test `dependsOn` is used.
+
 ### Architecture
 
 The [impl.ts](./src/executors/audit-a11y/impl.ts) file serves as the entry point for this project and is executed when running `nx run <project-name>:audit-a11y`. The entry point is determined by the `implementation` field in the [executor.json](./executors.json) file.
@@ -388,6 +395,7 @@ If you need information on how to modify the endpoint, or modify values in the S
 2. `Coverage Summary does not exist at ...`
 
 - Jest coverage may not be enabled by default. Make sure your jest config has `coverageReporters: ['json-summary']` which generates coverage summary after tests run. The report will be picked up by the executor.
+- Ensure that you have run the `test` command. Usually `yarn nx run <target>:test` as it generates the jest output summary used by the a11y executor.
 
 3. External testing: Ensure to build the package before running the script in external repository.
 
