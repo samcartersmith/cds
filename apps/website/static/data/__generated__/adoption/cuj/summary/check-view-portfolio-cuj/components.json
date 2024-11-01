@@ -3202,20 +3202,6 @@
       }
     },
     {
-      "name": "PopularFirstBuys",
-      "sourceFile": "views/Home/components/TopMovers/PopularFirstBuys",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        },
-        "showSlider": {
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TopMovers",
       "sourceFile": "views/Home/components/TopMovers",
       "totalInstances": 1,
@@ -3243,17 +3229,6 @@
       "propsWithCallSites": {
         "queryRef": {
           "views/Home/HomeFeedContentMobile.tsx": 1
-        }
-      }
-    },
-    {
-      "name": "WalletTakeOverExperimentModal",
-      "sourceFile": "views/Assets/WalletTakeOverExperimentModal/WalletTakeOverExperimentModal",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "markShown": {
-          "views/Assets/Assets.tsx": 1
         }
       }
     },
@@ -3470,8 +3445,8 @@
       "totalCallSites": 1
     },
     {
-      "name": "BalancesCard",
-      "sourceFile": "views/Assets/components/BalancesCard",
+      "name": "LazyBalancesCard",
+      "sourceFile": "views/Assets/components/BalancesCard/LazyBalancesCard",
       "totalInstances": 1,
       "totalCallSites": 1
     },

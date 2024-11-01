@@ -405,8 +405,8 @@
         ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 5,
         ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 7,
         ":prime-ui/pages/activity/detail/errors/ActivityDetailSectionErrorFallback.tsx": 2,
-        ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 4,
         ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 2,
+        ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 4,
         ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 3,
         ":prime-ui/pages/activity/list/header/ViewfinderActivityFilters.tsx": 2,
         ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 4,
@@ -554,8 +554,8 @@
         "bordered": {
           ":prime-ui/pages/activity/detail/ApprovalActivity.tsx": 1,
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 2,
-          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1,
-          ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1
+          ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1
         },
         "data-testid": {
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 1,
@@ -1196,8 +1196,8 @@
         ":prime-ui/pages/activity/shared/BulkAuthorizeStep.tsx": 1,
         ":prime-ui/pages/activity/shared/BulkConfirmationStep.tsx": 2,
         ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 4,
-        ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
         ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
+        ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
         ":prime-ui/pages/activity/list/header/ActivityFilterPills.tsx": 1,
         ":prime-ui/pages/activity/list/header/ActivityFilters.tsx": 1,
         ":prime-ui/pages/activity/list/header/ActivityListHeader.tsx": 1,
@@ -1230,8 +1230,8 @@
           ":prime-ui/pages/activity/detail/HeaderTransactionDetails.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 2,
-          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
           ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityKeyValuePanelRows.tsx": 1,
           ":prime-ui/pages/activity/list/header/DownloadReportLink.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 2,
           ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
@@ -1391,8 +1391,8 @@
         ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 1,
         ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
         ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 2,
-        ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1,
         ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
+        ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1,
         ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
         ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
         ":prime-ui/pages/activity/list/table/ActivityTransferTitle.tsx": 2,
@@ -1420,8 +1420,8 @@
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkAction.tsx": 1,
           ":prime-ui/pages/activity/shared/BulkReviewStep.tsx": 2,
-          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1,
           ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityHistoryTable.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityTransferTitle.tsx": 2,
@@ -1444,17 +1444,17 @@
           ":prime-ui/pages/activity/list/table/ActivityInfoColumn.tsx": 1,
           ":prime-ui/pages/activity/list/table/ActivityTransferTitle.tsx": 1
         },
-        "spacingBottom": {
-          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1
-        },
-        "spacingStart": {
-          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1
-        },
         "spacingEnd": {
           ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1
         },
         "key": {
           ":prime-ui/pages/activity/list/error/ActivityListSectionErrorFallback.tsx": 1
+        },
+        "spacingBottom": {
+          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1
+        },
+        "spacingStart": {
+          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 1
         }
       }
     },
@@ -2207,8 +2207,8 @@
         ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 2,
         ":prime-ui/pages/activity/timeline/TimelinePanel.tsx": 1,
         ":prime-ui/pages/activity/detail/errors/ActivityDetailSectionErrorFallback.tsx": 1,
-        ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 2,
-        ":prime-ui/pages/activity/list/error/ActivityTableColumnErrorFallback.tsx": 1
+        ":prime-ui/pages/activity/list/error/ActivityTableColumnErrorFallback.tsx": 1,
+        ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 2
       },
       "propsWithCallSites": {
         "as": {
@@ -2216,8 +2216,8 @@
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 2,
           ":prime-ui/pages/activity/timeline/TimelinePanel.tsx": 1,
           ":prime-ui/pages/activity/detail/errors/ActivityDetailSectionErrorFallback.tsx": 1,
-          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 2,
-          ":prime-ui/pages/activity/list/error/ActivityTableColumnErrorFallback.tsx": 1
+          ":prime-ui/pages/activity/list/error/ActivityTableColumnErrorFallback.tsx": 1,
+          ":prime-ui/pages/activity/detail/panel/ActivityTimelinePanel.tsx": 2
         },
         "spacingBottom": {
           ":prime-ui/pages/activity/detail/KeyValuePanel.tsx": 2,
@@ -4588,12 +4588,6 @@
       }
     },
     {
-      "name": "tbody",
-      "sourceFile": ":prime-ui/pages/activity/timeline/TimelinePanel.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
       "name": "BulkReviewStep",
       "sourceFile": ":prime-ui/pages/activity/shared/BulkReviewStep",
       "totalInstances": 1,
@@ -4809,6 +4803,12 @@
           ":prime-ui/pages/activity/shared/BulkSelectAll.tsx": 1
         }
       }
+    },
+    {
+      "name": "tbody",
+      "sourceFile": ":prime-ui/pages/activity/timeline/TimelinePanel.tsx",
+      "totalInstances": 1,
+      "totalCallSites": 1
     },
     {
       "name": "ActivityWalletNameAddress",

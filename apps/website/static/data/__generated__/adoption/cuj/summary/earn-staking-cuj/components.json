@@ -6593,7 +6593,7 @@
     },
     {
       "name": "TradeInputHeader",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/TradeInputHeader",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/TradeInputHeader",
       "totalInstances": 6,
       "totalCallSites": 5,
       "callSites": {

@@ -4309,6 +4309,9 @@
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
+        "accessToken": {
+          "@app/screens/Defi/CbPay/DappCbPayScreen.tsx": 1
+        },
         "destinationWallets": {
           "@app/screens/Defi/CbPay/DappCbPayScreen.tsx": 1
         },
@@ -4487,7 +4490,7 @@
     },
     {
       "name": "TradeInputHeader",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/TradeInputHeader",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/TradeInputHeader",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -4867,7 +4870,7 @@
     },
     {
       "name": "BaseInputOrderSelect",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/components/BaseInputOrderSelect/BaseInputOrderSelect",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/components/BaseInputOrderSelect/BaseInputOrderSelect",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5040,7 +5043,7 @@
     },
     {
       "name": "SimpleTradeSourceTargetSelector",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/components/SimpleTradeSourceTargetSelector/SimpleTradeSourceTargetSelector",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/components/SimpleTradeSourceTargetSelector/SimpleTradeSourceTargetSelector",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5090,7 +5093,7 @@
     },
     {
       "name": "SimpleTradeInputKeyboard",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/components/SimpleTradeInputKeyboard/SimpleTradeInputKeyboard",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/components/SimpleTradeInputKeyboard/SimpleTradeInputKeyboard",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5241,7 +5244,7 @@
     },
     {
       "name": "StatusAlerts",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/components/StatusAlerts/StatusAlerts",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/components/StatusAlerts/StatusAlerts",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5307,7 +5310,7 @@
     },
     {
       "name": "SimpleTradeSwapAccountsFetcher",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/components/SimpleTradeSwapAccountsFetcher/SimpleTradeSwapAccountsFetcher",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/components/SimpleTradeSwapAccountsFetcher/SimpleTradeSwapAccountsFetcher",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5456,7 +5459,7 @@
     },
     {
       "name": "BaseInputContent",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/BaseInput/BaseInputContent",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/BaseInput/BaseInputContent",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5520,7 +5523,7 @@
     },
     {
       "name": "SimpleTradeAccountFetcher",
-      "sourceFile": "@app/components/SimpleTrade/BaseInput/components/SimpleTradeAccountFetcher/SimpleTradeAccountFetcher",
+      "sourceFile": "@app/screens/SimpleTrade/components/BaseInput/components/SimpleTradeAccountFetcher/SimpleTradeAccountFetcher",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -5588,6 +5591,9 @@
       "totalCallSites": 1,
       "propsWithCallSites": {
         "queryRef": {
+          "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
+        },
+        "tradeType": {
           "@app/screens/SimpleTrade/SimpleTradeInputScreen.tsx": 1
         }
       }

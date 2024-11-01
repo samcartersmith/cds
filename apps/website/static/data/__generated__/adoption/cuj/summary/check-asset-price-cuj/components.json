@@ -2233,20 +2233,6 @@
       }
     },
     {
-      "name": "PopularFirstBuys",
-      "sourceFile": "views/Home/components/TopMovers/PopularFirstBuys",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "propsWithCallSites": {
-        "queryRef": {
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        },
-        "showSlider": {
-          "views/Home/HomeFeedContentMobile.tsx": 1
-        }
-      }
-    },
-    {
       "name": "TopMovers",
       "sourceFile": "views/Home/components/TopMovers",
       "totalInstances": 1,
