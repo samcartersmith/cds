@@ -3,12 +3,10 @@ secure:
   codeowners_enabled: true
   branches:
     - master
-    - cds5-master
     - v5
-    - 6.2.0-beta.0
-    - 6.3.0-rc.1-2
-    - 6.19.0-alpha.1
-    - 7.0.0-alpha
+    - v6
+    - 6.47.4
+    - 7.0.0-rc.0
   auto_assign_reviewers: true
 build:
   engines:
