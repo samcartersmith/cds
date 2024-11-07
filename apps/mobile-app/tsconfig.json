@@ -1,6 +1,7 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
+    "declarationDir": "dts",
     "jsx": "react-native",
     "resolveJsonModule": true,
     "moduleSuffixes": [
@@ -8,33 +9,28 @@
       ".android",
       ".native",
       ""
-    ],
-    "outDir": "../../.nx/dts/apps/mobile-app"
+    ]
   },
   "include": [
-    "src",
+    "src/**/*",
     "*.config.js",
     "*.config.ts",
     "scripts",
-    ".eslintrc.js",
+    ".eslintrc.cjs",
     "*.d.ts",
     "*.json",
     "e2e"
   ],
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../packages/common"
     },
     {
-      "path": "../../packages/illustrations"
+      "path": "../../packages/icons"
     },
     {
-      "path": "../../packages/icons"
+      "path": "../../packages/illustrations"
     },
     {
       "path": "../../packages/mobile"

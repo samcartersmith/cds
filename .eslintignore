@@ -3,14 +3,14 @@ dist/
 node_modules/
 OWNERS
 Makefile
-.eslintrc.js
+.eslintrc.cjs
 next-env.d.ts
 __mocks__
 
 # Nx/Builds
-**/dts/
-**/lib/
 **/dist/
+**/dts/
+**/cjs/
 **/esm/
-**/mjs/
+**/lib/
 **/templates/

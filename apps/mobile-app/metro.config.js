@@ -15,8 +15,17 @@ const getBaseModule = (moduleName) => {
 const cbResolveRequest = cbConfig.resolver.resolveRequest;
 
 const aliases = {
+  '@cbhq/cds-common': path.resolve(__dirname, '../../packages/common/src'),
+  '@cbhq/cds-fonts': path.resolve(__dirname, '../../packages/fonts/src'),
   '@cbhq/cds-icons': path.resolve(__dirname, '../../packages/icons/src'),
   '@cbhq/cds-illustrations': path.resolve(__dirname, '../../packages/illustrations/src'),
+  '@cbhq/cds-lottie-files': path.resolve(__dirname, '../../packages/lottie-files/src'),
+  '@cbhq/cds-mobile': path.resolve(__dirname, '../../packages/mobile/src'),
+  '@cbhq/cds-mobile-visualization': path.resolve(
+    __dirname,
+    '../../packages/mobile-visualization/src',
+  ),
+  '@cbhq/cds-utils': path.resolve(__dirname, '../../packages/utils/src'),
   '@cbhq/ui-mobile-playground': path.resolve(__dirname, '../../packages/ui-mobile-playground/src'),
   '@cbhq/ui-mobile-visreg': path.resolve(__dirname, '../../packages/ui-mobile-visreg/src'),
 };

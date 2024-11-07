@@ -1,17 +1,13 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/packages/lottie-files",
-    "rootDir": "./"
+    "declarationDir": "dts",
+    "rootDir": "src"
   },
   "include": [
-    "**/*",
-    "**/*.json"
+    "src/**/*"
   ],
-  "exclude": [
-    "dist",
-    "jest.config.js"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../packages/utils"

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Animated, StyleSheet, ViewStyle } from 'react-native';
 import times from 'lodash/times';
 import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SparklineInteractiveMarkerDate: FunctionComponent<
+const SparklineInteractiveMarkerDate: React.FunctionComponent<
   React.PropsWithChildren<{
     getFormattedDate: (xPosition: number) => string;
   }>

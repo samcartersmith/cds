@@ -1,10 +1,13 @@
 {
   "name": "mobile",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/mobile",
+  "sourceRoot": "packages/mobile/src",
   "projectType": "library",
   "tags": [],
   "targets": {
+    "build": {
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },
@@ -15,36 +18,15 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
-    },
-    "export-package-version": {
-      "executor": "@cbhq/cds-tasks:export-package-version"
-    },
-    "build": {
-      "executor": "@cbhq/cds-tasks:build-package",
-      "outputs": [
-        "{workspaceRoot}/.nx/dist/packages/mobile"
-      ],
-      "options": {
-        "destinationDir": ".nx/dist/packages/mobile",
-        "staticFilesToIgnore": [
-          "babel.config.js",
-          "jest.config.js",
-          "tsconfig.json",
-          "tsconfig.build.json",
-          "project.json"
-        ],
-        "babelConfig": "./packages/mobile/babel.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx"
-        ],
-        "typescriptConfig": "packages/mobile/tsconfig.build.json"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
       }
     },
     "danger": {
@@ -59,34 +41,6 @@
         "dangerfile": "libs/dangerfiles/dangerfile-coverage.ts",
         "timeoutSeconds": 30
       }
-    },
-    "perf-test-clean": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "jest --clearCache"
-        ]
-      }
-    },
-    "perf-test": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "outputs": [
-        ".reassure"
-      ],
-      "options": {
-        "script": "../../node_modules/.bin/reassure",
-        "root": "/packages/mobile"
-      },
-      "env": {
-        "NX_BAN_LOGS": false,
-        "TEST_RUNNER_PATH": "../../node_modules/.bin/jest",
-        "TEST_RUNNER_ARGS": "--detectOpenHandles --runInBand --forceExit --testMatch \"<rootDir>/**/(*.)perf-test.[jt]s?(x)\"",
-        "TARGET_ENV": "perf_test_js"
-      },
-      "dependsOn": [
-        "^build",
-        "perf-test-clean"
-      ]
     },
     "audit-a11y": {
       "executor": "@cbhq/ui-scorecard:audit-a11y",

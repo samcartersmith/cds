@@ -12,7 +12,6 @@ import { SparklineInteractiveHeaderRef } from '@cbhq/cds-common/types/SparklineI
 import { Icon } from '@cbhq/cds-web/icons';
 import { HStack } from '@cbhq/cds-web/layout';
 import { TextTitle3 } from '@cbhq/cds-web/typography';
-import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
 import { SparklineInteractive } from '../../sparkline-interactive/SparklineInteractive';
 import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
@@ -45,7 +44,7 @@ export const Default = () => {
 
 Default.bind({});
 Default.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -65,7 +64,7 @@ export const CustomLabel = () => {
 
 CustomLabel.bind({});
 CustomLabel.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -85,7 +84,7 @@ export const Compact = () => {
 
 Compact.bind({});
 Compact.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -104,7 +103,7 @@ export const BottomPeriodSelector = () => {
   );
 };
 
-BottomPeriodSelector.parameters = { percy: enableJavascript };
+BottomPeriodSelector.parameters = { percy: { enableJavaScript: true } };
 
 const SparklineInteractiveWithAltHeader = sparklineInteractiveWithHeaderBuilder({
   SparklineInteractive,
@@ -121,7 +120,7 @@ export const AlternatePeriods = () => {
 
 AlternatePeriods.bind({});
 AlternatePeriods.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],

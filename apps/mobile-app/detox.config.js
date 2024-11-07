@@ -1,5 +1,4 @@
 // @ts-check
-
 const { isCI } = require('@cbhq/mono-tasks');
 
 /**

@@ -81,7 +81,6 @@ const sidebarItems = mocks.product.navigationItems;
 function createSidebarItem(activeIndex: number, setActiveIndex: SetState<number>) {
   // eslint-disable-next-line react/display-name
   return ({ title, icon }: { title: string; icon: string }, index: number) => {
-    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const handlePress = () => setActiveIndex(index);
 
     return (
@@ -299,7 +298,6 @@ function FullScreenModalAmp() {
         author="Earn crypto"
         avatar="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
         description="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-        // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
         headerAction={{
           name: 'more',
           variant: 'foregroundMuted',
@@ -482,7 +480,6 @@ function AssetTable() {
                 <Button
                   key={pg}
                   compact
-                  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
                   onPress={() => setPage(pg)}
                   variant={page === pg ? 'primary' : 'secondary'}
                 >

@@ -4,7 +4,7 @@ import groupBy from 'lodash/groupBy';
 import keyBy from 'lodash/keyBy';
 import mapValues from 'lodash/mapValues';
 import uniqBy from 'lodash/uniqBy';
-import path from 'path';
+import path from 'node:path';
 import { PackageJson } from 'type-fest';
 
 import type {

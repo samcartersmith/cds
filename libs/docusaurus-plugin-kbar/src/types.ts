@@ -20,7 +20,7 @@ export type SidebarItemCustomProps = {
 };
 
 export type SidebarItem =
-  import('@docusaurus/plugin-content-docs/lib/sidebars/types').SidebarItem & {
+  import('@docusaurus/plugin-content-docs/lib/sidebars/types.js').SidebarItem & {
     customProps?: SidebarItemCustomProps;
   };
 

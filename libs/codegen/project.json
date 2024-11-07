@@ -1,7 +1,7 @@
 {
   "name": "codegen",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/codegen",
+  "sourceRoot": "libs/codegen/src",
   "projectType": "library",
   "implicitDependencies": [
     "!web",
@@ -9,6 +9,9 @@
     "!utils"
   ],
   "targets": {
+    "build": {
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },
@@ -19,40 +22,39 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
     },
     "all": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      "command": "tsx ./src/main.ts",
       "options": {
-        "script": "./main.ts"
+        "cwd": "libs/codegen"
       }
     },
-    "updateWebsiteChangelogs": {
-      "executor": "@cbhq/mono-tasks:run-script",
+    "update-website-changelogs": {
+      "command": "tsx ./src/website/updateWebsiteChangelogs.ts",
       "options": {
-        "script": "./website/updateWebsiteChangelogs.ts"
+        "cwd": "libs/codegen"
       }
     },
-    "updatePkgsForGenericBump": {
-      "executor": "@cbhq/mono-tasks:run-script",
+    "update-packages-generic-bump": {
+      "command": "tsx ./src/release/updatePkgsForGenericBump.ts",
       "options": {
-        "script": "./release/updatePkgsForGenericBump.ts"
+        "cwd": "libs/codegen"
       }
     },
     "mobile-routes": {
-      "executor": "nx:run-commands",
+      "command": "tsx ./src/playground/prepareRoutes.ts",
       "options": {
-        "cwd": "libs/codegen",
-        "commands": [
-          "ts-node ./playground/prepareRoutes.ts"
-        ],
-        "parallel": true
-      }
-    },
-    "zip-packages": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./athena/zipPackages.ts"
+        "cwd": "libs/codegen"
       }
     }
   }

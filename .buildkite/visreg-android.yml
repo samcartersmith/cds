@@ -50,7 +50,7 @@ env:
   DETOX_RUN_ALL: $DETOX_RUN_ALL
 
 steps:
-  - label: 'Visreg Test (Android) %N'
+  - label: 'Visreg (Android) %N'
     <<: *visreg_android_shared
     key: 'visreg_android'
     parallelism: 5
@@ -59,7 +59,7 @@ steps:
       - echo "--- Running Android visreg tests"
       - yarn nx run mobile-app:detox:android-release
 
-  - label: 'Finish Visreg Tests (Android)'
+  - label: 'Finish Visreg (Android)'
     allow_dependency_failure: true
     depends_on: 'visreg_android'
     parallelism: 1

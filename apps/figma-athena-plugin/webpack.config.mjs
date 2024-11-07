@@ -5,6 +5,10 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+if (!process.env.PROJECT_CWD) throw Error('process.env.PROJECT_CWD is missing');
+
+const root = process.env.PROJECT_CWD;
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default async (env, argv) =>
@@ -35,14 +39,22 @@ export default async (env, argv) =>
           '.jsx': ['.tsx', '.jsx'],
         },
         // This is only necessary when a package's package.json exports are set up correctly
-        // alias:
-        //   argv.mode !== 'development'
-        //     ? {}
-        //     : {
-        //         // Use source files in development
-        //         '@cbhq/cds-web': path.resolve(root, './packages/web/index.ts'),
-        //         '@cbhq/cds-web/*': path.resolve(root, './packages/web/*'),
-        //       },
+        alias:
+          argv.mode !== 'development'
+            ? {}
+            : {
+                // Use source files in development
+                '@cbhq/cds-common': path.resolve(root, './packages/common/src'),
+                '@cbhq/cds-icons': path.resolve(root, './packages/icons/src'),
+                '@cbhq/cds-illustrations': path.resolve(root, './packages/illustrations/src'),
+                '@cbhq/cds-lottie-files': path.resolve(root, './packages/lottie-files/src'),
+                '@cbhq/cds-utils': path.resolve(root, './packages/utils/src'),
+                '@cbhq/cds-web': path.resolve(root, './packages/web/src'),
+                '@cbhq/cds-web-visualization': path.resolve(
+                  root,
+                  './packages/web-visualization/src',
+                ),
+              },
       },
       devServer: {
         static: {
@@ -78,11 +90,7 @@ export default async (env, argv) =>
           chunks: ['app'],
           cache: false,
         }),
-        new InlineChunkHtmlPlugin(
-          // @ts-expect-error
-          HtmlWebpackPlugin,
-          [/app/],
-        ),
+        new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/app/]),
       ],
       performance: {
         hints: false,

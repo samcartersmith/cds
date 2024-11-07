@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import * as ts from 'typescript';
 
 import type { FileParser } from './FileParser';
@@ -59,11 +59,13 @@ export class ImportStatementParser {
         // Named imports
       } else if (ts.isNamedImports(namedBindings)) {
         namedBindings.elements.forEach((el) => {
+          const hasPropertyName = el.propertyName && 'escapedText' in el.propertyName;
           // If el has propertyName present than import has been aliased
           // i.e. import { TextBody as CDSText }
           // el.propertyName?.escapedText guarantees we return TextBody not CDSText
           imports.push([
-            (el.propertyName?.escapedText as string) ?? (el.name.escapedText as string),
+            (hasPropertyName ? el.propertyName?.escapedText : '') ??
+              (el.name.escapedText as string),
             el.name.escapedText as string,
           ]);
         });

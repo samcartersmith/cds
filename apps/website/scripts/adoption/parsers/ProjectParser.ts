@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 import { parseTsconfig } from 'get-tsconfig';
 import { countBy, flattenDeep, fromPairs, map, mapValues, partition, pickBy, uniq } from 'lodash';
+import path from 'node:path';
 import ora from 'ora';
-import path from 'path';
 
 import { featuredComponentsConfig, tempDir } from '../config';
 import type {

@@ -2,7 +2,6 @@
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable global-require */
 
 export const routes = [
@@ -412,24 +411,24 @@ export const routes = [
   {
     key: 'Sparkline',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline/__stories__/Sparkline.stories').default,
+      require('@cbhq/cds-mobile-visualization/sparkline/__stories__/Sparkline.stories').default,
   },
   {
     key: 'SparklineGradient',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline/__stories__/SparklineGradient.stories')
+      require('@cbhq/cds-mobile-visualization/sparkline/__stories__/SparklineGradient.stories')
         .default,
   },
   {
     key: 'SparklineInteractive',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline/sparkline-interactive/__stories__/SparklineInteractive.stories')
+      require('@cbhq/cds-mobile-visualization/sparkline/sparkline-interactive/__stories__/SparklineInteractive.stories')
         .default,
   },
   {
     key: 'SparklineInteractiveHeader',
     getComponent: () =>
-      require('@cbhq/cds-mobile-visualization/src/sparkline/sparkline-interactive-header/__stories__/SparklineInteractiveHeader.stories')
+      require('@cbhq/cds-mobile-visualization/sparkline/sparkline-interactive-header/__stories__/SparklineInteractiveHeader.stories')
         .default,
   },
   {

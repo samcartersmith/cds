@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run common:typecheck:prod
 RUN yarn nx run common:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/common && npm pack
-RUN mv /repo/.nx/dist/packages/common /shared
+RUN cd /repo/packages/common && yarn pack
+RUN mv /repo/packages/common /shared
 
 WORKDIR /shared

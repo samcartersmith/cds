@@ -1,9 +1,9 @@
 import ejs from 'ejs';
-import fs from 'fs';
 import camelCase from 'lodash/camelCase';
 import kebabCase from 'lodash/kebabCase';
 import startCase from 'lodash/startCase';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import prettier from 'prettier';
 
 import type { WriteFileConfig } from '../types';

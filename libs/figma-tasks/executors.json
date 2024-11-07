@@ -1,19 +1,14 @@
 {
   "executors": {
     "sync-icons": {
-      "implementation": "./lib#syncIcons",
+      "implementation": "./cjs#syncIcons",
       "schema": "./src/executors/sync-icons/schema.json",
       "description": "Sync icons from a Figma File and generate svg, fonts, types and example data."
     },
     "sync-illustrations": {
-      "implementation": "./lib#syncIllustrations",
+      "implementation": "./cjs#syncIllustrations",
       "schema": "./src/executors/sync-illustrations/schema.json",
       "description": "Sync illustrations from a Figma File and generate svg, types and example data."
-    },
-    "sync-styles": {
-      "implementation": "./lib#syncStyles",
-      "schema": "./src/executors/sync-styles/schema.json",
-      "description": "Sync styles from a Figma File and generate tokens, types and example data."
     }
   }
 }

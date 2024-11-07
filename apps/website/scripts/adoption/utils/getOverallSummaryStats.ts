@@ -1,8 +1,8 @@
-import fs from 'fs';
 import getFirst from 'lodash/first';
 import groupBy from 'lodash/groupBy';
 import toPairs from 'lodash/toPairs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import semver from 'semver';
 
 import { adopters } from '../../../data/__generated__/adoption/adopters';
@@ -51,7 +51,7 @@ export const getTotalInstancesLatest = (
   return projects
     .filter((project) => {
       // Exclude the projects that belong to the excluded pillars, if any are specified
-      return !(excludedPillars && excludedPillars.includes(project.pillar));
+      return !excludedPillars?.includes(project.pillar);
     })
     .reduce((acc, project) => {
       if (!isUpToDateOnly || (isUpToDateOnly && getStats(project).latest.upToDate)) {
@@ -74,7 +74,7 @@ export const getTotalInstancesPrevious = (
     .filter(
       (project) =>
         // Exclude the projects that belong to the excluded pillars, if any are specified
-        !(excludedPillars && excludedPillars.includes(project.pillar)),
+        !excludedPillars?.includes(project.pillar),
     )
     .reduce((acc, project) => {
       if (!isUpToDateOnly || (isUpToDateOnly && getStats(project).latest.upToDate)) {
@@ -405,7 +405,7 @@ export function getPercentProductsWithinCDS({
   excludedPillars?: string[];
 }) {
   const percentPGProjectsUpToDate = totalProjectVersionsList
-    .filter((project) => !(excludedPillars && excludedPillars.includes(project.pillar)))
+    .filter((project) => !excludedPillars?.includes(project.pillar))
     .reduce(
       (count, entry) =>
         count +
@@ -419,7 +419,7 @@ export function getPercentProductsWithinCDS({
     .filter(
       (project) =>
         // Exclude the projects that belong to the excluded pillars, if any are specified
-        !(excludedPillars && excludedPillars.includes(project.pillar)),
+        !excludedPillars?.includes(project.pillar),
     )
     .reduce(
       (count, entry) =>

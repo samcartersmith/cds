@@ -1,5 +1,5 @@
 module.exports = {
-  extends: '../../.eslintrc.js',
+  extends: '../../.eslintrc.cjs',
   rules: {
     'no-console': 'off',
     'react/boolean-prop-naming': 'off',

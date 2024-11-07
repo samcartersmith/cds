@@ -1,25 +1,26 @@
 {
-  "extends": "../../tsconfig.buildOptions.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/web",
-    "rootDir": "./"
+    "sourceMap": false
   },
-  "include": ["**/*"],
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
-    "storybook-decorators/**/*.tsx",
-    "storybook-decorators/**/*.ts",
-    "dist",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.stories.ts",
-    "**/*.stories.tsx",
-    "jest.config.js",
-    "babel.config.js",
-    "babel.build.config.js"
+    "**/__stories__/**",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__fixtures__/**",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/*.spec.*"
   ],
   "references": [
     {
       "path": "../../packages/common"
+    },
+    {
+      "path": "../../packages/fonts"
     },
     {
       "path": "../../packages/icons"
@@ -32,9 +33,6 @@
     },
     {
       "path": "../../packages/utils"
-    },
-    {
-      "path": "../../packages/fonts"
     },
     {
       "path": "../../libs/web-utils"

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Link from '@docusaurus/Link';
-import { isActiveSidebarItem } from '@docusaurus/theme-common';
+import { isActiveSidebarItem } from '@docusaurus/theme-common/lib';
 import JSDocTag, { JSDocTagVariant } from '@theme/JSDocTag';
 import type { Expand, SpacingScale } from '@cbhq/cds-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';

@@ -136,14 +136,6 @@ build:
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
     - BaldurNode:
-        name: package-d3
-        path: ./packages/d3/publish.Dockerfile
-        autobuild_files:
-          - packages/d3/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
         name: package-eslint-plugin-cds
         path: ./packages/eslint-plugin-cds/publish.Dockerfile
         autobuild_files:

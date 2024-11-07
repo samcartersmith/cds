@@ -1,9 +1,9 @@
 import { Plugin } from '@docusaurus/types';
-import path from 'path';
+import path from 'node:path';
 
 const PLUGIN_ID = '@cbhq/docusaurus-theme';
 
-export default async function theme(): Promise<Plugin<void>> {
+export async function theme(): Promise<Plugin<void>> {
   return {
     name: PLUGIN_ID,
     getThemePath(): string {

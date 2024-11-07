@@ -11,7 +11,7 @@ import { RemoteImage } from '@cbhq/cds-web/media';
 import { Tooltip } from '@cbhq/cds-web/overlays';
 import { PressableOpacity } from '@cbhq/cds-web/system';
 import { TextBody, TextLabel1, TextTitle1, TextTitle2 } from '@cbhq/cds-web/typography';
-import Image from '@cbhq/docusaurus-theme/src/theme/Image';
+import Image from '@cbhq/docusaurus-theme/theme/Image';
 
 import { Content } from './Content';
 import { Rules } from './Rules';

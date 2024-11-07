@@ -6,15 +6,16 @@ import type {
   SidebarItemDoc as SidebarItemDocOriginal,
   SidebarItemHtml as SidebarItemHtmlOriginal,
   SidebarItemLink as SidebarItemLinkOriginal,
-} from '@docusaurus/plugin-content-docs/lib/sidebars/types';
-import { Options as PresetClassicOptions } from '@docusaurus/preset-classic/src/preset-classic';
+  // eslint-disable-next-line import/extensions
+} from '@docusaurus/plugin-content-docs/lib/sidebars/types.js';
+import { Options as PresetClassicOptions } from '@docusaurus/preset-classic';
 import type { SetOptional } from 'type-fest';
 import type { Expand } from '@cbhq/cds-common/types';
 import type {
   PluginOptions as KbarPluginOptions,
   SidebarItemCustomProps as KBarCustomProps,
 } from '@cbhq/docusaurus-plugin-kbar';
-import type { SidebarItemCustomProps as ThemeCustomProps } from '@cbhq/docusaurus-theme';
+import type { SidebarItemCustomProps as ThemeCustomProps } from '@cbhq/docusaurus-theme/theme/DocSidebarItem';
 
 export type PresetOptions = {
   theme?: undefined;

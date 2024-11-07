@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run fonts:typecheck:prod
 RUN yarn nx run fonts:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/fonts && npm pack
-RUN mv /repo/.nx/dist/packages/fonts /shared
+RUN cd /repo/packages/fonts && yarn pack
+RUN mv /repo/packages/fonts /shared
 
 WORKDIR /shared

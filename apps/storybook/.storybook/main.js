@@ -1,8 +1,9 @@
 // @ts-check
 const path = require('path');
+// @ts-ignore No types for webpack-bundle-analyzer
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const BABEL_OPTIONS = { configFile: true, rootMode: 'upward' };
+const BABEL_OPTIONS = { configFile: true };
 
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 
@@ -13,6 +14,10 @@ if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
  */
 const config = {
   framework: '@storybook/react', // required in v7
+  core: {
+    builder: 'webpack5',
+    disableTelemetry: true,
+  },
   stories: [
     path.resolve(__dirname, `../../../packages/web-visualization/**/*.stories.@(tsx|mdx)`),
     path.resolve(__dirname, `../../../packages/web/**/*.stories.@(tsx|mdx)`),
@@ -29,7 +34,11 @@ const config = {
   ],
   staticDirs: [
     {
-      from: '../../../packages/icons/fonts/web',
+      from: '../../../packages/fonts/src',
+      to: '@cbhq/cds-fonts',
+    },
+    {
+      from: '../../../packages/icons/src/fonts/web',
       to: '@cbhq/cds-icons/fonts/web',
     },
     {
@@ -61,9 +70,6 @@ const config = {
       to: '@cbhq/cds-illustrations/__generated__/spotSquare/svg',
     },
   ],
-  core: {
-    builder: 'webpack5',
-  },
   features: {
     /** Allows to disable deprecated implicit PostCSS loader. (will be removed in 7.0) */
     postcss: false,
@@ -78,7 +84,7 @@ const config = {
     const isProduction = configType === 'PRODUCTION';
 
     config.module?.rules?.forEach((rule) => {
-      if (rule === '...' || !(rule.test instanceof RegExp) || !Array.isArray(rule.use)) {
+      if (!rule || rule === '...' || !(rule.test instanceof RegExp) || !Array.isArray(rule.use)) {
         return;
       }
 
@@ -102,7 +108,7 @@ const config = {
         });
       }
 
-      // Update `babel-loader` options
+      // Update all `babel-loader` options
       for (const use of rule.use) {
         if (
           typeof use === 'object' &&
@@ -114,14 +120,27 @@ const config = {
       }
     });
     config.resolve = config.resolve || {};
+
+    config.resolve.exportsFields = [...(config.resolve.exportsFields ?? []), 'exports'];
+
     /**
-     * Compiler paths are not respected by storybook. So if any module alias is not working
-     * you need to module alias here.
-     **/
+     * These aliases are necessary to make ECMAScript Modules work with Storybook v6. In
+     * v7+ we should probably try to switch to a config similar to other webpack configs
+     * in this repo, where aliases are only applied in dev mode.
+     */
     config.resolve.alias = {
       ...config.resolve?.alias,
+      '@cbhq/cds-common': path.resolve(__dirname, '../../../packages/common/src'),
+      '@cbhq/cds-fonts': path.resolve(__dirname, '../../../packages/fonts/src'),
+      '@cbhq/cds-lottie-files': path.resolve(__dirname, '../../../packages/lottie-files/src'),
       '@cbhq/cds-icons': path.resolve(__dirname, '../../../packages/icons/src'),
       '@cbhq/cds-illustrations': path.resolve(__dirname, '../../../packages/illustrations/src'),
+      '@cbhq/cds-utils': path.resolve(__dirname, '../../../packages/utils/src'),
+      '@cbhq/cds-web': path.resolve(__dirname, '../../../packages/web/src'),
+      '@cbhq/cds-web-visualization': path.resolve(
+        __dirname,
+        '../../../packages/web-visualization/src',
+      ),
     };
 
     if (!config.plugins) config.plugins = [];

@@ -1,10 +1,13 @@
 {
   "name": "common",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/common",
+  "sourceRoot": "packages/common/src",
   "projectType": "library",
   "tags": [],
   "targets": {
+    "build": {
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },
@@ -18,35 +21,15 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
-    },
-    "export-package-version": {
-      "executor": "@cbhq/cds-tasks:export-package-version"
-    },
-    "build": {
-      "executor": "@cbhq/cds-tasks:build-package",
-      "outputs": [
-        "{workspaceRoot}/.nx/dist/packages/common"
-      ],
-      "options": {
-        "destinationDir": ".nx/dist/packages/common",
-        "staticFilesToIgnore": [
-          "jest.config.js",
-          "tsconfig.json",
-          "tsconfig.build.json",
-          "project.json"
-        ],
-        "babelConfig": "./babel.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx"
-        ],
-        "typescriptConfig": "packages/common/tsconfig.build.json"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
       }
     },
     "danger": {

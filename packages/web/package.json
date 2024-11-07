@@ -1,52 +1,169 @@
 {
   "name": "@cbhq/cds-web",
-  "version": "6.47.4",
+  "version": "7.0.0",
   "description": "Coinbase Design System - Web",
-  "repository": "git@github.cbhq.net:frontend/cds.git",
-  "keywords": [
-    "design system",
-    "component library",
-    "react",
-    "typescript"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/web"
+  },
+  "type": "module",
+  "main": "./esm/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./accordion": {
+      "types": "./dts/accordion/index.d.ts",
+      "default": "./esm/accordion/index.js"
+    },
+    "./animation": {
+      "types": "./dts/animation/index.d.ts",
+      "default": "./esm/animation/index.js"
+    },
+    "./buttons": {
+      "types": "./dts/buttons/index.d.ts",
+      "default": "./esm/buttons/index.js"
+    },
+    "./cards/ContentCard": {
+      "types": "./dts/cards/ContentCard/index.d.ts",
+      "default": "./esm/cards/ContentCard/index.js"
+    },
+    "./cards": {
+      "types": "./dts/cards/index.d.ts",
+      "default": "./esm/cards/index.js"
+    },
+    "./cells": {
+      "types": "./dts/cells/index.d.ts",
+      "default": "./esm/cells/index.js"
+    },
+    "./chips": {
+      "types": "./dts/chips/index.d.ts",
+      "default": "./esm/chips/index.js"
+    },
+    "./collapsible": {
+      "types": "./dts/collapsible/index.d.ts",
+      "default": "./esm/collapsible/index.js"
+    },
+    "./controls": {
+      "types": "./dts/controls/index.d.ts",
+      "default": "./esm/controls/index.js"
+    },
+    "./dots": {
+      "types": "./dts/dots/index.d.ts",
+      "default": "./esm/dots/index.js"
+    },
+    "./dropdown": {
+      "types": "./dts/dropdown/index.d.ts",
+      "default": "./esm/dropdown/index.js"
+    },
+    "./icons": {
+      "types": "./dts/icons/index.d.ts",
+      "default": "./esm/icons/index.js"
+    },
+    "./illustrations": {
+      "types": "./dts/illustrations/index.d.ts",
+      "default": "./esm/illustrations/index.js"
+    },
+    "./layout": {
+      "types": "./dts/layout/index.d.ts",
+      "default": "./esm/layout/index.js"
+    },
+    "./loaders": {
+      "types": "./dts/loaders/index.d.ts",
+      "default": "./esm/loaders/index.js"
+    },
+    "./media": {
+      "types": "./dts/media/index.d.ts",
+      "default": "./esm/media/index.js"
+    },
+    "./navigation": {
+      "types": "./dts/navigation/index.d.ts",
+      "default": "./esm/navigation/index.js"
+    },
+    "./overlays": {
+      "types": "./dts/overlays/index.d.ts",
+      "default": "./esm/overlays/index.js"
+    },
+    "./system": {
+      "types": "./dts/system/index.d.ts",
+      "default": "./esm/system/index.js"
+    },
+    "./tables": {
+      "types": "./dts/tables/index.d.ts",
+      "default": "./esm/tables/index.js"
+    },
+    "./tabs": {
+      "types": "./dts/tabs/index.d.ts",
+      "default": "./esm/tabs/index.js"
+    },
+    "./tour": {
+      "types": "./dts/tour/index.d.ts",
+      "default": "./esm/tour/index.js"
+    },
+    "./typography": {
+      "types": "./dts/typography/index.d.ts",
+      "default": "./esm/typography/index.js"
+    },
+    "./visualizations": {
+      "types": "./dts/visualizations/index.d.ts",
+      "default": "./esm/visualizations/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./esm/*.js"
+    }
+  },
   "sideEffects": [
     "*.css",
-    "globalStyles.js",
-    "styles/global.js"
+    "./esm/globalStyles.js",
+    "./esm/styles/global.js"
   ],
+  "files": [
+    "dts",
+    "esm",
+    "CHANGELOG"
+  ],
+  "peerDependencies": {
+    "framer-motion": "^10.18.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "dependencies": {
     "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-fonts": "workspace:^",
+    "@cbhq/cds-icons": "workspace:^",
+    "@cbhq/cds-illustrations": "workspace:^",
     "@cbhq/cds-lottie-files": "workspace:^",
     "@cbhq/cds-utils": "workspace:^",
-    "@cbhq/d3": "workspace:^",
     "@floating-ui/react-dom": "^2.1.1",
     "@popperjs/core": "^2.9.0",
     "@react-spring/web": "^9.7.4",
-    "d3-interpolate-path": "^2.2.2",
-    "d3-selection": "^1.4.2",
+    "d3-interpolate": "^3.0.1",
+    "d3-interpolate-path": "^2.3.0",
+    "d3-selection": "^3.0.0",
     "focus-visible": "^5.2.0",
+    "linaria": "^2.3.1",
     "lodash": "^4.17.21",
     "lottie-web": "^5.7.6",
     "react-popper": "^2.2.4",
     "react-use-measure": "^2"
   },
-  "peerDependencies": {
-    "@cbhq/cds-icons": ">=1.0.0",
-    "@cbhq/cds-illustrations": ">=2.1.0",
-    "framer-motion": "^10.18.0",
-    "react": "18.2.0",
-    "react-dom": "^18.2.0"
-  },
   "devDependencies": {
-    "@cbhq/cds-tasks": "workspace:^",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@cbhq/cds-web-utils": "workspace:^",
     "@cbhq/ui-scorecard": "workspace:^",
     "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
     "framer-motion": "^10.18.0",
-    "linaria": "^2.3.1",
-    "reassure": "^1.2.1"
-  },
-  "main": "index",
-  "typings": "index.d.ts"
+    "glob": "^10.3.10",
+    "zx": "^8.1.9"
+  }
 }

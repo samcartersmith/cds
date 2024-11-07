@@ -1,57 +1,50 @@
 {
   "name": "@cbhq/cds-icons",
-  "version": "2.18.0",
+  "version": "3.0.0",
   "description": "CDS icons",
-  "sideEffects": [
-    "*.css"
-  ],
-  "keywords": [
-    "cds",
-    "icons"
-  ],
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:frontend/cds.git",
-    "directory": "packages/cds-icons"
+    "directory": "packages/icons"
   },
-  "packemon": {
-    "format": "lib",
-    "platform": "node"
+  "type": "module",
+  "main": "./esm/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./fonts/web/icon-font.css": {
+      "default": "./esm/fonts/web/icon-font.css"
+    },
+    "./fonts/web/*.woff2": {
+      "default": "./esm/fonts/web/*.woff2"
+    },
+    "./fonts/native/CoinbaseIcons.ttf": {
+      "default": "./esm/fonts/native/CoinbaseIcons.ttf"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./esm/*.js"
+    }
   },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dts",
+    "esm",
+    "CHANGELOG"
+  ],
   "devDependencies": {
-    "@cbhq/cds-tasks": "workspace:^",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@cbhq/figma-tasks": "workspace:^",
     "@cbhq/script-utils": "workspace:^",
     "chalk": "^4.1.2"
-  },
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    "./fonts/web/icon-font.css": {
-      "default": "./fonts/web/icon-font.css"
-    },
-    "./fonts/web/*.woff2": {
-      "default": "./fonts/web/*.woff2"
-    },
-    "./fonts/native/CoinbaseIcons.ttf": {
-      "default": "./fonts/native/CoinbaseIcons.ttf"
-    },
-    "./*": {
-      "types": "./lib/*.d.ts",
-      "node": {
-        "types": "./lib/*.d.ts",
-        "default": "./lib/*.js"
-      },
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./lib/index.d.ts",
-      "node": {
-        "types": "./lib/index.d.ts",
-        "default": "./lib/index.js"
-      },
-      "default": "./lib/index.js"
-    }
   }
 }

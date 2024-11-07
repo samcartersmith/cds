@@ -153,7 +153,6 @@ export class CBGPTClient {
 
     const response = await fetch(`https://${uri}`, request);
     const isJson = response.headers.get('content-type') === 'application/json';
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const result = await (isJson ? response.json() : response.text());
     console.log({
       uri,
@@ -164,7 +163,6 @@ export class CBGPTClient {
           Authorization: `${request.headers?.Authorization.substring(0, 27)}...`,
         },
       },
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       response: result,
     });
     return result as T;

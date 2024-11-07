@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import * as ts from 'typescript';
 
 import { createAstSourceFile } from '../utils/createAstSourceFile';

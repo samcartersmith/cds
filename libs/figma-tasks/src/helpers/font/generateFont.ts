@@ -33,7 +33,6 @@ export async function generateFont({
 }: GenerateFontParams) {
   const formats = generatedFontFormats.map((item) => item.generatedFontFormat);
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const generatedFont = (await webfont({
     centerHorizontally: true,
     files: sourceSvgsGlob,

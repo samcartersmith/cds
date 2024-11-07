@@ -1,15 +1,13 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/packages/ui-mobile-visreg"
+    "declarationDir": "dts",
+    "rootDir": "src"
   },
   "include": [
-    "**/*"
+    "src/**/*"
   ],
-  "exclude": [
-    "dts",
-    "lib"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../packages/mobile"

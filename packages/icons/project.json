@@ -4,15 +4,26 @@
   "sourceRoot": "packages/icons/src",
   "projectType": "library",
   "targets": {
-    "export-package-version": {
-      "executor": "@cbhq/cds-tasks:export-package-version"
-    },
     "build": {
-      "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": [
-        "{projectRoot}/assets",
-        "{projectRoot}/lib"
-      ]
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
+    },
+    "typecheck2": {
+      "command": "tsc --build ./tsconfig.build.json --pretty --verbose",
+      "options": {
+        "cwd": "packages/icons"
+      }
     },
     "mobile-build": {
       "executor": "nx:run-commands",
@@ -43,25 +54,25 @@
         "generatedFontFormats": [
           {
             "generatedFontFormat": "woff2",
-            "generatedFontDirectory": "./fonts/web",
-            "generatedCssDirectory": "./fonts/web",
+            "generatedFontDirectory": "./src/fonts/web",
+            "generatedCssDirectory": "./src/fonts/web",
             "generatedCssFileName": "icon-font",
             "hashed": true
           },
           {
             "generatedFontFormat": "ttf",
-            "generatedFontDirectory": "./fonts/native"
+            "generatedFontDirectory": "./src/fonts/native"
           }
         ]
       }
     },
     "generate-stories": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      "command": "tsx ./scripts/generateStories.ts",
       "dependsOn": [
         "^build"
       ],
       "options": {
-        "script": "./scripts/generateStories.ts"
+        "cwd": "packages/icons"
       }
     },
     "release": {
@@ -76,19 +87,6 @@
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"
-    },
-    "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
-    },
-    "watch": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "packages/icons",
-        "commands": [
-          "nx run figma-tasks:watch",
-          "packemon watch --quiet --loadConfigs"
-        ]
-      }
     }
   }
 }

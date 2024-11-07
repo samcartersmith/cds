@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { TSESLint } from '@typescript-eslint/utils';
 
 import { controlHasAssociatedLabelExtended } from './rules/control-has-associated-label-extended';

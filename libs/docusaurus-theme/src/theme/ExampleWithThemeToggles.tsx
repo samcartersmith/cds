@@ -1,10 +1,10 @@
-import React, { memo, ReactNode } from 'react';
+import React, { memo } from 'react';
 import ThemeToggles from '@theme/ThemeToggles';
 import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 
 type ExampleWithThemeTogglesProps = {
-  children?: ReactNode;
+  children?: React.ReactNode;
 };
 
 const ExampleWithThemeToggles = memo(

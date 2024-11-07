@@ -1,6 +1,0 @@
-version: '3'
-services:
-  app:
-    build:
-      context: ../../
-      dockerfile: packages/d3/publish.Dockerfile

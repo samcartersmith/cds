@@ -3,46 +3,45 @@
   "version": "0.0.0",
   "private": true,
   "description": "Docusaurus plugin for command bar",
-  "keywords": [
-    "docusaurus",
-    "plugin",
-    "command bar"
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "libs/docusaurus-plugin-kbar"
+  },
+  "type": "commonjs",
+  "main": "./cjs/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./cjs/*.js"
+    }
+  },
+  "files": [
+    "cjs",
+    "dts",
+    "CHANGELOG"
   ],
-  "repository": "git@github.cbhq.net:frontend/cds.git",
+  "peerDependencies": {
+    "@cbhq/cds-common": "workspace:^"
+  },
   "dependencies": {
-    "@docusaurus/logger": "^2.0.0-beta.20",
+    "@docusaurus/logger": "2.0.0-beta.20",
     "@docusaurus/plugin-content-docs": "2.0.0-beta.18",
     "@docusaurus/types": "2.0.0-beta.18",
     "kbar": "^0.1.0-beta.35",
     "lodash": "^4.17.21",
     "type-fest": "^2.19.0"
   },
-  "peerDependencies": {
-    "@cbhq/cds-common": "workspace:^"
-  },
-  "packemon": {
-    "format": "lib",
-    "platform": "node"
-  },
-  "types": "./lib/index.d.ts",
-  "main": "./lib/index.js",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./lib/*.d.ts",
-      "node": {
-        "types": "./lib/*.d.ts",
-        "default": "./lib/*.js"
-      },
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./lib/index.d.ts",
-      "node": {
-        "types": "./lib/index.d.ts",
-        "default": "./lib/index.js"
-      },
-      "default": "./lib/index.js"
-    }
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6"
   }
 }

@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import { Except, TsConfigJson } from 'type-fest';
 
 function removeTrailingSlashAndWildcard(str: string) {

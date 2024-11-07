@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/triple-slash-reference */
+/// <reference types="@cbhq/docusaurus-theme/types" />
+/// <reference types="@cbhq/docusaurus-plugin-docgen/module-declarations" />
+
 /* 
   You can embed MDX documents in other documents. 
   This is also known as transclusion.

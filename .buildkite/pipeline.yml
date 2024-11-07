@@ -109,11 +109,11 @@ steps:
       - yarn mono-pipeline validate-codeflow
       - yarn mono-pipeline validate-codeowners
       - yarn mono-pipeline validate-lockfile
-      - yarn mono-pipeline validate-versioned --projectsWithNoSrcFolder='web,mobile,common'
       - yarn mono-pipeline validate-package-jsons
       - yarn mono-pipeline validate-patches
-      - yarn nx run cds-tasks:validate-cds-versions
-      - yarn nx run cds-tasks:validate-website-changelog-updates
+      - yarn mono-pipeline validate-versioned
+      - yarn tsx ./tools/validateCDSVersions.ts
+      - yarn tsx ./tools/validateWebsiteChangelogUpdates.ts
       - yarn constraints || exit 1
 
   - label: Build
@@ -157,28 +157,27 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci danger --allOnMaster --removePreviousComments
 
-  - label: 'Percy (Web - All)'
+  - label: 'Visreg (Web - All)'
     <<: *k8s_large_chrome
     if: build.branch == 'master' || build.pull_request.labels includes 'visreg'
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-percy storybook && yarn nx affected --target=a11y-web
+      - yarn mono-pipeline run-percy storybook
     retry:
       automatic:
         limit: 1
 
-  - label: 'Percy (Web - Affected)'
+  - label: 'Visreg (Web - Affected)'
     <<: *k8s_large_chrome
     if: build.branch != 'master' && !(build.pull_request.labels	includes 'visreg')
     commands:
       - tools/ci/setup.sh
       - (yarn workspace @cds/storybook should-run-visreg && yarn mono-pipeline run-percy storybook) || echo 'Skipping Percy (Web)'
-      - yarn nx affected --target=a11y-web
     retry:
       automatic:
         limit: 1
 
-  - label: 'Percy (Mobile - All)'
+  - label: 'Visreg (Mobile - All)'
     <<: *k8s_medium
     if: build.branch == 'master' || build.pull_request.labels includes 'visreg'
     env:
@@ -187,14 +186,23 @@ steps:
       - tools/ci/setup.sh
       - yarn mono-pipeline run-ci other --targets=visreg --allOnMaster
 
-  - label: 'Percy (Mobile - Affected)'
+  - label: 'Visreg (Mobile - Affected)'
     <<: *k8s_medium
     if: build.branch != 'master' && !(build.pull_request.labels	includes 'visreg')
     commands:
       - tools/ci/setup.sh
       - (yarn workspace mobile-app should-run-visreg && yarn mono-pipeline run-ci other --targets=visreg --allOnMaster) || echo 'Skipping Percy (Mobile)'
 
-  - label: 'Storybook E2E Test'
+  - label: 'Storybook A11y'
+    <<: *k8s_medium_chrome
+    commands:
+      - tools/ci/setup.sh
+      - yarn nx affected --target=a11y-web
+    retry:
+      automatic:
+        limit: 1
+
+  - label: 'Storybook E2E'
     <<: *k8s_medium_chrome
     commands:
       - tools/ci/setup.sh

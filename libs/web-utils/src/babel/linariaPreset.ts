@@ -1,48 +1,27 @@
 import type { ConfigAPI, TransformOptions } from '@babel/core';
-import linariaBabelPreset from 'linaria/babel';
-import path from 'path';
-import { argv } from 'yargs';
+import linariaBabelPreset, { type PluginOptions } from 'linaria/babel';
 
-import { linariaCssExtractPlugin } from './linariaCssExtractPlugin';
+import { type ExtractConfigOptions, linariaCssExtractPlugin } from './linariaCssExtractPlugin';
 
-type ArgvSync = {
-  [x: string]: unknown;
-  _: (string | number)[];
-  $0: string;
+type PresetOptions = ExtractConfigOptions & {
+  linariaOptions?: PluginOptions;
 };
 
+/**
+ * This babel preset combines the default linaria/babel preset with a custom babel plugin.
+ * The plugin is used to extract Linaria styles into static .css files via the Linaria
+ * metadata in babel.
+ */
 export default function linariaPreset(
   babel: ConfigAPI,
-  options: Record<string, unknown>,
-  cwd: string,
+  { sourceDir, outputDir, linariaOptions = {} }: PresetOptions,
 ): TransformOptions {
-  if (Object.prototype.hasOwnProperty.call(argv, 'then')) {
-    throw Error('linariaPreset argv must not be async');
-  }
+  const preset = linariaBabelPreset(babel, linariaOptions);
 
-  const argvSync = argv as ArgvSync;
+  const customLinariaExtractPlugin = [linariaCssExtractPlugin, { sourceDir, outputDir }];
 
-  // If we're not building a package, we can skip the extraction plugin
-  if (!argvSync._[0]) {
-    return {};
-  }
-
-  const preset = linariaBabelPreset(babel, options, cwd);
-  const linariaPlugin = [
-    linariaCssExtractPlugin,
-    {
-      // bazel-out/darwin-fastbuild/bin/eng/shared/design-system/<package>/lib
-      outDir: argvSync.outDir,
-      // /private/var/tmp/<hash>/sandbox/darwin-sandbox/execroot/coinbazel/eng/shared/design-system/<package>
-      sandboxDir: path.join(cwd, path.basename(String(argvSync._[0]))),
-    },
-  ];
-
-  if (preset.plugins) {
-    preset.plugins.push(linariaPlugin);
-  } else {
-    preset.plugins = [linariaPlugin];
-  }
+  if (preset.plugins) preset.plugins.push(customLinariaExtractPlugin);
+  else preset.plugins = [customLinariaExtractPlugin];
 
   return preset;
 }

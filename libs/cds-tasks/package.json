@@ -1,43 +1,22 @@
 {
   "name": "@cbhq/cds-tasks",
   "version": "0.0.0",
-  "description": "CDS Nx executors and tasks",
+  "description": "CDS tasks",
   "private": true,
-  "keywords": [],
-  "executors": "./executor.json",
-  "packemon": {
-    "format": "lib",
-    "platform": "node",
-    "externals": [
-      "@nrwl/devkit"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "libs/cds-tasks"
   },
+  "type": "module",
+  "files": [
+    "CHANGELOG"
+  ],
   "dependencies": {
     "chalk": "^4.1.2",
     "execa": "^5.1.1",
     "fast-glob": "^3.2.11",
     "lodash": "^4.17.21",
     "ts-morph": "^19.0.0"
-  },
-  "types": "./lib/index.d.ts",
-  "main": "./lib/index.js",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./lib/*.d.ts",
-      "node": {
-        "types": "./lib/*.d.ts",
-        "default": "./lib/*.js"
-      },
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./lib/index.d.ts",
-      "node": {
-        "types": "./lib/index.d.ts",
-        "default": "./lib/index.js"
-      },
-      "default": "./lib/index.js"
-    }
   }
 }

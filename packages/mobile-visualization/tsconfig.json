@@ -1,30 +1,25 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/packages/mobile-visualization",
+    "declarationDir": "dts",
     "rootDir": "src"
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
-  "exclude": [
-    "dist",
-    "jest.config.js",
-    "babel.config.js",
-    "babel.build.config.js"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../packages/common"
     },
     {
-      "path": "../../packages/utils"
+      "path": "../../packages/lottie-files"
     },
     {
       "path": "../../packages/mobile"
     },
     {
-      "path": "../../packages/lottie-files"
+      "path": "../../packages/utils"
     }
   ]
 }

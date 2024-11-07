@@ -54,7 +54,7 @@ const createVarDetail = (varType: VarType, varValue: string): CompletionItem['de
     case 'color': {
       // TO DO: We should include BOTH the spectrum name value `--blue20` AND the converted value
       // Replaces `var(rgba(--blue20,0.2))` with `rgba(115, 162, 255, 0.2)`
-      if (!varValue.includes('var(' || !varValue.startsWith('rgb'))) return varValue;
+      if (!varValue.includes('var(') || !varValue.startsWith('rgb')) return varValue;
       const colorText = varValue.match(/rgba?\((.*)\)/)?.[1];
       if (!colorText) throw new Error(`Invalid color value: ${varValue}`);
       const [cssVarText, alpha] = colorText.split(',');

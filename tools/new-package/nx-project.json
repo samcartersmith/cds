@@ -1,26 +1,18 @@
 {
   "name": "{{NEW_PACKAGE}}",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/{{NEW_PACKAGE}}",
+  "sourceRoot": "packages/{{NEW_PACKAGE}}/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "command": "rm -rf esm lib dts && tsc && rollup -c",
-      "dependsOn": [
-        "^build"
-      ],
+      "command": "rm -rf esm lib && rollup -c",
       "options": {
-        "cwd": "packages/{{NEW_PACKAGE}}",
-        "color": true
+        "cwd": "packages/{{NEW_PACKAGE}}"
       }
     },
     "typecheck": {
-      "command": "tsc",
-      "options": {
-        "cwd": "packages/{{NEW_PACKAGE}}",
-        "color": true
-      }
+      "command": "tsc --build --pretty --verbose"
     }
   }
 }

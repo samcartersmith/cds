@@ -1,18 +1,13 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/libs/codegen",
-    "rootDir": "./"
+    "declarationDir": "dts",
+    "rootDir": "src"
   },
   "include": [
-    "**/*"
+    "src/**/*"
   ],
-  "exclude": [
-    "dist",
-    "jest.config.js",
-    "babel.config.js",
-    "babel.build.config.js"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../packages/common"
@@ -23,12 +18,5 @@
     {
       "path": "../../packages/utils"
     }
-  ],
-  "ts-node": {
-    "transpileOnly": true,
-    "files": true,
-    "require": [
-      "tsconfig-paths/register"
-    ]
-  }
+  ]
 }

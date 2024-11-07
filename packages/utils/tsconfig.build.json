@@ -1,9 +1,19 @@
 {
-  "extends": "../../tsconfig.buildOptions.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/utils",
-    "rootDir": "./"
+    "sourceMap": false
   },
-  "include": ["**/*"],
-  "exclude": ["**/*.test.*"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/__stories__/**",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__fixtures__/**",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/*.spec.*"
+  ],
+  "references": []
 }

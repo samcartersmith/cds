@@ -1,8 +1,10 @@
 // @ts-check
+const isTestEnv = process.env.NODE_ENV === 'test';
+
 /** @type {import('@babel/core').TransformOptions} */
 module.exports = {
   presets: [
-    '@babel/preset-env',
+    ['@babel/preset-env', { modules: 'commonjs' }],
     [
       '@babel/preset-react',
       {
@@ -12,4 +14,4 @@ module.exports = {
     '@babel/preset-typescript',
     '@linaria/babel-preset',
   ],
-}
+};

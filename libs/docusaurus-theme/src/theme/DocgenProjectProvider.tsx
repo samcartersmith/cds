@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useMemo, useState } from 'react';
-import { useTabGroupChoice } from '@docusaurus/theme-common';
+import { useTabGroupChoice } from '@docusaurus/theme-common/lib';
 import type { DocgenProjectProviderProps } from '@theme/DocgenProjectProvider';
 import useDocgenPluginData from '@theme/useDocgenPluginData';
 import type { DocgenProjectMetadata } from '@cbhq/docusaurus-plugin-docgen';

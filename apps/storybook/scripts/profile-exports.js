@@ -11,7 +11,7 @@ const isDiffReport = process.env.PROFILE_EXPORTS_DIFF === 'true';
 
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 
-if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT was undefined');
+if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
 
 const FORK_FILE = path.resolve(__dirname, 'profile-export.js');
 
@@ -157,7 +157,6 @@ const WEB_EXPORTS = [
   './utils/overflow',
   './utils/palette',
   './utils/storybook',
-  './utils/storybookParams/percy',
   './utils/types',
   './version',
   './visualizations',

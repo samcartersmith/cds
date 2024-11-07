@@ -4,7 +4,7 @@ import { CMSProvider, ComponentMapValue } from '@cb/cms';
 import { Expand } from '@cbhq/cds-web';
 import { Divider } from '@cbhq/cds-web/layout/Divider';
 import { Group } from '@cbhq/cds-web/layout/Group';
-import { TOKENS } from '@cbhq/docusaurus-theme/src/theme/tokens';
+import { TOKENS } from '@cbhq/docusaurus-theme/theme/tokens';
 
 import { useComposePage } from '../../useComposePage';
 import { useContentfulConfig } from '../../useContentfulConfig';

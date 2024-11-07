@@ -1,11 +1,20 @@
 {
-  "extends": "../../tsconfig.buildOptions.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/lottie-files",
-    "rootDir": "./"
+    "sourceMap": false
   },
-  "include": ["**/*"],
-  "exclude": ["dist", "**/*.test.ts", "**/*.test.tsx", "jest.config.js"],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/__stories__/**",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__fixtures__/**",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/*.spec.*"
+  ],
   "references": [
     {
       "path": "../../packages/utils"

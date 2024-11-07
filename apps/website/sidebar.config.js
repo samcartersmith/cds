@@ -1164,7 +1164,6 @@ const sidebars = {
           items: [
             { type: 'doc', id: 'changelog/cds-migrator', label: '@cbhq/cds-migrator' },
             { type: 'doc', id: 'changelog/common', label: '@cbhq/cds-common' },
-            { type: 'doc', id: 'changelog/d3', label: '@cbhq/d3' },
             {
               type: 'doc',
               id: 'changelog/docusaurus-plugin-kbar',
@@ -1247,6 +1246,22 @@ const sidebars = {
         },
         'cds/live-playground',
         'cds/markdown-converter',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Blog',
+      customProps: {
+        kbar: {
+          tag: 'new',
+        },
+      },
+      items: [
+        {
+          type: 'link',
+          label: 'CDS v7.0.0 🎉',
+          href: '/blog/cds-v7', // Ensure this matches the slug of your blog post
+        },
       ],
     },
   ],

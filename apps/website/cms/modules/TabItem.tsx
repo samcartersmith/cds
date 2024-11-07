@@ -3,7 +3,7 @@ import TabItemOriginal from '@theme-original/TabItem';
 import { Entry } from 'contentful';
 import { CMSContent } from '@cb/cms';
 import { SpacingScale } from '@cbhq/cds-common';
-import slugify from '@cbhq/docusaurus-theme/src/utils/slugify';
+import slugify from '@cbhq/docusaurus-theme/utils/slugify';
 
 import { Section } from '../components/Section';
 

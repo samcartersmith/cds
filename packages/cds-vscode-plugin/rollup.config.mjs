@@ -7,8 +7,6 @@ import path from 'node:path';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
-const getExternals = (obj = {}) => Object.keys(obj).map((key) => new RegExp(key));
-
 export default {
   input: ['./src/client.ts', './src/server.ts'],
   external: [
@@ -21,13 +19,11 @@ export default {
     // ...getExternals(pkg.peerDependencies),
     // ...getExternals(pkg.devDependencies),
   ],
-  output: [
-    {
-      format: 'cjs',
-      entryFileNames: '[name].js',
-      dir: path.dirname(pkg.main),
-    },
-  ],
+  output: {
+    format: 'cjs',
+    entryFileNames: '[name].js',
+    dir: path.dirname(pkg.main),
+  },
   plugins: [
     resolve({
       // Make .js/.jsx resolve to .ts/.tsx similar to TypeScript

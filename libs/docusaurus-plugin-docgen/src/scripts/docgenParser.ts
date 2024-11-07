@@ -2,7 +2,7 @@ import { withCustomConfig } from 'react-docgen-typescript';
 import mapValues from 'lodash/mapValues';
 import omit from 'lodash/omit';
 import orderBy from 'lodash/orderBy';
-import path from 'path';
+import path from 'node:path';
 
 import type {
   Doc,

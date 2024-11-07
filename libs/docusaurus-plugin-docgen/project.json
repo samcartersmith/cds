@@ -4,27 +4,13 @@
   "sourceRoot": "libs/docusaurus-plugin-docgen/src",
   "projectType": "library",
   "targets": {
-    "watch": {
-      "executor": "nx:run-commands",
-      "dependsOn": [
-        "build"
-      ],
-      "options": {
-        "cwd": "libs/docusaurus-plugin-docgen",
-        "command": "packemon watch --quiet --loadConfigs"
-      }
-    },
     "build": {
-      "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": [
-        "{projectRoot}/assets",
-        "{projectRoot}/lib"
-      ]
+      "command": "rm -rf cjs && babel ./src --out-dir cjs --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
     "debug": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      "command": "tsx ./src/scripts/debug.ts",
       "options": {
-        "script": "./src/scripts/debug.ts"
+        "cwd": "libs/docusaurus-plugin-docgen"
       }
     },
     "format": {
@@ -37,7 +23,16 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
     }
   }
 }

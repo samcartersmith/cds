@@ -1,36 +1,32 @@
 {
-  "extends": "../../tsconfig.buildOptions.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/web-visualization",
-    "rootDir": "src"
+    "sourceMap": false
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
-    "storybook-decorators/**/*.tsx",
-    "storybook-decorators/**/*.ts",
-    "dist",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.stories.ts",
-    "**/*.stories.tsx",
-    "jest.config.js",
-    "babel.config.js",
-    "babel.build.config.js"
+    "**/__stories__/**",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__fixtures__/**",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/*.spec.*"
   ],
   "references": [
     {
       "path": "../../packages/common"
     },
     {
-      "path": "../../packages/web"
+      "path": "../../packages/lottie-files"
     },
     {
       "path": "../../packages/utils"
     },
     {
-      "path": "../../packages/lottie-files"
+      "path": "../../packages/web"
     }
   ]
 }

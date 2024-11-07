@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run illustrations:typecheck:prod
 RUN yarn nx run illustrations:build
 
 # Prepare the package for publish
-RUN cd packages/illustrations && yarn pack 
+RUN cd /repo/packages/illustrations && yarn pack 
 RUN mv /repo/packages/illustrations /shared
 
 WORKDIR /shared

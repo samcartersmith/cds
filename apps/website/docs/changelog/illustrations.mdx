@@ -8,6 +8,18 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.0.0 (11/7/2024 PST)
+
+#### 💥 Breaking
+
+- Release CDS v7. [Read more here](https://cds.cbhq.net/blog/cds-v7) [[#3389](https://github.cbhq.net/frontend/cds/pull/3389)]
+
+## 4.0.0-rc.0 (11/4/2024 PST)
+
+#### 💥 Breaking
+
+- Release CDS v7 rc 0. [[#3360](https://github.cbhq.net/frontend/cds/pull/3360)]
+
 ## 3.17.0 (10/25/2024 PST)
 
 #### 🚀 Updates

@@ -19,8 +19,9 @@ export default async function plugin(
         ...DEFAULT_OPTIONS,
         ...docs,
       });
-      const loadedContent = await docsPluginInstance.loadContent();
-      const currentVersion = loadedContent.loadedVersions[0];
+      const loadedContent = await docsPluginInstance.loadContent?.();
+      const currentVersion = loadedContent?.loadedVersions[0];
+      if (!currentVersion) throw Error('Missing currentVersion');
       return { actions: getKBarActions(currentVersion) };
     },
     async contentLoaded({ content, actions }): Promise<void> {

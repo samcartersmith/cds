@@ -5,8 +5,17 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "dev": {
+      "command": "start-storybook"
+    },
     "start": {
-      "executor": "@cbhq/mono-tasks:start-storybook"
+      "command": "start-storybook"
+    },
+    "build": {
+      "command": "build-storybook --output-dir dist",
+      "outputs": [
+        "{workspaceRoot}/{projectRoot}/dist"
+      ]
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -18,103 +27,92 @@
       "executor": "@cbhq/mono-tasks:lint-styles"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
-    },
-    "build": {
-      "executor": "@cbhq/mono-tasks:build-storybook",
-      "outputs": [
-        "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
-      ]
+      "command": "tsc --build --pretty --verbose"
     },
     "analyze": {
-      "executor": "@cbhq/mono-tasks:build-storybook",
+      "command": "build-storybook --output-dir dist",
       "env": {
         "ANALYZE": true
       }
     },
     "build-for-analyze": {
-      "executor": "@cbhq/mono-tasks:build-storybook",
+      "command": "build-storybook --output-dir dist",
       "outputs": [
-        "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
+        "{workspaceRoot}/{projectRoot}/dist"
       ],
       "env": {
         "ANALYZE": true,
         "ANALYZE_MODE_JSON": true
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/storybook"
       }
     },
     "build-for-tests": {
-      "executor": "@cbhq/mono-tasks:build-storybook",
+      "command": "build-storybook --output-dir dist",
       "dependsOn": [
         "^build"
       ],
-      "inputs": [
-        "production",
-        "^production"
-      ],
-      "outputs": [
-        "{workspaceRoot}/.nx/outs/projects/{projectRoot}/storybook"
-      ]
+      "options": {
+        "cwd": "apps/storybook"
+      }
     },
     "a11y-web": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./scripts/run-a11y-tests.ts"
-      },
+      "command": "tsx ./scripts/run-a11y-tests.ts",
       "dependsOn": [
         "build-for-tests"
-      ]
+      ],
+      "options": {
+        "cwd": "apps/storybook"
+      }
     },
     "percy": {
-      "executor": "@cbhq/mono-tasks:run-percy",
+      "command": "tsx ./scripts/run-percy.ts",
       "dependsOn": [
         "build-for-tests"
-      ]
+      ],
+      "options": {
+        "cwd": "apps/storybook"
+      }
     },
     "serve-storybook": {
-      "executor": "nx:run-commands",
-      "cwd": "apps/storybook",
+      "command": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npx http-server /workdir/apps/storybook/dist --port 6006 --silent\" \"wait-on tcp:6006 && yarn workspace @cds/storybook test-storybook --index-json\"",
       "options": {
-        "commands": [
-          "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npx http-server /workdir/.nx/outs/projects/apps/storybook/storybook --port 6006 --silent\" \"wait-on tcp:6006 && yarn workspace @cds/storybook test-storybook --index-json\""
-        ]
+        "cwd": "apps/storybook"
       }
     },
     "storybook-e2e-test": {
-      "executor": "nx:run-commands",
-      "cwd": "apps/storybook",
-      "parallel": false,
-      "options": {
-        "commands": [
-          "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"nx run storybook:build && npx http-server /workdir/.nx/outs/projects/apps/storybook/storybook --port 6006 --silent\" \"wait-on tcp:6006 && yarn workspace @cds/storybook test-storybook --index-json\""
-        ]
-      },
+      "command": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"nx run storybook:build && npx http-server /workdir/apps/storybook/dist --port 6006 --silent\" \"wait-on tcp:6006 && yarn workspace @cds/storybook test-storybook --index-json\"",
       "dependsOn": [
         "build-for-tests"
-      ]
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "options": {
+        "cwd": "apps/storybook"
+      }
     },
     "analyze-bundle": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./scripts/analyze-bundle.ts"
-      },
+      "command": "tsx ./scripts/analyze-bundle.ts",
       "dependsOn": [
         "build-for-analyze"
-      ]
-    },
-    "test-artifact": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      ],
       "options": {
-        "script": "./scripts/test-artifact.ts"
+        "cwd": "apps/storybook"
       }
     },
     "profile-exports": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "options": {
-        "script": "./scripts/profile-exports.js"
-      },
+      "command": "tsx ./scripts/profile-exports.js",
       "dependsOn": [
         "^build"
-      ]
+      ],
+      "options": {
+        "cwd": "apps/storybook"
+      }
     }
   }
 }

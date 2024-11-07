@@ -8,53 +8,92 @@
     "url": "git@github.cbhq.net:frontend/cds.git",
     "directory": "libs/script-utils"
   },
-  "keywords": [
-    "script",
-    "bot",
-    "automation",
-    "utils"
-  ],
-  "packemon": [
-    {
-      "format": "lib",
-      "platform": "node"
+  "type": "commonjs",
+  "main": "./cjs/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./cjs/index.js"
     },
-    {
-      "format": "mjs",
-      "platform": "node"
+    "./bot/git": {
+      "types": "./dts/bot/git/index.d.ts",
+      "default": "./cjs/bot/git/index.js"
+    },
+    "./bot": {
+      "types": "./dts/bot/index.d.ts",
+      "default": "./cjs/bot/index.js"
+    },
+    "./bot/octokit": {
+      "types": "./dts/bot/octokit/index.d.ts",
+      "default": "./cjs/bot/octokit/index.js"
+    },
+    "./bot/repo": {
+      "types": "./dts/bot/repo/index.d.ts",
+      "default": "./cjs/bot/repo/index.js"
+    },
+    "./filter": {
+      "types": "./dts/filter/index.d.ts",
+      "default": "./cjs/filter/index.js"
+    },
+    "./format": {
+      "types": "./dts/format/index.d.ts",
+      "default": "./cjs/format/index.js"
+    },
+    "./fs": {
+      "types": "./dts/fs/index.d.ts",
+      "default": "./cjs/fs/index.js"
+    },
+    "./node": {
+      "types": "./dts/node/index.d.ts",
+      "default": "./cjs/node/index.js"
+    },
+    "./object": {
+      "types": "./dts/object/index.d.ts",
+      "default": "./cjs/object/index.js"
+    },
+    "./path": {
+      "types": "./dts/path/index.d.ts",
+      "default": "./cjs/path/index.js"
+    },
+    "./sort": {
+      "types": "./dts/sort/index.d.ts",
+      "default": "./cjs/sort/index.js"
+    },
+    "./tagged-templates": {
+      "types": "./dts/tagged-templates/index.d.ts",
+      "default": "./cjs/tagged-templates/index.js"
+    },
+    "./transform": {
+      "types": "./dts/transform/index.d.ts",
+      "default": "./cjs/transform/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./cjs/*.js"
     }
+  },
+  "sideEffects": false,
+  "files": [
+    "cjs",
+    "dts",
+    "CHANGELOG"
   ],
   "dependencies": {
     "@cb/config-service-node": "^3.4.0",
     "@cbhq/eslint-plugin": "^1.40.1",
-    "@cbhq/mono-tasks": "^0.10.1",
-    "glob": "^10.3.10",
+    "@cbhq/mono-tasks": "^1.15.0",
     "octokit": "^3.0.0",
     "prettier": "^2.8.3",
     "type-fest": "^2.19.0",
-    "winston": "^3.10.0"
+    "winston": "^3.14.2"
   },
-  "types": "./mjs/index.d.ts",
-  "main": "./mjs/index.mjs",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./lib/*.d.ts",
-      "node": {
-        "types": "./mjs/*.d.ts",
-        "import": "./mjs/*.mjs",
-        "default": "./lib/*.js"
-      },
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./lib/index.d.ts",
-      "node": {
-        "types": "./mjs/index.d.ts",
-        "import": "./mjs/index.mjs",
-        "default": "./lib/index.js"
-      },
-      "default": "./lib/index.js"
-    }
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/prettier": "^2.7.3"
   }
 }

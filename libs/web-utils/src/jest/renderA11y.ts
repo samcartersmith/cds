@@ -31,6 +31,5 @@ export async function renderA11y(
   const results = await runAxe(view.container, options);
 
   // @types/jest-axe uses v3 axe types, while axe-core/jest-axe is v4.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-return
   return results as any;
 }

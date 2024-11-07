@@ -119,7 +119,6 @@ export type ThemeCSSVarsUntyped = {
         // If Var is a key of styleVarPrefixes we need to add the prefix to the CSS var name.
 
         [VarValue in keyof (typeof vars)[Var] as `--${(typeof styleVarPrefixes)[Var]}-${VarValue &
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           string}`]: any;
       }
     : {

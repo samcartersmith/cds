@@ -9,7 +9,11 @@ import React, {
   useState,
 } from 'react';
 import { useHistory, useLocation } from '@docusaurus/router';
-import { duplicates, useScrollPositionBlocker, useTabGroupChoice } from '@docusaurus/theme-common';
+import {
+  duplicates,
+  useScrollPositionBlocker,
+  useTabGroupChoice,
+} from '@docusaurus/theme-common/lib';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import type { Props } from '@theme/Tabs';
 import { SpacingScale, TabNavigationProps } from '@cbhq/cds-common';
@@ -39,18 +43,23 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
     groupId,
     spacerHeight = 3,
   } = props;
-  const children = React.Children.map(props.children, (child) => {
-    if (isValidElement(child) && isTabItem(child)) {
-      return child;
-    }
-    // child.type.name will give non-sensical values in prod because of
-    // minification, but we assume it won't throw in prod.
-    throw new Error(
-      `Docusaurus error: Bad <Tabs> child <${
-        typeof child.type === 'string' ? child.type : child.type.name
-      }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`,
-    );
-  });
+  const children =
+    React.Children.map(props.children, (child) => {
+      if (isValidElement(child) && isTabItem(child)) {
+        return child;
+      }
+      // child.type.name will give non-sensical values in prod because of
+      // minification, but we assume it won't throw in prod.
+      throw new Error(
+        `Docusaurus error: Bad <Tabs> child <${
+          child && typeof child.type === 'string'
+            ? child.type
+            : child && typeof child.type === 'object' && 'name' in child.type
+            ? (child.type as any).name
+            : 'UNKNOWN'
+        }>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.`,
+      );
+    }) ?? [];
   const values =
     valuesProp ??
     // Only pick keys that we recognize. MDX would inject some keys by default

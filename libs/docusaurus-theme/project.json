@@ -5,24 +5,17 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@cbhq/cds-tasks:build-docusaurus-plugin",
-      "options": {
-        "postbuild": "./scripts/postbuild.ts"
-      },
-      "outputs": [
-        "{projectRoot}/lib"
-      ]
-    },
-    "watch": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "libs/docusaurus-theme",
         "commands": [
-          "yarn docusaurus-plugin watch",
-          "nodemon --watch 'src/**/*.ts' --watch 'src/**/*.tsx' --exec ts-node ./scripts/postbuild.ts"
+          "docusaurus-plugin build",
+          "tsx ./scripts/postbuild.ts"
         ],
-        "parallel": true
+        "parallel": false
       }
+    },
+    "clear": {
+      "command": "docusaurus clear"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -34,7 +27,16 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
     }
   }
 }

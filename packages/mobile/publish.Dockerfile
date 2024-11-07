@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run mobile:typecheck:prod
 RUN yarn nx run mobile:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/mobile && npm pack
-RUN mv /repo/.nx/dist/packages/mobile /shared
+RUN cd /repo/packages/mobile && yarn pack
+RUN mv /repo/packages/mobile /shared
 
 WORKDIR /shared

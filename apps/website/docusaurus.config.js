@@ -31,6 +31,7 @@ module.exports = {
         srcDark: 'img/logo_dark.svg',
       },
       items: [
+        { to: 'blog', label: 'Blog', position: 'right' },
         {
           href: '/cds/live-playground/',
           label: 'UI Playground',

@@ -1,38 +1,38 @@
 {
-  "extends": "../../tsconfig.buildOptions.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dist/packages/mobile",
-    "rootDir": "./"
+    "sourceMap": false
   },
-  "include": ["**/*"],
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
-    "dist",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.stories.ts",
-    "**/*.stories.tsx",
-    "jest.config.js",
-    "babel.config.js",
-    "babel.build.config.js"
+    "**/__stories__/**",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__fixtures__/**",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/*.spec.*"
   ],
   "references": [
     {
-      "path": "../../packages/illustrations"
-    },
-    {
-      "path": "../../packages/utils"
-    },
-    {
       "path": "../../packages/common"
+    },
+    {
+      "path": "../../packages/fonts"
     },
     {
       "path": "../../packages/icons"
     },
     {
+      "path": "../../packages/illustrations"
+    },
+    {
       "path": "../../packages/lottie-files"
     },
     {
-      "path": "../../packages/fonts"
+      "path": "../../packages/utils"
     }
   ]
 }

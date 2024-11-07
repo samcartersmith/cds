@@ -7,7 +7,6 @@ import {
 
 const messages: Record<
   number,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   { resolve: (value: any) => void; reject: (reason?: unknown) => void }
 > = {};
 

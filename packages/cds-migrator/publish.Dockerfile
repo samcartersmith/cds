@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run cds-migrator:typecheck:prod
 RUN yarn nx run cds-migrator:build
 
 # Prepare the package for publish
-RUN cd packages/cds-migrator && yarn pack 
+RUN cd /repo/packages/cds-migrator && yarn pack 
 RUN mv /repo/packages/cds-migrator /shared
 
 WORKDIR /shared

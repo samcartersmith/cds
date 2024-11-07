@@ -1,9 +1,18 @@
 {
   "name": "@cbhq/cds-dangerfiles",
   "version": "0.0.0",
-  "private": true,
   "description": "Dangerfiles for CDS",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "libs/dangerfiles"
+  },
+  "files": [
+    "CHANGELOG"
+  ],
   "dependencies": {
     "semver": "^7.5.4"
-  }
+  },
+  "nx": {}
 }

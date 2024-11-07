@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo, useCallback, useMemo, useState } from 'react';
+import React, { memo, useCallback, useMemo, useState } from 'react';
 import times from 'lodash/times';
 import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
@@ -9,7 +9,7 @@ import { fadeInClassName } from './fade';
 
 const labelWidth = 125;
 
-const SparklineInteractiveMarkerDate: FunctionComponent<
+const SparklineInteractiveMarkerDate: React.FunctionComponent<
   React.PropsWithChildren<{
     getFormattedDate: (xPosition: number) => string;
   }>

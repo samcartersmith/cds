@@ -1,12 +1,16 @@
-import { exec, spawn } from 'child_process';
-import fs from 'fs';
-import path from 'path';
-import util from 'util';
+import { exec, spawn } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import util from 'node:util';
 
 import { cleanup, getTempRepos, info, success } from '../podium/utils';
 
 import { a11yLintConfig } from './config';
 import { A11yLintConfig } from './types';
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * To run this script:
@@ -90,7 +94,6 @@ async function runESLintOnTarget(projectPath: string, outputFilePath: string, re
 
       if (code === 0 || code === 1) {
         // Treat both code 0 and 1 as valid for processing
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const results: EslintOutput = JSON.parse(rawData);
 
         const filteredResults = results

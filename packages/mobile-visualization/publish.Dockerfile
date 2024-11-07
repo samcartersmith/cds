@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run mobile-visualization:typecheck:prod
 RUN yarn nx run mobile-visualization:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/mobile-visualization && npm pack
-RUN mv /repo/.nx/dist/packages/mobile-visualization /shared
+RUN cd /repo/packages/mobile-visualization && yarn pack
+RUN mv /repo/packages/mobile-visualization /shared
 
 WORKDIR /shared

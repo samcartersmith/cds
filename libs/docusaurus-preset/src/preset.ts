@@ -1,4 +1,4 @@
-import presetClassic from '@docusaurus/preset-classic';
+import presetClassic from '@docusaurus/preset-classic/lib/index';
 import type { LoadContext, PluginConfig } from '@docusaurus/types';
 
 import type { PresetOptions } from './types';
@@ -12,7 +12,7 @@ export default function preset(
 } {
   const { docgen, kbar, ...classicOptions } = opts;
 
-  const { themes, plugins } = presetClassic(context, classicOptions);
+  const { themes = [], plugins = [] } = presetClassic(context, classicOptions);
 
   themes.push(require.resolve('@docusaurus/theme-live-codeblock'));
   themes.push(require.resolve('@cbhq/docusaurus-theme'));

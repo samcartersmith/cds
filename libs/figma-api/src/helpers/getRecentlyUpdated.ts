@@ -1,5 +1,5 @@
 type GetRecentlyUpdatedParams = {
-  nodes: Readonly<{ node_id: string; updated_at: string }[]>;
+  nodes: readonly { node_id: string; updated_at: string }[];
   lastUpdated?: string;
 };
 export function getRecentlyUpdated({ nodes, lastUpdated = '' }: GetRecentlyUpdatedParams) {

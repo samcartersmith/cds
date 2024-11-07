@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run ui-mobile-visreg:typecheck:prod
 RUN yarn nx run ui-mobile-visreg:build
 
 # Prepare the package for publish
-RUN cd packages/ui-mobile-visreg && yarn pack
+RUN cd /repo/packages/ui-mobile-visreg && yarn pack
 RUN mv /repo/packages/ui-mobile-visreg /shared
 
 WORKDIR /shared

@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, memo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import KBarCellAccessory from '@theme/KBarCellAccessory';
 import type { KBarListCellProps } from '@theme/KBarListCell';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
@@ -27,7 +27,7 @@ const KBarListCell = memo(
       variant,
       ...props
     }: KBarListCellProps,
-    ref: ForwardedRef<HTMLElement>,
+    ref: React.ForwardedRef<HTMLElement>,
   ) {
     const minHeight = useScaleConditional(compact ? compactListHeight : listHeight);
     let end;

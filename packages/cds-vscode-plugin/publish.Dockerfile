@@ -10,6 +10,7 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run cds-vscode-plugin:typecheck:prod
 RUN yarn nx run cds-vscode-plugin:build
 
 # Prepare the package for publish

@@ -1,8 +1,10 @@
 import { existsSync, readFileSync, rmSync, statSync } from 'node:fs';
 import path from 'node:path';
-import { createLogger, format, transports } from 'winston';
+import * as winston from 'winston';
 
 import { ROOT_WORKING_DIRECTORY } from './workingDirectory.js';
+
+const { createLogger, format, transports } = winston;
 
 const MEGABYTE = 1024 * 1024;
 const MAX_LOG_SIZE = 2 * MEGABYTE;

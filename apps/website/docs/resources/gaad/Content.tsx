@@ -16,8 +16,8 @@ import { Modal, ModalBody, ModalHeader, Tooltip } from '@cbhq/cds-web/overlays';
 import { PressableOpacity } from '@cbhq/cds-web/system';
 import { TextBody, TextDisplay1, TextLabel1, TextTitle2 } from '@cbhq/cds-web/typography';
 import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
-import TabItem from '@cbhq/docusaurus-theme/src/theme/TabItem';
-import Tabs from '@cbhq/docusaurus-theme/src/theme/Tabs';
+import TabItem from '@cbhq/docusaurus-theme/theme/TabItem';
+import Tabs from '@cbhq/docusaurus-theme/theme/Tabs';
 
 import { TableExample } from './TableExample';
 
@@ -36,7 +36,7 @@ const visuallyHidden = css`
   padding: 0;
   position: absolute;
   visibility: visible;
-  whitespace: nowrap;
+  white-space: nowrap;
 `;
 
 type ContentProps = {

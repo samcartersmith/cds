@@ -1,6 +1,5 @@
 import type { NewPrompt, Prompt } from './Prompt';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export type MessageData =
   | string
   | number

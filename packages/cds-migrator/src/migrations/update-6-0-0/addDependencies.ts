@@ -30,7 +30,6 @@ function addDependencyToProject(depCheck: CheckHasCdsDependencyReturnType, tree:
         updateJson(tree, packageJsonPath, (json) => {
           // eslint-disable-next-line no-param-reassign
           json[typeOfDep as string]['framer-motion'] = '10.18.0';
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
           return json;
         });
         logSuccess(`Updated framer-motion to 10.18.0 in ${packageJsonPath}`);
@@ -40,7 +39,7 @@ function addDependencyToProject(depCheck: CheckHasCdsDependencyReturnType, tree:
       updateJson(tree, packageJsonPath, (json) => {
         // eslint-disable-next-line no-param-reassign
         json[typeOfDep as string]['framer-motion'] = '10.18.0';
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
         return json;
       });
       logSuccess(`Added framer-motion to ${typeOfDep} in ${packageJsonPath}`);

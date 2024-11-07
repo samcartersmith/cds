@@ -268,7 +268,6 @@ export const syncIllustrations = createTask<SyncIllustrationsTaskOptions>(
 
             return tokensTemplate`
               /* eslint-disable global-require */
-              /* eslint-disable @typescript-eslint/no-unsafe-return */
 
               import type { ${typescriptData.exportName} } from '${relativeTypes}';
               

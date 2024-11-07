@@ -1,4 +1,4 @@
-import React, { memo, ReactElement, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { LiveProviderProps } from 'react-live';
 import { TOCItems } from '@theme/createTOCManager';
 import { CMSProvider } from '@cb/cms';
@@ -15,7 +15,7 @@ import { FlexPage, FlexPageFields } from './FlexPage';
 import { PageContextProvider } from './PageContext';
 
 type DocgenProps = {
-  element: ReactElement;
+  element: React.ReactElement;
   toc?: TOCItems;
 };
 
@@ -26,7 +26,7 @@ export type CMSProps = {
   /**
    * Fallback component when CMS response is not available
    */
-  fallback?: ReactElement;
+  fallback?: React.ReactElement;
   scope?: LiveProviderProps['scope'];
 };
 

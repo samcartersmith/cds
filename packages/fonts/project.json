@@ -1,37 +1,12 @@
 {
   "name": "fonts",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/fonts",
+  "sourceRoot": "packages/fonts/src",
   "projectType": "library",
   "tags": [],
   "targets": {
-    "export-package-version": {
-      "executor": "@cbhq/cds-tasks:export-package-version"
-    },
     "build": {
-      "executor": "@cbhq/cds-tasks:build-package",
-      "outputs": [
-        "{workspaceRoot}/.nx/dist/packages/fonts"
-      ],
-      "options": {
-        "destinationDir": ".nx/dist/packages/fonts",
-        "staticFilesToIgnore": [
-          "tsconfig.json",
-          "tsconfig.build.json",
-          "project.json"
-        ],
-        "babelConfig": "./babel.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx"
-        ],
-        "typescriptConfig": "packages/fonts/tsconfig.build.json"
-      }
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
     "lint": {
       "executor": "@cbhq/mono-tasks:lint"
@@ -40,7 +15,16 @@
       "executor": "@cbhq/mono-tasks:lint-styles"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
     }
   }
 }

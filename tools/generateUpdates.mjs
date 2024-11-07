@@ -5,9 +5,9 @@
  * To get the commit history of previous 10 days. Note it defaults to 14 if no arg is provided.
  * `yarn node ./tools/generateUpdates.mjs 10`
  */
-import fs from 'fs';
-import path from 'path';
-import { spawnSync } from 'child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 
 const outputFilename = 'cds-biweekly-update.md';
 

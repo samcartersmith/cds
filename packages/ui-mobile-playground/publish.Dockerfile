@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run ui-mobile-playground:typecheck:prod
 RUN yarn nx run ui-mobile-playground:build
 
 # Prepare the package for publish
-RUN cd packages/ui-mobile-playground && yarn pack
+RUN cd /repo/packages/ui-mobile-playground && yarn pack
 RUN mv /repo/packages/ui-mobile-playground /shared
 
 WORKDIR /shared

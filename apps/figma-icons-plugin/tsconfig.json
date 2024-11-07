@@ -1,19 +1,14 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/apps/figma-icons-plugin",
-    "rootDir": "./",
+    "declarationDir": "dts",
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
+    "src/**/*",
     "vite.config.ts"
   ],
-  "exclude": [
-    "lib",
-    "node_modules",
-    "public"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../libs/figma-styles"

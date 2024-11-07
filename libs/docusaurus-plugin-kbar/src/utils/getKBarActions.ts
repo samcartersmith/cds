@@ -2,7 +2,7 @@ import type { LoadedVersion } from '@docusaurus/plugin-content-docs/lib/types';
 import { createAction } from 'kbar';
 import kebabCase from 'lodash/kebabCase';
 import uniqBy from 'lodash/uniqBy';
-import path from 'path';
+import path from 'node:path';
 
 import type { KBarCustomAction, SidebarItem } from '../types';
 

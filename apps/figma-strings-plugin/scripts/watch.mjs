@@ -1,4 +1,7 @@
 #!/usr/bin/env zx
+import { $, within } from 'zx';
+
+$.verbose = true;
 
 try {
   within(async () => {

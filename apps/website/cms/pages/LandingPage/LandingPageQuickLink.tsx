@@ -6,7 +6,7 @@ import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { OnPress, Pressable } from '@cbhq/cds-web/system/Pressable';
 import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
 import { TextTitle2 } from '@cbhq/cds-web/typography/TextTitle2';
-import useGoToLinkHandler from '@cbhq/docusaurus-theme/src/theme/useGoToLinkHandler';
+import useGoToLinkHandler from '@cbhq/docusaurus-theme/theme/useGoToLinkHandler';
 
 export type LandingPageQuickLinkProps = {
   href?: string;

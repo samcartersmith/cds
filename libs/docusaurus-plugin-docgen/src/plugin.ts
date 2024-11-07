@@ -1,6 +1,6 @@
 import type { LoadContext, Plugin } from '@docusaurus/types';
 import { DEFAULT_PLUGIN_ID } from '@docusaurus/utils';
-import path from 'path';
+import path from 'node:path';
 
 import { docgenRunner } from './scripts/docgenRunner';
 import { docgenWriter } from './scripts/docgenWriter';

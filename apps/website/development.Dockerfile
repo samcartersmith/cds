@@ -17,4 +17,4 @@ ENV CODEFLOW=true
 RUN yarn nx run website:build
 
 # Zip the app for deploy
-RUN (cd /repo/.nx/outs/projects/apps/website/docusaurus && zip -r - .) > /repo/app.zip
+RUN (cd /repo/apps/website/dist && zip -r - .) > /repo/app.zip

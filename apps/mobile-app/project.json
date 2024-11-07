@@ -3,12 +3,10 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/mobile-app/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "go": {
-      "executor": "@cbhq/mono-tasks:run-package-script",
-      "options": {
-        "script": "go"
-      }
+      "command": "yarn workspace mobile-app go"
     },
     "setup": {
       "executor": "nx:run-commands",
@@ -91,7 +89,10 @@
       ],
       "options": {
         "cwd": "apps/mobile-app",
-        "command": "node ./scripts/detox.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}"
+        "command": "node ./scripts/detox.mjs --profile {args.profile} --jsEngine {args.jsEngine} --platform {args.platform}",
+        "env": {
+          "DETOX_TEST": "true"
+        }
       },
       "configurations": {
         "ios-debug": {
@@ -135,8 +136,7 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "command": "tsc --build --pretty --verbose"
     }
-  },
-  "tags": []
+  }
 }

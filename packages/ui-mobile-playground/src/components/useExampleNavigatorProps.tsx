@@ -1,5 +1,4 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import React, { useContext, useMemo } from 'react';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';

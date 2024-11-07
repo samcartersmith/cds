@@ -1,3 +1,5 @@
 import createTOCManager from '@theme/createTOCManager';
 
-export const { useTOC, TOCProvider, TOCUpdater } = createTOCManager();
+const { useTOC, TOCProvider, TOCUpdater } = createTOCManager();
+
+export { TOCProvider, TOCUpdater, useTOC };

@@ -1,15 +1,39 @@
 {
   "name": "@cbhq/cds-fonts",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Coinbase Design System - Fonts",
-  "keywords": [
-    "cds",
-    "design system",
-    "fonts"
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/fonts"
+  },
+  "type": "module",
+  "main": "./esm/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./fonts.css": "./esm/fonts.css",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./esm/*.js"
+    }
+  },
+  "sideEffects": [
+    "*.css"
   ],
-  "repository": "git@github.cbhq.net:frontend/cds.git",
-  "main": "./index",
+  "files": [
+    "dts",
+    "esm",
+    "CHANGELOG"
+  ],
   "devDependencies": {
-    "@cbhq/cds-tasks": "workspace:^"
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6"
   }
 }

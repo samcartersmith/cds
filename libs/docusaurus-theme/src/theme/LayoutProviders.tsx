@@ -1,4 +1,4 @@
-import React, { Fragment, memo, ReactNode, useEffect, useState } from 'react';
+import React, { Fragment, memo, useEffect, useState } from 'react';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocgenProjectProvider from '@theme/DocgenProjectProvider';
 import KBarProvider from '@theme/KBarProvider';
@@ -9,7 +9,7 @@ import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { RootScaleProvider } from '@cbhq/cds-web/system/RootScaleProvider';
 
 type ProviderProps = {
-  children?: ReactNode;
+  children?: React.ReactNode;
 };
 
 // Guarantee that we are synced with light/dark mode changes were are triggerd on data-theme attribute of page

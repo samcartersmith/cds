@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { exec } from 'child_process';
-import fs from 'fs';
-import { promisify } from 'util';
+import { exec } from 'node:child_process';
+import fs from 'node:fs';
+import { promisify } from 'node:util';
 
 import { CDSVersionsResult } from '../../../components/AdoptionTracker/types';
 import { type ProductComponentInfo } from '../types';

@@ -1,19 +1,12 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "rootDir": "./",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "target": "ES2017",
-    "strict": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
-    "jsx": "preserve",
-    "emitDeclarationOnly": true,
-    "declaration": true,
     "declarationDir": "dts",
-    "esModuleInterop": true
+    "rootDir": "src"
   },
-  "include": ["src", "package.json"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [],
+  "references": []
 }

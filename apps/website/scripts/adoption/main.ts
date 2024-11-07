@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import chalk from 'chalk';
 import { glob } from 'glob';
 import fs from 'node:fs';
-import path from 'path';
+import path from 'node:path';
 import { writePrettyFile } from '@cbhq/script-utils';
 
 import {

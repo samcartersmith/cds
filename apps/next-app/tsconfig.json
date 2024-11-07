@@ -1,35 +1,35 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "emitDeclarationOnly": false,
-    "noEmit": true,
-    "outDir": "../../.nx/dts/apps/next-app"
+    "outDir": "dts",
+    "noEmit": true
   },
   "include": [
-    "next-env.d.ts",
     "**/*",
-    "../../types/**/*"
+    "next-env.d.ts"
   ],
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "references": [
     {
       "path": "../../packages/common"
     },
     {
-      "path": "../../packages/web"
-    },
-    {
-      "path": "../../packages/illustrations"
+      "path": "../../packages/fonts"
     },
     {
       "path": "../../packages/icons"
     },
     {
-      "path": "../../packages/fonts"
+      "path": "../../packages/illustrations"
+    },
+    {
+      "path": "../../packages/web"
     },
     {
       "path": "../../packages/web-visualization"
-    },
+    }
   ]
 }

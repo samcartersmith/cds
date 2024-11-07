@@ -1,4 +1,6 @@
 // @ts-check
+const isTestEnv = process.env.NODE_ENV === 'test';
+
 /** @type {import('@babel/core').TransformOptions} */
 export default {
   presets: [

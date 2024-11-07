@@ -33,7 +33,4 @@ echo "--- Updating local '$BASE_BRANCH' base branch"
 # Required for correct Nx affected project resolution
 git fetch -f --no-tags origin $BASE_BRANCH:$BASE_BRANCH
 
-echo "--- Building required packages"
-yarn build-required-packages
-
 echo "--- Setup complete, running jobs"

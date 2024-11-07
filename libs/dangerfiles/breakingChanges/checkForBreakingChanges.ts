@@ -28,7 +28,7 @@ export default async function checkForBreakingChanges({
     useInMemoryFileSystem: true,
   });
 
-  if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT was undefined');
+  if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
 
   // add the file to the ts-morph project instance
   files.forEach((file) => {

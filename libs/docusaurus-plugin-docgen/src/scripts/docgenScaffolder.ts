@@ -1,10 +1,10 @@
-import fs from 'fs';
 import groupBy from 'lodash/groupBy';
 import kebabCase from 'lodash/kebabCase';
 import orderBy from 'lodash/orderBy';
 import startCase from 'lodash/startCase';
 import uniqBy from 'lodash/uniqBy';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import type { OutputDoc, PluginOptions, WriteFileConfig } from '../types';
 import { logger } from '../utils/logger';

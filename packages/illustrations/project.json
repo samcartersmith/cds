@@ -4,15 +4,8 @@
   "sourceRoot": "packages/illustrations/src",
   "projectType": "library",
   "targets": {
-    "export-package-version": {
-      "executor": "@cbhq/cds-tasks:export-package-version"
-    },
     "build": {
-      "outputs": [
-        "{projectRoot}/assets",
-        "{projectRoot}/lib"
-      ],
-      "executor": "@cbhq/mono-tasks:build-package"
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
     "mobile-build": {
       "executor": "nx:run-commands",
@@ -38,27 +31,18 @@
         "figmaApiFileId": "LmkJatvMRVzNgfiIkJDb99",
         "changelogFile": "./CHANGELOG.md",
         "manifestFile": "./src/__generated__/manifest.json",
-        "darkModeManifestFile": "libs/figma-styles/__generated__/illustration/dark/manifest.json",
-        "lightModeManifestFile": "libs/figma-styles/__generated__/illustration/light/manifest.json",
+        "darkModeManifestFile": "libs/figma-styles/src/__generated__/illustration/dark/manifest.json",
+        "lightModeManifestFile": "libs/figma-styles/src/__generated__/illustration/light/manifest.json",
         "generatedDirectory": "./src/__generated__"
       }
     },
-    "sync-styles": {
-      "executor": "nx:run-commands",
-      "dependsOn": [
-        "^build"
-      ],
-      "options": {
-        "command": "nx run figma-styles:sync"
-      }
-    },
     "generate-stories": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      "command": "tsx ./scripts/generateStories.ts",
       "dependsOn": [
         "^build"
       ],
       "options": {
-        "script": "./scripts/generateStories.ts"
+        "cwd": "packages/illustrations"
       }
     },
     "uploadToStaticAssets": {
@@ -87,16 +71,15 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
-    },
-    "watch": {
       "executor": "nx:run-commands",
-      "options": {
-        "cwd": "packages/illustrations",
-        "commands": [
-          "nx run figma-tasks:watch",
-          "packemon watch --quiet --loadConfigs"
-        ]
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
       }
     }
   }

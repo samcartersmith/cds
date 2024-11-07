@@ -1,5 +1,4 @@
 /* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 
 import type { HeroSquareName } from '../types/HeroSquareName';
 

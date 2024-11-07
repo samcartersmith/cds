@@ -13,17 +13,20 @@
     "@cbhq/cds-web": "workspace:^",
     "@cbhq/cds-web-visualization": "workspace:^",
     "@linaria/react": "^4.3.3",
-    "@next/bundle-analyzer": "^14.0.3",
-    "next": "^14.0.3",
+    "@next/bundle-analyzer": "^14.2.15",
+    "@next/eslint-plugin-next": "^14.2.15",
+    "next": "^14.2.15",
     "next-linaria": "1.0.1-beta",
-    "react": "18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@cbhq/next-config": "^2.2.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^16.0.1",
     "@testing-library/react-hooks": "^8.0.1",
-    "@testing-library/user-event": "^14.0.4"
+    "@testing-library/user-event": "^14.0.4",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0"
   }
 }

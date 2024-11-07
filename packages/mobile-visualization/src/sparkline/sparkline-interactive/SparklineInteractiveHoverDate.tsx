@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
+import React, { forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
 import { Animated, StyleSheet, TextInput } from 'react-native';
 import { ChartScrubParams, SpacingScale } from '@cbhq/cds-common/types';
 import {
@@ -50,7 +50,7 @@ const MAX_MEASURE_ITERATIONS = 5;
 const SparklineInteractiveHoverDateWithGeneric = forwardRef(
   <Period extends string>(
     { formatHoverDate, shouldTakeUpHeight }: Props<Period>,
-    ref: ForwardedRef<SparklineInteractiveHoverDateRefProps<Period>>,
+    ref: React.ForwardedRef<SparklineInteractiveHoverDateRefProps<Period>>,
   ) => {
     const colors = usePalette();
     const { hoverDateOpacity, gutter } = useSparklineInteractiveContext();
@@ -151,9 +151,8 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
 );
 
 type ForwardRefWithPeriod<Period extends string> = React.ForwardRefExoticComponent<
-  Props<Period> & React.RefAttributes<SparklineInteractiveHoverDateRefProps<Period>>
+  Props<Period> & { ref?: React.Ref<SparklineInteractiveHoverDateRefProps<Period>> }
 >;
 
 export const SparklineInteractiveHoverDate =
-  /* eslint-disable-next-line  @typescript-eslint/no-explicit-any */
   SparklineInteractiveHoverDateWithGeneric as ForwardRefWithPeriod<any>;

@@ -1,45 +1,38 @@
 {
   "name": "cds-adoption",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/cds-adoption",
+  "sourceRoot": "apps/cds-adoption/src",
   "projectType": "library",
   "targets": {
     "dev": {
-      "command": "node --loader ts-node/esm ./apps/cds-adoption/src/dev.ts",
+      "command": "tsx ./src/dev.ts",
       "dependsOn": [
         "^build"
       ]
     },
-    "build": {
-      "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": [
-        "{projectRoot}/assets",
-        "{projectRoot}/mjs"
-      ]
-    },
     "start": {
-      "command": "node ./apps/cds-adoption/mjs/index.mjs",
+      "command": "node ./esm/index.mjs",
       "dependsOn": [
         "build"
       ]
     },
+    "build": {
+      "command": "rm -rf esm && rollup -c"
+    },
     "dockerup": {
-      "executor": "@cbhq/mono-tasks:run-package-script",
+      "executor": "nx:run-commands",
       "defaultConfiguration": "app",
       "configurations": {
         "app": {
-          "script": "dockerup-app"
+          "command": "yarn workspace cds-adoption dockerup-app"
         },
         "trigger": {
-          "script": "dockerup-trigger"
+          "command": "yarn workspace cds-adoption dockerup-trigger"
         }
       }
     },
     "dockerdown": {
-      "executor": "@cbhq/mono-tasks:run-package-script",
-      "options": {
-        "script": "dockerdown"
-      }
+      "command": "yarn workspace cds-adoption dockerdown"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -51,7 +44,16 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
     }
   }
 }

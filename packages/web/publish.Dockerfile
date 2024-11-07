@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run web:typecheck:prod
 RUN yarn nx run web:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/web && npm pack
-RUN mv /repo/.nx/dist/packages/web /shared
+RUN cd /repo/packages/web && yarn pack
+RUN mv /repo/packages/web /shared
 
 WORKDIR /shared

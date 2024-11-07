@@ -14,7 +14,6 @@ type Res<T> = {
   send: (responseData: T) => void;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ListenerCallback = (req: Req<any>, res: Res<any>) => void | Promise<void>;
 
 /**

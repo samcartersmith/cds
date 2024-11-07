@@ -1,10 +1,14 @@
+/**
+ * NOTE: If you add imports here that extend Jest, such as extending `expect` with new
+ * functions like `.toBeAccessible()`, you must also update `packages/mobile/src/jest.d.ts`
+ */
 import 'react-native-gesture-handler/jestSetup';
 import 'react-native-accessibility-engine';
 import '@testing-library/jest-native/extend-expect';
 
-import { setUpTests } from 'react-native-reanimated/src/reanimated2/jestUtils';
+import { setUpTests } from 'react-native-reanimated/src/jestUtils';
 
-import { mockStatusBarHeight } from './constants';
+import { mockStatusBarHeight } from '../src/hooks/__tests__/constants';
 
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 

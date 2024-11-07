@@ -4,19 +4,8 @@
   "sourceRoot": "libs/figma-api/src",
   "projectType": "library",
   "targets": {
-    "watch": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/figma-api",
-        "command": "packemon watch --quiet --loadConfigs"
-      }
-    },
     "build": {
-      "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": [
-        "{projectRoot}/assets",
-        "{projectRoot}/lib"
-      ]
+      "command": "rm -rf cjs && babel ./src --out-dir cjs --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -28,7 +17,16 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
     }
   }
 }

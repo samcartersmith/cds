@@ -1,20 +1,13 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "outDir": "../../.nx/dts/apps/cds-figma-sync"
+    "declarationDir": "dts",
+    "rootDir": "src"
   },
   "include": [
-    "**/*"
+    "src/**/*"
   ],
-  "exclude": [
-    "dts",
-    "esm",
-    "lib",
-    "mjs"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../libs/script-utils"

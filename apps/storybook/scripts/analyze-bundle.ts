@@ -50,7 +50,7 @@ const packageSimpleMessagesOrder: { [key: string]: string } = {
 
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 
-if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT was undefined');
+if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
 
 const masterBundleStatsPath = path.resolve(MONOREPO_ROOT, MASTER_STATS_FILENAME);
 const comparisonBundleStatsPath = path.resolve(MONOREPO_ROOT, COMPARISON_STATS_FILENAME);

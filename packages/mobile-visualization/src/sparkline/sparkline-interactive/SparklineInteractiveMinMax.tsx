@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo, useCallback, useMemo, useRef } from 'react';
+import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { Animated, LayoutChangeEvent, StyleSheet } from 'react-native';
 import { SparklineInteractiveMinMaxProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useLayout } from '@cbhq/cds-mobile/hooks/useLayout';
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SparklineInteractiveMinMaxContent: FunctionComponent<
+const SparklineInteractiveMinMaxContent: React.FunctionComponent<
   React.PropsWithChildren<SparklineInteractiveMinMaxContentProps>
 > = memo(({ x, children }) => {
   const colors = usePalette();
@@ -77,7 +77,7 @@ const SparklineInteractiveMinMaxContent: FunctionComponent<
   );
 });
 
-export const SparklineInteractiveMinMax: FunctionComponent<
+export const SparklineInteractiveMinMax: React.FunctionComponent<
   React.PropsWithChildren<SparklineInteractiveMinMaxProps>
 > = memo(({ formatMinMaxLabel, dataPoint, xFunction }) => {
   const colors = usePalette();

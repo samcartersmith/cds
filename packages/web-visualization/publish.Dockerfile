@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run web-visualization:typecheck:prod
 RUN yarn nx run web-visualization:build
 
 # Prepare the package for publish
-RUN cd /repo/.nx/dist/packages/web-visualization && npm pack
-RUN mv /repo/.nx/dist/packages/web-visualization /shared
+RUN cd /repo/packages/web-visualization && yarn pack
+RUN mv /repo/packages/web-visualization /shared
 
 WORKDIR /shared

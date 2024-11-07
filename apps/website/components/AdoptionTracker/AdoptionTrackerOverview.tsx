@@ -116,7 +116,7 @@ const getTotalInstancesLatest = (
   return projects
     .filter((project) => {
       // Exclude the projects that belong to the excluded pillars, if any are specified
-      return !(excludedPillars && excludedPillars.includes(project.pillar));
+      return !excludedPillars?.includes(project.pillar);
     })
     .reduce((acc, project) => {
       if (!isUpToDateOnly || (isUpToDateOnly && getStats(project).latest.upToDate)) {
@@ -139,7 +139,7 @@ const getTotalInstancesPrevious = (
     .filter(
       (project) =>
         // Exclude the projects that belong to the excluded pillars, if any are specified
-        !(excludedPillars && excludedPillars.includes(project.pillar)),
+        !excludedPillars?.includes(project.pillar),
     )
     .reduce((acc, project) => {
       if (!isUpToDateOnly || (isUpToDateOnly && getStats(project).latest.upToDate)) {

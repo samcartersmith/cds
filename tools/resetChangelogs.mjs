@@ -3,8 +3,8 @@
  *
  * Resets the changelog files and package.json version fields to the origin master branch.
  */
-import fs from 'fs';
-import { spawnSync } from 'child_process';
+import fs from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import { globSync } from 'glob';
 
 function updateMasterBranch() {

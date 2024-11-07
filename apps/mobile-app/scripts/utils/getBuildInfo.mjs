@@ -3,6 +3,8 @@ import { $, argv, glob } from 'zx'; // https://github.com/google/zx
 
 import credentials from '../../credentials.json' assert { type: 'json' };
 
+$.verbose = true;
+
 const outputDirectory = 'prebuilds';
 const filePath = new URL(import.meta.url).pathname;
 const scriptUtilsDirectory = path.dirname(filePath);

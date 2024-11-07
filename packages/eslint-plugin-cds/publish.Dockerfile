@@ -10,6 +10,7 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run eslint-plugin-cds:typecheck:prod
 RUN yarn nx run eslint-plugin-cds:build
 
 # Prepare the package for publish

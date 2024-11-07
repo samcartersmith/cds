@@ -4,50 +4,23 @@
   "sourceRoot": "apps/website",
   "projectType": "application",
   "targets": {
-    "adoption": {
-      "executor": "@cbhq/mono-tasks:run-script",
+    "dev": {
+      "command": "docusaurus start --port 3000",
       "dependsOn": [
         "^build"
       ],
-      "options": {
-        "script": "./scripts/adoption/main.ts",
-        "NODE_OPTIONS": {
-          "trace-deprecation": true,
-          "abort-on-uncaught-exception": true,
-          "max-old-space-size": 4096
-        }
+      "env": {
+        "NODE_ENV": "development"
       }
     },
     "start": {
-      "executor": "nx:run-commands",
+      "command": "docusaurus serve --dir dist --port 3000",
       "dependsOn": [
-        "^build"
-      ],
-      "options": {
-        "cwd": "apps/website",
-        "commands": [
-          "nx run docusaurus-plugin-docgen:watch",
-          "nx run docusaurus-plugin-kbar:watch",
-          "nx run docusaurus-theme:watch",
-          "nx run docusaurus-preset:watch",
-          "docusaurus start --port 3000"
-        ]
-      }
-    },
-    "serve": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "apps/website",
-        "commands": [
-          "docusaurus serve --dir ../../.nx/outs/projects/apps/website/docusaurus --port 3000"
-        ]
-      }
+        "build"
+      ]
     },
     "build": {
-      "executor": "@cbhq/mono-tasks:build-docusaurus",
-      "dependsOn": [
-        "^build"
-      ]
+      "command": "docusaurus build --out-dir dist"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -59,42 +32,53 @@
       "executor": "@cbhq/mono-tasks:lint-styles"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "command": "tsc --build --pretty --verbose"
     },
     "deprecations": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      "command": "tsx ./scripts/deprecations/updateDeprecations.ts",
       "options": {
-        "script": "./scripts/deprecations/updateDeprecations.ts"
+        "cwd": "apps/website"
+      }
+    },
+    "adoption": {
+      "command": "tsx ./scripts/adoption/main.ts",
+      "dependsOn": [
+        "^build"
+      ],
+      "options": {
+        "cwd": "apps/website",
+        "NODE_OPTIONS": {
+          "trace-deprecation": true,
+          "abort-on-uncaught-exception": true,
+          "max-old-space-size": 4096
+        }
       }
     },
     "generateAdoptionAndImpactReports": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      "command": "tsx ./scripts/adoption/generateAdoptionAndImpactReports.ts",
       "options": {
-        "script": "./scripts/adoption/generateAdoptionAndImpactReports.ts"
+        "cwd": "apps/website"
       }
     },
     "adoption-snowflake-upload": {
-      "executor": "nx:run-commands",
+      "command": "ADOPTION_DIRECTORY=./static/data/__generated__ sh ./scripts/adoption/snowflake-upload.sh",
       "dependsOn": [
         "adoption"
       ],
       "options": {
-        "cwd": "apps/website",
-        "commands": [
-          "ADOPTION_DIRECTORY=./static/data/__generated__ sh ./scripts/adoption/snowflake-upload.sh"
-        ]
+        "cwd": "apps/website"
       }
     },
     "podium": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      "command": "tsx ../../libs/cds-tasks/podium/impl.ts",
       "options": {
-        "script": "../../libs/cds-tasks/podium/impl.ts"
+        "cwd": "apps/website"
       }
     },
     "a11y-lint-tracker": {
-      "executor": "@cbhq/mono-tasks:run-script",
+      "command": "tsx ../../libs/cds-tasks/a11y-lint-tracker/impl.ts",
       "options": {
-        "script": "../../libs/cds-tasks/a11y-lint-tracker/impl.ts"
+        "cwd": "apps/website"
       }
     }
   }

@@ -1,8 +1,0 @@
-{
-  "name": "d3",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/d3",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

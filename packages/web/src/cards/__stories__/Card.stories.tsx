@@ -1,0 +1,177 @@
+import { cardBuilder, CreateCardProps } from '@cbhq/cds-common/internal/cardBuilder';
+import { announcementCards } from '@cbhq/cds-common/internal/data/announcementCards';
+import { dataCards } from '@cbhq/cds-common/internal/data/dataCards';
+import { featureEntryCards } from '@cbhq/cds-common/internal/data/featureEntryCards';
+import { feedCards } from '@cbhq/cds-common/internal/data/feedCards';
+import { baseConfig, storyBuilder } from '@cbhq/cds-common/internal/utils/storyBuilder';
+import { getFigmaAccessToken } from '@cbhq/cds-utils/env';
+
+import { Button, IconButton } from '../../buttons';
+import { CellMedia, ListCell } from '../../cells';
+import { SpotSquare } from '../../illustrations';
+import { Box, VStack } from '../../layout';
+import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
+import { ThemeProvider, ThemeProviderProps } from '../../system';
+import {
+  AnnouncementCard as AnnouncementCardComponent,
+  AnnouncementCardProps,
+} from '../AnnouncementCard';
+import { Card } from '../Card';
+import { CardBody } from '../CardBody';
+import { CardGroup } from '../CardGroup';
+import { DataCard as DataCardComponent } from '../DataCard';
+import { FeatureEntryCard as FeatureEntryCardComponent } from '../FeatureEntryCard';
+import { FeedCard as FeedCardComponent, FeedCardProps } from '../FeedCard';
+
+const accessToken = getFigmaAccessToken();
+const cardParameters = {
+  /**
+   * TODO: Remove this percy skip
+   */
+  percy: { skip: true },
+  wrapper: CardGroup,
+  wrapperProps: { background: true, borderedBottom: true },
+} as const;
+const builder = storyBuilder({ parameters: cardParameters });
+
+/* -------------------------------------------------------------------------- */
+/*                             Announcement Cards                             */
+/* -------------------------------------------------------------------------- */
+const announcementCardBuilder = builder(AnnouncementCardComponent, {
+  parameters: {
+    design: {
+      type: 'figspec',
+      url: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=15595%3A75665',
+      accessToken,
+    },
+  },
+});
+
+export const AnnouncementCard = announcementCardBuilder.build(
+  announcementCards[0] as AnnouncementCardProps,
+);
+export const AnnouncementCards = announcementCardBuilder.buildSheet(
+  announcementCards as AnnouncementCardProps[],
+);
+
+/* -------------------------------------------------------------------------- */
+/*                                 Data Cards                                 */
+/* -------------------------------------------------------------------------- */
+const dataCardsBuilder = builder(DataCardComponent, {
+  parameters: {
+    design: {
+      type: 'figspec',
+      url: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=15595%3A75700',
+      accessToken,
+    },
+  },
+});
+export const DataCard = dataCardsBuilder.build(dataCards[0]);
+export const DataCards = dataCardsBuilder.buildSheet(dataCards);
+
+/* -------------------------------------------------------------------------- */
+/*                             FeatureEntry Cards                             */
+/* -------------------------------------------------------------------------- */
+const featureEntryCardBuilder = builder(FeatureEntryCardComponent, {
+  parameters: {
+    design: {
+      type: 'figspec',
+      url: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=15595%3A75644',
+      accessToken,
+    },
+  },
+});
+
+export const FeatureEntryCard = featureEntryCardBuilder.build(featureEntryCards[0]);
+export const FeatureEntryCards = featureEntryCardBuilder.buildSheet(featureEntryCards);
+
+/* -------------------------------------------------------------------------- */
+/*                                 Feed Cards                                 */
+/* -------------------------------------------------------------------------- */
+export const FeedCard = ({
+  spectrum,
+  scale,
+  ...props
+}: FeedCardProps & Omit<ThemeProviderProps, 'display' | 'palette'>) => {
+  return (
+    <ThemeProvider display="contents" scale={scale} spectrum={spectrum}>
+      {/* @ts-expect-error common expects a generic type for onPress */}
+      <FeedCardComponent
+        background
+        {...feedCards[0]}
+        like={feedCards[0].like()}
+        maxWidth={800}
+        {...props}
+      />
+    </ThemeProvider>
+  );
+};
+
+FeedCard.bind({});
+FeedCard.args = baseConfig.args;
+FeedCard.argTypes = baseConfig.argTypes;
+FeedCard.parameters = {
+  ...baseConfig.parameters,
+  ...cardParameters,
+  design: {
+    type: 'figspec',
+    url: 'https://www.figma.com/file/SWoyy3B5IkEpMvk60Lb4V6/CDS-Normal-%F0%9F%8C%9E?node-id=18698%3A107647',
+    accessToken,
+  },
+};
+
+export const FeedCards = () => {
+  return (
+    <CardGroup>
+      {feedCards.map(({ like: getLikeProps, ...item }) => (
+        // @ts-expect-error common expects a generic type for onPress
+        <FeedCardComponent {...item} like={getLikeProps()} maxWidth={800} />
+      ))}
+    </CardGroup>
+  );
+};
+
+FeedCards.bind({});
+FeedCards.args = FeedCard.args;
+FeedCards.parameters = FeedCard.parameters;
+FeedCards.argTypes = FeedCard.argTypes;
+
+const {
+  PressableCards,
+  PressableColoredCards,
+  NonClickableCards,
+  NonClickableColoredCards,
+  PinnedTopCard,
+  PinnedRightCard,
+  PinnedBottomCard,
+  PinnedLeftCard,
+} = cardBuilder({
+  Box,
+  Button,
+  Card,
+  CardBody,
+  SpotSquare,
+  FeedCard,
+  IconButton,
+  CellMedia,
+  ListCell,
+  LoremIpsum,
+  VStack,
+  ThemeProvider,
+} as CreateCardProps);
+
+export {
+  NonClickableCards,
+  NonClickableColoredCards,
+  PinnedBottomCard,
+  PinnedLeftCard,
+  PinnedRightCard,
+  PinnedTopCard,
+  PressableCards,
+  PressableColoredCards,
+};
+
+export default {
+  title: 'Core Components/Cards',
+  component: FeedCard,
+};

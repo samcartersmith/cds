@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 import { Document } from '@contentful/rich-text-types';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
-import Playground from '@cbhq/docusaurus-theme/src/theme/Playground';
+import Playground from '@cbhq/docusaurus-theme/theme/Playground';
 
 import { usePageContext } from '../pages/PageContext';
 

@@ -1,8 +1,8 @@
 import glob from 'fast-glob';
-import fs from 'fs';
 import { camelCase, upperFirst } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import toPairs from 'lodash/toPairs';
+import fs from 'node:fs';
 import { writePrettyFile } from '@cbhq/script-utils';
 
 import { AdopterComponents, ComponentData } from '../../../components/AdoptionTracker/types';

@@ -4,7 +4,7 @@ import { Entry } from 'contentful';
 import { CMSContent } from '@cb/cms';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TextBody } from '@cbhq/cds-web/typography';
-import Heading from '@cbhq/docusaurus-theme/src/theme/Heading';
+import Heading from '@cbhq/docusaurus-theme/theme/Heading';
 
 import { CodePlayground } from '../misc/CodePlayground';
 import type { MediaAssetFields } from '../misc/MediaAsset';

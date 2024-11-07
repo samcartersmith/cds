@@ -1,8 +1,8 @@
 import { parse } from 'date-fns';
 import glob from 'fast-glob';
-import fs from 'fs';
 import getFirst from 'lodash/first';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { OverallSummaryStats } from '../../components/AdoptionTracker/types';
 import { hiddenAdopters } from '../../data/__generated__/adoption/adopters-hidden';

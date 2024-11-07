@@ -60,7 +60,6 @@ export default async function checkFilesForRemovedParams({
         // check to see if the original function is in the modified functions
         if (!modifiedFunctionParams?.includes(originalParam)) {
           // @ts-expect-error danger methods are in global scope
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
           warn(
             [
               '## 💔 Breaking change detected',

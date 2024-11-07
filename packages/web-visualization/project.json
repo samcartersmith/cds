@@ -4,35 +4,8 @@
   "sourceRoot": "packages/web-visualization/src",
   "projectType": "library",
   "targets": {
-    "export-package-version": {
-      "executor": "@cbhq/cds-tasks:export-package-version"
-    },
     "build": {
-      "executor": "@cbhq/cds-tasks:build-package",
-      "outputs": [
-        "{workspaceRoot}/.nx/dist/packages/web-visualization"
-      ],
-      "options": {
-        "destinationDir": ".nx/dist/packages/web-visualization",
-        "srcDir": "src",
-        "babelConfig": "./packages/web-visualization/babel.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "staticFilesToCopy": [
-          "package.json",
-          "README.md",
-          "CHANGELOG.md"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx",
-          "**/*.stories.tsx"
-        ],
-        "typescriptConfig": "packages/web-visualization/tsconfig.build.json"
-      }
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -44,7 +17,16 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
     },
     "report-disabled-eslint-rules": {
       "executor": "@cbhq/prevent-eslint-disable:report"

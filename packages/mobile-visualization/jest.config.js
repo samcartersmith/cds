@@ -1,5 +1,17 @@
-module.exports = {
-  coveragePathIgnorePatterns: ['<rootDir>/illustrations/images', '.stories.tsx', '__stories__'],
+const d3 = ['d3', 'd3-.+', 'internmap'];
+const native = [
+  'jest-react-native',
+  'react-native',
+  '@react-native',
+  '@react-native-community',
+  'react-native-webview',
+  '@bugsnag/react-native',
+];
+
+const esModules = ['@cbhq', ...native, ...d3];
+
+export default {
+  coveragePathIgnorePatterns: ['<rootDir>/src/illustrations/images', '.stories.tsx', '__stories__'],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
   displayName: 'mobile-visualization',
   preset: '@cbhq/jest-preset-mobile',
@@ -11,4 +23,5 @@ module.exports = {
   fakeTimers: {
     enableGlobally: true,
   },
+  transformIgnorePatterns: [`node_modules/(?!(${esModules.join('|')}))`],
 };

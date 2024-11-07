@@ -1,6 +1,6 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 import { TSESLint } from '@typescript-eslint/utils';
-import path from 'path';
+import path from 'node:path';
 
 const fixturesPath = path.resolve(__dirname, '../../fixtures');
 
@@ -13,7 +13,6 @@ export function createRuleTester(options?: Partial<TSESLint.RuleTesterConfig>): 
     },
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
   return new RuleTester({
     ...defaultOptions,
     ...options,

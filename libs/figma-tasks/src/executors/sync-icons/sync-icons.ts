@@ -62,14 +62,17 @@ function getOutputKey(item: IconComponentSetChild) {
 /**
  * Note: updateCoinbaseIconsFile is a script that updates Icon fonts (CoinbaseIcons) on CDS mobile playground.
  * This is necessary to keep the CDS mobile playground Icon fonts up to date with our CDS Icons package.
- * We copy the packages/icons/fonts/native/CoinbaseIcons.ttf file and Replace apps/mobile-app/assets/fonts/CoinbaseIcons.ttf
+ * We copy the packages/icons/src/fonts/native/CoinbaseIcons.ttf file and Replace apps/mobile-app/assets/fonts/CoinbaseIcons.ttf
  */
 
 const updateCoinbaseIconsFile = () => {
   try {
     console.info('Updating apps/mobile-app/assets/fonts/CoinbaseIcons.ttf...');
 
-    const sourcePath = path.resolve(MONOREPO_ROOT, 'packages/icons/fonts/native/CoinbaseIcons.ttf');
+    const sourcePath = path.resolve(
+      MONOREPO_ROOT,
+      'packages/icons/src/fonts/native/CoinbaseIcons.ttf',
+    );
     const destinationPath = path.resolve(
       MONOREPO_ROOT,
       'apps/mobile-app/assets/fonts/CoinbaseIcons.ttf',

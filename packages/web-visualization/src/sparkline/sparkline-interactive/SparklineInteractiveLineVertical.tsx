@@ -1,4 +1,4 @@
-import React, { CSSProperties, memo, useCallback } from 'react';
+import React, { memo, useCallback } from 'react';
 import { css } from 'linaria';
 import { lineDashArray } from '@cbhq/cds-common/tokens/sparkline';
 import { SparklineInteractiveLineVerticalProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
@@ -63,7 +63,7 @@ export const SparklineInteractiveLineVertical = memo(
       [setMaskDOMNode],
     );
 
-    const maskStyle: CSSProperties = {
+    const maskStyle: React.CSSProperties = {
       backgroundColor: palette.background,
     };
 

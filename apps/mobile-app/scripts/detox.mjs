@@ -7,6 +7,8 @@ import { getAffectedRoutes } from './utils/getAffectedRoutes.mjs';
 import { getBuildInfo } from './utils/getBuildInfo.mjs';
 import { setEnvVars } from './utils/setEnvVars.mjs';
 
+$.verbose = true;
+
 const { platform, profile, jsEngine } = argv;
 
 const { commonChanged, affectedRouteKeys } = await getAffectedRoutes();

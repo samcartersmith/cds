@@ -6,6 +6,10 @@
     "test-storybook": "test-storybook",
     "should-run-visreg": "node ./scripts/shouldRunVisreg.mjs"
   },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "dependencies": {
     "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-fonts": "workspace:^",
@@ -15,22 +19,20 @@
     "@cbhq/cds-web-visualization": "workspace:^",
     "@juggle/resize-observer": "^3.4.0"
   },
-  "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "^18.2.0"
-  },
   "devDependencies": {
-    "@percy/cli": "^1.28.1",
+    "@percy/cli": "^1.30.1",
     "@percy/storybook": "^4.3.6",
-    "@shopify/storybook-a11y-test": "^1.1.0",
+    "@shopify/storybook-a11y-test": "^1.2.1",
     "@storybook/addon-a11y": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
     "@storybook/builder-webpack5": "^6.5.12",
     "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/react": "^6.5.17-alpha.0",
-    "@storybook/test-runner": "^0.9.0",
+    "@storybook/test-runner": "^0.16.0",
     "@types/diff": "^5.0.9",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
     "concurrently": "^7.2.1",
     "diff": "^5.1.0",
     "glob": "^10.3.10",
@@ -39,9 +41,9 @@
     "storybook-addon-performance": "^0.16.1",
     "storybook-addon-pseudo-states": "^1.15.1",
     "storybook-dark-mode": "^1.1.2",
+    "tsx": "^4.19.1",
     "wait-on": "^6.0.1",
-    "webpack-bundle-analyzer": "^4.10.1"
-  },
-  "main": "./index.js",
-  "typings": "./index.d.ts"
+    "webpack-bundle-analyzer": "^4.10.1",
+    "zx": "^8.1.9"
+  }
 }

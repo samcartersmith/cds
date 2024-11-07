@@ -1,5 +1,5 @@
 import { TOCItem } from '@docusaurus/types';
-import slugify from '@cbhq/docusaurus-theme/src/utils/slugify';
+import slugify from '@cbhq/docusaurus-theme/utils/slugify';
 
 import type { ComponentPageFields, ComponentPageProps } from './pages/ComponentPage';
 

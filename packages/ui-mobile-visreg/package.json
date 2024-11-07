@@ -1,60 +1,61 @@
 {
   "name": "@cbhq/ui-mobile-visreg",
-  "version": "2.7.0",
+  "version": "3.0.0",
   "description": "Visreg Helpers",
-  "keywords": [
-    "visreg",
-    "playground",
-    "ci",
-    "percy",
-    "detox"
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/ui-mobile-visreg"
+  },
+  "type": "module",
+  "main": "./esm/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./detox": {
+      "types": "./dts/detox/index.d.ts",
+      "default": "./esm/detox/index.js"
+    },
+    "./percy": {
+      "types": "./dts/percy/index.d.ts",
+      "default": "./esm/percy/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./esm/*.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dts",
+    "esm",
+    "src",
+    "CHANGELOG"
   ],
-  "packemon": {
-    "format": "lib",
-    "platform": "node"
-  },
-  "dependencies": {
-    "@cbhq/detox-utils": "^0.5.1",
-    "@percy/cli": "^1.28.1",
-    "@percy/client": "^1.28.1",
-    "@percy/sdk-utils": "^1.28.1",
-    "@percy/storybook": "^4.3.6",
-    "lodash": "^4.17.21"
-  },
   "peerDependencies": {
     "@cbhq/cds-mobile": "workspace:^",
     "@cbhq/cds-mobile-visualization": "workspace:^",
     "detox": "^20.14.8"
   },
+  "dependencies": {
+    "@cbhq/detox-utils": "^0.5.1",
+    "@percy/cli": "^1.30.1",
+    "@percy/client": "^1.30.1",
+    "@percy/sdk-utils": "^1.30.1",
+    "@percy/storybook": "^4.3.6",
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/cds-mobile-visualization": "workspace:^",
     "detox": "^20.14.8"
-  },
-  "types": "./lib/index.d.ts",
-  "main": "./lib/index.js",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./lib/*.d.ts",
-      "node": {
-        "types": "./lib/*.d.ts",
-        "default": "./lib/*.js"
-      },
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./lib/index.d.ts",
-      "node": {
-        "types": "./lib/index.d.ts",
-        "default": "./lib/index.js"
-      },
-      "default": "./lib/index.js"
-    }
-  },
-  "files": [
-    "dts/**/*.d.ts",
-    "lib/**/*.{js,map,d.ts}",
-    "src/**/*.{ts}",
-    "CHANGELOG.md",
-    "README.md"
-  ]
+  }
 }

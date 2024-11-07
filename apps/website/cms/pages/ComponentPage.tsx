@@ -1,4 +1,4 @@
-import React, { memo, ReactElement } from 'react';
+import React, { memo } from 'react';
 import { Document } from '@contentful/rich-text-types';
 import { TOCItems } from '@theme/createTOCManager';
 import TabItemOriginal from '@theme-original/TabItem';
@@ -17,7 +17,7 @@ import { OverviewFields } from '../modules/Overview';
 import { populateExamplesToc, populateGuidelinesToc } from '../utils';
 
 type DocgenProps = {
-  element: ReactElement;
+  element: React.ReactElement;
   toc?: TOCItems;
 };
 

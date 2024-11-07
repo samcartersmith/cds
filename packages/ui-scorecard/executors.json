@@ -1,7 +1,7 @@
 {
   "executors": {
     "audit-a11y": {
-      "implementation": "./cjs/executors/audit-a11y/impl.cjs",
+      "implementation": "./cjs/executors/audit-a11y/impl.js",
       "schema": "./src/executors/audit-a11y/schema.json",
       "description": "Runs an a11y audit on the project"
     }

@@ -1,6 +1,6 @@
 import glob from 'fast-glob';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { OverallSummaryStats, SummaryReport } from '../../components/AdoptionTracker/types';
 import { adopters } from '../../data/__generated__/adoption/adopters';

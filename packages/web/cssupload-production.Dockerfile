@@ -14,4 +14,4 @@ ENV NODE_ENV=production
 RUN yarn nx run web:build-css
 
 # Zip the app for deploy
-RUN (cd /repo/.nx/dist/cloud/css && zip -r - .) > /repo/app.zip
+RUN (cd /repo/packages/web/dist && zip -r - .) > /repo/app.zip

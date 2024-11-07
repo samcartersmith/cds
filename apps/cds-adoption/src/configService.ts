@@ -10,7 +10,6 @@ process.env.GIT_USER_EMAIL = 'cody.nova@coinbase.com';
 process.env.SNOWSQL_PWD = 'TVTioUa4GeFUmyrwtzrQ';
 process.env.FORCE_LOGS = 'true';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
 const ConfigServiceClient: typeof configServiceNode = (configServiceNode as any).default;
 
 const configServiceScope = 'frontend/cds-cds-adoption';

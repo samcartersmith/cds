@@ -1,9 +1,10 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import type { VersionBump } from '@cbhq/mono-pipeline/lib/bumpVersion';
 
 import { execute } from './execute.js';
 import { spawn } from './spawn.js';
 import { resolveWorkingDirectoryPath } from './workingDirectory.js';
+
+type VersionBump = 'major' | 'minor' | 'patch' | 'none';
 
 type UpdatePackageVersionOptions = {
   project: string;

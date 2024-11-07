@@ -3,25 +3,37 @@
   "version": "0.0.0",
   "private": true,
   "description": "Jest utils and developer tools.",
-  "keywords": [
-    "web utils"
-  ],
-  "packemon": [
-    {
-      "format": "lib",
-      "platform": "node",
-      "inputs": {
-        "index": "src/index.ts",
-        "jest": "src/jest/index.ts"
-      },
-      "externals": [
-        "axe-core"
-      ]
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "libs/web-utils"
+  },
+  "type": "commonjs",
+  "main": "./cjs/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./jest": {
+      "types": "./dts/jest/index.d.ts",
+      "default": "./cjs/jest/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./cjs/*.js"
     }
+  },
+  "files": [
+    "cjs",
+    "dts",
+    "CHANGELOG"
   ],
   "dependencies": {
     "@babel/types": "^7.20.7",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^16.0.1",
     "chalk": "^4.1.2",
     "jest-axe": "^4.1.0",
     "linaria": "^2.3.1",
@@ -29,33 +41,10 @@
     "stylis": "^3.5.4",
     "yargs": "^17.5.1"
   },
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    "./jest": {
-      "types": "./lib/jest/index.d.ts",
-      "node": {
-        "types": "./lib/jest/index.d.ts",
-        "default": "./lib/jest/index.js"
-      },
-      "default": "./lib/jest/index.js"
-    },
-    ".": {
-      "types": "./lib/index.d.ts",
-      "node": {
-        "types": "./lib/index.d.ts",
-        "default": "./lib/index.js"
-      },
-      "default": "./lib/index.js"
-    },
-    "./*": {
-      "types": "./lib/*.d.ts",
-      "node": {
-        "types": "./lib/*.d.ts",
-        "default": "./lib/*.js"
-      },
-      "default": "./lib/*.js"
-    }
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6"
   }
 }

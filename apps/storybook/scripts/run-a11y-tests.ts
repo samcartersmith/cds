@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import { A11yTestRunner } from '@shopify/storybook-a11y-test';
-import path from 'path';
+import path from 'node:path';
 
 const rootOfRepo = path.join(__dirname, '../../..');
-const buildDir = path.join(rootOfRepo, '.nx/outs/projects/apps/storybook/storybook');
+const buildDir = path.join(rootOfRepo, 'apps/storybook/dist');
 
 async function runA11yTests() {
   const testRunner = new A11yTestRunner(buildDir);

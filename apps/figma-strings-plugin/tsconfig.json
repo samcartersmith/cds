@@ -1,23 +1,16 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/apps/figma-strings-plugin",
-    "rootDir": "./",
-    "module": "ESNext"
+    "declarationDir": "dts",
+    "rootDir": "src"
   },
   "include": [
-    "src",
-    "vite.config.ts"
+    "src/**/*"
   ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "public"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../libs/figma-styles"
     }
-  ],
-
+  ]
 }

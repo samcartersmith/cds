@@ -1,15 +1,12 @@
 {
   "name": "figma-strings-plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/figma-strings-plugin",
+  "sourceRoot": "apps/figma-strings-plugin/src",
   "projectType": "application",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@cbhq/mono-tasks:run-package-script",
-      "options": {
-        "script": "build"
-      }
+      "command": "yarn workspace @cbhq/cds-figma-strings-plugin build"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -21,7 +18,16 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
     }
   }
 }

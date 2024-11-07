@@ -1,6 +1,18 @@
-module.exports = {
+const d3 = ['d3', 'd3-.+', 'internmap'];
+const native = [
+  'jest-react-native',
+  'react-native',
+  '@react-native',
+  '@react-native-community',
+  'react-native-webview',
+  '@bugsnag/react-native',
+];
+
+const esModules = ['@cbhq', ...native, ...d3];
+
+export default {
   coveragePathIgnorePatterns: [
-    '<rootDir>/illustrations/images',
+    '<rootDir>/src/illustrations/images',
     '.stories.tsx',
     '__stories__',
     '.perf-test',
@@ -19,4 +31,5 @@ module.exports = {
   fakeTimers: {
     enableGlobally: true,
   },
+  transformIgnorePatterns: [`node_modules/(?!(${esModules.join('|')}))`],
 };

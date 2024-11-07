@@ -1,4 +1,4 @@
-import '@cbhq/d3/transition'; // Important! do not remove this, it sets up the linkage so you can use select().transition()
+import 'd3-transition'; // Important! do not remove this, it sets up the linkage so you can use select().transition()
 
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import { interpolatePath } from 'd3-interpolate-path';

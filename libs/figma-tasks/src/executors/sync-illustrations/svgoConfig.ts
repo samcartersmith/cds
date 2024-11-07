@@ -1,5 +1,4 @@
 import type { Config } from 'svgo';
-import { color } from '@cbhq/d3/color';
 
 import defaultSvgoConfig from '../../helpers/image/svgoConfig';
 
@@ -7,8 +6,14 @@ import defaultSvgoConfig from '../../helpers/image/svgoConfig';
 const colorsProps = ['color', 'fill', 'stroke', 'stop-color', 'flood-color', 'lighting-color'];
 
 function colorTo6DigitUppercaseHex(val: string) {
-  const hex = color(val)?.formatHex();
-  return hex?.toUpperCase();
+  if (val === 'none') return null;
+  if (!val.startsWith('#'))
+    throw Error(
+      'Unexpected color format in figma-tasks sync-illustrations colorTo6DigitUppercaseHex',
+    );
+  const hex = val.substring(1);
+  if (hex.length === 3) return `#${hex}${hex}`.toUpperCase();
+  return val.toUpperCase();
 }
 
 const svgoConfig: Config = {

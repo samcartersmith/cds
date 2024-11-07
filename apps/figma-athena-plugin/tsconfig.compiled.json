@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    // Disables src paths defined in root tsconfig.json, so built files are used for type checking
-    "paths": {}
-  }
-}

@@ -1,10 +1,10 @@
-import React, { createContext, Dispatch, memo, SetStateAction, useMemo, useState } from 'react';
+import React, { createContext, memo, useMemo, useState } from 'react';
 
 import { AdopterTabKey } from '../types';
 
 export type AdopterTabContextType = {
   tabKey: string;
-  setTabKey: Dispatch<SetStateAction<AdopterTabKey>>;
+  setTabKey: React.Dispatch<React.SetStateAction<AdopterTabKey>>;
 };
 
 export const AdopterTabContext = createContext<AdopterTabContextType | undefined>(undefined);

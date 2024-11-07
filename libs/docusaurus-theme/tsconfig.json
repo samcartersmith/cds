@@ -1,19 +1,15 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "../../.nx/dts/libs/docusaurus-theme"
+    "declarationDir": "dts",
+    "rootDir": "src",
+
+    "moduleResolution": "node"
   },
   "include": [
-    "src",
-    "src/**/*.ts",
-    "scripts"
+    "src/**/*"
   ],
-  "exclude": [
-    "node_modules",
-    "**/__tests__/**/*",
-    "lib"
-  ],
+  "exclude": [],
   "references": [
     {
       "path": "../../libs/docusaurus-plugin-docgen"
@@ -22,20 +18,13 @@
       "path": "../../libs/docusaurus-plugin-kbar"
     },
     {
+      "path": "../../libs/web-utils"
+    },
+    {
       "path": "../../packages/common"
     },
     {
       "path": "../../packages/web"
-    },
-    {
-      "path": "../../libs/web-utils"
     }
-  ],
-  "ts-node": {
-    "transpileOnly": true,
-    "files": true,
-    "require": [
-      "tsconfig-paths/register"
-    ]
-  }
+  ]
 }

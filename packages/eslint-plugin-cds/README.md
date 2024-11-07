@@ -78,7 +78,7 @@ To test on consumer repos locally, you will need to build your `eslint-plugin-cd
 
 We currently have two additional accessibility rules:
 
-### 🔍  controlHasAssociatedLabelExtended (Web)
+### 🔍 controlHasAssociatedLabelExtended (Web)
 
 **Rule Description**:
 
@@ -127,7 +127,7 @@ For components listed under `collapsibleCheckForControlledElementAccessibilityPr
 - `SearchInput`
   - Checks for presence of `startIconAccessibilityLabel` and `clearIconAccessibilityLabel`
 
-### 🔍  hasValidA11yDescriptorsExtended (mobile)
+### 🔍 hasValidA11yDescriptorsExtended (mobile)
 
 **Rule Description**:
 

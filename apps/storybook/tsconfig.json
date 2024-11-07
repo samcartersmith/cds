@@ -1,31 +1,32 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/apps/storybook",
-    "rootDir": "./"
-    /** 
-     * Compiler paths are not respected by storybook. So if any module alias is not working
-     * you need to add it to `config.resolve.alias` in main.js.
-     **/
+    "declarationDir": "dts"
   },
+  "include": [
+    ".storybook/**/*",
+    "playground/**/*",
+    "scripts/**/*"
+  ],
+  "exclude": [],
   "references": [
     {
-      "path": "../../packages/icons"
-    },
-    {
-      "path": "../../packages/web"
+      "path": "../../packages/common"
     },
     {
       "path": "../../packages/fonts"
     },
     {
+      "path": "../../packages/icons"
+    },
+    {
       "path": "../../packages/illustrations"
+    },
+    {
+      "path": "../../packages/web"
     },
     {
       "path": "../../packages/web-visualization"
     }
-  ],
-  "exclude": [
-    "babel.config.js"
   ]
 }

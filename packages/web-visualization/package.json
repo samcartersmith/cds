@@ -1,33 +1,65 @@
 {
   "name": "@cbhq/cds-web-visualization",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "Coinbase Design System - Web Sparkline",
-  "repository": "git@github.cbhq.net:frontend/cds.git",
-  "keywords": [
-    "design system",
-    "component library",
-    "sparkline",
-    "react",
-    "typescript"
-  ],
-  "main": "index",
-  "typings": "index.d.ts",
-  "dependencies": {
-    "@cbhq/d3": "workspace:^",
-    "d3-interpolate-path": "^2.2.2",
-    "d3-selection": "^1.4.2",
-    "lodash": "^4.17.21"
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/web-visualization"
   },
+  "type": "module",
+  "main": "./esm/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./sparkline": {
+      "types": "./dts/sparkline/index.d.ts",
+      "default": "./esm/sparkline/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./esm/*.js"
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dts",
+    "esm",
+    "CHANGELOG"
+  ],
   "peerDependencies": {
     "@cbhq/cds-common": "workspace:^",
     "@cbhq/cds-lottie-files": "workspace:^",
     "@cbhq/cds-utils": "workspace:^",
     "@cbhq/cds-web": "workspace:^",
-    "react": "18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "d3-color": "^3.1.0",
+    "d3-interpolate": "^3.0.1",
+    "d3-interpolate-path": "^2.3.0",
+    "d3-selection": "^3.0.0",
+    "d3-transition": "^3.0.1",
+    "linaria": "^2.3.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@cbhq/cds-tasks": "workspace:^",
-    "linaria": "^2.3.1"
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-lottie-files": "workspace:^",
+    "@cbhq/cds-utils": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0"
   }
 }

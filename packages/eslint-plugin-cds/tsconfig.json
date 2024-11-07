@@ -1,18 +1,12 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "rootDir": "./",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "target": "ES2020",
-    "strict": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
-    "jsx": "preserve",
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "declarationDir": "dts"
+    "declarationDir": "dts",
+    "rootDir": "src"
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [],
+  "references": []
 }

@@ -1,4 +1,4 @@
-import { performance } from 'node:perf_hooks';
+import { performance } from 'perf_hooks';
 import { color, logDebug, logError, logSuccess } from '@cbhq/mono-tasks';
 
 import { A11yAuditor } from './A11yAuditor';

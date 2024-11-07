@@ -1,8 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
-import { argv } from 'yargs';
+import yargs from 'yargs';
+
+const { argv } = yargs(process.argv);
 
 const { watch } = argv as { watch?: boolean };
 
@@ -14,7 +15,7 @@ async function reloadFigma() {
   return {
     name: 'vite-plugin-reload-figma',
     buildEnd: function buildEnd() {
-      $`./scripts/reload-figma.sh`;
+      void $`./scripts/reload-figma.sh`;
     },
   };
 }

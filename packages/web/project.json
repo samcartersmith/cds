@@ -1,10 +1,22 @@
 {
   "name": "web",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/web",
+  "sourceRoot": "packages/web/src",
   "projectType": "library",
   "tags": [],
   "targets": {
+    "build": {
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
+    },
+    "build-css": {
+      "command": "tsx ./build-css.ts",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "cwd": "packages/web"
+      }
+    },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
     },
@@ -18,61 +30,16 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
-    },
-    "export-package-version": {
-      "executor": "@cbhq/cds-tasks:export-package-version"
-    },
-    "build": {
-      "executor": "@cbhq/cds-tasks:build-package",
-      "outputs": [
-        "{workspaceRoot}/.nx/dist/packages/web"
-      ],
-      "options": {
-        "destinationDir": ".nx/dist/packages/web",
-        "staticFilesToIgnore": [
-          "babel.config.js",
-          "jest.config.js",
-          "linaria.config.js",
-          "tsconfig.json",
-          "tsconfig.build.json",
-          "project.json"
-        ],
-        "babelConfig": "./packages/web/babel.config.js",
-        "babelExtensions": [
-          ".ts",
-          ".tsx"
-        ],
-        "babelIgnore": [
-          "**/*.js",
-          "**/*.test.ts",
-          "**/*.test.tsx",
-          "**/*.stories.tsx",
-          "storybook-decorators"
-        ],
-        "typescriptConfig": "packages/web/tsconfig.build.json"
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
       }
-    },
-    "build-css": {
-      "executor": "@cbhq/cds-tasks:build-css",
-      "inputs": [
-        "{workspaceRoot}/packages/icons/fonts/web/**/*",
-        "{workspaceRoot}/.nx/dist/packages/fonts/**/*",
-        "{workspaceRoot}/.nx/dist/packages/web/**/*",
-        "production"
-      ],
-      "outputs": [
-        "{workspaceRoot}/.nx/dist/cloud/css"
-      ],
-      "options": {
-        "iconsOutputDir": "packages/icons/fonts/web",
-        "fontsOutputDir": ".nx/dist/packages/fonts",
-        "webOutputDir": ".nx/dist/packages/web",
-        "outputDir": ".nx/dist/cloud/css"
-      },
-      "dependsOn": [
-        "build"
-      ]
     },
     "danger": {
       "executor": "@cbhq/mono-tasks:danger",
@@ -86,34 +53,6 @@
         "dangerfile": "libs/dangerfiles/dangerfile-coverage.ts",
         "timeoutSeconds": 30
       }
-    },
-    "perf-test-clean": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "jest --clearCache"
-        ]
-      }
-    },
-    "perf-test": {
-      "executor": "@cbhq/mono-tasks:run-script",
-      "outputs": [
-        ".reassure"
-      ],
-      "options": {
-        "script": "../../node_modules/.bin/reassure",
-        "root": "/packages/web"
-      },
-      "env": {
-        "NX_BAN_LOGS": false,
-        "TEST_RUNNER_PATH": "../../node_modules/.bin/jest",
-        "TEST_RUNNER_ARGS": "--detectOpenHandles --runInBand --forceExit --testMatch \"<rootDir>/**/(*.)perf-test.[jt]s?(x)\"",
-        "TARGET_ENV": "perf_test_js"
-      },
-      "dependsOn": [
-        "^build",
-        "perf-test-clean"
-      ]
     },
     "audit-a11y": {
       "executor": "@cbhq/ui-scorecard:audit-a11y",

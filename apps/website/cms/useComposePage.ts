@@ -48,8 +48,7 @@ export function useComposePage<T>(slug?: string) {
     }
 
     if (route) {
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      getContentfulEntry();
+      void getContentfulEntry();
     }
   }, [route, space, clientKey, handleError]);
 

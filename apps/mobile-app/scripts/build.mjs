@@ -1,7 +1,9 @@
-import { $, argv } from 'zx'; // https://github.com/google/zx
+import { $, argv } from 'zx';
 
 import { getBuildInfo } from './utils/getBuildInfo.mjs';
 import { setEnvVars } from './utils/setEnvVars.mjs';
+
+$.verbose = true;
 
 const { platform, profile } = argv;
 const { ios, android } = getBuildInfo();

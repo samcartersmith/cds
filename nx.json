@@ -1,52 +1,101 @@
 {
-  "npmScope": "cbhq",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "cacheDirectory": "./.nx/cache",
+  "useInferencePlugins": false,
+  "cli": {
+    "packageManager": "yarn"
+  },
+  "defaultBase": "master",
   "affected": {
     "defaultBase": "master"
   },
-  "cli": {
-    "packageManager": "yarn"
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@cbhq/nx-tasks-runner",
       "options": {
-        "cacheDirectory": "./.nx/cache",
-        "cacheableOperations": [
-          "a11y-web",
-          "build",
-          "build-css",
-          "build-for-tests",
-          "format",
-          "lint",
-          "lint-styles",
-          "test",
-          "typecheck"
-        ],
         "captureStderr": true
       }
     }
   },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/.buildkite/*.yml",
+      "{workspaceRoot}/.eslintrc.cjs",
+      "{workspaceRoot}/.*ignore",
+      "{workspaceRoot}/*.config.js",
+      "{workspaceRoot}/*.config.cjs",
+      "{workspaceRoot}/*.config.mjs",
+      "{workspaceRoot}/nx.json",
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/tsconfig.json",
+      "{workspaceRoot}/tsconfig.*.json"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/__stories__/**",
+      "!{projectRoot}/**/__tests__/**",
+      "!{projectRoot}/**/__mocks__/**",
+      "!{projectRoot}/**/__fixtures__/**",
+      "!{projectRoot}/**/*.stories.*",
+      "!{projectRoot}/**/*.test.*",
+      "!{projectRoot}/**/*.spec.*"
+    ]
+  },
   "targetDefaults": {
     "build": {
       "dependsOn": [
-        "^build",
-        "export-package-version"
+        "^build"
       ],
+      "options": {
+        "cwd": "{projectRoot}"
+      },
       "inputs": [
         "production",
         "^production"
       ],
       "outputs": [
-        "{workspaceRoot}/.nx/outs/projects/{projectRoot}",
-        "{projectRoot}/assets",
         "{projectRoot}/cjs",
-        "{projectRoot}/dts",
+        "{projectRoot}/dist",
         "{projectRoot}/esm",
-        "{projectRoot}/lib",
-        "{projectRoot}/mjs"
-      ]
+        "{projectRoot}/lib"
+      ],
+      "cache": true
+    },
+    "typecheck": {
+      "options": {
+        "cwd": "{projectRoot}"
+      },
+      "inputs": [
+        "default",
+        "^production"
+      ],
+      "outputs": [
+        "{projectRoot}/dts",
+        "{projectRoot}/tsconfig.tsbuildinfo"
+      ],
+      "cache": true
+    },
+    "dev": {
+      "options": {
+        "cwd": "{projectRoot}"
+      }
     },
     "start": {
+      "dependsOn": [
+        "^build",
+        "typecheck"
+      ],
+      "options": {
+        "cwd": "{projectRoot}"
+      },
       "inputs": [
         "production",
         "^production"
@@ -57,7 +106,8 @@
         "default",
         "^production",
         "{workspaceRoot}/.eslintignore"
-      ]
+      ],
+      "cache": true
     },
     "test": {
       "dependsOn": [
@@ -68,47 +118,24 @@
         "^production"
       ],
       "outputs": [
-        "{workspaceRoot}/.nx/outs/projects/{projectRoot}/coverage"
-      ]
-    },
-    "typecheck": {
-      "inputs": [
-        "default",
-        "^production"
+        "{projectRoot}/coverage"
       ],
-      "outputs": [
-        "{workspaceRoot}/.nx/dts/{projectRoot}"
-      ]
+      "cache": true
     },
-    "export-package-version": {
-      "dependsOn": [
-        "^build"
-      ]
+    "a11y-web": {
+      "cache": true
+    },
+    "build-css": {
+      "cache": true
+    },
+    "build-for-tests": {
+      "cache": true
+    },
+    "format": {
+      "cache": true
+    },
+    "lint-styles": {
+      "cache": true
     }
-  },
-  "workspaceLayout": {
-    "appsDir": "apps",
-    "libsDir": "packages"
-  },
-  "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
-    "sharedGlobals": [
-      "{workspaceRoot}/.buildkite/*.yml",
-      "{workspaceRoot}/.eslintrc.js",
-      "{workspaceRoot}/.*ignore",
-      "{workspaceRoot}/*.config.js",
-      "{workspaceRoot}/nx.json",
-      "{workspaceRoot}/package.json",
-      "{workspaceRoot}/tsconfig.json",
-      "{workspaceRoot}/tsconfig.*.json"
-    ],
-    "production": [
-      "default",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)"
-    ]
-  },
-  "$schema": "./node_modules/nx/schemas/nx-schema.json"
+  }
 }

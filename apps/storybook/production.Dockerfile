@@ -14,4 +14,4 @@ ENV NODE_ENV=production
 RUN yarn nx run storybook:build
 
 # Zip the app for deploy
-RUN (cd /repo/.nx/outs/projects/apps/storybook/storybook && zip -r - .) > /repo/app.zip
+RUN (cd /repo/apps/storybook/dist && zip -r - .) > /repo/app.zip

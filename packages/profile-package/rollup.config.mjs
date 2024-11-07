@@ -14,22 +14,13 @@ export default {
     ...Object.keys(pkg.devDependencies || {}),
     /react/,
   ],
-  output: [
-    {
-      format: 'esm',
-      entryFileNames: '[name].js',
-      dir: path.dirname(pkg.module),
-      preserveModules: true,
-      banner: '#!/usr/bin/env node',
-    },
-    {
-      format: 'cjs',
-      entryFileNames: '[name].js',
-      dir: path.dirname(pkg.main),
-      preserveModules: true,
-      banner: '#!/usr/bin/env node',
-    },
-  ],
+  output: {
+    format: 'esm',
+    entryFileNames: '[name].js',
+    dir: path.dirname(pkg.main),
+    preserveModules: true,
+    banner: '#!/usr/bin/env node',
+  },
   plugins: [
     resolve({
       // Make .js/.jsx resolve to .ts/.tsx similar to TypeScript

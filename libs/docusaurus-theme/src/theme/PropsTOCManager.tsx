@@ -1,7 +1,9 @@
 import createTOCManager from '@theme/createTOCManager';
 
-export const {
+const {
   useTOC: usePropsTOC,
   TOCProvider: PropsTOCProvider,
   TOCUpdater: PropsTOCUpdater,
 } = createTOCManager();
+
+export { PropsTOCProvider, PropsTOCUpdater, usePropsTOC };

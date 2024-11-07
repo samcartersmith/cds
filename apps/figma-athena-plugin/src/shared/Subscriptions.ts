@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { FigmaNodeData } from './FigmaNodeData';
 import type { MessageData, MessagesToPlugin } from './Messages';
 

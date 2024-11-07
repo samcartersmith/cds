@@ -2,9 +2,5 @@
 ### Run `yarn codeowners` to update
 
 # FROM ./OWNERS
-.* @frontend/ui-systems-eng-team
-*.config.js @frontend/ui-systems-eng-team
-*.json @frontend/ui-systems-eng-team
-
-# FROM ./packages/mobile-visualization/OWNERS
-/packages/mobile-visualization/ @frontend/ui-systems-eng-team
+#~ {"path":".","teams":{"@frontend/ui-systems-eng-team":{"required_reviews":1}}}
+. @frontend/ui-systems-eng-team

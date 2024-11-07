@@ -1,7 +1,7 @@
 {
   "name": "figma-icons-plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/figma-icons-plugin",
+  "sourceRoot": "apps/figma-icons-plugin/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -18,11 +18,7 @@
     },
     "build": {
       "executor": "nx:run-commands",
-      "outputs": [
-        "{projectRoot}/lib"
-      ],
       "options": {
-        "cwd": "apps/figma-icons-plugin",
         "commands": [
           "esbuild ./src/plugin.ts --bundle --outfile=lib/plugin.js",
           "vite build"
@@ -40,7 +36,7 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "command": "tsc --build --pretty --verbose"
     }
   }
 }

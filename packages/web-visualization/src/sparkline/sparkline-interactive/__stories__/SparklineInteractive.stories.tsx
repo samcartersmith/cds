@@ -8,7 +8,6 @@ import {
   sparklineInteractiveHoverData,
 } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { Box, VStack } from '@cbhq/cds-web/layout';
-import { enableJavascript } from '@cbhq/cds-web/utils/storybookParams/percy';
 
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineInteractive } from '../SparklineInteractive';
@@ -40,7 +39,7 @@ export const Default = () => (
 );
 Default.bind({});
 Default.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -54,7 +53,7 @@ export const Compact = () => (
 
 Compact.bind({});
 Compact.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -72,7 +71,7 @@ export const Contained = () => (
 
 Contained.bind({});
 Contained.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -90,7 +89,7 @@ export const DisableScrubbing = () => (
 
 DisableScrubbing.bind({});
 DisableScrubbing.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -108,7 +107,7 @@ export const HidePeriodSelector = () => (
 
 HidePeriodSelector.bind({});
 HidePeriodSelector.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -126,7 +125,7 @@ export const yAxisScaling = () => (
 
 yAxisScaling.bind({});
 yAxisScaling.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -142,7 +141,7 @@ export const CustomRGBStrokeColor = () => (
 
 CustomRGBStrokeColor.bind({});
 CustomRGBStrokeColor.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -158,7 +157,7 @@ export const CustomRGBAStrokeColor = () => (
 
 CustomRGBAStrokeColor.bind({});
 CustomRGBAStrokeColor.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -176,7 +175,7 @@ export const FillDisabled = () => (
   </React.StrictMode>
 );
 FillDisabled.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -188,7 +187,7 @@ export const FallbackPositive = () => <SparklineInteractiveBuild strokeColor={st
 
 FallbackPositive.bind({});
 FallbackPositive.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -202,7 +201,7 @@ export const FallbackNegative = () => (
 
 FallbackNegative.bind({});
 FallbackNegative.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -216,7 +215,7 @@ export const FallbackCompact = () => (
 
 FallbackCompact.bind({});
 FallbackCompact.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -241,7 +240,7 @@ export const HoverPrice = () => {
 
 HoverPrice.bind({});
 HoverPrice.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -260,7 +259,7 @@ export const NoHoverDate = () => (
 
 NoHoverDate.bind({});
 NoHoverDate.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -276,7 +275,7 @@ export const WithHeaderNode = () => {
 
 WithHeaderNode.bind({});
 WithHeaderNode.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -296,7 +295,7 @@ export const TimePeriodGutter = () => {
 
 TimePeriodGutter.bind({});
 TimePeriodGutter.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -316,7 +315,7 @@ export const HoverData = () => {
 
 HoverData.bind({});
 HoverData.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -337,7 +336,7 @@ export const HoverDataWithFill = () => {
 
 HoverDataWithFill.bind({});
 HoverDataWithFill.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -357,7 +356,7 @@ export const BottomPeriodSelector = () => {
 
 BottomPeriodSelector.bind({});
 BottomPeriodSelector.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -380,7 +379,7 @@ export const VStackedSparkline = () => {
 
 VStackedSparkline.bind({});
 VStackedSparkline.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],
@@ -401,7 +400,7 @@ export const NoDataInSelectedPeriod = () => {
 };
 NoDataInSelectedPeriod.bind({});
 NoDataInSelectedPeriod.parameters = {
-  percy: enableJavascript,
+  percy: { enableJavaScript: true },
   a11y: {
     config: {
       rules: [{ id: 'color-contrast', enabled: false }],

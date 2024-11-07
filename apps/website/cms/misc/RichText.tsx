@@ -1,4 +1,4 @@
-import React, { memo, ReactElement, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Options } from '@contentful/rich-text-react-renderer';
 import { Block, BLOCKS, Document, Inline, INLINES, MARKS, Text } from '@contentful/rich-text-types';
 import CodeBlock from '@theme/CodeBlock';
@@ -9,7 +9,7 @@ import { CMSContent, RichText as CBRichText } from '@cb/cms';
 import { VStack } from '@cbhq/cds-web/layout';
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '@cbhq/cds-web/tables';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
-import Heading from '@cbhq/docusaurus-theme/src/theme/Heading';
+import Heading from '@cbhq/docusaurus-theme/theme/Heading';
 
 import { Divider } from '../components/Divider';
 
@@ -23,7 +23,7 @@ export type RichTextProps = {
 const defaultOptions: Options = {
   renderMark: {
     [MARKS.BOLD]: (text) => <TextHeadline as="span">{text}</TextHeadline>,
-    [MARKS.CODE]: (text) => !!text && <CodeBlock>{text as string | ReactElement}</CodeBlock>,
+    [MARKS.CODE]: (text) => !!text && <CodeBlock>{text as string | React.ReactElement}</CodeBlock>,
   },
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_node, children) => (
@@ -48,7 +48,7 @@ const defaultOptions: Options = {
       );
     },
     table: (_node, children) => {
-      const [tableHeaderRow, ...tableBodyRows] = children as ReactElement[];
+      const [tableHeaderRow, ...tableBodyRows] = children as React.ReactElement[];
 
       return (
         <Table bordered variant="ruled">
@@ -63,15 +63,15 @@ const defaultOptions: Options = {
 
       return (
         <TableRow backgroundColor={isHeaderRow ? 'backgroundAlternate' : undefined}>
-          {children as ReactElement[]}
+          {children as React.ReactElement[]}
         </TableRow>
       );
     },
     'table-header-cell': (_node, children) => {
-      return <TableCell>{children as ReactElement[]}</TableCell>;
+      return <TableCell>{children as React.ReactElement[]}</TableCell>;
     },
     'table-cell': (_node, children) => {
-      return <TableCell>{children as ReactElement[]}</TableCell>;
+      return <TableCell>{children as React.ReactElement[]}</TableCell>;
     },
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       const castedNode = node as Block & { data: { target: Entry<unknown> } };

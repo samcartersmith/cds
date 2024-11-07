@@ -11,12 +11,12 @@ export type CssResult = {
   sourceMap?: string;
 };
 
-export type CssOptions = {
-  sandboxDir: string;
-  outDir: string;
+export type ExtractConfigOptions = {
+  sourceDir: string;
+  outputDir: string;
 };
 
-export type CssExtractOptions = CssOptions & {
+export type CssExtractOptions = ExtractConfigOptions & {
   sourceFile: string;
   sourceMap: string;
   outputFile: string;
@@ -99,6 +99,10 @@ async function writeCssFiles(cssMap: Map<string, CssResult>) {
   }
 }
 
+/**
+ * This plugin is used to extract Linaria styles into static .css files via the Linaria
+ * metadata in babel.
+ */
 export function linariaCssExtractPlugin(): PluginObj {
   const cssMap = new Map<string, CssResult>();
 
@@ -107,7 +111,7 @@ export function linariaCssExtractPlugin(): PluginObj {
       Program: {
         exit(nodePath, state) {
           const { opts, file, filename: sourceFile } = state;
-          const { sandboxDir, outDir } = opts as CssOptions;
+          const { sourceDir, outputDir } = opts as ExtractConfigOptions;
           const metadata = (file.metadata as { linaria: LinariaMetadata }).linaria;
 
           if (!metadata || !sourceFile || cssMap.has(sourceFile)) {
@@ -115,7 +119,7 @@ export function linariaCssExtractPlugin(): PluginObj {
           }
 
           // Determine Bazel output path from sandbox path
-          const outputFile = sourceFile.replace(sandboxDir, outDir).replace(/\.[jt]sx?$/, '.css');
+          const outputFile = sourceFile.replace(sourceDir, outputDir).replace(/\.[jt]sx?$/, '.css');
 
           if (!cssMap.has(sourceFile)) {
             const processed = extractCss(metadata, {

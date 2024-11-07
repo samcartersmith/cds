@@ -1,7 +1,7 @@
-import { exec } from 'child_process';
-import fs from 'fs';
 import { uniq } from 'lodash';
-import { promisify } from 'util';
+import { exec } from 'node:child_process';
+import fs from 'node:fs';
+import { promisify } from 'node:util';
 
 import { adopters, adoptionDocsDir, tempDir } from '../config';
 

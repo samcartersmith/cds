@@ -5,12 +5,7 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@cbhq/mono-tasks:build-package",
-      "outputs": [
-        "{projectRoot}/assets",
-        "{projectRoot}/lib",
-        "{projectRoot}/mjs"
-      ]
+      "command": "rm -rf cjs && babel ./src --out-dir cjs --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
     "format": {
       "executor": "@cbhq/mono-tasks:format"
@@ -22,15 +17,15 @@
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
-    },
-    "watch": {
       "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/script-utils",
-        "commands": [
-          "packemon watch --quiet --loadConfigs"
-        ]
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
       }
     }
   }

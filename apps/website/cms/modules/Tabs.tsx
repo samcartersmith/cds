@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import TabsOriginal from '@theme-original/Tabs';
 import { Entry } from 'contentful';
-import { TabProps } from '@cbhq/docusaurus-theme/src/theme/Tabs';
+import { TabProps } from '@cbhq/docusaurus-theme/theme/Tabs';
 
 import { TabItem, TabItemFields } from './TabItem';
 

@@ -1,14 +1,12 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/packages/ui-scorecard"
+    "declarationDir": "dts",
+    "rootDir": "src"
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
-  "exclude": [
-    ".eslintrc.js",
-    "cjs",
-    "dts"
-  ]
+  "exclude": [],
+  "references": []
 }

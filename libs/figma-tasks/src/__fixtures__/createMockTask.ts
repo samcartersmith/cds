@@ -2,9 +2,12 @@ import { Task } from '@cbhq/mono-tasks';
 
 import { SyncIconsTaskOptions } from '../executors/sync-icons/sync-icons';
 import { SyncIllustrationsTaskOptions } from '../executors/sync-illustrations/sync-illustrations';
-import { SyncStylesTaskOptions } from '../executors/sync-styles/sync-styles';
 
-const root = '/Users/john-doe/src/cds';
+const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
+
+if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
+
+const root = MONOREPO_ROOT;
 
 export const mockTaskOptions = {
   'sync-icons': {
@@ -42,21 +45,11 @@ export const mockTaskOptions = {
     generatedSvgsJsDirectory: './src/__generated__/js',
     generatedTypesDirectory: './src/__generated__/types',
   },
-  'sync-styles': {
-    figmaApiFileId: 'skPXKFmI64GqqEkOaBSHcL',
-    changelogFile: './CHANGELOG.md',
-    manifestFile: './src/__generated__/styles/light/manifest.json',
-    generatedKeyToNameMapFile: './src/__generated__/styles/light/keyToNameMap.ts',
-    generatedNameToKeyMapFile: './src/__generated__/styles/light/nameToKeyMap.ts',
-    generatedCssVariablesMapFile: './src/__generated__/styles/light/cssVariablesMap.ts',
-    cssVariablesPrefix: 'illustration',
-  },
 };
 
 type Tasks = {
   'sync-icons': Partial<SyncIconsTaskOptions>;
   'sync-illustrations': Partial<SyncIllustrationsTaskOptions>;
-  'sync-styles': Partial<SyncStylesTaskOptions>;
 };
 
 type CreateMockTaskParams<TaskName extends keyof Tasks> = {

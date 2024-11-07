@@ -1,7 +1,7 @@
 import React from 'react';
-import { CellMedia } from 'packages/web/cells/CellMedia';
 import { Button, ButtonGroup } from '@cbhq/cds-web/buttons';
 import { ListCell } from '@cbhq/cds-web/cells';
+import { CellMedia } from '@cbhq/cds-web/cells/CellMedia';
 import { HeroSquare, Pictogram, SpotRectangle, SpotSquare } from '@cbhq/cds-web/illustrations';
 // @ts-expect-error testing
 import { Illustration } from '@cbhq/cds-web/illustrations/Illustration';

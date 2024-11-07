@@ -4,8 +4,14 @@
   "sourceRoot": "apps/next-app",
   "projectType": "application",
   "targets": {
+    "dev": {
+      "command": "next dev"
+    },
     "build": {
-      "executor": "@cbhq/mono-tasks:build-next"
+      "command": "next build",
+      "options": {
+        "cwd": "apps/next-app"
+      }
     },
     "analyze": {
       "executor": "@cbhq/mono-tasks:build-next",
@@ -14,7 +20,10 @@
       }
     },
     "start": {
-      "executor": "@cbhq/mono-tasks:start-next"
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/next-app"
+      }
     },
     "extract": {
       "executor": "@cbhq/mono-tasks:extract-messages"
@@ -23,13 +32,16 @@
       "executor": "@cbhq/mono-tasks:format"
     },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
+      "command": "next lint",
+      "options": {
+        "cwd": "apps/next-app"
+      }
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
-      "executor": "@cbhq/mono-tasks:typecheck"
+      "command": "tsc --build --pretty --verbose"
     },
     "report-disabled-eslint-rules": {
       "executor": "@cbhq/prevent-eslint-disable:report"

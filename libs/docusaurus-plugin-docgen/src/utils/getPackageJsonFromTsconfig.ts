@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import type { PackageJson, RequireAtLeastOne } from 'type-fest';
 
 type PackageJsonWithVersion = RequireAtLeastOne<PackageJson, 'version'>;
@@ -10,7 +10,6 @@ export function getPackageJsonFromTsconfig(tsconfigPath: string) {
   }
   const packageDirname = path.dirname(tsconfigPath);
   const packageJsonPath = path.resolve(packageDirname, 'package.json');
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const packageJson: PackageJsonWithVersion = require(packageJsonPath);
   cache[tsconfigPath] = packageJson;
   return packageJson;

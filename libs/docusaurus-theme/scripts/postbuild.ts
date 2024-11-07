@@ -1,6 +1,6 @@
 import glob from 'fast-glob';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import postcss, { AcceptedPlugin } from 'postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import prettier from 'prettier';

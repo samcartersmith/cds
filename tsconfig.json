@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.projectOptions.json",
+  "extends": "./tsconfig.project.json",
   "include": [],
   "files": [],
   "references": [
@@ -8,6 +8,9 @@
     },
     {
       "path": "apps/cds-figma-sync"
+    },
+    {
+      "path": "apps/figma-athena-plugin"
     },
     {
       "path": "apps/figma-icons-plugin"
@@ -64,6 +67,9 @@
       "path": "packages/cds-migrator"
     },
     {
+      "path": "packages/cds-vscode-plugin"
+    },
+    {
       "path": "packages/common"
     },
     {
@@ -86,6 +92,9 @@
     },
     {
       "path": "packages/mobile-visualization"
+    },
+    {
+      "path": "packages/profile-package"
     },
     {
       "path": "packages/ui-mobile-playground"

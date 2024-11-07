@@ -3,12 +3,14 @@ import yargs from 'yargs';
 
 import { logError } from './logging';
 
+const { command, fail } = yargs(process.argv);
+
 updateNotifier({
   pkg: require('../package.json') as Package,
   shouldNotifyInNpmScript: true,
 }).notify();
 
-yargs.command<{ project: string }>(
+command<{ project: string }>(
   'adoption <project>',
   'Run adoption tracker for the given project',
   (args) =>
@@ -22,7 +24,7 @@ yargs.command<{ project: string }>(
 async function run() {
   const argv = process.argv.slice(2);
   try {
-    await yargs.fail(false).demandCommand().parseAsync(argv);
+    await fail(false).demandCommand().parseAsync(argv);
   } catch (error) {
     process.exitCode = 1;
 

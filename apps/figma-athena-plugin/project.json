@@ -1,15 +1,13 @@
 {
   "name": "figma-athena-plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/figma-athena-plugin",
-  "projectType": "app",
+  "sourceRoot": "apps/figma-athena-plugin/src",
+  "projectType": "application",
   "tags": [],
   "targets": {
     "dev": {
       "command": "webpack serve --mode development",
       "options": {
-        "cwd": "apps/figma-athena-plugin",
-        "color": true,
         "env": {
           "NODE_ENV": "development"
         }
@@ -29,21 +27,10 @@
       "command": "webpack serve --mode production",
       "dependsOn": [
         "build"
-      ],
-      "options": {
-        "cwd": "apps/figma-athena-plugin",
-        "color": true
-      }
+      ]
     },
     "build": {
-      "command": "rm -rf dist && webpack --mode production",
-      "dependsOn": [
-        "^build"
-      ],
-      "options": {
-        "cwd": "apps/figma-athena-plugin",
-        "color": true
-      }
+      "command": "rm -rf dist && webpack --mode production"
     },
     "dockerup": {
       "executor": "@cbhq/mono-tasks:run-package-script",
@@ -73,13 +60,15 @@
       }
     },
     "typecheck": {
-      "command": "tsc",
-      "dependsOn": [
-        "^typecheck"
-      ],
-      "options": {
-        "cwd": "apps/figma-athena-plugin",
-        "color": true
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
       }
     },
     "lint": {
@@ -91,8 +80,7 @@
         "^build"
       ],
       "options": {
-        "cwd": "apps/figma-athena-plugin",
-        "color": true
+        "cwd": "apps/figma-athena-plugin"
       },
       "env": {
         "ANALYZE": true,

@@ -9,7 +9,7 @@ import { TextBody } from '@cbhq/cds-web/typography/TextBody';
 export type ModalLinkProps = {
   children: string;
   content: React.ReactNode;
-} & LinkProps;
+} & Omit<LinkProps, 'content'>;
 
 /**
  * Gives us the ability to determine if a component is child of Modal.

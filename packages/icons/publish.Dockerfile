@@ -10,10 +10,11 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run icons:typecheck:prod
 RUN yarn nx run icons:build
 
 # Prepare the package for publish
-RUN cd packages/icons && yarn pack 
+RUN cd /repo/packages/icons && yarn pack 
 RUN mv /repo/packages/icons /shared
 
 WORKDIR /shared

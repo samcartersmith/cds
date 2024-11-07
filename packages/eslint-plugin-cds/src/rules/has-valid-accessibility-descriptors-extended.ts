@@ -78,7 +78,7 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
 
     return {
       ImportDeclaration(node: TSESTree.ImportDeclaration) {
-        const packageName = node.source.value as string;
+        const packageName = node.source.value;
 
         if (
           typeof packageName === 'string' &&
@@ -86,7 +86,6 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
             (pkg) => packageName === pkg || packageName.startsWith(`${pkg}/`),
           )
         ) {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
           node.specifiers.forEach((specifier) => {
             switch (specifier.type) {
               case 'ImportSpecifier':
@@ -160,9 +159,7 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
             configArray.includes(componentName) &&
             condition
           ) {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
             context.report({
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
               node,
               messageId,
               data: { componentName },

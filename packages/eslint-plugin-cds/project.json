@@ -1,25 +1,26 @@
 {
   "name": "eslint-plugin-cds",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/eslint-plugin-cds",
+  "sourceRoot": "packages/eslint-plugin-cds/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "command": "rm -rf esm lib dts && tsc && rollup -c",
-      "dependsOn": [
-        "^build"
-      ],
+      "command": "rm -rf esm lib && rollup -c",
       "options": {
-        "cwd": "packages/eslint-plugin-cds",
-        "color": true
+        "cwd": "packages/eslint-plugin-cds"
       }
     },
     "typecheck": {
-      "command": "tsc",
-      "options": {
-        "cwd": "packages/eslint-plugin-cds",
-        "color": true
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
       }
     }
   }

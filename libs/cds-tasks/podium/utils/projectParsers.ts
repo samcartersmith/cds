@@ -1,10 +1,10 @@
-import { exec } from 'child_process';
 import { info } from 'console';
 import glob from 'fast-glob';
-import fs from 'fs';
-import path from 'path';
+import { exec } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { promisify } from 'node:util';
 import { Project, SourceFile } from 'ts-morph';
-import { promisify } from 'util';
 
 import { ComponentMetadata } from '../types';
 

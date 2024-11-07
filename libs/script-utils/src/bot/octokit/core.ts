@@ -30,6 +30,13 @@ export type OctokitData = {
   repoInstallationData: RepoInstallationData;
 };
 
+export type OctokitBot = OctokitData & {
+  closePR: (pullNumber: number) => ReturnType<typeof closePR>;
+  createInstallationAccessToken: () => ReturnType<typeof createInstallationAccessToken>;
+  createPR: (args: CreatePRArgs) => ReturnType<typeof createPR>;
+  getOpenPRs: () => ReturnType<typeof getOpenPRs>;
+};
+
 export const initializeOctokit = async ({ appId, privateKey, repo: orgAndRepo }: OctokitConfig) => {
   // Initialize an Octokit instance for the GitHub App
   // https://github.com/octokit/app.js#constructor
@@ -60,20 +67,20 @@ export const initializeOctokit = async ({ appId, privateKey, repo: orgAndRepo }:
     return data;
   });
 
-  const octokitData = {
+  const octokitData: OctokitData = {
     app,
     installation,
     repoData,
     repoInstallationData,
   };
 
-  return {
+  const octokitBot: OctokitBot = {
     ...octokitData,
     closePR: async (pullNumber: number) => closePR(octokitData, pullNumber),
     createInstallationAccessToken: async () => createInstallationAccessToken(octokitData),
     createPR: async (args: CreatePRArgs) => createPR(octokitData, args),
     getOpenPRs: async () => getOpenPRs(octokitData),
   };
-};
 
-export type OctokitBot = Awaited<ReturnType<typeof initializeOctokit>>;
+  return octokitBot;
+};

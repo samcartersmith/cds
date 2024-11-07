@@ -1,14 +1,12 @@
 {
-  "extends": "../../tsconfig.projectOptions.json",
+  "extends": "../../tsconfig.project.json",
   "compilerOptions": {
-    "outDir": "../../.nx/dts/libs/web-utils"
+    "declarationDir": "dts",
+    "rootDir": "src"
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
-  "exclude": [
-    ".eslintrc.js",
-    "dts",
-    "lib"
-  ]
+  "exclude": [],
+  "references": []
 }

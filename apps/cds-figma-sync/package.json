@@ -3,36 +3,41 @@
   "version": "0.0.0",
   "private": true,
   "description": "NodeJS service and GitHub App for syncing Figma assets",
-  "main": "./mjs/index.mjs",
-  "type": "module",
   "scripts": {
     "dockerup-app": "docker-compose -f docker-compose.yml build && docker-compose -f docker-compose.yml up -d && docker-compose exec app sh",
     "dockerup-static-assets": "docker-compose -f static-assets.docker-compose.yml build && docker-compose -f static-assets.docker-compose.yml up -d && docker-compose exec app sh",
     "dockerup-trigger": "docker-compose -f trigger.docker-compose.yml build && docker-compose -f trigger.docker-compose.yml up -d && docker-compose exec app sh",
     "dockerdown": "docker-compose down"
   },
-  "packemon": {
-    "format": "mjs",
-    "platform": "node"
+  "type": "module",
+  "main": "./esm/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./esm/*.js"
+    }
   },
   "dependencies": {
     "@cb/config-service-node": "^3.4.0",
     "@cbhq/script-utils": "workspace:^"
   },
-  "types": "./mjs/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "node": {
-        "types": "./mjs/*.d.ts",
-        "import": "./mjs/*.mjs"
-      }
-    },
-    ".": {
-      "node": {
-        "types": "./mjs/index.d.ts",
-        "import": "./mjs/index.mjs"
-      }
-    }
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "glob": "^10.3.10",
+    "rollup": "^4.22.4"
   }
 }

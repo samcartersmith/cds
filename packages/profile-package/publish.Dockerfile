@@ -10,6 +10,7 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
+RUN yarn nx run profile-package:typecheck:prod
 RUN yarn nx run profile-package:build
 
 # Prepare the package for publish

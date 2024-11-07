@@ -1,6 +1,6 @@
-import React, { memo, ReactNode } from 'react';
+import React, { memo } from 'react';
 import { HStack, VStack } from '@cbhq/cds-web/layout';
-import Heading from '@cbhq/docusaurus-theme/src/theme/Heading';
+import Heading from '@cbhq/docusaurus-theme/theme/Heading';
 
 import type { SectionFields } from '../modules/TabItem';
 
@@ -8,7 +8,7 @@ import { Divider } from './Divider';
 
 export type SectionProps = {
   title?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 } & Pick<SectionFields, 'gap' | 'direction'>;
 
 export const Section = memo(function Section({

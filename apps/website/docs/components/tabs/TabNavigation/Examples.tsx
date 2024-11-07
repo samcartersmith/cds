@@ -1,4 +1,4 @@
-import React, { memo, PropsWithChildren, useMemo, useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import { css } from 'linaria';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
 import { VStack } from '@cbhq/cds-web/layout';
@@ -57,7 +57,7 @@ const exampleClassName = css`
     max-width: 100%;
   }
 `;
-const ExampleContainer = memo(({ children }: PropsWithChildren<unknown>) => {
+const ExampleContainer = memo(({ children }: React.PropsWithChildren<unknown>) => {
   return (
     <VStack
       alignItems="center"

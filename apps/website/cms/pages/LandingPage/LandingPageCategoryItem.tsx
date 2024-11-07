@@ -3,7 +3,7 @@ import type { PictogramName, SpotSquareName } from '@cbhq/cds-common';
 import { CardBody } from '@cbhq/cds-web/cards/CardBody';
 import { Pictogram, SpotSquare } from '@cbhq/cds-web/illustrations';
 import { Box } from '@cbhq/cds-web/layout/Box';
-import useGoToLinkHandler from '@cbhq/docusaurus-theme/src/theme/useGoToLinkHandler';
+import useGoToLinkHandler from '@cbhq/docusaurus-theme/theme/useGoToLinkHandler';
 
 export type LandingPageCategoryItemProps = {
   title: string;

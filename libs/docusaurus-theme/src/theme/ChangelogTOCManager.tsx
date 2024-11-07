@@ -1,7 +1,9 @@
 import createTOCManager from '@theme/createTOCManager';
 
-export const {
+const {
   useTOC: useChangelogTOC,
   TOCProvider: ChangelogTOCProvider,
   TOCUpdater: ChangelogTOCUpdater,
 } = createTOCManager();
+
+export { ChangelogTOCProvider, ChangelogTOCUpdater, useChangelogTOC };

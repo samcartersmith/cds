@@ -3,6 +3,8 @@ import { $, argv } from 'zx'; // https://github.com/google/zx
 import { getBuildInfo } from './utils/getBuildInfo.mjs';
 import { setEnvVars } from './utils/setEnvVars.mjs';
 
+$.verbose = true;
+
 const { android, ios } = getBuildInfo();
 const { platform } = argv;
 
