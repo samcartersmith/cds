@@ -25,12 +25,35 @@ const textureUrls = {
   dark: 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/autumn_field_puresky_1k.hdr',
 };
 
+const cursor =
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMCIgZmlsbD0iIzhjOGU5OCIvPjwvc3ZnPg==';
+
+const backgrounds = {
+  dark: '#14151a',
+  light: '#f2f2f5',
+};
+
+const shadows = {
+  dark: '#000',
+  light: '#94cbff',
+};
+
+const lineColors = {
+  dark: '#555',
+  light: '#bbb',
+};
+
+const crossColors = {
+  dark: '#666',
+  light: '#999',
+};
+
 useLoader.preload(RGBELoader, textureUrls.light);
 useLoader.preload(RGBELoader, textureUrls.dark);
 
 const finalConfig = {
   backside: true,
-  backsideThickness: 2.0,
+  backsideThickness: 1.0,
   samples: 16,
   resolution: 1024,
   transmission: 1,
@@ -44,46 +67,73 @@ const finalConfig = {
   distortionScale: 0.1,
   temporalDistortion: 0,
   ior: 1.25,
-  color: '#ffffff',
+  color: '#fff',
   autoRotate: false,
 };
 
 const font = '/Inter_Medium_Regular.json';
 const text = 'v7';
 
-export function CDS7Hero() {
-  const { loaded } = useProgress();
-  const spectrum = useSpectrum();
-  const isDarkMode = spectrum === 'dark';
+function Grid({ spectrum }: { spectrum: 'light' | 'dark' }) {
+  const number = 23;
+  const lineWidth = 0.026;
+  const height = 0.5;
+  const lineColor = lineColors[spectrum];
+  const crossColor = crossColors[spectrum];
+  return (
+    <Instances position={[0, -1.02, 0]}>
+      <planeGeometry args={[lineWidth, height]} />
+      <meshBasicMaterial color={crossColor} />
+      {Array.from({ length: number }, (_, y) =>
+        Array.from({ length: number }, (_, x) => (
+          <group
+            key={x + ':' + y}
+            position={[
+              x * 2 - Math.floor(number / 2) * 2,
+              -0.01,
+              y * 2 - Math.floor(number / 2) * 2,
+            ]}
+          >
+            <Instance rotation={[-Math.PI / 2, 0, 0]} />
+            <Instance rotation={[-Math.PI / 2, 0, Math.PI / 2]} />
+          </group>
+        )),
+      )}
+      <gridHelper args={[100, 100, lineColor, lineColor]} position={[0, -0.01, 0]} />
+    </Instances>
+  );
+}
+
+function Text({
+  children,
+  config,
+  spectrum,
+}: {
+  children: React.ReactNode;
+  config: any;
+  spectrum: 'light' | 'dark';
+}) {
+  const textureUrl = textureUrls[spectrum];
+  const texture = useLoader(RGBELoader, textureUrl);
 
   return (
-    <>
-      <style type="text/css">{`
-      aside {display: none;}
-      header {width: 100%; margin: 0 auto;}
-      footer {width: 100%; margin: 0 auto;}
-      main {width: 1000px !important; max-width: unset !important; margin: 0 auto !important; flex: unset !important; padding: 32px !important;}
-      @media (max-width: 1064px) { main { width: 800px !important; padding: 16px !important; } .canvas-container { width: 800px !important; } }
-      article {margin: 0 auto; padding-left: 0; padding-bottom: 64px;}
-      #post-content {width: 100%;margin: 0 auto; font-size: 18px;}
-      `}</style>
-      <Canvas
-        shadows
-        orthographic
-        camera={{ position: [7, 10, 10], zoom: 80 }}
-        gl={{ preserveDrawingBuffer: true }}
-        style={{
-          opacity: loaded ? 1 : 0,
-          transition: 'opacity 1000ms ease-in-out 500ms',
-          cursor: 'pointer',
-          borderRadius: 16,
-        }}
+    <Center scale={[0.8, 1, 1]} front top rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 2]}>
+      <Text3D
+        castShadow
+        bevelEnabled
+        font={font}
+        scale={5}
+        letterSpacing={-0.03}
+        height={0.25}
+        bevelSize={0.01}
+        bevelSegments={10}
+        curveSegments={128}
+        bevelThickness={0.01}
       >
-        <Suspense fallback={null}>
-          <Scene isDarkMode={isDarkMode} />
-        </Suspense>
-      </Canvas>
-    </>
+        {children}
+        <MeshTransmissionMaterial {...config} background={texture} />
+      </Text3D>
+    </Center>
   );
 }
 
@@ -95,19 +145,19 @@ function Rig(props: any) {
       0.4,
       delta,
     );
-    state.camera.lookAt(0, 0, 0); // Look at center
+    state.camera.lookAt(0, 0, 0);
   });
   return <group {...props} />;
 }
 
-export function Scene({ isDarkMode }: { isDarkMode: boolean }) {
-  const background = isDarkMode ? '#14151a' : '#f2f2f5';
-  const shadow = isDarkMode ? '#000000' : '#94cbff';
+function Scene({ spectrum }: { spectrum: 'light' | 'dark' }) {
+  const background = backgrounds[spectrum];
+  const shadow = shadows[spectrum];
   return (
     <>
       <color attach="background" args={[background]} />
       <Rig>
-        <Text config={finalConfig} isDarkMode={isDarkMode}>
+        <Text config={finalConfig} spectrum={spectrum}>
           {text}
         </Text>
         <OrbitControls
@@ -158,6 +208,7 @@ export function Scene({ isDarkMode }: { isDarkMode: boolean }) {
           </group>
         </Environment>
       </Rig>
+      <Grid spectrum={spectrum} />
       <AccumulativeShadows
         frames={100}
         color={shadow}
@@ -183,57 +234,37 @@ export function Scene({ isDarkMode }: { isDarkMode: boolean }) {
   );
 }
 
-const Grid = ({ number = 23, lineWidth = 0.026, height = 0.5 }) => (
-  <Instances position={[0, -1.02, 0]}>
-    <planeGeometry args={[lineWidth, height]} />
-    <meshBasicMaterial color="#999" />
-    {Array.from({ length: number }, (_, y) =>
-      Array.from({ length: number }, (_, x) => (
-        <group
-          key={x + ':' + y}
-          position={[x * 2 - Math.floor(number / 2) * 2, -0.01, y * 2 - Math.floor(number / 2) * 2]}
-        >
-          <Instance rotation={[-Math.PI / 2, 0, 0]} />
-          <Instance rotation={[-Math.PI / 2, 0, Math.PI / 2]} />
-        </group>
-      )),
-    )}
-    <gridHelper args={[100, 100, '#bbb', '#bbb']} position={[0, -0.01, 0]} />
-  </Instances>
-);
-
-function Text({
-  children,
-  config,
-  isDarkMode,
-}: {
-  children: React.ReactNode;
-  config: any;
-  isDarkMode: boolean;
-}) {
-  const textureUrl = isDarkMode ? textureUrls.dark : textureUrls.light;
-  const texture = useLoader(RGBELoader, textureUrl);
+export function CDS7Hero() {
+  const { loaded } = useProgress();
+  const spectrum = useSpectrum();
 
   return (
-    <group>
-      <Center scale={[0.8, 1, 1]} front top rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 2]}>
-        <Text3D
-          castShadow
-          bevelEnabled
-          font={font}
-          scale={5}
-          letterSpacing={-0.03}
-          height={0.25}
-          bevelSize={0.01}
-          bevelSegments={10}
-          curveSegments={128}
-          bevelThickness={0.01}
-        >
-          {children}
-          <MeshTransmissionMaterial {...config} background={texture} />
-        </Text3D>
-      </Center>
-      <Grid />
-    </group>
+    <>
+      <style type="text/css">{`
+      aside {display: none;}
+      header {width: 100%; margin: 0 auto;}
+      footer {width: 100%; margin: 0 auto;}
+      main {width: 1000px !important; max-width: unset !important; margin: 0 auto !important; flex: unset !important; padding: 32px !important;}
+      @media (max-width: 1064px) { main { width: 800px !important; padding: 16px !important; } .canvas-container { width: 800px !important; } }
+      article {margin: 0 auto; padding-left: 0; padding-bottom: 64px;}
+      #post-content {width: 100%;margin: 0 auto; font-size: 18px;}
+      `}</style>
+      <Canvas
+        shadows
+        orthographic
+        camera={{ position: [7, 10, 10], zoom: 80 }}
+        gl={{ preserveDrawingBuffer: true }}
+        style={{
+          opacity: loaded ? 1 : 0,
+          transition: 'opacity 1000ms ease-in-out 500ms',
+          cursor: `url('${cursor}') 16 16, grab`,
+          borderRadius: 16,
+        }}
+      >
+        <Suspense fallback={null}>
+          <Scene spectrum={spectrum} />
+        </Suspense>
+      </Canvas>
+    </>
   );
 }
