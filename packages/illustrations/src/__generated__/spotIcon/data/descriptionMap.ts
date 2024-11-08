@@ -9,11 +9,6 @@
  * The search query filters the shown illustrations based on matches with name or description.
  */
 const descriptionMap: Record<string, string[]> = {
-  Coinbase: ['coinbaseOneEarn'],
-  One: ['coinbaseOneEarn', 'coinbaseOneChart'],
-  Concierge: ['coinbaseOneEarn'],
-  person: ['coinbaseOneEarn', 'delegate'],
-  attendant: ['coinbaseOneEarn'],
   product: [
     'productCoinbaseCard',
     'productPro',
@@ -183,6 +178,7 @@ const descriptionMap: Record<string, string[]> = {
   assign: ['delegate'],
   entrust: ['delegate'],
   give: ['delegate'],
+  person: ['delegate', 'coinbaseOneEarn'],
   check: ['delegate', 'done', 'idVerification'],
   checkmark: ['delegate', 'done', 'idVerification'],
   '✅': ['delegate', 'done', 'idVerification'],
@@ -434,6 +430,10 @@ const descriptionMap: Record<string, string[]> = {
   arrow: ['derivativesProduct'],
   triangles: ['derivativesProduct'],
   coinbaseone: ['coinbaseOneChart'],
+  One: ['coinbaseOneChart', 'coinbaseOneEarn'],
+  Coinbase: ['coinbaseOneEarn'],
+  Concierge: ['coinbaseOneEarn'],
+  attendant: ['coinbaseOneEarn'],
 };
 
 export default descriptionMap;

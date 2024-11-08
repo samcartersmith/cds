@@ -6,6 +6,7 @@
 export type PictogramName =
   | '2fa'
   | 'accountsNavigation'
+  | 'accreditedInvestor'
   | 'add'
   | 'addCard'
   | 'addPayment'
@@ -221,6 +222,7 @@ export type PictogramName =
   | 'pluginBrowser'
   | 'positiveReviews'
   | 'predictionMarkets'
+  | 'premiumInvestor'
   | 'priceTracking'
   | 'primeMobileApp'
   | 'primeNavigation'

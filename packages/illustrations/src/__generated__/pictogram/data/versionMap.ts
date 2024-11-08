@@ -320,6 +320,8 @@ const versionMap: Record<PictogramName, number> = {
   usdcRewards: 0,
   coinbaseOneEarn: 0,
   cb1BankTransfers: 0,
+  accreditedInvestor: 0,
+  premiumInvestor: 0,
 };
 
 export default versionMap;

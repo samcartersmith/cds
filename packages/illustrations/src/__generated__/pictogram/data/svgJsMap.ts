@@ -16,6 +16,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/accountsNavigation-4').content,
     dark: () => require('../svgJs/dark/accountsNavigation-4').content,
   },
+  accreditedInvestor: {
+    light: () => require('../svgJs/light/accreditedInvestor-0').content,
+    dark: () => require('../svgJs/dark/accreditedInvestor-0').content,
+  },
   add: {
     light: () => require('../svgJs/light/add-2').content,
     dark: () => require('../svgJs/dark/add-2').content,
@@ -875,6 +879,10 @@ const svgJsMap = {
   predictionMarkets: {
     light: () => require('../svgJs/light/predictionMarkets-2').content,
     dark: () => require('../svgJs/dark/predictionMarkets-2').content,
+  },
+  premiumInvestor: {
+    light: () => require('../svgJs/light/premiumInvestor-0').content,
+    dark: () => require('../svgJs/dark/premiumInvestor-0').content,
   },
   priceTracking: {
     light: () => require('../svgJs/light/priceTracking-2').content,

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import chalk from 'chalk';
-import { writePrettyFile } from '@cbhq/script-utils';
+import { writePrettyFile } from '@cbhq/script-utils/fs/writePrettyFile';
 
 import heroSquareNames from '../src/__generated__/heroSquare/data/names';
 import pictogramNames from '../src/__generated__/pictogram/data/names';
@@ -20,7 +20,7 @@ const PICTOGRAM_CHUNK_SIZE = 240;
 const SPOTICON_CHUNK_SIZE = 240;
 const SPOTRECTANGLE_CHUNK_SIZE = 240;
 const SPOTSQUARE_CHUNK_SIZE = 240;
-const STORIES_DIR = 'packages/web/illustrations/__stories__';
+const STORIES_DIR = 'packages/web/src/illustrations/__stories__';
 
 const rootPath = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 const storiesPath = `${rootPath}/${STORIES_DIR}`;

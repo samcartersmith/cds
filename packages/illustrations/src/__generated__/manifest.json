@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-10-25T20:14:18.275Z",
+  "lastUpdated": "2024-11-08T20:19:21.673Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -22019,6 +22019,46 @@
         "svgJsDark": "./spotRectangle/svgJs/dark/cb1BankTransfers-0.js",
         "pngLight": "./spotRectangle/png/light/cb1BankTransfers-0.png",
         "pngDark": "./spotRectangle/png/dark/cb1BankTransfers-0.png"
+      },
+      "version": 0
+    },
+    "12500:21": {
+      "type": "pictogram",
+      "name": "premiumInvestor",
+      "hash": "VyhNslHSQLKCfkQU1mUjYsKfM/EEH9jHzOYkLh7WAR0=",
+      "width": 48,
+      "height": 48,
+      "description": "rewards, medal, accredited, investor, singapore, VIP, award, premium",
+      "createdAt": "2024-10-28T14:39:17.122Z",
+      "lastUpdated": "2024-10-28T14:39:17.122Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/premiumInvestor-0.svg",
+        "svgDark": "./pictogram/svg/dark/premiumInvestor-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/premiumInvestor-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/premiumInvestor-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/premiumInvestor-0.js",
+        "pngLight": "./pictogram/png/light/premiumInvestor-0.png",
+        "pngDark": "./pictogram/png/dark/premiumInvestor-0.png"
+      },
+      "version": 0
+    },
+    "12500:22": {
+      "type": "pictogram",
+      "name": "accreditedInvestor",
+      "hash": "LWtxues3XoqCy5B0bsRhrtgSr7l+0DyIn4UNzAIGuis=",
+      "width": 48,
+      "height": 48,
+      "description": "rewards, medal, accredited, investor, singapore, VIP, award",
+      "createdAt": "2024-10-28T14:39:17.113Z",
+      "lastUpdated": "2024-10-28T14:39:17.113Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/accreditedInvestor-0.svg",
+        "svgDark": "./pictogram/svg/dark/accreditedInvestor-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/accreditedInvestor-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/accreditedInvestor-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/accreditedInvestor-0.js",
+        "pngLight": "./pictogram/png/light/accreditedInvestor-0.png",
+        "pngDark": "./pictogram/png/dark/accreditedInvestor-0.png"
       },
       "version": 0
     }

@@ -12,6 +12,7 @@ import type { PictogramName } from '../types/PictogramName';
 const names: PictogramName[] = [
   '2fa',
   'accountsNavigation',
+  'accreditedInvestor',
   'add',
   'addCard',
   'addPayment',
@@ -227,6 +228,7 @@ const names: PictogramName[] = [
   'pluginBrowser',
   'positiveReviews',
   'predictionMarkets',
+  'premiumInvestor',
   'priceTracking',
   'primeMobileApp',
   'primeNavigation',

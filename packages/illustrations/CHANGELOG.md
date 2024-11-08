@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.1.0 (11/8/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 11/08/2024. [[#3398](https://github.cbhq.net/frontend/cds/pull/3398)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- accreditedInvestor
+- premiumInvestor
+
 ## 4.0.0 (11/7/2024 PST)
 
 #### 💥 Breaking
