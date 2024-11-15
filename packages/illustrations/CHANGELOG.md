@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.0 (11/15/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustration 11/15. [[#3410](https://github.cbhq.net/frontend/cds/pull/3410)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- usdcLoan
+
 ## 4.1.0 (11/8/2024 PST)
 
 #### 🚀 Updates

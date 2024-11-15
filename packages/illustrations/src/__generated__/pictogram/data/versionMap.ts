@@ -322,6 +322,7 @@ const versionMap: Record<PictogramName, number> = {
   cb1BankTransfers: 0,
   accreditedInvestor: 0,
   premiumInvestor: 0,
+  usdcLoan: 0,
 };
 
 export default versionMap;

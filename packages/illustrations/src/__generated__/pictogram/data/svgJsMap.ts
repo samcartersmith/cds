@@ -1132,6 +1132,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/usdcInterest-0').content,
     dark: () => require('../svgJs/dark/usdcInterest-0').content,
   },
+  usdcLoan: {
+    light: () => require('../svgJs/light/usdcLoan-0').content,
+    dark: () => require('../svgJs/dark/usdcLoan-0').content,
+  },
   usdcLogo: {
     light: () => require('../svgJs/light/usdcLogo-0').content,
     dark: () => require('../svgJs/dark/usdcLogo-0').content,

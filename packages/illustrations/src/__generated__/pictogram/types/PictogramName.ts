@@ -285,6 +285,7 @@ export type PictogramName =
   | 'usaProduct'
   | 'usdcEarn'
   | 'usdcInterest'
+  | 'usdcLoan'
   | 'usdcLogo'
   | 'usdcRewards'
   | 'usdcRewardsRibbon'

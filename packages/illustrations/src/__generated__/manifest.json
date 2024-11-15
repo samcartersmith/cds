@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-11-08T20:19:21.673Z",
+  "lastUpdated": "2024-11-15T18:20:08.353Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -9290,7 +9290,7 @@
       "height": 48,
       "description": "add, more, plus, coin, additional, crypto, 🪙, ➕",
       "createdAt": "2022-08-05T05:37:13.748Z",
-      "lastUpdated": "2024-09-09T16:11:17.594Z",
+      "lastUpdated": "2024-11-14T22:12:21.274Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/earnCoins-2.svg",
         "svgDark": "./pictogram/svg/dark/earnCoins-2.svg",
@@ -22059,6 +22059,26 @@
         "svgJsDark": "./pictogram/svgJs/dark/accreditedInvestor-0.js",
         "pngLight": "./pictogram/png/light/accreditedInvestor-0.png",
         "pngDark": "./pictogram/png/dark/accreditedInvestor-0.png"
+      },
+      "version": 0
+    },
+    "12823:54": {
+      "type": "pictogram",
+      "name": "usdcLoan",
+      "hash": "7wDlhHMqoFg+2nRK2NkdtVn1r89N7BSci00I8pBbnrk=",
+      "width": 48,
+      "height": 48,
+      "description": "usdc, send, loan, coin, portal, stars",
+      "createdAt": "2024-11-14T22:12:21.263Z",
+      "lastUpdated": "2024-11-14T22:12:21.263Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/usdcLoan-0.svg",
+        "svgDark": "./pictogram/svg/dark/usdcLoan-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/usdcLoan-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/usdcLoan-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/usdcLoan-0.js",
+        "pngLight": "./pictogram/png/light/usdcLoan-0.png",
+        "pngDark": "./pictogram/png/dark/usdcLoan-0.png"
       },
       "version": 0
     }
