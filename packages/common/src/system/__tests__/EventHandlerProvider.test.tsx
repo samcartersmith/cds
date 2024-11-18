@@ -84,6 +84,23 @@ describe('EventDelegationProvider', () => {
     expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).toHaveBeenCalled();
   });
 
+  it('Button onPress should be called because analyticsId is provided', () => {
+    const analyticsId = 'test_id';
+
+    function Wrapper({ children }: { children: React.ReactNode }) {
+      return <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>{children}</EventHandlerProvider>;
+    }
+
+    const { result } = renderHook(
+      () => useEventHandler('Button', 'onPress', undefined, analyticsId),
+      {
+        wrapper: Wrapper,
+      },
+    );
+    void act(() => result.current());
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).toHaveBeenCalled();
+  });
+
   it('Button onPress should not be called because onPress is not listed in custom event config actions', () => {
     const customEventConfig: EventHandlerCustomConfig = {
       actions: ['onHover'],

@@ -87,6 +87,7 @@ export const Pressable = forwardRef(function Pressable(
     noScaleOnPress,
     tabIndex,
     eventConfig,
+    analyticsId,
     focusable,
     ...props
   }: PressableInternalProps,
@@ -102,7 +103,7 @@ export const Pressable = forwardRef(function Pressable(
     }
   }
 
-  const onEventHandler = useEventHandler('Button', 'onPress', eventConfig);
+  const onEventHandler = useEventHandler('Button', 'onPress', eventConfig, analyticsId);
   const onClick = useCallback(
     (event: React.MouseEvent) => {
       onPress?.(event);

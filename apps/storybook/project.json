@@ -65,6 +65,9 @@
       "dependsOn": [
         "build-for-tests"
       ],
+      "inputs": [
+        "{projectRoot}/dist"
+      ],
       "options": {
         "cwd": "apps/storybook"
       }

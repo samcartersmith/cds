@@ -92,6 +92,7 @@ export const Pressable = memo(
       transparentWhileInactive,
       transparentWhilePressed,
       eventConfig,
+      analyticsId,
       debounceTime,
       ...props
     }: PressableInternalProps,
@@ -100,7 +101,7 @@ export const Pressable = memo(
     const [pressIn, pressOut, pressScale] = usePressAnimation();
     const [pressed, setPressed] = useState(false);
 
-    const onEventHandler = useEventHandler('Button', 'onPress', eventConfig);
+    const onEventHandler = useEventHandler('Button', 'onPress', eventConfig, analyticsId);
 
     const onPressHandler = useMemo(
       () => (event: GestureResponderEvent) => {

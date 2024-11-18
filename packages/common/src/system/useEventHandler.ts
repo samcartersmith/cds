@@ -1,6 +1,8 @@
 import { useCallback, useContext } from 'react';
+import isEmpty from 'lodash/isEmpty';
 
 import {
+  EventCustomData,
   EventHandlerAction,
   EventHandlerComponent,
   EventHandlerConfig,
@@ -10,15 +12,22 @@ import {
 
 const noOp = () => {};
 
+type ParamsType = {
+  analyticsId?: string;
+  componentName?: string;
+  data?: EventCustomData;
+};
+
 export const useEventHandler = (
   component: EventHandlerComponent,
   action: EventHandlerAction,
   eventConfig?: EventHandlerCustomConfig,
+  analyticsId?: string,
 ): (() => void) => {
   const config = useContext<EventHandlerConfig>(EventHandlerContext);
 
   return useCallback(() => {
-    if (!config.handlers || !eventConfig?.actions.length) {
+    if (!config.handlers || (!eventConfig?.actions.length && !analyticsId)) {
       return noOp();
     }
 
@@ -38,19 +47,34 @@ export const useEventHandler = (
      */
     const convertedAction = actionMapping?.[action] ?? action;
 
+    const callback = handler[convertedAction] ?? noOp;
+
+    const params: ParamsType = {};
+
+    /**
+     * AnalyticsId is a generic way of autologging events without any meta
+     * information besides the ID, giving a way to log events without having
+     * engineers to manually include any contextual information. AnalyticsId
+     * would be used to identify the component that fires the event.
+     * Providing an analyticsId would take precendence over eventConfig
+     */
+    if (analyticsId) {
+      params.analyticsId = analyticsId;
+    }
+
     /**
      * the component event config provides a list of actions to track.
      * If the current action is not listed we return a noOp
      */
-    if (!eventConfig.actions.includes(convertedAction)) {
+    if (eventConfig?.actions.includes(convertedAction)) {
+      params.componentName = eventConfig.componentName;
+      params.data = eventConfig.data;
+    }
+
+    if (isEmpty(params)) {
       return noOp();
     }
 
-    // pass event and custom data
-    const callback = handler[convertedAction] ?? noOp;
-    return callback({
-      componentName: eventConfig.componentName,
-      data: eventConfig.data,
-    });
-  }, [action, component, config, eventConfig]);
+    return callback(params);
+  }, [action, component, config, eventConfig, analyticsId]);
 };

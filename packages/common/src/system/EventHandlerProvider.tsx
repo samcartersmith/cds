@@ -11,7 +11,8 @@ export type EventCustomData = Record<string, RecursiveMapType<EventDataEntry>>;
 export type EventHandlerComponent = 'Button';
 
 export type EventCallbackProps = {
-  componentName: string;
+  componentName?: string;
+  analyticsId?: string;
   data?: EventCustomData;
 };
 
