@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-mobile",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "Coinbase Design System - Mobile Native",
   "repository": {
     "type": "git",
@@ -146,6 +146,7 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@cbhq/ui-scorecard": "workspace:^",
+    "@figma/code-connect": "^1.2.2",
     "@react-native-community/netinfo": "^7.1.7",
     "@react-navigation/native-stack": "^6.9.26",
     "@testing-library/react-native": "^11.3.0",

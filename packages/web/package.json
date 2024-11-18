@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-web",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "Coinbase Design System - Web",
   "repository": {
     "type": "git",
@@ -159,6 +159,7 @@
     "@babel/preset-typescript": "^7.18.6",
     "@cbhq/cds-web-utils": "workspace:^",
     "@cbhq/ui-scorecard": "workspace:^",
+    "@figma/code-connect": "^1.2.2",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",

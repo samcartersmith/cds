@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.0 (11/18/2024 PST)
+
+#### 🚀 Updates
+
+- Feat: add figma code-connect. [[#3407](https://github.cbhq.net/frontend/cds/pull/3407)]
+
 ## 2.0.0 (11/7/2024 PST)
 
 #### 💥 Breaking

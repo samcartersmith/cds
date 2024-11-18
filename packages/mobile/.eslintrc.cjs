@@ -33,5 +33,12 @@ module.exports = {
         'no-console': 'off',
       },
     },
+    {
+      files: ['**/*.figma.tsx'],
+      rules: {
+        'react-native/no-raw-text': 'off',
+        'react-perf/jsx-no-new-function-as-prop': 'off',
+      },
+    },
   ],
 };

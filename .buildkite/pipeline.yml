@@ -261,3 +261,11 @@ steps:
     commands:
       - tools/ci/setup.sh
       - yarn node tools/depcheck.mjs || echo 'Failed to run depcheck'
+
+  - label: 'Figma Code Connect validation'
+    <<: *k8s_medium
+    if: build.branch != 'master'
+    commands:
+      - tools/ci/setup.sh
+      - yarn nx affected --target=publish-figma --dry-run
+    soft_fail: true

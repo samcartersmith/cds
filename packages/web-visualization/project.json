@@ -43,6 +43,15 @@
         "dangerfile": "libs/dangerfiles/dangerfile-coverage.ts",
         "timeoutSeconds": 30
       }
+    },
+    "publish-figma": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "figma connect publish --token $FIGMA_CODE_CONNECT_TOKEN"
+        ],
+        "cwd": "packages/web-visualization"
+      }
     }
   }
 }
