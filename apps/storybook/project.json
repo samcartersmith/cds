@@ -14,7 +14,7 @@
     "build": {
       "command": "build-storybook --output-dir dist",
       "outputs": [
-        "{workspaceRoot}/{projectRoot}/dist"
+        "{projectRoot}/dist"
       ]
     },
     "format": {
@@ -38,7 +38,7 @@
     "build-for-analyze": {
       "command": "build-storybook --output-dir dist",
       "outputs": [
-        "{workspaceRoot}/{projectRoot}/dist"
+        "{projectRoot}/dist"
       ],
       "env": {
         "ANALYZE": true,
@@ -55,6 +55,9 @@
       "command": "build-storybook --output-dir dist",
       "dependsOn": [
         "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
       ],
       "options": {
         "cwd": "apps/storybook"
@@ -76,6 +79,9 @@
       "command": "tsx ./scripts/run-percy.ts",
       "dependsOn": [
         "build-for-tests"
+      ],
+      "inputs": [
+        "{projectRoot}/dist"
       ],
       "options": {
         "cwd": "apps/storybook"

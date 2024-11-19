@@ -5,7 +5,7 @@ const isDetoxEnv = process.env.DETOX_TEST === 'true';
 /** @type {import('@babel/core').TransformOptions} */
 module.exports = {
   presets: [
-    ['@babel/preset-env', { loose: true }],
+    ['@babel/preset-env', { modules: isTestEnv ? 'commonjs' : false, loose: true }],
     [
       '@babel/preset-react',
       {
@@ -13,7 +13,7 @@ module.exports = {
       },
     ],
     '@babel/preset-typescript',
-    'module:metro-react-native-babel-preset',
+    ...(isTestEnv || isDetoxEnv ? ['module:metro-react-native-babel-preset'] : []),
   ],
   plugins: isTestEnv || isDetoxEnv ? ['react-native-reanimated/plugin'] : [],
   ignore:

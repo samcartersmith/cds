@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.1 (11/19/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix babel ESM transpilation. [[#3417](https://github.cbhq.net/frontend/cds/pull/3417)]
+
 ## 2.1.0 (11/18/2024 PST)
 
 #### 🚀 Updates

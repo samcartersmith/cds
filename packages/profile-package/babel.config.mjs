@@ -3,7 +3,10 @@ const isTestEnv = process.env.NODE_ENV === 'test';
 
 /** @type {import('@babel/core').TransformOptions} */
 export default {
-  presets: ['@babel/preset-env', '@babel/preset-typescript'],
+  presets: [
+    ['@babel/preset-env', { modules: isTestEnv ? 'commonjs' : false }],
+    '@babel/preset-typescript',
+  ],
   plugins: [],
   ignore: isTestEnv
     ? []
