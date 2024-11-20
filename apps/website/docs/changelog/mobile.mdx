@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.2.2 (11/20/2024 PST)
+
+#### 🐞 Fixes
+
+- Feat: add icon button examples for all icons in stories. [[#3413](https://github.cbhq.net/frontend/cds/pull/3413)]
+
 ## 7.2.1 (11/19/2024 PST)
 
 #### 🐞 Fixes

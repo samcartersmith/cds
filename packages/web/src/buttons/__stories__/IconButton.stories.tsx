@@ -1,4 +1,6 @@
-import { VStack } from '../../layout';
+import names from '@cbhq/cds-icons/__generated__/ui/data/names';
+
+import { HStack, VStack } from '../../layout';
 import { IconButton } from '../IconButton';
 
 export const Default = () => (
@@ -62,6 +64,50 @@ export const Secondary = () => (
     <IconButton transparent accessibilityLabel="Horizontal arrows" name="arrowsHorizontal" />
   </VStack>
 );
+
+export const All1 = () => {
+  const startIndex = 0;
+  const endIndex = 160;
+
+  return (
+    <HStack flexWrap="wrap" gap={2} spacingBottom={2}>
+      {names.slice(startIndex, endIndex).map((name) => {
+        return (
+          <VStack key={`icon-wrapper-${name}`} gap={2}>
+            <HStack alignItems="center" gap={2}>
+              <IconButton accessibilityLabel={name} name={name} variant="primary" />
+              <IconButton accessibilityLabel={name} name={name} variant="secondary" />
+              <IconButton accessibilityLabel={name} name={name} variant="foregroundMuted" />
+              <IconButton accessibilityLabel={name} name={name} />
+            </HStack>
+          </VStack>
+        );
+      })}
+    </HStack>
+  );
+};
+
+export const All2 = () => {
+  const startIndex = 160;
+  const endIndex = 320;
+
+  return (
+    <HStack flexWrap="wrap" gap={2} spacingBottom={2}>
+      {names.slice(startIndex, endIndex).map((name) => {
+        return (
+          <VStack key={`icon-wrapper-${name}`} gap={2}>
+            <HStack alignItems="center" gap={2}>
+              <IconButton accessibilityLabel={name} name={name} variant="primary" />
+              <IconButton accessibilityLabel={name} name={name} variant="secondary" />
+              <IconButton accessibilityLabel={name} name={name} variant="foregroundMuted" />
+              <IconButton accessibilityLabel={name} name={name} />
+            </HStack>
+          </VStack>
+        );
+      })}
+    </HStack>
+  );
+};
 
 export default {
   title: 'Core Components/Buttons/IconButton',

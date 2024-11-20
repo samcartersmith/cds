@@ -1,7 +1,9 @@
 import React from 'react';
 import { GestureResponderEvent } from 'react-native';
+import names from '@cbhq/cds-icons/__generated__/ui/data/names';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { HStack } from '../../layout';
 import { Box } from '../../layout/Box';
 import { TextBody } from '../../typography/TextBody';
 import { IconButton } from '../IconButton';
@@ -94,6 +96,18 @@ const IconButtonScreen = () => {
               {variant.component}
               {variant.title}
             </Box>
+          );
+        })}
+      </Example>
+      <Example title="All">
+        {names.map((name) => {
+          return (
+            <HStack key={`icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
+              <IconButton accessibilityLabel={name} name={name} variant="primary" />
+              <IconButton accessibilityLabel={name} name={name} variant="secondary" />
+              <IconButton accessibilityLabel={name} name={name} variant="foregroundMuted" />
+              <IconButton accessibilityLabel={name} name={name} />
+            </HStack>
           );
         })}
       </Example>
