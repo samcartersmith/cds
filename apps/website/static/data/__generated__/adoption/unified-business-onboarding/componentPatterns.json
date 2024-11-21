@@ -1,46 +1,8 @@
 {
-  "components": [
-    {
-      "component": {
-        "name": "NavigationBar",
-        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "action": {
-            "@ubo/settings/components/Layout/Header/Header.tsx": 1
-          },
-          "projectId": {
-            "@ubo/settings/components/Layout/Header/Header.tsx": 1
-          },
-          "target": {
-            "@ubo/settings/components/Layout/Header/Header.tsx": 1
-          },
-          "start": {
-            "@ubo/settings/components/Layout/Header/Header.tsx": 1
-          },
-          "showHelpMenu": {
-            "@ubo/settings/components/Layout/Header/Header.tsx": 1
-          },
-          "bottom": {
-            "@ubo/settings/components/Layout/Header/Header.tsx": 1
-          },
-          "isUserSwitcher": {
-            "@ubo/settings/components/Layout/Header/Header.tsx": 1
-          }
-        }
-      },
-      "config": {
-        "productComponentName": "NavigationBar",
-        "owningTeam": "Identity",
-        "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
-      }
-    }
-  ],
+  "components": [],
   "dependencies": {
     "dependencies": {
-      "@cbhq/identity-navigation": "^7.7.1"
+      "@cbhq/identity-navigation": "^7.7.7"
     },
     "devDependencies": {},
     "peerDependencies": {},

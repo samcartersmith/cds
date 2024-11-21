@@ -1,58 +1,5 @@
 {
-  "components": [
-    {
-      "component": {
-        "name": "NavigationBar",
-        "sourceFile": "@cbhq/identity-navigation/NavigationBar",
-        "totalInstances": 1,
-        "totalCallSites": 1,
-        "propsWithCallSites": {
-          "action": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "activeThemeLabel": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "onCloseProfileMenu": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "onOpenProfileMenu": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "onThemeToggle": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "projectId": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "start": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "target": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "themeToggleValue": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "navigate": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "config": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          },
-          "isUserSwitcher": {
-            ":prime-ui/pages/layout/TopNavigationBar.tsx": 1
-          }
-        }
-      },
-      "config": {
-        "productComponentName": "NavigationBar",
-        "owningTeam": "Identity",
-        "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
-      }
-    }
-  ],
+  "components": [],
   "dependencies": {
     "dependencies": {
       "@cbhq/identity-navigation": "^7.5.26"
