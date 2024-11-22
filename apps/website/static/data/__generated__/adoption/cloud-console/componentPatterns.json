@@ -55,14 +55,14 @@
         "productComponentName": "NavigationBar",
         "owningTeam": "Identity",
         "packageImportPath": "@cbhq/identity-navigation",
-        "packagePath": "/Users/stephaniesaunders/src/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
+        "packagePath": "/Users/benjamincheung/cb-repos/cds/apps/website/.docusaurus/@cbhq/adoption/identity/frontend/packages/identity-navigation/package.json"
       }
     }
   ],
   "dependencies": {
     "dependencies": {
       "@cbhq/app-switcher": "^3.1.8",
-      "@cbhq/identity-navigation": "^7.7.10"
+      "@cbhq/identity-navigation": "^7.5.26"
     },
     "devDependencies": {},
     "peerDependencies": {},

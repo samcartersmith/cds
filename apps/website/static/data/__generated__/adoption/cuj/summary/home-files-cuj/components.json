@@ -1,13 +1,15 @@
 {
   "cds": [
     {
-      "sourceFile": "@cbhq/cds-mobile/layout",
-      "totalInstances": 9,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-mobile/layout",
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-mobile/layout/Box",
+      "totalInstances": 4,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-mobile/layout/Box",
       "callSites": {
-        "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 4,
-        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 5
+        "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
+        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1,
+        "@app/components/LiveTicker/LiveTicker.tsx": 1
       },
       "propsWithCallSites": {
         "spacingTop": {
@@ -20,6 +22,28 @@
         "testID": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2
         },
+        "spacingHorizontal": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "width": {
+          "@app/components/LiveTicker/LiveTicker.tsx": 1
+        },
+        "alignSelf": {
+          "@app/components/LiveTicker/LiveTicker.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Fallback",
+      "sourceFile": "@cbhq/cds-mobile/layout/Fallback",
+      "totalInstances": 4,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/layout/Fallback",
+      "callSites": {
+        "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
+        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 2
+      },
+      "propsWithCallSites": {
         "width": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2,
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 2
@@ -30,23 +54,15 @@
         },
         "offsetTop": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
-        },
-        "spacingHorizontal": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 2
-        },
-        "gap": {
-          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }
     },
     {
-      "sourceFile": "@cbhq/cds-mobile-visualization",
-      "totalInstances": 2,
+      "name": "Sparkline",
+      "sourceFile": "@cbhq/cds-mobile-visualization/Sparkline",
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile-visualization",
-      "callSites": {
-        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 2
-      },
+      "cds": "@cbhq/cds-mobile-visualization/Sparkline",
       "propsWithCallSites": {
         "testID": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
@@ -56,28 +72,47 @@
         },
         "color": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
-        },
+        }
+      }
+    },
+    {
+      "name": "SparklineArea",
+      "sourceFile": "@cbhq/cds-mobile-visualization/SparklineArea",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-mobile-visualization/SparklineArea",
+      "propsWithCallSites": {
         "area": {
           "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
         }
       }
     },
     {
+      "name": "VStack",
       "sourceFile": "@cbhq/cds-mobile/layout/VStack",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "totalInstances": 4,
+      "totalCallSites": 3,
       "cds": "@cbhq/cds-mobile/layout/VStack",
       "aliasedCdsComponents": [
         {
           "aliasPath": "@app/components/LiveTicker/LiveTicker.tsx",
-          "callSites": []
+          "callSites": [
+            "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx"
+          ]
         }
       ],
       "callSites": {
+        "@app/screens/HomeTab/components/HomeChartHeader.tsx": 2,
         "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1,
         "@app/components/LiveTicker/LiveTicker.tsx": 1
       },
       "propsWithCallSites": {
+        "gap": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
+        "spacingHorizontal": {
+          "@app/screens/HomeTab/components/HomeChartHeader.tsx": 1
+        },
         "accessibilityLabel": {
           "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
         },
@@ -90,6 +125,7 @@
       }
     },
     {
+      "name": "HStack",
       "sourceFile": "@cbhq/cds-mobile/layout/HStack",
       "totalInstances": 8,
       "totalCallSites": 3,
@@ -137,23 +173,28 @@
       }
     },
     {
-      "sourceFile": "@cbhq/cds-mobile/icons",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/icons",
+      "name": "Icon",
+      "sourceFile": "@cbhq/cds-mobile/icons/Icon",
+      "totalInstances": 2,
+      "totalCallSites": 2,
+      "cds": "@cbhq/cds-mobile/icons/Icon",
       "propsWithCallSites": {
         "size": {
-          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
+          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1,
+          "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1
         },
         "color": {
-          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
+          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1,
+          "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1
         },
         "name": {
-          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
+          "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1,
+          "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1
         }
       }
     },
     {
+      "name": "TextLabel1",
       "sourceFile": "@cbhq/cds-mobile/typography/TextLabel1",
       "totalInstances": 3,
       "totalCallSites": 1,
@@ -171,6 +212,7 @@
       }
     },
     {
+      "name": "TextLabel2",
       "sourceFile": "@cbhq/cds-mobile/typography/TextLabel2",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -185,10 +227,11 @@
       }
     },
     {
-      "sourceFile": "@cbhq/cds-mobile/system",
+      "name": "PressableOpacity",
+      "sourceFile": "@cbhq/cds-mobile/system/PressableOpacity",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/system",
+      "cds": "@cbhq/cds-mobile/system/PressableOpacity",
       "propsWithCallSites": {
         "onPress": {
           "@app/components/LiveBalanceHeader/LiveBalanceHeader.tsx": 1
@@ -199,41 +242,11 @@
       }
     },
     {
-      "sourceFile": "@cbhq/cds-mobile/layout/Box",
+      "name": "PressableOpacity",
+      "sourceFile": "@cbhq/cds-web/system/PressableOpacity",
       "totalInstances": 1,
       "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/layout/Box",
-      "propsWithCallSites": {
-        "width": {
-          "@app/components/LiveTicker/LiveTicker.tsx": 1
-        },
-        "alignSelf": {
-          "@app/components/LiveTicker/LiveTicker.tsx": 1
-        }
-      }
-    },
-    {
-      "sourceFile": "@cbhq/cds-mobile/icons/Icon",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-mobile/icons/Icon",
-      "propsWithCallSites": {
-        "name": {
-          "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1
-        },
-        "size": {
-          "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1
-        },
-        "color": {
-          "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1
-        }
-      }
-    },
-    {
-      "sourceFile": "@cbhq/cds-web/system",
-      "totalInstances": 1,
-      "totalCallSites": 1,
-      "cds": "@cbhq/cds-web/system",
+      "cds": "@cbhq/cds-web/system/PressableOpacity",
       "propsWithCallSites": {
         "onPress": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
@@ -247,26 +260,96 @@
       }
     },
     {
-      "sourceFile": "@cbhq/cds-web/typography",
-      "totalInstances": 7,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/typography",
-      "callSites": {
-        "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1,
-        "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 6
-      },
+      "name": "TextHeadline",
+      "sourceFile": "@cbhq/cds-web/typography/TextHeadline",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextHeadline",
       "propsWithCallSites": {
         "color": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1,
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 4
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         },
         "as": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1,
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 4
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "VStack",
+      "sourceFile": "@cbhq/cds-web/layout/VStack",
+      "totalInstances": 3,
+      "totalCallSites": 3,
+      "cds": "@cbhq/cds-web/layout/VStack",
+      "callSites": {
+        "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1,
+        "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1,
+        "components/WatchlistTableContainer/WatchlistTableContainer.tsx": 1
+      },
+      "propsWithCallSites": {
+        "width": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
+        },
+        "testID": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
+        },
+        "gap": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        },
+        "minHeight": {
+          "components/WatchlistTableContainer/WatchlistTableContainer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Divider",
+      "sourceFile": "@cbhq/cds-web/layout/Divider",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/layout/Divider"
+    },
+    {
+      "name": "Box",
+      "sourceFile": "@cbhq/cds-web/layout/Box",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/layout/Box",
+      "propsWithCallSites": {
+        "spacingHorizontal": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        },
+        "spacingBottom": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "TextLabel2",
+      "sourceFile": "@cbhq/cds-web/typography/TextLabel2",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextLabel2",
+      "propsWithCallSites": {
+        "as": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        },
+        "color": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
         },
         "spacingTop": {
           "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
-        },
+        }
+      }
+    },
+    {
+      "name": "Link",
+      "sourceFile": "@cbhq/cds-web/typography/Link",
+      "totalInstances": 2,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/Link",
+      "callSites": {
+        "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 2
+      },
+      "propsWithCallSites": {
         "onPress": {
           "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
         },
@@ -282,80 +365,25 @@
       }
     },
     {
-      "sourceFile": "@cbhq/cds-web/layout",
-      "totalInstances": 13,
-      "totalCallSites": 3,
-      "cds": "@cbhq/cds-web/layout",
-      "callSites": {
-        "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 10,
-        "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 2,
-        "components/WatchlistTableContainer/WatchlistTableContainer.tsx": 1
-      },
-      "propsWithCallSites": {
-        "width": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 5
-        },
-        "testID": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2
-        },
-        "height": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 5
-        },
-        "spacingHorizontal": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2,
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
-        },
-        "spacingEnd": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "shape": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2
-        },
-        "spacingStart": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "spacingBottom": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2,
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
-        },
-        "spacingTop": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "gap": {
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
-        },
-        "minHeight": {
-          "components/WatchlistTableContainer/WatchlistTableContainer.tsx": 1
-        }
-      }
-    },
-    {
-      "sourceFile": "@cbhq/cds-web/buttons",
+      "name": "TextLegal",
+      "sourceFile": "@cbhq/cds-web/typography/TextLegal",
       "totalInstances": 2,
-      "totalCallSites": 2,
-      "cds": "@cbhq/cds-web/buttons",
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextLegal",
       "callSites": {
-        "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1,
-        "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 2
       },
       "propsWithCallSites": {
-        "variant": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1,
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        "as": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 2
         },
-        "block": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1,
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
-        },
-        "compact": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "onPress": {
-          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        "color": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 2
         }
       }
     },
     {
+      "name": "Modal",
       "sourceFile": "@cbhq/cds-web/overlays/Modal/Modal",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -376,6 +404,7 @@
       }
     },
     {
+      "name": "ModalHeader",
       "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalHeader",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -387,12 +416,29 @@
       }
     },
     {
+      "name": "ModalBody",
       "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalBody",
       "totalInstances": 1,
       "totalCallSites": 1,
       "cds": "@cbhq/cds-web/overlays/Modal/ModalBody"
     },
     {
+      "name": "TextBody",
+      "sourceFile": "@cbhq/cds-web/typography/TextBody",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/typography/TextBody",
+      "propsWithCallSites": {
+        "as": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        },
+        "color": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "ModalFooter",
       "sourceFile": "@cbhq/cds-web/overlays/Modal/ModalFooter",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -404,6 +450,25 @@
       }
     },
     {
+      "name": "Button",
+      "sourceFile": "@cbhq/cds-web/buttons/Button",
+      "totalInstances": 1,
+      "totalCallSites": 1,
+      "cds": "@cbhq/cds-web/buttons/Button",
+      "propsWithCallSites": {
+        "onPress": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        },
+        "variant": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        },
+        "block": {
+          "views/Home/components/HomeWatchlistTable/WatchlistDisclaimer.tsx": 1
+        }
+      }
+    },
+    {
+      "name": "Table",
       "sourceFile": "@cbhq/cds-web/tables/Table",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -421,6 +486,7 @@
       }
     },
     {
+      "name": "TableBody",
       "sourceFile": "@cbhq/cds-web/tables/TableBody",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -497,6 +563,7 @@
       }
     },
     {
+      "name": "FabricTextInput",
       "sourceFile": "designSystem/src/core/chart/ChartHeaderAndNavBar/FabricTextInput",
       "totalInstances": 5,
       "totalCallSites": 1,
@@ -547,23 +614,17 @@
       }
     },
     {
-      "sourceFile": "react-native",
-      "totalInstances": 2,
-      "totalCallSites": 2,
+      "name": "TextInput",
+      "sourceFile": "react-native/TextInput",
+      "totalInstances": 1,
+      "totalCallSites": 1,
       "presentationalProps": [
         {
           "prop": "style",
           "callSite": "designSystem/src/core/chart/ChartHeaderAndNavBar/FabricTextInput.tsx"
         }
       ],
-      "callSites": {
-        "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1,
-        "designSystem/src/core/chart/ChartHeaderAndNavBar/FabricTextInput.tsx": 1
-      },
       "propsWithCallSites": {
-        "testID": {
-          "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1
-        },
         "ref": {
           "designSystem/src/core/chart/ChartHeaderAndNavBar/FabricTextInput.tsx": 1
         },
@@ -622,6 +683,7 @@
   ],
   "other": [
     {
+      "name": "PortfolioBalanceSelectionErrorBanner",
       "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSelectionErrorBanner",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -641,6 +703,7 @@
       }
     },
     {
+      "name": "HomeChartHeader",
       "sourceFile": "@app/screens/HomeTab/components/HomeChartHeader",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -660,12 +723,10 @@
       }
     },
     {
+      "name": "BalanceBreakdown",
       "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/components/BalanceBreakdown",
-      "totalInstances": 2,
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "callSites": {
-        "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 2
-      },
       "propsWithCallSites": {
         "cryptoBalance": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
@@ -676,6 +737,7 @@
       }
     },
     {
+      "name": "VisibilityTracker",
       "sourceFile": "@app/components/Analytics/VisibilityTracker",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -692,6 +754,7 @@
       }
     },
     {
+      "name": "UserCefiBalancesSubscription",
       "sourceFile": "@app/components/balance/UserCefiBalancesSubscription",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -702,19 +765,24 @@
       }
     },
     {
-      "sourceFile": "react-native",
-      "totalInstances": 1,
-      "totalCallSites": 1,
+      "name": "View",
+      "sourceFile": "react-native/View",
+      "totalInstances": 2,
+      "totalCallSites": 2,
       "propsWithCallSites": {
         "collapsable": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
         },
         "onLayout": {
           "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSection.tsx": 1
+        },
+        "testID": {
+          "designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader.tsx": 1
         }
       }
     },
     {
+      "name": "ChartHeader",
       "sourceFile": "@cbhq/react-native-core/designSystem/src/core/chart/ChartHeaderAndNavBar/ChartHeader",
       "totalInstances": 2,
       "totalCallSites": 2,
@@ -744,6 +812,13 @@
       }
     },
     {
+      "name": "BalanceBreakdownFallback",
+      "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/components/BalanceBreakdown/BalanceBreakdownFallback",
+      "totalInstances": 1,
+      "totalCallSites": 1
+    },
+    {
+      "name": "NetworkBoundary",
       "sourceFile": "@app/components/NetworkBoundary",
       "totalInstances": 2,
       "totalCallSites": 2,
@@ -773,11 +848,13 @@
       "totalCallSites": 1
     },
     {
-      "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSectionBoundary",
+      "name": "PortfolioBalanceBoundary",
+      "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/PortfolioBalanceSectionBoundary/PortfolioBalanceBoundary",
       "totalInstances": 1,
       "totalCallSites": 1
     },
     {
+      "name": "ChartProvider",
       "sourceFile": "@cbhq/react-native-core/designSystem/src/core/chart/ChartProvider",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -797,6 +874,7 @@
       "totalCallSites": 1
     },
     {
+      "name": "SharedBannerEmptyStateUI",
       "sourceFile": "@app/components/GracefulDegradation/SharedComponents/SharedBannerEmptyStateUI",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -810,6 +888,7 @@
       }
     },
     {
+      "name": "PersistedCacheGuardrailSuspenseBoundary",
       "sourceFile": "@app/components/PersistedCacheGuardrailSuspenseBoundary",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -834,6 +913,7 @@
       }
     },
     {
+      "name": "HomePortfolioChartButton",
       "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/components/HomePortfolioChartButton",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -856,6 +936,7 @@
       }
     },
     {
+      "name": "HomeChartHeaderBoundary",
       "sourceFile": "@app/screens/HomeTab/components/HomeChartHeaderBoundary",
       "totalInstances": 1,
       "totalCallSites": 1
@@ -902,6 +983,7 @@
       }
     },
     {
+      "name": "HomePortfolioChart",
       "sourceFile": "@app/screens/HomeTab/PortfolioBalanceSection/components/HomePortfolioChart",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -918,7 +1000,8 @@
       }
     },
     {
-      "sourceFile": "@app/dataComponents/PortfolioBalance/TotalBalance/HomeFeedAndAssets/TotalBalanceHeaderLegacy",
+      "name": "TotalBalanceHeaderDataComponentLegacy",
+      "sourceFile": "@app/dataComponents/PortfolioBalance/TotalBalance/HomeFeedAndAssets/TotalBalanceHeaderLegacy/TotalBalanceHeaderDataComponentLegacy",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -958,6 +1041,7 @@
       }
     },
     {
+      "name": "ChartFallback",
       "sourceFile": "@app/screens/Portfolio/components/ChartFallback",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -991,6 +1075,7 @@
       }
     },
     {
+      "name": "LiveTicker",
       "sourceFile": "@app/components/LiveTicker/LiveTicker",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -1030,6 +1115,7 @@
       }
     },
     {
+      "name": "CustomPriceAlertsBell",
       "sourceFile": "@app/components/Notifications/customPriceAlerts/CustomPriceAlertsBell",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -1141,6 +1227,7 @@
       }
     },
     {
+      "name": "Header",
       "sourceFile": "designSystem/src/navigation/header/Header",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -1222,6 +1309,7 @@
       }
     },
     {
+      "name": "ErrorBoundary",
       "sourceFile": "@cbhq/shared/components/ErrorBoundary",
       "totalInstances": 3,
       "totalCallSites": 2,
@@ -1244,14 +1332,12 @@
         },
         "fallback": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "willErrorBlockUser": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         }
       }
     },
     {
-      "sourceFile": "@cbhq/data-layer",
+      "name": "InstrumentedSuspense",
+      "sourceFile": "@cbhq/data-layer/InstrumentedSuspense",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -1264,6 +1350,7 @@
       }
     },
     {
+      "name": "LoadingRow",
       "sourceFile": "views/Home/components/HomeWatchlistTable/LoadingRows",
       "totalInstances": 1,
       "totalCallSites": 1
@@ -1283,15 +1370,18 @@
       }
     },
     {
-      "name": "HomeWatchlistTableFallback",
-      "sourceFile": "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx",
-      "totalInstances": 3,
+      "name": "WatchlistLoadingFallback",
+      "sourceFile": "views/Home/components/HomeWatchlistTable/WatchlistLoadingFallback",
+      "totalInstances": 2,
       "totalCallSites": 1,
       "callSites": {
-        "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 3
+        "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2
       },
       "propsWithCallSites": {
         "hideHeader": {
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2
+        },
+        "rowCount": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2
         }
       }
@@ -1422,6 +1512,7 @@
       }
     },
     {
+      "name": "WatchlistTabs",
       "sourceFile": "views/Home/components/HomeWatchlistTable/WatchlistTabs",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -1454,14 +1545,11 @@
     {
       "name": "HomeWatchlistHeader",
       "sourceFile": "views/Home/components/HomeWatchlistTable/HomeWatchlistHeader",
-      "totalInstances": 2,
+      "totalInstances": 1,
       "totalCallSites": 1,
-      "callSites": {
-        "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2
-      },
       "propsWithCallSites": {
         "trailing": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2
+          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         }
       }
     },
@@ -1506,41 +1594,17 @@
       }
     },
     {
-      "name": "WatchlistListCellFallback",
+      "name": "HomeWatchlist",
       "sourceFile": "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx",
-      "totalInstances": 1,
-      "totalCallSites": 1
-    },
-    {
-      "name": "Boundary",
-      "sourceFile": "@cbhq/shared/components/Boundary/Boundary",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
-        "owner": {
+        "queryRef": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         },
-        "context": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "name": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "errorFallback": {
-          "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
-        },
-        "fallback": {
+        "borderedBottom": {
           "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 1
         }
-      }
-    },
-    {
-      "name": "HomeWatchlist",
-      "sourceFile": "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx",
-      "totalInstances": 2,
-      "totalCallSites": 1,
-      "callSites": {
-        "views/Home/components/HomeWatchlistTable/HomeWatchlistTable.tsx": 2
       }
     },
     {
@@ -1680,7 +1744,8 @@
       }
     },
     {
-      "sourceFile": "components/LoadingIndicator",
+      "name": "LoadingIndicatorCDS",
+      "sourceFile": "components/LoadingIndicator/LoadingIndicatorCDS",
       "totalInstances": 1,
       "totalCallSites": 1
     },
@@ -1717,7 +1782,8 @@
       "totalCallSites": 1
     },
     {
-      "sourceFile": "components/BuySellModal",
+      "name": "LazyBuySellModal",
+      "sourceFile": "components/BuySellModal/LazyBuySellModal",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
@@ -1745,6 +1811,7 @@
       }
     },
     {
+      "name": "WatchStar",
       "sourceFile": "@cbhq/shared/components/WatchStar",
       "totalInstances": 1,
       "totalCallSites": 1,
@@ -1799,7 +1866,8 @@
       }
     },
     {
-      "sourceFile": "@cbhq/shared/components/LoadingBlock",
+      "name": "PlaceholderDiv",
+      "sourceFile": "@cbhq/shared/components/LoadingBlock/PlaceholderDiv",
       "totalInstances": 1,
       "totalCallSites": 1,
       "propsWithCallSites": {
