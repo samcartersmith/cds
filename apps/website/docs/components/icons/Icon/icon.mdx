@@ -3,6 +3,7 @@ title: Icon
 slug: /components/icon
 ---
 
+import { Banner } from '@cbhq/cds-web/banner/Banner';
 import Design, { toc as designToc } from './_design.mdx';
 import Metadata, { toc as metadataToc } from './_metadata.mdx';
 import Intro, { toc as introToc } from './_intro.mdx';
@@ -19,9 +20,17 @@ import Implementation, { toc as implementationToc } from './_implementation.mdx'
     label="Implementation"
     toc={[...metadataToc, ...introToc, ...usageToc, ...a11yToc, ...implementationToc]}
   >
+    <Banner
+      variant="informational"
+      startIcon="questionMark"
+      title="Updated Icons"
+    >
+      As of <b>@cbhq/cds-icons@4.0.0</b>, NavigationIcon and Icon have merged! Now, all icon names formerly
+      associated with NavigationIcon are available in the basic Icon component.
+    </Banner>
     <Metadata />
-    <Intro />
     <Usage />
+    <Intro />
     <A11Y />
     <Implementation />
   </TabItem>

@@ -11,9 +11,8 @@ export const IconAnnouncement = function IconAnnouncement() {
       body={
         <VStack>
           <TextBody as="p" spacingBottom={1}>
-            Icons (Navigation and Product Icons) and Illustrations are released the first{' '}
-            <strong>Wednesday of each month</strong>. For the icon to be included in this cycle, the
-            request must be submitted{' '}
+            Icons and Illustrations are released the first <strong>Wednesday of each month</strong>.
+            For the icon to be included in this cycle, the request must be submitted{' '}
             <TextBody as="strong" color="negative">
               <strong>
                 before 1pm the Tuesday before the first Wednesday of the month (a day before the

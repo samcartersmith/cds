@@ -1,22 +1,23 @@
-import React, { memo, useMemo } from 'react';
-import { Text, TextStyle } from 'react-native';
-import { SharedAccessibilityProps } from '@cbhq/cds-common';
-import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
+import React, { memo } from 'react';
+import { PaletteForeground, SharedAccessibilityProps } from '@cbhq/cds-common';
 import { NavigationBaseIconProps } from '@cbhq/cds-common/types/NavigationBaseIconProps';
-import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
-import { isDevelopment } from '@cbhq/cds-utils';
 
-import { usePalette } from '../hooks/usePalette';
-import { Box } from '../layout/Box';
+import { Icon } from './Icon';
 
-export type NavigationIconProps = NavigationBaseIconProps &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
+export type NavigationIconProps = NavigationBaseIconProps & {
+  /**
+   * Color of the icon when used as a foreground.
+   * @default foreground
+   */ color?: PaletteForeground;
+} & Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
+/** @deprecated Will be removed in Q1 2025. Use Icon instead. */
 export const NavigationIcon = memo(function NavigationIcon({
   accessibilityLabel,
   accessibilityHint,
   active = false,
   fallback = null,
+  color = active ? 'primary' : 'foreground',
   name,
   size = 'm',
   testID,
@@ -28,41 +29,18 @@ export const NavigationIcon = memo(function NavigationIcon({
   spacingEnd,
   spacingVertical,
   spacingHorizontal,
+  ...props
 }: NavigationIconProps) {
-  const { wrapperSize, iconSize, sourceSize } = useIconSize(size);
-  const iconColor = usePalette()[active ? 'primary' : 'foreground'];
-
-  const fontStyles = useMemo(
-    () => ({
-      fontFamily: 'CoinbaseIcons',
-      fontSize: iconSize,
-      height: iconSize,
-      width: iconSize,
-      lineHeight: iconSize,
-      color: iconColor,
-    }),
-    [iconColor, iconSize],
-  );
-
-  const activeSuffix = active ? 'active' : 'inactive';
-  const glyphKey = `nav-${name}-${sourceSize}-${activeSuffix}` as const;
-  const glyph = glyphMap[glyphKey];
-
-  if (glyph === undefined) {
-    if (isDevelopment()) {
-      // eslint-disable-next-line no-console
-      console.error(
-        `Unable to find NavigationIcon with name: ${name}. Full internal lookup name is ${glyphKey}`,
-      );
-    }
-    return fallback;
-  }
-
   return (
-    <Box
-      alignItems="center"
-      height={wrapperSize}
-      justifyContent="center"
+    <Icon
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
+      active={active}
+      color={color}
+      fallback={fallback}
+      iconType="nav"
+      name={name}
+      size={size}
       spacing={spacing}
       spacingBottom={spacingBottom}
       spacingEnd={spacingEnd}
@@ -71,19 +49,8 @@ export const NavigationIcon = memo(function NavigationIcon({
       spacingTop={spacingTop}
       spacingVertical={spacingVertical}
       testID={testID}
-      width={wrapperSize}
-    >
-      <Text
-        accessibilityHint={accessibilityHint}
-        accessibilityLabel={accessibilityLabel}
-        accessibilityRole="image"
-        accessible={!!accessibilityLabel}
-        allowFontScaling={false}
-        style={fontStyles as TextStyle}
-      >
-        {glyph}
-      </Text>
-    </Box>
+      {...props}
+    />
   );
 });
 

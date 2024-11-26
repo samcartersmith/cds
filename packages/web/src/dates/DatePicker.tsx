@@ -206,7 +206,7 @@ export const DatePicker = memo(
               disableInheritFocusStyle
               transparent
               accessibilityLabel={calendarIconButtonAccessibilityLabel}
-              name="calendar"
+              name="calendarEmpty"
               onPress={handleOpenCalendar}
               variant="secondary"
             />

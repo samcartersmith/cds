@@ -79,7 +79,8 @@
       ],
       "outputs": [
         "{projectRoot}/dts",
-        "{projectRoot}/tsconfig.tsbuildinfo"
+        "{projectRoot}/tsconfig.tsbuildinfo",
+        "{projectRoot}/tsconfig.build.tsbuildinfo"
       ],
       "cache": true
     },

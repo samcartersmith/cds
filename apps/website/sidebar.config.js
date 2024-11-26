@@ -146,6 +146,7 @@ const sidebars = {
               type: 'doc',
               id: 'components/icons/NavigationIcon/navigation-icon',
               label: 'Navigation Icon',
+              customProps: { tag: 'deprecated' },
             },
             {
               type: 'doc',
@@ -583,11 +584,13 @@ const sidebars = {
               type: 'ref',
               id: 'components/icons/NavigationIcon/navigation-icon',
               label: 'Navigation Icon',
+              customProps: { tag: 'deprecated' },
             },
             {
               type: 'doc',
               id: 'components/buttons/NavigationIconButton/navigation-icon-button',
               label: 'Navigation Icon Button',
+              customProps: { tag: 'deprecated' },
             },
             { type: 'doc', id: 'components/navigation/NavLink/nav-link', label: 'Nav Link' },
             {

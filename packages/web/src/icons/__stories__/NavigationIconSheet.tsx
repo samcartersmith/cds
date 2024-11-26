@@ -1,8 +1,11 @@
 import { memo } from 'react';
 import { css } from 'linaria';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
+import { sortNamesByOldOrder } from '@cbhq/cds-common/internal/utils/sortIconsForVisReg';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
+import { NavIconName } from '@cbhq/cds-icons';
 import names from '@cbhq/cds-icons/__generated__/nav/data/names';
+import namesOld from '@cbhq/cds-icons/__generated__/nav/data/names-old';
 
 import { HStack, VStack } from '../../layout';
 import { palette } from '../../tokens';
@@ -42,11 +45,13 @@ export const NavigationIconSheet = memo(function NavigationIconSheet({
   startIndex,
   endIndex,
 }: NavigationIconSheetProps) {
+  const sortedNames = sortNamesByOldOrder(namesOld, names) as NavIconName[]; // Use sorted names
+
   return (
     <VStack gap={2}>
       <DisclaimerText />
       <HStack flexWrap="wrap" gap={2} spacingBottom={2}>
-        {names.slice(startIndex, endIndex).map((name) => {
+        {sortedNames.slice(startIndex, endIndex).map((name) => {
           return (
             <HStack key={`nav-icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
               <VStack gap={2}>

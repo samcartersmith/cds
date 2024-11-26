@@ -11,7 +11,7 @@ const root = MONOREPO_ROOT;
 
 export const mockTaskOptions = {
   'sync-icons': {
-    figmaApiFileId: 'tuc9LpASTO9mBrbg1tAdAl',
+    figmaApiFileId: '1J3XC4iA2xRzlnC3y0pl1N',
     changelogFile: './CHANGELOG.md',
     manifestFile: './__generated__/manifest.json',
     generatedSvgsDirectory: './__generated__/svg',

@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, Text, TextStyle } from 'react-native';
-import { PaletteForeground } from '@cbhq/cds-common';
+import { IconName, PaletteForeground } from '@cbhq/cds-common';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
@@ -8,8 +8,9 @@ import { usePalette } from '../hooks/usePalette';
 
 import { IconProps } from './Icon';
 
-export type TextIconProps = Pick<IconProps, 'color' | 'size' | 'name' | 'testID'> &
-  (
+export type TextIconProps = Pick<IconProps, 'color' | 'size' | 'testID'> & {
+  name: IconName;
+} & (
     | {
         animated: true;
         style: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
@@ -19,7 +20,6 @@ export type TextIconProps = Pick<IconProps, 'color' | 'size' | 'name' | 'testID'
         style?: StyleProp<TextStyle>;
       }
   );
-
 /**
  *
  * This is a simplified, text-only version of the Icon component.
@@ -35,7 +35,7 @@ export const TextIcon = memo(function TextIcon({
   style,
 }: TextIconProps) {
   const Component = animated ? Animated.Text : Text;
-  const { iconSize, sourceSize } = useIconSize(size, false);
+  const { iconSize, sourceSize } = useIconSize(size || 'm', false);
   const iconColor = usePalette()[color];
 
   const styles = useMemo(

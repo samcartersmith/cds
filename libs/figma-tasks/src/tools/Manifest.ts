@@ -15,6 +15,7 @@ import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { Changelog } from './Changelog';
 import { ColorStyles } from './ColorStyles';
 
+// Base type for items within the manifest. It defines the structure that all items should adhere to.
 export type ItemShape = {
   id: string;
   /** Base64 representation of provided hash source */
@@ -28,6 +29,7 @@ export type ItemShape = {
   setVersion: (num: number) => void;
 };
 
+// Generic type that represents the overall manifest.
 export type ManifestShape<
   Item extends ItemShape = ItemShape,
   Metadata = Record<string, unknown>,
@@ -36,6 +38,13 @@ export type ManifestShape<
   imageFormats?: ImageFormats;
   lastUpdated: string;
   metadata: Metadata;
+  /**
+   * items is an array of tuples, where each tuple consists of a string and an Item. (ie. "2:3516")
+   * - Why is it this format? In Figma, every node (which can be a frame, component, vector, etc.) has a unique identifier called a node ID.
+   * - The numbers represent the hierarchy and ordering of nodes within the Figma file.
+   * - The first number usually indicates the page or parent node, and the second number indicates the specific node within that context.
+   * string is ID of item, Item is actual item data, adhering to ItemShape or a subtype of it.
+   */
   items: [string, Item][];
 };
 
@@ -185,9 +194,27 @@ export class Manifest<
       // Handle renames
       const prevName = prevNode.name;
       const newName = item.name;
-      const wasRenamed = prevName !== newName;
+      const prevType = prevNode.type;
+      const newType = item.type;
+      const wasRenamed = prevName !== newName || prevType !== newType; // Rename if either name or type is different
 
       if (wasRenamed) {
+        if (prevType !== newType) {
+          // Type has changed, treat it as deletion of old item and addition of new item
+          console.log(
+            `Type mismatch: replacing: ${prevType}-${prevName} with ${newType}-${newName}`,
+          );
+
+          // Mark the old item for deletion
+          this.deletions.add(prevNode);
+          this.previousItems.delete(prevNode.id);
+
+          // Add the new item to additions and the current items map
+          this.additions.add(item);
+          this.items.set(item.id, item);
+
+          return; // Exit without performing renaming
+        }
         if (prevName.toLowerCase() === newName.toLowerCase()) {
           throw new Error(
             `Renaming is not case sensitive: ${prevName} -> ${newName}. Update the Figma file with a new distinct name for ${prevNode.type}/${prevName}.`,
@@ -201,13 +228,38 @@ export class Manifest<
         if (this.versioned) {
           // Reset versioning
           item.setVersion(0);
+
           renameFn = (output: string) =>
-            output.replace(`${prevName}-${prevNode.version}`, `${newName}-0`);
+            output.replace(
+              `${prevType}-${prevName}-${prevNode.version}`,
+              `${newType}-${newName}-0`,
+            );
         } else {
-          // TODO: should probably make this rename function more robust;
-          // if the asset name happens to match a substring in the path before it reaches the file name,
-          // it will incorrectly replace that substring instead
-          renameFn = (output: string) => output.replace(prevName, newName);
+          // More robust renaming logic where we ensure that the type is correct and replace appropriately
+          renameFn = (output: string) => {
+            let parts = output.split('/');
+            const fileName = parts.pop();
+
+            if (fileName) {
+              const updatedFileName = fileName.replace(
+                `${prevType}-${prevName}`,
+                `${newType}-${newName}`,
+              );
+
+              // Iterate over parts to find and replace the type (e.g., "nav" or "ui")
+              parts = parts.map((part) => {
+                // Check if the part contains the previous type and replace it with the new type
+                if (part.includes(prevType)) {
+                  return part.replace(prevType, newType); // Replace type in the path
+                }
+                return part; // Keep the part unchanged if it doesn't match the previous type
+              });
+
+              console.log(...parts, updatedFileName);
+              return [...parts, updatedFileName].join('/');
+            }
+            return output; // If no fileName, return the original output
+          };
         }
 
         await this.renameOutputs(item, renameFn);

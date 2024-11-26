@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 7.3.0 (11/22/2024 PST)
+
+#### 🚀 Updates
+
+- Icon now supports both UIIcons and NavIcons. [[#3428](https://github.cbhq.net/frontend/cds/pull/3428)]
+
 ## 7.2.2 ((11/20/2024, 09:33 AM PST))
 
 This is an artificial version bump with no new change.

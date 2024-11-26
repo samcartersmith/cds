@@ -12,7 +12,7 @@ yarn add @cbhq/cds-icons
 
 ### Figma Links
 
-- [CDS Icon Figma components](https://www.figma.com/file/tuc9LpASTO9mBrbg1tAdAl/%E2%9D%8C-Icons?node-id=513%3A3971&t=ctB9WBiSSu6wOe3o-0)
+- [CDS Icon Figma components](https://www.figma.com/file/1J3XC4iA2xRzlnC3y0pl1N/%E2%9D%8C-Icons?node-id=513%3A3971&t=ctB9WBiSSu6wOe3o-0)
 
 ### Releasing Icons
 

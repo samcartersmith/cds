@@ -1,8 +1,11 @@
 import { memo } from 'react';
 import { css } from 'linaria';
 import { IconName, IconSize, useIconSize } from '@cbhq/cds-common';
+import { sortNamesByOldOrder } from '@cbhq/cds-common/internal/utils/sortIconsForVisReg';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';
+import { UiIconName } from '@cbhq/cds-icons';
 import names from '@cbhq/cds-icons/__generated__/ui/data/names';
+import namesOld from '@cbhq/cds-icons/__generated__/ui/data/names-old';
 
 import { HStack, VStack } from '../../layout';
 import { palette } from '../../tokens';
@@ -38,11 +41,13 @@ type IconSheetProps = {
 };
 
 export const IconSheet = memo(function IconSheet({ startIndex, endIndex }: IconSheetProps) {
+  const sortedNames = sortNamesByOldOrder(namesOld, names) as UiIconName[]; // Use sorted names
+
   return (
     <VStack gap={2}>
       <DisclaimerText />
       <HStack flexWrap="wrap" gap={2} spacingBottom={2}>
-        {names.slice(startIndex, endIndex).map((name) => {
+        {sortedNames.slice(startIndex, endIndex).map((name) => {
           return (
             <HStack key={`icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
               <VStack gap={2}>

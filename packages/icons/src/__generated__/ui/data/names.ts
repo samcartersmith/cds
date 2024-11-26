@@ -10,6 +10,8 @@ import type { UiIconName } from '../types/UiIconName';
  * this file is used to populate UiIcon stories in percy, so the sort order based on createdAt is important.
  */
 const names: UiIconName[] = [
+  'undo',
+  'deposit',
   'wrapToken',
   'setPinCode',
   'orderHistory',
@@ -120,7 +122,6 @@ const names: UiIconName[] = [
   'collectibles',
   'faucetInactive',
   'gauge',
-  'undo',
   'cashThaiBaht',
   'faceScan',
   'cashPolishZloty',
@@ -128,7 +129,6 @@ const names: UiIconName[] = [
   'horizontalLine',
   'forwardArrow',
   'more',
-  'deposit',
   'expandAddress',
   'gear',
   'expand',
@@ -296,6 +296,15 @@ const names: UiIconName[] = [
   'bellCheck',
   'bellPlus',
   'shieldOutline',
+  'barChartWindow',
+  'gitHubLogo',
+  'googleLogo',
+  'derivativesProductNew',
+  'mint',
+  'socialShare',
+  'socialChat',
+  'socialReshare',
+  'calendarEmpty',
 ];
 
 export default names;
