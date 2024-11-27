@@ -1,2 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies */
-module.exports = require('@cbhq/next-config/babel');
+module.exports = {
+  presets: [
+    'next/babel',
+    ['@babel/preset-env', { modules: false }],
+    ['@babel/preset-react', { runtime: 'automatic' }],
+    '@babel/preset-typescript',
+    '@linaria/babel-preset',
+  ],
+};

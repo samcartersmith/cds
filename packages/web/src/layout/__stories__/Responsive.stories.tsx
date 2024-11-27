@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { BoxBaseProps, ResponsiveCellSpacingProps, ResponsiveProps } from '@cbhq/cds-common/types';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 

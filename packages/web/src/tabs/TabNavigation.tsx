@@ -12,7 +12,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { TabIndicatorProps, TabNavigationProps, TabProps, useToggler } from '@cbhq/cds-common';
 import { useScaleDensity } from '@cbhq/cds-common/scale/useScaleDensity';
 import { tabsPaddleWidth } from '@cbhq/cds-common/tokens/tabs';

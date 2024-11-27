@@ -3,7 +3,7 @@ to: packages/web/src/styles/borderRadius.ts
 force: true
 ---
 
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 // eslint-disable-next-line no-restricted-imports
 import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/borderRadius';
 

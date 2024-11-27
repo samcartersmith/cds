@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useIconSize } from '@cbhq/cds-common/hooks/useIconSize';
 import { sortNamesByOldOrder } from '@cbhq/cds-common/internal/utils/sortIconsForVisReg';
 import { ScaleProvider } from '@cbhq/cds-common/scale/ScaleProvider';

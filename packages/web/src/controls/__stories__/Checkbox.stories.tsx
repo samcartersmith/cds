@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 

@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { AvatarBaseProps, SharedProps } from '@cbhq/cds-common';
 
 import { useIsBrowser } from '../hooks/useIsBrowser';

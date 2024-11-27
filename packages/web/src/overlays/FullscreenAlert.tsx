@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import type { AlertActionsBaseProps, IllustrationHeroSquareNames } from '@cbhq/cds-common';
 
 import { Button } from '../buttons';

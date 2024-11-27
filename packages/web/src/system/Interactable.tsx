@@ -1,5 +1,5 @@
 import React, { createElement, forwardRef, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { SharedProps, usePaletteConfig, useSpectrum } from '@cbhq/cds-common';
 import {
   ElevationChildrenProvider,

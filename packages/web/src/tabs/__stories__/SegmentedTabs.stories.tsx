@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useTabsContext } from '@cbhq/cds-common/tabs/TabsContext';
 import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
 

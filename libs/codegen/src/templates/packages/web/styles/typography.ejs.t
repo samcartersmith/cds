@@ -2,7 +2,7 @@
 to: packages/web/src/typography/textStyles.ts
 force: true
 ---
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 <%_ Object.entries(styles.typography).map(([key, value]) => { _%>
 export const <%- key %>Styles = {

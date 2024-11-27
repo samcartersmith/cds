@@ -51,7 +51,7 @@ force: true
       return !isSharedDense && !isSharedNormal && !isSharedDenseAndNormal;
   }
 %>
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 const sharedVariables = {
  <%_ Object.entries(filterScaleItems(isShared)).map(([key, value]) => { _%>

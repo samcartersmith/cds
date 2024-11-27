@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useSpectrum } from '@cbhq/cds-common';
 import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { chipMaxWidth } from '@cbhq/cds-common/tokens/chip';

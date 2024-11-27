@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { toCssVar } from '@cbhq/cds-utils/string';
 
 import { palette } from '../../tokens';

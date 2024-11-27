@@ -1,5 +1,5 @@
 import React, { Children, memo, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { DEFAULT_SCALE } from '@cbhq/cds-common/scale/context';
 import { sidebarHorizontalSpacing } from '@cbhq/cds-common/tokens/sidebar';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';

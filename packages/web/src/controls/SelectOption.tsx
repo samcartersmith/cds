@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { selectCellSpacingConfig } from '@cbhq/cds-common/tokens/select';
 import { ScaleDensity, SelectOptionBaseProps } from '@cbhq/cds-common/types';

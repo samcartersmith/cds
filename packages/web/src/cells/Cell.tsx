@@ -1,5 +1,5 @@
 import React, { forwardRef, memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 import type {
   CellBaseProps,

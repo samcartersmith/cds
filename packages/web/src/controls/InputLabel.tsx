@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 import { TextLabel1 } from '../typography/TextLabel1';
 import { TextProps } from '../typography/TextProps';

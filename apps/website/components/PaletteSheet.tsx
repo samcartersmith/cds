@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
+import { css } from '@linaria/core';
 import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
-import { css } from 'linaria';
 import { usePaletteConfig } from '@cbhq/cds-common';
 import { paletteValueToTuple } from '@cbhq/cds-common/palette/paletteValueToTuple';
 import { entries, wordCase } from '@cbhq/cds-utils';

@@ -140,7 +140,10 @@ export function linariaCssExtractPlugin(): PluginObj {
           let replacedLinaria = false;
 
           nodePath.node.body.forEach((node, index) => {
-            if (node.type === 'ImportDeclaration' && node.source.value === 'linaria') {
+            if (
+              node.type === 'ImportDeclaration' &&
+              (node.source.value === 'linaria' || node.source.value === '@linaria/core')
+            ) {
               // eslint-disable-next-line no-param-reassign
               node.specifiers = node.specifiers.filter((spec) => spec.local.name !== 'css');
 

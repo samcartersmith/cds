@@ -2,7 +2,7 @@
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 export const display1Styles = {
   fontSize: 'var(--display1-font-size)',

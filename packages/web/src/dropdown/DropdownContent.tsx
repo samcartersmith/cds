@@ -1,7 +1,7 @@
 import React, { forwardRef, memo } from 'react';
+import { css } from '@linaria/core';
 import { Placement } from '@popperjs/core';
 import { AnimationProps, m as motion } from 'framer-motion';
-import { css } from 'linaria';
 import {
   animateDropdownOpacityInConfig,
   animateDropdownOpacityOutConfig,

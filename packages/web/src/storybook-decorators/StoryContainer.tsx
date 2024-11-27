@@ -1,7 +1,7 @@
 import React, { memo, StrictMode, useMemo } from 'react';
+import { css } from '@linaria/core';
 /* eslint-disable import/no-extraneous-dependencies */
 import { Story } from '@storybook/react';
-import { css } from 'linaria';
 import merge from 'lodash/merge';
 import { useDarkMode } from 'storybook-dark-mode';
 import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common/internal/utils/storyBuilder';

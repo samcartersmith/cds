@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import figma from '@figma/code-connect';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 
 import { Button } from '../../../buttons';

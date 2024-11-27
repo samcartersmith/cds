@@ -1,5 +1,5 @@
 import React, { createElement, forwardRef, memo, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import type { Typography } from '@cbhq/cds-common';
 import { useTextTransform } from '@cbhq/cds-common/hooks/useTextTransform';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';

@@ -1,5 +1,5 @@
+import { css } from '@linaria/core';
 import { render, screen } from '@testing-library/react';
-import { css } from 'linaria';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Table } from '../Table';

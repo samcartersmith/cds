@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import shuffle from 'lodash/shuffle';
 import { IconName } from '@cbhq/cds-common';
 import { CellMedia } from '@cbhq/cds-web/cells';

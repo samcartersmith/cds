@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { TextLabel2 } from '@cbhq/cds-web/typography/TextLabel2';
 import { cx } from '@cbhq/cds-web/utils/linaria';
 

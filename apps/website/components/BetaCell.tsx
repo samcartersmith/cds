@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { BoxBaseProps } from '@cbhq/cds-common';
 import { useOffsetStyles } from '@cbhq/cds-web/hooks/useOffsetStyles';
 import { Box, HStack } from '@cbhq/cds-web/layout';

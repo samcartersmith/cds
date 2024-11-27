@@ -2,7 +2,7 @@
 to: packages/web/src/styles/spectrum.ts
 force: true
 ---
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 export const darkVariables = <%- JSON.stringify(styles.spectrum.dark) %>
 

@@ -2,7 +2,7 @@
 to: packages/web/src/animation/lottieStyles.ts
 force: true
 ---
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 import { palette } from '../tokens';
 

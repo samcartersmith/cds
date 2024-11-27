@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { forwardRef, memo, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import type { ColorSurgeBackground } from '@cbhq/cds-common';
 import { BorderWidth, ForwardedRef } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';

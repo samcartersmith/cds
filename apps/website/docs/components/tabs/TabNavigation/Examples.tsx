@@ -1,5 +1,5 @@
 import React, { memo, useMemo, useState } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { TabNavigationProps, TabProps } from '@cbhq/cds-common/types';
 import { VStack } from '@cbhq/cds-web/layout';
 import { TabNavigation } from '@cbhq/cds-web/tabs/TabNavigation';

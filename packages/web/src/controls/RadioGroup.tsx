@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo, useCallback } from 'react';
+import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
-import { css } from 'linaria';
 import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
 import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';

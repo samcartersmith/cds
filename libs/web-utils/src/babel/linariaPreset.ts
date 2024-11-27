@@ -1,9 +1,10 @@
 import type { ConfigAPI, TransformOptions } from '@babel/core';
-import linariaBabelPreset, { type PluginOptions } from 'linaria/babel';
+import linariaBabelPreset, { type PluginOptions } from '@linaria/babel-preset';
 
 import { type ExtractConfigOptions, linariaCssExtractPlugin } from './linariaCssExtractPlugin';
 
 type PresetOptions = ExtractConfigOptions & {
+  // The @linaria/babel-preset module's types are corrected in ./types.d.ts
   linariaOptions?: PluginOptions;
 };
 

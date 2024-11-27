@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { DotOverlap, PinPlacement } from '@cbhq/cds-common';
 
 export const dotRootContainerStyles = css`

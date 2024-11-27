@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 import { deviceBreakpoints } from '../../layout/breakpoints';
 import { palette, spacing } from '../../tokens';

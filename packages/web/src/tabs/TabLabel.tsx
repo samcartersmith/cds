@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useId, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { TabIndicatorProps, TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 

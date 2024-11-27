@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { fadeDuration } from '@cbhq/cds-common/tokens/sparkline';
 import { cubicBezier } from '@cbhq/cds-web/animation/convertMotionConfig';
 

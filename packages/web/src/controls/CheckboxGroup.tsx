@@ -6,7 +6,7 @@ import React, {
   isValidElement,
   memo,
 } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { SharedProps } from '@cbhq/cds-common';
 import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';

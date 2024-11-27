@@ -9,7 +9,7 @@ import React, {
   useId,
   useState,
 } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { IconName, IconSize, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common';
 
 import { useIconButtonStyles } from '../buttons/useIconButtonStyles';

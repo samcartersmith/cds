@@ -1,5 +1,5 @@
 import React, { forwardRef, memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { ForwardedRef, InputVariant, SelectBaseProps } from '@cbhq/cds-common';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';

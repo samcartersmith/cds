@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { opacityPressed } from '@cbhq/cds-common/tokens/interactable';
 
 import { focusRing } from '../styles/focus';

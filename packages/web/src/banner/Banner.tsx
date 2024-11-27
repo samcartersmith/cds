@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { ForwardedRef, SpacingScale } from '@cbhq/cds-common';
 import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueToRgbaString';
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';

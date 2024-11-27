@@ -1,5 +1,5 @@
 import React, { memo, useCallback } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { lineDashArray } from '@cbhq/cds-common/tokens/sparkline';
 import { SparklineInteractiveLineVerticalProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';

@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useRef } from 'react';
+import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
-import { css } from 'linaria';
 import { ForwardedRef } from '@cbhq/cds-common';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import {

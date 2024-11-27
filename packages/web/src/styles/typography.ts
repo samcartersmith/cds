@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 import { CSSMap } from '../types';
 import { TextProps } from '../typography/TextProps';

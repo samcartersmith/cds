@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo } from 'react';
+import { CSSProperties } from '@linaria/core';
 import { m as motion } from 'framer-motion';
-import { CSSProperties } from 'linaria';
 import { Position } from '@cbhq/cds-common';
 import {
   animateInOpacityConfig,

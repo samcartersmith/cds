@@ -13,12 +13,6 @@
         "cwd": "apps/next-app"
       }
     },
-    "analyze": {
-      "executor": "@cbhq/mono-tasks:build-next",
-      "env": {
-        "ANALYZE": true
-      }
-    },
     "start": {
       "command": "next dev",
       "options": {

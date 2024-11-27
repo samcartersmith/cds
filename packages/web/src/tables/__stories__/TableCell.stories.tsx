@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-handler-names */
+import { css } from '@linaria/core';
 import { Meta, Story } from '@storybook/react';
-import { css } from 'linaria';
 
 import { Accordion, AccordionItem } from '../../accordion';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';

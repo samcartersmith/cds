@@ -10,8 +10,8 @@ import {
   shift,
   useFloating,
 } from '@floating-ui/react-dom';
+import { css } from '@linaria/core';
 import { animated, config as springConfig, useSpring } from '@react-spring/web';
-import { css } from 'linaria';
 import { Rect, SharedProps } from '@cbhq/cds-common';
 import { useRefMap } from '@cbhq/cds-common/hooks/useRefMap';
 import {

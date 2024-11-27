@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { durations } from '@cbhq/cds-common/motion/tokens';
 
 export const spinner = {

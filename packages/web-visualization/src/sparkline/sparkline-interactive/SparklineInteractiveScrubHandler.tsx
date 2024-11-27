@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { ChartGetMarker } from '@cbhq/cds-common';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { fadeDuration, maskOpacity } from '@cbhq/cds-common/tokens/sparkline';

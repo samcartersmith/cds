@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
 
 import { palette } from '../tokens';

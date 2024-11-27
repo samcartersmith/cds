@@ -1,5 +1,5 @@
+import { css } from '@linaria/core';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { css } from 'linaria';
 import { bannerBuilder } from '@cbhq/cds-common/internal/bannerBuilder';
 
 import { Spacer, VStack } from '../../layout';

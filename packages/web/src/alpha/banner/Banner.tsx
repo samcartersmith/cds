@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { ForwardedRef, ResponsiveProps } from '@cbhq/cds-common';
 import { bannerMinWidth, BannerVariantStyle, variants } from '@cbhq/cds-common/tokens/alphaBanner';
 import { BannerBaseProps, BannerStyleVariant } from '@cbhq/cds-common/types/AlphaBannerBaseProps';

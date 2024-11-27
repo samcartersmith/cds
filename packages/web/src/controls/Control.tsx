@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo, useRef } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { SharedProps } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';

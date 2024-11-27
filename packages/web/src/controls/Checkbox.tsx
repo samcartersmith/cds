@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo } from 'react';
+import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
-import { css } from 'linaria';
 import { useSpectrum } from '@cbhq/cds-common';
 import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';

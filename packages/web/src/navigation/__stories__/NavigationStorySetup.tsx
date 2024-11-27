@@ -1,6 +1,6 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useCallback, useMemo, useState } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 import { AppSwitcher } from '../../__stories__/AppSwitcher.stories';
 import { HelpMenu } from '../../__stories__/HelpMenu.stories';

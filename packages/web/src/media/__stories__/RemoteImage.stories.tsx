@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { svgs } from '@cbhq/cds-common/internal/data/assets';
 import { remoteImageBuilder } from '@cbhq/cds-common/internal/remoteImageBuilder';
 

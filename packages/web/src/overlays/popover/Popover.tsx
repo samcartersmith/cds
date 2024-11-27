@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { memo, useCallback, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useScale } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { zIndex } from '@cbhq/cds-common/tokens/zIndex';

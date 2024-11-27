@@ -2,7 +2,7 @@
  * DO NOT MODIFY
  * Generated from scripts/codegen/main.ts
  */
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 export const darkVariables = {
   '--blue0': '0,16,51',

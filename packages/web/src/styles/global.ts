@@ -1,7 +1,7 @@
 // focus visible polyfill
 import 'focus-visible';
 
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 import { borderRadiusVariables } from './borderRadius';
 import { borderWidthVariables } from './borderWidth';

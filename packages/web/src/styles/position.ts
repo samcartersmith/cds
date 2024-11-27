@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 // static is a reserved word
 export const staticPosition = css`

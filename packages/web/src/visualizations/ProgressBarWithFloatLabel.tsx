@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useRef } from 'react';
+import { css } from '@linaria/core';
 import { m as motion, MotionStyle, useAnimation } from 'framer-motion';
-import { css } from 'linaria';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import {

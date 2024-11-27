@@ -1,5 +1,5 @@
 import React, { forwardRef, useCallback } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { SharedProps } from '@cbhq/cds-common';
 import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
 import { ComponentEventHandlerProps } from '@cbhq/cds-common/types/ComponentEventHandlerProps';

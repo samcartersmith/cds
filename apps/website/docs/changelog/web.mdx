@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.3.1 (11/27/2024 PST)
+
+#### 🐞 Fixes
+
+- Upgrade to Linaria v3. [[#3434](https://github.cbhq.net/frontend/cds/pull/3434)]
+
 ## 7.3.0 (11/22/2024 PST)
 
 #### 🚀 Updates

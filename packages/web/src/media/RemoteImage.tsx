@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import {
   AspectRatio,
   AvatarSize,

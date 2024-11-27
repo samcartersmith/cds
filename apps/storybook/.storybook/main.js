@@ -91,7 +91,7 @@ const config = {
       // Add `linaria/loader` for .tsx files
       if ('.tsx'.match(rule.test) || '.ts'.match(rule.test)) {
         rule.use.push({
-          loader: 'linaria/loader',
+          loader: '@linaria/webpack-loader',
           options: {
             displayName: !isProduction,
             sourceMap: !isProduction,

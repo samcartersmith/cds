@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { SelectBaseProps, useToggler } from '@cbhq/cds-common';
 import { useMergedRef } from '@cbhq/cds-common/hooks/useMergedRef';
 import { durations } from '@cbhq/cds-common/motion/tokens';

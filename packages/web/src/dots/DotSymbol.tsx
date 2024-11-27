@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { css, cx } from 'linaria';
+import { css, cx } from '@linaria/core';
 import { DotSymbolBaseProps, useIconSize } from '@cbhq/cds-common';
 
 import { type IconProps, Icon } from '../icons';

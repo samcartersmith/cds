@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 <% Object.entries(data).map(([name, classes]) => { %>
   export const <%- name %> = {

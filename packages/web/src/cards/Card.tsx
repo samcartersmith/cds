@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { cardSizes } from '@cbhq/cds-common/tokens/card';
 import type { CardBaseProps, ResponsiveProps } from '@cbhq/cds-common/types';
 

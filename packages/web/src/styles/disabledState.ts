@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
 import { interactableDisabledBackground } from '../system/interactableCSSProperties';

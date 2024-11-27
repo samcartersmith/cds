@@ -3,7 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 
 const sharedVariables = {
   '--display1-font-weight': '400',

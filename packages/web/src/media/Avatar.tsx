@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useSpectrum } from '@cbhq/cds-common';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common/hooks/useShapeToBorderRadiusAlias';
 import { useAvatarSize } from '@cbhq/cds-common/media/useAvatarSize';

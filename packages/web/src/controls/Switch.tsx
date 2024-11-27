@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo, useMemo } from 'react';
+import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
-import { css } from 'linaria';
 import { PartialPaletteConfig, switchPalette } from '@cbhq/cds-common';
 import { useSpectrumConditional } from '@cbhq/cds-common/hooks/useSpectrumConditional';
 import { switchTransitionConfig } from '@cbhq/cds-common/motion/switch';

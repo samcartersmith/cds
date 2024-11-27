@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { SystemProvider, SystemProviderProps } from '@cbhq/cds-common';
 
 import { FramerMotionProvider, FramerMotionProviderProps } from '../animation/FramerMotionProvider';

@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useScaleConditional } from '@cbhq/cds-common/scale/useScaleConditional';
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import {

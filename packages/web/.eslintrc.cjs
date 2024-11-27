@@ -1,10 +1,7 @@
 const { noRestrictedImportPaths } = require('../../eslint-common');
 module.exports = {
   extends: ['../../.eslintrc.cjs'],
-  settings: {
-    // Put deps which are dev only and removed at build time to avoid import/no-extraneous-dependencies error
-    'import/core-modules': ['linaria'],
-  },
+  settings: {},
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],

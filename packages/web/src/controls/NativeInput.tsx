@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { css } from 'linaria';
+import { css } from '@linaria/core';
 import { useSpectrum } from '@cbhq/cds-common';
 import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';

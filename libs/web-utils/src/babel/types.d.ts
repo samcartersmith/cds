@@ -1,4 +1,4 @@
-declare module 'linaria/babel' {
+declare module '@linaria/babel-preset' {
   import type { ConfigAPI, TransformOptions } from '@babel/core';
 
   export type StrictOptions = {
