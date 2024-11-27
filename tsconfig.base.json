@@ -78,6 +78,9 @@
       "@cbhq/cds-web": [
         "packages/web/src"
       ],
+      "@cbhq/cds-web2": [
+        "packages/cds-web2/src"
+      ],
       "@cbhq/cds-web-utils": [
         "libs/web-utils/src"
       ],
@@ -92,6 +95,9 @@
       ],
       "@cbhq/cds-web/*": [
         "packages/web/src/*"
+      ],
+      "@cbhq/cds-web2/*": [
+        "packages/cds-web2/src/*"
       ],
       "@cbhq/docusaurus-plugin-docgen": [
         "libs/docusaurus-plugin-docgen/src"

@@ -1,13 +1,11 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { type UserConfig, defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import yargs from 'yargs';
 
 const { argv } = yargs(process.argv);
 
 const { watch } = argv as { watch?: boolean };
-
-const noop = () => {};
 
 async function reloadFigma() {
   const { $ } = await import('zx');
@@ -22,8 +20,8 @@ async function reloadFigma() {
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
-  return {
-    plugins: [react(), viteSingleFile(), watch ? reloadFigma() : noop],
+  const config: UserConfig = {
+    plugins: [react(), viteSingleFile(), watch ? reloadFigma() : undefined],
     build: {
       target: 'esnext',
       emptyOutDir: false,
@@ -36,4 +34,6 @@ export default defineConfig(() => {
       },
     },
   };
+
+  return config;
 });

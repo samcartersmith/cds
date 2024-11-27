@@ -99,7 +99,7 @@ HexagonBorder.displayName = 'HexagonBorder';
  * browser, but mount directly to the dom for our first paint
  * */
 const safeDocument = getBrowserGlobals()?.document;
-export const HexagonClipPathPortal = memo(() => {
+export const HexagonClipPathPortal: React.FC = memo(() => {
   const hexagonClipPathContainer = useMemo(
     // prevent duplicate portal root
     () => safeDocument?.createElement('div'),

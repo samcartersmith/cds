@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.3.2 (11/27/2024 PST)
+
+#### 🐞 Fixes
+
+- Upgrade React types. [[#3436](https://github.cbhq.net/frontend/cds/pull/3436)]
+
 ## 7.3.1 (11/27/2024 PST)
 
 #### 🐞 Fixes

@@ -1,0 +1,29 @@
+{
+  "extends": "../../tsconfig.project.json",
+  "compilerOptions": {
+    "declarationDir": "dts"
+  },
+  "include": [
+    ".storybook/**/*",
+    "playground/**/*",
+    "scripts/**/*"
+  ],
+  "exclude": [],
+  "references": [
+    {
+      "path": "../../packages/cds-web2"
+    },
+    {
+      "path": "../../packages/common"
+    },
+    {
+      "path": "../../packages/fonts"
+    },
+    {
+      "path": "../../packages/icons"
+    },
+    {
+      "path": "../../packages/illustrations"
+    }
+  ]
+}

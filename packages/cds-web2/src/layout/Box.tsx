@@ -1,0 +1,454 @@
+import React, { forwardRef, useMemo } from 'react';
+import { css, cx } from '@linaria/core';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps.js';
+import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+
+import { type ExtendableProps, type PolymorphicProps, PolymorphicRef } from '../core/polymorphism';
+import { type StyleProps, getStyles } from '../styles/styleProps';
+
+const borderStyle = {
+  bordered: css`
+    border-width: var(--borderWidth-thin);
+    border-style: solid;
+    border-color: var(--color-line);
+  `,
+  borderedHorizontal: css`
+    border-left-width: var(--borderWidth-thin);
+    border-left-style: solid;
+    border-right-width: var(--borderWidth-thin);
+    border-right-style: solid;
+    border-color: var(--color-line);
+  `,
+  borderedVertical: css`
+    border-top-width: var(--borderWidth-thin);
+    border-top-style: solid;
+    border-bottom-width: var(--borderWidth-thin);
+    border-bottom-style: solid;
+    border-color: var(--color-line);
+  `,
+  borderedStart: css`
+    border-left-width: var(--borderWidth-thin);
+    border-left-style: solid;
+    border-color: var(--color-line);
+  `,
+  borderedEnd: css`
+    border-right-width: var(--borderWidth-thin);
+    border-right-style: solid;
+    border-color: var(--color-line);
+  `,
+  borderedTop: css`
+    border-top-width: var(--borderWidth-thin);
+    border-top-style: solid;
+    border-color: var(--color-line);
+  `,
+  borderedBottom: css`
+    border-bottom-width: var(--borderWidth-thin);
+    border-bottom-style: solid;
+    border-color: var(--color-line);
+  `,
+};
+
+export type BoxBaseProps = StyleProps &
+  SharedProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > & {
+    style?: React.CSSProperties;
+    unstyled?: boolean;
+    baseClassName?: string;
+    /** Add a border around all sides of the box. */
+    bordered?: boolean;
+    /** Add a border to the top side of the box. */
+    borderedTop?: boolean;
+    /** Add a border to the bottom side of the box. */
+    borderedBottom?: boolean;
+    /** Add a border to the leading side of the box. */
+    borderedStart?: boolean;
+    /** Add a border to the trailing side of the box. */
+    borderedEnd?: boolean;
+    /** Add a border to the leading and trailing sides of the box. */
+    borderedHorizontal?: boolean;
+    /** Add a border to the top and bottom sides of the box. */
+    borderedVertical?: boolean;
+    // TODO: remove id and tabIndex once type issue is fixed in PolymorphicProps
+    /** @danger This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls */
+    id?: string;
+    /**
+     * Necessary to control roving tabindex for accessibility
+     * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+     * */
+    tabIndex?: number;
+  };
+
+export type BoxProps<AsComponent extends React.ElementType = 'div'> = PolymorphicProps<
+  AsComponent,
+  BoxBaseProps
+>;
+
+type BoxComponent = <AsComponent extends React.ElementType = 'div'>(
+  props: BoxProps<AsComponent>,
+) => React.ReactNode;
+
+export const Box: BoxComponent = forwardRef(
+  <AsComponent extends React.ElementType = 'div'>(
+    {
+      children,
+      as,
+      accessibilityLabel,
+      accessibilityLabelledBy,
+      accessibilityHint,
+      style,
+      className,
+      unstyled,
+      baseClassName,
+      testID,
+      // Begin className style props
+      display = 'flex',
+      position,
+      overflow,
+      zIndex,
+      gap,
+      columnGap,
+      rowGap,
+      justifyContent,
+      alignContent,
+      alignItems,
+      alignSelf,
+      flexDirection,
+      flexWrap,
+      color,
+      background,
+      borderColor,
+      bordered,
+      borderedTop,
+      borderedBottom,
+      borderedStart,
+      borderedEnd,
+      borderedHorizontal,
+      borderedVertical,
+      borderTopLeftRadius,
+      borderTopRightRadius,
+      borderBottomLeftRadius,
+      borderBottomRightRadius,
+      borderTopWidth,
+      borderRightWidth,
+      borderBottomWidth,
+      borderLeftWidth,
+      elevation,
+      hoverColor,
+      hoverBackground,
+      hoverBorderColor,
+      borderWidth,
+      borderRadius,
+      font,
+      fontFamily,
+      fontSize,
+      fontWeight,
+      lineHeight,
+      textAlign,
+      textDecoration,
+      textDecorationColor,
+      textDecorationThickness,
+      textTransform,
+      padding,
+      paddingX,
+      paddingY,
+      paddingTop,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+      margin,
+      marginX,
+      marginY,
+      marginTop,
+      marginBottom,
+      marginLeft,
+      marginRight,
+      userSelect,
+      visibility,
+      // Begin inline style props
+      width,
+      height,
+      minWidth,
+      minHeight,
+      maxWidth,
+      maxHeight,
+      aspectRatio,
+      top,
+      bottom,
+      left,
+      right,
+      transform,
+      flexBasis,
+      flexShrink,
+      flexGrow,
+      gridTemplateColumns,
+      gridTemplateRows,
+      gridTemplateAreas,
+      gridTemplate,
+      gridAutoColumns,
+      gridAutoRows,
+      gridAutoFlow,
+      grid,
+      gridRowStart,
+      gridColumnStart,
+      gridRowEnd,
+      gridColumnEnd,
+      gridRow,
+      gridColumn,
+      gridArea,
+      opacity,
+      // End style props
+      ...props
+    }: BoxProps<AsComponent>,
+    ref: PolymorphicRef<AsComponent>,
+  ) => {
+    const Component = as ?? 'div';
+
+    const styles = useMemo(
+      () =>
+        getStyles(
+          {
+            display,
+            position,
+            overflow,
+            zIndex,
+            gap,
+            columnGap,
+            rowGap,
+            justifyContent,
+            alignContent,
+            alignItems,
+            alignSelf,
+            flexDirection,
+            flexWrap,
+            color,
+            background,
+            borderColor,
+            hoverColor,
+            hoverBackground,
+            hoverBorderColor,
+            borderWidth,
+            borderRadius,
+            borderTopLeftRadius,
+            borderTopRightRadius,
+            borderBottomLeftRadius,
+            borderBottomRightRadius,
+            borderTopWidth,
+            borderRightWidth,
+            borderBottomWidth,
+            borderLeftWidth,
+            elevation,
+            font,
+            fontFamily,
+            fontSize,
+            fontWeight,
+            lineHeight,
+            textAlign,
+            textDecoration,
+            textDecorationColor,
+            textDecorationThickness,
+            textTransform,
+            padding,
+            paddingX,
+            paddingY,
+            paddingTop,
+            paddingBottom,
+            paddingLeft,
+            paddingRight,
+            margin,
+            marginX,
+            marginY,
+            marginTop,
+            marginBottom,
+            marginLeft,
+            marginRight,
+            userSelect,
+            visibility,
+            width,
+            height,
+            minWidth,
+            minHeight,
+            maxWidth,
+            maxHeight,
+            aspectRatio,
+            top,
+            bottom,
+            left,
+            right,
+            transform,
+            flexBasis,
+            flexShrink,
+            flexGrow,
+            gridTemplateColumns,
+            gridTemplateRows,
+            gridTemplateAreas,
+            gridTemplate,
+            gridAutoColumns,
+            gridAutoRows,
+            gridAutoFlow,
+            grid,
+            gridRowStart,
+            gridColumnStart,
+            gridRowEnd,
+            gridColumnEnd,
+            gridRow,
+            gridColumn,
+            gridArea,
+            opacity,
+          },
+          style,
+        ),
+      [
+        display,
+        position,
+        overflow,
+        zIndex,
+        gap,
+        columnGap,
+        rowGap,
+        justifyContent,
+        alignContent,
+        alignItems,
+        alignSelf,
+        flexDirection,
+        flexWrap,
+        color,
+        background,
+        borderColor,
+        hoverColor,
+        hoverBackground,
+        hoverBorderColor,
+        borderWidth,
+        borderRadius,
+        borderTopLeftRadius,
+        borderTopRightRadius,
+        borderBottomLeftRadius,
+        borderBottomRightRadius,
+        borderTopWidth,
+        borderRightWidth,
+        borderBottomWidth,
+        borderLeftWidth,
+        elevation,
+        font,
+        fontFamily,
+        fontSize,
+        fontWeight,
+        lineHeight,
+        textAlign,
+        textDecoration,
+        textDecorationColor,
+        textDecorationThickness,
+        textTransform,
+        padding,
+        paddingX,
+        paddingY,
+        paddingTop,
+        paddingBottom,
+        paddingLeft,
+        paddingRight,
+        margin,
+        marginX,
+        marginY,
+        marginTop,
+        marginBottom,
+        marginLeft,
+        marginRight,
+        userSelect,
+        visibility,
+        width,
+        height,
+        minWidth,
+        minHeight,
+        maxWidth,
+        maxHeight,
+        aspectRatio,
+        top,
+        bottom,
+        left,
+        right,
+        transform,
+        flexBasis,
+        flexShrink,
+        flexGrow,
+        gridTemplateColumns,
+        gridTemplateRows,
+        gridTemplateAreas,
+        gridTemplate,
+        gridAutoColumns,
+        gridAutoRows,
+        gridAutoFlow,
+        grid,
+        gridRowStart,
+        gridColumnStart,
+        gridRowEnd,
+        gridColumnEnd,
+        gridRow,
+        gridColumn,
+        gridArea,
+        opacity,
+        style,
+      ],
+    );
+
+    return (
+      <Component
+        ref={ref}
+        aria-describedby={accessibilityHint}
+        aria-label={accessibilityLabel}
+        aria-labelledby={accessibilityLabelledBy}
+        className={cx(
+          styles.className,
+          bordered && borderStyle.bordered,
+          borderedTop && borderStyle.borderedTop,
+          borderedBottom && borderStyle.borderedBottom,
+          borderedStart && borderStyle.borderedStart,
+          borderedEnd && borderStyle.borderedEnd,
+          borderedHorizontal && borderStyle.borderedHorizontal,
+          borderedVertical && borderStyle.borderedVertical,
+          className,
+        )}
+        data-testid={testID}
+        style={styles.style}
+        {...props}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+
+// type PolymorphicBoxComponent = <AsComponent extends React.ElementType = 'div'>(
+//   props: BoxProps<AsComponent> & { ref?: ForwardedRef<HTMLElement> },
+// ) => ReturnType<typeof BoxComponent>;
+
+// export const Box = memo(forwardRef(BoxComponent)) as PolymorphicBoxComponent & {
+//   displayName?: string;
+// };
+
+// Box.displayName = 'Box';
+
+/**
+ * @example
+ * Use `PolymorphicBoxProps` to create polymorphic components from Box (components with the `as` prop and style props):
+ * ```tsx
+ * type MyComponentBaseProps = { message?: string }
+ * type MyComponentProps<AsComponent extends React.ElementType> =
+ *   PolymorphicBoxProps<AsComponent, MyComponentBaseProps>
+ * const MyComponent = <
+ *   AsComponent extends React.ElementType = 'button',
+ * >({
+ *   as = 'button' as AsComponent,
+ *   message,
+ *   ...props
+ * }: MyComponentProps<AsComponent>) => {
+ *   return <Box as={as} {...props}>{message}</Box>
+ * }
+ * ```
+ */
+export type PolymorphicBoxProps<
+  AsComponent extends React.ElementType,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  OverrideProps = {},
+> = PolymorphicProps<AsComponent, ExtendableProps<BoxBaseProps, OverrideProps>>;

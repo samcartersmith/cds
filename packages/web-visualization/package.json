@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-web-visualization",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Coinbase Design System - Web Sparkline",
   "repository": {
     "type": "git",
@@ -60,7 +60,7 @@
     "@cbhq/cds-utils": "workspace:^",
     "@cbhq/cds-web": "workspace:^",
     "@figma/code-connect": "^1.2.2",
-    "@types/react": "^18.3.8",
-    "@types/react-dom": "^18.3.0"
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "name": "storybook2",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/storybook2",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "dev": {
+      "command": "start-storybook"
+    },
+    "start": {
+      "command": "start-storybook"
+    },
+    "build": {
+      "command": "build-storybook --output-dir dist",
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "lint-styles": {
+      "executor": "@cbhq/mono-tasks:lint-styles"
+    }
+  }
+}

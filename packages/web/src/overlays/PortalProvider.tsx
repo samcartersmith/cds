@@ -26,7 +26,7 @@ export const tooltipContainerId = 'tooltipContainer';
 
 const safeDocument = getBrowserGlobals()?.document;
 
-export const PortalHost = memo(() => {
+export const PortalHost: React.FC = memo(() => {
   const portalRoot = useMemo(
     // prevent duplicate portal root
     () => safeDocument?.createElement('div'),

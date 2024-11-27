@@ -1,0 +1,153 @@
+import React, { memo, useMemo } from 'react';
+import { css } from '@linaria/core';
+
+import { borderRadius as borderRadii } from '../styles/vars';
+import { Shape } from '../types/Shape';
+
+import { type PolymorphicBoxProps, Box } from './Box';
+
+const WIDTH_MODIFIERS = [0.5, 0, 0.6, 0.8, 0.1, 0.9, 0.4, 0.2, 0.7, 0.3];
+
+export type UseFallbackShapeOptions = {
+  disableRandomRectWidth?: boolean;
+  rectWidthVariant?: number;
+};
+
+export function useFallbackShape(
+  shape: Shape,
+  baseWidth: number | string,
+  options?: UseFallbackShapeOptions,
+) {
+  const width = useMemo(() => {
+    // When rectangle, lets vary the width a bit so things are
+    // a little less... uniform. Variety is nice.
+    if (
+      shape === 'rectangle' &&
+      typeof baseWidth === 'number' &&
+      (!options?.disableRandomRectWidth || options?.rectWidthVariant !== undefined)
+    ) {
+      const modifier =
+        options?.rectWidthVariant !== undefined
+          ? WIDTH_MODIFIERS[options.rectWidthVariant % WIDTH_MODIFIERS.length]
+          : Math.random();
+      const quarter = Math.round(baseWidth / 4);
+      const min = Math.max(baseWidth - quarter, 1);
+      const max = baseWidth + quarter;
+
+      return Math.floor(modifier * (max - min + 1)) + min;
+    }
+
+    // All other shapes need a fixed aspect ratio
+    return baseWidth;
+  }, [baseWidth, options, shape]);
+
+  const borderRadius = useMemo(() => {
+    if (shape === 'circle' && Number.isInteger(width)) {
+      return Number(width) / 2;
+    }
+
+    return shape === 'squircle' ? borderRadii.rounded : 0;
+  }, [shape, width]);
+
+  return useMemo(() => ({ borderRadius, width }), [borderRadius, width]);
+}
+
+const fallbackStyle = css`
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background-color: rgba(var(--gray60), 0.05);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    to right,
+    rgb(var(--gray60), 0.05) 0%,
+    rgb(var(--gray60), 0) 25%,
+    rgb(var(--gray60), 0.1) 50%,
+    rgb(var(--gray60), 0) 75%,
+    rgb(var(--gray60), 0.05) 100%
+  );
+
+  @keyframes shimmer {
+    0% {
+      background-position: -600px 0;
+    }
+
+    100% {
+      background-position: 600px 0;
+    }
+  }
+`;
+
+export type FallbackBaseProps = {
+  width: string | number;
+  height: string | number;
+  /**
+   * @default rectangle
+   */
+  shape?: Shape;
+  /** Disables randomization of rectangle shape width. */
+  disableRandomRectWidth?: boolean;
+  /**
+   * When shape is a rectangle, creates a variant with deterministic width.
+   * Variants map to a predetermined set of width values, which are cycled through repeatedly when the set is exhausted.
+   */
+  rectWidthVariant?: number;
+  /** Convert width to a percentage. */
+  percentage?: boolean;
+};
+
+export type FallbackProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
+  AsComponent,
+  FallbackBaseProps
+>;
+
+export const Fallback = memo(
+  <AsComponent extends React.ElementType = 'div'>({
+    height,
+    shape = 'rectangle',
+    width: baseWidth,
+    percentage,
+    disableRandomRectWidth,
+    rectWidthVariant,
+    ...props
+  }: FallbackProps<AsComponent>) => {
+    const fallbackShapeOptions = useMemo<UseFallbackShapeOptions>(
+      () => ({ disableRandomRectWidth, rectWidthVariant }),
+      [disableRandomRectWidth, rectWidthVariant],
+    );
+
+    const { width, borderRadius } = useFallbackShape(shape, baseWidth, fallbackShapeOptions);
+
+    const backgroundSizeHeight = typeof height === 'number' ? `${height}px` : height;
+
+    const style = useMemo(
+      () => ({
+        width: percentage ? `100%` : width,
+        backgroundSize: `600px ${backgroundSizeHeight}`,
+        height,
+        borderRadius,
+      }),
+      [percentage, width, backgroundSizeHeight, height, borderRadius],
+    );
+
+    return (
+      <Box
+        flexGrow={0}
+        flexShrink={0}
+        width={percentage && typeof width === 'number' ? `${Math.min(width, 100)}%` : width}
+        {...props}
+      >
+        <Box className={fallbackStyle} style={style}>
+          &nbsp;
+        </Box>
+      </Box>
+    );
+  },
+);
+
+Fallback.displayName = 'Fallback';
