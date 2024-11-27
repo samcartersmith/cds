@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-11-22T20:30:28.004Z",
-  "metadata": { "lastUnicode": 63898 },
+  "lastUpdated": "2024-11-27T20:50:20.111Z",
+  "metadata": { "lastUnicode": 63904 },
   "items": {
     "2:188": {
       "type": "ui",
@@ -1080,7 +1080,7 @@
     "2:471": {
       "type": "ui",
       "name": "expandAll",
-      "hash": "ojt0uG0VK0rk3Yfd/lLP5LbIWeWJ5wAiyqam1+Yupuw=",
+      "hash": "qJ1BrCiM3LPHTrA6GEtaAik4HZjUbGfJFBYcsxLB530=",
       "description": "expand all, full, arrow, outwards",
       "components": [
         { "props": { "size": 24, "active": false }, "metadata": { "unicode": 62847 } },
@@ -1091,7 +1091,7 @@
         { "props": { "size": 12, "active": true }, "metadata": { "unicode": 62844 } }
       ],
       "createdAt": "2023-02-01T23:25:40.698Z",
-      "lastUpdated": "2024-11-07T21:48:31.028Z",
+      "lastUpdated": "2024-11-27T20:24:58.762Z",
       "outputs": {
         "svg12": "./ui/svg/ui-expandAll-12.svg",
         "svg12Active": "./ui/svg/ui-expandAll-12-active.svg",
@@ -10981,6 +10981,30 @@
         "svg16Inactive": "./ui/svg/ui-calendarEmpty-16.svg",
         "svg24Active": "./ui/svg/ui-calendarEmpty-24-active.svg",
         "svg24Inactive": "./ui/svg/ui-calendarEmpty-24.svg"
+      }
+    },
+    "911:179": {
+      "type": "ui",
+      "name": "payments",
+      "hash": "4NvIlZDktZ98O2Is+bD+V06UwBfrjpLNIfF0GHGLjvE=",
+      "description": "payments, send, pay, money, 💰, 💵, ➡️, social, wallet, base",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 63903 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 63904 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 63901 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 63902 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 63899 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 63900 } }
+      ],
+      "createdAt": "2024-11-27T20:24:58.748Z",
+      "lastUpdated": "2024-11-27T20:24:58.748Z",
+      "outputs": {
+        "svg12Active": "./ui/svg/ui-payments-12-active.svg",
+        "svg12Inactive": "./ui/svg/ui-payments-12.svg",
+        "svg16Active": "./ui/svg/ui-payments-16-active.svg",
+        "svg16Inactive": "./ui/svg/ui-payments-16.svg",
+        "svg24Active": "./ui/svg/ui-payments-24-active.svg",
+        "svg24Inactive": "./ui/svg/ui-payments-24.svg"
       }
     }
   }

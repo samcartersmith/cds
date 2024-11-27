@@ -202,6 +202,7 @@ export type UiIconName =
   | 'passport'
   | 'pause'
   | 'pay'
+  | 'payments'
   | 'payouts'
   | 'paypal'
   | 'pencil'

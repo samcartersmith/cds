@@ -2545,6 +2545,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-calendarEmpty-16-active': '',
   'ui-calendarEmpty-24': '',
   'ui-calendarEmpty-24-active': '',
+  'ui-payments-12': '鍊',
+  'ui-payments-12-active': '列',
+  'ui-payments-16': '劣',
+  'ui-payments-16-active': '咽',
+  'ui-payments-24': '烈',
+  'ui-payments-24-active': '裂',
 };
 
 export default glyphMap;

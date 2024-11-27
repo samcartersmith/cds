@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import chalk from 'chalk';
-import { writePrettyFile } from '@cbhq/script-utils';
+import { writePrettyFile } from '@cbhq/script-utils/fs/writePrettyFile';
 
 import navIconNames from '../src/__generated__/nav/data/names';
 import iconNames from '../src/__generated__/ui/data/names';
@@ -8,7 +8,7 @@ import type { NavIconName, UiIconName } from '../src/index';
 
 const NAV_ICON_CHUNK_SIZE = 80;
 const ICON_CHUNK_SIZE = 160;
-const STORIES_DIR = 'packages/web/icons/__stories__';
+const STORIES_DIR = 'packages/web/src/icons/__stories__';
 
 const rootPath = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 const storiesPath = `${rootPath}/${STORIES_DIR}`;

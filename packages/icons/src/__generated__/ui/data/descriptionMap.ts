@@ -212,6 +212,7 @@ const descriptionMap: Record<string, string[]> = {
     'cashAustralianDollar',
     'cashSingaporeDollar',
     'cashCanadianDollar',
+    'payments',
   ],
   '₹': ['cashRupee'],
   currency: [
@@ -262,7 +263,14 @@ const descriptionMap: Record<string, string[]> = {
   '🇵🇰': ['cashRupee'],
   '🇸🇨': ['cashRupee'],
   '🇱🇰': ['cashRupee'],
-  '💰': ['cashRupee', 'wallet', 'directDepositIconInactive', 'cash', 'directDepositIconActive'],
+  '💰': [
+    'cashRupee',
+    'wallet',
+    'directDepositIconInactive',
+    'cash',
+    'directDepositIconActive',
+    'payments',
+  ],
   '💵': [
     'cashRupee',
     'wallet',
@@ -280,6 +288,7 @@ const descriptionMap: Record<string, string[]> = {
     'cashAustralianDollar',
     'cashSingaporeDollar',
     'cashCanadianDollar',
+    'payments',
   ],
   '💸': [
     'cashRupee',
@@ -313,11 +322,11 @@ const descriptionMap: Record<string, string[]> = {
   '🕵️‍♀️': ['search'],
   '🕵️‍♂️': ['search'],
   'wire transfer': ['wireTransfer'],
-  send: ['wireTransfer', 'share', 'paperAirplane', 'airdrop', 'bridging'],
+  send: ['wireTransfer', 'share', 'paperAirplane', 'airdrop', 'bridging', 'payments'],
   bank: ['wireTransfer', 'bank'],
   credit: ['wireTransfer', 'card'],
   electronic: ['wireTransfer'],
-  wallet: ['wallet'],
+  wallet: ['wallet', 'payments'],
   storage: ['wallet', 'save', 'safe'],
   'crypto transactions': ['wallet'],
   pay: [
@@ -329,6 +338,7 @@ const descriptionMap: Record<string, string[]> = {
     'directDepositIconActive',
     'card',
     'nftOfferInactive',
+    'payments',
   ],
   retrieve: ['wallet'],
   'digital assets': ['wallet'],
@@ -931,7 +941,7 @@ const descriptionMap: Record<string, string[]> = {
   'arrow right': ['forwardArrow', 'arrowRight'],
   forward: ['forwardArrow', 'initiator', 'arrowRight'],
   ahead: ['forwardArrow', 'arrowRight'],
-  '➡️': ['forwardArrow', 'arrowRight', 'socialShare', 'socialReshare'],
+  '➡️': ['forwardArrow', 'arrowRight', 'socialShare', 'socialReshare', 'payments'],
   '→': ['forwardArrow'],
   '➡': ['forwardArrow', 'arrowRight'],
   more: ['more'],
@@ -1161,7 +1171,15 @@ const descriptionMap: Record<string, string[]> = {
   'chat bubble': ['chatBubble', 'comment'],
   speech: ['chatBubble', 'comment', 'microphone', 'socialChat'],
   communication: ['chatBubble', 'telephone', 'comment', 'support'],
-  social: ['chatBubble', 'comment', 'mint', 'socialShare', 'socialChat', 'socialReshare'],
+  social: [
+    'chatBubble',
+    'comment',
+    'mint',
+    'socialShare',
+    'socialChat',
+    'socialReshare',
+    'payments',
+  ],
   interaction: ['chatBubble', 'comment'],
   bot: ['chatBotAgent'],
   agent: ['chatBotAgent'],
@@ -1419,6 +1437,8 @@ const descriptionMap: Record<string, string[]> = {
   '↪️': ['socialShare', 'socialReshare'],
   chatbubble: ['socialChat'],
   Reshare: ['socialReshare'],
+  payments: ['payments'],
+  base: ['payments'],
 };
 
 export default descriptionMap;

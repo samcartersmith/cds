@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.1.0 (11/27/2024 PST)
+
+#### 🚀 Updates
+
+- Publish icons 11/27/24. [[#3439](https://github.cbhq.net/frontend/cds/pull/3439)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- payments
+
+### 🐞 Updated
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- expandAll
+
 ## 4.0.0 (11/22/2024 PST)
 
 #### 💥 Breaking
