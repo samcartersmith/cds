@@ -2367,24 +2367,24 @@ export const overflow = {
   `,
 } as const;
 
-export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const gap = {
   '0': css`
     gap: var(--space-0);
   `,
   '0.25': css`
-    gap: var(--space-0\.25);
+    gap: var(--space-0\\.25);
   `,
   '0.5': css`
-    gap: var(--space-0\.5);
+    gap: var(--space-0\\.5);
   `,
   '0.75': css`
-    gap: var(--space-0\.75);
+    gap: var(--space-0\\.75);
   `,
   '1': css`
     gap: var(--space-1);
   `,
   '1.5': css`
-    gap: var(--space-1.5);
+    gap: var(--space-1\\.5);
   `,
   '2': css`
     gap: var(--space-2);
@@ -2415,24 +2415,24 @@ export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const columnGap = {
   '0': css`
     column-gap: var(--space-0);
   `,
   '0.25': css`
-    column-gap: var(--space-0\.25);
+    column-gap: var(--space-0\\.25);
   `,
   '0.5': css`
-    column-gap: var(--space-0\.5);
+    column-gap: var(--space-0\\.5);
   `,
   '0.75': css`
-    column-gap: var(--space-0\.75);
+    column-gap: var(--space-0\\.75);
   `,
   '1': css`
     column-gap: var(--space-1);
   `,
   '1.5': css`
-    column-gap: var(--space-1.5);
+    column-gap: var(--space-1\\.5);
   `,
   '2': css`
     column-gap: var(--space-2);
@@ -2463,24 +2463,24 @@ export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const rowGap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const rowGap = {
   '0': css`
     row-gap: var(--space-0);
   `,
   '0.25': css`
-    row-gap: var(--space-0\.25);
+    row-gap: var(--space-0\\.25);
   `,
   '0.5': css`
-    row-gap: var(--space-0\.5);
+    row-gap: var(--space-0\\.5);
   `,
   '0.75': css`
-    row-gap: var(--space-0\.75);
+    row-gap: var(--space-0\\.75);
   `,
   '1': css`
     row-gap: var(--space-1);
   `,
   '1.5': css`
-    row-gap: var(--space-1.5);
+    row-gap: var(--space-1\\.5);
   `,
   '2': css`
     row-gap: var(--space-2);
@@ -2759,10 +2759,10 @@ export const padding = {
     padding-right: var(--space-0);
   `,
   '0.5': css`
-    padding-top: var(--space-0\.5);
-    padding-bottom: var(--space-0\.5);
-    padding-left: var(--space-0\.5);
-    padding-right: var(--space-0\.5);
+    padding-top: var(--space-0\\.5);
+    padding-bottom: var(--space-0\\.5);
+    padding-left: var(--space-0\\.5);
+    padding-right: var(--space-0\\.5);
   `,
   '1': css`
     padding-top: var(--space-1);
@@ -2832,8 +2832,8 @@ export const paddingX = {
     padding-right: var(--space-0);
   `,
   '0.5': css`
-    padding-left: var(--space-0\.5);
-    padding-right: var(--space-0\.5);
+    padding-left: var(--space-0\\.5);
+    padding-right: var(--space-0\\.5);
   `,
   '1': css`
     padding-left: var(--space-1);
@@ -2883,8 +2883,8 @@ export const paddingY = {
     padding-bottom: var(--space-0);
   `,
   '0.5': css`
-    padding-top: var(--space-0\.5);
-    padding-bottom: var(--space-0\.5);
+    padding-top: var(--space-0\\.5);
+    padding-bottom: var(--space-0\\.5);
   `,
   '1': css`
     padding-top: var(--space-1);
@@ -2933,7 +2933,7 @@ export const paddingTop = {
     padding-top: var(--space-0);
   `,
   '0.5': css`
-    padding-top: var(--space-0\.5);
+    padding-top: var(--space-0\\.5);
   `,
   '1': css`
     padding-top: var(--space-1);
@@ -2972,7 +2972,7 @@ export const paddingBottom = {
     padding-bottom: var(--space-0);
   `,
   '0.5': css`
-    padding-bottom: var(--space-0\.5);
+    padding-bottom: var(--space-0\\.5);
   `,
   '1': css`
     padding-bottom: var(--space-1);
@@ -3011,7 +3011,7 @@ export const paddingLeft = {
     padding-left: var(--space-0);
   `,
   '0.5': css`
-    padding-left: var(--space-0\.5);
+    padding-left: var(--space-0\\.5);
   `,
   '1': css`
     padding-left: var(--space-1);
@@ -3050,7 +3050,7 @@ export const paddingRight = {
     padding-right: var(--space-0);
   `,
   '0.5': css`
-    padding-right: var(--space-0\.5);
+    padding-right: var(--space-0\\.5);
   `,
   '1': css`
     padding-right: var(--space-1);
@@ -3092,10 +3092,10 @@ export const margin = {
     margin-left: calc(-1 * var(--space-0));
   `,
   '-0.5': css`
-    margin-top: calc(-1 * var(--space-0\.5));
-    margin-bottom: calc(-1 * var(--space-0\.5));
-    margin-right: calc(-1 * var(--space-0\.5));
-    margin-left: calc(-1 * var(--space-0\.5));
+    margin-top: calc(-1 * var(--space-0\\.5));
+    margin-bottom: calc(-1 * var(--space-0\\.5));
+    margin-right: calc(-1 * var(--space-0\\.5));
+    margin-left: calc(-1 * var(--space-0\\.5));
   `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
@@ -3165,8 +3165,8 @@ export const marginX = {
     margin-left: calc(-1 * var(--space-0));
   `,
   '-0.5': css`
-    margin-right: calc(-1 * var(--space-0\.5));
-    margin-left: calc(-1 * var(--space-0\.5));
+    margin-right: calc(-1 * var(--space-0\\.5));
+    margin-left: calc(-1 * var(--space-0\\.5));
   `,
   '-1': css`
     margin-right: calc(-1 * var(--space-1));
@@ -3216,8 +3216,8 @@ export const marginY = {
     margin-bottom: calc(-1 * var(--space-0));
   `,
   '-0.5': css`
-    margin-top: calc(-1 * var(--space-0\.5));
-    margin-bottom: calc(-1 * var(--space-0\.5));
+    margin-top: calc(-1 * var(--space-0\\.5));
+    margin-bottom: calc(-1 * var(--space-0\\.5));
   `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
@@ -3266,7 +3266,7 @@ export const marginTop = {
     margin-top: calc(-1 * var(--space-0));
   `,
   '-0.5': css`
-    margin-top: calc(-1 * var(--space-0\.5));
+    margin-top: calc(-1 * var(--space-0\\.5));
   `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
@@ -3305,7 +3305,7 @@ export const marginBottom = {
     margin-bottom: calc(-1 * var(--space-0));
   `,
   '-0.5': css`
-    margin-bottom: calc(-1 * var(--space-0\.5));
+    margin-bottom: calc(-1 * var(--space-0\\.5));
   `,
   '-1': css`
     margin-bottom: calc(-1 * var(--space-1));
@@ -3344,7 +3344,7 @@ export const marginRight = {
     margin-right: calc(-1 * var(--space-0));
   `,
   '-0.5': css`
-    margin-right: calc(-1 * var(--space-0\.5));
+    margin-right: calc(-1 * var(--space-0\\.5));
   `,
   '-1': css`
     margin-right: calc(-1 * var(--space-1));
@@ -3383,7 +3383,7 @@ export const marginLeft = {
     margin-left: calc(-1 * var(--space-0));
   `,
   '-0.5': css`
-    margin-left: calc(-1 * var(--space-0\.5));
+    margin-left: calc(-1 * var(--space-0\\.5));
   `,
   '-1': css`
     margin-left: calc(-1 * var(--space-1));

@@ -5,11 +5,11 @@ import * as vars from '../../../styles/vars';
 export const denseDensityTheme = {
   space: {
     '0': '0px',
-    '0.25': '1px',
-    '0.5': '3px',
-    '0.75': '5px',
+    '0\\.25': '1px',
+    '0\\.5': '3px',
+    '0\\.75': '5px',
     '1': '6px',
-    '1.5': '9px',
+    '1\\.5': '9px',
     '2': '12px',
     '3': '18px',
     '4': '24px',

@@ -3541,7 +3541,7 @@ export const overflow = {
   `,
 } as const;
 
-export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const gap = {
   '0': css`
     @media (min-width: 1024px) {
       gap: var(--space-0);
@@ -3549,17 +3549,17 @@ export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
   '0.25': css`
     @media (min-width: 1024px) {
-      gap: var(--space-0\.25);
+      gap: var(--space-0\\.25);
     }
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      gap: var(--space-0\.5);
+      gap: var(--space-0\\.5);
     }
   `,
   '0.75': css`
     @media (min-width: 1024px) {
-      gap: var(--space-0\.75);
+      gap: var(--space-0\\.75);
     }
   `,
   '1': css`
@@ -3569,7 +3569,7 @@ export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
   '1.5': css`
     @media (min-width: 1024px) {
-      gap: var(--space-1.5);
+      gap: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -3619,7 +3619,7 @@ export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const columnGap = {
   '0': css`
     @media (min-width: 1024px) {
       column-gap: var(--space-0);
@@ -3627,17 +3627,17 @@ export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
   '0.25': css`
     @media (min-width: 1024px) {
-      column-gap: var(--space-0\.25);
+      column-gap: var(--space-0\\.25);
     }
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      column-gap: var(--space-0\.5);
+      column-gap: var(--space-0\\.5);
     }
   `,
   '0.75': css`
     @media (min-width: 1024px) {
-      column-gap: var(--space-0\.75);
+      column-gap: var(--space-0\\.75);
     }
   `,
   '1': css`
@@ -3647,7 +3647,7 @@ export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
   '1.5': css`
     @media (min-width: 1024px) {
-      column-gap: var(--space-1.5);
+      column-gap: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -3697,7 +3697,7 @@ export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const rowGap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const rowGap = {
   '0': css`
     @media (min-width: 1024px) {
       row-gap: var(--space-0);
@@ -3705,17 +3705,17 @@ export const rowGap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
   '0.25': css`
     @media (min-width: 1024px) {
-      row-gap: var(--space-0\.25);
+      row-gap: var(--space-0\\.25);
     }
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      row-gap: var(--space-0\.5);
+      row-gap: var(--space-0\\.5);
     }
   `,
   '0.75': css`
     @media (min-width: 1024px) {
-      row-gap: var(--space-0\.75);
+      row-gap: var(--space-0\\.75);
     }
   `,
   '1': css`
@@ -3725,7 +3725,7 @@ export const rowGap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
   '1.5': css`
     @media (min-width: 1024px) {
-      row-gap: var(--space-1.5);
+      row-gap: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4169,10 +4169,10 @@ export const padding = {
   `,
   '0.5': css`
   @media (min-width: 1024px) {
-    padding-top: var(--space-0\.5);
-    padding-bottom: var(--space-0\.5);
-    padding-left: var(--space-0\.5);
-    padding-right: var(--space-0\.5);
+    padding-top: var(--space-0\\.5);
+    padding-bottom: var(--space-0\\.5);
+    padding-left: var(--space-0\\.5);
+    padding-right: var(--space-0\\.5);
   `,
   '1': css`
     @media (min-width: 1024px) {
@@ -4265,8 +4265,8 @@ export const paddingX = {
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      padding-left: var(--space-0\.5);
-      padding-right: var(--space-0\.5);
+      padding-left: var(--space-0\\.5);
+      padding-right: var(--space-0\\.5);
     }
   `,
   '1': css`
@@ -4340,8 +4340,8 @@ export const paddingY = {
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      padding-top: var(--space-0\.5);
-      padding-bottom: var(--space-0\.5);
+      padding-top: var(--space-0\\.5);
+      padding-bottom: var(--space-0\\.5);
     }
   `,
   '1': css`
@@ -4414,7 +4414,7 @@ export const paddingTop = {
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      padding-top: var(--space-0\.5);
+      padding-top: var(--space-0\\.5);
     }
   `,
   '1': css`
@@ -4477,7 +4477,7 @@ export const paddingBottom = {
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      padding-bottom: var(--space-0\.5);
+      padding-bottom: var(--space-0\\.5);
     }
   `,
   '1': css`
@@ -4540,7 +4540,7 @@ export const paddingRight = {
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      padding-right: var(--space-0\.5);
+      padding-right: var(--space-0\\.5);
     }
   `,
   '1': css`
@@ -4603,7 +4603,7 @@ export const paddingLeft = {
   `,
   '0.5': css`
     @media (min-width: 1024px) {
-      padding-left: var(--space-0\.5);
+      padding-left: var(--space-0\\.5);
     }
   `,
   '1': css`
@@ -4669,10 +4669,10 @@ export const margin = {
   `,
   '-0.5': css`
     @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-0\.5));
-      margin-bottom: calc(-1 * var(--space-0\.5));
-      margin-right: calc(-1 * var(--space-0\.5));
-      margin-left: calc(-1 * var(--space-0\.5));
+      margin-top: calc(-1 * var(--space-0\\.5));
+      margin-bottom: calc(-1 * var(--space-0\\.5));
+      margin-right: calc(-1 * var(--space-0\\.5));
+      margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-1': css`
@@ -4766,8 +4766,8 @@ export const marginX = {
   `,
   '-0.5': css`
     @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-0\.5));
-      margin-left: calc(-1 * var(--space-0\.5));
+      margin-right: calc(-1 * var(--space-0\\.5));
+      margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-1': css`
@@ -4841,8 +4841,8 @@ export const marginY = {
   `,
   '-0.5': css`
     @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-0\.5));
-      margin-bottom: calc(-1 * var(--space-0\.5));
+      margin-top: calc(-1 * var(--space-0\\.5));
+      margin-bottom: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-1': css`
@@ -4915,7 +4915,7 @@ export const marginTop = {
   `,
   '-0.5': css`
     @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-0\.5));
+      margin-top: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-1': css`
@@ -4978,7 +4978,7 @@ export const marginBottom = {
   `,
   '-0.5': css`
     @media (min-width: 1024px) {
-      margin-bottom: calc(-1 * var(--space-0\.5));
+      margin-bottom: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-1': css`
@@ -5041,7 +5041,7 @@ export const marginRight = {
   `,
   '-0.5': css`
     @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-0\.5));
+      margin-right: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-1': css`
@@ -5104,7 +5104,7 @@ export const marginLeft = {
   `,
   '-0.5': css`
     @media (min-width: 1024px) {
-      margin-left: calc(-1 * var(--space-0\.5));
+      margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-1': css`
