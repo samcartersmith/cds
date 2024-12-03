@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
 import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
@@ -25,6 +25,8 @@ export type IconBaseProps = {
    */
   bordered?: boolean;
   fallback?: null | React.ReactElement;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetColor?: string;
 };
 
 export type IconProps<T extends React.ElementType = IconDefaultElement> = PolymorphicBoxProps<T> &
@@ -117,10 +119,12 @@ export const Icon = memo(
         accessibilityLabel,
         bordered = false,
         color = 'iconPrimary',
+        dangerouslySetColor,
         fallback = null,
         name,
         size,
         testID,
+        style,
         ...props
       }: IconProps<T>,
       ref: React.Ref<HTMLElement>,
@@ -129,6 +133,14 @@ export const Icon = memo(
 
       const glyphKey = `ui-${name}-${sourceSizeMap[size]}` as const;
       const glyph = glyphMap[glyphKey];
+
+      const inlineStyle = useMemo(
+        () => ({
+          ...(dangerouslySetColor ? { color: dangerouslySetColor } : {}),
+          ...style,
+        }),
+        [dangerouslySetColor, style],
+      );
 
       if (glyph === undefined) {
         if (process.env.NODE_ENV !== 'production')
@@ -144,6 +156,7 @@ export const Icon = memo(
           className={cx(sizeStyles[size], bordered && borderedSizeStyles[size])}
           color={color}
           position="relative" // TO DO: can we remove this?
+          style={inlineStyle}
           {...props}
           data-testid={testID}
         >

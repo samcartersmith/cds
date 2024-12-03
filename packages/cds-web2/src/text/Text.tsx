@@ -52,6 +52,8 @@ export type TextBaseProps = {
    * @default '[end of stricken text]'
    */
   strikethroughEndAccessibilityLabel?: string;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetColor?: string;
 };
 
 export type TextProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
@@ -166,6 +168,7 @@ export const Text = memo(
         style,
         className,
         disabled,
+        dangerouslySetColor,
         tabularNumbers,
         slashedZero,
         underline,
@@ -192,10 +195,11 @@ export const Text = memo(
       );
       const textStyle = useMemo(
         () => ({
+          color: dangerouslySetColor,
           '--text-numberOfLines': numberOfLines,
           ...style,
         }),
-        [style, numberOfLines],
+        [dangerouslySetColor, numberOfLines, style],
       );
 
       return (

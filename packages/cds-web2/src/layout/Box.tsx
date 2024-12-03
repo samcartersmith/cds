@@ -79,6 +79,8 @@ export type BoxBaseProps = StyleProps &
      * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
      * */
     tabIndex?: number;
+    /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+    dangerouslySetBackground?: string;
   };
 
 export type BoxProps<AsComponent extends React.ElementType = 'div'> = PolymorphicProps<
@@ -103,6 +105,7 @@ export const Box: BoxComponent = forwardRef(
       unstyled,
       baseClassName,
       testID,
+      dangerouslySetBackground,
       // Begin className style props
       display = 'flex',
       position,
@@ -206,6 +209,14 @@ export const Box: BoxComponent = forwardRef(
   ) => {
     const Component = as ?? 'div';
 
+    const inlineStyle = useMemo(
+      () => ({
+        ...(dangerouslySetBackground ? { backgroundColor: dangerouslySetBackground } : {}),
+        ...style,
+      }),
+      [dangerouslySetBackground, style],
+    );
+
     const styles = useMemo(
       () =>
         getStyles(
@@ -298,7 +309,7 @@ export const Box: BoxComponent = forwardRef(
             gridArea,
             opacity,
           },
-          style,
+          inlineStyle,
         ),
       [
         display,
@@ -388,7 +399,7 @@ export const Box: BoxComponent = forwardRef(
         gridColumn,
         gridArea,
         opacity,
-        style,
+        inlineStyle,
       ],
     );
 
