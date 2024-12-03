@@ -800,6 +800,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/layerOne-1').content,
     dark: () => require('../svgJs/dark/layerOne-1').content,
   },
+  layerThree: {
+    light: () => require('../svgJs/light/layerThree-0').content,
+    dark: () => require('../svgJs/dark/layerThree-0').content,
+  },
   layerTwo: {
     light: () => require('../svgJs/light/layerTwo-0').content,
     dark: () => require('../svgJs/dark/layerTwo-0').content,

@@ -323,6 +323,7 @@ const versionMap: Record<PictogramName, number> = {
   accreditedInvestor: 0,
   premiumInvestor: 0,
   usdcLoan: 0,
+  baseLogo: 0,
 };
 
 export default versionMap;

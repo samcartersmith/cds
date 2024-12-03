@@ -132,6 +132,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/internationalExchangeProduct-0').content,
     dark: () => require('../svgJs/dark/internationalExchangeProduct-0').content,
   },
+  layeredNetworks: {
+    light: () => require('../svgJs/light/layeredNetworks-0').content,
+    dark: () => require('../svgJs/dark/layeredNetworks-0').content,
+  },
   learningRewardsProduct: {
     light: () => require('../svgJs/light/learningRewardsProduct-1').content,
     dark: () => require('../svgJs/dark/learningRewardsProduct-1').content,

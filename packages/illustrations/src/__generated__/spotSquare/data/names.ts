@@ -127,6 +127,7 @@ const names: SpotSquareName[] = [
   'insuranceProtection',
   'interestForYou',
   'invest',
+  'layerThree',
   'layeredNetworks',
   'lightningNetworkSend',
   'linkCoinbaseWallet',

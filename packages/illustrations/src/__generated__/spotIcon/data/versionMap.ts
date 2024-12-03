@@ -75,6 +75,7 @@ const versionMap: Record<SpotIconName, number> = {
   coinbaseOneChart: 0,
   cb1Cash: 0,
   coinbaseOneEarn: 0,
+  layeredNetworks: 0,
 };
 
 export default versionMap;

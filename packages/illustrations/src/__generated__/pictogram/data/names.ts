@@ -40,6 +40,7 @@ const names: PictogramName[] = [
   'authenticatorAlt',
   'authenticatorProgress',
   'barChart',
+  'baseLogo',
   'baseLogoNavigation',
   'bitcoin',
   'bitcoinPizza',

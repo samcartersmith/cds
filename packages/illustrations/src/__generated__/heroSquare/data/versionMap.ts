@@ -366,6 +366,7 @@ const versionMap: Record<HeroSquareName, number> = {
   cbbtc: 0,
   coinFifty: 0,
   coinbaseOneEarn: 0,
+  layerThree: 0,
 };
 
 export default versionMap;

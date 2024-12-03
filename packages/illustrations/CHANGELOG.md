@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.3.0 (12/3/2024 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 12/03/2024. [[#3447](https://github.cbhq.net/frontend/cds/pull/3447)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Hero Square
+
+- layerThree
+
+#### Spot Icon
+
+- layeredNetworks
+
+#### Spot Square
+
+- layerThree
+
+#### Pictogram
+
+- baseLogo
+
 ## 4.2.0 (11/15/2024 PST)
 
 #### 🚀 Updates

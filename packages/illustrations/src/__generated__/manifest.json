@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-11-15T18:20:08.353Z",
+  "lastUpdated": "2024-12-03T19:46:33.231Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -22079,6 +22079,86 @@
         "svgJsDark": "./pictogram/svgJs/dark/usdcLoan-0.js",
         "pngLight": "./pictogram/png/light/usdcLoan-0.png",
         "pngDark": "./pictogram/png/dark/usdcLoan-0.png"
+      },
+      "version": 0
+    },
+    "13288:2": {
+      "type": "heroSquare",
+      "name": "layerThree",
+      "hash": "Ya1EVC99QGvWgKUIeNplauy2ivafVMaNqcnObMq0hEc=",
+      "width": 240,
+      "height": 240.00022888183594,
+      "description": "layers, layer three, three, isometric, networks, base, blue, yellow",
+      "createdAt": "2024-12-03T19:28:41.603Z",
+      "lastUpdated": "2024-12-03T19:28:41.603Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/layerThree-0.svg",
+        "svgDark": "./heroSquare/svg/dark/layerThree-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/layerThree-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/layerThree-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/layerThree-0.js",
+        "pngLight": "./heroSquare/png/light/layerThree-0.png",
+        "pngDark": "./heroSquare/png/dark/layerThree-0.png"
+      },
+      "version": 0
+    },
+    "13288:16": {
+      "type": "pictogram",
+      "name": "baseLogo",
+      "hash": "E7TJGAg48ACC59MvfSEbsxxF84uN4dNbhaSjKEV2AdY=",
+      "width": 48,
+      "height": 48,
+      "description": "base, baselogo, logo",
+      "createdAt": "2024-12-03T19:28:41.610Z",
+      "lastUpdated": "2024-12-03T19:35:23.152Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseLogo-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseLogo-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseLogo-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseLogo-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseLogo-0.js",
+        "pngLight": "./pictogram/png/light/baseLogo-0.png",
+        "pngDark": "./pictogram/png/dark/baseLogo-0.png"
+      },
+      "version": 0
+    },
+    "13288:18": {
+      "type": "spotSquare",
+      "name": "layerThree",
+      "hash": "Qe/jFBNIvGQxQFHmLCKEyce86N/6cRQHhtXhEetrDlE=",
+      "width": 95.99990844726562,
+      "height": 96,
+      "description": "layers, layer three, three, isometric, networks, base, blue, yellow",
+      "createdAt": "2024-12-03T19:28:41.616Z",
+      "lastUpdated": "2024-12-03T19:35:23.163Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/layerThree-0.svg",
+        "svgDark": "./spotSquare/svg/dark/layerThree-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/layerThree-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/layerThree-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/layerThree-0.js",
+        "pngLight": "./spotSquare/png/light/layerThree-0.png",
+        "pngDark": "./spotSquare/png/dark/layerThree-0.png"
+      },
+      "version": 0
+    },
+    "13288:32": {
+      "type": "spotIcon",
+      "name": "layeredNetworks",
+      "hash": "Pvka3gjFMsQemNW4qybGMqHkSIuU7sYw33ileycdGwA=",
+      "width": 31.999969482421875,
+      "height": 32,
+      "description": "layers, layer three, three, isometric, networks, base, blue, yellow",
+      "createdAt": "2024-12-03T19:28:41.596Z",
+      "lastUpdated": "2024-12-03T19:35:23.158Z",
+      "outputs": {
+        "svgLight": "./spotIcon/svg/light/layeredNetworks-0.svg",
+        "svgDark": "./spotIcon/svg/dark/layeredNetworks-0.svg",
+        "svgThemed": "./spotIcon/svg/themeable/layeredNetworks-0.svg",
+        "svgJsLight": "./spotIcon/svgJs/light/layeredNetworks-0.js",
+        "svgJsDark": "./spotIcon/svgJs/dark/layeredNetworks-0.js",
+        "pngLight": "./spotIcon/png/light/layeredNetworks-0.png",
+        "pngDark": "./spotIcon/png/dark/layeredNetworks-0.png"
       },
       "version": 0
     }

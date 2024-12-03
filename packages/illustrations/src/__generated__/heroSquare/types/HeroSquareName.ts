@@ -202,6 +202,7 @@ export type HeroSquareName =
   | 'keyGeneration'
   | 'layeredNetworks'
   | 'layerOne'
+  | 'layerThree'
   | 'layerTwo'
   | 'ledgerAccess'
   | 'ledgerPlugin'

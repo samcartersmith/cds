@@ -480,6 +480,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/layeredNetworks-3').content,
     dark: () => require('../svgJs/dark/layeredNetworks-3').content,
   },
+  layerThree: {
+    light: () => require('../svgJs/light/layerThree-0').content,
+    dark: () => require('../svgJs/dark/layerThree-0').content,
+  },
   lightningNetworkSend: {
     light: () => require('../svgJs/light/lightningNetworkSend-0').content,
     dark: () => require('../svgJs/dark/lightningNetworkSend-0').content,

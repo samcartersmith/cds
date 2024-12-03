@@ -216,6 +216,7 @@ const versionMap: Record<SpotSquareName, number> = {
   coinFifty: 0,
   coinbaseOneConcierge: 0,
   coinbaseOneEarn: 1,
+  layerThree: 0,
 };
 
 export default versionMap;

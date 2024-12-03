@@ -41,6 +41,7 @@ const names: SpotIconName[] = [
   'idVerification',
   'institutionalProduct',
   'internationalExchangeProduct',
+  'layeredNetworks',
   'learningRewardsProduct',
   'multiCoin',
   'nftProduct',

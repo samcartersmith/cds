@@ -128,6 +128,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/barChart-1').content,
     dark: () => require('../svgJs/dark/barChart-1').content,
   },
+  baseLogo: {
+    light: () => require('../svgJs/light/baseLogo-0').content,
+    dark: () => require('../svgJs/dark/baseLogo-0').content,
+  },
   baseLogoNavigation: {
     light: () => require('../svgJs/light/baseLogoNavigation-2').content,
     dark: () => require('../svgJs/dark/baseLogoNavigation-2').content,

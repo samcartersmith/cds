@@ -35,6 +35,7 @@ export type SpotIconName =
   | 'idVerification'
   | 'institutionalProduct'
   | 'internationalExchangeProduct'
+  | 'layeredNetworks'
   | 'learningRewardsProduct'
   | 'multiCoin'
   | 'nftProduct'

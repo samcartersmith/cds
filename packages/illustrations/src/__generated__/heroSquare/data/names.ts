@@ -207,6 +207,7 @@ const names: HeroSquareName[] = [
   'japanVerifyId',
   'keyGeneration',
   'layerOne',
+  'layerThree',
   'layerTwo',
   'layeredNetworks',
   'ledgerAccess',

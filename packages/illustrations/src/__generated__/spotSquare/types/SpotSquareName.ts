@@ -122,6 +122,7 @@ export type SpotSquareName =
   | 'interestForYou'
   | 'invest'
   | 'layeredNetworks'
+  | 'layerThree'
   | 'lightningNetworkSend'
   | 'linkCoinbaseWallet'
   | 'linkingYourWalletToYourCoinbaseAccount'
