@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { HelperText } from '../HelperText';
 
 export default {
@@ -10,14 +12,13 @@ export const MessageAreaBasic = () => {
 };
 
 export const MessageAreaColor = () => {
-  // return <HelperText color="positive">Positive Colored Message Here</HelperText>;
   const colors = [
-    'positive',
-    'negative',
-    'foreground',
-    'primary',
-    'foregroundMuted',
-    'secondary',
+    'textPositive',
+    'textNegative',
+    'textForeground',
+    'textPrimary',
+    'textForegroundMuted',
+    'backgroundSecondary',
   ] as const;
 
   return (
@@ -30,23 +31,13 @@ export const MessageAreaColor = () => {
 };
 
 export const TextAlign = () => {
-  const alignments = ['start', 'end'] as const;
+  const alignments = ['start', 'end', 'center', 'justify'] as const;
 
   return (
     <div>
       {alignments.map((alignment) => (
-        <HelperText align={alignment}>{`${alignment} message`}</HelperText>
+        <HelperText textAlign={alignment}>{`${alignment} message`}</HelperText>
       ))}
-    </div>
-  );
-};
-
-export const CustomColor = () => {
-  return (
-    <div>
-      <HelperText color="negative" dangerouslySetColor="purple">
-        Test message
-      </HelperText>
     </div>
   );
 };

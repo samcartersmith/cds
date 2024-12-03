@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Update HelperText story. [[#3446](https://github.cbhq.net/tim-corcoran/cds/pull/3446)]
+
 ## 7.3.2 (11/27/2024 PST)
 
 #### 🐞 Fixes
