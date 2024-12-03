@@ -2594,57 +2594,456 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
 } as const;
 
 export const borderWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
+  '0': css`
     @media (min-width: 1024px) {
-      border-width: var(--borderWidth-none);
+      border-width: var(--borderWidth-0);
     }
   `,
-  thin: css`
+  '100': css`
     @media (min-width: 1024px) {
-      border-width: var(--borderWidth-thin);
+      border-width: var(--borderWidth-100);
     }
   `,
-  thick: css`
+  '200': css`
     @media (min-width: 1024px) {
-      border-width: var(--borderWidth-thick);
+      border-width: var(--borderWidth-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-width: var(--borderWidth-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-width: var(--borderWidth-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-width: var(--borderWidth-500);
+    }
+  `,
+} as const;
+
+export const borderTopWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      border-top-width: var(--borderWidth-0);
+    }
+  `,
+  '100': css`
+    @media (min-width: 1024px) {
+      border-top-width: var(--borderWidth-100);
+    }
+  `,
+  '200': css`
+    @media (min-width: 1024px) {
+      border-top-width: var(--borderWidth-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-top-width: var(--borderWidth-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-top-width: var(--borderWidth-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-top-width: var(--borderWidth-500);
+    }
+  `,
+} as const;
+
+export const borderRightWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      border-right-width: var(--borderWidth-0);
+    }
+  `,
+  '100': css`
+    @media (min-width: 1024px) {
+      border-right-width: var(--borderWidth-100);
+    }
+  `,
+  '200': css`
+    @media (min-width: 1024px) {
+      border-right-width: var(--borderWidth-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-right-width: var(--borderWidth-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-right-width: var(--borderWidth-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-right-width: var(--borderWidth-500);
+    }
+  `,
+} as const;
+
+export const borderBottomWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      border-bottom-width: var(--borderWidth-0);
+    }
+  `,
+  '100': css`
+    @media (min-width: 1024px) {
+      border-bottom-width: var(--borderWidth-100);
+    }
+  `,
+  '200': css`
+    @media (min-width: 1024px) {
+      border-bottom-width: var(--borderWidth-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-bottom-width: var(--borderWidth-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-bottom-width: var(--borderWidth-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-bottom-width: var(--borderWidth-500);
+    }
+  `,
+} as const;
+
+export const borderLeftWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      border-left-width: var(--borderWidth-0);
+    }
+  `,
+  '100': css`
+    @media (min-width: 1024px) {
+      border-left-width: var(--borderWidth-100);
+    }
+  `,
+  '200': css`
+    @media (min-width: 1024px) {
+      border-left-width: var(--borderWidth-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-left-width: var(--borderWidth-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-left-width: var(--borderWidth-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-left-width: var(--borderWidth-500);
     }
   `,
 } as const;
 
 export const borderRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
+  '0': css`
     @media (min-width: 1024px) {
-      border-radius: var(--borderRadius-none);
+      border-radius: var(--borderRadius-0);
     }
   `,
-  roundedSmall: css`
+  '100': css`
     @media (min-width: 1024px) {
-      border-radius: var(--borderRadius-roundedSmall);
+      border-radius: var(--borderRadius-100);
     }
   `,
-  rounded: css`
+  '200': css`
     @media (min-width: 1024px) {
-      border-radius: var(--borderRadius-rounded);
+      border-radius: var(--borderRadius-200);
     }
   `,
-  roundedMedium: css`
+  '300': css`
     @media (min-width: 1024px) {
-      border-radius: var(--borderRadius-roundedMedium);
+      border-radius: var(--borderRadius-300);
     }
   `,
-  roundedLarge: css`
+  '400': css`
     @media (min-width: 1024px) {
-      border-radius: var(--borderRadius-roundedLarge);
+      border-radius: var(--borderRadius-400);
     }
   `,
-  roundedXLarge: css`
+  '500': css`
     @media (min-width: 1024px) {
-      border-radius: var(--borderRadius-roundedXLarge);
+      border-radius: var(--borderRadius-500);
     }
   `,
-  roundedFull: css`
+  '600': css`
     @media (min-width: 1024px) {
-      border-radius: var(--borderRadius-roundedFull);
+      border-radius: var(--borderRadius-600);
+    }
+  `,
+  '700': css`
+    @media (min-width: 1024px) {
+      border-radius: var(--borderRadius-700);
+    }
+  `,
+  '800': css`
+    @media (min-width: 1024px) {
+      border-radius: var(--borderRadius-800);
+    }
+  `,
+  '900': css`
+    @media (min-width: 1024px) {
+      border-radius: var(--borderRadius-900);
+    }
+  `,
+  '1000': css`
+    @media (min-width: 1024px) {
+      border-radius: var(--borderRadius-1000);
+    }
+  `,
+} as const;
+
+export const borderTopLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-0);
+    }
+  `,
+  '100': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-100);
+    }
+  `,
+  '200': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-500);
+    }
+  `,
+  '600': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-600);
+    }
+  `,
+  '700': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-700);
+    }
+  `,
+  '800': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-800);
+    }
+  `,
+  '900': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-900);
+    }
+  `,
+  '1000': css`
+    @media (min-width: 1024px) {
+      border-top-left-radius: var(--borderRadius-1000);
+    }
+  `,
+} as const;
+
+export const borderTopRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-0);
+    }
+  `,
+  '100': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-100);
+    }
+  `,
+  '200': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-500);
+    }
+  `,
+  '600': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-600);
+    }
+  `,
+  '700': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-700);
+    }
+  `,
+  '800': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-800);
+    }
+  `,
+  '900': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-900);
+    }
+  `,
+  '1000': css`
+    @media (min-width: 1024px) {
+      border-top-right-radius: var(--borderRadius-1000);
+    }
+  `,
+} as const;
+
+export const borderBottomLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-0);
+    }
+  `,
+  '100': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-100);
+    }
+  `,
+  '200': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-500);
+    }
+  `,
+  '600': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-600);
+    }
+  `,
+  '700': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-700);
+    }
+  `,
+  '800': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-800);
+    }
+  `,
+  '900': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-900);
+    }
+  `,
+  '1000': css`
+    @media (min-width: 1024px) {
+      border-bottom-left-radius: var(--borderRadius-1000);
+    }
+  `,
+} as const;
+
+export const borderBottomRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-0);
+    }
+  `,
+  '100': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-100);
+    }
+  `,
+  '200': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-200);
+    }
+  `,
+  '300': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-300);
+    }
+  `,
+  '400': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-400);
+    }
+  `,
+  '500': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-500);
+    }
+  `,
+  '600': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-600);
+    }
+  `,
+  '700': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-700);
+    }
+  `,
+  '800': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-800);
+    }
+  `,
+  '900': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-900);
+    }
+  `,
+  '1000': css`
+    @media (min-width: 1024px) {
+      border-bottom-right-radius: var(--borderRadius-1000);
     }
   `,
 } as const;
@@ -4159,108 +4558,140 @@ export const zIndex: Record<keyof typeof vars.zIndex, LinariaClassName> = {
   `,
 } as const;
 
-export const padding = {
+export const padding: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
-  @media (min-width: 1024px) {
-    padding-top: var(--space-0);
-    padding-bottom: var(--space-0);
-    padding-left: var(--space-0);
-    padding-right: var(--space-0);
+    @media (min-width: 1024px) {
+      padding-top: var(--space-0);
+      padding-bottom: var(--space-0);
+      padding-left: var(--space-0);
+      padding-right: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-0\\.25);
+      padding-bottom: var(--space-0\\.25);
+      padding-left: var(--space-0\\.25);
+      padding-right: var(--space-0\\.25);
+    }
   `,
   '0.5': css`
-  @media (min-width: 1024px) {
-    padding-top: var(--space-0\\.5);
-    padding-bottom: var(--space-0\\.5);
-    padding-left: var(--space-0\\.5);
-    padding-right: var(--space-0\\.5);
+    @media (min-width: 1024px) {
+      padding-top: var(--space-0\\.5);
+      padding-bottom: var(--space-0\\.5);
+      padding-left: var(--space-0\\.5);
+      padding-right: var(--space-0\\.5);
+    }
+  `,
+  '0.75': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-0\\.75);
+      padding-bottom: var(--space-0\\.75);
+      padding-left: var(--space-0\\.75);
+      padding-right: var(--space-0\\.75);
+    }
   `,
   '1': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-1);
       padding-bottom: var(--space-1);
-      padding-right: var(--space-1);
       padding-left: var(--space-1);
+      padding-right: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-1\\.5);
+      padding-bottom: var(--space-1\\.5);
+      padding-left: var(--space-1\\.5);
+      padding-right: var(--space-1\\.5);
     }
   `,
   '2': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-2);
       padding-bottom: var(--space-2);
-      padding-right: var(--space-2);
       padding-left: var(--space-2);
+      padding-right: var(--space-2);
     }
   `,
   '3': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-3);
       padding-bottom: var(--space-3);
-      padding-right: var(--space-3);
       padding-left: var(--space-3);
+      padding-right: var(--space-3);
     }
   `,
   '4': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-4);
       padding-bottom: var(--space-4);
-      padding-right: var(--space-4);
       padding-left: var(--space-4);
+      padding-right: var(--space-4);
     }
   `,
   '5': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-5);
       padding-bottom: var(--space-5);
-      padding-right: var(--space-5);
       padding-left: var(--space-5);
+      padding-right: var(--space-5);
     }
   `,
   '6': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
-      padding-right: var(--space-6);
       padding-left: var(--space-6);
+      padding-right: var(--space-6);
     }
   `,
   '7': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-7);
       padding-bottom: var(--space-7);
-      padding-right: var(--space-7);
       padding-left: var(--space-7);
+      padding-right: var(--space-7);
     }
   `,
   '8': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-8);
       padding-bottom: var(--space-8);
-      padding-right: var(--space-8);
       padding-left: var(--space-8);
+      padding-right: var(--space-8);
     }
   `,
   '9': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-9);
       padding-bottom: var(--space-9);
-      padding-right: var(--space-9);
       padding-left: var(--space-9);
+      padding-right: var(--space-9);
     }
   `,
   '10': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-10);
       padding-bottom: var(--space-10);
-      padding-right: var(--space-10);
       padding-left: var(--space-10);
+      padding-right: var(--space-10);
     }
   `,
 } as const;
 
-export const paddingX = {
+export const paddingX: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 1024px) {
       padding-left: var(--space-0);
       padding-right: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 1024px) {
+      padding-left: var(--space-0\\.25);
+      padding-right: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4269,10 +4700,22 @@ export const paddingX = {
       padding-right: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 1024px) {
+      padding-left: var(--space-0\\.75);
+      padding-right: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 1024px) {
       padding-left: var(--space-1);
       padding-right: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 1024px) {
+      padding-left: var(--space-1\\.5);
+      padding-right: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4331,11 +4774,17 @@ export const paddingX = {
   `,
 } as const;
 
-export const paddingY = {
+export const paddingY: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-0);
       padding-bottom: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-0\\.25);
+      padding-bottom: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4344,10 +4793,22 @@ export const paddingY = {
       padding-bottom: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-0\\.75);
+      padding-bottom: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-1);
       padding-bottom: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-1\\.5);
+      padding-bottom: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4406,10 +4867,15 @@ export const paddingY = {
   `,
 } as const;
 
-export const paddingTop = {
+export const paddingTop: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4417,9 +4883,19 @@ export const paddingTop = {
       padding-top: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 1024px) {
       padding-top: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 1024px) {
+      padding-top: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4469,10 +4945,15 @@ export const paddingTop = {
   `,
 } as const;
 
-export const paddingBottom = {
+export const paddingBottom: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 1024px) {
       padding-bottom: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 1024px) {
+      padding-bottom: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4480,9 +4961,19 @@ export const paddingBottom = {
       padding-bottom: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 1024px) {
+      padding-bottom: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 1024px) {
       padding-bottom: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 1024px) {
+      padding-bottom: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4532,73 +5023,15 @@ export const paddingBottom = {
   `,
 } as const;
 
-export const paddingRight = {
-  '0': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-0);
-    }
-  `,
-  '0.5': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-0\\.5);
-    }
-  `,
-  '1': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-1);
-    }
-  `,
-  '2': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-2);
-    }
-  `,
-  '3': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-3);
-    }
-  `,
-  '4': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-4);
-    }
-  `,
-  '5': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-5);
-    }
-  `,
-  '6': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-6);
-    }
-  `,
-  '7': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-7);
-    }
-  `,
-  '8': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-8);
-    }
-  `,
-  '9': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-9);
-    }
-  `,
-  '10': css`
-    @media (min-width: 1024px) {
-      padding-right: var(--space-10);
-    }
-  `,
-} as const;
-
-export const paddingLeft = {
+export const paddingLeft: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 1024px) {
       padding-left: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 1024px) {
+      padding-left: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4606,9 +5039,19 @@ export const paddingLeft = {
       padding-left: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 1024px) {
+      padding-left: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 1024px) {
       padding-left: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 1024px) {
+      padding-left: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4658,13 +5101,99 @@ export const paddingLeft = {
   `,
 } as const;
 
-export const margin = {
+export const paddingRight: Record<keyof typeof vars.space, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-0\\.25);
+    }
+  `,
+  '0.5': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-0\\.5);
+    }
+  `,
+  '0.75': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-0\\.75);
+    }
+  `,
+  '1': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-1\\.5);
+    }
+  `,
+  '2': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-2);
+    }
+  `,
+  '3': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-3);
+    }
+  `,
+  '4': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-4);
+    }
+  `,
+  '5': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-5);
+    }
+  `,
+  '6': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-6);
+    }
+  `,
+  '7': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-7);
+    }
+  `,
+  '8': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-8);
+    }
+  `,
+  '9': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-9);
+    }
+  `,
+  '10': css`
+    @media (min-width: 1024px) {
+      padding-right: var(--space-10);
+    }
+  `,
+} as const;
+
+export const margin: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> = {
   '0': css`
     @media (min-width: 1024px) {
       margin-top: calc(-1 * var(--space-0));
-      margin-right: calc(-1 * var(--space-0));
       margin-bottom: calc(-1 * var(--space-0));
+      margin-right: calc(-1 * var(--space-0));
       margin-left: calc(-1 * var(--space-0));
+    }
+  `,
+  '-0.25': css`
+    @media (min-width: 1024px) {
+      margin-top: calc(-1 * var(--space-0\\.25));
+      margin-bottom: calc(-1 * var(--space-0\\.25));
+      margin-right: calc(-1 * var(--space-0\\.25));
+      margin-left: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
@@ -4675,12 +5204,28 @@ export const margin = {
       margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
+  '-0.75': css`
+    @media (min-width: 1024px) {
+      margin-top: calc(-1 * var(--space-0\\.75));
+      margin-bottom: calc(-1 * var(--space-0\\.75));
+      margin-right: calc(-1 * var(--space-0\\.75));
+      margin-left: calc(-1 * var(--space-0\\.75));
+    }
+  `,
   '-1': css`
     @media (min-width: 1024px) {
       margin-top: calc(-1 * var(--space-1));
       margin-bottom: calc(-1 * var(--space-1));
       margin-right: calc(-1 * var(--space-1));
       margin-left: calc(-1 * var(--space-1));
+    }
+  `,
+  '-1.5': css`
+    @media (min-width: 1024px) {
+      margin-top: calc(-1 * var(--space-1\\.5));
+      margin-bottom: calc(-1 * var(--space-1\\.5));
+      margin-right: calc(-1 * var(--space-1\\.5));
+      margin-left: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -4757,170 +5302,226 @@ export const margin = {
   `,
 } as const;
 
-export const marginX = {
-  '0': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-0));
-      margin-left: calc(-1 * var(--space-0));
-    }
-  `,
-  '-0.5': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-0\\.5));
-      margin-left: calc(-1 * var(--space-0\\.5));
-    }
-  `,
-  '-1': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-1));
-      margin-left: calc(-1 * var(--space-1));
-    }
-  `,
-  '-2': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-2));
-      margin-left: calc(-1 * var(--space-2));
-    }
-  `,
-  '-3': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-3));
-      margin-left: calc(-1 * var(--space-3));
-    }
-  `,
-  '-4': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-4));
-      margin-left: calc(-1 * var(--space-4));
-    }
-  `,
-  '-5': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-5));
-      margin-left: calc(-1 * var(--space-5));
-    }
-  `,
-  '-6': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-6));
-      margin-left: calc(-1 * var(--space-6));
-    }
-  `,
-  '-7': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-7));
-      margin-left: calc(-1 * var(--space-7));
-    }
-  `,
-  '-8': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-8));
-      margin-left: calc(-1 * var(--space-8));
-    }
-  `,
-  '-9': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-9));
-      margin-left: calc(-1 * var(--space-9));
-    }
-  `,
-  '-10': css`
-    @media (min-width: 1024px) {
-      margin-right: calc(-1 * var(--space-10));
-      margin-left: calc(-1 * var(--space-10));
-    }
-  `,
-} as const;
+export const marginX: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> =
+  {
+    '0': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-0));
+        margin-left: calc(-1 * var(--space-0));
+      }
+    `,
+    '-0.25': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-0\\.25));
+        margin-left: calc(-1 * var(--space-0\\.25));
+      }
+    `,
+    '-0.5': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-0\\.5));
+        margin-left: calc(-1 * var(--space-0\\.5));
+      }
+    `,
+    '-0.75': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-0\\.75));
+        margin-left: calc(-1 * var(--space-0\\.75));
+      }
+    `,
+    '-1': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-1));
+        margin-left: calc(-1 * var(--space-1));
+      }
+    `,
+    '-1.5': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-1\\.5));
+        margin-left: calc(-1 * var(--space-1\\.5));
+      }
+    `,
+    '-2': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-2));
+        margin-left: calc(-1 * var(--space-2));
+      }
+    `,
+    '-3': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-3));
+        margin-left: calc(-1 * var(--space-3));
+      }
+    `,
+    '-4': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-4));
+        margin-left: calc(-1 * var(--space-4));
+      }
+    `,
+    '-5': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-5));
+        margin-left: calc(-1 * var(--space-5));
+      }
+    `,
+    '-6': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-6));
+        margin-left: calc(-1 * var(--space-6));
+      }
+    `,
+    '-7': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-7));
+        margin-left: calc(-1 * var(--space-7));
+      }
+    `,
+    '-8': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-8));
+        margin-left: calc(-1 * var(--space-8));
+      }
+    `,
+    '-9': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-9));
+        margin-left: calc(-1 * var(--space-9));
+      }
+    `,
+    '-10': css`
+      @media (min-width: 1024px) {
+        margin-right: calc(-1 * var(--space-10));
+        margin-left: calc(-1 * var(--space-10));
+      }
+    `,
+  } as const;
 
-export const marginY = {
+export const marginY: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> =
+  {
+    '0': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-0));
+        margin-bottom: calc(-1 * var(--space-0));
+      }
+    `,
+    '-0.25': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-0\\.25));
+        margin-bottom: calc(-1 * var(--space-0\\.25));
+      }
+    `,
+    '-0.5': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-0\\.5));
+        margin-bottom: calc(-1 * var(--space-0\\.5));
+      }
+    `,
+    '-0.75': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-0\\.75));
+        margin-bottom: calc(-1 * var(--space-0\\.75));
+      }
+    `,
+    '-1': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-1));
+        margin-bottom: calc(-1 * var(--space-1));
+      }
+    `,
+    '-1.5': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-1\\.5));
+        margin-bottom: calc(-1 * var(--space-1\\.5));
+      }
+    `,
+    '-2': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-2));
+        margin-bottom: calc(-1 * var(--space-2));
+      }
+    `,
+    '-3': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-3));
+        margin-bottom: calc(-1 * var(--space-3));
+      }
+    `,
+    '-4': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-4));
+        margin-bottom: calc(-1 * var(--space-4));
+      }
+    `,
+    '-5': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-5));
+        margin-bottom: calc(-1 * var(--space-5));
+      }
+    `,
+    '-6': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-6));
+        margin-bottom: calc(-1 * var(--space-6));
+      }
+    `,
+    '-7': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-7));
+        margin-bottom: calc(-1 * var(--space-7));
+      }
+    `,
+    '-8': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-8));
+        margin-bottom: calc(-1 * var(--space-8));
+      }
+    `,
+    '-9': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-9));
+        margin-bottom: calc(-1 * var(--space-9));
+      }
+    `,
+    '-10': css`
+      @media (min-width: 1024px) {
+        margin-top: calc(-1 * var(--space-10));
+        margin-bottom: calc(-1 * var(--space-10));
+      }
+    `,
+  } as const;
+
+export const marginTop: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     @media (min-width: 1024px) {
       margin-top: calc(-1 * var(--space-0));
-      margin-bottom: calc(-1 * var(--space-0));
+    }
+  `,
+  '-0.25': css`
+    @media (min-width: 1024px) {
+      margin-top: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
     @media (min-width: 1024px) {
       margin-top: calc(-1 * var(--space-0\\.5));
-      margin-bottom: calc(-1 * var(--space-0\\.5));
+    }
+  `,
+  '-0.75': css`
+    @media (min-width: 1024px) {
+      margin-top: calc(-1 * var(--space-0\\.75));
     }
   `,
   '-1': css`
     @media (min-width: 1024px) {
       margin-top: calc(-1 * var(--space-1));
-      margin-bottom: calc(-1 * var(--space-1));
     }
   `,
-  '-2': css`
+  '-1.5': css`
     @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-2));
-      margin-bottom: calc(-1 * var(--space-2));
-    }
-  `,
-  '-3': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-3));
-      margin-bottom: calc(-1 * var(--space-3));
-    }
-  `,
-  '-4': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-4));
-      margin-bottom: calc(-1 * var(--space-4));
-    }
-  `,
-  '-5': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-5));
-      margin-bottom: calc(-1 * var(--space-5));
-    }
-  `,
-  '-6': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-6));
-      margin-bottom: calc(-1 * var(--space-6));
-    }
-  `,
-  '-7': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-7));
-      margin-bottom: calc(-1 * var(--space-7));
-    }
-  `,
-  '-8': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-8));
-      margin-bottom: calc(-1 * var(--space-8));
-    }
-  `,
-  '-9': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-9));
-      margin-bottom: calc(-1 * var(--space-9));
-    }
-  `,
-  '-10': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-10));
-      margin-bottom: calc(-1 * var(--space-10));
-    }
-  `,
-} as const;
-
-export const marginTop = {
-  '0': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-0));
-    }
-  `,
-  '-0.5': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-0\\.5));
-    }
-  `,
-  '-1': css`
-    @media (min-width: 1024px) {
-      margin-top: calc(-1 * var(--space-1));
+      margin-top: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -4970,20 +5571,38 @@ export const marginTop = {
   `,
 } as const;
 
-export const marginBottom = {
+export const marginBottom: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     @media (min-width: 1024px) {
       margin-bottom: calc(-1 * var(--space-0));
     }
   `,
+  '-0.25': css`
+    @media (min-width: 1024px) {
+      margin-bottom: calc(-1 * var(--space-0\\.25));
+    }
+  `,
   '-0.5': css`
     @media (min-width: 1024px) {
       margin-bottom: calc(-1 * var(--space-0\\.5));
     }
   `,
+  '-0.75': css`
+    @media (min-width: 1024px) {
+      margin-bottom: calc(-1 * var(--space-0\\.75));
+    }
+  `,
   '-1': css`
     @media (min-width: 1024px) {
       margin-bottom: calc(-1 * var(--space-1));
+    }
+  `,
+  '-1.5': css`
+    @media (min-width: 1024px) {
+      margin-bottom: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -5033,10 +5652,18 @@ export const marginBottom = {
   `,
 } as const;
 
-export const marginRight = {
+export const marginRight: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     @media (min-width: 1024px) {
       margin-right: calc(-1 * var(--space-0));
+    }
+  `,
+  '-0.25': css`
+    @media (min-width: 1024px) {
+      margin-right: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
@@ -5044,9 +5671,19 @@ export const marginRight = {
       margin-right: calc(-1 * var(--space-0\\.5));
     }
   `,
+  '-0.75': css`
+    @media (min-width: 1024px) {
+      margin-right: calc(-1 * var(--space-0\\.75));
+    }
+  `,
   '-1': css`
     @media (min-width: 1024px) {
       margin-right: calc(-1 * var(--space-1));
+    }
+  `,
+  '-1.5': css`
+    @media (min-width: 1024px) {
+      margin-right: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -5096,10 +5733,18 @@ export const marginRight = {
   `,
 } as const;
 
-export const marginLeft = {
+export const marginLeft: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     @media (min-width: 1024px) {
       margin-left: calc(-1 * var(--space-0));
+    }
+  `,
+  '-0.25': css`
+    @media (min-width: 1024px) {
+      margin-left: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
@@ -5107,9 +5752,19 @@ export const marginLeft = {
       margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
+  '-0.75': css`
+    @media (min-width: 1024px) {
+      margin-left: calc(-1 * var(--space-0\\.75));
+    }
+  `,
   '-1': css`
     @media (min-width: 1024px) {
       margin-left: calc(-1 * var(--space-1));
+    }
+  `,
+  '-1.5': css`
+    @media (min-width: 1024px) {
+      margin-left: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -5206,230 +5861,6 @@ export const visibility = {
   visible: css`
     @media (min-width: 1024px) {
       visibility: visible;
-    }
-  `,
-} as const;
-
-export const borderTopLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    @media (min-width: 1024px) {
-      border-top-left-radius: var(--borderRadius-none);
-    }
-  `,
-  roundedSmall: css`
-    @media (min-width: 1024px) {
-      border-top-left-radius: var(--borderRadius-roundedSmall);
-    }
-  `,
-  rounded: css`
-    @media (min-width: 1024px) {
-      border-top-left-radius: var(--borderRadius-rounded);
-    }
-  `,
-  roundedMedium: css`
-    @media (min-width: 1024px) {
-      border-top-left-radius: var(--borderRadius-roundedMedium);
-    }
-  `,
-  roundedLarge: css`
-    @media (min-width: 1024px) {
-      border-top-left-radius: var(--borderRadius-roundedLarge);
-    }
-  `,
-  roundedXLarge: css`
-    @media (min-width: 1024px) {
-      border-top-left-radius: var(--borderRadius-roundedXLarge);
-    }
-  `,
-  roundedFull: css`
-    @media (min-width: 1024px) {
-      border-top-left-radius: var(--borderRadius-roundedFull);
-    }
-  `,
-} as const;
-
-export const borderTopRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    @media (min-width: 1024px) {
-      border-top-right-radius: var(--borderRadius-none);
-    }
-  `,
-  roundedSmall: css`
-    @media (min-width: 1024px) {
-      border-top-right-radius: var(--borderRadius-roundedSmall);
-    }
-  `,
-  rounded: css`
-    @media (min-width: 1024px) {
-      border-top-right-radius: var(--borderRadius-rounded);
-    }
-  `,
-  roundedMedium: css`
-    @media (min-width: 1024px) {
-      border-top-right-radius: var(--borderRadius-roundedMedium);
-    }
-  `,
-  roundedLarge: css`
-    @media (min-width: 1024px) {
-      border-top-right-radius: var(--borderRadius-roundedLarge);
-    }
-  `,
-  roundedXLarge: css`
-    @media (min-width: 1024px) {
-      border-top-right-radius: var(--borderRadius-roundedXLarge);
-    }
-  `,
-  roundedFull: css`
-    @media (min-width: 1024px) {
-      border-top-right-radius: var(--borderRadius-roundedFull);
-    }
-  `,
-} as const;
-
-export const borderBottomLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    @media (min-width: 1024px) {
-      border-bottom-left-radius: var(--borderRadius-none);
-    }
-  `,
-  roundedSmall: css`
-    @media (min-width: 1024px) {
-      border-bottom-left-radius: var(--borderRadius-roundedSmall);
-    }
-  `,
-  rounded: css`
-    @media (min-width: 1024px) {
-      border-bottom-left-radius: var(--borderRadius-rounded);
-    }
-  `,
-  roundedMedium: css`
-    @media (min-width: 1024px) {
-      border-bottom-left-radius: var(--borderRadius-roundedMedium);
-    }
-  `,
-  roundedLarge: css`
-    @media (min-width: 1024px) {
-      border-bottom-left-radius: var(--borderRadius-roundedLarge);
-    }
-  `,
-  roundedXLarge: css`
-    @media (min-width: 1024px) {
-      border-bottom-left-radius: var(--borderRadius-roundedXLarge);
-    }
-  `,
-  roundedFull: css`
-    @media (min-width: 1024px) {
-      border-bottom-left-radius: var(--borderRadius-roundedFull);
-    }
-  `,
-} as const;
-
-export const borderBottomRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    @media (min-width: 1024px) {
-      border-bottom-right-radius: var(--borderRadius-none);
-    }
-  `,
-  roundedSmall: css`
-    @media (min-width: 1024px) {
-      border-bottom-right-radius: var(--borderRadius-roundedSmall);
-    }
-  `,
-  rounded: css`
-    @media (min-width: 1024px) {
-      border-bottom-right-radius: var(--borderRadius-rounded);
-    }
-  `,
-  roundedMedium: css`
-    @media (min-width: 1024px) {
-      border-bottom-right-radius: var(--borderRadius-roundedMedium);
-    }
-  `,
-  roundedLarge: css`
-    @media (min-width: 1024px) {
-      border-bottom-right-radius: var(--borderRadius-roundedLarge);
-    }
-  `,
-  roundedXLarge: css`
-    @media (min-width: 1024px) {
-      border-bottom-right-radius: var(--borderRadius-roundedXLarge);
-    }
-  `,
-  roundedFull: css`
-    @media (min-width: 1024px) {
-      border-bottom-right-radius: var(--borderRadius-roundedFull);
-    }
-  `,
-} as const;
-
-export const borderTopWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    @media (min-width: 1024px) {
-      border-top-width: var(--borderWidth-none);
-    }
-  `,
-  thin: css`
-    @media (min-width: 1024px) {
-      border-top-width: var(--borderWidth-thin);
-    }
-  `,
-  thick: css`
-    @media (min-width: 1024px) {
-      border-top-width: var(--borderWidth-thick);
-    }
-  `,
-} as const;
-
-export const borderRightWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    @media (min-width: 1024px) {
-      border-right-width: var(--borderWidth-none);
-    }
-  `,
-  thin: css`
-    @media (min-width: 1024px) {
-      border-right-width: var(--borderWidth-thin);
-    }
-  `,
-  thick: css`
-    @media (min-width: 1024px) {
-      border-right-width: var(--borderWidth-thick);
-    }
-  `,
-} as const;
-
-export const borderBottomWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    @media (min-width: 1024px) {
-      border-bottom-width: var(--borderWidth-none);
-    }
-  `,
-  thin: css`
-    @media (min-width: 1024px) {
-      border-bottom-width: var(--borderWidth-thin);
-    }
-  `,
-  thick: css`
-    @media (min-width: 1024px) {
-      border-bottom-width: var(--borderWidth-thick);
-    }
-  `,
-} as const;
-
-export const borderLeftWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    @media (min-width: 1024px) {
-      border-left-width: var(--borderWidth-none);
-    }
-  `,
-  thin: css`
-    @media (min-width: 1024px) {
-      border-left-width: var(--borderWidth-thin);
-    }
-  `,
-  thick: css`
-    @media (min-width: 1024px) {
-      border-left-width: var(--borderWidth-thick);
     }
   `,
 } as const;

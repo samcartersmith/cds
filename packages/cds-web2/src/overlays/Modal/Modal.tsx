@@ -39,7 +39,7 @@ const baseStyle = css`
 
 const modalDialogResponsiveStyle = css`
   @media ${media.phonePortrait} {
-    border-radius: var(--borderRadius-none);
+    border-radius: var(--borderRadius-0);
   }
 `;
 
@@ -207,7 +207,7 @@ export const Modal = memo(
               >
                 <VStack
                   background="background"
-                  borderRadius="rounded"
+                  borderRadius={200}
                   className={cx(!dangerouslyDisableResponsiveness && modalDialogResponsiveStyle)}
                   elevation={2}
                   overflow="hidden"

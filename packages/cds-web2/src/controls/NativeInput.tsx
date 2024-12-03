@@ -62,7 +62,7 @@ const baseStyle = css`
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    border-radius: var(--borderRadius-rounded);
+    border-radius: var(--borderRadius-200);
     -webkit-text-fill-color: var(--color-textForeground);
     transition: background-color 0s ease-in-out 5000s;
   }

@@ -62,24 +62,24 @@ const sizeStyles: {
   [key in IconSize]: LinariaClassName;
 } = {
   xs: css`
-    width: var(--size-icon-xs);
-    height: var(--size-icon-xs);
-    font-size: var(--size-icon-xs);
+    width: var(--iconSize-xs);
+    height: var(--iconSize-xs);
+    font-size: var(--iconSize-xs);
   `,
   s: css`
-    width: var(--size-icon-s);
-    height: var(--size-icon-s);
-    font-size: var(--size-icon-s);
+    width: var(--iconSize-s);
+    height: var(--iconSize-s);
+    font-size: var(--iconSize-s);
   `,
   m: css`
-    width: var(--size-icon-m);
-    height: var(--size-icon-m);
-    font-size: var(--size-icon-m);
+    width: var(--iconSize-m);
+    height: var(--iconSize-m);
+    font-size: var(--iconSize-m);
   `,
   l: css`
-    width: var(--size-icon-l);
-    height: var(--size-icon-l);
-    font-size: var(--size-icon-l);
+    width: var(--iconSize-l);
+    height: var(--iconSize-l);
+    font-size: var(--iconSize-l);
   `,
 };
 
@@ -87,16 +87,16 @@ const borderedSizeStyles: {
   [key in IconSize]: LinariaClassName;
 } = {
   xs: css`
-    font-size: var(--size-icon-xs);
+    font-size: var(--iconSize-xs);
   `,
   s: css`
-    font-size: var(--size-icon-s);
+    font-size: var(--iconSize-s);
   `,
   m: css`
-    font-size: var(--size-icon-xs);
+    font-size: var(--iconSize-xs);
   `,
   l: css`
-    font-size: var(--size-icon-s);
+    font-size: var(--iconSize-s);
   `,
 };
 

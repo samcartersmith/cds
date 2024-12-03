@@ -7,7 +7,7 @@ export const focusRing = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-thick);
+    outline-width: 2px;
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 2px;
   }
@@ -19,7 +19,7 @@ export const insetFocusRing = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-thick);
+    outline-width: 2px;
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 0;
   }

@@ -22,7 +22,7 @@ const focusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-thick);
+    outline-width: var(--borderWidth-200);
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 2px;
   }
@@ -200,7 +200,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     background,
     block,
     borderColor = 'transparent',
-    borderRadius = 'none',
+    borderRadius = 0,
     borderWidth,
     children,
     className: customClassName,
@@ -230,7 +230,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     disabled ? disabledStyle : focusRingStyle,
     disabled && borderColor === 'transparent' ? disabledBorderStyle : null,
     transparentWhileInactive ? borderColorStyles.transparent : borderColorStyles[borderColor],
-    borderColor && borderWidthStyles.thin,
+    borderColor && borderWidthStyles[100],
     borderWidth && borderWidthStyles[borderWidth],
     block && blockStyle,
     transparentWhileInactive ? backgroundStyles.transparent : backgroundStyles[background],
@@ -252,6 +252,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     () => ({
       [interactableBackground]: `var(--color-${background})`,
       borderRadius:
+        // TO DO: fix this, since borderRadius values are always numbers now - even when they're coming from the theme, e.g. borderRadius-500
         typeof borderRadius === 'number' ? borderRadius : `var(--borderRadius-${borderRadius})`,
       width,
       height,

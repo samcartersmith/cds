@@ -11,157 +11,188 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
     @media (min-width: 768px) {
       width: var(--minTablet-width);
     }
-  `,
+}
+`,
   height: css`
     @media (min-width: 768px) {
       height: var(--minTablet-height);
     }
-  `,
+}
+`,
   minWidth: css`
     @media (min-width: 768px) {
       min-width: var(--minTablet-minWidth);
     }
-  `,
+}
+`,
   minHeight: css`
     @media (min-width: 768px) {
       min-height: var(--minTablet-minHeight);
     }
-  `,
+}
+`,
   maxWidth: css`
     @media (min-width: 768px) {
       max-width: var(--minTablet-maxWidth);
     }
-  `,
+}
+`,
   maxHeight: css`
     @media (min-width: 768px) {
       max-height: var(--minTablet-maxHeight);
     }
-  `,
+}
+`,
   aspectRatio: css`
     @media (min-width: 768px) {
       aspect-ratio: var(--minTablet-aspectRatio);
     }
-  `,
+}
+`,
   top: css`
     @media (min-width: 768px) {
       top: var(--minTablet-top);
     }
-  `,
+}
+`,
   bottom: css`
     @media (min-width: 768px) {
       bottom: var(--minTablet-bottom);
     }
-  `,
+}
+`,
   left: css`
     @media (min-width: 768px) {
       left: var(--minTablet-left);
     }
-  `,
+}
+`,
   right: css`
     @media (min-width: 768px) {
       right: var(--minTablet-right);
     }
-  `,
+}
+`,
   transform: css`
     @media (min-width: 768px) {
       transform: var(--minTablet-transform);
     }
-  `,
+}
+`,
   flexBasis: css`
     @media (min-width: 768px) {
       flex-basis: var(--minTablet-flexBasis);
     }
-  `,
+}
+`,
   flexShrink: css`
     @media (min-width: 768px) {
       flex-shrink: var(--minTablet-flexShrink);
     }
-  `,
+}
+`,
   flexGrow: css`
     @media (min-width: 768px) {
       flex-grow: var(--minTablet-flexGrow);
     }
-  `,
+}
+`,
   gridTemplateColumns: css`
     @media (min-width: 768px) {
       grid-template-columns: var(--minTablet-gridTemplateColumns);
     }
-  `,
+}
+`,
   gridTemplateRows: css`
     @media (min-width: 768px) {
       grid-template-rows: var(--minTablet-gridTemplateRows);
     }
-  `,
+}
+`,
   gridTemplateAreas: css`
     @media (min-width: 768px) {
       grid-template-areas: var(--minTablet-gridTemplateAreas);
     }
-  `,
+}
+`,
   gridTemplate: css`
     @media (min-width: 768px) {
       grid-template: var(--minTablet-gridTemplate);
     }
-  `,
+}
+`,
   gridAutoColumns: css`
     @media (min-width: 768px) {
       grid-auto-columns: var(--minTablet-gridAutoColumns);
     }
-  `,
+}
+`,
   gridAutoRows: css`
     @media (min-width: 768px) {
       grid-auto-rows: var(--minTablet-gridAutoRows);
     }
-  `,
+}
+`,
   gridAutoFlow: css`
     @media (min-width: 768px) {
       grid-auto-flow: var(--minTablet-gridAutoFlow);
     }
-  `,
+}
+`,
   grid: css`
     @media (min-width: 768px) {
       grid: var(--minTablet-grid);
     }
-  `,
+}
+`,
   gridRowStart: css`
     @media (min-width: 768px) {
       grid-row-start: var(--minTablet-gridRowStart);
     }
-  `,
+}
+`,
   gridColumnStart: css`
     @media (min-width: 768px) {
       grid-column-start: var(--minTablet-gridColumnStart);
     }
-  `,
+}
+`,
   gridRowEnd: css`
     @media (min-width: 768px) {
       grid-row-end: var(--minTablet-gridRowEnd);
     }
-  `,
+}
+`,
   gridColumnEnd: css`
     @media (min-width: 768px) {
       grid-column-end: var(--minTablet-gridColumnEnd);
     }
-  `,
+}
+`,
   gridRow: css`
     @media (min-width: 768px) {
       grid-row: var(--minTablet-gridRow);
     }
-  `,
+}
+`,
   gridColumn: css`
     @media (min-width: 768px) {
       grid-column: var(--minTablet-gridColumn);
     }
-  `,
+}
+`,
   gridArea: css`
     @media (min-width: 768px) {
       grid-area: var(--minTablet-gridArea);
     }
-  `,
+}
+`,
   opacity: css`
     @media (min-width: 768px) {
       opacity: var(--minTablet-opacity);
     }
-  `,
+}
+`,
 } as const;
 
 // TO DO: should we add values for currentcolor?
@@ -171,328 +202,392 @@ export const color: Record<keyof typeof vars.color, LinariaClassName> = {
     @media (min-width: 768px) {
       color: var(--color-textForeground);
     }
-  `,
+}
+`,
   textForegroundInverse: css`
     @media (min-width: 768px) {
       color: var(--color-textForegroundInverse);
     }
-  `,
+}
+`,
   textForegroundMuted: css`
     @media (min-width: 768px) {
       color: var(--color-textForegroundMuted);
     }
-  `,
+}
+`,
   textPrimary: css`
     @media (min-width: 768px) {
       color: var(--color-textPrimary);
     }
-  `,
+}
+`,
   textPositive: css`
     @media (min-width: 768px) {
       color: var(--color-textPositive);
     }
-  `,
+}
+`,
   textNegative: css`
     @media (min-width: 768px) {
       color: var(--color-textNegative);
     }
-  `,
+}
+`,
   textWarning: css`
     @media (min-width: 768px) {
       color: var(--color-textWarning);
     }
-  `,
+}
+`,
   // Background
   background: css`
     @media (min-width: 768px) {
       color: var(--color-background);
     }
-  `,
+}
+`,
   backgroundAlternate: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundAlternate);
     }
-  `,
+}
+`,
   backgroundInverse: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundInverse);
     }
-  `,
+}
+`,
   backgroundOverlay: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundOverlay);
     }
-  `,
+}
+`,
   backgroundPrimary: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPrimary);
     }
-  `,
+}
+`,
   backgroundPrimaryWash: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPrimaryWash);
     }
-  `,
+}
+`,
   backgroundSecondary: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundSecondary);
     }
-  `,
+}
+`,
   backgroundSecondaryWash: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundSecondaryWash);
     }
-  `,
+}
+`,
   backgroundNegative: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundNegative);
     }
-  `,
+}
+`,
   backgroundNegativeWash: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundNegativeWash);
     }
-  `,
+}
+`,
   backgroundPositive: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPositive);
     }
-  `,
+}
+`,
   backgroundPositiveWash: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPositiveWash);
     }
-  `,
+}
+`,
   backgroundWarning: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundWarning);
     }
-  `,
+}
+`,
   backgroundWarningWash: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundWarningWash);
     }
-  `,
+}
+`,
   currentColor: css`
     @media (min-width: 768px) {
       color: var(--color-currentColor);
     }
-  `,
+}
+`,
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPrimaryHover);
     }
-  `,
+}
+`,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPrimaryPressed);
     }
-  `,
+}
+`,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPrimaryDisabled);
     }
-  `,
+}
+`,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundSecondaryHover);
     }
-  `,
+}
+`,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundSecondaryPressed);
     }
-  `,
+}
+`,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundSecondaryDisabled);
     }
-  `,
+}
+`,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundNegativeHover);
     }
-  `,
+}
+`,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundNegativePressed);
     }
-  `,
+}
+`,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundNegativeDisabled);
     }
-  `,
+}
+`,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPositiveHover);
     }
-  `,
+}
+`,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPositivePressed);
     }
-  `,
+}
+`,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundPositiveDisabled);
     }
-  `,
+}
+`,
   // Line
   line: css`
     @media (min-width: 768px) {
       color: var(--color-line);
     }
-  `,
+}
+`,
   lineInverse: css`
     @media (min-width: 768px) {
       color: var(--color-lineInverse);
     }
-  `,
+}
+`,
   lineHeavy: css`
     @media (min-width: 768px) {
       color: var(--color-lineHeavy);
     }
-  `,
+}
+`,
   linePrimary: css`
     @media (min-width: 768px) {
       color: var(--color-linePrimary);
     }
-  `,
+}
+`,
   linePrimaryLight: css`
     @media (min-width: 768px) {
       color: var(--color-linePrimaryLight);
     }
-  `,
+}
+`,
   // Elevation
   backgroundElevation1: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundElevation1);
     }
-  `,
+}
+`,
   backgroundElevation2: css`
     @media (min-width: 768px) {
       color: var(--color-backgroundElevation2);
     }
-  `,
+}
+`,
   // Icon
   iconForeground: css`
     @media (min-width: 768px) {
       color: var(--color-iconForeground);
     }
-  `,
+}
+`,
   iconForegroundInverse: css`
     @media (min-width: 768px) {
       color: var(--color-iconForegroundInverse);
     }
-  `,
+}
+`,
   iconForegroundMuted: css`
     @media (min-width: 768px) {
       color: var(--color-iconForegroundMuted);
     }
-  `,
+}
+`,
   iconPrimary: css`
     @media (min-width: 768px) {
       color: var(--color-iconPrimary);
     }
-  `,
+}
+`,
   iconPositive: css`
     @media (min-width: 768px) {
       color: var(--color-iconPositive);
     }
-  `,
+}
+`,
   iconNegative: css`
     @media (min-width: 768px) {
       color: var(--color-iconNegative);
     }
-  `,
+}
+`,
   iconWarning: css`
     @media (min-width: 768px) {
       color: var(--color-iconWarning);
     }
-  `,
+}
+`,
   // Accent
   accentSubtleGreen: css`
     @media (min-width: 768px) {
       color: var(--color-accentSubtleGreen);
     }
-  `,
+}
+`,
   accentBoldGreen: css`
     @media (min-width: 768px) {
       color: var(--color-accentBoldGreen);
     }
-  `,
+}
+`,
   accentSubtleBlue: css`
     @media (min-width: 768px) {
       color: var(--color-accentSubtleBlue);
     }
-  `,
+}
+`,
   accentBoldBlue: css`
     @media (min-width: 768px) {
       color: var(--color-accentBoldBlue);
     }
-  `,
+}
+`,
   accentSubtlePurple: css`
     @media (min-width: 768px) {
       color: var(--color-accentSubtlePurple);
     }
-  `,
+}
+`,
   accentBoldPurple: css`
     @media (min-width: 768px) {
       color: var(--color-accentBoldPurple);
     }
-  `,
+}
+`,
   accentSubtleYellow: css`
     @media (min-width: 768px) {
       color: var(--color-accentSubtleYellow);
     }
-  `,
+}
+`,
   accentBoldYellow: css`
     @media (min-width: 768px) {
       color: var(--color-accentBoldYellow);
     }
-  `,
+}
+`,
   accentSubtleRed: css`
     @media (min-width: 768px) {
       color: var(--color-accentSubtleRed);
     }
-  `,
+}
+`,
   accentBoldRed: css`
     @media (min-width: 768px) {
       color: var(--color-accentBoldRed);
     }
-  `,
+}
+`,
   accentSubtleGray: css`
     @media (min-width: 768px) {
       color: var(--color-accentSubtleGray);
     }
-  `,
+}
+`,
   accentBoldGray: css`
     @media (min-width: 768px) {
       color: var(--color-accentBoldGray);
     }
-  `,
+}
+`,
   transparent: css`
     @media (min-width: 768px) {
       color: var(--color-transparent);
     }
-  `,
+}
+`,
   transparentHover: css`
     @media (min-width: 768px) {
       color: var(--color-transparentHover);
     }
-  `,
+}
+`,
   transparentPressed: css`
     @media (min-width: 768px) {
       color: var(--color-transparentPressed);
     }
-  `,
+}
+`,
   transparentDisabled: css`
     @media (min-width: 768px) {
       color: var(--color-transparentDisabled);
     }
-  `,
+}
+`,
 } as const;
 
 export const background: Record<keyof typeof vars.color, LinariaClassName> = {
@@ -501,328 +596,392 @@ export const background: Record<keyof typeof vars.color, LinariaClassName> = {
     @media (min-width: 768px) {
       background-color: var(--color-textForeground);
     }
-  `,
+}
+`,
   textForegroundInverse: css`
     @media (min-width: 768px) {
       background-color: var(--color-textForegroundInverse);
     }
-  `,
+}
+`,
   textForegroundMuted: css`
     @media (min-width: 768px) {
       background-color: var(--color-textForegroundMuted);
     }
-  `,
+}
+`,
   textPrimary: css`
     @media (min-width: 768px) {
       background-color: var(--color-textPrimary);
     }
-  `,
+}
+`,
   textPositive: css`
     @media (min-width: 768px) {
       background-color: var(--color-textPositive);
     }
-  `,
+}
+`,
   textNegative: css`
     @media (min-width: 768px) {
       background-color: var(--color-textNegative);
     }
-  `,
+}
+`,
   textWarning: css`
     @media (min-width: 768px) {
       background-color: var(--color-textWarning);
     }
-  `,
+}
+`,
   // Background
   background: css`
     @media (min-width: 768px) {
       background-color: var(--color-background);
     }
-  `,
+}
+`,
   backgroundAlternate: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundAlternate);
     }
-  `,
+}
+`,
   backgroundInverse: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundInverse);
     }
-  `,
+}
+`,
   backgroundOverlay: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundOverlay);
     }
-  `,
+}
+`,
   backgroundPrimary: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPrimary);
     }
-  `,
+}
+`,
   backgroundPrimaryWash: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPrimaryWash);
     }
-  `,
+}
+`,
   backgroundSecondary: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundSecondary);
     }
-  `,
+}
+`,
   backgroundSecondaryWash: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundSecondaryWash);
     }
-  `,
+}
+`,
   backgroundNegative: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundNegative);
     }
-  `,
+}
+`,
   backgroundNegativeWash: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundNegativeWash);
     }
-  `,
+}
+`,
   backgroundPositive: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPositive);
     }
-  `,
+}
+`,
   backgroundPositiveWash: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPositiveWash);
     }
-  `,
+}
+`,
   backgroundWarning: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundWarning);
     }
-  `,
+}
+`,
   backgroundWarningWash: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundWarningWash);
     }
-  `,
+}
+`,
   currentColor: css`
     @media (min-width: 768px) {
       background-color: var(--color-currentColor);
     }
-  `,
+}
+`,
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPrimaryHover);
     }
-  `,
+}
+`,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPrimaryPressed);
     }
-  `,
+}
+`,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPrimaryDisabled);
     }
-  `,
+}
+`,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundSecondaryHover);
     }
-  `,
+}
+`,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundSecondaryPressed);
     }
-  `,
+}
+`,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundSecondaryDisabled);
     }
-  `,
+}
+`,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundNegativeHover);
     }
-  `,
+}
+`,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundNegativePressed);
     }
-  `,
+}
+`,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundNegativeDisabled);
     }
-  `,
+}
+`,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPositiveHover);
     }
-  `,
+}
+`,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPositivePressed);
     }
-  `,
+}
+`,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundPositiveDisabled);
     }
-  `,
+}
+`,
   // Line
   line: css`
     @media (min-width: 768px) {
       background-color: var(--color-line);
     }
-  `,
+}
+`,
   lineInverse: css`
     @media (min-width: 768px) {
       background-color: var(--color-lineInverse);
     }
-  `,
+}
+`,
   lineHeavy: css`
     @media (min-width: 768px) {
       background-color: var(--color-lineHeavy);
     }
-  `,
+}
+`,
   linePrimary: css`
     @media (min-width: 768px) {
       background-color: var(--color-linePrimary);
     }
-  `,
+}
+`,
   linePrimaryLight: css`
     @media (min-width: 768px) {
       background-color: var(--color-linePrimaryLight);
     }
-  `,
+}
+`,
   // Elevation
   backgroundElevation1: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundElevation1);
     }
-  `,
+}
+`,
   backgroundElevation2: css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundElevation2);
     }
-  `,
+}
+`,
   // Icon
   iconForeground: css`
     @media (min-width: 768px) {
       background-color: var(--color-iconForeground);
     }
-  `,
+}
+`,
   iconForegroundInverse: css`
     @media (min-width: 768px) {
       background-color: var(--color-iconForegroundInverse);
     }
-  `,
+}
+`,
   iconForegroundMuted: css`
     @media (min-width: 768px) {
       background-color: var(--color-iconForegroundMuted);
     }
-  `,
+}
+`,
   iconPrimary: css`
     @media (min-width: 768px) {
       background-color: var(--color-iconPrimary);
     }
-  `,
+}
+`,
   iconPositive: css`
     @media (min-width: 768px) {
       background-color: var(--color-iconPositive);
     }
-  `,
+}
+`,
   iconNegative: css`
     @media (min-width: 768px) {
       background-color: var(--color-iconNegative);
     }
-  `,
+}
+`,
   iconWarning: css`
     @media (min-width: 768px) {
       background-color: var(--color-iconWarning);
     }
-  `,
+}
+`,
   // Accent
   accentSubtleGreen: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentSubtleGreen);
     }
-  `,
+}
+`,
   accentBoldGreen: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentBoldGreen);
     }
-  `,
+}
+`,
   accentSubtleBlue: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentSubtleBlue);
     }
-  `,
+}
+`,
   accentBoldBlue: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentBoldBlue);
     }
-  `,
+}
+`,
   accentSubtlePurple: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentSubtlePurple);
     }
-  `,
+}
+`,
   accentBoldPurple: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentBoldPurple);
     }
-  `,
+}
+`,
   accentSubtleYellow: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentSubtleYellow);
     }
-  `,
+}
+`,
   accentBoldYellow: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentBoldYellow);
     }
-  `,
+}
+`,
   accentSubtleRed: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentSubtleRed);
     }
-  `,
+}
+`,
   accentBoldRed: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentBoldRed);
     }
-  `,
+}
+`,
   accentSubtleGray: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentSubtleGray);
     }
-  `,
+}
+`,
   accentBoldGray: css`
     @media (min-width: 768px) {
       background-color: var(--color-accentBoldGray);
     }
-  `,
+}
+`,
   transparent: css`
     @media (min-width: 768px) {
       background-color: var(--color-transparent);
     }
-  `,
+}
+`,
   transparentHover: css`
     @media (min-width: 768px) {
       background-color: var(--color-transparentHover);
     }
-  `,
+}
+`,
   transparentPressed: css`
     @media (min-width: 768px) {
       background-color: var(--color-transparentPressed);
     }
-  `,
+}
+`,
   transparentDisabled: css`
     @media (min-width: 768px) {
       background-color: var(--color-transparentDisabled);
     }
-  `,
+}
+`,
 } as const;
 
 export const borderColor: Record<keyof typeof vars.color, LinariaClassName> = {
@@ -832,391 +991,455 @@ export const borderColor: Record<keyof typeof vars.color, LinariaClassName> = {
       border-style: solid;
       border-color: var(--color-textForeground);
     }
-  `,
+}
+`,
   textForegroundInverse: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-textForegroundInverse);
     }
-  `,
+}
+`,
   textForegroundMuted: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-textForegroundMuted);
     }
-  `,
+}
+`,
   textPrimary: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-textPrimary);
     }
-  `,
+}
+`,
   textPositive: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-textPositive);
     }
-  `,
+}
+`,
   textNegative: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-textNegative);
     }
-  `,
+}
+`,
   textWarning: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-textWarning);
     }
-  `,
+}
+`,
   // Background
   background: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-background);
     }
-  `,
+}
+`,
   backgroundAlternate: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundAlternate);
     }
-  `,
+}
+`,
   backgroundInverse: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundInverse);
     }
-  `,
+}
+`,
   backgroundOverlay: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundOverlay);
     }
-  `,
+}
+`,
   backgroundPrimary: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPrimary);
     }
-  `,
+}
+`,
   backgroundPrimaryWash: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPrimaryWash);
     }
-  `,
+}
+`,
   backgroundSecondary: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundSecondary);
     }
-  `,
+}
+`,
   backgroundSecondaryWash: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundSecondaryWash);
     }
-  `,
+}
+`,
   backgroundNegative: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundNegative);
     }
-  `,
+}
+`,
   backgroundNegativeWash: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundNegativeWash);
     }
-  `,
+}
+`,
   backgroundPositive: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPositive);
     }
-  `,
+}
+`,
   backgroundPositiveWash: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPositiveWash);
     }
-  `,
+}
+`,
   backgroundWarning: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundWarning);
     }
-  `,
+}
+`,
   backgroundWarningWash: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundWarningWash);
     }
-  `,
+}
+`,
   currentColor: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-currentColor);
     }
-  `,
+}
+`,
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPrimaryHover);
     }
-  `,
+}
+`,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPrimaryPressed);
     }
-  `,
+}
+`,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPrimaryDisabled);
     }
-  `,
+}
+`,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundSecondaryHover);
     }
-  `,
+}
+`,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundSecondaryPressed);
     }
-  `,
+}
+`,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundSecondaryDisabled);
     }
-  `,
+}
+`,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundNegativeHover);
     }
-  `,
+}
+`,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundNegativePressed);
     }
-  `,
+}
+`,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundNegativeDisabled);
     }
-  `,
+}
+`,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPositiveHover);
     }
-  `,
+}
+`,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPositivePressed);
     }
-  `,
+}
+`,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundPositiveDisabled);
     }
-  `,
+}
+`,
   // Line
   line: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-line);
     }
-  `,
+}
+`,
   lineInverse: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-lineInverse);
     }
-  `,
+}
+`,
   lineHeavy: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-lineHeavy);
     }
-  `,
+}
+`,
   linePrimary: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-linePrimary);
     }
-  `,
+}
+`,
   linePrimaryLight: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-linePrimaryLight);
     }
-  `,
+}
+`,
   // Elevation
   backgroundElevation1: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundElevation1);
     }
-  `,
+}
+`,
   backgroundElevation2: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-backgroundElevation2);
     }
-  `,
+}
+`,
   // Icon
   iconForeground: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-iconForeground);
     }
-  `,
+}
+`,
   iconForegroundInverse: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-iconForegroundInverse);
     }
-  `,
+}
+`,
   iconForegroundMuted: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-iconForegroundMuted);
     }
-  `,
+}
+`,
   iconPrimary: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-iconPrimary);
     }
-  `,
+}
+`,
   iconPositive: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-iconPositive);
     }
-  `,
+}
+`,
   iconNegative: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-iconNegative);
     }
-  `,
+}
+`,
   iconWarning: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-iconWarning);
     }
-  `,
+}
+`,
   // Accent
   accentSubtleGreen: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentSubtleGreen);
     }
-  `,
+}
+`,
   accentBoldGreen: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentBoldGreen);
     }
-  `,
+}
+`,
   accentSubtleBlue: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentSubtleBlue);
     }
-  `,
+}
+`,
   accentBoldBlue: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentBoldBlue);
     }
-  `,
+}
+`,
   accentSubtlePurple: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentSubtlePurple);
     }
-  `,
+}
+`,
   accentBoldPurple: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentBoldPurple);
     }
-  `,
+}
+`,
   accentSubtleYellow: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentSubtleYellow);
     }
-  `,
+}
+`,
   accentBoldYellow: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentBoldYellow);
     }
-  `,
+}
+`,
   accentSubtleRed: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentSubtleRed);
     }
-  `,
+}
+`,
   accentBoldRed: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentBoldRed);
     }
-  `,
+}
+`,
   accentSubtleGray: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentSubtleGray);
     }
-  `,
+}
+`,
   accentBoldGray: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-accentBoldGray);
     }
-  `,
+}
+`,
   transparent: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-transparent);
     }
-  `,
+}
+`,
   transparentHover: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-transparentHover);
     }
-  `,
+}
+`,
   transparentPressed: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-transparentPressed);
     }
-  `,
+}
+`,
   transparentDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
       border-color: var(--color-transparentDisabled);
     }
-  `,
+}
+`,
 } as const;
 
 export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
@@ -1227,49 +1450,56 @@ export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
         color: var(--color-textForeground);
       }
     }
-  `,
+}
+`,
   textForegroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-textForegroundInverse);
       }
     }
-  `,
+}
+`,
   textForegroundMuted: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-textForegroundMuted);
       }
     }
-  `,
+}
+`,
   textPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-textPrimary);
       }
     }
-  `,
+}
+`,
   textPositive: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-textPositive);
       }
     }
-  `,
+}
+`,
   textNegative: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-textNegative);
       }
     }
-  `,
+}
+`,
   textWarning: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-textWarning);
       }
     }
-  `,
+}
+`,
   // Background
   background: css`
     @media (min-width: 768px) {
@@ -1277,105 +1507,120 @@ export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
         color: var(--color-background);
       }
     }
-  `,
+}
+`,
   backgroundAlternate: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundAlternate);
       }
     }
-  `,
+}
+`,
   backgroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundInverse);
       }
     }
-  `,
+}
+`,
   backgroundOverlay: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundOverlay);
       }
     }
-  `,
+}
+`,
   backgroundPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPrimary);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryWash: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPrimaryWash);
       }
     }
-  `,
+}
+`,
   backgroundSecondary: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundSecondary);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryWash: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundSecondaryWash);
       }
     }
-  `,
+}
+`,
   backgroundNegative: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundNegative);
       }
     }
-  `,
+}
+`,
   backgroundNegativeWash: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundNegativeWash);
       }
     }
-  `,
+}
+`,
   backgroundPositive: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPositive);
       }
     }
-  `,
+}
+`,
   backgroundPositiveWash: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPositiveWash);
       }
     }
-  `,
+}
+`,
   backgroundWarning: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundWarning);
       }
     }
-  `,
+}
+`,
   backgroundWarningWash: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundWarningWash);
       }
     }
-  `,
+}
+`,
   currentColor: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-currentColor);
       }
     }
-  `,
+}
+`,
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
@@ -1383,84 +1628,96 @@ export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
         color: var(--color-backgroundPrimaryHover);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPrimaryPressed);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPrimaryDisabled);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundSecondaryHover);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundSecondaryPressed);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundSecondaryDisabled);
       }
     }
-  `,
+}
+`,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundNegativeHover);
       }
     }
-  `,
+}
+`,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundNegativePressed);
       }
     }
-  `,
+}
+`,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundNegativeDisabled);
       }
     }
-  `,
+}
+`,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPositiveHover);
       }
     }
-  `,
+}
+`,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPositivePressed);
       }
     }
-  `,
+}
+`,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundPositiveDisabled);
       }
     }
-  `,
+}
+`,
   // Line
   line: css`
     @media (min-width: 768px) {
@@ -1468,35 +1725,40 @@ export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
         color: var(--color-line);
       }
     }
-  `,
+}
+`,
   lineInverse: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-lineInverse);
       }
     }
-  `,
+}
+`,
   lineHeavy: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-lineHeavy);
       }
     }
-  `,
+}
+`,
   linePrimary: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-linePrimary);
       }
     }
-  `,
+}
+`,
   linePrimaryLight: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-linePrimaryLight);
       }
     }
-  `,
+}
+`,
   // Elevation
   backgroundElevation1: css`
     @media (min-width: 768px) {
@@ -1504,14 +1766,16 @@ export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
         color: var(--color-backgroundElevation1);
       }
     }
-  `,
+}
+`,
   backgroundElevation2: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-backgroundElevation2);
       }
     }
-  `,
+}
+`,
   // Icon
   iconForeground: css`
     @media (min-width: 768px) {
@@ -1519,49 +1783,56 @@ export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
         color: var(--color-iconForeground);
       }
     }
-  `,
+}
+`,
   iconForegroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-iconForegroundInverse);
       }
     }
-  `,
+}
+`,
   iconForegroundMuted: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-iconForegroundMuted);
       }
     }
-  `,
+}
+`,
   iconPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-iconPrimary);
       }
     }
-  `,
+}
+`,
   iconPositive: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-iconPositive);
       }
     }
-  `,
+}
+`,
   iconNegative: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-iconNegative);
       }
     }
-  `,
+}
+`,
   iconWarning: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-iconWarning);
       }
     }
-  `,
+}
+`,
   // Accent
   accentSubtleGreen: css`
     @media (min-width: 768px) {
@@ -1569,112 +1840,128 @@ export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
         color: var(--color-accentSubtleGreen);
       }
     }
-  `,
+}
+`,
   accentBoldGreen: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentBoldGreen);
       }
     }
-  `,
+}
+`,
   accentSubtleBlue: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentSubtleBlue);
       }
     }
-  `,
+}
+`,
   accentBoldBlue: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentBoldBlue);
       }
     }
-  `,
+}
+`,
   accentSubtlePurple: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentSubtlePurple);
       }
     }
-  `,
+}
+`,
   accentBoldPurple: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentBoldPurple);
       }
     }
-  `,
+}
+`,
   accentSubtleYellow: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentSubtleYellow);
       }
     }
-  `,
+}
+`,
   accentBoldYellow: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentBoldYellow);
       }
     }
-  `,
+}
+`,
   accentSubtleRed: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentSubtleRed);
       }
     }
-  `,
+}
+`,
   accentBoldRed: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentBoldRed);
       }
     }
-  `,
+}
+`,
   accentSubtleGray: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentSubtleGray);
       }
     }
-  `,
+}
+`,
   accentBoldGray: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-accentBoldGray);
       }
     }
-  `,
+}
+`,
   transparent: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-transparent);
       }
     }
-  `,
+}
+`,
   transparentHover: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-transparentHover);
       }
     }
-  `,
+}
+`,
   transparentPressed: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-transparentPressed);
       }
     }
-  `,
+}
+`,
   transparentDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         color: var(--color-transparentDisabled);
       }
     }
-  `,
+}
+`,
 } as const;
 
 export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> = {
@@ -1685,49 +1972,56 @@ export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> 
         background-color: var(--color-textForeground);
       }
     }
-  `,
+}
+`,
   textForegroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-textForegroundInverse);
       }
     }
-  `,
+}
+`,
   textForegroundMuted: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-textForegroundMuted);
       }
     }
-  `,
+}
+`,
   textPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-textPrimary);
       }
     }
-  `,
+}
+`,
   textPositive: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-textPositive);
       }
     }
-  `,
+}
+`,
   textNegative: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-textNegative);
       }
     }
-  `,
+}
+`,
   textWarning: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-textWarning);
       }
     }
-  `,
+}
+`,
   // Background
   background: css`
     @media (min-width: 768px) {
@@ -1735,105 +2029,120 @@ export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> 
         background-color: var(--color-background);
       }
     }
-  `,
+}
+`,
   backgroundAlternate: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundAlternate);
       }
     }
-  `,
+}
+`,
   backgroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundInverse);
       }
     }
-  `,
+}
+`,
   backgroundOverlay: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundOverlay);
       }
     }
-  `,
+}
+`,
   backgroundPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPrimary);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryWash: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPrimaryWash);
       }
     }
-  `,
+}
+`,
   backgroundSecondary: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundSecondary);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryWash: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundSecondaryWash);
       }
     }
-  `,
+}
+`,
   backgroundNegative: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundNegative);
       }
     }
-  `,
+}
+`,
   backgroundNegativeWash: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundNegativeWash);
       }
     }
-  `,
+}
+`,
   backgroundPositive: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPositive);
       }
     }
-  `,
+}
+`,
   backgroundPositiveWash: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPositiveWash);
       }
     }
-  `,
+}
+`,
   backgroundWarning: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundWarning);
       }
     }
-  `,
+}
+`,
   backgroundWarningWash: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundWarningWash);
       }
     }
-  `,
+}
+`,
   currentColor: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-currentColor);
       }
     }
-  `,
+}
+`,
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
@@ -1841,84 +2150,96 @@ export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> 
         background-color: var(--color-backgroundPrimaryHover);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPrimaryPressed);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPrimaryDisabled);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundSecondaryHover);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundSecondaryPressed);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundSecondaryDisabled);
       }
     }
-  `,
+}
+`,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundNegativeHover);
       }
     }
-  `,
+}
+`,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundNegativePressed);
       }
     }
-  `,
+}
+`,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundNegativeDisabled);
       }
     }
-  `,
+}
+`,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPositiveHover);
       }
     }
-  `,
+}
+`,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPositivePressed);
       }
     }
-  `,
+}
+`,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundPositiveDisabled);
       }
     }
-  `,
+}
+`,
   // Line
   line: css`
     @media (min-width: 768px) {
@@ -1926,35 +2247,40 @@ export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> 
         background-color: var(--color-line);
       }
     }
-  `,
+}
+`,
   lineInverse: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-lineInverse);
       }
     }
-  `,
+}
+`,
   lineHeavy: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-lineHeavy);
       }
     }
-  `,
+}
+`,
   linePrimary: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-linePrimary);
       }
     }
-  `,
+}
+`,
   linePrimaryLight: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-linePrimaryLight);
       }
     }
-  `,
+}
+`,
   // Elevation
   backgroundElevation1: css`
     @media (min-width: 768px) {
@@ -1962,14 +2288,16 @@ export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> 
         background-color: var(--color-backgroundElevation1);
       }
     }
-  `,
+}
+`,
   backgroundElevation2: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-backgroundElevation2);
       }
     }
-  `,
+}
+`,
   // Icon
   iconForeground: css`
     @media (min-width: 768px) {
@@ -1977,49 +2305,56 @@ export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> 
         background-color: var(--color-iconForeground);
       }
     }
-  `,
+}
+`,
   iconForegroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-iconForegroundInverse);
       }
     }
-  `,
+}
+`,
   iconForegroundMuted: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-iconForegroundMuted);
       }
     }
-  `,
+}
+`,
   iconPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-iconPrimary);
       }
     }
-  `,
+}
+`,
   iconPositive: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-iconPositive);
       }
     }
-  `,
+}
+`,
   iconNegative: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-iconNegative);
       }
     }
-  `,
+}
+`,
   iconWarning: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-iconWarning);
       }
     }
-  `,
+}
+`,
   // Accent
   accentSubtleGreen: css`
     @media (min-width: 768px) {
@@ -2027,112 +2362,128 @@ export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> 
         background-color: var(--color-accentSubtleGreen);
       }
     }
-  `,
+}
+`,
   accentBoldGreen: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentBoldGreen);
       }
     }
-  `,
+}
+`,
   accentSubtleBlue: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentSubtleBlue);
       }
     }
-  `,
+}
+`,
   accentBoldBlue: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentBoldBlue);
       }
     }
-  `,
+}
+`,
   accentSubtlePurple: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentSubtlePurple);
       }
     }
-  `,
+}
+`,
   accentBoldPurple: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentBoldPurple);
       }
     }
-  `,
+}
+`,
   accentSubtleYellow: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentSubtleYellow);
       }
     }
-  `,
+}
+`,
   accentBoldYellow: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentBoldYellow);
       }
     }
-  `,
+}
+`,
   accentSubtleRed: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentSubtleRed);
       }
     }
-  `,
+}
+`,
   accentBoldRed: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentBoldRed);
       }
     }
-  `,
+}
+`,
   accentSubtleGray: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentSubtleGray);
       }
     }
-  `,
+}
+`,
   accentBoldGray: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-accentBoldGray);
       }
     }
-  `,
+}
+`,
   transparent: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-transparent);
       }
     }
-  `,
+}
+`,
   transparentHover: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-transparentHover);
       }
     }
-  `,
+}
+`,
   transparentPressed: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-transparentPressed);
       }
     }
-  `,
+}
+`,
   transparentDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         background-color: var(--color-transparentDisabled);
       }
     }
-  `,
+}
+`,
 } as const;
 
 export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName> = {
@@ -2143,49 +2494,56 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
         border-color: var(--color-textForeground);
       }
     }
-  `,
+}
+`,
   textForegroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-textForegroundInverse);
       }
     }
-  `,
+}
+`,
   textForegroundMuted: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-textForegroundMuted);
       }
     }
-  `,
+}
+`,
   textPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-textPrimary);
       }
     }
-  `,
+}
+`,
   textPositive: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-textPositive);
       }
     }
-  `,
+}
+`,
   textNegative: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-textNegative);
       }
     }
-  `,
+}
+`,
   textWarning: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-textWarning);
       }
     }
-  `,
+}
+`,
   // Background
   background: css`
     @media (min-width: 768px) {
@@ -2193,105 +2551,120 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
         border-color: var(--color-background);
       }
     }
-  `,
+}
+`,
   backgroundAlternate: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundAlternate);
       }
     }
-  `,
+}
+`,
   backgroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundInverse);
       }
     }
-  `,
+}
+`,
   backgroundOverlay: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundOverlay);
       }
     }
-  `,
+}
+`,
   backgroundPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPrimary);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryWash: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPrimaryWash);
       }
     }
-  `,
+}
+`,
   backgroundSecondary: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundSecondary);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryWash: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundSecondaryWash);
       }
     }
-  `,
+}
+`,
   backgroundNegative: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundNegative);
       }
     }
-  `,
+}
+`,
   backgroundNegativeWash: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundNegativeWash);
       }
     }
-  `,
+}
+`,
   backgroundPositive: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPositive);
       }
     }
-  `,
+}
+`,
   backgroundPositiveWash: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPositiveWash);
       }
     }
-  `,
+}
+`,
   backgroundWarning: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundWarning);
       }
     }
-  `,
+}
+`,
   backgroundWarningWash: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundWarningWash);
       }
     }
-  `,
+}
+`,
   currentColor: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-currentColor);
       }
     }
-  `,
+}
+`,
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
@@ -2299,84 +2672,96 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
         border-color: var(--color-backgroundPrimaryHover);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPrimaryPressed);
       }
     }
-  `,
+}
+`,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPrimaryDisabled);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundSecondaryHover);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundSecondaryPressed);
       }
     }
-  `,
+}
+`,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundSecondaryDisabled);
       }
     }
-  `,
+}
+`,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundNegativeHover);
       }
     }
-  `,
+}
+`,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundNegativePressed);
       }
     }
-  `,
+}
+`,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundNegativeDisabled);
       }
     }
-  `,
+}
+`,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPositiveHover);
       }
     }
-  `,
+}
+`,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPositivePressed);
       }
     }
-  `,
+}
+`,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundPositiveDisabled);
       }
     }
-  `,
+}
+`,
   // Line
   line: css`
     @media (min-width: 768px) {
@@ -2384,35 +2769,40 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
         border-color: var(--color-line);
       }
     }
-  `,
+}
+`,
   lineInverse: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-lineInverse);
       }
     }
-  `,
+}
+`,
   lineHeavy: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-lineHeavy);
       }
     }
-  `,
+}
+`,
   linePrimary: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-linePrimary);
       }
     }
-  `,
+}
+`,
   linePrimaryLight: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-linePrimaryLight);
       }
     }
-  `,
+}
+`,
   // Elevation
   backgroundElevation1: css`
     @media (min-width: 768px) {
@@ -2420,14 +2810,16 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
         border-color: var(--color-backgroundElevation1);
       }
     }
-  `,
+}
+`,
   backgroundElevation2: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-backgroundElevation2);
       }
     }
-  `,
+}
+`,
   // Icon
   iconForeground: css`
     @media (min-width: 768px) {
@@ -2435,49 +2827,56 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
         border-color: var(--color-iconForeground);
       }
     }
-  `,
+}
+`,
   iconForegroundInverse: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-iconForegroundInverse);
       }
     }
-  `,
+}
+`,
   iconForegroundMuted: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-iconForegroundMuted);
       }
     }
-  `,
+}
+`,
   iconPrimary: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-iconPrimary);
       }
     }
-  `,
+}
+`,
   iconPositive: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-iconPositive);
       }
     }
-  `,
+}
+`,
   iconNegative: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-iconNegative);
       }
     }
-  `,
+}
+`,
   iconWarning: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-iconWarning);
       }
     }
-  `,
+}
+`,
   // Accent
   accentSubtleGreen: css`
     @media (min-width: 768px) {
@@ -2485,168 +2884,668 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
         border-color: var(--color-accentSubtleGreen);
       }
     }
-  `,
+}
+`,
   accentBoldGreen: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentBoldGreen);
       }
     }
-  `,
+}
+`,
   accentSubtleBlue: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentSubtleBlue);
       }
     }
-  `,
+}
+`,
   accentBoldBlue: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentBoldBlue);
       }
     }
-  `,
+}
+`,
   accentSubtlePurple: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentSubtlePurple);
       }
     }
-  `,
+}
+`,
   accentBoldPurple: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentBoldPurple);
       }
     }
-  `,
+}
+`,
   accentSubtleYellow: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentSubtleYellow);
       }
     }
-  `,
+}
+`,
   accentBoldYellow: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentBoldYellow);
       }
     }
-  `,
+}
+`,
   accentSubtleRed: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentSubtleRed);
       }
     }
-  `,
+}
+`,
   accentBoldRed: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentBoldRed);
       }
     }
-  `,
+}
+`,
   accentSubtleGray: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentSubtleGray);
       }
     }
-  `,
+}
+`,
   accentBoldGray: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-accentBoldGray);
       }
     }
-  `,
+}
+`,
   transparent: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-transparent);
       }
     }
-  `,
+}
+`,
   transparentHover: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-transparentHover);
       }
     }
-  `,
+}
+`,
   transparentPressed: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-transparentPressed);
       }
     }
-  `,
+}
+`,
   transparentDisabled: css`
     @media (min-width: 768px) {
       &:hover {
         border-color: var(--color-transparentDisabled);
       }
     }
-  `,
+}
+`,
 } as const;
 
 export const borderWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
+  '0': css`
     @media (min-width: 768px) {
-      border-width: var(--borderWidth-none);
+      border-width: var(--borderWidth-0);
     }
-  `,
-  thin: css`
+}
+`,
+  '100': css`
     @media (min-width: 768px) {
-      border-width: var(--borderWidth-thin);
+      border-width: var(--borderWidth-100);
     }
-  `,
-  thick: css`
+}
+`,
+  '200': css`
     @media (min-width: 768px) {
-      border-width: var(--borderWidth-thick);
+      border-width: var(--borderWidth-200);
     }
-  `,
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-width: var(--borderWidth-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-width: var(--borderWidth-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-width: var(--borderWidth-500);
+    }
+}
+`,
+} as const;
+
+export const borderTopWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      border-top-width: var(--borderWidth-0);
+    }
+}
+`,
+  '100': css`
+    @media (min-width: 768px) {
+      border-top-width: var(--borderWidth-100);
+    }
+}
+`,
+  '200': css`
+    @media (min-width: 768px) {
+      border-top-width: var(--borderWidth-200);
+    }
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-top-width: var(--borderWidth-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-top-width: var(--borderWidth-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-top-width: var(--borderWidth-500);
+    }
+}
+`,
+} as const;
+
+export const borderRightWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      border-right-width: var(--borderWidth-0);
+    }
+}
+`,
+  '100': css`
+    @media (min-width: 768px) {
+      border-right-width: var(--borderWidth-100);
+    }
+}
+`,
+  '200': css`
+    @media (min-width: 768px) {
+      border-right-width: var(--borderWidth-200);
+    }
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-right-width: var(--borderWidth-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-right-width: var(--borderWidth-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-right-width: var(--borderWidth-500);
+    }
+}
+`,
+} as const;
+
+export const borderBottomWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      border-bottom-width: var(--borderWidth-0);
+    }
+}
+`,
+  '100': css`
+    @media (min-width: 768px) {
+      border-bottom-width: var(--borderWidth-100);
+    }
+}
+`,
+  '200': css`
+    @media (min-width: 768px) {
+      border-bottom-width: var(--borderWidth-200);
+    }
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-bottom-width: var(--borderWidth-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-bottom-width: var(--borderWidth-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-bottom-width: var(--borderWidth-500);
+    }
+}
+`,
+} as const;
+
+export const borderLeftWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      border-left-width: var(--borderWidth-0);
+    }
+}
+`,
+  '100': css`
+    @media (min-width: 768px) {
+      border-left-width: var(--borderWidth-100);
+    }
+}
+`,
+  '200': css`
+    @media (min-width: 768px) {
+      border-left-width: var(--borderWidth-200);
+    }
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-left-width: var(--borderWidth-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-left-width: var(--borderWidth-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-left-width: var(--borderWidth-500);
+    }
+}
+`,
 } as const;
 
 export const borderRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
+  '0': css`
     @media (min-width: 768px) {
-      border-radius: var(--borderRadius-none);
+      border-radius: var(--borderRadius-0);
     }
-  `,
-  roundedSmall: css`
+}
+`,
+  '100': css`
     @media (min-width: 768px) {
-      border-radius: var(--borderRadius-roundedSmall);
+      border-radius: var(--borderRadius-100);
     }
-  `,
-  rounded: css`
+}
+`,
+  '200': css`
     @media (min-width: 768px) {
-      border-radius: var(--borderRadius-rounded);
+      border-radius: var(--borderRadius-200);
     }
-  `,
-  roundedMedium: css`
+}
+`,
+  '300': css`
     @media (min-width: 768px) {
-      border-radius: var(--borderRadius-roundedMedium);
+      border-radius: var(--borderRadius-300);
     }
-  `,
-  roundedLarge: css`
+}
+`,
+  '400': css`
     @media (min-width: 768px) {
-      border-radius: var(--borderRadius-roundedLarge);
+      border-radius: var(--borderRadius-400);
     }
-  `,
-  roundedXLarge: css`
+}
+`,
+  '500': css`
     @media (min-width: 768px) {
-      border-radius: var(--borderRadius-roundedXLarge);
+      border-radius: var(--borderRadius-500);
     }
-  `,
-  roundedFull: css`
+}
+`,
+  '600': css`
     @media (min-width: 768px) {
-      border-radius: var(--borderRadius-roundedFull);
+      border-radius: var(--borderRadius-600);
     }
-  `,
+}
+`,
+  '700': css`
+    @media (min-width: 768px) {
+      border-radius: var(--borderRadius-700);
+    }
+}
+`,
+  '800': css`
+    @media (min-width: 768px) {
+      border-radius: var(--borderRadius-800);
+    }
+}
+`,
+  '900': css`
+    @media (min-width: 768px) {
+      border-radius: var(--borderRadius-900);
+    }
+}
+`,
+  '1000': css`
+    @media (min-width: 768px) {
+      border-radius: var(--borderRadius-1000);
+    }
+}
+`,
+} as const;
+
+export const borderTopLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-0);
+    }
+}
+`,
+  '100': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-100);
+    }
+}
+`,
+  '200': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-200);
+    }
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-500);
+    }
+}
+`,
+  '600': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-600);
+    }
+}
+`,
+  '700': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-700);
+    }
+}
+`,
+  '800': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-800);
+    }
+}
+`,
+  '900': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-900);
+    }
+}
+`,
+  '1000': css`
+    @media (min-width: 768px) {
+      border-top-left-radius: var(--borderRadius-1000);
+    }
+}
+`,
+} as const;
+
+export const borderTopRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-0);
+    }
+}
+`,
+  '100': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-100);
+    }
+}
+`,
+  '200': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-200);
+    }
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-500);
+    }
+}
+`,
+  '600': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-600);
+    }
+}
+`,
+  '700': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-700);
+    }
+}
+`,
+  '800': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-800);
+    }
+}
+`,
+  '900': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-900);
+    }
+}
+`,
+  '1000': css`
+    @media (min-width: 768px) {
+      border-top-right-radius: var(--borderRadius-1000);
+    }
+}
+`,
+} as const;
+
+export const borderBottomLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-0);
+    }
+}
+`,
+  '100': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-100);
+    }
+}
+`,
+  '200': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-200);
+    }
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-500);
+    }
+}
+`,
+  '600': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-600);
+    }
+}
+`,
+  '700': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-700);
+    }
+}
+`,
+  '800': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-800);
+    }
+}
+`,
+  '900': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-900);
+    }
+}
+`,
+  '1000': css`
+    @media (min-width: 768px) {
+      border-bottom-left-radius: var(--borderRadius-1000);
+    }
+}
+`,
+} as const;
+
+export const borderBottomRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-0);
+    }
+}
+`,
+  '100': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-100);
+    }
+}
+`,
+  '200': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-200);
+    }
+}
+`,
+  '300': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-300);
+    }
+}
+`,
+  '400': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-400);
+    }
+}
+`,
+  '500': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-500);
+    }
+}
+`,
+  '600': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-600);
+    }
+}
+`,
+  '700': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-700);
+    }
+}
+`,
+  '800': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-800);
+    }
+}
+`,
+  '900': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-900);
+    }
+}
+`,
+  '1000': css`
+    @media (min-width: 768px) {
+      border-bottom-right-radius: var(--borderRadius-1000);
+    }
+}
+`,
 } as const;
 
 export const fontFamily: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
@@ -2654,67 +3553,80 @@ export const fontFamily: Record<keyof typeof vars.fontFamily, LinariaClassName> 
     @media (min-width: 768px) {
       font-family: var(--fontFamily-display1);
     }
-  `,
+}
+`,
   display2: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-display2);
     }
-  `,
+}
+`,
   display3: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-display3);
     }
-  `,
+}
+`,
   title1: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-title1);
     }
-  `,
+}
+`,
   title2: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-title2);
     }
-  `,
+}
+`,
   title3: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-title3);
     }
-  `,
+}
+`,
   title4: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-title4);
     }
-  `,
+}
+`,
   headline: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-headline);
     }
-  `,
+}
+`,
   body: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-body);
     }
-  `,
+}
+`,
   label1: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-label1);
     }
-  `,
+}
+`,
   label2: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-label2);
     }
-  `,
+}
+`,
   caption: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-caption);
     }
-  `,
+}
+`,
   legal: css`
     @media (min-width: 768px) {
       font-family: var(--fontFamily-legal);
     }
-  `,
+}
+`,
 } as const;
 
 export const fontSize: Record<keyof typeof vars.fontSize, LinariaClassName> = {
@@ -2722,67 +3634,80 @@ export const fontSize: Record<keyof typeof vars.fontSize, LinariaClassName> = {
     @media (min-width: 768px) {
       font-size: var(--fontSize-display1);
     }
-  `,
+}
+`,
   display2: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-display2);
     }
-  `,
+}
+`,
   display3: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-display3);
     }
-  `,
+}
+`,
   title1: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-title1);
     }
-  `,
+}
+`,
   title2: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-title2);
     }
-  `,
+}
+`,
   title3: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-title3);
     }
-  `,
+}
+`,
   title4: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-title4);
     }
-  `,
+}
+`,
   headline: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-headline);
     }
-  `,
+}
+`,
   body: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-body);
     }
-  `,
+}
+`,
   label1: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-label1);
     }
-  `,
+}
+`,
   label2: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-label2);
     }
-  `,
+}
+`,
   caption: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-caption);
     }
-  `,
+}
+`,
   legal: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-legal);
     }
-  `,
+}
+`,
 } as const;
 
 export const fontWeight: Record<keyof typeof vars.fontWeight, LinariaClassName> = {
@@ -2790,67 +3715,80 @@ export const fontWeight: Record<keyof typeof vars.fontWeight, LinariaClassName> 
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-display1);
     }
-  `,
+}
+`,
   display2: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-display2);
     }
-  `,
+}
+`,
   display3: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-display3);
     }
-  `,
+}
+`,
   title1: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-title1);
     }
-  `,
+}
+`,
   title2: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-title2);
     }
-  `,
+}
+`,
   title3: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-title3);
     }
-  `,
+}
+`,
   title4: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-title4);
     }
-  `,
+}
+`,
   headline: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-headline);
     }
-  `,
+}
+`,
   body: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-body);
     }
-  `,
+}
+`,
   label1: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-label1);
     }
-  `,
+}
+`,
   label2: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-label2);
     }
-  `,
+}
+`,
   caption: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-caption);
     }
-  `,
+}
+`,
   legal: css`
     @media (min-width: 768px) {
       font-weight: var(--fontWeight-legal);
     }
-  `,
+}
+`,
 } as const;
 
 export const lineHeight: Record<keyof typeof vars.lineHeight, LinariaClassName> = {
@@ -2858,67 +3796,80 @@ export const lineHeight: Record<keyof typeof vars.lineHeight, LinariaClassName> 
     @media (min-width: 768px) {
       line-height: var(--lineHeight-display1);
     }
-  `,
+}
+`,
   display2: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-display2);
     }
-  `,
+}
+`,
   display3: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-display3);
     }
-  `,
+}
+`,
   title1: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-title1);
     }
-  `,
+}
+`,
   title2: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-title2);
     }
-  `,
+}
+`,
   title3: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-title3);
     }
-  `,
+}
+`,
   title4: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-title4);
     }
-  `,
+}
+`,
   headline: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-headline);
     }
-  `,
+}
+`,
   body: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-body);
     }
-  `,
+}
+`,
   label1: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-label1);
     }
-  `,
+}
+`,
   label2: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-label2);
     }
-  `,
+}
+`,
   caption: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-caption);
     }
-  `,
+}
+`,
   legal: css`
     @media (min-width: 768px) {
       line-height: var(--lineHeight-legal);
     }
-  `,
+}
+`,
 } as const;
 
 export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
@@ -2929,7 +3880,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-display1);
       font-family: var(--fontFamily-display1);
     }
-  `,
+}
+`,
   display2: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-display2);
@@ -2937,7 +3889,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-display2);
       font-family: var(--fontFamily-display2);
     }
-  `,
+}
+`,
   display3: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-display3);
@@ -2945,7 +3898,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-display3);
       font-family: var(--fontFamily-display3);
     }
-  `,
+}
+`,
   title1: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-title1);
@@ -2953,7 +3907,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-title1);
       font-family: var(--fontFamily-title1);
     }
-  `,
+}
+`,
   title2: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-title2);
@@ -2961,7 +3916,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-title2);
       font-family: var(--fontFamily-title2);
     }
-  `,
+}
+`,
   title3: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-title3);
@@ -2969,7 +3925,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-title3);
       font-family: var(--fontFamily-title3);
     }
-  `,
+}
+`,
   title4: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-title4);
@@ -2977,7 +3934,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-title4);
       font-family: var(--fontFamily-title4);
     }
-  `,
+}
+`,
   headline: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-headline);
@@ -2985,7 +3943,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-headline);
       font-family: var(--fontFamily-headline);
     }
-  `,
+}
+`,
   body: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-body);
@@ -2993,7 +3952,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-body);
       font-family: var(--fontFamily-body);
     }
-  `,
+}
+`,
   label1: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-label1);
@@ -3001,7 +3961,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-label1);
       font-family: var(--fontFamily-label1);
     }
-  `,
+}
+`,
   label2: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-label2);
@@ -3009,7 +3970,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-label2);
       font-family: var(--fontFamily-label2);
     }
-  `,
+}
+`,
   caption: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-caption);
@@ -3017,7 +3979,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-caption);
       font-family: var(--fontFamily-caption);
     }
-  `,
+}
+`,
   legal: css`
     @media (min-width: 768px) {
       font-size: var(--fontSize-legal);
@@ -3025,7 +3988,8 @@ export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
       font-weight: var(--fontWeight-legal);
       font-family: var(--fontFamily-legal);
     }
-  `,
+}
+`,
 } as const;
 
 export const textDecoration = {
@@ -3033,32 +3997,38 @@ export const textDecoration = {
     @media (min-width: 768px) {
       text-decoration: none;
     }
-  `,
+}
+`,
   underline: css`
     @media (min-width: 768px) {
       text-decoration: underline;
     }
-  `,
+}
+`,
   overline: css`
     @media (min-width: 768px) {
       text-decoration: overline;
     }
-  `,
+}
+`,
   'line-through': css`
     @media (min-width: 768px) {
       text-decoration: line-through;
     }
-  `,
+}
+`,
   'underline overline': css`
     @media (min-width: 768px) {
       text-decoration: underline overline;
     }
-  `,
+}
+`,
   'underline double': css`
     @media (min-width: 768px) {
       text-decoration: underline double;
     }
-  `,
+}
+`,
 } as const;
 
 export const textDecorationThickness = {
@@ -3066,27 +4036,32 @@ export const textDecorationThickness = {
     @media (min-width: 768px) {
       text-decoration-thickness: auto;
     }
-  `,
+}
+`,
   'from-font': css`
     @media (min-width: 768px) {
       text-decoration-thickness: from-font;
     }
-  `,
+}
+`,
   thin: css`
     @media (min-width: 768px) {
       text-decoration-thickness: thin;
     }
-  `,
+}
+`,
   medium: css`
     @media (min-width: 768px) {
       text-decoration-thickness: medium;
     }
-  `,
+}
+`,
   thick: css`
     @media (min-width: 768px) {
       text-decoration-thickness: thick;
     }
-  `,
+}
+`,
 } as const;
 
 export const textDecorationColor: Record<keyof typeof vars.color, LinariaClassName> = {
@@ -3095,328 +4070,392 @@ export const textDecorationColor: Record<keyof typeof vars.color, LinariaClassNa
     @media (min-width: 768px) {
       text-decoration-color: var(--color-textForeground);
     }
-  `,
+}
+`,
   textForegroundInverse: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-textForegroundInverse);
     }
-  `,
+}
+`,
   textForegroundMuted: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-textForegroundMuted);
     }
-  `,
+}
+`,
   textPrimary: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-textPrimary);
     }
-  `,
+}
+`,
   textPositive: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-textPositive);
     }
-  `,
+}
+`,
   textNegative: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-textNegative);
     }
-  `,
+}
+`,
   textWarning: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-textWarning);
     }
-  `,
+}
+`,
   // Background
   background: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-background);
     }
-  `,
+}
+`,
   backgroundAlternate: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundAlternate);
     }
-  `,
+}
+`,
   backgroundInverse: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundInverse);
     }
-  `,
+}
+`,
   backgroundOverlay: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundOverlay);
     }
-  `,
+}
+`,
   backgroundPrimary: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPrimary);
     }
-  `,
+}
+`,
   backgroundPrimaryWash: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPrimaryWash);
     }
-  `,
+}
+`,
   backgroundSecondary: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundSecondary);
     }
-  `,
+}
+`,
   backgroundSecondaryWash: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundSecondaryWash);
     }
-  `,
+}
+`,
   backgroundNegative: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundNegative);
     }
-  `,
+}
+`,
   backgroundNegativeWash: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundNegativeWash);
     }
-  `,
+}
+`,
   backgroundPositive: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPositive);
     }
-  `,
+}
+`,
   backgroundPositiveWash: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPositiveWash);
     }
-  `,
+}
+`,
   backgroundWarning: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundWarning);
     }
-  `,
+}
+`,
   backgroundWarningWash: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundWarningWash);
     }
-  `,
+}
+`,
   currentColor: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-currentColor);
     }
-  `,
+}
+`,
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPrimaryHover);
     }
-  `,
+}
+`,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPrimaryPressed);
     }
-  `,
+}
+`,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPrimaryDisabled);
     }
-  `,
+}
+`,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundSecondaryHover);
     }
-  `,
+}
+`,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundSecondaryPressed);
     }
-  `,
+}
+`,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundSecondaryDisabled);
     }
-  `,
+}
+`,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundNegativeHover);
     }
-  `,
+}
+`,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundNegativePressed);
     }
-  `,
+}
+`,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundNegativeDisabled);
     }
-  `,
+}
+`,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPositiveHover);
     }
-  `,
+}
+`,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundNegativePressed);
     }
-  `,
+}
+`,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundPositiveDisabled);
     }
-  `,
+}
+`,
   // Line
   line: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-line);
     }
-  `,
+}
+`,
   lineInverse: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-lineInverse);
     }
-  `,
+}
+`,
   lineHeavy: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-lineHeavy);
     }
-  `,
+}
+`,
   linePrimary: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-linePrimary);
     }
-  `,
+}
+`,
   linePrimaryLight: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-linePrimaryLight);
     }
-  `,
+}
+`,
   // Elevation
   backgroundElevation1: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundElevation1);
     }
-  `,
+}
+`,
   backgroundElevation2: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-backgroundElevation2);
     }
-  `,
+}
+`,
   // Icon
   iconForeground: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-iconForeground);
     }
-  `,
+}
+`,
   iconForegroundInverse: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-iconForegroundInverse);
     }
-  `,
+}
+`,
   iconForegroundMuted: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-iconForegroundMuted);
     }
-  `,
+}
+`,
   iconPrimary: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-iconPrimary);
     }
-  `,
+}
+`,
   iconPositive: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-iconPositive);
     }
-  `,
+}
+`,
   iconNegative: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-iconNegative);
     }
-  `,
+}
+`,
   iconWarning: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-iconWarning);
     }
-  `,
+}
+`,
   // Accent
   accentSubtleGreen: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentSubtleGreen);
     }
-  `,
+}
+`,
   accentBoldGreen: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentBoldGreen);
     }
-  `,
+}
+`,
   accentSubtleBlue: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentSubtleBlue);
     }
-  `,
+}
+`,
   accentBoldBlue: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentBoldBlue);
     }
-  `,
+}
+`,
   accentSubtlePurple: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentSubtlePurple);
     }
-  `,
+}
+`,
   accentBoldPurple: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentBoldPurple);
     }
-  `,
+}
+`,
   accentSubtleYellow: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentSubtleYellow);
     }
-  `,
+}
+`,
   accentBoldYellow: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentBoldYellow);
     }
-  `,
+}
+`,
   accentSubtleRed: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentSubtleRed);
     }
-  `,
+}
+`,
   accentBoldRed: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentBoldRed);
     }
-  `,
+}
+`,
   accentSubtleGray: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentSubtleGray);
     }
-  `,
+}
+`,
   accentBoldGray: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-accentBoldGray);
     }
-  `,
+}
+`,
   transparent: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-transparent);
     }
-  `,
+}
+`,
   transparentHover: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-transparentHover);
     }
-  `,
+}
+`,
   transparentPressed: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-transparentPressed);
     }
-  `,
+}
+`,
   transparentDisabled: css`
     @media (min-width: 768px) {
       text-decoration-color: var(--color-transparentDisabled);
     }
-  `,
+}
+`,
 } as const;
 
 export const textTransform = {
@@ -3424,22 +4463,26 @@ export const textTransform = {
     @media (min-width: 768px) {
       text-transform: none;
     }
-  `,
+}
+`,
   uppercase: css`
     @media (min-width: 768px) {
       text-transform: uppercase;
     }
-  `,
+}
+`,
   lowercase: css`
     @media (min-width: 768px) {
       text-transform: lowercase;
     }
-  `,
+}
+`,
   capitalize: css`
     @media (min-width: 768px) {
       text-transform: capitalize;
     }
-  `,
+}
+`,
 } as const;
 
 export const userSelect = {
@@ -3447,22 +4490,26 @@ export const userSelect = {
     @media (min-width: 768px) {
       user-select: none;
     }
-  `,
+}
+`,
   text: css`
     @media (min-width: 768px) {
       user-select: text;
     }
-  `,
+}
+`,
   all: css`
     @media (min-width: 768px) {
       user-select: all;
     }
-  `,
+}
+`,
   auto: css`
     @media (min-width: 768px) {
       user-select: auto;
     }
-  `,
+}
+`,
 } as const;
 
 export const display = {
@@ -3470,47 +4517,56 @@ export const display = {
     @media (min-width: 768px) {
       display: block;
     }
-  `,
+}
+`,
   inline: css`
     @media (min-width: 768px) {
       display: inline;
     }
-  `,
+}
+`,
   'inline-block': css`
     @media (min-width: 768px) {
       display: inline-block;
     }
-  `,
+}
+`,
   flex: css`
     @media (min-width: 768px) {
       display: flex;
     }
-  `,
+}
+`,
   'inline-flex': css`
     @media (min-width: 768px) {
       display: inline-flex;
     }
-  `,
+}
+`,
   grid: css`
     @media (min-width: 768px) {
       display: grid;
     }
-  `,
+}
+`,
   'inline-grid': css`
     @media (min-width: 768px) {
       display: inline-grid;
     }
-  `,
+}
+`,
   contents: css`
     @media (min-width: 768px) {
       display: contents;
     }
-  `,
+}
+`,
   'flow-root': css`
     @media (min-width: 768px) {
       display: flow-root;
     }
-  `,
+}
+`,
 } as const;
 
 export const overflow = {
@@ -3518,27 +4574,32 @@ export const overflow = {
     @media (min-width: 768px) {
       overflow: auto;
     }
-  `,
+}
+`,
   visible: css`
     @media (min-width: 768px) {
       overflow: visible;
     }
-  `,
+}
+`,
   hidden: css`
     @media (min-width: 768px) {
       overflow: hidden;
     }
-  `,
+}
+`,
   clip: css`
     @media (min-width: 768px) {
       overflow: clip;
     }
-  `,
+}
+`,
   scroll: css`
     @media (min-width: 768px) {
       overflow: scroll;
     }
-  `,
+}
+`,
 } as const;
 
 export const gap = {
@@ -3546,77 +4607,92 @@ export const gap = {
     @media (min-width: 768px) {
       gap: var(--space-0);
     }
-  `,
+}
+`,
   '0.25': css`
     @media (min-width: 768px) {
       gap: var(--space-0\\.25);
     }
-  `,
+}
+`,
   '0.5': css`
     @media (min-width: 768px) {
       gap: var(--space-0\\.5);
     }
-  `,
+}
+`,
   '0.75': css`
     @media (min-width: 768px) {
       gap: var(--space-0\\.75);
     }
-  `,
+}
+`,
   '1': css`
     @media (min-width: 768px) {
       gap: var(--space-1);
     }
-  `,
+}
+`,
   '1.5': css`
     @media (min-width: 768px) {
       gap: var(--space-1\\.5);
     }
-  `,
+}
+`,
   '2': css`
     @media (min-width: 768px) {
       gap: var(--space-2);
     }
-  `,
+}
+`,
   '3': css`
     @media (min-width: 768px) {
       gap: var(--space-3);
     }
-  `,
+}
+`,
   '4': css`
     @media (min-width: 768px) {
       gap: var(--space-4);
     }
-  `,
+}
+`,
   '5': css`
     @media (min-width: 768px) {
       gap: var(--space-5);
     }
-  `,
+}
+`,
   '6': css`
     @media (min-width: 768px) {
       gap: var(--space-6);
     }
-  `,
+}
+`,
   '7': css`
     @media (min-width: 768px) {
       gap: var(--space-7);
     }
-  `,
+}
+`,
   '8': css`
     @media (min-width: 768px) {
       gap: var(--space-8);
     }
-  `,
+}
+`,
   '9': css`
     @media (min-width: 768px) {
       gap: var(--space-9);
     }
-  `,
+}
+`,
   '10': css`
     @media (min-width: 768px) {
       gap: var(--space-10);
     }
-  `,
+}
+`,
 } as const;
 
 export const columnGap = {
@@ -3624,77 +4700,92 @@ export const columnGap = {
     @media (min-width: 768px) {
       column-gap: var(--space-0);
     }
-  `,
+}
+`,
   '0.25': css`
     @media (min-width: 768px) {
       column-gap: var(--space-0\\.25);
     }
-  `,
+}
+`,
   '0.5': css`
     @media (min-width: 768px) {
       column-gap: var(--space-0\\.5);
     }
-  `,
+}
+`,
   '0.75': css`
     @media (min-width: 768px) {
       column-gap: var(--space-0\\.75);
     }
-  `,
+}
+`,
   '1': css`
     @media (min-width: 768px) {
       column-gap: var(--space-1);
     }
-  `,
+}
+`,
   '1.5': css`
     @media (min-width: 768px) {
       column-gap: var(--space-1\\.5);
     }
-  `,
+}
+`,
   '2': css`
     @media (min-width: 768px) {
       column-gap: var(--space-2);
     }
-  `,
+}
+`,
   '3': css`
     @media (min-width: 768px) {
       column-gap: var(--space-3);
     }
-  `,
+}
+`,
   '4': css`
     @media (min-width: 768px) {
       column-gap: var(--space-4);
     }
-  `,
+}
+`,
   '5': css`
     @media (min-width: 768px) {
       column-gap: var(--space-5);
     }
-  `,
+}
+`,
   '6': css`
     @media (min-width: 768px) {
       column-gap: var(--space-6);
     }
-  `,
+}
+`,
   '7': css`
     @media (min-width: 768px) {
       column-gap: var(--space-7);
     }
-  `,
+}
+`,
   '8': css`
     @media (min-width: 768px) {
       column-gap: var(--space-8);
     }
-  `,
+}
+`,
   '9': css`
     @media (min-width: 768px) {
       column-gap: var(--space-9);
     }
-  `,
+}
+`,
   '10': css`
     @media (min-width: 768px) {
       column-gap: var(--space-10);
     }
-  `,
+}
+`,
 } as const;
 
 export const rowGap = {
@@ -3702,77 +4793,92 @@ export const rowGap = {
     @media (min-width: 768px) {
       row-gap: var(--space-0);
     }
-  `,
+}
+`,
   '0.25': css`
     @media (min-width: 768px) {
       row-gap: var(--space-0\\.25);
     }
-  `,
+}
+`,
   '0.5': css`
     @media (min-width: 768px) {
       row-gap: var(--space-0\\.5);
     }
-  `,
+}
+`,
   '0.75': css`
     @media (min-width: 768px) {
       row-gap: var(--space-0\\.75);
     }
-  `,
+}
+`,
   '1': css`
     @media (min-width: 768px) {
       row-gap: var(--space-1);
     }
-  `,
+}
+`,
   '1.5': css`
     @media (min-width: 768px) {
       row-gap: var(--space-1\\.5);
     }
-  `,
+}
+`,
   '2': css`
     @media (min-width: 768px) {
       row-gap: var(--space-2);
     }
-  `,
+}
+`,
   '3': css`
     @media (min-width: 768px) {
       row-gap: var(--space-3);
     }
-  `,
+}
+`,
   '4': css`
     @media (min-width: 768px) {
       row-gap: var(--space-4);
     }
-  `,
+}
+`,
   '5': css`
     @media (min-width: 768px) {
       row-gap: var(--space-5);
     }
-  `,
+}
+`,
   '6': css`
     @media (min-width: 768px) {
       row-gap: var(--space-6);
     }
-  `,
+}
+`,
   '7': css`
     @media (min-width: 768px) {
       row-gap: var(--space-7);
     }
-  `,
+}
+`,
   '8': css`
     @media (min-width: 768px) {
       row-gap: var(--space-8);
     }
-  `,
+}
+`,
   '9': css`
     @media (min-width: 768px) {
       row-gap: var(--space-9);
     }
-  `,
+}
+`,
   '10': css`
     @media (min-width: 768px) {
       row-gap: var(--space-10);
     }
-  `,
+}
+`,
 } as const;
 
 export const justifyContent = {
@@ -3780,62 +4886,74 @@ export const justifyContent = {
     @media (min-width: 768px) {
       justify-content: normal;
     }
-  `,
+}
+`,
   center: css`
     @media (min-width: 768px) {
       justify-content: center;
     }
-  `,
+}
+`,
   start: css`
     @media (min-width: 768px) {
       justify-content: start;
     }
-  `,
+}
+`,
   end: css`
     @media (min-width: 768px) {
       justify-content: end;
     }
-  `,
+}
+`,
   'flex-start': css`
     @media (min-width: 768px) {
       justify-content: flex-start;
     }
-  `,
+}
+`,
   'flex-end': css`
     @media (min-width: 768px) {
       justify-content: flex-end;
     }
-  `,
+}
+`,
   left: css`
     @media (min-width: 768px) {
       justify-content: left;
     }
-  `,
+}
+`,
   right: css`
     @media (min-width: 768px) {
       justify-content: right;
     }
-  `,
+}
+`,
   'space-between': css`
     @media (min-width: 768px) {
       justify-content: space-between;
     }
-  `,
+}
+`,
   'space-around': css`
     @media (min-width: 768px) {
       justify-content: space-around;
     }
-  `,
+}
+`,
   'space-evenly': css`
     @media (min-width: 768px) {
       justify-content: space-evenly;
     }
-  `,
+}
+`,
   stretch: css`
     @media (min-width: 768px) {
       justify-content: stretch;
     }
-  `,
+}
+`,
 } as const;
 
 export const alignContent = {
@@ -3843,67 +4961,80 @@ export const alignContent = {
     @media (min-width: 768px) {
       align-content: normal;
     }
-  `,
+}
+`,
   center: css`
     @media (min-width: 768px) {
       align-content: center;
     }
-  `,
+}
+`,
   start: css`
     @media (min-width: 768px) {
       align-content: start;
     }
-  `,
+}
+`,
   end: css`
     @media (min-width: 768px) {
       align-content: end;
     }
-  `,
+}
+`,
   'flex-start': css`
     @media (min-width: 768px) {
       align-content: flex-start;
     }
-  `,
+}
+`,
   'flex-end': css`
     @media (min-width: 768px) {
       align-content: flex-end;
     }
-  `,
+}
+`,
   'space-between': css`
     @media (min-width: 768px) {
       align-content: space-between;
     }
-  `,
+}
+`,
   'space-around': css`
     @media (min-width: 768px) {
       align-content: space-around;
     }
-  `,
+}
+`,
   'space-evenly': css`
     @media (min-width: 768px) {
       align-content: space-evenly;
     }
-  `,
+}
+`,
   stretch: css`
     @media (min-width: 768px) {
       align-content: stretch;
     }
-  `,
+}
+`,
   baseline: css`
     @media (min-width: 768px) {
       align-content: baseline;
     }
-  `,
+}
+`,
   'first baseline': css`
     @media (min-width: 768px) {
       align-content: first baseline;
     }
-  `,
+}
+`,
   'last baseline': css`
     @media (min-width: 768px) {
       align-content: last baseline;
     }
-  `,
+}
+`,
 } as const;
 
 export const alignItems = {
@@ -3911,62 +5042,74 @@ export const alignItems = {
     @media (min-width: 768px) {
       align-items: normal;
     }
-  `,
+}
+`,
   center: css`
     @media (min-width: 768px) {
       align-items: center;
     }
-  `,
+}
+`,
   start: css`
     @media (min-width: 768px) {
       align-items: start;
     }
-  `,
+}
+`,
   end: css`
     @media (min-width: 768px) {
       align-items: end;
     }
-  `,
+}
+`,
   'flex-start': css`
     @media (min-width: 768px) {
       align-items: flex-start;
     }
-  `,
+}
+`,
   'flex-end': css`
     @media (min-width: 768px) {
       align-items: flex-end;
     }
-  `,
+}
+`,
   'self-start': css`
     @media (min-width: 768px) {
       align-items: self-start;
     }
-  `,
+}
+`,
   'self-end': css`
     @media (min-width: 768px) {
       align-items: self-end;
     }
-  `,
+}
+`,
   stretch: css`
     @media (min-width: 768px) {
       align-items: stretch;
     }
-  `,
+}
+`,
   baseline: css`
     @media (min-width: 768px) {
       align-items: baseline;
     }
-  `,
+}
+`,
   'first baseline': css`
     @media (min-width: 768px) {
       align-items: first baseline;
     }
-  `,
+}
+`,
   'last baseline': css`
     @media (min-width: 768px) {
       align-items: last baseline;
     }
-  `,
+}
+`,
 } as const;
 
 export const alignSelf = {
@@ -3974,67 +5117,80 @@ export const alignSelf = {
     @media (min-width: 768px) {
       align-self: auto;
     }
-  `,
+}
+`,
   normal: css`
     @media (min-width: 768px) {
       align-self: normal;
     }
-  `,
+}
+`,
   center: css`
     @media (min-width: 768px) {
       align-self: center;
     }
-  `,
+}
+`,
   start: css`
     @media (min-width: 768px) {
       align-self: start;
     }
-  `,
+}
+`,
   end: css`
     @media (min-width: 768px) {
       align-self: end;
     }
-  `,
+}
+`,
   'flex-start': css`
     @media (min-width: 768px) {
       align-self: flex-start;
     }
-  `,
+}
+`,
   'flex-end': css`
     @media (min-width: 768px) {
       align-self: flex-end;
     }
-  `,
+}
+`,
   'self-start': css`
     @media (min-width: 768px) {
       align-self: self-start;
     }
-  `,
+}
+`,
   'self-end': css`
     @media (min-width: 768px) {
       align-self: self-end;
     }
-  `,
+}
+`,
   stretch: css`
     @media (min-width: 768px) {
       align-self: stretch;
     }
-  `,
+}
+`,
   baseline: css`
     @media (min-width: 768px) {
       align-self: baseline;
     }
-  `,
+}
+`,
   'first baseline': css`
     @media (min-width: 768px) {
       align-self: first baseline;
     }
-  `,
+}
+`,
   'last baseline': css`
     @media (min-width: 768px) {
       align-self: last baseline;
     }
-  `,
+}
+`,
 } as const;
 
 export const flexDirection = {
@@ -4042,22 +5198,26 @@ export const flexDirection = {
     @media (min-width: 768px) {
       flex-direction: row;
     }
-  `,
+}
+`,
   'row-reverse': css`
     @media (min-width: 768px) {
       flex-direction: row-reverse;
     }
-  `,
+}
+`,
   column: css`
     @media (min-width: 768px) {
       flex-direction: column;
     }
-  `,
+}
+`,
   'column-reverse': css`
     @media (min-width: 768px) {
       flex-direction: column-reverse;
     }
-  `,
+}
+`,
 } as const;
 
 export const flexWrap = {
@@ -4065,17 +5225,20 @@ export const flexWrap = {
     @media (min-width: 768px) {
       flex-wrap: nowrap;
     }
-  `,
+}
+`,
   wrap: css`
     @media (min-width: 768px) {
       flex-wrap: wrap;
     }
-  `,
+}
+`,
   'wrap-reverse': css`
     @media (min-width: 768px) {
       flex-wrap: wrap-reverse;
     }
-  `,
+}
+`,
 } as const;
 
 export const position = {
@@ -4083,27 +5246,32 @@ export const position = {
     @media (min-width: 768px) {
       position: static;
     }
-  `,
+}
+`,
   relative: css`
     @media (min-width: 768px) {
       position: relative;
     }
-  `,
+}
+`,
   absolute: css`
     @media (min-width: 768px) {
       position: absolute;
     }
-  `,
+}
+`,
   fixed: css`
     @media (min-width: 768px) {
       position: fixed;
     }
-  `,
+}
+`,
   sticky: css`
     @media (min-width: 768px) {
       position: sticky;
     }
-  `,
+}
+`,
 } as const;
 
 export const zIndex: Record<keyof typeof vars.zIndex, LinariaClassName> = {
@@ -4111,156 +5279,198 @@ export const zIndex: Record<keyof typeof vars.zIndex, LinariaClassName> = {
     @media (min-width: 768px) {
       z-index: var(--zIndex-interactable);
     }
-  `,
+}
+`,
   navigation: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-navigation);
     }
-  `,
+}
+`,
   portal: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-portal);
     }
-  `,
+}
+`,
   popoverMenu: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-popoverMenu);
     }
-  `,
+}
+`,
   modal: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-modal);
     }
-  `,
+}
+`,
   dropdown: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-dropdown);
     }
-  `,
+}
+`,
   tooltip: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-tooltip);
     }
-  `,
+}
+`,
   toast: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-toast);
     }
-  `,
+}
+`,
   alert: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-alert);
     }
-  `,
+}
+`,
   max: css`
     @media (min-width: 768px) {
       z-index: var(--zIndex-max);
     }
-  `,
+}
+`,
 } as const;
 
-export const padding = {
+export const padding: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
-  @media (min-width: 768px) {
-    padding-top: var(--space-0);
-    padding-bottom: var(--space-0);
-    padding-left: var(--space-0);
-    padding-right: var(--space-0);
+    @media (min-width: 768px) {
+      padding-top: var(--space-0);
+      padding-bottom: var(--space-0);
+      padding-left: var(--space-0);
+      padding-right: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-0\\.25);
+      padding-bottom: var(--space-0\\.25);
+      padding-left: var(--space-0\\.25);
+      padding-right: var(--space-0\\.25);
+    }
   `,
   '0.5': css`
-  @media (min-width: 768px) {
-    padding-top: var(--space-0\\.5);
-    padding-bottom: var(--space-0\\.5);
-    padding-left: var(--space-0\\.5);
-    padding-right: var(--space-0\\.5);
+    @media (min-width: 768px) {
+      padding-top: var(--space-0\\.5);
+      padding-bottom: var(--space-0\\.5);
+      padding-left: var(--space-0\\.5);
+      padding-right: var(--space-0\\.5);
+    }
+  `,
+  '0.75': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-0\\.75);
+      padding-bottom: var(--space-0\\.75);
+      padding-left: var(--space-0\\.75);
+      padding-right: var(--space-0\\.75);
+    }
   `,
   '1': css`
     @media (min-width: 768px) {
       padding-top: var(--space-1);
       padding-bottom: var(--space-1);
-      padding-right: var(--space-1);
       padding-left: var(--space-1);
+      padding-right: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-1\\.5);
+      padding-bottom: var(--space-1\\.5);
+      padding-left: var(--space-1\\.5);
+      padding-right: var(--space-1\\.5);
     }
   `,
   '2': css`
     @media (min-width: 768px) {
       padding-top: var(--space-2);
       padding-bottom: var(--space-2);
-      padding-right: var(--space-2);
       padding-left: var(--space-2);
+      padding-right: var(--space-2);
     }
   `,
   '3': css`
     @media (min-width: 768px) {
       padding-top: var(--space-3);
       padding-bottom: var(--space-3);
-      padding-right: var(--space-3);
       padding-left: var(--space-3);
+      padding-right: var(--space-3);
     }
   `,
   '4': css`
     @media (min-width: 768px) {
       padding-top: var(--space-4);
       padding-bottom: var(--space-4);
-      padding-right: var(--space-4);
       padding-left: var(--space-4);
+      padding-right: var(--space-4);
     }
   `,
   '5': css`
     @media (min-width: 768px) {
       padding-top: var(--space-5);
       padding-bottom: var(--space-5);
-      padding-right: var(--space-5);
       padding-left: var(--space-5);
+      padding-right: var(--space-5);
     }
   `,
   '6': css`
     @media (min-width: 768px) {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
-      padding-right: var(--space-6);
       padding-left: var(--space-6);
+      padding-right: var(--space-6);
     }
   `,
   '7': css`
     @media (min-width: 768px) {
       padding-top: var(--space-7);
       padding-bottom: var(--space-7);
-      padding-right: var(--space-7);
       padding-left: var(--space-7);
+      padding-right: var(--space-7);
     }
   `,
   '8': css`
     @media (min-width: 768px) {
       padding-top: var(--space-8);
       padding-bottom: var(--space-8);
-      padding-right: var(--space-8);
       padding-left: var(--space-8);
+      padding-right: var(--space-8);
     }
   `,
   '9': css`
     @media (min-width: 768px) {
       padding-top: var(--space-9);
       padding-bottom: var(--space-9);
-      padding-right: var(--space-9);
       padding-left: var(--space-9);
+      padding-right: var(--space-9);
     }
   `,
   '10': css`
     @media (min-width: 768px) {
       padding-top: var(--space-10);
       padding-bottom: var(--space-10);
-      padding-right: var(--space-10);
       padding-left: var(--space-10);
+      padding-right: var(--space-10);
     }
   `,
 } as const;
 
-export const paddingX = {
+export const paddingX: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 768px) {
       padding-left: var(--space-0);
       padding-right: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 768px) {
+      padding-left: var(--space-0\\.25);
+      padding-right: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4269,10 +5479,22 @@ export const paddingX = {
       padding-right: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 768px) {
+      padding-left: var(--space-0\\.75);
+      padding-right: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 768px) {
       padding-left: var(--space-1);
       padding-right: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 768px) {
+      padding-left: var(--space-1\\.5);
+      padding-right: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4331,11 +5553,17 @@ export const paddingX = {
   `,
 } as const;
 
-export const paddingY = {
+export const paddingY: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 768px) {
       padding-top: var(--space-0);
       padding-bottom: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-0\\.25);
+      padding-bottom: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4344,10 +5572,22 @@ export const paddingY = {
       padding-bottom: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-0\\.75);
+      padding-bottom: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 768px) {
       padding-top: var(--space-1);
       padding-bottom: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-1\\.5);
+      padding-bottom: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4406,10 +5646,15 @@ export const paddingY = {
   `,
 } as const;
 
-export const paddingTop = {
+export const paddingTop: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 768px) {
       padding-top: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4417,9 +5662,19 @@ export const paddingTop = {
       padding-top: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 768px) {
       padding-top: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 768px) {
+      padding-top: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4469,10 +5724,15 @@ export const paddingTop = {
   `,
 } as const;
 
-export const paddingBottom = {
+export const paddingBottom: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 768px) {
       padding-bottom: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 768px) {
+      padding-bottom: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4480,9 +5740,19 @@ export const paddingBottom = {
       padding-bottom: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 768px) {
+      padding-bottom: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 768px) {
       padding-bottom: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 768px) {
+      padding-bottom: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4532,73 +5802,15 @@ export const paddingBottom = {
   `,
 } as const;
 
-export const paddingRight = {
-  '0': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-0);
-    }
-  `,
-  '0.5': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-0\\.5);
-    }
-  `,
-  '1': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-1);
-    }
-  `,
-  '2': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-2);
-    }
-  `,
-  '3': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-3);
-    }
-  `,
-  '4': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-4);
-    }
-  `,
-  '5': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-5);
-    }
-  `,
-  '6': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-6);
-    }
-  `,
-  '7': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-7);
-    }
-  `,
-  '8': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-8);
-    }
-  `,
-  '9': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-9);
-    }
-  `,
-  '10': css`
-    @media (min-width: 768px) {
-      padding-right: var(--space-10);
-    }
-  `,
-} as const;
-
-export const paddingLeft = {
+export const paddingLeft: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     @media (min-width: 768px) {
       padding-left: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 768px) {
+      padding-left: var(--space-0\\.25);
     }
   `,
   '0.5': css`
@@ -4606,9 +5818,19 @@ export const paddingLeft = {
       padding-left: var(--space-0\\.5);
     }
   `,
+  '0.75': css`
+    @media (min-width: 768px) {
+      padding-left: var(--space-0\\.75);
+    }
+  `,
   '1': css`
     @media (min-width: 768px) {
       padding-left: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 768px) {
+      padding-left: var(--space-1\\.5);
     }
   `,
   '2': css`
@@ -4658,13 +5880,99 @@ export const paddingLeft = {
   `,
 } as const;
 
-export const margin = {
+export const paddingRight: Record<keyof typeof vars.space, LinariaClassName> = {
+  '0': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-0);
+    }
+  `,
+  '0.25': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-0\\.25);
+    }
+  `,
+  '0.5': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-0\\.5);
+    }
+  `,
+  '0.75': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-0\\.75);
+    }
+  `,
+  '1': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-1);
+    }
+  `,
+  '1.5': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-1\\.5);
+    }
+  `,
+  '2': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-2);
+    }
+  `,
+  '3': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-3);
+    }
+  `,
+  '4': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-4);
+    }
+  `,
+  '5': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-5);
+    }
+  `,
+  '6': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-6);
+    }
+  `,
+  '7': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-7);
+    }
+  `,
+  '8': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-8);
+    }
+  `,
+  '9': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-9);
+    }
+  `,
+  '10': css`
+    @media (min-width: 768px) {
+      padding-right: var(--space-10);
+    }
+  `,
+} as const;
+
+export const margin: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> = {
   '0': css`
     @media (min-width: 768px) {
       margin-top: calc(-1 * var(--space-0));
-      margin-right: calc(-1 * var(--space-0));
       margin-bottom: calc(-1 * var(--space-0));
+      margin-right: calc(-1 * var(--space-0));
       margin-left: calc(-1 * var(--space-0));
+    }
+  `,
+  '-0.25': css`
+    @media (min-width: 768px) {
+      margin-top: calc(-1 * var(--space-0\\.25));
+      margin-bottom: calc(-1 * var(--space-0\\.25));
+      margin-right: calc(-1 * var(--space-0\\.25));
+      margin-left: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
@@ -4675,12 +5983,28 @@ export const margin = {
       margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
+  '-0.75': css`
+    @media (min-width: 768px) {
+      margin-top: calc(-1 * var(--space-0\\.75));
+      margin-bottom: calc(-1 * var(--space-0\\.75));
+      margin-right: calc(-1 * var(--space-0\\.75));
+      margin-left: calc(-1 * var(--space-0\\.75));
+    }
+  `,
   '-1': css`
     @media (min-width: 768px) {
       margin-top: calc(-1 * var(--space-1));
       margin-bottom: calc(-1 * var(--space-1));
       margin-right: calc(-1 * var(--space-1));
       margin-left: calc(-1 * var(--space-1));
+    }
+  `,
+  '-1.5': css`
+    @media (min-width: 768px) {
+      margin-top: calc(-1 * var(--space-1\\.5));
+      margin-bottom: calc(-1 * var(--space-1\\.5));
+      margin-right: calc(-1 * var(--space-1\\.5));
+      margin-left: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -4757,170 +6081,226 @@ export const margin = {
   `,
 } as const;
 
-export const marginX = {
-  '0': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-0));
-      margin-left: calc(-1 * var(--space-0));
-    }
-  `,
-  '-0.5': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-0\\.5));
-      margin-left: calc(-1 * var(--space-0\\.5));
-    }
-  `,
-  '-1': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-1));
-      margin-left: calc(-1 * var(--space-1));
-    }
-  `,
-  '-2': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-2));
-      margin-left: calc(-1 * var(--space-2));
-    }
-  `,
-  '-3': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-3));
-      margin-left: calc(-1 * var(--space-3));
-    }
-  `,
-  '-4': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-4));
-      margin-left: calc(-1 * var(--space-4));
-    }
-  `,
-  '-5': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-5));
-      margin-left: calc(-1 * var(--space-5));
-    }
-  `,
-  '-6': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-6));
-      margin-left: calc(-1 * var(--space-6));
-    }
-  `,
-  '-7': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-7));
-      margin-left: calc(-1 * var(--space-7));
-    }
-  `,
-  '-8': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-8));
-      margin-left: calc(-1 * var(--space-8));
-    }
-  `,
-  '-9': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-9));
-      margin-left: calc(-1 * var(--space-9));
-    }
-  `,
-  '-10': css`
-    @media (min-width: 768px) {
-      margin-right: calc(-1 * var(--space-10));
-      margin-left: calc(-1 * var(--space-10));
-    }
-  `,
-} as const;
+export const marginX: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> =
+  {
+    '0': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-0));
+        margin-left: calc(-1 * var(--space-0));
+      }
+    `,
+    '-0.25': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-0\\.25));
+        margin-left: calc(-1 * var(--space-0\\.25));
+      }
+    `,
+    '-0.5': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-0\\.5));
+        margin-left: calc(-1 * var(--space-0\\.5));
+      }
+    `,
+    '-0.75': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-0\\.75));
+        margin-left: calc(-1 * var(--space-0\\.75));
+      }
+    `,
+    '-1': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-1));
+        margin-left: calc(-1 * var(--space-1));
+      }
+    `,
+    '-1.5': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-1\\.5));
+        margin-left: calc(-1 * var(--space-1\\.5));
+      }
+    `,
+    '-2': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-2));
+        margin-left: calc(-1 * var(--space-2));
+      }
+    `,
+    '-3': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-3));
+        margin-left: calc(-1 * var(--space-3));
+      }
+    `,
+    '-4': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-4));
+        margin-left: calc(-1 * var(--space-4));
+      }
+    `,
+    '-5': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-5));
+        margin-left: calc(-1 * var(--space-5));
+      }
+    `,
+    '-6': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-6));
+        margin-left: calc(-1 * var(--space-6));
+      }
+    `,
+    '-7': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-7));
+        margin-left: calc(-1 * var(--space-7));
+      }
+    `,
+    '-8': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-8));
+        margin-left: calc(-1 * var(--space-8));
+      }
+    `,
+    '-9': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-9));
+        margin-left: calc(-1 * var(--space-9));
+      }
+    `,
+    '-10': css`
+      @media (min-width: 768px) {
+        margin-right: calc(-1 * var(--space-10));
+        margin-left: calc(-1 * var(--space-10));
+      }
+    `,
+  } as const;
 
-export const marginY = {
+export const marginY: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> =
+  {
+    '0': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-0));
+        margin-bottom: calc(-1 * var(--space-0));
+      }
+    `,
+    '-0.25': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-0\\.25));
+        margin-bottom: calc(-1 * var(--space-0\\.25));
+      }
+    `,
+    '-0.5': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-0\\.5));
+        margin-bottom: calc(-1 * var(--space-0\\.5));
+      }
+    `,
+    '-0.75': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-0\\.75));
+        margin-bottom: calc(-1 * var(--space-0\\.75));
+      }
+    `,
+    '-1': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-1));
+        margin-bottom: calc(-1 * var(--space-1));
+      }
+    `,
+    '-1.5': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-1\\.5));
+        margin-bottom: calc(-1 * var(--space-1\\.5));
+      }
+    `,
+    '-2': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-2));
+        margin-bottom: calc(-1 * var(--space-2));
+      }
+    `,
+    '-3': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-3));
+        margin-bottom: calc(-1 * var(--space-3));
+      }
+    `,
+    '-4': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-4));
+        margin-bottom: calc(-1 * var(--space-4));
+      }
+    `,
+    '-5': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-5));
+        margin-bottom: calc(-1 * var(--space-5));
+      }
+    `,
+    '-6': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-6));
+        margin-bottom: calc(-1 * var(--space-6));
+      }
+    `,
+    '-7': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-7));
+        margin-bottom: calc(-1 * var(--space-7));
+      }
+    `,
+    '-8': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-8));
+        margin-bottom: calc(-1 * var(--space-8));
+      }
+    `,
+    '-9': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-9));
+        margin-bottom: calc(-1 * var(--space-9));
+      }
+    `,
+    '-10': css`
+      @media (min-width: 768px) {
+        margin-top: calc(-1 * var(--space-10));
+        margin-bottom: calc(-1 * var(--space-10));
+      }
+    `,
+  } as const;
+
+export const marginTop: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     @media (min-width: 768px) {
       margin-top: calc(-1 * var(--space-0));
-      margin-bottom: calc(-1 * var(--space-0));
+    }
+  `,
+  '-0.25': css`
+    @media (min-width: 768px) {
+      margin-top: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
     @media (min-width: 768px) {
       margin-top: calc(-1 * var(--space-0\\.5));
-      margin-bottom: calc(-1 * var(--space-0\\.5));
+    }
+  `,
+  '-0.75': css`
+    @media (min-width: 768px) {
+      margin-top: calc(-1 * var(--space-0\\.75));
     }
   `,
   '-1': css`
     @media (min-width: 768px) {
       margin-top: calc(-1 * var(--space-1));
-      margin-bottom: calc(-1 * var(--space-1));
     }
   `,
-  '-2': css`
+  '-1.5': css`
     @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-2));
-      margin-bottom: calc(-1 * var(--space-2));
-    }
-  `,
-  '-3': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-3));
-      margin-bottom: calc(-1 * var(--space-3));
-    }
-  `,
-  '-4': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-4));
-      margin-bottom: calc(-1 * var(--space-4));
-    }
-  `,
-  '-5': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-5));
-      margin-bottom: calc(-1 * var(--space-5));
-    }
-  `,
-  '-6': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-6));
-      margin-bottom: calc(-1 * var(--space-6));
-    }
-  `,
-  '-7': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-7));
-      margin-bottom: calc(-1 * var(--space-7));
-    }
-  `,
-  '-8': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-8));
-      margin-bottom: calc(-1 * var(--space-8));
-    }
-  `,
-  '-9': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-9));
-      margin-bottom: calc(-1 * var(--space-9));
-    }
-  `,
-  '-10': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-10));
-      margin-bottom: calc(-1 * var(--space-10));
-    }
-  `,
-} as const;
-
-export const marginTop = {
-  '0': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-0));
-    }
-  `,
-  '-0.5': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-0\\.5));
-    }
-  `,
-  '-1': css`
-    @media (min-width: 768px) {
-      margin-top: calc(-1 * var(--space-1));
+      margin-top: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -4970,20 +6350,38 @@ export const marginTop = {
   `,
 } as const;
 
-export const marginBottom = {
+export const marginBottom: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     @media (min-width: 768px) {
       margin-bottom: calc(-1 * var(--space-0));
     }
   `,
+  '-0.25': css`
+    @media (min-width: 768px) {
+      margin-bottom: calc(-1 * var(--space-0\\.25));
+    }
+  `,
   '-0.5': css`
     @media (min-width: 768px) {
       margin-bottom: calc(-1 * var(--space-0\\.5));
     }
   `,
+  '-0.75': css`
+    @media (min-width: 768px) {
+      margin-bottom: calc(-1 * var(--space-0\\.75));
+    }
+  `,
   '-1': css`
     @media (min-width: 768px) {
       margin-bottom: calc(-1 * var(--space-1));
+    }
+  `,
+  '-1.5': css`
+    @media (min-width: 768px) {
+      margin-bottom: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -5033,10 +6431,18 @@ export const marginBottom = {
   `,
 } as const;
 
-export const marginRight = {
+export const marginRight: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     @media (min-width: 768px) {
       margin-right: calc(-1 * var(--space-0));
+    }
+  `,
+  '-0.25': css`
+    @media (min-width: 768px) {
+      margin-right: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
@@ -5044,9 +6450,19 @@ export const marginRight = {
       margin-right: calc(-1 * var(--space-0\\.5));
     }
   `,
+  '-0.75': css`
+    @media (min-width: 768px) {
+      margin-right: calc(-1 * var(--space-0\\.75));
+    }
+  `,
   '-1': css`
     @media (min-width: 768px) {
       margin-right: calc(-1 * var(--space-1));
+    }
+  `,
+  '-1.5': css`
+    @media (min-width: 768px) {
+      margin-right: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -5096,10 +6512,18 @@ export const marginRight = {
   `,
 } as const;
 
-export const marginLeft = {
+export const marginLeft: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     @media (min-width: 768px) {
       margin-left: calc(-1 * var(--space-0));
+    }
+  `,
+  '-0.25': css`
+    @media (min-width: 768px) {
+      margin-left: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
@@ -5107,9 +6531,19 @@ export const marginLeft = {
       margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
+  '-0.75': css`
+    @media (min-width: 768px) {
+      margin-left: calc(-1 * var(--space-0\\.75));
+    }
+  `,
   '-1': css`
     @media (min-width: 768px) {
       margin-left: calc(-1 * var(--space-1));
+    }
+  `,
+  '-1.5': css`
+    @media (min-width: 768px) {
+      margin-left: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
@@ -5165,13 +6599,15 @@ export const elevation = {
       background-color: var(--color-backgroundElevation1);
       box-shadow: var(--shadow-elevation1);
     }
-  `,
+}
+`,
   '2': css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundElevation2);
       box-shadow: var(--shadow-elevation2);
     }
-  `,
+}
+`,
 } as const;
 
 export const textAlign = {
@@ -5179,22 +6615,26 @@ export const textAlign = {
     @media (min-width: 768px) {
       text-align: start;
     }
-  `,
+}
+`,
   end: css`
     @media (min-width: 768px) {
       text-align: end;
     }
-  `,
+}
+`,
   center: css`
     @media (min-width: 768px) {
       text-align: center;
     }
-  `,
+}
+`,
   justify: css`
     @media (min-width: 768px) {
       text-align: justify;
     }
-  `,
+}
+`,
 } as const;
 
 export const visibility = {
@@ -5202,234 +6642,12 @@ export const visibility = {
     @media (min-width: 768px) {
       visibility: hidden;
     }
-  `,
+}
+`,
   visible: css`
     @media (min-width: 768px) {
       visibility: visible;
     }
-  `,
-} as const;
-
-export const borderTopLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    @media (min-width: 768px) {
-      border-top-left-radius: var(--borderRadius-none);
-    }
-  `,
-  roundedSmall: css`
-    @media (min-width: 768px) {
-      border-top-left-radius: var(--borderRadius-roundedSmall);
-    }
-  `,
-  rounded: css`
-    @media (min-width: 768px) {
-      border-top-left-radius: var(--borderRadius-rounded);
-    }
-  `,
-  roundedMedium: css`
-    @media (min-width: 768px) {
-      border-top-left-radius: var(--borderRadius-roundedMedium);
-    }
-  `,
-  roundedLarge: css`
-    @media (min-width: 768px) {
-      border-top-left-radius: var(--borderRadius-roundedLarge);
-    }
-  `,
-  roundedXLarge: css`
-    @media (min-width: 768px) {
-      border-top-left-radius: var(--borderRadius-roundedXLarge);
-    }
-  `,
-  roundedFull: css`
-    @media (min-width: 768px) {
-      border-top-left-radius: var(--borderRadius-roundedFull);
-    }
-  `,
-} as const;
-
-export const borderTopRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    @media (min-width: 768px) {
-      border-top-right-radius: var(--borderRadius-none);
-    }
-  `,
-  roundedSmall: css`
-    @media (min-width: 768px) {
-      border-top-right-radius: var(--borderRadius-roundedSmall);
-    }
-  `,
-  rounded: css`
-    @media (min-width: 768px) {
-      border-top-right-radius: var(--borderRadius-rounded);
-    }
-  `,
-  roundedMedium: css`
-    @media (min-width: 768px) {
-      border-top-right-radius: var(--borderRadius-roundedMedium);
-    }
-  `,
-  roundedLarge: css`
-    @media (min-width: 768px) {
-      border-top-right-radius: var(--borderRadius-roundedLarge);
-    }
-  `,
-  roundedXLarge: css`
-    @media (min-width: 768px) {
-      border-top-right-radius: var(--borderRadius-roundedXLarge);
-    }
-  `,
-  roundedFull: css`
-    @media (min-width: 768px) {
-      border-top-right-radius: var(--borderRadius-roundedFull);
-    }
-  `,
-} as const;
-
-export const borderBottomLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    @media (min-width: 768px) {
-      border-bottom-left-radius: var(--borderRadius-none);
-    }
-  `,
-  roundedSmall: css`
-    @media (min-width: 768px) {
-      border-bottom-left-radius: var(--borderRadius-roundedSmall);
-    }
-  `,
-  rounded: css`
-    @media (min-width: 768px) {
-      border-bottom-left-radius: var(--borderRadius-rounded);
-    }
-  `,
-  roundedMedium: css`
-    @media (min-width: 768px) {
-      border-bottom-left-radius: var(--borderRadius-roundedMedium);
-    }
-  `,
-  roundedLarge: css`
-    @media (min-width: 768px) {
-      border-bottom-left-radius: var(--borderRadius-roundedLarge);
-    }
-  `,
-  roundedXLarge: css`
-    @media (min-width: 768px) {
-      border-bottom-left-radius: var(--borderRadius-roundedXLarge);
-    }
-  `,
-  roundedFull: css`
-    @media (min-width: 768px) {
-      border-bottom-left-radius: var(--borderRadius-roundedFull);
-    }
-  `,
-} as const;
-
-export const borderBottomRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    @media (min-width: 768px) {
-      border-bottom-right-radius: var(--borderRadius-none);
-    }
-  `,
-  roundedSmall: css`
-    @media (min-width: 768px) {
-      border-bottom-right-radius: var(--borderRadius-roundedSmall);
-    }
-  `,
-  rounded: css`
-    @media (min-width: 768px) {
-      border-bottom-right-radius: var(--borderRadius-rounded);
-    }
-  `,
-  roundedMedium: css`
-    @media (min-width: 768px) {
-      border-bottom-right-radius: var(--borderRadius-roundedMedium);
-    }
-  `,
-  roundedLarge: css`
-    @media (min-width: 768px) {
-      border-bottom-right-radius: var(--borderRadius-roundedLarge);
-    }
-  `,
-  roundedXLarge: css`
-    @media (min-width: 768px) {
-      border-bottom-right-radius: var(--borderRadius-roundedXLarge);
-    }
-  `,
-  roundedFull: css`
-      @media (min-width: 768px) {
-    border-bottom-right-radius: var(--borderRadius-roundedFull);
-        @media (min-width: 768px) {
-  `,
-} as const;
-
-export const borderTopWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    @media (min-width: 768px) {
-      border-top-width: var(--borderWidth-none);
-    }
-  `,
-  thin: css`
-    @media (min-width: 768px) {
-      border-top-width: var(--borderWidth-thin);
-    }
-  `,
-  thick: css`
-    @media (min-width: 768px) {
-      border-top-width: var(--borderWidth-thick);
-    }
-  `,
-} as const;
-
-export const borderRightWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    @media (min-width: 768px) {
-      border-right-width: var(--borderWidth-none);
-    }
-  `,
-  thin: css`
-    @media (min-width: 768px) {
-      border-right-width: var(--borderWidth-thin);
-    }
-  `,
-  thick: css`
-    @media (min-width: 768px) {
-      border-right-width: var(--borderWidth-thick);
-    }
-  `,
-} as const;
-
-export const borderBottomWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    @media (min-width: 768px) {
-      border-bottom-width: var(--borderWidth-none);
-    }
-  `,
-  thin: css`
-    @media (min-width: 768px) {
-      border-bottom-width: var(--borderWidth-thin);
-    }
-  `,
-  thick: css`
-    @media (min-width: 768px) {
-      border-bottom-width: var(--borderWidth-thick);
-    }
-  `,
-} as const;
-
-export const borderLeftWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    @media (min-width: 768px) {
-      border-left-width: var(--borderWidth-none);
-    }
-  `,
-  thin: css`
-    @media (min-width: 768px) {
-      border-left-width: var(--borderWidth-thin);
-    }
-  `,
-  thick: css`
-    @media (min-width: 768px) {
-      border-left-width: var(--borderWidth-thick);
-    }
-  `,
+}
+`,
 } as const;

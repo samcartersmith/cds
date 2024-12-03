@@ -12,7 +12,7 @@ export const varNames = {
   color: 1,
   illustrationColor: 1,
   space: 1,
-  size: 1,
+  iconSize: 1,
   avatarSize: 1,
   borderWidth: 1,
   borderRadius: 1,
@@ -30,7 +30,7 @@ export const styleVarPrefixes = {
   color: 'color',
   illustrationColor: 'illo',
   space: 'space',
-  size: 'size',
+  iconSize: 'iconSize',
   avatarSize: 'avatarSize',
   borderWidth: 'borderWidth',
   borderRadius: 'borderRadius',
@@ -48,7 +48,7 @@ export const styleVarProperties = {
   color: 'color',
   illustrationColor: 'color',
   space: 'padding',
-  size: 'width',
+  iconSize: 'width',
   avatarSize: 'width',
   borderWidth: 'borderWidth',
   borderRadius: 'borderRadius',
@@ -90,7 +90,8 @@ export type IllustrationColorTheme = Pick<Theme, 'illustrationColor'>;
 export type DensityTheme = Pick<
   Theme,
   | 'space'
-  | 'size'
+  | 'iconSize'
+  | 'avatarSize'
   | 'fontFamily'
   | 'fontSize'
   | 'fontWeight'

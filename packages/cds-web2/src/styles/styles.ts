@@ -1764,38 +1764,287 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
 } as const;
 
 export const borderWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    border-width: var(--borderWidth-none);
+  '0': css`
+    border-width: var(--borderWidth-0);
   `,
-  thin: css`
-    border-width: var(--borderWidth-thin);
+  '100': css`
+    border-width: var(--borderWidth-100);
   `,
-  thick: css`
-    border-width: var(--borderWidth-thick);
+  '200': css`
+    border-width: var(--borderWidth-200);
+  `,
+  '300': css`
+    border-width: var(--borderWidth-300);
+  `,
+  '400': css`
+    border-width: var(--borderWidth-400);
+  `,
+  '500': css`
+    border-width: var(--borderWidth-500);
+  `,
+} as const;
+
+export const borderTopWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    border-top-width: var(--borderWidth-0);
+  `,
+  '100': css`
+    border-top-width: var(--borderWidth-100);
+  `,
+  '200': css`
+    border-top-width: var(--borderWidth-200);
+  `,
+  '300': css`
+    border-top-width: var(--borderWidth-300);
+  `,
+  '400': css`
+    border-top-width: var(--borderWidth-400);
+  `,
+  '500': css`
+    border-top-width: var(--borderWidth-500);
+  `,
+} as const;
+
+export const borderRightWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    border-right-width: var(--borderWidth-0);
+  `,
+  '100': css`
+    border-right-width: var(--borderWidth-100);
+  `,
+  '200': css`
+    border-right-width: var(--borderWidth-200);
+  `,
+  '300': css`
+    border-right-width: var(--borderWidth-300);
+  `,
+  '400': css`
+    border-right-width: var(--borderWidth-400);
+  `,
+  '500': css`
+    border-right-width: var(--borderWidth-500);
+  `,
+} as const;
+
+export const borderBottomWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    border-bottom-width: var(--borderWidth-0);
+  `,
+  '100': css`
+    border-bottom-width: var(--borderWidth-100);
+  `,
+  '200': css`
+    border-bottom-width: var(--borderWidth-200);
+  `,
+  '300': css`
+    border-bottom-width: var(--borderWidth-300);
+  `,
+  '400': css`
+    border-bottom-width: var(--borderWidth-400);
+  `,
+  '500': css`
+    border-bottom-width: var(--borderWidth-500);
+  `,
+} as const;
+
+export const borderLeftWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+  '0': css`
+    border-left-width: var(--borderWidth-0);
+  `,
+  '100': css`
+    border-left-width: var(--borderWidth-100);
+  `,
+  '200': css`
+    border-left-width: var(--borderWidth-200);
+  `,
+  '300': css`
+    border-left-width: var(--borderWidth-300);
+  `,
+  '400': css`
+    border-left-width: var(--borderWidth-400);
+  `,
+  '500': css`
+    border-left-width: var(--borderWidth-500);
   `,
 } as const;
 
 export const borderRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    border-radius: var(--borderRadius-none);
+  '0': css`
+    border-radius: var(--borderRadius-0);
   `,
-  roundedSmall: css`
-    border-radius: var(--borderRadius-roundedSmall);
+  '100': css`
+    border-radius: var(--borderRadius-100);
   `,
-  rounded: css`
-    border-radius: var(--borderRadius-rounded);
+  '200': css`
+    border-radius: var(--borderRadius-200);
   `,
-  roundedMedium: css`
-    border-radius: var(--borderRadius-roundedMedium);
+  '300': css`
+    border-radius: var(--borderRadius-300);
   `,
-  roundedLarge: css`
-    border-radius: var(--borderRadius-roundedLarge);
+  '400': css`
+    border-radius: var(--borderRadius-400);
   `,
-  roundedXLarge: css`
-    border-radius: var(--borderRadius-roundedXLarge);
+  '500': css`
+    border-radius: var(--borderRadius-500);
   `,
-  roundedFull: css`
-    border-radius: var(--borderRadius-roundedFull);
+  '600': css`
+    border-radius: var(--borderRadius-600);
+  `,
+  '700': css`
+    border-radius: var(--borderRadius-700);
+  `,
+  '800': css`
+    border-radius: var(--borderRadius-800);
+  `,
+  '900': css`
+    border-radius: var(--borderRadius-900);
+  `,
+  '1000': css`
+    border-radius: var(--borderRadius-1000);
+  `,
+} as const;
+
+export const borderTopLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    border-top-left-radius: var(--borderRadius-0);
+  `,
+  '100': css`
+    border-top-left-radius: var(--borderRadius-100);
+  `,
+  '200': css`
+    border-top-left-radius: var(--borderRadius-200);
+  `,
+  '300': css`
+    border-top-left-radius: var(--borderRadius-300);
+  `,
+  '400': css`
+    border-top-left-radius: var(--borderRadius-400);
+  `,
+  '500': css`
+    border-top-left-radius: var(--borderRadius-500);
+  `,
+  '600': css`
+    border-top-left-radius: var(--borderRadius-600);
+  `,
+  '700': css`
+    border-top-left-radius: var(--borderRadius-700);
+  `,
+  '800': css`
+    border-top-left-radius: var(--borderRadius-800);
+  `,
+  '900': css`
+    border-top-left-radius: var(--borderRadius-900);
+  `,
+  '1000': css`
+    border-top-left-radius: var(--borderRadius-1000);
+  `,
+} as const;
+
+export const borderTopRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    border-top-right-radius: var(--borderRadius-0);
+  `,
+  '100': css`
+    border-top-right-radius: var(--borderRadius-100);
+  `,
+  '200': css`
+    border-top-right-radius: var(--borderRadius-200);
+  `,
+  '300': css`
+    border-top-right-radius: var(--borderRadius-300);
+  `,
+  '400': css`
+    border-top-right-radius: var(--borderRadius-400);
+  `,
+  '500': css`
+    border-top-right-radius: var(--borderRadius-500);
+  `,
+  '600': css`
+    border-top-right-radius: var(--borderRadius-600);
+  `,
+  '700': css`
+    border-top-right-radius: var(--borderRadius-700);
+  `,
+  '800': css`
+    border-top-right-radius: var(--borderRadius-800);
+  `,
+  '900': css`
+    border-top-right-radius: var(--borderRadius-900);
+  `,
+  '1000': css`
+    border-top-right-radius: var(--borderRadius-1000);
+  `,
+} as const;
+
+export const borderBottomLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    border-bottom-left-radius: var(--borderRadius-0);
+  `,
+  '100': css`
+    border-bottom-left-radius: var(--borderRadius-100);
+  `,
+  '200': css`
+    border-bottom-left-radius: var(--borderRadius-200);
+  `,
+  '300': css`
+    border-bottom-left-radius: var(--borderRadius-300);
+  `,
+  '400': css`
+    border-bottom-left-radius: var(--borderRadius-400);
+  `,
+  '500': css`
+    border-bottom-left-radius: var(--borderRadius-500);
+  `,
+  '600': css`
+    border-bottom-left-radius: var(--borderRadius-600);
+  `,
+  '700': css`
+    border-bottom-left-radius: var(--borderRadius-700);
+  `,
+  '800': css`
+    border-bottom-left-radius: var(--borderRadius-800);
+  `,
+  '900': css`
+    border-bottom-left-radius: var(--borderRadius-900);
+  `,
+  '1000': css`
+    border-bottom-left-radius: var(--borderRadius-1000);
+  `,
+} as const;
+
+export const borderBottomRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+  '0': css`
+    border-bottom-right-radius: var(--borderRadius-0);
+  `,
+  '100': css`
+    border-bottom-right-radius: var(--borderRadius-100);
+  `,
+  '200': css`
+    border-bottom-right-radius: var(--borderRadius-200);
+  `,
+  '300': css`
+    border-bottom-right-radius: var(--borderRadius-300);
+  `,
+  '400': css`
+    border-bottom-right-radius: var(--borderRadius-400);
+  `,
+  '500': css`
+    border-bottom-right-radius: var(--borderRadius-500);
+  `,
+  '600': css`
+    border-bottom-right-radius: var(--borderRadius-600);
+  `,
+  '700': css`
+    border-bottom-right-radius: var(--borderRadius-700);
+  `,
+  '800': css`
+    border-bottom-right-radius: var(--borderRadius-800);
+  `,
+  '900': css`
+    border-bottom-right-radius: var(--borderRadius-900);
+  `,
+  '1000': css`
+    border-bottom-right-radius: var(--borderRadius-1000);
   `,
 } as const;
 
@@ -2367,7 +2616,7 @@ export const overflow = {
   `,
 } as const;
 
-export const gap = {
+export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     gap: var(--space-0);
   `,
@@ -2415,7 +2664,7 @@ export const gap = {
   `,
 } as const;
 
-export const columnGap = {
+export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     column-gap: var(--space-0);
   `,
@@ -2463,7 +2712,7 @@ export const columnGap = {
   `,
 } as const;
 
-export const rowGap = {
+export const rowGap: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     row-gap: var(--space-0);
   `,
@@ -2751,12 +3000,18 @@ export const zIndex: Record<keyof typeof vars.zIndex, LinariaClassName> = {
   `,
 } as const;
 
-export const padding = {
+export const padding: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     padding-top: var(--space-0);
     padding-bottom: var(--space-0);
     padding-left: var(--space-0);
     padding-right: var(--space-0);
+  `,
+  '0.25': css`
+    padding-top: var(--space-0\\.25);
+    padding-bottom: var(--space-0\\.25);
+    padding-left: var(--space-0\\.25);
+    padding-right: var(--space-0\\.25);
   `,
   '0.5': css`
     padding-top: var(--space-0\\.5);
@@ -2764,11 +3019,23 @@ export const padding = {
     padding-left: var(--space-0\\.5);
     padding-right: var(--space-0\\.5);
   `,
+  '0.75': css`
+    padding-top: var(--space-0\\.75);
+    padding-bottom: var(--space-0\\.75);
+    padding-left: var(--space-0\\.75);
+    padding-right: var(--space-0\\.75);
+  `,
   '1': css`
     padding-top: var(--space-1);
     padding-bottom: var(--space-1);
     padding-left: var(--space-1);
     padding-right: var(--space-1);
+  `,
+  '1.5': css`
+    padding-top: var(--space-1\\.5);
+    padding-bottom: var(--space-1\\.5);
+    padding-left: var(--space-1\\.5);
+    padding-right: var(--space-1\\.5);
   `,
   '2': css`
     padding-top: var(--space-2);
@@ -2826,18 +3093,30 @@ export const padding = {
   `,
 } as const;
 
-export const paddingX = {
+export const paddingX: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     padding-left: var(--space-0);
     padding-right: var(--space-0);
+  `,
+  '0.25': css`
+    padding-left: var(--space-0\\.25);
+    padding-right: var(--space-0\\.25);
   `,
   '0.5': css`
     padding-left: var(--space-0\\.5);
     padding-right: var(--space-0\\.5);
   `,
+  '0.75': css`
+    padding-left: var(--space-0\\.75);
+    padding-right: var(--space-0\\.75);
+  `,
   '1': css`
     padding-left: var(--space-1);
     padding-right: var(--space-1);
+  `,
+  '1.5': css`
+    padding-left: var(--space-1\\.5);
+    padding-right: var(--space-1\\.5);
   `,
   '2': css`
     padding-left: var(--space-2);
@@ -2877,18 +3156,30 @@ export const paddingX = {
   `,
 } as const;
 
-export const paddingY = {
+export const paddingY: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     padding-top: var(--space-0);
     padding-bottom: var(--space-0);
+  `,
+  '0.25': css`
+    padding-top: var(--space-0\\.25);
+    padding-bottom: var(--space-0\\.25);
   `,
   '0.5': css`
     padding-top: var(--space-0\\.5);
     padding-bottom: var(--space-0\\.5);
   `,
+  '0.75': css`
+    padding-top: var(--space-0\\.75);
+    padding-bottom: var(--space-0\\.75);
+  `,
   '1': css`
     padding-top: var(--space-1);
     padding-bottom: var(--space-1);
+  `,
+  '1.5': css`
+    padding-top: var(--space-1\\.5);
+    padding-bottom: var(--space-1\\.5);
   `,
   '2': css`
     padding-top: var(--space-2);
@@ -2928,15 +3219,24 @@ export const paddingY = {
   `,
 } as const;
 
-export const paddingTop = {
+export const paddingTop: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     padding-top: var(--space-0);
+  `,
+  '0.25': css`
+    padding-top: var(--space-0\\.25);
   `,
   '0.5': css`
     padding-top: var(--space-0\\.5);
   `,
+  '0.75': css`
+    padding-top: var(--space-0\\.75);
+  `,
   '1': css`
     padding-top: var(--space-1);
+  `,
+  '1.5': css`
+    padding-top: var(--space-1\\.5);
   `,
   '2': css`
     padding-top: var(--space-2);
@@ -2967,15 +3267,24 @@ export const paddingTop = {
   `,
 } as const;
 
-export const paddingBottom = {
+export const paddingBottom: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     padding-bottom: var(--space-0);
+  `,
+  '0.25': css`
+    padding-bottom: var(--space-0\\.25);
   `,
   '0.5': css`
     padding-bottom: var(--space-0\\.5);
   `,
+  '0.75': css`
+    padding-bottom: var(--space-0\\.75);
+  `,
   '1': css`
     padding-bottom: var(--space-1);
+  `,
+  '1.5': css`
+    padding-bottom: var(--space-1\\.5);
   `,
   '2': css`
     padding-bottom: var(--space-2);
@@ -3006,15 +3315,24 @@ export const paddingBottom = {
   `,
 } as const;
 
-export const paddingLeft = {
+export const paddingLeft: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     padding-left: var(--space-0);
+  `,
+  '0.25': css`
+    padding-left: var(--space-0\\.25);
   `,
   '0.5': css`
     padding-left: var(--space-0\\.5);
   `,
+  '0.75': css`
+    padding-left: var(--space-0\\.75);
+  `,
   '1': css`
     padding-left: var(--space-1);
+  `,
+  '1.5': css`
+    padding-left: var(--space-1\\.5);
   `,
   '2': css`
     padding-left: var(--space-2);
@@ -3045,15 +3363,24 @@ export const paddingLeft = {
   `,
 } as const;
 
-export const paddingRight = {
+export const paddingRight: Record<keyof typeof vars.space, LinariaClassName> = {
   '0': css`
     padding-right: var(--space-0);
+  `,
+  '0.25': css`
+    padding-right: var(--space-0\\.25);
   `,
   '0.5': css`
     padding-right: var(--space-0\\.5);
   `,
+  '0.75': css`
+    padding-right: var(--space-0\\.75);
+  `,
   '1': css`
     padding-right: var(--space-1);
+  `,
+  '1.5': css`
+    padding-right: var(--space-1\\.5);
   `,
   '2': css`
     padding-right: var(--space-2);
@@ -3084,12 +3411,18 @@ export const paddingRight = {
   `,
 } as const;
 
-export const margin = {
+export const margin: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> = {
   '0': css`
     margin-top: calc(-1 * var(--space-0));
     margin-bottom: calc(-1 * var(--space-0));
     margin-right: calc(-1 * var(--space-0));
     margin-left: calc(-1 * var(--space-0));
+  `,
+  '-0.25': css`
+    margin-top: calc(-1 * var(--space-0\\.25));
+    margin-bottom: calc(-1 * var(--space-0\\.25));
+    margin-right: calc(-1 * var(--space-0\\.25));
+    margin-left: calc(-1 * var(--space-0\\.25));
   `,
   '-0.5': css`
     margin-top: calc(-1 * var(--space-0\\.5));
@@ -3097,11 +3430,23 @@ export const margin = {
     margin-right: calc(-1 * var(--space-0\\.5));
     margin-left: calc(-1 * var(--space-0\\.5));
   `,
+  '-0.75': css`
+    margin-top: calc(-1 * var(--space-0\\.75));
+    margin-bottom: calc(-1 * var(--space-0\\.75));
+    margin-right: calc(-1 * var(--space-0\\.75));
+    margin-left: calc(-1 * var(--space-0\\.75));
+  `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
     margin-bottom: calc(-1 * var(--space-1));
     margin-right: calc(-1 * var(--space-1));
     margin-left: calc(-1 * var(--space-1));
+  `,
+  '-1.5': css`
+    margin-top: calc(-1 * var(--space-1\\.5));
+    margin-bottom: calc(-1 * var(--space-1\\.5));
+    margin-right: calc(-1 * var(--space-1\\.5));
+    margin-left: calc(-1 * var(--space-1\\.5));
   `,
   '-2': css`
     margin-top: calc(-1 * var(--space-2));
@@ -3159,195 +3504,257 @@ export const margin = {
   `,
 } as const;
 
-export const marginX = {
-  '0': css`
-    margin-right: calc(-1 * var(--space-0));
-    margin-left: calc(-1 * var(--space-0));
-  `,
-  '-0.5': css`
-    margin-right: calc(-1 * var(--space-0\\.5));
-    margin-left: calc(-1 * var(--space-0\\.5));
-  `,
-  '-1': css`
-    margin-right: calc(-1 * var(--space-1));
-    margin-left: calc(-1 * var(--space-1));
-  `,
-  '-2': css`
-    margin-right: calc(-1 * var(--space-2));
-    margin-left: calc(-1 * var(--space-2));
-  `,
-  '-3': css`
-    margin-right: calc(-1 * var(--space-3));
-    margin-left: calc(-1 * var(--space-3));
-  `,
-  '-4': css`
-    margin-right: calc(-1 * var(--space-4));
-    margin-left: calc(-1 * var(--space-4));
-  `,
-  '-5': css`
-    margin-right: calc(-1 * var(--space-5));
-    margin-left: calc(-1 * var(--space-5));
-  `,
-  '-6': css`
-    margin-right: calc(-1 * var(--space-6));
-    margin-left: calc(-1 * var(--space-6));
-  `,
-  '-7': css`
-    margin-right: calc(-1 * var(--space-7));
-    margin-left: calc(-1 * var(--space-7));
-  `,
-  '-8': css`
-    margin-right: calc(-1 * var(--space-8));
-    margin-left: calc(-1 * var(--space-8));
-  `,
-  '-9': css`
-    margin-right: calc(-1 * var(--space-9));
-    margin-left: calc(-1 * var(--space-9));
-  `,
-  '-10': css`
-    margin-right: calc(-1 * var(--space-10));
-    margin-left: calc(-1 * var(--space-10));
-  `,
-} as const;
+export const marginX: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> =
+  {
+    '0': css`
+      margin-right: calc(-1 * var(--space-0));
+      margin-left: calc(-1 * var(--space-0));
+    `,
+    '-0.25': css`
+      margin-right: calc(-1 * var(--space-0\\.25));
+      margin-left: calc(-1 * var(--space-0\\.25));
+    `,
+    '-0.5': css`
+      margin-right: calc(-1 * var(--space-0\\.5));
+      margin-left: calc(-1 * var(--space-0\\.5));
+    `,
+    '-0.75': css`
+      margin-right: calc(-1 * var(--space-0\\.75));
+      margin-left: calc(-1 * var(--space-0\\.75));
+    `,
+    '-1': css`
+      margin-right: calc(-1 * var(--space-1));
+      margin-left: calc(-1 * var(--space-1));
+    `,
+    '-1.5': css`
+      margin-right: calc(-1 * var(--space-1\\.5));
+      margin-left: calc(-1 * var(--space-1\\.5));
+    `,
+    '-2': css`
+      margin-right: calc(-1 * var(--space-2));
+      margin-left: calc(-1 * var(--space-2));
+    `,
+    '-3': css`
+      margin-right: calc(-1 * var(--space-3));
+      margin-left: calc(-1 * var(--space-3));
+    `,
+    '-4': css`
+      margin-right: calc(-1 * var(--space-4));
+      margin-left: calc(-1 * var(--space-4));
+    `,
+    '-5': css`
+      margin-right: calc(-1 * var(--space-5));
+      margin-left: calc(-1 * var(--space-5));
+    `,
+    '-6': css`
+      margin-right: calc(-1 * var(--space-6));
+      margin-left: calc(-1 * var(--space-6));
+    `,
+    '-7': css`
+      margin-right: calc(-1 * var(--space-7));
+      margin-left: calc(-1 * var(--space-7));
+    `,
+    '-8': css`
+      margin-right: calc(-1 * var(--space-8));
+      margin-left: calc(-1 * var(--space-8));
+    `,
+    '-9': css`
+      margin-right: calc(-1 * var(--space-9));
+      margin-left: calc(-1 * var(--space-9));
+    `,
+    '-10': css`
+      margin-right: calc(-1 * var(--space-10));
+      margin-left: calc(-1 * var(--space-10));
+    `,
+  } as const;
 
-export const marginY = {
+export const marginY: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> =
+  {
+    '0': css`
+      margin-top: calc(-1 * var(--space-0));
+      margin-bottom: calc(-1 * var(--space-0));
+    `,
+    '-0.25': css`
+      margin-top: calc(-1 * var(--space-0\\.25));
+      margin-bottom: calc(-1 * var(--space-0\\.25));
+    `,
+    '-0.5': css`
+      margin-top: calc(-1 * var(--space-0\\.5));
+      margin-bottom: calc(-1 * var(--space-0\\.5));
+    `,
+    '-0.75': css`
+      margin-top: calc(-1 * var(--space-0\\.75));
+      margin-bottom: calc(-1 * var(--space-0\\.75));
+    `,
+    '-1': css`
+      margin-top: calc(-1 * var(--space-1));
+      margin-bottom: calc(-1 * var(--space-1));
+    `,
+    '-1.5': css`
+      margin-top: calc(-1 * var(--space-1\\.5));
+      margin-bottom: calc(-1 * var(--space-1\\.5));
+    `,
+    '-2': css`
+      margin-top: calc(-1 * var(--space-2));
+      margin-bottom: calc(-1 * var(--space-2));
+    `,
+    '-3': css`
+      margin-top: calc(-1 * var(--space-3));
+      margin-bottom: calc(-1 * var(--space-3));
+    `,
+    '-4': css`
+      margin-top: calc(-1 * var(--space-4));
+      margin-bottom: calc(-1 * var(--space-4));
+    `,
+    '-5': css`
+      margin-top: calc(-1 * var(--space-5));
+      margin-bottom: calc(-1 * var(--space-5));
+    `,
+    '-6': css`
+      margin-top: calc(-1 * var(--space-6));
+      margin-bottom: calc(-1 * var(--space-6));
+    `,
+    '-7': css`
+      margin-top: calc(-1 * var(--space-7));
+      margin-bottom: calc(-1 * var(--space-7));
+    `,
+    '-8': css`
+      margin-top: calc(-1 * var(--space-8));
+      margin-bottom: calc(-1 * var(--space-8));
+    `,
+    '-9': css`
+      margin-top: calc(-1 * var(--space-9));
+      margin-bottom: calc(-1 * var(--space-9));
+    `,
+    '-10': css`
+      margin-top: calc(-1 * var(--space-10));
+      margin-bottom: calc(-1 * var(--space-10));
+    `,
+  } as const;
+
+export const marginTop: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     margin-top: calc(-1 * var(--space-0));
-    margin-bottom: calc(-1 * var(--space-0));
+  `,
+  '-0.25': css`
+    margin-top: calc(-1 * var(--space-0\\.25));
   `,
   '-0.5': css`
     margin-top: calc(-1 * var(--space-0\\.5));
-    margin-bottom: calc(-1 * var(--space-0\\.5));
+  `,
+  '-0.75': css`
+    margin-top: calc(-1 * var(--space-0\\.75));
   `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
-    margin-bottom: calc(-1 * var(--space-1));
+  `,
+  '-1.5': css`
+    margin-top: calc(-1 * var(--space-1\\.5));
   `,
   '-2': css`
     margin-top: calc(-1 * var(--space-2));
-    margin-bottom: calc(-1 * var(--space-2));
   `,
   '-3': css`
     margin-top: calc(-1 * var(--space-3));
-    margin-bottom: calc(-1 * var(--space-3));
   `,
   '-4': css`
     margin-top: calc(-1 * var(--space-4));
-    margin-bottom: calc(-1 * var(--space-4));
   `,
   '-5': css`
     margin-top: calc(-1 * var(--space-5));
-    margin-bottom: calc(-1 * var(--space-5));
   `,
   '-6': css`
     margin-top: calc(-1 * var(--space-6));
-    margin-bottom: calc(-1 * var(--space-6));
   `,
   '-7': css`
     margin-top: calc(-1 * var(--space-7));
-    margin-bottom: calc(-1 * var(--space-7));
   `,
   '-8': css`
     margin-top: calc(-1 * var(--space-8));
-    margin-bottom: calc(-1 * var(--space-8));
   `,
   '-9': css`
     margin-top: calc(-1 * var(--space-9));
-    margin-bottom: calc(-1 * var(--space-9));
   `,
   '-10': css`
     margin-top: calc(-1 * var(--space-10));
+  `,
+} as const;
+
+export const marginBottom: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
+  '0': css`
+    margin-bottom: calc(-1 * var(--space-0));
+  `,
+  '-0.25': css`
+    margin-bottom: calc(-1 * var(--space-0\\.25));
+  `,
+  '-0.5': css`
+    margin-bottom: calc(-1 * var(--space-0\\.5));
+  `,
+  '-0.75': css`
+    margin-bottom: calc(-1 * var(--space-0\\.75));
+  `,
+  '-1': css`
+    margin-bottom: calc(-1 * var(--space-1));
+  `,
+  '-1.5': css`
+    margin-bottom: calc(-1 * var(--space-1\\.5));
+  `,
+  '-2': css`
+    margin-bottom: calc(-1 * var(--space-2));
+  `,
+  '-3': css`
+    margin-bottom: calc(-1 * var(--space-3));
+  `,
+  '-4': css`
+    margin-bottom: calc(-1 * var(--space-4));
+  `,
+  '-5': css`
+    margin-bottom: calc(-1 * var(--space-5));
+  `,
+  '-6': css`
+    margin-bottom: calc(-1 * var(--space-6));
+  `,
+  '-7': css`
+    margin-bottom: calc(-1 * var(--space-7));
+  `,
+  '-8': css`
+    margin-bottom: calc(-1 * var(--space-8));
+  `,
+  '-9': css`
+    margin-bottom: calc(-1 * var(--space-9));
+  `,
+  '-10': css`
     margin-bottom: calc(-1 * var(--space-10));
   `,
 } as const;
 
-export const marginTop = {
-  '0': css`
-    margin-top: calc(-1 * var(--space-0));
-  `,
-  '-0.5': css`
-    margin-top: calc(-1 * var(--space-0\\.5));
-  `,
-  '-1': css`
-    margin-top: calc(-1 * var(--space-1));
-  `,
-  '-2': css`
-    margin-top: calc(-1 * var(--space-2));
-  `,
-  '-3': css`
-    margin-top: calc(-1 * var(--space-3));
-  `,
-  '-4': css`
-    margin-top: calc(-1 * var(--space-4));
-  `,
-  '-5': css`
-    margin-top: calc(-1 * var(--space-5));
-  `,
-  '-6': css`
-    margin-top: calc(-1 * var(--space-6));
-  `,
-  '-7': css`
-    margin-top: calc(-1 * var(--space-7));
-  `,
-  '-8': css`
-    margin-top: calc(-1 * var(--space-8));
-  `,
-  '-9': css`
-    margin-top: calc(-1 * var(--space-9));
-  `,
-  '-10': css`
-    margin-top: calc(-1 * var(--space-10));
-  `,
-} as const;
-
-export const marginBottom = {
-  '0': css`
-    margin-bottom: calc(-1 * var(--space-0));
-  `,
-  '-0.5': css`
-    margin-bottom: calc(-1 * var(--space-0\\.5));
-  `,
-  '-1': css`
-    margin-bottom: calc(-1 * var(--space-1));
-  `,
-  '-2': css`
-    margin-bottom: calc(-1 * var(--space-2));
-  `,
-  '-3': css`
-    margin-bottom: calc(-1 * var(--space-3));
-  `,
-  '-4': css`
-    margin-bottom: calc(-1 * var(--space-4));
-  `,
-  '-5': css`
-    margin-bottom: calc(-1 * var(--space-5));
-  `,
-  '-6': css`
-    margin-bottom: calc(-1 * var(--space-6));
-  `,
-  '-7': css`
-    margin-bottom: calc(-1 * var(--space-7));
-  `,
-  '-8': css`
-    margin-bottom: calc(-1 * var(--space-8));
-  `,
-  '-9': css`
-    margin-bottom: calc(-1 * var(--space-9));
-  `,
-  '-10': css`
-    margin-bottom: calc(-1 * var(--space-10));
-  `,
-} as const;
-
-export const marginRight = {
+export const marginRight: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     margin-right: calc(-1 * var(--space-0));
+  `,
+  '-0.25': css`
+    margin-right: calc(-1 * var(--space-0\\.25));
   `,
   '-0.5': css`
     margin-right: calc(-1 * var(--space-0\\.5));
   `,
+  '-0.75': css`
+    margin-right: calc(-1 * var(--space-0\\.75));
+  `,
   '-1': css`
     margin-right: calc(-1 * var(--space-1));
+  `,
+  '-1.5': css`
+    margin-right: calc(-1 * var(--space-1\\.5));
   `,
   '-2': css`
     margin-right: calc(-1 * var(--space-2));
@@ -3378,15 +3785,27 @@ export const marginRight = {
   `,
 } as const;
 
-export const marginLeft = {
+export const marginLeft: Record<
+  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
+  LinariaClassName
+> = {
   '0': css`
     margin-left: calc(-1 * var(--space-0));
+  `,
+  '-0.25': css`
+    margin-left: calc(-1 * var(--space-0\\.25));
   `,
   '-0.5': css`
     margin-left: calc(-1 * var(--space-0\\.5));
   `,
+  '-0.75': css`
+    margin-left: calc(-1 * var(--space-0\\.75));
+  `,
   '-1': css`
     margin-left: calc(-1 * var(--space-1));
+  `,
+  '-1.5': css`
+    margin-left: calc(-1 * var(--space-1\\.5));
   `,
   '-2': css`
     margin-left: calc(-1 * var(--space-2));
@@ -3449,149 +3868,5 @@ export const visibility = {
   `,
   visible: css`
     visibility: visible;
-  `,
-} as const;
-
-export const borderTopLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    border-top-left-radius: var(--borderRadius-none);
-  `,
-  roundedSmall: css`
-    border-top-left-radius: var(--borderRadius-roundedSmall);
-  `,
-  rounded: css`
-    border-top-left-radius: var(--borderRadius-rounded);
-  `,
-  roundedMedium: css`
-    border-top-left-radius: var(--borderRadius-roundedMedium);
-  `,
-  roundedLarge: css`
-    border-top-left-radius: var(--borderRadius-roundedLarge);
-  `,
-  roundedXLarge: css`
-    border-top-left-radius: var(--borderRadius-roundedXLarge);
-  `,
-  roundedFull: css`
-    border-top-left-radius: var(--borderRadius-roundedFull);
-  `,
-} as const;
-
-export const borderTopRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    border-top-right-radius: var(--borderRadius-none);
-  `,
-  roundedSmall: css`
-    border-top-right-radius: var(--borderRadius-roundedSmall);
-  `,
-  rounded: css`
-    border-top-right-radius: var(--borderRadius-rounded);
-  `,
-  roundedMedium: css`
-    border-top-right-radius: var(--borderRadius-roundedMedium);
-  `,
-  roundedLarge: css`
-    border-top-right-radius: var(--borderRadius-roundedLarge);
-  `,
-  roundedXLarge: css`
-    border-top-right-radius: var(--borderRadius-roundedXLarge);
-  `,
-  roundedFull: css`
-    border-top-right-radius: var(--borderRadius-roundedFull);
-  `,
-} as const;
-
-export const borderBottomLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    border-bottom-left-radius: var(--borderRadius-none);
-  `,
-  roundedSmall: css`
-    border-bottom-left-radius: var(--borderRadius-roundedSmall);
-  `,
-  rounded: css`
-    border-bottom-left-radius: var(--borderRadius-rounded);
-  `,
-  roundedMedium: css`
-    border-bottom-left-radius: var(--borderRadius-roundedMedium);
-  `,
-  roundedLarge: css`
-    border-bottom-left-radius: var(--borderRadius-roundedLarge);
-  `,
-  roundedXLarge: css`
-    border-bottom-left-radius: var(--borderRadius-roundedXLarge);
-  `,
-  roundedFull: css`
-    border-bottom-left-radius: var(--borderRadius-roundedFull);
-  `,
-} as const;
-
-export const borderBottomRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
-  none: css`
-    border-bottom-right-radius: var(--borderRadius-none);
-  `,
-  roundedSmall: css`
-    border-bottom-right-radius: var(--borderRadius-roundedSmall);
-  `,
-  rounded: css`
-    border-bottom-right-radius: var(--borderRadius-rounded);
-  `,
-  roundedMedium: css`
-    border-bottom-right-radius: var(--borderRadius-roundedMedium);
-  `,
-  roundedLarge: css`
-    border-bottom-right-radius: var(--borderRadius-roundedLarge);
-  `,
-  roundedXLarge: css`
-    border-bottom-right-radius: var(--borderRadius-roundedXLarge);
-  `,
-  roundedFull: css`
-    border-bottom-right-radius: var(--borderRadius-roundedFull);
-  `,
-} as const;
-
-export const borderTopWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    border-top-width: var(--borderWidth-none);
-  `,
-  thin: css`
-    border-top-width: var(--borderWidth-thin);
-  `,
-  thick: css`
-    border-top-width: var(--borderWidth-thick);
-  `,
-} as const;
-
-export const borderRightWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    border-right-width: var(--borderWidth-none);
-  `,
-  thin: css`
-    border-right-width: var(--borderWidth-thin);
-  `,
-  thick: css`
-    border-right-width: var(--borderWidth-thick);
-  `,
-} as const;
-
-export const borderBottomWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    border-bottom-width: var(--borderWidth-none);
-  `,
-  thin: css`
-    border-bottom-width: var(--borderWidth-thin);
-  `,
-  thick: css`
-    border-bottom-width: var(--borderWidth-thick);
-  `,
-} as const;
-
-export const borderLeftWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
-  none: css`
-    border-left-width: var(--borderWidth-none);
-  `,
-  thin: css`
-    border-left-width: var(--borderWidth-thin);
-  `,
-  thick: css`
-    border-left-width: var(--borderWidth-thick);
   `,
 } as const;

@@ -8,9 +8,12 @@ import type { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
 import type { AspectRatio, Shape } from '@cbhq/cds-common/types/Shape';
 
 import { type PolymorphicBoxProps, Box } from '../layout/Box';
-import { borderRadius } from '../styles/styles';
 
-const resizeModes = {
+const baseStyle = css`
+  display: block;
+`;
+
+const resizeStyle = {
   cover: css`
     object-fit: cover;
   `,
@@ -19,9 +22,6 @@ const resizeModes = {
   `,
 };
 
-const baseStyle = css`
-  display: block;
-`;
 const hexagonOverflowClass = css`
   overflow: visible;
 `;
@@ -37,17 +37,27 @@ const fallbackStyle = css`
 `;
 
 const borderRadiusStyle = {
-  circle: borderRadius.roundedFull,
-  squircle: borderRadius.rounded,
-  square: borderRadius.roundedSmall,
-  rectangle: borderRadius.none,
-  hexagon: borderRadius.none,
+  circle: css`
+    border-radius: 1e5px;
+  `,
+  squircle: css`
+    border-radius: 8px;
+  `,
+  square: css`
+    border-radius: 4px;
+  `,
+  rectangle: css`
+    border-radius: 0;
+  `,
+  hexagon: css`
+    border-radius: 0;
+  `,
 };
 
 type BaseRemoteImageProps = {
   /** Absolute url to the image that should be shown in the RemoteImage. If no source is provided then a generic fallback image is used. */
   source?: string;
-  resizeMode?: keyof typeof resizeModes;
+  resizeMode?: keyof typeof resizeStyle;
   /**
    * Shape of RemoteImage
    * @default square
@@ -83,7 +93,7 @@ export const RemoteImage = memo(
     resizeMode = 'cover',
     size = 'm',
     borderColor,
-    borderWidth = borderColor && 'thick',
+    borderWidth = borderColor ? 200 : undefined,
     style,
     ...props
   }: RemoteImageProps<AsComponent>) => {
@@ -107,7 +117,7 @@ export const RemoteImage = memo(
         className={cx(
           baseStyle,
           shape === 'hexagon' && hexagonOverflowClass,
-          resizeModes[resizeMode],
+          resizeStyle[resizeMode],
           borderRadiusStyle[shape],
           !source && fallbackStyle,
           className,

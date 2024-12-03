@@ -15,7 +15,7 @@ import { useControlMotionProps } from './useControlMotionProps';
 const track = css`
   width: var(--control-switchWidth);
   height: var(--control-switchHeight);
-  border-radius: var(--borderRadius-roundedFull);
+  border-radius: var(--borderRadius-1000);
   flex-shrink: 0;
 
   display: flex;
@@ -49,7 +49,7 @@ const focusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-thick);
+    outline-width: var(--borderWidth-200);
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 2px;
   }
@@ -97,7 +97,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
     <Control
       ref={ref}
       background={checked ? 'backgroundPrimary' : 'backgroundAlternate'}
-      borderRadius="roundedLarge"
+      borderRadius={400}
       checked={checked}
       disabled={disabled}
       label={children}
@@ -113,7 +113,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
       >
         <MotionBox
           animate={checked ? 'checked' : 'unchecked'}
-          borderRadius="roundedFull"
+          borderRadius={1000}
           className={cx(thumb, thumbBackgroundStyle)}
           elevation={1}
           initial={false}

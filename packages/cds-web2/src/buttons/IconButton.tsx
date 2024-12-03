@@ -3,7 +3,7 @@ import { type LinariaClassName, css, cx } from '@linaria/core';
 import { IconName } from '@cbhq/cds-common/types/IconName';
 
 import { Icon } from '../icons/Icon';
-import { type PolymorphicBoxProps, Box } from '../layout/Box.jsx';
+import { type PolymorphicBoxProps, Box } from '../layout/Box';
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'foregroundMuted';
 
@@ -199,7 +199,7 @@ const focusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-thick);
+    outline-width: var(--borderWidth-200);
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 2px;
   }

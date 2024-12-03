@@ -78,7 +78,7 @@
 //     <Box
 //       background={background}
 //       borderColor="transparent"
-//       borderRadius="roundedXLarge"
+//       borderRadius={500}
 //       maxWidth={maxWidth}
 //       maxHeight={maxHeight}
 //       minWidth={minWidth}

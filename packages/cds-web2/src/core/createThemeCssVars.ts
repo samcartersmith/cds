@@ -6,7 +6,7 @@ import { createCssVars } from './createCssVars';
 export const createThemeCssVars = (theme: ThemeConfig) => {
   const themeCss: Record<string, CSSProperties> = {};
   for (const key in theme) {
-    // If the key is a VarType / Theme key, create CSS vars for it
+    // If the key is a VarType / Theme key, create CSS Variables for it
     if (key in varNames) {
       const themeKey = key as keyof typeof varNames;
       const cssVars = createCssVars(
@@ -14,7 +14,9 @@ export const createThemeCssVars = (theme: ThemeConfig) => {
         styleVarPrefixes[themeKey as keyof typeof styleVarPrefixes] || '',
       );
       for (const cssVarName in cssVars) {
-        themeCss[cssVarName] = cssVars[cssVarName as keyof typeof cssVars];
+        // Escapes periods in CSS Variable names
+        const escapedVarName = cssVarName.replaceAll('.', '\\.');
+        themeCss[escapedVarName] = cssVars[cssVarName as keyof typeof cssVars];
       }
     }
     // Otherwise it must be a media query, so recurse

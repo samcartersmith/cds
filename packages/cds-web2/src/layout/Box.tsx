@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import type { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps.js';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 
 import { type ExtendableProps, type PolymorphicProps, PolymorphicRef } from '../core/polymorphism';
@@ -8,41 +8,41 @@ import { type StyleProps, getStyles } from '../styles/styleProps';
 
 const borderStyle = {
   bordered: css`
-    border-width: var(--borderWidth-thin);
+    border-width: var(--borderWidth-100);
     border-style: solid;
     border-color: var(--color-line);
   `,
   borderedHorizontal: css`
-    border-left-width: var(--borderWidth-thin);
+    border-left-width: var(--borderWidth-100);
     border-left-style: solid;
-    border-right-width: var(--borderWidth-thin);
+    border-right-width: var(--borderWidth-100);
     border-right-style: solid;
     border-color: var(--color-line);
   `,
   borderedVertical: css`
-    border-top-width: var(--borderWidth-thin);
+    border-top-width: var(--borderWidth-100);
     border-top-style: solid;
-    border-bottom-width: var(--borderWidth-thin);
+    border-bottom-width: var(--borderWidth-100);
     border-bottom-style: solid;
     border-color: var(--color-line);
   `,
   borderedStart: css`
-    border-left-width: var(--borderWidth-thin);
+    border-left-width: var(--borderWidth-100);
     border-left-style: solid;
     border-color: var(--color-line);
   `,
   borderedEnd: css`
-    border-right-width: var(--borderWidth-thin);
+    border-right-width: var(--borderWidth-100);
     border-right-style: solid;
     border-color: var(--color-line);
   `,
   borderedTop: css`
-    border-top-width: var(--borderWidth-thin);
+    border-top-width: var(--borderWidth-100);
     border-top-style: solid;
     border-color: var(--color-line);
   `,
   borderedBottom: css`
-    border-bottom-width: var(--borderWidth-thin);
+    border-bottom-width: var(--borderWidth-100);
     border-bottom-style: solid;
     border-color: var(--color-line);
   `,

@@ -61,13 +61,13 @@ export const getStyles = (styleProps: StyleProps, inlineStyle?: React.CSSPropert
 
     // If it's a dynamic style prop...
     if (typeof styles.dynamic[styleProp as keyof typeof styles.dynamic] !== 'undefined') {
-      // If it's just a single value, treat it as an inline style
+      // Set the value as an inline style CSS variable, and add the corresponding classname that consumes it
       if (typeof value !== 'object') {
-        style[styleProp] = value;
+        style['--' + styleProp] = value;
+        className += ' ' + styles.dynamic[styleProp as keyof DynamicStyleProps];
         continue;
       }
       // If it's an object, treat it as a responsive style:
-      // Set the value as an inline style CSS variable, and add the corresponding classname that consumes it
       if (typeof value.base !== 'undefined') {
         style['--' + styleProp] = value.base;
         className += ' ' + styles.dynamic[styleProp as keyof DynamicStyleProps];

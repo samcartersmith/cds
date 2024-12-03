@@ -17,7 +17,7 @@ export const SegmentedTabs = memo(
         TabsActiveIndicatorComponent = SegmentedTabsActiveIndicator,
         activeBackground = 'backgroundInverse',
         background = 'backgroundSecondary',
-        borderRadius = 'roundedFull',
+        borderRadius = 1000,
         ...props
       }: SegmentedTabsProps,
       ref: React.ForwardedRef<HTMLElement>,

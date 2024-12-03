@@ -58,7 +58,7 @@ const focusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-thick);
+    outline-width: var(--borderWidth-200);
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 2px;
   }
@@ -74,7 +74,7 @@ export const ContainedAssetCard = <AsComponent extends React.ElementType = 'div'
   className,
   flexDirection = 'row',
   background = 'backgroundAlternate',
-  borderRadius = 'roundedXLarge',
+  borderRadius = 500,
   height = containedAssetCardHeight,
   width = size === 'l' ? containedAssetCardLargeWidth : containedAssetCardSmallWidth,
   minWidth = size === 'l' ? containedAssetCardLargeMinWidth : containedAssetCardSmallMinWidth,

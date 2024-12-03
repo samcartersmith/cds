@@ -66,7 +66,7 @@ export const TooltipContent = memo(
           <Box
             ref={ref}
             background={invertSpectrum ? 'backgroundInverse' : 'background'}
-            borderRadius="rounded"
+            borderRadius={200}
             data-testid={testID}
             elevation={elevation}
             maxWidth={maxWidth}

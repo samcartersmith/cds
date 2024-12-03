@@ -5,11 +5,11 @@ import * as vars from '../../../styles/vars';
 export const denseDensityTheme = {
   space: {
     '0': '0px',
-    '0\\.25': '1px',
-    '0\\.5': '3px',
-    '0\\.75': '5px',
+    '0.25': '1px',
+    '0.5': '3px',
+    '0.75': '5px',
     '1': '6px',
-    '1\\.5': '9px',
+    '1.5': '9px',
     '2': '12px',
     '3': '18px',
     '4': '24px',
@@ -20,11 +20,11 @@ export const denseDensityTheme = {
     '9': '54px',
     '10': '60px',
   },
-  size: {
-    'icon-xs': '8px',
-    'icon-s': '12px',
-    'icon-m': '16px',
-    'icon-l': '24px',
+  iconSize: {
+    xs: '8px',
+    s: '12px',
+    m: '16px',
+    l: '24px',
   },
   avatarSize: {
     s: '16px',

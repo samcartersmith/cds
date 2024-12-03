@@ -48,10 +48,10 @@ const focusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-thick);
+    outline-width: var(--borderWidth-200);
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 2px;
-    border-radius: var(--borderRadius-roundedXLarge);
+    border-radius: var(--borderRadius-500);
   }
 `;
 
@@ -80,8 +80,8 @@ export const FloatingAssetCard = <AsComponent extends React.ElementType = 'div'>
     >
       <HStack
         borderColor="line"
-        borderRadius="roundedXLarge"
-        borderWidth="thin"
+        borderRadius={500}
+        borderWidth={100}
         height={floatingAssetCardSmallDimension}
         maxWidth={width}
         minWidth={floatingAssetCardSmallDimension}

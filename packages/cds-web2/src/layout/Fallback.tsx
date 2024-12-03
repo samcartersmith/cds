@@ -1,7 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 
-import { borderRadius as borderRadii } from '../styles/vars';
 import { Shape } from '../types/Shape';
 
 import { type PolymorphicBoxProps, Box } from './Box';
@@ -46,7 +45,7 @@ export function useFallbackShape(
       return Number(width) / 2;
     }
 
-    return shape === 'squircle' ? borderRadii.rounded : 0;
+    return shape === 'squircle' ? 8 : 0;
   }, [shape, width]);
 
   return useMemo(() => ({ borderRadius, width }), [borderRadius, width]);

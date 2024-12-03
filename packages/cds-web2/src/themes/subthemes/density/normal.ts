@@ -3,7 +3,7 @@ import * as vars from '../../../styles/vars';
 
 export const normalDensityTheme = {
   space: vars.space,
-  size: vars.size,
+  iconSize: vars.iconSize,
   avatarSize: vars.avatarSize,
   fontFamily: vars.fontFamily,
   fontSize: vars.fontSize,

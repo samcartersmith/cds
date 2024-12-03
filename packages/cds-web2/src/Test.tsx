@@ -11,7 +11,7 @@ import { UiIconName } from '@cbhq/cds-icons/__generated__/ui/types/UiIconName';
 
 import { Button } from './buttons/Button';
 import { ButtonGroup } from './buttons/ButtonGroup';
-import { IconButton } from './buttons/IconButton.jsx';
+import { IconButton } from './buttons/IconButton';
 import { ContainedAssetCard } from './cards/ContainedAssetCard';
 import { FloatingAssetCard } from './cards/FloatingAssetCard';
 import { InputLabel } from './controls/InputLabel';
@@ -792,7 +792,7 @@ export const Test = () => {
         <Box
           bordered
           background="background"
-          borderRadius="rounded"
+          borderRadius={200}
           elevation={1}
           paddingX={3}
           paddingY={2}
@@ -803,7 +803,7 @@ export const Test = () => {
         <Box
           bordered
           background="background"
-          borderRadius="rounded"
+          borderRadius={200}
           elevation={2}
           paddingX={3}
           paddingY={2}
@@ -975,7 +975,7 @@ export const Test = () => {
               as="button"
               background="background"
               borderColor="backgroundPrimary"
-              borderRadius="roundedSmall"
+              borderRadius={100}
             >
               <Text padding={1}>primary + compact</Text>
             </Pressable>
@@ -986,7 +986,7 @@ export const Test = () => {
               as="button"
               background="backgroundPrimary"
               borderColor="textPositive"
-              borderRadius="rounded"
+              borderRadius={200}
             >
               <Text color="textForeground" padding={1}>
                 textPositive + standard
@@ -996,18 +996,13 @@ export const Test = () => {
               as="button"
               background="backgroundSecondary"
               borderColor="lineHeavy"
-              borderRadius="rounded"
+              borderRadius={200}
             >
               <Text color="textForeground" padding={1}>
                 lineHeavy + tooltip
               </Text>
             </Pressable>
-            <Pressable
-              as="button"
-              background="textPositive"
-              borderColor="line"
-              borderRadius="roundedLarge"
-            >
+            <Pressable as="button" background="textPositive" borderColor="line" borderRadius={400}>
               <Text color="textForegroundInverse" padding={1}>
                 line + pill
               </Text>
@@ -1016,7 +1011,7 @@ export const Test = () => {
               as="button"
               background="textNegative"
               borderColor="backgroundPrimaryWash"
-              borderRadius="roundedFull"
+              borderRadius={1000}
             >
               <Text color="textForegroundInverse" padding={1}>
                 primaryWash + round
@@ -1056,10 +1051,10 @@ export const Test = () => {
         </HStack>
         <Box
           background="backgroundPrimary"
-          borderRadius="roundedFull"
-          borderTopLeftRadius="none"
-          borderTopRightRadius="none"
-          borderTopWidth="none"
+          borderRadius={1000}
+          borderTopLeftRadius={0}
+          borderTopRightRadius={0}
+          borderTopWidth={0}
           left={0}
           padding={2}
           position="absolute"
@@ -1255,7 +1250,7 @@ export const Test = () => {
         <Divider />
         <VStack gap={2} padding={2}>
           <Text>Color Surge</Text>
-          <Box bordered borderRadius="rounded" overflow="hidden" padding={3} position="relative">
+          <Box bordered borderRadius={200} overflow="hidden" padding={3} position="relative">
             <ColorSurge ref={colorSurgeRef} disableAnimateOnMount />
           </Box>
           <Button onClick={async () => colorSurgeRef.current?.play('backgroundPrimary')}>
@@ -1338,7 +1333,7 @@ export const Test = () => {
               </Box>
             }
             endNode={
-              <Box background="backgroundPositive" borderRadius="rounded">
+              <Box background="backgroundPositive" borderRadius={200}>
                 <Text as="p" color="textForegroundInverse" font="body">
                   EndContent
                 </Text>
@@ -1373,7 +1368,7 @@ export const Test = () => {
               </Box>
             }
             startNode={
-              <Box background="backgroundPositive" borderRadius="rounded">
+              <Box background="backgroundPositive" borderRadius={200}>
                 <Text as="p" color="textForegroundInverse" font="body">
                   StartContent
                 </Text>

@@ -103,11 +103,11 @@ export const illustrationColor = {
 
 export const space = {
   '0': '0px',
-  '0\\.25': '2px',
-  '0\\.5': '4px',
-  '0\\.75': '6px',
+  '0.25': '2px',
+  '0.5': '4px',
+  '0.75': '6px',
   '1': '8px',
-  '1\\.5': '12px',
+  '1.5': '12px',
   '2': '16px',
   '3': '24px',
   '4': '32px',
@@ -119,11 +119,11 @@ export const space = {
   '10': '80px',
 } as const;
 
-export const size = {
-  'icon-xs': '12px',
-  'icon-s': '16px',
-  'icon-m': '24px',
-  'icon-l': '32px',
+export const iconSize = {
+  xs: '12px',
+  s: '16px',
+  m: '24px',
+  l: '32px',
 } as const;
 
 export const avatarSize = {
@@ -136,20 +136,26 @@ export const avatarSize = {
 } as const;
 
 export const borderWidth = {
-  none: '0px',
-  thin: '1px',
-  thick: '2px',
+  '0': '0px',
+  '100': '1px',
+  '200': '2px',
+  '300': '4px',
+  '400': '6px',
+  '500': '8px',
 } as const;
 
 export const borderRadius = {
-  // TO DO: Align values with doc. Keys are different.
-  none: '0px',
-  roundedSmall: '4px',
-  rounded: '8px',
-  roundedMedium: '12px',
-  roundedLarge: '16px',
-  roundedXLarge: '24px',
-  roundedFull: '1e5px',
+  '0': '0px',
+  '100': '4px',
+  '200': '8px',
+  '300': '12px',
+  '400': '16px',
+  '500': '24px',
+  '600': '32px',
+  '700': '40px',
+  '800': '48px',
+  '900': '56px',
+  '1000': '1e5px',
 } as const;
 
 export const fontFamily = {

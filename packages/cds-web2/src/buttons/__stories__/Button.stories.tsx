@@ -7,6 +7,7 @@ export default {
   component: Button,
   title: 'Buttons/Button',
 };
+
 export const PrimaryButton = () => (
   <VStack gap={2}>
     <Button variant="primary">Testable</Button>
