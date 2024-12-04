@@ -6,10 +6,16 @@ import * as minDesktopStyles from './minDesktopStyles';
 /** Returns number if the type T extends number, e.g. if T is a number or a number string like '2' or '5.5'. Allows for converting object keys that are numbers (such as the `space` scale vars) from string type to number type. */
 export type TypeOrNumber<T> = T extends `${infer N extends number}` ? N : T;
 
+/**
+ * Style props that set classnames but not inline style CSS Variables.
+ */
 export type StaticStyleProps = {
   [key in keyof Omit<typeof styles, 'dynamic'>]: TypeOrNumber<keyof (typeof styles)[key]>;
 };
 
+/**
+ * Style props that set inline style CSS Variables, and classnames that consume those CSS Variables.
+ */
 export type DynamicStyleProps = {
   width?: React.CSSProperties['width'];
   height?: React.CSSProperties['height'];
@@ -44,12 +50,28 @@ export type DynamicStyleProps = {
   opacity?: React.CSSProperties['opacity'];
 };
 
-type ResponsiveStyleProps<T> = {
+/**
+ * DynamicStyleProps that should have "px" concatenated if they are numbers and not equal to zero.
+ */
+export const dynamicPixelProps = {
+  width: 1,
+  height: 1,
+  minWidth: 1,
+  minHeight: 1,
+  maxWidth: 1,
+  maxHeight: 1,
+  top: 1,
+  bottom: 1,
+  left: 1,
+  right: 1,
+  flexBasis: 1,
+} as const satisfies Partial<Record<keyof DynamicStyleProps, 1>>;
+
+type ResponsiveProps<T> = {
   [key in keyof T]?: T[key] | { base?: T[key]; minTablet?: T[key]; minDesktop?: T[key] };
 };
 
-export type StyleProps = ResponsiveStyleProps<StaticStyleProps> &
-  ResponsiveStyleProps<DynamicStyleProps>;
+export type StyleProps = ResponsiveProps<StaticStyleProps> & ResponsiveProps<DynamicStyleProps>;
 
 export const getStyles = (styleProps: StyleProps, inlineStyle?: React.CSSProperties) => {
   const style: Record<string, unknown> = {};
@@ -61,23 +83,34 @@ export const getStyles = (styleProps: StyleProps, inlineStyle?: React.CSSPropert
 
     // If it's a dynamic style prop...
     if (typeof styles.dynamic[styleProp as keyof typeof styles.dynamic] !== 'undefined') {
+      const isPixelProp = dynamicPixelProps[styleProp as keyof typeof dynamicPixelProps];
       // Set the value as an inline style CSS variable, and add the corresponding classname that consumes it
       if (typeof value !== 'object') {
-        style['--' + styleProp] = value;
+        style['--' + styleProp] =
+          isPixelProp && typeof value === 'number' && value !== 0 ? value + 'px' : value;
         className += ' ' + styles.dynamic[styleProp as keyof DynamicStyleProps];
         continue;
       }
       // If it's an object, treat it as a responsive style:
       if (typeof value.base !== 'undefined') {
-        style['--' + styleProp] = value.base;
+        style['--' + styleProp] =
+          isPixelProp && typeof value.base === 'number' && value.base !== 0
+            ? value.base + 'px'
+            : value.base;
         className += ' ' + styles.dynamic[styleProp as keyof DynamicStyleProps];
       }
       if (typeof value.minTablet !== 'undefined') {
-        style['--minTablet-' + styleProp] = value.minTablet;
+        style['--minTablet-' + styleProp] =
+          isPixelProp && typeof value.minTablet === 'number' && value.minTablet !== 0
+            ? value.minTablet + 'px'
+            : value.minTablet;
         className += ' ' + minTabletStyles.dynamic[styleProp as keyof DynamicStyleProps];
       }
       if (typeof value.minDesktop !== 'undefined') {
-        style['--minDesktop-' + styleProp] = value.minDesktop;
+        style['--minDesktop-' + styleProp] =
+          isPixelProp && typeof value.minDesktop === 'number' && value.minDesktop !== 0
+            ? value.minDesktop + 'px'
+            : value.minDesktop;
         className += ' ' + minDesktopStyles.dynamic[styleProp as keyof DynamicStyleProps];
       }
       continue;
