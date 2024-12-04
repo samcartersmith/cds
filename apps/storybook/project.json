@@ -31,24 +31,28 @@
     },
     "analyze": {
       "command": "build-storybook --output-dir dist",
-      "env": {
-        "ANALYZE": true
+      "options": {
+        "env": {
+          "ANALYZE": "true"
+        }
       }
     },
     "build-for-analyze": {
       "command": "build-storybook --output-dir dist",
       "outputs": [
-        "{projectRoot}/dist"
+        "{projectRoot}/dist",
+        "{workspaceRoot}/bundle-stats.json",
+        "{projectRoot}/bundle-stats.json"
       ],
-      "env": {
-        "ANALYZE": true,
-        "ANALYZE_MODE_JSON": true
-      },
       "dependsOn": [
         "^build"
       ],
       "options": {
-        "cwd": "apps/storybook"
+        "cwd": "apps/storybook",
+        "env": {
+          "ANALYZE": "true",
+          "ANALYZE_MODE_JSON": "true"
+        }
       }
     },
     "build-for-tests": {

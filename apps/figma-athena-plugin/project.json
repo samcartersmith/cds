@@ -73,19 +73,6 @@
     },
     "lint": {
       "executor": "@cbhq/mono-tasks:lint"
-    },
-    "build-for-analyze": {
-      "command": "rm -rf dist && tsc && webpack --mode production",
-      "dependsOn": [
-        "^build"
-      ],
-      "options": {
-        "cwd": "apps/figma-athena-plugin"
-      },
-      "env": {
-        "ANALYZE": true,
-        "ANALYZE_MODE_JSON": true
-      }
     }
   }
 }

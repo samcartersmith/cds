@@ -9,8 +9,10 @@
       "dependsOn": [
         "^build"
       ],
-      "env": {
-        "NODE_ENV": "development"
+      "options": {
+        "env": {
+          "NODE_ENV": "development"
+        }
       }
     },
     "start": {
