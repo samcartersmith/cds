@@ -5,7 +5,8 @@ import { paletteValueToRgbaString } from '@cbhq/cds-common/palette/paletteValueT
 import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 
 import { useSpacingStyles } from '../../hooks/useSpacingStyles';
-import { Box, HStack } from '../../layout';
+import { Icon } from '../../icons';
+import { Box, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
 import { borderRadius } from '../../tokens';
 import { Link } from '../../typography';
@@ -512,5 +513,40 @@ export const CustomStyle = function Align() {
       placeholder="placeholder"
       style={customStyle}
     />
+  );
+};
+
+export const ReadOnly = function ReadOnly() {
+  return (
+    <VStack gap={1}>
+      <TextInput readOnly label="Read-Only Label" value="Some text" />
+      <TextInput
+        readOnly
+        helperText="Some helper text"
+        label="Read-Only with HelperText"
+        value="Some text"
+      />
+      <TextInput
+        readOnly
+        label="Read-Only with Start Node"
+        start={
+          <Box spacingHorizontal={2}>
+            <Icon color="foreground" name="qrCode" size="m" />
+          </Box>
+        }
+        value="Some text"
+      />
+      <TextInput
+        compact
+        readOnly
+        end={
+          <Box spacingHorizontal={2}>
+            <Icon color="foreground" name="qrCode" size="m" />
+          </Box>
+        }
+        label="Compact Read-Only with End Node"
+        placeholder="Placeholder"
+      />
+    </VStack>
   );
 };

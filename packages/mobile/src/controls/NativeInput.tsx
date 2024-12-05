@@ -64,8 +64,16 @@ export const NativeInput = memo(
           flex: 2,
           ...containerSpacingStyle,
           ...containerSpacing,
+          ...(!disabled &&
+            editableInputAddonProps.readOnly && { backgroundColor: palette.secondary }),
         };
-      }, [containerSpacing, containerSpacingStyle]);
+      }, [
+        containerSpacing,
+        containerSpacingStyle,
+        editableInputAddonProps.readOnly,
+        disabled,
+        palette.secondary,
+      ]);
 
       const inputRootStyles = useMemo(() => {
         return [

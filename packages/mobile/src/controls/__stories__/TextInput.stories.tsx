@@ -4,6 +4,7 @@ import { useSpectrum } from '@cbhq/cds-common/spectrum/useSpectrum';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { Icon } from '../../icons';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
@@ -353,6 +354,44 @@ const InputScreen = () => {
       </Example>
       <Example inline title="TextInput without border">
         <MockTextInput bordered={false} label="Username" placeholder="john.doe@coinbase.com" />
+      </Example>
+      <Example inline title="Read-Only TextInput">
+        <MockTextInput readOnly label="Read-Only" placeholder="Placeholder" value="Some text" />
+        <MockTextInput
+          readOnly
+          helperText="Helper Text"
+          label="Read-Only with helperText"
+          placeholder="Placeholder"
+          value="Some text"
+        />
+        <TextInput
+          readOnly
+          accessibilityLabel="Text input field"
+          label="Read-Only with Start Node"
+          start={
+            <Box spacingHorizontal={2}>
+              <Icon color="foreground" name="qrCode" size="m" />
+            </Box>
+          }
+          value="Some text"
+        />
+        <TextInput
+          readOnly
+          accessibilityLabel="Text input field"
+          end={
+            <Box spacingHorizontal={2}>
+              <Icon color="foreground" name="qrCode" size="m" />
+            </Box>
+          }
+          label="Compact Read-Only with End Node"
+          placeholder="Placeholder"
+        />
+        <MockTextInput
+          readOnly
+          bordered={false}
+          label="Borderless Read-Only"
+          placeholder="Placeholder"
+        />
       </Example>
     </ExampleScreen>
   );

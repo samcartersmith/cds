@@ -37,6 +37,10 @@ const baseStyle = css`
     -moz-appearance: textfield;
   }
 
+  &[readonly]:not(:disabled) {
+    background-color: var(--secondary);
+  }
+
   /* stylelint-disable a11y/no-display-none */
   /* clears the "X" from Internet Explorer */
   &[type='search']::-ms-clear {

@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 7.4.0 (12/4/2024 PST)
+
+#### 🚀 Updates
+
+- TextInput: readOnly styles support. [[#3444](https://github.cbhq.net/frontend/cds/pull/3444)]
 
 #### 📘 Misc
 

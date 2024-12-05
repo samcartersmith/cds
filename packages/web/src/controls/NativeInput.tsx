@@ -60,6 +60,10 @@ const nativeInputBaseStyle = css`
     -moz-appearance: textfield;
   }
 
+  &[readonly]:not(:disabled) {
+    background-color: ${palette.secondary};
+  }
+
   /* stylelint-disable a11y/no-display-none */
   /* clears the "X" from Internet Explorer */
   &[type='search']::-ms-clear {

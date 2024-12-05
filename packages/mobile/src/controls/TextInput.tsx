@@ -144,6 +144,13 @@ export const TextInput = memo(
         return start;
       }, [start]);
 
+      const startEndBackground = useMemo(() => {
+        if (!disabled && editableInputAddonProps.readOnly) {
+          return 'secondary';
+        }
+        return undefined;
+      }, [disabled, editableInputAddonProps.readOnly]);
+
       return (
         <InputStack
           borderFocusedStyle={borderFocusedStyle}
@@ -155,6 +162,7 @@ export const TextInput = memo(
             (suffix !== '' || !!end) && (
               <HStack
                 alignItems="center"
+                background={startEndBackground}
                 gap={2}
                 justifyContent="center"
                 testID={testIDMap?.end ?? ''}
@@ -212,7 +220,12 @@ export const TextInput = memo(
           }
           startNode={
             ((compact && !!label) || !!start) && (
-              <Box alignItems="center" justifyContent="center" testID={testIDMap?.start}>
+              <Box
+                alignItems="center"
+                background={startEndBackground}
+                justifyContent="center"
+                testID={testIDMap?.start}
+              >
                 <Pressable
                   accessibilityElementsHidden={!startIconA11yLabel}
                   accessibilityHint={startIconA11yLabel}

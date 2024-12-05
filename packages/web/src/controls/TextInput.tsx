@@ -127,6 +127,13 @@ export const TextInput = memo(
       spacingEnd: compact ? 1 : 2,
     });
 
+    const startEndBackground = useMemo(() => {
+      if (!disabled && htmlInputElmProps.readOnly) {
+        return 'secondary';
+      }
+      return undefined;
+    }, [disabled, htmlInputElmProps.readOnly]);
+
     const inputNodeCloned = useMemo(() => {
       /** Ensures that the renderedInput has the blurring, focusing, disabled features */
       if (inputNode) {
@@ -196,6 +203,7 @@ export const TextInput = memo(
             (suffix !== '' || !!end) && (
               <HStack
                 alignItems="center"
+                background={startEndBackground}
                 gap={2}
                 justifyContent="center"
                 onClick={handleNodePress}
@@ -246,6 +254,7 @@ export const TextInput = memo(
             (compact || !!start) && (
               <HStack
                 alignItems="center"
+                background={startEndBackground}
                 gap={2}
                 justifyContent="center"
                 onClick={handleNodePress}
