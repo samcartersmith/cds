@@ -54,6 +54,7 @@ The content of Tooltip is contextual, useful, and nonessential. The element pair
       <li>Use succinct and scannable language.</li>
       <li>As much as possible, limit Tooltip's text to a maximum of 60 to 80 characters.</li>
       <li>Use an info-circle icon button when the paired element is text-based.</li>
+      <li>Provide a clear accessibility label</li>
     </ul>
   </VStack>
   <VStack width="50%">
@@ -254,3 +255,14 @@ Tooltip is comprised of a container (wrapper) with a nested description. It does
     <Image src={placement_4} />
   </VStack>
 </HStack>
+
+# Accessibility
+
+<ul>
+  <li>
+    Label the tooltip triggering button with the context of what information users will learn from
+    it using the accessibilityLabel prop.
+  </li>
+  <li>When tooltips are closed ensure focus is returned to the triggering tooltip button.</li>
+  <li>Ensure the tooltips receive keyboard focus and can be opened without a mouse.</li>
+</ul>
