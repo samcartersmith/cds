@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.4.1 (12/9/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix scrub on tap not working on Android. [[DX-4529](https://jira.coinbase-corp.com/browse/DX-4529)]
+
 ## 7.4.0 (12/4/2024 PST)
 
 #### 🚀 Updates

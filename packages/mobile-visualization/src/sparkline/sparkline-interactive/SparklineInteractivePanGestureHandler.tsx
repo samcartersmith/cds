@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { Animated as RNAnimated, View } from 'react-native';
+import { Animated as RNAnimated, Platform, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { runOnJS } from 'react-native-reanimated';
 import { ChartGetMarker, ChartScrubParams } from '@cbhq/cds-common/types/Chart';
@@ -85,9 +85,19 @@ export const SparklineInteractivePanGestureHandler = function SparklineInteracti
   const longPressGesture = Gesture.Pan()
     .activateAfterLongPress(110)
     .shouldCancelWhenOutside(!allowOverflowGestures)
-    .onStart(function onStart() {
+    .onStart(function onStart(event) {
       runOnJS(handleOnStartJsThread)();
       markerGestureState.value = 1;
+
+      // Android does not trigger onUpdate when the gesture starts. This achieves consistent behavior across both iOS and Android
+      if (Platform.OS === 'android') {
+        const newMarkerXPosition = Math.min(
+          endX,
+          Math.max(startX, event.x - chartVerticalLineWidth / 2),
+        );
+        markerXPosition.value = newMarkerXPosition;
+        runOnJS(handleOnUpdateJsThread)();
+      }
     })
     .onUpdate(function onUpdate(event) {
       const newMarkerXPosition = Math.min(
