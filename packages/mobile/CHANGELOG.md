@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.5.0 (12/16/2024 PST)
+
+#### 🚀 Updates
+
+- Update IconName type to include NavIconName as well as UiIconName. [[#3460](https://github.cbhq.net/frontend/cds/pull/3460)]
+
 ## 7.4.2 (12/10/2024 PST)
 
 #### 🐞 Fixes

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { IconName, NavigationIconName } from './IconName';
+import type { IconName } from './IconName';
 import type { IconSize } from './IconSize';
 import type { SharedProps } from './SharedProps';
 import type { SpacingProps } from './SpacingProps';
@@ -12,7 +12,7 @@ export type IconBaseProps = {
    */
   size: IconSize;
   /** Name of the icon, as defined in Figma. */
-  name: IconName | NavigationIconName;
+  name: IconName;
   /**
    * A boolean flag indicating whether or not a border should be shown around an icon.
    * This border will match color prop. Border is only allowed for sizes m and above.

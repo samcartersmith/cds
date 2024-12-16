@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
-import { NavIconName, UiIconName } from '@cbhq/cds-icons';
+import type { IconName } from '@cbhq/cds-common/types/IconName';
 import navIconDescriptionMap from '@cbhq/cds-icons/__generated__/nav/data/descriptionMap';
 import navIconNames from '@cbhq/cds-icons/__generated__/nav/data/names';
 import uiIconDescriptionMap from '@cbhq/cds-icons/__generated__/ui/data/descriptionMap';
@@ -37,15 +37,7 @@ const queryMatchesName = (query: string, name: string) => {
 
 const iconSizes: IconSize[] = ['xs', 's', 'm', 'l'];
 
-const IconTile = ({
-  name,
-  size,
-  active,
-}: {
-  name: UiIconName | NavIconName;
-  size: IconSize;
-  active: boolean;
-}) => {
+const IconTile = ({ name, size, active }: { name: IconName; size: IconSize; active: boolean }) => {
   const toast = useToast();
   const handleIconPress = useCallback(() => {
     if (navigator) {
