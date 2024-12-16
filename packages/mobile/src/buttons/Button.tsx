@@ -10,10 +10,13 @@ import { useInternalSpacingStyles } from '../hooks/internal/useInternalSpacingSt
 import { usePalette } from '../hooks/usePalette';
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { Pressable, PressableProps } from '../system/Pressable';
+import { Pressable, PressableInternalProps, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 
-export type ButtonProps = ButtonBaseProps & PressableProps & ComponentEventHandlerProps;
+export type ButtonProps = ButtonBaseProps &
+  PressableProps &
+  ComponentEventHandlerProps &
+  Pick<PressableInternalProps, 'wrapperStyles'>;
 
 export const Button = memo(
   forwardRef(function Button(
@@ -34,6 +37,7 @@ export const Button = memo(
       accessibilityHint,
       start,
       end,
+      wrapperStyles,
       ...props
     }: ButtonProps,
     ref: React.ForwardedRef<View>,
@@ -107,6 +111,7 @@ export const Button = memo(
         noScaleOnPress={noScaleOnPress}
         style={pressableStyles}
         transparentWhileInactive={transparent}
+        wrapperStyles={wrapperStyles}
         {...props}
       >
         <HStack

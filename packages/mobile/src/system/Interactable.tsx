@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { Animated, Falsy, View, ViewStyle } from 'react-native';
+import { type StyleProp, type ViewStyle, Animated, Falsy, View } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { emptyArray } from '@cbhq/cds-utils';
@@ -15,6 +15,12 @@ export type InteractableProps = {
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
   /** Apply animated styles to the inner container. */
   contentStyle?: Falsy | ViewStyle;
+  /** @deprecated Do not use. Added in CDS v7 as an escape hatch for Wallet. Will be removed in CDS v8. */
+  wrapperStyles?: {
+    base?: StyleProp<ViewStyle>;
+    pressed?: StyleProp<ViewStyle>;
+    disabled?: StyleProp<ViewStyle>;
+  };
 } & InteractableBaseProps &
   SharedProps;
 
@@ -30,6 +36,7 @@ export const Interactable = memo(function Interactable({
   pressed,
   style = emptyArray,
   contentStyle,
+  wrapperStyles,
   transparentWhileInactive,
   transparentWhilePressed,
   testID,
@@ -38,7 +45,7 @@ export const Interactable = memo(function Interactable({
   const elevationConfig = useElevationConfig(elevation);
   const ElevationChildrenWrapper = elevationConfig ? elevationConfig.WrapperForChildren : undefined;
 
-  const { wrapperStyles, contentStyles } = useMemo(() => {
+  const { wrapperStyles: defaultWrapperStyles, contentStyles } = useMemo(() => {
     return getInteractableStyles({
       themeConfig,
       elevationConfig,
@@ -62,11 +69,14 @@ export const Interactable = memo(function Interactable({
     () => [
       block && { flexGrow: 1 },
       ...style,
-      wrapperStyles.static,
-      !transparentWhilePressed && pressed && wrapperStyles.pressed,
-      disabled && wrapperStyles.disabled,
+      defaultWrapperStyles.static,
+      wrapperStyles?.base,
+      !transparentWhilePressed && pressed && defaultWrapperStyles.pressed,
+      pressed && wrapperStyles?.pressed,
+      disabled && defaultWrapperStyles.disabled,
+      disabled && wrapperStyles?.disabled,
     ],
-    [block, wrapperStyles, style, pressed, disabled, transparentWhilePressed],
+    [block, defaultWrapperStyles, style, pressed, disabled, transparentWhilePressed, wrapperStyles],
   );
 
   const mergedContentStyles = useMemo(

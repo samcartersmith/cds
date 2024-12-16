@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.6.0 (12/16/2024 PST)
+
+#### 🚀 Updates
+
+- Update mobile Button, Pressable, and Interactable for Wallet backwards compatibility. [[#3463](https://github.cbhq.net/frontend/cds/pull/3463)]
+
 ## 7.5.0 (12/16/2024 PST)
 
 #### 🚀 Updates

@@ -57,6 +57,16 @@ const ButtonScreen = () => {
           </ButtonGroup>
         </VStack>
       </Example>
+      <Example title="Custom wrapperStyles for Wallet">
+        <Button
+          transparent
+          wrapperStyles={{
+            base: { backgroundColor: 'green' },
+          }}
+        >
+          Hello world
+        </Button>
+      </Example>
     </ExampleScreen>
   );
 };

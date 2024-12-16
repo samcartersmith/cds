@@ -89,6 +89,7 @@ export const Pressable = memo(
       elevation,
       style = emptyArray,
       contentStyle,
+      wrapperStyles,
       transparentWhileInactive,
       transparentWhilePressed,
       eventConfig,
@@ -185,6 +186,7 @@ export const Pressable = memo(
           style={!noScaleOnPress ? scaleOnPressStyle : undefined}
           transparentWhileInactive={transparentWhileInactive}
           transparentWhilePressed={transparentWhilePressed}
+          wrapperStyles={wrapperStyles}
         >
           {children}
         </Interactable>
