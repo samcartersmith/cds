@@ -1,26 +1,36 @@
-import React, { memo } from 'react';
+import React, { forwardRef } from 'react';
 
-import { type PolymorphicBoxProps, Box } from './Box';
+import type { Polymorphic } from '../core/polymorphism';
 
-export type GridBaseProps = {
-  rows?: number;
-  columns?: number;
-};
+import { type BoxBaseProps, type BoxDefaultElement, Box } from './Box';
 
-export type GridProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
+export type GridBaseProps = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  {
+    rows?: number;
+    columns?: number;
+  }
+>;
+
+export type GridProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,
   GridBaseProps
 >;
 
-export const Grid = memo(
-  <AsComponent extends React.ElementType = 'div'>({
-    display = 'grid',
-    rows,
-    columns,
-    ...props
-  }: GridProps<AsComponent>) => {
+type GridComponent = (<AsComponent extends React.ElementType = BoxDefaultElement>(
+  props: GridProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const Grid: GridComponent = forwardRef<React.ReactElement<GridBaseProps>, GridBaseProps>(
+  <AsComponent extends React.ElementType>(
+    { as, rows, columns, display = 'grid', ...props }: GridProps<AsComponent>,
+    ref?: Polymorphic.Ref<AsComponent>,
+  ) => {
     return (
       <Box
+        ref={ref}
+        as={as satisfies React.ElementType | undefined}
         display={display}
         gridTemplateColumns={typeof rows !== 'undefined' ? `repeat(${columns}, 1fr)` : undefined}
         gridTemplateRows={typeof rows !== 'undefined' ? `repeat(${rows}, 1fr)` : undefined}

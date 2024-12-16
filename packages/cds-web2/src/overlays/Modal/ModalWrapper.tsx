@@ -3,8 +3,7 @@ import { css, cx } from '@linaria/core';
 
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
-import { Box } from '../../layout/Box';
-import { type PolymorphicBoxProps } from '../../layout/Box';
+import { type BoxProps, Box } from '../../layout/Box';
 import { useThemeContext } from '../../providers/ThemeProvider';
 import { media } from '../../styles/media';
 import { Overlay } from '../Overlay/Overlay';
@@ -54,10 +53,7 @@ export type ModalWrapperBaseProps = {
   onDidClose?: () => void;
 } & Pick<PortalProps, 'disablePortal'>;
 
-export type ModalWrapperProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  ModalWrapperBaseProps
->;
+export type ModalWrapperProps = ModalWrapperBaseProps & BoxProps<'div'>;
 
 export const ModalWrapper = memo(
   forwardRef(
@@ -83,7 +79,7 @@ export const ModalWrapper = memo(
         role = 'dialog',
         width = '100vw',
         ...props
-      }: ModalWrapperProps<'div'>,
+      }: ModalWrapperProps,
       ref: React.ForwardedRef<HTMLDivElement>,
     ) => {
       const theme = useThemeContext();
@@ -100,7 +96,7 @@ export const ModalWrapper = memo(
 
       return (
         <NewAnimatePresence onExitComplete={onDidClose}>
-          {visible && (
+          {!!visible && (
             <Portal containerId={modalContainerId} disablePortal={disablePortal} theme={theme}>
               <Box
                 ref={ref}

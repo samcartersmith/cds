@@ -29,6 +29,10 @@ export const MessageAreaColor = () => {
   );
 };
 
+MessageAreaColor.parameters = {
+  a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
+};
+
 export const TextAlign = () => {
   const alignments = ['start', 'end'] as const;
 

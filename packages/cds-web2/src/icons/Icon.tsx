@@ -1,13 +1,9 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 import type { NavIconName, NavIconNameInternal, UiIconName } from '@cbhq/cds-icons';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
-import { type PolymorphicBoxProps, Box } from '../layout/Box';
-
-export type IconDefaultElement = 'span';
+import { type BoxProps, Box } from '../layout/Box';
 
 export type IconBaseProps = {
   /** Size for a given icon. */
@@ -29,10 +25,7 @@ export type IconBaseProps = {
   dangerouslySetColor?: string;
 };
 
-export type IconProps<T extends React.ElementType = IconDefaultElement> = PolymorphicBoxProps<T> &
-  IconBaseProps &
-  SharedProps &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
+export type IconProps = IconBaseProps & BoxProps<'div'>;
 
 export type IconSize = 'xs' | 's' | 'm' | 'l';
 
@@ -113,8 +106,7 @@ const sourceSizeMap: {
 
 export const Icon = memo(
   forwardRef(
-    // @ts-expect-error TO DO: fix this
-    <T extends React.ElementType = IconDefaultElement>(
+    (
       {
         accessibilityLabel,
         bordered = false,
@@ -126,7 +118,7 @@ export const Icon = memo(
         testID,
         style,
         ...props
-      }: IconProps<T>,
+      }: IconProps,
       ref: React.Ref<HTMLElement>,
     ) => {
       const glyphTestId = testID ? `${testID}-glyph` : 'icon-base-glyph';
@@ -157,8 +149,8 @@ export const Icon = memo(
           color={color}
           position="relative" // TO DO: can we remove this?
           style={inlineStyle}
+          testID={testID}
           {...props}
-          data-testid={testID}
         >
           <span
             ref={ref}

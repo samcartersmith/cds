@@ -3,7 +3,7 @@ import { css, cx } from '@linaria/core';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 
-import { type ExtendableProps, type PolymorphicProps, PolymorphicRef } from '../core/polymorphism';
+import type { Polymorphic } from '../core/polymorphism';
 import { type StyleProps, getStyles } from '../styles/styleProps';
 
 const borderStyle = {
@@ -48,6 +48,10 @@ const borderStyle = {
   `,
 };
 
+const boxDefaultElement = 'div';
+
+export type BoxDefaultElement = typeof boxDefaultElement;
+
 export type BoxBaseProps = StyleProps &
   SharedProps &
   Pick<
@@ -83,17 +87,18 @@ export type BoxBaseProps = StyleProps &
     dangerouslySetBackground?: string;
   };
 
-export type BoxProps<AsComponent extends React.ElementType = 'div'> = PolymorphicProps<
+export type BoxProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,
   BoxBaseProps
 >;
 
-type BoxComponent = <AsComponent extends React.ElementType = 'div'>(
+type BoxComponent = (<AsComponent extends React.ElementType = BoxDefaultElement>(
   props: BoxProps<AsComponent>,
-) => React.ReactNode;
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
 
-export const Box: BoxComponent = forwardRef(
-  <AsComponent extends React.ElementType = 'div'>(
+export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, BoxBaseProps>(
+  <AsComponent extends React.ElementType>(
     {
       children,
       as,
@@ -204,8 +209,8 @@ export const Box: BoxComponent = forwardRef(
       opacity,
       // End style props
       ...props
-    }: BoxProps<AsComponent>,
-    ref: PolymorphicRef<AsComponent>,
+    }: Polymorphic.Props<AsComponent, BoxBaseProps>,
+    ref: Polymorphic.Ref<AsComponent>,
   ) => {
     const Component = as ?? 'div';
 
@@ -430,15 +435,7 @@ export const Box: BoxComponent = forwardRef(
   },
 );
 
-// type PolymorphicBoxComponent = <AsComponent extends React.ElementType = 'div'>(
-//   props: BoxProps<AsComponent> & { ref?: ForwardedRef<HTMLElement> },
-// ) => ReturnType<typeof BoxComponent>;
-
-// export const Box = memo(forwardRef(BoxComponent)) as PolymorphicBoxComponent & {
-//   displayName?: string;
-// };
-
-// Box.displayName = 'Box';
+Box.displayName = 'Box';
 
 /**
  * @example
@@ -460,6 +457,10 @@ export const Box: BoxComponent = forwardRef(
  */
 export type PolymorphicBoxProps<
   AsComponent extends React.ElementType,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  OverrideProps = {},
-> = PolymorphicProps<AsComponent, ExtendableProps<BoxBaseProps, OverrideProps>>;
+  OverrideProps,
+> = Polymorphic.Props<AsComponent, Polymorphic.ExtendableProps<BoxBaseProps, OverrideProps>>;
+
+export type ExtendedBoxProps<OverrideProps> = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  OverrideProps
+>;

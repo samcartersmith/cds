@@ -16,7 +16,7 @@ import { ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 import type { Position } from '@cbhq/cds-common/types/Position';
 
 import { useA11yLabels } from '../../hooks/useA11yLabels';
-import { type PolymorphicBoxProps } from '../../layout/Box';
+import { type BoxProps } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { breakpoints, media } from '../../styles/media';
@@ -106,12 +106,9 @@ export type ModalBaseProps = {
    * @default false
    */
   hideCloseButton?: boolean;
-} & Omit<ModalWrapperProps<'div'>, 'onOverlayPress' | 'children'>;
+} & Omit<ModalWrapperProps, 'onOverlayPress' | 'children'>;
 
-export type ModalProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  ModalBaseProps
->;
+export type ModalProps = ModalBaseProps & Omit<BoxProps<'div'>, 'children'>;
 
 export const Modal = memo(
   forwardRef(
@@ -133,7 +130,7 @@ export const Modal = memo(
         hideCloseButton,
         hideDividers,
         ...props
-      }: ModalProps<'div'>,
+      }: ModalProps,
       ref: React.ForwardedRef<ModalRefBaseProps>,
     ) => {
       const { labelledBySource, labelledBy, label } = useA11yLabels({

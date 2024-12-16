@@ -33,7 +33,7 @@ export const PortalHost = memo(({ nodes }: PortalHostProps) => {
         children: (
           <>
             {!isAndroid && child}
-            {parent.props.children}
+            {parent.props.children as React.ReactElement}
             {isAndroid && child}
           </>
         ),

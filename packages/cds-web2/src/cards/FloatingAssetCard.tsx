@@ -2,7 +2,7 @@ import React from 'react';
 import { css, cx } from '@linaria/core';
 import type { FloatingAssetCardBaseProps } from '@cbhq/cds-common/types/FloatingAssetCardBaseProps';
 
-import { type PolymorphicBoxProps } from '../layout/Box';
+import { type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../text/Text';
@@ -10,10 +10,7 @@ import { Text } from '../text/Text';
 export const floatingAssetCardLargeWidth = 359;
 export const floatingAssetCardSmallDimension = 156;
 
-export type FloatingAssetCardProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  FloatingAssetCardBaseProps
->;
+export type FloatingAssetCardProps = FloatingAssetCardBaseProps & BoxProps<'div'>;
 
 const pressStyle = css`
   /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */
@@ -55,7 +52,7 @@ const focusRingStyle = css`
   }
 `;
 
-export const FloatingAssetCard = <AsComponent extends React.ElementType = 'div'>({
+export const FloatingAssetCard = ({
   className,
   title,
   description,
@@ -65,12 +62,10 @@ export const FloatingAssetCard = <AsComponent extends React.ElementType = 'div'>
   width = size === 'l' ? floatingAssetCardLargeWidth : floatingAssetCardSmallDimension,
   testID = 'floating-asset-card',
   onClick,
-  as = (onClick ? 'button' : 'div') as AsComponent,
   ...props
-}: FloatingAssetCardProps<AsComponent>) => {
+}: FloatingAssetCardProps) => {
   return (
     <VStack
-      as={as}
       className={cx(onClick && pressStyle, focusRingStyle, className)}
       gap={1}
       maxWidth={width}

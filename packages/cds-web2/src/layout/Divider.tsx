@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { css, cx } from '@linaria/core';
 
-import { Box, PolymorphicBoxProps } from './Box';
+import { type BoxProps, Box } from './Box';
 
 export type DividerBaseProps = {
   /**
@@ -11,10 +11,7 @@ export type DividerBaseProps = {
   direction?: 'horizontal' | 'vertical';
 };
 
-export type DividerProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  DividerBaseProps
->;
+export type DividerProps = DividerBaseProps & Omit<BoxProps<'div'>, 'as' | 'role'>;
 
 const directionStyles: {
   [key in NonNullable<DividerBaseProps['direction']>]: string;
@@ -31,12 +28,7 @@ const directionStyles: {
 } as const;
 
 export const Divider = memo(
-  <AsComponent extends React.ElementType = 'div'>({
-    color,
-    direction = 'horizontal',
-    background = 'line',
-    ...props
-  }: DividerProps<AsComponent>) => {
+  ({ color, direction = 'horizontal', background = 'line', ...props }: DividerProps) => {
     return (
       <Box
         aria-orientation={direction}

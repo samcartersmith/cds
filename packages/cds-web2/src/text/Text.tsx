@@ -1,65 +1,9 @@
-import React, { type ForwardedRef, forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 
-import { type PolymorphicBoxProps, Box } from '../layout/Box';
-
-export type TextBaseProps = {
-  numberOfLines?: number;
-  disabled?: boolean;
-  /**
-   * Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
-   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) | [React Native Docs](https://reactnative.dev/docs/text-style-props#fontvariant)
-   * @default false
-   */
-  tabularNumbers?: boolean;
-  /**
-   * Use character for number zero with a slash through it to differentiate it from the letter 'O'.
-   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
-   * @default false
-   */
-  slashedZero?: boolean;
-  /**
-   * Set text decoration to underline.
-   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)
-   * @default false
-   */
-  underline?: boolean;
-  /**
-   * Use CoinbaseMono font
-   */
-  mono?: boolean;
-  /**
-   * Set text to be in a single line.
-   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
-   * @default false
-   */
-  noWrap?: boolean;
-  /** Should the Text component inherit styles of parent */
-  inherit?: boolean;
-  /**
-   * Set overflow behavior.
-   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
-   */
-  readonly overflow?: 'truncate' | 'clip' | 'wrap' | 'break';
-  /**
-   * accessibility label before strikethrough element
-   * @default '[start of stricken text]'
-   * */
-  strikethroughStartAccessibilityLabel?: string;
-  /**
-   * accessibility label after strikethrough element
-   * @default '[end of stricken text]'
-   */
-  strikethroughEndAccessibilityLabel?: string;
-  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-  dangerouslySetColor?: string;
-};
-
-export type TextProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  TextBaseProps
->;
+import type { Polymorphic } from '../core/polymorphism';
+import { type BoxBaseProps, Box } from '../layout/Box';
 
 const baseStyle = css`
   margin: 0;
@@ -155,80 +99,149 @@ const overflowStyle = {
   `,
 } as const;
 
-export const Text = memo(
-  forwardRef(
-    <AsComponent extends React.ElementType = 'span'>(
-      {
-        as = 'span' as AsComponent,
-        font = 'body',
-        color = 'textForeground',
-        display = 'block',
-        textAlign = 'start',
-        numberOfLines,
-        style,
-        className,
-        disabled,
-        dangerouslySetColor,
-        tabularNumbers,
-        slashedZero,
-        underline,
-        mono,
-        noWrap,
-        overflow,
-        inherit,
-        strikethroughStartAccessibilityLabel = '[start of stricken text]',
-        strikethroughEndAccessibilityLabel = '[end of stricken text]',
-        textDecoration = underline ? 'underline' : undefined,
-        ...props
-      }: TextProps<AsComponent>,
-      ref: ForwardedRef<HTMLElement>,
-    ) => {
-      const strikethroughAttributes = useMemo(
-        () =>
-          as === 's'
-            ? {
-                'data-strikethrough-start': strikethroughStartAccessibilityLabel,
-                'data-strikethrough-end': strikethroughEndAccessibilityLabel,
-              }
-            : {},
-        [as, strikethroughStartAccessibilityLabel, strikethroughEndAccessibilityLabel],
-      );
-      const textStyle = useMemo(
-        () => ({
-          color: dangerouslySetColor,
-          '--text-numberOfLines': numberOfLines,
-          ...style,
-        }),
-        [dangerouslySetColor, numberOfLines, style],
-      );
+const textDefaultElement = 'span';
 
-      return (
-        <Box
-          ref={ref}
-          as={as}
-          className={cx(
-            baseStyle,
-            numberOfLines && numberOfLinesStyle,
-            disabled && disabledStyle,
-            inherit && textInherit,
-            mono && monoStyle,
-            as === 's' && strikethroughStyle,
-            tabularNumbers && tabularNumbersStyle,
-            slashedZero && slashedZeroStyle,
-            noWrap && noWrapStyle,
-            overflow && overflowStyle[overflow],
-            className,
-          )}
-          color={color}
-          display={display}
-          font={font}
-          style={textStyle}
-          textAlign={textAlign}
-          textDecoration={textDecoration}
-          {...strikethroughAttributes}
-          {...props}
-        />
-      );
-    },
-  ),
+export type TextDefaultElement = typeof textDefaultElement;
+
+export type TextBaseProps = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  {
+    numberOfLines?: number;
+    disabled?: boolean;
+    /**
+     * Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
+     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric) | [React Native Docs](https://reactnative.dev/docs/text-style-props#fontvariant)
+     * @default false
+     */
+    tabularNumbers?: boolean;
+    /**
+     * Use character for number zero with a slash through it to differentiate it from the letter 'O'.
+     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
+     * @default false
+     */
+    slashedZero?: boolean;
+    /**
+     * Set text decoration to underline.
+     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)
+     * @default false
+     */
+    underline?: boolean;
+    /**
+     * Use CoinbaseMono font
+     */
+    mono?: boolean;
+    /**
+     * Set text to be in a single line.
+     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
+     * @default false
+     */
+    noWrap?: boolean;
+    /** Should the Text component inherit styles of parent */
+    inherit?: boolean;
+    /**
+     * Set overflow behavior.
+     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+     */
+    readonly overflow?: 'truncate' | 'clip' | 'wrap' | 'break';
+    /**
+     * accessibility label before strikethrough element
+     * @default '[start of stricken text]'
+     * */
+    strikethroughStartAccessibilityLabel?: string;
+    /**
+     * accessibility label after strikethrough element
+     * @default '[end of stricken text]'
+     */
+    strikethroughEndAccessibilityLabel?: string;
+    /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+    dangerouslySetColor?: string;
+  }
+>;
+
+export type TextProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  TextBaseProps
+>;
+
+type TextComponent = (<AsComponent extends React.ElementType = TextDefaultElement>(
+  props: TextProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const Text: TextComponent = forwardRef<React.ReactElement<TextBaseProps>, TextBaseProps>(
+  <AsComponent extends React.ElementType>(
+    {
+      as,
+      font = 'body',
+      color = 'textForeground',
+      display = 'block',
+      textAlign = 'start',
+      numberOfLines,
+      style,
+      className,
+      disabled,
+      dangerouslySetColor,
+      tabularNumbers,
+      slashedZero,
+      underline,
+      mono,
+      noWrap,
+      overflow,
+      inherit,
+      strikethroughStartAccessibilityLabel = '[start of stricken text]',
+      strikethroughEndAccessibilityLabel = '[end of stricken text]',
+      textDecoration = underline ? 'underline' : undefined,
+      ...props
+    }: TextProps<AsComponent>,
+    ref?: Polymorphic.Ref<AsComponent>,
+  ) => {
+    const Component = (as ?? textDefaultElement) satisfies React.ElementType;
+    const strikethroughAttributes = useMemo(
+      () =>
+        Component === 's'
+          ? {
+              'data-strikethrough-start': strikethroughStartAccessibilityLabel,
+              'data-strikethrough-end': strikethroughEndAccessibilityLabel,
+            }
+          : {},
+      [Component, strikethroughStartAccessibilityLabel, strikethroughEndAccessibilityLabel],
+    );
+    const textStyle = useMemo(
+      () => ({
+        color: dangerouslySetColor,
+        '--text-numberOfLines': numberOfLines,
+        ...style,
+      }),
+      [dangerouslySetColor, numberOfLines, style],
+    );
+    return (
+      <Box
+        ref={ref}
+        as={Component}
+        className={cx(
+          baseStyle,
+          numberOfLines && numberOfLinesStyle,
+          disabled && disabledStyle,
+          inherit && textInherit,
+          mono && monoStyle,
+          Component === 's' && strikethroughStyle,
+          tabularNumbers && tabularNumbersStyle,
+          slashedZero && slashedZeroStyle,
+          noWrap && noWrapStyle,
+          overflow && overflowStyle[overflow],
+          className,
+        )}
+        color={color}
+        display={display}
+        font={font}
+        style={textStyle}
+        textAlign={textAlign}
+        textDecoration={textDecoration}
+        {...strikethroughAttributes}
+        {...props}
+      />
+    );
+  },
 );
+
+Text.displayName = 'Text';

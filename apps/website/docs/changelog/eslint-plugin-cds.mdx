@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.5 (12/10/2024 PST)
+
+#### 🐞 Fixes
+
+- Upgrade TypeScript to 5.7.2. [[#3458](https://github.cbhq.net/frontend/cds/pull/3458)]
+
 ## 0.0.4 (11/7/2024 PST)
 
 #### 💥 Breaking

@@ -60,7 +60,7 @@ export type ModalProps = {
   Omit<ModalWrapperProps, 'onOverlayPress'>;
 
 export const Modal = memo(
-  forwardRef<ModalRefBaseProps, React.PropsWithChildren<ModalProps>>((props, ref) => {
+  forwardRef<ModalRefBaseProps, ModalProps>((props, ref) => {
     const {
       children,
       visible = false,

@@ -4,7 +4,7 @@ import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
 import type { ButtonBaseProps } from '@cbhq/cds-common/types/ButtonBaseProps';
 
 import { Button } from '../../buttons/Button';
-import type { PolymorphicBoxProps } from '../../layout/Box';
+import type { BoxProps } from '../../layout/Box';
 import { deviceMqs } from '../../layout/breakpoints';
 import { HStack } from '../../layout/HStack';
 
@@ -35,12 +35,9 @@ type ModalFooterBaseProps = {
   /** Secondary action button */
   secondaryAction?: React.ReactElement<ButtonBaseProps & { onPress?: React.MouseEventHandler }>;
 };
-export type ModalFooterProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  ModalFooterBaseProps
->;
+export type ModalFooterProps = ModalFooterBaseProps & BoxProps<'div'>;
 
-export const ModalFooter = <AsComponent extends React.ElementType = 'div'>({
+export const ModalFooter = ({
   gap = 2,
   justifyContent = 'flex-end',
   paddingX = 3,
@@ -49,7 +46,7 @@ export const ModalFooter = <AsComponent extends React.ElementType = 'div'>({
   primaryAction,
   secondaryAction,
   ...props
-}: ModalFooterProps<AsComponent>) => {
+}: ModalFooterProps) => {
   const { hideDividers } = useModalParent();
 
   if (primaryAction.type !== Button || (secondaryAction && primaryAction.type !== Button)) {

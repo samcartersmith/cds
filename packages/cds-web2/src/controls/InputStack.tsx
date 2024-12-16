@@ -8,7 +8,7 @@ import type { DimensionValue } from '@cbhq/cds-common/types/DimensionStyles';
 import type { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
 import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
 
-import { type PolymorphicBoxProps } from '../layout/Box';
+import { type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { ColorSurge } from '../motion/ColorSurge';
@@ -124,10 +124,7 @@ type BaseInputStackProps = {
   enableColorSurge?: boolean;
 } & SharedProps;
 
-export type InputStackProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  BaseInputStackProps
->;
+export type InputStackProps = BaseInputStackProps & BoxProps<'div'>;
 
 export const InputStack = memo(
   forwardRef(
@@ -151,7 +148,7 @@ export const InputStack = memo(
         disableFocusedStyle = false,
         enableColorSurge,
         ...props
-      }: InputStackProps<'div'>,
+      }: InputStackProps,
       ref: ForwardedRef<HTMLElement>,
     ) => {
       const focusedVariant = useMemo(
@@ -233,7 +230,7 @@ export const InputStack = memo(
                 style={defaultBorderStyle}
                 testID="input-interactable-area"
               >
-                {focused && enableColorSurge && <ColorSurge background={focusedVariant} />}
+                {!!focused && !!enableColorSurge && <ColorSurge background={focusedVariant} />}
                 {!!startNode && <>{startNode}</>}
                 {inputNode}
                 {!!endNode && <>{endNode}</>}

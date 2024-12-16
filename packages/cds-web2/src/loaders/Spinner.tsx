@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 
-import { Box, PolymorphicBoxProps } from '../layout/Box';
+import { type BoxProps, Box } from '../layout/Box';
 
 // import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common'
 
@@ -24,10 +24,7 @@ export type SpinnerBaseProps = {
   testID?: string;
 };
 
-export type SpinnerProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  SpinnerBaseProps
->;
+export type SpinnerProps = SpinnerBaseProps & BoxProps<'div'>;
 
 export const baseStyle = css`
   position: relative;
@@ -61,15 +58,7 @@ export const spinnerStatusStyle = css`
 `;
 
 export const Spinner = memo(
-  <AsComponent extends React.ElementType = 'div'>({
-    color,
-    size,
-    style,
-    className,
-    accessibilityLabel,
-    testID,
-    ...props
-  }: SpinnerProps<AsComponent>) => {
+  ({ color, size, style, className, accessibilityLabel, testID, ...props }: SpinnerProps) => {
     const spinnerStyle = useMemo(
       () => ({
         fontSize: `${size}px`,

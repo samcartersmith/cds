@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-scorecard",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "UI scorecard and adoption tracking cli tool",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
   ],
   "peerDependencies": {
     "@cbhq/mono-tasks": "^1.15.0",
-    "typescript": "~5.6.2"
+    "typescript": "~5.7.2"
   },
   "dependencies": {
     "@cbhq/client-analytics": "^10.9.1",
@@ -55,6 +55,6 @@
     "@cbhq/mono-tasks": "^1.15.0",
     "@types/update-notifier": "^5.1.0",
     "@types/yargs": "^17.0.11",
-    "typescript": "~5.6.2"
+    "typescript": "~5.7.2"
   }
 }

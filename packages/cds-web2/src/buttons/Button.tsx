@@ -3,7 +3,7 @@ import { type LinariaClassName, css, cx } from '@linaria/core';
 import { IconName } from '@cbhq/cds-common/types/IconName';
 
 import { Icon } from '../icons/Icon';
-import { type PolymorphicBoxProps, Box } from '../layout/Box';
+import { type BoxProps, Box } from '../layout/Box';
 import { Spinner } from '../loaders/Spinner';
 import { Text } from '../text/Text';
 
@@ -66,10 +66,7 @@ export type ButtonBaseProps = {
   testID?: string;
 };
 
-export type ButtonProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  ButtonBaseProps
->;
+export type ButtonProps = ButtonBaseProps & BoxProps<'button'>;
 
 const baseStyle = css`
   min-height: 56px;
@@ -356,7 +353,7 @@ export const Button = memo(
       noScaleOnPress,
       flush,
       ...props
-    }: ButtonProps<'button'>,
+    }: ButtonProps,
     ref: React.ForwardedRef<HTMLButtonElement>,
   ) {
     const hasIcon = Boolean(startIcon ?? endIcon);

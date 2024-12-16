@@ -2,51 +2,64 @@ import React, { forwardRef, memo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
 import { IconName } from '@cbhq/cds-common/types/IconName';
 
+import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
-import { type PolymorphicBoxProps, Box } from '../layout/Box';
+import { type BoxBaseProps, Box } from '../layout/Box';
+
+const iconButtonDefaultElement = 'button';
+
+export type IconButtonDefaultElement = typeof iconButtonDefaultElement;
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'foregroundMuted';
 
-export type IconButtonBaseProps = {
-  /** Reduce the inner padding within the button itself. */
-  compact?: boolean;
-  /** Name of the icon, as defined in Figma. */
-  name: IconName;
-  /**
-   * Toggle design and visual variants.
-   * @default primary
-   */
-  variant?: IconButtonVariant;
-  /** Ensure the button aligns flush on the left or right.
-   * This prop will translate the entire button left/right,
-   * so take care to ensure it is not overflowing awkwardly
-   */
-  flush?: 'start' | 'end';
-  /** Mark the button as loading and display a spinner. */
-  loading?: boolean;
-  /** Mark the button as disabled. */
-  disabled?: boolean;
-  /** Mark the background and border as transparent until interacted with. */
-  transparent?: boolean;
-  /**
-   * On web, maps to `aria-label` and defines a string value that labels an interactive element.
-   * On mobile, VoiceOver will read this string when a user selects the associated element.
-   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
-   * @link https://reactnative.dev/docs/accessibility#accessibilitylabel
-   */
-  accessibilityLabel?: string;
-  /**
-   * Used to locate this element in unit and end-to-end tests.
-   * Under the hood, testID translates to data-testid on Web. On Mobile, testID
-   * stays the same - testID
-   */
-  testID?: string;
-};
+export type IconButtonBaseProps = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  {
+    /** Reduce the inner padding within the button itself. */
+    compact?: boolean;
+    /** Name of the icon, as defined in Figma. */
+    name: IconName;
+    /**
+     * Toggle design and visual variants.
+     * @default primary
+     */
+    variant?: IconButtonVariant;
+    /** Ensure the button aligns flush on the left or right.
+     * This prop will translate the entire button left/right,
+     * so take care to ensure it is not overflowing awkwardly
+     */
+    flush?: 'start' | 'end';
+    /** Mark the button as loading and display a spinner. */
+    loading?: boolean;
+    /** Mark the button as disabled. */
+    disabled?: boolean;
+    /** Mark the background and border as transparent until interacted with. */
+    transparent?: boolean;
+    /**
+     * On web, maps to `aria-label` and defines a string value that labels an interactive element.
+     * On mobile, VoiceOver will read this string when a user selects the associated element.
+     * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
+     * @link https://reactnative.dev/docs/accessibility#accessibilitylabel
+     */
+    accessibilityLabel?: string;
+    /**
+     * Used to locate this element in unit and end-to-end tests.
+     * Under the hood, testID translates to data-testid on Web. On Mobile, testID
+     * stays the same - testID
+     */
+    testID?: string;
+  }
+>;
 
-export type IconButtonProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
+export type IconButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,
   IconButtonBaseProps
 >;
+
+type IconButtonComponent = (<AsComponent extends React.ElementType = IconButtonDefaultElement>(
+  props: IconButtonProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
 
 const baseStyle = css`
   min-height: 56px;
@@ -205,48 +218,51 @@ const focusRingStyle = css`
   }
 `;
 
-export const IconButton = memo(
-  forwardRef(function IconButton(
-    {
-      as = 'button',
-      testID,
-      compact = true,
-      name,
-      disabled,
-      transparent,
-      variant = 'secondary',
-      style,
-      loading,
-      flush,
-      ...props
-    }: IconButtonProps<'button'>,
-    ref: React.ForwardedRef<HTMLButtonElement>,
-  ) {
-    const iconSize = compact ? 's' : 'm';
-    const color = 'currentColor';
-    return (
-      <Box
-        ref={ref}
-        as={as}
-        className={cx(
-          baseStyle,
-          focusRingStyle,
-          variantStyles[variant],
-          transparent && transparentBaseStyle,
-          transparent && transparentVariantStyle[variant],
-          compact && compactStyle,
-          loading && loadingBaseStyle,
-          loading && loadingVariantStyle[variant],
-        )}
-        data-testid={testID}
-        disabled={disabled}
-        style={style}
-        {...props}
-      >
-        <Icon color={color} name={name} size={iconSize} />
-      </Box>
-    );
-  }),
+export const IconButton: IconButtonComponent = memo(
+  forwardRef<React.ReactElement<IconButtonBaseProps>, IconButtonBaseProps>(
+    <AsComponent extends React.ElementType>(
+      {
+        as,
+        testID,
+        compact = true,
+        name,
+        disabled,
+        transparent,
+        variant = 'secondary',
+        style,
+        loading,
+        flush,
+        ...props
+      }: IconButtonProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const Component = (as ?? iconButtonDefaultElement) satisfies React.ElementType;
+      const iconSize = compact ? 's' : 'm';
+      const color = 'currentColor';
+      return (
+        <Box
+          ref={ref}
+          as={Component}
+          className={cx(
+            baseStyle,
+            focusRingStyle,
+            variantStyles[variant],
+            transparent && transparentBaseStyle,
+            transparent && transparentVariantStyle[variant],
+            compact && compactStyle,
+            loading && loadingBaseStyle,
+            loading && loadingVariantStyle[variant],
+          )}
+          data-testid={testID}
+          disabled={disabled}
+          style={style}
+          {...props}
+        >
+          <Icon color={color} name={name} size={iconSize} />
+        </Box>
+      );
+    },
+  ),
 );
 
 IconButton.displayName = 'IconButton';

@@ -1,12 +1,11 @@
 import React from 'react';
 import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
 
-import { type PolymorphicBoxProps, Box } from '../../layout/Box';
+import { type BoxProps, Box } from '../../layout/Box';
 
-export type ModalBodyProps<AsComponent extends React.ElementType> =
-  PolymorphicBoxProps<AsComponent>;
+export type ModalBodyProps = BoxProps<'div'>;
 
-export const ModalBody = <AsComponent extends React.ElementType = 'div'>({
+export const ModalBody = ({
   children,
   flexDirection = 'column',
   flexGrow = 1,
@@ -14,7 +13,7 @@ export const ModalBody = <AsComponent extends React.ElementType = 'div'>({
   paddingX = 3,
   tabIndex = 0,
   ...props
-}: ModalBodyProps<AsComponent>) => {
+}: ModalBodyProps) => {
   const { hideDividers } = useModalParent();
 
   return (

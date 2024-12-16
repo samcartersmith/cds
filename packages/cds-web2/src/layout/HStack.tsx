@@ -1,24 +1,38 @@
-import React, { type ForwardedRef, forwardRef, memo } from 'react';
+import React, { forwardRef } from 'react';
 
-import { type PolymorphicBoxProps, Box } from './Box';
+import type { Polymorphic } from '../core/polymorphism';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type HStackBaseProps = {};
+import { type BoxBaseProps, type BoxDefaultElement, Box } from './Box';
 
-export type HStackProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
+export type HStackBaseProps = BoxBaseProps;
+
+export type HStackProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,
   HStackBaseProps
 >;
 
-export const HStack = memo(
-  forwardRef(
-    <AsComponent extends React.ElementType = 'div'>(
-      { flexDirection = 'row', ...props }: HStackProps<AsComponent>,
-      ref: ForwardedRef<HTMLElement>,
-    ) => {
-      return <Box ref={ref} flexDirection={flexDirection} {...props} />;
-    },
-  ),
+type HStackComponent = (<AsComponent extends React.ElementType = BoxDefaultElement>(
+  props: HStackProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const HStack: HStackComponent = forwardRef<
+  React.ReactElement<HStackBaseProps>,
+  HStackBaseProps
+>(
+  <AsComponent extends React.ElementType>(
+    { as, flexDirection = 'row', ...props }: HStackProps<AsComponent>,
+    ref?: Polymorphic.Ref<AsComponent>,
+  ) => {
+    return (
+      <Box
+        ref={ref}
+        as={as satisfies React.ElementType | undefined}
+        flexDirection={flexDirection}
+        {...props}
+      />
+    );
+  },
 );
 
 HStack.displayName = 'HStack';

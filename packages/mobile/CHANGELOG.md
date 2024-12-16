@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.4.2 (12/10/2024 PST)
+
+#### 🐞 Fixes
+
+- Upgrade TypeScript to 5.7.2. [[#3458](https://github.cbhq.net/frontend/cds/pull/3458)]
+
 ## 7.4.1 (12/9/2024 PST)
 
 #### 🐞 Fixes

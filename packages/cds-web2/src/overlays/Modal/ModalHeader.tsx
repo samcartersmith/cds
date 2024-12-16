@@ -1,11 +1,9 @@
-// to do: check styles once IconButton is available
 import React from 'react';
 import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
 import { ModalHeaderBaseProps as SharedModalHeaderBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 
 import { IconButton } from '../../buttons/IconButton';
-import type { PolymorphicBoxProps } from '../../layout/Box';
-import { Box } from '../../layout/Box';
+import { type BoxProps, Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { Text } from '../../text/Text';
 
@@ -14,12 +12,9 @@ type ModalHeaderBaseProps = {
   onBackButtonPress?: React.MouseEventHandler;
 } & Omit<SharedModalHeaderBaseProps, 'onRequestClose'>;
 
-export type ModalHeaderProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  ModalHeaderBaseProps
->;
+export type ModalHeaderProps = ModalHeaderBaseProps & BoxProps<'div'>;
 
-export const ModalHeader = <AsComponent extends React.ElementType = 'div'>({
+export const ModalHeader = ({
   alignItems = 'center',
   paddingX = 3,
   paddingY = 2,
@@ -30,7 +25,7 @@ export const ModalHeader = <AsComponent extends React.ElementType = 'div'>({
   closeAccessibilityLabel,
   closeAccessibilityHint,
   ...props
-}: ModalHeaderProps<AsComponent>) => {
+}: ModalHeaderProps) => {
   const { onRequestClose, accessibilityLabelledBy, hideCloseButton, hideDividers } =
     useModalParent();
 
@@ -44,7 +39,7 @@ export const ModalHeader = <AsComponent extends React.ElementType = 'div'>({
       paddingY={paddingY}
       {...props}
     >
-      {onBackButtonPress && (
+      {!!onBackButtonPress && (
         <Box>
           <IconButton
             transparent

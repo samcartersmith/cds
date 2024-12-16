@@ -12,6 +12,8 @@ import { modalContainerId } from '../PortalProvider';
 import { modalOverlayResponsiveClassName } from './modalStyles';
 
 export type ModalWrapperProps = {
+  /** Component to render as the Modal content */
+  children?: React.ReactNode;
   /**
    * Disable overlay click that closes the Modal
    * @default false
@@ -38,7 +40,7 @@ export type ModalWrapperProps = {
    */
   role?: Extract<React.AriaRole, 'dialog' | 'alertdialog'>;
 } & Pick<PortalProps, 'disablePortal'> &
-  Pick<ModalBaseProps, 'visible' | 'zIndex' | 'children' | 'onDidClose' | 'testID'> &
+  Pick<ModalBaseProps, 'visible' | 'zIndex' | 'onDidClose' | 'testID'> &
   Pick<BoxProps, 'className'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy' | 'id'>;
 

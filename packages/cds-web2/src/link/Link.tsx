@@ -1,17 +1,14 @@
 import React, { ForwardedRef, forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
 
-import { type PolymorphicBoxProps, Box } from '../layout/Box';
+import { type BoxProps, Box } from '../layout/Box';
 
 export type LinkBaseProps = {
   disabled?: boolean;
   to?: string;
 };
 
-export type LinkProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  LinkBaseProps
->;
+export type LinkProps = LinkBaseProps & BoxProps<'a'>;
 
 const disabledStyle = css`
   pointer-events: none;
@@ -28,7 +25,7 @@ export const Link = memo(
       color = 'textPrimary',
       font = 'body',
       ...props
-    }: LinkProps<'a'>,
+    }: LinkProps,
     ref: ForwardedRef<HTMLAnchorElement>,
   ) {
     return (

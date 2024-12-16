@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, cx } from '@linaria/core';
 
-import { type PolymorphicBoxProps, Box } from '../layout/Box';
+import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../text/Text';
@@ -15,10 +15,7 @@ export type ContainedAssetCardBaseProps = {
   children?: React.ReactNode;
 };
 
-export type ContainedAssetCardProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  ContainedAssetCardBaseProps
->;
+export type ContainedAssetCardProps = ContainedAssetCardBaseProps & BoxProps<'div'>;
 
 export const containedAssetCardHeight = 156;
 export const containedAssetCardSmallWidth = 156;
@@ -64,7 +61,7 @@ const focusRingStyle = css`
   }
 `;
 
-export const ContainedAssetCard = <AsComponent extends React.ElementType = 'div'>({
+export const ContainedAssetCard = ({
   header,
   title,
   subtitle,
@@ -80,13 +77,11 @@ export const ContainedAssetCard = <AsComponent extends React.ElementType = 'div'
   minWidth = size === 'l' ? containedAssetCardLargeMinWidth : containedAssetCardSmallMinWidth,
   overflow = 'hidden',
   onClick,
-  as = (onClick ? 'button' : 'div') as AsComponent,
   testID = 'contained-asset-card',
   ...props
-}: ContainedAssetCardProps<AsComponent>) => {
+}: ContainedAssetCardProps) => {
   return (
     <Box
-      as={as}
       background={background}
       borderRadius={borderRadius}
       className={cx(onClick && pressStyle, focusRingStyle, className)}

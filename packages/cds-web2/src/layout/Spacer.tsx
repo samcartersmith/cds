@@ -1,49 +1,70 @@
-import React, { memo } from 'react';
+import React, { forwardRef } from 'react';
 
+import type { Polymorphic } from '../core/polymorphism';
 import type { StaticStyleProps } from '../styles/styleProps';
 
-import { type PolymorphicBoxProps, Box } from './Box';
+import { type BoxBaseProps, Box } from './Box';
 
-export type SpacerBaseProps = {
-  /** Space in the horizontal direction */
-  horizontal?: StaticStyleProps['padding'];
-  /** Space in the vertical direction */
-  vertical?: StaticStyleProps['padding'];
-  /** Max space in the horizontal direction */
-  maxHorizontal?: StaticStyleProps['padding'];
-  /** Max space in the vertical direction */
-  maxVertical?: StaticStyleProps['padding'];
-  /** Min space in the horizontal direction */
-  minHorizontal?: StaticStyleProps['padding'];
-  /** Min space in the vertical direction */
-  minVertical?: StaticStyleProps['padding'];
-};
+const spacerDefaultElement = 'span';
 
-export type SpacerProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
+export type SpacerDefaultElement = typeof spacerDefaultElement;
+
+export type SpacerBaseProps = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  {
+    /** Space in the horizontal direction */
+    horizontal?: StaticStyleProps['padding'];
+    /** Space in the vertical direction */
+    vertical?: StaticStyleProps['padding'];
+    /** Max space in the horizontal direction */
+    maxHorizontal?: StaticStyleProps['padding'];
+    /** Max space in the vertical direction */
+    maxVertical?: StaticStyleProps['padding'];
+    /** Min space in the horizontal direction */
+    minHorizontal?: StaticStyleProps['padding'];
+    /** Min space in the vertical direction */
+    minVertical?: StaticStyleProps['padding'];
+  }
+>;
+
+export type SpacerProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,
   SpacerBaseProps
 >;
 
-export const Spacer = memo(
-  <AsComponent extends React.ElementType = 'span'>({
-    as = 'span' as AsComponent,
-    flexGrow,
-    flexShrink,
-    flexBasis,
-    horizontal,
-    vertical,
-    maxHorizontal,
-    maxVertical,
-    minHorizontal,
-    minVertical,
-    ...props
-  }: SpacerProps<AsComponent>) => {
+type SpacerComponent = (<AsComponent extends React.ElementType = SpacerDefaultElement>(
+  props: SpacerProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const Spacer: SpacerComponent = forwardRef<
+  React.ReactElement<SpacerBaseProps>,
+  SpacerBaseProps
+>(
+  <AsComponent extends React.ElementType>(
+    {
+      as,
+      flexGrow,
+      flexShrink,
+      flexBasis,
+      horizontal,
+      vertical,
+      maxHorizontal,
+      maxVertical,
+      minHorizontal,
+      minVertical,
+      ...props
+    }: SpacerProps<AsComponent>,
+    ref?: Polymorphic.Ref<AsComponent>,
+  ) => {
+    const Component = (as ?? spacerDefaultElement) satisfies React.ElementType;
     const isFixedSize = horizontal !== undefined || vertical !== undefined;
 
     return (
       <Box
+        ref={ref}
         aria-hidden="true"
-        as={as}
+        as={Component}
         flexBasis={flexBasis ?? isFixedSize ? undefined : 1}
         flexGrow={flexGrow ?? isFixedSize ? 0 : 1}
         flexShrink={flexShrink ?? isFixedSize ? 0 : 1}

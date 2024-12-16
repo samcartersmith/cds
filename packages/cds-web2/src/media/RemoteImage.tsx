@@ -7,7 +7,8 @@ import {
 import type { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
 import type { AspectRatio, Shape } from '@cbhq/cds-common/types/Shape';
 
-import { type PolymorphicBoxProps, Box } from '../layout/Box';
+import { type BoxProps, Box } from '../layout/Box';
+import { StyleProps } from '../styles/styleProps';
 
 const baseStyle = css`
   display: block;
@@ -70,19 +71,36 @@ type BaseRemoteImageProps = {
    * @default m
    * */
   size?: AvatarSize;
-  aspectRatio: AspectRatio;
-} & Omit<
-  React.ImgHTMLAttributes<HTMLImageElement>,
-  'className' | 'style' | 'height' | 'width' | 'source'
->;
+  aspectRatio?: AspectRatio;
+} & Omit<BoxProps<'img'>, 'aspectRatio'>;
 
-export type RemoteImageProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  BaseRemoteImageProps
->;
+type RemoteImagePropsWithWidth = {
+  width: StyleProps['width'];
+  aspectRatio: AspectRatio;
+} & BaseRemoteImageProps;
+
+type RemoteImagePropsWithHeight = {
+  height: StyleProps['height'];
+  aspectRatio: AspectRatio;
+} & BaseRemoteImageProps;
+
+type RemoteImagePropsWidthAndHeight = {
+  width: StyleProps['width'];
+  height: StyleProps['height'];
+} & BaseRemoteImageProps;
+
+type RemoteImagePropsSize = {
+  size: AvatarSize;
+} & BaseRemoteImageProps;
+
+export type RemoteImageProps =
+  | RemoteImagePropsWithWidth
+  | RemoteImagePropsWithHeight
+  | RemoteImagePropsWidthAndHeight
+  | RemoteImagePropsSize;
 
 export const RemoteImage = memo(
-  <AsComponent extends React.ElementType = 'img'>({
+  ({
     width,
     height,
     aspectRatio,
@@ -96,13 +114,13 @@ export const RemoteImage = memo(
     borderWidth = borderColor ? 200 : undefined,
     style,
     ...props
-  }: RemoteImageProps<AsComponent>) => {
+  }: RemoteImageProps) => {
     const styles = useMemo(
       () =>
         ({
           aspectRatio: aspectRatio ? aspectRatio.join(' / ') : undefined,
-          width: width ?? `var(--avatarSize-${size})`,
-          height: height ?? `var(--avatarSize-${size})`,
+          ...(!width && { width: `var(--avatarSize-${size})` }),
+          ...(!height && { height: `var(--avatarSize-${size})` }),
           ...style,
         } as const),
       [aspectRatio, height, size, style, width],
@@ -122,8 +140,10 @@ export const RemoteImage = memo(
           !source && fallbackStyle,
           className,
         )}
+        height={height}
         src={source}
         style={styles}
+        width={width}
         {...props}
       />
     );

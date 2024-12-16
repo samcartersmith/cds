@@ -8,7 +8,7 @@ import { VStack } from '../../layout/VStack';
 import { TextBody, TextHeadline } from '../../text';
 import { NudgeCard, NudgeCardProps } from '../NudgeCard';
 
-const exampleProps: NudgeCardProps<'div'> = {
+const exampleProps: NudgeCardProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT. ',
   pictogram: 'key',
@@ -16,7 +16,7 @@ const exampleProps: NudgeCardProps<'div'> = {
   onActionPress: noopFn,
 };
 
-const compactProps: NudgeCardProps<'div'> = {
+const compactProps: NudgeCardProps = {
   title: 'Try this new thing',
   description: 'It will take you to the moon, I promise. WAGMI!',
   pictogram: 'key',
@@ -24,7 +24,7 @@ const compactProps: NudgeCardProps<'div'> = {
   onActionPress: undefined,
 };
 
-const longProps: NudgeCardProps<'div'> = {
+const longProps: NudgeCardProps = {
   action: 'Do the thing',
   title: 'Long title text that will overflow to the next line',
   description:
@@ -33,7 +33,7 @@ const longProps: NudgeCardProps<'div'> = {
   pictogram: 'addWallet',
 };
 
-const exampleMediaProps: NudgeCardProps<'div'> = {
+const exampleMediaProps: NudgeCardProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT. ',
   action: 'Join the movement',
@@ -41,7 +41,7 @@ const exampleMediaProps: NudgeCardProps<'div'> = {
   media: <img alt="placeholder" src={squareAssets.human2} width={60} />,
 };
 
-const compactMediaProps: NudgeCardProps<'div'> = {
+const compactMediaProps: NudgeCardProps = {
   title: 'Try this new thing',
   description: 'It will take you to the moon, I promise. WAGMI!',
   action: undefined,

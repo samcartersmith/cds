@@ -1,9 +1,10 @@
-import React, { memo, useMemo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 
+import type { Polymorphic } from '../core/polymorphism';
 import { Shape } from '../types/Shape';
 
-import { type PolymorphicBoxProps, Box } from './Box';
+import { type BoxBaseProps, Box } from './Box';
 
 const WIDTH_MODIFIERS = [0.5, 0, 0.6, 0.8, 0.1, 0.9, 0.4, 0.2, 0.7, 0.3];
 
@@ -82,71 +83,93 @@ const fallbackStyle = css`
   }
 `;
 
-export type FallbackBaseProps = {
-  width: string | number;
-  height: string | number;
-  /**
-   * @default rectangle
-   */
-  shape?: Shape;
-  /** Disables randomization of rectangle shape width. */
-  disableRandomRectWidth?: boolean;
-  /**
-   * When shape is a rectangle, creates a variant with deterministic width.
-   * Variants map to a predetermined set of width values, which are cycled through repeatedly when the set is exhausted.
-   */
-  rectWidthVariant?: number;
-  /** Convert width to a percentage. */
-  percentage?: boolean;
-};
+const fallbackDefaultElement = 'span';
 
-export type FallbackProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
+export type FallbackDefaultElement = typeof fallbackDefaultElement;
+
+export type FallbackBaseProps = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  {
+    width: string | number;
+    height: string | number;
+    /**
+     * @default rectangle
+     */
+    shape?: Shape;
+    /** Disables randomization of rectangle shape width. */
+    disableRandomRectWidth?: boolean;
+    /**
+     * When shape is a rectangle, creates a variant with deterministic width.
+     * Variants map to a predetermined set of width values, which are cycled through repeatedly when the set is exhausted.
+     */
+    rectWidthVariant?: number;
+    /** Convert width to a percentage. */
+    percentage?: boolean;
+  }
+>;
+
+export type FallbackProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,
   FallbackBaseProps
 >;
 
-export const Fallback = memo(
-  <AsComponent extends React.ElementType = 'div'>({
-    height,
-    shape = 'rectangle',
-    width: baseWidth,
-    percentage,
-    disableRandomRectWidth,
-    rectWidthVariant,
-    ...props
-  }: FallbackProps<AsComponent>) => {
-    const fallbackShapeOptions = useMemo<UseFallbackShapeOptions>(
-      () => ({ disableRandomRectWidth, rectWidthVariant }),
-      [disableRandomRectWidth, rectWidthVariant],
-    );
+type FallbackComponent = (<AsComponent extends React.ElementType = FallbackDefaultElement>(
+  props: FallbackProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
 
-    const { width, borderRadius } = useFallbackShape(shape, baseWidth, fallbackShapeOptions);
-
-    const backgroundSizeHeight = typeof height === 'number' ? `${height}px` : height;
-
-    const style = useMemo(
-      () => ({
-        width: percentage ? `100%` : width,
-        backgroundSize: `600px ${backgroundSizeHeight}`,
+export const Fallback: FallbackComponent = memo(
+  forwardRef<React.ReactElement<FallbackBaseProps>, FallbackBaseProps>(
+    <AsComponent extends React.ElementType>(
+      {
+        as,
         height,
-        borderRadius,
-      }),
-      [percentage, width, backgroundSizeHeight, height, borderRadius],
-    );
+        shape = 'rectangle',
+        width: baseWidth,
+        percentage,
+        disableRandomRectWidth,
+        rectWidthVariant,
+        ...props
+      }: FallbackProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const Component = (as ?? fallbackDefaultElement) satisfies React.ElementType;
 
-    return (
-      <Box
-        flexGrow={0}
-        flexShrink={0}
-        width={percentage && typeof width === 'number' ? `${Math.min(width, 100)}%` : width}
-        {...props}
-      >
-        <Box className={fallbackStyle} style={style}>
-          &nbsp;
+      const fallbackShapeOptions = useMemo<UseFallbackShapeOptions>(
+        () => ({ disableRandomRectWidth, rectWidthVariant }),
+        [disableRandomRectWidth, rectWidthVariant],
+      );
+
+      const { width, borderRadius } = useFallbackShape(shape, baseWidth, fallbackShapeOptions);
+
+      const backgroundSizeHeight = typeof height === 'number' ? `${height}px` : height;
+
+      const style = useMemo(
+        () => ({
+          width: percentage ? `100%` : width,
+          backgroundSize: `600px ${backgroundSizeHeight}`,
+          height,
+          borderRadius,
+        }),
+        [percentage, width, backgroundSizeHeight, height, borderRadius],
+      );
+
+      return (
+        <Box
+          ref={ref}
+          as={Component}
+          flexGrow={0}
+          flexShrink={0}
+          width={percentage && typeof width === 'number' ? `${Math.min(width, 100)}%` : width}
+          {...props}
+        >
+          <Box className={fallbackStyle} style={style}>
+            &nbsp;
+          </Box>
         </Box>
-      </Box>
-    );
-  },
+      );
+    },
+  ),
 );
 
 Fallback.displayName = 'Fallback';

@@ -4,7 +4,7 @@ import { type IllustrationPictogramNames } from '@cbhq/cds-common/types/Illustra
 
 import { IconButton } from '../buttons/IconButton';
 import { Pictogram } from '../illustrations/Pictogram';
-import { type PolymorphicBoxProps, Box } from '../layout/Box';
+import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { type StyleProps } from '../styles/styleProps';
@@ -96,12 +96,9 @@ export type NudgeCardBaseProps = {
   onDismissPress?: React.MouseEventHandler;
 };
 
-export type NudgeCardProps<AsComponent extends React.ElementType> = PolymorphicBoxProps<
-  AsComponent,
-  NudgeCardBaseProps
->;
+export type NudgeCardProps = NudgeCardBaseProps & BoxProps<'div'>;
 
-export const NudgeCard = <AsComponent extends React.ElementType = 'div'>({
+export const NudgeCard = ({
   title,
   description,
   pictogram,
@@ -118,12 +115,11 @@ export const NudgeCard = <AsComponent extends React.ElementType = 'div'>({
   maxHeight,
   maxWidth,
   background = 'backgroundAlternate',
-  onPress,
   minHeight,
   height,
   aspectRatio,
   ...props
-}: NudgeCardProps<AsComponent>) => {
+}: NudgeCardProps) => {
   const hasMedia = pictogram || media;
   const paddingBottom = action ? 1 : 2;
   const spacingProps = getCardBodyPaddingProps({
