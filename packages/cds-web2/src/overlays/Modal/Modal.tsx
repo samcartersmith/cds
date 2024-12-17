@@ -30,7 +30,9 @@ const baseStyle = css`
   top: var(--space-10);
   width: 612px;
   max-height: calc(100vh - var(--space-10) * 2);
-  max-height: calc(100dvh - var(--space-10) * 2);
+  @supports (height: 100dvh) {
+    max-height: calc(100dvh - var(--space-10) * 2);
+  }
   display: flex;
   justify-content: center;
   /* this makes sure modal dialogue displays on top of overlay */
@@ -44,22 +46,36 @@ const modalDialogResponsiveStyle = css`
 `;
 
 const modalResponsiveStyle = css`
-  @media (max-width: ${breakpoints.tabletLandscape - 1}px) {
+  max-height: 100vh;
+  @supports (max-height: 100dvh) {
+    max-height: 100dvh;
+  }
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-right: 0;
+  margin-left: 0;
+  width: auto;
+
+  @media (min-width: ${breakpoints.phoneLandscape}px) {
     max-width: 612px;
-    width: auto;
     margin-right: var(--space-3);
     margin-left: var(--space-3);
+    top: var(--space-10);
+    bottom: initial;
+    right: initial;
+    left: initial;
+    max-height: calc(100vh - var(--space-10) * 2);
+    @supports (height: 100dvh) {
+      max-height: calc(100dvh - var(--space-10) * 2);
+    }
   }
 
-  @media ${media.phonePortrait} {
-    max-height: 100vh;
-    max-height: 100dvh;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin-right: 0;
-    margin-left: 0;
+  @media (min-width: ${breakpoints.tabletLandscape}px) {
+    width: 612px;
+    margin-left: initial;
+    margin-right: initial;
   }
 `;
 

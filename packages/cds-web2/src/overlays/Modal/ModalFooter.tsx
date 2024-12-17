@@ -5,24 +5,29 @@ import type { ButtonBaseProps } from '@cbhq/cds-common/types/ButtonBaseProps';
 
 import { Button } from '../../buttons/Button';
 import type { BoxProps } from '../../layout/Box';
-import { deviceMqs } from '../../layout/breakpoints';
 import { HStack } from '../../layout/HStack';
+import { breakpoints } from '../../styles/media';
 
 export const baseStyle = css`
-  @media only screen and (${deviceMqs.tablet}) {
-    & > button, a: {
+  & > button,
+  a {
+    flex: none;
+  }
+  flex-direction: column-reverse;
+
+  @media (min-width: ${breakpoints.phoneLandscape}px) {
+    flex-direction: row;
+    & > button,
+    a {
       flex: 1;
     }
   }
 
-  @media only screen and (${deviceMqs.phone}) {
-    & > button, a: {
-      flex: 'none';
-    }
-    flex-direction: 'column-reverse',
-    /* Set height for vertical Spacer */
-    span:nth-child(2): {
-      height: var(--space-2);
+  @media (min-width: ${breakpoints.tabletLandscape}px) {
+    flex-direction: row;
+    & > button,
+    a {
+      flex: initial;
     }
   }
 `;

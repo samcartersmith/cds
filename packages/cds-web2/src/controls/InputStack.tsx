@@ -15,6 +15,7 @@ import { ColorSurge } from '../motion/ColorSurge';
 import type { StaticStyleProps } from '../styles/styleProps';
 import { Interactable } from '../system/Interactable';
 
+import type { InputVariant } from './context';
 import { InputLabel } from './InputLabel';
 
 const baseStyle = css`
@@ -53,17 +54,7 @@ const persistedFocusStyle = css`
   box-shadow: 0 0 0 var(--border-width-focused) var(--border-color-focused);
 `;
 
-type InputVariant = Extract<
-  StaticStyleProps['color'],
-  | 'textPositive'
-  | 'textNegative'
-  | 'textForeground'
-  | 'textPrimary'
-  | 'textForegroundMuted'
-  | 'backgroundSecondary'
->;
-
-type BaseInputStackProps = {
+export type InputStackBaseProps = {
   /** Width of the border.
    * @default rounded
    */
@@ -124,7 +115,7 @@ type BaseInputStackProps = {
   enableColorSurge?: boolean;
 } & SharedProps;
 
-export type InputStackProps = BaseInputStackProps & BoxProps<'div'>;
+export type InputStackProps = InputStackBaseProps & BoxProps<'div'>;
 
 export const InputStack = memo(
   forwardRef(
@@ -154,7 +145,7 @@ export const InputStack = memo(
       const focusedVariant = useMemo(
         () =>
           focused && variant !== 'textPositive' && variant !== 'textNegative'
-            ? 'textPrimary'
+            ? 'backgroundPrimary'
             : variant,
         [focused, variant],
       );

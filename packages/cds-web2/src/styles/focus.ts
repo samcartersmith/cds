@@ -1,6 +1,7 @@
 import { css } from '@linaria/core';
 
 export const focusRing = css`
+  position: relative;
   /* if we use the focus ring we need to turn off the browser stylesheet outline */
   &:focus {
     outline: none;
@@ -14,6 +15,7 @@ export const focusRing = css`
 `;
 // InsetFocusRing removes the outline offset
 export const insetFocusRing = css`
+  position: relative;
   &:focus {
     outline: none;
   }

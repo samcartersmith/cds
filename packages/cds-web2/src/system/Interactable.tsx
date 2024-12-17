@@ -11,11 +11,12 @@ import {
   borderColor as borderColorStyles,
   borderWidth as borderWidthStyles,
 } from '../styles/styles';
-import { elevation as elevationStyle } from '../styles/styles';
+import { borderRadius as borderRadiusStyle, elevation as elevationStyle } from '../styles/styles';
 
 import { highHueBackgrounds, interactableBackground } from './interactableCSSProperties';
 
 const focusRingStyle = css`
+  position: relative;
   /* if we use the focus ring we need to turn off the browser stylesheet outline */
   &:focus {
     outline: none;
@@ -230,7 +231,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     disabled ? disabledStyle : focusRingStyle,
     disabled && borderColor === 'transparent' ? disabledBorderStyle : null,
     transparentWhileInactive ? borderColorStyles.transparent : borderColorStyles[borderColor],
-    borderColor && borderWidthStyles[100],
+    borderColor && typeof borderWidth === 'undefined' && borderWidthStyles[100],
     borderWidth && borderWidthStyles[borderWidth],
     block && blockStyle,
     transparentWhileInactive ? backgroundStyles.transparent : backgroundStyles[background],
@@ -252,8 +253,10 @@ export const InteractableContent = forwardRef(function InteractableContent(
     () => ({
       [interactableBackground]: `var(--color-${background})`,
       borderRadius:
-        // TO DO: fix this, since borderRadius values are always numbers now - even when they're coming from the theme, e.g. borderRadius-500
-        typeof borderRadius === 'number' ? borderRadius : `var(--borderRadius-${borderRadius})`,
+        // TO DO: fix this to make this behave more predictably for numbers and border radius tokens
+        typeof borderRadius === 'number' && borderRadius.toString() in borderRadiusStyle
+          ? `var(--borderRadius-${borderRadius})`
+          : borderRadius,
       width,
       height,
       ...customStyle,
