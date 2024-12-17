@@ -124,7 +124,11 @@ export const Collapsible = memo(
           heightAnimatedValue.value = shouldSkipAnimation
             ? animateToSize
             : withMotionTiming(
-                _collapsed ? animateOutMaxSize : { ...animateInMaxSize, toValue: animateToSize },
+                _collapsed
+                  ? animateOutMaxSize
+                  : // Using object spread here will crash react-native-reanimated with the resulting transpiled code
+                    // eslint-disable-next-line prefer-object-spread
+                    Object.assign({}, animateInMaxSize, { toValue: animateToSize }),
               );
 
           opacityAnimatedValue.value = shouldSkipAnimation

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.6.1 (12/17/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix reanimated error by avoiding object spread in Collapsible reanimated worklet. [[#3464](https://github.cbhq.net/frontend/cds/pull/3464)]
+
 ## 7.6.0 (12/16/2024 PST)
 
 #### 🚀 Updates
