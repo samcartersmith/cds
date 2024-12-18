@@ -10,12 +10,6 @@ import { getBrowserGlobals } from '../utils/browser';
 
 export const hexagonClipPathContainerId = 'cds-hexagon-clipPath-container';
 export const hexagonAvatarClipId = 'cds-hexagon-avatar-clipper';
-export const staticHexagonClassName = 'cds-hexagon';
-export const hexagonStyles = css`
-  &.${staticHexagonClassName} {
-    clip-path: url(#${hexagonAvatarClipId});
-  }
-`;
 
 /**
  * We need to mount this to the DOM one time
@@ -65,24 +59,47 @@ export const hexagonSvgTransformStyles = {
   },
 } as const;
 
+const pathElementCss = css`
+  // allows paths' stroke to be overridden by parent element's style
+  //stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+`;
+
 type HexagonBorderProps = {
+  /**
+   * The color that is applied to the stroke. This color will be overridden by any color set by CSS in the className prop
+   */
   strokeColor: string;
   offset?: boolean;
   size?: AvatarBaseProps['size'];
+  /**
+   * Optional class that is placed on the container element.
+   * To affect the stroke of the SVG path(s), you may set the color attribute.
+   * Child path elements are programmed to use the currentColor CSS value to inherit this color.
+   */
+  className?: string;
 } & SharedProps;
+
 export const HexagonBorder = memo(
-  ({ strokeColor, offset, size = 'l', testID = staticHexagonClassName }: HexagonBorderProps) => {
+  ({ strokeColor, offset, size = 'l', testID = 'cds-hexagon', className }: HexagonBorderProps) => {
     const svgTransformStyles = hexagonSvgTransformStyles[offset ? 'offset' : 'standard'][size];
 
     return (
-      <Box aria-hidden data-testid={testID} height="100%" position="absolute" width="100%">
+      <Box
+        aria-hidden
+        className={className}
+        data-testid={testID}
+        height="100%"
+        position="absolute"
+        width="100%"
+      >
         <svg data-testid={`${testID}-svg`} style={svgTransformStyles} viewBox="-2.25 0 70 62">
           <path
+            className={pathElementCss}
             d="M63.4372 22.8624C66.2475 27.781 66.2475 33.819 63.4372 38.7376L54.981 53.5376C52.1324 58.5231 46.8307 61.6 41.0887 61.6H24.4562C18.7142 61.6 13.4125 58.5231 10.564 53.5376L2.10774 38.7376C-0.702577 33.819 -0.702582 27.781 2.10774 22.8624L10.564 8.06243C13.4125 3.07687 18.7142 0 24.4562 0H41.0887C46.8307 0 52.1324 3.07686 54.981 8.06242L63.4372 22.8624Z"
             data-testid={`${testID}-path`}
-            fill="none"
             stroke={strokeColor}
-            strokeLinecap="round"
             strokeWidth={1.5}
             vectorEffect="non-scaling-stroke"
           />
