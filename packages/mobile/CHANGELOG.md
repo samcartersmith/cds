@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.6.2 (12/18/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix order of props in Text. [[#3465](https://github.cbhq.net/frontend/cds/pull/3465)] [[DX-4561](https://jira.coinbase-corp.com/browse/DX-4561)]
+
 ## 7.6.1 (12/17/2024 PST)
 
 #### 🐞 Fixes

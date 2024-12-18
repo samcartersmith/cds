@@ -152,10 +152,10 @@ export const createText = (name: Typography, overrides?: TextProps) => {
           accessibilityRole={accessibilityRole}
           numberOfLines={numberOfLines}
           {...ellipsizeProps}
+          {...fontScaleProps}
           {...props}
           selectable={selectable !== 'none'}
           style={style as TextStyle}
-          {...fontScaleProps}
           {...getAdjustsFontSizeToFitProp({ enabled: adjustsFontSizeToFit })}
           ref={ref}
         >
