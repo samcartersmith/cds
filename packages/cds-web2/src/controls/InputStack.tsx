@@ -182,7 +182,7 @@ export const InputStack = memo(
       const defaultBorderStyle = useMemo(() => {
         return {
           '--border-color-unfocused':
-            variant === 'backgroundSecondary'
+            variant === 'backgroundAlternate'
               ? 'transparent'
               : variant === 'textForegroundMuted' || !variant
               ? 'var(--color-lineHeavy)'
@@ -211,7 +211,7 @@ export const InputStack = memo(
                 ref={ref}
                 as="span"
                 background={
-                  variant === 'backgroundSecondary' ? 'backgroundSecondary' : 'background'
+                  variant === 'backgroundAlternate' ? 'backgroundAlternate' : 'background'
                 }
                 borderRadius={borderRadius}
                 borderWidth={borderWidth}

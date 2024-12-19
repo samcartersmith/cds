@@ -10,7 +10,7 @@ export type InputVariant = Extract<
   | 'textForeground'
   | 'textPrimary'
   | 'textForegroundMuted'
-  | 'backgroundSecondary'
+  | 'backgroundAlternate'
 >;
 
 export const TextInputFocusVariantContext = createContext<InputVariant | undefined>(undefined);

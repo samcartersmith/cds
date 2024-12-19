@@ -73,7 +73,10 @@ export function StoryContainer<Props>(
         <ThemeProvider display="contents" theme={isDarkMode ? themeMap.dark : themeMap.light}>
           <PortalProvider>
             {/* <Group {...wrapperProps}> */}
-            <InnerWrapper>{contents}</InnerWrapper>
+            <InnerWrapper>
+              {/* arbitrary padding to make the storybook layout match the old storybook for easier comparison */}
+              <div style={{ padding: 20 }}>{contents}</div>
+            </InnerWrapper>
             {/* </Group> */}
           </PortalProvider>
         </ThemeProvider>
