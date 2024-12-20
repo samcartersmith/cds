@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
-import type { AvatarSize } from '@cbhq/cds-common';
-import { useAvatarSrc } from '@cbhq/cds-common/media/useAvatarSrc';
 import type { AvatarBaseProps, AvatarShape } from '@cbhq/cds-common/types/AvatarBaseProps';
+import type { AvatarSize } from '@cbhq/cds-common2';
+import { useAvatarSrc } from '@cbhq/cds-common2/media/useAvatarSrc';
 import type * as vars from '@cbhq/cds-web2/styles/vars';
 
 import { Box } from '../layout/Box';

@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { searchInputBuilder } from '@cbhq/cds-common/internal/searchInputBuilder';
+import { searchInputBuilder } from '@cbhq/cds-common2/internal/searchInputBuilder';
 
 import { VStack } from '../../layout';
 import { ThemeProvider } from '../../providers/ThemeProvider';

@@ -10,6 +10,7 @@
   "react-native": "./src/index.ts",
   "type": "module",
   "main": "./esm/index.js",
+  "private": true,
   "types": "./dts/index.d.ts",
   "exports": {
     "./package.json": "./package.json",

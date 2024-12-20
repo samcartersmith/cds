@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useCallback, useMemo, useRef } from 'react';
 import { css, cx } from '@linaria/core';
-import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
-import { SearchInputBaseProps } from '@cbhq/cds-common/types/SearchInputBaseProps';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+import { SearchInputBaseProps } from '@cbhq/cds-common2/types/SearchInputBaseProps';
 import type { OnPress } from '@cbhq/cds-web2/system/Pressable';
 
 import { Box } from '../layout/Box';

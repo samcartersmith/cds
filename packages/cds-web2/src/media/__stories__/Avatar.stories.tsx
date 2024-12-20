@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useMemo } from 'react';
-import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
-import { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
+import { getAvatarFallbackColor } from '@cbhq/cds-common2/media/getAvatarFallbackColor';
+import { AvatarSize } from '@cbhq/cds-common2/types/AvatarSize';
 import { autoTheme } from '@cbhq/cds-web2/themes/auto';
 import { denseDensityTheme } from '@cbhq/cds-web2/themes/subthemes/density/dense';
 
