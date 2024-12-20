@@ -1,4 +1,4 @@
-import type { HeroSquareProps as HeroSquareCommonProps } from '@cbhq/cds-common/types/IllustrationProps';
+import type { HeroSquareProps as HeroSquareCommonProps } from '@cbhq/cds-common2/types/IllustrationProps';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 
 import { createIllustration, IllustrationA11yProps } from './createIllustration';

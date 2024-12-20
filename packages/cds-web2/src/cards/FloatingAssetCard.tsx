@@ -1,6 +1,6 @@
 import React from 'react';
 import { css, cx } from '@linaria/core';
-import type { FloatingAssetCardBaseProps } from '@cbhq/cds-common/types/FloatingAssetCardBaseProps';
+import type { FloatingAssetCardBaseProps } from '@cbhq/cds-common2/types/FloatingAssetCardBaseProps';
 
 import { type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';

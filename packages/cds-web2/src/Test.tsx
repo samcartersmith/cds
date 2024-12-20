@@ -4,9 +4,9 @@ import '@cbhq/cds-icons/fonts/web/icon-font.css';
 
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { css, cx } from '@linaria/core';
-import { svgs } from '@cbhq/cds-common/internal/data/assets';
+import { svgs } from '@cbhq/cds-common2/internal/data/assets';
 // import {NudgeCard} from './cards/NudgeCard'
-import type { TabValue } from '@cbhq/cds-common/tabs/useTabs';
+import type { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { UiIconName } from '@cbhq/cds-icons/__generated__/ui/types/UiIconName';
 
 import { Button } from './buttons/Button';

@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import { durations } from '@cbhq/cds-common/motion/tokens';
-import { inputStackGap } from '@cbhq/cds-common/tokens/input';
-import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
-import type { DimensionValue } from '@cbhq/cds-common/types/DimensionStyles';
-import type { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { durations } from '@cbhq/cds-common2/motion/tokens';
+import { inputStackGap } from '@cbhq/cds-common2/tokens/input';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
+import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
+import type { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';

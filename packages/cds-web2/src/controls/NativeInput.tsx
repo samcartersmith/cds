@@ -1,9 +1,9 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import type { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
-import type { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
-import type { TextBaseProps } from '@cbhq/cds-common/types/TextBaseProps';
+import type { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+import type { TextBaseProps } from '@cbhq/cds-common2/types/TextBaseProps';
 
 const baseStyle = css`
   font-size: var(--fontSize-body);

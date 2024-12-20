@@ -1,7 +1,7 @@
 /* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import React, { memo } from 'react';
 import type { IllustrationNamesMap, IllustrationVariant, Spectrum } from '@cbhq/cds-common';
-import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common/tokens/illustrations';
+import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common2/tokens/illustrations';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
 import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/data/versionMap';

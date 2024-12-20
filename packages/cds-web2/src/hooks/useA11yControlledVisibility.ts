@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
+import { usePrefixedId } from '@cbhq/cds-common2/hooks/usePrefixedId';
 
 export type AriaHasPopupType = 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 

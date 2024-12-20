@@ -1,5 +1,5 @@
 import { Target, TargetAndTransition } from 'framer-motion';
-import { curves, durations } from '@cbhq/cds-common/motion/tokens';
+import { curves, durations } from '@cbhq/cds-common2/motion/tokens';
 import { isStorybook, isTest } from '@cbhq/cds-utils';
 
 import type { MotionConfigs, MotionSpec, MotionTransition } from './types';

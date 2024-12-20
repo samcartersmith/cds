@@ -3349,6 +3349,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cbhq/cds-common2@workspace:^, @cbhq/cds-common2@workspace:packages/cds-common2":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/cds-common2@workspace:packages/cds-common2"
+  dependencies:
+    "@babel/core": "npm:^7.20.12"
+    "@babel/preset-env": "npm:^7.20.2"
+    "@babel/preset-react": "npm:^7.18.6"
+    "@babel/preset-typescript": "npm:^7.18.6"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@types/react": "npm:^18.3.12"
+    d3-array: "npm:^3.2.4"
+    d3-color: "npm:^3.1.0"
+    d3-interpolate: "npm:^3.0.1"
+    d3-scale: "npm:^4.0.2"
+    d3-shape: "npm:^3.2.0"
+    jest-date-mock: "npm:^1.0.8"
+    lodash: "npm:^4.17.21"
+    react-is: "npm:^17.0.2"
+    type-fest: "npm:^2.19.0"
+  peerDependencies:
+    react: ^18.3.1
+    react-dom: ^18.3.1
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/cds-common@workspace:^, @cbhq/cds-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common@workspace:packages/common"
@@ -3695,7 +3722,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-common2": "workspace:^"
     "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
@@ -4391,7 +4418,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cds/storybook2@workspace:apps/storybook2"
   dependencies:
-    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-common2": "workspace:^"
     "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"

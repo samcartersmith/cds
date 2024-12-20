@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
-import { IconName } from '@cbhq/cds-common/types/IconName';
+import { IconName } from '@cbhq/cds-common2/types/IconName';
 
 import { Icon } from '../icons/Icon';
 import { type BoxProps, Box } from '../layout/Box';

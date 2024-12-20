@@ -4,7 +4,7 @@ import {
   checkboxOpacityExitConfig,
   checkboxScaleEnterConfig,
   checkboxScaleExitConfig,
-} from '@cbhq/cds-common/motion/checkbox';
+} from '@cbhq/cds-common2/motion/checkbox';
 
 import { useMotionProps } from '../motion/useMotionProps';
 

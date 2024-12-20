@@ -1,0 +1,49 @@
+{
+  "name": "cds-common2",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/cds-common2/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "lint-styles": {
+      "executor": "@cbhq/mono-tasks:lint-styles"
+    },
+    "test": {
+      "executor": "@cbhq/mono-tasks:test"
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
+    },
+    "danger": {
+      "executor": "@cbhq/mono-tasks:danger",
+      "options": {
+        "dangerfile": "libs/dangerfiles/dangerfile.ts"
+      }
+    },
+    "danger-test": {
+      "executor": "@cbhq/mono-tasks:danger",
+      "options": {
+        "dangerfile": "libs/dangerfiles/dangerfile-coverage.ts",
+        "timeoutSeconds": 30
+      }
+    }
+  }
+}

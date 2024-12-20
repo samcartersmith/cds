@@ -127,6 +127,7 @@ const config = {
     config.resolve.alias = {
       ...config.resolve?.alias,
       '@cbhq/cds-common': path.resolve(__dirname, '../../../packages/common/src'),
+      '@cbhq/cds-common2': path.resolve(__dirname, '../../../packages/cds-common2/src'),
       '@cbhq/cds-fonts': path.resolve(__dirname, '../../../packages/fonts/src'),
       '@cbhq/cds-lottie-files': path.resolve(__dirname, '../../../packages/lottie-files/src'),
       '@cbhq/cds-icons': path.resolve(__dirname, '../../../packages/icons/src'),

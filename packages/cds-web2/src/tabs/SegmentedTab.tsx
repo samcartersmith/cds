@@ -1,9 +1,9 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { motion } from 'framer-motion';
-import { useTabsContext } from '@cbhq/cds-common/tabs/TabsContext';
-import { type TabValue } from '@cbhq/cds-common/tabs/useTabs';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
+import { type TabValue } from '@cbhq/cds-common2/tabs/useTabs';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { Box } from '../layout/Box';
 import type { StaticStyleProps } from '../styles/styleProps';

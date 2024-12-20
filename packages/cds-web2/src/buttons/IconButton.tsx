@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
-import { IconName } from '@cbhq/cds-common/types/IconName';
+import { IconName } from '@cbhq/cds-common2/types/IconName';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';

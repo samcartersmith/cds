@@ -1,9 +1,9 @@
 import React, { memo, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { PortalContext } from '@cbhq/cds-common/overlays/PortalContext';
-import { ToastProvider, ToastProviderProps } from '@cbhq/cds-common/overlays/ToastProvider';
-import { usePortal } from '@cbhq/cds-common/overlays/usePortal';
-import { PortalNode, usePortalState } from '@cbhq/cds-common/overlays/usePortalState';
+import { PortalContext } from '@cbhq/cds-common2/overlays/PortalContext';
+import { ToastProvider, ToastProviderProps } from '@cbhq/cds-common2/overlays/ToastProvider';
+import { usePortal } from '@cbhq/cds-common2/overlays/usePortal';
+import { PortalNode, usePortalState } from '@cbhq/cds-common2/overlays/usePortalState';
 
 import { IsoHexagonClipPath } from '../media/Hexagon';
 import { zIndex } from '../styles/styles';

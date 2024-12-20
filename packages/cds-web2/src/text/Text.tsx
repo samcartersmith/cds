@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { type BoxBaseProps, Box } from '../layout/Box';

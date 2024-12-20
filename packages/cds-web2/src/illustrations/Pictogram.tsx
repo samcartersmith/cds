@@ -1,4 +1,4 @@
-import type { PictogramProps as CommonPictogramProps } from '@cbhq/cds-common/types/IllustrationProps';
+import type { PictogramProps as CommonPictogramProps } from '@cbhq/cds-common2/types/IllustrationProps';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
 
 import { createIllustration, IllustrationA11yProps } from './createIllustration';

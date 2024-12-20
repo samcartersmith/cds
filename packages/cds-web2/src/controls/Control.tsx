@@ -1,9 +1,9 @@
 import React, { forwardRef, memo, useMemo, useRef } from 'react';
 import { css, cx } from '@linaria/core';
-import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
-import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
-import { zIndex } from '@cbhq/cds-common/tokens/zIndex';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+import { usePrefixedId } from '@cbhq/cds-common2/hooks/usePrefixedId';
+import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';

@@ -1,8 +1,8 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { motion } from 'framer-motion';
-import { switchTransitionConfig } from '@cbhq/cds-common/motion/switch';
-import { ControlBaseProps } from '@cbhq/cds-common/types/ControlBaseProps';
+import { switchTransitionConfig } from '@cbhq/cds-common2/motion/switch';
+import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 
 import { type ThemeConfig } from '../core/theme';
 import { Box } from '../layout/Box';

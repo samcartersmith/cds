@@ -5,8 +5,8 @@ import {
   animateInOpacityConfig,
   animateOutOpacityConfig,
   getTranslateConfigByPlacement,
-} from '@cbhq/cds-common/animation/tooltip';
-import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common/tokens/tooltip';
+} from '@cbhq/cds-common2/animation/tooltip';
+import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common2/tokens/tooltip';
 
 import { Box } from '../../layout/Box';
 import { useMotionProps } from '../../motion/useMotionProps';

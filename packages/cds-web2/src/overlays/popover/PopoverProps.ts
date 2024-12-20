@@ -1,8 +1,8 @@
 import React from 'react';
 import { Placement, PositioningStrategy } from '@popperjs/core';
-import type { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
-import type { SpacingScale } from '@cbhq/cds-common/types/SpacingScale';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+import type { SpacingScale } from '@cbhq/cds-common2/types/SpacingScale';
 
 import { AccessibleControlledReturnType } from '../../hooks/useA11yControlledVisibility';
 import { type FocusTrapProps } from '../FocusTrap';

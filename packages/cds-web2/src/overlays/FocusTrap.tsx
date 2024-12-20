@@ -7,8 +7,8 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import { FOCUSABLE_ELEMENTS } from '@cbhq/cds-common/tokens/overlays';
-import { debounce } from '@cbhq/cds-common/utils/debounce';
+import { FOCUSABLE_ELEMENTS } from '@cbhq/cds-common2/tokens/overlays';
+import { debounce } from '@cbhq/cds-common2/utils/debounce';
 
 import { getBrowserGlobals } from '../utils/browser';
 

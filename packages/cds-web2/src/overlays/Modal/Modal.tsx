@@ -6,14 +6,14 @@ import {
   animateInScaleConfig,
   animateOutOpacityConfig,
   animateOutScaleConfig,
-} from '@cbhq/cds-common/animation/modal';
-import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
+} from '@cbhq/cds-common2/animation/modal';
+import { ModalParentContext } from '@cbhq/cds-common2/overlays/ModalParentContext';
 import {
   type OverlayContentContextValue,
   OverlayContentContext,
-} from '@cbhq/cds-common/overlays/OverlayContentContext';
-import { ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
-import type { Position } from '@cbhq/cds-common/types/Position';
+} from '@cbhq/cds-common2/overlays/OverlayContentContext';
+import { ModalRefBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
+import type { Position } from '@cbhq/cds-common2/types/Position';
 
 import { useA11yLabels } from '../../hooks/useA11yLabels';
 import { type BoxProps } from '../../layout/Box';

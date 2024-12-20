@@ -1,6 +1,6 @@
 import React from 'react';
-import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
-import { ModalHeaderBaseProps as SharedModalHeaderBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
+import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
+import { ModalHeaderBaseProps as SharedModalHeaderBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
 
 import { IconButton } from '../../buttons/IconButton';
 import { type BoxProps, Box } from '../../layout/Box';

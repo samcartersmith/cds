@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@linaria/core';
-import { type IllustrationPictogramNames } from '@cbhq/cds-common/types/IllustrationNames';
+import { type IllustrationPictogramNames } from '@cbhq/cds-common2/types/IllustrationNames';
 
 import { IconButton } from '../buttons/IconButton';
 import { Pictogram } from '../illustrations/Pictogram';

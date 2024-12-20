@@ -1,4 +1,4 @@
-import type { SpotSquareProps as SpotSquareCommonProps } from '@cbhq/cds-common/types/IllustrationProps';
+import type { SpotSquareProps as SpotSquareCommonProps } from '@cbhq/cds-common2/types/IllustrationProps';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
 import { createIllustration, IllustrationA11yProps } from './createIllustration';

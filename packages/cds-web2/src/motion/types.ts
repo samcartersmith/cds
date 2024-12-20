@@ -2,7 +2,7 @@ import type { TargetAndTransition, Transition, Variant } from 'framer-motion';
 import type {
   MotionBaseSpec,
   MotionTransition as MotionBaseTransition,
-} from '@cbhq/cds-common/types/Motion';
+} from '@cbhq/cds-common2/types/Motion';
 
 export type MotionSpec = {
   toValue: MotionBaseSpec['toValue'] | string; // allow string values like scale(0.5)

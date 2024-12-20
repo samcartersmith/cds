@@ -1,4 +1,4 @@
-import type { SpotIconProps as SpotIconCommonProps } from '@cbhq/cds-common/types/IllustrationProps';
+import type { SpotIconProps as SpotIconCommonProps } from '@cbhq/cds-common2/types/IllustrationProps';
 import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/data/versionMap';
 
 import { createIllustration, IllustrationA11yProps } from './createIllustration';

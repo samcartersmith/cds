@@ -1,6 +1,6 @@
 import React from 'react';
-import { squareAssets } from '@cbhq/cds-common/internal/data/assets';
-import { NoopFn as noopFn } from '@cbhq/cds-common/utils/mockUtils';
+import { squareAssets } from '@cbhq/cds-common2/internal/data/assets';
+import { NoopFn as noopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Button } from '../../buttons/Button';
 import { HStack } from '../../layout/HStack';

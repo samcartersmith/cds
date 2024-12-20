@@ -7,8 +7,8 @@ import React, {
   useState,
 } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { colorSurgeEnterConfig, colorSurgeExitConfig } from '@cbhq/cds-common/motion/hint';
-import type { HintMotionBaseProps } from '@cbhq/cds-common/types/MotionBaseProps';
+import { colorSurgeEnterConfig, colorSurgeExitConfig } from '@cbhq/cds-common2/motion/hint';
+import type { HintMotionBaseProps } from '@cbhq/cds-common2/types/MotionBaseProps';
 
 import { Box } from '../layout/Box';
 import type { StaticStyleProps } from '../styles/styleProps';

@@ -4,8 +4,8 @@ import { css, cx } from '@linaria/core';
 import { Story } from '@storybook/react';
 import merge from 'lodash/merge';
 import { useDarkMode } from 'storybook-dark-mode';
-import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common/internal/utils/storyBuilder';
-// import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common2/internal/utils/storyBuilder';
+// import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
 import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
 import { ThemeProvider } from '@cbhq/cds-web2/providers/ThemeProvider';

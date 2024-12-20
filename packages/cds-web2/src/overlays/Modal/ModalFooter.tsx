@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@linaria/core';
-import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
-import type { ButtonBaseProps } from '@cbhq/cds-common/types/ButtonBaseProps';
+import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
+import type { ButtonBaseProps } from '@cbhq/cds-common2/types/ButtonBaseProps';
 
 import { Button } from '../../buttons/Button';
 import type { BoxProps } from '../../layout/Box';

@@ -1,9 +1,9 @@
-import type { PositionStyles } from '@cbhq/cds-common/types/BoxBaseProps';
+import type { PositionStyles } from '@cbhq/cds-common2/types/BoxBaseProps';
 import type {
   BaseTooltipPlacement,
   GapSpacing,
   TooltipBaseProps,
-} from '@cbhq/cds-common/types/TooltipBaseProps';
+} from '@cbhq/cds-common2/types/TooltipBaseProps';
 
 import { type PopoverProps } from '../popover/PopoverProps';
 

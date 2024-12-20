@@ -1,12 +1,12 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import useMeasure from 'react-use-measure';
 import { type MotionProps, type Transition, motion } from 'framer-motion';
-import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
-import { useRefMap } from '@cbhq/cds-common/hooks/useRefMap';
-import { TabsContext } from '@cbhq/cds-common/tabs/TabsContext';
-import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common/tabs/useTabs';
-import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
-import { type Rect, defaultRect } from '@cbhq/cds-common/types/Rect';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
+import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
+import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common2/tabs/useTabs';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
+import { type Rect, defaultRect } from '@cbhq/cds-common2/types/Rect';
 
 import { type BoxProps, Box } from '../layout/Box';
 import { type HStackProps, HStack } from '../layout/HStack';

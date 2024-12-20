@@ -1,8 +1,8 @@
 import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
-import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
-import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
-import { TextInputBaseProps } from '@cbhq/cds-common/types/TextInputBaseProps';
+import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
+import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+import { TextInputBaseProps } from '@cbhq/cds-common2/types/TextInputBaseProps';
 
 import { Box, BoxProps } from '../layout/Box';
 import { font } from '../styles/styles';

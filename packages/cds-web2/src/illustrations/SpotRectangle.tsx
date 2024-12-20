@@ -1,4 +1,4 @@
-import type { SpotRectangleProps as SpotRectangleCommonProps } from '@cbhq/cds-common/types/IllustrationProps';
+import type { SpotRectangleProps as SpotRectangleCommonProps } from '@cbhq/cds-common2/types/IllustrationProps';
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
 
 import { createIllustration, IllustrationA11yProps } from './createIllustration';

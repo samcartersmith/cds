@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useContext } from 'react';
-import { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { Icon, IconProps } from '../icons/Icon';
 import { Box } from '../layout/Box';

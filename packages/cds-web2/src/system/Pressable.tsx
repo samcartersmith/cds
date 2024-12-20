@@ -1,9 +1,9 @@
 import React, { forwardRef, useCallback } from 'react';
 import { css, cx, LinariaClassName } from '@linaria/core';
-import { useEventHandler } from '@cbhq/cds-common/system/useEventHandler';
-import { ComponentEventHandlerProps } from '@cbhq/cds-common/types/ComponentEventHandlerProps';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { useEventHandler } from '@cbhq/cds-common2/system/useEventHandler';
+import { ComponentEventHandlerProps } from '@cbhq/cds-common2/types/ComponentEventHandlerProps';
+import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';

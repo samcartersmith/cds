@@ -3,9 +3,9 @@ import { css, cx } from '@linaria/core';
 import {
   remoteImageDarkFallbackSrc,
   remoteImageLightFallbackSrc,
-} from '@cbhq/cds-common/media/remoteImageFallbackSrc';
-import type { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';
-import type { AspectRatio, Shape } from '@cbhq/cds-common/types/Shape';
+} from '@cbhq/cds-common2/media/remoteImageFallbackSrc';
+import type { AvatarSize } from '@cbhq/cds-common2/types/AvatarSize';
+import type { AspectRatio, Shape } from '@cbhq/cds-common2/types/Shape';
 
 import { type BoxProps, Box } from '../layout/Box';
 import { StyleProps } from '../styles/styleProps';

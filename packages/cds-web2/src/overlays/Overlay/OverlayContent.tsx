@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import {
   animateInOpacityConfig,
   animateOutOpacityConfig,
-} from '@cbhq/cds-common/animation/overlay';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+} from '@cbhq/cds-common2/animation/overlay';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { VStack, VStackProps } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';

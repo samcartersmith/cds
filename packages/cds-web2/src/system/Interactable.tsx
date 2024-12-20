@@ -1,9 +1,9 @@
 import React, { createElement, forwardRef, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
-import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
-import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
-import { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
+import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
+import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import type { StaticStyleProps } from '../styles/styleProps';
 import {

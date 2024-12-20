@@ -33,6 +33,12 @@
       "@cbhq/cds-common/*": [
         "packages/common/src/*"
       ],
+      "@cbhq/cds-common2": [
+        "packages/cds-common2/src"
+      ],
+      "@cbhq/cds-common2/*": [
+        "packages/cds-common2/src/*"
+      ],
       "@cbhq/cds-fonts": [
         "packages/fonts/src"
       ],

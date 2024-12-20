@@ -9,13 +9,13 @@ import React, {
   useState,
 } from 'react';
 import { css } from '@linaria/core';
-import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
-import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
-import { ForwardedRef } from '@cbhq/cds-common/types/ForwardedRef';
-import type { SharedInputProps } from '@cbhq/cds-common/types/InputBaseProps';
-import type { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
-import type { TextAlignProps } from '@cbhq/cds-common/types/TextBaseProps';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+import { usePrefixedId } from '@cbhq/cds-common2/hooks/usePrefixedId';
+import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
+import type { SharedInputProps } from '@cbhq/cds-common2/types/InputBaseProps';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+import type { TextAlignProps } from '@cbhq/cds-common2/types/TextBaseProps';
 
 import { HStack } from '../layout/HStack';
 import { Text } from '../text/Text';

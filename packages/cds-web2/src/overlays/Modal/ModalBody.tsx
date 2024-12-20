@@ -1,5 +1,5 @@
 import React from 'react';
-import { useModalParent } from '@cbhq/cds-common/overlays/ModalParentContext';
+import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
 
 import { type BoxProps, Box } from '../../layout/Box';
 

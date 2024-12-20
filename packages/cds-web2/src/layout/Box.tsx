@@ -1,7 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import type { SharedAccessibilityProps } from '@cbhq/cds-common/types/SharedAccessibilityProps';
-import type { SharedProps } from '@cbhq/cds-common/types/SharedProps';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { type StyleProps, getStyles } from '../styles/styleProps';

@@ -1,12 +1,12 @@
 import React, { memo, useMemo } from 'react';
-import { IllustrationVariant, useSpectrum } from '@cbhq/cds-common';
+import { IllustrationVariant, useSpectrum } from '@cbhq/cds-common2';
 import {
   IllustrationBaseProps,
   IllustrationNamesMap,
-} from '@cbhq/cds-common/types/IllustrationProps';
-import { convertDimensionToSize } from '@cbhq/cds-common/utils/convertDimensionToSize';
-import { convertSizeWithMultiplier } from '@cbhq/cds-common/utils/convertSizeWithMultiplier';
-import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common/utils/getDefaultSizeObjectForIllustration';
+} from '@cbhq/cds-common2/types/IllustrationProps';
+import { convertDimensionToSize } from '@cbhq/cds-common2/utils/convertDimensionToSize';
+import { convertSizeWithMultiplier } from '@cbhq/cds-common2/utils/convertSizeWithMultiplier';
+import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common2/utils/getDefaultSizeObjectForIllustration';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 type IllustrationConfigShape<Variant extends IllustrationVariant> = Record<
